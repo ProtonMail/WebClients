@@ -1,10 +1,6 @@
 import { devToolsEnhancer } from '@redux-devtools/remote';
 import type { Action } from '@reduxjs/toolkit';
 import { configureStore } from '@reduxjs/toolkit';
-import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
-import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
-import { chunkMiddleware } from 'proton-pass-extension/lib/store/chunk.middleware';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { isSynchronousAction } from '@proton/pass/store/actions/enhancers/client';
 import { isActionFor, isActionFrom } from '@proton/pass/store/actions/enhancers/endpoint';
@@ -14,6 +10,10 @@ import type { ClientEndpoint, TabId } from '@proton/pass/types/worker/runtime';
 import { not } from '@proton/pass/utils/fp/predicates';
 import { deserialize } from '@proton/pass/utils/object/serialize';
 
+import { WorkerMessageType } from '../../types/messages';
+import { ExtensionContext } from '../context/extension-context';
+import { matchExtensionMessage } from '../message/utils';
+import { chunkMiddleware } from './chunk.middleware';
 import { relayMiddleware } from './relay.middleware';
 
 export const createClientStore = (endpoint: ClientEndpoint, tabId: TabId) => {

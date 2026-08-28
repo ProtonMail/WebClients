@@ -1,21 +1,4 @@
 import debounce from 'lodash/debounce';
-import {
-    getIgnoredParent,
-    getParentFormPrediction,
-    isCustomElementWithShadowRoot,
-    isPrediction,
-    removeClassifierFlags,
-    removeProcessedFlag,
-} from 'proton-pass-extension/app/content/services/detector/detector.api';
-import {
-    hasProcessableFields,
-    hasProcessableNodes,
-    isAddedNodeOfInterest,
-    isNodeOfInterest,
-    isParentOfInterest,
-    isProcessableInput,
-    isRemovedNodeOfInterest,
-} from 'proton-pass-extension/app/content/services/detector/detector.utils';
 
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { getActiveElement } from '@proton/pass/utils/dom/active-element';
@@ -26,6 +9,24 @@ import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import type { Subscriber } from '@proton/pass/utils/pubsub/factory';
 import { createPubSub } from '@proton/pass/utils/pubsub/factory';
+
+import {
+    getIgnoredParent,
+    getParentFormPrediction,
+    isCustomElementWithShadowRoot,
+    isPrediction,
+    removeClassifierFlags,
+    removeProcessedFlag,
+} from '../detector/detector.api';
+import {
+    hasProcessableFields,
+    hasProcessableNodes,
+    isAddedNodeOfInterest,
+    isNodeOfInterest,
+    isParentOfInterest,
+    isProcessableInput,
+    isRemovedNodeOfInterest,
+} from '../detector/detector.utils';
 
 type PageObserverState = {
     idle: boolean;

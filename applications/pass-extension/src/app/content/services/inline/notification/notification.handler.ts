@@ -1,5 +1,4 @@
-import type { InlineRegistry } from 'proton-pass-extension/app/content/services/inline/inline.registry';
-
+import type { InlineRegistry } from '../inline.registry';
 import type { NotificationHandler } from './notification.abstract';
 
 export const createNotificationHandler = (registry: InlineRegistry): NotificationHandler => ({

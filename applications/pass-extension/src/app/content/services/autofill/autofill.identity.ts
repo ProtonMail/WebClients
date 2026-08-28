@@ -1,5 +1,4 @@
 import { FieldType, IdentityFieldType } from '@protontech/autofill/types';
-import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 
 import type { ItemContent } from '@proton/pass/types/data/items';
 import type { Maybe } from '@proton/pass/types/utils/index';
@@ -7,6 +6,8 @@ import { last, prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { seq } from '@proton/pass/utils/fp/promises';
+
+import type { FieldHandle } from '../form/field';
 
 export interface IdentityFieldConfig {
     getValue: (data: ItemContent<'identity'>) => Maybe<string>;

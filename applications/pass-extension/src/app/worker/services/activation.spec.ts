@@ -1,10 +1,3 @@
-import WorkerMessageBroker, { mockHandlers } from 'proton-pass-extension/__mocks__/app/worker/channel';
-import { getMockState } from 'proton-pass-extension/__mocks__/mocks';
-import { clearBrowserMocks } from 'proton-pass-extension/__mocks__/webextension-polyfill';
-import { WorkerContext } from 'proton-pass-extension/app/worker/context/inject';
-import type { WorkerContextInterface } from 'proton-pass-extension/app/worker/context/types';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
@@ -14,7 +7,17 @@ import type { ClientEndpoint } from '@proton/pass/types';
 import { AppStatus } from '@proton/pass/types/worker/state';
 import { createMemoryStore } from '@proton/pass/utils/store';
 
+import { getMockState } from '../../../__mocks__/mocks';
+import { clearBrowserMocks } from '../../../__mocks__/webextension-polyfill';
+import { WorkerMessageType } from '../../../types/messages';
+import type * as ChannelMock from '../__mocks__/channel';
+import { WorkerContext } from '../context/inject';
+import type { WorkerContextInterface } from '../context/types';
 import { createActivationService } from './activation';
+
+jest.mock('../channel');
+
+const { default: WorkerMessageBroker, mockHandlers } = jest.requireMock('../channel') as typeof ChannelMock;
 
 describe('Activation service - `CLIENT_INIT`', () => {
     let authStore: AuthStore;

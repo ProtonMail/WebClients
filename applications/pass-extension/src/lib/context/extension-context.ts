@@ -1,6 +1,3 @@
-import { resolveMessageFactory, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { generatePortName } from 'proton-pass-extension/lib/utils/port';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
@@ -11,6 +8,10 @@ import { contextHandlerFactory } from '@proton/pass/utils/context';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
+
+import { WorkerMessageType } from '../../types/messages';
+import { resolveMessageFactory, sendMessage } from '../message/send-message';
+import { generatePortName } from '../utils/port';
 
 import.meta.webpackHot?.decline();
 

@@ -245,7 +245,6 @@ const config: Configuration = {
         },
         modules: [path.resolve(__dirname), 'node_modules'],
         alias: {
-            'proton-pass-extension': path.resolve(__dirname, 'src/'),
             ...(BUILD_TARGET === 'safari'
                 ? /* exclude `webextension-polyfill` from safari build to avoid
                    * service-worker registration errors when worker fails. */

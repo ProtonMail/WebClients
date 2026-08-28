@@ -7,33 +7,6 @@
  * Includes activity probing for service worker connection health on long-running tabs. */
 import type { DebouncedFunc } from 'lodash';
 import debounce from 'lodash/debounce';
-import { withContext } from 'proton-pass-extension/app/content/context/context';
-import type {
-    ContentScriptClient,
-    ContentScriptClientFactoryOptions,
-} from 'proton-pass-extension/app/content/services/client/client';
-import type {
-    FrameMessageBroker,
-    FrameMessageHandler,
-} from 'proton-pass-extension/app/content/services/client/client.channel';
-import { createFrameMessageBroker } from 'proton-pass-extension/app/content/services/client/client.channel';
-import type { ClientObserverEvent } from 'proton-pass-extension/app/content/services/client/client.observer';
-import {
-    type ClientObserver,
-    createClientObserver,
-} from 'proton-pass-extension/app/content/services/client/client.observer';
-import { registerCustomElements } from 'proton-pass-extension/app/content/services/inline/custom-elements/register';
-import {
-    assertFrameVisible,
-    getFrameAttributes,
-    getFrameElement,
-    getFrameVisibility,
-    isSandboxedFrame,
-} from 'proton-pass-extension/app/content/utils/frame';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import 'proton-pass-extension/lib/polyfills/shim';
-import { getNodePosition } from 'proton-pass-extension/lib/utils/dom';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
@@ -42,6 +15,25 @@ import { safeAsyncCall } from '@proton/pass/utils/fp/safe-call';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger, registerLoggerEffect } from '@proton/pass/utils/logger';
 import { createActivityProbe } from '@proton/pass/utils/time/probe';
+
+import { contentScriptMessage, sendMessage } from '../../../../lib/message/send-message';
+import '../../../../lib/polyfills/shim';
+import { getNodePosition } from '../../../../lib/utils/dom';
+import { WorkerMessageType } from '../../../../types/messages';
+import { withContext } from '../../context/context';
+import {
+    assertFrameVisible,
+    getFrameAttributes,
+    getFrameElement,
+    getFrameVisibility,
+    isSandboxedFrame,
+} from '../../utils/frame';
+import { registerCustomElements } from '../inline/custom-elements/register';
+import type { ContentScriptClient, ContentScriptClientFactoryOptions } from './client';
+import type { FrameMessageBroker, FrameMessageHandler } from './client.channel';
+import { createFrameMessageBroker } from './client.channel';
+import type { ClientObserverEvent } from './client.observer';
+import { type ClientObserver, createClientObserver } from './client.observer';
 
 export interface ClientController {
     /** Destroys controller and cleans up all resources. Safe to call at any

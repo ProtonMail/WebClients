@@ -1,10 +1,3 @@
-import { withContext } from 'proton-pass-extension/app/content/context/context';
-import { isEditorFrame, isVisible } from 'proton-pass-extension/app/content/services/detector/detector.api';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { getFrameScore } from 'proton-pass-extension/lib/utils/frames';
-import type { FrameAttributes } from 'proton-pass-extension/types/frames';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe } from '@proton/pass/types/utils/index';
 import type { FrameId } from '@proton/pass/types/worker/runtime';
@@ -13,6 +6,13 @@ import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
 import { createWeakRefCache, maxAgeMemoize } from '@proton/pass/utils/fp/memo';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import identity from '@proton/utils/identity';
+
+import { contentScriptMessage, sendMessage } from '../../../lib/message/send-message';
+import { getFrameScore } from '../../../lib/utils/frames';
+import type { FrameAttributes } from '../../../types/frames';
+import { WorkerMessageType } from '../../../types/messages';
+import { withContext } from '../context/context';
+import { isEditorFrame, isVisible } from '../services/detector/detector.api';
 
 export const getFrameID = withContext<() => FrameId>((ctx) => {
     const frameId = ctx?.getExtensionContext()?.frameId;

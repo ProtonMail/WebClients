@@ -1,11 +1,3 @@
-import { kFocusTrapSelector } from 'proton-pass-extension/app/content/constants.static';
-import type { InlineFrameTarget } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.abstract';
-import type { InlineApp } from 'proton-pass-extension/app/content/services/inline/inline.app';
-import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import type { PopoverController } from 'proton-pass-extension/app/content/services/inline/inline.popover';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isHTMLElement } from '@proton/pass/utils/dom/predicates';
@@ -14,6 +6,13 @@ import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { onNextTick } from '@proton/pass/utils/time/next-tick';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
+import { contentScriptMessage, sendMessage } from '../../../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../../../types/messages';
+import { kFocusTrapSelector } from '../../../constants.static';
+import type { InlineApp } from '../inline.app';
+import { InlinePortMessageType } from '../inline.messages';
+import type { PopoverController } from '../inline.popover';
+import type { InlineFrameTarget } from './dropdown.abstract';
 import type { DropdownAnchor, DropdownAnchorRef, DropdownRequest } from './dropdown.app';
 
 /** Debounce timeout for focus events to prevent rapid focus/blur cycles */

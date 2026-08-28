@@ -1,7 +1,6 @@
-import { default as browserAPI } from 'proton-pass-extension/__mocks__/webextension-polyfill';
-
 import type { ClientEndpoint } from '@proton/pass/types';
 
+import { default as browserAPI } from '../../__mocks__/webextension-polyfill';
 import { assertTabsAPIAvailable } from './tabs';
 
 const browser = browserAPI as Partial<typeof browserAPI>;

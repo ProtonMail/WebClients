@@ -1,16 +1,3 @@
-import { CLIENT_SCRIPT_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
-import { CSContext } from 'proton-pass-extension/app/content/context/context';
-import { createContentScriptContext } from 'proton-pass-extension/app/content/context/factory';
-import type { ContentScriptContext } from 'proton-pass-extension/app/content/context/types';
-import type { ClientController } from 'proton-pass-extension/app/content/services/client/client.controller';
-import { DOMCleanUp } from 'proton-pass-extension/app/content/services/inline/inline.cleanup';
-import type { ExtensionContextType } from 'proton-pass-extension/lib/context/extension-context';
-import { ExtensionContext, setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
-import { shouldEnableDetector, shouldInjectContentScript } from 'proton-pass-extension/lib/utils/features';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
@@ -19,6 +6,19 @@ import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
+
+import type { ExtensionContextType } from '../../../../lib/context/extension-context';
+import { ExtensionContext, setupExtensionContext } from '../../../../lib/context/extension-context';
+import { contentScriptMessage, sendMessage } from '../../../../lib/message/send-message';
+import { matchExtensionMessage } from '../../../../lib/message/utils';
+import { shouldEnableDetector, shouldInjectContentScript } from '../../../../lib/utils/features';
+import { WorkerMessageType } from '../../../../types/messages';
+import { CLIENT_SCRIPT_READY_EVENT } from '../../constants.static';
+import { CSContext } from '../../context/context';
+import { createContentScriptContext } from '../../context/factory';
+import type { ContentScriptContext } from '../../context/types';
+import { DOMCleanUp } from '../inline/inline.cleanup';
+import type { ClientController } from './client.controller';
 
 export type ContentScriptClientFactoryOptions = {
     /** Random uuid to identify current client */

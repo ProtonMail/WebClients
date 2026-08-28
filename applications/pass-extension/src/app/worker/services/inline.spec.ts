@@ -1,8 +1,9 @@
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import browser from '@proton/pass/lib/globals/browser';
 
+import { WorkerMessageType } from '../../../types/messages';
 import { createInlineService } from './inline';
+
+jest.mock('../channel');
 
 const tabsSendMessage = browser.tabs.sendMessage as jest.Mock;
 

@@ -1,7 +1,7 @@
-import { type MessageWithSenderFactory, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import type { MonitorService } from '@proton/pass/lib/monitor/service';
+
+import { WorkerMessageType } from '../../types/messages';
+import { type MessageWithSenderFactory, sendMessage } from '../message/send-message';
 
 export const createMonitorBridge = (messageFactory: MessageWithSenderFactory): MonitorService => ({
     checkMissing2FAs: (payload) =>

@@ -1,16 +1,17 @@
 import type { ReactNode } from 'react';
 import { useCallback, useEffect, useState } from 'react';
 
-import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
-import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
-import { hasHostPermissions, requestHostPermissions } from 'proton-pass-extension/lib/utils/permissions';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
+
+import { WorkerMessageType } from '../../types/messages';
+import { useExtensionContext } from '../components/Extension/ExtensionSetup';
+import { matchExtensionMessage } from '../message/utils';
+import { hasHostPermissions, requestHostPermissions } from '../utils/permissions';
 
 export const formatOrigins = (origins: string[]): string => {
     if (origins.length === 0) return '';

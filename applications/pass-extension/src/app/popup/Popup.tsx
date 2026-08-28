@@ -1,14 +1,6 @@
 import { useCallback, useContext, useEffect } from 'react';
 import { HashRouter as Router } from 'react-router-dom';
 
-import { ExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
-import { ExtensionError } from 'proton-pass-extension/lib/components/Extension/ExtensionError';
-import { ExtensionPermissions } from 'proton-pass-extension/lib/components/Extension/ExtensionPermissions';
-import { ExtensionStore } from 'proton-pass-extension/lib/components/Extension/ExtensionStore';
-import { useExtensionNotificationEnhancer } from 'proton-pass-extension/lib/hooks/useExtensionNotificationEnhancer';
-import { hasClipboardPermissions } from 'proton-pass-extension/lib/utils/permissions';
-import { WorkerMessageType, type WorkerMessageWithSender } from 'proton-pass-extension/types/messages';
-
 import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
@@ -16,6 +8,13 @@ import { Localized } from '@proton/pass/components/Core/Localized';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { ClipboardProvider } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 
+import { ExtensionClient } from '../../lib/components/Extension/ExtensionClient';
+import { ExtensionError } from '../../lib/components/Extension/ExtensionError';
+import { ExtensionPermissions } from '../../lib/components/Extension/ExtensionPermissions';
+import { ExtensionStore } from '../../lib/components/Extension/ExtensionStore';
+import { useExtensionNotificationEnhancer } from '../../lib/hooks/useExtensionNotificationEnhancer';
+import { hasClipboardPermissions } from '../../lib/utils/permissions';
+import { WorkerMessageType, type WorkerMessageWithSender } from '../../types/messages';
 import { AppGuard } from './AppGuard';
 import { PopupProvider } from './PopupProvider';
 

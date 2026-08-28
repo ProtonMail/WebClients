@@ -1,10 +1,5 @@
 import { useMemo } from 'react';
 
-import {
-    getHostPermissionsWarning,
-    useRequestHostPermissions,
-} from 'proton-pass-extension/lib/hooks/useHostPermissions';
-import { getMinimalHostPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -12,6 +7,9 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
+
+import { getMinimalHostPermissions } from '../utils/permissions';
+import { getHostPermissionsWarning, useRequestHostPermissions } from './useHostPermissions';
 
 export const useExtensionNotificationEnhancer = () => {
     const { clearNotifications } = useNotifications();

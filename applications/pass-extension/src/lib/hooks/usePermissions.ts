@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { type Permission, hasPermissions, requestPermissions } from 'proton-pass-extension/lib/utils/permissions';
-
 import noop from '@proton/utils/noop';
+
+import { type Permission, hasPermissions, requestPermissions } from '../utils/permissions';
 
 export interface PermissionHandles {
     enabled: boolean;

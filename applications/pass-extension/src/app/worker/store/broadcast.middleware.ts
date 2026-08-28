@@ -1,6 +1,3 @@
-import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Action } from 'redux';
 import { type Middleware, isAction } from 'redux';
 
@@ -11,6 +8,10 @@ import type { State } from '@proton/pass/store/types';
 import { not } from '@proton/pass/utils/fp/predicates';
 import { toChunks } from '@proton/pass/utils/object/chunk';
 import { serialize } from '@proton/pass/utils/object/serialize';
+
+import { backgroundMessage } from '../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../types/messages';
+import WorkerMessageBroker from '../channel';
 
 const broadcast = (action: Action) => {
     WorkerMessageBroker.ports.broadcast(

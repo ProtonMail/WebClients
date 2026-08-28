@@ -1,20 +1,5 @@
 import type { FieldType } from '@protontech/autofill/types';
 import { FormType, fieldTypes, formTypes } from '@protontech/autofill/types';
-import { MAX_MAX_DETECTION_TIME, MIN_MAX_DETECTION_TIME } from 'proton-pass-extension/app/content/constants.static';
-import type { Fnode } from 'proton-pass-extension/app/content/services/detector/detector.api';
-import {
-    clearDetectionCache,
-    flagOverride,
-    flagSubtreeAsIgnored,
-    getTypeScore,
-    prepass,
-    rulesetMaker,
-    shadowPiercingContains,
-    shouldRunClassifier,
-} from 'proton-pass-extension/app/content/services/detector/detector.api';
-import { selectNodeFromPath } from 'proton-pass-extension/app/content/services/detector/detector.utils';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { DetectionRulesMatch } from '@proton/pass/lib/extension/rules/types';
 import type { Callback, MaybeNull } from '@proton/pass/types/utils/index';
@@ -27,6 +12,22 @@ import { DOM_SETTLE_MS } from '@proton/pass/utils/time/next-tick';
 import { withMaxExecutionTime } from '@proton/pass/utils/time/performance';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
+
+import { contentScriptMessage, sendMessage } from '../../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../../types/messages';
+import { MAX_MAX_DETECTION_TIME, MIN_MAX_DETECTION_TIME } from '../../constants.static';
+import type { Fnode } from './detector.api';
+import {
+    clearDetectionCache,
+    flagOverride,
+    flagSubtreeAsIgnored,
+    getTypeScore,
+    prepass,
+    rulesetMaker,
+    shadowPiercingContains,
+    shouldRunClassifier,
+} from './detector.api';
+import { selectNodeFromPath } from './detector.utils';
 
 const ruleset = rulesetMaker();
 const NOOP_EL = document.createElement('form');

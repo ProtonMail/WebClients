@@ -1,11 +1,6 @@
 import { useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
-import { useRequestHostPermissions } from 'proton-pass-extension/lib/hooks/useHostPermissions';
-import { popupMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
@@ -18,6 +13,12 @@ import { SpotlightMessage } from '@proton/pass/types/worker/spotlight';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
+
+import { WorkerMessageType } from '../../types/messages';
+import { useExtensionContext } from '../components/Extension/ExtensionSetup';
+import { popupMessage, sendMessage } from '../message/send-message';
+import { matchExtensionMessage } from '../message/utils';
+import { useRequestHostPermissions } from './useHostPermissions';
 
 const useExtensionSpotlightMessages = () => {
     const requestHostPermissions = useRequestHostPermissions();

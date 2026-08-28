@@ -1,13 +1,4 @@
 import { captureMessage as sentryCaptureMessage } from '@sentry/browser';
-import { isFirefoxMainWorldInjectionSupported } from 'proton-pass-extension/app/content/firefox/version';
-import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { withContext } from 'proton-pass-extension/app/worker/context/inject';
-import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
-import { withSender } from 'proton-pass-extension/lib/message/message-broker';
-import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
-import { resolveEndpointContext } from 'proton-pass-extension/lib/utils/endpoint';
-import { computeFeatures, shouldInjectContentScript } from 'proton-pass-extension/lib/utils/features';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
@@ -16,6 +7,16 @@ import type { Maybe } from '@proton/pass/types/utils/index';
 import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
+
+import type { MessageHandlerCallback } from '../../../lib/message/message-broker';
+import { withSender } from '../../../lib/message/message-broker';
+import { backgroundMessage } from '../../../lib/message/send-message';
+import { resolveEndpointContext } from '../../../lib/utils/endpoint';
+import { computeFeatures, shouldInjectContentScript } from '../../../lib/utils/features';
+import { WorkerMessageType } from '../../../types/messages';
+import { isFirefoxMainWorldInjectionSupported } from '../../content/firefox/version';
+import WorkerMessageBroker from '../channel';
+import { withContext } from '../context/inject';
 
 const withTabEffect =
     (fn: (tabId: TabId, frameId: Maybe<FrameId>) => Promise<void>) =>

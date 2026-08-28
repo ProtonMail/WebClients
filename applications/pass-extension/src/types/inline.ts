@@ -1,9 +1,9 @@
-import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
-import type { InlineCloseOptions } from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import type { FrameAttributes, FrameField, FrameRelay } from 'proton-pass-extension/types/frames';
-
 import type { AutofillPageTelemetryDimensions } from '@proton/pass/types/data/telemetry';
 import type { FrameId } from '@proton/pass/types/worker/runtime';
+
+import type { DropdownAction } from '../app/content/constants.runtime';
+import type { InlineCloseOptions } from '../app/content/services/inline/inline.messages';
+import type { FrameAttributes, FrameField, FrameRelay } from './frames';
 
 export type Coords = { top: number; left: number };
 

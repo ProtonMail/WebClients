@@ -1,7 +1,7 @@
-import { sendSafariMessage } from 'proton-pass-extension/lib/utils/safari';
-
 import type { MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
+
+import { sendSafariMessage } from './safari';
 
 type RelatedOrigins = { origins: string[]; finalUrl?: string };
 type RelatedOriginsNativeResponse = { body: string; status: number; finalUrl: string } | { error: string };

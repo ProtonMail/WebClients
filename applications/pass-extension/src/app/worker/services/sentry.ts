@@ -1,11 +1,11 @@
-import config from 'proton-pass-extension/app/config';
-import 'proton-pass-extension/lib/polyfills/shim';
-import { isRuntimeActive, isRuntimeStale } from 'proton-pass-extension/lib/utils/runtime';
-
 import { logger } from '@proton/pass/utils/logger';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import sentry, { setSentryEnabled } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
+
+import '../../../lib/polyfills/shim';
+import { isRuntimeActive, isRuntimeStale } from '../../../lib/utils/runtime';
+import config from '../../config';
 
 export const createSentryService = () => {
     /** Disable sentry while service-worker is activating

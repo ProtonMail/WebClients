@@ -1,7 +1,6 @@
 import type { FC } from 'react';
 
 import type { FormikContextType } from 'formik';
-import { useIFrameAppController, useIFrameAppState } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -15,6 +14,8 @@ import { MAX_ITEM_NAME_LENGTH, MODEL_VERSION } from '@proton/pass/constants';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { AutosaveFormValues, AutosavePayload } from '@proton/pass/types/worker/autosave';
 import { AutosaveMode } from '@proton/pass/types/worker/autosave';
+
+import { useIFrameAppController, useIFrameAppState } from '../../../../../../../lib/components/Inline/IFrameApp';
 
 type Props = {
     busy: boolean;

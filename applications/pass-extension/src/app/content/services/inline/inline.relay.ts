@@ -1,20 +1,15 @@
-import { withContext } from 'proton-pass-extension/app/content/context/context';
-import type { ContentScriptContextFactoryOptions } from 'proton-pass-extension/app/content/context/factory';
-import type { FrameMessageHandler } from 'proton-pass-extension/app/content/services/client/client.channel';
-import type { InlineFieldTarget } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.abstract';
-import {
-    onBackdropClick,
-    onCloseEffects,
-    onFocusChangeFactory,
-} from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.utils';
-import { createIconRegistry } from 'proton-pass-extension/app/content/services/inline/icon/icon.registry';
-import { SCROLL_OPTIONS, onActualScroll } from 'proton-pass-extension/lib/utils/dom';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { cons } from '@proton/pass/utils/fp/lens';
 import noop from '@proton/utils/noop';
 
+import { SCROLL_OPTIONS, onActualScroll } from '../../../../lib/utils/dom';
+import { WorkerMessageType } from '../../../../types/messages';
+import { withContext } from '../../context/context';
+import type { ContentScriptContextFactoryOptions } from '../../context/factory';
+import type { FrameMessageHandler } from '../client/client.channel';
+import type { InlineFieldTarget } from './dropdown/dropdown.abstract';
 import { createDropdownRelayHandler } from './dropdown/dropdown.relay';
+import { onBackdropClick, onCloseEffects, onFocusChangeFactory } from './dropdown/dropdown.utils';
+import { createIconRegistry } from './icon/icon.registry';
 import type { AbstractInlineService } from './inline.abstract';
 import { createPassiveInlineListeners } from './inline.listeners';
 import { createNotificationRelayHandler } from './notification/notification.relay';

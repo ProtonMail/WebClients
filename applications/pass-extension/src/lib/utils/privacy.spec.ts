@@ -1,7 +1,6 @@
-import browser, { clearBrowserMocks } from 'proton-pass-extension/__mocks__/webextension-polyfill';
-
 import noop from '@proton/utils/noop';
 
+import browser, { clearBrowserMocks } from '../../__mocks__/webextension-polyfill';
 import * as privacy from './privacy';
 
 const setBuildTarget = (value: string) => ((global as any).BUILD_TARGET = value);

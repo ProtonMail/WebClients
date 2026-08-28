@@ -1,9 +1,9 @@
 import { type FC, useEffect } from 'react';
 
-import type { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { NotificationHeader } from 'proton-pass-extension/app/content/services/inline/notification/app/components/NotificationHeader';
-import type { NotificationRequest } from 'proton-pass-extension/app/content/services/inline/notification/notification.app';
-import { useIFrameAppController } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
+import { useIFrameAppController } from '../../../../../../../lib/components/Inline/IFrameApp';
+import type { NotificationAction } from '../../../../../constants.runtime';
+import type { NotificationRequest } from '../../notification.app';
+import { NotificationHeader } from '../components/NotificationHeader';
 
 const DURATION = 2_000;
 

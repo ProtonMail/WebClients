@@ -1,6 +1,4 @@
 import debounce from 'lodash/debounce';
-import { isSafariPopoverWindow } from 'proton-pass-extension/lib/utils/safari';
-import { isVivaldiBrowser } from 'proton-pass-extension/lib/utils/vivaldi';
 import type { Tabs } from 'webextension-polyfill';
 
 import type { PopupController } from '@proton/pass/components/Core/PassCoreProvider';
@@ -11,6 +9,9 @@ import type { Maybe } from '@proton/pass/types/utils/index';
 import { pixelParser } from '@proton/pass/utils/dom/computed-styles';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import noop from '@proton/utils/noop';
+
+import { isSafariPopoverWindow } from './safari';
+import { isVivaldiBrowser } from './vivaldi';
 
 export const setPopupIcon = safeCall((status: AppStatus): void => {
     const suffix = (() => {

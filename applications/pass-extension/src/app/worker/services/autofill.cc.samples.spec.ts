@@ -1,8 +1,7 @@
-import type { ClusterFrame } from 'proton-pass-extension/app/worker/services/autofill.cc';
-import { clusterCCFormFields } from 'proton-pass-extension/app/worker/services/autofill.cc';
-import type { AutofillableFrame } from 'proton-pass-extension/lib/utils/frames';
-import type { AutofillActionDTO } from 'proton-pass-extension/types/autofill';
-
+import type { AutofillableFrame } from '../../../lib/utils/frames';
+import type { AutofillActionDTO } from '../../../types/autofill';
+import type { ClusterFrame } from './autofill.cc';
+import { clusterCCFormFields } from './autofill.cc';
 import { default as json } from './autofill.cc.samples.json';
 
 type SerializedMap<T> = Record<string, T>;

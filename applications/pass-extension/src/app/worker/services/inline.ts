@@ -1,21 +1,21 @@
-import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
-import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { withContext } from 'proton-pass-extension/app/worker/context/inject';
-import { withSender } from 'proton-pass-extension/lib/message/message-broker';
-import { backgroundMessage, sendTabMessage } from 'proton-pass-extension/lib/message/send-message';
-import type { FrameData, Frames } from 'proton-pass-extension/lib/utils/frames';
-import { getTabFrames as getAllTabFrames, getFramePath } from 'proton-pass-extension/lib/utils/frames';
-import { parseSender } from 'proton-pass-extension/lib/utils/sender';
-import type { FrameAttributes, FrameQueryResponse, FrameQueryResult } from 'proton-pass-extension/types/frames';
-import type { Coords, DropdownStateDTO } from 'proton-pass-extension/types/inline';
-import type { FrameQueryMessage, InlineDropdownStateMessage } from 'proton-pass-extension/types/messages';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import browser from '@proton/pass/lib/globals/browser';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
+
+import { withSender } from '../../../lib/message/message-broker';
+import { backgroundMessage, sendTabMessage } from '../../../lib/message/send-message';
+import type { FrameData, Frames } from '../../../lib/utils/frames';
+import { getTabFrames as getAllTabFrames, getFramePath } from '../../../lib/utils/frames';
+import { parseSender } from '../../../lib/utils/sender';
+import type { FrameAttributes, FrameQueryResponse, FrameQueryResult } from '../../../types/frames';
+import type { Coords, DropdownStateDTO } from '../../../types/inline';
+import type { FrameQueryMessage, InlineDropdownStateMessage } from '../../../types/messages';
+import { WorkerMessageType } from '../../../types/messages';
+import { NotificationAction } from '../../content/constants.runtime';
+import WorkerMessageBroker from '../channel';
+import { withContext } from '../context/inject';
 
 type CurrentFrame = { frame: FrameData; frameAttributes: FrameAttributes; coords: Coords };
 

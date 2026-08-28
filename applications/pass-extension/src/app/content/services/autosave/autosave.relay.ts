@@ -1,7 +1,7 @@
-import type { AutosaveService } from 'proton-pass-extension/app/content/services/autosave/autosave.abstract';
-import { createAutosaveService } from 'proton-pass-extension/app/content/services/autosave/autosave.service';
-
 import noop from '@proton/utils/noop';
+
+import type { AutosaveService } from './autosave.abstract';
+import { createAutosaveService } from './autosave.service';
 
 /** Partial autosave service for sub-frames: only one-off autosave
  * prompts are supported (eg: password autosuggest). Full reconciliation

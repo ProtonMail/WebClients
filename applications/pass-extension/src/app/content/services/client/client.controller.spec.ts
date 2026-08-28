@@ -1,25 +1,21 @@
-import { clearBrowserMocks } from 'proton-pass-extension/__mocks__/webextension-polyfill';
-import type {
-    ContentScriptClient,
-    ContentScriptClientFactoryOptions,
-} from 'proton-pass-extension/app/content/services/client/client';
-import type { ClientObserverEvent } from 'proton-pass-extension/app/content/services/client/client.observer';
-import { createClientObserver } from 'proton-pass-extension/app/content/services/client/client.observer';
-import * as frameUtils from 'proton-pass-extension/app/content/utils/frame';
-import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import type { Subscriber } from '@proton/pass/utils/pubsub/factory';
 import { createActivityProbe } from '@proton/pass/utils/time/probe';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
+import { clearBrowserMocks } from '../../../../__mocks__/webextension-polyfill';
+import { backgroundMessage } from '../../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../../types/messages';
+import * as frameUtils from '../../utils/frame';
+import type { ContentScriptClient, ContentScriptClientFactoryOptions } from './client';
 import { CLIENT_START_TIMEOUT_MS, type ClientController, createClientController } from './client.controller';
+import type { ClientObserverEvent } from './client.observer';
+import { createClientObserver } from './client.observer';
 
 const TEST_SCRIPT_ID = 'test-script-id';
 
-jest.mock('proton-pass-extension/app/content/services/client/client.observer');
-jest.mock('proton-pass-extension/lib/message/send-message');
-jest.mock('proton-pass-extension/app/content/utils/frame');
+jest.mock('./client.observer');
+jest.mock('../../../../lib/message/send-message');
+jest.mock('../../utils/frame');
 jest.mock('@proton/pass/utils/time/probe');
 
 const mockCreateClientObserver = createClientObserver as jest.MockedFunction<typeof createClientObserver>;

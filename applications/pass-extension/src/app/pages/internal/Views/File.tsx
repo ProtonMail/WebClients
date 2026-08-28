@@ -1,7 +1,6 @@
 import { type FC, useEffect, useMemo } from 'react';
 import type { RouteComponentProps } from 'react-router-dom';
 
-import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/ExtensionHead';
 import { c } from 'ttag';
 
 import { FileAttachmentIcon } from '@proton/pass/components/FileAttachments/FileAttachmentIcon';
@@ -11,6 +10,7 @@ import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { download } from '@proton/pass/utils/dom/download';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 
+import { ExtensionHead } from '../../../../lib/components/Extension/ExtensionHead';
 import { AutoClose } from './AutoClose';
 
 export const File: FC<RouteComponentProps<FileParam>> =

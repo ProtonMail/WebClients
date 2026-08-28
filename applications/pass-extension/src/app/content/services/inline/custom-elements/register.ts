@@ -1,11 +1,10 @@
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import 'proton-pass-extension/lib/polyfills/shim';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import browser from '@proton/pass/lib/globals/browser';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 
+import { contentScriptMessage, sendMessage } from '../../../../../lib/message/send-message';
+import '../../../../../lib/polyfills/shim';
+import { WorkerMessageType } from '../../../../../types/messages';
 import { getControlTagName } from './ProtonPassControl';
 import { getRootTagName } from './ProtonPassRoot';
 
