@@ -2,10 +2,10 @@ import { mailSettingsState, unloadedMailSettingsState } from '@proton/mail/store
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import type { MailStateSlice } from '../buildMailState.testing';
-import { buildMailState } from '../buildMailState.testing';
-import { elementsState } from '../elements/elementsSlice.testing';
-import { organizationState, unloadedOrganizationState } from '../sharedSlices.testing';
+import type { MailStateSlice } from '../tests/buildMailState';
+import { buildMailState } from '../tests/buildMailState';
+import { elementsState } from '../tests/elementsSlice';
+import { organizationState, unloadedOrganizationState } from '../tests/sharedSlices';
 import {
     selectShouldReportUnreadCount,
     selectShouldShowCategoryViewTabs,
