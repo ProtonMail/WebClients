@@ -48,7 +48,7 @@ export default defineConfig([
          * Test state factories must stay import-light. Importing `rootReducer` as a value pulls in every slice of the application.
          * On a single test the imported modules went from 181 to 2449, and the time went from 0.33s to 0.92s when root reducer is loaded.
          */
-        files: ['src/app/store/**/*.testing.ts'],
+        files: ['src/app/store/tests/**/*.ts'],
         rules: {
             '@typescript-eslint/no-restricted-imports': [
                 'error',
