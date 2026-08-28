@@ -408,7 +408,6 @@ export const useJoinFlow = ({
         decryptionKeyRef.current = decryptionKey;
         const encryptedDisplayName = await encryptDisplayNameWithKey(decryptionKey, sanitizedParticipantName);
         const { accessToken } = await getAccessDetails({
-            displayName: sanitizedParticipantName,
             token: meetingToken,
             encryptedDisplayName,
         });
