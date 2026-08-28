@@ -47,7 +47,7 @@ interface JobDeps {
     waitForV1Sync: () => Promise<void>;
     /**
      * Called once the job has ended, so the adapter can drop its reference to it and decide what a
-     * failed import means for serving searches.
+     * failed import means for where searches are answered.
      */
     onFinished: (outcome: ImportOutcome) => void;
 }
@@ -254,8 +254,8 @@ export class IndexingJob {
         }
 
         // Only a completed import may report a finished index. A failed one has nothing of its own to
-        // report: v1's index is intact, so its status is the truth, and the adapter serves searches
-        // from v1 from here on (see `ESAdapter.isV2IndexUsable`).
+        // report: v1's index is intact, so its status is the truth, while the adapter sends searches to
+        // the server rather than answer them from a partial index (see `ESAdapter.isV2IndexUsable`).
         if (this.phase === 'done') {
             this.deps.updateESStatus(
                 this.outcome === 'completed'
