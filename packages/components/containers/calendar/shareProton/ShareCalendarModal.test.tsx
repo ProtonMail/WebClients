@@ -2,6 +2,7 @@ import type { PublicKeyReference } from '@protontech/crypto';
 import { act, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { mocked } from 'jest-mock';
+import type { RequestHandler } from 'msw';
 import { setupServer } from 'msw/node';
 
 import { useApi } from '@proton/app-context/useApi';
@@ -18,7 +19,7 @@ import useGetEncryptionPreferences from '../../../hooks/useGetEncryptionPreferen
 import { CacheProvider } from '../../cache/Provider';
 import ShareCalendarModal from './ShareCalendarModal';
 
-const server = setupServer(...getHandlers());
+const server = setupServer(...(getHandlers() as RequestHandler[]));
 
 jest.mock('../../../hooks/useGetEncryptionPreferences');
 jest.mock('@proton/app-context/useNotifications');
