@@ -10333,6 +10333,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/hooks": "workspace:^"
     "@proton/icons": "workspace:^"
+    "@proton/jest-env": "workspace:^"
     "@proton/meet": "workspace:^"
     "@proton/redux-shared-store": "workspace:^"
     "@proton/shared": "workspace:^"
@@ -10341,10 +10342,12 @@ __metadata:
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
     "@protontech/crypto": "npm:*"
+    "@swc/jest": "npm:^0.2.39"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@testing-library/user-event": "npm:^14.6.6"
+    "@typescript/native": "npm:typescript@^7.0.2"
     eslint: "npm:^10.9.0"
     history: "npm:^4.10.1"
     jest: "npm:^30.4.2"
@@ -10355,7 +10358,7 @@ __metadata:
     react-router-dom: "npm:^5.3.4"
     ts-jest: "npm:^29.4.12"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -10380,6 +10383,7 @@ __metadata:
     "@swc/jest": "npm:^0.2.39"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
+    "@typescript/native": "npm:typescript@^7.0.2"
     core-js: "npm:^3.50.0"
     eslint: "npm:^10.9.0"
     jest: "npm:^30.4.2"
@@ -10387,7 +10391,7 @@ __metadata:
     lodash: "npm:^4.18.1"
     react: "npm:^18.3.1"
     ts-jest: "npm:^29.4.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -42003,6 +42007,7 @@ __metadata:
     "@protontech/crypto": "npm:*"
     "@protontech/interval-tree": "npm:^1.0.0"
     "@reduxjs/toolkit": "npm:^2.12.0"
+    "@swc/jest": "npm:^0.2.39"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/react-hooks": "npm:^8.0.1"
@@ -42011,6 +42016,7 @@ __metadata:
     "@types/react": "npm:^18.3.31"
     "@types/react-dom": "npm:^18.3.7"
     "@types/react-router-dom": "npm:^5.3.3"
+    "@typescript/native": "npm:typescript@^7.0.2"
     browserslist: "npm:^4.28.8"
     core-js: "npm:^3.50.0"
     cross-env: "npm:^10.1.0"
@@ -42027,7 +42033,7 @@ __metadata:
     react-router-dom: "npm:^5.3.4"
     tinycolor2: "npm:^1.6.0"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     zustand: "npm:^5.0.15"
   languageName: unknown
   linkType: soft
