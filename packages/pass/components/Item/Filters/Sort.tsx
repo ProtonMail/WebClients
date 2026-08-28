@@ -15,6 +15,9 @@ import { intoDisplayedSortFilter } from '@proton/pass/lib/items/item.utils';
 import type { ItemSortFilter } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
+import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
+import { PassFeature } from '../../../types/api/features';
+
 import './FilterClearButton.scss';
 
 type Props = {
@@ -70,10 +73,12 @@ const ITEMS_SORT_OPTIONS: ItemSortFilter[] = ['relevant', 'recent', 'titleASC', 
 
 export const SortFilter = memo(({ value, hasSearch, onChange }: Props) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
+    const showRelevantSort = useFeatureFlag(PassFeature.PassWeb__V1_41__RelevantSort);
 
     const displayValue = intoDisplayedSortFilter(value, hasSearch);
     const isActive = displayValue !== 'recent';
     const { label, shortLabel } = getSortOptionDetails(displayValue);
+    const options = ITEMS_SORT_OPTIONS.filter((type) => type !== 'relevant' || (hasSearch && showRelevantSort));
 
     const handleClear = (event: MouseEvent | KeyboardEvent) => {
         event.stopPropagation();
@@ -110,7 +115,7 @@ export const SortFilter = memo(({ value, hasSearch, onChange }: Props) => {
                 size={DROPDOWN_SIZE}
             >
                 <DropdownMenu>
-                    {ITEMS_SORT_OPTIONS.filter((type) => type !== 'relevant' || hasSearch).map((type) => {
+                    {options.map((type) => {
                         const { label, icon } = getSortOptionDetails(type);
                         return (
                             <Tooltip
