@@ -63,7 +63,6 @@ export const getOrganizationAppRoutes = ({
     const {
         isUserGroupsFeatureEnabled = false,
         isUserGroupsNoCustomDomainEnabled = false,
-        isUserGroupsPassBusinessEnabled = false,
         isScribeEnabled = false,
         isZoomIntegrationEnabled = false,
         isProtonMeetIntegrationEnabled = false,
@@ -123,7 +122,6 @@ export const getOrganizationAppRoutes = ({
             (hasActiveOrganizationKey &&
                 canUseGroups(organization?.PlanName, {
                     isUserGroupsNoCustomDomainEnabled,
-                    isUserGroupsPassBusinessEnabled,
                     hasGroups,
                 })));
 
