@@ -18,7 +18,6 @@ import {
     selectMlsGroupState,
     selectRoomName,
 } from '@proton/meet/store/slices/meetingInfo';
-import { selectTotalParticipantCount } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import type { KeyRotationLog } from '@proton/meet/types/types';
 import { parseMeetingLink } from '@proton/meet/utils/parseMeetingLink';
@@ -43,7 +42,6 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
     const mlsGroupState = useMeetSelector(selectMlsGroupState);
     const meetingLink = useMeetSelector(selectMeetingLink);
     const instantMeeting = useMeetSelector(selectInstantMeeting);
-    const participantsCount = useMeetSelector(selectTotalParticipantCount);
 
     const roomName = useMeetSelector(selectRoomName);
 
@@ -183,12 +181,16 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                                         </button>
                                     </TableCell>
                                 </TableRow>
-                                <TableRow>
-                                    <TableCell type="header" scope="row" className="align-top color-weak w-1/3 pl-0">{c(
-                                        'Title'
-                                    ).t`Participants`}</TableCell>
-                                    <TableCell className="text-ellipsis">{participantsCount}</TableCell>
-                                </TableRow>
+                                {mlsGroupState.memberCount !== null && (
+                                    <TableRow>
+                                        <TableCell
+                                            type="header"
+                                            scope="row"
+                                            className="align-top color-weak w-1/3 pl-0"
+                                        >{c('Title').t`Participants`}</TableCell>
+                                        <TableCell className="text-ellipsis">{mlsGroupState.memberCount}</TableCell>
+                                    </TableRow>
+                                )}
                                 <TableRow>
                                     <TableCell type="header" scope="row" className="align-top color-weak w-1/3 pl-0">{c(
                                         'Title'
