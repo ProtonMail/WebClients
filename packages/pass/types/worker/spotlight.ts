@@ -60,8 +60,6 @@ export enum SpotlightMessage {
     AUTOTYPE_CONFIRM = 28,
     /** Autotype confirmation on desktop when using keyboard shortcut */
     AUTOTYPE_CONFIRM_SHORTCUT = 29,
-    /** Offline manual setup available */
-    OFFLINE_SETUP = 30,
     /** Access tokens settings discovery */
     ACCESS_TOKENS_DISCOVERY = 31,
     /** SSH Agent instructions modal */
