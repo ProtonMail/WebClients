@@ -14,9 +14,15 @@ import type { KtState } from '../kt';
 import type { MembersState } from '../members';
 import { unprivatizeMembersManual } from '../members/unprivatizeMembers';
 import type { OrganizationKeyState } from '../organizationKey';
+import type { OrganizationRolesState } from '../organizationRoles';
 import { ItemStatus, Phase } from './index';
 
-type RequiredState = GroupsState & GroupMembersState & MembersState & OrganizationKeyState & KtState;
+type RequiredState = GroupsState &
+    GroupMembersState &
+    MembersState &
+    OrganizationKeyState &
+    OrganizationRolesState &
+    KtState;
 
 type ScimDispatch = ThunkDispatch<RequiredState, ProtonThunkArguments, UnknownAction>;
 
