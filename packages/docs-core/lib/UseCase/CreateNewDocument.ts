@@ -3,6 +3,7 @@ import type { DriveCompat, DocumentNodeMeta } from '@proton/drive-store'
 import type { NodeMeta, DocumentType, DecryptedNode } from '@proton/docs-shared'
 import type { GetDocumentMeta } from './GetDocumentMeta'
 import { getErrorString } from '../Util/GetErrorString'
+import { getMyFilesNodeMeta } from '../DriveSDK/getMyFilesNodeMeta'
 
 /**
  * Creates a new document from within the Docs client. This is used when selecting "New Document" from the UI.
@@ -18,14 +19,16 @@ export class CreateNewDocument {
     siblingMeta: NodeMeta,
     siblingNode: DecryptedNode,
     documentType: DocumentType,
+    useSDK = false,
   ): Promise<Result<DocumentNodeMeta>> {
     try {
+      const getRoot = useSDK ? getMyFilesNodeMeta : () => this.driveCompat.getMyFilesNodeMeta()
       const parentMeta: NodeMeta = siblingNode.parentNodeId
         ? {
             volumeId: siblingMeta.volumeId,
             linkId: siblingNode.parentNodeId,
           }
-        : await this.driveCompat.getMyFilesNodeMeta()
+        : await getRoot()
 
       const name = await this.driveCompat.findAvailableNodeName(parentMeta, desiredName)
       const shellResult = await this.driveCompat.createDocumentNode(parentMeta, name, documentType)

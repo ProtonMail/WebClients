@@ -11,6 +11,7 @@ SDK switch flags:
 - DocsSharingModalDriveSDK - needs DocsRenameWithDriveSDK for document title cache
 - DocsMoveModalDriveSDK - needs DocsRenameWithDriveSDK because SDK rename updates cache (+ events)
 - DocsInvitationsDriveSDK - no dependencies
+- DocsDriveCompatSDK - no dependencies
 */
 
 export function useSharingModalDriveSdkEnabled() {
@@ -39,6 +40,10 @@ export function useMoveModalDriveSdkEnabled() {
 
 export function useInvitationsSdkEnabled() {
   return useFlag('DocsInvitationsDriveSDK')
+}
+
+export function useDriveCompatSDK() {
+  return useFlag('DocsDriveCompatSDK')
 }
 
 // Other flags
