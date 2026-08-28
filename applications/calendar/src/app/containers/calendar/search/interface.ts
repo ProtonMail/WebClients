@@ -14,9 +14,3 @@ export type VisualSearchItem = ESCalendarMetadata & {
     isSingleOccurrence?: boolean;
     isClosestToDate?: boolean;
 };
-
-export interface SearchModel {
-    keyword: string;
-    startDate?: Date;
-    endDate?: Date;
-}

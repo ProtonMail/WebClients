@@ -24,14 +24,14 @@ const getHasEdited = (keys: string[], model: any, otherModel: any) => {
     });
 };
 
-export const getHasEditedTimezone = ({ tzid }: DateTimeModel, { tzid: otherTzid }: DateTimeModel) => {
+const getHasEditedTimezone = ({ tzid }: DateTimeModel, { tzid: otherTzid }: DateTimeModel) => {
     return tzid !== otherTzid;
 };
 
 const getHasEditedHourMinutes = (a: Date, b: Date) =>
     a.getHours() !== b.getHours() || a.getMinutes() !== b.getMinutes();
 
-export const getHasEditedDateTime = (
+const getHasEditedDateTime = (
     { time, date }: DateTimeModel,
     { time: otherTime, date: otherDate }: DateTimeModel
 ) => {
@@ -60,7 +60,7 @@ const getHasEditedAttendees = (attendees: AttendeeModel[], otherAttendees: Atten
     });
 };
 
-export const getHasEditedNotifications = (
+const getHasEditedNotifications = (
     notifications: NotificationModel[],
     otherNotifications: NotificationModel[]
 ) => {

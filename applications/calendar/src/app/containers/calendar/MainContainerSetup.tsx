@@ -30,7 +30,7 @@ import EventActionContainer from './EventActionContainer';
 import ShareInvitationContainer from './ShareInvitationContainer';
 import getCalendarsEventCache from './eventStore/cache/getCalendarsEventCache';
 import type { CalendarsEventsCache } from './eventStore/interface';
-import useCalendarsEventsEventListener from './eventStore/useCalendarsEventsEventListener';
+import { useCalendarCacheEventListener } from './eventStore/useCalendarsEventsEventListener';
 import type { EventTargetAction } from './interface';
 import CalendarSearchProvider from './search/CalendarSearchProvider';
 
@@ -66,7 +66,7 @@ const MainContainerSetup = ({
 
     const getOpenedMailEvents = useGetOpenedMailEvents(drawerView);
     const calendarsEventsCacheRef = useRef<CalendarsEventsCache>(getCalendarsEventCache());
-    useCalendarsEventsEventListener(calendarsEventsCacheRef, allCalendarIDs, getOpenedMailEvents);
+    useCalendarCacheEventListener(calendarsEventsCacheRef, allCalendarIDs, getOpenedMailEvents);
 
     const calendarAlarmsCacheRef = useRef<CalendarsAlarmsCache>(getCalendarsAlarmsCache());
     useCalendarsAlarmsEventListeners(calendarAlarmsCacheRef, allCalendarIDs);

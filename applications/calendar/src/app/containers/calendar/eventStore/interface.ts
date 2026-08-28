@@ -61,8 +61,8 @@ export const getEventStoreRecordHasEventData = (
 
 export type RecurringEventsCache = Map<string, RecurringCache>;
 export type EventsCache = Map<string, CalendarEventStoreRecord>;
-export type FetchCache = Map<string, { promise?: Promise<void>; dateRange: [Date, Date] }>;
-export type FetchUidCache = Map<string, { promise?: Promise<void> }>;
+type FetchCache = Map<string, { promise?: Promise<void>; dateRange: [Date, Date] }>;
+type FetchUidCache = Map<string, { promise?: Promise<void> }>;
 export interface CalendarEventsCache {
     events: EventsCache;
     recurringEvents: RecurringEventsCache;

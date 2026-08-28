@@ -31,12 +31,6 @@ export const visualEventsSelector = createSelector([selectEvents, selectCalendar
     );
 });
 
-export const eventsSelector = createSelector([selectEvents, selectCalendarsWithMembers], (events, calendars) => {
-    return mapEventsWithCalendars(events, calendars);
-});
-
-export const isTmpEventSavingSelector = createSelector([selectIsTmpEventSaving], (tmpEventSaving) => tmpEventSaving);
-
 export const pendingUniqueIdsSelector = createSelector(
     [selectIsTmpEventSaving, selectEvents],
     (tmpEventSaving, events) => {

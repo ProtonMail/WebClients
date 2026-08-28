@@ -51,7 +51,7 @@ const totalMinutes = 24 * 60;
 
 const defaultFormat = (utcDate: Date) => format(utcDate, 'p');
 
-export interface TimeGridActionRef {
+interface TimeGridActionRef {
     scrollToNow: () => void;
 }
 

@@ -45,9 +45,8 @@
             "ignore": ["**"]
         },
         "applications/calendar": {
-            "entry": ["src/app/index.{ts,tsx}", "src/app/bookings.tsx", "src/**/*.stories.tsx"],
-            "project": ["src/**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "entry": ["src/app/index.{ts,tsx}", "src/app/bookings.tsx", "src/**/*.stories.tsx", "webpack.config.{js,ts}"],
+            "project": ["src/**/*.{ts,tsx}"]
         },
         "applications/drive": {
             "entry": ["src/app/index.{ts,tsx}", "src/app/urls.tsx", "src/**/*.stories.tsx"],
