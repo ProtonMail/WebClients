@@ -100,7 +100,6 @@ enum AccountFlag {
     SsoForPbs = 'SsoForPbs',
     DataRetentionPolicy = 'DataRetentionPolicy',
     UserGroupsNoCustomDomain = 'UserGroupsNoCustomDomain',
-    UserGroupsPassBusiness = 'UserGroupsPassBusiness',
     DriveDashboard = 'DriveDashboard',
     SocialRecoverySklDisabled = 'SocialRecoverySklDisabled',
     MembersRemote = 'MembersRemote',

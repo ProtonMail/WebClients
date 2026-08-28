@@ -47,7 +47,6 @@ export type Flags = {
     canDisplayNonPrivateEmailPhone: boolean;
     isUserGroupsFeatureEnabled: boolean;
     isUserGroupsNoCustomDomainEnabled: boolean;
-    isUserGroupsPassBusinessEnabled: boolean;
     isScribeEnabled: boolean;
     isZoomIntegrationEnabled: boolean;
     isProtonMeetIntegrationEnabled: boolean;
