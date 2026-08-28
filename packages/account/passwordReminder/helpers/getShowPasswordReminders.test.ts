@@ -12,7 +12,7 @@ import { getShowPasswordReminders } from './getShowPasswordReminders';
 const now = new Date('2005-05-25');
 jest.useFakeTimers().setSystemTime(now);
 
-const makeUnleash = (flags: Record<string, boolean> = { PasswordReminders: true }) =>
+const makeUnleash = (flags: Record<string, boolean> = {}) =>
     ({ isEnabled: jest.fn((flag: string) => flags[flag] || false) }) as unknown as UnleashClient;
 
 const makeUser = (overrides: Partial<UserModel> = {}): UserModel =>
@@ -66,19 +66,6 @@ const makeUserSettings = ({
 
 describe('getShowPasswordReminders', () => {
     describe('isAvailable', () => {
-        it('returns false when the PasswordReminders flag is disabled', () => {
-            const unleashClient = makeUnleash({ PasswordReminders: false });
-
-            const result = getShowPasswordReminders({
-                unleashClient,
-                user: makeUser(),
-                userSettings: makeUserSettings(),
-            });
-
-            expect(result).toBe(false);
-            expect(unleashClient.isEnabled).toHaveBeenCalledWith('PasswordReminders');
-        });
-
         it('returns false when the user is not private', () => {
             const user = makeUser({ isPrivate: false });
 
@@ -122,7 +109,7 @@ describe('getShowPasswordReminders', () => {
         expect(result).toBe(false);
     });
 
-    it('returns true when flag enabled, user is private, and reminder time is in the past', () => {
+    it('returns true when the user is private and the reminder time is in the past', () => {
         const result = getShowPasswordReminders({
             unleashClient: makeUnleash(),
             user: makeUser(),
@@ -148,7 +135,7 @@ describe('getShowPasswordReminders', () => {
     });
 
     describe('organization members', () => {
-        const bothFlags = { PasswordReminders: true, PasswordRemindersOrg: true };
+        const orgFlag = { PasswordRemindersOrg: true };
 
         it('returns false when the PasswordRemindersOrg flag is disabled', () => {
             const result = getShowPasswordReminders({
@@ -163,7 +150,7 @@ describe('getShowPasswordReminders', () => {
 
         it('returns true when the PasswordRemindersOrg flag is enabled', () => {
             const result = getShowPasswordReminders({
-                unleashClient: makeUnleash(bothFlags),
+                unleashClient: makeUnleash(orgFlag),
                 user: makeUser({ isMember: true, isSelf: true }),
                 userSettings: makeUserSettings(),
                 organization: configuredOrganization,
@@ -174,7 +161,7 @@ describe('getShowPasswordReminders', () => {
 
         it('treats a non-private member the same as a private one', () => {
             const result = getShowPasswordReminders({
-                unleashClient: makeUnleash(bothFlags),
+                unleashClient: makeUnleash(orgFlag),
                 user: makeUser({ isMember: true, isSelf: true, isPrivate: false }),
                 userSettings: makeUserSettings(),
                 organization: configuredOrganization,
@@ -185,7 +172,7 @@ describe('getShowPasswordReminders', () => {
 
         it('returns false when an admin is signed in to the account via the organization key', () => {
             const result = getShowPasswordReminders({
-                unleashClient: makeUnleash(bothFlags),
+                unleashClient: makeUnleash(orgFlag),
                 user: makeUser({ isMember: true, isSelf: false, isPrivate: false }),
                 userSettings: makeUserSettings(),
                 organization: configuredOrganization,
@@ -209,7 +196,7 @@ describe('getShowPasswordReminders', () => {
 
         it('returns true when the PasswordRemindersOrg flag is enabled', () => {
             const result = getShowPasswordReminders({
-                unleashClient: makeUnleash({ PasswordReminders: true, PasswordRemindersOrg: true }),
+                unleashClient: makeUnleash({ PasswordRemindersOrg: true }),
                 user: makeUser({ isAdmin: true, isSelf: true }),
                 userSettings: makeUserSettings(),
                 organization: configuredOrganization,
