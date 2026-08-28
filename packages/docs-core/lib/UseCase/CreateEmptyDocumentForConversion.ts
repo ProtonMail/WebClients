@@ -6,6 +6,7 @@ import { getErrorString } from '../Util/GetErrorString'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { getDocsConversionType, isConvertibleToProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 import { getNodeNameWithoutExtension } from '../Util/getNodeNameWithoutExtension'
+import { getMyFilesNodeMeta } from '../DriveSDK/getMyFilesNodeMeta'
 
 /**
  * Creates a new empty document shell file. This file will then be opened, and the contents will be converted by the editor.
@@ -16,20 +17,24 @@ export class CreateEmptyDocumentForConversion implements UseCaseInterface<FileTo
     private getDocumentMeta: GetDocumentMeta,
   ) {}
 
-  async execute({
-    node,
-    contents,
-  }: {
-    node: DecryptedNode
-    contents: Uint8Array<ArrayBuffer>
-  }): Promise<Result<FileToDocConversionResult>> {
+  async execute(
+    {
+      node,
+      contents,
+    }: {
+      node: DecryptedNode
+      contents: Uint8Array<ArrayBuffer>
+    },
+    useSDK = false,
+  ): Promise<Result<FileToDocConversionResult>> {
     try {
+      const getRoot = useSDK ? getMyFilesNodeMeta : () => this.driveCompat.getMyFilesNodeMeta()
       const parentMeta: NodeMeta = node.parentNodeId
         ? {
             volumeId: node.volumeId,
             linkId: node.parentNodeId,
           }
-        : await this.driveCompat.getMyFilesNodeMeta()
+        : await getRoot()
 
       const nodeNameWithoutExtension = getNodeNameWithoutExtension(node)
       const newDocName = await this.driveCompat.findAvailableNodeName(parentMeta, nodeNameWithoutExtension)

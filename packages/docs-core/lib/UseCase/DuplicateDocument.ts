@@ -7,6 +7,7 @@ import type { GetDocumentMeta } from './GetDocumentMeta'
 import { getErrorString } from '../Util/GetErrorString'
 import { getPlatformFriendlyDateForFileName } from '@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName'
 import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
+import { getMyFilesNodeMeta } from '../DriveSDK/getMyFilesNodeMeta'
 
 export class DuplicateDocument {
   constructor(
@@ -50,9 +51,10 @@ export class DuplicateDocument {
     originalName: string,
     state: Uint8Array<ArrayBuffer>,
     documentType: DocumentType = 'doc',
+    useSDK = false,
   ): Promise<Result<DocumentNodeMeta>> {
     try {
-      const parentMeta: NodeMeta = await this.driveCompat.getMyFilesNodeMeta()
+      const parentMeta: NodeMeta = useSDK ? await getMyFilesNodeMeta() : await this.driveCompat.getMyFilesNodeMeta()
       return await this.genericDuplicate(originalName, parentMeta, state, documentType)
     } catch (error) {
       return Result.fail(getErrorString(error) ?? 'Failed to duplicate document')
