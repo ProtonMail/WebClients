@@ -949,8 +949,6 @@ const PlanSelection = (props: Props) => {
         </div>
     );
 
-    const isMeetAvailable = useFlag('PMVC2025');
-
     const logosRow = (
         <div className="my-6 flex justify-center flex-nowrap items-center color-weak gap-1 lg:gap-2">
             <MailLogo variant="glyph-only" />
@@ -962,12 +960,8 @@ const PlanSelection = (props: Props) => {
             <VpnLogo variant="glyph-only" />
             <IcPlus alt="+" />
             <PassLogo variant="glyph-only" />
-            {isMeetAvailable && (
-                <>
-                    <IcPlus alt="+" />
-                    <MeetLogo variant="glyph-only" />
-                </>
-            )}
+            <IcPlus alt="+" />
+            <MeetLogo variant="glyph-only" />
             <IcPlus alt="+" />
             <WalletLogo variant="glyph-only" />
         </div>
