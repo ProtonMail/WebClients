@@ -184,7 +184,10 @@ export const useMemberActions = ({
         permissions === null ||
         (organization?.UsedMembers || 0) >= (organization?.MaxMembers || 0);
 
-    const showAddAddress = !hasExternalMemberCapableB2BPlan || hasPassB2BPlan || hasMeetB2BPlanAndVerifiedCustomDomain;
+    // "Add address" is currently broken for MSP subsidiary orgs, so hide it for them.
+    const showAddAddress =
+        !isSubsidiaryOrg &&
+        (!hasExternalMemberCapableB2BPlan || hasPassB2BPlan || hasMeetB2BPlanAndVerifiedCustomDomain);
 
     const hasReachedInvitationLimit = organization?.InvitationsRemaining === 0;
     const disableInviteUserButton =
