@@ -121,6 +121,7 @@ enum AccountFlag {
     EnableZenDeskAIAgent = 'EnableZenDeskAIAgent',
     WorldCupRetention = 'WorldCupRetention',
     DisableSsoBackupPassword = 'DisableSsoBackupPassword',
+    SpacesAvailable = 'SpacesAvailable',
 }
 
 enum PaymentsFlag {

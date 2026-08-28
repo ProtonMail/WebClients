@@ -21,6 +21,7 @@ export const AppSwitcher = ({ hasBorder, app }: { hasBorder?: boolean; app: APP_
     const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isMeetAvailable = useFlag('PMVC2025');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
+    const isSpacesAvailable = useFlag('SpacesAvailable');
 
     if (viewportWidth['<=small']) {
         const availableApps = getAvailableApps({
@@ -31,6 +32,7 @@ export const AppSwitcher = ({ hasBorder, app }: { hasBorder?: boolean; app: APP_
             isSheetsAvailable,
             isMeetAvailable,
             isAuthenticatorAvailable,
+            isSpacesAvailable,
         });
         if (availableApps.length <= 1) {
             return null;

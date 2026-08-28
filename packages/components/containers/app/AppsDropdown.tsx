@@ -45,6 +45,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
         const isSheetsAvailable = useFlag('DocsSheetsEnabled');
         const isMeetAvailable = useFlag('PMVC2025');
         const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
+        const isSpacesAvailable = useFlag('SpacesAvailable');
 
         const availableApps = getAvailableApps({
             context: 'dropdown',
@@ -54,6 +55,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
             isSheetsAvailable,
             isMeetAvailable,
             isAuthenticatorAvailable,
+            isSpacesAvailable,
         });
 
         if (availableApps.length <= 1) {

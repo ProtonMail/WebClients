@@ -5,7 +5,13 @@ import clsx from '@proton/utils/clsx';
 import Logo from '../../components/logo/Logo';
 import NewBadge from '../../components/newBadge/NewBadge';
 
-const NEW_BADGE_APPS: APP_NAMES[] = [APPS.PROTONLUMO, APPS.PROTONMEET, APPS.PROTONSHEETS, APPS.PROTONAUTHENTICATOR];
+const NEW_BADGE_APPS: APP_NAMES[] = [
+    APPS.PROTONLUMO,
+    APPS.PROTONMEET,
+    APPS.PROTONSHEETS,
+    APPS.PROTONAUTHENTICATOR,
+    APPS.PROTONSPACES,
+];
 
 interface ProductIconProps {
     appToLinkTo: APP_NAMES;

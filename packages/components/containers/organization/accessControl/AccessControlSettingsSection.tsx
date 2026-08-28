@@ -27,6 +27,7 @@ import {
     MAIL_APP_NAME,
     MEET_APP_NAME,
     PASS_APP_NAME,
+    SPACES_APP_NAME,
     VPN_APP_NAME,
     WALLET_APP_NAME,
 } from '@proton/shared/lib/constants';
@@ -98,6 +99,7 @@ const AccessControlSettingsSection = () => {
     const [subscription] = useSubscription();
 
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
+    const isSpacesAvailable = useFlag('SpacesAvailable');
     const isMeetAvailable = useFlag('PMVC2025');
 
     const { createNotification } = useNotifications();
@@ -128,7 +130,7 @@ const AccessControlSettingsSection = () => {
     const accessControlItems: AccessControlItem[] = [
         {
             // So I feel this is a hacky way, but can't suggest a better solution right now. Case: subusers of
-            // Lumo B2B, VPN B2B, Pass B2B, Drive B2B don't have access to Mail. However without this conditions
+            // Lumo B2B, VPN B2B, Pass B2B, Drive B2B don't have access to Mail. However, without these conditions
             // admins would still see the toggle to enable/disable Mail for their subusers. We need a way to
             // check if _subusers_ of certain org have access to certain products, not just Mail. Perhaps the
             // proper way already exists. The best idea that I had is using Organization.PlanFlags, but I'm not
@@ -190,6 +192,14 @@ const AccessControlSettingsSection = () => {
             logo: <Logo appName={APPS.PROTONMEET} variant="glyph-only" size={8} />,
             targetProducts: [Product.Meet],
             showSSOBadge: !appSupportsSSO(APPS.PROTONMEET) && hasSsoConfig,
+        },
+        {
+            available: isSpacesAvailable,
+            title: SPACES_APP_NAME,
+            description: c('Info').t`Secure and end-to-end encrypted`,
+            logo: <Logo appName={APPS.PROTONSPACES} variant="glyph-only" size={8} />,
+            targetProducts: [Product.Spaces],
+            showSSOBadge: !appSupportsSSO(APPS.PROTONSPACES) && hasSsoConfig,
         },
     ];
 

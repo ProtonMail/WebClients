@@ -231,6 +231,7 @@ const MainContainer = () => {
     const isMeetAvailable = useFlag('PMVC2025');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isMspEnabled = useFlag('MspEnabled');
+    const isSpacesAvailable = useFlag('SpacesAvailable');
 
     const { canUseCategoryView } = useCategoriesData();
 
@@ -510,6 +511,7 @@ const MainContainer = () => {
         isMeetAvailable,
         isSheetsAvailable,
         isAuthenticatorAvailable,
+        isSpacesAvailable,
     });
 
     // Should never happen that available apps is empty, but just as a safety mechanism anyway
