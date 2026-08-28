@@ -28,19 +28,10 @@ export const useMeetingAuthentication = () => {
     );
 
     const getAccessDetails = useCallback(
-        async ({
-            displayName,
-            token,
-            encryptedDisplayName,
-        }: {
-            displayName: string;
-            token: string;
-            encryptedDisplayName: string;
-        }) => {
+        async ({ token, encryptedDisplayName }: { token: string; encryptedDisplayName: string }) => {
             try {
                 const { AccessToken, WebsocketUrl } = await requestAccessToken(api, {
                     meetingLinkName: token,
-                    displayName,
                     encryptedDisplayName,
                 });
 

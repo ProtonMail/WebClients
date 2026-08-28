@@ -37,7 +37,7 @@ const mockMeetCoreClient = {
 const mockParticipantMap = {
     test: {
         ParticipantUUID: 'test',
-        DisplayName: 'test',
+        EncryptedDisplayName: 'encrypted-test',
     },
 };
 

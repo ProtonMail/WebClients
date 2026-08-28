@@ -133,7 +133,6 @@ export const useMeetingConnection = ({
 
             const t0 = performance.now();
             const { websocketUrl, accessToken } = await getAccessDetails({
-                displayName: sanitizedDisplayName,
                 token: meetingToken,
                 encryptedDisplayName,
             });
