@@ -1,4 +1,4 @@
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { ClientMessageWithDocumentUpdates, DocumentUpdate, ServerMessageWithMessageAcks } from '@proton/docs-proto'
 import type { AckLedgerInterface } from './AckLedgerInterface'
 import metrics from '@proton/metrics'

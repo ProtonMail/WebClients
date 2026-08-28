@@ -33,7 +33,7 @@ import * as ReactTestUtils from '../../Utils/react-test-utils'
 import type { ListItemNode, ListNode } from '@lexical/list'
 import { $isListItemNode, $createListItemNode, $createListNode, $isListNode } from '@lexical/list'
 import { $selectionInsertClipboardNodes } from './selectionInsertClipboardNodes'
-import type { Logger } from '@proton/utils/logs'
+import type { Logger } from '@proton/shared/lib/logs'
 import { $createHorizontalRuleNode, $isHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
 import type { TableCellNode, TableRowNode } from '@lexical/table'
 import {

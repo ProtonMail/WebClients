@@ -1,5 +1,5 @@
 import type { AuthenticatedDocControllerInterface, EditorControllerInterface } from '@proton/docs-core'
-import { isDevOrBlack } from '@proton/utils/env'
+import { isDevOrBlack } from '@proton/shared/lib/env'
 import { useEffect, useRef } from 'react'
 
 const ARTIFACTS = {

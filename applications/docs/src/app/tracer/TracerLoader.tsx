@@ -2,7 +2,7 @@ import { useState } from 'react'
 import type { PropsWithChildren } from 'react'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
-import { isDevOrBlack } from '@proton/utils/env'
+import { isDevOrBlack } from '@proton/shared/lib/env'
 
 // enable tracer on all environment except for dev and black
 const ENABLE_TRACER = !isDevOrBlack()

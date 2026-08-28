@@ -1,4 +1,4 @@
-import { Logger } from '@proton/utils/logs'
+import { Logger } from '@proton/shared/lib/logs'
 import type {
   ClientToEditorGenericMessage,
   ClientToEditorInvokationMessage,

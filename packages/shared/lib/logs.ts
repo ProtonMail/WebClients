@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
-import { getIsIframe } from '@proton/shared/lib/helpers/browser';
-import { traceError } from '@proton/shared/lib/helpers/sentry';
+import { Availability, AvailabilityTypes } from '@proton/utils/availability';
 
-import { Availability, AvailabilityTypes } from './availability';
+import { getIsIframe } from './helpers/browser';
+import { traceError } from './helpers/sentry';
 
 type DebugLogDetail = {
     type: string;

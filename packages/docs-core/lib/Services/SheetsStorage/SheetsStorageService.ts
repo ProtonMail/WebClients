@@ -4,7 +4,7 @@ import type { SheetsAction, SheetsDatabaseSchema, SheetsPatches } from '../../Da
 import { SheetsPatchesType } from '../../Database/SheetsDBSchema'
 import type { EncryptionService } from '../Encryption/EncryptionService'
 import type { EncryptionContext } from '../Encryption/EncryptionContext'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { getClientKey } from '@proton/shared/lib/authentication/clientKey'
 import type { AnyNodeMeta } from '@proton/drive-store/lib/NodeMeta'
 import { nodeMetaUniqueId } from '@proton/drive-store/lib/NodeMeta'

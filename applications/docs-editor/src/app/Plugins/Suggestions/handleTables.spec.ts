@@ -18,7 +18,7 @@ import { $isTableNode } from '@lexical/table'
 import type { ProtonNode } from './ProtonNode'
 import { $isSuggestionNode } from './ProtonNode'
 import { $createTableNodeWithDimensions } from '../Table/CreateTableNodeWithDimensions'
-import type { Logger } from '@proton/utils/logs'
+import type { Logger } from '@proton/shared/lib/logs'
 
 const onSuggestionCreation = jest.fn()
 const logger = {

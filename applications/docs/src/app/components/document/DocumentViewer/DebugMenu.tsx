@@ -14,7 +14,7 @@ import type {
 import type { DocumentType } from '@proton/docs-shared'
 import clsx from '@proton/utils/clsx'
 import { ConnectionCloseReason } from '@proton/docs-proto'
-import { isDevOrBlack } from '@proton/utils/env'
+import { isDevOrBlack } from '@proton/shared/lib/env'
 import { Tooltip } from '@proton/docs-shared/components/ui/ui'
 import * as Ariakit from '@ariakit/react'
 

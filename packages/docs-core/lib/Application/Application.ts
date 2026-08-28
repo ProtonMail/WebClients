@@ -7,7 +7,7 @@ import type { DocLoaderInterface } from '../Services/DocumentLoader/DocLoaderInt
 import { SyncedEditorState, type InternalEventBusInterface } from '@proton/docs-shared'
 import type { ApplicationInterface } from './ApplicationInterface'
 import type { WebsocketServiceInterface } from '../Services/Websockets/WebsocketServiceInterface'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { ImageProxyParams } from '../Api/Types/ImageProxyParams'
 import type { CustomWindow } from './Window'
 import type { RecentDocumentsInterface } from '../Services/recent-documents'
