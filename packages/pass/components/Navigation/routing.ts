@@ -86,7 +86,8 @@ export const getMonitorRoute = () => getLocalPath('monitor');
 
 export const getInitialFilters = (): ItemFilters => ({
     search: '',
-    sort: 'relevant',
+    // TODO: replace to `sort: 'relevant'` before enabling PassFeature.PassWeb__V1_41__RelevantSort
+    sort: 'recent',
     type: '*',
     selectedShareId: null,
 });
