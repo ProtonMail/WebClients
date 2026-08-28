@@ -13,9 +13,14 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "@proton/chargebee": "workspace:^",
         "@proton/shared": "workspace:^",
         "@proton/styles": "workspace:^",
         "@proton/utils": "workspace:^",
+        "@sentry/browser": "^7.120.4",
+        "date-fns": "^2.30.0",
+        "ibantools": "4.5.4",
+        "lodash": "^4.18.1",
         "ttag": "^1.8.12",
         "vat-validation": "^3.0.0"
     },
