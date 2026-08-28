@@ -3,9 +3,9 @@ import type { PersonalizationSettings } from '../redux/slices/personalization';
 import { attachmentDataCache } from '../services/attachmentDataCache';
 import type { Attachment, Message } from '../types';
 import { Role } from '../types';
+import { MAX_IMAGES_PER_REQUEST, OMITTED_IMAGE_PLACEHOLDER } from './attachments';
 import { ENABLE_U2L_ENCRYPTION } from './config';
 import { prepareTurns } from './index';
-import { MAX_IMAGES_PER_REQUEST, OMITTED_IMAGE_PLACEHOLDER } from './attachments';
 
 describe('llm encryption configuration', () => {
     it('enables U2L encryption', () => {
@@ -98,7 +98,17 @@ describe('prepareTurns — attachment content blocks', () => {
             conversationId: 'conv-1',
         } as unknown as Message;
 
-        const turns = prepareTurns([message], personalization, undefined, undefined, undefined, undefined, false, true);
+        const turns = prepareTurns(
+            [message],
+            personalization,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            false,
+            'off',
+            true
+        );
         expect(turns[0]?.role).toBe(Role.System);
         expect(turns[0]?.content).toContain('hyperlink');
         expect(turns[0]?.content).toContain('web_extract is disabled');
