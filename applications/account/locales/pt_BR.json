@@ -557,6 +557,9 @@
       "Clear all formatting": [
         "Limpar toda a formatação"
       ],
+      "Clear conversation": [
+        "Limpar conversa"
+      ],
       "Close": [
         "Fechar"
       ],
@@ -1325,6 +1328,9 @@
       "Keep editing": [
         "Continuar editando"
       ],
+      "Keep going": [
+        "Continue"
+      ],
       "Keep logo": [
         "Manter logotipo"
       ],
@@ -1802,6 +1808,9 @@
       "Select time zone": [
         "Selecionar fuso horário"
       ],
+      "Send": [
+        "Enviar"
+      ],
       "send auto-reply email": [
         "enviar e-mail de resposta automática"
       ],
@@ -1961,6 +1970,12 @@
       "Stay": [
         "Permanecer"
       ],
+      "Stop": [
+        "Parar"
+      ],
+      "Stop here": [
+        "Parar aqui"
+      ],
       "Stop using single sign-on": [
         "Parar de usar início de sessão único"
       ],
@@ -1996,6 +2011,9 @@
       ],
       "Test SAML configuration": [
         "Testar configuração do SAML"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Alternar o ${ LUMO_SHORT_APP_NAME }"
       ],
       "Top up": [
         "Recarregar"
@@ -12949,6 +12967,9 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Essas credenciais não podem ser usadas para fazer login em nossos aplicativos oficiais ${ VPN_APP_NAME }. ${ learnMore }"
       ],
+      "Thinking about this": [
+        "Pensando nisso"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Essa conta foi suspensa devido a uma potencial violação da política."
       ],
@@ -19621,6 +19642,14 @@
         "Seu plano inclui no máximo ${ humanReadableAvailableSpace } a mais de armazenamento."
       ]
     },
+    "organization key reset": {
+      "Reset key": [
+        "Redefinir chave"
+      ],
+      "See users": [
+        "Ver usuários"
+      ]
+    },
     "Organization logo upload": {
       "Avoid overly compressed images.": [
         "Evite imagens muitos comprimidas."
@@ -20168,12 +20197,6 @@
       "To enable administrator rights on your account, activate the organization key.": [
         "Para ativar os direitos de administrador em sua conta, ative a chave da organização."
       ],
-      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
-        "Utilize um método de recuperação de dados ou redefina a chave da organização para restaurar os privilégios de administrador."
-      ],
-      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
-        "Utilize um método de recuperação de dados, entre em contato com outro administrador ou redefina a chave da organização para restaurar os privilégios de administrador."
-      ],
       "We couldn't verify the authenticity of this identity.": [
         "Não foi possível verificar a autenticidade desta identidade."
       ],
@@ -20586,6 +20609,12 @@
       ],
       "Anytown": [
         "Nova Esperança"
+      ],
+      "Ask anything…": [
+        "Pergunte qualquer coisa…"
+      ],
+      "billing@company.com": [
+        "faturamento@empresa.com"
       ],
       "Choose a name": [
         "Escolha um nome"
@@ -27072,6 +27101,9 @@
       ],
       "Stay secure and connected anywhere": [
         "Fique seguro e conectado em qualquer lugar"
+      ],
+      "Still working on it": [
+        "Ainda estou trabalhando nisso"
       ],
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "Fortaleça sua segurança em todos os seus dispositivos com ${ passPlusPlanName }. ${ upgradeButton }"
