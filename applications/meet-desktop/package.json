@@ -8,6 +8,7 @@
         "email": "contact@protonmail.com",
         "url": "https://proton.me"
     },
+    "type": "commonjs",
     "main": ".webpack/main",
     "scripts": {
         "check": "yarn run check:format && yarn run check:lint && yarn run check:types",
