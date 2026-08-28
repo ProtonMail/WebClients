@@ -19,6 +19,7 @@ export interface GetAvailableAppsByUserTypeArguments {
     isMeetAvailable: boolean;
     isSheetsAvailable: boolean;
     isAuthenticatorAvailable: boolean;
+    isSpacesAvailable: boolean;
     oauth?: boolean;
 }
 
@@ -39,6 +40,7 @@ const allApps: APP_NAMES[] = [
     APPS.PROTONLUMO,
     APPS.PROTONMEET,
     APPS.PROTONAUTHENTICATOR,
+    APPS.PROTONSPACES,
 ];
 
 const allAppsSet: Set<APP_NAMES> = new Set(allApps);
@@ -87,6 +89,7 @@ const getAvailableAppsByUser = (options: GetAvailableAppsByUserTypeArguments): A
             APPS.PROTONLUMO,
             APPS.PROTONMEET,
             APPS.PROTONAUTHENTICATOR,
+            APPS.PROTONSPACES,
         ]);
     }
 
@@ -123,6 +126,10 @@ export const getAvailableApps = (
     if (options.context === 'dropdown' && !options.isAuthenticatorAvailable) {
         removeApps.add(APPS.PROTONAUTHENTICATOR);
     }
+    if (options.context === 'dropdown' && !options.isSpacesAvailable) {
+        removeApps.add(APPS.PROTONSPACES);
+    }
+
     const availableAppsByUser = getAvailableAppsByUser(options);
     const availableAppsByOrganization = getAvailableAppsByOrganization(options);
     const forbiddenApps = getForbiddenApps(options.user);
