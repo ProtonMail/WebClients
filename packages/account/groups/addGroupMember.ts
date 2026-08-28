@@ -34,7 +34,7 @@ import { type GroupsState, getGroupRoles } from '../groups/index';
 import { disableGroupAddressEncryption } from '../groups/setGroupAddressFlags';
 import type { KtState } from '../kt';
 import { type MembersState, getMemberAddresses, invalidateMemberRoles, membersThunk } from '../members';
-import { promoteMemberToOrgAdmin } from '../members/actions';
+import { provideOrgKeyAccessToMember } from '../members/actions';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
 import type { OrganizationRolesState } from '../organizationRoles';
 import { isOrgKeyRequired } from '../organizationRoles/helpers';
@@ -315,8 +315,13 @@ export const addGroupMembersThunk = ({
                     return;
                 }
 
-                if (shouldPromote) {
-                    await dispatch(promoteMemberToOrgAdmin({ member, api: extra.api }));
+                const { forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey } = allMemberPublicKeys[index];
+                const isExternalGroupMember =
+                    getGroupMemberType(forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey) ===
+                    GroupMemberType.External;
+
+                if (shouldPromote && !isExternalGroupMember) {
+                    await dispatch(provideOrgKeyAccessToMember({ member, api: extra.api }));
                 }
 
                 dispatch(invalidateMemberRoles({ member }));
