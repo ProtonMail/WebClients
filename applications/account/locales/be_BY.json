@@ -347,6 +347,9 @@
       "Clear all formatting": [
         "Ачысціць усё фарматаванне"
       ],
+      "Clear conversation": [
+        "Ачысціць размову"
+      ],
       "Close": [
         "Закрыць"
       ],
@@ -457,6 +460,9 @@
       ],
       "Copy address": [
         "Скапіяваць адрас"
+      ],
+      "Copy debug transcript": [
+        "Скапіяваць расшыфроўку адладкі"
       ],
       "Copy key to the clipboard": [
         "Скапіяваць ключ у буфер абмену"
@@ -1094,6 +1100,9 @@
       "Keep editing": [
         "Працягнуць рэдагаванне"
       ],
+      "Keep going": [
+        "Працягваць"
+      ],
       "Keep logo": [
         "Пакінуць лагатып"
       ],
@@ -1559,6 +1568,9 @@
       "Select time zone": [
         "Выберыце часавы пояс"
       ],
+      "Send": [
+        "Адправіць"
+      ],
       "send auto-reply email": [
         "адправіць ліст з аўтаматычным адказам"
       ],
@@ -1715,6 +1727,12 @@
       "Stay": [
         "Застацца"
       ],
+      "Stop": [
+        "Спыніць"
+      ],
+      "Stop here": [
+        "Спыніцца тут"
+      ],
       "Stop using single sign-on": [
         "Спыніць выкарыстанне адзінага ўваходу"
       ],
@@ -1750,6 +1768,9 @@
       ],
       "Test SAML configuration": [
         "Тэст канфігурацыі SAML"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Перайсці да ${ LUMO_SHORT_APP_NAME }"
       ],
       "Top up": [
         "Папоўніць"
@@ -10940,6 +10961,9 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "Аднаўленне даных патрабуе параметр скідання пароля (электронная пошта або SMS)"
       ],
+      "Debug transcript copied": [
+        "Расшыфроўка адладкі скапіявана"
+      ],
       "dedicated servers": [
         "вылучаныя серверы"
       ],
@@ -11488,6 +11512,9 @@
       ],
       "How your emergency contact can change your password for you:": [
         "Якім чынам ваш экстранны кантакт можа змяніць ваш пароль:"
+      ],
+      "I have not finished this one yet.": [
+        "Я яшчэ не завяршыў гэта."
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -12869,6 +12896,9 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Гэтыя ўліковыя даныя не могуць быць выкарыстаны для ўваходу ў нашы афіцыйныя праграмы ${ VPN_APP_NAME }. ${ learnMore }"
       ],
+      "Thinking about this": [
+        "Падумайце аб гэтым"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Дзеянне гэтага ўліковага запісу было прыпынена з прычыны патэнцыйнага парушэння ўмоў выкарыстання."
       ],
@@ -12919,6 +12949,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Цяпер гэта ваш ${ defaultEmailAddress } для адпраўкі новых паведамленняў."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "На гэта спатрэбіцца шмат крокаў. Працягваць?"
       ],
       "This is the password you used before the password reset.": [
         "Гэта пароль, які вы выкарыстоўвалі перад скіданнем пароля."
@@ -20114,12 +20147,6 @@
       "To enable administrator rights on your account, activate the organization key.": [
         "Актывуйце ключ арганізацыі, каб уключыць правы адміністратара ў вашым уліковым запісе."
       ],
-      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
-        "Скарыстайце спосабам аднаўлення даных або скіньце ключ арганізацыі, каб аднавіць правы адміністратара."
-      ],
-      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
-        "Скарыстайце спосабам аднаўлення даных, звяжыцеся з іншым адміністратарам або скіньце ключ арганізацыі, каб аднавіць правы адміністратара."
-      ],
       "We couldn't verify the authenticity of this identity.": [
         "Немагчыма спраўдзіць аўтэнтыфікацыю гэтай ідэнтычнасці."
       ],
@@ -20536,6 +20563,9 @@
       ],
       "Anytown": [
         "Полацк"
+      ],
+      "Ask anything…": [
+        "Спытайце што-небудзь…"
       ],
       "Choose a name": [
         "Выберыце назву"
@@ -27079,6 +27109,9 @@
       ],
       "Stay secure and connected anywhere": [
         "Заставайцеся ў бяспецы і на сувязі ў любым месцы"
+      ],
+      "Still working on it": [
+        "Усё яшчэ працуем над гэтым"
       ],
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "Умацуйце сваю бяспеку на ўсіх вашых прыладах з дапамогай ${ passPlusPlanName }. ${ upgradeButton }"

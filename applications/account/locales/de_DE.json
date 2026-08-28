@@ -605,6 +605,9 @@
       "Clear all formatting": [
         "Alle Formatierungen entfernen"
       ],
+      "Clear conversation": [
+        "Unterhaltung entfernen"
+      ],
       "Close": [
         "Schließen"
       ],
@@ -721,6 +724,9 @@
       ],
       "Copy address": [
         "Adresse kopieren"
+      ],
+      "Copy debug transcript": [
+        "Fehlerbehebungsprotokoll kopieren"
       ],
       "Copy key to the clipboard": [
         "Schlüssel in die Zwischenablage kopieren"
@@ -1358,6 +1364,9 @@
       "Invite user": [
         "Benutzer einladen"
       ],
+      "Invoice options": [
+        "Rechnungsoptionen"
+      ],
       "Italic": [
         "Kursiv"
       ],
@@ -1853,6 +1862,9 @@
       "Select time zone": [
         "Zeitzone auswählen"
       ],
+      "Send": [
+        "Senden"
+      ],
       "send auto-reply email": [
         "automatische E-Mail-Antwort senden"
       ],
@@ -1891,6 +1903,9 @@
       ],
       "Set catch-all": [
         "Catch-All festlegen"
+      ],
+      "Set invoice email": [
+        "Rechnungs-E-Mail-Adresse festlegen"
       ],
       "Set new password": [
         "Neues Passwort festlegen"
@@ -2012,6 +2027,9 @@
       "Stay": [
         "Nicht schließen"
       ],
+      "Stop": [
+        "Stoppen"
+      ],
       "Stop using single sign-on": [
         "Single Sign-on nicht mehr verwenden"
       ],
@@ -2053,6 +2071,9 @@
       ],
       "Test SAML configuration": [
         "SAML-Konfiguration testen"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } umschalten"
       ],
       "Top up": [
         "Aufladen"
@@ -2098,6 +2119,9 @@
       ],
       "Update": [
         "Aktualisieren"
+      ],
+      "Update email": [
+        "E-Mail-Adresse aktualisieren"
       ],
       "Update recovery file": [
         "Wiederherstellungsdatei aktualisieren"
@@ -11204,6 +11228,9 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "Datenwiederherstellung benötigt eine Option zur Passwortzurücksetzung (E-Mail oder SMS)"
       ],
+      "Debug transcript copied": [
+        "Fehlerbehebungsprotokoll kopiert"
+      ],
       "dedicated servers": [
         "dedizierte Server"
       ],
@@ -11406,6 +11433,12 @@
       ],
       "Email address": [
         "E‐Mail‐Adresse"
+      ],
+      "Email address copied to clipboard": [
+        "E-Mail-Adresse in die Zwischenablage kopiert"
+      ],
+      "Email addresses copied to clipboard": [
+        "E-Mail-Adressen in Zwischenablage kopiert"
       ],
       "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
         "E-Mail und Kalender integriert mit ${ CONTACTS_APP_NAME }"
@@ -11778,6 +11811,9 @@
       ],
       "How your emergency contact can change your password for you:": [
         "So kann dein Notfallkontakt dein Passwort für dich ändern:"
+      ],
+      "I have not finished this one yet.": [
+        "Das habe ich noch nicht fertiggestellt."
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -13181,6 +13217,9 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Diese Anmeldedaten können nicht zur Anmeldung in unseren offiziellen ${ VPN_APP_NAME }-Apps verwendet werden. ${ learnMore }"
       ],
+      "Thinking about this": [
+        "Darüber nachdenken"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Dieses Konto wurde aufgrund eines möglichen Verstoßes gegen die Nutzungsbedingungen gesperrt."
       ],
@@ -13714,6 +13753,9 @@
       ],
       "We couldn't complete the transaction. Please try again.": [
         "Wir konnten die Transaktion nicht abschließen. Bitte versuche es erneut."
+      ],
+      "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
+        "Wir konnten keine Rechnungen an deine E-Mail-Adresse senden. Die automatische Rechnungsstellung wurde pausiert, bis du die E-Mail-Adresse aktualisiert hast."
       ],
       "We couldn’t process your payment.": [
         "Wir konnten deine Zahlung nicht abschließen."
@@ -16293,6 +16335,9 @@
       ],
       "Send in": [
         "Senden in"
+      ],
+      "Send invoices by email": [
+        "Rechnungen per E-Mail versenden"
       ],
       "Sequences": [
         "Sequenzen"
@@ -19932,6 +19977,119 @@
         "Dein Abonnement beinhaltet maximal ${ humanReadableAvailableSpace } weiteren Speicherplatz."
       ]
     },
+    "organization key reset": {
+      "Afterward, every converted user must accept the request to become non-private again, from their account settings.": [
+        "Anschließend muss jeder umgestellte Benutzer in seinen Kontoeinstellungen die Anfrage akzeptieren, wieder in den nicht-privaten Modus zu wechseln."
+      ],
+      "An unprivatization request is sent by email to the converted users": [
+        "Eine Anfrage zur Aufhebung des nicht-privaten Modus wird per E-Mail an die umgestellten Benutzer gesendet"
+      ],
+      "Because your organization key has changed, you lost some of your admin rights: You can no longer create non-private users and access their accounts.": [
+        "Da sich dein Organisationsschlüssel geändert hat, hast du einige deiner Administratorrechte verloren: Du kannst keine nicht-privaten Benutzer mehr anlegen und nicht mehr auf deren Konten zugreifen."
+      ],
+      "Before continuing, **let your users know they'll receive an admin access request by email**, so they're not caught off guard.": [
+        "Bevor du fortfährst, **informiere deine Benutzer darüber, dass sie per E-Mail eine Anfrage bezüglich Administratorrechte erhalten werden**, damit sie nicht überrascht werden."
+      ],
+      "Can you reach out to other administrators?": [
+        "Kannst du dich an andere Administratoren wenden?"
+      ],
+      "Converting users to private": [
+        "Benutzer in private umwandeln"
+      ],
+      "Copy email list": [
+        "E-Mail-Liste kopieren"
+      ],
+      "Could not send the unprivatization request to ${ n } user. It will be retried automatically.": [
+        "Die Anfrage zur Aufhebung des nicht-privaten Modus konnte für ${ n } Benutzer nicht gesendet werden. Dies wird automatisch erneut versucht.",
+        "Die Anfrage zur Aufhebung des nicht-privaten Modus konnte für ${ n } Benutzer nicht gesendet werden. Dies wird automatisch erneut versucht."
+      ],
+      "Get in touch with your other administrators, to see if they can help. They will be able to restore your privileges after using a data recovery method.": [
+        "Wende dich an deine anderen Administratoren, um zu erfahren, ob diese dir helfen können. Diese können deine Berechtigungen nach der Durchführung einer Datenwiederherstellung wiederherstellen."
+      ],
+      "I've notified my users that they'll receive an unprivatization request.": [
+        "Ich habe meine Benutzer darüber informiert, dass sie eine Aufforderung zur Aufhebung des nicht-privaten Modus erhalten werden."
+      ],
+      "Non-private users": [
+        "Nicht-private Benutzer"
+      ],
+      "Once your privileges have been restored, you'll be able to create non-private users and access their accounts.": [
+        "Sobald deine Berechtigungen wiederhergestellt sind, kannst du nicht-private Benutzer anlegen und auf deren Konten zugreifen."
+      ],
+      "Organization key reset": [
+        "Organisationsschlüssel zurückgesetzt"
+      ],
+      "Ready to reset your organization key?": [
+        "Bist du bereit, deinen Organisationsschlüssel zurückzusetzen?"
+      ],
+      "Reset key": [
+        "Schlüssel zurücksetzen"
+      ],
+      "Reset organization key?": [
+        "Organisationsschlüssel zurücksetzen?"
+      ],
+      "Resetting organization key": [
+        "Organisationsschlüssel zurücksetzen"
+      ],
+      "Resetting the organization key generates a new encryption key to keep your organization's data secure. **No data will be lost or destroyed in this process, but the users groups will be deleted.**": [
+        "Durch das Zurücksetzen des Organisationsschlüssels wird ein neuer Verschlüsselungsschlüssel erzeugt, um die Daten deiner Organisation zu schützen. **Bei diesem Vorgang gehen keine Daten verloren und es werden keine Daten gelöscht, allerdings werden die Benutzergruppen gelöscht.**"
+      ],
+      "See ${ n } user": [
+        "${ n } Benutzer anzeigen",
+        "${ n } Benutzer anzeigen"
+      ],
+      "See users": [
+        "Benutzer anzeigen"
+      ],
+      "Send unprivatization requests": [
+        "Anfrage zur Aufhebung des nicht-privaten Modus"
+      ],
+      "The non-private users are converted to private": [
+        "Die nicht-privaten Benutzer werden in private umgewandelt"
+      ],
+      "The organization key is reset": [
+        "Organisationsschlüssel zurückgesetzt"
+      ],
+      "This process is automated:": [
+        "Dieser Vorgang läuft automatisch ab:"
+      ],
+      "This should take less than ${ minutes } minute. **Don't close this tab or let your device go to sleep** until it's finished.": [
+        "Das sollte weniger als ${ minutes } Minute dauern. **Schließe diesen Tab nicht und lass dein Gerät nicht in den Ruhemodus wechseln**, bis der Vorgang abgeschlossen ist.",
+        "Das sollte weniger als ${ minutes } Minuten dauern. **Schließe diesen Tab nicht und lass dein Gerät nicht in den Ruhemodus wechseln**, bis der Vorgang abgeschlossen ist."
+      ],
+      "This should take less than ${ minutes } minute. **Keep this browser tab open and your device active** until it completes.": [
+        "Dies sollte weniger als ${ minutes } Minute dauern. **Lass diesen Browser-Tab geöffnet und dein Gerät aktiv**, bis der Vorgang abgeschlossen ist.",
+        "Dies sollte weniger als ${ minutes } Minuten dauern. **Lass diesen Browser-Tab geöffnet und dein Gerät aktiv**, bis der Vorgang abgeschlossen ist."
+      ],
+      "To become non-private again, they must accept the request to enable admin access, from their account settings. You don't need to wait for this step.": [
+        "Um wieder nicht-privat zu werden, müssen sie in ihren Kontoeinstellungen die Anfrage zur Freigabe des Administratorzugriffs aktivieren. Du musst nicht auf diesen Schritt warten."
+      ],
+      "To reset the organization key and restore your administrator privileges, **${ n } non-private user must be temporarily converted to private.**": [
+        "Um den Organisationsschlüssel zurückzusetzen und deine Administratorrechte wiederherzustellen, **muss ${ n } nicht-privater Benutzer vorübergehend in einen privaten umgewandelt werden.**",
+        "Um den Organisationsschlüssel zurückzusetzen und deine Administratorrechte wiederherzustellen, **müssen ${ n } nicht-privater Benutzer vorübergehend in private umgewandelt werden.**"
+      ],
+      "To reset the organization key, the users will be converted to private, and will receive an email invitation to become non-private again.": [
+        "Um den Organisationsschlüssel zurückzusetzen, werden die Benutzer auf privat umgestellt und erhalten eine E-Mail-Einladung, wieder den Modus nicht-privat anzunehmen."
+      ],
+      "To restore your privileges, use a data recovery method.": [
+        "Um deine Berechtigungen wiederherzustellen, wende eine Methode zur Datenwiederherstellung an."
+      ],
+      "Try another way": [
+        "Versuche es auf eine andere Weise"
+      ],
+      "User (${ n })": [
+        "Benutzer (${ n })",
+        "Benutzer (${ n })"
+      ],
+      "You can reset your organization key to restore your administrator privileges. Then, you'll be able to create non-private users and access their accounts.": [
+        "Du kannst deinen Organisationsschlüssel zurücksetzen, um deine Administratorrechte wiederherzustellen. Anschließend kannst du nicht-private Benutzer anlegen und auf deren Konten zugreifen."
+      ],
+      "Your administrator privileges have been restored. You can now manage non-private users.": [
+        "Deine Administratorrechte wurden wiederhergestellt. Du kannst nun nicht-private Benutzer verwalten."
+      ],
+      "Your users will receive an email to accept the unprivatization request.": [
+        "Deine Benutzer erhalten eine E-Mail, in der sie die Anfrage zur Aufhebung des nicht-privaten Modus bestätigen können."
+      ]
+    },
     "Organization logo upload": {
       "Avoid overly compressed images.": [
         "Vermeide zu stark komprimierte Bilder."
@@ -20479,12 +20637,6 @@
       "To enable administrator rights on your account, activate the organization key.": [
         "Aktiviere den Organisationsschlüssel, um Administratorrechte für dein Konto zu erhalten."
       ],
-      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
-        "Verwende eine Datenwiederherstellungsmethode oder setze den Organisationsschlüssel zurück, um die Administratorrechte wiederherzustellen."
-      ],
-      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
-        "Verwende eine Datenwiederherstellungsmethode, kontaktiere einen anderen Administrator oder setze den Organisationsschlüssel zurück, um die Administratorrechte wiederherzustellen."
-      ],
       "We couldn't verify the authenticity of this identity.": [
         "Wir konnten die Authentizität dieser Identität nicht überprüfen."
       ],
@@ -20908,6 +21060,12 @@
       ],
       "Anytown": [
         "Berlin"
+      ],
+      "Ask anything…": [
+        "Frag irgendetwas …"
+      ],
+      "billing@company.com": [
+        "billing@company.com"
       ],
       "Choose a name": [
         "Namen auswählen"
@@ -23025,6 +23183,11 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "Anfrage zur Passwortzurücksetzung"
+      ]
+    },
+    "Set invoice email form note": {
+      "Turn on automatic invoicing to receive bills via email. Enter the email address where you want to receive invoices.": [
+        "Aktiviere die automatische Rechnungsstellung, um Rechnungen per E-Mail zu erhalten. Gib die E-Mail-Adresse ein, an die du die Rechnungen erhalten möchtest."
       ]
     },
     "Setting": {
@@ -25216,6 +25379,9 @@
       "Invoice customized": [
         "Rechnung angepasst"
       ],
+      "Invoice email updated": [
+        "Rechnungs-E-Mail-Adresse aktualisiert"
+      ],
       "Invoice paid": [
         "Rechnung bezahlt"
       ],
@@ -27296,6 +27462,9 @@
       "Set a display name": [
         "Anzeigename festlegen"
       ],
+      "Set invoice email": [
+        "Rechnungs-E-Mail-Adresse festlegen"
+      ],
       "Set new password": [
         "Neues Passwort festlegen"
       ],
@@ -28507,6 +28676,9 @@
       "You can safely remove this user from your organization.": [
         "Du kannst diesen Benutzer gefahrlos aus deiner Organisation entfernen.",
         "Du kannst diese Benutzer gefahrlos aus deiner Organisation entfernen."
+      ],
+      "Your account was temporarily made private while your organization key was reset. Accept the request to restore it.": [
+        "Dein Konto wurde vorübergehend auf privat gesetzt, während dein Organisationsschlüssel zurückgesetzt wurde. Bitte akzeptiere die Anfrage zur Wiederherstellung."
       ]
     },
     "Update font modal": {
