@@ -13,6 +13,9 @@ export const mainConfig: Configuration = {
     entry: "./src/index.ts",
     // Put your normal webpack config below here
     module: {
+        // TODO: Remove 'javascript: { createRequire: false }' (and parser) when weback fixes the issue with import.meta.url
+        // Context https://gitlab.protontech.ch/web/clients/-/merge_requests/27625
+        parser: { javascript: { createRequire: false } },
         rules: [
             ...rules,
             {
