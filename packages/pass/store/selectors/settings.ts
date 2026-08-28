@@ -37,6 +37,7 @@ export const selectPendingBrowserAutofill = ({ settings }: State) => settings.pe
 export const selectSyncStrategy = ({ settings }: State) => settings.syncStrategy;
 
 export const selectOfflineEnabled = ({ settings }: State) => settings.offlineEnabled ?? false;
+export const selectOfflinePrompt = ({ settings }: State) => settings.offlinePrompt;
 export const selectExtraPasswordEnabled = ({ settings }: State) => settings.extraPassword ?? false;
 
 export const selectLockTTL = ({ settings }: State): Maybe<number> => settings.lockTTL;
