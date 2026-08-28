@@ -14,7 +14,7 @@ import { useGroups } from '@proton/account/groups/hooks';
 import { getGroupRoles, updateGroupRoles } from '@proton/account/groups/index';
 import { useGroupRoles } from '@proton/account/groups/useGroupRoles';
 import { invalidateMemberRoles } from '@proton/account/members';
-import { promoteMemberToOrgAdmin } from '@proton/account/members/actions';
+import { provideOrgKeyAccessToMember } from '@proton/account/members/actions';
 import { useGetMembers, useMembers } from '@proton/account/members/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { isOrgKeyRequired, isOwnerRole } from '@proton/account/organizationRoles/helpers';
@@ -29,7 +29,7 @@ import { checkMemberAddressAvailability } from '@proton/shared/lib/api/members';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { EnhancedMember, Group, GroupMember, Organization } from '@proton/shared/lib/interfaces';
 import { GroupFlags, GroupPermissions } from '@proton/shared/lib/interfaces';
-import { GROUP_MEMBER_PERMISSIONS } from '@proton/shared/lib/interfaces/GroupMember';
+import { GROUP_MEMBER_PERMISSIONS, GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces/GroupMember';
 import { useFlag } from '@proton/unleash/useFlag';
 import setsContainSameElements from '@proton/utils/setsContainSameElements';
 
@@ -229,7 +229,7 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
         }
     };
 
-    const promoteGroupMembersToOrgAdmin = async (
+    const provideOrgKeyAccessToGroupMembers = async (
         groupMembers: GroupMember[],
         onCancel?: () => boolean
     ): Promise<{ cancelled: boolean; errors: unknown[] }> => {
@@ -239,13 +239,16 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
             if (onCancel?.()) {
                 return { cancelled: true, errors };
             }
+            if (groupMember.Type === GROUP_MEMBER_TYPE.EXTERNAL) {
+                continue;
+            }
             const member = groupMember.Email ? addressEmailToMemberMap[groupMember.Email] : undefined;
             if (!member) {
                 continue;
             }
             const latestMember = latestMembers.find(({ ID }) => ID === member.ID) ?? member;
             try {
-                await dispatch(promoteMemberToOrgAdmin({ member: latestMember, api }));
+                await dispatch(provideOrgKeyAccessToMember({ member: latestMember, api }));
             } catch (error) {
                 errors.push(error);
             }
@@ -288,7 +291,7 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
         if (addedRolesRequireOrgKey) {
             // Members inherit the group's roles. When a newly added role needs the organization key,
             // each non-admin member must be promoted so they receive it. Role removals are demoted by the BE.
-            const { errors } = await promoteGroupMembersToOrgAdmin(transformedGroupMembers);
+            const { errors } = await provideOrgKeyAccessToGroupMembers(transformedGroupMembers);
             errors.forEach((error) => handleError(error, { notify: false }));
             if (errors.length > 0) {
                 createNotification({
@@ -421,7 +424,7 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
     const resumeGroupRoleAssignment = async (groupId: string, isCancelRequested: () => boolean) => {
         const groupMembersById = await getGroupMembers(groupId);
         const groupMembersList = groupMembersById ? Object.values(groupMembersById) : [];
-        const { cancelled, errors } = await promoteGroupMembersToOrgAdmin(groupMembersList, isCancelRequested);
+        const { cancelled, errors } = await provideOrgKeyAccessToGroupMembers(groupMembersList, isCancelRequested);
         errors.forEach((error) => handleError(error, { notify: false }));
         if (cancelled) {
             return;
