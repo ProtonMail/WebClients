@@ -2,13 +2,6 @@ import { type FC, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Route } from 'react-router-dom';
 
-import { usePopupContext } from 'proton-pass-extension/app/popup/PopupProvider';
-import { Router } from 'proton-pass-extension/app/popup/Views/Router';
-import { useExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
-import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
-import { useSaveTabState } from 'proton-pass-extension/lib/hooks/useSaveTabState';
-import { useSpotlightListener } from 'proton-pass-extension/lib/hooks/useSpotlightListener';
-
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { AuthDeviceTopBanner } from '@proton/pass/components/Auth/AuthDeviceTopBanner';
@@ -34,6 +27,12 @@ import { selectLockSetupRequired } from '@proton/pass/store/selectors/settings';
 import { selectIsSSO } from '@proton/pass/store/selectors/user';
 import { SpotlightMessage } from '@proton/pass/types/worker/spotlight';
 
+import { useExtensionClient } from '../../../lib/components/Extension/ExtensionClient';
+import { useExtensionContext } from '../../../lib/components/Extension/ExtensionSetup';
+import { useSaveTabState } from '../../../lib/hooks/useSaveTabState';
+import { useSpotlightListener } from '../../../lib/hooks/useSpotlightListener';
+import { usePopupContext } from '../PopupProvider';
+import { Router } from './Router';
 import { Sidebar } from './Sidebar';
 
 const MainSwitch: FC = () => {

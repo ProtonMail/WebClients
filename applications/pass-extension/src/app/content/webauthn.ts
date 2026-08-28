@@ -1,6 +1,3 @@
-import type { MessageFailure } from 'proton-pass-extension/types/messages';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import {
     intoAuthenticatorAssertionResponse,
     intoAuthenticatorAttestationResponse,
@@ -10,6 +7,8 @@ import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { sanitizeBuffers } from '@proton/pass/utils/buffer/sanitization';
 import { logger } from '@proton/pass/utils/logger';
 
+import type { MessageFailure } from '../../types/messages';
+import { WorkerMessageType } from '../../types/messages';
 import { createMessageBridge } from './bridge/message';
 import { clone, exporter, promise } from './bridge/utils';
 

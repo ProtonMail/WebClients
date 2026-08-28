@@ -1,11 +1,11 @@
-import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { sendDebugLog } from 'proton-pass-extension/app/worker/debugger';
-import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { type LogStorageData, createLogStore } from '@proton/pass/lib/logger/store';
 import type { ExtensionStorage } from '@proton/pass/types/worker/storage';
 import { registerLoggerEffect } from '@proton/pass/utils/logger';
+
+import type { MessageHandlerCallback } from '../../../lib/message/message-broker';
+import { WorkerMessageType } from '../../../types/messages';
+import WorkerMessageBroker from '../channel';
+import { sendDebugLog } from '../debugger';
 
 export const createLoggerService = (storage: ExtensionStorage<LogStorageData>) => {
     const { push, read, clear } = createLogStore(storage);

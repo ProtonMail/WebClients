@@ -1,25 +1,19 @@
 import { FieldType, fieldTypes } from '@protontech/autofill/types';
 import throttle from 'lodash/throttle';
-import { IFRAME_EXTENDED_AUTOFILL_FIELDS } from 'proton-pass-extension/app/content/constants.runtime';
-import { withContext } from 'proton-pass-extension/app/content/context/context';
-import type {
-    FrameMessageBroker,
-    FrameMessageHandler,
-} from 'proton-pass-extension/app/content/services/client/client.channel';
-import { clearDetectionCache } from 'proton-pass-extension/app/content/services/detector/detector.api';
-import { createFocusGuard } from 'proton-pass-extension/app/content/services/form/field.interactivity';
-import {
-    DROPDOWN_FOCUS_TIMEOUT,
-    isFocusableElement,
-} from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.focus';
-import { getAutofillPageTelemetryDimensions } from 'proton-pass-extension/app/content/utils/autofill-telemetry';
-import { getFrameAttributes } from 'proton-pass-extension/app/content/utils/frame';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 
+import { WorkerMessageType } from '../../../../types/messages';
+import { IFRAME_EXTENDED_AUTOFILL_FIELDS } from '../../constants.runtime';
+import { withContext } from '../../context/context';
+import { getAutofillPageTelemetryDimensions } from '../../utils/autofill-telemetry';
+import { getFrameAttributes } from '../../utils/frame';
+import type { FrameMessageBroker, FrameMessageHandler } from '../client/client.channel';
+import { clearDetectionCache } from '../detector/detector.api';
+import { DROPDOWN_FOCUS_TIMEOUT, isFocusableElement } from '../inline/dropdown/dropdown.focus';
+import { createFocusGuard } from './field.interactivity';
 import type { FormHandle } from './form';
 import { createFormHandles } from './form';
 

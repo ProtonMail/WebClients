@@ -2,10 +2,6 @@ import type { ComponentProps, FC } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { SettingsFooter } from 'proton-pass-extension/app/pages/settings/SettingsFooter';
-import { SettingsHeader } from 'proton-pass-extension/app/pages/settings/SettingsHeader';
-import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/ExtensionHead';
-import { useExtensionReauth } from 'proton-pass-extension/lib/hooks/useExtensionReauth';
 import { c } from 'ttag';
 
 import { Tabs } from '@proton/components/components/tabs/Tabs';
@@ -26,6 +22,10 @@ import { PassFeature } from '@proton/pass/types/api/features';
 import type { Unpack } from '@proton/pass/types/utils/index';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
+import { ExtensionHead } from '../../../lib/components/Extension/ExtensionHead';
+import { useExtensionReauth } from '../../../lib/hooks/useExtensionReauth';
+import { SettingsFooter } from './SettingsFooter';
+import { SettingsHeader } from './SettingsHeader';
 import { Aliases } from './Views/Aliases';
 import { Developer } from './Views/Developer';
 import { Export } from './Views/Export';

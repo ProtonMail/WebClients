@@ -1,15 +1,14 @@
-import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { withContext } from 'proton-pass-extension/app/content/context/context';
-import type { ContentScriptContextFactoryOptions } from 'proton-pass-extension/app/content/context/factory';
-import type { FrameMessageHandler } from 'proton-pass-extension/app/content/services/client/client.channel';
-import { createIconRegistry } from 'proton-pass-extension/app/content/services/inline/icon/icon.registry';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { clientLocked, clientNeedsSession } from '@proton/pass/lib/client';
 import { POPOVER_SUPPORTED } from '@proton/pass/utils/dom/popover';
 import noop from '@proton/utils/noop';
 
+import { WorkerMessageType } from '../../../../types/messages';
+import { NotificationAction } from '../../constants.runtime';
+import { withContext } from '../../context/context';
+import type { ContentScriptContextFactoryOptions } from '../../context/factory';
+import type { FrameMessageHandler } from '../client/client.channel';
 import { createDropdownHandler } from './dropdown/dropdown.handler';
+import { createIconRegistry } from './icon/icon.registry';
 import type { AbstractInlineService } from './inline.abstract';
 import { createInlineRegistry } from './inline.registry';
 import { createNotificationHandler } from './notification/notification.handler';

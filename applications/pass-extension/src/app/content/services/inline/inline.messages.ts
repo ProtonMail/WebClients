@@ -1,15 +1,3 @@
-import type { BridgeResponse } from 'proton-pass-extension/app/content/bridge/types';
-import type { AutofillActionDTO } from 'proton-pass-extension/types/autofill';
-import type {
-    AutofillSyncMessage,
-    FeatureFlagsUpdateMessage,
-    LocaleUpdatedMessage,
-    PortUnauthorizedMessage,
-    SettingsUpdateMessage,
-    WorkerMessageType,
-    WorkerStateChangeMessage,
-} from 'proton-pass-extension/types/messages';
-
 import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
@@ -19,6 +7,17 @@ import type { ClientEndpoint } from '@proton/pass/types/worker/runtime';
 import type { AppState } from '@proton/pass/types/worker/state';
 import { isObject } from '@proton/pass/utils/object/is-object';
 
+import type { AutofillActionDTO } from '../../../../types/autofill';
+import type {
+    AutofillSyncMessage,
+    FeatureFlagsUpdateMessage,
+    LocaleUpdatedMessage,
+    PortUnauthorizedMessage,
+    SettingsUpdateMessage,
+    WorkerMessageType,
+    WorkerStateChangeMessage,
+} from '../../../../types/messages';
+import type { BridgeResponse } from '../../bridge/types';
 import type { DropdownActions } from './dropdown/dropdown.app';
 import type { NotificationRequest } from './notification/notification.app';
 
@@ -47,8 +46,7 @@ export enum InlinePortMessageType {
 }
 
 type PasskeyRelayedMessages =
-    | BridgeResponse<WorkerMessageType.PASSKEY_CREATE>
-    | BridgeResponse<WorkerMessageType.PASSKEY_GET>;
+    BridgeResponse<WorkerMessageType.PASSKEY_CREATE> | BridgeResponse<WorkerMessageType.PASSKEY_GET>;
 
 export type IFramePosition = Partial<Rect>;
 export type IFrameEndpoint = 'notification' | 'dropdown';

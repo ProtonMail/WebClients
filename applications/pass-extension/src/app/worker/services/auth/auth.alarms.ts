@@ -1,11 +1,11 @@
-import { withContext } from 'proton-pass-extension/app/worker/context/inject';
-import { type BrowserAlarm, createBrowserAlarm } from 'proton-pass-extension/lib/utils/alarm';
-
 import { SESSION_RESUME_MAX_RETRIES, getAutoResumeDelay } from '@proton/pass/lib/auth/scheduler';
 import type { MaybeNull } from '@proton/pass/types';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
+
+import { type BrowserAlarm, createBrowserAlarm } from '../../../../lib/utils/alarm';
+import { withContext } from '../../context/inject';
 
 export interface AuthAlarms {
     /** Number of real (non-extended) attempts consumed in the current chain. */

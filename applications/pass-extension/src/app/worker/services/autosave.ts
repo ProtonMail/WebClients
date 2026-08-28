@@ -1,7 +1,3 @@
-import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { withContext } from 'proton-pass-extension/app/worker/context/inject';
-import { validateFormCredentials } from 'proton-pass-extension/lib/utils/form-entry';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
@@ -24,6 +20,11 @@ import type { FormEntry } from '@proton/pass/types/worker/form';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { and } from '@proton/pass/utils/fp/predicates';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
+
+import { validateFormCredentials } from '../../../lib/utils/form-entry';
+import { WorkerMessageType } from '../../../types/messages';
+import WorkerMessageBroker from '../channel';
+import { withContext } from '../context/inject';
 
 export const createAutoSaveService = () => {
     const resolve = withContext<(entry: FormEntry, url: ParsedUrl) => AutosavePrompt>((ctx, options, url) => {

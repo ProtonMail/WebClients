@@ -1,6 +1,6 @@
 import { CCFieldType, FieldType, IdentityFieldType } from '@protontech/autofill/types';
-import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 
+import type { FieldHandle } from '../../app/content/services/form/field';
 import type { FieldSubType } from './field.sections';
 import { resolveFieldSections } from './field.sections';
 

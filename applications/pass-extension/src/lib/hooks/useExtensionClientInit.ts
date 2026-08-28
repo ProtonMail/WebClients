@@ -1,10 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
-import { CriticalMessageResponseError, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
@@ -17,6 +12,10 @@ import { type Awaiter, awaiter } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
+import { WorkerMessageType } from '../../types/messages';
+import { useExtensionContext } from '../components/Extension/ExtensionSetup';
+import { CriticalMessageResponseError, sendMessage } from '../message/send-message';
+import { matchExtensionMessage } from '../message/utils';
 import { useEndpointMessage } from './useEndpointMessage';
 
 export const useExtensionClientInit = (options: {

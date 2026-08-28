@@ -1,10 +1,9 @@
-import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
-import type { InlineMessage } from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import type { FrameField } from 'proton-pass-extension/types/frames';
-import type { DropdownStateDTO } from 'proton-pass-extension/types/inline';
-
 import type { ListenerStore } from '@proton/pass/utils/listener/factory';
 
+import type { FrameField } from '../../../../../types/frames';
+import type { DropdownStateDTO } from '../../../../../types/inline';
+import type { FieldHandle } from '../../form/field';
+import type { InlineMessage } from '../inline.messages';
 import type { DropdownRequest } from './dropdown.app';
 
 export type InlineFieldTarget = { type: 'field'; field: FieldHandle };

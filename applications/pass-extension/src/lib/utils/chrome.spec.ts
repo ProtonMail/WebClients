@@ -1,6 +1,5 @@
-import * as versionModule from 'proton-pass-extension/lib/utils/version';
-
 import { isChromeExtensionRollback } from './chrome';
+import * as versionModule from './version';
 
 const version = versionModule as MockVersionModule;
 
@@ -9,7 +8,7 @@ type MockVersionModule = typeof versionModule & {
     setManifestVersion: (version: string) => void;
 };
 
-jest.mock('proton-pass-extension/lib/utils/version', (): MockVersionModule => {
+jest.mock('./version', (): MockVersionModule => {
     const module = {
         get EXTENSION_BUILD_VERSION() {
             return module._MOCK_EXTENSION_BUILD_VERSION_;

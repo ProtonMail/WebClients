@@ -1,12 +1,4 @@
 import { FieldType } from '@protontech/autofill/types';
-import { withContext } from 'proton-pass-extension/app/content/context/context';
-import type { FrameMessageHandler } from 'proton-pass-extension/app/content/services/client/client.channel';
-import {
-    isBtnCandidate,
-    kButtonSubmitSelector,
-} from 'proton-pass-extension/app/content/services/detector/detector.api';
-import { stage, stash, validateFormCredentials } from 'proton-pass-extension/lib/utils/form-entry';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import type { AutosaveFormEntry, FormCredentials } from '@proton/pass/types/worker/form';
@@ -19,6 +11,11 @@ import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import lastItem from '@proton/utils/lastItem';
 import noop from '@proton/utils/noop';
 
+import { stage, stash, validateFormCredentials } from '../../../../lib/utils/form-entry';
+import { WorkerMessageType } from '../../../../types/messages';
+import { withContext } from '../../context/context';
+import type { FrameMessageHandler } from '../client/client.channel';
+import { isBtnCandidate, kButtonSubmitSelector } from '../detector/detector.api';
 import type { FieldHandle } from './field';
 import type { FormHandle } from './form';
 

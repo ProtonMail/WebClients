@@ -1,6 +1,3 @@
-import { PASS_ROOT_REMOVED_EVENT, kFocusTrapSelector } from 'proton-pass-extension/app/content/constants.static';
-import { withContext } from 'proton-pass-extension/app/content/context/context';
-
 import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { matchDarkTheme } from '@proton/pass/components/Layout/Theme/utils';
 import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
@@ -13,6 +10,8 @@ import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 
+import { PASS_ROOT_REMOVED_EVENT, kFocusTrapSelector } from '../../constants.static';
+import { withContext } from '../../context/context';
 import { PASS_ELEMENT_THEME } from './custom-elements/ProtonPassElement';
 import type { ProtonPassRoot } from './custom-elements/ProtonPassRoot';
 import type { DropdownApp } from './dropdown/dropdown.app';

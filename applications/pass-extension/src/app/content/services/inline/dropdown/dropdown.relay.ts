@@ -1,18 +1,17 @@
-import { DROPDOWN_WIDTH } from 'proton-pass-extension/app/content/constants.static';
-import { withContext } from 'proton-pass-extension/app/content/context/context';
-import { resolveOriginScope } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.utils';
-import { getAutofillPageTelemetryDimensions } from 'proton-pass-extension/app/content/utils/autofill-telemetry';
-import { getFrameAttributes } from 'proton-pass-extension/app/content/utils/frame';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { createStyleParser, getComputedHeight, getComputedWidth } from '@proton/pass/utils/dom/computed-styles';
 import { maxAgeMemoize } from '@proton/pass/utils/fp/memo';
 import { createAsyncQueue } from '@proton/pass/utils/fp/promises';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import noop from '@proton/utils/noop';
 
+import { contentScriptMessage, sendMessage } from '../../../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../../../types/messages';
+import { DROPDOWN_WIDTH } from '../../../constants.static';
+import { withContext } from '../../../context/context';
+import { getAutofillPageTelemetryDimensions } from '../../../utils/autofill-telemetry';
+import { getFrameAttributes } from '../../../utils/frame';
 import type { DropdownHandler } from './dropdown.abstract';
+import { resolveOriginScope } from './dropdown.utils';
 
 export const createDropdownRelayHandler = (): DropdownHandler => {
     /** Async queue ensures predictable event processing order for cross-frame messaging.

@@ -1,19 +1,20 @@
 import { FieldType } from '@protontech/autofill/types';
-import { NOTIFICATION_IFRAME_SRC, NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { NOTIFICATION_MIN_HEIGHT, NOTIFICATION_WIDTH } from 'proton-pass-extension/app/content/constants.static';
-import { withContext } from 'proton-pass-extension/app/content/context/context';
-import { flagAsIgnored, removeClassifierFlags } from 'proton-pass-extension/app/content/services/detector/detector.api';
-import type { InlineAppHandler, InlineEvent } from 'proton-pass-extension/app/content/services/inline/inline.app';
-import { createInlineApp } from 'proton-pass-extension/app/content/services/inline/inline.app';
-import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import type { PopoverController } from 'proton-pass-extension/app/content/services/inline/inline.popover';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { SelectedPasskey } from '@proton/pass/lib/passkeys/types';
 import type { AutosavePayload } from '@proton/pass/types/worker/autosave';
 import type { LoginItemPreview } from '@proton/pass/types/worker/data';
 import { asyncQueue } from '@proton/pass/utils/fp/promises';
+
+import { contentScriptMessage, sendMessage } from '../../../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../../../types/messages';
+import { NOTIFICATION_IFRAME_SRC, NotificationAction } from '../../../constants.runtime';
+import { NOTIFICATION_MIN_HEIGHT, NOTIFICATION_WIDTH } from '../../../constants.static';
+import { withContext } from '../../../context/context';
+import { flagAsIgnored, removeClassifierFlags } from '../../detector/detector.api';
+import type { InlineAppHandler, InlineEvent } from '../inline.app';
+import { createInlineApp } from '../inline.app';
+import { InlinePortMessageType } from '../inline.messages';
+import type { PopoverController } from '../inline.popover';
 
 export type NotificationRequest =
     | { action: NotificationAction.AUTOSAVE; data: AutosavePayload }

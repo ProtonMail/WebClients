@@ -1,13 +1,13 @@
 import { type FC, useEffect } from 'react';
 
-import config from 'proton-pass-extension/app/config';
-import { pageMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import browser from '@proton/pass/lib/globals/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
+
+import { pageMessage, sendMessage } from '../../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../../types/messages';
+import config from '../../../config';
 
 /* By-pass SSL error on browser start-up when working with staging.
  * In the startup event listener - when the extension's target API

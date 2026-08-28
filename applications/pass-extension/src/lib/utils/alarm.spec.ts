@@ -1,8 +1,7 @@
-import browser, { clearBrowserMocks } from 'proton-pass-extension/__mocks__/webextension-polyfill';
-
 import * as coreAlarms from '@proton/pass/utils/time/alarm';
 import { MINUTE } from '@proton/shared/lib/constants';
 
+import browser, { clearBrowserMocks } from '../../__mocks__/webextension-polyfill';
 import * as extensionAlarms from './alarm';
 
 const { createExtensionAlarm, setupBrowserAlarm } = extensionAlarms;

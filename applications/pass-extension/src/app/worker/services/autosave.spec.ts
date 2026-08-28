@@ -1,17 +1,3 @@
-import WorkerMessageBroker from 'proton-pass-extension/__mocks__/app/worker/channel';
-import store from 'proton-pass-extension/__mocks__/app/worker/store';
-import {
-    getMockItemRevision,
-    getMockPasskey,
-    getMockState,
-    mockShareId,
-    setMockMessageSender,
-} from 'proton-pass-extension/__mocks__/mocks';
-import { expectMessageFailure, expectMessageSuccess } from 'proton-pass-extension/__mocks__/utils';
-import { WorkerContext } from 'proton-pass-extension/app/worker/context/inject';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
 import { itemCreate, itemEdit } from '@proton/pass/store/actions';
@@ -21,7 +7,24 @@ import { AutofillMode } from '@proton/pass/types/protobuf';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
+import {
+    getMockItemRevision,
+    getMockPasskey,
+    getMockState,
+    mockShareId,
+    setMockMessageSender,
+} from '../../../__mocks__/mocks';
+import { expectMessageFailure, expectMessageSuccess } from '../../../__mocks__/utils';
+import { contentScriptMessage, sendMessage } from '../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../types/messages';
+import type * as ChannelMock from '../__mocks__/channel';
+import store from '../__mocks__/store';
+import { WorkerContext } from '../context/inject';
 import { createAutoSaveService } from './autosave';
+
+jest.mock('../channel');
+
+const { default: WorkerMessageBroker } = jest.requireMock('../channel') as typeof ChannelMock;
 
 describe('AutosaveService [worker]', () => {
     const autosave = createAutoSaveService();

@@ -1,6 +1,3 @@
-import browser, { clearBrowserMocks } from 'proton-pass-extension/__mocks__/webextension-polyfill';
-import { WorkerContext } from 'proton-pass-extension/app/worker/context/inject';
-
 import {
     SESSION_RESUME_MAX_RETRIES,
     SESSION_RESUME_TIMEOUT_MIN,
@@ -9,6 +6,8 @@ import {
 import { epochToMs } from '@proton/pass/utils/time/epoch';
 import { FIBONACCI_LIST } from '@proton/shared/lib/constants';
 
+import browser, { clearBrowserMocks } from '../../../../__mocks__/webextension-polyfill';
+import { WorkerContext } from '../../context/inject';
 import { type AuthAlarms, SESSION_LOCK_ALARM, SESSION_RESUME_ALARM, createAuthAlarms } from './auth.alarms';
 
 const NOW_S = 1_700_000_000;

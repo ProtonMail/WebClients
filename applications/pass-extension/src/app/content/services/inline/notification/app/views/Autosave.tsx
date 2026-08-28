@@ -2,16 +2,6 @@ import { type FC, useEffect, useMemo, useRef, useState } from 'react';
 
 import type { FormikErrors } from 'formik';
 import { Field, Form, FormikProvider, useFormik } from 'formik';
-import type { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { AutosaveForm } from 'proton-pass-extension/app/content/services/inline/notification/app/components/AutosaveForm';
-import { AutosaveSelect } from 'proton-pass-extension/app/content/services/inline/notification/app/components/AutosaveSelect';
-import { NotificationHeader } from 'proton-pass-extension/app/content/services/inline/notification/app/components/NotificationHeader';
-import type { NotificationRequest } from 'proton-pass-extension/app/content/services/inline/notification/notification.app';
-import { AutosaveVaultPicker } from 'proton-pass-extension/lib/components/Inline/AutosaveVaultPicker';
-import { useIFrameAppController, useIFrameAppState } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
-import { PauseListDropdown } from 'proton-pass-extension/lib/components/Inline/PauseListDropdown';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -29,6 +19,17 @@ import { AutosaveMode } from '@proton/pass/types/worker/autosave';
 import { withMerge } from '@proton/pass/utils/object/merge';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import noop from '@proton/utils/noop';
+
+import { AutosaveVaultPicker } from '../../../../../../../lib/components/Inline/AutosaveVaultPicker';
+import { useIFrameAppController, useIFrameAppState } from '../../../../../../../lib/components/Inline/IFrameApp';
+import { PauseListDropdown } from '../../../../../../../lib/components/Inline/PauseListDropdown';
+import { contentScriptMessage, sendMessage } from '../../../../../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../../../../../types/messages';
+import type { NotificationAction } from '../../../../../constants.runtime';
+import type { NotificationRequest } from '../../notification.app';
+import { AutosaveForm } from '../components/AutosaveForm';
+import { AutosaveSelect } from '../components/AutosaveSelect';
+import { NotificationHeader } from '../components/NotificationHeader';
 
 type Props = Extract<NotificationRequest, { action: NotificationAction.AUTOSAVE }>;
 

@@ -1,6 +1,6 @@
 import { CCFieldType, FieldType, IdentityFieldType } from '@protontech/autofill/types';
-import type { AbstractField } from 'proton-pass-extension/types/field';
 
+import type { AbstractField } from '../../types/field';
 import { isCCField, isEmailField, isIdentityField } from './field';
 
 export type FieldSubType = IdentityFieldType | CCFieldType;

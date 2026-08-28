@@ -1,9 +1,10 @@
 import type { FormType } from '@protontech/autofill/types';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { AutosaveFormEntry, FormCredentials, FormEntry, FormSubmitPayload } from '@proton/pass/types/worker/form';
 import { FormEntryStatus } from '@proton/pass/types/worker/form';
+
+import { WorkerMessageType } from '../../types/messages';
+import { contentScriptMessage, sendMessage } from '../message/send-message';
 
 export const stash = (reason: string) =>
     sendMessage(contentScriptMessage({ type: WorkerMessageType.FORM_ENTRY_STASH, payload: { reason } }));

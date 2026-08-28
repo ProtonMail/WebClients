@@ -1,17 +1,5 @@
 import { type FC, useEffect } from 'react';
 
-import { createBridgeResponse } from 'proton-pass-extension/app/content/bridge/message';
-import type { BridgeResponse } from 'proton-pass-extension/app/content/bridge/types';
-import type { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import { NotificationHeader } from 'proton-pass-extension/app/content/services/inline/notification/app/components/NotificationHeader';
-import type { NotificationRequest } from 'proton-pass-extension/app/content/services/inline/notification/notification.app';
-import { useIFrameAppController, useIFrameAppState } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
-import { ListItem } from 'proton-pass-extension/lib/components/Inline/ListItem';
-import { ScrollableItemsList } from 'proton-pass-extension/lib/components/Inline/ScrollableItemsList';
-import { WithUnlock } from 'proton-pass-extension/lib/components/Inline/WithUnlock';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -22,6 +10,19 @@ import type { SelectedPasskey } from '@proton/pass/lib/passkeys/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import { useIFrameAppController, useIFrameAppState } from '../../../../../../../lib/components/Inline/IFrameApp';
+import { ListItem } from '../../../../../../../lib/components/Inline/ListItem';
+import { ScrollableItemsList } from '../../../../../../../lib/components/Inline/ScrollableItemsList';
+import { WithUnlock } from '../../../../../../../lib/components/Inline/WithUnlock';
+import { contentScriptMessage, sendMessage } from '../../../../../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../../../../../types/messages';
+import { createBridgeResponse } from '../../../../../bridge/message';
+import type { BridgeResponse } from '../../../../../bridge/types';
+import type { NotificationAction } from '../../../../../constants.runtime';
+import { InlinePortMessageType } from '../../../inline.messages';
+import type { NotificationRequest } from '../../notification.app';
+import { NotificationHeader } from '../components/NotificationHeader';
 
 type Props = Extract<NotificationRequest, { action: NotificationAction.PASSKEY_GET }>;
 

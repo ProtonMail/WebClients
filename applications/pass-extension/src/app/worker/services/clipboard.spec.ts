@@ -1,13 +1,14 @@
-import { withOffscreenDocument as withOffscreen } from 'proton-pass-extension/app/worker/offscreen/offscreen.utils';
-import { sendSafariMessage as sendSafari } from 'proton-pass-extension/lib/utils/safari';
-
+import { sendSafariMessage as sendSafari } from '../../../lib/utils/safari';
+import { withOffscreenDocument as withOffscreen } from '../offscreen/offscreen.utils';
 import { extensionClipboardApi } from './clipboard';
+
+jest.mock('../channel');
 
 const setBuildTarget = (value: string) => ((global as any).BUILD_TARGET = value);
 
-jest.mock('proton-pass-extension/app/worker/offscreen/offscreen.utils');
-jest.mock('proton-pass-extension/lib/message/send-message');
-jest.mock('proton-pass-extension/lib/utils/safari');
+jest.mock('../offscreen/offscreen.utils');
+jest.mock('../../../lib/message/send-message');
+jest.mock('../../../lib/utils/safari');
 
 const navigatorClipboard = { readText: jest.fn(), writeText: jest.fn() };
 

@@ -1,4 +1,4 @@
-import type { MessageFailure, MessageSuccess } from 'proton-pass-extension/types/messages';
+import type { MessageFailure, MessageSuccess } from '../../types/messages';
 
 export const successMessage = <T extends {}>(message?: T) =>
     ({ type: 'success', ...(message ?? {}) }) as MessageSuccess<T>;

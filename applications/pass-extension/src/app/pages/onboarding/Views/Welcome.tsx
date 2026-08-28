@@ -1,11 +1,5 @@
 import { type FC, useMemo, useState } from 'react';
 
-import { OnboardingCard } from 'proton-pass-extension/app/pages/onboarding/Card/OnboardingCard';
-import { OnboardingHeader } from 'proton-pass-extension/app/pages/onboarding/Header/OnboardingHeader';
-import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/ExtensionHead';
-import { useExtensionClientInit } from 'proton-pass-extension/lib/hooks/useExtensionClientInit';
-import { pageMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
@@ -21,6 +15,13 @@ import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
+
+import { ExtensionHead } from '../../../../lib/components/Extension/ExtensionHead';
+import { useExtensionClientInit } from '../../../../lib/hooks/useExtensionClientInit';
+import { pageMessage, sendMessage } from '../../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../../types/messages';
+import { OnboardingCard } from '../Card/OnboardingCard';
+import { OnboardingHeader } from '../Header/OnboardingHeader';
 
 import './Welcome.scss';
 

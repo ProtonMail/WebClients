@@ -1,8 +1,7 @@
-import type { IconRegistry } from 'proton-pass-extension/app/content/services/inline/icon/icon.registry';
-
 import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 
 import type { DropdownHandler } from './dropdown/dropdown.abstract';
+import type { IconRegistry } from './icon/icon.registry';
 import type { NotificationHandler } from './notification/notification.abstract';
 
 export interface AbstractInlineService {
