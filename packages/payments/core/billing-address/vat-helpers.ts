@@ -67,10 +67,7 @@ function validateVatNumber(vatNumber: string, countryCode: string): string {
     return checkVatNumber(vatNumber, countryCode) ? '' : c('Error').t`Invalid VAT number`;
 }
 
-function getVatFormErrorMessages(
-    fields: VatFormFields,
-    showExtendedBillingAddressForm: boolean
-): VatFormErrors['errorMessages'] {
+function getVatFormErrorMessages(fields: VatFormFields): VatFormErrors['errorMessages'] {
     const errors: VatFormErrors['errorMessages'] = emptyErrors().errorMessages;
     if (!fields.VatId || isBareVatPrefix(fields.VatId, fields.CountryCode)) {
         return errors;
@@ -84,10 +81,6 @@ function getVatFormErrorMessages(
         }
     } else {
         errors.VatId = validateVatNumber(fields.VatId, fields.CountryCode);
-    }
-
-    if (!showExtendedBillingAddressForm) {
-        return errors;
     }
 
     if (!fields.Address) {
@@ -114,8 +107,14 @@ function getVatFormErrorMessages(
     return errors;
 }
 
-export function getVatFormErrors(fields: VatFormFields, showExtendedBillingAddressForm: boolean): VatFormErrors {
-    const errorMessages = getVatFormErrorMessages(fields, showExtendedBillingAddressForm);
+/**
+ * Pure validation function. Rules when VAT number is present:
+ * 1. Must provide Company OR (First Name AND Last Name)
+ * 2. Address and City are always required
+ * 3. First Name and Last Name are paired — providing one requires the other
+ */
+export function getVatFormErrors(fields: VatFormFields): VatFormErrors {
+    const errorMessages = getVatFormErrorMessages(fields);
     return {
         hasErrors: Object.values(errorMessages).some(isTruthy),
         errorMessages,
