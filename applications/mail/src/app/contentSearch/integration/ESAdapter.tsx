@@ -140,10 +140,21 @@ export class ESAdapter implements FunctionsV2 {
      * partial. Searches degrade to the server in both cases, never to v1's index, so results always
      * come from either the v2 index or the API and never a mix of engines. While a job runs, the job's
      * status already keeps queries away (it reports content search as off); this guard is what covers
-     * a failed import, where the status is v1's and says content search is on.
+     * a failed import, once the job is gone and v1's status is all we have.
      */
     private get isV2IndexUsable(): boolean {
         return !this.isV2IndexIncomplete && this.job?.mode !== 'index';
+    }
+
+    /**
+     * Report v1's status, but never claim a finished index while the v2 one is known to be partial: v1
+     * has its own complete index and says so, yet searches are going to the server (see
+     * {@link isV2IndexUsable}), and `contentIndexingDone` is what the UI and
+     * `useContentSearchReadyNotification` read as "content search is ready". Nothing here re-drives the
+     * import, so this holds for the rest of the session; the next startup imports again and clears it.
+     */
+    private forwardV1Status(v1Status: ESStatusConcrete) {
+        this.updateESStatus(this.isV2IndexIncomplete ? { ...v1Status, contentIndexingDone: false } : v1Status);
     }
 
     async cacheIndexedDB() {
@@ -248,11 +259,11 @@ export class ESAdapter implements FunctionsV2 {
         // off, enable it again". A live job would paper over that with the synthesized status it holds
         // during the v1 -> import handoff — either an "enabling" state that never completes (v1 will
         // never report `contentIndexingDone` now) or, if the import happens to end, a "done" state on
-        // top of a wiped v1. So tear the job down and forward v1 verbatim, like we do when idle.
+        // top of a wiped v1. So tear the job down and forward v1's own status, like we do when idle.
         if (this.job && !v1Status?.dbExists) {
             this.job.dispose();
             this.job = undefined;
-            this.updateESStatus(v1Status);
+            this.forwardV1Status(v1Status);
             return;
         }
 
@@ -268,7 +279,7 @@ export class ESAdapter implements FunctionsV2 {
             this.startJob('index');
             this.job!.onV1Status(v1Status);
         } else {
-            this.updateESStatus(v1Status);
+            this.forwardV1Status(v1Status);
         }
     }
 
