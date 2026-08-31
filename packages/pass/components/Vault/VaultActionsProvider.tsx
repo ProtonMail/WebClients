@@ -52,7 +52,6 @@ export const handleSelect = (navigate: ReturnType<typeof useNavigate>, selected:
             return navigate(getTrashRoute(), {
                 filters: {
                     selectedShareId: null,
-                    type: '*',
                 },
             });
         default: {
