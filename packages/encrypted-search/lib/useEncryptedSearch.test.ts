@@ -41,6 +41,10 @@ jest.mock('@proton/account/user/hooks', () => ({
     useUser: jest.fn().mockReturnValue([{ ID: 'userID' }, false]),
 }));
 
+jest.mock('@proton/account/addresses/hooks', () => ({
+    useAddresses: jest.fn().mockReturnValue([[], false]),
+}));
+
 jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: jest.fn().mockReturnValue({ createNotification: jest.fn() }),
 }));
@@ -49,6 +53,16 @@ jest.mock('./useSearchTelemetry', () => ({
     useSearchTelemetry: jest.fn().mockReturnValue({
         sendDeleteESDataReport: jest.fn(),
     }),
+}));
+
+jest.mock('./useContentSearchTelemetry', () => ({
+    useContentSearchTelemetry: jest.fn().mockReturnValue({
+        sendQueryCompletedReport: jest.fn(),
+        sendResultOpenedReport: jest.fn(),
+        sendResultActionReport: jest.fn(),
+        sendMailboxIndexCompletedReport: jest.fn(),
+    }),
+    getMailboxAddressType: jest.fn().mockReturnValue('proton'),
 }));
 
 jest.mock('./useEncryptedSearchStatus', () => ({
