@@ -149,18 +149,28 @@ export function setToolCallInBlocks(blocks: ContentBlock[], toolCall: string): C
  * Replaces last tool_result block if it exists (streaming behavior),
  * otherwise appends new block.
  */
-export function setToolResultInBlocks(blocks: ContentBlock[], toolResult: string): ContentBlock[] {
+export function setToolResultInBlocks(
+    blocks: ContentBlock[],
+    toolResult: string,
+    meta?: ToolResultBlock['meta']
+): ContentBlock[] {
     // Check if last block is a tool_result
     if (blocks.length > 0 && blocks[blocks.length - 1].type === 'tool_result') {
+        const prev = blocks[blocks.length - 1] as ToolResultBlock;
         // Replace the last tool_result block (streaming tool result)
         return [
             ...blocks.slice(0, -1),
-            { type: 'tool_result', content: toolResult, toolResult: tryParseJSON(toolResult) },
+            {
+                type: 'tool_result',
+                content: toolResult,
+                toolResult: tryParseJSON(toolResult),
+                meta: meta ?? prev.meta,
+            },
         ];
     }
 
     // No tool_result at end, append new one
-    return [...blocks, { type: 'tool_result', content: toolResult, toolResult: tryParseJSON(toolResult) }];
+    return [...blocks, { type: 'tool_result', content: toolResult, toolResult: tryParseJSON(toolResult), meta }];
 }
 
 /**

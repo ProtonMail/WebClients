@@ -310,6 +310,7 @@ describe('StreamProcessor', () => {
                         type: 'WebSearch',
                     },
                 },
+                meta: { settings: 'a' },
             })}\n\n`
         );
 
@@ -317,6 +318,7 @@ describe('StreamProcessor', () => {
             {
                 type: 'server_tool_result',
                 call_id: 'call_0',
+                meta: { settings: 'a' },
                 content: {
                     answer: 'Summary',
                     results: [{ title: 'Example', url: 'https://example.com' }],
