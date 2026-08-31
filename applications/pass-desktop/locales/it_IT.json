@@ -983,6 +983,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Le tue informazioni personali sono state rese pubbliche a causa di una violazione di dati di un servizio di terze parti."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Verifica di ${ compromised.progress.completed } su ${ compromised.progress.total }"
       ]
     },
     "Email": {
@@ -2919,6 +2922,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La tua organizzazione richiede che tu protegga l'accesso a ${ PASS_APP_NAME }"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Verifica di ${ compromised.progress.completed } password su ${ compromised.progress.total } in corso."
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Visualizza i tuoi elementi di ${ PASS_SHORT_APP_NAME } offline. Per abilitare la funzione è richiesta la password."
       ]
     },
     "Keyboard key": {
@@ -5307,6 +5316,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Stai per eliminare definitivamente ${ aliasCount } alias.",
         "Stai per eliminare definitivamente ${ aliasCount } alias."
+      ],
+      "Enable offline mode": [
+        "Attiva la modalità offline"
       ]
     },
     "Title_cloned_item": {

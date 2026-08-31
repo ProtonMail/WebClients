@@ -989,6 +989,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Vos informations personnelles ont été divulguées dans une fuite de données provenant d'un service tiers."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Vérification de ${ compromised.progress.completed } sur ${ compromised.progress.total }"
       ]
     },
     "Email": {
@@ -2931,6 +2934,12 @@
       ],
       "None of your saved passwords have appeared in a known data breach.": [
         "Aucun de vos mots de passe enregistrés n'a été identifié dans une fuite de données connue."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Vérification de ${ compromised.progress.completed } mots de passe sur ${ compromised.progress.total }"
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Consultez vos éléments ${ PASS_SHORT_APP_NAME } hors ligne. Votre mot de passe est nécessaire pour l'activer."
       ]
     },
     "Keyboard key": {
@@ -5331,6 +5340,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias.",
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias."
+      ],
+      "Enable offline mode": [
+        "Activer le mode hors ligne"
       ]
     },
     "Title_cloned_item": {

@@ -2972,6 +2972,9 @@
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Se verifică parolele ${ compromised.progress.completed } din ${ compromised.progress.total }"
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Vizualizare locală articole din ${ PASS_SHORT_APP_NAME }. Necesită parola pentru activare."
       ]
     },
     "Keyboard key": {
@@ -5397,6 +5400,9 @@
         "Urmează să ștergeți definitiv ${ aliasCount } alias.",
         "Urmează să ștergeți definitiv ${ aliasCount } aliasuri.",
         "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri."
+      ],
+      "Enable offline mode": [
+        "Activare mod local"
       ]
     },
     "Title_cloned_item": {
