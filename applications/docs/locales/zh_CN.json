@@ -935,6 +935,9 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能发送超过 ${ maxAttachments } 个联系人的 vCard 文件"
+      ],
+      "Preview logs": [
+        "预览日志"
       ]
     },
     "Actions message": {
@@ -5927,6 +5930,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍然可以查看您自己的账户数据，但所有用户账户将从您的组织中移除。"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "日志有助于我们了解问题发生前的情况。其中包括应用操作和错误消息，但不包含消息内容。"
       ]
     },
     "info": {
@@ -6461,6 +6467,9 @@
       ],
       "Your password (trusted contact)": [
         "您的密码（可信联系人）"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } 字符"
       ]
     },
     "Label for contact group color": {
@@ -8939,6 +8948,9 @@
       ],
       "User Admin": [
         "用户管理员"
+      ],
+      "Organization Admin": [
+        "组织管理员"
       ]
     },
     "Role description": {

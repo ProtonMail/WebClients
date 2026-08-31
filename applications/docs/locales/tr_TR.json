@@ -3773,7 +3773,7 @@
         "⚠️ Şifresi çözülemeyen ad"
       ],
       "Because this document was in a shared folder, only the folder owner can restore it": [
-        "Bu belge paylaşımlı klasörde bulunduğu için yalnızca klasör sahibi onu geri yükleyebilir"
+        "Bu belge paylaşımlı bir klasörde bulunduğundan yalnızca klasör sahibi onu geri yükleyebilir"
       ]
     },
     "error": {
@@ -6621,6 +6621,9 @@
       ],
       "Your password (trusted contact)": [
         "Parolanız (güvenilen kişi)"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } karakter"
       ]
     },
     "Label for contact group color": {

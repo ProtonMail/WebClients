@@ -969,8 +969,8 @@
         "${ domains } ekstra egendefinerte domener"
       ],
       "${ ips } dedicated VPN server": [
-        "${ ips } dedikert VPN-tjener",
-        "${ ips } dedikerte VPN-tjenere"
+        "${ ips } dedikert VPN-server",
+        "${ ips } dedikerte VPN-servere"
       ],
       "${ LUMO_APP_NAME } AI assistant": [
         "${ LUMO_APP_NAME } KI-assistent"
@@ -990,7 +990,7 @@
         "${ LUMO_SHORT_APP_NAME }-skriveassistent (for ${ quantity } brukere)"
       ],
       "${ price } per dedicated server": [
-        "${ price } per dedikerte tjener"
+        "${ price } per dedikert server"
       ],
       "${ price } per domain": [
         "${ price } per domene"
@@ -2154,7 +2154,7 @@
         "Mexico"
       ],
       "Micronesia": [
-        "Mikronesiaføderasjonen"
+        "Mikronesia"
       ],
       "Moldova": [
         "Moldova"
@@ -2966,7 +2966,7 @@
         "Adressen kunne ikke legges til."
       ],
       "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adresse er allerede i bruk av en bruker på utsiden av din organisasjon. Kontakt kundestøtte for å løse dette."
+        "Adresse er allerede i bruk av en bruker på utsiden av organisasjonen. Kontakt kundestøtte for å løse dette."
       ],
       "Address primary private key not found": [
         "Adresse til primærprivatnøkkel ikke funnet"
@@ -3299,7 +3299,7 @@
         "Slå sammen minst ${ calendarsToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere."
       ],
       "Missing inviter email": [
-        "Mangler e-postadresse for invitator"
+        "Invitørens e-postadresse mangler"
       ],
       "Missing key packet": [
         "Mangler nøkkelpakke"
@@ -5002,7 +5002,7 @@
         "Nedgrader"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Nedgradering vil terminere alle forbindelser til betalte ${ VPN_APP_NAME }-tjenere."
+        "Nedgradering vil terminere alle forbindelser til betalte ${ VPN_APP_NAME }-servere."
       ],
       "Download current logs": [
         "Last ned gjeldende logger"
@@ -5890,7 +5890,7 @@
         "Du blir ikke belastet hvis du avbryter før ${ trialEndsOnFormatted }."
       ],
       "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
-        "Du vil ikke kunne dele \"${ fileName }\" etter at du har endret tilgangen din til leser. Eieren eller en redigerer med delingstilgang kan gjenopprette redigeringstilgangen din. Du kan ikke angre denne endringen selv."
+        "Du vil ikke kunne dele \"${ fileName }\" etter at du har endret tilgangen din til leser. Eieren eller en redigerer med delingstilgang kan gjenopprette redigeringstilgangen. Du kan ikke angre denne endringen selv."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Du mottar kredittbelønningen én måned etter at vennen din abonnerer på en årsplan, og to måneder etter at de abonnerer på en månedlig plan."
@@ -6101,10 +6101,10 @@
         "Aliastittel"
       ],
       "Allow editors to change permissions and share": [
-        "Tillat redaktører å endre tillatelser og dele"
+        "Tillat redigerere å endre tillatelser og dele"
       ],
       "Allow editors to change permissions and share.": [
-        "Tillat redaktører å endre tillatelser og dele."
+        "Tillat redigerere å endre tillatelser og dele."
       ],
       "Anonymous": [
         "Anonym"
@@ -6221,7 +6221,7 @@
         "f.eks. Amazon, eBay, Etsy"
       ],
       "Editor": [
-        "Redaktør"
+        "Redigerer"
       ],
       "Email": [
         "E-post"
@@ -6341,7 +6341,7 @@
         "Hovedårsaken til kanselleringen"
       ],
       "Make editor": [
-        "Gjør til redaktør"
+        "Gi redigeringtillatelse"
       ],
       "Make viewer": [
         "Gjør til leser"
@@ -7442,7 +7442,7 @@
         "Kryptert kontaktinformasjon"
       ],
       "Encrypted VPN servers": [
-        "Krypterte VPN-tjenere"
+        "Krypterte VPN-servere"
       ],
       "End-to-end encryption": [
         "Ende-til-ende-kryptering"
@@ -7557,7 +7557,7 @@
         "Planlegg og slumre e-poster når som helst"
       ],
       "Secure Core servers": [
-        "Secure Core-tjenere"
+        "Secure Core-servere"
       ],
       "Secure file storage and sharing": [
         "Sikker fillagring og -deling"
@@ -7876,7 +7876,7 @@
         "Dedikerte servere med dedikerte IP-adresser kan legges til private gateway-servere for å muliggjøre finjustert tilgangskontroll"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
-        "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere tjenere."
+        "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere servere."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere tjenere."
@@ -7903,7 +7903,7 @@
         "Hold planene dine private for deg og familien din med en kryptert kalender."
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
-        "Holder deg beskyttet ved å blokkere alle nettverkstilkoblinger når du uventet kobles fra VPN-tjeneren vår."
+        "Holder deg beskyttet ved å blokkere alle nettverkstilkoblinger når du uventet kobles fra VPN-serveren vår."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketter er enkle merker du kan legge til i meldinger for å gjøre dem enklere å finne eller bruke filtre på."
@@ -7936,7 +7936,7 @@
         "Vår robuste infrastruktur sikrer at du får tilgang til kontoen din når du trenger den"
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
-        "Harddiskene til tjenerne våre er fullstendig kryptert med flere passordlag, slik at dataene dine er beskyttet selv om maskinvaren vår er kompromittert."
+        "Harddiskene til serverne våre er fullstendig kryptert med flere passordlag, slik at dataene er beskyttet selv om maskinvaren vår blir kompromittert."
       ],
       "Password management and identity protection": [
         "Passordbehandling og identitetsbeskyttelse"
@@ -7954,7 +7954,7 @@
         "Beskytt alle enheter som er koblet til WiFi-nettverket. Det er også nyttig hvis du har enheter som ikke støtter VPN-innstillinger direkte."
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
-        "Beskytt familien din mot skadelige nettsteder og få tilgang til våre høyhastighets VPN-tjenere for å strømme favorittinnholdet ditt."
+        "Beskytt familien mot skadelige nettsteder og få tilgang til våre høyhastighets VPN-servere for å strømme favorittinnholdet ditt."
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
         "Beskytt den virkelige e-postadressen din mot å bli avslørt eller lekket med aliaser (en tilfeldig generert e-postadresse som videresender e-post til hovedinnboksen din)."
@@ -8078,7 +8078,7 @@
         "Dedikert kontobehandler"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
-        "Dedikerte tjenerplasseringer i ${ numberOfCountries }+ land"
+        "Dedikerte serverplasseringer i ${ numberOfCountries }+ land"
       ],
       "Multi-platform support": [
         "Støtte for mange plattformer"
@@ -8312,10 +8312,10 @@
         "Rotmappen kunne ikke lastes inn"
       ],
       "Setting updated. Editors can change permissions and share.": [
-        "Innstilling oppdatert. Redaktører kan endre tillatelser og dele."
+        "Innstilling oppdatert. Redigeringspersoner kan endre tillatelser og dele."
       ],
       "Setting updated. Editors can't change permissions or share.": [
-        "Innstilling oppdatert. Redaktører kan ikke endre tillatelser eller dele."
+        "Innstillingen er oppdatert. Redigeringspersoner kan ikke endre tillatelser eller dele."
       ],
       "Share invitation accepted successfully": [
         "Delingsinvitasjonen ble godtatt"
@@ -9752,10 +9752,10 @@
         "En kobling til dette elementet er lagret i din Drive. Du får tilgang til koblingen senere fra seksjonen \"Delt med meg\"."
       ],
       "Editor permissions": [
-        "Redaktørtillatelser"
+        "Redigeringstillatelser"
       ],
       "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
-        "Redaktører kan nå administrere deling og invitere andre. Du kan slå det av når som helst i delingsinnstillingene."
+        "Redigeringspersoner kan nå administrere deling og invitere andre. Du kan slå det av når som helst i delingsinnstillingene."
       ],
       "To edit this document, create a copy that you can modify.": [
         "For å redigere dette dokumentet, lag en kopi som du kan endre."
@@ -10132,7 +10132,7 @@
         "Fingeravtrykk"
       ],
       "Migration status": [
-        "Migrasjonsstatus"
+        "Migreringsstatus"
       ],
       "Name": [
         "Navn"
@@ -10958,7 +10958,7 @@
         "Last opp en offentlig nøkkel for å aktivere sending av ende-til-ende-krypterte e-postmeldinger til denne e-posten."
       ],
       "Users who have accessed their ${ BRAND_NAME } account": [
-        "Brukere som har aktivert ${ BRAND_NAME }-kontoen sin"
+        "Brukere som har aktivert ${ BRAND_NAME }-kontoen"
       ],
       "Version 6 OpenPGP key": [
         "Versjon 6 OpenPGP-nøkkel"
