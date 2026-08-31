@@ -2132,8 +2132,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Bir ögeyi başka bir kasaya taşımak ögenin güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2830,6 +2829,9 @@
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "${ compromised.progress.completed } / ${ compromised.progress.total } parola denetleniyor"
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "${ PASS_SHORT_APP_NAME } ögelerinizi çevrim dışı görüntüleyin. Açmak için parolanız gerekir."
       ]
     },
     "Keyboard key": {
@@ -5150,6 +5152,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz.",
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz."
+      ],
+      "Enable offline mode": [
+        "Çevrim dışı kip açılıyor"
       ]
     },
     "Title_cloned_item": {

@@ -1398,6 +1398,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Se ha eliminado el código PIN desde otro cliente de ${ PASS_APP_NAME }."
+      ],
+      "Regex invalid": [
+        "Expresión regular no válida"
+      ],
+      "Regex unsafe": [
+        "Expresión regular no segura"
       ]
     },
     "Error message": {
@@ -2090,8 +2096,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
-        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte borrará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
