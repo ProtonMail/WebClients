@@ -185,12 +185,25 @@ export const MediaManagementProvider = ({
                     );
                 }
             } catch (error) {
+                const errorName = error instanceof Error ? error.name : 'Unknown';
+
+                reportMeetError('Failed to switch active device', {
+                    context: { error },
+                    tags: {
+                        deviceType,
+                        errorName,
+                        isSystemDefaultDevice,
+                        preserveDefaultDevice,
+                        supportsSetSinkId: supportsSetSinkId(),
+                    },
+                    fingerprint: ['failed-to-switch-active-device', deviceType, errorName],
+                });
+
                 if (throwOnError) {
                     throw error;
-                } else {
-                    reportMeetError('Failed to switch active device', error);
-                    return;
                 }
+
+                return;
             }
 
             if (preserveDefaultDevice) {

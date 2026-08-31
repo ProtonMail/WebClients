@@ -1,6 +1,7 @@
 import { useCallback, useRef } from 'react';
 
 import type { SeverityLevel } from '@sentry/browser';
+import type { Primitive } from '@sentry/types';
 
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
@@ -14,7 +15,7 @@ interface ReportMeetErrorOptions {
     level?: SeverityLevel;
     context?: Record<string, unknown>;
     fingerprint?: string[];
-    tags?: Record<string, string>;
+    tags?: Record<string, Primitive>;
 }
 
 export type ReportMeetError = (label: string, options?: ReportMeetErrorOptions | unknown) => void;
