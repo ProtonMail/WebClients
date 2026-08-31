@@ -4417,18 +4417,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:^10.0.1":
-  version: 10.0.1
-  resolution: "@eslint/js@npm:10.0.1"
-  peerDependencies:
-    eslint: ^10.0.0
-  peerDependenciesMeta:
-    eslint:
-      optional: true
-  checksum: 10/27ff77b8f0aab350b2f7a69d974eabb816bb9f4cab986b1538782269d6bfdc29e351803fa7a62c22c0b786341324f1a28b86bc83956ddfa189aa6bead1a87758
-  languageName: node
-  linkType: hard
-
 "@eslint/json@npm:^2.0.1":
   version: 2.0.1
   resolution: "@eslint/json@npm:2.0.1"
@@ -10935,14 +10923,10 @@ __metadata:
   resolution: "@proton/eslint-config-proton@workspace:packages/eslint-config-proton"
   dependencies:
     "@eslint/compat": "npm:^2.1.0"
-    "@eslint/eslintrc": "npm:^3.3.6"
-    "@eslint/js": "npm:^10.0.1"
     "@eslint/json": "npm:^2.0.1"
     "@protontech/eslint-plugin-enforce-uint8array-arraybuffer": "npm:^3.0.2"
     "@types/eslint-plugin-jsx-a11y": "npm:^6.10.1"
     eslint: "npm:^10.9.0"
-    eslint-config-prettier: "npm:^10.1.8"
-    eslint-import-resolver-alias: "npm:^1.1.2"
     eslint-import-resolver-typescript: "npm:4.4.5"
     eslint-plugin-compat: "npm:^7.0.2"
     eslint-plugin-custom-rules: "workspace:^"
@@ -11508,6 +11492,7 @@ __metadata:
     date-fns: "npm:^2.30.0"
     eslint: "npm:^10.9.0"
     jest: "npm:^30.4.2"
+    jest-environment-jsdom: "npm:^30.4.1"
     lodash: "npm:^4.18.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
@@ -11515,6 +11500,7 @@ __metadata:
     ts-jest: "npm:^29.4.12"
     ttag: "npm:^1.8.12"
     typescript: "npm:^6.0.3"
+    vat-validation: "npm:^3.0.0"
   languageName: unknown
   linkType: soft
 
@@ -27388,15 +27374,6 @@ __metadata:
     unrs-resolver:
       optional: true
   checksum: 10/f0778126bb3aae57c8c68946c71c4418927e9d39f72099b799d9c47a3b5712d6c9166b63ee8be58a020961dcc9216df09c856b825336af375ccbbdeedfc82a99
-  languageName: node
-  linkType: hard
-
-"eslint-import-resolver-alias@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "eslint-import-resolver-alias@npm:1.1.2"
-  peerDependencies:
-    eslint-plugin-import: ">=1.4.0"
-  checksum: 10/3fbb9aeda98335060bb438ed8446a060d282f80a365838a82edb1f8743b1d54c89303009c7717e3c915d5d722e57148082c5ada4455e811acdc8ed3a65059fa1
   languageName: node
   linkType: hard
 
