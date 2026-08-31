@@ -6,11 +6,14 @@ import {
     TelemetryMeasurementGroups,
 } from '@proton/shared/lib/api/telemetry';
 import { APPS } from '@proton/shared/lib/constants';
+import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import type {
     ContentSearchActionSurface,
     ContentSearchEventStatus,
+    ContentSearchMailboxAddressType,
     ContentSearchPrimaryMatchType,
     ContentSearchResultAction,
     ContentSearchScrollerMode,
@@ -23,6 +26,24 @@ import type {
  * mail's contentSearch module). Only sent for mail, since Content Search doesn't exist for calendar/drive.
  */
 const SEARCH_VERSION_V1: ContentSearchVersion = 'v1';
+
+/**
+ * Classifies an account's addresses for the `mailboxAddressType` dimension, used to break out BYOE
+ * (Bring Your Own Email) indexing time from regular Proton-address indexing time.
+ */
+export const getMailboxAddressType = (addresses: Address[] | undefined): ContentSearchMailboxAddressType => {
+    if (!addresses || !addresses.length) {
+        return 'proton';
+    }
+
+    const byoeCount = addresses.filter(getIsBYOEAddress).length;
+
+    if (byoeCount === 0) {
+        return 'proton';
+    }
+
+    return byoeCount === addresses.length ? 'byoe' : 'mixed';
+};
 
 export const useContentSearchTelemetry = () => {
     const api = useApi();
@@ -138,12 +159,14 @@ export const useContentSearchTelemetry = () => {
         totalMessagesIndexed,
         durationMs,
         mailboxMessagesTotal,
+        mailboxAddressType,
     }: {
         status: ContentSearchEventStatus;
         errorKind?: string;
         totalMessagesIndexed: number;
         durationMs: number;
         mailboxMessagesTotal?: number;
+        mailboxAddressType: ContentSearchMailboxAddressType;
     }) => {
         if (!isMailApp) {
             return;
@@ -161,6 +184,7 @@ export const useContentSearchTelemetry = () => {
             dimensions: {
                 status,
                 errorKind,
+                mailboxAddressType,
                 searchVersion: SEARCH_VERSION_V1,
             },
             delay: false,
