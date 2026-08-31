@@ -1,3 +1,10 @@
+/** Synchronizes access for search and indexing to the foundation-search blob storage.
+ * this is needed because interleaved access would read blobs outside a single revision
+ * and cause foundation-search to fail because of inconsistent data in the blobs.
+ * Search operations can interrupt indexing operations, as they are higher priority
+ * for the user. If indexing is interrupted by search, it will be automatically
+ * retried by running the runIndexing callback again */
+
 export class DatabaseLock {
     private indexingAbortController: AbortController | undefined;
     private searchPromise: Promise<void> | undefined;
