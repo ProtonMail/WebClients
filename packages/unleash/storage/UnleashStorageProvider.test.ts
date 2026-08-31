@@ -1,5 +1,6 @@
 import { UnleashClient } from 'unleash-proxy-client';
 
+import type { UnleashStorage } from './UnleashStorageProvider';
 import ProtonUnleashStorageProvider, { featureFlagStorageKey } from './UnleashStorageProvider';
 
 const mockFeatureFlags = {
@@ -29,8 +30,8 @@ const getFetchMock = () => {
 
 const getStorageMock = () => {
     const localStorageMock: { [key: string]: any } = {};
-    // Implements the full Storage interface required by ProtonUnleashStorageProvider
-    const mock: Storage = {
+    // Implements the `UnleashStorage` interface required by ProtonUnleashStorageProvider
+    const mock: UnleashStorage = {
         setItem: jest.fn().mockImplementation((key: string, value: any) => {
             localStorageMock[key] = value;
         }),
@@ -40,16 +41,7 @@ const getStorageMock = () => {
         removeItem: jest.fn().mockImplementation((key: string) => {
             delete localStorageMock[key];
         }),
-        clear: jest.fn().mockImplementation(() => {
-            Object.keys(localStorageMock).forEach((key) => delete localStorageMock[key]);
-        }),
-        key: jest.fn().mockImplementation((index: number) => {
-            const keys = Object.keys(localStorageMock);
-            return keys[index] || null;
-        }),
-        get length() {
-            return Object.keys(localStorageMock).length;
-        },
+        getKeys: jest.fn().mockImplementation(() => Object.keys(localStorageMock)),
     };
     return { mock, storageProvider: new ProtonUnleashStorageProvider(mock) };
 };
@@ -106,5 +98,19 @@ describe('UnleashStorageProvider', () => {
 
         expect(client.isEnabled('TestFeature')).toBe(true);
         expect(client.getAllToggles().length).toBe(1);
+    });
+
+    it('should only clear the entries owned by the unleash prefix', async () => {
+        const { mock, storageProvider } = getStorageMock();
+        await storageProvider.save(featureFlagStorageKey, mockFeatureFlags.toggles);
+        await storageProvider.save('sessionId', 'some-session-id');
+        mock.setItem('unrelated-key', 'keep-me');
+
+        storageProvider.clear();
+
+        expect(mock.removeItem).toHaveBeenCalledWith(`unleash:repository:${featureFlagStorageKey}`);
+        expect(mock.removeItem).toHaveBeenCalledWith('unleash:repository:sessionId');
+        expect(mock.getItem('unrelated-key')).toBe('keep-me');
+        expect(storageProvider.getSync(featureFlagStorageKey)).toBeUndefined();
     });
 });

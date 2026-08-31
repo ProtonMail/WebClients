@@ -1,16 +1,31 @@
 import type { IStorageProvider } from '@unleash/proxy-client-react';
 
 import { deleteCookie } from '@proton/shared/lib/helpers/cookies';
+import { getItem, getKeys, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import { FLAGS_WITH_VARIANT } from '../UnleashFeatureFlagsVariants';
 import saveAllowlistedFlagInCookies, { UNLEASH_FLAG_COOKIE_NAME } from './UnleashCookiesProvider';
 
 export const featureFlagStorageKey = 'repo';
 
+/**
+ * The subset of storage operations this provider needs. Kept narrower than the DOM `Storage`
+ * interface so it can be backed by the safe `@proton/shared` localStorage wrappers, which
+ * swallow the errors thrown when storage is unavailable or restricted.
+ */
+export interface UnleashStorage {
+    getItem: (key: string) => string | null | undefined;
+    setItem: (key: string, value: string) => void;
+    removeItem: (key: string) => void;
+    getKeys: () => string[];
+}
+
+const safeLocalStorage: UnleashStorage = { getItem, setItem, removeItem, getKeys };
+
 export default class ProtonUnleashStorageProvider implements IStorageProvider {
     private prefix = 'unleash:repository';
 
-    constructor(private storage: Storage = global.localStorage) {}
+    constructor(private storage: UnleashStorage = safeLocalStorage) {}
 
     public async save(name: string, data: any) {
         const serializedValue = JSON.stringify(data);
@@ -45,14 +60,10 @@ export default class ProtonUnleashStorageProvider implements IStorageProvider {
     public clear(): void {
         try {
             // Clear all localStorage entries with unleash prefix
-            const keysToRemove: string[] = [];
-            for (let i = 0; i < this.storage.length; i++) {
-                const key = this.storage.key?.(i);
-                if (key?.startsWith(this.prefix)) {
-                    keysToRemove.push(key);
-                }
-            }
-            keysToRemove.forEach((key) => this.storage.removeItem(key));
+            this.storage
+                .getKeys()
+                .filter((key) => key.startsWith(this.prefix))
+                .forEach((key) => this.storage.removeItem(key));
 
             // Clear feature flags cookie
             deleteCookie(UNLEASH_FLAG_COOKIE_NAME);
