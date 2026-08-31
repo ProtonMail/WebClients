@@ -12,7 +12,7 @@ import {
 } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectShowDuration } from '@proton/meet/store/slices/uiStateSlice';
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
-import { PLANS } from '@proton/payments/core/constants.ts';
+import { PLANS } from '@proton/payments/core/constants';
 import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
