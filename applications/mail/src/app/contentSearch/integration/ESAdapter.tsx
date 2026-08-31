@@ -214,7 +214,7 @@ export class ESAdapter implements FunctionsV2 {
         return this.isV1ContentIndexingDone;
     }
 
-    private startJob(mode: JobMode) {
+    private startIndexingJob(mode: JobMode) {
         if (mode === 'index') {
             // A fresh index is a new attempt at a complete v2 index, so a previous failure no longer
             // describes it — its own outcome will.
@@ -276,7 +276,7 @@ export class ESAdapter implements FunctionsV2 {
         // v1 was already indexed in a previous run — on the content-done false→true transition. The job
         // then drives the v1→import handoff itself.
         if (v1Status?.isEnablingContentSearch || (!wasContentIndexingDone && this.isV1ContentIndexingDone)) {
-            this.startJob('index');
+            this.startIndexingJob('index');
             this.job!.onV1Status(v1Status);
         } else {
             this.forwardV1Status(v1Status);
@@ -351,7 +351,7 @@ export class ESAdapter implements FunctionsV2 {
             // `waitForV1Sync`). Skip if content indexing hasn't finished yet, or if a job is already
             // live (the initial index will pick these up when it imports).
             if (hasMessagesToRefresh && this.canTriggerImport && !this.job) {
-                this.startJob('refresh');
+                this.startIndexingJob('refresh');
             }
         }
     }
