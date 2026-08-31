@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { differenceInDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks.ts';
+import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
