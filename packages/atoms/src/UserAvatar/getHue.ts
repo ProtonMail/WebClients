@@ -1,8 +1,4 @@
-import type { ElementType } from 'react';
-
 import tinycolor from 'tinycolor2';
-
-import type { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
 
 import { getAccentColorForUsername } from './getAccentColorForUsername';
 
@@ -16,15 +12,6 @@ function parseHueFromHSLstring(hsl: string): number | undefined {
 export type HueValue = number;
 
 export const UserAvatarHueCache = new Map<string, number>();
-
-interface UserAvatarOwnProps {
-    name?: string;
-    className?: string;
-    color?: { hue: HueValue } | { hsl: string };
-    size?: 'small' | 'medium';
-}
-
-export type UserAvatarProps<E extends ElementType> = PolymorphicPropsWithoutRef<UserAvatarOwnProps, E>;
 
 export const getHue = (name: string, color?: { hue: HueValue } | { hsl: string }) => {
     if (color) {

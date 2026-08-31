@@ -8,7 +8,7 @@ import useAssistantCommons from '../hooks/useAssistantCommons';
 import { useAssistantLocal } from '../hooks/useAssistantLocal';
 import { useAssistantServer } from '../hooks/useAssistantServer';
 
-export interface AssistantProviderProps {
+interface AssistantProviderProps {
     children: ReactNode;
 }
 

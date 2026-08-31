@@ -5,13 +5,13 @@ export interface ResponseMessage<T> {
     payload: T | Error;
 }
 
-export interface Message<T> {
+interface Message<T> {
     type: 'message';
     id: number;
     payload: T;
 }
 
-export interface InitMessage {
+interface InitMessage {
     type: 'init';
     payload: {
         value: string | undefined | null;

@@ -203,8 +203,7 @@
         },
         "packages/atoms": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/calendar": {
             "entry": [],
@@ -212,8 +211,7 @@
         },
         "packages/calendar-video-conferencing": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/chargebee": {
             "entry": [],
@@ -227,8 +225,7 @@
         },
         "packages/colors": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/components": {
             "entry": [],
@@ -237,8 +234,7 @@
         },
         "packages/cross-storage": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/docs-core": {
             "entry": [],
@@ -272,18 +268,15 @@
         },
         "packages/eslint-config-proton": {
             "entry": [],
-            "project": ["**/*.{js,ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{js,ts,tsx}"]
         },
         "packages/eslint-plugin-custom-rules": {
             "entry": [],
-            "project": ["**/*.{js,ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{js,ts,tsx}"]
         },
         "packages/features": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/global-types": {
             "entry": [],
@@ -291,8 +284,7 @@
         },
         "packages/hooks": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/i18n": {
             "entry": [],
@@ -301,8 +293,7 @@
         },
         "packages/icons": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/jest-env": {
             "entry": [],
@@ -310,13 +301,11 @@
         },
         "packages/key-transparency": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/llm": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/logger": {
             "entry": [],
@@ -354,8 +343,7 @@
         },
         "packages/metrics": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/nav": {
             "entry": [],
@@ -373,8 +361,7 @@
         },
         "packages/payments": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/payments-ui": {
             "entry": [],
@@ -383,8 +370,7 @@
         },
         "packages/polyfill": {
             "entry": [],
-            "project": ["**/*.{js,ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{js,ts,tsx}"]
         },
         "packages/prettier-config": {
             "entry": [],
@@ -404,8 +390,7 @@
         },
         "packages/recovery-kit": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/redux-shared-store": {
             "entry": [],
@@ -435,7 +420,7 @@
         "packages/stylelint-config-proton": {
             "entry": [],
             "project": ["**/*.{js,ts,tsx}"],
-            "ignore": ["**"]
+            "ignoreDependencies": ["stylelint", "stylelint-config-prettier-scss"]
         },
         "packages/styles": {
             "entry": ["eslint.config.{js,mjs,ts}"],
@@ -445,8 +430,7 @@
         },
         "packages/testing": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/types": {
             "entry": ["eslint.config.{js,mjs,ts}"],
@@ -454,8 +438,7 @@
         },
         "packages/unleash": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/utils": {
             "entry": [],
