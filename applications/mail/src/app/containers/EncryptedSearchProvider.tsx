@@ -1,8 +1,6 @@
 import { type ReactNode, createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { c } from 'ttag';
-
 import { useWelcomeFlags } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -30,6 +28,7 @@ import { useContentSearch } from '../contentSearch/integration/useContentSearch'
 import { convertEventType, getESCallbacks, getESFreeBlobKey, parseSearchParams } from '../helpers/encryptedSearch';
 import ESDeletedConversationsCache from '../helpers/encryptedSearch/ESDeletedConversationsCache';
 import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
+import { useContentSearchReadyNotification } from '../hooks/useContentSearchReadyNotification';
 import useISESEnabledElectron from '../hooks/useISESEnabledElectron';
 import type {
     ESBaseMessage,
@@ -81,30 +80,34 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         categoryIDs,
     });
 
-    const contentIndexingSuccessMessage = c('Success').t`Message content search enabled`;
-
     // Both orchestrators are invoked unconditionally (rules of hooks); the active one is
     // selected by the `ContentSearch` flag. `useContentSearch` mirrors `useEncryptedSearch`'s
     // API but resolves results from the content-search-v2 index instead of the legacy ES flow.
     const isContentSearchEnabled = useFlag('ContentSearch');
     const [searchVersion] = useLocalStateSync<'v1' | 'v2'>('v2', 'OVERRIDE_SEARCH_V2');
 
+    // No `contentIndexingSuccessMessage`: the library would announce content search when its own
+    // indexing ends, which is too early for the v2 path. `useContentSearchReadyNotification` below
+    // announces it from the status instead, which is correct for both.
     const esLibraryFunctionsV1 = useEncryptedSearch<ESBaseMessage, NormalizedSearchParams, ESMessageContent>({
         refreshMask: EVENT_ERRORS.MAIL,
         esCallbacks,
-        contentIndexingSuccessMessage,
     });
 
     const esLibraryFunctionsV2 = useContentSearch({
         refreshMask: EVENT_ERRORS.MAIL,
         esCallbacks,
-        contentIndexingSuccessMessage,
         // Keep the legacy ES index in sync while v2 is active by forwarding events to its handler
         esLibraryFunctionsV1,
     });
 
     const esLibraryFunctions =
         isContentSearchEnabled && searchVersion === 'v2' ? esLibraryFunctionsV2 : esLibraryFunctionsV1;
+
+    const enableContentSearch = useContentSearchReadyNotification(
+        esLibraryFunctions.esStatus,
+        esLibraryFunctions.enableContentSearch
+    );
 
     /**
      * Open the advanced search dropdown
@@ -164,7 +167,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                     const success = await esLibraryFunctions.enableEncryptedSearch({ isBackgroundIndexing: true });
 
                     if (success) {
-                        await esLibraryFunctions.enableContentSearch({ isBackgroundIndexing: true });
+                        await enableContentSearch({ isBackgroundIndexing: true });
                         removeItem(getESFreeBlobKey(user.ID));
                     }
                     return;
@@ -183,7 +186,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         if (automaticallyEnableForNewUser || automaticallyEnableForElectronMail) {
             return esLibraryFunctions.enableEncryptedSearch({ showErrorNotification: false }).then((success) => {
                 if (success) {
-                    return esLibraryFunctions.enableContentSearch({ notify: false });
+                    return enableContentSearch({ notify: false });
                 }
             });
         }
@@ -273,6 +276,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
     const esFunctions = {
         ...esLibraryFunctions,
+        enableContentSearch,
         esStatus,
         openDropdown,
         closeDropdown,

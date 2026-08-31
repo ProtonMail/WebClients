@@ -11,6 +11,8 @@ export default class SearchWorker {
     private abortController?: AbortController;
 
     async init(userId: string, indexKey: CryptoKey): Promise<void> {
+        // NOTE: if we ever use the reader here,
+        // we also need to guard worker.init with the dbLock in Search.ts
         this.initPromise = (async () => {
             await initWasm();
             const db = await openContentSearchDB(userId);
