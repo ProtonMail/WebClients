@@ -4,7 +4,7 @@ import { differenceInDays, fromUnixTime } from 'date-fns';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useUserSettings } from '@proton/account/userSettings/hooks.ts';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import type { Sync } from '@proton/activation/src/logic/sync/sync.interface';
