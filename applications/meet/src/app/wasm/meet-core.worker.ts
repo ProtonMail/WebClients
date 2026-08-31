@@ -73,10 +73,18 @@ const toWorkerError = (error: Error | string | number | null | undefined): MeetC
     }
 
     if (error instanceof Error) {
+        const custom = error as { code?: unknown; kind?: unknown };
+        const code = typeof custom.code === 'number' ? custom.code : undefined;
+        const meetCoreKind =
+            typeof custom.kind === 'number' && meetCoreErrorEnumValues.has(custom.kind)
+                ? (custom.kind as MeetCoreErrorEnum)
+                : undefined;
         return {
             kind: 'error',
             message: error.message,
             stack: error.stack,
+            code,
+            meetCoreKind,
         };
     }
 
@@ -208,6 +216,8 @@ const handleRpcRequest = async (request: MeetCoreRpcRequestMessage): Promise<Mee
             return activeApp.requestClosedCaptions(...request.params);
         case 'stopClosedCaptions':
             return activeApp.stopClosedCaptions(...request.params);
+        case 'setClosedCaptionsAvailabilityAsHost':
+            return activeApp.setClosedCaptionsAvailabilityAsHost(...request.params);
         case 'leaveMeeting':
             return activeApp.leaveMeeting();
         case 'triggerWebSocketReconnect':
