@@ -26,6 +26,11 @@ export const getConnectivityRetryTimeout = (status: ConnectivityStatus, retryCou
     CONNECTIVITY_RETRY_TIMEOUT *
     (status === ConnectivityStatus.DOWNTIME ? FIBONACCI_LIST[Math.min(retryCount, FIBONACCI_LIST.length - 1)] : 1);
 
+export const isOnline = (state: ConnectivityOptions): boolean => {
+    const navigatorOnline = typeof navigator === 'undefined' || navigator.onLine;
+    return navigatorOnline && intoConnectivityStatus(state) === ConnectivityStatus.ONLINE;
+};
+
 export const getConnectivityWarning = (connectivity: ConnectivityStatus): Maybe<string> => {
     switch (connectivity) {
         case ConnectivityStatus.OFFLINE:

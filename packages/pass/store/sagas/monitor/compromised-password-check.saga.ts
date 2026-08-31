@@ -1,9 +1,11 @@
 import { call, fork, put, race, select, take, takeEvery } from 'redux-saga/effects';
 
+import { api } from '../../../lib/api/api';
 import { getItemKey } from '../../../lib/items/item.utils';
 import { checkPasswordCompromised } from '../../../lib/monitor/compromised-password.request';
 import { hasPasswordChanged } from '../../../lib/monitor/monitor.utils';
 import type { CompromisedPasswordEntry } from '../../../lib/monitor/types';
+import { isOnline } from '../../../lib/network/connectivity.utils';
 import { isPaidPlan } from '../../../lib/user/user.predicates';
 import type { ItemRevision } from '../../../types';
 import { PassFeature } from '../../../types/api/features';
@@ -25,6 +27,7 @@ function* isEnabled(): Generator<any, boolean, any> {
 
 function* checkItem(item: ItemRevision): Generator<any, void, any> {
     try {
+        if (!isOnline(api.getState())) return;
         if (item.data.type !== 'login') return;
 
         const password = deobfuscate(item.data.content.password);
