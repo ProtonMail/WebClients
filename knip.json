@@ -227,8 +227,7 @@
         },
         "packages/colors": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/components": {
             "entry": [],
