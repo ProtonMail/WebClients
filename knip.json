@@ -279,8 +279,7 @@
         },
         "packages/features": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/global-types": {
             "entry": [],
