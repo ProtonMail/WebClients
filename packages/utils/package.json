@@ -55,8 +55,7 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
-        "date-fns": "^2.30.0",
-        "lodash": "^4.18.1"
+        "date-fns": "^2.30.0"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
