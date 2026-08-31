@@ -1,6 +1,7 @@
 import type { Task } from 'redux-saga';
 import { runSaga } from 'redux-saga';
 
+import { exposeApi } from '../../../lib/api/api';
 import { obfuscate } from '../../../utils/obfuscate/xor';
 import { requestCancel } from '../../request/actions';
 import { sagaSetup } from '../testing';
@@ -19,6 +20,9 @@ let plan: 'free' | 'plus' = 'plus';
 let logins: any[] = [];
 let cache: Record<string, any> = {};
 let lastSyncedChange = 0;
+let online = true;
+
+exposeApi({ getState: () => ({ online, unreachable: false }) } as any);
 
 jest.mock('../../selectors', () => ({
     ...jest.requireActual('../../selectors'),
@@ -47,6 +51,7 @@ describe('compromisedPasswordsFullCheck saga', () => {
         jest.clearAllMocks();
         featureEnabled = true;
         plan = 'plus';
+        online = true;
         logins = [];
         cache = {};
         lastSyncedChange = 0;
@@ -88,6 +93,17 @@ describe('compromisedPasswordsFullCheck saga', () => {
 
     it('returns [] and never calls the network on a free plan', async () => {
         plan = 'free';
+        logins = [loginItem('s1', 'i1', 'hunter2')];
+        intent();
+        await saga.nextTick();
+
+        expect(checkPasswordCompromised).not.toHaveBeenCalled();
+        const success = findAction((a) => a.type.endsWith('::success'));
+        expect(success?.payload).toEqual([]);
+    });
+
+    it('returns [] and never calls the network when offline', async () => {
+        online = false;
         logins = [loginItem('s1', 'i1', 'hunter2')];
         intent();
         await saga.nextTick();
