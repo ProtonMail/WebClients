@@ -3,6 +3,10 @@
     "description": "",
     "license": "GPL-3.0",
     "sideEffects": false,
+    "exports": {
+        ".": "./index.ts",
+        "./*": "./*"
+    },
     "main": "index.ts",
     "scripts": {
         "check-types": "tsc",
@@ -104,7 +108,8 @@
         "eslint": "^10.9.0",
         "jest": "^30.4.2",
         "prettier": "^3.9.6",
-        "typescript": "^6.0.3"
+        "typescript": "^6.0.3",
+        "vitest": "^4.1.11"
     },
     "peerDependencies": {
         "@proton/cross-storage": "*",
