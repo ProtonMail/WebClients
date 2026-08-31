@@ -13,9 +13,7 @@ describe('tryParseToolCall', () => {
     });
 
     it('accepts OpenAI-adapted arguments payloads', () => {
-        const parsed = tryParseToolCall(
-            JSON.stringify({ name: 'stock', arguments: { symbol: 'AAPL' } })
-        );
+        const parsed = tryParseToolCall(JSON.stringify({ name: 'stock', arguments: { symbol: 'AAPL' } }));
 
         expect(parsed).toEqual({
             name: 'stock',
@@ -57,6 +55,34 @@ describe('tryParseToolCall', () => {
         expect(parsed).toEqual({
             name: 'filesystem__fs_search',
             arguments: { query: '*.md', root: '/Users/me/Documents' },
+        });
+    });
+
+    it('accepts flat city/country weather tool calls from Apertus', () => {
+        const parsed = tryParseToolCall(
+            JSON.stringify({
+                name: 'weather',
+                arguments: { city: 'Paris', country_code: 'FR' },
+            })
+        );
+
+        expect(parsed).toEqual({
+            name: 'weather',
+            arguments: { location: { city: 'Paris', country_code: 'FR' } },
+        });
+    });
+
+    it('accepts nested weather tool calls unchanged', () => {
+        const parsed = tryParseToolCall(
+            JSON.stringify({
+                name: 'weather',
+                arguments: { location: { city: 'Paris', country_code: 'FR' } },
+            })
+        );
+
+        expect(parsed).toEqual({
+            name: 'weather',
+            arguments: { location: { city: 'Paris', country_code: 'FR' } },
         });
     });
 });
