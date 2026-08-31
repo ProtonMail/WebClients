@@ -11,7 +11,13 @@
     "workspaces": {
         ".": {
             "entry": [],
-            "project": []
+            "project": [],
+            "ignoreDependencies": [
+                "turbo",
+                "@proton/stylelint-config-proton",
+                "stylelint-config-standard-scss",
+                "stylelint-use-logical-spec"
+            ]
         },
         "applications/account": {
             "entry": [
@@ -144,8 +150,7 @@
         },
         "applications/pdf-ui": {
             "entry": [],
-            "project": ["src/**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["src/**/*.{ts,tsx}"]
         },
         "applications/preview-sandbox": {
             "entry": ["src/index.ts", "src/previews/index.ts"],
@@ -194,8 +199,7 @@
         },
         "packages/app-context": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/atoms": {
             "entry": [],
@@ -283,8 +287,7 @@
         },
         "packages/global-types": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/hooks": {
             "entry": [],
@@ -303,8 +306,7 @@
         },
         "packages/jest-env": {
             "entry": [],
-            "project": ["**/*.{js,ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{js,ts,tsx}"]
         },
         "packages/key-transparency": {
             "entry": [],
@@ -386,23 +388,19 @@
         },
         "packages/prettier-config": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/raw-images": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/react-polymorphic-types": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/react-redux-store": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/recovery-kit": {
             "entry": [],
@@ -423,8 +421,7 @@
         },
         "packages/sanitize": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/shared": {
             "entry": [],
@@ -433,8 +430,7 @@
         },
         "packages/sieve": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/stylelint-config-proton": {
             "entry": [],
@@ -443,7 +439,8 @@
         },
         "packages/styles": {
             "entry": ["eslint.config.{js,mjs,ts}"],
-            "project": ["**/*.{ts,tsx}"]
+            "project": ["**/*.{ts,tsx}"],
+            "ignoreDependencies": ["inter-ui"]
         },
         "packages/testing": {
             "entry": [],

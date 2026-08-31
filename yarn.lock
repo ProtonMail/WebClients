@@ -11834,11 +11834,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/styles@workspace:packages/styles"
   dependencies:
-    include-media: "npm:^2.0.0"
     inter-ui: "npm:^4.1.1"
     sass: "npm:^1.80.3"
     stylelint: "npm:^15.11.0"
-    svgo: "npm:^4.0.2"
   languageName: unknown
   linkType: soft
 
@@ -49060,7 +49058,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svgo@npm:^4.0.1, svgo@npm:^4.0.2":
+"svgo@npm:^4.0.1":
   version: 4.0.2
   resolution: "svgo@npm:4.0.2"
   dependencies:

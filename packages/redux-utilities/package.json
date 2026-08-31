@@ -12,7 +12,6 @@
         "./initialModelState": "./initialModelState/initialModelState.ts",
         "./initialModelState/interface": "./initialModelState/interface.ts"
     },
-    "main": "index.ts",
     "scripts": {
         "check-types": "tsc",
         "lint": "eslint --quiet",

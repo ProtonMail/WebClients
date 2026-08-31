@@ -44,12 +44,11 @@
         "./Tooltip/Tooltip": "./src/Tooltip/Tooltip.tsx",
         "./TransitionSlot/TransitionSlot": "./src/TransitionSlot/TransitionSlot.tsx",
         "./UserAvatar/UserAvatar": "./src/UserAvatar/UserAvatar.tsx",
-        "./UserAvatar/getAccentColorForUsername": "./src/UserAvatar/getAccentColorForUsername",
+        "./UserAvatar/getAccentColorForUsername": "./src/UserAvatar/getAccentColorForUsername.ts",
         "./VerticalSteps/VerticalSteps": "./src/VerticalSteps/VerticalSteps.tsx",
         "./VerticalSteps/VerticalStep": "./src/VerticalSteps/VerticalStep.tsx",
         "./Vr/Vr": "./src/Vr/Vr.tsx"
     },
-    "main": "./src/index.ts",
     "scripts": {
         "check-types": "tsc",
         "create-atom": "ts-node -P create-atom/tsconfig.create-atom.json create-atom/index",
