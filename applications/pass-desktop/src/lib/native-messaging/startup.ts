@@ -3,8 +3,8 @@ import type { BrowserWindow } from 'electron';
 import type { MaybeNull } from '@proton/pass/types';
 
 import { napi_native_messaging } from 'proton-pass-desktop-native';
-import logger from 'proton-pass-desktop/utils/logger';
 
+import logger from '../../utils/logger';
 import { getHostLocation, getSockLocation } from './config';
 import { setupElectronIpcHandlers } from './electron-ipc';
 import { hostSockLoop } from './host-ipc';

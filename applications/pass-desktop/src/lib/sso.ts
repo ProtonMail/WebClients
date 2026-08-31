@@ -1,7 +1,7 @@
 import type { OnHeadersReceivedListenerDetails } from 'electron';
 
-import config from 'proton-pass-desktop/app/config';
-import logger from 'proton-pass-desktop/utils/logger';
+import config from '../app/config';
+import logger from '../utils/logger';
 
 // Fix SSO callback URL
 export const fixSSOUrl = ({ responseHeaders, url }: OnHeadersReceivedListenerDetails) => {

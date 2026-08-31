@@ -5,15 +5,14 @@ import type { MaybeNull } from '@proton/pass/types';
 import type { UpdateStore } from '@proton/pass/types/desktop';
 import { UpdateStatus } from '@proton/pass/types/desktop';
 
-import { setupIpcHandler } from 'proton-pass-desktop/lib/ipc';
-import logger from 'proton-pass-desktop/utils/logger';
-import { isMac, isWindows } from 'proton-pass-desktop/utils/platform';
-
+import logger from '../../utils/logger';
+import { isMac, isWindows } from '../../utils/platform';
+import { setupIpcHandler } from '../ipc';
 import { setTagCookie } from './helpers';
 import { getUpdateStore, onUpdateStore, setUpdateStore } from './store';
 import { checkForUpdates } from './updater';
 
-declare module 'proton-pass-desktop/lib/ipc' {
+declare module '../ipc' {
     interface IPCChannels {
         'update:getUpdateStore': IPCChannel<[], UpdateStore>;
         'update:setUpdateStore': IPCChannel<[update: Partial<UpdateStore>], void>;

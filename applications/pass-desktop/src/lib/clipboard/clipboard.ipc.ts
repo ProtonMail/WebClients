@@ -1,9 +1,10 @@
 import noop from '@proton/utils/noop';
 
 import { clipboard as clipboardNative } from 'proton-pass-desktop-native';
-import { setupIpcHandler } from 'proton-pass-desktop/lib/ipc';
 
-declare module 'proton-pass-desktop/lib/ipc' {
+import { setupIpcHandler } from '../ipc';
+
+declare module '../ipc' {
     interface IPCChannels {
         'clipboard:read': IPCChannel<[], string>;
         'clipboard:write': IPCChannel<[text: string], void>;
