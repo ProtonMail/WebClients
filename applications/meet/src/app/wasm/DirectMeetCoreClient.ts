@@ -69,6 +69,12 @@ export class DirectMeetCoreClient implements MeetCoreClient {
         return this.app.stopClosedCaptions(...args);
     }
 
+    public setClosedCaptionsAvailabilityAsHost(
+        ...args: Parameters<App['setClosedCaptionsAvailabilityAsHost']>
+    ): Promise<void> {
+        return this.app.setClosedCaptionsAvailabilityAsHost(...args);
+    }
+
     public leaveMeeting(): Promise<void> {
         return this.app.leaveMeeting();
     }

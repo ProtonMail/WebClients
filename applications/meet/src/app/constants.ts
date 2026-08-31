@@ -5,6 +5,7 @@ export const JOIN_TITLE_TIMEOUT = 2000;
 export const NOTIFICATION_PARTICIPANT_LIMIT = 10;
 
 export const MEETING_LOCKED_ERROR_CODE = 2502;
+export const PROVIDER_FAILED_ERROR_CODE = 2902;
 
 export const PIP_PREVIEW_ITEM_WIDTH = 480;
 export const PIP_PREVIEW_ITEM_HEIGHT = 270;
@@ -36,3 +37,5 @@ export const CAPTIONS_AGENT_RETRY_DELAYS_MS = [
         CAPTIONS_AGENT_RETRY_BACKOFF_MS
     ),
 ];
+
+export const CAPTIONS_DISABLED_METADATA_KEY = 'captions_disabled';
