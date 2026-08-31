@@ -1,4 +1,4 @@
-export type FeatureType = 'boolean' | 'integer' | 'float' | 'string' | 'enumeration' | 'mixed';
+type FeatureType = 'boolean' | 'integer' | 'float' | 'string' | 'enumeration' | 'mixed';
 
 export interface Feature<V = any> {
     Code: string;
