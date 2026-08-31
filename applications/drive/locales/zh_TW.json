@@ -1313,6 +1313,9 @@
       ],
       "Stop": [
         "停止"
+      ],
+      "Migrate": [
+        "遷移"
       ]
     },
     "Action: Sheets": {
@@ -4218,6 +4221,27 @@
       ],
       "You do not have access to this shared item": [
         "您沒有權限訪問此共享的項目"
+      ],
+      "Cannot verify the author of this file": [
+        "無法驗證此檔案的作者"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "解密書籤密碼失敗: ${ message }"
+      ],
+      "Image preview not found": [
+        "查無照片預覽"
+      ],
+      "Missing inviter email": [
+        "缺少邀請電子郵件"
+      ],
+      "Missing organization private key": [
+        "缺少組織私有密鑰"
+      ],
+      "This item is no longer shared": [
+        "此項目已停止共享"
+      ],
+      "You can update a public link for your own files only": [
+        "您只能更新您的檔案公開連結"
       ]
     },
     "error": {
@@ -7391,6 +7415,12 @@
       ],
       "You": [
         "您"
+      ],
+      "No users to display": [
+        "無使用者可顯示"
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "若要遷移此使用者，於您的 ${ provider.adminConsoleName } 取消封存它們的帳號。"
       ]
     },
     "info": {
@@ -9355,6 +9385,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫工具與擴充存取權"
       ]
     },
     "new_plans: feature highlight": {
@@ -10788,6 +10821,9 @@
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "您的貨幣已變更為歐元 (€)，因為 SEPA 銀行轉帳僅支援以歐元付款。"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "您的貨幣以變更至歐元 (€) 因為 ${ IDEAL_WERO_BRAND_NAME } 僅支援歐元付款。"
       ]
     },
     "Payments.Error": {
@@ -14470,11 +14506,32 @@
       ],
       "key": [
         "金鑰"
+      ],
+      "hash key": [
+        "雜湊金鑰"
       ]
     },
     "ngc_access_banner: action": {
       "Try it now": [
         "立刻體驗"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "2 TB of secure storage": [
+        "2TB 的安全儲存空間"
+      ],
+      "3 TB of secure storage": [
+        "3TB 的安全儲存空間"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "全部的頂級質子版 ${ DRIVE_SHORT_APP_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 和 ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "12 個月"
       ]
     }
   }

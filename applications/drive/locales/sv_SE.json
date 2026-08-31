@@ -7784,6 +7784,12 @@
       ],
       "Read this file": [
         "Läs denna fil"
+      ],
+      "Can't read this file": [
+        "Kan inte läsa denna fil"
+      ],
+      "Looked at this image": [
+        "Tittade på denna bild"
       ]
     },
     "info": {
@@ -11371,6 +11377,9 @@
       ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Betala med ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Din valuta har ändrats till euro (€) eftersom ${ IDEAL_WERO_BRAND_NAME } endast stöder betalningar i euro."
       ]
     },
     "Payments.Error": {
@@ -11394,6 +11403,9 @@
       ],
       "Please enter the account holder name": [
         "Ange kontoinnehavarens namn"
+      ],
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Misslyckades med att initialisera ${ IDEAL_WERO_BRAND_NAME }. Försök igen senare."
       ]
     },
     "Payments.error": {
@@ -14490,6 +14502,9 @@
       ],
       "September Sale": [
         "Septemberrea"
+      ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ node.activeRevision.contentAuthor.error.error }": [
+        "Vi kunde inte bekräfta att filinnehållet laddades upp av ${ claimedContentAuthor }. Orsaken är: ${ node.activeRevision.contentAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
