@@ -1451,6 +1451,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Se ha eliminado el código PIN desde otro cliente de ${ PASS_APP_NAME }."
+      ],
+      "Regex invalid": [
+        "Expresión regular no válida"
+      ],
+      "Regex unsafe": [
+        "Expresión regular no segura"
       ]
     },
     "Error message": {
@@ -2886,6 +2892,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Tu organización requiere que asegures tu acceso a ${ PASS_APP_NAME }"
+      ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "Si firmas tus commits de Git con tu clave SSH, ejecuta también este comando:"
+      ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "Para que Git funcione con el agente SSH de ${ PASS_APP_NAME }, Git debe usar Windows OpenSSH. Esto se puede hacer ejecutando este comando:"
       ]
     },
     "Keyboard key": {
