@@ -1,8 +1,8 @@
 import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import type { SubscriptionCheckForbiddenReason } from '@proton/payments/core/subscription/interface';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
-import { buildSubscription } from '@proton/testing/builders/subscription';
-import { getTestPlansMap } from '@proton/testing/data/payments/data-plans';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { getTestPlansMap } from '@proton/payments/testing/data-plans';
 
 import { show30DaysMoneyBackGuarantee } from './show30DaysMoneyBackGuarantee';
 

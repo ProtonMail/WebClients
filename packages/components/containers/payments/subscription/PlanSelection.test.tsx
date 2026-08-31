@@ -5,11 +5,11 @@ import { getDefaultMainCurrency } from '@proton/payments/core/currencies';
 import type { Currency } from '@proton/payments/core/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getPlanByName } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { getLongTestPlans, getTestPlans } from '@proton/payments/testing/data-plans';
 import { APPS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
-import { buildSubscription } from '@proton/testing/builders/subscription';
 import { buildUser } from '@proton/testing/builders/user';
-import { getLongTestPlans, getTestPlans } from '@proton/testing/data/payments/data-plans';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { type AccessiblePlansHookProps, getMaximumCycle, useAccessiblePlans } from './PlanSelection';

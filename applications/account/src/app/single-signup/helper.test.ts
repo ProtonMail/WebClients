@@ -3,7 +3,7 @@ import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
 import type { PlansMap } from '@proton/payments/core/plan/interface';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
-import { PLANS_MAP } from '@proton/testing/data/payments/data-plans';
+import { PLANS_MAP } from '@proton/payments/testing/data-plans';
 
 import type { SubscriptionData } from '../signup/interfaces';
 import type { SubscriptionDataCycleMapping } from '../single-signup-v2/helper';

@@ -1,5 +1,5 @@
-import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
-import type { TokenPaymentMethod } from '@proton/payments/core/interface';
+import { PAYMENT_METHOD_TYPES } from '../core/constants';
+import type { TokenPaymentMethod } from '../core/interface';
 
 export function mockVerifyPayment() {
     const verifyPayment = jest.fn();

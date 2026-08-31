@@ -22,4 +22,19 @@ export default defineConfig([
             ],
         },
     },
+    {
+        files: ['testing/**'],
+        rules: {
+            'import/no-internal-modules': 'off',
+            'import/no-extraneous-dependencies': 'off',
+        },
+    },
+    {
+        files: ['**/*.test.ts', '**/*.test.tsx'],
+        rules: {
+            'custom-rules/no-package-self-import': 'off',
+            'import/no-extraneous-dependencies': 'off',
+            'import/no-internal-modules': 'off',
+        },
+    },
 ]);

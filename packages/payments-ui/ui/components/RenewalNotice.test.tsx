@@ -9,10 +9,10 @@ import { getPrice } from '@proton/payments/core/price-helpers';
 import { SubscriptionMode, TaxMode } from '@proton/payments/core/subscription/constants';
 import { getFreeCheckResult } from '@proton/payments/core/subscription/freePlans';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getTermsURL } from '@proton/shared/lib/helpers/url';
-import { buildSubscription } from '@proton/testing/builders/subscription';
 
 import { getCheckoutRenewNoticeText, getCheckoutRenewNoticeTextFromCheckResult } from './RenewalNotice';
 

@@ -5,7 +5,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { changeRenewState } from '@proton/payments/core/api/api';
 import { PLANS } from '@proton/payments/core/constants';
 import { Renew } from '@proton/payments/core/subscription/constants';
-import { buildSubscription } from '@proton/testing/builders/subscription';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import useEventManager from '../../../../hooks/useEventManager';
 import { componentsHookRenderer } from '../../../contacts/tests/render';

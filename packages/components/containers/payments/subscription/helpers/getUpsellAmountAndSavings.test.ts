@@ -1,7 +1,7 @@
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Plan } from '@proton/payments/core/plan/interface';
-import { buildSubscription } from '@proton/testing/builders/subscription';
-import { getTestPlans } from '@proton/testing/data/payments/data-plans';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { getTestPlans } from '@proton/payments/testing/data-plans';
 
 import { getUpsellAmountAndSavings } from './getUpsellAmountAndSavings';
 

@@ -15,8 +15,8 @@ import { getAddonNameByPlan } from '@proton/payments/core/plan/helpers';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getPlanName } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { buildSubscription } from '@proton/testing/builders/subscription';
-import { getLongTestPlans } from '@proton/testing/data/payments/data-plans';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { getLongTestPlans } from '@proton/payments/testing/data-plans';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 import { getPaymentStatusState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 

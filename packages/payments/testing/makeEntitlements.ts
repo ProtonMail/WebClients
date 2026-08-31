@@ -1,4 +1,4 @@
-import type { Entitlement, Entitlements } from '@proton/payments/core/entitlements/interface';
+import type { Entitlement, Entitlements } from '../core/entitlements/interface';
 
 export const makeEntitlements = (
     org: Entitlement[] = [],
