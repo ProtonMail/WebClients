@@ -19,9 +19,11 @@ export async function lookupDoc(user: UserModel, userKeys: DecryptedKey[], docId
         console.log('get search document by id', docId);
         console.dir(record);
         const oldStore = await EncryptedSearchReader.open(user.ID, userKeys);
-        const sourceDoc = await oldStore.readMessages([docId]);
-        console.log('source doc from old index');
-        console.dir(sourceDoc[0]);
+        if (oldStore) {
+            const sourceDoc = await oldStore.readMessages([docId]);
+            console.log('source doc from old index');
+            console.dir(sourceDoc[0]);
+        }
     } finally {
         db.close();
     }

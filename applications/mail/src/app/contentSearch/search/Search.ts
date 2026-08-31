@@ -5,27 +5,35 @@ import type { ESItem, NormalizedSearchParams } from '@proton/encrypted-search/mo
 import createListeners from '@proton/shared/lib/helpers/listeners.ts';
 
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch.ts';
-
+import type { DatabaseLock } from '../db/DatabaseLock';
 import type { EncryptedSearchReader } from '../import/EncryptedSearchReader';
 import type SearchWorker from './SearchWorker';
 
 type SearchResult = ESItem<ESBaseMessage, ESMessageContent>;
+
+/**
+ * How a search ended. `no-index` means the query never ran because there was nothing to run it
+ * against, which is not the same as finding no matches: the caller has to send the query elsewhere
+ * (the server) rather than present an empty result set.
+ */
+export type SearchOutcome = 'completed' | 'no-index' | 'failed';
 
 /** represents a single search */
 export class Search {
     public readonly onResults = createListeners<[SearchResult[]]>();
     public readonly onError = createListeners<[Error]>();
     public readonly onDisposed = createListeners<[]>();
-    public readonly done: Promise<void>;
+    public readonly done: Promise<SearchOutcome>;
 
     private unfilteredResults?: SearchResult[];
     private filteredResults?: SearchResult[];
-    private resolveDone?: (value: void | PromiseLike<void>) => void;
+    private resolveDone?: (outcome: SearchOutcome) => void;
 
     constructor(
         private params: NormalizedSearchParams,
+        private dbLock: DatabaseLock,
         private workerPromise: Promise<Comlink.Remote<SearchWorker> | undefined>,
-        private openESReader: () => Promise<EncryptedSearchReader>
+        private openESReader: () => Promise<EncryptedSearchReader | undefined>
     ) {
         this.done = new Promise((resolve) => {
             this.resolveDone = resolve;
@@ -63,10 +71,11 @@ export class Search {
     /** @internal called by SearchService */
     public start() {
         this.execute()
-            .finally(() => {
-                this.resolveDone?.();
+            .then((outcome) => {
+                this.resolveDone?.(outcome);
             })
             .catch((err) => {
+                this.resolveDone?.('failed');
                 this.onError.notify(err as Error);
             });
     }
@@ -77,9 +86,23 @@ export class Search {
      * ids are resolved into renderable metadata via the legacy encrypted-search store,
      * which V2 seeds from and therefore always exists alongside it.
      */
-    private async execute(): Promise<void> {
+    private async execute(): Promise<SearchOutcome> {
         const promises: Promise<void>[] = [];
+
+        const worker = await this.workerPromise;
+        // The index doesn't exist yet. Report that rather than notifying an empty result set: no
+        // results were *found*, the query simply never ran, and only the caller can decide where to
+        // send it instead.
+        if (!worker) {
+            return 'no-index';
+        }
+
+        // Open the legacy store only once we know the v2 index exists (the reader never creates the v1
+        // DB — see EncryptedSearchReader.open). If it's somehow missing there's nothing to resolve.
         const oldStore = await this.openESReader();
+        if (!oldStore) {
+            return 'no-index';
+        }
 
         const fetchMessagesForIDs = async (ids: string[]) => {
             const storeMessages = await oldStore.readMessages(ids);
@@ -90,25 +113,20 @@ export class Search {
         };
 
         try {
-            const worker = await this.workerPromise;
-            // index does not exist yet, for now just show empty results
-            if (!worker) {
-                this.unfilteredResults = [];
-                this.applyFilters();
-                return;
-            }
             performance.mark('search-worker-start');
-            await worker.search(
-                this.params,
-                Comlink.proxy((ids) => {
-                    promises.push(fetchMessagesForIDs(ids));
-                })
+            await this.dbLock.runSearch(() =>
+                worker.search(
+                    this.params,
+                    Comlink.proxy((ids) => {
+                        promises.push(fetchMessagesForIDs(ids));
+                    })
+                )
             );
-
             await Promise.all(promises);
         } finally {
             oldStore.close();
         }
+        return 'completed';
     }
 
     private applyFilters() {
