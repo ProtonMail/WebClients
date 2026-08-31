@@ -65,7 +65,7 @@
     },
     "devDependencies": {
         "@iarna/toml": "^2.2.5",
-        "@pmmmwh/react-refresh-webpack-plugin": "^0.6.2",
+        "@pmmmwh/react-refresh-webpack-plugin": "^0.6.3",
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/i18n": "workspace:^",
         "@proton/pack": "workspace:^",
@@ -83,6 +83,6 @@
         "tsx": "^4.23.12",
         "typescript": "^6.0.3",
         "webpack": "^5.109.2",
-        "webpack-dev-server": "^5.2.6"
+        "webpack-dev-server": "^6.0.0"
     }
 }
