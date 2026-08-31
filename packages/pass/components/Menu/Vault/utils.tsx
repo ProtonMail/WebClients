@@ -4,7 +4,7 @@ import type { IconName } from '@proton/icons/types';
 
 import type { VaultShareItem } from '../../../store/reducers';
 import type { MaybeNull } from '../../../types';
-import { VaultColor as VaultColorEnum } from '../../../types/protobuf/vault-v1.static';
+import { VaultColor as VaultColorEnum, VaultIcon } from '../../../types/protobuf/vault-v1.static';
 import { VAULT_ICON_MAP } from '../../Vault/constants';
 
 export type VaultMenuOption = {
@@ -58,7 +58,7 @@ export const getVaultOptionInfo = (
                 id: vault.shareId,
                 label: vault.content.name,
                 color: vault.content.display.color ?? VaultColorEnum.COLOR1,
-                icon: vault.content.display.icon ? VAULT_ICON_MAP[vault.content.display.icon] : 'pass-all-vaults',
+                icon: VAULT_ICON_MAP[vault.content.display.icon ?? VaultIcon.ICON1],
             };
     }
 };

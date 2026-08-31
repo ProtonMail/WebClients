@@ -89,21 +89,21 @@ export const SortFilter = memo(({ value, hasSearch, onChange }: Props) => {
 
     return (
         <>
-            <div className={clsx('inline-flex flex-nowrap shrink-0', isActive && 'pass-type-filter--active')}>
+            <div className={clsx('pass-type-filter', isActive && 'pass-type-filter--active')}>
                 <DropdownButton
                     onClick={toggle}
                     ref={anchorRef}
                     color={isActive ? 'norm' : 'weak'}
                     shape={isActive ? undefined : 'solid'}
                     size="small"
-                    title={c('Action').t`Sort vault items`}
+                    title={label}
                     className={clsx(
-                        'flex flex-nowrap gap-1.5 grow-0 text-sm text-semibold',
+                        'flex flex-nowrap gap-1.5 min-w-0 max-w-full text-sm text-semibold',
                         isActive && 'pass-type-filter-trigger'
                     )}
                 >
                     <span className="sr-only">{label}</span>
-                    <span className="text-ellipsis hidden sm:block">{shortLabel}</span>
+                    <span className="pass-type-filter-label">{shortLabel}</span>
                 </DropdownButton>
                 {isActive && <FilterClearButton onClear={handleClear} title={c('Action').t`Clear sort filter`} />}
             </div>
