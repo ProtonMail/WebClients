@@ -806,6 +806,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
+      ],
+      "Enable": [
+        "Activa"
       ]
     },
     "Activity": {
@@ -3011,6 +3014,9 @@
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "S'estan comprovant ${ compromised.progress.completed } de ${ compromised.progress.total } contrasenyes"
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Visualitzeu els vostres elements de ${ PASS_SHORT_APP_NAME } sense connexió. Es requereix la vostra contrasenya per activar-ho."
       ]
     },
     "Keyboard key": {
@@ -4361,7 +4367,7 @@
         "Descarrega"
       ],
       "Download \"${ filename }\"": [
-        "Descarrega «${ filename }»"
+        "Descarrega \"${ filename }\""
       ],
       "Download file": [
         "Descarrega el fitxer"
@@ -5320,6 +5326,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies.",
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies."
+      ],
+      "Enable offline mode": [
+        "Activa el mode fora de línia"
       ]
     },
     "Title_cloned_item": {
