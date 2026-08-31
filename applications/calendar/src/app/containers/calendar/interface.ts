@@ -16,7 +16,7 @@ import type { TYPE } from '../../components/calendar/interactions/constants';
 import type { InviteActions, RecurringActionData } from '../../interfaces/Invite';
 import type { EventReadResult } from './eventStore/interface';
 
-export interface CalendarViewEventDataRecurring {
+interface CalendarViewEventDataRecurring {
     occurrenceNumber: number;
     localStart: Date;
     localEnd: Date;

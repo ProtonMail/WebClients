@@ -90,7 +90,7 @@ export const getIsDeleteSyncOperation = (
 export const getIsUpdateSyncOperation = (
     operation: SyncEventActionOperation
 ): operation is UpdateEventActionOperation => operation.type === SyncOperationTypes.UPDATE;
-export const getIsCreateSyncOperation = (
+const getIsCreateSyncOperation = (
     operation: SyncEventActionOperation
 ): operation is CreateEventActionOperation => operation.type === SyncOperationTypes.CREATE;
 

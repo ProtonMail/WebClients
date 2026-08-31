@@ -21,14 +21,14 @@ export const VIEW_URL_PARAMS_VIEWS_CONVERSION = {
     [VIEWS.SEARCH]: 'search',
 };
 
-export const getUrlView = (urlView: string) => {
+const getUrlView = (urlView: string) => {
     const result = URL_PARAMS_VIEWS_CONVERSION[urlView];
     if (result) {
         return result;
     }
 };
 
-export const getUrlDate = (urlYear: string, urlMonth: string, urlDay: string) => {
+const getUrlDate = (urlYear: string, urlMonth: string, urlDay: string) => {
     const year = parseInt(urlYear, 10);
     const month = parseInt(urlMonth, 10);
     const day = parseInt(urlDay, 10);

@@ -7,7 +7,7 @@ import type { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import type { InviteActions } from '../../../interfaces/Invite';
 import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
 
-export const getEventCreatedText = (inviteActions: InviteActions) => {
+const getEventCreatedText = (inviteActions: InviteActions) => {
     const { type } = inviteActions;
     if (type === INVITE_ACTION_TYPES.SEND_INVITATION) {
         return c('Success').t`Invitation sent and event created`;
@@ -15,7 +15,7 @@ export const getEventCreatedText = (inviteActions: InviteActions) => {
     return c('Success').t`Event created`;
 };
 
-export const getEventUpdatedText = (inviteActions: InviteActions) => {
+const getEventUpdatedText = (inviteActions: InviteActions) => {
     const { type, addedAttendees, removedAttendees } = inviteActions;
     const hasAddedAttendees = !!addedAttendees?.length;
     const hasRemovedAttendees = !!removedAttendees?.length;
@@ -50,7 +50,7 @@ export const getEventDeletedText = ({ type, sendCancellationNotice }: InviteActi
     return c('Success').t`Event deleted`;
 };
 
-export const getRecurringEventCreatedText = (inviteActions: InviteActions) => {
+const getRecurringEventCreatedText = (inviteActions: InviteActions) => {
     if (inviteActions.type === INVITE_ACTION_TYPES.SEND_INVITATION) {
         return c('Success').t`Invitation sent and events created`;
     }

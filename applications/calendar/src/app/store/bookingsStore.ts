@@ -22,5 +22,5 @@ export const setupGuestBookingStore = () => {
 };
 
 export type BookingsStore = ReturnType<typeof setupGuestBookingStore>;
-export type BookingsDispatch = BookingsStore['dispatch'];
-export type BookingsStoreState = ReturnType<BookingsStore['getState']>;
+// type BookingsDispatch = BookingsStore['dispatch'];
+// type BookingsStoreState = ReturnType<BookingsStore['getState']>;
