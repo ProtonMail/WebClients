@@ -1,4 +1,3 @@
-import { MODEL_VERSION } from '@proton/pass/constants';
 import { clientReady } from '@proton/pass/lib/client';
 import browser from '@proton/pass/lib/globals/browser';
 import { hasPauseCriteria } from '@proton/pass/lib/settings/pause-list';
@@ -81,7 +80,6 @@ export const createTelemetryService = (storage: ExtensionStorage<Record<'telemet
                         extensionField,
                         hasLoginItemForCurrentWebsite: telemetryBool(matchedLoginCount > 0),
                         loginAutofillEnabled: telemetryBool(loginAutofillSettingsEnabled),
-                        modelVersion: MODEL_VERSION,
                         uniqueMatch: telemetryBool(matchedLoginCount === 1),
                         ...pageTelemetry,
                     };

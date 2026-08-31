@@ -3,6 +3,7 @@ import type { AuthOptions } from '@proton/pass/lib/auth/service';
 import type { AuthSession } from '@proton/pass/lib/auth/session';
 import type { ClipboardAutoClearDTO, ClipboardWriteDTO } from '@proton/pass/lib/clipboard/types';
 import type { PassCoreMethod, PassCoreRPC, PassCoreResult } from '@proton/pass/lib/core/core.types';
+import type { ModelArtifact } from '@proton/pass/lib/extension/model-artifact/model-artifact';
 import type { DetectionRulesMatch } from '@proton/pass/lib/extension/rules/types';
 import type { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import type {
@@ -153,6 +154,7 @@ export enum WorkerMessageType {
     LOCALE_UPDATED = 'LOCALE_UPDATED',
     LOG_EVENT = 'LOG_EVENT',
     LOG_REQUEST = 'LOG_REQUEST',
+    MODEL_ARTIFACT_REQUEST = 'MODEL_ARTIFACT_REQUEST',
     MONITOR_2FAS = 'MONITOR_2FAS',
     MONITOR_WEAK_PASSWORDS = 'MONITOR_WEAK_PASSWORDS',
     NOTIFICATION = 'NOTIFICATION',
@@ -261,6 +263,7 @@ export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SC
 export type LocaleUpdatedMessage = WithPayload<WorkerMessageType.LOCALE_UPDATED, { locale: string }>;
 export type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: string }>;
 export type LogRequestMessage = { type: WorkerMessageType.LOG_REQUEST };
+export type ModelArtifactRequestMessage = { type: WorkerMessageType.MODEL_ARTIFACT_REQUEST };
 export type Monitor2FAsMessage = { type: WorkerMessageType.MONITOR_2FAS };
 export type MonitorWeakPasswordsMessage = { type: WorkerMessageType.MONITOR_WEAK_PASSWORDS };
 export type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { notification: Notification }>;
@@ -356,6 +359,7 @@ export type WorkerMessage =
     | LocaleUpdatedMessage
     | LogEventMessage
     | LogRequestMessage
+    | ModelArtifactRequestMessage
     | Monitor2FAsMessage
     | MonitorWeakPasswordsMessage
     | NotificationMessage
@@ -425,6 +429,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.INLINE_DROPDOWN_STATE]: DropdownStateDTO;
     [WorkerMessageType.INLINE_ICON_SHIFT]: IconShiftResult;
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };
+    [WorkerMessageType.MODEL_ARTIFACT_REQUEST]: { artifact: MaybeNull<ModelArtifact> };
     [WorkerMessageType.MONITOR_2FAS]: { result: UniqueItem[] };
     [WorkerMessageType.MONITOR_WEAK_PASSWORDS]: { result: UniqueItem[] };
     [WorkerMessageType.OTP_CODE_GENERATE]: OtpCode;

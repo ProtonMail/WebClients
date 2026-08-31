@@ -9,7 +9,6 @@ import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider'
 import { createPassThemeManager } from '@proton/pass/components/Layout/Theme/ThemeService';
 import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
-import { MODEL_VERSION } from '@proton/pass/constants';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
@@ -172,7 +171,7 @@ const getPassCoreProviderProps = (
                 TelemetryEventName.ExtensionUsed,
                 {},
                 // no page DOM available here: this fires from the settings page, not a content script
-                { modelVersion: MODEL_VERSION, ...NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS }
+                NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS
             );
 
             browser.tabs
