@@ -353,8 +353,7 @@
         },
         "packages/metrics": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/nav": {
             "entry": [],
