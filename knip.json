@@ -212,8 +212,7 @@
         },
         "packages/calendar-video-conferencing": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/chargebee": {
             "entry": [],
