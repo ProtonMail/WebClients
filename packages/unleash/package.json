@@ -29,7 +29,6 @@
         "@unleash/proxy-client-react": "^5.1.0",
         "date-fns": "^3.6.0",
         "react": "^18.3.1",
-        "react-dom": "^18.3.1",
         "unleash-proxy-client": "^3.8.0"
     },
     "devDependencies": {
@@ -37,7 +36,6 @@
         "@babel/preset-typescript": "^7.29.7",
         "@proton/eslint-config-proton": "workspace:^",
         "@types/react": "^18.3.31",
-        "@types/react-dom": "^18.3.7",
         "eslint": "^10.9.0",
         "jest": "^30.4.2",
         "prettier": "^3.9.6",
