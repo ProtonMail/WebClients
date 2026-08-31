@@ -166,6 +166,3 @@ export const PASS_PLUS_LIFETIME_PRICE = 19900; // €199
 export const PASS_PLUS_PRICE = 299; // €2.99
 export const PASS_FAMILY_PRICE = 499; // €4.99
 export const PROTON_UNLIMITED_PRICE = 999; // €9.99
-
-/** Autofill model version. May be dynamically set in the future */
-export const MODEL_VERSION = '1';
