@@ -382,8 +382,7 @@
         },
         "packages/polyfill": {
             "entry": [],
-            "project": ["**/*.{js,ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{js,ts,tsx}"]
         },
         "packages/prettier-config": {
             "entry": [],

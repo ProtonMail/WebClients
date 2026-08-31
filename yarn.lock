@@ -11568,7 +11568,6 @@ __metadata:
   resolution: "@proton/polyfill@workspace:packages/polyfill"
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
-    abortcontroller-polyfill: "npm:^1.7.8"
     core-js: "npm:^3.50.0"
     eslint: "npm:^10.9.0"
     regenerator-runtime: "npm:^0.14.1"
@@ -18714,13 +18713,6 @@ __metadata:
   dependencies:
     event-target-shim: "npm:^5.0.0"
   checksum: 10/ed84af329f1828327798229578b4fe03a4dd2596ba304083ebd2252666bdc1d7647d66d0b18704477e1f8aa315f055944aa6e859afebd341f12d0a53c37b4b40
-  languageName: node
-  linkType: hard
-
-"abortcontroller-polyfill@npm:^1.7.8":
-  version: 1.7.8
-  resolution: "abortcontroller-polyfill@npm:1.7.8"
-  checksum: 10/8f3e35bd571fb636abf140660372b3e6e98c5b2ac6b881c5fcabd62b022a70cfb65edcc8102001770b83773d044c250d4ad2b914d70eb06ecfcf96a5c353ddb5
   languageName: node
   linkType: hard
 
