@@ -6,6 +6,11 @@
 
 export type ContentSearchVersion = 'v1' | 'v2';
 
+/**
+ * Composition of the account's addresses: all Proton-domain, all BYOE, or a mix of both.
+ */
+export type ContentSearchMailboxAddressType = 'proton' | 'byoe' | 'mixed';
+
 export type ContentSearchEventStatus = 'success' | 'error';
 
 export type ContentSearchScrollerMode = 'message' | 'conversation';
