@@ -116,6 +116,10 @@
             "entry": [],
             "project": ["**/*.{ts,tsx}"]
         },
+        "packages/types": {
+            "entry": ["eslint.config.{js,mjs,ts}"],
+            "project": ["**/*.{ts,tsx}"]
+        },
         "packages/logger": {
             "entry": ["index.{ts,tsx}", "lib/index.{ts,tsx}", "src/index.{ts,tsx}"],
             "project": ["**/*.{ts,tsx}"]
