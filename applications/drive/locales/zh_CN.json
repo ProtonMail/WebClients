@@ -1331,6 +1331,9 @@
       ],
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
         "切换 ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Preview logs": [
+        "预览日志"
       ]
     },
     "Action: Docs": {
@@ -7696,6 +7699,9 @@
       ],
       "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "我们将在新的浏览器标签页中重定向至 ${ IDEAL_BRAND_NAME } 以完成此交易。如果您使用了任何弹窗拦截器，请将其禁用后继续。"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "日志有助于我们了解问题发生前的情况。其中包括应用操作和错误消息，但不包含消息内容。"
       ]
     },
     "info": {
@@ -8594,6 +8600,9 @@
       ],
       "Allow editors to change permissions and share.": [
         "允许编辑者更改权限和共享"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } 字符"
       ]
     },
     "Label for contact group color": {
@@ -14699,6 +14708,9 @@
       ],
       "User Admin": [
         "用户管理员"
+      ],
+      "Organization Admin": [
+        "组织管理员"
       ]
     },
     "Role description": {
