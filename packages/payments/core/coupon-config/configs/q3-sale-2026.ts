@@ -14,4 +14,5 @@ export const q3Sale2026Metadata: CouponConfigMetadata = {
     disableCurrencySelector: true,
     hideLumoAddonBanner: true,
     hideMeetAddonBanner: true,
+    blockManualEntryOfCoupon: true,
 };
