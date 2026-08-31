@@ -16,6 +16,7 @@ const { s } = createStringifier(strings)
 import { number2Alpha } from '@rowsncolumns/utils'
 import { Direction, type GridRange, isCellWithinBounds, selectionFromActiveCell } from '@rowsncolumns/grid'
 import * as Icons from './icons'
+import { useFeatureFlag } from '../feature-flags'
 
 type ContextMenuWrapperProps = {
   isOpen?: boolean
@@ -123,6 +124,7 @@ export function ContextMenu({
   const openConditionalFormat = useUI.$.format.conditional.open
   const openDataValidation = useUI.$.data.validation.open
   const onAutoResize = useUI((ui) => ui.legacy.onAutoResize)
+  const isSheetsTablesEnabled = useFeatureFlag('SheetsTablesEnabled')
 
   const multiColumnTitle = generateMultiDimTitle(selectedColumnHeadersIds, 'y')
   const multiRowTitle = generateMultiDimTitle(selectedRowHeadersIds, 'x')
@@ -689,54 +691,55 @@ export function ContextMenu({
 
           <UI.MenuSeparator />
 
-          {/* {activeTable ? null : (
-            <>
-              <UI.MenuItem
-                leadingIconSlot={<UI.Icon data={Icons.tableCheck} />}
-                onClick={() => {
-                  onCreateTable?.(sheetId, activeCell, selections, undefined, 'TableStyleLight1', {
-                    rowProperties: {
-                      firstBandColor: {
-                        theme: 1,
-                        tint: 0.8,
-                      },
-                      secondBandColor: {
-                        theme: 0,
-                      },
-                      headerBorder: {
-                        top: {
-                          width: 1,
-                          style: 'solid',
-                          color: {
-                            theme: 1,
-                          },
-                        },
-                        bottom: {
-                          width: 1,
-                          style: 'solid',
-                          color: {
-                            theme: 1,
-                          },
+          {isSheetsTablesEnabled && !activeTable ? (
+            <UI.MenuItem
+              leadingIconSlot={<UI.Icon data={Icons.tableCheck} />}
+              onClick={() => {
+                onCreateTable?.(sheetId, activeCell, selections, undefined, 'TableStyleLight1', {
+                  rowProperties: {
+                    firstBandColor: {
+                      theme: 1,
+                      tint: 0.8,
+                    },
+                    secondBandColor: {
+                      theme: 0,
+                    },
+                    headerBorder: {
+                      top: {
+                        width: 1,
+                        style: 'solid',
+                        color: {
+                          theme: 1,
                         },
                       },
-                      footerBorder: {
-                        bottom: {
-                          width: 1,
-                          style: 'solid',
-                          color: {
-                            theme: 1,
-                          },
+                      bottom: {
+                        width: 1,
+                        style: 'solid',
+                        color: {
+                          theme: 1,
                         },
                       },
                     },
-                  })
-                }}
-                disabled={readonly}
-              >
-                {s('Convert to table')}
-              </UI.MenuItem>
+                    footerBorder: {
+                      bottom: {
+                        width: 1,
+                        style: 'solid',
+                        color: {
+                          theme: 1,
+                        },
+                      },
+                    },
+                  },
+                })
+              }}
+              disabled={readonly}
+            >
+              {s('Convert to table')}
+            </UI.MenuItem>
+          ) : null}
 
-              <UI.MenuItem
+          {/* {activeTable ? null : (
+            <UI.MenuItem
                 leadingIconSlot={<UI.Icon legacyName="filter" />}
                 onClick={() => {
                   onCreateBasicFilter?.(sheetId, activeCell, selections)
@@ -744,8 +747,7 @@ export function ContextMenu({
                 disabled={readonly}
               >
                 {activeBasicFilter ? s('Remove filter') : s('Create a filter')}
-              </UI.MenuItem>
-            </>
+            </UI.MenuItem>
           )} */}
 
           <UI.MenuItem
