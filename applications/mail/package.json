@@ -4,7 +4,6 @@
     "keywords": [],
     "license": "GPL-3.0",
     "author": "",
-    "main": "index.js",
     "scripts": {
         "analyze": "yarn build:web --analyze",
         "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso",

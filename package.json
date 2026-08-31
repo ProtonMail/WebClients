@@ -20,7 +20,7 @@
         "config-app": "(packages/config/install 2>/dev/null) || true",
         "create-atom": "yarn workspace @proton/atoms create-atom",
         "postinstall": "is-ci || (husky; yarn run config-app)",
-        "knip": "knip --no-exit-code",
+        "knip": "knip",
         "knip:staged": "node utilities/knip-staged/knip-staged.mjs",
         "nyc": "npx nyc",
         "start-all": "cd utilities/local-sso && bash ./run.sh",

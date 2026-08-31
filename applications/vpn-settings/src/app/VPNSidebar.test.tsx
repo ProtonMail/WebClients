@@ -37,9 +37,6 @@ vi.mock('@proton/components/components/sidebar/SettingsListItem', () => ({
 
 vi.mock('@proton/account/user/hooks');
 vi.mock('@proton/account/organization/hooks');
-vi.mock('@proton/vpn/components/Sidebar', () => ({
-    Sidebar: ({ routes }: any) => <div data-testid="admin-sidebar">{JSON.stringify(routes)}</div>,
-}));
 vi.mock('@proton/components/containers/layout/helper', () => ({
     getIsSectionAvailable: vi.fn(),
     getSectionPath: vi.fn(),
