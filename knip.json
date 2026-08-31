@@ -234,8 +234,7 @@
         },
         "packages/cross-storage": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/docs-core": {
             "entry": [],
