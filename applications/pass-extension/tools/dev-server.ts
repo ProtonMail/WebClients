@@ -51,8 +51,10 @@ const sanitizeWebpackConfig = (config: Configuration) => {
                     entryObj[entryName] = [
                         /* runtime code for hotmodule replacement */
                         'webpack/hot/dev-server',
-                        /* dev-server client for web socket transport */
-                        `webpack-dev-server/client?hot=true&hostname=localhost&port=${WEBPACK_DEV_PORT}&protocol=ws:`,
+                        /* dev-server client for web socket transport. webpack-dev-server v6 ships an
+                         * `exports` map that only exposes `./client/*`, so the bare `./client` subpath
+                         * no longer resolves - the file has to be requested explicitly. */
+                        `webpack-dev-server/client/index.js?hot=true&hostname=localhost&port=${WEBPACK_DEV_PORT}&protocol=ws:`,
                         entry,
                     ].flat();
                 } else {
@@ -62,7 +64,7 @@ const sanitizeWebpackConfig = (config: Configuration) => {
                             /* runtime code for hotmodule replacement */
                             'webpack/hot/dev-server',
                             /* dev-server client for web socket transport */
-                            `webpack-dev-server/client?hot=true&hostname=localhost&port=${WEBPACK_DEV_PORT}&protocol=ws:`,
+                            `webpack-dev-server/client/index.js?hot=true&hostname=localhost&port=${WEBPACK_DEV_PORT}&protocol=ws:`,
                             entryImport,
                         ].flat();
                     }
