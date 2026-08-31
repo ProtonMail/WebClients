@@ -53,6 +53,7 @@ import { supportsBackgroundEffects } from '../../processors/background-processor
 import type { InitializeDevices, SwitchActiveDevice } from '../../types';
 import { supportsSetSinkId } from '../../utils/browser';
 import { createDummyVideoTrack } from '../../utils/dummyVideoTrack';
+import type { MeetAudioContext } from '../../utils/meet-audio-context';
 import { BackgroundEffectsContext } from '../BackgroundEffects/BackgroundEffectsContext';
 import { useAppliedBackgroundEffect } from '../BackgroundEffects/useAppliedBackgroundEffect';
 import { useBackgroundEffects } from '../BackgroundEffects/useBackgroundEffects';
@@ -62,12 +63,19 @@ import { PermissionsModal } from './PermissionsModal/PermissionsModal';
 import { useAudioToggle } from './mediaToggle/useAudioToggle';
 import { useVideoToggle } from './mediaToggle/useVideoToggle';
 import { useCameraPreview } from './useCameraPreview';
+import { useAudioContextOutput } from './useDeviceManagement/useAudioContextOutput';
 import { useDeviceManagement } from './useDeviceManagement/useDeviceManagement';
 import { useMicrophoneVolumeAnalysis } from './useMicrophoneVolumeAnalysis';
 
 const SWITCH_DEVICE_TIMEOUT_MS = 5000;
 
-export const MediaManagementProvider = ({ children }: { children: React.ReactNode }) => {
+export const MediaManagementProvider = ({
+    children,
+    meetAudioContext,
+}: {
+    children: React.ReactNode;
+    meetAudioContext: MeetAudioContext;
+}) => {
     const room = useRoomContext();
     const { createNotification } = useNotifications();
     const announce = useAnnounce();
@@ -94,6 +102,8 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
 
     const { getMicrophoneVolumeAnalysis, initializeMicrophoneVolumeAnalysis, cleanupMicrophoneVolumeAnalysis } =
         useMicrophoneVolumeAnalysis();
+
+    useAudioContextOutput({ meetAudioContext, room, reportMeetError });
 
     const switchActiveDevice: SwitchActiveDevice = useCallback(
         async ({
