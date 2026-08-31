@@ -1,8 +1,10 @@
 import { call, cancel, cancelled, delay, fork, put, select } from 'redux-saga/effects';
 
+import { api } from '../../../lib/api/api';
 import { getItemKey, intoSelectedItem } from '../../../lib/items/item.utils';
 import { checkPasswordCompromised, getLastChangeTimestamp } from '../../../lib/monitor/compromised-password.request';
 import type { CompromisedPasswordEntry } from '../../../lib/monitor/types';
+import { isOnline } from '../../../lib/network/connectivity.utils';
 import { isPaidPlan } from '../../../lib/user/user.predicates';
 import type { ItemRevision, UniqueItem } from '../../../types';
 import { PassFeature } from '../../../types/api/features';
@@ -31,6 +33,7 @@ function* checkCompromisedPasswordsWorker(payload: CompromisedPasswordsCheckDTO)
     const ctrl = new AbortController();
 
     try {
+        if (!isOnline(api.getState())) return [];
         if (!(yield select(selectFeatureFlag(PassFeature.PassCompromisedPasswords)))) return [];
         if (!isPaidPlan(yield select(selectPassPlan))) return [];
 
