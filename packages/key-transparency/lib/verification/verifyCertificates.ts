@@ -2,7 +2,7 @@ import type { Certificate, GeneralName } from 'pkijs';
 
 import type { KT_CERTIFICATE_ISSUER } from '../constants/constants';
 import { SCT_THRESHOLD, epochChainVersion } from '../constants/constants';
-import { getBaseDomain, KT_ERROR_TYPE, ktSentryReport, throwKTError } from '../helpers/utils';
+import { KT_ERROR_TYPE, getBaseDomain, ktSentryReport, throwKTError } from '../helpers/utils';
 
 const importCertificates = () =>
     import(
@@ -29,7 +29,7 @@ const importAsn1js = () =>
 /**
  * Extract the content of a string Certificate
  */
-export const pemToString = (cert: string) => {
+const pemToString = (cert: string) => {
     const lines = cert.split('\n');
     let encoded = '';
 
@@ -167,10 +167,14 @@ export const verifyCertChain = async (
     });
     const verificationResult = await chainEngine.verify();
     const throwError = () => {
-        return throwKTError("Epoch certificate did not pass verification against issuer's certificate chain", KT_ERROR_TYPE.SYSTEM, {
-            certChain: JSON.stringify(certChain.map((cert) => printCertificate(cert))),
-            resultMessage: verificationResult.resultMessage,
-        });
+        return throwKTError(
+            "Epoch certificate did not pass verification against issuer's certificate chain",
+            KT_ERROR_TYPE.SYSTEM,
+            {
+                certChain: JSON.stringify(certChain.map((cert) => printCertificate(cert))),
+                resultMessage: verificationResult.resultMessage,
+            }
+        );
     };
     if (!verificationResult.result || !verificationResult.certificatePath?.length) {
         return throwError();
@@ -188,7 +192,7 @@ export const verifyCertChain = async (
  * Extract the list of CT log IDs from the SCTs of the certificate, in the order they appear
  * @return log IDs in base64, to match the ID format in the CT logs
  */
-export const extractSCTs = (certificate: Certificate): string[] => {
+const extractSCTs = (certificate: Certificate): string[] => {
     const SignedCertificateTimestampListID = '1.3.6.1.4.1.11129.2.4.2';
 
     const targetExtension = certificate.extensions?.find(
@@ -263,12 +267,16 @@ export const verifySCT = async (certificate: Certificate, issuerCert: Certificat
     }
 
     if (verifiedSctsFromOperators.size < SCT_THRESHOLD) {
-        return throwKTError('The number of verified SCTs does not reach the number of operator threshold', KT_ERROR_TYPE.SYSTEM, {
-            scts: JSON.stringify(scts),
-            certificate: printCertificate(certificate),
-            issuerCert: printCertificate(issuerCert),
-            sctsFromOperators: JSON.stringify([...verifiedSctsFromOperators.entries()]),
-        });
+        return throwKTError(
+            'The number of verified SCTs does not reach the number of operator threshold',
+            KT_ERROR_TYPE.SYSTEM,
+            {
+                scts: JSON.stringify(scts),
+                certificate: printCertificate(certificate),
+                issuerCert: printCertificate(issuerCert),
+                sctsFromOperators: JSON.stringify([...verifiedSctsFromOperators.entries()]),
+            }
+        );
     }
 };
 

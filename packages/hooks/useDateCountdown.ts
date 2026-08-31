@@ -8,7 +8,7 @@ import useInterval from './useInterval';
 
 const EVERY_SECOND = SECOND;
 
-export interface DateCountdown {
+interface DateCountdown {
     /**
      * Difference between the two dates in milliseconds.
      */
@@ -36,7 +36,7 @@ export interface DateCountdown {
     expired: boolean;
 }
 
-export interface DateCountdownOptions {
+interface DateCountdownOptions {
     interval?: number;
 }
 

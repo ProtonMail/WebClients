@@ -70,38 +70,38 @@ export type RefineLocation = {
 // "Custom Refine" refers to the reformulation of an already-generated email, or part of it,
 // with a custom request written by the user (e.g. "make it formal").
 export type CustomRefineAction = PartialCustomRefineAction & RefineLocation;
-export type PartialCustomRefineAction = {
+type PartialCustomRefineAction = {
     type: 'customRefine';
     prompt: string; // user-submitted instruction of what to do with this text
 } & ActionOptions;
 
 // "Proofread" action button.
 export type ProofreadAction = PartialProofreadAction & RefineLocation;
-export type PartialProofreadAction = {
+type PartialProofreadAction = {
     type: 'proofread';
 };
 
 // "Shorten" action button.
 export type ShortenAction = PartialShortenAction & RefineLocation;
-export type PartialShortenAction = {
+type PartialShortenAction = {
     type: 'shorten';
 };
 
 // "Formal" action button.
 export type FormalAction = PartialFormalAction & RefineLocation;
-export type PartialFormalAction = {
+type PartialFormalAction = {
     type: 'formal';
 };
 
 // "Friendly" action button.
 export type FriendlyAction = PartialFriendlyAction & RefineLocation;
-export type PartialFriendlyAction = {
+type PartialFriendlyAction = {
     type: 'friendly';
 };
 
 // "Expand" action button.
 export type ExpandAction = PartialExpandAction & RefineLocation;
-export type PartialExpandAction = {
+type PartialExpandAction = {
     type: 'expand';
 };
 
@@ -113,7 +113,7 @@ export type PartialRefineAction =
     | PartialExpandAction
     | PartialCustomRefineAction;
 export type RefineAction = PartialRefineAction & RefineLocation;
-export type PredefinedRefineAction = ProofreadAction | ShortenAction | FormalAction | FriendlyAction | ExpandAction;
+type PredefinedRefineAction = ProofreadAction | ShortenAction | FormalAction | FriendlyAction | ExpandAction;
 export type Action = WriteFullEmailAction | RefineAction;
 
 export type PredefinedRefineActionType = PredefinedRefineAction['type'];

@@ -118,7 +118,7 @@ const collectLabels = (params: Record<string, any>, references: ReferenceRegistr
 };
 
 /** Per-batch wiring: both entries belong to the chain that started the batch, not to the executor. */
-export interface ExecuteOptions {
+interface ExecuteOptions {
     /**
      * Scopes a batch to the chain that started it. Once it aborts, the remaining calls are skipped
      * rather than confirmed and run against whatever turn has replaced that chain.
