@@ -403,8 +403,7 @@
         },
         "packages/recovery-kit": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/redux-shared-store": {
             "entry": [],
