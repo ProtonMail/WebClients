@@ -5,8 +5,8 @@ import { getModelState } from '@proton/account/tests';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { PreviousSubscription } from '@proton/payments/core/interface';
 import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { UserLockedFlags } from '@proton/shared/lib/interfaces';
-import { buildSubscription } from '@proton/testing/builders/subscription';
 import { buildUser } from '@proton/testing/builders/user';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 

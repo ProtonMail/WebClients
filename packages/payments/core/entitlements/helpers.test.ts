@@ -1,4 +1,4 @@
-import { makeEntitlements } from '@proton/testing/builders/entitlements';
+import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
 
 import { EntitlementName } from './entitlement-names';
 import {

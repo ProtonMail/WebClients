@@ -1,8 +1,8 @@
 import { getModelState } from '@proton/account/tests';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS } from '@proton/shared/lib/constants';
-import { buildSubscription } from '@proton/testing/builders/subscription';
 import { applyHOCs } from '@proton/testing/lib/context/hocs/helpers';
 import { withApi } from '@proton/testing/lib/context/hocs/with-api';
 import { withCache } from '@proton/testing/lib/context/hocs/with-cache';

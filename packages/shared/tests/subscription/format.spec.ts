@@ -1,6 +1,6 @@
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { buildSubscription } from '@proton/testing/builders/subscription';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import format from '../../lib/subscription/format';
 

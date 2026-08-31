@@ -18,7 +18,7 @@ import {
     willTrialExpireInLessThan1Week,
 } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { buildSubscription } from '@proton/testing/builders/subscription';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 let subscription: Subscription;
 let defaultPlan: SubscriptionPlan;

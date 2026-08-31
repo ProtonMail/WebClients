@@ -1,19 +1,9 @@
-import { createToken } from '@proton/payments/core/api/api';
-import {
-    Autopay,
-    DEFAULT_PAYMENT_VENDOR_STATES,
-    PAYMENT_METHOD_TYPES,
-    PAYMENT_TOKEN_STATUS,
-} from '@proton/payments/core/constants';
-import type {
-    PayPalDetails,
-    PaymentStatus,
-    SavedCardDetails,
-    SavedPaymentMethod,
-} from '@proton/payments/core/interface';
+import { addApiMock, addApiResolver } from '@proton/testing/lib/api';
 import lastItem from '@proton/utils/lastItem';
 
-import { addApiMock, addApiResolver } from '../api';
+import { createToken } from '../core/api/api';
+import { Autopay, DEFAULT_PAYMENT_VENDOR_STATES, PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../core/constants';
+import type { PayPalDetails, PaymentStatus, SavedCardDetails, SavedPaymentMethod } from '../core/interface';
 
 const tokensUrl = createToken({} as any).url;
 

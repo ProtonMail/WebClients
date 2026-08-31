@@ -1,9 +1,9 @@
 import { PLANS } from '@proton/payments/core/constants';
+import { getLongTestPlans } from '@proton/payments/testing/data-plans';
 import { Audience } from '@proton/shared/lib/interfaces';
-import { getLongTestPlans } from '@proton/testing/data/payments/data-plans';
 
-import type { PlanCard } from './interface';
 import { getAccessiblePlans } from './helper';
+import type { PlanCard } from './interface';
 
 describe('getAccessiblePlans', () => {
     const mockPlanCards = {

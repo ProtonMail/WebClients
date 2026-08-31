@@ -6,7 +6,7 @@ import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import { getIsPlanTransitionForbidden } from '@proton/payments/core/subscription/forbidden-plan-transition';
 import { isSubscriptionCheckForbiddenWithReason } from '@proton/payments/core/subscription/helpers';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
-import { buildSubscription } from '@proton/testing/builders/subscription';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import { componentsHookRenderer } from '../../contacts/tests/render';
 import type { Model } from './SubscriptionContainer';

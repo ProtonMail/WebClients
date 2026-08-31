@@ -7,8 +7,8 @@ import { BILLING_ADDRESS_VALID } from '@proton/payments/core/billing-address/bil
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentsApi } from '@proton/payments/core/interface';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS } from '@proton/shared/lib/constants';
-import { buildSubscription } from '@proton/testing/builders/subscription';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 
 import { useEditBillingAddressModal } from '../billing-address/containers/useEditBillingAddressModal';

@@ -6,7 +6,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useNow } from '@proton/components/hooks/useNow';
 import { PLANS } from '@proton/payments/core/constants';
-import { buildSubscription } from '@proton/testing/builders/subscription';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import { getInitialModel } from '../../functions/gatewayHelpers';
 import type { DeletedDedicatedIp, GatewayLocation } from '../../types/Gateway';
