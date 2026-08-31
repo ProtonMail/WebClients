@@ -46,12 +46,12 @@
         },
         "applications/docs": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
-            "project": ["src/**/*.{ts,tsx}"],
+            "project": ["src/**/*.{ts,tsx,scss,sass,css}"],
             "ignore": ["**"]
         },
         "applications/docs-editor": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
-            "project": ["src/**/*.{ts,tsx}"],
+            "project": ["src/**/*.{ts,tsx,scss,sass,css}"],
             "ignore": ["**"]
         },
         "applications/drive": {
@@ -79,7 +79,7 @@
                 "src/app/services/workers/fileProcessingWorker.ts",
                 "src/app/workers/search/searchWorker.ts"
             ],
-            "project": ["src/**/*.{ts,tsx}"],
+            "project": ["src/**/*.{ts,tsx,scss,sass}"],
             "ignore": ["**"]
         },
         "applications/mail": {
@@ -164,7 +164,7 @@
                 "src/stories/**/*.mdx",
                 ".storybook/main.mjs"
             ],
-            "project": ["src/**/*.{ts,tsx}"],
+            "project": ["src/**/*.{ts,tsx,mdx}"],
             "ignore": ["**"]
         },
         "applications/verify": {
@@ -363,7 +363,7 @@
         },
         "packages/pack": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
+            "project": ["**/*.{ts,tsx,scss,sass}"],
             "ignore": ["**"]
         },
         "packages/pass": {
@@ -439,7 +439,8 @@
         },
         "packages/styles": {
             "entry": ["eslint.config.{js,mjs,ts}"],
-            "project": ["**/*.{ts,tsx}"],
+            "project": ["**/*.{ts,tsx,scss,sass}"],
+            "ignore": ["scss/**"],
             "ignoreDependencies": ["inter-ui"]
         },
         "packages/testing": {
