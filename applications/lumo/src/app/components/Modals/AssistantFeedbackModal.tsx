@@ -4,6 +4,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
+import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -19,6 +20,7 @@ import {
     useModalStateObject,
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { APERTUS_15_MODEL } from '@proton/lumo-api-client/core/chat-completions';
 import type { AssistantFeedback } from '@proton/shared/lib/api/feedback';
 import { sendAssistantFeedback } from '@proton/shared/lib/api/feedback';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -34,6 +36,8 @@ import {
     markNegativeFeedbackIntroSeen,
     markPositiveFeedbackIntroSeen,
 } from '../../util/feedbackIntroStorage';
+import { getFeedbackTools } from '../../util/feedbackTools';
+import { getNativeAppInfo } from '../../util/userAgent';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
 
 type FeedbackIntroType = 'positive' | 'negative';
@@ -49,6 +53,7 @@ interface Props {
 
 const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedbackSubmitted }: Props) => {
     const api = useApi();
+    const { APP_VERSION } = useConfig();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const handleError = useErrorHandler();
@@ -61,25 +66,50 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
     const [introType, setIntroType] = useState<FeedbackIntroType | undefined>(undefined);
     const [feedbackStep, setFeedbackStep] = useState<FeedbackStep>('form');
     const [shareContentEnabled, setShareContentEnabled] = useState(false);
+    const [shareWithApertusEnabled, setShareWithApertusEnabled] = useState(false);
     const [sharePrompt, setSharePrompt] = useState('');
     const [shareResponse, setShareResponse] = useState('');
 
-    const shareContentCheckboxId = `model-content-${message.id}`;
+    // Apertus is only ever served when the user explicitly selects it (never via `auto`), so the
+    // deterministic `requestedModel` hint is a reliable signal for offering the Apertus opt-in.
+    const isApertusModel = message.requestedModel?.startsWith(APERTUS_15_MODEL) ?? false;
 
-    const feedbackMetadata = useMemo(
-        (): Pick<AssistantFeedback, 'ModelID' | 'RequestedModel' | 'HasGeneratedImages'> => ({
+    const shareContentCheckboxId = `model-content-${message.id}`;
+    const shareWithApertusCheckboxId = `share-apertus-${message.id}`;
+
+    const feedbackMetadata = useMemo((): Pick<
+        AssistantFeedback,
+        | 'ModelID'
+        | 'RequestedModel'
+        | 'HasGeneratedImages'
+        | 'ToolsUsed'
+        | 'Platform'
+        | 'NativeAppVersion'
+        | 'AppVersion'
+        | 'PromptTokens'
+        | 'CompletionTokens'
+    > => {
+        const nativeAppInfo = getNativeAppInfo();
+
+        return {
             ModelID: message.modelID,
             RequestedModel: message.requestedModel,
             HasGeneratedImages: hasGeneratedImages,
-        }),
-        [hasGeneratedImages, message.modelID, message.requestedModel]
-    );
+            ToolsUsed: getFeedbackTools(message),
+            Platform: nativeAppInfo?.platform ?? 'web',
+            NativeAppVersion: nativeAppInfo?.version,
+            AppVersion: APP_VERSION,
+            PromptTokens: message.usage?.promptTokens,
+            CompletionTokens: message.usage?.completionTokens,
+        };
+    }, [APP_VERSION, hasGeneratedImages, message]);
 
     const resetFeedbackForm = useCallback(() => {
         setSelectedOption(undefined);
         setBody(undefined);
         setFeedbackStep('form');
         setShareContentEnabled(false);
+        setShareWithApertusEnabled(false);
         setSharePrompt('');
         setShareResponse('');
     }, []);
@@ -198,6 +228,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
             Sentiment: 'Negative',
             Environment: 'Remote',
             ...feedbackMetadata,
+            ...(isApertusModel ? { ShareWithApertus: shareWithApertusEnabled } : {}),
             Body: body || '',
             Component: 'Lumo',
             Prompt: undefined,
@@ -224,6 +255,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
             Sentiment: 'Negative',
             Environment: 'Remote',
             ...feedbackMetadata,
+            ...(isApertusModel ? { ShareWithApertus: shareWithApertusEnabled } : {}),
             Body: body || '',
             Component: 'Lumo',
             Prompt: stripAttachmentMarkdown(sharePrompt),
@@ -372,6 +404,20 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                                         .t`Share your prompt and the response with us.`}</span>
                                 </label>
                             </div>
+                            {isApertusModel && (
+                                <div className="flex flex-nowrap items-start mt-2">
+                                    <Checkbox
+                                        id={shareWithApertusCheckboxId}
+                                        checked={shareWithApertusEnabled}
+                                        onChange={({ target }) => setShareWithApertusEnabled(target.checked)}
+                                        className="mr-2"
+                                    />
+                                    <label htmlFor={shareWithApertusCheckboxId} className="flex-1 mt-0">
+                                        <span>{c('collider_2025: Info')
+                                            .t`Share this feedback with the Apertus team to help them improve their model.`}</span>
+                                    </label>
+                                </div>
+                            )}
                         </>
                     ) : (
                         <>

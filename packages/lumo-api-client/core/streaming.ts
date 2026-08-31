@@ -72,6 +72,9 @@ type ChatToolResultChunk = {
         content: string;
         encrypted?: boolean;
     };
+    meta?: {
+        settings: string;
+    };
 };
 
 type StreamCounters = {
@@ -236,6 +239,7 @@ export class StreamProcessor {
             type: 'server_tool_result',
             call_id,
             content,
+            ...(chunk.meta ? { meta: chunk.meta } : {}),
             ...(encrypted ? { encrypted: true } : {}),
         };
     }
