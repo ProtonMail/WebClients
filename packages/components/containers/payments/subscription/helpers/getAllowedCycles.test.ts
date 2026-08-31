@@ -3,9 +3,9 @@ import { getDefaultMainCurrency, isRegionalCurrency } from '@proton/payments/cor
 import type { Currency, PlanIDs } from '@proton/payments/core/interface';
 import type { Plan } from '@proton/payments/core/plan/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { PLANS_MAP, getLongTestPlans, getTestPlansMap } from '@proton/payments/testing/data-plans';
 import { APPS } from '@proton/shared/lib/constants';
-import { buildSubscription } from '@proton/testing/builders/subscription';
-import { PLANS_MAP, getLongTestPlans, getTestPlansMap } from '@proton/testing/data/payments/data-plans';
 
 import { type PlanCapRule, getAllowedCycles, planSupportsIrregularCycle } from './getAllowedCycles';
 

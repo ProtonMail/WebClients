@@ -4,7 +4,7 @@ import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { Renew, TrialType } from '@proton/payments/core/subscription/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { buildSubscription } from '@proton/testing/builders/subscription';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { apiMock } from '@proton/testing/lib/api';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 import { getSubscriptionState } from '@proton/testing/lib/initialReduxState';

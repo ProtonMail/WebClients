@@ -1,6 +1,6 @@
 import { PLANS } from '@proton/payments/core/constants';
+import { getLongTestPlans } from '@proton/payments/testing/data-plans';
 import { buildUser } from '@proton/testing/builders/user';
-import { getLongTestPlans } from '@proton/testing/data/payments/data-plans';
 import noop from '@proton/utils/noop';
 
 import { CALENDAR_TYPE } from '../../lib/calendar/constants';

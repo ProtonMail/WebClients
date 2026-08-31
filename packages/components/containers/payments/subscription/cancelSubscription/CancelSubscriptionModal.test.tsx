@@ -3,7 +3,7 @@ import { addMonths, format, getUnixTime } from 'date-fns';
 
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { buildSubscription } from '@proton/testing/builders/subscription';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import { CancelSubscriptionModal } from './CancelSubscriptionModal';
 
@@ -64,6 +64,7 @@ it('should display end date of the current subscription', () => {
         <CancelSubscriptionModal subscription={adaptedSubscription} onResolve={onResolve} onReject={onReject} open />
     );
 
+    // eslint-disable-next-line custom-rules/date-formatting-locale
     const expectedDate = format(futureDate, 'PPP');
     expect(container).toHaveTextContent(`expires on ${expectedDate}`);
 });
@@ -91,6 +92,7 @@ it('should display the end date of the upcoming subscription if it exists', () =
         <CancelSubscriptionModal subscription={withUpcoming} onResolve={onResolve} onReject={onReject} open />
     );
 
+    // eslint-disable-next-line custom-rules/date-formatting-locale
     expect(container).toHaveTextContent(`expires on ${format(upcomingPeriodEnd, 'PPP')}`);
 
     jest.useRealTimers();

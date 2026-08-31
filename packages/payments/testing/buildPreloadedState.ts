@@ -1,14 +1,15 @@
-import type { Entitlements } from '@proton/payments/core/entitlements/interface';
-import type { Plan } from '@proton/payments/core/plan/interface';
-import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
-import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { Address, OrganizationExtended, PendingInvitation, UserModel } from '@proton/shared/lib/interfaces';
 import type { CalendarWithOwnMembers } from '@proton/shared/lib/interfaces/calendar';
+import { buildUser } from '@proton/testing/builders/user';
+import { getOrganizationState } from '@proton/testing/lib/initialReduxState';
 
-import { makeEntitlements } from '../builders/entitlements';
-import { buildUser } from '../builders/user';
-import { getLongTestPlans } from '../data/payments/data-plans';
-import { getOrganizationState, getSubscriptionState } from './initialReduxState';
+import type { Entitlements } from '../core/entitlements/interface';
+import type { Plan } from '../core/plan/interface';
+import { FREE_PLAN } from '../core/subscription/freePlans';
+import type { Subscription } from '../core/subscription/interface';
+import { getLongTestPlans } from './data-plans';
+import { makeEntitlements } from './makeEntitlements';
+import { getSubscriptionState } from './redux-state';
 
 export interface TestPreloadedStateOverrides {
     user?: Partial<UserModel>;

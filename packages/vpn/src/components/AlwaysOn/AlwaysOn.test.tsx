@@ -3,9 +3,9 @@ import userEvent from '@testing-library/user-event';
 
 import { PLANS } from '@proton/payments/core/constants';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { TelemetryVpnAlwaysOnPolicyEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { buildSubscription } from '@proton/testing/builders/subscription';
 
 import type { AlwaysOnPolicy } from '../../types/AlwaysOn';
 import { AlwaysOn } from './AlwaysOn';

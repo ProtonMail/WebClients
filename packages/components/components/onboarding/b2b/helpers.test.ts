@@ -1,5 +1,6 @@
 import { PLANS } from '@proton/payments/core/constants';
 import { getPlan } from '@proton/payments/core/subscription/helpers';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import {
     APPS,
     CALENDAR_APP_NAME,
@@ -8,7 +9,6 @@ import {
     PASS_APP_NAME,
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
-import { buildSubscription } from '@proton/testing/builders/subscription';
 
 import { getFeatures, getSections } from './helpers';
 import type { B2BFeaturesSection } from './interface';

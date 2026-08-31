@@ -1,5 +1,5 @@
 import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { buildSubscription } from '@proton/testing/builders/subscription';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import { addDays } from '../../lib/date-fns-utc';
 import { canShowB2BOnboardingButton } from '../../lib/onboarding/helpers';
