@@ -68,7 +68,13 @@
         "./store/labels/selector": "./store/labels/selector.ts",
         "./store/labels/hooks": "./store/labels/hooks.ts",
         "./store/counts/conversationCountsSlice": "./store/counts/conversationCountsSlice.ts",
-        "./store/counts/messageCountsSlice": "./store/counts/messageCountsSlice.ts"
+        "./store/counts/messageCountsSlice": "./store/counts/messageCountsSlice.ts",
+        "./testing/mockUseMailSettings": "./testing/mockUseMailSettings.ts",
+        "./testing/mockUseFolders": "./testing/mockUseFolders.ts",
+        "./testing/mockUseLabels": "./testing/mockUseLabels.ts",
+        "./testing/mockUseCategoriesData": "./testing/mockUseCategoriesData.ts",
+        "./testing/buildFolder": "./testing/buildFolder.ts",
+        "./testing/buildLabel": "./testing/buildLabel.ts"
     },
     "scripts": {
         "check-types": "tsc",
