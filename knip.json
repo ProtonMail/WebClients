@@ -100,10 +100,19 @@
             "entry": ["index.{ts,tsx}", "lib/index.{ts,tsx}", "src/index.{ts,tsx}", "jest.config.ts"],
             "project": ["**/*.{ts,tsx}"]
         },
-        "packages/logger": {
-            "entry": ["index.{ts,tsx}", "lib/index.{ts,tsx}", "src/index.{ts,tsx}", "babel.config.{js,ts}"],
+        "packages/redux-shared-store": {
+            "entry": ["babel.config.{js,ts}"],
             "project": ["**/*.{ts,tsx}"]
         },
+        "packages/redux-shared-store-types": {
+            "entry": ["index.{ts,tsx}"],
+            "project": ["**/*.{ts,tsx}"]
+        },
+        "packages/redux-utilities": {
+            "entry": ["babel.config.{js,ts}"],
+            "project": ["**/*.{ts,tsx}"]
+        },
+
         "packages/logger": {
             "entry": ["index.{ts,tsx}", "lib/index.{ts,tsx}", "src/index.{ts,tsx}"],
             "project": ["**/*.{ts,tsx}"]
