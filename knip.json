@@ -434,7 +434,7 @@
         "packages/stylelint-config-proton": {
             "entry": [],
             "project": ["**/*.{js,ts,tsx}"],
-            "ignore": ["**"]
+            "ignoreDependencies": ["stylelint", "stylelint-config-prettier-scss"]
         },
         "packages/styles": {
             "entry": ["eslint.config.{js,mjs,ts}"],
