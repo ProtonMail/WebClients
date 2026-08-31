@@ -319,6 +319,9 @@ export type ServerToolResultMessage = {
 
     call_id: string;
     content: string;
+    meta?: {
+        settings: string;
+    };
     encrypted?: boolean;
 };
 
@@ -499,6 +502,8 @@ export function isServerToolResultMessage(obj: any): obj is ServerToolResultMess
         obj.type === 'server_tool_result' &&
         typeof obj.call_id === 'string' &&
         typeof obj.content === 'string' &&
+        (!('meta' in obj) ||
+            (typeof obj.meta === 'object' && obj.meta !== null && typeof obj.meta.settings === 'string')) &&
         (!('encrypted' in obj) || typeof obj.encrypted === 'boolean')
     );
 }
