@@ -64,6 +64,8 @@ export enum SpotlightMessage {
     ACCESS_TOKENS_DISCOVERY = 31,
     /** SSH Agent instructions modal */
     SSH_AGENT_INSTRUCTIONS = 32,
+    /** Welcome onboarding modal auto-open */
+    WELCOME_MODAL = 33,
 }
 
 export type SpotlightAcknowledgment = {

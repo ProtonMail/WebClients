@@ -10,7 +10,6 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -30,7 +29,6 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
     const onComplete = () => {
         setLoading(true);
         acknowledge();
-        void wait(250).then(props.onClose);
     };
 
     const onStep = (offset: 1 | -1) => {
