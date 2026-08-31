@@ -1,16 +1,41 @@
+.pass-type-filter {
+	display: inline-flex;
+	flex: 0 1 auto;
+	min-inline-size: 0;
+	max-inline-size: 100%;
+
+	> button {
+		min-inline-size: 0;
+		max-inline-size: 100%;
+		overflow: hidden;
+	}
+}
+
 .pass-type-filter--active {
 	display: inline-flex;
 	align-items: center;
+	min-inline-size: 0;
 	border-radius: var(--border-radius-md);
 	background-color: var(--interaction-norm);
 	color: var(--interaction-norm-contrast);
 	padding-inline-end: 0.375rem;
+
+	.pass-type-filter-trigger {
+		flex: 1 1 auto;
+	}
 }
 
 .pass-type-filter-trigger {
 	--button-default-background-color: transparent;
 	--button-hover-background-color: transparent;
 	--button-active-background-color: transparent;
+}
+
+.pass-type-filter-label {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	min-inline-size: 0;
 }
 
 .pass-filter-clear-button {

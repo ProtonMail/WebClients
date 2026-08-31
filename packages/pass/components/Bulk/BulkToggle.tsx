@@ -5,10 +5,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { IcCheckmarkTriple } from '@proton/icons/icons/IcCheckmarkTriple';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
 
-import { DropdownMenuButton } from '../Layout/Dropdown/DropdownMenuButton';
-import { QuickActionsDropdown } from '../Layout/Dropdown/QuickActionsDropdown';
 import { useBulkActions } from './BulkSelectionActions';
 import { useBulkEnabled } from './BulkSelectionState';
 
@@ -22,40 +21,32 @@ export const BulkToggle = memo(({ disabled }: Props) => {
         if (disabled) bulk.disable();
     }, [disabled]);
 
-    if (bulkEnabled) {
-        return (
+    return (
+        <Tooltip
+            key="bulk-toggle"
+            openDelay={500}
+            isOpen={bulkEnabled ? false : undefined}
+            originalPlacement="bottom"
+            title={<Kbd shortcut={metaKey} />}
+        >
             <Button
                 shape="solid"
                 size="small"
                 color="weak"
-                onClick={bulk.disable}
-                title={c('Action').t`Cancel bulk selection`}
-                className="flex flex-nowrap gap-2 grow-0 shrink-0 text-sm text-semibold"
+                onClick={bulk[bulkEnabled ? 'disable' : 'enable']}
+                title={bulkEnabled ? c('Action').t`Cancel bulk selection` : c('Action').t`Bulk select items`}
+                disabled={disabled}
+                className="flex flex-nowrap gap-2 grow-0 text-sm text-semibold max-w-1/3"
             >
-                {c('Action').t`Cancel`}
+                {bulkEnabled ? (
+                    c('Action').t`Cancel`
+                ) : (
+                    <>
+                        <IcCheckmarkTriple className="shrink-0" />
+                        <span className="text-ellipsis hidden xl:block">{c('Action').t`Multiple select`}</span>
+                    </>
+                )}
             </Button>
-        );
-    }
-
-    return (
-        <Tooltip key="bulk-toggle" openDelay={500} originalPlacement="bottom" title={<Kbd shortcut={metaKey} />}>
-            <span className="inline-flex shrink-0">
-                <QuickActionsDropdown
-                    disabled={disabled}
-                    iconSize={4}
-                    originalPlacement="bottom-end"
-                    pill
-                    shape="ghost"
-                    size="small"
-                >
-                    <DropdownMenuButton
-                        onClick={() => bulk.enable()}
-                        label={c('Action').t`Select items`}
-                        icon="checkmark-triple"
-                        size="small"
-                    />
-                </QuickActionsDropdown>
-            </span>
         </Tooltip>
     );
 });
