@@ -7,7 +7,6 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { MODEL_VERSION } from '@proton/pass/constants';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { clientBooted } from '@proton/pass/lib/client';
 import { isEditItemDraft, isNewItemDraft } from '@proton/pass/lib/items/item.predicates';
@@ -73,7 +72,7 @@ export const PopupProvider: FC<PropsWithChildren<Props>> = ({ children, ready })
             TelemetryEventName.ExtensionUsed,
             {},
             // no page DOM available here: this fires from the popup, not a content script
-            { modelVersion: MODEL_VERSION, ...NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS }
+            NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS
         );
     }, []);
 

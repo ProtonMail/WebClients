@@ -1,6 +1,5 @@
 import type { Runtime } from 'webextension-polyfill';
 
-import { MODEL_VERSION } from '@proton/pass/constants';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { Dimensions, Rect } from '@proton/pass/types/utils/dom';
 import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
@@ -328,7 +327,7 @@ export const createInlineApp = <T extends InlineRequest>({
         sendContentScriptTelemetry(
             TelemetryEventName.ExtensionUsed,
             {},
-            { modelVersion: MODEL_VERSION, ...getAutofillPageTelemetryDimensions(document.documentElement) }
+            getAutofillPageTelemetryDimensions(document.documentElement)
         );
     });
 

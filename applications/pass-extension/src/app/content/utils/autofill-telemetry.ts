@@ -1,5 +1,8 @@
 import type { AutofillPageTelemetryDimensions } from '@proton/pass/types/data/telemetry';
 
+import { BUNDLED_MODEL_ID } from '../../../lib/utils/version';
+import { CSContext } from '../context/context';
+
 /** Validates and canonicalizes a BCP 47 language tag using the platform's own parser. */
 const toValidPageLanguage = (lang: string | undefined): string => {
     try {
@@ -16,4 +19,5 @@ export const getAutofillPageTelemetryDimensions = (_element: Element): AutofillP
        set the lang attribute on the document root and nowhere else */
     // documentElement isn't always an HTMLElement (eg: XML/SVG docs), so `.lang` can be undefined
     pageLanguage: toValidPageLanguage((document.documentElement as Partial<HTMLElement>).lang),
+    modelVersion: CSContext.read()?.service.detector.getModelId() ?? BUNDLED_MODEL_ID,
 });
