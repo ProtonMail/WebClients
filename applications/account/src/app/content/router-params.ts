@@ -59,6 +59,7 @@ export type Flags = {
     isAuthenticatorAvailable: boolean;
     isCategoryViewEnabled: boolean;
     isMspEnabled: boolean;
+    isMspPassSettingsFullyEnabled: boolean;
     isReferralProgramEnabled: boolean;
 };
 
