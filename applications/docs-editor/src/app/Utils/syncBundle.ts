@@ -4,7 +4,7 @@ import {
   versionCookieAtLoad,
 } from '@proton/components/helpers/versionCookie'
 
-const ENABLED = false // feature killswitch
+const ENABLED = true // feature killswitch
 const TAG_SYNC_RELOAD_ATTEMPTS = 3
 const TAG_SYNC_RELOAD_ATTEMPTS_KEY = 'docs-editor-tag-sync'
 
