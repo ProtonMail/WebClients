@@ -940,6 +940,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston",
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston"
+      ],
+      "Keep going": [
+        "Jatka vain"
       ]
     },
     "Actions message": {
@@ -3495,6 +3498,12 @@
       ],
       "Failed to fetch sharing information": [
         "Jakotietojen nouto epäonnistui"
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Koska tämä tiedosto oli jaetussa kansiossa, vain kansion omistaja voi palauttaa sen"
+      ],
+      "Failed to trash document": [
+        "Tiedoston siirtäminen roskakoriin epäonnistui"
       ]
     },
     "error": {
@@ -5498,7 +5507,7 @@
         "Sinulla on jo ilmainen tili"
       ],
       "You are about to open another browser tab and visit:": [
-        "Olet avaamassa uutta selaimen välilehteä sivustolle:"
+        "Olet avaamassa uuteen selainvälilehteen osoitetta:"
       ],
       "You are about to open your default browser and visit:": [
         "Olet avaamassa oletusselaimeesi osoitetta:"
@@ -5677,6 +5686,21 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Jos et voi käyttää tunnistautumissovellustasi, voit käyttää yhtä kuudestatoista varakoodistasi, jotka sait määrittäessäsi kaksivaiheisen tunnistautumisen. ${ learnMoreLink }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Virhe tiedostoa ladattaessa: ${ errorDetail }"
+      ],
+      "Get Notified About Comments": [
+        "Saa ilmoituksia kommenteista"
+      ],
+      "Making a copy...": [
+        "Luodaan kopiota..."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Tämä vaatii paljon ajattelua. Jatketaanko?"
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "Ongelman selvittämiseksi tietoja siitä ladataan Drive-tallennustilaasi ja jaetaan ${ BRAND_NAME }-tuelle. Tiedot voivat sisältää tiedoston sisältöjä. Voit lopettaa tietojen jakamisen milloin vain ja jaettu data poistetaan sen läpikäymisen jälkeen."
       ]
     },
     "info": {
@@ -6213,6 +6237,12 @@
       ],
       "Your password (trusted contact)": [
         "Salasananne (luotettu yhteystieto)"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } merkkiä"
+      ],
+      "Include debug information": [
+        "Sisällytä vian tiedot"
       ]
     },
     "Label for contact group color": {
@@ -7954,6 +7984,15 @@
       ],
       "Your settings have been changed successfully": [
         "Tekemäsi asetusmuutokset on tallennettu"
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Koska tämä tiedosto oli jaetussa kansiossa, vain kansion omistaja voi palauttaa sen"
+      ],
+      "Failed to submit report": [
+        "Palautteen lähettäminen epäonnistui"
+      ],
+      "Report submitted successfully": [
+        "Palaute lähetetty onnistuneesti"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10413,6 +10452,12 @@
       ],
       "Your exposed information": [
         "Paljastuneet tietosi"
+      ],
+      "Report issue": [
+        "Ilmoita ongelmasta"
+      ],
+      "Still working on it": [
+        "Jatketaan ajattelemista"
       ]
     },
     "Title header for keys table": {
@@ -10451,7 +10496,7 @@
         "Vaihda valitsemiesi päivä- ja yöteemojen välillä automaattisesti järjestelmäsi päivä-/yötilan mukaisesti"
       ],
       "Change shared item settings": [
-        "Muuta jaettavan kohteen asetuksia"
+        "Muuta jaetun kohteen asetuksia"
       ],
       "Customize import to reduce the number of folders": [
         "Vähennä kansioiden määrää mukauttamalla tuontia"
