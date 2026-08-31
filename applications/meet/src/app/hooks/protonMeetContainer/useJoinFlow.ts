@@ -36,7 +36,7 @@ import { getUrlWithoutProtocol } from '../telemetry/utils';
 import { useNotifyError } from '../useNotifyError';
 import { useStableCallback } from '../useStableCallback';
 import { useInvalidMeetingLink } from './useInvalidMeetingLink';
-import type { ConnectWithMlsResult, UseMeetingConnectionResult } from './useMeetingConnection';
+import type { ConnectWithMlsResult, MeetingAccessDetails, UseMeetingConnectionResult } from './useMeetingConnection';
 import { useSessionKey } from './useSessionKey';
 import { useWaitingRoom } from './waitingRoom/useWaitingRoom';
 
@@ -178,6 +178,7 @@ export const useJoinFlow = ({
 
     const joinBlockedRef = useRef(false);
     const loadingStartTimeRef = useRef(0);
+    const waitingRoomAccessDetailsRef = useRef<MeetingAccessDetails | null>(null);
 
     const { getSessionKey, getSessionKeyBase64 } = useSessionKey({ urlPassword });
 
@@ -200,7 +201,8 @@ export const useJoinFlow = ({
         displayName: string,
         meetingToken: string = token,
         meetingPassword: string,
-        isWaitingRoom = false
+        isWaitingRoom = false,
+        accessDetails?: MeetingAccessDetails
     ) => {
         setDisplayName(displayName);
 
@@ -218,6 +220,7 @@ export const useJoinFlow = ({
                 timeoutMs: 20 * SECOND,
                 queryParticipantsCount: true,
                 isWaitingRoom,
+                accessDetails,
             });
 
             meetingLinkRef.current = getMeetingLink(meetingToken, meetingPassword);
@@ -407,11 +410,12 @@ export const useJoinFlow = ({
         const decryptionKey = await deriveEncryptionKeyFromSessionKey(sessionKey);
         decryptionKeyRef.current = decryptionKey;
         const encryptedDisplayName = await encryptDisplayNameWithKey(decryptionKey, sanitizedParticipantName);
-        const { accessToken } = await getAccessDetails({
+        const { accessToken, websocketUrl } = await getAccessDetails({
             token: meetingToken,
             encryptedDisplayName,
         });
         accessTokenRef.current = accessToken;
+        waitingRoomAccessDetailsRef.current = { accessToken, websocketUrl };
         return accessToken;
     };
 
@@ -457,7 +461,13 @@ export const useJoinFlow = ({
 
     const joinAfterAdmission = useStableCallback(async (meetingToken: string) => {
         dispatch(setJoiningInProgress(true));
-        await handleJoin(displayName, meetingToken, urlPassword, true);
+        await handleJoin(
+            displayName,
+            meetingToken,
+            urlPassword,
+            true,
+            waitingRoomAccessDetailsRef.current ?? undefined
+        );
     });
 
     const { beginJoin: beginWaitingRoomJoin, providerProps: waitingRoomProviderProps } = useWaitingRoom({
