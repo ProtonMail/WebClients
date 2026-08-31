@@ -1378,8 +1378,8 @@
         "${ domains } ekstra egendefinerte domener"
       ],
       "${ ips } dedicated VPN server": [
-        "${ ips } dedikert VPN-tjener",
-        "${ ips } dedikerte VPN-tjenere"
+        "${ ips } dedikert VPN-server",
+        "${ ips } dedikerte VPN-servere"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } KI-lisens"
@@ -1388,7 +1388,7 @@
         "${ LUMO_APP_NAME } seter"
       ],
       "${ price } per dedicated server": [
-        "${ price } per dedikerte tjener"
+        "${ price } per dedikert server"
       ],
       "${ price } per domain": [
         "${ price } per domene"
@@ -5506,7 +5506,7 @@
         "${ photoCount } elementer"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
-        "${ plan.Title } krever minst 1 dedikert tjener ${ serverPricePerMonth }"
+        "${ plan.Title } krever minst 1 dedikert server ${ serverPricePerMonth }"
       ],
       "${ planName } expires in ${ daysLeft } day.": [
         "${ planName } utløper om ${ daysLeft } dag.",
@@ -5926,7 +5926,7 @@
         "Dekrypterer filer"
       ],
       "Dedicated servers": [
-        "Dedikerte tjenere"
+        "Dedikerte servere"
       ],
       "Dedicated VPN servers": [
         "Dedikerte VPN-servere"
@@ -5966,7 +5966,7 @@
         "Nedgrader"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Nedgradering vil terminere alle forbindelser til betalte ${ VPN_APP_NAME }-tjenere."
+        "Nedgradering vil terminere alle forbindelser til betalte ${ VPN_APP_NAME }-servere."
       ],
       "Download ${ name } app": [
         "Last ned ${ name }-appen"
@@ -6452,7 +6452,7 @@
         "Nov"
       ],
       "Number of dedicated servers in the organization": [
-        "Antall dedikerte tjenere i organisasjonen"
+        "Antall dedikerte servere i organisasjonen"
       ],
       "Number of dedicated VPN servers in the organization": [
         "Antall dedikerte VPN-servere i organisasjonen"
@@ -7967,7 +7967,7 @@
         "Alle"
       ],
       "Allow editors to change permissions and share": [
-        "Tillat redaktører å endre tillatelser og dele"
+        "Tillat redigerere å endre tillatelser og dele"
       ],
       "Anderson": [
         "Andersen"
@@ -8145,7 +8145,7 @@
         "f.eks. Amazon, eBay, Etsy"
       ],
       "Editor": [
-        "Redaktør"
+        "Redigerer"
       ],
       "Email": [
         "E-post"
@@ -8709,7 +8709,7 @@
         "URL-jokertegnmønster"
       ],
       "Allow editors to change permissions and share.": [
-        "Tillat redaktører å endre tillatelser og dele."
+        "Tillat redigerere å endre tillatelser og dele."
       ],
       "Client": [
         "Klient"
@@ -9624,7 +9624,7 @@
         "Kryptert kontaktinformasjon"
       ],
       "Encrypted VPN servers": [
-        "Krypterte VPN-tjenere"
+        "Krypterte VPN-servere"
       ],
       "End-to-end encryption": [
         "Ende-til-ende-kryptering"
@@ -9733,7 +9733,7 @@
         "Planlegg og slumre e-poster når som helst"
       ],
       "Secure Core servers": [
-        "Secure Core-tjenere"
+        "Secure Core-servere"
       ],
       "Secure file storage and sharing": [
         "Sikker fillagring og -deling"
@@ -10086,7 +10086,7 @@
         "Dedikerte servere med dedikerte IP-adresser kan legges til private gateway-servere for å muliggjøre finjustert tilgangskontroll"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
-        "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere tjenere."
+        "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere servere."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere tjenere."
@@ -10113,7 +10113,7 @@
         "Hold planene dine private for deg og familien din med en kryptert kalender."
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
-        "Holder deg beskyttet ved å blokkere alle nettverkstilkoblinger når du uventet kobles fra VPN-tjeneren vår."
+        "Holder deg beskyttet ved å blokkere alle nettverkstilkoblinger når du uventet kobles fra VPN-serveren vår."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketter er enkle merker du kan legge til i meldinger for å gjøre dem enklere å finne eller bruke filtre på."
@@ -10146,7 +10146,7 @@
         "Vår robuste infrastruktur sikrer at du får tilgang til kontoen din når du trenger den"
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
-        "Harddiskene til tjenerne våre er fullstendig kryptert med flere passordlag, slik at dataene dine er beskyttet selv om maskinvaren vår er kompromittert."
+        "Harddiskene til serverne våre er fullstendig kryptert med flere passordlag, slik at dataene er beskyttet selv om maskinvaren vår blir kompromittert."
       ],
       "Password management and identity protection": [
         "Passordbehandling og identitetsbeskyttelse"
@@ -10164,7 +10164,7 @@
         "Beskytt alle enheter som er koblet til WiFi-nettverket. Det er også nyttig hvis du har enheter som ikke støtter VPN-innstillinger direkte."
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
-        "Beskytt familien din mot skadelige nettsteder og få tilgang til våre høyhastighets VPN-tjenere for å strømme favorittinnholdet ditt."
+        "Beskytt familien mot skadelige nettsteder og få tilgang til våre høyhastighets VPN-servere for å strømme favorittinnholdet ditt."
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
         "Beskytt den virkelige e-postadressen din mot å bli avslørt eller lekket med aliaser (en tilfeldig generert e-postadresse som videresender e-post til hovedinnboksen din)."
@@ -10284,7 +10284,7 @@
         "Dedikert kontobehandler"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
-        "Dedikerte tjenerplasseringer i ${ numberOfCountries }+ land"
+        "Dedikerte serverplasseringer i ${ numberOfCountries }+ land"
       ],
       "Dedicated server locations in North America and Europe": [
         "Dedikerte tjenerplasseringer i Nord-Amerika og Europa"
@@ -10594,10 +10594,10 @@
         "Valgte bilder allerede i \"${ albumName }\""
       ],
       "Setting updated. Editors can change permissions and share.": [
-        "Innstilling oppdatert. Redaktører kan endre tillatelser og dele."
+        "Innstilling oppdatert. Redigeringspersoner kan endre tillatelser og dele."
       ],
       "Setting updated. Editors can't change permissions or share.": [
-        "Innstilling oppdatert. Redaktører kan ikke endre tillatelser eller dele."
+        "Innstillingen er oppdatert. Redigeringspersoner kan ikke endre tillatelser eller dele."
       ],
       "Share invitation accepted successfully": [
         "Delingsinvitasjonen ble godtatt"
@@ -12482,10 +12482,10 @@
         "Nå kan du enkelt søke i Drive-filer samtidig som du holder dataene dine sikre."
       ],
       "Editor permissions": [
-        "Redaktørtillatelser"
+        "Redigeringstillatelser"
       ],
       "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
-        "Redaktører kan nå administrere deling og invitere andre. Du kan slå det av når som helst i delingsinnstillingene."
+        "Redigeringspersoner kan nå administrere deling og invitere andre. Du kan slå det av når som helst i delingsinnstillingene."
       ]
     },
     "sso": {
@@ -13251,7 +13251,7 @@
         "Estimert størrelse"
       ],
       "Migration status": [
-        "Migrasjonsstatus"
+        "Migreringsstatus"
       ],
       "User": [
         "Bruker"
@@ -14602,7 +14602,7 @@
         "Status for dataoverføring fra ${ providerName } til ${ BRAND_NAME }"
       ],
       "Users who have accessed their ${ BRAND_NAME } account": [
-        "Brukere som har aktivert ${ BRAND_NAME }-kontoen sin"
+        "Brukere som har aktivert ${ BRAND_NAME }-kontoen"
       ]
     },
     "tooltip": {
