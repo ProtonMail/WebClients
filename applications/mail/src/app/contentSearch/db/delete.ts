@@ -1,7 +1,7 @@
 import { deleteDB } from 'idb';
 
 import { ES_DELETE_DB_BLOCKED_TIMEOUT } from '@proton/encrypted-search/constants';
-import { esSentryReport } from '@proton/encrypted-search/lib/esHelpers';
+import { esSentryReport } from '@proton/encrypted-search/esHelpers';
 import { SentryCommonInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 import { getDBName } from './schema';

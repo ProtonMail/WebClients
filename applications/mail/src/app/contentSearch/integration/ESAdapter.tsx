@@ -395,6 +395,7 @@ export class ESAdapter implements FunctionsV2 {
         this.job?.dispose();
         this.job = undefined;
         await this.esLibraryFunctionsV1.esDelete();
+        await this.indexService.deleteIndex();
     }
 
     initializeES() {
