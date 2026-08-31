@@ -1,7 +1,6 @@
 {
   "name": "proton-docs-editor",
   "description": "Editor for Proton Docs.",
-  "main": "index.ts",
   "scripts": {
     "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso --babelLoader --noLogicalScss",
     "check-types": "tsc",
