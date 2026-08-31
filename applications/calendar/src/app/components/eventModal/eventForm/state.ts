@@ -46,7 +46,7 @@ import { propertiesToModel } from './propertiesToModel';
 import { propertiesToNotificationModel } from './propertiesToNotificationModel';
 import { getDateTimeState } from './time';
 
-export const getNotificationModels = ({
+const getNotificationModels = ({
     DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
     DefaultFullDayNotifications = DEFAULT_FULL_DAY_NOTIFICATIONS,
 }) => {

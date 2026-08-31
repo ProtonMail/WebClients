@@ -6,12 +6,8 @@ import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import type { GetBusySlotsResponse } from '@proton/shared/lib/interfaces/calendar';
 import diff from '@proton/utils/diff';
 
-import type { CalendarViewBusyEvent } from '../../containers/calendar/interface';
-
-export interface AttendeeBusySlot extends CalendarViewBusyEvent {}
-
 /** Attendee email */
-export type BusySlotsEmail = string;
+type BusySlotsEmail = string;
 /** Attendee visibility */
 export type BusySlotsVisibility = 'visible' | 'hidden';
 /**

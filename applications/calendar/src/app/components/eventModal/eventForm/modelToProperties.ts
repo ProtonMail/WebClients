@@ -116,7 +116,7 @@ export const modelToAttendeeProperties = ({ attendees }: Partial<EventModel>) =>
     };
 };
 
-export const modelToVideoConferenceProperties = ({
+const modelToVideoConferenceProperties = ({
     conferenceId,
     conferencePassword,
     conferenceUrl,

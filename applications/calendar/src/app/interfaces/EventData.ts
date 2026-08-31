@@ -1,7 +1,7 @@
 import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
-export interface EventTargetData {
+interface EventTargetData {
     calendarID: string;
     memberID: string;
     addressID: string;

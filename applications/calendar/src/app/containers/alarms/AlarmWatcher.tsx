@@ -23,7 +23,7 @@ import type { CalendarsEventsCache } from '../calendar/eventStore/interface';
 
 const MIN_CUTOFF = -MINUTE;
 
-export const displayNotification = ({ title = c('Title').t`Calendar alarm`, text = '', ...rest }) => {
+const displayNotification = ({ title = c('Title').t`Calendar alarm`, text = '', ...rest }) => {
     if (isElectronMail) {
         // Calendar view and sidebar-calendar notifications conflict
         // Don't send notifications when embedded on Desktop

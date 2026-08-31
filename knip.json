@@ -13,54 +13,109 @@
             "entry": [],
             "project": []
         },
-        "applications/*": {
-            "entry": [
-                "src/app/index.{ts,tsx}",
-                "src/index.{ts,tsx}",
-                "src/main.ts",
-                "src/preload.ts",
-                "src/renderer.ts",
-                "src/**/*.stories.tsx",
-                "webpack.config.{js,ts}"
-            ],
-            "project": ["src/**/*.{ts,tsx}"],
-            "ignore": ["**"]
-        },
         "applications/account": {
             "entry": [
-                "src/app/index.{ts,tsx}",
                 "src/app/hostStorage.ts",
                 "src/app/private.tsx",
                 "src/app/public.tsx",
                 "src/lite/index.{ts,tsx}",
-                "src/pages/**/*.{ts,tsx}",
-                "src/**/*.stories.tsx"
+                "src/pages/**/*.{ts,tsx}"
             ],
             "project": ["src/**/*.{ts,tsx}"],
             "ignore": ["**"]
         },
+        "applications/admin": {
+            "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
         "applications/authenticator": {
-            "entry": ["src/app/main.tsx", "src/**/*.stories.tsx"],
+            "entry": ["src/app/main.tsx"],
             "project": ["src/**/*.{ts,tsx}"],
             "ignore": ["**"]
         },
         "applications/calendar": {
-            "entry": ["src/app/index.{ts,tsx}", "src/app/bookings.tsx", "src/**/*.stories.tsx"],
+            "entry": ["src/app/index.{ts,tsx}", "src/app/bookings.tsx", "webpack.config.{js,ts}"],
+            "project": ["src/**/*.{ts,tsx}"]
+        },
+        "applications/docs": {
+            "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "applications/docs-editor": {
+            "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
             "project": ["src/**/*.{ts,tsx}"],
             "ignore": ["**"]
         },
         "applications/drive": {
-            "entry": ["src/app/index.{ts,tsx}", "src/app/urls.tsx", "src/**/*.stories.tsx"],
+            "entry": ["src/app/index.{ts,tsx}", "src/app/urls.tsx"],
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "applications/inbox-desktop": {
+            "entry": [
+                "src/index.ts",
+                "src/preload.ts",
+                "src/renderer.ts",
+                "src/ipc/main.ts",
+                "forge.config.ts",
+                "webpack.main.config.ts",
+                "webpack.renderer.config.ts",
+                "webpack.rules.ts"
+            ],
             "project": ["src/**/*.{ts,tsx}"],
             "ignore": ["**"]
         },
         "applications/lumo": {
-            "entry": ["src/app/index.{ts,tsx}", "src/app/remote/service-worker/worker.ts", "src/**/*.stories.tsx"],
+            "entry": [
+                "src/app/index.{ts,tsx}",
+                "src/app/services/workers/fileProcessingWorker.ts",
+                "src/app/workers/search/searchWorker.ts"
+            ],
             "project": ["src/**/*.{ts,tsx}"],
             "ignore": ["**"]
         },
         "applications/mail": {
-            "entry": ["src/app/index.{ts,tsx}", "src/app/eo.tsx", "src/**/*.stories.tsx"],
+            "entry": ["src/app/index.{ts,tsx}", "src/app/eo.tsx"],
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "applications/meet": {
+            "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "applications/meet-desktop": {
+            "entry": [
+                "src/index.ts",
+                "src/preload.ts",
+                "src/renderer.ts",
+                "src/ipc/main.ts",
+                "forge.config.ts",
+                "webpack.main.config.ts",
+                "webpack.renderer.config.ts",
+                "webpack.rules.ts"
+            ],
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "applications/pass": {
+            "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "applications/pass-desktop": {
+            "entry": [
+                "src/main.ts",
+                "src/preload.ts",
+                "forge.config.ts",
+                "webpack.main.config.ts",
+                "webpack.renderer.config.ts",
+                "webpack.options.ts",
+                "webpack.plugins.ts",
+                "webpack.rules.ts"
+            ],
             "project": ["src/**/*.{ts,tsx}"],
             "ignore": ["**"]
         },
@@ -82,16 +137,202 @@
                 "src/app/worker/offscreen/offscreen.ts",
                 "src/lib/utils/disable-browser-trap.ts",
                 "src/lib/utils/safari-patch.ts",
-                "src/lib/utils/web-accessible-resource.ts",
-                "src/**/*.stories.tsx"
+                "src/lib/utils/web-accessible-resource.ts"
             ],
             "project": ["src/**/*.{ts,tsx}"],
             "ignore": ["**"]
         },
-        "packages/*": {
-            "entry": ["index.{ts,tsx}", "lib/index.{ts,tsx}", "src/index.{ts,tsx}", "babel.config.{js,ts}"],
+        "applications/pdf-ui": {
+            "entry": [],
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "applications/preview-sandbox": {
+            "entry": ["src/index.ts", "src/previews/index.ts"],
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "applications/storybook": {
+            "entry": [
+                "src/app/index.{ts,tsx}",
+                "src/stories/**/*.stories.{ts,tsx}",
+                "src/stories/**/*.mdx",
+                ".storybook/main.mjs"
+            ],
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "applications/verify": {
+            "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "applications/vpn-settings": {
+            "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "applications/wallet": {
+            "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/account": {
+            "entry": [],
             "project": ["**/*.{ts,tsx}"],
             "ignore": ["**"]
+        },
+        "packages/activation": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/ai-assistant": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/app-context": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/atoms": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/calendar": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"]
+        },
+        "packages/calendar-video-conferencing": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/chargebee": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/codeshift": {
+            "entry": [],
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/colors": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/components": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/cross-storage": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/docs-core": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/docs-proto": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/docs-shared": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/drive": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/drive-store": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/encrypted-search": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/eslint-config-proton": {
+            "entry": [],
+            "project": ["**/*.{js,ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/eslint-plugin-custom-rules": {
+            "entry": [],
+            "project": ["**/*.{js,ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/features": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/global-types": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/hooks": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/i18n": {
+            "entry": [],
+            "project": ["**/*.{js,ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/icons": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/jest-env": {
+            "entry": [],
+            "project": ["**/*.{js,ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/key-transparency": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/llm": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/logger": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"]
+        },
+        "packages/lumo-api-client": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/lumo-ui": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/mail": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/mail-renderer": {
             "entry": [
@@ -104,10 +345,161 @@
             "project": ["**/*.{ts,tsx}"],
             "ignore": ["**"]
         },
-        "tests": { "entry": [], "project": [], "playwright": false, "ignore": ["**"] },
-        "tests/mail-renderer": { "entry": [], "project": [], "playwright": false, "ignore": ["**"] },
-        "tests/packages/*": { "entry": [], "project": [], "playwright": false, "ignore": ["**"] },
-        "utilities/*": { "entry": [], "project": [], "ignore": ["**"] },
-        "vendor/*/*": { "entry": [], "project": [], "ignore": ["**"] }
+        "packages/meet": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/metrics": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/nav": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"]
+        },
+        "packages/pack": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/pass": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/payments": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/payments-ui": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/polyfill": {
+            "entry": [],
+            "project": ["**/*.{js,ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/prettier-config": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/raw-images": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/react-polymorphic-types": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/react-redux-store": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/recovery-kit": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/redux-shared-store": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"]
+        },
+        "packages/redux-shared-store-types": {
+            "entry": ["index.{ts,tsx}"],
+            "project": ["**/*.{ts,tsx}"]
+        },
+        "packages/redux-utilities": {
+            "entry": ["babel.config.{js,ts}"],
+            "project": ["**/*.{ts,tsx}"]
+        },
+        "packages/sanitize": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/shared": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/sieve": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/stylelint-config-proton": {
+            "entry": [],
+            "project": ["**/*.{js,ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/styles": {
+            "entry": ["eslint.config.{js,mjs,ts}"],
+            "project": ["**/*.{ts,tsx}"]
+        },
+        "packages/testing": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/types": {
+            "entry": ["eslint.config.{js,mjs,ts}"],
+            "project": ["**/*.{ts,tsx}"]
+        },
+        "packages/unleash": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/utils": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"]
+        },
+        "packages/vpn": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/wallet": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "tests": {
+            "entry": [],
+            "project": [],
+            "playwright": false,
+            "ignore": ["**"]
+        },
+        "tests/mail-renderer": {
+            "entry": [],
+            "project": [],
+            "playwright": false,
+            "ignore": ["**"]
+        },
+        "tests/packages/*": {
+            "entry": [],
+            "project": [],
+            "playwright": false,
+            "ignore": ["**"]
+        },
+        "utilities/*": {
+            "entry": [],
+            "project": [],
+            "ignore": ["**"]
+        },
+        "vendor/*/*": {
+            "entry": [],
+            "project": [],
+            "ignore": ["**"]
+        }
     }
 }
