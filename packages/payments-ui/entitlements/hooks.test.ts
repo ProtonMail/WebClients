@@ -3,7 +3,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import { useAllEntitlements, useGetAllEntitlements } from '@proton/account/entitlements/hooks';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
 import { EntitlementScope, EntitlementType } from '@proton/payments/core/entitlements/interface';
-import { makeEntitlements } from '@proton/testing/builders/entitlements';
+import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
 
 import { useEntitlementChecks, useGetEntitlements } from './hooks';
 

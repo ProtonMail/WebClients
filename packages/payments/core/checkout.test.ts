@@ -1,5 +1,5 @@
+import { PLANS_MAP, getTestPlansMap } from '@proton/payments/testing/data-plans';
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
-import { PLANS_MAP, getTestPlansMap } from '@proton/testing/data/payments/data-plans';
 
 import { getAddonDisplayOrder, getAddonTrialLimit } from './addon/addons';
 import {

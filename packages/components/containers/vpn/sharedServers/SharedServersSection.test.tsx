@@ -3,8 +3,8 @@ import userEvent from '@testing-library/user-event';
 
 import { getModelState } from '@proton/account/tests';
 import { getOrgPermissions } from '@proton/account/userPermissions';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import { buildSubscription } from '@proton/testing/builders/subscription';
 import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
 import { renderWithProviders } from '../../contacts/tests/render';

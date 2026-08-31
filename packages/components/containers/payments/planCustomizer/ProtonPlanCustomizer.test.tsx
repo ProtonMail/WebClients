@@ -4,8 +4,8 @@ import { ADDON_NAMES, ADDON_PREFIXES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@p
 import type { FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
 import { Renew } from '@proton/payments/core/subscription/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { buildSubscription } from '@proton/testing/builders/subscription';
-import { PLANS_MAP } from '@proton/testing/data/payments/data-plans';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { PLANS_MAP } from '@proton/payments/testing/data-plans';
 
 import { type Props, ProtonPlanCustomizer } from './ProtonPlanCustomizer';
 

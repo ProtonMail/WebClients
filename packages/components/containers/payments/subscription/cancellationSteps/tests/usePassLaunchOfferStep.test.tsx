@@ -1,5 +1,5 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { buildSubscription } from '@proton/testing/builders/subscription';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import { useModalTwoPromise } from '../../../../../components/modalTwo/useModalTwo';
 import { componentsHookRenderer } from '../../../../contacts/tests/render';
