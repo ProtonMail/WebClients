@@ -4,8 +4,6 @@ import { RoomContext } from '@livekit/components-react';
 import { LogLevel, Room, setLogLevel } from 'livekit-client';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
-import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectActiveAudioOutputId } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { isDevOrBlack } from '@proton/shared/lib/env';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -21,8 +19,6 @@ import { MeetingAnalyticsProvider } from './MeetingAnalyticsProvider';
 import { ProtonMeetContainer } from './ProtonMeetContainer';
 
 export const WrappedProtonMeetContainer = () => {
-    const activeAudioOutputDeviceId = useMeetSelector(selectActiveAudioOutputId);
-
     const isMeetVp9Allowed = useFlag('MeetVp9');
     const isMeetHigherBitrate = useFlag('MeetHigherBitrate');
     const isMeetH264 = useFlag('MeetH264');
@@ -113,18 +109,12 @@ export const WrappedProtonMeetContainer = () => {
         };
     }, [meetAudioContext, worker]);
 
-    useEffect(() => {
-        if (activeAudioOutputDeviceId) {
-            meetAudioContext.setSinkId(activeAudioOutputDeviceId);
-        }
-    }, [activeAudioOutputDeviceId, meetAudioContext]);
-
     return (
         <MeetingAnalyticsProvider sampleRate={meetAudioContext.audioContext.sampleRate}>
             <RoomContext.Provider value={room}>
                 <SubscriptionManagementProvider>
                     <MeetingAnnouncerProvider>
-                        <MediaManagementProvider>
+                        <MediaManagementProvider meetAudioContext={meetAudioContext}>
                             <SortedParticipantsProvider>
                                 <ProtonMeetContainer keyProvider={keyProvider} />
                             </SortedParticipantsProvider>
