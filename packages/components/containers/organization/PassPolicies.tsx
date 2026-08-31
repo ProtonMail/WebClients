@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
@@ -11,6 +12,7 @@ import type { OrganizationGetResponse, OrganizationUpdatePasswordPolicyInput } f
 import { BitField, type Maybe, OrganizationVaultCreateMode } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import Option from '../../components/option/Option';
@@ -95,6 +97,13 @@ const PassPolicies = ({ upgradeRequired }: { upgradeRequired: boolean }) => {
     const { createNotification } = useNotifications();
     const handleError = useErrorHandler();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
+
+    // Pause list CRUD still resolves the acting user's own org, not the subsidiary's, so it's
+    // hidden for subsidiaries until the backend is fixed. Remove once MSPPassSettingsFullyEnabled is rolled out.
+    const [protonOrganization] = useOrganization();
+    const isMspPassSettingsFullyEnabled = useFlag('MSPPassSettingsFullyEnabled');
+    const isSubsidiaryOrg = !!protonOrganization?.IsSubsidiary;
+    const showPauseList = !isSubsidiaryOrg || isMspPassSettingsFullyEnabled;
 
     const [organizationSettings, setOrganizationSettings] = useState<Maybe<OrganizationGetResponse>>();
 
@@ -299,20 +308,22 @@ const PassPolicies = ({ upgradeRequired }: { upgradeRequired: boolean }) => {
                             />
                         </SubSettingsSection>
 
-                        <SubSettingsSection
-                            id="pause-list"
-                            title={c('Title').t`Pause list`}
-                            className="container-section-sticky-section"
-                        >
-                            <div className="color-weak">
-                                {c('Description')
-                                    .t`You can customize the list of domains where certain auto functions in ${PASS_APP_NAME} browser extension (Autofill, Autosuggest, Autosave) should not be run.`}
-                            </div>
-                            <div className="color-weak mb-4 text-semibold">
-                                {c('Description').t`A checked box means the feature is disabled.`}
-                            </div>
-                            <PauseList upgradeRequired={upgradeRequired} />
-                        </SubSettingsSection>
+                        {showPauseList && (
+                            <SubSettingsSection
+                                id="pause-list"
+                                title={c('Title').t`Pause list`}
+                                className="container-section-sticky-section"
+                            >
+                                <div className="color-weak">
+                                    {c('Description')
+                                        .t`You can customize the list of domains where certain auto functions in ${PASS_APP_NAME} browser extension (Autofill, Autosuggest, Autosave) should not be run.`}
+                                </div>
+                                <div className="color-weak mb-4 text-semibold">
+                                    {c('Description').t`A checked box means the feature is disabled.`}
+                                </div>
+                                <PauseList upgradeRequired={upgradeRequired} />
+                            </SubSettingsSection>
+                        )}
                     </fieldset>
                 )}
             </SettingsSectionWide>
