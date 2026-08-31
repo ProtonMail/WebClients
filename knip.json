@@ -300,8 +300,7 @@
         },
         "packages/icons": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/jest-env": {
             "entry": [],
