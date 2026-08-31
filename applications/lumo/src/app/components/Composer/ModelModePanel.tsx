@@ -337,7 +337,8 @@ export const buildModelModeOptions = (
               {
                   tier: 'apertus-15' as const,
                   getLabel: () => 'Apertus 1.5 🇨🇭',
-                  getDescription: () => c('collider_2025: Description').t`Fully open, Swiss model for lighter tasks`,
+                  getDescription: () =>
+                      c('collider_2025: Description').t`Fully open, Swiss-made model for lighter tasks`,
                   getRemaining: () => remainingLimits?.lite,
                   isDisabled: () => isLimitExhausted(remainingLimits?.lite),
               },
