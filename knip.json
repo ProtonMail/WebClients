@@ -494,10 +494,22 @@
             "project": [],
             "ignore": ["**"]
         },
+        "utilities/lumo-dev-proxy": {
+            "entry": [],
+            "project": []
+        },
+        "utilities/publish": {
+            "entry": [],
+            "project": []
+        },
         "vendor/*/*": {
             "entry": [],
             "project": [],
             "ignore": ["**"]
+        },
+        "vendor/rowsncolumns/common-types": {
+            "entry": [],
+            "project": []
         }
     }
 }
