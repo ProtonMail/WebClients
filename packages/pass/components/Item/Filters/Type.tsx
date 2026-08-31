@@ -46,7 +46,7 @@ export const TypeFilter = memo(({ items, value, onChange }: Props) => {
         [items, itemTypeOptions]
     );
 
-    const selectedOption = options.find(({ type }) => type === value) ?? options.find(({ type }) => type === '*');
+    const selectedLabel = (itemTypeOptions[value] ?? itemTypeOptions['*']).label;
 
     const handleClear = (event: MouseEvent | KeyboardEvent) => {
         event.stopPropagation();
@@ -55,10 +55,10 @@ export const TypeFilter = memo(({ items, value, onChange }: Props) => {
 
     return (
         <>
-            <div className={clsx('inline-flex flex-nowrap shrink-0', isActive && 'pass-type-filter--active')}>
+            <div className={clsx('pass-type-filter', isActive && 'pass-type-filter--active')}>
                 <DropdownButton
                     className={clsx(
-                        'flex flex-nowrap gap-1.5 grow-0 text-sm text-semibold',
+                        'flex flex-nowrap gap-1.5 min-w-0 max-w-full text-sm text-semibold',
                         isActive && 'pass-type-filter-trigger'
                     )}
                     onClick={toggle}
@@ -66,13 +66,11 @@ export const TypeFilter = memo(({ items, value, onChange }: Props) => {
                     color={isActive ? 'norm' : 'weak'}
                     shape={isActive ? undefined : 'solid'}
                     size="small"
-                    title={c('Action').t`Filter vault items`}
+                    title={selectedLabel}
                 >
-                    <span className="text-ellipsis hidden sm:block">
-                        {selectedOption?.label}
-                        {!isActive && selectedOption && (
-                            <span className="hidden md:inline">{` (${selectedOption.count})`}</span>
-                        )}
+                    <span className="pass-type-filter-label">
+                        {selectedLabel}
+                        {!isActive && ` (${items.length})`}
                     </span>
                 </DropdownButton>
                 {isActive && <FilterClearButton onClear={handleClear} title={c('Action').t`Clear item type filter`} />}

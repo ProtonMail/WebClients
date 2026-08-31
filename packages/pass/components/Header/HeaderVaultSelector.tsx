@@ -9,6 +9,7 @@ import { verticalPopperPlacements } from '@proton/atoms/Popper/utils';
 import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 
 import { useVaultCreationPolicy } from '../../hooks/organization/useVaultCreationPolicy';
 import { selectShare } from '../../store/selectors/shares';
@@ -43,6 +44,9 @@ export const HeaderVaultSelector = memo(() => {
 
     const vaultMenu = usePopperAnchor<HTMLButtonElement>();
     const withVaultMenuClose = withTap(vaultMenu.close);
+    // Same threshold as the sidebar (`hidden lg:flex` → >medium). Unmount instead of
+    // `lg:hidden` because flex layout in the header overrides `display: none`.
+    const sidebarVisible = useActiveBreakpoint().viewportWidth['>=large'];
 
     const isActive = scope === 'share' && selectedShareId !== null;
 
@@ -65,6 +69,10 @@ export const HeaderVaultSelector = memo(() => {
 
     const iconColor = scope === 'trash' ? VaultColor.COLOR_UNSPECIFIED : vaultOption.color;
 
+    if (sidebarVisible) {
+        return null;
+    }
+
     return (
         <>
             <Button
@@ -74,7 +82,7 @@ export const HeaderVaultSelector = memo(() => {
                 shape={isActive ? undefined : 'solid'}
                 size="small"
                 color={isActive ? 'norm' : 'weak'}
-                className="pass-header-vault-selector flex flex-nowrap gap-1.5 shrink-0 text-sm lg:hidden"
+                className="pass-header-vault-selector flex flex-nowrap gap-1.5 shrink-0 text-sm"
                 title={c('Action').t`Switch vault`}
             >
                 <VaultIcon

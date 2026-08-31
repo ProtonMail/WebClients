@@ -19,6 +19,7 @@ import { selectAllVaults, selectPassPlan, selectUserPlan } from '../../../store/
 import { type ItemType, SpotlightMessage } from '../../../types';
 import { PassFeature } from '../../../types/api/features';
 import { UserPassPlan } from '../../../types/api/plan';
+import { VaultIcon } from '../../../types/protobuf/vault-v1.static';
 import { useOnline } from '../../Core/ConnectivityProvider';
 import { useSpotlightFor } from '../../Spotlight/WithSpotlight';
 import { PassPlusPromotionButton } from '../../Upsell/PassPlusPromotionButton';
@@ -324,11 +325,7 @@ export const ItemViewPanel: FC<Props> = ({
                             <VaultTag
                                 title={share.content.name}
                                 color={share.content.display.color}
-                                icon={
-                                    share.content.display.icon
-                                        ? VAULT_ICON_MAP[share.content.display.icon]
-                                        : 'pass-all-vaults'
-                                }
+                                icon={VAULT_ICON_MAP[share.content.display.icon ?? VaultIcon.ICON1]}
                             />
                         ) : undefined
                     }
