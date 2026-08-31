@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren } from 'react';
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -49,8 +49,6 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
     const userPlan = useSelector(selectUserPlan);
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE && userPlan?.InternalName === 'free';
     const hasItems = useSelectorOnce(selectAllItems).length > 0;
-
-    const message = SpotlightMessage.WELCOME;
 
     const navigateToUpgrade = useNavigateToUpgrade({
         upsellRef: selected === PLANS.PASS ? UpsellRef.PLUS_PLAN_ONBOARDING : UpsellRef.UNLIMITED_PLAN_ONBOARDING,
@@ -126,17 +124,26 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
         ].filter(truthy);
     }, [enabled, isFreePlan, hasExtension, selected]);
 
+    const handleModalClose = useCallback(() => {
+        setIsActive(false);
+        void spotlight.acknowledge(SpotlightMessage.WELCOME_MODAL);
+    }, [spotlight]);
+
     const context = useMemo<OnboardingContextValue>(
         () => ({
             acknowledge: () => {
                 setEnabled(false);
-                void spotlight.acknowledge(message);
+                setIsActive(false);
+                setCompleted([]);
+                void spotlight.acknowledge(SpotlightMessage.WELCOME);
             },
             launch: () => {
                 setEnabled(true);
                 setIsActive(true);
             },
-            markCompleted: (step: string) => setCompleted((steps) => Array.from(new Set(steps.concat(step)))),
+            markCompleted: (step: string) => {
+                setCompleted((prev) => Array.from(new Set(prev.concat(step))));
+            },
             enabled,
             isActive,
             steps,
@@ -145,17 +152,19 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
             selected,
             setSelected,
         }),
-        [enabled, isActive, steps, completed, selected]
+        [enabled, isActive, steps, completed, selected, spotlight]
     );
 
     useEffect(() => {
-        (async () => (await spotlight.check(message)) ?? false)()
-            .then((enabled) => {
-                /* Auto-lauch on provider mount */
-                setEnabled(enabled);
-                setIsActive(enabled);
-            })
-            .catch(noop);
+        (async () => {
+            const shouldShow = (await spotlight.check(SpotlightMessage.WELCOME)) ?? false;
+            if (!shouldShow) return;
+
+            const shouldOpenModal = (await spotlight.check(SpotlightMessage.WELCOME_MODAL)) ?? false;
+
+            setEnabled(true);
+            setIsActive(shouldOpenModal);
+        })().catch(noop);
     }, []);
 
     useEffect(() => {
@@ -166,7 +175,7 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
     return (
         <OnboardingContext.Provider value={context}>
             {children}
-            {enabled && isActive && <OnboardingModal open onClose={() => setIsActive(false)} />}
+            {enabled && isActive && <OnboardingModal open onClose={handleModalClose} />}
         </OnboardingContext.Provider>
     );
 };

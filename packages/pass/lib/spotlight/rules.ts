@@ -39,6 +39,12 @@ export const createWelcomeRule = () =>
         when: (previous) => !previous,
     });
 
+export const createWelcomeModalRule = () =>
+    createSpotlightRule({
+        message: SpotlightMessage.WELCOME_MODAL,
+        when: (previous) => !previous,
+    });
+
 export const createPermissionsRule = (checkPermissionsGranted: () => boolean) =>
     createSpotlightRule({
         message: SpotlightMessage.PERMISSIONS_REQUIRED,
