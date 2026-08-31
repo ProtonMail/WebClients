@@ -10069,9 +10069,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pmmmwh/react-refresh-webpack-plugin@npm:^0.6.2":
-  version: 0.6.2
-  resolution: "@pmmmwh/react-refresh-webpack-plugin@npm:0.6.2"
+"@pmmmwh/react-refresh-webpack-plugin@npm:^0.6.3":
+  version: 0.6.3
+  resolution: "@pmmmwh/react-refresh-webpack-plugin@npm:0.6.3"
   dependencies:
     anser: "npm:^2.1.1"
     core-js-pure: "npm:^3.23.3"
@@ -10085,7 +10085,7 @@ __metadata:
     sockjs-client: ^1.4.0
     type-fest: ">=0.17.0 <6.0.0"
     webpack: ^5.0.0
-    webpack-dev-server: ^4.8.0 || 5.x
+    webpack-dev-server: ^4.8.0 || 5.x || 6.x
     webpack-hot-middleware: 2.x
     webpack-plugin-serve: 1.x
   peerDependenciesMeta:
@@ -10101,7 +10101,7 @@ __metadata:
       optional: true
     webpack-plugin-serve:
       optional: true
-  checksum: 10/157a20464b0bdca39b31e09450f6ce1d91cbe32bcce882a02df797482b0226247d13e5a2c750a3fb2e2758bffc25d49a468b33b66d8364aa4e1ed785596453c8
+  checksum: 10/fc357103a822c22312d5521f601ab88606b6207ff40f3d748a2e74c1e58841b467ceb20120f57cba6385325559d99db0311ee179ffc70a463bf4ce45511c3321
   languageName: node
   linkType: hard
 
@@ -11527,7 +11527,7 @@ __metadata:
     "@babel/preset-react": "npm:^7.29.7"
     "@babel/preset-typescript": "npm:^7.29.7"
     "@babel/runtime": "npm:^7.29.7"
-    "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.6.2"
+    "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.6.3"
     "@sentry/webpack-plugin": "npm:^1.21.0"
     "@swc/core": "npm:^1.16.1"
     autoprefixer: "npm:^10.5.4"
@@ -42257,7 +42257,7 @@ __metadata:
     "@dnd-kit/helpers": "npm:^0.5.0"
     "@dnd-kit/react": "npm:^0.5.0"
     "@iarna/toml": "npm:^2.2.5"
-    "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.6.2"
+    "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.6.3"
     "@proton/app-context": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/colors": "workspace:^"
@@ -43165,7 +43165,7 @@ __metadata:
     "@electron-forge/plugin-webpack": "npm:^7.5.0"
     "@electron-forge/shared-types": "npm:^7.5.0"
     "@electron/fuses": "npm:^1.8.0"
-    "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.6.2"
+    "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.6.3"
     "@proton/atoms": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
