@@ -6441,6 +6441,9 @@
       ],
       "Your password (trusted contact)": [
         "Votre mot de passe (contacts de confiance)"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caractères"
       ]
     },
     "Label for contact group color": {
@@ -11156,6 +11159,16 @@
       ],
       "One plan, more power": [
         "Un seul abonnement, plus de puissance"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Essayez-la maintenant"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Vous avez désormais accès au nouveau ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     }
   }

@@ -3774,6 +3774,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nombre indescifrable"
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Como este documento estaba en una carpeta compartida, solo el propietario de la carpeta puede restaurarlo"
       ]
     },
     "error": {
@@ -6621,6 +6624,9 @@
       ],
       "Your password (trusted contact)": [
         "Su contraseña (contacto de confianza)"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caracteres"
       ]
     },
     "Label for contact group color": {
@@ -11369,6 +11375,16 @@
       ],
       "One plan, more power": [
         "Un solo plan: Más poder"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Pruébelo ahora"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Ahora tiene acceso al ${ CALENDAR_APP_NAME } nuevo. ${ link }"
       ]
     }
   }
