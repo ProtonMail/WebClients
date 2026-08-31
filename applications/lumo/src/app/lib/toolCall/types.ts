@@ -18,7 +18,13 @@ export type ToolCallName = ToolCallData['name'];
 export type ToolCallAnnouncement = { name: string; arguments?: never };
 
 export function isToolCallAnnouncement(data: unknown): data is ToolCallAnnouncement {
-    return typeof data === 'object' && data !== null && 'name' in data && typeof data.name === 'string' && !('arguments' in data);
+    return (
+        typeof data === 'object' &&
+        data !== null &&
+        'name' in data &&
+        typeof data.name === 'string' &&
+        !('arguments' in data)
+    );
 }
 
 export function tryParseToolCallAnnouncement(content: string): ToolCallAnnouncement | null {
@@ -376,6 +382,18 @@ export function isToolResultError(data: unknown): data is ToolResultError {
  * specific arguments, so their announce chunk still renders nothing until the matching
  * "dispatch" chunk replaces it — that's an accepted, minor limitation, not a bug.
  */
+function normalizeWeatherArguments(argsObj: Record<string, unknown>): Record<string, unknown> {
+    if (typeof argsObj.city !== 'string') {
+        return argsObj;
+    }
+
+    const location: Record<string, unknown> = { city: argsObj.city };
+    if ('country_code' in argsObj) {
+        location.country_code = argsObj.country_code;
+    }
+    return { location };
+}
+
 function normalizeToolCallPayload(parsed: unknown): unknown {
     if (typeof parsed !== 'object' || parsed === null) {
         return parsed;
@@ -408,6 +426,8 @@ function normalizeToolCallPayload(parsed: unknown): unknown {
                           : '';
                 args = { ...argsObj, query };
             }
+        } else if (name === 'weather' && !('location' in argsObj)) {
+            args = normalizeWeatherArguments(argsObj);
         }
     } else if (name === 'web_search' || name === 'web_extract') {
         args = { query: '' };
