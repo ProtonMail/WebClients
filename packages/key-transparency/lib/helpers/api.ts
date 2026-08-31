@@ -11,16 +11,7 @@ export const getEpochsRoute = (params: GetEpochsParams) => ({
 });
 
 export const getSingleEpochRoute = ({ EpochID }: { EpochID: number }) => ({
-    url: `kt/epochs/${EpochID}`, 
-    method: 'get',
-});
-
-export interface GetCertificateParams {
-    EpochID: number;
-}
-
-export const getCertificateRoute = ({ EpochID }: GetCertificateParams) => ({
-    url: `kt/v1/epochs/${EpochID}`,
+    url: `kt/epochs/${EpochID}`,
     method: 'get',
 });
 

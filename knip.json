@@ -309,8 +309,7 @@
         },
         "packages/key-transparency": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/llm": {
             "entry": [],
