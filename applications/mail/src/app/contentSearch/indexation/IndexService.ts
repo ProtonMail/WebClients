@@ -11,6 +11,7 @@ import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 import type { ESBaseMessage } from '../../models/encryptedSearch';
 import { getOrGenerateIndexKey as getOrGenerateIndexKeyV2 } from '../crypto/indexKey';
 import { DatabaseLock } from '../db/DatabaseLock';
+import { deleteContentSearchDB } from '../db/delete';
 import { openContentSearchDB } from '../db/open';
 import { ImportHandle } from '../import/ImportHandle';
 import { AsyncInit } from '../utils/AsyncInit';
@@ -123,6 +124,10 @@ export class IndexService {
 
     get currentImport(): ImportHandle | undefined {
         return this.importHandle?.value;
+    }
+
+    async deleteIndex(): Promise<void> {
+        await deleteContentSearchDB(this.userId);
     }
 }
 
