@@ -29,11 +29,19 @@ describe('VaultActionsProvider', () => {
     test('change vault should not override the filters', () => {
         const navigate = jest.fn();
 
-        handleSelect(navigate, 'all');
-        expect(navigate.mock.lastCall[1].filters.search).toBeUndefined();
+        for (const selected of ['all', 'trash', 'test'] as const) {
+            handleSelect(navigate, selected);
+            expect(navigate.mock.lastCall[1].filters.search).toBeUndefined();
+            expect(navigate.mock.lastCall[1].filters.type).toBeUndefined();
+            expect(navigate.mock.lastCall[1].filters.sort).toBeUndefined();
+        }
+    });
+
+    test('navigate to trash should only clear selectedShareId', () => {
+        const navigate = jest.fn();
+
         handleSelect(navigate, 'trash');
-        expect(navigate.mock.lastCall[1].filters.search).toBeUndefined();
-        handleSelect(navigate, 'test');
-        expect(navigate.mock.lastCall[1].filters.search).toBeUndefined();
+
+        expect(navigate.mock.lastCall[1].filters).toEqual({ selectedShareId: null });
     });
 });
