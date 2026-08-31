@@ -8,12 +8,21 @@ import {
 import { APPS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 
+import type {
+    ContentSearchActionSurface,
+    ContentSearchEventStatus,
+    ContentSearchPrimaryMatchType,
+    ContentSearchResultAction,
+    ContentSearchScrollerMode,
+    ContentSearchVersion,
+} from './models/contentSearchTelemetry';
+
 /**
  * Events shared with mobile's Content Search schema (measurement_group `mail.any.search`), used to compare
  * Encrypted Search (`searchVersion` 'v1', sent from here) against Content Search ('v2', sent separately from
  * mail's contentSearch module). Only sent for mail, since Content Search doesn't exist for calendar/drive.
  */
-const SEARCH_VERSION_V1 = 'v1';
+const SEARCH_VERSION_V1: ContentSearchVersion = 'v1';
 
 export const useContentSearchTelemetry = () => {
     const api = useApi();
@@ -29,7 +38,7 @@ export const useContentSearchTelemetry = () => {
         durationMs,
     }: {
         hasResults: boolean;
-        status: 'success' | 'error';
+        status: ContentSearchEventStatus;
         errorKind?: string;
         resultCount: number;
         durationMs: number;
@@ -64,8 +73,8 @@ export const useContentSearchTelemetry = () => {
         isFirstOpen,
         resultPosition,
     }: {
-        scrollerMode: 'message' | 'conversation';
-        primaryMatchType: 'sender' | 'subject' | 'body' | 'unknown';
+        scrollerMode: ContentSearchScrollerMode;
+        primaryMatchType: ContentSearchPrimaryMatchType;
         isFirstOpen: boolean;
         resultPosition: number;
     }) => {
@@ -97,8 +106,8 @@ export const useContentSearchTelemetry = () => {
         actionSurface,
         resultPosition,
     }: {
-        action: 'reply' | 'delete' | 'forward' | 'move' | 'label' | 'star' | 'unstar' | 'read' | 'unread' | 'other';
-        actionSurface: 'result_list' | 'opened_message';
+        action: ContentSearchResultAction;
+        actionSurface: ContentSearchActionSurface;
         resultPosition?: number;
     }) => {
         if (!isMailApp) {
@@ -130,7 +139,7 @@ export const useContentSearchTelemetry = () => {
         durationMs,
         mailboxMessagesTotal,
     }: {
-        status: 'success' | 'error';
+        status: ContentSearchEventStatus;
         errorKind?: string;
         totalMessagesIndexed: number;
         durationMs: number;

@@ -1,4 +1,5 @@
 import { useApi } from '@proton/app-context/useApi';
+import type { ContentSearchResultAction } from '@proton/encrypted-search/models';
 import { useContentSearchTelemetry } from '@proton/encrypted-search/useContentSearchTelemetry';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { TelemetryMailListEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -115,7 +116,7 @@ export const numberSelectionElements = (selected: number) => {
 };
 
 /** Maps a list-action to the coarser `result_action` action taxonomy shared with mobile's Content Search schema */
-const getResultActionType = (actionType?: ACTION_TYPE) => {
+const getResultActionType = (actionType?: ACTION_TYPE): ContentSearchResultAction => {
     switch (actionType) {
         case ACTION_TYPE.DELETE_PERMANENTLY:
             return 'delete';
