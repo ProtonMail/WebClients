@@ -998,6 +998,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Vaše osobné údaje boli zverejnené pri úniku údajov zo služby tretej strany."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Kontrola ${ compromised.progress.completed } z ${ compromised.progress.total }"
       ]
     },
     "Email": {
@@ -2998,6 +3001,12 @@
       ],
       "None of your saved passwords have appeared in a known data breach.": [
         "Žiadne z vašich uložených hesiel sa neobjavilo v žiadnom známom prípade úniku údajov."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Kontrola ${ compromised.progress.completed } z ${ compromised.progress.total } hesiel"
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Prezerajte si svoje položky v ${ PASS_SHORT_APP_NAME } v režime offline. Na aktiváciu je potrebné zadať heslo."
       ]
     },
     "Keyboard key": {
@@ -5448,6 +5457,9 @@
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasy.",
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov.",
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov."
+      ],
+      "Enable offline mode": [
+        "Povoliť offline režim"
       ]
     },
     "Title_cloned_item": {
