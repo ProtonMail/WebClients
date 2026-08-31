@@ -103,25 +103,26 @@ export type ExtensionCopiedFromLoginDimensions = {
     loginAutofillEnabled: string;
     uniqueMatch: string;
     autofillPaused: string;
-    modelVersion: string;
 } & AutofillPageTelemetryDimensions;
 
 type ImportValues = { item_count: number; vaults: number };
 
 type ImportDimensions = { source: ImportProvider };
 type ItemDimensions = { type: TelemetryItemType };
-type ExtensionUsedDimensions = { modelVersion: string } & AutofillPageTelemetryDimensions;
 type FileDimensions = { mimeType: string };
 type NotificationDimensions = { notificationKey: InAppNotification['NotificationKey'] };
 type NotificationChangeDimensions = NotificationDimensions & { notificationStatus: TelemetryInAppNotificationStatus };
-export type AutofillPageTelemetryDimensions = { pageLanguage: string };
+/** `modelVersion` is the registry-delivered model ID in use, or `<extension version>-bundled`. */
+export type AutofillPageTelemetryDimensions = { pageLanguage: string; modelVersion: string };
 /** Distinct from `pageLanguage: ''` (a real page that doesn't declare a `lang`) — this is for
  * events fired outside any page context (popup, settings) where there's no DOM to read at all. */
-export const NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS: AutofillPageTelemetryDimensions = { pageLanguage: 'n/a' };
+export const NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS: AutofillPageTelemetryDimensions = {
+    pageLanguage: 'n/a',
+    modelVersion: 'n/a',
+};
 type AutofillDimensions = { location: 'source' | 'app' } & AutofillPageTelemetryDimensions;
 type AutosaveDismissedDimensions = {
     dismissReason: 'not_now' | 'close' | 'disable';
-    modelVersion: string;
 } & AutofillPageTelemetryDimensions;
 type ErrorResumingSessionDimensions = { extensionBrowser: string; extensionReloadRequired: string };
 type TargetDimensions =
@@ -138,7 +139,7 @@ type TelemetryEvents =
     | BaseTelemetryEvent<TelemetryEventName.AutosuggestAliasCreated>
     | BaseTelemetryEvent<TelemetryEventName.ErrorResumingSession, {}, ErrorResumingSessionDimensions>
     | BaseTelemetryEvent<TelemetryEventName.ExtensionCopiedFromLogin, {}, ExtensionCopiedFromLoginDimensions>
-    | BaseTelemetryEvent<TelemetryEventName.ExtensionUsed, {}, ExtensionUsedDimensions>
+    | BaseTelemetryEvent<TelemetryEventName.ExtensionUsed, {}, AutofillPageTelemetryDimensions>
     | BaseTelemetryEvent<TelemetryEventName.ImportCompletion, ImportValues, ImportDimensions>
     | BaseTelemetryEvent<TelemetryEventName.ItemCreation, {}, ItemDimensions>
     | BaseTelemetryEvent<TelemetryEventName.ItemDeletion, {}, ItemDimensions>

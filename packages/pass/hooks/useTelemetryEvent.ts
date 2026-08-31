@@ -4,7 +4,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { usePassCore } from '../components/Core/PassCoreProvider';
-import { MODEL_VERSION } from '../constants';
 import { isAutofillTargetMode } from '../lib/urls/utils/autofill';
 import type { Item } from '../types';
 import type {
@@ -43,7 +42,6 @@ const getExtensionCopiedFromLoginBaseDimensions = (
     extensionField,
     hasLoginItemForCurrentWebsite: '0',
     loginAutofillEnabled: '0',
-    modelVersion: MODEL_VERSION,
     uniqueMatch: '0',
     ...NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS,
 });

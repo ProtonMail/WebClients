@@ -67,6 +67,8 @@ export const getIdentityFieldType = legacyGetIdentityFieldType as unknown as typ
 export const isVisible = legacyIsVisible as unknown as typeof isVisibleML;
 export const getTypeScore = legacyGetTypeScore as unknown as typeof getTypeScoreML;
 export const rulesetMaker = legacyRulesetMaker as unknown as typeof DetectorApi.rulesetMaker;
+/** `legacyRulesetMaker` takes no arguments and always builds the heuristic-only ruleset — it cannot honor a runtime `ModelProvider`, unlike `./detector.api`. */
+export const supportsRuntimeModel: boolean = false;
 
 /** Compile-time check: this surface must stay assignable to `./detector.api` */
 type AssertAssignable<T extends typeof DetectorApi> = T;

@@ -3,7 +3,6 @@ import type { FC } from 'react';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { MODEL_VERSION } from '@proton/pass/constants';
 import type { CriteriaMasks } from '@proton/pass/lib/settings/pause-list';
 import type { AutofillPageTelemetryDimensions } from '@proton/pass/types/data/telemetry';
 import { NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS, TelemetryEventName } from '@proton/pass/types/data/telemetry';
@@ -44,15 +43,7 @@ export const PauseListDropdown: FC<Props> = ({
 
         switch (criteria) {
             case 'Autosave': {
-                onTelemetry(
-                    TelemetryEventName.AutosaveDismissed,
-                    {},
-                    {
-                        dismissReason: 'disable',
-                        modelVersion: MODEL_VERSION,
-                        ...telemetry,
-                    }
-                );
+                onTelemetry(TelemetryEventName.AutosaveDismissed, {}, { dismissReason: 'disable', ...telemetry });
                 break;
             }
         }
