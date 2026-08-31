@@ -1,4 +1,5 @@
 export * from './calendar';
+export * from './contentSearchTelemetry';
 export * from './drive';
 export * from './errors';
 export * from './esCallbacks';
