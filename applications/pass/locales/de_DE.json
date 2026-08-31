@@ -2132,8 +2132,7 @@
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
-        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
+        "Wenn du einen Eintrag in einen anderen Tresor verschiebst, werden seine sicheren Links gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"
@@ -2830,6 +2829,9 @@
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "${ compromised.progress.completed } von ${ compromised.progress.total } Passwörter werden überprüft"
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Deine ${ PASS_SHORT_APP_NAME }-Einträge offline anzeigen. Zur Aktivierung ist dein Passwort erforderlich."
       ]
     },
     "Keyboard key": {
@@ -5150,6 +5152,9 @@
       ],
       "Upgrade to check for compromised passwords": [
         "Führe ein Upgrade durch, um nach kompromittierten Passwörtern zu suchen"
+      ],
+      "Enable offline mode": [
+        "Offline-Modus aktivieren"
       ]
     },
     "Title_cloned_item": {
