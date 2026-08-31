@@ -5,7 +5,6 @@
     "exports": {
         "./*": "./src/*.ts"
     },
-    "main": "./src/index.ts",
     "scripts": {
         "check-types": "tsc",
         "lint": "eslint --quiet",

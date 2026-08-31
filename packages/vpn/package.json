@@ -13,8 +13,6 @@
         "./components/Gateways": "./src/components/Gateways/GatewaysSection.tsx",
         "./components/NavSections": "./src/components/NavSections.tsx",
         "./components/Onboarding": "./src/components/Onboarding/index.tsx",
-        "./components/Sidebar": "./src/components/Sidebar/index.tsx",
-        "./components/Sidebar/Toggle": "./src/components/Sidebar/SidebarToggle.tsx",
         "./components/tv": "./src/components/tv/index.ts",
         "./components/VPNDownloadSection": "./src/components/VPNDownloadSection/DownloadAndInfoSection.tsx",
         "./components/VPNClientsSection": "./src/components/VPNClientsSection/index.tsx",
@@ -24,7 +22,6 @@
         "./contexts/navigation": "./src/contexts/NavigationContext.tsx",
         "./routes/organization": "./src/routes/organization/index.tsx"
     },
-    "main": "./src/index.ts",
     "scripts": {
         "check-types": "tsc",
         "lint": "eslint --quiet",
