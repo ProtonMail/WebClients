@@ -1,8 +1,7 @@
 import type { MaybeNull } from '@proton/pass/types';
 
-import { store } from 'proton-pass-desktop/store';
-import logger from 'proton-pass-desktop/utils/logger';
-
+import { store } from '../store';
+import logger from '../utils/logger';
 import { setupIpcHandler } from './ipc';
 
 declare module './ipc' {
