@@ -1,6 +1,6 @@
 export type ThemeFileType = 'light' | 'dark';
 
-export interface FileConfig {
+interface FileConfig {
     path: string;
     type: ThemeFileType;
 }
