@@ -436,8 +436,7 @@
         },
         "packages/testing": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/types": {
             "entry": ["eslint.config.{js,mjs,ts}"],
