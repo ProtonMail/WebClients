@@ -314,8 +314,7 @@
         },
         "packages/llm": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/logger": {
             "entry": [],
