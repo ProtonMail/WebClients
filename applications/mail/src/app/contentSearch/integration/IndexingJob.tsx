@@ -198,8 +198,24 @@ export class IndexingJob {
                         return;
                     }
                     if (outcome === 'stopped') {
-                        // We're the only one who stops it, and both callers (pause, teardown) have
-                        // already decided what the status should be.
+                        if (this.phase === 'import-paused') {
+                            // Our own pause — it has already decided what the status should be.
+                            return;
+                        }
+                        // Stopped from outside the job: the debug dialog shares the import handle (see
+                        // `useImporter`), so its Cancel lands here.
+                        if (this.mode === 'refresh') {
+                            // A refresh has no pause UI and no resume verb, so it can only end. That's
+                            // also what lets the next event refresh again — the adapter won't start a job
+                            // while this one is alive. Nothing is lost: the ids still to import stay in
+                            // `outdated_import_ids` (each is only dropped once its batch is written).
+                            this.finish('stopped');
+                            return;
+                        }
+                        // A fresh index, on the other hand, is exactly in the situation a pause leaves it
+                        // in — resumable, with the bar still up.
+                        this.phase = 'import-paused';
+                        this.emitStatus();
                         return;
                     }
                     this.finish(outcome);
@@ -253,14 +269,18 @@ export class IndexingJob {
             return;
         }
 
-        // Only a completed import may report a finished index. A failed one has nothing of its own to
-        // report: v1's index is intact, so its status is the truth, while the adapter sends searches to
-        // the server rather than answer them from a partial index (see `ESAdapter.isV2IndexUsable`).
+        // Only a completed import may report a finished index. Anything else leaves the v2 index
+        // partial, and the adapter answers searches from the server rather than from it (see
+        // `ESAdapter.isV2IndexUsable`), so content search is reported as not indexed — v1's own
+        // `contentIndexingDone` would claim a searchable index the user isn't getting, and that's the
+        // transition `useContentSearchReadyNotification` announces on. `esEnabled` is deliberately not
+        // written here, so whatever the user's toggle says by then, including a change made during the
+        // job, is what comes through.
         if (this.phase === 'done') {
             this.deps.updateESStatus(
                 this.outcome === 'completed'
                     ? { ...this.lastV1Status, isEnablingContentSearch: false, contentIndexingDone: true }
-                    : this.lastV1Status
+                    : { ...this.lastV1Status, isEnablingContentSearch: false, contentIndexingDone: false }
             );
             return;
         }
