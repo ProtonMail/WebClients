@@ -7,10 +7,10 @@ import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 import type { SshKeyData } from 'proton-pass-desktop-native';
 import { ssh_agent_napi } from 'proton-pass-desktop-native';
-import { store } from 'proton-pass-desktop/store';
-import logger from 'proton-pass-desktop/utils/logger';
-import { isWindows } from 'proton-pass-desktop/utils/platform';
 
+import { store } from '../store';
+import logger from '../utils/logger';
+import { isWindows } from '../utils/platform';
 import { isClientBooted } from './client';
 import { setupIpcHandler } from './ipc';
 
