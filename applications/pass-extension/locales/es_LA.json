@@ -806,6 +806,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "¿No aparece su gestor de contraseñas? Solicítelo."
+      ],
+      "Enable": [
+        "Activar"
       ]
     },
     "Activity": {
@@ -963,6 +966,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Su información personal fue filtrada en una vulneración de datos de un servicio de terceros."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Comprobando ${ compromised.progress.completed } de ${ compromised.progress.total }"
       ]
     },
     "Email": {
@@ -3005,6 +3011,12 @@
       ],
       "None of your saved passwords have appeared in a known data breach.": [
         "Ninguna de sus contraseñas ha aparecido en alguna vulneración de datos conocida."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Comprobando ${ compromised.progress.completed } de ${ compromised.progress.total } contraseñas"
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Vea sus elementos de ${ PASS_SHORT_APP_NAME } sin conexión. Requiere la contraseña para activarlo."
       ]
     },
     "Keyboard key": {
@@ -5314,6 +5326,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Está a punto de eliminar definitivamente ${ aliasCount } alias.",
         "Está a punto de eliminar definitivamente ${ aliasCount } alias."
+      ],
+      "Enable offline mode": [
+        "Activar el modo sin conexión"
       ]
     },
     "Title_cloned_item": {

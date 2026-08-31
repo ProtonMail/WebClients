@@ -806,6 +806,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Er din adgangskodeadministrator her ikke? Anmod om den."
+      ],
+      "Enable": [
+        "Aktiver"
       ]
     },
     "Activity": {
@@ -3011,6 +3014,9 @@
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Tjekker ${ compromised.progress.completed } af ${ compromised.progress.total } adgangskoder"
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Se dine ${ PASS_SHORT_APP_NAME }-elementer offline. Kræver din adgangskode for at aktivere det."
       ]
     },
     "Keyboard key": {
@@ -4761,7 +4767,7 @@
         "${ BRAND_NAME } adresser"
       ],
       "${ PASS_APP_NAME } Logs": [
-        "${ PASS_APP_NAME }-logs"
+        "${ PASS_APP_NAME }-logfiler"
       ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME }-indstillinger"
@@ -5320,6 +5326,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du er ved at slette ${ aliasCount } alias permanent.",
         "Du er ved at slette ${ aliasCount } aliasser permanent."
+      ],
+      "Enable offline mode": [
+        "Aktivér offline-tilstand"
       ]
     },
     "Title_cloned_item": {
