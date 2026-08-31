@@ -24,10 +24,14 @@ export const getPassAppRoutes = ({
     subscription,
     permissions,
     entitlements,
+    flags,
 }: OrganizationRouterParams) => {
     const isAdmin = user.isAdmin && user.isSelf;
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
+    // Activity log resolves the acting user's own org, not the subsidiary's, so it's hidden for
+    // subsidiaries until the backend is fixed. Remove once MSPPassSettingsFullyEnabled is rolled out.
+    const isSubsidiaryOrg = !!organization?.IsSubsidiary;
 
     // passbiz2024 or bundlepro2024 or bundlepro2022 or vpnpassbiz2025
     // MSP subsidiary orgs don't own their subscription (it belongs to the MSP manager), so `subscription`
@@ -65,7 +69,8 @@ export const getPassAppRoutes = ({
                 available:
                     (hasOrganizationKey || hasOrganization) &&
                     permissions['account.activity_log.read'] &&
-                    (entitlements.orgHasPassActivityMonitor || isPassEssentials),
+                    (entitlements.orgHasPassActivityMonitor || isPassEssentials) &&
+                    (!isSubsidiaryOrg || flags.isMspPassSettingsFullyEnabled),
                 upgradeRequired: isPassEssentials,
                 subsections: [
                     {
