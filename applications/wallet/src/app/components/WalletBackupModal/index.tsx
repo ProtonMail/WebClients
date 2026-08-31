@@ -2,12 +2,14 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms/Href/Href';
 import type { ModalOwnProps } from '@proton/components';
 import { AuthModal, Prompt } from '@proton/components';
-import { queryUnlock } from '@proton/shared/lib/api/user';
+import { queryUnlock, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { getHasFIDO2SettingEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
 import walletKeyDark from '@proton/styles/assets/img/wallet/wallet-key-dark.jpg';
 import walletKey from '@proton/styles/assets/img/wallet/wallet-key.jpg';
 import clsx from '@proton/utils/clsx';
@@ -30,6 +32,11 @@ export const WalletBackupModal = ({ apiWalletData, theme, ...modalProps }: Props
     const walletTheme = useWalletTheme();
     const [viewMnemonic, setViewMnemonic] = useState(false);
     const [hasPassword, setHasPassword] = useState(false);
+    const [userSettings, loadingUserSettings] = useUserSettings();
+
+    const hasTOTPEnabled = getHasTOTPSettingEnabled(userSettings);
+    const hasFIDO2Enabled = getHasFIDO2SettingEnabled(userSettings);
+    const hasFIDO2Only = hasFIDO2Enabled && !hasTOTPEnabled;
 
     const mnemonicWords = apiWalletData.Wallet.Mnemonic?.split(' ');
 
@@ -38,11 +45,15 @@ export const WalletBackupModal = ({ apiWalletData, theme, ...modalProps }: Props
         return null;
     }
 
+    if (loadingUserSettings) {
+        return null;
+    }
+
     if (!hasPassword) {
         return (
             <AuthModal
-                scope="locked"
-                config={queryUnlock()}
+                scope={hasFIDO2Only ? 'locked' : 'password'}
+                config={hasFIDO2Only ? queryUnlock() : unlockPasswordChanges()}
                 open={modalProps.open}
                 onCancel={modalProps.onClose}
                 onSuccess={() => setHasPassword(true)}
