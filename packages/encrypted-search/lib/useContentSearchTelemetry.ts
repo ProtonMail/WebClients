@@ -55,6 +55,7 @@ export const useContentSearchTelemetry = () => {
         hasResults,
         status,
         errorKind,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         resultCount,
         durationMs,
     }: {
@@ -73,7 +74,8 @@ export const useContentSearchTelemetry = () => {
             measurementGroup: TelemetryMeasurementGroups.contentSearch,
             event: TelemetryContentSearchEvents.query_completed,
             values: {
-                resultCount,
+                // TODO this can be changed once INWEB-1184 is fixed
+                resultCount: 0,
                 durationMs,
             },
             dimensions: {
