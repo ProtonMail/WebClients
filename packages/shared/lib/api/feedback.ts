@@ -19,6 +19,13 @@ export interface AssistantFeedback {
     ModelID?: string;
     RequestedModel?: string;
     HasGeneratedImages?: boolean;
+    ToolsUsed?: string[];
+    Platform?: 'web' | 'ios' | 'android' | 'unknown';
+    NativeAppVersion?: string;
+    AppVersion?: string;
+    PromptTokens?: number;
+    CompletionTokens?: number;
+    ShareWithApertus?: boolean;
     Component: 'Mail' | 'Lumo';
     Body: string;
     Prompt?: string;
@@ -32,6 +39,13 @@ export const sendAssistantFeedback = ({
     ModelID,
     RequestedModel,
     HasGeneratedImages,
+    ToolsUsed,
+    Platform,
+    NativeAppVersion,
+    AppVersion,
+    PromptTokens,
+    CompletionTokens,
+    ShareWithApertus,
     Body,
     Prompt,
     ModelOutput,
@@ -46,6 +60,13 @@ export const sendAssistantFeedback = ({
         ModelID,
         RequestedModel,
         HasGeneratedImages,
+        ToolsUsed,
+        Platform,
+        NativeAppVersion,
+        AppVersion,
+        PromptTokens,
+        CompletionTokens,
+        ShareWithApertus,
         Body,
         Prompt,
         ModelOutput,

@@ -48,12 +48,18 @@ export type SetMessageModelIDAction = {
     modelID: string;
 };
 
+export type SetToolResultAction = ChunkAction & {
+    meta?: {
+        settings: string;
+    };
+};
+
 // Low-level Redux store operations without side effects.
 export const addMessage = createAction<MessagePub>('lumo/message/add');
 export const appendChunk = createAction<ChunkAction>('lumo/message/appendChunk');
 export const appendReasoning = createAction<ChunkAction>('lumo/message/appendReasoning');
 export const setToolCall = createAction<ChunkAction>('lumo/message/setToolCall');
-export const setToolResult = createAction<ChunkAction>('lumo/message/setToolResult');
+export const setToolResult = createAction<SetToolResultAction>('lumo/message/setToolResult');
 export const setSuggestedQuestions = createAction<SetSuggestedQuestionsAction>('lumo/message/setSuggestedQuestions');
 export const setMessageUsage = createAction<SetMessageUsageAction>('lumo/message/setUsage');
 export const setMessageModelID = createAction<SetMessageModelIDAction>('lumo/message/setModelID');
@@ -172,7 +178,7 @@ const messagesReducer = createReducer<MessageMap>(EMPTY_MESSAGE_MAP, (builder) =
 
             // Update blocks
             message.blocks ??= [];
-            message.blocks = setToolResultInBlocks(message.blocks, chunk.content);
+            message.blocks = setToolResultInBlocks(message.blocks, chunk.content, chunk.meta);
         })
         .addCase(setSuggestedQuestions, (state, action) => {
             const { messageId, questions } = action.payload;
