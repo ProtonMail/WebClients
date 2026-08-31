@@ -1,4 +1,4 @@
-export const getCollisionGroups = (events: Pick<LayoutEvent, 'start' | 'end'>[]) => {
+const getCollisionGroups = (events: Pick<LayoutEvent, 'start' | 'end'>[]) => {
     let maxEnd = -1;
     let tmp: Pick<LayoutEvent, 'start' | 'end'>[] = [];
 
@@ -34,7 +34,7 @@ interface ColumnsResult {
     indices: number[];
     end: number;
 }
-export const getColumns = (group: Pick<LayoutEvent, 'start' | 'end'>[]) => {
+const getColumns = (group: Pick<LayoutEvent, 'start' | 'end'>[]) => {
     return group.reduce<ColumnsResult[]>((columns, event, i) => {
         for (let j = 0; j < columns.length; ++j) {
             const column = columns[j];

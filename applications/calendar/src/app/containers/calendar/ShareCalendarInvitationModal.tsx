@@ -24,7 +24,7 @@ import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import type { CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-export interface SharedCalendarModalOwnProps {
+interface SharedCalendarModalOwnProps {
     addresses: Address[];
     calendars: VisualCalendar[];
     user: UserModel;

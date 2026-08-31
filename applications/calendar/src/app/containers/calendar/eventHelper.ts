@@ -41,7 +41,7 @@ export const getViewEventDateProperties = (eventComponent: VcalVeventComponent) 
     };
 };
 
-export const getCalendarViewEventProperties = ({ start, end, isAllDay }: EventModel, tzid: string) => {
+const getCalendarViewEventProperties = ({ start, end, isAllDay }: EventModel, tzid: string) => {
     const utcStart = getTimeInUtc(start, isAllDay);
     const utcEnd = getTimeInUtc(end, isAllDay);
 
@@ -153,7 +153,7 @@ export const getBusyScheduledEvent = (
     return busyEvent;
 };
 
-export const getTimeInTimezone = (fakeUtcDate: Date, fromTzid: string, toTzid: string) => {
+const getTimeInTimezone = (fakeUtcDate: Date, fromTzid: string, toTzid: string) => {
     const trueUtcTime = convertZonedDateTimeToUTC(fromUTCDate(fakeUtcDate), fromTzid);
     return toUTCDate(convertUTCDateTimeToZone(trueUtcTime, toTzid));
 };

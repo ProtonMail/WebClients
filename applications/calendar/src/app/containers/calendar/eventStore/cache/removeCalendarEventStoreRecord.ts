@@ -43,5 +43,3 @@ export const removeCalendarEventStoreRecord = (
         );
     }
 };
-
-export default removeCalendarEventStoreRecord;

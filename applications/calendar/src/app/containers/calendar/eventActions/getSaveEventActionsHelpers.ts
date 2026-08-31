@@ -326,7 +326,7 @@ export const getHasNotificationsMergeUpdate = (
     return getHasModifiedNotifications(vevent, mergeVevent);
 };
 
-export const getHasPersonalMergeUpdate = (vevent: VcalVeventComponent, mergeVevent: Partial<VcalVeventComponent>) => {
+const getHasPersonalMergeUpdate = (vevent: VcalVeventComponent, mergeVevent: Partial<VcalVeventComponent>) => {
     if (mergeVevent.color && getSupportedStringValue(vevent.color) !== getSupportedStringValue(mergeVevent.color)) {
         return true;
     }

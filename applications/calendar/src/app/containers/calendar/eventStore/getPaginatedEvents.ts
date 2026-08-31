@@ -27,7 +27,7 @@ interface GetPaginatedEventParams<T> {
     api: Api;
     upsertEvent: (event: T) => void;
 }
-export const getPaginatedEvents = async <T>({
+const getPaginatedEvents = async <T>({
     calendarID,
     dateRange,
     tzid,

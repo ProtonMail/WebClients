@@ -22,7 +22,7 @@ import type {
     InteractiveState,
 } from './interface';
 
-export const getTargetEventFromEvent = async ({
+const getTargetEventFromEvent = async ({
     calendarID,
     eventID,
     calendarEventsCache,

@@ -49,7 +49,7 @@ export const getEventKey = (calendarID: string, uid: string) => `${calendarID}-$
 /**
  * Generate a deterministic numeric value based on the input
  */
-export const generateOrder = (ID: string) => getHashCode(ID);
+const generateOrder = (ID: string) => getHashCode(ID);
 
 const checkIsSearch = (searchParams: ESCalendarSearchParams) =>
     !!searchParams.calendarID || !!searchParams.begin || !!searchParams.end || !!searchParams.keyword;
@@ -108,7 +108,7 @@ export const transformAttendees = (attendees: ESAttendeeModel[]) => [
     ...attendees.map((attendee) => attendee.cn.toLocaleLowerCase()),
 ];
 
-export const getAllEventsIDs = async (calendarID: string, api: Api, Limit: number = 100) => {
+const getAllEventsIDs = async (calendarID: string, api: Api, Limit: number = 100) => {
     const result: string[] = [];
     let previousLength = -1;
 
@@ -208,7 +208,7 @@ export const getESEvent = async (
     };
 };
 
-export const getAllESEventsFromCalendar = async (
+const getAllESEventsFromCalendar = async (
     calendarID: string,
     api: Api,
     getCalendarEventRaw: GetCalendarEventRaw
