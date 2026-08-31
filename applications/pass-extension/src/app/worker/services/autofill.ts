@@ -46,7 +46,6 @@ import {
 import { selectAutofillModelExperimentGroup, selectPassPlan } from '@proton/pass/store/selectors/user';
 import type { ItemContent, ItemRevision, SelectedItem } from '@proton/pass/types/data/items';
 import type { AutofillPageTelemetryDimensions } from '@proton/pass/types/data/telemetry';
-import { NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS } from '@proton/pass/types/data/telemetry';
 import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
 import type { CCItemData } from '@proton/pass/types/worker/data';
 import type { FormCredentials } from '@proton/pass/types/worker/form';
@@ -246,9 +245,12 @@ export const createAutoFillService = () => {
             return false;
         };
 
+        /** A real tab exists here, so a failed/timed-out query falls back to the assigned model, not `'n/a'`. */
         const [loginFormDetected, telemetry] = await Promise.all([
             findLoginForm().catch(() => false),
-            topFrameResult.then((result) => result?.telemetry ?? NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS),
+            topFrameResult.then(
+                (result) => result?.telemetry ?? { pageLanguage: 'n/a', modelVersion: getAssignedModelId() }
+            ),
         ]);
 
         return { loginFormDetected, telemetry };
@@ -498,6 +500,11 @@ export const createAutoFillService = () => {
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.WEBSITE_RULES_REQUEST, (_, sender) => ({
         rules: state.rules && sender.url ? matchRules(state.rules, new URL(sender.url)) : null,
+    }));
+
+    /** Responds from cache only — never waits on an in-flight fetch, so a page opened before a fetch resolves gets `null`. */
+    WorkerMessageBroker.registerMessage(WorkerMessageType.MODEL_ARTIFACT_REQUEST, () => ({
+        artifact: state.modelArtifacts[getAssignedModelId()] ?? null,
     }));
 
     /* onUpdated will be triggered every time a tab has been loaded with a new url :

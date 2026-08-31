@@ -1,8 +1,9 @@
-import type { FieldType } from '@protontech/autofill/types';
+import type { FieldType, ModelProvider } from '@protontech/autofill/types';
 import { FormType, fieldTypes, formTypes } from '@protontech/autofill/types';
 
+import { createModelProvider } from '@proton/pass/lib/extension/model-artifact/model-artifact';
 import type { DetectionRulesMatch } from '@proton/pass/lib/extension/rules/types';
-import type { Callback, MaybeNull } from '@proton/pass/types/utils/index';
+import type { Callback, Maybe, MaybeNull } from '@proton/pass/types/utils/index';
 import { compareDomNodes } from '@proton/pass/utils/dom/sort';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -14,6 +15,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
 import { contentScriptMessage, sendMessage } from '../../../../lib/message/send-message';
+import { BUNDLED_MODEL_ID } from '../../../../lib/utils/version';
 import { WorkerMessageType } from '../../../../types/messages';
 import { MAX_MAX_DETECTION_TIME, MIN_MAX_DETECTION_TIME } from '../../constants.static';
 import type { Fnode } from './detector.api';
@@ -26,12 +28,48 @@ import {
     rulesetMaker,
     shadowPiercingContains,
     shouldRunClassifier,
+    supportsRuntimeModel,
 } from './detector.api';
 import { selectNodeFromPath } from './detector.utils';
 
-const ruleset = rulesetMaker();
+type Ruleset = ReturnType<typeof rulesetMaker>;
+
+/** Module-level, not per-instance : tab hide/show recreates the detector within the same JS realm, and a page's model must survive that. */
+let ruleset: MaybeNull<Ruleset> = null;
+/** Lazy : avoids building an unused bundled ruleset when the runtime model resolves first. */
+const getRuleset = () => (ruleset ??= rulesetMaker());
+let modelRuleset: MaybeNull<Promise<void>> = null;
+let modelId: string = BUNDLED_MODEL_ID;
 const NOOP_EL = document.createElement('form');
 const DETECTION_TIE_TRESHOLD = 0.01;
+
+const resolveModelProvider = async (): Promise<Maybe<{ modelId: string; provider: ModelProvider }>> => {
+    const { artifact } = await sendMessage.on(
+        contentScriptMessage({ type: WorkerMessageType.MODEL_ARTIFACT_REQUEST }),
+        (res) => (res.type === 'success' ? res : { artifact: null })
+    );
+
+    if (!artifact) return undefined;
+
+    const result = createModelProvider(artifact);
+    if (!result.ok) {
+        logger.warn(`[Detector] ${result.error}`);
+        return undefined;
+    }
+
+    return { modelId: artifact.modelId, provider: result.provider };
+};
+
+/** Caches the in-flight promise so a recreated detector awaits the same resolution instead of racing it. */
+const resolveModelRuleset = (): Promise<void> => {
+    if (!supportsRuntimeModel) return Promise.resolve();
+    return (modelRuleset ??= resolveModelProvider().then((resolved) => {
+        if (resolved) {
+            ruleset = rulesetMaker(resolved.provider);
+            modelId = resolved.modelId;
+        }
+    }));
+};
 
 type DetectorConfig = {
     root: Document;
@@ -42,7 +80,7 @@ export type DetectedForm = { formType: FormType; form: HTMLElement; fields: Dete
 export type DetectedField = { fieldType: FieldType; field: HTMLInputElement };
 type DetectorState = { rules: MaybeNull<DetectionRulesMatch> };
 
-type BoundRuleset = ReturnType<typeof ruleset.against>;
+type BoundRuleset = ReturnType<Ruleset['against']>;
 type PredictionResult<T extends string> = { fnode: Fnode; type: T; score: number };
 type PredictionBestSelector<T extends string> = (
     candidates: [PredictionResult<T>, PredictionResult<T>]
@@ -144,7 +182,7 @@ export const createDetectorService = (config: DetectorConfig) => {
 
     const predictForms = guard(
         (subTypes: FormType[], boundRuleset?: BoundRuleset) =>
-            getPredictionsFor<FormType>(boundRuleset ?? ruleset.against(config.root), {
+            getPredictionsFor<FormType>(boundRuleset ?? getRuleset().against(config.root), {
                 type: 'form',
                 subTypes,
                 selectBest: selectBestForm,
@@ -154,7 +192,7 @@ export const createDetectorService = (config: DetectorConfig) => {
 
     const predictFields = guard(
         (subTypes: FieldType[], boundRuleset?: BoundRuleset) =>
-            getPredictionsFor<FieldType>(boundRuleset ?? ruleset.against(config.root), {
+            getPredictionsFor<FieldType>(boundRuleset ?? getRuleset().against(config.root), {
                 type: 'field',
                 subTypes,
                 selectBest,
@@ -171,7 +209,7 @@ export const createDetectorService = (config: DetectorConfig) => {
          * flag processed nodes (see `getPredictionsFor`) */
         const tForms = tFields.length > 0 ? formTypes : [];
 
-        const boundRuleset = ruleset.against(config.root);
+        const boundRuleset = getRuleset().against(config.root);
         const formPredictions = predictForms(tForms, boundRuleset);
         const fieldPredictions = predictFields(tFields, boundRuleset);
         const fieldMap = groupFields(formPredictions, fieldPredictions);
@@ -195,14 +233,17 @@ export const createDetectorService = (config: DetectorConfig) => {
 
     const detector = {
         init: async () => {
-            await sendMessage
-                .onSuccess(contentScriptMessage({ type: WorkerMessageType.WEBSITE_RULES_REQUEST }), ({ rules }) => {
-                    if (rules !== null) {
-                        logger.debug('[Detector] Resolved website detection rules');
-                        state.rules = rules;
-                    }
-                })
-                .catch(noop);
+            await Promise.all([
+                resolveModelRuleset().catch(noop),
+                sendMessage
+                    .onSuccess(contentScriptMessage({ type: WorkerMessageType.WEBSITE_RULES_REQUEST }), ({ rules }) => {
+                        if (rules !== null) {
+                            logger.debug('[Detector] Resolved website detection rules');
+                            state.rules = rules;
+                        }
+                    })
+                    .catch(noop),
+            ]);
         },
 
         applyRules: () => {
@@ -247,6 +288,7 @@ export const createDetectorService = (config: DetectorConfig) => {
             }),
 
         predictAll,
+        getModelId: () => modelId,
     };
 
     return detector;

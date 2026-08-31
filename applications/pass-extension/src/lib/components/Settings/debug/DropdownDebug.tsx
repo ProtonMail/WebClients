@@ -27,7 +27,7 @@ export const DropdownDebug: FC = () => {
                             startsWith: '',
                             fieldId: '',
                             formId: '',
-                            telemetry: { pageLanguage: '' },
+                            telemetry: { pageLanguage: '', modelVersion: '' },
                         }}
                     />
                 </MockIFrameApp>
@@ -42,7 +42,7 @@ export const DropdownDebug: FC = () => {
                             startsWith: '',
                             fieldId: '',
                             formId: '',
-                            telemetry: { pageLanguage: '' },
+                            telemetry: { pageLanguage: '', modelVersion: '' },
                         }}
                     />
                 </MockIFrameApp>
@@ -57,7 +57,7 @@ export const DropdownDebug: FC = () => {
                             startsWith: '',
                             fieldId: '',
                             formId: '',
-                            telemetry: { pageLanguage: '' },
+                            telemetry: { pageLanguage: '', modelVersion: '' },
                         }}
                     />
                 </MockIFrameApp>
@@ -72,7 +72,7 @@ export const DropdownDebug: FC = () => {
                             startsWith: '',
                             fieldId: '',
                             formId: '',
-                            telemetry: { pageLanguage: '' },
+                            telemetry: { pageLanguage: '', modelVersion: '' },
                         }}
                     />
                 </MockIFrameApp>
@@ -87,7 +87,7 @@ export const DropdownDebug: FC = () => {
                             startsWith: '',
                             fieldId: '',
                             formId: '',
-                            telemetry: { pageLanguage: '' },
+                            telemetry: { pageLanguage: '', modelVersion: '' },
                         }}
                     />
                 </MockIFrameApp>
@@ -104,7 +104,7 @@ export const DropdownDebug: FC = () => {
                             policy: null,
                             fieldId: '',
                             formId: '',
-                            telemetry: { pageLanguage: '' },
+                            telemetry: { pageLanguage: '', modelVersion: '' },
                         }}
                     />
                 </MockIFrameApp>
@@ -120,7 +120,7 @@ export const DropdownDebug: FC = () => {
                             aliasCreationDisabled: false,
                             fieldId: '',
                             formId: '',
-                            telemetry: { pageLanguage: '' },
+                            telemetry: { pageLanguage: '', modelVersion: '' },
                         }}
                     />
                 </MockIFrameApp>
