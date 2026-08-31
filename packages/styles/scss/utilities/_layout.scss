@@ -33,6 +33,11 @@
 	scrollbar-gutter: stable;
 }
 
+// Reserves matching gutter space on both sides, keeping content centered when a vertical scrollbar appears/disappears
+.scrollbar-gutter-stable-both-edges {
+	scrollbar-gutter: stable both-edges;
+}
+
 .resize-none {
 	resize: none;
 }
