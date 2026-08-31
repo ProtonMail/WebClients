@@ -801,6 +801,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "사용중이신 비밀번호 관리자가 여기 없나요? 추가하도록 요청하세요."
+      ],
+      "Enable": [
+        "활성화"
       ]
     },
     "Activity": {
@@ -2974,6 +2977,9 @@
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "비밀번호 ${ compromised.progress.total }개 중 ${ compromised.progress.completed }개 확인 중"
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "${ PASS_SHORT_APP_NAME } 항목을 오프라인 상태에서도 확인합니다. 활성화하려면 비밀번호가 필요합니다."
       ]
     },
     "Keyboard key": {
@@ -5258,6 +5264,9 @@
       ],
       "Upgrade to check for compromised passwords": [
         "유출된 비밀번호를 점검하려면 업그레이드하세요."
+      ],
+      "Enable offline mode": [
+        "오프라인 모드 활성화"
       ]
     },
     "Title_cloned_item": {

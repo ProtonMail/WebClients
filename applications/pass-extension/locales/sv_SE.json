@@ -803,6 +803,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Är din lösenordshanterare inte här? Begär den."
+      ],
+      "Enable": [
+        "Aktivera"
       ]
     },
     "Activity": {
@@ -960,6 +963,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Din personliga information läckte i ett dataintrång från en tredjepartstjänst."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Kontrollerar ${ compromised.progress.completed } av ${ compromised.progress.total }"
       ]
     },
     "Email": {
@@ -5314,6 +5320,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du håller på att ta bort ${ aliasCount } alias permanent.",
         "Du håller på att ta bort ${ aliasCount } alias permanent."
+      ],
+      "Enable offline mode": [
+        "Aktivera offlineläge"
       ]
     },
     "Title_cloned_item": {

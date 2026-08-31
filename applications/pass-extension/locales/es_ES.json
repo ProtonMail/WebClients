@@ -788,6 +788,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "¿No aparece tu gestor de contraseñas? Solicítalo."
+      ],
+      "Enable": [
+        "Activar"
       ]
     },
     "Activity": {
@@ -1449,6 +1452,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Se ha eliminado el código PIN desde otro cliente de ${ PASS_APP_NAME }."
+      ],
+      "Regex invalid": [
+        "Expresión regular no válida"
+      ],
+      "Regex unsafe": [
+        "Expresión regular no segura"
       ]
     },
     "Error message": {
