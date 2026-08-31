@@ -113,8 +113,8 @@ export class Import {
                     this.notifications.onCompleted(totalCompleted);
                 };
                 await this.deleteMessages(idsToProcess.deleted, dstWriter);
-                const insertedSrc = this.srcReader.createBatchReader(idsToProcess.inserted);
-                const importedIds = await this.importMessages(insertedSrc, dstWriter, onMessageCompleted);
+                const srcBatchReader = this.srcReader.createBatchReader(idsToProcess.inserted);
+                const importedIds = await this.importMessages(srcBatchReader, dstWriter, onMessageCompleted);
                 for (const id of idsToProcess.inserted) {
                     if (!importedIds.has(id)) {
                         this.skippedIds.add(id);
