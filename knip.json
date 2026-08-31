@@ -274,8 +274,7 @@
         },
         "packages/eslint-plugin-custom-rules": {
             "entry": [],
-            "project": ["**/*.{js,ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{js,ts,tsx}"]
         },
         "packages/features": {
             "entry": [],
