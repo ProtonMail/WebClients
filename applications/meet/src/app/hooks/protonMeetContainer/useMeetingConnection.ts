@@ -28,6 +28,11 @@ import type { UseLiveKitConnectionResult } from '../useLiveKitConnection';
 import { useStableCallback } from '../useStableCallback';
 import type { UseMlsSessionResult } from './useMlsSession';
 
+export interface MeetingAccessDetails {
+    accessToken: string;
+    websocketUrl: string;
+}
+
 export interface ConnectWithMlsParams {
     meetingToken: string;
     meetingPassword: string;
@@ -38,6 +43,7 @@ export interface ConnectWithMlsParams {
     desiredMicrophoneState?: boolean;
     resetParticipantsBeforeFetch?: boolean;
     isWaitingRoom?: boolean;
+    accessDetails?: MeetingAccessDetails;
 }
 
 type ConnectionInfo = Awaited<ReturnType<UseLiveKitConnectionResult['connectWithStunFallbackToTurnRelay']>>;
@@ -125,18 +131,23 @@ export const useMeetingConnection = ({
             desiredMicrophoneState,
             resetParticipantsBeforeFetch = false,
             isWaitingRoom = false,
+            accessDetails,
         }: ConnectWithMlsParams): Promise<ConnectWithMlsResult> => {
-            const sanitizedDisplayName = sanitizeMessage(displayNameArg);
-            const encryptedDisplayName = decryptionKeyRef.current
-                ? await encryptDisplayNameWithKey(decryptionKeyRef.current, sanitizedDisplayName)
-                : '';
+            const fetchAccessDetails = async () => {
+                const sanitizedDisplayName = sanitizeMessage(displayNameArg);
+                const encryptedDisplayName = decryptionKeyRef.current
+                    ? await encryptDisplayNameWithKey(decryptionKeyRef.current, sanitizedDisplayName)
+                    : '';
+
+                return getAccessDetails({
+                    displayName: sanitizedDisplayName,
+                    token: meetingToken,
+                    encryptedDisplayName,
+                });
+            };
 
             const t0 = performance.now();
-            const { websocketUrl, accessToken } = await getAccessDetails({
-                displayName: sanitizedDisplayName,
-                token: meetingToken,
-                encryptedDisplayName,
-            });
+            const { websocketUrl, accessToken } = accessDetails ?? (await fetchAccessDetails());
             const tokenFetchMs = Math.round(performance.now() - t0);
 
             websocketUrlRef.current = websocketUrl;
