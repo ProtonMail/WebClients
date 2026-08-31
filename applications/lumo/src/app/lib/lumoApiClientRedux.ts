@@ -327,6 +327,7 @@ export function sendMessageWithRedux(
                                         messageId,
                                         content:
                                             typeof rawContent === 'string' ? rawContent : JSON.stringify(rawContent),
+                                        ...(message.meta ? { meta: message.meta } : {}),
                                     })
                                 );
                             }

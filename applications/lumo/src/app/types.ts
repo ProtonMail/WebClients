@@ -325,6 +325,9 @@ export type ToolResultBlock = {
     type: 'tool_result';
     content: string; // JSON string (for serialization/prepareTurns)
     toolResult?: unknown; // Parsed JSON (for easy access, may be invalid/unknown)
+    meta?: {
+        settings: string;
+    };
     sequence?: number; // Optional sequence number for ordering
 };
 
