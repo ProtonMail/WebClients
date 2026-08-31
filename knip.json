@@ -269,8 +269,7 @@
         },
         "packages/eslint-config-proton": {
             "entry": [],
-            "project": ["**/*.{js,ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{js,ts,tsx}"]
         },
         "packages/eslint-plugin-custom-rules": {
             "entry": [],
