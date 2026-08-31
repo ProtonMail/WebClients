@@ -453,8 +453,7 @@
         },
         "packages/unleash": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/utils": {
             "entry": [],
