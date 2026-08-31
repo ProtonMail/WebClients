@@ -1,4 +1,4 @@
-import { type ChangeEvent, Fragment, type RefObject, useEffect } from 'react';
+import { type ChangeEvent, Fragment, type RefObject, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router';
 
 import { c } from 'ttag';
@@ -11,20 +11,20 @@ import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { isElementMessage } from '../../helpers/elements';
+import { PLACEHOLDER_ID_PREFIX } from '../../hooks/usePlaceholders';
+import type { ESMessage } from '../../models/encryptedSearch';
 import { useMailboxLayoutProvider } from '../../router/components/MailboxLayoutContext';
 import {
     selectConversationMode,
     selectElementID,
     selectIsSearching,
     selectLabelID,
+    selectSearch,
 } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
-
-import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { isElementMessage } from '../../helpers/elements';
-import { PLACEHOLDER_ID_PREFIX } from '../../hooks/usePlaceholders';
-import type { ESMessage } from '../../models/encryptedSearch';
 import { useCategoriesOnboarding } from '../categoryView/categoriesOnboarding/CategoriesOnboardingContext';
 import { CategoriesOnboardingSpotlight } from '../categoryView/categoriesOnboarding/CategoriesOnboardingSpotlights';
 import { HIGHLIGHTED_ITEM_INDEX } from '../categoryView/categoriesOnboarding/onboardingInterface';
@@ -77,6 +77,20 @@ const MailboxListItems = ({
     const isSearch = useMailSelector(selectIsSearching);
     const conversationMode = useMailSelector(selectConversationMode);
     const elementID = useMailSelector(selectElementID);
+    const search = useMailSelector(selectSearch);
+
+    // Tracks, per distinct search attempt, whether a result has already been opened (for the `isFirstOpen`
+    // telemetry dimension). Approximated by the search criteria, since there's no per-search-attempt ID.
+    const firstSearchResultOpenRef = useRef<{ key: string; hasOpened: boolean }>({ key: '', hasOpened: false });
+    const getIsFirstSearchResultOpen = () => {
+        const key = JSON.stringify(search);
+        if (firstSearchResultOpenRef.current.key !== key) {
+            firstSearchResultOpenRef.current = { key, hasOpened: false };
+        }
+        const isFirstOpen = !firstSearchResultOpenRef.current.hasOpened;
+        firstSearchResultOpenRef.current.hasOpened = true;
+        return isFirstOpen;
+    };
 
     const { displayState, changeChecklistDisplay, canDisplayChecklist, byoeFlowInProgress } = useGetStartedChecklist();
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
@@ -153,6 +167,8 @@ const MailboxListItems = ({
                             element={element}
                             isSelected={isSelected}
                             useContentSearch={useContentSearch}
+                            isSearchResult={isSearch}
+                            getIsFirstSearchResultOpen={getIsFirstSearchResultOpen}
                             checked={!!checkedIDsMap[element.ID || '']}
                             onCheck={onCheckOne}
                             onClick={onClick}

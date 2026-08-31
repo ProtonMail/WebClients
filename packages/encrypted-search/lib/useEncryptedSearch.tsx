@@ -86,6 +86,7 @@ import type {
     HighlightString,
     InternalESCallbacks,
 } from './models';
+import { useContentSearchTelemetry } from './useContentSearchTelemetry';
 import { useEncryptedSearchIndexingProgress } from './useEncryptedSearchIndexingProgress';
 import { useEncryptedSearchStatus } from './useEncryptedSearchStatus';
 import { SEARCH_TYPE, useSearchTelemetry } from './useSearchTelemetry';
@@ -131,6 +132,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         sendPerformSearchReport,
         sendESSearchCompleteReport,
     } = useSearchTelemetry();
+    const { sendQueryCompletedReport, sendMailboxIndexCompletedReport } = useContentSearchTelemetry();
 
     // Keep a reference to cached items, such that they can be queried at any time
     const esCacheRef = useRef<ESCache<ESItemMetadata, ESItemContent>>(defaultESCache);
@@ -790,6 +792,16 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
                 numPauses,
             },
         });
+
+        // Mirrors mobile's `mailbox_index_completed`: only fired for the first full historic indexing
+        // pass, not on re-index or limit extension runs
+        if (!isRefreshed) {
+            sendMailboxIndexCompletedReport({
+                status: 'success',
+                totalMessagesIndexed: totalItems,
+                durationMs: indexTime,
+            });
+        }
     };
 
     /**
@@ -1014,6 +1026,13 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
             indexSize,
             cacheSize: esCacheRef.current.cacheSize,
             uncachedItemsFound,
+        });
+
+        sendQueryCompletedReport({
+            hasResults: !!itemsFound,
+            status: 'success',
+            resultCount: itemsFound,
+            durationMs: searchTime,
         });
     };
 
