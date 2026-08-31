@@ -12,9 +12,9 @@ import { useFeature } from '@proton/features';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
 import { EntitlementType } from '@proton/payments/core/entitlements/interface';
+import { buildPreloadedState } from '@proton/payments/testing/buildPreloadedState';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
-import { buildSubscription } from '@proton/testing/builders/subscription';
-import { buildPreloadedState } from '@proton/testing/lib/buildPreloadedState';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 import { mockUseFlag } from '@proton/testing/lib/mockUseFlag';
 

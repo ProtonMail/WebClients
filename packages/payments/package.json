@@ -3,6 +3,17 @@
     "description": "",
     "license": "GPL-3.0",
     "sideEffects": false,
+    "exports": {
+        "./*": "./*.ts",
+        "./testing/buildSubscription": "./testing/buildSubscription.ts",
+        "./testing/makeEntitlements": "./testing/makeEntitlements.ts",
+        "./testing/data-plans": "./testing/data-plans.ts",
+        "./testing/data-user": "./testing/data-user.ts",
+        "./testing/api-endpoints": "./testing/api-endpoints.ts",
+        "./testing/mockVerifyPayment": "./testing/mockVerifyPayment.ts",
+        "./testing/redux-state": "./testing/redux-state.ts",
+        "./testing/buildPreloadedState": "./testing/buildPreloadedState.ts"
+    },
     "scripts": {
         "check:entitlement-names": "node --env-file-if-exists=core/entitlements/scripts/.env core/entitlements/scripts/generate-entitlement-names.mjs --check",
         "check-types": "tsc",
@@ -25,6 +36,7 @@
         "vat-validation": "^3.0.0"
     },
     "devDependencies": {
+        "@proton/account": "workspace:^",
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-env": "workspace:^",
         "@proton/testing": "workspace:^",

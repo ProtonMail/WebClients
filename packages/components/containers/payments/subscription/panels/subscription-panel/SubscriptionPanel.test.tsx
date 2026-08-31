@@ -3,8 +3,8 @@ import { screen } from '@testing-library/react';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { createEntitlementResolver } from '@proton/payments/core/entitlements/resolver';
 import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS } from '@proton/shared/lib/constants';
-import { buildSubscription } from '@proton/testing/builders/subscription';
 import { buildUser } from '@proton/testing/builders/user';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 

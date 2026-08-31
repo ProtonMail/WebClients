@@ -4,7 +4,7 @@ import { addMonths, format, getUnixTime } from 'date-fns';
 
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { buildSubscription } from '@proton/testing/builders/subscription';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import { SUBSCRIPTION_STEPS } from '../../constants';
 import { CancelSubscriptionModalForWorldCup } from './CancelSubscriptionModalForWorldCup';

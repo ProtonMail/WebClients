@@ -3,8 +3,8 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { PRODUCT_BIT } from '@proton/shared/lib/constants';
-import { buildSubscription } from '@proton/testing/builders/subscription';
 
 import { componentsHookRenderer } from '../../../contacts/tests/render';
 import { useCancellationStepEligibility } from './useCancellationStepEligibility';

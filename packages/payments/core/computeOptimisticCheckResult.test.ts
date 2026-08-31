@@ -1,5 +1,5 @@
-import { buildSubscription } from '@proton/testing/builders/subscription';
-import { getTestPlansMap } from '@proton/testing/data/payments/data-plans';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { getTestPlansMap } from '@proton/payments/testing/data-plans';
 
 import { computeOptimisticCheckResult } from './computeOptimisticCheckResult';
 import { CYCLE, PLANS } from './constants';

@@ -1,4 +1,4 @@
-import { buildSubscription } from '@proton/testing/builders/subscription';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import { PLANS } from './constants';
 import { TrialType } from './subscription/constants';

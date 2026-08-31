@@ -8,9 +8,9 @@ import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
-import { buildSubscription } from '@proton/testing/builders/subscription';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { getTestPlansMap } from '@proton/payments/testing/data-plans';
 import { buildUser } from '@proton/testing/builders/user';
-import { getTestPlansMap } from '@proton/testing/data/payments/data-plans';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 
 import SubscriptionCheckout, { type SubscriptionCheckoutProps } from './SubscriptionCheckout';
