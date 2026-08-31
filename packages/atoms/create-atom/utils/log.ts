@@ -19,11 +19,6 @@ export const logConclusion = () => {
     console.info('\n');
 };
 
-export const logError = (error: string) => {
-    console.info(styleText(['redBright', 'bold'], 'Error creating atom.'));
-    console.info(styleText(['redBright'], error));
-};
-
 export const logComponentCreationError = (componentName: string) => {
     console.info(`${styleText(['redBright', 'bold'], componentName)} already exists.`);
 };

@@ -53,21 +53,21 @@ async function delay(time: number) {
     await delay(time);
 }
 
-export class GpuWriteFullEmailRunningAction extends BaseRunningAction {
+class GpuWriteFullEmailRunningAction extends BaseRunningAction {
     constructor(action: WriteFullEmailAction, chat: WebWorkerEngine, callback: GenerationCallback) {
         const prompt = formatPromptWriteFullEmail(action);
         super(prompt, callback, chat, action);
     }
 }
 
-export class GpuShortenRunningAction extends BaseRunningAction {
+class GpuShortenRunningAction extends BaseRunningAction {
     constructor(action: ShortenAction, chat: WebWorkerEngine, callback: GenerationCallback) {
         const prompt = formatPromptShorten(action);
         super(prompt, callback, chat, action);
     }
 }
 
-export class GpuRefineRunningAction extends BaseRunningAction {
+class GpuRefineRunningAction extends BaseRunningAction {
     constructor(action: CustomRefineAction, chat: WebWorkerEngine, callback: GenerationCallback) {
         const prompt = formatPromptCustomRefine(action);
         const refineCleanup = makeRefineCleanup(action);
@@ -79,28 +79,28 @@ export class GpuRefineRunningAction extends BaseRunningAction {
     }
 }
 
-export class GpuProofreadRunningAction extends GpuRefineRunningAction {
+class GpuProofreadRunningAction extends GpuRefineRunningAction {
     constructor(action: ProofreadAction, chat: WebWorkerEngine, callback: GenerationCallback) {
         const refineAction = proofreadActionToCustomRefineAction(action);
         super(refineAction, chat, callback);
     }
 }
 
-export class GpuFormalRunningAction extends GpuRefineRunningAction {
+class GpuFormalRunningAction extends GpuRefineRunningAction {
     constructor(action: FormalAction, chat: WebWorkerEngine, callback: GenerationCallback) {
         const refineAction = formalActionToCustomRefineAction(action);
         super(refineAction, chat, callback);
     }
 }
 
-export class GpuFriendlyRunningAction extends GpuRefineRunningAction {
+class GpuFriendlyRunningAction extends GpuRefineRunningAction {
     constructor(action: FriendlyAction, chat: WebWorkerEngine, callback: GenerationCallback) {
         const refineAction = friendlyActionToCustomRefineAction(action);
         super(refineAction, chat, callback);
     }
 }
 
-export class GpuExpandRunningAction extends GpuRefineRunningAction {
+class GpuExpandRunningAction extends GpuRefineRunningAction {
     constructor(action: ExpandAction, chat: WebWorkerEngine, callback: GenerationCallback) {
         const refineAction = expandActionToCustomRefineAction(action);
         super(refineAction, chat, callback);
@@ -393,7 +393,7 @@ export class GpuLlmManager implements LlmManager {
     }
 }
 
-export function getPromptForAction(action: Action) {
+function getPromptForAction(action: Action) {
     switch (action.type) {
         case 'writeFullEmail':
             return formatPromptWriteFullEmail(action);
