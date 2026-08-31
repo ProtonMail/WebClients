@@ -106,6 +106,9 @@ export interface MeetCoreWorkerGenericErrorPayload {
     kind: 'error';
     message: string;
     stack?: string;
+    code?: number;
+    /** `MeetCoreErrorEnum` discriminant stamped by `MeetCoreError::into_js_error`. */
+    meetCoreKind?: MeetCoreErrorEnum;
 }
 
 export type MeetCoreWorkerError = MeetCoreWorkerErrorEnumPayload | MeetCoreWorkerGenericErrorPayload;

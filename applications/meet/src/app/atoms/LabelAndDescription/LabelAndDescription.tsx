@@ -42,6 +42,7 @@ export const LabelAndDescription = ({
             </label>
             {description && (
                 <span
+                    id={id ? `${id}-description` : undefined}
                     className={clsx('label-and-description-description', sizeClass[size].description, descriptionColor)}
                 >
                     {description}

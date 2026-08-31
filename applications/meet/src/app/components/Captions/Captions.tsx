@@ -7,6 +7,7 @@ import clsx from '@proton/utils/clsx';
 import { useCaptionsAgentLifecycle } from '../../hooks/captions/useCaptionsAgentLifecycle';
 import { useCaptionsAgentWaitTimeout } from '../../hooks/captions/useCaptionsAgentWaitTimeout';
 import { useCaptionsPreference } from '../../hooks/captions/useCaptionsPreference';
+import { useCleanupCaptions } from '../../hooks/captions/useCleanupCaptions';
 import { useLiveCaptionsFeatureEnabled } from '../../hooks/captions/useLiveCaptionsFeatureEnabled';
 import { useParticipantDisplayColors } from '../../hooks/useParticipantDisplayColors';
 import type { CaptionSegment, CaptionsStatus } from './useTranscriptions';
@@ -96,6 +97,7 @@ const CaptionsFeed = () => {
 const CaptionsAgentLifecycle = () => {
     useCaptionsAgentLifecycle();
     useCaptionsAgentWaitTimeout();
+    useCleanupCaptions();
 
     return null;
 };
