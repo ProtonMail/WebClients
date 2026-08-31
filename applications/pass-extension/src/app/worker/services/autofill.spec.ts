@@ -34,6 +34,7 @@ describe('AutofillService', () => {
     const subFrameId = 7;
     const username = 'victim@proton.test';
     const password = uniqueId();
+    const artifact = (modelId: string): ModelArtifact => ({ modelId, arch: 'lr', weights: {} }) as ModelArtifact;
 
     let state: State;
     let authorized: boolean;
@@ -275,9 +276,41 @@ describe('AutofillService', () => {
         });
     });
 
-    describe('`modelArtifact`', () => {
-        const artifact = (modelId: string): ModelArtifact => ({ modelId, arch: 'lr', weights: {} }) as ModelArtifact;
+    describe('`MODEL_ARTIFACT_REQUEST`', () => {
+        const queryModelArtifact = () =>
+            sendMessage(contentScriptMessage({ type: WorkerMessageType.MODEL_ARTIFACT_REQUEST }));
 
+        test('Responds with `null` before any model is assigned', async () => {
+            const result = await queryModelArtifact();
+            expectMessageSuccess(result);
+            expect(result.artifact).toBeNull();
+        });
+
+        test('Responds with `null` when the assigned model has not been fetched yet', async () => {
+            await sagaEvents.publishAsync({
+                type: 'model-registry::resolved',
+                data: { control: '2026.10.1-lr', challenger: '2026.10.2-rf' },
+            });
+
+            const result = await queryModelArtifact();
+            expectMessageSuccess(result);
+            expect(result.artifact).toBeNull();
+        });
+
+        test('Responds with the cached artifact for the currently-assigned model', async () => {
+            await sagaEvents.publishAsync({
+                type: 'model-registry::resolved',
+                data: { control: '2026.10.1-lr', challenger: '2026.10.2-rf' },
+            });
+            await sagaEvents.publishAsync({ type: 'model-artifact::resolved', data: artifact('2026.10.1-lr') });
+
+            const result = await queryModelArtifact();
+            expectMessageSuccess(result);
+            expect(result.artifact).toEqual(artifact('2026.10.1-lr'));
+        });
+    });
+
+    describe('`modelArtifact`', () => {
         test('Returns null before any model artifact has been resolved', () => {
             expect(service.getModelArtifact('2026.8.2475-lr')).toBeNull();
         });
@@ -310,6 +343,28 @@ describe('AutofillService', () => {
             await service.init();
 
             expect(service.getModelArtifact('2026.8.2475-lr')).toEqual(artifact('2026.8.2475-lr'));
+        });
+    });
+
+    describe('`queryTabLoginForms`', () => {
+        test('Falls back to the assigned model, not `n/a`, when the content-script query fails', async () => {
+            browser.tabs.sendMessage.mockRejectedValue(new Error('no receiving end'));
+            await sagaEvents.publishAsync({
+                type: 'model-registry::resolved',
+                data: { control: '2026.10.1-lr', challenger: '2026.10.2-rf' },
+            });
+
+            const result = await service.queryTabLoginForms(1);
+
+            expect(result.telemetry).toEqual({ pageLanguage: 'n/a', modelVersion: '2026.10.1-lr' });
+        });
+
+        test('Falls back to the bundled model when the query fails and no model is assigned', async () => {
+            browser.tabs.sendMessage.mockRejectedValue(new Error('no receiving end'));
+
+            const result = await service.queryTabLoginForms(1);
+
+            expect(result.telemetry).toEqual({ pageLanguage: 'n/a', modelVersion: BUNDLED_MODEL_ID });
         });
     });
 });

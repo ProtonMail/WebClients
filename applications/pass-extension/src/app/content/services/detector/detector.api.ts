@@ -4,6 +4,7 @@
  * `webpack.config.ts`). Label enums come from `@protontech/autofill/types`. */
 import { createRulesetRegistry } from '@protontech/autofill';
 import { perceptronModelProvider } from '@protontech/autofill/models/perceptron';
+import type { ModelProvider } from '@protontech/autofill/types';
 
 export {
     clearDetectionCache,
@@ -46,4 +47,8 @@ export {
 export type { HTMLFieldElement } from '@protontech/autofill';
 export type { Fnode } from '@protontech/fathom';
 
-export const rulesetMaker = () => createRulesetRegistry({ perceptron: perceptronModelProvider }).make('perceptron');
+export const rulesetMaker = (runtime?: ModelProvider) =>
+    runtime
+        ? createRulesetRegistry({ runtime }).make('runtime')
+        : createRulesetRegistry({ perceptron: perceptronModelProvider }).make('perceptron');
+export const supportsRuntimeModel: boolean = true;

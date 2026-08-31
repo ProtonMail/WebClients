@@ -7,7 +7,6 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import usePrevious from '@proton/hooks/usePrevious';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { MODEL_VERSION } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { resolveDefaultItemName } from '@proton/pass/lib/items/item.utils';
@@ -161,7 +160,7 @@ export const Autosave: FC<Props> = ({ data }) => {
                         onTelemetry(
                             TelemetryEventName.AutosaveDismissed,
                             {},
-                            { dismissReason: 'close', modelVersion: MODEL_VERSION, ...data.telemetry }
+                            { dismissReason: 'close', ...data.telemetry }
                         )
                     }
                     title={(() => {
