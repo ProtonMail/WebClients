@@ -1,6 +1,12 @@
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
+export interface MeetAudioContext {
+    audioContext: AudioContext;
+    setSinkId: (deviceId: string) => void;
+    cleanup: () => void;
+}
+
 /**
  * Creates an AudioContext for use with LiveKit's webAudioMix option.
  *
@@ -24,11 +30,7 @@ export const createMeetAudioContext = ({
      */
     sampleRate?: number;
     reportMeetError: ReportMeetError;
-}): {
-    audioContext: AudioContext;
-    setSinkId: (deviceId: string) => void;
-    cleanup: () => void;
-} => {
+}): MeetAudioContext => {
     const audioContext = new AudioContext({ latencyHint: 'interactive', sampleRate });
 
     // setSinkId is supported in Chrome 110+ but not yet in the TypeScript lib types.
