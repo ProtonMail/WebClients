@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { buyCredit, createToken } from '@proton/payments/core/api/api';
 import { PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
+import { MOCK_PAYMENT_STATUS, mockPaymentMethods, mockPaymentStatus } from '@proton/payments/testing/api-endpoints';
 import { APPS, IDEAL_WERO_BRAND_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { addApiMock } from '@proton/testing/lib/api';
@@ -16,7 +17,6 @@ import { withEventManager } from '@proton/testing/lib/context/hocs/with-event-ma
 import { withNotifications } from '@proton/testing/lib/context/hocs/with-notifications';
 import { withReduxStore } from '@proton/testing/lib/context/hocs/with-redux-store';
 import { mockEventManager } from '@proton/testing/lib/event-manager';
-import { MOCK_PAYMENT_STATUS, mockPaymentMethods, mockPaymentStatus } from '@proton/testing/lib/payments/api-endpoints';
 
 import CreditsModal from './CreditsModal';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

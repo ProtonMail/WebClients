@@ -1,7 +1,7 @@
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import formatSubscription from '@proton/shared/lib/subscription/format';
-import { buildSubscription } from '@proton/testing/builders/subscription';
 import { addApiMock } from '@proton/testing/lib/api';
 
 export const subscriptionDefaultResponse: {

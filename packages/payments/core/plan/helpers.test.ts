@@ -1,4 +1,4 @@
-import { getTestPlansMap } from '@proton/testing/data/payments/data-plans';
+import { getTestPlansMap } from '@proton/payments/testing/data-plans';
 
 import { ADDON_NAMES, ADDON_PREFIXES, PLANS } from '../constants';
 import { getAddonNameByPlan, isMultiUserPersonalPlan } from './helpers';

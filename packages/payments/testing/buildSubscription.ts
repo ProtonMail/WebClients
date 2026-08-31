@@ -1,14 +1,14 @@
-import { CYCLE, PLANS } from '@proton/payments/core/constants';
-import type { Currency, PlanIDs } from '@proton/payments/core/interface';
-import type { Plan } from '@proton/payments/core/plan/interface';
-import { Renew, SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
-import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
-import { isValidPlanName } from '@proton/payments/core/type-guards';
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
 import type { EitherOr } from '@proton/shared/lib/interfaces';
 
-import { getTestPlans } from '../data/payments/data-plans';
+import { CYCLE, PLANS } from '../core/constants';
+import type { Currency, PlanIDs } from '../core/interface';
+import type { Plan } from '../core/plan/interface';
+import { Renew, SubscriptionPlatform } from '../core/subscription/constants';
+import type { Subscription } from '../core/subscription/interface';
+import { SelectedPlan } from '../core/subscription/selected-plan';
+import { isValidPlanName } from '../core/type-guards';
+import { getTestPlans } from './data-plans';
 
 const innerBuildSubscription = (value?: Partial<Subscription>): Subscription => {
     const Cycle = value?.Cycle ?? CYCLE.YEARLY;

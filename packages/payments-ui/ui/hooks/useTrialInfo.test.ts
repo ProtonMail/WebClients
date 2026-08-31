@@ -2,7 +2,7 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
-import { buildSubscription } from '@proton/testing/builders/subscription';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import { useTrialInfo } from './useTrialInfo';
 

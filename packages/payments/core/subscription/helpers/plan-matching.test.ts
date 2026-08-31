@@ -1,4 +1,4 @@
-import { buildSubscription } from '@proton/testing/builders/subscription';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import { ADDON_NAMES, FREE_SUBSCRIPTION, PLANS } from '../../constants';
 import { hasLumo, hasSomeAddonOrPlan } from './plan-matching';

@@ -1,7 +1,6 @@
 import * as useSubscriptionModule from '@proton/account/subscription/hooks';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
-
-import { buildSubscription } from '../builders/subscription';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 jest.mock('@proton/account/subscription/hooks', () => ({
     __esModule: true,

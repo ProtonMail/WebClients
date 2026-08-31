@@ -1,8 +1,8 @@
 import { ADDON_NAMES, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
 import type { Plan } from '@proton/payments/core/plan/interface';
-import { buildSubscription } from '@proton/testing/builders/subscription';
-import { getTestPlans } from '@proton/testing/data/payments/data-plans';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { getTestPlans } from '@proton/payments/testing/data-plans';
 
 import { isSamePlanCheckout } from './isSamePlanCheckout';
 

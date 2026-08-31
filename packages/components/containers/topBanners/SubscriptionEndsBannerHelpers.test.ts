@@ -2,8 +2,8 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { PLANS } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS } from '@proton/shared/lib/constants';
-import { buildSubscription } from '@proton/testing/builders/subscription';
 
 import { useHideBanner } from './SubscriptionEndsBannerHelpers';
 

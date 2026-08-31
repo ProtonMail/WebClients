@@ -12,8 +12,8 @@ import {
 import type { PlanIDs } from '@proton/payments/core/interface';
 import { Renew } from '@proton/payments/core/subscription/constants';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
-import { buildSubscription } from '@proton/testing/builders/subscription';
-import { PLANS_MAP } from '@proton/testing/data/payments/data-plans';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { PLANS_MAP } from '@proton/payments/testing/data-plans';
 
 import { computeAddonCustomizerItems, getAddonCustomizerProperties } from './addonCustomizerHelpers';
 

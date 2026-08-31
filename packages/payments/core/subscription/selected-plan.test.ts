@@ -1,5 +1,5 @@
-import { buildSubscription } from '@proton/testing/builders/subscription';
-import { PLANS_MAP } from '@proton/testing/data/payments/data-plans';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { PLANS_MAP } from '@proton/payments/testing/data-plans';
 
 import { ADDON_NAMES, ADDON_PREFIXES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '../constants';
 import { FREE_PLAN } from './freePlans';
