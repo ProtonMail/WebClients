@@ -226,6 +226,7 @@ const MainContainer = () => {
     const isPasswordRemindersOrgEnabled = useFlag('PasswordRemindersOrg');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isMspEnabled = useFlag('MspEnabled');
+    const isMspPassSettingsFullyEnabled = useFlag('MSPPassSettingsFullyEnabled');
     const isSpacesAvailable = useFlag('SpacesAvailable');
 
     const { canUseCategoryView } = useCategoriesData();
@@ -321,6 +322,7 @@ const MainContainer = () => {
         isAuthenticatorAvailable,
         isCategoryViewEnabled: canUseCategoryView,
         isMspEnabled,
+        isMspPassSettingsFullyEnabled,
         isReferralProgramEnabled,
     };
 
