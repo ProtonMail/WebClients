@@ -2158,9 +2158,7 @@
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+        "Mutarea unui element într-un alt seif îi va șterge linkurile securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -2863,6 +2861,9 @@
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Se verifică parolele ${ compromised.progress.completed } din ${ compromised.progress.total }"
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Vizualizare locală articole din ${ PASS_SHORT_APP_NAME }. Necesită parola pentru activare."
       ]
     },
     "Keyboard key": {
@@ -5208,6 +5209,9 @@
         "Urmează să ștergeți definitiv ${ aliasCount } alias.",
         "Urmează să ștergeți definitiv ${ aliasCount } aliasuri.",
         "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri."
+      ],
+      "Enable offline mode": [
+        "Activare mod local"
       ]
     },
     "Title_cloned_item": {

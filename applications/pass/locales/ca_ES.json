@@ -2132,8 +2132,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2830,6 +2829,9 @@
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "S'estan comprovant ${ compromised.progress.completed } de ${ compromised.progress.total } contrasenyes"
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Visualitzeu els vostres elements de ${ PASS_SHORT_APP_NAME } sense connexió. Es requereix la vostra contrasenya per activar-ho."
       ]
     },
     "Keyboard key": {
@@ -5150,6 +5152,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies.",
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies."
+      ],
+      "Enable offline mode": [
+        "Activa el mode fora de línia"
       ]
     },
     "Title_cloned_item": {
