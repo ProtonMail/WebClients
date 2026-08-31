@@ -22,7 +22,7 @@
 export type JSONSchema = Record<string, any>;
 
 /** Reads run automatically; mutations require an explicit review-edit-confirm from the user. */
-export type ToolKind = 'read' | 'mutation';
+type ToolKind = 'read' | 'mutation';
 
 /**
  * A tool identifier — an **open** string. The framework never enumerates any product's tools: a
@@ -66,7 +66,7 @@ export interface ReferenceRegistry {
  * the request context only for the tools active in a turn (progressive disclosure), so the model
  * sees the right call shape up front without every tool's examples always in context.
  */
-export interface ToolExample {
+interface ToolExample {
     /** The situation / what the model already knows (e.g. "search returned email-a1b2c3 …"). */
     context: string;
     /** The correct arguments object the model should call this tool with in that situation. */
@@ -154,7 +154,7 @@ export interface ToolImage {
 }
 
 /** Dependencies handed to every handler by the engine at run time. */
-export interface ToolDeps {
+interface ToolDeps {
     references: ReferenceRegistry;
     /**
      * Show the model an image for the rest of this exchange. A tool result is text, so this is the only
