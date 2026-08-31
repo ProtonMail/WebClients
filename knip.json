@@ -357,8 +357,7 @@
         },
         "packages/nav": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/pack": {
             "entry": [],
