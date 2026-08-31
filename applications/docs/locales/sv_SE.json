@@ -3725,6 +3725,15 @@
       ],
       "You can only leave items that are shared with you": [
         "Du kan endast lämna objekt som är delade med dig."
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Eftersom detta dokument var i en delad mapp kan endast mappens ägaren återställa det"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Kan inte, flytta objekt utan giltigt namn, byt namn på objektet först"
+      ],
+      "Failed to fetch sharing information": [
+        "Misslyckades att hämta delningsinformation"
       ]
     },
     "error": {
@@ -6545,6 +6554,9 @@
       ],
       "Your password (trusted contact)": [
         "Ditt lösenord (betrodd kontakt)"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tecken"
       ]
     },
     "Label for contact group color": {
@@ -10985,6 +10997,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Vi har skickat dem en inbjudan att komma åt objektet."
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status för datamigrering från ${ providerName } till ${ BRAND_NAME }"
       ]
     },
     "tooltip": {
@@ -11283,6 +11298,11 @@
     "ngc_access_banner: action": {
       "Try it now": [
         "Prova det nu"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Du har nu åtkomst till nya ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     }
   }

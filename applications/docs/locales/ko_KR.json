@@ -2643,7 +2643,7 @@
         "${ BRAND_NAME }에서 Gmail 메시지를 계속 송수신 하려면, 계정을 다시 연결해주세요."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
-        "최상의 계정 보안 상태를 유지하려면, 복구 문구를 설정하세요."
+        "최상의 계정 보안 상태를 유지하려면, 복구 키를 설정하세요."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 연락처 ${ maxContactString }개를 초과하지 않도록 않도록 해주세요. 파일이 더 크다면, 더 작은 파일로 나눠주세요. ${ learnMoreLink }."
@@ -6539,6 +6539,9 @@
       ],
       "Your password (trusted contact)": [
         "사용자 비밀번호 (신뢰할 수 있는 연락처)"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength }자"
       ]
     },
     "Label for contact group color": {
