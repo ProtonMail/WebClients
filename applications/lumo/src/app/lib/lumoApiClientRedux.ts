@@ -286,9 +286,8 @@ export function sendMessageWithRedux(
                             // this stays compatible when that branch is merged in.
                             //
                             // Each call is emitted twice: an "announce" chunk (name only) followed by
-                            // a "dispatch" chunk (name + arguments). setToolCallInBlocks replaces the
-                            // announce block with the dispatch block because they share the same name,
-                            // giving streaming-style updates for free.
+                            // a "dispatch" chunk (name + arguments). setToolCallInBlocks merges those
+                            // chunks when they share the same call id.
                             if (messageId) {
                                 // `arguments` is an object when the backend sends plaintext, a
                                 // decrypted JSON string when encrypted, or absent on the announce.
@@ -307,6 +306,7 @@ export function sendMessageWithRedux(
                                     setToolCall({
                                         messageId,
                                         content: JSON.stringify({
+                                            id: message.call_id,
                                             name: message.name,
                                             ...(toolArguments !== undefined ? { arguments: toolArguments } : {}),
                                         }),
@@ -327,6 +327,7 @@ export function sendMessageWithRedux(
                                         messageId,
                                         content:
                                             typeof rawContent === 'string' ? rawContent : JSON.stringify(rawContent),
+                                        callId: message.call_id,
                                         ...(message.meta ? { meta: message.meta } : {}),
                                     })
                                 );
