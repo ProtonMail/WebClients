@@ -25,6 +25,7 @@ import createApi from '@proton/shared/lib/api/createApi';
 import { getEvents } from '@proton/shared/lib/api/events';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { generateLoggerKey } from '@proton/shared/lib/authentication/loggerKey';
+import { registerSessionRemovalListener } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { isChromiumBased } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
@@ -36,6 +37,7 @@ import { appMode } from '@proton/shared/lib/webpack.constants';
 import { CommonFeatureFlag } from '@proton/unleash/Flags';
 import noop from '@proton/utils/noop';
 
+import { cleanDataLogout } from './helpers/cleanDataLogout';
 import { cleanLegacyLogsDatabase } from './helpers/cleanLegacyLogsDatabase';
 import {
     canLoadRunner,
@@ -244,6 +246,8 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
         eventManager.start();
 
         dispatch(bootstrapEvent({ type: 'complete' }));
+
+        registerSessionRemovalListener(cleanDataLogout);
 
         return {
             ...userData,
