@@ -57,7 +57,12 @@ import type { ChargebeeIdealProcessorHook } from '@proton/components/payments/re
 import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import type { ChargebeeDirectDebitProcessorHook } from '@proton/components/payments/react-extensions/useSepaDirectDebit';
 import { type GetChargebeeConfigurationResponse, getChargebeeConfiguration } from '@proton/payments/core/api/api';
-import { getChargebeeErrorMessage, isApplePayUnsupportedError } from '@proton/payments/core/chargebee-errors';
+import {
+    getChargebeeErrorCode,
+    getChargebeeErrorMessage,
+    getChargebeeTechnicalError,
+    isApplePayUnsupportedError,
+} from '@proton/payments/core/chargebee-errors';
 import type {
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
@@ -135,6 +140,18 @@ type IframeActionOptions = {
 };
 
 const TIMEOUT_EXCEEDED_ERROR_TEXT = c('Payments').t`Timeout exceeded`;
+
+/**
+ * `onLoad()` can fail two ways: with a reply from the iframe, or with an error thrown here on the
+ * parent side. Only the first kind was ever reported by the iframe.
+ */
+export function getInitializationFailureReason(error: any) {
+    if (error?.error === TIMEOUT_EXCEEDED_ERROR_TEXT) {
+        return 'timeout';
+    }
+
+    return error?.status === 'failure' ? 'reported-by-iframe' : 'parent-side-error';
+}
 
 function iframeAction<T>(
     type: string,
@@ -800,14 +817,26 @@ export const useCbIframe = (): CbIframeHandles => {
 
     useEffect(() => {
         return events.onUnhandledError((error, rawError, messagePayload, checkpoints) => {
-            const context = {};
+            /**
+             * The failing step is part of the message because Sentry groups on the message. With
+             * one fixed message, every different failure — a blocked script, fields that never
+             * appear, a stall — landed in the same issue and none of them were actionable.
+             *
+             * It comes from the step the iframe names, not from the last checkpoint: every reporter
+             * records a checkpoint before sending, so the last one names the reporter.
+             */
+            const stage: string = rawError?.stage ?? 'unknown';
 
             capturePaymentMessage(
-                'Payments: Unhandled Chargebee error',
+                `Payments: Unhandled Chargebee error at ${stage}`,
                 {
                     component: 'chargebee-iframe',
                     level: 'error',
-                    extra: { error, context, rawError, messagePayload, checkpoints },
+                    tags: {
+                        chargebeeStage: stage,
+                        chargebeeWrapperVersion: rawError?.chargebeeWrapperVersion ?? 'unknown',
+                    },
+                    extra: { error, rawError, messagePayload, checkpoints },
                 },
                 error
             );
@@ -988,6 +1017,23 @@ export const ChargebeeIframe = ({
 
     const threeDs = useThreeDsChallenge(false);
 
+    const reportInitializationFailure = (error: any) => {
+        const reason = getInitializationFailureReason(error);
+        const technicalError = getChargebeeTechnicalError(error);
+
+        capturePaymentMessage(`Payments: Chargebee iframe failed to initialize (${type}, ${reason})`, {
+            component: 'chargebee-iframe',
+            level: 'error',
+            tags: { chargebeeIframeType: type, chargebeeInitFailureReason: reason },
+            extra: {
+                errorMessage: technicalError.message,
+                errorName: technicalError.name,
+                errorCode: getChargebeeErrorCode(error),
+                correlationId: error?.correlationId ?? null,
+            },
+        });
+    };
+
     const onLoad = async () => {
         iframeHandles.notifyIframeLoaded();
 
@@ -1066,10 +1112,11 @@ export const ChargebeeIframe = ({
 
     useEffect(() => {
         loadingTimeoutRef.current = setTimeout(() => {
-            if (!initialized) {
+            if (!iframeHandles.iframeLoadedRef.current) {
                 capturePaymentMessage('Payments: Chargebee iframe not loaded', {
                     component: 'chargebee-iframe',
                     level: 'error',
+                    tags: { chargebeeIframeType: type },
                     extra: { type },
                 });
             }
@@ -1100,7 +1147,9 @@ export const ChargebeeIframe = ({
                 ref={iframeRef}
                 title="Payments form"
                 frameBorder="0"
-                onLoad={onLoad}
+                onLoad={() => {
+                    onLoad().catch(reportInitializationFailure);
+                }}
                 data-testid="chargebee-iframe"
                 allow="payment"
                 style={{

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-export function getChargebeeErrorCode(error: any): string | undefined {
-    return error?.error?.code;
+export function getChargebeeErrorCode(error: any): string | null {
+    return error?.error?.code ?? null;
 }
 
 /** Chargebee's mountPaymentButton rejects with these when the browser can't run Apple Pay at all - retrying won't help */
@@ -12,7 +12,23 @@ export function isApplePayUnsupportedError(error: any): boolean {
     return !!code && APPLE_PAY_UNSUPPORTED_CODES.includes(code);
 }
 
-function getErrorMessageByCode(errorCode: string | undefined): string | undefined {
+/**
+ * Same as {@link getChargebeeErrorMessage} but untranslated, for error reports rather than for the
+ * user. Returns nulls when the error carries no message or name, instead of falling back to generic
+ * text, so a report never attributes copy of ours to Chargebee.
+ */
+export function getChargebeeTechnicalError(error: any): { message: string | null; name: string | null } {
+    if (typeof error?.error === 'string') {
+        return { message: error.error, name: null };
+    }
+
+    return {
+        message: error?.error?.message ?? error?.message ?? null,
+        name: error?.error?.name ?? error?.name ?? null,
+    };
+}
+
+function getErrorMessageByCode(errorCode: string | null): string | undefined {
     switch (errorCode) {
         case 'card_declined':
             return c('Payments.Error')

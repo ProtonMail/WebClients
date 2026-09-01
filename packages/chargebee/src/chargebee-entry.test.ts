@@ -1,13 +1,9 @@
 import { fireEvent } from '@testing-library/dom';
 
-import type {
-    AuthorizedPaymentIntent,
-    BinData,
-    DirectDebitCustomer,
-    PaymentIntent,
-} from '../lib/types';
+import type { AuthorizedPaymentIntent, BinData, DirectDebitCustomer, PaymentIntent } from '../lib/types';
 import { resetChargebee } from './chargebee';
-import { FALLBACK_EMAIL, formatCustomer, initialize } from './chargebee-entry';
+import { FALLBACK_EMAIL, formatCustomer, initialize, toReportableError } from './chargebee-entry';
+import { resetCheckpoints } from './checkpoints';
 import type { DirectDebitSubmitEvent, GetHeightEvent, SetConfigurationEvent } from './message-bus';
 import { getMessageBus } from './message-bus';
 
@@ -89,6 +85,10 @@ beforeEach(() => {
     };
 
     resetChargebee();
+    resetCheckpoints();
+
+    window.__chargebeeScriptErrors = [];
+    window.__chargebeeScriptFailed = false;
 });
 
 beforeEach(() => {
@@ -179,6 +179,280 @@ describe('initialize', () => {
         expect(messageBus.onGetHeight).toBeDefined();
 
         expect(result.chargebeeMock).toEqual(true);
+    });
+});
+
+describe('toReportableError', () => {
+    it('should name the thrown value when it carries no message', () => {
+        expect(toReportableError(false, 'card_mount').message).toBe(
+            'Chargebee threw a value without a message at "card_mount": boolean false'
+        );
+        expect(toReportableError({ code: 'x', type: 'y' }).message).toBe(
+            'Chargebee threw a value without a message: object with keys [code, type]'
+        );
+    });
+
+    it('should pass through a value that already has a message', () => {
+        const error = new Error('Chargebee did something specific');
+        expect(toReportableError(error, 'card_mount')).toBe(error);
+    });
+});
+
+describe('reported data', () => {
+    function collectRawMessages(type: string) {
+        const messages: string[] = [];
+        window.addEventListener('message', (event: MessageEvent) => {
+            try {
+                if (JSON.parse(event.data).type === type) {
+                    messages.push(event.data);
+                }
+            } catch {}
+        });
+        return messages;
+    }
+
+    it('should not report customer data when handling a direct debit submission throws', async () => {
+        const raw = collectRawMessages('chargebee-unhandled-error');
+        await initChargebee({ ...defaultSetConfigurationEvent, paymentMethodType: 'direct-debit' });
+
+        directDebitHandlerMock.setPaymentIntent.mockImplementationOnce(() => {
+            throw new Error('Chargebee rejected the mandate');
+        });
+
+        sendEventToChargebee({
+            type: 'direct-debit-submit',
+            correlationId: 'id-9',
+            paymentIntent: { email: 'customer@example.com' },
+            customer: {
+                email: 'customer@example.com',
+                firstName: 'Given',
+                lastName: 'Family',
+                company: 'Example Ltd',
+                customerNameType: 'individual',
+                countryCode: 'NL',
+                addressLine1: '1 Example Street',
+            },
+            bankAccount: { iban: 'NL00EXAMPLE0000000000' },
+        });
+        await new Promise<void>((resolve) => setTimeout(resolve, 0));
+
+        expect(raw).toHaveLength(1);
+
+        const sensitiveValues = [
+            'customer@example.com',
+            'NL00EXAMPLE0000000000',
+            'Given',
+            'Family',
+            'Example Ltd',
+            '1 Example Street',
+        ];
+        for (const value of sensitiveValues) {
+            expect(raw[0]).not.toContain(value);
+        }
+
+        // The report still has to be diagnosable: shape and stage, without the values.
+        const reported = JSON.parse(raw[0]).error;
+        expect(reported.message).toBe('Chargebee rejected the mandate');
+        const checkpoint = reported.checkpoints.find((entry: any) => entry.name === 'failed_to_handle_parent_message');
+        // The payload is kept so the report says which message failed, with identities removed.
+        const payload = JSON.parse(checkpoint.data.eventRawData);
+        expect(payload).toEqual({
+            type: 'direct-debit-submit',
+            correlationId: 'id-9',
+            paymentIntent: { email: '[redacted]' },
+            customer: {
+                email: '[redacted]',
+                firstName: '[redacted]',
+                lastName: '[redacted]',
+                company: '[redacted]',
+                customerNameType: 'individual',
+                countryCode: 'NL',
+                addressLine1: '[redacted]',
+            },
+            bankAccount: { iban: '[redacted]' },
+        });
+    });
+
+    it('should report the Chargebee environment of the configuration but not its theme and translations', async () => {
+        const raw = collectRawMessages('chargebee-unhandled-error');
+
+        mountMock.mockRejectedValueOnce(new Error('mount failed'));
+        await initChargebee();
+        await new Promise<void>((resolve) => setTimeout(resolve, 0));
+
+        expect(raw).toHaveLength(1);
+        expect(raw[0]).not.toContain('cardNumberPlaceholder');
+        expect(raw[0]).not.toContain('--interaction-norm');
+
+        // The publishable key is public and says which environment the iframe is talking to,
+        // which is what ties a failure to a site. Reported on purpose.
+        const checkpoint = JSON.parse(raw[0]).error.checkpoints.find((entry: any) => entry.name === 'chargebee.init');
+        expect(checkpoint.data).toEqual({
+            site: 'site',
+            publishableKey: 'pk',
+            domain: 'domain',
+        });
+    });
+
+    it('should keep a thrown string, truncated to bound the Sentry title', () => {
+        expect(toReportableError('CB_ERR_MANDATE_REJECTED').message).toBe(
+            'Chargebee threw a value without a message: string CB_ERR_MANDATE_REJECTED'
+        );
+        expect(toReportableError('x'.repeat(500)).message.length).toBeLessThan(300);
+    });
+});
+
+describe('failure reporting', () => {
+    function collectMessages(type: string) {
+        const messages: any[] = [];
+        window.addEventListener('message', (event: MessageEvent) => {
+            try {
+                const data = JSON.parse(event.data);
+                if (data.type === type) {
+                    messages.push(data);
+                }
+            } catch {}
+        });
+        return messages;
+    }
+
+    it('should report a mount rejection once, with a message, instead of twice', async () => {
+        mountMock.mockRejectedValueOnce(false);
+        const unhandledErrors = collectMessages('chargebee-unhandled-error');
+        const responses = collectMessages('set-configuration-response');
+
+        await initChargebee();
+        await new Promise<void>((resolve) => queueMicrotask(() => queueMicrotask(() => resolve())));
+
+        expect(unhandledErrors).toHaveLength(1);
+        expect(unhandledErrors[0].error.message).toBe(
+            'Chargebee threw a value without a message at "card_loaded_components": boolean false'
+        );
+        expect(unhandledErrors[0].error.checkpoints.map((checkpoint: any) => checkpoint.name)).toEqual([
+            'initialize_started',
+            'set_configuration_started',
+            'chargebee.checking',
+            'chargebee.loaded',
+            'chargebee_loaded',
+            'configuration_set',
+            'chargebee.init',
+            'chargebee.init.done',
+            'instance_created',
+            'rendering_card',
+            'card_loaded_components',
+            'initialize_failed',
+        ]);
+
+        // The step must name what failed, not the checkpoint the reporter adds before sending.
+        expect(unhandledErrors[0].error.stage).toBe('card_loaded_components');
+
+        expect(responses).toHaveLength(1);
+        expect(responses[0].status).toBe('failure');
+    });
+
+    it('should still report a failure of a set-configuration that follows a successful one', async () => {
+        const unhandledErrors = collectMessages('chargebee-unhandled-error');
+
+        await initChargebee();
+        expect(unhandledErrors).toHaveLength(0);
+
+        // The parent re-sends set-configuration on render mode, currency and payment method changes.
+        mountMock.mockRejectedValueOnce(false);
+        sendEventToChargebee({ ...defaultSetConfigurationEvent, correlationId: 'id-2' });
+        await new Promise<void>((resolve) => setTimeout(resolve, 0));
+
+        expect(unhandledErrors).toHaveLength(1);
+        expect(unhandledErrors[0].error.message).toBe(
+            'Chargebee threw a value without a message at "card_loaded_components": boolean false'
+        );
+        expect(unhandledErrors[0].error.stage).toBe('card_loaded_components');
+    });
+
+    it('should keep the form submittable when the mount budget expires', async () => {
+        jest.useFakeTimers();
+        const unhandledErrors = collectMessages('chargebee-unhandled-error');
+        const responses = collectMessages('set-configuration-response');
+
+        // Mounting is not cancelled, so the fields can still appear afterwards.
+        mountMock.mockReturnValueOnce(new Promise(() => {}));
+        void initChargebee();
+        await jest.advanceTimersByTimeAsync(25000);
+        jest.useRealTimers();
+
+        expect(unhandledErrors).toHaveLength(1);
+        expect(unhandledErrors[0].error.message).toBe('Chargebee "card_mount" did not complete within 20000ms');
+        expect(unhandledErrors[0].error.stage).toBe('card_mount_timed_out');
+
+        // The failure is reported but the form is not abandoned: the parent is told it is ready.
+        expect(responses).toHaveLength(1);
+        expect(responses[0].status).toBe('success');
+
+        sendEventToChargebee({
+            type: 'chargebee-submit',
+            correlationId: 'id-mount-timeout',
+            paymentIntent: {
+                data: '123',
+                object_type: 'payment_intent',
+                email: 'test@example.com',
+            },
+            countryCode: 'US',
+            zip: '97531',
+        });
+
+        // Before setup continued past the time limit, nothing handled submit and the parent
+        // waited for a reply that never came.
+        expect(authorizeWith3dsMock).toHaveBeenCalledTimes(1);
+        expect(authorizeWith3dsMock.mock.calls[0][0]).toEqual({
+            data: '123',
+            object_type: 'payment_intent',
+            email: 'test@example.com',
+        });
+    });
+
+    it('should report the failed scripts alongside the Chargebee load failure, on one event', async () => {
+        jest.useFakeTimers();
+        const unhandledErrors = collectMessages('chargebee-unhandled-error');
+
+        delete (global as any).Chargebee;
+        window.__chargebeeScriptErrors = [
+            'https://js.chargebee.com/v2/chargebee.js',
+            'https://applepay.cdn-apple.com/jsapi/1.latest/apple-pay-sdk.js',
+        ];
+        window.__chargebeeScriptFailed = true;
+
+        void initChargebee();
+        await jest.advanceTimersByTimeAsync(50000);
+        jest.useRealTimers();
+
+        expect(unhandledErrors).toHaveLength(1);
+        const report = unhandledErrors[0].error;
+
+        // The checkpoint says which script failed and why Chargebee is missing.
+        const loadFailed = report.checkpoints.find(({ name }: any) => name === 'chargebee.load_failed');
+        expect(loadFailed.data.chargebeeScriptFailed).toBe(true);
+        expect(report.message).toBe('Chargebee script failed to load');
+
+        // The sources live once, at the root of the same event, rather than in the checkpoint too.
+        expect(report.scriptLoadErrors).toBe(
+            'https://js.chargebee.com/v2/chargebee.js https://applepay.cdn-apple.com/jsapi/1.latest/apple-pay-sdk.js'
+        );
+        expect(report.scriptLoadErrorCount).toBe(2);
+        expect(loadFailed.data.otherScriptLoadErrors).toBeUndefined();
+    });
+
+    it('should name the stalled stage rather than the watchdog itself', async () => {
+        jest.useFakeTimers();
+        const unhandledErrors = collectMessages('chargebee-unhandled-error');
+
+        // A mount that never finishes is what production sessions actually hit.
+        mountMock.mockReturnValueOnce(new Promise(() => {}));
+        void initChargebee();
+        await jest.advanceTimersByTimeAsync(200000);
+        jest.useRealTimers();
+
+        expect(unhandledErrors).toHaveLength(1);
+        expect(unhandledErrors[0].error.message).toBe('Chargebee "card_mount" did not complete within 20000ms');
+        expect(unhandledErrors[0].error.stage).toBe('card_mount_timed_out');
     });
 });
 
