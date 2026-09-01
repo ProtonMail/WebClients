@@ -195,12 +195,13 @@ export class CacheService {
     }
   }
 
-  static setLocalIDForDocumentInCache(nodeMeta: DocumentIdentifier, localID: number) {
+  static setLocalIDForDocumentInCache(nodeMeta: DocumentIdentifier, localID: number): boolean {
     try {
       const key = keyForDocument(nodeMeta)
       localStorage.setItem(key, JSON.stringify(localID))
+      return true
     } catch (_) {
-      return
+      return false
     }
   }
 }
