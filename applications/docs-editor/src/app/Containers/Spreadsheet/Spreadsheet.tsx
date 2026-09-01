@@ -4,16 +4,14 @@ import type {
   EditorInitializationConfig,
   EditorRequiresClientMethods,
   SheetImportData,
-  SheetsUserState,
 } from '@proton/docs-shared'
-import { EditorSystemMode, SheetImportDestination, SheetImportEvent, TranslatedResult } from '@proton/docs-shared'
+import { EditorSystemMode, SheetImportDestination, TranslatedResult } from '@proton/docs-shared'
 import { SupportedProtonDocsMimeTypes } from '@proton/shared/lib/drive/constants'
 import { functions } from '@rowsncolumns/functions'
 import { createCSVFromSheetData, createExcelFile, createODSFile } from '@rowsncolumns/toolkit'
 import type { ForwardedRef } from 'react'
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import type { EditorLoadResult } from '../../Lib/EditorLoadResult'
-import { useApplication } from '../ApplicationProvider'
 import { useLocalState, useProtonSheetsState, useVersioning } from './state'
 
 import '@rowsncolumns/spreadsheet/dist/spreadsheet.min.css'
@@ -33,7 +31,6 @@ import { useActiveBreakpoint } from './useActiveBreakpoint'
 
 import type { SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-audit'
 import { reportErrorToSentry } from '../../Utils/errorMessage'
-import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
 import { useFeatureFlag } from './feature-flags'
 import { useSheetsDependencies } from './SheetsDependenciesProvider'
 
@@ -81,8 +78,8 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   }: SpreadsheetProps,
   ref: ForwardedRef<SpreadsheetRef>,
 ) {
-  const { application } = useApplication()
-  const { canEdit, logger } = useSheetsDependencies()
+  const { canEdit, logger, storeSpreadsheetAction, subscribeToSheetImport, subscribeToCollaboratorCursorNavigation } =
+    useSheetsDependencies()
   const { viewportWidth } = useActiveBreakpoint()
 
   const didConvertFromFile = useRef(false)
@@ -122,13 +119,8 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const isActionsStorageEnabled = useFeatureFlag('SheetsActionsStorageEnabled')
   const isDriftDetectionEnabled = useFeatureFlag('SheetsDriftDetectionEnabled')
   const storeAction = useMemo(
-    () =>
-      isActionsStorageEnabled
-        ? (type: SheetsActionType, content: unknown) => {
-            clientInvoker.storeSpreadsheetAction(type, content).catch(console.error)
-          }
-        : () => {},
-    [clientInvoker, isActionsStorageEnabled],
+    () => (isActionsStorageEnabled ? storeSpreadsheetAction : () => {}),
+    [isActionsStorageEnabled, storeSpreadsheetAction],
   )
 
   const state = useProtonSheetsState({
@@ -292,60 +284,49 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
 
   // TODO: document this effect
   const { onCreateNewSheet, onRenameSheet } = state
-  useEffect(
-    () =>
-      application.eventBus.addEventCallback((data: SheetImportData) => {
-        const isExcelFile = data.file.type === SupportedProtonDocsMimeTypes.xlsx
-        const isODSFile = data.file.type === SupportedProtonDocsMimeTypes.ods
-        if (isExcelFile || isODSFile) {
-          void handleExcelFileImport(data.file, isExcelFile ? 'excel' : 'ods')
+  useEffect(() => {
+    return subscribeToSheetImport((data: SheetImportData) => {
+      const isExcelFile = data.file.type === SupportedProtonDocsMimeTypes.xlsx
+      const isODSFile = data.file.type === SupportedProtonDocsMimeTypes.ods
+      if (isExcelFile || isODSFile) {
+        void handleExcelFileImport(data.file, isExcelFile ? 'excel' : 'ods')
+        return
+      }
+      let sheetId = undefined
+      let cellCoords = undefined
+      if (data.destination === SheetImportDestination.InsertAsNewSheet) {
+        const newSheet = onCreateNewSheet()
+        if (!newSheet) {
           return
         }
-        let sheetId = undefined
-        let cellCoords = undefined
-        if (data.destination === SheetImportDestination.InsertAsNewSheet) {
-          const newSheet = onCreateNewSheet()
-          if (!newSheet) {
-            return
-          }
-          const [name] = splitExtension(data.file.name)
-          onRenameSheet(newSheet.sheetId, name, newSheet.title)
-          sheetId = newSheet.sheetId
-          cellCoords = { rowIndex: 1, columnIndex: 1 }
-        }
-        if (data.destination === SheetImportDestination.ReplaceCurrentSheet) {
-          cellCoords = { rowIndex: 1, columnIndex: 1 }
-        }
-        onInsertFile(data.file, sheetId, cellCoords, {
-          preserveFormatting: data.shouldConvertCellContents,
-          replaceSheetData: data.destination === SheetImportDestination.ReplaceCurrentSheet,
-          enabledSharedStrings: true,
-          enableCellXfsRegistry: true,
+        const [name] = splitExtension(data.file.name)
+        onRenameSheet(newSheet.sheetId, name, newSheet.title)
+        sheetId = newSheet.sheetId
+        cellCoords = { rowIndex: 1, columnIndex: 1 }
+      }
+      if (data.destination === SheetImportDestination.ReplaceCurrentSheet) {
+        cellCoords = { rowIndex: 1, columnIndex: 1 }
+      }
+      onInsertFile(data.file, sheetId, cellCoords, {
+        preserveFormatting: data.shouldConvertCellContents,
+        replaceSheetData: data.destination === SheetImportDestination.ReplaceCurrentSheet,
+        enabledSharedStrings: true,
+        enableCellXfsRegistry: true,
+      })
+        .then(() => {
+          calculateNow({
+            shouldResetCellDependencyGraph: true,
+          }).catch(console.error)
         })
-          .then(() => {
-            calculateNow({
-              shouldResetCellDependencyGraph: true,
-            }).catch(console.error)
-          })
-          .catch(console.error)
-      }, SheetImportEvent),
-    [
-      application.eventBus,
-      calculateNow,
-      handleExcelFileImport,
-      importExcelFile,
-      onCreateNewSheet,
-      onInsertFile,
-      onRenameSheet,
-    ],
-  )
+        .catch(console.error)
+    })
+  }, [calculateNow, handleExcelFileImport, onCreateNewSheet, onInsertFile, onRenameSheet, subscribeToSheetImport])
 
   useEffect(() => {
-    return application.syncedState.subscribeToEvent('ScrollToUserCursorData', (data) => {
-      const userState = data.state as unknown as SheetsUserState
+    return subscribeToCollaboratorCursorNavigation((userState) => {
       state.goToCell(userState.sheetId, userState.activeCell.rowIndex, userState.activeCell.columnIndex)
     })
-  }, [application.syncedState, state])
+  }, [state, subscribeToCollaboratorCursorNavigation])
 
   if (importType) {
     return (
