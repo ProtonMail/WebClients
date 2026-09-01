@@ -21,6 +21,14 @@ import { readThreadDefinition } from './skills/reads/readThread';
 import type { AgentEmailRow } from './skills/reads/rows';
 import { searchDefinition } from './skills/reads/search';
 import { viewEmailsDefinition } from './skills/reads/viewEmails';
+import {
+    CosmeticSetting,
+    DensityToken,
+    GroupingToken,
+    LayoutToken,
+    changeSettingsDefinition,
+    readSettingsDefinition,
+} from './skills/settings/cosmetic';
 import type { MailToolDeps } from './toolModule';
 
 const anyReferences = {} as any;
@@ -131,6 +139,17 @@ const TOOL_PAYLOADS = [
     payloads(createLabelDefinition, [{ reference: 'label-m3n4p5', name: 'Receipts' }]),
     payloads(snoozeEmailsDefinition, [undefined]),
     payloads(updateFilterDefinition, [undefined]),
+    payloads(readSettingsDefinition, [
+        {
+            layout: LayoutToken.COLUMN,
+            conversation_grouping: GroupingToken.GROUPED,
+            density: DensityToken.COMFORTABLE,
+            theme: 'Proton',
+        },
+    ]),
+    payloads(changeSettingsDefinition, [
+        { setting: CosmeticSetting.LAYOUT, value: LayoutToken.ROW, previous: LayoutToken.COLUMN },
+    ]),
 ];
 
 const DIRECTIVES = [
