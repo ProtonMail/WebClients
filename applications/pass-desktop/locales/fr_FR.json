@@ -124,6 +124,9 @@
       "Bulk restore items from trash": [
         "Restaurer un groupe d'éléments depuis la corbeille"
       ],
+      "Bulk select items": [
+        "Sélectionner un groupe d'éléments"
+      ],
       "Cancel": [
         "Annuler"
       ],
@@ -364,9 +367,6 @@
       "Fill password": [
         "Remplir le mot de passe"
       ],
-      "Filter vault items": [
-        "Filtrer les éléments du coffre-fort"
-      ],
       "Generate alias": [
         "Générer un alias"
       ],
@@ -513,6 +513,9 @@
       ],
       "Move to Trash": [
         "Déplacer dans la corbeille"
+      ],
+      "Multiple select": [
+        "Sélection multiple"
       ],
       "New token": [
         "Nouveau jeton"
@@ -661,9 +664,6 @@
       "See members": [
         "Afficher les membres"
       ],
-      "Select items": [
-        "Sélectionner les éléments"
-      ],
       "Send email": [
         "Envoyer un message"
       ],
@@ -709,8 +709,8 @@
       "Skip": [
         "Ignorer"
       ],
-      "Sort vault items": [
-        "Trier les éléments du coffre-fort"
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Quelqu'un a partagé un élément avec vous sur ${ PASS_APP_NAME }."
       ],
       "Start from scratch": [
         "Démarrer sans données existantes"
@@ -911,6 +911,9 @@
       ],
       "Check if your passwords have been exposed": [
         "Vérifiez si vos mots de passe ont été compromis"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Vérification de ${ compromised.progress.completed } sur ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Créez des mots de passe uniques"
@@ -1407,6 +1410,9 @@
       "Trashing item failed": [
         "La suppression de l'élément n'a pas abouti."
       ],
+      "Try reaching out to the link owner.": [
+        "Essayez de contacter le propriétaire du lien."
+      ],
       "Unable to generate an OTP code for this item": [
         "Impossible de générer un mot de passe à usage unique (code OTP) pour cet élément."
       ],
@@ -1835,6 +1841,9 @@
       ],
       "Change your password": [
         "Modifier votre mot de passe"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Vérification de ${ compromised.progress.completed } mots de passe sur ${ compromised.progress.total }"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirmez votre mot de passe supplémentaire pour le retirer."
@@ -2787,6 +2796,9 @@
       ],
       "Verification code sent.": [
         "Le code de vérification a été envoyé."
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Consultez vos éléments ${ PASS_SHORT_APP_NAME } hors ligne. Votre mot de passe est nécessaire pour l'activer."
       ],
       "Viewer": [
         "Lecteur"
@@ -4042,6 +4054,9 @@
       "Theme": [
         "Thème"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Cet élément est accessible jusqu'au ${ date } ou jusqu'à ce que la limite de visualisation soit atteinte."
+      ],
       "Tier/Level": [
         "Niveau"
       ],
@@ -4940,6 +4955,9 @@
       "Domain ownership verification": [
         "Vérification de la propriété d'un domaine"
       ],
+      "Enable offline mode": [
+        "Activer le mode hors ligne"
+      ],
       "Encrypted import": [
         "Importation chiffrée"
       ],
@@ -5201,9 +5219,6 @@
       ],
       "Setup ${ PASS_APP_NAME } SSH Agent": [
         "Configurer l'agent SSH de ${ PASS_APP_NAME }"
-      ],
-      "Setup offline mode": [
-        "Configurer le mode hors ligne"
       ],
       "Share vaults with your team": [
         "Partagez vos coffres-forts avec votre équipe"

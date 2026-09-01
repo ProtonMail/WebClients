@@ -364,9 +364,6 @@
       "Fill password": [
         "Completar contraseña"
       ],
-      "Filter vault items": [
-        "Filtrar elementos de la bóveda"
-      ],
       "Generate alias": [
         "Generar alias"
       ],
@@ -661,9 +658,6 @@
       "See members": [
         "Ver miembros"
       ],
-      "Select items": [
-        "Seleccionar elementos"
-      ],
       "Send email": [
         "Enviar un correo electrónico"
       ],
@@ -709,8 +703,8 @@
       "Skip": [
         "Omitir"
       ],
-      "Sort vault items": [
-        "Ordenar elementos de la bóveda"
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Alguien compartió un elemento con usted en ${ PASS_APP_NAME }."
       ],
       "Start from scratch": [
         "Empezar desde cero"
@@ -914,6 +908,9 @@
       ],
       "Check if your passwords have been exposed": [
         "Compruebe si sus contraseñas han sido expuestas"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Comprobando ${ compromised.progress.completed } de ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Cree contraseñas únicas"
@@ -1410,6 +1407,9 @@
       "Trashing item failed": [
         "Error al eliminar el elemento"
       ],
+      "Try reaching out to the link owner.": [
+        "Intente comunicarse con el propietario del enlace."
+      ],
       "Unable to generate an OTP code for this item": [
         "No se puede generar un código OTP para este elemento"
       ],
@@ -1838,6 +1838,9 @@
       ],
       "Change your password": [
         "Cambie la contraseña"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Comprobando ${ compromised.progress.completed } de ${ compromised.progress.total } contraseñas"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirme su contraseña adicional para proceder con la eliminación."
@@ -2790,6 +2793,9 @@
       ],
       "Verification code sent.": [
         "Se envió el código de verificación."
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Vea sus elementos de ${ PASS_SHORT_APP_NAME } sin conexión. Requiere la contraseña para activarlo."
       ],
       "Viewer": [
         "Lector"
@@ -4045,6 +4051,9 @@
       "Theme": [
         "Tema"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Este elemento es accesible hasta el ${ date } o hasta que se alcance el límite de vistas."
+      ],
       "Tier/Level": [
         "Nivel"
       ],
@@ -4943,6 +4952,9 @@
       "Domain ownership verification": [
         "Verificación de la propiedad del dominio"
       ],
+      "Enable offline mode": [
+        "Activar el modo sin conexión"
+      ],
       "Encrypted import": [
         "Importación cifrada"
       ],
@@ -5204,9 +5216,6 @@
       ],
       "Setup ${ PASS_APP_NAME } SSH Agent": [
         "Configurar Agente SSH de ${ PASS_APP_NAME }"
-      ],
-      "Setup offline mode": [
-        "Configurar modo sin conexión"
       ],
       "Share vaults with your team": [
         "Comparta bóvedas con su equipo"

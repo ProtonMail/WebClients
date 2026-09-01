@@ -124,6 +124,9 @@
       "Bulk restore items from trash": [
         "Çöpteki ögeleri toplu olarak çıkar"
       ],
+      "Bulk select items": [
+        "Ögeleri toplu olarak seç"
+      ],
       "Cancel": [
         "İptal"
       ],
@@ -364,9 +367,6 @@
       "Fill password": [
         "Parolayı doldur"
       ],
-      "Filter vault items": [
-        "Kasa ögelerini süz"
-      ],
       "Generate alias": [
         "Takma ad üret"
       ],
@@ -513,6 +513,9 @@
       ],
       "Move to Trash": [
         "Çöpe at"
+      ],
+      "Multiple select": [
+        "Çoklu seçim"
       ],
       "New token": [
         "Yeni kod"
@@ -661,9 +664,6 @@
       "See members": [
         "Üyeleri görüntüle"
       ],
-      "Select items": [
-        "Ögeleri seçin"
-      ],
       "Send email": [
         "E-posta gönder"
       ],
@@ -709,8 +709,8 @@
       "Skip": [
         "Atla"
       ],
-      "Sort vault items": [
-        "Kasa ögelerini sırala"
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Birisi sizinle ${ PASS_APP_NAME } üzerinde bir öge paylaştı."
       ],
       "Start from scratch": [
         "Sıfırdan başla"
@@ -1412,6 +1412,9 @@
       ],
       "Trashing item failed": [
         "Öge çöpe atılamadı"
+      ],
+      "Try reaching out to the link owner.": [
+        "Bağlantının sahibiyle görüşmeyi deneyin."
       ],
       "Unable to generate an OTP code for this item": [
         "Bu öge için tek kullanımlık parola üretilemedi"
@@ -2797,6 +2800,9 @@
       "Verification code sent.": [
         "Doğrulama kodu gönderildi."
       ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "${ PASS_SHORT_APP_NAME } ögelerinizi çevrim dışı görüntüleyin. Açmak için parolanız gerekir."
+      ],
       "Viewer": [
         "Görüntüleyici"
       ],
@@ -4051,6 +4057,9 @@
       "Theme": [
         "Tema"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Bu ögeye ${ date } tarihine kadar veya görüntüleme sayısı sınırına ulaşılana kadar erişilebilir."
+      ],
       "Tier/Level": [
         "Sınıf/Düzey"
       ],
@@ -4949,6 +4958,9 @@
       "Domain ownership verification": [
         "Etki alanı sahipliği doğrulaması"
       ],
+      "Enable offline mode": [
+        "Çevrim dışı kip açılıyor"
+      ],
       "Encrypted import": [
         "Şifrelenmiş içe aktarma"
       ],
@@ -5210,9 +5222,6 @@
       ],
       "Setup ${ PASS_APP_NAME } SSH Agent": [
         "${ PASS_APP_NAME } SSH aracısını kur"
-      ],
-      "Setup offline mode": [
-        "Çevrim dışı kipi kur"
       ],
       "Share vaults with your team": [
         "Kasaları ekibinizle paylaşın"

@@ -124,6 +124,9 @@
       "Bulk restore items from trash": [
         "Ripristina in blocco gli elementi dal cestino"
       ],
+      "Bulk select items": [
+        "Seleziona elementi in blocco"
+      ],
       "Cancel": [
         "Annulla"
       ],
@@ -364,9 +367,6 @@
       "Fill password": [
         "Inserisci password"
       ],
-      "Filter vault items": [
-        "Filtra gli elementi della cassaforte"
-      ],
       "Generate alias": [
         "Genera alias"
       ],
@@ -513,6 +513,9 @@
       ],
       "Move to Trash": [
         "Sposta nel cestino"
+      ],
+      "Multiple select": [
+        "Selezione multipla"
       ],
       "New token": [
         "Nuovo token"
@@ -661,9 +664,6 @@
       "See members": [
         "Visualizza membri"
       ],
-      "Select items": [
-        "Seleziona elementi"
-      ],
       "Send email": [
         "Invia email"
       ],
@@ -709,8 +709,8 @@
       "Skip": [
         "Salta"
       ],
-      "Sort vault items": [
-        "Ordina gli elementi della cassaforte"
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Qualcuno ha condiviso un elemento con te su ${ PASS_APP_NAME }."
       ],
       "Start from scratch": [
         "Comincia da zero"
@@ -906,8 +906,17 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias email funziona come un indirizzo email, ma riduce lo spam e mantiene nascosti il tuo indirizzo email e la tua reale identità."
       ],
+      "Change these passwords immediately": [
+        "Modifica immediatamente queste password"
+      ],
       "Change your passwords": [
         "Cambia le tue password"
+      ],
+      "Check if your passwords have been exposed": [
+        "Verifica se le tue password sono state esposte"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Verifica di ${ compromised.progress.completed } su ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Crea password univoche"
@@ -962,6 +971,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Questo account è vulnerabile, visita il servizio e cambia la password."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Questa password di accesso appare in una violazione dei dati. Visita il servizio e modificala."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Questo servizio offre 2FA. Abilitalo per una maggiore sicurezza dell'account."
@@ -1392,11 +1404,17 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Si è verificato un errore durante la rimozione del link sicuro. Riprova tra qualche minuto."
       ],
+      "This invite is no longer available": [
+        "Questo invito non è più disponibile"
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Troppi tentativi errati. Effettua nuovamente l'accesso."
       ],
       "Trashing item failed": [
         "Cancellazione dell'elemento non riuscita"
+      ],
+      "Try reaching out to the link owner.": [
+        "Prova a contattare il proprietario del link."
       ],
       "Unable to generate an OTP code for this item": [
         "Impossibile generare il codice OTP per questo elemento"
@@ -1826,6 +1844,9 @@
       ],
       "Change your password": [
         "Cambia la password"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Verifica di ${ compromised.progress.completed } password su ${ compromised.progress.total } in corso."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Conferma la password aggiuntiva per procedere con la sua rimozione."
@@ -2775,6 +2796,9 @@
       ],
       "Verification code sent.": [
         "Codice di verifica inviato."
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Visualizza i tuoi elementi di ${ PASS_SHORT_APP_NAME } offline. Per abilitare la funzione è richiesta la password."
       ],
       "Viewer": [
         "Visualizzatore"
@@ -4030,6 +4054,9 @@
       "Theme": [
         "Tema"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Questo elemento è accessibile fino al ${ date } o fino al raggiungimento del limite di visualizzazioni."
+      ],
       "Tier/Level": [
         "Livello/Grado"
       ],
@@ -4834,6 +4861,12 @@
       "Clear clipboard": [
         "Svuota appunti"
       ],
+      "Compromised password": [
+        "Password compromessa"
+      ],
+      "Compromised passwords": [
+        "Password compromesse"
+      ],
       "Confirm extra password": [
         "Conferma la password aggiuntiva"
       ],
@@ -4921,6 +4954,9 @@
       ],
       "Domain ownership verification": [
         "Verifica della proprietà del dominio"
+      ],
+      "Enable offline mode": [
+        "Attiva la modalità offline"
       ],
       "Encrypted import": [
         "Importazione crittografata"
@@ -5049,6 +5085,9 @@
       ],
       "No access tokens yet": [
         "Ancora nessun token di accesso"
+      ],
+      "No compromised passwords": [
+        "Nessuna password compromessa"
       ],
       "No excluded items": [
         "Nessun elemento escluso"
@@ -5181,9 +5220,6 @@
       "Setup ${ PASS_APP_NAME } SSH Agent": [
         "Configurazione agente SSH ${ PASS_APP_NAME }"
       ],
-      "Setup offline mode": [
-        "Imposta la modalità offline"
-      ],
       "Share vaults with your team": [
         "Condividi le casseforti con il tuo team"
       ],
@@ -5237,6 +5273,9 @@
       ],
       "Update available": [
         "Aggiornamento disponibile"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Passa a un piano superiore per verificare le password compromesse"
       ],
       "URL matching": [
         "Corrispondenza URL"

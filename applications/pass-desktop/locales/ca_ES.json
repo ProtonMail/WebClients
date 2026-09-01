@@ -124,6 +124,9 @@
       "Bulk restore items from trash": [
         "Restaura un grup d'elements des de la paperera"
       ],
+      "Bulk select items": [
+        "Selecciona elements en massa"
+      ],
       "Cancel": [
         "Cancel·la"
       ],
@@ -364,9 +367,6 @@
       "Fill password": [
         "Emplena la contrasenya"
       ],
-      "Filter vault items": [
-        "Filtra els elements de la caixa forta"
-      ],
       "Generate alias": [
         "Genera un àlies"
       ],
@@ -513,6 +513,9 @@
       ],
       "Move to Trash": [
         "Mou a la paperera"
+      ],
+      "Multiple select": [
+        "Selecció múltiple"
       ],
       "New token": [
         "Nou testimoni"
@@ -661,9 +664,6 @@
       "See members": [
         "Mostra els membres"
       ],
-      "Select items": [
-        "Seleccionar els elements"
-      ],
       "Send email": [
         "Envia un correu electrònic"
       ],
@@ -709,8 +709,8 @@
       "Skip": [
         "Omet"
       ],
-      "Sort vault items": [
-        "Ordena els elements de la caixa forta"
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Algú ha posat un element compartit a la vostra disposició a ${ PASS_APP_NAME }."
       ],
       "Start from scratch": [
         "Comença des de zero"
@@ -1412,6 +1412,9 @@
       ],
       "Trashing item failed": [
         "No s'ha pogut moure l'element a la paperera"
+      ],
+      "Try reaching out to the link owner.": [
+        "Intenteu contactar el propietari de l'enllaç."
       ],
       "Unable to generate an OTP code for this item": [
         "No s'ha pogut generar un codi OTP per a aquest element"
@@ -2797,6 +2800,9 @@
       "Verification code sent.": [
         "Codi de verificació enviat."
       ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Visualitzeu els vostres elements de ${ PASS_SHORT_APP_NAME } sense connexió. Es requereix la vostra contrasenya per activar-ho."
+      ],
       "Viewer": [
         "Lector"
       ],
@@ -4051,6 +4057,9 @@
       "Theme": [
         "Tema"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Aquest element és accessible fins a ${ date } o fins que s'arribi al límit de visualitzacions."
+      ],
       "Tier/Level": [
         "Nivell"
       ],
@@ -4949,6 +4958,9 @@
       "Domain ownership verification": [
         "Verificació de la propietat del domini"
       ],
+      "Enable offline mode": [
+        "Activa el mode fora de línia"
+      ],
       "Encrypted import": [
         "Importació xifrada"
       ],
@@ -5210,9 +5222,6 @@
       ],
       "Setup ${ PASS_APP_NAME } SSH Agent": [
         "Configureu l'agent SSH de ${ PASS_APP_NAME }"
-      ],
-      "Setup offline mode": [
-        "Configureu el mode fora de línia"
       ],
       "Share vaults with your team": [
         "Compartiu caixes fortes amb el vostre equip"

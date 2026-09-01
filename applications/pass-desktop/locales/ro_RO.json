@@ -364,9 +364,6 @@
       "Fill password": [
         "Completare parolă"
       ],
-      "Filter vault items": [
-        "Filtrare articole seif"
-      ],
       "Generate alias": [
         "Generare alias"
       ],
@@ -661,9 +658,6 @@
       "See members": [
         "Afișare membri"
       ],
-      "Select items": [
-        "Selectare articole"
-      ],
       "Send email": [
         "Trimitere mesaj"
       ],
@@ -709,8 +703,8 @@
       "Skip": [
         "Omitere"
       ],
-      "Sort vault items": [
-        "Sortare articole seif"
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Cineva v-a partajat un articol în ${ PASS_APP_NAME }."
       ],
       "Start from scratch": [
         "De la început"
@@ -1417,6 +1411,9 @@
       ],
       "Trashing item failed": [
         "Punerea în gunoi a articolelor a eșuat."
+      ],
+      "Try reaching out to the link owner.": [
+        "Încercați să contactați proprietarul legăturii web."
       ],
       "Unable to generate an OTP code for this item": [
         "Nu se poate genera un cod OTP pentru acest articol."
@@ -2826,6 +2823,9 @@
       "Verification code sent.": [
         "Codul de verificare a fost trimis."
       ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Vizualizare locală articole din ${ PASS_SHORT_APP_NAME }. Necesită parola pentru activare."
+      ],
       "Viewer": [
         "Utilizator"
       ],
@@ -4097,6 +4097,9 @@
       "Theme": [
         "Tema"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Acest articol este disponibil până la ${ date } sau până când este atinsă limita de vizualizări."
+      ],
       "Tier/Level": [
         "Rang/Nivel"
       ],
@@ -5001,6 +5004,9 @@
       "Domain ownership verification": [
         "Verificarea deținerii domeniului"
       ],
+      "Enable offline mode": [
+        "Activare mod local"
+      ],
       "Encrypted import": [
         "Importare criptată"
       ],
@@ -5266,9 +5272,6 @@
       ],
       "Setup ${ PASS_APP_NAME } SSH Agent": [
         "Setare agent SSH ${ PASS_APP_NAME }"
-      ],
-      "Setup offline mode": [
-        "Configurare mod deconectat"
       ],
       "Share vaults with your team": [
         "Partajați seifuri cu echipa proprie"
