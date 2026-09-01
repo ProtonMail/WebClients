@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { orderAddresses } from '@proton/account/addresses/actions';
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { useModalState } from '@proton/components';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { getStatus } from '@proton/components/containers/addresses/helper';
