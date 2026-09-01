@@ -340,6 +340,9 @@
       "Edit vault": [
         "Editar bóveda"
       ],
+      "Enable": [
+        "Activar"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Activar ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -357,9 +360,6 @@
       ],
       "Fill password": [
         "Completar contraseña"
-      ],
-      "Filter vault items": [
-        "Filtrar elementos de la bóveda"
       ],
       "Generate alias": [
         "Generar alias"
@@ -643,9 +643,6 @@
       "See members": [
         "Ver miembros"
       ],
-      "Select items": [
-        "Seleccionar elementos"
-      ],
       "Send email": [
         "Enviar un correo electrónico"
       ],
@@ -690,9 +687,6 @@
       ],
       "Sign out": [
         "Cerrar sesión"
-      ],
-      "Sort vault items": [
-        "Ordenar elementos de la bóveda"
       ],
       "Start from scratch": [
         "Empezar desde cero"
@@ -885,6 +879,9 @@
       ],
       "Check if your passwords have been exposed": [
         "Compruebe si sus contraseñas han sido expuestas"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Comprobando ${ compromised.progress.completed } de ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Cree contraseñas únicas"
@@ -1860,6 +1857,9 @@
       ],
       "Change your password": [
         "Cambie la contraseña"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Comprobando ${ compromised.progress.completed } de ${ compromised.progress.total } contraseñas"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Seleccione una clave de acceso guardada para iniciar sesión en ${ domain }"
@@ -2861,6 +2861,9 @@
       ],
       "Verification code sent.": [
         "Se envió el código de verificación."
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Vea sus elementos de ${ PASS_SHORT_APP_NAME } sin conexión. Requiere la contraseña para activarlo."
       ],
       "Viewer": [
         "Lector"
@@ -4351,9 +4354,6 @@
       "Download": [
         "Descargar"
       ],
-      "Download \"${ filename }\"": [
-        "Descargar «${ filename }»"
-      ],
       "Download file": [
         "Descargar el archivo"
       ],
@@ -4431,9 +4431,6 @@
       ],
       "You can attach files to items for a better organization": [
         "Puede adjuntar archivos a los elementos para una mejor organización."
-      ],
-      "You may close this window after saving the file.": [
-        "Puede cerrar esta ventana después de guardar el archivo."
       ]
     },
     "Permission": {
@@ -4751,9 +4748,6 @@
       "${ BRAND_NAME } addresses": [
         "Direcciones de ${ BRAND_NAME }"
       ],
-      "${ PASS_APP_NAME } Logs": [
-        "Registro de ${ PASS_APP_NAME }"
-      ],
       "${ PASS_APP_NAME } Settings": [
         "Ajustes de ${ PASS_APP_NAME }"
       ],
@@ -4922,6 +4916,9 @@
       ],
       "Email": [
         "Correo"
+      ],
+      "Enable offline mode": [
+        "Activar el modo sin conexión"
       ],
       "Encrypted import": [
         "Importación cifrada"

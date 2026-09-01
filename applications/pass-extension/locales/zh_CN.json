@@ -340,6 +340,9 @@
       "Edit vault": [
         "编辑保险库"
       ],
+      "Enable": [
+        "启用"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "启用 ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -357,9 +360,6 @@
       ],
       "Fill password": [
         "填写密码"
-      ],
-      "Filter vault items": [
-        "筛选保险库项目"
       ],
       "Generate alias": [
         "生成别名"
@@ -643,9 +643,6 @@
       "See members": [
         "查看成员"
       ],
-      "Select items": [
-        "选择项目"
-      ],
       "Send email": [
         "发送邮件"
       ],
@@ -690,9 +687,6 @@
       ],
       "Sign out": [
         "登出"
-      ],
-      "Sort vault items": [
-        "对保险库项目排序"
       ],
       "Start from scratch": [
         "从零开始"
@@ -4294,9 +4288,6 @@
       "Download": [
         "下载"
       ],
-      "Download \"${ filename }\"": [
-        "下载 \"${ filename }\""
-      ],
       "Download file": [
         "下载文件"
       ],
@@ -4374,9 +4365,6 @@
       ],
       "You can attach files to items for a better organization": [
         "您可以将文件附加到项目上，以便更好地进行整理"
-      ],
-      "You may close this window after saving the file.": [
-        "保存文件后，您可以关闭此窗口。"
       ]
     },
     "Permission": {
@@ -4691,9 +4679,6 @@
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } 个地址"
-      ],
-      "${ PASS_APP_NAME } Logs": [
-        "${ PASS_APP_NAME } 日志"
       ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } 设置"

@@ -331,6 +331,9 @@
       "Edit vault": [
         "Editar la caja fuerte"
       ],
+      "Enable": [
+        "Activar"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Activa ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -348,9 +351,6 @@
       ],
       "Fill password": [
         "Rellenar contraseña"
-      ],
-      "Filter vault items": [
-        "Filtrar los elementos de la caja fuerte"
       ],
       "Generate alias": [
         "Generar alias"
@@ -675,9 +675,6 @@
       ],
       "Sign out": [
         "Cerrar sesión"
-      ],
-      "Sort vault items": [
-        "Ordenar los elementos de la caja fuerte"
       ],
       "Start from scratch": [
         "Empezar desde cero"
@@ -1296,6 +1293,12 @@
       ],
       "PIN codes do not match": [
         "Los códigos PIN no coinciden."
+      ],
+      "Regex invalid": [
+        "Expresión regular no válida"
+      ],
+      "Regex unsafe": [
+        "Expresión regular no segura"
       ],
       "Registration failure: ${ message }": [
         "Error del registro: ${ message }"
@@ -4309,9 +4312,6 @@
       "Download": [
         "Descargar"
       ],
-      "Download \"${ filename }\"": [
-        "Descargar «${ filename }»"
-      ],
       "Download file": [
         "Descargar el archivo"
       ],
@@ -4389,9 +4389,6 @@
       ],
       "You can attach files to items for a better organization": [
         "Puedes adjuntar archivos a los elementos para una mejor organización."
-      ],
-      "You may close this window after saving the file.": [
-        "Puedes cerrar esta ventana después de guardar el archivo."
       ]
     },
     "Permission": {
@@ -4708,9 +4705,6 @@
     "Title": {
       "${ BRAND_NAME } addresses": [
         "Direcciones de ${ BRAND_NAME }"
-      ],
-      "${ PASS_APP_NAME } Logs": [
-        "Registros de ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } Settings": [
         "Ajustes de ${ PASS_APP_NAME }"
