@@ -1,3 +1,13 @@
-import config from '@proton/eslint-config-proton/all';
+import { defineConfig } from 'eslint/config';
 
-export default config;
+import defaultConfig from '@proton/eslint-config-proton/all';
+import { iconRestrictedImports } from '@proton/eslint-config-proton/icon';
+
+export default defineConfig([
+    defaultConfig,
+    {
+        rules: {
+            '@typescript-eslint/no-restricted-imports': ['error', { paths: iconRestrictedImports }],
+        },
+    },
+]);

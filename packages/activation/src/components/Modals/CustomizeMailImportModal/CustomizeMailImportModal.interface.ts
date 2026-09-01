@@ -1,3 +1,12 @@
+import type { IconComponent } from '@proton/icons/component';
+import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
+import { IcEnvelopes } from '@proton/icons/icons/IcEnvelopes';
+import { IcFileLines } from '@proton/icons/icons/IcFileLines';
+import { IcFire } from '@proton/icons/icons/IcFire';
+import { IcInbox } from '@proton/icons/icons/IcInbox';
+import { IcPaperPlane } from '@proton/icons/icons/IcPaperPlane';
+import { IcStar } from '@proton/icons/icons/IcStar';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import type { Address, Label } from '@proton/shared/lib/interfaces';
 
 import type { MailImportFolder } from '../../../helpers/MailImportFoldersParser/MailImportFoldersParser';
@@ -12,19 +21,20 @@ export interface MailImportFields {
     importCategoriesDestination: MailImportDestinationFolder;
 }
 
-export const FOLDER_ICONS = {
-    [MailImportDestinationFolder.INBOX]: 'inbox',
-    [MailImportDestinationFolder.ALL_DRAFTS]: 'file-lines',
-    [MailImportDestinationFolder.ALL_SENT]: 'paper-plane',
-    [MailImportDestinationFolder.TRASH]: 'trash',
-    [MailImportDestinationFolder.SPAM]: 'fire',
-    [MailImportDestinationFolder.ARCHIVE]: 'archive-box',
-    [MailImportDestinationFolder.SENT]: 'paper-plane',
-    [MailImportDestinationFolder.DRAFTS]: 'file-lines',
-    [MailImportDestinationFolder.STARRED]: 'star',
-    [MailImportDestinationFolder.ALL_MAIL]: 'envelopes',
-    [MailImportDestinationFolder.ALMOST_ALL_MAIL]: 'envelopes',
-} as const;
+/** This module is a `.ts` file, so the icons are components rather than elements. */
+export const FOLDER_ICONS: Record<MailImportDestinationFolder, IconComponent> = {
+    [MailImportDestinationFolder.INBOX]: IcInbox,
+    [MailImportDestinationFolder.ALL_DRAFTS]: IcFileLines,
+    [MailImportDestinationFolder.ALL_SENT]: IcPaperPlane,
+    [MailImportDestinationFolder.TRASH]: IcTrash,
+    [MailImportDestinationFolder.SPAM]: IcFire,
+    [MailImportDestinationFolder.ARCHIVE]: IcArchiveBox,
+    [MailImportDestinationFolder.SENT]: IcPaperPlane,
+    [MailImportDestinationFolder.DRAFTS]: IcFileLines,
+    [MailImportDestinationFolder.STARRED]: IcStar,
+    [MailImportDestinationFolder.ALL_MAIL]: IcEnvelopes,
+    [MailImportDestinationFolder.ALMOST_ALL_MAIL]: IcEnvelopes,
+};
 
 export interface FolderMapItem extends MailImportFolder {
     disabled: boolean;
