@@ -1,15 +1,9 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
 import type { DownloadController, ProtonDriveClient, SeekableReadableStream } from '@proton/drive';
-import { canHtmlVideoPlay } from '@proton/drive/modules/thumbnails';
 
 import { initDownloadSW } from '../../modules/fileSaver/download';
 import { useVideoStreaming } from './streaming';
-
-jest.mock('@proton/drive/modules/thumbnails', () => ({
-    canHtmlVideoPlay: jest.fn(),
-}));
-const mockedCanHtmlVideoPlay = jest.mocked(canHtmlVideoPlay);
 
 jest.mock('../../modules/fileSaver/download');
 const mockedInitDownloadSW = jest.mocked(initDownloadSW);
@@ -60,7 +54,6 @@ async function waitForUrl(getUrl: () => string | undefined, expected: string) {
 
 describe('useVideoStreaming', () => {
     beforeEach(() => {
-        mockedCanHtmlVideoPlay.mockReturnValue(true);
         mockedInitDownloadSW.mockResolvedValue(undefined);
 
         Object.defineProperty(navigator, 'serviceWorker', {

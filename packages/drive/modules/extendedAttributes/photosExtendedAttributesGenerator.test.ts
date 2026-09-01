@@ -45,7 +45,7 @@ describe('generatePhotosExtendedAttributes', () => {
             duration: 120,
         });
         expect(getPhotoTags).toHaveBeenCalledWith(file, 'image/jpeg', mockExifInfo);
-        expect(getCaptureDateTime).toHaveBeenCalledWith(file, mockExifInfo.exif);
+        expect(getCaptureDateTime).toHaveBeenCalledWith(file, mockExifInfo.exif, null);
 
         expect(result).toEqual({
             metadata: expectedMetadata,
@@ -65,7 +65,7 @@ describe('generatePhotosExtendedAttributes', () => {
 
         await generatePhotosExtendedAttributes(file, 'image/jpeg');
 
-        expect(getCaptureDateTime).toHaveBeenCalledWith(file, undefined);
+        expect(getCaptureDateTime).toHaveBeenCalledWith(file, undefined, null);
         expect(getPhotoTags).toHaveBeenCalledWith(file, 'image/jpeg', undefined);
     });
 

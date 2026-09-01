@@ -1,6 +1,5 @@
 import type { NodeEntity } from '@proton/drive';
 import { MemberRole, NodeType, RevisionState } from '@proton/drive';
-import { canHtmlVideoPlay } from '@proton/drive/modules/thumbnails';
 import { isHEICSupported } from '@proton/shared/lib/helpers/mimetype';
 
 import { ContentPreviewMethod, getContentPreviewMethod } from './content';
@@ -10,16 +9,7 @@ jest.mock('@proton/shared/lib/helpers/mimetype', () => ({
     isHEICSupported: jest.fn(),
 }));
 
-jest.mock('@proton/drive/modules/thumbnails', () => ({
-    canHtmlVideoPlay: jest.fn(),
-}));
-
 const mockedIsHEICSupported = jest.mocked(isHEICSupported);
-const mockedCanHtmlVideoPlay = jest.mocked(canHtmlVideoPlay);
-
-beforeEach(() => {
-    mockedCanHtmlVideoPlay.mockReturnValue(true);
-});
 
 describe('getContentPreviewMethod', () => {
     const baseDate = new Date();
@@ -69,9 +59,7 @@ describe('getContentPreviewMethod', () => {
         expect(result).toBe(ContentPreviewMethod.Streaming);
     });
 
-    it('should return Thumbnail for video the browser cannot decode (e.g. AVI)', () => {
-        mockedCanHtmlVideoPlay.mockReturnValue(false);
-
+    it('should return Streaming even for a video mimeType the browser reports as undecodable (e.g. AVI) — the stored mimeType is extension-derived and can be wrong, so the actual player decides', () => {
         const node: NodeEntity = {
             ...baseNodeProps,
             mediaType: 'video/x-msvideo',
@@ -79,7 +67,7 @@ describe('getContentPreviewMethod', () => {
 
         const result = getContentPreviewMethod(node);
 
-        expect(result).toBe(ContentPreviewMethod.Thumbnail);
+        expect(result).toBe(ContentPreviewMethod.Streaming);
     });
 
     it('should return Buffer for image/jpeg', () => {

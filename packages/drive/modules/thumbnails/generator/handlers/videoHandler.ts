@@ -8,7 +8,7 @@ import { FileLoadError, UnsupportedFormatError } from '../thumbnailError';
 import { BaseHandler } from './baseHandler';
 import type { ThumbnailGenerationResult } from './interfaces';
 import { getImageFromCanvas } from './utils/getImageFromCanvas';
-import { parseMp4Metadata } from './utils/mp4BoxParser';
+import { isIsoBmffContainer, parseMp4Metadata } from './utils/mp4BoxParser';
 
 export class VideoHandler extends BaseHandler {
     readonly handlerName = 'VideoHandler';
@@ -46,8 +46,9 @@ export class VideoHandler extends BaseHandler {
             });
         }
 
-        const canPlay = canHtmlVideoPlay(originalMimeType);
-        if (!canPlay) {
+        const playsAsIs = canHtmlVideoPlay(originalMimeType);
+        const playsAsMp4 = !playsAsIs && (await this.canPlayAsMp4(content, originalMimeType));
+        if (!playsAsIs && !playsAsMp4) {
             throw new UnsupportedFormatError('video format not supported by browser', {
                 context: {
                     stage: 'canPlayType check',
@@ -57,12 +58,16 @@ export class VideoHandler extends BaseHandler {
             });
         }
 
+        // Safari honours the blob's own MIME type for `<video src>`, so a mislabeled MP4 has to be
+        // re-typed for the fallback to work there. Blob parts are references, so this doesn't copy.
+        const videoContent = playsAsMp4 ? new Blob([content], { type: 'video/mp4' }) : content;
+
         const perf = this.createPerformanceTracker(debug);
 
         let videoInfo;
         try {
             perf.start('videoFrameExtraction');
-            videoInfo = await this.extractVideoFrame(content);
+            videoInfo = await this.extractVideoFrame(videoContent);
             perf.end('videoFrameExtraction');
         } catch (error) {
             perf.end('videoFrameExtraction');
@@ -99,6 +104,17 @@ export class VideoHandler extends BaseHandler {
         } finally {
             URL.revokeObjectURL(img.src);
         }
+    }
+
+    // A file can be mislabeled by extension (e.g. Google Takeout renaming an MP4 export to `.avi`),
+    // making `canHtmlVideoPlay(originalMimeType)` reject bytes the browser could actually decode fine
+    // as MP4. Confirm via the container's own `ftyp` box before falling back to `video/mp4`.
+    private async canPlayAsMp4(content: Blob, originalMimeType: string): Promise<boolean> {
+        if (originalMimeType === 'video/mp4') {
+            return false;
+        }
+        const header = await content.slice(0, 12).arrayBuffer();
+        return isIsoBmffContainer(header) && canHtmlVideoPlay('video/mp4');
     }
 
     // HEVC/H.265 is the only common codec that causes browsers to hang during
