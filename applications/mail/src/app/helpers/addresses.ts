@@ -1,17 +1,9 @@
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import type { Address, Key } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces';
 import { getAddressFromPlusAlias, getByEmail } from '@proton/shared/lib/mail/addresses';
 
-/**
- * Check if the address is fallback (Can't receive but has keys)
- */
-export const isFallbackAddress = (address?: Address, keys: Key[] = []) =>
-    !!address && !address.Receive && !!keys.length;
-
 export const isDirtyAddress = ({ Keys, Status }: Address) => !Keys.length || Status === ADDRESS_STATUS.STATUS_DISABLED;
-
-export const isOwnAddress = (address?: Address, keys: Key[] = []) => !!address && !isFallbackAddress(address, keys);
 
 export const isSelfAddress = (email: string | undefined, addresses: Address[]) =>
     !!addresses.find(({ Email }) => canonicalizeInternalEmail(Email) === canonicalizeInternalEmail(email || ''));

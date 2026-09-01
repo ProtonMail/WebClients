@@ -7,7 +7,6 @@ import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { loadEOMessage, loadEOToken } from '../../../store/eo/eoActions';
 import type { EOStore } from '../../../store/eo/eoStore';
 import type { EOMessage, EOMessageReply } from '../../../store/eo/eoType';
-import { convertEOtoMessageState } from '../../eo/message';
 import { addApiMock, api, clearApiMocks } from '../api';
 import { base64Cache, clearCache } from '../cache';
 import { generateKeys } from '../crypto';
@@ -50,21 +49,18 @@ export interface EOOriginalMessageOptions {
 }
 
 export const validID = 'validID';
-export const invalidID = 'invalidID';
 
 export const EODecryptedToken = 'decryptedToken';
 export const EOPassword = 'password';
 export const EOInvalidPassword = 'invalidPassword';
 
-export const EOLocalID = 'eoLocalID';
-
 export const EOSubject = 'Test EO subject';
 export const EOBody = 'Test EO body';
 
-export const EOSender = { Name: 'EO Sender', Address: 'EOsender@protonmail.com' } as Recipient;
-export const EORecipient = { Name: 'EO Recipient', Address: 'EOrecipient@protonmail.com' } as Recipient;
+const EOSender = { Name: 'EO Sender', Address: 'EOsender@protonmail.com' } as Recipient;
+const EORecipient = { Name: 'EO Recipient', Address: 'EOrecipient@protonmail.com' } as Recipient;
 
-export const getEOOriginalMessage = async (options?: EOOriginalMessageOptions) => {
+const getEOOriginalMessage = async (options?: EOOriginalMessageOptions) => {
     return {
         Attachments: options?.attachments || ([] as Attachment[]),
         Body: await getEOEncryptedMessage(options?.body || EOBody, EOPassword),
@@ -78,11 +74,6 @@ export const getEOOriginalMessage = async (options?: EOOriginalMessageOptions) =
         Replies: options?.replies || ([] as EOMessageReply[]),
         MIMEType: MIME_TYPES.DEFAULT,
     } as EOMessage;
-};
-
-export const getEOMessageState = async () => {
-    const EOOriginalMessage = await getEOOriginalMessage();
-    return convertEOtoMessageState(EOOriginalMessage, EOLocalID);
 };
 
 export const EOInitStore = async ({ options, store }: { options?: EOOriginalMessageOptions; store: EOStore }) => {

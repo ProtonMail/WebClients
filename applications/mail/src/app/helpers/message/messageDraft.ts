@@ -20,16 +20,14 @@ import {
 import generateUID from '@proton/utils/generateUID';
 import unique from '@proton/utils/unique';
 
-import { createHTMLDraftContent } from './draftContent/html';
-import { createPlaintextDraftContent } from './draftContent/plaintext';
-
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import { getFromAddress } from '../addresses';
 import { convertToFile } from '../attachment/attachmentConverter';
 import { getExpiresIn } from '../expiration';
+import { createHTMLDraftContent } from './draftContent/html';
+import { createPlaintextDraftContent } from './draftContent/plaintext';
 import { getEmbeddedImages, getRemoteImages, updateImages } from './messageImages';
 
-export { CLASSNAME_BLOCKQUOTE } from './messageDraftConstants';
 export { formatRecipientsString } from './messageDraftFormat';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
@@ -67,7 +65,7 @@ const newCopy = (
 /**
  * Format and build a reply
  */
-export const reply = (referenceMessage: PartialMessageState, useEncrypted = false): PartialMessageState => {
+const reply = (referenceMessage: PartialMessageState, useEncrypted = false): PartialMessageState => {
     const Subject = formatSubject(
         useEncrypted ? referenceMessage.decryption?.decryptedSubject : referenceMessage.data?.Subject,
         RE_PREFIX()
@@ -88,7 +86,7 @@ export const reply = (referenceMessage: PartialMessageState, useEncrypted = fals
 /**
  * Format and build a replyAll
  */
-export const replyAll = (
+const replyAll = (
     referenceMessage: PartialMessageState,
     useEncrypted = false,
     addresses: Address[]

@@ -13,7 +13,7 @@ import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import { referenceName } from '../organise/emailSelection';
 
 /** Every editable param of this tool — and, because each is user words, every free-text one. */
-export enum FilterField {
+enum FilterField {
     NAME = 'name',
     SIEVE = 'sieve',
 }

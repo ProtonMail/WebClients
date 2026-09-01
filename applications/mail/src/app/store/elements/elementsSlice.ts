@@ -94,7 +94,6 @@ import { pollTaskRunning } from './elementsTaskRunning';
 import type { ElementsStateParams, TaskRunningInfo } from './elementsTypes';
 
 export { newElementsState } from './elementsInitialState';
-export { pollTaskRunning } from './elementsTaskRunning';
 
 const name = 'elements';
 const elementsSlice = createSlice({

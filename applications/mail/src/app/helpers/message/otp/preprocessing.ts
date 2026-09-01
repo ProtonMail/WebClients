@@ -45,7 +45,7 @@ export function collapseTagWhitespace(html: string): string {
     return html.replace(/['"]/g, '').replace(BETWEEN_TAG_WS_RE, '$1');
 }
 
-export function textNodes(doc: Document): string[] {
+function textNodes(doc: Document): string[] {
     const body = doc.body;
     if (!body) {
         return [];

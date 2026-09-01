@@ -6,16 +6,16 @@ import createListeners from '@proton/shared/lib/helpers/listeners';
 
 import config from '../config';
 
-export type HTTPHeaders = { [key: string]: string };
+type HTTPHeaders = { [key: string]: string };
 
-export enum HTTP_METHODS {
+enum HTTP_METHODS {
     GET = 'get',
     POST = 'post',
     PUT = 'put',
     DELETE = 'delete',
 }
 
-export enum HTTP_INPUTS {
+enum HTTP_INPUTS {
     FORM_DATA = 'form',
 }
 

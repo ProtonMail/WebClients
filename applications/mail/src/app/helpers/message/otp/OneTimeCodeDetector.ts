@@ -11,7 +11,7 @@ import { predictStrict, scoreCodes } from './scoring';
 
 export type { OneTimeCodeInput } from './normalize';
 
-export interface OneTimeCodeResult {
+interface OneTimeCodeResult {
     code: string | null;
 }
 

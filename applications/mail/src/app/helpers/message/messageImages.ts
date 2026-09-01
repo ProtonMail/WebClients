@@ -83,7 +83,7 @@ export const restoreImages = (inputDocument: Element | undefined, images: Messag
 /**
  * Restore all prefixed attributes
  */
-export const restoreAllPrefixedAttributes = (content: string) => {
+const restoreAllPrefixedAttributes = (content: string) => {
     const regex = new RegExp(REGEXP_FIXER, 'g');
     return content.replace(regex, (_, $1) => $1.substring(7));
 };

@@ -39,7 +39,7 @@ import * as scheduledAction from './scheduled/scheduledActions';
 import * as scheduledReducer from './scheduled/scheduledReducers';
 
 const name = 'messages';
-export const messagesSlice = createSlice({
+const messagesSlice = createSlice({
     name,
     initialState: {} as MessagesState,
     reducers: {},

@@ -124,7 +124,7 @@ export const getStoredUserKey = (key: GeneratedKey | undefined): DecryptedKey[] 
     return key ? [{ ID: '123', publicKey: key.publicKeys[0], privateKey: key.privateKeys[0] }] : [];
 };
 
-export const getStoredAddressKey = (address: Address, keys: GeneratedKey[] | undefined): DecryptedAddressKey[] => {
+const getStoredAddressKey = (address: Address, keys: GeneratedKey[] | undefined): DecryptedAddressKey[] => {
     if (!keys) {
         return [];
     }

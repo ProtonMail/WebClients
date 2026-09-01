@@ -8,6 +8,7 @@ import { clearApiContacts } from './contact';
 import { clearApiKeys } from './crypto';
 import { eventManagerListeners } from './event-manager';
 
+export { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
 export * from './api';
 export * from './assertion';
 export * from './cache';
@@ -78,22 +79,6 @@ export const waitForEventManagerCall = async () => {
     await waitForSpyCall({ spy: call });
 };
 
-export const getModal = () => {
-    const modal =
-        (document.querySelector('dialog[aria-modal="true"]') as HTMLDialogElement | null) ||
-        (document.querySelector('div[class="modal"]') as HTMLDialogElement | null);
-
-    if (!modal) {
-        throw new Error('No modal was on screen');
-    }
-
-    const submit = modal.querySelector('button[type="submit"]') as HTMLButtonElement | null;
-    const cancel = modal.querySelector('button[type="reset"]') as HTMLButtonElement | null;
-    const close = modal.querySelector('button.modal-close') as HTMLButtonElement | null;
-
-    return { modal, submit, cancel, close };
-};
-
 export const getDropdown = () =>
     waitFor(
         () => {
@@ -142,4 +127,3 @@ export const waitForNoNotification = (timeout = 8000) =>
             timeout,
         }
     );
-export { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';

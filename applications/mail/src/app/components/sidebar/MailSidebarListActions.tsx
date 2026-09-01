@@ -24,7 +24,7 @@ interface FoldersProps {
     items: Folder[];
 }
 
-export type Props = LabelsProps | FoldersProps;
+type Props = LabelsProps | FoldersProps;
 
 const MailSidebarListActions = ({ type, items }: Props) => {
     const [user] = useUser();

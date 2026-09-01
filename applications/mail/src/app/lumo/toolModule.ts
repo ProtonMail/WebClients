@@ -32,7 +32,7 @@ import type { markAll as markAllAction } from '../store/elements/elementsActions
 import type { MailStore } from '../store/store';
 
 /** The single-location apply mutation, as exposed by `useApplyLocation`. */
-export type ApplyLocation = (
+type ApplyLocation = (
     params: ApplyLocationMoveProps | ApplyLocationLabelProps | ApplyLocationStarProps
 ) => Promise<PromiseSettledResult<string | undefined>[]>;
 

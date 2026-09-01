@@ -223,8 +223,6 @@ export const backendActionStarted = createAction<void>('elements/action/started'
 
 export const backendActionFinished = createAction<void>('elements/action/finished');
 
-export { pollTaskRunning } from './elementsTaskRunning';
-
 export const moveAll = createAsyncThunk<
     { LabelID?: string; timeoutID?: NodeJS.Timeout },
     { SourceLabelID: string; DestinationLabelID: string },

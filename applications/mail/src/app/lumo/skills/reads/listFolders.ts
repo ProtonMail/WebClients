@@ -5,7 +5,7 @@ import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/cont
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import { serializeCatalogue } from './catalogue';
 
-export interface FolderSummary {
+interface FolderSummary {
     reference: string;
     name: string;
     /** Parent folder reference, or null for a top-level folder. */

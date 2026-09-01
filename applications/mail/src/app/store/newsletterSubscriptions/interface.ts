@@ -8,12 +8,6 @@ export enum SubscriptionTabs {
     Active = 'active',
     Unsubscribe = 'unsubscribe',
 }
-export type ActiveValues = '0' | '1';
-
-export interface SubscriptionCounts {
-    active: number;
-    unsubscribe: number;
-}
 
 export enum SortSubscriptionsValue {
     LastRead = 'last-read',
@@ -22,12 +16,6 @@ export enum SortSubscriptionsValue {
     Alphabetical = 'alphabetical',
     RecentlyRead = 'recently-read',
     RecentlyReceived = 'recently-received',
-}
-
-export interface UpdateSubscriptionParams {
-    idToUpdate: string;
-    subscription: NewsletterSubscription;
-    keys: Partial<NewsletterSubscription>;
 }
 
 export interface NewsletterSubscriptionsTabState {
