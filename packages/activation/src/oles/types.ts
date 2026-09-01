@@ -8,7 +8,7 @@ import type { ConnectionState } from './useConnectionState';
 
 export type Product = ApiImporterProduct;
 
-export type TimePeriod = 'all' | '1yr' | '2yr' | '5yr';
+type TimePeriod = 'all' | '1yr' | '2yr' | '5yr';
 
 export type JoiningLink = {
     token: string;

@@ -1,6 +1,6 @@
 import { createAction, createSlice } from '@reduxjs/toolkit';
 
-export interface BYOEFlowState {
+interface BYOEFlowState {
     connectedAddress: string | null;
     stepModal: 'moreStorage' | 'success' | null;
     skipImport: boolean;

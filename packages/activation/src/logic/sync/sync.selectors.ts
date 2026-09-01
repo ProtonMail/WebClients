@@ -5,7 +5,7 @@ import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import type { EasySwitchState } from '../store';
 import type { SyncMap, SyncState } from './sync.interface';
 
-export const selectSyncStore = (state: EasySwitchState): SyncState => state.sync;
+const selectSyncStore = (state: EasySwitchState): SyncState => state.sync;
 export const selectSync = (state: EasySwitchState): SyncMap => state.sync.syncs;
 
 export const selectCreateSyncState = createSelector(selectSyncStore, (state) => state.creatingLoading);
