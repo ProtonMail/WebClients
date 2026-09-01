@@ -11,7 +11,7 @@ import { IcMinus } from '@proton/icons/icons/IcMinus';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectPreviousMeetingLink } from '@proton/meet/store/slices/meetAppStateSlice';
-import { isValidMeetingLink, parseMeetingLink } from '@proton/meet/utils/parseMeetingLink';
+import { isValidMeetingLink, parseMeetingLink } from '@proton/shared/lib/meet/parseMeetingLink';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useFeedback } from '../../../hooks/useFeedback';

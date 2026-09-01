@@ -1,4 +1,5 @@
-import { BASE_PASSWORD_LENGTH, MEETING_LINK_ID_LENGTH } from '../constants';
+export const BASE_PASSWORD_LENGTH = 12;
+export const MEETING_LINK_ID_LENGTH = 10;
 
 export const parseMeetingLink = (link: string) => {
     const parts = link.split('#');

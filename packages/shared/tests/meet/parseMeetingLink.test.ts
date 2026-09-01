@@ -1,4 +1,4 @@
-import { parseMeetingLink } from './parseMeetingLink';
+import { parseMeetingLink } from '../../lib/meet/parseMeetingLink';
 
 describe('parseMeetingLink', () => {
     it('should parse a valid meeting link', () => {
