@@ -110,3 +110,67 @@ input[type='radio'] {
 :root {
 	--rnc-border: 0 0% 94%;
 }
+
+[data-theme-mode='dark'] {
+	--rnc-border: 0 0% 31.2%;
+
+	body {
+		background: var(--background-weak);
+		color: var(--text-norm);
+	}
+
+	// Sheets still has legacy neutral colors embedded in utility classes. Keep this temporary
+	// compatibility layer scoped to dark mode while the editor UI moves to design-system tokens.
+	.bg-\[white\],
+	.bg-\[\#F9FBFC\],
+	.bg-\[\#F9FCFA\],
+	.bg-\[\#FAFAFA\] {
+		background-color: var(--background-norm) !important;
+	}
+
+	.text-\[\#0C0C14\],
+	.text-\[\#0B0B0B\],
+	.text-\[\#281D1B\] {
+		color: var(--text-norm) !important;
+	}
+
+	.text-\[\#5C5958\],
+	.text-\[\#707070\] {
+		color: var(--text-weak) !important;
+	}
+
+	.text-\[\#8F8D8A\],
+	.text-\[\#949494\] {
+		color: var(--text-hint) !important;
+	}
+
+	.border-\[\#EAE7E4\],
+	.border-\[\#D1CFCD\],
+	.border-\[\#DEDBD9\],
+	.border-\[\#E9E9E9\],
+	.border-\[\#DEDEDE\],
+	.border-\[\#ADABA8\] {
+		border-color: var(--border-norm) !important;
+	}
+
+	input,
+	select,
+	textarea,
+	[contenteditable='true'] {
+		background-color: var(--background-norm);
+		color: var(--text-norm);
+	}
+
+	svg [fill='#000'],
+	svg [fill='#0C0C14'] {
+		fill: var(--text-norm);
+	}
+
+	svg [fill='#5C5958'] {
+		fill: var(--text-weak);
+	}
+
+	svg [stroke='#0C0C14'] {
+		stroke: var(--text-norm);
+	}
+}

@@ -35,7 +35,7 @@ export function CloudSlashIcon(props: ComponentPropsWithoutRef<'svg'>) {
 export function WordCountIcon(props: ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 17" {...props}>
-      <g fill="#000">
+      <g fill="currentColor">
         <path
           fillRule="evenodd"
           d="M1 10.122c0-.276.249-.5.556-.5h12.888c.307 0 .556.224.556.5s-.249.5-.556.5H1.556c-.307 0-.556-.224-.556-.5Zm0 3c0-.276.249-.5.556-.5h8.888c.307 0 .556.224.556.5s-.249.5-.556.5H1.556c-.307 0-.556-.224-.556-.5Z"

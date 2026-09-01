@@ -29,7 +29,7 @@ import * as Atoms from '../atoms'
 import { c } from 'ttag'
 import * as Ariakit from '@ariakit/react'
 import omit from 'lodash/omit'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import { createStringifier } from '../../stringifier'
 import { forwardRef, Fragment, useState, useMemo, useEffect } from 'react'
 import * as Icons from '../icons'
@@ -383,7 +383,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                 <FormGroup>
                   <FormLabel>{s('Preview')}</FormLabel>
                   <div
-                    className="flex h-[48px] items-center justify-center rounded-lg bg-[#F5F4F2]"
+                    className="flex h-[48px] items-center justify-center rounded-lg bg-[#F5F4F2] [[data-theme-mode=dark]_&]:!bg-[--background-weak]"
                     style={createRulePreviewStyle(booleanRule?.format, theme)}
                   >
                     <span className="text-sm">AaBbCcYyZz</span>
@@ -653,7 +653,7 @@ function Rule({ rule, sheetId, onDeleteRule, theme, onSelect }: RuleProps) {
       <div className="flex min-w-0 grow items-center gap-3">
         <div
           style={createRulePreviewStyle(rule.booleanRule?.format, theme)}
-          className="relative isolate flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-lg text-sm ring-[0.5px] ring-inset ring-[black]/15"
+          className="relative isolate flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-lg text-sm ring-[0.5px] ring-inset ring-[black]/15 [[data-theme-mode=dark]_&]:!bg-[--background-weak] [[data-theme-mode=dark]_&]:!ring-[--border-weak]"
         >
           {rule.gradientRule ? (
             <div className="absolute inset-0 -z-10">

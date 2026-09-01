@@ -73,6 +73,12 @@ interface Props {
     children: ReactNode;
     persist?: boolean;
     initialThemeSetting?: ThemeSetting | (() => ThemeSetting);
+    /**
+     * Replaces the user's selected variant for each mode while preserving whether light or dark mode is active.
+     * This lets an app support one fixed light theme and one fixed dark theme without exposing every variant.
+     */
+    constrainedLightTheme?: ThemeTypes;
+    constrainedDarkTheme?: ThemeTypes;
 }
 
 export const useTheme = () => {
@@ -141,6 +147,8 @@ const ThemeProvider = ({
     appName,
     persist = true,
     initialThemeSetting = defaultInitialThemeSetting,
+    constrainedLightTheme,
+    constrainedDarkTheme,
 }: Props) => {
     const [themeSetting, setThemeSettingDefault] = useState(initialThemeSetting);
 
@@ -162,8 +170,16 @@ const ThemeProvider = ({
             };
         }
 
+        if (constrainedLightTheme !== undefined || constrainedDarkTheme !== undefined) {
+            return {
+                ...themeSetting,
+                ...(constrainedLightTheme !== undefined && { LightTheme: constrainedLightTheme }),
+                ...(constrainedDarkTheme !== undefined && { DarkTheme: constrainedDarkTheme }),
+            };
+        }
+
         return themeSetting;
-    }, [themeSetting]);
+    }, [themeSetting, constrainedDarkTheme, constrainedLightTheme]);
 
     const setThemeSetting = useCallback((theme: ThemeSetting = getDefaultThemeSetting()) => {
         setThemeSettingDefault((oldTheme: ThemeSetting) => {

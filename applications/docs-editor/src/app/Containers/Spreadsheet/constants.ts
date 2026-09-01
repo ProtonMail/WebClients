@@ -174,19 +174,23 @@ export const FUNCTION_DESCRIPTIONS = functionDescriptions.filter(
     !EXCLUDED_FUNCTION_NAMES.includes(fn.title.toLowerCase()),
 )
 
-export const GRID_THEME_PROPS: Partial<CanvasGridProps> = {
-  headerBackgroundColor: '#FAFAFA',
-  headerColor: '#666666',
-  headerActiveBackgroundColor: '#E3F9EB',
+export const GRID_SELECTION_THEME_PROPS = {
   headerSelectedBackgroundColor: '#1EA885',
   selectionBorderColor: '#4DB89D',
   selectionBackgroundColor: 'rgba(80, 200, 120, 0.1)',
   selectionDragBorderColor: '#1EA885',
+  headerTableSelectedBackgroundColor: '#1EA885',
+} satisfies Partial<CanvasGridProps>
+
+export const GRID_THEME_PROPS: Partial<CanvasGridProps> = {
+  headerBackgroundColor: '#FAFAFA',
+  headerColor: '#666666',
+  headerActiveBackgroundColor: '#E3F9EB',
+  ...GRID_SELECTION_THEME_PROPS,
   gridLineColor: '#E1E1E1',
   headerBorderColor: '#E1E1E1',
   headerTableBackgroundColor: '#FAFAFA',
   headerTableActiveBackgroundColor: '#E3F9EB',
-  headerTableSelectedBackgroundColor: '#1EA885',
   frozenShadowColor: '#d9d9d9',
   frozenShadowThickness: 4,
 }
