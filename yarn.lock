@@ -15557,18 +15557,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tpe/quark-client@npm:1.17.0":
-  version: 1.17.0
-  resolution: "@tpe/quark-client@npm:1.17.0::__archiveUrl=https%3A%2F%2Fgitlab.protontech.ch%2Fapi%2Fv4%2Fprojects%2F4357%2Fpackages%2Fnpm%2F%40tpe%2Fquark-client%2F-%2F%40tpe%2Fquark-client-1.17.0.tgz"
+"@tpe/quark-client@npm:1.18.2":
+  version: 1.18.2
+  resolution: "@tpe/quark-client@npm:1.18.2::__archiveUrl=https%3A%2F%2Fgitlab.protontech.ch%2Fapi%2Fv4%2Fprojects%2F4357%2Fpackages%2Fnpm%2F%40tpe%2Fquark-client%2F-%2F%40tpe%2Fquark-client-1.18.2.tgz"
   dependencies:
     chance: "npm:1.1.13"
     date-fns: "npm:4.1.0"
-    js-yaml: "npm:4.1.0"
-    nodemailer: "npm:7.0.3"
+    js-yaml: "npm:4.3.1"
+    nodemailer: "npm:9.0.5"
     vcf: "npm:2.1.2"
   peerDependencies:
     "@playwright/test": ">=1.52.0"
-  checksum: 10/18bcf591654ae70e268ac676f2a23238554f36ad1e8684064a9c5a7dbd036db7727f28a92a42c4811d6022f1dd5e51b9213bd2737afb13073ffe74a695360b36
+  checksum: 10/a8576e236407e1255de0fcdefba24ae371cd691fc1f3da7fa8361042f21f454e36783e4f1275c033e516f37ce05bcd46499956b5b065424710a6683528e9b303
   languageName: node
   linkType: hard
 
@@ -34647,6 +34647,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"js-yaml@npm:4.3.1, js-yaml@npm:^4.0.0, js-yaml@npm:^4.1.0, js-yaml@npm:^4.1.1, js-yaml@npm:^4.3.0":
+  version: 4.3.1
+  resolution: "js-yaml@npm:4.3.1"
+  dependencies:
+    argparse: "npm:^2.0.1"
+  bin:
+    js-yaml: bin/js-yaml.js
+  checksum: 10/2ce71b5d632abbd77da80447bf860e8a0264e54bffe94840984887d58b023761495b523727547904517a6107a1ef189854b361e0fc44995ee13a84f222d7bd42
+  languageName: node
+  linkType: hard
+
 "js-yaml@npm:^3.13.1":
   version: 3.14.1
   resolution: "js-yaml@npm:3.14.1"
@@ -34656,17 +34667,6 @@ __metadata:
   bin:
     js-yaml: bin/js-yaml.js
   checksum: 10/9e22d80b4d0105b9899135365f746d47466ed53ef4223c529b3c0f7a39907743fdbd3c4379f94f1106f02755b5e90b2faaf84801a891135544e1ea475d1a1379
-  languageName: node
-  linkType: hard
-
-"js-yaml@npm:^4.0.0, js-yaml@npm:^4.1.0, js-yaml@npm:^4.1.1, js-yaml@npm:^4.3.0":
-  version: 4.3.0
-  resolution: "js-yaml@npm:4.3.0"
-  dependencies:
-    argparse: "npm:^2.0.1"
-  bin:
-    js-yaml: bin/js-yaml.js
-  checksum: 10/2bcec3a8118d7f744badeb04e14366578d234a736f353d41fe35d2305e4ce2409a8e041d277f07cd6bbc8aaa12128d650a68ce43247072519bede20962d2126f
   languageName: node
   linkType: hard
 
@@ -38986,10 +38986,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nodemailer@npm:7.0.3":
-  version: 7.0.3
-  resolution: "nodemailer@npm:7.0.3"
-  checksum: 10/d51e9b30753c982c35cf77839f3b7c1f138eb3fb5607c34f724ddc32360e56c3d631ff5b4eba5491f1f8805b428b945850441b4bd893bd2283c55be615f020c5
+"nodemailer@npm:9.0.5":
+  version: 9.0.5
+  resolution: "nodemailer@npm:9.0.5"
+  checksum: 10/22a56ec9585d3239dadc603f52e2d1da8194603f44dbba0de9c2291e180c7109a95c29e68e0e54e5fa586e38674e4e11d29e73f440fb338fd1d7e9bccbe6e497
   languageName: node
   linkType: hard
 
@@ -42695,7 +42695,7 @@ __metadata:
     "@tpe/measurement-sdk": "npm:0.2.2"
     "@tpe/minimum-test-set": "npm:0.1.2"
     "@tpe/mock-proxy-web-client": "npm:1.1.1"
-    "@tpe/quark-client": "npm:1.17.0"
+    "@tpe/quark-client": "npm:1.18.2"
     "@types/chance": "npm:^1.1.8"
     "@types/fs-extra": "npm:^11.0.4"
     "@types/node": "npm:^24.13.3"
