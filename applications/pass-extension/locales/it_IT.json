@@ -809,6 +809,12 @@
       ],
       "Enable": [
         "Abilita"
+      ],
+      "Bulk select items": [
+        "Seleziona elementi in blocco"
+      ],
+      "Multiple select": [
+        "Selezione multipla"
       ]
     },
     "Activity": {
@@ -960,6 +966,15 @@
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
         "Verifica di ${ compromised.progress.completed } su ${ compromised.progress.total }"
+      ],
+      "Change these passwords immediately": [
+        "Modifica immediatamente queste password"
+      ],
+      "Check if your passwords have been exposed": [
+        "Verifica se le tue password sono state esposte"
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Questa password di accesso appare in una violazione dei dati. Visita il servizio e modificala."
       ]
     },
     "Email": {
@@ -1482,6 +1497,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Il tuo codice PIN è stato rimosso da un altro client ${ PASS_APP_NAME }"
+      ],
+      "This invite is no longer available": [
+        "Questo invito non è più disponibile"
       ]
     },
     "Error message": {
@@ -5302,6 +5320,18 @@
       ],
       "Enable offline mode": [
         "Attiva la modalità offline"
+      ],
+      "Compromised password": [
+        "Password compromessa"
+      ],
+      "Compromised passwords": [
+        "Password compromesse"
+      ],
+      "No compromised passwords": [
+        "Nessuna password compromessa"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Passa a un piano superiore per verificare le password compromesse"
       ]
     },
     "Title_cloned_item": {
