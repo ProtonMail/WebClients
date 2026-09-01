@@ -337,9 +337,6 @@
       "Fill password": [
         "パスワードを入力"
       ],
-      "Filter vault items": [
-        "保管庫のアイテムを絞り込む"
-      ],
       "Generate alias": [
         "エイリアスを生成"
       ],
@@ -666,9 +663,6 @@
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "誰かが ${ PASS_APP_NAME }上でアイテムを共有しました。"
-      ],
-      "Sort vault items": [
-        "保管庫のアイテムを並び替え"
       ],
       "Start from scratch": [
         "ゼロから始める"
@@ -2061,7 +2055,7 @@
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、そのセキュアリンクは消去されます。"
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -4909,9 +4903,6 @@
       ],
       "Settings": [
         "設定"
-      ],
-      "Setup offline mode": [
-        "オフラインモードを設定"
       ],
       "Share vaults with your team": [
         "チームに保管庫を共有"

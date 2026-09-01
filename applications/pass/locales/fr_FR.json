@@ -115,6 +115,9 @@
       "Bulk restore items from trash": [
         "Restaurer un groupe d'éléments depuis la corbeille"
       ],
+      "Bulk select items": [
+        "Sélectionner un groupe d'éléments"
+      ],
       "Cancel": [
         "Annuler"
       ],
@@ -346,9 +349,6 @@
       "Fill password": [
         "Remplir le mot de passe"
       ],
-      "Filter vault items": [
-        "Filtrer les éléments du coffre-fort"
-      ],
       "Generate alias": [
         "Générer un alias"
       ],
@@ -493,6 +493,9 @@
       "Move to Trash": [
         "Déplacer dans la corbeille"
       ],
+      "Multiple select": [
+        "Sélection multiple"
+      ],
       "New token": [
         "Nouveau jeton"
       ],
@@ -631,9 +634,6 @@
       "See members": [
         "Afficher les membres"
       ],
-      "Select items": [
-        "Sélectionner les éléments"
-      ],
       "Send email": [
         "Envoyer un message"
       ],
@@ -681,9 +681,6 @@
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Quelqu'un a partagé un élément avec vous sur ${ PASS_APP_NAME }."
-      ],
-      "Sort vault items": [
-        "Trier les éléments du coffre-fort"
       ],
       "Start from scratch": [
         "Démarrer sans données existantes"
@@ -861,6 +858,9 @@
       ],
       "Check if your passwords have been exposed": [
         "Vérifiez si vos mots de passe ont été compromis"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Vérification de ${ compromised.progress.completed } sur ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Créez des mots de passe uniques"
@@ -1764,6 +1764,9 @@
       "Change your password": [
         "Modifier votre mot de passe"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Vérification de ${ compromised.progress.completed } mots de passe sur ${ compromised.progress.total }"
+      ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirmez votre mot de passe supplémentaire pour le retirer."
       ],
@@ -2123,7 +2126,8 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort supprimera ses liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2676,6 +2680,9 @@
       ],
       "Verification code sent.": [
         "Le code de vérification a été envoyé."
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Consultez vos éléments ${ PASS_SHORT_APP_NAME } hors ligne. Votre mot de passe est nécessaire pour l'activer."
       ],
       "Viewer": [
         "Lecteur"
@@ -4758,6 +4765,9 @@
       "Domain ownership verification": [
         "Vérification de la propriété d'un domaine"
       ],
+      "Enable offline mode": [
+        "Activer le mode hors ligne"
+      ],
       "Encrypted import": [
         "Importation chiffrée"
       ],
@@ -5013,9 +5023,6 @@
       ],
       "Settings": [
         "Paramètres"
-      ],
-      "Setup offline mode": [
-        "Configurer le mode hors ligne"
       ],
       "Share vaults with your team": [
         "Partagez vos coffres-forts avec votre équipe"

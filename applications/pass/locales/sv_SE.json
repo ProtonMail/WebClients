@@ -343,9 +343,6 @@
       "Fill password": [
         "Fyll lösenord"
       ],
-      "Filter vault items": [
-        "Filtrera valvobjekt"
-      ],
       "Generate alias": [
         "Generera alias"
       ],
@@ -628,9 +625,6 @@
       "See members": [
         "Se medlemmar"
       ],
-      "Select items": [
-        "Välj objekt"
-      ],
       "Send email": [
         "Skicka e-post"
       ],
@@ -678,9 +672,6 @@
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Någon delade ett objekt med dig på ${ PASS_APP_NAME }"
-      ],
-      "Sort vault items": [
-        "Sortera valvobjekt"
       ],
       "Start from scratch": [
         "Börja från början"
@@ -861,6 +852,9 @@
       ],
       "Check if your passwords have been exposed": [
         "Kontrollera om dina lösenord har blivit exponerade"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Kontrollerar ${ compromised.progress.completed } av ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Skapa unika lösenord"
@@ -2126,7 +2120,8 @@
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till ett annat valv kommer att radera dess säkra länkar."
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -4761,6 +4756,9 @@
       "Domain ownership verification": [
         "Domänägarskapverifiering"
       ],
+      "Enable offline mode": [
+        "Aktivera offlineläge"
+      ],
       "Encrypted import": [
         "Krypterad import"
       ],
@@ -5016,9 +5014,6 @@
       ],
       "Settings": [
         "Inställningar"
-      ],
-      "Setup offline mode": [
-        "Ställ in offlineläge"
       ],
       "Share vaults with your team": [
         "Dela valv med ditt team"

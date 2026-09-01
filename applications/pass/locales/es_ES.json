@@ -337,9 +337,6 @@
       "Fill password": [
         "Rellenar contraseña"
       ],
-      "Filter vault items": [
-        "Filtrar los elementos de la caja fuerte"
-      ],
       "Generate alias": [
         "Generar alias"
       ],
@@ -666,9 +663,6 @@
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Alguien ha compartido un elemento contigo en ${ PASS_APP_NAME }."
-      ],
-      "Sort vault items": [
-        "Ordenar los elementos de la caja fuerte"
       ],
       "Start from scratch": [
         "Empezar desde cero"
@@ -1257,6 +1251,12 @@
       ],
       "PIN codes do not match": [
         "Los códigos PIN no coinciden."
+      ],
+      "Regex invalid": [
+        "Expresión regular no válida"
+      ],
+      "Regex unsafe": [
+        "Expresión regular no segura"
       ],
       "Request timed out": [
         "Tiempo de espera agotado"
@@ -2087,7 +2087,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte borrará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
+        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -4965,9 +4966,6 @@
       ],
       "Settings": [
         "Configuración"
-      ],
-      "Setup offline mode": [
-        "Configurar modo sin conexión"
       ],
       "Share vaults with your team": [
         "Comparte cajas fuertes con tu equipo"
