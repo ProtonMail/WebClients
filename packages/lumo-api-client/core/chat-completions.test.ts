@@ -272,6 +272,6 @@ describe('formatRequestedModel', () => {
     it('appends the response mode to the requested model id', () => {
         expect(formatRequestedModel(LUMO_MAX_MODEL, true)).toBe('lumo-max (thinking)');
         expect(formatRequestedModel(LUMO_LITE_MODEL, false)).toBe('lumo-lite (fast)');
-        expect(formatRequestedModel(DEFAULT_CHAT_MODEL, false)).toBe('lumo (fast)');
+        expect(formatRequestedModel(DEFAULT_CHAT_MODEL, false)).toBe('lumo-lite (fast)');
     });
 });
