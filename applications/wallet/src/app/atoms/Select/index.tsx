@@ -10,6 +10,7 @@ import type { SelectTwoProps } from '@proton/components/components/selectTwo/Sel
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
 import { InputField } from '@proton/components/components/v2/field/InputField';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import clsx from '@proton/utils/clsx';
 
 import '../InputFieldStacked/InputFieldStacked.scss';
@@ -45,7 +46,7 @@ export const Select = <V extends unknown>({
             originalPlacement="bottom"
             unstyled={stackedFieldWrapper ? true : false}
             anchorRef={selectRef as MutableRefObject<any>}
-            caretIconName="chevron-down"
+            caretIcon={<IcChevronDown />}
             caretClassName={stackedFieldWrapper ? 'stacked-field-caret' : 'field-caret'}
             {...props}
         >
@@ -115,7 +116,7 @@ export const SearchableSelect = <V extends unknown>({
             availablePlacements={verticalPopperPlacements}
             unstyled={stackedFieldWrapper ? true : false}
             anchorRef={selectRef as MutableRefObject<any>}
-            caretIconName="chevron-down"
+            caretIcon={<IcChevronDown />}
             caretClassName={stackedFieldWrapper ? 'stacked-field-caret' : 'field-caret'}
             {...props}
         />
