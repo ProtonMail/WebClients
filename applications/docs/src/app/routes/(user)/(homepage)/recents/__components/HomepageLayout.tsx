@@ -172,7 +172,7 @@ function Search({ value, onChange, type, className }: SearchProps) {
   return (
     <div className={className}>
       <Input
-        className="border-weak w-[clamp(21.25rem,100vw*.35-1.25rem,32.5rem)] focus-within:!border-[#bcb9b6] hover:!border-[#bcb9b6]"
+        className="border-weak w-[clamp(21.25rem,100vw*.35-1.25rem,32.5rem)] focus-within:!border-[#bcb9b6] hover:!border-[#bcb9b6] [[data-theme-mode=dark]_&]:!border-[--background-weak] [[data-theme-mode=dark]_&]:!bg-[--background-weak] [[data-theme-mode=dark]_&]:focus-within:!border-[--border-norm] [[data-theme-mode=dark]_&]:hover:!border-[--border-norm]"
         inputClassName="h-[32px] small:h-auto"
         onKeyDown={(event) => {
           if (event.key === 'Escape') {
@@ -231,7 +231,7 @@ function MobileSearch({ value, onChange, type, className }: SearchProps) {
               onChange(undefined)
             }
           }}
-          className="border-weak w-full max-w-[21.25rem] focus-within:!border-[#bcb9b6] hover:!border-[#bcb9b6]"
+          className="border-weak w-full max-w-[21.25rem] focus-within:!border-[#bcb9b6] hover:!border-[#bcb9b6] [[data-theme-mode=dark]_&]:!border-[--background-weak] [[data-theme-mode=dark]_&]:!bg-[--background-weak] [[data-theme-mode=dark]_&]:focus-within:!border-[--border-norm] [[data-theme-mode=dark]_&]:hover:!border-[--border-norm]"
           inputClassName="h-[32px] small:h-auto"
           prefix={
             <span>
@@ -301,7 +301,9 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
       <div className="px-3 pb-3 pt-2 small:hidden">{newDocumentButton}</div>
       <SidebarNav>
         <div className="flex items-center justify-between px-3 py-2">
-          <div className="px-3 !text-xs text-[--text-hint]">Recents</div>
+          <div className="px-3 !text-xs text-[#8F8D8A] [[data-theme-mode=dark]_&]:!text-[--text-weak]">
+            {c('Info').t`Recents`}
+          </div>
           <Tooltip title={c('Info').t`Update recent documents`}>
             <Button
               aria-label={c('Info').t`Update recent documents`}
@@ -400,7 +402,7 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
                 </SidebarListItemLink>
               </SidebarListItem>
               <li className="px-6">
-                <hr className="my-3 h-px bg-[#EAE7E4]" />
+                <hr className="my-3 h-px bg-[#EAE7E4] [[data-theme-mode=dark]_&]:!bg-[--border-norm]" />
               </li>
             </>
           )}

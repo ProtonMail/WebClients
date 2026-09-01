@@ -101,6 +101,10 @@
 	background-color: #c9dbf0 !important;
 }
 
+[data-theme-mode='dark'] .Lexical__tableCellSelected {
+	background-color: var(--interaction-norm-minor-1) !important;
+}
+
 .Lexical__tableCellEditing {
 	box-shadow: 0 0 5px rgb(0 0 0 / 0.4);
 	border-radius: 3px;

@@ -197,6 +197,7 @@ enum DocsFeatureFlag {
     DocsTableOfContents = 'DocsTableOfContents',
     DocsOpenTracer = 'DocsOpenTracer',
     DocsGatePrivateInviteAccess = 'DocsGatePrivateInviteAccess',
+    DocsDarkTheme = 'DocsDarkTheme',
     // Comments
     DocsEnableNotificationsOnNewComment = 'DocsEnableNotificationsOnNewComment',
     // Homepage

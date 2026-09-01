@@ -57,6 +57,7 @@ import { getDocsLayoutScrollContainer } from './docsLayoutUtils'
 import { SheetsAdapter } from './Spreadsheet/adapters/SheetsAdapter'
 import { StandaloneSheetsEditor } from './Spreadsheet/StandaloneSheetsEditor'
 import SheetsLayout from './SheetsLayout'
+import { useEditorTheme } from '../Theme/EditorThemeProvider'
 
 type AppProps = {
   documentType: DocumentType
@@ -71,6 +72,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
     useStore(useEditorState())
 
   const [isPublicMode, setIsPublicMode] = useState(false)
+  const { setTheme } = useEditorTheme()
   const [editorError, setEditorError] = useState<Error | undefined>(undefined)
 
   const isSuggestionMode = userMode === EditorUserMode.Suggest
@@ -232,6 +234,10 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
 
       async syncEvent(event) {
         void application.syncedState.emitEvent(event)
+      },
+
+      async setDarkMode(isDarkMode) {
+        setTheme(isDarkMode ? 'dark' : 'light')
       },
 
       async receiveMessage(message: RtsMessagePayload) {
@@ -536,6 +542,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
     setEditingLocked,
     setEditorConfig,
     setEditorHidden,
+    setTheme,
     setUserMode,
     documentType,
   ])

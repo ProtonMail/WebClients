@@ -166,6 +166,7 @@ const useLocalSpreadsheetState = create<LocalState>()((set) => {
 type SpreadsheetStateDependencies = {
   localState: LocalState
   locale: UseSpreadsheetProps['locale']
+  colorMode: UseSpreadsheetProps['colorMode']
   // TODO: review this dep
   onChangeHistory: UseSpreadsheetProps['onChangeHistory']
   functions: UseSpreadsheetProps['functions']
