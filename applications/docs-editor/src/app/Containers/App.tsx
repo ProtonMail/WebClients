@@ -66,7 +66,7 @@ type AppProps = {
 
 export function App({ documentType, systemMode, bridgeState }: AppProps) {
   const { application, bridge, docState, docMap, editorConfig, setEditorConfig, didSetInitialConfig } = bridgeState
-  const { suggestionsEnabled } = useSyncedState()
+  const { suggestionsEnabled, receivedEverythingFromRTS } = useSyncedState()
   const { userMode, setUserMode, editorHidden, setEditorHidden, editingLocked, setEditingLocked } =
     useStore(useEditorState())
 
@@ -95,6 +95,30 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   const [isEditorRefReady, setIsEditorRefReady] = useState(false)
   const scrollPositionBeforePreview = useRef<number | null>(null)
   const [tableOfContentsVisibleState, setTableOfContentsVisibleState] = useState(false)
+
+  const [isSheetsMountAfterInitialLoadDisabled, setIsSheetsMountAfterInitialLoadDisabled] = useState(false)
+  const [didTryFetchingSheetsMountKillswitch, setDidFetchSheetsMountKillswitch] = useState(false)
+  useEffect(() => {
+    if (!didSetInitialConfig) {
+      return
+    }
+    bridge
+      .getClientInvoker()
+      .checkIfFeatureFlagIsEnabled('SheetsMountAfterInitialLoadDisabled')
+      .then(setIsSheetsMountAfterInitialLoadDisabled)
+      .catch(console.error)
+      .finally(() => {
+        setDidFetchSheetsMountKillswitch(true)
+      })
+  }, [bridge, didSetInitialConfig])
+  useEffect(() => {
+    if (!docState) {
+      return
+    }
+    if (documentType === 'sheet' && didTryFetchingSheetsMountKillswitch && !isSheetsMountAfterInitialLoadDisabled) {
+      docState.onEditorReadyToReceiveUpdates()
+    }
+  }, [documentType, didTryFetchingSheetsMountKillswitch, isSheetsMountAfterInitialLoadDisabled, docState])
 
   useEffect(() => {
     if (userMode !== EditorUserMode.Preview) {
@@ -513,6 +537,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
     setEditorConfig,
     setEditorHidden,
     setUserMode,
+    documentType,
   ])
 
   const onUserModeChange = useCallback(
@@ -634,7 +659,12 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
     [application.logger, bridge],
   )
 
-  if (!didSetInitialConfig || !editorConfig.current || !docState) {
+  if (
+    !didSetInitialConfig ||
+    !editorConfig.current ||
+    !docState ||
+    (documentType === 'sheet' && !didTryFetchingSheetsMountKillswitch)
+  ) {
     application.logger.debug('Attempting to render editor before it is ready', {
       didSetInitialConfig,
       editorConfig: editorConfig.current,
@@ -696,6 +726,17 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   if (documentType === 'sheet') {
     const editorInitializationConfig = editorConfig.current.editorInitializationConfig
 
+    if (!isSheetsMountAfterInitialLoadDisabled && !receivedEverythingFromRTS) {
+      application.logger.info('Waiting for initial updates to be applied before mounting Sheets editor')
+      return (
+        <SheetsLayout>
+          <div className="flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center">
+            <CircleLoader size="large" />
+          </div>
+        </SheetsLayout>
+      )
+    }
+
     return (
       <SheetsLayout>
         <ErrorBoundary
@@ -717,6 +758,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
               }}
               clientInvoker={bridge.getClientInvoker()}
               isPublicMode={isPublicMode}
+              shouldUseCustomYjsInitialization={isSheetsMountAfterInitialLoadDisabled}
             />
           </SheetsAdapter>
         </ErrorBoundary>

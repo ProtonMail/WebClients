@@ -19,6 +19,7 @@ export const StandaloneSheetsEditor = forwardRef(function StandaloneSheetsEditor
     updateLocalStateToLog,
     clientInvoker,
     isPublicMode,
+    shouldUseCustomYjsInitialization,
   }: SpreadsheetProps,
   ref: ForwardedRef<SpreadsheetRef>,
 ) {
@@ -35,6 +36,7 @@ export const StandaloneSheetsEditor = forwardRef(function StandaloneSheetsEditor
         updateLocalStateToLog={updateLocalStateToLog}
         clientInvoker={clientInvoker}
         isPublicMode={isPublicMode}
+        shouldUseCustomYjsInitialization={shouldUseCustomYjsInitialization}
       />
     </SpreadsheetProvider>
   )
