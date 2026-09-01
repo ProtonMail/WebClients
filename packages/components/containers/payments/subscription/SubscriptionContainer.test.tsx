@@ -1,5 +1,6 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
+import { withPaymentContext } from '@proton/payments-ui/testing/with-payment-context';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
@@ -18,7 +19,6 @@ import { buildUser } from '@proton/testing/builders/user';
 import { addApiMock, apiMock } from '@proton/testing/lib/api';
 import { applyHOCs } from '@proton/testing/lib/context/hocs/helpers';
 import { withDeprecatedModals } from '@proton/testing/lib/context/hocs/with-deprecated-modals';
-import { withPaymentContext } from '@proton/testing/lib/context/hocs/with-payment-context';
 import { withReduxStore } from '@proton/testing/lib/context/hocs/with-redux-store';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 import type { FeatureFlag } from '@proton/unleash/Flags';
