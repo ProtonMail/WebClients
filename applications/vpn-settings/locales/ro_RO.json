@@ -916,6 +916,9 @@
       "Invite user": [
         "Invitare utilizator"
       ],
+      "Invoice options": [
+        "Opțiuni factură"
+      ],
       "Keep": [
         "Păstrare"
       ],
@@ -1297,6 +1300,9 @@
       "Set catch-all": [
         "Setare adresă de agregare"
       ],
+      "Set invoice email": [
+        "Setare adresă de e-mail de facturare"
+      ],
       "Set new password": [
         "Setare parolă nouă"
       ],
@@ -1464,6 +1470,9 @@
       ],
       "Unlock data": [
         "Deblocare date"
+      ],
+      "Update email": [
+        "Actualizare e-mail"
       ],
       "Update recovery file": [
         "Actualizare fișier de recuperare"
@@ -9394,6 +9403,9 @@
       "SCIM token active": [
         "Cod SCIM activ"
       ],
+      "Secure and end-to-end encrypted": [
+        "Securizat și criptat bilateral"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Asigurați-vă contul ${ BRAND_NAME }"
       ],
@@ -10096,6 +10108,9 @@
       ],
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "Vă putem folosi numărul de telefon de recuperare pentru a vă trimite un cod de verificare pentru a vă reseta parola și pentru a vă contacta dacă observăm o activitate suspectă."
+      ],
+      "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
+        "Nu s-au putut trimite facturi la adresa de e-mail. Facturarea automată a fost întreruptă până când actualizați adresa."
       ],
       "We couldn’t process your payment.": [
         "Nu vi s-a putut procesa plata."
@@ -11564,6 +11579,9 @@
       ],
       "Send crash reports": [
         "Trimitere rapoarte de erori"
+      ],
+      "Send invoices by email": [
+        "Expediere facturi prin e-mail"
       ],
       "Sequences": [
         "Secvențe"
@@ -14988,6 +15006,9 @@
       "Ask anything…": [
         "Întreabă-mă orice…"
       ],
+      "billing@company.com": [
+        "facturi@companie.com"
+      ],
       "Choose a name": [
         "Alegeți un nume"
       ],
@@ -16896,6 +16917,11 @@
         "Solicitare resetare parolă"
       ]
     },
+    "Set invoice email form note": {
+      "Turn on automatic invoicing to receive bills via email. Enter the email address where you want to receive invoices.": [
+        "Activați facturarea automată pentru a primi facturi prin e-mail. Introduceți adresa de e-mail la care doriți să primiți facturile."
+      ]
+    },
     "Settings section title": {
       "Account": [
         "Cont"
@@ -18332,6 +18358,9 @@
       ],
       "Invoice customized": [
         "Factură personalizată"
+      ],
+      "Invoice email updated": [
+        "E-mail facturare actualizat"
       ],
       "Invoice paid": [
         "Factură plătită"
@@ -19794,6 +19823,9 @@
       ],
       "Session management": [
         "Gestionare sesiuni"
+      ],
+      "Set invoice email": [
+        "Setare adresă de e-mail de facturare"
       ],
       "Set new password": [
         "Setare parolă nouă"

@@ -6980,6 +6980,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Añadir ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } for just ${ bundlePlanPriceInline }": [
+        "Añade ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } por solo ${ bundlePlanPriceInline }"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Añade ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
@@ -7400,6 +7403,9 @@
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "Según tus ajustes, pueden recibir acceso de inmediato o después de un **periodo de espera**."
       ],
+      "Deploy ${ regoArtifact } directly via your MDM file deployment": [
+        "Despliega ${ regoArtifact } directamente mediante la distribución de archivos de tu MDM"
+      ],
       "Did you know?": [
         "¿Lo sabías?"
       ],
@@ -7472,6 +7478,12 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Al cambiar por un plan con menos funciones se terminarán las conexiones a los servidores de pago de ${ VPN_APP_NAME }."
+      ],
+      "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
+        "Descarga ${ mobileConfigArtifact } y ábrelo en cada Mac para instalar el perfil; luego, apruébalo en Ajustes del Sistema."
+      ],
+      "Download ${ powershellArtifact } and run on each device as the system user to automatically place the device profile.": [
+        "Descarga ${ powershellArtifact } y ejecútalo en cada dispositivo como usuario del sistema para colocar automáticamente el perfil del dispositivo."
       ],
       "Download ${ VPN_APP_NAME }": [
         "Descargar ${ VPN_APP_NAME }"
@@ -7982,6 +7994,9 @@
       "Keep your info more secure and private with these guides and tips.": [
         "Mantén tu información más segura y privada con estas guías y consejos."
       ],
+      "Keep your passwords safe and sign in instantly with autofill across every device.": [
+        "Mantén tus contraseñas a salvo e inicia sesión al instante con el autorrelleno en todos tus dispositivos."
+      ],
       "Keys created": [
         "Se han creado las claves."
       ],
@@ -8041,6 +8056,9 @@
       ],
       "Low Priority": [
         "Prioridad baja"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "La mayoría de servicios de correo podrían rechazar o filtrar tus correos como spam si faltan SPF/DKIM/DMARC o no están bien configurados."
@@ -8202,6 +8220,9 @@
       ],
       "or discover other features:": [
         "o descubre otras funciones:"
+      ],
+      "Or run ${ powershellArtifact } via your MDM script execution": [
+        "O ejecuta ${ powershellArtifact } mediante la ejecución de scripts de tu MDM"
       ],
       "Or select a particular server:": [
         "O selecciona un servidor en particular:"
@@ -8381,6 +8402,9 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "La compartición pública de documentos aún no está disponible."
+      ],
+      "Push ${ mobileConfigArtifact } to every managed Mac using your MDM.": [
+        "Envía ${ mobileConfigArtifact } a cada Mac gestionado mediante tu MDM."
       ],
       "Recently used servers:": [
         "Servidores usados recientemente:"
@@ -8867,6 +8891,9 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Selecciona el método de recuperación para descifrar y ver los datos protegidos después de restablecer la contraseña."
       ],
+      "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
+        "Para activar Always-on VPN, es necesario instalar el perfil de configuración en cada Mac — el cliente de ${ VPN_APP_NAME } aplica automáticamente el perfil del dispositivo una vez instalado."
+      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Para garantizar la máxima seguridad posible de tu cuenta, desactiva la **recuperación por correo electrónico de recuperación**."
       ],
@@ -9025,6 +9052,9 @@
       ],
       "Users": [
         "Usuarios"
+      ],
+      "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
+        "¿Usas otro MDM? Cualquier MDM que admita el despliegue de un perfil de configuración funciona. Consulta la documentación de tu MDM para saber cómo subirlo y asignarlo a tu flota de dispositivos."
       ],
       "Vault created": [
         "Se ha creado la caja fuerte."
@@ -17917,6 +17947,9 @@
       "Information exposed in breach": [
         "Información expuesta en la vulneración"
       ],
+      "Install it manually": [
+        "Instalarlo manualmente"
+      ],
       "Invalid verification code": [
         "Código de verificación no válido"
       ],
@@ -17937,6 +17970,9 @@
       ],
       "Lower your cost without losing features": [
         "Reduce tus costes sin perder funciones"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Main password": [
         "Contraseña principal"
@@ -18490,6 +18526,9 @@
       ],
       "What is the dark web?": [
         "¿Qué es la dark web?"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Wipe all logs?": [
         "¿Borrar todos los registros?"
