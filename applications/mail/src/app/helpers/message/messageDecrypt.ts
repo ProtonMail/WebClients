@@ -1,5 +1,3 @@
-import { c } from 'ttag';
-
 import type {
     WorkerProcessMIMEResult as MimeProcessResult,
     PrivateKeyReference,
@@ -8,17 +6,18 @@ import type {
 } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
 import { uint8ArrayToUtf8String } from '@protontech/crypto/utils';
-import type { MessageErrors } from '@proton/mail/store/messages/messagesTypes';
+import { c } from 'ttag';
+
+import type { DecryptMessageResult } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
-import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getParsedHeadersFirstValue, getSender, isAutoForwardee, isMIME } from '@proton/shared/lib/mail/messages';
 import { getMailVerificationStatus } from '@proton/shared/lib/mail/signature';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
-
 import { convert } from '../attachment/attachmentConverter';
 
 const binaryToString = (data: Uint8Array<ArrayBuffer>) =>
@@ -27,15 +26,7 @@ const binaryToString = (data: Uint8Array<ArrayBuffer>) =>
         // nbsp can be contained in message body and "crash" DOMPurify
         .replace(/\u00A0/g, ' ');
 
-export interface DecryptMessageResult {
-    decryptedBody: string;
-    decryptedRawContent: Uint8Array<ArrayBuffer>;
-    attachments?: Attachment[];
-    decryptedSubject?: string;
-    signature?: Uint8Array<ArrayBuffer>;
-    errors?: MessageErrors;
-    mimetype?: MIME_TYPES;
-}
+export type { DecryptMessageResult };
 
 const decryptMimeMessage = async (
     message: Message,
