@@ -11718,7 +11718,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/payments@workspace:packages/payments"
   dependencies:
-    "@proton/account": "workspace:^"
     "@proton/chargebee": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/jest-env": "workspace:^"
