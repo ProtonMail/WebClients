@@ -1,5 +1,6 @@
-import { MEETING_LINK_ID_LENGTH, URL_ID_PREFIX, URL_PASSWORD_PREFIX } from '@proton/meet/constants';
+import { URL_ID_PREFIX, URL_PASSWORD_PREFIX } from '@proton/meet/constants';
 import { isUrlPasswordValid } from '@proton/meet/utils/isUrlPasswordValid';
+import { MEETING_LINK_ID_LENGTH } from '@proton/shared/lib/meet/parseMeetingLink';
 import { DEFAULT_CHARSET } from '@proton/utils/getRandomString';
 
 export const getUrlPassword = () => {
