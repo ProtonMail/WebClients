@@ -173,8 +173,7 @@
         },
         "applications/vpn-settings": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
-            "project": ["src/**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["src/**/*.{ts,tsx}"]
         },
         "applications/wallet": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
