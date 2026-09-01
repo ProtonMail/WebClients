@@ -818,6 +818,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε τον."
+      ],
+      "Bulk select items": [
+        "Μαζική επιλογή στοιχείων"
+      ],
+      "Multiple select": [
+        "Πολλαπλή επιλογή"
       ]
     },
     "Activity": {
@@ -2940,6 +2946,9 @@
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Έλεγχος ${ compromised.progress.completed } από ${ compromised.progress.total } κωδικούς πρόσβασης"
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Δείτε τα ${ PASS_SHORT_APP_NAME } στοιχεία σας εκτός σύνδεσης. Απαιτείται ο κωδικός πρόσβασής σας για την ενεργοποίησή τους."
       ]
     },
     "Keyboard key": {
@@ -5340,6 +5349,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμο.",
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμα."
+      ],
+      "Enable offline mode": [
+        "Ενεργοποίηση λειτουργίας εκτός σύνδεσης"
       ]
     },
     "Title_cloned_item": {
