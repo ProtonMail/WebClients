@@ -63,6 +63,7 @@ export type SpreadsheetProps = {
   updateLocalStateToLog: (state: unknown) => void
   clientInvoker: EditorRequiresClientMethods
   isPublicMode: boolean
+  shouldUseCustomYjsInitialization: boolean
 }
 
 export const Spreadsheet = forwardRef(function Spreadsheet(
@@ -76,6 +77,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     updateLocalStateToLog,
     clientInvoker,
     isPublicMode,
+    shouldUseCustomYjsInitialization,
   }: SpreadsheetProps,
   ref: ForwardedRef<SpreadsheetRef>,
 ) {
@@ -140,6 +142,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     isDriftDetectionEnabled,
     onYjsDriftDetected: handleYjsDriftDetected,
     storeAction,
+    shouldUseCustomYjsInitialization,
   })
   const didSetInitialVersion = useRef(false)
   const { setInitialVersion } = useVersioning(
