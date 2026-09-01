@@ -7,6 +7,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { BackgroundEffect, BackgroundState } from '@proton/meet/store/slices/backgroundSlice';
 import { backgroundReducer, initialState } from '@proton/meet/store/slices/backgroundSlice';
 import { deviceManagementReducer } from '@proton/meet/store/slices/deviceManagementSlice';
+import { meetUserReducer } from '@proton/meet/store/slices/userSlice';
 import { getVirtualBackgroundSource } from '@proton/meet/utils/virtualBackgrounds';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 
@@ -91,7 +92,8 @@ const setup = ({ cameraState = 'live', appliedBackgroundEffect = 'none' }: Setup
     livekitReact.useLocalParticipant.mockReturnValue({ localParticipant });
 
     const store = configureStore({
-        reducer: { ...backgroundReducer, ...deviceManagementReducer },
+        // The persist thunk reads the background namespace out of the user slice.
+        reducer: { ...backgroundReducer, ...deviceManagementReducer, ...meetUserReducer },
         preloadedState: { background: { ...initialState, appliedBackgroundEffect } },
     });
 
