@@ -2,10 +2,11 @@ import type { ApiRateLimiter } from '@proton/shared/lib/api/apiRateLimiter';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+import { mockNotifications } from '@proton/testing/lib/mockNotifications';
 
 import type { MailState } from '../rootReducer';
 import type { MailThunkExtra } from '../store';
-import { load, markAll } from './elementsActions';
+import { backendActionFinished, labelAll, load, markAll, moveAll } from './elementsActions';
 import { newElementsState } from './elementsSlice';
 import type { ElementsStateParams } from './elementsTypes';
 
@@ -235,6 +236,85 @@ describe('elementsActions.ts', () => {
                 MAILBOX_LABEL_IDS.INBOX,
                 MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
             ]);
+        });
+    });
+
+    describe('whole-location thunks', () => {
+        const extraWithNotifications: MailThunkExtra['extra'] = {
+            ...mockExtra,
+            notificationManager: mockNotifications,
+        };
+
+        const wholeLocationThunks = [
+            [
+                'moveAll',
+                () => {
+                    return moveAll({
+                        SourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        DestinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    });
+                },
+            ],
+            [
+                'markAll',
+                () => {
+                    return markAll({ SourceLabelID: MAILBOX_LABEL_IDS.INBOX, status: MARK_AS_STATUS.READ });
+                },
+            ],
+            [
+                'labelAll',
+                () => {
+                    return labelAll({
+                        SourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        toLabel: ['label'],
+                        toUnlabel: [],
+                    });
+                },
+            ],
+        ] as const;
+
+        beforeEach(() => {
+            jest.clearAllMocks();
+            jest.useFakeTimers();
+        });
+
+        afterEach(() => {
+            jest.clearAllTimers();
+            jest.useRealTimers();
+        });
+
+        describe.each(wholeLocationThunks)('%s', (_name, buildThunk) => {
+            const run = () => {
+                const mockGetState = jest
+                    .fn()
+                    .mockReturnValue(buildMailState({ labelID: MAILBOX_LABEL_IDS.INBOX, categoryIDs: [] }));
+
+                return buildThunk()(mockDispatch, mockGetState, extraWithNotifications);
+            };
+
+            it('should reject so the caller can tell the request failed', async () => {
+                mockApiFn.mockRejectedValue(new Error('Request failed'));
+
+                await expect(run().unwrap()).rejects.toMatchObject({ message: 'Request failed' });
+            });
+
+            it('should still warn the user and finish the backend action when the request fails', async () => {
+                mockApiFn.mockRejectedValue(new Error('Request failed'));
+
+                await run();
+
+                expect(mockNotifications.clearNotifications).toHaveBeenCalled();
+                expect(mockNotifications.createNotification).toHaveBeenCalledWith(
+                    expect.objectContaining({ type: 'error' })
+                );
+                expect(mockDispatch).toHaveBeenCalledWith(backendActionFinished());
+            });
+
+            it('should resolve with the source label when the request succeeds', async () => {
+                mockApiFn.mockResolvedValue({});
+
+                await expect(run().unwrap()).resolves.toMatchObject({ LabelID: MAILBOX_LABEL_IDS.INBOX });
+            });
         });
     });
 });

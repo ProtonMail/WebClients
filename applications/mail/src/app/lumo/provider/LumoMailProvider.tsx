@@ -167,14 +167,11 @@ const LumoMailProvider = ({ children }: Props) => {
             applyMultipleLocations: async (params) => discardResult(latest.current.applyMultipleLocations(params)),
             markAs: (params) => discardResult(latest.current.markAs(params)),
             // Mirrors useMarkAllAs: the thunk always finishes the pending action, so the paired start has
-            // to come from here, and it swallows request errors — an absent LabelID is the failure signal.
+            // to come from here. Unwrapped so a failed request rejects.
             markAll: async (params) => {
                 const { dispatch: dispatchMarkAll } = latest.current;
                 dispatchMarkAll(backendActionStarted());
-                const { LabelID } = await dispatchMarkAll(markAllAction(params)).unwrap();
-                if (!LabelID) {
-                    throw new Error('Marking the whole location failed: the request did not go through.');
-                }
+                await dispatchMarkAll(markAllAction(params)).unwrap();
             },
             snooze: (params, sourceAction) => latest.current.snooze(params, sourceAction),
             createLabel: (params) => latest.current.dispatch(createLabelAction(params)),
