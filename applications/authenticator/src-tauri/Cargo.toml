@@ -27,7 +27,7 @@ tauri-plugin-fs = "2.5.1"
 tauri-plugin-store = "2.4.3"
 keyring = { version = "3.6.3", features = ["apple-native", "windows-native", "sync-secret-service"] }
 tauri-plugin-process = "2.3.1"
-tauri-plugin-log = "2.8.0"
+tauri-plugin-log = "2.9.0"
 log = "0.4.29"
 tauri-plugin-http = { version = "2.5.9", features = ["unsafe-headers", "dangerous-settings"] }
 rand = { version = "0.10.0" }
