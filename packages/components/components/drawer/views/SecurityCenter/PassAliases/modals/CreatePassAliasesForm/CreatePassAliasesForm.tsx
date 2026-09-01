@@ -8,6 +8,9 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
 import type { Input } from '@proton/atoms/Input/Input';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import { IcAlias } from '@proton/icons/icons/IcAlias';
+import { IcArrowUpAndRightBig } from '@proton/icons/icons/IcArrowUpAndRightBig';
+import { IcNote } from '@proton/icons/icons/IcNote';
 import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
 import type { AliasMailbox, AliasOptions } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -165,7 +168,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
                         </InputFieldStacked>
 
                         <InputFieldStackedGroup classname="mb-4">
-                            <InputFieldStacked isGroupElement icon="alias" hasError={!!errors?.alias}>
+                            <InputFieldStacked isGroupElement icon={<IcAlias />} hasError={!!errors?.alias}>
                                 <InputField<typeof Input>
                                     label={c('Label').t`Your alias`}
                                     type="text"
@@ -181,7 +184,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
                             </InputFieldStacked>
                             <InputFieldStacked
                                 isGroupElement
-                                icon="arrow-up-and-right-big"
+                                icon={<IcArrowUpAndRightBig />}
                                 hasError={!!errors?.mailbox}
                             >
                                 <InputField<typeof SelectTwo<AliasOptions['mailboxes'][number]>>
@@ -204,7 +207,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
                                     ))}
                                 </InputField>
                             </InputFieldStacked>
-                            <InputFieldStacked isGroupElement icon="note" hasError={!!errors?.note}>
+                            <InputFieldStacked isGroupElement icon={<IcNote />} hasError={!!errors?.note}>
                                 <InputField<typeof TextArea>
                                     label={c('Label').t`Note`}
                                     as={TextArea}

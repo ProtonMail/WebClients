@@ -6,6 +6,9 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
+import { IcAlias } from '@proton/icons/icons/IcAlias';
+import { IcArrowUpAndRightBig } from '@proton/icons/icons/IcArrowUpAndRightBig';
+import { IcNote } from '@proton/icons/icons/IcNote';
 
 const meta: Meta<typeof InputFieldStacked> = {
     title: 'Components/Input Field Stacked',
@@ -27,7 +30,7 @@ type Story = StoryObj<typeof InputFieldStacked>;
 
 export const Default: Story = {
     render: () => (
-        <InputFieldStacked icon="alias" classname="mb-2">
+        <InputFieldStacked icon={<IcAlias />} classname="mb-2">
             <InputFieldTwo
                 type="text"
                 label="Title"
@@ -58,17 +61,17 @@ export const Bigger: Story = {
 export const Group: Story = {
     render: () => (
         <InputFieldStackedGroup classname="mb-4">
-            <InputFieldStacked isGroupElement icon="alias">
+            <InputFieldStacked isGroupElement icon={<IcAlias />}>
                 <InputFieldTwo label="Your alias" type="text" unstyled inputClassName="rounded-none" value="Test" />
             </InputFieldStacked>
-            <InputFieldStacked isGroupElement icon="arrow-up-and-right-big">
+            <InputFieldStacked isGroupElement icon={<IcArrowUpAndRightBig />}>
                 <InputFieldTwo label="Forwards to" as={SelectTwo} unstyled className="rounded-none" placeholder="one">
                     <Option title="one" value="one" />
                     <Option title="two" value="two" />
                     <Option title="three" value="three" />
                 </InputFieldTwo>
             </InputFieldStacked>
-            <InputFieldStacked isGroupElement icon="note">
+            <InputFieldStacked isGroupElement icon={<IcNote />}>
                 <InputFieldTwo
                     label="Note"
                     as={TextAreaTwo}
