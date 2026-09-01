@@ -1,6 +1,6 @@
 import type { CanvasGridMethods } from '@rowsncolumns/spreadsheet'
 import { CanvasGrid } from '@rowsncolumns/spreadsheet'
-import { GRID_THEME_PROPS, FUNCTION_DESCRIPTIONS } from '../../constants'
+import { GRID_SELECTION_THEME_PROPS, GRID_THEME_PROPS, FUNCTION_DESCRIPTIONS } from '../../constants'
 import { ChartComponent } from '@rowsncolumns/charts'
 import { useEffect, useMemo, useRef } from 'react'
 import { type ProtonSheetsUIStoreSetters, useUI } from '../../ui-store'
@@ -100,6 +100,8 @@ const exposeCanvasGrid = (
 }
 
 export function Grid() {
+  const spreadsheetColors = useUI((ui) => ui.legacy.spreadsheetColors)
+  const isDarkMode = useUI((ui) => ui.legacy.isDarkMode)
   const { isDevOrBlack } = useSheetsDependencies()
   const canvasGridRef = useRef<CanvasGridMethods | null>(null)
   const activeSheetId = useUI((ui) => ui.legacy.activeSheetId)
@@ -193,11 +195,19 @@ export function Grid() {
 
   return (
     <CanvasGrid
-      {...GRID_THEME_PROPS}
+      {...(isDarkMode
+        ? {
+            // Keep mode-aware neutrals and active states from Rows n' Columns, then restore Proton selection colors.
+            ...spreadsheetColors,
+            ...GRID_SELECTION_THEME_PROPS,
+            frozenShadowColor: '#4f4f4f',
+            frozenShadowThickness: 4,
+          }
+        : GRID_THEME_PROPS)}
       ref={ref}
       // the table hacks are to override the css resets that break the cell date picker
       // also need to override the hover color for buttons
-      className="relative grow after:absolute after:top-0 after:z-10 after:h-[.0625rem] after:w-full after:bg-[#f8f9fa] [&_.rdp_button:hover]:!bg-[hsl(var(--rnc-accent))] [&_:is(th,td)]:!my-0 [&_table]:!table-auto"
+      className="relative grow after:absolute after:top-0 after:z-10 after:h-[.0625rem] after:w-full after:bg-[#f8f9fa] [&_.rdp_button:hover]:!bg-[hsl(var(--rnc-accent))] [&_:is(th,td)]:!my-0 [&_table]:!table-auto [[data-theme-mode=dark]_&]:after:!bg-[--background-norm]"
       autoFocus={true}
       locale={locale}
       showGridLines={useUI((ui) => ui.view.gridLines.enabled)}

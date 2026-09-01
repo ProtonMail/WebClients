@@ -10,7 +10,8 @@ import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoa
 import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp'
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider'
 import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider'
-import { getThemeStyle } from '@proton/components/containers/themes/ThemeProvider'
+import ThemeProvider, { useTheme } from '@proton/components/containers/themes/ThemeProvider'
+import { ThemeInjector as LightOrDarkThemeInjector } from '@proton/components/containers/themes/ThemeInjector'
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer'
 import type { FunctionComponent, ReactNode } from 'react'
 import { useContext, useState } from 'react'
@@ -29,6 +30,8 @@ import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 import { UserSettingsProvider } from '@proton/drive-store/store'
 import type { APP_NAMES } from '@proton/shared/lib/constants'
+import { ThemeTypes } from '@proton/shared/lib/themes/constants'
+import { PROTON_DEFAULT_THEME_SETTINGS } from '@proton/shared/lib/themes/themes'
 import type { AvailabilityReport } from '@proton/utils/availability'
 import { Availability, AvailabilityTypes } from '@proton/utils/availability'
 import config from '~/config'
@@ -36,6 +39,7 @@ import type { DocsStore } from '~/redux-store/store'
 import { extraThunkArguments } from '~/redux-store/thunk'
 import { useSheetsFavicon } from '../../hooks/useSheetsFavicon'
 import TracerLoader from '../../tracer/TracerLoader'
+import { useIsDarkThemeEnabled } from '../../utils/flags'
 import { bootstrapApp } from './__utils/bootstrap'
 
 /**
@@ -201,7 +205,8 @@ function RouterDependentContainer({
                 },
               }}
             >
-              <StandardPrivateApp>{children}</StandardPrivateApp>
+              <DocsThemeInjector />
+              <StandardPrivateApp noThemeInjector>{children}</StandardPrivateApp>
             </UserSettingsProvider>
           </ErrorBoundary>
         </DrawerProvider>
@@ -213,18 +218,34 @@ function RouterDependentContainer({
 // theme provider
 // --------------
 
-const THEME_ID = 'theme-root'
-const DEFAULT_THEME_STYLES = getThemeStyle()
-
 type DocsThemeProviderProps = { children: ReactNode; appName: APP_NAMES }
 
-function DocsThemeProvider({ children }: DocsThemeProviderProps) {
+function DocsThemeProvider({ children, appName }: DocsThemeProviderProps) {
   return (
-    <>
-      <style id={THEME_ID}>{DEFAULT_THEME_STYLES}</style>
+    <ThemeProvider
+      appName={appName}
+      constrainedLightTheme={PROTON_DEFAULT_THEME_SETTINGS.LightTheme}
+      constrainedDarkTheme={ThemeTypes.Carbon}
+      initialThemeSetting={PROTON_DEFAULT_THEME_SETTINGS}
+      persist={false}
+    >
       {children}
-    </>
+    </ThemeProvider>
   )
+}
+
+function DocsThemeInjector() {
+  return useIsDarkThemeEnabled() ? <LightOrDarkThemeInjector /> : <LightThemeOnlyInjector />
+}
+
+function LightThemeOnlyInjector() {
+  const { setThemeSetting } = useTheme()
+
+  useEffectOnce(() => {
+    setThemeSetting(PROTON_DEFAULT_THEME_SETTINGS)
+  })
+
+  return null
 }
 
 // custom notifications hijack

@@ -206,7 +206,7 @@ function DocsHeaderForDocument({
       <div
         className={clsx(
           'flex select-none flex-nowrap items-center gap-2 px-3 py-2',
-          documentType === 'sheet' && 'bg-[#F9FBFC]',
+          documentType === 'sheet' && 'bg-[#F9FBFC] [[data-theme-mode=dark]_&]:!bg-[--background-norm]',
         )}
         data-testid="docs-header"
       >

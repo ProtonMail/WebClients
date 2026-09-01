@@ -60,6 +60,10 @@ export function useIsGatePrivateInviteAccessEnabled() {
   return useFlag('DocsGatePrivateInviteAccess')
 }
 
+export function useIsDarkThemeEnabled() {
+  return useFlag('DocsDarkTheme') || isDevOrBlack()
+}
+
 /**
  * Checks if the user is allowed to download logs.
  * It will only be active for alpha and dev/black environments for now.
