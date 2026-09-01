@@ -5,9 +5,8 @@ import type { ModelState } from '@proton/redux-utilities/initialModelState/inter
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { Folder, Label, LabelCount } from '@proton/shared/lib/interfaces';
+import type { Conversation } from '@proton/shared/lib/interfaces/mail/Conversation';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
-
-import type { Conversation } from 'proton-mail/models/conversation';
 
 import { getContextNumMessages, getContextNumUnread } from '../../helpers/conversation';
 import {

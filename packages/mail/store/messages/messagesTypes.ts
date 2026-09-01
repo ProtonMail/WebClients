@@ -1,7 +1,10 @@
+import type { MutableRefObject } from 'react';
+
 import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 
 import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
+import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Api, KeyTransparencyVerificationResult, RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
 import type { VerificationPreferences } from '@proton/shared/lib/interfaces/VerificationPreferences';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -9,8 +12,7 @@ import type { PrimaryAddressKeyForEncryption, PrimaryAddressKeysForSigning } fro
 import type { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
-import type { DecryptMessageResult } from 'proton-mail/helpers/message/messageDecrypt';
-import type { DecryptedAttachment } from 'proton-mail/store/attachments/attachmentsTypes';
+import type { DecryptedAttachment } from '../attachments/attachmentsTypes';
 
 export interface OutsideKey {
     type: 'outside';
@@ -34,6 +36,16 @@ export interface MessageErrors {
     processing?: Error[];
     signature?: Error[];
     unknown?: Error[];
+}
+
+export interface DecryptMessageResult {
+    decryptedBody: string;
+    decryptedRawContent: Uint8Array<ArrayBuffer>;
+    attachments?: Attachment[];
+    decryptedSubject?: string;
+    signature?: Uint8Array<ArrayBuffer>;
+    errors?: MessageErrors;
+    mimetype?: MIME_TYPES;
 }
 
 export interface MessageWithOptionalBody extends Omit<Message, 'Body'> {
@@ -130,6 +142,14 @@ export interface MessageEmbeddedImage extends AbstractMessageImage {
 }
 
 export type MessageImage = MessageRemoteImage | MessageEmbeddedImage;
+
+export type OnMessageImageLoadError = (
+    image: MessageImage,
+    hasLoadedAfterErrorRef: MutableRefObject<{
+        hasLoadedProxy: boolean;
+        hasLoadedDirect: boolean;
+    }>
+) => Promise<void>;
 
 export interface MessageImages {
     hasRemoteImages: boolean;

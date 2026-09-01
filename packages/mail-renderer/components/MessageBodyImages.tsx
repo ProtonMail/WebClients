@@ -1,9 +1,7 @@
 import type { RefObject } from 'react';
 import { useEffect, useRef } from 'react';
 
-import type { MessageImages } from '@proton/mail/store/messages/messagesTypes';
-
-import type { OnMessageImageLoadError } from 'proton-mail/components/message/interface';
+import type { MessageImages, OnMessageImageLoadError } from '@proton/mail/store/messages/messagesTypes';
 
 import MessageBodyImage from './MessageBodyImage';
 

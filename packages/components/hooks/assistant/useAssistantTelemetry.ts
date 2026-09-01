@@ -1,6 +1,7 @@
 import { useApi } from '@proton/app-context/useApi';
 import { TelemetryMailComposerAssistantEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type {
+    ASSISTANT_INSERT_TYPE,
     ASSISTANT_TYPE,
     ERROR_TYPE,
     GENERATION_SELECTION_TYPE,
@@ -8,8 +9,6 @@ import type {
     INCOMPATIBILITY_TYPE,
 } from '@proton/shared/lib/assistant';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-
-import type { ASSISTANT_INSERT_TYPE } from 'proton-mail/hooks/assistant/useComposerAssistantGenerate';
 
 const useAssistantTelemetry = () => {
     const api = useApi();

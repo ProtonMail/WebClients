@@ -15,7 +15,7 @@ import type {
 } from '@proton/llm/lib/types';
 import { OpenedAssistantStatus, isPredefinedRefineActionType, isRefineActionType } from '@proton/llm/lib/types';
 import { removeLineBreaks } from '@proton/mail/helpers/string';
-import { ASSISTANT_TYPE, ERROR_TYPE } from '@proton/shared/lib/assistant';
+import { ASSISTANT_INSERT_TYPE, ASSISTANT_TYPE, ERROR_TYPE } from '@proton/shared/lib/assistant';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
@@ -25,10 +25,7 @@ import { markdownToHTML } from '../../helpers/assistant/markdown';
 import type { ComposerReturnType } from '../../helpers/composer/contentFromComposerMessage';
 import type { ComposerAssistantSelection } from './useComposerAssistantSelectedText';
 
-export enum ASSISTANT_INSERT_TYPE {
-    INSERT = 'INSERT',
-    REPLACE = 'REPLACE',
-}
+export { ASSISTANT_INSERT_TYPE };
 
 export interface GenerateResultProps {
     actionType?: ActionType;
