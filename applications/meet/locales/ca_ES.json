@@ -181,6 +181,9 @@
       "Allow access": [
         "Permeteu l'accés"
       ],
+      "Allow live captions": [
+        "Permet els subtítols en directe"
+      ],
       "Anyone with the link can join immediately": [
         "Qualsevol persona amb l'enllaç s'hi pot unir immediatament"
       ],
@@ -734,6 +737,9 @@
       ]
     },
     "Alt": {
+      "Allow live captions": [
+        "Permet els subtítols en directe"
+      ],
       "Audio settings": [
         "Preferències d'àudio"
       ],
@@ -1959,6 +1965,9 @@
       "Failed to lock meeting": [
         "No s'ha pogut bloquejar la reunió"
       ],
+      "Failed to request live captions": [
+        "No s'han pogut sol·licitar els subtítols en directe"
+      ],
       "Failed to rotate personal meeting link": [
         "No s'ha pogut rotar l'enllaç personal de la reunió"
       ],
@@ -1985,6 +1994,9 @@
       ],
       "Failed to update caption language. Please try again.": [
         "No s'ha pogut actualitzar l'idioma dels subtítols. Torneu-ho a provar."
+      ],
+      "Failed to update live captions availability": [
+        "No s'ha pogut actualitzar la disponibilitat dels subtítols en directe"
       ],
       "Failed to update live captions. Please try again.": [
         "No s'han pogut actualitzar els subtítols en directe. Torneu-ho a provar."
@@ -2541,6 +2553,9 @@
       "Host": [
         "Amfitrió"
       ],
+      "Host has disabled live captions for this meeting.": [
+        "L'amfitrió ha desactivat els subtítols en directe per aquesta reunió."
+      ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Organitzeu la vostra pròpia reunió segura. Inicieu una trucada a ${ MEET_APP_NAME } i compartiu l'enllaç per convidar qui vulgueu. Senzill, segur i gratuït."
       ],
@@ -2741,6 +2756,12 @@
       ],
       "Participant": [
         "Participant"
+      ],
+      "Participants can turn live captions on. Turn on your own under Display.": [
+        "Els participants poden activar els subtítols en directe. Activeu els vostres a Pantalla."
+      ],
+      "Participants can’t use live captions": [
+        "Els participants no poden fer servir els subtítols en directe"
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Enganxeu l'enllaç de ${ MEET_APP_NAME } per afegir-vos a una reunió segura"

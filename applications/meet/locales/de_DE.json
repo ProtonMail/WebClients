@@ -181,6 +181,9 @@
       "Allow access": [
         "Zugriff erlauben"
       ],
+      "Allow live captions": [
+        "Live-Untertitel zulassen"
+      ],
       "Anyone with the link can join immediately": [
         "Jeder mit dem Link, kann sofort beitreten"
       ],
@@ -734,6 +737,9 @@
       ]
     },
     "Alt": {
+      "Allow live captions": [
+        "Live-Untertitel zulassen"
+      ],
       "Audio settings": [
         "Audio-Einstellungen"
       ],
@@ -1959,6 +1965,9 @@
       "Failed to lock meeting": [
         "Fehler beim Sperren des Meetings"
       ],
+      "Failed to request live captions": [
+        "Live-Untertiteln anzufragen, ist fehlgeschlagen"
+      ],
       "Failed to rotate personal meeting link": [
         "Fehler beim Neugenerieren des persönlichen Meeting-Links"
       ],
@@ -1985,6 +1994,9 @@
       ],
       "Failed to update caption language. Please try again.": [
         "Sprache der Untertitel konnte nicht aktualisiert werden. Bitte versuche es erneut."
+      ],
+      "Failed to update live captions availability": [
+        "Die Aktualisierung der Verfügbarkeit von Live-Untertiteln ist fehlgeschlagen"
       ],
       "Failed to update live captions. Please try again.": [
         "Live-Untertitel konnten nicht aktualisiert werden. Bitte versuche es erneut."
@@ -2541,6 +2553,9 @@
       "Host": [
         "Organisator"
       ],
+      "Host has disabled live captions for this meeting.": [
+        "Organisator hat die Live-Untertitel für dieses Meeting deaktiviert."
+      ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Halte dein eigenes sicheres Meeting ab. Starte einen Anruf in ${ MEET_APP_NAME } und teile den Link, um jeden zum Beitritt einzuladen. Einfach, sicher und kostenlos."
       ],
@@ -2741,6 +2756,12 @@
       ],
       "Participant": [
         "Teilnehmer"
+      ],
+      "Participants can turn live captions on. Turn on your own under Display.": [
+        "Teilnehmer können Live-Untertitel einschalten. Schalte deine eigenen unter «Anzeige» ein."
+      ],
+      "Participants can’t use live captions": [
+        "Teilnehmer können Live-Untertitel nicht nutzen"
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Deinen ${ MEET_APP_NAME }-Link einfügen, um einem sicheren Meeting beizutreten."

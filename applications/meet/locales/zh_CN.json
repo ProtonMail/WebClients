@@ -25,6 +25,9 @@
       ]
     },
     "Accessibility announcement": {
+      "${ BRAND_NAME } background applied": [
+        "已应用${ BRAND_NAME }背景"
+      ],
       "${ name } joined the meeting": [
         "${ name } 加入了会议"
       ],
@@ -61,17 +64,38 @@
       "A participant reacted with ${ emoji }": [
         "一名参与者回应了 ${ emoji }"
       ],
+      "Abstract background applied": [
+        "已应用抽象背景"
+      ],
+      "Background effect turned off": [
+        "已关闭背景效果"
+      ],
+      "Beach background applied": [
+        "已应用沙滩背景"
+      ],
+      "Blurred background applied": [
+        "已应用模糊背景"
+      ],
+      "Coffee place background applied": [
+        "已应用咖啡厅背景"
+      ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "由于网络限制，已通过 TURN 中继模式连接。这可能会增加延迟并影响通话质量。"
       ],
       "Connection lost. Reconnecting…": [
         "连接断开，正在重连…"
       ],
+      "Mountain background applied": [
+        "已应用山脉背景"
+      ],
       "New chat message: ${ message }": [
         "新聊天消息：${ message }"
       ],
       "Now starting recording": [
         "正在开始录制"
+      ],
+      "Office background applied": [
+        "已应用办公室背景"
       ],
       "Reconnected to the meeting": [
         "已重新连接会议"
@@ -179,6 +203,12 @@
       ],
       "Back": [
         "上一步"
+      ],
+      "Backgrounds and effects": [
+        "背景和效果"
+      ],
+      "Blur background": [
+        "模糊背景"
       ],
       "Cancel": [
         "取消"
@@ -309,6 +339,9 @@
       "Enable camera": [
         "启用摄像头"
       ],
+      "Enable captions": [
+        "启用字幕"
+      ],
       "Enable waiting room": [
         "启用等候室"
       ],
@@ -333,6 +366,9 @@
       "Get verification code": [
         "获取验证码"
       ],
+      "Getting ready...": [
+        "准备中…"
+      ],
       "Help and feedback": [
         "帮助和反馈"
       ],
@@ -347,6 +383,9 @@
       ],
       "Hide timezones": [
         "隐藏时区"
+      ],
+      "Incoming video": [
+        "传入视频"
       ],
       "Insert emoji": [
         "插入表情"
@@ -372,11 +411,17 @@
       "Leave meeting": [
         "离开会议"
       ],
+      "Live captions": [
+        "实时字幕"
+      ],
       "Lock meeting": [
         "锁定会议"
       ],
       "Lower hand": [
         "放下"
+      ],
+      "Meeting timer": [
+        "会议计时器"
       ],
       "Minimize preview": [
         "最小化预览"
@@ -396,6 +441,9 @@
       "Next page": [
         "下一页"
       ],
+      "No effect": [
+        "无效果"
+      ],
       "Noise cancellation": [
         "降噪"
       ],
@@ -413,6 +461,18 @@
       ],
       "Pause": [
         "暂停"
+      ],
+      "Picture-in-picture while sharing": [
+        "共享时使用画中画"
+      ],
+      "Playing back...": [
+        "正在回放..."
+      ],
+      "Playing sound...": [
+        "正在播放声音..."
+      ],
+      "Preview logs": [
+        "预览日志"
       ],
       "Previous month": [
         "上个月"
@@ -434,6 +494,9 @@
       ],
       "Record": [
         "录制"
+      ],
+      "Recording your microphone...": [
+        "正在录制您的麦克风..."
       ],
       "Refer a friend": [
         "邀请好友"
@@ -503,6 +566,9 @@
       ],
       "Search countries": [
         "搜索国家"
+      ],
+      "Self view": [
+        "自我视角"
       ],
       "Send an encrypted message": [
         "发送加密消息"
@@ -588,6 +654,12 @@
       "Tap to unblock audio playback": [
         "点击以解除音频播放阻止"
       ],
+      "Test microphone": [
+        "测试麦克风"
+      ],
+      "Test speakers": [
+        "测试扬声器"
+      ],
       "The current link will stop working.": [
         "当前链接将失效！"
       ],
@@ -645,6 +717,9 @@
       "View invoice": [
         "查看账单"
       ],
+      "Virtual backgrounds": [
+        "虚拟背景"
+      ],
       "Waiting room": [
         "等候室"
       ],
@@ -658,6 +733,9 @@
     "Alt": {
       "Audio settings": [
         "音频设置"
+      ],
+      "Backgrounds": [
+        "背景"
       ],
       "Blur background": [
         "模糊背景"
@@ -677,14 +755,26 @@
       "Copy meeting link": [
         "复制会议链接"
       ],
+      "Debug devices": [
+        "调试设备"
+      ],
       "Debug overlay": [
         "调试叠加层"
+      ],
+      "Device Debugger": [
+        "设备调试器"
       ],
       "Go to dashboard": [
         "转到控制面板"
       ],
+      "Incoming video": [
+        "传入视频"
+      ],
       "Leave Meeting": [
         "离开会议"
+      ],
+      "Live captions": [
+        "实时字幕"
       ],
       "Lock meeting": [
         "锁定会议"
@@ -694,6 +784,9 @@
       ],
       "Meeting details": [
         "会议详情"
+      ],
+      "Meeting timer": [
+        "会议计时器"
       ],
       "More options": [
         "更多选项"
@@ -713,6 +806,9 @@
       "Participants": [
         "参与者"
       ],
+      "Picture-in-picture while sharing": [
+        "共享时使用画中画"
+      ],
       "Raise hand": [
         "举手"
       ],
@@ -724,6 +820,9 @@
       ],
       "Screen share": [
         "屏幕共享"
+      ],
+      "Self view": [
+        "自我视角"
       ],
       "Settings": [
         "设置"
@@ -768,6 +867,12 @@
       "Audio settings": [
         "音频设置"
       ],
+      "Backgrounds": [
+        "背景"
+      ],
+      "Blur and personal": [
+        "模糊和私人"
+      ],
       "Chat": [
         "聊天"
       ],
@@ -783,6 +888,9 @@
       "Meeting rooms": [
         "会议室"
       ],
+      "Microphone input level": [
+        "麦克风输入电平"
+      ],
       "Participants": [
         "参与者"
       ],
@@ -797,6 +905,9 @@
       ],
       "Video settings": [
         "视频设置"
+      ],
+      "Virtual backgrounds": [
+        "虚拟背景"
       ]
     },
     "Badge": {
@@ -1773,6 +1884,15 @@
       "Background blur initialization failed. Please toggle your camera or background blur again": [
         "背景模糊初始化失败，请重新切换摄像头或背景模糊！"
       ],
+      "Couldn’t play the recording on this speaker.": [
+        "无法在此扬声器上播放录音。"
+      ],
+      "Couldn’t play the test sound on this speaker.": [
+        "无法在此扬声器上播放测试声音。"
+      ],
+      "Couldn’t start the microphone test.": [
+        "无法测试麦克风。"
+      ],
       "Domain not available, try again later": [
         "域名不可用，请稍后再试"
       ],
@@ -1860,6 +1980,12 @@
       "Failed to unlock meeting": [
         "解锁会议失败"
       ],
+      "Failed to update caption language. Please try again.": [
+        "更新字幕语言失败。请重试。"
+      ],
+      "Failed to update live captions. Please try again.": [
+        "更新实时字幕失败。请重试。"
+      ],
       "Failed to update waiting room setting. Please try again.": [
         "更新等候室设置失败，请重试。"
       ],
@@ -1871,6 +1997,18 @@
       ],
       "Invalid verification code": [
         "验证码无效"
+      ],
+      "Live captions aren't working. Try turning them off and on again.": [
+        "实时字幕无法正常工作。请尝试将其关闭后再重新开启。"
+      ],
+      "Live captions couldn't be started.": [
+        "无法开启实时字幕。"
+      ],
+      "Live captions have stopped.": [
+        "已停用实时字幕。"
+      ],
+      "Microphone access is blocked. Allow it in your browser settings.": [
+        "麦克风访问被阻止。请在浏览器设置中允许访问。"
       ],
       "Not a valid number": [
         "无效号码"
@@ -1905,6 +2043,9 @@
       "The meeting password is invalid": [
         "会议密码无效"
       ],
+      "The selected microphone is no longer available.": [
+        "所选麦克风已不再可用。"
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "此项超过了 ${ maximumLength } 个字符的长度限制。"
       ],
@@ -1929,6 +2070,9 @@
       "Username must end with a letter or digit": [
         "用户名必须以字母或数字结尾"
       ],
+      "Virtual background initialization failed. Please toggle your camera or pick a background again": [
+        "虚拟背景初始化失败。请切换您的摄像头或重新选择背景"
+      ],
       "We couldn’t send a verification code using this method.": [
         "我们无法通过此类方式发送验证码。"
       ],
@@ -1937,6 +2081,9 @@
       ],
       "Your device's clock appears to be out of sync. Please check your system time and try again.": [
         "您的设备时钟似乎不同步。请检查您的系统时间并重试。"
+      ],
+      "Your microphone is busy. Close other apps or tabs using it, then try again.": [
+        "你的麦克风正忙。请关闭其他正在使用麦克风的应用或标签页，然后重试。"
       ]
     },
     "Error message": {
@@ -2175,8 +2322,17 @@
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "高级模式：调整下一版本中的每个模糊常量，然后点击“应用”以重建预览。覆盖优先级高于文件和 Unleash 值。"
       ],
+      "Allow camera access to preview your background": [
+        "允许访问摄像头以预览您的背景"
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "匿名 ${ particle } ${ participantNumber }"
+      ],
+      "Anyone with the link can join immediately": [
+        "任何拥有链接的人都可以立即加入"
+      ],
+      "Approve participants before they can join": [
+        "在参与者加入前批准他们"
       ],
       "Are you sure you want to leave?": [
         "您确定要离开吗？"
@@ -2187,8 +2343,14 @@
       "Attention required": [
         "需要关注"
       ],
+      "Available with a paid plan": [
+        "仅付费套餐可用"
+      ],
       "Background blur initializing": [
         "背景模糊正在初始化"
+      ],
+      "Background effects are not supported on your browser": [
+        "您的浏览器不支持背景效果"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "重新接收验证码前，请先检查垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
@@ -2202,8 +2364,14 @@
       "camera": [
         "摄像头"
       ],
+      "Camera effects": [
+        "摄像头效果"
+      ],
       "Camera permission denied": [
         "摄像头权限被拒绝"
+      ],
+      "Captions are on": [
+        "字幕已开启"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "更改已暂存，应用以使用新常量重建预览。"
@@ -2424,6 +2592,9 @@
       "Loading…": [
         "正在加载…"
       ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "日志有助于我们了解问题发生前的情况。其中包括应用操作和错误消息，但不包含消息内容。"
+      ],
       "Loop an uploaded video or your live camera through both background blur versions side by side.": [
         "循环播放上传的视频或实时摄像头画面，并排显示两种背景模糊版本。"
       ],
@@ -2576,6 +2747,9 @@
       ],
       "Presenting": [
         "正在演示"
+      ],
+      "Preview unavailable": [
+        "无法预览"
       ],
       "privacy": [
         "私密"
@@ -2730,6 +2904,9 @@
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "要创建会议室，您需要**一个免费的 ${ BRAND_NAME } 账户**，以便我们保存该会议室。这仅需几秒钟。"
       ],
+      "To create live captions, the captioning service needs access to the meeting audio. Captions are only visible to you and are not saved.": [
+        "要创建实时字幕，字幕服务需要访问会议音频。字幕仅对你可见，不会被保存。"
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
       ],
@@ -2750,6 +2927,9 @@
       ],
       "Turn on camera": [
         "开启摄像头"
+      ],
+      "Turn on live captions?": [
+        "开启实时字幕？"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "无法重新连接到会议，请重新加入或离开。"
@@ -2774,6 +2954,9 @@
       ],
       "View ": [
         "查看 "
+      ],
+      "Virtual background initializing": [
+        "初始化虚拟背景中"
       ],
       "Waiting for the host to admit you. The host has been notified that you're waiting.": [
         "等待主持人批准您的加入，已通知主持人您正在等待。"
@@ -2873,11 +3056,20 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } background": [
+        "${ BRAND_NAME }背景"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 用户名"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } 字符"
+      ],
       "${ numberOfStars } star": [
         "${ numberOfStars } 星"
+      ],
+      "Abstract background": [
+        "抽象背景"
       ],
       "Add optional details": [
         "添加可选详细信息"
@@ -2887,6 +3079,9 @@
       ],
       "Advanced mode": [
         "高级模式"
+      ],
+      "Agent": [
+        "智能体"
       ],
       "Anyone with the link can join": [
         "任何人都可以通过此链接加入"
@@ -2900,8 +3095,14 @@
       "Authenticator app": [
         "身份验证应用"
       ],
+      "Auto-detect": [
+        "自动检测"
+      ],
       "Background color": [
         "背景颜色"
+      ],
+      "Beach background": [
+        "沙滩背景"
       ],
       "Blurred (next)": [
         "模糊（下一版本）"
@@ -2926,6 +3127,9 @@
       ],
       "Code is 6 digits without spaces": [
         "验证码是无空格的六位数"
+      ],
+      "Coffee place background": [
+        "咖啡厅背景"
       ],
       "Connection Quality": [
         "连接质量"
@@ -3014,6 +3218,9 @@
       "Leave meeting options": [
         "离开会议选项"
       ],
+      "Live caption agent": [
+        "实时字幕智能体"
+      ],
       "Manage recordings": [
         "管理录制"
       ],
@@ -3032,6 +3239,9 @@
       "Monday to Friday": [
         "周一至周五"
       ],
+      "Mountain background": [
+        "山脉背景"
+      ],
       "Muted": [
         "已静音"
       ],
@@ -3040,6 +3250,9 @@
       ],
       "Next": [
         "下一步"
+      ],
+      "Office background": [
+        "办公室背景"
       ],
       "Operating system": [
         "操作系统"
@@ -3100,6 +3313,9 @@
       ],
       "Solid color": [
         "纯色"
+      ],
+      "Spoken language": [
+        "使用的语言"
       ],
       "Subscribed": [
         "已订阅"
@@ -3320,6 +3536,9 @@
       ]
     },
     "Role": {
+      "Organization Admin": [
+        "组织管理员"
+      ],
       "Security Admin": [
         "安全管理员"
       ],
@@ -3414,8 +3633,16 @@
       "No": [
         "否"
       ],
+      "Transcribing...": [
+        "正在转录…"
+      ],
       "Yes": [
         "是"
+      ]
+    },
+    "Subtitle": {
+      "This system agent creates live captions. It is not a participant and cannot send messages.": [
+        "此系统智能体会创建实时字幕。它不是参与者，无法发送消息。"
       ]
     },
     "Success": {
@@ -3486,8 +3713,17 @@
       "Available Speakers": [
         "可用扬声器"
       ],
+      "Background": [
+        "背景"
+      ],
       "Background blur comparison": [
         "背景模糊对比"
+      ],
+      "Backgrounds": [
+        "背景"
+      ],
+      "Blur and personal": [
+        "模糊和私人"
       ],
       "Camera and microphone are blocked": [
         "相机和麦克风已被阻止"
@@ -3519,6 +3755,9 @@
       "Delete recording?": [
         "删除录制？"
       ],
+      "Display": [
+        "显示"
+      ],
       "Enter your password": [
         "请输入您的密码"
       ],
@@ -3536,6 +3775,9 @@
       ],
       "Help center": [
         "帮助中心"
+      ],
+      "Host settings": [
+        "主持人设置"
       ],
       "Human verification": [
         "身份验证"
@@ -3606,6 +3848,9 @@
       "Participants (${ filteredParticipants.length })": [
         "参与者 (${ filteredParticipants.length })"
       ],
+      "People": [
+        "成员"
+      ],
       "Personal meeting room": [
         "个人会议室"
       ],
@@ -3660,6 +3905,9 @@
       "Stop recording": [
         "停止录制"
       ],
+      "System": [
+        "系统"
+      ],
       "Talk confidentially": [
         "进行私密交谈"
       ],
@@ -3677,6 +3925,12 @@
       ],
       "Two-factor authentication": [
         "双因素身份验证"
+      ],
+      "Video and audio": [
+        "视频和音频"
+      ],
+      "Virtual backgrounds": [
+        "虚拟背景"
       ],
       "Waiting for the host": [
         "等待主持人"
@@ -3703,6 +3957,9 @@
       "Background blur is not supported on your browser": [
         "您的浏览器不支持背景虚化"
       ],
+      "Background effects are not supported on your browser": [
+        "您的浏览器不支持背景效果"
+      ],
       "Generate a new meeting link. The current link will stop working.": [
         "生成新的会议链接，当前链接即将失效。"
       ],
@@ -3711,6 +3968,9 @@
       ],
       "Recurring meeting": [
         "周期性会议"
+      ],
+      "Stop sharing your screen to change this setting": [
+        "停止共享屏幕以更改此设置"
       ],
       "You can generate a new meeting link once per day.": [
         "您每天可以生成一个新的会议链接！"
