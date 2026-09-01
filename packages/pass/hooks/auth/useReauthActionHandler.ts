@@ -80,21 +80,29 @@ export const useReauthActionHandler = (store: Store<State>) => {
                 });
 
             case ReauthAction.OFFLINE_SETUP:
-                if (authStore?.hasOfflinePassword()) {
+                /** The fork may carry no offline key material - SSO accounts whose
+                 * password never reaches account, or a swallowed argon2 failure in
+                 * `generateOfflineKey`. The offline components cannot be derived in
+                 * that case: report it instead of leaving the user without feedback. */
+                if (!authStore?.hasOfflinePassword()) {
                     return createNotification({
-                        type: 'info',
-                        text: passwordTypeSwitch({
-                            extra: c('Info')
-                                .t`You can now use your extra password to access ${PASS_SHORT_APP_NAME} offline`,
-                            twoPwd: c('Info')
-                                .t`You can now use your second password to access ${PASS_SHORT_APP_NAME} offline`,
-                            sso: c('Info')
-                                .t`You can now use your backup password to access ${PASS_SHORT_APP_NAME} offline`,
-                            default: c('Info')
-                                .t`You can now use your ${BRAND_NAME} password to access ${PASS_SHORT_APP_NAME} offline`,
-                        }),
+                        type: 'error',
+                        text: c('Warning').t`Identity could not be confirmed`,
                     });
                 }
+
+                return createNotification({
+                    type: 'info',
+                    text: passwordTypeSwitch({
+                        extra: c('Info')
+                            .t`You can now use your extra password to access ${PASS_SHORT_APP_NAME} offline`,
+                        twoPwd: c('Info')
+                            .t`You can now use your second password to access ${PASS_SHORT_APP_NAME} offline`,
+                        sso: c('Info').t`You can now use your backup password to access ${PASS_SHORT_APP_NAME} offline`,
+                        default: c('Info')
+                            .t`You can now use your ${BRAND_NAME} password to access ${PASS_SHORT_APP_NAME} offline`,
+                    }),
+                });
         }
     }, []);
 };
