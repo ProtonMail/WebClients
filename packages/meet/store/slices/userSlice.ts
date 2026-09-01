@@ -1,3 +1,4 @@
+import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 
 import { selectOrganization } from '@proton/account/organization';
@@ -8,28 +9,39 @@ import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { isProtoneer } from '@proton/shared/lib/helpers/organization';
 import { isMember, isUserAccountOlderThanOrEqualToDays } from '@proton/shared/lib/user/helpers';
 
+import { getPersistedGuestBackgroundId } from '../../utils/guestBackgroundIdentity';
 import type { MeetState } from '../rootReducer';
 
 export interface MeetUserState {
     isGuest: boolean;
+    guestBackgroundId: string | null;
 }
 
 export const initialState: MeetUserState = {
     isGuest: true,
+    guestBackgroundId: null,
 };
 
 export const getIsGuestFromUrl = () => window.location.pathname.includes('guest');
 
 const slice = createSlice({
     name: 'meetUser',
-    initialState: () => ({
+    initialState: (): MeetUserState => ({
         ...initialState,
         isGuest: getIsGuestFromUrl(),
+        guestBackgroundId: getPersistedGuestBackgroundId() ?? null,
     }),
-    reducers: {},
+    reducers: {
+        setGuestBackgroundId: (state, action: PayloadAction<string>) => {
+            state.guestBackgroundId = action.payload;
+        },
+    },
 });
 
+export const { setGuestBackgroundId } = slice.actions;
+
 export const selectIsGuest = (state: MeetState) => state.meetUser.isGuest;
+export const selectGuestBackgroundId = (state: MeetState) => state.meetUser.guestBackgroundId;
 
 type SubscriptionStatus = {
     /**
