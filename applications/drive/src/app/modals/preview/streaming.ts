@@ -6,6 +6,7 @@ import { logging } from '@proton/drive/modules/logging';
 import { canHtmlVideoPlay } from '@proton/drive/modules/thumbnails';
 import metrics from '@proton/metrics/index';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
+import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { initDownloadSW } from '../../modules/fileSaver/download';
 import type { MseStreamHandle } from './mseStreaming';
@@ -85,10 +86,12 @@ export function useVideoStreaming({ drive, nodeUid, mimeType, mediaDuration }: U
     }, []);
 
     const isServiceWorkerAvailable = useMemo(() => !!navigator.serviceWorker, []);
+    // Not gated on canHtmlVideoPlay(mimeType): the stored mimeType is extension-derived and can
+    // be wrong (e.g. an MP4 re-exported with a `.avi` extension), while the <video> element
+    // decodes from real bytes. A genuinely unplayable file sets isBrokenVideo via
+    // onVideoPlaybackError, which flips this back to false and degrades to Buffer mode.
     const isStreamableVideo = useMemo(() => {
-        return (
-            !!mimeType && isVideo(mimeType) && isServiceWorkerAvailable && canHtmlVideoPlay(mimeType) && !isBrokenVideo
-        );
+        return !!mimeType && isVideo(mimeType) && isServiceWorkerAvailable && !isBrokenVideo;
     }, [mimeType, isServiceWorkerAvailable, isBrokenVideo]);
 
     const streamPromiseRef = useRef<Promise<{ stream: SeekableReadableStream; claimedTotalSize?: number }> | undefined>(
@@ -103,48 +106,62 @@ export function useVideoStreaming({ drive, nodeUid, mimeType, mediaDuration }: U
         }
     };
 
-    const handleBrokenVideo = useCallback((error?: SyntheticEvent<HTMLVideoElement, Event> | Error | unknown) => {
-        // A failure while MSE is the active mechanism degrades to the Service
-        // Worker path rather than abandoning streaming. Only if the Service
-        // Worker also fails do we give up and let the preview fall back to a
-        // full download (see resolvePreviewOutput). This is the MSE → SW →
-        // full-load cascade.
-        if (streamingModeRef.current === 'mse' && swFallbackRef.current) {
-            logger.warn(`MSE streaming failed, falling back to Service Worker: ${errorToString(error)}`);
-            mseHandleRef.current?.dispose();
-            mseHandleRef.current = undefined;
-            setMseUrl(undefined);
-            swFallbackRef.current();
-            return;
-        }
+    const handleBrokenVideo = useCallback(
+        (error?: SyntheticEvent<HTMLVideoElement, Event> | Error | unknown) => {
+            // A failure while MSE is the active mechanism degrades to the Service
+            // Worker path rather than abandoning streaming. Only if the Service
+            // Worker also fails do we give up and let the preview fall back to a
+            // full download (see resolvePreviewOutput). This is the MSE → SW →
+            // full-load cascade.
+            if (streamingModeRef.current === 'mse' && swFallbackRef.current) {
+                logger.warn(`MSE streaming failed, falling back to Service Worker: ${errorToString(error)}`);
+                mseHandleRef.current?.dispose();
+                mseHandleRef.current = undefined;
+                setMseUrl(undefined);
+                swFallbackRef.current();
+                return;
+            }
 
-        let videoError;
-        if (error instanceof Error) {
-            videoError = error;
-        } else {
-            const eventDetails = serializaEventPayload(error);
-            const logMessage = eventDetails ? JSON.stringify(eventDetails) : errorToString(error);
+            let videoError;
+            if (error instanceof Error) {
+                videoError = error;
+            } else {
+                const eventDetails = serializaEventPayload(error);
+                const logMessage = eventDetails ? JSON.stringify(eventDetails) : errorToString(error);
 
-            logger.warn(`Video streaming failed because of error: ${logMessage}`);
+                logger.warn(`Video streaming failed because of error: ${logMessage}`);
 
-            videoError = new EnrichedError('Failed to load the video for streaming preview', {
-                extra: {
-                    error,
-                    eventDetails,
-                    mimeType,
-                },
-            });
-        }
+                videoError = new EnrichedError('Failed to load the video for streaming preview', {
+                    extra: {
+                        error,
+                        eventDetails,
+                        mimeType,
+                    },
+                });
+            }
 
-        if (error instanceof ServiceWorkerTimeoutError) {
-            metrics.drive_warnings_total.increment({ warning: 'cannot_init_sw' });
-        } else {
-            sendErrorReport(videoError);
-        }
+            if (error instanceof ServiceWorkerTimeoutError) {
+                metrics.drive_warnings_total.increment({ warning: 'cannot_init_sw' });
+            } else if (!canHtmlVideoPlay(mimeType)) {
+                // The browser can't decode this container (real AVI/MKV/WMV), so degrading to Buffer
+                // mode is expected. Reported at "debug" level to keep the mimeType trend without noise.
+                logger.debug(`Video streaming unavailable for undecodable mimeType ${mimeType}`);
+                traceError(videoError, {
+                    level: 'debug',
+                    tags: {
+                        component: 'drive-preview-streaming',
+                        ...(mimeType && { mimeType }),
+                    },
+                });
+            } else {
+                sendErrorReport(videoError);
+            }
 
-        clearSerwiceWorkerTimeout();
-        setIsBrokenVideo(true);
-    }, []);
+            clearSerwiceWorkerTimeout();
+            setIsBrokenVideo(true);
+        },
+        [mimeType]
+    );
 
     const initServiceWorker = (abortController: AbortController) => {
         initDownloadSW().catch((err) => {
