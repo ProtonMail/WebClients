@@ -254,8 +254,7 @@
         },
         "packages/encrypted-search": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/eslint-config-proton": {
             "entry": [],
