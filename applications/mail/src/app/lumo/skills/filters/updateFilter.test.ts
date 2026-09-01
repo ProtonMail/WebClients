@@ -35,7 +35,7 @@ describe('updateFilterModule', () => {
     it('preserves the stored Status but writes the validated dialect version', async () => {
         const { references, updateFilter, update } = setUp();
 
-        await update(references.referenceFor('filter', 'FILTER_ID_1', 'Newsletters'));
+        await update(references.referenceFor('filter', 'FILTER_ID_1', { title: 'Newsletters' }));
 
         expect(updateFilter).toHaveBeenCalledWith('FILTER_ID_1', {
             ID: 'FILTER_ID_1',
@@ -51,9 +51,9 @@ describe('updateFilterModule', () => {
         const { references, updateFilter, validateSieve, update } = setUp();
         validateSieve.mockRejectedValue(new ToolInputError('This Sieve script is invalid. line 2: unknown command'));
 
-        await expect(update(references.referenceFor('filter', 'FILTER_ID_1', 'Newsletters'))).rejects.toThrow(
-            'line 2: unknown command'
-        );
+        await expect(
+            update(references.referenceFor('filter', 'FILTER_ID_1', { title: 'Newsletters' }))
+        ).rejects.toThrow('line 2: unknown command');
         expect(validateSieve).toHaveBeenCalledWith(SIEVE);
         expect(updateFilter).not.toHaveBeenCalled();
     });
@@ -61,18 +61,18 @@ describe('updateFilterModule', () => {
     it('rejects a reference whose filter is no longer stored, without writing', async () => {
         const { references, updateFilter, update } = setUp([]);
 
-        await expect(update(references.referenceFor('filter', 'FILTER_ID_1', 'Newsletters'))).rejects.toThrow(
-            ToolInputError
-        );
+        await expect(
+            update(references.referenceFor('filter', 'FILTER_ID_1', { title: 'Newsletters' }))
+        ).rejects.toThrow(ToolInputError);
         expect(updateFilter).not.toHaveBeenCalled();
     });
 
     it('rejects a reference of another kind before resolving it to an id', async () => {
         const { references, updateFilter, update } = setUp();
 
-        await expect(update(references.referenceFor('folder', 'FILTER_ID_1', 'Newsletters'))).rejects.toThrow(
-            ToolInputError
-        );
+        await expect(
+            update(references.referenceFor('folder', 'FILTER_ID_1', { title: 'Newsletters' }))
+        ).rejects.toThrow(ToolInputError);
         expect(updateFilter).not.toHaveBeenCalled();
     });
 

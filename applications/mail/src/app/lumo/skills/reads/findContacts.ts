@@ -119,7 +119,10 @@ export const createFindContactsHandler =
             total: matched.length,
             addressBookIsEmpty: !contactEmails.length,
             matches: matched.slice(0, MAX_CONTACTS_RETURNED).map((contactEmail) => ({
-                reference: references.referenceFor('contact', contactEmail.ID, contactEmail.Name),
+                reference: references.referenceFor('contact', contactEmail.ID, {
+                    title: contactEmail.Name,
+                    subtitle: contactEmail.Email,
+                }),
                 name: contactEmail.Name,
                 email: contactEmail.Email,
             })),

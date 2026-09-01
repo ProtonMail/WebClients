@@ -10,7 +10,7 @@ const action: ActionRequest = {
     folder: null,
     location: 'trash',
 };
-const labels = { 'email-a1b2c3': 'Booking confirmation', 'email-d4e5f6': 'Receipt' };
+const labels = { 'email-a1b2c3': { title: 'Booking confirmation' }, 'email-d4e5f6': { title: 'Receipt' } };
 
 const renderBody = (selectedIds: string[]) => {
     const onChange = jest.fn();

@@ -1,6 +1,6 @@
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
-import type { ActionRequest } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type { ActionRequest, ReferenceLabels } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { Disclosure } from '@proton/lumo-ui';
 import type { IconComponent } from '@proton/lumo-ui/types';
 import clsx from '@proton/utils/clsx';
@@ -18,7 +18,7 @@ const STATUS_MARKS: Record<SettledStatus, { Icon: IconComponent; className: stri
 interface Props {
     renderer: CardRenderer;
     action: ActionRequest;
-    labels: Record<string, string>;
+    labels: ReferenceLabels;
     status: SettledStatus;
     className?: string;
 }

@@ -4,6 +4,8 @@
  * what these pin is the composition — the URL actually pushed, and that the rows come from the view that
  * URL settles on rather than the one that was on screen before.
  */
+import { formatISO } from 'date-fns';
+
 import type { ESStatusBooleans } from '@proton/encrypted-search/models';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -130,6 +132,18 @@ describe('search handler', () => {
         expect(result.coverage).toBe('full');
     });
 
+    it('records the sender and a locale-free timestamp alongside the subject, for the confirm card', async () => {
+        const { deps, references } = harness({ landing: [email('ELEMENT_1', 'Hotel booking')] });
+
+        const result = await createSearchHandler(deps)(searchParams({ keyword: 'hotel' }), { references });
+
+        expect(references.labelFor(result.rows[0].reference)).toEqual({
+            title: 'Hotel booking',
+            subtitle: 'Alice',
+            meta: formatISO(new Date(2026, 6, 29, 9, 0)),
+        });
+    });
+
     it('bounds a date range on local calendar days, with the end inclusive', async () => {
         const { deps, references, hashOf } = harness();
 
@@ -166,7 +180,7 @@ describe('search handler', () => {
 
     it.each(['folder', 'label'] as const)('scopes to a %s by reference and reports its NAME', async (type) => {
         const { deps, references } = harness();
-        const reference = references.referenceFor(type, 'TARGET_1', 'Travel');
+        const reference = references.referenceFor(type, 'TARGET_1', { title: 'Travel' });
 
         const result = await createSearchHandler(deps)(searchParams({ keyword: 'hotel', target: reference }), {
             references,
@@ -179,7 +193,7 @@ describe('search handler', () => {
 
     it('rejects a non-folder reference rather than navigating to a message id', async () => {
         const { deps, references } = harness();
-        const reference = references.referenceFor('email', 'ELEMENT_1', 'Hotel booking');
+        const reference = references.referenceFor('email', 'ELEMENT_1', { title: 'Hotel booking' });
 
         await expect(createSearchHandler(deps)(searchParams({ target: reference }), { references })).rejects.toThrow(
             /not a folder or label reference/
@@ -284,7 +298,7 @@ describe('open_folder handler', () => {
 
     it('opens a custom folder by reference, under its own name', async () => {
         const { deps, references } = harness();
-        const reference = references.referenceFor('folder', 'FOLDER_1', 'Travel');
+        const reference = references.referenceFor('folder', 'FOLDER_1', { title: 'Travel' });
 
         const result = await createOpenFolderHandler(deps)(openParams({ target: reference }), { references });
 
@@ -293,7 +307,7 @@ describe('open_folder handler', () => {
 
     it('rejects a non-folder reference as a target', async () => {
         const { deps, references } = harness();
-        const reference = references.referenceFor('email', 'ELEMENT_1', 'Hotel booking');
+        const reference = references.referenceFor('email', 'ELEMENT_1', { title: 'Hotel booking' });
 
         await expect(createOpenFolderHandler(deps)(openParams({ target: reference }), { references })).rejects.toThrow(
             /not a folder or label reference/

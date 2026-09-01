@@ -10,6 +10,7 @@ import { ToolInputError, UnknownReferenceError } from '../contracts/errors';
 import type {
     ActionRequest,
     ChipSummary,
+    ReferenceLabels,
     ReferenceRegistry,
     ToolDefinition,
     ToolHandlers,
@@ -54,7 +55,7 @@ export type ConfirmDecision = { action: 'apply'; params: Record<string, any> } |
  * of approval). The (possibly edited) params from an `apply` are what the handler runs with.
  */
 export interface ConfirmController {
-    requestConfirmation(action: ActionRequest, labels: Record<string, string>): Promise<ConfirmDecision>;
+    requestConfirmation(action: ActionRequest, labels: ReferenceLabels): Promise<ConfirmDecision>;
 }
 
 /** A transparency chip emitted per tool run for the product's UI. `payload` is what was fed to the model. */
@@ -118,9 +119,9 @@ const assertReferencesResolve = (
         .forEach(([, value]) => check(value));
 };
 
-/** Map each reference-shaped param value to its human-readable name, for the confirm card. */
-const collectLabels = (params: Record<string, any>, references: ReferenceRegistry): Record<string, string> => {
-    const labels: Record<string, string> = {};
+/** Map each reference-shaped param value to its display description, for the confirm card. */
+const collectLabels = (params: Record<string, any>, references: ReferenceRegistry): ReferenceLabels => {
+    const labels: ReferenceLabels = {};
     const collect = (value: any) => {
         if (typeof value === 'string' && REFERENCE_PATTERN.test(value)) {
             const label = references.labelFor(value);
