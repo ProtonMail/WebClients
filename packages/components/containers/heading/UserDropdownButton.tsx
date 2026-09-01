@@ -1,11 +1,10 @@
-import type { ButtonHTMLAttributes, DetailedHTMLProps, Ref } from 'react';
+import type { ButtonHTMLAttributes, DetailedHTMLProps, ReactElement, Ref } from 'react';
 import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
 import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import type { ThemeColor } from '@proton/colors';
-import type { IconName } from '@proton/icons/types';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -19,7 +18,7 @@ export interface Props extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButton
     className?: string;
     isOpen?: boolean;
     notification?: ThemeColor;
-    dropdownIcon?: IconName;
+    dropdownIcon?: ReactElement;
 }
 
 const UserDropdownButton = (
@@ -41,7 +40,7 @@ const UserDropdownButton = (
             className="max-w-full flex items-center flex-nowrap gap-3 user-dropdown-button relative interactive-pseudo-protrude rounded interactive--no-background"
             title={title}
         >
-            <DropdownCaret className="md:hidden ml-1 color-weak" iconName={dropdownIcon} isOpen={isOpen} />
+            <DropdownCaret className="md:hidden ml-1 color-weak" icon={dropdownIcon} isOpen={isOpen} />
 
             {nameToDisplay ? (
                 <span className="flex-1 lh130 user-dropdown-text">

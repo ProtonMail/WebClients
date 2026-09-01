@@ -12,6 +12,7 @@ import {
     DropdownMenuButton,
     TableHeaderCell,
 } from '@proton/components';
+import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
@@ -135,7 +136,11 @@ export function GridHeader({
                             // TODO: Find a better way than this hack
                             style={{ margin: '-0.5rem' }}
                         >
-                            <DropdownCaret isOpen={isOpen} className="expand-caret toolbar-icon" size={4} />
+                            <DropdownCaret
+                                isOpen={isOpen}
+                                className="expand-caret toolbar-icon"
+                                icon={<IcChevronDownFilled size={4} />}
+                            />
                         </Button>
                         <Dropdown
                             id={uid}

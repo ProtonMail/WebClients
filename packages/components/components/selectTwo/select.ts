@@ -1,7 +1,5 @@
 import type { ComponentPropsWithoutRef, ReactElement, ReactNode } from 'react';
 
-import type { IconName } from '@proton/icons/types';
-
 import type { OptionProps } from '../option/Option';
 import type { NodeOrBoolean } from '../v2/field/InputField';
 
@@ -10,8 +8,10 @@ export type SelectChangeEvent<V> = {
     selectedIndex: number;
 };
 
-export interface SelectProps<V>
-    extends Omit<ComponentPropsWithoutRef<'button'>, 'value' | 'onClick' | 'onChange' | 'onKeyDown' | 'aria-label'> {
+export interface SelectProps<V> extends Omit<
+    ComponentPropsWithoutRef<'button'>,
+    'value' | 'onClick' | 'onChange' | 'onKeyDown' | 'aria-label'
+> {
     value?: V;
     /**
      * Enable multiple mode, allowing selection of multiple values.
@@ -38,7 +38,7 @@ export interface SelectProps<V>
      * anchor. If null is returned, will fall back to the internal implementation.
      */
     renderSelected?: (selected?: V) => ReactNode;
-    caretIconName?: IconName;
+    caretIcon?: ReactElement;
     caretClassName?: string;
 }
 
