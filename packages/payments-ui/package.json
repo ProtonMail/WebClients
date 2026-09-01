@@ -5,6 +5,9 @@
     "sideEffects": [
         "*.scss"
     ],
+    "exports": {
+        "./*": "./*"
+    },
     "scripts": {
         "check-types": "tsc",
         "lint": "eslint --quiet",

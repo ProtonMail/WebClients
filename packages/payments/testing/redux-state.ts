@@ -1,11 +1,9 @@
-import type { PaymentStatusState, SubscriptionState } from '@proton/account';
-
 import { DEFAULT_TAX_BILLING_ADDRESS } from '../core/billing-address/billing-address';
 import { DEFAULT_PAYMENT_VENDOR_STATES } from '../core/constants';
 import type { PaymentStatus } from '../core/interface';
 import type { Subscription } from '../core/subscription/interface';
 
-export const getSubscriptionState = (value: Subscription = {} as Subscription): SubscriptionState['subscription'] => {
+export const getSubscriptionState = (value: Subscription = {} as Subscription) => {
     return {
         meta: {
             type: 1,
@@ -22,7 +20,7 @@ export const getPaymentStatusState = (
         VendorStates: DEFAULT_PAYMENT_VENDOR_STATES,
         ...DEFAULT_TAX_BILLING_ADDRESS,
     }
-): PaymentStatusState['paymentStatus'] => {
+) => {
     return {
         meta: {
             fetchedAt: Date.now(),
