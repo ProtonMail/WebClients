@@ -9,6 +9,8 @@ import {
 } from '@proton/meet/store/slices/currentMeeting';
 import { selectWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 
+import { supportsSetSinkId } from '../../utils/browser';
+
 export const MeetingAnalyticsProvider = ({ sampleRate, children }: { sampleRate: number; children: ReactNode }) => {
     const meetingLinkName = useMeetSelector(selectMeetingLinkName);
     const waitingRoomSetting = useMeetSelector(selectWaitingRoomSetting);
@@ -23,6 +25,7 @@ export const MeetingAnalyticsProvider = ({ sampleRate, children }: { sampleRate:
                 waitingRoom: waitingRoomSetting,
                 instantMeeting,
                 hasNavigationSeed,
+                supportSetSinkId: supportsSetSinkId(),
             }}
         >
             {children}
