@@ -914,9 +914,9 @@ const Step1 = ({
                 {title}
                 {hasPlanSelector && (
                     <div className="flex flex-nowrap mb-4 gap-1 md:gap-8 text-sm md:text-rg">
-                        {features.map(({ key, left, text }, i, arr) => {
+                        {features.map(({ id, left, text }, i, arr) => {
                             return (
-                                <Fragment key={key}>
+                                <Fragment key={id}>
                                     <FeatureItem left={left} text={text} />
                                     {i !== arr.length - 1 && (
                                         <Vr className="min-h-custom" style={{ '--min-h-custom': '2.25rem' }} />

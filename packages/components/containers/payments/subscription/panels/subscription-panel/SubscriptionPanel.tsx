@@ -1,7 +1,19 @@
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import { IcBrandProtonVpn } from '@proton/icons/icons/IcBrandProtonVpn';
+import { IcCalendarCheckmark } from '@proton/icons/icons/IcCalendarCheckmark';
+import { IcEarth } from '@proton/icons/icons/IcEarth';
+import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcMeetCamera } from '@proton/icons/icons/IcMeetCamera';
+import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';
+import { IcPlay } from '@proton/icons/icons/IcPlay';
+import { IcServers } from '@proton/icons/icons/IcServers';
+import { IcShield } from '@proton/icons/icons/IcShield';
+import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { ADDON_PREFIXES } from '@proton/payments/core/constants';
 import type { EntitlementChecks } from '@proton/payments/core/entitlements/resolver';
 import { hasAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
@@ -71,7 +83,7 @@ import {
 import { getNetShield, getVPNConnectionsFeature } from '../../../features/vpn';
 import type { Upsell } from '../../../subscription/helpers';
 import SubscriptionPanelManageUserButton from '../../SubscriptionPanelManageUserButton';
-import { getSubscriptionPanelText } from '../../helpers/subscriptionPanelHelpers';
+import { getSubscriptionPanelText, upsellsShowB2BUsersRow } from '../../helpers/subscriptionPanelHelpers';
 import Panel from '../Panel';
 import { ActionButtons } from './ActionButtons';
 import { GetMoreButton } from './GetMoreButton';
@@ -147,7 +159,8 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
         const items: Item[] = [
             getVPNConnectionsFeature(FREE_VPN_CONNECTIONS),
             {
-                icon: 'earth' as const,
+                id: 'free-servers',
+                icon: IcEarth,
                 text: getFreeServers(VPN_SERVERS.free.servers, VPN_SERVERS.free.countries),
             },
         ];
@@ -175,19 +188,23 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
     const getVpnPlusItems = (): Item[] => {
         return [
             {
-                icon: 'brand-proton-vpn' as const,
+                id: 'vpn-devices',
+                icon: IcBrandProtonVpn,
                 text: maxVPNDevicesText,
             },
             {
-                icon: 'shield' as const,
+                id: 'net-shield',
+                icon: IcShield,
                 text: c('Subscription attribute').t`Built-in ad blocker (NetShield)`,
             },
             {
-                icon: 'play' as const,
+                id: 'streaming',
+                icon: IcPlay,
                 text: c('Subscription attribute').t`Access to streaming services globally`,
             },
             {
-                icon: 'earth' as const,
+                id: 'vpn-servers',
+                icon: IcEarth,
                 text: getPlusServers(VPN_SERVERS.paid.servers, VPN_SERVERS.paid.countries),
             },
         ];
@@ -259,10 +276,9 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
     };
 
     const b2bUsersItem: Item | false = !!userText &&
-        (MaxMembers > 1 ||
-            entitlements.orgIsBusiness ||
-            upsells.some((upsell) => upsell.features.some((feature) => feature.icon === 'users'))) && {
-            icon: 'users' as const,
+        (MaxMembers > 1 || entitlements.orgIsBusiness || upsellsShowB2BUsersRow(upsells)) && {
+            id: 'users',
+            icon: IcUsers,
             text: userText,
         };
 
@@ -274,7 +290,8 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
         const actionElement = showGetMoreButton ? <GetMoreButton /> : null;
 
         return {
-            icon: 'speech-bubble' as const,
+            id: 'lumo',
+            icon: IcSpeechBubble,
             text: lumoText,
             actionElement,
             isAddon: hasAddonFromPlanIDs(ADDON_PREFIXES.LUMO, getPlanIDs(subscription)),
@@ -289,7 +306,8 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
         const actionElement = showGetMoreButton ? <GetMoreButton /> : null;
 
         return {
-            icon: 'meet-camera' as const,
+            id: 'meet',
+            icon: IcMeetCamera,
             text: meetText,
             actionElement,
             isAddon: hasAddonFromPlanIDs(ADDON_PREFIXES.MEET, getPlanIDs(subscription)),
@@ -305,7 +323,8 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
         const actionElement = showGetMoreButton ? <GetMoreButton /> : null;
 
         return {
-            icon: 'pen-sparks' as const,
+            id: 'scribe',
+            icon: IcPenSparks,
             text: writingAssistantText,
             actionElement,
             isAddon: hasAddonFromPlanIDs(ADDON_PREFIXES.SCRIBE, getPlanIDs(subscription)),
@@ -412,7 +431,8 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
             },
             entitlements.orgIsBusiness &&
                 entitlements.orgHasVpn && {
-                    icon: 'servers' as const,
+                    id: 'servers',
+                    icon: IcServers,
                     text: serverText,
                     actionElement: getMoreButtonVpnUpsell,
                     dataTestId: 'servers',
@@ -435,7 +455,8 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
                 actionElement: getMoreButtonVpnUpsell,
             },
             {
-                icon: 'servers' as const,
+                id: 'servers',
+                icon: IcServers,
                 text: serverText,
                 actionElement: getMoreButtonVpnUpsell,
                 dataTestId: 'servers',
@@ -458,22 +479,26 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
         const items: (Item | false)[] = [
             b2bUsersItem,
             {
-                icon: 'envelope' as const,
+                id: 'addresses',
+                icon: IcEnvelope,
                 text: addressText,
             },
             !!MaxDomains &&
                 !!domainsText &&
                 // we need to hide the custom domains section for Pass B2B plans until SSO is implemented
                 !isPassB2bPlan && {
-                    icon: 'globe' as const,
+                    id: 'domains',
+                    icon: IcGlobe,
                     text: domainsText,
                 },
             {
-                icon: 'calendar-checkmark' as const,
+                id: 'calendars',
+                icon: IcCalendarCheckmark,
                 text: calendarText,
             },
             {
-                icon: 'brand-proton-vpn' as const,
+                id: 'vpn',
+                icon: IcBrandProtonVpn,
                 text: vpnText,
             },
             getProtonPassFeature(user.hasPaidPass ? 'unlimited' : FREE_PASS_ALIASES),

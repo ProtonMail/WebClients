@@ -1,5 +1,13 @@
 import { c, msgid } from 'ttag';
 
+import { IcAppSwitch } from '@proton/icons/icons/IcAppSwitch';
+import { IcAt } from '@proton/icons/icons/IcAt';
+import { IcEnvelopes } from '@proton/icons/icons/IcEnvelopes';
+import { IcFolders } from '@proton/icons/icons/IcFolders';
+import { IcGift } from '@proton/icons/icons/IcGift';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcShieldHalfFilled } from '@proton/icons/icons/IcShieldHalfFilled';
+import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { hasCancellablePlan } from '@proton/payments/core/subscription/helpers';
 import {
@@ -51,20 +59,20 @@ export const getBundleConfig = ({ app, plan, subscription }: ConfigProps): PlanC
             .t`${planName} gives you access to all premium features from ${BRAND_NAME} ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}. Privacy is built-in so you can get on with it, knowing your data and identity are safe.`,
         features: [
             {
-                icon: 'storage',
+                icon: IcStorage,
                 text: c('Subscription reminder').t`${planMaxSpace} total storage`,
             },
             {
-                icon: 'gift',
+                icon: IcGift,
                 text: c('Subscription reminder').t`Yearly free storage bonuses`,
             },
             {
-                icon: 'shield-half-filled',
+                icon: IcShieldHalfFilled,
                 text: c('Subscription reminder').t`${PROTON_SENTINEL_NAME} advanced account protection`,
             },
             getPrioritySupport(),
             {
-                icon: 'envelopes',
+                icon: IcEnvelopes,
                 text: c('Subscription reminder').ngettext(
                     msgid`${planNumberOfEmails} email address`,
                     `${planNumberOfEmails} email addresses`,
@@ -72,11 +80,11 @@ export const getBundleConfig = ({ app, plan, subscription }: ConfigProps): PlanC
                 ),
             },
             {
-                icon: 'folders',
+                icon: IcFolders,
                 text: c('Subscription reminder').t`Folders, labels, and custom filters`,
             },
             {
-                icon: 'globe',
+                icon: IcGlobe,
                 text: c('Subscription reminder').ngettext(
                     msgid`${planNumberOfDomains} custom email domain`,
                     `${planNumberOfDomains} custom email domains`,
@@ -84,11 +92,11 @@ export const getBundleConfig = ({ app, plan, subscription }: ConfigProps): PlanC
                 ),
             },
             {
-                icon: 'at',
+                icon: IcAt,
                 text: c('Subscription reminder').t`Your own short @pm.me email alias`,
             },
             {
-                icon: 'app-switch',
+                icon: IcAppSwitch,
                 text: c('Subscription reminder')
                     .t`${CALENDAR_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, and ${VPN_SHORT_APP_NAME} with premium features`,
             },

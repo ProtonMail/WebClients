@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
 import { IcStar } from '@proton/icons/icons/IcStar';
@@ -12,7 +13,6 @@ import { CYCLE, type PLANS } from '@proton/payments/core/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
-import Icon from '../../../../components/icon/Icon';
 import StripedItem from '../../../../components/stripedList/StripedItem';
 import { StripedList } from '../../../../components/stripedList/StripedList';
 import useActiveBreakpoint from '../../../../hooks/useActiveBreakpoint';
@@ -84,24 +84,31 @@ const UpsellPanel = ({ title, plan, features, children, ctas = [], isRecommended
             )}
             {(!viewportWidth['<=small'] || isExpanded) && (
                 <StripedList alternate="odd">
-                    {features.map(({ icon = 'checkmark', text, tooltip, included = true, status = 'available' }) => {
-                        if (!included) {
-                            return null;
+                    {features.map(
+                        ({
+                            id,
+                            icon: FeatureIcon = IcCheckmark,
+                            text,
+                            tooltip,
+                            included = true,
+                            status = 'available',
+                        }) => {
+                            if (!included) {
+                                return null;
+                            }
+
+                            return (
+                                <StripedItem
+                                    key={id}
+                                    className={clsx(status === 'coming-soon' && 'color-weak')}
+                                    left={<FeatureIcon className={clsx(included && 'color-success')} size={5} />}
+                                    tooltip={tooltip}
+                                >
+                                    {text}
+                                </StripedItem>
+                            );
                         }
-
-                        const key = typeof text === 'string' ? text : `${tooltip}-${icon}-${included}-${status}`;
-
-                        return (
-                            <StripedItem
-                                key={key}
-                                className={clsx(status === 'coming-soon' && 'color-weak')}
-                                left={<Icon className={clsx(included && 'color-success')} size={5} name={icon} />}
-                                tooltip={tooltip}
-                            >
-                                {text}
-                            </StripedItem>
-                        );
-                    })}
+                    )}
                 </StripedList>
             )}
             <div className="flex column gap-4">

@@ -10,7 +10,6 @@ import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import clsx from '@proton/utils/clsx';
 
 import { Badge } from '../../../../../components/badge/Badge';
-import Icon from '../../../../../components/icon/Icon';
 import Info from '../../../../../components/link/Info';
 import StripedItem from '../../../../../components/stripedList/StripedItem';
 import { StripedList } from '../../../../../components/stripedList/StripedList';
@@ -38,24 +37,28 @@ const DealFeatures = ({ isExpanded, expand }: Props) => {
         <div className="flex-auto w-full">
             {isExpanded && (
                 <StripedList alternate="odd">
-                    {features.map((feature) => (
-                        <StripedItem
-                            key={`${feature.name}-${feature.icon}`}
-                            left={
-                                !!feature.icon ? (
-                                    <Icon className="color-success" name={feature.icon} size={5} />
-                                ) : (
-                                    <IcCheckmark className="color-success" size={5} />
-                                )
-                            }
-                        >
-                            {feature.badge && <Badge type="primary">{feature.badge}</Badge>}
-                            <span className={clsx(['text-left', feature.disabled && 'color-disabled'])}>
-                                {feature.name}
-                            </span>
-                            {!!feature.tooltip && <Info buttonClass="ml-1" title={feature.tooltip} />}
-                        </StripedItem>
-                    ))}
+                    {features.map((feature) => {
+                        const FeatureIcon = feature.icon;
+
+                        return (
+                            <StripedItem
+                                key={feature.name}
+                                left={
+                                    FeatureIcon ? (
+                                        <FeatureIcon className="color-success" size={5} />
+                                    ) : (
+                                        <IcCheckmark className="color-success" size={5} />
+                                    )
+                                }
+                            >
+                                {feature.badge && <Badge type="primary">{feature.badge}</Badge>}
+                                <span className={clsx(['text-left', feature.disabled && 'color-disabled'])}>
+                                    {feature.name}
+                                </span>
+                                {!!feature.tooltip && <Info buttonClass="ml-1" title={feature.tooltip} />}
+                            </StripedItem>
+                        );
+                    })}
                 </StripedList>
             )}
             {!isExpanded && (

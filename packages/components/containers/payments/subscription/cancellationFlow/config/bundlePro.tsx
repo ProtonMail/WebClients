@@ -1,5 +1,15 @@
 import { c, msgid } from 'ttag';
 
+import { IcAppSwitch } from '@proton/icons/icons/IcAppSwitch';
+import { IcAt } from '@proton/icons/icons/IcAt';
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
+import { IcEnvelopeArrowUpAndRight } from '@proton/icons/icons/IcEnvelopeArrowUpAndRight';
+import { IcEnvelopes } from '@proton/icons/icons/IcEnvelopes';
+import { IcFolders } from '@proton/icons/icons/IcFolders';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcShieldHalfFilled } from '@proton/icons/icons/IcShieldHalfFilled';
+import { IcStorage } from '@proton/icons/icons/IcStorage';
+import { IcTv } from '@proton/icons/icons/IcTv';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { hasCancellablePlan } from '@proton/payments/core/subscription/helpers';
 import {
@@ -50,11 +60,11 @@ export const getBundleProConfig = ({ app, plan, subscription }: ConfigProps): Pl
             .t`${planName} gives your team what they need to be more productive and organized in their work with access to all ${BRAND_NAME} apps and their premium features.`,
         features: [
             {
-                icon: 'storage',
+                icon: IcStorage,
                 text: c('Subscription reminder').t`${planMaxSpace} storage per user`,
             },
             {
-                icon: 'envelopes',
+                icon: IcEnvelopes,
                 text: c('Subscription reminder').ngettext(
                     msgid`${planNumberOfEmails} email address per user`,
                     `${planNumberOfEmails} email addresses per user`,
@@ -62,11 +72,11 @@ export const getBundleProConfig = ({ app, plan, subscription }: ConfigProps): Pl
                 ),
             },
             {
-                icon: 'folders',
+                icon: IcFolders,
                 text: c('Subscription reminder').t`Folders, labels, and custom filters`,
             },
             {
-                icon: 'globe',
+                icon: IcGlobe,
                 text: c('Subscription reminder').ngettext(
                     msgid`${planNumberOfDomains} custom email domain`,
                     `${planNumberOfDomains} custom email domains`,
@@ -74,19 +84,19 @@ export const getBundleProConfig = ({ app, plan, subscription }: ConfigProps): Pl
                 ),
             },
             {
-                icon: 'at',
+                icon: IcAt,
                 text: c('Subscription reminder').t`Catch-all email address`,
             },
             {
-                icon: 'tv',
+                icon: IcTv,
                 text: c('Subscription reminder').t`Desktop app and email client support (via IMAP)`,
             },
             {
-                icon: 'envelope-arrow-up-and-right',
+                icon: IcEnvelopeArrowUpAndRight,
                 text: c('Subscription reminder').t`Automatic email forwarding`,
             },
             {
-                icon: 'calendar-grid',
+                icon: IcCalendarGrid,
                 text: c('Subscription reminder').ngettext(
                     msgid`${planNumberOfCalendars} calendar per user`,
                     `${planNumberOfCalendars} calendars per user`,
@@ -94,12 +104,12 @@ export const getBundleProConfig = ({ app, plan, subscription }: ConfigProps): Pl
                 ),
             },
             {
-                icon: 'shield-half-filled',
+                icon: IcShieldHalfFilled,
                 text: c('Subscription reminder').t`${PROTON_SENTINEL_NAME} advanced account protection`,
             },
             getPrioritySupport(),
             {
-                icon: 'app-switch',
+                icon: IcAppSwitch,
                 text: c('Subscription reminder')
                     .t`${CALENDAR_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, and ${VPN_SHORT_APP_NAME} with premium features`,
             },

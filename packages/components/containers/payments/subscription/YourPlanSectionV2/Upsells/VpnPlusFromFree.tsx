@@ -38,27 +38,32 @@ import UpsellMultiBox from './UpsellMultiBox';
 export const getVPNFeatures = (): PlanCardFeatureDefinition[] => {
     return [
         {
+            id: 'countries',
             text: getSelectFromNCountries(VPN_SERVERS.paid.countries),
             included: true,
             highResIcon: countriesIcon,
         },
         {
+            id: 'lightning-fast-speeds',
             text: c('Features').t`Lightning-fast speeds`,
             included: true,
             highResIcon: lightningIcon,
         },
         {
+            id: 'net-shield',
             text: c('Features').t`NetShield Ad-blocker`,
             tooltip: c('Features: Tooltip').t`Protects you from ads, trackers, and malware on websites and apps`,
             included: true,
             highResIcon: shieldIcon,
         },
         {
+            id: 'servers',
             text: getVpnServers(VPN_SERVERS.paid.servers),
             included: true,
             highResIcon: serverIcon,
         },
         {
+            id: 'secure-streaming',
             text: c('Features').t`Secure streaming`,
             tooltip: c('Features: Tooltip')
                 .t`Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere`,
@@ -66,6 +71,7 @@ export const getVPNFeatures = (): PlanCardFeatureDefinition[] => {
             highResIcon: streamingIcon,
         },
         {
+            id: 'double-vpn',
             text: c('Features').t`Double VPN`,
             tooltip: c('Features: Tooltip')
                 .t`Secure Core servers route your traffic through 2 VPN servers for extra security`,
@@ -73,6 +79,7 @@ export const getVPNFeatures = (): PlanCardFeatureDefinition[] => {
             highResIcon: doubleIcon,
         },
         {
+            id: 'more-premium-features',
             text: c('Features').t`and more premium features...`,
             included: true,
         },
@@ -229,10 +236,9 @@ const VpnPlusFromFree = ({ subscription, upsells, handleExplorePlans }: Props) =
                             </div>
                         )}
                         <ul className="unstyled grid lg:grid-cols-4 gap-4 m-0">
-                            {getVPNFeatures().map(({ text, tooltip, highResIcon }, index) => {
-                                const key = typeof text === 'string' ? text : index;
+                            {getVPNFeatures().map(({ id, text, tooltip, highResIcon }) => {
                                 return (
-                                    <li key={key} className="flex items-center">
+                                    <li key={id} className="flex items-center">
                                         {highResIcon && <img src={highResIcon} alt="" className="shrink-0 mr-2" />}
                                         {text}
                                         {tooltip && <Info buttonClass="ml-2 align-middle" title={tooltip} />}

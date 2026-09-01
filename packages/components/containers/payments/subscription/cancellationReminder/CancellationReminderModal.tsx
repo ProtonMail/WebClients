@@ -10,7 +10,6 @@ import subscriptionEnding from '@proton/styles/assets/img/illustrations/subscrip
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import Icon from '../../../../components/icon/Icon';
 import SettingsLink from '../../../../components/link/SettingsLink';
 import type { ModalProps } from '../../../../components/modalTwo/Modal';
 import ModalTwo from '../../../../components/modalTwo/Modal';
@@ -61,8 +60,8 @@ const CancellationReminderModal = (props: ModalProps) => {
                         .t`Reactivate by ${formattedEndDate} to keep these features:`}</p>
                 </section>
                 <StripedList className="my-0" alternate="odd">
-                    {config?.features.features.map(({ icon, text }) => (
-                        <StripedItem key={text} left={<Icon name={icon} className="color-primary" />}>
+                    {config?.features.features.map(({ icon: FeatureIcon, text }) => (
+                        <StripedItem key={text} left={<FeatureIcon className="color-primary" />}>
                             {text}
                         </StripedItem>
                     ))}

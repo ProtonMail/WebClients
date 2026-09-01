@@ -49,7 +49,7 @@ import setupAccount from '../mail/account-setup.svg';
 
 const getNoLogsBenefit = (): BenefitItem => {
     return {
-        key: `no-logs`,
+        id: 'no-logs',
         text: c('meet_2025: Info').t`Strict no-logs policy`,
         icon: {
             component: IcEyeSlash,
@@ -63,7 +63,7 @@ const neverUsedForTrainingText = () => {
 
 const getNoModelTrainingBenefit = (): BenefitItem => {
     return {
-        key: `no-model-training`,
+        id: 'no-model-training',
         text: neverUsedForTrainingText(),
         icon: {
             component: IcAlias,
@@ -73,7 +73,7 @@ const getNoModelTrainingBenefit = (): BenefitItem => {
 
 const getOpenSourceBenefit = (): BenefitItem => {
     return {
-        key: 'open-source',
+        id: 'open-source',
         text: c('meet_2025: Info').t`Open source`,
         icon: {
             component: IcMagnifier,
@@ -89,6 +89,7 @@ const getStorageFeature = (bytes: number): PlanCardFeatureDefinition => {
     const size = humanSize({ bytes, fraction: 0, unitOptions: { max: 'TB' } });
 
     return {
+        id: 'storage',
         text: c('new_plans: feature').jt`${size} storage`,
         tooltip: c('wallet_signup_2024: Info').t`Encrypted email and file storage`,
         included: true,
@@ -97,6 +98,7 @@ const getStorageFeature = (bytes: number): PlanCardFeatureDefinition => {
 
 const getSecureCalendarFeature = (): PlanCardFeatureDefinition => {
     return {
+        id: 'secure-calendar',
         text: c('meet_2025: Info').t`Secure calendar`,
         included: true,
     };
@@ -104,6 +106,7 @@ const getSecureCalendarFeature = (): PlanCardFeatureDefinition => {
 
 const getCloudStorageAndFileSharingFeature = (): PlanCardFeatureDefinition => {
     return {
+        id: 'cloud-storage-and-file-sharing',
         text: c('meet_2025: Info').t`Cloud storage and file sharing`,
         included: true,
     };
@@ -111,6 +114,7 @@ const getCloudStorageAndFileSharingFeature = (): PlanCardFeatureDefinition => {
 
 const getDocumentAndSpreadsheetEditorFeature = (): PlanCardFeatureDefinition => {
     return {
+        id: 'document-and-spreadsheet-editor',
         text: c('meet_2025: Info').t`Document & spreadsheet editor`,
         included: true,
     };
@@ -118,6 +122,7 @@ const getDocumentAndSpreadsheetEditorFeature = (): PlanCardFeatureDefinition => 
 
 const getPasswordManagerWithTeamVaultsFeature = (): PlanCardFeatureDefinition => {
     return {
+        id: 'password-manager-with-team-vaults',
         text: c('meet_2025: Info').t`Password manager with team vaults`,
         included: true,
     };
@@ -125,6 +130,7 @@ const getPasswordManagerWithTeamVaultsFeature = (): PlanCardFeatureDefinition =>
 
 const getEmailWritingAssistantFeature = (): PlanCardFeatureDefinition => {
     return {
+        id: 'email-writing-assistant',
         text: c('meet_2025: Info').t`Email writing assistant`,
         included: true,
     };
@@ -133,26 +139,32 @@ const getEmailWritingAssistantFeature = (): PlanCardFeatureDefinition => {
 const getFreeMeetFeatures = () => {
     return [
         {
+            id: 'meeting-max-length',
             text: getMeetingMaxLengthText('free'),
             included: true,
         },
         {
+            id: 'max-participants',
             text: getMaxParticipantsText(FREE_MAX_PARTICIPANTS),
             included: true,
         },
         {
+            id: 'max-active-meetings',
             text: getMaxMeetingsText(FREE_MAX_ACTIVE_MEETINGS),
             included: true,
         },
         {
+            id: 'meet-apps',
             text: getMeetAppsText(),
             included: true,
         },
         {
+            id: 'screen-sharing',
             text: getMeetScreenSharingText(),
             included: true,
         },
         {
+            id: 'built-in-chat',
             text: getMeetBuiltInChatText(),
             included: true,
         },
@@ -161,14 +173,14 @@ const getFreeMeetFeatures = () => {
 
 const getMeetBusinessFeatures = (): PlanCardFeatureDefinition[] => {
     return [
-        { text: getMeetingMaxLengthText('paid'), included: true },
-        { text: getMaxParticipantsText(PAID_MAX_PARTICIPANTS), included: true },
-        { text: getMaxMeetingsPerDayText('unlimited'), included: true },
-        { text: getMeetAppsText(), included: true },
-        { text: getMeetScreenSharingText(), included: true },
-        { text: getMeetBuiltInChatText(), included: true },
-        { text: getCalendarAppointmentSchedulingText(25), included: true },
-        { text: getMeetMeetingRecordingText(), included: true },
+        { id: 'meeting-max-length', text: getMeetingMaxLengthText('paid'), included: true },
+        { id: 'max-participants', text: getMaxParticipantsText(PAID_MAX_PARTICIPANTS), included: true },
+        { id: 'max-meetings-per-day', text: getMaxMeetingsPerDayText('unlimited'), included: true },
+        { id: 'meet-apps', text: getMeetAppsText(), included: true },
+        { id: 'screen-sharing', text: getMeetScreenSharingText(), included: true },
+        { id: 'built-in-chat', text: getMeetBuiltInChatText(), included: true },
+        { id: 'calendar-appointment-scheduling', text: getCalendarAppointmentSchedulingText(25), included: true },
+        { id: 'meeting-recording', text: getMeetMeetingRecordingText(), included: true },
     ];
 };
 
@@ -179,6 +191,7 @@ const getMeetBundleProFeatures = (plan?: Plan) => {
     return [
         getStorageFeature(plan.MaxSpace),
         {
+            id: 'n-domains',
             text: getNDomainsFeatureText(plan.MaxDomains),
             included: true,
         },
@@ -197,6 +210,7 @@ const getMeetBundleBizFeatures = (plan?: Plan) => {
     return [
         getStorageFeature(plan.MaxSpace),
         {
+            id: 'n-domains',
             text: getNDomainsFeatureText(plan.MaxDomains),
             included: true,
         },

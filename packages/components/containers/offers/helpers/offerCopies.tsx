@@ -2,7 +2,12 @@ import { Fragment, type ReactElement } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import type { IconName } from '@proton/icons/types';
+import { IcAlias } from '@proton/icons/icons/IcAlias';
+import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
+import { IcLifeRing } from '@proton/icons/icons/IcLifeRing';
+import { IcPassShieldOk } from '@proton/icons/icons/IcPassShieldOk';
+import { IcStorage } from '@proton/icons/icons/IcStorage';
+import { IcUsersPlus } from '@proton/icons/icons/IcUsersPlus';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
 import { getRenewCycle } from '@proton/payments/core/renewals';
@@ -25,6 +30,7 @@ import { getPremium } from '@proton/shared/lib/helpers/premium';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 
+import type { PlanCardFeatureIcon } from '../../payments/features/interface';
 import { getOwnDomainText } from '../../payments/features/mail';
 import {
     get2FAAuthenticatorText,
@@ -242,23 +248,23 @@ export const getFamilyPassFeatures = () => {
     ];
 };
 
-export const getTryDrivePlus2024Features = (): { name: string; icon: IconName }[] => {
+export const getTryDrivePlus2024Features = (): { name: string; icon: PlanCardFeatureIcon }[] => {
     const TWO_HUNDREDS_GIGABYTES = 200 * 1024 ** 3;
 
     return [
         {
             ...getStorageSizeFeature(humanSize({ bytes: TWO_HUNDREDS_GIGABYTES, fraction: 0, unit: 'GB' }), true),
-            icon: 'storage',
+            icon: IcStorage,
         },
-        { name: c('driveplus2024: Deal details').t`Extended version history`, icon: 'clock-rotate-left' },
-        { name: c('driveplus2024: Deal details').t`Priority support`, icon: 'life-ring' },
+        { name: c('driveplus2024: Deal details').t`Extended version history`, icon: IcClockRotateLeft },
+        { name: c('driveplus2024: Deal details').t`Priority support`, icon: IcLifeRing },
     ];
 };
 
-export const getTryPassPlus2024Features = (): { name: string; icon: IconName }[] => [
-    { name: getUnlimitedHideMyEmailAliasesText(), icon: 'alias' },
-    { name: getSecureVaultSharingText(), icon: 'users-plus' },
-    { name: DARK_WEB_MONITORING_NAME, icon: 'pass-shield-ok' },
+export const getTryPassPlus2024Features = (): { name: string; icon: PlanCardFeatureIcon }[] => [
+    { name: getUnlimitedHideMyEmailAliasesText(), icon: IcAlias },
+    { name: getSecureVaultSharingText(), icon: IcUsersPlus },
+    { name: DARK_WEB_MONITORING_NAME, icon: IcPassShieldOk },
 ];
 
 export const getUnlimitedVPNFeatures = () => [

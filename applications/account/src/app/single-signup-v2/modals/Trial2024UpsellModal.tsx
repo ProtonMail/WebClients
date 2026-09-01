@@ -5,11 +5,11 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ModalProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import type { PlanCardFeatureIcon } from '@proton/components/containers/payments/features/interface';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { useLoading } from '@proton/hooks';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
-import type { IconName } from '@proton/icons/types';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments-ui/ui/components/RenewalNotice';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Currency, Cycle, PaymentsApi, PlanIDs } from '@proton/payments/core/interface';
@@ -106,7 +106,7 @@ export interface Props extends ModalProps {
     onContinue: () => void;
     planName: PlanWithTrial;
     ctaTitle: string;
-    features: { name: string; icon?: IconName }[];
+    features: { name: string; icon?: PlanCardFeatureIcon }[];
     telemetry?: SignupUpsellTelemetryHook;
     checkTrialResult: CheckTrialPriceResult;
 }
@@ -208,6 +208,7 @@ const Trial2024UpsellModal = ({
                         iconColor="color-primary"
                         features={features.map((feature) => ({
                             ...feature,
+                            id: feature.name,
                             text: feature.name,
                             included: true,
                         }))}

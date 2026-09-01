@@ -70,6 +70,7 @@ export const getPlanInformation = ({
     const iconImgSize = iconSize * CSS_BASE_UNIT_SIZE;
     const countryPlaceholder: PlanCardFeatureDefinition | null = loading
         ? {
+              id: 'countries',
               text: <SkeletonLoader width="6em" />,
               included: true,
           }
@@ -92,9 +93,10 @@ export const getPlanInformation = ({
             title: selectedPlan.Title,
             features: [
                 countryPlaceholder || getCountries(plusServers),
-                { text: getStreamingText(), included: true },
+                { id: 'streaming', text: getStreamingText(), included: true },
                 getProtectDevices(VPN_CONNECTIONS),
                 {
+                    id: 'apps-for',
                     text: (
                         <div className="flex items-center">
                             {c('new_plans: feature').t`Apps for`}
@@ -109,8 +111,8 @@ export const getPlanInformation = ({
                     ),
                     included: true,
                 },
-                { text: c('new_plans: feature').t`Up to 10 Gbps`, included: true },
-                { text: getNetShieldText(), included: true },
+                { id: 'speed', text: c('new_plans: feature').t`Up to 10 Gbps`, included: true },
+                { id: 'net-shield', text: getNetShieldText(), included: true },
             ].filter(isTruthy),
         };
     }
@@ -180,18 +182,22 @@ export const getPlanInformation = ({
             title: selectedPlan.Title,
             features: [
                 {
+                    id: 'advanced-network-security',
                     text: c('new_plans: feature').t`Advanced network security`,
                     included: true,
                 },
                 countryPlaceholder || {
+                    id: 'countries',
                     text: serversInNCountries,
                     included: true,
                 },
                 {
+                    id: '24x7-support',
                     text: c('new_plans: feature').t`24/7 support`,
                     included: true,
                 },
                 {
+                    id: 'centralized-settings-and-billing',
                     text: c('new_plans: feature').t`Centralized settings and billings`,
                     included: true,
                 },
@@ -205,22 +211,27 @@ export const getPlanInformation = ({
             title: selectedPlan.Title,
             features: [
                 {
+                    id: 'advanced-network-security',
                     text: c('new_plans: feature').t`Advanced network security`,
                     included: true,
                 },
                 countryPlaceholder || {
+                    id: 'countries',
                     text: serversInNCountries,
                     included: true,
                 },
                 {
+                    id: 'dedicated-servers-and-ip',
                     text: c('new_plans: feature').t`Dedicated servers and IP`,
                     included: true,
                 },
                 {
+                    id: '24x7-support',
                     text: c('new_plans: feature').t`24/7 support`,
                     included: true,
                 },
                 {
+                    id: 'centralized-settings-and-billing',
                     text: c('new_plans: feature').t`Centralized settings and billings`,
                     included: true,
                 },
@@ -234,22 +245,27 @@ export const getPlanInformation = ({
             title: selectedPlan.Title,
             features: [
                 {
+                    id: 'advanced-network-security',
                     text: c('new_plans: feature').t`Advanced network security`,
                     included: true,
                 },
                 {
+                    id: 'dedicated-servers-and-ip',
                     text: c('new_plans: feature').t`Dedicated servers and IP`,
                     included: true,
                 },
                 {
+                    id: 'secure-password-management',
                     text: c('new_plans: feature').t`Secure password management`,
                     included: true,
                 },
                 {
+                    id: 'activity-logs-and-policy',
                     text: c('new_plans: feature').t`Activity logs and policy`,
                     included: true,
                 },
                 {
+                    id: '24x7-support',
                     text: c('new_plans: feature').t`24/7 support`,
                     included: true,
                 },
@@ -267,22 +283,27 @@ export const getPlanInformation = ({
             title: selectedPlan.Title,
             features: [
                 {
+                    id: 'advanced-workspace-security',
                     text: c('new_plans: feature').t`Advanced workspace security`,
                     included: true,
                 },
                 {
+                    id: 'dedicated-servers-and-ip',
                     text: c('new_plans: feature').t`Dedicated servers and IP`,
                     included: true,
                 },
                 {
+                    id: 'secure-password-management',
                     text: c('new_plans: feature').t`Secure password management`,
                     included: true,
                 },
                 {
+                    id: 'activity-logs-and-policy',
                     text: c('new_plans: feature').t`Activity logs and policy`,
                     included: true,
                 },
                 {
+                    id: '24x7-support',
                     text: c('new_plans: feature').t`24/7 support`,
                     included: true,
                 },
