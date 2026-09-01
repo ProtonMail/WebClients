@@ -9,12 +9,9 @@ import type {
     AccountWithChainData,
     WalletChainDataByWalletId,
     WalletMap,
-    WalletWithChainData,
 } from '../../types';
 import type { BitcoinAddressHelper } from './useBitcoinAddresses';
 import type { SyncingMetadata } from './useWalletsChainData';
-
-export type SyncingObserver = (wallet: WalletWithChainData, account: AccountWithChainData) => void;
 
 export interface BitcoinBlockchainContextValue {
     network: WasmNetwork | undefined;

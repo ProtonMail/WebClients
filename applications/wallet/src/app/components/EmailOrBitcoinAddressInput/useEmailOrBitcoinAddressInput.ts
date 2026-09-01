@@ -6,11 +6,11 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { type WasmNetwork, WasmPaymentLink } from '@proton/andromeda';
+import type { AddressesAutocompleteItem } from '@proton/components/components/addressesAutocomplete/helper';
 import {
     getContactsAutocompleteItems,
     getRecipientFromAutocompleteItem,
 } from '@proton/components/components/addressesAutocomplete/helper';
-import type { AddressesAutocompleteItem } from '@proton/components/components/addressesAutocomplete/helper';
 import { useAutocompleteFilter } from '@proton/components/components/autocomplete/useAutocomplete';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { canonicalizeEmail, canonicalizeEmailByGuess, validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -23,10 +23,6 @@ import { isSelfAddress } from '../../utils/email';
 import type { RecipientEmailMap } from '../BitcoinSendModal/useEmailAndBtcAddressesMaps';
 
 import './EmailOrBitcoinAddressInput.scss';
-
-export interface RecipientWithBtcAddress extends Recipient {
-    btcAddress: { value?: string; error?: string };
-}
 
 const validateInput = (input: string, addresses: Address[], network: WasmNetwork) => {
     if (validateEmailAddress(input)) {
