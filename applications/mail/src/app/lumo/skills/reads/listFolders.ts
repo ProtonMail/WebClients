@@ -42,7 +42,7 @@ export const createListFoldersHandler =
     (mail: MailToolDeps): ToolHandler<Record<string, never>, ListFoldersResult> =>
     async (_params, { references }) => ({
         folders: mail.getFolders().map((folder) => ({
-            reference: references.referenceFor('folder', folder.ID, folder.Name),
+            reference: references.referenceFor('folder', folder.ID, { title: folder.Name }),
             name: folder.Name,
             parent: folder.ParentID ? references.referenceFor('folder', String(folder.ParentID)) : null,
         })),

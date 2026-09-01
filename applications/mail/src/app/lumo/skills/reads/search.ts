@@ -210,7 +210,7 @@ export const createSearchHandler =
             mail.getMailSettings()
         );
         // Not the resolver's `name`, which falls back to a raw id — this reaches the user's chip.
-        const targetName = target ? references.labelFor(target) : undefined;
+        const targetName = target ? references.labelFor(target)?.title : undefined;
 
         const { rows, total, settled, usedEncryptedSearch, bulkActionRunning } = await navigateAndReadRows(
             mail,
