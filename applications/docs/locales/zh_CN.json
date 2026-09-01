@@ -597,6 +597,9 @@
       "Preview contact": [
         "预览联系人"
       ],
+      "Preview logs": [
+        "预览日志"
+      ],
       "Previous month": [
         "上个月"
       ],
@@ -5190,6 +5193,9 @@
       "Loading...": [
         "加载中..."
       ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "日志有助于我们了解问题发生前的情况。其中包括应用操作和错误消息，但不包含消息内容。"
+      ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "您似乎处于离线状态。离线时无法编辑文档。请检查设备的连接情况。"
       ],
@@ -5972,6 +5978,9 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 用户名"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } 字符"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "（暂时不可用。请稍后再试。）"
@@ -8719,6 +8728,9 @@
       ]
     },
     "Role": {
+      "Organization Admin": [
+        "组织管理员"
+      ],
       "Security Admin": [
         "安全管理员"
       ],
