@@ -1,6 +1,6 @@
 import type { ComponentType } from 'react';
 
-import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
+import { PaymentsContextProvider } from '../ui/context/PaymentContext';
 
 export const withPaymentContext =
     () =>
