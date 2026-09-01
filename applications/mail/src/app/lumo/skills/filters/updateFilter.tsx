@@ -56,7 +56,7 @@ export const updateFilterDefinition: ToolDefinition<UpdateFilterParams, void> = 
     summarizeChip: () => ({ label: c('Info').t`Update filter` }),
 };
 
-export const createUpdateFilterHandler =
+const createUpdateFilterHandler =
     (mail: MailToolDeps): ToolHandler<UpdateFilterParams, void> =>
     async ({ filter, name, sieve }, { references }) => {
         const id = resolveTypedId(filter, ['filter'], references);
