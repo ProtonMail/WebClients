@@ -531,6 +531,9 @@
       "Email settings": [
         "Configurações do e-mail"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "Enable": [
         "Habilitar"
       ],
@@ -6956,6 +6959,9 @@
         "${ currentProgress } de ${ totalProgress }",
         "${ currentProgress } de ${ totalProgress }"
       ],
+      "${ dateString } at ${ formattedTime }": [
+        "${ dateString } às ${ formattedTime }"
+      ],
       "${ elementsCount } conversation will be labelled as:": [
         "${ elementsCount } conversa será marcada como:",
         "${ elementsCount } conversas serão marcadas como:"
@@ -7876,6 +7882,10 @@
       "Forgot password?": [
         "Esqueceu sua senha?"
       ],
+      "Found ${ count } contact": [
+        "Encontrei ${ count } contato",
+        "Encontrei ${ count } contatos"
+      ],
       "Found a current encrypted search index with ${ oldIndexSize } message.": [
         "Encontrado um índice de pesquisa criptografado atual com ${ oldIndexSize } mensagem.",
         "Encontrado um índice de pesquisa criptografado atual com ${ oldIndexSize } mensagens."
@@ -8019,8 +8029,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -9903,6 +9912,9 @@
       "${ count } unread message": [
         "${ count } mensagem não lida",
         "${ count } mensagens não lidas"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caracteres"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
@@ -14504,6 +14516,12 @@
       ],
       "Private, fast, and organized": [
         "Privado, rápido e organizado"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } e-mail → ${ wakeTime }",
+        "${ count } e-mails → ${ wakeTime }"
       ]
     },
     "Snooze message": {
