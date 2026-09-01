@@ -16,8 +16,8 @@ import type {
     MessageBusResponse,
     PaymentIntent,
 } from '../lib/types';
-import { createChargebee, getChargebeeInstance, pollUntilLoaded } from './chargebee';
-import { addCheckpoint } from './checkpoints';
+import { createChargebee, getChargebeeInstance, pollUntilLoaded, wait } from './chargebee';
+import { addCheckpoint, getHiddenFor, getLastCheckpointName } from './checkpoints';
 import { getConfiguration, setConfiguration } from './configuration';
 import type {
     ChangeRenderModeEvent,
@@ -48,6 +48,77 @@ import warningIcon from './templates/warningicon.html?raw';
 import { trackFocus } from './ui-utils';
 
 export const FALLBACK_EMAIL: string = 'fallback@payments.protontech.ch';
+
+/**
+ * Chargebee sometimes fails with a value that has no message — production has seen a plain `false`.
+ * Sentry shows all of those as "Error thrown without a message". Naming the value and the step
+ * keeps them apart.
+ */
+export function toReportableError(error: any, stage?: string): any {
+    const stageSuffix = stage === undefined ? '' : ` at "${stage}"`;
+
+    if (typeof error?.message === 'string' && error.message !== '') {
+        return error;
+    }
+
+    const maxLength = 200;
+    const describe = () => {
+        if (error === null || error === undefined || typeof error !== 'object') {
+            return `${typeof error} ${String(error).slice(0, maxLength)}`;
+        }
+
+        return `object with keys [${Object.keys(error).join(', ')}]`;
+    };
+
+    return new Error(`Chargebee threw a value without a message${stageSuffix}: ${describe()}`);
+}
+
+const TIMEOUT_POLL_STEP = 500;
+
+export class ChargebeeStageTimeoutError extends Error {
+    constructor(
+        public readonly stage: string,
+        public readonly elapsedMs: number
+    ) {
+        super(`Chargebee "${stage}" did not complete within ${elapsedMs}ms`);
+        this.name = 'ChargebeeStageTimeoutError';
+    }
+}
+
+/**
+ * Chargebee's promises can hang forever when whatever they wait for never arrives. Without a limit,
+ * all we learn is that setup stalled, not which step did.
+ *
+ * The limit is measured by the clock, not by one timer, for the same reason `pollUntilLoaded` is:
+ * browsers fire timers late in hidden or offscreen frames, so a single `setTimeout` can arrive
+ * minutes after it was asked for and the outer setup limit trips first.
+ */
+async function withTimeout<T>(promise: Promise<T>, stage: string, ms: number): Promise<T> {
+    let completed = false;
+    const tracked = Promise.resolve(promise).finally(() => {
+        completed = true;
+    });
+
+    const rejectAfterDeadline = async (): Promise<T> => {
+        const start = Date.now();
+        while (!completed && Date.now() - start < ms) {
+            await wait(TIMEOUT_POLL_STEP);
+        }
+
+        if (completed) {
+            return tracked;
+        }
+
+        const elapsedMs = Date.now() - start;
+        addCheckpoint(`${stage}_timed_out`, { ms, elapsedMs, hiddenFor: getHiddenFor() });
+        throw new ChargebeeStageTimeoutError(stage, elapsedMs);
+    };
+
+    return Promise.race([tracked, rejectAfterDeadline()]);
+}
+
+const CARD_COMPONENTS_TIMEOUT = 20000;
+const CARD_MOUNT_TIMEOUT = 20000;
 
 function getChargebeeFormWrapper(): HTMLElement {
     const chargebeeFormWrapper = document.getElementById('chargebee-form-wrapper');
@@ -135,7 +206,7 @@ async function renderCreditCardForm() {
 
     const cbInstance = getChargebeeInstance();
 
-    await cbInstance.load('components');
+    await withTimeout(cbInstance.load('components'), 'card_load_components', CARD_COMPONENTS_TIMEOUT);
     addCheckpoint('card_loaded_components');
 
     const fontFamily =
@@ -187,8 +258,19 @@ async function renderCreditCardForm() {
         .at(cvcSelector);
     trackFocus(cvcSelector, cvc);
 
-    await cardComponent.mount();
-    addCheckpoint('card_mounted');
+    const mountTimeout = await withTimeout(cardComponent.mount(), 'card_mount', CARD_MOUNT_TIMEOUT).then(
+        () => {
+            addCheckpoint('card_mounted');
+            return null;
+        },
+        (error: any) => {
+            if (error instanceof ChargebeeStageTimeoutError) {
+                return error;
+            }
+
+            throw error;
+        }
+    );
 
     function validateFormWithoutRendering(): FormValidationErrors {
         const errors = [];
@@ -439,6 +521,10 @@ async function renderCreditCardForm() {
         });
     };
     getMessageBus().onUpdateFields = onUpdateFields;
+
+    if (mountTimeout) {
+        getMessageBus().sendUnhandledErrorMessage(mountTimeout, 'card_mount_timed_out');
+    }
 }
 
 async function renderPaypal() {
@@ -886,7 +972,7 @@ async function cbInit() {
 }
 
 async function setConfigurationAndCreateChargebee(configuration: CbIframeConfig) {
-    addCheckpoint('checking chargebee');
+    addCheckpoint('chargebee.checking');
     await pollUntilLoaded();
     addCheckpoint('chargebee_loaded');
 
@@ -905,6 +991,13 @@ async function setConfigurationAndCreateChargebee(configuration: CbIframeConfig)
     return cbInstance;
 }
 
+/**
+ * Last resort for a step that neither finishes nor fails. Every limit inside is shorter, so getting
+ * here means something hung. The step it hung at is the only useful part, so it goes in the message
+ * and each one becomes its own Sentry issue.
+ */
+const INITIALIZE_TIMEOUT = 90000;
+
 export async function initialize() {
     try {
         addCheckpoint('initialize_started', {
@@ -918,20 +1011,59 @@ export async function initialize() {
             promiseReject = reject;
         });
 
+        // Whether the promise above can still hand an error to the catch at the bottom.
+        let settled = false;
+
         const rejectTimeout = setTimeout(() => {
-            promiseReject(new Error("Chargebee wasn't initialized"));
-        }, 60000);
+            const stalledAt = getLastCheckpointName();
+            addCheckpoint('initialize_timed_out', { stalledAt, hiddenFor: getHiddenFor() });
+            settled = true;
+            promiseReject(new Error(`Chargebee iframe stalled at "${stalledAt}"`));
+        }, INITIALIZE_TIMEOUT);
 
         createMessageBus({
             onSetConfiguration: async (configuration, sendResponseToParent) => {
-                addCheckpoint('set_configuration_started', configuration);
-                const cbInstance = await setConfigurationAndCreateChargebee(configuration);
-                clearTimeout(rejectTimeout);
-                promiseResolve(cbInstance);
-                sendResponseToParent({
-                    status: 'success',
-                    data: {},
+                addCheckpoint('set_configuration_started', {
+                    correlationId: configuration.correlationId,
+                    paymentMethodType: configuration.paymentMethodType,
+                    site: configuration.site,
+                    domain: configuration.domain,
+                    themeType: configuration.themeType,
                 });
+
+                try {
+                    const cbInstance = await setConfigurationAndCreateChargebee(configuration);
+                    clearTimeout(rejectTimeout);
+                    settled = true;
+                    promiseResolve(cbInstance);
+                    sendResponseToParent({
+                        status: 'success',
+                        data: {},
+                    });
+                } catch (error: any) {
+                    // Not rethrown on purpose: the message bus would report it a second time.
+                    const stage = getLastCheckpointName();
+                    const reportableError = toReportableError(error, stage);
+                    clearTimeout(rejectTimeout);
+
+                    // Only one of these two works at a time. Before the promise finishes,
+                    // failing it hands the error to the catch below, which reports it. Afterwards
+                    // failing it does nothing, so report here instead — otherwise a second
+                    // `set-configuration` can fail with nobody reporting it.
+                    if (settled) {
+                        getMessageBus().sendUnhandledErrorMessage(reportableError, stage);
+                    } else {
+                        settled = true;
+                        promiseReject(reportableError);
+                    }
+
+                    // Best effort. The parent gives up sooner than we do, so it may have
+                    // stopped listening. Nothing above depends on this arriving.
+                    sendResponseToParent({
+                        status: 'failure',
+                        error: reportableError,
+                    });
+                }
             },
             onGetHeight: (_, sendResponseToParent) => {
                 addCheckpoint('get_height');
@@ -964,7 +1096,12 @@ export async function initialize() {
 
         return await cbInstancePromise;
     } catch (error: any) {
-        addCheckpoint('sync_error', { error });
-        getMessageBus().sendUnhandledErrorMessage(error);
+        const stage = getLastCheckpointName();
+        addCheckpoint('initialize_failed', {
+            stage,
+            errorName: error?.name ?? null,
+            errorMessage: error?.message ?? null,
+        });
+        getMessageBus().sendUnhandledErrorMessage(toReportableError(error, stage), stage);
     }
 }
