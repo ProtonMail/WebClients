@@ -1,5 +1,12 @@
 import type { BackgroundOptions, SegmenterOptions } from '@livekit/track-processors';
 
+import { withTimeout } from '@proton/meet/utils/withTimeout';
+
+import {
+    BACKGROUND_IMAGE_DECODE_TIMEOUT_MS,
+    MAX_BACKGROUND_IMAGE_EDGE,
+    MAX_BACKGROUND_IMAGE_PIXELS,
+} from '../../utils/customBackgrounds/constants';
 import BaseBackgroundProcessor from './BaseBackgroundProcessor';
 import { createProcessorWrapper } from './createProcessorWrapper';
 import type {
@@ -38,18 +45,47 @@ export default class CustomBackgroundProcessor extends BaseBackgroundProcessor<C
         return '';
     }
 
+    private async loadBackgroundImage(imageUrl: string): Promise<ImageBitmap> {
+        const image = new Image();
+        image.crossOrigin = 'anonymous';
+
+        try {
+            await withTimeout(
+                new Promise<void>((resolve, reject) => {
+                    image.onload = () => resolve();
+                    image.onerror = () => reject(new Error('Failed to load background image'));
+                    image.src = imageUrl;
+                }),
+                'Loading the background image',
+                BACKGROUND_IMAGE_DECODE_TIMEOUT_MS
+            );
+        } finally {
+            image.onload = null;
+            image.onerror = null;
+        }
+
+        const { naturalWidth: width, naturalHeight: height } = image;
+
+        if (!width || !height) {
+            throw new Error('The background image decoded to no pixels');
+        }
+
+        if (
+            width > MAX_BACKGROUND_IMAGE_EDGE ||
+            height > MAX_BACKGROUND_IMAGE_EDGE ||
+            width * height > MAX_BACKGROUND_IMAGE_PIXELS
+        ) {
+            throw new Error(`The background image is too large to composite: ${width}x${height}`);
+        }
+
+        return createImageBitmap(image);
+    }
+
     private async buildBackgroundBitmap(): Promise<ImageBitmap | null> {
         const { imageUrl, backgroundColor } = this.options;
 
         if (imageUrl) {
-            const image = new Image();
-            image.crossOrigin = 'anonymous';
-            await new Promise<void>((resolve, reject) => {
-                image.onload = () => resolve();
-                image.onerror = () => reject(new Error('Failed to load background image'));
-                image.src = imageUrl;
-            });
-            return createImageBitmap(image);
+            return this.loadBackgroundImage(imageUrl);
         }
 
         if (backgroundColor) {

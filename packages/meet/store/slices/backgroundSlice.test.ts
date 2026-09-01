@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { afterEach, describe, expect, it } from 'vitest';
 
+import { getPersistedCustomBackgroundId, persistCustomBackgroundId } from '../../utils/customBackgroundStorage';
 import type { MeetState } from '../rootReducer';
 import type { BackgroundState } from './backgroundSlice';
 import {
@@ -17,11 +18,18 @@ import {
     selectVirtualBackgroundId,
     startBackgroundEffectInitialization,
 } from './backgroundSlice';
+import type { MeetUserState } from './userSlice';
+import { initialState as initialUserState, meetUserReducer } from './userSlice';
 
-const createStore = (background: Partial<BackgroundState> = {}) => {
+const GUEST_NAMESPACE = 'guest.guest-1';
+
+const createStore = (background: Partial<BackgroundState> = {}, meetUser: Partial<MeetUserState> = {}) => {
     const store = configureStore({
-        reducer: { ...backgroundReducer },
-        preloadedState: { background: { ...initialState, ...background } },
+        reducer: { ...backgroundReducer, ...meetUserReducer },
+        preloadedState: {
+            background: { ...initialState, ...background },
+            meetUser: { ...initialUserState, ...meetUser },
+        },
     });
 
     return {
@@ -62,6 +70,37 @@ describe('backgroundSlice', () => {
             dispatch(applyBackgroundEffectAndPersist('none'));
 
             expect(getPersistedBackgroundState().appliedBackgroundEffect).toBe('none');
+        });
+
+        it('should store a custom background under the namespace it belongs to', () => {
+            const { dispatch } = createStore({}, { isGuest: true, guestBackgroundId: 'guest-1' });
+
+            dispatch(applyBackgroundEffectAndPersist('custom:node-1'));
+
+            expect(getPersistedCustomBackgroundId(GUEST_NAMESPACE)).toBe('node-1');
+            // A custom background is stored by ID rather than as one of the preset effects.
+            expect(getPersistedBackgroundState().appliedBackgroundEffect).toBe('none');
+        });
+
+        it('should forget the custom background once another effect replaces it', () => {
+            const { dispatch } = createStore({}, { isGuest: true, guestBackgroundId: 'guest-1' });
+
+            dispatch(applyBackgroundEffectAndPersist('custom:node-1'));
+            dispatch(applyBackgroundEffectAndPersist('blur'));
+
+            expect(getPersistedCustomBackgroundId(GUEST_NAMESPACE)).toBeUndefined();
+        });
+
+        it('should keep a stored custom background it did not replace', () => {
+            persistCustomBackgroundId(GUEST_NAMESPACE, 'node-1');
+
+            const { dispatch } = createStore({}, { isGuest: true, guestBackgroundId: 'guest-1' });
+
+            dispatch(applyBackgroundEffectAndPersist('blur'));
+
+            // Nothing can apply a custom background with the feature off, so this ID is the user's
+            // choice from before it was turned off.
+            expect(getPersistedCustomBackgroundId(GUEST_NAMESPACE)).toBe('node-1');
         });
     });
 

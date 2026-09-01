@@ -1,15 +1,30 @@
-import type { KeyboardEvent, ReactNode } from 'react';
-import { useRef } from 'react';
+import type { KeyboardEvent, KeyboardEventHandler, ReactNode, Ref } from 'react';
+import { Fragment, useRef } from 'react';
 
 import type { BackgroundEffect } from '@proton/meet/store/slices/backgroundSlice';
+import noop from '@proton/utils/noop';
 
 import { BackgroundTile } from './BackgroundTile';
+
+export interface BackgroundOptionRemoval {
+    label: string;
+    /** Rejects while the background is still there, which is what keeps focus on it. */
+    onRemove: () => Promise<void>;
+}
 
 export interface BackgroundOption {
     effect: BackgroundEffect;
     label: string;
     icon?: ReactNode;
     thumbnailUrl?: string;
+    removal?: BackgroundOptionRemoval;
+    isPlaceholder?: boolean;
+}
+
+export interface BackgroundActionTileProps {
+    ref: Ref<HTMLButtonElement>;
+    tabIndex: number;
+    onKeyDown: KeyboardEventHandler<HTMLButtonElement>;
 }
 
 interface BackgroundOptionGroupProps {
@@ -22,7 +37,11 @@ interface BackgroundOptionGroupProps {
     describedById?: string;
     className?: string;
     tileClassName?: string;
+    renderActionTile?: (props: BackgroundActionTileProps) => ReactNode;
+    actionTileIndex?: number;
 }
+
+type GroupItem = { type: 'option'; option: BackgroundOption } | { type: 'action' };
 
 const getTargetIndex = (key: string, currentIndex: number, count: number) => {
     switch (key) {
@@ -57,15 +76,27 @@ export const BackgroundOptionGroup = ({
     describedById,
     className,
     tileClassName,
+    renderActionTile,
+    actionTileIndex = options.length,
 }: BackgroundOptionGroupProps) => {
     const tileRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
-    const selectedIndex = options.findIndex((option) => option.effect === selectedEffect);
-    const tabbableIndex = selectedIndex === -1 ? 0 : selectedIndex;
+    const items: GroupItem[] = options.map((option) => ({ type: 'option', option }));
+
+    if (renderActionTile) {
+        items.splice(Math.min(Math.max(actionTileIndex, 0), options.length), 0, { type: 'action' });
+    }
+
+    const selectedIndex = items.findIndex((item) => item.type === 'option' && item.option.effect === selectedEffect);
+    const firstOptionIndex = items.findIndex((item) => item.type === 'option');
+    // Entering the group lands on the background in use, or on the first one when none is.
+    const tabbableIndex = selectedIndex === -1 ? Math.max(firstOptionIndex, 0) : selectedIndex;
+
+    const itemCount = items.length;
 
     // Re-selecting the effect already in use is skipped, since every call restarts the processor.
-    const handleSelect = (effect: BackgroundEffect) => {
-        if (disabled || effect === selectedEffect) {
+    const handleSelect = ({ effect, isPlaceholder }: BackgroundOption) => {
+        if (disabled || isPlaceholder || effect === selectedEffect) {
             return;
         }
 
@@ -73,7 +104,7 @@ export const BackgroundOptionGroup = ({
     };
 
     const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>, currentIndex: number) => {
-        const targetIndex = getTargetIndex(event.key, currentIndex, options.length);
+        const targetIndex = getTargetIndex(event.key, currentIndex, items.length);
 
         if (targetIndex === null) {
             return;
@@ -82,30 +113,68 @@ export const BackgroundOptionGroup = ({
         event.preventDefault();
 
         tileRefs.current[targetIndex]?.focus();
-        handleSelect(options[targetIndex].effect);
+
+        const target = items[targetIndex];
+
+        if (target.type === 'option') {
+            handleSelect(target.option);
+        }
     };
 
     return (
         <div role="radiogroup" aria-label={label} aria-describedby={describedById} className={className}>
-            {options.map(({ effect, label: optionLabel, icon, thumbnailUrl }, index) => (
-                <BackgroundTile
-                    key={effect}
-                    ref={(tile) => {
-                        tileRefs.current[index] = tile;
-                    }}
-                    label={optionLabel}
-                    isSelected={effect === selectedEffect}
-                    isPending={pendingEffect === effect}
-                    disabled={disabled}
-                    tabIndex={index === tabbableIndex ? 0 : -1}
-                    onClick={() => handleSelect(effect)}
-                    onKeyDown={(event) => handleKeyDown(event, index)}
-                    thumbnailUrl={thumbnailUrl}
-                    className={tileClassName}
-                >
-                    {icon}
-                </BackgroundTile>
-            ))}
+            {items.map((item, index) => {
+                const setTileRef = (tile: HTMLButtonElement | null) => {
+                    tileRefs.current[index] = tile;
+                };
+                const tabIndex = index === tabbableIndex ? 0 : -1;
+                const onKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => handleKeyDown(event, index);
+
+                if (item.type === 'action') {
+                    return (
+                        <Fragment key="action">{renderActionTile?.({ ref: setTileRef, tabIndex, onKeyDown })}</Fragment>
+                    );
+                }
+
+                const { effect, label: optionLabel, icon, thumbnailUrl, removal, isPlaceholder } = item.option;
+
+                const tileRemoval = removal && {
+                    ...removal,
+                    onRemove: () => {
+                        const hadFocus = !!tileRefs.current[index]?.parentElement?.contains(document.activeElement);
+                        const neighbour = tileRefs.current[index + 1 < itemCount ? index + 1 : index - 1];
+
+                        removal
+                            .onRemove()
+                            .then(() => {
+                                if (hadFocus) {
+                                    neighbour?.focus();
+                                }
+                            })
+                            .catch(noop);
+                    },
+                };
+
+                return (
+                    <BackgroundTile
+                        key={effect}
+                        ref={setTileRef}
+                        label={optionLabel}
+                        isSelected={effect === selectedEffect}
+                        isPending={pendingEffect === effect}
+                        isPlaceholder={isPlaceholder}
+                        disabled={disabled}
+                        tabIndex={tabIndex}
+                        onClick={() => handleSelect(item.option)}
+                        onKeyDown={onKeyDown}
+                        thumbnailUrl={thumbnailUrl}
+                        removal={tileRemoval || undefined}
+                        className={tileClassName}
+                    >
+                        {icon}
+                    </BackgroundTile>
+                );
+            })}
         </div>
     );
 };
