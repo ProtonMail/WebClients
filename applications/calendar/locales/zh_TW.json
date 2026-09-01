@@ -605,6 +605,9 @@
       "Merge contacts": [
         "合併聯絡人"
       ],
+      "Migrate": [
+        "遷移"
+      ],
       "More actions": [
         "更多選項"
       ],
@@ -3621,6 +3624,9 @@
       "Cannot export this contact": [
         "無法匯出通訊名片"
       ],
+      "Cannot verify the author of this file": [
+        "無法驗證此檔案的作者"
+      ],
       "Cannot verify who uploaded this file": [
         "無法驗證上傳此檔案的人"
       ],
@@ -3735,6 +3741,9 @@
       "Failed to decrypt bookmark key: ${ message }": [
         "解密書籤金鑰失敗: ${ message }"
       ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "解密書籤密碼失敗: ${ message }"
+      ],
       "Failed to decrypt session key": [
         "解密工作階段金鑰失敗"
       ],
@@ -3764,6 +3773,9 @@
       ],
       "Forward address is required": [
         "轉寄電郵地址為必填"
+      ],
+      "Image preview not found": [
+        "查無照片預覽"
       ],
       "Image upload failed": [
         "影像上載失敗"
@@ -3840,8 +3852,14 @@
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "請至少將 ${ calendarsToFixCount } 個行事曆與現存的 ${ BRAND_NAME } calendar 合併"
       ],
+      "Missing inviter email": [
+        "缺少邀請電子郵件"
+      ],
       "Missing key packet": [
         "缺少金鑰封包"
+      ],
+      "Missing organization private key": [
+        "缺少組織私有密鑰"
       ],
       "Missing organization public key": [
         "缺少組織公用密鑰"
@@ -4140,6 +4158,9 @@
       "This item has no image preview": [
         "此項目無可預覽的項目"
       ],
+      "This item is no longer shared": [
+        "此項目已停止共享"
+      ],
       "This item is not shared": [
         "此項目未被共享"
       ],
@@ -4199,6 +4220,9 @@
       ],
       "You are reconnected to Zoom. You can save your event now.": [
         "Zoom 已重新連接上。現在您可以儲存您的行事曆了。"
+      ],
+      "You can update a public link for your own files only": [
+        "您只能更新您的檔案公開連結"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "您無法將郵件傳送給超過 ${ maxContacts } 位收件人"
@@ -5992,6 +6016,9 @@
       "No results found": [
         "找不到相符的結果"
       ],
+      "No users to display": [
+        "無使用者可顯示"
+      ],
       "None of the participants can be notified about your changes:": [
         "參與者無一能知悉您的變更："
       ],
@@ -6369,6 +6396,9 @@
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "若要遷移此使用者，他們需要接受邀請以加入 ${ BRAND_NAME }。"
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "若要遷移此使用者，於您的 ${ provider.adminConsoleName } 取消封存它們的帳號。"
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "若要重新簽署您的聯絡人，我們需要依照您的帳號中可用的加密金鑰清單逐一檢查每一位聯絡人。若找不到匹配時，您的聯絡人將使用主要加密金鑰重新簽署。"
@@ -8191,6 +8221,9 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫工具與擴充存取權"
+      ],
       "${ n } calendar": [
         "${ n } 個行事曆"
       ],
@@ -9764,6 +9797,9 @@
       "You will soon be redirected to verify your payment.": [
         "將會被重新導向驗證您的付款。"
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "您的貨幣以變更至歐元 (€) 因為 ${ IDEAL_WERO_BRAND_NAME } 僅支援歐元付款。"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "您的貨幣已變更為歐元 (€)，因為 SEPA 銀行轉帳僅支援以歐元付款。"
       ],
@@ -10149,6 +10185,9 @@
       "content key": [
         "內容金鑰"
       ],
+      "hash key": [
+        "雜湊金鑰"
+      ],
       "key": [
         "金鑰"
       ]
@@ -10283,6 +10322,24 @@
       ],
       "SUMMER SALE": [
         "夏季特賣"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "2 TB of secure storage": [
+        "2TB 的安全儲存空間"
+      ],
+      "3 TB of secure storage": [
+        "3TB 的安全儲存空間"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "全部的頂級質子版 ${ DRIVE_SHORT_APP_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 和 ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "12 個月"
       ]
     },
     "Referral": {
