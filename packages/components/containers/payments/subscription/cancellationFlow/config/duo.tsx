@@ -1,5 +1,13 @@
 import { c, msgid } from 'ttag';
 
+import { IcAppSwitch } from '@proton/icons/icons/IcAppSwitch';
+import { IcAt } from '@proton/icons/icons/IcAt';
+import { IcEnvelopes } from '@proton/icons/icons/IcEnvelopes';
+import { IcFolders } from '@proton/icons/icons/IcFolders';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcShieldHalfFilled } from '@proton/icons/icons/IcShieldHalfFilled';
+import { IcStorage } from '@proton/icons/icons/IcStorage';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { hasCancellablePlan } from '@proton/payments/core/subscription/helpers';
 import {
@@ -48,20 +56,20 @@ export const getDuoConfig = ({ app, plan, subscription }: ConfigProps): PlanConf
             .t`${planName} gives you unlimited privacy and more storage for up to 2 people.`,
         features: [
             {
-                icon: 'storage',
+                icon: IcStorage,
                 text: c('Subscription reminder').t`${planMaxSpace} total storage`,
             },
             {
-                icon: 'users',
+                icon: IcUsers,
                 text: c('Subscription reminder').t`2 users`,
             },
             {
-                icon: 'shield-half-filled',
+                icon: IcShieldHalfFilled,
                 text: c('Subscription reminder').t`${PROTON_SENTINEL_NAME} advanced account protection`,
             },
             getPrioritySupport(),
             {
-                icon: 'envelopes',
+                icon: IcEnvelopes,
                 text: c('Subscription reminder').ngettext(
                     msgid`${planNumberOfEmails} email address`,
                     `${planNumberOfEmails} email addresses`,
@@ -69,11 +77,11 @@ export const getDuoConfig = ({ app, plan, subscription }: ConfigProps): PlanConf
                 ),
             },
             {
-                icon: 'folders',
+                icon: IcFolders,
                 text: c('Subscription reminder').t`Folders, labels, and custom filters`,
             },
             {
-                icon: 'globe',
+                icon: IcGlobe,
                 text: c('Subscription reminder').ngettext(
                     msgid`${planNumberOfDomains} custom email domain`,
                     `${planNumberOfDomains} custom email domains`,
@@ -81,11 +89,11 @@ export const getDuoConfig = ({ app, plan, subscription }: ConfigProps): PlanConf
                 ),
             },
             {
-                icon: 'at',
+                icon: IcAt,
                 text: c('Subscription reminder').t`Your own short @pm.me email alias`,
             },
             {
-                icon: 'app-switch',
+                icon: IcAppSwitch,
                 text: c('Subscription reminder')
                     .t`${CALENDAR_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, and ${VPN_SHORT_APP_NAME} with premium features`,
             },

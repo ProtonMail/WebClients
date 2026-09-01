@@ -20,6 +20,26 @@ import {
     getHighSpeedVPNConnectionsText,
     getVPNConnectionsText,
 } from '../../features/vpn';
+import type { Upsell } from './dashboard-upsells';
+
+/**
+ * Feature ids that switch on the b2b users row in the subscription panel.
+ *
+ * Only `users` is meaningful here. The other three are listed because the check used
+ * to match on the users icon, which all four of these features render, so they have
+ * always switched the row on by accident — a Meet Business upsell does it through
+ * "N participants". Narrowing the list to `users` changes what renders, so it is left
+ * to a follow-up rather than smuggled into a refactor.
+ */
+const B2B_USERS_ROW_FEATURE_IDS = [
+    'users',
+    'contact-groups-management',
+    'max-participants',
+    'manage-user-permissions-and-access',
+];
+
+export const upsellsShowB2BUsersRow = (upsells: Upsell[]) =>
+    upsells.some((upsell) => upsell.features.some((feature) => B2B_USERS_ROW_FEATURE_IDS.includes(feature.id)));
 
 /** Shared ngettext so Lumo/Meet lines do not duplicate the same placeholder pattern in one context (i18n validate). */
 const getProductForUsersSubscriptionAttributeText = (productName: string, count: number) =>

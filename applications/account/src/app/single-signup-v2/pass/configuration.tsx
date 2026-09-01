@@ -119,7 +119,7 @@ const getPassBenefitsTitle = (plan: PLANS | undefined) => {
 
 const getUserAccountsBenefit = (): BenefitItem => {
     return {
-        key: `user-accounts`,
+        id: 'user-accounts',
         text: getPassUsersText(6),
         icon: {
             component: IcUserPlus,
@@ -129,7 +129,7 @@ const getUserAccountsBenefit = (): BenefitItem => {
 
 const getAdminPanelBenefit = (): BenefitItem => {
     return {
-        key: `admin-panel`,
+        id: 'admin-panel',
         text: c('pass_signup_2024: Info').t`Admin panel to manage users and subscription`,
         icon: {
             component: IcCogWheel,
@@ -139,7 +139,7 @@ const getAdminPanelBenefit = (): BenefitItem => {
 
 const getAliasesBenefit = (): BenefitItem => {
     return {
-        key: `aliases`,
+        id: 'aliases',
         text: c('pass_signup_2023: Info').t`Aliases for email protection from breaches`,
         icon: {
             component: IcAlias,
@@ -149,7 +149,7 @@ const getAliasesBenefit = (): BenefitItem => {
 
 const getSecureSharingBenefit = (): BenefitItem => {
     return {
-        key: `secure-sharing`,
+        id: 'secure-sharing',
         text: getSecureSharingText(true),
         icon: {
             component: IcArrowUpFromSquare,
@@ -159,7 +159,7 @@ const getSecureSharingBenefit = (): BenefitItem => {
 
 const get2FABenefit = (): BenefitItem => {
     return {
-        key: `2fa`,
+        id: '2fa',
         text: get2FAAuthenticatorText(),
         icon: {
             component: IcKey,
@@ -169,7 +169,7 @@ const get2FABenefit = (): BenefitItem => {
 
 const getAlertsBenefit = (): BenefitItem => {
     return {
-        key: `alerts`,
+        id: 'alerts',
         text: c('pass_signup_2023: Info').t`Alerts for compromised emails and vulnerable passwords`,
         icon: {
             component: IcShield,
@@ -179,7 +179,7 @@ const getAlertsBenefit = (): BenefitItem => {
 
 const getPasskeysBenefit = (): BenefitItem => {
     return {
-        key: `passkeys`,
+        id: 'passkeys',
         text: c('pass_signup_2023: Info').t`Passkeys supported on all devices`,
         icon: {
             component: IcPassPasskey,
@@ -189,7 +189,7 @@ const getPasskeysBenefit = (): BenefitItem => {
 
 const getEncryptionBenefit = (): BenefitItem => {
     return {
-        key: `encryption`,
+        id: 'encryption',
         text: c('pass_signup_2023: Info').t`Secured by end-to-end encryption`,
         icon: {
             component: IcLock,
@@ -199,7 +199,7 @@ const getEncryptionBenefit = (): BenefitItem => {
 
 const getSecureVaultSharingBenefit = (): BenefitItem => {
     return {
-        key: `secure-vault-sharing`,
+        id: 'secure-vault-sharing',
         text: getSecureVaultSharingText(),
         icon: {
             component: IcLock,
@@ -209,7 +209,7 @@ const getSecureVaultSharingBenefit = (): BenefitItem => {
 
 const getAdvancedAliasBenefit = (): BenefitItem => {
     return {
-        key: `advanced-alias`,
+        id: 'advanced-alias',
         text: c('pass_signup_2024: Info').t`Advanced alias features (powered by SimpleLogin)`,
         icon: {
             component: IcBrandSimpleLogin,
@@ -219,7 +219,7 @@ const getAdvancedAliasBenefit = (): BenefitItem => {
 
 const getOpenSourceAndAuditedBenefit = (): BenefitItem => {
     return {
-        key: 'open-source-and-audited',
+        id: 'open-source-and-audited',
         text: c('pass_signup_2023: Info').t`Open source and audited`,
         icon: {
             component: IcMagnifier,
@@ -229,7 +229,7 @@ const getOpenSourceAndAuditedBenefit = (): BenefitItem => {
 
 const getLoginsAndNotesBenefit = (): BenefitItem => {
     return {
-        key: 'notes',
+        id: 'notes',
         text: getLoginsAndNotesText(),
         icon: {
             component: IcNote,
@@ -239,7 +239,7 @@ const getLoginsAndNotesBenefit = (): BenefitItem => {
 
 const getEmailAliasesBenefit = (): BenefitItem => {
     return {
-        key: 'email-aliases',
+        id: 'email-aliases',
         text: getUnlimitedHideMyEmailAliasesText(),
         icon: {
             component: IcEyeSlash,
@@ -249,7 +249,7 @@ const getEmailAliasesBenefit = (): BenefitItem => {
 
 const getSecureLinkAndVaultSharingBenefit = (): BenefitItem => {
     return {
-        key: 'secure-vault-sharing',
+        id: 'secure-vault-sharing',
         text: getSecureSharingText(true),
         icon: {
             component: IcArrowUpFromSquare,
@@ -259,7 +259,7 @@ const getSecureLinkAndVaultSharingBenefit = (): BenefitItem => {
 
 const getTeamPoliciesBenefit = (): BenefitItem => {
     return {
-        key: 'team-policies',
+        id: 'team-policies',
         text: getTeamPoliciesText(),
         icon: {
             component: IcUsers,
@@ -269,7 +269,7 @@ const getTeamPoliciesBenefit = (): BenefitItem => {
 
 const getActivityLogBenefit = (): BenefitItem => {
     return {
-        key: 'activity-log',
+        id: 'activity-log',
         text: getActivityLogText(),
         icon: {
             component: IcListBullets,
@@ -279,7 +279,7 @@ const getActivityLogBenefit = (): BenefitItem => {
 
 const getAdvancedAccountProtectionBenefit = (): BenefitItem => {
     return {
-        key: 'advanced-account-protection',
+        id: 'advanced-account-protection',
         text: c('pass_signup_2024: Info').t`Advanced account protection`,
         icon: {
             component: IcLock,
@@ -289,7 +289,7 @@ const getAdvancedAccountProtectionBenefit = (): BenefitItem => {
 
 const getAppsPassIncludedBenefit = (): BenefitItem => {
     return {
-        key: `apps-pass-included`,
+        id: 'apps-pass-included',
         text: c('Signup: Info').t`Mail, calendar, file storage, and VPN included`,
         icon: {
             component: IcGrid2,
@@ -299,7 +299,7 @@ const getAppsPassIncludedBenefit = (): BenefitItem => {
 
 const getAdvancedSecurityFeaturesBenefit = (): BenefitItem => {
     return {
-        key: 'advanced-security-features',
+        id: 'advanced-security-features',
         text: c('Signup: Info').t`Advanced security features by ${BRAND_NAME}`,
         icon: {
             component: IcShield,
@@ -385,7 +385,7 @@ export const getCustomPassFeatures = ({ isLifetime }: { isLifetime?: boolean } =
     return [
         isLifetime
             ? {
-                  key: 'pass-lifetime-one-time-payment',
+                  id: 'pass-lifetime-one-time-payment',
                   text: c('pass_signup_2024: Info').t`One-time payment, lifetime deal`,
                   included: true,
               }
@@ -403,7 +403,7 @@ const getCustomPassKeyFeatures = ({ isLifetime }: { isLifetime?: boolean } = {})
     return [
         isLifetime
             ? {
-                  key: 'pass-lifetime-one-time-payment',
+                  id: 'pass-lifetime-one-time-payment',
                   text: c('pass_signup_2024: Info').t`One-time payment, lifetime deal`,
                   included: true,
               }
@@ -586,9 +586,8 @@ export const getPassConfiguration = ({
     const benefits = (() => {
         if (isPaidPassVPNBundle) {
             const getBenefitItems = (items: [PlanCardFeatureDefinition, BenefitItem['icon']['component']][]) => {
-                return items.map(([item, component], i): BenefitItem => ({
+                return items.map(([item, component]): BenefitItem => ({
                     ...item,
-                    key: i,
                     icon: { component },
                 }));
             };

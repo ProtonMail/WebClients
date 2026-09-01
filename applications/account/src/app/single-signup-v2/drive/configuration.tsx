@@ -62,7 +62,7 @@ const getDriveBenefitsTitle = (plan: PLANS | undefined, audience: Audience | und
 
 const getAppsDriveIncludedBenefit = (): BenefitItem => {
     return {
-        key: `apps-drive-included`,
+        id: 'apps-drive-included',
         text: c('Signup: Info').t`Email, calendar, password manager, and VPN included`,
         icon: {
             component: IcGrid2,
@@ -72,7 +72,7 @@ const getAppsDriveIncludedBenefit = (): BenefitItem => {
 
 const getAppsForAllDevicesBenefit = (): BenefitItem => {
     return {
-        key: `apps-for-all-devices`,
+        id: 'apps-for-all-devices',
         text: c('Signup: Info').t`Apps for all devices`,
         icon: {
             component: IcMobile,
@@ -82,7 +82,7 @@ const getAppsForAllDevicesBenefit = (): BenefitItem => {
 
 const getAdvancedSharingSecurityBenefit = (): BenefitItem => {
     return {
-        key: `advanced-sharing-security`,
+        id: 'advanced-sharing-security',
         text: c('Signup: Info').t`Advanced sharing security`,
         icon: {
             component: IcArrowUpFromSquare,
@@ -102,21 +102,21 @@ const getDriveBenefits = (plan: PLANS | undefined, audience: Audience | undefine
     if (audience === Audience.B2B) {
         return [
             {
-                key: 1,
+                id: 'secure-end-to-end-encryption',
                 text: getBoldFormattedText(c('drive_signup_2024: Info').t`**Secure:** end-to-end encryption`),
                 icon: {
                     component: IcLock,
                 },
             },
             {
-                key: 2,
+                id: 'collaborative-document-editor',
                 text: getBoldFormattedText(c('drive_signup_2024: Info').t`**Collaborative:** online document editor`),
                 icon: {
                     component: IcUsers,
                 },
             },
             {
-                key: 3,
+                id: 'simple-and-user-friendly',
                 text: getBoldFormattedText(
                     c('drive_signup_2024: Info').t`**Simple and user-friendly:** import your files and setup in minutes`
                 ),
@@ -125,14 +125,14 @@ const getDriveBenefits = (plan: PLANS | undefined, audience: Audience | undefine
                 },
             },
             {
-                key: 4,
+                id: 'gdpr-and-hipaa-compliant',
                 text: getBoldFormattedText(c('drive_signup_2024: Info').t`**GDPR** and **HIPAA** compliant`),
                 icon: {
                     component: IcShield,
                 },
             },
             {
-                key: 5,
+                id: 'iso27001-certified',
                 text: getBoldFormattedText(c('drive_signup_2024: Info').t`**ISO 27001** certified`),
                 icon: {
                     component: IcGlobe,

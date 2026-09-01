@@ -1,5 +1,6 @@
-import type { IconName } from '@proton/icons/types';
 import type { PLANS } from '@proton/payments/core/constants';
+
+import type { PlanCardFeatureIcon } from '../../features/interface';
 
 export interface PlanConfigReminder {
     title: string;
@@ -23,7 +24,7 @@ export interface PlanConfigFeatures {
     title: string;
     description: string;
     features: {
-        icon: IconName;
+        icon: PlanCardFeatureIcon;
         text: string;
     }[];
 }

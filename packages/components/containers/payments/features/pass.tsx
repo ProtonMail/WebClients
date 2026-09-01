@@ -1,5 +1,19 @@
 import { c, msgid } from 'ttag';
 
+import { IcArrowUpFromSquare } from '@proton/icons/icons/IcArrowUpFromSquare';
+import { IcBrandProtonPass } from '@proton/icons/icons/IcBrandProtonPass';
+import { IcBrandSimpleLogin } from '@proton/icons/icons/IcBrandSimpleLogin';
+import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
+import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
+import { IcFilePdf } from '@proton/icons/icons/IcFilePdf';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcMobile } from '@proton/icons/icons/IcMobile';
+import { IcNote } from '@proton/icons/icons/IcNote';
+import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
+import { IcShield } from '@proton/icons/icons/IcShield';
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
+import { IcVault } from '@proton/icons/icons/IcVault';
+import { IcWindowTerminal } from '@proton/icons/icons/IcWindowTerminal';
 import { PLANS } from '@proton/payments/core/constants';
 import {
     BRAND_NAME,
@@ -13,9 +27,10 @@ import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
 export const getPassAppFeature = (): PlanCardFeatureDefinition => {
     return {
+        id: 'pass-app',
         text: PASS_APP_NAME,
         included: true,
-        icon: 'brand-proton-pass',
+        icon: IcBrandProtonPass,
         tooltip: c('tooltip')
             .t`${PASS_APP_NAME}: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.`,
     };
@@ -23,6 +38,7 @@ export const getPassAppFeature = (): PlanCardFeatureDefinition => {
 
 export const getCustomDomains = (): PlanCardFeatureDefinition => {
     return {
+        id: 'custom-domains',
         text: c('new_plans: feature').t`Custom domains for email aliases`,
         included: true,
     };
@@ -30,6 +46,7 @@ export const getCustomDomains = (): PlanCardFeatureDefinition => {
 
 export const getProtonPassFeature = (n: 'unlimited' | number = 'unlimited'): PlanCardFeatureDefinition => {
     return {
+        id: 'proton-pass',
         text:
             n === 'unlimited'
                 ? c('new_plans: feature').t`${PASS_APP_NAME} with unlimited hide-my-email aliases`
@@ -38,7 +55,7 @@ export const getProtonPassFeature = (n: 'unlimited' | number = 'unlimited'): Pla
                       `${PASS_APP_NAME} with ${n} hide-my-email aliases`,
                       n
                   ),
-        icon: 'brand-proton-pass',
+        icon: IcBrandProtonPass,
         included: true,
         hideInDowngrade: true,
     };
@@ -50,8 +67,9 @@ export const getProtonPassFeatureTooltipText = () => {
 
 export const getProtonPassFeatureLifetime = (): PlanCardFeatureDefinition => {
     return {
+        id: 'proton-pass-lifetime',
         text: c('new_plans: feature').t`${PASS_APP_NAME} + SimpleLogin lifetime`,
-        icon: 'brand-proton-pass',
+        icon: IcBrandProtonPass,
         included: true,
         tooltip: getProtonPassFeatureTooltipText(),
     };
@@ -63,8 +81,9 @@ export const getPassUsersText = (n: number) => {
 
 export const getPassUsers = (n: Parameters<typeof getPassUsersText>[0]): PlanCardFeatureDefinition => {
     return {
+        id: 'pass-users',
         text: getPassUsersText(n),
-        icon: 'user-plus',
+        icon: IcUserPlus,
         included: true,
     };
 };
@@ -75,8 +94,9 @@ export const getPassAdminPanelText = () => {
 
 export const getPassAdminPanel = (): PlanCardFeatureDefinition => {
     return {
+        id: 'pass-admin-panel',
         text: getPassAdminPanelText(),
-        icon: 'cog-wheel',
+        icon: IcCogWheel,
         included: true,
     };
 };
@@ -88,6 +108,7 @@ export const getLoginsAndNotesText = () => {
 
 export const getGroupManagement = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
+        id: 'group-management',
         text: c('new_plans: feature').t`Group management (coming soon)`,
         included,
         status: 'coming-soon',
@@ -96,14 +117,16 @@ export const getGroupManagement = (included: boolean = false): PlanCardFeatureDe
 
 export const getLoginsAndNotes = (): PlanCardFeatureDefinition => {
     return {
+        id: 'logins-and-notes',
         text: getLoginsAndNotesText(),
-        icon: 'note',
+        icon: IcNote,
         included: true,
     };
 };
 
 export const getItems = (): PlanCardFeatureDefinition => {
     return {
+        id: 'items',
         text: c('new_plans: feature').t`Organize items with multiple vaults`,
         included: true,
     };
@@ -111,6 +134,7 @@ export const getItems = (): PlanCardFeatureDefinition => {
 
 export const getCreditCards = (): PlanCardFeatureDefinition => {
     return {
+        id: 'credit-cards',
         text: c('new_plans: feature').t`Autofill credit cards (coming soon)`,
         included: true,
         status: 'coming-soon',
@@ -127,8 +151,9 @@ export const getDevicesAndAliasesText = () => {
 
 export const getDevices = (): PlanCardFeatureDefinition => {
     return {
+        id: 'devices',
         text: getDevicesText(),
-        icon: 'mobile',
+        icon: IcMobile,
         included: true,
         hideInDowngrade: true,
     };
@@ -136,8 +161,9 @@ export const getDevices = (): PlanCardFeatureDefinition => {
 
 export const getDevicesAndAliases = (): PlanCardFeatureDefinition => {
     return {
+        id: 'devices-and-aliases',
         text: getDevicesAndAliasesText(),
-        icon: 'mobile',
+        icon: IcMobile,
         included: true,
         hideInDowngrade: true,
     };
@@ -153,11 +179,12 @@ export const getUnlimitedHideMyEmailAliasesText = () => {
 
 export const getHideMyEmailAliases = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     return {
+        id: 'hide-my-email-aliases',
         text: n === 'unlimited' ? getUnlimitedHideMyEmailAliasesText() : getNHideMyEmailAliasesText(n),
         tooltip: c('new_plans: tooltip')
             .t`Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).`,
         included: true,
-        icon: 'eye-slash',
+        icon: IcEyeSlash,
     };
 };
 
@@ -167,11 +194,12 @@ export const getAdvancedAliasFeaturesText = () => {
 
 export const getAdvancedAliasFeatures = (included: boolean): PlanCardFeatureDefinition => {
     return {
+        id: 'advanced-alias-features',
         text: getAdvancedAliasFeaturesText(),
         tooltip: c('new_plans: tooltip')
             .t`Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more`,
         included,
-        icon: 'brand-simple-login',
+        icon: IcBrandSimpleLogin,
     };
 };
 
@@ -181,17 +209,19 @@ export const get2FAAuthenticatorText = () => {
 
 export const get2FAAuthenticator = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
+        id: '2fa-authenticator',
         text: get2FAAuthenticatorText(),
         included,
-        icon: 'key',
+        icon: IcKey,
     };
 };
 
 export const getPasswordManagerToSecureCredentialsFeature = (included: boolean = true): PlanCardFeatureDefinition => {
     return {
+        id: 'password-manager-to-secure-credentials',
         text: c('new_plans: feature').t`Password manager to secure credentials`,
         included,
-        icon: 'key',
+        icon: IcKey,
     };
 };
 
@@ -203,39 +233,43 @@ export const getNVaultsText = (n: number | 'unlimited') => {
 
 export const getVaults = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     return {
+        id: 'vaults',
         text: getNVaultsText(n),
         tooltip: c('new_plans: tooltip').t`Like a folder, a vault is a convenient way to organize your items`,
         included: true,
-        icon: 'vault',
+        icon: IcVault,
     };
 };
 
 export const getCustomFields = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
+        id: 'custom-fields',
         text: c('new_plans: feature').t`Custom fields`,
         included,
-        icon: 'pen-square',
+        icon: IcPenSquare,
         hideInDowngrade: true,
     };
 };
 
 export const getDarkWebMonitoring = (): PlanCardFeatureDefinition => {
     return {
+        id: 'dark-web-monitoring',
         text: DARK_WEB_MONITORING_NAME,
         tooltip: c('new_plans: feature')
             .t`We scan the dark web to check if your ${BRAND_NAME} addresses or aliases have been leaked and alert you immediately if we find anything.`,
         included: true,
-        icon: 'pen-square',
+        icon: IcPenSquare,
     };
 };
 
 export const getPasswordHealth = (): PlanCardFeatureDefinition => {
     return {
+        id: 'password-health',
         text: c('new_plans: feature').t`Password health`,
         tooltip: c('new_plans: feature')
             .t`Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.`,
         included: true,
-        icon: 'pen-square',
+        icon: IcPenSquare,
     };
 };
 
@@ -263,8 +297,9 @@ export const getVaultSharingText = (n: number | 'unlimited') => {
 
 export const getVaultSharing = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     return {
+        id: 'vault-sharing',
         text: getVaultSharingText(n),
-        icon: 'arrow-up-from-square',
+        icon: IcArrowUpFromSquare,
         included: true,
     };
 };
@@ -281,8 +316,9 @@ export const getVaultSharingB2BText = (n: number | 'unlimited') => {
 
 export const getVaultSharingB2B = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     return {
+        id: 'vault-sharing-b2b',
         text: getVaultSharingB2BText(n),
-        icon: 'vault',
+        icon: IcVault,
         included: true,
         hideInDowngrade: true,
     };
@@ -297,8 +333,9 @@ export const getSecureSharingText = (link?: boolean) => {
 
 export const getSecureVaultSharing = (...args: Parameters<typeof getSecureSharingText>): PlanCardFeatureDefinition => {
     return {
+        id: 'secure-vault-sharing',
         text: getSecureSharingText(...args),
-        icon: 'arrow-up-from-square',
+        icon: IcArrowUpFromSquare,
         included: true,
         hideInDowngrade: true,
     };
@@ -306,9 +343,10 @@ export const getSecureVaultSharing = (...args: Parameters<typeof getSecureSharin
 
 export const getLinkSharing = (): PlanCardFeatureDefinition => {
     return {
+        id: 'link-sharing',
         text: c('new_plans: feature').t`Secure link sharing`,
         included: true,
-        icon: 'arrow-up-from-square',
+        icon: IcArrowUpFromSquare,
         tooltip: c('new_plans: tooltip')
             .t`Securely share individual items with anyone (even if they don't use ${PASS_APP_NAME})`,
     };
@@ -316,24 +354,27 @@ export const getLinkSharing = (): PlanCardFeatureDefinition => {
 
 export const getDataBreachMonitoring = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
+        id: 'data-breach-monitoring',
         text: c('new_plans: feature').t`Data breach monitoring`,
         included,
-        icon: 'shield',
+        icon: IcShield,
     };
 };
 
 export const getPasswordManager = (): PlanCardFeatureDefinition => {
     return {
+        id: 'password-manager',
         text: c('new_plans: feature').t`Password manager`,
         included: true,
-        icon: 'brand-proton-pass',
+        icon: IcBrandProtonPass,
     };
 };
 
 export const getFileAttachments = (): PlanCardFeatureDefinition => {
     return {
+        id: 'file-attachments',
         text: c('pass_signup_2024: Info').t`File attachments (up to 10GB)`,
-        icon: 'file-pdf',
+        icon: IcFilePdf,
         included: true,
     };
 };
@@ -364,8 +405,9 @@ export const getPassCliText = () => {
 
 export const getPassCli = (): PlanCardFeatureDefinition => {
     return {
+        id: 'pass-cli',
         text: getPassCliText(),
-        icon: 'window-terminal',
+        icon: IcWindowTerminal,
         included: true,
         tooltip: c('Label')
             .t`Access ${PASS_APP_NAME} securely from the terminal, ideal for scripting, automation, and development workflows.`,
@@ -748,9 +790,10 @@ export const getPassFeatures = (): PlanCardFeature[] => {
 
 export const getPassIdentityFeature = (): PlanCardFeatureDefinition => {
     return {
+        id: 'pass-identity',
         text: PASS_APP_NAME,
         tooltip: c('new_plans: tooltip').t`Password management and identity protection`,
         included: true,
-        icon: 'brand-proton-pass',
+        icon: IcBrandProtonPass,
     };
 };

@@ -1,5 +1,13 @@
 import { c, msgid } from 'ttag';
 
+import { IcAt } from '@proton/icons/icons/IcAt';
+import { IcEnvelopes } from '@proton/icons/icons/IcEnvelopes';
+import { IcFolders } from '@proton/icons/icons/IcFolders';
+import { IcGift } from '@proton/icons/icons/IcGift';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcShield2Bolt } from '@proton/icons/icons/IcShield2Bolt';
+import { IcStorage } from '@proton/icons/icons/IcStorage';
+import { IcTv } from '@proton/icons/icons/IcTv';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { hasCancellablePlan } from '@proton/payments/core/subscription/helpers';
 import { DARK_WEB_MONITORING_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -37,20 +45,20 @@ export const getMailPlusConfig = ({ plan, subscription }: ConfigProps): PlanConf
             .t`${planName} goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.`,
         features: [
             {
-                icon: 'storage',
+                icon: IcStorage,
                 text: c('Subscription reminder').t`${planMaxSpace} total storage`,
             },
             {
-                icon: 'gift',
+                icon: IcGift,
                 text: c('Subscription reminder').t`Yearly free storage bonuses`,
             },
             {
-                icon: 'shield-2-bolt',
+                icon: IcShield2Bolt,
                 text: DARK_WEB_MONITORING_NAME,
             },
             getPrioritySupport(),
             {
-                icon: 'envelopes',
+                icon: IcEnvelopes,
                 text: c('Subscription reminder').ngettext(
                     msgid`${planNumberOfEmails} email address`,
                     `${planNumberOfEmails} email addresses`,
@@ -58,11 +66,11 @@ export const getMailPlusConfig = ({ plan, subscription }: ConfigProps): PlanConf
                 ),
             },
             {
-                icon: 'folders',
+                icon: IcFolders,
                 text: c('Subscription reminder').t`Folders, labels and filters`,
             },
             {
-                icon: 'globe',
+                icon: IcGlobe,
                 text: c('Subscription reminder').ngettext(
                     msgid`${planNumberOfDomains} custom email domain`,
                     `${planNumberOfDomains} custom email domains`,
@@ -70,11 +78,11 @@ export const getMailPlusConfig = ({ plan, subscription }: ConfigProps): PlanConf
                 ),
             },
             {
-                icon: 'at',
+                icon: IcAt,
                 text: c('Subscription reminder').t`Your own short @pm.me email alias`,
             },
             {
-                icon: 'tv',
+                icon: IcTv,
                 text: c('Subscription reminder').t`${MAIL_APP_NAME} desktop app`,
             },
         ],

@@ -1,3 +1,25 @@
+import { IcArrowUpFromSquare } from '@proton/icons/icons/IcArrowUpFromSquare';
+import { IcBrandProton } from '@proton/icons/icons/IcBrandProton';
+import { IcBrandProtonCalendar } from '@proton/icons/icons/IcBrandProtonCalendar';
+import { IcBrandProtonPass } from '@proton/icons/icons/IcBrandProtonPass';
+import { IcBrandProtonVpn } from '@proton/icons/icons/IcBrandProtonVpn';
+import { IcBrandSimpleLogin } from '@proton/icons/icons/IcBrandSimpleLogin';
+import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
+import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
+import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcImage } from '@proton/icons/icons/IcImage';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcLifeRing } from '@proton/icons/icons/IcLifeRing';
+import { IcMagicWand } from '@proton/icons/icons/IcMagicWand';
+import { IcMobile } from '@proton/icons/icons/IcMobile';
+import { IcNote } from '@proton/icons/icons/IcNote';
+import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
+import { IcPencil } from '@proton/icons/icons/IcPencil';
+import { IcShield } from '@proton/icons/icons/IcShield';
+import { IcStorage } from '@proton/icons/icons/IcStorage';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
+import { IcVault } from '@proton/icons/icons/IcVault';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
@@ -12,39 +34,45 @@ export const mailPlusUpsell = {
     upsellRefLink: 'upsell_mail-button-mailplus-dashboard_settings',
     features: [
         {
+            id: 'storage',
             text: ['', '15 GB', ' storage'],
             tooltip: 'Storage space is shared across Proton Mail, Proton Calendar, Proton Drive, and Proton Pass',
             included: true,
             highlight: false,
-            icon: 'storage',
+            icon: IcStorage,
         },
         {
+            id: 'n-addresses',
             text: '10 email addresses/aliases',
             tooltip:
                 'Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription',
             included: true,
-            icon: 'envelope',
+            icon: IcEnvelope,
         },
         {
+            id: 'n-domains',
             text: '1 custom email domain',
             tooltip: 'Use your own custom email domain addresses, e.g., you@yourname.com',
             included: true,
-            icon: 'globe',
+            icon: IcGlobe,
         },
         {
+            id: 'n-calendars',
             text: '25 calendars',
             tooltip: 'Create up to 25 calendars or add calendars from friends, family, colleagues, and organizations',
             included: true,
-            icon: 'brand-proton-calendar',
+            icon: IcBrandProtonCalendar,
         },
         {
-            icon: 'brand-proton-vpn',
+            icon: IcBrandProtonVpn,
+            id: 'vpn-connections',
             text: '1 VPN connection',
             included: true,
         },
         {
+            id: 'proton-pass',
             text: 'Proton Pass with 10 hide-my-email aliases',
-            icon: 'brand-proton-pass',
+            icon: IcBrandProtonPass,
             included: true,
             hideInDowngrade: true,
         },
@@ -64,52 +92,60 @@ export const unlimitedUpsell = {
     upsellRefLink: 'upsell_mail-button-unlimited-dashboard_settings',
     features: [
         {
+            id: 'storage',
             text: ['', '500 GB', ' storage'],
             tooltip: 'Storage space is shared across Proton Mail, Proton Calendar, Proton Drive, and Proton Pass',
             included: true,
             highlight: false,
-            icon: 'storage',
+            icon: IcStorage,
         },
         {
+            id: 'n-addresses',
             text: '15 email addresses/aliases',
             tooltip:
                 'Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription',
             included: true,
-            icon: 'envelope',
+            icon: IcEnvelope,
         },
         {
+            id: 'n-domains',
             text: '3 custom email domains',
             tooltip: 'Use your own custom email domain addresses, e.g., you@yourname.com',
             included: true,
-            icon: 'globe',
+            icon: IcGlobe,
         },
         {
-            icon: 'brand-proton-calendar',
+            icon: IcBrandProtonCalendar,
             included: true,
+            id: 'n-calendars',
             text: '25 calendars',
             tooltip: 'Create up to 25 calendars or add calendars from friends, family, colleagues, and organizations',
         },
         {
-            icon: 'clock-rotate-left',
+            icon: IcClockRotateLeft,
             included: true,
+            id: 'version-history',
             text: '10-year file version history',
         },
         {
-            icon: 'brand-proton-vpn',
+            icon: IcBrandProtonVpn,
+            id: 'high-speed-vpn-connections',
             text: '10 high-speed VPN connections',
             included: true,
         },
         {
+            id: 'proton-pass',
             text: 'Proton Pass with unlimited hide-my-email aliases',
-            icon: 'brand-proton-pass',
+            icon: IcBrandProtonPass,
             included: true,
             hideInDowngrade: true,
         },
         {
+            id: 'sentinel',
             text: 'Proton Sentinel program',
             tooltip: `Provides the highest level of account security protection and specialist support`,
             included: true,
-            icon: 'shield',
+            icon: IcShield,
         },
     ],
     otherCtas: [],
@@ -127,58 +163,67 @@ export const familyUpsell = {
     upsellRefLink: 'upsell_mail-button-family-dashboard_settings',
     features: [
         {
+            id: 'storage',
             text: ['', '3 TB', ' storage'],
             tooltip:
                 'Storage space is shared between users across Proton Mail, Proton Calendar, Proton Drive, and Proton Pass',
             included: true,
             highlight: false,
-            icon: 'storage',
+            icon: IcStorage,
         },
         {
+            id: 'users',
             text: 'Up to 6 users',
-            icon: 'users',
+            icon: IcUsers,
             included: true,
         },
         {
+            id: 'n-addresses',
             text: '90 email addresses/aliases',
             tooltip:
                 'Create up to 90 email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@proton.me for shopping accounts.',
             included: true,
-            icon: 'envelope',
+            icon: IcEnvelope,
         },
         {
+            id: 'n-domains',
             text: '3 custom email domains',
             tooltip: 'Use your own custom email domain addresses, e.g., you@yourname.com',
             included: true,
-            icon: 'globe',
+            icon: IcGlobe,
         },
         {
+            id: 'n-calendars',
             text: '25 calendars',
             tooltip: 'Create up to 25 calendars or add calendars from friends, family, colleagues, and organizations',
             included: true,
-            icon: 'brand-proton-calendar',
+            icon: IcBrandProtonCalendar,
         },
         {
-            icon: 'brand-proton-vpn',
+            icon: IcBrandProtonVpn,
+            id: 'high-speed-vpn-connections',
             text: '10 high-speed VPN connections',
             included: true,
         },
         {
+            id: 'proton-pass',
             text: 'Proton Pass with unlimited hide-my-email aliases',
-            icon: 'brand-proton-pass',
+            icon: IcBrandProtonPass,
             included: true,
             hideInDowngrade: true,
         },
         {
+            id: 'sentinel',
             text: 'Proton Sentinel program',
             tooltip: `Provides the highest level of account security protection and specialist support`,
             included: true,
-            icon: 'shield',
+            icon: IcShield,
         },
         {
+            id: 'proton-scribe',
             text: 'Proton Scribe writing assistant',
             included: true,
-            icon: 'magic-wand',
+            icon: IcMagicWand,
         },
     ],
     otherCtas: [],
@@ -193,57 +238,66 @@ export const duoUpsell = {
     upsellRefLink: 'upsell_mail-button-duo-dashboard_settings',
     features: [
         {
+            id: 'storage',
             text: ['', '2 TB', ' storage'],
             tooltip: 'Storage space is shared across Proton Mail, Proton Calendar, Proton Drive, and Proton Pass',
             included: true,
             highlight: false,
-            icon: 'storage',
+            icon: IcStorage,
         },
         {
+            id: 'users',
             text: 'Up to 2 users',
-            icon: 'users',
+            icon: IcUsers,
             included: true,
         },
         {
+            id: 'n-addresses',
             text: '30 email addresses/aliases',
             tooltip:
                 'Create up to 30 email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@proton.me for shopping accounts.',
             included: true,
-            icon: 'envelope',
+            icon: IcEnvelope,
         },
         {
+            id: 'n-domains',
             text: '3 custom email domains',
             tooltip: 'Use your own custom email domain addresses, e.g., you@yourname.com',
             included: true,
-            icon: 'globe',
+            icon: IcGlobe,
         },
         {
+            id: 'n-calendars',
             text: '25 calendars',
             tooltip: 'Create up to 25 calendars or add calendars from friends, family, colleagues, and organizations',
             included: true,
-            icon: 'brand-proton-calendar',
+            icon: IcBrandProtonCalendar,
         },
         {
-            icon: 'brand-proton-vpn',
+            icon: IcBrandProtonVpn,
+            id: 'high-speed-vpn-connections',
             text: '10 high-speed VPN connections',
             included: true,
         },
         {
+            id: 'proton-pass',
             text: 'Proton Pass with unlimited hide-my-email aliases',
-            icon: 'brand-proton-pass',
+            icon: IcBrandProtonPass,
             included: true,
             hideInDowngrade: true,
         },
         {
+            id: 'sentinel',
             text: 'Proton Sentinel program',
             tooltip: `Provides the highest level of account security protection and specialist support`,
             included: true,
-            icon: 'shield',
+            icon: IcShield,
         },
         {
+            id: 'proton-scribe',
             text: 'Proton Scribe writing assistant',
             included: true,
-            icon: 'magic-wand',
+            icon: IcMagicWand,
         },
     ],
     otherCtas: [],
@@ -258,27 +312,33 @@ export const mailProfessionalUpsell = {
     upsellRefLink: 'upsell_mail-button-mailpro-dashboard_settings',
     features: [
         {
-            icon: 'storage',
+            icon: IcStorage,
+            id: 'storage-boost-b2b',
             text: 'Boost your storage space to 50 GB per user',
         },
         {
-            icon: 'envelope',
+            icon: IcEnvelope,
+            id: 'n-addresses-b2b',
             text: '15 email addresses per user',
         },
         {
-            icon: 'globe',
+            icon: IcGlobe,
+            id: 'b2b-n-domains',
             text: 'Support for 10 custom email domains',
         },
         {
-            icon: 'brand-proton-vpn',
+            icon: IcBrandProtonVpn,
+            id: 'vpn-connections',
             text: '1 VPN connection',
         },
         {
-            icon: 'image',
+            icon: IcImage,
+            id: 'custom-branding',
             text: 'Custom workspace branding',
         },
         {
-            icon: 'shield',
+            icon: IcShield,
+            id: 'sentinel',
             text: 'Proton Sentinel program',
         },
     ],
@@ -298,26 +358,30 @@ export const drivePlusUpsell = {
     upsellRefLink: 'upsell_drive-button-drive-dashboard_settings',
     features: [
         {
+            id: 'storage',
             text: ['', '200 GB', ' storage'],
             tooltip: 'Storage space is shared across Proton Mail, Proton Calendar, Proton Drive, and Proton Pass',
             included: true,
             highlight: false,
-            icon: 'storage',
+            icon: IcStorage,
         },
         {
+            id: 'document-editor',
             text: 'Online document editor',
             included: true,
-            icon: 'pencil',
+            icon: IcPencil,
         },
         {
+            id: 'version-history',
             text: '10-year file version history',
             included: true,
-            icon: 'clock-rotate-left',
+            icon: IcClockRotateLeft,
         },
         {
+            id: 'basic-features',
             text: 'All basic Proton services (Mail, VPN, Pass)',
             included: true,
-            icon: 'brand-proton',
+            icon: IcBrandProton,
         },
     ],
     otherCtas: [],
@@ -336,60 +400,70 @@ export const passPlusUpsell = {
     upsellRefLink: 'upsell_pass-button-pass-dashboard_settings',
     features: [
         {
+            id: 'logins-and-notes',
             text: 'Unlimited logins, notes and credit cards',
-            icon: 'note',
+            icon: IcNote,
             included: true,
         },
         {
+            id: 'devices',
             text: 'Unlimited devices',
-            icon: 'mobile',
+            icon: IcMobile,
             included: true,
             hideInDowngrade: true,
         },
         {
+            id: 'hide-my-email-aliases',
             text: 'Unlimited hide-my-email aliases',
             tooltip:
                 'Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).',
             included: true,
-            icon: 'eye-slash',
+            icon: IcEyeSlash,
         },
         {
+            id: 'advanced-alias-features',
             text: 'Advanced alias features (powered by SimpleLogin)',
             tooltip:
                 'Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more',
             included: true,
-            icon: 'brand-simple-login',
+            icon: IcBrandSimpleLogin,
         },
         {
+            id: 'vaults',
             text: '50 vaults',
             tooltip: 'Like a folder, a vault is a convenient way to organize your items',
             included: true,
-            icon: 'vault',
+            icon: IcVault,
         },
         {
-            icon: 'arrow-up-from-square',
+            icon: IcArrowUpFromSquare,
             included: true,
+            id: 'vault-sharing',
             text: 'Vault sharing (up to 10 people)',
         },
         {
+            id: '2fa-authenticator',
             text: 'Integrated 2FA authenticator',
             included: true,
-            icon: 'key',
+            icon: IcKey,
         },
         {
+            id: 'pass-monitor',
             text: 'Dark Web Monitoring and Proton Sentinel',
-            icon: 'shield',
+            icon: IcShield,
             included: true,
         },
         {
+            id: 'custom-fields',
             text: 'Custom fields',
             included: true,
-            icon: 'pen-square',
+            icon: IcPenSquare,
         },
         {
+            id: 'support',
             text: 'Priority support',
             included: true,
-            icon: 'life-ring',
+            icon: IcLifeRing,
         },
     ],
     otherCtas: [],

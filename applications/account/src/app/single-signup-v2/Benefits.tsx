@@ -1,11 +1,11 @@
-import type { CSSProperties, ComponentPropsWithoutRef, Key, ReactNode } from 'react';
+import type { CSSProperties, ComponentPropsWithoutRef, ReactNode } from 'react';
 
 import type { IconComponent } from '@proton/icons/component';
 import clsx from '@proton/utils/clsx';
 
 export interface BenefitItem {
     text: ReactNode;
-    key: Key;
+    id: string;
     icon: { component: IconComponent; style?: CSSProperties };
 }
 
@@ -19,7 +19,7 @@ const Benefits = ({ className, features, ...rest }: Props) => {
             {features.map((item) => {
                 const IconComponent = item.icon.component;
                 return (
-                    <li key={item.key} className="flex gap-2 py-1">
+                    <li key={item.id} className="flex gap-2 py-1">
                         <div className="shrink-0 color-primary">
                             <IconComponent
                                 size={4}

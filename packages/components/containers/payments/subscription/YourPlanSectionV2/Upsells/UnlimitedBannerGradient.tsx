@@ -123,6 +123,7 @@ const cards = (plansMap: PlansMap, freePlan: FreePlanDefault): CardProps[] => {
             popoverImage: vpnImage,
             features: [
                 {
+                    id: 'everything-in-plan',
                     text: everythingInPlanOrAppNameText(PLAN_NAMES[PLANS.VPN2024]),
                     included: true,
                 },

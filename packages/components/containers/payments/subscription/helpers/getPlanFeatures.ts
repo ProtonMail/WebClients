@@ -1,6 +1,17 @@
 import { c, msgid } from 'ttag';
 
-import type { IconName } from '@proton/icons/types';
+import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
+import { IcBrandProtonPass } from '@proton/icons/icons/IcBrandProtonPass';
+import { IcBrandProtonVpn } from '@proton/icons/icons/IcBrandProtonVpn';
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
+import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
+import { IcFolders } from '@proton/icons/icons/IcFolders';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcGrid2 } from '@proton/icons/icons/IcGrid2';
+import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';
+import { IcShield2Bolt } from '@proton/icons/icons/IcShield2Bolt';
+import { IcStorage } from '@proton/icons/icons/IcStorage';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { PLANS } from '@proton/payments/core/constants';
 import type { Plan } from '@proton/payments/core/plan/interface';
 import {
@@ -14,10 +25,11 @@ import {
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
+import type { PlanCardFeatureIcon } from '../../features/interface';
 import { getScribeWritingAssistantText } from '../assistant/helpers';
 
 export type Feature = {
-    icon: IconName;
+    icon: PlanCardFeatureIcon;
     text: string;
 };
 
@@ -36,23 +48,23 @@ export const getPlanFeatures = (plan: PlanPlusBaseSpace, scribeToLumo: boolean) 
     const numberOfUsers = plan.MaxMembers;
 
     const advancedAccountProtection: Feature = {
-        icon: 'grid-2',
+        icon: IcGrid2,
         text: c('Cancellation upsell').t`Advanced account protection`,
     };
 
     const appsAndFeatures: Feature = {
-        icon: 'grid-2',
+        icon: IcGrid2,
         text: c('Cancellation upsell')
             .t`All premium features from ${BRAND_NAME} ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
     };
 
     const cloudStorage: Feature = {
-        icon: 'brand-proton-drive',
+        icon: IcBrandProtonDrive,
         text: c('Cancellation upsell').t`Cloud storage and sharing for large files`,
     };
 
     const customDomains: Feature = {
-        icon: 'globe',
+        icon: IcGlobe,
         text: c('Subscription reminder').ngettext(
             msgid`${planNumberOfDomains} custom email domain`,
             `${planNumberOfDomains} custom email domains`,
@@ -61,12 +73,12 @@ export const getPlanFeatures = (plan: PlanPlusBaseSpace, scribeToLumo: boolean) 
     };
 
     const darkWebMonitoring: Feature = {
-        icon: 'shield-2-bolt',
+        icon: IcShield2Bolt,
         text: DARK_WEB_MONITORING_NAME,
     };
 
     const emailAddress: Feature = {
-        icon: 'envelope',
+        icon: IcEnvelope,
         text: c('Subscription reminder').ngettext(
             msgid`${planNumberOfEmails} email address`,
             `${planNumberOfEmails} email addresses`,
@@ -75,50 +87,50 @@ export const getPlanFeatures = (plan: PlanPlusBaseSpace, scribeToLumo: boolean) 
     };
 
     const emailStorage: Feature = {
-        icon: 'storage',
+        icon: IcStorage,
         // translator: full sentence is: <10GB> email storage
         text: c('Cancellation upsell').t`${planMaxSpace} email storage`,
     };
 
     const encryptedCloudStorage: Feature = {
-        icon: 'brand-proton-drive',
+        icon: IcBrandProtonDrive,
         text: c('Cancellation upsell').t`Encrypted cloud storage for photos and documents`,
     };
 
     const foldersLabelsFilters: Feature = {
-        icon: 'folders',
+        icon: IcFolders,
         text: c('Subscription reminder').t`Folders, labels, and custom filters`,
     };
 
     const passwordManager: Feature = {
-        icon: 'brand-proton-pass',
+        icon: IcBrandProtonPass,
         text: c('Cancellation upsell').t`Encrypted password manager`,
     };
 
     const protonScribe: Feature = {
-        icon: 'pen-sparks',
+        icon: IcPenSparks,
         text: getScribeWritingAssistantText(scribeToLumo),
     };
 
     const sharedCalendar: Feature = {
-        icon: 'calendar-grid',
+        icon: IcCalendarGrid,
         text: c('Cancellation upsell').t`Secure personal and shared calendar`,
     };
 
     const storage: Feature = {
-        icon: 'storage',
+        icon: IcStorage,
         // translator: full sentence is: <10TB> storage
         text: c('Cancellation upsell').t`${maxSpaceTB} storage`,
     };
 
     const storagePerUser: Feature = {
-        icon: 'storage',
+        icon: IcStorage,
         // translator: full sentence is: <10GB> storage per user
         text: c('Subscription reminder').t`${planMaxSpace} storage per user`,
     };
 
     const users: Feature = {
-        icon: 'users',
+        icon: IcUsers,
         text: c('Cancellation upsell').ngettext(
             msgid`${numberOfUsers} user`,
             `Up to ${numberOfUsers} users`,
@@ -127,7 +139,7 @@ export const getPlanFeatures = (plan: PlanPlusBaseSpace, scribeToLumo: boolean) 
     };
 
     const vpn: Feature = {
-        icon: 'brand-proton-vpn',
+        icon: IcBrandProtonVpn,
         text: c('Cancellation upsell').t`Ultra fast and private VPN`,
     };
 
