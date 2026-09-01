@@ -32,6 +32,119 @@
         "Le tue informazioni sono state trovate in almeno una fuga di dati. Attiva ${ DARK_WEB_MONITORING_NAME } per visualizzare i dettagli e le azioni da seguire. ${ link }"
       ]
     },
+    "account_search_index": {
+      "12-word phrase": [
+        "Frase di recupero di 12 parole"
+      ],
+      "Advanced account protection": [
+        "Protezione avanzata dell'account"
+      ],
+      "AI assistant": [
+        "Assistente IA"
+      ],
+      "Authentication logs": [
+        "Log d'autenticazione"
+      ],
+      "Automatic renewal": [
+        "Rinnovo automatico"
+      ],
+      "Cancel plan": [
+        "Annulla piano"
+      ],
+      "Close account": [
+        "Chiudi account"
+      ],
+      "Compare plans": [
+        "Compara piani"
+      ],
+      "Connected addresses": [
+        "Indirizzi collegati"
+      ],
+      "Custom domain": [
+        "Dominio personalizzato"
+      ],
+      "Customer support": [
+        "Assistenza clienti"
+      ],
+      "Desktop and mobile apps": [
+        "App per desktop e dispositivi mobili"
+      ],
+      "Downgrade to Free": [
+        "Effettua il downgrade al piano Free"
+      ],
+      "Encryption backup in this browser": [
+        "Backup della crittografia in questo browser"
+      ],
+      "High-security mode": [
+        "Modalità ad alta sicurezza"
+      ],
+      "Import history": [
+        "Cronologia di importazione"
+      ],
+      "Included apps": [
+        "Applicazioni incluse"
+      ],
+      "Join organization": [
+        "Unisciti all'organizzazione"
+      ],
+      "Leaked password": [
+        "Password compromessa"
+      ],
+      "Leave group": [
+        "Abbandona il gruppo"
+      ],
+      "Leave organization": [
+        "Abbandona l'organizzazione"
+      ],
+      "Password reminders": [
+        "Promemoria password"
+      ],
+      "Password reset request": [
+        "Richiesta di ripristino password"
+      ],
+      "Receive misaddressed emails": [
+        "Ricevi email inviate per errore"
+      ],
+      "Recovery email address": [
+        "Indirizzo email di recupero"
+      ],
+      "Recovery phone number": [
+        "Numero di telefono di recupero"
+      ],
+      "Recovery score": [
+        "Punteggio di recupero"
+      ],
+      "Referral link": [
+        "Il link di riferimento"
+      ],
+      "Referral rewards": [
+        "Ricompensa per la segnalazione"
+      ],
+      "Sign-in history": [
+        "Cronologia degli accessi"
+      ],
+      "Storage space": [
+        "Spazio di archiviazione"
+      ],
+      "Subscription end date": [
+        "Data di sottoscrizione"
+      ],
+      "Subscription status": [
+        "Stato dell'abbonamento"
+      ],
+      "Telemetry": [
+        "Telemetria"
+      ],
+      "Trusted contact": [
+        "Contatto di fiducia"
+      ],
+      "Upgrade plan": [
+        "Aggiorna piano"
+      ],
+      "Verify password": [
+        "Verifica password"
+      ]
+    },
     "Accounts": {
       "Accounts": [
         "Account"
@@ -425,6 +538,9 @@
       "Download CSV sample": [
         "Scarica un campione CSV"
       ],
+      "Download latest": [
+        "Scarica l'ultimo"
+      ],
       "Download logs": [
         "Scarica i log"
       ],
@@ -667,6 +783,9 @@
       ],
       "Invite user": [
         "Invita utente"
+      ],
+      "Invoice options": [
+        "Opzioni di fatturazione"
       ],
       "Keep": [
         "Mantieni"
@@ -1040,6 +1159,9 @@
       "Set catch-all": [
         "Imposta catch-all"
       ],
+      "Set invoice email": [
+        "Imposta l'indirizzo email per le fatture"
+      ],
       "Set new password": [
         "Imposta una nuova password"
       ],
@@ -1163,6 +1285,12 @@
       "Take a tour": [
         "Fai un tour"
       ],
+      "Template with invite links": [
+        "Modello con link di invito"
+      ],
+      "Template with passwords": [
+        "Modello con password"
+      ],
       "Test": [
         "Test"
       ],
@@ -1198,6 +1326,9 @@
       ],
       "Unlock data": [
         "Sblocca dati"
+      ],
+      "Update email": [
+        "Aggiorna e-mail"
       ],
       "Update recovery file": [
         "Aggiorna il file di recupero"
@@ -3647,6 +3778,9 @@
       ],
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "La maggior parte dei problemi può essere risolta in pochi minuti con le nostre guide dettagliate."
+      ],
+      "No ads. No trackers": [
+        "Nessuna pubblicità. Nessun tracciamento"
       ],
       "No one in your organization can connect to shared servers.": [
         "Nessuno nella tua organizzazione può connettersi ai server condivisi."
@@ -6338,6 +6472,9 @@
       "Enjoying ${ planName }?": [
         "Ti piace ${ planName }?"
       ],
+      "Invited friends": [
+        "Amici invitati"
+      ],
       "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
         "Sblocca 4 servizi premium per la privacy a soli **${ priceString }** in più ogni mese"
       ],
@@ -6772,6 +6909,12 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dei tuoi membri non SSO utilizzano l'autenticazione a due fattori per accedere alla tua organizzazione.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dei tuoi membri non SSO utilizzano l'autenticazione a due fattori per accedere alla tua organizzazione."
       ],
+      "${ helpTranslateLink } by joining our localization community.": [
+        "${ helpTranslateLink } unendoti alla nostra community di localizzazione."
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "Marchio ${ IDEAL_WERO_BRAND_NAME }"
+      ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "${ invitedMemberCount } utente deve accettare l'invito per iniziare a ricevere le email del gruppo.",
         "${ invitedMemberCount } utenti devono accettare l'invito per iniziare a ricevere le email del gruppo."
@@ -6819,6 +6962,10 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }. Il prezzo e la data di rinnovo dell'abbonamento ${ planTitle } rimangono invariati."
+      ],
+      "${ pendingKeysMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingKeysMemberCount } nuovo membro aggiunto tramite il provider di identità in attesa di revisione.",
+        "${ pendingKeysMemberCount } nuovi membri aggiunti tramite il provider di identità in attesa di revisione."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } richiede almeno 1 server dedicato ${ serverPricePerMonth }"
@@ -7136,6 +7283,9 @@
       "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
         "Consentire la reimpostazione della password dalle impostazioni ti permette di cambiare la password se l'hai smarrita, ma hai ancora effettuato l'accesso a ${ BRAND_NAME }."
       ],
+      "Allows IPv6 traffic to pass through the VPN tunnel. This improves compatibility with IPv6 websites and services.": [
+        "Consente al traffico IPv6 di passare attraverso il tunnel VPN. Questo migliora la compatibilità con i siti web e i servizi IPv6."
+      ],
       "Already allocated": [
         "Già allocato"
       ],
@@ -7217,6 +7367,12 @@
       "Awaiting transaction": [
         "In attesa della transazione"
       ],
+      "Backup password disabled": [
+        "Password di riserva disabilitata"
+      ],
+      "Backup password enabled": [
+        "Password di riserva abilitata"
+      ],
       "Balance from your previous subscription": [
         "Saldo del tuo abbonamento precedente"
       ],
@@ -7295,6 +7451,9 @@
       "Choose a plan that works best for you.": [
         "Scegli un piano che funziona meglio per te."
       ],
+      "Choose a strong ${ BRAND_NAME } password and don’t reuse it for other accounts.": [
+        "Scegli una password efficace per ${ BRAND_NAME } e non riutilizzarla per altri account."
+      ],
       "Choose an Entity ID to continue.": [
         "Scegli un ID entità per continuare."
       ],
@@ -7336,6 +7495,12 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "I dati di connessione saranno disponibili entro circa 1 ora."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere.": [
+        "Ti connette al paese di destinazione tramite server fisicamente situati altrove."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere: ${ joinedSmartRoutingCountries }.": [
+        "Ti connette al paese di destinazione tramite server fisicamente situati altrove: ${ joinedSmartRoutingCountries }."
       ],
       "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
         "Contatta la nostra assistenza clienti per disattivare l'autenticazione a due fattori per il tuo account, o recupera il tuo account in un altro modo."
@@ -7598,6 +7763,12 @@
       "email": [
         "email"
       ],
+      "Email address copied to clipboard": [
+        "Indirizzo email copiato negli appunti"
+      ],
+      "Email addresses copied to clipboard": [
+        "Indirizzi email copiati negli appunti."
+      ],
       "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
         "Email e calendario, integrati con ${ CONTACTS_APP_NAME }"
       ],
@@ -7726,6 +7897,9 @@
       ],
       "Example: ${ spfExample }": [
         "Esempio: ${ spfExample }"
+      ],
+      "Exclude them when you deploy the device profile. Support coming soon.": [
+        "Escludili quando distribuisci il profilo dispositivo. Il supporto sarà disponibile a breve."
       ],
       "Expired": [
         "Scaduto"
@@ -7894,6 +8068,9 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Se perdi il tuo dispositivo abilitato al secondo fattore, questi codici possono essere usati al posto del codice di 6 cifre dell'autenticazione a due fattori per accedere al tuo account. Ogni codice può essere usato una sola volta."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Se hai perso l'accesso alla tua app di autenticazione, puoi usare 1 dei 16 codici di recupero forniti durante la configurazione dell'autenticazione a due fattori. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se procedi con il downgrade, perderai l'accesso alle funzionalità a pagamento di ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -8155,6 +8332,9 @@
       "Manage groups in your identity provider": [
         "Gestisci i gruppi nel tuo provider di identità"
       ],
+      "Manage how users can access your ${ BRAND_NAME } organization with single sign-on.": [
+        "Gestisci la modalità di accesso degli utenti alla tua organizzazione ${ BRAND_NAME } tramite single sign-on."
+      ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gestisci le applicazioni ${ BRAND_NAME } alle quali possono accedere i membri della tua organizzazione. Se disabilitato, solo gli amministratori avranno accesso."
       ],
@@ -8175,6 +8355,9 @@
       ],
       "Member": [
         "Membro"
+      ],
+      "Members are periodically prompted to verify their ${ BRAND_NAME } password to ensure they don't forget it. Enforcing check-ins prevents members from turning them off.": [
+        "Ai membri viene richiesto periodicamente di verificare la propria password di ${ BRAND_NAME } per assicurarsi che non la dimentichino. L'attivazione obbligatoria dei controlli impedisce ai membri di disattivarli."
       ],
       "Merged": [
         "Unito"
@@ -8404,6 +8587,9 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Verifica il tuo file, o provare ad utilizzare il nostro ${ csvTemplateButton }."
+      ],
+      "Please ensure you're running ${ VPN_APP_NAME } desktop version ${ version } or later. ${ downloadLatest }": [
+        "Assicurati di utilizzare la versione desktop di ${ VPN_APP_NAME } ${ version } o successiva. ${ downloadLatest }"
       ],
       "Please fill in all required fields.": [
         "Compila tutti i campi obbligatori."
@@ -8682,6 +8868,9 @@
       "Smart Routed through: ${ joinedCountries }.": [
         "Instradamento smart tramite: ${ joinedCountries }."
       ],
+      "Smart Routing": [
+        "Routing intelligente"
+      ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "Alcune app di ${ BRAND_NAME } potrebbero non supportare ancora le chiavi di sicurezza. Se disattivi l'autenticazione a due fattori (2FA) tramite app di autenticazione, potresti non essere in grado di accedere a tali app."
       ],
@@ -8696,6 +8885,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF chiarisce chi è autorizzato a inviare email per il tuo dominio. Assicurati di aggiungere il seguente record TXT nella tua console DNS (situata sulla piattaforma su cui hai acquistato il dominio personalizzato)."
+      ],
+      "SSO users can't sign in on devices with always-on enforced.": [
+        "Gli utenti SSO non possono accedere sui dispositivi con always-on attivo."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Inizia a condividerlo con i contatti e utilizzalo per i servizi online."
@@ -8900,6 +9092,9 @@
       "This service is not available to users signing in with single sign-on.": [
         "Questo servizio non è disponibile per gli utenti che accedono con single sign-on."
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Non è possibile migrare questo utente perché il suo indirizzo e-mail non è disponibile su ${ BRAND_NAME }."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Questo utente è attualmente responsabile dei pagamenti per l'organizzazione. Abbassando il livello di questo membro, si diventa responsabile per pagamenti dell'organizzazione."
       ],
@@ -8993,6 +9188,9 @@
       "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
         "Per abilitare la VPN sempre attiva, è necessario installare il profilo di configurazione su ogni Mac: il client ${ VPN_APP_NAME } applica automaticamente il profilo del dispositivo una volta installato."
       ],
+      "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
+        "Per abilitare la VPN sempre attiva, il profilo del dispositivo deve essere presente in ${ policiesPath } su ogni dispositivo: il client ${ VPN_APP_NAME } lo rileva in quella posizione e applica automaticamente il profilo. ${ learnMore }."
+      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Per garantire la massima sicurezza possibile del tuo account, disattiva il **recupero tramite email di recupero**."
       ],
@@ -9013,6 +9211,9 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Per rimanere informato sugli ultimi aggiornamenti dei prodotti ${ BRAND_NAME }, puoi iscriverti alle nostre mailing list e ${ blogLink } occasionalmente."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Per migrare questo utente, aggiungi e verifica il dominio e-mail alla pagina ${ domainNamesLink }"
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Per procedere, seleziona un metodo di recupero dell'account in modo da poter verificare la richiesta."
@@ -9161,6 +9362,9 @@
       "Users": [
         "Utenti"
       ],
+      "Users create a backup password the first time they sign in with single sign-on. When they later sign in on a new device, they can enter this password to complete the sign-in themselves, without needing an already signed-in device or an administrator to assist.": [
+        "Gli utenti creano una password di riserva al primo accesso tramite single sign-on. Quando in seguito accedono da un nuovo dispositivo, possono inserire questa password per completare l'accesso in autonomia, senza bisogno di un dispositivo già connesso o dell'intervento di un amministratore."
+      ],
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "Utilizzi un altro MDM? È compatibile qualsiasi MDM che supporti la distribuzione di un profilo di configurazione. Consulta la documentazione del tuo MDM per sapere come caricarlo e assegnarlo al tuo parco dispositivi."
       ],
@@ -9230,6 +9434,9 @@
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "Possiamo utilizzare il tuo telefono di recupero per inviarti un codice di verifica per reimpostare la password e per contattarti se notiamo attività sospette."
       ],
+      "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
+        "Non è stato possibile inviare le fatture al tuo indirizzo email. La fatturazione automatica è stata sospesa finché non aggiorni l'indirizzo."
+      ],
       "We couldn’t process your payment.": [
         "Il pagamento non può essere completato."
       ],
@@ -9266,6 +9473,9 @@
       "We use 3-D Secure to protect your payments": [
         "Utilizziamo 3-D Secure per proteggere i tuoi pagamenti"
       ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Verrai reindirizzato su ${ IDEAL_WERO_BRAND_NAME } in una nuova scheda del browser per completare il pagamento. Se usi un blocco pop-up, disattivalo per continuare."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Sarai reindirizzato su PayPal in una nuova scheda del browser per completare questa transazione. Se utilizzi un blocco pop-up, disattivalo per continuare."
       ],
@@ -9295,6 +9505,9 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Invieremo un codice di reimpostazione a ${ boldValue }."
+      ],
+      "When enabled, members cannot opt out of password check-ins in their own settings.": [
+        "Se attiva, i membri non potranno disattivare i controlli della password dalle proprie impostazioni."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Quando abiliti SAML per ${ appName } nel tuo fornitore di identità, ti potrebbe essere chiesto di usare l'issuer ID e l'URL (ACS) di callback. Copia e incolla i dati seguenti nei campi del tuo fornitore di identità."
@@ -9592,6 +9805,9 @@
       "your encrypted data will be locked": [
         "i tuoi dati crittografati verranno bloccati"
       ],
+      "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
+        "Il tuo file include una password per ogni utente, quindi questi account verranno creati con una password anziché con un link di invito."
+      ],
       "Your files will be encrypted and then saved": [
         "I tuoi file verranno crittografati e poi salvati."
       ],
@@ -9624,6 +9840,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Questo numero di telefono verrà utilizzato esclusivamente per questa unica verifica."
+      ],
+      "Your profile and changes to it will be visible to other ${ BRAND_NAME } users.": [
+        "Il tuo profilo e le relative modifiche saranno visibili agli altri utenti di ${ BRAND_NAME }."
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Le tue modifiche recenti sono state pubblicate. Saranno visibili agli utenti nelle prossime ore."
@@ -9857,6 +10076,9 @@
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } di ${ humanMaxSpace }"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caratteri"
+      ],
       "${ MAIL_APP_NAME } address": [
         "Indirizzo ${ MAIL_APP_NAME }"
       ],
@@ -9933,6 +10155,9 @@
       ],
       "Allow recovery using a trusted device": [
         "Consenti il ​​recupero tramite dispositivo attendibile"
+      ],
+      "Allow users to set a backup password": [
+        "Consenti agli utenti di impostare una password di riserva"
       ],
       "Allowed Domain": [
         "Dominio autorizzato"
@@ -10622,6 +10847,9 @@
       "Require 2FA for everyone": [
         "Richiedi 2FA per tutti"
       ],
+      "Require password check-ins": [
+        "Richiedi controlli della password"
+      ],
       "Reveal password": [
         "Mostra la password"
       ],
@@ -10651,6 +10879,9 @@
       ],
       "Send crash reports": [
         "Invia segnalazioni sugli arresti anomali"
+      ],
+      "Send invoices by email": [
+        "Invia le fatture via email"
       ],
       "Sequences": [
         "Sequenze"
@@ -12796,6 +13027,16 @@
         "Lista di controllo per il recupero"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Provalo ora"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Ora hai accesso al nuovo ${ CALENDAR_APP_NAME }.${ link }"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } è stato disabilitato"
@@ -12847,6 +13088,12 @@
       ],
       "OpenVPN credentials regenerated": [
         "Credenziali OpenVPN rigenerate"
+      ],
+      "Password check-ins are not required anymore": [
+        "I controlli della password non sono più obbligatori"
+      ],
+      "Password check-ins are now required for all members": [
+        "I controlli della password sono ora obbligatori per tutti i membri"
       ],
       "Reminder has been sent": [
         "Il promemoria è stato inviato"
@@ -13219,6 +13466,119 @@
         "Il tuo piano include un massimo di ${ humanReadableAvailableSpace } spazio di archiviazione in più."
       ]
     },
+    "organization key reset": {
+      "Afterward, every converted user must accept the request to become non-private again, from their account settings.": [
+        "Successivamente, ogni utente convertito dovrà accettare la richiesta per tornare a essere non privato dalle impostazioni del proprio account."
+      ],
+      "An unprivatization request is sent by email to the converted users": [
+        "Ai utenti convertiti viene inviata tramite email una richiesta per rimuovere la modalità privata"
+      ],
+      "Because your organization key has changed, you lost some of your admin rights: You can no longer create non-private users and access their accounts.": [
+        "Poiché la chiave della tua organizzazione è cambiata, hai perso alcuni dei tuoi privilegi di amministratore: non puoi più creare utenti non privati né accedere ai loro account."
+      ],
+      "Before continuing, **let your users know they'll receive an admin access request by email**, so they're not caught off guard.": [
+        "Prima di continuare, **informa i tuoi utenti che riceveranno via email una richiesta di accesso amministrativo**, così non verranno colti di sorpresa."
+      ],
+      "Can you reach out to other administrators?": [
+        "Puoi contattare gli altri amministratori?"
+      ],
+      "Converting users to private": [
+        "Conversione degli utenti in utenti privati"
+      ],
+      "Copy email list": [
+        "Copia elenco degli indirizzi email"
+      ],
+      "Could not send the unprivatization request to ${ n } user. It will be retried automatically.": [
+        "Impossibile inviare la richiesta di rimozione della modalità privata all'utente ${ n }. Verrà ritentata automaticamente.",
+        "Impossibile inviare la richiesta di rimozione della modalità privata a ${ n } utenti. Verrà ritentata automaticamente."
+      ],
+      "Get in touch with your other administrators, to see if they can help. They will be able to restore your privileges after using a data recovery method.": [
+        "Contatta gli altri amministratori per verificare se possono aiutarti. Potranno ripristinare i tuoi privilegi dopo aver utilizzato un metodo di recupero dei dati."
+      ],
+      "I've notified my users that they'll receive an unprivatization request.": [
+        "Ho informato i miei utenti che riceveranno una richiesta di rimozione della modalità privata."
+      ],
+      "Non-private users": [
+        "Utenti non privati"
+      ],
+      "Once your privileges have been restored, you'll be able to create non-private users and access their accounts.": [
+        "Una volta ripristinati i tuoi privilegi, potrai creare utenti non privati e accedere ai loro account."
+      ],
+      "Organization key reset": [
+        "Reimpostazione della chiave dell'organizzazione"
+      ],
+      "Ready to reset your organization key?": [
+        "Pronto a reimpostare la chiave dell'organizzazione?"
+      ],
+      "Reset key": [
+        "Reimposta chiave"
+      ],
+      "Reset organization key?": [
+        "Reimpostare la chiave dell'organizzazione?"
+      ],
+      "Resetting organization key": [
+        "Reimpostazione della chiave dell'organizzazione"
+      ],
+      "Resetting the organization key generates a new encryption key to keep your organization's data secure. **No data will be lost or destroyed in this process, but the users groups will be deleted.**": [
+        "La reimpostazione della chiave dell'organizzazione genera una nuova chiave di crittografia per mantenere al sicuro i dati della tua organizzazione. **Durante questa procedura non verranno persi né eliminati dati, ma i gruppi di utenti verranno eliminati.**"
+      ],
+      "See ${ n } user": [
+        "Visualizza ${ n } utente",
+        "Visualizza ${ n } utenti"
+      ],
+      "See users": [
+        "Vedi utenti"
+      ],
+      "Send unprivatization requests": [
+        "Invia richieste di rimozione della modalità privata"
+      ],
+      "The non-private users are converted to private": [
+        "Gli utenti non privati vengono convertiti in privati"
+      ],
+      "The organization key is reset": [
+        "La chiave dell'organizzazione è stata reimpostata"
+      ],
+      "This process is automated:": [
+        "Questo processo è automatizzato:"
+      ],
+      "This should take less than ${ minutes } minute. **Don't close this tab or let your device go to sleep** until it's finished.": [
+        "Dovrebbe richiedere meno di ${ minutes } minuto. **Non chiudere questa scheda e non lasciare che il dispositivo vada in modalità sospensione** fino al termine dell'operazione.",
+        "Dovrebbe richiedere meno di ${ minutes } minuti. **Non chiudere questa scheda e non lasciare che il dispositivo vada in modalità sospensione** fino al termine dell'operazione."
+      ],
+      "This should take less than ${ minutes } minute. **Keep this browser tab open and your device active** until it completes.": [
+        "Dovrebbe richiedere meno di ${ minutes } minuto. **Mantieni aperta questa scheda del browser e il dispositivo attivo** fino al completamento.",
+        "Dovrebbe richiedere meno di ${ minutes } minuti. **Mantieni aperta questa scheda del browser e il dispositivo attivo** fino al completamento."
+      ],
+      "To become non-private again, they must accept the request to enable admin access, from their account settings. You don't need to wait for this step.": [
+        "Per tornare a essere non privati, devono accettare la richiesta per abilitare l'accesso amministrativo dalle impostazioni del proprio account. Non è necessario attendere il completamento di questo passaggio."
+      ],
+      "To reset the organization key and restore your administrator privileges, **${ n } non-private user must be temporarily converted to private.**": [
+        "Per reimpostare la chiave dell'organizzazione e ripristinare i tuoi privilegi di amministratore, **${ n } utente non privato deve essere temporaneamente convertito in privato.**",
+        "Per reimpostare la chiave dell'organizzazione e ripristinare i tuoi privilegi di amministratore, **${ n } utenti non privati devono essere temporaneamente convertiti in privati.**"
+      ],
+      "To reset the organization key, the users will be converted to private, and will receive an email invitation to become non-private again.": [
+        "Per reimpostare la chiave dell'organizzazione, gli utenti verranno convertiti in privati e riceveranno un invito via email per tornare a essere non privati."
+      ],
+      "To restore your privileges, use a data recovery method.": [
+        "Per ripristinare i tuoi privilegi, utilizza un metodo di recupero dei dati."
+      ],
+      "Try another way": [
+        "Prova in un altro modo"
+      ],
+      "User (${ n })": [
+        "Utente (${ n })",
+        "Utenti (${ n })"
+      ],
+      "You can reset your organization key to restore your administrator privileges. Then, you'll be able to create non-private users and access their accounts.": [
+        "Puoi reimpostare la chiave dell'organizzazione per ripristinare i tuoi privilegi di amministratore. Dopodiché, potrai creare utenti non privati e accedere ai loro account."
+      ],
+      "Your administrator privileges have been restored. You can now manage non-private users.": [
+        "I tuoi privilegi di amministratore sono stati ripristinati. Ora puoi gestire gli utenti non privati."
+      ],
+      "Your users will receive an email to accept the unprivatization request.": [
+        "I tuoi utenti riceveranno un'email per accettare la richiesta di rimozione della modalità privata."
+      ]
+    },
     "Organization logo upload": {
       "Avoid overly compressed images.": [
         "Evita immagini eccessivamente compresse."
@@ -13555,6 +13915,9 @@
       "More plans are available in other currencies": [
         "Sono disponibili altri piani in altre valute"
       ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Paga con ${ IDEAL_WERO_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Serve un metodo di pagamento per attivare l'abbonamento una volta terminata la prova."
       ],
@@ -13648,6 +14011,9 @@
       "You will soon be redirected to verify your payment.": [
         "Sarai presto reindirizzato per verificare il pagamento."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "La tua valuta è stata cambiata in euro (€) perché ${ IDEAL_WERO_BRAND_NAME } supporta esclusivamente i pagamenti in euro."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "La tua valuta è stata cambiata in euro (€) perché i bonifici bancari SEPA supportano solo pagamenti in euro."
       ],
@@ -13659,6 +14025,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Impossibile inizializzare ${ IDEAL_WERO_BRAND_NAME }. Riprova più tardi."
+      ],
       "Invalid card number": [
         "Numero della carta non valido"
       ],
@@ -13684,6 +14053,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Qualcosa è andato storto. La verifica di Google Pay non è riuscita."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Confermando, autorizzi ${ BRAND_NAME } e Stripe, il nostro fornitore di servizi di pagamento, a riscuotere i futuri pagamenti del tuo abbonamento da questo conto bancario tramite addebito diretto SEPA e autorizzi la tua banca ad addebitare tali importi. Il primo pagamento viene effettuato ora tramite ${ IDEAL_WERO_BRAND_NAME }. Il tuo piano si rinnoverà automaticamente fino a quando non lo annullerai; ti informeremo prima di ogni addebito. Per gli addebiti diretti, puoi richiedere un rimborso alla tua banca entro 8 settimane dalla data dell'addebito, secondo i termini del tuo accordo con la banca. Questo non si applica al pagamento tramite ${ IDEAL_WERO_BRAND_NAME } che stai effettuando ora."
       ]
     },
     "Payments.info": {
@@ -13826,6 +14200,9 @@
       ],
       "Ask anything…": [
         "Chiedi qualsiasi cosa…"
+      ],
+      "billing@company.com": [
+        "billing@company.com"
       ],
       "Choose a name": [
         "Scegli un nome"
@@ -14202,6 +14579,31 @@
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Gli sconti sono calcolati sul prezzo mensile standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, e ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME },${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e${ CALENDAR_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME },${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e${ CALENDAR_SHORT_APP_NAME } Premium"
       ]
     },
     "q3campaign2026: Title": {
@@ -14759,6 +15161,9 @@
       ]
     },
     "Role": {
+      "Organization Admin": [
+        "Organizzazione Amministratore"
+      ],
       "Security Admin": [
         "Amministratore sicurezza"
       ],
@@ -15644,6 +16049,11 @@
         "Richiesta di reimpostazione della password"
       ]
     },
+    "Set invoice email form note": {
+      "Turn on automatic invoicing to receive bills via email. Enter the email address where you want to receive invoices.": [
+        "Attiva la fatturazione automatica per ricevere le fatture via email. Inserisci l'indirizzo email al quale desideri ricevere le fatture."
+      ]
+    },
     "Settings section title": {
       "Account": [
         "Account"
@@ -16010,6 +16420,9 @@
       "Backup password": [
         "Password di backup"
       ],
+      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
+        "Poiché la tua organizzazione è passata al Single Sign-On (SSO), **la tua vecchia password è stata salvata come password di riserva**. Puoi usarla per autorizzare l'SSO su un nuovo dispositivo."
+      ],
       "Cancel": [
         "Annulla"
       ],
@@ -16027,6 +16440,9 @@
       ],
       "Contact your administrator if the problem persists.": [
         "Contatta l'amministratore se il problema persiste."
+      ],
+      "Continue to join as **${ username }**": [
+        "Continua ad accedere come **${ username }**"
       ],
       "Current device": [
         "Dispositivo attuale"
@@ -16054,6 +16470,9 @@
       "Do you want to remove all other devices than the current one?": [
         "Vuoi rimuovere tutti gli altri dispositivi eccetto quello attuale?"
       ],
+      "Enter it to sign in. It is the same as your old password.": [
+        "Inseriscila per accedere. Corrisponde alla tua vecchia password."
+      ],
       "Enter the confirmation code we sent on your other device.": [
         "Inserisci il codice di conferma che abbiamo inviato sull'altro tuo dispositivo."
       ],
@@ -16062,6 +16481,9 @@
       ],
       "Enter your backup password": [
         "Inserisci la tua password di backup"
+      ],
+      "For your security, you have been signed out of all your other active devices.": [
+        "Per la tua sicurezza, è stata effettuata la disconnessione da tutti gli altri dispositivi attivi."
       ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Per la tua sicurezza, sei stato disconnesso da tutti i tuoi altri dispositivi attivi. Prima di accedere al tuo account, dovrai inserire una nuova password di backup."
@@ -16170,6 +16592,9 @@
       ],
       "This will sign you out of your other devices and you will have to create a new backup password.": [
         "Questo ti disconnetterà dagli altri tuoi dispositivi e dovrai creare una nuova password di backup."
+      ],
+      "This will sign you out of your other devices.": [
+        "Questo ti disconnetterà dagli altri dispositivi."
       ],
       "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
         "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device."
@@ -17027,6 +17452,9 @@
       "Invoice customized": [
         "Fattura personalizzata"
       ],
+      "Invoice email updated": [
+        "Email per le fatture aggiornata"
+      ],
       "Invoice paid": [
         "Fattura pagata"
       ],
@@ -17531,6 +17959,9 @@
       ],
       "Add users to \"${ policyName }\"": [
         "Aggiungi utenti a \"${ policyName }\""
+      ],
+      "Advanced configuration": [
+        "Configurazione avanzata"
       ],
       "Advanced recovery options": [
         "Opzioni di recupero avanzate"
@@ -18259,6 +18690,9 @@
       "Password": [
         "Password"
       ],
+      "Password check-ins": [
+        "Controlli della password"
+      ],
       "Password reset options": [
         "Opzioni di reimpostazione della password"
       ],
@@ -18439,11 +18873,17 @@
       "Send new invite?": [
         "Vuoi spedire un nuovo invito?"
       ],
+      "September Sale": [
+        "Sconti di settembre"
+      ],
       "Service": [
         "Servizio"
       ],
       "Session management": [
         "Gestione delle sessioni"
+      ],
+      "Set invoice email": [
+        "Imposta l'email per le fatture"
       ],
       "Set new password": [
         "Imposta nuova password"
@@ -18673,6 +19113,9 @@
       ],
       "User converted to SSO": [
         "Utente convertito a SSO"
+      ],
+      "User profile": [
+        "Profilo utente"
       ],
       "Users": [
         "Utenti"
@@ -19016,6 +19459,9 @@
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Questo indirizzo email verrà mostrato a tutti i membri dell'organizzazione durante l'esecuzione delle operazioni di gestione dell'account."
+      ],
+      "This setting is managed by your organization": [
+        "Questa impostazione è gestita dalla tua organizzazione"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A meno che non vengano decifrate, le password crittografate rimangono sicure anche se vengono esposte."

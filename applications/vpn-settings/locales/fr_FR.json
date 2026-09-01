@@ -7999,6 +7999,12 @@
       "email": [
         "e-mail"
       ],
+      "Email address copied to clipboard": [
+        "L'adresse e-mail a été copiée dans le presse-papiers"
+      ],
+      "Email addresses copied to clipboard": [
+        "Les adresses e-mail ont été copiées dans le presse-papiers"
+      ],
       "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
         "E-mail et calendrier, intégrés à ${ CONTACTS_APP_NAME }"
       ],
@@ -9006,6 +9012,9 @@
       ],
       "SCIM token active": [
         "Jeton SCIM actif"
+      ],
+      "Secure and end-to-end encrypted": [
+        "Sécurisé et chiffré de bout en bout"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Sécurisez votre compte ${ BRAND_NAME }"
@@ -13747,6 +13756,37 @@
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Votre abonnement comprend un maximum de ${ humanReadableAvailableSpace } d'espace de stockage en plus."
+      ]
+    },
+    "organization key reset": {
+      "Organization key reset": [
+        "La clé de l'organisation a été réinitialisée"
+      ],
+      "Reset key": [
+        "Réinitialiser la clé"
+      ],
+      "Reset organization key?": [
+        "Réinitialiser la clé de l'organisation ?"
+      ],
+      "Resetting organization key": [
+        "Réinitialisation de la clé de l'organisation en cours"
+      ],
+      "See ${ n } user": [
+        "Voir ${ n } utilisateur",
+        "Voir ${ n } utilisateurs"
+      ],
+      "See users": [
+        "Voir les utilisateurs"
+      ],
+      "The organization key is reset": [
+        "La clé de l'organisation est réinitialisée"
+      ],
+      "Try another way": [
+        "Essayez une autre façon"
+      ],
+      "User (${ n })": [
+        "Utilisateur (${ n })",
+        "Utilisateurs (${ n })"
       ]
     },
     "Organization logo upload": {
