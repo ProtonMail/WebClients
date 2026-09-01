@@ -5,35 +5,26 @@ import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { useAssistant } from '@proton/llm/lib';
-import { deleteAssistantCachedFiles } from '@proton/llm/lib/downloader';
-import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
-import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 
-import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { useCleanData } from '../../hooks/useCleanData';
 
 const ClearBrowserDataModal = (rest: ModalProps) => {
     const { onClose } = rest;
-    const { esDelete } = useEncryptedSearchContext();
+    const cleanData = useCleanData();
 
     const { openedAssistants, closeAssistant, resetAssistantState } = useAssistant();
     const [userSettings] = useUserSettings();
 
     const handleClear = () => {
-        if (isElectronMail) {
-            void invokeInboxDesktopIPC({ type: 'clearAppData' });
-            return;
-        }
-
-        void deleteAssistantCachedFiles().then(() => {
-            if (userSettings.AIAssistantFlags === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
-                for (const { id } of openedAssistants) {
-                    closeAssistant(id, true);
-                }
+        if (userSettings.AIAssistantFlags === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
+            for (const { id } of openedAssistants) {
+                closeAssistant(id, true);
             }
-            resetAssistantState();
-        });
-        void esDelete();
+        }
+        resetAssistantState();
+
+        void cleanData({ logs: true, contentSearch: true, encryptedSearch: true, assistantFiles: true });
         onClose?.();
     };
 
