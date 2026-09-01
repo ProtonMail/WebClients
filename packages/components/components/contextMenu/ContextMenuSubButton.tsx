@@ -68,6 +68,7 @@ export const ContextMenuSubButton = ({ name, icon, children }: Props) => {
         <>
             <div ref={buttonRef} onMouseEnter={open} onMouseLeave={scheduleClose}>
                 <DropdownMenuButton
+                    onClick={(e) => e.stopPropagation()}
                     onKeyDown={handleButtonKeyDown}
                     onContextMenu={(e) => e.stopPropagation()}
                     className="flex items-center flex-nowrap text-left"
