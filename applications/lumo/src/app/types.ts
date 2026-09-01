@@ -325,6 +325,7 @@ export type ToolResultBlock = {
     type: 'tool_result';
     content: string; // JSON string (for serialization/prepareTurns)
     toolResult?: unknown; // Parsed JSON (for easy access, may be invalid/unknown)
+    tool_call_id?: string; // OpenAI tool_call id linking result to its call
     meta?: {
         settings: string;
     };
