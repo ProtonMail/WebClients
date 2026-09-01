@@ -24,6 +24,11 @@ export const restrictedImports = {
             group: ['@proton/drive/*', '!@proton/drive/index', '!@proton/drive/public', '!@proton/drive/public/**'],
             message: 'Only `@proton/drive` (index) and `@proton/drive/public/*` are public and importable.',
         },
+        {
+            group: ['proton-mail/*'],
+            message:
+                'Packages and apps must not import from applications/mail. Extract shared code into @proton/mail or @proton/shared.',
+        },
     ],
 };
 

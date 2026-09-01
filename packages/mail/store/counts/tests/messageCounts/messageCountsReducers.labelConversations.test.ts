@@ -3,8 +3,7 @@ import type { Draft } from '@reduxjs/toolkit';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
-
-import type { Conversation, ConversationLabel } from 'proton-mail/models/conversation';
+import type { Conversation, ConversationLabel } from '@proton/shared/lib/interfaces/mail/Conversation';
 
 import { labelConversationsPending } from '../../messageCountsReducers';
 import {
