@@ -355,9 +355,6 @@
       "Fill password": [
         "Uzupełnij hasło"
       ],
-      "Filter vault items": [
-        "Filtruj elementy sejfu"
-      ],
       "Generate alias": [
         "Generuj alias"
       ],
@@ -694,8 +691,8 @@
       "Skip": [
         "Pomiń"
       ],
-      "Sort vault items": [
-        "Sortuj elementy sejfu"
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Udostępniono Ci element w ${ PASS_APP_NAME }"
       ],
       "Start from scratch": [
         "Rozpocznij od początku"
@@ -1383,6 +1380,9 @@
       ],
       "Trashing item failed": [
         "Usunięcie elementu nie powiodło się"
+      ],
+      "Try reaching out to the link owner.": [
+        "Skontaktuj się z właścicielem linku."
       ],
       "Unable to generate an OTP code for this item": [
         "Nie można wygenerować kodu uwierzytelniającego dla tego elementu"
@@ -4089,6 +4089,9 @@
       "Theme": [
         "Motyw"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Element jest dostępny do ${ date } lub do osiągnięcia limitu wyświetleń."
+      ],
       "Tier/Level": [
         "Poziom"
       ],
@@ -5259,9 +5262,6 @@
       ],
       "Setup ${ PASS_APP_NAME } SSH Agent": [
         "Konfiguracja agenta SSH ${ PASS_APP_NAME }"
-      ],
-      "Setup offline mode": [
-        "Konfiguracja trybu offline"
       ],
       "Share vaults with your team": [
         "Udostępnij sejfy swojemu zespołowi"

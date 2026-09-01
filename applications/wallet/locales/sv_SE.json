@@ -4938,6 +4938,9 @@
       "You will soon be redirected to verify your payment.": [
         "Du kommer snart att omdirigeras för att verifiera din betalning."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Din valuta har ändrats till euro (€) eftersom ${ IDEAL_WERO_BRAND_NAME } endast stöder betalningar i euro."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Din valuta har ändrats till euro (€) eftersom SEPA-banköverföringar endast stöder betalningar i euro."
       ],
@@ -4949,6 +4952,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Misslyckades med att initialisera ${ IDEAL_WERO_BRAND_NAME }. Försök igen senare."
+      ],
       "Invalid card number": [
         "Ogiltigt kortnummer"
       ],

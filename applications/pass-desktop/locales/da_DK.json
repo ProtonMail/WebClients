@@ -364,9 +364,6 @@
       "Fill password": [
         "Udfyld adgangskode"
       ],
-      "Filter vault items": [
-        "Filtrér elementer i boks"
-      ],
       "Generate alias": [
         "Generér alias"
       ],
@@ -661,9 +658,6 @@
       "See members": [
         "Vis medlemmer"
       ],
-      "Select items": [
-        "Vælg elementer"
-      ],
       "Send email": [
         "Send e-mail"
       ],
@@ -709,8 +703,8 @@
       "Skip": [
         "Spring over"
       ],
-      "Sort vault items": [
-        "Sortér elementer i boks"
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Nogen har delt et element med dig på ${ PASS_APP_NAME }."
       ],
       "Start from scratch": [
         "Start fra bunden"
@@ -1412,6 +1406,9 @@
       ],
       "Trashing item failed": [
         "Kunne ikke flytte element til papirkurven"
+      ],
+      "Try reaching out to the link owner.": [
+        "Prøv at kontakte linkets ejer."
       ],
       "Unable to generate an OTP code for this item": [
         "Kunne ikke generere en OTP-kode for dette element"
@@ -2797,6 +2794,9 @@
       "Verification code sent.": [
         "Bekræftelseskode sendt."
       ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Se dine ${ PASS_SHORT_APP_NAME }-elementer offline. Kræver din adgangskode for at aktivere det."
+      ],
       "Viewer": [
         "Seer"
       ],
@@ -4051,6 +4051,9 @@
       "Theme": [
         "Tema"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Dette element er tilgængeligt indtil ${ date } eller indtil visningsgrænsen er nået."
+      ],
       "Tier/Level": [
         "Niveau"
       ],
@@ -4949,6 +4952,9 @@
       "Domain ownership verification": [
         "Verifikation af domæneejerskab"
       ],
+      "Enable offline mode": [
+        "Aktivér offline-tilstand"
+      ],
       "Encrypted import": [
         "Krypteret import"
       ],
@@ -5210,9 +5216,6 @@
       ],
       "Setup ${ PASS_APP_NAME } SSH Agent": [
         "Konfigurer ${ PASS_APP_NAME } SSH-agent"
-      ],
-      "Setup offline mode": [
-        "Konfigurer offline-tilstand"
       ],
       "Share vaults with your team": [
         "Del bokse med dit team"

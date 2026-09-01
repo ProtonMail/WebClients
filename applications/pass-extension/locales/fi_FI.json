@@ -340,6 +340,9 @@
       "Edit vault": [
         "Muokkaa holvia"
       ],
+      "Enable": [
+        "Käytä"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön"
       ],
@@ -357,9 +360,6 @@
       ],
       "Fill password": [
         "Täytä salasana"
-      ],
-      "Filter vault items": [
-        "Suodata holvin kohteita"
       ],
       "Generate alias": [
         "Luo alias"
@@ -643,9 +643,6 @@
       "See members": [
         "Näytä jäsenet"
       ],
-      "Select items": [
-        "Valitse kohteita"
-      ],
       "Send email": [
         "Lähetä sähköposti"
       ],
@@ -690,9 +687,6 @@
       ],
       "Sign out": [
         "Kirjaudu ulos"
-      ],
-      "Sort vault items": [
-        "Järjestä holvin kohteet"
       ],
       "Start from scratch": [
         "Aloita alusta"
@@ -4336,9 +4330,6 @@
       "Download": [
         "Lataa"
       ],
-      "Download \"${ filename }\"": [
-        "Lataa \"${ filename }\""
-      ],
       "Download file": [
         "Lataa tiedosto"
       ],
@@ -4416,9 +4407,6 @@
       ],
       "You can attach files to items for a better organization": [
         "Voit liittää kohteisiin tiedostoja parempaa organisointia varten"
-      ],
-      "You may close this window after saving the file.": [
-        "Voit sulkea tämän ikkunan tiedoston tallentamisen jälkeen."
       ]
     },
     "Permission": {
@@ -4735,9 +4723,6 @@
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME }-osoitteet"
-      ],
-      "${ PASS_APP_NAME } Logs": [
-        "${ PASS_APP_NAME }-lokit"
       ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } -asetukset"

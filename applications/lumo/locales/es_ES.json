@@ -1935,6 +1935,9 @@
       "Free accounts keep chat history for 7 days. Talk to your admin to keep this chat.": [
         "Las cuentas gratuitas conservan el historial de chat durante 7 días. Habla con tu administrador para conservar este chat."
       ],
+      "Free accounts keep chat history for 7 days. This chat is past that window and will be permanently deleted unless you upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
+        "Las cuentas gratuitas conservan el historial de chat durante 7 días. Este chat ha superado ese periodo y se eliminará de forma permanente a menos que actualices a ${ LUMO_SHORT_APP_NAME } Plus."
+      ],
       "Free space": [
         "Espacio libre"
       ],
@@ -2129,6 +2132,9 @@
       ],
       "These files belonged to summarized messages and are no longer sent to the model.": [
         "Estos archivos pertenecían a mensajes resumidos y ya no se envían al modelo."
+      ],
+      "This chat is past the free retention window and will be permanently deleted. Talk to your admin to keep it.": [
+        "Este chat ha superado el periodo de retención gratuito y se eliminará de forma permanente. Habla con tu administrador para conservarlo."
       ],
       "This chat will be removed in 2 days. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to keep it.": [
         "Este chat se eliminará en 2 días. Mejora a ${ LUMO_SHORT_APP_NAME } Plus para conservarlo."
@@ -2992,6 +2998,15 @@
       "This chat expires tomorrow": [
         "Este chat expira mañana"
       ],
+      "This chat will be deleted soon": [
+        "Este chat se eliminará pronto"
+      ],
+      "This chat will be deleted today": [
+        "Este chat se eliminará hoy"
+      ],
+      "This chat will be deleted tomorrow": [
+        "Este chat se eliminará mañana"
+      ],
       "This conversation is getting long": [
         "Esta conversación se está alargando."
       ],
@@ -3436,6 +3451,9 @@
       " Chat in Project": [
         " Conversar en el proyecto",
         " chats en el proyecto"
+      ],
+      "\"${ file.name }\" is still being indexed. Content will be loaded when you send.": [
+        "\"${ file.name }\" aún se está indexando. El contenido se cargará cuando envíes."
       ],
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to keep your conversations on this device, but it isn't available here.": [
         "${ LUMO_SHORT_APP_NAME } necesita almacenamiento de base de datos local (IndexedDB) para guardar tus conversaciones en este dispositivo, pero no está disponible aquí."

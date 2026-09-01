@@ -424,7 +424,7 @@
         "Kopier SMTP-port"
       ],
       "Copy SMTP server": [
-        "Kopier SMTP-tjener"
+        "Kopier SMTP-server"
       ],
       "Copy SMTP token": [
         "Kopier SMTP-token"
@@ -724,7 +724,7 @@
         "Rediger telefonnummer"
       ],
       "Edit servers": [
-        "Rediger tjenere"
+        "Rediger servere"
       ],
       "Edit Sieve": [
         "Rediger Sieve"
@@ -886,7 +886,7 @@
         "Skaff deg flere lisenser"
       ],
       "Get more servers": [
-        "Få flere tjenere"
+        "Få flere servere"
       ],
       "Get more storage": [
         "Skaff deg mer lagringskapasitet"
@@ -1915,7 +1915,7 @@
         "Ja, angre"
       ],
       "Your server will be provisioned in the next days": [
-        "Tjeneren din vil bli klargjort i løpet av de neste dagene"
+        "Serveren vil bli klargjort i løpet av de neste dagene"
       ],
       "Zoom in": [
         "Zoom inn"
@@ -1974,8 +1974,8 @@
         "${ domains } ekstra egendefinerte domener"
       ],
       "${ ips } dedicated VPN server": [
-        "${ ips } dedikert VPN-tjener",
-        "${ ips } dedikerte VPN-tjenere"
+        "${ ips } dedikert VPN-server",
+        "${ ips } dedikerte VPN-servere"
       ],
       "${ LUMO_APP_NAME } AI assistant": [
         "${ LUMO_APP_NAME } KI-assistent"
@@ -1995,7 +1995,7 @@
         "${ LUMO_SHORT_APP_NAME }-skriveassistent (for ${ quantity } brukere)"
       ],
       "${ price } per dedicated server": [
-        "${ price } per dedikerte tjener"
+        "${ price } per dedikert server"
       ],
       "${ price } per domain": [
         "${ price } per domene"
@@ -5020,7 +5020,7 @@
         "Opprett grupper du kan sende e-post til med én enkelt adresse."
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
-        "Opprett retningslinjer for å bestemme hvem som kan koble til delte tjenere i hvert land."
+        "Opprett retningslinjer for å bestemme hvem som kan koble til delte servere i hvert land."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Få enkel tilgang til e-posten og kalenderen din på datamaskin og mobil."
@@ -5059,7 +5059,7 @@
         "Sørg for at du fortsatt har tilgang til kontoen og dataene dine selv om du mister ${ BRAND_NAME }-passordet ditt."
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
-        "Alle i organisasjonen kan koble til delte tjenere i alle land."
+        "Alle i organisasjonen kan koble til delte servere i alle land."
       ],
       "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
         "For en sømløs overgang til ${ BRAND_NAME }, importer dataene dine fra Google, Outlook og andre."
@@ -5110,7 +5110,7 @@
         "De fleste problemer kan løses på få minutter med våre trinnvise veiledninger."
       ],
       "No one in your organization can connect to shared servers.": [
-        "Ingen i organisasjonen kan koble til delte tjenere."
+        "Ingen i organisasjonen kan koble til delte servere."
       ],
       "Note that emails sent to this address, even from other ${ BRAND_NAME } addresses, will no longer be end-to-end encrypted.": [
         "Merk at e-poster sendt til denne adressen, selv fra andre ${ BRAND_NAME }-adresser, ikke lenger vil bli ende-til-ende-kryptert."
@@ -6975,7 +6975,7 @@
         "Kan ikke laste inn STL-forhåndsvisningen"
       ],
       "Failed to lookup server. Please try again": [
-        "Oppslag av tjener mislyktes. Prøv igjen."
+        "Oppslag av server mislyktes. Prøv igjen."
       ],
       "Failed to process the logo": [
         "Kunne ikke behandle logoen"
@@ -7379,7 +7379,7 @@
         "Rolletildelingen kunne ikke fullføres for ${ errors.length } medlemmer"
       ],
       "Server not found": [
-        "Tjener ikke funnet"
+        "Server ikke funnet"
       ],
       "Session expired. Please refresh the page.": [
         "Økten er utløpt. Last inn siden på nytt."
@@ -8415,7 +8415,7 @@
         "Kryptert skylagring for filer, bilder og dokumenter"
       ],
       "Fastest VPN servers": [
-        "Raskeste VPN-tjenere"
+        "Raskeste VPN-servere"
       ],
       "More premium features": [
         "Flere premiumfunksjoner"
@@ -8433,7 +8433,7 @@
         "Planlegg og slumre e-poster"
       ],
       "Secure Core servers": [
-        "Secure Core-tjenere"
+        "Secure Core-servere"
       ],
       "Secure streaming support": [
         "Støtte for sikker strømming"
@@ -8515,7 +8515,7 @@
         "Beskytter deg mot annonser, sporere og skadelig programvare på nettsteder og apper"
       ],
       "Secure Core servers route your traffic through 2 VPN servers for extra security": [
-        "Secure Core-tjenere ruter trafikken din gjennom 2 VPN-tjenere for ekstra sikkerhet"
+        "Secure Core-servere ruter trafikken gjennom 2 VPN-servere for ekstra sikkerhet"
       ]
     },
     "fido2: Action": {
@@ -9078,7 +9078,7 @@
         "Etikett"
       ],
       "Location": [
-        "Plassering"
+        "Sted"
       ],
       "Members": [
         "Medlemmer"
@@ -9114,13 +9114,13 @@
         "Velg prisplanen din"
       ],
       "Server": [
-        "Tjener"
+        "Server"
       ],
       "Server load": [
-        "Tjenerbelastning"
+        "Serverbelastning"
       ],
       "Servers": [
-        "Tjenere"
+        "Servere"
       ],
       "Sort folders": [
         "Sorter mapper"
@@ -9686,8 +9686,8 @@
     },
     "Info": {
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
-        "${ amountUsers }/${ totalUsers } bruker har for øyeblikket tilgang til delte tjenere.",
-        "${ amountUsers }/${ totalUsers } brukere har for øyeblikket tilgang til delte tjenere."
+        "${ amountUsers }/${ totalUsers } bruker har for øyeblikket tilgang til delte servere.",
+        "${ amountUsers }/${ totalUsers } brukere har for øyeblikket tilgang til delte servere."
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
@@ -9859,7 +9859,7 @@
         "Livstidsavtale for ${ PASS_SHORT_APP_NAME } har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }. Fornyelsesprisen og datoen for ${ planTitle }-abonnementet forblir uendret."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
-        "${ plan.Title } krever minst 1 dedikert tjener ${ serverPricePerMonth }"
+        "${ plan.Title } krever minst 1 dedikert server ${ serverPricePerMonth }"
       ],
       "${ planName } expires in ${ daysLeft } day.": [
         "${ planName } utløper om ${ daysLeft } dag.",
@@ -10223,7 +10223,7 @@
         "Tillat logging av plassering og tilkoblingsdetaljer"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Tillat brukere å koble til sikre delte tjenere fra **Land**-delen av ${ VPN_APP_NAME }-appen."
+        "Tillat brukere å koble til sikre delte servere fra **Land**-delen av ${ VPN_APP_NAME }-appen."
       ],
       "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
         "Hvis du tillater pålogging med QR-kode, kan du logge på ved å skanne en QR-kode hvis du glemmer passordet ditt. Alt du trenger å gjøre er å være logget på en ${ BRAND_NAME }-tjeneste på en annen enhet."
@@ -10705,13 +10705,13 @@
         "Datagjenoppretting krever et alternativ for tilbakestilling av passord (e-post eller SMS)"
       ],
       "dedicated servers": [
-        "dedikerte tjenere"
+        "dedikerte servere"
       ],
       "Dedicated servers": [
-        "Dedikerte tjenere"
+        "Dedikerte servere"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
-        "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll."
+        "Dedikerte servere med dedikerte IP-adresser kan legges til private gateway-servere for å muliggjøre finjustert tilgangskontroll."
       ],
       "Dedicated VPN servers": [
         "Dedikerte VPN-servere"
@@ -10830,7 +10830,7 @@
         "Nedgrader"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Nedgradering vil terminere alle forbindelser til betalte ${ VPN_APP_NAME }-tjenere."
+        "Nedgradering vil terminere alle forbindelser til betalte ${ VPN_APP_NAME }-servere."
       ],
       "Download ${ mobileConfigArtifact } and open it on each Mac to install the profile, then approve it in System Settings.": [
         "Last ned ${ mobileConfigArtifact } og åpne den på hver Mac for å installere profilen, og godkjenn den deretter i Systeminnstillinger."
@@ -10917,7 +10917,7 @@
         "Ansatte kan ikke gå på nett uten VPN-tilkobling"
       ],
       "Enable auto-renew to keep access to Plus servers and features.": [
-        "Aktiver automatisk fornyelse for å beholde tilgangen til Plus-tjenere og -funksjoner."
+        "Aktiver automatisk fornyelse for å beholde tilgangen til Plus-servere og -funksjoner."
       ],
       "Enable auto-renew to keep access to your premium features.": [
         "Aktiver automatisk fornyelse for å beholde tilgangen til dine premiumfunksjoner."
@@ -11163,7 +11163,7 @@
         "Gateway-overvåking"
       ],
       "Gateways": [
-        "Gateway-tjenere"
+        "Gateway-servere"
       ],
       "Generate the device profile and download a configuration file.": [
         "Generer enhetsprofilen og last ned en konfigurasjonsfil."
@@ -11423,16 +11423,16 @@
         "Instagram"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
-        "Installer en landkonfigureringsfil for å koble til en vilkårlig tjener i det landet du ønsker."
+        "Installer en landkonfigureringsfil for å koble til en vilkårlig server i det landet du ønsker."
       ],
       "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
-        "Installer en gratis tjenerkonfigureringsfil for å koble til en spesifikk tjener på en av tre gratis plasseringer."
+        "Installer en gratis serverkonfigureringsfil for å koble til en spesifikk server på et av tre gratis steder."
       ],
       "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
         "Installer en Secure Core-konfigurasjonsfil for å dra nytte av en ekstra beskyttelse mot VPN-endepunktskompromiss."
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "Installer en tjenerkonfigureringsfil for å koble til en spesifikk tjener i det landet du ønsker."
+        "Installer en serverkonfigureringsfil for å koble til en spesifikk server i det landet du ønsker."
       ],
       "Internet connection lost": [
         "Mistet internettilkobling"
@@ -11484,7 +11484,7 @@
         "Det kan ta opptil 24 timer før disse endringene trer i kraft."
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
-        "Det tar 10 dager å endre en tjeners land, så sørg for at valget ditt er riktig."
+        "Det tar 10 dager å endre landet til en server, så sørg for at valget er riktig."
       ],
       "It won't be linked to your ${ BRAND_NAME } Account, so there's **no risk of getting locked out**.": [
         "Den vil ikke bli koblet til ${ BRAND_NAME }-kontoen din, så det er **ingen risiko for å bli blokkert**."
@@ -11817,7 +11817,7 @@
         "Ikke en gyldig nettadresse"
       ],
       "Number of dedicated servers in the organization": [
-        "Antall dedikerte tjenere i organisasjonen"
+        "Antall dedikerte servere i organisasjonen"
       ],
       "Number of dedicated VPN servers in the organization": [
         "Antall dedikerte VPN-servere i organisasjonen"
@@ -11894,7 +11894,7 @@
         "Eller kjør ${ powershellArtifact } via MDM-skriptutførelsen din"
       ],
       "Or select a particular server:": [
-        "Eller velg en spesiell tjener:"
+        "Eller velg en spesiell server:"
       ],
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Organisasjonsmedlemmer må låse opp ${ PASS_APP_NAME } med passord eller PIN-kode osv."
@@ -11906,7 +11906,7 @@
         "Organisasjonsstørrelse"
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
-        "Organiser dine dedikerte tjenere i gateway-tjenere og bestem hvilke medlemmer som kan få tilgang til dem."
+        "Organiser dine dedikerte servere i gateway-servere og bestem hvilke medlemmer som kan få tilgang til dem."
       ],
       "Other": [
         "Annet"
@@ -12127,7 +12127,7 @@
         "Motta reservasjonskupongen på e-post. Du eller barnet kan bruke den til å aktivere adressen i løpet av de neste 15 årene. ${ learnMoreLink }"
       ],
       "Recently used servers:": [
-        "Nylig brukte tjenere:"
+        "Nylig brukte servere:"
       ],
       "RECOMMENDED": [
         "ANBEFALT"
@@ -12253,7 +12253,7 @@
         "Velg én eller flere brukertilknytninger"
       ],
       "Select recently used servers": [
-        "Velg nylig brukte tjenere"
+        "Velg nylig brukte servere"
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Velg brukertilknytningene fra ${ getFormattedOrganization } som du vil tillate inn i ${ BRAND_NAME }-organisasjonen din:"
@@ -12280,10 +12280,10 @@
         "SEPA-betalinger er ikke tilgjengelige for øyeblikket. Prøv igjen senere."
       ],
       "Server is currently down": [
-        "Tjener er for tiden nede"
+        "Server er for tiden nede"
       ],
       "Server load": [
-        "Tjenerbelastning"
+        "Serverbelastning"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverne er utilgjengelige. Prøv på nytt om noen få minutter."
@@ -12389,7 +12389,7 @@
         "Noen nøkler aktivert på nytt"
       ],
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
-        "Enkelte tjenere vises kanskje ikke i listen ovenfor. Søk etter tjenernavn (f.eks. AT#62) for å finne dem."
+        "Enkelte servere vises kanskje ikke i listen ovenfor. Søk etter navn på server (f.eks. AT#62) for å finne dem."
       ],
       "Something went wrong. Please try again or contact customer support.": [
         "Noe gikk galt. Prøv igjen eller kontakt kundestøtte."
@@ -12607,7 +12607,7 @@
         "Verifiseringsprosessen vil åpne en ny nettleserfane. Deaktiver alle aktive blokkeringer av sprettoppvinduer."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Disse konfigurasjonsfilene lar deg velge hvilken ${ VPN_APP_NAME }-tjener du kobler til når du bruker en tredje-part VPN-app eller setter opp en VPN-forbindelse på en ruter."
+        "Disse konfigurasjonsfilene lar deg velge hvilken ${ VPN_APP_NAME }-server du kobler til når du bruker en tredje-part VPN-app eller setter opp en VPN-forbindelse på en ruter."
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Disse konfigurasjonene er angitt til å fungere med WireGuard-rutere og offisielle klienter."
@@ -12871,7 +12871,7 @@
         "For å fjerne Alltid på-VPN, slett ${ profileFile } fra ${ policiesPath } på alle enheter. ${ VPN_APP_NAME }-klienten slutter å håndheve profilen så snart den oppdager at filen er borte."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
-        "For å sikre internettilkoblingen, last ned og installer ${ VPN_APP_NAME }-applikasjonen for din enhet og koble til en tjener."
+        "For å sikre internettilkoblingen, last ned og installer ${ VPN_APP_NAME }-applikasjonen for din enhet og koble til en server."
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "For å bruke ${ toAppName }, vil du trenge en ${ MAIL_APP_NAME }-adresse."
@@ -13024,10 +13024,10 @@
         "Bruk flere e-postadresser med ${ MAIL_APP_NAME }. Legg til en ny ${ BRAND_NAME }-adresse eller koble til en annen e-postkonto for å administrere alt fra én innboks."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        "Bruk den beste tjeneren i henhold til gjeldende belastning og posisjon: ${ formattedBestServerName }"
+        "Bruk den beste serveren i henhold til gjeldende belastning og posisjon: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Bruk følgende påloggingsinformasjon når du kobler til ${ VPN_APP_NAME }-tjenere uten applikasjon. Bruksområder kan inkludere: Tunnelblick på macOS, OpenVPN på GNU/Linux."
+        "Bruk følgende påloggingsinformasjon når du kobler til ${ VPN_APP_NAME }-servere uten applikasjon. Bruksområder kan inkludere: Tunnelblick på macOS, OpenVPN på GNU/Linux."
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Bruk den valgte e-postadressen som SMTP-brukernavn i den eksterne tjenesten, og det genererte tokenet som SMTP-passordet."
@@ -13114,7 +13114,7 @@
         "VPN Plus"
       ],
       "VPN with dedicated servers and IP addresses": [
-        "VPN med dedikerte tjenere og IP-adresser"
+        "VPN med dedikerte servere og IP-adresser"
       ],
       "Want to learn more?": [
         "Vil du lære mer?"
@@ -13156,10 +13156,10 @@
         "Vi trenger å autentisere betalingen med banken din."
       ],
       "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
-        "Vi anbefaler å legge til tjenere på forskjellige steder (én per by) for å maksimere redundansen."
+        "Vi anbefaler å legge til servere på forskjellige steder (én per by) for å maksimere redundansen."
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
-        "Vi anbefaler å ha minst 2 tjenere for å gi redundans."
+        "Vi anbefaler å ha minst 2 servere for å gi redundans."
       ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Vi anbefaler å varsle familiemedlemmene og be dem om å sette opp 2FA for kontoene sine før du håndhever bruken av 2FA."
@@ -13210,7 +13210,7 @@
         "Vi sender en tilbakestillingskode til ${ boldValue }."
       ],
       "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
-        "Vi oppretter kontoene og importerer dataene nå, slik at teamet har alt de trenger når de begynner å bruke den sikre ${ BRAND_NAME }-kontoen sin."
+        "Vi oppretter kontoene og importerer dataene nå, slik at teamet har alt de trenger når de begynner å bruke den sikre ${ BRAND_NAME }-kontoen."
       ],
       "What happens:": [
         "Hva skjer:"
@@ -13411,7 +13411,7 @@
         "Du kan bruke ${ MAIL_APP_NAME } med hvilken som helst skrivebords-e-postklient som støtter IMAP/SMTP, inkludert Outlook, Apple Mail og Thunderbird."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Du kan bruke følgende påloggingsinformasjon for å koble til en ${ VPN_APP_NAME }-tjener ved å bruke en tredje-part, åpen kilde VPN-app, som Tunnelblick for macOS eller OpenVPN for GNU/Linux."
+        "Du kan bruke følgende påloggingsinformasjon for å koble til en ${ VPN_APP_NAME }-server ved å bruke en tredje-part, åpen kilde VPN-app, som Tunnelblick for macOS eller OpenVPN for GNU/Linux."
       ],
       "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
         "Du kan ikke sendre flere enn ${ emailSendLimitNumber } e-postinvitasjon de neste 24 timene",
@@ -13531,7 +13531,7 @@
         "Du blir ikke belastet hvis du avbryter før ${ trialEndsOnFormatted }."
       ],
       "You won’t be able to reassign these servers to another country for 10 days.": [
-        "Du vil ikke kunne tilordne disse tjenerne til et annet land på 10 dager."
+        "Du vil ikke kunne tilordne disse serverne til et annet land på 10 dager."
       ],
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Du vil ikke være i stand til å gjenopprette låst data ved å bruke dine nedlastede gjenopprettingsfiler."
@@ -13614,7 +13614,7 @@
         "Filene dine vil bli kryptert og deretter lagret"
       ],
       "Your free trial includes 1 dedicated server.": [
-        "Din gratis prøveperiode inkluderer én dedikert tjener."
+        "Din gratis prøveperiode inkluderer én dedikert server."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis prøveperiode ble vellykket konvertert til et ${ cycle }-måneders abonnement. Din fornyelsesdato er ${ nextBillingDate }."
@@ -13656,7 +13656,7 @@
         "Planen din er begrenset til 10 versjoner i opptil 7 dager"
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
-        "Dine nylige endringer er publisert. De vil være synlige for brukere i løpet av de neste timene."
+        "Nylige endringer er publisert. De vil være synlige for brukere i løpet av de neste timene."
       ],
       "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
         "Gjenopprettingsfilen din vil gjenopprette tilgangen til e-poster, kontakter, filer, passord og andre krypterte data på kontoen din etter en tilbakestilling av passordet."
@@ -13696,7 +13696,7 @@
         "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
-        "Du vil umiddelbart kunne legge til disse tjenerne i en annen gateway."
+        "Du vil umiddelbart kunne legge til disse serverne i en annen gateway."
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Du mister tilgang til ${ boldPlanTitle } på ${ boldEndDate }."
@@ -14514,7 +14514,7 @@
         "Anvend filter på eksisterende e-postmeldinger"
       ],
       "Apply policy to": [
-        "Anvend retningslinjen på"
+        "Bruk retningslinjen på"
       ],
       "Ask members to set up 2FA": [
         "Be medlemmene om å sette opp 2FA"
@@ -15631,7 +15631,7 @@
         "Sekvenser"
       ],
       "Server name": [
-        "Tjenernavn"
+        "Servernavn"
       ],
       "Set password": [
         "Angi passord"
@@ -15689,7 +15689,7 @@
         "SMTP-port"
       ],
       "SMTP server": [
-        "SMTP-tjener"
+        "SMTP-server"
       ],
       "SMTP token": [
         "SMTP-token"
@@ -16472,7 +16472,7 @@
         "Samler dataene dine"
       ],
       "Loading your organization data": [
-        "Laster inn organisasjonsdataene dine"
+        "Laster inn organisasjonsdataene"
       ],
       "We're gathering your data from your provider": [
         "Vi samler inn dataene dine fra leverandøren din"
@@ -17622,7 +17622,7 @@
         "Dedikert kontobehandler"
       ],
       "Dedicated servers and IP": [
-        "Dedikerte tjenere og IP"
+        "Dedikerte servere og IP"
       ],
       "Dedicated servers optimized for speed": [
         "Dedikerte servere optimalisert for hastighet"
@@ -17652,7 +17652,7 @@
         "Kryptert kontaktinformasjon"
       ],
       "Encrypted VPN servers": [
-        "Krypterte VPN-tjenere"
+        "Krypterte VPN-servere"
       ],
       "End-to-end encryption": [
         "Ende-til-ende-kryptering"
@@ -17770,7 +17770,7 @@
         "Planlegg og slumre e-poster når som helst"
       ],
       "Secure Core servers": [
-        "Secure Core-tjenere"
+        "Secure Core-servere"
       ],
       "Secure file storage and sharing": [
         "Sikker fillagring og -deling"
@@ -18175,7 +18175,7 @@
         "Dedikerte servere med dedikerte IP-adresser kan legges til private gateway-servere for å muliggjøre finjustert tilgangskontroll"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
-        "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere tjenere."
+        "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere servere."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere tjenere."
@@ -18202,7 +18202,7 @@
         "Hold planene dine private for deg og familien din med en kryptert kalender."
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
-        "Holder deg beskyttet ved å blokkere alle nettverkstilkoblinger når du uventet kobles fra VPN-tjeneren vår."
+        "Holder deg beskyttet ved å blokkere alle nettverkstilkoblinger når du uventet kobles fra VPN-serveren vår."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketter er enkle merker du kan legge til i meldinger for å gjøre dem enklere å finne eller bruke filtre på."
@@ -18235,7 +18235,7 @@
         "Vår robuste infrastruktur sikrer at du får tilgang til kontoen din når du trenger den"
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
-        "Harddiskene til tjenerne våre er fullstendig kryptert med flere passordlag, slik at dataene dine er beskyttet selv om maskinvaren vår er kompromittert."
+        "Harddiskene til serverne våre er fullstendig kryptert med flere passordlag, slik at dataene er beskyttet selv om maskinvaren vår blir kompromittert."
       ],
       "Password management and identity protection": [
         "Passordbehandling og identitetsbeskyttelse"
@@ -18253,7 +18253,7 @@
         "Beskytt alle enheter som er koblet til WiFi-nettverket. Det er også nyttig hvis du har enheter som ikke støtter VPN-innstillinger direkte."
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
-        "Beskytt familien din mot skadelige nettsteder og få tilgang til våre høyhastighets VPN-tjenere for å strømme favorittinnholdet ditt."
+        "Beskytt familien mot skadelige nettsteder og få tilgang til våre høyhastighets VPN-servere for å strømme favorittinnholdet ditt."
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
         "Beskytt den virkelige e-postadressen din mot å bli avslørt eller lekket med aliaser (en tilfeldig generert e-postadresse som videresender e-post til hovedinnboksen din)."
@@ -18385,7 +18385,7 @@
         "Dedikert kontobehandler"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
-        "Dedikerte tjenerplasseringer i ${ numberOfCountries }+ land"
+        "Dedikerte serverplasseringer i ${ numberOfCountries }+ land"
       ],
       "Multi-platform support": [
         "Støtte for mange plattformer"
@@ -18986,7 +18986,7 @@
         "Fast varighet"
       ],
       "Free server configs": [
-        "Gratis tjenerkonfigurasjon"
+        "Gratis serverkonfigurasjoner"
       ],
       "GNU/Linux": [
         "GNU/Linux"
@@ -19103,7 +19103,7 @@
         "Søppelpost"
       ],
       "Standard server configs": [
-        "Standard tjenerkonfigurasjon"
+        "Standard serverkonfigurasjon"
       ],
       "Star": [
         "Stjernemerk"
@@ -21685,7 +21685,7 @@
         "Se gjennom brukere og grupper før du fullfører oppsettet"
       ],
       "This approval prompt will **appear every time you update** groups through your identity provider": [
-        "Denne godkjenningsmeldingen vil **vises hver gang du oppdaterer** grupper gjennom identitetsleverandøren din"
+        "Denne godkjenningsmeldingen vil **vises hver gang du oppdaterer** grupper gjennom identitetsleverandøren"
       ],
       "Updated": [
         "Oppdatert"
@@ -21749,7 +21749,7 @@
         "Pass på at du kopierer SCIM-tokenet ovenfor nå."
       ],
       "Re-enabling syncing will duplicate existing groups. They can't be merged back into SCIM.": [
-        "Hvis du aktiverer synkronisering på nytt, dupliseres eksisterende grupper. De kan ikke slås sammen igjen med SCIM."
+        "Hvis du aktiverer synkronisering på nytt, dupliseres eksisterende grupper. De kan ikke slås sammen igjen til SCIM."
       ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Forenkler brukeradministrasjon på tvers av ulike tjenester. Legg til, rediger og fjern brukere i identitetsleverandøren, så brukes disse endringene automatisk på ${ appName }-organisasjonen."
@@ -24410,7 +24410,7 @@
         "Gjenopptar import"
       ],
       "Server copied to clipboard": [
-        "Tjener kopiert til utklippstavlen"
+        "Server kopiert til utklippstavlen"
       ],
       "Session revoked": [
         "Økt opphevet"
@@ -24620,7 +24620,7 @@
         "Estimert størrelse"
       ],
       "Migration status": [
-        "Migrasjonsstatus"
+        "Migreringsstatus"
       ],
       "Size": [
         "Størrelse"
@@ -24855,7 +24855,7 @@
         "3. Velg VPN alternativer"
       ],
       "4. Select a server to connect to": [
-        "4. Velg en tjener å koble til"
+        "4. Velg en server å koble til"
       ],
       "A filter name is required": [
         "Et filternavn kreves"
@@ -24955,7 +24955,7 @@
         "Legg til kreditter"
       ],
       "Add dedicated servers": [
-        "Legg til dedikerte tjenere"
+        "Legg til dedikerte servere"
       ],
       "Add domain": [
         "Legg til domene"
@@ -25572,13 +25572,13 @@
         "Rediger profil"
       ],
       "Edit servers": [
-        "Rediger tjenere"
+        "Rediger servere"
       ],
       "Edit Sieve filter": [
         "Rediger Sieve-filter"
       ],
       "Edit the list of servers of the gateway": [
-        "Rediger listen over tjenere for gatewayen"
+        "Rediger listen over servere for gatewayen"
       ],
       "Edit user": [
         "Rediger bruker"
@@ -25741,7 +25741,7 @@
         "Skaff deg ${ VPN_APP_NAME } på TV-en din"
       ],
       "Get ${ vpnPlus } to access all servers": [
-        "Skaff deg ${ vpnPlus } for å få tilgang til alle tjenere"
+        "Skaff deg ${ vpnPlus } for å få tilgang til alle serverne"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Få **${ referralInfo.uiData.refereeRewardAmount }** i kreditter med ${ planTitle }"
@@ -26225,7 +26225,7 @@
         "Fjern gjenopprettingstelefonnummer"
       ],
       "Remove server?": [
-        "Fjerne tjener?"
+        "Fjerne server?"
       ],
       "Remove single sign-on": [
         "Fjern enkel pålogging"
@@ -26291,7 +26291,7 @@
         "Planlegg sending:"
       ],
       "Search for additional servers": [
-        "Søk etter flere tjenere"
+        "Søk etter flere servere"
       ],
       "Secure your passwords. Everywhere.": [
         "Sikre passordene dine. Overalt."
@@ -26390,13 +26390,13 @@
         "Innstillinger"
       ],
       "Setup dedicated servers by upgrading to Business": [
-        "Sett opp dedikerte tjenere ved å oppgradere til Business"
+        "Sett opp dedikerte servere ved å oppgradere til Business"
       ],
       "Share your calendar with your team": [
         "Del kalenderen din med teamet ditt"
       ],
       "Shared servers": [
-        "Delte tjenere"
+        "Delte servere"
       ],
       "Short domain (@pm.me)": [
         "Kort domene (@pm.me)"
@@ -27078,7 +27078,7 @@
         "Opprinnelse IP-adresse og Internett-leverandør (ISP)"
       ],
       "Reauthenticate your ${ providerName } account to start a migration": [
-        "Autentiser ${ providerName }-kontoen din på nytt for å starte en migrering"
+        "Autentiser ${ providerName }-kontoen på nytt for å starte en migrering"
       ],
       "Remove metadata from images to protect your privacy.": [
         "Fjern metadata fra bilder for å beskytte personvernet ditt."
@@ -27108,7 +27108,7 @@
         "Angir den følgende bunnteksten i e-poster du sender ut: ${ signature } Koblingen peker til din vervekobling. Bunnteksten vises under signaturen din. Du kan tilpasse signaturen din når som helst i innstillinger."
       ],
       "Shared server policies can be applied to individual users or groups": [
-        "Retningslinjer for delte tjenere kan brukes på enkeltbrukere eller grupper"
+        "Retningslinjer for delte servere kan brukes på enkeltbrukere eller grupper"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Vis bildet av hver avsender i meldingslisten. Avsenderens initialer vises hvis et bilde ikke er tilgjengelig."
@@ -27192,7 +27192,7 @@
         "Brukerens omtrentlige plassering (basert på deres IP-adresse)"
       ],
       "Users who have accessed their ${ BRAND_NAME } account": [
-        "Brukere som har aktivert ${ BRAND_NAME }-kontoen sin"
+        "Brukere som har aktivert ${ BRAND_NAME }-kontoen"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Brukere vil se logoen din i stedet for ${ BRAND_NAME }-ikonet når de er logget på nettappene våre."
@@ -27204,7 +27204,7 @@
         "Bekreftet e-postadresse"
       ],
       "Verify your domain to start a migration": [
-        "Verifiser domenet ditt for å starte en migrering"
+        "Verifiser domenet for å starte en migrering"
       ],
       "Version 6 OpenPGP key": [
         "Versjon 6 OpenPGP-nøkkel"
@@ -28101,7 +28101,7 @@
         "Dessverre er vi ikke på nett for øyeblikket. Fyll ut skjemaet nedenfor for å beskrive problemet ditt, så ser vi nærmere på det og tar kontakt når vi er tilbake på nettet."
       ],
       "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
-        "Brukere som ikke har gjort krav på kontoen sin før overføringen er fullført, må be om en tilbakestilling av passordet fra administratoren for ${ BRAND_NAME }-organisasjonen."
+        "Brukere som ikke har gjort krav på kontoen før overføringen er fullført, må be om en tilbakestilling av passordet fra administratoren for ${ BRAND_NAME }-organisasjonen."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Vi kan ikke bekrefte e-postserveren. Hvis du klarérer den, kan du hoppe over denne verifiseringen."

@@ -515,6 +515,9 @@
       "Approve": [
         "Schváliť"
       ],
+      "Assign manager(s)": [
+        "Priradiť správcu(ov)"
+      ],
       "Attach screenshot(s)": [
         "Priložiť snímok(ky) obrazovky"
       ],
@@ -1361,6 +1364,9 @@
       "Invite user": [
         "Pozvať používateľa"
       ],
+      "Invoice options": [
+        "Nastavenia faktúr"
+      ],
       "Italic": [
         "Kurzíva"
       ],
@@ -2107,6 +2113,9 @@
       ],
       "Update": [
         "Aktualizovať"
+      ],
+      "Update email": [
+        "Aktualizovať email"
       ],
       "Update recovery file": [
         "Aktualizujte súbor na obnovenie"
@@ -6212,6 +6221,9 @@
       "QR code sign-in enabled": [
         "Prihlásenie pomocou QR kódu je povolené"
       ],
+      "Scan QR code on your mobile device to sign in.": [
+        "Pre prihlásenie naskenujte QR kód na svojom mobilnom zariadení."
+      ],
       "Scan the code to sign in": [
         "Naskenujte kód, aby ste sa mohli prihlásiť"
       ],
@@ -8685,8 +8697,8 @@
       "Pending invitation": [
         "Čakajúca pozvánka",
         "Čakajúce pozvánky",
-        "Čakajúce pozvánky",
-        "Čakajúce pozvánky"
+        "Čakajúcich pozvánok",
+        "Čakajúcich pozvánok"
       ],
       "Sorry, you can't switch plans at this time.": [
         "Ľutujeme, momentálne nemôžete zmeniť plány."
@@ -9813,6 +9825,9 @@
       "Contact us": [
         "Kontaktujte nás"
       ],
+      "Downloads": [
+        "Na stiahnutie"
+      ],
       "Enjoying ${ planName }?": [
         "Páči sa vám ${ planName }?"
       ],
@@ -10491,6 +10506,12 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } doživotná služba nemá cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }. Cena a dátum obnovenia vášho predplatného ${ planTitle } zostávajú nezmenené."
       ],
+      "${ pendingKeysMemberCount } new member added via your identity provider and pending review.": [
+        "Na schválenie čaká ${ pendingKeysMemberCount } nový člen pridaný prostredníctvom vášho poskytovateľa identít.",
+        "Na schválenie čakajú ${ pendingKeysMemberCount } noví členovia pridaní prostredníctvom vášho poskytovateľa identít.",
+        "Na schválenie čaká ${ pendingKeysMemberCount } nových členov pridaných prostredníctvom vášho poskytovateľa identít.",
+        "Na schválenie čaká ${ pendingKeysMemberCount } nových členov pridaných prostredníctvom vášho poskytovateľa identít."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje aspoň 1 dedikovaný server ${ serverPricePerMonth }"
       ],
@@ -10784,6 +10805,9 @@
       ],
       "add a recovery method": [
         "pridali spôsob obnovenia"
+      ],
+      "Add additional users to **${ company.name }** from your organization to manage this company.": [
+        "Pridajte do **${ company.name }** ďalších používateľov z vašej organizácie, ktorí budú spravovať túto spoločnosť."
       ],
       "Add an email address in case we need to contact you": [
         "Zadajte emailovú adresu pre prípad, že vás budeme potrebovať kontaktovať"
@@ -11639,6 +11663,12 @@
       ],
       "Email address": [
         "Emailová adresa"
+      ],
+      "Email address copied to clipboard": [
+        "Emailová adresa skopírovaná do schránky"
+      ],
+      "Email addresses copied to clipboard": [
+        "Emailové adresy skopírované do schránky"
       ],
       "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
         "Email a kalendár integrovaný s ${ CONTACTS_APP_NAME }"
@@ -13028,6 +13058,9 @@
       ],
       "SCIM token active": [
         "SCIM token aktívny"
+      ],
+      "Secure and end-to-end encrypted": [
+        "Bezpečné a end-to-end šifrované"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Zabezpečte svoj účet ${ BRAND_NAME }"
@@ -16074,6 +16107,9 @@
       "Import your emails": [
         "Importovanie vašich emailov"
       ],
+      "In progress": [
+        "Prebieha"
+      ],
       "Inbox": [
         "Doručené"
       ],
@@ -16172,6 +16208,9 @@
       ],
       "Mail Server (IMAP)": [
         "Emailový server (IMAP)"
+      ],
+      "Mailbox settings": [
+        "Nastavenia schránky"
       ],
       "Main": [
         "Hlavné"
@@ -20136,6 +20175,9 @@
       "Move to...": [
         "Presunúť do…"
       ],
+      "Mute notifications": [
+        "Stlmiť notifikácie"
+      ],
       "My reason isn't listed": [
         "Môj dôvod nie je na zozname"
       ],
@@ -20323,6 +20365,38 @@
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Váš plán zahŕňa maximálne ${ humanReadableAvailableSpace } ďalšieho úložného priestoru."
+      ]
+    },
+    "organization key reset": {
+      "Reset key": [
+        "Resetovať kľúč"
+      ],
+      "Reset organization key?": [
+        "Resetovať kľúč organizácie?"
+      ],
+      "Resetting organization key": [
+        "Resetovanie kľúča organizácie"
+      ],
+      "See ${ n } user": [
+        "Pozrieť ${ n } používateľa",
+        "Pozrieť ${ n } používateľov",
+        "Pozrieť ${ n } používateľov",
+        "Pozrieť ${ n } používateľov"
+      ],
+      "See users": [
+        "Pozrieť používateľov"
+      ],
+      "The organization key is reset": [
+        "Kľúč organizácie je resetovaný"
+      ],
+      "Try another way": [
+        "Skúsiť iný spôsob"
+      ],
+      "User (${ n })": [
+        "Používateľ (${ n })",
+        "Používatelia (${ n })",
+        "Používatelia (${ n })",
+        "Používatelia (${ n })"
       ]
     },
     "Organization logo upload": {
@@ -21300,6 +21374,9 @@
       ],
       "Ask anything…": [
         "Opýtajte sa na čokoľvek..."
+      ],
+      "billing@company.com": [
+        "faktury@vasa-firma.sk"
       ],
       "Choose a name": [
         "Zvoľte názov"
@@ -23064,9 +23141,6 @@
       ]
     },
     "Service provider": {
-      "Add to ${ CALENDAR_APP_NAME }": [
-        "Pridať do ${ CALENDAR_APP_NAME }"
-      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Umožňuje pridať videokonferenciu Zoom k akejkoľvek udalosti v kalendári"
       ]
@@ -26768,6 +26842,9 @@
       "Dashboard": [
         "Prehľad"
       ],
+      "Data collection": [
+        "Zber údajov"
+      ],
       "Data recovery": [
         "Obnovenie údajov"
       ],
@@ -27386,6 +27463,9 @@
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Spravujte súbory na rôznych zariadeniach so systémom Windows, Mac, Android a iOS."
       ],
+      "Manage managers": [
+        "Spravovať správcov"
+      ],
       "Messages": [
         "Správy"
       ],
@@ -27602,6 +27682,9 @@
       "Priority support:": [
         "Prioritná podpora:"
       ],
+      "Privacy": [
+        "Súkromie"
+      ],
       "Privacy and data collection": [
         "Ochrana a zber osobných údajov"
       ],
@@ -27802,6 +27885,9 @@
       ],
       "Set a display name": [
         "Nastavte zobrazované meno"
+      ],
+      "Set invoice email": [
+        "Nastaviť fakturačný email"
       ],
       "Set new password": [
         "Nastaviť nové heslo"
@@ -28114,6 +28200,9 @@
       ],
       "User converted to SSO": [
         "Používateľ prevedený na SSO"
+      ],
+      "User profile": [
+        "Používateľský profil"
       ],
       "Users": [
         "Používatelia"

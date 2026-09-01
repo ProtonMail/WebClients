@@ -181,6 +181,9 @@
       "Allow access": [
         "Autoriser l'accès"
       ],
+      "Allow live captions": [
+        "Autoriser les sous-titres en direct"
+      ],
       "Anyone with the link can join immediately": [
         "Toute personne disposant du lien peut rejoindre immédiatement le groupe"
       ],
@@ -722,6 +725,9 @@
       ]
     },
     "Alt": {
+      "Allow live captions": [
+        "Autoriser les sous-titres en direct"
+      ],
       "Audio settings": [
         "Paramètres audio"
       ],
@@ -1926,6 +1932,9 @@
       "Failed to lock meeting": [
         "La réunion n'a pas pu être verrouillée"
       ],
+      "Failed to request live captions": [
+        "La demande de sous-titrage en direct n'a pas abouti"
+      ],
       "Failed to rotate personal meeting link": [
         "Échec du renouvellement du lien de réunion personnelle"
       ],
@@ -1949,6 +1958,9 @@
       ],
       "Failed to unlock meeting": [
         "Échec du déverrouillage de la réunion"
+      ],
+      "Failed to update live captions availability": [
+        "La mise à jour de la disponibilité des sous-titres en direct n'a pas abouti"
       ],
       "Incorrect username": [
         "Le nom d'utilisateur n'est pas correct."
@@ -2478,6 +2490,9 @@
       "Host": [
         "Hôte"
       ],
+      "Host has disabled live captions for this meeting.": [
+        "L'hôte a désactivé le sous-titrage en direct pour cette réunion."
+      ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Hébergez votre propre réunion sécurisée. Lancez un appel dans ${ MEET_APP_NAME } et partagez le lien pour inviter n'importe qui à se joindre. Simple, sécurisé et gratuit."
       ],
@@ -2672,6 +2687,12 @@
       ],
       "Participant": [
         "Participant"
+      ],
+      "Participants can turn live captions on. Turn on your own under Display.": [
+        "Les participants peuvent activer le sous-titrage en direct. Vous pouvez l'activer vous-même dans les paramètres d'affichage."
+      ],
+      "Participants can’t use live captions": [
+        "Les participants ne peuvent pas utiliser le sous-titrage en direct"
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Insérez votre lien ${ MEET_APP_NAME } pour rejoindre une réunion sécurisée"

@@ -280,6 +280,9 @@
       "Edit vault": [
         "Tároló szerkesztése"
       ],
+      "Enable": [
+        "Engedélyezés"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Engedélyezi: ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -297,9 +300,6 @@
       ],
       "Fill password": [
         "Jelszó kitöltése"
-      ],
-      "Filter vault items": [
-        "Tároló elemeinek szűrése"
       ],
       "Generate alias": [
         "E-mail álnév létrehozása"
@@ -609,9 +609,6 @@
       ],
       "Sign out": [
         "Kijelentkezés"
-      ],
-      "Sort vault items": [
-        "Tároló elemeinek rendezése"
       ],
       "Start from scratch": [
         "Kezdjük az elejétől"
@@ -3781,9 +3778,6 @@
       "Download": [
         "Letöltés"
       ],
-      "Download \"${ filename }\"": [
-        "\"${ filename }\" letöltése"
-      ],
       "Download file": [
         "Fájl letöltése"
       ],
@@ -3855,9 +3849,6 @@
       ],
       "You can attach files to items for a better organization": [
         "A jobb szervezettség érdekében fájlokat csatolhat az elemekhez"
-      ],
-      "You may close this window after saving the file.": [
-        "A fájl mentése után bezárhatja ezt az ablakot."
       ]
     },
     "Placeholder": {
@@ -4132,9 +4123,6 @@
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } cím"
-      ],
-      "${ PASS_APP_NAME } Logs": [
-        "${ PASS_APP_NAME } naplók"
       ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } beállítások"

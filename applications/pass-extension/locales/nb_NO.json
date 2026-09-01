@@ -340,6 +340,9 @@
       "Edit vault": [
         "Rediger hvelv"
       ],
+      "Enable": [
+        "Aktiver"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Aktiver ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -357,9 +360,6 @@
       ],
       "Fill password": [
         "Fyll ut passord"
-      ],
-      "Filter vault items": [
-        "Filtrer hvelvelementer"
       ],
       "Generate alias": [
         "Generer alias"
@@ -455,7 +455,7 @@
         "Angi som standard"
       ],
       "Make editor": [
-        "Gjør til redaktør"
+        "Gi redigeringtillatelse"
       ],
       "Make manager": [
         "Gjør til administrator"
@@ -643,9 +643,6 @@
       "See members": [
         "Vis medlemmer"
       ],
-      "Select items": [
-        "Velg elementer"
-      ],
       "Send email": [
         "Send e-post"
       ],
@@ -690,9 +687,6 @@
       ],
       "Sign out": [
         "Logg av"
-      ],
-      "Sort vault items": [
-        "Sorter hvelvelementer"
       ],
       "Start from scratch": [
         "Start fra begynnelsen"
@@ -1343,7 +1337,7 @@
         "Sikker kobling kunne ikke åpnes."
       ],
       "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
-        "Tjenerne er utilgjengelige. Prøv å låse opp ${ PASS_SHORT_APP_NAME } om noen få minutter."
+        "Serverne er utilgjengelige. Prøv å låse opp ${ PASS_SHORT_APP_NAME } om noen få minutter."
       ],
       "Settings update failed": [
         "Oppdatering av innstillinger mislyktes"
@@ -1949,7 +1943,7 @@
         "Importer enkelt dine eksisterende passord til ${ PASS_APP_NAME }."
       ],
       "Editor": [
-        "Redaktør"
+        "Redigerer"
       ],
       "email": [
         "e-post"
@@ -1982,7 +1976,7 @@
         "Aktiver automatisk låsing for å sikre dataene dine"
       ],
       "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
-        "Aktiver frakoblet modus for å få tilgang til ${ PASS_SHORT_APP_NAME }-dataene dine hvis du mister internettilkoblingen eller hvis ${ BRAND_NAME }-tjenerne er utilgjengelige."
+        "Aktiver frakoblet modus for å få tilgang til ${ PASS_SHORT_APP_NAME }-dataene hvis du mister internettilkoblingen eller hvis ${ BRAND_NAME }-serverne er utilgjengelige."
       ],
       "Enabling biometrics auto-lock": [
         "Aktiverer biometrisk auto-lås"
@@ -2582,7 +2576,7 @@
         "Valgte elementer er gjenopprettet fra papirkurven"
       ],
       "Servers are unreachable": [
-        "Tjenerne er utilgjengelige"
+        "Serverne er utilgjengelige"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverne er utilgjengelige. Prøv på nytt om noen få minutter."
@@ -3646,7 +3640,7 @@
         "Gjør alle administratorer"
       ],
       "Make all editors": [
-        "Gjør alle redaktører"
+        "Gi alle redigeringstillatelse"
       ],
       "Make all managers": [
         "Gjør alle til administratorer"
@@ -3952,7 +3946,7 @@
         "Valgt"
       ],
       "Server": [
-        "Tjener"
+        "Server"
       ],
       "Settings": [
         "Innstillinger"
@@ -4336,9 +4330,6 @@
       "Download": [
         "Last ned"
       ],
-      "Download \"${ filename }\"": [
-        "Last ned \"${ filename }\""
-      ],
       "Download file": [
         "Last ned fil"
       ],
@@ -4416,9 +4407,6 @@
       ],
       "You can attach files to items for a better organization": [
         "Du kan legge ved filer til elementer for en bedre organisering"
-      ],
-      "You may close this window after saving the file.": [
-        "Du kan lukke dette vinduet etter at du har lagret filen."
       ]
     },
     "Permission": {
@@ -4735,9 +4723,6 @@
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME }-adresser"
-      ],
-      "${ PASS_APP_NAME } Logs": [
-        "${ PASS_APP_NAME }-logger"
       ],
       "${ PASS_APP_NAME } Settings": [
         "Innstillinger for ${ PASS_APP_NAME }"

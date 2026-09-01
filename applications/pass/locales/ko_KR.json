@@ -343,9 +343,6 @@
       "Fill password": [
         "비밀번호 채우기"
       ],
-      "Filter vault items": [
-        "금고 항목 필터링"
-      ],
       "Generate alias": [
         "별칭 생성"
       ],
@@ -628,9 +625,6 @@
       "See members": [
         "회원 보기"
       ],
-      "Select items": [
-        "항목 선택"
-      ],
       "Send email": [
         "이메일 전송"
       ],
@@ -678,9 +672,6 @@
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME }에서 사용자와 타인이 항목을 공유하고 있습니다."
-      ],
-      "Sort vault items": [
-        "금고 항목 정렬"
       ],
       "Start from scratch": [
         "처음부터 시작하기"
@@ -2103,7 +2094,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시키면 모든 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2653,6 +2644,9 @@
       ],
       "Verification code sent.": [
         "인증 코드가 전송되었습니다."
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "${ PASS_SHORT_APP_NAME } 항목을 오프라인 상태에서도 확인합니다. 활성화하려면 비밀번호가 필요합니다."
       ],
       "Viewer": [
         "보기"
@@ -4712,6 +4706,9 @@
       "Domain ownership verification": [
         "도메인 소유권 인증"
       ],
+      "Enable offline mode": [
+        "오프라인 모드 활성화"
+      ],
       "Encrypted import": [
         "암호화된 불러오기"
       ],
@@ -4963,9 +4960,6 @@
       ],
       "Settings": [
         "설정"
-      ],
-      "Setup offline mode": [
-        "오프라인 모드 설정"
       ],
       "Share vaults with your team": [
         "내 팀과 금고 공유"

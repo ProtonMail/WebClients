@@ -118,6 +118,9 @@
       "Bulk restore items from trash": [
         "Restaurer un groupe d'éléments depuis la corbeille"
       ],
+      "Bulk select items": [
+        "Sélectionner un groupe d'éléments"
+      ],
       "Cancel": [
         "Annuler"
       ],
@@ -340,6 +343,9 @@
       "Edit vault": [
         "Modifier le coffre-fort"
       ],
+      "Enable": [
+        "Activer"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Activez ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -357,9 +363,6 @@
       ],
       "Fill password": [
         "Remplir le mot de passe"
-      ],
-      "Filter vault items": [
-        "Filtrer les éléments du coffre-fort"
       ],
       "Generate alias": [
         "Générer un alias"
@@ -502,6 +505,9 @@
       "Move to Trash": [
         "Déplacer dans la corbeille"
       ],
+      "Multiple select": [
+        "Sélection multiple"
+      ],
       "New token": [
         "Nouveau jeton"
       ],
@@ -643,9 +649,6 @@
       "See members": [
         "Afficher les membres"
       ],
-      "Select items": [
-        "Sélectionner les éléments"
-      ],
       "Send email": [
         "Envoyer un message"
       ],
@@ -690,9 +693,6 @@
       ],
       "Sign out": [
         "Se déconnecter"
-      ],
-      "Sort vault items": [
-        "Trier les éléments du coffre-fort"
       ],
       "Start from scratch": [
         "Démarrer sans données existantes"
@@ -882,6 +882,9 @@
       ],
       "Check if your passwords have been exposed": [
         "Vérifiez si vos mots de passe ont été compromis"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Vérification de ${ compromised.progress.completed } sur ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Créez des mots de passe uniques"
@@ -1857,6 +1860,9 @@
       ],
       "Change your password": [
         "Modifier votre mot de passe"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Vérification de ${ compromised.progress.completed } mots de passe sur ${ compromised.progress.total }"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Choisir une clé d'accès enregistrée pour la connexion à ${ domain }"
@@ -2858,6 +2864,9 @@
       ],
       "Verification code sent.": [
         "Le code de vérification a été envoyé."
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Consultez vos éléments ${ PASS_SHORT_APP_NAME } hors ligne. Votre mot de passe est nécessaire pour l'activer."
       ],
       "Viewer": [
         "Lecteur"
@@ -4919,6 +4928,9 @@
       ],
       "Email": [
         "Adresse e-mail"
+      ],
+      "Enable offline mode": [
+        "Activer le mode hors ligne"
       ],
       "Encrypted import": [
         "Importation chiffrée"

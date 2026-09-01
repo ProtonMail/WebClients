@@ -1113,6 +1113,9 @@
       "Maybe later": [
         "稍後再考慮"
       ],
+      "Migrate": [
+        "遷移"
+      ],
       "More": [
         "瀏覽更多"
       ],
@@ -6672,6 +6675,9 @@
       "Cannot download a folder": [
         "無法下載個資料夾"
       ],
+      "Cannot verify the author of this file": [
+        "無法驗證此檔案的作者"
+      ],
       "Cannot verify who uploaded this file": [
         "無法驗證上傳此檔案的人"
       ],
@@ -6786,6 +6792,9 @@
       "Failed to decrypt bookmark key: ${ message }": [
         "解密書籤金鑰失敗: ${ message }"
       ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "解密書籤密碼失敗: ${ message }"
+      ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "無法取得使用中工作階段。請 ${ refresh } 或稍後再試。"
       ],
@@ -6821,6 +6830,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "您電視上的時間是否已到期？在您的電視上點擊重新整理並重試您的代碼。"
+      ],
+      "Image preview not found": [
+        "查無照片預覽"
       ],
       "IMAP server is required": [
         "IMAP 伺服器為必填"
@@ -6918,8 +6930,14 @@
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "請至少將 ${ calendarsToFixCount } 個行事曆與現存的 ${ BRAND_NAME } calendar 合併"
       ],
+      "Missing inviter email": [
+        "缺少邀請電子郵件"
+      ],
       "Missing key packet": [
         "缺少金鑰封包"
+      ],
+      "Missing organization private key": [
+        "缺少組織私有密鑰"
       ],
       "Missing organization public key": [
         "缺少組織公用密鑰"
@@ -7278,6 +7296,9 @@
       "This item has no image preview": [
         "此項目無可預覽的項目"
       ],
+      "This item is no longer shared": [
+        "此項目已停止共享"
+      ],
       "This item is not shared": [
         "此項目未被共享"
       ],
@@ -7367,6 +7388,9 @@
       ],
       "You already added this holidays calendar": [
         "您已新增此假期行事曆"
+      ],
+      "You can update a public link for your own files only": [
+        "您只能更新您的檔案公開連結"
       ],
       "You do not have access to this item": [
         "您沒有權限訪問此項目"
@@ -11309,6 +11333,9 @@
       "No single sign-on": [
         "無單一登入"
       ],
+      "No users to display": [
+        "無使用者可顯示"
+      ],
       "Not a valid URL": [
         "無效的網址"
       ],
@@ -12286,6 +12313,9 @@
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "若要遷移此使用者，他們需要接受邀請以加入 ${ BRAND_NAME }。"
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "若要遷移此使用者，於您的 ${ provider.adminConsoleName } 取消封存它們的帳號。"
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "為防止濫用或欺詐，我們會要求至少 ${ minimumDonation } 的捐贈。這將支援 ${ protonFoundationLink } 在全球捍衛數位隱私的工作，並有助於保護下一代。"
@@ -14174,6 +14204,9 @@
       ],
       "Days of the week": [
         "星期"
+      ],
+      "Deals, offers, and marketing emails": [
+        "優惠、促銷、行銷電子郵件"
       ],
       "Default email address": [
         "預設電子郵件地址"
@@ -16699,6 +16732,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫工具與擴充存取權"
       ],
       "${ n } calendar": [
         "${ n } 個行事曆"
@@ -19226,6 +19262,9 @@
       "You will soon be redirected to verify your payment.": [
         "將會被重新導向驗證您的付款。"
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "您的貨幣以變更至歐元 (€) 因為 ${ IDEAL_WERO_BRAND_NAME } 僅支援歐元付款。"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "您的貨幣已變更為歐元 (€)，因為 SEPA 銀行轉帳僅支援以歐元付款。"
       ],
@@ -19769,6 +19808,9 @@
       "content key": [
         "內容金鑰"
       ],
+      "hash key": [
+        "雜湊金鑰"
+      ],
       "key": [
         "金鑰"
       ]
@@ -19915,6 +19957,24 @@
       ],
       "SUMMER SALE": [
         "夏季特賣"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "2 TB of secure storage": [
+        "2TB 的安全儲存空間"
+      ],
+      "3 TB of secure storage": [
+        "3TB 的安全儲存空間"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "全部的頂級質子版 ${ DRIVE_SHORT_APP_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 和 ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "12 個月"
       ]
     },
     "Recovery Email": {

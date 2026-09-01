@@ -118,6 +118,9 @@
       "Bulk restore items from trash": [
         "Restaura un grup d'elements des de la paperera"
       ],
+      "Bulk select items": [
+        "Selecciona elements en massa"
+      ],
       "Cancel": [
         "Cancel·la"
       ],
@@ -340,6 +343,9 @@
       "Edit vault": [
         "Edita la caixa forta"
       ],
+      "Enable": [
+        "Activa"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Activeu ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -357,9 +363,6 @@
       ],
       "Fill password": [
         "Emplena la contrasenya"
-      ],
-      "Filter vault items": [
-        "Filtra els elements de la caixa forta"
       ],
       "Generate alias": [
         "Genera un àlies"
@@ -502,6 +505,9 @@
       "Move to Trash": [
         "Mou a la paperera"
       ],
+      "Multiple select": [
+        "Selecció múltiple"
+      ],
       "New token": [
         "Nou testimoni"
       ],
@@ -643,9 +649,6 @@
       "See members": [
         "Mostra els membres"
       ],
-      "Select items": [
-        "Seleccionar els elements"
-      ],
       "Send email": [
         "Envia un correu electrònic"
       ],
@@ -690,9 +693,6 @@
       ],
       "Sign out": [
         "Tanca la sessió"
-      ],
-      "Sort vault items": [
-        "Ordena els elements de la caixa forta"
       ],
       "Start from scratch": [
         "Comença des de zero"
@@ -2868,6 +2868,9 @@
       "Verification code sent.": [
         "Codi de verificació enviat."
       ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Visualitzeu els vostres elements de ${ PASS_SHORT_APP_NAME } sense connexió. Es requereix la vostra contrasenya per activar-ho."
+      ],
       "Viewer": [
         "Lector"
       ],
@@ -4358,7 +4361,7 @@
         "Descarrega"
       ],
       "Download \"${ filename }\"": [
-        "Descarrega «${ filename }»"
+        "Descarrega \"${ filename }\""
       ],
       "Download file": [
         "Descarrega el fitxer"
@@ -4439,7 +4442,7 @@
         "Podeu adjuntar fitxers als elements per a una millor organització."
       ],
       "You may close this window after saving the file.": [
-        "Podeu tancar aquesta finestra després de desar el fitxer."
+        "Podreu tancar aquesta finestra després de desar el fitxer."
       ]
     },
     "Permission": {
@@ -4928,6 +4931,9 @@
       ],
       "Email": [
         "Correu electrònic"
+      ],
+      "Enable offline mode": [
+        "Activa el mode fora de línia"
       ],
       "Encrypted import": [
         "Importació xifrada"

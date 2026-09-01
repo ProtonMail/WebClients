@@ -340,6 +340,9 @@
       "Edit vault": [
         "Editare seif"
       ],
+      "Enable": [
+        "Activare"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Activare ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -357,9 +360,6 @@
       ],
       "Fill password": [
         "Completare parolă"
-      ],
-      "Filter vault items": [
-        "Filtrare articole seif"
       ],
       "Generate alias": [
         "Generare alias"
@@ -643,9 +643,6 @@
       "See members": [
         "Afișare membri"
       ],
-      "Select items": [
-        "Selectare articole"
-      ],
       "Send email": [
         "Trimitere mesaj"
       ],
@@ -690,9 +687,6 @@
       ],
       "Sign out": [
         "Deconectare"
-      ],
-      "Sort vault items": [
-        "Sortare articole seif"
       ],
       "Start from scratch": [
         "De la început"
@@ -2899,6 +2893,9 @@
       "Verification code sent.": [
         "Codul de verificare a fost trimis."
       ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Vizualizare locală articole din ${ PASS_SHORT_APP_NAME }. Necesită parola pentru activare."
+      ],
       "Viewer": [
         "Utilizator"
       ],
@@ -4408,9 +4405,6 @@
       "Download": [
         "Descărcare"
       ],
-      "Download \"${ filename }\"": [
-        "Descărcare „${ filename }”"
-      ],
       "Download file": [
         "Descarcă fișier"
       ],
@@ -4488,9 +4482,6 @@
       ],
       "You can attach files to items for a better organization": [
         "Puteți atașa fișiere la articole pentru o organizare mai bună."
-      ],
-      "You may close this window after saving the file.": [
-        "Puteți închide această fereastră după salvarea fișierului."
       ]
     },
     "Permission": {
@@ -4810,9 +4801,6 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } adrese"
       ],
-      "${ PASS_APP_NAME } Logs": [
-        "Jurnale ${ PASS_APP_NAME }"
-      ],
       "${ PASS_APP_NAME } Settings": [
         "Setări ${ PASS_APP_NAME }"
       ],
@@ -4982,6 +4970,9 @@
       ],
       "Email": [
         "E-mail"
+      ],
+      "Enable offline mode": [
+        "Activare mod local"
       ],
       "Encrypted import": [
         "Importare criptată"

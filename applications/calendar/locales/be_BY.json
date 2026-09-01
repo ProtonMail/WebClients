@@ -945,7 +945,7 @@
         "Давяраць"
       ],
       "Try again": [
-        "Паспрабуйце яшчэ раз"
+        "Паўтарыце спробу"
       ],
       "Try another method": [
         "Паспрабуйце іншы спосаб"
@@ -3694,7 +3694,7 @@
         "Пры справаздачы аб парушэнні аўтарскіх правоў або крадзяжы даных вы павінны пакінуць паведамленне"
       ],
       "A problem occurred, please try again.": [
-        "Узнікла праблема. Паспрабуйце яшчэ раз."
+        "Узнікла праблема. Паўтарыце спробу."
       ],
       "Account does not exist": [
         "Уліковы запіс не існуе"
@@ -3781,7 +3781,7 @@
         "Немагчыма спраўдзіць хто запампаваў гэты файл"
       ],
       "Checkout expired, please try again": [
-        "Час завяршэння пакупкі пратэрмінаваны. Паспрабуйце яшчэ раз"
+        "Час завяршэння пакупкі пратэрмінаваны. Паўтарыце спробу."
       ],
       "Company name or personal name is required": [
         "Патрабуецца назва кампаніі або асабістае імя"
@@ -3865,10 +3865,10 @@
         "Прылада не знойдзена"
       ],
       "Domain not available, try again later": [
-        "Дамен недаступны. Паспрабуйце яшчэ раз"
+        "Дамен недаступны. Паўтарыце спробу пазней"
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
-        "У дадзены момант недаступна рэдагаванне адраса аплаты. Паспрабуйце яшчэ раз пазней."
+        "У дадзены момант недаступна рэдагаванне адраса аплаты. Паўтарыце спробу."
       ],
       "Email address disabled": [
         "Адрас электроннай пошты адключаны"
@@ -4363,7 +4363,7 @@
         "Нешта пайшло не так пры атрыманні даступных даменаў"
       ],
       "Something went wrong. Please try again.": [
-        "Нешта пайшло не так. Паспрабуйце яшчэ раз."
+        "Нешта пайшло не так. Паўтарыце спробу."
       ],
       "Start time must be before end time": [
         "Час пачатку павінен быць ранейшым за час завяршэння"
@@ -4378,7 +4378,7 @@
         "Магчыма, што адрас няправільны"
       ],
       "The amount due has changed. Please try again.": [
-        "Сума для аплаты змянілася. Паспрабуйце яшчэ раз."
+        "Сума для аплаты змянілася. Паўтарыце спробу."
       ],
       "The email addresses do not match": [
         "Адрасы электроннай пошты не супадаюць"
@@ -4721,7 +4721,7 @@
         "Адкрыць у браўзеры"
       ],
       "Please refresh the page or try again later.": [
-        "Абнавіце старонку або паспрабуйце яшчэ раз пазней."
+        "Абнавіце старонку або паўтарыце спробу пазней."
       ],
       "Something went wrong": [
         "Нешта пайшло не так"
@@ -4884,10 +4884,10 @@
     },
     "familyOffer_2023:Error": {
       "Family group not recognized. Try again.": [
-        "Сямейная група не распазнана. Паспрабуйце яшчэ раз."
+        "Сямейная група не распазнана. Паўтарыце спробу."
       ],
       "Organization not recognized. Try again.": [
-        "Арганізацыя не распазнана. Паспрабуйце яшчэ раз."
+        "Арганізацыя не распазнана. Паўтарыце спробу."
       ]
     },
     "familyOffer_2023:Family plan": {
@@ -5037,7 +5037,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Нешта пайшло не так з аўтэнтыфікацыяй ключа бяспекі. Паспрабуйце яшчэ раз."
+        "Нешта пайшло не так з аўтэнтыфікацыяй ключа бяспекі. Паўтарыце спробу."
       ]
     },
     "fido2: Info": {
@@ -5439,7 +5439,7 @@
         "У вашым уліковым запісе Yahoo уключаны IMAP."
       ],
       "Too many recent requests. Please try again in a few moments.": [
-        "Занадта шмат запытаў за апошні час. Паспрабуйце яшчэ раз пазней."
+        "Занадта шмат запытаў за апошні час. Паўтарыце спробу пазней."
       ],
       "Two-factor authentication is enabled in your external account.": [
         "Двухфактарная аўтэнтыфікацыя ўключана ў вашым знешнім уліковым запісе."
@@ -5661,6 +5661,9 @@
         "Знойдзена ${ groupCounts } групы",
         "Знойдзена ${ groupCounts } груп",
         "Знойдзена ${ groupCounts } груп"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "Пазначана ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME } Scribe"
@@ -6584,7 +6587,7 @@
         "Забяспечце назву і адрас электроннай пошты для стварэння групы."
       ],
       "Please remove the duplicates and try again.": [
-        "Выдаліце дублікаты і паспрабуйце яшчэ раз."
+        "Выдаліце дублікаты і паўтарыце спробу."
       ],
       "Please select the folders you would like to import:": [
         "Выберыце папкі для імпартавання:"
@@ -6605,7 +6608,7 @@
         "Паўтарыце спробу крыху пазней"
       ],
       "Please try again using a different payment method, or contact your bank.": [
-        "Паспрабуйце яшчэ раз, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі вашага банка."
+        "Паўтарыце спробу, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі кліентаў вашага банка."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Пачакайце, пакуль мы шукаем кантакты, якія можна паўторна падпісаць пры дапамозе асноўнага ключа шыфравання."
@@ -6686,10 +6689,10 @@
         "Выберыце, якія календары імпартаваць. Новыя календары будуць створаны для кожнага імпартаванага календара з улікам колькасці календароў, якія даступны на вашым тарыфным плане."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "У дадзены момант плацяжы SEPA недаступны. Паспрабуйце яшчэ раз пазней."
+        "У дадзены момант плацяжы SEPA недаступны. Паўтарыце спробу пазней."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
+        "Серверы недаступны. Паўтарыце спробу праз некалькі хвілін"
       ],
       "Session timed out": [
         "Сеанс завяршыўся"
@@ -6984,6 +6987,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Выкарыстоўваецца 3-D Secure для абароны вашых плацяжоў"
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на ${ IDEAL_WERO_BRAND_NAME }. Пераканайцеся, што ў вас адключаны праграмы блакіроўкі ўсплывальных вокнаў для працягу."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
@@ -9764,6 +9770,16 @@
         "Падтрымка для ${ n } карыстальніцкіх даменаў электроннай пошты"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Паспрабуйце цяпер"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Цяпер у вас ёсць доступ да новага ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Note": {
       "Note:": [
         "Нататка:"
@@ -10476,6 +10492,9 @@
       "More plans are available in other currencies": [
         "Больш тарыфных планаў даступна з іншымі валютамі"
       ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Заплаціць з дапамогай ${ IDEAL_WERO_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Спосаб аплаты патрабуецца для актывацыі падпіскі пасля завяршэння пробнага перыяду."
       ],
@@ -10569,6 +10588,9 @@
       "You will soon be redirected to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны для спраўджання вашага плацяжу."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Ваша валюта была зменена на еўра (€), бо ${ IDEAL_WERO_BRAND_NAME } падтрымлівае толькі плацяжы ў еўра."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
       ],
@@ -10580,6 +10602,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Не ўдалося ініцыялізаваць ${ IDEAL_WERO_BRAND_NAME }. Паўтарыце спробу пазней."
+      ],
       "Invalid card number": [
         "Памылковы нумар карткі"
       ],
@@ -10593,10 +10618,10 @@
         "Увядзіце імя ўладальніка ўліковага запісу"
       ],
       "Something went wrong. Please try again later.": [
-        "Нешта пайшло не так. Паспрабуйце яшчэ раз пазней."
+        "Нешта пайшло не так. Паўтарыце спробу пазней."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
-        "Мы не можам аўтэнтыфікаваць ваш спосаб аплаты. Выберыце іншы спосаб аплаты або паспрабуйце яшчэ раз."
+        "Мы не можам аўтэнтыфікаваць ваш спосаб аплаты. Выберыце іншы спосаб аплаты або паўтарыце спробу."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Ваша картка адхілена. Паспрабуйце іншую картку або звяжыцеся з вашым банкам для аўтарызацыі плацяжу."
@@ -12798,7 +12823,7 @@
         "Няма даступных браніраванняў."
       ],
       "Please check the link and try again.": [
-        "Праверце спасылку і паспрабуйце яшчэ раз."
+        "Праверце спасылку і паўтарыце спробу."
       ],
       "Please try again later.": [
         "Паўтарыце спробу пазней."
@@ -13414,7 +13439,7 @@
         "Паведаміць аб праблеме"
       ],
       "Request new code": [
-        "Запытаць новы код"
+        "Запытайце новы код"
       ],
       "Reshare your calendars": [
         "Паўторна абагуліць свае календары"
@@ -13774,7 +13799,7 @@
         "Калі вы купілі падарункавы код або атрымалі яго ад нашай каманды падтрымкі, то яго можна ўвесці тут."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Імгненная дапамога ШІ, эксперт-чалавек заўсёды напагатове!"
+        "Імгненная дапамога ШІ, спецыяліст заўсёды на сувязі!"
       ],
       "Load image": [
         "Загрузіць відарыс"

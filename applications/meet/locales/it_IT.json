@@ -25,6 +25,9 @@
       ]
     },
     "Accessibility announcement": {
+      "${ BRAND_NAME } background applied": [
+        "Sfondo ${ BRAND_NAME } applicato"
+      ],
       "${ name } joined the meeting": [
         "${ name } si è unito alla riunione"
       ],
@@ -61,17 +64,38 @@
       "A participant reacted with ${ emoji }": [
         "Un partecipante ha reagito con ${ emoji }"
       ],
+      "Abstract background applied": [
+        "Sfondo astratto applicato"
+      ],
+      "Background effect turned off": [
+        "Effetto sfondo disattivato"
+      ],
+      "Beach background applied": [
+        "Sfondo spiaggia applicato"
+      ],
+      "Blurred background applied": [
+        "Sfondo sfocato applicato"
+      ],
+      "Coffee place background applied": [
+        "Sfondo caffetteria applicato"
+      ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Connessione tramite modalità relay TURN a causa di restrizioni di rete. Ciò potrebbe aumentare la latenza e influire sulla qualità della chiamata."
       ],
       "Connection lost. Reconnecting…": [
         "Connessione persa. Riconnessione in corso…"
       ],
+      "Mountain background applied": [
+        "Sfondo montagna applicato"
+      ],
       "New chat message: ${ message }": [
         "Nuovo messaggio di chat: ${ message }"
       ],
       "Now starting recording": [
         "Avvio della registrazione in corso"
+      ],
+      "Office background applied": [
+        "Sfondo ufficio applicato"
       ],
       "Reconnected to the meeting": [
         "Ti sei riconnesso alla riunione"
@@ -157,6 +181,9 @@
       "Allow access": [
         "Consenti l'accesso"
       ],
+      "Allow live captions": [
+        "Consenti i sottotitoli in tempo reale."
+      ],
       "Anyone with the link can join immediately": [
         "Chiunque abbia il link può unirsi immediatamente"
       ],
@@ -180,6 +207,12 @@
       ],
       "Back": [
         "Indietro"
+      ],
+      "Backgrounds and effects": [
+        "Sfondi ed effetti"
+      ],
+      "Blur background": [
+        "Sfocatura sfondo"
       ],
       "Cancel": [
         "Annulla"
@@ -310,6 +343,9 @@
       "Enable camera": [
         "Abilita la telecamera"
       ],
+      "Enable captions": [
+        "Abilita didascalie"
+      ],
       "Enable waiting room": [
         "Attiva sala d'attesa"
       ],
@@ -349,6 +385,9 @@
       "Hide timezones": [
         "Nascondi fusi orari"
       ],
+      "Incoming video": [
+        "Videochiamata in arrivo"
+      ],
       "Insert emoji": [
         "Inserisci emoji"
       ],
@@ -373,11 +412,17 @@
       "Leave meeting": [
         "Lascia la riunione"
       ],
+      "Live captions": [
+        "Sottotitoli in tempo reale"
+      ],
       "Lock meeting": [
         "Blocca riunione"
       ],
       "Lower hand": [
         "Abbassa la mano"
+      ],
+      "Meeting timer": [
+        "Timer della riunione"
       ],
       "Minimize preview": [
         "Riduci a icona anteprima"
@@ -397,6 +442,9 @@
       "Next page": [
         "Pagina successiva"
       ],
+      "No effect": [
+        "Nessun effetto"
+      ],
       "Noise cancellation": [
         "Eliminazione del rumore"
       ],
@@ -414,6 +462,9 @@
       ],
       "Pause": [
         "Metti in pausa"
+      ],
+      "Picture-in-picture while sharing": [
+        "Picture-in-picture durante la condivisione"
       ],
       "Previous month": [
         "Mese precedente"
@@ -506,6 +557,9 @@
       ],
       "Search countries": [
         "Cerca tra i paesi"
+      ],
+      "Self view": [
+        "Vista personale"
       ],
       "Send an encrypted message": [
         "Invia un messaggio cifrato"
@@ -648,6 +702,9 @@
       "View invoice": [
         "Visualizza fattura"
       ],
+      "Virtual backgrounds": [
+        "Sfondi virtuali"
+      ],
       "Waiting room": [
         "Sala d'attesa"
       ],
@@ -659,8 +716,14 @@
       ]
     },
     "Alt": {
+      "Allow live captions": [
+        "Consenti i sottotitoli in tempo reale."
+      ],
       "Audio settings": [
         "Impostazioni audio"
+      ],
+      "Backgrounds": [
+        "Sfondi"
       ],
       "Blur background": [
         "Sfocatura dello sfondo"
@@ -680,14 +743,26 @@
       "Copy meeting link": [
         "Copia il link della riunione"
       ],
+      "Debug devices": [
+        "Dispositivi per il debug"
+      ],
       "Debug overlay": [
         "Overlay debug"
+      ],
+      "Device Debugger": [
+        "Debugger del dispositivo"
       ],
       "Go to dashboard": [
         "Vai alla dashboard"
       ],
+      "Incoming video": [
+        "Videochiamata in arrivo"
+      ],
       "Leave Meeting": [
         "Lascia la riunione"
+      ],
+      "Live captions": [
+        "Sottotitoli in tempo reale"
       ],
       "Lock meeting": [
         "Blocca riunione"
@@ -697,6 +772,9 @@
       ],
       "Meeting details": [
         "Dettagli della riunione"
+      ],
+      "Meeting timer": [
+        "Timer della riunione"
       ],
       "More options": [
         "Altre opzioni"
@@ -716,6 +794,9 @@
       "Participants": [
         "Partecipanti"
       ],
+      "Picture-in-picture while sharing": [
+        "Modalità Picture-in-picture durante la condivisione"
+      ],
       "Raise hand": [
         "Alza la mano"
       ],
@@ -727,6 +808,9 @@
       ],
       "Screen share": [
         "Condivisione schermo"
+      ],
+      "Self view": [
+        "Vista personale"
       ],
       "Settings": [
         "Impostazioni"
@@ -771,6 +855,12 @@
       "Audio settings": [
         "Impostazioni audio"
       ],
+      "Backgrounds": [
+        "Sfondi"
+      ],
+      "Blur and personal": [
+        "Sfocatura e personali"
+      ],
       "Chat": [
         "Chat"
       ],
@@ -800,6 +890,9 @@
       ],
       "Video settings": [
         "Impostazioni video"
+      ],
+      "Virtual backgrounds": [
+        "Sfondo virtuale"
       ]
     },
     "Badge": {
@@ -1827,6 +1920,9 @@
       "Failed to lock meeting": [
         "Impossibile bloccare la riunione"
       ],
+      "Failed to request live captions": [
+        "Impossibile richiedere i sottotitoli in tempo reale."
+      ],
       "Failed to rotate personal meeting link": [
         "Impossibile reimpostare il link della riunione personale"
       ],
@@ -1851,6 +1947,15 @@
       "Failed to unlock meeting": [
         "Impossibile sbloccare la riunione"
       ],
+      "Failed to update caption language. Please try again.": [
+        "Impossibile aggiornare la lingua dei sottotitoli. Riprova."
+      ],
+      "Failed to update live captions availability": [
+        "Impossibile aggiornare la disponibilità dei sottotitoli in tempo reale."
+      ],
+      "Failed to update live captions. Please try again.": [
+        "Impossibile aggiornare i sottotitoli in tempo reale. Riprova."
+      ],
       "Incorrect username": [
         "Username non corretto"
       ],
@@ -1859,6 +1964,15 @@
       ],
       "Invalid verification code": [
         "Codice di verifica non valido"
+      ],
+      "Live captions aren't working. Try turning them off and on again.": [
+        "I sottotitoli in tempo reale non funzionano. Prova a disattivarli e riattivarli."
+      ],
+      "Live captions couldn't be started.": [
+        "Impossibile avviare i sottotitoli in tempo reale."
+      ],
+      "Live captions have stopped.": [
+        "I sottotitoli in tempo reale si sono interrotti."
       ],
       "Not a valid number": [
         "Numero non valido"
@@ -1916,6 +2030,9 @@
       ],
       "Username must end with a letter or digit": [
         "Il nome utente deve terminare con una lettera o un numero/"
+      ],
+      "Virtual background initialization failed. Please toggle your camera or pick a background again": [
+        "Inizializzazione dello sfondo virtuale non riuscita. Prova a riattivare la fotocamera o a selezionare di nuovo uno sfondo."
       ],
       "We couldn’t send a verification code using this method.": [
         "Non è stato possibile inviare un codice di verifica con questo metodo."
@@ -2159,11 +2276,23 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ogni numero di telefono può essere utilizzato per verificare un unico account ${ BRAND_NAME }"
       ],
+      "Admit": [
+        "Autorizza accesso"
+      ],
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Modalità avanzata: sintonizza ogni costante di sfocatura per la prossima versione, quindi fai clic su Applica per ricostruire l'anteprima. Le sostituzioni hanno la precedenza sui valori del file e di Unleash."
       ],
+      "Allow camera access to preview your background": [
+        "Consenti l'accesso alla fotocamera per l'anteprima dello sfondo"
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anonimo ${ particle } ${ participantNumber }"
+      ],
+      "Anyone with the link can join immediately": [
+        "Chiunque abbia il link può accedere immediatamente"
+      ],
+      "Approve participants before they can join": [
+        "Approvazione dei partecipanti prima dell'accesso"
       ],
       "Are you sure you want to leave?": [
         "Sei sicuro di voler uscire?"
@@ -2174,8 +2303,14 @@
       "Attention required": [
         "Attenzione"
       ],
+      "Available with a paid plan": [
+        "Disponibile con un piano a pagamento"
+      ],
       "Background blur initializing": [
         "Inizializzazione della sfocatura dello sfondo"
+      ],
+      "Background effects are not supported on your browser": [
+        "Gli effetti per lo sfondo non sono supportati dal tuo browser"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
@@ -2189,8 +2324,14 @@
       "camera": [
         "webcam"
       ],
+      "Camera effects": [
+        "Effetti fotocamera"
+      ],
       "Camera permission denied": [
         "Autorizzazione alla fotocamera negata"
+      ],
+      "Captions are on": [
+        "Sottotitoli attivati"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "Le modifiche sono preparate. Applica per ricostruire l'anteprima con le nuove costanti."
@@ -2345,6 +2486,9 @@
       "Host": [
         "Host"
       ],
+      "Host has disabled live captions for this meeting.": [
+        "Condividi questo feedback con il team di Apertus per aiutarli a migliorare il loro modello."
+      ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Organizza la tua riunione sicura. Avvia una chiamata in ${ MEET_APP_NAME } e condividi il link per invitare chiunque a unirsi. Semplice, sicuro e gratuito."
       ],
@@ -2353,6 +2497,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se non trovi l'email nella casella di posta, controlla la cartella spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Se hai perso l'accesso alla tua app di autenticazione, puoi usare 1 dei 16 codici di recupero forniti durante la configurazione dell'autenticazione a due fattori. ${ learnMoreLink }"
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Se stai usando Firefox, assicurati che PeerConnection sia attivato."
@@ -2425,6 +2572,9 @@
       ],
       "Meeting is decrypting...": [
         "La riunione sta venendo decriptata..."
+      ],
+      "Meeting is full": [
+        "La riunione è al completo"
       ],
       "Meeting link": [
         "Collegamento alla riunione"
@@ -2534,6 +2684,12 @@
       "Participant": [
         "Partecipante"
       ],
+      "Participants can turn live captions on. Turn on your own under Display.": [
+        "I partecipanti possono attivare i sottotitoli in tempo reale. Attiva i tuoi nelle impostazioni Schermo."
+      ],
+      "Participants can’t use live captions": [
+        "I partecipanti non possono utilizzare i sottotitoli in tempo reale."
+      ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Incolla il tuo link di ${ MEET_APP_NAME } per unirti a una riunione sicura"
       ],
@@ -2554,6 +2710,9 @@
       ],
       "Presenting": [
         "Sta presentando"
+      ],
+      "Preview unavailable": [
+        "Anteprima non disponibile"
       ],
       "privacy": [
         "privacy"
@@ -2702,6 +2861,9 @@
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Per creare una stanza, ti serve **un account ${ BRAND_NAME } gratuito** in modo da poterla salvare. Richiede solo pochi secondi."
       ],
+      "To create live captions, the captioning service needs access to the meeting audio. Captions are only visible to you and are not saved.": [
+        "Per creare i sottotitoli in tempo reale, il servizio necessita dell'accesso all'audio della riunione. I sottotitoli sono visibili solo a te e non vengono salvati."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Completa la verifica umana. Questa è necessaria per contrastare spam e abusi."
       ],
@@ -2722,6 +2884,9 @@
       ],
       "Turn on camera": [
         "Attiva la webcam"
+      ],
+      "Turn on live captions?": [
+        "Attivare i sottotitoli in tempo reale?"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Impossibile riconnettersi alla riunione. Unisciti di nuovo o esci."
@@ -2746,6 +2911,9 @@
       ],
       "View ": [
         "Mostra "
+      ],
+      "Virtual background initializing": [
+        "Inizializzazione dello sfondo virtuale in corso"
       ],
       "Warning": [
         "Spazio esaurito"
@@ -2833,12 +3001,21 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } background": [
+        "${ BRAND_NAME } sfondo"
+      ],
       "${ BRAND_NAME } username": [
         "Nome utente ${ BRAND_NAME }"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caratteri"
       ],
       "${ numberOfStars } star": [
         "${ numberOfStars } stella",
         "${ numberOfStars } stelle"
+      ],
+      "Abstract background": [
+        "Sfondo astratto"
       ],
       "Add optional details": [
         "Aggiungi ulteriori dettagli"
@@ -2848,6 +3025,9 @@
       ],
       "Advanced mode": [
         "Modalità avanzata"
+      ],
+      "Agent": [
+        "Agente"
       ],
       "Anyone with the link can join": [
         "Chiunque abbia il link può unirsi"
@@ -2861,8 +3041,14 @@
       "Authenticator app": [
         "App di autenticazione"
       ],
+      "Auto-detect": [
+        "Auto-rilevamento"
+      ],
       "Background color": [
         "Colore dello sfondo"
+      ],
+      "Beach background": [
+        "Sfondo spiaggia"
       ],
       "Blurred (next)": [
         "Sfocato (successivo)"
@@ -2887,6 +3073,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Codice a 6 cifre senza spazi"
+      ],
+      "Coffee place background": [
+        "Sfondo caffetteria"
       ],
       "Connection Quality": [
         "Qualità della Connessione"
@@ -2975,6 +3164,9 @@
       "Leave meeting options": [
         "Opzioni per lasciare la riunione"
       ],
+      "Live caption agent": [
+        "Agente per i sottotitoli in tempo reale"
+      ],
       "Manage recordings": [
         "Gestisci registrazioni"
       ],
@@ -2993,6 +3185,9 @@
       "Monday to Friday": [
         "Da lunedì a venerdì"
       ],
+      "Mountain background": [
+        "Sfondo montagna"
+      ],
       "Muted": [
         "Muto"
       ],
@@ -3001,6 +3196,9 @@
       ],
       "Next": [
         "Successivo"
+      ],
+      "Office background": [
+        "Sfondo ufficio"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -3061,6 +3259,9 @@
       ],
       "Solid color": [
         "Tinta unita"
+      ],
+      "Spoken language": [
+        "Lingua parlata"
       ],
       "Subscribed": [
         "Iscritto"
@@ -3278,6 +3479,9 @@
       ]
     },
     "Role": {
+      "Organization Admin": [
+        "Organizzazione Amministratore"
+      ],
       "Security Admin": [
         "Amministratore sicurezza"
       ],
@@ -3373,8 +3577,16 @@
       "No": [
         "No"
       ],
+      "Transcribing...": [
+        "Trascrizione..."
+      ],
       "Yes": [
         "Si"
+      ]
+    },
+    "Subtitle": {
+      "This system agent creates live captions. It is not a participant and cannot send messages.": [
+        "Questo agente di sistema crea sottotitoli in tempo reale. Non è un partecipante e non può inviare messaggi."
       ]
     },
     "Success": {
@@ -3445,8 +3657,17 @@
       "Available Speakers": [
         "Altoparlanti disponibili"
       ],
+      "Background": [
+        "Sfondo"
+      ],
       "Background blur comparison": [
         "Confronto sfocatura dello sfondo"
+      ],
+      "Backgrounds": [
+        "Sfondi"
+      ],
+      "Blur and personal": [
+        "Sfocatura e personali"
       ],
       "Camera and microphone are blocked": [
         "Fotocamera e microfono sono bloccati"
@@ -3478,6 +3699,9 @@
       "Delete recording?": [
         "Eliminare la registrazione?"
       ],
+      "Display": [
+        "Schermo"
+      ],
       "Enter your password": [
         "Inserisci la tua password"
       ],
@@ -3495,6 +3719,9 @@
       ],
       "Help center": [
         "Centro assistenza"
+      ],
+      "Host settings": [
+        "Impostazioni dell'organizzatore"
       ],
       "Human verification": [
         "Verifica umana"
@@ -3563,6 +3790,9 @@
       "Participants (${ filteredParticipants.length })": [
         "Partecipanti (${ filteredParticipants.length })"
       ],
+      "People": [
+        "Persone"
+      ],
       "Personal meeting room": [
         "Riunione personale"
       ],
@@ -3617,6 +3847,9 @@
       "Stop recording": [
         "Interrompi registrazione"
       ],
+      "System": [
+        "Sistema"
+      ],
       "Talk confidentially": [
         "Parla in confidenza"
       ],
@@ -3631,6 +3864,12 @@
       ],
       "Two-factor authentication": [
         "Autenticazione a due fattori"
+      ],
+      "Video and audio": [
+        "Video e Audio"
+      ],
+      "Virtual backgrounds": [
+        "Sfondo virtuale"
       ],
       "Waiting room": [
         "Sala d'attesa"
@@ -3654,6 +3893,9 @@
       "Background blur is not supported on your browser": [
         "La sfocatura dello sfondo non è supportata dal tuo browser"
       ],
+      "Background effects are not supported on your browser": [
+        "Gli effetti sullo sfondo non sono supportati dal tuo browser"
+      ],
       "Generate a new meeting link. The current link will stop working.": [
         "Genera un nuovo link per la riunione. Il link attuale smetterà di funzionare."
       ],
@@ -3662,6 +3904,9 @@
       ],
       "Recurring meeting": [
         "Riunione ricorrente"
+      ],
+      "Stop sharing your screen to change this setting": [
+        "Interrompi la condivisione dello schermo per modificare questa impostazione"
       ],
       "You can generate a new meeting link once per day.": [
         "Puoi generare un nuovo link per la riunione una volta al giorno."

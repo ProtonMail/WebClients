@@ -812,6 +812,9 @@
       "Pay ${ price } now": [
         "立即支付 ${ price }"
       ],
+      "Preview logs": [
+        "预览日志"
+      ],
       "Previous": [
         "上一页"
       ],
@@ -8343,6 +8346,9 @@
       "Loading...": [
         "加载中..."
       ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "日志有助于我们了解问题发生前的情况。其中包括应用操作和错误消息，但不包含消息内容。"
+      ],
       "Low Priority": [
         "较低优先顺序"
       ],
@@ -10078,6 +10084,9 @@
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "共 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } 字符"
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } 地址"
@@ -14885,6 +14894,9 @@
       ]
     },
     "Role": {
+      "Organization Admin": [
+        "组织管理员"
+      ],
       "Security Admin": [
         "安全管理员"
       ],

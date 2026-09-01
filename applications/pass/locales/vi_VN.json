@@ -337,9 +337,6 @@
       "Fill password": [
         "Điền mật khẩu"
       ],
-      "Filter vault items": [
-        "Phân loại mục kho"
-      ],
       "Generate alias": [
         "Tạo biệt danh"
       ],
@@ -666,9 +663,6 @@
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Có người đã chia sẻ một mục với bạn trên ${ PASS_APP_NAME }."
-      ],
-      "Sort vault items": [
-        "Phân loại mục kho"
       ],
       "Start from scratch": [
         "Bắt đầu lại từ đầu"
@@ -2061,7 +2055,7 @@
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Di chuyển một mục sang kho khác sẽ xóa các liên kết bảo mật của mục đó."
+        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
       ],
       "Moving items": [
         "Đang chuyển mục"
@@ -4906,9 +4900,6 @@
       ],
       "Settings": [
         "Cài đặt"
-      ],
-      "Setup offline mode": [
-        "Thiết lập chế độ ngoại tuyến"
       ],
       "Share vaults with your team": [
         "Chia sẻ kho với nhóm"
