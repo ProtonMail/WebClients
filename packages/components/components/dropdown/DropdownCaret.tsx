@@ -1,17 +1,21 @@
-import type { IconName, IconSize } from '@proton/icons/types';
-import clsx from '@proton/utils/clsx';
+import type { ReactElement } from 'react';
 
-import Icon from '../icon/Icon';
+import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     className?: string;
     isOpen?: boolean;
-    size?: IconSize;
-    iconName?: IconName;
+    icon?: ReactElement;
     caretAlt?: string;
 }
-const DropdownCaret = ({ className, isOpen, size = 4, iconName = 'chevron-down-filled', caretAlt }: Props) => {
-    return <Icon className={clsx([isOpen && 'rotateX-180', className])} size={size} name={iconName} alt={caretAlt} />;
+const DropdownCaret = ({ className, isOpen, icon = <IcChevronDownFilled />, caretAlt }: Props) => {
+    return (
+        <span className={clsx(['flex', isOpen && 'rotateX-180', className])}>
+            {icon}
+            {caretAlt ? <span className="sr-only">{caretAlt}</span> : null}
+        </span>
+    );
 };
 
 export default DropdownCaret;

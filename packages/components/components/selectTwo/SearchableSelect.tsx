@@ -55,7 +55,7 @@ const SearchableSelect = <V extends any>({
     originalPlacement,
     availablePlacements,
     dropdownClassName,
-    caretIconName,
+    caretIcon,
     caretClassName,
     anchorRef: maybeAnchorRef,
     prefixIcon,
@@ -168,7 +168,7 @@ const SearchableSelect = <V extends any>({
                 onClick={handleAnchorClick}
                 aria-label={ariaLabel}
                 ref={anchorRef}
-                caretIconName={caretIconName}
+                caretIcon={caretIcon}
                 caretClassName={caretClassName}
                 prefixIcon={prefixIcon}
                 {...rest}

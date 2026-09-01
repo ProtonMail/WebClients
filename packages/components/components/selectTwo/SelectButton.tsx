@@ -1,8 +1,7 @@
-import type { ComponentPropsWithRef, KeyboardEvent, ReactNode } from 'react';
+import type { ComponentPropsWithRef, KeyboardEvent, ReactElement, ReactNode } from 'react';
 import { forwardRef } from 'react';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import DropdownCaret from '../dropdown/DropdownCaret';
@@ -15,7 +14,7 @@ interface SelectButtonProps extends Omit<ComponentPropsWithRef<'button'>, 'value
     isOpen?: boolean;
     onOpen?: () => void;
     noCaret?: boolean;
-    caretIconName?: IconName;
+    caretIcon?: ReactElement;
     caretClassName?: string;
     fullWidth?: boolean;
     prefixIcon?: ReactNode;
@@ -32,7 +31,7 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
             onOpen,
             children,
             noCaret,
-            caretIconName,
+            caretIcon,
             caretClassName,
             fullWidth = true,
             prefixIcon,
@@ -82,7 +81,7 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
                     ) : noCaret ? null : (
                         <DropdownCaret
                             className={clsx('shrink-0 ml-1', caretClassName)}
-                            iconName={caretIconName}
+                            icon={caretIcon}
                             isOpen={isOpen}
                         />
                     )
