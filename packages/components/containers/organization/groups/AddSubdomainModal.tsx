@@ -7,6 +7,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { useLoading } from '@proton/hooks';
+import { IcAt } from '@proton/icons/icons/IcAt';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -70,7 +71,7 @@ const AddSubdomainModal = ({ prefilledDomainName, open, setSelectedDomain, onClo
             <ModalTwoContent>
                 <div className="mb-4">{c('Info')
                     .jt`A ${protonSubdomain} is hosted by ${BRAND_NAME}, which allows you to quickly set up a subdomain. ${learnMoreLink}`}</div>
-                <InputFieldStacked icon="at">
+                <InputFieldStacked icon={<IcAt />}>
                     <InputFieldTwo
                         id="domain-name"
                         autoFocus

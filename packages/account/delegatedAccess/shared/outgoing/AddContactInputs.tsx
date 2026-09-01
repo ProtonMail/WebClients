@@ -6,6 +6,8 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import type useFormErrors from '@proton/components/components/v2/useFormErrors';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { IcUser } from '@proton/icons/icons/IcUser';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import ContactEmailInput from './ContactEmailInput';
@@ -37,7 +39,7 @@ export const AddContactInputs = ({
                     <InputFieldStacked
                         key={input.id}
                         isGroupElement
-                        icon="user"
+                        icon={<IcUser />}
                         suffix={
                             type === 'emergencyContacts' ? (
                                 <InputFieldTwo
@@ -87,7 +89,7 @@ export const AddContactInputs = ({
             })}
 
             {hasMore && (
-                <InputFieldStacked isGroupElement icon="plus">
+                <InputFieldStacked isGroupElement icon={<IcPlus />}>
                     <button
                         className="text-left w-full outline-none--at-all"
                         type="button"
