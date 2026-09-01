@@ -27,7 +27,9 @@ import { SECOND } from '@proton/shared/lib/constants';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
-const SNAPSHOT_INTERVAL_MS = SECOND;
+import { supportsAudioContextSinkId, supportsElementSinkId, supportsSetSinkId } from '../../utils/browser';
+
+const SNAPSHOT_INTERVAL_MS = SECOND / 2;
 
 const MIN_COLUMN_SIZE = 'min(30rem, 100%)';
 
@@ -392,6 +394,10 @@ export const DeviceStateReport = () => {
                         <Field name="audioContext.sinkId" value={snapshot.audioContextSinkId} />
                         <Field name="cameraPermissions" value={snapshot.cameraPermissions} />
                         <Field name="microphonePermissions" value={snapshot.microphonePermissions} />
+
+                        <Field name="supportsSetSinkId" value={String(supportsSetSinkId())} />
+                        <Field name="setSinkId (element)" value={String(supportsElementSinkId())} />
+                        <Field name="setSinkId (context)" value={String(supportsAudioContextSinkId())} />
                     </section>
                 )}
 
