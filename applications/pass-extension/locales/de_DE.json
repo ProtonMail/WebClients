@@ -118,6 +118,9 @@
       "Bulk restore items from trash": [
         "Mehrfacheinträge vom Papierkorb wiederherstellen"
       ],
+      "Bulk select items": [
+        "Mehrfachauswahl von Einträgen"
+      ],
       "Cancel": [
         "Abbrechen"
       ],
@@ -340,6 +343,9 @@
       "Edit vault": [
         "Tresor bearbeiten"
       ],
+      "Enable": [
+        "Aktivieren"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } aktivieren"
       ],
@@ -357,9 +363,6 @@
       ],
       "Fill password": [
         "Passwort ausfüllen"
-      ],
-      "Filter vault items": [
-        "Tresoreinträge filtern"
       ],
       "Generate alias": [
         "Alias generieren"
@@ -502,6 +505,9 @@
       "Move to Trash": [
         "In Papierkorb verschieben"
       ],
+      "Multiple select": [
+        "Mehrfachauswahl"
+      ],
       "New token": [
         "Neues Token"
       ],
@@ -643,9 +649,6 @@
       "See members": [
         "Mitglieder anzeigen"
       ],
-      "Select items": [
-        "Einträge auswählen"
-      ],
       "Send email": [
         "E-Mail senden"
       ],
@@ -690,9 +693,6 @@
       ],
       "Sign out": [
         "Abmelden"
-      ],
-      "Sort vault items": [
-        "Tresoreinträge sortieren"
       ],
       "Start from scratch": [
         "Ganz von vorne anfangen"
@@ -2868,6 +2868,9 @@
       "Verification code sent.": [
         "Bestätigungscode gesendet."
       ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Deine ${ PASS_SHORT_APP_NAME }-Einträge offline anzeigen. Zur Aktivierung ist dein Passwort erforderlich."
+      ],
       "Viewer": [
         "Betrachter"
       ],
@@ -4758,7 +4761,7 @@
         "${ BRAND_NAME } Adressen"
       ],
       "${ PASS_APP_NAME } Logs": [
-        "${ PASS_APP_NAME } Logs"
+        "${ PASS_APP_NAME } Protokolle"
       ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME }-Einstellungen"
@@ -4928,6 +4931,9 @@
       ],
       "Email": [
         "E-Mail-Adresse"
+      ],
+      "Enable offline mode": [
+        "Offline-Modus aktivieren"
       ],
       "Encrypted import": [
         "Verschlüsselter Import"

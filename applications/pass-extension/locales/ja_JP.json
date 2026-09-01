@@ -331,6 +331,9 @@
       "Edit vault": [
         "保管庫を編集"
       ],
+      "Enable": [
+        "有効化する"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } を有効にする"
       ],
@@ -348,9 +351,6 @@
       ],
       "Fill password": [
         "パスワードを入力"
-      ],
-      "Filter vault items": [
-        "保管庫のアイテムを絞り込む"
       ],
       "Generate alias": [
         "エイリアスを生成"
@@ -675,9 +675,6 @@
       ],
       "Sign out": [
         "サインアウト"
-      ],
-      "Sort vault items": [
-        "保管庫のアイテムを並び替え"
       ],
       "Start from scratch": [
         "ゼロから始める"
@@ -4258,9 +4255,6 @@
       "Download": [
         "ダウンロード"
       ],
-      "Download \"${ filename }\"": [
-        "「${ filename }」をダウンロード"
-      ],
       "Download file": [
         "ファイルをダウンロード"
       ],
@@ -4338,9 +4332,6 @@
       ],
       "You can attach files to items for a better organization": [
         "アイテムにファイルを添付して整理できます"
-      ],
-      "You may close this window after saving the file.": [
-        "ファイルを保存した後、このウィンドウを閉じることができます。"
       ]
     },
     "Permission": {
@@ -4655,9 +4646,6 @@
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } アドレス"
-      ],
-      "${ PASS_APP_NAME } Logs": [
-        "${ PASS_APP_NAME } のログ"
       ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } の設定"
