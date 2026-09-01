@@ -1,6 +1,6 @@
 import type { Key, ReactNode } from 'react';
 
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 
 export type NotificationType = 'error' | 'warning' | 'info' | 'success';
 
@@ -16,7 +16,7 @@ export interface Notification {
     type: NotificationType;
     isClosing: boolean;
     showCloseButton?: boolean;
-    icon?: IconName;
+    icon?: IconComponent;
     deduplicate?: boolean;
     duplicate: { old: Notification | undefined; state: 'init' | 'removed'; key: number };
     dataTestId?: string;

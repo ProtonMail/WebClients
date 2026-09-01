@@ -2,10 +2,9 @@ import type { AnimationEvent, MouseEvent, ReactNode, Ref } from 'react';
 import { cloneElement, forwardRef, isValidElement } from 'react';
 
 import type { CustomNotificationProps, NotificationType } from '@proton/app-context/notifications/interfaces';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 import clsx from '@proton/utils/clsx';
 
-import Icon from '../../components/icon/Icon';
 import { NotificationCloseButton } from './NotificationButton';
 import NotificationContext from './notificationContext';
 
@@ -38,7 +37,7 @@ interface Props {
     onClose?: () => void;
     onEnter: () => void;
     showCloseButton?: boolean;
-    icon?: IconName;
+    icon?: IconComponent;
     top: number | undefined;
     dataTestId?: string;
 }
@@ -55,7 +54,7 @@ const NotificationBase = (
         onClose,
         onExit,
         onEnter,
-        icon,
+        icon: Icon,
         dataTestId,
     }: Props,
     ref: Ref<HTMLDivElement>
@@ -79,7 +78,7 @@ const NotificationBase = (
                 CLASSES.NOTIFICATION_IN,
                 TYPES_CLASS[type] || TYPES_CLASS.success,
                 isClosing && (isDuplicate ? CLASSES.NOTIFICATION_OUT_DUPLICATE : CLASSES.NOTIFICATION_OUT),
-                icon && 'notification--has-icon',
+                !!Icon && 'notification--has-icon',
                 onClose && 'notification--has-close-button',
             ])}
             onClick={onClick}
@@ -90,7 +89,7 @@ const NotificationBase = (
             data-testid={dataTestId ? `notification:${dataTestId}` : undefined}
         >
             <NotificationContext.Provider value={{ type }}>
-                {icon && <Icon name={icon} className="notification__icon" />}
+                {Icon && <Icon className="notification__icon" />}
                 <span className="notification__content">
                     {isValidElement<CustomNotificationProps>(children) ? cloneElement(children, { onClose }) : children}
                 </span>
