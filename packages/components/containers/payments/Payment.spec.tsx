@@ -1,5 +1,9 @@
 import { render, screen, waitFor } from '@testing-library/react';
 
+import { IcBrandPaypal } from '@proton/icons/icons/IcBrandPaypal';
+import { IcBrandVisa } from '@proton/icons/icons/IcBrandVisa';
+import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
+import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { SavedPaymentMethod } from '@proton/payments/core/interface';
 import { applyHOCs } from '@proton/testing/lib/context/hocs/helpers';
@@ -97,7 +101,7 @@ beforeEach(() => {
     options = {
         usedMethods: [
             {
-                icon: 'brand-visa',
+                icon: IcBrandVisa,
                 text: 'Visa ending in 4242',
                 // some plausible value
                 value: 'methodid1',
@@ -105,14 +109,14 @@ beforeEach(() => {
                 // custom: true,
             },
             {
-                icon: 'brand-paypal',
+                icon: IcBrandPaypal,
                 text: 'PayPal - someId',
                 value: 'methodid2',
                 // disabled: false,
                 // custom: true,
             },
             {
-                icon: 'brand-visa',
+                icon: IcBrandVisa,
                 text: 'Visa ending in 3220',
                 value: 'methodid3',
                 // disabled: false,
@@ -121,12 +125,12 @@ beforeEach(() => {
         ] as ViewPaymentMethod[],
         methods: [
             {
-                icon: 'credit-card',
+                icon: IcCreditCard,
                 value: 'card',
                 text: 'New credit/debit card',
             },
             {
-                icon: 'money-bills',
+                icon: IcMoneyBills,
                 text: 'Cash',
                 value: 'cash',
             },

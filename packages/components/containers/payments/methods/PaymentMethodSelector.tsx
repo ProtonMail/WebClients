@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { AvailablePaymentMethod, PaymentMethodType } from '@proton/payments/core/interface';
 import { IDEAL_WERO_BRAND_NAME } from '@proton/shared/lib/constants';
@@ -15,7 +15,6 @@ import clsx from '@proton/utils/clsx';
 
 import type { DropdownSize } from '../../../components/dropdown/utils';
 import { DropdownSizeUnit } from '../../../components/dropdown/utils';
-import Icon from '../../../components/icon/Icon';
 import Radio from '../../../components/input/Radio';
 import Option from '../../../components/option/Option';
 import SelectTwo from '../../../components/selectTwo/SelectTwo';
@@ -33,11 +32,11 @@ interface Props {
 }
 
 const PaymentMethodIcon = ({
-    icon,
+    icon: Icon,
     className,
     type,
 }: {
-    icon?: IconName;
+    icon?: IconComponent;
     className?: string;
     type: PaymentMethodType;
 }) => {
@@ -65,11 +64,11 @@ const PaymentMethodIcon = ({
         );
     }
 
-    if (!icon) {
+    if (!Icon) {
         return null;
     }
 
-    return <Icon className={className} name={icon} />;
+    return <Icon className={className} />;
 };
 
 const PaymentMethodSelector = ({
