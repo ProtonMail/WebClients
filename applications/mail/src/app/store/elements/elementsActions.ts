@@ -14,7 +14,6 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import unique from '@proton/utils/unique';
 
 import { isElementMessage } from '../../helpers/elements';
-
 import type { Element } from '../../models/element';
 import type { ConversationParams, ConversationResult } from '../conversations/conversationsTypes';
 import type { MailState, MailThunkExtra } from '../store';
@@ -251,7 +250,7 @@ export const moveAll = createAsyncThunk<
                 DestinationLabelID,
             })
         );
-    } catch {
+    } catch (error) {
         // Once the action is done, we can remove the pending action, and since we know what are the task running,
         // there should be no elements loaded in the location for the time a task is running
         dispatch(backendActionFinished());
@@ -262,10 +261,7 @@ export const moveAll = createAsyncThunk<
             text: c('Error').t`Something went wrong. Please try again.`,
         });
 
-        return {
-            LabelID: undefined,
-            timeoutID: undefined,
-        };
+        throw error;
     }
 
     // Once the action is done, we can remove the pending action, and since we know what are the task running,
@@ -316,7 +312,7 @@ export const markAll = createAsyncThunk<
                 },
             })
         );
-    } catch {
+    } catch (error) {
         // Once the action is done, we can remove the pending action, and since we know what are the task running,
         // there should be no elements loaded in the location for the time a task is running
         dispatch(backendActionFinished());
@@ -327,10 +323,7 @@ export const markAll = createAsyncThunk<
             text: c('Error').t`Something went wrong. Please try again.`,
         });
 
-        return {
-            LabelID: undefined,
-            timeoutID: undefined,
-        };
+        throw error;
     }
 
     // Once the action is done, we can remove the pending action, and since we know what are the task running,
@@ -374,7 +367,7 @@ export const labelAll = createAsyncThunk<
                 RemoveLabelIDs: toUnlabel,
             })
         );
-    } catch {
+    } catch (error) {
         // Once the action is done, we can remove the pending action, and since we know what are the task running,
         // there should be no elements loaded in the location for the time a task is running
         dispatch(backendActionFinished());
@@ -385,10 +378,7 @@ export const labelAll = createAsyncThunk<
             text: c('Error').t`Something went wrong. Please try again.`,
         });
 
-        return {
-            LabelID: undefined,
-            timeoutID: undefined,
-        };
+        throw error;
     }
 
     // Once the action is done, we can remove the pending action, and since we know what are the task running,
