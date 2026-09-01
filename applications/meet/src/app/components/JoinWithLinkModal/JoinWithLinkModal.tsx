@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
-import { parseMeetingLink } from '@proton/meet/utils/parseMeetingLink';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
+import { parseMeetingLink } from '@proton/shared/lib/meet/parseMeetingLink';
 import linkIcon from '@proton/styles/assets/img/meet/link.png';
 import clsx from '@proton/utils/clsx';
 
