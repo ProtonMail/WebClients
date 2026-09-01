@@ -32,6 +32,12 @@ describe('buildSystemPrompt', () => {
         expect(prompt).toContain('referenced by references');
     });
 
+    // Wiring, not prose: the prompt must name the same tag `createUntrustedFence` wraps read payloads in.
+    it('names the tag the engine fences reads with', () => {
+        const prompt = buildSystemPrompt({ definitions: DEFINITIONS, loadedGuides: [] });
+        expect(prompt).toContain('untrusted-data-');
+    });
+
     it('injects the product rules block verbatim, after the base', () => {
         const productRules = '## Proton Mail rules\nNever permanently delete mail.';
         const prompt = buildSystemPrompt({ definitions: DEFINITIONS, loadedGuides: [], productRules });

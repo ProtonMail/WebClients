@@ -4,6 +4,7 @@ import type {
     ClientToolResult,
     PendingClientToolCall,
 } from '@proton/lumo-api-client';
+import getRandomString, { DEFAULT_LOWERCASE_CHARSET } from '@proton/utils/getRandomString';
 
 import { ToolInputError, UnknownReferenceError } from '../contracts/errors';
 import type {
@@ -28,6 +29,23 @@ import { validateToolArgs } from './validate';
 
 /** A reference-shaped token, e.g. `email-a1b2c3` — `<kind>-<6 base36>`. */
 const REFERENCE_PATTERN = /^[a-z]+-[0-9a-z]{6}$/;
+
+/**
+ * Marks a read payload as content to report on, not instructions to obey. The per-executor nonce keeps the
+ * delimiter unguessable, and stripping to a fixed point keeps it unspoofable: one pass would splice the two
+ * halves of a bisected closing tag back into a working one.
+ */
+const createUntrustedFence = () => {
+    const tag = `untrusted-data-${getRandomString(8, DEFAULT_LOWERCASE_CHARSET)}`;
+    const strip = (payload: string) => {
+        let stripped = payload;
+        while (stripped.includes(tag)) {
+            stripped = stripped.replaceAll(tag, '');
+        }
+        return stripped;
+    };
+    return (payload: string) => `<${tag}>\n${strip(payload)}\n</${tag}>`;
+};
 
 export type ConfirmDecision = { action: 'apply'; params: Record<string, any> } | { action: 'cancel' };
 
@@ -145,6 +163,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
         loadGuideToolName = LOAD_GUIDE_TOOL_NAME,
     } = config;
 
+    const fenceUntrusted = createUntrustedFence();
     const byName = new Map<ToolName, ToolDefinition>(definitions.map((definition) => [definition.name, definition]));
     // Widens as `load_guide` runs; getClientTools() re-reads it each round so a just-unlocked tool is
     // advertised on the next turn.
@@ -280,7 +299,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
         }
 
         const read = await runHandler(definition, args, options);
-        return read.ok ? okResult(read.payload) : read.error;
+        return read.ok ? okResult(fenceUntrusted(read.payload)) : read.error;
     };
 
     return {

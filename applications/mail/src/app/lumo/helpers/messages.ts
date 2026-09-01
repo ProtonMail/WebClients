@@ -6,14 +6,13 @@ import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { hasLabel, isElementMessage } from '../../helpers/elements';
 import { convertCustomViewLabelsToAlmostAllMail } from '../../helpers/labels';
 import { setParamsInLocation } from '../../helpers/mailboxUrl';
-import { getPlainText } from '../../helpers/message/messageContent';
 import { findMessageToExpand } from '../../helpers/message/messageExpandable';
 import type { Element } from '../../models/element';
 import { selectParams } from '../../store/elements/elementsSelectors';
-
 import type { MailToolDeps, ToolStore } from '../toolModule';
 import { formatSender, formatUnixDate } from './formatting';
 import { waitForStoreState, withTimeout } from './storeWait';
+import { toVisibleText } from './visibleText';
 
 /** Caps one awaited step: a decrypt, or the conversation fetch. */
 const STEP_TIMEOUT = 15_000;
@@ -131,7 +130,7 @@ export const openInReadingPane = (deps: MessageDeps, element: Element) => {
 export const toMessageBody = (message: MessageState): MessageBody => ({
     from: formatSender([message.data?.Sender]),
     date: formatUnixDate(message.data?.Time),
-    body: getPlainText(message, true) || '',
+    body: toVisibleText(message),
 });
 
 export const toDecryptedMessage = (message: MessageState): DecryptedMessage => ({
