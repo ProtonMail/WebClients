@@ -1,7 +1,7 @@
 import type React from 'react'
 import { forwardRef, memo, useEffect, useId, useLayoutEffect, useMemo } from 'react'
 import * as Ariakit from '@ariakit/react'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import { c } from 'ttag'
 import { useEvent } from '../utils'
 import {
@@ -24,7 +24,7 @@ export function SidebarDialogHeader({ title }: SidebarDialogHeaderProps) {
   const { sidebarDialog, titleId } = useSidebarDialogContext()
 
   return (
-    <div className="flex shrink-0 items-center justify-between gap-2 border-b-[0.5px] border-[#EAE7E4] px-4 pb-2 pt-6">
+    <div className="border-weak flex shrink-0 items-center justify-between gap-2 border-b-[0.5px] px-4 pb-2 pt-6">
       <h1 id={titleId} className="text-lg font-bold">
         {title}
       </h1>

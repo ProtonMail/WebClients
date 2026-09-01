@@ -64,6 +64,7 @@ import {
   useIsSheetsEditorEnabled,
   useSharingModalDriveSdkEnabled,
   useIsOpenTracerEnabled,
+  useIsDarkThemeEnabled,
 } from '~/utils/flags'
 import { useFlagsStatus } from '@proton/unleash/proxy'
 import { APPS, SHEETS_APP_NAME } from '@proton/shared/lib/constants'
@@ -81,6 +82,7 @@ import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
 import { getLogsAsJSON } from '~/utils/downloadLogs'
 import { useSheetsDebugArtifacts } from './useSheetsDebugArtifacts'
 import { useDocsUrlBar } from '~/utils/docs-url-bar'
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider'
 
 export function useSuggestionsFeatureFlag() {
   const isDisabled = useFlag('DocsSuggestionsDisabled')
@@ -137,6 +139,15 @@ export function DocumentViewer({
   const isSheetsEditorEnabled = useIsSheetsEditorEnabled()
   const sdkEventsEnabled = useDocsDocumentViewerEventsSDK()
   const isOpenTracerEnabled = useIsOpenTracerEnabled()
+  const isDarkThemeEnabled = useIsDarkThemeEnabled()
+  const { information: themeInformation } = useTheme()
+  const isDarkMode = isDarkThemeEnabled && themeInformation.dark
+
+  useEffect(() => {
+    if (bridge) {
+      void bridge.editorInvoker.setDarkMode(isDarkMode)
+    }
+  }, [bridge, isDarkMode])
 
   const isPrivateNode = isPrivateNodeMeta(nodeMeta)
   const nodeUid = isPrivateNode ? generateNodeUid(nodeMeta.volumeId, nodeMeta.linkId) : null
@@ -816,6 +827,7 @@ export function DocumentViewer({
             systemMode={isPublicViewer ? EditorSystemMode.PublicView : EditorSystemMode.Edit}
             logger={application.logger}
             documentType={tmpConvertNewDocTypeToOld(openAction.type)}
+            isDarkMode={isDarkMode}
           />
           {isOpenTracerEnabled && <TracerAlert documentType={tmpConvertNewDocTypeToOld(openAction.type)} />}
         </>

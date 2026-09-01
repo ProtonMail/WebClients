@@ -1,5 +1,5 @@
 import * as Ariakit from '@ariakit/react'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import { type ComponentProps, useMemo } from 'react'
 import { c } from 'ttag'
 import { createComponent } from '../utils'
@@ -18,7 +18,7 @@ const FormGroup = createComponent(function (props: ComponentProps<'div'>) {
     <div
       {...props}
       className={clsx(
-        'flex min-w-0 flex-col items-start gap-3 border-b border-[#D1CFCD] py-3 last:border-0',
+        'border-weak flex min-w-0 flex-col items-start gap-3 border-b py-3 last:border-0',
         props.className,
       )}
     />
@@ -26,7 +26,7 @@ const FormGroup = createComponent(function (props: ComponentProps<'div'>) {
 })
 
 const SelectGroup = createComponent(function (props: Ariakit.SelectGroupProps) {
-  return <Ariakit.SelectGroup {...props} className={clsx('border-b border-[#D1CFCD] last:border-0', props.className)} />
+  return <Ariakit.SelectGroup {...props} className={clsx('border-weak border-b last:border-0', props.className)} />
 })
 
 const FormLabel = createComponent(function (props: Ariakit.RoleProps<'label'>) {
@@ -34,7 +34,7 @@ const FormLabel = createComponent(function (props: Ariakit.RoleProps<'label'>) {
 })
 
 const FormDescription = createComponent(function (props: ComponentProps<'p'>) {
-  return <p {...props} className={clsx('text-sm text-[#8F8D8A]', props.className)} />
+  return <p {...props} className={clsx('text-sm text-[--text-hint]', props.className)} />
 })
 
 export const Select = createComponent(function ({ children, ...props }: Ariakit.SelectProps) {
@@ -42,7 +42,7 @@ export const Select = createComponent(function ({ children, ...props }: Ariakit.
     <Ariakit.Select
       {...props}
       className={clsx(
-        'flex h-[36px] min-w-0 items-center gap-2 rounded-lg border border-[#EAE7E4] pl-3 text-left text-sm !outline-none',
+        'border-weak flex h-[36px] min-w-0 items-center gap-2 rounded-lg border pl-3 text-left text-sm !outline-none',
         'transition focus-visible:border-[#6D4AFF] focus-visible:ring-[3px] focus-visible:ring-[#6D4AFF33]',
         props.className,
       )}
@@ -60,7 +60,7 @@ export const SelectItem = createComponent(function SelectItem(props: Ariakit.Sel
     <Ariakit.SelectItem
       {...props}
       className={clsx(
-        'flex h-[36px] cursor-pointer items-center gap-2 px-4 text-sm text-[#281D1B] !outline-none data-[active-item]:bg-[black]/5',
+        'flex h-[36px] cursor-pointer items-center gap-2 px-4 text-sm text-[--text-norm] !outline-none data-[active-item]:bg-[--interaction-weak-minor-2]',
         props.className,
       )}
     />
@@ -91,9 +91,9 @@ export function SpreadsheetSettingsDialog() {
         modal={false}
         unmountOnHide
         className={clsx(
-          'fixed inset-4 z-10 m-auto h-fit w-full max-w-[32rem] bg-[white]',
+          'bg-norm fixed inset-4 z-10 m-auto h-fit w-full max-w-[32rem]',
           'rounded-xl p-6',
-          'border border-[#D1CFCD] shadow-[0px_8px_24px_0px_rgba(0,0,0,0.16)] outline-none',
+          'border-weak border shadow-[0px_8px_24px_0px_rgba(0,0,0,0.16)] outline-none',
         )}
       >
         <div className="flex flex-col gap-3">

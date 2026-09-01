@@ -12,7 +12,7 @@ export const DropdownPopover = forwardRef<HTMLDivElement, Ariakit.RoleProps>(fun
       ref={ref}
       {...props}
       className={clsx(
-        'border-weak z-10 max-h-[--popover-available-height] max-w-[--popover-available-width] overflow-auto overscroll-contain rounded-[.5rem] border bg-[white] py-2 shadow-[0px_8px_24px_0px_rgba(0,0,0,0.16)] focus:outline-none',
+        'border-weak bg-norm z-10 max-h-[--popover-available-height] max-w-[--popover-available-width] overflow-auto overscroll-contain rounded-[.5rem] border py-2 shadow-[0px_8px_24px_0px_rgba(0,0,0,0.16)] focus:outline-none',
         props.className,
       )}
     />
@@ -85,7 +85,7 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(functi
   leadingIconSlot =
     leadingIconSlot ??
     (selectedIndicator ? (
-      <Icon legacyName={DROPDOWN_ITEM_SELECTED_INDICATOR_ICON} className="text-[#0C0C14]" />
+      <Icon legacyName={DROPDOWN_ITEM_SELECTED_INDICATOR_ICON} className="text-[--text-norm]" />
     ) : undefined) ??
     (leadingIndent ? <span className="w-4" /> : undefined)
 
@@ -99,14 +99,16 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(functi
       ref={ref}
       {...props}
       className={clsx(
-        'flex h-9 select-none items-center gap-2 truncate text-[.875rem] text-[#0C0C14]',
-        'disabled:text-[#8F8D8A] aria-disabled:text-[#8F8D8A]',
+        'flex h-9 select-none items-center gap-2 truncate text-[.875rem] text-[--text-norm]',
+        'disabled:text-[--text-hint] aria-disabled:text-[--text-hint]',
         padding && 'px-4',
         // TODO: "hocus" type tw variant
-        'hover:bg-[#C2C1C0]/20 focus:outline-none focus-visible:bg-[#C2C1C0]/20 data-[active-item]:bg-[#C2C1C0]/20 data-[focus-visible]:bg-[#C2C1C0]/20',
-        'aria-expanded:bg-[#C2C1C0]/20',
+        'hover:bg-[--interaction-weak-minor-2] focus:outline-none focus-visible:bg-[--interaction-weak-minor-2] data-[active-item]:bg-[--interaction-weak-minor-2] data-[focus-visible]:bg-[--interaction-weak-minor-2]',
+        'aria-expanded:bg-[--interaction-weak-minor-2]',
+        '[[data-theme-mode=dark]_&]:hover:!bg-[--interaction-weak-minor-1] [[data-theme-mode=dark]_&]:focus-visible:!bg-[--interaction-weak-minor-1] [[data-theme-mode=dark]_&]:aria-expanded:!bg-[--interaction-weak-minor-1] [[data-theme-mode=dark]_&]:data-[active-item]:!bg-[--interaction-weak-minor-1] [[data-theme-mode=dark]_&]:data-[focus-visible]:!bg-[--interaction-weak-minor-1]',
         // TODO: see hack for specificity, otherwise active styles are overridden by data-[focus-visible] :(
-        'active:active:bg-[#C2C0BE]/35 data-[active]:bg-[#C2C0BE]/35',
+        'active:active:bg-[--interaction-weak-minor-1] data-[active]:bg-[--interaction-weak-minor-1]',
+        '[[data-theme-mode=dark]_&]:active:!bg-[--interaction-weak] [[data-theme-mode=dark]_&]:data-[active]:!bg-[--interaction-weak]',
         props.className,
       )}
     >
@@ -115,7 +117,7 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(functi
         {hintSlot ? (
           <span className="flex grow items-center justify-between gap-4">
             <span className="grow truncate">{props.children}</span>
-            <span className="flex shrink-0 items-center truncate text-[#8F8D8A]">{hintSlot}</span>
+            <span className="flex shrink-0 items-center truncate text-[--text-hint]">{hintSlot}</span>
           </span>
         ) : (
           props.children
