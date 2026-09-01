@@ -3001,6 +3001,9 @@
       "Authentication error.": [
         "Errore di autenticazione."
       ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Poiché questo documento si trovava in una cartella condivisa, solo il proprietario della cartella può ripristinarlo."
+      ],
       "Calendar limit reached": [
         "Limite calendario raggiunto"
       ],
@@ -4860,6 +4863,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se non trovi l'email nella casella di posta, controlla la cartella spam."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Se hai perso l'accesso alla tua app di autenticazione, puoi usare 1 dei 16 codici di recupero forniti durante la configurazione dell'autenticazione a due fattori. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se procedi con il downgrade, perderai l'accesso alle funzionalità a pagamento di ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
       ],
@@ -5353,6 +5359,9 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Questo codice univoco può essere utilizzato dai siti Web e dagli ISP (fornitori di servizi Internet) per collegare la tua posizione e la cronologia di navigazione al tuo dispositivo"
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Non è possibile migrare questo utente perché il suo indirizzo e-mail non è disponibile su ${ BRAND_NAME }."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "Verrai disconnesso da tutti gli account attualmente connessi."
       ],
@@ -5364,6 +5373,9 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Per importare eventi, devi prima creare un calendario su ${ CALENDAR_APP_NAME }. È dove appariranno gli eventi dopo l'importazione."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Per migrare questo utente, aggiungi e verifica il dominio e-mail alla pagina ${ domainNamesLink }"
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Per firmare nuovamente i tuoi contatti, dobbiamo controllare ogni contatto con l'elenco delle chiavi di crittografia disponibili nel tuo account. Se non viene trovata alcuna corrispondenza, il contatto verrà nuovamente firmato con la chiave di crittografia primaria."
@@ -5727,6 +5739,9 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "Nome utente ${ BRAND_NAME }"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caratteri"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito.)"
@@ -7495,6 +7510,16 @@
         "Supporto per ${ n } domini email personalizzati"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Provalo ora"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Ora hai accesso al nuovo ${ CALENDAR_APP_NAME }.${ link }"
+      ]
+    },
     "Notification": {
       "\"${ ellipsedName }\" created successfully": [
         "Creato con successo \"${ ellipsedName }\""
@@ -7611,6 +7636,9 @@
       ],
       "All items will soon be permanently deleted from trash": [
         "Tutti gli elementi verranno presto eliminati definitivamente dal cestino"
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Poiché questo documento si trovava in una cartella condivisa, solo il proprietario della cartella può ripristinarlo"
       ],
       "Cannot load link": [
         "Impossibile caricare il link"
@@ -8441,6 +8469,31 @@
         "Gli sconti sono calcolati sul prezzo mensile standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
       ]
     },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, e ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME },${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e${ CALENDAR_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME },${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e${ CALENDAR_SHORT_APP_NAME } Premium"
+      ]
+    },
     "q3campaign2026: Title": {
       "for 12 months": [
         "per 12 mesi"
@@ -8559,6 +8612,9 @@
       ]
     },
     "Role": {
+      "Organization Admin": [
+        "Organizzazione Amministratore"
+      ],
       "Security Admin": [
         "Amministratore sicurezza"
       ],
