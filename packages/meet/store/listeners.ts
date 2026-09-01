@@ -1,8 +1,8 @@
 import { startAccountSessionsListener } from '@proton/account/accountSessions';
 import { startPersistListener } from '@proton/account/persist/listener';
-import { startMeetEventLoopListening } from '@proton/redux-shared-store/eventLoop/meetEventLoop';
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
 
+import { meetEventLoopListener } from './meetEventLoop/listener';
 import { getMeetPersistedState } from './persistReducer';
 import type { MeetAppStartListening } from './store';
 
@@ -11,6 +11,6 @@ export const start = ({ startListening, persist }: { startListening: MeetAppStar
     if (persist) {
         startAccountSessionsListener(startListening);
         startPersistListener(startListening, getMeetPersistedState);
-        startMeetEventLoopListening(startListening);
+        meetEventLoopListener(startListening);
     }
 };

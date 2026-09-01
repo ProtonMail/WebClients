@@ -12,13 +12,13 @@ import { calendarUrlQueryParams } from '@proton/calendar/constants';
 import { validateDeepLinkParams } from '@proton/calendar/utils';
 import { getMeetingLink, useProtonMeet } from '@proton/meet';
 import { decryptSessionKey, encryptMeetingName } from '@proton/meet/utils/cryptoUtils';
-import { parseMeetingLink } from '@proton/meet/utils/parseMeetingLink';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, MEET_APP_NAME } from '@proton/shared/lib/constants';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import { MeetingType } from '@proton/shared/lib/interfaces/Meet';
 import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar/Api';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
+import { parseMeetingLink } from '@proton/shared/lib/meet/parseMeetingLink';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import {
