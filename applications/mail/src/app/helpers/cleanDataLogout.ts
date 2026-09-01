@@ -5,17 +5,15 @@ import type { PersistedSession } from '@proton/shared/lib/authentication/Session
 import { deleteContentSearchDB } from '../contentSearch/db/delete';
 
 /**
- * Clears presisted application data, used when the user logs out.
+ * Clears persisted application data, used when the user logs out.
  */
 export const cleanDataLogout = async (persistedSession: PersistedSession) => {
-    // Logger removal
-    if (logger.isInitialized()) {
-        void logger.clearLogs();
-    }
-
-    // Content search dabase removal
-    void deleteContentSearchDB(persistedSession.UserID);
-
-    // Encrypted search database removal
-    void deleteESDB(persistedSession.UserID);
+    await Promise.allSettled([
+        // Logger removal
+        logger.isInitialized() ? logger.clearLogs() : undefined,
+        // Content search database removal
+        deleteContentSearchDB(persistedSession.UserID),
+        // Encrypted search database removal
+        deleteESDB(persistedSession.UserID),
+    ]);
 };
