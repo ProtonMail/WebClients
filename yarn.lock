@@ -10390,14 +10390,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/ai-assistant@workspace:packages/ai-assistant"
   dependencies:
-    "@mlc-ai/web-llm": "patch:@mlc-ai/web-llm@npm%3A0.2.32#~/.yarn/patches/@mlc-ai-web-llm-npm-0.2.32-df249f5180.patch"
-    "@proton/jest-env": "workspace:^"
-    "@proton/jest-swc-preset": "workspace:^"
     "@proton/llm": "workspace:^"
-    "@proton/shared": "workspace:^"
-    "@testing-library/jest-dom": "npm:^6.9.1"
-    browserslist: "npm:^4.28.8"
-    core-js: "npm:^3.50.0"
     eslint: "npm:^10.9.0"
     jest: "npm:^30.4.2"
     typescript: "npm:^6.0.3"
