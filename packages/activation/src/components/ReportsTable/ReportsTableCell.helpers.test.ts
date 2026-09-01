@@ -1,9 +1,13 @@
+import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
+import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import capitalize from '@proton/utils/capitalize';
 
 import { ApiImportProvider } from '../../api/api.interface';
 import { getImportProviderFromApiProvider } from '../../helpers/getImportProviderFromApiProvider';
 import { ImportType } from '../../interface';
-import { getImportIconNameByProduct, getImportProductName } from './ReportsTableCell.helpers';
+import { getImportIconByProduct, getImportProductName } from './ReportsTableCell.helpers';
 
 describe('ReportsTableCell.helpers', () => {
     it('getImportProductName - test all types', () => {
@@ -27,15 +31,10 @@ describe('ReportsTableCell.helpers', () => {
         });
     });
 
-    it('getImportIconNameByProduct - test all types', () => {
-        const mail = getImportIconNameByProduct(ImportType.MAIL);
-        const calendar = getImportIconNameByProduct(ImportType.CALENDAR);
-        const contact = getImportIconNameByProduct(ImportType.CONTACTS);
-        const drive = getImportIconNameByProduct(ImportType.DRIVE);
-
-        expect(mail).toStrictEqual('envelope');
-        expect(calendar).toStrictEqual('calendar-grid');
-        expect(contact).toStrictEqual('users');
-        expect(drive).toStrictEqual('brand-proton-drive');
+    it('getImportIconByProduct - test all types', () => {
+        expect(getImportIconByProduct(ImportType.MAIL)).toBe(IcEnvelope);
+        expect(getImportIconByProduct(ImportType.CALENDAR)).toBe(IcCalendarGrid);
+        expect(getImportIconByProduct(ImportType.CONTACTS)).toBe(IcUsers);
+        expect(getImportIconByProduct(ImportType.DRIVE)).toBe(IcBrandProtonDrive);
     });
 });
