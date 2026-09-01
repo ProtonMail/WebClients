@@ -4,7 +4,32 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Secure Payment</title>
-        <script src="https://js.chargebee.com/v2/chargebee.js"></script>
+        <script>
+            /**
+             * Runs before the Chargebee script tag so it can see that tag fail. A script that fails
+             * to load does not pass its error up the page, so a listener has to catch it on the way
+             * down, and the bundled code below starts too late to see it at all.
+             */
+            window.__chargebeeScriptErrors = [];
+            window.__chargebeeScriptFailed = false;
+            window.addEventListener(
+                'error',
+                function (event) {
+                    var target = event.target;
+                    if (!target || target === window || target.tagName !== 'SCRIPT') {
+                        return;
+                    }
+                    // This page loads other scripts too, so record which one failed instead
+                    // of assuming it was Chargebee's. Matched by id, not by URL.
+                    if (target.id === 'chargebee-js') {
+                        window.__chargebeeScriptFailed = true;
+                    }
+                    window.__chargebeeScriptErrors.push(String(target.src || 'inline'));
+                },
+                true
+            );
+        </script>
+        <script id="chargebee-js" src="https://js.chargebee.com/v2/chargebee.js"></script>
         <script type="module" src="/src/main.ts"></script>
         <link rel="stylesheet" href="/src/style.scss" />
     </head>

@@ -1,5 +1,7 @@
 import type { ChargebeeInstanceConfiguration } from '../lib/types';
-import { addCheckpoint } from './checkpoints';
+import { addCheckpoint, getHiddenFor } from './checkpoints';
+import type { ScriptDiagnostics } from './script-diagnostics';
+import { flattenScriptDiagnostics, getScriptDiagnostics, getScriptFailureReason } from './script-diagnostics';
 
 let chargebee: any | null = null;
 export function resetChargebee() {
@@ -42,21 +44,63 @@ export async function wait(ms: number) {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+/**
+ * Shorter than the overall setup limit, so a missing Chargebee is always reported as a load failure
+ * rather than as "setup stalled".
+ */
+export const CHARGEBEE_LOAD_TIMEOUT = 40000;
+
+function reportLoadFailure(diagnostics: ScriptDiagnostics, data: Record<string, unknown>): never {
+    addCheckpoint('chargebee.load_failed', { ...flattenScriptDiagnostics(diagnostics), ...data });
+
+    throw new Error(getScriptFailureReason(diagnostics));
+}
+
 export async function pollUntilLoaded(): Promise<void> {
     const timeStep = 500;
-    const maxTime = 55000;
+    const start = Date.now();
+    let iterations = 0;
 
-    let timeElapsed = 0;
-    while (timeElapsed < maxTime) {
+    const failFastIfScriptErrored = () => {
+        if (window.__chargebeeScriptFailed !== true) {
+            return;
+        }
+
+        reportLoadFailure(getScriptDiagnostics(), {
+            elapsedMs: Date.now() - start,
+            iterations,
+            msPerIteration: null,
+            failedBeforePolling: iterations === 0,
+            hiddenFor: getHiddenFor(),
+            visibility: typeof document === 'undefined' ? null : document.visibilityState,
+        });
+    };
+
+    /**
+     * Browsers slow timers to one per second in hidden tabs, and to one per minute in hidden or
+     * offscreen frames like this one. Counting the delays we asked for instead of the time that
+     * actually passed stretched this wait enormously in exactly those sessions.
+     */
+    do {
+        failFastIfScriptErrored();
+
         if (isChargebeeLoaded()) {
-            addCheckpoint('chargebee.loaded', {
-                timeElapsed,
-            });
+            addCheckpoint('chargebee.loaded', { timeElapsed: Date.now() - start, iterations });
             return;
         }
         await wait(timeStep);
-        timeElapsed += timeStep;
-    }
+        iterations++;
+    } while (Date.now() - start < CHARGEBEE_LOAD_TIMEOUT);
 
-    throw new Error('Chargebee did not load');
+    const elapsedMs = Date.now() - start;
+
+    reportLoadFailure(getScriptDiagnostics(), {
+        elapsedMs,
+        iterations,
+        /** Much larger than `timeStep` means the browser slowed this frame's timers down. */
+        msPerIteration: iterations === 0 ? null : Math.round(elapsedMs / iterations),
+        failedBeforePolling: false,
+        hiddenFor: getHiddenFor(),
+        visibility: typeof document === 'undefined' ? null : document.visibilityState,
+    });
 }
