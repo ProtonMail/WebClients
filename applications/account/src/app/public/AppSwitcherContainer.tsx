@@ -194,7 +194,7 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
             layoutClassName="h-full"
             containerClassName="h-full"
         >
-            <div>
+            <div className="shrink-0">
                 <header className="mt-6 mb-8 md:mb-10 lg:mb-20 text-center fade-in">
                     <h1 className="text-2xl md:text-6xl text-semibold mb-2">{c('Action').t`Welcome`}</h1>
                     <p className="m-0 md:text-lg color-weak">{c('Info').t`Privacy and security starts here`}</p>
@@ -225,7 +225,7 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
                     />
                 </div>
             </div>
-            <div className="w-full text-center mt-auto fade-in py-4">
+            <div className="w-full text-center mt-auto fade-in py-4 shrink-0">
                 <Button
                     pill
                     shape="outline"
