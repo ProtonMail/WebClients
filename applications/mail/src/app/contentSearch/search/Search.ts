@@ -7,6 +7,7 @@ import createListeners from '@proton/shared/lib/helpers/listeners.ts';
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch.ts';
 import type { DatabaseLock } from '../db/DatabaseLock';
 import type { EncryptedSearchReader } from '../import/EncryptedSearchReader';
+import type { Logger } from '../utils/logger.ts';
 import type SearchWorker from './SearchWorker';
 
 type SearchResult = ESItem<ESBaseMessage, ESMessageContent>;
@@ -33,6 +34,7 @@ export class Search {
         private params: NormalizedSearchParams,
         private dbLock: DatabaseLock,
         private workerPromise: Promise<Comlink.Remote<SearchWorker> | undefined>,
+        private readonly logger: Logger,
         private openESReader: () => Promise<EncryptedSearchReader | undefined>
     ) {
         this.done = new Promise((resolve) => {
@@ -123,6 +125,7 @@ export class Search {
                 )
             );
             await Promise.all(promises);
+            this.logger.info(`ran search with ${this.unfilteredResults?.length} results`);
         } finally {
             oldStore.close();
         }
