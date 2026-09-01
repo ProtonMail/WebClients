@@ -2,13 +2,18 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { IcAlias } from '@proton/icons/icons/IcAlias';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcPaperClip } from '@proton/icons/icons/IcPaperClip';
+import { IcQrCode } from '@proton/icons/icons/IcQrCode';
+import { IcShield2Bolt } from '@proton/icons/icons/IcShield2Bolt';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
+import { IcVault } from '@proton/icons/icons/IcVault';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { DARK_WEB_MONITORING_NAME, DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import Icon from '../../../../../../components/icon/Icon';
 import Info from '../../../../../../components/link/Info';
 import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
 import type { PlanCardFeatureDefinition } from '../../../../features/interface';
@@ -27,34 +32,40 @@ import { getDashboardUpsellV2 } from '../helper';
 const getPassFeatures = (): PlanCardFeatureDefinition[] => {
     return [
         {
+            id: 'vaults',
             text: getNVaultsText('unlimited'),
             included: true,
-            icon: 'vault',
+            icon: IcVault,
         },
         {
+            id: 'secure-sharing',
             text: c('Features').t`Secure vault, item, and link sharing`,
             included: true,
-            icon: 'users',
+            icon: IcUsers,
         },
         {
+            id: 'hide-my-email-aliases',
             text: getUnlimitedHideMyEmailAliasesText(),
             included: true,
-            icon: 'alias',
+            icon: IcAlias,
         },
         {
+            id: '2fa-authenticator',
             text: get2FAAuthenticatorText(),
             included: true,
-            icon: 'qr-code',
+            icon: IcQrCode,
         },
         {
+            id: 'file-attachments',
             text: c('Features').t`File attachment `,
             included: true,
-            icon: 'paper-clip',
+            icon: IcPaperClip,
         },
         {
+            id: 'dark-web-monitoring',
             text: DARK_WEB_MONITORING_NAME,
             included: true,
-            icon: 'shield-2-bolt',
+            icon: IcShield2Bolt,
         },
     ];
 };
@@ -132,17 +143,11 @@ const PassPlusFromFree = ({ subscription, upsells, handleExplorePlans }: Props) 
                         )}
                         <div className="flex lg:flex-row flex-column gap-4 lg:items-center">
                             <ul className="unstyled grid lg:grid-cols-2 xl:grid-cols-3 gap-4 m-0 lg:flex-1">
-                                {getPassFeatures().map(({ text, tooltip, icon }, index) => {
-                                    const key = typeof text === 'string' ? text : index;
+                                {getPassFeatures().map(({ id, text, tooltip, icon: FeatureIcon }) => {
                                     return (
-                                        <li key={key} className="flex items-center flex-nowrap">
-                                            {icon && (
-                                                <Icon
-                                                    size={6}
-                                                    name={icon}
-                                                    alt=""
-                                                    className="shrink-0 mr-2 color-primary"
-                                                />
+                                        <li key={id} className="flex items-center flex-nowrap">
+                                            {FeatureIcon && (
+                                                <FeatureIcon size={6} className="shrink-0 mr-2 color-primary" />
                                             )}
                                             {text}
                                             {tooltip && <Info buttonClass="ml-2 align-middle" title={tooltip} />}

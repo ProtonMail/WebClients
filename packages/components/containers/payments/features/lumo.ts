@@ -1,5 +1,16 @@
 import { c } from 'ttag';
 
+import { IcAlias } from '@proton/icons/icons/IcAlias';
+import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
+import { IcBolt } from '@proton/icons/icons/IcBolt';
+import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
+import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
+import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
+import { IcMapPin } from '@proton/icons/icons/IcMapPin';
+import { IcShield } from '@proton/icons/icons/IcShield';
+import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
+import { IcStar } from '@proton/icons/icons/IcStar';
 import { PLANS } from '@proton/payments/core/constants';
 import { LUMO_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -8,6 +19,7 @@ import { getPrioritySupport } from './shared';
 
 export const getLumoAppFeature = (): PlanCardFeatureDefinition => {
     return {
+        id: 'lumo-app',
         text: LUMO_APP_NAME,
         included: true,
         // icon: 'brand-proton-lumo',
@@ -17,6 +29,7 @@ export const getLumoAppFeature = (): PlanCardFeatureDefinition => {
 
 export const getPrivateAIChatFeature = (): PlanCardFeatureDefinition => {
     return {
+        id: 'private-ai-chat',
         text: c('new_plans: feature').t`Private AI Chat (${LUMO_APP_NAME})`,
         included: true,
     };
@@ -28,17 +41,19 @@ export const getUnlimitedChatsText = () => {
 
 export const getDailyChats = (type: 'limited' | 'unlimited'): PlanCardFeatureDefinition => {
     return {
+        id: 'daily-chats',
         text: type === 'limited' ? c('collider_2025: feature').t`Limited daily chats` : getUnlimitedChatsText(),
         included: true,
-        icon: 'speech-bubble',
+        icon: IcSpeechBubble,
     };
 };
 
 export const getWebSearchAccess = (): PlanCardFeatureDefinition => {
     return {
+        id: 'web-search-access',
         text: c('collider_2025: feature').t`Web search access`,
         included: true,
-        icon: 'magnifier',
+        icon: IcMagnifier,
     };
 };
 
@@ -48,31 +63,34 @@ export const getFullChatHistoryText = () => {
 
 export const getChatHistory = (type: 'basic' | 'full'): PlanCardFeatureDefinition => {
     return {
+        id: 'chat-history',
         text: type === 'basic' ? c('collider_2025: feature').t`Basic chat history` : getFullChatHistoryText(),
         included: true,
-        icon: 'clock-rotate-left',
+        icon: IcClockRotateLeft,
     };
 };
 
 export const getFavourites = (type: 'limited' | 'unlimited'): PlanCardFeatureDefinition => {
     return {
+        id: 'favourites',
         text:
             type === 'limited'
                 ? c('collider_2025: feature').t`Limited favorites`
                 : c('collider_2025: feature').t`Unlimited favorites for quick access`,
         included: true,
-        icon: 'star',
+        icon: IcStar,
     };
 };
 
 export const getUploadAndQuery = (type: 'small' | 'large'): PlanCardFeatureDefinition => {
     return {
+        id: 'upload-and-query',
         text:
             type === 'small'
                 ? c('collider_2025: feature').t`Upload and query small files`
                 : c('collider_2025: feature').t`Upload and query multiple large files`,
         included: true,
-        icon: 'arrow-up-line',
+        icon: IcArrowUpLine,
     };
 };
 
@@ -82,49 +100,55 @@ export const getAccessToAdvancedAIText = () => {
 
 export const getAccessToAdvancedAI = (included: boolean): PlanCardFeatureDefinition => {
     return {
+        id: 'access-to-advanced-ai',
         text: getAccessToAdvancedAIText(),
         included,
-        icon: 'bolt',
+        icon: IcBolt,
     };
 };
 
 export const getNeverUsedForTraining = (): PlanCardFeatureDefinition => {
     return {
+        id: 'never-used-for-training',
         text: c('collider_2025: feature').t`Data never used for AI training`,
         included: true,
-        icon: 'alias',
+        icon: IcAlias,
     };
 };
 
 export const getZeroAccessEncryption = (): PlanCardFeatureDefinition => {
     return {
+        id: 'zero-access-encryption',
         text: c('collider_2025: feature').t`Zero-access encryption`,
         included: true,
-        icon: 'lock',
+        icon: IcLock,
     };
 };
 
 export const getDataProtectionCompliance = (): PlanCardFeatureDefinition => {
     return {
+        id: 'data-protection-compliance',
         text: c('collider_2025: feature').t`Compliance with data protection regulations`,
         included: true,
-        icon: 'shield',
+        icon: IcShield,
     };
 };
 
 export const getNoLogsPolicy = (): PlanCardFeatureDefinition => {
     return {
+        id: 'no-logs-policy',
         text: c('collider_2025: feature').t`Strict no-logs policy`,
         included: true,
-        icon: 'eye-slash',
+        icon: IcEyeSlash,
     };
 };
 
 export const getBuiltInEurope = (): PlanCardFeatureDefinition => {
     return {
+        id: 'built-in-europe',
         text: c('collider_2025: feature').t`Built and based in Europe`,
         included: true,
-        icon: 'map-pin',
+        icon: IcMapPin,
     };
 };
 

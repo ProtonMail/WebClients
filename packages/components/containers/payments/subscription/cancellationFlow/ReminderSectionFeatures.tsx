@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms/Href/Href';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
-import Icon from '../../../../components/icon/Icon';
 import StripedItem from '../../../../components/stripedList/StripedItem';
 import { StripedList } from '../../../../components/stripedList/StripedList';
 import SettingsParagraph from '../../../account/SettingsParagraph';
@@ -18,8 +17,8 @@ const ReminderSectionFeatures = ({ title, features, description }: PlanConfigFea
             <SettingsParagraph className="mb-6">{description}</SettingsParagraph>
             <section>
                 <StripedList className="my-0" alternate="odd">
-                    {features.map(({ icon, text }) => (
-                        <StripedItem key={text} left={<Icon name={icon} className="color-primary" />}>
+                    {features.map(({ icon: FeatureIcon, text }) => (
+                        <StripedItem key={text} left={<FeatureIcon className="color-primary" />}>
                             {text}
                         </StripedItem>
                     ))}

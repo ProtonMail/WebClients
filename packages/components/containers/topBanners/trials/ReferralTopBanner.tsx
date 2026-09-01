@@ -204,6 +204,7 @@ const ContinueSubscriptionActionButton = ({ app }: { app: APP_NAMES }) => {
 
         const getMorePremiumFeatures = () => {
             return {
+                id: 'more-premium-features',
                 text: c('Feature').t`More premium features`,
             };
         };
@@ -219,6 +220,7 @@ const ContinueSubscriptionActionButton = ({ app }: { app: APP_NAMES }) => {
         const DriveFeatures: UpsellFeature[] = [
             getStorageFeature(plan?.MaxSpace ?? 214748364800, { freePlan }),
             {
+                id: 'encrypted-cloud-storage',
                 text: c('Feature').t`Encrypted cloud storage for files, photos and documents`,
             },
             getDocumentEditor(),
@@ -252,11 +254,9 @@ const ContinueSubscriptionActionButton = ({ app }: { app: APP_NAMES }) => {
 
         return (
             <StripedList alternate="odd">
-                {features.map(({ icon, text }) => {
-                    const key = typeof text === 'string' ? text : `${icon}-${text}`;
-
+                {features.map(({ id, text }) => {
                     return (
-                        <StripedItem key={key} left={<IcCheckmark className="color-primary" size={5} />}>
+                        <StripedItem key={id} left={<IcCheckmark className="color-primary" size={5} />}>
                             {text}
                         </StripedItem>
                     );

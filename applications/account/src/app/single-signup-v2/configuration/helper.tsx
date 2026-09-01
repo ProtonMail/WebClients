@@ -38,14 +38,14 @@ export const getJoinString = (audience?: Audience) => {
 export const getGenericBenefits = (): BenefitItem[] => {
     return [
         {
-            key: 10,
+            id: 'swiss-privacy-laws',
             text: c('pass_signup_2023: Info').t`Protected by Swiss privacy laws`,
             icon: {
                 component: IcShield,
             },
         },
         {
-            key: 11,
+            id: 'open-source-and-audited',
             text: c('pass_signup_2023: Info').t`Open-source and audited`,
             icon: {
                 component: IcMagnifier,
@@ -56,7 +56,7 @@ export const getGenericBenefits = (): BenefitItem[] => {
 
 export const getBuiltInEncryptionBenefit = (): BenefitItem => {
     return {
-        key: `built-in-encryption`,
+        id: 'built-in-encryption',
         text: c('Signup: Info').t`Built-in encryption`,
         icon: {
             component: IcLock,
@@ -66,7 +66,7 @@ export const getBuiltInEncryptionBenefit = (): BenefitItem => {
 
 const getEndToEndEncryptionBenefit = (): BenefitItem => {
     return {
-        key: `end-to-end-encryption`,
+        id: 'end-to-end-encryption',
         text: c('Signup: Info').t`End-to-end encryption`,
         icon: {
             component: IcLock,
@@ -76,7 +76,7 @@ const getEndToEndEncryptionBenefit = (): BenefitItem => {
 
 export const getSwissPrivacyLawsBenefit = (): BenefitItem => {
     return {
-        key: `swiss-privacy-laws`,
+        id: 'swiss-privacy-laws',
         text: c('Signup: Info').t`Protected by Swiss privacy laws`,
         icon: {
             component: IcShield,
@@ -86,7 +86,7 @@ export const getSwissPrivacyLawsBenefit = (): BenefitItem => {
 
 export const getWorksOnAllDevicesBenefit = (): BenefitItem => {
     return {
-        key: `works-on-all-devices`,
+        id: 'works-on-all-devices',
         text: c('Signup: Info').t`Works on all devices`,
         icon: {
             component: IcMobile,
@@ -96,7 +96,7 @@ export const getWorksOnAllDevicesBenefit = (): BenefitItem => {
 
 export const getISO27001CertifiedBenefit = (): BenefitItem => {
     return {
-        key: `iso27001-certified`,
+        id: 'iso27001-certified',
         text: c('Signup: Info').t`ISO 27001 certified`,
         icon: {
             component: IcGlobe,
@@ -106,7 +106,7 @@ export const getISO27001CertifiedBenefit = (): BenefitItem => {
 
 export const getBasedInSwitzerlandGDPRBenefit = (): BenefitItem => {
     return {
-        key: `based-in-switzerland-gdpr`,
+        id: 'based-in-switzerland-gdpr',
         text: c('Signup: Info').t`Based in Switzerland, GDPR compliant`,
         icon: {
             component: IcShield,
@@ -116,7 +116,7 @@ export const getBasedInSwitzerlandGDPRBenefit = (): BenefitItem => {
 
 export const getTeamKnowsEncryptionBenefit = (): BenefitItem => {
     return {
-        key: `team-knows-encryption`,
+        id: 'team-knows-encryption',
         text: c('Signup: Info').t`From the team that knows encryption`,
         icon: {
             component: IcLock,
@@ -126,7 +126,7 @@ export const getTeamKnowsEncryptionBenefit = (): BenefitItem => {
 
 export const getOpenSourceAndAuditedBenefit = (): BenefitItem => {
     return {
-        key: `open-source-and-audited`,
+        id: 'open-source-and-audited',
         text: c('Signup: Info').t`Open source and audited`,
         icon: {
             component: IcMagnifier,
@@ -136,7 +136,7 @@ export const getOpenSourceAndAuditedBenefit = (): BenefitItem => {
 
 export const getAppsMailIncludedBenefit = (): BenefitItem => {
     return {
-        key: `apps-mail-included`,
+        id: 'apps-mail-included',
         text: c('Signup: Info').t`Calendar, password manager, file storage, and VPN included`,
         icon: {
             component: IcGrid2,
@@ -146,7 +146,7 @@ export const getAppsMailIncludedBenefit = (): BenefitItem => {
 
 export const getAppsIncludedBenefit = (): BenefitItem => {
     return {
-        key: `apps-included`,
+        id: 'apps-included',
         text: c('Signup: Info').t`Integrated email, calendar, file storage, password manager, and VPN`,
         icon: {
             component: IcGrid2,
@@ -156,7 +156,7 @@ export const getAppsIncludedBenefit = (): BenefitItem => {
 
 export const getEmailAliasesBenefit = (): BenefitItem => {
     return {
-        key: `email-aliases`,
+        id: 'email-aliases',
         text: c('Signup: Info').t`Email aliases`,
         icon: {
             component: IcAlias,
@@ -166,7 +166,7 @@ export const getEmailAliasesBenefit = (): BenefitItem => {
 
 export const getUnlimitedPasswordsBenefit = (): BenefitItem => {
     return {
-        key: `unlimited-passwords`,
+        id: 'unlimited-passwords',
         text: c('Signup: Info').t`Unlimited passwords`,
         icon: {
             component: IcKey,
@@ -176,7 +176,7 @@ export const getUnlimitedPasswordsBenefit = (): BenefitItem => {
 
 export const getDeviceSyncBenefit = (): BenefitItem => {
     return {
-        key: `device-sync`,
+        id: 'device-sync',
         text: c('Signup: Info').t`Device sync`,
         icon: {
             component: IcMobile,
@@ -186,7 +186,7 @@ export const getDeviceSyncBenefit = (): BenefitItem => {
 
 export const getAliasesEmailProtectionBenefit = (): BenefitItem => {
     return {
-        key: `aliases-email-protection`,
+        id: 'aliases-email-protection',
         text: c('Signup: Info').t`10 aliases for email protection from breaches`,
         icon: {
             component: IcAlias,
@@ -196,7 +196,7 @@ export const getAliasesEmailProtectionBenefit = (): BenefitItem => {
 
 export const getAdvancedSecurityBenefit = (): BenefitItem => {
     return {
-        key: `advanced-security`,
+        id: 'advanced-security',
         text: c('Signup: Info').t`Advanced security features`,
         icon: {
             component: IcSliders,
@@ -207,7 +207,7 @@ export const getAdvancedSecurityBenefit = (): BenefitItem => {
 const getScribeBenefit = (): BenefitItem => {
     const scribeToLumo = getStandaloneUnleashClient()?.isEnabled(MailFeatureFlag.ScribeToLumo);
     return {
-        key: `scribe-benefit`,
+        id: 'scribe-benefit',
         text: scribeToLumo
             ? c('mail_signup_2024: Info').t`${LUMO_SHORT_APP_NAME} writing assistant`
             : c('mail_signup_2024: Info').t`${BRAND_NAME} Scribe writing assistant`,
@@ -238,7 +238,7 @@ export const getFamilyDuoBenefits = (): BenefitItem[] => {
 };
 
 export const getSwissFeature = ({ fullText }: { fullText: boolean }) => ({
-    key: 'swiss',
+    id: 'swiss',
     left: <img width="24" alt="" src={swissFlag} className="rounded-sm" />,
     text: fullText
         ? c('pass_signup_2023: Feature').t`Protected by Swiss privacy laws`
@@ -246,19 +246,19 @@ export const getSwissFeature = ({ fullText }: { fullText: boolean }) => ({
 });
 
 export const getEncryptedFeature = ({ e2ee }: { e2ee: boolean }) => ({
-    key: 'e2e',
+    id: 'e2e',
     left: <IcLock size={6} className="color-primary" />,
     text: e2ee ? c('pass_signup_2023: Feature').t`End-to-end encrypted` : c('signup: Feature').t`Encrypted`,
 });
 
 export const getNoLogsFeature = () => ({
-    key: 'no-logs',
+    id: 'no-logs',
     left: <IcEyeSlash size={6} className="color-primary" />,
     text: c('signup: Feature').t`Strict no-logs policy`,
 });
 
 export const getOpenSourceFeature = () => ({
-    key: 'open-source',
+    id: 'open-source',
     left: <IcGlobe size={6} className="color-primary" />,
     text: c('pass_signup_2023: Feature').t`Open source`,
 });
@@ -271,7 +271,7 @@ export const getGenericFeatures = (isLargeViewport: boolean, audience?: Audience
     const openSource = getOpenSourceFeature();
 
     const gdpr = {
-        key: 'gdpr',
+        id: 'gdpr',
         left: <IcShield size={6} className="color-primary" />,
         text: c('signup_2024: Feature').t`GDPR and HIPAA compliant`,
     };

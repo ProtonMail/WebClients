@@ -1,4 +1,4 @@
-import type { PropsWithChildren, ReactNode } from 'react';
+import type { PropsWithChildren } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -16,13 +16,14 @@ import percentage from '@proton/utils/percentage';
 import Meter from '../../../../components/progress/Meter';
 import StripedItem from '../../../../components/stripedList/StripedItem';
 import { StripedList } from '../../../../components/stripedList/StripedList';
+import type { PlanCardFeatureIcon } from '../../features/interface';
 import { getHighSpeedVPNConnectionsText } from '../../features/vpn';
 import Panel from './Panel';
 
 interface Item {
-    /** Stable key; the icon is an element so it cannot serve as one. */
+    /** Stable key; the icon is a component so it cannot serve as one. */
     id: string;
-    icon: ReactNode;
+    icon: PlanCardFeatureIcon;
     text: string;
 }
 
@@ -50,7 +51,7 @@ const UsagePanel = ({ addresses, calendars, organization, user, children }: Prop
     const items: (Item | false)[] = [
         UsedAddresses !== undefined && {
             id: 'addresses',
-            icon: <IcEnvelope className="color-success" size={5} />,
+            icon: IcEnvelope,
             text: c('Subscription attribute').ngettext(
                 msgid`${UsedAddresses} address`,
                 `${UsedAddresses} addresses`,
@@ -59,7 +60,7 @@ const UsagePanel = ({ addresses, calendars, organization, user, children }: Prop
         },
         UsedCalendars !== undefined && {
             id: 'calendars',
-            icon: <IcCalendarCheckmark className="color-success" size={5} />,
+            icon: IcCalendarCheckmark,
             text: c('Subscription attribute').ngettext(
                 msgid`${UsedCalendars} calendar`,
                 `${UsedCalendars} calendars`,
@@ -68,7 +69,7 @@ const UsagePanel = ({ addresses, calendars, organization, user, children }: Prop
         },
         !!(member && member.MaxVPN > 0) && {
             id: 'vpn',
-            icon: <IcBrandProtonVpn className="color-success" size={5} />,
+            icon: IcBrandProtonVpn,
             text: user.hasPaidVpn
                 ? getHighSpeedVPNConnectionsText(member.MaxVPN || VPNConnections)
                 : c('Subscription attribute').t`1 VPN connection`,
@@ -89,7 +90,7 @@ const UsagePanel = ({ addresses, calendars, organization, user, children }: Prop
                 </StripedItem>
                 {items.filter(isTruthy).map((item) => {
                     return (
-                        <StripedItem key={item.id} left={item.icon}>
+                        <StripedItem key={item.id} left={<item.icon className="color-success" size={5} />}>
                             {item.text}
                         </StripedItem>
                     );

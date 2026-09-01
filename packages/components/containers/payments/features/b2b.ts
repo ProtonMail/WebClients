@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { IcPhone } from '@proton/icons/icons/IcPhone';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { PLANS } from '@proton/payments/core/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
@@ -9,6 +11,7 @@ import { getActivityLogText, getTeamPoliciesText } from './pass';
 
 export const getTwoFA = (): PlanCardFeatureDefinition => {
     return {
+        id: '2fa',
         text: c('new_plans: feature').t`Two-factor authentication`,
         tooltip: c('new_plans: tooltip')
             .t`Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.`,
@@ -18,6 +21,7 @@ export const getTwoFA = (): PlanCardFeatureDefinition => {
 
 export const getRequire2FA = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
+        id: 'require-2fa',
         text: c('new_plans: feature').t`Require 2FA for organization`,
         included,
     };
@@ -25,6 +29,7 @@ export const getRequire2FA = (included: boolean = false): PlanCardFeatureDefinit
 
 export const getTeamPolicies = (): PlanCardFeatureDefinition => {
     return {
+        id: 'team-policies',
         text: getTeamPoliciesText(),
         included: true,
     };
@@ -32,6 +37,7 @@ export const getTeamPolicies = (): PlanCardFeatureDefinition => {
 
 export const getActivityLog = (): PlanCardFeatureDefinition => {
     return {
+        id: 'activity-log',
         text: getActivityLogText(),
         included: true,
     };
@@ -39,6 +45,7 @@ export const getActivityLog = (): PlanCardFeatureDefinition => {
 
 export const getSSOIntegration = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
+        id: 'sso-integration',
         text: c('new_plans: feature').t`SSO integration`,
         included,
     };
@@ -46,6 +53,7 @@ export const getSSOIntegration = (included: boolean = false): PlanCardFeatureDef
 
 export const getConsole = (): PlanCardFeatureDefinition => {
     return {
+        id: 'console',
         text: c('new_plans: feature').t`Admin console`,
         tooltip: c('new_plans: tooltip')
             .t`Organization management tool that lets admins add and remove users, manage their access to ${BRAND_NAME} services, and perform other tasks.`,
@@ -55,6 +63,7 @@ export const getConsole = (): PlanCardFeatureDefinition => {
 
 export const getBilling = (): PlanCardFeatureDefinition => {
     return {
+        id: 'billing',
         text: c('new_plans: feature').t`Centralized billing`,
         tooltip: c('new_plans: tooltip')
             .t`Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.`,
@@ -64,6 +73,7 @@ export const getBilling = (): PlanCardFeatureDefinition => {
 
 export const getAdmins = (): PlanCardFeatureDefinition => {
     return {
+        id: 'admins',
         text: c('new_plans: feature').t`Multiple admin roles`,
         tooltip: c('new_plans: tooltip')
             .t`You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.`,
@@ -73,6 +83,7 @@ export const getAdmins = (): PlanCardFeatureDefinition => {
 
 export const getSignIn = (): PlanCardFeatureDefinition => {
     return {
+        id: 'sign-in',
         text: c('new_plans: feature').t`Sign in as user`,
         tooltip: c('new_plans: tooltip')
             .t`Option to view non-private user inboxes as the user would, including full message and contact details`,
@@ -81,6 +92,7 @@ export const getSignIn = (): PlanCardFeatureDefinition => {
 };
 export const getCredentials = (): PlanCardFeatureDefinition => {
     return {
+        id: 'credentials',
         text: c('new_plans: feature').t`User credential management`,
         tooltip: c('new_plans: tooltip').t`Reset user passwords and reset two-factor authentication on users`,
         included: true,
@@ -89,6 +101,7 @@ export const getCredentials = (): PlanCardFeatureDefinition => {
 
 export const getSessions = (): PlanCardFeatureDefinition => {
     return {
+        id: 'sessions',
         text: c('new_plans: feature').t`User session management`,
         tooltip: c('new_plans: tooltip')
             .t`Force sign-out of user sessions when user credentials are believed to be compromised`,
@@ -98,6 +111,7 @@ export const getSessions = (): PlanCardFeatureDefinition => {
 
 export const getUserStorageManagement = (): PlanCardFeatureDefinition => {
     return {
+        id: 'user-storage-management',
         text: c('new_plans: feature').t`User storage management`,
         tooltip: c('new_plans: tooltip').t`Increase or reallocate storage for a user`,
         included: true,
@@ -440,12 +454,14 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
 };
 export const getGDPR = (): PlanCardFeatureDefinition => {
     return {
+        id: 'gdpr',
         text: c('new_plans: feature').t`GDPR data processing agreement`,
         included: true,
     };
 };
 export const getHIPAA = (): PlanCardFeatureDefinition => {
     return {
+        id: 'hipaa',
         text: c('new_plans: feature').t`Enables HIPAA compliance`,
         tooltip: c('new_plans: tooltip')
             .t`We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${BRAND_NAME} for Business customers.`,
@@ -454,6 +470,7 @@ export const getHIPAA = (): PlanCardFeatureDefinition => {
 };
 export const getSupport = (): PlanCardFeatureDefinition => {
     return {
+        id: 'b2b-support',
         text: c('new_plans: feature').t`Priority email support`,
         tooltip: c('new_plans: tooltip')
             .t`On business days, receive support from the ${BRAND_NAME} Customer Support team within 24 hours of requests`,
@@ -464,16 +481,18 @@ export const getSupport = (): PlanCardFeatureDefinition => {
 const MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT = 6;
 export const getPhoneSupport = (): PlanCardFeatureDefinition => {
     return {
+        id: 'phone-support',
         // translator: full sentence 'Phone support (6+ users)'
         text: c('new_plans: feature').t`Phone support (${MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT}+ users)`,
         tooltip: c('new_plans: tooltip')
             .t`Phone support is available from the ${BRAND_NAME} Customer Support team during European business hours, for customers with ${MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT} or more users`,
         included: true,
-        icon: 'phone',
+        icon: IcPhone,
     };
 };
 export const getSLA = (): PlanCardFeatureDefinition => {
     return {
+        id: 'sla',
         text: c('new_plans: feature').t`99.95% SLA`,
         tooltip: c('new_plans: tooltip')
             .t`Our robust infrastructure ensures you will be able to access your account when you need it`,
@@ -653,7 +672,8 @@ export const getSupportFeatures = (): PlanCardFeature[] => {
 
 export const getManageUserPermissionsAndAccessFeature = (included: boolean = true): PlanCardFeatureDefinition => {
     return {
-        icon: 'users',
+        id: 'manage-user-permissions-and-access',
+        icon: IcUsers,
         text: c('new_plans: feature').t`Manage user permissions and access`,
         included,
     };

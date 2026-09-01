@@ -31,11 +31,12 @@ import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
 const getFeatures = (): PlanCardFeatureDefinition[] => {
     const features = [
-        { key: 'allProtonServices', text: c('new_plans: feature').t`All ${BRAND_NAME} services` },
-        { key: 'tailored', text: c('new_plans: feature').t`Tailored to your needs` },
-        { key: 'accountManager', text: c('new_plans: feature').t`Dedicated account manager` },
+        { id: 'all-proton-services', text: c('new_plans: feature').t`All ${BRAND_NAME} services` },
+        { id: 'tailored', text: c('new_plans: feature').t`Tailored to your needs` },
+        { id: 'dedicated-account-manager', text: c('new_plans: feature').t`Dedicated account manager` },
     ];
     return features.map((feature) => ({
+        id: feature.id,
         text: feature.text,
         included: true,
     }));

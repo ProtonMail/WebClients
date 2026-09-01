@@ -1,18 +1,26 @@
 import type { ReactNode } from 'react';
 
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 import type { PLANS } from '@proton/payments/core/constants';
 import type { Audience } from '@proton/shared/lib/interfaces';
 
+export type PlanCardFeatureIcon = IconComponent;
+
 export interface PlanCardFeatureDefinition {
-    text: string | string[] | ReactNode;
+    /**
+     * Stable identifier, unique within any list the feature can be rendered in. It is
+     * the React key at every render site, and the only thing business logic should
+     * match a feature on: `icon` and `text` are free to change for cosmetic reasons.
+     */
+    id: string;
+    text: ReactNode;
     subtext?: string;
     included: boolean;
     hideInDowngrade?: boolean;
     status?: 'available' | 'coming-soon';
     tooltip?: string;
     highlight?: boolean;
-    icon?: IconName;
+    icon?: PlanCardFeatureIcon;
     iconUrl?: string;
     highResIcon?: string;
     isAddon?: boolean;
@@ -20,7 +28,7 @@ export interface PlanCardFeatureDefinition {
 
 export interface StandardPlanCardFeatureDefinition extends PlanCardFeatureDefinition {
     text: string;
-    icon: IconName;
+    icon: PlanCardFeatureIcon;
 }
 
 export interface PlanCardFeature {

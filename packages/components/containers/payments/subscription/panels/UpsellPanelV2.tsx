@@ -5,13 +5,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
 import { CYCLE, type PLANS } from '@proton/payments/core/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
-import Icon from '../../../../components/icon/Icon';
 import Info from '../../../../components/link/Info';
 import useActiveBreakpoint from '../../../../hooks/useActiveBreakpoint';
 import { upgradeButtonClick } from '../../../desktop/openExternalLink';
@@ -159,24 +159,34 @@ const UpsellPanelV2 = ({
                         gradientColor ? 'p-2' : 'p-4'
                     )}
                 >
-                    {features.map(({ icon = 'checkmark', text, tooltip, included = true, status = 'available' }) => {
-                        if (!included) {
-                            return null;
+                    {features.map(
+                        ({
+                            id,
+                            icon: FeatureIcon = IcCheckmark,
+                            text,
+                            tooltip,
+                            included = true,
+                            status = 'available',
+                        }) => {
+                            if (!included) {
+                                return null;
+                            }
+
+                            return (
+                                <li
+                                    key={id}
+                                    className={clsx(
+                                        status === 'coming-soon' && 'color-weak',
+                                        'flex items-center gap-2'
+                                    )}
+                                >
+                                    <FeatureIcon className={clsx(included && 'color-success')} size={5} />
+                                    <span>{text}</span>
+                                    {tooltip && <Info title={tooltip} />}
+                                </li>
+                            );
                         }
-
-                        const key = typeof text === 'string' ? text : `${tooltip}-${icon}-${included}-${status}`;
-
-                        return (
-                            <li
-                                key={key}
-                                className={clsx(status === 'coming-soon' && 'color-weak', 'flex items-center gap-2')}
-                            >
-                                <Icon className={clsx(included && 'color-success')} size={5} name={icon} />
-                                <span>{text}</span>
-                                {tooltip && <Info title={tooltip} />}
-                            </li>
-                        );
-                    })}
+                    )}
                 </ul>
             )}
         </div>

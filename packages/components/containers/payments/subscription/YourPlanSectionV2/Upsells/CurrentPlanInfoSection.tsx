@@ -182,6 +182,7 @@ const cards = (plansMap: PlansMap, freePlan: FreePlanDefault): CardProps[] => {
             popoverImage: vpnImage,
             features: [
                 {
+                    id: 'everything-in-plan',
                     text: everythingInPlanOrAppNameText(PLAN_NAMES[PLANS.VPN2024]),
                     included: true,
                 },
@@ -299,31 +300,37 @@ const getVPNFeatures = (): PlanCardFeatureDefinition[] => {
     const numberOfCountries = VPN_SERVERS.paid.countries;
     return [
         {
+            id: 'countries',
             text: getSelectFromNCountries(numberOfCountries),
             included: true,
             highResIcon: countriesIcon,
         },
         {
+            id: 'vpn-devices',
             text: getVpnDevices(VPN_CONNECTIONS),
             included: true,
             highResIcon: deviceIcon,
         },
         {
+            id: 'lightning-fast-speeds',
             text: c('Features').t`Lightning-fast VPN speeds`,
             included: true,
             highResIcon: lightningIcon,
         },
         {
+            id: 'streaming',
             text: c('Features').t`Stream from Netflix, HBO, and more`,
             included: true,
             highResIcon: streamingIcon,
         },
         {
+            id: 'net-shield',
             text: c('Features').t`Ad-blocker and malware protection`,
             included: true,
             highResIcon: shieldIcon,
         },
         {
+            id: 'double-vpn',
             text: c('Features').t`Double VPN`,
             included: true,
             highResIcon: doubleIcon,
@@ -358,10 +365,9 @@ const VPNPlanCard = ({ vpnUpsells, selectedCycle }: { vpnUpsells: UpsellsHook['u
             }
             featureSection={
                 <ul className="unstyled px-2 flex flex-column text-semibold gap-3 m-0">
-                    {getVPNFeatures().map(({ text, tooltip, highResIcon }, index) => {
-                        const key = typeof text === 'string' ? text : index;
+                    {getVPNFeatures().map(({ id, text, tooltip, highResIcon }) => {
                         return (
-                            <li key={key} className="flex items-center flex-nowrap">
+                            <li key={id} className="flex items-center flex-nowrap">
                                 {highResIcon && <img src={highResIcon} alt="" className="shrink-0 mr-2" />}
                                 {text}
                                 {tooltip && <Info buttonClass="ml-2 align-middle" title={tooltip} />}

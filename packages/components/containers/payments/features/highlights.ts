@@ -1,5 +1,11 @@
 import { c, msgid } from 'ttag';
 
+import { IcImage } from '@proton/icons/icons/IcImage';
+import { IcLifeRing } from '@proton/icons/icons/IcLifeRing';
+import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';
+import { IcShield } from '@proton/icons/icons/IcShield';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { PLANS } from '@proton/payments/core/constants';
 import type { FreePlanDefault, PlansMap } from '@proton/payments/core/plan/interface';
 import {
@@ -55,6 +61,7 @@ const getUsers = (): PlanCardFeature => {
         target: Audience.FAMILY,
         plans: {
             [PLANS.FREE]: {
+                id: 'user-number',
                 text: getFreeUsersText(),
                 included: true,
             },
@@ -67,11 +74,13 @@ const getUsers = (): PlanCardFeature => {
             [PLANS.DRIVE_1TB]: null,
             [PLANS.DRIVE_BUSINESS]: null,
             [PLANS.FAMILY]: {
+                id: 'user-number',
                 text: getNUsersText(FAMILY_MAX_USERS),
                 included: true,
                 highlight: true,
             },
             [PLANS.DUO]: {
+                id: 'user-number',
                 text: getNUsersText(DUO_MAX_USERS),
                 included: true,
                 highlight: true,
@@ -83,6 +92,7 @@ const getUsers = (): PlanCardFeature => {
             [PLANS.BUNDLE_BIZ_2025]: null,
             [PLANS.PASS_PRO]: null,
             [PLANS.PASS_FAMILY]: {
+                id: 'user-number',
                 text: getNUsersAdminText({ n: FAMILY_MAX_USERS, admins: 1, users: FAMILY_MAX_USERS - 1 }),
                 included: true,
                 highlight: true,
@@ -95,6 +105,7 @@ const getUsers = (): PlanCardFeature => {
             [PLANS.MEET_BUSINESS]: null,
             [PLANS.MEET]: null,
             [PLANS.VISIONARY]: {
+                id: 'user-number',
                 text: getNUsersText(VISIONARY_MAX_USERS),
                 included: true,
                 highlight: true,
@@ -106,8 +117,9 @@ const getUsers = (): PlanCardFeature => {
 
 export const getUsersFeature = (n: number): PlanCardFeatureDefinition => {
     return {
+        id: 'users',
         text: n === 1 ? getFreeUsersText() : getNUsersText(n),
-        icon: 'users',
+        icon: IcUsers,
         included: true,
     };
 };
@@ -142,19 +154,22 @@ export const getSupport = (
     }
 
     return {
+        id: 'support',
         text,
         subtext,
         included: true,
-        icon: 'life-ring',
+        icon: IcLifeRing,
     };
 };
 
 export const get24x7Support = (): PlanCardFeatureDefinition => ({
+    id: '24x7-support',
     included: true,
     text: c('new_plans: feature').t`24/7 account management support`,
 });
 
 export const getAllPremiumServices = (): PlanCardFeatureDefinition => ({
+    id: 'all-premium-services',
     included: true,
     text: c('Plan description')
         .t`All premium features from ${BRAND_NAME} ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
@@ -162,48 +177,54 @@ export const getAllPremiumServices = (): PlanCardFeatureDefinition => ({
 
 export const getSentinel = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
+        id: 'sentinel',
         text: c('new_plans: feature').t`${PROTON_SENTINEL_NAME} program`,
         tooltip: c('new_plans: tooltip')
             .t`Provides the highest level of account security protection and specialist support`,
         included: included,
-        icon: 'shield',
+        icon: IcShield,
     };
 };
 
 export const getAdvancedAccountProtectionFeature = (included: boolean = true): PlanCardFeatureDefinition => {
     return {
+        id: 'advanced-account-protection',
         text: c('pass_signup_2024: Info').t`Advanced account protection`,
-        icon: 'lock',
+        icon: IcLock,
         included,
     };
 };
 
 export const getPassMonitor = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
+        id: 'pass-monitor',
         text: getPassMonitorText(),
         included: included,
-        icon: 'shield',
+        icon: IcShield,
     };
 };
 
 export const getPassDarkWebMonitoring = (): PlanCardFeatureDefinition => {
     return {
+        id: 'pass-dark-web-monitoring',
         included: true,
         text: DARK_WEB_MONITORING_NAME,
-        icon: 'lock',
+        icon: IcLock,
     };
 };
 
 export const getPassKeys = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
+        id: 'pass-keys',
         text: c('new_plans: feature').t`Passkeys supported`,
         included: included,
-        icon: 'shield',
+        icon: IcShield,
     };
 };
 
 export const getAdminPanel = (): PlanCardFeatureDefinition => {
     return {
+        id: 'admin-panel',
         text: c('new_plans: feature').t`Administration Panel`,
         included: true,
     };
@@ -211,11 +232,12 @@ export const getAdminPanel = (): PlanCardFeatureDefinition => {
 
 export const getCustomBranding = (included: boolean): PlanCardFeatureDefinition => {
     return {
+        id: 'custom-branding',
         text: c('new_plans: feature').t`Custom workspace branding`,
         tooltip: c('new_plans: tooltip')
             .t`Upload your business' logo to customize your teams experience on the ${BRAND_NAME} web apps`,
         included,
-        icon: 'image',
+        icon: IcImage,
     };
 };
 
@@ -358,10 +380,11 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
 export const getScribeFeature = (): PlanCardFeatureDefinition => {
     const scribeToLumo = getStandaloneUnleashClient()?.isEnabled(MailFeatureFlag.ScribeToLumo);
     return {
+        id: 'scribe',
         text: scribeToLumo
             ? c('mail_signup_2024: Info').t`${LUMO_SHORT_APP_NAME} writing assistant`
             : c('mail_signup_2024: Info').t`${BRAND_NAME} Scribe writing assistant`,
-        icon: 'pen-sparks',
+        icon: IcPenSparks,
         included: true,
         tooltip: c('mail_signup_2024: Info').t`Add-on with free trial`,
     };

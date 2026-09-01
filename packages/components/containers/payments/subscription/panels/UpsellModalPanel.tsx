@@ -2,14 +2,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Pill } from '@proton/atoms/Pill/Pill';
-import type { IconName } from '@proton/icons/types';
 import type { Currency } from '@proton/payments/core/interface';
 import clsx from '@proton/utils/clsx';
 
-import Icon from '../../../../components/icon/Icon';
 import Price from '../../../../components/price/Price';
 import StripedItem from '../../../../components/stripedList/StripedItem';
 import { StripedList } from '../../../../components/stripedList/StripedList';
+import type { PlanCardFeatureIcon } from '../../features/interface';
 
 type ConditionalProps =
     | {
@@ -30,7 +29,7 @@ type ConditionalProps =
       };
 
 type Features = {
-    icon: IconName;
+    icon: PlanCardFeatureIcon;
     text: string;
 }[];
 
@@ -94,8 +93,8 @@ export const UpsellModalPanel = ({
             )}
         </div>
         <StripedList className="w-full my-0 md:my-2" alternate="odd">
-            {features.map(({ icon, text }) => (
-                <StripedItem key={text} left={<Icon name={icon} className="color-primary" />}>
+            {features.map(({ icon: FeatureIcon, text }) => (
+                <StripedItem key={text} left={<FeatureIcon className="color-primary" />}>
                     {text}
                 </StripedItem>
             ))}

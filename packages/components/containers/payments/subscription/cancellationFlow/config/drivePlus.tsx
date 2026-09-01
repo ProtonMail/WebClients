@@ -1,5 +1,8 @@
 import { c } from 'ttag';
 
+import { IcClock } from '@proton/icons/icons/IcClock';
+import { IcGift } from '@proton/icons/icons/IcGift';
+import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { hasCancellablePlan } from '@proton/payments/core/subscription/helpers';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -34,15 +37,15 @@ export const getDrivePlusConfig = ({ plan, subscription }: ConfigProps): PlanCon
             .t`${planName} offers ${planMaxSpace} storage for your files and photos. You are also eligible for yearly storage bonuses.`,
         features: [
             {
-                icon: 'storage',
+                icon: IcStorage,
                 text: c('Subscription reminder').t`${planMaxSpace} total storage`,
             },
             {
-                icon: 'gift',
+                icon: IcGift,
                 text: c('Subscription reminder').t`Yearly free storage bonuses`,
             },
             {
-                icon: 'clock',
+                icon: IcClock,
                 text: c('Subscription reminder').t`Version history`,
             },
             getPrioritySupport(),
