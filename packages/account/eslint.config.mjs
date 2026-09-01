@@ -2,10 +2,16 @@ import { defineConfig } from 'eslint/config';
 
 import defaultConfig from '@proton/eslint-config-proton/all';
 import { createBarrelConfig } from '@proton/eslint-config-proton/barrel';
+import { iconRestrictedImports } from '@proton/eslint-config-proton/icon';
 
 export default defineConfig([
     defaultConfig,
     createBarrelConfig(),
+    {
+        rules: {
+            '@typescript-eslint/no-restricted-imports': ['error', { paths: iconRestrictedImports }],
+        },
+    },
     {
         ignores: ['testing/vitest/**'],
     },
