@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { flushSync } from 'react-dom'
 
 import type {
@@ -232,6 +232,7 @@ type YjsStateDependencies = {
   // transaction once local patches are applied to the doc; used to detect drift.
   onAfterBroadcastPatch?: (patches: unknown, doc: YDoc) => void
   storeAction: (type: SheetsActionType, content: unknown) => void
+  shouldUseCustomYjsInitialization: boolean
 }
 
 let shouldObserveLocalTransactions = false
@@ -242,6 +243,7 @@ function useYjsState({
   docState,
   onAfterBroadcastPatch,
   storeAction,
+  shouldUseCustomYjsInitialization,
 }: YjsStateDependencies) {
   const { userName, receivedEverythingFromRTS } = useSyncedState()
   const provider = useMemo(() => {
@@ -256,38 +258,7 @@ function useYjsState({
 
   const { logger, versionInfo } = useSheetsDependencies()
 
-  const ySheets = useMemo(() => yDoc.getArray<Sheet>('sheets'), [yDoc])
   const handledInitialLoad = useRef(false)
-  const { onChangeActiveSheet, calculateNow } = spreadsheetState
-  useEffect(
-    function handleInitialLoad() {
-      if (!receivedEverythingFromRTS) {
-        return
-      }
-      logger.info('handleInitialLoad: received everything from RTS')
-      if (handledInitialLoad.current) {
-        return
-      }
-      // After receiving base commit, change the active sheet to the first sheet.
-      // RnC does try to do this, but it doesn't work with our setup as when it tries
-      // to do this, it will not have received the initial update yet.
-      const sheets = ySheets.toJSON()
-      if (sheets.length) {
-        const firstSheetId = sortSheetsByIndex(sheets)[0].sheetId
-        logger.info(`handleInitialLoad: changing active sheet to ${firstSheetId}`)
-        onChangeActiveSheet(firstSheetId)
-      }
-      requestAnimationFrame(async () => {
-        await calculateNow({
-          disableEvaluation: true,
-          shouldResetCellDependencyGraph: true,
-        })
-      })
-      handledInitialLoad.current = true
-      storeAction(SheetsActions.InitialLoadComplete, versionInfo.version)
-    },
-    [calculateNow, logger, onChangeActiveSheet, receivedEverythingFromRTS, ySheets, storeAction, versionInfo.version],
-  )
 
   const yjsState = useYSpreadsheetV2({
     ...localState,
@@ -308,6 +279,56 @@ function useYjsState({
     onAfterBroadcastPatch,
     shouldObserveLocalTransactions: () => shouldObserveLocalTransactions,
   })
+  const setupInitialSync = yjsState.setupInitialSync
+  const kv = useMemo(() => yDoc.getMap<KVStateValue>('kv'), [yDoc])
+  const ySheets = useMemo(() => yDoc.getArray<Sheet>('sheets'), [yDoc])
+  const [isKVStateInitialized, setIsKVStateInitialized] = useState(false)
+  const { onChangeActiveSheet, calculateNow } = spreadsheetState
+
+  useEffect(
+    function handleInitialLoad() {
+      if (!receivedEverythingFromRTS) {
+        return
+      }
+      if (handledInitialLoad.current) {
+        return
+      }
+      logger.info('handleInitialLoad: received everything from RTS')
+      if (shouldUseCustomYjsInitialization) {
+        const sheets = ySheets.toJSON()
+        if (sheets.length) {
+          const firstSheetId = sortSheetsByIndex(sheets)[0].sheetId
+          logger.info(`handleInitialLoad: changing active sheet to ${firstSheetId}`)
+          onChangeActiveSheet(firstSheetId)
+        }
+        logger.info('handleInitialLoad: scheduling calculation')
+        requestAnimationFrame(async () => {
+          await calculateNow({
+            disableEvaluation: true,
+            shouldResetCellDependencyGraph: true,
+          })
+        })
+      } else {
+        useKeyValueState.setState(kv.toJSON())
+        setIsKVStateInitialized(true)
+        setupInitialSync()
+      }
+      handledInitialLoad.current = true
+      storeAction(SheetsActions.InitialLoadComplete, versionInfo.version)
+    },
+    [
+      setupInitialSync,
+      logger,
+      receivedEverythingFromRTS,
+      storeAction,
+      versionInfo.version,
+      kv,
+      shouldUseCustomYjsInitialization,
+      ySheets,
+      onChangeActiveSheet,
+      calculateNow,
+    ],
+  )
 
   const usersWithCorrectColor = useMemo(() => {
     return yjsState.users.map((user): Collaborator => ({
@@ -319,11 +340,11 @@ function useYjsState({
     }))
   }, [yjsState.users])
 
-  const kv = useMemo(() => yDoc.getMap<KVStateValue>('kv'), [yDoc])
   useEffect(() => {
     function handleKVChange(_: unknown, transaction: Transaction) {
       if (transaction.origin !== 'local') {
         useKeyValueState.setState(kv.toJSON())
+        setIsKVStateInitialized(true)
       }
     }
     kv.observeDeep(handleKVChange)
@@ -338,7 +359,15 @@ function useYjsState({
     },
   ) satisfies <Key extends keyof KeyValueState, Value extends KeyValueState[Key]>(key: Key, value: Value) => void
 
-  return { ...yjsState, userName, users: usersWithCorrectColor, kvSet, clientID: yDoc.clientID, doc: yDoc }
+  return {
+    ...yjsState,
+    userName,
+    users: usersWithCorrectColor,
+    kvSet,
+    clientID: yDoc.clientID,
+    doc: yDoc,
+    isKVStateInitialized,
+  }
 }
 
 // proton sheets state
@@ -927,7 +956,7 @@ export function useVersioning(
   const setIsMigrating = useStore(editorState, (state) => state.setIsMigrating)
   const { receivedEverythingFromRTS } = useSyncedState()
   const version = useKeyValueState((state) => state.version)
-  const { kvSet, clientID } = state.yjsState
+  const { kvSet, clientID, isKVStateInitialized } = state.yjsState
   const startThresholdTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
   const lockDurationTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
 
@@ -1031,7 +1060,7 @@ export function useVersioning(
   })
 
   useEffect(() => {
-    if (!canRunMigration) {
+    if (!canRunMigration || !isKVStateInitialized) {
       return
     }
     logger.info('versioning: checking for migration', { receivedEverythingFromRTS, version })
@@ -1045,13 +1074,21 @@ export function useVersioning(
     if (CLIENT_VERSION < docVersion) {
       incompatibleClientVersionEvent()
     }
-  }, [canRunMigration, incompatibleClientVersionEvent, logger, migrationEvent, receivedEverythingFromRTS, version])
+  }, [
+    canRunMigration,
+    incompatibleClientVersionEvent,
+    logger,
+    migrationEvent,
+    receivedEverythingFromRTS,
+    version,
+    isKVStateInitialized,
+  ])
 
   const kvChangeHandler = useEvent((current, previous) => {
     if (!canRunMigration) {
       return
     }
-    if (previous.migrationClientId && !current.migrationClientId) {
+    if (previous && previous.migrationClientId && !current.migrationClientId) {
       lockClearedEvent()
       return
     }
@@ -1062,7 +1099,13 @@ export function useVersioning(
     }
   })
 
-  useEffect(() => useKeyValueState.subscribe(kvChangeHandler), [kvChangeHandler])
+  useEffect(() => {
+    if (!isKVStateInitialized) {
+      return
+    }
+    kvChangeHandler(useKeyValueState.getState(), undefined)
+    return useKeyValueState.subscribe(kvChangeHandler)
+  }, [kvChangeHandler, isKVStateInitialized])
 
   return { setInitialVersion }
 }
