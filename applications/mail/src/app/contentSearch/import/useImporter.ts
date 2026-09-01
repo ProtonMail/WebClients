@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 
+import { getSharedIndexService } from '../indexation/IndexService';
+import { logger } from '../utils/logger';
 import type { ImportIssue } from './Import';
 import type { ImportHandle } from './ImportHandle';
-
-import { getSharedIndexService } from '../indexation/IndexService';
 
 export interface ImporterState {
     /** Whether an import is currently in progress. */
@@ -33,7 +33,7 @@ export function useImporter(): ImporterState {
     const [user] = useUser();
     const getUserKeys = useGetUserKeys();
     const [importer, setImporter] = useState<ImportHandle | undefined>(
-        getSharedIndexService(user.ID, getUserKeys).currentImport
+        getSharedIndexService(user.ID, getUserKeys, logger).currentImport
     );
     const [running, setRunning] = useState(importer?.running ?? false);
     const [progress, setProgress] = useState((importer?.progress ?? 0) * 100);
@@ -81,7 +81,7 @@ export function useImporter(): ImporterState {
         setIssues([]);
         setProgress(0);
         setRunning(true);
-        const indexService = getSharedIndexService(user.ID, getUserKeys);
+        const indexService = getSharedIndexService(user.ID, getUserKeys, logger);
         const importer = await indexService.importFromEncryptedSearch();
         setImporter(importer); // triggers the effect above, which subscribes to the new importer
     };
