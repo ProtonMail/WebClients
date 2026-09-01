@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { IcPencil } from '@proton/icons/icons/IcPencil';
-import type { ActionRequest } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type { ActionRequest, ReferenceLabels } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { ConfirmCardShell } from '@proton/lumo-ui';
 
 import type { CardRenderer } from './types';
@@ -24,7 +24,7 @@ const paramsOf = (action: ActionRequest): Record<string, any> =>
 interface Props {
     renderer: CardRenderer;
     action: ActionRequest;
-    labels: Record<string, string>;
+    labels: ReferenceLabels;
     onApply: (params: Record<string, any>) => void;
     onCancel: () => void;
 }

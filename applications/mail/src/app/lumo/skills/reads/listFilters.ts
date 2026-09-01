@@ -42,7 +42,7 @@ export const createListFiltersHandler =
     (mail: MailToolDeps): ToolHandler<Record<string, never>, ListFiltersResult> =>
     async (_params, { references }) => ({
         filters: mail.getFilters().map((filter) => ({
-            reference: references.referenceFor('filter', filter.ID, filter.Name),
+            reference: references.referenceFor('filter', filter.ID, { title: filter.Name }),
             name: filter.Name,
             enabled: filter.Status === FILTER_STATUS.ENABLED,
             sieve: filter.Sieve,

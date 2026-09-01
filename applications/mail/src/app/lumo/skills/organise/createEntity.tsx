@@ -5,7 +5,12 @@ import type { CardBodyProps, CardRenderer } from '@proton/components/components/
 import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 import { IcTagPlus } from '@proton/icons/icons/IcTagPlus';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
-import type { ActionRequest, ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type {
+    ActionRequest,
+    ReferenceLabels,
+    ToolDefinition,
+    ToolHandler,
+} from '@proton/llm/lib/lumoAgent/contracts/types';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAX_FOLDER_NESTING_LEVEL } from '@proton/shared/lib/constants';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
@@ -84,7 +89,7 @@ const createEntityHandler =
             },
         });
 
-        return { reference: references.referenceFor(kind, created.ID, created.Name), name: created.Name };
+        return { reference: references.referenceFor(kind, created.ID, { title: created.Name }), name: created.Name };
     };
 
 const serializeCreated =
@@ -150,12 +155,12 @@ const hasName = (params: Record<string, any>): boolean => entityName(params).tri
  * parent reference without a name, so a parent outside its own results has none recorded — and showing
  * "Hotels in folder-x7b2q1" is worse than dropping the clause.
  */
-const describeEntity = (action: ActionRequest, labels: Record<string, string>): string | undefined => {
+const describeEntity = (action: ActionRequest, labels: ReferenceLabels): string | undefined => {
     const name = entityName(action);
     if (!name) {
         return undefined;
     }
-    const parentName = labels[String(action.parentId)];
+    const parentName = labels[String(action.parentId)]?.title;
     if (!parentName) {
         return name;
     }

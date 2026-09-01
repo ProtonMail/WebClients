@@ -21,8 +21,8 @@ describe('applyLabelsDefinition', () => {
 describe('resolveLabelChanges', () => {
     const setUp = () => {
         const references = createReferenceRegistry();
-        const receipts = references.referenceFor('label', 'LABEL_ID_1', 'Receipts');
-        const invoices = references.referenceFor('label', 'LABEL_ID_2', 'Invoices');
+        const receipts = references.referenceFor('label', 'LABEL_ID_1', { title: 'Receipts' });
+        const invoices = references.referenceFor('label', 'LABEL_ID_2', { title: 'Invoices' });
 
         return { references, receipts, invoices };
     };
@@ -49,7 +49,7 @@ describe('resolveLabelChanges', () => {
     // applied as though it were a label.
     it('rejects a reference of the wrong kind before it can resolve to a message id', () => {
         const { references } = setUp();
-        const emailReference = references.referenceFor('email', 'ELEMENT_ID_1', 'Booking');
+        const emailReference = references.referenceFor('email', 'ELEMENT_ID_1', { title: 'Booking' });
 
         expect(() => resolveLabelChanges([emailReference], references)).toThrow('is not a label reference');
     });
@@ -62,10 +62,10 @@ describe('applyLabelsCardRenderer', () => {
         labels: ['label-m3n4p5', 'label-r6s7t8'],
     };
     const labels = {
-        'email-a1b2c3': 'Booking confirmation',
-        'email-d4e5f6': 'Receipt',
-        'label-m3n4p5': 'Receipts',
-        'label-r6s7t8': 'Invoices',
+        'email-a1b2c3': { title: 'Booking confirmation' },
+        'email-d4e5f6': { title: 'Receipt' },
+        'label-m3n4p5': { title: 'Receipts' },
+        'label-r6s7t8': { title: 'Invoices' },
     };
 
     it('takes the shared selection body and its empty-apply rule', () => {
@@ -83,8 +83,8 @@ describe('applyLabelsCardRenderer', () => {
 describe('createApplyLabelsHandler', () => {
     const setUp = () => {
         const references = createReferenceRegistry();
-        const emailReference = references.referenceFor('email', 'ELEMENT_ID_1', 'Booking');
-        const labelReference = references.referenceFor('label', 'LABEL_ID_1', 'Receipts');
+        const emailReference = references.referenceFor('email', 'ELEMENT_ID_1', { title: 'Booking' });
+        const labelReference = references.referenceFor('label', 'LABEL_ID_1', { title: 'Receipts' });
         const element = { ID: 'ELEMENT_ID_1' };
         const store = { getState: () => ({ elements: { elements: { ELEMENT_ID_1: element } } }) };
         const applyMultipleLocations = jest.fn().mockResolvedValue(undefined);

@@ -32,7 +32,7 @@ describe('list_folders', () => {
 
         expect(result.folders).toHaveLength(2);
         expect(references.idFor(result.folders[0].reference)).toBe('FOLDER_1');
-        expect(references.labelFor(result.folders[0].reference)).toBe('Travel');
+        expect(references.labelFor(result.folders[0].reference)?.title).toBe('Travel');
     });
 
     it('expresses nesting through the parent folder REFERENCE, never a raw id', async () => {

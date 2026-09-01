@@ -173,7 +173,7 @@ describe('read_email', () => {
             elements: { ELEMENT_1: { ID: 'ELEMENT_1', ConversationID: 'CONVERSATION_1' } },
             messages: { ELEMENT_1: decrypted('ELEMENT_1', 'Booking confirmation', 'Your room is booked.') },
         });
-        const reference = references.referenceFor('email', 'ELEMENT_1', 'Booking confirmation');
+        const reference = references.referenceFor('email', 'ELEMENT_1', { title: 'Booking confirmation' });
 
         const result = await createReadEmailHandler(deps)(
             { references: [reference], best_match: null },
@@ -201,7 +201,7 @@ describe('read_email', () => {
             elements: { MESSAGE_1: { ID: 'MESSAGE_1', ConversationID: 'CONVERSATION_1' } },
             messages: { MESSAGE_1: decrypted('MESSAGE_1', 'Booking confirmation', 'Your room is booked.') },
         });
-        const reference = references.referenceFor('email', 'MESSAGE_1', 'Booking confirmation');
+        const reference = references.referenceFor('email', 'MESSAGE_1', { title: 'Booking confirmation' });
 
         await createReadEmailHandler(deps)({ references: [reference], best_match: null }, { references });
 
@@ -224,7 +224,7 @@ describe('read_email', () => {
                 MESSAGE_2: decrypted('MESSAGE_2', 'Re: Project kickoff', 'Second', { time: july(2) }),
             },
         });
-        const reference = references.referenceFor('email', 'CONVERSATION_1', 'Re: Project kickoff');
+        const reference = references.referenceFor('email', 'CONVERSATION_1', { title: 'Re: Project kickoff' });
 
         const result = await createReadEmailHandler(deps)(
             { references: [reference], best_match: null },
@@ -251,7 +251,7 @@ describe('read_email', () => {
                 messages.MESSAGE_2 = decrypted('MESSAGE_2', 'Re: Project kickoff', 'Second', { time: july(2) });
             },
         });
-        const reference = references.referenceFor('email', 'CONVERSATION_1', 'Re: Project kickoff');
+        const reference = references.referenceFor('email', 'CONVERSATION_1', { title: 'Re: Project kickoff' });
 
         const result = await createReadEmailHandler(deps)(
             { references: [reference], best_match: null },
@@ -276,7 +276,7 @@ describe('read_email', () => {
                 MESSAGE_2: decrypted('MESSAGE_2', 'Re: Project kickoff', 'Second', { time: july(2) }),
             },
         });
-        const reference = references.referenceFor('email', 'CONVERSATION_1', 'Project kickoff');
+        const reference = references.referenceFor('email', 'CONVERSATION_1', { title: 'Project kickoff' });
 
         const result = await createReadEmailHandler(deps)(
             { references: [reference], best_match: null },
@@ -297,7 +297,7 @@ describe('read_email', () => {
                 MESSAGE_2: decrypted('MESSAGE_2', 'Re: Project kickoff', 'Second', { time: july(2) }),
             },
         });
-        const reference = references.referenceFor('email', 'CONVERSATION_1', 'Re: Project kickoff');
+        const reference = references.referenceFor('email', 'CONVERSATION_1', { title: 'Re: Project kickoff' });
 
         const result = await createReadEmailHandler(deps)(
             { references: [reference], best_match: null },
@@ -312,8 +312,8 @@ describe('read_email', () => {
             elements: { ELEMENT_1: { ID: 'ELEMENT_1' } },
             messages: { ELEMENT_1: decrypted('ELEMENT_1', 'Kept', 'Still here.') },
         });
-        const kept = references.referenceFor('email', 'ELEMENT_1', 'Kept');
-        const evicted = references.referenceFor('email', 'ELEMENT_GONE', 'Evicted');
+        const kept = references.referenceFor('email', 'ELEMENT_1', { title: 'Kept' });
+        const evicted = references.referenceFor('email', 'ELEMENT_GONE', { title: 'Evicted' });
 
         const result = await createReadEmailHandler(deps)(
             { references: [kept, evicted], best_match: kept },
@@ -334,8 +334,8 @@ describe('read_email', () => {
                 ELEMENT_2: decrypted('ELEMENT_2', 'Second', 'Two.'),
             },
         });
-        const first = references.referenceFor('email', 'ELEMENT_1', 'First');
-        const second = references.referenceFor('email', 'ELEMENT_2', 'Second');
+        const first = references.referenceFor('email', 'ELEMENT_1', { title: 'First' });
+        const second = references.referenceFor('email', 'ELEMENT_2', { title: 'Second' });
 
         await createReadEmailHandler(deps)({ references: [first, second], best_match: second }, { references });
 
@@ -482,7 +482,7 @@ describe('read_thread', () => {
                 MESSAGE_1: decrypted('MESSAGE_1', 'Project kickoff', 'First', { time: july(1) }),
             },
         });
-        const reference = references.referenceFor('email', 'MESSAGE_2', 'Re: Project kickoff');
+        const reference = references.referenceFor('email', 'MESSAGE_2', { title: 'Re: Project kickoff' });
 
         const result = await createReadThreadHandler(deps)({ target: reference }, { references });
 
@@ -662,7 +662,7 @@ describe('read_thread', () => {
 
     it('reports no conversation when the targeted row has been evicted from the list', async () => {
         const { deps, loaded, pushed, references } = harness({ conversations: twoMessageThread() });
-        const reference = references.referenceFor('email', 'MESSAGE_2', 'Re: Project kickoff');
+        const reference = references.referenceFor('email', 'MESSAGE_2', { title: 'Re: Project kickoff' });
 
         const result = await createReadThreadHandler(deps)({ target: reference }, { references });
 
@@ -727,7 +727,7 @@ describe('an HTML email reaching the model', () => {
             elements: { ELEMENT_1: { ID: 'ELEMENT_1', ConversationID: 'CONVERSATION_1' } },
             messages: { ELEMENT_1: decryptedHtml('ELEMENT_1', 'Booking confirmation', html) },
         });
-        const reference = references.referenceFor('email', 'ELEMENT_1', 'Booking confirmation');
+        const reference = references.referenceFor('email', 'ELEMENT_1', { title: 'Booking confirmation' });
 
         const result = await createReadEmailHandler(deps)(
             { references: [reference], best_match: null },

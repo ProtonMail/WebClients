@@ -81,7 +81,10 @@ describe('find_contacts', () => {
 
         expect(result.matches).toHaveLength(1);
         expect(references.idFor(result.matches[0].reference)).toBe('CONTACT_EMAIL_1');
-        expect(references.labelFor(result.matches[0].reference)).toBe('Ada Lovelace');
+        expect(references.labelFor(result.matches[0].reference)).toEqual({
+            title: 'Ada Lovelace',
+            subtitle: 'ada@example.com',
+        });
     });
 
     it('projects the name and address, and never the raw id', async () => {

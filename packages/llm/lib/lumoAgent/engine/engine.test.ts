@@ -4,7 +4,13 @@ import type {
     ToolName as TransportToolName,
 } from '@proton/lumo-api-client';
 
-import type { ActionRequest, ToolName as FrameworkToolName, ToolDefinition, ToolHandlers } from '../contracts/types';
+import type {
+    ActionRequest,
+    ToolName as FrameworkToolName,
+    ReferenceLabels,
+    ToolDefinition,
+    ToolHandlers,
+} from '../contracts/types';
 import type { ConfirmController, ConfirmDecision, ToolChip } from './engine';
 import { createClientToolExecutor } from './engine';
 import { createReferenceRegistry } from './referenceRegistry';
@@ -37,8 +43,8 @@ const call = (name: string, args: Record<string, any> = {}, id = `id-${name}`): 
 /** A confirm controller that answers with a scripted decision and records what it was shown. */
 const scriptedConfirm = (
     decision: ConfirmDecision
-): ConfirmController & { calls: { action: ActionRequest; labels: Record<string, string> }[] } => {
-    const calls: { action: ActionRequest; labels: Record<string, string> }[] = [];
+): ConfirmController & { calls: { action: ActionRequest; labels: ReferenceLabels }[] } => {
+    const calls: { action: ActionRequest; labels: ReferenceLabels }[] = [];
     return {
         calls,
         requestConfirmation: async (action, labels) => {
@@ -93,7 +99,7 @@ const setup = (overrides: Partial<Parameters<typeof createClientToolExecutor>[0]
         },
         create_label: async (params) => {
             handlerCalls.push({ name: 'create_label', params });
-            return { reference: references.referenceFor('label', 'new-real-id', params.name) };
+            return { reference: references.referenceFor('label', 'new-real-id', { title: params.name }) };
         },
         ...overrides.handlers,
     };
@@ -315,7 +321,7 @@ describe('createClientToolExecutor', () => {
 
         it('surfaces reference labels to the confirm card', async () => {
             const references = createReferenceRegistry();
-            const ref = references.referenceFor('folder', 'real-folder', 'Hotels');
+            const ref = references.referenceFor('folder', 'real-folder', { title: 'Hotels' });
             const confirm = scriptedConfirm({ action: 'apply', params: { target: ref } });
             const executor = createClientToolExecutor({
                 definitions: DEFINITIONS,
@@ -326,7 +332,7 @@ describe('createClientToolExecutor', () => {
 
             await executor.execute([call('move_items', { target: ref })]);
             expect(confirm.calls[0].action).toEqual({ type: 'move_items', target: ref });
-            expect(confirm.calls[0].labels).toEqual({ [ref]: 'Hotels' });
+            expect(confirm.calls[0].labels).toEqual({ [ref]: { title: 'Hotels' } });
         });
 
         it('does NOT run the handler when the user cancels, and tells the model so', async () => {
@@ -356,7 +362,7 @@ describe('createClientToolExecutor', () => {
                 references,
                 handlers: {
                     create_label: async (params) => ({
-                        reference: references.referenceFor('label', 'r1', params.name),
+                        reference: references.referenceFor('label', 'r1', { title: params.name }),
                     }),
                 },
                 confirm: scriptedConfirm({ action: 'apply', params: { name: 'Work' } }),

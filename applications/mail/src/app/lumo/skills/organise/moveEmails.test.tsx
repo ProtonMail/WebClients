@@ -3,7 +3,6 @@ import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/refere
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
-
 import type { MailToolDeps } from '../../toolModule';
 import { hasEmailSelection, renderEmailSelectionBody } from './emailSelection';
 import { createMoveEmailsHandler, moveEmailsCardRenderer, moveEmailsDefinition, resolveMoveTarget } from './moveEmails';
@@ -42,7 +41,7 @@ describe('moveEmailsCardRenderer', () => {
         folder: null,
         location: 'trash',
     };
-    const labels = { 'email-a1b2c3': 'Booking confirmation', 'email-d4e5f6': 'Receipt' };
+    const labels = { 'email-a1b2c3': { title: 'Booking confirmation' }, 'email-d4e5f6': { title: 'Receipt' } };
 
     it('titles the card and subtitles a system-location move', () => {
         expect(moveEmailsCardRenderer.title(action, labels)).toBeTruthy();
@@ -56,7 +55,9 @@ describe('moveEmailsCardRenderer', () => {
             folder: 'folder-x7b2q1',
             location: null,
         };
-        expect(moveEmailsCardRenderer.subtitle?.(folderAction, { 'folder-x7b2q1': 'Travel' })).toContain('Travel');
+        expect(moveEmailsCardRenderer.subtitle?.(folderAction, { 'folder-x7b2q1': { title: 'Travel' } })).toContain(
+            'Travel'
+        );
     });
 
     it('takes the shared selection body and its empty-apply rule', () => {
@@ -72,7 +73,7 @@ describe('moveEmailsCardRenderer', () => {
 describe('createMoveEmailsHandler', () => {
     it('resolves references to elements and applies a MOVE to the system label', async () => {
         const references = createReferenceRegistry();
-        const emailReference = references.referenceFor('email', 'ELEMENT_ID_1', 'Booking');
+        const emailReference = references.referenceFor('email', 'ELEMENT_ID_1', { title: 'Booking' });
         const element = { ID: 'ELEMENT_ID_1' };
         const store = { getState: () => ({ elements: { elements: { ELEMENT_ID_1: element } } }) };
         const applyLocation = jest.fn().mockResolvedValue([]);
