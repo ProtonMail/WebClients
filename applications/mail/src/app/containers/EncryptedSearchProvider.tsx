@@ -85,6 +85,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     // API but resolves results from the content-search-v2 index instead of the legacy ES flow.
     const isContentSearchEnabled = useFlag('ContentSearch');
     const [searchVersion] = useLocalStateSync<'v1' | 'v2'>('v2', 'OVERRIDE_SEARCH_V2');
+    // Which engine is in charge this session. The `OVERRIDE_SEARCH_V2` debug toggle reloads the app
+    // when it changes (see `ContentSearchVersionToggle`), so this is settled for the session.
+    const isV2Active = isContentSearchEnabled && searchVersion === 'v2';
 
     // No `contentIndexingSuccessMessage`: the library would announce content search when its own
     // indexing ends, which is too early for the v2 path. `useContentSearchReadyNotification` below
@@ -99,10 +102,10 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         esCallbacks,
         // Keep the legacy ES index in sync while v2 is active by forwarding events to its handler
         esLibraryFunctionsV1,
+        isActive: isV2Active,
     });
 
-    const esLibraryFunctions =
-        isContentSearchEnabled && searchVersion === 'v2' ? esLibraryFunctionsV2 : esLibraryFunctionsV1;
+    const esLibraryFunctions = isV2Active ? esLibraryFunctionsV2 : esLibraryFunctionsV1;
 
     const enableContentSearch = useContentSearchReadyNotification(
         esLibraryFunctions.esStatus,
@@ -217,7 +220,16 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
     useSubscribeEventManager(async (event: Event) => {
         ESDeletedConversationsCache.listenEvents(event);
-        void esLibraryFunctions.handleEvent(convertEventType(event, addresses?.length || 0));
+        // Events go to v2's handler whenever content search is enabled, even when the debug toggle
+        // points searches at v1: v2 forwards every event to v1 first, so v1's index stays in sync
+        // either way, and then records which messages changed. That recording is what lets a later
+        // v2 session import the updates and deletions it slept through — the import's own src/dst
+        // diff only finds messages that were never imported, not ones that changed or went away.
+        // Without the flag v2 must not be touched at all: its handler creates the v2 database.
+        const handleEvent = isContentSearchEnabled
+            ? esLibraryFunctionsV2.handleEvent
+            : esLibraryFunctionsV1.handleEvent;
+        void handleEvent(convertEventType(event, addresses?.length || 0));
     });
 
     /**

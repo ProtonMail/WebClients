@@ -22,6 +22,11 @@ export const ContentSearchVersionToggle = () => {
                 value={searchVersion ?? 'v2'}
                 onChange={(value) => {
                     setSearchVersion(value);
+                    // The version is decided once at startup (see `EncryptedSearchProvider`): each
+                    // engine keeps its own per-session search state, and v2 may own a live indexing
+                    // job, so there is nothing sensible to hand over mid-session. Reload instead, so
+                    // the whole tree comes up on the version just picked.
+                    window.location.reload();
                 }}
                 options={[
                     {
