@@ -7,6 +7,7 @@ import {
     tryParseToolCall,
     tryParseToolResult,
 } from '../../../../../lib/toolCall/types';
+import { findToolResultForCall } from '../../../../../messageHelpers';
 import type { ContentBlock, ToolCallBlock, ToolResultBlock } from '../../../../../types';
 
 /**
@@ -87,27 +88,23 @@ export function extractSearchResults(blocks: ContentBlock[]): SearchItem[] | nul
     const allResults: SearchItem[] = [];
     const seenUrls = new Set<string>();
 
-    for (let i = 0; i < blocks.length; i++) {
-        const block = blocks[i];
+    for (const block of blocks) {
         if (block.type !== 'tool_call') continue;
 
         const toolCall = parseToolCallBlock(block);
         if (!toolCall || !isWebSourceToolCall(toolCall)) continue;
 
-        for (let j = i + 1; j < blocks.length; j++) {
-            const resultBlock = blocks[j];
-            if (resultBlock.type !== 'tool_result') continue;
+        const resultBlock = findToolResultForCall(blocks, block);
+        if (!resultBlock) continue;
 
-            const result = parseToolResultBlock(resultBlock);
-            if (result && isWebSourceToolResultData(result)) {
-                for (const item of result.results) {
-                    if (!seenUrls.has(item.url)) {
-                        seenUrls.add(item.url);
-                        allResults.push(item);
-                    }
+        const result = parseToolResultBlock(resultBlock);
+        if (result && isWebSourceToolResultData(result)) {
+            for (const item of result.results) {
+                if (!seenUrls.has(item.url)) {
+                    seenUrls.add(item.url);
+                    allResults.push(item);
                 }
             }
-            break;
         }
     }
 

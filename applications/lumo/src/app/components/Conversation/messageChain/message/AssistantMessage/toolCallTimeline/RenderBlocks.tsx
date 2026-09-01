@@ -1,9 +1,10 @@
 import { Suspense, lazy, useCallback, useState } from 'react';
 
 import type { NativeToolCallData } from '../../../../../../lib/toolCall/types';
-import { tryParseToolCallAnnouncement, tryParseToolCall } from '../../../../../../lib/toolCall/types';
+import { tryParseToolCall, tryParseToolCallAnnouncement } from '../../../../../../lib/toolCall/types';
+import { findToolResultForCall } from '../../../../../../messageHelpers';
 import type { ContentBlock, Message, ThinkingTimelineEvent, ToolCallBlock } from '../../../../../../types';
-import { isToolCallBlock, isToolResultBlock } from '../../../../../../types';
+import { isToolCallBlock } from '../../../../../../types';
 import StreamingMarkdownRenderer from '../../../../../LumoMarkdown/StreamingMarkdownRenderer';
 import { parseToolCallBlock } from '../../toolCall/toolCallUtils';
 import { ThinkingPath, type ThinkingStep } from './ThinkingPath';
@@ -66,13 +67,10 @@ export function isToolCallInProgress(
 ): boolean {
     if (!isGenerating || !isLastMessage) return false;
 
-    const blockIndex = allBlocks.indexOf(block);
-    const isLastToolCall = block === allBlocks.filter(isToolCallBlock)[allBlocks.filter(isToolCallBlock).length - 1];
+    const toolCallBlocks = allBlocks.filter(isToolCallBlock);
+    const isLastToolCall = block === toolCallBlocks[toolCallBlocks.length - 1];
 
-    // Check if there's a result after this tool call
-    const hasResult = allBlocks.some((b, idx) => idx > blockIndex && isToolResultBlock(b));
-
-    return isLastToolCall && !hasResult;
+    return isLastToolCall && findToolResultForCall(allBlocks, block) === undefined;
 }
 
 function createInProgressToolCallStep(content: string): ThinkingStep {
@@ -142,8 +140,6 @@ function toToolCallStep(
         try {
             const raw = JSON.parse(block.content) as { name?: string; arguments?: Record<string, unknown> };
             if (typeof raw.name === 'string' && raw.name.includes('__')) {
-                const blockIndex = allBlocks.indexOf(block);
-                const resultBlock = allBlocks.find((b, idx) => idx > blockIndex && isToolResultBlock(b));
                 const nativeToolCall: NativeToolCallData = {
                     name: raw.name as NativeToolCallData['name'],
                     arguments: raw.arguments ?? {},
@@ -151,7 +147,7 @@ function toToolCallStep(
                 return {
                     type: 'tool_call',
                     toolCall: nativeToolCall,
-                    result: resultBlock?.type === 'tool_result' ? resultBlock.content : undefined,
+                    result: findToolResultForCall(allBlocks, block)?.content,
                     isActive: false,
                 };
             }
@@ -161,9 +157,7 @@ function toToolCallStep(
         return null;
     }
 
-    const blockIndex = allBlocks.indexOf(block);
-    const resultBlock = allBlocks.find((b, idx) => idx > blockIndex && isToolResultBlock(b));
-    const result = resultBlock?.type === 'tool_result' ? resultBlock.content : undefined;
+    const result = findToolResultForCall(allBlocks, block)?.content;
 
     return { type: 'tool_call', toolCall, result, isActive: isInProgress };
 }

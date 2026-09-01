@@ -1,4 +1,4 @@
-import { getMessageBlocks } from '../messageHelpers';
+import { findToolResultForCall, getMessageBlocks } from '../messageHelpers';
 import type { Message } from '../types';
 
 type ParsedToolCall = {
@@ -36,40 +36,21 @@ function parseToolCall(content: string): ParsedToolCall | undefined {
 
 export function getFeedbackTools(message: Message): string[] {
     const tools: string[] = [];
-    let latestToolCall: ParsedToolCall | undefined;
-    let pendingBareIndex: number | undefined;
+    const blocks = getMessageBlocks(message);
 
-    for (const block of getMessageBlocks(message)) {
-        if (block.type === 'tool_call') {
-            latestToolCall = parseToolCall(block.content);
-            if (latestToolCall) {
-                tools.push(latestToolCall.name);
-                pendingBareIndex = tools.length - 1;
-            }
-            continue;
-        }
+    for (const block of blocks) {
+        if (block.type !== 'tool_call') continue;
 
-        if (block.type === 'tool_result' && latestToolCall) {
-            const { name, topic } = latestToolCall;
-            if (block.meta?.settings) {
-                if (name === 'web_search') {
-                    const decorated = `web_search(${block.meta.settings}, ${topic ?? 'general'})`;
-                    if (pendingBareIndex !== undefined) {
-                        tools[pendingBareIndex] = decorated;
-                    } else {
-                        tools.push(decorated);
-                    }
-                } else if (name === 'web_extract') {
-                    const decorated = `web_extract(${block.meta.settings})`;
-                    if (pendingBareIndex !== undefined) {
-                        tools[pendingBareIndex] = decorated;
-                    } else {
-                        tools.push(decorated);
-                    }
-                }
-            }
-            pendingBareIndex = undefined;
-            latestToolCall = undefined;
+        const toolCall = parseToolCall(block.content);
+        if (!toolCall) continue;
+
+        const settings = findToolResultForCall(blocks, block)?.meta?.settings;
+        if (settings && toolCall.name === 'web_search') {
+            tools.push(`web_search(${settings}, ${toolCall.topic ?? 'general'})`);
+        } else if (settings && toolCall.name === 'web_extract') {
+            tools.push(`web_extract(${settings})`);
+        } else {
+            tools.push(toolCall.name);
         }
     }
 
