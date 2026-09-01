@@ -1,10 +1,11 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
-import type { IconName } from '@proton/icons/types';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
+import { IcClock } from '@proton/icons/icons/IcClock';
+import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import clsx from '@proton/utils/clsx';
 
 import type { ApiImporterOrganizationUser } from '../../../api/api.interface';
@@ -51,28 +52,25 @@ export const coalesceStatus = (user: ApiImporterOrganizationUser, transferErrors
 export const isTerminal = (u: ApiImporterOrganizationUser) =>
     terminalStatuses.includes(coalesceStatus(u) ?? ProductStatusState.Initialized);
 
-const getStatusConfig = (
-    status?: ProductStatusState
-): { text: string; icon?: IconName; iconClassName?: string; className?: string } => {
+const getStatusConfig = (status?: ProductStatusState): { text: string; icon?: ReactNode; className?: string } => {
     switch (status) {
         case ProductStatusState.Initialized:
         case ProductStatusState.Active:
             return {
                 text: c('Import status').t`In progress`,
-                icon: 'clock',
+                icon: <IcClock />,
                 className: 'color-success',
             };
         case ProductStatusState.Completed:
             return {
                 text: c('Import status').t`Migrated`,
-                icon: 'checkmark-circle-filled',
-                iconClassName: 'color-success',
+                icon: <IcCheckmarkCircleFilled className="color-success" />,
                 className: 'color-weak',
             };
         case ProductStatusState.Error:
             return {
                 text: c('Import status').t`Has errors`,
-                icon: 'exclamation-triangle-filled',
+                icon: <IcExclamationTriangleFilled />,
                 className: 'color-danger',
             };
         default:
@@ -92,7 +90,7 @@ const ImportStatus: FC<{
     const cls = clsx('inline-flex items-center gap-2 p-0', className, config.className);
     const label = (
         <>
-            {config.icon && <Icon name={config.icon} className={config.iconClassName} />}
+            {config.icon}
             {config.text}
         </>
     );

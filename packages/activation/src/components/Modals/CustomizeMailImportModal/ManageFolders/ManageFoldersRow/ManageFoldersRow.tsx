@@ -5,7 +5,8 @@ import debounce from 'lodash/debounce';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { Checkbox, Icon, LabelStack } from '@proton/components';
+import { Checkbox, LabelStack } from '@proton/components';
+import { IcFolder } from '@proton/icons/icons/IcFolder';
 import clsx from '@proton/utils/clsx';
 
 import { MailImportPayloadError } from '../../../../../interface';
@@ -60,6 +61,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
 
     const inputRef = useRef<HTMLInputElement>(null);
     const folderProtonName = systemFolder ? systemFolder : protonPath[protonPath.length - 1];
+    const FolderIcon = systemFolder ? FOLDER_ICONS[systemFolder] : IcFolder;
     const folderProviderName = providerPath[providerPath.length - 1];
     const [inputValue, setInputValue] = useState(folderProtonName);
 
@@ -116,8 +118,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                         data-testid="CustomizeModal:destinationItem"
                     >
                         {((isLabel && systemFolder) || !isLabel) && (
-                            <Icon
-                                name={systemFolder ? FOLDER_ICONS[systemFolder] : 'folder'}
+                            <FolderIcon
                                 className={clsx([
                                     'shrink-0 mr-2',
                                     hasError && 'color-danger',

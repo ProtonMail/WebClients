@@ -1,6 +1,10 @@
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
+import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import capitalize from '@proton/utils/capitalize';
 
 import type { ApiImportProvider } from '../../api/api.interface';
@@ -20,15 +24,19 @@ export const getImportProductName = (apiProvider: ApiImportProvider, type: Impor
     return `${capitalize(provider)} ${importTypeLabels[type]}${isForwardingOnly ? ' (forwarding only)' : ''}`;
 };
 
-export const getImportIconNameByProduct = (type: ImportType): IconName => {
+/**
+ * Unused in production — `ReportsTableIcon` renders product logos instead, and
+ * only this module's test still exercises this. A candidate for removal.
+ */
+export const getImportIconByProduct = (type: ImportType): IconComponent => {
     switch (type) {
         case ImportType.MAIL:
-            return 'envelope';
+            return IcEnvelope;
         case ImportType.CALENDAR:
-            return 'calendar-grid';
+            return IcCalendarGrid;
         case ImportType.CONTACTS:
-            return 'users';
+            return IcUsers;
         case ImportType.DRIVE:
-            return 'brand-proton-drive';
+            return IcBrandProtonDrive;
     }
 };
