@@ -14,6 +14,7 @@ import { DatabaseLock } from '../db/DatabaseLock';
 import { openContentSearchDB } from '../db/open';
 import { ImportHandle } from '../import/ImportHandle';
 import { AsyncInit } from '../utils/AsyncInit';
+import type { Logger } from '../utils/logger';
 
 export class IndexService {
     private importHandle?: AsyncInit<ImportHandle | undefined>;
@@ -21,7 +22,8 @@ export class IndexService {
 
     constructor(
         private readonly userId: string,
-        private readonly getUserKeys: () => Promise<DecryptedKey<PrivateKeyReference>[]>
+        private readonly getUserKeys: () => Promise<DecryptedKey<PrivateKeyReference>[]>,
+        private readonly logger: Logger
     ) {}
 
     /**
@@ -76,7 +78,7 @@ export class IndexService {
                     indexV1Key: oldIndexKey,
                     indexV2Key: newIndexKey,
                 };
-                const importHandle = new ImportHandle(this.userId, keys, this.dbLock);
+                const importHandle = new ImportHandle(this.userId, keys, this.dbLock, this.logger);
                 // errors are handled inside start
                 void importHandle.start().finally(() => {
                     this.importHandle = undefined;
@@ -125,9 +127,13 @@ export class IndexService {
 }
 
 let sharedIndexService: IndexService | undefined;
-export function getSharedIndexService(userId: string, getUserKeys: () => Promise<DecryptedKey<PrivateKeyReference>[]>) {
+export function getSharedIndexService(
+    userId: string,
+    getUserKeys: () => Promise<DecryptedKey<PrivateKeyReference>[]>,
+    logger: Logger
+) {
     if (!sharedIndexService) {
-        sharedIndexService = new IndexService(userId, getUserKeys);
+        sharedIndexService = new IndexService(userId, getUserKeys, logger);
     }
     return sharedIndexService;
 }
