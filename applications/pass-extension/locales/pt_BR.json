@@ -340,6 +340,9 @@
       "Edit vault": [
         "Editar cofre"
       ],
+      "Enable": [
+        "Habilitar"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Ative o ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -357,9 +360,6 @@
       ],
       "Fill password": [
         "Preencher senha"
-      ],
-      "Filter vault items": [
-        "Filtrar itens do cofre"
       ],
       "Generate alias": [
         "Gerar alias"
@@ -643,9 +643,6 @@
       "See members": [
         "Ver membros"
       ],
-      "Select items": [
-        "Selecionar itens"
-      ],
       "Send email": [
         "Enviar e-mail"
       ],
@@ -690,9 +687,6 @@
       ],
       "Sign out": [
         "Encerrar sessão"
-      ],
-      "Sort vault items": [
-        "Ordenar itens do cofre"
       ],
       "Start from scratch": [
         "Começar do zero"
@@ -4345,9 +4339,6 @@
       "Download": [
         "Baixar"
       ],
-      "Download \"${ filename }\"": [
-        "Baixar \"${ filename }\""
-      ],
       "Download file": [
         "Baixar arquivo"
       ],
@@ -4425,9 +4416,6 @@
       ],
       "You can attach files to items for a better organization": [
         "Você pode anexar arquivos aos itens para uma melhor organização"
-      ],
-      "You may close this window after saving the file.": [
-        "Você pode fechar esta janela após salvar o arquivo."
       ]
     },
     "Permission": {
@@ -4744,9 +4732,6 @@
     "Title": {
       "${ BRAND_NAME } addresses": [
         "Endereços da ${ BRAND_NAME }"
-      ],
-      "${ PASS_APP_NAME } Logs": [
-        "Registros do ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } Settings": [
         "Configurações do ${ PASS_APP_NAME }"

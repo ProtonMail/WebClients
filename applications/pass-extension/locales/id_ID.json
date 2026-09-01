@@ -331,6 +331,9 @@
       "Edit vault": [
         "Sunting brankas"
       ],
+      "Enable": [
+        "Aktifkan"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Aktifkan ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -348,9 +351,6 @@
       ],
       "Fill password": [
         "Isi kata sandi"
-      ],
-      "Filter vault items": [
-        "Filter item brankas"
       ],
       "Generate alias": [
         "Hasilkan alias"
@@ -675,9 +675,6 @@
       ],
       "Sign out": [
         "Keluar"
-      ],
-      "Sort vault items": [
-        "Urutkan item brankas"
       ],
       "Start from scratch": [
         "Mulai dari awal"
@@ -4258,9 +4255,6 @@
       "Download": [
         "Unduh"
       ],
-      "Download \"${ filename }\"": [
-        "Unduh \"${ filename }\""
-      ],
       "Download file": [
         "Unduh file"
       ],
@@ -4338,9 +4332,6 @@
       ],
       "You can attach files to items for a better organization": [
         "Anda dapat melampirkan file ke item untuk pengelolaan yang lebih baik"
-      ],
-      "You may close this window after saving the file.": [
-        "Anda dapat menutup jendela ini setelah menyimpan file."
       ]
     },
     "Permission": {
@@ -4655,9 +4646,6 @@
     "Title": {
       "${ BRAND_NAME } addresses": [
         "Alamat ${ BRAND_NAME }"
-      ],
-      "${ PASS_APP_NAME } Logs": [
-        "Log ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } Settings": [
         "Pengaturan ${ PASS_APP_NAME }"

@@ -340,6 +340,9 @@
       "Edit vault": [
         "Kluis bewerken"
       ],
+      "Enable": [
+        "Inschakelen"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } inschakelen"
       ],
@@ -357,9 +360,6 @@
       ],
       "Fill password": [
         "Wachtwoord invullen"
-      ],
-      "Filter vault items": [
-        "Filter kluisitems"
       ],
       "Generate alias": [
         "Alias genereren"
@@ -643,9 +643,6 @@
       "See members": [
         "Bekijk leden"
       ],
-      "Select items": [
-        "Selecteer items"
-      ],
       "Send email": [
         "E-mail verzenden"
       ],
@@ -690,9 +687,6 @@
       ],
       "Sign out": [
         "Uitloggen"
-      ],
-      "Sort vault items": [
-        "Sorteer kluisitems"
       ],
       "Start from scratch": [
         "Begin opnieuw"
@@ -4348,9 +4342,6 @@
       "Download": [
         "Download"
       ],
-      "Download \"${ filename }\"": [
-        "\"${ filename }\" downloaden"
-      ],
       "Download file": [
         "Bestand downloaden"
       ],
@@ -4428,9 +4419,6 @@
       ],
       "You can attach files to items for a better organization": [
         "U kunt bestanden toevoegen aan items voor een betere organisatie"
-      ],
-      "You may close this window after saving the file.": [
-        "U kunt dit venster sluiten na het opslaan van het bestand."
       ]
     },
     "Permission": {
@@ -4747,9 +4735,6 @@
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } adressen"
-      ],
-      "${ PASS_APP_NAME } Logs": [
-        "${ PASS_APP_NAME } logbestanden"
       ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } Instellingen"

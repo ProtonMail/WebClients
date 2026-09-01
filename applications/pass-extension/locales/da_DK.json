@@ -340,6 +340,9 @@
       "Edit vault": [
         "Redigér boks"
       ],
+      "Enable": [
+        "Aktiver"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Aktivér ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -357,9 +360,6 @@
       ],
       "Fill password": [
         "Udfyld adgangskode"
-      ],
-      "Filter vault items": [
-        "Filtrér elementer i boks"
       ],
       "Generate alias": [
         "Generér alias"
@@ -643,9 +643,6 @@
       "See members": [
         "Vis medlemmer"
       ],
-      "Select items": [
-        "Vælg elementer"
-      ],
       "Send email": [
         "Send e-mail"
       ],
@@ -690,9 +687,6 @@
       ],
       "Sign out": [
         "Log ud"
-      ],
-      "Sort vault items": [
-        "Sortér elementer i boks"
       ],
       "Start from scratch": [
         "Start fra bunden"
@@ -2868,6 +2862,9 @@
       "Verification code sent.": [
         "Bekræftelseskode sendt."
       ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Se dine ${ PASS_SHORT_APP_NAME }-elementer offline. Kræver din adgangskode for at aktivere det."
+      ],
       "Viewer": [
         "Seer"
       ],
@@ -4758,7 +4755,7 @@
         "${ BRAND_NAME } adresser"
       ],
       "${ PASS_APP_NAME } Logs": [
-        "${ PASS_APP_NAME }-logs"
+        "${ PASS_APP_NAME }-logfiler"
       ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME }-indstillinger"
@@ -4928,6 +4925,9 @@
       ],
       "Email": [
         "E-mail"
+      ],
+      "Enable offline mode": [
+        "Aktivér offline-tilstand"
       ],
       "Encrypted import": [
         "Krypteret import"

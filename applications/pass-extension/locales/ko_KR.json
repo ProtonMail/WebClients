@@ -337,6 +337,9 @@
       "Edit vault": [
         "금고 편집"
       ],
+      "Enable": [
+        "활성화"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 활성화"
       ],
@@ -354,9 +357,6 @@
       ],
       "Fill password": [
         "비밀번호 채우기"
-      ],
-      "Filter vault items": [
-        "금고 항목 필터링"
       ],
       "Generate alias": [
         "별칭 생성"
@@ -640,9 +640,6 @@
       "See members": [
         "회원 보기"
       ],
-      "Select items": [
-        "항목 선택"
-      ],
       "Send email": [
         "이메일 전송"
       ],
@@ -687,9 +684,6 @@
       ],
       "Sign out": [
         "로그아웃"
-      ],
-      "Sort vault items": [
-        "금고 항목 정렬"
       ],
       "Start from scratch": [
         "처음부터 시작하기"
@@ -2834,6 +2828,9 @@
       "Verification code sent.": [
         "인증 코드가 전송되었습니다."
       ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "${ PASS_SHORT_APP_NAME } 항목을 오프라인 상태에서도 확인합니다. 활성화하려면 비밀번호가 필요합니다."
+      ],
       "Viewer": [
         "보기"
       ],
@@ -4303,9 +4300,6 @@
       "Download": [
         "다운로드"
       ],
-      "Download \"${ filename }\"": [
-        "\"${ filename }\" 다운로드"
-      ],
       "Download file": [
         "파일 다운로드"
       ],
@@ -4383,9 +4377,6 @@
       ],
       "You can attach files to items for a better organization": [
         "더 나은 조직을 위해 항목에 파일 첨부가 가능합니다."
-      ],
-      "You may close this window after saving the file.": [
-        "파일 저장 후 이 창을 닫아도 무관합니다."
       ]
     },
     "Permission": {
@@ -4701,9 +4692,6 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } 주소"
       ],
-      "${ PASS_APP_NAME } Logs": [
-        "${ PASS_APP_NAME } 로그"
-      ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } 설정"
       ],
@@ -4871,6 +4859,9 @@
       ],
       "Email": [
         "이메일"
+      ],
+      "Enable offline mode": [
+        "오프라인 모드 활성화"
       ],
       "Encrypted import": [
         "암호화된 불러오기"
