@@ -13,3 +13,49 @@
 		border-color: var(--interaction-norm-contrast);
 	}
 }
+
+.background-tile-placeholder {
+	border-color: var(--interaction-norm-contrast);
+	background-image: linear-gradient(
+		115deg,
+		rgb(255 255 255 / 0.1) 0%,
+		rgb(255 255 255 / 0.5) 50%,
+		rgb(255 255 255 / 0.1) 100%
+	);
+	background-size: 300% 100%;
+	animation: background-tile-sweep 1.5s ease-in-out infinite;
+
+	&:hover {
+		border-color: var(--interaction-norm-contrast);
+		filter: none;
+	}
+}
+
+@keyframes background-tile-sweep {
+	from {
+		background-position: 100% 0;
+	}
+
+	to {
+		background-position: -100% 0;
+	}
+}
+
+@media (hover: hover) {
+	.background-tile-container:not(:hover, :focus-within) .background-tile-delete {
+		opacity: 0;
+		pointer-events: none;
+	}
+}
+
+.background-tile-delete {
+	padding: 0.1875rem;
+	transition: opacity 0.1s ease;
+	border-color: var(--interaction-weak-minor-3);
+	background-color: var(--interaction-norm-major-1);
+	color: var(--interaction-weak-minor-3);
+
+	&:hover {
+		background-color: var(--interaction-norm-major-2);
+	}
+}
