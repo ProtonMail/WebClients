@@ -15,7 +15,6 @@ import {
     shouldShowDeviceCheckmark,
     shouldShowSystemDefaultCheckmark,
 } from '@proton/meet/utils/deviceUtils';
-import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { OptionButton } from '../../atoms/OptionButton/OptionButton';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
@@ -71,7 +70,7 @@ const AudioSettingsDropdownComponent = ({
     const { noiseFilter, toggleNoiseFilter } = useMediaManagementContext();
     const { viewportWidth } = useActiveBreakpoint();
 
-    const speakerSelectionNotSupported = isSafari() || isFirefox();
+    const speakerSelectionNotSupported = !supportsSetSinkId();
 
     // The tests capture and play on the actual devices, so a system default selection has to
     // stay a system default rather than being pinned to a specific device id.
