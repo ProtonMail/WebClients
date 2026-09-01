@@ -364,9 +364,6 @@
       "Fill password": [
         "Fyll ut passord"
       ],
-      "Filter vault items": [
-        "Filtrer hvelvelementer"
-      ],
       "Generate alias": [
         "Generer alias"
       ],
@@ -467,7 +464,7 @@
         "Angi som standard"
       ],
       "Make editor": [
-        "Gjør til redaktør"
+        "Gi redigeringtillatelse"
       ],
       "Make manager": [
         "Gjør til administrator"
@@ -661,9 +658,6 @@
       "See members": [
         "Vis medlemmer"
       ],
-      "Select items": [
-        "Velg elementer"
-      ],
       "Send email": [
         "Send e-post"
       ],
@@ -709,8 +703,8 @@
       "Skip": [
         "Hopp over"
       ],
-      "Sort vault items": [
-        "Sorter hvelvelementer"
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Noen har delt et element med deg på ${ PASS_APP_NAME }."
       ],
       "Start from scratch": [
         "Start fra begynnelsen"
@@ -1351,7 +1345,7 @@
         "Sikker kobling kunne ikke åpnes."
       ],
       "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
-        "Tjenerne er utilgjengelige. Prøv å låse opp ${ PASS_SHORT_APP_NAME } om noen få minutter."
+        "Serverne er utilgjengelige. Prøv å låse opp ${ PASS_SHORT_APP_NAME } om noen få minutter."
       ],
       "Settings update failed": [
         "Oppdatering av innstillinger mislyktes"
@@ -1397,6 +1391,9 @@
       ],
       "Trashing item failed": [
         "Sletting av element til papirkurv mislyktes"
+      ],
+      "Try reaching out to the link owner.": [
+        "Prøv å kontakte eieren av koblingen."
       ],
       "Unable to generate an OTP code for this item": [
         "Ikke i stand tl å generere en OTP-kode for dette elementet."
@@ -1909,7 +1906,7 @@
         "Slipp for å importere"
       ],
       "Editor": [
-        "Redaktør"
+        "Redigerer"
       ],
       "email": [
         "e-post"
@@ -1939,7 +1936,7 @@
         "Aktiver automatisk låsing for å sikre dataene dine"
       ],
       "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
-        "Aktiver frakoblet modus for å få tilgang til ${ PASS_SHORT_APP_NAME }-dataene dine hvis du mister internettilkoblingen eller hvis ${ BRAND_NAME }-tjenerne er utilgjengelige."
+        "Aktiver frakoblet modus for å få tilgang til ${ PASS_SHORT_APP_NAME }-dataene hvis du mister internettilkoblingen eller hvis ${ BRAND_NAME }-serverne er utilgjengelige."
       ],
       "Enabling biometrics auto-lock": [
         "Aktiverer biometrisk auto-lås"
@@ -2517,7 +2514,7 @@
         "Valgte elementer er gjenopprettet fra papirkurven"
       ],
       "Servers are unreachable": [
-        "Tjenerne er utilgjengelige"
+        "Serverne er utilgjengelige"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverne er utilgjengelige. Prøv på nytt om noen få minutter."
@@ -3599,7 +3596,7 @@
         "Gjør alle administratorer"
       ],
       "Make all editors": [
-        "Gjør alle redaktører"
+        "Gi alle redigeringstillatelse"
       ],
       "Make all managers": [
         "Gjør alle til administratorer"
@@ -3929,7 +3926,7 @@
         "Valgt"
       ],
       "Server": [
-        "Tjener"
+        "Server"
       ],
       "Settings": [
         "Innstillinger"
@@ -4029,6 +4026,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Dette elementet er tilgjengelig til ${ date } eller til visningsgrensen er nådd."
       ],
       "Tier/Level": [
         "Nivå"
@@ -5180,9 +5180,6 @@
       ],
       "Setup ${ PASS_APP_NAME } SSH Agent": [
         "Konfigurer ${ PASS_APP_NAME } SSH-agent"
-      ],
-      "Setup offline mode": [
-        "Konfigurer frakoblet modus"
       ],
       "Share vaults with your team": [
         "Del hvelv med teamet ditt"

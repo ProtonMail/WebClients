@@ -355,9 +355,6 @@
       "Fill password": [
         "Заповнити пароль"
       ],
-      "Filter vault items": [
-        "Фільтрувати елементи сховища"
-      ],
       "Generate alias": [
         "Згенерувати псевдонім"
       ],
@@ -694,8 +691,8 @@
       "Skip": [
         "Пропустити"
       ],
-      "Sort vault items": [
-        "Сортувати елементи сховища"
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Хтось поділився з вами елементом у ${ PASS_APP_NAME }."
       ],
       "Start from scratch": [
         "Почати з нуля"
@@ -1383,6 +1380,9 @@
       ],
       "Trashing item failed": [
         "Не вдалося перемістити елемент у смітник"
+      ],
+      "Try reaching out to the link owner.": [
+        "Спробуйте знайти власника посилання."
       ],
       "Unable to generate an OTP code for this item": [
         "Не вдалося створити код OTP для цього елемента"
@@ -4089,6 +4089,9 @@
       "Theme": [
         "Тема"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Цей елемент доступний до ${ date } або до досягнення ліміту переглядів."
+      ],
       "Tier/Level": [
         "Рівень/Рівень"
       ],
@@ -5259,9 +5262,6 @@
       ],
       "Setup ${ PASS_APP_NAME } SSH Agent": [
         "Налаштування агента SSH ${ PASS_APP_NAME }"
-      ],
-      "Setup offline mode": [
-        "Налаштувати режим не в мережі"
       ],
       "Share vaults with your team": [
         "Поділитися сховищем зі своєю командою"
