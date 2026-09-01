@@ -331,6 +331,9 @@
       "Edit vault": [
         "編輯保管庫"
       ],
+      "Enable": [
+        "啟用"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "啟用${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -348,9 +351,6 @@
       ],
       "Fill password": [
         "填寫密碼"
-      ],
-      "Filter vault items": [
-        "過濾保管庫項目"
       ],
       "Generate alias": [
         "生成別名"
@@ -675,9 +675,6 @@
       ],
       "Sign out": [
         "登出"
-      ],
-      "Sort vault items": [
-        "排序保管庫項目"
       ],
       "Start from scratch": [
         "從空白檔建立"
@@ -4255,9 +4252,6 @@
       "Download": [
         "下載"
       ],
-      "Download \"${ filename }\"": [
-        "下載「${ filename }」"
-      ],
       "Download file": [
         "下載檔案"
       ],
@@ -4335,9 +4329,6 @@
       ],
       "You can attach files to items for a better organization": [
         "您可以將檔案附加至項目，以進行更好的組織"
-      ],
-      "You may close this window after saving the file.": [
-        "儲存檔案後，您便可以關閉此視窗。"
       ]
     },
     "Permission": {
@@ -4652,9 +4643,6 @@
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } 個電郵位址"
-      ],
-      "${ PASS_APP_NAME } Logs": [
-        "${ PASS_APP_NAME } 日誌"
       ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } 設定"

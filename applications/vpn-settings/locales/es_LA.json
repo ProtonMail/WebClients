@@ -916,6 +916,9 @@
       "Invite user": [
         "Invitar usuario"
       ],
+      "Invoice options": [
+        "Opciones de facturación"
+      ],
       "Keep": [
         "Conservar"
       ],
@@ -1296,6 +1299,9 @@
       ],
       "Set catch-all": [
         "Configurar catch-all"
+      ],
+      "Set invoice email": [
+        "Establecer correo de facturación"
       ],
       "Set new password": [
         "Establecer contraseña nueva"
@@ -8260,6 +8266,9 @@
       "Email address copied to clipboard": [
         "Dirección de correo electrónico copiada al portapapeles"
       ],
+      "Email addresses copied to clipboard": [
+        "Direcciones de correo copiadas al portapapeles"
+      ],
       "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
         "Correo electrónico y calendario, integrado con ${ CONTACTS_APP_NAME }"
       ],
@@ -9277,6 +9286,9 @@
       "SCIM token active": [
         "Token SCIM activo"
       ],
+      "Secure and end-to-end encrypted": [
+        "Seguro y cifrado de extremo a extremo"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Asegure la cuenta de ${ BRAND_NAME }"
       ],
@@ -9978,6 +9990,9 @@
       ],
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "Podemos usar su teléfono de recuperación para enviarle un código de verificación para restablecer la contraseña y para contactarle si detectamos alguna actividad sospechosa."
+      ],
+      "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
+        "No pudimos enviar las facturas a su dirección de correo. La facturación automática se suspendió hasta que actualice la dirección."
       ],
       "We couldn’t process your payment.": [
         "No pudimos procesar el pago."
@@ -11427,6 +11442,9 @@
       ],
       "Send crash reports": [
         "Envío de informes de error"
+      ],
+      "Send invoices by email": [
+        "Enviar facturas por correo electrónico"
       ],
       "Sequences": [
         "Secuencias"
@@ -14056,14 +14074,60 @@
       ]
     },
     "organization key reset": {
+      "Afterward, every converted user must accept the request to become non-private again, from their account settings.": [
+        "Posteriormente, cada usuario convertido deberá aceptar la solicitud para volver a ser no privado desde los ajustes de sus cuentas."
+      ],
+      "An unprivatization request is sent by email to the converted users": [
+        "Una solicitud de desprivatización es enviada por correo a los usuarios convertidos"
+      ],
+      "Because your organization key has changed, you lost some of your admin rights: You can no longer create non-private users and access their accounts.": [
+        "Debido a que la clave de su organización ha cambiado, ha perdido algunos de sus derechos de administrador: ya no puede crear usuarios no privados ni acceder a sus cuentas."
+      ],
+      "Before continuing, **let your users know they'll receive an admin access request by email**, so they're not caught off guard.": [
+        "Antes de continuar, **permita que sus usuarios sepan que recibirán una solicitud de acceso de administrador por correo electrónico**, así no le tomarán por sorpresa."
+      ],
+      "Can you reach out to other administrators?": [
+        "¿Puede contactar a los demás administradores?"
+      ],
+      "Converting users to private": [
+        "Convirtiendo usuarios a privados"
+      ],
+      "Copy email list": [
+        "Copiar lista de correo electrónico"
+      ],
+      "Could not send the unprivatization request to ${ n } user. It will be retried automatically.": [
+        "No se pudo enviar la solicitud de desprivatización a ${ n } usuario. Se reintentará automáticamente.",
+        "No se pudo enviar la solicitud de desprivatización a ${ n } usuarios. Se reintentará automáticamente."
+      ],
+      "Get in touch with your other administrators, to see if they can help. They will be able to restore your privileges after using a data recovery method.": [
+        "Póngase en contacto con sus otros administradores para ver si pueden ayudarle. Podrán restaurar sus privilegios mediante un método de recuperación de datos."
+      ],
+      "I've notified my users that they'll receive an unprivatization request.": [
+        "He notificado a mis usuarios que recibirán una solicitud de desprivatización."
+      ],
       "Non-private users": [
         "Usuarios no privados"
+      ],
+      "Once your privileges have been restored, you'll be able to create non-private users and access their accounts.": [
+        "Una vez que se hayan restablecido sus privilegios, podrá crear usuarios no privados y acceder a sus cuentas."
+      ],
+      "Organization key reset": [
+        "Restablecimiento de la clave de la organización"
+      ],
+      "Ready to reset your organization key?": [
+        "¿Listo para restablecer la clave de su organización?"
       ],
       "Reset key": [
         "Restablecer clave"
       ],
       "Reset organization key?": [
         "¿Restablecer la clave de la organización?"
+      ],
+      "Resetting organization key": [
+        "Restableciendo la clave de la organización"
+      ],
+      "Resetting the organization key generates a new encryption key to keep your organization's data secure. **No data will be lost or destroyed in this process, but the users groups will be deleted.**": [
+        "Restablecer la clave de la organización genera una clave de cifrado nueva para mantener seguros los datos de su organización. **No se perderá ni se destruirá ningún dato durante este proceso, pero se eliminarán los grupos de usuarios.**"
       ],
       "See ${ n } user": [
         "Ver ${ n } usuario",
@@ -14072,8 +14136,38 @@
       "See users": [
         "Ver usuarios"
       ],
+      "Send unprivatization requests": [
+        "Enviar solicitudes de desprivatización"
+      ],
+      "The non-private users are converted to private": [
+        "Los usuarios no privados se convierten en privados"
+      ],
+      "The organization key is reset": [
+        "La clave de la organización está restablecida"
+      ],
       "This process is automated:": [
         "Este proceso está automatizado:"
+      ],
+      "This should take less than ${ minutes } minute. **Don't close this tab or let your device go to sleep** until it's finished.": [
+        "Esto debería de tomar menos de ${ minutes } minuto. **No cierre esta pestaña o permita que su dispositivo entre en suspensión** hasta que finalice.",
+        "Esto debería de tomar menos de ${ minutes } minutos. **No cierre esta pestaña o permita que su dispositivo entre en suspensión** hasta que finalice."
+      ],
+      "This should take less than ${ minutes } minute. **Keep this browser tab open and your device active** until it completes.": [
+        "Esto debería de tomar menos de ${ minutes } minuto. **Mantenga esta pestaña abierta y su dispositivo activo** hasta que se complete.",
+        "Esto debería de tomar menos de ${ minutes } minutos. **Mantenga esta pestaña abierta y su dispositivo activo** hasta que se complete."
+      ],
+      "To become non-private again, they must accept the request to enable admin access, from their account settings. You don't need to wait for this step.": [
+        "Para volver a ser no privado, deben aceptar la solicitud para activar el acceso de administrador desde los ajustes de sus cuentas. No tiene que esperar a que se complete este paso."
+      ],
+      "To reset the organization key and restore your administrator privileges, **${ n } non-private user must be temporarily converted to private.**": [
+        "Para restablecer la clave de la organización y restaurar sus privilegios de administrador, **${ n } usuario no privado debe convertirse temporalmente a privado.**",
+        "Para restablecer la clave de la organización y restaurar sus privilegios de administrador, **${ n } usuarios no privados deben convertirse temporalmente a privados.**"
+      ],
+      "To reset the organization key, the users will be converted to private, and will receive an email invitation to become non-private again.": [
+        "Para establecer la clave de la organización, los usuarios se convertirán a privados y recibirán una invitación de correo para volver a ser no privados de nuevo."
+      ],
+      "To restore your privileges, use a data recovery method.": [
+        "Para restaurar sus privilegios use un método de recuperación de datos."
       ],
       "Try another way": [
         "Intentar de otra manera"
@@ -14081,6 +14175,15 @@
       "User (${ n })": [
         "Usuario (${ n })",
         "Usuarios (${ n })"
+      ],
+      "You can reset your organization key to restore your administrator privileges. Then, you'll be able to create non-private users and access their accounts.": [
+        "Puede restablecer la clave de su organización para recuperar sus privilegios de administrador. De esta forma, podrá crear usuarios no privados y acceder a sus cuentas."
+      ],
+      "Your administrator privileges have been restored. You can now manage non-private users.": [
+        "Se han restaurado sus privilegios de administrador. Ahora puede gestionar usuarios no privados."
+      ],
+      "Your users will receive an email to accept the unprivatization request.": [
+        "Sus usuarios recibirán un correo para aceptar la solicitud de desprivatización."
       ]
     },
     "Organization logo upload": {
@@ -14704,6 +14807,9 @@
       ],
       "Ask anything…": [
         "Pregunte cualquier cosa…"
+      ],
+      "billing@company.com": [
+        "facturacion@empresa.com"
       ],
       "Choose a name": [
         "Elija un nombre"
@@ -16585,6 +16691,11 @@
         "Solicitud de restablecimiento de contraseña"
       ]
     },
+    "Set invoice email form note": {
+      "Turn on automatic invoicing to receive bills via email. Enter the email address where you want to receive invoices.": [
+        "Active la facturación automática para recibir las facturas por correo electrónico. Ingrese la dirección de correo donde desea recibir las facturas."
+      ]
+    },
     "Settings section title": {
       "Account": [
         "Cuenta"
@@ -17982,6 +18093,9 @@
       ],
       "Invoice customized": [
         "Factura personalizada"
+      ],
+      "Invoice email updated": [
+        "Correo de facturación actualizado"
       ],
       "Invoice paid": [
         "Factura pagada"
@@ -19433,6 +19547,9 @@
       ],
       "Session management": [
         "Gestión de sesiones"
+      ],
+      "Set invoice email": [
+        "Establecer correo de facturación"
       ],
       "Set new password": [
         "Establecer contraseña nueva"

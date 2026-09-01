@@ -355,9 +355,6 @@
       "Fill password": [
         "Isi kata sandi"
       ],
-      "Filter vault items": [
-        "Filter item brankas"
-      ],
       "Generate alias": [
         "Hasilkan alias"
       ],
@@ -694,8 +691,8 @@
       "Skip": [
         "Lewati"
       ],
-      "Sort vault items": [
-        "Urutkan item brankas"
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Seseorang membagikan item kepada Anda di ${ PASS_APP_NAME }."
       ],
       "Start from scratch": [
         "Mulai dari awal"
@@ -1368,6 +1365,9 @@
       ],
       "Trashing item failed": [
         "Item gagal dibuang"
+      ],
+      "Try reaching out to the link owner.": [
+        "Cobalah untuk menghubungi pemilik tautan."
       ],
       "Unable to generate an OTP code for this item": [
         "Tidak dapat membuat kode OTP untuk item ini"
@@ -3951,6 +3951,9 @@
       "Theme": [
         "Tema"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Item ini dapat diakses hingga ${ date } atau hingga batas jumlah tampilannya tercapai."
+      ],
       "Tier/Level": [
         "Tingkat/Level"
       ],
@@ -5091,9 +5094,6 @@
       ],
       "Setup ${ PASS_APP_NAME } SSH Agent": [
         "Pengaturan Agen SSH ${ PASS_APP_NAME }"
-      ],
-      "Setup offline mode": [
-        "Atur mode luring"
       ],
       "Share vaults with your team": [
         "Bagikan brankas dengan tim Anda"

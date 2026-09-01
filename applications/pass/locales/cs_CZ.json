@@ -337,9 +337,6 @@
       "Fill password": [
         "Vyplnit heslo"
       ],
-      "Filter vault items": [
-        "Filtrovat položky v trezoru"
-      ],
       "Generate alias": [
         "Vygenerovat alias"
       ],
@@ -666,9 +663,6 @@
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Někdo s vámi sdílel položku ${ PASS_APP_NAME }."
-      ],
-      "Sort vault items": [
-        "Seřadit položky trezoru"
       ],
       "Start from scratch": [
         "Začít od nuly"
@@ -2139,7 +2133,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -5077,9 +5074,6 @@
       ],
       "Settings": [
         "Nastavení"
-      ],
-      "Setup offline mode": [
-        "Nastavení režimu offline"
       ],
       "Share vaults with your team": [
         "Sdílet trezory s vaším týmem"

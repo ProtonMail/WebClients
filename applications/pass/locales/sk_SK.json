@@ -346,9 +346,6 @@
       "Fill password": [
         "Vyplniť heslo"
       ],
-      "Filter vault items": [
-        "Filtrovať položky trezoru"
-      ],
       "Generate alias": [
         "Vygenerovať alias"
       ],
@@ -631,9 +628,6 @@
       "See members": [
         "Zobraziť členov"
       ],
-      "Select items": [
-        "Vyberte položky"
-      ],
       "Send email": [
         "Odoslať email"
       ],
@@ -681,9 +675,6 @@
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Niekto s vami zdieľal položku v ${ PASS_APP_NAME }."
-      ],
-      "Sort vault items": [
-        "Triediť položky trezoru"
       ],
       "Start from scratch": [
         "Začať úplne od začiatku"
@@ -870,6 +861,9 @@
       ],
       "Check if your passwords have been exposed": [
         "Skontrolujte, či vaše heslá neboli zverejnené"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Kontrola ${ compromised.progress.completed } z ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Vytvorte jedinečné heslá"
@@ -1811,6 +1805,9 @@
       "Change your password": [
         "Zmeňte si heslo"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Kontrola ${ compromised.progress.completed } z ${ compromised.progress.total } hesiel"
+      ],
       "Confirm your extra password to proceed with its removal.": [
         "Potvrdením dodatočného hesla pokračujte v jeho odstraňovaní."
       ],
@@ -2178,7 +2175,10 @@
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy."
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -2737,6 +2737,9 @@
       ],
       "Verification code sent.": [
         "Overovací kód bol odoslaný."
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Prezerajte si svoje položky v ${ PASS_SHORT_APP_NAME } v režime offline. Na aktiváciu je potrebné zadať heslo."
       ],
       "Viewer": [
         "Čitateľ"
@@ -4865,6 +4868,9 @@
       "Domain ownership verification": [
         "Overenie vlastníctva domény"
       ],
+      "Enable offline mode": [
+        "Povoliť offline režim"
+      ],
       "Encrypted import": [
         "Šifrovaný import"
       ],
@@ -5128,9 +5134,6 @@
       ],
       "Settings": [
         "Nastavenia"
-      ],
-      "Setup offline mode": [
-        "Nastavenie offline režimu"
       ],
       "Share vaults with your team": [
         "Zdieľať trezory so svojím tímom"

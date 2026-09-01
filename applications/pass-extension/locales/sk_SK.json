@@ -340,6 +340,9 @@
       "Edit vault": [
         "Upraviť trezor"
       ],
+      "Enable": [
+        "Zapnúť"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Povoliť ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -357,9 +360,6 @@
       ],
       "Fill password": [
         "Vyplniť heslo"
-      ],
-      "Filter vault items": [
-        "Filtrovať položky trezoru"
       ],
       "Generate alias": [
         "Vygenerovať alias"
@@ -643,9 +643,6 @@
       "See members": [
         "Zobraziť členov"
       ],
-      "Select items": [
-        "Vyberte položky"
-      ],
       "Send email": [
         "Odoslať email"
       ],
@@ -690,9 +687,6 @@
       ],
       "Sign out": [
         "Odhlásiť sa"
-      ],
-      "Sort vault items": [
-        "Triediť položky trezoru"
       ],
       "Start from scratch": [
         "Začať úplne od začiatku"
@@ -891,6 +885,9 @@
       ],
       "Check if your passwords have been exposed": [
         "Skontrolujte, či vaše heslá neboli zverejnené"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Kontrola ${ compromised.progress.completed } z ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Vytvorte jedinečné heslá"
@@ -1906,6 +1903,9 @@
       ],
       "Change your password": [
         "Zmeňte si heslo"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Kontrola ${ compromised.progress.completed } z ${ compromised.progress.total } hesiel"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Vyberte uložený prístupový kľúč na prihlásenie do ${ domain }"
@@ -2923,6 +2923,9 @@
       ],
       "Verification code sent.": [
         "Overovací kód bol odoslaný."
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Prezerajte si svoje položky v ${ PASS_SHORT_APP_NAME } v režime offline. Na aktiváciu je potrebné zadať heslo."
       ],
       "Viewer": [
         "Čitateľ"
@@ -4453,9 +4456,6 @@
       "Download": [
         "Stiahnuť"
       ],
-      "Download \"${ filename }\"": [
-        "Stiahnuť \"${ filename }\""
-      ],
       "Download file": [
         "Stiahnuť súbor"
       ],
@@ -4533,9 +4533,6 @@
       ],
       "You can attach files to items for a better organization": [
         "Pre lepšiu organizáciu môžete k položkám pripojiť súbory"
-      ],
-      "You may close this window after saving the file.": [
-        "Po uložení súboru môžete toto okno zavrieť."
       ]
     },
     "Permission": {
@@ -4857,9 +4854,6 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } adresy"
       ],
-      "${ PASS_APP_NAME } Logs": [
-        "Logy ${ PASS_APP_NAME }"
-      ],
       "${ PASS_APP_NAME } Settings": [
         "Nastavenia ${ PASS_APP_NAME }"
       ],
@@ -5030,6 +5024,9 @@
       ],
       "Email": [
         "Email"
+      ],
+      "Enable offline mode": [
+        "Povoliť offline režim"
       ],
       "Encrypted import": [
         "Šifrovaný import"

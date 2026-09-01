@@ -331,6 +331,9 @@
       "Edit vault": [
         "Рэдагаваць сховішча"
       ],
+      "Enable": [
+        "Уключыць"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Уключыць ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -348,9 +351,6 @@
       ],
       "Fill password": [
         "Запоўніць пароль"
-      ],
-      "Filter vault items": [
-        "Фільтраваць элементы сховішча"
       ],
       "Generate alias": [
         "Згенерыраваць псеўданім"
@@ -676,9 +676,6 @@
       "Sign out": [
         "Выйсці з уліковага запісу"
       ],
-      "Sort vault items": [
-        "Сартаваць элементы сховішча"
-      ],
       "Start from scratch": [
         "Пачаць з нуля"
       ],
@@ -713,10 +710,10 @@
         "Сметніца"
       ],
       "Try again": [
-        "Паспрабуйце яшчэ раз"
+        "Паўтарыце спробу"
       ],
       "Try again.": [
-        "Паспрабаваць яшчэ раз."
+        "Паўтарыце спробу."
       ],
       "Unblock contact": [
         "Разблакіраваць кантакт"
@@ -960,7 +957,7 @@
         "Першапачаткова неабходна праверыць дамен уладальніка."
       ],
       "Alias could not be updated at the moment. Please try again later": [
-        "У дадзены момант не ўдаецца абнавіць псеўданім. Паспрабуйце яшчэ раз пазней"
+        "У дадзены момант не ўдаецца абнавіць псеўданім. Паўтарыце спробу пазней"
       ],
       "Alias options could not be resolved": [
         "Не ўдалося вызначыць параметры псеўданіма"
@@ -1374,7 +1371,7 @@
         "URL-адрас знаходзіцца ў спісе"
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
-        "Адбылася памылка падчас выдалення бяспечнай спасылкі. Паспрабуйце яшчэ раз праз некалькі хвілін."
+        "Адбылася памылка падчас выдалення бяспечнай спасылкі. Паўтарыце спробу праз некалькі хвілін."
       ],
       "This domain is already managed by your organization": [
         "Гэты дамен ужо кіруецца вашай арганізацыяй"
@@ -1443,7 +1440,7 @@
         "Няправільны пароль"
       ],
       "Wrong PIN code. Try again.": [
-        "Няправільны PIN-код. Паспрабуйце яшчэ раз."
+        "Няправільны PIN-код. Паўтарыце спробу."
       ],
       "Wrong second password": [
         "Няправільны другі пароль"
@@ -1466,7 +1463,7 @@
     },
     "Error message": {
       "Please refresh the page or try again later.": [
-        "Абнавіце старонку або паспрабуйце яшчэ раз пазней."
+        "Абнавіце старонку або паўтарыце спробу пазней."
       ],
       "Something went wrong": [
         "Нешта пайшло не так"
@@ -2622,7 +2619,7 @@
         "Серверы недаступны."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
+        "Серверы недаступны. Паўтарыце спробу праз некалькі хвілін"
       ],
       "Session timed out": [
         "Сеанс завяршыўся"
@@ -4417,9 +4414,6 @@
       "Download": [
         "Спампаваць"
       ],
-      "Download \"${ filename }\"": [
-        "Спампаваць \"${ filename }\""
-      ],
       "Download file": [
         "Спампаваць файл"
       ],
@@ -4497,9 +4491,6 @@
       ],
       "You can attach files to items for a better organization": [
         "Вы можаце далучаць файлы да элементаў для лепшай арганізацыі"
-      ],
-      "You may close this window after saving the file.": [
-        "Вы можаце закрыць гэтае акно пасля захавання файла."
       ]
     },
     "Permission": {
@@ -4820,9 +4811,6 @@
     "Title": {
       "${ BRAND_NAME } addresses": [
         "Адрасы ${ BRAND_NAME }"
-      ],
-      "${ PASS_APP_NAME } Logs": [
-        "Журналы ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } Settings": [
         "Налады ${ PASS_APP_NAME }"
@@ -5542,7 +5530,7 @@
         "Дадатковы пароль павінен мець прынамсі 8 сімвалаў"
       ],
       "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
-        "Збой аўтаматычнага ўводу даных. Пераканайцеся, што ў ${ PASS_APP_NAME } ёсць неабходныя дазволы і паспрабуйце яшчэ раз (${ error })."
+        "Збой аўтаматычнага ўводу даных. Пераканайцеся, што ў ${ PASS_APP_NAME } ёсць неабходныя дазволы і паўтарыце спробу (${ error })."
       ],
       "Failed to load breaches.": [
         "Не ўдалося загрузіць парушэнні."

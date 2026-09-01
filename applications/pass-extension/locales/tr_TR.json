@@ -118,6 +118,9 @@
       "Bulk restore items from trash": [
         "Çöpteki ögeleri toplu olarak çıkar"
       ],
+      "Bulk select items": [
+        "Ögeleri toplu olarak seç"
+      ],
       "Cancel": [
         "İptal"
       ],
@@ -340,6 +343,9 @@
       "Edit vault": [
         "Kasayı düzenle"
       ],
+      "Enable": [
+        "Aç"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini aç"
       ],
@@ -357,9 +363,6 @@
       ],
       "Fill password": [
         "Parolayı doldur"
-      ],
-      "Filter vault items": [
-        "Kasa ögelerini süz"
       ],
       "Generate alias": [
         "Takma ad üret"
@@ -502,6 +505,9 @@
       "Move to Trash": [
         "Çöpe at"
       ],
+      "Multiple select": [
+        "Çoklu seçim"
+      ],
       "New token": [
         "Yeni kod"
       ],
@@ -643,9 +649,6 @@
       "See members": [
         "Üyeleri görüntüle"
       ],
-      "Select items": [
-        "Ögeleri seçin"
-      ],
       "Send email": [
         "E-posta gönder"
       ],
@@ -690,9 +693,6 @@
       ],
       "Sign out": [
         "Oturumu kapat"
-      ],
-      "Sort vault items": [
-        "Kasa ögelerini sırala"
       ],
       "Start from scratch": [
         "Sıfırdan başla"
@@ -2868,6 +2868,9 @@
       "Verification code sent.": [
         "Doğrulama kodu gönderildi."
       ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "${ PASS_SHORT_APP_NAME } ögelerinizi çevrim dışı görüntüleyin. Açmak için parolanız gerekir."
+      ],
       "Viewer": [
         "Görüntüleyici"
       ],
@@ -4928,6 +4931,9 @@
       ],
       "Email": [
         "E-posta"
+      ],
+      "Enable offline mode": [
+        "Çevrim dışı kip açılıyor"
       ],
       "Encrypted import": [
         "Şifrelenmiş içe aktarma"

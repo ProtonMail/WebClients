@@ -331,6 +331,9 @@
       "Edit vault": [
         "Редактировать хранилище"
       ],
+      "Enable": [
+        "Включить"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Включить ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -348,9 +351,6 @@
       ],
       "Fill password": [
         "Заполнить пароль"
-      ],
-      "Filter vault items": [
-        "Фильтровать элементы хранилища"
       ],
       "Generate alias": [
         "Сгенерировать псевдоним"
@@ -675,9 +675,6 @@
       ],
       "Sign out": [
         "Выйти"
-      ],
-      "Sort vault items": [
-        "Сортировать элементы хранилища"
       ],
       "Start from scratch": [
         "Начать заново"
@@ -4411,9 +4408,6 @@
       "Download": [
         "Скачать"
       ],
-      "Download \"${ filename }\"": [
-        "Скачать \"${ filename }\""
-      ],
       "Download file": [
         "Скачать файл"
       ],
@@ -4491,9 +4485,6 @@
       ],
       "You can attach files to items for a better organization": [
         "Вы можете прикреплять файлы к элементам для лучшей организации"
-      ],
-      "You may close this window after saving the file.": [
-        "Вы можете закрыть это окно после сохранения файла."
       ]
     },
     "Permission": {
@@ -4814,9 +4805,6 @@
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } адресов"
-      ],
-      "${ PASS_APP_NAME } Logs": [
-        "Журналы ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } Settings": [
         "Настройки ${ PASS_APP_NAME }"

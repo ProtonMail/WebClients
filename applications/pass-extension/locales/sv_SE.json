@@ -337,6 +337,9 @@
       "Edit vault": [
         "Redigera valv"
       ],
+      "Enable": [
+        "Aktivera"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Aktivera ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -354,9 +357,6 @@
       ],
       "Fill password": [
         "Fyll lösenord"
-      ],
-      "Filter vault items": [
-        "Filtrera valvobjekt"
       ],
       "Generate alias": [
         "Generera alias"
@@ -640,9 +640,6 @@
       "See members": [
         "Se medlemmar"
       ],
-      "Select items": [
-        "Välj objekt"
-      ],
       "Send email": [
         "Skicka e-post"
       ],
@@ -687,9 +684,6 @@
       ],
       "Sign out": [
         "Logga ut"
-      ],
-      "Sort vault items": [
-        "Sortera valvobjekt"
       ],
       "Start from scratch": [
         "Börja från början"
@@ -882,6 +876,9 @@
       ],
       "Check if your passwords have been exposed": [
         "Kontrollera om dina lösenord har blivit exponerade"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Kontrollerar ${ compromised.progress.completed } av ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Skapa unika lösenord"
@@ -4751,9 +4748,6 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME }-adresser"
       ],
-      "${ PASS_APP_NAME } Logs": [
-        "${ PASS_APP_NAME } Logg"
-      ],
       "${ PASS_APP_NAME } Settings": [
         "Inställningar för ${ PASS_APP_NAME }"
       ],
@@ -4922,6 +4916,9 @@
       ],
       "Email": [
         "E-post"
+      ],
+      "Enable offline mode": [
+        "Aktivera offlineläge"
       ],
       "Encrypted import": [
         "Krypterad import"
