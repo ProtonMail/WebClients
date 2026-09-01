@@ -7138,6 +7138,9 @@
       "${ BRAND_NAME } username": [
         "Nome de usuário da ${ BRAND_NAME }"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caracteres"
+      ],
       "${ n } month": [
         "${ n } mês",
         "${ n } meses"

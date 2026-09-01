@@ -90,6 +90,9 @@
       "Apply": [
         "Toteuta"
       ],
+      "Ask me next time": [
+        "Kysy seuraavalla kerralla"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystieto",
         "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystietoa"
@@ -812,6 +815,9 @@
       ],
       "Stop": [
         "Pysäytä"
+      ],
+      "Stop here": [
+        "Lopeta tähän"
       ],
       "Stop sharing": [
         "Lopeta jakaminen"
@@ -4692,6 +4698,9 @@
       "Creating link to folder": [
         "Luodaan linkkiä kansioon"
       ],
+      "Creating new document...": [
+        "Luodaan uutta tiedostoa..."
+      ],
       "Current plan": [
         "Nykyinen tilaus"
       ],
@@ -4788,6 +4797,9 @@
       "Enter your own password (as trusted contact).": [
         "Syöttäkää oma salasananne (luotettuna yhteystietona)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Virhe tiedostoa muuttaessa: ${ errorMessage }"
+      ],
       "Error loading document: ${ errorDetail }": [
         "Virhe tiedostoa ladattaessa: ${ errorDetail }"
       ],
@@ -4838,6 +4850,9 @@
       ],
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
         "Hanki ammattimainen @yrityksesi.com-sähköposti, 1 Tt suojattua tallennustilaa käyttäjää kohden, pidemmät videopuhelut ja paljon muuta ${ BRAND_NAME } Workspace -palvelun avulla."
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Saa sähköpostipäivityksiä dokumentteihisi lisätyistä kommenteista ja ehdotuksista."
       ],
       "Get Notified About Comments": [
         "Saa ilmoituksia kommenteista"
@@ -5310,6 +5325,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Osoitteen omistaja on poistanut päästä päähän -salauksen käytöstä. Jotta osoitteeseen voidaan lähettää salattuja viestejä, on omistajan palautettava päähän -salaus käyttöön."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Syöttämäsi URL-osoite on ilmeisesti kopioitu Slackista virheellisesti. Kun kopioit pitkiä linkkejä Slackista, napsauta linkkiä hiiren kakkospainikkeella ja valitse sitten \"Kopioi linkki\" sen sijaan että kopioisit typistetyn URL-osoitteen suoraan."
       ],
       "There are no documents in the trash.": [
         "Roskakorissa ei ole dokumentteja."
@@ -5929,6 +5947,9 @@
       "Emails (last month)": [
         "Viestit (viime kuukausi)"
       ],
+      "Enable email notifications": [
+        "Ota käyttöön sähköposti-ilmoitukset"
+      ],
       "Encrypt emails": [
         "Salaa viestit"
       ],
@@ -5988,6 +6009,9 @@
       ],
       "Include debug information": [
         "Sisällytä vian tiedot"
+      ],
+      "Include document name in notification": [
+        "Sisällytä tiedoston nimi ilmoitukseen"
       ],
       "Include message and file name in invite email": [
         "Sisällytä viestin teksti ja tiedoston nimi kutsuviestiin"
@@ -7574,6 +7598,9 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" nimettiin uudelleen"
       ],
+      "\"Document deleted permanently": [
+        "\"Tiedosto poistettiin pysyvästi"
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } kohteen salauksen purku epäonnistui",
         "${ count } kohteen salauksen purku epäonnistui"
@@ -7678,6 +7705,9 @@
       "Failed to accept share invitation": [
         "Jakokutsun hyväksyntä epäonnistui"
       ],
+      "Failed to delete document": [
+        "Tiedoston poistaminen epäonnistui"
+      ],
       "Failed to load invitation details": [
         "Kutsun tietojen lataaminen epäonnistui"
       ],
@@ -7696,8 +7726,14 @@
       "Failed to rename document": [
         "Asiakirjan uudelleennimeäminen epäonnistui"
       ],
+      "Failed to restore document": [
+        "Tiedoston palauttaminen epäonnistui"
+      ],
       "Failed to submit report": [
         "Palautteen lähettäminen epäonnistui"
+      ],
+      "Failed to trash document": [
+        "Tiedoston siirtäminen roskakoriin epäonnistui"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "Tiedostoa tai kansiota \"${ filename }\" ja ${ count } muuta tallennetaan jo",
@@ -8903,6 +8939,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Luodaan laskentataulukkoa..."
+      ],
       "Detect automatically": [
         "Tunnista automaattisesti"
       ],

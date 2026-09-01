@@ -346,9 +346,6 @@
       "Fill password": [
         "Täytä salasana"
       ],
-      "Filter vault items": [
-        "Suodata holvin kohteita"
-      ],
       "Generate alias": [
         "Luo alias"
       ],
@@ -631,9 +628,6 @@
       "See members": [
         "Näytä jäsenet"
       ],
-      "Select items": [
-        "Valitse kohteita"
-      ],
       "Send email": [
         "Lähetä sähköposti"
       ],
@@ -681,9 +675,6 @@
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Joku jakoi sinulle kohteen ${ PASS_APP_NAME }ista."
-      ],
-      "Sort vault items": [
-        "Järjestä holvin kohteet"
       ],
       "Start from scratch": [
         "Aloita alusta"
@@ -2114,7 +2105,8 @@
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirtäminen toiseen holviin pyyhkii sen suojatut linkit."
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -4992,9 +4984,6 @@
       ],
       "Settings": [
         "Asetukset"
-      ],
-      "Setup offline mode": [
-        "Määritä offline-tila"
       ],
       "Share vaults with your team": [
         "Jaa holveja tiimillesi"

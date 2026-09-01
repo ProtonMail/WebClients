@@ -2060,6 +2060,9 @@
       "Update": [
         "Atualizar"
       ],
+      "Update email": [
+        "Atualizar e-mail"
+      ],
       "Update recovery file": [
         "Atualizar o arquivo de recuperação"
       ],
@@ -10060,6 +10063,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dos seus membros não SSO usam a autenticação de dois fatores para fazer login na sua organização.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dos seus membros não SSO usam a autenticação de dois fatores para fazer login na sua organização."
       ],
+      "${ helpTranslateLink } by joining our localization community.": [
+        "${ helpTranslateLink } participando da nossa comunidade de localização."
+      ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "${ invitedMemberCount } usuário precisa aceitar o convite para começar a receber e-mails do grupo.",
         "${ invitedMemberCount } usuários precisam aceitar o convite para começar a receber e-mails do grupo."
@@ -14659,6 +14665,9 @@
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caracteres"
       ],
       "${ MAIL_APP_NAME } address": [
         "Endereço do ${ MAIL_APP_NAME }"
@@ -22395,9 +22404,6 @@
       ]
     },
     "Service provider": {
-      "Add to ${ CALENDAR_APP_NAME }": [
-        "Adicionar ao ${ CALENDAR_APP_NAME }"
-      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Permite que você adicione uma videoconferência do Zoom para qualquer de seus eventos de calendário"
       ]

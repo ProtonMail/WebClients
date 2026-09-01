@@ -186,6 +186,9 @@
       "Referral rewards": [
         "Hänvisningsbelöningar"
       ],
+      "Restrict app access": [
+        "Begränsa appåtkomst"
+      ],
       "Scan QR code": [
         "Skanna QR-kod"
       ],
@@ -1261,6 +1264,9 @@
       "Set catch-all": [
         "Ställ in \"Catch-all\""
       ],
+      "Set invoice email": [
+        "Ställ in e-postfaktura"
+      ],
       "Set new password": [
         "Välj nytt lösenord"
       ],
@@ -1428,6 +1434,9 @@
       ],
       "Unlock data": [
         "Lås upp data"
+      ],
+      "Update email": [
+        "Uppdatera e-post"
       ],
       "Update recovery file": [
         "Uppdatera återställningsfil"
@@ -7838,6 +7847,9 @@
       "Choose a plan that works best for you.": [
         "Välj ett paket som passar dig bäst."
       ],
+      "Choose a strong ${ BRAND_NAME } password and don’t reuse it for other accounts.": [
+        "Välj ett starkt lösenord för ${ BRAND_NAME } och återanvänd det inte för andra konton."
+      ],
       "Choose an Entity ID to continue.": [
         "Välj ett entitets-ID för att fortsätta."
       ],
@@ -8263,6 +8275,9 @@
       ],
       "Example: ${ spfExample }": [
         "Exempel: ${ spfExample }"
+      ],
+      "Exclude them when you deploy the device profile. Support coming soon.": [
+        "Exkludera dem när du distribuerar enhetsprofilen. Stöd kommer snart."
       ],
       "Expired": [
         "Löpt ut"
@@ -9119,6 +9134,9 @@
       "SCIM token active": [
         "SCIM-token aktiv"
       ],
+      "Secure and end-to-end encrypted": [
+        "Säker och end-to-end-krypterad"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Skydda ditt ${ BRAND_NAME }-konto"
       ],
@@ -9780,6 +9798,9 @@
       ],
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "Vi kan använda din telefon för återställning för att skicka dig en verifieringskod för att återställa ditt lösenord och att kontakta dig om vi upptäcker misstänkt aktivitet."
+      ],
+      "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
+        "Vi kunde inte skicka fakturor till din e-postadress. Automatisk fakturering har pausats tills du uppdaterar adressen."
       ],
       "We couldn’t process your payment.": [
         "Vi kunde inte behandla din betalning."
@@ -11216,6 +11237,9 @@
       ],
       "Send crash reports": [
         "Skicka kraschrapporter"
+      ],
+      "Send invoices by email": [
+        "Skicka fakturor via e-post"
       ],
       "Sequences": [
         "Sekvenser"
@@ -13444,6 +13468,9 @@
       "OpenVPN credentials regenerated": [
         "OpenVPN-inloggningsuppgifter återskapat"
       ],
+      "Password check-ins are now required for all members": [
+        "Lösenordsincheckningar är nu obligatoriskt för alla medlemmar"
+      ],
       "Reminder has been sent": [
         "Påminnelse har skickats"
       ],
@@ -13825,6 +13852,9 @@
       "Copy email list": [
         "Kopiera e-postlista"
       ],
+      "Non-private users": [
+        "Icke-privata användare"
+      ],
       "Ready to reset your organization key?": [
         "Redo att återställa din organisationsnyckel?"
       ],
@@ -13856,6 +13886,9 @@
       "User (${ n })": [
         "Användare (${ n })",
         "Användare (${ n })"
+      ],
+      "Your administrator privileges have been restored. You can now manage non-private users.": [
+        "Dina administratörsbehörigheter har återställts. Du kan nu hantera icke-privata användare."
       ]
     },
     "Organization logo upload": {
@@ -14296,6 +14329,9 @@
       "You will soon be redirected to verify your payment.": [
         "Du kommer snart att omdirigeras för att verifiera din betalning."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Din valuta har ändrats till euro (€) eftersom ${ IDEAL_WERO_BRAND_NAME } endast stöder betalningar i euro."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Din valuta har ändrats till euro (€) eftersom SEPA-banköverföringar endast stöder betalningar i euro."
       ],
@@ -14307,6 +14343,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Misslyckades med att initialisera ${ IDEAL_WERO_BRAND_NAME }. Försök igen senare."
+      ],
       "Invalid card number": [
         "Ogiltigt kortnummer"
       ],
@@ -14474,6 +14513,9 @@
       ],
       "Ask anything…": [
         "Fråga vad som helst …"
+      ],
+      "billing@company.com": [
+        "billing@company.com"
       ],
       "Choose a name": [
         "Välj ett namn"
@@ -16337,6 +16379,11 @@
         "Begäran om lösenordsåterställning"
       ]
     },
+    "Set invoice email form note": {
+      "Turn on automatic invoicing to receive bills via email. Enter the email address where you want to receive invoices.": [
+        "Aktivera automatisk fakturering för att ta emot fakturor via e-post. Ange den e-postadress dit du vill ta emot fakturor."
+      ]
+    },
     "Settings section title": {
       "Account": [
         "Konto"
@@ -17731,6 +17778,9 @@
       ],
       "Invoice customized": [
         "Faktura anpassad"
+      ],
+      "Invoice email updated": [
+        "E-postfaktura uppdaterad"
       ],
       "Invoice paid": [
         "Faktura betald"
@@ -19168,6 +19218,9 @@
       "Session management": [
         "Sessionshantering"
       ],
+      "Set invoice email": [
+        "Ställ in e-postfaktura"
+      ],
       "Set new password": [
         "Ställ in nytt lösenord"
       ],
@@ -19825,6 +19878,11 @@
       ],
       "Waiting for user to accept the invitation": [
         "Väntar på att användaren ska acceptera inbjudan"
+      ]
+    },
+    "Tooltip for members table": {
+      "Last time this user signed in or used the ${ VPN_APP_NAME } app on their device.": [
+        "Senast denna användare loggade in eller använde appen ${ VPN_APP_NAME } på sin enhet."
       ]
     },
     "Tor out of date": {

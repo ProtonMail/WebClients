@@ -331,6 +331,9 @@
       "Edit vault": [
         "Edytuj sejf"
       ],
+      "Enable": [
+        "Włącz"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Włącz ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -348,9 +351,6 @@
       ],
       "Fill password": [
         "Uzupełnij hasło"
-      ],
-      "Filter vault items": [
-        "Filtruj elementy sejfu"
       ],
       "Generate alias": [
         "Generuj alias"
@@ -675,9 +675,6 @@
       ],
       "Sign out": [
         "Wyloguj"
-      ],
-      "Sort vault items": [
-        "Sortuj elementy sejfu"
       ],
       "Start from scratch": [
         "Rozpocznij od początku"
@@ -4411,9 +4408,6 @@
       "Download": [
         "Pobierz"
       ],
-      "Download \"${ filename }\"": [
-        "Pobierz \"${ filename }\""
-      ],
       "Download file": [
         "Pobierz plik"
       ],
@@ -4491,9 +4485,6 @@
       ],
       "You can attach files to items for a better organization": [
         "Do elementów możesz dodawać pliki w celu lepszej organizacji"
-      ],
-      "You may close this window after saving the file.": [
-        "Możesz zamknąć to okno po zapisaniu pliku."
       ]
     },
     "Permission": {
@@ -4814,9 +4805,6 @@
     "Title": {
       "${ BRAND_NAME } addresses": [
         "Adresy ${ BRAND_NAME }"
-      ],
-      "${ PASS_APP_NAME } Logs": [
-        "Logi ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } Settings": [
         "Ustawienia ${ PASS_APP_NAME }"

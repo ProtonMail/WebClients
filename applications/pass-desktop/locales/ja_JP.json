@@ -355,9 +355,6 @@
       "Fill password": [
         "パスワードを入力"
       ],
-      "Filter vault items": [
-        "保管庫のアイテムを絞り込む"
-      ],
       "Generate alias": [
         "エイリアスを生成"
       ],
@@ -694,8 +691,8 @@
       "Skip": [
         "スキップ"
       ],
-      "Sort vault items": [
-        "保管庫のアイテムを並び替え"
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "誰かが ${ PASS_APP_NAME }上でアイテムを共有しました。"
       ],
       "Start from scratch": [
         "ゼロから始める"
@@ -1368,6 +1365,9 @@
       ],
       "Trashing item failed": [
         "アイテムの削除に失敗しました"
+      ],
+      "Try reaching out to the link owner.": [
+        "リンクの所有者に連絡してみてください。"
       ],
       "Unable to generate an OTP code for this item": [
         "このアイテムの OTP コードを生成できません"
@@ -3951,6 +3951,9 @@
       "Theme": [
         "テーマ"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "このアイテムは、 ${ date } またはビューの上限に達するまでアクセスできます。"
+      ],
       "Tier/Level": [
         "階級/レベル"
       ],
@@ -5091,9 +5094,6 @@
       ],
       "Setup ${ PASS_APP_NAME } SSH Agent": [
         "${ PASS_APP_NAME } SSHエージェントのセットアップ"
-      ],
-      "Setup offline mode": [
-        "オフラインモードを設定"
       ],
       "Share vaults with your team": [
         "チームに保管庫を共有"

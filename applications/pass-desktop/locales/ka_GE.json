@@ -355,9 +355,6 @@
       "Fill password": [
         "შეავსეთ პაროლი"
       ],
-      "Filter vault items": [
-        "საცავის ელემენტების გაფილტვრა"
-      ],
       "Generate alias": [
         "ფსევდონიმის გენერაცია"
       ],
@@ -694,8 +691,8 @@
       "Skip": [
         "გამოტოვება"
       ],
-      "Sort vault items": [
-        "საცავის ელემენტების დალაგება"
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "ვიღაცამ გაგიზიარათ ელემენტი ${ PASS_APP_NAME }-ზე."
       ],
       "Start from scratch": [
         "ნულიდან დაწყება"
@@ -1373,6 +1370,9 @@
       ],
       "Trashing item failed": [
         "ელემენტის ნაგვის ყუთში გადატანის შეცდომა"
+      ],
+      "Try reaching out to the link owner.": [
+        "სცადეთ, ბმულის ავტორს დაუკავშირდეთ."
       ],
       "Unable to generate an OTP code for this item": [
         "ამ ელემენტისთვის OTP კოდის გენერაცია შეუძლებელია"
@@ -3997,6 +3997,9 @@
       "Theme": [
         "თემა"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "ეს ელემენტი ხელმისაწვდომია ${ date }-მდე, ან, სანამ, ნახვების ლიმიტი არ მიიღწევა."
+      ],
       "Tier/Level": [
         "დონე"
       ],
@@ -5147,9 +5150,6 @@
       ],
       "Setup ${ PASS_APP_NAME } SSH Agent": [
         "${ PASS_APP_NAME } SSH აგენტის დაყენება"
-      ],
-      "Setup offline mode": [
-        "ქსელის გარეშე მუშაობის რეჟიმის მორგება"
       ],
       "Share vaults with your team": [
         "საცავების გაზიარება თქვენს გუნდთან"

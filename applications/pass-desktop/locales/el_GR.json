@@ -124,6 +124,9 @@
       "Bulk restore items from trash": [
         "Μαζική επαναφορά αντικειμένων από τα διαγραμμένα"
       ],
+      "Bulk select items": [
+        "Μαζική επιλογή στοιχείων"
+      ],
       "Cancel": [
         "Ακύρωση"
       ],
@@ -364,9 +367,6 @@
       "Fill password": [
         "Συμπληρώστε τον κωδικό πρόσβασης"
       ],
-      "Filter vault items": [
-        "Φιλτράρισμα στοιχείων κρύπτης"
-      ],
       "Generate alias": [
         "Δημιουργία ψευδωνύμου"
       ],
@@ -513,6 +513,9 @@
       ],
       "Move to Trash": [
         "Μετακίνηση στα Διαγραμμένα"
+      ],
+      "Multiple select": [
+        "Πολλαπλή επιλογή"
       ],
       "New token": [
         "Νέο διακριτικό"
@@ -661,9 +664,6 @@
       "See members": [
         "Προβολή μελών"
       ],
-      "Select items": [
-        "Επιλέξτε στοιχεία"
-      ],
       "Send email": [
         "Αποστολή μηνύματος"
       ],
@@ -709,8 +709,8 @@
       "Skip": [
         "Παράλειψη"
       ],
-      "Sort vault items": [
-        "Ταξινόμηση στοιχείων κρύπτης"
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Κάποιος μοιράστηκε ένα στοιχείο μαζί σας στο ${ PASS_APP_NAME }."
       ],
       "Start from scratch": [
         "Ξεκινήστε από την αρχή"
@@ -1412,6 +1412,9 @@
       ],
       "Trashing item failed": [
         "Αποτυχία μετακίνησης στοιχείου στα Διαγραμμένα"
+      ],
+      "Try reaching out to the link owner.": [
+        "Δοκιμάστε να επικοινωνήσετε με τον κάτοχο του συνδέσμου."
       ],
       "Unable to generate an OTP code for this item": [
         "Δεν είναι δυνατή η δημιουργία κωδικού OTP για αυτό το στοιχείο"
@@ -2797,6 +2800,9 @@
       "Verification code sent.": [
         "Ο κωδικός επαλήθευσης στάλθηκε."
       ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Δείτε τα ${ PASS_SHORT_APP_NAME } στοιχεία σας εκτός σύνδεσης. Απαιτείται ο κωδικός πρόσβασής σας για την ενεργοποίησή τους."
+      ],
       "Viewer": [
         "Πρόγραμμα προβολής"
       ],
@@ -4051,6 +4057,9 @@
       "Theme": [
         "Θέμα"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Αυτό το στοιχείο είναι προσβάσιμο μέχρι τις ${ date } ή μέχρι να συμπληρωθεί το όριο προβολής."
+      ],
       "Tier/Level": [
         "Βαθμίδα/Επίπεδο"
       ],
@@ -4949,6 +4958,9 @@
       "Domain ownership verification": [
         "Επαλήθευση ιδιοκτησίας τομέα"
       ],
+      "Enable offline mode": [
+        "Ενεργοποίηση λειτουργίας εκτός σύνδεσης"
+      ],
       "Encrypted import": [
         "Κρυπτογραφημένη εισαγωγή"
       ],
@@ -5210,9 +5222,6 @@
       ],
       "Setup ${ PASS_APP_NAME } SSH Agent": [
         "Ρύθμιση του ${ PASS_APP_NAME } Παράγοντα SSH"
-      ],
-      "Setup offline mode": [
-        "Ρύθμιση λειτουργίας εκτός σύνδεσης"
       ],
       "Share vaults with your team": [
         "Κοινή χρήση κρυπτών με την ομάδα σας"

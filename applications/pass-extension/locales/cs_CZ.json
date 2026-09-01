@@ -331,6 +331,9 @@
       "Edit vault": [
         "Upravit trezor"
       ],
+      "Enable": [
+        "Povolit"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Povolit ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -348,9 +351,6 @@
       ],
       "Fill password": [
         "Vyplnit heslo"
-      ],
-      "Filter vault items": [
-        "Filtrovat položky v trezoru"
       ],
       "Generate alias": [
         "Vygenerovat alias"
@@ -675,9 +675,6 @@
       ],
       "Sign out": [
         "Odhlásit se"
-      ],
-      "Sort vault items": [
-        "Seřadit položky trezoru"
       ],
       "Start from scratch": [
         "Začít od nuly"
@@ -4411,9 +4408,6 @@
       "Download": [
         "Stáhnout"
       ],
-      "Download \"${ filename }\"": [
-        "Stáhnout \"${ filename }\""
-      ],
       "Download file": [
         "Stáhnout soubor"
       ],
@@ -4491,9 +4485,6 @@
       ],
       "You can attach files to items for a better organization": [
         "Pro lepší organizaci můžete k položkám připojit soubory"
-      ],
-      "You may close this window after saving the file.": [
-        "Po uložení souboru můžete toto okno zavřít."
       ]
     },
     "Permission": {
@@ -4814,9 +4805,6 @@
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } adresy"
-      ],
-      "${ PASS_APP_NAME } Logs": [
-        "Logy ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } Settings": [
         "Nastavení ${ PASS_APP_NAME }"

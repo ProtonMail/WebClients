@@ -1071,6 +1071,9 @@
       "Light": [
         "Chiaro"
       ],
+      "Manage connectors": [
+        "Gestisci connettori"
+      ],
       "Manage files": [
         "Gestisci file"
       ],
@@ -1088,6 +1091,9 @@
       ],
       "Report an issue": [
         "Segnala un problema"
+      ],
+      "Retry": [
+        "Riprova"
       ],
       "Save": [
         "Salva"
@@ -1400,6 +1406,9 @@
       "Encrypted search index for chats and Drive files.": [
         "Indice di ricerca crittografato per chat e file di Drive."
       ],
+      "Fully open, Swiss-made model for lighter tasks": [
+        "Modello interamente open source di produzione svizzera per attività più leggere"
+      ],
       "High-performance model for complex tasks": [
         "Modello ad alte prestazioni per attività complesse"
       ],
@@ -1485,6 +1494,9 @@
       ],
       "Could not load usage for this key.": [
         "Impossibile caricare l'utilizzo per questa chiave."
+      ],
+      "Could not open the desktop settings": [
+        "Impossibile aprire le impostazioni Desktop"
       ],
       "Could not retrieve your encryption key": [
         "Impossibile recuperare la tua chiave crittografica"
@@ -1575,6 +1587,9 @@
       ],
       "You've reached a usage limit. Please try again later.": [
         "Hai raggiunto un limite di utilizzo. Riprova più tardi."
+      ],
+      "Your chats can't be saved right now. Anything you write will be lost if you reload the page.": [
+        "In questo momento non è possibile salvare le tue chat. Tutto ciò che scrivi andrà perso se ricarichi la pagina."
       ]
     },
     "collider_2025: Error (file processing)": {
@@ -2097,6 +2112,9 @@
       "Secure connection (encrypted)": [
         "Connessione sicura (crittografata)"
       ],
+      "Share this feedback with the Apertus team to help them improve their model.": [
+        "Condividi questo feedback con il team di Apertus per aiutarli a migliorare il loro modello."
+      ],
       "Share your prompt and the response with us.": [
         "Condividi il tuo prompt e la risposta con noi."
       ],
@@ -2168,6 +2186,9 @@
       ],
       "This chat will be removed tomorrow unless you upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
         "Questa chat verrà rimossa domani a meno che tu non effettui l’upgrade a ${ LUMO_SHORT_APP_NAME } Plus."
+      ],
+      "This conversation contains many images. ${ LUMO_SHORT_APP_NAME } will only see the most recent ${ MAX_IMAGES_PER_REQUEST } images.": [
+        "Questa conversazione contiene molte immagini. ${ LUMO_SHORT_APP_NAME } mostrerà solo le ${ MAX_IMAGES_PER_REQUEST } immagini più recenti."
       ],
       "This folder is empty": [
         "Questa cartella è vuota"
@@ -2486,6 +2507,9 @@
       ],
       "Create an account or sign in to save your chats and increase limits.": [
         "Crea un account o accedi per salvare le tue chat e aumentare i limiti."
+      ],
+      "You're on ${ selectedModelLabel }. Switch to Max for more capable answers.": [
+        "Stai utilizzando ${ selectedModelLabel }. Passa a Max per ottenere risposte più avanzate."
       ]
     },
     "collider_2025: Option": {
@@ -2570,8 +2594,17 @@
       "${ BRAND_NAME } Workspace": [
         "${ BRAND_NAME } Workspace"
       ],
+      "${ LUMO_SHORT_APP_NAME } Plus": [
+        "${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "${ LUMO_SHORT_APP_NAME } Pro": [
+        "${ LUMO_SHORT_APP_NAME } Pro"
+      ],
       "Business": [
         "Business"
+      ],
+      "Personal": [
+        "Personale"
       ],
       "Plus": [
         "Plus"
@@ -2980,6 +3013,9 @@
       "Elevate your business AI experience": [
         "Migliora la tua esperienza con l'IA aziendale"
       ],
+      "From only": [
+        "A partire da"
+      ],
       "Get": [
         "Ottieni"
       ],
@@ -2992,8 +3028,17 @@
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Ottieni ${ LUMO_SHORT_APP_NAME } Plus"
       ],
+      "Get ${ LUMO_SHORT_APP_NAME } Pro": [
+        "Ottieni ${ LUMO_SHORT_APP_NAME } Pro"
+      ],
       "Upgrade": [
         "Effettua l'upgrade"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Passa a ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Pro": [
+        "Passa alla versione Pro di ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "collider_2025: Warning": {
@@ -3180,6 +3225,9 @@
       ],
       "Edit instructions": [
         "Modifica istruzioni"
+      ],
+      "Edit project": [
+        "Modifica il progetto"
       ],
       "Expand": [
         "Espandi"
@@ -3413,6 +3461,9 @@
       "New chat": [
         "Nuova chat"
       ],
+      "New project": [
+        "Nuovo progetto"
+      ],
       "Projects": [
         "Progetti"
       ],
@@ -3494,6 +3545,9 @@
       ],
       "Unlimited custom ${ LUMO_SHORT_APP_NAME }s": [
         "${ LUMO_SHORT_APP_NAME } personalizzati illimitati"
+      ],
+      "Unlimited projects": [
+        "Progetti illimitati"
       ]
     },
     "collider_2025:Filter": {
@@ -3658,6 +3712,9 @@
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
         "Collega file da ${ DRIVE_APP_NAME } o caricali dal tuo computer."
       ],
+      "Loading…": [
+        "Caricamento…"
+      ],
       "Lockdown Mode is enabled on your device": [
         "La modalità di isolamento è attivata sul tuo dispositivo"
       ],
@@ -3681,6 +3738,12 @@
       ],
       "Processing...": [
         "Elaborazione in corso..."
+      ],
+      "Projects help you organize conversations with custom instructions and files.": [
+        "I progetti ti aiutano a organizzare le conversazioni con istruzioni personalizzate e file."
+      ],
+      "Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.": [
+        "I progetti ti aiutano a organizzare le conversazioni con istruzioni personalizzate e file. Accedi o crea un account gratuito per iniziare."
       ],
       "red flags": [
         "campanelli d'allarme"
@@ -3720,6 +3783,9 @@
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
         "Effettua l’upgrade a ${ LUMO_SHORT_APP_NAME } Plus per creare ${ LUMO_SHORT_APP_NAME } personalizzati illimitati, sbloccare modelli di IA avanzati e altro ancora."
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
+        "Esegui l'upgrade a ${ LUMO_SHORT_APP_NAME } Plus per creare progetti illimitati, sbloccare modelli AI avanzati e altro ancora."
       ],
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Usa il modello Max per lavori complessi o il modello Lite per le attività quotidiane. Scegli la modalità Veloce per risposte rapide o la modalità Ragionamento per domande più difficili."
@@ -3830,8 +3896,17 @@
       "Card theme": [
         "Tema della scheda"
       ],
+      "chat": [
+        "Chat"
+      ],
+      "chats": [
+        "chat"
+      ],
       "Conversation starters (optional)": [
         "Spunti di conversazione (opzionali)"
+      ],
+      "Created": [
+        "Creato"
       ],
       "Created on": [
         "Creato il"
@@ -3890,8 +3965,14 @@
       "Minimal": [
         "Minimal"
       ],
+      "Name": [
+        "Nome"
+      ],
       "Politics": [
         "Politica"
+      ],
+      "Project Instructions (optional)": [
+        "Istruzioni del progetto (opzionale)"
       ],
       "Scams": [
         "Truffe"
@@ -3941,6 +4022,9 @@
       "Add a conversation starter": [
         "Aggiungi uno spunto di conversazione"
       ],
+      "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
+        "Aggiungi istruzioni sul tono, sullo stile e sulla personalità che desideri adottare per ${ LUMO_SHORT_APP_NAME }."
+      ],
       "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt. These instructions will apply to all chats in this project.": [
         "Aggiungi istruzioni sul tono, stile e persona che vuoi che ${ LUMO_SHORT_APP_NAME } adotti. Queste istruzioni si applicheranno a tutte le chat in questo progetto."
       ],
@@ -3962,11 +4046,17 @@
       "Enter folder name": [
         "Inserisci il nome della cartella"
       ],
+      "Enter project name": [
+        "Inserisci nome progetto"
+      ],
       "Fluffy McFluff Face": [
         "Fluffy McFluff Face"
       ],
       "Help with login, password and recovery issues.": [
         "Aiuto per problemi di login, password e recupero."
+      ],
+      "Holiday planner": [
+        "Pianificatore di vacanze"
       ],
       "Search chats": [
         "Cerca nelle chat"
@@ -3981,6 +4071,38 @@
     "collider_2025:Prefill": {
       "Edit this image:": [
         "Modifica questa immagine:"
+      ]
+    },
+    "collider_2025:Project": {
+      "Develop stories, refine prose, and improve your writing craft": [
+        "Sviluppa storie, affina la prosa e migliora la tua arte di scrivere"
+      ],
+      "Financial assistant": [
+        "Assistente finanziario"
+      ],
+      "Get help understanding assignments, solving problems, and learning concepts": [
+        "Ricevi aiuto per comprendere i compiti, risolvere i problemi e imparare nuovi concetti."
+      ],
+      "Learn a language": [
+        "Impara una lingua"
+      ],
+      "Plan financial goals with personalized insights": [
+        "Pianificare gli obiettivi finanziari in modo efficace richiede una strategia chiara basata sul bilanciamento tra entrate, spese e orizzonte temporale."
+      ],
+      "Practice conversations, learn grammar, and build vocabulary in your target language": [
+        "Pratica conversazioni, impara la grammatica e costruisci il vocabolario nella tua lingua di destinazione"
+      ],
+      "Research & Analysis Partner": [
+        "Partner di Ricerca e Analisi"
+      ],
+      "Study companion": [
+        "Compagno di studi"
+      ],
+      "Synthesize sources, analyze data, and develop insights for your research projects": [
+        "Sintetizza le fonti, analizza i dati e sviluppa insight per i tuoi progetti di ricerca"
+      ],
+      "Writing coach": [
+        "Assistente di scrittura"
       ]
     },
     "collider_2025:Prompt": {
@@ -4295,6 +4417,9 @@
     "collider_2025:Subline": {
       "Custom ${ LUMO_SHORT_APP_NAME }s turn a chat into a focused assistant with its own instructions. Pick one from the composer to start a conversation with it.": [
         "I ${ LUMO_SHORT_APP_NAME } personalizzati trasformano una chat in un assistente mirato con le proprie istruzioni. Scegline uno dal compositore per avviare una conversazione."
+      ],
+      "Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.": [
+        "I progetti ti aiutano a tenere in un unico posto le chat, i file e le istruzioni correlate. Semplificano l'organizzazione e permettono di riutilizzare il contesto in più chat."
       ]
     },
     "collider_2025:Success": {
@@ -4367,6 +4492,9 @@
       "Create folder": [
         "Crea una cartella"
       ],
+      "Create new project": [
+        "Crea nuovo progetto"
+      ],
       "Custom ${ LUMO_SHORT_APP_NAME }s": [
         "Personalizza ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -4381,6 +4509,9 @@
       ],
       "Edit Instructions": [
         "Modifica istruzioni"
+      ],
+      "Edit Project": [
+        "Modifica Progetto"
       ],
       "Every clarification is a new data point": [
         "Ogni chiarimento è un nuovo punto dati"
@@ -4397,6 +4528,9 @@
       "Filters": [
         "Filtri"
       ],
+      "Get started by creating a new project": [
+        "Inizia creando un nuovo progetto"
+      ],
       "Ghost mode": [
         "Modalità Ghost"
       ],
@@ -4411,6 +4545,9 @@
       ],
       "Image generation and editing": [
         "Generazione e modifica di immagini"
+      ],
+      "Inspiration": [
+        "Ispirazione"
       ],
       "Instructions": [
         "Istruzioni"
@@ -4433,11 +4570,17 @@
       "More options": [
         "Altre opzioni"
       ],
+      "More Projects with ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Altri progetti con ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
       "Most revealing": [
         "Più rivelatori"
       ],
       "My AI paper trail": [
         "La mia traccia digitale IA"
+      ],
+      "My Projects": [
+        "I miei progetti"
       ],
       "No chat history yet. Let's start chatting!": [
         "Ancora nessuna cronologia chat. Iniziamo a chattare!"
@@ -4480,6 +4623,9 @@
       ],
       "Sign in to build your gallery": [
         "Accedi per creare la tua galleria"
+      ],
+      "Sign in to create projects": [
+        "Accedi per creare progetti"
       ],
       "Sort by": [
         "Ordina per"
@@ -6061,6 +6207,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente alla scrittura ${ BRAND_NAME } Scribe"
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "Marchio ${ IDEAL_WERO_BRAND_NAME }"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } include l'assistente di scrittura ${ BRAND_NAME } Scribe."
       ],
@@ -6296,6 +6445,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se non trovi l'email nella casella di posta, controlla la cartella spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Se hai perso l'accesso alla tua app di autenticazione, puoi usare 1 dei 16 codici di recupero forniti durante la configurazione dell'autenticazione a due fattori. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se procedi con il downgrade, perderai l'accesso alle funzionalità a pagamento di ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -6553,6 +6705,9 @@
       "We use 3-D Secure to protect your payments": [
         "Utilizziamo 3-D Secure per proteggere i tuoi pagamenti"
       ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Verrai reindirizzato su ${ IDEAL_WERO_BRAND_NAME } in una nuova scheda del browser per completare il pagamento. Se usi un blocco pop-up, disattivalo per continuare."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Sarai reindirizzato su PayPal in una nuova scheda del browser per completare questa transazione. Se utilizzi un blocco pop-up, disattivalo per continuare."
       ],
@@ -6672,6 +6827,9 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "Nome utente ${ BRAND_NAME }"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caratteri"
       ],
       "${ n } month": [
         "${ n } mese",
@@ -7073,6 +7231,12 @@
       "Export unsynced only (JSON)": [
         "Esporta solo non sincronizzati (JSON)"
       ],
+      "Forces either unavailable state, without burning a real quota or waiting for a flag rollout. \"unavailable_limit_reached\" pins the Max pool to 0 remaining, exactly as the backend would after the weekly cap; \"unavailable_high_load\" switches off the availability flag. Both disable the Max row in the picker, fall the selection back to Lite, and push maxModelAvailability to native. Persists across reloads until switched off.": [
+        "Forza uno degli stati di non disponibilità, senza consumare la quota reale o attendere il rilascio di un flag. \"unavailable_limit_reached\" imposta il limite del pool Max a 0 rimanenti, esattamente come farebbe il backend dopo il limite settimanale; \"unavailable_high_load\" disattiva il flag di disponibilità. Entrambi disabilitano la riga Max nel selettore, reindirizzano la selezione su Lite e inviano maxModelAvailability al sistema nativo. Persiste tra i ricarichi finché non viene disattivato."
+      ],
+      "Forces Lite and Max pools to zero and lets UsageLimitsTierSync dispatch the tier error, so you can preview the weekly limit UpsellCard above the composer. Hidden for Plus accounts. Persists across reloads until switched off.": [
+        "Forza i pool Lite e Max a zero e consente a UsageLimitsTierSync di inviare l'errore di livello, permettendo di visualizzare l'anteprima della UpsellCard del limite settimanale sopra il composer. Nascosto per gli account Plus. Persiste al ricaricamento finché non viene disattivato."
+      ],
       "Forces the inline composer banner into \"approaching\" or \"at limit\" state so you can preview it in any context.": [
         "Forza il banner del compositore inline nello stato \"in esaurimento\" o \"al limite\" in modo da poterlo visualizzare in anteprima in qualsiasi contesto."
       ],
@@ -7100,6 +7264,9 @@
       "max": [
         "max"
       ],
+      "Max model availability": [
+        "Disponibilità massima del modello"
+      ],
       "Memory": [
         "Memoria"
       ],
@@ -7108,6 +7275,9 @@
       ],
       "Messages rejected by the backend (e.g. limits) remain locally in IndexedDB with a dirty flag. Exports decrypt content from the in-memory Redux state and tag unsynced messages with _dirty: true. Space encryption keys are stripped.": [
         "I messaggi rifiutati dal backend (ad es. per limiti superati) rimangono localmente in IndexedDB con un flag dirty. Le esportazioni decriptano i contenuti dallo stato Redux in memoria e contrassegnano i messaggi non sincronizzati con _dirty: true. Le chiavi crittografiche degli spazi vengono rimosse."
+      ],
+      "Model usage limits": [
+        "Limiti di utilizzo del modello"
       ],
       "Native bridge: onLimitReachedError": [
         "Bridge nativo: onLimitReachedError"
@@ -7123,6 +7293,12 @@
       ],
       "Notifications": [
         "Notifiche"
+      ],
+      "off": [
+        "disattivo"
+      ],
+      "on": [
+        "attivo"
       ],
       "Open a conversation to enable generation error testing.": [
         "Apri una conversazione per attivare il test degli errori di generazione."
@@ -7144,6 +7320,9 @@
       ],
       "Refresh": [
         "Aggiorna"
+      ],
+      "Remaining (Max)": [
+        "Rimanenti (Max)"
       ],
       "Render time": [
         "Tempo di rendering"
@@ -7252,6 +7431,12 @@
       ],
       "Unsynced spaces": [
         "Spazi non sincronizzati"
+      ],
+      "Weekly chat limit upsell": [
+        "Limite di chat settimanale raggiunto"
+      ],
+      "Weekly limit upsell": [
+        "Upsell per il limite settimanale"
       ],
       "Yes": [
         "Sì"
@@ -8488,6 +8673,9 @@
       "More plans are available in other currencies": [
         "Sono disponibili altri piani in altre valute"
       ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Paga con ${ IDEAL_WERO_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Serve un metodo di pagamento per attivare l'abbonamento una volta terminata la prova."
       ],
@@ -8569,6 +8757,9 @@
       "You will soon be redirected to verify your payment.": [
         "Sarai presto reindirizzato per verificare il pagamento."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "La tua valuta è stata cambiata in euro (€) perché ${ IDEAL_WERO_BRAND_NAME } supporta esclusivamente i pagamenti in euro."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "La tua valuta è stata cambiata in euro (€) perché i bonifici bancari SEPA supportano solo pagamenti in euro."
       ],
@@ -8580,6 +8771,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Impossibile inizializzare ${ IDEAL_WERO_BRAND_NAME }. Riprova più tardi."
+      ],
       "Invalid card number": [
         "Numero della carta non valido"
       ],
@@ -8605,6 +8799,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Qualcosa è andato storto. La verifica di Google Pay non è riuscita."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Confermando, autorizzi ${ BRAND_NAME } e Stripe, il nostro fornitore di servizi di pagamento, a riscuotere i futuri pagamenti del tuo abbonamento da questo conto bancario tramite addebito diretto SEPA e autorizzi la tua banca ad addebitare tali importi. Il primo pagamento viene effettuato ora tramite ${ IDEAL_WERO_BRAND_NAME }. Il tuo piano si rinnoverà automaticamente fino a quando non lo annullerai; ti informeremo prima di ogni addebito. Per gli addebiti diretti, puoi richiedere un rimborso alla tua banca entro 8 settimane dalla data dell'addebito, secondo i termini del tuo accordo con la banca. Questo non si applica al pagamento tramite ${ IDEAL_WERO_BRAND_NAME } che stai effettuando ora."
       ]
     },
     "Payments.info": {
@@ -8933,6 +9132,31 @@
         "Gli sconti sono calcolati sul prezzo mensile standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
       ]
     },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, e ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME },${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e${ CALENDAR_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME },${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e${ CALENDAR_SHORT_APP_NAME } Premium"
+      ]
+    },
     "q3campaign2026: Title": {
       "for 12 months": [
         "per 12 mesi"
@@ -8948,6 +9172,9 @@
       ]
     },
     "Role": {
+      "Organization Admin": [
+        "Organizzazione Amministratore"
+      ],
       "Security Admin": [
         "Amministratore sicurezza"
       ],
@@ -9406,6 +9633,9 @@
     "Subtitle": {
       "per month, billed annually": [
         "al mese, con fatturazione annuale"
+      ],
+      "per user/month, billed annually": [
+        "per utente/mese, con fatturazione annuale"
       ]
     },
     "Success": {
@@ -9649,6 +9879,9 @@
       "Payment verification": [
         "Verifica pagamento"
       ],
+      "Plan type": [
+        "Tipo di piano"
+      ],
       "Processing...": [
         "Elaborazione..."
       ],
@@ -9666,6 +9899,9 @@
       ],
       "Select a plan": [
         "Seleziona un piano"
+      ],
+      "September Sale": [
+        "Sconti di settembre"
       ],
       "Set recovery methods": [
         "Imposta i metodi di ripristino"

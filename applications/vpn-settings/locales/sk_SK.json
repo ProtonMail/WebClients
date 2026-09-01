@@ -913,6 +913,9 @@
       "Invite user": [
         "Pozvať používateľa"
       ],
+      "Invoice options": [
+        "Nastavenia faktúr"
+      ],
       "Keep": [
         "Zachovať"
       ],
@@ -1452,6 +1455,9 @@
       ],
       "Unlock data": [
         "Odomknutie údajov"
+      ],
+      "Update email": [
+        "Aktualizovať email"
       ],
       "Update recovery file": [
         "Aktualizujte súbor na obnovenie"
@@ -6223,8 +6229,8 @@
       "Pending invitation": [
         "Čakajúca pozvánka",
         "Čakajúce pozvánky",
-        "Čakajúce pozvánky",
-        "Čakajúce pozvánky"
+        "Čakajúcich pozvánok",
+        "Čakajúcich pozvánok"
       ],
       "Sorry, you can't switch plans at this time.": [
         "Ľutujeme, momentálne nemôžete zmeniť plány."
@@ -7594,6 +7600,12 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } doživotná služba nemá cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }. Cena a dátum obnovenia vášho predplatného ${ planTitle } zostávajú nezmenené."
       ],
+      "${ pendingKeysMemberCount } new member added via your identity provider and pending review.": [
+        "Na schválenie čaká ${ pendingKeysMemberCount } nový člen pridaný prostredníctvom vášho poskytovateľa identít.",
+        "Na schválenie čakajú ${ pendingKeysMemberCount } noví členovia pridaní prostredníctvom vášho poskytovateľa identít.",
+        "Na schválenie čaká ${ pendingKeysMemberCount } nových členov pridaných prostredníctvom vášho poskytovateľa identít.",
+        "Na schválenie čaká ${ pendingKeysMemberCount } nových členov pridaných prostredníctvom vášho poskytovateľa identít."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje aspoň 1 dedikovaný server ${ serverPricePerMonth }"
       ],
@@ -8445,6 +8457,12 @@
       ],
       "email": [
         "email"
+      ],
+      "Email address copied to clipboard": [
+        "Emailová adresa skopírovaná do schránky"
+      ],
+      "Email addresses copied to clipboard": [
+        "Emailové adresy skopírované do schránky"
       ],
       "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
         "Email a kalendár integrovaný s ${ CONTACTS_APP_NAME }"
@@ -9468,6 +9486,9 @@
       ],
       "SCIM token active": [
         "SCIM token aktívny"
+      ],
+      "Secure and end-to-end encrypted": [
+        "Bezpečné a end-to-end šifrované"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Zabezpečte svoj účet ${ BRAND_NAME }"
@@ -14371,6 +14392,38 @@
         "Váš plán zahŕňa maximálne ${ humanReadableAvailableSpace } ďalšieho úložného priestoru."
       ]
     },
+    "organization key reset": {
+      "Reset key": [
+        "Resetovať kľúč"
+      ],
+      "Reset organization key?": [
+        "Resetovať kľúč organizácie?"
+      ],
+      "Resetting organization key": [
+        "Resetovanie kľúča organizácie"
+      ],
+      "See ${ n } user": [
+        "Pozrieť ${ n } používateľa",
+        "Pozrieť ${ n } používateľov",
+        "Pozrieť ${ n } používateľov",
+        "Pozrieť ${ n } používateľov"
+      ],
+      "See users": [
+        "Pozrieť používateľov"
+      ],
+      "The organization key is reset": [
+        "Kľúč organizácie je resetovaný"
+      ],
+      "Try another way": [
+        "Skúsiť iný spôsob"
+      ],
+      "User (${ n })": [
+        "Používateľ (${ n })",
+        "Používatelia (${ n })",
+        "Používatelia (${ n })",
+        "Používatelia (${ n })"
+      ]
+    },
     "Organization logo upload": {
       "Avoid overly compressed images.": [
         "Vyhnite sa príliš komprimovaným obrázkom."
@@ -14992,6 +15045,9 @@
       ],
       "Ask anything…": [
         "Opýtajte sa na čokoľvek..."
+      ],
+      "billing@company.com": [
+        "faktury@vasa-firma.sk"
       ],
       "Choose a name": [
         "Zvoľte názov"
@@ -19802,6 +19858,9 @@
       "Session management": [
         "Správca relácií"
       ],
+      "Set invoice email": [
+        "Nastaviť fakturačný email"
+      ],
       "Set new password": [
         "Nastaviť nové heslo"
       ],
@@ -20038,6 +20097,9 @@
       ],
       "User converted to SSO": [
         "Používateľ prevedený na SSO"
+      ],
+      "User profile": [
+        "Používateľský profil"
       ],
       "Users": [
         "Používatelia"

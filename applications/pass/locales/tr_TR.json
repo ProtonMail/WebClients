@@ -115,6 +115,9 @@
       "Bulk restore items from trash": [
         "Çöpteki ögeleri toplu olarak çıkar"
       ],
+      "Bulk select items": [
+        "Ögeleri toplu olarak seç"
+      ],
       "Cancel": [
         "İptal"
       ],
@@ -346,9 +349,6 @@
       "Fill password": [
         "Parolayı doldur"
       ],
-      "Filter vault items": [
-        "Kasa ögelerini süz"
-      ],
       "Generate alias": [
         "Takma ad üret"
       ],
@@ -493,6 +493,9 @@
       "Move to Trash": [
         "Çöpe at"
       ],
+      "Multiple select": [
+        "Çoklu seçim"
+      ],
       "New token": [
         "Yeni kod"
       ],
@@ -631,9 +634,6 @@
       "See members": [
         "Üyeleri görüntüle"
       ],
-      "Select items": [
-        "Ögeleri seçin"
-      ],
       "Send email": [
         "E-posta gönder"
       ],
@@ -681,9 +681,6 @@
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Birisi sizinle ${ PASS_APP_NAME } üzerinde bir öge paylaştı."
-      ],
-      "Sort vault items": [
-        "Kasa ögelerini sırala"
       ],
       "Start from scratch": [
         "Sıfırdan başla"
@@ -2132,7 +2129,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak güvenli bağlantılarını siler."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2685,6 +2683,9 @@
       ],
       "Verification code sent.": [
         "Doğrulama kodu gönderildi."
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "${ PASS_SHORT_APP_NAME } ögelerinizi çevrim dışı görüntüleyin. Açmak için parolanız gerekir."
       ],
       "Viewer": [
         "Görüntüleyici"
@@ -4767,6 +4768,9 @@
       "Domain ownership verification": [
         "Etki alanı sahipliği doğrulaması"
       ],
+      "Enable offline mode": [
+        "Çevrim dışı kip açılıyor"
+      ],
       "Encrypted import": [
         "Şifrelenmiş içe aktarma"
       ],
@@ -5022,9 +5026,6 @@
       ],
       "Settings": [
         "Ayarlar"
-      ],
-      "Setup offline mode": [
-        "Çevrim dışı kipi kur"
       ],
       "Share vaults with your team": [
         "Kasaları ekibinizle paylaşın"

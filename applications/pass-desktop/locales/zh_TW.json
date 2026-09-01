@@ -355,9 +355,6 @@
       "Fill password": [
         "填寫密碼"
       ],
-      "Filter vault items": [
-        "過濾保管庫項目"
-      ],
       "Generate alias": [
         "生成別名"
       ],
@@ -694,8 +691,8 @@
       "Skip": [
         "略過"
       ],
-      "Sort vault items": [
-        "排序保管庫項目"
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "有人在 ${ PASS_APP_NAME } 上與您共享了一個項目。"
       ],
       "Start from scratch": [
         "從空白檔建立"
@@ -1368,6 +1365,9 @@
       ],
       "Trashing item failed": [
         "移動項目至垃圾桶失敗"
+      ],
+      "Try reaching out to the link owner.": [
+        "請嘗試與該連結的擁有者聯絡。"
       ],
       "Unable to generate an OTP code for this item": [
         "無法替此項目生成一次性代碼"
@@ -3948,6 +3948,9 @@
       "Theme": [
         "布景主題"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "此項目的可存取期限至 ${ date } 為止，或直到達到檢視次數限制為止。"
+      ],
       "Tier/Level": [
         "等級/級別"
       ],
@@ -5088,9 +5091,6 @@
       ],
       "Setup ${ PASS_APP_NAME } SSH Agent": [
         "設定 ${ PASS_APP_NAME } SSH 代理"
-      ],
-      "Setup offline mode": [
-        "設定離線模式"
       ],
       "Share vaults with your team": [
         "與您的團隊共享保管庫"

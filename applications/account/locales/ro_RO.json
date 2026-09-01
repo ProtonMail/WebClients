@@ -1367,6 +1367,9 @@
       "Invite user": [
         "Invitare utilizator"
       ],
+      "Invoice options": [
+        "Opțiuni factură"
+      ],
       "Italic": [
         "Înclinat"
       ],
@@ -1907,6 +1910,9 @@
       "Set catch-all": [
         "Setare adresă de agregare"
       ],
+      "Set invoice email": [
+        "Setare adresă de e-mail de facturare"
+      ],
       "Set new password": [
         "Setare parolă nouă"
       ],
@@ -2122,6 +2128,9 @@
       ],
       "Update": [
         "Actualizare"
+      ],
+      "Update email": [
+        "Actualizare e-mail"
       ],
       "Update recovery file": [
         "Actualizare fișier de recuperare"
@@ -2656,6 +2665,9 @@
       ],
       "Private scheduling": [
         "Planificări private"
+      ],
+      "Secure and end-to-end encrypted": [
+        "Securizat și criptat bilateral"
       ],
       "Secure cloud storage": [
         "Stocare securizată în cloud"
@@ -12955,6 +12967,9 @@
       "SCIM token active": [
         "Cod SCIM activ"
       ],
+      "Secure and end-to-end encrypted": [
+        "Securizat și criptat bilateral"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Asigurați-vă contul ${ BRAND_NAME }"
       ],
@@ -13896,6 +13911,9 @@
       ],
       "We couldn't complete the transaction. Please try again.": [
         "Tranzacția nu s-a putut finaliza. Reîncercați."
+      ],
+      "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
+        "Nu s-au putut trimite facturi la adresa de e-mail. Facturarea automată a fost întreruptă până când actualizați adresa."
       ],
       "We couldn’t process your payment.": [
         "Nu vi s-a putut procesa plata."
@@ -15983,6 +16001,9 @@
       "Import your emails": [
         "Importați-vă mesajele"
       ],
+      "In progress": [
+        "În desfășurare"
+      ],
       "Inbox": [
         "Primite"
       ],
@@ -16495,6 +16516,9 @@
       ],
       "Send in": [
         "Trimitere în"
+      ],
+      "Send invoices by email": [
+        "Expediere facturi prin e-mail"
       ],
       "Sequences": [
         "Secvențe"
@@ -21293,6 +21317,9 @@
       "Ask anything…": [
         "Întreabă-mă orice…"
       ],
+      "billing@company.com": [
+        "facturi@companie.com"
+      ],
       "Choose a name": [
         "Alegeți un nume"
       ],
@@ -23114,9 +23141,6 @@
       ]
     },
     "Service provider": {
-      "Add to ${ CALENDAR_APP_NAME }": [
-        "Adăugare în ${ CALENDAR_APP_NAME }"
-      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Vă permite să adăugați o conferință video Zoom oricărui eveniment din calendar."
       ]
@@ -23437,6 +23461,11 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "Solicitare resetare parolă"
+      ]
+    },
+    "Set invoice email form note": {
+      "Turn on automatic invoicing to receive bills via email. Enter the email address where you want to receive invoices.": [
+        "Activați facturarea automată pentru a primi facturi prin e-mail. Introduceți adresa de e-mail la care doriți să primiți facturile."
       ]
     },
     "Setting": {
@@ -25682,6 +25711,9 @@
       "Invoice customized": [
         "Factură personalizată"
       ],
+      "Invoice email updated": [
+        "E-mail facturare actualizat"
+      ],
       "Invoice paid": [
         "Factură plătită"
       ],
@@ -27779,6 +27811,9 @@
       ],
       "Set a display name": [
         "Stabiliți un nume afișat"
+      ],
+      "Set invoice email": [
+        "Setare adresă de e-mail de facturare"
       ],
       "Set new password": [
         "Setare parolă nouă"

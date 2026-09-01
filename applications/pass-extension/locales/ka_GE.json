@@ -331,6 +331,9 @@
       "Edit vault": [
         "საცავის ჩასწორება"
       ],
+      "Enable": [
+        "ჩართვა"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"
       ],
@@ -348,9 +351,6 @@
       ],
       "Fill password": [
         "შეავსეთ პაროლი"
-      ],
-      "Filter vault items": [
-        "საცავის ელემენტების გაფილტვრა"
       ],
       "Generate alias": [
         "ფსევდონიმის გენერაცია"
@@ -675,9 +675,6 @@
       ],
       "Sign out": [
         "გასვლა"
-      ],
-      "Sort vault items": [
-        "საცავის ელემენტების დალაგება"
       ],
       "Start from scratch": [
         "ნულიდან დაწყება"
@@ -4309,9 +4306,6 @@
       "Download": [
         "გადმოწერა"
       ],
-      "Download \"${ filename }\"": [
-        "\"${ filename }\"-ის გადმოწერა"
-      ],
       "Download file": [
         "ფაილის გადმოწერა"
       ],
@@ -4389,9 +4383,6 @@
       ],
       "You can attach files to items for a better organization": [
         "უკეთესად ორგანიზმებისთვის ელემენტებს, შეგიძლიათ, ფაილები მიამაგროთ"
-      ],
-      "You may close this window after saving the file.": [
-        "ფაილის შენახვის შემდეგ შეგიძლიათ, დახუროთ ეს ფანჯარა."
       ]
     },
     "Permission": {
@@ -4708,9 +4699,6 @@
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } მისამართი"
-      ],
-      "${ PASS_APP_NAME } Logs": [
-        "${ PASS_APP_NAME }-ის ჟურნალი"
       ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME }-ის მორგება"

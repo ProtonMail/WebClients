@@ -355,9 +355,6 @@
       "Fill password": [
         "Preencher a palavra-passe"
       ],
-      "Filter vault items": [
-        "Filtrar itens do cofre"
-      ],
       "Generate alias": [
         "Gerar um alias"
       ],
@@ -694,8 +691,8 @@
       "Skip": [
         "Ignorar"
       ],
-      "Sort vault items": [
-        "Ordenar os itens do cofre"
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Alguém partilhou um item consigo no ${ PASS_APP_NAME }."
       ],
       "Start from scratch": [
         "Começar do zero"
@@ -1373,6 +1370,9 @@
       ],
       "Trashing item failed": [
         "Erro ao mover o item para o lixo."
+      ],
+      "Try reaching out to the link owner.": [
+        "Tente contactar o proprietário da ligação."
       ],
       "Unable to generate an OTP code for this item": [
         "Não é possível gerar um código OTP para este item"
@@ -3994,6 +3994,9 @@
       "Theme": [
         " Tema"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Este item está disponível até ${ date } ou até que o limite de visualizações seja atingido."
+      ],
       "Tier/Level": [
         "Nível"
       ],
@@ -5144,9 +5147,6 @@
       ],
       "Setup ${ PASS_APP_NAME } SSH Agent": [
         "Configurar o Agente SSH do ${ PASS_APP_NAME }"
-      ],
-      "Setup offline mode": [
-        "Configurar o modo offline"
       ],
       "Share vaults with your team": [
         "Partilhe cofres com a sua equipa"

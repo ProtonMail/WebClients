@@ -45,6 +45,9 @@
       "AI assistant": [
         "Памочнік ШІ"
       ],
+      "Bulk user import": [
+        "Масавы імпарт карыстальнікаў"
+      ],
       "Downgrade to Free": [
         "Панізіць да Free"
       ],
@@ -1226,7 +1229,7 @@
         "Папоўніць"
       ],
       "Try again": [
-        "Паспрабуйце яшчэ раз"
+        "Паўтарыце спробу"
       ],
       "Try another method": [
         "Паспрабуйце іншы спосаб"
@@ -4863,7 +4866,7 @@
         "Немагчыма спраўдзіць хто запампаваў гэты файл"
       ],
       "Checkout expired, please try again": [
-        "Час завяршэння пакупкі пратэрмінаваны. Паспрабуйце яшчэ раз"
+        "Час завяршэння пакупкі пратэрмінаваны. Паўтарыце спробу."
       ],
       "Code is incorrect or not valid anymore": [
         "Няправільны код або больш несапраўдны"
@@ -4881,7 +4884,7 @@
         "Немагчыма знайсці даступную назву"
       ],
       "Could not generate the device profile. Please try again.": [
-        "Немагчыма згенерыраваць профіль прылады. Паспрабуйце яшчэ раз."
+        "Немагчыма згенерыраваць профіль прылады. Паўтарыце спробу."
       ],
       "Could not grant access to the organization key": [
         "Немагчыма даць доступ да ключа арганізацыі"
@@ -4902,10 +4905,10 @@
         "Немагчыма разблакіраваць гэты элемент"
       ],
       "Couldn't load invoices. Please try again later.": [
-        "Немагчыма загрузіць рахункі. Паспрабуйце яшчэ раз пазней."
+        "Немагчыма загрузіць рахункі. Паўтарыце спробу пазней."
       ],
       "Couldn't load transactions. Please try again later.": [
-        "Немагчыма загрузіць трансакцыі. Паспрабуйце яшчэ раз пазней."
+        "Немагчыма загрузіць трансакцыі. Паўтарыце спробу пазней."
       ],
       "Creating documents in non-folders is not allowed": [
         "Стварэнне дакументаў па-за іх межамі забаронена"
@@ -4932,10 +4935,10 @@
         "Прылада не знойдзена"
       ],
       "Domain not available, try again later": [
-        "Дамен недаступны. Паспрабуйце яшчэ раз"
+        "Дамен недаступны. Паўтарыце спробу пазней"
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
-        "У дадзены момант недаступна рэдагаванне адраса аплаты. Паспрабуйце яшчэ раз пазней."
+        "У дадзены момант недаступна рэдагаванне адраса аплаты. Паўтарыце спробу."
       ],
       "Email address is invalid": [
         "Памылковы адрас электроннай пошты"
@@ -4995,13 +4998,13 @@
         "Не ўдалося загрузіць акно OAuth."
       ],
       "Failed to load subscription data. Please try again later.": [
-        "Не ўдалося загрузіць даныя падпіскі. Паспрабуйце яшчэ раз пазней."
+        "Не ўдалося загрузіць даныя падпіскі. Паўтарыце спробу пазней."
       ],
       "Failed to load the STL preview": [
         "Не ўдалося загрузіць папярэдні прагляд STL"
       ],
       "Failed to lookup server. Please try again": [
-        "Не ўдалося знайсці сервер. Паспрабуйце яшчэ раз"
+        "Не ўдалося знайсці сервер. Паўтарыце спробу"
       ],
       "Failed to process the logo": [
         "Не ўдалося апрацаваць лагатып"
@@ -5046,22 +5049,22 @@
         "Немагчыма перайменаваць шлюз"
       ],
       "Incorrect backup password. Please try again.": [
-        "Няправільны рэзервовы пароль. Паспрабуйце яшчэ раз."
+        "Няправільны рэзервовы пароль. Паўтарыце спробу."
       ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "Няправільны тып файла. Запампаваць файл у фармаце PNG або JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
-        "Няправільныя ўліковыя даныя для ўваходу. Паспрабуйце яшчэ раз."
+        "Няправільныя ўліковыя даныя для ўваходу. Паўтарыце спробу."
       ],
       "Incorrect password": [
         "Няправільны пароль"
       ],
       "Incorrect recovery code. Please try again.": [
-        "Няправільны код аднаўлення. Паспрабуйце яшчэ раз."
+        "Няправільны код аднаўлення. Паўтарыце спробу."
       ],
       "Incorrect second password. Please try again.": [
-        "Няправільны другі пароль. Паспрабуйце яшчэ раз."
+        "Няправільны другі пароль. Паўтарыце спробу."
       ],
       "Incorrect username": [
         "Няправільнае імя карыстальніка"
@@ -5094,7 +5097,7 @@
         "Памылковы файл закрытага ключа"
       ],
       "Invalid reset token. Please refresh the page and try again.": [
-        "Памылковы токен скідання. Абнавіце старонку і паспрабуйце яшчэ раз."
+        "Памылковы токен скідання. Абнавіце старонку і паўтарыце спробу."
       ],
       "Invalid URL": [
         "Памылковы URL-адрас"
@@ -5244,7 +5247,7 @@
         "Апрацоўка плацяжу не падтрымліваецца"
       ],
       "Payments are currently not available, please try again later": [
-        "Плацяжы ў цяперашні час недаступны. Паспрабуйце яшчэ раз пазней"
+        "Плацяжы ў цяперашні час недаступны. Паўтарыце спробу пазней"
       ],
       "Permissions request failed.": [
         "Збой запыту дазволаў."
@@ -5319,7 +5322,7 @@
         "Спачатку задайце нумар тэлефона для аднаўлення доступу"
       ],
       "Please try again in a few moments.": [
-        "Паўтарыце спробу крыху пазней."
+        "Паўтарыце спробу праз некалькі хвілін."
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Перайдзіце на тарыфны план для бізнесу з больш чым 1 карыстальнікам, каб атрымаць падтрымку шматкарыстальніцкага рэжыму."
@@ -5424,7 +5427,7 @@
         "Нешта пайшло не так. ${ refresh } для працягу. Калі вы ўсё яшчэ бачыце паведамленне з памылкай, напішыце ў нашу ${ supportTeam }."
       ],
       "Something went wrong. Please try again.": [
-        "Нешта пайшло не так. Паспрабуйце яшчэ раз."
+        "Нешта пайшло не так. Паўтарыце спробу."
       ],
       "status page": [
         "статус старонкі"
@@ -5433,7 +5436,7 @@
         "Укладка закрыта"
       ],
       "The amount due has changed. Please try again.": [
-        "Сума для аплаты змянілася. Паспрабуйце яшчэ раз."
+        "Сума для аплаты змянілася. Паўтарыце спробу."
       ],
       "The email addresses do not match": [
         "Адрасы электроннай пошты не супадаюць"
@@ -5478,7 +5481,7 @@
         "У вашым знешнім уліковым запісе занадта шмат папак. Наладзьце імпартаванне, каб выдаліць некаторыя папкі."
       ],
       "There was an error, please try again.": [
-        "Адбылася памылка. Паспрабуйце яшчэ раз."
+        "Адбылася памылка. Паўтарыце спробу."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Гэта поле перавышае максімальную колькасць сімвалаў (дазволена: ${ maximumLength })."
@@ -5523,10 +5526,10 @@
         "Вам неабходна аднавіць правы адміністратара, каб ствараць уліковыя запісы непрыватных карыстальнікаў і атрымліваць доступ да іх."
       ],
       "Too many requests. Please try again after ${ date }": [
-        "Занадта шмат запытаў. Паспрабуйце яшчэ раз пасля ${ date }"
+        "Занадта шмат запытаў. Паўтарыце спробу пасля ${ date }"
       ],
       "Too many requests. Please try again later": [
-        "Занадта шмат запытаў. Паспрабуйце яшчэ раз пазней"
+        "Занадта шмат запытаў. Паўтарыце спробу пазней"
       ],
       "Too many server errors, please try again later": [
         "Занадта шмат памылак сервера. Паўтарыце спробу пазней"
@@ -5535,7 +5538,7 @@
         "Занадта шмат запытаў на сервер. Паўтарыце спробу пазней"
       ],
       "Try again later": [
-        "Паспрабуйце яшчэ раз пазней"
+        "Паўтарыце спробу пазней"
       ],
       "Try using only letters, numerals, and _.-": [
         "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
@@ -5556,10 +5559,10 @@
         "Невядомы статус плацежнага токена"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        "Запампаваны файл з'яўляецца несапраўдным закрытым ключом. Спраўдзіце яго і паспрабуйце яшчэ раз."
+        "Запампаваны файл з'яўляецца несапраўдным закрытым ключом. Спраўдзіце яго і паўтарыце спробу."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
-        "Запампаваныя файлы з'яўляюцца несапраўднымі закрытымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз."
+        "Запампаваныя файлы з'яўляюцца несапраўднымі закрытымі ключамі. Спраўдзіце іх і паўтарыце спробу."
       ],
       "Username must begin with a letter or digit": [
         "Імя карыстальніка павінна пачынацца з літары або лічбы"
@@ -5571,7 +5574,7 @@
         "Нумар ПДВ павінен пачынацца з ${ prefixes }"
       ],
       "Verification did not succeed, please try again in an hour.": [
-        "Не ўдалося праверыць. Паспрабуйце яшчэ раз праз гадзіну."
+        "Не ўдалося праверыць. Паўтарыце спробу праз гадзіну."
       ],
       "Verification keys are not available": [
         "Ключы спраўджання недаступны"
@@ -5589,10 +5592,10 @@
         "Няправільны плацежны адрас"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        "Няправільная фраза аднаўлення. Паспрабуйце яшчэ раз або скарыстайцеся іншым спосабам аднаўлення."
+        "Няправільная фраза аднаўлення. Паўтарыце спробу або скарыстайцеся іншым спосабам аднаўлення."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
-        "Няправільны код спраўджання. Пераканайцеся, што вы правільна скапіявалі код і паспрабуйце яшчэ раз. Змяненні ўступяць у сілу на працягу 24 гадзін."
+        "Няправільны код спраўджання. Пераканайцеся, што вы правільна скапіявалі код і паўтарыце спробу. Змяненні ўступяць у сілу на працягу 24 гадзін."
       ],
       "You can create public links for your own files only": [
         "Вы можаце ствараць публічныя спасылкі толькі для сваіх уласных файлаў"
@@ -5813,7 +5816,7 @@
         "Адкрыць у браўзеры"
       ],
       "Please refresh the page or try again later.": [
-        "Абнавіце старонку або паспрабуйце яшчэ раз пазней."
+        "Абнавіце старонку або паўтарыце спробу пазней."
       ],
       "Something went wrong": [
         "Нешта пайшло не так"
@@ -5937,10 +5940,10 @@
     },
     "familyOffer_2023:Error": {
       "Family group not recognized. Try again.": [
-        "Сямейная група не распазнана. Паспрабуйце яшчэ раз."
+        "Сямейная група не распазнана. Паўтарыце спробу."
       ],
       "Organization not recognized. Try again.": [
-        "Арганізацыя не распазнана. Паспрабуйце яшчэ раз."
+        "Арганізацыя не распазнана. Паўтарыце спробу."
       ]
     },
     "familyOffer_2023:Family plan": {
@@ -6128,7 +6131,7 @@
         "Удзельнік ${ member.Name } быў выдалены з ${ organizationName }"
       ],
       "An error occurred, please try again": [
-        "Адбылася памылка. Паспрабуйце яшчэ раз"
+        "Адбылася памылка. Паўтарыце спробу."
       ],
       "Family name updated": [
         "Назва сям'і абноўлена"
@@ -6355,10 +6358,10 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Нешта пайшло не так з аўтэнтыфікацыяй ключа бяспекі. Паспрабуйце яшчэ раз."
+        "Нешта пайшло не так з аўтэнтыфікацыяй ключа бяспекі. Паўтарыце спробу."
       ],
       "Something went wrong registering your security key. Please try again.": [
-        "Нешта пайшло не так з рэгістрацыяй вашага ключа бяспекі. Паспрабуйце яшчэ раз."
+        "Нешта пайшло не так з рэгістрацыяй вашага ключа бяспекі. Паўтарыце спробу."
       ]
     },
     "fido2: Info": {
@@ -7021,7 +7024,7 @@
         "У вашым уліковым запісе Yahoo уключаны IMAP."
       ],
       "Too many recent requests. Please try again in a few moments.": [
-        "Занадта шмат запытаў за апошні час. Паспрабуйце яшчэ раз пазней."
+        "Занадта шмат запытаў за апошні час. Паўтарыце спробу пазней."
       ],
       "Two-factor authentication is enabled in your external account.": [
         "Двухфактарная аўтэнтыфікацыя ўключана ў вашым знешнім уліковым запісе."
@@ -7270,6 +7273,9 @@
         "${ hasTwoFAMembersLength } удзельнікаў з ${ canHaveTwoFAMembersLength }, якія не належаць да SSO выкарыстоўваюць двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю.",
         "${ hasTwoFAMembersLength } удзельнікаў з ${ canHaveTwoFAMembersLength }, якія не належаць да SSO выкарыстоўваюць двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю."
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "Пазначана ${ IDEAL_WERO_BRAND_NAME }"
+      ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "${ invitedMemberCount } карыстальніку неабходна прыняць сваё запрашэнне, каб пачаць атрымліваць групавыя лісты.",
         "${ invitedMemberCount } карыстальнікам неабходна прыняць сваё запрашэнне, каб пачаць атрымліваць групавыя лісты.",
@@ -7325,10 +7331,10 @@
         "${ number } серверы"
       ],
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
-        "${ numberOfNonPrivateKeys } запампаваны файл з'яўляецца несапраўдным закрытым ключом. Спраўдзіце яго/іх і паспрабуйце яшчэ раз.",
-        "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі закрытымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз.",
-        "${ numberOfNonPrivateKeys } запампаваных файлаў з'яўляюцца несапраўднымі закрытымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз.",
-        "${ numberOfNonPrivateKeys } запампаваных файлаў з'яўляюцца несапраўднымі закрытымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз."
+        "${ numberOfNonPrivateKeys } запампаваны файл з'яўляецца несапраўдным закрытым ключом. Спраўдзіце яго/іх і паўтарыце спробу.",
+        "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі закрытымі ключамі. Спраўдзіце іх і паўтарыце спробу.",
+        "${ numberOfNonPrivateKeys } запампаваных файлаў з'яўляюцца несапраўднымі закрытымі ключамі. Спраўдзіце іх і паўтарыце спробу.",
+        "${ numberOfNonPrivateKeys } запампаваных файлаў з'яўляюцца несапраўднымі закрытымі ключамі. Спраўдзіце іх і паўтарыце спробу."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
@@ -8357,7 +8363,7 @@
         "Пасля гэтага яны могуць запытваць экстранны доступ у ваш уліковы запіс, націснуўшы **Запытаць доступ.**"
       ],
       "Gateway couldn't be deleted. Please try again": [
-        "Шлюз не можа быць выдалены. Паспрабуйце яшчэ раз."
+        "Шлюз не можа быць выдалены. Паўтарыце спробу."
       ],
       "Gateway deleted": [
         "Шлюз выдалены"
@@ -8570,7 +8576,7 @@
         "Падключэнне да інтэрнэту адноўлена."
       ],
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
-        "Памылковы код. ${ RequestNewCodeLink } і паспрабуйце зноў."
+        "Памылковы код. ${ RequestNewCodeLink } і паўтарыце спробу."
       ],
       "Invite deleted": [
         "Запрашэнне выдалена"
@@ -9026,7 +9032,7 @@
         "Пазначце..."
       ],
       "Please try again using a different payment method, or contact your bank.": [
-        "Паспрабуйце яшчэ раз, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі вашага банка."
+        "Паўтарыце спробу, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі кліентаў вашага банка."
       ],
       "Please use another browser or download the file.": [
         "Скарыстайцеся іншым браўзерам або спампуйце файл."
@@ -9221,7 +9227,7 @@
         "Адпраўлена з дапамогай бяспечнай электроннай пошты <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "У дадзены момант плацяжы SEPA недаступны. Паспрабуйце яшчэ раз пазней."
+        "У дадзены момант плацяжы SEPA недаступны. Паўтарыце спробу пазней."
       ],
       "Server is currently down": [
         "Сервер часова не працуе"
@@ -9230,7 +9236,7 @@
         "Загружанасць сервера"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
+        "Серверы недаступны. Паўтарыце спробу праз некалькі хвілін"
       ],
       "Session timed out": [
         "Сеанс завяршыўся"
@@ -9374,7 +9380,7 @@
         "Рэкамендацыя TechRadar Pro з рэйтынгам 4,2 з 5 зорак"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
-        "Часова недаступна з-за высокага попыту. Паспрабуйце яшчэ раз пазней."
+        "Часова недаступна з прычыны высокага попыту. Паўтарыце спробу пазней."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Часова недаступна. Паспрабуйце яшчэ раз пазней."
@@ -9767,7 +9773,7 @@
         "Запампуйце лагатып сваёй арганізацыі, каб павысіць ідэнтычнасць вашага брэнда і стварыць персаналізаваны досвед для вашых карыстальнікаў."
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        "Запампаваны файл з'яўляецца несапраўдным закрытым ключом. Спраўдзіце яго і паспрабуйце яшчэ раз."
+        "Запампаваны файл з'яўляецца несапраўдным закрытым ключом. Спраўдзіце яго і паўтарыце спробу."
       ],
       "Uppercase and lowercase letters": [
         "Маленькія і вялікія літары"
@@ -9863,7 +9869,7 @@
         "Папярэджанне: выдаленне вашага ўліковага запісу з'яўляецца незваротным."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
-        "Мы рэкамендуем вам па магчымасці выкарыстоўваць афіцыйныя праграмы ${ VPN_APP_NAME }."
+        "Па магчымасці выкарыстоўвайце афіцыйныя праграмы ${ VPN_APP_NAME }."
       ],
       "We can use your recovery email to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "Ваш адрас электроннай пошты для аднаўлення доступу можа выкарыстоўвацца, каб адправіць вам код спраўджання для скідання пароля і сувязі з вамі, калі будзе заўважана падазроная актыўнасць."
@@ -9906,6 +9912,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Выкарыстоўваецца 3-D Secure для абароны вашых плацяжоў"
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на ${ IDEAL_WERO_BRAND_NAME }. Пераканайцеся, што ў вас адключаны праграмы блакіроўкі ўсплывальных вокнаў для працягу."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
@@ -11101,7 +11110,7 @@
         "Спосаб для імпартавання метаданых"
       ],
       "Minimum ${ MIN_CHARS } characters": [
-        "Мінімум ${ MIN_CHARS } сімвалаў"
+        "Мінімальная колькасць сімвалаў: ${ MIN_CHARS }"
       ],
       "Minimum number of characters": [
         "Мінімальная колькасць сімвалаў"
@@ -11986,7 +11995,7 @@
     },
     "lumo_signup_2025: Info": {
       "Protect your entire business. Get ${ LUMO_SHORT_APP_NAME } Professional with all ${ BRAND_NAME } for Business apps and premium features.": [
-        "Абараніце ўвесь свой бізнес. Атрымайце ${ LUMO_SHORT_APP_NAME } Professional з усімі ${ BRAND_NAME } праграмамі для бізнесу і прэміяльнымі функцыямі."
+        "Абараніце ўвесь свой бізнес. Атрымайце ${ LUMO_SHORT_APP_NAME } Professional з усімі праграмамі ${ BRAND_NAME } for Busines і прэміяльнымі функцыямі."
       ]
     },
     "Mail import summary": {
@@ -13585,6 +13594,16 @@
         "Кантрольны спіс аднаўлення"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Паспрабуйце цяпер"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Цяпер у вас ёсць доступ да новага ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } быў адключаны"
@@ -13644,7 +13663,7 @@
         "Занадта шмат запытаў API за апошні час"
       ],
       "Two-factor authentication has been enforced for administrators": [
-        "Двухфактарная аўтэнтыфікацыя прымусова ўжываецца для адміністратараў"
+        "Двухфактарная аўтэнтыфікацыя прымусова прымяняецца для адміністратараў"
       ],
       "Two-factor authentication has been enforced for all members": [
         "Двухфактарная аўтэнтыфікацыя прымусова ўжываецца для ўсіх удзельнікаў"
@@ -14243,7 +14262,7 @@
         "Немагчыма спраўдзіць аўтэнтыфікацыю гэтай ідэнтычнасці."
       ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
-        "Мы не можам спраўдзіць, ці з'яўляецца бяспечным адрасны ключ гэтага адпраўніка. Здараецца так, што ўзнікае затрымка пры абнаўленні звестак адпраўніка. Паспрабуйце яшчэ раз пазней. Калі вы сумняваецеся ў сапраўднасці гэтага запрашэння або адпраўніка, звярніцеся ў службу падтрымкі кліентаў ${ BRAND_NAME }."
+        "Немагчыма спраўдзіць, ці з'яўляецца бяспечным адрасны ключ гэтага адпраўніка. Здараецца так, што ўзнікае затрымка пры абнаўленні яго звестак. Паўтарыце спробу пазней. Калі вы сумняваецеся ў сапраўднасці гэтага запрашэння або адпраўніка, звярніцеся ў службу падтрымкі кліентаў ${ BRAND_NAME }."
       ],
       "We have verified the authenticity of this identity.": [
         "Мы праверылі аўтэнтыфікацыю гэтай ідэнтычнасці."
@@ -14346,6 +14365,9 @@
       ],
       "More plans are available in other currencies": [
         "Больш тарыфных планаў даступна з іншымі валютамі"
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Заплаціць з дапамогай ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Спосаб аплаты патрабуецца для актывацыі падпіскі пасля завяршэння пробнага перыяду."
@@ -14452,6 +14474,9 @@
       "You will soon be redirected to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны для спраўджання вашага плацяжу."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Ваша валюта была зменена на еўра (€), бо ${ IDEAL_WERO_BRAND_NAME } падтрымлівае толькі плацяжы ў еўра."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
       ],
@@ -14463,6 +14488,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Не ўдалося ініцыялізаваць ${ IDEAL_WERO_BRAND_NAME }. Паўтарыце спробу пазней."
+      ],
       "Invalid card number": [
         "Памылковы нумар карткі"
       ],
@@ -14476,10 +14504,10 @@
         "Увядзіце імя ўладальніка ўліковага запісу"
       ],
       "Something went wrong. Please try again later.": [
-        "Нешта пайшло не так. Паспрабуйце яшчэ раз пазней."
+        "Нешта пайшло не так. Паўтарыце спробу пазней."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
-        "Мы не можам аўтэнтыфікаваць ваш спосаб аплаты. Выберыце іншы спосаб аплаты або паспрабуйце яшчэ раз."
+        "Мы не можам аўтэнтыфікаваць ваш спосаб аплаты. Выберыце іншы спосаб аплаты або паўтарыце спробу."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Ваша картка адхілена. Паспрабуйце іншую картку або звяжыцеся з вашым банкам для аўтарызацыі плацяжу."
@@ -16066,6 +16094,9 @@
       ],
       "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
         "**Абавязковая ўмова:** вам неабходна спраўдзіць права ўласнасці на дамен **${ domainName }** для ўключэння падрыхтоўкі SCIM. Гэта спраўджанне можа заняць да адной гадзіны."
+      ],
+      "**Users:** All SCIM users provided automatically by your identity provider will be converted to SSO users and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "**Карыстальнікі** Усе карыстальнікі SCIM, якія аўтаматычна забяспечаны вашым пастаўшчыком пасведчанняў, будуць пераўтвораны ў карыстальнікаў SSO і ў вас будзе магчымасць кіраваць імі наўпрост у наладах ${ BRAND_NAME }."
       ],
       "Enter the token into your identity provider": [
         "Увядзіце токен у свайго пастаўшчыка пасведчанняў"
@@ -18385,6 +18416,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Памочнік у напісанні ${ BRAND_NAME } Scribe"
       ],
+      "${ capitalizedSource } role assignment paused": [
+        "Прызначэнне ролі ${ capitalizedSource } прыпынена"
+      ],
       "${ feature } is now active": [
         "${ feature } цяпер у актыўным стане"
       ],
@@ -19397,7 +19431,7 @@
         "Паведаміць аб праблеме"
       ],
       "Request new code": [
-        "Запытаць новы код"
+        "Запытайце новы код"
       ],
       "Request new code?": [
         "Запытаць новы код?"
@@ -19989,7 +20023,7 @@
         "Уключае прафесійную электронную пошту @yourdomain.com, воблачнае сховішча з сумесным рэдагаваннем дакументаў, расклад і відэаканферэнцыі, менеджар пароляў, а таксама бяспечны ${ VPN_SHORT_APP_NAME } і многае іншае."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Імгненная дапамога ШІ, эксперт-чалавек заўсёды напагатове!"
+        "Імгненная дапамога ШІ, спецыяліст заўсёды на сувязі!"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Удзельнікі, якія не выкарыстоўваюць 2ФА, атрымаюць ліст з просьбай уключыць яе як мага хутчэй. Карыстальнікі з адзіным уваходам напамін на сваю электронную пошту не атрымаюць."
@@ -20037,7 +20071,7 @@
         "Новы перыяд аплаты пачнецца ў ${ formattedTime }"
       ],
       "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Выбраная тэма будзе актыўна, калі ў вашай сістэме зададзены \"цёмны рэжым\""
+        "Выбраная тэма будзе актыўная, калі ў вашай сістэме зададзены \"цёмны рэжым\""
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Выбраная тэма будзе актыўна, калі ў вашай сістэме зададзены \"светлы рэжым\""

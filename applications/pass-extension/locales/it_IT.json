@@ -118,6 +118,9 @@
       "Bulk restore items from trash": [
         "Ripristina in blocco gli elementi dal cestino"
       ],
+      "Bulk select items": [
+        "Seleziona elementi in blocco"
+      ],
       "Cancel": [
         "Annulla"
       ],
@@ -340,6 +343,9 @@
       "Edit vault": [
         "Modifica cassaforte"
       ],
+      "Enable": [
+        "Abilita"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Abilita ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -357,9 +363,6 @@
       ],
       "Fill password": [
         "Inserisci password"
-      ],
-      "Filter vault items": [
-        "Filtra gli elementi della cassaforte"
       ],
       "Generate alias": [
         "Genera alias"
@@ -502,6 +505,9 @@
       "Move to Trash": [
         "Sposta nel cestino"
       ],
+      "Multiple select": [
+        "Selezione multipla"
+      ],
       "New token": [
         "Nuovo token"
       ],
@@ -643,9 +649,6 @@
       "See members": [
         "Visualizza membri"
       ],
-      "Select items": [
-        "Seleziona elementi"
-      ],
       "Send email": [
         "Invia email"
       ],
@@ -690,9 +693,6 @@
       ],
       "Sign out": [
         "Esci dall'account"
-      ],
-      "Sort vault items": [
-        "Ordina gli elementi della cassaforte"
       ],
       "Start from scratch": [
         "Comincia da zero"
@@ -877,8 +877,17 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias email funziona come un indirizzo email, ma riduce lo spam e mantiene nascosti il tuo indirizzo email e la tua reale identità."
       ],
+      "Change these passwords immediately": [
+        "Modifica immediatamente queste password"
+      ],
       "Change your passwords": [
         "Cambia le tue password"
+      ],
+      "Check if your passwords have been exposed": [
+        "Verifica se le tue password sono state esposte"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Verifica di ${ compromised.progress.completed } su ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Crea password univoche"
@@ -936,6 +945,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Questo account è vulnerabile, visita il servizio e cambia la password."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Questa password di accesso appare in una violazione dei dati. Visita il servizio e modificala."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Questo servizio offre 2FA. Abilitalo per una maggiore sicurezza dell'account."
@@ -1386,6 +1398,9 @@
       ],
       "This domain is already managed by your organization": [
         "Questo dominio è già gestito dalla tua organizzazione"
+      ],
+      "This invite is no longer available": [
+        "Questo invito non è più disponibile"
       ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Questo può verificarsi dopo un lungo periodo di inutilizzo di ${ PASS_SHORT_APP_NAME } o dopo aver cancellato la cronologia di Safari."
@@ -1848,6 +1863,9 @@
       ],
       "Change your password": [
         "Cambia la password"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Verifica di ${ compromised.progress.completed } password su ${ compromised.progress.total } in corso."
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Scegli una passkey salvata per accedere a ${ domain }"
@@ -2846,6 +2864,9 @@
       ],
       "Verification code sent.": [
         "Codice di verifica inviato."
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Visualizza i tuoi elementi di ${ PASS_SHORT_APP_NAME } offline. Per abilitare la funzione è richiesta la password."
       ],
       "Viewer": [
         "Visualizzatore"
@@ -4418,7 +4439,7 @@
         "Puoi allegare file agli elementi per una migliore organizzazione."
       ],
       "You may close this window after saving the file.": [
-        "È possibile chiudere questa finestra dopo aver salvato il file."
+        "Puoi chiudere questa finestra dopo aver salvato il file."
       ]
     },
     "Permission": {
@@ -4737,7 +4758,7 @@
         "Indirizzi ${ BRAND_NAME }"
       ],
       "${ PASS_APP_NAME } Logs": [
-        "${ PASS_APP_NAME } registri"
+        "Registro di ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } Settings": [
         "Impostazioni ${ PASS_APP_NAME }"
@@ -4813,6 +4834,12 @@
       ],
       "Clear clipboard": [
         "Svuota appunti"
+      ],
+      "Compromised password": [
+        "Password compromessa"
+      ],
+      "Compromised passwords": [
+        "Password compromesse"
       ],
       "Confirm extra password": [
         "Conferma la password aggiuntiva"
@@ -4901,6 +4928,9 @@
       ],
       "Email": [
         "Email"
+      ],
+      "Enable offline mode": [
+        "Attiva la modalità offline"
       ],
       "Encrypted import": [
         "Importazione crittografata"
@@ -5044,6 +5074,9 @@
       ],
       "No access tokens yet": [
         "Ancora nessun token di accesso"
+      ],
+      "No compromised passwords": [
+        "Nessuna password compromessa"
       ],
       "No excluded items": [
         "Nessun elemento escluso"
@@ -5223,6 +5256,9 @@
       ],
       "Update available": [
         "Aggiornamento disponibile"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Passa a un piano superiore per verificare le password compromesse"
       ],
       "URL matching": [
         "Corrispondenza URL"

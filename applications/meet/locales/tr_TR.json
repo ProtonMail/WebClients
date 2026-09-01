@@ -181,6 +181,9 @@
       "Allow access": [
         "Erişime izin ver"
       ],
+      "Allow live captions": [
+        "Canlı alt yazı kullanılabilsin"
+      ],
       "Anyone with the link can join immediately": [
         "Bağlantıyı bilen herkes hemen katılabilir"
       ],
@@ -734,6 +737,9 @@
       ]
     },
     "Alt": {
+      "Allow live captions": [
+        "Canlı alt yazı kullanılabilsin"
+      ],
       "Audio settings": [
         "Ses ayarları"
       ],
@@ -1959,6 +1965,9 @@
       "Failed to lock meeting": [
         "Görüşme kilitlenemedi"
       ],
+      "Failed to request live captions": [
+        "Canlı alt yazı isteği yapılamadı"
+      ],
       "Failed to rotate personal meeting link": [
         "Kişisel görüşme bağlantısı değiştirilemedi"
       ],
@@ -1985,6 +1994,9 @@
       ],
       "Failed to update caption language. Please try again.": [
         "Alt yazı dili güncellenemedi. Lütfen yeniden deneyin."
+      ],
+      "Failed to update live captions availability": [
+        "Canlı alt yazı kullanılabilirliği güncellenemedi"
       ],
       "Failed to update live captions. Please try again.": [
         "Canlı alt yazı güncellenemedi. Lütfen yeniden deneyin."
@@ -2541,6 +2553,9 @@
       "Host": [
         "Sunucu"
       ],
+      "Host has disabled live captions for this meeting.": [
+        "Görüşme sahibi bu görüşmede canlı alt yazıyı kullanımdan kaldırmış."
+      ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Kendi güvenli toplantınızı düzenleyin. ${ MEET_APP_NAME } uygulamasında bir görüşme başlatın ve bağlantıyı paylaşarak istediğiniz kişiyi davet edin. Basit, güvenli ve ücretsiz."
       ],
@@ -2741,6 +2756,12 @@
       ],
       "Participant": [
         "Katılımcı"
+      ],
+      "Participants can turn live captions on. Turn on your own under Display.": [
+        "Katılımcılar canlı alt yazıyı açabilir. Ekran altından kendiniz için açabilirsiniz."
+      ],
+      "Participants can’t use live captions": [
+        "Katılımcılar canlı alt yazıyı kullanamaz"
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Güvenli bir görüşmeye katılmak için ${ MEET_APP_NAME } bağlantınızı yapıştırın."

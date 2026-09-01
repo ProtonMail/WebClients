@@ -337,9 +337,6 @@
       "Fill password": [
         "Uzupełnij hasło"
       ],
-      "Filter vault items": [
-        "Filtruj elementy sejfu"
-      ],
       "Generate alias": [
         "Generuj alias"
       ],
@@ -666,9 +663,6 @@
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Udostępniono Ci element w ${ PASS_APP_NAME }"
-      ],
-      "Sort vault items": [
-        "Sortuj elementy sejfu"
       ],
       "Start from scratch": [
         "Rozpocznij od początku"
@@ -2139,7 +2133,10 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -5077,9 +5074,6 @@
       ],
       "Settings": [
         "Ustawienia"
-      ],
-      "Setup offline mode": [
-        "Konfiguracja trybu offline"
       ],
       "Share vaults with your team": [
         "Udostępnij sejfy swojemu zespołowi"

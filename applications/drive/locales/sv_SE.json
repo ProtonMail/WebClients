@@ -425,6 +425,9 @@
       "Download results": [
         "Ladda ner resultat"
       ],
+      "Drive Locked": [
+        "Drive låst"
+      ],
       "Edit": [
         "Redigera"
       ],
@@ -5602,6 +5605,9 @@
       "Can't move a folder into itself": [
         "Kan inte flytta en mapp in i sig själv"
       ],
+      "Can't read this file": [
+        "Kan inte läsa denna fil"
+      ],
       "Can't rename to same name": [
         "Kan inte byta namn till samma namn"
       ],
@@ -6162,6 +6168,9 @@
       "Loading...": [
         "Laddar in …"
       ],
+      "Looked at this image": [
+        "Tittade på denna bild"
+      ],
       "Low Priority": [
         "Låg prioritet"
       ],
@@ -6307,6 +6316,9 @@
       "or discover other features:": [
         "eller upptäck andra funktioner:"
       ],
+      "Or use the \"+ New\" button": [
+        "Eller använd knappen “+ Ny“"
+      ],
       "Organization size": [
         "Organisationens storlek"
       ],
@@ -6348,6 +6360,10 @@
       ],
       "Photo is set as album cover": [
         "Foto är inställt som albumomslag"
+      ],
+      "Photo saved to your Drive": [
+        "Foto sparat till din Drive",
+        "Foton sparade till din Drive"
       ],
       "Photos have been successfully recovered.": [
         "Foton har återställts."
@@ -6445,6 +6461,9 @@
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privat surfning (eller ”inkognitoläge”) är endast användbart för att hålla din aktivitet dold på din enhet. Det hindrar din webbläsare från att spara historik och cookies, men det gör dig inte osynlig. Din internetleverantör, nätverksadministratör och de webbplatser du besöker kan fortfarande se vad du gör på nätet."
+      ],
+      "Private search enabled. You may now close this dialogue and search for files and folders.": [
+        "Privat sökning aktiverad. Du kan nu stänga denna dialogruta och söka efter filer och mappar."
       ],
       "Public link": [
         "Offentlig länk"
@@ -6773,6 +6792,9 @@
       "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
         "Detta kommer avbryta alla återstående uppladdningar. Avbrutna filer kommer inte att sparas i ${ DRIVE_APP_NAME }."
       ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "Detta kommer endast ta bort albumet. Dina foton kommer finnas kvar på din tidslinje. Denna åtgärd kan inte ångras."
+      ],
       "This will permanently delete the file you uploaded.": [
         "Detta kommer ta bort filen du laddade upp permanent."
       ],
@@ -6973,6 +6995,10 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Du har just ökat ditt lagringsutrymme till 5 GB!"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "Vi kunde inte spara detta foto till din Drive",
+        "Vi kunde inte spara flera foton till din Drive"
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Vi kunde inte verifiera att ${ nameAuthor } laddade upp ${ nodeName }. Följande kan ha blivit manipulerat: filernas ordning. Öppna endast om du litar på det."
@@ -7196,6 +7222,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Din e-post kommer endast användas för denna engångsverifiering."
+      ],
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
+        "Dina filer är inte längre åtkomliga på grund av en lösenordsåterställning. Ladda upp den gamla krypteringsnyckeln igen för att återfå åtkomsten. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
@@ -10674,6 +10703,9 @@
       "You will soon be redirected to verify your payment.": [
         "Du kommer snart att omdirigeras för att verifiera din betalning."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Din valuta har ändrats till euro (€) eftersom ${ IDEAL_WERO_BRAND_NAME } endast stöder betalningar i euro."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Din valuta har ändrats till euro (€) eftersom SEPA-banköverföringar endast stöder betalningar i euro."
       ],
@@ -10685,6 +10717,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Misslyckades med att initialisera ${ IDEAL_WERO_BRAND_NAME }. Försök igen senare."
+      ],
       "Invalid card number": [
         "Ogiltigt kortnummer"
       ],
@@ -11876,6 +11911,9 @@
       ],
       "Encrypted search is here": [
         "Krypterad sökning är här"
+      ],
+      "Now you can easily search Drive files while keeping your data secure.": [
+        "Nu kan du enkelt söka bland filer på Drive medan du håller din data säker."
       ]
     },
     "sso": {
@@ -12425,6 +12463,9 @@
       ],
       "Your favorited photos will appear here": [
         "Dina favoritfoton kommer visas här"
+      ],
+      "Your Live Photos will appear here": [
+        "Dina livefoton kommer att visas här"
       ],
       "Your panorama photos will appear here": [
         "Dina panoramafoton kommer visas här"
@@ -13112,6 +13153,9 @@
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Skaffa mer lagringsutrymme med ${ MAIL_APP_NAME } Plus"
       ],
+      "Get started with 10 minutes of free uploads, on the house.": [
+        "Kom igång med 10 minuters gratis uppladdningar, som vi bjuder på."
+      ],
       "Get the apps": [
         "Skaffa appen"
       ],
@@ -13656,6 +13700,9 @@
       ],
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Vi kunde inte verifiera att en anonym användare laddade upp denna mapp."
+      ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ node.activeRevision.contentAuthor.error.error }": [
+        "Vi kunde inte bekräfta att filinnehållet laddades upp av ${ claimedContentAuthor }. Orsaken är: ${ node.activeRevision.contentAuthor.error.error }"
       ],
       "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
         "Vi kunde inte bekräfta att namnet skapades eller modifierades av ${ claimedNameAuthor }. Orsaken är: ${ node.nameAuthor.error.error }"

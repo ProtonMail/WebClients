@@ -331,6 +331,9 @@
       "Edit vault": [
         "Редагувати сховище"
       ],
+      "Enable": [
+        "Увімкнути"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Увімкнути ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -348,9 +351,6 @@
       ],
       "Fill password": [
         "Заповнити пароль"
-      ],
-      "Filter vault items": [
-        "Фільтрувати елементи сховища"
       ],
       "Generate alias": [
         "Згенерувати псевдонім"
@@ -675,9 +675,6 @@
       ],
       "Sign out": [
         "Вийти"
-      ],
-      "Sort vault items": [
-        "Сортувати елементи сховища"
       ],
       "Start from scratch": [
         "Почати з нуля"
@@ -4411,9 +4408,6 @@
       "Download": [
         "Завантажити"
       ],
-      "Download \"${ filename }\"": [
-        "Завантажити «${ filename }»"
-      ],
       "Download file": [
         "Завантажити файл"
       ],
@@ -4491,9 +4485,6 @@
       ],
       "You can attach files to items for a better organization": [
         "Ви можете прикріплювати файли до елементів для кращої організації"
-      ],
-      "You may close this window after saving the file.": [
-        "Ви можете закрити це вікно після збереження файлу."
       ]
     },
     "Permission": {
@@ -4814,9 +4805,6 @@
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } адрес"
-      ],
-      "${ PASS_APP_NAME } Logs": [
-        "Журнали ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } Settings": [
         "Налаштування ${ PASS_APP_NAME }"

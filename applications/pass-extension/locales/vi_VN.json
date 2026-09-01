@@ -331,6 +331,9 @@
       "Edit vault": [
         "Chỉnh sửa kho"
       ],
+      "Enable": [
+        "Kích hoạt"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Kích hoạt ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -348,9 +351,6 @@
       ],
       "Fill password": [
         "Điền mật khẩu"
-      ],
-      "Filter vault items": [
-        "Phân loại mục kho"
       ],
       "Generate alias": [
         "Tạo biệt danh"
@@ -675,9 +675,6 @@
       ],
       "Sign out": [
         "Đăng xuất"
-      ],
-      "Sort vault items": [
-        "Phân loại mục kho"
       ],
       "Start from scratch": [
         "Bắt đầu lại từ đầu"
@@ -4255,9 +4252,6 @@
       "Download": [
         "Tải xuống"
       ],
-      "Download \"${ filename }\"": [
-        "Tải xuống \"${ filename }\""
-      ],
       "Download file": [
         "Tải tệp xuống"
       ],
@@ -4335,9 +4329,6 @@
       ],
       "You can attach files to items for a better organization": [
         "Có thể đính kèm tệp vào các mục để tổ chức tốt hơn"
-      ],
-      "You may close this window after saving the file.": [
-        "Có thể đóng cửa sổ này sau khi lưu tệp."
       ]
     },
     "Permission": {
@@ -4652,9 +4643,6 @@
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } địa chỉ"
-      ],
-      "${ PASS_APP_NAME } Logs": [
-        "Nhật ký ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } Settings": [
         "Cài đặt ${ PASS_APP_NAME }"
