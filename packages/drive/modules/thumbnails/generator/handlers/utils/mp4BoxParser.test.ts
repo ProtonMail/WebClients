@@ -1,4 +1,4 @@
-import { parseMp4Metadata } from './mp4BoxParser';
+import { parseMp4Metadata, readMp4CreationTime } from './mp4BoxParser';
 
 function concat(...buffers: ArrayBufferLike[]): ArrayBuffer {
     const total = buffers.reduce((sum, buffer) => sum + buffer.byteLength, 0);
@@ -116,6 +116,23 @@ function trak(trackId: number, width: number, height: number, timescale: number,
     return box('trak', tkhd(trackId, width, height), box('mdia', mdhd(timescale, duration)));
 }
 
+function mvhd(creationTimeMacEpoch: number): ArrayBuffer {
+    const body = concat(zeros(4), u32(creationTimeMacEpoch), u32(0), u32(1000), u32(0));
+    return box('mvhd', body);
+}
+
+function mvhdV1(creationTimeMacEpoch: number): ArrayBuffer {
+    const body = concat(
+        concat(u8(1), zeros(3)), // version 1 + flags
+        u32(0), // creation_time high
+        u32(creationTimeMacEpoch), // creation_time low
+        zeros(8), // modification_time
+        u32(1000), // timescale
+        zeros(8) // duration
+    );
+    return box('mvhd', body);
+}
+
 function tfhd(trackId: number, defaultSampleDuration: number): ArrayBuffer {
     const flags = 0x000008; // default-sample-duration-present
     const versionFlags = concat(u8(0), u8((flags >> 16) & 0xff), u8((flags >> 8) & 0xff), u8(flags & 0xff));
@@ -211,5 +228,88 @@ describe('parseMp4Metadata', () => {
         const truncated = new Uint8Array([0, 0, 0, 20, 0x6d, 0x6f, 0x6f, 0x76, 1, 2, 3]).buffer; // moov claims size 20, buffer is shorter
 
         expect(parseMp4Metadata(truncated)).toBeNull();
+    });
+});
+
+describe('readMp4CreationTime', () => {
+    // jsdom's Blob has no `arrayBuffer()`, unlike every browser we support.
+    beforeAll(() => {
+        if (!Blob.prototype.arrayBuffer) {
+            Blob.prototype.arrayBuffer = async function () {
+                return new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = () => resolve(reader.result as ArrayBuffer);
+                    reader.onerror = () => reject(reader.error);
+                    reader.readAsArrayBuffer(this);
+                });
+            };
+        }
+    });
+
+    // 2009-08-07T17:03:58Z in Unix seconds, offset into the MP4/QuickTime epoch (1904-01-01).
+    const MAC_EPOCH_SECONDS = 1249664638 + 2082844800;
+    const EXPECTED_DATE = new Date('2009-08-07T17:03:58.000Z');
+
+    test('reads creation_time from mvhd (version 0) and converts from the MP4 epoch to a JS Date', async () => {
+        const file = new Blob([mp4File(mvhd(MAC_EPOCH_SECONDS))]);
+
+        await expect(readMp4CreationTime(file)).resolves.toEqual(EXPECTED_DATE);
+    });
+
+    test('reads version-1 (64-bit) mvhd creation_time', async () => {
+        const file = new Blob([mp4File(mvhdV1(MAC_EPOCH_SECONDS))]);
+
+        await expect(readMp4CreationTime(file)).resolves.toEqual(EXPECTED_DATE);
+    });
+
+    test('finds moov when it trails a large mdat, as camera recordings write it', async () => {
+        const file = new Blob([
+            concat(
+                box('ftyp', new TextEncoder().encode('isom').buffer),
+                box('mdat', zeros(64 * 1024)),
+                box('moov', mvhd(MAC_EPOCH_SECONDS))
+            ),
+        ]);
+
+        await expect(readMp4CreationTime(file)).resolves.toEqual(EXPECTED_DATE);
+    });
+
+    test('reads only the box headers and the start of moov, not the whole file', async () => {
+        const file = new Blob([
+            concat(
+                box('ftyp', new TextEncoder().encode('isom').buffer),
+                box('mdat', zeros(64 * 1024)),
+                box('moov', mvhd(MAC_EPOCH_SECONDS))
+            ),
+        ]);
+        const bytesRead: number[] = [];
+        const slice = file.slice.bind(file);
+        jest.spyOn(file, 'slice').mockImplementation((start, end) => {
+            const sliced = slice(start, end);
+            bytesRead.push(sliced.size);
+            return sliced;
+        });
+
+        await readMp4CreationTime(file);
+
+        expect(bytesRead.reduce((sum, size) => sum + size, 0)).toBeLessThan(2 * 1024);
+    });
+
+    test('returns null when creation_time is zero (unset)', async () => {
+        const file = new Blob([mp4File(mvhd(0))]);
+
+        await expect(readMp4CreationTime(file)).resolves.toBeNull();
+    });
+
+    test('returns null when there is no mvhd box', async () => {
+        const file = new Blob([mp4File(trak(1, 640, 480, 1000, 1000))]);
+
+        await expect(readMp4CreationTime(file)).resolves.toBeNull();
+    });
+
+    test('returns null when there is no moov box', async () => {
+        const webmLikeHeader = new Blob([new Uint8Array([0x1a, 0x45, 0xdf, 0xa3, 0, 0, 0, 0, 0, 0]).buffer]);
+
+        await expect(readMp4CreationTime(webmLikeHeader)).resolves.toBeNull();
     });
 });

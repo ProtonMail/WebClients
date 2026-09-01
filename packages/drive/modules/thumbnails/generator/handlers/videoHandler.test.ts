@@ -15,6 +15,20 @@ jest.mock('../constants', () => ({
 describe('VideoHandler', () => {
     let handler: VideoHandler;
 
+    // jsdom's Blob has no `arrayBuffer()`, unlike every browser we support.
+    beforeAll(() => {
+        if (!Blob.prototype.arrayBuffer) {
+            Blob.prototype.arrayBuffer = async function () {
+                return new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = () => resolve(reader.result as ArrayBuffer);
+                    reader.onerror = () => reject(reader.error);
+                    reader.readAsArrayBuffer(this);
+                });
+            };
+        }
+    });
+
     beforeEach(() => {
         handler = new VideoHandler();
     });

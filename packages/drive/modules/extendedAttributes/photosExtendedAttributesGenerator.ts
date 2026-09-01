@@ -1,5 +1,7 @@
+import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
+import { readMp4CreationTime } from '../thumbnails/generator/handlers/utils/mp4BoxParser';
 import { getExifInfo } from './exifParser/exifParser';
 import { getCaptureDateTime } from './exifParser/exifUtils';
 import { buildExtendedAttributesMetadata } from './metadataBuilder/metadataBuilder';
@@ -41,7 +43,8 @@ export async function generatePhotosExtendedAttributes(
     const exifInfo = await getExifInfo(file, mimeType);
     const metadata = buildExtendedAttributesMetadata(exifInfo, mediaInfo);
     const tags: PhotoTag[] = await getPhotoTags(file, mimeType, exifInfo);
-    const captureTime = getCaptureDateTime(file, exifInfo?.exif);
+    const mp4CreationTime = isVideo(mimeType) ? await readMp4CreationTime(file) : null;
+    const captureTime = getCaptureDateTime(file, exifInfo?.exif, mp4CreationTime);
 
     return {
         metadata,
