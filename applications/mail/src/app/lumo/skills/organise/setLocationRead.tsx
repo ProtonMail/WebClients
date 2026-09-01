@@ -19,7 +19,7 @@ import { resolveOpenFolderTarget } from '../reads/openFolder';
 import { referenceName } from './emailSelection';
 
 /** Derived, so the model's vocabulary is exactly the one Mail's own URLs use, in the tabs' display order. */
-export const INBOX_CATEGORIES = CATEGORY_LABEL_IDS.map((labelID) => LABEL_IDS_TO_HUMAN[labelID]);
+const INBOX_CATEGORIES = CATEGORY_LABEL_IDS.map((labelID) => LABEL_IDS_TO_HUMAN[labelID]);
 
 export interface SetLocationReadParams {
     location: string | null;

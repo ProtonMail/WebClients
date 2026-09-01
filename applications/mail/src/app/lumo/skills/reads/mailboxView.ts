@@ -9,12 +9,12 @@
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 
 /** The three single-value view filters. Exactly ONE may apply: the `filter` hash key holds one value. */
-export const MAILBOX_FILTERS = ['read', 'unread', 'has_attachment'] as const;
+const MAILBOX_FILTERS = ['read', 'unread', 'has_attachment'] as const;
 
 export type MailboxFilter = (typeof MAILBOX_FILTERS)[number];
 
 /** The four view sorts: date (newest = descending / oldest = ascending) and size (largest / smallest). */
-export const MAILBOX_SORTS = ['newest', 'oldest', 'largest', 'smallest'] as const;
+const MAILBOX_SORTS = ['newest', 'oldest', 'largest', 'smallest'] as const;
 
 export type MailboxSort = (typeof MAILBOX_SORTS)[number];
 
