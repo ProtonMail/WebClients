@@ -15,7 +15,7 @@ import type {
 } from '../types-api';
 import { Role } from '../types-api';
 
-export const DEFAULT_CHAT_MODEL = 'lumo';
+export const DEFAULT_CHAT_MODEL = 'lumo-lite';
 export const LUMO_LITE_MODEL = 'lumo-lite';
 export const LUMO_MAX_MODEL = 'lumo-max';
 export const APERTUS_15_MODEL = 'apertus-15';
