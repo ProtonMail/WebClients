@@ -163,7 +163,7 @@
                 ".storybook/main.mjs"
             ],
             "project": ["src/**/*.{ts,tsx,mdx}"],
-            "ignore": ["**"]
+            "ignoreDependencies": ["@storybook/addon-links"]
         },
         "applications/verify": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}", "src/app/Verify.scss"],
