@@ -115,6 +115,8 @@ import type { TelemetryPayType } from './measure';
 import PlanCustomizer from './planCustomizer/PlanCustomizer';
 import RatingsSection from './ratings/RatingsSection';
 
+const protonDomain = '@proton.me';
+
 const getBundleTitle = (a: string, b: string) => {
     return c('vpn_2step: info').t`Your ${a} and ${b} bundle`;
 };
@@ -1405,10 +1407,18 @@ const Step1 = ({
                                                                 </span>
                                                             )}
                                                         {!isB2bPlan && (
-                                                            <div className="mt-4 color-weak text-sm">
-                                                                {c('Info')
-                                                                    .t`Your information is safe with us. We'll only contact you when it's required to provide our services.`}
-                                                            </div>
+                                                            <>
+                                                                <span className="mt-4 color-weak text-sm">
+                                                                    {
+                                                                        // translator: Full sentance "Use an existing email or create a free @proton.me address."
+                                                                        c('Info')
+                                                                            .t`Use an existing email or create a free ${protonDomain} address.`
+                                                                    }
+                                                                    <br />
+                                                                    {c('Info')
+                                                                        .t`Your information is safe with us. We'll only contact you when it's required to provide our services.`}
+                                                                </span>
+                                                            </>
                                                         )}
                                                     </>
                                                 );
