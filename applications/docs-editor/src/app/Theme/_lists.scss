@@ -52,9 +52,7 @@ $list-style-types: (decimal, upper-alpha, lower-alpha, upper-roman, lower-roman)
 	}
 
 	@for $i from 1 through 5 {
-		$list-style: if(
-			sass($i % 2==0): 'circle' ; else: 'disc',
-		);
+		$list-style: if(sass($i % 2==0): 'circle'; else: 'disc');
 
 		&--depth-#{$i} {
 			list-style-type: #{$list-style};
@@ -143,6 +141,12 @@ $list-style-types: (decimal, upper-alpha, lower-alpha, upper-roman, lower-roman)
 	margin-block: 0;
 	margin-inline: 0;
 	margin-block-end: 0.25rem;
+
+	&::marker {
+		color: var(--listitem-marker-color, inherit);
+		font-family: var(--listitem-marker-font-family, inherit);
+		font-size: var(--listitem-marker-font-size, inherit);
+	}
 }
 
 .Lexical__listItem--nested {
