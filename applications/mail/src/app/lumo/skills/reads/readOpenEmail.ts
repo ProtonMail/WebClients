@@ -59,7 +59,10 @@ export const createReadOpenEmailHandler =
         }
 
         const email = toDecryptedMessage(decrypted);
-        return { isOpen: true, email: { reference: references.referenceFor('email', id, email.subject), ...email } };
+        return {
+            isOpen: true,
+            email: { reference: references.referenceFor('email', id, { title: email.subject }), ...email },
+        };
     };
 
 export const readOpenEmailModule: MailToolModule = {

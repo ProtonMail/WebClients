@@ -2,12 +2,13 @@
  * Model-facing projections of the mailbox list: these build and serialise the rows the *agent* reads,
  * and are never used to render the UI. The list components remain the only thing that draws a row.
  */
+import { formatISO } from 'date-fns';
+
 import type { ReferenceRegistry } from '@proton/llm/lib/lumoAgent/contracts/types';
 
 import { getDate, hasAttachments, isStarred, isUnread } from '../../../helpers/elements';
 import { getCurrentFolders, getElementLabels } from '../../../helpers/labels';
 import { getDisplayRecipients, getUniqueElementSenders } from '../../../helpers/recipients';
-import type { Element } from '../../../models/element';
 import {
     contextTotal as contextTotalSelector,
     elements as elementsSelector,
@@ -53,9 +54,6 @@ export interface AgentEmailPage {
 export const BULK_ACTION_NOTE =
     'A bulk action is still running in this location: its list stays cleared until the server finishes, so an empty list here says nothing about how much mail the location holds, and the emails in it cannot be read or changed individually yet.';
 
-/** `getDate` resolves a conversation's label-contextual time, so this matches the day on screen. */
-const toDate = (element: Element, labelID: string): string => formatLocalDate(getDate(element, labelID));
-
 const formatRow = (row: AgentEmailRow): string => {
     const parts = [row.reference, row.from, row.subject, row.date, row.unread ? 'unread' : 'read', row.folder];
     if (row.starred) {
@@ -91,7 +89,7 @@ type RowDeps = Pick<MailToolDeps, 'store' | 'getFolders' | 'getLabels' | 'getMai
 
 /**
  * Project the current on-screen page into {@link AgentEmailRow}s, minting a stable `email-…` reference
- * per element via the {@link ReferenceRegistry} (subject recorded as its display label). The `elements`
+ * per element via the {@link ReferenceRegistry} (subject, sender and date recorded for display). The `elements`
  * selector hands back exactly the on-screen page, so the payload only ever describes what the user can
  * see, and `total` is the view's total so the model knows how much it is *not* seeing.
  *
@@ -112,11 +110,19 @@ export const buildAgentEmailRows = (deps: RowDeps, references: ReferenceRegistry
     const rows: AgentEmailRow[] = pageElements.map((element) => {
         const subject = element.Subject || '(no subject)';
         const senders = getUniqueElementSenders(element, conversationMode, getDisplayRecipients(element, labelID));
+        const from = formatSender(senders);
+        // `getDate` resolves a conversation's label-contextual time, so this matches the day on screen.
+        const date = getDate(element, labelID);
         return {
-            reference: references.referenceFor('email', element.ID || '', subject),
-            from: formatSender(senders),
+            reference: references.referenceFor('email', element.ID || '', {
+                title: subject,
+                subtitle: from,
+                // The epoch stands for "no time", so there is nothing here for a card to show.
+                meta: date.getTime() ? formatISO(date) : undefined,
+            }),
+            from,
             subject,
-            date: toDate(element, labelID),
+            date: formatLocalDate(date),
             unread: isUnread(element, labelID),
             starred: isStarred(element),
             folder: getCurrentFolders(element, labelID, folders, mailSettings)

@@ -47,7 +47,7 @@ describe('setStarredCardRenderer', () => {
         ids: ['email-a1b2c3', 'email-d4e5f6'],
         starred: false,
     };
-    const labels = { 'email-a1b2c3': 'Booking confirmation', 'email-d4e5f6': 'Receipt' };
+    const labels = { 'email-a1b2c3': { title: 'Booking confirmation' }, 'email-d4e5f6': { title: 'Receipt' } };
 
     it('titles the card by direction and leaves the subtitle unset (starring has no destination)', () => {
         const starTitle = setStarredCardRenderer.title(starAction, labels);
@@ -69,7 +69,7 @@ describe('setStarredCardRenderer', () => {
 describe('createSetStarredHandler', () => {
     const setUp = () => {
         const references = createReferenceRegistry();
-        const emailReference = references.referenceFor('email', 'ELEMENT_ID_1', 'Booking');
+        const emailReference = references.referenceFor('email', 'ELEMENT_ID_1', { title: 'Booking' });
         const element = { ID: 'ELEMENT_ID_1' };
         const store = { getState: () => ({ elements: { elements: { ELEMENT_ID_1: element } } }) };
         const applyLocation = jest.fn().mockResolvedValue([]);

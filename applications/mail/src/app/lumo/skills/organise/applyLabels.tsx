@@ -5,6 +5,7 @@ import { IcTag } from '@proton/icons/icons/IcTag';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type {
     ActionRequest,
+    ReferenceLabels,
     ReferenceRegistry,
     ToolDefinition,
     ToolHandler,
@@ -73,7 +74,7 @@ export const createApplyLabelsHandler =
         await mail.applyMultipleLocations({ elements, createFilters: false, changes });
     };
 
-const labelNames = (action: ActionRequest, labels: Record<string, string>): string =>
+const labelNames = (action: ActionRequest, labels: ReferenceLabels): string =>
     ((action.labels as string[]) ?? []).map((reference) => referenceName(reference, labels)).join(', ');
 
 /** No `→` anywhere, unlike move_emails: an arrow reads as "moved into Receipts", the exact confusion the

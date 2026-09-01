@@ -13,7 +13,7 @@ const pendingConfirm: LumoAgentItem = {
     id: 3,
     kind: 'confirm',
     action: { type: 'move_items', target: 'Archive' },
-    labels: { m1: 'Invoice' },
+    labels: { m1: { title: 'Invoice' } },
     status: 'pending',
 };
 

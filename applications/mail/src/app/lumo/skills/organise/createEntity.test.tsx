@@ -47,14 +47,14 @@ describe('createFolderModule', () => {
 
         expect(result).toEqual({ reference: expect.stringMatching(/^folder-[0-9a-z]{6}$/), name: 'Hotels' });
         expect(references.idFor(result.reference)).toBe('FOLDER_ID_1');
-        expect(references.labelFor(result.reference)).toBe('Hotels');
+        expect(references.labelFor(result.reference)?.title).toBe('Hotels');
     });
 
     it('nests under the parent reference, sending the real folder id', async () => {
         const { references, createLabel, deps } = setUp(
             buildLabel({ ID: 'FOLDER_ID_2', Name: 'Hotels', Type: LABEL_TYPE.MESSAGE_FOLDER })
         );
-        const parent = references.referenceFor('folder', 'FOLDER_ID_1', 'Travel');
+        const parent = references.referenceFor('folder', 'FOLDER_ID_1', { title: 'Travel' });
 
         await createFolderModule.createHandler(deps)({ name: 'Hotels', parentId: parent }, { references });
 
@@ -76,7 +76,7 @@ describe('createFolderModule', () => {
             buildLabel({ ID: 'FOLDER_ID_3', Name: 'Hotels', Type: LABEL_TYPE.MESSAGE_FOLDER }),
             NESTED_FOLDERS
         );
-        const france = references.referenceFor('folder', 'FRANCE', 'France');
+        const france = references.referenceFor('folder', 'FRANCE', { title: 'France' });
 
         await expect(
             createFolderModule.createHandler(deps)({ name: 'Hotels', parentId: france }, { references })
@@ -89,7 +89,7 @@ describe('createFolderModule', () => {
             buildLabel({ ID: 'FOLDER_ID_4', Name: 'Hotels', Type: LABEL_TYPE.MESSAGE_FOLDER }),
             NESTED_FOLDERS
         );
-        const europe = references.referenceFor('folder', 'EUROPE', 'Europe');
+        const europe = references.referenceFor('folder', 'EUROPE', { title: 'Europe' });
 
         await createFolderModule.createHandler(deps)({ name: 'Hotels', parentId: europe }, { references });
 
@@ -105,7 +105,9 @@ describe('createFolderCardRenderer', () => {
     it('names the parent the folder nests under, and says nothing when that name was never recorded', () => {
         const action: ActionRequest = { type: 'create_folder', name: 'Hotels', parentId: 'folder-x7b2q1' };
 
-        expect(createFolderCardRenderer.subtitle?.(action, { 'folder-x7b2q1': 'Travel' })).toBe('Hotels in Travel');
+        expect(createFolderCardRenderer.subtitle?.(action, { 'folder-x7b2q1': { title: 'Travel' } })).toBe(
+            'Hotels in Travel'
+        );
         expect(createFolderCardRenderer.subtitle?.(action, {})).toBe('Hotels');
     });
 });
