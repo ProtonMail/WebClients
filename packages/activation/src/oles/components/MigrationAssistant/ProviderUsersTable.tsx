@@ -33,8 +33,8 @@ import ImportStatus, { coalesceStatus } from './ImportStatus';
 import './ProviderUsersTable.scss';
 
 export enum ProviderUserColumn {
-    User = 1 << 0,
-    Size = 1 << 1,
+    // User = 1 << 0,
+    // Size = 1 << 1,
     Activation = 1 << 2,
     Migration = 1 << 3,
 }

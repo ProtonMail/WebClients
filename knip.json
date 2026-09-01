@@ -187,8 +187,7 @@
         },
         "packages/activation": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/ai-assistant": {
             "entry": [],
