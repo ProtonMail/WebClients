@@ -20,9 +20,9 @@ import {
 } from '@proton/meet/store/slices/meetingInfo';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import type { KeyRotationLog } from '@proton/meet/types/types';
-import { parseMeetingLink } from '@proton/meet/utils/parseMeetingLink';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
+import { parseMeetingLink } from '@proton/shared/lib/meet/parseMeetingLink';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';

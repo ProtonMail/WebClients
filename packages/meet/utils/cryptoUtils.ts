@@ -6,10 +6,9 @@ import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/cryp
 import { c } from 'ttag';
 
 import type { Api, DecryptedKey } from '@proton/shared/lib/interfaces';
+import { BASE_PASSWORD_LENGTH } from '@proton/shared/lib/meet/parseMeetingLink';
 import { srpGetVerify } from '@proton/shared/lib/srp';
 import getRandomString from '@proton/utils/getRandomString';
-
-import { BASE_PASSWORD_LENGTH } from '../constants';
 
 export const PASSWORD_SEPARATOR = '_';
 
