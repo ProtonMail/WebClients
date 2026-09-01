@@ -2,11 +2,15 @@ import { c, msgid } from 'ttag';
 
 import type { CardRenderer } from '@proton/components/components/lumoAgent/types';
 import { IcFolderArrowIn } from '@proton/icons/icons/IcFolderArrowIn';
-import type { ActionRequest, ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type {
+    ActionRequest,
+    ReferenceLabels,
+    ToolDefinition,
+    ToolHandler,
+} from '@proton/llm/lib/lumoAgent/contracts/types';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
-
 import { resolveElements, resolveId } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import { emailIds, hasEmailSelection, referenceName, renderEmailSelectionBody } from './emailSelection';
@@ -122,7 +126,7 @@ const moveLocationLabel = (location: string): string => {
 };
 
 /** The destination's human name — a folder's name (from the reference's recorded label) or a system location. */
-const moveTargetName = (action: ActionRequest, labels: Record<string, string>): string => {
+const moveTargetName = (action: ActionRequest, labels: ReferenceLabels): string => {
     if (action.folder) {
         return referenceName(action.folder, labels);
     }

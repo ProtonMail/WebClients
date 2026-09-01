@@ -22,7 +22,7 @@ const storeWith = ({
 describe('resolveElements', () => {
     const registry = () => {
         const references = createReferenceRegistry();
-        return { references, reference: references.referenceFor('email', 'ELEMENT_1', 'Booking') };
+        return { references, reference: references.referenceFor('email', 'ELEMENT_1', { title: 'Booking' }) };
     };
 
     it('resolves each reference to the element the mutation hooks operate on', () => {

@@ -45,7 +45,7 @@ describe('setLocationReadCardRenderer', () => {
         category: null,
         read: true,
     };
-    const labels = { 'label-m3n4p5': 'Newsletters' };
+    const labels = { 'label-m3n4p5': { title: 'Newsletters' } };
 
     // A proposed action is unvalidated, so the neither-set case is reachable here.
     it.each([
@@ -65,7 +65,7 @@ describe('setLocationReadCardRenderer', () => {
 describe('createSetLocationReadHandler', () => {
     const setUp = (categories: CategoryTab[] = [categoryTab(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS)]) => {
         const references = createReferenceRegistry();
-        const labelReference = references.referenceFor('label', 'LABEL_ID_1', 'Newsletters');
+        const labelReference = references.referenceFor('label', 'LABEL_ID_1', { title: 'Newsletters' });
         const markAll = jest.fn().mockResolvedValue(undefined);
         const getMailSettings = () => ({ ShowMoved: 0, AlmostAllMail: 0 });
         const deps = { markAll, getMailSettings, getActiveCategoryTabs: () => categories } as unknown as MailToolDeps;

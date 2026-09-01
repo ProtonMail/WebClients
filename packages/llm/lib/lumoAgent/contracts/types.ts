@@ -40,6 +40,20 @@ export type ToolName = string;
 export type ReferenceKind = string;
 
 /**
+ * How a reference is described to a human — the model never sees any of it. `title` is the primary
+ * name (email subject, folder/label name); the rest is whatever else a card has room for.
+ */
+export interface ReferenceLabel {
+    title: string;
+    subtitle?: string;
+    /** Machine-readable and locale-free (e.g. an ISO timestamp), so the card can format it for its reader. */
+    meta?: string;
+}
+
+/** Display descriptions keyed by the reference they describe, as handed to a confirm card. */
+export type ReferenceLabels = Record<string, ReferenceLabel>;
+
+/**
  * Maps references (`email-a3f9k2`, `folder-x7b2q1`, …) to real backend IDs, append-only for the
  * session: the same real ID always yields the same reference, so references stay stable across turns
  * even after the read that introduced them is evicted from the working set. The random id (not a
@@ -48,15 +62,15 @@ export type ReferenceKind = string;
  */
 export interface ReferenceRegistry {
     /**
-     * Return the stable reference for a real backend id, minting one on first sight. `label` is an
-     * optional human-readable name (email subject, folder/label name) recorded for display-only UI
-     * (the confirm card renders it instead of the raw reference); it never affects id resolution.
+     * Return the stable reference for a real backend id, minting one on first sight. `label` is the
+     * optional display-only description (the confirm card renders it instead of the raw reference);
+     * it never affects id resolution.
      */
-    referenceFor(kind: ReferenceKind, id: string, label?: string): string;
+    referenceFor(kind: ReferenceKind, id: string, label?: ReferenceLabel): string;
     /** Resolve a reference back to its real id, or `undefined` if the reference was never issued. */
     idFor(reference: string): string | undefined;
-    /** The human-readable name recorded for a reference, or `undefined` if none was supplied. */
-    labelFor(reference: string): string | undefined;
+    /** The display description recorded for a reference, or `undefined` if none was supplied. */
+    labelFor(reference: string): ReferenceLabel | undefined;
     /** Whether a reference has been issued this session. */
     has(reference: string): boolean;
 }

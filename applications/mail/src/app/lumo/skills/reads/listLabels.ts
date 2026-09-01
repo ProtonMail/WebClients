@@ -37,7 +37,7 @@ export const createListLabelsHandler =
     (mail: MailToolDeps): ToolHandler<Record<string, never>, ListLabelsResult> =>
     async (_params, { references }) => ({
         labels: mail.getLabels().map((label) => ({
-            reference: references.referenceFor('label', label.ID, label.Name),
+            reference: references.referenceFor('label', label.ID, { title: label.Name }),
             name: label.Name,
             color: label.Color,
         })),

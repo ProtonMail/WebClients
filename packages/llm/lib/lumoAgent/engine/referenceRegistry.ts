@@ -1,6 +1,6 @@
 import getRandomString, { DEFAULT_LOWERCASE_CHARSET } from '@proton/utils/getRandomString';
 
-import type { ReferenceKind, ReferenceRegistry } from '../contracts/types';
+import type { ReferenceKind, ReferenceLabel, ReferenceRegistry } from '../contracts/types';
 
 /**
  * An append-only {@link ReferenceRegistry}. References (`email-a3f9k2`, `folder-x7b2q1`, …) stand in
@@ -15,9 +15,9 @@ import type { ReferenceKind, ReferenceRegistry } from '../contracts/types';
 export const createReferenceRegistry = (): ReferenceRegistry => {
     const idByReference = new Map<string, string>();
     const referenceById = new Map<string, string>();
-    // Human-readable name per reference (email subject, folder/label name), for display-only UI —
-    // the confirm card shows these instead of the raw reference. Last non-empty label supplied wins.
-    const labelByReference = new Map<string, string>();
+    // Merged, not replaced: the same element is minted by several reads, and the leanest of them must
+    // not strip the sender and date a richer one recorded.
+    const labelByReference = new Map<string, ReferenceLabel>();
 
     const keyFor = (kind: ReferenceKind, id: string) => `${kind}:${id}`;
 
@@ -42,7 +42,7 @@ export const createReferenceRegistry = (): ReferenceRegistry => {
                 idByReference.set(reference, id);
             }
             if (label) {
-                labelByReference.set(reference, label);
+                labelByReference.set(reference, { ...labelByReference.get(reference), ...label });
             }
             return reference;
         },

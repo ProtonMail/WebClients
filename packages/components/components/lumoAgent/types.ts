@@ -1,6 +1,12 @@
 import type { ComponentType, ReactNode } from 'react';
 
-import type { ActionRequest, ToolDefinition, ToolHandlers, ToolName } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type {
+    ActionRequest,
+    ReferenceLabels,
+    ToolDefinition,
+    ToolHandlers,
+    ToolName,
+} from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { ToolName as ServerToolName } from '@proton/lumo-api-client';
 import type { ServerToolSource } from '@proton/lumo-ui';
 import type { IconComponent } from '@proton/lumo-ui/types';
@@ -15,7 +21,7 @@ export type LumoAgentItem =
           id: number;
           kind: 'confirm';
           action: ActionRequest;
-          labels: Record<string, string>;
+          labels: ReferenceLabels;
           status: 'pending' | 'applied' | 'cancelled';
       }
     | { id: number; kind: 'error'; message: string };
@@ -23,7 +29,7 @@ export type LumoAgentItem =
 /** Props a bespoke confirm-card body receives; it edits `params` and reports changes via `onChange`. */
 export interface CardBodyProps {
     action: ActionRequest;
-    labels: Record<string, string>;
+    labels: ReferenceLabels;
     params: Record<string, any>;
     onChange: (params: Record<string, any>) => void;
 }
@@ -34,14 +40,14 @@ export interface CardBodyProps {
  */
 export interface CardRenderer {
     icon: IconComponent;
-    title: (action: ActionRequest, labels: Record<string, string>) => string;
-    subtitle?: (action: ActionRequest, labels: Record<string, string>) => string | undefined;
+    title: (action: ActionRequest, labels: ReferenceLabels) => string;
+    subtitle?: (action: ActionRequest, labels: ReferenceLabels) => string | undefined;
     /** Optional editable body; omit for a plain confirm (title + apply/cancel only). */
     renderBody?: (props: CardBodyProps) => ReactNode;
     /** Whether the body's current `params` are applyable; false disables Confirm (e.g. nothing selected). */
     canApply?: (params: Record<string, any>) => boolean;
     /** Optional one-line detail shown on the settled result tile. */
-    detail?: (action: ActionRequest, labels: Record<string, string>) => string | undefined;
+    detail?: (action: ActionRequest, labels: ReferenceLabels) => string | undefined;
 }
 
 export type CardRenderers = Partial<Record<ToolName, CardRenderer>>;
