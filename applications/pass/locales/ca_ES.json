@@ -115,6 +115,9 @@
       "Bulk restore items from trash": [
         "Restaura un grup d'elements des de la paperera"
       ],
+      "Bulk select items": [
+        "Selecciona elements en massa"
+      ],
       "Cancel": [
         "Cancel·la"
       ],
@@ -346,9 +349,6 @@
       "Fill password": [
         "Emplena la contrasenya"
       ],
-      "Filter vault items": [
-        "Filtra els elements de la caixa forta"
-      ],
       "Generate alias": [
         "Genera un àlies"
       ],
@@ -493,6 +493,9 @@
       "Move to Trash": [
         "Mou a la paperera"
       ],
+      "Multiple select": [
+        "Selecció múltiple"
+      ],
       "New token": [
         "Nou testimoni"
       ],
@@ -631,9 +634,6 @@
       "See members": [
         "Mostra els membres"
       ],
-      "Select items": [
-        "Seleccionar els elements"
-      ],
       "Send email": [
         "Envia un correu electrònic"
       ],
@@ -681,9 +681,6 @@
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Algú ha posat un element compartit a la vostra disposició a ${ PASS_APP_NAME }."
-      ],
-      "Sort vault items": [
-        "Ordena els elements de la caixa forta"
       ],
       "Start from scratch": [
         "Comença des de zero"
@@ -2132,7 +2129,8 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2685,6 +2683,9 @@
       ],
       "Verification code sent.": [
         "Codi de verificació enviat."
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Visualitzeu els vostres elements de ${ PASS_SHORT_APP_NAME } sense connexió. Es requereix la vostra contrasenya per activar-ho."
       ],
       "Viewer": [
         "Lector"
@@ -4767,6 +4768,9 @@
       "Domain ownership verification": [
         "Verificació de la propietat del domini"
       ],
+      "Enable offline mode": [
+        "Activa el mode fora de línia"
+      ],
       "Encrypted import": [
         "Importació xifrada"
       ],
@@ -5022,9 +5026,6 @@
       ],
       "Settings": [
         "Preferències"
-      ],
-      "Setup offline mode": [
-        "Configureu el mode fora de línia"
       ],
       "Share vaults with your team": [
         "Compartiu caixes fortes amb el vostre equip"

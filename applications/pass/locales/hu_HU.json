@@ -289,9 +289,6 @@
       "Fill password": [
         "Jelszó kitöltése"
       ],
-      "Filter vault items": [
-        "Tároló elemeinek szűrése"
-      ],
       "Generate alias": [
         "E-mail álnév létrehozása"
       ],
@@ -603,9 +600,6 @@
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Valaki megosztott Önnel egy elemet a(z) ${ PASS_APP_NAME } szolgáltatásban."
-      ],
-      "Sort vault items": [
-        "Tároló elemeinek rendezése"
       ],
       "Start from scratch": [
         "Kezdjük az elejétől"
@@ -1820,6 +1814,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Az összes elem áthelyezése innen: \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Egy elem másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat.",
+        "Az elemek másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat."
       ],
       "Moving items": [
         "Elemek áthelyezése"

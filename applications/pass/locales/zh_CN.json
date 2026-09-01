@@ -346,9 +346,6 @@
       "Fill password": [
         "填写密码"
       ],
-      "Filter vault items": [
-        "筛选保险库项目"
-      ],
       "Generate alias": [
         "生成别名"
       ],
@@ -631,9 +628,6 @@
       "See members": [
         "查看成员"
       ],
-      "Select items": [
-        "选择项目"
-      ],
       "Send email": [
         "发送邮件"
       ],
@@ -681,9 +675,6 @@
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "有人在 ${ PASS_APP_NAME } 上与您分享了一个项目。"
-      ],
-      "Sort vault items": [
-        "对保险库项目排序"
       ],
       "Start from scratch": [
         "从零开始"
@@ -2100,7 +2091,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移至其他保险库会清除其安全链接！"
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -4954,9 +4945,6 @@
       ],
       "Settings": [
         "设置"
-      ],
-      "Setup offline mode": [
-        "设置离线模式"
       ],
       "Share vaults with your team": [
         "与您的团队分享保险库"

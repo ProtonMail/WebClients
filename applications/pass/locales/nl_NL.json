@@ -346,9 +346,6 @@
       "Fill password": [
         "Wachtwoord invullen"
       ],
-      "Filter vault items": [
-        "Filter kluisitems"
-      ],
       "Generate alias": [
         "Alias genereren"
       ],
@@ -631,9 +628,6 @@
       "See members": [
         "Bekijk leden"
       ],
-      "Select items": [
-        "Selecteer items"
-      ],
       "Send email": [
         "E-mail verzenden"
       ],
@@ -681,9 +675,6 @@
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Iemand heeft een item met u gedeeld op ${ PASS_APP_NAME }."
-      ],
-      "Sort vault items": [
-        "Sorteer kluisitems"
       ],
       "Start from scratch": [
         "Begin opnieuw"
@@ -2123,7 +2114,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -5013,9 +5005,6 @@
       ],
       "Settings": [
         "Instellingen"
-      ],
-      "Setup offline mode": [
-        "Offline modus instellen"
       ],
       "Share vaults with your team": [
         "Deel kluizen met uw team"

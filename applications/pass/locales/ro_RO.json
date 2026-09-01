@@ -346,9 +346,6 @@
       "Fill password": [
         "Completare parolă"
       ],
-      "Filter vault items": [
-        "Filtrare articole seif"
-      ],
       "Generate alias": [
         "Generare alias"
       ],
@@ -631,9 +628,6 @@
       "See members": [
         "Afișare membri"
       ],
-      "Select items": [
-        "Selectare articole"
-      ],
       "Send email": [
         "Trimitere mesaj"
       ],
@@ -681,9 +675,6 @@
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Cineva v-a partajat un articol în ${ PASS_APP_NAME }."
-      ],
-      "Sort vault items": [
-        "Sortare articole seif"
       ],
       "Start from scratch": [
         "De la început"
@@ -2158,7 +2149,9 @@
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui element într-un alt seif îi va șterge linkurile securizate."
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -2714,6 +2707,9 @@
       ],
       "Verification code sent.": [
         "Codul de verificare a fost trimis."
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Vizualizare locală articole din ${ PASS_SHORT_APP_NAME }. Necesită parola pentru activare."
       ],
       "Viewer": [
         "Utilizator"
@@ -4819,6 +4815,9 @@
       "Domain ownership verification": [
         "Verificarea deținerii domeniului"
       ],
+      "Enable offline mode": [
+        "Activare mod local"
+      ],
       "Encrypted import": [
         "Importare criptată"
       ],
@@ -5078,9 +5077,6 @@
       ],
       "Settings": [
         "Setări"
-      ],
-      "Setup offline mode": [
-        "Configurare mod deconectat"
       ],
       "Share vaults with your team": [
         "Partajați seifuri cu echipa proprie"
