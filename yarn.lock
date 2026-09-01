@@ -11328,7 +11328,6 @@ __metadata:
   resolution: "@proton/mail-renderer@workspace:packages/mail-renderer"
   dependencies:
     "@proton/atoms": "workspace:^"
-    "@proton/colors": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/hooks": "workspace:^"
     "@proton/icons": "workspace:^"
@@ -11341,14 +11340,12 @@ __metadata:
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.9.1"
-    "@testing-library/react": "npm:^15.0.7"
     core-js: "npm:^3.50.0"
     eslint: "npm:^10.9.0"
     jest: "npm:^30.4.2"
     jest-environment-jsdom: "npm:^30.4.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
-    react-redux: "npm:^9.3.0"
     ttag: "npm:^1.8.12"
     typescript: "npm:^6.0.3"
   languageName: unknown
