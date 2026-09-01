@@ -37,7 +37,7 @@ import { appMode } from '@proton/shared/lib/webpack.constants';
 import { CommonFeatureFlag } from '@proton/unleash/Flags';
 import noop from '@proton/utils/noop';
 
-import { cleanDataLogout } from './helpers/cleanDataLogout';
+import { cleanDataLogout } from './helpers/cleanData';
 import { cleanLegacyLogsDatabase } from './helpers/cleanLegacyLogsDatabase';
 import {
     canLoadRunner,
