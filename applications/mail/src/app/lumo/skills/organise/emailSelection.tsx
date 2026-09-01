@@ -1,12 +1,12 @@
 import { c, msgid } from 'ttag';
 
 import type { CardBodyProps } from '@proton/components/components/lumoAgent/types';
-import type { ActionRequest } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type { ActionRequest, ReferenceLabels } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { MoveItemsCard } from '@proton/lumo-ui';
 
-export const referenceName = (reference: unknown, labels: Record<string, string>): string => {
+export const referenceName = (reference: unknown, labels: ReferenceLabels): string => {
     const key = String(reference);
-    return labels[key] ?? key;
+    return labels[key]?.title ?? key;
 };
 
 export const emailIds = (source: ActionRequest | Record<string, any>): string[] => (source.ids as string[]) ?? [];

@@ -56,7 +56,7 @@ describe('snoozeEmailsCardRenderer', () => {
 describe('createSnoozeEmailsHandler', () => {
     const fixture = (snooze: jest.Mock, conversationMode = true) => {
         const references = createReferenceRegistry();
-        const reference = references.referenceFor('email', 'ELEMENT_ID_1', 'Booking');
+        const reference = references.referenceFor('email', 'ELEMENT_ID_1', { title: 'Booking' });
         const element = { ID: 'ELEMENT_ID_1' };
         const store = {
             getState: () => ({

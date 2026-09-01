@@ -25,7 +25,7 @@ describe('setReadCardRenderer', () => {
 describe('createSetReadHandler', () => {
     const setUp = () => {
         const references = createReferenceRegistry();
-        const emailReference = references.referenceFor('email', 'ELEMENT_ID_1', 'Booking');
+        const emailReference = references.referenceFor('email', 'ELEMENT_ID_1', { title: 'Booking' });
         const element = { ID: 'ELEMENT_ID_1' };
         const store = {
             getState: () => ({

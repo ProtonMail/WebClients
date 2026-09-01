@@ -125,7 +125,7 @@ export const resolveMailboxLocation = (
         return { labelID, name: standard?.name || resolved.location, pathname: standard?.to || `/${labelID}` };
     }
     const labelID = resolveTypedId(resolved.target, ['folder', 'label'], references);
-    return { labelID, name: references.labelFor(resolved.target) || labelID, pathname: `/${labelID}` };
+    return { labelID, name: references.labelFor(resolved.target)?.title || labelID, pathname: `/${labelID}` };
 };
 
 /** Display name for copy that cannot reach the store. Takes a raw string because a confirm card renders a

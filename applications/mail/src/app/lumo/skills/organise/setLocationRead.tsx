@@ -3,7 +3,12 @@ import { c } from 'ttag';
 import type { CardRenderer } from '@proton/components/components/lumoAgent/types';
 import { IcEnvelopes } from '@proton/icons/icons/IcEnvelopes';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
-import type { ActionRequest, ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type {
+    ActionRequest,
+    ReferenceLabels,
+    ToolDefinition,
+    ToolHandler,
+} from '@proton/llm/lib/lumoAgent/contracts/types';
 import { CATEGORY_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LABEL_IDS_TO_HUMAN, MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
@@ -104,7 +109,7 @@ export const createSetLocationReadHandler =
         });
     };
 
-const targetName = (action: ActionRequest, labels: Record<string, string>): string => {
+const targetName = (action: ActionRequest, labels: ReferenceLabels): string => {
     if (action.target) {
         return referenceName(action.target, labels);
     }
@@ -114,7 +119,7 @@ const targetName = (action: ActionRequest, labels: Record<string, string>): stri
     return '';
 };
 
-const scopeName = (action: ActionRequest, labels: Record<string, string>): string => {
+const scopeName = (action: ActionRequest, labels: ReferenceLabels): string => {
     const location = targetName(action, labels);
     if (!location || !action.category) {
         return location;
@@ -124,7 +129,7 @@ const scopeName = (action: ActionRequest, labels: Record<string, string>): strin
     return `${location} · ${category}`;
 };
 
-const scope = (action: ActionRequest, labels: Record<string, string>) => scopeName(action, labels) || undefined;
+const scope = (action: ActionRequest, labels: ReferenceLabels) => scopeName(action, labels) || undefined;
 
 /** No body: a whole location has no rows to deselect. The card and the settled tile share one scope so they
  *  name the same blast radius. */
