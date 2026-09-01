@@ -16,7 +16,7 @@ export const setup = async (options?: EOOriginalMessageOptions) => {
     return renderResult;
 };
 
-export const clickSend = async (renderResult: RenderResult) => {
+const clickSend = async (renderResult: RenderResult) => {
     const sendSpy = jest.fn(() => Promise.resolve({ Reply: {} }));
     addApiMock(`mail/v4/eo/reply`, sendSpy, 'post');
 

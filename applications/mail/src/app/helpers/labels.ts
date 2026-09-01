@@ -345,7 +345,7 @@ export const getSortedChanges = (changes: {
     );
 };
 
-export const getViewTitleFromLabel = (label: string) => {
+const getViewTitleFromLabel = (label: string) => {
     switch (label) {
         case CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS:
             return c('Title').t`Newsletters view`;
@@ -380,10 +380,6 @@ export const appendCategoryIDsInInbox = (labelID: string, categoryIDs: CategoryL
 
 export const getCustomViewFromRoute = (route: string) => {
     return Object.values(CUSTOM_VIEWS).find(({ route: customRoute }) => customRoute === route);
-};
-
-export const getCustomViewFromLabel = (label: string) => {
-    return Object.values(CUSTOM_VIEWS).find(({ label: customLabel }) => customLabel === label);
 };
 
 export const getLabelName = (labelID: string, labels: Label[] = [], folders: Folder[] = []): string => {

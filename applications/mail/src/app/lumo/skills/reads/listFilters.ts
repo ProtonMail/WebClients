@@ -6,7 +6,7 @@ import { FILTER_STATUS } from '@proton/shared/lib/constants';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import { serializeCatalogue } from './catalogue';
 
-export interface FilterSummary {
+interface FilterSummary {
     reference: string;
     name: string;
     enabled: boolean;

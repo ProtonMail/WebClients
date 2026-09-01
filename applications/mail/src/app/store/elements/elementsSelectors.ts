@@ -39,7 +39,6 @@ export const selectConversationMode = createSelector([selectParams], (params) =>
 export const selectSort = createSelector([selectParams], (params) => params.sort);
 export const selectFilter = createSelector([selectParams], (params) => params.filter);
 export const selectSearch = createSelector([selectParams], (params) => params.search);
-export const selectESEnabled = createSelector([selectParams], (params) => params.esEnabled);
 export const selectIsSearching = createSelector([selectParams], (params) => params.isSearching);
 export const selectNewsletterSubscriptionID = createSelector(
     [selectParams],
@@ -64,14 +63,14 @@ export const selectPage = (state: MailState) => state.elements.page;
 export const selectPageSize = (state: MailSettingState) => state.mailSettings.value?.PageSize || MAIL_PAGE_SIZE.FIFTY;
 const pages = (state: MailState) => state.elements.pages;
 const bypassFilter = (state: MailState) => state.elements.bypassFilter;
-export const pendingRequest = (state: MailState) => state.elements.pendingRequest;
+const pendingRequest = (state: MailState) => state.elements.pendingRequest;
 export const pendingActions = (state: MailState) => state.elements.pendingActions;
 const retry = (state: MailState) => state.elements.retry;
 const invalidated = (state: MailState) => state.elements.invalidated;
-export const total = (state: MailState) => state.elements.total;
+const total = (state: MailState) => state.elements.total;
 export const taskRunning = (state: MailState) => state.elements.taskRunning;
 const awaitingStaleRetryMap = (state: MailState) => state.elements.awaitingStaleRetry;
-export const addresses = (state: MailState) => state.addresses;
+const addresses = (state: MailState) => state.addresses;
 
 export const selectActiveCategoryID = createSelector(
     [selectCategoryIDs],
@@ -133,7 +132,7 @@ export const contextPages = createSelector([selectParams, pages], (params, pages
     return pages[contextFilter] || [];
 });
 
-export const awaitingStaleRetry = createSelector(
+const awaitingStaleRetry = createSelector(
     [selectCurrentContextIdentifier, awaitingStaleRetryMap],
     (contextFilter, awaitingStaleRetryMap) => !!awaitingStaleRetryMap[contextFilter]
 );
@@ -216,13 +215,6 @@ export const elementsAreUnread = createSelector([selectParams, elements], (param
     }, {});
 });
 
-export const expiringElements = createSelector([selectParams, elements], (params, elements) => {
-    return elements.reduce<{ [elementID: string]: boolean }>((acc, element) => {
-        acc[element.ID] = !!element.ExpirationTime && element.ExpirationTime > 0;
-        return acc;
-    }, {});
-});
-
 /**
  * Define when we need to request the API to get more elements
  * Dynamic computations (dynamicTotal and dynamicPageLength) have been proved not to be reliable enough
@@ -230,7 +222,7 @@ export const expiringElements = createSelector([selectParams, elements], (params
  * It only checks when there is not a full page to show if the label has more than a cache size of elements
  * It doesn't rely at all on the optimistic counter logic
  */
-export const needsMoreElements = createSelector(
+const needsMoreElements = createSelector(
     [contextTotal, selectPage, selectPageSize, elementsLength, selectParams],
     (total, page, pageSize, elementsLength, params) => {
         // There are no elements for newsletter subscriptions if there is no newsletter subscription ID
@@ -257,14 +249,12 @@ export const needsMoreElements = createSelector(
 /**
  * @returns a boolean specifying whether the current page is in the cache or not.
  */
-export const pageCached = createSelector([contextPages, currentPage], (pages, currentPage) =>
-    pages.includes(currentPage)
-);
+const pageCached = createSelector([contextPages, currentPage], (pages, currentPage) => pages.includes(currentPage));
 
 /**
  * @returns a boolean specifying whether the current page is the one set in the store or not.
  */
-export const pageChanged = createSelector([selectPage, currentPage], (page, currentPage) => page !== currentPage);
+const pageChanged = createSelector([selectPage, currentPage], (page, currentPage) => page !== currentPage);
 
 /**
  * @returns a boolean specifying whether the cache contains a page that is +/-1 the current page.
@@ -381,7 +371,7 @@ export const dynamicTotal = createSelector(
  * In the future, we can include other custom views like "Attachments" or "Promotions" etc.
  * Modify this selector to add other custom views only if we have the expected length of elements to load.
  */
-export const customViewDynamicPageLength = createSelector(
+const customViewDynamicPageLength = createSelector(
     [selectParams, selectPageSize, selectedSubscriptionSelector],
     (params, pageSize, selectedSubscription) => {
         switch (params.labelID) {
@@ -398,7 +388,7 @@ export const customViewDynamicPageLength = createSelector(
  * Warning: this value has been proved not to be 100% consistent
  * Has to be used only for non-sensitive behaviors
  */
-export const dynamicPageLength = createSelector(
+const dynamicPageLength = createSelector(
     [selectPage, selectPageSize, dynamicTotal, selectParams, bypassFilter, customViewDynamicPageLength],
     (page, pageSize, dynamicTotal, params, bypassFilter, customViewLength) => {
         if (customViewLength !== undefined) {

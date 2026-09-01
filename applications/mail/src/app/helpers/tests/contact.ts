@@ -15,7 +15,7 @@ export interface ContactMock {
     pinKey?: GeneratedKey;
 }
 
-export const apiContacts = new Map<string, ContactMock>();
+const apiContacts = new Map<string, ContactMock>();
 
 const addApiContactMock = () => {
     addApiMock('contacts/v4/contacts/emails', (args) => {

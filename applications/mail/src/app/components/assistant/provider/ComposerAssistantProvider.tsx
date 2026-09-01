@@ -29,7 +29,7 @@ interface ComposerAssistantContextType {
     };
 }
 
-export const ComposerAssistantContext = createContext<ComposerAssistantContextType | undefined>(undefined);
+const ComposerAssistantContext = createContext<ComposerAssistantContextType | undefined>(undefined);
 
 export const useComposerAssistantProvider = () => {
     const context = useContext(ComposerAssistantContext);

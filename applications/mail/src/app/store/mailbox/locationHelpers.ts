@@ -95,7 +95,7 @@ export const removeLabelFromMessage = (
     return message;
 };
 
-export const trashedNumUnread = (destinationLabelID: string, numUnread: number): number => {
+const trashedNumUnread = (destinationLabelID: string, numUnread: number): number => {
     if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH) {
         return 0;
     }
@@ -139,7 +139,7 @@ const updateAlmostAllMail = ({
     }
 };
 
-export const moveContextValues = (
+const moveContextValues = (
     sourceLabelID: string,
     destinationLabelID: string,
     conversation: Conversation,
@@ -423,7 +423,7 @@ export const moveContextValues = (
     };
 };
 
-export const moveNumUnread = (destinationLabelID: string, conversation: Conversation): number => {
+const moveNumUnread = (destinationLabelID: string, conversation: Conversation): number => {
     // When moving to TRASH, all items should be marked as read. Otherwise, NumUnread should not change.
     if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH) {
         return 0;

@@ -42,19 +42,17 @@ export interface MessageEvent extends EventType {
     Message?: Message & LabelIDsChanges;
 }
 
-export interface ContactEvent extends EventType {
+interface ContactEvent extends EventType {
     Contact?: Contact;
 }
 
-export interface AddressEvent extends EventType {
+interface AddressEvent extends EventType {
     Address?: Address;
 }
 
-export interface ChecklistEvent extends EventType {
+interface ChecklistEvent extends EventType {
     CompletedItem: ChecklistKey;
     Display?: CHECKLIST_DISPLAY_TYPE;
 }
 
 export type IncomingDefaultEvent = Exclude<EventLoop['IncomingDefaults'], undefined>;
-
-export type ElementEvent = ConversationEvent | MessageEvent;

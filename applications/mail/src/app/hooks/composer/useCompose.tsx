@@ -43,13 +43,13 @@ export enum ComposeTypes {
     fromMessage,
 }
 
-export interface ComposeExisting {
+interface ComposeExisting {
     type: ComposeTypes.existingDraft;
     existingDraft: MessageState;
     fromUndo: boolean;
 }
 
-export interface ComposeNew {
+interface ComposeNew {
     type: ComposeTypes.newMessage;
     action: MESSAGE_ACTIONS;
     referenceMessage?: PartialMessageState;
@@ -57,7 +57,7 @@ export interface ComposeNew {
     bodyBeforeQuote?: string;
 }
 
-export interface ComposeModelMessage {
+interface ComposeModelMessage {
     type: ComposeTypes.fromMessage;
     modelMessage: MessageState;
 }
@@ -66,7 +66,7 @@ export type ComposeArgs = (ComposeExisting | ComposeNew | ComposeModelMessage) &
     returnFocusTo?: HTMLElement;
 };
 
-export const getComposeArgs = (composeArgs: ComposeArgs) => ({
+const getComposeArgs = (composeArgs: ComposeArgs) => ({
     ...composeArgs,
     returnFocusTo: composeArgs.returnFocusTo || (document.activeElement as HTMLElement),
 });

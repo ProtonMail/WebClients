@@ -32,7 +32,7 @@ interface CategoriesOnboardingContextProps {
     completeCurrentStep: () => void;
 }
 
-export const CategoriesOnboardingContext = createContext<CategoriesOnboardingContextProps | null>(null);
+const CategoriesOnboardingContext = createContext<CategoriesOnboardingContextProps | null>(null);
 
 const STEP_TO_FLAG: Partial<Record<OnboardingStep, CategoriesOnboardingFlags>> = {
     [OnboardingStep.MESSAGE]: CategoriesOnboardingFlags.SPOTLIGHT_MESSAGE,

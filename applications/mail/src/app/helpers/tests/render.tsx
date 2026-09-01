@@ -83,7 +83,7 @@ export const config = {
     DATE_VERSION: 'test-date-version',
 } as ProtonConfig;
 
-export const onCompose = jest.fn();
+const onCompose = jest.fn();
 
 interface Props {
     children: ReactNode;
