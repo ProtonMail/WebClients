@@ -29,6 +29,35 @@ describe('getFeedbackTools', () => {
         expect(getFeedbackTools(message)).toEqual(['web_search(a, news)', 'web_extract(c)', 'web_search(a, finance)']);
     });
 
+    it('pairs parallel web searches with their diagnostic metadata by call id', () => {
+        const message = {
+            blocks: [
+                {
+                    type: 'tool_call',
+                    content: '{"id":"call_0","name":"web_search","arguments":{"query":"weather","topic":"news"}}',
+                },
+                {
+                    type: 'tool_call',
+                    content: '{"id":"call_1","name":"web_search","arguments":{"query":"stocks","topic":"finance"}}',
+                },
+                {
+                    type: 'tool_result',
+                    content: '{"results":[]}',
+                    tool_call_id: 'call_0',
+                    meta: { settings: 'a' },
+                },
+                {
+                    type: 'tool_result',
+                    content: '{"results":[]}',
+                    tool_call_id: 'call_1',
+                    meta: { settings: 'b' },
+                },
+            ],
+        } as Message;
+
+        expect(getFeedbackTools(message)).toEqual(['web_search(a, news)', 'web_search(b, finance)']);
+    });
+
     it('defaults the web_search topic to general when the model omitted it', () => {
         const message = {
             blocks: [
