@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { MAX_CHARS_API } from '@proton/account/organization';
 import { initOrganization } from '@proton/account/organization/actions';
 import { Button } from '@proton/atoms/Button/Button';
+import { IcBuildings } from '@proton/icons/icons/IcBuildings';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -131,7 +132,7 @@ const OnboardingSetupOrgStep = ({ onNextStep, onChangeModalSize }: Props) => {
                     />
                     <ModalTwoContent>
                         <div className="py-8">
-                            <InputFieldStacked icon="buildings" classname="mb-2">
+                            <InputFieldStacked icon={<IcBuildings />} classname="mb-2">
                                 <InputFieldTwo
                                     id="organization-name"
                                     unstyled
