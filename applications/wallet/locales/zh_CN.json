@@ -268,6 +268,9 @@
       "Pay ${ price } now": [
         "立即支付 ${ price }"
       ],
+      "Preview logs": [
+        "预览日志"
+      ],
       "Previous": [
         "上一页"
       ],
@@ -2992,6 +2995,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "正在加载日历，请稍候。您将在新选项卡中重定向到我们的日程安排平台 Calendly。"
       ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "日志有助于我们了解问题发生前的情况。其中包括应用操作和错误消息，但不包含消息内容。"
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 图标"
       ],
@@ -3275,6 +3281,9 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 用户名"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } 字符"
       ],
       "${ n } month": [
         "${ n } 个月"
@@ -5134,6 +5143,9 @@
       ]
     },
     "Role": {
+      "Organization Admin": [
+        "组织管理员"
+      ],
       "Security Admin": [
         "安全管理员"
       ],
