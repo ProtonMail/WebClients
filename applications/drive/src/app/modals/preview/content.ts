@@ -1,5 +1,4 @@
 import type { NodeEntity } from '@proton/drive';
-import { canHtmlVideoPlay } from '@proton/drive/modules/thumbnails';
 import { isIWAD, isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
@@ -41,7 +40,12 @@ export function getContentPreviewMethod(node: NodeEntity): ContentPreviewMethod 
     }
 
     if (isVideo(mimeType)) {
-        return canHtmlVideoPlay(mimeType) ? ContentPreviewMethod.Streaming : ContentPreviewMethod.Thumbnail;
+        // Attempt streaming even if the stored (extension-derived) mimeType looks unplayable —
+        // it can be wrong (e.g. an MP4 re-exported with a `.avi` extension by Google Takeout),
+        // and the actual <video> element decodes from real bytes, not this string. A genuinely
+        // unplayable file degrades to Buffer via the existing broken-video fallback (see
+        // resolvePreviewOutput.getEffectivePreviewMethod).
+        return ContentPreviewMethod.Streaming;
     }
 
     if (isPreviewAvailable(mimeType, getNodeDisplaySize(node)) || isIWAD(mimeType)) {
