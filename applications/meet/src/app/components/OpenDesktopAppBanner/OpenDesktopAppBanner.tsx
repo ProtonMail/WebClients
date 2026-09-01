@@ -7,6 +7,7 @@ import { IcCross } from '@proton/icons/icons/IcCross';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetingLink } from '@proton/meet/store/slices/meetingInfo';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
+import { isDesktop, isIpad } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
 import { saveDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
@@ -17,7 +18,7 @@ const STORAGE_KEY = 'open_desktop_app_banner_dismissed_until';
 const OPEN_DESKTOP_APP_STORAGE_KEY = 'open_desktop_app_storage_key';
 
 export const OpenDesktopAppBanner = () => {
-    const [visible, setVisible] = useState(() => !isElectronApp);
+    const [visible, setVisible] = useState(() => !isElectronApp && isDesktop() && !isIpad());
 
     const meetingLink = useMeetSelector(selectMeetingLink);
 
