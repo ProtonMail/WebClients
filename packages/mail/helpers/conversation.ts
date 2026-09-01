@@ -1,4 +1,4 @@
-import type { Conversation } from 'proton-mail/models/conversation';
+import type { Conversation } from '@proton/shared/lib/interfaces/mail/Conversation';
 
 export const getContextValue = (
     conversation: Conversation,
