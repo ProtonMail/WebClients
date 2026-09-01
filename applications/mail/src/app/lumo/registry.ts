@@ -25,6 +25,7 @@ import { readOpenEmailModule } from './skills/reads/readOpenEmail';
 import { readThreadModule } from './skills/reads/readThread';
 import { searchModule } from './skills/reads/search';
 import { viewEmailsModule } from './skills/reads/viewEmails';
+import { changeSettingsModule, readSettingsModule } from './skills/settings/cosmetic';
 import type { MailToolDeps, MailToolModule } from './toolModule';
 
 /**
@@ -45,6 +46,7 @@ const MODULES: MailToolModule[] = [
     listLabelsModule,
     listFiltersModule,
     findContactsModule,
+    readSettingsModule,
     // Mutations
     moveEmailsModule,
     setStarredModule,
@@ -56,6 +58,8 @@ const MODULES: MailToolModule[] = [
     snoozeEmailsModule,
     // Filters
     updateFilterModule,
+    // Settings
+    changeSettingsModule,
 ];
 
 /**
