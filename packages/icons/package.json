@@ -6,12 +6,14 @@
     "exports": {
         "./assets/file-icons.svg": "./assets/file-icons.svg",
         "./assets/sprite-icons.svg": "./assets/sprite-icons.svg",
+        "./component": "./component.ts",
         "./types": "./types.ts",
         "./Icons": "./Icons.tsx",
         "./InlineIcons": "./InlineIcons.tsx",
         "./icons/*": "./icons/*.tsx"
     },
     "files": [
+        "component.ts",
         "lib",
         "assets",
         "icons",
