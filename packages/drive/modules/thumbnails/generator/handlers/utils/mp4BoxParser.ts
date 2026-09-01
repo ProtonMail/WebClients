@@ -1,5 +1,6 @@
 /**
- * Minimal ISO BMFF (MP4/MOV) box parser for duration + dimensions.
+ * Minimal ISO BMFF (MP4/MOV) box parser for duration + dimensions, and for
+ * the movie-level creation time.
  *
  * Chrome's `<video>` element reports `duration: Infinity` for fragmented MP4
  * (`moov`'s `mvhd`/`mdhd` duration is 0, no sample table) because it never
@@ -8,9 +9,17 @@
  * dimensions, and `mvhd`/`mdhd` duration when present, falling back to the
  * last fragment's `tfdt` + sample durations when it isn't.
  *
+ * `<video>`/`File` also expose no capture date for videos (unlike images,
+ * which carry it in EXIF), so we read `moov`'s `mvhd.creation_time` directly
+ * — the only place a video's original recording time survives re-export
+ * (e.g. through Google Takeout).
+ *
  * Only handles the boxes needed for that: returns `null` (never throws) for
  * anything else, including non-ISO-BMFF containers (WebM/MKV/AVI).
  */
+
+// Seconds between the MP4/QuickTime epoch (1904-01-01) and the Unix epoch (1970-01-01).
+const MAC_EPOCH_OFFSET_SECONDS = 2082844800;
 
 export interface Mp4Metadata {
     durationInSeconds: number;
@@ -22,6 +31,24 @@ interface BoxRange {
     type: string;
     bodyStart: number;
     bodyEnd: number;
+}
+
+/**
+ * Whether a buffer's first box is `ftyp` — the ISO-BMFF (MP4/MOV) file-type box, always first per spec.
+ *
+ * Used to recover from a wrong container guess: a file can be named e.g. `.avi` while actually holding
+ * an MP4 container (this happens with Google Takeout exports), which makes extension-based MIME
+ * detection report `video/x-msvideo` even though the bytes are playable as `video/mp4`.
+ */
+export function isIsoBmffContainer(buffer: ArrayBuffer): boolean {
+    if (buffer.byteLength < 8) {
+        return false;
+    }
+    try {
+        return readBoxType(new DataView(buffer), 4) === 'ftyp';
+    } catch {
+        return false;
+    }
 }
 
 function readBoxType(view: DataView, offset: number): string {
@@ -84,6 +111,17 @@ function parseTimescaleAndDuration(view: DataView, box: BoxRange): { timescale: 
         return { timescale, duration: high * 2 ** 32 + low };
     }
     return { timescale: view.getUint32(box.bodyStart + 12), duration: view.getUint32(box.bodyStart + 16) };
+}
+
+/** `creation_time` field of `mvhd`/`mdhd`, converted from the MP4 epoch to a JS `Date`. */
+function parseCreationTime(view: DataView, box: BoxRange): Date | null {
+    const version = view.getUint8(box.bodyStart);
+    const macEpochSeconds =
+        version === 1
+            ? view.getUint32(box.bodyStart + 4) * 2 ** 32 + view.getUint32(box.bodyStart + 8)
+            : view.getUint32(box.bodyStart + 4);
+    const unixSeconds = macEpochSeconds - MAC_EPOCH_OFFSET_SECONDS;
+    return unixSeconds > 0 ? new Date(unixSeconds * 1000) : null;
 }
 
 function parseTfhd(view: DataView, box: BoxRange): { trackId: number; defaultSampleDuration?: number } {
@@ -161,6 +199,56 @@ function fragmentedDurationTicks(view: DataView, topLevel: BoxRange[], trackId: 
         }
     }
     return maxEnd;
+}
+
+// A box header is 8 bytes, or 16 when the size field signals a 64-bit size.
+const BOX_HEADER_BYTES = 16;
+// `mvhd` is ~120 bytes and the spec puts it first in `moov`, ahead of the `trak` boxes.
+const MOOV_HEAD_BYTES = 1024;
+// Real files have a handful of top-level boxes. The cap only stops a corrupt file from turning
+// the walk into millions of reads.
+const MAX_TOP_LEVEL_BOXES = 64;
+
+/**
+ * Movie-level capture date from `moov`'s `mvhd` box, or `null` if absent/unparseable.
+ *
+ * Reads only the boxes it needs — the top-level headers to locate `moov`, then the start of
+ * `moov` itself — rather than the whole file, which for a phone recording is several GB.
+ * `moov` can be at either end: camera recorders write it last, since its size isn't known
+ * until recording stops.
+ */
+export async function readMp4CreationTime(file: Blob): Promise<Date | null> {
+    try {
+        let offset = 0;
+        for (let index = 0; index < MAX_TOP_LEVEL_BOXES && offset + 8 <= file.size; index++) {
+            const header = new DataView(await file.slice(offset, offset + BOX_HEADER_BYTES).arrayBuffer());
+            let size = header.getUint32(0);
+            let bodyStart = offset + 8;
+            if (size === 1) {
+                if (header.byteLength < 16) {
+                    return null;
+                }
+                size = header.getUint32(8) * 2 ** 32 + header.getUint32(12);
+                bodyStart = offset + 16;
+            } else if (size === 0) {
+                size = file.size - offset; // Box extends to the end of the file (last box only)
+            }
+            if (size < 8) {
+                return null;
+            }
+            if (readBoxType(header, 4) === 'moov') {
+                const bodyEnd = Math.min(bodyStart + MOOV_HEAD_BYTES, offset + size);
+                const body = await file.slice(bodyStart, bodyEnd).arrayBuffer();
+                const view = new DataView(body);
+                const mvhd = findBox(boxesIn(view, 0, body.byteLength), 'mvhd');
+                return mvhd ? parseCreationTime(view, mvhd) : null;
+            }
+            offset += size;
+        }
+        return null;
+    } catch {
+        return null;
+    }
 }
 
 export function parseMp4Metadata(buffer: ArrayBuffer): Mp4Metadata | null {

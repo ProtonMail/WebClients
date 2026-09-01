@@ -23,13 +23,16 @@ export const getFormattedDateTime = (exif?: ExifTags) => {
     return undefined;
 };
 
-export const getCaptureDateTime = (file: File, exif?: ExifTags) => {
+export const getCaptureDateTime = (file: File, exif?: ExifTags, mp4CreationTime?: Date | null) => {
     const formattedDateTime = getFormattedDateTime(exif);
 
     // NOTE: From specification (https://drive.gitlab-pages.protontech.ch/documentation/specifications/photos/upload/#revision-commit),
     // the fallback datetime should be the creation time. However in a browser
-    // context, the File object has only the last modified time.
-    const captureDateTime = new Date(formattedDateTime || file.lastModified);
+    // context, the File object has only the last modified time. For videos,
+    // `mp4CreationTime` (read from the MP4 `mvhd` box) is preferred over that,
+    // since `lastModified` reflects when the file was last touched on disk
+    // (e.g. a Google Takeout export), not when it was recorded.
+    const captureDateTime = new Date(formattedDateTime || mp4CreationTime || file.lastModified);
 
     if (!isValidDate(captureDateTime)) {
         return new Date();
