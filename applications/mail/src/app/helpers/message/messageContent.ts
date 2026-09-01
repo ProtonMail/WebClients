@@ -1,10 +1,8 @@
 import { DEFAULT_FONT_FACE_ID, DEFAULT_FONT_SIZE } from '@proton/components/components/editor/constants';
 import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
-import { MESSAGE_IFRAME_ROOT_ID } from '@proton/mail-renderer/constants';
 import { toText } from '@proton/mail/helpers/parserHtml';
 import type { MessageState, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import { unescape } from '@proton/sanitize/escape';
-import { checkContrast } from '@proton/shared/lib/helpers/dom';
 import type { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 
@@ -14,9 +12,9 @@ import { locateBlockquote } from './messageBlockquote';
 import { exportPlainText, getPlainTextContent, setPlainTextContent } from './messageContentPlainText';
 import { getDocumentContent, setDocumentContent } from './messageContentQuery';
 
-export { exportPlainText, getPlainTextContent } from './messageContentPlainText';
-export { getDocumentContent, querySelectorAll, setDocumentContent } from './messageContentQuery';
 export { plainTextToHTML } from './messageContentConversion';
+export { exportPlainText } from './messageContentPlainText';
+export { querySelectorAll, setDocumentContent } from './messageContentQuery';
 
 /**
  * Get current processed message document html content
@@ -59,41 +57,6 @@ export const getPlainText = (message: MessageState, downconvert: boolean) => {
     }
 
     return exportPlainText(getContent(message));
-};
-
-export const canSupportDarkStyle = (iframe: HTMLIFrameElement | null) => {
-    const container = iframe?.contentDocument?.getElementById(MESSAGE_IFRAME_ROOT_ID);
-    const window = iframe?.contentWindow;
-
-    if (!container || !window) {
-        return false;
-    }
-
-    const colorSchemeMetaTag = container.querySelector('meta[name="color-scheme"]');
-
-    // If the meta tag color-scheme is present, we assume that the email supports dark mode
-    if (colorSchemeMetaTag?.getAttribute('content')?.includes('dark')) {
-        return true;
-    }
-
-    const supportedColorSchemesMetaTag = container.querySelector('meta[name="supported-color-schemes"]');
-
-    // If the meta tag supported-color-schemes is present, we assume that the email supports dark mode
-    if (supportedColorSchemesMetaTag?.getAttribute('content')?.includes('dark')) {
-        return true;
-    }
-
-    const styleTag = container.querySelector('style');
-    const styleTextContent = styleTag?.textContent;
-
-    // If the media query prefers-color-scheme is present, we assume that the email supports dark mode
-    if (styleTextContent?.includes('color-scheme') || styleTextContent?.includes('prefers-color-scheme')) {
-        return true;
-    }
-
-    const contrastResult = checkContrast(container, window);
-
-    return contrastResult;
 };
 
 export const getContentWithoutBlockquotes = (

@@ -18,7 +18,7 @@ const B2BOnboardingModal = lazy(
         )
 );
 
-export interface MailOnboardingProps {
+interface MailOnboardingProps {
     hideDiscoverApps?: boolean;
     showGenericSteps?: boolean;
     onClose?: () => void;

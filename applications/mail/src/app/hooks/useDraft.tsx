@@ -27,7 +27,7 @@ import { useGetAttachment } from './attachments/useAttachment';
 
 const CACHE_KEY = 'Draft';
 
-export const useDraftVerifications = () => {
+const useDraftVerifications = () => {
     const getAddresses = useGetAddresses();
     const getUser = useGetUser();
     const [sendingFromDefaultAddressModal, handleShowModal] = useModalTwo(SendingFromDefaultAddressModal);

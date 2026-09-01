@@ -9,8 +9,6 @@ import { GlobalUnsubscribeModal } from './GlobalUnsubscribeModal';
 import { GlobalModalContext } from './globalModalContext';
 import type { ModalListener, ModalPayload } from './inteface';
 
-export { useMailGlobalModals } from './globalModalContext';
-
 function createSubscribable<T>() {
     const subscribers: Set<(message: T) => void> = new Set();
 

@@ -9,7 +9,7 @@ import type { ESDBStatusMail, EncryptedSearchFunctionsMail } from './models/encr
 export const ROUTE_MAIN = '/';
 export const ROUTE_LABEL = '/:labelID?';
 export const ROUTE_ELEMENT = '/:labelID?/:elementID?';
-export const ROUTE_MESSAGE = '/:labelID?/:elementID?/:messageID?';
+// export const ROUTE_MESSAGE = '/:labelID?/:elementID?/:messageID?';
 
 export const MAIN_ROUTE_PATH = '/:labelID?/:elementID?/:messageID?';
 export const EXPIRATION_CHECK_FREQUENCY = 10000; // each 10 seconds
@@ -24,8 +24,6 @@ export const PREVENT_CANCEL_SEND_INTERVAL = 30000; // Prevent form cancelling a 
 
 export const ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT = 'advancedsearchclose';
 
-export const UNDO_SEND_DELAY = 5000;
-
 export const SCHEDULED_MESSAGES_LIMIT = 100;
 export const SCHEDULED_MAX_DATE_DAYS = 90;
 export const EXPIRATION_TIME_MAX_DAYS = 730; // 2 years
@@ -39,19 +37,8 @@ export const MIN_DELAY_SENT_NOTIFICATION = 2500;
 
 export const MAIL_ACTION_DEFAULT_CHUNK_SIZE = 10;
 
-export const ELEMENT_TYPES = {
-    MESSAGE: 'message',
-    CONVERSATION: 'conversation',
-};
-
 export enum ENCRYPTED_STATUS {
     PGP_MIME = 8, // Used for attachment
-}
-
-export enum LINK_TYPES {
-    WEB = 'web',
-    EMAIL = 'email',
-    PHONE = 'phone',
 }
 
 export const MAILTO_PROTOCOL_HANDLER_SEARCH_PARAM = `mailto`;
@@ -77,10 +64,7 @@ export enum UPLOAD_ATTACHMENT_ERROR_CODES {
 export const MESSAGE_ALREADY_SENT_INTERNAL_ERROR = 'Message already sent';
 export const STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR = 'Storage quota exceeded';
 
-export const DRAG_ELEMENT_KEY = 'drag-element';
-export const DRAG_ELEMENT_ID_KEY = 'drag-element-id';
 export const DRAG_ADDRESS_KEY = 'drag-address';
-export const DRAG_ADDRESS_SIZE_KEY = 'drag-address-size';
 
 export const MAX_ELEMENT_LIST_LOAD_RETRIES = 3;
 

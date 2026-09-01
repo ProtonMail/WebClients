@@ -11,7 +11,7 @@ import { DRAG_ADDRESS_KEY } from '../constants';
 import { matchRecipientOrGroup, recipientOrGroupToRecipients } from '../helpers/message/messageRecipients';
 import type { RecipientOrGroup } from '../models/address';
 
-export const ADDRESS_DRAG_CACHE_KEY = 'ADDRESS_DRAG';
+const ADDRESS_DRAG_CACHE_KEY = 'ADDRESS_DRAG';
 
 interface DragInfo {
     inputID: string;

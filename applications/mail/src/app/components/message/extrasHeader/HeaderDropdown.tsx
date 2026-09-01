@@ -6,12 +6,12 @@ import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import type { DropdownButtonProps } from '@proton/components/components/dropdown/DropdownButton';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import generateUID from '@proton/utils/generateUID';
 
-export interface DropdownRenderProps {
+interface DropdownRenderProps {
     onClose: () => void;
     onLock: (lock: boolean) => void;
     onOpenAdditional: (index: number) => void;

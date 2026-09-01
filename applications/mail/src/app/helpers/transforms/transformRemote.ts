@@ -10,12 +10,7 @@ import generateUID from '@proton/utils/generateUID';
 
 import { querySelectorAll } from '../message/messageContent';
 import { getRemoteImages, insertImageAnchor } from '../message/messageImages';
-import {
-    hasToSkipProxy,
-    loadFakeImages,
-    loadRemoteImages,
-    loadSkipProxyImages,
-} from '../message/messageRemotes';
+import { hasToSkipProxy, loadFakeImages, loadRemoteImages, loadSkipProxyImages } from '../message/messageRemotes';
 
 const SELECTOR = MESSAGE_IMAGE_ATTRIBUTES_TO_FIND.map((name) => {
     if (name === 'src') {
@@ -30,7 +25,7 @@ const SELECTOR = MESSAGE_IMAGE_ATTRIBUTES_TO_FIND.map((name) => {
     return `[proton-${name}]`;
 }).join(',');
 
-export const getRemoteImageMatches = (message: MessageState) => {
+const getRemoteImageMatches = (message: MessageState) => {
     const imageElements = querySelectorAll(message, SELECTOR);
 
     const elementsWithStyleTag = querySelectorAll(message, '[style]').reduce<HTMLElement[]>((acc, elWithStyleTag) => {

@@ -18,7 +18,7 @@ import {
     oneSeparatorOnly,
 } from './utils';
 
-export interface ExtractInput {
+interface ExtractInput {
     subject: string;
     body: string;
     kind: ContentKind;
@@ -336,23 +336,23 @@ const bodyHyphenatedAlpha = defineExtractor({
 });
 
 export {
-    titleEnds,
-    titleMid,
-    titleSplit,
-    titleHyphenatedAlpha,
-    titleEndsHyphenated,
-    bodyHtmlNum,
-    bodyHtmlGeneral,
-    bodyVisible,
-    bodyVisibleSplit,
-    bodyEdge,
-    bodyPlainLong,
-    bodyPlainSplit,
-    bodyPlainShort,
-    bodyColon,
-    bodyIsolated,
-    bodyJoined,
     bodyAttr,
     bodyCodePhrase,
+    bodyColon,
+    bodyEdge,
+    bodyHtmlGeneral,
+    bodyHtmlNum,
     bodyHyphenatedAlpha,
+    bodyIsolated,
+    bodyJoined,
+    bodyPlainLong,
+    bodyPlainShort,
+    bodyPlainSplit,
+    bodyVisible,
+    bodyVisibleSplit,
+    titleEnds,
+    titleEndsHyphenated,
+    titleHyphenatedAlpha,
+    titleMid,
+    titleSplit,
 };

@@ -29,7 +29,7 @@ export const message = {
     ToList: [receiver] as Recipient[],
 } as Message;
 
-export const contactEmails = [{ ContactID: contactID, Email: sender.Address } as ContactEmail] as ContactEmail[];
+const contactEmails = [{ ContactID: contactID, Email: sender.Address } as ContactEmail] as ContactEmail[];
 
 const getProperties = async (senderKeys: GeneratedKey, hasFingerprint = true) => {
     const keyValue = hasFingerprint

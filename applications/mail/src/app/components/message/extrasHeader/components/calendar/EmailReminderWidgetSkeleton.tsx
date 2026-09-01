@@ -22,5 +22,3 @@ export const EmailReminderWidgetSkeleton = () => (
         </div>
     </div>
 );
-
-export default EmailReminderWidgetSkeleton;

@@ -38,7 +38,7 @@ export interface UploadResult {
     addressID: string; // The addressID used to encrypt packets
 }
 
-export const getAttachementEncryptionFailedErrorMessage = () => {
+const getAttachementEncryptionFailedErrorMessage = () => {
     return c('Error').t`Failed to encrypt attachment. Please try again.`;
 };
 

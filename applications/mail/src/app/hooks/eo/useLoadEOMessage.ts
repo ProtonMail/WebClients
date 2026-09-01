@@ -15,18 +15,6 @@ import {
 } from '../../store/eo/eoSelectors';
 import { useEOMailDispatch, useEOMailSelector, useEOMailStore } from '../../store/eo/hooks';
 
-export const useGetEOMessage = () => {
-    const store = useEOMailStore();
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-165D4A
-    return useCallback(() => eoMessageSelector(store.getState()), []);
-};
-
-export const useGetEOToken = () => {
-    const store = useEOMailStore();
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-81493A
-    return useCallback(() => eoTokenSelector(store.getState()), []);
-};
-
 export const useGetEODecryptedToken = () => {
     const store = useEOMailStore();
     // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-E4E79E

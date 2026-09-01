@@ -5,7 +5,7 @@ import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/cont
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import { serializeCatalogue } from './catalogue';
 
-export interface LabelSummary {
+interface LabelSummary {
     reference: string;
     name: string;
     color: string;

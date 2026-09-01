@@ -83,9 +83,8 @@
             "ignore": ["**"]
         },
         "applications/mail": {
-            "entry": ["src/app/index.{ts,tsx}", "src/app/eo.tsx"],
-            "project": ["src/**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "entry": ["src/app/index.{ts,tsx}", "src/app/eo.tsx", "webpack.config.{js,ts}"],
+            "project": ["src/**/*.{ts,tsx}"]
         },
         "applications/meet": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],

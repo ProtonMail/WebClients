@@ -64,7 +64,7 @@ interface Props {
     categoryIDs: CategoryLabelID[];
 }
 
-export const getItemInfo = (item: ESBaseMessage | ESMessage): ESItemInfo => ({
+const getItemInfo = (item: ESBaseMessage | ESMessage): ESItemInfo => ({
     ID: item.ID,
     timepoint: [item.Time, item.Order],
 });

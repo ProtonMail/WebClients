@@ -5,13 +5,7 @@ import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { templateBuilder } from './message/messageSignature';
 import { SIGNATURE_PLACEHOLDER, escapeBackslash, extractContentFromPtag, getMarkdownParser } from './textToHtmlUtils';
 
-export {
-    DEFAULT_TAGS_TO_DISABLE,
-    SIGNATURE_PLACEHOLDER,
-    escapeBackslash,
-    extractContentFromPtag,
-    getMarkdownParser,
-} from './textToHtmlUtils';
+export { extractContentFromPtag } from './textToHtmlUtils';
 
 const generatePlaceHolder = (text: string) => {
     let placeholder = '';

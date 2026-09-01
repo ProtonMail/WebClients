@@ -211,7 +211,7 @@ interface GetSentStatusIconParams extends GetGlobalSentStatusIcon {
     emailAddress: string;
 }
 
-export const getSentStatusIcon = ({
+const getSentStatusIcon = ({
     mapAuthentication,
     mapEncryption,
     contentEncryption,
