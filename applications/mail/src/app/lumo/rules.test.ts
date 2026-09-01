@@ -1,3 +1,4 @@
+import { HIDDEN_MARKER } from './helpers/hiddenMarker';
 import { MAIL_RULES } from './rules';
 
 describe('MAIL_RULES', () => {
@@ -11,6 +12,12 @@ describe('MAIL_RULES', () => {
         ['a whole location escalates to set_location_read', 'use set_location_read, which takes a location'],
     ])('pins %s', (_case, claim) => {
         expect(MAIL_RULES).toContain(claim);
+    });
+
+    // Wiring, not prose: the rules block must name the exact marker the strip emits, or the model stops
+    // recognising it and silently drops the "hidden text was filtered out" disclosure.
+    it('names the marker toVisibleText actually emits', () => {
+        expect(MAIL_RULES).toContain(HIDDEN_MARKER);
     });
 
     it('keeps the no-re-listing rule scoped to replies rather than to any completed read', () => {
