@@ -29,6 +29,7 @@
         "./hooks/autoOpenContacts/useContactsDrawerFromURL": "./hooks/autoOpenContacts/useContactsDrawerFromURL.ts",
         "./features/categoriesView/CategoryIcon": "./features/categoriesView/CategoryIcon.tsx",
         "./hooks/useBase64Cache": "./hooks/useBase64Cache.ts",
+        "./store/attachments/attachmentsTypes": "./store/attachments/attachmentsTypes.ts",
         "./store/contactEmails": "./store/contactEmails/index.ts",
         "./store/contacts": "./store/contacts/index.ts",
         "./store/contacts/contactSlice": "./store/contacts/contactSlice.ts",

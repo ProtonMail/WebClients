@@ -8,10 +8,8 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ThemeContextInterface } from '@proton/components/containers/themes/ThemeProvider';
 import useSyncIframeStyles from '@proton/components/containers/themes/useSyncIframeStyles';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState, OnMessageImageLoadError } from '@proton/mail/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
-
-import type { OnMessageImageLoadError } from 'proton-mail/components/message/interface';
 
 import { getIframeDocument } from '../helpers/getIframeDocument';
 import getIframeSandboxAttributes from '../helpers/getIframeSandboxAttributes';

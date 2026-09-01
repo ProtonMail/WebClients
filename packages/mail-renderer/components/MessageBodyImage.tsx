@@ -7,11 +7,9 @@ import { c } from 'ttag';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Icon from '@proton/components/components/icon/Icon';
 import { getAnchor } from '@proton/mail/helpers/message/messageImages/getAnchor';
-import type { MessageImage } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageImage, OnMessageImageLoadError } from '@proton/mail/store/messages/messagesTypes';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
-
-import type { OnMessageImageLoadError } from 'proton-mail/components/message/interface';
 
 import { getIframeDocument } from '../helpers/getIframeDocument';
 
