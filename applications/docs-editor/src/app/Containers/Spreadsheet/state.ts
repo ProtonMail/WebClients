@@ -29,7 +29,6 @@ import { useCharts } from '@rowsncolumns/charts'
 import { useYSpreadsheetV2 } from '@rowsncolumns/y-spreadsheet'
 import type { DocStateInterface } from '@proton/docs-shared'
 import { DocProvider } from '@proton/docs-shared'
-import { useSyncedState } from '../../Hooks/useSyncedState'
 import { create, useStore } from 'zustand'
 import { useEvent } from './components/utils'
 import { c } from 'ttag'
@@ -245,7 +244,7 @@ function useYjsState({
   storeAction,
   shouldUseCustomYjsInitialization,
 }: YjsStateDependencies) {
-  const { userName, receivedEverythingFromRTS } = useSyncedState()
+  const { receivedEverythingFromRTS, userName } = useSheetsDependencies()
   const provider = useMemo(() => {
     const provider = new DocProvider(docState)
     // useYSpreadsheet checks for either a "synced" event from the provider
@@ -394,11 +393,9 @@ type ProtonSheetsStateDependencies = Omit<SpreadsheetStateDependencies, OmitDeps
   }
 
 export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
-  const { logger } = useSheetsDependencies()
+  const { receivedEverythingFromRTS, logger } = useSheetsDependencies()
   const kv = useKeyValueState()
   const hasBlockedYjsDrift = useRef(false)
-
-  const { receivedEverythingFromRTS } = useSyncedState()
 
   // Drift detection: the y-spreadsheet onAfterBroadcastPatch hook fires inside the broadcast
   // transaction (patches applied to the doc). We compute the local-vs-doc drift there and stash
@@ -950,11 +947,10 @@ export function useVersioning(
   handleIncompatibleClientVersion: () => void,
   reloadClient: () => void,
 ) {
-  const { logger } = useSheetsDependencies()
+  const { receivedEverythingFromRTS, logger } = useSheetsDependencies()
   const editorState = useEditorState()
   const setEditingLocked = useStore(editorState, (state) => state.setEditingLocked)
   const setIsMigrating = useStore(editorState, (state) => state.setIsMigrating)
-  const { receivedEverythingFromRTS } = useSyncedState()
   const version = useKeyValueState((state) => state.version)
   const { kvSet, clientID, isKVStateInitialized } = state.yjsState
   const startThresholdTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
