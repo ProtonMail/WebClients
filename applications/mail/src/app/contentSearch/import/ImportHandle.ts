@@ -4,6 +4,7 @@ import createListeners from '@proton/shared/lib/helpers/listeners';
 
 import type { DatabaseLock } from '../db/DatabaseLock';
 import { AsyncAbort } from '../utils/AsyncAbort';
+import type { Logger } from '../utils/logger';
 import { type ImportIssue, ImportIssueSeverity, type ImportNotifications } from './Import';
 import type ImportWorker from './ImportWorker';
 
@@ -42,7 +43,8 @@ export class ImportHandle {
             indexV1Key: CryptoKey;
             indexV2Key: CryptoKey;
         },
-        private readonly dbLock: DatabaseLock
+        private readonly dbLock: DatabaseLock,
+        private readonly logger: Logger
     ) {
         this.done = new Promise((resolve) => {
             this.resolveDone = resolve;
@@ -57,6 +59,7 @@ export class ImportHandle {
         this._started = true;
         this._startTime = performance.now();
         const runPromise = this.dbLock.runIndexing(async (abortSignal) => {
+            this.logger.info('starting import worker');
             // note that this callback can run multiple times if indexing is interrupted by search
             const worker = new Worker(new URL('./import.worker.ts', import.meta.url));
             // allow aborting from the db lock signal, and also from stop()
@@ -75,6 +78,7 @@ export class ImportHandle {
                     throw err;
                 }
             } finally {
+                this.logger.info('stopping import worker');
                 worker.terminate();
                 asyncAbort.dispose();
             }
@@ -106,14 +110,19 @@ export class ImportHandle {
                 this._completedInPreviousRuns += this._completed;
                 this._completed = 0;
                 this._total = total + this._completedInPreviousRuns;
+                this.logger.info(`started importing ${this._total} messages`);
             },
             onCompleted: (completed) => {
+                this.logger.info(`imported ${completed}/${this._total} messages`);
                 this._completed = completed;
                 if (typeof this._total === 'number') {
                     this.emitProgress(this.correctProgress(this.completed / this._total));
                 }
             },
             onIssue: (issue) => {
+                this.logger.info(
+                    `encountered ${issue.severity} issue while importing message ${issue.id}: ${issue.message}`
+                );
                 this._issues.push(issue);
                 this.onIssue.notify(this._issues);
             },
