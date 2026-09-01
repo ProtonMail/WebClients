@@ -354,6 +354,9 @@
         "Выдаліць ${ selectedCount } груп кантактаў",
         "Выдаліць ${ selectedCount } груп кантактаў"
       ],
+      "Delete album": [
+        "Выдаліць альбом"
+      ],
       "Delete contact": [
         "Выдаліць кантакт"
       ],
@@ -425,6 +428,9 @@
       ],
       "Download logs": [
         "Спампаваць журналы"
+      ],
+      "Download results": [
+        "Спампаваць вынікі"
       ],
       "Drive Locked": [
         "Дыск заблакіраваны"
@@ -942,6 +948,9 @@
       "Search countries": [
         "Пошук краін"
       ],
+      "Search drive": [
+        "Пошук на дыску"
+      ],
       "Search is unavailable": [
         "Пошук недаступны"
       ],
@@ -1004,6 +1013,9 @@
       ],
       "Share": [
         "Абагуліць"
+      ],
+      "Share album": [
+        "Абагуліць альбом"
       ],
       "Share file": [
         "Абагуліць файл"
@@ -1123,7 +1135,7 @@
         "Паспрабуйце ${ BRAND_NAME } Workspace"
       ],
       "Try again": [
-        "Паспрабуйце яшчэ раз"
+        "Паўтарыце спробу"
       ],
       "Try another method": [
         "Паспрабуйце іншы спосаб"
@@ -1257,6 +1269,11 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Адкрыць у ${ SHEETS_APP_NAME }"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "Запампаваць"
       ]
     },
     "Actions message": {
@@ -3436,7 +3453,7 @@
         "Пры справаздачы аб парушэнні аўтарскіх правоў або крадзяжы даных вы павінны пакінуць паведамленне"
       ],
       "A problem occurred, please try again.": [
-        "Узнікла праблема. Паспрабуйце яшчэ раз."
+        "Узнікла праблема. Паўтарыце спробу."
       ],
       "Account does not exist": [
         "Уліковы запіс не існуе"
@@ -3495,6 +3512,9 @@
       "Calendar limit reached": [
         "Дасягнута абмежаванне па календары"
       ],
+      "Can't find any secure link": [
+        "Немагчыма знайсці бяспечную спасылку"
+      ],
       "Can't retrieve device name": [
         "Немагчыма атрымаць назву прылады"
       ],
@@ -3523,7 +3543,7 @@
         "Немагчыма спраўдзіць хто запампаваў гэты файл"
       ],
       "Checkout expired, please try again": [
-        "Час завяршэння пакупкі пратэрмінаваны. Паспрабуйце яшчэ раз"
+        "Час завяршэння пакупкі пратэрмінаваны. Паўтарыце спробу."
       ],
       "Company name or personal name is required": [
         "Патрабуецца назва кампаніі або асабістае імя"
@@ -3613,13 +3633,13 @@
         "Збой дыягностыкі"
       ],
       "Domain not available, try again later": [
-        "Дамен недаступны. Паспрабуйце яшчэ раз"
+        "Дамен недаступны. Паўтарыце спробу пазней"
       ],
       "Downloads of desktop apps are currently unavailable": [
         "Спампоўванне праграм для камп'ютара ў цяперашні час недаступна"
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
-        "У дадзены момант недаступна рэдагаванне адраса аплаты. Паспрабуйце яшчэ раз пазней."
+        "У дадзены момант недаступна рэдагаванне адраса аплаты. Паўтарыце спробу."
       ],
       "Email address is required": [
         "Патрабуецца ўвесці адрас электроннай пошты"
@@ -3655,7 +3675,7 @@
         "Знешнія запрашэнні часова адключаны."
       ],
       "External invitations are temporarily disabled. Please try again later": [
-        "Знешнія запрашэнні часова адключаны. Паспрабуйце яшчэ раз пазней."
+        "Знешнія запрашэнні часова адключаны. Паўтарыце спробу пазней"
       ],
       "Failed loading group members": [
         "Збой загрузкі ўдзельнікаў групы"
@@ -3703,16 +3723,16 @@
         "Не ўдалося атрымаць зветкі абагульвання"
       ],
       "Failed to get details, please try again later": [
-        "Не ўдалося атрымаць падрабязнасці. Паспрабуйце яшчэ раз пазней"
+        "Не ўдалося атрымаць падрабязнасці. Паўтарыце спробу пазней"
       ],
       "Failed to get inviter keys": [
         "Не ўдалося атрымаць ключы запрашэння"
       ],
       "Failed to load signature details, please try again later": [
-        "Не ўдалося загрузіць падрабязнасці подпісу. Паспрабуйце яшчэ раз пазней"
+        "Не ўдалося загрузіць падрабязнасці подпісу. Паўтарыце спробу пазней"
       ],
       "Failed to load subscription data. Please try again later.": [
-        "Не ўдалося загрузіць даныя падпіскі. Паспрабуйце яшчэ раз пазней."
+        "Не ўдалося загрузіць даныя падпіскі. Паўтарыце спробу пазней."
       ],
       "Failed to load the STL preview": [
         "Не ўдалося загрузіць папярэдні прагляд STL"
@@ -3763,7 +3783,7 @@
         "Патрабуецца сервер IMAP"
       ],
       "Incorrect password. Please try again.": [
-        "Няправільны пароль. Паспрабуйце яшчэ раз."
+        "Няправільны пароль. Паўтарыце спробу."
       ],
       "Incorrect username": [
         "Няправільнае імя карыстальніка"
@@ -4105,13 +4125,13 @@
         "Нешта пайшло не так пры атрыманні даступных даменаў"
       ],
       "Something went wrong with search. Please try again later.": [
-        "Нешта пайшло не так з пошукам. Паўтарыце спробу пазней."
+        "Нешта пайшло не так з пошукам. Паўтарыце спробу."
       ],
       "Something went wrong, please try again later": [
-        "Нешта пайшло не так. Паўтарыце спробу пазней"
+        "Нешта пайшло не так. Паўтарыце спробу"
       ],
       "Something went wrong. Please try again.": [
-        "Нешта пайшло не так. Паспрабуйце яшчэ раз."
+        "Нешта пайшло не так. Паўтарыце спробу."
       ],
       "status page": [
         "статус старонкі"
@@ -4126,7 +4146,7 @@
         "Магчыма, што адрас няправільны"
       ],
       "The amount due has changed. Please try again.": [
-        "Сума для аплаты змянілася. Паспрабуйце яшчэ раз."
+        "Сума для аплаты змянілася. Паўтарыце спробу."
       ],
       "The email addresses do not match": [
         "Адрасы электроннай пошты не супадаюць"
@@ -4138,7 +4158,7 @@
         "Назва папкі занадта доўгая. Выберыце іншую назву."
       ],
       "The invitation cannot be completed yet. Please try again later.": [
-        "Запрашэнне пакуль не завершана. Паспрабуйце яшчэ раз пазней."
+        "Запрашэнне пакуль не завершана. Паўтарыце спробу пазней."
       ],
       "The invitation doesn't exist anymore": [
         "Запрашэнне больш не існуе"
@@ -4271,6 +4291,9 @@
       ],
       "We were not able to load some items": [
         "Не ўдалося загрузіць некаторыя элементы"
+      ],
+      "We were not able to load some items shared with you": [
+        "Не ўдалося загрузіць некаторыя элементы абагуленыя з вамі"
       ],
       "We were not able to load some of your invitation to shared items": [
         "Не ўдалося загрузіць некаторыя вашы запрашэнні для абагуленых элементаў"
@@ -4504,7 +4527,7 @@
         "Адкрыць у браўзеры"
       ],
       "Please refresh the page or try again later.": [
-        "Абнавіце старонку або паспрабуйце яшчэ раз пазней."
+        "Абнавіце старонку або паўтарыце спробу пазней."
       ],
       "Something went wrong": [
         "Нешта пайшло не так"
@@ -4519,7 +4542,7 @@
         "Кіраванне псеўданімамі можа быць завершана толькі ў ${ PASS_APP_NAME }, калі дадатковы пароль уключаны."
       ],
       "You may also refresh the page or try again later.": [
-        "Таксама вы можаце абнавіць старонку або паспрабаваць яшчэ раз пазней."
+        "Таксама вы можаце абнавіць старонку або паўтарыць спробу пазней."
       ]
     },
     "Error notification": {
@@ -4619,10 +4642,10 @@
     },
     "familyOffer_2023:Error": {
       "Family group not recognized. Try again.": [
-        "Сямейная група не распазнана. Паспрабуйце яшчэ раз."
+        "Сямейная група не распазнана. Паўтарыце спробу."
       ],
       "Organization not recognized. Try again.": [
-        "Арганізацыя не распазнана. Паспрабуйце яшчэ раз."
+        "Арганізацыя не распазнана. Паўтарыце спробу."
       ]
     },
     "familyOffer_2023:Family plan": {
@@ -4761,7 +4784,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Нешта пайшло не так з аўтэнтыфікацыяй ключа бяспекі. Паспрабуйце яшчэ раз."
+        "Нешта пайшло не так з аўтэнтыфікацыяй ключа бяспекі. Паўтарыце спробу."
       ]
     },
     "fido2: Info": {
@@ -4937,6 +4960,9 @@
         "Дадаць ${ photoCount } фатаграфіі ў",
         "Дадаць ${ photoCount } фатаграфій у",
         "Дадаць ${ photoCount } фатаграфій у"
+      ],
+      "Add to shared album": [
+        "Дадаць у абагулены альбом"
       ],
       "All albums": [
         "Усе альбомы"
@@ -5158,7 +5184,7 @@
         "У вашым уліковым запісе Yahoo уключаны IMAP."
       ],
       "Too many recent requests. Please try again in a few moments.": [
-        "Занадта шмат запытаў за апошні час. Паспрабуйце яшчэ раз пазней."
+        "Занадта шмат запытаў за апошні час. Паўтарыце спробу пазней."
       ],
       "Two-factor authentication is enabled in your external account.": [
         "Двухфактарная аўтэнтыфікацыя ўключана ў вашым знешнім уліковым запісе."
@@ -5423,6 +5449,9 @@
         "Знойдзена ${ groupCounts } груп",
         "Знойдзена ${ groupCounts } груп"
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "Пазначана ${ IDEAL_WERO_BRAND_NAME }"
+      ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } чакае запрашэння",
         "${ invitationsCount } чакаюць запрашэння",
@@ -5584,6 +5613,9 @@
       ],
       "30-day money-back guarantee.": [
         "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён."
+      ],
+      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
+        "Даступна новая версія ${ DRIVE_APP_NAME }. Перазагрузіце старонку, каб скарыстацца пошукам."
       ],
       "A number will be added to the filename": [
         "Да назвы файла будзе дададзены нумар"
@@ -5771,6 +5803,9 @@
       "Can't move a folder into itself": [
         "Немагчыма перамясціць папку ў саму сябе"
       ],
+      "Can't read this file": [
+        "Немагчыма прачытаць гэты файл"
+      ],
       "Can't rename to same name": [
         "Немагчыма перайменаваць у тую ж самую назву"
       ],
@@ -5809,6 +5844,9 @@
       ],
       "Clears browser data related to the encrypted search.": [
         "Ачышчае даныя браўзера, якія звязаны з зашыфраваным пошукам."
+      ],
+      "Clears browser data related to the search.": [
+        "Ачышчае даныя браўзера, якія звязаны з пошукам."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы код спраўджання на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
@@ -6107,6 +6145,9 @@
       "Geoblocking": [
         "Геаблакіроўка"
       ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "Атрымаць журналы і іншую інфармацыю для тэхнічнай падтрымкі і выпраўлення непаладак"
+      ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Атрымайце праграму для рэзервовага капіявання фатаграфій з вашай прылады або запампоўвайце іх сюды."
       ],
@@ -6157,6 +6198,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
+      ],
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
+        "Калі ў вас ёсць што-небудзь з гэтага, перайдзіце ў налады ўліковага запісу ${ BRAND_NAME }, каб працягнуць працэс разблакіроўкі."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Вы можаце выкарыстаць 1 з 16 рэзервовых кодаў аднаўлення, якія вы атрымалі пры наладжванні двухфактарнай аўтэнтыфікацыі, калі вы страцілі доступ да вашай праграмы аўтэнтыфікацыі. ${ learnMoreLink }"
@@ -6229,6 +6273,9 @@
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Індэксаванне элементаў. Праіндэксавана: ${ esProgress } з ${ totalProgressToShow }"
+      ],
+      "Indexing search results…": [
+        "Індэксацыя вынікаў пошуку…"
       ],
       "Inherited from parent folder": [
         "Унаследавана ад бацькоўскай папкі"
@@ -6334,6 +6381,9 @@
       ],
       "Loading...": [
         "Загрузка..."
+      ],
+      "Looked at this image": [
+        "Паглядзіце на гэты відарыс"
       ],
       "Low Priority": [
         "Нізкі прыярытэт"
@@ -6603,7 +6653,7 @@
         "Паўтарыце спробу крыху пазней"
       ],
       "Please try again using a different payment method, or contact your bank.": [
-        "Паспрабуйце яшчэ раз, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі вашага банка."
+        "Паўтарыце спробу, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі кліентаў вашага банка."
       ],
       "Please use another browser or download the file.": [
         "Скарыстайцеся іншым браўзерам або спампуйце файл."
@@ -6725,6 +6775,9 @@
       "Scan to download": [
         "Сканіраваць і спампаваць"
       ],
+      "Search cannot be enabled in this browser": [
+        "Немагчыма ўключыць пошук у гэтым браўзеры"
+      ],
       "Search data can't be read": [
         "Немагчыма прачытаць даныя пошуку"
       ],
@@ -6786,10 +6839,10 @@
         "Вер"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "У дадзены момант плацяжы SEPA недаступны. Паспрабуйце яшчэ раз пазней."
+        "У дадзены момант плацяжы SEPA недаступны. Паўтарыце спробу пазней."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
+        "Серверы недаступны. Паўтарыце спробу праз некалькі хвілін"
       ],
       "Session timed out": [
         "Сеанс завяршыўся"
@@ -6805,6 +6858,9 @@
       ],
       "Setting up your new address…": [
         "Наладжванне вашага новага адраса…"
+      ],
+      "Share files with links": [
+        "Абагуліць файлы з дапамогай спасылак"
       ],
       "Shared": [
         "Абагулена"
@@ -7184,6 +7240,9 @@
       "Waiting": [
         "Чакайце"
       ],
+      "Want to sync files faster?": [
+        "Хочаце сінхранізаваць файлы хутчэй?"
+      ],
       "Warning": [
         "Папярэджанне"
       ],
@@ -7217,6 +7276,9 @@
         "Не ўдалося дадаць некаторыя фатаграфіі ў ваш альбом",
         "Не ўдалося дадаць некаторыя фатаграфіі ў ваш альбом"
       ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на ${ IDEAL_WERO_BRAND_NAME }. Пераканайцеся, што ў вас адключаны праграмы блакіроўкі ўсплывальных вокнаў для працягу."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
       ],
@@ -7239,6 +7301,9 @@
         "Запрашаем у ${ DRIVE_APP_NAME }. На працягу першых 10 хвілін любыя файлы, якія вы запампуеце, не будуць улічвацца пры падліку вашай квоты сховішча."
       ],
       "What do you want to do?": [
+        "Што вы хочаце зрабіць?"
+      ],
+      "What would you like to do?": [
         "Што вы хочаце зрабіць?"
       ],
       "When working remotely": [
@@ -7600,6 +7665,9 @@
       ]
     },
     "Label": {
+      "# of downloads": [
+        "Колькасць спампоўванняў"
+      ],
       "${ albumProgress.added } of ${ albumProgress.total }": [
         "${ albumProgress.added } з ${ albumProgress.total }"
       ],
@@ -7852,6 +7920,9 @@
       "Device #${ position }": [
         "Прылада #${ position }"
       ],
+      "Device name": [
+        "Імя прылады"
+      ],
       "Device: ${ name }": [
         "Прылада: ${ name }"
       ],
@@ -7923,6 +7994,9 @@
       ],
       "Expired": [
         "Пратэрмінавана"
+      ],
+      "Expired on ${ formatted }": [
+        "Мінуў ${ formatted }"
       ],
       "Expires": [
         "Дзейнічае да"
@@ -8301,6 +8375,9 @@
       ],
       "Type": [
         "Тып"
+      ],
+      "Unlock drive": [
+        "Разблакіраваць дыск"
       ],
       "Unlock drive (recommended)": [
         "Разблакіраваць дыск (рэкамендавана)"
@@ -10069,6 +10146,16 @@
         "Падтрымка для ${ n } карыстальніцкіх даменаў электроннай пошты"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Паспрабуйце цяпер"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Цяпер у вас ёсць доступ да новага ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Notification": {
       "\"${ ellipsedName }\" copied": [
         "\"${ ellipsedName }\" скапіяваны"
@@ -10253,6 +10340,9 @@
       "Album renamed successfully": [
         "Альбом паспяхова перайменаваны"
       ],
+      "All items deleted permanently from trash": [
+        "Усе элементы незваротна выдалены са сметніцы"
+      ],
       "Cannot load link": [
         "Немагчыма загрузіць спасылку"
       ],
@@ -10293,7 +10383,7 @@
         "Не ўдалося загрузіць абагуленыя падрабязнасці"
       ],
       "Failed to move, please try again": [
-        "Не ўдалося перамясціць. Паспрабуйце яшчэ раз"
+        "Не ўдалося перамясціць. Паўтарыце спробу"
       ],
       "Failed to reject share invitation": [
         "Не ўдалося адхіліць абагуленае запрашэнне"
@@ -10638,6 +10728,9 @@
       "Final approval pending": [
         "Чакаецца фінальнае зацвярджэнне"
       ],
+      "Free up hard drive space on your computer": [
+        "Вызваліце прастору цвёрдага дыска на сваім камп'ютары"
+      ],
       "Get the mobile app": [
         "Атрымаць мабільную праграму"
       ],
@@ -10671,8 +10764,17 @@
       "Secure your files": [
         "Абараніце свае файлы"
       ],
+      "Securely share files and folders": [
+        "Бяспечна абагульвайце файлы і папкі"
+      ],
       "Share files & folders": [
         "Абагульвайце файлы і папкі"
+      ],
+      "Sync and access your files from anywhere": [
+        "Сінхранізуйце і атрымлівайце доступ да сваіх файлаў з любога месца"
+      ],
+      "The owner needs to confirm sharing access. You'll get an email once it's done.": [
+        "Уладальніку неабходна пацвердзіць абагульванне доступу. Вы атрымаеце ліст, як толькі гэта будзе зроблена."
       ],
       "Upload your first file": [
         "Запампуйце свой першы файл"
@@ -10761,6 +10863,9 @@
       ],
       "Select JSON file": [
         "Выбраць файл JSON"
+      ],
+      "Verify content": [
+        "Спраўдзіць змеcціва"
       ],
       "Verify thumbnails": [
         "Спраўдзіць мініяцюры"
@@ -10947,6 +11052,9 @@
       "More plans are available in other currencies": [
         "Больш тарыфных планаў даступна з іншымі валютамі"
       ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Заплаціць з дапамогай ${ IDEAL_WERO_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Спосаб аплаты патрабуецца для актывацыі падпіскі пасля завяршэння пробнага перыяду."
       ],
@@ -11040,6 +11148,9 @@
       "You will soon be redirected to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны для спраўджання вашага плацяжу."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Ваша валюта была зменена на еўра (€), бо ${ IDEAL_WERO_BRAND_NAME } падтрымлівае толькі плацяжы ў еўра."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
       ],
@@ -11051,6 +11162,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Не ўдалося ініцыялізаваць ${ IDEAL_WERO_BRAND_NAME }. Паўтарыце спробу пазней."
+      ],
       "Invalid card number": [
         "Памылковы нумар карткі"
       ],
@@ -11064,10 +11178,10 @@
         "Увядзіце імя ўладальніка ўліковага запісу"
       ],
       "Something went wrong. Please try again later.": [
-        "Нешта пайшло не так. Паспрабуйце яшчэ раз пазней."
+        "Нешта пайшло не так. Паўтарыце спробу пазней."
       ],
       "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
-        "Мы не можам аўтэнтыфікаваць ваш спосаб аплаты. Выберыце іншы спосаб аплаты або паспрабуйце яшчэ раз."
+        "Мы не можам аўтэнтыфікаваць ваш спосаб аплаты. Выберыце іншы спосаб аплаты або паўтарыце спробу."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Ваша картка адхілена. Паспрабуйце іншую картку або звяжыцеся з вашым банкам для аўтарызацыі плацяжу."
@@ -13744,6 +13858,9 @@
       "No Live Photos": [
         "Няма Live Photos"
       ],
+      "No panorama": [
+        "Няма панарамы"
+      ],
       "No photos": [
         "Няма фатаграфій"
       ],
@@ -13764,6 +13881,9 @@
       ],
       "No shared albums": [
         "Няма абагуленых альбомаў"
+      ],
+      "No videos": [
+        "Няма відэа"
       ],
       "Notes": [
         "Нататкі"
@@ -13883,7 +14003,7 @@
         "Паведаміць аб праблеме"
       ],
       "Request new code": [
-        "Запытаць новы код"
+        "Запытайце новы код"
       ],
       "Restore your files": [
         "Аднавіць вашы файлы"
@@ -13896,6 +14016,9 @@
       ],
       "Search": [
         "Пошук"
+      ],
+      "Search results": [
+        "Вынікі пошуку"
       ],
       "Searching…": [
         "Пошук…"
@@ -14291,7 +14414,7 @@
         "Калі вы купілі падарункавы код або атрымалі яго ад нашай каманды падтрымкі, то яго можна ўвесці тут."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Імгненная дапамога ШІ, эксперт-чалавек заўсёды напагатове!"
+        "Імгненная дапамога ШІ, спецыяліст заўсёды на сувязі!"
       ],
       "Load image": [
         "Загрузіць відарыс"
