@@ -21,7 +21,7 @@ const getResultMessage = (mode: AutofillMode, matches: boolean) => {
             ? c('Result').t`This URL will be blocked from autofill`
             : c('Result').t`This URL will NOT be blocked from autofill`;
     }
-    return matches ? c('Result').t`The rule is matching this URL` : c('Result').t`The rule is NOT matching this URL`;
+    return matches ? c('Result').t`URL matches the rule` : c('Result').t`URL doesn't match the rule`;
 };
 
 export const UrlAdvancedHelp: FC<Props> = ({ url: { url, mode }, initialUrl, regexEnabled }) => {
@@ -63,9 +63,7 @@ export const UrlAdvancedHelp: FC<Props> = ({ url: { url, mode }, initialUrl, reg
                     {getResultMessage(mode, result)}
                 </p>
             ) : (
-                <p className="color-weak">
-                    {c('Result').t`Enter a URL to check to see if your current rule is matching the URL`}
-                </p>
+                <p className="color-weak">{c('Result').t`Enter a URL to check if it matches the current rule`}</p>
             )}
         </>
     );
