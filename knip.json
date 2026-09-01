@@ -153,8 +153,7 @@
         },
         "applications/preview-sandbox": {
             "entry": ["src/index.ts", "src/previews/index.ts"],
-            "project": ["src/**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["src/**/*.{ts,tsx}"]
         },
         "applications/storybook": {
             "entry": [

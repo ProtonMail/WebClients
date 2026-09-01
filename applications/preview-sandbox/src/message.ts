@@ -1,11 +1,11 @@
 import type { SafeErrorObject } from '@proton/utils/getSafeErrorObject';
 import { getSafeErrorObject } from '@proton/utils/getSafeErrorObject';
 
-import supportedPreviews from './previews';
+import { supportedPreviews } from './previews';
 
 export type OutgoingMessage = OutgoingErrorMessage;
 
-export const postMessage = (message: OutgoingMessage) => {
+const postMessage = (message: OutgoingMessage) => {
     window.parent.postMessage(message, window.location.origin);
 };
 

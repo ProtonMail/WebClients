@@ -10,5 +10,3 @@ export const wordPreview = async (content: Uint8Array<ArrayBuffer>) => {
 
     document.body.appendChild(element);
 };
-
-export default wordPreview;
