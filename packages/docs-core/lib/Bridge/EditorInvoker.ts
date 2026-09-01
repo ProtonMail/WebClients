@@ -162,6 +162,10 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     return this.invokeEditorMethod('setTableOfContentsVisible', [visible])
   }
 
+  async setDarkMode(isDarkMode: boolean): Promise<void> {
+    return this.invokeEditorMethod('setDarkMode', [isDarkMode])
+  }
+
   async initializeEditor(
     documentId: string,
     userAddress: string,

@@ -7,7 +7,7 @@ import {
   EDITOR_REQUESTS_TOTAL_CLIENT_RELOAD,
   EDITOR_CONFIRMS_VERSIONS_MATCH,
 } from '@proton/docs-shared'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
@@ -17,11 +17,12 @@ import { getCookie } from '@proton/shared/lib/helpers/cookies'
 const earlyAccessTag =
   versionCookieAtLoad === 'alpha' || versionCookieAtLoad === 'beta' ? versionCookieAtLoad : undefined
 
-function getEditorUrl(systemMode: EditorSystemMode, documentType: DocumentType) {
+function getEditorUrl(systemMode: EditorSystemMode, documentType: DocumentType, isDarkMode: boolean) {
   const url = new URL(BridgeOriginProvider.GetEditorOrigin())
 
   url.searchParams.set('type', documentType)
   url.searchParams.set('mode', systemMode)
+  url.searchParams.set('theme', isDarkMode ? 'dark' : 'light')
   if (earlyAccessTag) {
     url.searchParams.set('tag', earlyAccessTag)
   }
@@ -43,15 +44,16 @@ export type EditorFrameProps = {
   documentType?: DocumentType
   systemMode: EditorSystemMode
   logger: LoggerInterface
+  isDarkMode: boolean
 }
 
-export function EditorFrame({ onFrameReady, documentType = 'doc', systemMode, logger }: EditorFrameProps) {
+export function EditorFrame({ onFrameReady, documentType = 'doc', systemMode, logger, isDarkMode }: EditorFrameProps) {
   const [iframe, setIframe] = useState<HTMLIFrameElement | null>(null)
   /**
    * The URL cannot change once initially set, since reloading just the editor iframe is disallowed,
    * as it would require many other classes (like DocController) to re-send the document state
    */
-  const url = useMemo(() => getEditorUrl(systemMode, documentType), [documentType, systemMode])
+  const [url] = useState(() => getEditorUrl(systemMode, documentType, isDarkMode))
   const initialUrlRef = useRef(url)
   const didAlreadyLoad = useRef(false)
 

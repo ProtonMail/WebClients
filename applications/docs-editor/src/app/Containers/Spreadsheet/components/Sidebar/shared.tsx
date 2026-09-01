@@ -1,7 +1,7 @@
 import { type ComponentPropsWithRef, createContext, forwardRef, useContext } from 'react'
 import * as Ariakit from '@ariakit/react'
 import { Icon } from '../ui'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import { createComponent } from '../utils'
 import { twMerge } from 'tailwind-merge'
 
@@ -49,7 +49,7 @@ export const NativeSelect = forwardRef<HTMLSelectElement, ComponentPropsWithRef<
   ref,
 ) {
   return (
-    <div className={'relative isolate h-[36px] rounded-lg border border-[#EAE7E4]'}>
+    <div className="border-weak relative isolate h-[36px] rounded-lg border">
       <select className="absolute inset-0 appearance-none px-3 text-[13px]" {...props} ref={ref} />
       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
         <Icon className="shrink-0" legacyName="chevron-down-filled" />
@@ -132,7 +132,7 @@ export const Input = createComponent(function Input(props: ComponentPropsWithRef
     <input
       {...props}
       className={clsx(
-        'h-[36px] text-ellipsis rounded-lg border border-[#EAE7E4] px-3 text-sm !outline-none',
+        'border-weak h-[36px] text-ellipsis rounded-lg border px-3 text-sm !outline-none',
         'transition focus-visible:border-[#6D4AFF] focus-visible:ring-[3px] focus-visible:ring-[#6D4AFF33]',
         props.className,
       )}
@@ -162,7 +162,7 @@ export const Select = createComponent(function Select({ children, ...props }: Ar
     <Ariakit.Select
       {...props}
       className={clsx(
-        'flex h-[36px] min-w-0 items-center gap-2 rounded-lg border border-[#EAE7E4] pl-3 text-left text-sm !outline-none',
+        'border-weak flex h-[36px] min-w-0 items-center gap-2 rounded-lg border pl-3 text-left text-sm !outline-none',
         'transition focus-visible:border-[#6D4AFF] focus-visible:ring-[3px] focus-visible:ring-[#6D4AFF33]',
         props.className,
       )}
@@ -182,7 +182,7 @@ export const SelectPopover = createComponent(function (props: Ariakit.SelectPopo
       gutter={4}
       {...props}
       className={clsx(
-        'rounded-lg bg-[white] shadow-[0px_8px_24px_rgba(0,0,0,.16)] !outline-none ring-1 ring-[black]/10',
+        'bg-norm border-weak rounded-lg border shadow-[0px_8px_24px_rgba(0,0,0,.16)] !outline-none',
         'isolate z-[1] max-h-[min(var(--popover-available-height,440px),440px)] min-w-[140px] overflow-y-auto overscroll-y-contain',
         props.className,
       )}
@@ -195,7 +195,7 @@ export const SelectItem = createComponent(function SelectItem(props: Ariakit.Sel
     <Ariakit.SelectItem
       {...props}
       className={clsx(
-        'flex h-[36px] cursor-pointer items-center gap-2 px-4 text-sm text-[#281D1B] !outline-none data-[active-item]:bg-[black]/5',
+        'flex h-[36px] cursor-pointer items-center gap-2 px-4 text-sm text-[--text-norm] !outline-none data-[active-item]:bg-[--interaction-weak-minor-2]',
         props.className,
       )}
     />
@@ -208,7 +208,7 @@ export const Menu = createComponent(function Menu(props: Ariakit.MenuProps) {
       gutter={4}
       {...props}
       className={clsx(
-        'rounded-lg bg-[white] shadow-[0px_8px_24px_rgba(0,0,0,.16)] !outline-none ring-1 ring-[black]/10',
+        'bg-norm border-weak rounded-lg border shadow-[0px_8px_24px_rgba(0,0,0,.16)] !outline-none',
         'isolate z-[1] max-h-[min(var(--popover-available-height,440px),440px)] overflow-y-auto overscroll-y-contain',
         props.className,
       )}
@@ -221,7 +221,7 @@ export const MenuItem = createComponent(function MenuItem(props: Ariakit.MenuIte
     <Ariakit.MenuItem
       {...props}
       className={clsx(
-        'flex h-[36px] cursor-pointer items-center gap-2 px-4 text-sm text-[#281D1B] !outline-none aria-disabled:opacity-50 data-[active-item]:bg-[black]/5',
+        'flex h-[36px] cursor-pointer items-center gap-2 px-4 text-sm text-[--text-norm] !outline-none aria-disabled:opacity-50 data-[active-item]:bg-[--interaction-weak-minor-2]',
         props.className,
       )}
     />
@@ -234,7 +234,7 @@ export const ToggleButton = createComponent(function ToggleButton(props: Ariakit
       render={<Ariakit.Button />}
       {...props}
       className={clsx(
-        'inline-flex h-[36px] items-center gap-2 rounded-lg border border-[#ADABA8] px-3 text-sm text-[#0C0C14] hover:bg-[black]/[0.03] aria-checked:bg-[#C2C0BE59] aria-disabled:opacity-50',
+        'border-weak inline-flex h-[36px] items-center gap-2 rounded-lg border px-3 text-sm text-[--text-norm] hover:bg-[--interaction-weak-minor-2] aria-checked:bg-[--interaction-weak-minor-1] aria-disabled:opacity-50',
         '!outline-none transition focus-visible:border-[#6D4AFF] focus-visible:ring-[3px] focus-visible:ring-[#6D4AFF33]',
         props.className,
       )}
@@ -247,7 +247,7 @@ export const Button = createComponent(function Button(props: Ariakit.ButtonProps
     <Ariakit.Button
       {...props}
       className={twMerge(
-        'border border-[#ADABA8] border-[transparent]',
+        'border-weak border border-[transparent]',
         '!outline-none transition focus-visible:border-[#6D4AFF] focus-visible:ring-[3px] focus-visible:ring-[#6D4AFF33]',
         props.className,
       )}

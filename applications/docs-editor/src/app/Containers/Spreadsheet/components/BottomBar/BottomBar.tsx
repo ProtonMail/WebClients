@@ -34,15 +34,15 @@ const IconButton = createComponent(function Item({ legacyIconName, children, ...
   const outputProps = {
     ...props,
     className: clsx(
-      'flex shrink-0 items-center justify-center gap-[.375rem] rounded-[.25rem] text-[#0C0C14] focus:outline-none aria-disabled:text-[#8F8D8A]',
-      'aria-expanded:bg-[#C2C1C0]/20',
+      'flex shrink-0 items-center justify-center gap-[.375rem] rounded-[.25rem] text-[--text-norm] focus:outline-none aria-disabled:text-[--text-hint]',
+      'aria-expanded:bg-[--interaction-weak-minor-2]',
       'p-2.5',
       // TODO: "hocus" type tw variant
-      'hover:bg-[#C2C1C0]/20 focus-visible:bg-[#C2C1C0]/20 data-[focus-visible]:bg-[#C2C1C0]/20',
+      'hover:bg-[--interaction-weak-minor-2] focus-visible:bg-[--interaction-weak-minor-2] data-[focus-visible]:bg-[--interaction-weak-minor-2]',
       // TODO: "active" tw variant
       // TODO: see hack for specificity, otherwise active styles are overridden by data-[focus-visible] :(
-      'active:active:bg-[#C2C0BE]/35 data-[active]:bg-[#C2C0BE]/35',
-      'aria-pressed:aria-pressed:bg-[#C2C0BE]/35',
+      'active:active:bg-[--interaction-weak-minor-1] data-[active]:bg-[--interaction-weak-minor-1]',
+      'aria-pressed:aria-pressed:bg-[--interaction-weak-minor-1]',
       props.className,
     ),
   }
@@ -224,7 +224,7 @@ function SheetTab({ sheet, index, isActive }: SheetTabProps) {
           'hover:bg-[#1EA885]/10',
         )}
         style={{
-          backgroundColor: isDragging ? '#E7F4F2' : undefined,
+          backgroundColor: isDragging ? 'var(--interaction-weak-minor-2)' : undefined,
         }}
         onClick={() => setActiveId(sheet.id)}
       >
@@ -348,10 +348,7 @@ export const BottomBar = memo(function BottomBar(props: BottomBarProps) {
   const isSheetsStatusBarEnabled = useFeatureFlag('SheetsStatusBarEnabled')
 
   return (
-    <div
-      {...props}
-      className="flex items-center gap-2.5 border-t border-[#DEDEDE] bg-[#F9FCFA] pl-3 pr-14 print:hidden"
-    >
+    <div {...props} className="border-weak bg-weak flex items-center gap-2.5 border-t pl-3 pr-14 print:hidden">
       <SheetSwitcher />
       <SheetTabs />
       <div className="shrink-0 py-0.5 pl-2.5 pr-[3.125rem]">

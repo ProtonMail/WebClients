@@ -33,6 +33,7 @@ import type { SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-au
 import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { useFeatureFlag } from './feature-flags'
 import { useSheetsDependencies } from './SheetsDependenciesProvider'
+import { useEditorTheme } from '../../Theme/EditorThemeProvider'
 
 export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
@@ -81,6 +82,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const { canEdit, logger, storeSpreadsheetAction, subscribeToSheetImport, subscribeToCollaboratorCursorNavigation } =
     useSheetsDependencies()
   const { viewportWidth } = useActiveBreakpoint()
+  const { theme } = useEditorTheme()
 
   const didConvertFromFile = useRef(false)
   const [importType, setImportType] = useState<'excel' | 'ods'>()
@@ -132,6 +134,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     hasBasePatchesStored,
     isPatchesStorageEnabled,
     isDriftDetectionEnabled,
+    colorMode: theme,
     onYjsDriftDetected: handleYjsDriftDetected,
     storeAction,
     shouldUseCustomYjsInitialization,
