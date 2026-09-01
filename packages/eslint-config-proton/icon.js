@@ -5,7 +5,7 @@ import { allGlobs } from './globs.js';
 export const iconComponentPath = '@proton/components/components/icon/Icon';
 export const componentsPackage = '@proton/components';
 
-const message =
+export const iconRestrictedMessage =
     "Do not use the `Icon` component. Import the icon directly from `@proton/icons` instead, e.g. `import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal'`.";
 
 /**
@@ -26,12 +26,12 @@ const message =
 export const iconRestrictedImports = [
     {
         name: iconComponentPath,
-        message,
+        message: iconRestrictedMessage,
     },
     {
         name: componentsPackage,
         importNames: ['Icon'],
-        message,
+        message: iconRestrictedMessage,
     },
 ];
 
