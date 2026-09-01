@@ -327,7 +327,7 @@
                 "helpers/transforms/transformEscape.ts"
             ],
             "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "ignoreDependencies": ["@proton/styles"]
         },
         "packages/meet": {
             "entry": [],
