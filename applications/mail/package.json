@@ -81,6 +81,7 @@
         "react-router": "^5.3.4",
         "react-router-dom": "^5.3.4",
         "roosterjs-editor-types": "^8.62.0",
+        "tinycolor2": "^1.6.0",
         "ttag": "^1.8.12",
         "turndown": "^7.2.4"
     },
@@ -99,6 +100,7 @@
         "@testing-library/user-event": "^14.6.6",
         "@types/jest": "^30.0.0",
         "@types/lodash": "^4.17.25",
+        "@types/tinycolor2": "^1.4.6",
         "@types/turndown": "^5.0.6",
         "@typescript/native": "npm:typescript@^7.0.2",
         "@webgpu/types": "^0.1.72",
