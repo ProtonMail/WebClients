@@ -2543,6 +2543,9 @@
       ],
       "Create an account or sign in to save your chats and increase limits.": [
         "Cree una cuenta o inicie sesión para guardar sus chats y aumentar los límites."
+      ],
+      "You're on ${ selectedModelLabel }. Switch to Max for more capable answers.": [
+        "Está en ${ selectedModelLabel }. Cambie a Max para respuestas más capaces."
       ]
     },
     "collider_2025: Option": {
@@ -2627,14 +2630,8 @@
       "${ BRAND_NAME } Workspace": [
         "${ BRAND_NAME } Workspace"
       ],
-      "${ LUMO_SHORT_APP_NAME } Plus": [
-        "${ LUMO_SHORT_APP_NAME } Plus"
-      ],
       "Business": [
         "Business"
-      ],
-      "Personal": [
-        "Personal"
       ],
       "Plus": [
         "Plus"
@@ -10170,9 +10167,6 @@
     "Subtitle": {
       "per month, billed annually": [
         "al mes con facturación anual"
-      ],
-      "per user/month, billed annually": [
-        "por usuario/mes, facturado anualmente"
       ]
     },
     "Success": {
@@ -10415,9 +10409,6 @@
       ],
       "Payment verification": [
         "Verificación de pago"
-      ],
-      "Plan type": [
-        "Tipo de plan"
       ],
       "Processing...": [
         "Procesando..."
