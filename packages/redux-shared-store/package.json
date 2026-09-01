@@ -13,7 +13,6 @@
         "./eventLoop/contactEventLoopV6": "./eventLoop/contactEventLoopV6.ts",
         "./eventLoop/coreEventLoopV6": "./eventLoop/coreEventLoopV6.ts",
         "./eventLoop/mailEventLoopV6": "./eventLoop/mailEventLoopV6.ts",
-        "./eventLoop/meetEventLoop": "./eventLoop/meetEventLoop.ts",
         "./test": "./test.ts",
         "./mailSettingsHeartbeatListener": "./settingsHeartbeat/mailSettingsHeartbeatListener.ts",
         "./calendarSettingsHeartbeatListener": "./settingsHeartbeat/calendarSettingsHeartbeatListener.ts"
@@ -27,7 +26,6 @@
         "@proton/calendar": "workspace:^",
         "@proton/features": "workspace:^",
         "@proton/mail": "workspace:^",
-        "@proton/meet": "workspace:^",
         "@proton/react-redux-store": "workspace:^",
         "@proton/redux-shared-store-types": "workspace:^",
         "@proton/redux-utilities": "workspace:^",

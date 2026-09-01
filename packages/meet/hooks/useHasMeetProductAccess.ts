@@ -1,14 +1,16 @@
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import useAllowedProducts from '@proton/components/containers/organization/accessControl/useAllowedProducts';
 import { Product } from '@proton/shared/lib/ProductEnum';
 import { USER_ROLES } from '@proton/shared/lib/constants';
+import { deserializeAllowedProducts } from '@proton/shared/lib/organization/accessControl/serialization';
 
 /**
  * Check if user has access to Meet product
  */
 export const useHasMeetProductAccess = (): boolean => {
     const [user] = useUser();
-    const [allowedProducts, loadingAllowedProducts] = useAllowedProducts();
+    const [organization, loadingOrganization] = useOrganization();
+    const allowedProducts = deserializeAllowedProducts(organization?.Settings?.AllowedProducts);
 
     // Admins can always access meet
     if (user && user.Role === USER_ROLES.ADMIN_ROLE) {
@@ -16,7 +18,7 @@ export const useHasMeetProductAccess = (): boolean => {
     }
 
     // Otherwise, check if meet is allowed for the organization
-    const isMeetEnabled = !loadingAllowedProducts && allowedProducts.has(Product.Meet);
+    const isMeetEnabled = !loadingOrganization && allowedProducts.has(Product.Meet);
 
     return isMeetEnabled;
 };
