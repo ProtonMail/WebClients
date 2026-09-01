@@ -20,6 +20,26 @@
   --upgrade-background-color: #f1f1f1 !important;
 }
 
+:root[data-theme-mode='dark'] .content-container,
+:root[data-theme-mode='dark'] .content,
+:root[data-theme-mode='dark'] .sidebar,
+:root[data-theme-mode='dark'] .homepage-header,
+:root[data-theme-mode='dark'] .header,
+:root[data-theme-mode='dark'] .main-area,
+:root[data-theme-mode='dark'] .main-area--with-toolbar {
+  background: var(--background-norm) !important;
+  background-color: var(--background-norm) !important;
+}
+
+:root[data-theme-mode='dark'] .button-promotion {
+  --upgrade-background-color: var(--background-norm) !important;
+}
+
+:root[data-theme-mode='dark'] .button-promotion:hover,
+:root[data-theme-mode='dark'] .button-promotion:focus-visible {
+  --upgrade-background-color: var(--interaction-weak-minor-1) !important;
+}
+
 /** Hack to prevent too much spacing when other blocks (with their own left padding)
 show up after the targeted one, e.g. the upsell section, but still have a right padding
 when missing. */

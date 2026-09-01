@@ -317,7 +317,24 @@ $line-height: 1.2; // Consistent line-height
 	}
 }
 
+[data-theme-mode='dark'] {
+	.DocumentEditor,
+	.Lexical__pageBreak::after {
+		background: var(--background-norm);
+	}
+
+	.DocumentEditor {
+		color: var(--text-norm);
+	}
+}
+
 @media print {
+	.DocumentEditor,
+	[data-theme-mode='dark'] .DocumentEditor {
+		background: white !important;
+		color: black !important;
+	}
+
 	.Lexical__pageBreak {
 		min-block-size: 0;
 		border-block-start: 0;

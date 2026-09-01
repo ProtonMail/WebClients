@@ -64,4 +64,5 @@ export interface ClientRequiresEditorMethods {
   markImportUpdateAsSuccessful(uuid: string): Promise<void>
 
   setTableOfContentsVisible(visible: boolean): Promise<void>
+  setDarkMode(isDarkMode: boolean): Promise<void>
 }

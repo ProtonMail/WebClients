@@ -7,7 +7,7 @@ import {
   type CompositeOverflowDisclosureProps,
 } from '@ariakit/react-components/composite/composite-overflow-disclosure'
 import type { IconName } from '@proton/icons/types'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import {
   type ComponentPropsWithRef,
   type ComponentPropsWithoutRef,
@@ -145,18 +145,18 @@ export const Item = createComponent<ItemProps>(function Item({
   const outputProps = {
     ...props,
     className: clsx(
-      'flex shrink-0 items-center justify-center gap-[.375rem] rounded-[.625rem] text-[#0C0C14] focus:outline-none aria-disabled:text-[#8F8D8A]',
-      'aria-expanded:bg-[#C2C1C0]/20',
+      'flex shrink-0 items-center justify-center gap-[.375rem] rounded-[.625rem] text-[--text-norm] focus:outline-none aria-disabled:text-[--text-hint]',
+      'aria-expanded:bg-[--interaction-weak-minor-2]',
       variant === 'icon' && 'p-[.625rem]',
       variant === 'icon-small' && 'p-[.375rem]',
       variant === 'label' && 'p-2',
-      'bg-[white]',
+      'bg-[--background-norm]',
       // TODO: "hocus" type tw variant
-      'hover:bg-[#C2C1C0]/20 focus-visible:bg-[#C2C1C0]/20 data-[focus-visible]:bg-[#C2C1C0]/20',
+      'hover:bg-[--interaction-weak-minor-2] focus-visible:bg-[--interaction-weak-minor-2] data-[focus-visible]:bg-[--interaction-weak-minor-2]',
       // TODO: "active" tw variant
       // TODO: see hack for specificity, otherwise active styles are overridden by data-[focus-visible] :(
-      'active:active:bg-[#C2C0BE]/35 data-[active]:bg-[#C2C0BE]/35',
-      'aria-pressed:aria-pressed:bg-[#C2C0BE]/35',
+      'active:active:bg-[--interaction-weak-minor-1] data-[active]:bg-[--interaction-weak-minor-1]',
+      'aria-pressed:aria-pressed:bg-[--interaction-weak-minor-1]',
 
       props.className,
     ),
@@ -195,7 +195,7 @@ export const Separator = forwardRef<HTMLHRElement, SeparatorProps>(function Sepa
     <Ariakit.ToolbarSeparator
       ref={ref}
       {...props}
-      className={clsx('h-[1.25rem] w-[1px] flex-shrink-0 border-l border-[#D1CFCD]', props.className)}
+      className={clsx('border-weak h-[1.25rem] w-[1px] flex-shrink-0 border-l', props.className)}
     />
   )
 })

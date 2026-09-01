@@ -31,13 +31,13 @@ export function Title({ topLevelSticky, ...props }: TitleProps) {
     <div
       {...props}
       className={clsx(
-        'sticky top-[1px] hidden h-11 border-b text-[1rem] font-semibold before:absolute before:inset-0 before:z-[-1] before:rounded-xl before:bg-[#fff] small:!block',
+        'sticky top-[1px] hidden h-11 border-b text-[1rem] font-semibold before:absolute before:inset-0 before:z-[-1] before:rounded-xl before:bg-[#fff] small:!block [[data-theme-mode=dark]_&]:before:!bg-[--background-norm]',
         props.className,
       )}
     >
       {topLevelSticky ? (
         <div className="relative z-[-1] mx-[-1px] h-0">
-          <div className="absolute top-[-1px] h-[calc(2.75rem+1px)] w-full bg-[#f8fafc]" />
+          <div className="absolute top-[-1px] h-[calc(2.75rem+1px)] w-full bg-[#f8fafc] [[data-theme-mode=dark]_&]:!bg-[--background-norm]" />
           <div className="bg-norm border-weak absolute top-[-1px] h-[calc(2.75rem+1px)] w-full rounded-lg !rounded-b-none border" />
         </div>
       ) : null}
@@ -64,7 +64,7 @@ export function Head({ children, secondarySticky, topLevelSticky, topLevelSticky
     >
       {topLevelSticky ? (
         <div className={clsx('relative z-[-1] mx-[-1px] h-0', topLevelStickyOnlyOnMobile && 'small:!hidden')}>
-          <div className="absolute top-[-1px] h-[calc(2.75rem+1px)] w-full bg-[#f8fafc]" />
+          <div className="absolute top-[-1px] h-[calc(2.75rem+1px)] w-full bg-[#f8fafc] [[data-theme-mode=dark]_&]:!bg-[--background-norm]" />
           <div className="bg-norm border-weak absolute top-[-1px] h-[calc(2.75rem+1px)] w-full rounded-lg !rounded-b-none border !border-b-0" />
         </div>
       ) : null}
@@ -86,7 +86,7 @@ export function Header({ target = 'all', isTitle, ...props }: HeaderProps) {
       role="columnheader"
       {...props}
       className={clsx(
-        'relative flex h-full items-center whitespace-nowrap font-semibold before:absolute before:inset-0 before:z-[-1] small:[[data-bg-hack-mobile]_&]:before:bg-[#fff] [[data-bg-hack]_&]:before:bg-[#fff] [[data-secondary-header]_&]:before:rounded-se-xl [[data-secondary-header]_&]:before:rounded-ss-xl',
+        'relative flex h-full items-center whitespace-nowrap font-semibold before:absolute before:inset-0 before:z-[-1] small:[[data-bg-hack-mobile]_&]:before:bg-[#fff] [[data-bg-hack]_&]:before:bg-[#fff] [[data-secondary-header]_&]:before:rounded-se-xl [[data-secondary-header]_&]:before:rounded-ss-xl [[data-theme-mode=dark]_&]:before:!bg-[--background-norm]',
         isTitle && '[&:nth-child(1)]:text-[1rem]',
         ...POSITIONAL_CELL_CLASSES,
         TARGET_CLASSES[target],

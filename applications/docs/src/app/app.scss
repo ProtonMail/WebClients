@@ -17,6 +17,11 @@
 	--logo-text-product-color: #1b1340;
 }
 
+:root[data-theme-mode='dark'] .ui-standard {
+	--logo-text-proton-color: var(--text-norm);
+	--logo-text-product-color: var(--text-norm);
+}
+
 *:focus,
 *:focus-visible {
 	outline-color: var(--primary-major-3);
@@ -41,7 +46,7 @@ input[type='number'] {
 }
 
 .main-area:not(.is-homepage *) {
-	background-color: white;
+	background-color: var(--background-norm);
 
 	> div {
 		block-size: 100%;
