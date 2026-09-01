@@ -4,8 +4,8 @@ import type { LocalVideoTrack, Room } from 'livekit-client';
 import { createLocalVideoTrack } from 'livekit-client';
 
 import type { BackgroundEffect } from '@proton/meet/store/slices/backgroundSlice';
+import { resolveBackgroundSource } from '@proton/meet/utils/customBackgrounds';
 import type { VirtualBackgroundSource } from '@proton/meet/utils/virtualBackgrounds';
-import { getVirtualBackgroundSource } from '@proton/meet/utils/virtualBackgrounds';
 import { isChrome, isMobile } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
@@ -178,7 +178,13 @@ export const useCameraPreview = ({
                 return;
             }
 
-            const customProcessor = await ensurePreviewCustomBackgroundProcessor(getVirtualBackgroundSource(effect));
+            const source = await resolveBackgroundSource(effect);
+
+            if (!source || previewTrackRef.current !== videoTrack) {
+                return;
+            }
+
+            const customProcessor = await ensurePreviewCustomBackgroundProcessor(source);
 
             if (!customProcessor || previewTrackRef.current !== videoTrack) {
                 return;

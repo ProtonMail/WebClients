@@ -1,4 +1,4 @@
-import { useId } from 'react';
+import { useEffect, useId } from 'react';
 
 import { c } from 'ttag';
 
@@ -16,7 +16,12 @@ import { useAppliedBackgroundEffect } from '../../contexts/BackgroundEffects/use
 import { supportsBackgroundEffects } from '../../processors/background-processor/createBackgroundProcessor';
 import { BackgroundOptionGroup } from './BackgroundOptionGroup';
 import { BackgroundPreview } from './BackgroundPreview';
-import { getBackgroundEffectOptions, getVirtualBackgroundOptions } from './backgroundOptions';
+import {
+    getBackgroundEffectOptions,
+    getUnsupportedBackgroundEffectsNotice,
+    getVirtualBackgroundOptions,
+} from './backgroundOptions';
+import { useCustomBackgroundTiles } from './useCustomBackgroundTiles';
 
 export const Backgrounds = () => {
     const dispatch = useMeetDispatch();
@@ -31,9 +36,24 @@ export const Backgrounds = () => {
     const isVirtualBackgroundEnabled = useFlag('MeetVirtualBackground');
 
     const isBackgroundBlurSupported = supportsBackgroundEffects();
+    const unsupportedNotice = getUnsupportedBackgroundEffectsNotice();
     const { selectBackgroundEffect } = useBackgroundEffectsContext();
+    const {
+        options: customBackgroundOptions,
+        renderActionTile,
+        ensureLoaded,
+    } = useCustomBackgroundTiles({ disabledReason: isBackgroundBlurSupported ? undefined : unsupportedNotice });
 
-    if (!isVirtualBackgroundEnabled || !sideBarState[MeetingSideBars.Backgrounds]) {
+    const isOpen = sideBarState[MeetingSideBars.Backgrounds];
+
+    // Opening the picker is what asks Drive for the backgrounds, so joining a meeting does not.
+    useEffect(() => {
+        if (isOpen && isVirtualBackgroundEnabled) {
+            ensureLoaded();
+        }
+    }, [isOpen, isVirtualBackgroundEnabled, ensureLoaded]);
+
+    if (!isVirtualBackgroundEnabled || !isOpen) {
         return null;
     }
 
@@ -67,22 +87,21 @@ export const Backgrounds = () => {
                     <SideBarSection title={c('Title').t`Blur and personal`}>
                         <BackgroundOptionGroup
                             label={c('Aria').t`Blur and personal`}
-                            options={getBackgroundEffectOptions().map(({ effect, label, Icon }) => ({
-                                effect,
-                                label,
-                                icon: <Icon size={5} />,
-                            }))}
+                            options={[...getBackgroundEffectOptions(), ...customBackgroundOptions]}
                             selectedEffect={selectedEffect}
                             pendingEffect={pendingBackgroundEffect}
                             onSelect={handleSelectEffect}
                             disabled={!isBackgroundBlurSupported}
                             describedById={isBackgroundBlurSupported ? undefined : unsupportedNoticeId}
                             className="grid grid-cols-3 gap-2 w-full"
+                            renderActionTile={renderActionTile}
+                            actionTileIndex={2}
                         />
 
                         {!isBackgroundBlurSupported && (
-                            <p id={unsupportedNoticeId} className="m-0 text-sm color-weak">{c('Info')
-                                .t`Background effects are not supported on your browser`}</p>
+                            <p id={unsupportedNoticeId} className="m-0 text-sm color-weak">
+                                {unsupportedNotice}
+                            </p>
                         )}
                     </SideBarSection>
 

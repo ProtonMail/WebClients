@@ -58,6 +58,7 @@ import { BackgroundEffectsContext } from '../BackgroundEffects/BackgroundEffects
 import { useAppliedBackgroundEffect } from '../BackgroundEffects/useAppliedBackgroundEffect';
 import { useBackgroundEffects } from '../BackgroundEffects/useBackgroundEffects';
 import { useBackgroundProcessorPreload } from '../BackgroundEffects/useBackgroundProcessorPreload';
+import { CustomBackgroundsProvider } from '../CustomBackgroundsContext';
 import { MediaManagementContext } from './MediaManagementContext';
 import { PermissionsModal } from './PermissionsModal/PermissionsModal';
 import { useAudioToggle } from './mediaToggle/useAudioToggle';
@@ -667,8 +668,10 @@ export const MediaManagementProvider = ({
             }}
         >
             <BackgroundEffectsContext.Provider value={backgroundEffects}>
-                {!permissionsLoading && <PermissionsModal />}
-                {children}
+                <CustomBackgroundsProvider>
+                    {!permissionsLoading && <PermissionsModal />}
+                    {children}
+                </CustomBackgroundsProvider>
             </BackgroundEffectsContext.Provider>
         </MediaManagementContext.Provider>
     );
