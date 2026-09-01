@@ -2,7 +2,12 @@ import { createAction, createReducer } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 
 import { countAttachmentToken, countAttachmentTokenVersion } from '../../../llm/utils';
-import { appendTextToBlocks, setToolCallInBlocks, setToolResultInBlocks } from '../../../messageHelpers';
+import {
+    appendTextToBlocks,
+    isToolCallStreamingUpdate,
+    setToolCallInBlocks,
+    setToolResultInBlocks,
+} from '../../../messageHelpers';
 import type { Priority } from '../../../remote/scheduler';
 import type { IdMapEntry, RemoteMessage } from '../../../remote/types';
 import type {
@@ -49,6 +54,7 @@ export type SetMessageModelIDAction = {
 };
 
 export type SetToolResultAction = ChunkAction & {
+    callId?: string;
     meta?: {
         settings: string;
     };
@@ -151,8 +157,7 @@ const messagesReducer = createReducer<MessageMap>(EMPTY_MESSAGE_MAP, (builder) =
             message.thinkingTimeline ??= [];
             message.blocks ??= [];
             const existingToolCallCount = message.blocks.filter((block) => block.type === 'tool_call').length;
-            const isStreamingToolCallUpdate =
-                existingToolCallCount > 0 && message.blocks[message.blocks.length - 1]?.type === 'tool_call';
+            const isStreamingToolCallUpdate = isToolCallStreamingUpdate(message.blocks, chunk.content);
 
             if (!isStreamingToolCallUpdate) {
                 message.thinkingTimeline.push({
@@ -178,7 +183,7 @@ const messagesReducer = createReducer<MessageMap>(EMPTY_MESSAGE_MAP, (builder) =
 
             // Update blocks
             message.blocks ??= [];
-            message.blocks = setToolResultInBlocks(message.blocks, chunk.content, chunk.meta);
+            message.blocks = setToolResultInBlocks(message.blocks, chunk.content, chunk.meta, chunk.callId);
         })
         .addCase(setSuggestedQuestions, (state, action) => {
             const { messageId, questions } = action.payload;

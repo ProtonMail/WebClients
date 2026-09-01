@@ -7,8 +7,9 @@ describe('extractSearchResults', () => {
             results: [{ url, title }],
         });
 
-    const webSearchCall = (query: string) =>
+    const webSearchCall = (query: string, id?: string) =>
         JSON.stringify({
+            ...(id ? { id } : {}),
             name: 'web_search',
             arguments: { query },
         });
@@ -24,6 +25,28 @@ describe('extractSearchResults', () => {
             { type: 'tool_result', content: searchResult('https://first.example', 'First') },
             { type: 'tool_call', content: webSearchCall('second query') },
             { type: 'tool_result', content: searchResult('https://second.example', 'Second') },
+        ];
+
+        expect(extractSearchResults(blocks)).toEqual([
+            { url: 'https://first.example', title: 'First' },
+            { url: 'https://second.example', title: 'Second' },
+        ]);
+    });
+
+    it('pairs parallel web searches with their results by call id', () => {
+        const blocks: ContentBlock[] = [
+            { type: 'tool_call', content: webSearchCall('first query', 'call_0') },
+            { type: 'tool_call', content: webSearchCall('second query', 'call_1') },
+            {
+                type: 'tool_result',
+                content: searchResult('https://first.example', 'First'),
+                tool_call_id: 'call_0',
+            },
+            {
+                type: 'tool_result',
+                content: searchResult('https://second.example', 'Second'),
+                tool_call_id: 'call_1',
+            },
         ];
 
         expect(extractSearchResults(blocks)).toEqual([

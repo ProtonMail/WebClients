@@ -99,78 +99,146 @@ export function appendTextToBlocks(blocks: ContentBlock[], text: string): Conten
     return [...blocks.slice(0, -1), { ...lastBlock, content: lastBlock.content + text }];
 }
 
-/**
- * Check if two parsed tool calls have the same name.
- * Used to determine if a streaming tool call should replace the previous one.
- */
-function haveSameName(parsedToolCall1: unknown, parsedToolCall2: unknown): boolean {
-    if (
-        typeof parsedToolCall1 === 'object' &&
-        parsedToolCall1 !== null &&
-        typeof parsedToolCall2 === 'object' &&
-        parsedToolCall2 !== null
-    ) {
-        const obj1 = parsedToolCall1 as any;
-        const obj2 = parsedToolCall2 as any;
-        return (
-            'name' in obj1 &&
-            typeof obj1.name === 'string' &&
-            'name' in obj2 &&
-            typeof obj2.name === 'string' &&
-            obj1.name === obj2.name
-        );
+function readStringField(parsed: unknown, field: string): string | undefined {
+    if (typeof parsed !== 'object' || parsed === null) {
+        return undefined;
     }
-    return false;
+    const value = (parsed as Record<string, unknown>)[field];
+    return typeof value === 'string' && value.length > 0 ? value : undefined;
+}
+
+/** OpenAI tool-call id from parsed tool-call JSON (`id` or legacy `call_id`). */
+function getToolCallId(parsed: unknown): string | undefined {
+    return readStringField(parsed, 'id') ?? readStringField(parsed, 'call_id');
+}
+
+function replaceAt(blocks: ContentBlock[], index: number, block: ContentBlock): ContentBlock[] {
+    return [...blocks.slice(0, index), block, ...blocks.slice(index + 1)];
+}
+
+function findToolResult(
+    blocks: ContentBlock[],
+    predicate: (block: ToolResultBlock, index: number) => boolean
+): ToolResultBlock | undefined {
+    for (let index = 0; index < blocks.length; index++) {
+        const block = blocks[index];
+        if (isToolResultBlock(block) && predicate(block, index)) {
+            return block;
+        }
+    }
+    return undefined;
+}
+
+/** Tool call id of a tool_call block, when the stream provided one. */
+export function getToolCallBlockId(block: ToolCallBlock): string | undefined {
+    return getToolCallId(block.toolCall) ?? getToolCallId(tryParseJSON(block.content));
+}
+
+/**
+ * Find the tool_result block produced by a given tool_call block.
+ *
+ * An exact `tool_call_id` match wins, so parallel calls to the same tool (weather for London
+ * and for Paris) each resolve to their own result no matter what order the backend streamed them
+ * in. Otherwise we take the first *untagged* result after the call — that covers client tools,
+ * which tag the call but not the result, without ever stealing a result that demonstrably belongs
+ * to a different call.
+ */
+export function findToolResultForCall(blocks: ContentBlock[], call: ToolCallBlock): ToolResultBlock | undefined {
+    const callId = getToolCallBlockId(call);
+    if (callId) {
+        const tagged = findToolResult(blocks, (block) => block.tool_call_id === callId);
+        if (tagged) {
+            return tagged;
+        }
+    }
+
+    const callIndex = blocks.indexOf(call);
+    if (callIndex === -1) {
+        return undefined;
+    }
+
+    return findToolResult(blocks, (block, index) => index > callIndex && block.tool_call_id === undefined);
+}
+
+/**
+ * Index of the tool_call block that an incoming chunk updates, or -1 when it starts a new call.
+ *
+ * Chunks carrying a call id only ever match that same id, so sibling calls to the same tool
+ * (e.g. weather for London and for Paris) stay separate. Legacy id-less streams fall back to
+ * matching a trailing same-name call, which is how announce → dispatch used to be merged.
+ */
+function findToolCallBlockIndex(blocks: ContentBlock[], parsed: unknown): number {
+    const id = getToolCallId(parsed);
+    if (id) {
+        return blocks.findLastIndex((block) => isToolCallBlock(block) && getToolCallBlockId(block) === id);
+    }
+
+    const name = readStringField(parsed, 'name');
+    const lastIndex = blocks.length - 1;
+    const lastBlock = blocks[lastIndex];
+    const matchesTrailingCall =
+        name !== undefined &&
+        isToolCallBlock(lastBlock) &&
+        readStringField(lastBlock.toolCall, 'name') === name &&
+        getToolCallBlockId(lastBlock) === undefined;
+
+    return matchesTrailingCall ? lastIndex : -1;
+}
+
+/** Index of the tool_result block an incoming chunk updates, or -1 when it starts a new result. */
+function findToolResultBlockIndex(blocks: ContentBlock[], toolCallId?: string): number {
+    if (toolCallId) {
+        return blocks.findLastIndex((block) => isToolResultBlock(block) && block.tool_call_id === toolCallId);
+    }
+
+    const lastIndex = blocks.length - 1;
+    return isToolResultBlock(blocks[lastIndex]) ? lastIndex : -1;
+}
+
+/**
+ * Whether an incoming tool-call chunk updates an existing block (streaming announce → dispatch)
+ * rather than starting a new tool call.
+ */
+export function isToolCallStreamingUpdate(blocks: ContentBlock[], toolCall: string): boolean {
+    return findToolCallBlockIndex(blocks, tryParseJSON(toolCall)) !== -1;
 }
 
 /**
  * Set tool call in blocks array.
- * Replaces last tool_call block if it exists and has the same name (streaming behavior),
- * otherwise appends new block.
+ * Updates the matching tool_call block in place, otherwise appends a new one.
  */
 export function setToolCallInBlocks(blocks: ContentBlock[], toolCall: string): ContentBlock[] {
-    const newParsed = tryParseJSON(toolCall);
+    const parsed = tryParseJSON(toolCall);
+    const index = findToolCallBlockIndex(blocks, parsed);
+    const block: ToolCallBlock = { type: 'tool_call', content: toolCall, toolCall: parsed };
 
-    // Check if last block is a tool_call with the same name
-    if (blocks.length > 0) {
-        const lastBlock = blocks[blocks.length - 1];
-        if (isToolCallBlock(lastBlock) && haveSameName(lastBlock.toolCall, newParsed)) {
-            // Replace the last tool_call block (streaming tool call arguments)
-            return [...blocks.slice(0, -1), { type: 'tool_call', content: toolCall, toolCall: newParsed }];
-        }
-    }
-
-    // No matching tool_call at end, append new one
-    return [...blocks, { type: 'tool_call', content: toolCall, toolCall: newParsed }];
+    return index === -1 ? [...blocks, block] : replaceAt(blocks, index, block);
 }
 
 /**
  * Set tool result in blocks array.
- * Replaces last tool_result block if it exists (streaming behavior),
- * otherwise appends new block.
+ * Updates the result of the matching `tool_call_id` when one is given; without an id it falls
+ * back to updating a trailing tool_result. Otherwise appends a new one.
  */
 export function setToolResultInBlocks(
     blocks: ContentBlock[],
     toolResult: string,
-    meta?: ToolResultBlock['meta']
+    meta?: ToolResultBlock['meta'],
+    toolCallId?: string
 ): ContentBlock[] {
-    // Check if last block is a tool_result
-    if (blocks.length > 0 && blocks[blocks.length - 1].type === 'tool_result') {
-        const prev = blocks[blocks.length - 1] as ToolResultBlock;
-        // Replace the last tool_result block (streaming tool result)
-        return [
-            ...blocks.slice(0, -1),
-            {
-                type: 'tool_result',
-                content: toolResult,
-                toolResult: tryParseJSON(toolResult),
-                meta: meta ?? prev.meta,
-            },
-        ];
-    }
+    const index = findToolResultBlockIndex(blocks, toolCallId);
+    const prev = index === -1 ? undefined : (blocks[index] as ToolResultBlock);
+    const callId = toolCallId ?? prev?.tool_call_id;
+    const resolvedMeta = meta ?? prev?.meta;
+    const block: ToolResultBlock = {
+        type: 'tool_result',
+        content: toolResult,
+        toolResult: tryParseJSON(toolResult),
+        ...(callId ? { tool_call_id: callId } : {}),
+        ...(resolvedMeta ? { meta: resolvedMeta } : {}),
+    };
 
-    // No tool_result at end, append new one
-    return [...blocks, { type: 'tool_result', content: toolResult, toolResult: tryParseJSON(toolResult), meta }];
+    return index === -1 ? [...blocks, block] : replaceAt(blocks, index, block);
 }
 
 /**
