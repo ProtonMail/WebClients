@@ -11,25 +11,3 @@ export const mockIsFullSyncDone = (mockedValue: boolean) => {
     spy.mockImplementation(() => mockedValue);
     return spy;
 };
-
-/**
- * Mocks the `setFullSyncDone` function to do nothing but still track calls.
- *
- * @returns {vi.SpyInstance} - The spy instance, so you can add assertions.
- */
-export const mockSetFullSyncDone = () => {
-    const spy = vi.spyOn(cacheModule, 'setFullSyncDone');
-    spy.mockImplementation(() => undefined); // No-op function
-    return spy;
-};
-
-/**
- * Mocks the `clearChangeSet` function to do nothing but still track calls.
- *
- * @returns {vi.SpyInstance} - The spy instance, so you can add assertions.
- */
-export const mockClearChangeSet = () => {
-    const spy = vi.spyOn(cacheModule, 'clearChangeSet');
-    spy.mockImplementation(() => undefined); // No-op function
-    return spy;
-};

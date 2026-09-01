@@ -7,7 +7,7 @@ import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import type { SubTheme } from '../../utils';
 
-export interface WalletTransactionDrawerData {
+interface WalletTransactionDrawerData {
     transactionDataKey: string;
     kind: 'transaction-data';
     networkDataAndHashedTxId: [WasmTransactionDetails, string];
@@ -15,20 +15,20 @@ export interface WalletTransactionDrawerData {
     onClickEditSender: () => void;
 }
 
-export interface WalletDiscoverDrawerData {
+interface WalletDiscoverDrawerData {
     kind: 'discover';
     wallet: IWasmApiWalletData;
 }
 
-export interface WalletReceiveDrawerData {
+interface WalletReceiveDrawerData {
     kind: 'wallet-receive';
     wallet: IWasmApiWalletData;
     account?: WasmApiWalletAccount;
 }
 
-export type WalletDrawerContentData = WalletTransactionDrawerData | WalletDiscoverDrawerData | WalletReceiveDrawerData;
+type WalletDrawerContentData = WalletTransactionDrawerData | WalletDiscoverDrawerData | WalletReceiveDrawerData;
 
-export interface WalletCommonData {
+interface WalletCommonData {
     theme?: SubTheme;
 }
 

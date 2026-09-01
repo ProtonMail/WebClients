@@ -13,7 +13,7 @@ import { Button, Input, Modal } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { useUnknownSenderModal } from './useUnknownSenderModal';
 
-export interface WalletCreationModalOwnProps {
+interface WalletCreationModalOwnProps {
     transactionDataKey: string;
 }
 

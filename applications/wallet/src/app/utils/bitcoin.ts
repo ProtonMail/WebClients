@@ -46,7 +46,7 @@ export const getDescriptionByScriptType = (unit: WasmScriptType) => {
     }
 };
 
-export const roundFloat = (value: number, decimals = 8) => {
+const roundFloat = (value: number, decimals = 8) => {
     const factor = Math.pow(10, decimals);
     return Math.round(value * factor) / factor;
 };
