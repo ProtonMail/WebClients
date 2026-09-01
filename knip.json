@@ -191,8 +191,7 @@
         },
         "packages/ai-assistant": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/app-context": {
             "entry": [],
