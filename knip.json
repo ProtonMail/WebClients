@@ -172,7 +172,7 @@
             "ignore": ["**"]
         },
         "applications/vpn-settings": {
-            "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
+            "entry": ["src/app/index.{ts,tsx}", "src/pages/**/*.{ts,tsx}", "webpack.config.{js,ts}"],
             "project": ["src/**/*.{ts,tsx}"]
         },
         "applications/wallet": {
