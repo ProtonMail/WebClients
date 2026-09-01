@@ -19,6 +19,13 @@ interface CommentViewerProps {
 export const CommentViewer: React.FC<CommentViewerProps> = ({ content, className }) => {
   const { openLink } = useCommentsContext()
 
+  let editorState: string
+  try {
+    editorState = sanitizeLexicalState(content)
+  } catch {
+    return <div className={className}>{content}</div>
+  }
+
   const initialConfig: InitialConfigType = {
     namespace: 'CommentViewer',
     nodes: CommentLexicalNodes,
@@ -26,7 +33,7 @@ export const CommentViewer: React.FC<CommentViewerProps> = ({ content, className
       reportErrorToSentry(error)
     },
     theme: DocumentEditorTheme,
-    editorState: sanitizeLexicalState(content),
+    editorState,
     editable: false,
   }
 
