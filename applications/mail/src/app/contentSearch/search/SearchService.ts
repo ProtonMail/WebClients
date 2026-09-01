@@ -7,6 +7,7 @@ import { getIndexKey } from '../crypto/indexKey';
 import type { DatabaseLock } from '../db/DatabaseLock';
 import { openContentSearchDB } from '../db/open';
 import { EncryptedSearchReader } from '../import/EncryptedSearchReader';
+import type { Logger } from '../utils/logger';
 import { Search } from './Search';
 import type SearchWorker from './SearchWorker';
 
@@ -17,7 +18,8 @@ export class SearchService {
     constructor(
         private readonly userId: string,
         private readonly getUserKeys: () => Promise<DecryptedKey[]>,
-        private readonly dbLock: DatabaseLock
+        private readonly dbLock: DatabaseLock,
+        private readonly logger: Logger
     ) {}
 
     /**
@@ -30,7 +32,7 @@ export class SearchService {
     }
 
     search(params: NormalizedSearchParams): Search {
-        const search = new Search(params, this.dbLock, this.getWorker(), async () =>
+        const search = new Search(params, this.dbLock, this.getWorker(), this.logger, async () =>
             EncryptedSearchReader.open(this.userId, await this.getUserKeys())
         );
         search.start();

@@ -18,6 +18,7 @@ import { esSearching, selectSearch } from '../../store/elements/elementsSelector
 import { useMailSelector } from '../../store/hooks';
 import { getSharedIndexService } from '../indexation/IndexService';
 import { SearchService } from '../search/SearchService';
+import { logger } from '../utils/logger';
 import { ESAdapter, type ESStatusConcrete } from './ESAdapter';
 
 export type FunctionsV1 = EncryptedSearchFunctions<ESBaseMessage, NormalizedSearchParams, ESMessageContent>;
@@ -98,8 +99,8 @@ export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1, isActive }
     // It only depends on the userID which doesn't change within the lifetime of the app.
     const adapterRef = useRef<ESAdapter>();
     if (!adapterRef.current) {
-        const indexService = getSharedIndexService(user.ID, getUserKeys);
-        const searchService = new SearchService(user.ID, getUserKeys, indexService.dbLock);
+        const indexService = getSharedIndexService(user.ID, getUserKeys, logger);
+        const searchService = new SearchService(user.ID, getUserKeys, indexService.dbLock, logger);
         adapterRef.current = new ESAdapter({
             searchService,
             indexService,
