@@ -10,7 +10,7 @@ import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useAlwaysOnPolicyTelemetry } from '../../../../hooks/useAlwaysOnPolicyTelemetry';
 
-export interface DownloadLink {
+interface DownloadLink {
     title: string;
     href: string;
 }
