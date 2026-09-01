@@ -174,7 +174,6 @@ const MainContainer: FunctionComponent = () => {
         isCategoryViewEnabled: false,
         isCryptoPostQuantumOptInEnabled: false,
         isMspEnabled: false,
-        isMspPassSettingsFullyEnabled: false,
         isScribeEnabled: false,
         isUserGroupsFeatureEnabled,
         isUserGroupsNoCustomDomainEnabled,
