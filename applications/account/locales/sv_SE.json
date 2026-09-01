@@ -169,6 +169,9 @@
       "Import history": [
         "Importhistorik"
       ],
+      "Inbox layout": [
+        "Inkorgens layout"
+      ],
       "Included apps": [
         "Inkluderade appar"
       ],
@@ -255,6 +258,9 @@
       ],
       "Referral rewards": [
         "Hänvisningsbelöningar"
+      ],
+      "Restrict app access": [
+        "Begränsa appåtkomst"
       ],
       "Scan QR code": [
         "Skanna QR-kod"
@@ -1844,6 +1850,9 @@
       "Set catch-all": [
         "Ställ in \"Catch-all\""
       ],
+      "Set invoice email": [
+        "Ställ in e-postfaktura"
+      ],
       "Set new password": [
         "Välj nytt lösenord"
       ],
@@ -2059,6 +2068,9 @@
       ],
       "Update": [
         "Uppdatera"
+      ],
+      "Update email": [
+        "Uppdatera e-post"
       ],
       "Update recovery file": [
         "Uppdatera återställningsfil"
@@ -2582,6 +2594,9 @@
       ],
       "Private scheduling": [
         "Privat schemaläggning"
+      ],
+      "Secure and end-to-end encrypted": [
+        "Säker och end-to-end-krypterad"
       ],
       "Secure cloud storage": [
         "Säker molnlagring"
@@ -4007,6 +4022,9 @@
       ],
       "Total cost": [
         "Total kostnad"
+      ],
+      "Used / allocated licenses": [
+        "Använda/tilldelade licenser"
       ]
     },
     "Condition for custom filter": {
@@ -10367,6 +10385,9 @@
       "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
         "**Enbart din telefon för återställning låter dig inte återställa dina krypterade data** efter att du återställt ditt lösenord."
       ],
+      "**Your recovery phrase and recovery file will be invalidated:** you can generate new recovery data later on.": [
+        "**Din återställningsfras och återställningsfil kommer att ogiltigförklaras:** Du kan generera ny återställningsdata senare."
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Mer",
         "+ ${ invisibleCount } Mer"
@@ -10871,6 +10892,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Välj ett paket som passar dig bäst."
+      ],
+      "Choose a strong ${ BRAND_NAME } password and don’t reuse it for other accounts.": [
+        "Välj ett starkt lösenord för ${ BRAND_NAME } och återanvänd det inte för andra konton."
       ],
       "Choose an Entity ID to continue.": [
         "Välj ett entitets-ID för att fortsätta."
@@ -11408,6 +11432,9 @@
       ],
       "Example: ${ spfExample }": [
         "Exempel: ${ spfExample }"
+      ],
+      "Exclude them when you deploy the device profile. Support coming soon.": [
+        "Exkludera dem när du distribuerar enhetsprofilen. Stöd kommer snart."
       ],
       "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
         "Befintliga end-to-end-krypterade vidarebefordringar av e-post måste återaktiveras manuellt under **${ autoReplySettingsTitle }** i inställningarna."
@@ -12583,6 +12610,9 @@
       "SCIM token active": [
         "SCIM-token aktiv"
       ],
+      "Secure and end-to-end encrypted": [
+        "Säker och end-to-end-krypterad"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Skydda ditt ${ BRAND_NAME }-konto"
       ],
@@ -13474,6 +13504,9 @@
       "We couldn't complete the transaction. Please try again.": [
         "Vi kunde inte slutföra transaktionen. Försök igen."
       ],
+      "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
+        "Vi kunde inte skicka fakturor till din e-postadress. Automatisk fakturering har pausats tills du uppdaterar adressen."
+      ],
       "We couldn’t process your payment.": [
         "Vi kunde inte behandla din betalning."
       ],
@@ -13548,6 +13581,9 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Vi skickar en återställningskod till ${ boldValue }."
+      ],
+      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
+        "Vi skapar dina konton och importerar din data nu så att ditt team har allt de behöver när de börjar använda sitt säkra ${ BRAND_NAME }-konto."
       ],
       "What happens:": [
         "Vad hände:"
@@ -14775,6 +14811,9 @@
       "All-day event notifications": [
         "Avisering för heldagshändelse"
       ],
+      "Allocated licenses": [
+        "Tilldelade licenser"
+      ],
       "Allow": [
         "Tillåt"
       ],
@@ -15490,6 +15529,9 @@
       "Import your emails": [
         "Importera din e-post"
       ],
+      "In progress": [
+        "Pågår"
+      ],
       "Inbox": [
         "Inkorg"
       ],
@@ -15993,6 +16035,9 @@
       ],
       "Send in": [
         "Skicka på"
+      ],
+      "Send invoices by email": [
+        "Skicka fakturor via e-post"
       ],
       "Sequences": [
         "Sekvenser"
@@ -16759,6 +16804,9 @@
       ],
       "Sign in": [
         "Logga in"
+      ],
+      "Snap store": [
+        "Snap store"
       ],
       "switch account": [
         "byt konto"
@@ -18949,6 +18997,9 @@
       "OpenVPN credentials regenerated": [
         "OpenVPN-inloggningsuppgifter återskapat"
       ],
+      "Password check-ins are now required for all members": [
+        "Lösenordsincheckningar är nu obligatoriskt för alla medlemmar"
+      ],
       "Reminder has been sent": [
         "Påminnelse har skickats"
       ],
@@ -19624,6 +19675,9 @@
       "Copy email list": [
         "Kopiera e-postlista"
       ],
+      "Non-private users": [
+        "Icke-privata användare"
+      ],
       "Ready to reset your organization key?": [
         "Redo att återställa din organisationsnyckel?"
       ],
@@ -19655,6 +19709,9 @@
       "User (${ n })": [
         "Användare (${ n })",
         "Användare (${ n })"
+      ],
+      "Your administrator privileges have been restored. You can now manage non-private users.": [
+        "Dina administratörsbehörigheter har återställts. Du kan nu hantera icke-privata användare."
       ]
     },
     "Organization logo upload": {
@@ -20428,6 +20485,9 @@
       "You will soon be redirected to verify your payment.": [
         "Du kommer snart att omdirigeras för att verifiera din betalning."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Din valuta har ändrats till euro (€) eftersom ${ IDEAL_WERO_BRAND_NAME } endast stöder betalningar i euro."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Din valuta har ändrats till euro (€) eftersom SEPA-banköverföringar endast stöder betalningar i euro."
       ],
@@ -20439,6 +20499,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Misslyckades med att initialisera ${ IDEAL_WERO_BRAND_NAME }. Försök igen senare."
+      ],
       "Invalid card number": [
         "Ogiltigt kortnummer"
       ],
@@ -20625,6 +20688,9 @@
       ],
       "Ask anything…": [
         "Fråga vad som helst …"
+      ],
+      "billing@company.com": [
+        "billing@company.com"
       ],
       "Choose a name": [
         "Välj ett namn"
@@ -22191,6 +22257,9 @@
       "${ usersText } and ${ groupsText } synced.": [
         "${ usersText } och ${ groupsText } synkroniserade."
       ],
+      "**Groups you already set up** in your identity provider are imported automatically.": [
+        "**Grupper som du redan har ställt in** i din identitetsleverantör importeras automatiskt."
+      ],
       "Approve changes from your identity provider": [
         "Godkänn ändringar från din identitetsleverantör"
       ],
@@ -22399,9 +22468,6 @@
       ]
     },
     "Service provider": {
-      "Add to ${ CALENDAR_APP_NAME }": [
-        "Lägg till i ${ CALENDAR_APP_NAME }"
-      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Låter dig lägga till en Zoom-videokonferens till alla dina kalenderhändelser"
       ]
@@ -22709,6 +22775,11 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "Begäran om lösenordsåterställning"
+      ]
+    },
+    "Set invoice email form note": {
+      "Turn on automatic invoicing to receive bills via email. Enter the email address where you want to receive invoices.": [
+        "Aktivera automatisk fakturering för att ta emot fakturor via e-post. Ange den e-postadress dit du vill ta emot fakturor."
       ]
     },
     "Setting": {
@@ -24014,6 +24085,9 @@
       "Final step": [
         "Sista steget"
       ],
+      "Install migration app": [
+        "Installera migreringsappen"
+      ],
       "Migrate accounts": [
         "Migrera konton"
       ],
@@ -24890,6 +24964,9 @@
       ],
       "Invoice customized": [
         "Faktura anpassad"
+      ],
+      "Invoice email updated": [
+        "E-postfaktura uppdaterad"
       ],
       "Invoice paid": [
         "Faktura betald"
@@ -26467,6 +26544,9 @@
       "Install it manually": [
         "Installera det manuellt"
       ],
+      "Install migration app": [
+        "Installera migreringsappen"
+      ],
       "Integrations": [
         "Integrationer"
       ],
@@ -26949,6 +27029,9 @@
       ],
       "Set a display name": [
         "Välj ett visningsnamn"
+      ],
+      "Set invoice email": [
+        "Ställ in e-postfaktura"
       ],
       "Set new password": [
         "Ställ in nytt lösenord"
@@ -27910,6 +27993,11 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "Välj standardinställningarna för PGP som används för att signera eller kryptera meddelanden med icke-${ BRAND_NAME } PGP-användare Observera att Inline PGP tvingar fram oformaterade textmeddelanden."
+      ]
+    },
+    "Tooltip for members table": {
+      "Last time this user signed in or used the ${ VPN_APP_NAME } app on their device.": [
+        "Senast denna användare loggade in eller använde appen ${ VPN_APP_NAME } på sin enhet."
       ]
     },
     "Tooltip prompt to trust keys": {
