@@ -438,8 +438,7 @@
         },
         "packages/vpn": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/wallet": {
             "entry": [],

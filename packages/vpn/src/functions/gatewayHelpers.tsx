@@ -59,7 +59,7 @@ interface UsersListProps {
     keyPrefix?: string;
 }
 
-export const UsersList = ({ userIds, users, keyPrefix = '' }: UsersListProps) => {
+const UsersList = ({ userIds, users, keyPrefix = '' }: UsersListProps) => {
     if (!userIds.length) {
         return '0';
     }
@@ -124,7 +124,7 @@ interface GroupsListProps {
     groups: readonly GatewayGroup[];
     keyPrefix?: string;
 }
-export const GroupsList = ({ groupIds, groups, keyPrefix = '' }: GroupsListProps) => {
+const GroupsList = ({ groupIds, groups, keyPrefix = '' }: GroupsListProps) => {
     if (!groupIds.length) {
         return '0';
     }
