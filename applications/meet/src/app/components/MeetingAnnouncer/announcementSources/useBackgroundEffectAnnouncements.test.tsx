@@ -9,6 +9,7 @@ import {
     backgroundReducer,
     initialState,
 } from '@proton/meet/store/slices/backgroundSlice';
+import { meetUserReducer } from '@proton/meet/store/slices/userSlice';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 
 import { useBackgroundEffectAnnouncements } from './useBackgroundEffectAnnouncements';
@@ -20,7 +21,8 @@ vi.mock('@proton/unleash/useFlag', () => ({ useFlag: () => true }));
 
 const renderWithEffect = (initialEffect: BackgroundEffect) => {
     const store = configureStore({
-        reducer: { ...backgroundReducer },
+        // The persist thunk reads the background namespace out of the user slice.
+        reducer: { ...backgroundReducer, ...meetUserReducer },
         preloadedState: { background: { ...initialState, appliedBackgroundEffect: initialEffect } },
     });
 

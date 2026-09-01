@@ -348,6 +348,7 @@ enum MeetFeatureFlag {
     MeetUseNewBackgroundBlurVersion = 'MeetUseNewBackgroundBlurVersion',
     MeetChatThreads = 'MeetChatThreads',
     MeetVirtualBackground = 'MeetVirtualBackground',
+    MeetCustomVirtualBackground = 'MeetCustomVirtualBackground',
     MeetLiveCaptions = 'MeetLiveCaptions',
     MeetSaveCaptionLanguagePreference = 'MeetSaveCaptionLanguagePreference',
     MeetUseCachedServerTime = 'MeetUseCachedServerTime',

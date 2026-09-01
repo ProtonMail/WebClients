@@ -4,14 +4,18 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
+import { clearPersistedCustomBackgroundId, persistCustomBackgroundId } from '../../utils/customBackgroundStorage';
+import type { CustomBackgroundEffect } from '../../utils/customBackgrounds';
+import { getCustomBackgroundRecordId } from '../../utils/customBackgrounds';
 import type { VirtualBackgroundId } from '../../utils/virtualBackgrounds';
 import { isVirtualBackgroundId } from '../../utils/virtualBackgrounds';
 import type { MeetState } from '../rootReducer';
+import { selectBackgroundNamespace } from './customBackgroundsSlice';
 
 const BACKGROUND_BLUR_KEY = 'meetBackgroundBlur';
 const VIRTUAL_BACKGROUND_KEY = 'meetVirtualBackground';
 
-export type BackgroundEffect = 'none' | 'blur' | VirtualBackgroundId;
+export type BackgroundEffect = 'none' | 'blur' | VirtualBackgroundId | CustomBackgroundEffect;
 
 // Which effect a pipeline is warming up for, so the UI can name it correctly.
 export type InitializingBackgroundEffect = 'blur' | 'virtualBackground';
@@ -106,20 +110,6 @@ const slice = createSlice({
     },
 });
 
-export const applyBackgroundEffectAndPersist =
-    (effect: BackgroundEffect): ThunkAction<void, MeetState, ProtonThunkArguments, UnknownAction> =>
-    (dispatch) => {
-        dispatch(slice.actions.setAppliedBackgroundEffect(effect));
-
-        setItem(BACKGROUND_BLUR_KEY, (effect === 'blur').toString());
-
-        if (isVirtualBackgroundId(effect)) {
-            setItem(VIRTUAL_BACKGROUND_KEY, effect);
-        } else {
-            removeItem(VIRTUAL_BACKGROUND_KEY);
-        }
-    };
-
 export const {
     setPendingBackgroundEffect,
     startBackgroundEffectInitialization,
@@ -136,9 +126,39 @@ export const selectVirtualBackgroundId = (state: MeetState) => {
 
     return isVirtualBackgroundId(effect) ? effect : null;
 };
+export const selectCustomBackgroundId = (state: MeetState) =>
+    getCustomBackgroundRecordId(state.background.appliedBackgroundEffect);
 export const selectPendingBackgroundEffect = (state: MeetState) => state.background.pendingBackgroundEffect;
 export const selectInitializingBackgroundEffect = (state: MeetState) => state.background.initializingBackgroundEffect;
 export const selectFailedBackgroundEffect = (state: MeetState) => state.background.failedBackgroundEffect;
 export const selectBackgroundEffectInitializationToken = (state: MeetState) => state.background.initializationToken;
+
+export const applyBackgroundEffectAndPersist =
+    (effect: BackgroundEffect): ThunkAction<void, MeetState, ProtonThunkArguments, UnknownAction> =>
+    (dispatch, getState) => {
+        const replacedEffect = selectAppliedBackgroundEffect(getState());
+
+        dispatch(slice.actions.setAppliedBackgroundEffect(effect));
+
+        setItem(BACKGROUND_BLUR_KEY, (effect === 'blur').toString());
+
+        if (isVirtualBackgroundId(effect)) {
+            setItem(VIRTUAL_BACKGROUND_KEY, effect);
+        } else {
+            removeItem(VIRTUAL_BACKGROUND_KEY);
+        }
+
+        const namespace = selectBackgroundNamespace(getState());
+        const customBackgroundId = getCustomBackgroundRecordId(effect);
+
+        if (customBackgroundId) {
+            persistCustomBackgroundId(namespace, customBackgroundId);
+            return;
+        }
+
+        if (getCustomBackgroundRecordId(replacedEffect)) {
+            clearPersistedCustomBackgroundId(namespace);
+        }
+    };
 
 export const backgroundReducer = { background: slice.reducer };

@@ -12,7 +12,6 @@ import type { NotificationsManager } from '@proton/app-context/notifications/man
 import { setupGuestCrossStorage } from '@proton/cross-storage/account/guest';
 import { FeatureCode, fetchFeatures } from '@proton/features/index';
 import { meetEventLoop } from '@proton/meet/store/meetEventLoop';
-import { selectUserId } from '@proton/meet/store/slices/userSlice';
 import type { MeetDispatch, MeetExtraThunkArguments, MeetState, MeetStore } from '@proton/meet/store/store';
 import { setupStore } from '@proton/meet/store/store';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
@@ -39,6 +38,7 @@ import noop from '@proton/utils/noop';
 import { purgeUserRecordings } from './hooks/useMeetingRecorder/recordingStorage/purge';
 import locales from './locales';
 import { meetTelemetryConfig } from './telemetryConfig';
+import { pruneOrphanBackgroundCaches, purgeUserBackgrounds } from './utils/customBackgrounds/purge';
 import { clearStoredDevices } from './utils/deviceStorage';
 import { clearDisabledRotatePersonalMeeting } from './utils/disableRotatePersonalMeeting';
 import { startMeetingInfoPreload } from './utils/startMeetingInfoPreload';
@@ -283,13 +283,14 @@ const completeAppBootstrap = async ({
 
     dispatch(bootstrapEvent({ type: 'complete' }));
 
-    // Register callback to clear settings entries on logout
-    const userId = selectUserId(store.getState());
-    registerSessionRemovalListener(async () => {
+    registerSessionRemovalListener(async (persistedSession) => {
         clearStoredDevices();
         clearDisabledRotatePersonalMeeting();
-        await purgeUserRecordings(userId);
+        await purgeUserRecordings(persistedSession.UserID);
+        await purgeUserBackgrounds(persistedSession.UserID);
     });
+
+    void pruneOrphanBackgroundCaches();
 
     return { userData, meetCoreClient };
 };
@@ -430,6 +431,8 @@ export const bootstrapGuestApp = async (
     const history = createBrowserHistory({ basename: '/guest' });
 
     await unauthenticatedApi.startUnAuthFlow();
+
+    void pruneOrphanBackgroundCaches();
 
     const store = setupStore({
         extraThunkArguments: {

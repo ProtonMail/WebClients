@@ -10,13 +10,13 @@ import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/sto
 import type { BackgroundEffect, InitializingBackgroundEffect } from '@proton/meet/store/slices/backgroundSlice';
 import {
     applyBackgroundEffectAndPersist,
+    selectAppliedBackgroundEffect,
     selectBackgroundBlur,
-    selectVirtualBackgroundId,
     setPendingBackgroundEffect,
 } from '@proton/meet/store/slices/backgroundSlice';
 import { selectInitialCameraState } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import { resolveBackgroundSource } from '@proton/meet/utils/customBackgrounds';
 import type { VirtualBackgroundSource } from '@proton/meet/utils/virtualBackgrounds';
-import { getVirtualBackgroundSource } from '@proton/meet/utils/virtualBackgrounds';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useStableCallback } from '../../hooks/useStableCallback';
@@ -31,7 +31,7 @@ import type {
     CustomBackgroundProcessor,
 } from '../../processors/background-processor/types';
 import { getCurrentCameraTrack, hasLiveCameraTrack } from '../../utils/cameraTrack';
-import { useVirtualBackgroundId } from './useAppliedBackgroundEffect';
+import { useCustomBackgroundId, useVirtualBackgroundId } from './useAppliedBackgroundEffect';
 import { useBackgroundEffectInitializationTracker } from './useBackgroundEffectInitializationTracker';
 
 // Returned when another attach already owns the track, which must not be treated as a failure:
@@ -49,7 +49,11 @@ export const useBackgroundEffects = ({ backgroundProcessorVersion }: UseBackgrou
     const store = useMeetStore();
     const backgroundBlur = useMeetSelector(selectBackgroundBlur);
     const virtualBackgroundId = useVirtualBackgroundId();
+    const customBackgroundId = useCustomBackgroundId();
     const initialCameraState = useMeetSelector(selectInitialCameraState);
+
+    // Presets and custom uploads share one processor, so reattaching doesn't care which kind it is.
+    const hasImageBackground = !!virtualBackgroundId || !!customBackgroundId;
 
     const room = useRoomContext();
     const { localParticipant } = useLocalParticipant();
@@ -222,7 +226,15 @@ export const useBackgroundEffects = ({ backgroundProcessorVersion }: UseBackgrou
                 return;
             }
 
-            const customProcessor = await ensureCustomBackgroundProcessor(getVirtualBackgroundSource(effect));
+            // A custom background is decrypted out of the cache, and possibly downloaded from Drive.
+            const source = await resolveBackgroundSource(effect);
+
+            if (!source) {
+                reportError('The virtual background source is unavailable', { context: { effect } });
+                return;
+            }
+
+            const customProcessor = await ensureCustomBackgroundProcessor(source);
 
             if (!customProcessor) {
                 reportError('Failed to create the virtual background processor', { context: { effect } });
@@ -296,7 +308,7 @@ export const useBackgroundEffects = ({ backgroundProcessorVersion }: UseBackgrou
 
             // Use our guarded attachment to prevent concurrent initializations
             await attachBackgroundBlurProcessor();
-        } else if (virtualBackgroundId && customBackgroundProcessorInstanceRef.current) {
+        } else if (hasImageBackground && customBackgroundProcessorInstanceRef.current) {
             preventAutoApplyingBlur.current = true;
 
             await attachCustomBackgroundProcessor();
@@ -341,7 +353,7 @@ export const useBackgroundEffects = ({ backgroundProcessorVersion }: UseBackgrou
                 if (processor !== ATTACH_SKIPPED) {
                     processor?.enable();
                 }
-            } else if (virtualBackgroundId && customBackgroundProcessorInstanceRef.current) {
+            } else if (hasImageBackground && customBackgroundProcessorInstanceRef.current) {
                 preventAutoApplyingBlur.current = true;
                 const processor = await attachCustomBackgroundProcessor();
 
@@ -357,7 +369,7 @@ export const useBackgroundEffects = ({ backgroundProcessorVersion }: UseBackgrou
             localParticipant.off(RoomEvent.LocalTrackPublished, handleTrackPublished);
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [localParticipant, backgroundBlur, virtualBackgroundId]);
+    }, [localParticipant, backgroundBlur, hasImageBackground]);
 
     useEffect(() => {
         let cancelled = false;
@@ -385,17 +397,22 @@ export const useBackgroundEffects = ({ backgroundProcessorVersion }: UseBackgrou
         };
     }, [backgroundProcessorVersion]);
 
+    // Warms the processor for the restored background, so the first camera frame already has it.
     useEffect(() => {
-        const restoredVirtualBackgroundId = isVirtualBackgroundEnabled
-            ? selectVirtualBackgroundId(store.getState())
-            : null;
-
-        if (!restoredVirtualBackgroundId) {
+        if (!isVirtualBackgroundEnabled || !hasImageBackground) {
             return;
         }
 
-        void ensureCustomBackgroundProcessor(getVirtualBackgroundSource(restoredVirtualBackgroundId));
-    }, [ensureCustomBackgroundProcessor, isVirtualBackgroundEnabled, store]);
+        const restoredEffect = selectAppliedBackgroundEffect(store.getState());
+
+        void (async () => {
+            const source = await resolveBackgroundSource(restoredEffect);
+
+            if (source) {
+                await ensureCustomBackgroundProcessor(source);
+            }
+        })();
+    }, [ensureCustomBackgroundProcessor, hasImageBackground, isVirtualBackgroundEnabled, store]);
 
     useEffect(() => {
         return () => {

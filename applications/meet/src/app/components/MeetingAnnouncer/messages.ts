@@ -108,6 +108,10 @@ export const announcementMessages = {
 
     coffeeBackgroundApplied: () => c('Accessibility announcement').t`Coffee place background applied`,
 
+    customBackgroundApplied: () => c('Accessibility announcement').t`Your own background applied`,
+
+    customBackgroundRemoved: () => c('Accessibility announcement').t`Background removed`,
+
     backgroundEffectCleared: () => c('Accessibility announcement').t`Background effect turned off`,
 
     turnRelayActive: () =>

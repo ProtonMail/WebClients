@@ -312,6 +312,7 @@ export type IconName =
     | 'meet-copy'
     | 'meet-eye-closed'
     | 'meet-hand'
+    | 'meet-image-plus'
     | 'meet-microphone'
     | 'meet-phone'
     | 'meet-microphone-off'
