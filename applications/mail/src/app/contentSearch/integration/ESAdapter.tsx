@@ -92,6 +92,11 @@ export class ESAdapter implements FunctionsV2 {
     public esCallbacks: ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent>;
     /** Per-render dependency, refreshed by `useContentSearch` — the legacy `useEncryptedSearch` instance. */
     public esLibraryFunctionsV1: FunctionsV1;
+    /**
+     * Whether v2 is the engine in charge this session (see `useContentSearch`'s `isActive`). Only
+     * `handleEvent` is reachable while this is false, and then it records without importing.
+     */
+    public isActive = false;
 
     private lastSearch?: Search;
     private coalescedResults?: FrameCoalescer<Parameters<ESSetResultsList<ESBaseMessage, ESMessageContent>>>;
@@ -350,7 +355,11 @@ export class ESAdapter implements FunctionsV2 {
             // counted bar). The job waits for v1's syncing queue to drain before importing (see
             // `waitForV1Sync`). Skip if content indexing hasn't finished yet, or if a job is already
             // live (the initial index will pick these up when it imports).
-            if (hasMessagesToRefresh && this.canTriggerImport && !this.job) {
+            // While v2 isn't the active engine we stop after the recording above: the import would
+            // run for a session that never queries the v2 index, and its job would push status and
+            // progress the provider isn't showing. The ids stay in `outdated_import_ids` until a v2
+            // session imports them.
+            if (hasMessagesToRefresh && this.isActive && this.canTriggerImport && !this.job) {
                 this.startIndexingJob('refresh');
             }
         }

@@ -11,7 +11,6 @@ import type {
     EncryptedSearchFunctions,
     NormalizedSearchParams,
 } from '@proton/encrypted-search/models';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { isSearch } from '../../helpers/elements';
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
@@ -35,6 +34,13 @@ interface Props {
      * syncing of its own, we keep the legacy ES index up to date by forwarding events to it.
      */
     esLibraryFunctionsV1: FunctionsV1;
+    /**
+     * Whether v2 is the engine in charge this session (`ContentSearch` flag + the `OVERRIDE_SEARCH_V2`
+     * debug toggle, see `EncryptedSearchProvider`). When it isn't, nothing here may drive an indexing
+     * job or push status/progress: the provider hands v1's functions to the UI, so anything this hook
+     * reports goes nowhere. `handleEvent` stays live regardless — see `ESAdapter.handleEvent`.
+     */
+    isActive: boolean;
 }
 
 /**
@@ -71,10 +77,9 @@ const toBoundFunctions = (adapter: ESAdapter): FunctionsV2 => ({
  * adapter drives these through the setters passed at construction, and the hook rebuilds the returned
  * functions object whenever they change so consumers re-render — exactly like `useEncryptedSearch`.
  */
-export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1 }: Props): FunctionsV1 => {
+export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1, isActive }: Props): FunctionsV1 => {
     const [user] = useUser();
     const getUserKeys = useGetUserKeys();
-    const featureFlag = useFlag('ContentSearch');
 
     // The reactive surface, owned by the hook. The adapter pushes updates into these via the setters
     // passed at construction (see below). progressRecorderRef stays a ref like in V1 — it's the raw
@@ -113,6 +118,7 @@ export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1 }: Props): 
     // stale values — esLibraryFunctionsV1's identity changes when V1's esStatus does.
     adapter.esCallbacks = esCallbacks;
     adapter.esLibraryFunctionsV1 = esLibraryFunctionsV1;
+    adapter.isActive = isActive;
 
     // Observe V1's status and progress and forward them into the adapter, which decides what to push
     // back out through the setters above. Kept as two channels so the import-on-completion side effect
@@ -122,23 +128,23 @@ export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1 }: Props): 
     const v1ProgressState = esLibraryFunctionsV1.esIndexingProgressState;
 
     useEffect(() => {
-        if (featureFlag) {
+        if (isActive) {
             adapter.onV1StatusUpdate(v1Status);
         }
-    }, [featureFlag, adapter, v1Status]);
+    }, [isActive, adapter, v1Status]);
 
     useEffect(() => {
-        if (featureFlag) {
+        if (isActive) {
             adapter.onV1ProgressUpdate(v1Timepoint, v1ProgressState);
         }
-    }, [featureFlag, adapter, v1Timepoint, v1ProgressState]);
+    }, [isActive, adapter, v1Timepoint, v1ProgressState]);
 
     const isSearchOpen = isSearch(useMailSelector(selectSearch));
     useEffect(() => {
-        if (featureFlag && !isSearchOpen) {
+        if (isActive && !isSearchOpen) {
             adapter.leaveSearch();
         }
-    }, [featureFlag, adapter, isSearchOpen]);
+    }, [isActive, adapter, isSearchOpen]);
 
     const isSearching = useMailSelector(esSearching);
 
