@@ -25,10 +25,10 @@
                 "src/app/private.tsx",
                 "src/app/public.tsx",
                 "src/lite/index.{ts,tsx}",
-                "src/pages/**/*.{ts,tsx}"
+                "src/pages/**/*.{ts,tsx}",
+                "webpack.config.{js,ts}"
             ],
-            "project": ["src/**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["src/**/*.{ts,tsx}"]
         },
         "applications/admin": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
@@ -184,8 +184,7 @@
         },
         "packages/account": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/activation": {
             "entry": [],
