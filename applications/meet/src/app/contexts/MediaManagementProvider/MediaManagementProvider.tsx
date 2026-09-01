@@ -42,7 +42,7 @@ import {
 } from '@proton/meet/store/slices/uiStateSlice';
 import { setAudioSessionType } from '@proton/meet/utils/iosAudioSession';
 import { TimeoutError, withTimeout } from '@proton/meet/utils/withTimeout';
-import { isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
+import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { AnnouncementPriority } from '../../components/MeetingAnnouncer/types';
@@ -113,7 +113,7 @@ export const MediaManagementProvider = ({
             preserveDefaultDevice = false,
             throwOnError = false,
         }) => {
-            if ((deviceType === 'audiooutput' && !supportsSetSinkId()) || isMobile()) {
+            if (deviceType === 'audiooutput' && !supportsSetSinkId()) {
                 return;
             }
 
