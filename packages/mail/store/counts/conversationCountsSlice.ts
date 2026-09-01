@@ -8,9 +8,8 @@ import { getInitialModelState } from '@proton/redux-utilities/initialModelState'
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { queryConversationCount } from '@proton/shared/lib/api/conversations';
 import type { Folder, Label, LabelCount } from '@proton/shared/lib/interfaces';
+import type { Conversation } from '@proton/shared/lib/interfaces/mail/Conversation';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
-
-import type { Conversation } from 'proton-mail/models/conversation';
 
 import { type MailSettingState, mailSettingsThunk } from '../mailSettings';
 import {
