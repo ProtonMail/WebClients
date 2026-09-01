@@ -61,17 +61,32 @@
       "A participant reacted with ${ emoji }": [
         "Um participante reagiu com ${ emoji }"
       ],
+      "Abstract background applied": [
+        "Plano de fundo de abstrato aplicado"
+      ],
+      "Beach background applied": [
+        "Plano de fundo de praia aplicado"
+      ],
+      "Coffee place background applied": [
+        "Plano de fundo de cafeteria aplicado"
+      ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Conectado via modo de retransmissão TURN devido às restrições da rede. Isso pode aumentar a latência e afetar a qualidade da chamada."
       ],
       "Connection lost. Reconnecting…": [
         "Conexão perdida. Reconectando…"
       ],
+      "Mountain background applied": [
+        "Plano de fundo de montanha aplicado"
+      ],
       "New chat message: ${ message }": [
         "Nova mensagem no bate-papo: ${ message }"
       ],
       "Now starting recording": [
         "Agora iniciando a gravação"
+      ],
+      "Office background applied": [
+        "Plano de fundo de escritório aplicado"
       ],
       "Reconnected to the meeting": [
         "Reconectado à reunião"
@@ -157,6 +172,9 @@
       "Allow access": [
         "Permitir acesso"
       ],
+      "Allow live captions": [
+        "Permitir legendas ao vivo"
+      ],
       "Anyone with the link can join immediately": [
         "Qualquer pessoa que tenha o link pode participar imediatamente"
       ],
@@ -180,6 +198,9 @@
       ],
       "Back": [
         "Voltar"
+      ],
+      "Backgrounds and effects": [
+        "Planos de fundos e efeitos"
       ],
       "Blur background": [
         "Desfocar fundo"
@@ -390,6 +411,9 @@
       ],
       "Lower hand": [
         "Baixar mão"
+      ],
+      "Meeting timer": [
+        "Temporizador de reuniões"
       ],
       "Minimize preview": [
         "Minimizar pré-visualização"
@@ -678,6 +702,9 @@
       "View invoice": [
         "Visualizar fatura"
       ],
+      "Virtual backgrounds": [
+        "Planos de fundo virtuais"
+      ],
       "Waiting room": [
         "Sala de espera"
       ],
@@ -689,6 +716,9 @@
       ]
     },
     "Alt": {
+      "Allow live captions": [
+        "Permitir legendas ao vivo"
+      ],
       "Audio settings": [
         "Configurações de áudio"
       ],
@@ -739,6 +769,9 @@
       ],
       "Meeting details": [
         "Detalhes da reunião"
+      ],
+      "Meeting timer": [
+        "Temporizador de reuniões"
       ],
       "More options": [
         "Mais opções"
@@ -2256,6 +2289,9 @@
       "Attention required": [
         "Atenção necessária"
       ],
+      "Available with a paid plan": [
+        "Disponível com plano pago"
+      ],
       "Background blur initializing": [
         "Inicializando o desfoque de fundo"
       ],
@@ -2954,12 +2990,21 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } background": [
+        "Plano de fundo da ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } username": [
         "Nome de usuário da ${ BRAND_NAME }"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caracteres"
       ],
       "${ numberOfStars } star": [
         "${ numberOfStars } estrela",
         "${ numberOfStars } estrelas"
+      ],
+      "Abstract background": [
+        "Plano de fundo abstrato"
       ],
       "Add optional details": [
         "Adicionar detalhes opcionais"
@@ -2991,6 +3036,9 @@
       "Background color": [
         "Cor de fundo"
       ],
+      "Beach background": [
+        "Plano de fundo de praia"
+      ],
       "Blurred (next)": [
         "Desfocado (próximo)"
       ],
@@ -3014,6 +3062,9 @@
       ],
       "Code is 6 digits without spaces": [
         "O código é de 6 dígitos sem espaços"
+      ],
+      "Coffee place background": [
+        "Plano de fundo de cafeteria"
       ],
       "Connection Quality": [
         "Qualidade da conexão"
@@ -3123,6 +3174,9 @@
       "Monday to Friday": [
         "De segunda a sexta"
       ],
+      "Mountain background": [
+        "Plano de fundo de montanha"
+      ],
       "Muted": [
         "Silenciado"
       ],
@@ -3131,6 +3185,9 @@
       ],
       "Next": [
         "Próximo"
+      ],
+      "Office background": [
+        "Plano de fundo de escritório"
       ],
       "Operating system": [
         "Sistema operacional"
@@ -3587,6 +3644,9 @@
       "Available Speakers": [
         "Alto-falantes disponíveis"
       ],
+      "Background": [
+        "Plano de fundo"
+      ],
       "Background blur comparison": [
         "Comparação de desfoque de fundo"
       ],
@@ -3643,6 +3703,9 @@
       ],
       "Help center": [
         "Central de ajuda"
+      ],
+      "Host settings": [
+        "Configurações do anfitrião"
       ],
       "Human verification": [
         "Verificação humana"
