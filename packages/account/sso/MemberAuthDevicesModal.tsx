@@ -15,6 +15,7 @@ import Time from '@proton/components/components/time/Time';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useEffectOnce, useLoading } from '@proton/hooks';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcUser } from '@proton/icons/icons/IcUser';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -121,7 +122,7 @@ const MemberAuthDevicesModal = ({ pendingMemberAuthDevice, ...rest }: Props) => 
                         <div className="border border-weak rounded mb-4">
                             <IconItem
                                 padding={true}
-                                icon={getAuthDevicePlatformIconComponent('user')}
+                                icon={getAuthDevicePlatformIconComponent(IcUser)}
                                 title={member.Name}
                                 info={
                                     <>
