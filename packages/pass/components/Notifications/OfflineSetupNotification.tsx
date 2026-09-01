@@ -10,29 +10,20 @@ import { useOfflineSetup } from '../../hooks/auth/useOfflineSetup';
 import { useEpoch } from '../../hooks/useEpoch';
 import { nextOfflinePrompt, shouldPromptOfflineSetup } from '../../lib/settings/offline-prompt';
 import { settingsEditIntent } from '../../store/actions';
-import {
-    selectHasTwoPasswordMode,
-    selectIsSSO,
-    selectOfflineEnabled,
-    selectOfflinePrompt,
-} from '../../store/selectors';
+import { selectOfflineEnabled, selectOfflinePrompt } from '../../store/selectors';
 import { PassFeature } from '../../types/api/features';
 import { getEpoch } from '../../utils/time/epoch';
 import { useOnline } from '../Core/ConnectivityProvider';
-import { usePassCore } from '../Core/PassCoreProvider';
 import { WithFeatureFlag } from '../Core/WithFeatureFlag';
 import { NotificationBanner } from './InAppNotificationBanner';
 
 type Props = { dense?: boolean };
 
 const OfflineSetupBanner: FC<Props> = ({ dense }) => {
-    const { openSettings } = usePassCore();
     const dispatch = useDispatch();
     const online = useOnline();
     const offlineEnabled = useSelector(selectOfflineEnabled);
     const prompt = useSelector(selectOfflinePrompt);
-    const sso = useSelector(selectIsSSO);
-    const twoPwd = useSelector(selectHasTwoPasswordMode);
     const [setup, loading] = useOfflineSetup();
 
     const now = useEpoch(HOUR);
@@ -45,13 +36,7 @@ const OfflineSetupBanner: FC<Props> = ({ dense }) => {
     const onDismiss = () =>
         dispatch(settingsEditIntent('offline', { offlinePrompt: nextOfflinePrompt(prompt, getEpoch()) }, true));
 
-    /** SSO and two-password users need an account re-auth to derive their offline
-     * components. The extension popup cannot host that flow, it would navigate
-     * itself away: redirect these users to the settings page which can. */
-    const onEnable = () => {
-        if (EXTENSION_BUILD && (sso || twoPwd)) openSettings();
-        else setup().catch(noop);
-    };
+    const onEnable = () => setup().catch(noop);
 
     return (
         <NotificationBanner
