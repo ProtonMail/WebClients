@@ -355,9 +355,6 @@
       "Fill password": [
         "Rellenar contraseña"
       ],
-      "Filter vault items": [
-        "Filtrar los elementos de la caja fuerte"
-      ],
       "Generate alias": [
         "Generar alias"
       ],
@@ -694,8 +691,8 @@
       "Skip": [
         "Omitir"
       ],
-      "Sort vault items": [
-        "Ordenar los elementos de la caja fuerte"
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Alguien ha compartido un elemento contigo en ${ PASS_APP_NAME }."
       ],
       "Start from scratch": [
         "Empezar desde cero"
@@ -1308,6 +1305,12 @@
       "PIN codes do not match": [
         "Los códigos PIN no coinciden."
       ],
+      "Regex invalid": [
+        "Expresión regular no válida"
+      ],
+      "Regex unsafe": [
+        "Expresión regular no segura"
+      ],
       "Request timed out": [
         "Tiempo de espera agotado"
       ],
@@ -1373,6 +1376,9 @@
       ],
       "Trashing item failed": [
         "Error al eliminar el elemento"
+      ],
+      "Try reaching out to the link owner.": [
+        "Intenta comunicarte con el propietario del enlace."
       ],
       "Unable to generate an OTP code for this item": [
         "No se puede generar un código OTP para este elemento."
@@ -2030,6 +2036,9 @@
       "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
         "Si no tienes planeado usar el agente SSH en otra cuenta de pago, recuerda desactivar este ajuste antes de cambiar a esa cuenta."
       ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "Si firmas tus commits de Git con tu clave SSH, ejecuta también este comando:"
+      ],
       "Import the CSV file below.": [
         "Importa el archivo CSV a continuación."
       ],
@@ -2648,6 +2657,9 @@
       ],
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
         "Para mantener la dirección de correo electrónico oculta, se puede crear un alias de contacto para enmascarar la dirección."
+      ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "Para que Git funcione con el agente SSH de ${ PASS_APP_NAME }, Git debe usar Windows OpenSSH. Esto se puede hacer ejecutando este comando:"
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Para migrar los datos desde otro gestor de contraseñas, ve al gestor, exporta tus datos y luego cárgalos en ${ PASS_APP_NAME }. Una vez que los datos se han importado, elimina el archivo exportado."
@@ -3997,6 +4009,9 @@
       "Theme": [
         "Tema"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Este elemento es accesible hasta el ${ date } o hasta que se alcance el límite de vistas."
+      ],
       "Tier/Level": [
         "Nivel"
       ],
@@ -5147,9 +5162,6 @@
       ],
       "Setup ${ PASS_APP_NAME } SSH Agent": [
         "Configuración del Agente SSH de ${ PASS_APP_NAME }"
-      ],
-      "Setup offline mode": [
-        "Configurar modo sin conexión"
       ],
       "Share vaults with your team": [
         "Comparte cajas fuertes con tu equipo"

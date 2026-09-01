@@ -361,9 +361,6 @@
       "Fill password": [
         "Fyll lösenord"
       ],
-      "Filter vault items": [
-        "Filtrera valvobjekt"
-      ],
       "Generate alias": [
         "Generera alias"
       ],
@@ -658,9 +655,6 @@
       "See members": [
         "Se medlemmar"
       ],
-      "Select items": [
-        "Välj objekt"
-      ],
       "Send email": [
         "Skicka e-post"
       ],
@@ -706,8 +700,8 @@
       "Skip": [
         "Hoppa över"
       ],
-      "Sort vault items": [
-        "Sortera valvobjekt"
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Någon delade ett objekt med dig på ${ PASS_APP_NAME }"
       ],
       "Start from scratch": [
         "Börja från början"
@@ -911,6 +905,9 @@
       ],
       "Check if your passwords have been exposed": [
         "Kontrollera om dina lösenord har blivit exponerade"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Kontrollerar ${ compromised.progress.completed } av ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Skapa unika lösenord"
@@ -1406,6 +1403,9 @@
       ],
       "Trashing item failed": [
         "Borttagning av objekt misslyckades"
+      ],
+      "Try reaching out to the link owner.": [
+        "Prova att kontakta länkägaren."
       ],
       "Unable to generate an OTP code for this item": [
         "Kan inte generera en OTP-kod för detta objekt"
@@ -4042,6 +4042,9 @@
       "Theme": [
         "Tema"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Detta objekt är tillgängligt fram till ${ date } eller tills visningsgränsen nås."
+      ],
       "Tier/Level": [
         "Nivå"
       ],
@@ -4940,6 +4943,9 @@
       "Domain ownership verification": [
         "Domänägarskapverifiering"
       ],
+      "Enable offline mode": [
+        "Aktivera offlineläge"
+      ],
       "Encrypted import": [
         "Krypterad import"
       ],
@@ -5201,9 +5207,6 @@
       ],
       "Setup ${ PASS_APP_NAME } SSH Agent": [
         "Ställ in ${ PASS_APP_NAME } SSH-agent"
-      ],
-      "Setup offline mode": [
-        "Ställ in offlineläge"
       ],
       "Share vaults with your team": [
         "Dela valv med ditt team"

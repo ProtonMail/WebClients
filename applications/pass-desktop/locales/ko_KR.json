@@ -361,9 +361,6 @@
       "Fill password": [
         "비밀번호 채우기"
       ],
-      "Filter vault items": [
-        "금고 항목 필터링"
-      ],
       "Generate alias": [
         "별칭 생성"
       ],
@@ -658,9 +655,6 @@
       "See members": [
         "회원 보기"
       ],
-      "Select items": [
-        "항목 선택"
-      ],
       "Send email": [
         "이메일 전송"
       ],
@@ -706,8 +700,8 @@
       "Skip": [
         "건너뛰기"
       ],
-      "Sort vault items": [
-        "금고 항목 정렬"
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME }에서 사용자와 타인이 항목을 공유하고 있습니다."
       ],
       "Start from scratch": [
         "처음부터 시작하기"
@@ -1404,6 +1398,9 @@
       ],
       "Trashing item failed": [
         "항목을 휴지통으로 이동하는데 실패"
+      ],
+      "Try reaching out to the link owner.": [
+        "이 링크 소유자에게 연락을 시도하세요.."
       ],
       "Unable to generate an OTP code for this item": [
         "해당 항목으로 OTP 코드를 생성할 수 없습니다"
@@ -2765,6 +2762,9 @@
       "Verification code sent.": [
         "인증 코드가 전송되었습니다."
       ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "${ PASS_SHORT_APP_NAME } 항목을 오프라인 상태에서도 확인합니다. 활성화하려면 비밀번호가 필요합니다."
+      ],
       "Viewer": [
         "보기"
       ],
@@ -4002,6 +4002,9 @@
       "Theme": [
         "테마"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "이 항목은 ${ date }이 되거나 보기 제한에 도달하기 전까지 접근가능합니다."
+      ],
       "Tier/Level": [
         "티어/레벨"
       ],
@@ -4894,6 +4897,9 @@
       "Domain ownership verification": [
         "도메인 소유권 인증"
       ],
+      "Enable offline mode": [
+        "오프라인 모드 활성화"
+      ],
       "Encrypted import": [
         "암호화된 불러오기"
       ],
@@ -5151,9 +5157,6 @@
       ],
       "Setup ${ PASS_APP_NAME } SSH Agent": [
         "${ PASS_APP_NAME } SSH 에이전트 설정"
-      ],
-      "Setup offline mode": [
-        "오프라인 모드 설정"
       ],
       "Share vaults with your team": [
         "내 팀과 금고 공유"

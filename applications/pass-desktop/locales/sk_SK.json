@@ -364,9 +364,6 @@
       "Fill password": [
         "Vyplniť heslo"
       ],
-      "Filter vault items": [
-        "Filtrovať položky trezoru"
-      ],
       "Generate alias": [
         "Vygenerovať alias"
       ],
@@ -661,9 +658,6 @@
       "See members": [
         "Zobraziť členov"
       ],
-      "Select items": [
-        "Vyberte položky"
-      ],
       "Send email": [
         "Odoslať email"
       ],
@@ -709,8 +703,8 @@
       "Skip": [
         "Preskočiť"
       ],
-      "Sort vault items": [
-        "Triediť položky trezoru"
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Niekto s vami zdieľal položku v ${ PASS_APP_NAME }."
       ],
       "Start from scratch": [
         "Začať úplne od začiatku"
@@ -920,6 +914,9 @@
       ],
       "Check if your passwords have been exposed": [
         "Skontrolujte, či vaše heslá neboli zverejnené"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Kontrola ${ compromised.progress.completed } z ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Vytvorte jedinečné heslá"
@@ -1420,6 +1417,9 @@
       "Trashing item failed": [
         "Presun do koša zlyhal"
       ],
+      "Try reaching out to the link owner.": [
+        "Skúste kontaktovať vlastníka odkazu."
+      ],
       "Unable to generate an OTP code for this item": [
         "Pre túto položku nie je možné vygenerovať OTP kód"
       ],
@@ -1882,6 +1882,9 @@
       ],
       "Change your password": [
         "Zmeňte si heslo"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Kontrola ${ compromised.progress.completed } z ${ compromised.progress.total } hesiel"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Potvrdením dodatočného hesla pokračujte v jeho odstraňovaní."
@@ -2848,6 +2851,9 @@
       ],
       "Verification code sent.": [
         "Overovací kód bol odoslaný."
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Prezerajte si svoje položky v ${ PASS_SHORT_APP_NAME } v režime offline. Na aktiváciu je potrebné zadať heslo."
       ],
       "Viewer": [
         "Čitateľ"
@@ -4137,6 +4143,9 @@
       "Theme": [
         "Vzhľad"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Táto položka je prístupná do ${ date } alebo do dosiahnutia limitu zobrazení."
+      ],
       "Tier/Level": [
         "Úroveň členstva"
       ],
@@ -5047,6 +5056,9 @@
       "Domain ownership verification": [
         "Overenie vlastníctva domény"
       ],
+      "Enable offline mode": [
+        "Povoliť offline režim"
+      ],
       "Encrypted import": [
         "Šifrovaný import"
       ],
@@ -5316,9 +5328,6 @@
       ],
       "Setup ${ PASS_APP_NAME } SSH Agent": [
         "Nastaviť SSH agenta pre ${ PASS_APP_NAME }"
-      ],
-      "Setup offline mode": [
-        "Nastavenie offline režimu"
       ],
       "Share vaults with your team": [
         "Zdieľať trezory so svojím tímom"
