@@ -525,6 +525,9 @@
       "Email settings": [
         "電郵設定"
       ],
+      "Emoji": [
+        "表情符號"
+      ],
       "Enable": [
         "啟用"
       ],
@@ -893,6 +896,9 @@
       ],
       "Messages to this recipient": [
         "查看來自此收件者的所有訊息"
+      ],
+      "Migrate": [
+        "遷移"
       ],
       "Minimize composer": [
         "最小化撰寫工具"
@@ -4730,6 +4736,9 @@
       "Cannot set expiration longer than retention policy allows.": [
         "無法設置長於保留政策允許的過期時間。"
       ],
+      "Cannot verify the author of this file": [
+        "無法驗證此檔案的作者"
+      ],
       "Cannot verify who uploaded this file": [
         "無法驗證上傳此檔案的人"
       ],
@@ -4856,6 +4865,9 @@
       "Failed to decrypt bookmark key: ${ message }": [
         "解密書籤金鑰失敗: ${ message }"
       ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "解密書籤密碼失敗: ${ message }"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "加密附件失敗。請再試一次。"
       ],
@@ -4879,6 +4891,9 @@
       ],
       "Forward address is required": [
         "轉寄電郵地址為必填"
+      ],
+      "Image preview not found": [
+        "查無照片預覽"
       ],
       "Image upload failed": [
         "影像上載失敗"
@@ -4949,8 +4964,14 @@
       "Message processing error.": [
         "郵件處理錯誤。"
       ],
+      "Missing inviter email": [
+        "缺少邀請電子郵件"
+      ],
       "Missing key packet": [
         "缺少金鑰封包"
+      ],
+      "Missing organization private key": [
+        "缺少組織私有密鑰"
       ],
       "Missing organization public key": [
         "缺少組織公用密鑰"
@@ -5318,6 +5339,9 @@
       "This item has no image preview": [
         "此項目無可預覽的項目"
       ],
+      "This item is no longer shared": [
+        "此項目已停止共享"
+      ],
       "This item is not shared": [
         "此項目未被共享"
       ],
@@ -5380,6 +5404,9 @@
       ],
       "Wrong password": [
         "錯誤的密碼字元"
+      ],
+      "You can update a public link for your own files only": [
+        "您只能更新您的檔案公開連結"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "您無法將郵件傳送給超過 ${ maxContacts } 位收件人"
@@ -6735,6 +6762,12 @@
       "${ contactsLength } contact": [
         "${ contactsLength } 位聯絡人"
       ],
+      "${ count } email": [
+        "${ count } 封電子郵件"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } 則電子郵件 · ${ names }"
+      ],
       "${ count } email → ${ dest }": [
         "${ count } 則電子郵件 → ${ dest }"
       ],
@@ -7074,6 +7107,9 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "所有附屬資料夾會被刪除。但儲存在 ${ nameDeleted } 資料夾的電子郵件不會被刪除，你可以在所有郵件中找回郵件。"
       ],
+      "Apply labels": [
+        "套用標籤"
+      ],
       "Apply to future messages": [
         "套用至今後的訊息"
       ],
@@ -7289,6 +7325,9 @@
       ],
       "Create a secure cloud for ${ memberCount } member": [
         "替成員創建一個安全 ${ memberCount } 雲端"
+      ],
+      "Create folder": [
+        "新建資料夾"
       ],
       "Create in": [
         "創建在"
@@ -7584,6 +7623,9 @@
       "Forgot password?": [
         "忘記密碼?"
       ],
+      "Found ${ count } contact": [
+        "找到 ${ count } 位聯絡人"
+      ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "嚐鮮體驗版還有 ${ ASSISTANT_TRIAL_TIME_DAYS } 天"
       ],
@@ -7714,7 +7756,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -7814,6 +7856,12 @@
       ],
       "Mark all as read": [
         "全部標記為已讀"
+      ],
+      "Mark all as unread": [
+        "全部標為未讀"
+      ],
+      "Mark as read": [
+        "標記為已讀"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 標誌"
@@ -7949,6 +7997,9 @@
       ],
       "No trackers found": [
         "未發現追蹤程式"
+      ],
+      "No users to display": [
+        "無使用者可顯示"
       ],
       "non-${ MAIL_APP_NAME }": [
         "非 ${ MAIL_APP_NAME }"
@@ -8238,6 +8289,9 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "搜索耗時過長? 請嘗試 ${ dropdownButton } 或 ${ toggleOffButton } 搜索結果。"
       ],
+      "Searched the web": [
+        "搜尋此網頁"
+      ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "立刻使用免費的加密雲端儲存空間保護您的檔案。"
       ],
@@ -8339,6 +8393,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "抱歉，此郵件不存在或已過期。"
+      ],
+      "Star emails": [
+        "加星電子郵件"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "開始共享此內容和使用於線上服務。"
@@ -8636,6 +8693,9 @@
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "若要遷移此使用者，他們需要接受邀請以加入 ${ BRAND_NAME }。"
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "若要遷移此使用者，於您的 ${ provider.adminConsoleName } 取消封存它們的帳號。"
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "若要重新簽署您的聯絡人，我們需要依照您的帳號中可用的加密金鑰清單逐一檢查每一位聯絡人。若找不到匹配時，您的聯絡人將使用主要加密金鑰重新簽署。"
@@ -9722,6 +9782,9 @@
       "Date:": [
         "日期："
       ],
+      "Deals, offers, and marketing emails": [
+        "優惠、促銷、行銷電子郵件"
+      ],
       "Delete": [
         "刪除"
       ],
@@ -10142,6 +10205,9 @@
       "Read": [
         "已讀取"
       ],
+      "Read / export": [
+        "已讀 / 匯出"
+      ],
       "Recipient": [
         "收件者"
       ],
@@ -10186,6 +10252,9 @@
       ],
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "在 ${ CALENDAR_APP_NAME } 中使用預約頁面共享您的空閒時間，並透過 ${ MEET_APP_NAME } 舉辦安全會議。"
+      ],
+      "Sieve script": [
+        "Sieve 文稿"
       ],
       "Sign emails": [
         "簽署電郵"
@@ -10351,6 +10420,9 @@
       ],
       "Without attachment": [
         "不帶附件"
+      ],
+      "Write": [
+        "寫入"
       ],
       "Writing assistant": [
         "撰寫幫手"
@@ -11203,6 +11275,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫工具與擴充存取權"
       ],
       "${ n } calendar": [
         "${ n } 個行事曆"
@@ -12769,6 +12844,9 @@
       "You will soon be redirected to verify your payment.": [
         "將會被重新導向驗證您的付款。"
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "您的貨幣以變更至歐元 (€) 因為 ${ IDEAL_WERO_BRAND_NAME } 僅支援歐元付款。"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "您的貨幣已變更為歐元 (€)，因為 SEPA 銀行轉帳僅支援以歐元付款。"
       ],
@@ -13188,6 +13266,9 @@
       "content key": [
         "內容金鑰"
       ],
+      "hash key": [
+        "雜湊金鑰"
+      ],
       "key": [
         "金鑰"
       ]
@@ -13322,6 +13403,24 @@
       ],
       "SUMMER SALE": [
         "夏季特賣"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "2 TB of secure storage": [
+        "2TB 的安全儲存空間"
+      ],
+      "3 TB of secure storage": [
+        "3TB 的安全儲存空間"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "全部的頂級質子版 ${ DRIVE_SHORT_APP_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 和 ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "12 個月"
       ]
     },
     "Received email icon": {
@@ -13883,6 +13982,11 @@
       ],
       "Private, fast, and organized": [
         "隱私、快速和有組織"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } 則電子郵件 → ${ wakeTime }"
       ]
     },
     "Snooze message": {
@@ -15699,6 +15803,9 @@
       "Invalid verification code": [
         "驗證碼無效"
       ],
+      "Keep this banner hidden?": [
+        "保持隱藏此橫幅？"
+      ],
       "Label as": [
         "套用標籤"
       ],
@@ -15725,6 +15832,9 @@
       ],
       "Make a secure connection your default": [
         "將安全連線設為您的預設設定"
+      ],
+      "Mark all as unread": [
+        "全部標為未讀"
       ],
       "Mark all messages as read": [
         "標記所有訊息為已讀"
