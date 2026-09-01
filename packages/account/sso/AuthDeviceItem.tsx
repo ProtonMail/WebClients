@@ -1,40 +1,53 @@
 import type { ReactNode } from 'react';
 
-import Icon from '@proton/components/components/icon/Icon';
 import Time from '@proton/components/components/time/Time';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcBrandBrave } from '@proton/icons/icons/IcBrandBrave';
+import { IcBrandChrome } from '@proton/icons/icons/IcBrandChrome';
+import { IcBrandFirefox } from '@proton/icons/icons/IcBrandFirefox';
+import { IcBrandSafari } from '@proton/icons/icons/IcBrandSafari';
+import { IcDesktop } from '@proton/icons/icons/IcDesktop';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcMobile } from '@proton/icons/icons/IcMobile';
+import { IcTv } from '@proton/icons/icons/IcTv';
 import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
 import clsx from '@proton/utils/clsx';
 
-const browsers: IconName[] = ['brand-brave', 'brand-safari', 'brand-brave', 'brand-chrome', 'brand-firefox'];
+/** Matched against the lowercased device name, first match wins. */
+const browsers: { match: string; Icon: IconComponent }[] = [
+    { match: 'brave', Icon: IcBrandBrave },
+    { match: 'safari', Icon: IcBrandSafari },
+    { match: 'chrome', Icon: IcBrandChrome },
+    { match: 'firefox', Icon: IcBrandFirefox },
+];
 
-export const getAuthDevicePlatformIcon = (authDeviceOutput: AuthDeviceOutput): IconName | null => {
+export const getAuthDevicePlatformIcon = (authDeviceOutput: AuthDeviceOutput): IconComponent | null => {
     const platform = authDeviceOutput?.Platform;
     if (!platform) {
         return null;
     }
     if (platform.includes('TV')) {
-        return 'tv';
+        return IcTv;
     }
     if (platform === 'iOS' || platform === 'Android') {
-        return 'mobile';
+        return IcMobile;
     }
     if (platform === 'Web') {
         const name = authDeviceOutput.Name?.toLowerCase();
-        const browser = browsers.find((browser) => name.includes(browser.replace('brand-', '')));
+        const browser = browsers.find(({ match }) => name.includes(match));
         if (browser) {
-            return browser;
+            return browser.Icon;
         }
-        return 'globe';
+        return IcGlobe;
     }
-    return 'desktop';
+    return IcDesktop;
 };
 
-export const getAuthDevicePlatformIconComponent = (iconName: IconName | null | undefined) => {
-    if (!iconName) {
+export const getAuthDevicePlatformIconComponent = (Icon: IconComponent | null | undefined) => {
+    if (!Icon) {
         return null;
     }
-    return <Icon className="color-weak" name={iconName} size={5} />;
+    return <Icon className="color-weak" size={5} />;
 };
 
 export const IconItem = ({
