@@ -1,6 +1,5 @@
 import type { WasmApiExchangeRate, WasmBitcoinUnit, WasmFiatCurrencySymbol } from '@proton/andromeda';
 import type { Props as PriceOwnProps } from '@proton/components/components/price/Price';
-import CorePrice from '@proton/components/components/price/Price';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet/constants/bitcoin';
@@ -31,8 +30,6 @@ interface Props extends Omit<PriceOwnProps, 'children' | 'currency' | 'divisor'>
     preventHideAmount?: boolean;
     'data-testid'?: string;
 }
-
-export { CorePrice };
 
 const tryNumberFormat = (currency: string, minimumFractionDigits: number): Intl.NumberFormat => {
     const commonParams = {

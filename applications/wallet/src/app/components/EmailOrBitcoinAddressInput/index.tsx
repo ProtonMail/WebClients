@@ -28,10 +28,6 @@ import { useEmailOrBitcoinAddressInput } from './useEmailOrBitcoinAddressInput';
 
 import './EmailOrBitcoinAddressInput.scss';
 
-export interface RecipientWithBtcAddress extends Recipient {
-    btcAddress: { value?: string; error?: string };
-}
-
 interface Props extends Omit<InputProps, 'label' | 'value' | 'onChange'> {
     onAddRecipients: (recipients: Recipient[]) => void;
     onRemoveRecipient?: (recipient: Recipient) => void;
