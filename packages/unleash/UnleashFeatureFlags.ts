@@ -110,7 +110,6 @@ enum AccountFlag {
     MspEnabled = 'MspEnabled',
     MspCostsTableEnabled = 'MspCostsTableEnabled',
     MSPStorageOptionEnabled = 'MSPStorageOptionEnabled',
-    MSPPassSettingsFullyEnabled = 'MSPPassSettingsFullyEnabled',
     PurchaseAttributionSurveyEnabled = 'PurchaseAttributionSurveyEnabled',
     CancellationFlowFeedbackFirst = 'CancellationFlowFeedbackFirst',
     B2BSidebarRefreshEnabled = 'B2BSidebarRefreshEnabled',
