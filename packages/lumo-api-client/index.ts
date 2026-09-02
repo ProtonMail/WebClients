@@ -118,3 +118,5 @@ export async function quickChat(
 
 export { generateRequestKey } from './core/encryptionParams';
 export { generateRequestId } from './core/encryptionParams';
+export { RequestEncryptionParams } from './core/encryptionParams';
+export { DEFAULT_LUMO_PUB_KEY } from './core/encryption';
