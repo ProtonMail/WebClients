@@ -71,6 +71,18 @@
       ],
       "Trusted contact": [
         "Давераны кантакт"
+      ],
+      "Close account": [
+        "Выдаліць уліковы запіс"
+      ],
+      "Included apps": [
+        "Уключаныя праграмы"
+      ],
+      "Recovery score": [
+        "Ацэнка аднаўлення"
+      ],
+      "Storage space": [
+        "Аб'ём сховішча"
       ]
     },
     "Accounts": {
@@ -1395,6 +1407,9 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Download latest": [
+        "Спампаваць апошнюю версію"
       ]
     },
     "action": {
@@ -5641,6 +5656,12 @@
       ],
       "Zero keys reactivated": [
         "Нуль ключоў паўторна актывавана"
+      ],
+      "Role assignment could not be completed for ${ failedCount } group": [
+        "Не ўдалося выканаць прызначэнне ролі для ${ failedCount } групы",
+        "Не ўдалося выканаць прызначэнне ролі для ${ failedCount } груп",
+        "Не ўдалося выканаць прызначэнне ролі для ${ failedCount } груп",
+        "Не ўдалося выканаць прызначэнне ролі для ${ failedCount } груп"
       ]
     },
     "error": {
@@ -10344,6 +10365,12 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "Available on VPN Professional": [
+        "Даступна на VPN Professional"
+      ],
+      "Exclude them when you deploy the device profile. Support coming soon.": [
+        "Выключыце іх пры разгортванні профілю прылады. Падтрымка функцыі неўзабаве з'явіцца."
       ]
     },
     "info": {
@@ -11537,6 +11564,9 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Allow users to set a backup password": [
+        "Дазволіць карыстальнікам задаваць рэзервовы пароль"
       ]
     },
     "label": {
@@ -12245,6 +12275,9 @@
     "Members table usage": {
       "Setup your own private gateways to monitor VPN connection activity within your organization.": [
         "Наладзьце свае прыватныя шлюзы, каб назіраць за актыўнасцю падключэння па VPN у вашай арганізацыі."
+      ],
+      "Yesterday": [
+        "Учора"
       ]
     },
     "Message": {
@@ -20851,6 +20884,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Пасля паспяховага спраўджання не выдаляйце гэты запіс TXT, бо ён неабходны для пацвярджэння таго, што вы з'яўляецеся ўладальнікам дамена."
+      ]
+    },
+    "organization key reset": {
+      "The organization key is reset": [
+        "Ключ арганізацыі скінуты"
       ]
     }
   }

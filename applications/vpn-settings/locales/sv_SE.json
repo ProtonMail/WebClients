@@ -10239,6 +10239,21 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "Connects you to your destination country through servers physically located elsewhere: ${ joinedSmartRoutingCountries }.": [
+        "Ansluter dig till ditt destinationsland via servrar som är fysiskt placerade någon annanstans: ${ joinedSmartRoutingCountries }."
+      ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "Distribuera det via din MDM (Jamf, Intune …) eller manuellt på varje enhet."
+      ],
+      "Use an existing email or create a free ${ protonDomain } address.": [
+        "Använd en befintlig e-post eller skapa en gratis ${ protonDomain }-adress."
+      ],
+      "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
+        "Din fil inkluderar ett lösenord för varje användare, så dessa konton kommer att skapas med ett lösenord istället för en inbjudningslänk."
+      ],
+      "Your profile and changes to it will be visible to other ${ BRAND_NAME } users.": [
+        "Din profil och ändringar i den kommer att vara synliga för andra ${ BRAND_NAME }-användare."
       ]
     },
     "info": {
@@ -12117,6 +12132,9 @@
       ],
       "Yesterday, ${ time }": [
         "Igår ${ time }"
+      ],
+      "Turn it on to track when and where users connect.": [
+        "Slå på den för att spåra när och var användare ansluter."
       ]
     },
     "Message": {
