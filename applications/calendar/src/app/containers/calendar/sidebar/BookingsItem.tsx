@@ -20,6 +20,7 @@ import SidebarListItemContent from '@proton/components/components/sidebar/Sideba
 import SidebarListItemLabel from '@proton/components/components/sidebar/SidebarListItemLabel';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import { IcCalendarListFilled } from '@proton/icons/icons/IcCalendarListFilled';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
@@ -79,7 +80,7 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
             <SidebarListItem>
                 <Spotlight
                     originalPlacement="right"
-                    closeIcon="cross-big"
+                    closeIcon={<IcCrossBig />}
                     content={<BookingPageLocationSpotlightContent />}
                     show={canShowSpotlight && spotlight.shouldShowSpotlight}
                     onDisplayed={spotlight.onDisplayed}

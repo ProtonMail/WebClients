@@ -1,6 +1,7 @@
 import { type ReactNode, useRef } from 'react';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
@@ -46,7 +47,7 @@ export const SpotlightWithPromo = ({
             borderRadius={spotlightBorderRadius}
             innerClassName={spotlightInnerClassName}
             onClose={spotlightOnClose}
-            closeIcon="cross-big"
+            closeIcon={<IcCrossBig />}
         >
             <div ref={buttonRef}>
                 <PromotionButton
