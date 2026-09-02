@@ -21,8 +21,6 @@ const getMessage = (effect: BackgroundEffect) => {
             return announcementMessages.protonDarkBackgroundApplied();
         case 'protonLight':
             return announcementMessages.protonLightBackgroundApplied();
-        case 'city':
-            return announcementMessages.cityBackgroundApplied();
         case 'office':
             return announcementMessages.officeBackgroundApplied();
         case 'library':
