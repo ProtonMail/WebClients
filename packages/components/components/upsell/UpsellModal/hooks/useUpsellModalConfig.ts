@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { paymentStatusThunk } from '@proton/account/paymentStatus';
 import { plansThunk } from '@proton/account/plans';
+import { previousSubscriptionThunk } from '@proton/account/previousSubscription';
 import { subscriptionThunk } from '@proton/account/subscription';
 import { userThunk } from '@proton/account/user';
 import { useConfig } from '@proton/app-context/useConfig';
@@ -79,11 +80,12 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
             //
             // Fetch dependencies
             //
-            const [user, subscription, plansModel, paymentStatus] = await Promise.all([
+            const [user, subscription, plansModel, paymentStatus, { hasHadSubscription }] = await Promise.all([
                 dispatch(userThunk()),
                 dispatch(subscriptionThunk()),
                 dispatch(plansThunk()),
                 dispatch(paymentStatusThunk()),
+                dispatch(previousSubscriptionThunk()),
             ]);
             const plans = plansModel?.plans ?? [];
 
@@ -109,6 +111,7 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
                         dispatch,
                         currency,
                         getFlag,
+                        hasHadSubscription,
                         paymentsApi,
                         plans,
                         subscription,
