@@ -31,6 +31,7 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import { startMailForegroundTelemetry } from '@proton/shared/lib/telemetry/mailForegroundTelemetry';
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import { CommonFeatureFlag } from '@proton/unleash/Flags';
 import noop from '@proton/utils/noop';
@@ -199,6 +200,8 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
         // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.
         await preloadPromise;
+
+        startMailForegroundTelemetry(silentApi);
 
         const isEncryptedSearchMigrationSystemDisabled = unleashClient.isEnabled(
             'EncryptedSearchMigrationSystemDisabled'

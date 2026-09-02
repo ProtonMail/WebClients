@@ -78,6 +78,7 @@ export enum TelemetryMeasurementGroups {
     vpnTv = 'vpn.any.tv_signin',
     vpnAlwaysOnPolicy = 'vpn.web.always_on_policy',
     vpnB2bUserActivity = 'vpn.web.b2b_user_activity',
+    mailForegroundActivity = 'mail.common.foreground_activity',
 }
 
 export enum TelemetryMailOnboardingEvents {
@@ -310,6 +311,10 @@ export enum TelemetryDesktopEvents {
 export enum TelemetryMailEvents {
     privacy_dropdown_opened = 'privacy_dropdown_opened',
     snooze_open_dropdown = 'snooze_open_dropdown',
+}
+
+export enum TelemetryMailForegroundEvents {
+    app_in_foreground = 'mail_foreground_event',
 }
 
 export enum TelemetryMailSelectAllEvents {
@@ -591,6 +596,7 @@ export type TelemetryEvents =
     | TelemetryMailOnboardingEvents
     | TelemetryMailPagingControlsEvents
     | TelemetryMailBlockquotes
+    | TelemetryMailForegroundEvents
     | TelemetryChangelog
     | TelemetrySecurityCenterEvents
     | TelemetryVPNDrawerEvents
