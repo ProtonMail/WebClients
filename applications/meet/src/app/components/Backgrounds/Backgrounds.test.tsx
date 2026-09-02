@@ -152,7 +152,7 @@ describe('Backgrounds', () => {
 
         expect(screen.getByRole('radio', { name: 'No effect' })).toBeInTheDocument();
         expect(screen.getByRole('radio', { name: 'Blur background' })).toBeInTheDocument();
-        expect(screen.getByRole('radio', { name: 'Office background' })).toBeInTheDocument();
+        expect(screen.getByRole('radio', { name: 'Blurred office background' })).toBeInTheDocument();
     });
 
     it('should mark the no effect option as selected when nothing is applied', () => {
@@ -165,7 +165,10 @@ describe('Backgrounds', () => {
     it('should mark the applied virtual background as selected', () => {
         renderPicker({ appliedBackgroundEffect: 'office' });
 
-        expect(screen.getByRole('radio', { name: 'Office background' })).toHaveAttribute('aria-checked', 'true');
+        expect(screen.getByRole('radio', { name: 'Blurred office background' })).toHaveAttribute(
+            'aria-checked',
+            'true'
+        );
         expect(screen.getByRole('radio', { name: 'No effect' })).toHaveAttribute('aria-checked', 'false');
     });
 
@@ -183,7 +186,7 @@ describe('Backgrounds', () => {
     it('should apply the picked virtual background', async () => {
         const { user, selectBackgroundEffect } = renderPicker();
 
-        await user.click(screen.getByRole('radio', { name: 'Mountain background' }));
+        await user.click(screen.getByRole('radio', { name: 'Mountain landscape background' }));
 
         expect(selectBackgroundEffect).toHaveBeenCalledWith('mountain');
         expect(selectBackgroundEffect).toHaveBeenCalledTimes(1);
@@ -192,7 +195,7 @@ describe('Backgrounds', () => {
     it('should ignore a click on the background already in use', async () => {
         const { user, selectBackgroundEffect } = renderPicker({ appliedBackgroundEffect: 'office' });
 
-        await user.click(screen.getByRole('radio', { name: 'Office background' }));
+        await user.click(screen.getByRole('radio', { name: 'Blurred office background' }));
 
         expect(selectBackgroundEffect).not.toHaveBeenCalled();
     });
@@ -200,7 +203,7 @@ describe('Backgrounds', () => {
     it('should show the image backgrounds with a lazily loaded thumbnail', () => {
         renderPicker();
 
-        const thumbnail = screen.getByRole('radio', { name: 'Office background' }).querySelector('img');
+        const thumbnail = screen.getByRole('radio', { name: 'Blurred office background' }).querySelector('img');
 
         expect(thumbnail).toBeInTheDocument();
         // The full-size image is only fetched once the background is picked, so the picker
@@ -209,7 +212,7 @@ describe('Backgrounds', () => {
     });
 
     it('should clear the virtual background when picking no effect', async () => {
-        const { user, selectBackgroundEffect } = renderPicker({ appliedBackgroundEffect: 'proton' });
+        const { user, selectBackgroundEffect } = renderPicker({ appliedBackgroundEffect: 'protonDark' });
 
         await user.click(screen.getByRole('radio', { name: 'No effect' }));
 
@@ -217,10 +220,10 @@ describe('Backgrounds', () => {
     });
 
     it('should register every click while an effect is still being applied', async () => {
-        const { user, selectBackgroundEffect } = renderPicker({ pendingBackgroundEffect: 'proton' });
+        const { user, selectBackgroundEffect } = renderPicker({ pendingBackgroundEffect: 'protonDark' });
 
-        await user.click(screen.getByRole('radio', { name: 'Office background' }));
-        await user.click(screen.getByRole('radio', { name: 'Mountain background' }));
+        await user.click(screen.getByRole('radio', { name: 'Blurred office background' }));
+        await user.click(screen.getByRole('radio', { name: 'Mountain landscape background' }));
 
         expect(selectBackgroundEffect.mock.calls).toEqual([['office'], ['mountain']]);
     });
@@ -228,7 +231,7 @@ describe('Backgrounds', () => {
     it('should highlight the effect being applied before it lands on the track', () => {
         renderPicker({ appliedBackgroundEffect: 'none', pendingBackgroundEffect: 'office' });
 
-        const officeOption = screen.getByRole('radio', { name: 'Office background' });
+        const officeOption = screen.getByRole('radio', { name: 'Blurred office background' });
         expect(officeOption).toHaveAttribute('aria-checked', 'true');
         expect(officeOption).toHaveAttribute('aria-busy', 'true');
         expect(screen.getByRole('radio', { name: 'No effect' })).toHaveAttribute('aria-checked', 'false');
@@ -283,8 +286,11 @@ describe('Backgrounds', () => {
 
             // The selection lives in the effects group, so the virtual backgrounds are entered at
             // their first option instead.
-            expect(screen.getByRole('radio', { name: `${BRAND_NAME} background` })).toHaveAttribute('tabindex', '0');
-            expect(screen.getByRole('radio', { name: 'Office background' })).toHaveAttribute('tabindex', '-1');
+            expect(screen.getByRole('radio', { name: `Dark ${BRAND_NAME} background` })).toHaveAttribute(
+                'tabindex',
+                '0'
+            );
+            expect(screen.getByRole('radio', { name: 'Blurred office background' })).toHaveAttribute('tabindex', '-1');
         });
 
         it('should not apply the background that tabbing lands on', async () => {
@@ -295,7 +301,7 @@ describe('Backgrounds', () => {
 
             // Moving between sections is not a choice yet, so entering the virtual backgrounds
             // must not swap the first one in behind the user's back.
-            expect(screen.getByRole('radio', { name: `${BRAND_NAME} background` })).toHaveFocus();
+            expect(screen.getByRole('radio', { name: `Dark ${BRAND_NAME} background` })).toHaveFocus();
             expect(selectBackgroundEffect).not.toHaveBeenCalled();
         });
 
@@ -316,15 +322,15 @@ describe('Backgrounds', () => {
         it('should jump to the first and last background of a section', async () => {
             const { user, selectBackgroundEffect } = renderPicker();
 
-            screen.getByRole('radio', { name: `${BRAND_NAME} background` }).focus();
+            screen.getByRole('radio', { name: `Dark ${BRAND_NAME} background` }).focus();
             await user.keyboard('{End}');
 
-            expect(screen.getByRole('radio', { name: 'Coffee place background' })).toHaveFocus();
+            expect(screen.getByRole('radio', { name: 'Beach landscape background' })).toHaveFocus();
 
             await user.keyboard('{Home}');
 
-            expect(screen.getByRole('radio', { name: `${BRAND_NAME} background` })).toHaveFocus();
-            expect(selectBackgroundEffect.mock.calls).toEqual([['coffee'], ['proton']]);
+            expect(screen.getByRole('radio', { name: `Dark ${BRAND_NAME} background` })).toHaveFocus();
+            expect(selectBackgroundEffect.mock.calls).toEqual([['beach'], ['protonDark']]);
         });
 
         it('should not apply anything while the effects are unsupported', async () => {
