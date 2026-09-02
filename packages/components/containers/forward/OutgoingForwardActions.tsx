@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import {
     deleteForwarding,
     requestConfirmation,
@@ -169,7 +170,7 @@ const OutgoingForwardActions = ({
     return (
         <>
             <DropdownActions
-                iconName={viewportWidth['>=large'] ? 'three-dots-vertical' : undefined}
+                iconElement={viewportWidth['>=large'] ? <IcThreeDotsVertical /> : undefined}
                 list={list}
                 size="small"
                 shape="ghost"
