@@ -1,14 +1,12 @@
-import type { MouseEvent, ReactNode } from 'react';
+import type { MouseEvent, ReactElement, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
-import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import { ButtonGroup } from '../button/ButtonGroup';
-import Icon from '../icon/Icon';
 import Info from '../link/Info';
 import DropdownActionsIcon from './DropdownActionsIcon';
 import DropdownMenu from './DropdownMenu';
@@ -45,7 +43,7 @@ export interface Props extends ButtonProps {
     list?: DropdownActionProps[];
     className?: string;
     autoFocus?: boolean;
-    iconName?: IconName;
+    iconElement?: ReactElement;
 }
 
 const DropdownActions = ({
@@ -55,7 +53,7 @@ const DropdownActions = ({
     className = '',
     autoFocus = false,
     size,
-    iconName,
+    iconElement,
     ...restButtonProps
 }: Props) => {
     if (!list.length) {
@@ -81,7 +79,7 @@ const DropdownActions = ({
         );
     }
 
-    if (iconName) {
+    if (iconElement) {
         return (
             <DropdownActionsIcon
                 list={list}
@@ -90,7 +88,12 @@ const DropdownActions = ({
                 disabled={disabled}
                 loading={loading}
                 className={className}
-                iconElement={<Icon name={iconName} alt={c('Title').t`Open actions dropdown`} />}
+                iconElement={
+                    <>
+                        {iconElement}
+                        <span className="sr-only">{c('Title').t`Open actions dropdown`}</span>
+                    </>
+                }
                 {...restButtonProps}
             />
         );
