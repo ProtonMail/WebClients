@@ -1569,6 +1569,15 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Invoice options": [
+        "Opções de fatura"
+      ],
+      "Set invoice email": [
+        "Enviar fatura por e-mail"
+      ],
+      "Template with passwords": [
+        "Modelo com senhas"
       ]
     },
     "action": {
@@ -5657,6 +5666,12 @@
       ],
       "Zero keys reactivated": [
         "Zero chaves reativadas"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Falha ao descriptografar os metadados da revisão"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Falha na assinatura do remetente: ${ errorMessage }"
       ]
     },
     "error": {
@@ -10189,6 +10204,9 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "If Se você perdeu o acesso ao seu aplicativo de autenticação, pode usar um dos 16 códigos de recuperação de backup fornecidos quando configurou a autenticação de dois fatores. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -13788,6 +13806,19 @@
       ],
       "See users": [
         "Ver usuários"
+      ],
+      "Non-private users": [
+        "Usuários não privados"
+      ],
+      "Resetting organization key": [
+        "Redefinindo a chave da organização"
+      ],
+      "Try another way": [
+        "Tentar de outra forma"
+      ],
+      "User (${ n })": [
+        "Usuário (${ n })",
+        "Usuários (${ n })"
       ]
     },
     "Organization logo upload": {
@@ -14233,6 +14264,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Sua assinatura atualmente tem um desconto existente. Mudar para esta nova promoção significa que o desconto atual não será mais aplicado."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Pagar com ${ IDEAL_WERO_BRAND_NAME }"
       ]
     },
     "Payments.Error": {
@@ -19454,6 +19488,9 @@
       ],
       "Your subscriptions": [
         "Suas assinaturas"
+      ],
+      "Set invoice email": [
+        "Enviar fatura por e-mail"
       ]
     },
     "Title for payment methods table": {
@@ -20430,6 +20467,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Após uma verificação bem sucedida, não remova este registro TXT, pois ele é necessário para confirmar que você continua sendo proprietário do domínio."
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Você agora tem acesso ao novo ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     }
   }
