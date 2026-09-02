@@ -244,7 +244,14 @@ export const calculateStatsDelta = (
     };
 };
 
-export const shouldReportStats = (stats: ParticipantQualityStats): boolean => {
+const CPU_LIMITED_WINDOW_RATIO = 0.1;
+const FREEZE_WINDOW_RATIO = 0.02;
+
+const MIN_WINDOW_SECONDS = 1;
+
+export const shouldReportStats = (stats: ParticipantQualityStats, windowSeconds: number): boolean => {
+    const hasUsableWindow = windowSeconds >= MIN_WINDOW_SECONDS;
+
     // Check packet loss rate
     if (stats.packetsReceived !== undefined && stats.packetsLost !== undefined) {
         const totalPackets = stats.packetsReceived + stats.packetsLost;
@@ -270,7 +277,11 @@ export const shouldReportStats = (stats: ParticipantQualityStats): boolean => {
         }
     }
 
-    if (stats.totalFreezesDuration !== undefined && stats.totalFreezesDuration > 10) {
+    if (
+        hasUsableWindow &&
+        stats.totalFreezesDuration !== undefined &&
+        stats.totalFreezesDuration / windowSeconds > FREEZE_WINDOW_RATIO
+    ) {
         return true;
     }
 
@@ -305,8 +316,12 @@ export const shouldReportStats = (stats: ParticipantQualityStats): boolean => {
         return true;
     }
 
-    // Encoder CPU-limited for more than 5s in the reporting interval
-    if (stats.qualityLimitationDurationCpu !== undefined && stats.qualityLimitationDurationCpu > 5) {
+    // Sustained encoder CPU limitation, rather than the transient spikes a tab switch or a screen-share start produces
+    if (
+        hasUsableWindow &&
+        stats.qualityLimitationDurationCpu !== undefined &&
+        stats.qualityLimitationDurationCpu / windowSeconds > CPU_LIMITED_WINDOW_RATIO
+    ) {
         return true;
     }
 
