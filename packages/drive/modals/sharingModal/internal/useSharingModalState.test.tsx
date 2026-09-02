@@ -364,6 +364,7 @@ describe('useSharingModalState', () => {
                 url: 'https://example.com/public-link',
                 customPassword: 'test-password',
                 expirationTime: new Date('2025-04-25T12:17:56.000Z'),
+                isExpired: true,
             });
         });
 
@@ -606,6 +607,30 @@ describe('useSharingModalState', () => {
                 url: 'https://example.com/public-link',
                 customPassword: 'test-password',
                 expirationTime: new Date('2025-04-25T12:17:56.000Z'),
+                isExpired: true,
+            });
+        });
+    });
+
+    it.each([
+        ['no expiration time', undefined],
+        ['a future expiration time', new Date(Date.now() + 24 * 60 * 60 * 1000)],
+    ])('should expose isExpired as false when public link has %s', async (_, expirationTime) => {
+        const shareResultWithExpiration = {
+            ...mockShareResult,
+            urlAccess: { ...mockShareResult.urlAccess, expirationTime },
+        };
+        when(mockDrive.getSharingInfo).calledWith(mockNodeUid).mockResolvedValue(shareResultWithExpiration);
+
+        const { result } = renderHook(() => useSharingModalState(mockProps));
+
+        await waitFor(() => {
+            expect(result.current.publicLink).toEqual({
+                role: MemberRole.Viewer,
+                url: 'https://example.com/public-link',
+                customPassword: 'test-password',
+                expirationTime,
+                isExpired: false,
             });
         });
     });

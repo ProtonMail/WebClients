@@ -439,6 +439,9 @@ export const useSharingModalState = ({
                   url: sharingInfo.urlAccess.url,
                   customPassword: sharingInfo.urlAccess.customPassword,
                   expirationTime: sharingInfo.urlAccess.expirationTime,
+                  isExpired: sharingInfo.urlAccess.expirationTime
+                      ? sharingInfo.urlAccess.expirationTime < new Date()
+                      : false,
               }
             : undefined,
         directMembers,
