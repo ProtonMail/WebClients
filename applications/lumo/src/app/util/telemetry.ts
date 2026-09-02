@@ -80,8 +80,8 @@ export const sendFileUploadFromDriveEvent = () => {
     sendLumoComposerEvent('file-upload-drive');
 };
 
-export const sendVoiceEntryClickEvent = () => {
-    sendLumoComposerEvent('voice-entry');
+export const sendVoiceEntryEvent = (action: 'start' | 'cancel' | 'accept') => {
+    sendLumoComposerEvent('voice-entry', { action });
 };
 
 /**

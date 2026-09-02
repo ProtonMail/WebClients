@@ -4,12 +4,13 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import DictationControl from '@proton/lumo-ui/DictationControl';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import type { ImageAspectRatio } from '../../types';
 import { ComposerMode } from '../../types';
 import { getAcceptAttributeString } from '../../util/filetypes';
-import { sendFileUploadEvent, sendVoiceEntryClickEvent } from '../../util/telemetry';
+import { sendFileUploadEvent, sendVoiceEntryEvent } from '../../util/telemetry';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
 import AspectRatioDropdown from './AspectRatioDropdown';
 import { ModelModeDropdown } from './ModelModeDropdown';
@@ -106,6 +107,13 @@ export interface ComposerToolbarProps {
     onCreateImageModeChange: (enabled: boolean) => void;
     canUseAgents?: boolean;
     isAgent?: boolean;
+    isDictating: boolean;
+    isDictationConnected?: boolean;
+    dictationError?: boolean;
+    onToggleDictation: () => void;
+    onCancelDictation: () => void;
+    onAcceptDictation: () => void;
+    getDictationAudioLevel: () => number;
 }
 
 export const ComposerToolbar = ({
@@ -120,14 +128,40 @@ export const ComposerToolbar = ({
     onCreateImageModeChange,
     canUseAgents = false,
     isAgent = false,
+    isDictating,
+    isDictationConnected = false,
+    dictationError = false,
+    onToggleDictation,
+    onCancelDictation,
+    onAcceptDictation,
+    getDictationAudioLevel,
 }: ComposerToolbarProps) => {
     const toolsButtonRef = useRef<HTMLButtonElement>(null);
     const [showToolsMenu, setShowToolsMenu] = useState(false);
-    const { imageTools: isImageToolsFlagEnabled, externalTools: isToolsFlagEnabled } = useLumoFlags();
+    const {
+        imageTools: isImageToolsFlagEnabled,
+        externalTools: isToolsFlagEnabled,
+        dictationV2: isDictationV2Enabled,
+    } = useLumoFlags();
 
     const handleToolsButtonClick = useCallback(() => {
         setShowToolsMenu((prev) => !prev);
     }, []);
+
+    const handleVoiceEntryClick = useCallback(() => {
+        sendVoiceEntryEvent('start');
+        onToggleDictation();
+    }, [onToggleDictation]);
+
+    const handleCancelDictation = useCallback(() => {
+        sendVoiceEntryEvent('cancel');
+        onCancelDictation();
+    }, [onCancelDictation]);
+
+    const handleAcceptDictation = useCallback(() => {
+        sendVoiceEntryEvent('accept');
+        onAcceptDictation();
+    }, [onAcceptDictation]);
 
     const uploadSectionProps = { onFilesSelected, onBrowseDrive, onDrawSketch, fileUploadMode, isAgent };
 
@@ -189,20 +223,35 @@ export const ComposerToolbar = ({
                 )}
             </div>
             <div className="flex flex-row flex-nowrap items-center gap-2 mr-2">
-                <div className={clsx('flex flex-row flex-nowrap gap-2 color-hint hidden')} id="voice-entry-mobile">
-                    <Button
-                        icon
-                        id="voice-entry-mobile-button"
-                        className="border-0 shrink-0 inline-flex flex-row flex-nowrap gap-1 items-center"
-                        shape="ghost"
-                        size="small"
-                        onClick={sendVoiceEntryClickEvent}
+                <div
+                    className={clsx('flex flex-row flex-nowrap gap-2 color-hint', !isDictationV2Enabled && 'hidden')}
+                    id="voice-entry-mobile"
+                >
+                    <DictationControl
+                        isDictating={isDictating}
+                        isConnected={isDictationConnected}
+                        hasError={dictationError}
+                        getAudioLevel={getDictationAudioLevel}
+                        onCancel={handleCancelDictation}
+                        onAccept={handleAcceptDictation}
                     >
-                        <LumoIcon name="Mic" size={16} />
-                    </Button>
+                        <Button
+                            icon
+                            id="voice-entry-mobile-button"
+                            className="border-0 shrink-0 inline-flex flex-row flex-nowrap gap-1 items-center"
+                            shape="ghost"
+                            size="small"
+                            onClick={handleVoiceEntryClick}
+                            title={c('collider_2025: Button').t`Dictate`}
+                            aria-label={c('collider_2025: Button').t`Dictate`}
+                        >
+                            <LumoIcon name="Mic" size={16} />
+                        </Button>
+                    </DictationControl>
                 </div>
                 {isImageToolsFlagEnabled &&
                     !isAgent &&
+                    !isDictating &&
                     (isCreateImageMode ? (
                         <AspectRatioDropdown selectedRatio={selectedAspectRatio} onSelect={onAspectRatioChange} />
                     ) : (
