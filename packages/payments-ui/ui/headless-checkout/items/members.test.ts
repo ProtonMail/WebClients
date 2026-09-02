@@ -3,16 +3,8 @@ import { ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { PlansMap } from '@proton/payments/core/plan/interface';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 
-import { getStaticCouponConfig } from '../../coupon-config/get-static-coupon-config';
-import type { CouponConfig } from '../../coupon-config/interface';
 import { getHeadlessCheckout } from '../get-headless-checkout';
 import { defaultApp as app, makeAddon, makeCheckResult, makePlan, makePricing } from './test-helpers';
-
-// Decouple the integration test from live (short-lived) campaign configs: mock getStaticCouponConfig and supply
-// a test-only hidden coupon, so removing a real summer-sale config never breaks this test.
-jest.mock('../../coupon-config/get-static-coupon-config', () => ({
-    getStaticCouponConfig: jest.fn(),
-}));
 
 const HIDDEN_SALE_COUPON = 'TEST-HIDDEN-SALE';
 
@@ -79,8 +71,8 @@ describe('createMembersItem', () => {
         });
 
         const members = result.getItem('members');
-        // No addons + couponConfig.hidden → uses withDiscountPerMonth
-        expect(members.pricePerAllPerMonth).toBe(result.checkoutUi.withDiscountPerMonth);
+        // No addons + invisible coupon → uses withDiscountMembersPerMonth
+        expect(members.pricePerAllPerMonth).toBe(result.checkoutUi.withDiscountMembersPerMonth);
     });
 
     it('should use membersPerMonth by default', () => {
@@ -132,11 +124,6 @@ describe('createMembersItem', () => {
     });
 
     it('shows Duo at 11.99/mo and Lumo at 9.99/mo for a hidden summer-sale coupon', () => {
-        // Test-only hidden coupon, standing in for a short-lived campaign config (e.g. summer sale).
-        jest.mocked(getStaticCouponConfig).mockImplementation((couponCode) =>
-            couponCode === HIDDEN_SALE_COUPON ? ({ hidden: true } as unknown as CouponConfig) : undefined
-        );
-
         // Duo (multi-user personal, 2 seats): 179.88/yr → 14.99/mo for the whole plan.
         const duoPlan = makePlan({
             Name: PLANS.DUO,

@@ -1,4 +1,4 @@
-import { CYCLE, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
+import { COUPON_CODES, CYCLE, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
 import type { Pricing } from '@proton/payments/core/interface';
 import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import { SubscriptionMode, TaxMode } from '@proton/payments/core/subscription/constants';
@@ -111,6 +111,8 @@ describe('getHeadlessCheckout', () => {
                 'renewalNotice',
                 'taxInclusive',
                 'vatReverseCharge',
+                'planAmountWithDiscountPerMonth',
+                'baseRenewAmount',
             ]);
         });
     });
@@ -236,6 +238,81 @@ describe('createHeadlessCheckoutContextInner', () => {
         });
 
         expect(context.isTrial).toBe(true);
+    });
+
+    describe('hasInvisibleCoupon', () => {
+        it('should be false by default', () => {
+            const plansMap: PlansMap = { [PLANS.MAIL]: mailPlan };
+            const context = createHeadlessCheckoutContextInner({
+                planIDs: { [PLANS.MAIL]: 1 },
+                plansMap,
+                checkResult: makeCheckResult(),
+                app,
+            });
+
+            expect(context.hasInvisibleCoupon).toBe(false);
+        });
+
+        it('should be true when couponConfig.hidden is set', () => {
+            const plansMap: PlansMap = { [PLANS.MAIL]: mailPlan };
+            const context = createHeadlessCheckoutContextInner({
+                planIDs: { [PLANS.MAIL]: 1 },
+                plansMap,
+                checkResult: makeCheckResult(),
+                couponConfig: { hidden: true },
+                app,
+            });
+
+            expect(context.hasInvisibleCoupon).toBe(true);
+        });
+
+        it('should be true for a Black Friday 2025 coupon even without a hidden config', () => {
+            const plansMap: PlansMap = { [PLANS.MAIL]: mailPlan };
+            const context = createHeadlessCheckoutContextInner({
+                planIDs: { [PLANS.MAIL]: 1 },
+                plansMap,
+                checkResult: makeCheckResult({
+                    Coupon: {
+                        Code: COUPON_CODES.BLACK_FRIDAY_2025,
+                        Description: 'BF promo',
+                        MaximumRedemptionsPerUser: null,
+                    },
+                }),
+                app,
+            });
+
+            expect(context.hasInvisibleCoupon).toBe(true);
+        });
+
+        it('should be false for a non-BF coupon', () => {
+            const plansMap: PlansMap = { [PLANS.MAIL]: mailPlan };
+            const context = createHeadlessCheckoutContextInner({
+                planIDs: { [PLANS.MAIL]: 1 },
+                plansMap,
+                checkResult: makeCheckResult({
+                    Coupon: {
+                        Code: 'REGULAR',
+                        Description: 'regular promo',
+                        MaximumRedemptionsPerUser: null,
+                    },
+                }),
+                app,
+            });
+
+            expect(context.hasInvisibleCoupon).toBe(false);
+        });
+
+        it('should be false when Coupon is null even if couponConfig is undefined', () => {
+            const plansMap: PlansMap = { [PLANS.MAIL]: mailPlan };
+            const context = createHeadlessCheckoutContextInner({
+                planIDs: { [PLANS.MAIL]: 1 },
+                plansMap,
+                checkResult: makeCheckResult({ Coupon: null }),
+                app,
+            });
+
+            expect(context.hasInvisibleCoupon).toBe(false);
+        });
     });
 
     it('should allow explicit isTrial override', () => {
