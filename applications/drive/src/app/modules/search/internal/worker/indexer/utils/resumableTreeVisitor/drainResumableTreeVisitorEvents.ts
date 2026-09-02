@@ -2,6 +2,7 @@ import type { NodeEntity } from '@proton/drive';
 
 import { Logger } from '../../../../shared/Logger';
 import { isRepairableError } from '../../../../shared/errors';
+import { getWasmMemoryBytes } from '../../../index/IndexRegistry';
 import type { IndexKind } from '../../../index/IndexRegistry';
 import type { IndexEntry } from '../../indexEntry';
 import type { TaskContext } from '../../tasks/BaseTask';
@@ -51,8 +52,11 @@ export async function drainResumableTreeVisitorEvents(
     const commit = async () => {
         const startCommitTime = performance.now();
         await session.commit();
+        const wasmMemoryBytes = getWasmMemoryBytes();
+        const wasmMemoryMb =
+            wasmMemoryBytes !== undefined ? `${(wasmMemoryBytes / 1024 / 1024).toFixed(1)}MB` : 'unknown';
         Logger.info(
-            `search-log: committed ${pendingInserts} entries in ${Math.round(performance.now() - startCommitTime)}ms`
+            `search-log: committed ${pendingInserts} entries in ${Math.round(performance.now() - startCommitTime)}ms, wasmMemory=${wasmMemoryMb}`
         );
     };
 

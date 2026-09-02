@@ -20,7 +20,8 @@ export class WriteSession {
         writer: Write,
         private readonly blobStore: IndexBlobStore,
         private readonly release: () => void,
-        private readonly onStats: (documentCount: number) => Promise<void>
+        private readonly onStats: (documentCount: number) => Promise<void>,
+        private readonly onCommitComplete: (durationMs: number) => void
     ) {
         this.writer = writer;
     }
@@ -81,6 +82,7 @@ export class WriteSession {
         if (this.writer === null) {
             throw new InvalidIndexerState("WriteSession: can't commit, session already released");
         }
+        const commitStartedAt = Date.now();
         let execution: Execution;
         try {
             execution = this.writer.commit();
@@ -152,6 +154,8 @@ export class WriteSession {
             // would ever be freed again.
             this.blobStore.endWrite();
         }
+        // Only reached once the whole commit above completed without throwing.
+        this.onCommitComplete(Date.now() - commitStartedAt);
     }
 }
 
@@ -161,6 +165,7 @@ export class WriteSession {
  */
 export class IndexWriter {
     private active = false;
+    private lastCommitDurationMs: number | undefined;
 
     constructor(
         private readonly searchFoundationEngine: Engine,
@@ -192,8 +197,16 @@ export class IndexWriter {
                 } catch (error) {
                     Logger.warn(`IndexWriter: failed to persist document count: ${String(error)}`);
                 }
+            },
+            (durationMs) => {
+                this.lastCommitDurationMs = durationMs;
             }
         );
+    }
+
+    /** How long the last successful commit took, in ms, or `undefined` if none has happened yet. */
+    getLastCommitDurationMs(): number | undefined {
+        return this.lastCommitDurationMs;
     }
 }
 

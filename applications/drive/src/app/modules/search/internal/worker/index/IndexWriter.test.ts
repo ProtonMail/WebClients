@@ -347,6 +347,45 @@ describe('IndexWriter integration', () => {
         });
     });
 
+    describe('getLastCommitDurationMs', () => {
+        it('is undefined before any commit', () => {
+            expect(writer.getLastCommitDurationMs()).toBeUndefined();
+        });
+
+        it('is set to a non-negative duration after a successful commit', async () => {
+            const session = writer.startWriteSession();
+            session.insert(makeTestIndexEntry('doc-1'));
+            await session.commit();
+
+            expect(writer.getLastCommitDurationMs()).toBeGreaterThanOrEqual(0);
+        });
+
+        it('is overwritten by each successive successful commit', async () => {
+            const session1 = writer.startWriteSession();
+            session1.insert(makeTestIndexEntry('doc-1'));
+            await session1.commit();
+            expect(writer.getLastCommitDurationMs()).toBeGreaterThanOrEqual(0);
+
+            const session2 = writer.startWriteSession();
+            session2.insert(makeTestIndexEntry('doc-2'));
+            await session2.commit();
+
+            expect(writer.getLastCommitDurationMs()).toBeGreaterThanOrEqual(0);
+        });
+
+        it('is not set when commit throws', async () => {
+            jest.spyOn(Write.prototype, 'commit').mockImplementationOnce(() => {
+                throw new Error('WASM commit failed');
+            });
+
+            const session = writer.startWriteSession();
+            session.insert(makeTestIndexEntry('doc-1'));
+            await expect(session.commit()).rejects.toThrow(SearchLibraryError);
+
+            expect(writer.getLastCommitDurationMs()).toBeUndefined();
+        });
+    });
+
     describe('engine faults classify as permanent, never as repairable', () => {
         it('a raw throw from engine.write() surfaces as a SearchLibraryError', () => {
             jest.spyOn(Engine.prototype, 'write').mockImplementationOnce(() => {
