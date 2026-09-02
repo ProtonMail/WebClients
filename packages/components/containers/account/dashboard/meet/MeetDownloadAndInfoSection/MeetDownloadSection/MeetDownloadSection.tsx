@@ -35,7 +35,7 @@ const MeetDownloadSection = () => {
                         downloadButtons: [
                             {
                                 title: () => c('Download').t`Download on the Apple App Store`,
-                                link: 'https://apps.apple.com/app/id6745089447',
+                                link: 'https://apps.apple.com/app/apple-store/id6745089447?pt=106513916&ct=wa_set_btn&mt=8',
                                 style: 'appstore' as const,
                                 image: appleAppStoreImage,
                             },
@@ -51,7 +51,7 @@ const MeetDownloadSection = () => {
                         downloadButtons: [
                             {
                                 title: () => c('Download').t`Get it on Google Play`,
-                                link: 'https://play.google.com/store/apps/details?id=proton.android.meet',
+                                link: 'https://play.google.com/store/apps/details?id=proton.android.meet&referrer=utm_source\%3Dproton.me\%26utm_medium\%3Dweb\%26utm_campaign\%3Dwa_set_btn',
                                 style: 'appstore' as const,
                                 image: googlePlayStoreImage,
                             },

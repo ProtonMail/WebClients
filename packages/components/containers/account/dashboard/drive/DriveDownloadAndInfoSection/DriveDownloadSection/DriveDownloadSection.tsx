@@ -31,7 +31,7 @@ const DriveDownloadSection = () => {
                         downloadButtons: [
                             {
                                 title: () => c('Download').t`Download on the Apple App Store`,
-                                link: 'https://apps.apple.com/app/id1509667851',
+                                link: 'https://apps.apple.com/app/apple-store/id1509667851?pt=106513916&ct=wa_set_btn&mt=8',
                                 style: 'appstore' as const,
                                 image: appleAppStoreImage,
                             },
@@ -65,7 +65,7 @@ const DriveDownloadSection = () => {
                         downloadButtons: [
                             {
                                 title: () => c('Download').t`Get it on Google Play`,
-                                link: 'https://play.google.com/store/apps/details?id=me.proton.android.drive',
+                                link: 'https://play.google.com/store/apps/details?id=me.proton.android.drive&referrer=utm_source\%3Dproton.me\%26utm_medium\%3Dweb\%26utm_campaign\%3Dwa_set_btn',
                                 style: 'appstore' as const,
                                 image: googlePlayStoreImage,
                             },

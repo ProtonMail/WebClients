@@ -25,13 +25,13 @@ export const WALLET_CLIENTS: { [key in WalletClientKeys]: WalletClient } = {
     [WalletClientKeys.Android]: {
         title: 'Android',
         icon: 'brand-android',
-        link: 'https://play.google.com/store/apps/details?id=me.proton.wallet.android',
+        link: 'https://play.google.com/store/apps/details?id=me.proton.wallet.android&referrer=utm_source\%3Dproton.me\%26utm_medium\%3Dweb\%26utm_campaign\%3Dwa_set_btn',
         items: androidLinks,
     },
     [WalletClientKeys.iOS]: {
         title: 'iOS',
         icon: 'brand-apple',
-        link: 'https://apps.apple.com/app/proton-wallet-secure-btc/id6479609548',
+        link: 'https://apps.apple.com/app/apple-store/id6479609548?pt=106513916&ct=wa_set_btn&mt=8',
     },
 } as const;
 
