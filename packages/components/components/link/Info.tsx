@@ -5,15 +5,17 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import type { IconComponentProps } from '@proton/icons/component';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
+import { IcQuestionCircle } from '@proton/icons/icons/IcQuestionCircle';
+import { IcQuestionCircleFilled } from '@proton/icons/icons/IcQuestionCircleFilled';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import Icon from '../icon/Icon';
-import type { IconProps } from '../icon/Icon';
-
 import './Info.scss';
 
-interface Props extends Omit<IconProps, 'title' | 'name'> {
+interface Props extends Omit<IconComponentProps, 'title' | 'name' | 'rotate'> {
     originalPlacement?: ComponentPropsWithoutRef<typeof Tooltip>['originalPlacement'];
     url?: string;
     title?: ReactNode;
@@ -55,16 +57,16 @@ const Info = ({
     };
 
     const safeTitle = title || '';
-    const icon = () => {
+    const Icon = (() => {
         if (questionMark && !filled) {
-            return 'question-circle';
+            return IcQuestionCircle;
         } else if (questionMark && filled) {
-            return 'question-circle-filled';
+            return IcQuestionCircleFilled;
         } else if (!questionMark && filled) {
-            return 'info-circle-filled';
+            return IcInfoCircleFilled;
         }
-        return 'info-circle';
-    };
+        return IcInfoCircle;
+    })();
 
     if (!title && url) {
         return (
@@ -78,7 +80,6 @@ const Info = ({
             >
                 <Icon
                     className={clsx(colorPrimary && 'color-primary', className)}
-                    name={icon()}
                     alt={c('Action').t`More info: ${safeTitle}`}
                     {...rest}
                 />
@@ -111,7 +112,6 @@ const Info = ({
             >
                 <Icon
                     className={clsx(colorPrimary && 'color-primary', className)}
-                    name={icon()}
                     alt={c('Action').t`More info: ${safeTitle}`}
                     {...rest}
                 />

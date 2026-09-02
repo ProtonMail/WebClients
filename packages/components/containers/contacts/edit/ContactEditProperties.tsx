@@ -4,8 +4,15 @@ import { useSortable } from '@dnd-kit/react/sortable';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import type { IconComponent } from '@proton/icons/component';
+import { IcCandlesCake } from '@proton/icons/icons/IcCandlesCake';
+import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcMapPin } from '@proton/icons/icons/IcMapPin';
+import { IcNote } from '@proton/icons/icons/IcNote';
+import { IcPhone } from '@proton/icons/icons/IcPhone';
 import { IcTextAlignJustify } from '@proton/icons/icons/IcTextAlignJustify';
-import type { IconName } from '@proton/icons/types';
+import { IcUser } from '@proton/icons/icons/IcUser';
 import { OTHER_INFORMATION_FIELDS } from '@proton/shared/lib/contacts/constants';
 import {
     compareVCardPropertyByPref,
@@ -21,21 +28,20 @@ import isTruthy from '@proton/utils/isTruthy';
 import move from '@proton/utils/move';
 
 import { SortableList } from '../../../components/dnd/SortableList';
-import Icon from '../../../components/icon/Icon';
 import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import type { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
 import type { ContactImageProps } from '../modals/ContactImageModal';
 import EncryptedIcon from '../view/EncryptedIcon';
 import ContactEditProperty from './ContactEditProperty';
 
-const ICONS: { [key: string]: IconName } = {
-    fn: 'user',
-    email: 'envelope',
-    tel: 'phone',
-    adr: 'map-pin',
-    bday: 'candles-cake',
-    note: 'note',
-    other: 'info-circle',
+const ICONS: { [key: string]: IconComponent } = {
+    fn: IcUser,
+    email: IcEnvelope,
+    tel: IcPhone,
+    adr: IcMapPin,
+    bday: IcCandlesCake,
+    note: IcNote,
+    other: IcInfoCircle,
 };
 
 interface Props {
@@ -100,7 +106,7 @@ const ContactEditProperties = (
     };
 
     const title = field ? TITLES[field] : TITLES.other;
-    const iconName = field ? ICONS[field] : ICONS.other;
+    const Icon = field ? ICONS[field] : ICONS.other;
     const fields = field ? [field] : OTHER_INFORMATION_FIELDS;
     const excluded = [
         getSortedProperties(vCardContact, 'fn')[0]?.uid,
@@ -227,7 +233,7 @@ const ContactEditProperties = (
     return (
         <div className="border-bottom mb-4" data-testid={title}>
             <h3 className="mb-4 flex flex-nowrap items-center shrink-0">
-                <Icon className="mr-1 shrink-0" name={iconName} />
+                <Icon className="mr-1 shrink-0" />
                 <span className="ml-0.5 mr-2">{title}</span>
                 {((field && !['fn', 'email'].includes(field)) || field === undefined) && (
                     <EncryptedIcon

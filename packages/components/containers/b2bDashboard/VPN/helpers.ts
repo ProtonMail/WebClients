@@ -1,3 +1,7 @@
+import { IcArrowsSwapRight } from '@proton/icons/icons/IcArrowsSwapRight';
+import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
+import { IcLockOpenFilled2 } from '@proton/icons/icons/IcLockOpenFilled2';
+import { IcLockPenFilled } from '@proton/icons/icons/IcLockPenFilled';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
 import { ALL_EVENTS_DEFAULT } from '../Pass/helpers';
@@ -29,13 +33,13 @@ export const getVPNEventColor = (event: string) => {
 export const getVPNEventIcon = (event: string) => {
     switch (event) {
         case 'session_end':
-            return 'lock-open-filled-2';
+            return IcLockOpenFilled2;
         case 'session_start':
-            return 'lock-filled';
+            return IcLockFilled;
         case 'session_roaming':
-            return 'arrows-swap-right';
+            return IcArrowsSwapRight;
         default:
-            return 'lock-pen-filled';
+            return IcLockPenFilled;
     }
 };
 

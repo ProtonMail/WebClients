@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { useEditBillingAddressModal } from '@proton/payments-ui/ui/billing-address/containers/useEditBillingAddressModal';
 import { InvoiceDocument } from '@proton/payments/core/api/api';
 import { InvoiceOwner, InvoiceState } from '@proton/payments/core/constants';
@@ -18,7 +19,6 @@ import { ButtonGroup } from '../../components/button/ButtonGroup';
 import DropdownMenu from '../../components/dropdown/DropdownMenu';
 import DropdownMenuButton from '../../components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '../../components/dropdown/SimpleDropdown';
-import Icon from '../../components/icon/Icon';
 import useModalState from '../../components/modalTwo/useModalState';
 import Pagination from '../../components/pagination/Pagination';
 import { Tabs } from '../../components/tabs/Tabs';
@@ -172,11 +172,7 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
                         >
                             <span>{text}</span>
                             {isSelected && (
-                                <Icon
-                                    name="checkmark"
-                                    className="shrink-0 color-primary ml-2"
-                                    data-testid={`${key}Selected`}
-                                />
+                                <IcCheckmark className="shrink-0 color-primary ml-2" data-testid={`${key}Selected`} />
                             )}
                         </DropdownMenuButton>
                     ))}

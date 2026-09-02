@@ -1,9 +1,13 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
+import { IcAlias } from '@proton/icons/icons/IcAlias';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcLocks } from '@proton/icons/icons/IcLocks';
+import { IcPassLaptop } from '@proton/icons/icons/IcPassLaptop';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
 
-import Icon from '../../components/icon/Icon';
 import type { FetchedBreaches } from './models';
 
 interface Props {
@@ -35,26 +39,28 @@ interface Props {
 // };
 
 const getIcon = (code: string) => {
+    const className = 'shrink-0 mt-0 mr-2';
+
     if (code === 'password_source') {
-        return 'key';
+        return <IcKey className={className} />;
     }
     if (code === 'password_exposed') {
-        return 'key';
+        return <IcKey className={className} />;
     }
     if (code === '2fa') {
-        return 'locks';
+        return <IcLocks className={className} />;
     }
     if (code === 'aliases') {
-        return 'alias';
+        return <IcAlias className={className} />;
     }
     if (code === 'stay_alert') {
-        return 'exclamation-circle';
+        return <IcExclamationCircle className={className} />;
     }
     if (code === 'passwords_all') {
-        return 'key';
+        return <IcKey className={className} />;
     }
     if (code === 'clean_devices') {
-        return 'pass-laptop';
+        return <IcPassLaptop className={className} />;
     }
 };
 
@@ -64,11 +70,11 @@ interface ActionProps {
     link?: string;
 }
 const Action = ({ code, action, link }: ActionProps) => {
-    const iconName = getIcon(code);
+    const icon = getIcon(code);
 
     return (
         <div className="flex flex-nowrap dropdown-item-button relative py-3 px-4">
-            {iconName && <Icon name={iconName} className="shrink-0 mt-0 mr-2" />}
+            {icon}
             {link ? (
                 <Href href={link} className="flex-1 expand-click-area color-inherit text-no-decoration">
                     {action}
