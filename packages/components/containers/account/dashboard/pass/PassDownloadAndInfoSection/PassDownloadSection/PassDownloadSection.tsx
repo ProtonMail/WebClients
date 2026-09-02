@@ -6,14 +6,13 @@ import appleAppStoreImage from '@proton/styles/assets/img/vpn/download-section/a
 import googlePlayStoreImage from '@proton/styles/assets/img/vpn/download-section/google-play-store.svg';
 
 import DashboardDownloadSection from '../../../shared/DashboardDownloadSection/DashboardDownloadSection';
-import androidPreview from './images/download-preview-android.png';
 import bravePreview from './images/download-preview-brave.png';
 import chromePreview from './images/download-preview-chrome.png';
 import edgePreview from './images/download-preview-edge.png';
 import firefoxPreview from './images/download-preview-firefox.png';
-import iosPreview from './images/download-preview-ios.png';
 import linuxPreview from './images/download-preview-linux.png';
 import macosPreview from './images/download-preview-macos.png';
+import mobilePreview from './images/download-preview-mobile.png';
 import safariPreview from './images/download-preview-safari.png';
 import windowsPreview from './images/download-preview-windows.png';
 
@@ -116,11 +115,11 @@ const downloadData = [
                 title: () => c('Download').t`iPhone/iPad`,
                 icon: 'brand-apple' as IconName,
                 content: {
-                    image: iosPreview,
+                    image: mobilePreview,
                     downloadButtons: [
                         {
                             title: () => c('Download').t`Download on the Apple App Store`,
-                            link: 'https://apps.apple.com/app/apple-store/id6443490629',
+                            link: 'https://apps.apple.com/app/apple-store/id6443490629?pt=106513916&ct=wa_set_btn&mt=8',
                             style: 'appstore' as const,
                             image: appleAppStoreImage,
                         },
@@ -135,11 +134,11 @@ const downloadData = [
                 title: () => c('Download').t`Android`,
                 icon: 'brand-android' as IconName,
                 content: {
-                    image: androidPreview,
+                    image: mobilePreview,
                     downloadButtons: [
                         {
                             title: () => c('Download').t`Get it on Google Play`,
-                            link: 'https://play.google.com/store/apps/details?id=proton.android.pass',
+                            link: 'https://play.google.com/store/apps/details?id=proton.android.pass&referrer=utm_source\%3Dproton.me\%26utm_medium\%3Dweb\%26utm_campaign\%3Dwa_set_btn',
                             style: 'appstore' as const,
                             image: googlePlayStoreImage,
                         },
