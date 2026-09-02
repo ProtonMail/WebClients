@@ -40,7 +40,6 @@ import { type ChargebeeIdealModalHandles, useChargebeeIdeal } from './useChargeb
 import { useChargebeePaypal } from './useChargebeePaypal';
 import type { OnMethodChangedHandler } from './useMethods';
 import { useMethods } from './useMethods';
-import { usePaymentsApi } from './usePaymentsApi';
 import { useSavedChargebeeMethod } from './useSavedChargebeeMethod';
 import { useSepaDirectDebit } from './useSepaDirectDebit';
 
@@ -294,7 +293,6 @@ export const usePaymentFacade = (
     );
 
     const paymentContext = usePaymentContext();
-    const { paymentsApi } = usePaymentsApi(api);
 
     const methods = useMethods(
         {
@@ -305,7 +303,6 @@ export const usePaymentFacade = (
             onMethodChanged,
             paymentMethods,
             paymentStatus,
-            paymentsApi,
             selectedPlanName,
             billingAddress,
             enableSepa,
