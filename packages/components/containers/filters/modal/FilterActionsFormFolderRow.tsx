@@ -4,14 +4,17 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import type { IconComponent } from '@proton/icons/component';
+import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcFolder } from '@proton/icons/icons/IcFolder';
-import type { IconName } from '@proton/icons/types';
+import { IcInbox } from '@proton/icons/icons/IcInbox';
+import { IcSpam } from '@proton/icons/icons/IcSpam';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { buildTreeview, formatFolderName, hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import clsx from '@proton/utils/clsx';
 
-import Icon from '../../../components/icon/Icon';
 import useModalState from '../../../components/modalTwo/useModalState';
 import Option from '../../../components/option/Option';
 import SearchableSelect from '../../../components/selectTwo/SearchableSelect';
@@ -20,6 +23,13 @@ import type { LabelModel } from '../../labels/modals/EditLabelModal';
 import EditLabelModal from '../../labels/modals/EditLabelModal';
 import { getDefaultFolderOptions, noFolderOption, noFolderValue } from '../constants';
 import type { Actions } from '../interfaces';
+
+const SYSTEM_FOLDER_ICONS: Record<string, IconComponent> = {
+    archive: IcArchiveBox,
+    inbox: IcInbox,
+    spam: IcSpam,
+    trash: IcTrash,
+};
 
 interface Props {
     folders: Folder[];
@@ -114,10 +124,12 @@ const FilterActionsFormFolderRow = ({ folders, actions, handleUpdateActions }: P
 
         let selectedFolder;
 
-        if (['archive', 'inbox', 'spam', 'trash'].includes(moveTo?.folder)) {
+        const SystemFolderIcon = SYSTEM_FOLDER_ICONS[moveTo.folder];
+
+        if (SystemFolderIcon) {
             selectedFolder = (
                 <span className="inline-flex items-center mr-8">
-                    <Icon name={moveTo.folder as IconName} className="mr-2" />
+                    <SystemFolderIcon className="mr-2" />
                     {options.find((o) => o.value === moveTo?.folder)?.text}
                 </span>
             );

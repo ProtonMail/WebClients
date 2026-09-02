@@ -1,11 +1,11 @@
-import type { ComponentPropsWithoutRef, ComponentType } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 
+import type { IconComponent } from '@proton/icons/component';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcCircleRadioEmpty } from '@proton/icons/icons/IcCircleRadioEmpty';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { IcMinusCircleFilled } from '@proton/icons/icons/IcMinusCircleFilled';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
-import type { IconSize } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import SkeletonLoader from '../../components/skeletonLoader/SkeletonLoader';
@@ -21,13 +21,8 @@ export enum StatusBadgeStatus {
     Danger = 'danger',
 }
 
-interface IconProps {
-    className?: string;
-    size?: IconSize;
-}
-
 interface StatusConfig {
-    Icon: ComponentType<IconProps>;
+    Icon: IconComponent;
     colorClassName: string;
 }
 
@@ -43,7 +38,7 @@ const STATUS_CONFIG: Record<StatusBadgeStatus, StatusConfig> = {
 export interface StatusBadgeProps extends ComponentPropsWithoutRef<'span'> {
     status: StatusBadgeStatus;
     text?: string;
-    icon?: ComponentType<IconProps>;
+    icon?: IconComponent;
     loading?: boolean;
 }
 
