@@ -8,9 +8,6 @@ import { ShareType } from '../_shares/interface';
 import useShare from '../_shares/useShare';
 import { isLinkReadOnly } from './utils/useIsActiveLinkReadOnly';
 
-/**
- * DRIVE-DEVS: Do not remove export. Used by drive-store.
- */
 export type PathItem = {
     linkId: string;
     name: string;
@@ -40,8 +37,6 @@ const generateLinkPath = async (
 
 /**
  * useLinkPath provides paths to links.
- * Ideally, this should not be used directly, but be part of useFolderView
- * (for breadcrumb), for example.
  */
 export default function useLinkPath() {
     const { getLink } = useLink();

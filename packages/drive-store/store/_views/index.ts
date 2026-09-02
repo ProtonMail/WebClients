@@ -1,4 +1,3 @@
-export { default as useFolderView } from './useFolderView';
 export { default as useLinkPath } from './useLinkPath';
 export { default as useShareURLView } from './useShareURLView';
 export { default as useShareMemberView } from './useShareMemberView';
