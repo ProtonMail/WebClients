@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 import { useState } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -8,7 +8,6 @@ import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
-import type { IconName } from '@proton/icons/types';
 import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
@@ -19,7 +18,6 @@ import DropdownButton from '../../../../../components/dropdown/DropdownButton';
 import DropdownMenu from '../../../../../components/dropdown/DropdownMenu';
 import DropdownMenuLink from '../../../../../components/dropdown/DropdownMenuLink';
 import { DropdownSizeUnit } from '../../../../../components/dropdown/utils';
-import type { Tab } from '../../../../../components/tabs/Tabs';
 import { Tabs } from '../../../../../components/tabs/Tabs';
 import { getTelemetryUserTier } from '../../../../../helpers/getTelemetryUserTier';
 import { mapTelemetryOsVersionWithStore } from '../../../../../helpers/mapTelemetryOsVersionWithStore';
@@ -52,7 +50,7 @@ interface TabContent {
 
 interface CategoryTab {
     title: () => string;
-    icon: IconName;
+    icon: ReactElement;
     content: TabContent;
 }
 
@@ -200,15 +198,7 @@ const CategoryTabs = ({ category, app }: { category: Category; app: APP_NAMES })
         ),
     }));
 
-    return (
-        <Tabs
-            tabs={subTabs as Tab[]}
-            variant="underline"
-            fullWidth
-            value={activeTabIndex}
-            onChange={setActiveTabIndex}
-        />
-    );
+    return <Tabs tabs={subTabs} variant="underline" fullWidth value={activeTabIndex} onChange={setActiveTabIndex} />;
 };
 
 interface Props {
@@ -228,7 +218,7 @@ const DashboardDownloadSection = ({ downloadConfig, app }: Props) => {
         <DashboardCard>
             <DashboardCardContent>
                 <Tabs
-                    tabs={categoryTabs as Tab[]}
+                    tabs={categoryTabs}
                     variant="modern"
                     fullWidth
                     value={activeCategoryIndex}
