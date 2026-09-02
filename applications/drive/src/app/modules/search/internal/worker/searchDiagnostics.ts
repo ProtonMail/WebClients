@@ -1,7 +1,7 @@
 import { Logger } from '../shared/Logger';
 import type { SearchDB } from '../shared/SearchDB';
 import type { SearchDiagnostics } from '../shared/searchMetrics';
-import { IndexKind } from './index/IndexRegistry';
+import { IndexKind, getWasmMemoryBytes } from './index/IndexRegistry';
 import type { IndexRegistry } from './index/IndexRegistry';
 
 const roundMb = (mb: number): number => Math.round(mb * 1000) / 1000;
@@ -29,7 +29,9 @@ export async function gatherSearchDiagnostics(
         // peek(), not get(): a diagnostics read must never build an engine that doesn't exist yet.
         // Undefined here just means no in-memory cache state to report, e.g. when the failure
         // happened before an engine was ever built.
-        const cacheStats = indexRegistry?.peek(IndexKind.MAIN)?.blobStore.getCacheStats();
+        const indexInstance = indexRegistry?.peek(IndexKind.MAIN);
+        const cacheStats = indexInstance?.blobStore.getCacheStats();
+        const wasmMemoryBytes = getWasmMemoryBytes();
 
         return {
             blobCount,
@@ -41,6 +43,8 @@ export async function gatherSearchDiagnostics(
             blobCacheEntryCount: cacheStats?.blobsCount,
             blobCachePendingFreeCount: cacheStats?.pendingFreeBlobsCount,
             blobCacheSizesMb: cacheStats?.blobSizesInMb.map((mb) => mb.toFixed(3)).join('/'),
+            wasmMemoryMb: wasmMemoryBytes !== undefined ? roundMb(wasmMemoryBytes / 1024 / 1024) : undefined,
+            lastCommitDurationMs: indexInstance?.indexWriter.getLastCommitDurationMs(),
         };
     } catch (error) {
         Logger.warn(`gatherSearchDiagnostics: failed to gather search diagnostics: ${String(error)}`);

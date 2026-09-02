@@ -46,6 +46,8 @@ const FAKE_DIAGNOSTICS: SearchDiagnostics = {
     blobCacheEntryCount: undefined,
     blobCachePendingFreeCount: undefined,
     blobCacheSizesMb: undefined,
+    wasmMemoryMb: undefined,
+    lastCommitDurationMs: undefined,
 };
 
 const triggerTransient = (taskUid: string) =>

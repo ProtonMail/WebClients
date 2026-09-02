@@ -44,6 +44,10 @@ export type SearchDiagnostics = {
     blobCacheSizesMb: string | undefined;
     // Number of blob cache being pending release.
     blobCachePendingFreeCount: number | undefined;
+    // WASM linear memory high-water mark, in MB. Undefined before the module has loaded.
+    wasmMemoryMb: number | undefined;
+    // How long the last successful index commit took, in ms, undefined if none yet.
+    lastCommitDurationMs: number | undefined;
 };
 
 const PERMANENT_ERROR_METRIC_KIND: Record<
@@ -117,6 +121,8 @@ function reportSearchDiagnosticsBreadcrumb(
             `blobCache=${diagnostics.blobCacheEntryCount ?? 'unknown'}` +
             (diagnostics.blobCachePendingFreeCount ? ` (+${diagnostics.blobCachePendingFreeCount} pending free)` : '') +
             (diagnostics.blobCacheSizesMb ? `, blobSizesMb=${diagnostics.blobCacheSizesMb}` : '') +
+            `, wasmMemory=${diagnostics.wasmMemoryMb !== undefined ? `${diagnostics.wasmMemoryMb.toFixed(1)}MB` : 'unknown'}` +
+            `, lastCommit=${diagnostics.lastCommitDurationMs !== undefined ? `${diagnostics.lastCommitDurationMs}ms` : 'never'}` +
             (taskAttemptCount !== undefined ? `, attempt=${taskAttemptCount}` : '')
     );
     return taskAttemptCount !== undefined ? { ...diagnostics, taskAttemptCount } : { ...diagnostics };

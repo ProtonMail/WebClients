@@ -61,6 +61,8 @@ describe('gatherSearchDiagnostics', () => {
             blobCacheEntryCount: undefined,
             blobCachePendingFreeCount: undefined,
             blobCacheSizesMb: undefined,
+            wasmMemoryMb: undefined,
+            lastCommitDurationMs: undefined,
         });
     });
 
@@ -101,5 +103,7 @@ describe('gatherSearchDiagnostics', () => {
         expect(diagnostics?.blobCachePendingFreeCount).toBe(expectedStats.pendingFreeBlobsCount);
         expect(diagnostics?.blobCacheEntryCount).toBeGreaterThan(0);
         expect(diagnostics?.blobCacheSizesMb).toBe(expectedStats.blobSizesInMb.map((mb) => mb.toFixed(3)).join('/'));
+        expect(diagnostics?.wasmMemoryMb).toBeGreaterThan(0);
+        expect(diagnostics?.lastCommitDurationMs).toBe(instance.indexWriter.getLastCommitDurationMs());
     });
 });
