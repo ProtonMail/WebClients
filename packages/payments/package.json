@@ -5,6 +5,7 @@
     "sideEffects": false,
     "exports": {
         "./*": "./*.ts",
+        "./testing/signup": "./testing/signup.ts",
         "./testing/buildSubscription": "./testing/buildSubscription.ts",
         "./testing/makeEntitlements": "./testing/makeEntitlements.ts",
         "./testing/data-plans": "./testing/data-plans.ts",

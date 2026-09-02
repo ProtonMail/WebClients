@@ -32,7 +32,7 @@ const TrialSummary = ({ loading, options }: { loading: boolean; options: Optimis
         <>
             <div className="mx-3 flex flex-column gap-2">
                 <div className="flex justify-space-between text-bold text-rg">
-                    <span>{c('b2b_trials_2025_Label').t`Amount due after trial`}</span>
+                    <span>{c('Checkout row').t`Amount due after trial`}</span>
                     <span>
                         {loading ? (
                             loaderNode
@@ -105,7 +105,7 @@ const PaymentSummary = ({ model, options, loadingPaymentDetails, giftCode, planI
                         label={item.labelWithoutQuantity}
                         numberOfItems={item.totalUsers}
                         price={initialLoading ? loaderNode : item.pricePerOnePerMonthElement}
-                        subline={<>/ {c('Checkout summary').t`month`}</>}
+                        subline={<>/ {c('Checkout row').t`month`}</>}
                     />
                 );
             },
@@ -160,10 +160,10 @@ const PaymentSummary = ({ model, options, loadingPaymentDetails, giftCode, planI
             amountDue: (item) => {
                 const amountDueLabel = (() => {
                     if (headless.isTrial) {
-                        return c('b2b_trials_2025_Label').t`Amount due now`;
+                        return c('Checkout row').t`Amount due now`;
                     }
                     if (headless.isB2B) {
-                        return c('Info').t`Amount due`;
+                        return c('Checkout row').t`Amount due`;
                     }
 
                     return getTotalBillingText(item.cycle, item.planIDs, {
@@ -203,7 +203,7 @@ const PaymentSummary = ({ model, options, loadingPaymentDetails, giftCode, planI
 
     return (
         <div className="flex flex-column gap-3">
-            <div className="color-weak text-semibold mx-3">{c('Info').t`Summary`}</div>
+            <div className="color-weak text-semibold mx-3">{c('Checkout row').t`Summary`}</div>
             {(() => {
                 if (!planInformation) {
                     return null;

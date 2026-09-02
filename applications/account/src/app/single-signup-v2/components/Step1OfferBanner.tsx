@@ -9,7 +9,6 @@ import type { IconComponent } from '@proton/icons/component';
 import { IcBagPercent } from '@proton/icons/icons/IcBagPercent';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { IcUser } from '@proton/icons/icons/IcUser';
-import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
@@ -37,7 +36,6 @@ interface Step1OfferBannerProps {
     hasPlanSelector: boolean;
     audience: Audience;
     isSignupTrial: boolean;
-    checkout: PaymentsCheckoutUI;
 }
 
 export const Step1OfferBanner = ({
@@ -53,7 +51,6 @@ export const Step1OfferBanner = ({
     hasPlanSelector,
     audience,
     isSignupTrial,
-    checkout,
 }: Step1OfferBannerProps): ReactNode => {
     if (isPorkbunPayment) {
         // Early exit for Porkbun, Porkbun has its own offer banner.
@@ -119,6 +116,12 @@ export const Step1OfferBanner = ({
         );
         return wrap(IcHourglass, textLaunchOffer);
     }
+
+    const checkout = getCheckoutUi({
+        planIDs: options.planIDs,
+        plansMap: model.plansMap,
+        checkResult: options.checkResult,
+    });
 
     const hasBFCoupon =
         getHas2025OfferCoupon(options.checkResult.Coupon?.Code) || getHas2025OfferCoupon(signupParameters.coupon);

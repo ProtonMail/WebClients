@@ -1,10 +1,10 @@
 import { c, msgid } from 'ttag';
 
-import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
 import type { Cycle, PlanIDs } from '@proton/payments/core/interface';
 import { isLifetimePlanSelected } from '@proton/payments/core/plan/helpers';
 
-import type { HeadlessCheckoutContextInner, HeadlessCheckoutCouponConfig } from '../get-headless-checkout';
+import type { HeadlessCheckoutContextInner } from '../get-headless-checkout';
+import { computePlanAmount } from '../plan-amount-helpers';
 import type { BaseLineItem } from './base-line-item';
 
 export const PLAN_AMOUNT_LINE_ITEM_TYPE = 'planAmount' as const;
@@ -12,43 +12,28 @@ export const PLAN_AMOUNT_LINE_ITEM_TYPE = 'planAmount' as const;
 export interface PlanAmountLineItem
     extends BaseLineItem<typeof PLAN_AMOUNT_LINE_ITEM_TYPE>, ReturnType<typeof formatPlanAmount> {}
 
-/**
- * Computes the net total amount for the cycle, taking trial and hidden coupon
- * config into account.
- */
-function computePlanAmount(
-    checkout: PaymentsCheckoutUI,
-    isTrial: boolean,
-    couponConfig: HeadlessCheckoutCouponConfig | undefined
-): number {
-    const { checkResult, withDiscountPerCycle } = checkout;
-
-    if (checkResult.Amount === 0 && isTrial) {
-        return checkout.regularAmountPerCycleOptimistic;
-    }
-
-    if (couponConfig?.hidden) {
-        return withDiscountPerCycle;
-    }
-
-    return checkResult.Amount;
-}
-
-function computeTotalBillingText(cycle: Cycle, planIDs: PlanIDs): string {
+function computeTotalBillingText(cycle: Cycle, planIDs: PlanIDs, isTaxExclusive: boolean = false): string {
     if (isLifetimePlanSelected(planIDs)) {
+        if (isTaxExclusive) {
+            return c('Checkout row').t`Subtotal`;
+        }
+
         return c('Checkout row').t`Total`;
     }
 
-    const n = cycle;
-    return c('Checkout row').ngettext(msgid`Total for ${n} month`, `Total for ${n} months`, n);
+    if (isTaxExclusive) {
+        return c('Checkout row').ngettext(msgid`Subtotal for ${cycle} month`, `Subtotal for ${cycle} months`, cycle);
+    }
+
+    return c('Checkout row').ngettext(msgid`Total for ${cycle} month`, `Total for ${cycle} months`, cycle);
 }
 
 function formatPlanAmount(ctx: HeadlessCheckoutContextInner) {
-    const { cycle, planIDs, isPaidPlan, currency } = ctx;
+    const { cycle, planIDs, isPaidPlan, isTaxExclusive, currency } = ctx;
     return {
         /** e.g. "Total for 12 months" or "Total" for lifetime */
-        label: computeTotalBillingText(cycle, planIDs),
-        amount: computePlanAmount(ctx.checkoutUi, ctx.isTrial, ctx.couponConfig),
+        label: computeTotalBillingText(cycle, planIDs, isTaxExclusive),
+        amount: computePlanAmount(ctx),
         currency,
         visible: isPaidPlan,
     };

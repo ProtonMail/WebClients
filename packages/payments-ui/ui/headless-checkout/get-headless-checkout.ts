@@ -10,6 +10,7 @@ import { getIsB2BAudienceFromPlan, isLifetimePlanSelected } from '@proton/paymen
 import type { PlansMap } from '@proton/payments/core/plan/interface';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
 import { SubscriptionMode, TaxMode } from '@proton/payments/core/subscription/constants';
+import { getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
 import type {
     Subscription,
     SubscriptionCheckForbiddenReason,
@@ -19,6 +20,11 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { ADDONS_LINE_ITEM_TYPE, type AddonLineItem, createAddonItem } from './items/addons';
 import { AMOUNT_DUE_LINE_ITEM_TYPE, type AmountDueLineItem, createAmountDueItem } from './items/amount-due';
+import {
+    BASE_RENEW_AMOUNT_LINE_ITEM_TYPE,
+    type BaseRenewAmount,
+    createBaseRenewAmountItem,
+} from './items/base-renew-amount';
 import { BILLING_CYCLE_LINE_ITEM_TYPE, type BillingCycleLineItem, createBillingCycleItem } from './items/billing-cycle';
 import { COUPON_LINE_ITEM_TYPE, type CouponLineItem, createCouponItem } from './items/coupon';
 import { CREDIT_LINE_ITEM_TYPE, type CreditLineItem, createCreditItem } from './items/credit';
@@ -32,6 +38,11 @@ import {
     type PlanAmountWithDiscountLineItem,
     createNetAmountItem,
 } from './items/plan-amount-with-discount';
+import {
+    PLAN_AMOUNT_WITH_DISCOUNT_PER_MONTH_LINE_ITEM_TYPE,
+    type PlanAmountWithDiscountPerMonthLineItem,
+    createPlanAmountWithDiscountPerMonthItem,
+} from './items/plan-amount-with-discount-per-month';
 import { PRORATION_LINE_ITEM_TYPE, type ProrationLineItem, createProrationItem } from './items/proration';
 import {
     RENEWAL_NOTICE_LINE_ITEM_TYPE,
@@ -45,7 +56,7 @@ import type { VatReverseChargeLineItem } from './items/vat-reverse-charge';
 import { VAT_REVERSE_CHARGE_LINE_ITEM_TYPE, createVatReverseChargeItem } from './items/vat-reverse-charge';
 import { formatTax } from './tax-helpers';
 
-export type CheckoutLineItem =
+export type CheckoutLineItemMandatory =
     | BillingCycleLineItem
     | MembersLineItem
     | AddonLineItem
@@ -64,13 +75,18 @@ export type CheckoutLineItem =
     | TaxInclusiveLineItem
     | VatReverseChargeLineItem;
 
+export type CheckoutLineItemOptional = PlanAmountWithDiscountPerMonthLineItem | BaseRenewAmount;
+
+export type CheckoutLineItem = CheckoutLineItemMandatory | CheckoutLineItemOptional;
 /**
  * A record that maps each CheckoutLineItem type discriminant to its
  * corresponding concrete item. Every key is always present, so lookups
  * never return `undefined`.
  */
 type CheckoutLineItems = {
-    [K in CheckoutLineItem['type']]: Extract<CheckoutLineItem, { type: K }>;
+    [K in CheckoutLineItemMandatory['type']]: Extract<CheckoutLineItemMandatory, { type: K }>;
+} & {
+    [K in CheckoutLineItemOptional['type']]: Extract<CheckoutLineItemOptional, { type: K }>;
 };
 
 /**
@@ -98,7 +114,7 @@ export interface GetHeadlessCheckoutParams {
      */
     isTrial?: boolean;
     couponConfig?: HeadlessCheckoutCouponConfig;
-    app: APP_NAMES;
+    app: APP_NAMES | undefined;
     /** Current subscription - used for renewal notice and start-date line items. */
     subscription?: Subscription | FreeSubscription;
     /** Payment forbidden reason - used to determine renewal notice visibility. */
@@ -131,9 +147,16 @@ export function createHeadlessCheckoutContextInner(params: GetHeadlessCheckoutPa
     // Tax flags
     const isTaxExclusive = tax?.inclusive === TaxMode.EXCLUSIVE && tax.amount > 0;
     const isTaxInclusive = tax?.inclusive === TaxMode.INCLUSIVE;
+    const isTaxReverseCharged = checkResult.TaxMode === TaxMode.REVERSE_CHARGE;
 
     // Plan title with baked-in fallbacks
     const planTitle = isFreePlan ? c('Payments.plan_name').t`Free` : checkoutUi.planTitle;
+
+    // Other flags
+    const hasCredits = !!checkResult.Credit;
+    const hasProration = !!checkResult.Proration;
+    const hasDiscount = !!checkResult.CouponDiscount;
+    const hasInvisibleCoupon = couponConfig?.hidden || getHas2025OfferCoupon(checkResult.Coupon?.Code ?? null);
 
     return {
         // Original params (minus isTrial which is resolved)
@@ -156,6 +179,7 @@ export function createHeadlessCheckoutContextInner(params: GetHeadlessCheckoutPa
         isTrial,
         isTaxExclusive,
         isTaxInclusive,
+        isTaxReverseCharged,
         /** Plan title with baked-in fallbacks */
         planTitle,
         planName: checkoutUi.planName,
@@ -164,6 +188,10 @@ export function createHeadlessCheckoutContextInner(params: GetHeadlessCheckoutPa
         cycle: checkoutUi.cycle,
         optimisticCheckResult,
         optimisticCheckoutUi,
+        hasCredits,
+        hasProration,
+        hasDiscount,
+        hasInvisibleCoupon,
     };
 }
 
@@ -190,6 +218,8 @@ export function getHeadlessCheckout(params: GetHeadlessCheckoutParams) {
         [RENEWAL_NOTICE_LINE_ITEM_TYPE]: createRenewalNoticeItem(ctx),
         [TAX_INCLUSIVE_LINE_ITEM_TYPE]: createTaxInclusiveItem(ctx),
         [VAT_REVERSE_CHARGE_LINE_ITEM_TYPE]: createVatReverseChargeItem(ctx),
+        [PLAN_AMOUNT_WITH_DISCOUNT_PER_MONTH_LINE_ITEM_TYPE]: createPlanAmountWithDiscountPerMonthItem(ctx),
+        [BASE_RENEW_AMOUNT_LINE_ITEM_TYPE]: createBaseRenewAmountItem(ctx),
     };
 
     const isB2B = getIsB2BAudienceFromPlan(ctx.checkoutUi.planName);
@@ -206,6 +236,7 @@ export function getHeadlessCheckout(params: GetHeadlessCheckoutParams) {
 
         isTaxInclusive: ctx.isTaxInclusive,
         isTaxExclusive: ctx.isTaxExclusive,
+        isTaxReverseCharged: ctx.isTaxReverseCharged,
 
         items,
 
@@ -221,5 +252,10 @@ export function getHeadlessCheckout(params: GetHeadlessCheckoutParams) {
         planIDs: ctx.planIDs,
 
         modifiers: ctx.modifiers,
+
+        hasCredits: ctx.hasCredits,
+        hasProration: ctx.hasProration,
+        hasDiscount: ctx.hasDiscount,
+        hasInvisibleCoupon: ctx.hasInvisibleCoupon,
     };
 }
