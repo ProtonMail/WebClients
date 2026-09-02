@@ -8,6 +8,7 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 
 import BYOEFlowModals from '../components/Modals/BYOEFlowModals';
 import MainModal from '../components/Modals/MainModal';
+import type { OAuthModalViewsOverride } from '../components/Modals/OAuth/OAuthModalViews';
 import SyncLostListener from './SyncLostListener';
 import { event, eventLoopV6 } from './actions';
 import { DriveSdkContextProvider } from './driveContext';
@@ -16,6 +17,8 @@ import { useEasySwitchDispatch, useGenerateEasySwitchStore } from './store';
 interface Props {
     children: JSX.Element | (JSX.Element | null)[] | null;
     drive?: ProtonDriveClient;
+    /** Lets a host app (e.g. Drive) swap in its own views for some OAuthModal steps. */
+    oauthViews?: OAuthModalViewsOverride;
 }
 
 const EasySwitchEventListener = ({ children }: Props) => {
@@ -47,14 +50,14 @@ const EasySwitchEventListener = ({ children }: Props) => {
     );
 };
 
-const EasySwitchStoreProvider = ({ children, drive }: Props) => {
+const EasySwitchStoreProvider = ({ children, drive, oauthViews }: Props) => {
     const easySwitchStore = useGenerateEasySwitchStore();
 
     return (
         <DriveSdkContextProvider value={drive}>
             <Provider store={easySwitchStore}>
                 <EasySwitchEventListener>{children}</EasySwitchEventListener>
-                <MainModal />
+                <MainModal oauthViews={oauthViews} />
                 <BYOEFlowModals />
             </Provider>
         </DriveSdkContextProvider>
