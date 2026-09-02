@@ -8,6 +8,7 @@ import SidebarList from '@proton/components/components/sidebar/SidebarList';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useLocalState from '@proton/components/hooks/useLocalState';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 
@@ -46,7 +47,7 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
             <SidebarList>
                 <Spotlight
                     originalPlacement="right"
-                    closeIcon="cross-big"
+                    closeIcon={<IcCrossBig />}
                     content={<IntroduceBookingsSpotlightContent />}
                     show={spotlight.shouldShowSpotlight}
                     onDisplayed={spotlight.onDisplayed}

@@ -18,14 +18,13 @@ import { usePopperState } from '@proton/atoms/Popper/usePopperState';
 import { shouldShowSideRadius } from '@proton/atoms/Popper/utils';
 import { Portal } from '@proton/atoms/Portal/Portal';
 import { useCombinedRefs } from '@proton/hooks';
-import type { IconName } from '@proton/icons/types';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import discoverIllustration from '@proton/styles/assets/img/illustrations/spotlight-binoculars.svg';
 import newIllustration from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
 import useIsClosing from '../../hooks/useIsClosing';
-import Icon from '../icon/Icon';
 
 type SpotlightType = 'discover' | 'new';
 
@@ -37,7 +36,7 @@ export interface SpotlightProps {
     onClose?: MouseEventHandler;
     originalPlacement?: PopperPlacement;
     hasClose?: boolean;
-    closeIcon?: IconName;
+    closeIcon?: ReactElement;
     /**
      * Setting the anchor is optional, it will default on the root child
      */
@@ -78,7 +77,7 @@ const Spotlight = ({
     isAboveModal,
     availablePlacements,
     borderRadius = 'md',
-    closeIcon = 'cross',
+    closeIcon = <IcCross />,
 }: PropsWithChildren<SpotlightProps>) => {
     const [uid] = useState(generateUID('spotlight'));
 
@@ -189,7 +188,8 @@ const Spotlight = ({
                             title={closeText}
                             onClick={handleClose}
                         >
-                            <Icon name={closeIcon} alt={closeText} />
+                            {closeIcon}
+                            <span className="sr-only">{closeText}</span>
                         </Button>
                     )}
                 </div>
