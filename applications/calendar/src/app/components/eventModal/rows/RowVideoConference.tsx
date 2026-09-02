@@ -155,7 +155,7 @@ export const RowVideoConference = ({
             {shouldDisplayAddButton && (
                 <>
                     <IconRow
-                        icon="video-camera"
+                        icon={<IcVideoCamera />}
                         title={c('Label').t`Video conference`}
                         className="flex flex-nowrap items-center justify-space-between w-full"
                     >

@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { removeVideoConfInfoFromDescription } from '@proton/calendar-video-conferencing/videoConferencing/videoConfHelpers';
 import IconRow from '@proton/components/components/iconRow/IconRow';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
+import { IcTextAlignLeft } from '@proton/icons/icons/IcTextAlignLeft';
 import { DESCRIPTION_INPUT_ID, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
 
@@ -21,8 +22,7 @@ export const RowDescription = ({ canEditSharedEventData, model, setModel }: Prop
 
     return (
         <IconRow
-            icon="text-align-left"
-            iconClassName="rtl:mirror"
+            icon={<IcTextAlignLeft className="rtl:mirror" />}
             title={c('Label').t`Description`}
             id={DESCRIPTION_INPUT_ID}
         >

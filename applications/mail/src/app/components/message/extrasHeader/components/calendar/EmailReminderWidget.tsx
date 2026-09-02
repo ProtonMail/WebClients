@@ -19,7 +19,10 @@ import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEvent
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcMapPin } from '@proton/icons/icons/IcMapPin';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageErrors } from '@proton/mail/store/messages/messagesTypes';
@@ -395,12 +398,16 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                     </div>
                     <hr className="m-0 weak" />
                     <div className="p-5">
-                        <IconRow title={c('Label').t`Calendar`} icon="calendar-grid" labelClassName={labelClassName}>
+                        <IconRow
+                            title={c('Label').t`Calendar`}
+                            icon={<IcCalendarGrid />}
+                            labelClassName={labelClassName}
+                        >
                             <span className="text-break">{Name}</span>
                         </IconRow>
 
                         {!!sanitizedAndUrlifiedLocation && (
-                            <IconRow title={c('Label').t`Location`} icon="map-pin" labelClassName={labelClassName}>
+                            <IconRow title={c('Label').t`Location`} icon={<IcMapPin />} labelClassName={labelClassName}>
                                 <span dangerouslySetInnerHTML={{ __html: sanitizedAndUrlifiedLocation }} />
                             </IconRow>
                         )}
@@ -408,7 +415,11 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                         <div className="mb-4">{videoConferencingWidget}</div>
 
                         {!!participantsList.length && (
-                            <IconRow title={c('Label').t`Participants`} icon="users" labelClassName={labelClassName}>
+                            <IconRow
+                                title={c('Label').t`Participants`}
+                                icon={<IcUsers />}
+                                labelClassName={labelClassName}
+                            >
                                 <ExtraEventParticipants list={participantsList} />
                             </IconRow>
                         )}
