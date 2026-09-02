@@ -15,10 +15,10 @@ import {
     Spotlight,
     useConfirmActionModal,
 } from '@proton/components';
-import useToggle from '@proton/hooks/useToggle'
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
+import useToggle from '@proton/hooks/useToggle';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
@@ -66,6 +66,7 @@ export interface SharingModalViewProps extends ModalStateProps {
         url: string;
         customPassword?: string;
         expirationTime?: Date;
+        isExpired: boolean;
     };
 
     actions: {
