@@ -6,15 +6,15 @@ import {
     selectOauthImportStateStep,
 } from '../../../logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../logic/store';
-import ConfirmLeaveModal from '../ConfirmLeaveModal/ConfirmLeaveModal';
-import StepInstructionsGoogle from './StepInstructions/StepInstructionsGoogle';
-import StepLoadingImporter from './StepLoading/StepLoadingImporter';
-import StepLoadingImporting from './StepLoading/StepLoadingImporting';
-import StepPrepare from './StepPrepareOAuth/StepPrepareOAuth';
-import StepSuccess from './StepSuccess/StepSuccess';
+import type { OAuthModalViewsOverride } from './OAuthModalViews';
+import { useOAuthModalViews } from './OAuthModalViews';
 import useOAuthModal from './useOAuthModal';
 
-const OAuthModal = () => {
+interface Props {
+    oauthViews?: OAuthModalViewsOverride;
+}
+
+const OAuthModal = ({ oauthViews }: Props) => {
     const dispatch = useEasySwitchDispatch();
 
     const step = useEasySwitchSelector(selectOauthImportStateStep);
@@ -22,6 +22,8 @@ const OAuthModal = () => {
     const confirmLeave = useEasySwitchSelector(selectOauthDraftStepConfirmModalDisplay);
 
     const { triggerOAuth, initialLoading } = useOAuthModal();
+    const { LoadingImporter, Instructions, Prepare, LoadingImporting, Success, ConfirmLeave } =
+        useOAuthModalViews(oauthViews);
 
     const handleClose = () => {
         dispatch(resetOauthDraft());
@@ -33,15 +35,15 @@ const OAuthModal = () => {
 
     return (
         <>
-            {step === 'products' && initialLoading && <StepLoadingImporter onClose={handleClose} />}
+            {step === 'products' && initialLoading && <LoadingImporter onClose={handleClose} />}
             {step === 'instructions' && provider === ImportProvider.GOOGLE && (
-                <StepInstructionsGoogle triggerOAuth={triggerOAuth} />
+                <Instructions triggerOAuth={triggerOAuth} />
             )}
-            {step === 'loading-importer' && <StepLoadingImporter onClose={handleClose} />}
-            {step === 'prepare-import' && <StepPrepare />}
-            {step === 'importing' && <StepLoadingImporting />}
-            {step === 'success' && <StepSuccess />}
-            {confirmLeave && <ConfirmLeaveModal handleClose={handleClose} handleContinue={handleContinue} />}
+            {step === 'loading-importer' && <LoadingImporter onClose={handleClose} />}
+            {step === 'prepare-import' && <Prepare />}
+            {step === 'importing' && <LoadingImporting />}
+            {step === 'success' && <Success />}
+            {confirmLeave && <ConfirmLeave handleClose={handleClose} handleContinue={handleContinue} />}
         </>
     );
 };

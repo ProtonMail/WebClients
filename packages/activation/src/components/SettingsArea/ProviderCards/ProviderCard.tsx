@@ -1,4 +1,4 @@
-import { type ReactNode, useState } from 'react';
+import { type ComponentType, type ReactNode, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import type { Location } from 'history';
@@ -38,6 +38,12 @@ interface Props {
     onComplete?: () => Promise<void>;
     onBYOEFlowStart?: () => void;
     source: EASY_SWITCH_SOURCES;
+    /**
+     * Lets a caller (e.g. Drive's settings, behind its own flag) replace the default
+     * provider/product selector entirely with its own entry screen. ProviderCard doesn't need
+     * to know who's overriding it or why — it just renders whatever it's given.
+     */
+    entryView?: ComponentType<{ source: EASY_SWITCH_SOURCES }>;
 }
 
 const ProviderCard = ({
@@ -48,6 +54,7 @@ const ProviderCard = ({
     onComplete,
     onBYOEFlowStart,
     source: inputSource,
+    entryView: EntryView,
 }: Props) => {
     const [, loadingCalendars] = useCalendars();
     const { createNotification } = useNotifications();
@@ -100,14 +107,9 @@ const ProviderCard = ({
         onEasySwitchClick: () => handleOpenSelectionModal(selectedProvider),
     });
 
-    return (
-        <div
-            className={clsx([
-                'flex flex-column flex-1 flex-nowrap w-full items-center',
-                hasBorders && 'rounded-xl border pt-10 pb-8 border-weak bg-lowered',
-            ])}
-        >
-            {showFeatures ? (
+    const renderContent = (): ReactNode => {
+        if (showFeatures) {
+            return (
                 <>
                     <Button
                         shape="underline"
@@ -127,63 +129,85 @@ const ProviderCard = ({
                         ))}
                     </ul>
                 </>
-            ) : (
+            );
+        }
+
+        if (EntryView) {
+            return (
                 <>
                     <div className="mb-4">{header ?? c('Info').t`Choose your service to connect with`}</div>
-                    <div className="flex flex-nowrap gap-2">
-                        {/* Google */}
-                        {app === APPS.PROTONMAIL && !olesFeatureStatus.creatingEnabled ? (
-                            <ConnectGmailButton
-                                className="mb-2 inline-flex items-center justify-center gap-2 rounded-lg"
-                                showIcon
-                                buttonText={c('Action').t`Google`}
-                                onComplete={onComplete}
-                                onBYOEFlowStart={onBYOEFlowStart}
-                                source={source}
-                            />
-                        ) : (
-                            <ProviderButton
-                                provider={ImportProvider.GOOGLE}
-                                onClick={() => handleProviderChoice(ImportProvider.GOOGLE)}
-                                className="mb-2 inline-flex items-center justify-center rounded-lg"
-                                data-testid="ProviderButton:googleCard"
-                                disabled={loadingCalendars}
-                            />
-                        )}
-
-                        <ProviderButton
-                            provider={ImportProvider.YAHOO}
-                            onClick={() => handleProviderChoice(ImportProvider.YAHOO)}
-                            className="mb-2 inline-flex items-center justify-center rounded-lg"
-                            data-testid="ProviderButton:yahooCard"
-                            disabled={loadingCalendars}
-                        />
-
-                        <ProviderButton
-                            provider={ImportProvider.OUTLOOK}
-                            onClick={() => handleProviderChoice(ImportProvider.OUTLOOK)}
-                            className="mb-2 inline-flex items-center justify-center rounded-lg"
-                            data-testid="ProviderButton:outlookCard"
-                            disabled={loadingCalendars}
-                        />
-                    </div>
-                    {showAdvancedImport && (
-                        <Button
-                            shape="underline"
-                            color="norm"
-                            onClick={() =>
-                                handleOpenSelectionModal(
-                                    app === APPS.PROTONMAIL ? ImportProvider.GOOGLE : ImportProvider.DEFAULT
-                                )
-                            }
-                            data-testid="ProviderButton:advancedImport"
-                            disabled={loadingCalendars}
-                        >
-                            {c('Import provider').t`More import options`}
-                        </Button>
-                    )}
+                    <EntryView source={source} />
                 </>
-            )}
+            );
+        }
+
+        return (
+            <>
+                <div className="mb-4">{header ?? c('Info').t`Choose your service to connect with`}</div>
+                <div className="flex flex-nowrap gap-2">
+                    {/* Google */}
+                    {app === APPS.PROTONMAIL && !olesFeatureStatus.creatingEnabled ? (
+                        <ConnectGmailButton
+                            className="mb-2 inline-flex items-center justify-center gap-2 rounded-lg"
+                            showIcon
+                            buttonText={c('Action').t`Google`}
+                            onComplete={onComplete}
+                            onBYOEFlowStart={onBYOEFlowStart}
+                            source={source}
+                        />
+                    ) : (
+                        <ProviderButton
+                            provider={ImportProvider.GOOGLE}
+                            onClick={() => handleProviderChoice(ImportProvider.GOOGLE)}
+                            className="mb-2 inline-flex items-center justify-center rounded-lg"
+                            data-testid="ProviderButton:googleCard"
+                            disabled={loadingCalendars}
+                        />
+                    )}
+
+                    <ProviderButton
+                        provider={ImportProvider.YAHOO}
+                        onClick={() => handleProviderChoice(ImportProvider.YAHOO)}
+                        className="mb-2 inline-flex items-center justify-center rounded-lg"
+                        data-testid="ProviderButton:yahooCard"
+                        disabled={loadingCalendars}
+                    />
+
+                    <ProviderButton
+                        provider={ImportProvider.OUTLOOK}
+                        onClick={() => handleProviderChoice(ImportProvider.OUTLOOK)}
+                        className="mb-2 inline-flex items-center justify-center rounded-lg"
+                        data-testid="ProviderButton:outlookCard"
+                        disabled={loadingCalendars}
+                    />
+                </div>
+                {showAdvancedImport && (
+                    <Button
+                        shape="underline"
+                        color="norm"
+                        onClick={() =>
+                            handleOpenSelectionModal(
+                                app === APPS.PROTONMAIL ? ImportProvider.GOOGLE : ImportProvider.DEFAULT
+                            )
+                        }
+                        data-testid="ProviderButton:advancedImport"
+                        disabled={loadingCalendars}
+                    >
+                        {c('Import provider').t`More import options`}
+                    </Button>
+                )}
+            </>
+        );
+    };
+
+    return (
+        <div
+            className={clsx([
+                'flex flex-column flex-1 flex-nowrap w-full items-center',
+                hasBorders && 'rounded-xl border pt-10 pb-8 border-weak bg-lowered',
+            ])}
+        >
+            {renderContent()}
 
             {renderImportModal && (
                 <ProductSelectionModal
