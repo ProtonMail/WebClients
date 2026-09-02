@@ -63,7 +63,7 @@ describe('useBackgroundEffectAnnouncements', () => {
 
         applyEffect('office');
 
-        expect(announce).toHaveBeenCalledWith('Office background applied');
+        expect(announce).toHaveBeenCalledWith('Blurred office background applied');
     });
 
     it('should announce blur with a spelled out label', () => {
