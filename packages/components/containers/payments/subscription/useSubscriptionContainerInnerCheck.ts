@@ -21,6 +21,7 @@ import {
 } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
+import { getApiErrorMessage, getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
@@ -352,6 +353,21 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
                 if (error instanceof VatReverseChargeNotSupportedError) {
                     setVatReverseChargeErrorModal(true);
                     return;
+                }
+
+                // The check is sent with `silence: true` so that the generic API handler doesn't
+                // toast billing-address errors (800_001/800_002) while the user edits the form -
+                // those have dedicated in-modal UI. Everything else would then fail silently and
+                // leave the modal on the same step, e.g. the 403 a secondary admin gets when
+                // clicking a plan card. Connection issues are excluded: they are covered by the
+                // NETWORK_ERROR step above and by the API status banner.
+                // This lives here rather than in checkSubscription() because the other silenced
+                // callers (multiCheck price grids, promo banner prices) must stay quiet. If a
+                // second caller ever needs the same feedback, move it into checkSubscription()
+                // behind an explicit opt-in option instead of duplicating it.
+                const errorMessage = getApiErrorMessage(error);
+                if (errorMessage && !error?.cancel && !getIsConnectionIssue(error)) {
+                    createNotification({ text: errorMessage, type: 'error' });
                 }
 
                 onCheck?.({ model, newModel: copyNewModel, type: 'error', error });
