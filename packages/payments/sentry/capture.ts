@@ -30,7 +30,8 @@ export type PaymentsComponent =
     | 'single-signup-v1-step1'
     | 'single-signup-v2-account-step-payment'
     | 'subscription-container'
-    | 'subscription-modal-provider';
+    | 'subscription-modal-provider'
+    | 'use-methods';
 
 export interface PaymentsCaptureOptions {
     component: PaymentsComponent;

@@ -1,8 +1,8 @@
 import { type PayloadAction, type ThunkAction, type UnknownAction, createSlice } from '@reduxjs/toolkit';
 
 import { getPaymentMethods, queryPaymentMethod } from '@proton/payments/core/api/api';
+import { formatPaymentMethod, formatPaymentMethods } from '@proton/payments/core/formatPaymentMethods';
 import type { SavedPaymentMethod } from '@proton/payments/core/interface';
-import { formatPaymentMethod, formatPaymentMethods } from '@proton/payments/core/methods';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
