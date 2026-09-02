@@ -505,7 +505,7 @@ export const getAccountAppRoutes = ({
         // because they should have them on the dashboard or subscription pages
         (isVisionaryPlan && isMemberProton && isMember);
 
-    const canAccessBilling = isFree || canPay || !isMember;
+    const canAccessBilling = (isFree || canPay) && !isMember;
     // MSP subsidiary orgs have their subscription managed by the MSP manager, so no one in the
     // subsidiary org can edit it: the dashboard and subscription pages should be hidden for everyone.
     const isSubsidiaryOrg = !!organization?.IsSubsidiary;
