@@ -60,73 +60,79 @@ export const DirectSharingListing = ({
     }
 
     return (
-        <Scroll style={{ height: '14rem' }}>
-            <div className="flex flex-column flex-nowrap gap-4">
-                <div
-                    className="shrink-0 flex flex-nowrap justify-space-between items-center gap-2 w-full"
-                    data-testid="share-owner"
-                >
-                    <div className="flex flex-nowrap flex-1 items-center gap-3">
-                        <UserAvatar name={ownerName} />
-
-                        <div className="flex flex-column flex-nowrap flex-1">
-                            <div className="text-ellipsis">
-                                {ownerName} {ownerIsCurrentUser && <>({c('Info').t`you`})</>}
-                            </div>
-                            {ownerDisplayName ? (
-                                <div className="text-sm color-weak text-ellipsis" title={ownerEmail}>
-                                    {ownerEmail}
-                                </div>
-                            ) : null}
-                        </div>
-                    </div>
-
-                    <div className="color-weak shrink-0 mr-2">{c('Info').t`owner`}</div>
-                </div>
-
-                {sortedMembersWithName.map(({ member, displayName, displayEmail }) => {
-                    return (
+        <div className="flex">
+            <div className="max-h-custom flex-1" style={{ '--max-h-custom': '14rem' }}>
+                <Scroll>
+                    <div className="flex flex-column flex-nowrap gap-4">
                         <div
-                            key={member.uid}
-                            // No gap here because button has padding
-                            className="shrink-0 flex flex-nowrap justify-space-between items-center w-full"
-                            data-testid="share-members"
+                            className="shrink-0 flex flex-nowrap justify-space-between items-center gap-2 w-full"
+                            data-testid="share-owner"
                         >
                             <div className="flex flex-nowrap flex-1 items-center gap-3">
-                                <UserAvatar name={displayName || displayEmail} />
+                                <UserAvatar name={ownerName} />
 
                                 <div className="flex flex-column flex-nowrap flex-1">
-                                    <div className="text-ellipsis">{displayName ? displayName : displayEmail}</div>
-                                    {displayName ? (
-                                        <div className="text-sm color-weak text-ellipsis" title={displayEmail}>
-                                            {displayEmail}
+                                    <div className="text-ellipsis">
+                                        {ownerName} {ownerIsCurrentUser && <>({c('Info').t`you`})</>}
+                                    </div>
+                                    {ownerDisplayName ? (
+                                        <div className="text-sm color-weak text-ellipsis" title={ownerEmail}>
+                                            {ownerEmail}
                                         </div>
                                     ) : null}
                                 </div>
                             </div>
 
-                            <DirectSharingMemberMenu
-                                disabled={viewOnly}
-                                selectedRole={member.role}
-                                onChangeRole={(newRole) => onChangeRole(member.inviteeEmail, newRole)}
-                                externalInvitationState={member.state}
-                                onResendInvitation={
-                                    member.type === MemberType.ProtonInvitation &&
-                                    (!member.state || member.state === NonProtonInvitationState.Pending)
-                                        ? () => onResendInvitation(member.uid)
-                                        : undefined
-                                }
-                                onCopyInvitationLink={
-                                    member.type === MemberType.ProtonInvitation
-                                        ? () => onCopyInvitationLink(member.uid, member.inviteeEmail)
-                                        : undefined
-                                }
-                                onRemoveAccess={() => onRemove(member.inviteeEmail)}
-                            />
+                            <div className="color-weak shrink-0 mr-2">{c('Info').t`owner`}</div>
                         </div>
-                    );
-                })}
+
+                        {sortedMembersWithName.map(({ member, displayName, displayEmail }) => {
+                            return (
+                                <div
+                                    key={member.uid}
+                                    // No gap here because button has padding
+                                    className="shrink-0 flex flex-nowrap justify-space-between items-center w-full"
+                                    data-testid="share-members"
+                                >
+                                    <div className="flex flex-nowrap flex-1 items-center gap-3">
+                                        <UserAvatar name={displayName || displayEmail} />
+
+                                        <div className="flex flex-column flex-nowrap flex-1">
+                                            <div className="text-ellipsis">
+                                                {displayName ? displayName : displayEmail}
+                                            </div>
+                                            {displayName ? (
+                                                <div className="text-sm color-weak text-ellipsis" title={displayEmail}>
+                                                    {displayEmail}
+                                                </div>
+                                            ) : null}
+                                        </div>
+                                    </div>
+
+                                    <DirectSharingMemberMenu
+                                        disabled={viewOnly}
+                                        selectedRole={member.role}
+                                        onChangeRole={(newRole) => onChangeRole(member.inviteeEmail, newRole)}
+                                        externalInvitationState={member.state}
+                                        onResendInvitation={
+                                            member.type === MemberType.ProtonInvitation &&
+                                            (!member.state || member.state === NonProtonInvitationState.Pending)
+                                                ? () => onResendInvitation(member.uid)
+                                                : undefined
+                                        }
+                                        onCopyInvitationLink={
+                                            member.type === MemberType.ProtonInvitation
+                                                ? () => onCopyInvitationLink(member.uid, member.inviteeEmail)
+                                                : undefined
+                                        }
+                                        onRemoveAccess={() => onRemove(member.inviteeEmail)}
+                                    />
+                                </div>
+                            );
+                        })}
+                    </div>
+                </Scroll>
             </div>
-        </Scroll>
+        </div>
     );
 };
