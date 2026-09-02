@@ -69,6 +69,9 @@ export interface UseJoinFlowResult {
     waitingRoomProviderProps: ReturnType<typeof useWaitingRoom>['providerProps'];
 }
 
+// Only joins slower than this are reported while the telemetry kill switch is on
+const SLOW_JOIN_THRESHOLD_MS = 15 * SECOND;
+
 const getNetworkHints = () => {
     const connection = (navigator as any).connection;
     if (!connection) {
@@ -175,6 +178,7 @@ export const useJoinFlow = ({
 
     const isMeetClientMetricsLogEnabled = useFlag('MeetClientMetricsLog');
     const meetJoinTelemetryEnabled = useFlag('MeetJoinTelemetry');
+    const telemetryKillSwitchEnabled = useFlag('MeetQualityTelemetryKillSwitch');
 
     const joinBlockedRef = useRef(false);
     const loadingStartTimeRef = useRef(0);
@@ -227,7 +231,10 @@ export const useJoinFlow = ({
 
             if (meetJoinTelemetryEnabled) {
                 const totalJoinMs = Date.now() - loadingStartTimeRef.current;
-                if (totalJoinMs > 15 * SECOND) {
+
+                // Off, every successful join is reported so the tail can be read against a baseline.
+                // On, only slow joins are, which is all the volume the kill switch is meant to leave.
+                if (!telemetryKillSwitchEnabled || totalJoinMs > SLOW_JOIN_THRESHOLD_MS) {
                     void gatherAndLogJoinStats({
                         room,
                         roomId: meetingToken,
