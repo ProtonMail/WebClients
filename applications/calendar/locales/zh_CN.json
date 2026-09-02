@@ -1039,6 +1039,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "您的桌面应用免费试用将在 ${ formattedEndDate }结束。 ${ upgradeButton }"
+      ],
+      "Preview logs": [
+        "预览日志"
       ]
     },
     "action": {
@@ -6975,6 +6978,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "您已达到预约时段数量上限 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "日志有助于我们了解问题发生前的情况。其中包括应用操作和错误消息，但不包含消息内容。"
       ]
     },
     "info": {
@@ -7757,6 +7763,9 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } 字符"
       ]
     },
     "label": {
@@ -10599,6 +10608,9 @@
       ],
       "User Admin": [
         "用户管理员"
+      ],
+      "Organization Admin": [
+        "组织管理员"
       ]
     },
     "RSVP Note": {
