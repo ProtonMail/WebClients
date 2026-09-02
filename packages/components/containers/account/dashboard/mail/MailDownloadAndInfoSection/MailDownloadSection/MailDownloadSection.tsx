@@ -1,6 +1,10 @@
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/icons/types';
+import { IcBrandLinux } from '@proton/icons/icons/IcBrandLinux';
+import { IcBrandMac } from '@proton/icons/icons/IcBrandMac';
+import { IcBrandProtonCalendar } from '@proton/icons/icons/IcBrandProtonCalendar';
+import { IcBrandProtonMail } from '@proton/icons/icons/IcBrandProtonMail';
+import { IcBrandWindows } from '@proton/icons/icons/IcBrandWindows';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import appleAppStoreImage from '@proton/styles/assets/img/vpn/download-section/apple-app-store.svg';
@@ -19,7 +23,7 @@ const downloadData = [
         tabs: [
             {
                 title: () => c('Download').t`Mail`,
-                icon: 'brand-proton-mail' as IconName,
+                icon: <IcBrandProtonMail />,
                 content: {
                     image: mailMobilePreview,
                     downloadButtons: [
@@ -40,7 +44,7 @@ const downloadData = [
             },
             {
                 title: () => c('Download').t`Calendar`,
-                icon: 'brand-proton-calendar' as IconName,
+                icon: <IcBrandProtonCalendar />,
                 content: {
                     image: calendarMobilePreview,
                     downloadButtons: [
@@ -67,7 +71,7 @@ const downloadData = [
         tabs: [
             {
                 title: () => c('Download').t`Windows`,
-                icon: 'brand-windows' as IconName,
+                icon: <IcBrandWindows />,
                 content: {
                     image: windowsPreview,
                     downloadButtons: [
@@ -80,7 +84,7 @@ const downloadData = [
             },
             {
                 title: () => c('Download').t`macOS`,
-                icon: 'brand-mac' as IconName,
+                icon: <IcBrandMac />,
                 content: {
                     image: macosPreview,
                     downloadButtons: [
@@ -93,7 +97,7 @@ const downloadData = [
             },
             {
                 title: () => c('Download').t`Linux`,
-                icon: 'brand-linux' as IconName,
+                icon: <IcBrandLinux />,
                 content: {
                     image: linuxPreview,
                     downloadButtons: [

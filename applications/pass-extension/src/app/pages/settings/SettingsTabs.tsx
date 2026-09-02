@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Tabs } from '@proton/components/components/tabs/Tabs';
+import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { PasswordUnlockProvider } from '@proton/pass/components/Lock/PasswordUnlockProvider';
@@ -52,15 +53,15 @@ const getSettingsTabs = (
         : []),
     { path: '/import', title: c('Label').t`Import`, content: <Import /> },
     { path: '/export', title: c('Label').t`Export`, content: <Export /> },
-    { path: '/account', title: c('Label').t`Account`, icon: 'arrow-within-square', content: <></> },
+    { path: '/account', title: c('Label').t`Account`, icon: <IcArrowWithinSquare />, content: <></> },
     ...(orgEnabled
         ? [
               {
                   path: '/organization',
                   title: c('Label').t`Organization`,
-                  icon: 'arrow-within-square',
+                  icon: <IcArrowWithinSquare />,
                   content: <></>,
-              } as const,
+              },
           ]
         : []),
     { path: '/support', title: c('Label').t`Support`, content: <Support /> },
