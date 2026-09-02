@@ -12,8 +12,8 @@ import type { JSONSchema } from '../contracts/types';
  * the tool's result so it self-corrects on the next turn.
  *
  * This deliberately covers only the small, closed schema vocabulary our tools use (object with typed
- * scalar / nullable-scalar / string-array / enum properties, `additionalProperties: false`). It is not
- * a general JSON-Schema validator — keeping it hand-rolled avoids a runtime-codegen dependency (ajv),
+ * scalar / nullable-scalar / string-array / enum properties, `minLength`, `additionalProperties: false`).
+ * It is not a general JSON-Schema validator — keeping it hand-rolled avoids a runtime-codegen dep (ajv),
  * which Proton's CSP blocks, and keeps the engine out of the shared bundle's weight budget.
  */
 
@@ -113,6 +113,10 @@ const validateValue = (value: unknown, schema: JSONSchema, field: string): strin
     // `enum` (with null tolerated when the schema is nullable).
     if (Array.isArray(schema.enum) && !(value === null && allowsNull(schema)) && !schema.enum.includes(value as any)) {
         return `${JSON.stringify(value)} is not one of ${JSON.stringify(schema.enum)} for field '${field}'`;
+    }
+
+    if (typeof value === 'string' && typeof schema.minLength === 'number' && value.length < schema.minLength) {
+        return `${JSON.stringify(value)} is shorter than the ${schema.minLength}-character minimum for field '${field}'`;
     }
 
     // Array items.
