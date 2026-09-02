@@ -1,17 +1,12 @@
-import type { ComponentType, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
-import type { IconSize } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 import clsx from '@proton/utils/clsx';
 
 import './SettingsIconRow.scss';
 
-interface IconProps {
-    className?: string;
-    size?: IconSize;
-}
-
 interface SettingsIconRowProps {
-    icon?: ComponentType<IconProps>;
+    icon?: IconComponent;
     centered?: boolean;
     children: ReactNode;
     className?: string;

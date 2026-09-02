@@ -1,12 +1,13 @@
+import type { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import type { IconName } from '@proton/icons/types';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
+import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
 import type { Domain } from '@proton/shared/lib/interfaces';
 import { DOMAIN_STATE } from '@proton/shared/lib/interfaces';
-import clsx from '@proton/utils/clsx';
 
-import Icon from '../../../components/icon/Icon';
 import useModalState from '../../../components/modalTwo/useModalState';
 import TXTRecordModal from './TXTRecordModal';
 import type { SsoAppInfo } from './ssoAppInfo';
@@ -25,21 +26,18 @@ const DomainVerificationState = ({ domain, ssoAppInfo }: Props) => {
         setTXTRecordModalOpen(true);
     };
 
-    const domainStateMap: { [key in DOMAIN_STATE]: { text: string; className: string; iconName: IconName } } = {
+    const domainStateMap: { [key in DOMAIN_STATE]: { text: string; icon: ReactNode } } = {
         [DOMAIN_STATE_DEFAULT]: {
             text: c('Info').t`Domain ownership not verified.`,
-            className: 'color-warning',
-            iconName: 'cross-circle-filled',
+            icon: <IcCrossCircleFilled className="shrink-0 color-warning" />,
         },
         [DOMAIN_STATE_VERIFIED]: {
             text: c('Info').t`Domain ownership verified.`,
-            className: 'color-success',
-            iconName: 'checkmark-circle-filled',
+            icon: <IcCheckmarkCircleFilled className="shrink-0 color-success" />,
         },
         [DOMAIN_STATE_WARN]: {
             text: c('Info').t`Domain ownership failed verification.`,
-            className: 'color-error',
-            iconName: 'cross-circle-filled',
+            icon: <IcCrossCircleFilled className="shrink-0 color-error" />,
         },
     };
 
@@ -49,7 +47,7 @@ const DomainVerificationState = ({ domain, ssoAppInfo }: Props) => {
         return null;
     }
 
-    const { text, className, iconName } = domainStateProperties;
+    const { text, icon } = domainStateProperties;
 
     return (
         <>
@@ -58,7 +56,7 @@ const DomainVerificationState = ({ domain, ssoAppInfo }: Props) => {
             )}
 
             <div className="flex gap-1 flex-nowrap">
-                <Icon className={clsx('shrink-0', className)} type="warning" name={iconName} />
+                {icon}
                 <span>
                     {text}{' '}
                     <InlineLinkButton className="color-inherit" onClick={() => showTXT()}>
