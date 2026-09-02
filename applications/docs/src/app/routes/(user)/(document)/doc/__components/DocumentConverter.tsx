@@ -5,7 +5,6 @@ import useLoading from '@proton/hooks/useLoading'
 import { useCallback, useEffect, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
-import { useDriveCompatSDK } from '~/utils/flags'
 
 export type DocumentConverterProps = {
   lookup: NodeMeta
@@ -15,7 +14,6 @@ export type DocumentConverterProps = {
 
 export function DocumentConverter({ lookup, onSuccess, getNodeContents }: DocumentConverterProps) {
   const application = useApplication()
-  const replaceCompatWithSDK = useDriveCompatSDK()
 
   const [isConverting, setIsConverting] = useState(false)
   const [conversionResult, setConversionResult] = useState<Result<FileToDocConversionResult> | null>(null)
@@ -49,13 +47,10 @@ export function DocumentConverter({ lookup, onSuccess, getNodeContents }: Docume
     if (contents && node) {
       setIsConverting(true)
 
-      const result = await application.createEmptyDocumentForConversionUseCase.execute(
-        {
-          node,
-          contents,
-        },
-        replaceCompatWithSDK,
-      )
+      const result = await application.createEmptyDocumentForConversionUseCase.execute({
+        node,
+        contents,
+      })
 
       setConversionResult(result)
 
@@ -71,7 +66,6 @@ export function DocumentConverter({ lookup, onSuccess, getNodeContents }: Docume
     contents,
     node,
     application.createEmptyDocumentForConversionUseCase,
-    replaceCompatWithSDK,
     onSuccess,
   ])
 

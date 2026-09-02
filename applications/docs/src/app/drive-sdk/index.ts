@@ -3,15 +3,6 @@ import { findUserAddress } from '@proton/shared/lib/helpers/address'
 import type { Address } from '@proton/shared/lib/interfaces'
 import { c } from 'ttag'
 
-export function getNodeName(node: Pick<NodeEntity, 'name'>) {
-  if (typeof node.name === 'string') {
-    return node.name
-  }
-  if (node.name.ok) {
-    return node.name.value
-  }
-}
-
 /**
  *
  * @param ancestry root first, most immediate parent last
