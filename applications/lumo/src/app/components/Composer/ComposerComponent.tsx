@@ -48,6 +48,7 @@ import { useNativeComposerFeatureFlagsApi } from './hooks/useNativeComposerFeatu
 import { useNativeComposerFileApi } from './hooks/useNativeComposerFileApi';
 import { useNativeComposerLumoStateApi } from './hooks/useNativeComposerLumoStateApi';
 import { useNativeComposerHostVisibilityApi } from './hooks/useNativeComposerVisibilityApi';
+import { shouldShowLegalDisclaimer } from './legalDisclaimer';
 
 import './ComposerComponent.scss';
 
@@ -351,14 +352,17 @@ const ComposerComponentInner = ({
         return () => clearTimeout(timer);
     }, [pendingSketchDescription, isProcessingAttachment, setValue, sendGenerateMessage]);
 
-    const showLegalDisclaimer = canShowLegalDisclaimer && !isEditorFocused && isEmpty;
+    const showLegalDisclaimer = shouldShowLegalDisclaimer({
+        canShowLegalDisclaimer: canShowLegalDisclaimer ?? false,
+        canShowWebComposer: nativeComposerVisibilityApi.showWebComposer(),
+        isEditorFocused: isEditorFocused ?? false,
+        isEditorEmpty: isEmpty,
+    });
 
     useNativeComposerLumoStateApi(isGenerating);
 
     const composerPreInputContent = (
         <>
-            {showLegalDisclaimer && <GuestDisclaimer />}
-
             {isGuest && canShowGuestNotificationCard && (
                 <GuestNotificationCard
                     messageChain={messageChain}
@@ -434,6 +438,8 @@ const ComposerComponentInner = ({
                     >
                         <h2 className="sr-only">{c('collider_2025: Info')
                             .t`Ask anything to ${LUMO_SHORT_APP_NAME}`}</h2>
+
+                        {showLegalDisclaimer && <GuestDisclaimer />}
 
                         <div className="composer-input-glow-wrapper w-full">
                             <div
