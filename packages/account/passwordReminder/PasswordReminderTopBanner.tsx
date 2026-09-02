@@ -2,10 +2,13 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import TopBanner from '@proton/components/containers/topBanners/TopBanner';
 import { useModalState } from '@proton/components/index';
+import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import PasswordReminderModal from './PasswordReminderModal';
 import { usePasswordReminder } from './hooks';
@@ -38,22 +41,36 @@ const PasswordReminderTopBanner = () => {
         await dispatch(dismissPasswordReminder());
     };
 
-    const verifyButton = (
-        <InlineLinkButton key="verify-button" onClick={() => setPasswordReminderModalOpen(true)}>
-            {c('Action').t`Verify now`}
-        </InlineLinkButton>
-    );
-
     return (
         <>
             {renderPasswordReminderModal && (
                 <PasswordReminderModal {...passwordReminderModalProps} source="top_banner" />
             )}
-            <TopBanner className="bg-info" onClose={dismissReminder}>
-                {
-                    // Translator: Full sentence "Do you remember your password? Verify now"
-                    c('Info').jt`Do you remember your password? ${verifyButton}`
-                }
+            <TopBanner
+                className="bg-info"
+                innerClassName="flex gap-x-4 items-center justify-center"
+                innerPadding="p-1"
+                onClose={dismissReminder}
+            >
+                {c('Info').jt`Do you remember your password?`}
+                <Button
+                    size="small"
+                    shape="outline"
+                    key="verify-button"
+                    onClick={() => setPasswordReminderModalOpen(true)}
+                >
+                    {c('Action').t`Verify now`}
+                </Button>
+                <ButtonLike
+                    as="a"
+                    href={getKnowledgeBaseUrl('/password-check-in')}
+                    size="small"
+                    shape="underline"
+                    key="verify-learn-more-button"
+                >
+                    {c('Info').t`Learn more`}
+                    <IcArrowOutSquare className="ml-1 shrink-0" />
+                </ButtonLike>
             </TopBanner>
         </>
     );
