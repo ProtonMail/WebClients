@@ -32,6 +32,7 @@ export interface IndexInstance {
 }
 
 let wasmInit: Promise<InitOutput> | undefined;
+let wasmOutput: InitOutput | undefined;
 
 /**
  * Loads the WASM module, once per worker.
@@ -49,10 +50,25 @@ async function initWasm(): Promise<InitOutput> {
             // promise, so no engine is ever built before the hook is in place.
             .then((output) => {
                 installWasmPanicCapture();
+                wasmOutput = output;
                 return output;
             });
     }
     return wasmInit;
+}
+
+/**
+ * Size of the search engine's WASM linear memory, or `undefined` before the module is loaded.
+ *
+ * This is a high-water mark, not a live-bytes figure: the module declares its memory with no
+ * maximum and WASM has no shrink instruction, so `memory.grow()` is one-way. Freeing an engine or
+ * disposing the blob cache returns bytes to the allocator's free lists for reuse but never gives
+ * pages back to the OS - only tearing down the worker does. Any transient peak is therefore the
+ * permanent floor for the worker's footprint, which is why this is worth reporting on its own
+ * rather than inferring the engine's cost from blob counts.
+ */
+export function getWasmMemoryBytes(): number | undefined {
+    return wasmOutput?.memory.buffer.byteLength;
 }
 
 /**
