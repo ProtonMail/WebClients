@@ -9,7 +9,6 @@
         "proton-i18n": "index.js"
     },
     "scripts": {
-        "build": "./scripts/build.sh",
         "lint": "eslint --quiet",
         "pretty": "prettier --write  $(find lib/ index.js -type f -name '*.js')",
         "test": "./test/test-linter.sh* && ./test/test-validator.sh",

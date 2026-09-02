@@ -41,28 +41,10 @@ function main {
 
   appName="$(jq -r .name package.json)"
 
-  if [ ! -d "/tmp/sourcemapper" ]; then
-    echo "missing source mapper, run ./build.sh"
-    exit 1
-  fi;
-
   getDistDirectory
 
-  # Extract all the code available inside the dist and only the one we built (post tree-shacking)
-  for file in $(find ./dist/ -type f -name "*.js.map"); do
-    echo "[Parsing] $file";
-    if [[ "$OSTYPE" = "darwin"* ]]; then
-      if [[ "$(uname -m)" == 'arm64'  ]]; then
-        /tmp/sourcemapper/bin/isourcemapper-arm --input "$file" --output 'i18n-js' &> /dev/null &
-      else
-        /tmp/sourcemapper/bin/isourcemapper --input "$file" --output 'i18n-js' &> /dev/null &
-      fi
-    else
-      /tmp/sourcemapper/bin/sourcemapper --input "$file" --output 'i18n-js' &> /dev/null &
-    fi
-  done;
-
-  wait;
+  # Extract all the code available inside the dist and only the one we built (post tree-shaking)
+  node "$(dirname "$0")/extract-sourcemaps.mjs" './dist' 'i18n-js';
 
   # Extract on top of the extracted code from the bundle
   # Use direct relative path instead of npx or dlx since it doesn't resolve to the installed dependencies
