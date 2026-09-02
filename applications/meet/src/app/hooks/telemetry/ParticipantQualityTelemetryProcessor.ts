@@ -21,16 +21,15 @@ export class ParticipantQualityTelemetryProcessor {
     private poorQualityStats: ParticipantQualityStats[] = [];
     private interval: NodeJS.Timeout | null = null;
     private earlyReportTimeout: NodeJS.Timeout | null = null;
-    private previousStatsByTrackSid = new Map<string, ParticipantQualityStats>();
+    private previousSampleByTrackSid = new Map<string, { stats: ParticipantQualityStats; sampledAt: number }>();
     private isKillSwitchEnabled: boolean;
+    private startedAt = Date.now();
 
     constructor(room: Room, websocketUrl?: string, isKillSwitchEnabled = false) {
         this.room = room;
         this.websocketUrl = websocketUrl ? getUrlWithoutProtocol(websocketUrl) : undefined;
         this.isKillSwitchEnabled = isKillSwitchEnabled;
     }
-
-    private getMaxStatsPerReport = () => (this.isKillSwitchEnabled ? 0 : MAX_STATS_PER_REPORT);
 
     private getStatsForAllParticipants = async () => {
         const localParticipant = this.room.localParticipant;
@@ -73,11 +72,7 @@ export class ParticipantQualityTelemetryProcessor {
     };
 
     private handleConnectionQualityChanged = async (quality: ConnectionQuality, participant: Participant) => {
-        if (
-            participant.identity !== this.room.localParticipant.identity ||
-            quality !== ConnectionQuality.Poor ||
-            this.getMaxStatsPerReport() <= 0
-        ) {
+        if (participant.identity !== this.room.localParticipant.identity || quality !== ConnectionQuality.Poor) {
             return;
         }
 
@@ -94,51 +89,42 @@ export class ParticipantQualityTelemetryProcessor {
         );
 
         const stats = statsByPublications.filter((stats) => stats !== null);
+        const sampledAt = Date.now();
         stats.forEach((stat) => {
-            this.previousStatsByTrackSid.set(stat.trackSid, stat);
+            this.previousSampleByTrackSid.set(stat.trackSid, { stats: stat, sampledAt });
         });
 
         this.poorQualityStats = [...this.poorQualityStats, ...stats];
     };
 
     private handleReport = async () => {
-        const maxStatsPerReport = this.getMaxStatsPerReport();
-
-        if (maxStatsPerReport <= 0) {
-            this.poorQualityStats = [];
-            return;
-        }
-
         const stats = await this.getStatsForAllParticipants();
+        const sampledAt = Date.now();
 
         const statsWithFlag = stats.map((stat) => {
-            const previous = this.previousStatsByTrackSid.get(stat.trackSid);
-            const delta = calculateStatsDelta(stat, previous);
-            return { stat, flagged: shouldReportStats(delta) };
+            const previous = this.previousSampleByTrackSid.get(stat.trackSid);
+            const delta = calculateStatsDelta(stat, previous?.stats);
+            const windowSeconds = (sampledAt - (previous?.sampledAt ?? this.startedAt)) / 1000;
+            return { stat, flagged: shouldReportStats(delta, windowSeconds) };
         });
 
         stats.forEach((stat) => {
-            this.previousStatsByTrackSid.set(stat.trackSid, stat);
+            this.previousSampleByTrackSid.set(stat.trackSid, { stats: stat, sampledAt });
         });
 
         const selectedPoorQualityStats = shuffle(this.poorQualityStats).slice(0, MAX_POOR_QUALITY_STATS_PER_REPORT);
-        const remainingSlots = Math.max(0, maxStatsPerReport - selectedPoorQualityStats.length);
-        const selectedRemoteStats = shuffle(
-            statsWithFlag.filter(({ stat, flagged }) => !stat.isLocal && flagged)
-        ).slice(0, remainingSlots);
-        const hasFlaggedStats = selectedPoorQualityStats.length > 0 || statsWithFlag.some(({ flagged }) => flagged);
-        const selectedLocalStats = hasFlaggedStats ? statsWithFlag.filter(({ stat }) => stat.isLocal) : [];
+        const flaggedStats = statsWithFlag.filter(({ flagged }) => flagged);
 
-        const selectedStats = [
-            ...selectedPoorQualityStats.map((stat) => ({ stat, flagged: true })),
-            ...selectedLocalStats,
-            ...selectedRemoteStats,
-        ];
+        const selectedStats = this.isKillSwitchEnabled
+            ? shuffle(flaggedStats).slice(0, Math.max(0, MAX_STATS_PER_REPORT - selectedPoorQualityStats.length))
+            : flaggedStats;
 
         // Will be batched by telemetry
-        selectedStats.forEach(({ stat, flagged }) => {
-            logParticipantQuality({ ...stat, flagged, websocketUrl: this.websocketUrl });
-        });
+        [...selectedPoorQualityStats.map((stat) => ({ stat, flagged: true })), ...selectedStats].forEach(
+            ({ stat, flagged }) => {
+                logParticipantQuality({ ...stat, flagged, websocketUrl: this.websocketUrl });
+            }
+        );
 
         this.poorQualityStats = [];
     };
