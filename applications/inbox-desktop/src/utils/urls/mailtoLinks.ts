@@ -1,7 +1,7 @@
 import { getMailView, showView } from "../view/viewManagement";
 import { addHashToCurrentURL } from "./urlHelpers";
 import { mainLogger } from "../log";
-import telemetry from "../telemetry";
+import telemetryService from "../telemetry";
 
 export const handleMailToUrls = (url: string): boolean => {
     if (!url.startsWith("mailto:")) return false;
@@ -10,7 +10,7 @@ export const handleMailToUrls = (url: string): boolean => {
     const mailView = getMailView();
     if (!mailView) return true;
 
-    telemetry.mailtoClicked();
+    telemetryService.mailtoClicked();
 
     showView("mail", addHashToCurrentURL(mailView.webContents.getURL(), `#mailto=${encodeURIComponent(url)}`));
     return true;
