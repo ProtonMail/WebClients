@@ -2,9 +2,10 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import IconRow from '@proton/components/components/iconRow/MemoizedIconRow';
+import IconRow from '@proton/components/components/iconRow/IconRow';
 import DateInput from '@proton/components/components/input/DateInput';
 import TimeInput from '@proton/components/components/input/TimeInput';
+import { IcClock } from '@proton/icons/icons/IcClock';
 import { DATE_INPUT_ID, MAXIMUM_DATE, MINIMUM_DATE } from '@proton/shared/lib/calendar/constants';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
@@ -34,7 +35,7 @@ export const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStar
     } = useDateTimeFormHandlers({ model, setModel });
 
     return (
-        <IconRow id={DATE_INPUT_ID} icon="clock" title={c('Label').t`Date and time`}>
+        <IconRow id={DATE_INPUT_ID} icon={<IcClock />} title={c('Label').t`Date and time`}>
             <div>
                 <div className="flex flex-nowrap mb-2">
                     <div

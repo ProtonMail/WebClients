@@ -4,11 +4,13 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
-import IconRow from '@proton/components/components/iconRow/MemoizedIconRow';
+import IconRow from '@proton/components/components/iconRow/IconRow';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import Notifications from '@proton/components/containers/calendar/notifications/Notifications';
 import NotificationsInDrawer from '@proton/components/containers/calendar/notifications/NotificationsInDrawer';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
+import { IcBell } from '@proton/icons/icons/IcBell';
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import {
@@ -257,7 +259,7 @@ const EventForm = ({
     const notificationsRow = (
         <IconRow
             id={NOTIFICATION_INPUT_ID}
-            icon="bell"
+            icon={<IcBell />}
             title={c('Label').t`Notifications`}
             labelClassName={isDrawerApp ? '' : 'pb-2 mt-2 md:mt-0'}
         >
@@ -267,7 +269,7 @@ const EventForm = ({
 
     const getCalendarIcon = () => {
         if (isColorPerEventEnabled) {
-            return 'calendar-grid';
+            return <IcCalendarGrid />;
         }
         if (model.calendars.length === 1) {
             return <CalendarSelectIcon className="mt-1" color={model.calendars[0].color} />;
@@ -277,7 +279,7 @@ const EventForm = ({
             return <CalendarSelectIcon className="mt-1" color={model.calendar.color} />;
         }
 
-        return 'calendar-grid';
+        return <IcCalendarGrid />;
     };
 
     const calendarRow = (
