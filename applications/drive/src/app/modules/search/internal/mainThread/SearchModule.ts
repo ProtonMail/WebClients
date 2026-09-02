@@ -1,7 +1,7 @@
 import type { LatestEventIdProvider, ProtonDriveClient } from '@protontech/drive-sdk';
 import { v4 as uuidv4 } from 'uuid';
 
-import { getBrowser, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
+import { getBrowser, isChrome, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { Version } from '@proton/shared/lib/helpers/version';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
@@ -294,6 +294,17 @@ export class SearchModule {
             }
         }
 
+        // Chrome < 96 lacks the WebAssembly reference-types proposal (externref), which our
+        // wasm-bindgen-built search engine requires - WebAssembly.instantiateStreaming() throws
+        // every time on older builds.
+        if (isChrome()) {
+            const browser = getBrowser();
+            if (!browser?.version || !new Version(browser.version).isGreaterThanOrEqual('96')) {
+                recordEnvironmentIncompatibilityOnce('chrome_too_old');
+                return false;
+            }
+        }
+
         if (typeof SharedWorker === 'undefined') {
             recordEnvironmentIncompatibilityOnce('shared_worker_unsupported');
             return false;
@@ -306,6 +317,13 @@ export class SearchModule {
 
         if (!(await isIndexedDBReallyAvailable())) {
             recordEnvironmentIncompatibilityOnce('indexed_db_probe_failed');
+            return false;
+        }
+
+        // The search engine is a WASM module; without WebAssembly it can never build. Seen in the
+        // wild from environments that strip the global (e.g. security software or a spoofed UA).
+        if (typeof WebAssembly === 'undefined') {
+            recordEnvironmentIncompatibilityOnce('webassembly_unsupported');
             return false;
         }
 
