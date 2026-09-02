@@ -6,6 +6,9 @@ import type { CacheService } from '../Services/CacheService'
 import type { CachableResult } from './CachableResult'
 import { rawPermissionToRole } from '../Types/DocumentEntitlements'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
+import { getSharingPermissions } from '../DriveSDK/getSharingPermissions'
+import type { UnleashClient } from '@proton/unleash/UnleashClient'
+import { isDriveCompatSDKEnabled } from '../Util/isDriveCompatSDKEnabled'
 
 type GetNodePermissionsResult = CachableResult & {
   role: DocumentRole
@@ -18,9 +21,13 @@ export class GetNodePermissions implements UseCaseInterface<GetNodePermissionsRe
     private compatWrapper: DriveCompatWrapper,
     private cacheService: CacheService,
     private logger: LoggerInterface,
+    private unleashClient: UnleashClient,
   ) {}
 
-  async execute(nodeMeta: NodeMeta, options: { useCache: boolean }): Promise<Result<GetNodePermissionsResult>> {
+  async execute(
+    nodeMeta: NodeMeta,
+    options: { useCache: boolean },
+  ): Promise<Result<GetNodePermissionsResult>> {
     try {
       if (options.useCache) {
         const cachedPermissions = await this.cacheService.getCachedValue({
@@ -39,7 +46,12 @@ export class GetNodePermissions implements UseCaseInterface<GetNodePermissionsRe
     }
 
     try {
-      const permissions = await this.compatWrapper.getUserCompat().getNodePermissions(nodeMeta)
+      let permissions
+      if (isDriveCompatSDKEnabled(this.unleashClient)) {
+        permissions = await getSharingPermissions(nodeMeta)
+      } else {
+        permissions = await this.compatWrapper.getUserCompat().getNodePermissions(nodeMeta)
+      }
 
       if (!permissions) {
         return Result.fail('Incorrect compat used; permissions not found')

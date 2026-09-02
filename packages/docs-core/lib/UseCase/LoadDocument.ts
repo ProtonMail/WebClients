@@ -48,7 +48,9 @@ export class LoadDocument {
     private logger: LoggerInterface,
   ) {}
 
-  async executePrivate(nodeMeta: NodeMeta): Promise<DynamicResult<LoadDocumentResult<DocumentState>, ErrorResult>> {
+  async executePrivate(
+    nodeMeta: NodeMeta,
+  ): Promise<DynamicResult<LoadDocumentResult<DocumentState>, ErrorResult>> {
     LoadLogger.logEventRelativeToLoadTime('[LoadDocument] Beginning to load document')
     void OpenTracer.trace('boot_load_document_execute_private_start')
 

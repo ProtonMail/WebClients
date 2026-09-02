@@ -5,6 +5,9 @@ import type { GetNode } from '../UseCase/GetNode'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { c } from 'ttag'
 import { renameNode } from '../DriveSDK/renameNode'
+import { findAvailableNodeName } from '../DriveSDK/findAvailableNodeName'
+import type { UnleashClient } from '@proton/unleash/UnleashClient'
+import { isDriveCompatSDKEnabled } from '../Util/isDriveCompatSDKEnabled'
 
 export interface RenameControllerInterface {
   renameDocument(newName: string, useSDK?: boolean): Promise<TranslatedResult<void>>
@@ -42,6 +45,7 @@ export class PrivateRenameController implements RenameControllerInterface {
     private compat: DriveCompat,
     readonly _getNode: GetNode,
     readonly logger: LoggerInterface,
+    private unleashClient: UnleashClient,
   ) {}
 
   public async renameDocument(newName: string, useSDK: boolean = false): Promise<TranslatedResult<void>> {
@@ -52,13 +56,13 @@ export class PrivateRenameController implements RenameControllerInterface {
       }
 
       const nodeMeta = this.documentState.getProperty('entitlements').nodeMeta
-      const name = await this.compat.findAvailableNodeName(
-        {
-          volumeId: decryptedNode.volumeId,
-          linkId: decryptedNode.parentNodeId,
-        },
-        newName,
-      )
+      const parentMeta = {
+        volumeId: decryptedNode.volumeId,
+        linkId: decryptedNode.parentNodeId,
+      }
+      const name = isDriveCompatSDKEnabled(this.unleashClient)
+        ? await findAvailableNodeName(parentMeta, newName)
+        : await this.compat.findAvailableNodeName(parentMeta, newName)
 
       if (useSDK) {
         await renameNode(nodeMeta, name)
