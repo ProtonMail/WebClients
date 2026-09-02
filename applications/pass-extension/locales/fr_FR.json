@@ -4593,6 +4593,15 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "Cette URL ne sera PAS exclue de la fonction de remplissage automatique"
+      ],
+      "Enter a URL to check if it matches the current rule": [
+        "Saisissez une URL pour vérifier si elle correspond à la règle actuelle"
+      ],
+      "URL doesn't match the rule": [
+        "L'URL ne correspond pas à la règle"
+      ],
+      "URL matches the rule": [
+        "L'URL correspond à la règle"
       ]
     },
     "Security Center - Info": {
@@ -5687,6 +5696,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Votre abonnement ne vous permet pas de créer plusieurs coffres-forts. Tous les éléments seront importés dans votre premier coffre-fort. Changez d'abonnement pour pouvoir importer dans plusieurs coffres-forts."
+      ],
+      "Identity could not be confirmed": [
+        "L'identité n'a pas pu être confirmée."
       ]
     }
   }
