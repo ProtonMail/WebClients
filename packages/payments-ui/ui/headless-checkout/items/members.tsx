@@ -11,17 +11,17 @@ export interface MembersLineItem
     extends BaseLineItem<typeof MEMBERS_LINE_ITEM_TYPE>, ReturnType<typeof formatMembers> {}
 
 function formatMembers(ctx: HeadlessCheckoutContextInner) {
-    const { checkoutUi, couponConfig, isPaidPlan, currency } = ctx;
+    const { checkoutUi, hasInvisibleCoupon, isPaidPlan, currency } = ctx;
 
     const { couponDiscountBreakdown } = checkoutUi;
 
     const pricePerAllPerMonth = (() => {
         // If coupon is hidden from the user, then we need to inline the discount calculation to the addons, including
         // members
-        if (!!couponConfig?.hidden) {
+        if (hasInvisibleCoupon) {
             // legacy flow - will be removed once backend supports coupon breakdown
             if (checkoutUi.addons.length === 0) {
-                return checkoutUi.withDiscountPerMonth;
+                return checkoutUi.withDiscountMembersPerMonth;
             } else if (couponDiscountBreakdown) {
                 // Warning: this code implicitly assumes that the discount for the base plan and for the member addons
                 // is the same. When we create the coupons, we are following this structure, so the assumption holds.
@@ -40,10 +40,17 @@ function formatMembers(ctx: HeadlessCheckoutContextInner) {
     // was discounted by, so `pricePerOnePerMonth * users` still reconciles with `pricePerAllPerMonth`. Without a
     // breakdown the ratio is 1 (no-op); the `membersPerMonth !== 0` guard avoids a divide-by-zero. Only the VPN
     // single-signup PaymentSummary consumes this, on its B2B (users > 1) branch.
-    const pricePerOnePerMonth =
-        couponDiscountBreakdown && checkoutUi.membersPerMonth !== 0
-            ? checkoutUi.oneMemberPerMonth * (pricePerAllPerMonth / checkoutUi.membersPerMonth)
-            : checkoutUi.oneMemberPerMonth;
+    const pricePerOnePerMonth = (() => {
+        if (hasInvisibleCoupon && checkoutUi.addons.length === 0) {
+            return checkoutUi.withDiscountOneMemberPerMonth;
+        }
+
+        if (couponDiscountBreakdown && checkoutUi.membersPerMonth !== 0) {
+            return checkoutUi.oneMemberPerMonth * (pricePerAllPerMonth / checkoutUi.membersPerMonth);
+        }
+
+        return checkoutUi.oneMemberPerMonth;
+    })();
     const pricePerOnePerMonthElement = <Price currency={currency}>{pricePerOnePerMonth}</Price>;
 
     return {

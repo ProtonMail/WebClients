@@ -1,5 +1,6 @@
 import { cancellationFlowMetadata } from './configs/cancellation-flow';
 import { monthlyNudgeMetadata } from './configs/monthly-nudge';
+import { porkbunMetadata } from './configs/porkbun';
 import { q3Sale2026Metadata } from './configs/q3-sale-2026';
 import { tryMailPlus0724Metadata } from './configs/try-mail-plus-0724';
 import { tryMailPlusMobile2026Metadata } from './configs/try-mail-plus-mobile-2026';
@@ -13,4 +14,5 @@ export const defaultCouponConfigMetadata: CouponConfigMetadata[] = [
     cancellationFlowMetadata,
     tryMailPlus0724Metadata,
     tryMailPlusMobile2026Metadata,
+    porkbunMetadata,
 ];

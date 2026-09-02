@@ -25,8 +25,8 @@ import { useCurrencies } from '@proton/components/payments/client-extensions/use
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
-import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments-ui/ui/components/RenewalNotice';
 import { useCouponConfig } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
+import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { getCheckoutUi, getOptimisticCheckResult, getOptimisticCheckout } from '@proton/payments/core/checkout';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
@@ -674,26 +674,44 @@ const Step1 = ({
     hasPlanSelector = hasPlanSelector || isPorkbunPayment;
     const hasUserSelector = !isPorkbunPayment;
 
-    const checkout = getCheckoutUi({
-        planIDs: options.planIDs,
-        plansMap: model.plansMap,
-        checkResult: options.checkResult,
-    });
-
-    const showRenewalNotice = !hasSelectedFree && !checkTrial;
-    const renewalNotice = showRenewalNotice && (
-        <div className="w-full text-sm color-norm opacity-70">
-            *
-            {getCheckoutRenewNoticeTextFromCheckResult({
-                checkResult: options.checkResult,
-                plansMap: model.plansMap,
-                planIDs: options.planIDs,
-                subscription: model.session?.subscription,
-                app,
-            })}
-        </div>
+    const checkoutView = createCheckoutView(
+        {
+            planIDs: options.planIDs,
+            plansMap: model.plansMap,
+            checkResult: options.checkResult,
+            isTrial: checkTrial,
+            couponConfig,
+            app,
+            subscription: model.session?.subscription,
+        },
+        {
+            addons: () => [],
+            billingCycle: () => null,
+            members: () => [],
+            planAmount: () => null,
+            discount: () => null,
+            planAmountWithDiscount: () => null,
+            proration: () => null,
+            unusedCredit: () => null,
+            credit: () => null,
+            gift: () => null,
+            taxExclusive: () => null,
+            nextBilling: () => null,
+            amountDue: () => null,
+            taxInclusive: () => null,
+            renewalNotice: ({ content }) =>
+                !checkTrial ? (
+                    <div className="w-full text-sm color-norm opacity-70">
+                        <span className="pr-1">*</span>
+                        {content}
+                    </div>
+                ) : null,
+            coupon: () => null,
+            vatReverseCharge: () => null,
+        }
     );
 
+    const showRenewalNotice = checkoutView.getItem('renewalNotice').visible && !checkTrial && !hasSelectedFree;
     /**
      * If there is a regional currency then B2C plans can have plans in this currency while B2B plans do not.
      * In that case, we need to automatically select the fallback currency for B2B plans.
@@ -877,7 +895,7 @@ const Step1 = ({
                 </div>
             }
             logo={logo}
-            footer={renewalNotice}
+            footer={checkoutView.render('renewalNotice')}
             hasDecoration
             bottomRight={<SignupSupportDropdown isDarkBg={isDarkBg} />}
             className={className}
@@ -922,7 +940,6 @@ const Step1 = ({
                     hasPlanSelector={hasPlanSelector}
                     audience={audience}
                     isSignupTrial={signupTrial}
-                    checkout={checkout}
                 />
 
                 {hasPlanSelector && (

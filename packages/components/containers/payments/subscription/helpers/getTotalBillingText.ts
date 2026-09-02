@@ -16,8 +16,7 @@ export const getTotalBillingText = (cycle: Cycle, planIDs: PlanIDs, { excludingT
         return c('Checkout row').ngettext(msgid`Subtotal for ${cycle} month`, `Subtotal for ${cycle} months`, cycle);
     }
 
-    const n = cycle;
-    return c('Checkout row').ngettext(msgid`Total for ${n} month`, `Total for ${n} months`, n);
+    return c('Checkout row').ngettext(msgid`Total for ${cycle} month`, `Total for ${cycle} months`, cycle);
 };
 
 export const getShortBillingText = (n: number, planIDs: PlanIDs) => {
