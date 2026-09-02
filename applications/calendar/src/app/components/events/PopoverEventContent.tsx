@@ -13,7 +13,12 @@ import IconRow from '@proton/components/components/iconRow/IconRow';
 import Info from '@proton/components/components/link/Info';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useContactModals } from '@proton/components/containers/contacts/hooks/useContactModals';
+import { IcBell } from '@proton/icons/icons/IcBell';
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcMapPin } from '@proton/icons/icons/IcMapPin';
+import { IcTextAlignLeft } from '@proton/icons/icons/IcTextAlignLeft';
+import { IcUser } from '@proton/icons/icons/IcUser';
 import { getIsCalendarDisabled, getIsSubscribedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -275,13 +280,13 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
     return (
         <>
             {sanitizedLocation ? (
-                <IconRow labelClassName="inline-flex pt-0.5" title={c('Label').t`Location`} icon="map-pin">
+                <IconRow labelClassName="inline-flex pt-0.5" title={c('Label').t`Location`} icon={<IcMapPin />}>
                     <span className="text-break" dangerouslySetInnerHTML={{ __html: sanitizedLocation }} />
                 </IconRow>
             ) : null}
             {videoConferencingWidget}
             {!!numberOfParticipants && organizer && (
-                <IconRow labelClassName={labelClassName} icon="user" title={c('Label').t`Participants`}>
+                <IconRow labelClassName={labelClassName} icon={<IcUser />} title={c('Label').t`Participants`}>
                     <div className="w-full">
                         <Collapsible>
                             <CollapsibleHeader
@@ -334,12 +339,12 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
                 className="flex-1"
                 labelClassName="inline-flex pt-0.5"
                 title={c('Label').t`Calendar`}
-                icon="calendar-grid"
+                icon={<IcCalendarGrid />}
             >
                 {calendarString}
             </IconRow>
             {model.notifications?.length ? (
-                <IconRow labelClassName={labelClassName} title={c('Label').t`Notifications`} icon="bell">
+                <IconRow labelClassName={labelClassName} title={c('Label').t`Notifications`} icon={<IcBell />}>
                     <div className="flex flex-column">
                         {model.notifications.map((notification) => (
                             <PopoverNotification
@@ -352,7 +357,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
                 </IconRow>
             ) : null}
             {htmlString ? (
-                <IconRow labelClassName={labelClassName} title={c('Label').t`Description`} icon="text-align-left">
+                <IconRow labelClassName={labelClassName} title={c('Label').t`Description`} icon={<IcTextAlignLeft />}>
                     <div className="text-break my-0 text-pre-wrap" dangerouslySetInnerHTML={{ __html: htmlString }} />
                 </IconRow>
             ) : null}

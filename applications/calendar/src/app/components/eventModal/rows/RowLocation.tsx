@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Input } from '@proton/atoms/Input/Input';
 import IconRow from '@proton/components/components/iconRow/IconRow';
+import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { LOCATION_INPUT_ID, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
 
@@ -19,7 +20,7 @@ export const RowLocation = ({ canEditSharedEventData, model, setModel }: Props) 
     }
 
     return (
-        <IconRow icon="map-pin" title={c('Label').t`Location`} id={LOCATION_INPUT_ID}>
+        <IconRow icon={<IcMapPin />} title={c('Label').t`Location`} id={LOCATION_INPUT_ID}>
             <Input
                 id={LOCATION_INPUT_ID}
                 placeholder={c('Placeholder').t`Add location`}
