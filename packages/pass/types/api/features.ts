@@ -1,7 +1,6 @@
 import type { MaybeNull } from '../utils';
 
 export enum PassFeature {
-    LoginAutofillTelemetry = 'LoginAutofillTelemetry',
     PassAccessTokens = 'PassAccessTokens',
     PassAutofillUrlAdvancedModes = 'PassAutofillUrlAdvancedModes',
     PassAutofillUrlRegex = 'PassAutofillUrlRegex',
