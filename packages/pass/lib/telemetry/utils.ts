@@ -1,11 +1,9 @@
-import type { BaseTelemetryEvent, TelemetryEvent, TelemetryPlatform } from '../../types/data/telemetry';
-import { TelemetryEventName } from '../../types/data/telemetry';
-
-export const AUTOFILL_TELEMETRY_EVENTS = [
-    TelemetryEventName.ExtensionCopiedFromLogin,
-    TelemetryEventName.AutosaveDismissed,
-    TelemetryEventName.ExtensionUsed,
-];
+import type {
+    BaseTelemetryEvent,
+    TelemetryEvent,
+    TelemetryEventName,
+    TelemetryPlatform,
+} from '../../types/data/telemetry';
 
 export const createTelemetryEvent = <T extends TelemetryEventName>(
     Event: T,
