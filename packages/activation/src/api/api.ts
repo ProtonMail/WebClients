@@ -13,6 +13,7 @@ import type {
     ApiCreateImporterOrganization,
     ApiCreateImporterOrganizationMigration,
     ApiCreateJoiningLink,
+    ApiImportProvider,
     ApiImporterOrganizationState,
 } from './api.interface';
 
@@ -256,8 +257,8 @@ export const createOrganizationImporterMigration = (data: ApiCreateImporterOrgan
     data,
 });
 
-export const getConnectionStatus = (connectivityProvider: string) => ({
-    url: `importer/v1/provider/${connectivityProvider}/connection/status`,
+export const getConnectionStatus = (provider: ApiImportProvider) => ({
+    url: `importer/v1/organizations/connection/status/${provider}`,
     method: 'GET',
 });
 
