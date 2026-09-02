@@ -6510,6 +6510,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@lit-labs/ssr-dom-shim@npm:^1.5.0":
+  version: 1.6.0
+  resolution: "@lit-labs/ssr-dom-shim@npm:1.6.0"
+  checksum: 10/144432432e1749c4878a59baf41b2afaadef565675d64b2a8e088c6f54e36f26f67ef43aa93e49d3e6dd38a5e27c41059e981c33accdb4e8c6d47c1048696b80
+  languageName: node
+  linkType: hard
+
+"@lit/reactive-element@npm:^2.1.0":
+  version: 2.1.2
+  resolution: "@lit/reactive-element@npm:2.1.2"
+  dependencies:
+    "@lit-labs/ssr-dom-shim": "npm:^1.5.0"
+  checksum: 10/91ae952d34fba51ac4936f7d6b3a4300e48a54a9e7c77c8747a08148124a2a9a52cd057db059eff8424ae43c6fa342275550793e6ecfc0054bce8286df4214cb
+  languageName: node
+  linkType: hard
+
 "@livekit/components-core@npm:0.12.15":
   version: 0.12.15
   resolution: "@livekit/components-core@npm:0.12.15"
@@ -12045,9 +12061,11 @@ __metadata:
     "@proton/shared": "workspace:^"
     "@types/react": "npm:^18.3.31"
     "@unleash/proxy-client-react": "npm:^5.1.0"
+    "@unleash/toolbar": "npm:^1.2.0"
     date-fns: "npm:^3.6.0"
     eslint: "npm:^10.9.0"
     jest: "npm:^30.4.2"
+    jest-environment-jsdom: "npm:^30.4.1"
     prettier: "npm:^3.9.6"
     react: "npm:^18.3.1"
     typescript: "npm:^6.0.3"
@@ -17363,7 +17381,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/trusted-types@npm:^2.0.7":
+"@types/trusted-types@npm:^2.0.2, @types/trusted-types@npm:^2.0.7":
   version: 2.0.7
   resolution: "@types/trusted-types@npm:2.0.7"
   checksum: 10/8e4202766a65877efcf5d5a41b7dd458480b36195e580a3b1085ad21e948bc417d55d6f8af1fd2a7ad008015d4117d5fdfe432731157da3c68678487174e4ba3
@@ -17921,6 +17939,22 @@ __metadata:
   peerDependencies:
     unleash-proxy-client: ^3.8.0
   checksum: 10/1d69b7f5241b4c0fe4475ba9ec53b043a6e50fc61b800a271469bcea404af53a11034a8c565565806eb65d53dee49d003931aae81ef41a17fca9f735391fd97f
+  languageName: node
+  linkType: hard
+
+"@unleash/toolbar@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@unleash/toolbar@npm:1.2.0"
+  dependencies:
+    lit: "npm:^3.3.1"
+  peerDependencies:
+    unleash-proxy-client: ^3.0.0
+  peerDependenciesMeta:
+    "@unleash/nextjs":
+      optional: true
+    "@unleash/proxy-client-react":
+      optional: true
+  checksum: 10/c6f600467ca94f757efdd440609b3f0f8f242ba0a2ce250a8b82858c5ded05165a3d26f2717b376b7ec91e99204b722f4a70cc36a94e0988938c0f1c071f2713
   languageName: node
   linkType: hard
 
@@ -35769,6 +35803,37 @@ __metadata:
     rfdc: "npm:^1.3.0"
     wrap-ansi: "npm:^8.1.0"
   checksum: 10/42cda5764906f9d298e3b0b0a684e71a3737533b2aef66f361265a3b938c4bc8f49bcea91536a8daa956833658d14108469b00c565c8e93ce4079795f6a06e07
+  languageName: node
+  linkType: hard
+
+"lit-element@npm:^4.2.0":
+  version: 4.2.2
+  resolution: "lit-element@npm:4.2.2"
+  dependencies:
+    "@lit-labs/ssr-dom-shim": "npm:^1.5.0"
+    "@lit/reactive-element": "npm:^2.1.0"
+    lit-html: "npm:^3.3.0"
+  checksum: 10/268705c5a88c68ceeffb4dc871ffa7a9e5b5405b4907bc408cdc3336ea865b1690b4f4a34155af287200cc0737933c25326ed6816fa2c040b747925717bc21a6
+  languageName: node
+  linkType: hard
+
+"lit-html@npm:^3.3.0":
+  version: 3.3.3
+  resolution: "lit-html@npm:3.3.3"
+  dependencies:
+    "@types/trusted-types": "npm:^2.0.2"
+  checksum: 10/d8fc4ccd983ad5c32e5efa98687e6be90dbfb29863ecda124d18452545854fdd97c8b06679182d8fbb2324e5db9ba1e210724e1d3e279545357b031e94ec9139
+  languageName: node
+  linkType: hard
+
+"lit@npm:^3.3.1":
+  version: 3.3.3
+  resolution: "lit@npm:3.3.3"
+  dependencies:
+    "@lit/reactive-element": "npm:^2.1.0"
+    lit-element: "npm:^4.2.0"
+    lit-html: "npm:^3.3.0"
+  checksum: 10/238a6574447f6499b7a4c6e30a4da89907b095ea48d6291fb1de570e937745b84550ced459f9c51632c3010c964403e2d6ebe65caf1500f03779b6049f229f12
   languageName: node
   linkType: hard
 

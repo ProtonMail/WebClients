@@ -22,7 +22,7 @@ import {
     VPN_TV_PATH_WITH_CODE,
     VPN_TV_SIGNUP_REDIRECT,
 } from '@proton/shared/lib/constants';
-import { FlagProvider } from '@proton/unleash/proxy';
+import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';
 import noop from '@proton/utils/noop';
 
 import bornPrivateActivatePage from '../../pages/born-private.activate';
@@ -346,7 +346,7 @@ const PublicAppInteractive = ({
             {blockingLoginEffect && <Route path="*">{blockingLoginEffect}</Route>}
             <Route path="*">
                 <UnauthenticatedApiProvider unauthenticatedApi={extraThunkArguments.unauthenticatedApi}>
-                    <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+                    <UnleashFlagProviderWithToolbar unleashClient={extraThunkArguments.unleashClient}>
                         <PublicAppSetup>
                             <ForceRefreshContext.Provider value={refresh}>
                                 <AccountPublicApp
@@ -666,7 +666,7 @@ const PublicAppInteractive = ({
                                 </AccountPublicApp>
                             </ForceRefreshContext.Provider>
                         </PublicAppSetup>
-                    </FlagProvider>
+                    </UnleashFlagProviderWithToolbar>
                 </UnauthenticatedApiProvider>
             </Route>
         </Switch>
