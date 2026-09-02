@@ -81,7 +81,6 @@ import TracerAlert from '../../../tracer/TracerAlert'
 import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
 import { getLogsAsJSON } from '~/utils/downloadLogs'
 import { useSheetsDebugArtifacts } from './useSheetsDebugArtifacts'
-import { useDocsUrlBar } from '~/utils/docs-url-bar'
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider'
 
 export function useSuggestionsFeatureFlag() {
@@ -113,7 +112,6 @@ export function DocumentViewer({
   const getUserSettings = useGetUserSettings()
   const { isDebugMode } = useDebugMode()
   const { APP_VERSION } = useConfig()
-  const { removeLocalIDFromUrl } = useDocsUrlBar()
 
   const [documentState, setDocumentState] = useState<DocumentState | PublicDocumentState | null>(null)
   const [docController, setDocController] = useState<AuthenticatedDocControllerInterface | undefined>(undefined)
@@ -643,13 +641,8 @@ export function DocumentViewer({
         setReady(true)
         const localID = getLocalID()
         if (localID !== undefined) {
-          const didCacheLocalID = CacheService.setLocalIDForDocumentInCache(nodeMeta, localID)
-          if (didCacheLocalID) {
-            void OpenTracer.trace('boot_doc_viewer_set_local_id_for_document_in_cache', { localID })
-            removeLocalIDFromUrl()
-          } else {
-            void OpenTracer.trace('boot_doc_viewer_set_local_id_for_document_in_cache_failed', { localID })
-          }
+          void OpenTracer.trace('boot_doc_viewer_set_local_id_for_document_in_cache', { localID })
+          CacheService.setLocalIDForDocumentInCache(nodeMeta, localID)
         }
       },
       onError: (errorMessage, code) => {
