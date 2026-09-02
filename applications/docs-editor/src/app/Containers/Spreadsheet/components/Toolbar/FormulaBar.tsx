@@ -16,7 +16,7 @@ import * as UI from '../ui'
 import * as Icons from '../icons'
 import { c } from 'ttag'
 import { createStringifier } from '../../stringifier'
-import { sortSheetsByIndex } from '../../state'
+import { sortSheetsByIndex } from '@rowsncolumns/utils'
 
 const { s } = createStringifier(strings)
 
