@@ -3,14 +3,12 @@ import { c } from 'ttag';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import protonDarkBackground from '@proton/styles/assets/img/meet/backgrounds/00-proton-dark.webp';
 import protonLightBackground from '@proton/styles/assets/img/meet/backgrounds/01-proton-light.webp';
-import cityBackground from '@proton/styles/assets/img/meet/backgrounds/02-european-city.webp';
 import officeBackground from '@proton/styles/assets/img/meet/backgrounds/03-blurred-office.webp';
 import libraryBackground from '@proton/styles/assets/img/meet/backgrounds/04-library.webp';
 import mountainBackground from '@proton/styles/assets/img/meet/backgrounds/05-mountain-landscape.webp';
 import beachBackground from '@proton/styles/assets/img/meet/backgrounds/06-beach-landscape.webp';
 import protonDarkThumbnail from '@proton/styles/assets/img/meet/backgrounds/thumbnails/00-proton-dark.webp';
 import protonLightThumbnail from '@proton/styles/assets/img/meet/backgrounds/thumbnails/01-proton-light.webp';
-import cityThumbnail from '@proton/styles/assets/img/meet/backgrounds/thumbnails/02-european-city.webp';
 import officeThumbnail from '@proton/styles/assets/img/meet/backgrounds/thumbnails/03-blurred-office.webp';
 import libraryThumbnail from '@proton/styles/assets/img/meet/backgrounds/thumbnails/04-library.webp';
 import mountainThumbnail from '@proton/styles/assets/img/meet/backgrounds/thumbnails/05-mountain-landscape.webp';
@@ -32,11 +30,6 @@ const VIRTUAL_BACKGROUND_DEFINITIONS = {
         imageUrl: protonLightBackground,
         thumbnailUrl: protonLightThumbnail,
         getLabel: () => c('Label').t`Light ${BRAND_NAME} background`,
-    },
-    city: {
-        imageUrl: cityBackground,
-        thumbnailUrl: cityThumbnail,
-        getLabel: () => c('Label').t`European city background`,
     },
     office: {
         imageUrl: officeBackground,
