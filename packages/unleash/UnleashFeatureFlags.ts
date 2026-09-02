@@ -383,6 +383,7 @@ enum LumoFeatureFlag {
     LumoMaxAvailableGuest = 'LumoMaxAvailableGuest',
     LumoMaxAvailableFree = 'LumoMaxAvailableFree',
     LumoApertusModel = 'LumoApertusModel',
+    LumoDictationV2 = 'LumoDictationV2',
     WhatsNewV2 = 'WhatsNewV2',
 }
 
