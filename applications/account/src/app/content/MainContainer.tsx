@@ -85,7 +85,6 @@ import { TVContainer, TvContainerSignedIn } from '@proton/vpn/components/tv';
 import { NavigationProvider, useB2BAdminNavigation } from '@proton/vpn/contexts/navigation';
 
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
-import { recoveryIds } from '../containers/account/recoveryIds';
 import MspSettingsRouter from '../containers/msp/MspSettingsRouter';
 import OrganizationSettingsRouter from '../containers/organization/OrganizationSettingsRouter';
 import Layout from '../public/Layout';
@@ -538,7 +537,7 @@ const MainContainer = () => {
                         </Route>
                         <Route path={[getTrustedContactRoute(`/${appSlug}`), getTrustedContactRoute()]}>
                             <Redirect
-                                to={`/${appSlug}${routes.account.routes.recovery.to}${location.search}${location.hash || `#${recoveryIds.emergencyAccess}`}`}
+                                to={`${appSlug}${routes.account.routes.recovery.to}${routes.account.routes.recovery.subrouteGroups.advancedRecovery.subroutes.emergencyContacts.to}${location.search}${location.hash}`}
                             />
                         </Route>
                         <Route path={anyOrganizationAppRoute}>
