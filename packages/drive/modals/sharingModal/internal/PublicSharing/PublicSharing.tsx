@@ -29,6 +29,7 @@ interface Props {
         url: string;
         customPassword?: string;
         expirationTime?: Date;
+        isExpired: boolean;
     };
     onUpdate: ({
         role,
@@ -156,7 +157,12 @@ export const PublicSharing = ({ publicLink, onUpdate, onCreate, onDelete, isLoad
                         </div>
                     </div>
 
-                    <CopyPublicLink url={url} onClick={handleCopyURLClick} disabled={!url || isLoading} />
+                    <CopyPublicLink
+                        url={url}
+                        onClick={handleCopyURLClick}
+                        disabled={!url || isLoading}
+                        isExpired={publicLink?.isExpired}
+                    />
                 </div>
 
                 {/* Footer */}
