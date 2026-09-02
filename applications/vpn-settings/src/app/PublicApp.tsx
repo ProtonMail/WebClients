@@ -33,7 +33,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import { isMember } from '@proton/shared/lib/user/helpers';
-import { FlagProvider } from '@proton/unleash/proxy';
+import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';
 import noop from '@proton/utils/noop';
 
 import forgotUsernamePage from '../pages/forgot-username';
@@ -164,7 +164,7 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
             <NotificationsChildren />
             <ModalsChildren />
             <UnauthenticatedApiProvider unauthenticatedApi={unauthenticatedApi}>
-                <FlagProvider unleashClient={unleashClient} startClient={false}>
+                <UnleashFlagProviderWithToolbar unleashClient={unleashClient}>
                     <PublicAppSetup>
                         <ForceRefreshContext.Provider value={refresh}>
                             <UnAuthenticated>
@@ -280,7 +280,7 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
                             </UnAuthenticated>
                         </ForceRefreshContext.Provider>
                     </PublicAppSetup>
-                </FlagProvider>
+                </UnleashFlagProviderWithToolbar>
             </UnauthenticatedApiProvider>
         </>
     );
