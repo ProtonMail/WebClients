@@ -1,63 +1,41 @@
 import type { ReactElement, ReactNode } from 'react';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
-import Icon from '../icon/Icon';
 import Label from '../label/Label';
 
 export interface IconRowProps {
     className?: string;
     children: ReactNode;
-    icon?: ReactElement | IconName;
-    iconColor?: string;
+    icon: ReactElement;
     containerClassName?: string;
-    iconClassName?: string;
     labelClassName?: string;
     title?: string;
     id?: string;
 }
+
 const IconRow = ({
     children,
     icon,
-    iconColor,
     className,
     title,
     containerClassName,
-    iconClassName,
     labelClassName = 'pb-2',
     id,
 }: IconRowProps) => {
-    const getIcon = () => {
-        if (!title && !icon) {
-            return null;
-        }
-
-        if (!icon) {
-            return (
-                <>
-                    &nbsp;<span className="sr-only">{title}</span>
-                </>
-            );
-        }
-
-        if (typeof icon === 'string') {
-            return <Icon name={icon} className={iconClassName} alt={title} color={iconColor} />;
-        }
-
-        return <span>{icon}</span>;
-    };
-
-    const iconResult = getIcon();
-
     return (
         <div className={clsx('flex flex-nowrap items-start mb-4 form--icon-labels', containerClassName)}>
-            {!!iconResult && (
-                <Label className={labelClassName} htmlFor={id}>
-                    <Tooltip title={title}>{iconResult}</Tooltip>
-                </Label>
-            )}
+            <Label className={labelClassName} htmlFor={id}>
+                <Tooltip title={title}>
+                    {/* `Tooltip` clones its child to attach a ref, and the generated `Ic*`
+                        components are not `forwardRef`, so it needs an element of its own. */}
+                    <span>
+                        {icon}
+                        {title ? <span className="sr-only">{title}</span> : null}
+                    </span>
+                </Tooltip>
+            </Label>
             <div className={className || 'flex-1'}>{children}</div>
         </div>
     );

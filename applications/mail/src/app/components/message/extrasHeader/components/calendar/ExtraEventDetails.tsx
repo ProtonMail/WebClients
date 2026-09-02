@@ -5,6 +5,10 @@ import { c } from 'ttag';
 import { useVideoConferencingWidget } from '@proton/calendar-video-conferencing/videoConferencing/widget';
 import IconRow from '@proton/components/components/iconRow/IconRow';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
+import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
+import { IcMapPin } from '@proton/icons/icons/IcMapPin';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getFrequencyString } from '@proton/shared/lib/calendar/recurrence/getFrequencyString';
@@ -70,23 +74,31 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
 
             <div className="p-5" ref={eventDetailsRef}>
                 {!!frequencyString && (
-                    <IconRow title={c('Label').t`Frequency`} icon="arrows-rotate" labelClassName="inline-flex pt-0.5">
+                    <IconRow
+                        title={c('Label').t`Frequency`}
+                        icon={<IcArrowsRotate />}
+                        labelClassName="inline-flex pt-0.5"
+                    >
                         {frequencyString}
                     </IconRow>
                 )}
                 {!!calendar && (
-                    <IconRow title={c('Label').t`Calendar`} icon="calendar-grid" labelClassName="inline-flex pt-0.5">
+                    <IconRow
+                        title={c('Label').t`Calendar`}
+                        icon={<IcCalendarGrid />}
+                        labelClassName="inline-flex pt-0.5"
+                    >
                         <span className="text-break">{calendar.Name}</span>
                     </IconRow>
                 )}
                 {!!trimmedLocation && (
-                    <IconRow title={c('Label').t`Location`} icon="map-pin" labelClassName="inline-flex pt-0.5">
+                    <IconRow title={c('Label').t`Location`} icon={<IcMapPin />} labelClassName="inline-flex pt-0.5">
                         <span dangerouslySetInnerHTML={{ __html: sanitizedAndUrlifiedLocation }} />
                     </IconRow>
                 )}
                 {videoConferencingWidget && <div className="mb-4">{videoConferencingWidget}</div>}
                 {!!participantsList.length && (
-                    <IconRow title={c('Label').t`Participants`} icon="users" labelClassName="inline-flex pt-0.5">
+                    <IconRow title={c('Label').t`Participants`} icon={<IcUsers />} labelClassName="inline-flex pt-0.5">
                         <ExtraEventParticipants list={participantsList} />
                     </IconRow>
                 )}

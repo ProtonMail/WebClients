@@ -2,7 +2,8 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import IconRow from '@proton/components/components/iconRow/MemoizedIconRow';
+import IconRow from '@proton/components/components/iconRow/IconRow';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { PARTICIPANTS_INPUT_ID } from '@proton/shared/lib/calendar/constants';
 import { getIsProtonUID } from '@proton/shared/lib/calendar/helper';
@@ -61,7 +62,7 @@ export const RowParticipants = ({
     };
 
     return (
-        <IconRow icon="users" title={c('Label').t`Participants`} id={PARTICIPANTS_INPUT_ID}>
+        <IconRow icon={<IcUsers />} title={c('Label').t`Participants`} id={PARTICIPANTS_INPUT_ID}>
             <ParticipantsInput
                 placeholder={c('Placeholder').t`Add participants`}
                 id={PARTICIPANTS_INPUT_ID}
