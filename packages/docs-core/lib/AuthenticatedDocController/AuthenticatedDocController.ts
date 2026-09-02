@@ -164,7 +164,10 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
   async refreshNodeAndDocMeta(options: { imposeTrashState: 'trashed' | 'not_trashed' | undefined }): Promise<void> {
     const { nodeMeta } = this.documentState.getProperty('entitlements')
 
-    const result = await this._getNode.execute(nodeMeta, { useCache: false, forceFetch: true })
+    const result = await this._getNode.execute(nodeMeta, {
+      useCache: false,
+      forceFetch: true,
+    })
     if (result.isFailed()) {
       this.logger.error('Failed to get node', result.getError())
       return
@@ -340,7 +343,6 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     const node = this.documentState.getProperty('decryptedNode')
     const result = await this._duplicateDocument.executePrivate(
       this.documentState.getProperty('entitlements').nodeMeta,
-      node,
       editorYjsState,
     )
 
@@ -363,7 +365,6 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     const node = this.documentState.getProperty('decryptedNode')
     const result = await this._duplicateDocument.executePrivate(
       this.documentState.getProperty('entitlements').nodeMeta,
-      node,
       yjsContent,
     )
 
@@ -382,7 +383,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     void this.driveCompat.openDocument(shell, isProtonDocsSpreadsheet(node.mimeType) ? 'sheet' : 'doc')
   }
 
-  public async createNewDocument(documentType: DocumentType, useSDK = false): Promise<void> {
+  public async createNewDocument(documentType: DocumentType): Promise<void> {
     const date = getPlatformFriendlyDateForFileName()
     const newName = getDefaultDocumentName(documentType, date)
 
@@ -391,7 +392,6 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
       this.documentState.getProperty('entitlements').nodeMeta,
       this.documentState.getProperty('decryptedNode'),
       documentType,
-      useSDK,
     )
 
     if (result.isFailed()) {

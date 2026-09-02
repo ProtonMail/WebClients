@@ -7,6 +7,9 @@ import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrap
 import type { CacheService } from '../Services/CacheService'
 import type { CachableResult } from './CachableResult'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
+import { getDecryptedNode } from '../DriveSDK/getDecryptedNode'
+import type { UnleashClient } from '@proton/unleash/UnleashClient'
+import { isDriveCompatSDKEnabled } from '../Util/isDriveCompatSDKEnabled'
 
 type GetNodeResult = CachableResult & {
   node: DecryptedNode
@@ -19,6 +22,7 @@ export class GetNode implements UseCaseInterface<GetNodeResult> {
     private compatWrapper: DriveCompatWrapper,
     private cacheService: CacheService | undefined,
     private logger: LoggerInterface,
+    private unleashClient: UnleashClient,
   ) {}
 
   /** Persists a new name for the node in the existing cache value. If no cached value, returns. */
@@ -75,9 +79,17 @@ export class GetNode implements UseCaseInterface<GetNodeResult> {
       if (isPublicNodeMeta(nodeMeta)) {
         node = await this.compatWrapper.getPublicCompat().getNode(nodeMeta)
       } else if (options.forceFetch) {
-        node = await this.compatWrapper.getUserCompat().getLatestNode(nodeMeta)
+        if (isDriveCompatSDKEnabled(this.unleashClient)) {
+          node = await getDecryptedNode(nodeMeta)
+        } else {
+          node = await this.compatWrapper.getUserCompat().getLatestNode(nodeMeta)
+        }
       } else {
-        node = await this.compatWrapper.getUserCompat().getNode(nodeMeta)
+        if (isDriveCompatSDKEnabled(this.unleashClient)) {
+          node = await getDecryptedNode(nodeMeta)
+        } else {
+          node = await this.compatWrapper.getUserCompat().getNode(nodeMeta)
+        }
       }
 
       if (!node) {

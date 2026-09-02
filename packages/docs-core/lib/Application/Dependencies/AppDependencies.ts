@@ -215,6 +215,7 @@ export class AppDependencies extends DependencyContainer {
       return new CreateEmptyDocumentForConversion(
         compatWrapper.getUserCompat(),
         this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
+        unleashClient,
       )
     })
 
@@ -255,6 +256,7 @@ export class AppDependencies extends DependencyContainer {
         compatWrapper,
         this.get<CacheService>(App_TYPES.CacheService),
         this.get<LoggerInterface>(App_TYPES.Logger),
+        unleashClient,
       )
     })
 
@@ -292,6 +294,7 @@ export class AppDependencies extends DependencyContainer {
         compatWrapper,
         this.get<CacheService>(App_TYPES.CacheService),
         this.get<LoggerInterface>(App_TYPES.Logger),
+        unleashClient,
       )
     })
 
@@ -311,6 +314,7 @@ export class AppDependencies extends DependencyContainer {
         compatWrapper.getUserCompat(),
         this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
         this.get<SeedInitialCommit>(App_TYPES.CreateInitialCommit),
+        unleashClient,
       )
     })
 
@@ -322,7 +326,11 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.CreateNewDocument, () => {
-      return new CreateNewDocument(compatWrapper.getUserCompat(), this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta))
+      return new CreateNewDocument(
+        compatWrapper.getUserCompat(),
+        this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
+        unleashClient,
+      )
     })
 
     this.bind(App_TYPES.FetchRealtimeToken, () => {

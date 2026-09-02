@@ -72,7 +72,6 @@ import {
   useRenameWithSDK,
   useIsTableOfContentsEnabled,
   useTrashWithSDK,
-  useDriveCompatSDK,
 } from '~/utils/flags'
 import { useDebugMode } from '~/utils/debug-mode-context'
 import * as Ariakit from '@ariakit/react'
@@ -119,7 +118,6 @@ export function DocumentTitleDropdown({
   const moveModalDriveSdkEnabled = useMoveModalDriveSdkEnabled()
   const renameWithSDK = useRenameWithSDK()
   const trashWithSDK = useTrashWithSDK()
-  const replaceCompatWithSDK = useDriveCompatSDK()
   const isSheetsEnabled = useIsSheetsEnabled()
   const isTableOfContentsFeatureEnabled = useIsTableOfContentsEnabled()
 
@@ -257,12 +255,12 @@ export function DocumentTitleDropdown({
       const setIsLoading = docType === 'doc' ? setIsMakingNewDocument : setIsMakingNewSheetDocument
       setIsLoading(true)
       try {
-        await authenticatedController?.createNewDocument(docType, replaceCompatWithSDK)
+        await authenticatedController?.createNewDocument(docType)
       } finally {
         setIsLoading(false)
       }
     },
-    [authenticatedController, documentType, replaceCompatWithSDK],
+    [authenticatedController, documentType],
   )
 
   useEffect(() => {
