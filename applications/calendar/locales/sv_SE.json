@@ -10181,6 +10181,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Betala med ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Din valuta har ändrats till euro (€) eftersom ${ IDEAL_WERO_BRAND_NAME } endast stöder betalningar i euro."
       ]
     },
     "Payments.Error": {
@@ -10204,6 +10210,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Ditt kort nekades Prova ett annat kort eller kontakta din bank för att auktorisera debiteringen."
+      ],
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Misslyckades med att initialisera ${ IDEAL_WERO_BRAND_NAME }. Försök igen senare."
       ]
     },
     "Payments.error": {
