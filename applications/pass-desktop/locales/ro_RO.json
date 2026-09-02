@@ -2257,7 +2257,9 @@
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui element într-un alt seif îi va șterge linkurile securizate."
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -4674,6 +4676,15 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "Acest URL va fi autocompletat"
+      ],
+      "Enter a URL to check if it matches the current rule": [
+        "Introduceți o adresă URL pentru a verifica dacă se potrivește cu regula curentă."
+      ],
+      "URL doesn't match the rule": [
+        "Adresa URL nu se potrivește cu regula."
+      ],
+      "URL matches the rule": [
+        "Adresa URL se potrivește cu regula."
       ]
     },
     "Security Center - Info": {
