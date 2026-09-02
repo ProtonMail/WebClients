@@ -5,14 +5,14 @@ import {
     type TelemetryService as CoreTelemetryService,
     createCoreTelemetryService,
 } from '@proton/pass/lib/telemetry/service';
-import { AUTOFILL_TELEMETRY_EVENTS, telemetryBool } from '@proton/pass/lib/telemetry/utils';
+import { telemetryBool } from '@proton/pass/lib/telemetry/utils';
 import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
 import {
     selectAutofillSettings,
     selectDisallowedDomains,
     selectOrgDomains,
 } from '@proton/pass/store/selectors/settings';
-import { selectFeatureFlags, selectTelemetryEnabled, selectUserTier } from '@proton/pass/store/selectors/user';
+import { selectTelemetryEnabled, selectUserTier } from '@proton/pass/store/selectors/user';
 import { NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS, TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { ExtensionStorage } from '@proton/pass/types/worker/storage';
 import { first } from '@proton/pass/utils/array/first';
@@ -47,9 +47,6 @@ export const createTelemetryService = (storage: ExtensionStorage<Record<'telemet
         WorkerMessageType.TELEMETRY_EVENT,
         withContext(async (ctx, { payload: { event, extra } }) => {
             const state = ctx.service.store.getState();
-            const autofillTelemetryEnabled = selectFeatureFlags(state)?.LoginAutofillTelemetry;
-
-            if (!autofillTelemetryEnabled && AUTOFILL_TELEMETRY_EVENTS.includes(event.Event)) return true;
 
             switch (event.Event) {
                 case TelemetryEventName.ExtensionCopiedFromLogin: {
