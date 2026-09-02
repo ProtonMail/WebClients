@@ -8,6 +8,7 @@ interface StaticExperimentScheduleEntry {
 
 export interface StaticExperimentConfig {
     enabled: boolean;
+    owner: string;
     schedule: [StaticExperimentScheduleEntry, ...StaticExperimentScheduleEntry[]];
 }
 
