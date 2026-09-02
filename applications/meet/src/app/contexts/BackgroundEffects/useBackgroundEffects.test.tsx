@@ -170,7 +170,7 @@ describe('useBackgroundEffects', () => {
 
         const source = processorMocks.createCustomBackgroundProcessor.mock.calls[0][0] as { imageUrl?: string };
 
-        expect(source.imageUrl).toContain('01-modern-office');
+        expect(source.imageUrl).toContain('03-blurred-office');
         // The full-size image and its thumbnail share a basename, so the directory is what
         // tells them apart: the picker's thumbnail must never reach the processor.
         expect(source.imageUrl).not.toContain('thumbnails');
@@ -216,7 +216,7 @@ describe('useBackgroundEffects', () => {
         const { getBackgroundState, result } = setup();
 
         await act(async () => {
-            const first = result.current.selectBackgroundEffect('proton');
+            const first = result.current.selectBackgroundEffect('protonDark');
             const second = result.current.selectBackgroundEffect('office');
 
             await Promise.all([first, second]);
@@ -240,7 +240,7 @@ describe('useBackgroundEffects', () => {
         track.getProcessor.mockReturnValue(undefined);
 
         await act(async () => {
-            await result.current.selectBackgroundEffect('proton');
+            await result.current.selectBackgroundEffect('protonDark');
         });
 
         expect(rawFrameToggles).toEqual([false, true]);
@@ -267,7 +267,7 @@ describe('useBackgroundEffects', () => {
         const { getAppliedBackgroundEffect, result } = setup();
 
         await act(async () => {
-            await result.current.selectBackgroundEffect('coffee');
+            await result.current.selectBackgroundEffect('library');
         });
         await act(async () => {
             await result.current.selectBackgroundEffect('none');
@@ -309,7 +309,7 @@ describe('useBackgroundEffects', () => {
         await act(async () => {});
 
         await act(async () => {
-            await result.current.selectBackgroundEffect('proton');
+            await result.current.selectBackgroundEffect('protonDark');
         });
 
         expect(customProcessor.enable).toHaveBeenCalled();
@@ -374,7 +374,7 @@ describe('useBackgroundEffects', () => {
         const { result } = setup();
 
         await act(async () => {
-            await result.current.selectBackgroundEffect('proton');
+            await result.current.selectBackgroundEffect('protonDark');
         });
 
         expect(customProcessor.enable).not.toHaveBeenCalled();
@@ -382,7 +382,7 @@ describe('useBackgroundEffects', () => {
         processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => processor);
 
         await act(async () => {
-            await result.current.selectBackgroundEffect('proton');
+            await result.current.selectBackgroundEffect('protonDark');
         });
 
         expect(customProcessor.enable).toHaveBeenCalled();
@@ -507,13 +507,13 @@ describe('useBackgroundEffects', () => {
 
     it('ignores a stored virtual background once the feature is turned off', async () => {
         unleashMocks.useFlag.mockReturnValue(false);
-        localStorage.setItem('meetVirtualBackground', 'proton');
+        localStorage.setItem('meetVirtualBackground', 'protonDark');
 
         const customProcessor = createCustomProcessor();
         processorMocks.createCustomBackgroundProcessor.mockResolvedValue(customProcessor);
         processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => processor);
 
-        const { getAppliedBackgroundEffect, result } = setup({ appliedBackgroundEffect: 'proton' });
+        const { getAppliedBackgroundEffect, result } = setup({ appliedBackgroundEffect: 'protonDark' });
 
         await act(async () => {});
 
@@ -527,7 +527,7 @@ describe('useBackgroundEffects', () => {
 
         expect(processorMocks.createCustomBackgroundProcessor).not.toHaveBeenCalled();
         // The pick is hidden on read rather than thrown away, so it comes back with the feature.
-        expect(getAppliedBackgroundEffect()).toBe('proton');
-        expect(localStorage.getItem('meetVirtualBackground')).toBe('proton');
+        expect(getAppliedBackgroundEffect()).toBe('protonDark');
+        expect(localStorage.getItem('meetVirtualBackground')).toBe('protonDark');
     });
 });

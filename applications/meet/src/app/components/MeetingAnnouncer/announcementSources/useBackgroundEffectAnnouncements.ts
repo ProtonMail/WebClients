@@ -17,18 +17,20 @@ const getMessage = (effect: BackgroundEffect) => {
             return announcementMessages.backgroundEffectCleared();
         case 'blur':
             return announcementMessages.backgroundBlurApplied();
-        case 'proton':
-            return announcementMessages.protonBackgroundApplied();
+        case 'protonDark':
+            return announcementMessages.protonDarkBackgroundApplied();
+        case 'protonLight':
+            return announcementMessages.protonLightBackgroundApplied();
+        case 'city':
+            return announcementMessages.cityBackgroundApplied();
         case 'office':
             return announcementMessages.officeBackgroundApplied();
+        case 'library':
+            return announcementMessages.libraryBackgroundApplied();
         case 'mountain':
             return announcementMessages.mountainBackgroundApplied();
-        case 'abstract':
-            return announcementMessages.abstractBackgroundApplied();
         case 'beach':
             return announcementMessages.beachBackgroundApplied();
-        case 'coffee':
-            return announcementMessages.coffeeBackgroundApplied();
     }
 };
 
