@@ -5,8 +5,6 @@ import { ApiImportProvider } from '../api/api.interface';
 import { ImportProvider, OAUTH_PROVIDER } from '../interface';
 
 type OlesProviderBase = {
-    /** API enum name used for endpoints that do not accept int values */
-    connectivityProvider: string;
     /** Name of the other provider, e.g. "Google" */
     brandName: string;
     /** Name of the suite being migrated away from, e.g. "Google Workspace" */
@@ -45,7 +43,6 @@ export const OLES_PROVIDERS: { [Id in SupportedProvider]: OlesProviderFor<Id> } 
         id: ImportProvider.GOOGLE,
         apiProvider: ApiImportProvider.GOOGLE,
         oauthProvider: OAUTH_PROVIDER.GSUITE,
-        connectivityProvider: 'googleworkspace',
         brandName: 'Google',
         displayName: 'Google Workspace',
         mailAppName: 'Gmail',

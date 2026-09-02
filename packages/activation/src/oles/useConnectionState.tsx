@@ -49,7 +49,7 @@ export const useConnectionState = (
             return;
         }
 
-        return api<{ Status: ApiImporterConnectionStatus }>(getConnectionStatus(provider.connectivityProvider))
+        return api<{ Status: ApiImporterConnectionStatus }>(getConnectionStatus(provider.apiProvider))
             .then((r) => setData(r.Status.IsConnected ? 'connected' : 'disconnected'))
             .catch(data ? noop : () => setData('disconnected'))
             .finally(() => setLoading(false));
