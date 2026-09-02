@@ -1,4 +1,5 @@
 import metrics from '@proton/metrics';
+import type { HttpsProtonMeWebDriveSearchEnvironmentIncompatibilityTotalV1SchemaJson } from '@proton/metrics/types/web_drive_search_environment_incompatibility_total_v1.schema';
 import type { HttpsProtonMeWebDriveSearchPermanentErrorsTotalV1SchemaJson } from '@proton/metrics/types/web_drive_search_permanent_errors_total_v1.schema';
 
 import { Logger } from './Logger';
@@ -65,7 +66,28 @@ const PERMANENT_ERROR_METRIC_KIND: Record<
 export type SearchTransientErrorKind = TransientErrorKind;
 
 export type SearchEnvironmentIncompatibilityReason =
-    'safari_too_old' | 'shared_worker_unsupported' | 'indexed_db_unsupported' | 'indexed_db_probe_failed' | 'mobile';
+    | 'safari_too_old'
+    | 'shared_worker_unsupported'
+    | 'indexed_db_unsupported'
+    | 'indexed_db_probe_failed'
+    | 'mobile'
+    | 'webassembly_unsupported'
+    | 'chrome_too_old';
+
+const ENVIRONMENT_INCOMPATIBILITY_METRIC_REASON: Record<
+    SearchEnvironmentIncompatibilityReason,
+    HttpsProtonMeWebDriveSearchEnvironmentIncompatibilityTotalV1SchemaJson['Labels']['reason']
+> = {
+    safari_too_old: 'safari_too_old',
+    shared_worker_unsupported: 'shared_worker_unsupported',
+    indexed_db_unsupported: 'indexed_db_unsupported',
+    indexed_db_probe_failed: 'indexed_db_probe_failed',
+    mobile: 'mobile',
+    // TODO: Consider adding a webassembly enum value in grafana.
+    webassembly_unsupported: 'unknown',
+    // TODO: Consider adding a obsolete_browser enum value in grafana.
+    chrome_too_old: 'unknown',
+};
 
 export type SearchOptInKind = 'manual' | 'legacy_auto_upgrade';
 
@@ -222,7 +244,9 @@ export const searchMetrics = {
      * opt-out cohort. Run once per web session.
      */
     markIncompatibilityEnvironment({ reason }: { reason: SearchEnvironmentIncompatibilityReason }): void {
-        metrics.drive_search_environment_incompatibility_total.increment({ reason });
+        metrics.drive_search_environment_incompatibility_total.increment({
+            reason: ENVIRONMENT_INCOMPATIBILITY_METRIC_REASON[reason],
+        });
     },
 
     /**
