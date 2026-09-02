@@ -96,6 +96,16 @@ describe('validateToolArgs', () => {
         }
     });
 
+    it('rejects a string shorter than minLength', () => {
+        const s = schema({ description: { type: 'string', minLength: 1 } }, ['description']);
+        expect(validateToolArgs(s, { description: 'x' })).toEqual({ ok: true, value: { description: 'x' } });
+        const bad = validateToolArgs(s, { description: '' });
+        expect(bad.ok).toBe(false);
+        if (!bad.ok) {
+            expect(bad.error).toContain('shorter than the 1-character minimum');
+        }
+    });
+
     it('treats a required, non-nullable field that arrived as null as missing', () => {
         const result = validateToolArgs(schema({ handle: { type: 'string' } }, ['handle']), { handle: null });
         expect(result).toEqual({ ok: false, error: "ValidationError: missing required field 'handle'" });
