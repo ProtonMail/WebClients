@@ -5,6 +5,7 @@ import type { StaticExperimentConfig } from './types';
 export const staticExperimentsConfig = {
     AATest: {
         enabled: true,
+        owner: 'account-web',
         schedule: [
             {
                 startsAt: '2026-08-01T00:00:00.000Z',
