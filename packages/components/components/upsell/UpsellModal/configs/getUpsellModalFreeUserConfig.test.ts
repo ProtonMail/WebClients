@@ -20,7 +20,7 @@ const NON_MAIN_CURRENCY_MOCK_AMOUNT = 12;
 const NON_MAIN_CURRENCY_MOCK_AMOUNT_WITHOUT_DISCOUNT = 20;
 const MAIN_CURRENCY_MONTHLY_MAIL_PLUS_AMOUNT = 8;
 
-async function setupTest(currency: Currency) {
+async function setupTest(currency: Currency, hasHadSubscription = false) {
     // @ts-expect-error - mock of paymentApi call
     paymentsApiMock.checkSubscription.mockResolvedValue({
         AmountDue: NON_MAIN_CURRENCY_MOCK_AMOUNT,
@@ -34,6 +34,7 @@ async function setupTest(currency: Currency) {
 
     const config = await getUpsellModalFreeUserConfig({
         currency,
+        hasHadSubscription,
         paymentsApi: paymentsApiMock,
         plans: [
             {
@@ -89,6 +90,35 @@ describe('getUpsellModalFreeUserConfig', () => {
         expect(footerText[1].props.children).toBe(ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE);
         expect(footerText[2]).toBe(' is valid for the first month. Then it will automatically be renewed at ');
         expect(footerText[3].props.children).toBe(MAIN_CURRENCY_MONTHLY_MAIL_PLUS_AMOUNT);
+    });
+
+    it('When the user already had a subscription it should drop the promo coupon and show the regular price', async () => {
+        const { config } = await setupTest('USD', true);
+
+        expect(config).toHaveProperty('planIDs', { [PLANS.MAIL]: 1 });
+        expect(config).toHaveProperty('cycle', CYCLE.MONTHLY);
+        expect(config.coupon).toBeUndefined();
+
+        const submitText = config.submitText as any;
+
+        // The price offered must be the regular one, never the one-dollar promo amount
+        expect(submitText[1]).toBe(PLAN_NAMES[PLANS.MAIL]);
+        expect(submitText[3].props.children).toBe(MAIN_CURRENCY_MONTHLY_MAIL_PLUS_AMOUNT);
+        expect(submitText[3].props.children).not.toBe(ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE);
+
+        const footerText = config.footerText as any;
+
+        // User shouldn't see the price per month repeated at the bottom
+        expect(footerText).toBe(undefined);
+    });
+
+    it('When the user already had a subscription it should not send the coupon when fetching the price', async () => {
+        await setupTest('BRL', true);
+
+        expect(paymentsApiMock.checkSubscription).toHaveBeenCalledTimes(1);
+        expect(paymentsApiMock.checkSubscription).toHaveBeenCalledWith(
+            expect.objectContaining({ CouponCode: undefined })
+        );
     });
 
     it('When non main currency it should return correct config with fetched price', async () => {
