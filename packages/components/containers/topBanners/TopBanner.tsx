@@ -10,6 +10,8 @@ import clsx from '@proton/utils/clsx';
 interface Props {
     children: ReactNode;
     className?: string;
+    innerClassName?: string;
+    innerPadding?: string;
     onClose?: () => void;
     'data-testid'?: string;
     /**
@@ -19,7 +21,15 @@ interface Props {
     announce?: boolean;
 }
 
-const TopBanner = ({ children, className, onClose, announce = true, ...rest }: Props) => {
+const TopBanner = ({
+    children,
+    className,
+    innerClassName,
+    innerPadding = 'p-2',
+    onClose,
+    announce = true,
+    ...rest
+}: Props) => {
     return (
         <div
             role={announce ? 'alert' : undefined}
@@ -30,7 +40,7 @@ const TopBanner = ({ children, className, onClose, announce = true, ...rest }: P
             ])}
             {...rest}
         >
-            <div className="flex-1 p-2">{children}</div>
+            <div className={clsx('flex-1', innerPadding, innerClassName)}>{children}</div>
             {onClose ? (
                 <Button
                     icon
