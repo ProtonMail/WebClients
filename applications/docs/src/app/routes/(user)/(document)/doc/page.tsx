@@ -27,6 +27,7 @@ import { useEmailOptInModal } from './__components/EmailOptInModal/EmailOptInMod
 import { useDocsNotifications } from '../../__utils/notifications-context'
 import { PrivateHookChangesToEvents } from './__components/PrivateHookChangesToEvents'
 import { useFlag } from '@proton/unleash/useFlag'
+import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { useLocation } from 'react-router-dom-v5-compat'
 import { tmpConvertNewDocTypeToOld } from '@proton/drive-store/store/_documents'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
@@ -39,11 +40,16 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
 
   const [user] = useUser()
 
-  const { openAction, searchParams, updateParameters, navigateToAction } = useDocsUrlBar()
+  const { openAction, searchParams, updateParameters, navigateToAction, removeLocalIDFromUrl } = useDocsUrlBar()
 
   useEffect(() => {
     void OpenTracer.trace('boot_doc_page_mount', { mode: openAction?.mode })
   }, [openAction, searchParams])
+
+  useEffectOnce(() => {
+    void OpenTracer.trace('boot_doc_page_remove_local_id')
+    removeLocalIDFromUrl()
+  })
 
   const [actionMode, setActionMode] = useState<DocumentAction['mode']>()
   const [isCreatingNewDocument, setIsCreatingNewDocument] = useState<boolean>(false)
