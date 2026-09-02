@@ -1712,6 +1712,9 @@
       ],
       "Emoji": [
         "表情符號"
+      ],
+      "Migrate": [
+        "遷移"
       ]
     },
     "action": {
@@ -5431,6 +5434,27 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜尋結果過多。請縮小您的搜尋範圍並重新試試。"
+      ],
+      "Cannot verify the author of this file": [
+        "無法驗證此檔案的作者"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "解密書籤密碼失敗: ${ message }"
+      ],
+      "Image preview not found": [
+        "查無照片預覽"
+      ],
+      "Missing inviter email": [
+        "缺少邀請電子郵件"
+      ],
+      "Missing organization private key": [
+        "缺少組織私有密鑰"
+      ],
+      "This item is no longer shared": [
+        "此項目已停止共享"
+      ],
+      "You can update a public link for your own files only": [
+        "您只能更新您的檔案公開連結"
       ]
     },
     "error": {
@@ -7717,7 +7741,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖像"
+        "插入影像"
       ],
       "Insert link": [
         "插入連結"
@@ -9191,6 +9215,39 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "輕點幾下滑鼠，即可擁有整潔的收件匣"
+      ],
+      "${ count } email": [
+        "${ count } 封電子郵件"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } 則電子郵件 · ${ names }"
+      ],
+      "Apply labels": [
+        "套用標籤"
+      ],
+      "Create folder": [
+        "新建資料夾"
+      ],
+      "Found ${ count } contact": [
+        "找到 ${ count } 位聯絡人"
+      ],
+      "Mark all as unread": [
+        "全部標為未讀"
+      ],
+      "Mark as read": [
+        "標記為已讀"
+      ],
+      "No users to display": [
+        "無使用者可顯示"
+      ],
+      "Searched the web": [
+        "搜尋此網頁"
+      ],
+      "Star emails": [
+        "加星電子郵件"
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "若要遷移此使用者，於您的 ${ provider.adminConsoleName } 取消封存它們的帳號。"
       ]
     },
     "info": {
@@ -10381,6 +10438,21 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Conversation grouping": [
+        "往來對話群組"
+      ],
+      "Deals, offers, and marketing emails": [
+        "優惠、促銷、行銷電子郵件"
+      ],
+      "Read / export": [
+        "已讀 / 匯出"
+      ],
+      "Sieve script": [
+        "Sieve 文稿"
+      ],
+      "Write": [
+        "寫入"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11650,6 +11722,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫工具與擴充存取權"
       ]
     },
     "new_plans: feature highlight": {
@@ -12780,6 +12855,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "您的訂閱已套用現有折扣。若轉換至新的促銷方案，現有折扣將不再套用。"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "您的貨幣以變更至歐元 (€) 因為 ${ IDEAL_WERO_BRAND_NAME } 僅支援歐元付款。"
       ]
     },
     "Payments.Error": {
@@ -13193,6 +13271,9 @@
       ],
       "key": [
         "金鑰"
+      ],
+      "hash key": [
+        "雜湊金鑰"
       ]
     },
     "Property type": {
@@ -16292,6 +16373,12 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Keep this banner hidden?": [
+        "保持隱藏此橫幅？"
+      ],
+      "Mark all as unread": [
+        "全部標為未讀"
       ]
     },
     "Title header for keys table": {
@@ -16870,6 +16957,29 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "2 TB of secure storage": [
+        "2TB 的安全儲存空間"
+      ],
+      "3 TB of secure storage": [
+        "3TB 的安全儲存空間"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "全部的頂級質子版 ${ DRIVE_SHORT_APP_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 和 ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "12 個月"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } 則電子郵件 → ${ wakeTime }"
       ]
     }
   }

@@ -781,7 +781,7 @@
         "加入 ${ MEET_APP_NAME }"
       ],
       "Keep inbox as before": [
-        "保持收件箱原样"
+        "恢复收件箱原样"
       ],
       "Keep my subscription": [
         "保留订阅"
@@ -1699,7 +1699,7 @@
         "是，我将参加"
       ],
       "Yes, organize it": [
-        "是，立即整理"
+        "好的，帮我分类"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能发送超过 ${ maxAttachments } 个联系人的 vCard 文件"
@@ -1724,6 +1724,9 @@
       ],
       "Emoji": [
         "表情符号"
+      ],
+      "Preview logs": [
+        "预览日志"
       ]
     },
     "action": {
@@ -8374,7 +8377,7 @@
         "隐私浏览模式（或称「无痕模式」）仅能隐藏您在设备上的活动痕迹。它能阻止浏览器保存历史记录和 Cookie，但无法让您真正隐身。您的互联网服务提供商、网络管理员以及访问的网站仍可追踪您的在线行为。"
       ],
       "Private by design.": [
-        "专为隐私打造"
+        "此功能自设计之初就坚守保障隐私的原则。"
       ],
       "Proofread selection": [
         "校对选项"
@@ -9485,6 +9488,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "只需几步即可拥有清爽收件箱"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "日志有助于我们了解问题发生前的情况。其中包括应用操作和错误消息，但不包含消息内容。"
       ]
     },
     "info": {
@@ -10690,6 +10696,12 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } 字符"
+      ],
+      "Conversation grouping": [
+        "会话分组"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13774,6 +13786,9 @@
       ],
       "User Admin": [
         "用户管理员"
+      ],
+      "Organization Admin": [
+        "组织管理员"
       ]
     },
     "Safety review": {
