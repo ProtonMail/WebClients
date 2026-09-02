@@ -1040,6 +1040,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La tua prova gratuita dell'applicazione desktop termina ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Migrate": [
+        "Avvia la migrazione"
       ]
     },
     "action": {
@@ -4196,6 +4199,97 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "La tua connessione a Zoom è scaduta. Riconnettiti per continuare."
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "L'indirizzo è già utilizzato da un utente esterno alla tua organizzazione. Contatta l'assistenza clienti per risolvere il problema"
+      ],
+      "Cannot verify the author of this file": [
+        "Impossibile verificare l'autore di questo file"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Non è possibile copiare l'elemento in un elemento che non è una cartella"
+      ],
+      "Could not load sharing details": [
+        "Impossibile caricare i dettagli della condivisione"
+      ],
+      "Could not unlock the parent folder": [
+        "Impossibile sbloccare la cartella principale."
+      ],
+      "Could not unlock this item": [
+        "Impossibile sbloccare questo elemento."
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Non è possibile creare cartelle all'interno di elementi che non sono cartelle"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Impossibile decrittografare la password del segnalibro: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Impossibile decrittografare la chiave del contenuto: ${ message }"
+      ],
+      "File has no revision": [
+        "Il file non ha revisioni"
+      ],
+      "Image preview not found": [
+        "Anteprima dell'immagine non trovata"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Il vecchio link pubblico non può essere aggiornato. Crea un nuovo link pubblico."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Indirizzo del membro non trovato. Contatta l'assistenza clienti per risolvere il problema"
+      ],
+      "Missing inviter email": [
+        "Manca l'indirizzo email dell'invitante"
+      ],
+      "Missing organization private key": [
+        "Manca la chiave privata dell'organizzazione"
+      ],
+      "Missing organization public key": [
+        "Manca la chiave pubblica dell'organizzazione"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri.",
+        "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri."
+      ],
+      "No file data was received. Please try again.": [
+        "Non sono stati ricevuti dati del file. Riprova."
+      ],
+      "Operation aborted": [
+        "Operazione interrotta"
+      ],
+      "Organization does not have enough seats available": [
+        "L'organizzazione non dispone di posti disponibili a sufficienza"
+      ],
+      "Organization does not have enough storage available": [
+        "L'organizzazione non dispone di spazio di archiviazione sufficiente"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Parte del file sembra essere danneggiata"
+      ],
+      "Signature is missing": [
+        "Manca la firma"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Il file caricato non corrisponde all'originale. Riprova."
+      ],
+      "This file has no version available to download": [
+        "Non è disponibile alcuna versione di questo file da scaricare"
+      ],
+      "This item is no longer shared": [
+        "Questo elemento non è più condiviso"
+      ],
+      "This item is not shared": [
+        "Questo elemento non è condiviso"
+      ],
+      "Verification keys are not available": [
+        "Le chiavi di verifica non sono disponibili"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Le chiavi di verifica per ${ signatureType } non sono disponibili"
+      ],
+      "You do not have access to this item": [
+        "Non hai accesso a questo elemento"
       ]
     },
     "error": {
@@ -5147,6 +5241,12 @@
       ],
       "Migrated": [
         "Migrato"
+      ],
+      "Has errors": [
+        "Ci sono errori"
+      ],
+      "Pending": [
+        "In attesa"
       ]
     },
     "Import warning": {
@@ -6746,6 +6846,54 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Hai raggiunto il limite di slot di prenotazione (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "Marchio ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "Find out what can be migrated.": [
+        "Scopri cosa può essere migrato."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Se hai perso l'accesso alla tua app di autenticazione, puoi usare 1 dei 16 codici di recupero forniti durante la configurazione dell'autenticazione a due fattori. ${ learnMoreLink }"
+      ],
+      "No users to display": [
+        "Nessun utente da mostrare"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Seleziona esattamente ciò che vuoi migrare. La selezione verrà applicata a tutti gli utenti dell'organizzazione."
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Non è possibile migrare questo utente perché il suo indirizzo e-mail non è disponibile su ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Questo utente non può essere migrato a causa di incompatibilità tra le piattaforme."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Per migrare questo utente, aggiungi e verifica il dominio e-mail alla pagina ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Per eseguire la migrazione di questo utente, abilita il suo account nella tua ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Per eseguire la migrazione di questo utente, abilita il suo account in ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Per eseguire la migrazione di questo utente, abilita il suo indirizzo in ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Per eseguire la migrazione di questo utente, deve accettare l'invito a entrare in ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Per eseguire la migrazione di questo utente, annulla l'archiviazione nella tua ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Per eseguire la migrazione di questo utente, riattivalo nella tua ${ provider.adminConsoleName }."
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Verrai reindirizzato su ${ IDEAL_WERO_BRAND_NAME } in una nuova scheda del browser per completare il pagamento. Se usi un blocco pop-up, disattivalo per continuare."
+      ],
+      "You": [
+        "Tu"
       ]
     },
     "info": {
@@ -7540,6 +7688,9 @@
       ],
       "Zoom meeting": [
         "Riunione Zoom"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caratteri"
       ]
     },
     "label": {
@@ -9855,6 +10006,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Il tuo abbonamento ha attualmente uno sconto esistente. Passare a questa nuova promozione significa che lo sconto esistente non sarà più applicato."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Paga con ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "La tua valuta è stata cambiata in euro (€) perché ${ IDEAL_WERO_BRAND_NAME } supporta esclusivamente i pagamenti in euro."
       ]
     },
     "Payments.Error": {
@@ -9878,6 +10035,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La tua carta è stata rifiutata. Prova con una carta diversa o contatta la tua banca per autorizzare l'addebito."
+      ],
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Impossibile inizializzare ${ IDEAL_WERO_BRAND_NAME }. Riprova più tardi."
       ]
     },
     "Payments.error": {
@@ -10440,6 +10600,9 @@
       ],
       "User Admin": [
         "Amministratore utenti"
+      ],
+      "Organization Admin": [
+        "Organizzazione Amministratore"
       ]
     },
     "Role description": {
@@ -11859,6 +12022,18 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Activated": [
+        "Attivato"
+      ],
+      "Estimated size": [
+        "Dimensione stimata"
+      ],
+      "Migration status": [
+        "Stato della migrazione"
+      ],
+      "User": [
+        "Utente"
       ]
     },
     "TableHeader": {
@@ -12739,6 +12914,18 @@
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
+      ],
+      "Configure migration": [
+        "Configura la migrazione"
+      ],
+      "Select users to migrate": [
+        "Seleziona gli utenti da migrare"
+      ],
+      "September Sale": [
+        "Sconti di settembre"
+      ],
+      "What are you migrating?": [
+        "Cosa stai migrando?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12865,6 +13052,12 @@
       ],
       "Version 6 OpenPGP key": [
         "Chiave OpenPGP versione 6"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Stato della migrazione dei dati da ${ providerName } a ${ BRAND_NAME }"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Utenti che hanno effettuato l'accesso al proprio account ${ BRAND_NAME }"
       ]
     },
     "tooltip": {
@@ -12908,6 +13101,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Potrai assegnare i ruoli non appena l'utente avrà accettato l'invito."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Passa a un piano supportato per utilizzare i ruoli amministratore"
       ]
     },
     "Validation": {
@@ -13403,6 +13599,77 @@
       ],
       "One plan, more power": [
         "Un unico piano, più potenza"
+      ]
+    },
+    "Filter": {
+      "Activated": [
+        "Attivato"
+      ],
+      "All": [
+        "Tutto"
+      ],
+      "Errors": [
+        "Errori"
+      ],
+      "In progress": [
+        "In corso"
+      ],
+      "Migrated": [
+        "La migrazione è riuscita"
+      ],
+      "Not activated": [
+        "Non attivo"
+      ],
+      "Pending": [
+        "In attesa"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Provalo ora"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Ora hai accesso al nuovo ${ CALENDAR_APP_NAME }.${ link }"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Confermando, autorizzi ${ BRAND_NAME } e Stripe, il nostro fornitore di servizi di pagamento, a riscuotere i futuri pagamenti del tuo abbonamento da questo conto bancario tramite addebito diretto SEPA e autorizzi la tua banca ad addebitare tali importi. Il primo pagamento viene effettuato ora tramite ${ IDEAL_WERO_BRAND_NAME }. Il tuo piano si rinnoverà automaticamente fino a quando non lo annullerai; ti informeremo prima di ogni addebito. Per gli addebiti diretti, puoi richiedere un rimborso alla tua banca entro 8 settimane dalla data dell'addebito, secondo i termini del tuo accordo con la banca. Questo non si applica al pagamento tramite ${ IDEAL_WERO_BRAND_NAME } che stai effettuando ora."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "Attributi"
+      ],
+      "key": [
+        "chiave"
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, e ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME },${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e${ CALENDAR_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME },${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e${ CALENDAR_SHORT_APP_NAME } Premium"
       ]
     }
   }
