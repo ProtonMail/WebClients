@@ -6,7 +6,7 @@ import type { ProtonDriveClient } from '@protontech/drive-sdk';
 import type { SettingsAreaConfig } from '@proton/components';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
@@ -17,6 +17,8 @@ import EasySwitchStoreProvider from '../../logic/StoreProvider';
 import OLESSettingsArea from '../../oles/components/SettingsArea';
 import { ImporterOrganizationsProvider } from '../../oles/useImporterOrganizations';
 import useOLESFeatureStatus from '../../oles/useOLESFeatureStatus';
+import DriveConnectEntry from '../Modals/OAuth/Drive/DriveConnectEntry';
+import { driveOAuthViewsOverride } from '../Modals/OAuth/Drive/driveOAuthViews';
 import ImportsTable from '../ReportsTable/ImportsTable';
 import { SyncsTable } from '../ReportsTable/SyncsTable';
 import ProviderCard from './ProviderCards/ProviderCard';
@@ -31,6 +33,8 @@ interface Props {
 const SettingsArea = ({ config, app }: Props) => {
     const [hasAccessToBYOE] = useBYOEFeatureStatus();
     const isDriveEnabled = useFlag('EasySwitchB2CForDriveWeb');
+    // Also needs the base Drive flag, which loads the Drive SDK provider this flow depends on.
+    const isDriveNewUIEnabled = useFlag('EasySwitchB2CForDriveWebNewUI') && isDriveEnabled && app === APPS.PROTONDRIVE;
     const [DriveProvider, setDriveProvider] = useState<
         ((props: { children: (drive: ProtonDriveClient | undefined) => ReactNode }) => ReactNode) | null
     >(null);
@@ -51,12 +55,13 @@ const SettingsArea = ({ config, app }: Props) => {
     }, [isDriveEnabled]);
 
     const renderEasySwitch = (drive?: ProtonDriveClient) => (
-        <EasySwitchStoreProvider drive={drive}>
+        <EasySwitchStoreProvider drive={drive} oauthViews={isDriveNewUIEnabled ? driveOAuthViewsOverride : undefined}>
             <EasySwitchStoreInitializer>
                 <PrivateMainSettingsArea config={config}>
                     <SettingsSectionWide data-testid="SettingsArea:forwardSection">
                         <ProviderCard
                             app={app}
+                            entryView={isDriveNewUIEnabled ? DriveConnectEntry : undefined}
                             source={
                                 hasAccessToBYOE
                                     ? EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS_BYOE

@@ -7,10 +7,15 @@ import CalendarModal from './Imap/CalendarModal/CalendarModal';
 import ImapMailModal from './Imap/ImapMailModal/ImapMailModal';
 import InstructionsModal from './Imap/InstructionsModal/InstructionsModal';
 import OAuthModal from './OAuth/OAuthModal';
+import type { OAuthModalViewsOverride } from './OAuth/OAuthModalViews';
 
 import './MainModal.scss';
 
-const MainModal = () => {
+interface Props {
+    oauthViews?: OAuthModalViewsOverride;
+}
+
+const MainModal = ({ oauthViews }: Props) => {
     const dispatch = useEasySwitchDispatch();
     const modal = useEasySwitchSelector(selectDraftModal);
 
@@ -38,7 +43,7 @@ const MainModal = () => {
     }
 
     if (modal === 'oauth') {
-        return <OAuthModal />;
+        return <OAuthModal oauthViews={oauthViews} />;
     }
 
     return null;
