@@ -13,6 +13,7 @@ import type {
 } from '@proton/docs-shared'
 import type { DecryptedCommit } from '../Models/DecryptedCommit'
 import type { DocumentEntitlements, PublicDocumentEntitlements } from '../Types/DocumentEntitlements'
+import type { SessionKey } from '@protontech/crypto'
 
 export type DocumentEvent =
   | {
@@ -170,6 +171,10 @@ export class DocumentState extends BasePropertiesState<DocumentStateValues, Docu
   get nodeMeta(): NodeMeta {
     return this.getProperty('entitlements').nodeMeta
   }
+
+  get documentContentKey(): SessionKey {
+    return this.getProperty('entitlements').keys.documentContentKey
+  }
 }
 
 /**
@@ -185,5 +190,9 @@ export class PublicDocumentState extends BasePropertiesState<
 
   get nodeMeta(): PublicNodeMeta {
     return this.getProperty('entitlements').nodeMeta
+  }
+
+  get documentContentKey(): SessionKey {
+    return this.getProperty('entitlements').keys.documentContentKey
   }
 }

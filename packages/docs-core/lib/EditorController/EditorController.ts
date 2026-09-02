@@ -549,6 +549,7 @@ export class EditorController implements EditorControllerInterface {
 
     const result = await this.sheetsStorageService.savePatches({
       document: this.documentState.nodeMeta,
+      documentKey: this.documentState.documentContentKey,
       patches,
       updateHash,
       timestamp: Date.now(),
@@ -568,6 +569,7 @@ export class EditorController implements EditorControllerInterface {
     }
     const result = await this.sheetsStorageService.saveAction({
       document: this.documentState.nodeMeta,
+      documentKey: this.documentState.documentContentKey,
       type,
       content,
       timestamp: Date.now(),
@@ -598,6 +600,7 @@ export class EditorController implements EditorControllerInterface {
 
     const patches = await this.sheetsStorageService.getDecryptedPatches({
       document: this.documentState.nodeMeta,
+      documentKey: this.documentState.documentContentKey,
     })
     if (patches.isFailed()) {
       throw new Error(patches.getError())
@@ -619,6 +622,7 @@ export class EditorController implements EditorControllerInterface {
     }
     const actions = await this.sheetsStorageService.getDecryptedActions({
       document: this.documentState.nodeMeta,
+      documentKey: this.documentState.documentContentKey,
     })
     if (actions.isFailed()) {
       throw new Error(actions.getError())
