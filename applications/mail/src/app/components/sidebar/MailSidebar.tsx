@@ -18,6 +18,7 @@ import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContact
 import useLocalState from '@proton/components/hooks/useLocalState';
 import { IcChevronsLeft } from '@proton/icons/icons/IcChevronsLeft';
 import { IcChevronsRight } from '@proton/icons/icons/IcChevronsRight';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import {
@@ -87,7 +88,7 @@ const MailSidebar = () => {
             appsDropdown={
                 <Spotlight
                     originalPlacement={collapsed ? 'right' : 'bottom'}
-                    closeIcon="cross-big"
+                    closeIcon={<IcCrossBig />}
                     className="border-none spotlight--with-illustration"
                     borderRadius="xl"
                     content={<MeetBookingSpotlightMail />}
