@@ -869,13 +869,13 @@
         "Marcar como favorito"
       ],
       "Mark as read": [
-        "Marcar como lida"
+        "Marcar como lido"
       ],
       "Mark as resolved": [
         "Marcar como resolvido"
       ],
       "Mark as unread": [
-        "Marcar como não lida"
+        "Marcar como não lido"
       ],
       "mark emails as": [
         "marcar e-mails como"
@@ -5596,6 +5596,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa correspondeu a muitos resultados. Limite sua busca e tente novamente."
+      ],
+      "Failed to decrypt revision metadata": [
+        "Falha ao descriptografar os metadados da revisão"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Falha na assinatura do remetente: ${ errorMessage }"
       ]
     },
     "error": {
@@ -8008,7 +8014,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -8107,7 +8114,7 @@
         "Gerenciar seus marcadores"
       ],
       "Mark all as read": [
-        "Marcar tudo como lido."
+        "Marcar tudo como lido"
       ],
       "Mastercard SecureCode logo": [
         "Logotipo do MasterCard SecureCode"
@@ -9596,6 +9603,37 @@
       ],
       "Update filter": [
         "Atualizar filtro"
+      ],
+      "${ dateString } at ${ formattedTime }": [
+        "${ dateString } às ${ formattedTime }"
+      ],
+      "${ name } in ${ parentName }": [
+        "${ name } em ${ parentName }"
+      ],
+      "Found ${ count } contact": [
+        "Encontrei ${ count } contato",
+        "Encontrei ${ count } contatos"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "If Se você perdeu o acesso ao seu aplicativo de autenticação, pode usar um dos 16 códigos de recuperação de backup fornecidos quando configurou a autenticação de dois fatores. ${ learnMoreLink }"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Tornar ${ MAIL_APP_NAME } como seu aplicativo de e-mail padrão."
+      ],
+      "Mark all as unread": [
+        "Marcar todas como não lidos"
+      ],
+      "Mark as read": [
+        "Marcar como lido"
+      ],
+      "Mark as unread": [
+        "Marcar como não lido"
+      ],
+      "Read open email “${ subject }”": [
+        "Ler e-mail aberto “${ subject }”"
+      ],
+      "Snooze emails": [
+        "Adiar e-mails"
       ]
     },
     "info": {
@@ -9896,7 +9934,7 @@
         " e ${ l }"
       ],
       "${ boldActive } Mark all messages as read": [
-        "${ boldActive } Marcar todas as mensagens como lidas"
+        "${ boldActive } Marcar todas as mensagens como lidos"
       ],
       "${ boldActive } Move all messages to ${ boldFolderName }": [
         "${ boldActive } Mover todas as mensagens para ${ boldFolderName }"
@@ -10836,6 +10874,21 @@
       ],
       "Label name": [
         "Nome do marcador"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caracteres"
+      ],
+      "Conversation grouping": [
+        "Agrupamento de conversas"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Ofertas, descontos e e-mails de propaganda"
+      ],
+      "No unread conversations": [
+        "Sem conversas não lidas"
+      ],
+      "Sieve script": [
+        "Script Sieve"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13013,6 +13066,9 @@
       ],
       "Yes, don't show again": [
         "Sim, não mostrar novamente"
+      ],
+      "Remind me later": [
+        "Lembrar-me depois"
       ]
     },
     "Option group": {
@@ -13303,6 +13359,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Sua assinatura atualmente tem um desconto existente. Mudar para esta nova promoção significa que o desconto atual não será mais aplicado."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Pagar com ${ IDEAL_WERO_BRAND_NAME }"
       ]
     },
     "Payments.Error": {
@@ -15531,7 +15590,7 @@
         "Mensagem marcada com estrela."
       ],
       "Message marked as unread.": [
-        "Mensagem marcada como não lida."
+        "Mensagem marcada como não lido."
       ],
       "Message moved to ${ labelName } and sender added to your not spam list.": [
         "A mensagem foi movida para ${ labelName } e o remetente foi adicionado à sua lista de não spam."
@@ -16380,7 +16439,7 @@
         "Marcar todas as mensagens como lidas"
       ],
       "Mark as read": [
-        "Marcar como lida"
+        "Marcar como lido"
       ],
       "Mark as unread": [
         "Marcar como não lida"
@@ -16971,6 +17030,15 @@
       ],
       "Update filter": [
         "Atualizar filtro"
+      ],
+      "Mark all as read": [
+        "Marcar tudo como lido."
+      ],
+      "Mark all as unread": [
+        "Marcar tudo como não lido"
+      ],
+      "Snooze emails": [
+        "Adiar e-mails"
       ]
     },
     "Title header for keys table": {
@@ -17678,6 +17746,17 @@
       ],
       "One plan, more power": [
         "Um plano, mais poder"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Você agora tem acesso ao novo ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } e-mail → ${ wakeTime }",
+        "${ count } e-mails → ${ wakeTime }"
       ]
     }
   }

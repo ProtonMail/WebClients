@@ -5896,6 +5896,9 @@
       ],
       "Unread": [
         "Sin leer"
+      ],
+      "Pending": [
+        "Pendiente"
       ]
     },
     "Filter Actions": {
@@ -7717,7 +7720,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar una imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9198,6 +9202,13 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Estás a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "${ count } email": [
+        "${ count } correo electrónico",
+        "${ count } correos electrónicos"
+      ],
+      "Mark all as unread": [
+        "Marcar todo como no leído"
       ]
     },
     "info": {
@@ -10390,6 +10401,12 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Archive": [
+        "Archivar"
+      ],
+      "Conversation grouping": [
+        "Agrupar las conversaciones"
       ]
     },
     "Label (begin date/advanced search)": {
