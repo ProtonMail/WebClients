@@ -11,7 +11,7 @@ import EventManagerProvider from '@proton/components/containers/eventManager/Eve
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import { FlagProvider } from '@proton/unleash/proxy';
+import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';
 
 import { bootstrapApp } from './bootstrap';
 import type { AccountStore } from './store/store';
@@ -57,7 +57,7 @@ const PrivateApp = ({ store, locales }: Props) => {
     }
 
     return (
-        <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+        <UnleashFlagProviderWithToolbar unleashClient={extraThunkArguments.unleashClient}>
             <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
                 <ErrorBoundary big component={<StandardErrorPage big />}>
                     <StandardPrivateApp>
@@ -67,7 +67,7 @@ const PrivateApp = ({ store, locales }: Props) => {
                     </StandardPrivateApp>
                 </ErrorBoundary>
             </EventManagerProvider>
-        </FlagProvider>
+        </UnleashFlagProviderWithToolbar>
     );
 };
 

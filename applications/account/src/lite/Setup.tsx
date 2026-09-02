@@ -38,7 +38,7 @@ import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import { UnleashClient } from '@proton/unleash/UnleashClient';
 import { createCustomFetch, getUnleashConfig } from '@proton/unleash/UnleashFlagProvider';
-import { FlagProvider } from '@proton/unleash/proxy';
+import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';
 import getRandomString from '@proton/utils/getRandomString';
 
 import { useAccountDispatch } from '../app/store/hooks';
@@ -270,7 +270,7 @@ const Setup = ({ api, onLogin, UID, children, loader }: Props) => {
     }
 
     return (
-        <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+        <UnleashFlagProviderWithToolbar unleashClient={extraThunkArguments.unleashClient}>
             <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
                 <ApiProvider api={extraThunkArguments.api}>
                     <ModalsChildren />
@@ -278,7 +278,7 @@ const Setup = ({ api, onLogin, UID, children, loader }: Props) => {
                     {children}
                 </ApiProvider>
             </EventManagerProvider>
-        </FlagProvider>
+        </UnleashFlagProviderWithToolbar>
     );
 };
 

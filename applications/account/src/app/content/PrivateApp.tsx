@@ -16,7 +16,7 @@ import { EventManagerV6Provider } from '@proton/components/containers/eventManag
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
-import { FlagProvider } from '@proton/unleash/proxy';
+import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';
 
 import config from '../config';
 import type { AccountStore } from '../store/store';
@@ -73,7 +73,7 @@ const PrivateApp = () => {
                 return (
                     <ProtonStoreProvider store={state.store}>
                         <AuthenticationProvider store={extraThunkArguments.authentication}>
-                            <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+                            <UnleashFlagProviderWithToolbar unleashClient={extraThunkArguments.unleashClient}>
                                 <Router history={extraThunkArguments.history}>
                                     <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
                                         <EventManagerV6Provider
@@ -99,7 +99,7 @@ const PrivateApp = () => {
                                         </EventManagerV6Provider>
                                     </EventManagerProvider>
                                 </Router>
-                            </FlagProvider>
+                            </UnleashFlagProviderWithToolbar>
                         </AuthenticationProvider>
                     </ProtonStoreProvider>
                 );

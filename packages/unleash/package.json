@@ -1,7 +1,9 @@
 {
     "name": "@proton/unleash",
     "description": "Unleash feature flags",
-    "sideEffects": false,
+    "sideEffects": [
+        "**/*.css"
+    ],
     "exports": {
         "./useFlag": "./useFlag.ts",
         "./useGetFlag": "./useGetFlag.ts",
@@ -11,6 +13,7 @@
         "./getUnleashReadyPromise": "./readyPromise.ts",
         "./standaloneClient": "./standaloneClient.ts",
         "./UnleashFlagProvider": "./UnleashFlagProvider.tsx",
+        "./UnleashFlagProviderWithToolbar": "./UnleashFlagProviderWithToolbar.tsx",
         "./UnleashFeatureFlagsVariants": "./UnleashFeatureFlagsVariants.ts",
         "./Flags": "./UnleashFeatureFlags.ts",
         "./proxy": "./proxy.ts",
@@ -27,6 +30,7 @@
     "dependencies": {
         "@proton/shared": "workspace:^",
         "@unleash/proxy-client-react": "^5.1.0",
+        "@unleash/toolbar": "^1.2.0",
         "date-fns": "^3.6.0",
         "react": "^18.3.1",
         "unleash-proxy-client": "^3.8.0"
@@ -38,6 +42,7 @@
         "@types/react": "^18.3.31",
         "eslint": "^10.9.0",
         "jest": "^30.4.2",
+        "jest-environment-jsdom": "^30.4.1",
         "prettier": "^3.9.6",
         "typescript": "^6.0.3"
     }
