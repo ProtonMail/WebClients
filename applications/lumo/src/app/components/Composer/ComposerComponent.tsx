@@ -41,6 +41,7 @@ import { ComposerWeeklyLimitUpsell } from './ComposerWeeklyLimitUpsell';
 import { useExcelSheetSelection } from './ExcelSheetSelectionModal';
 import { useAllRelevantAttachments } from './hooks/useAllRelevantAttachments';
 import { useComposerWithImageGeneration } from './hooks/useComposerWithImageGeneration';
+import { useDictation } from './hooks/useDictation';
 import { useEditorQuery } from './hooks/useEditorQuery';
 import { useFileHandling } from './hooks/useFileHandling';
 import { useNativeComposerCustomLumoApi } from './hooks/useNativeComposerCustomLumoApi';
@@ -290,6 +291,60 @@ const ComposerComponentInner = ({
 
     const { isEmpty, clear, textareaRef, setValue, handleSubmit } = composerInput;
 
+    // Appends a dictation delta to the composer; the stream's first delta starts with a leading
+    // space, so strip it when the composer is still empty (later mid-sentence spaces are kept).
+    const appendTranscriptDelta = useCallback(
+        (current: string, delta: string) => (current === '' ? delta.replace(/^\s+/, '') : current + delta),
+        []
+    );
+
+    const handleTranscriptDelta = useCallback(
+        (delta: string) => {
+            if (!delta) return;
+            setValue((current) => appendTranscriptDelta(current, delta));
+            setTimeout(() => {
+                const textarea = textareaRef.current;
+                if (textarea) {
+                    textarea.focus();
+                    textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+                }
+            }, 0);
+        },
+        [setValue, textareaRef, appendTranscriptDelta]
+    );
+    const {
+        isDictating,
+        isConnected: isDictationConnected,
+        dictationError,
+        toggleDictation,
+        getAudioLevel,
+    } = useDictation({
+        onTranscriptDelta: handleTranscriptDelta,
+    });
+    const valueBeforeDictationRef = useRef('');
+
+    const handleStartDictation = useCallback(() => {
+        valueBeforeDictationRef.current = textareaRef.current?.value ?? '';
+        toggleDictation();
+    }, [textareaRef, toggleDictation]);
+
+    const handleAcceptDictation = useCallback(() => {
+        toggleDictation();
+        textareaRef.current?.focus();
+    }, [textareaRef, toggleDictation]);
+
+    const handleCancelDictation = useCallback(() => {
+        toggleDictation();
+        setValue(valueBeforeDictationRef.current);
+        setTimeout(() => {
+            const textarea = textareaRef.current;
+            if (textarea) {
+                textarea.focus();
+                textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+            }
+        }, 0);
+    }, [setValue, textareaRef, toggleDictation]);
+
     const canSubmit = !isEmpty || hasAttachments;
     const sendIsDisabled = !(isGenerating ?? false) && (!canSubmit || isProcessingAttachment || isChatLimitBlocked);
     const canShowSendButton = (isGenerating ?? false) || canSubmit;
@@ -486,6 +541,13 @@ const ComposerComponentInner = ({
                                     onCreateImageModeChange={setIsCreateImageMode}
                                     canUseAgents={canUseAgents}
                                     isAgent={isAgent}
+                                    isDictating={isDictating}
+                                    isDictationConnected={isDictationConnected}
+                                    dictationError={dictationError}
+                                    onToggleDictation={handleStartDictation}
+                                    onCancelDictation={handleCancelDictation}
+                                    onAcceptDictation={handleAcceptDictation}
+                                    getDictationAudioLevel={getAudioLevel}
                                 />
                             </div>
                         </div>

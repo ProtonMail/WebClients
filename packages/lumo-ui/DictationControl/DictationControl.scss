@@ -1,0 +1,71 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.lumo-dictation-control {
+	inline-size: rem(20);
+	block-size: rem(40);
+	transition: inline-size 0.2s ease-out;
+
+	&--active {
+		inline-size: rem(196);
+	}
+
+	&__trigger {
+		transition: opacity 0.15s ease-out;
+
+		&--hidden {
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+
+	&__listening {
+		opacity: 0;
+		transform: translateX(rem(6));
+		pointer-events: none;
+		transition:
+			opacity 0.2s ease-out,
+			transform 0.2s ease-out;
+
+		&--visible {
+			opacity: 1;
+			transform: translateX(0);
+			pointer-events: auto;
+		}
+
+		&--error .lumo-dictation-control__status {
+			color: var(--signal-danger);
+		}
+	}
+
+	&__waveform {
+		block-size: rem(18);
+		color: var(--lumo-text, var(--text-norm));
+		opacity: 0.8;
+
+		i {
+			inline-size: rem(2);
+			block-size: rem(10);
+			background-color: currentcolor;
+			transform: scaleY(0.25);
+			transition: transform 80ms linear;
+		}
+
+		i:nth-child(2),
+		i:nth-child(6) {
+			block-size: rem(6);
+		}
+
+		i:nth-child(3),
+		i:nth-child(5) {
+			block-size: rem(14);
+		}
+
+		i:nth-child(4) {
+			block-size: rem(18);
+		}
+
+		&--connecting {
+			opacity: 0.3;
+		}
+	}
+}
