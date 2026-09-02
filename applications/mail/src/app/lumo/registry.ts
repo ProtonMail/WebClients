@@ -26,6 +26,7 @@ import { readThreadModule } from './skills/reads/readThread';
 import { searchModule } from './skills/reads/search';
 import { viewEmailsModule } from './skills/reads/viewEmails';
 import { changeSettingsModule, readSettingsModule } from './skills/settings/cosmetic';
+import { openSupportTicketModule } from './skills/support/openSupportTicket';
 import type { MailToolDeps, MailToolModule } from './toolModule';
 
 /**
@@ -60,6 +61,8 @@ const MODULES: MailToolModule[] = [
     updateFilterModule,
     // Settings
     changeSettingsModule,
+    // Support
+    openSupportTicketModule,
 ];
 
 /**

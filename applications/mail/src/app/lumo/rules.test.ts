@@ -10,6 +10,10 @@ describe('MAIL_RULES', () => {
         ['starring and unstarring are one tool, not two', 'there is no separate unstar tool'],
         ['marking read and unread are one tool, not two', 'there is no separate mark-unread tool'],
         ['a whole location escalates to set_location_read', 'use set_location_read, which takes a location'],
+        [
+            'a problem report follows a failed knowledge lookup',
+            'Only open the problem report form with open_support_ticket',
+        ],
     ])('pins %s', (_case, claim) => {
         expect(MAIL_RULES).toContain(claim);
     });

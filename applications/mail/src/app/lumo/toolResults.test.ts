@@ -29,6 +29,7 @@ import {
     changeSettingsDefinition,
     readSettingsDefinition,
 } from './skills/settings/cosmetic';
+import { openSupportTicketDefinition } from './skills/support/openSupportTicket';
 import type { MailToolDeps } from './toolModule';
 
 const anyReferences = {} as any;
@@ -130,6 +131,7 @@ const TOOL_PAYLOADS = [
             addressBookIsEmpty: false,
         },
     ]),
+    payloads(openSupportTicketDefinition, [undefined]),
     payloads(moveEmailsDefinition, [undefined]),
     payloads(setStarredDefinition, [undefined]),
     payloads(setReadDefinition, [undefined]),
