@@ -33,6 +33,7 @@ export const DESKTOP_FEATURES = {
     SetAllowedProtocols: true,
     RegisterUrlRedirectRules: true,
     AuthStatusCheck: true,
+    AppInFocusTelemetry: true,
 } as const satisfies Record<IPCInboxDesktopFeature, boolean>;
 
 export type IPCHasFeatureMessage = {
