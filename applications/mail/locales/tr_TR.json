@@ -8139,7 +8139,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -9786,6 +9787,12 @@
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi ${ IDEAL_WERO_BRAND_NAME } sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
+      ],
+      "Change display setting": [
+        "Görüntü ayarını değiştir"
+      ],
+      "Read your display settings": [
+        "Görüntü ayarlarınızı okuyun"
       ]
     },
     "info": {
@@ -11068,6 +11075,27 @@
       ],
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } karakter"
+      ],
+      "Column": [
+        "Sütun"
+      ],
+      "Comfortable": [
+        "Geniş"
+      ],
+      "Compact": [
+        "Sıkışık"
+      ],
+      "Conversation grouping": [
+        "Yazışmalar gruplansın"
+      ],
+      "Grouped conversations": [
+        "Gruplanmış yazışmalar"
+      ],
+      "Row": [
+        "Satır"
+      ],
+      "Single messages": [
+        "Tekil iletiler"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17311,6 +17339,9 @@
       ],
       "Update filter": [
         "Süzgeci güncelle"
+      ],
+      "Change display setting": [
+        "Görüntü ayarını değiştir"
       ]
     },
     "Title header for keys table": {
