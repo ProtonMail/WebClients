@@ -124,7 +124,6 @@ export const PASS_DESKTOP_NATIVE_MESSAGE_TIMEOUT = 30_000;
  * fallback if the feature flag endpoint is unavailable.
  * FIXME: Remove feature flags that are permanently enabled */
 export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
-    [PassFeature.LoginAutofillTelemetry]: false,
     [PassFeature.PassBasicAuthAutofill]: false,
     [PassFeature.PassCreditCardWebAutofill]: false,
     [PassFeature.PassEnableDesktopAutoUpdate]: false,
