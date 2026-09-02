@@ -1,7 +1,7 @@
+import { buildUser } from '@proton/account/testing/buildUser';
+import { getOrganizationState } from '@proton/account/testing/redux-state';
 import type { Address, OrganizationExtended, PendingInvitation, UserModel } from '@proton/shared/lib/interfaces';
 import type { CalendarWithOwnMembers } from '@proton/shared/lib/interfaces/calendar';
-import { buildUser } from '@proton/testing/builders/user';
-import { getOrganizationState } from '@proton/testing/lib/initialReduxState';
 
 import type { Entitlements } from '../core/entitlements/interface';
 import type { Plan } from '../core/plan/interface';
