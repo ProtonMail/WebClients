@@ -7,6 +7,9 @@ import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { getDocsConversionType, isConvertibleToProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 import { getNodeNameWithoutExtension } from '../Util/getNodeNameWithoutExtension'
 import { getMyFilesNodeMeta } from '../DriveSDK/getMyFilesNodeMeta'
+import { findAvailableNodeName } from '../DriveSDK/findAvailableNodeName'
+import type { UnleashClient } from '@proton/unleash/UnleashClient'
+import { isDriveCompatSDKEnabled } from '../Util/isDriveCompatSDKEnabled'
 
 /**
  * Creates a new empty document shell file. This file will then be opened, and the contents will be converted by the editor.
@@ -15,19 +18,18 @@ export class CreateEmptyDocumentForConversion implements UseCaseInterface<FileTo
   constructor(
     private driveCompat: DriveCompat,
     private getDocumentMeta: GetDocumentMeta,
+    private unleashClient: UnleashClient,
   ) {}
 
-  async execute(
-    {
-      node,
-      contents,
-    }: {
-      node: DecryptedNode
-      contents: Uint8Array<ArrayBuffer>
-    },
-    useSDK = false,
-  ): Promise<Result<FileToDocConversionResult>> {
+  async execute({
+    node,
+    contents,
+  }: {
+    node: DecryptedNode
+    contents: Uint8Array<ArrayBuffer>
+  }): Promise<Result<FileToDocConversionResult>> {
     try {
+      const useSDK = isDriveCompatSDKEnabled(this.unleashClient)
       const getRoot = useSDK ? getMyFilesNodeMeta : () => this.driveCompat.getMyFilesNodeMeta()
       const parentMeta: NodeMeta = node.parentNodeId
         ? {
@@ -37,7 +39,9 @@ export class CreateEmptyDocumentForConversion implements UseCaseInterface<FileTo
         : await getRoot()
 
       const nodeNameWithoutExtension = getNodeNameWithoutExtension(node)
-      const newDocName = await this.driveCompat.findAvailableNodeName(parentMeta, nodeNameWithoutExtension)
+      const newDocName = useSDK
+        ? await findAvailableNodeName(parentMeta, nodeNameWithoutExtension)
+        : await this.driveCompat.findAvailableNodeName(parentMeta, nodeNameWithoutExtension)
 
       const mimeType = node.mimeType
       const documentType = isConvertibleToProtonDocsSpreadsheet(mimeType) ? 'sheet' : 'doc'

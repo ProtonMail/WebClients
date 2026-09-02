@@ -12,7 +12,6 @@ import type {
 import { tmpConvertNewDocTypeToOld } from '@proton/drive-store/store/_documents/useOpenDocument'
 import type { DocumentAction } from '@proton/docs-shared'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
-import { useDriveCompatSDK } from '~/utils/flags'
 
 /**
  * A processing component that duplicates a document received from the tab opener. Once duplication completes,
@@ -20,14 +19,13 @@ import { useDriveCompatSDK } from '~/utils/flags'
  */
 export function PublicDocumentCopier({ openAction }: { openAction: DocumentAction | null }) {
   const application = useApplication()
-  const replaceCompatWithSDK = useDriveCompatSDK()
 
   const performCopy = useCallback(
     async (name: string, yjsData: Uint8Array<ArrayBuffer>) => {
       const documentType = tmpConvertNewDocTypeToOld(openAction?.type ?? 'doc')
 
       const duplicateDocument = application.duplicateDocumentUseCase
-      const result = await duplicateDocument.executePublic(name, yjsData, documentType, replaceCompatWithSDK)
+      const result = await duplicateDocument.executePublic(name, yjsData, documentType)
 
       if (result.isFailed()) {
         void OpenTracer.trace('boot_public_document_copier_duplicate_document_failed', { result: result.getError() })
@@ -52,7 +50,6 @@ export function PublicDocumentCopier({ openAction }: { openAction: DocumentActio
       application.eventBus,
       openAction?.mode,
       openAction?.type,
-      replaceCompatWithSDK,
     ],
   )
 

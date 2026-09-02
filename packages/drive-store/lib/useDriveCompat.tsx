@@ -224,12 +224,9 @@ export const useDriveCompat = (): DriveCompat => {
     return {
         createDocumentNode: withResolveShareId(createDocumentNode),
         getDocumentKeys: withResolveShareId(getDocumentKeys),
-        getNode: withResolveShareId(getNode),
         getLatestNode: withResolveShareId(getLatestNode),
         getNodeContents: withResolveShareId(getNodeContents),
-        getNodePermissions: withResolveShareId(getNodePermissions),
         getShareId: withResolveShareId(({ shareId }) => shareId),
-        findAvailableNodeName: withResolveShareId(findAvailableNodeName),
         renameDocument: withResolveShareId(renameDocument),
         trashDocument: withResolveShareId(trashDocument),
         restoreDocument: withResolveShareId(restoreDocument),
@@ -256,7 +253,12 @@ export const useDriveCompat = (): DriveCompat => {
         getNodesAreShared,
         getNodePaths,
         getNodes,
+
         // SDK counterpart used when feature flag ON
+        getNode: withResolveShareId(getNode),
         getMyFilesNodeMeta,
+        findAvailableNodeName: withResolveShareId(findAvailableNodeName),
+        // DocumentViewer calls DocLoader calls LoadDocument calls GetNodePermissions calls this
+        getNodePermissions: withResolveShareId(getNodePermissions),
     };
 };
