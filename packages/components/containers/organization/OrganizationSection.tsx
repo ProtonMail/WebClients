@@ -18,7 +18,6 @@ import { getOrganizationDenomination } from '@proton/shared/lib/organization/hel
 
 import { ButtonGroup } from '../../components/button/ButtonGroup';
 import Row from '../../components/container/Row';
-import Icon from '../../components/icon/Icon';
 import Label from '../../components/label/Label';
 import Info from '../../components/link/Info';
 import SettingsLink from '../../components/link/SettingsLink';
@@ -172,11 +171,12 @@ const OrganizationSection = ({ app, organization }: Props) => {
                                         <div className="inline-flex ml-0.5 shrink-0">
                                             {organizationIdentity.state.result ? (
                                                 <Tooltip openDelay={0} title={organizationIdentity.state.result.label}>
-                                                    <Icon
-                                                        data-testid="organization-identity:icon"
-                                                        name={organizationIdentity.state.result.icon}
-                                                        className={organizationIdentity.state.result.className}
-                                                    />
+                                                    <span className="flex">
+                                                        <organizationIdentity.state.result.Icon
+                                                            data-testid="organization-identity:icon"
+                                                            className={organizationIdentity.state.result.className}
+                                                        />
+                                                    </span>
                                                 </Tooltip>
                                             ) : (
                                                 <CircleLoader />
