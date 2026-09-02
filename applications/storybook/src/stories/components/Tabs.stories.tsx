@@ -7,7 +7,8 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { Tab } from '@proton/components/components/tabs/Tabs';
 import { Tabs } from '@proton/components/components/tabs/Tabs';
-import type { IconName } from '@proton/icons/types';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import { IcFire } from '@proton/icons/icons/IcFire';
 
 import bulbasaur from '../../assets/bulbasaur.png';
 import charmander from '../../assets/charmander.png';
@@ -48,7 +49,7 @@ export const Default: Story = {
             },
             {
                 title: 'Charmander',
-                icon: 'fire' as IconName,
+                icon: <IcFire />,
                 iconPosition: 'trailing' as const,
                 content: (
                     <>
@@ -129,7 +130,7 @@ export const Sandbox: Story = {
         const tabs: Tab[] = [
             {
                 title: 'Bulbasaur',
-                icon: 'exclamation-circle-filled' as IconName,
+                icon: <IcExclamationCircleFilled />,
                 iconPosition: 'leading' as const,
                 content: (
                     <p>

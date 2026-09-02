@@ -4,6 +4,8 @@ import { c } from 'ttag';
 
 import type { Tab } from '@proton/components/components/tabs/Tabs';
 import { Tabs } from '@proton/components/components/tabs/Tabs';
+import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
+import { IcBrandWindows } from '@proton/icons/icons/IcBrandWindows';
 
 import { useIsMacOSSupportEnabled } from '../../../../contexts/AlwaysOnPolicyServiceContext';
 import type { AlwaysOnPolicyArtifact } from '../../../../types/AlwaysOn';
@@ -31,8 +33,8 @@ export const InstructionsContent = ({ windows, rego }: Props) => {
     }
 
     const tabs: Tab[] = [
-        { title: c('Title').t`Windows`, icon: 'brand-windows', iconPosition: 'leading' },
-        { title: c('Title').t`macOS`, icon: 'brand-apple', iconPosition: 'leading' },
+        { title: c('Title').t`Windows`, icon: <IcBrandWindows />, iconPosition: 'leading' },
+        { title: c('Title').t`macOS`, icon: <IcBrandApple />, iconPosition: 'leading' },
     ];
 
     return (
