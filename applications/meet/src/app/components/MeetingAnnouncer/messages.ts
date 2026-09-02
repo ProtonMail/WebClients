@@ -100,8 +100,6 @@ export const announcementMessages = {
 
     protonLightBackgroundApplied: () => c('Accessibility announcement').t`Light ${BRAND_NAME} background applied`,
 
-    cityBackgroundApplied: () => c('Accessibility announcement').t`European city background applied`,
-
     officeBackgroundApplied: () => c('Accessibility announcement').t`Blurred office background applied`,
 
     libraryBackgroundApplied: () => c('Accessibility announcement').t`Library background applied`,
