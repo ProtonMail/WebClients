@@ -1,12 +1,16 @@
+import type { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import { organizationThunk } from '@proton/account/organization';
-import type { IconName } from '@proton/icons/types';
+import { IcClock } from '@proton/icons/icons/IcClock';
+import { IcEarth } from '@proton/icons/icons/IcEarth';
+import { IcPaperPlaneClock } from '@proton/icons/icons/IcPaperPlaneClock';
+import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
 import { PLANS } from '@proton/payments/core/constants';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import Icon from '../../icon/Icon';
 import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';
 import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';
@@ -19,24 +23,24 @@ export const shouldDisplayOtherFeaturesTourStep: ShouldDisplayTourStep = async (
 };
 
 const OtherFeaturesTourStep = (props: FeatureTourStepProps) => {
-    const features: { icon: IconName; title: string; content: string }[] = [
+    const features: { icon: ReactNode; title: string; content: string }[] = [
         {
-            icon: 'clock',
+            icon: <IcClock />,
             title: c('Title').t`Snooze:`,
             content: c('Info').t`Snooze messages for later so they are top of your inbox when you want`,
         },
         {
-            icon: 'paper-plane-clock',
+            icon: <IcPaperPlaneClock />,
             title: c('Title').t`Schedule send:`,
             content: c('Info').t`Send messages at just the right now`,
         },
         {
-            icon: 'earth',
+            icon: <IcEarth />,
             title: c('Title').t`Custom domains:`,
             content: c('Info').t`You can add your own custom domain to ${MAIL_APP_NAME}`,
         },
         {
-            icon: 'speech-bubble',
+            icon: <IcSpeechBubble />,
             title: c('Title').t`Priority support:`,
             content: c('Info').t`Reach out to us for help on anything ${BRAND_NAME}.`,
         },
@@ -56,7 +60,7 @@ const OtherFeaturesTourStep = (props: FeatureTourStepProps) => {
                 {features.map(({ icon, title, content }, index) => (
                     <div key={title} className="text-left flex flex-nowrap items-start justify-left">
                         <div className="rounded-full bg-weak shrink-0 flex items-center justify-center p-2 mr-3">
-                            <Icon name={icon} />
+                            {icon}
                         </div>
                         <p className={clsx(index === features.length - 1 ? 'm-0' : 'mt-0 mb-4')}>
                             {title} {content}

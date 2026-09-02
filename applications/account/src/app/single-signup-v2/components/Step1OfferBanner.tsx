@@ -1,14 +1,14 @@
-import type { ComponentType, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { SkeletonLoader } from '@proton/components/index';
+import type { IconComponent } from '@proton/icons/component';
 import { IcBagPercent } from '@proton/icons/icons/IcBagPercent';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { IcUser } from '@proton/icons/icons/IcUser';
-import type { IconSize } from '@proton/icons/types';
 import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
@@ -23,11 +23,6 @@ import { APPS, BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import DiscountBanner from '../DiscountBanner';
 import type { OptimisticOptions, SignupModelV2, SignupParameters2 } from '../interface';
 import { SignupMode, UpsellTypes } from '../interface';
-
-interface IconProps {
-    className?: string;
-    size?: IconSize;
-}
 
 interface Step1OfferBannerProps {
     isPorkbunPayment: boolean;
@@ -70,7 +65,7 @@ export const Step1OfferBanner = ({
         return <SkeletonLoader width="36em" height="2.4rem" index={0} className="mt-4 max-w-full" />;
     }
 
-    const wrap = (IconComponent: ComponentType<IconProps> | null, textLaunchOffer: ReactNode) => {
+    const wrap = (IconComponent: IconComponent | null, textLaunchOffer: ReactNode) => {
         return (
             <div className="signup-v2-offer-banner py-2 px-4 rounded-lg md:text-lg inline-flex flex-nowrap mt-4">
                 {IconComponent && <IconComponent size={3.5} className="shrink-0 mt-1" />}

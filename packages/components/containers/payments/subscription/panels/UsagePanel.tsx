@@ -1,17 +1,18 @@
-import type { PropsWithChildren } from 'react';
+import type { PropsWithChildren, ReactNode } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { useMember } from '@proton/account/member/hook';
+import { IcBrandProtonVpn } from '@proton/icons/icons/IcBrandProtonVpn';
+import { IcCalendarCheckmark } from '@proton/icons/icons/IcCalendarCheckmark';
+import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
-import type { IconName } from '@proton/icons/types';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
 import type { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 
-import Icon from '../../../../components/icon/Icon';
 import Meter from '../../../../components/progress/Meter';
 import StripedItem from '../../../../components/stripedList/StripedItem';
 import { StripedList } from '../../../../components/stripedList/StripedList';
@@ -19,7 +20,9 @@ import { getHighSpeedVPNConnectionsText } from '../../features/vpn';
 import Panel from './Panel';
 
 interface Item {
-    icon: IconName;
+    /** Stable key; the icon is an element so it cannot serve as one. */
+    id: string;
+    icon: ReactNode;
     text: string;
 }
 
@@ -46,7 +49,8 @@ const UsagePanel = ({ addresses, calendars, organization, user, children }: Prop
 
     const items: (Item | false)[] = [
         UsedAddresses !== undefined && {
-            icon: 'envelope',
+            id: 'addresses',
+            icon: <IcEnvelope className="color-success" size={5} />,
             text: c('Subscription attribute').ngettext(
                 msgid`${UsedAddresses} address`,
                 `${UsedAddresses} addresses`,
@@ -54,7 +58,8 @@ const UsagePanel = ({ addresses, calendars, organization, user, children }: Prop
             ),
         },
         UsedCalendars !== undefined && {
-            icon: 'calendar-checkmark',
+            id: 'calendars',
+            icon: <IcCalendarCheckmark className="color-success" size={5} />,
             text: c('Subscription attribute').ngettext(
                 msgid`${UsedCalendars} calendar`,
                 `${UsedCalendars} calendars`,
@@ -62,7 +67,8 @@ const UsagePanel = ({ addresses, calendars, organization, user, children }: Prop
             ),
         },
         !!(member && member.MaxVPN > 0) && {
-            icon: 'brand-proton-vpn',
+            id: 'vpn',
+            icon: <IcBrandProtonVpn className="color-success" size={5} />,
             text: user.hasPaidVpn
                 ? getHighSpeedVPNConnectionsText(member.MaxVPN || VPNConnections)
                 : c('Subscription attribute').t`1 VPN connection`,
@@ -83,10 +89,7 @@ const UsagePanel = ({ addresses, calendars, organization, user, children }: Prop
                 </StripedItem>
                 {items.filter(isTruthy).map((item) => {
                     return (
-                        <StripedItem
-                            key={item.icon}
-                            left={<Icon className="color-success" name={item.icon} size={5} />}
-                        >
+                        <StripedItem key={item.id} left={item.icon}>
                             {item.text}
                         </StripedItem>
                     );

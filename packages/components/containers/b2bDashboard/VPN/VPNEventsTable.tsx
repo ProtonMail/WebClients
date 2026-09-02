@@ -9,7 +9,6 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
-import Icon from '../../../components/icon/Icon';
 import { SortingTableHeader } from '../../../components/table/SortingTableHeader';
 import Table from '../../../components/table/Table';
 import TableBody from '../../../components/table/TableBody';
@@ -86,6 +85,7 @@ const VPNEventsTable = ({
                     const key = index;
                     const initials = name ? getInitials(name) : email.charAt(0);
                     const formattedTime = getUnixTime(parseISO(time));
+                    const EventIcon = getVPNEventIcon(eventType);
 
                     return (
                         <TableRow
@@ -109,8 +109,7 @@ const VPNEventsTable = ({
                                 </div>,
                                 <div className="cursor-pointer">
                                     <div className="flex flex-row mb-1">
-                                        <Icon
-                                            name={getVPNEventIcon(eventType)}
+                                        <EventIcon
                                             alt={eventType}
                                             className={clsx('mr-2', 'align-top', getVPNEventColor(eventType))}
                                         />

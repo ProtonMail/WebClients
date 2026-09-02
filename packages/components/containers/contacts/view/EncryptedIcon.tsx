@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-
-import Icon from '../../../components/icon/Icon';
+import { IcLockCheckFilled } from '@proton/icons/icons/IcLockCheckFilled';
+import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 
 interface Props {
     isSignatureVerified: boolean;
@@ -12,11 +12,13 @@ const EncryptedIcon = ({ isSignatureVerified, className = 'flex' }: Props) => {
     const tooltipText = isSignatureVerified
         ? c('Tooltip').t`Encrypted data with verified digital signature`
         : c('Tooltip').t`Encrypted data`;
-    const iconName = isSignatureVerified ? 'lock-check-filled' : 'lock-filled';
+    const LockIcon = isSignatureVerified ? IcLockCheckFilled : IcLockFilled;
 
     return (
         <Tooltip title={tooltipText}>
-            <Icon name={iconName} className={className} />
+            <span className="flex">
+                <LockIcon className={className} />
+            </span>
         </Tooltip>
     );
 };

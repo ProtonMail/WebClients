@@ -2,10 +2,10 @@ import type { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, Ref } from 'r
 import { forwardRef } from 'react';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import clsx from '@proton/utils/clsx';
-
-import Icon from '../icon/Icon';
 
 export interface ToggleProps extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     loading?: boolean;
@@ -30,10 +30,10 @@ const Toggle = (
             onChange(event);
         }
     };
-    const label = (name: IconName, condition: boolean) => {
+    const label = (Icon: IconComponent, condition: boolean) => {
         return (
             <span className="toggle-container-text" aria-hidden="true">
-                <Icon name={name} alt="" size={4} className="toggle-container-img" />
+                <Icon alt="" size={4} className="toggle-container-img" />
                 {condition && (
                     <span className="toggle-container-loader">
                         <CircleLoader />
@@ -68,8 +68,8 @@ const Toggle = (
                     ref={ref}
                     {...rest}
                 />
-                {label('cross', loading && !checked)}
-                {label('checkmark', loading && checked)}
+                {label(IcCross, loading && !checked)}
+                {label(IcCheckmark, loading && checked)}
             </div>
             {children}
         </label>
