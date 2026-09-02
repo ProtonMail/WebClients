@@ -195,7 +195,7 @@ const Wrapper = ({
 describe('Settings', () => {
     beforeEach(() => {
         localAttributes.current = {};
-        enabledFlags.current = ['MeetLiveCaptions', 'MeetVirtualBackground'];
+        enabledFlags.current = ['MeetLiveCaptions', 'MeetVirtualBackground', 'MeetSaveCaptionLanguagePreference'];
     });
 
     it('should have the correct title', () => {
@@ -394,6 +394,20 @@ describe('Settings', () => {
         );
 
         expect(screen.getByText('Spoken language')).toBeInTheDocument();
+    });
+
+    it('should hide the spoken language if feature flag is off', () => {
+        enabledFlags.current = enabledFlags.current.filter((flag) => flag !== 'MeetSaveCaptionLanguagePreference');
+        localAttributes.current = { [WANTS_CAPTIONS_ATTR]: 'true' };
+
+        render(
+            <Wrapper>
+                <Settings />
+            </Wrapper>
+        );
+
+        expect(screen.getByRole('checkbox', { name: 'Live captions' })).toBeInTheDocument();
+        expect(screen.queryByText('Spoken language')).not.toBeInTheDocument();
     });
 
     // The captions bar takes its height from the panel, so the section can end up below the fold.
