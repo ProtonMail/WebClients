@@ -24,15 +24,14 @@ import { APPS } from '@proton/shared/lib/constants';
 import { isAndroid, isDesktop, isIos, isLinux, isMac, isMobile, isWindows } from '@proton/shared/lib/helpers/browser';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import appleAppStoreImage from '@proton/styles/assets/img/vpn/download-section/apple-app-store.svg';
-import androidPreview from '@proton/styles/assets/img/vpn/download-section/download-preview-android.png';
 import androidTVPreview from '@proton/styles/assets/img/vpn/download-section/download-preview-androidtv.png';
 import appleTVPreview from '@proton/styles/assets/img/vpn/download-section/download-preview-appletv.png';
 import chromePreview from '@proton/styles/assets/img/vpn/download-section/download-preview-chrome.png';
 import firefoxPreview from '@proton/styles/assets/img/vpn/download-section/download-preview-firefox.png';
 import firetvPreview from '@proton/styles/assets/img/vpn/download-section/download-preview-firetv.png';
-import iOSPreview from '@proton/styles/assets/img/vpn/download-section/download-preview-iOS.png';
 import linuxPreview from '@proton/styles/assets/img/vpn/download-section/download-preview-linux.png';
 import macosPreview from '@proton/styles/assets/img/vpn/download-section/download-preview-macos.png';
+import mobilePreview from '@proton/styles/assets/img/vpn/download-section/download-preview-mobile.png';
 import windowsPreview from '@proton/styles/assets/img/vpn/download-section/download-preview-windows.png';
 import googlePlayStoreImage from '@proton/styles/assets/img/vpn/download-section/google-play-store.svg';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -159,10 +158,10 @@ function useDownloadData() {
                     title: () => c('Download').t`iPhone/iPad`,
                     icon: 'brand-apple' as IconName,
                     content: {
-                        image: iOSPreview,
+                        image: mobilePreview,
                         downloadButton: {
                             title: () => c('Download').t`Download on the Apple App Store`,
-                            link: 'https://apps.apple.com/app/apple-store/id1437005085?pt=106513916&ct=protonvpn.com-dashboard&mt=8',
+                            link: 'https://apps.apple.com/app/apple-store/id1437005085?pt=106513916&ct=wa_set_btn&mt=8',
                             style: 'appstore' as const,
                             image: appleAppStoreImage,
                         },
@@ -176,10 +175,10 @@ function useDownloadData() {
                     title: () => c('Download').t`Android`,
                     icon: 'brand-android' as IconName,
                     content: {
-                        image: androidPreview,
+                        image: mobilePreview,
                         downloadButton: {
                             title: () => c('Download').t`Download on the Google Play Store`,
-                            link: 'https://play.google.com/store/apps/details?id=ch.protonvpn.android&utm_campaign=ww-all-2a-vpn-int_webapp-g_eng-apps_links_dashboard&utm_source=account.protonvpn.com&utm_medium=link&utm_content=dashboard&utm_term=android',
+                            link: 'https://play.google.com/store/apps/details?id=ch.protonvpn.android&referrer=utm_source\%3Dprotonvpn.com\%26utm_medium\%3Dweb\%26utm_campaign\%3Dwa_set_btn',
                             style: 'appstore' as const,
                             image: googlePlayStoreImage,
                         },
