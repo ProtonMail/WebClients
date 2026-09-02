@@ -36,6 +36,7 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import type { MspDelegatedManager } from '@proton/shared/lib/api/msp';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
@@ -375,7 +376,7 @@ const MspCompaniesSection = () => {
                                                 <DropdownActions
                                                     size="small"
                                                     shape="ghost"
-                                                    iconName="three-dots-vertical"
+                                                    iconElement={<IcThreeDotsVertical />}
                                                     list={menuActions}
                                                 />
                                             </div>

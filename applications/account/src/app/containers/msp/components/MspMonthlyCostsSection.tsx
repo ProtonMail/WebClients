@@ -24,6 +24,7 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
 import { downloadEvents } from '@proton/components/containers/b2bDashboard/VPN/helpers';
 import { IcFileLines } from '@proton/icons/icons/IcFileLines';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import {
     type MspCsvReportType,
     getMspBillingPeriods,
@@ -290,7 +291,7 @@ const MspMonthlyCostsSection = () => {
                                                     <DropdownActions
                                                         size="small"
                                                         shape="ghost"
-                                                        iconName="three-dots-vertical"
+                                                        iconElement={<IcThreeDotsVertical />}
                                                         list={rowActions}
                                                     />
                                                 </TableCell>
