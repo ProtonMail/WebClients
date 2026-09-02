@@ -1,3 +1,21 @@
+### Version 1.40.0
+
+_Some features below are rolling out gradually and may not be available to everyone right away._
+
+- Pass Monitor: check if your passwords have been exposed in a known data breach (behind feature flag)
+- Fix not able to import KeePassXC file if missing the `.xml` extension
+- Improve UI when a filter is active
+- Search for people to share a vault/item with now matches substrings, not just the start of a word
+- Account setting now links to the Pass dashboard
+- Upgrade links now go to the account page instead of sign-up
+- Show full note content by default
+- Fix stuttering "Read More" animation on read-only text fields
+- Prompt to enable offline mode when it isn't already on
+- Onboarding popup dismissal is now remembered
+- Fix breach check not running after a page reload
+- Fix login view accepting invalid input
+- Fix CSS for pinned items
+
 ### Version 1.39.0
 
 - Support importing autofill matching rules from Bitwarden
