@@ -4392,6 +4392,12 @@
       ],
       "Failed to decrypt bookmark name: ${ message }": [
         "Falha ao descriptografar o nome de marcador: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Falha ao descriptografar os metadados da revisão"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Falha na assinatura do remetente: ${ errorMessage }"
       ]
     },
     "error": {
@@ -7737,6 +7743,9 @@
       ],
       "Read this file": [
         "Ler este arquivo"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "If Se você perdeu o acesso ao seu aplicativo de autenticação, pode usar um dos 16 códigos de recuperação de backup fornecidos quando configurou a autenticação de dois fatores. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -11318,6 +11327,9 @@
       ],
       "Pay with ${ IDEAL_BRAND_NAME }": [
         "Pagar com ${ IDEAL_BRAND_NAME }"
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Pagar com ${ IDEAL_WERO_BRAND_NAME }"
       ]
     },
     "Payments.Error": {
@@ -15214,6 +15226,11 @@
       ],
       "One plan, more power": [
         "Um plano, mais poder"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Você agora tem acesso ao novo ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     }
   }

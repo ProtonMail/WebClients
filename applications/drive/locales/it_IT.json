@@ -1332,6 +1332,9 @@
       ],
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
         "Attiva/disattiva ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Migrate": [
+        "Avvia la migrazione"
       ]
     },
     "Action: Docs": {
@@ -4200,6 +4203,97 @@
       ],
       "Something went wrong, please try again later": [
         "Si è verificato un errore, si prega di riprovare più tardi."
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "L'indirizzo è già utilizzato da un utente esterno alla tua organizzazione. Contatta l'assistenza clienti per risolvere il problema"
+      ],
+      "Cannot verify the author of this file": [
+        "Impossibile verificare l'autore di questo file"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Non è possibile copiare l'elemento in un elemento che non è una cartella"
+      ],
+      "Could not load sharing details": [
+        "Impossibile caricare i dettagli della condivisione"
+      ],
+      "Could not unlock the parent folder": [
+        "Impossibile sbloccare la cartella principale."
+      ],
+      "Could not unlock this item": [
+        "Impossibile sbloccare questo elemento."
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Non è possibile creare cartelle all'interno di elementi che non sono cartelle"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Impossibile decrittografare la password del segnalibro: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Impossibile decrittografare la chiave del contenuto: ${ message }"
+      ],
+      "File has no revision": [
+        "Il file non ha revisioni"
+      ],
+      "Image preview not found": [
+        "Anteprima dell'immagine non trovata"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Il vecchio link pubblico non può essere aggiornato. Crea un nuovo link pubblico."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Indirizzo del membro non trovato. Contatta l'assistenza clienti per risolvere il problema"
+      ],
+      "Missing inviter email": [
+        "Manca l'indirizzo email dell'invitante"
+      ],
+      "Missing organization private key": [
+        "Manca la chiave privata dell'organizzazione"
+      ],
+      "Missing organization public key": [
+        "Manca la chiave pubblica dell'organizzazione"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri.",
+        "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri."
+      ],
+      "No file data was received. Please try again.": [
+        "Non sono stati ricevuti dati del file. Riprova."
+      ],
+      "Operation aborted": [
+        "Operazione interrotta"
+      ],
+      "Organization does not have enough seats available": [
+        "L'organizzazione non dispone di posti disponibili a sufficienza"
+      ],
+      "Organization does not have enough storage available": [
+        "L'organizzazione non dispone di spazio di archiviazione sufficiente"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Parte del file sembra essere danneggiata"
+      ],
+      "Signature is missing": [
+        "Manca la firma"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Il file caricato non corrisponde all'originale. Riprova."
+      ],
+      "This file has no version available to download": [
+        "Non è disponibile alcuna versione di questo file da scaricare"
+      ],
+      "This item is no longer shared": [
+        "Questo elemento non è più condiviso"
+      ],
+      "This item is not shared": [
+        "Questo elemento non è condiviso"
+      ],
+      "Verification keys are not available": [
+        "Le chiavi di verifica non sono disponibili"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Le chiavi di verifica per ${ signatureType } non sono disponibili"
+      ],
+      "You do not have access to this item": [
+        "Non hai accesso a questo elemento"
       ]
     },
     "error": {
@@ -7522,6 +7616,42 @@
       ],
       "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
         "Per migrare questo utente, aggiungi e verifica il dominio e-mail alla pagina ${ domainNamesLink }"
+      ],
+      "Find out what can be migrated.": [
+        "Scopri cosa può essere migrato."
+      ],
+      "No users to display": [
+        "Nessun utente da mostrare"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Seleziona esattamente ciò che vuoi migrare. La selezione verrà applicata a tutti gli utenti dell'organizzazione."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Questo utente non può essere migrato a causa di incompatibilità tra le piattaforme."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Per eseguire la migrazione di questo utente, abilita il suo account nella tua ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Per eseguire la migrazione di questo utente, abilita il suo account in ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Per eseguire la migrazione di questo utente, abilita il suo indirizzo in ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Per eseguire la migrazione di questo utente, deve accettare l'invito a entrare in ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Per eseguire la migrazione di questo utente, annulla l'archiviazione nella tua ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Per eseguire la migrazione di questo utente, riattivalo nella tua ${ provider.adminConsoleName }."
+      ],
+      "You": [
+        "Tu"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "Non potrai più condividere \"${ fileName }\" dopo aver modificato il tuo accesso in \"Visualizzatore\". Il proprietario o un amministratore con permessi di condivisione potrà ripristinare il tuo accesso di modifica. Non potrai annullare questa modifica autonomamente."
       ]
     },
     "info": {
@@ -12944,6 +13074,18 @@
       ],
       "Size": [
         "Dimensione"
+      ],
+      "Activated": [
+        "Attivato"
+      ],
+      "Estimated size": [
+        "Dimensione stimata"
+      ],
+      "Migration status": [
+        "Stato della migrazione"
+      ],
+      "User": [
+        "Utente"
       ]
     },
     "TableHeader": {
@@ -14168,6 +14310,15 @@
       ],
       "September Sale": [
         "Sconti di settembre"
+      ],
+      "Configure migration": [
+        "Configura la migrazione"
+      ],
+      "Select users to migrate": [
+        "Seleziona gli utenti da migrare"
+      ],
+      "What are you migrating?": [
+        "Cosa stai migrando?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14271,6 +14422,12 @@
       ],
       "Version 6 OpenPGP key": [
         "Chiave OpenPGP versione 6"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Stato della migrazione dei dati da ${ providerName } a ${ BRAND_NAME }"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Utenti che hanno effettuato l'accesso al proprio account ${ BRAND_NAME }"
       ]
     },
     "tooltip": {
@@ -14780,6 +14937,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Potrai assegnare i ruoli non appena l'utente avrà accettato l'invito."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Passa a un piano supportato per utilizzare i ruoli amministratore"
       ]
     },
     "Role": {
@@ -14813,6 +14973,12 @@
       ],
       "Migrated": [
         "Migrato"
+      ],
+      "Has errors": [
+        "Ci sono errori"
+      ],
+      "Pending": [
+        "In attesa"
       ]
     },
     "q3campaign2026: Action": {
@@ -14901,6 +15067,37 @@
     "q3campaign2026: Info, Mail first": {
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME },${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e${ CALENDAR_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "Filter": {
+      "Activated": [
+        "Attivato"
+      ],
+      "All": [
+        "Tutto"
+      ],
+      "Errors": [
+        "Errori"
+      ],
+      "In progress": [
+        "In corso"
+      ],
+      "Migrated": [
+        "La migrazione è riuscita"
+      ],
+      "Not activated": [
+        "Non attivo"
+      ],
+      "Pending": [
+        "In attesa"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "Attributi"
+      ],
+      "key": [
+        "chiave"
       ]
     }
   }
