@@ -217,11 +217,6 @@
             "project": ["**/*.{ts,tsx}"],
             "ignore": ["**"]
         },
-        "packages/codeshift": {
-            "entry": [],
-            "project": ["src/**/*.{ts,tsx}"],
-            "ignore": ["**"]
-        },
         "packages/colors": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"]
