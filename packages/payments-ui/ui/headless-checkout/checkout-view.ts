@@ -2,12 +2,15 @@ import type { ReactNode } from 'react';
 
 import {
     type CheckoutLineItem,
+    type CheckoutLineItemMandatory,
+    type CheckoutLineItemOptional,
     type GetHeadlessCheckoutParams,
     type HeadlessCheckout,
     getHeadlessCheckout,
 } from './get-headless-checkout';
 import { ADDONS_LINE_ITEM_TYPE } from './items/addons';
 import { AMOUNT_DUE_LINE_ITEM_TYPE } from './items/amount-due';
+import { BASE_RENEW_AMOUNT_LINE_ITEM_TYPE } from './items/base-renew-amount';
 import { BILLING_CYCLE_LINE_ITEM_TYPE } from './items/billing-cycle';
 import { COUPON_LINE_ITEM_TYPE } from './items/coupon';
 import { CREDIT_LINE_ITEM_TYPE } from './items/credit';
@@ -17,6 +20,7 @@ import { MEMBERS_LINE_ITEM_TYPE } from './items/members';
 import { NEXT_BILLING_LINE_ITEM_TYPE } from './items/next-billing';
 import { PLAN_AMOUNT_LINE_ITEM_TYPE } from './items/plan-amount';
 import { PLAN_AMOUNT_WITH_DISCOUNT_LINE_ITEM_TYPE } from './items/plan-amount-with-discount';
+import { PLAN_AMOUNT_WITH_DISCOUNT_PER_MONTH_LINE_ITEM_TYPE } from './items/plan-amount-with-discount-per-month';
 import { PRORATION_LINE_ITEM_TYPE } from './items/proration';
 import { RENEWAL_NOTICE_LINE_ITEM_TYPE } from './items/renewal-notice';
 import { TAX_EXCLUSIVE_LINE_ITEM_TYPE } from './items/tax-exclusive';
@@ -32,7 +36,15 @@ export type CheckoutView = ReturnType<typeof createCheckoutView>;
  * Consumers who intentionally skip certain item types should return `null`.
  */
 type CheckoutItemRendererMap = {
-    [K in CheckoutLineItem['type']]: (item: Extract<CheckoutLineItem, { type: K }>) => ReactNode;
+    [K in CheckoutLineItemMandatory['type']]: (
+        item: Extract<CheckoutLineItemMandatory, { type: K }>,
+        renderOptions?: Record<string, any>
+    ) => ReactNode;
+} & {
+    [K in CheckoutLineItemOptional['type']]?: (
+        item: Extract<CheckoutLineItemOptional, { type: K }>,
+        renderOptions?: Record<string, any>
+    ) => ReactNode;
 };
 
 const defaultCheckoutItemOrder: readonly CheckoutLineItem['type'][] = [
@@ -52,7 +64,11 @@ const defaultCheckoutItemOrder: readonly CheckoutLineItem['type'][] = [
     AMOUNT_DUE_LINE_ITEM_TYPE,
     TAX_INCLUSIVE_LINE_ITEM_TYPE,
     RENEWAL_NOTICE_LINE_ITEM_TYPE,
+    BASE_RENEW_AMOUNT_LINE_ITEM_TYPE,
+    PLAN_AMOUNT_WITH_DISCOUNT_PER_MONTH_LINE_ITEM_TYPE,
 ];
+
+type RenderFunction = ((item: CheckoutLineItem, renderOptions: Record<string, any>) => ReactNode) | undefined;
 
 function createCheckoutViewFromHeadlessCheckout(
     checkoutData: HeadlessCheckout,
@@ -70,14 +86,19 @@ function createCheckoutViewFromHeadlessCheckout(
          *
          * Returns `null` when the item is not visible (unless `ignoreVisibility` is set).
          */
-        render<T extends CheckoutLineItem['type']>(type: T, options?: { ignoreVisibility?: boolean }): ReactNode {
+        render<T extends CheckoutLineItem['type']>(
+            type: T,
+            options: { ignoreVisibility?: boolean } & Record<string, any> = {}
+        ): ReactNode {
             const item = checkoutData.getItem(type);
-            if (!item.visible && !options?.ignoreVisibility) {
+            const { ignoreVisibility, ...renderOptions } = options;
+
+            if (!item.visible && !ignoreVisibility) {
                 return null;
             }
 
-            const renderer = resolvedRenderers[type] as (item: CheckoutLineItem) => ReactNode;
-            return renderer(item);
+            const renderer = resolvedRenderers[type] as RenderFunction;
+            return renderer?.(item, renderOptions) ?? null;
         },
 
         /**

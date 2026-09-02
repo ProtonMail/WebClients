@@ -1,4 +1,4 @@
-import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { PlansMap } from '@proton/payments/core/plan/interface';
 import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 
@@ -53,7 +53,6 @@ describe('createPlanAmountItem', () => {
         });
 
         const planAmount = result.getItem('planAmount');
-        // When Amount is 0 and trial, net total falls back to optimistic (plan pricing for cycle)
         expect(planAmount.amount).toBe(4788);
     });
 
@@ -89,5 +88,66 @@ describe('createPlanAmountItem', () => {
 
         expect(result.getItem('members').visible).toBe(false);
         expect(result.getItem('planAmount').visible).toBe(false);
+    });
+
+    it('should use discounted amount for plan-amount when couponConfig.hidden is true', () => {
+        const plansMap: PlansMap = { [PLANS.MAIL]: mailPlan };
+        const checkResult = makeCheckResult({ Amount: 4788, AmountDue: 3788, CouponDiscount: -1000 });
+
+        const result = getHeadlessCheckout({
+            planIDs: { [PLANS.MAIL]: 1 },
+            plansMap,
+            checkResult,
+            couponConfig: { hidden: true },
+            app,
+        });
+
+        expect(result.getItem('planAmount').amount).toBe(3788);
+    });
+
+    it('should use discounted amount for plan-amount on a Black Friday offer', () => {
+        const plansMap: PlansMap = { [PLANS.MAIL]: mailPlan };
+        const checkResult = makeCheckResult({
+            Amount: 4788,
+            AmountDue: 3788,
+            CouponDiscount: -1000,
+            Coupon: {
+                Code: COUPON_CODES.BLACK_FRIDAY_2025,
+                Description: 'BF promo',
+                MaximumRedemptionsPerUser: null,
+            },
+        });
+
+        const result = getHeadlessCheckout({
+            planIDs: { [PLANS.MAIL]: 1 },
+            plansMap,
+            checkResult,
+            app,
+        });
+
+        expect(result.getItem('planAmount').amount).toBe(3788);
+    });
+
+    it('should keep the full amount for plan-amount on a non-BF coupon with a discount', () => {
+        const plansMap: PlansMap = { [PLANS.MAIL]: mailPlan };
+        const checkResult = makeCheckResult({
+            Amount: 4788,
+            AmountDue: 3788,
+            CouponDiscount: -1000,
+            Coupon: {
+                Code: 'REGULAR',
+                Description: 'regular promo',
+                MaximumRedemptionsPerUser: null,
+            },
+        });
+
+        const result = getHeadlessCheckout({
+            planIDs: { [PLANS.MAIL]: 1 },
+            plansMap,
+            checkResult,
+            app,
+        });
+
+        expect(result.getItem('planAmount').amount).toBe(4788);
     });
 });
