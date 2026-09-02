@@ -53,6 +53,7 @@ interface SendTelemetryReportArgs extends TelemetryReport {
      */
     delay: boolean;
     silence?: boolean;
+    flushImmediately?: boolean;
 }
 
 /**
@@ -71,6 +72,7 @@ export const sendTelemetryReport = async ({
     dimensions,
     silence = true,
     delay,
+    flushImmediately = false,
 }: SendTelemetryReportArgs) => {
     if (!metricsEnabled) {
         return;
@@ -100,6 +102,9 @@ export const sendTelemetryReport = async ({
         }
 
         telemetryReportsBatchQueue.add(telemetryReport);
+        if (flushImmediately) {
+            telemetryReportsBatchQueue.flush();
+        }
     } catch {
         // fail silently
     }
