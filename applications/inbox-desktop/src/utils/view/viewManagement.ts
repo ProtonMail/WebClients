@@ -31,7 +31,7 @@ import { c } from "ttag";
 import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
 import { APPS, APPS_CONFIGURATION, CALENDAR_APP_NAME, MAIL_APP_NAME } from "@proton/shared/lib/constants";
 import { MenuBarMonitor } from "./MenuBarMonitor";
-import telemetry from "./../telemetry";
+import telemetryService from "./../telemetry";
 import { PROTON_THEMES_MAP } from "@proton/shared/lib/themes/themes";
 import { ThemeTypes } from "@proton/shared/lib/themes/constants";
 import { DEFAULT_ZOOM_FACTOR, ZOOM_FACTOR_LIST, ZoomFactor } from "../../constants/zoom";
@@ -127,6 +127,7 @@ export const viewCreationAppStartup = async () => {
     authStatusPoller.attachToWindow(mainWindow);
 
     registerWindowEventLog(mainWindow);
+    telemetryService.registerAppInFocusTelemetry(mainWindow, getMailView);
 
     mainWindow.on("close", (event) => {
         // We don't want to prevent the close event if the update is downloaded
@@ -379,7 +380,7 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
 
     authStatusPoller.performPoll();
 
-    telemetry.showView(viewID);
+    telemetryService.showView(viewID);
 
     if (url && urlHasMailto(url)) {
         viewLogger(viewID).debug(`showView loading mailto ${url} from`, getViewURL(viewID));

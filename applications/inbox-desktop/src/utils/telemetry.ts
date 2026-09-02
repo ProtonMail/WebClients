@@ -13,6 +13,7 @@ import { IsDefaultProtocolReport, IsDefaultProtocolChangedReport } from "@proton
 import { getSettings } from "../store/settingsStore";
 import { mainLogger } from "../utils/log";
 import { checkDefaultMailto, getDefaultMailto } from "../utils/protocol/default";
+import { BrowserWindow, WebContentsView } from "electron";
 
 type TelemetryStored = {
     dailyStats: DailyStatsStored;
@@ -190,7 +191,21 @@ class TelemetryService {
 
         return DEFAULT_TELEMETRY;
     }
+
+    // App in focus hook
+    public registerAppInFocusTelemetry(window: BrowserWindow, getMailView: () => WebContentsView | undefined) {
+        window.on("focus", () => {
+            try {
+                const view = getMailView();
+                if (!view || view.webContents.isDestroyed()) return;
+
+                view.webContents.send("hostUpdate", { type: "desktopAppInFocus" });
+            } catch (e) {
+                mainLogger.error(`Failed to send appInFocus telemetry ping: ${e}`);
+            }
+        });
+    }
 }
 
-const telemetry = new TelemetryService();
-export default telemetry;
+const telemetryService = new TelemetryService();
+export default telemetryService;

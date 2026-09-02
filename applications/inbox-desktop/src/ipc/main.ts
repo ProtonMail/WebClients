@@ -34,7 +34,7 @@ import {
 } from "../utils/protocol/default";
 import { getAllAppVersions, storeAppVersion } from "../utils/appVersions";
 import metrics from "../utils/metrics";
-import telemetry from "../utils/telemetry";
+import telemetryService from "../utils/telemetry";
 import { toggleAppCache } from "../utils/appCache";
 import { getLogs } from "../utils/log/getLogsIPC";
 import { handleLogoutIPC } from "../utils/logout/logout";
@@ -116,7 +116,7 @@ export const handleIPCCalls = () => {
                     break;
                 }
                 case "dailyStats": {
-                    event.returnValue = telemetry.getDailyStats();
+                    event.returnValue = telemetryService.getDailyStats();
                     break;
                 }
                 case "colorScheme":
@@ -163,7 +163,7 @@ export const handleIPCCalls = () => {
                     break;
                 case "userLogin":
                     resetHiddenViews();
-                    telemetry.userLogin();
+                    telemetryService.userLogin();
                     break;
                 case "userLogoutV2":
                     handleLogoutIPC();
@@ -251,8 +251,8 @@ export const handleIPCCalls = () => {
                     break;
                 }
                 case "checkDailyStatsAndSignal": {
-                    telemetry.checkDailyStats();
-                    const dailyStatsReport = telemetry.getDailyStatsReport();
+                    telemetryService.checkDailyStats();
+                    const dailyStatsReport = telemetryService.getDailyStatsReport();
 
                     getMailView()?.webContents?.send("hostUpdate", {
                         type: "dailyStatsChecked",
@@ -261,7 +261,7 @@ export const handleIPCCalls = () => {
                     break;
                 }
                 case "dailyStatsReported": {
-                    telemetry.dailyStatsReported(payload);
+                    telemetryService.dailyStatsReported(payload);
                     break;
                 }
                 case "setESUserChoice": {
