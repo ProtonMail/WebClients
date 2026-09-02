@@ -96,17 +96,19 @@ export const announcementMessages = {
 
     backgroundBlurApplied: () => c('Accessibility announcement').t`Blurred background applied`,
 
-    protonBackgroundApplied: () => c('Accessibility announcement').t`${BRAND_NAME} background applied`,
+    protonDarkBackgroundApplied: () => c('Accessibility announcement').t`Dark ${BRAND_NAME} background applied`,
 
-    officeBackgroundApplied: () => c('Accessibility announcement').t`Office background applied`,
+    protonLightBackgroundApplied: () => c('Accessibility announcement').t`Light ${BRAND_NAME} background applied`,
 
-    mountainBackgroundApplied: () => c('Accessibility announcement').t`Mountain background applied`,
+    cityBackgroundApplied: () => c('Accessibility announcement').t`European city background applied`,
 
-    abstractBackgroundApplied: () => c('Accessibility announcement').t`Abstract background applied`,
+    officeBackgroundApplied: () => c('Accessibility announcement').t`Blurred office background applied`,
 
-    beachBackgroundApplied: () => c('Accessibility announcement').t`Beach background applied`,
+    libraryBackgroundApplied: () => c('Accessibility announcement').t`Library background applied`,
 
-    coffeeBackgroundApplied: () => c('Accessibility announcement').t`Coffee place background applied`,
+    mountainBackgroundApplied: () => c('Accessibility announcement').t`Mountain landscape background applied`,
+
+    beachBackgroundApplied: () => c('Accessibility announcement').t`Beach landscape background applied`,
 
     customBackgroundApplied: () => c('Accessibility announcement').t`Your own background applied`,
 

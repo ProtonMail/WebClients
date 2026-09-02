@@ -110,7 +110,7 @@ describe('backgroundSlice', () => {
         });
 
         it('should ignore a stored background that is no longer offered', () => {
-            localStorage.setItem('meetVirtualBackground', 'library');
+            localStorage.setItem('meetVirtualBackground', 'coffee');
 
             expect(getPersistedBackgroundState().appliedBackgroundEffect).toBe('none');
         });
