@@ -196,10 +196,10 @@ describe('getAccountAppRoutes', () => {
             expect(getDashboardAvailability({ user: orgAdmin, permissions, showDashboard: false })).toBe(true);
         });
 
-        it('is available for a member of a free organization without any permission', () => {
+        it('is not available for a member of a free organization without any permission', () => {
             const permissions = getOrgPermissions([], false);
-            expect(getDashboardAvailability({ user: freeOrgMember, permissions })).toBe(true);
-            expect(getDashboardAvailability({ user: freeOrgMember, permissions, showDashboard: false })).toBe(true);
+            expect(getDashboardAvailability({ user: freeOrgMember, permissions })).toBe(false);
+            expect(getDashboardAvailability({ user: freeOrgMember, permissions, showDashboard: false })).toBe(false);
         });
 
         it('is available for a user outside an organization without any permission', () => {
