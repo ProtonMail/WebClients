@@ -44,7 +44,7 @@ export const AddBackgroundTile = forwardRef<HTMLButtonElement, AddBackgroundTile
                         }
                     }}
                     onKeyDown={onKeyDown}
-                    className={clsx(BACKGROUND_TILE_CLASS, disabled && 'opacity-50', className)}
+                    className={clsx(BACKGROUND_TILE_CLASS, disabled && 'opacity-50 cursor-default', className)}
                 >
                     {isAdding ? <CircleLoader size="small" /> : <IcMeetImagePlus size={5} />}
                 </button>
