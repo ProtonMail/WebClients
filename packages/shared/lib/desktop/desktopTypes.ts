@@ -58,7 +58,8 @@ export type IPCInboxDesktopFeature =
     | 'SwitchViewShortcuts'
     | 'SetAllowedProtocols'
     | 'RegisterUrlRedirectRules'
-    | 'AuthStatusCheck';
+    | 'AuthStatusCheck'
+    | 'AppInFocusTelemetry';
 export type IPCInboxGetInfoMessage =
     | { type: 'theme'; result: ThemeSetting }
     | { type: 'latestVersion'; result: DesktopVersion | null }
@@ -145,6 +146,10 @@ export const IPCInboxHostUpdateMessageSchema = z.discriminatedUnion('type', [
     z.object({
         type: z.literal('authStatusCheck'),
         payload: z.string().uuid(),
+    }),
+    z.object({
+        type: z.literal('desktopAppInFocus'),
+        payload: z.undefined().optional(),
     }),
 ]);
 
