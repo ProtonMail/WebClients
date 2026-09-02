@@ -1057,6 +1057,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná skúšobná verzia desktopovej aplikácie končí dňa ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Copy debug transcript": [
+        "Kopírovať prepis ladenia"
+      ],
+      "Preview logs": [
+        "Náhľad záznamov"
       ]
     },
     "action": {
@@ -7281,6 +7287,21 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Dosiahli ste limit rezervačných slotov (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } značka"
+      ],
+      "Debug transcript copied": [
+        "Prepis ladenia skopírovaný"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Ak ste stratili prístup k aplikácii na overovanie, môžete použiť jeden zo 16 záložných obnovovacích kódov, ktoré ste dostali pri nastavovaní dvojfaktorovej autentifikácie. ${ learnMoreLink }"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Záznamy nám pomáhajú pochopiť, čo sa udialo pred vznikom problému. Obsahujú akcie aplikácie a chybové hlásenia, nie však obsah správ."
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Na dokončenie tejto transakcie vás presmerujeme do ${ IDEAL_WERO_BRAND_NAME } v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
       ]
     },
     "info": {
@@ -8084,6 +8105,9 @@
       ],
       "Zoom meeting": [
         "Zoom schôdzka"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } znakov"
       ]
     },
     "label": {
@@ -10568,6 +10592,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaše predplatné má v súčasnosti platnú zľavu. Prechodom na túto novú akciu sa existujúca zľava prestane uplatňovať."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Platba cez ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Vaša mena bola zmenená na eurá (€), pretože ${ IDEAL_WERO_BRAND_NAME } podporuje platby len v eurách."
       ]
     },
     "Payments.Error": {
@@ -10591,6 +10621,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaša karta bola zamietnutá. Skúste použiť inú kartu alebo kontaktujte svoju banku a autorizujte platbu."
+      ],
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Inicializácia ${ IDEAL_WERO_BRAND_NAME } zlyhala. Skúste to neskôr znova, prosím."
       ]
     },
     "Payments.error": {
@@ -13600,6 +13633,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "September Sale": [
+        "Septembrová zľava"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -14313,6 +14349,94 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Skúste to teraz"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Teraz máte prístup k novej aplikácii ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Potvrdením oprávňujete spoločnosť ${ BRAND_NAME } a Stripe, nášho poskytovateľa platobných služieb, aby z tohto bankového účtu prostredníctvom priameho inkasa SEPA inkasovali budúce platby za vaše predplatné, a vašu banku, aby tieto platby strhla. Vaša prvá platba je realizovaná teraz spoločnosťou ${ IDEAL_WERO_BRAND_NAME }. Váš balík sa automaticky obnovuje, kým ho nezrušíte; pred každým inkasom vás budeme informovať. V prípade inkás prostredníctvom priameho inkasa môžete požiadať svoju banku o vrátenie platby do 8 týždňov od dátumu inkasa v súlade s podmienkami vašej zmluvy s bankou. Toto sa nevzťahuje na platbu spoločnosti ${ IDEAL_WERO_BRAND_NAME }, ktorú práve uskutočňujete."
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Využiť ponuku"
+      ],
+      "Special Offer": [
+        "Špeciálna ponuka"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/mesiac"
+      ],
+      "2 individual accounts": [
+        "2 samostatné účty"
+      ],
+      "2 TB of secure storage": [
+        "2 TB bezpečného úložiska"
+      ],
+      "3 TB of secure storage": [
+        "3 TB bezpečného úložiska"
+      ],
+      "500 GB of secure storage": [
+        "500 GB bezpečného úložiska"
+      ],
+      "6 individual accounts": [
+        "6 samostatných účtov"
+      ],
+      "Advanced protection against cyber threats": [
+        "Pokročilá ochrana pred kybernetickými hrozbami"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zľavy sa vzťahujú na štandardné mesačné ceny. Vaše predplatné sa po skončení fakturačného cyklu obnoví za štandardnú ročnú sadzbu."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "na 12 mesiacov"
+      ],
+      "One plan, full power": [
+        "Jeden plán, plný výkon"
+      ],
+      "One plan, max savings": [
+        "Jeden plán, maximálne úspory"
+      ],
+      "One plan, more power": [
+        "Jeden plán, viac výkonu"
       ]
     }
   }
