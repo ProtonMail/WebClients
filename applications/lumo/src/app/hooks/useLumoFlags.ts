@@ -28,6 +28,7 @@ import { useFlag } from '@proton/unleash/useFlag';
  * - maxAvailableFree: When enabled, free users can select Lumo Max (default off during high load)
  * - maxAvailableGuest: When enabled, guest users can select Lumo Max (default off during high load)
  * - apertusModelAvailable: Enable the Apertus 15 model in the composer model picker
+ * - dictationV2: Show the dictation mic button in the composer toolbar
  */
 export const useLumoFlags = () => {
     const imageTools = useFlag('LumoImageTools');
@@ -54,6 +55,7 @@ export const useLumoFlags = () => {
     const maxAvailableFree = useFlag('LumoMaxAvailableFree');
     const maxAvailableGuest = useFlag('LumoMaxAvailableGuest');
     const apertusModelAvailable = useFlag('LumoApertusModel');
+    const dictationV2 = useFlag('LumoDictationV2');
 
     return {
         memory,
@@ -80,5 +82,6 @@ export const useLumoFlags = () => {
         maxAvailableFree,
         maxAvailableGuest,
         apertusModelAvailable,
+        dictationV2,
     };
 };
