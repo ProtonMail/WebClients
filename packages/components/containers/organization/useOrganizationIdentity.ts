@@ -5,7 +5,9 @@ import { c } from 'ttag';
 import { getKTUserContext } from '@proton/account/kt/actions';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useApi } from '@proton/app-context/useApi';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
+import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Unwrap } from '@proton/shared/lib/interfaces';
 import { OrganizationSignatureState, validateOrganizationSignatureHelper } from '@proton/shared/lib/keys';
@@ -16,7 +18,7 @@ export interface OrganizationIdentityState {
     result: {
         label: string;
         state: 'valid' | 'invalid';
-        icon: IconName;
+        Icon: IconComponent;
         className: string;
     } | null;
 }
@@ -31,14 +33,14 @@ const getResult = (result: Unwrap<ReturnType<typeof validateOrganizationSignatur
         return {
             label: c('passwordless').t`We have verified the authenticity of this identity.`,
             state: 'valid',
-            icon: 'checkmark-circle-filled',
+            Icon: IcCheckmarkCircleFilled,
             className: 'color-success',
         } as const;
     }
     return {
         label: c('passwordless').t`We couldn't verify the authenticity of this identity.`,
         state: 'invalid',
-        icon: 'info-circle-filled',
+        Icon: IcInfoCircleFilled,
         className: 'color-danger',
     } as const;
 };

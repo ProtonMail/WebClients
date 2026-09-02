@@ -6,7 +6,10 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Pill } from '@proton/atoms/Pill/Pill';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
+import { IcBrandLinux } from '@proton/icons/icons/IcBrandLinux';
+import { IcBrandWindows } from '@proton/icons/icons/IcBrandWindows';
 import { getApplicationNameWithPlatform } from '@proton/shared/lib/apps/getApplicationNameWithPlatform';
 import { DESKTOP_PLATFORMS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import type { DesktopVersion } from '@proton/shared/lib/desktop/DesktopVersion';
@@ -14,7 +17,6 @@ import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import Icon from '../../components/icon/Icon';
 import Option from '../../components/option/Option';
 import SelectTwo from '../../components/selectTwo/SelectTwo';
 import SettingsParagraph from '../account/SettingsParagraph';
@@ -23,7 +25,7 @@ import useInboxDesktopVersion from './useInboxDesktopVersion';
 
 interface DownloadSectionProps extends PropsWithChildren {
     version: string;
-    icon: IconName;
+    icon: IconComponent;
     platform: DESKTOP_PLATFORMS;
     isBeta?: boolean;
 }
@@ -85,7 +87,7 @@ const DownloadButton = ({ link, ariaLabel }: { link?: string; ariaLabel?: string
     );
 };
 
-const DownloadCard = ({ version, icon, platform, isBeta, children }: DownloadSectionProps) => {
+const DownloadCard = ({ version, icon: Icon, platform, isBeta, children }: DownloadSectionProps) => {
     const linkSnapStore = (
         <a key="snap-store-link" href="https://snapcraft.io/proton-mail" target="_blank" rel="noopener noreferrer">
             {
@@ -98,7 +100,7 @@ const DownloadCard = ({ version, icon, platform, isBeta, children }: DownloadSec
     return (
         <div className="flex">
             <div className="border p-7 flex-1 rounded flex flex-column items-center">
-                <Icon size={12} name={icon} className="mb-4" />
+                <Icon size={12} className="mb-4" />
                 <h3 className="text-bold text-xl m-0 text-center">
                     {getApplicationNameWithPlatform(MAIL_APP_NAME, platform)}
                 </h3>
@@ -144,7 +146,7 @@ export const InboxDesktopSettingsSection = () => {
             <div className="mt-8 grid-column-2 grid-auto-fill gap-4">
                 <DownloadCard
                     version={windowsApp.Version}
-                    icon="brand-windows"
+                    icon={IcBrandWindows}
                     platform={DESKTOP_PLATFORMS.WINDOWS}
                     isBeta={windowsApp.CategoryName === 'EarlyAccess'}
                 >
@@ -152,13 +154,13 @@ export const InboxDesktopSettingsSection = () => {
                 </DownloadCard>
                 <DownloadCard
                     version={macosApp.Version}
-                    icon="brand-apple"
+                    icon={IcBrandApple}
                     platform={DESKTOP_PLATFORMS.MACOS}
                     isBeta={macosApp.CategoryName === 'EarlyAccess'}
                 >
                     <DownloadButton link={macosApp.File[0]!.Url} ariaLabel={c('Action').t`Download for macOS`} />
                 </DownloadCard>
-                <DownloadCard version={linuxApp.Version} icon="brand-linux" platform={DESKTOP_PLATFORMS.LINUX}>
+                <DownloadCard version={linuxApp.Version} icon={IcBrandLinux} platform={DESKTOP_PLATFORMS.LINUX}>
                     {linuxApp.Version && <DownloadDropdown app={linuxApp} />}
                 </DownloadCard>
             </div>

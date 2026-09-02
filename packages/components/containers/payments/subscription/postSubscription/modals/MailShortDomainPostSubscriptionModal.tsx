@@ -6,12 +6,14 @@ import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
+import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
+import { IcAt } from '@proton/icons/icons/IcAt';
+import { IcInbox } from '@proton/icons/icons/IcInbox';
 import { APPS } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import illustration from '@proton/styles/assets/img/illustrations/check.svg';
 
 import Copy from '../../../../../components/button/Copy';
-import Icon from '../../../../../components/icon/Icon';
 import SettingsLink from '../../../../../components/link/SettingsLink';
 import useShortDomainAddress from '../../../../../hooks/mail/useShortDomainAddress';
 import { SUBSCRIPTION_STEPS } from '../../constants';
@@ -38,16 +40,19 @@ const ConfirmationModalContent = ({
     const defaultEmailAddress = <b key="default-email-adress">{c('Info').t`default email address`}</b>;
     const listItems = [
         {
-            icon: 'arrow-within-square',
+            id: 'share',
+            icon: <IcArrowWithinSquare />,
             text: c('Info').t`Start sharing it with contacts and use it for online services.`,
         },
         {
-            icon: 'at',
+            id: 'default-address',
+            icon: <IcAt />,
             // translator complete sentence: This is now your <>default email address<> for sending new messages.
             text: c('Info').jt`This is now your ${defaultEmailAddress} for sending new messages.`,
         },
         {
-            icon: 'inbox',
+            id: 'inbox',
+            icon: <IcInbox />,
             text: c('Info').t`Messages to all your email addresses will go to your inbox.`,
         },
     ] as const;
@@ -85,8 +90,8 @@ const ConfirmationModalContent = ({
                     </div>
                 </div>
                 <ul className="unstyled">
-                    {listItems.map(({ icon, text }) => (
-                        <li key={icon} className="flex items-start flex-justify flex-nowrap mb-4">
+                    {listItems.map(({ id, icon, text }) => (
+                        <li key={id} className="flex items-start flex-justify flex-nowrap mb-4">
                             <span
                                 className="mr-3 shrink-0 bg-weak rounded-full w-custom h-custom flex items-center justify-center"
                                 style={{
@@ -94,7 +99,7 @@ const ConfirmationModalContent = ({
                                     '--h-custom': '2rem',
                                 }}
                             >
-                                <Icon name={icon} />
+                                {icon}
                             </span>
                             <span>{text}</span>
                         </li>

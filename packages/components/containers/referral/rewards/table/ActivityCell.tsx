@@ -1,11 +1,12 @@
+import type { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/icons/types';
+import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
+import { IcCircleRadioEmpty } from '@proton/icons/icons/IcCircleRadioEmpty';
 import type { Referral } from '@proton/shared/lib/interfaces';
 import { ReferralState } from '@proton/shared/lib/interfaces';
-import clsx from '@proton/utils/clsx';
-
-import Icon from '../../../../components/icon/Icon';
 
 type TickLevel = 'empty' | 'partial' | 'complete';
 
@@ -15,27 +16,27 @@ interface TickIconProps {
 }
 
 const TickIcon = ({ level, text }: TickIconProps) => {
-    const properties: { colorClassName: string; icon: IconName } | undefined = (() => {
+    const icon: ReactNode | undefined = (() => {
         if (level === 'empty') {
-            return { colorClassName: 'color-disabled', icon: 'circle-radio-empty' };
+            return <IcCircleRadioEmpty className="shrink-0 color-disabled" size={4} />;
         }
 
         if (level === 'partial') {
-            return { colorClassName: 'color-success', icon: 'checkmark-circle' };
+            return <IcCheckmarkCircle className="shrink-0 color-success" size={4} />;
         }
 
         if (level === 'complete') {
-            return { colorClassName: 'color-success', icon: 'checkmark-circle-filled' };
+            return <IcCheckmarkCircleFilled className="shrink-0 color-success" size={4} />;
         }
     })();
 
-    if (!properties) {
+    if (!icon) {
         return null;
     }
 
     return (
         <div className="flex items-center gap-2">
-            <Icon name={properties.icon} className={clsx('shrink-0', properties.colorClassName)} size={4} />
+            {icon}
             <span>{text}</span>
         </div>
     );

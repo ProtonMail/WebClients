@@ -1,23 +1,18 @@
-import type { ComponentType, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import type { IconComponent } from '@proton/icons/component';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
-import type { IconSize } from '@proton/icons/types';
 
 import './SettingsNavItem.scss';
-
-interface IconProps {
-    className?: string;
-    size?: IconSize;
-}
 
 type Props =
     | {
           to: string;
           onClick?: never;
-          icon: ComponentType<IconProps>;
+          icon: IconComponent;
           title: string;
           tooltip?: ReactNode;
           children?: ReactNode;
@@ -25,7 +20,7 @@ type Props =
     | {
           onClick: () => void;
           to?: never;
-          icon: ComponentType<IconProps>;
+          icon: IconComponent;
           title: string;
           tooltip?: ReactNode;
           children?: ReactNode;

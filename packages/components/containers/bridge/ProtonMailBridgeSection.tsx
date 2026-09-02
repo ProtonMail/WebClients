@@ -1,11 +1,13 @@
-import type { ChangeEvent } from 'react';
+import type { ChangeEvent, ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import type { IconName } from '@proton/icons/types';
+import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
+import { IcBrandLinux } from '@proton/icons/icons/IcBrandLinux';
+import { IcBrandWindows } from '@proton/icons/icons/IcBrandWindows';
 import metrics from '@proton/metrics';
 import { semver } from '@proton/pass/utils/string/semver';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
@@ -20,7 +22,6 @@ import {
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getBridgeURL, getStaticURL } from '@proton/shared/lib/helpers/url';
 
-import Icon from '../../components/icon/Icon';
 import Select from '../../components/select/Select';
 import SettingsParagraph from '../account/SettingsParagraph';
 import SettingsSectionWide from '../account/SettingsSectionWide';
@@ -30,7 +31,7 @@ import './ProtonMailBridgeSection.scss';
 
 interface BridgeClient {
     id: string;
-    icon: IconName;
+    icon: ReactNode;
     platform: string;
     version: string;
     versionFileURL: string;
@@ -53,7 +54,7 @@ interface BridgeFile {
 const initialBridgeClients: BridgeClient[] = [
     {
         id: 'windows',
-        icon: 'brand-windows',
+        icon: <IcBrandWindows size={12} className="mb-4" />,
         platform: 'Windows',
         versionFileURL: 'windows/x86/v1/version.json',
         version: 'Latest',
@@ -61,7 +62,7 @@ const initialBridgeClients: BridgeClient[] = [
     },
     {
         id: 'apple',
-        icon: 'brand-apple',
+        icon: <IcBrandApple size={12} className="mb-4" />,
         platform: 'macOS',
         versionFileURL: 'darwin/universal/v1/version.json',
         version: 'Latest',
@@ -69,7 +70,7 @@ const initialBridgeClients: BridgeClient[] = [
     },
     {
         id: 'linux',
-        icon: 'brand-linux',
+        icon: <IcBrandLinux size={12} className="mb-4" />,
         platform: 'GNU/Linux',
         versionFileURL: 'linux/x86/v1/version.json',
         version: 'Latest',
@@ -179,7 +180,7 @@ export const ProtonMailBridgeSection = () => {
         return (
             <div key={id} className="flex">
                 <div className="border p-7 flex-1 rounded flex flex-column items-center">
-                    <Icon size={12} name={icon} className="mb-4" />
+                    {icon}
 
                     <h3 className="text-bold text-xl m-0 text-center">{c('Title').t`Bridge for ${platform}`}</h3>
 
