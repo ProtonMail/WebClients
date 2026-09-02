@@ -21,7 +21,6 @@
         "transit": {
             "dependsOn": ["^transit"]
         },
-        "@proton/i18n#build": {},
         "build:web": {
             "outputs": ["dist/**", "webapp-bundle.tar.gz"]
         },
@@ -34,7 +33,7 @@
         "lint": {},
         "i18n:validate": {},
         "i18n:extract:web": {
-            "dependsOn": ["@proton/i18n#build", "build:web"],
+            "dependsOn": ["build:web"],
             "outputs": ["po/**"]
         },
         "i18n:validate:context:web": {
