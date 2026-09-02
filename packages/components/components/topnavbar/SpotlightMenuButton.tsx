@@ -3,11 +3,12 @@ import { useMemo } from 'react';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
+import useToggle from '@proton/hooks/useToggle';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import type { IconName } from '@proton/icons/types';
 
-import useToggle from '@proton/hooks/useToggle'
 import Dropdown from '../dropdown/Dropdown';
 import DropdownMenu from '../dropdown/DropdownMenu';
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';
@@ -113,7 +114,7 @@ export const SpotlightMenuButton = ({
     return (
         <Spotlight
             originalPlacement="bottom-end"
-            closeIcon="cross-big"
+            closeIcon={<IcCrossBig />}
             show={renderSpotlight}
             onClose={onCloseSpotlight}
             size="large"
