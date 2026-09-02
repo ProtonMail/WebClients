@@ -6,11 +6,12 @@ export const COUPON_LINE_ITEM_TYPE = 'coupon' as const;
 export interface CouponLineItem extends BaseLineItem<typeof COUPON_LINE_ITEM_TYPE>, ReturnType<typeof formatCoupon> {}
 
 function formatCoupon(ctx: HeadlessCheckoutContextInner) {
-    const { checkResult, couponConfig, currency } = ctx;
+    const { checkResult, hasInvisibleCoupon, currency } = ctx;
     const couponDiscount = checkResult.CouponDiscount ?? 0;
+    const couponCode = checkResult.Coupon?.Code ?? null;
 
     return {
-        couponCode: checkResult.Coupon?.Code ?? null,
+        couponCode,
         couponDescription: checkResult.Coupon?.Description ?? null,
         discountAmount: couponDiscount,
         currency,
@@ -18,7 +19,7 @@ function formatCoupon(ctx: HeadlessCheckoutContextInner) {
          * Hidden when `couponConfig.hidden` is set. Business rule: some coupons are applied silently and should not
          * appear as a separate line item.
          */
-        visible: couponDiscount !== 0 && !couponConfig?.hidden,
+        visible: couponDiscount !== 0 && !hasInvisibleCoupon,
     };
 }
 
