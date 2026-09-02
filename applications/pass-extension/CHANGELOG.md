@@ -1,7 +1,32 @@
+### Version 1.40.0
+
+_Some features below are rolling out gradually and may not be available to everyone right away._
+
+- Pass Monitor: check if your passwords have been exposed in a known data breach (behind feature flag)
+- Biometric unlock is now available on all plans
+- Fix not able to import KeePassXC file if missing the `.xml` extension
+- Improve UI when a filter is active
+- Search for people to share a vault/item with now matches substrings, not just the start of a word
+- Account setting now links to the Pass dashboard
+- Upgrade links now go to the account page instead of sign-up
+- Show full note content by default, preserved across popup open/close
+- Fix stuttering "Read More" animation on read-only text fields
+- Prompt to enable offline mode when it isn't already on
+- Fix PIN input not auto-focusing on Firefox
+- Autosaved items now use the page title instead of the domain
+- Add support for updating the autofill model remotely, without requiring an extension update
+- Identity autofill no longer suggested when adding a member in the admin panel
+- Fix passkey signing state being exposed to page scripts
+- Onboarding popup dismissal is now remembered
+- Fix autosave using the iframe URL instead of the top page URL
+- Fix breach check not running after a page reload
+- Fix login view accepting invalid input
+- Fix CSS for pinned items
+
 ### Version 1.39.0
 
-- Support custom autofill domain matching rules
-- Support importing autofill matching rules from Bitwarden
+- Support custom autofill domain matching rules (behind feature flag)
+- Support importing autofill matching rules from Bitwarden (behind feature flag)
 - Show the admin panel link in the sidebar for organization admins
 - Access tokens now show a readable expiration date and an easier expiry picker
 - Hide the "Edit vault" button for users who only have editor access
