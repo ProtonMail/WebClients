@@ -14,6 +14,7 @@ const mockedWriteEntries = writeFeatureFlagCookieEntries as jest.Mock;
 
 const buildConfig = (overrides: Partial<StaticExperimentConfig> = {}): StaticExperimentConfig => ({
     enabled: true,
+    owner: 'example',
     schedule: [{ startsAt: '1970-01-01T00:00:00Z', weights: { A: 50, B: 50 } }],
     ...overrides,
 });
