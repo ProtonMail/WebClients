@@ -1,6 +1,15 @@
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/icons/types';
+import { IcBrandAndroid } from '@proton/icons/icons/IcBrandAndroid';
+import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
+import { IcBrandBrave } from '@proton/icons/icons/IcBrandBrave';
+import { IcBrandChrome } from '@proton/icons/icons/IcBrandChrome';
+import { IcBrandEdge } from '@proton/icons/icons/IcBrandEdge';
+import { IcBrandFirefox } from '@proton/icons/icons/IcBrandFirefox';
+import { IcBrandLinux } from '@proton/icons/icons/IcBrandLinux';
+import { IcBrandMac } from '@proton/icons/icons/IcBrandMac';
+import { IcBrandSafari } from '@proton/icons/icons/IcBrandSafari';
+import { IcBrandWindows } from '@proton/icons/icons/IcBrandWindows';
 import { APPS } from '@proton/shared/lib/constants';
 import appleAppStoreImage from '@proton/styles/assets/img/vpn/download-section/apple-app-store.svg';
 import googlePlayStoreImage from '@proton/styles/assets/img/vpn/download-section/google-play-store.svg';
@@ -22,7 +31,7 @@ const downloadData = [
         tabs: [
             {
                 title: () => c('Download').t`Chrome`,
-                icon: 'brand-chrome' as IconName,
+                icon: <IcBrandChrome />,
                 content: {
                     image: chromePreview,
                     downloadButtons: [
@@ -39,7 +48,7 @@ const downloadData = [
             },
             {
                 title: () => c('Download').t`Firefox`,
-                icon: 'brand-firefox' as IconName,
+                icon: <IcBrandFirefox />,
                 content: {
                     image: firefoxPreview,
                     downloadButtons: [
@@ -56,7 +65,7 @@ const downloadData = [
             },
             {
                 title: () => c('Download').t`Edge`,
-                icon: 'brand-edge' as IconName,
+                icon: <IcBrandEdge />,
                 content: {
                     image: edgePreview,
                     downloadButtons: [
@@ -73,7 +82,7 @@ const downloadData = [
             },
             {
                 title: () => c('Download').t`Safari`,
-                icon: 'brand-safari' as IconName,
+                icon: <IcBrandSafari />,
                 content: {
                     image: safariPreview,
                     downloadButtons: [
@@ -90,7 +99,7 @@ const downloadData = [
             },
             {
                 title: () => c('Download').t`Brave`,
-                icon: 'brand-brave' as IconName,
+                icon: <IcBrandBrave />,
                 content: {
                     image: bravePreview,
                     downloadButtons: [
@@ -113,7 +122,7 @@ const downloadData = [
         tabs: [
             {
                 title: () => c('Download').t`iPhone/iPad`,
-                icon: 'brand-apple' as IconName,
+                icon: <IcBrandApple />,
                 content: {
                     image: mobilePreview,
                     downloadButtons: [
@@ -132,7 +141,7 @@ const downloadData = [
             },
             {
                 title: () => c('Download').t`Android`,
-                icon: 'brand-android' as IconName,
+                icon: <IcBrandAndroid />,
                 content: {
                     image: mobilePreview,
                     downloadButtons: [
@@ -157,7 +166,7 @@ const downloadData = [
         tabs: [
             {
                 title: () => c('Download').t`Windows`,
-                icon: 'brand-windows' as IconName,
+                icon: <IcBrandWindows />,
                 content: {
                     image: windowsPreview,
                     downloadButtons: [
@@ -174,7 +183,7 @@ const downloadData = [
             },
             {
                 title: () => c('Download').t`macOS`,
-                icon: 'brand-mac' as IconName,
+                icon: <IcBrandMac />,
                 content: {
                     image: macosPreview,
                     downloadButtons: [
@@ -191,7 +200,7 @@ const downloadData = [
             },
             {
                 title: () => c('Download').t`Linux`,
-                icon: 'brand-linux' as IconName,
+                icon: <IcBrandLinux />,
                 content: {
                     image: linuxPreview,
                     downloadButtons: [

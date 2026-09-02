@@ -5,6 +5,7 @@ import type { RouteChildrenProps } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Tabs } from '@proton/components/components/tabs/Tabs';
+import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { AccountPath } from '../../../constants';
@@ -42,15 +43,15 @@ const getSettingsTabs = (
         : []),
     { hash: 'import', title: c('Label').t`Import`, content: <Import /> },
     { hash: 'export', title: c('Label').t`Export`, content: exportTab },
-    { hash: 'account', title: c('Label').t`Account`, icon: 'arrow-within-square', content: <></> },
+    { hash: 'account', title: c('Label').t`Account`, icon: <IcArrowWithinSquare />, content: <></> },
     ...(orgEnabled
         ? [
               {
                   hash: 'organization',
                   title: c('Label').t`Organization`,
-                  icon: 'arrow-within-square',
+                  icon: <IcArrowWithinSquare />,
                   content: <></>,
-              } as const,
+              },
           ]
         : []),
     { hash: 'support', title: c('Label').t`Support`, content: <Support /> },

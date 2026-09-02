@@ -1,15 +1,13 @@
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 import debounce from 'lodash/debounce';
 
 import useRightToLeft from '@proton/hooks/useRightToLeft';
-import type { IconName } from '@proton/icons/types';
 import clamp from '@proton/utils/clamp';
 import clsx from '@proton/utils/clsx';
 
 import { equivalentReducer } from '../../hooks/useElementRect';
-import Icon from '../icon/Icon';
 
 import './Tabs.scss';
 
@@ -26,7 +24,7 @@ export type Tab = {
      */
     titleNode?: ReactNode;
     content?: ReactNode;
-    icon?: IconName;
+    icon?: ReactElement;
     iconPosition?: 'leading' | 'trailing';
 };
 
@@ -227,18 +225,18 @@ export const Tabs = ({
                                             </span>
                                         )}
                                         {icon && iconPosition === 'leading' && (
-                                            <Icon name={icon} className="shrink-0" />
+                                            <span className="shrink-0 flex items-center">{icon}</span>
                                         )}
                                         <span
                                             className={clsx(
-                                                (variant === 'modern' || icon) && 'text-ellipsis flex flex-column'
+                                                (variant === 'modern' || !!icon) && 'text-ellipsis flex flex-column'
                                             )}
                                             data-title={title}
                                         >
                                             {titleNode ?? title}
                                         </span>
                                         {icon && iconPosition === 'trailing' && (
-                                            <Icon name={icon} className="shrink-0" />
+                                            <span className="shrink-0 flex items-center">{icon}</span>
                                         )}
                                     </button>
                                 </li>

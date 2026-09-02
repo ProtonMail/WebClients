@@ -1,6 +1,10 @@
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/icons/types';
+import { IcBrandAndroid } from '@proton/icons/icons/IcBrandAndroid';
+import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
+import { IcBrandLinux } from '@proton/icons/icons/IcBrandLinux';
+import { IcBrandMac } from '@proton/icons/icons/IcBrandMac';
+import { IcBrandWindows } from '@proton/icons/icons/IcBrandWindows';
 import { APPS } from '@proton/shared/lib/constants';
 import appleAppStoreImage from '@proton/styles/assets/img/vpn/download-section/apple-app-store.svg';
 import googlePlayStoreImage from '@proton/styles/assets/img/vpn/download-section/google-play-store.svg';
@@ -28,7 +32,7 @@ const MeetDownloadSection = () => {
             tabs: [
                 {
                     title: () => c('Download').t`iOS`,
-                    icon: 'brand-apple' as IconName,
+                    icon: <IcBrandApple />,
                     content: {
                         image: iosPreview,
                         hint: () => c('Download').t`Scan the QR code with your mobile device`,
@@ -44,7 +48,7 @@ const MeetDownloadSection = () => {
                 },
                 {
                     title: () => c('Download').t`Android`,
-                    icon: 'brand-android' as IconName,
+                    icon: <IcBrandAndroid />,
                     content: {
                         image: androidPreview,
                         hint: () => c('Download').t`Scan the QR code with your mobile device`,
@@ -66,7 +70,7 @@ const MeetDownloadSection = () => {
             tabs: [
                 {
                     title: () => c('Download').t`Windows`,
-                    icon: 'brand-windows' as IconName,
+                    icon: <IcBrandWindows />,
                     content: {
                         image: windowsPreview,
                         downloadButtons: [
@@ -83,7 +87,7 @@ const MeetDownloadSection = () => {
                 },
                 {
                     title: () => c('Download').t`macOS`,
-                    icon: 'brand-mac' as IconName,
+                    icon: <IcBrandMac />,
                     content: {
                         image: macosPreview,
                         downloadButtons: [
@@ -100,7 +104,7 @@ const MeetDownloadSection = () => {
                 },
                 {
                     title: () => c('Download').t`Linux`,
-                    icon: 'brand-linux' as IconName,
+                    icon: <IcBrandLinux />,
                     content: {
                         image: linuxPreview,
                         downloadButtons: [

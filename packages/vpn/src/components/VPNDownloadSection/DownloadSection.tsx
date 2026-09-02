@@ -1,3 +1,4 @@
+import type { ReactElement } from 'react';
 import { useState } from 'react';
 
 import { c } from 'ttag';
@@ -12,13 +13,19 @@ import DropdownButton from '@proton/components/components/dropdown/DropdownButto
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuLink from '@proton/components/components/dropdown/DropdownMenuLink';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import type { Tab } from '@proton/components/components/tabs/Tabs';
 import { Tabs } from '@proton/components/components/tabs/Tabs';
 import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
 import { mapTelemetryOsVersionWithStore } from '@proton/components/helpers/mapTelemetryOsVersionWithStore';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
-import type { IconName } from '@proton/icons/types';
+import { IcBrandAmazon } from '@proton/icons/icons/IcBrandAmazon';
+import { IcBrandAndroid } from '@proton/icons/icons/IcBrandAndroid';
+import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
+import { IcBrandChrome } from '@proton/icons/icons/IcBrandChrome';
+import { IcBrandFirefox } from '@proton/icons/icons/IcBrandFirefox';
+import { IcBrandLinux } from '@proton/icons/icons/IcBrandLinux';
+import { IcBrandMac } from '@proton/icons/icons/IcBrandMac';
+import { IcBrandWindows } from '@proton/icons/icons/IcBrandWindows';
 import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { APPS } from '@proton/shared/lib/constants';
 import { isAndroid, isDesktop, isIos, isLinux, isMac, isMobile, isWindows } from '@proton/shared/lib/helpers/browser';
@@ -66,7 +73,7 @@ interface TabContent {
 
 interface CategoryTab {
     title: () => string;
-    icon: IconName;
+    icon: ReactElement;
     content: TabContent;
 }
 
@@ -99,7 +106,7 @@ function useDownloadData() {
                     ? [
                           {
                               title: () => c('Download').t`Windows`,
-                              icon: 'brand-windows' as IconName,
+                              icon: <IcBrandWindows />,
                               content: {
                                   image: windowsPreview,
                                   downloadButton: {
@@ -118,7 +125,7 @@ function useDownloadData() {
                     ? [
                           {
                               title: () => c('Download').t`macOS`,
-                              icon: 'brand-mac' as IconName,
+                              icon: <IcBrandMac />,
                               content: {
                                   image: macosPreview,
                                   downloadButton: {
@@ -135,7 +142,7 @@ function useDownloadData() {
                     : []),
                 {
                     title: () => c('Download').t`Linux`,
-                    icon: 'brand-linux' as IconName,
+                    icon: <IcBrandLinux />,
                     content: {
                         image: linuxPreview,
                         downloadButton: {
@@ -156,7 +163,7 @@ function useDownloadData() {
             tabs: [
                 {
                     title: () => c('Download').t`iPhone/iPad`,
-                    icon: 'brand-apple' as IconName,
+                    icon: <IcBrandApple />,
                     content: {
                         image: mobilePreview,
                         downloadButton: {
@@ -173,7 +180,7 @@ function useDownloadData() {
                 },
                 {
                     title: () => c('Download').t`Android`,
-                    icon: 'brand-android' as IconName,
+                    icon: <IcBrandAndroid />,
                     content: {
                         image: mobilePreview,
                         downloadButton: {
@@ -195,7 +202,7 @@ function useDownloadData() {
             tabs: [
                 {
                     title: () => c('Download').t`Chrome`,
-                    icon: 'brand-chrome' as IconName,
+                    icon: <IcBrandChrome />,
                     content: {
                         image: chromePreview,
                         downloadButton: {
@@ -211,7 +218,7 @@ function useDownloadData() {
                 },
                 {
                     title: () => c('Download').t`Firefox`,
-                    icon: 'brand-firefox' as IconName,
+                    icon: <IcBrandFirefox />,
                     content: {
                         image: firefoxPreview,
                         downloadButton: {
@@ -232,7 +239,7 @@ function useDownloadData() {
             tabs: [
                 {
                     title: () => c('Download').t`Apple TV`,
-                    icon: 'brand-apple' as IconName,
+                    icon: <IcBrandApple />,
                     content: {
                         image: appleTVPreview,
                         downloadButton: {
@@ -248,7 +255,7 @@ function useDownloadData() {
                 },
                 {
                     title: () => c('Download').t`Android TV`,
-                    icon: 'brand-android' as IconName,
+                    icon: <IcBrandAndroid />,
                     content: {
                         image: androidTVPreview,
                         downloadButton: {
@@ -264,7 +271,7 @@ function useDownloadData() {
                 },
                 {
                     title: () => c('Download').t`Fire TV`,
-                    icon: 'brand-amazon' as IconName,
+                    icon: <IcBrandAmazon />,
                     content: {
                         image: firetvPreview,
                         downloadButton: {
@@ -434,15 +441,7 @@ const CategoryTabs = ({
         ),
     }));
 
-    return (
-        <Tabs
-            tabs={subTabs as Tab[]}
-            variant="underline"
-            fullWidth
-            value={activeTabIndex}
-            onChange={setActiveTabIndex}
-        />
-    );
+    return <Tabs tabs={subTabs} variant="underline" fullWidth value={activeTabIndex} onChange={setActiveTabIndex} />;
 };
 
 const Download = () => {
@@ -463,7 +462,7 @@ const Download = () => {
 
     return (
         <Tabs
-            tabs={categoryTabs as Tab[]}
+            tabs={categoryTabs}
             variant="modern"
             fullWidth
             value={activeDeviceIndex}
