@@ -583,6 +583,48 @@ describe('useSubscriptionCheck', () => {
             );
         });
 
+        it('notifies about an API error that has no dedicated UI', async () => {
+            const forbiddenError = {
+                status: 403,
+                data: { Code: 2011, Error: 'You do not have permission to modify your subscription' },
+            };
+            const deps = buildDeps({
+                paymentsApi: { checkSubscription: jest.fn().mockRejectedValue(forbiddenError) } as any,
+            });
+            const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+            await result.current.check(buildModel());
+
+            expect(mockCreateNotification).toHaveBeenCalledWith({
+                text: 'You do not have permission to modify your subscription',
+                type: 'error',
+            });
+        });
+
+        it('does not notify about connection issues, which the NETWORK_ERROR step covers', async () => {
+            const offlineError = new Error('offline');
+            offlineError.name = 'OfflineError';
+            const deps = buildDeps({
+                paymentsApi: { checkSubscription: jest.fn().mockRejectedValue(offlineError) } as any,
+            });
+            const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+            await result.current.check(buildModel());
+
+            expect(mockCreateNotification).not.toHaveBeenCalled();
+        });
+
+        it('does not notify about errors without a message', async () => {
+            const deps = buildDeps({
+                paymentsApi: { checkSubscription: jest.fn().mockRejectedValue(new Error('boom')) } as any,
+            });
+            const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+            await result.current.check(buildModel());
+
+            expect(mockCreateNotification).not.toHaveBeenCalled();
+        });
+
         it('still commits state even if runAdditionalChecks throws', async () => {
             const deps = buildDeps({
                 paymentsApi: {
