@@ -1,7 +1,10 @@
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import type { IconName } from '@proton/icons/types';
+import { IcBrandAndroid } from '@proton/icons/icons/IcBrandAndroid';
+import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
+import { IcBrandMac } from '@proton/icons/icons/IcBrandMac';
+import { IcBrandWindows } from '@proton/icons/icons/IcBrandWindows';
 import { APPS, DESKTOP_PLATFORMS } from '@proton/shared/lib/constants';
 import macosPreview from '@proton/styles/assets/img/onboarding/drive-download-preview-macos.png';
 import windowsPreview from '@proton/styles/assets/img/onboarding/drive-download-preview-windows.png';
@@ -24,7 +27,7 @@ const DriveDownloadSection = () => {
             tabs: [
                 {
                     title: () => c('Download').t`iPhone/iPad`,
-                    icon: 'brand-apple' as IconName,
+                    icon: <IcBrandApple />,
                     content: {
                         image: iosPreview,
                         hint: () => c('Download').t`Scan the QR code with your mobile device`,
@@ -40,7 +43,7 @@ const DriveDownloadSection = () => {
                 },
                 {
                     title: () => c('Download').t`Android`,
-                    icon: 'brand-android' as IconName,
+                    icon: <IcBrandAndroid />,
                     content: {
                         image: androidPreview,
                         hint: () => {
@@ -80,7 +83,7 @@ const DriveDownloadSection = () => {
             tabs: [
                 {
                     title: () => c('Download').t`Windows`,
-                    icon: 'brand-windows' as IconName,
+                    icon: <IcBrandWindows />,
                     content: {
                         image: windowsPreview,
                         downloadButtons: [
@@ -106,7 +109,7 @@ const DriveDownloadSection = () => {
                 },
                 {
                     title: () => c('Download').t`macOS`,
-                    icon: 'brand-mac' as IconName,
+                    icon: <IcBrandMac />,
                     content: {
                         image: macosPreview,
                         downloadButtons: [

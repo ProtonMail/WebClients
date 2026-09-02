@@ -226,7 +226,9 @@ describe('AlwaysOn', () => {
             0
         );
         expect(screen.getByText('Done')).toBeInTheDocument();
-        expect(screen.getByText('Always-on VPN device profile')).toBeInTheDocument();
+        // The page commit runs in an effect once the modal reaches the instructions
+        // step, so it lands a render after the step's own content appears.
+        expect(await screen.findByText('Always-on VPN device profile')).toBeInTheDocument();
     });
 
     it('keeps showing the call-to-action when the policy fetch fails', async () => {
