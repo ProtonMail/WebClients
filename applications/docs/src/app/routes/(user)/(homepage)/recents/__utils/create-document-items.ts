@@ -1,8 +1,9 @@
 import { ServerTime } from '@proton/docs-shared/lib/ServerTime'
 import { type MemberRole, type NodeEntity, splitNodeUid } from '@proton/drive'
-import { getAuthorName, getNodeName } from '~/drive-sdk'
+import { getAuthorName } from '~/drive-sdk'
 import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
+import { getNodeName } from '@proton/docs-core/lib/DriveSDK/getNodeName'
 
 /**
  * Creates value for RecentDocumentsItem instances based on node data from SDK and response from /recents endpoint

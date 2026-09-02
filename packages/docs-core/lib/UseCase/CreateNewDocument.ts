@@ -4,6 +4,9 @@ import type { NodeMeta, DocumentType, DecryptedNode } from '@proton/docs-shared'
 import type { GetDocumentMeta } from './GetDocumentMeta'
 import { getErrorString } from '../Util/GetErrorString'
 import { getMyFilesNodeMeta } from '../DriveSDK/getMyFilesNodeMeta'
+import { findAvailableNodeName } from '../DriveSDK/findAvailableNodeName'
+import type { UnleashClient } from '@proton/unleash/UnleashClient'
+import { isDriveCompatSDKEnabled } from '../Util/isDriveCompatSDKEnabled'
 
 /**
  * Creates a new document from within the Docs client. This is used when selecting "New Document" from the UI.
@@ -12,6 +15,7 @@ export class CreateNewDocument {
   constructor(
     private driveCompat: DriveCompat,
     private getDocumentMeta: GetDocumentMeta,
+    private unleashClient: UnleashClient,
   ) {}
 
   async execute(
@@ -19,9 +23,9 @@ export class CreateNewDocument {
     siblingMeta: NodeMeta,
     siblingNode: DecryptedNode,
     documentType: DocumentType,
-    useSDK = false,
   ): Promise<Result<DocumentNodeMeta>> {
     try {
+      const useSDK = isDriveCompatSDKEnabled(this.unleashClient)
       const getRoot = useSDK ? getMyFilesNodeMeta : () => this.driveCompat.getMyFilesNodeMeta()
       const parentMeta: NodeMeta = siblingNode.parentNodeId
         ? {
@@ -30,7 +34,9 @@ export class CreateNewDocument {
           }
         : await getRoot()
 
-      const name = await this.driveCompat.findAvailableNodeName(parentMeta, desiredName)
+      const name = useSDK
+        ? await findAvailableNodeName(parentMeta, desiredName)
+        : await this.driveCompat.findAvailableNodeName(parentMeta, desiredName)
       const shellResult = await this.driveCompat.createDocumentNode(parentMeta, name, documentType)
 
       const createResult = await this.getDocumentMeta.execute({

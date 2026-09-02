@@ -175,7 +175,13 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
       this.metricService,
     )
 
-    this.renameController = new PrivateRenameController(documentState, this.driveCompat, this.getNode, this.logger)
+    this.renameController = new PrivateRenameController(
+      documentState,
+      this.driveCompat,
+      this.getNode,
+      this.logger,
+      this.unleashClient,
+    )
 
     this.statusObservers.forEach((observer) => {
       if (this.orchestrator) {
