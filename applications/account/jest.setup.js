@@ -9,6 +9,11 @@ import '@proton/testing/lib/mockUnleash';
 // console.error = () => {};
 // console.warn = () => {};
 
+// Mock window.getComputedStyle to prevent "Not implemented" errors in jsdom
+// This is required by useActiveBreakpoint and other hooks that compute styles
+const { getComputedStyle } = window;
+window.getComputedStyle = (elt) => getComputedStyle(elt);
+
 window.ResizeObserver = jest.fn().mockImplementation(() => ({
     observe: jest.fn(),
     unobserve: jest.fn(),
@@ -21,9 +26,17 @@ jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     loadCryptoWorker: jest.fn(),
 }));
 
+// Mock locale to avoid dynamic imports and big text context
 jest.mock('./src/app/locales.ts', () => ({
     __esModule: true,
-    getLocaleMapping: () => 'en',
+    stripLocaleTagPrefix: (pathname) => ({
+        fullLocale: 'en',
+        localePrefix: 'en',
+        pathname: pathname.replace(/^\/\w{2,3}(-\w{2})?\//, '') || '/',
+    }),
+    getLocaleMapping: (localeCode) => localeCode,
+    default: {},
+    localeMap: {},
 }));
 
 // That's an unresolved issue of jsdom https://github.com/jsdom/jsdom/issues/918

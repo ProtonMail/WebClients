@@ -1,5 +1,6 @@
 import { COUPON_CODES } from '../constants';
 import { monthlyNudgeMetadata } from './configs/monthly-nudge';
+import { porkbunMetadata } from './configs/porkbun';
 import { q3Sale2026Metadata } from './configs/q3-sale-2026';
 import { getStaticCouponConfig } from './get-static-coupon-config';
 
@@ -29,6 +30,11 @@ describe('getStaticCouponConfig', () => {
         expect(getStaticCouponConfig(COUPON_CODES.SEP26BUNDLESALECS)).toBe(q3Sale2026Metadata);
         expect(getStaticCouponConfig(COUPON_CODES.SEP26BUNDLEDEALCS)).toBe(q3Sale2026Metadata);
         expect(getStaticCouponConfig('sep26bundlesale')).toBe(q3Sale2026Metadata);
+    });
+
+    it('matches porkbun config by coupon code', () => {
+        expect(getStaticCouponConfig(COUPON_CODES.PORKBUN)).toBe(porkbunMetadata);
+        expect(getStaticCouponConfig('porkbun')).toBe(porkbunMetadata);
     });
 
     it('does not match configs that rely on special cases instead of coupon codes', () => {

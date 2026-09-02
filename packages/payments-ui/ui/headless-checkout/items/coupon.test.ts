@@ -1,4 +1,4 @@
-import { PLANS } from '@proton/payments/core/constants';
+import { COUPON_CODES, PLANS } from '@proton/payments/core/constants';
 import type { PlansMap } from '@proton/payments/core/plan/interface';
 
 import { getHeadlessCheckout } from '../get-headless-checkout';
@@ -70,8 +70,6 @@ describe('createCouponItem', () => {
         });
 
         const planAmount = result.getItem('planAmount');
-        // When couponConfig.hidden is true, total uses withDiscountPerCycle instead of Amount
-        // withDiscountPerCycle = Amount - |CouponDiscount| = 4788 - 1000 = 3788
         expect(planAmount.amount).toBe(3788);
     });
 
@@ -98,7 +96,55 @@ describe('createCouponItem', () => {
 
         const coupon = result.getItem('coupon');
         expect(coupon.visible).toBe(false);
-        // The discount data is still available even though it's hidden
         expect(coupon.discountAmount).toBe(-1000);
+    });
+
+    it('should hide coupon for a Black Friday 2025 offer with a non-zero discount', () => {
+        const plansMap: PlansMap = { [PLANS.MAIL]: mailPlan };
+        const checkResult = makeCheckResult({
+            Amount: 4788,
+            AmountDue: 3788,
+            CouponDiscount: -1000,
+            Coupon: {
+                Code: COUPON_CODES.BLACK_FRIDAY_2025,
+                Description: 'BF promo',
+                MaximumRedemptionsPerUser: null,
+            },
+        });
+
+        const result = getHeadlessCheckout({
+            planIDs: { [PLANS.MAIL]: 1 },
+            plansMap,
+            checkResult,
+            app,
+        });
+
+        const coupon = result.getItem('coupon');
+        expect(coupon.visible).toBe(false);
+        expect(coupon.couponCode).toBe(COUPON_CODES.BLACK_FRIDAY_2025);
+        expect(coupon.discountAmount).toBe(-1000);
+    });
+
+    it('should show coupon for a non-BF coupon with a non-zero discount and no hidden config', () => {
+        const plansMap: PlansMap = { [PLANS.MAIL]: mailPlan };
+        const checkResult = makeCheckResult({
+            Amount: 4788,
+            AmountDue: 3788,
+            CouponDiscount: -1000,
+            Coupon: {
+                Code: 'REGULAR',
+                Description: 'regular promo',
+                MaximumRedemptionsPerUser: null,
+            },
+        });
+
+        const result = getHeadlessCheckout({
+            planIDs: { [PLANS.MAIL]: 1 },
+            plansMap,
+            checkResult,
+            app,
+        });
+
+        expect(result.getItem('coupon').visible).toBe(true);
     });
 });
