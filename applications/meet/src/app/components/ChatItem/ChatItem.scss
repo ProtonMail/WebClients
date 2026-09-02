@@ -25,9 +25,9 @@
 	}
 
 	.chat-item-quick-reactions {
-		// Anchor the toolbar so its bottom edge touches the baseline of the first
-		// line of the message text, letting it float up and overlap the area above.
-		inset-block-start: 1.1rem;
+		// Anchor the toolbar so its bottom edge sits above the first line of the
+		// message text, letting it float up and overlap the area above.
+		inset-block-start: 0.25rem;
 		inset-inline-end: 0;
 		transform: translateY(-100%);
 		z-index: 1;
