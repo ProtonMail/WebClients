@@ -23,7 +23,8 @@ import {
   PATTERN_SPECS,
   PERCENT_PATTERN_EXAMPLE_VALUE,
 } from './constants'
-import { sortSheetsByIndex, type ProtonSheetsState } from './state'
+import type { ProtonSheetsState } from './state'
+import { sortSheetsByIndex } from '@rowsncolumns/utils'
 import { useEvent } from './components/utils'
 import { useMemo, useState } from 'react'
 import type { CellInterface } from '@rowsncolumns/grid'
