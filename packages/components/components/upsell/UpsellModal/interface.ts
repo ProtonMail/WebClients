@@ -37,6 +37,7 @@ export interface UpsellModalConfigParams {
     user: UserModel;
     upsellRef?: string;
     currency: Currency;
+    hasHadSubscription: boolean;
 }
 
 /**
