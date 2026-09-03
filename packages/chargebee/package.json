@@ -10,7 +10,7 @@
         "serve": "serve dist -p 5173",
         "start": "concurrently \"npm run build:watch\" \"npm run serve\"",
         "test": "jest",
-        "test:ci": "jest --runInBand --ci",
+        "test:ci": "jest --runInBand --ci --logHeapUsage",
         "test:dev": "jest --watch"
     },
     "dependencies": {

@@ -6,7 +6,7 @@
     "check-types": "tsc",
     "lint": "eslint --quiet",
     "test": "jest",
-    "test:ci": "jest --runInBand --ci",
+    "test:ci": "jest --runInBand --ci --logHeapUsage",
     "test:watch": "jest --watch"
   },
   "dependencies": {

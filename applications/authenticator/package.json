@@ -17,7 +17,7 @@
         "start:desktop": "tauri dev --features devtools",
         "start:web": "cross-env API_ENV=proton.black webpack serve --config webpack.config.ts",
         "test": "jest",
-        "test:ci": "jest --coverage --runInBand --ci --passWithNoTests"
+        "test:ci": "jest --coverage --runInBand --ci --passWithNoTests --logHeapUsage"
     },
     "dependencies": {
         "@dnd-kit/collision": "^0.5.0",

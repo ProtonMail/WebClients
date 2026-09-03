@@ -9,7 +9,7 @@
         "lint": "eslint --quiet",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "test": "jest",
-        "test:ci": "jest --runInBand",
+        "test:ci": "jest --runInBand --logHeapUsage",
         "test:dev": "jest --watch --coverage=false --watchAll"
     },
     "dependencies": {

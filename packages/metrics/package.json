@@ -8,7 +8,7 @@
         "generate-schema-types": "bash scripts/generate-schema-types.sh",
         "lint": "eslint --quiet",
         "test": "jest",
-        "test:ci": "jest --coverage --runInBand --ci",
+        "test:ci": "jest --coverage --runInBand --ci --logHeapUsage",
         "test:watch": "jest --watch",
         "update-metrics": "rimraf json-schema-registry types && git clone $SCHEMA_REPOSITORY && yarn generate-schema-types && yarn generate-metrics"
     },

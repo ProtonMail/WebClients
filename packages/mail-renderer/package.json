@@ -9,7 +9,7 @@
         "check-types": "tsc",
         "lint": "eslint --quiet",
         "test": "jest --logHeapUsage --forceExit",
-        "test:ci": "jest --coverage --runInBand --ci --forceExit",
+        "test:ci": "jest --coverage --runInBand --ci --forceExit --logHeapUsage",
         "test:coverage": "jest --collectCoverage",
         "test:watch": "jest --watch --coverage=false"
     },
