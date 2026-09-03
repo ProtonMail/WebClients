@@ -55,7 +55,7 @@ export const prepareForSaving = (vCardContact: VCardContact) => {
         if (property.field === 'adr') {
             return property.value && Object.values(property.value).some(isTruthy);
         }
-        if (property.field === 'bday' || property.field === 'aniversary') {
+        if (property.field === 'bday' || property.field === 'anniversary') {
             return property.value.text || (property.value.date && isValid(property.value.date));
         }
         if (property.field === 'gender') {
