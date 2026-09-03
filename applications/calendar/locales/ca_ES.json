@@ -1888,6 +1888,15 @@
         "${ users } usuari",
         "${ users } usuaris"
       ],
+      "Amount due": [
+        "Import pendent"
+      ],
+      "Amount due after trial": [
+        "Import a pagar després de la prova"
+      ],
+      "Amount due now": [
+        "Import pendent de pagament"
+      ],
       "Subtotal": [
         "Subtotal"
       ],
@@ -1898,9 +1907,9 @@
       "Total": [
         "Total"
       ],
-      "Total for ${ n } month": [
-        "Total per ${ n } mes",
-        "Total per ${ n } mesos"
+      "Total for ${ cycle } month": [
+        "Total per ${ cycle } mes",
+        "Total per ${ cycle } mesos"
       ]
     },
     "Collapsible tooltip": {
@@ -5940,8 +5949,8 @@
       "Display events for calendar ${ Name }": [
         "Mostra els esdeveniments per al calendari ${ Name }"
       ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Recordeu la vostra contrasenya? ${ verifyButton }"
+      "Do you remember your password?": [
+        "Recordeu la vostra contrasenya?"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "No veieu res? Recordeu desactivar els bloquejadors de finestres emergents."
