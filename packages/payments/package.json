@@ -21,7 +21,7 @@
         "generate:entitlement-names": "node --env-file-if-exists=core/entitlements/scripts/.env core/entitlements/scripts/generate-entitlement-names.mjs",
         "lint": "eslint --quiet",
         "test": "jest",
-        "test:ci": "jest --runInBand",
+        "test:ci": "jest --runInBand --logHeapUsage",
         "test:watch": "jest --watch"
     },
     "dependencies": {

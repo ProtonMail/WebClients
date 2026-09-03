@@ -45,7 +45,7 @@
         "check-types": "tsc --noEmit",
         "lint": "eslint --quiet",
         "test": "jest",
-        "test:ci": "jest --coverage --runInBand --ci"
+        "test:ci": "jest --coverage --runInBand --ci --logHeapUsage"
     },
     "dependencies": {
         "@proton/shared": "workspace:^",

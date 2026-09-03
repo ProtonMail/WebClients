@@ -17,7 +17,7 @@
         "pretty:fix": "prettier --write  ./src/app",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone",
         "test": "jest --logHeapUsage --forceExit",
-        "test:ci": "jest --coverage --runInBand --ci --forceExit",
+        "test:ci": "jest --coverage --runInBand --ci --forceExit --logHeapUsage",
         "test:coverage": "jest --coverage",
         "test:watch": "jest --watch"
     },
