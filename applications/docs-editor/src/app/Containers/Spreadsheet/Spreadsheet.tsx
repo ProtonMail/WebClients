@@ -2,7 +2,6 @@ import type {
   DataTypesThatDocumentCanBeExportedAs,
   DocStateInterface,
   EditorInitializationConfig,
-  EditorRequiresClientMethods,
   SheetImportData,
 } from '@proton/docs-shared'
 import { EditorSystemMode, SheetImportDestination, TranslatedResult } from '@proton/docs-shared'
@@ -59,7 +58,6 @@ export type SpreadsheetProps = {
   systemMode: EditorSystemMode
   editingLocked: boolean
   updateLocalStateToLog: (state: unknown) => void
-  clientInvoker: EditorRequiresClientMethods
   isPublicMode: boolean
   shouldUseCustomYjsInitialization: boolean
 }
@@ -73,14 +71,22 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     systemMode,
     editingLocked,
     updateLocalStateToLog,
-    clientInvoker,
     isPublicMode,
     shouldUseCustomYjsInitialization,
   }: SpreadsheetProps,
   ref: ForwardedRef<SpreadsheetRef>,
 ) {
-  const { canEdit, logger, storeSpreadsheetAction, subscribeToSheetImport, subscribeToCollaboratorCursorNavigation } =
-    useSheetsDependencies()
+  const {
+    canEdit,
+    logger,
+    storeSpreadsheetAction,
+    storeSpreadsheetPatches,
+    hasBasePatchesStored,
+    reportSheetsYjsDriftDetected,
+    showYjsDriftDetectedErrorModal,
+    subscribeToSheetImport,
+    subscribeToCollaboratorCursorNavigation,
+  } = useSheetsDependencies()
   const { viewportWidth } = useActiveBreakpoint()
   const { theme } = useEditorTheme()
 
@@ -98,7 +104,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const handleYjsDriftDetected = useCallback(
     (result: SpreadsheetLocalYjsUpdateAuditResult, driftLogDetails: Record<string, unknown>) => {
       for (const difference of result.differences) {
-        void clientInvoker.reportSheetsYjsDriftDetected(difference.reason)
+        reportSheetsYjsDriftDetected(difference.reason)
       }
       const error = new Error(
         c('Error')
@@ -110,13 +116,11 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
           observedYjsKeys: result.observedYjsKeys,
         },
       })
-      void clientInvoker.showYjsDriftDetectedErrorModal(driftLogDetails)
+      showYjsDriftDetectedErrorModal(driftLogDetails)
     },
-    [clientInvoker],
+    [reportSheetsYjsDriftDetected, showYjsDriftDetectedErrorModal],
   )
 
-  const pushPatches = useMemo(() => clientInvoker.storeSpreadsheetPatches.bind(clientInvoker), [clientInvoker])
-  const hasBasePatchesStored = useMemo(() => clientInvoker.hasBasePatchesStored.bind(clientInvoker), [clientInvoker])
   const isPatchesStorageEnabled = useFeatureFlag('SheetsPatchesStorageEnabled')
   const isActionsStorageEnabled = useFeatureFlag('SheetsActionsStorageEnabled')
   const isDriftDetectionEnabled = useFeatureFlag('SheetsDriftDetectionEnabled')
@@ -130,7 +134,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     functions,
     isReadonly,
     isConversionFlow: editorInitializationConfig?.mode === 'conversion',
-    pushPatches,
+    pushPatches: storeSpreadsheetPatches,
     hasBasePatchesStored,
     isPatchesStorageEnabled,
     isDriftDetectionEnabled,
@@ -140,20 +144,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     shouldUseCustomYjsInitialization,
   })
   const didSetInitialVersion = useRef(false)
-  const { setInitialVersion } = useVersioning(
-    canRunMigration,
-    state,
-    () => {
-      void clientInvoker.reportUserInterfaceError(
-        new Error(
-          c('Error')
-            .t`This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.`,
-        ),
-        { irrecoverable: false, lockEditor: true },
-      )
-    },
-    () => clientInvoker.reloadClient(),
-  )
+  const { setInitialVersion } = useVersioning(canRunMigration, state)
   const { replaceLocalSpreadsheetState } = useLocalState(state, updateLocalStateToLog)
   const focusSheet = useFocusSheet()
 

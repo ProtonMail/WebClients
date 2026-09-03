@@ -763,7 +763,6 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
               updateLocalStateToLog={(state) => {
                 latestSpreadsheetStateToLogRef.current = state
               }}
-              clientInvoker={bridge.getClientInvoker()}
               isPublicMode={isPublicMode}
               shouldUseCustomYjsInitialization={isSheetsMountAfterInitialLoadDisabled}
             />
