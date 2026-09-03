@@ -1,3 +1,4 @@
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { CYCLE, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
 import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
@@ -52,6 +53,65 @@ describe('resolveUpsellsToDisplay', () => {
             user: buildUser(),
             telemetryFlow: 'subscription',
         };
+    });
+
+    describe('feature ids', () => {
+        it('are unique within every upsell the dashboard can render', () => {
+            const plans = [
+                undefined,
+                PLANS.MAIL,
+                PLANS.DRIVE,
+                PLANS.VPN2024,
+                PLANS.PASS,
+                PLANS.BUNDLE,
+                PLANS.DUO,
+                PLANS.FAMILY,
+                PLANS.LUMO,
+                PLANS.MAIL_PRO,
+                PLANS.MAIL_BUSINESS,
+                PLANS.BUNDLE_PRO_2024,
+                PLANS.VPN_PRO,
+                PLANS.VPN_BUSINESS,
+                PLANS.MEET_BUSINESS,
+            ];
+            const apps = [
+                APPS.PROTONMAIL,
+                APPS.PROTONDRIVE,
+                APPS.PROTONVPN_SETTINGS,
+                APPS.PROTONPASS,
+                APPS.PROTONCALENDAR,
+            ];
+
+            const duplicates: string[] = [];
+            let upsellCount = 0;
+
+            for (const app of apps) {
+                for (const planName of plans) {
+                    const upsells = resolveUpsellsToDisplay({
+                        ...base,
+                        app,
+                        isFree: !planName,
+                        hasPaidMail: planName === PLANS.MAIL || planName === PLANS.BUNDLE,
+                        subscription: planName
+                            ? buildSubscription({ planName, cycle: CYCLE.MONTHLY, currency: 'EUR' })
+                            : undefined,
+                    });
+
+                    for (const upsell of upsells) {
+                        upsellCount++;
+                        const ids = upsell.features.map(({ id }) => id);
+                        const seen = new Set<string>();
+                        ids.filter((id) => !seen.add(id)).forEach((id) => {
+                            duplicates.push(`${app} on ${planName ?? 'free'} -> ${upsell.planKey}: ${id}`);
+                        });
+                    }
+                }
+            }
+
+            expect(duplicates).toEqual([]);
+            // A guard against the matrix silently producing no upsells at all.
+            expect(upsellCount).toBeGreaterThan(50);
+        });
     });
 
     describe('Free Mail', () => {
@@ -149,7 +209,7 @@ describe('resolveUpsellsToDisplay', () => {
                         firstUnlimitedUpsellFeature,
                         {
                             text: '1 user',
-                            icon: 'users',
+                            icon: IcUsers,
                             included: true,
                         },
                         ...restUnlimitedUpsellFeatures,

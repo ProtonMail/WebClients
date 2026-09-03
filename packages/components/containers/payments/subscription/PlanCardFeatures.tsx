@@ -14,7 +14,6 @@ import { APPS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import Icon from '../../../components/icon/Icon';
 import Info from '../../../components/link/Info';
 import CalendarLogo from '../../../components/logo/CalendarLogo';
 import DriveLogo from '../../../components/logo/DriveLogo';
@@ -46,7 +45,7 @@ const FeatureList = ({
     itemClassName,
 }: FeatureListProps) => (
     <ul className={clsx('unstyled flex flex-column', className, odd && 'odd:bg-weak', margin ? 'mt-4 mb-6' : 'm-0')}>
-        {featureArray.map((feature, i) => {
+        {featureArray.map((feature) => {
             const iconToDisplay = (() => {
                 if (
                     icon !== true &&
@@ -65,13 +64,11 @@ const FeatureList = ({
                 }
 
                 if (feature.included) {
+                    const FeatureIcon = feature.icon;
+
                     return (
                         <span className={iconColor}>
-                            {icon && feature.icon ? (
-                                <Icon size={iconSize} name={feature.icon} />
-                            ) : (
-                                <IcCheckmark size={iconSize} />
-                            )}
+                            {icon && FeatureIcon ? <FeatureIcon size={iconSize} /> : <IcCheckmark size={iconSize} />}
                         </span>
                     );
                 }
@@ -81,11 +78,9 @@ const FeatureList = ({
 
             return (
                 <li
-                    key={
-                        // Key by index so that we can skeleton load certain features - eg the vpn countries
-                        // eslint-disable-next-line react/no-array-index-key
-                        i
-                    }
+                    // A skeleton row and the row that replaces it share an id, so the swap
+                    // still updates in place rather than remounting.
+                    key={feature.id}
                     className={clsx(odd && 'px-3 py-2 rounded', itemClassName, 'flex')}
                 >
                     <div

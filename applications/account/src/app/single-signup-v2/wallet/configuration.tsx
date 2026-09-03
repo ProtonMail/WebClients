@@ -57,14 +57,14 @@ import setupAccount from '../mail/account-setup.svg';
 const getWalletBenefits = (): BenefitItem[] => {
     return [
         {
-            key: 1,
+            id: 'end-to-end-encrypted-transactions',
             text: c('Signup: Info').t`End-to-end encrypted transactions`,
             icon: {
                 component: IcLock,
             },
         },
         {
-            key: 2,
+            id: 'self-custody',
             text: c('Signup: Info').t`Self-custody — only you have access to your wallet keys`,
             icon: {
                 component: IcUser,
@@ -72,7 +72,7 @@ const getWalletBenefits = (): BenefitItem[] => {
         },
         getSwissPrivacyLawsBenefit(),
         {
-            key: 4,
+            id: 'open-source-and-verified',
             text: c('Signup: Info').t`Open source and verified`,
             icon: {
                 component: IcMagnifier,
@@ -85,6 +85,7 @@ const getStorageFeature = (bytes: number): PlanCardFeatureDefinition => {
     const size = humanSize({ bytes, fraction: 0, unitOptions: { max: 'TB' } });
 
     return {
+        id: 'storage',
         text: c('new_plans: feature').jt`${size} storage`,
         tooltip: c('wallet_signup_2024: Info').t`Encrypted email and file storage`,
         included: true,
@@ -93,6 +94,7 @@ const getStorageFeature = (bytes: number): PlanCardFeatureDefinition => {
 
 const getVpnFeature = () => {
     return {
+        id: 'vpn',
         text: c('wallet_signup_2024: Info').t`Ultra fast and private VPN`,
         included: true,
     };
@@ -100,6 +102,7 @@ const getVpnFeature = () => {
 
 const getPasswordManagerFeature = () => {
     return {
+        id: 'password-manager',
         text: c('wallet_signup_2024: Info').t`Encrypted password manager`,
         included: true,
     };
@@ -107,6 +110,7 @@ const getPasswordManagerFeature = () => {
 
 const getDriveFeature = () => {
     return {
+        id: 'drive',
         text: c('wallet_signup_2024: Info').t`Encrypted cloud storage for photos and documents`,
         included: true,
     };
@@ -114,6 +118,7 @@ const getDriveFeature = () => {
 
 const getSentinelFeature = () => {
     return {
+        id: 'sentinel',
         text: c('wallet_signup_2024: Info').t`Advanced account protection`,
         included: true,
         tooltip: c('wallet_signup_2024: Info').t`${PROTON_SENTINEL_NAME} program`,
@@ -140,6 +145,7 @@ const getUnlimitedFeatures = ({ plan }: { plan: Plan | undefined }) => {
         getBitcoinViaEmail(),
         getStorageFeature(plan.MaxSpace),
         {
+            id: 'n-domains',
             text: getNDomainsFeatureText(plan.MaxDomains),
             included: true,
         },
@@ -161,6 +167,7 @@ const getVisionaryFeatures = ({ plan }: { plan: Plan | undefined }) => {
         getBitcoinViaEmail(),
         getStorageFeature(plan.MaxSpace),
         {
+            id: 'n-domains',
             text: getNDomainsFeatureText(plan.MaxDomains),
             included: true,
         },
@@ -171,6 +178,7 @@ const getVisionaryFeatures = ({ plan }: { plan: Plan | undefined }) => {
         getSentinelFeature(),
 
         {
+            id: 'users',
             text: getNUsersText(VISIONARY_MAX_USERS),
             included: true,
         },
@@ -202,7 +210,7 @@ export const getWalletConfiguration = ({
 
     const features = [
         {
-            key: 'e2e',
+            id: 'self-custodial-wallet',
             left: <IcLock size={6} className="color-primary" />,
             text: c('wallet_signup_2024: Info').t`Self-custodial wallet`,
         },

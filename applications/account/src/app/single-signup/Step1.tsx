@@ -742,19 +742,23 @@ const Step1 = ({
     const iconColorClassName = background === 'bf2025' ? 'color-norm' : 'color-primary';
     const features = [
         {
+            id: 'open-source',
             left: <IcCode size={6} className={iconColorClassName} />,
             text: c('Info').t`Open source`,
         },
         {
+            id: 'no-logs',
             left: <IcEyeSlash size={6} className={iconColorClassName} />,
             text: c('new_plans: feature').t`No-logs policy`,
         },
         {
+            id: 'swiss',
             left: <img width="24" alt="" src={swissFlag} className="rounded-sm" />,
             text: viewportWidth['>=large'] ? c('Info').t`Protected by Swiss privacy laws` : c('Info').t`Swiss based`,
         },
         viewportWidth['>=large'] &&
             [PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE, PLANS.BUNDLE].includes(selectedPlan.Name as any) && {
+                id: 'servers',
                 left: <IcServers size={6} className={iconColorClassName} />,
                 text: isLoadingModelDeps ? (
                     <>
@@ -1227,9 +1231,9 @@ const Step1 = ({
                             background === 'bf2025' ? 'color-norm' : 'color-weak'
                         )}
                     >
-                        {features.map(({ left, text }, i, arr) => {
+                        {features.map(({ id, left, text }, i, arr) => {
                             return (
-                                <Fragment key={typeof text === 'string' ? text : i}>
+                                <Fragment key={id}>
                                     <FeatureItem left={left} text={text} />
                                     {i !== arr.length - 1 && (
                                         <Vr className="min-h-custom" style={{ '--min-h-custom': '2.25rem' }} />

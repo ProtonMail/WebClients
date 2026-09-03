@@ -12,9 +12,9 @@ const BornPrivateFeatures = () => {
 
     return (
         <div className="flex flex-nowrap mb-4 gap-1 md:gap-8 text-sm md:text-rg">
-            {features.map(({ key, left, text }, i) => {
+            {features.map(({ id, left, text }, i) => {
                 return (
-                    <Fragment key={key}>
+                    <Fragment key={id}>
                         <FeatureItem left={left} text={text} />
                         {i !== features.length - 1 && (
                             <Vr className="min-h-custom" style={{ '--min-h-custom': '2.25rem' }} />

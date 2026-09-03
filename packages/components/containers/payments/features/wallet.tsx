@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import { IcWallet } from '@proton/icons/icons/IcWallet';
 import { PLANS } from '@proton/payments/core/constants';
 import { BRAND_NAME, MAIL_APP_NAME, WALLET_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -23,6 +24,7 @@ export const getWalletsText = (n: number) => {
 
 export const getWallets = (n: Parameters<typeof getWalletAccountsText>['0']): PlanCardFeatureDefinition => {
     return {
+        id: 'wallets',
         text: getWalletsText(n),
         included: true,
     };
@@ -34,6 +36,7 @@ export const getWalletAccountsText = (n: number) => {
 
 export const getWalletAccounts = (n: Parameters<typeof getWalletsText>['0']): PlanCardFeatureDefinition => {
     return {
+        id: 'wallet-accounts',
         text: getWalletAccountsText(n),
         included: true,
     };
@@ -51,6 +54,7 @@ export const getWalletEmailAddresses = (
     n: Parameters<typeof getWalletEmailAddressesText>['0']
 ): PlanCardFeatureDefinition => {
     return {
+        id: 'wallet-email-addresses',
         text: getWalletEmailAddressesText(n),
         included: true,
         tooltip: c('wallet_signup_2024: Info')
@@ -64,6 +68,7 @@ export const getBitcoinViaEmailText = () => {
 
 export const getBitcoinViaEmail = (): PlanCardFeatureDefinition => {
     return {
+        id: 'bitcoin-via-email',
         text: getBitcoinViaEmailText(),
         included: true,
         tooltip: c('wallet_signup_2024: Info')
@@ -73,10 +78,11 @@ export const getBitcoinViaEmail = (): PlanCardFeatureDefinition => {
 
 export const getWalletAppFeature = (): PlanCardFeatureDefinition => {
     return {
+        id: 'wallet-app',
         text: WALLET_APP_NAME,
         tooltip: c('wallet_signup_2024:app-switcher').t`A safer way to hold Bitcoin`,
         included: true,
-        icon: 'wallet',
+        icon: IcWallet,
     };
 };
 
