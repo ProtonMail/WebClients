@@ -1,7 +1,52 @@
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
-        <%- include head.ejs %>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-dns-prefetch-control" content="off" />
+        <base href="/" />
+
+        <title><%= appName %></title>
+        <meta name="description" content="<%= description %>">
+
+        <meta property="og:title" content="<%= appName %>">
+        <meta property="og:description" content="<%= description %>">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="<%= ogImage %>">
+        <meta property="og:image:alt" content="The shiny <%= appName %> logo">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:locale" content="en_US">
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@ProtonMail">
+        <meta name="twitter:title" content="<%= appName %>">
+        <meta name="twitter:description" content="<%= description %>">
+        <meta name="twitter:image" content="<%= ogImage %>">
+        <meta name="twitter:image:alt" content="The shiny <%= appName %> logo">
+
+        <meta name="google" content="notranslate">
+
+        <!-- TODO: Android https://developer.chrome.com/blog/app-install-banners-native/ -->
+        <meta name="apple-itunes-app" content="app-id=1509667851" />
+
+        <link rel="icon" href="/assets/favicon.ico" sizes="any">
+        <!-- Working around https://bugzilla.mozilla.org/show_bug.cgi?id=1801614
+           * otherwise Firefox picks the 1024x1024 declination of the apple-touch-icon -->
+        <link rel="icon" href="/assets/favicon.ico" sizes="1025x1025">
+        <link rel="icon" href="<%= require('./favicon.svg') %>" type="image/svg+xml">
+
+        <!-- NOTE: inline script indentation below is CSP-hash-sensitive — do not reformat.
+           * Layout matches the deleted head.ejs / onerror.ejs partials: body at 4-space base,
+           * closing script tag at column 0, no trailing whitespace before it.
+           * html-webpack-plugin uses lodash templating (not EJS); angle-bracket-percent sequences
+           * anywhere in this file (even comments) break the build. Only use lodash output tags.
+           * html-webpack-plugin does not minify inline JS, so any whitespace change inside a
+           * script element invalidates the deployed sha256 hash. Prefer minifyJS or nonces long-term. -->
+        <script id="configData" type="application/json">
+   <%= defineWebpackConfig %>
+</script>
         <link rel="canonical" href="<%= url %>" />
         <meta property="og:url" content="<%= url %>">
     </head>
@@ -11,6 +56,62 @@
         <noscript class="app-noscript">
             <%= appName %> requires Javascript. Enable Javascript and reload this page to continue.
         </noscript>
-        <%- include onerror.ejs %>
+        <script>
+    const showError = () => {
+      const style = document.createElement('style');
+      style.textContent = `
+        body {
+          font-family: InterVariable, system-ui, sans-serif;
+        }
+        .h-full { height: 100%; }
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .pb-14 { padding-bottom: 3.5rem; }
+        .overflow-auto { overflow: auto; }
+        .m-auto { margin: auto; }
+        .text-center { text-align: center; }
+        .max-w-custom { max-width: var(--max-w-custom); }
+        .mb-8 { margin-bottom: 2rem; }
+        .text-bold { font-weight: bold; }
+        .text-4xl { 
+          font-size: 2.25rem;
+          line-height: 2.5rem;
+        }
+        .link {
+          color: blue;
+          text-decoration: underline;
+          cursor: pointer;
+          background: none;
+          border: none;
+        }
+        .align-baseline { vertical-align: baseline; }
+      `;
+      document.head.appendChild(style);
+
+      document.body.innerHTML = `
+        <div class='h-full flex items-center pb-14 overflow-auto'>
+          <div class='m-auto text-center max-w-custom' style='--max-w-custom: 30em'>
+            <div class='mb-8'>
+              <img src='/assets/error-generic.svg' alt='Error'/>
+            </div>
+            <h1 class='text-bold text-4xl'>Oops, something went wrong</h1>
+            <p>
+              Please <button id='refresh' class='link align-baseline'>refresh the page</button> or try again later.
+            </p>
+          </div>
+        </div>
+      `;
+      document.querySelector('#refresh')?.addEventListener('click', () => {
+        window.location.reload();
+      });
+      document.title = 'Oops, something went wrong';
+    };
+
+    const scriptNode = document.querySelector('script[src*="/index"]') || 
+                      document.querySelector('script[src*="-index"]');
+    if (scriptNode) {
+      scriptNode.onerror = showError;
+    }
+</script>
     </body>
 </html>

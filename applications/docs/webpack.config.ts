@@ -47,7 +47,7 @@ const result = (opts: WebpackEnvArguments): Configuration => {
       filename: 'index.html',
       inject: true,
       scriptLoading: 'defer',
-      template: 'ejs-webpack-loader!src/app.ejs',
+      template: path.resolve('./src/app.ejs'),
       templateParameters,
     }),
   )
