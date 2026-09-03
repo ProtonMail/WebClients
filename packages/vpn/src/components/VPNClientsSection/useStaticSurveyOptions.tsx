@@ -247,6 +247,14 @@ const STATIC_PODCASTS: { name: string; value: string }[] = [
         name: 'Never Post',
         value: 'never_post',
     },
+    {
+        name: 'The Bulwark Podcast',
+        value: 'the_bulwark_podcast',
+    },
+    {
+        name: 'Offline with Jon Favreau',
+        value: 'offline_with_jon_favreau',
+    },
 ] as const;
 
 const STATIC_YOUTUBE_CHANNELS: { name: string; value: string }[] = [
