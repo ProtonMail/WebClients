@@ -894,13 +894,8 @@ const versionToMigrationMap: Record<number, (state: ProtonSheetsState) => void> 
   },
 }
 
-export function useVersioning(
-  canRunMigration: boolean,
-  state: ProtonSheetsState,
-  handleIncompatibleClientVersion: () => void,
-  reloadClient: () => void,
-) {
-  const { receivedEverythingFromRTS, logger } = useSheetsDependencies()
+export function useVersioning(canRunMigration: boolean, state: ProtonSheetsState) {
+  const { receivedEverythingFromRTS, logger, reloadClient, reportUserInterfaceError } = useSheetsDependencies()
   const editorState = useEditorState()
   const setEditingLocked = useStore(editorState, (state) => state.setEditingLocked)
   const setIsMigrating = useStore(editorState, (state) => state.setIsMigrating)
@@ -998,13 +993,19 @@ export function useVersioning(
       const versionTargetToReloadForNumber = Number(versionTargetToReloadFor)
       if (version !== versionTargetToReloadForNumber) {
         logger.error('versioning: client version is still incompatible after reload')
-        handleIncompatibleClientVersion()
+        reportUserInterfaceError(
+          new Error(
+            c('Error')
+              .t`This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.`,
+          ),
+          { irrecoverable: false, lockEditor: true },
+        )
       }
       localStorage.removeItem('versionTargetToReloadFor')
     } else {
       logger.info('versioning: doc version is newer than client version, reloading')
       localStorage.setItem('versionTargetToReloadFor', CLIENT_VERSION.toString())
-      void reloadClient()
+      reloadClient()
     }
   })
 
