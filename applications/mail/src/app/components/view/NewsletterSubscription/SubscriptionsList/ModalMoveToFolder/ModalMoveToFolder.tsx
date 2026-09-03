@@ -14,9 +14,13 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import FolderIcon from '@proton/components/containers/labels/FolderIcon';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
+import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcFire } from '@proton/icons/icons/IcFire';
+import { IcInbox } from '@proton/icons/icons/IcInbox';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import { create } from '@proton/shared/lib/api/labels';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
@@ -76,22 +80,22 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
             {
                 ID: MAILBOX_LABEL_IDS.INBOX,
                 Name: c('Mailbox').t`Inbox`,
-                icon: 'inbox',
+                icon: IcInbox,
             },
             {
                 ID: MAILBOX_LABEL_IDS.ARCHIVE,
                 Name: c('Mailbox').t`Archive`,
-                icon: 'archive-box',
+                icon: IcArchiveBox,
             },
             {
                 ID: MAILBOX_LABEL_IDS.SPAM,
                 Name: c('Mailbox').t`Spam`,
-                icon: 'fire',
+                icon: IcFire,
             },
             {
                 ID: MAILBOX_LABEL_IDS.TRASH,
                 Name: c('Mailbox').t`Trash`,
-                icon: 'trash',
+                icon: IcTrash,
             },
         ] as FolderItem[])
         .filter((folder) => {
@@ -251,7 +255,7 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
                                     <div data-level={folder.level} className="flex">
                                         <FolderIcon
                                             folder={folder}
-                                            name={folder.icon}
+                                            icon={folder.icon}
                                             className="shrink-0 mr-2 mt-0.5 color-primary"
                                         />
                                         <span className="text-ellipsis flex-1" title={folder.Name}>

@@ -1,34 +1,39 @@
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent, IconComponentProps } from '@proton/icons/component';
+import { IcFolder } from '@proton/icons/icons/IcFolder';
+import { IcFolderFilled } from '@proton/icons/icons/IcFolderFilled';
+import { IcFolders } from '@proton/icons/icons/IcFolders';
+import { IcFoldersFilled } from '@proton/icons/icons/IcFoldersFilled';
 import type { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
-import Icon from '../../components/icon/Icon';
-import type { IconProps } from '../../components/icon/Icon';
 import useFolderColor from '../../hooks/useFolderColor';
 
-interface Props extends Omit<IconProps, 'name'> {
+interface Props extends IconComponentProps {
     folder: FolderWithSubFolders;
-    name?: IconName;
+    icon?: IconComponent;
     alt?: string;
     dataColor?: string;
 }
 
-const getIconName = (isParent: boolean, color?: string, name?: IconName) => {
-    let iconName: IconName;
-
-    if (isParent) {
-        iconName = color ? 'folders-filled' : 'folders';
-    } else {
-        iconName = color ? 'folder-filled' : name || 'folder';
-    }
-
-    return iconName;
-};
-
-const FolderIcon = ({ folder, name, alt = folder.Name, dataColor, ...rest }: Props) => {
+const FolderIcon = ({ folder, icon, alt = folder.Name, dataColor, style, ...rest }: Props) => {
     const isParent = !!folder.subfolders?.length;
     const color = useFolderColor(folder);
+    const mergedStyle = color ? { color, ...style } : style;
+    const commonProps = { alt, 'data-color': dataColor, style: mergedStyle, ...rest };
 
-    return <Icon name={getIconName(isParent, color, name)} color={color} alt={alt} data-color={dataColor} {...rest} />;
+    if (isParent) {
+        return color ? <IcFoldersFilled {...commonProps} /> : <IcFolders {...commonProps} />;
+    }
+
+    if (color) {
+        return <IcFolderFilled {...commonProps} />;
+    }
+
+    if (icon) {
+        const NamedIcon = icon;
+        return <NamedIcon {...commonProps} />;
+    }
+
+    return <IcFolder {...commonProps} />;
 };
 
 export default FolderIcon;
