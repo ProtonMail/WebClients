@@ -21,7 +21,9 @@ import type { ProtonSheetsUIState } from '../../ui-state'
 import { getStringifiedColor } from '@rowsncolumns/spreadsheet'
 import { ColorPicker } from '../shared/ColorPicker'
 import { SheetStatus } from './SheetStatus'
+import { isDuplicateSheetName } from '../../is-duplicate-sheet-name'
 import { useFeatureFlag } from '../../feature-flags'
+import { useSheetsDependencies } from '../../SheetsDependenciesProvider'
 
 const { s } = createStringifier(strings)
 
@@ -173,8 +175,10 @@ interface SheetTabProps {
 }
 function SheetTab({ sheet, index, isActive }: SheetTabProps) {
   const isReadonly = useUI((ui) => ui.info.isReadonly)
+  const sheets = useUI((ui) => ui.sheets.listIncludingHidden)
   const setActiveId = useUI.$.sheets.setActiveId
   const rename = useUI.$.sheets.rename
+  const { showNotification } = useSheetsDependencies()
 
   const [isRenaming, setIsRenaming] = useState(false)
   const [title, setTitle] = useState(sheet.name)
@@ -182,22 +186,41 @@ function SheetTab({ sheet, index, isActive }: SheetTabProps) {
     setTitle(sheet.name)
   }, [sheet.name])
 
+  const inputRef = useRef<HTMLInputElement | null>(null)
   const focusInputOnMount = useCallback((input: HTMLInputElement | null) => {
+    inputRef.current = input
     if (input) {
       input.focus()
       input.select()
     }
   }, [])
 
-  const confirmRename = useCallback(() => {
-    if (!title || title === sheet.name) {
-      setTitle(sheet.name)
+  const confirmRename = useCallback(
+    (keepEditingOnDuplicate: boolean) => {
+      const trimmedTitle = title.trim()
+      if (!trimmedTitle || trimmedTitle === sheet.name) {
+        setTitle(sheet.name)
+        setIsRenaming(false)
+        return
+      }
+      if (isDuplicateSheetName(sheet.id, trimmedTitle, sheets)) {
+        if (keepEditingOnDuplicate) {
+          showNotification({ text: s('A sheet with this name already exists'), type: 'error' })
+          requestAnimationFrame(() => {
+            inputRef.current?.focus()
+            inputRef.current?.select()
+          })
+        } else {
+          setTitle(sheet.name)
+          setIsRenaming(false)
+        }
+        return
+      }
+      rename(sheet.id, trimmedTitle)
       setIsRenaming(false)
-      return
-    }
-    rename(sheet.id, title)
-    setIsRenaming(false)
-  }, [rename, sheet.id, sheet.name, title])
+    },
+    [rename, sheet.id, sheet.name, sheets, showNotification, title],
+  )
 
   const { ref, isDragging } = useSortable({ id: sheet.id, index, collisionDetector: closestCenter })
 
@@ -243,11 +266,11 @@ function SheetTab({ sheet, index, isActive }: SheetTabProps) {
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                onBlur={confirmRename}
+                onBlur={() => confirmRename(false)}
                 size={1}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter') {
-                    confirmRename()
+                    confirmRename(true)
                   } else if (e.key === 'Escape') {
                     setIsRenaming(false)
                     setTitle(sheet.name)
@@ -375,5 +398,6 @@ function strings() {
     'Move left': c('sheets_2025:Sheet tab options').t`Move left`,
     'Move right': c('sheets_2025:Sheet tab options').t`Move right`,
     'Hide sheet': c('sheets_2025:Sheet tab options').t`Hide sheet`,
+    'A sheet with this name already exists': c('sheets_2025:Sheet tab rename').t`A sheet with this name already exists`,
   }
 }
