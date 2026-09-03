@@ -46,7 +46,7 @@ const result = (opts: WebpackEnvArguments): webpack.Configuration => {
         1,
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: 'ejs-webpack-loader!src/app.ejs',
+            template: path.resolve('./src/app.ejs'),
             templateParameters,
             scriptLoading: 'defer',
             inject: true,
@@ -59,7 +59,7 @@ const result = (opts: WebpackEnvArguments): webpack.Configuration => {
         0,
         new HtmlWebpackPlugin({
             filename: 'urls.html',
-            template: `ejs-webpack-loader!src/urls.ejs`,
+            template: path.resolve('./src/urls.ejs'),
             templateParameters,
             scriptLoading: 'defer',
             inject: true,

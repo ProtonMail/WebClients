@@ -31,7 +31,7 @@ const result = (opts: WebpackEnvArguments): Configuration => {
         1,
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: 'ejs-webpack-loader!src/app.ejs',
+            template: path.resolve('./src/app.ejs'),
             templateParameters: htmlPlugin.userOptions.templateParameters,
             scriptLoading: 'defer',
             inject: 'body',
