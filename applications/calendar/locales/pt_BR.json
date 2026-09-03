@@ -1894,10 +1894,6 @@
       ],
       "Total": [
         "Total"
-      ],
-      "Total for ${ n } month": [
-        "Total por ${ n } mês",
-        "Total por ${ n } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -3825,6 +3821,9 @@
       "Failed to decrypt item name: ${ message }": [
         "Falha ao descriptografar o nome do item: ${ message }"
       ],
+      "Failed to decrypt revision metadata": [
+        "Falha ao descriptografar os metadados da revisão"
+      ],
       "Failed to decrypt session key": [
         "Falha ao descriptografar a chave de sessão"
       ],
@@ -4163,6 +4162,9 @@
       ],
       "Signature verification failed": [
         "Erro na verificação da assinatura"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Falha na assinatura do remetente: ${ errorMessage }"
       ],
       "Signature verification for ${ signatureType } failed": [
         "A verificação de assinatura para ${ signatureType } falhou"
@@ -5847,9 +5849,6 @@
       "Display events for calendar ${ Name }": [
         "Mostrar eventos para o calendário ${ Name }"
       ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Você lembra sua senha ? ${ verifyButton }"
-      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Não aparece nada? Lembre-se de desativar os bloqueadores de pop-up."
       ],
@@ -6021,6 +6020,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se você não encontrar o e-mail na caixa de entrada. Verifique a pasta de spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "If Se você perdeu o acesso ao seu aplicativo de autenticação, pode usar um dos 16 códigos de recuperação de backup fornecidos quando configurou a autenticação de dois fatores. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se você prosseguir com o downgrade, perderá o acesso aos recursos pagos do ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -9367,6 +9369,11 @@
         "Suporte para ${ n } domínios de e-mail personalizados"
       ]
     },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Você agora tem acesso ao novo ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Note": {
       "Note:": [
         "Nota:"
@@ -10032,6 +10039,9 @@
       ],
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis em outras moedas"
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Pagar com ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Método de pagamento necessário para que a assinatura seja ativada após o término do período de teste."

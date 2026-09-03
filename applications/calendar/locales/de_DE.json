@@ -1882,6 +1882,15 @@
         "${ users } Benutzer",
         "${ users } Benutzer"
       ],
+      "Amount due": [
+        "Fälliger Betrag"
+      ],
+      "Amount due after trial": [
+        "Fälliger Betrag nach der Testversion"
+      ],
+      "Amount due now": [
+        "Jetzt fälliger Betrag"
+      ],
       "Subtotal": [
         "Zwischensumme"
       ],
@@ -1892,9 +1901,9 @@
       "Total": [
         "Insgesamt"
       ],
-      "Total for ${ n } month": [
-        "Gesamtbetrag für ${ n } Monat",
-        "Gesamtbetrag für ${ n } Monate"
+      "Total for ${ cycle } month": [
+        "Gesamtbetrag für ${ cycle } Monat",
+        "Gesamtbetrag für ${ cycle } Monate"
       ]
     },
     "Collapsible tooltip": {
@@ -5934,8 +5943,8 @@
       "Display events for calendar ${ Name }": [
         "Termine für Kalender ${ Name } anzeigen"
       ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Erinnerst du dich an dein Passwort? ${ verifyButton }"
+      "Do you remember your password?": [
+        "Erinnerst du dich an dein Passwort?"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Es passiert nichts? Denke daran, deine Pop-up-Blocker zu deaktivieren."
