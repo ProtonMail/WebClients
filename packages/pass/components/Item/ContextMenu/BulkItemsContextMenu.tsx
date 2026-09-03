@@ -2,6 +2,11 @@ import { type FC, type RefObject, useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
+import { IcFolderArrowIn } from '@proton/icons/icons/IcFolderArrowIn';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { IcTrashCross } from '@proton/icons/icons/IcTrashCross';
+
 import { isTrashed } from '../../../lib/items/item.predicates';
 import { getItemKey } from '../../../lib/items/item.utils';
 import type { BulkSelectionDTO, ItemRevision } from '../../../types';
@@ -21,13 +26,13 @@ const getBulkActionButtons = (
         ? [
               {
                   type: 'button',
-                  icon: 'clock-rotate-left',
+                  icon: <IcClockRotateLeft />,
                   name: c('Action').t`Restore`,
                   action: () => restoreMany(selection),
               },
               {
                   type: 'button',
-                  icon: 'trash-cross',
+                  icon: <IcTrashCross />,
                   name: c('Action').t`Delete`,
                   action: () => deleteMany(selection),
               },
@@ -35,13 +40,13 @@ const getBulkActionButtons = (
         : [
               {
                   type: 'button',
-                  icon: 'folder-arrow-in',
+                  icon: <IcFolderArrowIn />,
                   name: c('Action').t`Move`,
                   action: () => moveMany(selection),
               },
               {
                   type: 'button',
-                  icon: 'trash',
+                  icon: <IcTrash />,
                   name: c('Action').t`Trash`,
                   action: () => trashMany(selection),
               },
