@@ -283,6 +283,28 @@ END:VCARD`;
         expect(errorZone).toBeVisible();
     });
 
+    it('should not crash when changing an "other information" field from Gender to Photo', async () => {
+        minimalCache();
+        setupApiMocks();
+
+        renderWithProviders(<ContactEditModal open={true} {...props} />);
+
+        await userEvent.click(screen.getByTestId('add-other'));
+
+        // Set the newly added "other information" field to Gender and fill it in
+        await userEvent.click(screen.getByTestId('create-contact:other-info-select'));
+        await userEvent.click(screen.getByTestId('create-contact:dropdown-item-Gender'));
+        await userEvent.type(screen.getByTestId('Gender'), 'Female');
+
+        // Switching to Photo must not throw: the Gender object value must not leak into the photo field
+        await userEvent.click(screen.getByTestId('create-contact:other-info-select'));
+        await userEvent.click(screen.getByTestId('create-contact:dropdown-item-Photo'));
+
+        expect(screen.queryByTestId('Gender')).not.toBeInTheDocument();
+        // The contact photo at the top of the modal, plus the row we just switched over
+        expect(screen.getAllByRole('button', { name: 'Upload picture' })).toHaveLength(2);
+    });
+
     it('should add user to a group at creation', async () => {
         // Mocking is a code smell (https://medium.com/javascript-scene/mocking-is-a-code-smell-944a70c90a6a)
         // but I don't think we could test this without these mocks.

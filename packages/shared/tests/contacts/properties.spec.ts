@@ -1,10 +1,16 @@
 import Papa from 'papaparse';
 
 import { prepare, readCsv, toVCardContacts } from '../../lib/contacts/helpers/csv';
-import { getContactCategories, getContactEmails, getVCardProperties } from '../../lib/contacts/properties';
+import {
+    changeVCardPropertyField,
+    getContactCategories,
+    getContactEmails,
+    getVCardProperties,
+} from '../../lib/contacts/properties';
 import { prepareForSaving } from '../../lib/contacts/surgery';
 import { parseToVCard, vCardPropertiesToICAL } from '../../lib/contacts/vcard';
 import { toCRLF } from '../../lib/helpers/string';
+import type { VCardProperty } from '../../lib/interfaces/contacts/VCard';
 
 describe('getContactEmails', () => {
     it('should retrieve contact emails from a vcard contact', () => {
@@ -300,5 +306,57 @@ describe('readCSV', () => {
                 expect(properties).toContainEqual(expect.objectContaining(expectation));
             }
         }
+    });
+});
+
+describe('changeVCardPropertyField', () => {
+    const property = (field: string, value: any): VCardProperty => ({
+        field,
+        value,
+        uid: 'contact-property-1',
+        params: { pref: '1' },
+    });
+
+    it('should keep the value when both fields hold text', () => {
+        const result = changeVCardPropertyField(property('title', 'CTO'), 'role');
+
+        expect(result).toEqual({ field: 'role', value: 'CTO', uid: 'contact-property-1', params: { pref: '1' } });
+    });
+
+    it('should keep the value between the two image fields', () => {
+        const result = changeVCardPropertyField(property('photo', 'https://example.com/a.jpg'), 'logo');
+
+        expect(result.value).toBe('https://example.com/a.jpg');
+    });
+
+    it('should drop an object value when moving to a text field', () => {
+        const result = changeVCardPropertyField(property('gender', { gender: 'F', text: 'Female' }), 'url');
+
+        expect(result).toEqual({ field: 'url', value: undefined, uid: 'contact-property-1', params: { pref: '1' } });
+    });
+
+    it('should drop an object value when moving to an image field', () => {
+        const result = changeVCardPropertyField(property('org', { organizationalName: 'Acme' }), 'photo');
+
+        expect(result.value).toBeUndefined();
+    });
+
+    it('should drop a text value when moving to a date field', () => {
+        const result = changeVCardPropertyField(property('title', 'CTO'), 'anniversary');
+
+        expect(result.value).toBeUndefined();
+    });
+
+    it('should drop the value between two different object fields', () => {
+        const result = changeVCardPropertyField(property('gender', { gender: 'F', text: 'Female' }), 'org');
+
+        expect(result.value).toBeUndefined();
+    });
+
+    it('should not mutate the property it is given', () => {
+        const original = property('gender', { gender: 'F', text: 'Female' });
+        changeVCardPropertyField(original, 'photo');
+
+        expect(original).toEqual(property('gender', { gender: 'F', text: 'Female' }));
     });
 });
