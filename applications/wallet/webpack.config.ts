@@ -1,4 +1,5 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import path from 'path';
 import { type Configuration, ProvidePlugin } from 'webpack';
 
 import { type WebpackEnvArguments, getWebpackOptions } from '@proton/pack/lib/config';
@@ -26,7 +27,7 @@ const result = (opts: WebpackEnvArguments): Configuration => {
         1,
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: 'ejs-webpack-loader!src/app.ejs',
+            template: path.resolve('./src/app.ejs'),
             templateParameters: htmlPlugin.userOptions.templateParameters,
             scriptLoading: 'defer',
             inject: 'body',
