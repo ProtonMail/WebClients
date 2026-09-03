@@ -2129,8 +2129,7 @@
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
-        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
+        "Wenn du einen Eintrag in einen anderen Tresor verschiebst, werden seine sicheren Links gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"
@@ -4409,20 +4408,20 @@
       ]
     },
     "Result": {
-      "Enter a URL to check to see if your current rule is matching the URL": [
-        "Gib eine URL ein, um zu prüfen, ob deine aktuelle Regel mit der URL übereinstimmt"
-      ],
-      "The rule is matching this URL": [
-        "Die Regel stimmt mit dieser URL überein"
-      ],
-      "The rule is NOT matching this URL": [
-        "Die Regel stimmt NICHT mit dieser URL überein"
+      "Enter a URL to check if it matches the current rule": [
+        "Eine URL eingeben, um zu prüfen, ob sie der aktuellen Regel entspricht"
       ],
       "This URL will be blocked from autofill": [
         "Dieses automatische Ausfüllen wird für diese URL blockiert"
       ],
       "This URL will NOT be blocked from autofill": [
         "Dieses automatische Ausfüllen wird für diese URL NICHT blockiert"
+      ],
+      "URL doesn't match the rule": [
+        "URL entspricht nicht der Regel"
+      ],
+      "URL matches the rule": [
+        "URL entspricht der Regel"
       ]
     },
     "Security Center - Info": {
