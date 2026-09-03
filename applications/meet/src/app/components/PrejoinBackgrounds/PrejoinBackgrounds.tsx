@@ -8,7 +8,7 @@ import { selectPendingBackgroundEffect } from '@proton/meet/store/slices/backgro
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
 import { useBackgroundEffectsContext } from '../../contexts/BackgroundEffects/BackgroundEffectsContext';
 import { useAppliedBackgroundEffect } from '../../contexts/BackgroundEffects/useAppliedBackgroundEffect';
-import { supportsBackgroundEffects } from '../../processors/background-processor/createBackgroundProcessor';
+import { useIsBackgroundEffectsSupported } from '../../contexts/BackgroundEffects/useIsBackgroundEffectsSupported';
 import { BackgroundOptionGroup } from '../Backgrounds/BackgroundOptionGroup';
 import {
     getBackgroundEffectOptions,
@@ -27,7 +27,7 @@ export const PrejoinBackgrounds = ({ onClose }: PrejoinBackgroundsProps) => {
     const appliedBackgroundEffect = useAppliedBackgroundEffect();
     const pendingBackgroundEffect = useMeetSelector(selectPendingBackgroundEffect);
 
-    const isBackgroundBlurSupported = supportsBackgroundEffects();
+    const isBackgroundBlurSupported = useIsBackgroundEffectsSupported();
     const { selectBackgroundEffect } = useBackgroundEffectsContext();
     const {
         options: customBackgroundOptions,

@@ -13,7 +13,7 @@ import { SideBar } from '../../atoms/SideBar/SideBar';
 import { SideBarSection } from '../../atoms/SideBarSection/SideBarSection';
 import { useBackgroundEffectsContext } from '../../contexts/BackgroundEffects/BackgroundEffectsContext';
 import { useAppliedBackgroundEffect } from '../../contexts/BackgroundEffects/useAppliedBackgroundEffect';
-import { supportsBackgroundEffects } from '../../processors/background-processor/createBackgroundProcessor';
+import { useIsBackgroundEffectsSupported } from '../../contexts/BackgroundEffects/useIsBackgroundEffectsSupported';
 import { BackgroundOptionGroup } from './BackgroundOptionGroup';
 import { BackgroundPreview } from './BackgroundPreview';
 import {
@@ -35,7 +35,7 @@ export const Backgrounds = () => {
 
     const isVirtualBackgroundEnabled = useFlag('MeetVirtualBackground');
 
-    const isBackgroundBlurSupported = supportsBackgroundEffects();
+    const isBackgroundBlurSupported = useIsBackgroundEffectsSupported();
     const unsupportedNotice = getUnsupportedBackgroundEffectsNotice();
     const { selectBackgroundEffect } = useBackgroundEffectsContext();
     const {

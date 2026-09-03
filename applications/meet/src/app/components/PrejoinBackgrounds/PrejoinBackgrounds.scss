@@ -1,3 +1,9 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/meet/meet-breakpoints' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints;
+im.$media-expressions: $media-expressions;
+
 .prejoin-backgrounds.border {
 	border-color: color-mix(in srgb, var(--background-invert), transparent 96%);
 	background: var(--background-card);
@@ -12,8 +18,12 @@
 }
 
 .prejoin-backgrounds-option {
-	// Six tiles fill the row, the remaining ones are reached by scrolling.
-	flex: 0 0 calc((100% - 5 * var(--space-2)) / 6);
+	// Four tiles fill the row on narrow screens, the remaining ones are reached by scrolling.
+	flex: 0 0 calc((100% - 3 * var(--space-2)) / 4);
 	min-inline-size: 0;
 	scroll-snap-align: start;
+
+	@include im.media('>medium') {
+		flex-basis: calc((100% - 5 * var(--space-2)) / 6);
+	}
 }
