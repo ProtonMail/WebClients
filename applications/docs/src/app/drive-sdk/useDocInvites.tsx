@@ -32,6 +32,7 @@ export const useDocInvites: DocInvitesHook = () => {
 
   useEffect(() => {
     if (!drive) {
+      setIsLoading(false)
       return
     }
 
