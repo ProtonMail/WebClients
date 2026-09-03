@@ -20,5 +20,6 @@ export const isURL = (value = '') => {
 };
 export const isHexColor = (value = '') => REGEX_HEX_COLOR.test(value);
 export const isNumber = (value = '') => REGEX_NUMBER.test(value);
-export const isBase64Image = (value = '') => value.startsWith('data:image') && value.includes(';base64');
+export const isBase64Image = (value: unknown = '') =>
+    typeof value === 'string' && value.startsWith('data:image') && value.includes(';base64');
 export const isPunycode = (value = '') => REGEX_PUNYCODE.test(value);

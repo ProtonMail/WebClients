@@ -3,7 +3,7 @@ import generateUID from '@proton/utils/generateUID';
 import type { ContactValue } from '../interfaces/contacts';
 import type { VCardContact, VCardProperty } from '../interfaces/contacts/VCard';
 import { UID_PREFIX } from './constants';
-import { isMultiValue } from './vcardProperties';
+import { getVCardValueShape, isMultiValue } from './vcardProperties';
 
 export const FIELDS_WITH_PREF = ['fn', 'email', 'tel', 'adr', 'key', 'photo'];
 
@@ -118,6 +118,19 @@ export const updateVCardContact = (vCardContact: VCardContact, vCardProperty: VC
     const properties = getVCardProperties(vCardContact);
     const newProperties = properties.map((property) => (property.uid === vCardProperty.uid ? vCardProperty : property));
     return fromVCardProperties(newProperties);
+};
+
+/**
+ * Retype a property, keeping its value only when the new field holds the same shape of value.
+ * Across shapes the value is dropped, leaving the property as if it had just been added with the
+ * new field, because a value of the wrong shape breaks the component rendering it and, for object
+ * values, makes vCard serialization throw on save.
+ */
+export const changeVCardPropertyField = (vCardProperty: VCardProperty, field: string): VCardProperty => {
+    if (getVCardValueShape(vCardProperty.field) === getVCardValueShape(field)) {
+        return { ...vCardProperty, field };
+    }
+    return { ...vCardProperty, field, value: undefined };
 };
 
 export const addVCardProperty = (vCardContact: VCardContact, vCardProperty: VCardProperty) => {
