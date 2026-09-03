@@ -948,10 +948,6 @@
       ],
       "Total": [
         "Totale"
-      ],
-      "Total for ${ n } month": [
-        "Totale per ${ n } mese",
-        "Totale per ${ n } mesi"
       ]
     },
     "Collapsible tooltip": {
@@ -2189,6 +2185,9 @@
       ],
       "This conversation contains many images. ${ LUMO_SHORT_APP_NAME } will only see the most recent ${ MAX_IMAGES_PER_REQUEST } images.": [
         "Questa conversazione contiene molte immagini. ${ LUMO_SHORT_APP_NAME } mostrerà solo le ${ MAX_IMAGES_PER_REQUEST } immagini più recenti."
+      ],
+      "This file was removed from project knowledge.": [
+        "File rimosso dalle conoscenze del progetto"
       ],
       "This folder is empty": [
         "Questa cartella è vuota"
@@ -3678,6 +3677,9 @@
       ],
       "Example prompts shown when a conversation begins.": [
         "Suggerimenti di esempio mostrati all'inizio di una conversazione."
+      ],
+      "Export your data from ChatGPT or Claude, upload it privately, and we’ll show you what big tech AI has learned about you.": [
+        "Esporta i tuoi dati da ChatGPT o Claude, caricateli in modo privato e ti mostreremo cosa le grandi aziende di IA hanno imparato su di te."
       ],
       "File \"${ file.name }\" is already in this project": [
         "Il file \"${ file.name }\" è già presente in questo progetto"
@@ -5787,14 +5789,32 @@
       "An error occurred": [
         "Si è verificato un errore"
       ],
+      "Cannot verify the author of this file": [
+        "Impossibile verificare l'autore di questo file"
+      ],
       "Checkout expired, please try again": [
         "Checkout scaduto, riprova"
       ],
       "Company name or personal name is required": [
         "Il nome dell'azienda o il nome personale è obbligatorio"
       ],
+      "Copying item to a non-folder is not allowed": [
+        "Non è possibile copiare l'elemento in un elemento che non è una cartella"
+      ],
       "Could not grant access to the organization key": [
         "Impossibile concedere l'accesso alla chiave dell'organizzazione"
+      ],
+      "Could not load sharing details": [
+        "Impossibile caricare i dettagli della condivisione"
+      ],
+      "Could not unlock the parent folder": [
+        "Impossibile sbloccare la cartella principale."
+      ],
+      "Could not unlock this item": [
+        "Impossibile sbloccare questo elemento."
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Non è possibile creare cartelle all'interno di elementi che non sono cartelle"
       ],
       "Domain not available, try again later": [
         "Dominio non disponibile, riprovare più tardi"
@@ -5814,8 +5834,20 @@
       "Error connecting to the Bitcoin API.": [
         "Errore di connessione alle API di Bitcoin."
       ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Impossibile decrittografare la password del segnalibro: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Impossibile decrittografare la chiave del contenuto: ${ message }"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "Impossibile caricare i dati dell'abbonamento. Riprova più tardi."
+      ],
+      "File has no revision": [
+        "Il file non ha revisioni"
+      ],
+      "Image preview not found": [
+        "Anteprima dell'immagine non trovata"
       ],
       "Incorrect username": [
         "Username non corretto"
@@ -5841,11 +5873,27 @@
       "Invalid verification code": [
         "Codice di verifica non valido"
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Il vecchio link pubblico non può essere aggiornato. Crea un nuovo link pubblico."
+      ],
+      "Missing inviter email": [
+        "Manca l'indirizzo email dell'invitante"
+      ],
       "Missing signature": [
         "Firma mancante"
       ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri.",
+        "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri."
+      ],
+      "No file data was received. Please try again.": [
+        "Non sono stati ricevuti dati del file. Riprova."
+      ],
       "Not a valid number": [
         "Numero non valido"
+      ],
+      "Operation aborted": [
+        "Operazione interrotta"
       ],
       "Organization key is not decrypted": [
         "La chiave dell'organizzazione non è decriptata"
@@ -5855,6 +5903,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "La chiave dell'organizzazione deve essere attivata per creare utenti non privati"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Parte del file sembra essere danneggiata"
       ],
       "Passwords do not match": [
         "Le password non corrispondono"
@@ -5910,6 +5961,9 @@
       "Reverse charge scheme is not supported for this plan": [
         "Il regime di inversione contabile non è previsto per questo piano"
       ],
+      "Signature is missing": [
+        "Manca la firma"
+      ],
       "Signature verification failed": [
         "Verifica della firma non riuscita"
       ],
@@ -5934,6 +5988,9 @@
       "The minimum donation amount is ${ price }": [
         "L'importo minimo della donazione è ${ price }"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Il file caricato non corrisponde all'originale. Riprova."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
       ],
@@ -5945,6 +6002,15 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Questo campo richiede un minimo di ${ minimumLength } caratteri."
+      ],
+      "This file has no version available to download": [
+        "Non è disponibile alcuna versione di questo file da scaricare"
+      ],
+      "This item is no longer shared": [
+        "Questo elemento non è più condiviso"
+      ],
+      "This item is not shared": [
+        "Questo elemento non è condiviso"
       ],
       "Try using only letters, numerals, and _.-": [
         "Prova ad usare solo lettere, numeri e _.-"
@@ -5964,11 +6030,20 @@
       "VAT number must start with ${ prefixes }": [
         "Il numero di partita IVA deve iniziare con ${ prefixes }"
       ],
+      "Verification keys are not available": [
+        "Le chiavi di verifica non sono disponibili"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Le chiavi di verifica per ${ signatureType } non sono disponibili"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Non è stato possibile inviare un codice di verifica con questo metodo."
       ],
       "Wrong billing address": [
         "Indirizzo di fatturazione errato"
+      ],
+      "You do not have access to this item": [
+        "Non hai accesso a questo elemento"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome indecifrabile"
@@ -9006,6 +9081,14 @@
         "Effettua l'upgrade a ${ upsellPlanTitle }"
       ]
     },
+    "Property": {
+      "attributes": [
+        "Attributi"
+      ],
+      "key": [
+        "chiave"
+      ]
+    },
     "Provider option": {
       "Gmail": [
         "Gmail"
@@ -10010,6 +10093,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Passa a un piano supportato per utilizzare i ruoli amministratore"
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Potrai assegnare i ruoli non appena l'utente avrà accettato l'invito."
       ]
