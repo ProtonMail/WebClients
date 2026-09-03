@@ -2739,6 +2739,15 @@
         "${ users } Benutzer",
         "${ users } Benutzer"
       ],
+      "Amount due": [
+        "Fälliger Betrag"
+      ],
+      "Amount due after trial": [
+        "Fälliger Betrag nach der Testversion"
+      ],
+      "Amount due now": [
+        "Jetzt fälliger Betrag"
+      ],
       "Subtotal": [
         "Zwischensumme"
       ],
@@ -2749,9 +2758,9 @@
       "Total": [
         "Insgesamt"
       ],
-      "Total for ${ n } month": [
-        "Gesamtbetrag für ${ n } Monat",
-        "Gesamtbetrag für ${ n } Monate"
+      "Total for ${ cycle } month": [
+        "Gesamtbetrag für ${ cycle } Monat",
+        "Gesamtbetrag für ${ cycle } Monate"
       ]
     },
     "Collapsible tooltip": {
@@ -7580,6 +7589,9 @@
       "Center": [
         "Zentriert"
       ],
+      "Change display setting": [
+        "Anzeigeeinstellung ändern"
+      ],
       "Change your password": [
         "Passwort ändern"
       ],
@@ -7747,8 +7759,8 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy Logo"
       ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Erinnerst du dich an dein Passwort? ${ verifyButton }"
+      "Do you remember your password?": [
+        "Erinnerst du dich an dein Passwort?"
       ],
       "Do you want to download this attachment anyway?": [
         "Möchtest du diesen Anhang trotzdem herunterladen?",
@@ -8140,7 +8152,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -8448,6 +8461,9 @@
       "Opened ${ location }": [
         "${ location } geöffnet"
       ],
+      "Opened a problem report": [
+        "Ein Problembericht wurde erstellt"
+      ],
       "Optional": [
         "Optional"
       ],
@@ -8646,6 +8662,9 @@
       "Read your ${ count } label": [
         "Lies ${ count } Kategorie",
         "Lies deine ${ count } Kategorien"
+      ],
+      "Read your display settings": [
+        "Deine Anzeigeeinstellungen anzeigen"
       ],
       "Recipient: ": [
         "Empfänger: "
@@ -10271,8 +10290,17 @@
       "Colors": [
         "Farben"
       ],
+      "Column": [
+        "Spalte"
+      ],
+      "Comfortable": [
+        "Komfortabel"
+      ],
       "Command line interface (CLI)": [
         "Kommandozeilen-Schnittstelle (CLI)"
+      ],
+      "Compact": [
+        "Kompakt"
       ],
       "Company": [
         "Unternehmen"
@@ -10303,6 +10331,9 @@
       ],
       "Continue cancelling": [
         "Kündigung fortsetzen"
+      ],
+      "Conversation grouping": [
+        "Unterhaltungen gruppieren"
       ],
       "Copy": [
         "Kopieren"
@@ -10504,6 +10535,9 @@
       ],
       "Go to Updates": [
         "Zu Updates wechseln"
+      ],
+      "Grouped conversations": [
+        "Gruppierte Unterhaltungen"
       ],
       "Has attachments": [
         "Enthält Anhänge"
@@ -10826,6 +10860,9 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32,\n1228 Plan-les-Ouates\nGenf, Schweiz"
       ],
+      "Row": [
+        "Zeile"
+      ],
       "Search in": [
         "Suchen in"
       ],
@@ -10846,6 +10883,9 @@
       ],
       "Sign emails": [
         "E-Mails signieren"
+      ],
+      "Single messages": [
+        "Einzelnachrichten"
       ],
       "Size:": [
         "Größe:"
@@ -16296,6 +16336,9 @@
       ],
       "CC": [
         "CC"
+      ],
+      "Change display setting": [
+        "Anzeigeeinstellung ändern"
       ],
       "Change my answer": [
         "Meine Antwort ändern"
