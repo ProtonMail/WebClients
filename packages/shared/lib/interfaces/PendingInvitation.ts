@@ -1,12 +1,9 @@
-import type { PLANS } from '@proton/payments/core/constants';
-
 export interface PendingInvitation {
     ID: string;
     InviterEmail: string;
     MaxSpace: number;
     OrganizationName: string;
     Validation: AcceptInvitationValidation;
-    OrganizationPlanName?: PLANS;
 }
 
 export interface AcceptInvitationValidation {
