@@ -7,10 +7,6 @@ import type {
 
 import type { TunableConstantsOverrides } from './tunableConstants';
 
-// Selects which background processor implementation is used. `current` is the
-// version shipping today; `next` carries the segmentation/blur adjustments.
-export type BackgroundProcessorVersion = 'current' | 'next';
-
 // Options shared by every background processor; background-specific options extend this.
 export interface BaseBackgroundProcessorOptions extends ProcessorWrapperOptions {
     segmenterOptions?: SegmenterOptions;
@@ -19,6 +15,7 @@ export interface BaseBackgroundProcessorOptions extends ProcessorWrapperOptions 
         modelAssetPath?: string;
     };
     isLowEndDevice?: boolean;
+    isMobile?: boolean;
     personConfidenceBoost?: number;
     multiclassPersonConfidenceBoost?: number;
     constantOverrides?: TunableConstantsOverrides;

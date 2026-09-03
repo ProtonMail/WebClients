@@ -141,8 +141,7 @@ export const BackgroundBlurComparison = () => {
                     <div className="w-full mb-4">
                         <BlurPreview
                             key={`advanced-${sourceKey}-${applyGeneration}`}
-                            version="next"
-                            label={c('Label').t`Next`}
+                            label={c('Label').t`Preview`}
                             hideHeader
                             constantOverrides={appliedConstants}
                             {...sharedProps}
@@ -162,13 +161,7 @@ export const BackgroundBlurComparison = () => {
 
         return (
             <div className="debug-blur-comparison grid gap-4">
-                <BlurPreview
-                    key={`current-${sourceKey}`}
-                    version="current"
-                    label={c('Label').t`Current`}
-                    {...sharedProps}
-                />
-                <BlurPreview key={`next-${sourceKey}`} version="next" label={c('Label').t`Next`} {...sharedProps} />
+                <BlurPreview key={sourceKey} label={c('Label').t`Preview`} {...sharedProps} />
             </div>
         );
     };
@@ -177,13 +170,12 @@ export const BackgroundBlurComparison = () => {
         <div className="debug-section">
             {showComparison && (
                 <>
-                    <h3>{c('Title').t`Background blur comparison`}</h3>
+                    <h3>{c('Title').t`Background blur preview`}</h3>
                     <p className="debug-empty">
                         {advancedMode
                             ? c('Info')
-                                  .t`Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.`
-                            : c('Info')
-                                  .t`Loop an uploaded video or your live camera through both background blur versions side by side.`}
+                                  .t`Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.`
+                            : c('Info').t`Loop an uploaded video or your live camera through background blur.`}
                     </p>
 
                     <div className="debug-section flex gap-8 flex-wrap items-center">

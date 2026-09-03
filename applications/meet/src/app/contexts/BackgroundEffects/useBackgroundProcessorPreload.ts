@@ -1,20 +1,16 @@
 import { useEffect } from 'react';
 
-import { useFlag } from '@proton/unleash/useFlag';
-
 import { preloadBackgroundProcessorAssets } from '../../processors/background-processor/createBackgroundProcessor';
-import type { BackgroundProcessorVersion } from '../../processors/background-processor/types';
+import { useIsBackgroundEffectsSupported } from './useIsBackgroundEffectsSupported';
 
 export const useBackgroundProcessorPreload = () => {
-    const isNewBackgroundBlurVersionEnabled = useFlag('MeetUseNewBackgroundBlurVersion');
-
-    const backgroundProcessorVersion: BackgroundProcessorVersion = isNewBackgroundBlurVersionEnabled
-        ? 'next'
-        : 'current';
+    const isBackgroundEffectsSupported = useIsBackgroundEffectsSupported();
 
     useEffect(() => {
-        void preloadBackgroundProcessorAssets(backgroundProcessorVersion);
-    }, [backgroundProcessorVersion]);
+        if (!isBackgroundEffectsSupported) {
+            return;
+        }
 
-    return { backgroundProcessorVersion };
+        void preloadBackgroundProcessorAssets();
+    }, [isBackgroundEffectsSupported]);
 };
