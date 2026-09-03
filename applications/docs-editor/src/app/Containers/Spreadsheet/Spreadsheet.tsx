@@ -33,6 +33,7 @@ import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { useFeatureFlag } from './feature-flags'
 import { useSheetsDependencies } from './SheetsDependenciesProvider'
 import { useEditorTheme } from '../../Theme/EditorThemeProvider'
+import { getSheetNameFromFilename } from './sheet-import-name'
 
 export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
@@ -40,14 +41,6 @@ export type SpreadsheetRef = {
   focusSheet: (() => void) | undefined
   generatePatches: () => Promise<unknown>
   applyPatches: (patches: unknown) => void
-}
-
-const splitExtension = (filename = '') => {
-  const endIdx = filename.lastIndexOf('.')
-  if (endIdx === -1) {
-    return [filename, '']
-  }
-  return [filename.slice(0, endIdx), filename.slice(endIdx + 1)]
 }
 
 export type SpreadsheetProps = {
@@ -293,8 +286,10 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
         if (!newSheet) {
           return
         }
-        const [name] = splitExtension(data.file.name)
-        onRenameSheet(newSheet.sheetId, name, newSheet.title)
+        const name = getSheetNameFromFilename(data.file.name)
+        if (name) {
+          onRenameSheet(newSheet.sheetId, name, newSheet.title)
+        }
         sheetId = newSheet.sheetId
         cellCoords = { rowIndex: 1, columnIndex: 1 }
       }
