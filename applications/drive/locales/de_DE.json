@@ -405,7 +405,7 @@
         "App herunterladen"
       ],
       "Download for Mac": [
-        "Für macOS herunterladen"
+        "Für Mac herunterladen"
       ],
       "Download for MacOS": [
         "Für macOS herunterladen"
@@ -663,7 +663,7 @@
         "Link verwalten"
       ],
       "Manage share": [
-        "Freigabe verwalten"
+        "Teilen verwalten"
       ],
       "Manage users/addresses": [
         "Benutzer/Adressen verwalten"
@@ -1234,7 +1234,7 @@
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten."
       ],
       "Your 3 GB bonus": [
-        "Dein 3 GB-Bonus"
+        "Dein 3 GB Bonus"
       ],
       "Zoom in": [
         "Vergrößern"
@@ -1957,6 +1957,19 @@
       "Total for ${ n } month": [
         "Gesamtbetrag für ${ n } Monat",
         "Gesamtbetrag für ${ n } Monate"
+      ],
+      "Amount due": [
+        "Fälliger Betrag"
+      ],
+      "Amount due after trial": [
+        "Fälliger Betrag nach der Testversion"
+      ],
+      "Amount due now": [
+        "Jetzt fälliger Betrag"
+      ],
+      "Total for ${ cycle } month": [
+        "Gesamtbetrag für ${ cycle } Monat",
+        "Gesamtbetrag für ${ cycle } Monate"
       ]
     },
     "Collapsible tooltip": {
@@ -4088,7 +4101,7 @@
         "Dieser Eintrag konnte nicht abgerufen werden"
       ],
       "We were not able to load some invitations": [
-        "Wir konnten einige deiner Einladungen nicht laden."
+        "Wir konnten einige Einladungen nicht laden"
       ],
       "We were not able to load some items": [
         "Wir konnten einige Einträge nicht laden."
@@ -6283,7 +6296,7 @@
         "Es ist besser so:"
       ],
       "Items in the trash will stay here until you delete them permanently": [
-        "Elemente im Papierkorb verbleiben hier, bis sie dauerhaft gelöscht werden."
+        "Einträge im Papierkorb verbleiben hier, bis sie dauerhaft gelöscht werden"
       ],
       "Items moved to the trash will stay here until deleted": [
         "Objekte, die in den Papierkorb verschoben werden, verbleiben dort, bis sie gelöscht werden."
@@ -6633,7 +6646,7 @@
         "Die Vorschau von Dokumenten wird noch nicht unterstützt."
       ],
       "Previous versions are kept for ${ retentionLabel }": [
-        "Frühere Versionen werden für ${ retentionLabel } aufbewahrt."
+        "Frühere Versionen werden für ${ retentionLabel } aufbewahrt"
       ],
       "Previous versions are not saved": [
         "Vorherige Versionen werden nicht gespeichert"
@@ -6711,7 +6724,7 @@
         "Scanne den QR-Code mit deinem Mobilgerät."
       ],
       "Scan to download": [
-        "Scannen zum herunterladen"
+        "Zum Herunterladen scannen"
       ],
       "Search cannot be enabled in this browser": [
         "Die Suche kann in diesem Browser nicht aktiviert werden"
@@ -7124,7 +7137,7 @@
         "Upgrade, um deine ${ planTitle }-Vorteile zu behalten."
       ],
       "upgrade your storage": [
-        "deinen Speicherplatz zu upgraden."
+        "Deinen Speicherplatz zu upgraden"
       ],
       "Upload Failed": [
         "Upload fehlgeschlagen"
@@ -7621,7 +7634,7 @@
         "Fehler bei der Suchmaschine"
       ],
       "Search error": [
-        "Fehler suchen"
+        "Fehler beim Suchen"
       ],
       "Search is in an invalid state": [
         "Suche befindet sich in einem ungültigen Zustand"
@@ -7881,6 +7894,12 @@
       ],
       "Read this file": [
         "Diese Datei lesen"
+      ],
+      "Do you remember your password?": [
+        "Erinnerst du dich an dein Passwort?"
+      ],
+      "Link expired": [
+        "Link abgelaufen"
       ]
     },
     "info": {
@@ -10614,7 +10633,7 @@
         "Entfernen des Geräts fehlgeschlagen"
       ],
       "Failed to remove the file": [
-        "Fehler beim Entfernen der Datei"
+        "Entfernen der Datei fehlgeschlagen"
       ],
       "Failed to rename device": [
         "Fehler beim Umbenennen des Geräts"
@@ -10706,7 +10725,7 @@
         "Das Element wurde nicht zu deinem Laufwerk hinzugefügt"
       ],
       "The item was successfully added to your drive": [
-        "Das Objekt wurde erfolgreich zu deinem Laufwerk hinzugefügt"
+        "Der Eintrag wurde erfolgreich zu deinem Drive hinzugefügt"
       ],
       "The link to your item was deleted": [
         "Der Link zu deinem Element wurde gelöscht"
@@ -10978,7 +10997,7 @@
         "Vorerst überspringen"
       ],
       "Try the app": [
-        "Probier die App"
+        "App ausprobieren"
       ],
       "Upload file": [
         "Datei hochladen"
@@ -11043,7 +11062,7 @@
         "Desktop-App herunterladen"
       ],
       "Get the mobile app": [
-        "App herunterladen"
+        "Mobile App herunterladen"
       ],
       "Got an Android? We've got you covered.": [
         "Du hast ein Android? Wir haben das passende für dich."
@@ -13133,7 +13152,7 @@
     },
     "Subtitle": {
       "Albums shared with you will appear here": [
-        "Alben, die mit dir geteilt wurden, werden hier angezeigt"
+        "Mit dir geteilte Alben werden hier angezeigt"
       ],
       "Albums you've shared will appear here": [
         "Alben, die du geteilt hast, werden hier angezeigt"
@@ -13157,7 +13176,7 @@
         "Deine Fotoreihen werden hier angezeigt"
       ],
       "Your portraits photos will appear here": [
-        "Deine Porträts werden hier angezeigt"
+        "Deine Porträtfotos werden hier angezeigt"
       ],
       "Your RAW photos will appear here": [
         "Deine RAW-Dateien werden hier angezeigt"
@@ -13955,7 +13974,7 @@
         "Protokolle"
       ],
       "Make a copy": [
-        "Kopie erstellen"
+        "Eine Kopie erstellen"
       ],
       "Make a secure connection your default": [
         "Mach eine sichere Verbindung zum Standard"
@@ -14463,7 +14482,7 @@
         "Dein ${ planTitle }-Abonnement hat begonnen"
       ],
       "Your 3 GB bonus": [
-        "Dein 3 GB-Bonus"
+        "Dein 3 GB Bonus"
       ],
       "Your account is protected": [
         "Dein Konto ist geschützt"
@@ -14490,7 +14509,7 @@
         "Du hast einen tollen Start hingelegt."
       ],
       "You’ve got 5 GB of storage": [
-        "Du hast 5 GB Speicherplatz."
+        "Du hast 5 GB Speicherplatz"
       ],
       "Actions": [
         "Aktionen"
@@ -14708,6 +14727,9 @@
       ],
       "Users who have accessed their ${ BRAND_NAME } account": [
         "Benutzer, die auf deren ${ BRAND_NAME }-Konto zugegriffen haben"
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Dieser Link ist abgelaufen. Bitte verlängere das Ablaufdatum."
       ]
     },
     "tooltip": {
@@ -14747,7 +14769,7 @@
     },
     "Upsell": {
       "Get Drive for Business": [
-        "Nutze Drive für Business"
+        "Hole Drive for Business"
       ]
     },
     "Validation": {
