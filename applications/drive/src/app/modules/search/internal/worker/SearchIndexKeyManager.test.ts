@@ -28,6 +28,7 @@ describe('SearchIndexKeyManager', () => {
     let bridge: MainThreadBridge;
 
     beforeEach(async () => {
+        jest.restoreAllMocks();
         indexedDB = new IDBFactory();
         db = await SearchDB.open('test-user');
         bridge = fakeBridge();
@@ -102,6 +103,27 @@ describe('SearchIndexKeyManager', () => {
 
         const blob = await db.getDecryptedIndexBlob(['test', 'blob1'], identityBuffer);
         expect(blob).toBeUndefined();
+    });
+
+    // Storing the key and clearing the index are two separate transactions, so a worker can die
+    // between them (tab closed, crash). Storing first would leave a durable new key next to blobs
+    // only the discarded key can read, and the next boot decrypts that key fine and returns early -
+    // clearIndex() never runs again and those blobs stay undecryptable for good. Clearing first
+    // makes the interruption harmless: no key is stored, so the next boot just regenerates.
+    it('does not leave undecryptable blobs behind when clearIndex is interrupted', async () => {
+        await db.putSearchCryptoKey('corrupted-data', identityString);
+        await db.putEncryptedIndexBlob(['test', 'blob1'], new ArrayBuffer(8), identityBuffer);
+
+        jest.spyOn(SearchDB.prototype, 'clearIndex').mockRejectedValueOnce(new Error('worker terminated'));
+
+        // The regeneration is interrupted partway through the wipe.
+        await SearchIndexKeyManager.getOrCreateKey(db, bridge).catch(() => undefined);
+
+        // The stale blob may still be there - the wipe was cut short, that is the premise.
+        // What must NOT happen is a new key being committed alongside it, because then the next
+        // boot decrypts that key, returns early, and never clears the blob it cannot read.
+        const storedKey = await db.getSearchCryptoKey(identityString);
+        expect(storedKey).not.toMatch(/^fake-openpgp:/);
     });
 
     describe('when the key cannot be wrapped', () => {
