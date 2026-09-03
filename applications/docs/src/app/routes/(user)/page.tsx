@@ -18,7 +18,7 @@ import { useContext, useState } from 'react'
 import { Router } from 'react-router-dom'
 import { CompatRouter } from 'react-router-dom-v5-compat'
 
-import { FlagProvider } from '@proton/unleash/proxy'
+import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';
 
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import metrics from '@proton/metrics'
@@ -157,7 +157,7 @@ function OuterContainer({ store, showDrawerSidebar, initialUser, children }: Out
     <ProtonStoreProvider store={store}>
       <CustomNotificationsHijack ignoredNotifications={HIDDEN_NOTIFICATIONS}>
         <AuthenticationProvider store={extraThunkArguments.authentication}>
-          <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+          <UnleashFlagProviderWithToolbar unleashClient={extraThunkArguments.unleashClient}>
             <Router history={extraThunkArguments.history}>
               <CompatRouter>
                 <RouterDependentContainer showDrawerSidebar={showDrawerSidebar} initialUser={initialUser}>
@@ -165,7 +165,7 @@ function OuterContainer({ store, showDrawerSidebar, initialUser, children }: Out
                 </RouterDependentContainer>
               </CompatRouter>
             </Router>
-          </FlagProvider>
+          </UnleashFlagProviderWithToolbar>
         </AuthenticationProvider>
       </CustomNotificationsHijack>
     </ProtonStoreProvider>
