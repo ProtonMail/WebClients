@@ -1,3 +1,4 @@
+import type { SheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBSchema'
 import type { AppPlatform, FileMenuAction, SheetImportData, SheetsUserState } from '@proton/docs-shared'
 import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
 import type { FeatureFlag } from '@proton/unleash/Flags'
@@ -19,8 +20,20 @@ export type SheetsEditorToShellActions = {
   openLink: (url: string) => void
   handleFileMenuAction: (action: FileMenuAction) => Promise<void>
   storeSpreadsheetAction: (type: SheetsActionType, content: unknown) => void
+  storeSpreadsheetPatches: (patches: unknown, updateHash: string, type?: SheetsPatchesType) => void
+  hasBasePatchesStored: () => Promise<boolean>
   showNotification: (notification: { text: string; type?: 'error' | 'warning' | 'info' | 'success' }) => void
   showGenericInfoModal: (props: { title: string; translatedMessage: string }) => void
+  reloadClient: () => void
+  reportUserInterfaceError: (
+    error: Error,
+    extraInfo?: {
+      irrecoverable?: boolean
+      lockEditor?: boolean
+    },
+  ) => void
+  reportSheetsYjsDriftDetected: (reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs') => void
+  showYjsDriftDetectedErrorModal: (driftLogDetails: Record<string, unknown>) => void
 }
 
 /** Reactive shell session inputs the editor reads. */
