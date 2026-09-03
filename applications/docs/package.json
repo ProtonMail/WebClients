@@ -15,7 +15,7 @@
     "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
     "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --optimizeAssets --babelLoader --noLogicalScss",
     "test": "jest --coverage=false",
-    "test:ci": "jest --runInBand --ci",
+    "test:ci": "jest --runInBand --ci --logHeapUsage",
     "test:watch": "jest --watch --coverage=false"
   },
   "dependencies": {

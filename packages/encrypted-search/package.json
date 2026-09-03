@@ -18,7 +18,7 @@
         "lint": "eslint --quiet",
         "pretty": "prettier --write $(find lib test -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "test": "jest",
-        "test:ci": "yarn run test --ci --forceExit --runInBand",
+        "test:ci": "yarn run test --ci --forceExit --runInBand --logHeapUsage",
         "test:watch": "jest --watch"
     },
     "dependencies": {

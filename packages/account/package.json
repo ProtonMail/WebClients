@@ -110,7 +110,7 @@
         "check-types": "tsc",
         "lint": "eslint --quiet",
         "test": "jest",
-        "test:ci": "jest --runInBand",
+        "test:ci": "jest --runInBand --logHeapUsage",
         "test:watch": "jest --watch"
     },
     "dependencies": {
