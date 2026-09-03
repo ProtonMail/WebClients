@@ -3162,6 +3162,9 @@
       "Failed to decrypt item name: ${ message }": [
         "Falha ao descriptografar o nome do item: ${ message }"
       ],
+      "Failed to decrypt revision metadata": [
+        "Falha ao descriptografar os metadados da revisão"
+      ],
       "Failed to expand folder": [
         "Falha ao expandir a pasta"
       ],
@@ -3434,6 +3437,9 @@
       ],
       "Signature verification failed": [
         "Erro na verificação da assinatura"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Falha na assinatura do remetente: ${ errorMessage }"
       ],
       "Signature verification for ${ signatureType } failed": [
         "A verificação de assinatura para ${ signatureType } falhou"
@@ -4920,9 +4926,6 @@
       "Display word count": [
         "Exibir contagem de palavras"
       ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Você lembra sua senha ? ${ verifyButton }"
-      ],
       "Document is in trash": [
         "O documento está na lixeira"
       ],
@@ -5103,6 +5106,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se você não encontrar o e-mail na caixa de entrada. Verifique a pasta de spam."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "If Se você perdeu o acesso ao seu aplicativo de autenticação, pode usar um dos 16 códigos de recuperação de backup fornecidos quando configurou a autenticação de dois fatores. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se você prosseguir com o downgrade, perderá o acesso aos recursos pagos do ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
       ],
@@ -5199,6 +5205,9 @@
       ],
       "Link copied to clipboard": [
         "Link copiado para área de transferência"
+      ],
+      "Link expired": [
+        "Link expirado"
       ],
       "Loading": [
         "Carregando"
@@ -7796,6 +7805,11 @@
       "Support for ${ n } custom email domain": [
         "Suporte para ${ n } domínio de e-mail personalizado",
         "Suporte para ${ n } domínios de e-mail personalizados"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Você agora tem acesso ao novo ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     },
     "Notification": {
