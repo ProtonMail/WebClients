@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react';
 import { useCallback, useMemo, useState } from 'react';
 
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import clsx from '@proton/utils/clsx';
 
-import Icon from '../../icon/Icon';
 import { BranchContext, useBranchContext, useTryBranchDepth } from './Branch.Context';
 import * as Slots from './ComponentSlots';
 import { AnimatedChildren } from './animated';
@@ -155,10 +155,10 @@ interface BranchTriggerProps {
     className?: string;
 
     /**
-     * Icon name to render.
-     * @default 'chevron-down-filled'
+     * Icon component to render.
+     * @default IcChevronDownFilled
      */
-    name?: IconName;
+    icon?: IconComponent;
 
     /**
      * Rotation configuration for icon open/closed states.
@@ -189,20 +189,25 @@ interface BranchTriggerProps {
  * ```tsx
  * <Branch.Trigger rotation={{ open: 90, closed: 0 }} />
  * ```
+ *
+ * @example Custom icon
+ * ```tsx
+ * <Branch.Trigger icon={IcChevronDown} />
+ * ```
  */
 function BranchTrigger({
     className,
-    name = 'chevron-down-filled',
+    icon: Icon = IcChevronDownFilled,
     rotation = { open: 0, closed: 180 },
 }: BranchTriggerProps) {
     const { isOpen } = useBranchContext('Branch.Trigger');
+    const rotate = isOpen ? rotation.open : rotation.closed;
 
     return (
         <Icon
             data-sidebar-trigger=""
-            name={name}
-            className={className}
-            rotate={isOpen ? rotation.open : rotation.closed}
+            className={clsx('shrink-0', className)}
+            style={rotate ? { transform: `rotate(${rotate}deg)` } : undefined}
         />
     );
 }
