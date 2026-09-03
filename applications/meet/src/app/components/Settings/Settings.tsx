@@ -57,6 +57,7 @@ export const Settings = () => {
     const { wantsCaptions } = useCaptionsPreference();
 
     const isVirtualBackgroundEnabled = useFlag('MeetVirtualBackground');
+    const canPickCaptionLanguage = useFlag('MeetSaveCaptionLanguagePreference');
 
     const [loadingLock, withLoadingLock] = useLoading();
     const [loadingBackgroundBlur, withLoadingBackgroundBlur] = useLoading();
@@ -196,7 +197,7 @@ export const Settings = () => {
                             {liveCaptionsEnabled && (
                                 <>
                                     <LiveCaptionsToggle />
-                                    {wantsCaptions && <CaptionLanguageSelect />}
+                                    {wantsCaptions && canPickCaptionLanguage && <CaptionLanguageSelect />}
                                 </>
                             )}
                             <SettingToggle
