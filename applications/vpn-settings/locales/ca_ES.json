@@ -2004,14 +2004,6 @@
         "Heu arribat al límit de la versió de prova."
       ]
     },
-    "b2b_trials_2025_Label": {
-      "Amount due after trial": [
-        "Import a pagar després de la prova"
-      ],
-      "Amount due now": [
-        "Import pendent de pagament"
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Cancel·la la subscripció"
@@ -2546,6 +2538,18 @@
         "${ users } usuari",
         "${ users } usuaris"
       ],
+      "Amount due": [
+        "Import pendent"
+      ],
+      "Amount due after trial": [
+        "Import a pagar després de la prova"
+      ],
+      "Amount due now": [
+        "Import pendent de pagament"
+      ],
+      "month": [
+        "mes"
+      ],
       "Subtotal": [
         "Subtotal"
       ],
@@ -2553,17 +2557,15 @@
         "Subtotal per ${ cycle } mes",
         "Subtotal per ${ cycle } mesos"
       ],
+      "Summary": [
+        "Resum"
+      ],
       "Total": [
         "Total"
       ],
-      "Total for ${ n } month": [
-        "Total per ${ n } mes",
-        "Total per ${ n } mesos"
-      ]
-    },
-    "Checkout summary": {
-      "month": [
-        "mes"
+      "Total for ${ cycle } month": [
+        "Total per ${ cycle } mes",
+        "Total per ${ cycle } mesos"
       ]
     },
     "Collapsible tooltip": {
@@ -7792,9 +7794,6 @@
       "Amount below minimum (${ amount }).": [
         "Import inferior al mínim (${ amount })."
       ],
-      "Amount due": [
-        "Import pendent"
-      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un àlies de correu electrònic funciona com una adreça de correu electrònic, però redueix el correu brossa i manté ocultes la vostra adreça de correu electrònic real i la vostra identitat."
       ],
@@ -8169,8 +8168,8 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "No oblideu aquesta contrasenya. Si l'oblideu, no podreu administrar la vostra organització."
       ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Recordeu la vostra contrasenya? ${ verifyButton }"
+      "Do you remember your password?": [
+        "Recordeu la vostra contrasenya?"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Voleu revocar totes les altres sessions i l’actual?"
@@ -9450,9 +9449,6 @@
       "Subscription starts on ${ startsOnTime }": [
         "La subscripció comença el ${ startsOnTime }"
       ],
-      "Summary": [
-        "Resum"
-      ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Aviat estarà disponible el suport per al monitoratge de dominis personalitzats i d'adreces electròniques que no siguin de ${ BRAND_NAME }."
       ],
@@ -9885,6 +9881,9 @@
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Utilitzeu un mètode de recuperació per desactivar els mètodes d'autenticació de doble factor."
+      ],
+      "Use an existing email or create a free ${ protonDomain } address.": [
+        "Utilitzeu un correu electrònic existent o creeu una adreça de ${ protonDomain } gratuïta."
       ],
       "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
         "Utilitza diverses adreces de correu electrònic amb ${ MAIL_APP_NAME }. Afegeix una nova adreça ${ BRAND_NAME } o connecta un altre compte de correu electrònic per gestionar-ho tot des d'una safata d'entrada."

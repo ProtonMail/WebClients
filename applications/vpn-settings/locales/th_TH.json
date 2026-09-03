@@ -1678,14 +1678,6 @@
         "คุณถึงขีดจำกัดการทดลองใช้แล้ว"
       ]
     },
-    "b2b_trials_2025_Label": {
-      "Amount due after trial": [
-        "ยอดที่ต้องชำระหลังการทดลองใช้"
-      ],
-      "Amount due now": [
-        "ยอดที่ต้องชำระตอนนี้"
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "ยกเลิกการเป็นสมาชิก"
@@ -2210,14 +2202,6 @@
       ],
       "Total": [
         "รวม"
-      ],
-      "Total for ${ n } month": [
-        "ยอดรวมทั้งสิ้นสำหรับ ${ n } เดือน"
-      ]
-    },
-    "Checkout summary": {
-      "month": [
-        "เดือน"
       ]
     },
     "Collapsible tooltip": {
@@ -6985,9 +6969,6 @@
       "Amount below minimum (${ amount }).": [
         "จำนวนด้านล่างต้องมีอย่างน้อยสุด (${ amount })"
       ],
-      "Amount due": [
-        "จำนวนเงินที่ต้องชำระ"
-      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "นามแฝงอีเมลทำงานเหมือนที่อยู่อีเมล แต่ช่วยลดสแปมและซ่อนที่อยู่อีเมลจริงและข้อมูลระบุตัวตน"
       ],
@@ -7314,9 +7295,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "อย่าลืมรหัสผ่านนี้ ถ้าคุณลืม คุณจะไม่สามารถจัดการองค์กรของคุณได้"
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "จำรหัสผ่านได้หรือไม่? ${ verifyButton }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "คุณต้องการที่จะยกเลิกเซสชั่นทั้งหมด ยกเว้นเซสชั่นปัจจุบัน หรือไม่?"
@@ -8481,9 +8459,6 @@
       ],
       "Subscription starts on ${ startsOnTime }": [
         "การสมัครสมาชิกเริ่มต้นในวันที่ ${ startsOnTime }"
-      ],
-      "Summary": [
-        "สรุป"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "การรองรับสำหรับการตรวจสอบโดเมนที่กำหนดเองและที่อยู่อีเมลที่ไม่ใช่ของ ${ BRAND_NAME } จะมาในเร็วๆ นี้"
