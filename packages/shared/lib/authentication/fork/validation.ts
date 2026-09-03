@@ -25,7 +25,7 @@ export const getValidatedApp = (app = ''): APP_NAMES | undefined => {
                 acc[key as keyof typeof acc] = value.replace('mail', safeAppName).replace('Mail', 'Account (internal)');
                 return acc;
             },
-            APPS_CONFIGURATION[APPS.PROTONMAIL]
+            { ...APPS_CONFIGURATION[APPS.PROTONMAIL] }
         );
         return app as APP_NAMES;
     }
