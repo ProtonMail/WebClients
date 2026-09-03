@@ -25,9 +25,6 @@
       ]
     },
     "Accessibility announcement": {
-      "${ BRAND_NAME } background applied": [
-        "${ BRAND_NAME } arka planı uygulandı"
-      ],
       "${ name } joined the meeting": [
         "${ name } görüşmeye katıldı"
       ],
@@ -64,20 +61,14 @@
       "A participant reacted with ${ emoji }": [
         "Bir katılımcı ${ emoji } tepkisi verdi"
       ],
-      "Abstract background applied": [
-        "Soyut arka plan uygulandı"
-      ],
       "Background effect turned off": [
         "Arka plan etkisi kapatıldı"
       ],
-      "Beach background applied": [
-        "Plaj arka planı uygulandı"
+      "Background removed": [
+        "Arka plan kaldırıldı"
       ],
       "Blurred background applied": [
         "Bulanık arka plan uygulandı"
-      ],
-      "Coffee place background applied": [
-        "Kahve dükkanı arka planı uygulandı"
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Bağlantı, ağ kısıtlamaları nedeniyle TURN aktarım kipi ile kuruldu. Gecikme ve arama kalitesi sorunları yaşanabilir."
@@ -85,17 +76,11 @@
       "Connection lost. Reconnecting…": [
         "Bağlantı kesildi. Yeniden bağlanıyor…"
       ],
-      "Mountain background applied": [
-        "Dağ manzarası arka planı uygulandı"
-      ],
       "New chat message: ${ message }": [
         "Yeni sohbet iletisi: ${ message }"
       ],
       "Now starting recording": [
         "Kayıt şimdi başlatılıyor"
-      ],
-      "Office background applied": [
-        "Ofis arka planı uygulandı"
       ],
       "Reconnected to the meeting": [
         "Görüşme ile yeniden bağlantı kuruldu"
@@ -156,6 +141,9 @@
       ],
       "Your camera has been turned off by the host": [
         "Kameranız görüşme sahibi tarafından kapatıldı"
+      ],
+      "Your own background applied": [
+        "Kendi arka planınız uygulandı"
       ]
     },
     "Action": {
@@ -171,6 +159,9 @@
       ],
       "Add another account": [
         "Başka bir hesap ekle"
+      ],
+      "Add your own background": [
+        "Kendi arka planınızı ekleyin"
       ],
       "Admit ${ participantName }": [
         "${ participantName } katılımcısını kabul et"
@@ -517,6 +508,9 @@
       ],
       "Rejoin meeting": [
         "Görüşmeye yeniden katıl"
+      ],
+      "Remove ${ name }": [
+        "${ name } arka planını sil"
       ],
       "Remove reaction ${ emoji }, ${ identities.length } reaction": [
         "${ emoji } tepkisini kaldır, ${ identities.length } tepki",
@@ -1890,8 +1884,71 @@
       ]
     },
     "Error": {
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Telif hakkı ihlali veya çalıntı verileri bildirirken bir ileti yazılmalıdır"
+      ],
+      "An error occurred": [
+        "Bir sorun çıktı"
+      ],
       "Background blur initialization failed. Please toggle your camera or background blur again": [
         "Arka plan bulanıklığı hazırlanamadı. Lütfen kameranızı veya arka plan bulanıklığını yeniden kapatıp açın"
+      ],
+      "Bookmark password is not available": [
+        "Yer imi parolası kullanılamıyor"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Fotoğraf, geçerli bir adı olmadan albüme eklenemez"
+      ],
+      "Cannot download a folder": [
+        "Bir klasör indirilemedi"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Öge, geçerli bir adı olmadan taşınamaz. Lütfen önce ögeyi yeniden adlandırın"
+      ],
+      "Cannot share root folder": [
+        "Kök klasör paylaşılamaz"
+      ],
+      "Cannot verify the author of this file": [
+        "Bu dosyanın sahibi doğrulanamadı"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Bu dosyanın yükleyen kişi doğrulanamadı"
+      ],
+      "Copy operation aborted": [
+        "Kopyalama işlemi iptal edildi"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Öge, klasör olmayan bir ögeye kopyalanamaz"
+      ],
+      "Could not add this background. Check your connection and try again.": [
+        "Bu arka plan eklenemedi. İnternet bağlantınızı denetleyip yeniden deneyin."
+      ],
+      "Could not add this background. Please try again.": [
+        "Bu arka plan eklenemedi. Lütfen yeniden deneyin."
+      ],
+      "Could not find an available name": [
+        "Kullanılabilecek bir ad bulunamadı"
+      ],
+      "Could not load sharing details": [
+        "Paylaşım ayrıntıları yüklenemedi"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Görsel ön izlemesi yüklenemedi: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Bu dosyanın bir parçası okunamadı: ${ message }"
+      ],
+      "Could not remove this background. Check your connection and try again.": [
+        "Bu arka plan kaldırılamadı. Bağlantınızı denetleyip yeniden deneyin."
+      ],
+      "Could not remove this background. Please try again.": [
+        "Bu arka plan kaldırılamadı. Lütfen yeniden deneyin."
+      ],
+      "Could not unlock the parent folder": [
+        "Üst klasörün kilidi açılamadı"
+      ],
+      "Could not unlock this item": [
+        "Bu ögenin kilidi açılamadı"
       ],
       "Couldn’t play the recording on this speaker.": [
         "Kayıt bu hoparlörde oynatılamadı."
@@ -1901,6 +1958,18 @@
       ],
       "Couldn’t start the microphone test.": [
         "Mikrofon denemesi başlatılamadı."
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Klasör olmayan ögelerin içinde belge oluşturulamaz"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Klasör olmayan ögelerin içinde dosya oluşturulamaz"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Klasör olmayan ögelerin içinde klasör oluşturulamaz"
+      ],
+      "Device not found": [
+        "Aygıt bulunamadı"
       ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
@@ -1917,6 +1986,9 @@
       "Event deleted": [
         "Etkinlik silindi"
       ],
+      "Expiration date cannot be in the past": [
+        "Geçerlilik sonu tarihi geçmişte olamaz"
+      ],
       "Failed to admit the participant. Please try again.": [
         "Katılımcı kabul edilemedi. Lütfen yeniden deneyin."
       ],
@@ -1931,6 +2003,27 @@
       ],
       "Failed to create personal meeting, please refresh the page": [
         "Kişisel görüşme oluşturulamadı, lütfen sayfayı yenileyin."
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Yer imi anahtarının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Yer imi adının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Yer iminin şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "İçerik anahtarının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Öge adının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Düğüm anahtarının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Sürüm üst bilgilerinin şifresi çözülemedi"
       ],
       "Failed to decrypt session key": [
         "Oturum anahtarının şifresi çözülemedi"
@@ -1955,6 +2048,9 @@
       ],
       "Failed to edit room name": [
         "Oda adı düzenlenemedi"
+      ],
+      "Failed to get inviter keys": [
+        "Davet edilenin anahtarları alınamadı"
       ],
       "Failed to join meeting. Please try again later.": [
         "Görüşmeye katılınamadı. Lütfen bir süre sonra yeniden deneyin."
@@ -2004,14 +2100,38 @@
       "Failed to update waiting room setting. Please try again.": [
         "Bekleme odası ayarı güncellenemedi. Lütfen yeniden deneyin."
       ],
+      "Failed to verify invitation": [
+        "Davet doğrulanamadı"
+      ],
+      "File download failed due to empty response": [
+        "Boş yanıt nedeniyle dosya indirilemedi"
+      ],
+      "File has no revision": [
+        "Dosyanın bir sürümü yok"
+      ],
+      "Image preview not found": [
+        "Görsel ön izlemesi bulunamadı"
+      ],
       "Incorrect username": [
         "Kullanıcı adı yanlış"
       ],
       "Invalid meeting link": [
         "Görüşme bağlantısı geçersiz"
       ],
+      "Invalid URL": [
+        "Adres geçersiz"
+      ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
+      ],
+      "Invitation not found": [
+        "Davet bulunamadı"
+      ],
+      "Item not found": [
+        "Öge bulunamadı"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Eski herkese açık bağlantı güncellenemedi. Lütfen yeni bir herkese açık bağlantı oluşturun."
       ],
       "Live captions aren't working. Try turning them off and on again.": [
         "Canlı alt yazı çalışmıyor. Kapatıp yeniden açmayı deneyin."
@@ -2025,17 +2145,72 @@
       "Microphone access is blocked. Allow it in your browser settings.": [
         "Mikrofona erişim engellendi. Tarayıcı ayarlarınızdan erişme izni verin."
       ],
+      "Missing inviter email": [
+        "Davet edilenin e-posta adresi eksik"
+      ],
+      "Missing signature": [
+        "İmza eksik"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "${ signatureType } için imza eksik"
+      ],
+      "Move operation aborted": [
+        "Taşıma işlemi iptal edildi"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Öge, klasör olmayan bir ögeye taşınamaz"
+      ],
+      "Moving root item is not allowed": [
+        "Kök öge taşınamaz"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Ad en fazla ${ MAX_NODE_NAME_LENGTH } karakter uzunluğunda olabilir",
+        "Ad en fazla ${ MAX_NODE_NAME_LENGTH } karakter uzunluğunda olabilir"
+      ],
+      "Name must not be empty": [
+        "Ad boş olamaz"
+      ],
+      "No file data was received. Please try again.": [
+        "Herhangi bir dosya verisi alınmadı. Lütfen yeniden deneyin."
+      ],
       "Not a valid number": [
         "Numara geçerli değil"
+      ],
+      "Only admins can convert external invitations": [
+        "Yalnızca yöneticiler dış davetleri dönüştürebilir"
+      ],
+      "Operation aborted": [
+        "İşlem iptal edildi"
+      ],
+      "Operation failed, try again later": [
+        "İşlem tamamlanamadı. Bir süre sonra yeniden deneyin"
       ],
       "Organization key is not decrypted": [
         "Kuruluş anahtarının şifresi çözülmedi"
       ],
+      "Part of the file appears to be corrupted": [
+        "Dosyanın bir bölümü bozulmuş gibi görünüyor"
+      ],
       "Passwords do not match": [
         "Parola ile onayı aynı değil"
       ],
+      "Photo is already in the target album": [
+        "Fotoğraf zaten hedef albümde bulunuyor"
+      ],
+      "Photo not found": [
+        "Fotoğraf bulunamadı"
+      ],
+      "Pick a JPEG, PNG or WebP image.": [
+        "Bir JPEG, PNG veya WebP görseli seçin."
+      ],
       "Please allow screen sharing in your system permissions, then try again": [
         "Lütfen sistem izinlerinizden ekran paylaşımı iznini verip yeniden deneyin"
+      ],
+      "Renaming root item is not allowed": [
+        "Kök öge yeniden adlandırılamaz"
+      ],
+      "Request aborted": [
+        "İstek iptal edildi"
       ],
       "Request timed out": [
         "İstek zaman aşımına uğradı"
@@ -2046,8 +2221,35 @@
       "Screen share is not supported on mobile browsers": [
         "Mobil tarayıcılar ekran paylaşımını desteklemiyor"
       ],
+      "Signature is missing": [
+        "İmza eksik"
+      ],
       "Signature verification failed": [
         "İmza doğrulanamadı"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "İmza doğrulanamadı: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "${ signatureType } için imza doğrulanamadı"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "${ signatureType } için imza doğrulanamadı: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Bazı dosya verileri yüklenemedi. Lütfen yeniden deneyin."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Bazı dosya parçaları yüklenemedi. Lütfen yeniden deneyin."
+      ],
+      "Some items could not be loaded": [
+        "Bazı ögeler yüklenemedi"
+      ],
+      "Something went wrong": [
+        "Bir sorun çıktı"
+      ],
+      "Something went wrong. Please try again.": [
+        "Bir sorun çıktı. Lütfen yeniden deneyin."
       ],
       "The email addresses do not match": [
         "E-posta adresleri eşleşmiyor"
@@ -2061,6 +2263,12 @@
       "The selected microphone is no longer available.": [
         "Seçilmiş mikrofon artık yok."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Yüklenen dosya özgün dosya ile eşleşmiyor. Lütfen yeniden deneyin."
+      ],
+      "This background could not be saved in this browser.": [
+        "Bu arka plan bu tarayıcıda kaydedilemedi."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
       ],
@@ -2070,8 +2278,44 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
       ],
+      "This file has missing crypto material": [
+        "Bu dosyada şifreleme materyali eksik"
+      ],
+      "This file has no version available to download": [
+        "Bu dosyanın indirilebilecek bir sürümü yok"
+      ],
+      "This file name is too long. Rename the image and try again.": [
+        "Bu dosya adı çok uzun. Görseli yeniden adlandırıp yeniden deneyin."
+      ],
+      "This file version could not be uploaded": [
+        "Bu dosya sürümü yüklenemedi"
+      ],
+      "This image could not be read. Pick another one.": [
+        "Bu görsel okunamadı. Başka bir görsel seçin."
+      ],
+      "This image is too big. Pick one up to ${ maxEdge } pixels wide and tall.": [
+        "Bu görsel çok büyük. Genişliği ve yüksekliği en fazla ${ maxEdge } piksel olan bir görsel seçin."
+      ],
+      "This image is too large. Pick one under ${ maxMegabytes } MB.": [
+        "Bu görsel çok büyük. ${ maxMegabytes } MB boyutundan küçük bir görsel seçin."
+      ],
+      "This item has no image preview": [
+        "Bu ögenin görsel ön izlemesi yok"
+      ],
+      "This item is no longer shared": [
+        "Bu öge artık paylaşılmıyor"
+      ],
+      "This item is not shared": [
+        "Bu öge paylaşılmıyor"
+      ],
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
         "Bu görüşmenin sürümü eski. Sahibi onu sonlandırmalı ve Meet uygulamasının sürümünü güncelledikten sonra yeniden başlatmalı."
+      ],
+      "Too many server errors, please try again later": [
+        "Çok fazla sayıda sunucu sorunu çıktı. Lütfen bir süre sonra yeniden deneyin"
+      ],
+      "Too many server requests, please try again later": [
+        "Çok fazla sayıda sunucu isteği yapıldı. Lütfen bir süre sonra yeniden deneyin"
       ],
       "Try using only letters, numerals, and _.-": [
         "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
@@ -2085,11 +2329,38 @@
       "Username must end with a letter or digit": [
         "Kullanıcı adı bir harf ya da rakam ile bitmeli"
       ],
+      "Verification keys are not available": [
+        "Doğrulama anahtarları bulunamadı"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "${ signatureType } için doğrulama anahtarları yok"
+      ],
       "Virtual background initialization failed. Please toggle your camera or pick a background again": [
         "Sanal arka plan hazırlanamadı. Lütfen kameranızı değiştirin ya da yeniden bir arka plan seçin"
       ],
       "We couldn’t send a verification code using this method.": [
         "Doğrulama kodu bu yöntemle gönderilemedi."
+      ],
+      "You can create public links for your own files only": [
+        "Yalnızca kendi dosyalarınız için herkese açık bağlantı oluşturabilirsiniz"
+      ],
+      "You can only leave items that are shared with you": [
+        "Yalnızca sizinle paylaşılan ögelerden ayrılabilirsiniz"
+      ],
+      "You can only upload a new version to a file": [
+        "Bir dosyaya yalnızca yeni bir sürüm yükleyebilirsiniz"
+      ],
+      "You can update a public link for your own files only": [
+        "Yalnızca kendi dosyalarınızın herkese açık bağlantısını güncelleyebilirsiniz"
+      ],
+      "You do not have access to this item": [
+        "Bu ögeye erişme izniniz yok"
+      ],
+      "You do not have access to this shared item": [
+        "Bu paylaşılan ögeye erişme izniniz yok"
+      ],
+      "You have reached the maximum number of custom backgrounds.": [
+        "Olabilecek en fazla özel arka plan sayısına ulaştınız."
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "Tarayıcınızın depolama alanı doldu. Bu ana kadar olan kayıt kaydedildi."
@@ -2337,6 +2608,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
       ],
+      "Adding ${ name }": [
+        "${ name } ekleniyor"
+      ],
       "Admit": [
         "Kabul et"
       ],
@@ -2366,6 +2640,9 @@
       ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
+      ],
+      "Author is not provided on public link": [
+        "Sahip herkese açık bağlantıda belirtilmemiş"
       ],
       "Available with a paid plan": [
         "Ücretli bir tarife ile kullanılabilir"
@@ -3036,6 +3313,9 @@
       "You can now return to the application to continue": [
         "İlerlemek için uygulamaya dönebilirsiniz"
       ],
+      "You can save up to ${ max } of your own backgrounds.": [
+        "Kendi arka planınız olarak en fazla ${ max } tane kaydedebilirsiniz."
+      ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Görüşmede mikrofonunuzu ve kameranızı istediğiniz zaman kapatabilirsiniz"
       ],
@@ -3062,6 +3342,9 @@
       ],
       "Your always available meeting room": [
         "Her zaman kullanabileceğiniz görüşme odası"
+      ],
+      "Your backgrounds could not be loaded, so a new one cannot be added right now.": [
+        "Arka planlarınız yüklenemedi. Bu nedenle şu anda yeni bir arka plan eklenemiyor."
       ],
       "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
         "Tarayıcınız kameraya ve mikrofona erişme izni vermedi. Erişme izinlerini vermek için tarayıcı ayarlarınızı değiştirin ve görüşmeye yeniden katılın."
@@ -3092,9 +3375,6 @@
       ]
     },
     "Label": {
-      "${ BRAND_NAME } background": [
-        "${ BRAND_NAME } arka plan"
-      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
       ],
@@ -3104,9 +3384,6 @@
       "${ numberOfStars } star": [
         "${ numberOfStars } yıldız",
         "${ numberOfStars } yıldız"
-      ],
-      "Abstract background": [
-        "Soyut arka plan"
       ],
       "Add optional details": [
         "İsteğe bağlı bilgiler ekleyin"
@@ -3138,9 +3415,6 @@
       "Background color": [
         "Arka plan rengi"
       ],
-      "Beach background": [
-        "Plaj arka planı"
-      ],
       "Blurred (next)": [
         "Bulanık (sonraki)"
       ],
@@ -3164,9 +3438,6 @@
       ],
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
-      ],
-      "Coffee place background": [
-        "Kahve dükkanı arka planı"
       ],
       "Connection Quality": [
         "Bağlantı kalitesi"
@@ -3276,9 +3547,6 @@
       "Monday to Friday": [
         "Pazartesi ile Cuma arasında"
       ],
-      "Mountain background": [
-        "Dağ manzarası arka planı"
-      ],
       "Muted": [
         "Sesi kapatılmış"
       ],
@@ -3287,9 +3555,6 @@
       ],
       "Next": [
         "İlerle"
-      ],
-      "Office background": [
-        "Ofis arka planı"
       ],
       "Operating system": [
         "İşletim sistemi"
@@ -3570,6 +3835,26 @@
       ],
       "Type an encrypted message...": [
         "Şifrelenmiş bir ileti yazın..."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "öznitelikler"
+      ],
+      "content key": [
+        "içerik anahtarı"
+      ],
+      "hash key": [
+        "karma anahtarı"
+      ],
+      "key": [
+        "anahtar"
+      ],
+      "membership": [
+        "üyelik"
+      ],
+      "name": [
+        "ad"
       ]
     },
     "Role": {

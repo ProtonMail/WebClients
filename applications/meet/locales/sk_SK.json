@@ -61,6 +61,15 @@
       "A participant reacted with ${ emoji }": [
         "Účastník reagoval s ${ emoji }"
       ],
+      "Background effect turned off": [
+        "Efekt pozadia je vypnutý"
+      ],
+      "Background removed": [
+        "Pozadie odstránené"
+      ],
+      "Blurred background applied": [
+        "Bolo použité rozmazané pozadie"
+      ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Pripojené prostredníctvom režimu TURN relay z dôvodu obmedzení siete. Môže to zvýšiť latenciu a ovplyvniť kvalitu hovoru."
       ],
@@ -132,6 +141,9 @@
       ],
       "Your camera has been turned off by the host": [
         "Hostiteľ vypol vašu kameru"
+      ],
+      "Your own background applied": [
+        "Vaše vlastné pozadie bolo použité"
       ]
     },
     "Action": {
@@ -150,6 +162,9 @@
       "Add another account": [
         "Pridať ďalší účet"
       ],
+      "Add your own background": [
+        "Pridajte si vlastné pozadie"
+      ],
       "Admit ${ participantName }": [
         "Pustiť ${ participantName }"
       ],
@@ -158,6 +173,9 @@
       ],
       "Allow access": [
         "Povoliť prístup"
+      ],
+      "Allow live captions": [
+        "Povoliť titulky v reálnom čase"
       ],
       "Anyone with the link can join immediately": [
         "Každý, kto má tento odkaz, sa môže ihneď pripojiť"
@@ -182,6 +200,12 @@
       ],
       "Back": [
         "Späť"
+      ],
+      "Backgrounds and effects": [
+        "Pozadie a efekty"
+      ],
+      "Blur background": [
+        "Rozostrené pozadie"
       ],
       "Cancel": [
         "Zrušiť"
@@ -312,6 +336,9 @@
       "Enable camera": [
         "Povoliť kameru"
       ],
+      "Enable captions": [
+        "Povoliť titulky"
+      ],
       "Enable waiting room": [
         "Povoliť čakáreň"
       ],
@@ -336,6 +363,9 @@
       "Get verification code": [
         "Odoslať overovací kód"
       ],
+      "Getting ready...": [
+        "Pripravuje sa..."
+      ],
       "Help and feedback": [
         "Pomoc a spätná väzba"
       ],
@@ -350,6 +380,9 @@
       ],
       "Hide timezones": [
         "Skryť časové pásma"
+      ],
+      "Incoming video": [
+        "Prichádzajúce video"
       ],
       "Insert emoji": [
         "Vložiť smajlíka"
@@ -375,11 +408,17 @@
       "Leave meeting": [
         "Opustiť schôdzku"
       ],
+      "Live captions": [
+        "Živé titulky"
+      ],
       "Lock meeting": [
         "Uzamknúť stretnutie"
       ],
       "Lower hand": [
         "Zložiť ruku"
+      ],
+      "Meeting timer": [
+        "Časovač schôdze"
       ],
       "Minimize preview": [
         "Zmenšiť náhľad"
@@ -399,6 +438,9 @@
       "Next page": [
         "Ďalšia strana"
       ],
+      "No effect": [
+        "Žiadny efekt"
+      ],
       "Noise cancellation": [
         "Potlačenie hluku"
       ],
@@ -416,6 +458,18 @@
       ],
       "Pause": [
         "Pozastaviť"
+      ],
+      "Picture-in-picture while sharing": [
+        "Obraz v obraze počas zdieľania"
+      ],
+      "Playing back...": [
+        "Prehrávanie..."
+      ],
+      "Playing sound...": [
+        "Prehrávanie zvuku..."
+      ],
+      "Preview logs": [
+        "Náhľad záznamov"
       ],
       "Previous month": [
         "Predchádzajúci mesiac"
@@ -441,6 +495,9 @@
       "Record": [
         "Záznam"
       ],
+      "Recording your microphone...": [
+        "Nahrávanie vášho mikrofónu..."
+      ],
       "Refer a friend": [
         "Odporučiť priateľa"
       ],
@@ -455,6 +512,9 @@
       ],
       "Rejoin meeting": [
         "Znova sa pripojiť k stretnutiu"
+      ],
+      "Remove ${ name }": [
+        "Odstrániť ${ name }"
       ],
       "Remove reaction ${ emoji }, ${ identities.length } reaction": [
         "Odstrániť reakciu ${ emoji }, ${ identities.length } reakcia",
@@ -512,6 +572,9 @@
       ],
       "Search countries": [
         "Vyhľadať krajiny"
+      ],
+      "Self view": [
+        "Zobrazenie seba samého"
       ],
       "Send an encrypted message": [
         "Odoslať zašifrovanú správu"
@@ -597,6 +660,12 @@
       "Tap to unblock audio playback": [
         "Ťuknite na položku na odblokovanie prehrávania zvuku"
       ],
+      "Test microphone": [
+        "Otestovať mikrofón"
+      ],
+      "Test speakers": [
+        "Testovať reproduktory"
+      ],
       "The current link will stop working.": [
         "Tento odkaz prestane fungovať."
       ],
@@ -654,6 +723,9 @@
       "View invoice": [
         "Zobraziť faktúru"
       ],
+      "Virtual backgrounds": [
+        "Virtuálne pozadia"
+      ],
       "Waiting room": [
         "Čakáreň"
       ],
@@ -665,8 +737,14 @@
       ]
     },
     "Alt": {
+      "Allow live captions": [
+        "Povoliť titulky v reálnom čase"
+      ],
       "Audio settings": [
         "Nastavenie zvuku"
+      ],
+      "Backgrounds": [
+        "Pozadia"
       ],
       "Blur background": [
         "Rozostriť pozadie"
@@ -686,14 +764,26 @@
       "Copy meeting link": [
         "Kopírovať odkaz na schôdzu"
       ],
+      "Debug devices": [
+        "Ladiť zariadenia"
+      ],
       "Debug overlay": [
         "Ladiaca vrstva"
+      ],
+      "Device Debugger": [
+        "Ladiaci nástroj zariadenia"
       ],
       "Go to dashboard": [
         "Prejsť na nástenku"
       ],
+      "Incoming video": [
+        "Prichádzajúce video"
+      ],
       "Leave Meeting": [
         "Opustiť stretnutie"
+      ],
+      "Live captions": [
+        "Živé titulky"
       ],
       "Lock meeting": [
         "Uzamknúť stretnutie"
@@ -703,6 +793,9 @@
       ],
       "Meeting details": [
         "Podrobnosti stretnutia"
+      ],
+      "Meeting timer": [
+        "Časovač schôdze"
       ],
       "More options": [
         "Ďalšie možnosti"
@@ -722,6 +815,9 @@
       "Participants": [
         "Účastníci"
       ],
+      "Picture-in-picture while sharing": [
+        "Obraz v obraze počas zdieľania"
+      ],
       "Raise hand": [
         "Zdvihnúť ruku"
       ],
@@ -733,6 +829,9 @@
       ],
       "Screen share": [
         "Zdieľanie obrazovky"
+      ],
+      "Self view": [
+        "Zobrazenie seba samého"
       ],
       "Settings": [
         "Nastavenia"
@@ -777,6 +876,12 @@
       "Audio settings": [
         "Nastavenie zvuku"
       ],
+      "Backgrounds": [
+        "Pozadia"
+      ],
+      "Blur and personal": [
+        "Rozostrenie a osobné nastavenia"
+      ],
       "Chat": [
         "Chat"
       ],
@@ -792,6 +897,9 @@
       "Meeting rooms": [
         "Rokovacie miestnosti"
       ],
+      "Microphone input level": [
+        "Úroveň vstupného signálu mikrofónu"
+      ],
       "Participants": [
         "Účastníci"
       ],
@@ -806,6 +914,9 @@
       ],
       "Video settings": [
         "Nastavenie videa"
+      ],
+      "Virtual backgrounds": [
+        "Virtuálne pozadia"
       ]
     },
     "Badge": {
@@ -1779,8 +1890,92 @@
       ]
     },
     "Error": {
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Pri nahlásení porušenia autorských práv alebo odcudzenia údajov je potrebné zanechať správu"
+      ],
+      "An error occurred": [
+        "Došlo k chybe"
+      ],
       "Background blur initialization failed. Please toggle your camera or background blur again": [
         "Inicializácia rozostrenia pozadia sa nepodarila. Skúste znovu zapnúť a vypnúť fotoaparát alebo funkciu rozostrenia pozadia."
+      ],
+      "Bookmark password is not available": [
+        "Heslo záložky nie je k dispozícii"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Fotografiu bez platného názvu nie je možné pridať do albumu"
+      ],
+      "Cannot download a folder": [
+        "Priečinok nie je možné stiahnuť"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Položku bez platného názvu nie je možné presunúť, najskôr ju premenujte, prosím"
+      ],
+      "Cannot share root folder": [
+        "Koreňový priečinok nie je možné zdieľať"
+      ],
+      "Cannot verify the author of this file": [
+        "Nie je možné overiť autora tohto súboru"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Nie je možné overiť, kto tento súbor nahral"
+      ],
+      "Copy operation aborted": [
+        "Operácia kopírovania bola prerušená"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Kopírovanie položky do miesta, ktoré nie je priečinkom, nie je povolené"
+      ],
+      "Could not add this background. Check your connection and try again.": [
+        "Toto pozadie sa nepodarilo pridať. Skontrolujte pripojenie a skúste to znova."
+      ],
+      "Could not add this background. Please try again.": [
+        "Toto pozadie sa nepodarilo pridať. Skúste to znova, prosím."
+      ],
+      "Could not find an available name": [
+        "Nepodarilo sa nájsť voľné meno"
+      ],
+      "Could not load sharing details": [
+        "Nepodarilo sa načítať podrobnosti o zdieľaní"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Nepodarilo sa načítať náhľad obrázku: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Nepodarilo sa prečítať časť tohto súboru: ${ message }"
+      ],
+      "Could not remove this background. Check your connection and try again.": [
+        "Toto pozadie sa nepodarilo odstrániť. Skontrolujte pripojenie a skúste to znova."
+      ],
+      "Could not remove this background. Please try again.": [
+        "Toto pozadie sa nepodarilo odstrániť. Skúste to znova, prosím."
+      ],
+      "Could not unlock the parent folder": [
+        "Nepodarilo sa odomknúť nadradený priečinok"
+      ],
+      "Could not unlock this item": [
+        "Túto položku sa nepodarilo odomknúť"
+      ],
+      "Couldn’t play the recording on this speaker.": [
+        "Záznam sa na tomto reproduktore nepodarilo prehrať."
+      ],
+      "Couldn’t play the test sound on this speaker.": [
+        "Na tomto reproduktore sa nepodarilo prehrať testovací zvuk."
+      ],
+      "Couldn’t start the microphone test.": [
+        "Test mikrofónu sa nepodarilo spustiť."
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Vytváranie dokumentov mimo zložiek nie je povolené"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Vytváranie súborov mimo priečinkov nie je povolené"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Vytváranie priečinkov mimo priečinkov nie je povolené"
+      ],
+      "Device not found": [
+        "Zariadenie nebolo nájdené"
       ],
       "Domain not available, try again later": [
         "Doména nie je dostupná, skúste to znova neskôr"
@@ -1797,6 +1992,9 @@
       "Event deleted": [
         "Udalosť vymazaná"
       ],
+      "Expiration date cannot be in the past": [
+        "Dátum ukončenia platnosti nemôže byť v minulosti"
+      ],
       "Failed to admit the participant. Please try again.": [
         "Nepodarilo sa prijať účastníka. Skúste to znova, prosím."
       ],
@@ -1811,6 +2009,27 @@
       ],
       "Failed to create personal meeting, please refresh the page": [
         "Vytvorenie osbného stretnutia zlyhalo, obnovte stránku, prosím."
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Nepodarilo sa dešifrovať kľúč záložky: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Nepodarilo sa dešifrovať názov záložky: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Nepodarilo sa dešifrovať heslo záložky: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Nepodarilo sa dešifrovať kľúč obsahu: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Nepodarilo sa dešifrovať názov položky: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Nepodarilo sa dešifrovať kľúč uzla: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Nepodarilo sa dešifrovať metadáta revízie"
       ],
       "Failed to decrypt session key": [
         "Nepodarilo sa dešifrovať kľúč relácie"
@@ -1836,6 +2055,9 @@
       "Failed to edit room name": [
         "Nepodarilo sa upraviť názov miestnosti"
       ],
+      "Failed to get inviter keys": [
+        "Nepodarilo sa získať kľúče pozývajúceho"
+      ],
       "Failed to join meeting. Please try again later.": [
         "Pripojenie k schôdzi sa nepodarilo. Skúste to neskôr, prosím."
       ],
@@ -1844,6 +2066,9 @@
       ],
       "Failed to lock meeting": [
         "Stretnutie sa nepodarilo uzamknúť"
+      ],
+      "Failed to request live captions": [
+        "Nepodarilo sa vyžiadať titulky v reálnom čase"
       ],
       "Failed to rotate personal meeting link": [
         "Zlyhala rotácia osobného odkazu na stretnutie"
@@ -1869,8 +2094,29 @@
       "Failed to unlock meeting": [
         "Stretnutie sa nepodarilo odomknúť"
       ],
+      "Failed to update caption language. Please try again.": [
+        "Aktualizácia jazyka popisu sa nepodarila. Skúste to znova, prosím."
+      ],
+      "Failed to update live captions availability": [
+        "Nepodarilo sa aktualizovať dostupnosť titulkov v reálnom čase"
+      ],
+      "Failed to update live captions. Please try again.": [
+        "Aktualizácia živých titulkov sa nepodarila. Skúste to znova, prosím."
+      ],
       "Failed to update waiting room setting. Please try again.": [
         "Aktualizácia nastavení čakárne zlyhala. Skúste to znova, prosím."
+      ],
+      "Failed to verify invitation": [
+        "Overenie pozvánky zlyhalo"
+      ],
+      "File download failed due to empty response": [
+        "Sťahovanie súboru sa nepodarilo kvôli prázdnej odpovedi"
+      ],
+      "File has no revision": [
+        "Súbor nemá žiadnu revíziu"
+      ],
+      "Image preview not found": [
+        "Náhľad obrázka nebol nájdený"
       ],
       "Incorrect username": [
         "Nesprávne používateľské meno"
@@ -1878,20 +2124,101 @@
       "Invalid meeting link": [
         "Neplatný odkaz na schôdzu"
       ],
+      "Invalid URL": [
+        "Neplatná URL"
+      ],
       "Invalid verification code": [
         "Nesprávny overovací kód"
+      ],
+      "Invitation not found": [
+        "Pozvánka nenájdená"
+      ],
+      "Item not found": [
+        "Položka nebola nájdená"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Starý verejný odkaz nie je možné aktualizovať. Vytvorte nový verejný odkaz, prosím."
+      ],
+      "Live captions aren't working. Try turning them off and on again.": [
+        "Živé titulky nefungujú. Skúste ich vypnúť a znova zapnúť."
+      ],
+      "Live captions couldn't be started.": [
+        "Živé titulky sa nepodarilo spustiť."
+      ],
+      "Live captions have stopped.": [
+        "Živé titulky boli zastavené"
+      ],
+      "Microphone access is blocked. Allow it in your browser settings.": [
+        "Prístup k mikrofónu je blokovaný. Povoľte ho v nastaveniach prehliadača."
+      ],
+      "Missing inviter email": [
+        "Chýba emailová adresa pozývajúceho"
+      ],
+      "Missing signature": [
+        "Chýbajúci podpis"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Chýba podpis pre ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Operácia presunu bola prerušená"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Presun položky do miesta, ktoré nie je priečinkom, nie je povolené"
+      ],
+      "Moving root item is not allowed": [
+        "Presun koreňovej položky nie je povolený"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Meno môže obsahovať maximálne ${ MAX_NODE_NAME_LENGTH } znak",
+        "Meno môže obsahovať maximálne ${ MAX_NODE_NAME_LENGTH } znaky",
+        "Meno môže obsahovať maximálne ${ MAX_NODE_NAME_LENGTH } znakov",
+        "Meno môže obsahovať maximálne ${ MAX_NODE_NAME_LENGTH } znakov"
+      ],
+      "Name must not be empty": [
+        "Názov nesmie byť prázdny"
+      ],
+      "No file data was received. Please try again.": [
+        "Neboli prijaté žiadne údaje zo súboru. Skúste to znova, prosím."
       ],
       "Not a valid number": [
         "Neplatné číslo"
       ],
+      "Only admins can convert external invitations": [
+        "Externé pozvánky môžu konvertovať len správcovia"
+      ],
+      "Operation aborted": [
+        "Operácia bola prerušená"
+      ],
+      "Operation failed, try again later": [
+        "Operácia sa nepodarila, skúste to neskôr"
+      ],
       "Organization key is not decrypted": [
         "Kľúč organizácie nie je dešifrovaný"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Zdá sa, že časť súboru je poškodená"
       ],
       "Passwords do not match": [
         "Heslá sa nezhodujú"
       ],
+      "Photo is already in the target album": [
+        "Fotografia sa už v cieľovom albume nachádza"
+      ],
+      "Photo not found": [
+        "Fotografia nebola nájdená"
+      ],
+      "Pick a JPEG, PNG or WebP image.": [
+        "Vyberte obrázok vo formáte JPEG, PNG alebo WebP."
+      ],
       "Please allow screen sharing in your system permissions, then try again": [
         "Povoľte, prosím, zdieľanie obrazovky v systémových povoleniach a potom to skúste znova"
+      ],
+      "Renaming root item is not allowed": [
+        "Pomenovanie koreňovej položky nie je povolené"
+      ],
+      "Request aborted": [
+        "Dopyt prerušený"
       ],
       "Request timed out": [
         "Požiadavka časovo omeškaná"
@@ -1902,8 +2229,35 @@
       "Screen share is not supported on mobile browsers": [
         "Zdieľanie obrazovky nie je v mobilných prehliadačoch podporované"
       ],
+      "Signature is missing": [
+        "Chýba podpis"
+      ],
       "Signature verification failed": [
         "Overenie podpisu zlyhalo"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Overenie podpisu zlyhalo: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Overenie podpisu ${ signatureType } zlyhalo"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Overenie podpisu ${ signatureType } zlyhalo: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Niektoré súbory sa nepodarilo nahrať. Skúste to znova, prosím."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Niektoré časti súboru sa nepodarilo nahrať. Skúste to znova, prosím."
+      ],
+      "Some items could not be loaded": [
+        "Niektoré položky sa nepodarilo načítať"
+      ],
+      "Something went wrong": [
+        "Niečo sa pokazilo"
+      ],
+      "Something went wrong. Please try again.": [
+        "Niečo sa pokazilo. Skúste to znova, prosím."
       ],
       "The email addresses do not match": [
         "Emailové adresy sa nezhodujú"
@@ -1914,6 +2268,15 @@
       "The meeting password is invalid": [
         "Heslo k schôdzke je neplatné"
       ],
+      "The selected microphone is no longer available.": [
+        "Vybraný mikrofón už nie je k dispozícii."
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Nahratý súbor nezodpovedá originálu. Skúste to znova, prosím."
+      ],
+      "This background could not be saved in this browser.": [
+        "Toto pozadie sa v tomto prehliadači nedalo uložiť."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Toto pole presahuje maximálny počet znakov ${ maximumLength }."
       ],
@@ -1923,8 +2286,44 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Toto pole musí obsahovať minimálne ${ minimumLength } znakov."
       ],
+      "This file has missing crypto material": [
+        "V tomto súbore chýba šifrovací materiál"
+      ],
+      "This file has no version available to download": [
+        "Tento súbor nie je k dispozícii na stiahnutie v žiadnej verzii"
+      ],
+      "This file name is too long. Rename the image and try again.": [
+        "Názov tohto súboru je príliš dlhý. Premenujte obrázok a skúste to znova."
+      ],
+      "This file version could not be uploaded": [
+        "Túto verziu súboru nebolo možné nahrať"
+      ],
+      "This image could not be read. Pick another one.": [
+        "Tento obrázok sa nepodarilo prečítať. Vyberte iný."
+      ],
+      "This image is too big. Pick one up to ${ maxEdge } pixels wide and tall.": [
+        "Tento obrázok je príliš veľký. Vyberte taký, ktorého šírka a výška nepresiahnu ${ maxEdge } pixelov."
+      ],
+      "This image is too large. Pick one under ${ maxMegabytes } MB.": [
+        "Tento obrázok je príliš veľký. Vyberte obrázok s veľkosťou menšou ako ${ maxMegabytes } MB."
+      ],
+      "This item has no image preview": [
+        "Tento produkt nemá obrazovú ukážku"
+      ],
+      "This item is no longer shared": [
+        "Táto položka už nie je zdieľaná"
+      ],
+      "This item is not shared": [
+        "Táto položka nie je zdieľaná"
+      ],
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
         "Táto schôdza je v staršej verzii, hostiteľ ju musí ukončiť a obnoviť Meet, aby sa reštartoval s najnovšou verziou."
+      ],
+      "Too many server errors, please try again later": [
+        "Vyskytlo sa príliš veľa chýb servera, skúste to neskôr, prosím"
+      ],
+      "Too many server requests, please try again later": [
+        "Príliš veľa požiadaviek na server, skúste to neskôr, prosím"
       ],
       "Try using only letters, numerals, and _.-": [
         "Skúste používať iba písmená, číslice a _.-"
@@ -1938,14 +2337,47 @@
       "Username must end with a letter or digit": [
         "Používateľské meno musí končiť písmenom alebo číslom"
       ],
+      "Verification keys are not available": [
+        "Overovacie kľúče nie sú k dispozícii"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Overovacie kľúče pre ${ signatureType } nie sú k dispozícii"
+      ],
+      "Virtual background initialization failed. Please toggle your camera or pick a background again": [
+        "Inicializácia virtuálneho pozadia sa nepodarila. Skúste prepnúť kameru alebo znovu vybrať pozadie."
+      ],
       "We couldn’t send a verification code using this method.": [
         "Touto metódou sa nám nepodarilo odoslať overovací kód."
+      ],
+      "You can create public links for your own files only": [
+        "Verejné odkazy môžete vytvárať iba na svoje vlastné súbory"
+      ],
+      "You can only leave items that are shared with you": [
+        "Môžete opustiť len položky, ktoré sú s vami zdieľané"
+      ],
+      "You can only upload a new version to a file": [
+        "Do súboru môžete nahrať iba novú verziu"
+      ],
+      "You can update a public link for your own files only": [
+        "Verejný odkaz môžete aktualizovať iba pre svoje vlastné súbory"
+      ],
+      "You do not have access to this item": [
+        "K tejto položke nemáte prístup"
+      ],
+      "You do not have access to this shared item": [
+        "K tejto zdieľanej položke nemáte prístup"
+      ],
+      "You have reached the maximum number of custom backgrounds.": [
+        "Dosiahli ste maximálny počet vlastných pozadí."
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "Váš prehliadač prečerpal pamäťový priestor. Záznam sme uložili až po tento moment."
       ],
       "Your device's clock appears to be out of sync. Please check your system time and try again.": [
         "Zdá sa, že hodiny vášho zariadenia nie sú synchronizované. Skontrolujte systémový čas a skúste to znovu, prosím."
+      ],
+      "Your microphone is busy. Close other apps or tabs using it, then try again.": [
+        "Váš mikrofón je v prevádzke. Zatvorte ostatné aplikácie alebo karty, ktoré ho používajú, a potom to skúste znova."
       ]
     },
     "Error message": {
@@ -2202,6 +2634,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Telefónne číslo možno použiť iba na overenie jedného účtu ${ BRAND_NAME }"
       ],
+      "Adding ${ name }": [
+        "Pridávanie ${ name }"
+      ],
       "Admit": [
         "Povoliť"
       ],
@@ -2211,8 +2646,17 @@
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Pokročilý režim: nastavte všetky konštanty rozostrenia pre nasledujúcu verziu a potom kliknite na „Použiť“, aby sa znovu vygeneroval náhľad. Tieto nastavenia majú prednosť pred hodnotami v súbore a v nástroji Unleash."
       ],
+      "Allow camera access to preview your background": [
+        "Povoľte kamere prístup k náhľadu vášho pozadia"
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anonymný účastník ${ particle } ${ participantNumber }"
+      ],
+      "Anyone with the link can join immediately": [
+        "Každý, kto má tento odkaz, sa môže ihneď pripojiť"
+      ],
+      "Approve participants before they can join": [
+        "Schváliť účastníkov, aby sa mohli pripojiť"
       ],
       "Are you sure you want to leave?": [
         "Naozaj chcete odísť?"
@@ -2223,8 +2667,17 @@
       "Attention required": [
         "Vyžaduje sa pozornosť"
       ],
+      "Author is not provided on public link": [
+        "Vo verejnom odkaze nie je uvedený autor"
+      ],
+      "Available with a paid plan": [
+        "K dispozícii s plateným plánom"
+      ],
       "Background blur initializing": [
         "Spúšťanie rozmazania pozadia"
+      ],
+      "Background effects are not supported on your browser": [
+        "Váš prehliadač nepodporuje efekty pozadia"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Pred vyžiadaním nového overovacieho kódu skontrolujte priečinok spam a skontrolujte, či je adresa ${ strong } správna."
@@ -2238,8 +2691,14 @@
       "camera": [
         "kamera"
       ],
+      "Camera effects": [
+        "Efekty kamery"
+      ],
       "Camera permission denied": [
         "Povolenie kamery zamietnuté"
+      ],
+      "Captions are on": [
+        "Titulky sú zapnuté"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "Zmeny sú rozdelené do fáz. Použite príkaz na prekreslenie náhľadu s novými konštantami."
@@ -2397,6 +2856,9 @@
       "Host": [
         "Hostiteľ"
       ],
+      "Host has disabled live captions for this meeting.": [
+        "Hostiteľ deaktivoval živé titulky pre túto schôdzu."
+      ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Usporiadajte svoje vlastné zabezpečené schôdzky. Začnite hovor v aplikácii ${ MEET_APP_NAME } a zdieľajte odkaz, aby ste mohli pozvať kohokoľvek, kto sa chce pripojiť. Jednoduché, bezpečné a zadarmo."
       ],
@@ -2405,6 +2867,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ak email v priečinku doručenej pošty nenájdete, skontrolujte priečinok so spamom, prosím."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Ak ste stratili prístup k aplikácii na overovanie, môžete použiť jeden zo 16 záložných obnovovacích kódov, ktoré ste dostali pri nastavovaní dvojfaktorovej autentifikácie. ${ learnMoreLink }"
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Ak používate Firefox, uistite sa, že je povolená PeerConnection."
@@ -2459,6 +2924,9 @@
       ],
       "Loading…": [
         "Načítavanie…"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Záznamy nám pomáhajú pochopiť, čo sa udialo pred vznikom problému. Obsahujú akcie aplikácie a chybové hlásenia, nie však obsah správ."
       ],
       "Loop an uploaded video or your live camera through both background blur versions side by side.": [
         "Prehrávajte nahraté video alebo obraz z vašej kamery v režime živého vysielania v oboch verziách s rozmazaným pozadím vedľa seba."
@@ -2592,6 +3060,12 @@
       "Participant": [
         "Účastník"
       ],
+      "Participants can turn live captions on. Turn on your own under Display.": [
+        "Účastníci si môžu zapnúť titulky v reálnom čase. Zapnite si ich sami v nastaveniach v časti Zobrazenie."
+      ],
+      "Participants can’t use live captions": [
+        "Účastníci nemôžu používať titulky v reálnom čase"
+      ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Vložte váš ${ MEET_APP_NAME } odkaz, aby ste sa pripojili k zabezpečenému stretnutiu."
       ],
@@ -2612,6 +3086,9 @@
       ],
       "Presenting": [
         "Prezentuje"
+      ],
+      "Preview unavailable": [
+        "Ukážka nie je k dispozícii"
       ],
       "privacy": [
         "súkromí"
@@ -2766,6 +3243,9 @@
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Na vytvorenie miestnosti budete potrebovať **bezplatný účet ${ BRAND_NAME }**, aby sme ju mohli uložiť. Zaberie to len pár sekúnd."
       ],
+      "To create live captions, the captioning service needs access to the meeting audio. Captions are only visible to you and are not saved.": [
+        "Na vytvorenie titulkov v reálnom čase potrebuje služba titulkovania prístup k zvukovému záznamu stretnutia. Titulky sú viditeľné len pre vás a neukladajú sa."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Aby ste zamedzili spamu a obťažovaniu, potvrďte, že ste človek."
       ],
@@ -2786,6 +3266,9 @@
       ],
       "Turn on camera": [
         "Zapnúť kameru"
+      ],
+      "Turn on live captions?": [
+        "Zapnúť titulky v reálnom čase?"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Nie je možné opätovne sa pripojiť k stretnutiu. Prihláste sa znova alebo stretnutie opustite, prosím."
@@ -2810,6 +3293,9 @@
       ],
       "View ": [
         "Zobraziť "
+      ],
+      "Virtual background initializing": [
+        "Inicializácia virtuálneho pozadia"
       ],
       "Waiting for the host to admit you. The host has been notified that you're waiting.": [
         "Čakáte, kým vás hostiteľ prijme. Hostiteľ bol informovaný, že čakáte."
@@ -2853,6 +3339,9 @@
       "You can now return to the application to continue": [
         "Teraz sa môžete vrátiť do aplikácie a pokračovať"
       ],
+      "You can save up to ${ max } of your own backgrounds.": [
+        "Môžete uložiť až ${ max } vlastných pozadí."
+      ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Mikrofón a kameru môžete kedykoľvek počas stretnutia vypnúť."
       ],
@@ -2879,6 +3368,9 @@
       ],
       "Your always available meeting room": [
         "Vaša vždy dostupná zasadacia miestnosť"
+      ],
+      "Your backgrounds could not be loaded, so a new one cannot be added right now.": [
+        "Vaše pozadia sa nepodarilo načítať, preto momentálne nie je možné pridať nové."
       ],
       "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
         "Váš prehliadač zablokoval prístup ku kamere a mikrofónu. Ak ich chcete povoliť, upravte nastavenia prehliadača a znovu sa pripojte k hovoru."
@@ -2912,6 +3404,9 @@
       "${ BRAND_NAME } username": [
         "Používateľské meno ${ BRAND_NAME }"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } znakov"
+      ],
       "${ numberOfStars } star": [
         "${ numberOfStars } hviezdička",
         "${ numberOfStars } hviezdičky",
@@ -2927,6 +3422,9 @@
       "Advanced mode": [
         "Pokročilý režim"
       ],
+      "Agent": [
+        "Agent"
+      ],
       "Anyone with the link can join": [
         "Pripojiť sa môže ktokoľvek s odkazom"
       ],
@@ -2938,6 +3436,9 @@
       ],
       "Authenticator app": [
         "Overovacia aplikácia"
+      ],
+      "Auto-detect": [
+        "Zistiť automaticky"
       ],
       "Background color": [
         "Farba pozadia"
@@ -3053,6 +3554,9 @@
       "Leave meeting options": [
         "Opustiť možnosti schôdze"
       ],
+      "Live caption agent": [
+        "Agent živých titulkov"
+      ],
       "Manage recordings": [
         "Spravovať nahrávky"
       ],
@@ -3139,6 +3643,9 @@
       ],
       "Solid color": [
         "Jednofarebné"
+      ],
+      "Spoken language": [
+        "Hovorený jazyk"
       ],
       "Subscribed": [
         "Prihlásené k odberu"
@@ -3358,6 +3865,26 @@
         "Napíšte zašifrovanú správu..."
       ]
     },
+    "Property": {
+      "attributes": [
+        "atribúty"
+      ],
+      "content key": [
+        "kľúč obsahu"
+      ],
+      "hash key": [
+        "hash kľúč"
+      ],
+      "key": [
+        "kľúč"
+      ],
+      "membership": [
+        "členstvo"
+      ],
+      "name": [
+        "názov"
+      ]
+    },
     "Role": {
       "Organization Admin": [
         "Správca organizácie"
@@ -3459,8 +3986,16 @@
       "No": [
         "Nie"
       ],
+      "Transcribing...": [
+        "Prepisovanie..."
+      ],
       "Yes": [
         "Áno"
+      ]
+    },
+    "Subtitle": {
+      "This system agent creates live captions. It is not a participant and cannot send messages.": [
+        "Tento systémový agent vytvára titulky v reálnom čase. Nie je účastníkom a nemôže posielať správy."
       ]
     },
     "Success": {
@@ -3531,8 +4066,17 @@
       "Available Speakers": [
         "Dostupní rečníci"
       ],
+      "Background": [
+        "Pozadie"
+      ],
       "Background blur comparison": [
         "Porovnanie rozostrenia pozadia"
+      ],
+      "Backgrounds": [
+        "Pozadia"
+      ],
+      "Blur and personal": [
+        "Rozostrenie a osobné nastavenia"
       ],
       "Camera and microphone are blocked": [
         "Kamera a mikrofón sú vypnuté"
@@ -3564,6 +4108,9 @@
       "Delete recording?": [
         "Vymazať nahrávku?"
       ],
+      "Display": [
+        "Obrazovka"
+      ],
       "Enter your password": [
         "Zadajte svoje heslo"
       ],
@@ -3581,6 +4128,9 @@
       ],
       "Help center": [
         "Centrum pomoci"
+      ],
+      "Host settings": [
+        "Nastavenia hostiteľa"
       ],
       "Human verification": [
         "Overenie, že nie ste robot"
@@ -3654,6 +4204,9 @@
       "Participants (${ filteredParticipants.length })": [
         "Účastníci (${ filteredParticipants.length })"
       ],
+      "People": [
+        "Ľudia"
+      ],
       "Personal meeting room": [
         "Súkromná zasadacia miestnosť"
       ],
@@ -3708,6 +4261,9 @@
       "Stop recording": [
         "Zastaviť nahrávanie"
       ],
+      "System": [
+        "Systém"
+      ],
       "Talk confidentially": [
         "Diskutujte dôverne"
       ],
@@ -3725,6 +4281,12 @@
       ],
       "Two-factor authentication": [
         "Dvojstupňové overenie"
+      ],
+      "Video and audio": [
+        "Video a zvuk"
+      ],
+      "Virtual backgrounds": [
+        "Virtuálne pozadia"
       ],
       "Waiting for the host": [
         "Čakanie na hostiteľa"
@@ -3751,6 +4313,9 @@
       "Background blur is not supported on your browser": [
         "Rozostrenie pozadia nie je vo vašom prehliadači podporované"
       ],
+      "Background effects are not supported on your browser": [
+        "Váš prehliadač nepodporuje efekty pozadia"
+      ],
       "Generate a new meeting link. The current link will stop working.": [
         "Vytvorte nový odkaz na schôdzku. Súčasný odkaz prestane fungovať."
       ],
@@ -3759,6 +4324,9 @@
       ],
       "Recurring meeting": [
         "Opakované stretnutie"
+      ],
+      "Stop sharing your screen to change this setting": [
+        "Ak chcete zmeniť toto nastavenie, ukončite zdieľanie obrazovky"
       ],
       "You can generate a new meeting link once per day.": [
         "Nový odkaz na schôdzku môžete vygenerovať raz za deň."
