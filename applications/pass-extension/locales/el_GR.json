@@ -4570,20 +4570,20 @@
       ]
     },
     "Result": {
-      "Enter a URL to check to see if your current rule is matching the URL": [
-        "Εισαγάγετε μια διεύθυνση URL για να ελέγξετε αν ο τρέχων κανόνας σας ταιριάζει με τη διεύθυνση URL"
-      ],
-      "The rule is matching this URL": [
-        "Ο κανόνας ταιριάζει με αυτήν τη διεύθυνση URL"
-      ],
-      "The rule is NOT matching this URL": [
-        "Ο κανόνας ΔΕΝ ταιριάζει με αυτήν τη διεύθυνση URL"
+      "Enter a URL to check if it matches the current rule": [
+        "Εισαγάγετε μια διεύθυνση URL για να ελέγξετε αν ταιριάζει με τον τρέχοντα κανόνα"
       ],
       "This URL will be blocked from autofill": [
         "Αυτή η διεύθυνση URL θα αποκλειστεί από την αυτόματη συμπλήρωση"
       ],
       "This URL will NOT be blocked from autofill": [
         "Αυτή η διεύθυνση URL ΔΕ θα αποκλειστεί από την αυτόματη συμπλήρωση"
+      ],
+      "URL doesn't match the rule": [
+        "Η διεύθυνση URL δεν ταιριάζει με τον κανόνα"
+      ],
+      "URL matches the rule": [
+        "Η διεύθυνση URL ταιριάζει με τον κανόνα"
       ]
     },
     "Security Center - Info": {
@@ -5485,6 +5485,9 @@
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Παραχωρήστε πρόσβαση στο πρόχειρο για την αυτόματη διαγραφή αντιγραμμένων κωδικών πρόσβασης και δεδομένων."
+      ],
+      "Identity could not be confirmed": [
+        "Δεν ήταν δυνατή η επιβεβαίωση της ταυτότητας"
       ],
       "Invalid alias prefix": [
         "Μην έγκυρο πρόθεμα ψευδωνύμου"

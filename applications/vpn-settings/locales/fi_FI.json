@@ -1725,14 +1725,6 @@
         "Olet saavuttanut kokeilujakson enimmäisrajan."
       ]
     },
-    "b2b_trials_2025_Label": {
-      "Amount due after trial": [
-        "Kokeilun jälkeen maksettava summa"
-      ],
-      "Amount due now": [
-        "Nyt maksettava summa"
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Peru tilaus"
@@ -2266,15 +2258,6 @@
       ],
       "Total": [
         "Summa"
-      ],
-      "Total for ${ n } month": [
-        "Summa ${ n } kuukaudelle",
-        "Summa ${ n } kuukaudelle"
-      ]
-    },
-    "Checkout summary": {
-      "month": [
-        "kuukausi"
       ]
     },
     "Collapsible tooltip": {
@@ -7182,9 +7165,6 @@
       "Amount below minimum (${ amount }).": [
         "Summa on vähimmäismäärää pienempi (${ amount })."
       ],
-      "Amount due": [
-        "Veloitettava summa"
-      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Sähköpostialias toimii tavallisen sähköpostiosoitteen tavoin, mutta vähentää roskapostia ja pitää todellisen osoitteesi ja identiteettisi piilossa."
       ],
@@ -7525,9 +7505,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "ÄLÄ kadota tätä salasanaa. Mikäli kadotat sen, et voi hallita organisaatiotasi."
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Muistatteko salasananne? ${ verifyButton }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Haluatko mitätöidä kaikki istunnot nykyistä lukuun ottamatta?"
@@ -8716,9 +8693,6 @@
       ],
       "Subscription starts on ${ startsOnTime }": [
         "Tilaus alkaa ${ startsOnTime }"
-      ],
-      "Summary": [
-        "Yhteenveto"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Tuki omien verkkotunnusten ja muiden kuin ${ BRAND_NAME }-osoitteiden valvonnalle on tulossa pian."

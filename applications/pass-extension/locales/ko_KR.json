@@ -499,6 +499,9 @@
       "Move to Trash": [
         "휴지통으로 이동"
       ],
+      "Multiple select": [
+        "다중 선택"
+      ],
       "New token": [
         "새 토큰"
       ],
@@ -4300,6 +4303,9 @@
       "Download": [
         "다운로드"
       ],
+      "Download \"${ filename }\"": [
+        "\"${ filename }\" 다운로드"
+      ],
       "Download file": [
         "파일 다운로드"
       ],
@@ -4377,6 +4383,9 @@
       ],
       "You can attach files to items for a better organization": [
         "더 나은 조직을 위해 항목에 파일 첨부가 가능합니다."
+      ],
+      "You may close this window after saving the file.": [
+        "파일 저장 후 이 창을 닫아도 됩니다."
       ]
     },
     "Permission": {
@@ -4504,20 +4513,20 @@
       ]
     },
     "Result": {
-      "Enter a URL to check to see if your current rule is matching the URL": [
-        "현재 규칙이 URL과 일치하는지 확인하려면 URL을 입력하십시오"
-      ],
-      "The rule is matching this URL": [
-        "규칙이 이 URL과 일치합니다"
-      ],
-      "The rule is NOT matching this URL": [
-        "규칙이 이 URL과 일치하지 않습니다"
+      "Enter a URL to check if it matches the current rule": [
+        "현재 규칙과 일치하는 경우 URL을 입력하여 확인합니다."
       ],
       "This URL will be blocked from autofill": [
         "이 URL은 자동완성이 차단됩니다"
       ],
       "This URL will NOT be blocked from autofill": [
         "이 URL은 자동완성이 차단되지 않습니다"
+      ],
+      "URL doesn't match the rule": [
+        "URL이 규칙과 일치하지 않습니다."
+      ],
+      "URL matches the rule": [
+        "URL이 규칙에 일치합니다"
       ]
     },
     "Security Center - Info": {
@@ -4691,6 +4700,9 @@
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } 주소"
+      ],
+      "${ PASS_APP_NAME } Logs": [
+        "${ PASS_APP_NAME } 로그"
       ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } 설정"
@@ -5405,6 +5417,9 @@
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "복사된 비밀번호 및 데이터의 자동 삭제를 활성화하기 위해 클립보드 접근 권한을 부여하십시오."
+      ],
+      "Identity could not be confirmed": [
+        "신원을 확인하지 못했습니다"
       ],
       "Invalid alias prefix": [
         "유효하지 않은 별칭 접두사"

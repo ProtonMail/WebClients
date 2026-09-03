@@ -2795,14 +2795,6 @@
         "Έχετε φτάσει το όριο της δοκιμής."
       ]
     },
-    "b2b_trials_2025_Label": {
-      "Amount due after trial": [
-        "Οφειλόμενο ποσό μετά τη δοκιμαστική περίοδο"
-      ],
-      "Amount due now": [
-        "Οφειλόμενο ποσό τώρα"
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Ακύρωση συνδρομής"
@@ -3796,15 +3788,6 @@
       ],
       "Total": [
         "Σύνολο"
-      ],
-      "Total for ${ n } month": [
-        "Σύνολο για ${ n } μήνα",
-        "Σύνολο για ${ n } μήνες"
-      ]
-    },
-    "Checkout summary": {
-      "month": [
-        "μήνας"
       ]
     },
     "Collapsible tooltip": {
@@ -10755,9 +10738,6 @@
       "Amount below minimum (${ amount }).": [
         "Ποσό χαμηλότερο από το ελάχιστο. (${ amount })."
       ],
-      "Amount due": [
-        "Οφειλόμενο ποσό"
-      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Ένα ψευδώνυμο ηλεκτρονικού ταχυδρομείου λειτουργεί όπως μια διεύθυνση ηλεκτρονικού ταχυδρομείου, αλλά μειώνει τα ανεπιθύμητα μηνύματα και διατηρεί κρυφή την πραγματική διεύθυνση ηλεκτρονικού ταχυδρομείου και την ταυτότητά σας."
       ],
@@ -11336,9 +11316,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "ΜΗΝ ξεχάσετε αυτόν τον κωδικό πρόσβασης. Αν τον ξεχάσετε, δεν θα είστε σε θέση να διαχειριστείτε τον οργανισμό σας."
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Θυμάστε τον κωδικό πρόσβασής σας; ${ verifyButton }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Θέλετε να ανακαλέσετε όλες τις άλλες συνεδρίες εκτός από τις τρέχουσες;"
@@ -13649,6 +13626,9 @@
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Χρησιμοποιήστε μια μέθοδο ανάκτησης για να απενεργοποιήσετε τις μεθόδους ελέγχου ταυτότητας δύο παραγόντων."
+      ],
+      "Use an existing email or create a free ${ protonDomain } address.": [
+        "Χρησιμοποιήστε μια υπάρχουσα διεύθυνση ηλεκτρονικού ταχυδρομείου ή δημιουργήστε μια δωρεάν ${ protonDomain } διεύθυνση."
       ],
       "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
         "Χρησιμοποιήστε πολλούς λογαριασμούς ηλεκτρονικού ταχυδρομείου με το ${ MAIL_APP_NAME }. Προσθέστε μια νέα διεύθυνση ${ BRAND_NAME } ή συνδέστε έναν άλλο λογαριασμό ηλεκτρονικού ταχυδρομείου για να διαχειρίζεστε τα πάντα από ένα εισερχόμενο φάκελο."

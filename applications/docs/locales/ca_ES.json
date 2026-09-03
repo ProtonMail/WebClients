@@ -5016,8 +5016,8 @@
       "Display word count": [
         "Mostra el nombre de paraules"
       ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Recordeu la vostra contrasenya? ${ verifyButton }"
+      "Do you remember your password?": [
+        "Recordeu la vostra contrasenya?"
       ],
       "Document is in trash": [
         "El document és a la paperera."
@@ -5298,6 +5298,9 @@
       ],
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls."
+      ],
+      "Link expired": [
+        "L’enllaç ha caducat."
       ],
       "Loading": [
         "Carregant"
@@ -6609,6 +6612,9 @@
       ],
       "Your password (trusted contact)": [
         "La vostra contrasenya (contacte de confiança)"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️Aquest nom no es pot desencriptar"
       ]
     },
     "Label for contact group color": {
@@ -10851,6 +10857,9 @@
       ],
       "The import will start with the most recent messages.": [
         "La importació començarà amb els missatges més recents."
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Aquest enllaç ha caducat. Amplieu la data de caducitat"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A menys que es desxifrin, les contrasenyes xifrades romanen segures encara que estiguin exposades."

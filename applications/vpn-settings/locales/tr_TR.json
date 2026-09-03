@@ -2004,14 +2004,6 @@
         "Deneme süresi sayısı sınırına ulaştınız."
       ]
     },
-    "b2b_trials_2025_Label": {
-      "Amount due after trial": [
-        "Deneme süresinden sonra ödenecek tutar"
-      ],
-      "Amount due now": [
-        "Şimdi ödenecek tutar"
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Aboneliği iptal et"
@@ -2555,15 +2547,6 @@
       ],
       "Total": [
         "Toplam"
-      ],
-      "Total for ${ n } month": [
-        "${ n } aylık toplam",
-        "${ n } aylık toplam"
-      ]
-    },
-    "Checkout summary": {
-      "month": [
-        "ay"
       ]
     },
     "Collapsible tooltip": {
@@ -7792,9 +7775,6 @@
       "Amount below minimum (${ amount }).": [
         "Tutar en az miktarın altında (${ amount })."
       ],
-      "Amount due": [
-        "Ödenecek tutar"
-      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "E-posta takma adı e-posta adresi gibi çalışır. Ancak istenmeyen e-postaları azaltır ve gerçek e-posta adresinizi ve kimliğinizi gizli tutar."
       ],
@@ -8171,9 +8151,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Bu parolayı UNUTMAYIN. Unutursanız, kuruluşunuzu yönetemezsiniz."
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Parolanızı hatırlıyor musunuz? ${ verifyButton }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Geçerli oturum dışındaki diğer tüm oturumları kapatmak istiyor musunuz?"
@@ -9453,9 +9430,6 @@
       "Subscription starts on ${ startsOnTime }": [
         "Abonelik ${ startsOnTime } zamanında başlar"
       ],
-      "Summary": [
-        "Özet"
-      ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Özel etki alanlarının ve ${ BRAND_NAME } olmayan e-posta adreslerinin izlenmesi desteği yakında sunulacak."
       ],
@@ -9888,6 +9862,9 @@
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "İki adımlı doğrulama yöntemlerini kapatmak için bir kurtarma yöntemi kullanın."
+      ],
+      "Use an existing email or create a free ${ protonDomain } address.": [
+        "Var olan bir e-posta adresini kullanın ya da ücretsiz ${ protonDomain } adresi açın."
       ],
       "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
         "${ MAIL_APP_NAME } ile birden fazla e-posta adresi kullanın. Yeni bir ${ BRAND_NAME } adresi ekleyin veya başka bir e-posta hesabını bağlayarak her şeyi tek bir gelen kutusundan yönetin."

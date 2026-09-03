@@ -25,9 +25,6 @@
       ]
     },
     "Accessibility announcement": {
-      "${ BRAND_NAME } background applied": [
-        "S'ha aplicat el fons de ${ BRAND_NAME }"
-      ],
       "${ name } joined the meeting": [
         "${ name } s'ha unit a la reunió"
       ],
@@ -64,20 +61,20 @@
       "A participant reacted with ${ emoji }": [
         "Un participant ha reaccionat amb ${ emoji }"
       ],
-      "Abstract background applied": [
-        "S'ha aplicat el fons abstracte"
-      ],
       "Background effect turned off": [
         "S'ha desactivat l'efecte de fons"
       ],
-      "Beach background applied": [
-        "S'ha aplicat el fons de platja"
+      "Background removed": [
+        "S'ha eliminat el fons"
+      ],
+      "Beach landscape background applied": [
+        "S'ha aplicat el fons de paisatge de platja"
       ],
       "Blurred background applied": [
         "S'ha aplicat el fons difuminat"
       ],
-      "Coffee place background applied": [
-        "S'ha aplicat el fons de cafeteria"
+      "Blurred office background applied": [
+        "S'ha aplicat el fons d'oficina difuminat"
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "S'ha connectat a través del mode de relleu TURN a causa de restriccions de xarxa. Això pot augmentar la latència i afectar la qualitat de la trucada."
@@ -85,17 +82,23 @@
       "Connection lost. Reconnecting…": [
         "S'ha perdut la connexió. S'està tornant a connectar…"
       ],
-      "Mountain background applied": [
-        "S'ha aplicat el fons de muntanya"
+      "Dark ${ BRAND_NAME } background applied": [
+        "S'ha aplicat el fons fosc de ${ BRAND_NAME }"
+      ],
+      "Library background applied": [
+        "S'ha aplicat el fons de biblioteca"
+      ],
+      "Light ${ BRAND_NAME } background applied": [
+        "S'ha aplicat el fons clar de ${ BRAND_NAME }"
+      ],
+      "Mountain landscape background applied": [
+        "S'ha aplicat el fons de paisatge de muntanya"
       ],
       "New chat message: ${ message }": [
         "Nou missatge de xat: ${ message }"
       ],
       "Now starting recording": [
         "Ara comença l'enregistrament"
-      ],
-      "Office background applied": [
-        "S'ha aplicat el fons d'oficina"
       ],
       "Reconnected to the meeting": [
         "Se us ha tornat a connectar amb la reunió."
@@ -156,6 +159,9 @@
       ],
       "Your camera has been turned off by the host": [
         "El moderador us ha desconnectat la càmera"
+      ],
+      "Your own background applied": [
+        "S'ha aplicat el vostre propi fons"
       ]
     },
     "Action": {
@@ -171,6 +177,9 @@
       ],
       "Add another account": [
         "Afegeix un altre compte"
+      ],
+      "Add your own background": [
+        "Afegiu el vostre propi fons"
       ],
       "Admit ${ participantName }": [
         "Admetre ${ participantName }"
@@ -517,6 +526,9 @@
       ],
       "Rejoin meeting": [
         "Torneu a unir-vos a la reunió"
+      ],
+      "Remove ${ name }": [
+        "Esborra ${ name }"
       ],
       "Remove reaction ${ emoji }, ${ identities.length } reaction": [
         "Esborreu la reacció ${ emoji }, ${ identities.length } reacció",
@@ -1890,8 +1902,71 @@
       ]
     },
     "Error": {
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Cal un missatge quan s'informa d'una infracció de drets d'autor o de dades robades"
+      ],
+      "An error occurred": [
+        "S'ha produït un error"
+      ],
       "Background blur initialization failed. Please toggle your camera or background blur again": [
         "Ha fallat la inicialització del desenfocament del fons. Torneu a activar la càmera o el desenfocament del fons"
+      ],
+      "Bookmark password is not available": [
+        "La contrasenya del marcador de pàgina no està disponible"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "No es pot afegir la foto a l'àlbum sense un nom vàlid"
+      ],
+      "Cannot download a folder": [
+        "No es pot descarregar una carpeta"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "No es pot moure l'element sense un nom vàlid, canvieu-ne el nom primer"
+      ],
+      "Cannot share root folder": [
+        "No es pot compartir la carpeta arrel"
+      ],
+      "Cannot verify the author of this file": [
+        "No es pot verificar l'autoria d'aquest fitxer"
+      ],
+      "Cannot verify who uploaded this file": [
+        "No es pot verificar qui ha carregat aquest fitxer"
+      ],
+      "Copy operation aborted": [
+        "S'ha cancel·lat l'operació de còpia"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "No es permet copiar un element a un element que no sigui una carpeta"
+      ],
+      "Could not add this background. Check your connection and try again.": [
+        "No s'ha pogut afegir aquest fons. Comproveu la connexió i torneu-ho a intentar."
+      ],
+      "Could not add this background. Please try again.": [
+        "No s'ha pogut afegir aquest fons. Torneu-ho a intentar."
+      ],
+      "Could not find an available name": [
+        "No s'ha pogut trobar cap nom disponible"
+      ],
+      "Could not load sharing details": [
+        "No s'han pogut carregar els detalls de l'acció de compartir."
+      ],
+      "Could not load the image preview: ${ message }": [
+        "No s'ha pogut carregar la vista prèvia de la imatge: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "No s'ha pogut llegir una part d'aquest fitxer: ${ message }"
+      ],
+      "Could not remove this background. Check your connection and try again.": [
+        "No s'ha pogut eliminar aquest fons. Comproveu la connexió i torneu-ho a intentar."
+      ],
+      "Could not remove this background. Please try again.": [
+        "No s'ha pogut eliminar aquest fons. Torneu-ho a intentar."
+      ],
+      "Could not unlock the parent folder": [
+        "No s'ha pogut desbloquejar la carpeta principal"
+      ],
+      "Could not unlock this item": [
+        "No s'ha pogut desbloquejar aquest element"
       ],
       "Couldn’t play the recording on this speaker.": [
         "No s'ha pogut reproduir l'enregistrament en aquest altaveu."
@@ -1901,6 +1976,18 @@
       ],
       "Couldn’t start the microphone test.": [
         "No s'ha pogut iniciar la prova del micròfon."
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "No es permet crear documents dins d'elements que no siguin carpetes"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "No es permet crear fitxers dins d'elements que no siguin carpetes"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "No es permet crear carpetes dins d'elements que no siguin carpetes"
+      ],
+      "Device not found": [
+        "No s'ha trobat el dispositiu"
       ],
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
@@ -1917,6 +2004,9 @@
       "Event deleted": [
         "S'ha suprimit l'esdeveniment"
       ],
+      "Expiration date cannot be in the past": [
+        "La data de caducitat no pot ser en el passat"
+      ],
       "Failed to admit the participant. Please try again.": [
         "No s'ha pogut admetre el participant. Torneu-ho a provar."
       ],
@@ -1931,6 +2021,27 @@
       ],
       "Failed to create personal meeting, please refresh the page": [
         "No s'ha pogut crear la reunió personal. Actualitzeu la pàgina."
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "No s'ha pogut desxifrar la clau del marcador de pàgina: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "No s'ha pogut desxifrar el nom del marcador de pàgina: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "No s'ha pogut desxifrar la contrasenya de la marca de pàgina: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "No s'ha pogut desxifrar la clau de contingut: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "No s'ha pogut desxifrar el nom de l'element: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "No s'ha pogut desxifrar la clau del node: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "No s'han pogut desxifrar les metadades de la revisió"
       ],
       "Failed to decrypt session key": [
         "No s'ha pogut desxifrar la clau de sessió"
@@ -1955,6 +2066,9 @@
       ],
       "Failed to edit room name": [
         "No s'ha pogut editar el nom de la sala"
+      ],
+      "Failed to get inviter keys": [
+        "No s'han pogut obtenir les claus de qui convida"
       ],
       "Failed to join meeting. Please try again later.": [
         "No us heu pogut afegir a la reunió. Torneu-ho a provar més tard."
@@ -2004,14 +2118,38 @@
       "Failed to update waiting room setting. Please try again.": [
         "No s'han pogut actualitzar les preferències de la sala d'espera. Torneu-ho a provar."
       ],
+      "Failed to verify invitation": [
+        "No s'ha pogut verificar la invitació"
+      ],
+      "File download failed due to empty response": [
+        "Ha fallat la descàrrega del fitxer perquè la resposta era buida"
+      ],
+      "File has no revision": [
+        "El fitxer no té cap revisió"
+      ],
+      "Image preview not found": [
+        "No s’ha trobat la vista prèvia de la imatge"
+      ],
       "Incorrect username": [
         "Nom d'usuari incorrecte"
       ],
       "Invalid meeting link": [
         "L'enllaç de la reunió no és vàlid"
       ],
+      "Invalid URL": [
+        "L'URL no és vàlid."
+      ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
+      ],
+      "Invitation not found": [
+        "No s'ha trobat la invitació"
+      ],
+      "Item not found": [
+        "No s'ha trobat l'element"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "L'enllaç públic heretat no es pot actualitzar. Creeu-ne un de nou."
       ],
       "Live captions aren't working. Try turning them off and on again.": [
         "Els subtítols en directe no funcionen. Proveu de desactivar-los i tornar-los a activar."
@@ -2025,17 +2163,72 @@
       "Microphone access is blocked. Allow it in your browser settings.": [
         "L'accés al micròfon està bloquejat. Permeteu-ho a les preferències del navegador."
       ],
+      "Missing inviter email": [
+        "Falta l'adreça electrònica de qui convida"
+      ],
+      "Missing signature": [
+        "Signatura no trobada"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Falta la signatura per ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "S'ha cancel·lat l'operació de moviment"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "No es permet moure un element a un element que no sigui una carpeta"
+      ],
+      "Moving root item is not allowed": [
+        "No es permet moure l'element arrel"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "El nom ha de tenir com a màxim ${ MAX_NODE_NAME_LENGTH } caràcter",
+        "El nom ha de tenir com a màxim ${ MAX_NODE_NAME_LENGTH } caràcters"
+      ],
+      "Name must not be empty": [
+        "El nom no pot estar buit"
+      ],
+      "No file data was received. Please try again.": [
+        "No s'han rebut dades del fitxer. Torneu-ho a provar."
+      ],
       "Not a valid number": [
         "Número no vàlid"
+      ],
+      "Only admins can convert external invitations": [
+        "Només els administradors poden convertir invitacions externes"
+      ],
+      "Operation aborted": [
+        "S'ha cancel·lat l'operació"
+      ],
+      "Operation failed, try again later": [
+        "Ha fallat l'operació, torneu-ho a provar més tard"
       ],
       "Organization key is not decrypted": [
         "La clau de l'organització no està desxifrada"
       ],
+      "Part of the file appears to be corrupted": [
+        "Sembla que una part del fitxer està malmesa"
+      ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen."
       ],
+      "Photo is already in the target album": [
+        "La foto ja és a l'àlbum de destí"
+      ],
+      "Photo not found": [
+        "No s’ha trobat la foto"
+      ],
+      "Pick a JPEG, PNG or WebP image.": [
+        "Seleccioneu una imatge JPEG, PNG o WebP."
+      ],
       "Please allow screen sharing in your system permissions, then try again": [
         "Permeteu l'ús compartit de la pantalla en els permisos del sistema i, després, torneu-ho a provar"
+      ],
+      "Renaming root item is not allowed": [
+        "No es permet canviar el nom de l'element arrel"
+      ],
+      "Request aborted": [
+        "Sol·licitud cancel·lada"
       ],
       "Request timed out": [
         "La sol·licitud ha caducat"
@@ -2046,8 +2239,35 @@
       "Screen share is not supported on mobile browsers": [
         "La compartició de pantalla no és compatible amb els navegadors de mòbil"
       ],
+      "Signature is missing": [
+        "Falta la signatura"
+      ],
       "Signature verification failed": [
         "No s'ha pogut verificar la signatura."
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Ha fallat la verificació de la signatura: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Ha fallat la verificació de la signatura per ${ signatureType }"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "La verificació de la signatura per ${ signatureType } ha fallat: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "No s'han pogut carregar algunes dades del fitxer. Torneu-ho a provar."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "No s'han pogut carregar algunes parts del fitxer. Torneu-ho a provar."
+      ],
+      "Some items could not be loaded": [
+        "No s'han pogut carregar alguns elements"
+      ],
+      "Something went wrong": [
+        "S'ha produït un error."
+      ],
+      "Something went wrong. Please try again.": [
+        "Alguna cosa ha anat malament. Torneu a provar-ho."
       ],
       "The email addresses do not match": [
         "Les adreces de correu electrònic no coincideixen."
@@ -2061,6 +2281,12 @@
       "The selected microphone is no longer available.": [
         "El micròfon seleccionat ja no està disponible."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "El fitxer carregat no coincideix amb l'original. Torneu-ho a provar."
+      ],
+      "This background could not be saved in this browser.": [
+        "No s'ha pogut desar aquest fons en aquest navegador."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
       ],
@@ -2070,8 +2296,44 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
       ],
+      "This file has missing crypto material": [
+        "Aquest fitxer no té el material criptogràfic necessari"
+      ],
+      "This file has no version available to download": [
+        "Aquest fitxer no té cap versió disponible per descarregar"
+      ],
+      "This file name is too long. Rename the image and try again.": [
+        "Aquest nom de fitxer és massa llarg. Canvieu el nom de la imatge i torneu-ho a intentar."
+      ],
+      "This file version could not be uploaded": [
+        "No s'ha pogut carregar aquesta versió del fitxer"
+      ],
+      "This image could not be read. Pick another one.": [
+        "No s'ha pogut llegir aquesta imatge. Seleccioneu-ne una altra."
+      ],
+      "This image is too big. Pick one up to ${ maxEdge } pixels wide and tall.": [
+        "Aquesta imatge és massa gran. Trieu-ne una de fins a ${ maxEdge } píxels d'amplada i d'alçada."
+      ],
+      "This image is too large. Pick one under ${ maxMegabytes } MB.": [
+        "Aquesta imatge és massa gran. Seleccioneu-ne una de menys de ${ maxMegabytes } MB."
+      ],
+      "This item has no image preview": [
+        "Aquest element no té cap vista prèvia de la imatge"
+      ],
+      "This item is no longer shared": [
+        "Aquest element ja no està compartit"
+      ],
+      "This item is not shared": [
+        "Aquest element no està compartit"
+      ],
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
         "Aquesta reunió té lloc en una versió antiga. L'amfitrió ha de finalitzar-la i actualitzar el Meet per reiniciar-la amb la darrera versió."
+      ],
+      "Too many server errors, please try again later": [
+        "Hi ha massa errors del servidor, torneu-ho a provar més tard"
+      ],
+      "Too many server requests, please try again later": [
+        "Hi ha massa sol·licituds al servidor, torneu-ho a provar més tard"
       ],
       "Try using only letters, numerals, and _.-": [
         "Intenteu utilitzar només lletres, numerals i _.-"
@@ -2085,11 +2347,38 @@
       "Username must end with a letter or digit": [
         "El nom d'usuari ha d'acabar amb una lletra o un dígit."
       ],
+      "Verification keys are not available": [
+        "Les claus de verificació no estan disponibles"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Les claus de verificació per ${ signatureType } no estan disponibles"
+      ],
       "Virtual background initialization failed. Please toggle your camera or pick a background again": [
         "Ha fallat la inicialització del fons virtual. Canvieu la càmera o torneu a seleccionar un fons"
       ],
       "We couldn’t send a verification code using this method.": [
         "No hem pogut enviar cap codi de verificació mitjançant aquest mètode."
+      ],
+      "You can create public links for your own files only": [
+        "Només podeu crear enllaços públics per als vostres propis fitxers"
+      ],
+      "You can only leave items that are shared with you": [
+        "Només podeu deixar elements que se us hagin compartit"
+      ],
+      "You can only upload a new version to a file": [
+        "Només podeu carregar una nova versió a un fitxer"
+      ],
+      "You can update a public link for your own files only": [
+        "Només podeu actualitzar un enllaç públic per als vostres propis fitxers"
+      ],
+      "You do not have access to this item": [
+        "No teniu accés a aquest element"
+      ],
+      "You do not have access to this shared item": [
+        "No teniu accés a aquest element compartit"
+      ],
+      "You have reached the maximum number of custom backgrounds.": [
+        "Heu assolit el nombre màxim de fons personalitzats."
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "El vostre navegador s'ha quedat sense espai d'emmagatzematge. S'ha desat l'enregistrament fins a aquest punt."
@@ -2337,6 +2626,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número de telèfon només es pot utilitzar per verificar un sol compte de ${ BRAND_NAME }."
       ],
+      "Adding ${ name }": [
+        "S'està afegint ${ name }"
+      ],
       "Admit": [
         "Admetre"
       ],
@@ -2366,6 +2658,9 @@
       ],
       "Attention required": [
         "Es requereix la vostra atenció"
+      ],
+      "Author is not provided on public link": [
+        "No s'ha proporcionat l'autor a l'enllaç públic"
       ],
       "Available with a paid plan": [
         "Disponible amb un pla de pagament"
@@ -3036,6 +3331,9 @@
       "You can now return to the application to continue": [
         "Ara podeu tornar a l'aplicació per continuar."
       ],
+      "You can save up to ${ max } of your own backgrounds.": [
+        "Podeu desar-ne fins a ${ max } dels vostres propis fons."
+      ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Podeu desactivar el vostre micròfon i la càmera en qualsevol moment durant la reunió"
       ],
@@ -3062,6 +3360,9 @@
       ],
       "Your always available meeting room": [
         "La vostra sala de reunions sempre disponible"
+      ],
+      "Your backgrounds could not be loaded, so a new one cannot be added right now.": [
+        "No s'han pogut carregar els vostres fons, així que ara mateix no se n'hi pot afegir cap de nou."
       ],
       "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
         "El navegador us ha bloquejat l'accés a la càmera i al micròfon. Per activar-los, actualitzeu les preferències del navegador i torneu a entrar a la trucada."
@@ -3092,9 +3393,6 @@
       ]
     },
     "Label": {
-      "${ BRAND_NAME } background": [
-        "Fons de ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } username": [
         "Nom d'usuari de ${ BRAND_NAME }"
       ],
@@ -3104,9 +3402,6 @@
       "${ numberOfStars } star": [
         "${ numberOfStars } estrella",
         "${ numberOfStars } estrelles"
-      ],
-      "Abstract background": [
-        "Fons abstracte"
       ],
       "Add optional details": [
         "Afegiu detalls opcionals"
@@ -3138,11 +3433,14 @@
       "Background color": [
         "Color de fons"
       ],
-      "Beach background": [
-        "Fons de platja"
+      "Beach landscape background": [
+        "Fons de paisatge de platja"
       ],
       "Blurred (next)": [
         "Difuminat (següent)"
+      ],
+      "Blurred office background": [
+        "Fons d'oficina difuminat"
       ],
       "Browser": [
         "Navegador"
@@ -3165,9 +3463,6 @@
       "Code is 6 digits without spaces": [
         "El codi consta de 6 dígits sense espais"
       ],
-      "Coffee place background": [
-        "Fons de cafeteria"
-      ],
       "Connection Quality": [
         "Qualitat de la connexió"
       ],
@@ -3185,6 +3480,9 @@
       ],
       "Current": [
         "Actual"
+      ],
+      "Dark ${ BRAND_NAME } background": [
+        "Fons fosc de ${ BRAND_NAME }"
       ],
       "Delete": [
         "Elimina"
@@ -3255,6 +3553,12 @@
       "Leave meeting options": [
         "Opcions per abandonar la reunió"
       ],
+      "Library background": [
+        "Fons de la biblioteca"
+      ],
+      "Light ${ BRAND_NAME } background": [
+        "Fons clar de ${ BRAND_NAME }"
+      ],
       "Live caption agent": [
         "Agent de subtítols en directe"
       ],
@@ -3276,8 +3580,8 @@
       "Monday to Friday": [
         "De dilluns a divendres"
       ],
-      "Mountain background": [
-        "Fons de muntanya"
+      "Mountain landscape background": [
+        "Fons de paisatge de muntanya"
       ],
       "Muted": [
         "Silenciat"
@@ -3287,9 +3591,6 @@
       ],
       "Next": [
         "Següent"
-      ],
-      "Office background": [
-        "Fons d'oficina"
       ],
       "Operating system": [
         "Sistema operatiu"
@@ -3570,6 +3871,26 @@
       ],
       "Type an encrypted message...": [
         "Escriviu un missatge xifrat..."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atributs"
+      ],
+      "content key": [
+        "clau de contingut"
+      ],
+      "hash key": [
+        "clau d'empremta electrònica"
+      ],
+      "key": [
+        "clau"
+      ],
+      "membership": [
+        "subscripció"
+      ],
+      "name": [
+        "nom"
       ]
     },
     "Role": {

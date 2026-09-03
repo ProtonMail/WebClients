@@ -76,11 +76,17 @@
       "Bulk user import": [
         "Масавы імпарт карыстальнікаў"
       ],
+      "Close account": [
+        "Выдаліць уліковы запіс"
+      ],
       "Downgrade to Free": [
         "Панізіць да Free"
       ],
       "Import events": [
         "Імпартаваць падзеі"
+      ],
+      "Included apps": [
+        "Уключаныя праграмы"
       ],
       "iOS and Android apps": [
         "Праграмы для iOS і Android"
@@ -97,11 +103,20 @@
       "Password reset request": [
         "Запыт скідання пароля"
       ],
+      "Play Store": [
+        "Play Store"
+      ],
       "Recovery phone number": [
         "Нумар тэлефона для аднаўлення"
       ],
+      "Recovery score": [
+        "Ацэнка аднаўлення"
+      ],
       "Referral link": [
         "Рэферальная спасылка"
+      ],
+      "Storage space": [
+        "Аб'ём сховішча"
       ],
       "Telemetry": [
         "Тэлеметрыя"
@@ -713,8 +728,14 @@
       "Download ICS": [
         "Спампаваць ICS"
       ],
+      "Download latest": [
+        "Спампаваць апошнюю версію"
+      ],
       "Download logs": [
         "Спампаваць журналы"
+      ],
+      "Download monthly summary (CSV)": [
+        "Спампаваць штомесячную зводку (CSV)"
       ],
       "Download our CSV template": [
         "Спампаваць наш шаблон CSV"
@@ -2487,14 +2508,6 @@
         "Дасягнута абмежаванне пробнага перыяду."
       ]
     },
-    "b2b_trials_2025_Label": {
-      "Amount due after trial": [
-        "Сума да аплаты пасля пробнага перыяду"
-      ],
-      "Amount due now": [
-        "Сума да аплаты"
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Скасаваць падпіску"
@@ -3514,17 +3527,6 @@
       ],
       "Total": [
         "Агулам"
-      ],
-      "Total for ${ n } month": [
-        "Усяго за ${ n } месяц",
-        "Усяго за ${ n } месяцы",
-        "Усяго за ${ n } месяцаў",
-        "Усяго за ${ n } месяцы"
-      ]
-    },
-    "Checkout summary": {
-      "month": [
-        "месяц"
       ]
     },
     "Collapsible tooltip": {
@@ -3792,6 +3794,9 @@
       ]
     },
     "Column header": {
+      "Billable licenses": [
+        "Платныя ліцэнзіі"
+      ],
       "Billing period": [
         "Разліковы перыяд"
       ],
@@ -6576,6 +6581,9 @@
       "Enable auto-renew": [
         "Уключыць аўтаматычнае падаўжэнне"
       ],
+      "Enter your extra password": [
+        "Увядзіце свой дадатковы пароль"
+      ],
       "Explore plans": [
         "Пазнаёміцца з тарыфнымі планамі"
       ],
@@ -7542,6 +7550,12 @@
         "Не ўдалося выканаць прызначэнне ролі для ${ errors.length } удзельнікаў",
         "Не ўдалося выканаць прызначэнне ролі для ${ errors.length } удзельнікаў",
         "Не ўдалося выканаць прызначэнне ролі для ${ errors.length } удзельнікаў"
+      ],
+      "Role assignment could not be completed for ${ failedCount } group": [
+        "Не ўдалося выканаць прызначэнне ролі для ${ failedCount } групы",
+        "Не ўдалося выканаць прызначэнне ролі для ${ failedCount } груп",
+        "Не ўдалося выканаць прызначэнне ролі для ${ failedCount } груп",
+        "Не ўдалося выканаць прызначэнне ролі для ${ failedCount } груп"
       ],
       "Server not found": [
         "Сервер не знойдзены"
@@ -9828,6 +9842,24 @@
       "Pending": [
         "У чаканні"
       ],
+      "Skipped ${ count } contact due to incompatibilities": [
+        "Прапушчаны ${ count } кантакт з-за несумяшчальнасці",
+        "Прапушчаны ${ count } кантакты з-за несумяшчальнасці",
+        "Прапушчаны ${ count } кантактаў з-за несумяшчальнасці",
+        "Прапушчаны ${ count } кантактаў з-за несумяшчальнасці"
+      ],
+      "Skipped ${ count } email due to incompatibilities": [
+        "Прапушчаны ${ count } ліст з-за несумяшчальнасці",
+        "Прапушчаны ${ count } лісты з-за несумяшчальнасці",
+        "Прапушчаны ${ count } лістоў з-за несумяшчальнасці",
+        "Прапушчаны ${ count } лістоў з-за несумяшчальнасці"
+      ],
+      "Skipped ${ count } event due to incompatibilities": [
+        "Прапушчана ${ count } падзея з-за несумяшчальнасці",
+        "Прапушчана ${ count } падзеі з-за несумяшчальнасці",
+        "Прапушчана ${ count } падзей з-за несумяшчальнасці",
+        "Прапушчана ${ count } падзей з-за несумяшчальнасці"
+      ],
       "Undo finished": [
         "Адрабленне завершана"
       ],
@@ -10511,9 +10543,6 @@
       "Amount below minimum (${ amount }).": [
         "Сума ніжэй за мінімум (${ amount })."
       ],
-      "Amount due": [
-        "Да аплаты"
-      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Псеўданімы электроннай пошты працуюць аналагічна адрасам электроннай пошты, але змяншаюць колькасць спама і захоўваюць ваш фактычны адрас электроннай пошты і ідэнтычнасць схаванымі."
       ],
@@ -10552,6 +10581,12 @@
       ],
       "Are you sure you want to cancel editing the group?": [
         "Вы сапраўды хочаце скасаваць рэдагаванне групы?"
+      ],
+      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
+        "Вы сапраўды хочаце працягнуць без ${ withoutString } і яшчэ ${ notMigratedOthers } іншага?",
+        "Вы сапраўды хочаце працягнуць без ${ withoutString } і яшчэ ${ notMigratedOthers } іншых?",
+        "Вы сапраўды хочаце працягнуць без ${ withoutString } і яшчэ ${ notMigratedOthers } іншых?",
+        "Вы сапраўды хочаце працягнуць без ${ withoutString } і яшчэ ${ notMigratedOthers } іншых?"
       ],
       "Are you sure you want to delete this calendar?": [
         "Вы сапраўды хочаце выдаліць гэты каляндар?"
@@ -10660,6 +10695,9 @@
       ],
       "Available on macOS, Windows, and Linux.": [
         "Даступна на macOS, Windows і Linux."
+      ],
+      "Available on VPN Professional": [
+        "Даступна на VPN Professional"
       ],
       "Awaiting transaction": [
         "Чаканне трансакцыі"
@@ -11060,9 +11098,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "НЕ забывайце гэты пароль. Калі вы яго забудзеце, то не зможаце кіраваць сваёй арганізацыяй."
       ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Вы памятаеце свой пароль? ${ verifyButton }"
-      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Вы сапраўды хочаце адклікаць усе іншыя сеансы, акрамя бягучага?"
       ],
@@ -11329,6 +11364,9 @@
       ],
       "Example: ${ spfExample }": [
         "Прыклад: ${ spfExample }"
+      ],
+      "Exclude them when you deploy the device profile. Support coming soon.": [
+        "Выключыце іх пры разгортванні профілю прылады. Падтрымка функцыі неўзабаве з'явіцца."
       ],
       "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
         "Існуючую перасылку пошты са скразным шыфраваннем неабходна будзе паўторна ўключыць у наладах **${ autoReplySettingsTitle }**."
@@ -13370,6 +13408,9 @@
       "Version ${ version }": [
         "Версія ${ version }"
       ],
+      "Version history": [
+        "Гісторыя версій"
+      ],
       "Version number successfully copied to clipboard": [
         "Нумар версіі паспяхова скапіяваны ў буферу абмену"
       ],
@@ -14784,6 +14825,9 @@
       "Allow sharing outside the organization": [
         "Дазволіць абагульванне па-за межамі арганізацыі"
       ],
+      "Allow users to set a backup password": [
+        "Дазволіць карыстальнікам задаваць рэзервовы пароль"
+      ],
       "Allowed Domain": [
         "Дазволены дамен"
       ],
@@ -16194,6 +16238,9 @@
       "Users": [
         "Карыстальнікі"
       ],
+      "Users activated": [
+        "Карыстальнікі актываваны"
+      ],
       "Value": [
         "Значэнне"
       ],
@@ -17255,6 +17302,9 @@
     "Members table usage": {
       "Setup your own private gateways to monitor VPN connection activity within your organization.": [
         "Наладзьце свае прыватныя шлюзы, каб назіраць за актыўнасцю падключэння па VPN у вашай арганізацыі."
+      ],
+      "Yesterday": [
+        "Учора"
       ]
     },
     "Message": {
@@ -19631,6 +19681,11 @@
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Ваш тарыфны план уключае максімум ${ humanReadableAvailableSpace } сховішча."
+      ]
+    },
+    "organization key reset": {
+      "The organization key is reset": [
+        "Ключ арганізацыі скінуты"
       ]
     },
     "Organization logo upload": {
@@ -24077,6 +24132,9 @@
       "Install migration app": [
         "Усталяваць праграму пераносу"
       ],
+      "Onboard your team": [
+        "Запрасіце сваю каманду"
+      ],
       "Set up secure sending (DMARC)": [
         "Наладзьце бяспечную адпраўку (DMARC)"
       ]
@@ -25000,6 +25058,12 @@
       ],
       "Locale updated": [
         "Лакаль абноўлена"
+      ],
+      "Migration started for ${ n } user": [
+        "Перанос пачаты для ${ n } карыстальніка",
+        "Перанос пачаты для ${ n } карыстальнікаў",
+        "Перанос пачаты для ${ n } карыстальнікаў",
+        "Перанос пачаты для ${ n } карыстальнікаў"
       ],
       "New policy created. It will take effect only after you publish the changes.": [
         "Новая палітыка створана. Яна ўступіць у сілу толькі пасля таго, як вы апублікуеце змены."
@@ -27057,6 +27121,9 @@
       "Set up secure sending (DKIM)": [
         "Наладзьце бяспечную адпраўку (DKIM)"
       ],
+      "Set up secure sending (DMARC)": [
+        "Наладзьце бяспечную адпраўку (DMARC)"
+      ],
       "Set up your family account": [
         "Наладзіць сямейны ўліковы запіс"
       ],
@@ -28821,6 +28888,12 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Вы больш не ўбачыце ў спісе гэты запіс імпартавання."
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальніка. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў.",
+        "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў.",
+        "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў.",
+        "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ваш бясплатны пробны перыяд завершыцца ${ textDate }. ${ action }"

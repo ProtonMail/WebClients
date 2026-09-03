@@ -118,6 +118,9 @@
       "Bulk restore items from trash": [
         "Hromadné obnovenie položiek z koša"
       ],
+      "Bulk select items": [
+        "Hromadný výber položiek"
+      ],
       "Cancel": [
         "Zrušiť"
       ],
@@ -501,6 +504,9 @@
       ],
       "Move to Trash": [
         "Presunúť do koša"
+      ],
+      "Multiple select": [
+        "Viacnásobný výber"
       ],
       "New token": [
         "Nový token"
@@ -4456,6 +4462,9 @@
       "Download": [
         "Stiahnuť"
       ],
+      "Download \"${ filename }\"": [
+        "Stiahnuť \"${ filename }\""
+      ],
       "Download file": [
         "Stiahnuť súbor"
       ],
@@ -4533,6 +4542,9 @@
       ],
       "You can attach files to items for a better organization": [
         "Pre lepšiu organizáciu môžete k položkám pripojiť súbory"
+      ],
+      "You may close this window after saving the file.": [
+        "Po uložení súboru môžete toto okno zavrieť."
       ]
     },
     "Permission": {
@@ -4660,20 +4672,20 @@
       ]
     },
     "Result": {
-      "Enter a URL to check to see if your current rule is matching the URL": [
-        "Zadajte URL adresu, aby ste skontrolovali, či sa s ňou zhoduje vaše aktuálne pravidlo"
-      ],
-      "The rule is matching this URL": [
-        "Pravidlo zodpovedá tejto URL adrese"
-      ],
-      "The rule is NOT matching this URL": [
-        "Toto pravidlo sa na túto URL adresu NEVZŤAHUJE"
+      "Enter a URL to check if it matches the current rule": [
+        "Zadajte URL adresu, aby ste skontrolovali, či zodpovedá aktuálnemu pravidlu"
       ],
       "This URL will be blocked from autofill": [
         "Táto URL adresa bude vylúčená z automatického vypĺňania"
       ],
       "This URL will NOT be blocked from autofill": [
         "Táto URL adresa NEBUDE vylúčená z automatického vypĺňania"
+      ],
+      "URL doesn't match the rule": [
+        "URL nezodpovedá pravidlu"
+      ],
+      "URL matches the rule": [
+        "URL zodpovedá pravidlu"
       ]
     },
     "Security Center - Info": {
@@ -4853,6 +4865,9 @@
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } adresy"
+      ],
+      "${ PASS_APP_NAME } Logs": [
+        "Záznamy ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } Settings": [
         "Nastavenia ${ PASS_APP_NAME }"
@@ -5594,6 +5609,9 @@
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Povoľte prístup k schránke, aby bolo možné automaticky vymazať skopírované heslá a údaje."
+      ],
+      "Identity could not be confirmed": [
+        "Identitu nebolo možné potvrdiť"
       ],
       "Invalid alias prefix": [
         "Neplatná predpona aliasu"

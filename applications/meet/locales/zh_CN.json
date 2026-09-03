@@ -25,9 +25,6 @@
       ]
     },
     "Accessibility announcement": {
-      "${ BRAND_NAME } background applied": [
-        "已应用${ BRAND_NAME }背景"
-      ],
       "${ name } joined the meeting": [
         "${ name } 加入了会议"
       ],
@@ -64,20 +61,11 @@
       "A participant reacted with ${ emoji }": [
         "一名参与者回应了 ${ emoji }"
       ],
-      "Abstract background applied": [
-        "已应用抽象背景"
-      ],
       "Background effect turned off": [
         "已关闭背景效果"
       ],
-      "Beach background applied": [
-        "已应用沙滩背景"
-      ],
       "Blurred background applied": [
         "已应用模糊背景"
-      ],
-      "Coffee place background applied": [
-        "已应用咖啡厅背景"
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "由于网络限制，已通过 TURN 中继模式连接。这可能会增加延迟并影响通话质量。"
@@ -85,17 +73,11 @@
       "Connection lost. Reconnecting…": [
         "连接断开，正在重连…"
       ],
-      "Mountain background applied": [
-        "已应用山脉背景"
-      ],
       "New chat message: ${ message }": [
         "新聊天消息：${ message }"
       ],
       "Now starting recording": [
         "正在开始录制"
-      ],
-      "Office background applied": [
-        "已应用办公室背景"
       ],
       "Reconnected to the meeting": [
         "已重新连接会议"
@@ -1881,8 +1863,59 @@
       ]
     },
     "Error": {
+      "A message is required when reporting copyright infringement or stolen data": [
+        "举报版权侵权或数据被盗时必须填写消息"
+      ],
+      "An error occurred": [
+        "发生错误"
+      ],
       "Background blur initialization failed. Please toggle your camera or background blur again": [
         "背景模糊初始化失败，请重新切换摄像头或背景模糊！"
+      ],
+      "Bookmark password is not available": [
+        "书签密码不可用"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "无法将照片添加到没有有效名称的相册"
+      ],
+      "Cannot download a folder": [
+        "无法下载文件夹"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "无法移动没有有效名称的项目，请先重命名该项目"
+      ],
+      "Cannot share root folder": [
+        "无法共享根文件夹"
+      ],
+      "Cannot verify the author of this file": [
+        "无法验证此文件的作者"
+      ],
+      "Cannot verify who uploaded this file": [
+        "无法验证谁上传了此文件"
+      ],
+      "Copy operation aborted": [
+        "复制操作已中止"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "不允许将项目复制到非文件夹中"
+      ],
+      "Could not find an available name": [
+        "找不到可用的名称"
+      ],
+      "Could not load sharing details": [
+        "无法加载共享详情"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "无法加载图片预览：${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "无法读取此文件的部分内容：${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "无法解锁父文件夹"
+      ],
+      "Could not unlock this item": [
+        "无法解锁此项目"
       ],
       "Couldn’t play the recording on this speaker.": [
         "无法在此扬声器上播放录音。"
@@ -1892,6 +1925,18 @@
       ],
       "Couldn’t start the microphone test.": [
         "无法测试麦克风。"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "不允许在非文件夹中创建文档"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "不允许在非文件夹中创建文件"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "不允许在非文件夹中创建文件夹"
+      ],
+      "Device not found": [
+        "未找到设备"
       ],
       "Domain not available, try again later": [
         "域名不可用，请稍后再试"
@@ -1908,6 +1953,9 @@
       "Event deleted": [
         "日程已删除"
       ],
+      "Expiration date cannot be in the past": [
+        "过期日期不能是过去的时间"
+      ],
       "Failed to admit the participant. Please try again.": [
         "批准参与者失败，请重试。"
       ],
@@ -1922,6 +1970,27 @@
       ],
       "Failed to create personal meeting, please refresh the page": [
         "创建个人会议失败，请刷新页面"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "解密书签密钥失败：${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "解密书签名称失败：${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "解密书签密码失败：${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "解密内容密钥失败：${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "解密项目名称失败：${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "解密节点密钥失败：${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "解密版本元数据失败"
       ],
       "Failed to decrypt session key": [
         "解密会话密钥失败"
@@ -1946,6 +2015,9 @@
       ],
       "Failed to edit room name": [
         "编辑会议室名称失败"
+      ],
+      "Failed to get inviter keys": [
+        "获取邀请人密钥失败"
       ],
       "Failed to join meeting. Please try again later.": [
         "加入会议失败，请稍后重试。"
@@ -1989,14 +2061,38 @@
       "Failed to update waiting room setting. Please try again.": [
         "更新等候室设置失败，请重试。"
       ],
+      "Failed to verify invitation": [
+        "验证邀请失败"
+      ],
+      "File download failed due to empty response": [
+        "文件下载失败，因响应为空"
+      ],
+      "File has no revision": [
+        "文件没有历史版本"
+      ],
+      "Image preview not found": [
+        "未找到图片预览"
+      ],
       "Incorrect username": [
         "用户名不正确"
       ],
       "Invalid meeting link": [
         "无效的会议链接"
       ],
+      "Invalid URL": [
+        "链接无效"
+      ],
       "Invalid verification code": [
         "验证码无效"
+      ],
+      "Invitation not found": [
+        "未找到邀请"
+      ],
+      "Item not found": [
+        "未找到项目"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "旧版公开链接无法更新，请重新创建新的公开链接！"
       ],
       "Live captions aren't working. Try turning them off and on again.": [
         "实时字幕无法正常工作。请尝试将其关闭后再重新开启。"
@@ -2010,17 +2106,68 @@
       "Microphone access is blocked. Allow it in your browser settings.": [
         "麦克风访问被阻止。请在浏览器设置中允许访问。"
       ],
+      "Missing inviter email": [
+        "缺少邀请人邮箱"
+      ],
+      "Missing signature": [
+        "缺少签名"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "缺少 ${ signatureType } 的签名"
+      ],
+      "Move operation aborted": [
+        "移动操作已中止"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "不允许将项目移动到非文件夹中"
+      ],
+      "Moving root item is not allowed": [
+        "不允许移动根项目"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名称不能超过 ${ MAX_NODE_NAME_LENGTH } 个字符"
+      ],
+      "Name must not be empty": [
+        "名称不能为空"
+      ],
+      "No file data was received. Please try again.": [
+        "未收到任何文件数据，请重试！"
+      ],
       "Not a valid number": [
         "无效号码"
+      ],
+      "Only admins can convert external invitations": [
+        "只有管理员可以转换外部邀请"
+      ],
+      "Operation aborted": [
+        "操作中止"
+      ],
+      "Operation failed, try again later": [
+        "操作失败，请稍后重试"
       ],
       "Organization key is not decrypted": [
         "机构密钥尚未解密"
       ],
+      "Part of the file appears to be corrupted": [
+        "文件部分内容似乎已损坏"
+      ],
       "Passwords do not match": [
         "密码不匹配"
       ],
+      "Photo is already in the target album": [
+        "照片已存在于目标相册中"
+      ],
+      "Photo not found": [
+        "未找到照片"
+      ],
       "Please allow screen sharing in your system permissions, then try again": [
         "请在系统权限中允许屏幕共享，然后重试"
+      ],
+      "Renaming root item is not allowed": [
+        "不允许重命名根项目"
+      ],
+      "Request aborted": [
+        "请求中止"
       ],
       "Request timed out": [
         "请求超时"
@@ -2031,8 +2178,35 @@
       "Screen share is not supported on mobile browsers": [
         "移动浏览器不支持屏幕共享"
       ],
+      "Signature is missing": [
+        "缺少签名"
+      ],
       "Signature verification failed": [
         "签名验证失败"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "签名验证失败：${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "${ signatureType } 签名验证失败"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "${ signatureType } 签名验证失败：${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "部分文件数据上传失败，请重试。"
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "部分文件片段上传失败，请重试。"
+      ],
+      "Some items could not be loaded": [
+        "部分项目无法加载"
+      ],
+      "Something went wrong": [
+        "出了些问题"
+      ],
+      "Something went wrong. Please try again.": [
+        "出错了，请再试一次。"
       ],
       "The email addresses do not match": [
         "邮箱地址不一致"
@@ -2046,6 +2220,9 @@
       "The selected microphone is no longer available.": [
         "所选麦克风已不再可用。"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "上传的文件与原始文件不匹配，请重试。"
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "此项超过了 ${ maximumLength } 个字符的长度限制。"
       ],
@@ -2055,8 +2232,32 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "该字段至少需要 ${ minimumLength } 个字符。"
       ],
+      "This file has missing crypto material": [
+        "此文件缺少加密材料"
+      ],
+      "This file has no version available to download": [
+        "此文件没有可下载的版本"
+      ],
+      "This file version could not be uploaded": [
+        "此文件版本无法上传"
+      ],
+      "This item has no image preview": [
+        "此项目没有图片预览"
+      ],
+      "This item is no longer shared": [
+        "此项目已不再共享"
+      ],
+      "This item is not shared": [
+        "此项目未共享"
+      ],
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
         "此会议使用的是旧版本，主持人必须结束会议并刷新 Meet 以使用最新版本重新开始。"
+      ],
+      "Too many server errors, please try again later": [
+        "服务器错误过多，请稍后重试"
+      ],
+      "Too many server requests, please try again later": [
+        "服务器请求过多，请稍后重试"
       ],
       "Try using only letters, numerals, and _.-": [
         "请使用英文字母、阿拉伯数字或 _ . - 符号"
@@ -2070,11 +2271,35 @@
       "Username must end with a letter or digit": [
         "用户名必须以字母或数字结尾"
       ],
+      "Verification keys are not available": [
+        "验证密钥不可用"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "${ signatureType } 的验证密钥不可用"
+      ],
       "Virtual background initialization failed. Please toggle your camera or pick a background again": [
         "虚拟背景初始化失败。请切换您的摄像头或重新选择背景"
       ],
       "We couldn’t send a verification code using this method.": [
         "我们无法通过此类方式发送验证码。"
+      ],
+      "You can create public links for your own files only": [
+        "您只能为自己拥有的文件创建公开链接"
+      ],
+      "You can only leave items that are shared with you": [
+        "您只能离开已共享给您的项目"
+      ],
+      "You can only upload a new version to a file": [
+        "您只能上传新版本到文件中"
+      ],
+      "You can update a public link for your own files only": [
+        "您只能更新自己文件的公开链接"
+      ],
+      "You do not have access to this item": [
+        "您无权访问此项目"
+      ],
+      "You do not have access to this shared item": [
+        "您无权访问此共享项目"
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "您的浏览器存储空间已满，我们已保存截至目前的录制。"
@@ -2342,6 +2567,9 @@
       ],
       "Attention required": [
         "需要关注"
+      ],
+      "Author is not provided on public link": [
+        "公开链接未提供作者信息"
       ],
       "Available with a paid plan": [
         "仅付费套餐可用"
@@ -3056,9 +3284,6 @@
       ]
     },
     "Label": {
-      "${ BRAND_NAME } background": [
-        "${ BRAND_NAME }背景"
-      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 用户名"
       ],
@@ -3067,9 +3292,6 @@
       ],
       "${ numberOfStars } star": [
         "${ numberOfStars } 星"
-      ],
-      "Abstract background": [
-        "抽象背景"
       ],
       "Add optional details": [
         "添加可选详细信息"
@@ -3101,9 +3323,6 @@
       "Background color": [
         "背景颜色"
       ],
-      "Beach background": [
-        "沙滩背景"
-      ],
       "Blurred (next)": [
         "模糊（下一版本）"
       ],
@@ -3127,9 +3346,6 @@
       ],
       "Code is 6 digits without spaces": [
         "验证码是无空格的六位数"
-      ],
-      "Coffee place background": [
-        "咖啡厅背景"
       ],
       "Connection Quality": [
         "连接质量"
@@ -3239,9 +3455,6 @@
       "Monday to Friday": [
         "周一至周五"
       ],
-      "Mountain background": [
-        "山脉背景"
-      ],
       "Muted": [
         "已静音"
       ],
@@ -3250,9 +3463,6 @@
       ],
       "Next": [
         "下一步"
-      ],
-      "Office background": [
-        "办公室背景"
       ],
       "Operating system": [
         "操作系统"
@@ -3533,6 +3743,26 @@
       ],
       "Type an encrypted message...": [
         "输入加密消息…"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "属性"
+      ],
+      "content key": [
+        "内容密钥"
+      ],
+      "hash key": [
+        "哈希密钥"
+      ],
+      "key": [
+        "密钥"
+      ],
+      "membership": [
+        "成员资格"
+      ],
+      "name": [
+        "名称"
       ]
     },
     "Role": {
