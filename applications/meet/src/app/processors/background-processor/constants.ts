@@ -16,6 +16,12 @@ export const SEGMENTATION_INPUT_MAX_EDGE = 512;
 // Higher cap for capable devices; keeps thin features (fingers, hair).
 export const SEGMENTATION_INPUT_MAX_EDGE_HIGH_END = 768;
 
+// Mobile cap. Both models take a fixed 256x256 input tensor and MediaPipe upsamples
+// the masks back to whatever it was handed, so a larger cap adds no detail — it only
+// scales the per-pixel work downstream. The compositor's LINEAR sampling then does
+// the upscale to frame size on the GPU for free.
+export const SEGMENTATION_INPUT_MAX_EDGE_MOBILE = 256;
+
 // --- Temporal smoothing of the person-confidence mask ---------------------
 // Per-pixel EMA against the previous mask, damping the frame-to-frame jitter
 // that flickers pixels across the 0.5 cut. Asymmetric: confidence that rises is
@@ -41,8 +47,23 @@ export const MASK_CLOSING_RADIUS = 2;
 // Smaller structuring element for low-end devices.
 export const MASK_CLOSING_RADIUS_LOW_END = 1;
 
+// Mobile structuring element. The radius counts mask texels, and the mobile mask is a
+// third of the edge, so each texel covers ~3x more of the frame.
+export const MASK_CLOSING_RADIUS_MOBILE = 1;
+
 // Compile-time loop bound for the shader morphology; must be >= the max radius.
 export const MASK_CLOSING_MAX_RADIUS = 4;
+
+// Composited frames per segmentation request. Above 1 each mask is reused for the
+// frames in between, which halves inference cost but trails behind fast movement.
+export const SEGMENTATION_FRAME_INTERVAL = 1;
+
+// Processed output frame rate on mobile, bounding compositing and encoding cost.
+export const MAX_FPS_MOBILE = 16;
+
+// Frame rate the temporal EMA rates were tuned at. They apply per mask update, so a
+// slower update rate stretches the same smoothing over more wall-clock time.
+export const MASK_TEMPORAL_REFERENCE_FPS = 30;
 
 // u_mode selector for the shared mask shader.
 export const MASK_PASS_COPY = 0;

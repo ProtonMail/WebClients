@@ -49,7 +49,6 @@ import { AnnouncementPriority } from '../../components/MeetingAnnouncer/types';
 import { useAnnounce } from '../../components/MeetingAnnouncer/useAnnounce';
 import { useMediaToggleShortcuts } from '../../hooks/useMediaToggleShortcuts';
 import { useStableCallback } from '../../hooks/useStableCallback';
-import { supportsBackgroundEffects } from '../../processors/background-processor/createBackgroundProcessor';
 import type { InitializeDevices, SwitchActiveDevice } from '../../types';
 import { supportsSetSinkId } from '../../utils/browser';
 import { createDummyVideoTrack } from '../../utils/dummyVideoTrack';
@@ -58,6 +57,7 @@ import { BackgroundEffectsContext } from '../BackgroundEffects/BackgroundEffects
 import { useAppliedBackgroundEffect } from '../BackgroundEffects/useAppliedBackgroundEffect';
 import { useBackgroundEffects } from '../BackgroundEffects/useBackgroundEffects';
 import { useBackgroundProcessorPreload } from '../BackgroundEffects/useBackgroundProcessorPreload';
+import { useIsBackgroundEffectsSupported } from '../BackgroundEffects/useIsBackgroundEffectsSupported';
 import { CustomBackgroundsProvider } from '../CustomBackgroundsContext';
 import { MediaManagementContext } from './MediaManagementContext';
 import { PermissionsModal } from './PermissionsModal/PermissionsModal';
@@ -99,7 +99,7 @@ export const MediaManagementProvider = ({
     const microphones = useMeetSelector(selectMicrophones);
     const speakerState = useMeetSelector(selectSpeakerState);
 
-    const { backgroundProcessorVersion } = useBackgroundProcessorPreload();
+    useBackgroundProcessorPreload();
 
     const { getMicrophoneVolumeAnalysis, initializeMicrophoneVolumeAnalysis, cleanupMicrophoneVolumeAnalysis } =
         useMicrophoneVolumeAnalysis();
@@ -225,13 +225,15 @@ export const MediaManagementProvider = ({
         ]
     );
 
+    const isBackgroundBlurSupported = useIsBackgroundEffectsSupported();
+
     const {
         selectBackgroundEffect,
         toggleBackgroundBlur,
         reapplyBackgroundEffect,
         trackBackgroundEffectInitialization,
         cancelBackgroundEffectInitialization,
-    } = useBackgroundEffects({ backgroundProcessorVersion });
+    } = useBackgroundEffects({ isBackgroundEffectsSupported: isBackgroundBlurSupported });
 
     const { toggleVideo, handleRotateCamera, isVideoEnabled, facingMode } = useVideoToggle({
         switchActiveDevice,
@@ -242,7 +244,6 @@ export const MediaManagementProvider = ({
 
     const { permissionsLoading } = useDeviceManagement({ toggleAudio, toggleVideo, switchActiveDevice });
 
-    const isBackgroundBlurSupported = supportsBackgroundEffects();
     const appliedBackgroundEffect = useAppliedBackgroundEffect();
 
     const backgroundEffects = useMemo(
@@ -255,7 +256,6 @@ export const MediaManagementProvider = ({
         facingMode: 'user',
         isBackgroundBlurSupported,
         backgroundEffect: appliedBackgroundEffect,
-        backgroundProcessorVersion,
         room,
         trackBackgroundEffectInitialization,
         cancelBackgroundEffectInitialization,
