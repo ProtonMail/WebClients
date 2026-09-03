@@ -1,6 +1,24 @@
-import { couldPotentiallyBeRenderedAsSVG } from '../../lib/helpers/mimetype';
+import { SupportedProtonDocsMimeTypes } from '../../lib/drive/constants';
+import {
+    couldPotentiallyBeRenderedAsSVG,
+    getDocsConversionType,
+    isConvertibleToProtonDocsDocument,
+    mimeTypeToOpenInDocsType,
+} from '../../lib/helpers/mimetype';
 
 describe('mimetype', () => {
+    describe('OpenDocument Text', () => {
+        it('can be converted to a Proton document', () => {
+            expect(isConvertibleToProtonDocsDocument(SupportedProtonDocsMimeTypes.odt)).toBe(true);
+            expect(getDocsConversionType(SupportedProtonDocsMimeTypes.odt)).toBe('odt');
+            expect(mimeTypeToOpenInDocsType(SupportedProtonDocsMimeTypes.odt)).toBeUndefined();
+            expect(mimeTypeToOpenInDocsType(SupportedProtonDocsMimeTypes.odt, false, true)).toEqual({
+                type: 'document',
+                isNative: false,
+            });
+        });
+    });
+
     describe('couldPotentiallyBeRenderedAsSVG', () => {
         it('matches the standard SVG mime type', () => {
             expect(couldPotentiallyBeRenderedAsSVG('image/svg+xml')).toBe(true);

@@ -168,6 +168,7 @@ export enum SupportedMimeTypes {
 
 export enum SupportedProtonDocsMimeTypes {
     docx = SupportedMimeTypes.docx,
+    odt = SupportedMimeTypes.odt,
     txt = 'text/plain',
     md = 'text/markdown',
     html = 'text/html',
