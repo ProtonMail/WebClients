@@ -5,19 +5,17 @@ import { formattedShortSavedSepaDetails } from '@proton/components/payments/clie
 import { IcBank } from '@proton/icons/icons/IcBank';
 import { getBankSvg } from '@proton/payments-ui/ui/helpers/credit-card-icons';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
-import type { PayPalDetails, SavedCardDetails, SepaDetails } from '@proton/payments/core/interface';
-
-export type SavedMethodCustomType =
-    | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
-    | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
-    | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-    | PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL
-    | PAYMENT_METHOD_TYPES.GOOGLE_PAY
-    | PAYMENT_METHOD_TYPES.APPLE_PAY;
+import type {
+    PayPalDetails,
+    SavedCardDetails,
+    SavedMethodDetails,
+    SavedMethodType,
+    SepaDetails,
+} from '@proton/payments/core/interface';
 
 interface Props {
-    type: SavedMethodCustomType;
-    details: SavedCardDetails | PayPalDetails | SepaDetails;
+    type: SavedMethodType;
+    details: SavedMethodDetails;
 }
 
 const SavedPaymentMethodDetails = ({ type, details }: Props) => {
