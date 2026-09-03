@@ -1,9 +1,8 @@
-import type { FC } from 'react';
+import type { FC, ReactElement } from 'react';
 
 import ContextMenuButton from '@proton/components/components/contextMenu/ContextMenuButton';
 import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator';
 import { IcPassLock } from '@proton/icons/icons/IcPassLock';
-import type { IconName } from '@proton/icons/types';
 
 import type { Maybe, MaybeNull, MaybePromise } from '../../types';
 import { useCopyToClipboard } from '../Settings/Clipboard/ClipboardProvider';
@@ -13,7 +12,7 @@ export type ContextMenuItemCopy = Maybe<() => MaybePromise<MaybeNull<string>>>;
 
 export type ContextMenuItem = {
     type: 'button';
-    icon: IconName;
+    icon: ReactElement;
     name: string;
     copy?: ContextMenuItemCopy;
     action?: () => void;
