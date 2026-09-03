@@ -1,6 +1,5 @@
 import { MimeIcon, ToolbarButton } from '@proton/components';
 import { getOpenInDocsMimeIconName, getOpenInDocsString } from '@proton/shared/lib/drive/translations';
-import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 
 import { hasFoldersSelected, isMultiSelect } from '../../../legacy/components/sections/ToolbarButtons/utils';
 import { ContextMenuButton } from '../../../statelessComponents/ContextMenu';
@@ -23,7 +22,7 @@ type Props = Omit<ActionButtonProps, 'onClick'> & {
 
 export const OpenInDocsButton = ({ selectedItems, type, close }: Props) => {
     const selectedItem = selectedItems[0];
-    const documentInfo = mimeTypeToOpenInDocsType(selectedItem?.mimeType);
+    const documentInfo = selectedItem ? getOpenInDocsInfo(selectedItem.mimeType) : undefined;
     if (!documentInfo || isMultiSelect(selectedItems) || hasFoldersSelected(selectedItems)) {
         return null;
     }
