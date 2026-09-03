@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
       ],
+      "Accept dictation": [
+        "Diktat annehmen"
+      ],
       "Add": [
         "Hinzufügen"
       ],
@@ -50,6 +53,9 @@
       ],
       "Cancel": [
         "Abbrechen"
+      ],
+      "Cancel dictation": [
+        "Diktat abbrechen"
       ],
       "Cancel subscription": [
         "Abonnement kündigen"
@@ -951,6 +957,15 @@
         "${ users } Benutzer",
         "${ users } Benutzer"
       ],
+      "Amount due": [
+        "Fälliger Betrag"
+      ],
+      "Amount due after trial": [
+        "Fälliger Betrag nach der Testversion"
+      ],
+      "Amount due now": [
+        "Jetzt fälliger Betrag"
+      ],
       "Subtotal": [
         "Zwischensumme"
       ],
@@ -961,9 +976,9 @@
       "Total": [
         "Insgesamt"
       ],
-      "Total for ${ n } month": [
-        "Gesamtbetrag für ${ n } Monat",
-        "Gesamtbetrag für ${ n } Monate"
+      "Total for ${ cycle } month": [
+        "Gesamtbetrag für ${ cycle } Monat",
+        "Gesamtbetrag für ${ cycle } Monate"
       ]
     },
     "Collapsible tooltip": {
@@ -1218,6 +1233,9 @@
       ],
       "Delete all": [
         "Alle löschen"
+      ],
+      "Dictate": [
+        "Diktieren"
       ],
       "Get started": [
         "Erste Schritte"
@@ -6847,6 +6865,12 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicke auf „Neuen Code anfordern“, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten“, um sie zu korrigieren."
+      ],
+      "Connecting…": [
+        "Verbindung wird hergestellt…"
+      ],
+      "Connection error": [
+        "Verbindungsfehler"
       ],
       "Country code": [
         "Ländercode"

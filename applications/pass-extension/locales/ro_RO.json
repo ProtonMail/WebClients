@@ -118,6 +118,9 @@
       "Bulk restore items from trash": [
         "Restaurare grup de articole din gunoi"
       ],
+      "Bulk select items": [
+        "Selectare grup de articole"
+      ],
       "Cancel": [
         "Anulare"
       ],
@@ -224,7 +227,7 @@
         "Copiere cod de acces"
       ],
       "Copy username": [
-        "Copiere nume utilizator"
+        "Copiere nume de utilizator"
       ],
       "Create": [
         "Creare"
@@ -501,6 +504,9 @@
       ],
       "Move to Trash": [
         "Mutare în «Gunoi»"
+      ],
+      "Multiple select": [
+        "Selecție multiplă"
       ],
       "New token": [
         "Cod de acces nou"
@@ -1813,7 +1819,7 @@
         "Blocarea automată s-a dezactivat."
       ],
       "Autofill HTTP basic auth dialogs with saved credentials.": [
-        "Autocompletează casetele de dialog de autentificare de bază HTTP cu acreditările salvate."
+        "Completare automată dialoguri de autentificare HTTP de bază cu acreditările salvate."
       ],
       "automatically": [
         "automat"
@@ -1822,7 +1828,7 @@
         "Copiere automată parolă generată în memorie."
       ],
       "Automatically fill in your saved payment information.": [
-        "Vă completați automat informațiile de plată salvate."
+        "Completează automat informațiile de plată salvate."
       ],
       "Autosaved on ${ url }": [
         "Autosalvat la ${ url }"
@@ -1843,7 +1849,7 @@
         "Breșe detectate"
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
-        "Aduceți-vă propriul domeniu și nu trebuie să cumpărați încă o soluție de găzduire de e-mail."
+        "Aduceți-vă propriul domeniu și nu va trebui să cumpărați altă opțiune de găzduire de e-mail."
       ],
       "Built in 2FA authenticator": [
         "Autentificator A2F încorporat."
@@ -2005,7 +2011,7 @@
         "Mesajele trimise de la această adresă vor apărea ca fiind trimise de la ${ exampleEmail } de exemplu."
       ],
       "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
-        "Mesajele trimise către aliasurile personale sunt transferate către conturile de e-mail. Un alias poate avea mai multe conturi de e-mail: util pentru a partaja un alias între dvs. și alți prieteni."
+        "Mesajele trimise către aliasurile personale sunt transferate către conturile de e-mail reale. Un alias poate avea mai multe conturi de e-mail: util pentru a partaja un alias cu alte persoane."
       ],
       "Emptying trash...": [
         "Se golește gunoiul..."
@@ -2533,13 +2539,13 @@
         "Protejat de ${ PROTON_SENTINEL_LINK }, programul nostru avansat de protecție a contului"
       ],
       "Quickly autofill your 2FA tokens.": [
-        "Autocompletați rapid codurile de A2F."
+        "Completare automată rapidă a codurilor pentru A2F."
       ],
       "Quickly autofill your identities.": [
-        "Completați-vă rapid identitățile."
+        "Completare automată rapidă a identităților."
       ],
       "Quickly autofill your saved credentials.": [
-        "Vă autocompletați rapid datele de conectare salvate."
+        "Completează automat rapid datele de autentificare salvate."
       ],
       "Ranked by field (title first, then username or email, website, notes) and match precision (exact, starts with, contains).": [
         "Clasificat după câmp (titlul mai întâi, apoi numele de utilizator sau adresa de e-mail, site web, note) și precizia potrivirii (exactă, începe cu, conține)."
@@ -2862,7 +2868,7 @@
         "Accesul utilizatorului a fost actualizat."
       ],
       "username": [
-        "utilizator"
+        "nume de utilizator"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Seiful „${ payload.content.name }” a fost șters."
@@ -2914,7 +2920,7 @@
         "Vi s-a trimis un cod de verificare la ${ email }. Introduceți codul primit mai jos:"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
-        "Când creați/editați date de autentificare în ${ PASS_APP_NAME } câmpul „nume utilizator” va fi întotdeauna vizibil."
+        "Când creați/editați date de autentificare în ${ PASS_APP_NAME } câmpul „Nume de utilizator” va fi întotdeauna vizibil."
       ],
       "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
         "Când este activată, puteți accesa în continuare datele ${ PASS_SHORT_APP_NAME } dacă pierdeți conectivitatea la internet sau dacă serverele ${ BRAND_NAME } nu sunt accesibile."
@@ -3244,7 +3250,7 @@
         "Alfabetic"
       ],
       "Always show username field": [
-        "Afișare permanentă câmp nume utilizator"
+        "Afișare permanentă câmp nume de utilizator"
       ],
       "API Credential": [
         "Acreditare API"
@@ -3616,7 +3622,7 @@
         "Informații"
       ],
       "Instagram handle": [
-        "Nume utilizator Instagram"
+        "Nume de utilizator Instagram"
       ],
       "Invitations": [
         "Invitații"
@@ -4198,7 +4204,7 @@
         "Util pentru partajare permanentă"
       ],
       "Username": [
-        "Nume utilizator"
+        "Nume de utilizator"
       ],
       "Username/email": [
         "Nume de utilizator/e-mail"
@@ -4405,6 +4411,9 @@
       "Download": [
         "Descărcare"
       ],
+      "Download \"${ filename }\"": [
+        "Descărcare „${ filename }”"
+      ],
       "Download file": [
         "Descarcă fișier"
       ],
@@ -4482,6 +4491,9 @@
       ],
       "You can attach files to items for a better organization": [
         "Puteți atașa fișiere la articole pentru o organizare mai bună."
+      ],
+      "You may close this window after saving the file.": [
+        "Puteți închide această fereastră după salvarea fișierului."
       ]
     },
     "Permission": {
@@ -4609,20 +4621,20 @@
       ]
     },
     "Result": {
-      "Enter a URL to check to see if your current rule is matching the URL": [
-        "Introduceți o adresă URL pentru a verifica dacă regula curentă se potrivește cu adresa URL."
-      ],
-      "The rule is matching this URL": [
-        "Regula se potrivește cu acest URL"
-      ],
-      "The rule is NOT matching this URL": [
-        "Regula NU se potrivește cu acest URL"
+      "Enter a URL to check if it matches the current rule": [
+        "Introduceți o adresă URL pentru a verifica dacă se potrivește cu regula curentă."
       ],
       "This URL will be blocked from autofill": [
         "Acest URL nu va fi autocompletat"
       ],
       "This URL will NOT be blocked from autofill": [
         "Acest URL va fi autocompletat"
+      ],
+      "URL doesn't match the rule": [
+        "Adresa URL nu se potrivește cu regula."
+      ],
+      "URL matches the rule": [
+        "Adresa URL se potrivește cu regula."
       ]
     },
     "Security Center - Info": {
@@ -4800,6 +4812,9 @@
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } adrese"
+      ],
+      "${ PASS_APP_NAME } Logs": [
+        "Jurnale ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } Settings": [
         "Setări ${ PASS_APP_NAME }"
@@ -5532,6 +5547,9 @@
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Permiteți accesarea memoriei pentru a activa ștergerea automată a parolelor și a datelor copiate."
+      ],
+      "Identity could not be confirmed": [
+        "Identitatea nu a putut fi verificată."
       ],
       "Invalid alias prefix": [
         "Prefix alias nevalid."

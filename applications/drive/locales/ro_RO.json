@@ -1900,11 +1900,6 @@
       ],
       "Total": [
         "Total"
-      ],
-      "Total for ${ n } month": [
-        "Total pentru o lună",
-        "Total pentru ${ n } luni",
-        "Total pentru ${ n } de luni"
       ]
     },
     "Collapsible tooltip": {
@@ -5907,9 +5902,6 @@
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Vă amintiți parola? ${ verifyButton }"
-      ],
       "Do you still want to upload it?": [
         "Încă doriți să-l încărcați?",
         "Încă doriți să le încărcați?",
@@ -6317,6 +6309,9 @@
       ],
       "Link copied to clipboard": [
         "Legătura a fost copiată în memorie."
+      ],
+      "Link expired": [
+        "legătură web expirată."
       ],
       "Link owner has the password": [
         "Proprietarul legăturii web are parola"
@@ -7183,7 +7178,7 @@
         "Folosiți acest formular pentru a ne anunța despre fișierele partajate nepotrivite, ilegale sau în vreun fel malițioase. Urmează să raportați:"
       ],
       "username": [
-        "utilizator"
+        "nume de utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -7633,7 +7628,7 @@
         "${ albumProgress.added } din ${ albumProgress.total }"
       ],
       "${ BRAND_NAME } username": [
-        "Nnume de utilizator ${ BRAND_NAME }"
+        "Nume de utilizator ${ BRAND_NAME }"
       ],
       "${ downloads } downloads": [
         "${ downloads } descărcări"
@@ -8364,7 +8359,7 @@
         "Utilizatorul a optat pentru"
       ],
       "Username": [
-        "Nume utilizator"
+        "Nume de utilizator"
       ],
       "Verification code": [
         "Cod de verificare"
@@ -11253,7 +11248,7 @@
         "Nume"
       ],
       "Name or email address": [
-        "Nume utilizator/adresa de e-mail"
+        "Nume de utilizator/adresa de e-mail"
       ],
       "New name": [
         "Nume nou"

@@ -2801,12 +2801,6 @@
       ],
       "Total": [
         "Агулам"
-      ],
-      "Total for ${ n } month": [
-        "Усяго за ${ n } месяц",
-        "Усяго за ${ n } месяцы",
-        "Усяго за ${ n } месяцаў",
-        "Усяго за ${ n } месяцы"
       ]
     },
     "Collapsible tooltip": {
@@ -7839,6 +7833,9 @@
       "Center": [
         "Па цэнтры"
       ],
+      "Change display setting": [
+        "Змяніць налады дысплэя"
+      ],
       "Change your password": [
         "Змяніць свой пароль"
       ],
@@ -8009,9 +8006,6 @@
       ],
       "Discover ProtectBuy logo": [
         "Лагатып Discover ProtectBuy"
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Вы памятаеце свой пароль? ${ verifyButton }"
       ],
       "Do you want to download this attachment anyway?": [
         "Вы сапраўды хочаце спампаваць гэта далучэнне?",
@@ -8425,7 +8419,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -8942,6 +8939,9 @@
         "Прачытайце свае ${ count } меткі",
         "Прачытайце свае ${ count } метак",
         "Прачытайце свае ${ count } метак"
+      ],
+      "Read your display settings": [
+        "Чытанне наладаў дысплэя"
       ],
       "Recipient: ": [
         "Атрымальнік: "
@@ -10631,8 +10631,17 @@
       "Colors": [
         "Колеры"
       ],
+      "Column": [
+        "Слупок"
+      ],
+      "Comfortable": [
+        "Камфортны"
+      ],
       "Command line interface (CLI)": [
         "Інтэрфейс каманднага радка (CLI)"
+      ],
+      "Compact": [
+        "Кампактны"
       ],
       "Company": [
         "Кампанія"
@@ -10663,6 +10672,9 @@
       ],
       "Continue cancelling": [
         "Працягнуць скасаванне"
+      ],
+      "Conversation grouping": [
+        "Групаванне размоў"
       ],
       "Copy": [
         "Капіяваць"
@@ -10864,6 +10876,9 @@
       ],
       "Go to Updates": [
         "Перайсці ў абнаўленні"
+      ],
+      "Grouped conversations": [
+        "Групаваныя размовы"
       ],
       "Has attachments": [
         "Змяшчаюць далучэнні"
@@ -11186,6 +11201,9 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Жэнева"
       ],
+      "Row": [
+        "Радкамі"
+      ],
       "Search in": [
         "Шукаць у"
       ],
@@ -11206,6 +11224,9 @@
       ],
       "Sign emails": [
         "Падпісваць лісты"
+      ],
+      "Single messages": [
+        "Асобныя паведамленні"
       ],
       "Size:": [
         "Памер:"
@@ -16924,6 +16945,9 @@
       ],
       "CC": [
         "Копія"
+      ],
+      "Change display setting": [
+        "Змяніць налады дысплэя"
       ],
       "Change my answer": [
         "Змяніць мой адказ"

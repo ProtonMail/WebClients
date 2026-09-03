@@ -25,9 +25,6 @@
       ]
     },
     "Accessibility announcement": {
-      "${ BRAND_NAME } background applied": [
-        "Εφαρμόστηκε φόντο ${ BRAND_NAME }"
-      ],
       "${ name } joined the meeting": [
         "Ο χρήστης ${ name } συμμετείχε στη συνάντηση"
       ],
@@ -64,20 +61,14 @@
       "A participant reacted with ${ emoji }": [
         "Ένας συμμετέχων αντέδρασε με ${ emoji }"
       ],
-      "Abstract background applied": [
-        "Εφαρμόστηκε αφηρημένο φόντο"
-      ],
       "Background effect turned off": [
         "Το εφέ φόντου απενεργοποιήθηκε"
       ],
-      "Beach background applied": [
-        "Εφαρμόστηκε φόντο παραλίας"
+      "Background removed": [
+        "Το φόντο αφαιρέθηκε"
       ],
       "Blurred background applied": [
         "Εφαρμόστηκε θολό φόντο"
-      ],
-      "Coffee place background applied": [
-        "Εφαρμόστηκε φόντο καφετέριας"
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Συνδεδεμένος μέσω της λειτουργίας αναμετάδοσης TURN λόγω περιορισμών του δικτύου. Αυτό μπορεί να αυξήσει την καθυστέρηση και να επηρεάσει την ποιότητα της κλήσης."
@@ -85,17 +76,11 @@
       "Connection lost. Reconnecting…": [
         "Χάθηκε η σύνδεση. Επανασύνδεση…"
       ],
-      "Mountain background applied": [
-        "Εφαρμόστηκε φόντο βουνού"
-      ],
       "New chat message: ${ message }": [
         "Νέο μήνυμα συνομιλίας: ${ message }"
       ],
       "Now starting recording": [
         "Ξεκινά η ηχογράφηση τώρα"
-      ],
-      "Office background applied": [
-        "Εφαρμόστηκε φόντο γραφείου"
       ],
       "Reconnected to the meeting": [
         "Επανασυνδέθηκε στη σύσκεψη"
@@ -156,6 +141,9 @@
       ],
       "Your camera has been turned off by the host": [
         "Η κάμερά σας έχει απενεργοποιηθεί από τον οικοδεσπότη"
+      ],
+      "Your own background applied": [
+        "Εφαρμόστηκε το δικό σας φόντο"
       ]
     },
     "Action": {
@@ -171,6 +159,9 @@
       ],
       "Add another account": [
         "Προσθήκη επιπλέον λογαριασμού"
+      ],
+      "Add your own background": [
+        "Προσθέστε το δικό σας φόντο"
       ],
       "Admit ${ participantName }": [
         "Αποδοχή ${ participantName }"
@@ -517,6 +508,9 @@
       ],
       "Rejoin meeting": [
         "Εκ νέου συμμετοχή στη σύσκεψη."
+      ],
+      "Remove ${ name }": [
+        "Αφαίρεση ${ name }"
       ],
       "Remove reaction ${ emoji }, ${ identities.length } reaction": [
         "Αφαίρεση αντίδρασης ${ emoji }, ${ identities.length } αντίδραση",
@@ -1890,8 +1884,71 @@
       ]
     },
     "Error": {
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Απαιτείται μήνυμα κατά την αναφορά παραβίασης πνευματικών δικαιωμάτων ή κλοπής δεδομένων"
+      ],
+      "An error occurred": [
+        "Παρουσιάστηκε σφάλμα"
+      ],
       "Background blur initialization failed. Please toggle your camera or background blur again": [
         "Η αρχικοποίηση του θολώματος φόντου απέτυχε. Παρακαλούμε ενεργοποιήστε ξανά την κάμερα ή το θάμπωμα φόντου."
+      ],
+      "Bookmark password is not available": [
+        "Ο κωδικός πρόσβασης σελιδοδείκτη δεν είναι διαθέσιμος"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Δεν είναι δυνατή η προσθήκη φωτογραφίας στο άλμπουμ χωρίς έγκυρο όνομα"
+      ],
+      "Cannot download a folder": [
+        "Δεν είναι δυνατή η λήψη ενός φακέλου"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Δεν είναι δυνατή η μετακίνηση στοιχείου χωρίς έγκυρο όνομα. Παρακαλούμε μετονομάστε το στοιχείο πρώτα."
+      ],
+      "Cannot share root folder": [
+        "Δεν είναι δυνατή η κοινοποίηση του ριζικού φακέλου"
+      ],
+      "Cannot verify the author of this file": [
+        "Δεν είναι δυνατή η επαλήθευση του δημιουργού αυτού του αρχείου"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Δεν είναι δυνατή η επαλήθευση ποιος ανέβασε αυτό το αρχείο"
+      ],
+      "Copy operation aborted": [
+        "Η λειτουργία αντιγραφής διακόπηκε"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Η αντιγραφή στοιχείου σε μη φάκελο δεν επιτρέπεται"
+      ],
+      "Could not add this background. Check your connection and try again.": [
+        "Δεν ήταν δυνατή η προσθήκη αυτού του φόντου. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά."
+      ],
+      "Could not add this background. Please try again.": [
+        "Δεν ήταν δυνατή η προσθήκη αυτού του φόντου. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Could not find an available name": [
+        "Δεν ήταν δυνατή η εύρεση ενός διαθέσιμου ονόματος"
+      ],
+      "Could not load sharing details": [
+        "Δεν ήταν δυνατή η φόρτωση των λεπτομερειών κοινής χρήσης"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Δεν ήταν δυνατή η φόρτωση της προεπισκόπησης εικόνας: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Δεν ήταν δυνατή η ανάγνωση μέρους αυτού του αρχείου: ${ message }"
+      ],
+      "Could not remove this background. Check your connection and try again.": [
+        "Δεν ήταν δυνατή η αγαίρεση αυτού του φόντου. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά."
+      ],
+      "Could not remove this background. Please try again.": [
+        "Δεν ήταν δυνατή η αφαίρεση αυτού του φόντου. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Could not unlock the parent folder": [
+        "Δεν ήταν δυνατό το ξεκλείδωμα του γονικού φακέλου"
+      ],
+      "Could not unlock this item": [
+        "Αδυναμία ξεκλείδωσης αυτού του στοιχείου"
       ],
       "Couldn’t play the recording on this speaker.": [
         "Δεν ήταν δυνατή η αναπαραγωγή της ηχογράφησης σε αυτό το ηχείο."
@@ -1901,6 +1958,18 @@
       ],
       "Couldn’t start the microphone test.": [
         "Δεν ήταν δυνατή η έναρξη της δοκιμής μικροφώνου."
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Η δημιουργία εγγράφων σε μη φακέλους δεν επιτρέπεται"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Δεν επιτρέπεται η δημιουργία αρχείων σε μη φακέλους"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Δεν επιτρέπεται η δημιουργία φακέλων σε μη φακέλους"
+      ],
+      "Device not found": [
+        "Η συσκευή δε βρέθηκε"
       ],
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
@@ -1917,6 +1986,9 @@
       "Event deleted": [
         "Η εκδήλωση διαγράφηκε"
       ],
+      "Expiration date cannot be in the past": [
+        "Η ημερομηνία λήξης δεν μπορεί να είναι στο παρελθόν"
+      ],
       "Failed to admit the participant. Please try again.": [
         "Αποτυχία αποδοχής του συμμετέχοντα. Παρακαλούμε δοκιμάστε ξανά."
       ],
@@ -1931,6 +2003,27 @@
       ],
       "Failed to create personal meeting, please refresh the page": [
         "Αποτυχία δημιουργίας προσωπικής σύσκεψης, παρακαλούμε ανανεώστε τη σελίδα"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης κλειδιού σελιδοδείκτη: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης ονόματος σελιδοδείκτη: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης κωδικού πρόσβασης σελιδοδείκτη: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης κλειδιού περιεχομένου: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης ονόματος στοιχείου: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης του κλειδιού κόμβου: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Απέτυχε η αποκρυπτογράφηση των μεταδεδομένων αναθεώρησης"
       ],
       "Failed to decrypt session key": [
         "Αποτυχία αποκρυπτογράφησης του κλειδιού συνεδρίας"
@@ -1955,6 +2048,9 @@
       ],
       "Failed to edit room name": [
         "Αποτυχία επεξεργασίας ονόματος αίθουσας"
+      ],
+      "Failed to get inviter keys": [
+        "Αποτυχία λήψης κλειδιών προσκλητού"
       ],
       "Failed to join meeting. Please try again later.": [
         "Αποτυχία σύνδεσης στη σύσκεψη. Παρακαλούμε δοκιμάστε ξανά αργότερα."
@@ -2004,14 +2100,38 @@
       "Failed to update waiting room setting. Please try again.": [
         "Η ενημέρωση της ρύθμισης της αίθουσας αναμονής απέτυχε. Παρακαλούμε δοκιμάστε ξανά."
       ],
+      "Failed to verify invitation": [
+        "Αποτυχία επαλήθευσης πρόσκλησης"
+      ],
+      "File download failed due to empty response": [
+        "Δεν είναι δυνατή η επαλήθευση ποιος ανέβασε αυτό το αρχείο"
+      ],
+      "File has no revision": [
+        "Το αρχείο δεν έχει αναθεώρηση"
+      ],
+      "Image preview not found": [
+        "Δεν βρέθηκε προεπισκόπηση εικόνας"
+      ],
       "Incorrect username": [
         "Εσφαλμένο όνομα χρήστη"
       ],
       "Invalid meeting link": [
         "Μη έγκυρος σύνδεσμος σύσκεψης"
       ],
+      "Invalid URL": [
+        "Μη έγκυρη διεύθυνση URL"
+      ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
+      ],
+      "Invitation not found": [
+        "Η πρόσκληση δεν βρέθηκε"
+      ],
+      "Item not found": [
+        "Το στοιχείο δεν βρέθηκε"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Δεν είναι δυνατή η ενημέρωση του παλαιού δημόσιου συνδέσμου. Δημιουργήστε ξανά έναν νέο δημόσιο σύνδεσμο."
       ],
       "Live captions aren't working. Try turning them off and on again.": [
         "Οι ζωντανοί υπότιτλοι δε λειτουργούν. Δοκιμάστε να τους απενεργοποιήσετε και να τους ενεργοποιήσετε ξανά."
@@ -2025,17 +2145,72 @@
       "Microphone access is blocked. Allow it in your browser settings.": [
         "Η πρόσβαση στο μικρόφωνο είναι αποκλεισμένη. Επιτρέψτε την στις ρυθμίσεις του προγράμματος περιήγησής σας."
       ],
+      "Missing inviter email": [
+        "Λείπει η διεύθυνση ηλεκτρονικού ταχυδρομείου προσκλητή"
+      ],
+      "Missing signature": [
+        "Λείπει η υπογραφή"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Λείπει η υπογραφή για ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Η λειτουργία μετακίνησης ματαιώθηκε"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Η μετακίνηση στοιχείου σε μη φάκελο δεν επιτρέπεται"
+      ],
+      "Moving root item is not allowed": [
+        "Δεν επιτρέπεται η μετακίνηση ριζικού στοιχείου"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Το όνομα δεν πρέπει να υπερβαίνει τον ${ MAX_NODE_NAME_LENGTH } χαρακτήρα",
+        "Το όνομα δεν πρέπει να υπερβαίνει τους ${ MAX_NODE_NAME_LENGTH } χαρακτήρες"
+      ],
+      "Name must not be empty": [
+        "Το όνομα δεν πρέπει να είναι κενό"
+      ],
+      "No file data was received. Please try again.": [
+        "Δεν ελήφθησαν δεδομένα αρχείου. Δοκιμάστε ξανά."
+      ],
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
+      ],
+      "Only admins can convert external invitations": [
+        "Μόνο οι διαχειριστές μπορούν να μετατρέψουν εξωτερικές προσκλήσεις"
+      ],
+      "Operation aborted": [
+        "Η λειτουργία ακυρώθηκε"
+      ],
+      "Operation failed, try again later": [
+        "Η λειτουργία απέτυχε, δοκιμάστε ξανά αργότερα"
       ],
       "Organization key is not decrypted": [
         "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
       ],
+      "Part of the file appears to be corrupted": [
+        "Μέρος του αρχείου φαίνεται να είναι κατεστραμμένο"
+      ],
       "Passwords do not match": [
         "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
       ],
+      "Photo is already in the target album": [
+        "Η φωτογραφία είναι ήδη στο άλμπουμ προορισμού"
+      ],
+      "Photo not found": [
+        "Η Φωτογραφία δε βρέθηκε"
+      ],
+      "Pick a JPEG, PNG or WebP image.": [
+        "Επιλέξτε μια εικόνα JPEG, PNG ή WebP."
+      ],
       "Please allow screen sharing in your system permissions, then try again": [
         "Παρακαλούμε επιτρέψτε την κοινή χρήση οθόνης στις άδειες του συστήματός σας και, δοκιμάστε ξανά."
+      ],
+      "Renaming root item is not allowed": [
+        "Δεν επιτρέπεται η μετονομασία ριζικού στοιχείου"
+      ],
+      "Request aborted": [
+        "Το αίτημα ακυρώθηκε"
       ],
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
@@ -2046,8 +2221,35 @@
       "Screen share is not supported on mobile browsers": [
         "Η κοινή χρήση οθόνης δεν υποστηρίζεται σε προγράμματα περιήγησης για κινητά"
       ],
+      "Signature is missing": [
+        "Λείπει η υπογραφή"
+      ],
       "Signature verification failed": [
         "Η επαλήθευση υπογραφής απέτυχε"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Αποτυχία επαλήθευσης υπογραφής: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Η επαλήθευση υπογραφής για το ${ signatureType } απέτυχε"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Η επαλήθευση υπογραφής για το ${ signatureType } απέτυχε: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Η μεταφόρτωση ορισμένων δεδομένων αρχείου απέτυχε. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Η μεταφόρτωση ορισμένων τμημάτων αρχείου απέτυχε. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Some items could not be loaded": [
+        "Δεν ήταν δυνατή η φόρτωση ορισμένων στοιχείων"
+      ],
+      "Something went wrong": [
+        "Κάτι πήγε στραβά"
+      ],
+      "Something went wrong. Please try again.": [
+        "Κάτι πήγε στραβά. Παρακαλούμε δοκιμάστε ξανά."
       ],
       "The email addresses do not match": [
         "Οι διευθύνσεις email δεν ταιριάζουν."
@@ -2061,6 +2263,12 @@
       "The selected microphone is no longer available.": [
         "Το επιλεγμένο μικρόφωνο δεν είναι πλέον διαθέσιμο."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Το μεταφορτωμένο αρχείο δεν ταιριάζει με το πρωτότυπο. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "This background could not be saved in this browser.": [
+        "Αυτό το φόντο δεν ήταν δυνατό να αποθηκευτεί σε αυτό το πρόγραμμα περιήγησης."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
       ],
@@ -2070,8 +2278,44 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
       ],
+      "This file has missing crypto material": [
+        "Σε αυτό το αρχείο λείπει υλικό κρυπτογράφησης"
+      ],
+      "This file has no version available to download": [
+        "Αυτό το αρχείο δεν έχει διαθέσιμη έκδοση για λήψη"
+      ],
+      "This file name is too long. Rename the image and try again.": [
+        "Αυτό το όνομα αρχείου είναι πολύ μεγάλο. Μετονομάστε την εικόνα και δοκιμάστε ξανά."
+      ],
+      "This file version could not be uploaded": [
+        "Δεν ήταν δυνατή η μεταφόρτωση αυτής της έκδοσης αρχείου"
+      ],
+      "This image could not be read. Pick another one.": [
+        "Δεν ήταν δυνατή η ανάγνωση αυτής της εικόνας. Επιλέξτε μια άλλη."
+      ],
+      "This image is too big. Pick one up to ${ maxEdge } pixels wide and tall.": [
+        "Αυτή η εικόνα είναι πολύ μεγάλη. Επιλέξτε μία εικόνα με πλάτος και ύψος έως ${ maxEdge } pixel."
+      ],
+      "This image is too large. Pick one under ${ maxMegabytes } MB.": [
+        "Αυτή η εικόνα είναι πολύ μεγάλη. Επιλέξτε μία κάτω από ${ maxMegabytes } MB."
+      ],
+      "This item has no image preview": [
+        "Αυτό το στοιχείο δεν έχει προεπισκόπηση εικόνας"
+      ],
+      "This item is no longer shared": [
+        "Αυτό το στοιχείο δεν είναι πλέον κοινόχρηστο"
+      ],
+      "This item is not shared": [
+        "Αυτό το στοιχείο δεν είναι κοινόχρηστο"
+      ],
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
         "Αυτή η συνάντηση είναι σε παλαιότερη έκδοση, ο διοργανωτής πρέπει να την τερματίσει και να ανανεώσει το Meet για να την επανεκκινήσει με την πιο πρόσφατη έκδοση."
+      ],
+      "Too many server errors, please try again later": [
+        "Πάρα πολλά σφάλματα διακομιστή, παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
+      "Too many server requests, please try again later": [
+        "Πάρα πολλά αιτήματα διακομιστή, παρακαλούμε δοκιμάστε ξανά αργότερα."
       ],
       "Try using only letters, numerals, and _.-": [
         "Δοκιμάστε να χρησιμοποιήσετε μόνο γράμματα, αριθμούς και _.-"
@@ -2085,11 +2329,38 @@
       "Username must end with a letter or digit": [
         "Το όνομα χρήστη πρέπει να τελειώνει με γράμμα ή ψηφίο"
       ],
+      "Verification keys are not available": [
+        "Τα κλειδιά επαλήθευσης δεν είναι διαθέσιμα"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Τα κλειδιά επαλήθευσης για ${ signatureType } δεν είναι διαθέσιμα"
+      ],
       "Virtual background initialization failed. Please toggle your camera or pick a background again": [
         "Η αρχικοποίηση εικονικού φόντου απέτυχε. Παρακαλούμε ενεργοποιήστε την κάμερά σας ή επιλέξτε ξανά ένα φόντο."
       ],
       "We couldn’t send a verification code using this method.": [
         "Δεν μπορέσαμε να αποστείλουμε κωδικό επιβεβαίωσης με αυτήν τη μέθοδο."
+      ],
+      "You can create public links for your own files only": [
+        "Μπορείτε να δημιουργήσετε δημόσιους συνδέσμους μόνο για τα δικά σας αρχεία"
+      ],
+      "You can only leave items that are shared with you": [
+        "Μπορείτε να αφήσετε μόνο στοιχεία που έχουν κοινοποιηθεί σε εσάς"
+      ],
+      "You can only upload a new version to a file": [
+        "Μπορείτε να ανεβάσετε μόνο μια νέα έκδοση σε ένα αρχείο"
+      ],
+      "You can update a public link for your own files only": [
+        "Μπορείτε να ενημερώσετε έναν δημόσιο σύνδεσμο μόνο για τα δικά σας αρχεία"
+      ],
+      "You do not have access to this item": [
+        "Δεν έχετε πρόσβαση σε αυτό το στοιχείο"
+      ],
+      "You do not have access to this shared item": [
+        "Δεν έχετε πρόσβαση σε αυτό το κοινόχρηστο στοιχείο"
+      ],
+      "You have reached the maximum number of custom backgrounds.": [
+        "Έχετε φτάσει τον μέγιστο αριθμό προσαρμοσμένων φόντων."
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "Ο χώρος αποθήκευσης του προγράμματος περιήγησής σας εξαντλήθηκε. Αποθηκεύσαμε την ηχογράφηση μέχρι αυτό το σημείο."
@@ -2337,6 +2608,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ένας αριθμός τηλεφώνου μπορεί να χρησιμοποιηθεί μόνο για την επαλήθευση ενός λογαριασμού ${ BRAND_NAME }"
       ],
+      "Adding ${ name }": [
+        "Προσθήκη ${ name }"
+      ],
       "Admit": [
         "Αποδοχή"
       ],
@@ -2366,6 +2640,9 @@
       ],
       "Attention required": [
         "Απαιτείται προσοχή"
+      ],
+      "Author is not provided on public link": [
+        "Ο συγγραφέας δεν παρέχεται σε δημόσιο σύνδεσμο"
       ],
       "Available with a paid plan": [
         "Διαθέσιμο με πρόγραμμα επί πληρωμή"
@@ -3036,6 +3313,9 @@
       "You can now return to the application to continue": [
         "Τώρα μπορείτε να επιστρέψετε στην εφαρμογή για να συνεχίσετε"
       ],
+      "You can save up to ${ max } of your own backgrounds.": [
+        "Μπορείτε να αποθηκεύσετε έως και ${ max } από τα δικά σας φόντα."
+      ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Μπορείτε να απενεργοποιήσετε το μικρόφωνο και την κάμερά σας ανά πάσα στιγμή κατά τη διάρκεια της σύσκεψης."
       ],
@@ -3062,6 +3342,9 @@
       ],
       "Your always available meeting room": [
         "Η πάντα διαθέσιμη αίθουσα συσκέψεών σας"
+      ],
+      "Your backgrounds could not be loaded, so a new one cannot be added right now.": [
+        "Δεν ήταν δυνατή η φόρτωση των φόντων σας, επομένως δεν είναι δυνατή η προσθήκη νέου αυτήν τη στιγμή."
       ],
       "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
         "Ο περιηγητής σας έχει αποκλείσει την πρόσβαση στην κάμερα και στο μικρόφωνό σας. Για να τα ενεργοποιήσετε, ενημερώστε τις ρυθμίσεις του περιηγητή σας και επανασυνδεθείτε στην κλήση."
@@ -3092,9 +3375,6 @@
       ]
     },
     "Label": {
-      "${ BRAND_NAME } background": [
-        "${ BRAND_NAME } φόντο"
-      ],
       "${ BRAND_NAME } username": [
         "όνομα χρήστη ${ BRAND_NAME }"
       ],
@@ -3104,9 +3384,6 @@
       "${ numberOfStars } star": [
         "${ numberOfStars } αστέρι",
         "${ numberOfStars } αστέρια"
-      ],
-      "Abstract background": [
-        "Αφηρημένο φόντο"
       ],
       "Add optional details": [
         "Προσθέστε προαιρετικές λεπτομέρειες"
@@ -3138,9 +3415,6 @@
       "Background color": [
         "Χρώμα φόντου"
       ],
-      "Beach background": [
-        "Φόντο παραλίας"
-      ],
       "Blurred (next)": [
         "Θολό (επόμενο)"
       ],
@@ -3164,9 +3438,6 @@
       ],
       "Code is 6 digits without spaces": [
         "Ο κωδικός είναι 6 ψηφία χωρίς κενά"
-      ],
-      "Coffee place background": [
-        "Φόντο καφετέριας"
       ],
       "Connection Quality": [
         "Ποιότητα σύνδεσης"
@@ -3276,9 +3547,6 @@
       "Monday to Friday": [
         "Δευτέρα έως Παρασκευή"
       ],
-      "Mountain background": [
-        "Φόντο βουνού"
-      ],
       "Muted": [
         "Σιγασμένο"
       ],
@@ -3287,9 +3555,6 @@
       ],
       "Next": [
         "Επόμενο"
-      ],
-      "Office background": [
-        "Φόντο γραφείου"
       ],
       "Operating system": [
         "Λειτουργικό σύστημα (OS)"
@@ -3570,6 +3835,26 @@
       ],
       "Type an encrypted message...": [
         "Πληκτρολογήστε ένα κρυπτογραφημένο μήνυμα..."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "χαρακτηριστικά"
+      ],
+      "content key": [
+        "κλειδί περιεχομένου"
+      ],
+      "hash key": [
+        "κλειδί hash"
+      ],
+      "key": [
+        "κλειδί"
+      ],
+      "membership": [
+        "συνδρομή"
+      ],
+      "name": [
+        "όνομα"
       ]
     },
     "Role": {

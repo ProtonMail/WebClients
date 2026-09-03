@@ -1112,6 +1112,15 @@
         "${ users } usuari",
         "${ users } usuaris"
       ],
+      "Amount due": [
+        "Import pendent"
+      ],
+      "Amount due after trial": [
+        "Import a pagar després de la prova"
+      ],
+      "Amount due now": [
+        "Import pendent de pagament"
+      ],
       "Subtotal": [
         "Subtotal"
       ],
@@ -1122,9 +1131,9 @@
       "Total": [
         "Total"
       ],
-      "Total for ${ n } month": [
-        "Total per ${ n } mes",
-        "Total per ${ n } mesos"
+      "Total for ${ cycle } month": [
+        "Total per ${ cycle } mes",
+        "Total per ${ cycle } mesos"
       ]
     },
     "Collapsible tooltip": {

@@ -874,6 +874,9 @@
       "Invite user": [
         "Convidar usuário"
       ],
+      "Invoice options": [
+        "Opções de fatura"
+      ],
       "Keep": [
         "Manter"
       ],
@@ -1255,6 +1258,9 @@
       "Set catch-all": [
         "Definir catch-all"
       ],
+      "Set invoice email": [
+        "Enviar fatura por e-mail"
+      ],
       "Set new password": [
         "Definir nova senha"
       ],
@@ -1380,6 +1386,9 @@
       ],
       "Take a tour": [
         "Faça um tour"
+      ],
+      "Template with passwords": [
+        "Modelo com senhas"
       ],
       "Test": [
         "Teste"
@@ -1950,14 +1959,6 @@
         "Você atingiu o limite de avaliação."
       ]
     },
-    "b2b_trials_2025_Label": {
-      "Amount due after trial": [
-        "Valor devido após o período de avaliação"
-      ],
-      "Amount due now": [
-        "Valor devido agora"
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Cancelar assinatura"
@@ -2501,15 +2502,6 @@
       ],
       "Total": [
         "Total"
-      ],
-      "Total for ${ n } month": [
-        "Total por ${ n } mês",
-        "Total por ${ n } meses"
-      ]
-    },
-    "Checkout summary": {
-      "month": [
-        "mês"
       ]
     },
     "Collapsible tooltip": {
@@ -5055,6 +5047,9 @@
       "Failed to decrypt item name: ${ message }": [
         "Falha ao descriptografar o nome do item: ${ message }"
       ],
+      "Failed to decrypt revision metadata": [
+        "Falha ao descriptografar os metadados da revisão"
+      ],
       "Failed to load OAuth modal.": [
         "Falha ao carregar o modal OAuth."
       ],
@@ -5414,6 +5409,9 @@
       ],
       "Signature verification failed": [
         "Erro na verificação da assinatura"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Falha na assinatura do remetente: ${ errorMessage }"
       ],
       "Signature verification for ${ signatureType } failed": [
         "A verificação de assinatura para ${ signatureType } falhou"
@@ -7620,9 +7618,6 @@
       "Amount below minimum (${ amount }).": [
         "Valor total abaixo do mínimo (${ amount })."
       ],
-      "Amount due": [
-        "Valor a pagar"
-      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Um alias de e-mail funciona como um endereço de e-mail, mas reduz o spam e mantém seu endereço de e-mail e identidade reais ocultos."
       ],
@@ -7990,9 +7985,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NÃO esqueça essa senha. Se você a esquecer, você não será capaz de gerenciar sua organização."
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Você lembra sua senha ? ${ verifyButton }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Você deseja revogar todas as outras sessões deixando apenas a atual?"
@@ -8381,6 +8373,9 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Se você perder seu dispositivo ativado com a autenticação de dois fatores, estes códigos poderão ser usados no lugar do código de 6 dígitos para iniciar sessão em sua conta. Cada código poderá ser usado apenas uma vez."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "If Se você perdeu o acesso ao seu aplicativo de autenticação, pode usar um dos 16 códigos de recuperação de backup fornecidos quando configurou a autenticação de dois fatores. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se você prosseguir com o downgrade, perderá o acesso aos recursos pagos do ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -9238,9 +9233,6 @@
       ],
       "Subscription starts on ${ startsOnTime }": [
         "Sua assinatura começa em ${ startsOnTime }"
-      ],
-      "Summary": [
-        "Resumo"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "O suporte de monitoramento de domínios personalizados e endereços de e-mail não-${ BRAND_NAME } estará disponível em breve."
@@ -13356,6 +13348,11 @@
         "Lista de verificação de recuperação"
       ]
     },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Você agora tem acesso ao novo ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } foi desativado"
@@ -13783,11 +13780,24 @@
       ]
     },
     "organization key reset": {
+      "Non-private users": [
+        "Usuários não privados"
+      ],
       "Reset key": [
         "Redefinir chave"
       ],
+      "Resetting organization key": [
+        "Redefinindo a chave da organização"
+      ],
       "See users": [
         "Ver usuários"
+      ],
+      "Try another way": [
+        "Tentar de outra forma"
+      ],
+      "User (${ n })": [
+        "Usuário (${ n })",
+        "Usuários (${ n })"
       ]
     },
     "Organization logo upload": {
@@ -14131,6 +14141,9 @@
       ],
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis em outras moedas"
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Pagar com ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Método de pagamento necessário para que a assinatura seja ativada após o término do período de teste."
@@ -19099,6 +19112,9 @@
       ],
       "Session management": [
         "Gerenciamento de sessão"
+      ],
+      "Set invoice email": [
+        "Enviar fatura por e-mail"
       ],
       "Set new password": [
         "Definir nova senha"

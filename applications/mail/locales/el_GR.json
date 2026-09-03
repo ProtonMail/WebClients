@@ -2754,10 +2754,6 @@
       ],
       "Total": [
         "Σύνολο"
-      ],
-      "Total for ${ n } month": [
-        "Σύνολο για ${ n } μήνα",
-        "Σύνολο για ${ n } μήνες"
       ]
     },
     "Collapsible tooltip": {
@@ -7586,6 +7582,9 @@
       "Center": [
         "Κέντρο"
       ],
+      "Change display setting": [
+        "Αλλαγή ρύθμισης προβολής"
+      ],
       "Change your password": [
         "Αλλάξτε τον κωδικό πρόσβασής σας"
       ],
@@ -7752,9 +7751,6 @@
       ],
       "Discover ProtectBuy logo": [
         "λογότυπο Discover ProtectBuy"
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Θυμάστε τον κωδικό πρόσβασής σας; ${ verifyButton }"
       ],
       "Do you want to download this attachment anyway?": [
         "Θέλετε να κατεβάσετε αυτό το συνημμένο ούτως ή άλλως;",
@@ -8146,7 +8142,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8652,6 +8649,9 @@
       "Read your ${ count } label": [
         "Διαβάστε τη ${ count } ετικέτα",
         "Διαβάστε τις ${ count } ετικέτες"
+      ],
+      "Read your display settings": [
+        "Διαβάστε τις ρυθμίσεις οθόνης σας"
       ],
       "Recipient: ": [
         "Παραλήπτης: "
@@ -10280,8 +10280,17 @@
       "Colors": [
         "Χρώματα"
       ],
+      "Column": [
+        "Στήλη"
+      ],
+      "Comfortable": [
+        "Άνετο"
+      ],
       "Command line interface (CLI)": [
         "Διεπαφή γραμμής εντολών (CLI)"
+      ],
+      "Compact": [
+        "Συμπαγής"
       ],
       "Company": [
         "Εταιρεια"
@@ -10312,6 +10321,9 @@
       ],
       "Continue cancelling": [
         "Συνέχεια ακύρωσης"
+      ],
+      "Conversation grouping": [
+        "Ομαδοποίηση συνομιλιών"
       ],
       "Copy": [
         "Αντιγραφή"
@@ -10513,6 +10525,9 @@
       ],
       "Go to Updates": [
         "Μετάβαση στις Ενημερώσεις"
+      ],
+      "Grouped conversations": [
+        "Ομαδοποιημένες συνομιλίες"
       ],
       "Has attachments": [
         "Έχει συνημμένα"
@@ -10835,6 +10850,9 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Γενεύη"
       ],
+      "Row": [
+        "Γραμμή"
+      ],
       "Search in": [
         "Αναζήτηση σε"
       ],
@@ -10855,6 +10873,9 @@
       ],
       "Sign emails": [
         "Υπογραφεί ηλεκτρονικών ταχυδρομείων"
+      ],
+      "Single messages": [
+        "Μεμονωμένα μηνύματα"
       ],
       "Size:": [
         "Μέγεθος:"
@@ -16305,6 +16326,9 @@
       ],
       "CC": [
         "Κοιν."
+      ],
+      "Change display setting": [
+        "Αλλαγή ρύθμισης προβολής"
       ],
       "Change my answer": [
         "Αλλάξτε την απάντησή μου"
