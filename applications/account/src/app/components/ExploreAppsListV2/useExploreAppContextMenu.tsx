@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import ContextMenu from '@proton/components/components/contextMenu/ContextMenu';
 import ContextMenuButton from '@proton/components/components/contextMenu/ContextMenuButton';
 import { DropdownBorderRadius } from '@proton/components/components/dropdown/Dropdown';
+import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -80,7 +81,7 @@ export const useExploreAppContextMenu = () => {
         >
             <ContextMenuButton
                 testId="context-menu-open-new-tab"
-                icon="arrow-out-square"
+                icon={<IcArrowOutSquare />}
                 name={c('Action').t`Open in new tab`}
                 action={handleOpenInNewTab}
             />

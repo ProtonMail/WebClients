@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { ContextMenuSubButton } from '@proton/components/components/contextMenu/ContextMenuSubButton';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { IcCheckmarkStrong } from '@proton/icons/icons/IcCheckmarkStrong';
+import { IcDrawerDividers } from '@proton/icons/icons/IcDrawerDividers';
 import { CategoryIcon } from '@proton/mail/features/categoriesView/CategoryIcon';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
@@ -11,7 +12,6 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useSelectAll } from '../../../hooks/useSelectAll';
 import { selectCategoryIDs, selectLabelID } from '../../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../../store/hooks';
-
 import { useCategoriesView } from '../useCategoriesView';
 
 interface Props {
@@ -35,7 +35,7 @@ export const CategoryContextMenu = ({ onCategoryMove }: Props) => {
         : currentCategories[0];
 
     return (
-        <ContextMenuSubButton icon="drawer-dividers" name={c('Action').t`Move to category...`}>
+        <ContextMenuSubButton icon={<IcDrawerDividers />} name={c('Action').t`Move to category...`}>
             {activeCategoriesTabs.map((category) => (
                 <DropdownMenuButton
                     key={category.id}
