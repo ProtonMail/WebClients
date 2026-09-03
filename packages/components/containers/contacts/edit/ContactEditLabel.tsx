@@ -1,3 +1,4 @@
+import { changeVCardPropertyField } from '@proton/shared/lib/contacts/properties';
 import { getAllTypes, getOtherInformationFields } from '@proton/shared/lib/helpers/contacts';
 import type { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
@@ -27,7 +28,6 @@ const ContactEditLabel = ({ vCardProperty, onChangeVCard, fixedType = false, fil
     const types = getAllTypes();
     const fieldTypes = types[field];
     const type = vCardProperty.params?.type || '';
-    const fieldsToReset = ['bday', 'anniversary', 'photo', 'logo'];
 
     const otherInformationFields = getOtherInformationFields();
 
@@ -35,11 +35,7 @@ const ContactEditLabel = ({ vCardProperty, onChangeVCard, fixedType = false, fil
         onChangeVCard({ ...vCardProperty, params: { ...vCardProperty.params, type: value } });
     };
     const handleChangeField = ({ value }: SelectChangeEvent<string>) => {
-        let maybeResetValue = {};
-        if (fieldsToReset.includes(vCardProperty.field) || value.includes(vCardProperty.field)) {
-            maybeResetValue = { value: undefined };
-        }
-        onChangeVCard({ ...vCardProperty, field: value, ...maybeResetValue });
+        onChangeVCard(changeVCardPropertyField(vCardProperty, value));
     };
 
     if (!fixedType && otherInformationFields.map(({ value: f }) => f).includes(field)) {

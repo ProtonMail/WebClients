@@ -47,10 +47,31 @@ export const isMultiValue = (field = '') => {
     return [ONE_OR_MORE_MUST_BE_PRESENT, ONE_OR_MORE_MAY_BE_PRESENT].includes(cardinality);
 };
 
+export type VCardValueShape = 'text' | 'image' | 'name' | 'address' | 'dateOrText' | 'gender' | 'org';
+
+const VALUE_SHAPES: { [field: string]: VCardValueShape } = {
+    n: 'name',
+    adr: 'address',
+    bday: 'dateOrText',
+    anniversary: 'dateOrText',
+    gender: 'gender',
+    org: 'org',
+    // Images hold a string, but a URL or base64 payload rather than free text, so they are kept
+    // apart from 'text': a job title carried over into a photo is never meaningful.
+    photo: 'image',
+    logo: 'image',
+};
+
+export const getVCardValueShape = (field = ''): VCardValueShape => VALUE_SHAPES[field] || 'text';
+
+const isObjectValue = (value: unknown): value is object => typeof value === 'object' && value !== null;
+
 export const isValidDateValue = (dateOrText?: VCardDateOrText): dateOrText is { date: Date } => {
-    return Boolean(dateOrText && 'date' in dateOrText && dateOrText.date && isValidDate(dateOrText.date));
+    return Boolean(
+        isObjectValue(dateOrText) && 'date' in dateOrText && dateOrText.date && isValidDate(dateOrText.date)
+    );
 };
 
 export const isDateTextValue = (dateOrText?: VCardDateOrText): dateOrText is { text: string } => {
-    return Boolean(dateOrText && 'text' in dateOrText && dateOrText.text);
+    return Boolean(isObjectValue(dateOrText) && 'text' in dateOrText && dateOrText.text);
 };
