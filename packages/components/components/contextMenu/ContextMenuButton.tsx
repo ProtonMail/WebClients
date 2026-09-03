@@ -1,14 +1,11 @@
-import type { ReactNode } from 'react';
-
-import type { IconName } from '@proton/icons/types';
+import type { ReactElement, ReactNode } from 'react';
 
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';
-import Icon from '../icon/Icon';
 
 type Props = {
     id?: string;
     name: ReactNode;
-    icon: IconName;
+    icon: ReactElement;
     testId?: string;
     action: () => void;
     disabled?: boolean;
@@ -30,7 +27,7 @@ const ContextMenuButton = ({ id, name, icon, testId, action, disabled }: Props) 
             data-testid={testId}
             disabled={disabled}
         >
-            <Icon className="mr-2 shrink-0" name={icon} />
+            <span className="mr-2 shrink-0 flex items-center">{icon}</span>
             {name}
         </DropdownMenuButton>
     );

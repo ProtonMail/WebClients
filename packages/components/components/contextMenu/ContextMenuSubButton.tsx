@@ -1,16 +1,14 @@
-import type { KeyboardEvent, ReactNode } from 'react';
+import type { KeyboardEvent, ReactElement, ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import type { IconName } from '@proton/icons/types';
 
 import Dropdown from '../dropdown/Dropdown';
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';
-import Icon from '../icon/Icon';
 
 type Props = {
     name: string;
-    icon: IconName;
+    icon: ReactElement;
     children: ReactNode;
 };
 
@@ -73,7 +71,7 @@ export const ContextMenuSubButton = ({ name, icon, children }: Props) => {
                     onContextMenu={(e) => e.stopPropagation()}
                     className="flex items-center flex-nowrap text-left"
                 >
-                    <Icon className="mr-2 shrink-0" name={icon} />
+                    <span className="mr-2 shrink-0 flex items-center">{icon}</span>
                     <span className="mr-4">{name}</span>
                     <IcChevronRight className="ml-auto shrink-0" />
                 </DropdownMenuButton>
