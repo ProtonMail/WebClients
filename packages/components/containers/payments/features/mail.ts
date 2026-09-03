@@ -1,5 +1,18 @@
 import { c, msgid } from 'ttag';
 
+import { IcAt } from '@proton/icons/icons/IcAt';
+import { IcBrandProtonMail } from '@proton/icons/icons/IcBrandProtonMail';
+import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
+import { IcClock } from '@proton/icons/icons/IcClock';
+import { IcDesktop } from '@proton/icons/icons/IcDesktop';
+import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
+import { IcEnvelopes } from '@proton/icons/icons/IcEnvelopes';
+import { IcEye } from '@proton/icons/icons/IcEye';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcMagicWand } from '@proton/icons/icons/IcMagicWand';
+import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
+import { IcTag } from '@proton/icons/icons/IcTag';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { PLANS } from '@proton/payments/core/constants';
 import type { PlansMap } from '@proton/payments/core/plan/interface';
 import {
@@ -19,9 +32,10 @@ import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
 export const getMailAppFeature = (): PlanCardFeatureDefinition => {
     return {
+        id: 'mail-app',
         text: MAIL_APP_NAME,
         included: true,
-        icon: 'brand-proton-mail',
+        icon: IcBrandProtonMail,
         tooltip: c('new_plans: tooltip')
             .t`${MAIL_APP_NAME}: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.`,
     };
@@ -52,11 +66,12 @@ export const getNAddressesFeature = ({
     }
 
     return {
+        id: 'n-addresses',
         text: c('new_plans: feature').ngettext(msgid`${n} email address`, `${n} email addresses/aliases`, n),
         tooltip,
         included: true,
         highlight,
-        icon: 'envelope',
+        icon: IcEnvelope,
     };
 };
 
@@ -70,24 +85,27 @@ export const getNAddressesFeatureB2B = ({
     const tooltip = c('new_plans: tooltip')
         .t`Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.`;
     return {
+        id: 'n-addresses-b2b',
         text: c('new_plans: feature').ngettext(msgid`${n} email address per user`, `${n} email addresses per user`, n),
         tooltip,
         included: true,
         highlight,
-        icon: 'envelope',
+        icon: IcEnvelope,
     };
 };
 
 export const getCustomSecureMailB2B = (): PlanCardFeatureDefinition => {
     return {
+        id: 'custom-secure-mail-b2b',
         text: c('new_plans: feature').t`Custom and secure business email`,
         included: true,
-        icon: 'envelope',
+        icon: IcEnvelope,
     };
 };
 
 export const getExtraPersonalizationFeature = (): PlanCardFeatureDefinition => ({
-    icon: 'checkmark-circle',
+    id: 'extra-personalization',
+    icon: IcCheckmarkCircle,
     text: c('new_plans: Upsell attribute')
         .t`Add more personalization with 15 email addresses and support for 3 custom email domains`,
     included: true,
@@ -96,22 +114,25 @@ export const getExtraPersonalizationFeature = (): PlanCardFeatureDefinition => (
 export const getNMessagesFeature = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     if (n === Number.POSITIVE_INFINITY || n === 'unlimited') {
         return {
+            id: 'n-messages',
             text: c('new_plans: feature').t`Unlimited messages per day`,
             tooltip: c('new_plans: tooltip')
                 .t`Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.`,
             included: true,
-            icon: 'speech-bubble',
+            icon: IcSpeechBubble,
         };
     }
     return {
+        id: 'n-messages',
         text: c('new_plans: feature').ngettext(msgid`${n} message per day`, `${n} messages per day`, n),
         included: true,
-        icon: 'speech-bubble',
+        icon: IcSpeechBubble,
     };
 };
 
 export const getB2BNDomainsFeature = (n: number): PlanCardFeatureDefinition => ({
-    icon: 'globe',
+    id: 'b2b-n-domains',
+    icon: IcGlobe,
     text: c('new_plans: Upsell attribute').ngettext(
         msgid`Support for ${n} custom email domain`,
         `Support for ${n} custom email domains`,
@@ -126,9 +147,10 @@ export const getOwnDomainText = () => {
 
 export const getOwnDomainFeature = (): PlanCardFeatureDefinition => {
     return {
+        id: 'own-domain',
         text: getOwnDomainText(),
         included: true,
-        icon: 'globe',
+        icon: IcGlobe,
     };
 };
 
@@ -138,16 +160,18 @@ export const getDesktopAppText = () => {
 
 export const getDesktopAppFeature = (): PlanCardFeatureDefinition => {
     return {
+        id: 'desktop-app',
         text: getDesktopAppText(),
         included: true,
-        icon: 'desktop',
+        icon: IcDesktop,
     };
 };
 
 export const getDarkWebMonitoringFeature = (): PlanCardFeatureDefinition => {
     return {
+        id: 'mail-dark-web-monitoring',
         text: DARK_WEB_MONITORING_NAME,
-        icon: 'eye',
+        icon: IcEye,
         included: true,
     };
 };
@@ -167,35 +191,39 @@ export const getNDomainsFeature = ({
 }): PlanCardFeatureDefinition => {
     if (n === 0) {
         return {
+            id: 'n-domains',
             text: c('new_plans: feature').t`Custom email domains`,
             included: false,
             highlight,
-            icon: 'globe',
+            icon: IcGlobe,
         };
     }
     return {
+        id: 'n-domains',
         text: getNDomainsFeatureText(n),
         tooltip: tooltip
             ? c('new_plans: tooltip').t`Use your own custom email domain addresses, e.g., you@yourname.com`
             : undefined,
         included: true,
         highlight,
-        icon: 'globe',
+        icon: IcGlobe,
     };
 };
 
 export const getFoldersAndLabelsFeature = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     if (n === Number.POSITIVE_INFINITY || n === 'unlimited') {
         return {
+            id: 'folders-and-labels',
             text: c('new_plans: feature').t`Unlimited folders, labels, and filters`,
             included: true,
-            icon: 'tag',
+            icon: IcTag,
         };
     }
     return {
+        id: 'folders-and-labels',
         text: c('new_plans: feature').ngettext(msgid`${n} folder and label`, `${n} folders and labels`, n),
         included: true,
-        icon: 'tag',
+        icon: IcTag,
     };
 };
 
@@ -203,12 +231,14 @@ const getFolders = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     const tooltip = c('new_plans').t`Keep your inbox organized with folders`;
     if (n === Number.POSITIVE_INFINITY || n === 'unlimited') {
         return {
+            id: 'folders',
             text: c('new_plans: feature').t`Unlimited folders`,
             tooltip,
             included: true,
         };
     }
     return {
+        id: 'folders',
         text: c('new_plans: feature').ngettext(msgid`${n} folder`, `${n} folders`, n),
         tooltip,
         included: true,
@@ -220,12 +250,14 @@ const getLabels = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
         .t`Labels are simple tags you can add to messages to make them easier to find or to apply filters to`;
     if (n === Number.POSITIVE_INFINITY || n === 'unlimited') {
         return {
+            id: 'labels',
             text: c('new_plans: feature').t`Unlimited labels`,
             tooltip,
             included: true,
         };
     }
     return {
+        id: 'labels',
         text: c('new_plans: feature').ngettext(msgid`${n} label`, `${n} labels`, n),
         tooltip,
         included: true,
@@ -236,12 +268,14 @@ const getFilters = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     const tooltip = c('new_plans: tooltip').t`Set up filters to automatically reply to, sort, and/or label your emails`;
     if (n === Number.POSITIVE_INFINITY || n === 'unlimited') {
         return {
+            id: 'filters',
             text: c('new_plans: feature').t`Unlimited filters`,
             tooltip,
             included: true,
         };
     }
     return {
+        id: 'filters',
         text: c('new_plans: feature').ngettext(msgid`${n} filter`, `${n} filters`, n),
         tooltip,
         included: true,
@@ -251,6 +285,7 @@ const getFilters = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
 const getAttachments = (): PlanCardFeatureDefinition => {
     const size = humanSize({ bytes: 26214400, fraction: 0 });
     return {
+        id: 'attachments',
         text: c('new_plans: feature').t`${size} attachment size`,
         included: true,
     };
@@ -258,6 +293,7 @@ const getAttachments = (): PlanCardFeatureDefinition => {
 
 const getSignature = (): PlanCardFeatureDefinition => {
     return {
+        id: 'signature',
         text: c('new_plans: feature').t`HTML signatures`,
         tooltip: c('new_plans: tooltip')
             .t`Personalize your email signature with logos, images, social media icons, links to your contact details, and more`,
@@ -267,6 +303,7 @@ const getSignature = (): PlanCardFeatureDefinition => {
 
 export const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
     return {
+        id: 'mail-end-to-end-encryption',
         text: c('new_plans: feature').t`End-to-end encryption`,
         tooltip: c('new_plans: tooltip')
             .t`Prevents messages from being accessed by ${BRAND_NAME} or third parties. The only people who can read the messages are the sender and the intended recipient.`,
@@ -282,6 +319,7 @@ export const getEncryptionOutside = (): PlanCardFeatureDefinition => {
     const MAIL_APP_NAME_TWO = MAIL_APP_NAME;
 
     return {
+        id: 'encryption-outside',
         text: c('new_plans: feature').t`Password-protected Emails`,
         tooltip: c('new_plans: tooltip')
             .t`When sending to other ${MAIL_APP_NAME} users, encryption is automatic. Sending to non-${MAIL_APP_NAME_TWO} users requires setting a password prior to sending.`,
@@ -291,6 +329,7 @@ export const getEncryptionOutside = (): PlanCardFeatureDefinition => {
 
 const getEncryptedContacts = (): PlanCardFeatureDefinition => {
     return {
+        id: 'encrypted-contacts',
         text: c('new_plans: feature').t`Encrypted contact details`,
         tooltip: c('new_plans: tooltip')
             .t`Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${BRAND_NAME} can't access them.`,
@@ -300,6 +339,7 @@ const getEncryptedContacts = (): PlanCardFeatureDefinition => {
 
 const getContactGroups = (included: boolean): PlanCardFeatureDefinition => {
     return {
+        id: 'contact-groups',
         text: c('new_plans: feature').t`Contact groups`,
         tooltip: c('new_plans: tooltip')
             .t`Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)`,
@@ -309,14 +349,16 @@ const getContactGroups = (included: boolean): PlanCardFeatureDefinition => {
 
 export const getContactGroupsManagement = (): PlanCardFeatureDefinition => {
     return {
+        id: 'contact-groups-management',
         text: c('new_plans: feature').t`Contact groups management`,
         included: true,
-        icon: 'users',
+        icon: IcUsers,
     };
 };
 
 export const getSMTP = (included: boolean): PlanCardFeatureDefinition => {
     return {
+        id: 'smtp',
         text: c('new_plans: feature').t`Email client support (via IMAP/SMTP)`,
         tooltip: c('new_plans: tooltip')
             .t`IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${MAIL_APP_NAME} Bridge. Cloud-based IMAP integrations are currently not supported.`,
@@ -326,17 +368,19 @@ export const getSMTP = (included: boolean): PlanCardFeatureDefinition => {
 
 export const getSMTPToken = (included: boolean): PlanCardFeatureDefinition => {
     return {
+        id: 'smtp-token',
         text: c('new_plans: feature').t`SMTP submission`,
         tooltip: c('new_plans: tooltip')
             .t`SMTP allows 3rd-party services or devices to send email through ${MAIL_APP_NAME}.`,
         included,
         iconUrl: getKnowledgeBaseUrl('/smtp-submission'),
-        icon: 'envelopes',
+        icon: IcEnvelopes,
     };
 };
 
 const getAutoReply = (included: boolean, audience?: Audience): PlanCardFeatureDefinition => {
     return {
+        id: 'auto-reply',
         text: c('new_plans: feature').t`Auto-reply`,
         tooltip:
             audience === Audience.B2B
@@ -349,6 +393,7 @@ const getAutoReply = (included: boolean, audience?: Audience): PlanCardFeatureDe
 
 const getAutoForwarding = (included: boolean): PlanCardFeatureDefinition => {
     return {
+        id: 'auto-forwarding',
         text: c('new_plans: feature').t`Automatic email forwarding`,
         tooltip: c('new_plans: tooltip')
             .t`Automatically forward emails sent to your ${MAIL_APP_NAME} account to any other email address.`,
@@ -358,6 +403,7 @@ const getAutoForwarding = (included: boolean): PlanCardFeatureDefinition => {
 
 const getCatchAll = (included: boolean): PlanCardFeatureDefinition => {
     return {
+        id: 'catch-all',
         text: c('new_plans: feature').t`Catch-all`,
         tooltip: c('new_plans: tooltip')
             .t`Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo`,
@@ -367,6 +413,7 @@ const getCatchAll = (included: boolean): PlanCardFeatureDefinition => {
 
 const getAutoDeleteSpamAndTrash = (included: boolean): PlanCardFeatureDefinition => {
     return {
+        id: 'auto-delete-spam-and-trash',
         text: c('new_plans: feature').t`Auto-delete Spam and Trash`,
         tooltip: c('new_plans: tooltip').t`Automatically clear out messages older than 30 days from Trash and Spam`,
         included,
@@ -375,26 +422,29 @@ const getAutoDeleteSpamAndTrash = (included: boolean): PlanCardFeatureDefinition
 
 export const getScheduleAndSnooze = (included: boolean): PlanCardFeatureDefinition => {
     return {
+        id: 'schedule-and-snooze',
         text: c('new_plans: feature').t`Schedule and snooze emails for any time`,
         tooltip: c('new_plans: tooltip')
             .t`Choose custom times to be reminded about an email or for your message to arrive`,
         included,
-        icon: 'clock',
+        icon: IcClock,
     };
 };
 
 export const getDesktopApp = (included: boolean): PlanCardFeatureDefinition => {
     return {
+        id: 'mail-desktop-app',
         text: c('new_plans: feature').t`Desktop app`,
         tooltip: c('new_plans: tooltip')
             .t`Access ${MAIL_APP_NAME} and ${CALENDAR_APP_NAME} from the convenience of your desktop`,
         included,
-        icon: 'desktop',
+        icon: IcDesktop,
     };
 };
 
 export const getEmailDistributionLists = (included: boolean): PlanCardFeatureDefinition => {
     return {
+        id: 'email-distribution-lists',
         text: c('new_plans: feature').t`Email groups`,
         tooltip: c('new_plans: tooltip').t`Email everyone in a group with a single email address`,
         included,
@@ -404,10 +454,11 @@ export const getEmailDistributionLists = (included: boolean): PlanCardFeatureDef
 export const getProtonScribe = (included: boolean): PlanCardFeatureDefinition => {
     const scribeToLumo = getStandaloneUnleashClient()?.isEnabled(MailFeatureFlag.ScribeToLumo);
     return {
+        id: 'proton-scribe',
         text: scribeToLumo
             ? c('new_plans: feature').t`${LUMO_SHORT_APP_NAME} writing assistant`
             : c('new_plans: feature').t`${BRAND_NAME} Scribe writing assistant`,
-        icon: 'magic-wand',
+        icon: IcMagicWand,
         included,
     };
 };
@@ -446,11 +497,12 @@ const getScribePlans = (): PlanCardFeature['plans'] => {
 
 const getWritingAssistantAccess = (access: 'limited' | 'expanded'): PlanCardFeatureDefinition => {
     return {
+        id: 'writing-assistant-access',
         text:
             access === 'limited'
                 ? c('new_plans: feature').t`${LUMO_SHORT_APP_NAME} writing assistant with limited access`
                 : c('new_plans: feature').t`${LUMO_SHORT_APP_NAME} writing assistant with expanded access`,
-        icon: 'magic-wand',
+        icon: IcMagicWand,
         included: true,
     };
 };
@@ -489,6 +541,7 @@ const getWritingAssistantPlans = (): PlanCardFeature['plans'] => {
 
 export const getDataRetentionPoliciesFeature = (included: boolean): PlanCardFeatureDefinition => {
     return {
+        id: 'data-retention-policies',
         text: c('new_plans: feature').t`Data retention policies`,
         included,
     };
@@ -496,6 +549,7 @@ export const getDataRetentionPoliciesFeature = (included: boolean): PlanCardFeat
 
 const getEasySwitch = (): PlanCardFeatureDefinition => {
     return {
+        id: 'easy-switch',
         text: c('new_plans: feature').t`Easy Switch import assistant`,
         tooltip: c('new_plans: tooltip').t`Quickly transfer your emails, calendars or contacts from any provider`,
         included: true,
@@ -504,8 +558,9 @@ const getEasySwitch = (): PlanCardFeatureDefinition => {
 
 export const getShortDomain = (included: boolean): PlanCardFeatureDefinition => {
     return {
+        id: 'short-domain',
         text: c('new_plans: feature').t`Short domain (@pm.me)`,
-        icon: 'at',
+        icon: IcAt,
         included,
     };
 };

@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { Badge } from '../../../../../components/badge/Badge';
-import Icon from '../../../../../components/icon/Icon';
 import Info from '../../../../../components/link/Info';
 import StripedItem from '../../../../../components/stripedList/StripedItem';
 import { getProtonPassFeatureLifetime } from '../../../features/pass';
@@ -30,7 +30,8 @@ export const SubscriptionItems = ({ items, user }: Props) => {
         <>
             {allItems.map(
                 ({
-                    icon = 'checkmark',
+                    id,
+                    icon: FeatureIcon = IcCheckmark,
                     text,
                     included = true,
                     status = 'available',
@@ -43,13 +44,11 @@ export const SubscriptionItems = ({ items, user }: Props) => {
                         return null;
                     }
 
-                    const key = typeof text === 'string' ? text : `${tooltip}-${icon}-${included}-${status}`;
-
                     return (
                         <StripedItem
-                            key={key}
+                            key={id}
                             className={clsx(status === 'coming-soon' && 'color-weak')}
-                            left={<Icon className={clsx(included && 'color-success')} size={5} name={icon} />}
+                            left={<FeatureIcon className={clsx(included && 'color-success')} size={5} />}
                         >
                             <div
                                 className="flex justify-space-between items-baseline flex-nowrap"

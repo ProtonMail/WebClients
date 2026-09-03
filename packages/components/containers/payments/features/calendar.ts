@@ -1,5 +1,7 @@
 import { c, msgid } from 'ttag';
 
+import { IcBrandProtonCalendar } from '@proton/icons/icons/IcBrandProtonCalendar';
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { PLANS, PLAN_SERVICES } from '@proton/payments/core/constants';
 import type { PlansMap } from '@proton/payments/core/plan/interface';
 import {
@@ -23,7 +25,8 @@ const getNCalendarsTooltipText = (n: number) => {
 };
 
 export const getNCalendarToCreateFeature = (n: number): PlanCardFeatureDefinition => ({
-    icon: 'brand-proton-calendar',
+    id: 'n-calendar-to-create',
+    icon: IcBrandProtonCalendar,
     included: true,
     text: c('new_plans: Upsell attribute').ngettext(
         msgid`Create up to ${n} calendar`,
@@ -38,24 +41,27 @@ export const getNCalendarsText = (n: number) => {
 
 export const getNCalendarsFeature = (n: number): PlanCardFeatureDefinition => {
     return {
+        id: 'n-calendars',
         text: getNCalendarsText(n),
         tooltip: n > 1 ? getNCalendarsTooltipText(n) : '',
         included: true,
-        icon: 'brand-proton-calendar',
+        icon: IcBrandProtonCalendar,
     };
 };
 
 export const getNCalendarsPerUserFeature = (n: number): PlanCardFeatureDefinition => {
     return {
+        id: 'n-calendars-per-user',
         text: c('new_plans: feature').ngettext(msgid`${n} calendar per user`, `${n} calendars per user`, n),
         tooltip: n > 1 ? getNCalendarsTooltipText(n) : '',
         included: true,
-        icon: 'brand-proton-calendar',
+        icon: IcBrandProtonCalendar,
     };
 };
 
 const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
     return {
+        id: 'calendar-end-to-end-encryption',
         text: c('new_plans: feature').t`End-to-end encryption`,
         included: true,
     };
@@ -67,6 +73,7 @@ const getShareFeature = (plansMap: PlansMap, plan: PLANS, audience?: Audience): 
     const tooltipText = c('new_plans: tooltip').t`Easily share your calendars with your family, friends, or colleagues`;
 
     return {
+        id: 'calendar-share',
         text: c('new_plans: feature').t`Calendar sharing`,
         tooltip: audience === Audience.B2B ? tooltipText : tooltipText,
         included,
@@ -75,6 +82,7 @@ const getShareFeature = (plansMap: PlansMap, plan: PLANS, audience?: Audience): 
 
 const getInvitation = (): PlanCardFeatureDefinition => {
     return {
+        id: 'invitation',
         text: c('new_plans: feature').t`Send & receive invitations`,
         included: true,
     };
@@ -82,7 +90,8 @@ const getInvitation = (): PlanCardFeatureDefinition => {
 
 export const getSecurePersonalAndSharedCalendarFeature = (): PlanCardFeatureDefinition => {
     return {
-        icon: 'calendar-grid',
+        id: 'secure-personal-and-shared-calendar',
+        icon: IcCalendarGrid,
         text: c('Cancellation upsell').t`Secure personal and shared calendar`,
         included: true,
     };
@@ -90,6 +99,7 @@ export const getSecurePersonalAndSharedCalendarFeature = (): PlanCardFeatureDefi
 
 const getTeamAvailability = (): PlanCardFeatureDefinition => {
     return {
+        id: 'team-availability',
         text: c('new_plans: feature').t`See team's availability`,
         tooltip: c('new_plans: tooltip')
             .t`See the availability of meeting participants and save time scheduling meetings`,
@@ -106,10 +116,11 @@ export const getCalendarAppFeature = (options?: { family?: boolean; duo?: boolea
     }
 
     return {
+        id: 'calendar-app',
         text: CALENDAR_APP_NAME,
         tooltip,
         included: true,
-        icon: 'brand-proton-calendar',
+        icon: IcBrandProtonCalendar,
     };
 };
 
@@ -125,9 +136,10 @@ export const getCalendarAppointmentSchedulingText = (n?: number) => {
 
 export const getCalendarAppointmentScheduling = (included: boolean, n?: number): PlanCardFeatureDefinition => {
     return {
+        id: 'calendar-appointment-scheduling',
         text: getCalendarAppointmentSchedulingText(n),
         included: included,
-        icon: 'calendar-grid',
+        icon: IcCalendarGrid,
     };
 };
 

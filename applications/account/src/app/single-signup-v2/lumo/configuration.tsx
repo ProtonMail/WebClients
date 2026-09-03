@@ -46,14 +46,14 @@ import setupAccount from '../mail/account-setup.svg';
 import { getCustomMailFeatures } from '../mail/configuration';
 
 const getBuiltInEuropeFeature = () => ({
-    key: 'built-in-europe',
+    id: 'built-in-europe',
     left: <IcMapPin size={6} className="color-primary" />,
     text: c('collider_2025: Feature').t`Built and based in Europe`,
 });
 
 const getNoLogsBenefit = (): BenefitItem => {
     return {
-        key: `no-logs`,
+        id: 'no-logs',
         text: getNoLogsPolicy().text,
         icon: {
             component: IcEyeSlash,
@@ -63,7 +63,7 @@ const getNoLogsBenefit = (): BenefitItem => {
 
 const getNoModelTrainingBenefit = (): BenefitItem => {
     return {
-        key: `no-model-training`,
+        id: 'no-model-training',
         text: getNeverUsedForTraining().text,
         icon: {
             component: IcAlias,
@@ -73,7 +73,7 @@ const getNoModelTrainingBenefit = (): BenefitItem => {
 
 const getOpenSourceBenefit = (): BenefitItem => {
     return {
-        key: 'open-source',
+        id: 'open-source',
         text: c('collider_2025: Info').t`Open source`,
         icon: {
             component: IcMagnifier,
@@ -109,56 +109,56 @@ const getLumoPlusFeatures = () => {
 const getLumoBusinessBenefits = (): BenefitItem[] => {
     return [
         {
-            key: 'zero-access-encryption',
+            id: 'zero-access-encryption',
             text: getZeroAccessEncryption().text,
             icon: {
                 component: IcLock,
             },
         },
         {
-            key: 'unlimited-chats',
+            id: 'unlimited-chats',
             text: getDailyChats('unlimited').text,
             icon: {
                 component: IcCheckmark,
             },
         },
         {
-            key: 'web-search-access',
+            id: 'web-search-access',
             text: getWebSearchAccess().text,
             icon: {
                 component: IcCheckmark,
             },
         },
         {
-            key: 'full-chat-history',
+            id: 'full-chat-history',
             text: getChatHistory('full').text,
             icon: {
                 component: IcCheckmark,
             },
         },
         {
-            key: 'file-analysis',
+            id: 'file-analysis',
             text: getUploadAndQuery('large').text,
             icon: {
                 component: IcCheckmark,
             },
         },
         {
-            key: 'advanced-models',
+            id: 'advanced-models',
             text: getAccessToAdvancedAI(true).text,
             icon: {
                 component: IcCheckmark,
             },
         },
         {
-            key: 'never-used-for-training',
+            id: 'never-used-for-training',
             text: getNeverUsedForTraining().text,
             icon: {
                 component: IcCheckmark,
             },
         },
         {
-            key: 'data-protection-compliance',
+            id: 'data-protection-compliance',
             text: getDataProtectionCompliance().text,
             icon: {
                 component: IcCheckmark,
@@ -168,7 +168,8 @@ const getLumoBusinessBenefits = (): BenefitItem[] => {
 };
 
 const getLumoBusinessFeatures = () => {
-    return getLumoBusinessBenefits().map(({ text }) => ({
+    return getLumoBusinessBenefits().map(({ id, text }) => ({
+        id,
         text,
         included: true,
     }));

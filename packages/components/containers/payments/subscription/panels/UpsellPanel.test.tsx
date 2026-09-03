@@ -1,5 +1,8 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
+import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
+import { IcStorage } from '@proton/icons/icons/IcStorage';
+import { IcTag } from '@proton/icons/icons/IcTag';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
@@ -20,15 +23,18 @@ describe('UpsellBox', () => {
         title: 'Upgrade to Plus',
         features: [
             {
-                icon: 'storage',
+                id: 'storage',
+                icon: IcStorage,
                 text: `10GB total storage`,
             },
             {
-                icon: 'envelope',
+                id: 'addresses',
+                icon: IcEnvelope,
                 text: `10 email addresses/aliases`,
             },
             {
-                icon: 'tag',
+                id: 'folders-and-labels',
+                icon: IcTag,
                 text: `Unlimited folders, labels, and filters`,
             },
         ],
@@ -139,7 +145,8 @@ describe('UpsellBox', () => {
                     {...omit(upsellBoxBaseProps, ['features'])}
                     features={[
                         {
-                            icon: 'envelope',
+                            id: 'addresses',
+                            icon: IcEnvelope,
                             text: `10 email addresses/aliases`,
                             tooltip: 'You can use those aliases on different website to protect your main email',
                         },

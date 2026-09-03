@@ -1,3 +1,4 @@
+import { IcMagicWand } from '@proton/icons/icons/IcMagicWand';
 import { PLANS } from '@proton/payments/core/constants';
 import type { PlansMap } from '@proton/payments/core/plan/interface';
 
@@ -20,7 +21,12 @@ const getScribePlans = (scribeToLumo: boolean) => {
     return row.plans;
 };
 
-const scribeDefinition = { text: 'Proton Scribe writing assistant', icon: 'magic-wand', included: true };
+const scribeDefinition = {
+    id: 'proton-scribe',
+    text: 'Proton Scribe writing assistant',
+    icon: IcMagicWand,
+    included: true,
+};
 
 const expandedColumns: ScribeColumn[] = [PLANS.BUNDLE_BIZ_2025, PLANS.LUMO, PLANS.LUMO_BUSINESS, PLANS.VISIONARY];
 const limitedColumns: ScribeColumn[] = [PLANS.FREE, PLANS.MAIL, PLANS.DUO, PLANS.FAMILY, PLANS.BUNDLE_PRO_2024];

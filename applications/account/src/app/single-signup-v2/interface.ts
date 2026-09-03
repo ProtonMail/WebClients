@@ -1,4 +1,4 @@
-import type { FunctionComponent, Key, ReactNode } from 'react';
+import type { FunctionComponent, ReactNode } from 'react';
 
 import type { LocationDescriptor } from 'history';
 
@@ -184,7 +184,7 @@ export interface SignupConfiguration {
         user: boolean;
         signup: boolean;
     };
-    features: { key: Key; left: ReactNode; text: ReactNode }[];
+    features: { id: string; left: ReactNode; text: ReactNode }[];
     benefits: ReactNode;
     planCards: { [Audience.B2C]: PlanCard[]; [Audience.B2B]: PlanCard[] };
     audience: Audience.B2C | Audience.B2B;
