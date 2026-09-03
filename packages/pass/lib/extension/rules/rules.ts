@@ -6,8 +6,6 @@ import { validateRulesV1 } from './v1/definition';
 import { mergeRuleV2, validateRulesV2 } from './v2/definition';
 import type { RuleV2 } from './v2/types';
 
-export const getRuleVersion = (experimental: boolean): RuleVersion => (experimental ? '2' : '1');
-
 export const validateRules = (data: unknown): data is DetectionRules => {
     if (!isObject(data)) return false;
     if (!('rules' in data && 'version' in data)) return false;

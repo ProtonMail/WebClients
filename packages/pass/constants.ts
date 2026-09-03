@@ -50,7 +50,6 @@ export const PASS_CREDENTIAL_CHECK_URL = 'https://credential-check.protonweb.com
 
 export const PRIVATE_DOMAINS_URL = 'https://proton.me/download/pass/auto-detection/public_suffix_list.dat';
 export const WEBSITE_RULES_URL = 'https://proton.me/download/pass/auto-detection/rules.json';
-export const WEBSITE_RULES_EXPERIMENTAL_URL = 'https://proton.me/download/pass/auto-detection/rules.experimental.json';
 
 export const MODEL_REGISTRY_URL = 'https://proton.me/download/pass/model-registry/model-registry.json';
 export const MODEL_ARTIFACTS_BASE_URL = 'https://proton.me/download/pass/model-artifacts';
@@ -127,7 +126,6 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassBasicAuthAutofill]: false,
     [PassFeature.PassCreditCardWebAutofill]: false,
     [PassFeature.PassEnableDesktopAutoUpdate]: false,
-    [PassFeature.PassExperimentalWebsiteRules]: false,
     [PassFeature.PassExtensionCustomTLDs]: false,
     [PassFeature.PassHideShowVault]: false,
     [PassFeature.PassIFrameExtendedAutofill]: false,

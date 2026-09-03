@@ -1,5 +1,4 @@
 import { DEFAULT_PASS_FEATURES } from '@proton/pass/constants';
-import { getRuleVersion } from '@proton/pass/lib/extension/rules/rules';
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
 import type { FeatureFlagAndVariantState, FeatureFlagState, FeatureFlagVariants } from '@proton/pass/store/reducers';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
@@ -73,9 +72,8 @@ export const createFeatureFlagService = (): FeatureFlagService => {
             void service.storage.local.setItem('features', JSON.stringify(features));
             void service.storage.local.setItem('featureVariants', JSON.stringify(variants));
 
-            const { PassExperimentalWebsiteRules = false } = features;
             const currentRuleVersion = service.autofill.getRules()?.version;
-            const shouldRevalidate = currentRuleVersion !== getRuleVersion(PassExperimentalWebsiteRules ?? false);
+            const shouldRevalidate = currentRuleVersion !== '2';
 
             if (shouldRevalidate) service.store.dispatch(withRevalidate(resolveWebsiteRules.intent()));
         }),
