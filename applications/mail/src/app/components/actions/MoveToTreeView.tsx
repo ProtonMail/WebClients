@@ -6,7 +6,6 @@ import { IcCheckmarkStrong } from '@proton/icons/icons/IcCheckmarkStrong';
 import clsx from '@proton/utils/clsx';
 
 import type { FolderItem } from '../../hooks/useMailTreeView/interface';
-
 import { MoveToPlaceholders } from './MoveToComponents';
 
 import './MoveToTreeView.scss';
@@ -44,7 +43,7 @@ export const MoveToTreeView = ({ treeView, selectedFolder, handleSelectFolder, s
                                 <div data-level={folder.level} className="flex">
                                     <FolderIcon
                                         folder={folder}
-                                        name={folder.icon}
+                                        icon={folder.icon}
                                         className={clsx('shrink-0 mr-2 mt-0.5', folder?.folderIconProps?.className)}
                                         dataColor={folder?.folderIconProps?.color}
                                     />
