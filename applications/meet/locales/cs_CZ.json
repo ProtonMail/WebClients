@@ -1767,6 +1767,9 @@
       ]
     },
     "Error": {
+      "An error occurred": [
+        "Došlo k chybě"
+      ],
       "Domain not available, try again later": [
         "Doména není dostupná, zkuste to znovu později"
       ],
@@ -1848,8 +1851,14 @@
       "Invalid meeting link": [
         "Neplatný odkaz na schůzku"
       ],
+      "Invalid URL": [
+        "Neplatná URL"
+      ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"
+      ],
+      "Missing signature": [
+        "Chybí podpis"
       ],
       "Not a valid number": [
         "Neplatné číslo"
@@ -1874,6 +1883,12 @@
       ],
       "Signature verification failed": [
         "Ověření podpisu selhalo"
+      ],
+      "Something went wrong": [
+        "Něco se pokazilo"
+      ],
+      "Something went wrong. Please try again.": [
+        "Něco se pokazilo. Prosím, zkuste to znovu."
       ],
       "The email addresses do not match": [
         "E-mailové adresy se neshodují"

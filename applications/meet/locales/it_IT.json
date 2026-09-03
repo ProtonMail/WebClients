@@ -25,9 +25,6 @@
       ]
     },
     "Accessibility announcement": {
-      "${ BRAND_NAME } background applied": [
-        "Sfondo ${ BRAND_NAME } applicato"
-      ],
       "${ name } joined the meeting": [
         "${ name } si è unito alla riunione"
       ],
@@ -64,20 +61,11 @@
       "A participant reacted with ${ emoji }": [
         "Un partecipante ha reagito con ${ emoji }"
       ],
-      "Abstract background applied": [
-        "Sfondo astratto applicato"
-      ],
       "Background effect turned off": [
         "Effetto sfondo disattivato"
       ],
-      "Beach background applied": [
-        "Sfondo spiaggia applicato"
-      ],
       "Blurred background applied": [
         "Sfondo sfocato applicato"
-      ],
-      "Coffee place background applied": [
-        "Sfondo caffetteria applicato"
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Connessione tramite modalità relay TURN a causa di restrizioni di rete. Ciò potrebbe aumentare la latenza e influire sulla qualità della chiamata."
@@ -85,17 +73,11 @@
       "Connection lost. Reconnecting…": [
         "Connessione persa. Riconnessione in corso…"
       ],
-      "Mountain background applied": [
-        "Sfondo montagna applicato"
-      ],
       "New chat message: ${ message }": [
         "Nuovo messaggio di chat: ${ message }"
       ],
       "Now starting recording": [
         "Avvio della registrazione in corso"
-      ],
-      "Office background applied": [
-        "Sfondo ufficio applicato"
       ],
       "Reconnected to the meeting": [
         "Ti sei riconnesso alla riunione"
@@ -1866,8 +1848,29 @@
       ]
     },
     "Error": {
+      "An error occurred": [
+        "Si è verificato un errore"
+      ],
       "Background blur initialization failed. Please toggle your camera or background blur again": [
         "Inizializzazione della sfocatura dello sfondo non riuscita. Attiva e disattiva nuovamente la fotocamera o la sfocatura dello sfondo"
+      ],
+      "Cannot verify the author of this file": [
+        "Impossibile verificare l'autore di questo file"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Non è possibile copiare l'elemento in un elemento che non è una cartella"
+      ],
+      "Could not load sharing details": [
+        "Impossibile caricare i dettagli della condivisione"
+      ],
+      "Could not unlock the parent folder": [
+        "Impossibile sbloccare la cartella principale."
+      ],
+      "Could not unlock this item": [
+        "Impossibile sbloccare questo elemento."
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Non è possibile creare cartelle all'interno di elementi che non sono cartelle"
       ],
       "Domain not available, try again later": [
         "Dominio non disponibile, riprovare più tardi"
@@ -1884,6 +1887,12 @@
       "Event deleted": [
         "Evento eliminato"
       ],
+      "Failed to admit the participant. Please try again.": [
+        "Impossibile ammettere il partecipante. Riprova."
+      ],
+      "Failed to admit the participants. Please try again.": [
+        "Impossibile ammettere i partecipanti. Riprova."
+      ],
       "Failed to assign host": [
         "Non è stato possibile assegnare l'organizzatore."
       ],
@@ -1892,6 +1901,12 @@
       ],
       "Failed to create personal meeting, please refresh the page": [
         "Impossibile creare la riunione personale, per favore aggiorna la pagina."
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Impossibile decrittografare la password del segnalibro: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Impossibile decrittografare la chiave del contenuto: ${ message }"
       ],
       "Failed to decrypt session key": [
         "Decriptazione della chiave di sessione non riuscita"
@@ -1905,8 +1920,14 @@
       "Failed to delete room": [
         "Impossibile eliminare la stanza"
       ],
+      "Failed to deny the participant. Please try again.": [
+        "Impossibile rifiutare il partecipante. Riprova."
+      ],
       "Failed to download recording": [
         "Impossibile scaricare la registrazione"
+      ],
+      "Failed to edit meeting": [
+        "Impossibile modificare la riunione"
       ],
       "Failed to edit room name": [
         "Impossibile modificare il nome della stanza"
@@ -1956,14 +1977,29 @@
       "Failed to update live captions. Please try again.": [
         "Impossibile aggiornare i sottotitoli in tempo reale. Riprova."
       ],
+      "Failed to update waiting room setting. Please try again.": [
+        "Impossibile aggiornare le impostazioni della sala d'attesa. Riprova."
+      ],
+      "File has no revision": [
+        "Il file non ha revisioni"
+      ],
+      "Image preview not found": [
+        "Anteprima dell'immagine non trovata"
+      ],
       "Incorrect username": [
         "Username non corretto"
       ],
       "Invalid meeting link": [
         "Link riunione non valido"
       ],
+      "Invalid URL": [
+        "URL non valido"
+      ],
       "Invalid verification code": [
         "Codice di verifica non valido"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Il vecchio link pubblico non può essere aggiornato. Crea un nuovo link pubblico."
       ],
       "Live captions aren't working. Try turning them off and on again.": [
         "I sottotitoli in tempo reale non funzionano. Prova a disattivarli e riattivarli."
@@ -1974,11 +2010,30 @@
       "Live captions have stopped.": [
         "I sottotitoli in tempo reale si sono interrotti."
       ],
+      "Missing inviter email": [
+        "Manca l'indirizzo email dell'invitante"
+      ],
+      "Missing signature": [
+        "Firma mancante"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri.",
+        "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri."
+      ],
+      "No file data was received. Please try again.": [
+        "Non sono stati ricevuti dati del file. Riprova."
+      ],
       "Not a valid number": [
         "Numero non valido"
       ],
+      "Operation aborted": [
+        "Operazione interrotta"
+      ],
       "Organization key is not decrypted": [
         "La chiave dell'organizzazione non è decriptata"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Parte del file sembra essere danneggiata"
       ],
       "Passwords do not match": [
         "Le password non corrispondono"
@@ -1995,8 +2050,17 @@
       "Screen share is not supported on mobile browsers": [
         "La condivisione dello schermo non è supportata sui browser mobili"
       ],
+      "Signature is missing": [
+        "Manca la firma"
+      ],
       "Signature verification failed": [
         "Verifica della firma non riuscita"
+      ],
+      "Something went wrong": [
+        "Qualcosa è andato storto"
+      ],
+      "Something went wrong. Please try again.": [
+        "Qualcosa è andato storto. Riprova."
       ],
       "The email addresses do not match": [
         "Gli indirizzi email non corrispondono."
@@ -2007,6 +2071,9 @@
       "The meeting password is invalid": [
         "La password della riunione non è valida"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Il file caricato non corrisponde all'originale. Riprova."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
       ],
@@ -2015,6 +2082,15 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Questo campo richiede un minimo di ${ minimumLength } caratteri."
+      ],
+      "This file has no version available to download": [
+        "Non è disponibile alcuna versione di questo file da scaricare"
+      ],
+      "This item is no longer shared": [
+        "Questo elemento non è più condiviso"
+      ],
+      "This item is not shared": [
+        "Questo elemento non è condiviso"
       ],
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
         "Questo incontro è su una versione obsoleta, l'organizzatore deve terminarlo e aggiornare Meet per riavviare con l'ultima versione."
@@ -2031,11 +2107,20 @@
       "Username must end with a letter or digit": [
         "Il nome utente deve terminare con una lettera o un numero/"
       ],
+      "Verification keys are not available": [
+        "Le chiavi di verifica non sono disponibili"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Le chiavi di verifica per ${ signatureType } non sono disponibili"
+      ],
       "Virtual background initialization failed. Please toggle your camera or pick a background again": [
         "Inizializzazione dello sfondo virtuale non riuscita. Prova a riattivare la fotocamera o a selezionare di nuovo uno sfondo."
       ],
       "We couldn’t send a verification code using this method.": [
         "Non è stato possibile inviare un codice di verifica con questo metodo."
+      ],
+      "You do not have access to this item": [
+        "Non hai accesso a questo elemento"
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "Lo spazio di archiviazione del tuo browser è esaurito. Abbiamo salvato la registrazione fino a questo momento."
@@ -2264,6 +2349,10 @@
         "${ totalParticipantCount } partecipante",
         "${ totalParticipantCount } partecipanti"
       ],
+      "${ waitingRoomParticipantsCount } person is waiting": [
+        "${ waitingRoomParticipantsCount } persona in attesa",
+        "${ waitingRoomParticipantsCount } persone in attesa"
+      ],
       "(You)": [
         "(Voi)"
       ],
@@ -2278,6 +2367,9 @@
       ],
       "Admit": [
         "Autorizza accesso"
+      ],
+      "Admitting": [
+        "Ammesso"
       ],
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Modalità avanzata: sintonizza ogni costante di sfocatura per la prossima versione, quindi fai clic su Applica per ricostruire l'anteprima. Le sostituzioni hanno la precedenza sui valori del file e di Unleash."
@@ -2453,6 +2545,9 @@
       "Everyone has been disconnected from the call.": [
         "Tutti sono stati disconnessi dalla chiamata."
       ],
+      "Expires in ${ formattedCountdown }": [
+        "Scade tra ${ formattedCountdown }"
+      ],
       "Failed to apply background blur": [
         "Impossibile applicare la sfocatura dello sfondo"
       ],
@@ -2506,6 +2601,9 @@
       ],
       "Internet connection lost": [
         "Connessione ad Internet interrotta"
+      ],
+      "Join request expired. The host didn't admit you in time. Send a new request to join.": [
+        "Richiesta di partecipazione scaduta. L'organizzatore non ti ha ammesso in tempo. Invia una nuova richiesta per accedere."
       ],
       "Joined ${ roomNameLabel }": [
         "Entrato/a in ${ roomNameLabel }"
@@ -2762,6 +2860,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornare la pagina o ${ link } risolverà automaticamente la maggior parte dei problemi."
       ],
+      "Rejecting": [
+        "Rifiutato"
+      ],
       "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
         "Elabora la tua fotocamera live con il processore personalizzato per gli sfondi. Scegli un colore uniforme o carica un'immagine da utilizzare come sfondo."
       ],
@@ -2833,6 +2934,9 @@
       ],
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Questa è una chat crittografata end-to-end con messaggi temporanei, che scompaiono alla fine della chiamata."
+      ],
+      "This meeting has a waiting room": [
+        "Questa riunione ha una sala d'attesa"
       ],
       "This meeting is being recorded": [
         "Questa sessione è in fase di registrazione"
@@ -2915,6 +3019,15 @@
       "Virtual background initializing": [
         "Inizializzazione dello sfondo virtuale in corso"
       ],
+      "Waiting for the host to admit you. The host has been notified that you're waiting.": [
+        "In attesa dell'ammissione da parte dell'organizzatore. L'organizzatore è stato informato della tua presenza."
+      ],
+      "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
+        "In attesa dell'avvio da parte dell'organizzatore. Verrai inserito nella riunione non appena l'organizzatore l'avrà avviata e avrà confermato l'ammissione."
+      ],
+      "Waiting since ${ receivedTime }": [
+        "In attesa da ${ receivedTime }"
+      ],
       "Warning": [
         "Spazio esaurito"
       ],
@@ -2960,6 +3073,9 @@
       "You were removed from the meeting": [
         "Ti hanno rimosso dalla riunione"
       ],
+      "You weren't admitted to this meeting. You can try joining again if you think this was a mistake.": [
+        "Non sei stato ammesso a questa riunione. Puoi riprovare a collegarti se ritieni che si sia trattato di un errore."
+      ],
       "You will leave the meeting. Others will continue.": [
         "Lascerai la riunione. Gli altri continueranno."
       ],
@@ -3001,9 +3117,6 @@
       ]
     },
     "Label": {
-      "${ BRAND_NAME } background": [
-        "${ BRAND_NAME } sfondo"
-      ],
       "${ BRAND_NAME } username": [
         "Nome utente ${ BRAND_NAME }"
       ],
@@ -3013,9 +3126,6 @@
       "${ numberOfStars } star": [
         "${ numberOfStars } stella",
         "${ numberOfStars } stelle"
-      ],
-      "Abstract background": [
-        "Sfondo astratto"
       ],
       "Add optional details": [
         "Aggiungi ulteriori dettagli"
@@ -3047,9 +3157,6 @@
       "Background color": [
         "Colore dello sfondo"
       ],
-      "Beach background": [
-        "Sfondo spiaggia"
-      ],
       "Blurred (next)": [
         "Sfocato (successivo)"
       ],
@@ -3073,9 +3180,6 @@
       ],
       "Code is 6 digits without spaces": [
         "Codice a 6 cifre senza spazi"
-      ],
-      "Coffee place background": [
-        "Sfondo caffetteria"
       ],
       "Connection Quality": [
         "Qualità della Connessione"
@@ -3185,9 +3289,6 @@
       "Monday to Friday": [
         "Da lunedì a venerdì"
       ],
-      "Mountain background": [
-        "Sfondo montagna"
-      ],
       "Muted": [
         "Muto"
       ],
@@ -3196,9 +3297,6 @@
       ],
       "Next": [
         "Successivo"
-      ],
-      "Office background": [
-        "Sfondo ufficio"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -3478,6 +3576,14 @@
         "Digita un messaggio crittografato..."
       ]
     },
+    "Property": {
+      "attributes": [
+        "Attributi"
+      ],
+      "key": [
+        "chiave"
+      ]
+    },
     "Role": {
       "Organization Admin": [
         "Organizzazione Amministratore"
@@ -3744,6 +3850,9 @@
       "Join meeting": [
         "Unisciti alla riunione"
       ],
+      "Join request expired": [
+        "Richiesta di partecipazione scaduta"
+      ],
       "Joined at epoch ${ log.epoch }": [
         "Collegato all'epoca ${ log.epoch }"
       ],
@@ -3856,6 +3965,9 @@
       "Thank you!": [
         "Grazie!"
       ],
+      "The host didn't admit you": [
+        "L'organizzatore non ti ha ammesso"
+      ],
       "Time": [
         "Ora"
       ],
@@ -3870,6 +3982,9 @@
       ],
       "Virtual backgrounds": [
         "Sfondo virtuale"
+      ],
+      "Waiting for the host": [
+        "In attesa dell'host"
       ],
       "Waiting room": [
         "Sala d'attesa"

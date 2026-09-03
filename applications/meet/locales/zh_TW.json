@@ -1758,6 +1758,36 @@
       ]
     },
     "Error": {
+      "An error occurred": [
+        "發生錯誤"
+      ],
+      "Cannot download a folder": [
+        "無法下載個資料夾"
+      ],
+      "Cannot verify the author of this file": [
+        "無法驗證此檔案的作者"
+      ],
+      "Cannot verify who uploaded this file": [
+        "無法驗證上傳此檔案的人"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "不允許將項目複製到非資料夾"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "無法載入照片預覽: ${ message }"
+      ],
+      "Could not unlock this item": [
+        "無法解鎖此項目"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "允許於非資料夾內創建檔案"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "不允許於非資料夾內創建資料夾"
+      ],
+      "Device not found": [
+        "找不到裝置"
+      ],
       "Domain not available, try again later": [
         "網域無法使用，請稍後再試"
       ],
@@ -1781,6 +1811,12 @@
       ],
       "Failed to create personal meeting, please refresh the page": [
         "建立個人會議失敗，請重新整理頁面"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "解密書籤金鑰失敗: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "解密書籤密碼失敗: ${ message }"
       ],
       "Failed to decrypt session key": [
         "解密工作階段金鑰失敗"
@@ -1833,17 +1869,47 @@
       "Failed to unlock meeting": [
         "無法解鎖會議"
       ],
+      "Image preview not found": [
+        "查無照片預覽"
+      ],
       "Incorrect username": [
         "錯誤的使用者名稱"
       ],
       "Invalid meeting link": [
         "無效的會議連結"
       ],
+      "Invalid URL": [
+        "URL 無效"
+      ],
       "Invalid verification code": [
         "驗證碼無效"
       ],
+      "Item not found": [
+        "找不到項目"
+      ],
+      "Missing inviter email": [
+        "缺少邀請電子郵件"
+      ],
+      "Missing signature": [
+        "簽章遺失"
+      ],
+      "Move operation aborted": [
+        "以終止移動操作"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "不允許將項目移動到非資料夾"
+      ],
+      "Name must not be empty": [
+        "名稱不得留空"
+      ],
       "Not a valid number": [
         "號碼無效"
+      ],
+      "Operation aborted": [
+        "操作取消"
+      ],
+      "Operation failed, try again later": [
+        "作業失敗。稍後再試。"
       ],
       "Organization key is not decrypted": [
         "組織金鑰未解密"
@@ -1863,8 +1929,26 @@
       "Screen share is not supported on mobile browsers": [
         "行動瀏覽器不支援畫面共享"
       ],
+      "Signature is missing": [
+        "缺少簽名"
+      ],
       "Signature verification failed": [
         "簽名驗證失敗"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "部分檔案上載失敗。請稍後再試。"
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "檔案部分上傳失敗。請稍後再試。"
+      ],
+      "Some items could not be loaded": [
+        "無法載入部分項目"
+      ],
+      "Something went wrong": [
+        "發生錯誤"
+      ],
+      "Something went wrong. Please try again.": [
+        "發生錯誤，請稍後再試。"
       ],
       "The email addresses do not match": [
         "電子郵件位址不相符"
@@ -1884,8 +1968,32 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "此欄位至少須有 ${ minimumLength } 個字元。"
       ],
+      "This file has missing crypto material": [
+        "此檔案缺乏密鑰元件"
+      ],
+      "This file has no version available to download": [
+        "此檔案無可下載版本"
+      ],
+      "This file version could not be uploaded": [
+        "此檔案的版本紀錄無法被上傳"
+      ],
+      "This item has no image preview": [
+        "此項目無可預覽的項目"
+      ],
+      "This item is no longer shared": [
+        "此項目已停止共享"
+      ],
+      "This item is not shared": [
+        "此項目未被共享"
+      ],
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
         "此會議使用較舊版本，主持人必須結束此會議並重新整理 Meet，以使用最新版本重新開始。"
+      ],
+      "Too many server errors, please try again later": [
+        "太多伺服器錯誤，請稍後再試"
+      ],
+      "Too many server requests, please try again later": [
+        "太多伺服器查詢，請稍後再試"
       ],
       "Try using only letters, numerals, and _.-": [
         "嘗試僅使用字母、數字與 _.-"
@@ -1901,6 +2009,15 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "我們無法使用此方法傳送驗證碼。"
+      ],
+      "You can update a public link for your own files only": [
+        "您只能更新您的檔案公開連結"
+      ],
+      "You do not have access to this item": [
+        "您沒有權限訪問此項目"
+      ],
+      "You do not have access to this shared item": [
+        "您沒有權限訪問此共享的項目"
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "您的瀏覽器儲存空間不足。我們已將錄影儲存至此時間點。"
@@ -3212,6 +3329,20 @@
       ],
       "Type an encrypted message...": [
         "輸入加密訊息……"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "属性"
+      ],
+      "content key": [
+        "內容金鑰"
+      ],
+      "hash key": [
+        "雜湊金鑰"
+      ],
+      "key": [
+        "金鑰"
       ]
     },
     "Role": {

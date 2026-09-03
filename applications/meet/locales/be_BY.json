@@ -1767,6 +1767,69 @@
       ]
     },
     "Error": {
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Пры справаздачы аб парушэнні аўтарскіх правоў або крадзяжы даных вы павінны пакінуць паведамленне"
+      ],
+      "An error occurred": [
+        "Адбылася памылка"
+      ],
+      "Bookmark password is not available": [
+        "Пароль закладкі недаступны"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Немагчыма дадаць фатаграфію ў альбом без сапраўднай назвы"
+      ],
+      "Cannot download a folder": [
+        "Немагчыма спампаваць папку"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Немагчыма перанесці элемент без сапраўднай назвы. Спачатку дайце яму іншую назву."
+      ],
+      "Cannot share root folder": [
+        "Немагчыма абагуліць каранёвую папку"
+      ],
+      "Cannot verify the author of this file": [
+        "Немагчыма спраўдзіць аўтара гэтага файла"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Немагчыма спраўдзіць хто запампаваў гэты файл"
+      ],
+      "Copy operation aborted": [
+        "Аперацыя капіявання перарвана"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Капіяванне элементаў па-за межы папкі забаронена"
+      ],
+      "Could not find an available name": [
+        "Немагчыма знайсці даступную назву"
+      ],
+      "Could not load sharing details": [
+        "Немагчыма загрузіць абагуленыя падрабязнасці"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Немагчыма загрузіць папярэдні прагляд відарыса: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Немагчыма прачытаць частку гэтага файла: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Немагчыма разблакіраваць бацькоўскую папку"
+      ],
+      "Could not unlock this item": [
+        "Немагчыма разблакіраваць гэты элемент"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Стварэнне дакументаў па-за іх межамі забаронена"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Стварэнне файлаў па-за іх межамі забаронена"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Стварэнне папак па-за іх межамі забаронена"
+      ],
+      "Device not found": [
+        "Прылада не знойдзена"
+      ],
       "Domain not available, try again later": [
         "Дамен недаступны. Паўтарыце спробу пазней"
       ],
@@ -1782,6 +1845,9 @@
       "Event deleted": [
         "Падзея выдалена"
       ],
+      "Expiration date cannot be in the past": [
+        "Дата завяршэння не можа быць у мінулым"
+      ],
       "Failed to assign host": [
         "Не ўдалося прызначыць арганізатара"
       ],
@@ -1790,6 +1856,27 @@
       ],
       "Failed to create personal meeting, please refresh the page": [
         "Не ўдалося стварыць асабістую сустрэчу. Абнавіце старонку"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Не ўдалося расшыфраваць ключ закладкі: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Не ўдалося расшыфраваць назву закладкі: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Не ўдалося расшыфраваць пароль закладкі: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Не ўдалося расшыфраваць ключ змесціва: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Не ўдалося расшыфраваць назву элемента: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Не ўдалося расшыфраваць ключ вузла: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Не ўдалося расшыфраваць метаданыя рэдакцыі"
       ],
       "Failed to decrypt session key": [
         "Не ўдалося расшыфраваць ключ сеанса"
@@ -1808,6 +1895,9 @@
       ],
       "Failed to edit room name": [
         "Не ўдалося адрэдагаваць назву пакоя"
+      ],
+      "Failed to get inviter keys": [
+        "Не ўдалося атрымаць ключы запрашэння"
       ],
       "Failed to join meeting. Please try again later.": [
         "Не ўдалося далучыцца да сустрэчы. Паўтарыце спробу пазней."
@@ -1842,26 +1932,104 @@
       "Failed to unlock meeting": [
         "Не ўдалося разблакіраваць сустрэчу"
       ],
+      "Failed to verify invitation": [
+        "Не ўдалося спраўдзіць запрашэнне"
+      ],
+      "File download failed due to empty response": [
+        "Збой спампоўвання файла. Прычына: пусты адказ"
+      ],
+      "File has no revision": [
+        "У файла адсутнічае рэдакцыя"
+      ],
+      "Image preview not found": [
+        "Папярэдні прагляд відарыса не знойдзены"
+      ],
       "Incorrect username": [
         "Няправільнае імя карыстальніка"
       ],
       "Invalid meeting link": [
         "Памылковая спасылка на сустрэчу"
       ],
+      "Invalid URL": [
+        "Памылковы URL-адрас"
+      ],
       "Invalid verification code": [
         "Памылковы код спраўджання"
+      ],
+      "Invitation not found": [
+        "Запрашэнне не знойдзена"
+      ],
+      "Item not found": [
+        "Элемент не знойдзены"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Састарэлая публічная спасылка не можа быць абноўлена. Паўторна стварыце новую публічную спасылку."
+      ],
+      "Missing inviter email": [
+        "Электронная пошта запрошанай асобы адсутнічае"
+      ],
+      "Missing signature": [
+        "Адсутнічае подпіс"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Адсутнічае паведамленне для ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Аперацыя перамяшчэння перарвана"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Перамяшчэнне элементаў па-за межы папкі забаронена"
+      ],
+      "Moving root item is not allowed": [
+        "Перамяшчэнне элемента суперкарыстальніка забаронена"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвала",
+        "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў",
+        "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў",
+        "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў"
+      ],
+      "Name must not be empty": [
+        "Назва не можа быць пустой"
+      ],
+      "No file data was received. Please try again.": [
+        "Ніякія даныя файла не былі атрыманы. Паўтарыце спробу."
       ],
       "Not a valid number": [
         "Несапраўдны нумар"
       ],
+      "Only admins can convert external invitations": [
+        "Толькі ў адміністратараў ёсць правы для пераўтварэння знешніх запрашэнняў"
+      ],
+      "Operation aborted": [
+        "Аперацыя перарвана"
+      ],
+      "Operation failed, try again later": [
+        "Збой выканання аперацыі. Паўтарыце спробу пазней"
+      ],
       "Organization key is not decrypted": [
         "Ключ арганізацыі не расшыфраваны"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Здаецца, што частка файла пашкоджана"
       ],
       "Passwords do not match": [
         "Паролі не супадаюць"
       ],
+      "Photo is already in the target album": [
+        "Фатаграфія ўжо знаходзіцца ў мэтавым альбоме"
+      ],
+      "Photo not found": [
+        "Фатаграфія не знойдзена"
+      ],
       "Please allow screen sharing in your system permissions, then try again": [
         "Дазвольце абагульванне экрана ў сістэмных дазволах, а потым паўтарыце спробу"
+      ],
+      "Renaming root item is not allowed": [
+        "Перайменаванне элемента суперкарыстальніка забаронена"
+      ],
+      "Request aborted": [
+        "Запыт перарваны"
       ],
       "Request timed out": [
         "Перавышаны тэрмін чакання запыту"
@@ -1872,8 +2040,35 @@
       "Screen share is not supported on mobile browsers": [
         "Абагульванне экрана не падтрымліваецца ў мабільных браўзерах"
       ],
+      "Signature is missing": [
+        "Подпіс адсутнічае"
+      ],
       "Signature verification failed": [
         "Не ўдалося спраўдзіць подпіс"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Збой спраўджання подпісу: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Збой спраўджання подпісу для ${ signatureType }"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Збой спраўджання подпісу для ${ signatureType }: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Некаторыя даныя файла не ўдалося запампаваць. Паўтарыце спробу."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Некаторыя часткі файла не ўдалося запампаваць. Паўтарыце спробу."
+      ],
+      "Some items could not be loaded": [
+        "Некаторыя элементы немагчыма загрузіць"
+      ],
+      "Something went wrong": [
+        "Нешта пайшло не так"
+      ],
+      "Something went wrong. Please try again.": [
+        "Нешта пайшло не так. Паўтарыце спробу."
       ],
       "The email addresses do not match": [
         "Адрасы электроннай пошты не супадаюць"
@@ -1884,6 +2079,9 @@
       "The meeting password is invalid": [
         "Памылковы пароль сустрэчы"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Запампаваны файл не адпавядае арыгіналу. Паўтарыце спробу."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Гэта поле перавышае максімальную колькасць сімвалаў (дазволена: ${ maximumLength })."
       ],
@@ -1893,8 +2091,32 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Поле павінна змяшчаць як мінімум ${ minimumLength } сімвалаў."
       ],
+      "This file has missing crypto material": [
+        "У гэтага файла адсутнічае крыптаграфічны матэрыял"
+      ],
+      "This file has no version available to download": [
+        "У гэтага файла адсутнічае даступная версія для спампоўвання"
+      ],
+      "This file version could not be uploaded": [
+        "Не ўдалося запампаваць гэтую версію файла"
+      ],
+      "This item has no image preview": [
+        "У гэтага элемента адсутнічае папярэдні прагляд відарыса"
+      ],
+      "This item is no longer shared": [
+        "Гэты элемент больш не абагульваецца"
+      ],
+      "This item is not shared": [
+        "Гэты элемент не абагульваецца"
+      ],
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
         "Гэта сустрэча працуе на старой версіі. Арганізатар павінен завяршыць сустрэчу і абнавіць праграму Meet да апошняй версіі."
+      ],
+      "Too many server errors, please try again later": [
+        "Занадта шмат памылак сервера. Паўтарыце спробу пазней"
+      ],
+      "Too many server requests, please try again later": [
+        "Занадта шмат запытаў на сервер. Паўтарыце спробу пазней"
       ],
       "Try using only letters, numerals, and _.-": [
         "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
@@ -1908,8 +2130,32 @@
       "Username must end with a letter or digit": [
         "Імя карыстальніка павінна заканчвацца літарай або лічбай"
       ],
+      "Verification keys are not available": [
+        "Ключы спраўджання недаступны"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Ключы спраўджання для ${ signatureType } недаступны"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Немагчыма адправіць код спраўджання з дапамогай гэтага спосабу."
+      ],
+      "You can create public links for your own files only": [
+        "Вы можаце ствараць публічныя спасылкі толькі для сваіх уласных файлаў"
+      ],
+      "You can only leave items that are shared with you": [
+        "У вас ёсць магчымасць толькі выйсці з элементаў, якія абагульваюцца з вамі"
+      ],
+      "You can only upload a new version to a file": [
+        "Вы можаце толькі запампаваць новую версію ў файл"
+      ],
+      "You can update a public link for your own files only": [
+        "Вы можаце абнавіць публічную спасылку толькі для вашых уласных файлаў"
+      ],
+      "You do not have access to this item": [
+        "У вас няма доступу да гэтага элемента"
+      ],
+      "You do not have access to this shared item": [
+        "У вас няма доступу да гэтага абагуленага элемента"
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "У вашым браўзеры скончылася месца для захоўвання. Запіс захаваны да гэтага моманту."
@@ -2180,6 +2426,9 @@
       ],
       "Attention required": [
         "Патрабуецца ўвага"
+      ],
+      "Author is not provided on public link": [
+        "Аўтар не пазначаны ў публічнай спасылцы"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перад запытам новага кода спраўджання праверце папку са спамам, а таксама ці правільна ўказаны адрас ${ strong }."
@@ -3257,6 +3506,26 @@
       ],
       "Type an encrypted message...": [
         "Увядзіце зашыфраванае паведамленне..."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "атрыбуты"
+      ],
+      "content key": [
+        "ключ змесціва"
+      ],
+      "hash key": [
+        "хэш-ключ"
+      ],
+      "key": [
+        "ключ"
+      ],
+      "membership": [
+        "удзельніцтва"
+      ],
+      "name": [
+        "назва"
       ]
     },
     "Role": {
