@@ -5,7 +5,7 @@
         "check-types": "tsc",
         "lint": "eslint --quiet",
         "test": "jest",
-        "test:ci": "jest --coverage --runInBand --ci"
+        "test:ci": "jest --coverage --runInBand --ci --logHeapUsage"
     },
     "dependencies": {
         "@proton/react-redux-store": "workspace:^",

@@ -11,7 +11,7 @@
         "lint": "eslint --quiet",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --noLogicalScss",
         "test": "jest",
-        "test:ci": "jest --coverage --runInBand --ci",
+        "test:ci": "jest --coverage --runInBand --ci --logHeapUsage",
         "test:dev": "jest --watch"
     },
     "dependencies": {

@@ -7,7 +7,7 @@
         "check-types": "tsc",
         "lint": "eslint --quiet",
         "test": "jest",
-        "test:ci": "jest --coverage --runInBand --ci"
+        "test:ci": "jest --coverage --runInBand --ci --logHeapUsage"
     },
     "dependencies": {
         "@openpgp/web-stream-tools": "~0.3.1",

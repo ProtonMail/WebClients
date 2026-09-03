@@ -56,7 +56,7 @@
         "lint": "eslint --quiet",
         "pretty": "prettier --write $(find . -path ./node_modules -prune -o -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "test": "jest",
-        "test:ci": "jest --coverage --runInBand --ci",
+        "test:ci": "jest --coverage --runInBand --ci --logHeapUsage",
         "test:watch": "jest --watch"
     },
     "dependencies": {

@@ -25,7 +25,7 @@
         "start": "cross-env-shell NODE_ENV=development API_ENV=proton.black 'electron-forge start'",
         "start:prod": "cross-env-shell NODE_ENV=development 'electron-forge start'",
         "test": "jest",
-        "test:ci": "jest --coverage --runInBand --ci --passWithNoTests",
+        "test:ci": "jest --coverage --runInBand --ci --passWithNoTests --logHeapUsage",
         "test:watch": "jest --watch",
         "update:serve": "node update/serve.mjs"
     },
