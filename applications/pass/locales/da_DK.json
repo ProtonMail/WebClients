@@ -115,6 +115,9 @@
       "Bulk restore items from trash": [
         "Gendan elementer fra papirkurven i massevis"
       ],
+      "Bulk select items": [
+        "Vælg elementer i massevis"
+      ],
       "Cancel": [
         "Annullér"
       ],
@@ -489,6 +492,9 @@
       ],
       "Move to Trash": [
         "Flyt til papirkurv"
+      ],
+      "Multiple select": [
+        "Markér flere"
       ],
       "New token": [
         "Ny token"
@@ -2123,8 +2129,7 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
+        "Hvis du flytter et element til en anden boks, slettes dets sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -4403,20 +4408,20 @@
       ]
     },
     "Result": {
-      "Enter a URL to check to see if your current rule is matching the URL": [
-        "Indtast en URL for at kontrollere om din nuværende regel matcher URL'en"
-      ],
-      "The rule is matching this URL": [
-        "Reglen matcher denne URL"
-      ],
-      "The rule is NOT matching this URL": [
-        "Reglen matcher IKKE denne URL"
+      "Enter a URL to check if it matches the current rule": [
+        "Indtast en URL for at tjekke om den matcher den nuværende regel"
       ],
       "This URL will be blocked from autofill": [
         "Denne URL vil blive blokeret fra autofyld"
       ],
       "This URL will NOT be blocked from autofill": [
         "Denne URL vil IKKE blive blokeret fra autofyld"
+      ],
+      "URL doesn't match the rule": [
+        "URL matcher ikke reglen"
+      ],
+      "URL matches the rule": [
+        "URL matcher reglen"
       ]
     },
     "Security Center - Info": {

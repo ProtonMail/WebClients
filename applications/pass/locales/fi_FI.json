@@ -2105,8 +2105,7 @@
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
+        "Kohteen siirtäminen toiseen holviin pyyhkii sen suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -4379,15 +4378,6 @@
       ]
     },
     "Result": {
-      "Enter a URL to check to see if your current rule is matching the URL": [
-        "Syötä URL-osoite, jotta voit tarkistaa, vastaako nykyinen sääntösi kyseistä URL-osoitetta"
-      ],
-      "The rule is matching this URL": [
-        "Sääntö vastaa tätä URL-osoitetta"
-      ],
-      "The rule is NOT matching this URL": [
-        "Sääntö EI vastaa tätä URL-osoitetta"
-      ],
       "This URL will be blocked from autofill": [
         "Tämän URL-osoitteen automaattinen täyttö estetään"
       ],

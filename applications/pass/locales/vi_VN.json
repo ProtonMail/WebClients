@@ -2055,7 +2055,7 @@
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
+        "Di chuyển một mục sang kho khác sẽ xóa các liên kết bảo mật của mục đó."
       ],
       "Moving items": [
         "Đang chuyển mục"
@@ -4302,15 +4302,6 @@
       ]
     },
     "Result": {
-      "Enter a URL to check to see if your current rule is matching the URL": [
-        "Nhập một URL để kiểm tra xem quy tắc hiện tại có khớp với URL đó không"
-      ],
-      "The rule is matching this URL": [
-        "Quy tắc này khớp với URL này"
-      ],
-      "The rule is NOT matching this URL": [
-        "Quy tắc này KHÔNG khớp với URL này"
-      ],
       "This URL will be blocked from autofill": [
         "URL này sẽ bị chặn tự động điền"
       ],
