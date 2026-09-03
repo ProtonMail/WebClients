@@ -312,6 +312,9 @@
       ],
       "Zoom meeting links": [
         "Links da reunião do Zoom"
+      ],
+      "Block sender for the organization": [
+        "Bloquear remetente para a organização"
       ]
     },
     "Accounts": {
@@ -3725,6 +3728,12 @@
       ],
       "Total": [
         "Total"
+      ],
+      "month": [
+        "mês"
+      ],
+      "Summary": [
+        "Resumo"
       ]
     },
     "Collapsible tooltip": {
@@ -7025,6 +7034,9 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Seus contatos de recuperação devem ser pessoas que você conhece e com quem pode entrar em contato facilmente."
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Desbloquear ${ PASS_APP_NAME }"
       ]
     },
     "Empty group name": {
@@ -9162,6 +9174,9 @@
       ],
       "User - ${ userPrice }": [
         "Usuário - ${ userPrice }"
+      ],
+      "Monitor gateway connections with VPN Professional": [
+        "Monitore as conexões do gateway com o VPN Professional"
       ]
     },
     "Get help": {
@@ -14071,6 +14086,17 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "${ pendingKeysMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingKeysMemberCount } novo membro adicionado via seu provedor de identidade e pendente de revisão.",
+        "${ pendingKeysMemberCount } novos membros adicionados via seu provedor de identidade e pendentes de revisão."
+      ],
+      "Email address copied to clipboard": [
+        "Endereço de e-mail copiado para a área de transferência"
+      ],
+      "The process was interrupted for ${ pausedCount } ${ roleAssignmentSource }. Click Continue to resume assigning roles.": [
+        "O processo foi interrompido para ${ pausedCount } ${ roleAssignmentSource }. Clique em Continuar para retomar a atribuição de funções.",
+        "O processo foi interrompido para ${ pausedCount } ${ roleAssignmentSource }. Clique em Continuar para retomar a atribuição de funções."
       ]
     },
     "info": {
@@ -19673,6 +19699,13 @@
       "User (${ n })": [
         "Usuário (${ n })",
         "Usuários (${ n })"
+      ],
+      "Copy email list": [
+        "Copiar lista de e-mails"
+      ],
+      "See ${ n } user": [
+        "Ver ${ n } usuário",
+        "Ver ${ n } usuários"
       ]
     },
     "Organization logo upload": {
