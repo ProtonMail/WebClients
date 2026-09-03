@@ -225,6 +225,9 @@
       "Copy as markdown": [
         "Kopírovať ako markdown"
       ],
+      "Copy debug transcript": [
+        "Kopírovať prepis ladenia"
+      ],
       "Copy email to clipboard": [
         "Skopírovať email do schránky"
       ],
@@ -611,6 +614,9 @@
       ],
       "Preview contact": [
         "Náhľad kontaktu"
+      ],
+      "Preview logs": [
+        "Náhľad záznamov"
       ],
       "Previous month": [
         "Predchádzajúci mesiac"
@@ -5142,14 +5148,14 @@
       "Custom email domains": [
         "Vlastné emailové domény"
       ],
+      "Debug transcript copied": [
+        "Prepis ladenia skopírovaný"
+      ],
       "Decrypting your document": [
         "Dešifrujeme váš dokument"
       ],
       "Display word count": [
         "Zobraziť počet slov"
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Pamätáte si svoje heslo? ${ verifyButton }"
       ],
       "Document is in trash": [
         "Dokument je v koši"
@@ -5331,6 +5337,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ak email v priečinku doručenej pošty nenájdete, skontrolujte priečinok so spamom, prosím."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Ak ste stratili prístup k aplikácii na overovanie, môžete použiť jeden zo 16 záložných obnovovacích kódov, ktoré ste dostali pri nastavovaní dvojfaktorovej autentifikácie. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Ak znížite predplatné, stratíte prístup k plateným funkciám ${ MAIL_APP_NAME } a ${ VPN_APP_NAME }."
       ],
@@ -5430,6 +5439,9 @@
       "Link copied to clipboard": [
         "Odkaz bol skopírovaný do schránky"
       ],
+      "Link expired": [
+        "Platnosť odkazu vypršala"
+      ],
       "Loading": [
         "Načítavanie"
       ],
@@ -5447,6 +5459,9 @@
       ],
       "Loading...": [
         "Načítavanie..."
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Záznamy nám pomáhajú pochopiť, čo sa udialo pred vznikom problému. Obsahujú akcie aplikácie a chybové hlásenia, nie však obsah správ."
       ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Zdá sa, že ste offline. Dokument nie je možné upravovať, keď ste offline. Skontrolujte pripojenie svojho zariadenia, prosím."
@@ -6273,6 +6288,9 @@
       "${ BRAND_NAME } username": [
         "Používateľské meno ${ BRAND_NAME }"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } znakov"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasne nedostupné. Skúste to neskôr.)"
       ],
@@ -6752,6 +6770,9 @@
       ],
       "Your password (trusted contact)": [
         "Vaše heslo (dôveryhodný kontakt)"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nerozšifrovateľný názov"
       ]
     },
     "Label for contact group color": {
@@ -8143,6 +8164,16 @@
         "Podpora pre ${ n } vlastných emailových domén"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Skúste to teraz"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Teraz máte prístup k novej aplikácii ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Notification": {
       "\"${ ellipsedName }\" created successfully": [
         "„${ ellipsedName }“ úspešne vytvorené"
@@ -9138,6 +9169,79 @@
       ],
       "SUMMER SALE": [
         "LETNÝ VÝPREDAJ"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Využiť ponuku"
+      ],
+      "Special Offer": [
+        "Špeciálna ponuka"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/mesiac"
+      ],
+      "2 individual accounts": [
+        "2 samostatné účty"
+      ],
+      "2 TB of secure storage": [
+        "2 TB bezpečného úložiska"
+      ],
+      "3 TB of secure storage": [
+        "3 TB bezpečného úložiska"
+      ],
+      "500 GB of secure storage": [
+        "500 GB bezpečného úložiska"
+      ],
+      "6 individual accounts": [
+        "6 samostatných účtov"
+      ],
+      "Advanced protection against cyber threats": [
+        "Pokročilá ochrana pred kybernetickými hrozbami"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zľavy sa vzťahujú na štandardné mesačné ceny. Vaše predplatné sa po skončení fakturačného cyklu obnoví za štandardnú ročnú sadzbu."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "na 12 mesiacov"
+      ],
+      "One plan, full power": [
+        "Jeden plán, plný výkon"
+      ],
+      "One plan, max savings": [
+        "Jeden plán, maximálne úspory"
+      ],
+      "One plan, more power": [
+        "Jeden plán, viac výkonu"
       ]
     },
     "Recent documents table header": {

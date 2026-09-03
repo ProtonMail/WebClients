@@ -5085,9 +5085,6 @@
       "Display word count": [
         "Afișare număr cuvinte"
       ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Vă amintiți parola? ${ verifyButton }"
-      ],
       "Document is in trash": [
         "Documentul este în gunoi."
       ],
@@ -5368,6 +5365,9 @@
       ],
       "Link copied to clipboard": [
         "Legătura a fost copiată în memorie."
+      ],
+      "Link expired": [
+        "legătură web expirată."
       ],
       "Loading": [
         "Se încarcă"
@@ -5880,7 +5880,7 @@
         "Litere mari și mici"
       ],
       "username": [
-        "utilizator"
+        "nume de utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -6204,7 +6204,7 @@
     },
     "Label": {
       "${ BRAND_NAME } username": [
-        "Nnume de utilizator ${ BRAND_NAME }"
+        "Nume de utilizator ${ BRAND_NAME }"
       ],
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } de caractere"
@@ -6645,7 +6645,7 @@
         "Model URL cu caractere generice"
       ],
       "Username": [
-        "Nume utilizator"
+        "Nume de utilizator"
       ],
       "Verification code": [
         "Cod de verificare"
@@ -6688,6 +6688,9 @@
       ],
       "Your password (trusted contact)": [
         "Parola dvs. (contact aprobat)"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nume nedecriptabil"
       ]
     },
     "Label for contact group color": {
@@ -8784,7 +8787,7 @@
         "Nume"
       ],
       "Name or email address": [
-        "Nume utilizator/adresa de e-mail"
+        "Nume de utilizator/adresa de e-mail"
       ],
       "Organization name": [
         "Nume organizație"
