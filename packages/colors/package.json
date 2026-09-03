@@ -8,7 +8,7 @@
         "generate": "ts-node -P tsconfig.generate.json gen-themes-cli",
         "lint": "eslint --quiet",
         "test": "NODE_OPTIONS=--experimental-vm-modules jest",
-        "test:ci": "NODE_OPTIONS=--experimental-vm-modules jest --coverage --runInBand --ci",
+        "test:ci": "NODE_OPTIONS=--experimental-vm-modules jest --coverage --runInBand --ci --logHeapUsage",
         "test:watch": "jest --watch"
     },
     "dependencies": {

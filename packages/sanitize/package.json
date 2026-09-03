@@ -11,7 +11,7 @@
         "check-types": "tsc",
         "lint": "eslint --quiet",
         "test": "jest",
-        "test:ci": "yarn test --ci --coverage --runInBand",
+        "test:ci": "yarn test --ci --coverage --runInBand --logHeapUsage",
         "test:watch": "yarn test --watch"
     },
     "dependencies": {

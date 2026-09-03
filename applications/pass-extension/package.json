@@ -26,7 +26,7 @@
         "start:prod:reload": "yarn clean && API_ENV=proton.me RUNTIME_RELOAD=true ts-node ./tools/dev-server.ts",
         "start:reload": "cross-env RUNTIME_RELOAD=true sh -c 'yarn start'",
         "test": "jest --coverage",
-        "test:ci": "jest --coverage --runInBand --ci",
+        "test:ci": "jest --coverage --runInBand --ci --logHeapUsage",
         "test:watch": "jest --watch"
     },
     "dependencies": {
