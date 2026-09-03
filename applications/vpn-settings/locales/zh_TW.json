@@ -1690,14 +1690,6 @@
         "您已達到試用限制。"
       ]
     },
-    "b2b_trials_2025_Label": {
-      "Amount due after trial": [
-        "試用後的應付金額"
-      ],
-      "Amount due now": [
-        "目前應付金額"
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "取消訂購授權"
@@ -2225,14 +2217,6 @@
       ],
       "Total": [
         "總共"
-      ],
-      "Total for ${ n } month": [
-        " ${ n } 個月總計"
-      ]
-    },
-    "Checkout summary": {
-      "month": [
-        "月"
       ]
     },
     "Collapsible tooltip": {
@@ -7137,9 +7121,6 @@
       "Amount below minimum (${ amount }).": [
         "金額不得低於 (${ amount })。"
       ],
-      "Amount due": [
-        "應付金額"
-      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "電子郵件別名就像電子郵件地址，但減少垃圾郵件及保持隱藏您真實電子郵件地址及身分。"
       ],
@@ -7469,9 +7450,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "請切勿忘記此密碼。否則，您將無法管理您的組織。"
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "您記得您的密碼嗎? ${ verifyButton }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "您要撤銷除目前之外所有其它工作階段嗎？"
@@ -8654,9 +8632,6 @@
       ],
       "Subscription starts on ${ startsOnTime }": [
         "訂閱開始於 ${ startsOnTime }"
-      ],
-      "Summary": [
-        "摘要"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "即將支援監控自訂網域及非${ BRAND_NAME }電子郵件地址。"

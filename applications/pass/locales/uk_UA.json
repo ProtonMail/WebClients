@@ -2132,6 +2132,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Переміщення всіх елементів із ${ payload.content.name }"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Переміщення елемента до іншого сховища призведе до стирання його безпечних посилань."
+      ],
       "Moving items": [
         "Переміщення елементів"
       ],
@@ -4449,15 +4452,6 @@
       ]
     },
     "Result": {
-      "Enter a URL to check to see if your current rule is matching the URL": [
-        "Введіть URL-адресу для перевірки, щоб перевірити, чи ваше поточне правило відповідає URL-адресі"
-      ],
-      "The rule is matching this URL": [
-        "Правило відповідає цій URL-адресі"
-      ],
-      "The rule is NOT matching this URL": [
-        "Правило НЕ відповідає цій URL-адресі"
-      ],
       "This URL will be blocked from autofill": [
         "Цю URL-адресу буде заблоковано для автозаповнення"
       ],

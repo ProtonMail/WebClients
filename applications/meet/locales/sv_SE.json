@@ -61,14 +61,11 @@
       "A participant reacted with ${ emoji }": [
         "En deltagare reagerade med ${ emoji }"
       ],
-      "Abstract background applied": [
-        "Abstrakt bakgrund tillämpad"
-      ],
       "Background effect turned off": [
         "Bakgrundseffekt avstängd"
       ],
-      "Beach background applied": [
-        "Strandbakgrund tillämpad"
+      "Background removed": [
+        "Bakgrund borttagen"
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Ansluten via TURN-reläläge på grund av dina nätverksbegränsningar. Detta kan öka latensen och påverka samtalskvaliteten."
@@ -81,9 +78,6 @@
       ],
       "Now starting recording": [
         "Börjar spela in nu"
-      ],
-      "Office background applied": [
-        "Kontorsbakgrund tillämpad"
       ],
       "Reconnected to the meeting": [
         "Återansluten till mötet"
@@ -144,6 +138,9 @@
       ],
       "Your camera has been turned off by the host": [
         "Din kamera har stängts av av värden"
+      ],
+      "Your own background applied": [
+        "Din egen bakgrund tillämpad"
       ]
     },
     "Action": {
@@ -159,6 +156,9 @@
       ],
       "Add another account": [
         "Lägg till ett annat konto"
+      ],
+      "Add your own background": [
+        "Lägg till din egen bakgrund"
       ],
       "Admit ${ participantName }": [
         "Släpp in ${ participantName }"
@@ -1845,8 +1845,71 @@
       ]
     },
     "Error": {
+      "An error occurred": [
+        "Ett fel uppstod"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Kan inte lägga till foto i album utan ett giltigt namn"
+      ],
+      "Cannot download a folder": [
+        "Kan inte ladda ner en mapp"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Kan inte, flytta objekt utan giltigt namn, byt namn på objektet först"
+      ],
+      "Cannot share root folder": [
+        "Kan inte dela rotmapp"
+      ],
+      "Cannot verify the author of this file": [
+        "Kan inte verifiera författaren för denna fil"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Kan inte verifiera vem som laddade upp denna fil"
+      ],
+      "Copy operation aborted": [
+        "Kopieringsåtgärd avbröts"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Kopiering av objekt till utanför en mapp är inte tillåtet"
+      ],
+      "Could not find an available name": [
+        "Kunde inte hitta ett tillgängligt namn"
+      ],
+      "Could not load sharing details": [
+        "Kunde inte ladda delningsdetaljer"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Kunde inte läsa del av denna fil: ${ message }"
+      ],
+      "Could not remove this background. Check your connection and try again.": [
+        "Kunde inte ta bort bakgrunden. Kontrollera din anslutning och försök igen."
+      ],
+      "Could not remove this background. Please try again.": [
+        "Kunde inte ta bort denna bakgrund. Försök igen."
+      ],
+      "Could not unlock the parent folder": [
+        "Kunde inte låsa upp den överordnade mappen"
+      ],
+      "Could not unlock this item": [
+        "Kunde inte låsa upp detta objekt"
+      ],
+      "Couldn’t play the recording on this speaker.": [
+        "Kunde inte spela upp inspelningen på denna högtalare."
+      ],
+      "Couldn’t play the test sound on this speaker.": [
+        "Kunde inte spela upp testljudet på denna högtalare."
+      ],
       "Couldn’t start the microphone test.": [
         "Kunde inte starta mikrofontestet."
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Upprättande av mappar utanför mappar är inte tillåtet"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Upprättande av mappar utanför mappar är inte tillåtet"
+      ],
+      "Device not found": [
+        "Enhet hittades inte"
       ],
       "Domain not available, try again later": [
         "Domän inte tillgänglig, försök igen senare"
@@ -1863,6 +1926,9 @@
       "Event deleted": [
         "Händelsen borttagen"
       ],
+      "Expiration date cannot be in the past": [
+        "Utgångsdatum kan inte vara i det förflutna"
+      ],
       "Failed to admit the participants. Please try again.": [
         "Misslyckades med att släppa in deltagarna. Försök igen."
       ],
@@ -1874,6 +1940,18 @@
       ],
       "Failed to create personal meeting, please refresh the page": [
         "Misslyckades att skapa personligt möte, uppdatera sidan"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Misslyckades avkryptera innehållsnyckel: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Kunde inte avkryptera lösenord för bokmärke: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Misslyckades avkryptera innehållsnyckel: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Kunde inte dekryptera objekt: ${ message }"
       ],
       "Failed to decrypt session key": [
         "Misslyckades att avkryptera sessionsnyckel"
@@ -1898,6 +1976,9 @@
       ],
       "Failed to edit room name": [
         "Misslyckades att redigera rumsnamn"
+      ],
+      "Failed to get inviter keys": [
+        "Misslyckades med att hämta inbjudningsnycklar"
       ],
       "Failed to join meeting. Please try again later.": [
         "Misslyckades att gå med i möte. Försök igen senare."
@@ -1935,29 +2016,105 @@
       "Failed to update waiting room setting. Please try again.": [
         "Misslyckades med att uppdatera inställningar för väntrummet. Försök igen."
       ],
+      "Failed to verify invitation": [
+        "Misslyckades med att verifiera inbjudan"
+      ],
+      "File download failed due to empty response": [
+        "Filnedladdning misslyckades på grund av tomt svar"
+      ],
+      "File has no revision": [
+        "Fil har ingen version"
+      ],
+      "Image preview not found": [
+        "Förhandsvisning av bild hittades inte"
+      ],
       "Incorrect username": [
         "Felaktigt användarnamn"
       ],
       "Invalid meeting link": [
         "Ogiltig möteslänk"
       ],
+      "Invalid URL": [
+        "Ogiltig URL"
+      ],
       "Invalid verification code": [
         "Ogiltig verifieringskod"
+      ],
+      "Invitation not found": [
+        "Inbjudan hittades inte"
+      ],
+      "Item not found": [
+        "Objekt hittades inte"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Äldre publik länk kan inte uppdateras. Vänligen återskapa en ny publik länk."
       ],
       "Microphone access is blocked. Allow it in your browser settings.": [
         "Mikrofonåtkomst är blockerad. Tillåt det i dina webbläsarinställningar."
       ],
+      "Missing inviter email": [
+        "Saknar e-post för inbjudan"
+      ],
+      "Missing signature": [
+        "Signatur saknas"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Saknar signatur för ${ signatureType }"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Flytt av objekt till utanför en mapp är inte tillåtet"
+      ],
+      "Moving root item is not allowed": [
+        "Att flytta rotobjekt är inte tillåtet"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Namn måste vara ${ MAX_NODE_NAME_LENGTH } tecken långt som mest",
+        "Namn måste vara ${ MAX_NODE_NAME_LENGTH } tecken långt som mest"
+      ],
+      "Name must not be empty": [
+        "Namn får inte vara tomt"
+      ],
+      "No file data was received. Please try again.": [
+        "Ingen fildata togs emot. Försök igen."
+      ],
       "Not a valid number": [
         "Inte ett giltigt nummer"
+      ],
+      "Only admins can convert external invitations": [
+        "Endast administratörer kan konvertera externa inbjudningar"
+      ],
+      "Operation aborted": [
+        "Åtgärd avbröts"
+      ],
+      "Operation failed, try again later": [
+        "Åtgärd misslyckades, försök igen senare"
       ],
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
       ],
+      "Part of the file appears to be corrupted": [
+        "Del av filen verkar vara skadad"
+      ],
       "Passwords do not match": [
         "Lösenorden matchar inte"
       ],
+      "Photo is already in the target album": [
+        "Foto är redan i målalbum"
+      ],
+      "Photo not found": [
+        "Foto hittades inte"
+      ],
+      "Pick a JPEG, PNG or WebP image.": [
+        "Välj en JPEG, PNG eller WebP-bild."
+      ],
       "Please allow screen sharing in your system permissions, then try again": [
         "Tillåt skärmdelning i dina systembehörigheter, försök sedan igen."
+      ],
+      "Renaming root item is not allowed": [
+        "Byta namn på root objekt är inte tillåtet"
+      ],
+      "Request aborted": [
+        "Åtgärd avbruten"
       ],
       "Request timed out": [
         "Förfrågan gjorde timeout"
@@ -1968,8 +2125,35 @@
       "Screen share is not supported on mobile browsers": [
         "Skärmdelning stöds inte på mobila webbläsare"
       ],
+      "Signature is missing": [
+        "Signatur saknas"
+      ],
       "Signature verification failed": [
         "Signaturverifiering misslyckades"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Signaturverifiering misslyckades: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Signaturverifiering för ${ signatureType } misslyckades"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Signaturverifiering för ${ signatureType } misslyckades: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Viss fildata kunde inte laddas upp. Vänligen pröva igen."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Några fildelar misslyckades att laddas upp. Försök igen."
+      ],
+      "Some items could not be loaded": [
+        "Några objekt kunde inte laddas"
+      ],
+      "Something went wrong": [
+        "Något gick fel"
+      ],
+      "Something went wrong. Please try again.": [
+        "Något gick fel. Försök igen."
       ],
       "The email addresses do not match": [
         "E-postadresserna matchar inte"
@@ -1980,6 +2164,15 @@
       "The meeting password is invalid": [
         "Möteslösenordet är felaktigt"
       ],
+      "The selected microphone is no longer available.": [
+        "Den valda mikrofonen är inte längre tillgänglig."
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Den uppladdade filen matchar inte originalet. Försök igen."
+      ],
+      "This background could not be saved in this browser.": [
+        "Denna bakgrund kunde inte sparas i denna webbläsare."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Detta fält överskrider det maximala antalet ${ maximumLength } tecken."
       ],
@@ -1989,8 +2182,35 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Detta fält kräver minst ${ minimumLength } tecken."
       ],
+      "This file has no version available to download": [
+        "Denna fil har ingen version tillgänglig att ladda ner"
+      ],
+      "This file version could not be uploaded": [
+        "Denna filversion kunde inte laddas upp"
+      ],
+      "This image could not be read. Pick another one.": [
+        "Denna bild kunde inte läsas. Välj en annan."
+      ],
+      "This image is too large. Pick one under ${ maxMegabytes } MB.": [
+        "Denna bild är för stor. Välj en som är under ${ maxMegabytes } MB."
+      ],
+      "This item has no image preview": [
+        "Detta objekt har ingen bild förhandsgranskning"
+      ],
+      "This item is no longer shared": [
+        "Detta objekt är inte delat längre"
+      ],
+      "This item is not shared": [
+        "Detta objekt är inte delat"
+      ],
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
         "Detta möte är i en äldre version. Värden måste avsluta det och uppdatera Meet för att starta om med den senaste versionen."
+      ],
+      "Too many server errors, please try again later": [
+        "För många serverfel, försök igen senare"
+      ],
+      "Too many server requests, please try again later": [
+        "För många serverförfrågningar, försök igen senare"
       ],
       "Try using only letters, numerals, and _.-": [
         "Prova använda endast bokstäver, siffror och _.-"
@@ -2004,14 +2224,41 @@
       "Username must end with a letter or digit": [
         "Användarnamn måste sluta med en bokstav eller siffra"
       ],
+      "Verification keys are not available": [
+        "Verifieringsnycklar är inte tillgängliga"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Verifieringsnycklar för ${ signatureType } är inte tillgängliga"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Vi kunde inte skicka en verifieringskod med den här metoden."
+      ],
+      "You can create public links for your own files only": [
+        "Du kan endast skapa offentliga länkar för dina egna filer"
+      ],
+      "You can only leave items that are shared with you": [
+        "Du kan endast lämna objekt som är delade med dig."
+      ],
+      "You can only upload a new version to a file": [
+        "Du kan bara ladda upp en ny version till en fil"
+      ],
+      "You can update a public link for your own files only": [
+        "Du kan endast uppdatera en offentlig länk för dina egna filer"
+      ],
+      "You do not have access to this item": [
+        "Du har inte åtkomst till detta objekt"
+      ],
+      "You do not have access to this shared item": [
+        "Du har inte åtkomst till detta delade objekt"
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "Din webbläsare har slut på lagringsutrymme. Vi har sparat inspelningen fram till denna punkt."
       ],
       "Your device's clock appears to be out of sync. Please check your system time and try again.": [
         "Din enhets klocka verkar inte vara synkroniserad. Kontrollera din systemtid och försök igen."
+      ],
+      "Your microphone is busy. Close other apps or tabs using it, then try again.": [
+        "Din mikrofon är upptagen. Stäng andra appar eller flikar som använder den och försök sedan igen."
       ]
     },
     "Error message": {
@@ -2250,8 +2497,14 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ett telefonnummer kan endast användas för att verifiera ett ${ BRAND_NAME }-konto"
       ],
+      "Adding ${ name }": [
+        "Lägger till ${ name }"
+      ],
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Avancerat läge: finjustera varje oskärpekonstant för nästa version, välj sedan Tillämpa för att bygga om förhandsgranskningen. Åsidosättningar har företräde framför fil- och Unleash-värden."
+      ],
+      "Allow camera access to preview your background": [
+        "Tillåt kameraåtkomst för att förhandsgranska din bakgrund"
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anonym ${ particle } ${ participantNumber }"
@@ -2270,6 +2523,9 @@
       ],
       "Attention required": [
         "Uppmärksamhet krävs"
+      ],
+      "Author is not provided on public link": [
+        "Författare är inte angiven på offentlig länk"
       ],
       "Available with a paid plan": [
         "Tillgänglig med ett betalt paket"
@@ -2898,6 +3154,9 @@
       "You can now return to the application to continue": [
         "Du kan nu gå tillbaka till applikationen för att fortsätta"
       ],
+      "You can save up to ${ max } of your own backgrounds.": [
+        "Du kan spara upp till ${ max } av dina egna bakgrunder."
+      ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Du kan fortfarande stänga av din mikrofon och kamera när som helst under mötet."
       ],
@@ -2924,6 +3183,9 @@
       ],
       "Your always available meeting room": [
         "Ditt alltid åtkomliga mötesrum"
+      ],
+      "Your backgrounds could not be loaded, so a new one cannot be added right now.": [
+        "Dina bakgrunder kunde inte laddas, så en ny kan inte läggas till just nu."
       ],
       "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
         "Din webbläsare har blockerat åtkomst till din kamera och mikrofon. För att aktivera dem, uppdatera dina webbläsarinställningar och gå med i samtalet igen."
@@ -2964,9 +3226,6 @@
         "${ numberOfStars } stjärna",
         "${ numberOfStars } stjärnor"
       ],
-      "Abstract background": [
-        "Abstrakt bakgrund"
-      ],
       "Add optional details": [
         "Lägg till valfria detaljer"
       ],
@@ -2996,9 +3255,6 @@
       ],
       "Background color": [
         "Bakgrundsfärg"
-      ],
-      "Beach background": [
-        "Strandbakgrund"
       ],
       "Blurred (next)": [
         "Oskarp (nästa)"
@@ -3137,9 +3393,6 @@
       ],
       "Next": [
         "Nästa"
-      ],
-      "Office background": [
-        "Kontorsbakgrund"
       ],
       "Operating system": [
         "Operativsystem"
@@ -3420,6 +3673,23 @@
       ],
       "Type an encrypted message...": [
         "Skriv ett krypterat meddelande …"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "attribut"
+      ],
+      "hash key": [
+        "hash-nyckel"
+      ],
+      "key": [
+        "nyckel"
+      ],
+      "membership": [
+        "medlemskap"
+      ],
+      "name": [
+        "namn"
       ]
     },
     "Role": {

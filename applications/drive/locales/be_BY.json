@@ -108,6 +108,9 @@
       "Add to group": [
         "Дадаць у групу"
       ],
+      "Album name": [
+        "Назва альбома"
+      ],
       "Apply": [
         "Прымяніць"
       ],
@@ -416,6 +419,9 @@
       ],
       "Download anyway": [
         "Усё роўна спампаваць"
+      ],
+      "Download for Mac": [
+        "Спампаваць для Mac"
       ],
       "Download for macOS": [
         "Спампаваць для macOS"
@@ -843,6 +849,9 @@
       "Remove button": [
         "Выдаліць кнопку"
       ],
+      "Remove device": [
+        "Выдаліць прыладу"
+      ],
       "Remove from album": [
         "Выдаліць з альбома"
       ],
@@ -929,6 +938,9 @@
       ],
       "Save changes": [
         "Захаваць змены"
+      ],
+      "Save photo to your gallery": [
+        "Захаваць фатаграфіі ў вашай галерэі"
       ],
       "Save photos and remove": [
         "Захаваць фатаграфіі і выдаліць"
@@ -1187,6 +1199,9 @@
       ],
       "Upload folder": [
         "Запампаваць папку"
+      ],
+      "Upload from computer": [
+        "Запампаваць з камп'ютара"
       ],
       "Upload photos": [
         "Запампаваць фатаграфіі"
@@ -1908,12 +1923,6 @@
       ],
       "Total": [
         "Агулам"
-      ],
-      "Total for ${ n } month": [
-        "Усяго за ${ n } месяц",
-        "Усяго за ${ n } месяцы",
-        "Усяго за ${ n } месяцаў",
-        "Усяго за ${ n } месяцы"
       ]
     },
     "Collapsible tooltip": {
@@ -3626,6 +3635,9 @@
         "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або",
         "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або"
       ],
+      "Device name does not match": [
+        "Назва прылады не супадае"
+      ],
       "Device not found": [
         "Прылада не знойдзена"
       ],
@@ -4127,6 +4139,9 @@
       "Something went wrong with search. Please try again later.": [
         "Нешта пайшло не так з пошукам. Паўтарыце спробу."
       ],
+      "Something went wrong with search: Not enough storage space.": [
+        "Нешта пайшло не так з пошукам: недастаткова месца на дыску."
+      ],
       "Something went wrong, please try again later": [
         "Нешта пайшло не так. Паўтарыце спробу"
       ],
@@ -4505,6 +4520,9 @@
       ]
     },
     "Error message": {
+      "Access denied": [
+        "У доступе адмоўлена"
+      ],
       "App currently unavailable": [
         "Праграма часова недаступна"
       ],
@@ -5359,6 +5377,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe памочнік у напісанні"
       ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "${ BRAND_NAME } Workspace дазваляе вашай камандзе эфектыўна супрацоўнічаць і не падвяргаць рызыцы даныя вашай кампаніі."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Тэхналогія шыфравання ${ BRAND_NAME } азначае, што ніхто не зможа атрымаць доступ да вашага пароля - нават мы."
       ],
@@ -5424,6 +5445,9 @@
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "${ DRIVE_APP_NAME } у Play Store"
+      ],
+      "${ email } invited you to join ${ albumName }": [
+        "${ email } запрасіў(ла) вас далучыцца да ${ albumName }"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: відарыс у поўным памеры"
@@ -5725,6 +5749,9 @@
       "Anonymous": [
         "Ананімны"
       ],
+      "Apr": [
+        "Кра"
+      ],
       "Are you sure you want to discard your changes?": [
         "Вы сапраўды хочаце адхіліць змены?"
       ],
@@ -5959,9 +5986,6 @@
       "Discover ProtectBuy logo": [
         "Лагатып Discover ProtectBuy"
       ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Вы памятаеце свой пароль? ${ verifyButton }"
-      ],
       "Do you still want to upload it?": [
         "Вы ўсё яшчэ хочаце запампаваць яго?",
         "Вы ўсё яшчэ хочаце запампаваць іх?",
@@ -6034,8 +6058,14 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Лісты, якія перамешчаны ў папку Сметніца і Спам больш за 30 дзён таму, будуць выдаляцца аўтаматычна."
       ],
+      "Empty folder": [
+        "Пустая папка"
+      ],
       "Enabling auto-deletion…": [
         "Уключэнне аўтавыдалення…"
+      ],
+      "Enabling drive search": [
+        "Уключэнне пошуку на дыску"
       ],
       "Encrypted search is here": [
         "Зашыфраваны пошук тут"
@@ -6298,6 +6328,12 @@
       "Invite link copied": [
         "Запрашальная спасылка скапіявана"
       ],
+      "iOS and Android Apps": [
+        "Праграмы для iOS і Android"
+      ],
+      "Issues found": [
+        "Знойдзены праблемы"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Здаецца, што вы нядаўна спрабавалі запампаваць ${ uploadName }. Калі гэта спроба была няўдалай, ${ replaceFile }. Калі ўсё яшчэ выконваецца запампоўванне, замена файла скасуе бягучае запампоўванне."
       ],
@@ -6361,6 +6397,9 @@
       "Link copied to clipboard": [
         "Спасылка скапіявана ў буфер абмену"
       ],
+      "Link expired": [
+        "Спасылка пратэрмінавана"
+      ],
       "Link owner has the password": [
         "Пароль ёсць ва ўладальніка спасылкі"
       ],
@@ -6372,6 +6411,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Пачакайце, адбываецца загрузка календара. Вы будзеце перанакіраваны на нашу платформу планавання Calendly, якая адкрыецца ў новай укладцы."
+      ],
+      "Loading folder": [
+        "Загрузка папкі"
       ],
       "Loading links": [
         "Загрузка спасылак"
@@ -6721,6 +6763,9 @@
       "Read folder context": [
         "Прачытаць кантэкст папкі"
       ],
+      "Read this file": [
+        "Прачытаць гэты файл"
+      ],
       "Ready to add some photos?": [
         "Гатовы дадаць некаторыя фатаграфіі?"
       ],
@@ -6871,6 +6916,9 @@
       "Shared link not found": [
         "Абагуленая спасылка не знойдзена"
       ],
+      "Shared with me": [
+        "Абагулена са мной"
+      ],
       "Shared with you": [
         "Абагулена з вамі"
       ],
@@ -6888,6 +6936,9 @@
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Некаторыя з вашых файлаў больш недаступны. Аднавіце доступ да сваіх файлаў. ${ StartRecoveryButton }"
+      ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Некаторыя фатаграфіі ў гэтым альбоме не захаваны ў вашай шкале часу. Выдаленне гэтага альбома прывядзе да незваротнага выдалення фатаграфій, якія знаходзяцца ў ім."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Некаторыя вэб-сайты і сэрвісы з трансляцыямі блакіруюць змесціва па рэгіёнах. VPN дазваляе абысці гэтыя абмежаванні і атрымаць свабодны доступ у інтэрнэт."
@@ -7174,6 +7225,9 @@
       "Unsupported file type for Photos": [
         "Тып файла для фатаграфій не падтрымліваецца"
       ],
+      "Update required": [
+        "Патрабуецца абнаўленне"
+      ],
       "Updating drive search...": [
         "Абнаўленне пошуку на дыску..."
       ],
@@ -7224,6 +7278,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Спраўджанне адкрые новую ўкладку, адключыце блакіроўку ўсплывальных вокнаў. З вас не будуць спаганяцца грашовыя сродкі. Любая сума, якая выкарыстоўваецца для спраўджання вашай карткі, будзе неадкладна вернута."
+      ],
+      "Version is deleted": [
+        "Версія выдалена"
       ],
       "Version is restored": [
         "Версія адноўлена"
@@ -8292,6 +8349,9 @@
       "Shared by ${ sharedBy }": [
         "Абагулена ${ sharedBy }"
       ],
+      "Shared by Public link": [
+        "Абагулена публічнай спасылкай"
+      ],
       "Shared on": [
         "Абагулена"
       ],
@@ -8586,6 +8646,9 @@
       "Pay invoice": [
         "Аплаціць рахунак"
       ],
+      "Photos": [
+        "Фатаграфіі"
+      ],
       "Reactivate now": [
         "Актываваць паўторна"
       ],
@@ -8600,6 +8663,9 @@
       ],
       "settings": [
         "налады"
+      ],
+      "Shared": [
+        "Абагулена"
       ],
       "Shared with me": [
         "Абагулена са мной"
@@ -10731,6 +10797,9 @@
       "Free up hard drive space on your computer": [
         "Вызваліце прастору цвёрдага дыска на сваім камп'ютары"
       ],
+      "Get the desktop app": [
+        "Атрымаць праграму для камп'ютара"
+      ],
       "Get the mobile app": [
         "Атрымаць мабільную праграму"
       ],
@@ -10757,6 +10826,9 @@
       ],
       "Organize files right from your desktop": [
         "Арганізоўвайце файлы непасрэдна на сваім працоўным стале"
+      ],
+      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
+        "Абараніце свае фінансавыя дакументы, ідэнтыфікацыйныя карткі, файлы праекта, фатаграфіі і іншыя звесткі з дапамогай скразнога шыфравання."
       ],
       "Scan the QR code to install the mobile app": [
         "Адсканіруйце QR-код, каб усталяваць мабільную праграму"
@@ -12986,6 +13058,9 @@
       "Your panorama photos will appear here": [
         "Вашы панарамныя фатаграфіі з'явяцца тут"
       ],
+      "Your photo bursts will appear here": [
+        "Вашы серыйныя фатаграфіі з'явяцца тут"
+      ],
       "Your portraits photos will appear here": [
         "Вашы партрэтныя фатаграфіі з'явяцца тут"
       ],
@@ -13239,11 +13314,17 @@
       "Portraits": [
         "Партрэты"
       ],
+      "RAW": [
+        "RAW"
+      ],
       "Screenshots": [
         "Здымкі экрана"
       ],
       "Selfies": [
         "Сэлфi"
+      ],
+      "Videos": [
+        "Відэа"
       ]
     },
     "Time unit": {
@@ -13934,7 +14015,7 @@
         "Нумары тэлефонаў"
       ],
       "Photos": [
-        "Фотаграфіі"
+        "Фатаграфіі"
       ],
       "Preview": [
         "Папярэдні прагляд"

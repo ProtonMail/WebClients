@@ -25,9 +25,6 @@
       ]
     },
     "Accessibility announcement": {
-      "${ BRAND_NAME } background applied": [
-        "${ BRAND_NAME }-Hintergrund angewendet"
-      ],
       "${ name } joined the meeting": [
         "${ name } ist dem Meeting beigetreten"
       ],
@@ -64,20 +61,20 @@
       "A participant reacted with ${ emoji }": [
         "Ein Teilnehmer hat mit ${ emoji } reagiert"
       ],
-      "Abstract background applied": [
-        "Abstrakter Hintergrund angewendet"
-      ],
       "Background effect turned off": [
         "Hintergrundeffekt ausgeschaltet"
       ],
-      "Beach background applied": [
-        "Strandhintergrund angewendet"
+      "Background removed": [
+        "Hintergrund entfernt"
+      ],
+      "Beach landscape background applied": [
+        "Hintergrund mit Strandlandschaft angewendet"
       ],
       "Blurred background applied": [
         "Unscharfer Hintergrund angewendet"
       ],
-      "Coffee place background applied": [
-        "Café-Hintergrund angewendet"
+      "Blurred office background applied": [
+        "Unscharfer Bürohintergrund angewendet"
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Wegen Netzwerkeinschränkungen erfolgt die Verbindung über den TURN-Relay-Modus. Dies kann zu einer erhöhten Latenz führen und die Gesprächsqualität beeinträchtigen."
@@ -85,17 +82,23 @@
       "Connection lost. Reconnecting…": [
         "Verbindung verloren. Wiederverbinden…"
       ],
-      "Mountain background applied": [
-        "Berghintergrund angewendet"
+      "Dark ${ BRAND_NAME } background applied": [
+        "Dunkler ${ BRAND_NAME }-Hintergrund angewendet"
+      ],
+      "Library background applied": [
+        "Bibliothekshintergrund angewendet"
+      ],
+      "Light ${ BRAND_NAME } background applied": [
+        "Heller ${ BRAND_NAME }-Hintergrund angewendet"
+      ],
+      "Mountain landscape background applied": [
+        "Hintergrund mit Berglandschaft angewendet"
       ],
       "New chat message: ${ message }": [
         "Neue Chat-Nachricht: ${ message }"
       ],
       "Now starting recording": [
         "Die Aufzeichnung beginnt jetzt"
-      ],
-      "Office background applied": [
-        "Bürohintergrund angewendet"
       ],
       "Reconnected to the meeting": [
         "Wieder mit dem Meeting verbunden"
@@ -156,6 +159,9 @@
       ],
       "Your camera has been turned off by the host": [
         "Deine Kamera wurde vom Organisator ausgeschaltet"
+      ],
+      "Your own background applied": [
+        "Dein eigener Hintergrund angewendet"
       ]
     },
     "Action": {
@@ -171,6 +177,9 @@
       ],
       "Add another account": [
         "Weiteres Konto hinzufügen"
+      ],
+      "Add your own background": [
+        "Dein eigener Hintergrund hinzufügen"
       ],
       "Admit ${ participantName }": [
         "${ participantName } zulassen"
@@ -517,6 +526,9 @@
       ],
       "Rejoin meeting": [
         "Meeting wieder beitreten"
+      ],
+      "Remove ${ name }": [
+        "${ name } entfernen"
       ],
       "Remove reaction ${ emoji }, ${ identities.length } reaction": [
         "Reaktion ${ emoji } entfernen, ${ identities.length } Reaktion",
@@ -1890,8 +1902,71 @@
       ]
     },
     "Error": {
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Bei der Meldung von Urheberrechtsverletzungen oder gestohlenen Daten ist eine Nachricht erforderlich."
+      ],
+      "An error occurred": [
+        "Ein Fehler ist aufgetreten"
+      ],
       "Background blur initialization failed. Please toggle your camera or background blur again": [
         "Die Initialisierung der Hintergrundunschärfe ist fehlgeschlagen. Bitte schalte deine Kamera oder die Hintergrundunschärfe erneut ein und aus."
+      ],
+      "Bookmark password is not available": [
+        "Lesezeichen-Passwort nicht verfügbar"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Ohne einen gültigen Namen kann kein Foto zum Album hinzugefügt werden"
+      ],
+      "Cannot download a folder": [
+        "Ordner kann nicht heruntergeladen werden"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Der Eintrag kann ohne gültigen Namen nicht verschoben werden. Bitte benenne den Eintrag zunächst um."
+      ],
+      "Cannot share root folder": [
+        "Der Stammordner konnte nicht geteilt werden"
+      ],
+      "Cannot verify the author of this file": [
+        "Der Urheber dieser Datei kann nicht überprüft werden"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Es lässt sich nicht feststellen, wer diese Datei hochgeladen hat"
+      ],
+      "Copy operation aborted": [
+        "Kopiervorgang abgebrochen"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Das Kopieren eines Eintrags nach außerhalb eines Ordners ist nicht zulässig"
+      ],
+      "Could not add this background. Check your connection and try again.": [
+        "Dieser Hintergrund konnte nicht hinzugefügt werden. Überprüfe deine Verbindung und versuche es erneut."
+      ],
+      "Could not add this background. Please try again.": [
+        "Dieser Hintergrund konnte nicht hinzugefügt werden. Bitte versuch es erneut."
+      ],
+      "Could not find an available name": [
+        "Es konnte kein verfügbarer Name gefunden werden"
+      ],
+      "Could not load sharing details": [
+        "Freigabeinformationen konnten nicht geladen werden"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Bildvorschau konnte nicht geladen werden: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Ein Teil dieser Datei konnte nicht gelesen werden: ${ message }"
+      ],
+      "Could not remove this background. Check your connection and try again.": [
+        "Dieser Hintergrund konnte nicht entfernt werden. Überprüfe deine Verbindung und versuche es erneut."
+      ],
+      "Could not remove this background. Please try again.": [
+        "Dieser Hintergrund konnte nicht entfernt werden. Bitte versuche es erneut."
+      ],
+      "Could not unlock the parent folder": [
+        "Der übergeordnete Ordner konnte nicht entsperrt werden"
+      ],
+      "Could not unlock this item": [
+        "Dieser Eintrag konnte nicht entsperrt werden"
       ],
       "Couldn’t play the recording on this speaker.": [
         "Die Aufnahme konnte über diesen Lautsprecher nicht abgespielt werden."
@@ -1901,6 +1976,18 @@
       ],
       "Couldn’t start the microphone test.": [
         "Der Mikrofontest konnte nicht gestartet werden."
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Das Erstellen von Dokumenten außerhalb von Ordnern ist nicht zulässig"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Das Erstellen von Dokumenten außerhalb von Ordnern ist nicht zulässig"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Das Erstellen von Ordnern außerhalb von Ordnern ist nicht zulässig."
+      ],
+      "Device not found": [
+        "Gerät nicht gefunden"
       ],
       "Domain not available, try again later": [
         "Domain nicht verfügbar. Bitte versuche es später noch einmal."
@@ -1917,6 +2004,9 @@
       "Event deleted": [
         "Termin gelöscht"
       ],
+      "Expiration date cannot be in the past": [
+        "Ablaufdatum darf nicht in der Vergangenheit liegen"
+      ],
       "Failed to admit the participant. Please try again.": [
         "Teilnehmer konnten nicht zugelassen werden. Bitte versuche es erneut."
       ],
@@ -1931,6 +2021,27 @@
       ],
       "Failed to create personal meeting, please refresh the page": [
         "Fehler beim Erstellen des persönlichen Meetings, bitte aktualisiere die Seite"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Lesezeichenschlüssel konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Name des Lesezeichens konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Das Lesezeichen-Passwort konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Entschlüsselung des Inhaltsschlüssels fehlgeschlagen: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Name des Eintrags konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Entschlüsselung des Knotenschlüssels fehlgeschlagen: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Die Entschlüsselung der Versionsmetadaten ist fehlgeschlagen"
       ],
       "Failed to decrypt session key": [
         "Entschlüsselung des Sitzungsschlüssels fehlgeschlagen"
@@ -1955,6 +2066,9 @@
       ],
       "Failed to edit room name": [
         "Fehler beim Bearbeiten des Raumnamens"
+      ],
+      "Failed to get inviter keys": [
+        "Schlüssel des Einladers konnten nicht abgerufen werden"
       ],
       "Failed to join meeting. Please try again later.": [
         "Beitritt zum Meeting fehlgeschlagen. Bitte versuche es später erneut."
@@ -2004,14 +2118,38 @@
       "Failed to update waiting room setting. Please try again.": [
         "Die Aktualisierung der Warteraumeinstellung ist fehlgeschlagen. Bitte versuche es erneut."
       ],
+      "Failed to verify invitation": [
+        "Einladung konnte nicht verifiziert werden"
+      ],
+      "File download failed due to empty response": [
+        "Das Herunterladen der Datei ist aufgrund einer leeren Antwort fehlgeschlagen"
+      ],
+      "File has no revision": [
+        "Datei hat keine Versionen"
+      ],
+      "Image preview not found": [
+        "Bildvorschau nicht gefunden"
+      ],
       "Incorrect username": [
         "Falscher Benutzername"
       ],
       "Invalid meeting link": [
         "Ungültiger Meeting-Link"
       ],
+      "Invalid URL": [
+        "Ungültige URL"
+      ],
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
+      ],
+      "Invitation not found": [
+        "Einladung nicht gefunden"
+      ],
+      "Item not found": [
+        "Eintrag nicht gefunden"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Der alte öffentliche Link kann nicht aktualisiert werden. Bitte erstelle einen neuen öffentlichen Link."
       ],
       "Live captions aren't working. Try turning them off and on again.": [
         "Die Live-Untertitel funktionieren nicht. Versuche, sie einmal aus- und wieder einzuschalten."
@@ -2025,17 +2163,72 @@
       "Microphone access is blocked. Allow it in your browser settings.": [
         "Der Zugriff auf das Mikrofon ist gesperrt. Bitte aktiviere ihn in deinen Browsereinstellungen."
       ],
+      "Missing inviter email": [
+        "E-Mail-Adresse des Einladers fehlt"
+      ],
+      "Missing signature": [
+        "Fehlende Signatur"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Signatur für ${ signatureType } fehlt"
+      ],
+      "Move operation aborted": [
+        "Verschiebevorgang abgebrochen"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Das Verschieben eines Eintrags nach außerhalb eines Ordners ist nicht zulässig"
+      ],
+      "Moving root item is not allowed": [
+        "Das Verschieben des Stammeintrags ist nicht zulässig"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Name darf höchstens ${ MAX_NODE_NAME_LENGTH } Zeichen lang sein",
+        "Name darf höchstens ${ MAX_NODE_NAME_LENGTH } Zeichen lang sein"
+      ],
+      "Name must not be empty": [
+        "Name darf nicht leer sein"
+      ],
+      "No file data was received. Please try again.": [
+        "Es wurden keine Dateidaten empfangen. Bitte versuche es erneut."
+      ],
       "Not a valid number": [
         "Keine gültige Zahl"
+      ],
+      "Only admins can convert external invitations": [
+        "Nur Administratoren können externe Einladungen umwandeln"
+      ],
+      "Operation aborted": [
+        "Vorgang abgebrochen"
+      ],
+      "Operation failed, try again later": [
+        "Vorgang fehlgeschlagen, versuche es später erneut"
       ],
       "Organization key is not decrypted": [
         "Organisationsschlüssel ist nicht entschlüsselt"
       ],
+      "Part of the file appears to be corrupted": [
+        "Ein Teil der Datei scheint beschädigt zu sein"
+      ],
       "Passwords do not match": [
         "Die Passwörter stimmen nicht überein"
       ],
+      "Photo is already in the target album": [
+        "Foto befindet sich bereits im Zielalbum"
+      ],
+      "Photo not found": [
+        "Foto nicht gefunden"
+      ],
+      "Pick a JPEG, PNG or WebP image.": [
+        "Ein JPEG-, PNG- oder WebP-Bild auswählen."
+      ],
       "Please allow screen sharing in your system permissions, then try again": [
         "Bitte erlaube die Bildschirmfreigabe in deinen Systemeinstellungen und versuche es dann noch einmal."
+      ],
+      "Renaming root item is not allowed": [
+        "Das Umbenennen des Stammeintrags ist nicht zulässig"
+      ],
+      "Request aborted": [
+        "Anfrage abgebrochen"
       ],
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
@@ -2046,8 +2239,35 @@
       "Screen share is not supported on mobile browsers": [
         "Bildschirmteilen wird auf mobilen Browsern nicht unterstützt."
       ],
+      "Signature is missing": [
+        "Signatur fehlt"
+      ],
       "Signature verification failed": [
         "Signaturprüfung fehlgeschlagen"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Signaturprüfung ist fehlgeschlagen: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Signaturprüfung für ${ signatureType } ist fehlgeschlagen"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Signaturprüfung für ${ signatureType } ist fehlgeschlagen: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Einige Dateidaten konnten nicht hochgeladen werden. Bitte versuche es erneut."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Einige Dateiteile konnten nicht hochgeladen werden. Bitte versuche es erneut."
+      ],
+      "Some items could not be loaded": [
+        "Einige Einträge konnten nicht geladen werden"
+      ],
+      "Something went wrong": [
+        "Etwas ist schief gelaufen."
+      ],
+      "Something went wrong. Please try again.": [
+        "Etwas ist schief gelaufen. Bitte versuche es später erneut."
       ],
       "The email addresses do not match": [
         "Die E-Mail-Adressen stimmen nicht überein"
@@ -2061,6 +2281,12 @@
       "The selected microphone is no longer available.": [
         "Ausgewähltes Mikrofon nicht mehr verfügbar."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Die hochgeladene Datei stimmt nicht mit dem Original überein. Bitte versuche es erneut."
+      ],
+      "This background could not be saved in this browser.": [
+        "Dieser Hintergrund konnte in diesem Browser nicht gespeichert werden."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
       ],
@@ -2070,8 +2296,44 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "In dieses Feld müssen mindestens ${ minimumLength } Zeichen eingegeben werden."
       ],
+      "This file has missing crypto material": [
+        "In dieser Datei fehlt Kryptomaterial"
+      ],
+      "This file has no version available to download": [
+        "Für diese Datei steht keine Version zum Herunterladen zur Verfügung"
+      ],
+      "This file name is too long. Rename the image and try again.": [
+        "Dieser Dateiname ist zu lang. Benenne das Bild um und versuche es erneut."
+      ],
+      "This file version could not be uploaded": [
+        "Diese Dateiversion konnte nicht hochgeladen werden"
+      ],
+      "This image could not be read. Pick another one.": [
+        "Dieses Bild konnte nicht gelesen werden. Wähle ein anderes aus."
+      ],
+      "This image is too big. Pick one up to ${ maxEdge } pixels wide and tall.": [
+        "Dieses Bild ist zu groß. Wähle eines aus, das in der Breite und Höhe maximal ${ maxEdge } Pixel misst."
+      ],
+      "This image is too large. Pick one under ${ maxMegabytes } MB.": [
+        "Dieses Bild ist zu groß. Wähle eines aus, das kleiner als ${ maxMegabytes } MB ist."
+      ],
+      "This item has no image preview": [
+        "Dieser Eintrag hat keine Bildvorschau"
+      ],
+      "This item is no longer shared": [
+        "Dieser Eintrag wird nicht länger geteilt"
+      ],
+      "This item is not shared": [
+        "Dieser Eintrag wird nicht geteilt"
+      ],
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
         "Dieses Meeting läuft mit einer älteren Version. Der Organisator muss es beenden und Meet aktualisieren, um es mit der aktuellsten Version neu zu starten."
+      ],
+      "Too many server errors, please try again later": [
+        "Zu viele Server-Fehler, bitte versuche es später erneut"
+      ],
+      "Too many server requests, please try again later": [
+        "Zu viele Server-Anfragen bitte versuche es später erneut"
       ],
       "Try using only letters, numerals, and _.-": [
         "Bitte nur Buchstaben, Ziffern und die Zeichen _ . - verwenden"
@@ -2085,11 +2347,38 @@
       "Username must end with a letter or digit": [
         "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden."
       ],
+      "Verification keys are not available": [
+        "Verifizierungsschlüssel sind nicht verfügbar"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Verifizierungsschlüssel für ${ signatureType } sind nicht verfügbar"
+      ],
       "Virtual background initialization failed. Please toggle your camera or pick a background again": [
         "Die Initialisierung des virtuellen Hintergrunds ist fehlgeschlagen. Bitte schalte deine Kamera ein und aus oder wähle nochmals einen Hintergrund."
       ],
       "We couldn’t send a verification code using this method.": [
         "Wir konnten mit dieser Methode keinen Bestätigungscode senden."
+      ],
+      "You can create public links for your own files only": [
+        "Du kannst öffentliche Links nur für deine eigenen Dateien erstellen"
+      ],
+      "You can only leave items that are shared with you": [
+        "Du kannst nur Einträge verlassen, die für dich freigegeben sind"
+      ],
+      "You can only upload a new version to a file": [
+        "Du kannst nur eine neue Version einer Datei hochladen"
+      ],
+      "You can update a public link for your own files only": [
+        "Du kannst einen öffentlichen Link nur für deine eigenen Dateien aktualisieren"
+      ],
+      "You do not have access to this item": [
+        "Du hast keinen Zugriff auf diesen Eintrag"
+      ],
+      "You do not have access to this shared item": [
+        "Du hast keinen Zugriff auf diesen geteilten Eintrag"
+      ],
+      "You have reached the maximum number of custom backgrounds.": [
+        "Du hast die maximale Anzahl von benutzerdefinierten Hintergründen erreicht."
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "Der Speicherplatz deines Browsers ist erschöpft. Wir haben die Aufzeichnung bis zu diesem Zeitpunkt gespeichert."
@@ -2337,6 +2626,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Eine Telefonnummer kann nur zum Verifizieren eines ${ BRAND_NAME }-Kontos verwendet werden."
       ],
+      "Adding ${ name }": [
+        "${ name } wird hinzugefügt"
+      ],
       "Admit": [
         "Zulassen"
       ],
@@ -2366,6 +2658,9 @@
       ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
+      ],
+      "Author is not provided on public link": [
+        "Urheber wird unter dem öffentlichen Link nicht angegeben"
       ],
       "Available with a paid plan": [
         "Verfügbar mit einem kostenpflichtigen Abonnement"
@@ -3036,6 +3331,9 @@
       "You can now return to the application to continue": [
         "Du kannst jetzt zur Anwendung zurückkehren, um fortzufahren."
       ],
+      "You can save up to ${ max } of your own backgrounds.": [
+        "Du kannst bis zu ${ max } eigene Hintergründe speichern."
+      ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Du kannst dein Mikrofon und deine Kamera jederzeit im Meeting ausschalten"
       ],
@@ -3062,6 +3360,9 @@
       ],
       "Your always available meeting room": [
         "Dein jederzeit verfügbarer Meeting-Raum"
+      ],
+      "Your backgrounds could not be loaded, so a new one cannot be added right now.": [
+        "Deine Hintergründe konnten nicht geladen werden, daher kann derzeit kein neuer hinzugefügt werden."
       ],
       "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
         "Dein Browser hat den Zugriff auf deine Kamera und dein Mikrofon gesperrt. Aktualisiere deine Browser-Einstellungen, um ihn zu aktivieren und trete dem Meeting erneut bei."
@@ -3092,9 +3393,6 @@
       ]
     },
     "Label": {
-      "${ BRAND_NAME } background": [
-        "${ BRAND_NAME }-Hintergrund"
-      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-Benutzername"
       ],
@@ -3104,9 +3402,6 @@
       "${ numberOfStars } star": [
         "${ numberOfStars } Stern",
         "${ numberOfStars } Sterne"
-      ],
-      "Abstract background": [
-        "Abstrakter Hintergrund"
       ],
       "Add optional details": [
         "Optionale Details hinzufügen"
@@ -3138,11 +3433,14 @@
       "Background color": [
         "Hintergrundfarbe"
       ],
-      "Beach background": [
-        "Strandhintergrund"
+      "Beach landscape background": [
+        "Hintergrund mit Strandlandschaft"
       ],
       "Blurred (next)": [
         "Unscharf (nächste)"
+      ],
+      "Blurred office background": [
+        "Unscharfer Bürohintergrund"
       ],
       "Browser": [
         "Browser"
@@ -3165,9 +3463,6 @@
       "Code is 6 digits without spaces": [
         "Der Code ist 6-stellig ohne Leerzeichen"
       ],
-      "Coffee place background": [
-        "Café-Hintergrund"
-      ],
       "Connection Quality": [
         "Verbindungsqualität"
       ],
@@ -3185,6 +3480,9 @@
       ],
       "Current": [
         "Aktuell"
+      ],
+      "Dark ${ BRAND_NAME } background": [
+        "Dunkler ${ BRAND_NAME }-Hintergrund"
       ],
       "Delete": [
         "Löschen"
@@ -3255,6 +3553,12 @@
       "Leave meeting options": [
         "Besprechungsoptionen verlassen"
       ],
+      "Library background": [
+        "Bibliothekshintergrund"
+      ],
+      "Light ${ BRAND_NAME } background": [
+        "Heller ${ BRAND_NAME }-Hintergrund"
+      ],
       "Live caption agent": [
         "Live-Untertitel-Agent"
       ],
@@ -3276,8 +3580,8 @@
       "Monday to Friday": [
         "Montag bis Freitag"
       ],
-      "Mountain background": [
-        "Berghintergrund"
+      "Mountain landscape background": [
+        "Hintergrund mit Berglandschaft"
       ],
       "Muted": [
         "Stummgeschaltet"
@@ -3287,9 +3591,6 @@
       ],
       "Next": [
         "Weiter"
-      ],
-      "Office background": [
-        "Bürohintergrund"
       ],
       "Operating system": [
         "Betriebssystem"
@@ -3570,6 +3871,26 @@
       ],
       "Type an encrypted message...": [
         "Eine verschlüsselte Nachricht eingeben ..."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "Merkmale"
+      ],
+      "content key": [
+        "Inhaltsschlüssel"
+      ],
+      "hash key": [
+        "Hash-Schlüssel"
+      ],
+      "key": [
+        "Schlüssel"
+      ],
+      "membership": [
+        "Mitgliedschaft"
+      ],
+      "name": [
+        "Name"
       ]
     },
     "Role": {

@@ -2114,8 +2114,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -4391,15 +4390,6 @@
       ]
     },
     "Result": {
-      "Enter a URL to check to see if your current rule is matching the URL": [
-        "Voer een URL in om te controleren of uw huidige regel overeenkomt met de URL"
-      ],
-      "The rule is matching this URL": [
-        "De regel komt overeen met deze URL"
-      ],
-      "The rule is NOT matching this URL": [
-        "De regel komt NIET overeen met deze URL"
-      ],
       "This URL will be blocked from autofill": [
         "Deze URL zal worden geblokkeerd voor automatisch aanvullen"
       ],

@@ -869,13 +869,13 @@
         "Marcar como favorito"
       ],
       "Mark as read": [
-        "Marcar como lida"
+        "Marcar como lido"
       ],
       "Mark as resolved": [
         "Marcar como resolvido"
       ],
       "Mark as unread": [
-        "Marcar como não lida"
+        "Marcar como não lido"
       ],
       "mark emails as": [
         "marcar e-mails como"
@@ -2742,10 +2742,6 @@
       ],
       "Total": [
         "Total"
-      ],
-      "Total for ${ n } month": [
-        "Total por ${ n } mês",
-        "Total por ${ n } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -4964,6 +4960,9 @@
       "Failed to decrypt item name: ${ message }": [
         "Falha ao descriptografar o nome do item: ${ message }"
       ],
+      "Failed to decrypt revision metadata": [
+        "Falha ao descriptografar os metadados da revisão"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "Erro na criptografia do anexo. Tente novamente."
       ],
@@ -5323,6 +5322,9 @@
       ],
       "Signature verification failed": [
         "Erro na verificação da assinatura"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Falha na assinatura do remetente: ${ errorMessage }"
       ],
       "Signature verification for ${ signatureType } failed": [
         "A verificação de assinatura para ${ signatureType } falhou"
@@ -7051,6 +7053,9 @@
         "${ n } conversa não lida",
         "${ n } conversas não lidas"
       ],
+      "${ name } in ${ parentName }": [
+        "${ name } em ${ parentName }"
+      ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } link limpo",
         "${ numberOfUTMTrackers } links limpos"
@@ -7642,9 +7647,6 @@
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
       ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Você lembra sua senha ? ${ verifyButton }"
-      ],
       "Do you want to download this attachment anyway?": [
         "Você deseja baixar este anexo mesmo assim?",
         "Você deseja baixar esses anexos mesmo assim?"
@@ -7958,6 +7960,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se você não encontrar o e-mail na caixa de entrada. Verifique a pasta de spam."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "If Se você perdeu o acesso ao seu aplicativo de autenticação, pode usar um dos 16 códigos de recuperação de backup fornecidos quando configurou a autenticação de dois fatores. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se você prosseguir com o downgrade, perderá o acesso aos recursos pagos do ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
       ],
@@ -8029,7 +8034,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -8121,6 +8127,9 @@
       "Low Priority": [
         "Baixa prioridade"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Tornar ${ MAIL_APP_NAME } como seu aplicativo de e-mail padrão."
+      ],
       "Manage your folders": [
         "Gerenciar suas pastas"
       ],
@@ -8128,7 +8137,16 @@
         "Gerenciar seus marcadores"
       ],
       "Mark all as read": [
-        "Marcar tudo como lido."
+        "Marcar tudo como lido"
+      ],
+      "Mark all as unread": [
+        "Marcar todas como não lidos"
+      ],
+      "Mark as read": [
+        "Marcar como lido"
+      ],
+      "Mark as unread": [
+        "Marcar como não lido"
       ],
       "Mastercard SecureCode logo": [
         "Logotipo do MasterCard SecureCode"
@@ -8503,6 +8521,9 @@
         "Ler ${ count } mensagem nessa conversa",
         "Ler ${ count } mensagens nessa conversa"
       ],
+      "Read open email “${ subject }”": [
+        "Ler e-mail aberto “${ subject }”"
+      ],
       "Read your ${ count } filter": [
         "Ler e-mails de ${ count } filtro",
         "Ler e-mails de ${ count } filtros"
@@ -8674,6 +8695,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
+      ],
+      "Snooze emails": [
+        "Adiar e-mails"
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Adie as mensagens para mais tarde para que elas estejam no topo da sua caixa de entrada quando você quiser"
@@ -9897,7 +9921,7 @@
         " e ${ l }"
       ],
       "${ boldActive } Mark all messages as read": [
-        "${ boldActive } Marcar todas as mensagens como lidas"
+        "${ boldActive } Marcar todas as mensagens como lidos"
       ],
       "${ boldActive } Move all messages to ${ boldFolderName }": [
         "${ boldActive } Mover todas as mensagens para ${ boldFolderName }"
@@ -10094,8 +10118,17 @@
       "Colors": [
         "Cores"
       ],
+      "Column": [
+        "Coluna"
+      ],
+      "Comfortable": [
+        "Confortável"
+      ],
       "Command line interface (CLI)": [
         "Interface de linha de comando (CLI)"
+      ],
+      "Compact": [
+        "Compacto"
       ],
       "Company": [
         "Empresa"
@@ -10127,6 +10160,9 @@
       "Continue cancelling": [
         "Continuar cancelamento"
       ],
+      "Conversation grouping": [
+        "Agrupamento de conversas"
+      ],
       "Copy": [
         "Copiar"
       ],
@@ -10153,6 +10189,9 @@
       ],
       "Date:": [
         "Data:"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Ofertas, descontos e e-mails de propaganda"
       ],
       "Delete": [
         "Excluir"
@@ -10322,6 +10361,9 @@
       "Go to Updates": [
         "Ir para Atualizações"
       ],
+      "Grouped conversations": [
+        "Conversas agrupadas"
+      ],
       "Has attachments": [
         "Tem anexos"
       ],
@@ -10490,6 +10532,9 @@
       "No label found": [
         "Nenhum marcador encontrado"
       ],
+      "No unread conversations": [
+        "Sem conversas não lidas"
+      ],
       "No unread messages": [
         "Nenhuma mensagem não lida"
       ],
@@ -10628,6 +10673,9 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
+      "Row": [
+        "Linha"
+      ],
       "Search in": [
         "Procurar em"
       ],
@@ -10642,6 +10690,9 @@
       ],
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "Compartilhe sua disponibilidade com as páginas de agendamento no ${ CALENDAR_APP_NAME } e organize reuniões seguras com o ${ MEET_APP_NAME }."
+      ],
+      "Sieve script": [
+        "Script Sieve"
       ],
       "Sign emails": [
         "Assinar e-mails"
@@ -12576,6 +12627,11 @@
         "Suporte para ${ n } domínios de e-mail personalizados"
       ]
     },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Você agora tem acesso ao novo ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } criado"
@@ -13012,6 +13068,9 @@
       "No parent folder": [
         "Nenhuma pasta acima"
       ],
+      "Remind me later": [
+        "Lembrar-me depois"
+      ],
       "Yes, don't show again": [
         "Sim, não mostrar novamente"
       ]
@@ -13211,6 +13270,9 @@
       ],
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis em outras moedas"
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Pagar com ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Método de pagamento necessário para que a assinatura seja ativada após o término do período de teste."
@@ -15597,7 +15659,7 @@
         "Mensagem marcada com estrela."
       ],
       "Message marked as unread.": [
-        "Mensagem marcada como não lida."
+        "Mensagem marcada como não lido."
       ],
       "Message moved to ${ labelName } and sender added to your not spam list.": [
         "A mensagem foi movida para ${ labelName } e o remetente foi adicionado à sua lista de não spam."
@@ -16451,11 +16513,17 @@
       "Make your inbox your own": [
         "Deixe sua caixa de entrada do jeito que você quiser"
       ],
+      "Mark all as read": [
+        "Marcar tudo como lido."
+      ],
+      "Mark all as unread": [
+        "Marcar tudo como não lido"
+      ],
       "Mark all messages as read": [
         "Marcar todas as mensagens como lidas"
       ],
       "Mark as read": [
-        "Marcar como lida"
+        "Marcar como lido"
       ],
       "Mark as unread": [
         "Marcar como não lida"
@@ -16834,6 +16902,9 @@
       ],
       "Snooze": [
         "Adiar"
+      ],
+      "Snooze emails": [
+        "Adiar e-mails"
       ],
       "Snooze message": [
         "Adiar mensagem"

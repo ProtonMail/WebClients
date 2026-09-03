@@ -2754,10 +2754,6 @@
       ],
       "Total": [
         "I alt"
-      ],
-      "Total for ${ n } month": [
-        "I alt for ${ n } måned",
-        "I alt for ${ n } måneder"
       ]
     },
     "Collapsible tooltip": {
@@ -7586,6 +7582,9 @@
       "Center": [
         "Centrér"
       ],
+      "Change display setting": [
+        "Skift visningsindstillinger"
+      ],
       "Change your password": [
         "Skift din adgangskode"
       ],
@@ -7752,9 +7751,6 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Kan du huske din adgangskode? ${ verifyButton }"
       ],
       "Do you want to download this attachment anyway?": [
         "Vil du alligevel downloade denne vedhæftning?",
@@ -8146,7 +8142,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8652,6 +8649,9 @@
       "Read your ${ count } label": [
         "Læs ${ count } etiket",
         "Læs dine ${ count } etiketter"
+      ],
+      "Read your display settings": [
+        "Læs dine visningsindstillinger"
       ],
       "Recipient: ": [
         "Modtager: "
@@ -10280,8 +10280,17 @@
       "Colors": [
         "Farver"
       ],
+      "Column": [
+        "Kolonne"
+      ],
+      "Comfortable": [
+        "Behageligt"
+      ],
       "Command line interface (CLI)": [
         "Kommandolinjegrænseflade (CLI)"
+      ],
+      "Compact": [
+        "Kompakt"
       ],
       "Company": [
         "Selskab"
@@ -10312,6 +10321,9 @@
       ],
       "Continue cancelling": [
         "Fortsæt annullering"
+      ],
+      "Conversation grouping": [
+        "Samtalegruppering"
       ],
       "Copy": [
         "Kopiér"
@@ -10513,6 +10525,9 @@
       ],
       "Go to Updates": [
         "Gå til Opdateringer"
+      ],
+      "Grouped conversations": [
+        "Grupperede samtaler"
       ],
       "Has attachments": [
         "Har vedhæftninger"
@@ -10835,6 +10850,9 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
       ],
+      "Row": [
+        "Række"
+      ],
       "Search in": [
         "Søg i"
       ],
@@ -10855,6 +10873,9 @@
       ],
       "Sign emails": [
         "Signér e-mails"
+      ],
+      "Single messages": [
+        "Enkeltbeskeder"
       ],
       "Size:": [
         "Størrelse:"
@@ -16305,6 +16326,9 @@
       ],
       "CC": [
         "CC"
+      ],
+      "Change display setting": [
+        "Skift visningsindstillinger"
       ],
       "Change my answer": [
         "Skift mit svar"

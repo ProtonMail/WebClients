@@ -25,9 +25,6 @@
       ]
     },
     "Accessibility announcement": {
-      "${ BRAND_NAME } background applied": [
-        "Fundal ${ BRAND_NAME } aplicat"
-      ],
       "${ name } joined the meeting": [
         "${ name } s-a alăturat conferinței"
       ],
@@ -64,20 +61,14 @@
       "A participant reacted with ${ emoji }": [
         "Un participant a reacționat cu ${ emoji }"
       ],
-      "Abstract background applied": [
-        "Fundal abstract aplicat"
-      ],
       "Background effect turned off": [
         "Efect fundal oprit"
       ],
-      "Beach background applied": [
-        "Fundal de plajă aplicat"
+      "Background removed": [
+        "Fundal eliminat"
       ],
       "Blurred background applied": [
         "Fundal estompat aplicat"
-      ],
-      "Coffee place background applied": [
-        "Fundal de cafenea aplicat"
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Conectat prin modul releu TURN din cauza restricțiilor de rețea. Acest lucru poate crește latența și afecta calitatea apelurilor."
@@ -85,17 +76,11 @@
       "Connection lost. Reconnecting…": [
         "Conexiune pierdută. Se reconectează…"
       ],
-      "Mountain background applied": [
-        "Fundal montan aplicat"
-      ],
       "New chat message: ${ message }": [
         "Mesaj nou: ${ message }"
       ],
       "Now starting recording": [
         "Acum începe înregistrarea"
-      ],
-      "Office background applied": [
-        "Fundal de birou aplicat"
       ],
       "Reconnected to the meeting": [
         "V-ați reconectat la conferință"
@@ -156,6 +141,9 @@
       ],
       "Your camera has been turned off by the host": [
         "Gazda v-a oprit camera"
+      ],
+      "Your own background applied": [
+        "Vi s-a aplicat fundalul personal."
       ]
     },
     "Action": {
@@ -173,6 +161,9 @@
       "Add another account": [
         "Adăugare alt cont"
       ],
+      "Add your own background": [
+        "Adăugați-vă propriul fundal"
+      ],
       "Admit ${ participantName }": [
         "Admitere pe ${ participantName }"
       ],
@@ -181,6 +172,9 @@
       ],
       "Allow access": [
         "Permitere acces"
+      ],
+      "Allow live captions": [
+        "Permitere subtitrări live"
       ],
       "Anyone with the link can join immediately": [
         "Oricine are legătura web se poate alătura imediat"
@@ -517,6 +511,9 @@
       "Rejoin meeting": [
         "Revenire la întâlnire"
       ],
+      "Remove ${ name }": [
+        "Eliminare ${ name }"
+      ],
       "Remove reaction ${ emoji }, ${ identities.length } reaction": [
         "Eliminare reacție ${ emoji }, ${ identities.length } reacție",
         "Eliminare reacție ${ emoji }, ${ identities.length } reacții",
@@ -737,6 +734,9 @@
       ]
     },
     "Alt": {
+      "Allow live captions": [
+        "Permitere subtitrări live"
+      ],
       "Audio settings": [
         "Setări audio"
       ],
@@ -1887,8 +1887,71 @@
       ]
     },
     "Error": {
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Când se raportează încălcarea drepturilor de autor sau furtul de date este necesar un mesaj."
+      ],
+      "An error occurred": [
+        "A apărut o eroare."
+      ],
       "Background blur initialization failed. Please toggle your camera or background blur again": [
         "Inițializarea estompării fundalului a eșuat. Comutați din nou la cameră sau la estomparea fundalului."
+      ],
+      "Bookmark password is not available": [
+        "Parola semnului de carte nu este disponibilă."
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Fotografia nu se poate adăuga în album fără un nume valid."
+      ],
+      "Cannot download a folder": [
+        "Nu se poate descărca un folder."
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Nu se poate muta articolul fără un nume valid. Redenumiți-l mai întâi."
+      ],
+      "Cannot share root folder": [
+        "Folderul rădăcină nu se poate partaja."
+      ],
+      "Cannot verify the author of this file": [
+        "Autorul acestui fișier nu poate fi verificat."
+      ],
+      "Cannot verify who uploaded this file": [
+        "Nu se poate verifica autorul care a încărcat acest fișier."
+      ],
+      "Copy operation aborted": [
+        "Operația de copiere a fost anulată."
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Copierea articolului într-un alt folder nu este permisă."
+      ],
+      "Could not add this background. Check your connection and try again.": [
+        "Nu s-a putut adăuga acest fundal. Verificați conexiunea și reîncercați."
+      ],
+      "Could not add this background. Please try again.": [
+        "Acest fundal nu s-a putut adăuga. Reîncercați."
+      ],
+      "Could not find an available name": [
+        "Nu s-a găsit un nume disponibil."
+      ],
+      "Could not load sharing details": [
+        "Nu s-au putut încărca detaliile de partajare."
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Nu s-a putut încărca previzualizarea imaginii: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Nu s-a putut citi o parte din acest fișier: ${ message }"
+      ],
+      "Could not remove this background. Check your connection and try again.": [
+        "Nu s-a putut elimina acest fundal. Verificați conexiunea și reîncercați."
+      ],
+      "Could not remove this background. Please try again.": [
+        "Acest fundal nu s-a putut elimina. Reîncercați."
+      ],
+      "Could not unlock the parent folder": [
+        "Nu s-a putut debloca folderul părinte."
+      ],
+      "Could not unlock this item": [
+        "Nu s-a putut debloca acest articol."
       ],
       "Couldn’t play the recording on this speaker.": [
         "Nu s-a putut reda înregistrarea pe această boxă."
@@ -1898,6 +1961,18 @@
       ],
       "Couldn’t start the microphone test.": [
         "Nu s-a putut porni testul microfonului."
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Crearea de documente în non-foldere nu este permisă."
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Crearea de fișiere în non-foldere nu este permisă."
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Crearea de foldere în non-foldere nu este permisă."
+      ],
+      "Device not found": [
+        "Dispozitivul nu a fost găsit."
       ],
       "Domain not available, try again later": [
         "Domeniul nu este disponibil. Reîncercați mai târziu."
@@ -1914,6 +1989,9 @@
       "Event deleted": [
         "Eveniment șters."
       ],
+      "Expiration date cannot be in the past": [
+        "Data de expirare nu poate fi în trecut."
+      ],
       "Failed to admit the participant. Please try again.": [
         "Participantul nu a putut fi admis. Reîncercați."
       ],
@@ -1928,6 +2006,27 @@
       ],
       "Failed to create personal meeting, please refresh the page": [
         "Nu s-a putut crea ședința personală. Împrospătați pagina."
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Nu s-a putut decripta cheia semnului de carte: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Nu s-a putut decripta numele semnului de carte: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Nu s-a putut decripta parola pentru semnul de carte: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Nu s-a putut decripta cheia conținutului: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Decriptarea numelui articolului a eșuat: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Nu s-a putut decripta cheia nodului: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Nu s-au putut decripta metadatele reviziei."
       ],
       "Failed to decrypt session key": [
         "Nu s-a putut decripta cheia de sesiune."
@@ -1953,6 +2052,9 @@
       "Failed to edit room name": [
         "Eroare la editarea numelui camerei."
       ],
+      "Failed to get inviter keys": [
+        "Eșuare obținere cheie a celui care a invitat."
+      ],
       "Failed to join meeting. Please try again later.": [
         "Nu s-a putut alătura ședinței. Reîncercați mai târziu."
       ],
@@ -1961,6 +2063,9 @@
       ],
       "Failed to lock meeting": [
         "Blocarea conferinței a eșuat."
+      ],
+      "Failed to request live captions": [
+        "Eșuare solicitare subtitrări live."
       ],
       "Failed to rotate personal meeting link": [
         "Nu s-a putut roti legătura web a întâlnirii personale."
@@ -1989,11 +2094,26 @@
       "Failed to update caption language. Please try again.": [
         "Limba subtitrării nu a putut fi actualizată. Reîncercați."
       ],
+      "Failed to update live captions availability": [
+        "Nu s-a putut actualiza disponibilitatea subtitrărilor live."
+      ],
       "Failed to update live captions. Please try again.": [
         "Subtitrările live nu au putut fi actualizate. Reîncercați."
       ],
       "Failed to update waiting room setting. Please try again.": [
         "Nu s-a putut actualiza setările pentru sala de așteptare. Reîncercați."
+      ],
+      "Failed to verify invitation": [
+        "Verificarea invitației a eșuat."
+      ],
+      "File download failed due to empty response": [
+        "Descărcarea fișierului a eșuat din cauza unui răspuns gol."
+      ],
+      "File has no revision": [
+        "Fișierul nu are nicio revizie."
+      ],
+      "Image preview not found": [
+        "Previzualizarea imaginii nu a fost găsită."
       ],
       "Incorrect username": [
         "Nume de utilizator incorect."
@@ -2001,8 +2121,20 @@
       "Invalid meeting link": [
         "Legătură web nevalidă pentru conferință."
       ],
+      "Invalid URL": [
+        "Adresă URL nevalidă."
+      ],
       "Invalid verification code": [
         "Cod de verificare nevalid"
+      ],
+      "Invitation not found": [
+        "Invitația nu a fost găsită."
+      ],
+      "Item not found": [
+        "Articol negăsit."
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Legătura web publică veche nu poate fi actualizată. Creați o legătură web publică nouă."
       ],
       "Live captions aren't working. Try turning them off and on again.": [
         "Subtitrările live nu funcționează. Încercați să le dezactivați și să le reactivați."
@@ -2016,17 +2148,73 @@
       "Microphone access is blocked. Allow it in your browser settings.": [
         "Accesul la microfon este blocat. Permiteți-l în setările navigatorului web."
       ],
+      "Missing inviter email": [
+        "Lipsește adresa de e-mail a persoanei care a invitat."
+      ],
+      "Missing signature": [
+        "Semnătură lipsă"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Lipsește semnătura pentru ${ signatureType }."
+      ],
+      "Move operation aborted": [
+        "Operația de mutare a fost anulată."
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Mutarea articolului într-un non-folder nu este permisă."
+      ],
+      "Moving root item is not allowed": [
+        "Mutarea articolului rădăcină nu este permisă."
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Numele trebuie să aibă cel mult ${ MAX_NODE_NAME_LENGTH } caracter.",
+        "Numele trebuie să aibă cel mult ${ MAX_NODE_NAME_LENGTH } caractere.",
+        "Numele trebuie să aibă cel mult ${ MAX_NODE_NAME_LENGTH } de caractere."
+      ],
+      "Name must not be empty": [
+        "Numele nu poate fi gol."
+      ],
+      "No file data was received. Please try again.": [
+        "Nu s-au primit date despre fișier. Reîncercați."
+      ],
       "Not a valid number": [
         "Nu este un număr valid"
+      ],
+      "Only admins can convert external invitations": [
+        "Doar administratorii pot converti invitațiile externe."
+      ],
+      "Operation aborted": [
+        "Operație anulată."
+      ],
+      "Operation failed, try again later": [
+        "Operația a eșuat. Reîncercați."
       ],
       "Organization key is not decrypted": [
         "Cheia organizației nu este decriptată."
       ],
+      "Part of the file appears to be corrupted": [
+        "O parte a fișierului pare a fi coruptă."
+      ],
       "Passwords do not match": [
         "Parolele nu coincid"
       ],
+      "Photo is already in the target album": [
+        "Fotografia este deja în albumul țintă."
+      ],
+      "Photo not found": [
+        "Fotografie negăsită."
+      ],
+      "Pick a JPEG, PNG or WebP image.": [
+        "Alegeți o imagine JPEG, PNG sau WebP."
+      ],
       "Please allow screen sharing in your system permissions, then try again": [
         "Permiteți partajarea ecranului în permisiunile de sistem, apoi reîncercați."
+      ],
+      "Renaming root item is not allowed": [
+        "Redenumirea articolului rădăcină nu este permisă."
+      ],
+      "Request aborted": [
+        "Solicitare anulată."
       ],
       "Request timed out": [
         "Solicitarea a expirat"
@@ -2037,8 +2225,35 @@
       "Screen share is not supported on mobile browsers": [
         "Partajarea ecranului nu este acceptată pe navigatoarele web mobile."
       ],
+      "Signature is missing": [
+        "Semnătura lipsește."
+      ],
       "Signature verification failed": [
         "Eșuare verificare semnătură"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Verificarea semnăturii a eșuat: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Verificarea semnăturii pentru ${ signatureType } a eșuat."
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Verificarea semnăturii pentru ${ signatureType } a eșuat: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Unele date din fișier nu au putut fi încărcate. Reîncercați."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Unele părți din fișier nu au putut fi încărcate. Reîncercați."
+      ],
+      "Some items could not be loaded": [
+        "Unele articole nu au putut fi încărcate."
+      ],
+      "Something went wrong": [
+        "Ceva nu a funcționat corect."
+      ],
+      "Something went wrong. Please try again.": [
+        "Ceva nu a funcționat bine. Mai încercați."
       ],
       "The email addresses do not match": [
         "Adresele de e-mail nu se potrivesc."
@@ -2052,6 +2267,12 @@
       "The selected microphone is no longer available.": [
         "Microfonul selectat nu mai este disponibil."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Fișierul încărcat nu corespunde cu originalul. Reîncercați."
+      ],
+      "This background could not be saved in this browser.": [
+        "Acest fundal nu a putut fi salvat în acest navigator web."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Acest câmp depășește maximul de ${ maximumLength } de caractere."
       ],
@@ -2061,8 +2282,44 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Acest câmp necesită un minimum de ${ minimumLength } caractere."
       ],
+      "This file has missing crypto material": [
+        "Acest fișier are materiale criptografice lipsă."
+      ],
+      "This file has no version available to download": [
+        "Acest fișier nu are nicio versiune disponibilă pentru descărcare."
+      ],
+      "This file name is too long. Rename the image and try again.": [
+        "Acest nume de fișier este prea lung. Redenumiți imaginea și reîncercați."
+      ],
+      "This file version could not be uploaded": [
+        "Această versiune de fișier nu a putut fi încărcată."
+      ],
+      "This image could not be read. Pick another one.": [
+        "Această imagine nu a putut fi citită. Alegeți alta."
+      ],
+      "This image is too big. Pick one up to ${ maxEdge } pixels wide and tall.": [
+        "Această imagine este prea mare. Alegeți una cu lățimea și înălțimea maximă de ${ maxEdge } pixeli."
+      ],
+      "This image is too large. Pick one under ${ maxMegabytes } MB.": [
+        "Această imagine este prea mare. Alegeți una sub ${ maxMegabytes } MiB."
+      ],
+      "This item has no image preview": [
+        "Acest articol nu are o imagine de examinat."
+      ],
+      "This item is no longer shared": [
+        "Acest articol nu mai este partajat."
+      ],
+      "This item is not shared": [
+        "Acest articol nu este partajat."
+      ],
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
         "Această conferință este pe o versiune mai veche, gazda trebuie să o încheie și să împrospăteze Meet pentru a reporni cu cea mai recentă versiune."
+      ],
+      "Too many server errors, please try again later": [
+        "Prea multe erori de server. Reîncercați mai târziu."
+      ],
+      "Too many server requests, please try again later": [
+        "Prea multe solicitări pentru server. Reîncercați mai târziu."
       ],
       "Try using only letters, numerals, and _.-": [
         "Folosiți doar litere, cifre și _ . -"
@@ -2076,11 +2333,38 @@
       "Username must end with a letter or digit": [
         "Numele de utilizator trebuie să se termine cu o literă sau cifră."
       ],
+      "Verification keys are not available": [
+        "Cheile de verificare nu sunt disponibile."
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Cheile de verificare pentru ${ signatureType } nu sunt disponibile."
+      ],
       "Virtual background initialization failed. Please toggle your camera or pick a background again": [
         "Inițializarea fundalului virtual a eșuat. Activați/Dezactivați camera sau realegeți un fundal."
       ],
       "We couldn’t send a verification code using this method.": [
         "Nu s-a putut trimite un cod de verificare folosind această metodă."
+      ],
+      "You can create public links for your own files only": [
+        "Puteți crea o legătură web publică doar pentru propriile fișiere."
+      ],
+      "You can only leave items that are shared with you": [
+        "Puteți lăsa doar articolele care vă sunt partajate."
+      ],
+      "You can only upload a new version to a file": [
+        "Puteți încărca doar o versiune nouă a unui fișier."
+      ],
+      "You can update a public link for your own files only": [
+        "Puteți actualiza o legătură web publică doar pentru propriile fișiere."
+      ],
+      "You do not have access to this item": [
+        "Nu aveți acces la acest articol."
+      ],
+      "You do not have access to this shared item": [
+        "Nu aveți acces la acest articol."
+      ],
+      "You have reached the maximum number of custom backgrounds.": [
+        "Ați atins numărul maxim de fundaluri personalizate."
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "Navigatorul web nu mai are spațiu disponibil. Înregistrarea s-a salvat până în acest moment."
@@ -2337,6 +2621,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un număr de telefon poate fi folosit doar pentru verificarea unui cont ${ BRAND_NAME }."
       ],
+      "Adding ${ name }": [
+        "Se adaugă ${ name }"
+      ],
       "Admit": [
         "Admitere"
       ],
@@ -2366,6 +2653,9 @@
       ],
       "Attention required": [
         "Necesită atenție"
+      ],
+      "Author is not provided on public link": [
+        "Autorul nu este furnizat în legătura web publică."
       ],
       "Available with a paid plan": [
         "Disponibil cu un plan plătit"
@@ -2552,6 +2842,9 @@
       ],
       "Host": [
         "Gazdă"
+      ],
+      "Host has disabled live captions for this meeting.": [
+        "Gazda a dezactivat subtitrările live pentru această conferință."
       ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Găzduiți-vă propriile conferințe securizate. Începeți un apel în ${ MEET_APP_NAME } și partajați legătura web pentru a invita pe oricine să se alăture. Simplu, sigur și gratuit."
@@ -2753,6 +3046,12 @@
       ],
       "Participant": [
         "Participant"
+      ],
+      "Participants can turn live captions on. Turn on your own under Display.": [
+        "Participanții pot activa subtitrările live. Le puteți activa în secțiunea „Afișare”."
+      ],
+      "Participants can’t use live captions": [
+        "Participanții nu pot folosi subtitrări live."
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Inserați legătura web ${ MEET_APP_NAME } pentru a vă alătura unei întâlniri securizate."
@@ -3027,6 +3326,9 @@
       "You can now return to the application to continue": [
         "Puteți reveni la aplicație pentru a continua"
       ],
+      "You can save up to ${ max } of your own backgrounds.": [
+        "Vă puteți salva până la ${ max } fundaluri."
+      ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Puteți totuși dezactiva microfonul și camera oricând în cadrul ședinței."
       ],
@@ -3053,6 +3355,9 @@
       ],
       "Your always available meeting room": [
         "Camera personală de conferințe disponibilă permanent"
+      ],
+      "Your backgrounds could not be loaded, so a new one cannot be added right now.": [
+        "Fundalurile nu au putut fi încărcate, așa că unul nou nu poate fi adăugat acum."
       ],
       "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
         "Navigatorul web a blocat accesul la microfon și cameră. Pentru a-l activa, modificați setările din navigator și reinițiați apelul."
@@ -3083,11 +3388,8 @@
       ]
     },
     "Label": {
-      "${ BRAND_NAME } background": [
-        "Fundal ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } username": [
-        "Nnume de utilizator ${ BRAND_NAME }"
+        "Nume de utilizator ${ BRAND_NAME }"
       ],
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } de caractere"
@@ -3096,9 +3398,6 @@
         "${ numberOfStars } stea",
         "${ numberOfStars } stele",
         "${ numberOfStars } de stele"
-      ],
-      "Abstract background": [
-        "Fundal abstract"
       ],
       "Add optional details": [
         "Adăugare detalii opționale"
@@ -3130,9 +3429,6 @@
       "Background color": [
         "Culoare fundal"
       ],
-      "Beach background": [
-        "Fundal de plajă"
-      ],
       "Blurred (next)": [
         "Estompat (următorul)"
       ],
@@ -3156,9 +3452,6 @@
       ],
       "Code is 6 digits without spaces": [
         "Codul este format din 6 cifre fără spații"
-      ],
-      "Coffee place background": [
-        "Fundal de cafenea"
       ],
       "Connection Quality": [
         "Calitate conexiune"
@@ -3268,9 +3561,6 @@
       "Monday to Friday": [
         "De luni până vineri"
       ],
-      "Mountain background": [
-        "Fundal montan"
-      ],
       "Muted": [
         "Dezactivat"
       ],
@@ -3279,9 +3569,6 @@
       ],
       "Next": [
         "Următor"
-      ],
-      "Office background": [
-        "Fundal de birou"
       ],
       "Operating system": [
         "Sistem de operare"
@@ -3562,6 +3849,26 @@
       ],
       "Type an encrypted message...": [
         "Scrieți un mesaj criptat..."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atribute"
+      ],
+      "content key": [
+        "cheia conținutului"
+      ],
+      "hash key": [
+        "cheia hash"
+      ],
+      "key": [
+        "cheie"
+      ],
+      "membership": [
+        "apartenență"
+      ],
+      "name": [
+        "nume"
       ]
     },
     "Role": {

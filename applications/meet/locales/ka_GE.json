@@ -1761,6 +1761,9 @@
       ]
     },
     "Error": {
+      "An error occurred": [
+        "ნაპოვნია შეცდომა"
+      ],
       "Domain not available, try again later": [
         "დომენი ხელმიუწვდომელია. თავიდან სცადეთ"
       ],
@@ -1842,8 +1845,14 @@
       "Invalid meeting link": [
         "შეხვედრის ბმული არასწორია"
       ],
+      "Invalid URL": [
+        "არასწორი URL"
+      ],
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
+      ],
+      "Missing signature": [
+        "ხელმოწერა აკლია"
       ],
       "Not a valid number": [
         "არასწორი ნომერი"
@@ -1868,6 +1877,12 @@
       ],
       "Signature verification failed": [
         "ხელმოწერის შემოწმების შეცდომა"
+      ],
+      "Something went wrong": [
+        "რაღაც არასწორად წავიდა"
+      ],
+      "Something went wrong. Please try again.": [
+        "რაღაც არასწორად წავიდა. თავიდან სცადეთ."
       ],
       "The email addresses do not match": [
         "ელფოსტის მისამართები არ ემთხვევა"

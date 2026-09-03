@@ -2745,6 +2745,15 @@
         "${ users } usuari",
         "${ users } usuaris"
       ],
+      "Amount due": [
+        "Import pendent"
+      ],
+      "Amount due after trial": [
+        "Import a pagar després de la prova"
+      ],
+      "Amount due now": [
+        "Import pendent de pagament"
+      ],
       "Subtotal": [
         "Subtotal"
       ],
@@ -2755,9 +2764,9 @@
       "Total": [
         "Total"
       ],
-      "Total for ${ n } month": [
-        "Total per ${ n } mes",
-        "Total per ${ n } mesos"
+      "Total for ${ cycle } month": [
+        "Total per ${ cycle } mes",
+        "Total per ${ cycle } mesos"
       ]
     },
     "Collapsible tooltip": {
@@ -7586,6 +7595,9 @@
       "Center": [
         "Centra"
       ],
+      "Change display setting": [
+        "Canvia la configuració de pantalla"
+      ],
       "Change your password": [
         "Canvieu la vostra contrasenya"
       ],
@@ -7753,8 +7765,8 @@
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
       ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Recordeu la vostra contrasenya? ${ verifyButton }"
+      "Do you remember your password?": [
+        "Recordeu la vostra contrasenya?"
       ],
       "Do you want to download this attachment anyway?": [
         "Voleu descarregar aquest adjunt de totes maneres?",
@@ -8146,7 +8158,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -8454,6 +8467,9 @@
       "Opened ${ location }": [
         "S'ha obert ${ location }"
       ],
+      "Opened a problem report": [
+        "Opened a problem report"
+      ],
       "Optional": [
         "Opcional"
       ],
@@ -8652,6 +8668,9 @@
       "Read your ${ count } label": [
         "Llegiu la vostra ${ count } etiqueta",
         "Llegiu les vostres ${ count } etiquetes"
+      ],
+      "Read your display settings": [
+        "Llegiu la vostra configuració de pantalla"
       ],
       "Recipient: ": [
         "Destinatari: "
@@ -10280,8 +10299,17 @@
       "Colors": [
         "Colors"
       ],
+      "Column": [
+        "Columna"
+      ],
+      "Comfortable": [
+        "Agradable"
+      ],
       "Command line interface (CLI)": [
         "Interfície de línia d'ordres (CLI)"
+      ],
+      "Compact": [
+        "Compacte"
       ],
       "Company": [
         "Empresa"
@@ -10312,6 +10340,9 @@
       ],
       "Continue cancelling": [
         "Continueu amb la cancel·lació"
+      ],
+      "Conversation grouping": [
+        "Agrupació de conversa"
       ],
       "Copy": [
         "Copia"
@@ -10513,6 +10544,9 @@
       ],
       "Go to Updates": [
         "Ves a les actualitzacions"
+      ],
+      "Grouped conversations": [
+        "Converses agrupades"
       ],
       "Has attachments": [
         "Té adjunts"
@@ -10835,6 +10869,9 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
       ],
+      "Row": [
+        "Fila"
+      ],
       "Search in": [
         "Cerca a"
       ],
@@ -10855,6 +10892,9 @@
       ],
       "Sign emails": [
         "Signar correu electrònics"
+      ],
+      "Single messages": [
+        "Missatges individuals"
       ],
       "Size:": [
         "Mida:"
@@ -16305,6 +16345,9 @@
       ],
       "CC": [
         "Còpia"
+      ],
+      "Change display setting": [
+        "Canvia la configuració de pantalla"
       ],
       "Change my answer": [
         "Canviar la meva resposta"

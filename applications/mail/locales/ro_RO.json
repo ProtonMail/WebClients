@@ -2779,11 +2779,6 @@
       ],
       "Total": [
         "Total"
-      ],
-      "Total for ${ n } month": [
-        "Total pentru o lună",
-        "Total pentru ${ n } luni",
-        "Total pentru ${ n } de luni"
       ]
     },
     "Collapsible tooltip": {
@@ -7714,6 +7709,9 @@
       "Center": [
         "Centrare"
       ],
+      "Change display setting": [
+        "Modificare setări afișare"
+      ],
       "Change your password": [
         "Modificare parolă"
       ],
@@ -7882,9 +7880,6 @@
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Vă amintiți parola? ${ verifyButton }"
       ],
       "Do you want to download this attachment anyway?": [
         "Doriți totuși să descărcați acest atașament?",
@@ -8287,7 +8282,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8800,6 +8797,9 @@
         "Citire ${ count } etichetă",
         "Citire ${ count } etichete",
         "Citire ${ count } de etichete"
+      ],
+      "Read your display settings": [
+        "Citiți setările de afișare"
       ],
       "Recipient: ": [
         "Destinatar: "
@@ -9499,7 +9499,7 @@
         "Utilizați combinațiile de taste pentru a vă gestiona mai rapid mesajele."
       ],
       "username": [
-        "utilizator"
+        "nume de utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -10263,7 +10263,7 @@
         "${ boldActive } Mutare toate mesajele în ${ boldFolderName }"
       ],
       "${ BRAND_NAME } username": [
-        "Nnume de utilizator ${ BRAND_NAME }"
+        "Nume de utilizator ${ BRAND_NAME }"
       ],
       "${ count } unread conversation": [
         "${ count } conversație necitită",
@@ -10463,8 +10463,17 @@
       "Colors": [
         "Culori"
       ],
+      "Column": [
+        "Coloane"
+      ],
+      "Comfortable": [
+        "Confortabil"
+      ],
       "Command line interface (CLI)": [
         "Interfață în linie de comandă (CLI)"
+      ],
+      "Compact": [
+        "Compact"
       ],
       "Company": [
         "Compania"
@@ -10495,6 +10504,9 @@
       ],
       "Continue cancelling": [
         "Continuare anulare"
+      ],
+      "Conversation grouping": [
+        "Grupare conversații"
       ],
       "Copy": [
         "Copiere"
@@ -10696,6 +10708,9 @@
       ],
       "Go to Updates": [
         "Accesare actualizări"
+      ],
+      "Grouped conversations": [
+        "Conversații grupate"
       ],
       "Has attachments": [
         "Cu atașamente"
@@ -11018,6 +11033,9 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
+      "Row": [
+        "Rânduri"
+      ],
       "Search in": [
         "Căutare în"
       ],
@@ -11038,6 +11056,9 @@
       ],
       "Sign emails": [
         "Semnare mesaje"
+      ],
+      "Single messages": [
+        "Mesaje separate"
       ],
       "Size:": [
         "Mărime:"
@@ -11166,7 +11187,7 @@
         "Model URL cu caractere generice"
       ],
       "Username": [
-        "Nume utilizator"
+        "Nume de utilizator"
       ],
       "v1": [
         "V1"
@@ -14014,7 +14035,7 @@
         "Nume"
       ],
       "Name or email address": [
-        "Nume utilizator/adresa de e-mail"
+        "Nume de utilizator/adresa de e-mail"
       ],
       "Optional feedback": [
         "Feedback opțional"
@@ -16626,6 +16647,9 @@
       ],
       "CC": [
         "C"
+      ],
+      "Change display setting": [
+        "Modificare setări afișare"
       ],
       "Change my answer": [
         "Schimbare răspuns"

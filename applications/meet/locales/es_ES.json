@@ -1761,6 +1761,9 @@
       ]
     },
     "Error": {
+      "An error occurred": [
+        "Se ha producido un error"
+      ],
       "Domain not available, try again later": [
         "Dominio no disponible. Inténtalo de nuevo más tarde."
       ],
@@ -1842,8 +1845,14 @@
       "Invalid meeting link": [
         "Enlace de reunión no válido"
       ],
+      "Invalid URL": [
+        "La URL no es válida."
+      ],
       "Invalid verification code": [
         "Código de verificación no válido"
+      ],
+      "Missing signature": [
+        "Falta la firma."
       ],
       "Not a valid number": [
         "No es un número válido."
@@ -1868,6 +1877,12 @@
       ],
       "Signature verification failed": [
         "Error al verificar la firma"
+      ],
+      "Something went wrong": [
+        "Se ha producido un error."
+      ],
+      "Something went wrong. Please try again.": [
+        "Se ha producido un error. Inténtalo de nuevo."
       ],
       "The email addresses do not match": [
         "Las direcciones de correo electrónico no coinciden"

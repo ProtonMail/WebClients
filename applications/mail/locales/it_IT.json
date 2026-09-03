@@ -904,6 +904,9 @@
       "Messages to this recipient": [
         "Messaggi a questo destinatario"
       ],
+      "Migrate": [
+        "Avvia la migrazione"
+      ],
       "Minimize composer": [
         "Minimizza il compositore"
       ],
@@ -1044,6 +1047,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Apri impostazioni ${ CALENDAR_APP_NAME }"
+      ],
+      "Open debug menu": [
+        "Apri menu di debug"
       ],
       "Open navigation": [
         "Apri navigazione"
@@ -2718,10 +2724,6 @@
       ],
       "Total": [
         "Totale"
-      ],
-      "Total for ${ n } month": [
-        "Totale per ${ n } mese",
-        "Totale per ${ n } mesi"
       ]
     },
     "Collapsible tooltip": {
@@ -4727,6 +4729,9 @@
       "Address is already added to your account": [
         "L'indirizzo è già stato aggiunto al tuo account"
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "L'indirizzo è già utilizzato da un utente esterno alla tua organizzazione. Contatta l'assistenza clienti per risolvere il problema"
+      ],
       "Address primary private key not found": [
         "Chiave privata primaria indirizzo non trovata"
       ],
@@ -4775,6 +4780,9 @@
       "Cannot set expiration longer than retention policy allows.": [
         "Non puoi impostare una scadenza più lunga di quanto consentito dalla Policy di Conservazione."
       ],
+      "Cannot verify the author of this file": [
+        "Impossibile verificare l'autore di questo file"
+      ],
       "Checkout expired, please try again": [
         "Checkout scaduto, riprova"
       ],
@@ -4803,6 +4811,9 @@
       "Contact signature not verified": [
         "Firma del contatto non verificata"
       ],
+      "Contact your administrator to start a migration.": [
+        "Contatta il tuo amministratore per avviare la migrazione."
+      ],
       "Contact your organization’s administrator to resolve this": [
         "Contatta l'amministratore della tua organizzazione per risolverlo"
       ],
@@ -4812,14 +4823,29 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Impossibile abilitare la ricerca nel contenuto. Riavvia l'applicazione o cancella il testo."
       ],
+      "Copying item to a non-folder is not allowed": [
+        "Non è possibile copiare l'elemento in un elemento che non è una cartella"
+      ],
       "Could not grant access to the organization key": [
         "Impossibile concedere l'accesso alla chiave dell'organizzazione"
+      ],
+      "Could not load sharing details": [
+        "Impossibile caricare i dettagli della condivisione"
       ],
       "Could not open created vault": [
         "Impossibile aprire la cassaforte creata"
       ],
       "Could not open updated vault": [
         "Impossibile aprire la cassaforte aggiornata"
+      ],
+      "Could not unlock the parent folder": [
+        "Impossibile sbloccare la cartella principale."
+      ],
+      "Could not unlock this item": [
+        "Impossibile sbloccare questo elemento."
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Non è possibile creare cartelle all'interno di elementi che non sono cartelle"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Errore di decrittografia: decrittografia del contenuto crittografato di questo messaggio non riuscita."
@@ -4883,6 +4909,12 @@
       "Failed loading group members": [
         "Impossibile caricare i membri del gruppo"
       ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Impossibile decrittografare la password del segnalibro: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Impossibile decrittografare la chiave del contenuto: ${ message }"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "Impossibile crittografare l'allegato. Riprova."
       ],
@@ -4895,6 +4927,9 @@
       "Failed to open to contact": [
         "Impossibile aprire il contatto"
       ],
+      "File has no revision": [
+        "Il file non ha revisioni"
+      ],
       "Filter with this name already exists": [
         "Esiste già un filtro con questo nome"
       ],
@@ -4906,6 +4941,9 @@
       ],
       "Forward address is required": [
         "Indirizzo di inoltro obbligatorio"
+      ],
+      "Image preview not found": [
+        "Anteprima dell'immagine non trovata"
       ],
       "Image upload failed": [
         "Caricamento dell'immagine non riuscito"
@@ -4958,11 +4996,17 @@
       "Last name is too long": [
         "Il cognome è troppo lungo"
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Il vecchio link pubblico non può essere aggiornato. Crea un nuovo link pubblico."
+      ],
       "Maximum expiration time reached.": [
         "Scadenza massima raggiunta."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Numero massimo di allegati (${ attachmentsCountLimit }) superato"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Indirizzo del membro non trovato. Contatta l'assistenza clienti per risolvere il problema"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Unisci almeno ${ calendarsToFixCount } calendario con un calendario ${ BRAND_NAME } esistente",
@@ -4974,14 +5018,27 @@
       "Message processing error.": [
         "Errore elaborazione messaggio."
       ],
+      "Missing inviter email": [
+        "Manca l'indirizzo email dell'invitante"
+      ],
       "Missing key packet": [
         "Pacchetto chiavi mancante"
+      ],
+      "Missing organization private key": [
+        "Manca la chiave privata dell'organizzazione"
+      ],
+      "Missing organization public key": [
+        "Manca la chiave pubblica dell'organizzazione"
       ],
       "Missing signature": [
         "Firma mancante"
       ],
       "Name is required": [
         "Il nome è obbligatorio"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri.",
+        "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri."
       ],
       "Network error": [
         "Errore di rete"
@@ -5010,6 +5067,9 @@
       "No external key retrieved for user is valid for sending": [
         "Nessuna chiave esterna caricata per l'utente è valida per l'invio"
       ],
+      "No file data was received. Please try again.": [
+        "Non sono stati ricevuti dati del file. Riprova."
+      ],
       "No valid address found": [
         "Nessun indirizzo valido trovato"
       ],
@@ -5024,6 +5084,15 @@
         "Uno dei gruppi non ha contatti: ${ noContactGroupList }",
         "Alcuni gruppi non hanno contatti: ${ noContactGroupList } "
       ],
+      "Operation aborted": [
+        "Operazione interrotta"
+      ],
+      "Organization does not have enough seats available": [
+        "L'organizzazione non dispone di posti disponibili a sufficienza"
+      ],
+      "Organization does not have enough storage available": [
+        "L'organizzazione non dispone di spazio di archiviazione sufficiente"
+      ],
       "Organization key is not decrypted": [
         "La chiave dell'organizzazione non è decriptata"
       ],
@@ -5032,6 +5101,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "La chiave dell'organizzazione deve essere attivata per creare utenti non privati"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Parte del file sembra essere danneggiata"
       ],
       "Password is required": [
         "Password necessaria"
@@ -5170,6 +5242,9 @@
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
         "L'invio di allegati è limitato quando superi i limiti del tuo piano o finché non aggiorni il tuo piano."
       ],
+      "Signature is missing": [
+        "Manca la firma"
+      ],
       "Signature not verified": [
         "Firma non verificata"
       ],
@@ -5273,6 +5348,9 @@
       "The system is busy at the moment. Please try again in a few minutes.": [
         "Al momento il sistema è occupato. Riprova tra qualche minuto."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Il file caricato non corrisponde all'originale. Riprova."
+      ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "L'assistente alla scrittura non può procedere con la richiesta. Prova a inserire una richiesta differente."
       ],
@@ -5303,8 +5381,17 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Questo campo richiede un minimo di ${ minimumLength } caratteri."
       ],
+      "This file has no version available to download": [
+        "Non è disponibile alcuna versione di questo file da scaricare"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Questo nome della cartella non è disponibile. Scegli un nome diverso."
+      ],
+      "This item is no longer shared": [
+        "Questo elemento non è più condiviso"
+      ],
+      "This item is not shared": [
+        "Questo elemento non è condiviso"
       ],
       "This label name is not available. Please choose a different name.": [
         "Questo nome dell'etichetta non è disponibile. Scegli un nome diverso."
@@ -5351,6 +5438,12 @@
       "VAT number must start with ${ prefixes }": [
         "Il numero di partita IVA deve iniziare con ${ prefixes }"
       ],
+      "Verification keys are not available": [
+        "Le chiavi di verifica non sono disponibili"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Le chiavi di verifica per ${ signatureType } non sono disponibili"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Non è stato possibile inviare un codice di verifica con questo metodo."
       ],
@@ -5370,6 +5463,9 @@
       ],
       "You did not provide a file.": [
         "Non hai fornito un file."
+      ],
+      "You do not have access to this item": [
+        "Non hai accesso a questo elemento"
       ],
       "You have reached the maximum number of calendars.": [
         "Hai raggiunto il numero massimo di calendari."
@@ -5914,6 +6010,15 @@
       ]
     },
     "Filter": {
+      "Activated": [
+        "Attivato"
+      ],
+      "All": [
+        "Tutto"
+      ],
+      "Errors": [
+        "Errori"
+      ],
       "Filter": [
         "﻿Filtra"
       ],
@@ -5925,6 +6030,18 @@
       ],
       "Has attachments": [
         "Con allegati"
+      ],
+      "In progress": [
+        "In corso"
+      ],
+      "Migrated": [
+        "La migrazione è riuscita"
+      ],
+      "Not activated": [
+        "Non attivo"
+      ],
+      "Pending": [
+        "In attesa"
       ],
       "Read": [
         "Letto"
@@ -6632,11 +6749,17 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "Ci sono errori"
+      ],
       "In progress": [
         "In corso"
       ],
       "Migrated": [
         "Migrato"
+      ],
+      "Pending": [
+        "In attesa"
       ]
     },
     "Import warning": {
@@ -7422,9 +7545,6 @@
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Ricordi la tua password? ${ verifyButton }"
-      ],
       "Do you want to download this attachment anyway?": [
         "Vuoi comunque scaricare questo allegato?",
         "Vuoi comunque scaricare questi allegati?"
@@ -7635,6 +7755,9 @@
       "finance": [
         "dati finanziari"
       ],
+      "Find out what can be migrated.": [
+        "Scopri cosa può essere migrato."
+      ],
       "Folder": [
         "Cartella"
       ],
@@ -7806,7 +7929,8 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine"
+        "Inserisci immagine",
+        "Inserisci immagini"
       ],
       "Insert link": [
         "Inserisci link"
@@ -8015,8 +8139,14 @@
       "No contacts found": [
         "Nessun contatto trovato"
       ],
+      "No conversation to read": [
+        "Nessuna conversazione da leggere"
+      ],
       "No email address": [
         "Nessun indirizzo email"
+      ],
+      "No email open": [
+        "Nessuna email aperta"
       ],
       "No folder found": [
         "Nessuna cartella trovata"
@@ -8050,6 +8180,9 @@
       ],
       "No trackers found": [
         "Nessun tracker trovato"
+      ],
+      "No users to display": [
+        "Nessun utente da mostrare"
       ],
       "non-${ MAIL_APP_NAME }": [
         "non ${ MAIL_APP_NAME }"
@@ -8265,6 +8398,21 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contattaci per ricevere aiuto su qualsiasi cosa ${ BRAND_NAME }."
       ],
+      "Read ${ count } email": [
+        "Leggi ${ count } email",
+        "Leggi ${ count } email"
+      ],
+      "Read ${ count } email on screen": [
+        "Leggi ${ count } email sullo schermo",
+        "Leggi ${ count } email sullo schermo"
+      ],
+      "Read ${ count } message in this thread": [
+        "Leggi ${ count } messaggio in questa conversazione",
+        "Leggi ${ count } messaggi in questa conversazione"
+      ],
+      "Read open email “${ subject }”": [
+        "Leggi l'email aperta \"${ subject }\""
+      ],
       "Recipient: ": [
         "Destinatario: "
       ],
@@ -8364,6 +8512,9 @@
       "Select all ${ elementsCount } in ${ location }": [
         "Seleziona tutti i ${ elementsCount } elementi in ${ location }",
         "Seleziona tutti i ${ elementsCount } elementi in ${ location }"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Seleziona esattamente ciò che vuoi migrare. La selezione verrà applicata a tutti gli utenti dell'organizzazione."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleziona il formato email che desideri usare per impostazione predefinita quando invii un'email a questo indirizzo email."
@@ -8735,6 +8886,9 @@
       "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
         "Non è possibile migrare questo utente perché il suo indirizzo e-mail non è disponibile su ${ BRAND_NAME }."
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Questo utente non può essere migrato a causa di incompatibilità tra le piattaforme."
+      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Questo viene mostrato perché la riga dell'oggetto dell'email contiene parole chiave per la reimpostazione della password."
       ],
@@ -8764,6 +8918,24 @@
       ],
       "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
         "Per migrare questo utente, aggiungi e verifica il dominio e-mail alla pagina ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Per eseguire la migrazione di questo utente, abilita il suo account nella tua ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Per eseguire la migrazione di questo utente, abilita il suo account in ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Per eseguire la migrazione di questo utente, abilita il suo indirizzo in ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Per eseguire la migrazione di questo utente, deve accettare l'invito a entrare in ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Per eseguire la migrazione di questo utente, annulla l'archiviazione nella tua ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Per eseguire la migrazione di questo utente, riattivalo nella tua ${ provider.adminConsoleName }."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Per firmare nuovamente i tuoi contatti, dobbiamo controllare ogni contatto con l'elenco delle chiavi di crittografia disponibili nel tuo account. Se non viene trovata alcuna corrispondenza, il contatto verrà nuovamente firmato con la chiave di crittografia primaria."
@@ -9046,6 +9218,9 @@
       ],
       "Yearly": [
         "Annuale"
+      ],
+      "You": [
+        "Tu"
       ],
       "You already have a free account": [
         "Hai già un account gratuito"
@@ -9873,6 +10048,9 @@
       ],
       "Continue cancelling": [
         "Continua la cancellazione"
+      ],
+      "Conversation grouping": [
+        "Raggruppamento delle conversazioni"
       ],
       "Copy": [
         "Copia"
@@ -13483,6 +13661,14 @@
         "Progresso: ${ combinedProgress }%"
       ]
     },
+    "Property": {
+      "attributes": [
+        "Attributi"
+      ],
+      "key": [
+        "chiave"
+      ]
+    },
     "Property type": {
       "Address": [
         "Indirizzo"
@@ -15511,17 +15697,26 @@
       "Actions": [
         "Azioni"
       ],
+      "Activated": [
+        "Attivato"
+      ],
       "Address": [
         "Indirizzo"
       ],
       "Created": [
         "Creata"
       ],
+      "Estimated size": [
+        "Dimensione stimata"
+      ],
       "Expires": [
         "Scade"
       ],
       "Fingerprint": [
         "Impronta digitale"
+      ],
+      "Migration status": [
+        "Stato della migrazione"
       ],
       "Name": [
         "Nome"
@@ -15534,6 +15729,9 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "User": [
+        "Utente"
       ]
     },
     "TableHeader": {
@@ -15822,6 +16020,9 @@
       ],
       "Collaborate on documents": [
         "Collabora sui documenti"
+      ],
+      "Configure migration": [
+        "Configura la migrazione"
       ],
       "Confirm downgrade": [
         "Conferma il downgrade"
@@ -16493,6 +16694,9 @@
       "Select data to import": [
         "Seleziona i dati da importare"
       ],
+      "Select users to migrate": [
+        "Seleziona gli utenti da migrare"
+      ],
       "Self-destruct message": [
         "Autodistruzione messaggio"
       ],
@@ -16714,6 +16918,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Benvenuto in ${ BRAND_NAME } for Business"
       ],
+      "What are you migrating?": [
+        "Cosa stai migrando?"
+      ],
       "What can a VPN protect you from?": [
         "Da cosa può proteggerti una VPN?"
       ],
@@ -16801,6 +17008,9 @@
       "Customize import to reduce the number of labels": [
         "Personalizza l'importazione per ridurre il numero delle etichette"
       ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Stato della migrazione dei dati da ${ providerName } a ${ BRAND_NAME }"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "La firma digitale delle email aiuta ad attestare che i messaggi vengono inviati da te"
       ],
@@ -16879,6 +17089,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carica una chiave pubblica per abilitare l'invio di email crittografate end-to-end a questa email"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Utenti che hanno effettuato l'accesso al proprio account ${ BRAND_NAME }"
+      ],
       "Version 6 OpenPGP key": [
         "Chiave OpenPGP versione 6"
       ]
@@ -16933,6 +17146,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Passa a un piano supportato per utilizzare i ruoli amministratore"
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Potrai assegnare i ruoli non appena l'utente avrà accettato l'invito."
       ]

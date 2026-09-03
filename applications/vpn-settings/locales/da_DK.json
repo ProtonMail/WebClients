@@ -2004,14 +2004,6 @@
         "Du har nået grænsen for prøveversionen."
       ]
     },
-    "b2b_trials_2025_Label": {
-      "Amount due after trial": [
-        "Forfaldent beløb efter prøveperioden"
-      ],
-      "Amount due now": [
-        "Forfaldent beløb nu"
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Opsig abonnement"
@@ -2555,15 +2547,6 @@
       ],
       "Total": [
         "I alt"
-      ],
-      "Total for ${ n } month": [
-        "I alt for ${ n } måned",
-        "I alt for ${ n } måneder"
-      ]
-    },
-    "Checkout summary": {
-      "month": [
-        "måned"
       ]
     },
     "Collapsible tooltip": {
@@ -7795,9 +7778,6 @@
       "Amount below minimum (${ amount }).": [
         "Beløb under minimum (${ amount })."
       ],
-      "Amount due": [
-        "Forfaldent beløb"
-      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Et e-mailalias fungerer som en e-mailadresse, men reducerer spam og holder din faktiske e-mailadresse og identitet skjult."
       ],
@@ -8174,9 +8154,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Glem IKKE denne adgangskode. Glemmer du den, vil du ikke være i stand til at administrere din organisation."
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Kan du huske din adgangskode? ${ verifyButton }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Vil du tilbagekalde alle andre sessioner end den nuværende?"
@@ -9456,9 +9433,6 @@
       "Subscription starts on ${ startsOnTime }": [
         "Abonnementet starter den ${ startsOnTime }"
       ],
-      "Summary": [
-        "Sammenfatning"
-      ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Monitorering af brugerdefinerede domæner og ikke-${ BRAND_NAME } e-mailadresser vil snart understøttes."
       ],
@@ -9891,6 +9865,9 @@
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Brug en gendannelsesmetode til at deaktivere dine totrins-godkendelsesmetoder."
+      ],
+      "Use an existing email or create a free ${ protonDomain } address.": [
+        "Brug en eksisterende e-mail eller opret en gratis ${ protonDomain }-adresse."
       ],
       "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
         "Brug flere e-mailadresser med ${ MAIL_APP_NAME }. Tilføj en ny ${ BRAND_NAME }-adresse eller forbind en anden e-mail-konto for at administrere alt fra én indbakke."

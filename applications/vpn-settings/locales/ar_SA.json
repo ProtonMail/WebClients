@@ -1748,14 +1748,6 @@
         "لقد وصلت إلى حد التجربة."
       ]
     },
-    "b2b_trials_2025_Label": {
-      "Amount due after trial": [
-        "المبلغ المستحق بعد التجربة"
-      ],
-      "Amount due now": [
-        "المبلغ المستحق الآن"
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "إلغاء الاشتراك"
@@ -2325,19 +2317,6 @@
       ],
       "Total": [
         "الإجمالي"
-      ],
-      "Total for ${ n } months": [
-        "الإجمالي لـ ${ n } شهر",
-        "الإجمالي لـ ${ n } شهر",
-        "الإجمالي لـ ${ n } شهر",
-        "الإجمالي لـ ${ n } أشهر",
-        "الإجمالي لـ ${ n } أشهر",
-        "الإجمالي لـ ${ n } أشهر"
-      ]
-    },
-    "Checkout summary": {
-      "month": [
-        "شهر"
       ]
     },
     "Collapsible tooltip": {
@@ -7557,9 +7536,6 @@
       "Amount below minimum (${ amount }).": [
         "المبلغ أقل من الحد الأدنى (${ amount })."
       ],
-      "Amount due": [
-        "المبلغ المستحق"
-      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "يُشبه البريد الإلكتروني المستعار عنوان البريد الإلكتروني، ويَعمُلُ على تقليل الرسائل المزعجة وإخفاء بريدك وهويتك الحقيقية."
       ],
@@ -7914,9 +7890,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "لا تنسى كلمة المرور هذه. إذا نسيتها، فلن تتمكن من إدارة مؤسستك."
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "هل ما زلت تتذكر كلمة مرورك؟ ${ verifyButton }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "هل تريد تسجيل الخروج من جميع الجلسات السابقة عدا الجلسة الحالية؟"
@@ -9138,9 +9111,6 @@
       ],
       "Subscription starts on ${ startsOnTime }": [
         "يبدأ الاشتراك في ${ startsOnTime }"
-      ],
-      "Summary": [
-        "الملخص"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "سيتاح قريبًا دعم مراقبة النطاقات المخصصة وعناوين البريد الإلكتروني غير التابعة لـ ${ BRAND_NAME }."
