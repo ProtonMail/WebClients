@@ -4570,20 +4570,20 @@
       ]
     },
     "Result": {
-      "Enter a URL to check to see if your current rule is matching the URL": [
-        "Gib eine URL ein, um zu prüfen, ob deine aktuelle Regel mit der URL übereinstimmt"
-      ],
-      "The rule is matching this URL": [
-        "Die Regel stimmt mit dieser URL überein"
-      ],
-      "The rule is NOT matching this URL": [
-        "Die Regel stimmt NICHT mit dieser URL überein"
+      "Enter a URL to check if it matches the current rule": [
+        "Eine URL eingeben, um zu prüfen, ob sie der aktuellen Regel entspricht"
       ],
       "This URL will be blocked from autofill": [
         "Dieses automatische Ausfüllen wird für diese URL blockiert"
       ],
       "This URL will NOT be blocked from autofill": [
         "Dieses automatische Ausfüllen wird für diese URL NICHT blockiert"
+      ],
+      "URL doesn't match the rule": [
+        "URL entspricht nicht der Regel"
+      ],
+      "URL matches the rule": [
+        "URL entspricht der Regel"
       ]
     },
     "Security Center - Info": {
@@ -5485,6 +5485,9 @@
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Gewähre Zugriff auf die Zwischenablage, um das automatische Leeren von kopierten Passwörtern und Daten zu aktivieren."
+      ],
+      "Identity could not be confirmed": [
+        "Identität konnte nicht bestätigt werden"
       ],
       "Invalid alias prefix": [
         "Ungültiges Alias-Präfix"
