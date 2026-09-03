@@ -1,5 +1,13 @@
 import { c, msgid } from 'ttag';
 
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
+import { IcHourglass } from '@proton/icons/icons/IcHourglass';
+import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcMeetCamera } from '@proton/icons/icons/IcMeetCamera';
+import { IcMeetRecord } from '@proton/icons/icons/IcMeetRecord';
+import { IcMobile } from '@proton/icons/icons/IcMobile';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
+import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
 import { PLANS } from '@proton/payments/core/constants';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -17,9 +25,10 @@ export const PAID_MAX_MEETINGS_PER_DAY = 'unlimited';
 
 export const getMeetAppFeature = (): PlanCardFeatureDefinition => {
     return {
+        id: 'meet-app',
         text: MEET_APP_NAME,
         included: true,
-        icon: 'meet-camera',
+        icon: IcMeetCamera,
         tooltip: c('meet_2025: Feature')
             .t`${MEET_APP_NAME}: Confidential video conferencing for the conversations that matter`,
     };
@@ -34,9 +43,10 @@ export const getMeetingMaxLengthText = (type: 'free' | 'paid') => {
 
 export const getMeetingMaxLength = (type: 'free' | 'paid'): PlanCardFeatureDefinition => {
     return {
+        id: 'meeting-max-length',
         text: getMeetingMaxLengthText(type),
         included: true,
-        icon: 'hourglass',
+        icon: IcHourglass,
     };
 };
 
@@ -50,21 +60,23 @@ export const getMaxParticipantsShortText = (n: number) => {
 
 export const getMaxParticipants = (n: number): PlanCardFeatureDefinition => {
     return {
+        id: 'max-participants',
         text: getMaxParticipantsText(n),
         included: true,
-        icon: 'users',
+        icon: IcUsers,
     };
 };
 
 export const getVideoMeetingsFeature = (n: number): PlanCardFeatureDefinition => {
     return {
+        id: 'video-meetings',
         text: c('meet_2025: Feature').ngettext(
             msgid`Video meetings, ${n} participant`,
             `Video meetings, ${n} participants`,
             n
         ),
         included: true,
-        icon: 'video-camera',
+        icon: IcVideoCamera,
     };
 };
 
@@ -77,9 +89,10 @@ export const getMaxMeetingsText = (n: number) => {
 
 export const getMaxActiveMeetings = (n: number): PlanCardFeatureDefinition => {
     return {
+        id: 'max-active-meetings',
         text: getMaxMeetingsText(n),
         included: true,
-        icon: 'video-camera',
+        icon: IcVideoCamera,
     };
 };
 
@@ -92,9 +105,10 @@ export const getMaxMeetingsPerDayText = (n: number | 'unlimited') => {
 
 export const getMaxMeetingsPerDay = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     return {
+        id: 'max-meetings-per-day',
         text: getMaxMeetingsPerDayText(n),
         included: true,
-        icon: 'mobile',
+        icon: IcMobile,
     };
 };
 
@@ -104,9 +118,10 @@ export const getMeetE2EFeatureText = () => {
 
 const getMeetE2E = (): PlanCardFeatureDefinition => {
     return {
+        id: 'meet-e2e',
         text: getMeetE2EFeatureText(),
         included: true,
-        icon: 'lock',
+        icon: IcLock,
     };
 };
 
@@ -128,9 +143,10 @@ export const getMeetBookingPagesText = () => {
 
 export const getMeetBookingPages = (included: boolean): PlanCardFeatureDefinition => {
     return {
+        id: 'meet-booking-pages',
         text: getMeetBookingPagesText(),
         included: included,
-        icon: 'calendar-grid',
+        icon: IcCalendarGrid,
     };
 };
 
@@ -140,10 +156,11 @@ export const getMeetMeetingRecordingText = () => {
 
 export const getMeetMeetingRecording = (included: boolean): PlanCardFeatureDefinition => {
     return {
+        id: 'meet-meeting-recording',
         text: getMeetMeetingRecordingText(),
         included: included,
         tooltip: c('meet_2025: Feature').t`Hosts can record meetings locally on their computers`,
-        icon: 'meet-record',
+        icon: IcMeetRecord,
     };
 };
 

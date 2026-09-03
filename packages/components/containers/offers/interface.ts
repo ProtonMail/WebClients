@@ -7,6 +7,7 @@ import type { COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
 import type { Currency, PlanIDs } from '@proton/payments/core/interface';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
+import type { PlanCardFeatureIcon } from '../payments/features/interface';
 import type { OfferProduct } from './helpers/getOfferProduct';
 import type { Q3Sale2026OfferId } from './operations/q3Sale2026offers';
 
@@ -86,7 +87,7 @@ export interface OfferConfig {
 export interface Feature {
     badge?: string;
     disabled?: boolean;
-    icon?: IconName;
+    icon?: PlanCardFeatureIcon;
     name: string;
     tooltip?: string;
 }

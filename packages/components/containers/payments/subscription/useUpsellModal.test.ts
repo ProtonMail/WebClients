@@ -1,3 +1,8 @@
+import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
+import { IcFolders } from '@proton/icons/icons/IcFolders';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcShield2Bolt } from '@proton/icons/icons/IcShield2Bolt';
+import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
@@ -13,11 +18,11 @@ const expectedResult = {
     downgradedPlanName: 'Proton Unlimited',
     freePlanFeatures: [
         {
-            icon: 'storage',
+            icon: IcStorage,
             text: '0.5 GB email storage',
         },
         {
-            icon: 'envelope',
+            icon: IcEnvelope,
             text: '1 email address',
         },
     ] as Feature[],
@@ -25,23 +30,23 @@ const expectedResult = {
     upsellPlanAmount: 399,
     upsellPlanFeatures: [
         {
-            icon: 'storage',
+            icon: IcStorage,
             text: '15 GB email storage',
         },
         {
-            icon: 'envelope',
+            icon: IcEnvelope,
             text: '10 email addresses',
         },
         {
-            icon: 'globe',
+            icon: IcGlobe,
             text: '1 custom email domain',
         },
         {
-            icon: 'folders',
+            icon: IcFolders,
             text: 'Folders, labels, and custom filters',
         },
         {
-            icon: 'shield-2-bolt',
+            icon: IcShield2Bolt,
             text: 'Dark Web Monitoring',
         },
     ] as Feature[],

@@ -5,13 +5,23 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { IcArrowUpFromSquare } from '@proton/icons/icons/IcArrowUpFromSquare';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcDrive } from '@proton/icons/icons/IcDrive';
+import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
+import { IcFileLines } from '@proton/icons/icons/IcFileLines';
+import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcLocks } from '@proton/icons/icons/IcLocks';
+import { IcMobile } from '@proton/icons/icons/IcMobile';
+import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';
+import { IcShield } from '@proton/icons/icons/IcShield';
+import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
+import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { DASHBOARD_UPSELL_PATHS, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import Icon from '../../../../../../components/icon/Icon';
 import Info from '../../../../../../components/link/Info';
 import { Tabs } from '../../../../../../components/tabs/Tabs';
 import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
@@ -48,9 +58,9 @@ const getMeetProfessionalFeatures = (): PlanCardFeatureDefinition[] => {
         getMeetingMaxLength('paid'),
         getMaxParticipants(PAID_MAX_PARTICIPANTS),
         getMaxMeetingsPerDay('unlimited'),
-        { text: getMeetAppsText(), icon: 'mobile', included: true },
-        { text: getMeetScreenSharingText(), icon: 'arrow-up-from-square', included: true },
-        { text: getMeetBuiltInChatText(), icon: 'speech-bubble', included: true },
+        { id: 'meet-apps', text: getMeetAppsText(), icon: IcMobile, included: true },
+        { id: 'screen-sharing', text: getMeetScreenSharingText(), icon: IcArrowUpFromSquare, included: true },
+        { id: 'built-in-chat', text: getMeetBuiltInChatText(), icon: IcSpeechBubble, included: true },
         getMeetBookingPages(true),
         getMeetMeetingRecording(true),
     ];
@@ -61,40 +71,74 @@ const toUpsellFeature = ({ highlight: _h, status: _s, ...rest }: PlanCardFeature
 const getMeetBusinessUpsellFeatures = (): UpsellFeature[] => getMeetProfessionalFeatures().map(toUpsellFeature);
 
 const getWorkspaceStandardUpsellFeatures = (maxSpace: number, maxDomains: number): UpsellFeature[] => [
-    { text: c('meet_2025: Feature').t`Includes Meet Professional`, icon: 'video-camera', included: true },
+    {
+        id: 'includes-meet-professional',
+        text: c('meet_2025: Feature').t`Includes Meet Professional`,
+        icon: IcVideoCamera,
+        included: true,
+    },
     toUpsellFeature(getShortStorageFeatureB2B(maxSpace)),
     toUpsellFeature(getNDomainsFeature({ n: maxDomains, tooltip: false })),
-    { text: c('meet_2025: Feature').t`Secure mail and calendar`, icon: 'envelope', included: true },
-    { text: c('meet_2025: Feature').t`Cloud storage and file sharing`, icon: 'drive', included: true },
     {
+        id: 'secure-mail-and-calendar',
+        text: c('meet_2025: Feature').t`Secure mail and calendar`,
+        icon: IcEnvelope,
+        included: true,
+    },
+    {
+        id: 'cloud-storage-and-file-sharing',
+        text: c('meet_2025: Feature').t`Cloud storage and file sharing`,
+        icon: IcDrive,
+        included: true,
+    },
+    {
+        id: 'document-and-spreadsheet-editor',
         text: c('meet_2025: Feature').t`Document and spreadsheet editor`,
-        icon: 'file-lines',
+        icon: IcFileLines,
         included: true,
     },
     {
+        id: 'vpn-with-ad-blocker',
         text: c('meet_2025: Feature').t`VPN with ad-blocker and malware protection`,
-        icon: 'shield',
+        icon: IcShield,
         included: true,
     },
     {
+        id: 'password-manager-with-team-vaults',
         text: c('meet_2025: Feature').t`Password manager with team vaults`,
-        icon: 'locks',
+        icon: IcLocks,
         included: true,
     },
 ];
 
 const getWorkspacePremiumUpsellFeatures = (maxSpace: number, maxDomains: number): UpsellFeature[] => [
-    { text: c('meet_2025: Feature').t`Includes Meet Professional`, icon: 'video-camera', included: true },
+    {
+        id: 'includes-meet-professional',
+        text: c('meet_2025: Feature').t`Includes Meet Professional`,
+        icon: IcVideoCamera,
+        included: true,
+    },
     toUpsellFeature(getShortStorageFeatureB2B(maxSpace)),
     toUpsellFeature(getNDomainsFeature({ n: maxDomains, tooltip: false })),
     {
+        id: 'private-ai-chat',
         text: c('meet_2025: Feature').t`Private AI Chat (${LUMO_SHORT_APP_NAME})`,
-        icon: 'speech-bubble',
+        icon: IcSpeechBubble,
         included: true,
     },
     getVideoMeetingsFeature(PAID_PREMIUM_MAX_PARTICIPANTS),
-    { text: c('meet_2025: Feature').t`Email writing assistant`, icon: 'pen-sparks', included: true },
-    { text: c('meet_2025: Feature').t`Data retention policies`, icon: 'lock', included: true },
+    {
+        id: 'email-writing-assistant',
+        text: c('meet_2025: Feature').t`Email writing assistant`,
+        icon: IcPenSparks,
+        included: true,
+    },
+    {
+        id: 'data-retention-policies',
+        text: c('meet_2025: Feature').t`Data retention policies`,
+        icon: IcLock,
+        included: true,
+    },
 ];
 
 export const useMeetProfessionalFromFreeUpsells = ({
@@ -270,12 +314,11 @@ const MeetProfessionalFromFree = ({
                     )}
                     <div className="flex lg:flex-row flex-column gap-4 lg:items-center">
                         <ul className="unstyled grid lg:grid-cols-2 xl:grid-cols-3 gap-4 m-0 lg:flex-1">
-                            {getMeetProfessionalFeatures().map(({ text, tooltip, icon, status }, index) => {
-                                const key = typeof text === 'string' ? text : index;
+                            {getMeetProfessionalFeatures().map(({ id, text, tooltip, icon: FeatureIcon, status }) => {
                                 return (
-                                    <li key={key} className="flex items-center flex-nowrap">
-                                        {icon && (
-                                            <Icon size={6} name={icon} alt="" className="shrink-0 mr-2 color-primary" />
+                                    <li key={id} className="flex items-center flex-nowrap">
+                                        {FeatureIcon && (
+                                            <FeatureIcon size={6} className="shrink-0 mr-2 color-primary" />
                                         )}
                                         <span>
                                             {text}

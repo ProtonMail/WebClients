@@ -125,6 +125,7 @@ import { getWalletAppFeature } from './wallet';
 
 export const getAllAppsFeature = (): PlanCardFeatureDefinition => {
     return {
+        id: 'all-apps',
         text: c('new_plans: info').t`All ${BRAND_NAME} apps and their premium features`,
         included: true,
     };
@@ -132,6 +133,7 @@ export const getAllAppsFeature = (): PlanCardFeatureDefinition => {
 
 export const getEarlyAccessFeature = (): PlanCardFeatureDefinition => {
     return {
+        id: 'early-access',
         text: c('new_plans: info').t`Early access to new apps and features`,
         included: true,
     };
@@ -139,6 +141,7 @@ export const getEarlyAccessFeature = (): PlanCardFeatureDefinition => {
 
 export const getUpToNUsers = (numberOfUsers: number): PlanCardFeatureDefinition => {
     return {
+        id: 'up-to-n-users',
         text: getNUsersText(numberOfUsers),
         included: true,
     };
