@@ -1991,6 +1991,20 @@
         "Total pentru o lună",
         "Total pentru ${ n } luni",
         "Total pentru ${ n } de luni"
+      ],
+      "Amount due": [
+        "Suma datorată"
+      ],
+      "Amount due after trial": [
+        "Suma datorată după probare"
+      ],
+      "Amount due now": [
+        "Suma datorată acum"
+      ],
+      "Total for ${ cycle } month": [
+        "Total pentru ${ cycle } lună",
+        "Total pentru ${ cycle } luni",
+        "Total pentru ${ cycle } de luni"
       ]
     },
     "Collapsible tooltip": {
@@ -7255,7 +7269,7 @@
         "Utilizator activat"
       ],
       "username": [
-        "utilizator"
+        "nume de utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -8024,6 +8038,12 @@
       ],
       "Read this file": [
         "Am citit acest fișier"
+      ],
+      "Do you remember your password?": [
+        "Vă amintiți parola?"
+      ],
+      "Link expired": [
+        "legătură web expirată."
       ]
     },
     "info": {
@@ -8130,7 +8150,7 @@
         "${ albumProgress.added } din ${ albumProgress.total }"
       ],
       "${ BRAND_NAME } username": [
-        "Nnume de utilizator ${ BRAND_NAME }"
+        "Nume de utilizator ${ BRAND_NAME }"
       ],
       "${ n } month": [
         "O lună",
@@ -8738,7 +8758,7 @@
         "Încărcat de"
       ],
       "Username": [
-        "Nume utilizator"
+        "Nume de utilizator"
       ],
       "Verification code": [
         "Cod de verificare"
@@ -11868,7 +11888,7 @@
         "Nume"
       ],
       "Name or email address": [
-        "Nume utilizator/adresa de e-mail"
+        "Nume de utilizator/adresa de e-mail"
       ],
       "New name": [
         "Nume nou"
@@ -14945,6 +14965,9 @@
       ],
       "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
         "Starea migrării datelor de la ${ providerName } la ${ BRAND_NAME }"
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Această legătură web a expirat. Prelungiți data expirării."
       ]
     },
     "tooltip": {

@@ -1963,6 +1963,19 @@
       "Total for ${ n } month": [
         "Total per ${ n } mes",
         "Total per ${ n } mesos"
+      ],
+      "Amount due": [
+        "Import pendent"
+      ],
+      "Amount due after trial": [
+        "Import a pagar després de la prova"
+      ],
+      "Amount due now": [
+        "Import pendent de pagament"
+      ],
+      "Total for ${ cycle } month": [
+        "Total per ${ cycle } mes",
+        "Total per ${ cycle } mesos"
       ]
     },
     "Collapsible tooltip": {
@@ -7902,6 +7915,12 @@
       ],
       "Read this file": [
         "Llegir aquest fitxer"
+      ],
+      "Do you remember your password?": [
+        "Recordeu la vostra contrasenya?"
+      ],
+      "Link expired": [
+        "L’enllaç ha caducat."
       ]
     },
     "info": {
@@ -14645,6 +14664,9 @@
       ],
       "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
         "Estat de la migració de dades de ${ providerName } a ${ BRAND_NAME }"
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Aquest enllaç ha caducat. Amplieu la data de caducitat"
       ]
     },
     "tooltip": {
