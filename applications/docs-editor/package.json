@@ -13,7 +13,7 @@
     "sheets:scan-imports": "node scripts/scan-spreadsheet-imports.mjs",
     "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --babelLoader --noLogicalScss",
     "test": "jest",
-    "test:ci": "jest --runInBand --ci --coverage",
+    "test:ci": "jest --runInBand --ci --coverage --logHeapUsage",
     "test:watch": "jest --watch --coverage=false"
   },
   "dependencies": {
