@@ -1,7 +1,7 @@
 /** @jest-environment jsdom */
 import { isDevOrBlackHost } from '@proton/shared/lib/env';
 
-import { isUnleashToolbarEnabled } from './isUnleashToolbarEnabled';
+import { DISABLE_UNLEASH_TOOLBAR_KEY, isUnleashToolbarEnabled } from './isUnleashToolbarEnabled';
 
 jest.mock('@proton/shared/lib/env', () => ({
     isDevOrBlackHost: jest.fn(),
@@ -12,6 +12,7 @@ const mockIsDevOrBlackHost = isDevOrBlackHost as jest.MockedFunction<typeof isDe
 describe('isUnleashToolbarEnabled', () => {
     afterEach(() => {
         jest.clearAllMocks();
+        window.localStorage.clear();
     });
 
     it('returns true on dev and black hosts', () => {
@@ -26,5 +27,26 @@ describe('isUnleashToolbarEnabled', () => {
 
         expect(isUnleashToolbarEnabled()).toBe(false);
         expect(mockIsDevOrBlackHost).toHaveBeenCalledWith(window.location.host);
+    });
+
+    it('returns false on a dev or black host when the opt-out key is set', () => {
+        mockIsDevOrBlackHost.mockReturnValue(true);
+        window.localStorage.setItem(DISABLE_UNLEASH_TOOLBAR_KEY, 'true');
+
+        expect(isUnleashToolbarEnabled()).toBe(false);
+    });
+
+    it.each(['false', '0', ''])('ignores the opt-out key set to %p', (value) => {
+        mockIsDevOrBlackHost.mockReturnValue(true);
+        window.localStorage.setItem(DISABLE_UNLEASH_TOOLBAR_KEY, value);
+
+        expect(isUnleashToolbarEnabled()).toBe(true);
+    });
+
+    it('stays disabled on a non-dev host regardless of the opt-out key', () => {
+        mockIsDevOrBlackHost.mockReturnValue(false);
+        window.localStorage.setItem(DISABLE_UNLEASH_TOOLBAR_KEY, 'true');
+
+        expect(isUnleashToolbarEnabled()).toBe(false);
     });
 });
