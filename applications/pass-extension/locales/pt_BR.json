@@ -4339,6 +4339,9 @@
       "Download": [
         "Baixar"
       ],
+      "Download \"${ filename }\"": [
+        "Baixar \"${ filename }\""
+      ],
       "Download file": [
         "Baixar arquivo"
       ],
@@ -4543,15 +4546,6 @@
       ]
     },
     "Result": {
-      "Enter a URL to check to see if your current rule is matching the URL": [
-        "Insira uma URL para verificar se a sua regra atual corresponde a ela"
-      ],
-      "The rule is matching this URL": [
-        "A regra corresponde a esta URL"
-      ],
-      "The rule is NOT matching this URL": [
-        "A regra NÃO corresponde a esta URL"
-      ],
       "This URL will be blocked from autofill": [
         "Esta URL será bloqueada no preenchimento automático"
       ],
@@ -4733,6 +4727,9 @@
       "${ BRAND_NAME } addresses": [
         "Endereços da ${ BRAND_NAME }"
       ],
+      "${ PASS_APP_NAME } Logs": [
+        "Registros do ${ PASS_APP_NAME }"
+      ],
       "${ PASS_APP_NAME } Settings": [
         "Configurações do ${ PASS_APP_NAME }"
       ],
@@ -4901,6 +4898,9 @@
       ],
       "Email": [
         "E-mail"
+      ],
+      "Enable offline mode": [
+        "Ativar omodo off-line"
       ],
       "Encrypted import": [
         "Importação criptografada"
@@ -5452,6 +5452,9 @@
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Permita acesso à área de transferência para ativar a limpeza automática de senhas e dados copiados."
+      ],
+      "Identity could not be confirmed": [
+        "A identidade não pode ser confirmada."
       ],
       "Invalid alias prefix": [
         "O prefixo de alias não é valido."

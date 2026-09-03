@@ -4570,20 +4570,20 @@
       ]
     },
     "Result": {
-      "Enter a URL to check to see if your current rule is matching the URL": [
-        "Introduïu un URL per comprovar si la vostra regla actual coincideix amb l'URL"
-      ],
-      "The rule is matching this URL": [
-        "La regla coincideix amb aquest URL"
-      ],
-      "The rule is NOT matching this URL": [
-        "La regla NO coincideix amb aquest URL"
+      "Enter a URL to check if it matches the current rule": [
+        "Introduïu un URL per comprovar si coincideix amb la regla actual"
       ],
       "This URL will be blocked from autofill": [
         "Aquest URL es bloquejarà per l'emplenament automàtic"
       ],
       "This URL will NOT be blocked from autofill": [
         "Aquest URL NO es bloquejarà per l'emplenament automàtic"
+      ],
+      "URL doesn't match the rule": [
+        "L'URL no coincideix amb la regla"
+      ],
+      "URL matches the rule": [
+        "L'URL coincideix amb la regla"
       ]
     },
     "Security Center - Info": {
@@ -5485,6 +5485,9 @@
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Concediu accés al porta-retalls per habilitar la neteja automàtica de les contrasenyes i dades copiades."
+      ],
+      "Identity could not be confirmed": [
+        "No s'ha pogut confirmar la identitat."
       ],
       "Invalid alias prefix": [
         "El prefix de l'àlies no és vàlid"
