@@ -268,6 +268,9 @@
       "Pay ${ price } now": [
         "Zaplatiť teraz ${ price }"
       ],
+      "Preview logs": [
+        "Náhľad záznamov"
+      ],
       "Previous": [
         "Predchádzajúci"
       ],
@@ -1150,12 +1153,6 @@
       ],
       "Total": [
         "Celkom"
-      ],
-      "Total for ${ n } month": [
-        "Celkom za ${ n } mesiac",
-        "Celkom za ${ n } mesiace",
-        "Celkom za ${ n } mesiacov",
-        "Celkom za ${ n } mesiacov"
       ]
     },
     "Collapsible tooltip": {
@@ -2806,6 +2803,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe, asistent písania"
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } značka"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta písania Scribe"
       ],
@@ -3040,6 +3040,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ak email v priečinku doručenej pošty nenájdete, skontrolujte priečinok so spamom, prosím."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Ak ste stratili prístup k aplikácii na overovanie, môžete použiť jeden zo 16 záložných obnovovacích kódov, ktoré ste dostali pri nastavovaní dvojfaktorovej autentifikácie. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Ak znížite predplatné, stratíte prístup k plateným funkciám ${ MAIL_APP_NAME } a ${ VPN_APP_NAME }."
       ],
@@ -3072,6 +3075,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Načítanie kalendára, počkajte, prosím. V novej karte budete presmerovaní na našu plánovaciu platformu Calendly."
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Záznamy nám pomáhajú pochopiť, čo sa udialo pred vznikom problému. Obsahujú akcie aplikácie a chybové hlásenia, nie však obsah správ."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -3238,6 +3244,9 @@
       "We use 3-D Secure to protect your payments": [
         "Na ochranu vašich platieb používame 3-D Secure"
       ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Na dokončenie tejto transakcie vás presmerujeme do ${ IDEAL_WERO_BRAND_NAME } v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Na dokončenie tejto transakcie vás presmerujeme na PayPal v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
       ],
@@ -3371,6 +3380,9 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "Používateľské meno ${ BRAND_NAME }"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } znakov"
       ],
       "${ n } month": [
         "${ n } mesiac",
@@ -4988,6 +5000,9 @@
       "More plans are available in other currencies": [
         "Ďalšie plány sú k dispozícii v iných menách"
       ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Platba cez ${ IDEAL_WERO_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Spôsob platby potrebný na aktiváciu predplatného po skončení skúšobnej doby."
       ],
@@ -5081,6 +5096,9 @@
       "You will soon be redirected to verify your payment.": [
         "Za účelom overenia platby dôjde o chvíľu k presmerovaniu."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Vaša mena bola zmenená na eurá (€), pretože ${ IDEAL_WERO_BRAND_NAME } podporuje platby len v eurách."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Vaša mena bola zmenená na eurá (€), pretože SEPA bankové prevody podporujú platby len v eurách."
       ],
@@ -5092,6 +5110,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Inicializácia ${ IDEAL_WERO_BRAND_NAME } zlyhala. Skúste to neskôr znova, prosím."
+      ],
       "Invalid card number": [
         "Neplatné číslo karty"
       ],
@@ -5117,6 +5138,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Niečo sa pokazilo. Overenie Google Pay zlyhalo."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Potvrdením oprávňujete spoločnosť ${ BRAND_NAME } a Stripe, nášho poskytovateľa platobných služieb, aby z tohto bankového účtu prostredníctvom priameho inkasa SEPA inkasovali budúce platby za vaše predplatné, a vašu banku, aby tieto platby strhla. Vaša prvá platba je realizovaná teraz spoločnosťou ${ IDEAL_WERO_BRAND_NAME }. Váš balík sa automaticky obnovuje, kým ho nezrušíte; pred každým inkasom vás budeme informovať. V prípade inkás prostredníctvom priameho inkasa môžete požiadať svoju banku o vrátenie platby do 8 týždňov od dátumu inkasa v súlade s podmienkami vašej zmluvy s bankou. Toto sa nevzťahuje na platbu spoločnosti ${ IDEAL_WERO_BRAND_NAME }, ktorú práve uskutočňujete."
       ]
     },
     "Payments.info": {
@@ -5989,6 +6015,9 @@
       ],
       "Select a plan": [
         "Vyberte plán"
+      ],
+      "September Sale": [
+        "Septembrová zľava"
       ],
       "Set recovery methods": [
         "Nastaviť spôsoby obnovenia"
