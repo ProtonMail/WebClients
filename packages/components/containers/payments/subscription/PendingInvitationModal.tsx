@@ -4,9 +4,8 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
-import { PLANS } from '@proton/payments/core/constants';
 import { acceptInvitation, rejectInvitation } from '@proton/shared/lib/api/user';
-import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { PendingInvitation } from '@proton/shared/lib/interfaces';
 
@@ -54,8 +53,6 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
         <strong key="assigned-storage">{humanSize({ bytes: invite.MaxSpace, fraction: 0 })}</strong>
     );
 
-    const brandOrAppName = invite.OrganizationPlanName === PLANS.PASS_FAMILY ? PASS_APP_NAME : BRAND_NAME;
-
     return (
         <ModalTwo {...modalProps} size="large">
             <ModalTwoHeader
@@ -65,7 +62,7 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
             <ModalTwoContent>
                 <div className="bg-weak p-3 rounded flex gap-2 mb-4">
                     <div>{c('familyOffer_2023:Family plan').jt`Invited by: ${inviteEmail}`}</div>
-                    {invite.OrganizationPlanName !== PLANS.PASS_FAMILY && (
+                    {!!invite.MaxSpace && (
                         <div>{c('familyOffer_2023:Family plan').jt`Storage assigned to you: ${assignedStorage}`}</div>
                     )}
                 </div>
@@ -78,7 +75,7 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
                 ) : (
                     <>
                         <p className="my-2">{c('familyOffer_2023:Family plan')
-                            .jt`You're invited to link your ${BRAND_NAME} Account to this family plan and together enjoy all ${brandOrAppName} premium features.`}</p>
+                            .jt`You're invited to link your ${BRAND_NAME} Account to this family group and enjoy all its premium features.`}</p>
                         <p className="my-2">{c('familyOffer_2023:Family plan')
                             .t`The subscription will be billed to the primary admin of this plan.`}</p>
                         <p className="my-2">{c('familyOffer_2023:Family plan')
