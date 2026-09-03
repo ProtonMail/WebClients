@@ -1767,6 +1767,9 @@
       ]
     },
     "Error": {
+      "An error occurred": [
+        "Произошла ошибка"
+      ],
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
       ],
@@ -1848,8 +1851,14 @@
       "Invalid meeting link": [
         "Недействительная ссылка на встречу"
       ],
+      "Invalid URL": [
+        "Недействительный URL"
+      ],
       "Invalid verification code": [
         "Неверный код подтверждения"
+      ],
+      "Missing signature": [
+        "Подпись отсутствует"
       ],
       "Not a valid number": [
         "Номер недействителен"
@@ -1874,6 +1883,12 @@
       ],
       "Signature verification failed": [
         "Проверка подписи не удалась"
+      ],
+      "Something went wrong": [
+        "Что-то пошло не так"
+      ],
+      "Something went wrong. Please try again.": [
+        "Что-то пошло не так. Пожалуйста, попробуйте еще раз."
       ],
       "The email addresses do not match": [
         "Адреса электронной почты не совпадают"

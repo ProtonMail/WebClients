@@ -61,14 +61,8 @@
       "A participant reacted with ${ emoji }": [
         "Um participante reagiu com ${ emoji }"
       ],
-      "Abstract background applied": [
-        "Plano de fundo de abstrato aplicado"
-      ],
-      "Beach background applied": [
-        "Plano de fundo de praia aplicado"
-      ],
-      "Coffee place background applied": [
-        "Plano de fundo de cafeteria aplicado"
+      "Background removed": [
+        "Plano de fundo removido"
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Conectado via modo de retransmissão TURN devido às restrições da rede. Isso pode aumentar a latência e afetar a qualidade da chamada."
@@ -76,17 +70,11 @@
       "Connection lost. Reconnecting…": [
         "Conexão perdida. Reconectando…"
       ],
-      "Mountain background applied": [
-        "Plano de fundo de montanha aplicado"
-      ],
       "New chat message: ${ message }": [
         "Nova mensagem no bate-papo: ${ message }"
       ],
       "Now starting recording": [
         "Agora iniciando a gravação"
-      ],
-      "Office background applied": [
-        "Plano de fundo de escritório aplicado"
       ],
       "Reconnected to the meeting": [
         "Reconectado à reunião"
@@ -499,6 +487,9 @@
       ],
       "Rejoin meeting": [
         "Entrar novamente na reunião"
+      ],
+      "Remove ${ name }": [
+        "Remover ${ name }"
       ],
       "Remove reaction ${ emoji }, ${ identities.length } reaction": [
         "Remover reação ${ emoji }, ${ identities.length } reação",
@@ -1857,8 +1848,50 @@
       ]
     },
     "Error": {
+      "An error occurred": [
+        "Ocorreu um erro"
+      ],
       "Background blur initialization failed. Please toggle your camera or background blur again": [
         "Falha na inicialização do desfoque de fundo. Por favor, ative/desative a câmera ou o desfoque de fundo novamente"
+      ],
+      "Cannot download a folder": [
+        "Não é possível baixar uma pasta"
+      ],
+      "Cannot share root folder": [
+        "Não é possível compartilhar a pasta raiz"
+      ],
+      "Cannot verify the author of this file": [
+        "Não é possível verificar o autor deste arquivo"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Não é possível verificar quem é autor enviou este arquivo"
+      ],
+      "Copy operation aborted": [
+        "Operação de cópia interrompida"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Não é permitido copiar o item para um local que não seja uma pasta"
+      ],
+      "Could not load sharing details": [
+        "Não foi possível carregar os detalhes do compartilhamento"
+      ],
+      "Could not unlock the parent folder": [
+        "Não foi possível desbloquear a pasta pai"
+      ],
+      "Could not unlock this item": [
+        "Não foi possível desbloquear este item"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Não é permitido criar documentos dentro de itens que não sejam pastas"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Não é permitido criar arquivos dentro de itens que não sejam pastas"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Não é permitido criar pastas dentro de itens que não sejam pastas"
+      ],
+      "Device not found": [
+        "Dispositivo não encontrado"
       ],
       "Domain not available, try again later": [
         "Domínio indisponível. Tente novamente mais tarde."
@@ -1889,6 +1922,24 @@
       ],
       "Failed to create personal meeting, please refresh the page": [
         "Não foi possível criar a reunião pessoal. Atualize a página."
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Falha ao descriptografar a chave de marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Falha ao descriptografar o nome de marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Falha ao descriptografar a senha dos favoritos: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Falha ao descriptografar a chave de conteúdo: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Falha ao descriptografar o nome do item: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Falha ao descriptografar os metadados da revisão"
       ],
       "Failed to decrypt session key": [
         "Falha ao descriptografar a chave de sessão"
@@ -1950,29 +2001,84 @@
       "Failed to update waiting room setting. Please try again.": [
         "Falha ao atualizar a configuração da sala de espera. Tente novamente."
       ],
+      "Failed to verify invitation": [
+        "Erro ao verificar o convite"
+      ],
+      "File has no revision": [
+        "O arquivo não possui revisão"
+      ],
+      "Image preview not found": [
+        "Pré-visualização da imagem não encontrada"
+      ],
       "Incorrect username": [
         "Nome de usuário incorreto"
       ],
       "Invalid meeting link": [
         "Link da reunião inválido"
       ],
+      "Invalid URL": [
+        "O URL não é válido."
+      ],
       "Invalid verification code": [
         "O código de verificação não é válido."
+      ],
+      "Invitation not found": [
+        "Convite não encontrado"
+      ],
+      "Item not found": [
+        "Item não encontrado"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "O link público antigo não pode ser atualizado. Crie um novo link público."
       ],
       "Live captions have stopped.": [
         "As legendas ao vivo pararam."
       ],
+      "Missing inviter email": [
+        "E-mail de quem fez o convite ausente"
+      ],
+      "Missing signature": [
+        "Assinatura ausente"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Não é permitido mover o item para um local que não seja uma pasta"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "O nome deve ter no máximo ${ MAX_NODE_NAME_LENGTH } caractere",
+        "O nome deve ter no máximo ${ MAX_NODE_NAME_LENGTH } caracteres"
+      ],
+      "Name must not be empty": [
+        "O nome não pode estar vazio"
+      ],
+      "No file data was received. Please try again.": [
+        "Nenhum dado de arquivo foi recebido. Tente novamente."
+      ],
       "Not a valid number": [
         "Não é um número válido"
+      ],
+      "Operation aborted": [
+        "Operação abortada"
+      ],
+      "Operation failed, try again later": [
+        "Erro na operação, tente novamente mais tarde"
       ],
       "Organization key is not decrypted": [
         "A chave de organização não está descriptografada"
       ],
+      "Part of the file appears to be corrupted": [
+        "Parte do arquivo parece estar corrompida"
+      ],
       "Passwords do not match": [
         "As senhas não correspondem"
       ],
+      "Photo not found": [
+        "Foto não encontrada"
+      ],
       "Please allow screen sharing in your system permissions, then try again": [
         "Habilite o compartilhamento de tela nas permissões do sistema e tente novamente"
+      ],
+      "Request aborted": [
+        "Solicitação abortada"
       ],
       "Request timed out": [
         "A solicitação expirou"
@@ -1983,8 +2089,35 @@
       "Screen share is not supported on mobile browsers": [
         "O compartilhamento de tela não tem suporte em navegadores para dispositivos móveis"
       ],
+      "Signature is missing": [
+        "Assinatura ausente"
+      ],
       "Signature verification failed": [
         "Erro na verificação da assinatura"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Falha na assinatura do remetente: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "A verificação de assinatura para ${ signatureType } falhou"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "A verificação de assinatura para ${ signatureType } falhou: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "O envio de alguns dados de arquivo falhou. Tente novamente."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "O envio de algumas partes de arquivo falhou. Tente novamente."
+      ],
+      "Some items could not be loaded": [
+        "Não foi possível carregar alguns itens"
+      ],
+      "Something went wrong": [
+        "Algo deu errado"
+      ],
+      "Something went wrong. Please try again.": [
+        "Ocorreu um erro. Tente novamente."
       ],
       "The email addresses do not match": [
         "Os endereços de e-mail não correspondem."
@@ -1998,6 +2131,9 @@
       "The selected microphone is no longer available.": [
         "O microfone selecionado não está mais disponível."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "O arquivo enviado não corresponde ao original. Por favor, tente novamente."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede o máximo de ${ maximumLength } caracteres."
       ],
@@ -2007,8 +2143,23 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo exige um mínimo de ${ minimumLength } caracteres."
       ],
+      "This file has no version available to download": [
+        "O arquivo não possui uma versão para download"
+      ],
+      "This file version could not be uploaded": [
+        "Não foi possível fazer o envio desta versão do arquivo"
+      ],
+      "This item is no longer shared": [
+        "Este item não está mais sendo compartilhado"
+      ],
+      "This item is not shared": [
+        "Este item não está compartilhado"
+      ],
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
         "Esta reunião está em uma versão mais antiga. O anfitrião precisa encerrá-la e atualizar o Meet para reiniciar com a versão mais recente."
+      ],
+      "Too many server requests, please try again later": [
+        "Muitas solicitações ao servidor, tente novamente mais tarde"
       ],
       "Try using only letters, numerals, and _.-": [
         "Tente usar apenas letras, números e _.-"
@@ -2022,8 +2173,23 @@
       "Username must end with a letter or digit": [
         "O nome de usuário deve terminar com uma letra ou dígito"
       ],
+      "Verification keys are not available": [
+        "As chaves de verificação não estão disponíveis"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "As chaves de verificação para ${ signatureType } não estão disponíveis"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Não conseguimos enviar um código de verificação usando este método."
+      ],
+      "You can create public links for your own files only": [
+        "Você pode criar links públicos apenas para seus próprios arquivos"
+      ],
+      "You can update a public link for your own files only": [
+        "Você pode atualizar um link público apenas para seus próprios arquivos"
+      ],
+      "You do not have access to this item": [
+        "Você não tem acesso a esse item"
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "O seu navegador ficou sem espaço de armazenamento. Nós salvamos a gravação até este ponto."
@@ -2268,6 +2434,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Um número de telefone apenas pode ser usado para verificar uma conta da ${ BRAND_NAME }"
       ],
+      "Adding ${ name }": [
+        "Adicionando ${ name }"
+      ],
       "Admit": [
         "Admitir"
       ],
@@ -2288,6 +2457,9 @@
       ],
       "Attention required": [
         "Atenção necessária"
+      ],
+      "Author is not provided on public link": [
+        "O autor não forneceu um link público"
       ],
       "Available with a paid plan": [
         "Disponível com plano pago"
@@ -2477,6 +2649,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se você não encontrar o e-mail na caixa de entrada. Verifique a pasta de spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "If Se você perdeu o acesso ao seu aplicativo de autenticação, pode usar um dos 16 códigos de recuperação de backup fornecidos quando configurou a autenticação de dois fatores. ${ learnMoreLink }"
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Se você estiver usando o Firefox, certifique-se de que o PeerConnection esteja ativado."
@@ -2990,9 +3165,6 @@
       ]
     },
     "Label": {
-      "${ BRAND_NAME } background": [
-        "Plano de fundo da ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } username": [
         "Nome de usuário da ${ BRAND_NAME }"
       ],
@@ -3002,9 +3174,6 @@
       "${ numberOfStars } star": [
         "${ numberOfStars } estrela",
         "${ numberOfStars } estrelas"
-      ],
-      "Abstract background": [
-        "Plano de fundo abstrato"
       ],
       "Add optional details": [
         "Adicionar detalhes opcionais"
@@ -3036,9 +3205,6 @@
       "Background color": [
         "Cor de fundo"
       ],
-      "Beach background": [
-        "Plano de fundo de praia"
-      ],
       "Blurred (next)": [
         "Desfocado (próximo)"
       ],
@@ -3062,9 +3228,6 @@
       ],
       "Code is 6 digits without spaces": [
         "O código é de 6 dígitos sem espaços"
-      ],
-      "Coffee place background": [
-        "Plano de fundo de cafeteria"
       ],
       "Connection Quality": [
         "Qualidade da conexão"
@@ -3174,9 +3337,6 @@
       "Monday to Friday": [
         "De segunda a sexta"
       ],
-      "Mountain background": [
-        "Plano de fundo de montanha"
-      ],
       "Muted": [
         "Silenciado"
       ],
@@ -3185,9 +3345,6 @@
       ],
       "Next": [
         "Próximo"
-      ],
-      "Office background": [
-        "Plano de fundo de escritório"
       ],
       "Operating system": [
         "Sistema operacional"
@@ -3468,6 +3625,26 @@
       ],
       "Type an encrypted message...": [
         "Digite uma mensagem criptografada..."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atributos"
+      ],
+      "content key": [
+        "chave de conteúdo"
+      ],
+      "hash key": [
+        "chave hash"
+      ],
+      "key": [
+        "chave"
+      ],
+      "membership": [
+        "subscrição"
+      ],
+      "name": [
+        "nome"
       ]
     },
     "Role": {

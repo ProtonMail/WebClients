@@ -25,9 +25,6 @@
       ]
     },
     "Accessibility announcement": {
-      "${ BRAND_NAME } background applied": [
-        "Fondo de ${ BRAND_NAME } aplicado"
-      ],
       "${ name } joined the meeting": [
         "${ name } se ha unido a la reunión"
       ],
@@ -64,20 +61,11 @@
       "A participant reacted with ${ emoji }": [
         "Un participante reaccionó con ${ emoji }"
       ],
-      "Abstract background applied": [
-        "Fondo abstracto aplicado"
-      ],
       "Background effect turned off": [
         "Efecto de fondo desactivado"
       ],
-      "Beach background applied": [
-        "Fondo de playa aplicado"
-      ],
       "Blurred background applied": [
         "Fondo difuminado aplicado"
-      ],
-      "Coffee place background applied": [
-        "Fondo de cafetería aplicado"
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Conexión mediante modo de retransmisión TURN debido a restricciones en la red. Esto puede aumentar la latencia y afectar a la calidad de la llamada."
@@ -85,17 +73,11 @@
       "Connection lost. Reconnecting…": [
         "Conexión perdida. Reconectando…"
       ],
-      "Mountain background applied": [
-        "Fondo de montaña aplicado"
-      ],
       "New chat message: ${ message }": [
         "Nuevo mensaje de chat: ${ message }"
       ],
       "Now starting recording": [
         "Comenzó la grabación"
-      ],
-      "Office background applied": [
-        "Fondo de oficina aplicado"
       ],
       "Reconnected to the meeting": [
         "Reconectando a la reunión"
@@ -1884,8 +1866,59 @@
       ]
     },
     "Error": {
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Se requiere un mensaje cuando se reporte una infracción de derechos de autor o datos robados"
+      ],
+      "An error occurred": [
+        "Ocurrió un error"
+      ],
       "Background blur initialization failed. Please toggle your camera or background blur again": [
         "Error al inicializar el desenfoque de fondo. Vuelva a activar o desactivar la cámara o el difuminado de fondo"
+      ],
+      "Bookmark password is not available": [
+        "La contraseña del marcador no está disponible"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "No se puede añadir una foto al álbum sin un nombre válido"
+      ],
+      "Cannot download a folder": [
+        "No se puede descargar una carpeta"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "No se puede mover un elemento si un nombre válido, renombre el elemento primero"
+      ],
+      "Cannot share root folder": [
+        "No se puede compartir la carpeta raíz"
+      ],
+      "Cannot verify the author of this file": [
+        "No se puede verificar el autor de este archivo"
+      ],
+      "Cannot verify who uploaded this file": [
+        "No se puede verificar quién cargó este archivo"
+      ],
+      "Copy operation aborted": [
+        "Operación de copiado abortada"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "No se permite copiar un elemento en un elemento que no sea carpeta"
+      ],
+      "Could not find an available name": [
+        "No se pudo encontrar un nombre disponible"
+      ],
+      "Could not load sharing details": [
+        "No se pudieron cargar los detalles compartidos"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "No se pudo cargar la vista previa de imagen: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "No se pudo leer parte de este archivo: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "No se pudo desbloquear la carpeta principal"
+      ],
+      "Could not unlock this item": [
+        "No se pudo desbloquear este elemento"
       ],
       "Couldn’t play the recording on this speaker.": [
         "No se pudo reproducir la grabación en este altavoz."
@@ -1895,6 +1928,18 @@
       ],
       "Couldn’t start the microphone test.": [
         "No se pudo iniciar la prueba del micrófono."
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "No se permite crear documentos en elementos que no sean carpetas"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "No se permite crear archivos en elementos que no sean carpetas"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "No se permite crear carpetas en elementos que no sean carpetas"
+      ],
+      "Device not found": [
+        "Dispositivo no encontrado"
       ],
       "Domain not available, try again later": [
         "Dominio no disponible, inténtelo más tarde"
@@ -1911,6 +1956,9 @@
       "Event deleted": [
         "Evento eliminado"
       ],
+      "Expiration date cannot be in the past": [
+        "La fecha de expiración no puede ser pasada"
+      ],
       "Failed to admit the participant. Please try again.": [
         "Error al admitir al participante. Intente de nuevo."
       ],
@@ -1925,6 +1973,27 @@
       ],
       "Failed to create personal meeting, please refresh the page": [
         "Error al crear la reunión personal, actualice la página"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Error al descifrar la clave del marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Error al descifrar el nombre del marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Error al descifrar la contraseña del marcador: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Error al descifrar la clave de contenido: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Error al descifrar el nombre del elemento: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Error al descifrar la clave del nodo: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Error al descifrar los metadatos de la revisión"
       ],
       "Failed to decrypt session key": [
         "Error al descifrar la clave de sesión"
@@ -1949,6 +2018,9 @@
       ],
       "Failed to edit room name": [
         "Error al editar el nombre de la sala"
+      ],
+      "Failed to get inviter keys": [
+        "Error al obtener las claves de quien invita"
       ],
       "Failed to join meeting. Please try again later.": [
         "Error al unirse a la reunión. Intente de nuevo más tarde."
@@ -1992,14 +2064,38 @@
       "Failed to update waiting room setting. Please try again.": [
         "Error al actualizar los ajustes de la sala de espera. Intente de nuevo."
       ],
+      "Failed to verify invitation": [
+        "Error al verificar la invitación"
+      ],
+      "File download failed due to empty response": [
+        "Error al descargar el archivo debido a una respuesta vacía"
+      ],
+      "File has no revision": [
+        "El archivo no tiene revisión"
+      ],
+      "Image preview not found": [
+        "Vista previa de imagen no encontrada"
+      ],
       "Incorrect username": [
         "Nombre de usuario incorrecto"
       ],
       "Invalid meeting link": [
         "Enlace de reunión no válido"
       ],
+      "Invalid URL": [
+        "URL inválida"
+      ],
       "Invalid verification code": [
         "Código de verificación inválido"
+      ],
+      "Invitation not found": [
+        "Invitación no encontrada"
+      ],
+      "Item not found": [
+        "Elemento no encontrado"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "El enlace público anterior no se puede actualizar. Cree otro enlace público."
       ],
       "Live captions aren't working. Try turning them off and on again.": [
         "No funcionan los subtítulos en directo. Pruebe desactivarlos y activarlos de nuevo."
@@ -2013,17 +2109,69 @@
       "Microphone access is blocked. Allow it in your browser settings.": [
         "El acceso al micrófono está bloqueado. Permítalo en los ajustes del navegador."
       ],
+      "Missing inviter email": [
+        "Falta el correo electrónico de invitación"
+      ],
+      "Missing signature": [
+        "Falta la firma"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Falta la firma para ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Operación de mover abortada"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "No se permite mover un elemento en un elemento que no sea carpeta"
+      ],
+      "Moving root item is not allowed": [
+        "No está permitido mover el elemento raíz"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "El nombre debe tener como máximo ${ MAX_NODE_NAME_LENGTH } caracter",
+        "El nombre debe tener como máximo ${ MAX_NODE_NAME_LENGTH } caracteres"
+      ],
+      "Name must not be empty": [
+        "El nombre no debe estar vacío"
+      ],
+      "No file data was received. Please try again.": [
+        "No se recibió ningún dato del archivo. Intente de nuevo."
+      ],
       "Not a valid number": [
         "Número no válido"
+      ],
+      "Only admins can convert external invitations": [
+        "Solo los administradores pueden convertir invitaciones externas"
+      ],
+      "Operation aborted": [
+        "Operación abortada"
+      ],
+      "Operation failed, try again later": [
+        "Operación fallida, intente de nuevo más tarde"
       ],
       "Organization key is not decrypted": [
         "La clave de la organización no está descifrada"
       ],
+      "Part of the file appears to be corrupted": [
+        "Parte del archivo parece estar corrupto"
+      ],
       "Passwords do not match": [
         "Las contraseñas no coinciden"
       ],
+      "Photo is already in the target album": [
+        "La foto ya está en el álbum objetivo"
+      ],
+      "Photo not found": [
+        "Foto no encontrada"
+      ],
       "Please allow screen sharing in your system permissions, then try again": [
         "Permita compartir la pantalla en los permisos de su sistema y luego inténtelo de nuevo."
+      ],
+      "Renaming root item is not allowed": [
+        "No está permitido renombrar el elemento raíz"
+      ],
+      "Request aborted": [
+        "Solicitud abortada"
       ],
       "Request timed out": [
         "Tiempo de espera agotado"
@@ -2034,8 +2182,35 @@
       "Screen share is not supported on mobile browsers": [
         "Compartir pantalla no se admite en navegadores móviles"
       ],
+      "Signature is missing": [
+        "Falta la firma"
+      ],
       "Signature verification failed": [
         "Error en la verificación de la firma"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Error en la verificación de la firma: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Error al verificar la firma de ${ signatureType }"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Error al verificar la firma de ${ signatureType }: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Error al cargar algunos datos del archivo. Intente de nuevo."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Error al cargar algunas partes del archivo. Intente de nuevo."
+      ],
+      "Some items could not be loaded": [
+        "No se pudieron cargar algunos elementos"
+      ],
+      "Something went wrong": [
+        "Ocurrió un error."
+      ],
+      "Something went wrong. Please try again.": [
+        "Hubo un problema. Intente de nuevo."
       ],
       "The email addresses do not match": [
         "Las direcciónes de correo electrónico no son las mismas"
@@ -2049,6 +2224,9 @@
       "The selected microphone is no longer available.": [
         "El micrófono seleccionado ya no está disponible."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "El archivo cargado no coincide con el original. Intente de nuevo."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede el máximo de ${ maximumLength } caracteres."
       ],
@@ -2058,8 +2236,32 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
+      "This file has missing crypto material": [
+        "Este archivo tiene material cripto faltante"
+      ],
+      "This file has no version available to download": [
+        "Este archivo no tiene una versión disponible para descargar"
+      ],
+      "This file version could not be uploaded": [
+        "No se pudo cargar esta versión del archivo"
+      ],
+      "This item has no image preview": [
+        "Este elemento no tiene vista previa de imagen"
+      ],
+      "This item is no longer shared": [
+        "Este elemento ya no está compartido"
+      ],
+      "This item is not shared": [
+        "Este elemento no está compartido"
+      ],
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
         "Esta reunión es de una versión anterior, el anfitrión debe finalizarla y actualizar Meet para reiniciar con la última versión."
+      ],
+      "Too many server errors, please try again later": [
+        "Demasiados errores del servidor, intente de nuevo más tarde"
+      ],
+      "Too many server requests, please try again later": [
+        "Demasiadas solicitudes del servidor, intente de nuevo más tarde"
       ],
       "Try using only letters, numerals, and _.-": [
         "Intente usando solo letras, números y _.-"
@@ -2073,11 +2275,35 @@
       "Username must end with a letter or digit": [
         "El nombre de usuario debe terminar con una letra o dígito"
       ],
+      "Verification keys are not available": [
+        "Las claves de verificación no están disponibles"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Las claves de verificación para ${ signatureType } no están disponibles"
+      ],
       "Virtual background initialization failed. Please toggle your camera or pick a background again": [
         "Error al inicializar el fondo virtual. Vuelva a activar o desactivar la cámara o seleccione un fondo de nuevo."
       ],
       "We couldn’t send a verification code using this method.": [
         "No pudimos enviar un código de verificación usando este método."
+      ],
+      "You can create public links for your own files only": [
+        "Puede crear enlaces públicos solo para sus propios archivos"
+      ],
+      "You can only leave items that are shared with you": [
+        "Solo puede abandonar elementos que fueron compartidos con usted"
+      ],
+      "You can only upload a new version to a file": [
+        "Solo puede cargar una versión nueva a este archivo"
+      ],
+      "You can update a public link for your own files only": [
+        "Puede actualizar un enlace público solo para sus propios archivos"
+      ],
+      "You do not have access to this item": [
+        "No tiene acceso a este elemento"
+      ],
+      "You do not have access to this shared item": [
+        "No tiene acceso a este elemento compartido"
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "Su navegador se quedó sin espacio de almacenamiento. Se guardó la grabación hasta este momento."
@@ -2354,6 +2580,9 @@
       ],
       "Attention required": [
         "Atención requerida"
+      ],
+      "Author is not provided on public link": [
+        "No se proporciona al autor en el enlace público"
       ],
       "Available with a paid plan": [
         "Disponible con un plan de pago"
@@ -3071,9 +3300,6 @@
       ]
     },
     "Label": {
-      "${ BRAND_NAME } background": [
-        "Fondo de ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
       ],
@@ -3083,9 +3309,6 @@
       "${ numberOfStars } star": [
         "${ numberOfStars } estrella",
         "${ numberOfStars } estrellas"
-      ],
-      "Abstract background": [
-        "Fondo abstracto"
       ],
       "Add optional details": [
         "Añadir detalles opcionales"
@@ -3117,9 +3340,6 @@
       "Background color": [
         "Color de fondo"
       ],
-      "Beach background": [
-        "Fondo de playa"
-      ],
       "Blurred (next)": [
         "Difuminado (siguiente)"
       ],
@@ -3143,9 +3363,6 @@
       ],
       "Code is 6 digits without spaces": [
         "El código es de 6 dígitos sin espacios"
-      ],
-      "Coffee place background": [
-        "Fondo de cafetería"
       ],
       "Connection Quality": [
         "Calidad de la conexión"
@@ -3255,9 +3472,6 @@
       "Monday to Friday": [
         "De lunes a viernes"
       ],
-      "Mountain background": [
-        "Fondo de montaña"
-      ],
       "Muted": [
         "Silenciado"
       ],
@@ -3266,9 +3480,6 @@
       ],
       "Next": [
         "Siguiente"
-      ],
-      "Office background": [
-        "Fondo de oficina"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -3549,6 +3760,26 @@
       ],
       "Type an encrypted message...": [
         "Escriba un mensaje cifrado..."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atributos"
+      ],
+      "content key": [
+        "clave de contenido"
+      ],
+      "hash key": [
+        "clave hash"
+      ],
+      "key": [
+        "clave"
+      ],
+      "membership": [
+        "suscripción"
+      ],
+      "name": [
+        "nombre"
       ]
     },
     "Role": {
