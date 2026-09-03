@@ -4459,15 +4459,6 @@
       ]
     },
     "Result": {
-      "Enter a URL to check to see if your current rule is matching the URL": [
-        "現在のルールがURLに一致するかどうかを確認するには、URLを入力してください"
-      ],
-      "The rule is matching this URL": [
-        "ルールがこのURLと一致しています"
-      ],
-      "The rule is NOT matching this URL": [
-        "ルールがこのURLと一致していません"
-      ],
       "This URL will be blocked from autofill": [
         "このURLは自動入力がブロックされます"
       ],
@@ -5345,6 +5336,9 @@
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "コピーされたパスワードとデータの自動消去を有効にするために、クリップボードへのアクセスを許可してください。"
+      ],
+      "Identity could not be confirmed": [
+        "本人確認ができませんでした"
       ],
       "Invalid alias prefix": [
         "無効なエイリアスプレフィックスです"

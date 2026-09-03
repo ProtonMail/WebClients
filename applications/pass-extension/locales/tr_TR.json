@@ -4570,20 +4570,20 @@
       ]
     },
     "Result": {
-      "Enter a URL to check to see if your current rule is matching the URL": [
-        "Var olan kuralınızın eşleşip eşleşmediğini denetlemek için bir adres yazın"
-      ],
-      "The rule is matching this URL": [
-        "Kural bu adres ile eşleşiyor"
-      ],
-      "The rule is NOT matching this URL": [
-        "Kural bu adres ile EŞLEŞMİYOR"
+      "Enter a URL to check if it matches the current rule": [
+        "Geçerli kural ile eşleşip eşleşmediğini denetlemek için bir adres yazın"
       ],
       "This URL will be blocked from autofill": [
         "Bu adres otomatik doldurmada engellenecek"
       ],
       "This URL will NOT be blocked from autofill": [
         "Bu adres otomatik doldurmada engellenmeyecek"
+      ],
+      "URL doesn't match the rule": [
+        "Adres kural ile eşleşmiyor"
+      ],
+      "URL matches the rule": [
+        "Adres kural ile eşleşiyor"
       ]
     },
     "Security Center - Info": {
@@ -5485,6 +5485,9 @@
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Kopyalanan parola ve verilerin otomatik olarak temizlenmesi için panoya erişme izni verin."
+      ],
+      "Identity could not be confirmed": [
+        "Kimlik doğrulanamadı"
       ],
       "Invalid alias prefix": [
         "Takma ad ön eki geçersiz"
