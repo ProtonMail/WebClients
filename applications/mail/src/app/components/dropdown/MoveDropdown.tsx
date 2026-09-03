@@ -16,7 +16,10 @@ import type { LabelModel } from '@proton/components/containers/labels/modals/Edi
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useLoading } from '@proton/hooks';
+import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
+import { IcFire } from '@proton/icons/icons/IcFire';
 import { IcFolder } from '@proton/icons/icons/IcFolder';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { useFolders } from '@proton/mail/store/labels/hooks';
@@ -31,19 +34,18 @@ import generateUID from '@proton/utils/generateUID';
 import isTruthy from '@proton/utils/isTruthy';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
+import { isElementMessage } from '../../helpers/elements';
+import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
 import { APPLY_LOCATION_TYPES } from '../../hooks/actions/applyLocation/interface';
 import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLocation';
 import { MoveAllType, useMoveAllToFolder } from '../../hooks/actions/move/useMoveAllToFolder';
-import type { FolderItem } from '../../hooks/useMailTreeView/interface';
-import { useMailFolderTreeView } from '../../hooks/useMailTreeView/useMailFolderTreeView';
-import { selectCategoryIDs } from '../../store/elements/elementsSelectors';
-import { useMailSelector } from '../../store/hooks';
-
-import { isElementMessage } from '../../helpers/elements';
-import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
 import { useCreateFilters } from '../../hooks/actions/useCreateFilters';
 import { useGetElementsFromIDs, useGetMessagesOrElementsFromIDs } from '../../hooks/mailbox/useElements';
+import type { FolderItem } from '../../hooks/useMailTreeView/interface';
+import { useMailFolderTreeView } from '../../hooks/useMailTreeView/useMailFolderTreeView';
 import { useScrollToItem } from '../../hooks/useScrollToItem';
+import { selectCategoryIDs } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 import { useCategoriesView } from '../categoryView/useCategoriesView';
 import { getInboxCategoriesItems, toFolderItem } from './moveToFolderDropdown.helper';
 
@@ -151,13 +153,13 @@ const MoveDropdown = ({
                 shouldShowTabs,
                 activeCategoriesTabs,
             }),
-            { ID: MAILBOX_LABEL_IDS.ARCHIVE, Name: c('Mailbox').t`Archive`, icon: 'archive-box' },
+            { ID: MAILBOX_LABEL_IDS.ARCHIVE, Name: c('Mailbox').t`Archive`, icon: IcArchiveBox },
             canMoveToSpam && {
                 ID: MAILBOX_LABEL_IDS.SPAM,
                 Name: c('Mailbox').t`Spam`,
-                icon: 'fire',
+                icon: IcFire,
             },
-            { ID: MAILBOX_LABEL_IDS.TRASH, Name: c('Mailbox').t`Trash`, icon: 'trash' },
+            { ID: MAILBOX_LABEL_IDS.TRASH, Name: c('Mailbox').t`Trash`, icon: IcTrash },
         ] as FolderItem[])
         .filter(isTruthy)
         .filter((folder) => {
@@ -277,7 +279,7 @@ const MoveDropdown = ({
                                 >
                                     <FolderIcon
                                         folder={folder}
-                                        name={folder.icon}
+                                        icon={folder.icon}
                                         dataColor={folder.folderIconProps?.color}
                                         className={clsx('shrink-0 mr-2', folder?.folderIconProps?.className)}
                                     />

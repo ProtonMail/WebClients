@@ -1,13 +1,14 @@
 import { c } from 'ttag';
 
 import type { LabelModel } from '@proton/components/containers/labels/modals/EditLabelModal';
-import { getCategoryIconName } from '@proton/mail/features/categoriesView/CategoryIcon';
+import { IcFolder } from '@proton/icons/icons/IcFolder';
+import { IcInbox } from '@proton/icons/icons/IcInbox';
+import { getCategoryIconComponent } from '@proton/mail/features/categoriesView/CategoryIcon';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import type { FolderItem } from '../../hooks/useMailTreeView/interface';
-
 import { categoryColorClassName } from '../categoryView/categoriesTabs/tabsInterface';
 
 export const getInboxCategoriesItems = ({
@@ -29,7 +30,7 @@ export const getInboxCategoriesItems = ({
         return activeCategoriesTabs.map((category) => ({
             ID: category.id,
             Name: getLabelFromCategoryId(category.id),
-            icon: getCategoryIconName(category.id, 'filled'),
+            icon: getCategoryIconComponent(category.id, 'filled'),
             folderIconProps: {
                 className: categoryColorClassName,
                 color: category.colorShade,
@@ -41,7 +42,7 @@ export const getInboxCategoriesItems = ({
         {
             ID: MAILBOX_LABEL_IDS.INBOX,
             Name: c('Mailbox').t`Inbox`,
-            icon: 'inbox',
+            icon: IcInbox,
         },
     ];
 };
@@ -56,7 +57,7 @@ export const toFolderItem = (label: LabelModel): FolderItem => ({
     color: label.Color,
     Expanded: 0,
     Type: label.Type,
-    icon: 'folder',
+    icon: IcFolder,
     level: 0,
     LastUnseenMessageEventID: null,
 });

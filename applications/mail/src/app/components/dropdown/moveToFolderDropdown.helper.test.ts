@@ -1,3 +1,4 @@
+import { IcInbox } from '@proton/icons/icons/IcInbox';
 import { CATEGORIES_COLOR_SHADES } from '@proton/mail/features/categoriesView/categoriesConstants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
@@ -37,7 +38,7 @@ describe('MoveToFolderDropdownHelper', () => {
                 {
                     ID: MAILBOX_LABEL_IDS.INBOX,
                     Name: 'Inbox',
-                    icon: 'inbox',
+                    icon: IcInbox,
                 },
             ]);
         });
@@ -128,7 +129,7 @@ describe('MoveToFolderDropdownHelper', () => {
                     {
                         ID: MAILBOX_LABEL_IDS.INBOX,
                         Name: 'Inbox',
-                        icon: 'inbox',
+                        icon: IcInbox,
                     },
                 ]);
             });

@@ -1,3 +1,4 @@
+import type { IconComponent } from '@proton/icons/component';
 import { IcBell } from '@proton/icons/icons/IcBell';
 import { IcBellFilled2 } from '@proton/icons/icons/IcBellFilled2';
 import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
@@ -22,7 +23,7 @@ interface Props {
     colorShade?: string;
 }
 
-const CATEGORY_ICONS: Record<CategoryLabelID, Record<Variant, { Component: any; name: IconName }>> = {
+const CATEGORY_ICONS: Record<CategoryLabelID, Record<Variant, { Component: IconComponent; name: IconName }>> = {
     [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]: {
         filled: { Component: IcInboxFilled, name: 'inbox-filled' },
         outlined: { Component: IcInbox, name: 'inbox' },
@@ -53,7 +54,11 @@ export const getCategoryIconName = (categoryId: CategoryLabelID, variant: Varian
     return CATEGORY_ICONS[categoryId][variant].name;
 };
 
+export const getCategoryIconComponent = (categoryId: CategoryLabelID, variant: Variant): IconComponent => {
+    return CATEGORY_ICONS[categoryId][variant].Component;
+};
+
 export const CategoryIcon = ({ categoryId, variant, className, colorShade }: Props) => {
-    const { Component } = CATEGORY_ICONS[categoryId][variant];
+    const Component = getCategoryIconComponent(categoryId, variant);
     return <Component className={className} data-color={colorShade} />;
 };

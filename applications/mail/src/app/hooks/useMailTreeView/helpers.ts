@@ -1,3 +1,5 @@
+import { IcFolder } from '@proton/icons/icons/IcFolder';
+import { IcFolders } from '@proton/icons/icons/IcFolders';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { FolderWithSubFolders } from '@proton/shared/lib/interfaces';
 
@@ -30,7 +32,7 @@ export const folderReducer = ({ acc, folder, folders, mailSettings, level }: Fol
     acc.push({
         ...folder,
         Name: folder.Name,
-        icon: folder.subfolders?.length ? 'folders' : 'folder',
+        icon: folder.subfolders?.length ? IcFolders : IcFolder,
         color: getParentFolderColor({ folders, folder, mailSettings }),
         level,
     });

@@ -1,8 +1,8 @@
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 import type { Folder, FolderWithSubFolders, MailSettings } from '@proton/shared/lib/interfaces';
 
 export type FolderItem = Folder & {
-    icon: IconName;
+    icon: IconComponent;
     level: number;
     color?: string | undefined;
     folderIconProps?: {
