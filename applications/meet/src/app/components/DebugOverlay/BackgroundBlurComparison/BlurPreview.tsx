@@ -7,17 +7,13 @@ import { Button } from '@proton/atoms/Button/Button';
 
 import { createBackgroundProcessor } from '../../../processors/background-processor/createBackgroundProcessor';
 import type { TunableConstantsOverrides } from '../../../processors/background-processor/tunableConstants';
-import type {
-    BackgroundBlurProcessor,
-    BackgroundProcessorVersion,
-} from '../../../processors/background-processor/types';
+import type { BackgroundBlurProcessor } from '../../../processors/background-processor/types';
 
 import './BlurPreview.scss';
 
 type PreviewStatus = 'loading' | 'ready' | 'error';
 
 interface BlurPreviewProps {
-    version: BackgroundProcessorVersion;
     label: string;
     /** Uploaded video URL. Mutually exclusive with `stream`. */
     fileUrl?: string;
@@ -38,7 +34,6 @@ interface BlurPreviewProps {
 }
 
 export const BlurPreview = ({
-    version,
     label,
     fileUrl,
     stream,
@@ -108,7 +103,7 @@ export const BlurPreview = ({
             // userProvidedTrack = true: the track is ours, LiveKit must not reacquire it.
             track = new LocalVideoTrack(mediaStreamTrack, undefined, true);
 
-            processor = await createBackgroundProcessor(useSimpleSegmentation, version, constantOverrides);
+            processor = await createBackgroundProcessor(useSimpleSegmentation, constantOverrides);
             if (cancelled) {
                 await processor?.destroy?.();
                 return;
@@ -153,7 +148,7 @@ export const BlurPreview = ({
                 }
             })();
         };
-    }, [version, fileUrl, stream, useSimpleSegmentation, constantOverrides]);
+    }, [fileUrl, stream, useSimpleSegmentation, constantOverrides]);
 
     // Pausing the source freezes captureStream output (upload mode only).
     useEffect(() => {

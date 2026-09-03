@@ -14,13 +14,12 @@ import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectBackgroundBlur } from '@proton/meet/store/slices/backgroundSlice';
 import { MeetingSideBars, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
-import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { ConditionalTooltip } from '../../atoms/ConditionalTooltip/ConditionalTooltip';
 import { OptionButton } from '../../atoms/OptionButton/OptionButton';
 import { useBackgroundEffectsContext } from '../../contexts/BackgroundEffects/BackgroundEffectsContext';
-import { supportsBackgroundEffects } from '../../processors/background-processor/createBackgroundProcessor';
+import { useIsBackgroundEffectsSupported } from '../../contexts/BackgroundEffects/useIsBackgroundEffectsSupported';
 import { DeviceSettingsDropdown } from '../DeviceSettingsDropdown';
 import { BackgroundBlurToggle } from '../Settings/BackgroundBlurToggle';
 
@@ -55,7 +54,7 @@ const VideoSettingsDropdownComponent = ({
 
     const backgroundBlur = useMeetSelector(selectBackgroundBlur);
     const { toggleBackgroundBlur } = useBackgroundEffectsContext();
-    const isBackgroundBlurSupported = supportsBackgroundEffects();
+    const isBackgroundBlurSupported = useIsBackgroundEffectsSupported();
 
     const isVirtualBackgroundEnabled = useFlag('MeetVirtualBackground');
 
@@ -123,7 +122,7 @@ const VideoSettingsDropdownComponent = ({
                             />
                         </div>
                     </div>
-                    {showVirtualBackgroundButton && isVirtualBackgroundEnabled && !isMobile() && (
+                    {showVirtualBackgroundButton && isVirtualBackgroundEnabled && (
                         <>
                             <hr className="w-full m-0 border-weak" />
 

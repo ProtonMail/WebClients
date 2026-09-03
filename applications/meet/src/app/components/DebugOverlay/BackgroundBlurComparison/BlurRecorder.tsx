@@ -82,7 +82,7 @@ export const BlurRecorder = ({ selectedCameraId }: BlurRecorderProps) => {
             blurTrack = new LocalVideoTrack(clonedTrack, undefined, true);
 
             // Same model selection as production.
-            processor = await createBackgroundProcessor(false, 'next');
+            processor = await createBackgroundProcessor();
             if (!processor) {
                 throw new Error('Background blur is not supported on this device');
             }

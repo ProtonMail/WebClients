@@ -25,11 +25,7 @@ import {
     createCustomBackgroundProcessor,
     ensureBackgroundProcessor,
 } from '../../processors/background-processor/createBackgroundProcessor';
-import type {
-    BackgroundBlurProcessor,
-    BackgroundProcessorVersion,
-    CustomBackgroundProcessor,
-} from '../../processors/background-processor/types';
+import type { BackgroundBlurProcessor, CustomBackgroundProcessor } from '../../processors/background-processor/types';
 import { getCurrentCameraTrack, hasLiveCameraTrack } from '../../utils/cameraTrack';
 import { useCustomBackgroundId, useVirtualBackgroundId } from './useAppliedBackgroundEffect';
 import { useBackgroundEffectInitializationTracker } from './useBackgroundEffectInitializationTracker';
@@ -39,10 +35,10 @@ import { useBackgroundEffectInitializationTracker } from './useBackgroundEffectI
 const ATTACH_SKIPPED = Symbol('attachSkipped');
 
 interface UseBackgroundEffectsParams {
-    backgroundProcessorVersion: BackgroundProcessorVersion;
+    isBackgroundEffectsSupported: boolean;
 }
 
-export const useBackgroundEffects = ({ backgroundProcessorVersion }: UseBackgroundEffectsParams) => {
+export const useBackgroundEffects = ({ isBackgroundEffectsSupported }: UseBackgroundEffectsParams) => {
     const { reportMeetError: reportError } = useMeetErrorReporting();
 
     const dispatch = useMeetDispatch();
@@ -59,6 +55,7 @@ export const useBackgroundEffects = ({ backgroundProcessorVersion }: UseBackgrou
     const { localParticipant } = useLocalParticipant();
 
     const isVirtualBackgroundEnabled = useFlag('MeetVirtualBackground');
+    const canApplyImageBackground = isVirtualBackgroundEnabled && isBackgroundEffectsSupported;
 
     const { trackBackgroundEffectInitialization, cancelBackgroundEffectInitialization, reportBackgroundEffectFailure } =
         useBackgroundEffectInitializationTracker();
@@ -112,6 +109,8 @@ export const useBackgroundEffects = ({ backgroundProcessorVersion }: UseBackgrou
             return await withBlankedRawFrames(videoTrack, isSwappingProcessor, async () => {
                 const result = await ensureBackgroundProcessor(videoTrack, processorToAttach);
 
+                result?.enable?.();
+
                 if (result?.waitUntilBlurApplied) {
                     const { waitUntilBlurApplied } = result;
                     trackBackgroundEffectInitialization('blur', () => waitUntilBlurApplied());
@@ -161,6 +160,8 @@ export const useBackgroundEffects = ({ backgroundProcessorVersion }: UseBackgrou
                     videoTrack,
                     customBackgroundProcessorInstanceRef.current
                 );
+
+                result?.enable?.();
 
                 if (result?.waitUntilBackgroundApplied) {
                     const { waitUntilBackgroundApplied } = result;
@@ -222,7 +223,7 @@ export const useBackgroundEffects = ({ backgroundProcessorVersion }: UseBackgrou
 
             customBackgroundProcessorInstanceRef.current?.disable?.();
         } else {
-            if (!isVirtualBackgroundEnabled) {
+            if (!canApplyImageBackground) {
                 return;
             }
 
@@ -372,9 +373,13 @@ export const useBackgroundEffects = ({ backgroundProcessorVersion }: UseBackgrou
     }, [localParticipant, backgroundBlur, hasImageBackground]);
 
     useEffect(() => {
+        if (!isBackgroundEffectsSupported) {
+            return;
+        }
+
         let cancelled = false;
 
-        const creation = createBackgroundProcessor(false, backgroundProcessorVersion);
+        const creation = createBackgroundProcessor();
         backgroundBlurProcessorCreationRef.current = creation;
 
         void (async () => {
@@ -395,11 +400,11 @@ export const useBackgroundEffects = ({ backgroundProcessorVersion }: UseBackgrou
             backgroundBlurProcessorInstanceRef.current?.disable?.();
             void backgroundBlurProcessorInstanceRef.current?.destroy?.();
         };
-    }, [backgroundProcessorVersion]);
+    }, [isBackgroundEffectsSupported]);
 
     // Warms the processor for the restored background, so the first camera frame already has it.
     useEffect(() => {
-        if (!isVirtualBackgroundEnabled || !hasImageBackground) {
+        if (!canApplyImageBackground || !hasImageBackground) {
             return;
         }
 
@@ -412,7 +417,7 @@ export const useBackgroundEffects = ({ backgroundProcessorVersion }: UseBackgrou
                 await ensureCustomBackgroundProcessor(source);
             }
         })();
-    }, [ensureCustomBackgroundProcessor, hasImageBackground, isVirtualBackgroundEnabled, store]);
+    }, [canApplyImageBackground, ensureCustomBackgroundProcessor, hasImageBackground, store]);
 
     useEffect(() => {
         return () => {
