@@ -3,7 +3,12 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
-import type { PayPalDetails, SavedCardDetails, SepaDetails } from '@proton/payments/core/interface';
+import type {
+    PayPalDetails,
+    SavedCardDetails,
+    SavedMethodDetails,
+    SavedMethodType,
+} from '@proton/payments/core/interface';
 import { type CreditCardType, getBankSvg } from '@proton/payments/core/payment-methods/credit-card-icons';
 import { isPaypalDetails, isSavedCardDetails, isSepaDetails } from '@proton/payments/core/type-guards';
 
@@ -95,7 +100,7 @@ const PaymentMethodDetailsPaypal = ({ details }: { details: PayPalDetails }) => 
     );
 };
 
-const PaymentMethodDetailsSepa = ({ details }: { details: SavedCardDetails | PayPalDetails | SepaDetails }) => {
+const PaymentMethodDetailsSepa = ({ details }: { details: SavedMethodDetails }) => {
     // no matter what the shape of the details, we MUST display the authorization text. This is a protective measure
     // in case if isSepaDetails fails in the future.
     if (!isSepaDetails(details)) {
@@ -124,14 +129,8 @@ const PaymentMethodDetailsSepa = ({ details }: { details: SavedCardDetails | Pay
 };
 
 interface Props {
-    type:
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-        | PAYMENT_METHOD_TYPES.GOOGLE_PAY
-        | PAYMENT_METHOD_TYPES.APPLE_PAY;
-    details: SavedCardDetails | PayPalDetails | SepaDetails;
+    type: SavedMethodType;
+    details: SavedMethodDetails;
 }
 
 const PaymentMethodDetails = ({ type, details }: Props) => {

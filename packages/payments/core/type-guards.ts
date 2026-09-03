@@ -13,6 +13,7 @@ import type {
     PaymentMethodType,
     PlainPaymentMethodType,
     SavedCardDetails,
+    SavedMethodDetails,
     SavedPaymentMethod,
     SepaDetails,
     TokenPayment,
@@ -38,7 +39,7 @@ export function isTokenPaymentMethod(data: TokenPaymentMethod | undefined): data
     return !!data && isTokenPayment(data.Payment);
 }
 
-export function isPaypalDetails(obj: SavedCardDetails | PayPalDetails | SepaDetails | undefined): obj is PayPalDetails {
+export function isPaypalDetails(obj: SavedMethodDetails | undefined): obj is PayPalDetails {
     if (!obj) {
         return false;
     }
@@ -49,7 +50,7 @@ export function isPaypalDetails(obj: SavedCardDetails | PayPalDetails | SepaDeta
 }
 
 export function isSavedCardDetails(
-    obj: SavedCardDetails | PayPalDetails | SepaDetails | CreateCardDetailsBackend | undefined
+    obj: SavedMethodDetails | CreateCardDetailsBackend | undefined
 ): obj is SavedCardDetails {
     if (!obj) {
         return false;
