@@ -56,10 +56,26 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
       storeSpreadsheetAction: (type, content) => {
         void clientInvoker.storeSpreadsheetAction(type, content).catch(console.error)
       },
+      storeSpreadsheetPatches: (patches, updateHash, type) => {
+        void clientInvoker.storeSpreadsheetPatches(patches, updateHash, type).catch(console.error)
+      },
+      hasBasePatchesStored: () => clientInvoker.hasBasePatchesStored(),
       showGenericInfoModal: (props) => {
         clientInvoker.showGenericInfoModal(props)
       },
       showNotification: (notification) => createNotification(notification),
+      reloadClient: () => {
+        void clientInvoker.reloadClient()
+      },
+      reportUserInterfaceError: (error, extraInfo) => {
+        void clientInvoker.reportUserInterfaceError(error, extraInfo)
+      },
+      reportSheetsYjsDriftDetected: (reason) => {
+        void clientInvoker.reportSheetsYjsDriftDetected(reason)
+      },
+      showYjsDriftDetectedErrorModal: (driftLogDetails) => {
+        void clientInvoker.showYjsDriftDetectedErrorModal(driftLogDetails)
+      },
     }),
     [clientInvoker, createNotification],
   )
