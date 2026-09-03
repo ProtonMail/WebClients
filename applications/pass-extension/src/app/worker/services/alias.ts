@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
-import { resolveDefaultItemName } from '@proton/pass/lib/items/item.utils';
 import { requestAliasOptions } from '@proton/pass/store/actions/creators/alias';
 import { itemCreate } from '@proton/pass/store/actions/creators/item';
 import { selectAliasLimits } from '@proton/pass/store/selectors/limits';
@@ -55,7 +54,7 @@ export const createAliasService = () => {
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.ALIAS_CREATE,
-        onContextReady(async (ctx, message, sender) => {
+        onContextReady(async (ctx, message) => {
             const state = ctx.service.store.getState();
             const shareId = selectMostRecentVaultShareID(state);
             if (!shareId) throw new Error("Could not resolve user's default vault.");
@@ -63,14 +62,13 @@ export const createAliasService = () => {
             const { origin: url, alias } = message.payload;
             const { mailboxes, prefix, signedSuffix, aliasEmail } = alias;
             const optimisticId = uniqueId();
-            const name = resolveDefaultItemName({ title: sender.tab?.title, fallback: url });
 
             const aliasCreationIntent: ItemCreateIntent<'alias'> = {
                 type: 'alias',
                 optimisticId,
                 shareId,
                 metadata: {
-                    name,
+                    name: url,
                     note: obfuscate(c('Placeholder').t`Used on ${url}`),
                     itemUuid: optimisticId,
                 },
