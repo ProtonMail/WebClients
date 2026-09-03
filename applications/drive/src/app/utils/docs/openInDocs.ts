@@ -3,6 +3,7 @@ import { featureFlagStore } from '@proton/drive/modules/flags';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { handleDocsCustomPassword } from '@proton/shared/lib/drive/sharing/publicDocsSharing';
+import { isDevOrBlack } from '@proton/shared/lib/env';
 import type { OpenInDocsType, ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype';
 import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
@@ -26,10 +27,11 @@ export enum RedirectAction {
 
 export const getOpenInDocsInfo = (mediaType: string): OpenInDocsType | undefined => {
     const isODSImportEnabled = featureFlagStore.getState().isEnabled('SheetsODSImportEnabled');
+    const isODTEnabled = featureFlagStore.getState().isEnabled('DocsODTEnabled') || isDevOrBlack();
     const isSheetsDisabled = featureFlagStore.getState().isEnabled('DocsSheetsDisabled');
     const isDocsDisabled = featureFlagStore.getState().isEnabled('DriveDocsDisabled');
 
-    const openInDocsType = mimeTypeToOpenInDocsType(mediaType, isODSImportEnabled);
+    const openInDocsType = mimeTypeToOpenInDocsType(mediaType, isODSImportEnabled, isODTEnabled);
 
     if (
         !openInDocsType ||

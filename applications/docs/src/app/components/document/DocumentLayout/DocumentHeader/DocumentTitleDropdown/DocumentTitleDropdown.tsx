@@ -72,6 +72,7 @@ import {
   useRenameWithSDK,
   useIsTableOfContentsEnabled,
   useTrashWithSDK,
+  useIsODTEnabled,
 } from '~/utils/flags'
 import { useDebugMode } from '~/utils/debug-mode-context'
 import * as Ariakit from '@ariakit/react'
@@ -120,6 +121,7 @@ export function DocumentTitleDropdown({
   const trashWithSDK = useTrashWithSDK()
   const isSheetsEnabled = useIsSheetsEnabled()
   const isTableOfContentsFeatureEnabled = useIsTableOfContentsEnabled()
+  const isODTEnabled = useIsODTEnabled()
 
   const [pdfModal, openPdfModal] = useExportToPDFModal()
   const [historyModal, showHistoryModal] = useHistoryViewerModal()
@@ -860,6 +862,17 @@ export function DocumentTitleDropdown({
                 >
                   {c('Action').t`Microsoft Word (.docx)`}
                 </DropdownMenuButton>
+                {isODTEnabled && (
+                  <DropdownMenuButton
+                    className="flex items-center text-left"
+                    onClick={() => {
+                      void editorController.exportAndDownload('odt')
+                    }}
+                    data-testid="download-odt"
+                  >
+                    {c('Action').t`OpenDocument Text (.odt) (Beta)`}
+                  </DropdownMenuButton>
+                )}
                 <DropdownMenuButton
                   className="flex items-center text-left"
                   onClick={() => {

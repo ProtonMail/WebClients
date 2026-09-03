@@ -35979,6 +35979,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"marked@npm:^18.0.0":
+  version: 18.0.11
+  resolution: "marked@npm:18.0.11"
+  bin:
+    marked: bin/marked.js
+  checksum: 10/6da69f17820c7442358d751e902d3e0e06fef957e1178d634db938cf339c4504399c9f11a953b0a116b1e5bebc1c7fb52726777cc6c351f2c9f39e4a8276e21a
+  languageName: node
+  linkType: hard
+
 "match-sorter@npm:^8.2.0":
   version: 8.2.0
   resolution: "match-sorter@npm:8.2.0"
@@ -38589,6 +38598,16 @@ __metadata:
   version: 2.1.1
   resolution: "obug@npm:2.1.1"
   checksum: 10/bdcf9213361786688019345f3452b95a1dc73710e4b403c82a1994b98bad6abc31b26cb72a482128c5fd53ea9daf6fbb7d0e0e7b2b7e9c8be6d779deeccee07f
+  languageName: node
+  linkType: hard
+
+"odf-kit@npm:^0.14.1":
+  version: 0.14.1
+  resolution: "odf-kit@npm:0.14.1"
+  dependencies:
+    fflate: "npm:^0.8.2"
+    marked: "npm:^18.0.0"
+  checksum: 10/e01f894ed13ab053e1c97614adf86de981c2d48ff0f0406fe3552bd4c7f1362c4dd73537824e836ee4e18d0e44645d61e169e8efe7bede7dd2e0d67a263e230e
   languageName: node
   linkType: hard
 
@@ -41644,11 +41663,13 @@ __metadata:
     docx-preview-cjs: "npm:0.3.7"
     dotenv: "npm:^17.4.2"
     eslint: "npm:^10.9.0"
+    fflate: "npm:^0.8.2"
     immer: "npm:^10.1.1"
     jest: "npm:^30.4.2"
     jest-junit: "npm:^16.0.0"
     lexical: "npm:0.30.0"
     lodash: "npm:^4.18.1"
+    odf-kit: "npm:^0.14.1"
     postcss: "npm:^8.5.26"
     prettier: "npm:^3.9.6"
     prettier-plugin-tailwindcss: "npm:^0.8.1"
