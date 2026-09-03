@@ -728,6 +728,9 @@
       "Copy address": [
         "Kopírovať adresu"
       ],
+      "Copy debug transcript": [
+        "Kopírovať prepis ladenia"
+      ],
       "Copy key to the clipboard": [
         "Skopírovať kľúč do schránky"
       ],
@@ -1589,6 +1592,9 @@
       "Preview": [
         "Náhľad"
       ],
+      "Preview logs": [
+        "Náhľad záznamov"
+      ],
       "Previous": [
         "Predchádzajúci"
       ],
@@ -1904,6 +1910,9 @@
       "Set catch-all": [
         "Nastavenie doménového koša"
       ],
+      "Set invoice email": [
+        "Nastaviť fakturačný email"
+      ],
       "Set new password": [
         "Nastaviť nové heslo"
       ],
@@ -2059,6 +2068,12 @@
       ],
       "Take a tour": [
         "Absolvovať prehliadku"
+      ],
+      "Template with invite links": [
+        "Šablóna s pozývacími odkazmi"
+      ],
+      "Template with passwords": [
+        "Šablóna s heslami"
       ],
       "Test": [
         "Test"
@@ -2662,6 +2677,9 @@
       "Private scheduling": [
         "Súkromné plánovanie"
       ],
+      "Secure and end-to-end encrypted": [
+        "Bezpečné a end-to-end šifrované"
+      ],
       "Secure cloud storage": [
         "Bezpečný cloud"
       ],
@@ -2799,14 +2817,6 @@
       ],
       "You have reached the trial limit.": [
         "Dosiahli ste limit skúšobného obdobia."
-      ]
-    },
-    "b2b_trials_2025_Label": {
-      "Amount due after trial": [
-        "Splatná suma po skúšobnom období"
-      ],
-      "Amount due now": [
-        "Čiastka k zaplateniu teraz"
       ]
     },
     "b2b_trials_Action": {
@@ -3828,17 +3838,6 @@
       ],
       "Total": [
         "Celkom"
-      ],
-      "Total for ${ n } month": [
-        "Celkom za ${ n } mesiac",
-        "Celkom za ${ n } mesiace",
-        "Celkom za ${ n } mesiacov",
-        "Celkom za ${ n } mesiacov"
-      ]
-    },
-    "Checkout summary": {
-      "month": [
-        "mesiac"
       ]
     },
     "Collapsible tooltip": {
@@ -9831,6 +9830,9 @@
       "Enjoying ${ planName }?": [
         "Páči sa vám ${ planName }?"
       ],
+      "Invited friends": [
+        "Pozvaní priatelia"
+      ],
       "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
         "Odomknite 4 prémiové služby ochrany súkromia len za **${ priceString }** naviac každý mesiac."
       ],
@@ -10410,6 +10412,12 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členov, ktorí nemajú SSO používa dvojstupňové overenie na prihlasovanie do vašej organizácie.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členov, ktorí nemajú SSO používa dvojstupňové overenie na prihlasovanie do vašej organizácie."
       ],
+      "${ helpTranslateLink } by joining our localization community.": [
+        "${ helpTranslateLink } tým, že sa pripojíte k našej lokalizačnej komunite."
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } značka"
+      ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "${ invitedMemberCount } používateľ musí prijať pozvánku, aby mohol začať dostávať skupinové emaily.",
         "${ invitedMemberCount } používatelia musia prijať pozvánku, aby mohli začať dostávať skupinové emaily.",
@@ -10968,9 +10976,6 @@
       "Amount below minimum (${ amount }).": [
         "Suma nižšia ako minimum (${ amount })."
       ],
-      "Amount due": [
-        "Čiastka k zaplateniu"
-      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Emailový alias funguje ako emailová adresa, ale znižuje množstvo spamu a udržuje vašu skutočnú emailovú adresu a identitu skrytú."
       ],
@@ -11244,6 +11249,9 @@
       "Change your password": [
         "Zmeňte si heslo"
       ],
+      "Changes to your default language and time are reflected on the web. To change the default for mobile apps, go to the settings on your device.": [
+        "Zmeny predvoleného jazyka a času sa prejavia na webe. Ak chcete zmeniť predvolené nastavenia v mobilných aplikáciách, prejdite do nastavení svojho zariadenia."
+      ],
       "Check if your recovery phrase can be used to fully recover your account.": [
         "Skontrolujte, či je možné pomocou vašej obnovovacej frázy úplne obnoviť váš účet."
       ],
@@ -11252,6 +11260,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Vyberte si plán, ktorý vám najviac vyhovuje."
+      ],
+      "Choose a strong ${ BRAND_NAME } password and don’t reuse it for other accounts.": [
+        "Zvoľte si silné heslo pre ${ BRAND_NAME } a nepoužívajte ho aj pre iné účty."
       ],
       "Choose an Entity ID to continue.": [
         "Pre pokračovanie vyberte ID subjektu."
@@ -11457,6 +11468,9 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "Obnovenie údajov si vyžaduje možnosť obnovenia hesla (emailom alebo SMS)"
       ],
+      "Debug transcript copied": [
+        "Prepis ladenia skopírovaný"
+      ],
       "dedicated servers": [
         "dedikované servery"
       ],
@@ -11552,9 +11566,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Toto heslo NEZABUDNITE. Bez neho nebudete môcť spravovať svoju organizáciu."
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Pamätáte si svoje heslo? ${ verifyButton }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Chcete zrušiť všetky ostatné relácie okrem tejto?"
@@ -12120,6 +12131,9 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Ak stratíte zariadenie určené pre dvojstupňové overenie, tieto kódy môžete použiť namiesto 6-miestneho dvojstupňového overovacieho kódu na prihlásenie do svojho účtu. Každý kód je možné použiť iba raz."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Ak ste stratili prístup k aplikácii na overovanie, môžete použiť jeden zo 16 záložných obnovovacích kódov, ktoré ste dostali pri nastavovaní dvojfaktorovej autentifikácie. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Ak znížite predplatné, stratíte prístup k plateným funkciám ${ MAIL_APP_NAME } a ${ VPN_APP_NAME }."
       ],
@@ -12443,6 +12457,9 @@
       ],
       "Loading...": [
         "Načítavanie..."
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Záznamy nám pomáhajú pochopiť, čo sa udialo pred vznikom problému. Obsahujú akcie aplikácie a chybové hlásenia, nie však obsah správ."
       ],
       "Low Priority": [
         "Nízka priorita"
@@ -13890,6 +13907,9 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Na deaktiváciu vašich metód dvojfázového overovania použite metódu obnovenia."
       ],
+      "Use an existing email or create a free ${ protonDomain } address.": [
+        "Použite existujúcu emailovú adresu alebo si vytvorte bezplatnú adresu ${ protonDomain }."
+      ],
       "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
         "Používajte viacero emailových adries s ${ MAIL_APP_NAME }. Pridajte novú adresu ${ BRAND_NAME } alebo pripojte iný emailový účet a spravujte všetko z jednej doručenej pošty."
       ],
@@ -14016,6 +14036,9 @@
       "We couldn't complete the transaction. Please try again.": [
         "Transakciu sa nepodarilo dokončiť. Skúste to znova, prosím."
       ],
+      "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
+        "Na vašu emailovú adresu sme nemohli odoslať faktúry. Automatické vystavovanie faktúr bolo pozastavené, kým adresu neaktualizujete."
+      ],
       "We couldn’t process your payment.": [
         "Vašu platbu sa nám nepodarilo spracovať."
       ],
@@ -14054,6 +14077,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Na ochranu vašich platieb používame 3-D Secure"
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Na dokončenie tejto transakcie vás presmerujeme do ${ IDEAL_WERO_BRAND_NAME } v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Na dokončenie tejto transakcie vás presmerujeme na PayPal v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
@@ -14529,6 +14555,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaše údaje sú pripravené na import z ${ importedEmailAddressStrong } do vášho účtu ${ BRAND_NAME }."
       ],
+      "Your default language and time for ${ BRAND_NAME } services.": [
+        "Váš predvolený jazyk a čas pre ${ BRAND_NAME } služby."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Váš email bude použitý iba pre toto jednorazové overenie."
       ],
@@ -14537,6 +14566,9 @@
       ],
       "your encrypted data will be locked": [
         "vaše zašifrované údaje budú uzamknuté"
+      ],
+      "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
+        "Váš súbor obsahuje heslo pre každého používateľa, takže tieto účty budú vytvorené s heslom namiesto pozývacieho odkazu."
       ],
       "Your files will be encrypted and then saved": [
         "Vaše súbory budú zašifrované a potom uložené"
@@ -14582,6 +14614,9 @@
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Váš plán je limitovaný na 10 verzií do 7 dní"
+      ],
+      "Your profile and changes to it will be visible to other ${ BRAND_NAME } users.": [
+        "Váš profil a zmeny v ňom budú viditeľné pre ostatných ${ BRAND_NAME } používateľov."
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Vaše nedávne zmeny boli publikované. Budú viditeľné pre používateľov v priebehu nasledujúcich niekoľkých hodín."
@@ -15236,6 +15271,9 @@
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } z ${ humanMaxSpace }"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } znakov"
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } adresa"
@@ -16622,6 +16660,9 @@
       ],
       "Send in": [
         "Odoslať v"
+      ],
+      "Send invoices by email": [
+        "Zasielať faktúry emailom"
       ],
       "Sequences": [
         "Sekvencie"
@@ -19616,6 +19657,16 @@
         "Kontrolný zoznam pre obnovu"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Skúste to teraz"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Teraz máte prístup k novej aplikácii ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } bol vytvorený"
@@ -20368,6 +20419,51 @@
       ]
     },
     "organization key reset": {
+      "Afterward, every converted user must accept the request to become non-private again, from their account settings.": [
+        "Následne musí každý používateľ, ktorého účet bol zmenený na súkromný, v nastaveniach svojho účtu prijať žiadosť o opätovné zrušenie súkromného režimu."
+      ],
+      "An unprivatization request is sent by email to the converted users": [
+        "Žiadosť o zrušenie súkromia sa zasiela emailom používateľom, ktorých účty boli prevedené"
+      ],
+      "Because your organization key has changed, you lost some of your admin rights: You can no longer create non-private users and access their accounts.": [
+        "Vzhľadom na to, že sa zmenil kľúč vašej organizácie, prišli ste o niektoré správcovské oprávnenia: Už nemôžete vytvárať verejných používateľov ani pristupovať k ich účtom."
+      ],
+      "Before continuing, **let your users know they'll receive an admin access request by email**, so they're not caught off guard.": [
+        "Než budete pokračovať, **informujte svojich používateľov, že emailom dostanú žiadosť o prístup správcu**, aby ich to neprekvapilo."
+      ],
+      "Can you reach out to other administrators?": [
+        "Môžete kontaktovať ostatných správcov?"
+      ],
+      "Converting users to private": [
+        "Prevod používateľov na súkromných"
+      ],
+      "Copy email list": [
+        "Kopírovať zoznam emailových adries"
+      ],
+      "Could not send the unprivatization request to ${ n } user. It will be retried automatically.": [
+        "Žiadosť o zrušenie súkromného nastavenia sa nepodarilo odoslať ${ n } používateľovi. Systém to automaticky skúsi znova.",
+        "Žiadosť o zrušenie súkromného nastavenia sa nepodarilo odoslať ${ n } používateľom. Systém to automaticky skúsi znova.",
+        "Žiadosť o zrušenie súkromného nastavenia sa nepodarilo odoslať ${ n } používateľom. Systém to automaticky skúsi znova.",
+        "Žiadosť o zrušenie súkromného nastavenia sa nepodarilo odoslať ${ n } používateľom. Systém to automaticky skúsi znova."
+      ],
+      "Get in touch with your other administrators, to see if they can help. They will be able to restore your privileges after using a data recovery method.": [
+        "Obráťte sa na ostatných správcov a zistite, či vám môžu pomôcť. Po použití metódy na obnovenie údajov vám budú môcť obnoviť vaše oprávnenia."
+      ],
+      "I've notified my users that they'll receive an unprivatization request.": [
+        "Informoval som svojich používateľov, že dostanú žiadosť o zrušenie súkromného nastavenia."
+      ],
+      "Non-private users": [
+        "Verejní používatelia"
+      ],
+      "Once your privileges have been restored, you'll be able to create non-private users and access their accounts.": [
+        "Akonáhle vám budú obnovené oprávnenia, budete môcť vytvárať verejných používateľov a pristupovať k ich účtom."
+      ],
+      "Organization key reset": [
+        "Resetovanie kľúča organizácie"
+      ],
+      "Ready to reset your organization key?": [
+        "Ste pripravení na obnovenie kľúča vašej organizácie?"
+      ],
       "Reset key": [
         "Resetovať kľúč"
       ],
@@ -20376,6 +20472,9 @@
       ],
       "Resetting organization key": [
         "Resetovanie kľúča organizácie"
+      ],
+      "Resetting the organization key generates a new encryption key to keep your organization's data secure. **No data will be lost or destroyed in this process, but the users groups will be deleted.**": [
+        "Resetovanie kľúča organizácie vygeneruje nový šifrovací kľúč, ktorý zabezpečí ochranu údajov vašej organizácie. **Pri tomto procese nedôjde k strate ani zničeniu žiadnych údajov, avšak skupiny používateľov budú vymazané.**"
       ],
       "See ${ n } user": [
         "Pozrieť ${ n } používateľa",
@@ -20386,8 +20485,44 @@
       "See users": [
         "Pozrieť používateľov"
       ],
+      "Send unprivatization requests": [
+        "Odoslať žiadosti o zrušenie privatizácie"
+      ],
+      "The non-private users are converted to private": [
+        "Verejní používatelia sa zmenia na súkromných"
+      ],
       "The organization key is reset": [
         "Kľúč organizácie je resetovaný"
+      ],
+      "This process is automated:": [
+        "Tento proces je automatizovaný:"
+      ],
+      "This should take less than ${ minutes } minute. **Don't close this tab or let your device go to sleep** until it's finished.": [
+        "Toto by malo trvať menej ako ${ minutes } minútu. **Nezatvárajte túto kartu a nedovoľte, aby sa vaše zariadenie prepnulo do režimu spánku**, kým sa proces nedokončí.",
+        "Toto by malo trvať menej ako ${ minutes } minúty. **Nezatvárajte túto kartu a nedovoľte, aby sa vaše zariadenie prepnulo do režimu spánku**, kým sa proces nedokončí.",
+        "Toto by malo trvať menej ako ${ minutes } minút. **Nezatvárajte túto kartu a nedovoľte, aby sa vaše zariadenie prepnulo do režimu spánku**, kým sa proces nedokončí.",
+        "Toto by malo trvať menej ako ${ minutes } minút. **Nezatvárajte túto kartu a nedovoľte, aby sa vaše zariadenie prepnulo do režimu spánku**, kým sa proces nedokončí."
+      ],
+      "This should take less than ${ minutes } minute. **Keep this browser tab open and your device active** until it completes.": [
+        "Toto by malo trvať menej ako ${ minutes } minútu. **Nechajte túto kartu prehliadača otvorenú a zariadenie zapnuté**, kým sa proces nedokončí.",
+        "Toto by malo trvať menej ako ${ minutes } minúty. **Nechajte túto kartu prehliadača otvorenú a zariadenie zapnuté**, kým sa proces nedokončí.",
+        "Toto by malo trvať menej ako ${ minutes } minút. **Nechajte túto kartu prehliadača otvorenú a zariadenie zapnuté**, kým sa proces nedokončí.",
+        "Toto by malo trvať menej ako ${ minutes } minút. **Nechajte túto kartu prehliadača otvorenú a zariadenie zapnuté**, kým sa proces nedokončí."
+      ],
+      "To become non-private again, they must accept the request to enable admin access, from their account settings. You don't need to wait for this step.": [
+        "Aby sa ich profil opäť stal verejným, musia v nastaveniach svojho účtu prijať žiadosť o povolenie prístupu správcu. Na tento krok nemusíte čakať."
+      ],
+      "To reset the organization key and restore your administrator privileges, **${ n } non-private user must be temporarily converted to private.**": [
+        "Na resetovania kľúča organizácie a obnovenie oprávnení správcu je potrebné **dočasne zmeniť status ${ n } súkromného používateľa na verejného.**",
+        "Na resetovania kľúča organizácie a obnovenie oprávnení správcu je potrebné **dočasne zmeniť status ${ n } súkromných používateľov na verejných.**",
+        "Na resetovania kľúča organizácie a obnovenie oprávnení správcu je potrebné **dočasne zmeniť status ${ n } súkromných používateľov na verejných.**",
+        "Na resetovania kľúča organizácie a obnovenie oprávnení správcu je potrebné **dočasne zmeniť status ${ n } súkromných používateľov na verejných.**"
+      ],
+      "To reset the organization key, the users will be converted to private, and will receive an email invitation to become non-private again.": [
+        "Na zresetovanie kľúča organizácie budú používatelia prevedení na súkromných a dostanú emailovú pozvánku, aby sa opäť stali verejnými."
+      ],
+      "To restore your privileges, use a data recovery method.": [
+        "Ak chcete obnoviť svoje oprávnenia, použite metódu obnovy údajov."
       ],
       "Try another way": [
         "Skúsiť iný spôsob"
@@ -20397,6 +20532,15 @@
         "Používatelia (${ n })",
         "Používatelia (${ n })",
         "Používatelia (${ n })"
+      ],
+      "You can reset your organization key to restore your administrator privileges. Then, you'll be able to create non-private users and access their accounts.": [
+        "Môžete obnoviť kľúč vašej organizácie, čím si obnovíte oprávnenia správcu. Potom budete môcť vytvárať neprivátnych používateľov a pristupovať k ich účtom."
+      ],
+      "Your administrator privileges have been restored. You can now manage non-private users.": [
+        "Vaše oprávnenia správcu boli obnovené. Teraz môžete spravovať verejných používateľov."
+      ],
+      "Your users will receive an email to accept the unprivatization request.": [
+        "Vaši používatelia dostanú email, v ktorom budú môcť prijať žiadosť o zrušenie súkromného nastavenia."
       ]
     },
     "Organization logo upload": {
@@ -21072,6 +21216,9 @@
       "Offer unavailable": [
         "Ponuka je nedostupná"
       ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Platba cez ${ IDEAL_WERO_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Spôsob platby potrebný na aktiváciu predplatného po skončení skúšobnej doby."
       ],
@@ -21177,6 +21324,9 @@
       "You will soon be redirected to verify your payment.": [
         "Za účelom overenia platby dôjde o chvíľu k presmerovaniu."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Vaša mena bola zmenená na eurá (€), pretože ${ IDEAL_WERO_BRAND_NAME } podporuje platby len v eurách."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Vaša mena bola zmenená na eurá (€), pretože SEPA bankové prevody podporujú platby len v eurách."
       ],
@@ -21188,6 +21338,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Inicializácia ${ IDEAL_WERO_BRAND_NAME } zlyhala. Skúste to neskôr znova, prosím."
+      ],
       "Invalid card number": [
         "Neplatné číslo karty"
       ],
@@ -21213,6 +21366,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Niečo sa pokazilo. Overenie Google Pay zlyhalo."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Potvrdením oprávňujete spoločnosť ${ BRAND_NAME } a Stripe, nášho poskytovateľa platobných služieb, aby z tohto bankového účtu prostredníctvom priameho inkasa SEPA inkasovali budúce platby za vaše predplatné, a vašu banku, aby tieto platby strhla. Vaša prvá platba je realizovaná teraz spoločnosťou ${ IDEAL_WERO_BRAND_NAME }. Váš balík sa automaticky obnovuje, kým ho nezrušíte; pred každým inkasom vás budeme informovať. V prípade inkás prostredníctvom priameho inkasa môžete požiadať svoju banku o vrátenie platby do 8 týždňov od dátumu inkasa v súlade s podmienkami vašej zmluvy s bankou. Toto sa nevzťahuje na platbu spoločnosti ${ IDEAL_WERO_BRAND_NAME }, ktorú práve uskutočňujete."
       ]
     },
     "Payments.info": {
@@ -21890,6 +22048,79 @@
       ],
       "SUMMER SALE": [
         "LETNÝ VÝPREDAJ"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Využiť ponuku"
+      ],
+      "Special Offer": [
+        "Špeciálna ponuka"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/mesiac"
+      ],
+      "2 individual accounts": [
+        "2 samostatné účty"
+      ],
+      "2 TB of secure storage": [
+        "2 TB bezpečného úložiska"
+      ],
+      "3 TB of secure storage": [
+        "3 TB bezpečného úložiska"
+      ],
+      "500 GB of secure storage": [
+        "500 GB bezpečného úložiska"
+      ],
+      "6 individual accounts": [
+        "6 samostatných účtov"
+      ],
+      "Advanced protection against cyber threats": [
+        "Pokročilá ochrana pred kybernetickými hrozbami"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zľavy sa vzťahujú na štandardné mesačné ceny. Vaše predplatné sa po skončení fakturačného cyklu obnoví za štandardnú ročnú sadzbu."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "na 12 mesiacov"
+      ],
+      "One plan, full power": [
+        "Jeden plán, plný výkon"
+      ],
+      "One plan, max savings": [
+        "Jeden plán, maximálne úspory"
+      ],
+      "One plan, more power": [
+        "Jeden plán, viac výkonu"
       ]
     },
     "Recovery Email": {
@@ -23141,6 +23372,9 @@
       ]
     },
     "Service provider": {
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Pridať do ${ CALENDAR_APP_NAME }"
+      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Umožňuje pridať videokonferenciu Zoom k akejkoľvek udalosti v kalendári"
       ]
@@ -23474,6 +23708,11 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "Žiadosť o obnovenie hesla"
+      ]
+    },
+    "Set invoice email form note": {
+      "Turn on automatic invoicing to receive bills via email. Enter the email address where you want to receive invoices.": [
+        "Zapnite automatické fakturovanie, aby ste faktúry dostávali emailom. Zadajte emailovú adresu, na ktorú chcete faktúry dostávať."
       ]
     },
     "Setting": {
@@ -25773,6 +26012,9 @@
       "Invoice customized": [
         "Faktúra prispôsobená"
       ],
+      "Invoice email updated": [
+        "Fakturačný email aktualizovaný"
+      ],
       "Invoice paid": [
         "Faktúra uhradená"
       ],
@@ -27877,6 +28119,9 @@
       "Send new invite?": [
         "Odoslať novú pozvánku?"
       ],
+      "September Sale": [
+        "Septembrová zľava"
+      ],
       "Service": [
         "Služba"
       ],
@@ -29111,6 +29356,9 @@
         "Týchto používateľov môžete bezpečne odstrániť z organizácie.",
         "Týchto používateľov môžete bezpečne odstrániť z organizácie.",
         "Týchto používateľov môžete bezpečne odstrániť z organizácie."
+      ],
+      "Your account was temporarily made private while your organization key was reset. Accept the request to restore it.": [
+        "Váš účet bol dočasne nastavený ako súkromný počas resetovania kľúča vašej organizácie. Potvrďte žiadosť o jeho obnovenie."
       ]
     },
     "Update font modal": {

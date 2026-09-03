@@ -2777,14 +2777,6 @@
         "무료 체험 한도에 도달했습니다."
       ]
     },
-    "b2b_trials_2025_Label": {
-      "Amount due after trial": [
-        "무료 체험 후 납부할 금액"
-      ],
-      "Amount due now": [
-        "지금 납부할 금액"
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "구독 취소하기"
@@ -3765,14 +3757,6 @@
       ],
       "Total": [
         "합계"
-      ],
-      "Total for ${ n } month": [
-        "${ n }개월의 합계"
-      ]
-    },
-    "Checkout summary": {
-      "month": [
-        "월"
       ]
     },
     "Collapsible tooltip": {
@@ -6976,9 +6960,6 @@
       ],
       "Unable to recover data": [
         "데이터 복구를 사용할 수 없음"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } 잠금 해제"
       ],
       "Upgrade": [
         "업그레이드"
@@ -10629,9 +10610,6 @@
       "Amount below minimum (${ amount }).": [
         "최소 금액 (${ amount })보다 적습니다."
       ],
-      "Amount due": [
-        "총 금액"
-      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "이메일 별칭은 이메일 주소와 같이 동작하지만 스팸을 줄여주고 당신의 실제 이메일 주소와 신원을 감추어 줍니다."
       ],
@@ -11204,9 +11182,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "이 비밀번호를 잊지 마세요. 잊을 경우 조직을 관리할 수 없습니다."
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "비밀번호가 기억 나시나요? ${ verifyButton }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "현재 세션이 아닌 다른 모든 세션을 취소하시겠습니까?"
@@ -22632,6 +22607,9 @@
       ]
     },
     "Service provider": {
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME }에 추가"
+      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Zoom 영상 회의를 캘린더 이벤트에 추가할 수 있도록 합니다"
       ]

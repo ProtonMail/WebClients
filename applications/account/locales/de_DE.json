@@ -2786,14 +2786,6 @@
         "Du hast das Testversions-Limit erreicht."
       ]
     },
-    "b2b_trials_2025_Label": {
-      "Amount due after trial": [
-        "Fälliger Betrag nach der Testphase"
-      ],
-      "Amount due now": [
-        "Jetzt fälliger Betrag"
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Abonnement kündigen"
@@ -3769,6 +3761,18 @@
         "${ users } Benutzer",
         "${ users } Benutzer"
       ],
+      "Amount due": [
+        "Fälliger Betrag"
+      ],
+      "Amount due after trial": [
+        "Fälliger Betrag nach der Testversion"
+      ],
+      "Amount due now": [
+        "Jetzt fälliger Betrag"
+      ],
+      "month": [
+        "Monat"
+      ],
       "Started ${ formattedStartDate }": [
         "Begonnen am ${ formattedStartDate }"
       ],
@@ -3785,17 +3789,15 @@
         "Zwischensumme für ${ cycle } Monat",
         "Zwischensumme für ${ cycle } Monate"
       ],
+      "Summary": [
+        "Zusammenfassung"
+      ],
       "Total": [
         "Insgesamt"
       ],
-      "Total for ${ n } month": [
-        "Gesamtbetrag für ${ n } Monat",
-        "Gesamtbetrag für ${ n } Monate"
-      ]
-    },
-    "Checkout summary": {
-      "month": [
-        "Monat"
+      "Total for ${ cycle } month": [
+        "Gesamtbetrag für ${ cycle } Monat",
+        "Gesamtbetrag für ${ cycle } Monate"
       ]
     },
     "Collapsible tooltip": {
@@ -10746,9 +10748,6 @@
       "Amount below minimum (${ amount }).": [
         "Mindestbetrag unterschritten (${ amount })."
       ],
-      "Amount due": [
-        "Fälliger Betrag"
-      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Ein E-Mail-Alias funktioniert wie eine E-Mail-Adresse, verhindert aber Spam und hält deine tatsächliche E-Mail-Adresse und Identität verborgen."
       ],
@@ -11328,8 +11327,8 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Vergiss dieses Passwort NICHT. Wenn du es vergisst, kannst du deine Organisation nicht mehr verwalten."
       ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Erinnerst du dich an dein Passwort? ${ verifyButton }"
+      "Do you remember your password?": [
+        "Erinnerst du dich an dein Passwort?"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Möchtest du alle anderen (außer der aktuellen) Sitzungen widerrufen?"
@@ -13633,6 +13632,9 @@
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Verwende eine Wiederherstellungsmethode, um deine Zwei-Faktor-Authentifizierungsmethoden zu deaktivieren."
+      ],
+      "Use an existing email or create a free ${ protonDomain } address.": [
+        "Eine bestehende E-Mail-Adresse verwenden oder eine kostenlose ${ protonDomain }-Adresse erstellen."
       ],
       "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
         "Verwalte mehrere E-Mail-Adressen mit ${ MAIL_APP_NAME }. Füge eine neue ${ BRAND_NAME }-E-Mail-Adresse hinzu oder verbinde ein anderes E-Mail-Konto, um alles von einem Posteingang aus zu verwalten."
