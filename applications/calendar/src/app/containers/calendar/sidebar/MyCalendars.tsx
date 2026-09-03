@@ -19,6 +19,7 @@ import { PersonalCalendarModal } from '@proton/components/containers/calendar/ca
 import SubscribedCalendarModal from '@proton/components/containers/calendar/calendarModal/subscribedCalendarModal/SubscribedCalendarModal';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import { useLoadingByKey } from '@proton/hooks/useLoading';
+import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { DEFAULT_CALENDAR_USER_SETTINGS } from '@proton/shared/lib/calendar/calendar';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
@@ -147,7 +148,7 @@ export const MyCalendars = ({ myCalendars, calendars, holidaysCalendars, dropdow
                                     toApp={APPS.PROTONACCOUNT}
                                     to={getCalendarsSettingsPath({ fullPath: true })}
                                     target="_self"
-                                    icon="cog-wheel"
+                                    icon={IcCogWheel}
                                     alt={c('Link').t`Calendars`}
                                 />
                             </Tooltip>

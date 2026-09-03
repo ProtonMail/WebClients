@@ -4,6 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { Sidebar } from '@proton/components/components/sidebar/nav';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcFileLines } from '@proton/icons/icons/IcFileLines';
 import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
@@ -54,7 +55,7 @@ export const FullNestedSidebar: Story = {
                                 <Sidebar.Branch.Header>
                                     <IcFileLines />
                                     <Sidebar.Branch.Text>Design</Sidebar.Branch.Text>
-                                    <Sidebar.Branch.Trigger rotation={{ open: 180 }} name="chevron-down" />
+                                    <Sidebar.Branch.Trigger rotation={{ open: 180 }} icon={IcChevronDown} />
                                 </Sidebar.Branch.Header>
                                 <Sidebar.Branch.Content>
                                     <Sidebar.Leaf to="/other-link">
@@ -75,7 +76,7 @@ export const FullNestedSidebar: Story = {
                                 <Sidebar.Branch.Header>
                                     <IcFileLines />
                                     <Sidebar.Branch.Text>Docs</Sidebar.Branch.Text>
-                                    <Sidebar.Branch.Trigger rotation={{ open: 180 }} name="chevron-down" />
+                                    <Sidebar.Branch.Trigger rotation={{ open: 180 }} icon={IcChevronDown} />
                                 </Sidebar.Branch.Header>
                                 <Sidebar.Branch.Content>
                                     <Sidebar.Leaf to="/some-link">

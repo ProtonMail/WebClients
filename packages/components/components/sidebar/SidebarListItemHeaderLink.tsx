@@ -1,22 +1,21 @@
 import type { Ref } from 'react';
 import { forwardRef } from 'react';
 
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 
-import Icon from '../icon/Icon';
 import type { AppLinkProps } from '../link/AppLink';
 import AppLink from '../link/AppLink';
 
 interface Props extends AppLinkProps {
-    icon: IconName;
+    icon: IconComponent;
     alt: string;
 }
-export const SidebarListItemHeaderLinkButton = ({ alt, icon, ...rest }: Props, ref: Ref<HTMLAnchorElement>) => {
+const SidebarListItemHeaderLink = ({ alt, icon: Icon, ...rest }: Props, ref: Ref<HTMLAnchorElement>) => {
     return (
         <AppLink className="flex navigation-link-header-group-control shrink-0" type="button" ref={ref} {...rest}>
-            <Icon name={icon} className="navigation-icon" alt={alt} />
+            <Icon className="navigation-icon" alt={alt} />
         </AppLink>
     );
 };
 
-export default forwardRef<HTMLAnchorElement, Props>(SidebarListItemHeaderLinkButton);
+export default forwardRef<HTMLAnchorElement, Props>(SidebarListItemHeaderLink);
