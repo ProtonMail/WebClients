@@ -1865,6 +1865,15 @@
         "${ users } usuari",
         "${ users } usuaris"
       ],
+      "Amount due": [
+        "Import pendent"
+      ],
+      "Amount due after trial": [
+        "Import a pagar després de la prova"
+      ],
+      "Amount due now": [
+        "Import pendent de pagament"
+      ],
       "Subtotal": [
         "Subtotal"
       ],
@@ -1875,9 +1884,9 @@
       "Total": [
         "Total"
       ],
-      "Total for ${ n } month": [
-        "Total per ${ n } mes",
-        "Total per ${ n } mesos"
+      "Total for ${ cycle } month": [
+        "Total per ${ cycle } mes",
+        "Total per ${ cycle } mesos"
       ]
     },
     "Collapsible tooltip": {
@@ -5819,8 +5828,8 @@
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
       ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Recordeu la vostra contrasenya? ${ verifyButton }"
+      "Do you remember your password?": [
+        "Recordeu la vostra contrasenya?"
       ],
       "Do you still want to upload it?": [
         "Encara voleu carregar-lo?",
@@ -6226,6 +6235,9 @@
       ],
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls."
+      ],
+      "Link expired": [
+        "L’enllaç ha caducat."
       ],
       "Link owner has the password": [
         "El propietari de l'enllaç té la contrasenya."
@@ -14089,6 +14101,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nou cicle de subscripció comença el ${ formattedTime }"
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Aquest enllaç ha caducat. Amplieu la data de caducitat"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A menys que es desxifrin, les contrasenyes xifrades romanen segures encara que estiguin exposades."

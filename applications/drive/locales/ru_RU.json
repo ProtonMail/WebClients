@@ -1673,12 +1673,6 @@
       ],
       "Total": [
         "Итого"
-      ],
-      "Total for ${ n } month": [
-        "Итого за ${ n } месяц",
-        "Итого за ${ n } месяца",
-        "Итого за ${ n } месяцев",
-        "Итого за ${ n } месяцев"
       ]
     },
     "Collapsible tooltip": {
@@ -5179,9 +5173,6 @@
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
       ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Вы помните свой пароль? ${ verifyButton }"
-      ],
       "Do you still want to upload it?": [
         "Вы все еще хотите загрузить его?",
         "Вы все еще хотите загрузить их?",
@@ -5472,6 +5463,9 @@
       ],
       "Link copied to clipboard": [
         "Ссылка скопирована в буфер обмена"
+      ],
+      "Link expired": [
+        "Ссылка устарела"
       ],
       "Link owner has the password": [
         "Пароль находится у владельца ссылки"
