@@ -54,7 +54,6 @@ import { Audience, SubscriptionMode } from '@proton/payments/core/subscription/c
 import { getFreeCheckResult } from '@proton/payments/core/subscription/freePlans';
 import {
     getAutoCoupon,
-    getHas2025OfferCoupon,
     getIsB2BAudienceFromSubscription,
     getMaximumCycleForApp,
     getPlanIDs,
@@ -1008,10 +1007,7 @@ const SubscriptionContainerInner = ({
 
         const uppercaseCoupon = gift.trim().toUpperCase();
         const staticCouponConfig = getStaticCouponConfig(uppercaseCoupon);
-        if (
-            (getHas2025OfferCoupon(uppercaseCoupon) && !isCSCoupon(uppercaseCoupon)) ||
-            staticCouponConfig?.blockManualEntryOfCoupon
-        ) {
+        if (staticCouponConfig?.blockManualEntryOfCoupon && !isCSCoupon(uppercaseCoupon)) {
             createNotification({ text: c('Error').t`Invalid code`, type: 'error' });
             return;
         }
