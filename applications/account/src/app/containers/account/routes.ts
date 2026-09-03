@@ -799,7 +799,11 @@ export const getAccountAppRoutes = ({
                         invisibleTitle: true,
                         id: 'two-fa',
                         available: !user.Flags.sso,
-                        keywords: [c('Label').t`Authenticator app`, c('fido2: Info').t`Security key`],
+                        keywords: [
+                            c('Label').t`Authenticator app`,
+                            c('fido2: Info').t`Security key`,
+                            c('fido2: Info').t`Require PIN for security key`,
+                        ],
                     },
                     {
                         text: c('Title').t`Notifications`,
