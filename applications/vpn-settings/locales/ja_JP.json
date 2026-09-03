@@ -1678,14 +1678,6 @@
         "トライアルの制限に達しました。"
       ]
     },
-    "b2b_trials_2025_Label": {
-      "Amount due after trial": [
-        "トライアル終了後の支払い金額"
-      ],
-      "Amount due now": [
-        "現在の請求額"
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "サブスクリプションをキャンセル"
@@ -2213,14 +2205,6 @@
       ],
       "Total": [
         "合計"
-      ],
-      "Total for ${ n } month": [
-        "合計 ${ n } か月"
-      ]
-    },
-    "Checkout summary": {
-      "month": [
-        "月"
       ]
     },
     "Collapsible tooltip": {
@@ -7050,9 +7034,6 @@
       "Amount below minimum (${ amount }).": [
         "最低金額 (${ amount }) を下回っています。"
       ],
-      "Amount due": [
-        "支払額"
-      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "メールエイリアスはメールアドレスと同じように機能しますが、スパムを減らし、実際のメールアドレスと身元を隠します。"
       ],
@@ -7379,9 +7360,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "このパスワードを紛失しないように注意してください。紛失した場合、組織を管理できなくなります。"
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "パスワードを覚えていますか？ ${ verifyButton }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "現在のセッション以外のすべてのセッションを失効させますか？"
@@ -8564,9 +8542,6 @@
       ],
       "Subscription starts on ${ startsOnTime }": [
         "サブスクリプションは ${ startsOnTime } に開始されます"
-      ],
-      "Summary": [
-        "概要"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "カスタムドメインと非 ${ BRAND_NAME } メールアドレスのモニタリング対応は、近日公開予定です。"

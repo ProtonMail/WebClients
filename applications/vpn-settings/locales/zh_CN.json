@@ -1723,14 +1723,6 @@
         "您已达到试用限制！"
       ]
     },
-    "b2b_trials_2025_Label": {
-      "Amount due after trial": [
-        "试用期后应付金额"
-      ],
-      "Amount due now": [
-        "当前应付金额"
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "取消订阅"
@@ -2264,14 +2256,6 @@
       ],
       "Total": [
         "总计"
-      ],
-      "Total for ${ n } month": [
-        "${ n } 月合计"
-      ]
-    },
-    "Checkout summary": {
-      "month": [
-        "月"
       ]
     },
     "Collapsible tooltip": {
@@ -7356,9 +7340,6 @@
       "Amount below minimum (${ amount }).": [
         "金额 (${ amount }) 过小。"
       ],
-      "Amount due": [
-        "应付金额"
-      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "邮箱别名类似邮箱地址，但是可以用于减少垃圾邮件并隐藏您的真实邮箱地址和身份信息。"
       ],
@@ -7712,9 +7693,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "切勿遗忘此密码，否则您将失去机构的管理权限。"
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "您还记得密码吗？ ${ verifyButton }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "确定要让本机以外的所有设备退出此账户吗？"
@@ -8951,9 +8929,6 @@
       ],
       "Subscription starts on ${ startsOnTime }": [
         "订阅从 ${ startsOnTime } 开始"
-      ],
-      "Summary": [
-        "概览"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "对自有域名和非 ${ BRAND_NAME } 邮箱的监测即将推出。"
