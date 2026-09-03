@@ -7,13 +7,21 @@ import ContextMenu from '@proton/components/components/contextMenu/ContextMenu';
 import ContextMenuButton from '@proton/components/components/contextMenu/ContextMenuButton';
 import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
+import { IcCircleSlash } from '@proton/icons/icons/IcCircleSlash';
+import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
+import { IcEnvelopeDot } from '@proton/icons/icons/IcEnvelopeDot';
+import { IcEnvelopeOpen } from '@proton/icons/icons/IcEnvelopeOpen';
+import { IcFire } from '@proton/icons/icons/IcFire';
+import { IcFireSlash } from '@proton/icons/icons/IcFireSlash';
+import { IcInbox } from '@proton/icons/icons/IcInbox';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { useMailSelector } from '../../store/hooks';
-
 import { useLabelActions } from '../../hooks/useLabelActions';
 import { elementsAreUnread as elementsAreUnreadSelector } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 import { CategoryContextMenu } from '../categoryView/categoriesContext/CategoryContextMenu';
 import { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 
@@ -74,7 +82,7 @@ const ItemContextMenu = ({
         <ContextMenuButton
             key="context-menu-inbox"
             testId="context-menu-inbox"
-            icon="inbox"
+            icon={<IcInbox />}
             name={c('Action').t`Move to inbox`}
             action={() => handleMove(MAILBOX_LABEL_IDS.INBOX)}
         />
@@ -84,7 +92,7 @@ const ItemContextMenu = ({
         <ContextMenuButton
             key="context-menu-nospam"
             testId="context-menu-nospam"
-            icon="fire-slash"
+            icon={<IcFireSlash />}
             name={c('Action').t`Move to inbox (not spam)`}
             action={() => handleMove(MAILBOX_LABEL_IDS.INBOX)}
         />
@@ -94,7 +102,7 @@ const ItemContextMenu = ({
         <ContextMenuButton
             key="context-menu-archive"
             testId="context-menu-archive"
-            icon="archive-box"
+            icon={<IcArchiveBox />}
             name={c('Action').t`Move to archive`}
             action={() => handleMove(MAILBOX_LABEL_IDS.ARCHIVE)}
         />
@@ -104,7 +112,7 @@ const ItemContextMenu = ({
         <ContextMenuButton
             key="context-menu-trash"
             testId="context-menu-trash"
-            icon="trash"
+            icon={<IcTrash />}
             name={c('Action').t`Move to trash`}
             action={() => handleMove(MAILBOX_LABEL_IDS.TRASH)}
         />
@@ -114,7 +122,7 @@ const ItemContextMenu = ({
         <ContextMenuButton
             key="context-menu-spam"
             testId="context-menu-spam"
-            icon="fire"
+            icon={<IcFire />}
             name={c('Action').t`Move to spam`}
             action={() => handleMove(MAILBOX_LABEL_IDS.SPAM)}
         />
@@ -124,7 +132,7 @@ const ItemContextMenu = ({
         <ContextMenuButton
             key="context-menu-delete"
             testId="context-menu-delete"
-            icon="cross-circle"
+            icon={<IcCrossCircle />}
             name={c('Action').t`Delete`}
             action={() => handleDelete(SOURCE_ACTION.CONTEXT_MENU)}
         />
@@ -144,7 +152,7 @@ const ItemContextMenu = ({
                 <ContextMenuButton
                     key="context-menu-read"
                     testId="context-menu-read"
-                    icon="envelope-open"
+                    icon={<IcEnvelopeOpen />}
                     name={c('Action').t`Mark as read`}
                     action={() => handleMarkAs(MARK_AS_STATUS.READ, SOURCE_ACTION.CONTEXT_MENU)}
                 />
@@ -152,7 +160,7 @@ const ItemContextMenu = ({
                 <ContextMenuButton
                     key="context-menu-unread"
                     testId="context-menu-unread"
-                    icon="envelope-dot"
+                    icon={<IcEnvelopeDot />}
                     name={c('Action').t`Mark as unread`}
                     action={() => handleMarkAs(MARK_AS_STATUS.UNREAD, SOURCE_ACTION.CONTEXT_MENU)}
                 />
@@ -164,7 +172,7 @@ const ItemContextMenu = ({
                     <ContextMenuButton
                         key="context-menu-block"
                         testId="context-menu-block"
-                        icon="circle-slash"
+                        icon={<IcCircleSlash />}
                         name={c('Action').t`Block sender`}
                         action={onBlockSender}
                     />

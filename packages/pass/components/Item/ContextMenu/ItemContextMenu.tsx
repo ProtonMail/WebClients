@@ -6,6 +6,24 @@ import { c } from 'ttag';
 
 import type { CreateNotificationOptions } from '@proton/app-context/notifications/interfaces';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { IcArrowOutFromRectangle } from '@proton/icons/icons/IcArrowOutFromRectangle';
+import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
+import { IcCalendarToday } from '@proton/icons/icons/IcCalendarToday';
+import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
+import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
+import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
+import { IcEye } from '@proton/icons/icons/IcEye';
+import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
+import { IcFolderArrowIn } from '@proton/icons/icons/IcFolderArrowIn';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcPassTrash } from '@proton/icons/icons/IcPassTrash';
+import { IcPen } from '@proton/icons/icons/IcPen';
+import { IcPinAngled } from '@proton/icons/icons/IcPinAngled';
+import { IcPinAngledSlash } from '@proton/icons/icons/IcPinAngledSlash';
+import { IcShield } from '@proton/icons/icons/IcShield';
+import { IcTrashCross } from '@proton/icons/icons/IcTrashCross';
+import { IcUser } from '@proton/icons/icons/IcUser';
 
 import type { ItemActions } from '../../../hooks/items/useItemActions';
 import { useItemActions } from '../../../hooks/items/useItemActions';
@@ -69,25 +87,25 @@ const getItemCopyButtons = (item: Item, getTotp: GetTotp): ContextMenuItem[] => 
             return [
                 {
                     type: 'button',
-                    icon: 'user',
+                    icon: <IcUser />,
                     name: c('Action').t`Copy username`,
                     copy: fromObfuscatedValue(item.content.itemUsername),
                 },
                 {
                     type: 'button',
-                    icon: 'envelope',
+                    icon: <IcEnvelope />,
                     name: c('Action').t`Copy email`,
                     copy: fromObfuscatedValue(item.content.itemEmail),
                 },
                 {
                     type: 'button',
-                    icon: 'key',
+                    icon: <IcKey />,
                     name: c('Action').t`Copy password`,
                     copy: fromObfuscatedValue(item.content.password),
                 },
                 {
                     type: 'button',
-                    icon: 'lock',
+                    icon: <IcLock />,
                     name: c('Label').t`2FA token (TOTP)`,
                     copy: getTotp(item.content.totpUri),
                 },
@@ -96,25 +114,25 @@ const getItemCopyButtons = (item: Item, getTotp: GetTotp): ContextMenuItem[] => 
             return [
                 {
                     type: 'button',
-                    icon: 'user',
+                    icon: <IcUser />,
                     name: c('Action').t`Copy name on card`,
                     copy: fromPlainTextValue(item.content.cardholderName),
                 },
                 {
                     type: 'button',
-                    icon: 'credit-card',
+                    icon: <IcCreditCard />,
                     name: c('Action').t`Copy card number`,
                     copy: fromObfuscatedValue(item.content.number),
                 },
                 {
                     type: 'button',
-                    icon: 'calendar-today',
+                    icon: <IcCalendarToday />,
                     name: c('Action').t`Copy expiration date`,
                     copy: fromExpirationValue(item.content.expirationDate),
                 },
                 {
                     type: 'button',
-                    icon: 'shield',
+                    icon: <IcShield />,
                     name: c('Action').t`Copy security code`,
                     copy: fromObfuscatedValue(item.content.verificationNumber),
                 },
@@ -123,7 +141,7 @@ const getItemCopyButtons = (item: Item, getTotp: GetTotp): ContextMenuItem[] => 
             return [
                 {
                     type: 'button',
-                    icon: 'key',
+                    icon: <IcKey />,
                     name: c('Action').t`Copy note content`,
                     copy: fromObfuscatedValue(item.metadata.note),
                 },
@@ -137,14 +155,14 @@ const getItemCopyButtons = (item: Item, getTotp: GetTotp): ContextMenuItem[] => 
 const getItemActionButtons = (itemState: ItemState, itemActions: ItemActions): ContextMenuItem[] => {
     const monitorActions = withItemCondition(itemState.canMonitor, {
         type: 'button',
-        icon: itemState.isMonitored ? 'eye-slash' : 'eye',
+        icon: itemState.isMonitored ? <IcEyeSlash /> : <IcEye />,
         name: itemState.isMonitored ? c('Action').t`Exclude from monitoring` : c('Action').t`Include in monitoring`,
         action: itemActions.onToggleFlags,
     });
 
     const leaveActions = withItemCondition(itemState.canLeave, {
         type: 'button',
-        icon: 'arrow-out-from-rectangle',
+        icon: <IcArrowOutFromRectangle />,
         name: c('Action').t`Leave`,
         action: itemActions.onLeave,
     });
@@ -153,14 +171,14 @@ const getItemActionButtons = (itemState: ItemState, itemActions: ItemActions): C
         ? [
               {
                   type: 'button',
-                  icon: 'arrows-rotate',
+                  icon: <IcArrowsRotate />,
                   name: c('Action').t`Restore item`,
                   action: itemActions.onRestore,
                   lock: itemState.isReadOnly,
               },
               {
                   type: 'button',
-                  icon: 'trash-cross',
+                  icon: <IcTrashCross />,
                   name: c('Action').t`Delete permanently`,
                   action: itemActions.onDelete,
                   lock: itemState.isReadOnly,
@@ -171,33 +189,33 @@ const getItemActionButtons = (itemState: ItemState, itemActions: ItemActions): C
         : [
               ...withItemCondition(!itemState.isReadOnly, {
                   type: 'button',
-                  icon: 'pen',
+                  icon: <IcPen />,
                   name: c('Action').t`Edit`,
                   action: itemActions.onEdit,
               }),
               ...withItemCondition(!itemState.isReadOnly, {
                   type: 'button',
-                  icon: 'folder-arrow-in',
+                  icon: <IcFolderArrowIn />,
                   name: c('Action').t`Move to another vault`,
                   action: itemActions.onMove,
               }),
               {
                   type: 'button',
-                  icon: itemState.isPinned ? 'pin-angled-slash' : 'pin-angled',
+                  icon: itemState.isPinned ? <IcPinAngledSlash /> : <IcPinAngled />,
                   name: itemState.isPinned ? c('Action').t`Unpin item` : c('Action').t`Pin item`,
                   action: itemActions.onPin,
                   lock: !itemState.canTogglePinned,
               },
               {
                   type: 'button',
-                  icon: 'clock-rotate-left',
+                  icon: <IcClockRotateLeft />,
                   name: c('Action').t`View history`,
                   action: itemActions.onHistory,
                   lock: !itemState.canHistory,
               },
               {
                   type: 'button',
-                  icon: 'pass-trash',
+                  icon: <IcPassTrash />,
                   name: c('Action').t`Move to trash`,
                   action: itemActions.onTrash,
                   lock: itemState.isReadOnly,
