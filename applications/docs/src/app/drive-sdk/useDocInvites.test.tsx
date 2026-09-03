@@ -51,6 +51,15 @@ afterEach(() => {
 })
 
 describe('useDocInvites', () => {
+  test('is not left loading when the drive SDK is unavailable', async () => {
+    // @ts-ignore It CAN be undefined
+    jest.mocked(getDrive).mockReturnValue(undefined)
+
+    const { result } = renderHook(() => useDocInvites(), { wrapper })
+
+    await waitFor(() => expect(result.current.isLoading).toBe(false))
+  })
+
   test('acceptInvite throws when the drive SDK is not initialized', async () => {
     // @ts-ignore It CAN be undefined
     jest.mocked(getDrive).mockReturnValue(undefined)
