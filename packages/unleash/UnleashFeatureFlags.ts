@@ -346,13 +346,13 @@ enum MeetFeatureFlag {
     MeetDtlnPerfMonitor = 'MeetDtlnPerfMonitor',
     MeetBlurPersonConfidenceBoost = 'MeetBlurPersonConfidenceBoost',
     MeetBlurMulticlassPersonConfidenceBoost = 'MeetBlurMulticlassPersonConfidenceBoost',
-    MeetUseNewBackgroundBlurVersion = 'MeetUseNewBackgroundBlurVersion',
     MeetChatThreads = 'MeetChatThreads',
     MeetVirtualBackground = 'MeetVirtualBackground',
     MeetCustomVirtualBackground = 'MeetCustomVirtualBackground',
     MeetLiveCaptions = 'MeetLiveCaptions',
     MeetSaveCaptionLanguagePreference = 'MeetSaveCaptionLanguagePreference',
     MeetUseCachedServerTime = 'MeetUseCachedServerTime',
+    MeetBackgroundEffectsOnMobileBrowsers = 'MeetBackgroundEffectsOnMobileBrowsers',
 }
 
 enum LumoFeatureFlag {

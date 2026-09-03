@@ -1,15 +1,20 @@
+import { isMobile } from '@proton/shared/lib/helpers/browser';
+
 import { isLowEndDevice } from '../../utils/isLowEndDevice';
 import {
     MASK_CLOSING_RADIUS,
     MASK_CLOSING_RADIUS_LOW_END,
+    MASK_CLOSING_RADIUS_MOBILE,
     MASK_TEMPORAL_APPEAR_RATE,
     MASK_TEMPORAL_APPEAR_RATE_FAST,
     MASK_TEMPORAL_DISAPPEAR_RATE,
     MASK_TEMPORAL_DISAPPEAR_RATE_FAST,
     MASK_TEMPORAL_MOTION_HIGH,
     MASK_TEMPORAL_MOTION_LOW,
+    SEGMENTATION_FRAME_INTERVAL,
     SEGMENTATION_INPUT_MAX_EDGE,
     SEGMENTATION_INPUT_MAX_EDGE_HIGH_END,
+    SEGMENTATION_INPUT_MAX_EDGE_MOBILE,
 } from './constants';
 import { getConfidenceBoostConfig } from './getConfidenceBoostConfig';
 
@@ -26,8 +31,36 @@ export interface TunableConstants {
     maskTemporalMotionHigh: number;
     maskClosingRadius: number;
     segmentationInputMaxEdge: number;
+    segmentationFrameInterval: number;
     blurRadius: number;
 }
+
+// Device class a processor was created for; mobile wins wherever both apply.
+export interface DeviceTier {
+    isMobile?: boolean;
+    isLowEndDevice?: boolean;
+}
+
+export const getDefaultMaskClosingRadius = (tier: DeviceTier): number => {
+    if (tier.isMobile) {
+        return MASK_CLOSING_RADIUS_MOBILE;
+    }
+    return tier.isLowEndDevice ? MASK_CLOSING_RADIUS_LOW_END : MASK_CLOSING_RADIUS;
+};
+
+export const getDefaultSegmentationInputMaxEdge = (tier: DeviceTier): number => {
+    if (tier.isMobile) {
+        return SEGMENTATION_INPUT_MAX_EDGE_MOBILE;
+    }
+    return tier.isLowEndDevice ? SEGMENTATION_INPUT_MAX_EDGE : SEGMENTATION_INPUT_MAX_EDGE_HIGH_END;
+};
+
+export const getSegmentationResizeQuality = (tier: DeviceTier): ResizeQuality => {
+    if (tier.isMobile) {
+        return 'low';
+    }
+    return tier.isLowEndDevice ? 'medium' : 'high';
+};
 
 export type TunableConstantsOverrides = Partial<TunableConstants>;
 
@@ -45,7 +78,7 @@ export const WORKER_CONSTANT_KEYS = [
 export type WorkerConstantKey = (typeof WORKER_CONSTANT_KEYS)[number];
 
 export const getDefaultTunableConstants = (): TunableConstants => {
-    const lowEndDevice = isLowEndDevice();
+    const tier: DeviceTier = { isMobile: isMobile(), isLowEndDevice: isLowEndDevice() };
     const { personConfidenceBoost, multiclassPersonConfidenceBoost } = getConfidenceBoostConfig();
 
     return {
@@ -57,8 +90,9 @@ export const getDefaultTunableConstants = (): TunableConstants => {
         maskTemporalDisappearRateFast: MASK_TEMPORAL_DISAPPEAR_RATE_FAST,
         maskTemporalMotionLow: MASK_TEMPORAL_MOTION_LOW,
         maskTemporalMotionHigh: MASK_TEMPORAL_MOTION_HIGH,
-        maskClosingRadius: lowEndDevice ? MASK_CLOSING_RADIUS_LOW_END : MASK_CLOSING_RADIUS,
-        segmentationInputMaxEdge: lowEndDevice ? SEGMENTATION_INPUT_MAX_EDGE : SEGMENTATION_INPUT_MAX_EDGE_HIGH_END,
+        maskClosingRadius: getDefaultMaskClosingRadius(tier),
+        segmentationInputMaxEdge: getDefaultSegmentationInputMaxEdge(tier),
+        segmentationFrameInterval: SEGMENTATION_FRAME_INTERVAL,
         blurRadius: DEFAULT_BLUR_RADIUS,
     };
 };
@@ -192,6 +226,17 @@ export const TUNABLE_CONSTANT_FIELDS: TunableConstantField[] = [
         integer: true,
         description:
             'Longest edge (px) the frame is downscaled to before segmentation. Higher preserves thin features (hair, fingers) but costs more per frame.',
+    },
+    {
+        key: 'segmentationFrameInterval',
+        label: 'Segmentation frame interval',
+        min: 1,
+        max: 6,
+        step: 1,
+        category: 'Segmentation',
+        integer: true,
+        description:
+            'Composited frames per segmentation request. 1 segments every frame; higher reuses the previous mask for the frames in between, cutting inference cost at the price of some silhouette staleness.',
     },
     {
         key: 'blurRadius',

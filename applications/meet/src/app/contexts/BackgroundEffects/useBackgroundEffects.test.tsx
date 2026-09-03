@@ -100,7 +100,7 @@ const setup = ({ cameraState = 'live', appliedBackgroundEffect = 'none' }: Setup
     const getBackgroundState = () => (store.getState() as { background: BackgroundState }).background;
     const getAppliedBackgroundEffect = () => getBackgroundState().appliedBackgroundEffect;
 
-    const { result } = renderHook(() => useBackgroundEffects({ backgroundProcessorVersion: 'current' }), {
+    const { result } = renderHook(() => useBackgroundEffects({ isBackgroundEffectsSupported: true }), {
         wrapper: ({ children }) => (
             <Provider context={ProtonStoreContext} store={store}>
                 {children}

@@ -5,16 +5,12 @@ import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { isLowEndDevice } from '../../utils/isLowEndDevice';
 import type { CustomBackground as CustomBackgroundImpl } from './CustomBackgroundProcessor';
-import type {
-    BackgroundBlur as BackgroundBlurImpl,
-    preloadBackgroundBlurAssets as preloadBackgroundBlurAssetsImpl,
-} from './MulticlassBackgroundProcessor';
+import { MAX_FPS_MOBILE } from './constants';
 import { getConfidenceBoostConfig } from './getConfidenceBoostConfig';
 import type { TunableConstantsOverrides } from './tunableConstants';
 import type {
     BackgroundBlurProcessor,
     BackgroundProcessorOptions,
-    BackgroundProcessorVersion,
     CustomBackgroundProcessor,
     CustomBackgroundProcessorOptions,
 } from './types';
@@ -22,32 +18,11 @@ import type {
 const SIMPLE_SEGMENTATION_MODEL_PATH = '/assets/background-blur/selfie_segmenter.tflite';
 const MULTICLASS_SEGMENTATION_MODEL_PATH = '/assets/background-blur/selfie_multiclass_256x256.tflite';
 
-const DEFAULT_BACKGROUND_PROCESSOR_VERSION: BackgroundProcessorVersion = 'next';
-
-type BackgroundProcessorModule = {
-    BackgroundBlur: typeof BackgroundBlurImpl;
-    preloadBackgroundBlurAssets: typeof preloadBackgroundBlurAssetsImpl;
-};
-
-const loadBackgroundProcessorImplementation = async (
-    version: BackgroundProcessorVersion
-): Promise<BackgroundProcessorModule> => {
-    if (version === 'current') {
-        try {
-            return await import('./current/MulticlassBackgroundProcessor');
-        } catch {
-            return import('./MulticlassBackgroundProcessor');
-        }
-    }
-
-    return import('./MulticlassBackgroundProcessor');
-};
-
 let isSupported: boolean | undefined;
 
 // Creating the WebGL2 context is slightly expensive, and neither the GL capability
 // nor the user agent can change for the lifetime of the page, so probe at most once.
-export const supportsBackgroundEffects = () => (isSupported ??= !isMobile() && supportsBackgroundProcessors());
+export const supportsBackgroundEffects = () => (isSupported ??= supportsBackgroundProcessors());
 
 const getBackgroundProcessorOptions = (useSimpleSegmentation: boolean): BackgroundProcessorOptions => ({
     assetPaths: {
@@ -56,9 +31,17 @@ const getBackgroundProcessorOptions = (useSimpleSegmentation: boolean): Backgrou
     },
 });
 
+// Paces the requestAnimationFrame fallback only; the stream-processor path is capped
+// by the processor itself.
+const getMaxFps = (mobileDevice: boolean) => {
+    if (mobileDevice) {
+        return MAX_FPS_MOBILE;
+    }
+    return supportsModernBackgroundProcessors() ? 30 : 20;
+};
+
 export const createBackgroundProcessor = async (
     forceSimpleSegmentation = false,
-    version: BackgroundProcessorVersion = DEFAULT_BACKGROUND_PROCESSOR_VERSION,
     constantOverrides?: TunableConstantsOverrides
 ): Promise<BackgroundBlurProcessor | null> => {
     if (!supportsBackgroundEffects()) {
@@ -66,19 +49,20 @@ export const createBackgroundProcessor = async (
     }
 
     try {
-        const { BackgroundBlur } = await loadBackgroundProcessorImplementation(version);
+        const { BackgroundBlur } = await import('./MulticlassBackgroundProcessor');
         const lowEndDevice = isLowEndDevice();
+        const mobileDevice = isMobile();
         const useSimpleSegmentation = lowEndDevice || forceSimpleSegmentation;
 
         const backgroundProcessorOptions = getBackgroundProcessorOptions(useSimpleSegmentation);
-        const modernProcessorsSupported = supportsModernBackgroundProcessors();
-        const dynamicProcessorOptions = { maxFps: modernProcessorsSupported ? 30 : 20 };
+        const dynamicProcessorOptions = { maxFps: getMaxFps(mobileDevice) };
         const blurRadius = typeof constantOverrides?.blurRadius === 'number' ? constantOverrides.blurRadius : 60;
         return BackgroundBlur(blurRadius, undefined, {
             ...backgroundProcessorOptions,
             ...dynamicProcessorOptions,
             ...getConfidenceBoostConfig(),
             isLowEndDevice: lowEndDevice,
+            isMobile: mobileDevice,
             constantOverrides,
         });
     } catch {
@@ -101,16 +85,17 @@ export const createCustomBackgroundProcessor = async (
             './CustomBackgroundProcessor'
         );
         const lowEndDevice = isLowEndDevice();
+        const mobileDevice = isMobile();
         const useSimpleSegmentation = lowEndDevice || forceSimpleSegmentation;
 
         const backgroundProcessorOptions = getBackgroundProcessorOptions(useSimpleSegmentation);
-        const modernProcessorsSupported = supportsModernBackgroundProcessors();
-        const dynamicProcessorOptions = { maxFps: modernProcessorsSupported ? 30 : 20 };
+        const dynamicProcessorOptions = { maxFps: getMaxFps(mobileDevice) };
         const processorOptions: CustomBackgroundProcessorOptions = {
             ...backgroundProcessorOptions,
             ...dynamicProcessorOptions,
             ...getConfidenceBoostConfig(),
             isLowEndDevice: lowEndDevice,
+            isMobile: mobileDevice,
             constantOverrides,
         };
         return CustomBackground(background, undefined, processorOptions);
@@ -119,15 +104,13 @@ export const createCustomBackgroundProcessor = async (
     }
 };
 
-export const preloadBackgroundProcessorAssets = async (
-    version: BackgroundProcessorVersion = DEFAULT_BACKGROUND_PROCESSOR_VERSION
-) => {
+export const preloadBackgroundProcessorAssets = async () => {
     if (!supportsBackgroundEffects()) {
         return;
     }
 
     try {
-        const { preloadBackgroundBlurAssets } = await loadBackgroundProcessorImplementation(version);
+        const { preloadBackgroundBlurAssets } = await import('./MulticlassBackgroundProcessor');
         const useSimpleSegmentation = isLowEndDevice();
         const backgroundProcessorOptions = getBackgroundProcessorOptions(useSimpleSegmentation);
         await preloadBackgroundBlurAssets(backgroundProcessorOptions.assetPaths);

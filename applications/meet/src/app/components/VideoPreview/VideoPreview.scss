@@ -6,6 +6,14 @@
 	}
 }
 
+.video-preview__video {
+	object-fit: cover;
+
+	&.vertical-video {
+		object-fit: contain;
+	}
+}
+
 .allow-button {
 	background-color: var(--interaction-weak-minor-1);
 	padding-block: 1.25rem !important;

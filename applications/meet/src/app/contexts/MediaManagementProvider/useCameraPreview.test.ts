@@ -35,7 +35,6 @@ const setup = () =>
             facingMode: 'user',
             isBackgroundBlurSupported: false,
             backgroundEffect: 'none',
-            backgroundProcessorVersion: 'current',
             room: { localParticipant: { activeDeviceMap: new Map() } } as unknown as Room,
             trackBackgroundEffectInitialization: vi.fn(),
             cancelBackgroundEffectInitialization: vi.fn(),

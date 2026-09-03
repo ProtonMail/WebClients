@@ -17,7 +17,6 @@ import {
     toggleShowDuration,
     toggleSideBarState as toggleSideBarStateAction,
 } from '@proton/meet/store/slices/uiStateSlice';
-import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { ConditionalTooltip } from '../../atoms/ConditionalTooltip/ConditionalTooltip';
@@ -25,11 +24,11 @@ import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { SideBarSection } from '../../atoms/SideBarSection/SideBarSection';
 import { useBackgroundEffectsContext } from '../../contexts/BackgroundEffects/BackgroundEffectsContext';
+import { useIsBackgroundEffectsSupported } from '../../contexts/BackgroundEffects/useIsBackgroundEffectsSupported';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useCaptionsPreference } from '../../hooks/captions/useCaptionsPreference';
 import { useLiveCaptionsFeatureEnabled } from '../../hooks/captions/useLiveCaptionsFeatureEnabled';
-import { supportsBackgroundEffects } from '../../processors/background-processor/createBackgroundProcessor';
 import { BackgroundBlurToggle } from './BackgroundBlurToggle';
 import { CaptionLanguageSelect } from './CaptionLanguageSelect';
 import { LiveCaptionsHostAvailabilityToggle } from './LiveCaptionsHostAvailabilityToggle';
@@ -45,7 +44,7 @@ export const Settings = () => {
 
     const { noiseFilter, toggleNoiseFilter } = useMediaManagementContext();
     const { toggleBackgroundBlur } = useBackgroundEffectsContext();
-    const isBackgroundBlurSupported = supportsBackgroundEffects();
+    const isBackgroundBlurSupported = useIsBackgroundEffectsSupported();
     const backgroundBlur = useMeetSelector(selectBackgroundBlur);
     const { handleMeetingLockToggle } = useMeetContext();
     const isLocalScreenShare = useMeetSelector(selectIsLocalScreenShare);
@@ -150,47 +149,42 @@ export const Settings = () => {
                         />
                     </SideBarSection>
 
-                    {!isMobile() && (
-                        <SideBarSection title={c('Title').t`Background`}>
-                            <BackgroundBlurToggle
-                                backgroundBlur={backgroundBlur}
-                                loadingBackgroundBlur={loadingBackgroundBlur}
-                                isBackgroundBlurSupported={isBackgroundBlurSupported}
-                                onChange={() => {
-                                    void withLoadingBackgroundBlur(toggleBackgroundBlur());
-                                }}
-                                withTooltip={true}
-                            />
-                            {isVirtualBackgroundEnabled && (
-                                <ConditionalTooltip
-                                    title={
-                                        isBackgroundBlurSupported
-                                            ? undefined
-                                            : c('Tooltip').t`Background effects are not supported on your browser`
-                                    }
-                                >
-                                    <span className="inline-block w-full">
-                                        <Button
-                                            shape="ghost"
-                                            className="virtual-backgrounds-button w-full flex items-center justify-space-between flex-nowrap gap-2 px-0 py-0 text-left"
-                                            disabled={!isBackgroundBlurSupported}
-                                            onClick={() =>
-                                                dispatch(toggleSideBarStateAction(MeetingSideBars.Backgrounds))
-                                            }
-                                        >
-                                            <span className="meet-font-weight">{c('Action')
-                                                .t`Virtual backgrounds`}</span>
-                                            <IcChevronRight
-                                                size={4}
-                                                className="shrink-0 mr-custom"
-                                                style={{ '--mr-custom': 'calc(var(--space-1) * -1)' }}
-                                            />
-                                        </Button>
-                                    </span>
-                                </ConditionalTooltip>
-                            )}
-                        </SideBarSection>
-                    )}
+                    <SideBarSection title={c('Title').t`Background`}>
+                        <BackgroundBlurToggle
+                            backgroundBlur={backgroundBlur}
+                            loadingBackgroundBlur={loadingBackgroundBlur}
+                            isBackgroundBlurSupported={isBackgroundBlurSupported}
+                            onChange={() => {
+                                void withLoadingBackgroundBlur(toggleBackgroundBlur());
+                            }}
+                            withTooltip={true}
+                        />
+                        {isVirtualBackgroundEnabled && (
+                            <ConditionalTooltip
+                                title={
+                                    isBackgroundBlurSupported
+                                        ? undefined
+                                        : c('Tooltip').t`Background effects are not supported on your browser`
+                                }
+                            >
+                                <span className="inline-block w-full">
+                                    <Button
+                                        shape="ghost"
+                                        className="virtual-backgrounds-button w-full flex items-center justify-space-between flex-nowrap gap-2 px-0 py-0 text-left"
+                                        disabled={!isBackgroundBlurSupported}
+                                        onClick={() => dispatch(toggleSideBarStateAction(MeetingSideBars.Backgrounds))}
+                                    >
+                                        <span className="meet-font-weight">{c('Action').t`Virtual backgrounds`}</span>
+                                        <IcChevronRight
+                                            size={4}
+                                            className="shrink-0 mr-custom"
+                                            style={{ '--mr-custom': 'calc(var(--space-1) * -1)' }}
+                                        />
+                                    </Button>
+                                </span>
+                            </ConditionalTooltip>
+                        )}
+                    </SideBarSection>
 
                     <div ref={displayRef} className="shrink-0">
                         <SideBarSection title={c('Title').t`Display`}>
