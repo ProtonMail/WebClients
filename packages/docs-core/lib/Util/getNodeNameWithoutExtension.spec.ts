@@ -15,6 +15,11 @@ describe('getNodeNameWithoutExtension', () => {
     expect(getNodeNameWithoutExtension(node)).toBe('document')
   })
 
+  it('should return the node name without the .odt extension', () => {
+    const node = mockDecryptedNode('document.odt', SupportedProtonDocsMimeTypes.odt)
+    expect(getNodeNameWithoutExtension(node)).toBe('document')
+  })
+
   it('should return the node name without the .html extension', () => {
     const node = mockDecryptedNode('document.html', SupportedProtonDocsMimeTypes.html)
     expect(getNodeNameWithoutExtension(node)).toBe('document')

@@ -123,6 +123,7 @@ export const isCompatibleCBZ = (mimeType: string, filename: string) => {
  */
 export const isConvertibleToProtonDocsDocument = (mimeType: string) =>
     mimeType === SupportedProtonDocsMimeTypes.docx ||
+    mimeType === SupportedProtonDocsMimeTypes.odt ||
     mimeType === SupportedProtonDocsMimeTypes.txt ||
     mimeType === SupportedProtonDocsMimeTypes.md ||
     mimeType === SupportedProtonDocsMimeTypes.html;
@@ -147,6 +148,8 @@ export const getDocsConversionType = (mimeType: string): DocsConversionType => {
             return 'tsv';
         case SupportedProtonDocsMimeTypes.docx:
             return 'docx';
+        case SupportedProtonDocsMimeTypes.odt:
+            return 'odt';
         case SupportedProtonDocsMimeTypes.txt:
             return 'txt';
         case SupportedProtonDocsMimeTypes.html:
@@ -168,7 +171,11 @@ export type ProtonDocumentType = 'document' | 'spreadsheet';
 
 export type OpenInDocsType = { type: ProtonDocumentType; isNative: boolean };
 
-export function mimeTypeToOpenInDocsType(mimeType?: string, isODSImportEnabled?: boolean): OpenInDocsType | undefined {
+export function mimeTypeToOpenInDocsType(
+    mimeType?: string,
+    isODSImportEnabled?: boolean,
+    isODTEnabled?: boolean
+): OpenInDocsType | undefined {
     if (!mimeType) {
         return undefined;
     }
@@ -181,6 +188,9 @@ export function mimeTypeToOpenInDocsType(mimeType?: string, isODSImportEnabled?:
     const isNative = isDocument || isSheet;
 
     if (isDocument || isConvertibleToDocument) {
+        if (!isODTEnabled && mimeType === SupportedProtonDocsMimeTypes.odt) {
+            return undefined;
+        }
         return { type: 'document', isNative };
     }
     if (isSheet || isConvertibleToSpreadsheet) {

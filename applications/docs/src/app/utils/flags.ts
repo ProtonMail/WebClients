@@ -64,6 +64,10 @@ export function useIsDarkThemeEnabled() {
   return useFlag('DocsDarkTheme') || isDevOrBlack()
 }
 
+export function useIsODTEnabled() {
+  return useFlag('DocsODTEnabled') || isDevOrBlack()
+}
+
 /**
  * Checks if the user is allowed to download logs.
  * It will only be active for alpha and dev/black environments for now.
