@@ -2754,10 +2754,6 @@
       ],
       "Total": [
         "Toplam"
-      ],
-      "Total for ${ n } month": [
-        "${ n } aylık toplam",
-        "${ n } aylık toplam"
       ]
     },
     "Collapsible tooltip": {
@@ -7586,6 +7582,9 @@
       "Center": [
         "Ortaya"
       ],
+      "Change display setting": [
+        "Görüntü ayarını değiştir"
+      ],
       "Change your password": [
         "Parolanızı değiştirin"
       ],
@@ -7752,9 +7751,6 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logosu"
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Parolanızı hatırlıyor musunuz? ${ verifyButton }"
       ],
       "Do you want to download this attachment anyway?": [
         "Bu ek dosyayı yine de indirmek istiyor musunuz?",
@@ -8146,7 +8142,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -8652,6 +8649,9 @@
       "Read your ${ count } label": [
         "${ count } etiketinizi okuyun",
         "${ count } etiketinizi okuyun"
+      ],
+      "Read your display settings": [
+        "Görüntü ayarlarınızı okuyun"
       ],
       "Recipient: ": [
         "Alıcı: "
@@ -10280,8 +10280,17 @@
       "Colors": [
         "Renkler"
       ],
+      "Column": [
+        "Sütun"
+      ],
+      "Comfortable": [
+        "Geniş"
+      ],
       "Command line interface (CLI)": [
         "Komut satırı arayüzü (CLI)"
+      ],
+      "Compact": [
+        "Sıkışık"
       ],
       "Company": [
         "Kuruluş"
@@ -10312,6 +10321,9 @@
       ],
       "Continue cancelling": [
         "İptal etmeye geç"
+      ],
+      "Conversation grouping": [
+        "Yazışmalar gruplansın"
       ],
       "Copy": [
         "Kopyala"
@@ -10513,6 +10525,9 @@
       ],
       "Go to Updates": [
         "Güncellemelere git"
+      ],
+      "Grouped conversations": [
+        "Gruplanmış yazışmalar"
       ],
       "Has attachments": [
         "Ek dosyaları olan"
@@ -10835,6 +10850,9 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
+      "Row": [
+        "Satır"
+      ],
       "Search in": [
         "Şurada ara"
       ],
@@ -10855,6 +10873,9 @@
       ],
       "Sign emails": [
         "E-postaları imzala"
+      ],
+      "Single messages": [
+        "Tekil iletiler"
       ],
       "Size:": [
         "Boyut:"
@@ -16305,6 +16326,9 @@
       ],
       "CC": [
         "Kopya"
+      ],
+      "Change display setting": [
+        "Görüntü ayarını değiştir"
       ],
       "Change my answer": [
         "Yanıtımı değiştir"
