@@ -46,13 +46,18 @@ export class SearchIndexKeyManager {
         // Encode as base64 because the bridge is a Comlink proxy (string-only serialization).
         const base64Key = rawKeyBytes.toBase64();
 
+        // Clear before storing, not after. These are two separate transactions, so if we die in
+        // between (tab closed, crash) we'd be left with the new key sitting next to blobs only the
+        // old key could read - and the next boot decrypts the key fine, returns early above, and
+        // never clears them. This way round an interruption just means no key was stored yet, so
+        // the next boot regenerates and clears again.
+        await db.clearIndex();
+
         try {
             await db.putSearchCryptoKey(base64Key, encrypt);
         } catch (e) {
             throw classifyPermanentError(e) !== null ? e : new MissingUserKeyEncryptionError(e);
         }
-        // A new key means old blobs are undecryptable — clear stale index data.
-        await db.clearIndex();
 
         return { cryptoKey: await importKey(rawKeyBytes) };
     }
