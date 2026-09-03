@@ -4,6 +4,8 @@ import { c } from 'ttag';
 
 import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import { ThemeColor } from '@proton/colors/types';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import type { SidebarNode, SidebarTree } from '@proton/nav/types/sidebar';
 
 import { Badge } from '../../badge/Badge';
@@ -64,7 +66,7 @@ function Branch({ item, activeBranches }: { item: SidebarNode; activeBranches: S
             <Sidebar.Branch.Header>
                 {ItemIcon ? <ItemIcon className="color-weak" /> : <Sidebar.Branch.IconPlaceholder />}
                 <Sidebar.Branch.Text>{item.label}</Sidebar.Branch.Text>
-                <Sidebar.Branch.Trigger rotation={{ open: 180 }} name="chevron-down" />
+                <Sidebar.Branch.Trigger rotation={{ open: 180 }} icon={IcChevronDown} />
             </Sidebar.Branch.Header>
             <Sidebar.Branch.Content>
                 {item.children.map((child) => {
@@ -137,7 +139,7 @@ export const Tree = ({ routes, pathname }: Props) => {
             {firstLevels.map((item) => (
                 <Sidebar.Branch key={item.id} open={openLevel1.has(item.id)} onOpenChange={() => toggleLevel1(item.id)}>
                     <Sidebar.Branch.Header className="text-lg">
-                        <Sidebar.Branch.Trigger rotation={{ closed: 270 }} name="chevron-down-filled" />
+                        <Sidebar.Branch.Trigger rotation={{ closed: 270 }} icon={IcChevronDownFilled} />
                         <Sidebar.Branch.Text>{item.label}</Sidebar.Branch.Text>
                     </Sidebar.Branch.Header>
                     {item.children ? (

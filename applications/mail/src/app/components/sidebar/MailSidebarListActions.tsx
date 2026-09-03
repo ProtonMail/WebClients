@@ -5,6 +5,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SidebarListItemHeaderLink from '@proton/components/components/sidebar/SidebarListItemHeaderLink';
 import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
+import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { APPS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedFolderLimit, hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
@@ -59,7 +60,7 @@ const MailSidebarListActions = ({ type, items }: Props) => {
                 <SidebarListItemHeaderLink
                     to="/mail/folders-labels"
                     toApp={APPS.PROTONACCOUNT}
-                    icon="cog-wheel"
+                    icon={IcCogWheel}
                     alt={type === 'label' ? c('Info').t`Manage your labels` : c('Link').t`Manage your folders`}
                     target="_self"
                     data-testid="navigation-link:labels-settings"
