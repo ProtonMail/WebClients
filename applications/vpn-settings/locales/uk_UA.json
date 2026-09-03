@@ -1732,14 +1732,6 @@
         "Ви досягли ліміту пробного періоду."
       ]
     },
-    "b2b_trials_2025_Label": {
-      "Amount due after trial": [
-        "Сума до сплати після пробного періоду"
-      ],
-      "Amount due now": [
-        "Сума до сплати зараз"
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Скасувати передплату"
@@ -2294,17 +2286,6 @@
       ],
       "Total": [
         "Усього"
-      ],
-      "Total for ${ n } month": [
-        "Всього за ${ n } місяць",
-        "Всього за ${ n } місяці",
-        "Всього за ${ n } місяців",
-        "Всього за ${ n } місяці"
-      ]
-    },
-    "Checkout summary": {
-      "month": [
-        "місяць"
       ]
     },
     "Collapsible tooltip": {
@@ -7575,9 +7556,6 @@
       "Amount below minimum (${ amount }).": [
         "Сума нижче найменшої (${ amount })."
       ],
-      "Amount due": [
-        "До сплати"
-      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Псевдонім – це спеціальна адреса електронної пошти, призначена для зменшення спаму і приховування вашої справжньої адреси й особистості."
       ],
@@ -7922,9 +7900,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "ЗАПАМ'ЯТАЙТЕ цей пароль. Якщо ви його забудете, то не зможете керувати своєю організацією."
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Ви пам'ятаєте свій пароль? ${ verifyButton }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Хочете відкликати всі інші сеанси, окрім поточного?"
@@ -9140,9 +9115,6 @@
       ],
       "Subscription starts on ${ startsOnTime }": [
         "Передплата починається ${ startsOnTime }"
-      ],
-      "Summary": [
-        "Підсумок"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Незабаром з'явиться підтримка моніторингу власних доменів та адрес електронної пошти, що не належать до ${ BRAND_NAME }."

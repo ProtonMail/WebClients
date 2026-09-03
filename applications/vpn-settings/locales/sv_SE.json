@@ -1965,14 +1965,6 @@
         "Du har nått provperiodsgränsen."
       ]
     },
-    "b2b_trials_2025_Label": {
-      "Amount due after trial": [
-        "Belopp att betala efter provperiod"
-      ],
-      "Amount due now": [
-        "Att betala nu"
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Avsluta prenumeration"
@@ -2512,15 +2504,6 @@
       ],
       "Total": [
         "Totalt"
-      ],
-      "Total for ${ n } month": [
-        "Totalt för ${ n } månad",
-        "Totalt för ${ n } månader"
-      ]
-    },
-    "Checkout summary": {
-      "month": [
-        "månad"
       ]
     },
     "Collapsible tooltip": {
@@ -7691,9 +7674,6 @@
       "Amount below minimum (${ amount }).": [
         "Belopp under minimum (${ amount })."
       ],
-      "Amount due": [
-        "Att betala"
-      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Ett e-postalias fungerar som en e-postadress, men minskar skräppost och håller din faktiska e-postadress och identitet dold."
       ],
@@ -7892,6 +7872,9 @@
       "Connects you to your destination country through servers physically located elsewhere.": [
         "Ansluter dig till ditt destinationsland via servrar som är fysiskt placerade någon annanstans."
       ],
+      "Connects you to your destination country through servers physically located elsewhere: ${ joinedSmartRoutingCountries }.": [
+        "Ansluter dig till ditt destinationsland via servrar som är fysiskt placerade någon annanstans: ${ joinedSmartRoutingCountries }."
+      ],
       "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
         "Kontakta vårt kundsupportteam för att inaktivera tvåfaktorsautentisering för ditt konto, eller för att återställa ditt konto på annat sätt."
       ],
@@ -8017,6 +8000,9 @@
       "Deploy across all your managed devices": [
         "Distribuera på alla dina hanterade enheter"
       ],
+      "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
+        "Distribuera det via din MDM (Jamf, Intune …) eller manuellt på varje enhet."
+      ],
       "Did you know?": [
         "Visste du att?"
       ],
@@ -8052,9 +8038,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Glöm INTE det här lösenordet. Om du glömmer det kommer du inte att kunna hantera din organisation."
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Kommer du ihåg ditt lösenord? ${ verifyButton }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Vill du återkalla alla andra sessioner än den nuvarande?"
@@ -9298,9 +9281,6 @@
       "Subscription starts on ${ startsOnTime }": [
         "Prenumeration startar den ${ startsOnTime }"
       ],
-      "Summary": [
-        "Sammanfattning"
-      ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Support för övervakning av anpassade domäner och icke ${ BRAND_NAME }-e-postadresser kommer snart."
       ],
@@ -9708,6 +9688,9 @@
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Använd en återställningsmetod för att inaktivera dina tvåfaktorsautentiseringsmetoder."
+      ],
+      "Use an existing email or create a free ${ protonDomain } address.": [
+        "Använd en befintlig e-post eller skapa en gratis ${ protonDomain }-adress."
       ],
       "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
         "Använd flera e-postadresser med ${ MAIL_APP_NAME }. Lägg till en ny ${ BRAND_NAME }-adress eller anslut ett annat e-postkonto för att hantera allt från en inkorg."
@@ -10164,6 +10147,9 @@
       "your encrypted data will be locked": [
         "dina krypterade data kommer att låsas"
       ],
+      "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
+        "Din fil inkluderar ett lösenord för varje användare, så dessa konton kommer att skapas med ett lösenord istället för en inbjudningslänk."
+      ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
       ],
@@ -10196,6 +10182,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
+      ],
+      "Your profile and changes to it will be visible to other ${ BRAND_NAME } users.": [
+        "Din profil och ändringar i den kommer att vara synliga för andra ${ BRAND_NAME }-användare."
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Dina senaste ändringar har publicerats. De kommer vara synliga för användare inom de närmaste timmarna."
@@ -12111,6 +12100,9 @@
       ],
       "Today, ${ time }": [
         "Idag ${ time }"
+      ],
+      "Turn it on to track when and where users connect.": [
+        "Slå på den för att spåra när och var användare ansluter."
       ],
       "Yesterday": [
         "Igår"

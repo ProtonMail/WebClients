@@ -2016,14 +2016,6 @@
         "Ați atins limita perioadei de evaluare."
       ]
     },
-    "b2b_trials_2025_Label": {
-      "Amount due after trial": [
-        "Suma datorată după evaluare"
-      ],
-      "Amount due now": [
-        "Suma datorată acum"
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Anulare abonament"
@@ -2577,16 +2569,6 @@
       ],
       "Total": [
         "Total"
-      ],
-      "Total for ${ n } month": [
-        "Total pentru o lună",
-        "Total pentru ${ n } luni",
-        "Total pentru ${ n } de luni"
-      ]
-    },
-    "Checkout summary": {
-      "month": [
-        "lună"
       ]
     },
     "Collapsible tooltip": {
@@ -6984,7 +6966,7 @@
         "Stare"
       ],
       "Username": [
-        "Nume utilizator"
+        "Nume de utilizator"
       ]
     },
     "Header for domain modal": {
@@ -7900,9 +7882,6 @@
       "Amount below minimum (${ amount }).": [
         "Suma este sub minimul acceptat (${ amount })."
       ],
-      "Amount due": [
-        "Suma datorată"
-      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias de e-mail funcționează ca o adresă de e-mail, dar reduce mesajele nedorite și vă păstrează adresa de e-mail și identitatea reală ascunse."
       ],
@@ -8284,9 +8263,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NU uitați această parolă. În cazul în care o uitați, nu vă veți mai putea administra organizația."
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Vă amintiți parola? ${ verifyButton }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Doriți să anulați toate celelalte sesiuni în afară de cea curentă?"
@@ -9575,9 +9551,6 @@
       "Subscription starts on ${ startsOnTime }": [
         "Abonamentul începe la ${ startsOnTime }"
       ],
-      "Summary": [
-        "Sumar"
-      ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Asistența pentru monitorizarea domeniilor personale și a adreselor de e-mail care nu aparțin de ${ BRAND_NAME } va fi disponibilă în curând."
       ],
@@ -10010,6 +9983,9 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Utilizați o metodă de recuperare pentru a dezactiva metodele de autentificare cu doi factori."
       ],
+      "Use an existing email or create a free ${ protonDomain } address.": [
+        "Folosiți o adresă de e-mail existentă sau creați o adresă gratuită ${ protonDomain }."
+      ],
       "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
         "Folosiți mai multe adrese de e-mail cu ${ MAIL_APP_NAME }. Adăugați o adresă ${ BRAND_NAME } nouă sau conectați un alt cont de e-mail pentru a gestiona totul dintr-un singur loc."
       ],
@@ -10032,7 +10008,7 @@
         "Nume de utilizator"
       ],
       "username": [
-        "utilizator"
+        "nume de utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -10763,7 +10739,7 @@
         "${ BRAND_NAME } for Business"
       ],
       "${ BRAND_NAME } username": [
-        "Nnume de utilizator ${ BRAND_NAME }"
+        "Nume de utilizator ${ BRAND_NAME }"
       ],
       "${ group.UserCount } user": [
         "${ group.UserCount } utilizator",
@@ -11700,7 +11676,7 @@
         "Parolă nouă utilizator"
       ],
       "Username": [
-        "Nume utilizator"
+        "Nume de utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -16968,7 +16944,7 @@
         "Parola"
       ],
       "Username": [
-        "Utilizator"
+        "Nume de utilizator"
       ]
     },
     "specialoffer: Action": {

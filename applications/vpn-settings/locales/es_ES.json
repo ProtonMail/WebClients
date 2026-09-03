@@ -1689,14 +1689,6 @@
         "Has alcanzado el límite del periodo de prueba."
       ]
     },
-    "b2b_trials_2025_Label": {
-      "Amount due after trial": [
-        "Importe a pagar después de la prueba"
-      ],
-      "Amount due now": [
-        "Importe a pagar ahora"
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Cancelar la suscripción"
@@ -2233,15 +2225,6 @@
       ],
       "Total": [
         "Total"
-      ],
-      "Total for ${ n } month": [
-        "Total por ${ n } mes",
-        "Total para ${ n } meses"
-      ]
-    },
-    "Checkout summary": {
-      "month": [
-        "mes"
       ]
     },
     "Collapsible tooltip": {
@@ -7104,9 +7087,6 @@
       "Amount below minimum (${ amount }).": [
         "Cantidad por debajo del mínimo (${ amount })."
       ],
-      "Amount due": [
-        "Importe a pagar"
-      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias de correo funciona como una dirección de correo electrónico, pero reduce el spam y mantiene tu dirección e identidad real ocultas."
       ],
@@ -7441,9 +7421,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NO olvides esta contraseña. Si la olvidas, no podrás administrar tu organización."
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "¿Recuerdas tu contraseña? ${ verifyButton }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "¿Quieres revocar todas las demás sesiones y mantener la actual?"
@@ -8650,9 +8627,6 @@
       ],
       "Subscription starts on ${ startsOnTime }": [
         "La suscripción comienza el ${ startsOnTime }"
-      ],
-      "Summary": [
-        "Resumen"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "El soporte del monitoreo para dominios personalizados y direcciones de correo externas a ${ BRAND_NAME } estará disponible próximamente."

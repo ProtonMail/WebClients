@@ -1708,14 +1708,6 @@
         "Вы достигли лимита пробного периода."
       ]
     },
-    "b2b_trials_2025_Label": {
-      "Amount due after trial": [
-        "Сумма к оплате после пробного периода"
-      ],
-      "Amount due now": [
-        "Сумма к оплате сейчас"
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Отменить подписку"
@@ -2270,17 +2262,6 @@
       ],
       "Total": [
         "Итого"
-      ],
-      "Total for ${ n } month": [
-        "Итого за ${ n } месяц",
-        "Итого за ${ n } месяца",
-        "Итого за ${ n } месяцев",
-        "Итого за ${ n } месяцев"
-      ]
-    },
-    "Checkout summary": {
-      "month": [
-        "месяц"
       ]
     },
     "Collapsible tooltip": {
@@ -7294,9 +7275,6 @@
       "Amount below minimum (${ amount }).": [
         "Сумма ниже допустимого минимума (${ amount })."
       ],
-      "Amount due": [
-        "Сумма к оплате"
-      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Псевдоним электронной почты работает так же, как и адрес электронной почты, но при этом уменьшает количество спама и сохраняет в тайне ваш реальный адрес электронной почты и вашу личность."
       ],
@@ -7638,9 +7616,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "НЕ забудьте этот пароль. Если вы его забудете, то не сможете управлять настройками своей организациии."
-      ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Вы помните свой пароль? ${ verifyButton }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Вы хотите прервать все остальные сессии, кроме текущей?"
@@ -8847,9 +8822,6 @@
       ],
       "Subscription starts on ${ startsOnTime }": [
         "Подписка начинается ${ startsOnTime }"
-      ],
-      "Summary": [
-        "Сводка"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Поддержка контроля пользовательских доменов и адресов электронной почты, не относящихся к ${ BRAND_NAME }, появится в ближайшее время."

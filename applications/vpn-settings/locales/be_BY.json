@@ -48,8 +48,14 @@
       "Bulk user import": [
         "Масавы імпарт карыстальнікаў"
       ],
+      "Close account": [
+        "Выдаліць уліковы запіс"
+      ],
       "Downgrade to Free": [
         "Панізіць да Free"
+      ],
+      "Included apps": [
+        "Уключаныя праграмы"
       ],
       "Join organization": [
         "Далучыцца да арганізацыі"
@@ -63,8 +69,14 @@
       "Recovery phone number": [
         "Нумар тэлефона для аднаўлення"
       ],
+      "Recovery score": [
+        "Ацэнка аднаўлення"
+      ],
       "Referral link": [
         "Рэферальная спасылка"
+      ],
+      "Storage space": [
+        "Аб'ём сховішча"
       ],
       "Telemetry": [
         "Тэлеметрыя"
@@ -468,6 +480,9 @@
       ],
       "Download CSV sample": [
         "Спампаваць узор CSV"
+      ],
+      "Download latest": [
+        "Спампаваць апошнюю версію"
       ],
       "Download logs": [
         "Спампаваць журналы"
@@ -1800,14 +1815,6 @@
         "Дасягнута абмежаванне пробнага перыяду."
       ]
     },
-    "b2b_trials_2025_Label": {
-      "Amount due after trial": [
-        "Сума да аплаты пасля пробнага перыяду"
-      ],
-      "Amount due now": [
-        "Сума да аплаты"
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Скасаваць падпіску"
@@ -2371,17 +2378,6 @@
       ],
       "Total": [
         "Агулам"
-      ],
-      "Total for ${ n } month": [
-        "Усяго за ${ n } месяц",
-        "Усяго за ${ n } месяцы",
-        "Усяго за ${ n } месяцаў",
-        "Усяго за ${ n } месяцы"
-      ]
-    },
-    "Checkout summary": {
-      "month": [
-        "месяц"
       ]
     },
     "Collapsible tooltip": {
@@ -5369,6 +5365,12 @@
         "Не ўдалося выканаць прызначэнне ролі для ${ errors.length } удзельнікаў",
         "Не ўдалося выканаць прызначэнне ролі для ${ errors.length } удзельнікаў"
       ],
+      "Role assignment could not be completed for ${ failedCount } group": [
+        "Не ўдалося выканаць прызначэнне ролі для ${ failedCount } групы",
+        "Не ўдалося выканаць прызначэнне ролі для ${ failedCount } груп",
+        "Не ўдалося выканаць прызначэнне ролі для ${ failedCount } груп",
+        "Не ўдалося выканаць прызначэнне ролі для ${ failedCount } груп"
+      ],
       "Server not found": [
         "Сервер не знойдзены"
       ],
@@ -7717,9 +7719,6 @@
       "Amount below minimum (${ amount }).": [
         "Сума ніжэй за мінімум (${ amount })."
       ],
-      "Amount due": [
-        "Да аплаты"
-      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Псеўданімы электроннай пошты працуюць аналагічна адрасам электроннай пошты, але змяншаюць колькасць спама і захоўваюць ваш фактычны адрас электроннай пошты і ідэнтычнасць схаванымі."
       ],
@@ -7782,6 +7781,9 @@
       ],
       "Author is not provided on public link": [
         "Аўтар не пазначаны ў публічнай спасылцы"
+      ],
+      "Available on VPN Professional": [
+        "Даступна на VPN Professional"
       ],
       "Awaiting transaction": [
         "Чаканне трансакцыі"
@@ -8089,9 +8091,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "НЕ забывайце гэты пароль. Калі вы яго забудзеце, то не зможаце кіраваць сваёй арганізацыяй."
       ],
-      "Do you remember your password? ${ verifyButton }": [
-        "Вы памятаеце свой пароль? ${ verifyButton }"
-      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Вы сапраўды хочаце адклікаць усе іншыя сеансы, акрамя бягучага?"
       ],
@@ -8310,6 +8309,9 @@
       ],
       "Example: ${ spfExample }": [
         "Прыклад: ${ spfExample }"
+      ],
+      "Exclude them when you deploy the device profile. Support coming soon.": [
+        "Выключыце іх пры разгортванні профілю прылады. Падтрымка функцыі неўзабаве з'явіцца."
       ],
       "Expired": [
         "Пратэрмінавана"
@@ -9354,9 +9356,6 @@
       ],
       "Subscription starts on ${ startsOnTime }": [
         "Падпіска пачнецца ${ startsOnTime }"
-      ],
-      "Summary": [
-        "Зводка"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Неўзабаве з'явіцца падтрымка назірання карыстальніцкіх даменаў і адрасоў электроннай пошты, якія не належаць да ${ BRAND_NAME }."
@@ -10622,6 +10621,9 @@
       ],
       "Allow recovery using a trusted device": [
         "Дазволіць аднаўленне з дапамогай даверанай прылады"
+      ],
+      "Allow users to set a backup password": [
+        "Дазволіць карыстальнікам задаваць рэзервовы пароль"
       ],
       "Allowed Domain": [
         "Дазволены дамен"
@@ -12245,6 +12247,9 @@
     "Members table usage": {
       "Setup your own private gateways to monitor VPN connection activity within your organization.": [
         "Наладзьце свае прыватныя шлюзы, каб назіраць за актыўнасцю падключэння па VPN у вашай арганізацыі."
+      ],
+      "Yesterday": [
+        "Учора"
       ]
     },
     "Message": {
@@ -14031,6 +14036,11 @@
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Ваш тарыфны план уключае максімум ${ humanReadableAvailableSpace } сховішча."
+      ]
+    },
+    "organization key reset": {
+      "The organization key is reset": [
+        "Ключ арганізацыі скінуты"
       ]
     },
     "Organization logo upload": {
