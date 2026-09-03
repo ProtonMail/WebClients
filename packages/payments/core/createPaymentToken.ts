@@ -29,6 +29,7 @@ import type {
     PaymentMethodType,
     PlainPaymentMethodType,
     RemoveEventListener,
+    SavedMethodType,
     V5PaymentToken,
 } from './interface';
 
@@ -391,13 +392,7 @@ export function savedMethodRequires3DS(type: PAYMENT_METHOD_TYPES): boolean {
 
 export const createPaymentTokenForExistingChargebeePayment = async (
     PaymentMethodID: ExistingPaymentMethod,
-    type:
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-        | PAYMENT_METHOD_TYPES.APPLE_PAY
-        | PAYMENT_METHOD_TYPES.GOOGLE_PAY
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
+    type: SavedMethodType,
     api: Api,
     handles: ChargebeeIframeHandles,
     events: ChargebeeIframeEvents,

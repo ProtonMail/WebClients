@@ -156,10 +156,7 @@ export const useChargebeeCardVerifyPayment = (
 const PendingValidationModal = ({
     type,
     ...props
-}: Omit<ModalOwnProps, 'children'> & {
-    type:
-        PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL | PAYMENT_METHOD_TYPES.GOOGLE_PAY | PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL;
-}) => {
+}: Omit<ModalOwnProps, 'children'> & { type: PAYMENT_METHOD_TYPES }) => {
     const [hasClose, setHasClose] = useState(false);
     useEffect(() => {
         const timeout = setTimeout(() => {

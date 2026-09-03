@@ -94,26 +94,13 @@ export type PlainPaymentMethodType = `${PAYMENT_METHOD_TYPES}`;
 
 export type ChargeablePaymentParameters = Partial<V5PaymentToken> &
     AmountAndCurrency & {
-        type:
-            | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
-            | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
-            | PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN
-            | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-            | PAYMENT_METHOD_TYPES.APPLE_PAY
-            | PAYMENT_METHOD_TYPES.GOOGLE_PAY
-            | PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL;
+        type: PAYMENT_METHOD_TYPES;
         chargeable: true;
     };
 
 export type ChargeablePaymentToken = V5PaymentToken &
     AmountAndCurrency & {
-        type:
-            | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
-            | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
-            | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-            | PAYMENT_METHOD_TYPES.APPLE_PAY
-            | PAYMENT_METHOD_TYPES.GOOGLE_PAY
-            | PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL;
+        type: PAYMENT_METHOD_TYPES;
         chargeable: true;
     };
 
@@ -217,6 +204,11 @@ export type SavedPaymentMethod =
     | PaymentMethodApplePay
     | PaymentMethodGooglePay
     | PaymentMethodIdeal;
+
+export type SavedMethodType = SavedPaymentMethod['Type'];
+
+export type SavedMethodDetails = SavedPaymentMethod['Details'];
+
 export interface PreviousSubscription {
     cycle: Cycle;
     currency: Currency;
@@ -287,15 +279,7 @@ export type V5PaymentToken = {
     PaymentToken: string;
 } & V5Payments;
 
-export type ChargeableV5PaymentToken = ChargeablePaymentToken & {
-    type:
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL
-        | PAYMENT_METHOD_TYPES.APPLE_PAY
-        | PAYMENT_METHOD_TYPES.GOOGLE_PAY;
-};
+export type ChargeableV5PaymentToken = ChargeablePaymentToken;
 
 export type NonChargeableV5PaymentToken = Omit<ChargeableV5PaymentToken, 'chargeable'> & {
     chargeable: false;
@@ -310,16 +294,7 @@ export type NonAuthorizedV5PaymentToken = {
     approvalUrl: string;
 };
 
-export type ChargeableV5PaymentParameters = ChargeablePaymentParameters & {
-    type:
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-        | PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL
-        | PAYMENT_METHOD_TYPES.APPLE_PAY
-        | PAYMENT_METHOD_TYPES.GOOGLE_PAY;
-};
+export type ChargeableV5PaymentParameters = ChargeablePaymentParameters;
 
 export type ChargebeeFetchedPaymentToken = (ChargeableV5PaymentToken | NonChargeableV5PaymentToken) &
     (AuthorizedV5PaymentToken | NonAuthorizedV5PaymentToken);

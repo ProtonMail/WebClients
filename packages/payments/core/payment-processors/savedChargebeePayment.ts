@@ -8,6 +8,7 @@ import type {
     ChargeableV5PaymentParameters,
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
+    SavedMethodType,
     SavedPaymentMethod,
     V5PaymentToken,
 } from '../interface';
@@ -16,13 +17,7 @@ import { PaymentProcessor } from './paymentProcessor';
 interface SavedChargebeePaymentState {
     method: {
         paymentMethodId: string;
-        type:
-            | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
-            | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
-            | PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-            | PAYMENT_METHOD_TYPES.APPLE_PAY
-            | PAYMENT_METHOD_TYPES.GOOGLE_PAY
-            | PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL;
+        type: SavedMethodType;
     };
 }
 

@@ -3,7 +3,6 @@ import { getBankSvg } from '@proton/payments-ui/ui/helpers/credit-card-icons';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { SavedCardDetails, SavedPaymentMethod } from '@proton/payments/core/interface';
 
-import type { SavedMethodCustomType } from './SavedPaymentMethodDetails';
 import sepaBankIcon from './payment-method-icons/bank-transfer.svg';
 
 interface Props {
@@ -11,7 +10,7 @@ interface Props {
 }
 
 const SavedPaymentMethodIcon = ({ savedMethod }: Props) => {
-    const type = savedMethod?.Type as SavedMethodCustomType;
+    const type = savedMethod?.Type;
     if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
         const { Brand } = savedMethod?.Details as SavedCardDetails;
         const bankIcon = getBankSvg(getCreditCardTypeByBrand(Brand));
