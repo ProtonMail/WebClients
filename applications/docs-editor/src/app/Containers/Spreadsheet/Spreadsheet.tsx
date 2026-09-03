@@ -17,6 +17,7 @@ import '@rowsncolumns/spreadsheet/dist/spreadsheet.min.css'
 import { Menubar } from './components/Menubar/Menubar'
 import { Toolbar } from './components/Toolbar/Toolbar'
 import { BottomBar } from './components/BottomBar/BottomBar'
+import { getUniqueSheetName } from './is-duplicate-sheet-name'
 import { Grid } from './components/Grid/Grid'
 import { ProtonSheetsUIStoreProvider } from './ui-store'
 import { Dialogs } from './components/Dialogs/Dialogs'
@@ -270,7 +271,9 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   }, [docState, editorInitializationConfig, handleExcelFileImport, importCSVFile, setInitialVersion])
 
   // TODO: document this effect
-  const { onCreateNewSheet, onRenameSheet } = state
+  const { onCreateNewSheet, onRenameSheet, sheets } = state
+  const sheetsRef = useRef(sheets)
+  sheetsRef.current = sheets
   useEffect(() => {
     return subscribeToSheetImport((data: SheetImportData) => {
       const isExcelFile = data.file.type === SupportedProtonDocsMimeTypes.xlsx
@@ -288,7 +291,11 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
         }
         const name = getSheetNameFromFilename(data.file.name)
         if (name) {
-          onRenameSheet(newSheet.sheetId, name, newSheet.title)
+          const sheetNames = sheetsRef.current.map((sheet) => ({ id: sheet.sheetId, name: sheet.title }))
+          const importedSheetName = getUniqueSheetName(newSheet.sheetId, name, sheetNames)
+          if (importedSheetName) {
+            onRenameSheet(newSheet.sheetId, importedSheetName, newSheet.title)
+          }
         }
         sheetId = newSheet.sheetId
         cellCoords = { rowIndex: 1, columnIndex: 1 }
