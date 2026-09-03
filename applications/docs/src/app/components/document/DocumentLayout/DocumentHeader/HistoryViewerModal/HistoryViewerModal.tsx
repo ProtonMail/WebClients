@@ -34,6 +34,7 @@ import { useDebugMode } from '~/utils/debug-mode-context'
 import { downloadExport } from '@proton/docs-core/lib/UseCase/ExportAndDownload'
 import { downloadJSONFile } from '~/utils/download-json-file'
 import downloadFile from '@proton/shared/lib/helpers/downloadFile'
+import { useIsODTEnabled } from '~/utils/flags'
 
 type RestoreType = 'replace' | 'as-copy'
 
@@ -55,6 +56,7 @@ function HistoryViewerModalContent({
   documentState,
 }: HistoryViewerModalContentProps) {
   const { isDebugMode } = useDebugMode()
+  const isODTEnabled = useIsODTEnabled()
 
   const [batchThreshold, setBatchThreshold] = useState(() => versionHistory.batchThreshold)
   const [selectedBatchIndex, setSelectedBatchIndex] = useState(() => versionHistory.batches.length - 1)
@@ -353,6 +355,25 @@ function HistoryViewerModalContent({
                   >
                     {c('Action').t`Export this version (as docx)`}
                   </Button>
+                  {isODTEnabled && (
+                    <Button
+                      className="mt-2 w-full"
+                      data-testid="export-revision-odt"
+                      loading={isExporting}
+                      disabled={!editorInvoker}
+                      onClick={() => {
+                        if (!editorInvoker) {
+                          return
+                        }
+                        void withExporting(async () => {
+                          const data = await editorInvoker.exportData('odt')
+                          downloadExport(data, documentState.getProperty('documentName'), 'odt')
+                        })
+                      }}
+                    >
+                      {c('Action').t`Export this version (as odt) (Beta)`}
+                    </Button>
+                  )}
                   {isDebugMode && (
                     <>
                       <Button
