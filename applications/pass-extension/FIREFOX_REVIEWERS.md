@@ -8,14 +8,12 @@ Below are the requirements and build steps for our ProtonPass extension release.
 
 Before building the extension, please ensure that you have the following versions installed:
 
--   node v22.11.0
--   npm v10.9.0
--   yarn v4.0.0
+- node v24.18.0
 
 ### File info
 
--   `ProtonPass-{version}-{commit}-FF.zip` : firefox add-on release
--   `ProtonPass-{version}-{commit}-FF-sources.zip` : firefox add-on source files
+- `ProtonPass-{version}-{commit}-FF.zip` : firefox add-on release
+- `ProtonPass-{version}-{commit}-FF-sources.zip` : firefox add-on source files
 
 ### Build Steps
 
@@ -23,7 +21,8 @@ To build the Firefox version of the ProtonPass extension, please follow these st
 
 1.  Unzip `ProtonPass-{version}-{commit}-FF-sources.zip`
 2.  Navigate to the unzipped folder in your terminal: `cd ProtonPass-{version}-{commit}-FF`
-3.  Install dependencies: `yarn`
-4.  Navigate to the extension folder: `cd applications/pass-extension`
-5.  Build the Firefox addon: `yarn run build:extension:ff` (this may take several minutes to complete)
-6.  Build files are located at `applications/pass-extension/dist`
+3.  Enable yarn: `corepack enable`
+4.  Install dependencies: `yarn`
+5.  Navigate to the extension folder: `cd applications/pass-extension`
+6.  Build the Firefox addon: `yarn run build:extension:ff` (this may take several minutes to complete)
+7.  Build files are located at `applications/pass-extension/dist`
