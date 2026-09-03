@@ -1,4 +1,4 @@
-import { act, fireEvent, getAllByText, screen } from '@testing-library/react';
+import { act, fireEvent, getAllByText, render, screen } from '@testing-library/react';
 import { addDays, subDays } from 'date-fns';
 import loudRejection from 'loud-rejection';
 
@@ -6,6 +6,9 @@ import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
 import { getModelState } from '@proton/account/tests';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import type { IconComponent } from '@proton/icons/component';
+import { IcFolder } from '@proton/icons/icons/IcFolder';
+import { IcFolders } from '@proton/icons/icons/IcFolders';
 import { conversationCountsActions } from '@proton/mail/store/counts/conversationCountsSlice';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -40,6 +43,12 @@ jest.mock('../../containers/onboardingChecklist/provider/GetStartedChecklistProv
 loudRejection();
 
 const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
+
+/** The Ic* components inline their markup, so that markup is what identifies which icon was rendered. */
+const getIconMarkup = (Icon: IconComponent) => {
+    const { container } = render(<Icon />, { container: document.createElement('div') });
+    return container.querySelector('svg')!.innerHTML;
+};
 
 const folder = { ID: 'folder1', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder1' } as Folder;
 const subfolder = { ID: 'folder2', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder2', ParentID: folder.ID } as Folder;
@@ -273,13 +282,13 @@ describe('MailSidebar', () => {
         const folderIcon = folderElement.querySelector('svg:not(.navigation-icon--expand)');
 
         expect(folderElement.textContent).toContain(folder.Name);
-        expect((folderIcon?.firstChild as Element).getAttribute('xlink:href')).toBe('#ic-folders');
+        expect(folderIcon?.innerHTML).toBe(getIconMarkup(IcFolders));
 
         const subfolderElement = screen.getByTestId(`navigation-link:${subfolder.ID}`);
         const subfolderIcon = subfolderElement.querySelector('svg');
 
         expect(subfolderElement.textContent).toContain(subfolder.Name);
-        expect((subfolderIcon?.firstChild as Element).getAttribute('xlink:href')).toBe('#ic-folder');
+        expect(subfolderIcon?.innerHTML).toBe(getIconMarkup(IcFolder));
 
         const collapseButton = folderElement.querySelector('button');
 
