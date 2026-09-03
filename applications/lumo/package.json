@@ -93,7 +93,7 @@
         "vega-embed": "^7.1.0",
         "vega-interpreter": "^1.2.1",
         "vega-lite": "^5.23.0",
-        "xlsx": "0.18.5"
+        "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
     },
     "devDependencies": {
         "@jest/globals": "^30.4.1",
