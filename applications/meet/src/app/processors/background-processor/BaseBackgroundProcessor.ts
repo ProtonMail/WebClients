@@ -1,27 +1,41 @@
-import { type BackgroundOptions, VideoTransformer, type VideoTransformerInitOptions } from '@livekit/track-processors';
+import {
+    type BackgroundOptions,
+    ProcessorWrapper,
+    VideoTransformer,
+    type VideoTransformerInitOptions,
+} from '@livekit/track-processors';
 
 import { withTimeout } from '@proton/meet/utils/withTimeout';
-import { isFirefox } from '@proton/shared/lib/helpers/browser';
+import { isFirefox, isIos } from '@proton/shared/lib/helpers/browser';
 
 import {
     DEFAULT_ASSET_PATH,
     DEFAULT_MODEL_PATH,
     MASK_CLOSING_MAX_RADIUS,
-    MASK_CLOSING_RADIUS,
-    MASK_CLOSING_RADIUS_LOW_END,
     MASK_PASS_COPY,
     MASK_PASS_DILATE,
     MASK_PASS_ERODE,
+    MASK_TEMPORAL_APPEAR_RATE,
+    MASK_TEMPORAL_APPEAR_RATE_FAST,
+    MASK_TEMPORAL_DISAPPEAR_RATE,
+    MASK_TEMPORAL_DISAPPEAR_RATE_FAST,
+    MASK_TEMPORAL_REFERENCE_FPS,
+    MAX_FPS_MOBILE,
     MULTICLASS_PERSON_CONFIDENCE_BOOST,
     PERSON_CONFIDENCE_BOOST,
-    SEGMENTATION_INPUT_MAX_EDGE,
-    SEGMENTATION_INPUT_MAX_EDGE_HIGH_END,
+    SEGMENTATION_FRAME_INTERVAL,
     TEXTURE_UNIT_OUTPUT,
     VERTEX_SHADER_SOURCE,
     VERTICES,
     buildFragmentShaderSource,
 } from './constants';
-import { type TunableConstantsOverrides, pickWorkerOverrides } from './tunableConstants';
+import {
+    type TunableConstantsOverrides,
+    getDefaultMaskClosingRadius,
+    getDefaultSegmentationInputMaxEdge,
+    getSegmentationResizeQuality,
+    pickWorkerOverrides,
+} from './tunableConstants';
 import type { BaseBackgroundProcessorOptions } from './types';
 
 const CACHE_NAME = 'proton-meet-background-blur-v1';
@@ -36,7 +50,20 @@ const SEGMENTATION_TIMEOUT_MS = 2000;
 // background initialization is treated as failed.
 const CONSECUTIVE_MASK_FAILURE_LIMIT = 500;
 
+const INITIAL_MASK_TIMEOUT_MS = 20000;
+
 type SegmentationResult = { mask: Float32Array; width: number; height: number };
+
+type AppliedWaiter = { resolve: () => void; reject: (error: Error) => void };
+
+// Restate an EMA rate over `periods` reference periods instead of one, holding the
+// time constant fixed: applying r each period leaves (1 - r)^periods of the gap.
+const resampleTemporalRate = (rate: number, periods: number): number => {
+    if (periods <= 1 || rate <= 0 || rate >= 1) {
+        return rate;
+    }
+    return 1 - (1 - rate) ** periods;
+};
 
 const fetchWithCache = async (url: string): Promise<Response> => {
     if (!('caches' in window)) {
@@ -146,6 +173,12 @@ export default abstract class BaseBackgroundProcessor<
     private readonly maskClosingRadius: number;
     // Longest edge (px) the frame is downscaled to before segmentation.
     private readonly segmentationInputMaxEdge: number;
+    // Composited frames per segmentation request; 1 segments every frame.
+    private readonly segmentationFrameInterval: number;
+    private framesSinceSegmentation = 0;
+    // Minimum spacing (ms) between composited frames; 0 leaves the rate uncapped.
+    private readonly minOutputFrameIntervalMs: number;
+    private lastOutputFrameTimeMs = 0;
     private lastCanvasWidth = 0;
     private lastCanvasHeight = 0;
     activeDelegate: 'GPU' | 'CPU' | undefined;
@@ -184,7 +217,7 @@ export default abstract class BaseBackgroundProcessor<
     private pendingSegmentation: { id: number; resolve: (result: SegmentationResult | null) => void } | null = null;
     private hasInitialMask = false;
 
-    private appliedWaiters: { resolve: () => void; reject: (error: Error) => void }[] = [];
+    private appliedWaiters: AppliedWaiter[] = [];
 
     private initializationError: Error | null = null;
 
@@ -204,26 +237,52 @@ export default abstract class BaseBackgroundProcessor<
     // is ready, so the unprocessed background is never visible during warmup.
     private blackFrameCanvas: OffscreenCanvas | null = null;
 
+    // Only iOS hands us frames whose orientation and dimensions disagree with what
+    // the video element presents. Keyed on the OS, not the engine: it affects every
+    // browser on iOS, but not WebKit elsewhere.
+    private readonly needsIosOrientationWorkaround = isIos();
+
+    // Reused surface for redrawing rotated camera frames upright.
+    private orientationCanvas: OffscreenCanvas | null = null;
+    private orientationContext: OffscreenCanvasRenderingContext2D | null = null;
+    private settingsSize: { width: number; height: number } | null = null;
+    private isReorienting = false;
+
+    // Segmentation-sized surface, only used while reorienting.
+    private segmentationCanvas: OffscreenCanvas | null = null;
+    private segmentationContext: OffscreenCanvasRenderingContext2D | null = null;
+
+    // The fallback render loop overlaps transform() calls, which must not composite
+    // against half-torn-down GL resources.
+    private isRebuildingCompositor = false;
+
+    private outputSizeListener: ((width: number, height: number) => void) | null = null;
+
     constructor(opts: TOptions) {
         super();
         this.options = opts;
 
         const overrides = opts.constantOverrides;
-        const defaultClosingRadius = opts.isLowEndDevice ? MASK_CLOSING_RADIUS_LOW_END : MASK_CLOSING_RADIUS;
-        const defaultInputMaxEdge = opts.isLowEndDevice
-            ? SEGMENTATION_INPUT_MAX_EDGE
-            : SEGMENTATION_INPUT_MAX_EDGE_HIGH_END;
 
         this.maskClosingRadius = BaseBackgroundProcessor.resolveInt(
             overrides?.maskClosingRadius,
-            defaultClosingRadius,
+            getDefaultMaskClosingRadius(opts),
             0
         );
         this.segmentationInputMaxEdge = BaseBackgroundProcessor.resolveInt(
             overrides?.segmentationInputMaxEdge,
-            defaultInputMaxEdge,
+            getDefaultSegmentationInputMaxEdge(opts),
             1
         );
+        this.segmentationFrameInterval = BaseBackgroundProcessor.resolveInt(
+            overrides?.segmentationFrameInterval,
+            SEGMENTATION_FRAME_INTERVAL,
+            1
+        );
+        // Stream-processor path only: ProcessorWrapper's maxFps already paces the
+        // fallback, and both throttles at once would undershoot the cap.
+        this.minOutputFrameIntervalMs =
+            opts.isMobile && ProcessorWrapper.hasModernApiSupport ? 1000 / MAX_FPS_MOBILE : 0;
     }
 
     protected static resolveInt(override: number | undefined, fallback: number, min: number): number {
@@ -246,6 +305,25 @@ export default abstract class BaseBackgroundProcessor<
         return Math.max(MASK_CLOSING_MAX_RADIUS, this.maskClosingRadius);
     }
 
+    // Mobile's frame cap and pacing interval slow the mask update rate below the one
+    // the EMA rates were tuned at, which would leave the silhouette trailing behind
+    // fast movement. Rescale them to the rate the mask actually updates at.
+    private getTemporalRateOverrides(): TunableConstantsOverrides {
+        if (!this.options.isMobile) {
+            return {};
+        }
+
+        const maskUpdateFps = MAX_FPS_MOBILE / this.segmentationFrameInterval;
+        const periods = MASK_TEMPORAL_REFERENCE_FPS / maskUpdateFps;
+
+        return {
+            maskTemporalAppearRate: resampleTemporalRate(MASK_TEMPORAL_APPEAR_RATE, periods),
+            maskTemporalDisappearRate: resampleTemporalRate(MASK_TEMPORAL_DISAPPEAR_RATE, periods),
+            maskTemporalAppearRateFast: resampleTemporalRate(MASK_TEMPORAL_APPEAR_RATE_FAST, periods),
+            maskTemporalDisappearRateFast: resampleTemporalRate(MASK_TEMPORAL_DISAPPEAR_RATE_FAST, periods),
+        };
+    }
+
     // Worker-bound overrides for the init message. Person-confidence boosts keep
     // their existing Unleash-sourced defaults (options.*), and any debug-tuner
     // override wins over them.
@@ -254,12 +332,13 @@ export default abstract class BaseBackgroundProcessor<
             personConfidenceBoost: this.options.personConfidenceBoost ?? PERSON_CONFIDENCE_BOOST,
             multiclassPersonConfidenceBoost:
                 this.options.multiclassPersonConfidenceBoost ?? MULTICLASS_PERSON_CONFIDENCE_BOOST,
+            ...this.getTemporalRateOverrides(),
             ...pickWorkerOverrides(this.options.constantOverrides ?? {}),
         };
     }
 
     // Resolves once the first processed frame is produced (or immediately if it
-    // already was), and rejects if initialization explicitly failed.
+    // already was), and rejects if initialization failed or timed out.
     waitUntilApplied(): Promise<void> {
         if (this.hasInitialMask) {
             return Promise.resolve();
@@ -267,8 +346,17 @@ export default abstract class BaseBackgroundProcessor<
         if (this.initializationError) {
             return Promise.reject(this.initializationError);
         }
-        return new Promise<void>((resolve, reject) => {
-            this.appliedWaiters.push({ resolve, reject });
+
+        let waiter!: AppliedWaiter;
+        const applied = new Promise<void>((resolve, reject) => {
+            waiter = { resolve, reject };
+        });
+        this.appliedWaiters.push(waiter);
+
+        return withTimeout(applied, 'Background effect initialization', INITIAL_MASK_TIMEOUT_MS).catch((error) => {
+            // Drop the abandoned waiter so the list doesn't grow with every timed-out attempt.
+            this.appliedWaiters = this.appliedWaiters.filter((entry) => entry !== waiter);
+            throw error;
         });
     }
 
@@ -306,8 +394,70 @@ export default abstract class BaseBackgroundProcessor<
     async init({ outputCanvas, inputElement: inputVideo }: VideoTransformerInitOptions) {
         await super.init({ outputCanvas, inputElement: inputVideo });
 
+        // Snapshot the track's own resolution before the first frame resizes the
+        // canvas; the video element usually has no metadata to compare against yet.
+        if (this.needsIosOrientationWorkaround && outputCanvas?.width && outputCanvas?.height) {
+            this.settingsSize = { width: outputCanvas.width, height: outputCanvas.height };
+        }
+
         await this.initializeWorker();
         await this.configureBackground();
+    }
+
+    setOutputSizeListener(listener: ((width: number, height: number) => void) | null) {
+        this.outputSizeListener = listener;
+    }
+
+    // LiveKit's compositor allocates its framebuffers from the canvas once and never
+    // resizes them, yet composites each frame at that frame's size. When the two
+    // disagree the mask only covers part of the picture, and restarting is the only
+    // way to reallocate.
+    private async resizeOutputCanvas(width: number, height: number) {
+        const canvas = this.canvas;
+        if (!canvas) {
+            return;
+        }
+
+        const needsCompositorRebuild =
+            this.needsIosOrientationWorkaround && !!this.gl && (canvas.width !== width || canvas.height !== height);
+
+        canvas.width = width;
+        canvas.height = height;
+        this.lastCanvasWidth = width;
+        this.lastCanvasHeight = height;
+
+        if (!this.needsIosOrientationWorkaround) {
+            return;
+        }
+
+        this.outputSizeListener?.(width, height);
+
+        if (!needsCompositorRebuild || !this.inputVideo) {
+            return;
+        }
+
+        this.isRebuildingCompositor = true;
+        // restart() re-enables the transformer.
+        const wasDisabled = this.isDisabled;
+        try {
+            await super.restart({ outputCanvas: canvas, inputElement: this.inputVideo });
+            await this.configureBackground();
+            this.reapplyLastMask();
+        } finally {
+            this.isDisabled = wasDisabled;
+            this.isRebuildingCompositor = false;
+        }
+    }
+
+    // Empty mask textures composite as "no person anywhere", showing the unprocessed
+    // camera frame until the next mask lands. Twice, to refill both sides of the
+    // compositor's double buffer.
+    private reapplyLastMask() {
+        if (!this.gl || !this.maskOutputTexture || !this.hasInitialMask) {
+            return;
+        }
+        this.gl.updateMask(this.maskOutputTexture);
+        this.gl.updateMask(this.maskOutputTexture);
     }
 
     private async initializeWorker() {
@@ -345,7 +495,7 @@ export default abstract class BaseBackgroundProcessor<
             configuredDelegate === 'GPU' || configuredDelegate === 'CPU' ? configuredDelegate : 'GPU';
 
         const worker = new Worker(
-            /* webpackChunkName: "background-segmenter-worker-next" */
+            /* webpackChunkName: "background-segmenter-worker" */
             new URL('./segmenter.worker.ts', import.meta.url),
             { type: 'module' }
         );
@@ -456,6 +606,14 @@ export default abstract class BaseBackgroundProcessor<
         this.hasInitialMask = false;
         this.isFirstFrame = true;
         this.maskRequestInFlight = false;
+        this.framesSinceSegmentation = 0;
+        this.lastOutputFrameTimeMs = 0;
+        this.orientationCanvas = null;
+        this.orientationContext = null;
+        this.settingsSize = null;
+        this.isReorienting = false;
+        this.segmentationCanvas = null;
+        this.segmentationContext = null;
         this.cleanupWebGLResources();
         this.resetMaskState();
     }
@@ -527,34 +685,188 @@ export default abstract class BaseBackgroundProcessor<
         });
     }
 
+    // Mobile stops asking for masks while the page is hidden. Compositing carries on
+    // against the last mask: disabling the processor would enqueue the raw frame and
+    // publish the unprocessed background to everyone still watching.
+    private isSegmentationPaused() {
+        return !!this.options.isMobile && typeof document !== 'undefined' && document.visibilityState === 'hidden';
+    }
+
+    private shouldRequestMask() {
+        if (this.maskRequestInFlight) {
+            return false;
+        }
+        // Nothing composites until the first mask lands, so never pace that one.
+        if (!this.hasInitialMask) {
+            return true;
+        }
+        if (this.isSegmentationPaused()) {
+            return false;
+        }
+        return this.framesSinceSegmentation >= this.segmentationFrameInterval - 1;
+    }
+
+    // The element's own dimensions are the size the browser presents at, but they
+    // only settle once metadata loads; fall back to the size captured at init.
+    private getPresentedSize(): { width: number; height: number } | null {
+        const video = this.inputVideo;
+
+        if (video && video.videoWidth > 0 && video.videoHeight > 0) {
+            return { width: video.videoWidth, height: video.videoHeight };
+        }
+
+        return this.settingsSize;
+    }
+
+    /**
+     * On iOS the VideoFrame comes from the element's coded buffer without the
+     * rotation the element applies when presenting it, so an upright iPhone shows a
+     * 720x1280 picture built from 1280x720 frames lying on their side. Republishing
+     * those through a canvas would put sideways video on the wire.
+     *
+     * Redrawing the element rather than the frame avoids having to work out which
+     * way it is turned, since drawImage applies that rotation for us.
+     */
+    private createDisplayOrientedFrame(frame: VideoFrame): VideoFrame | null {
+        this.isReorienting = false;
+
+        if (!this.needsIosOrientationWorkaround) {
+            return null;
+        }
+
+        const video = this.inputVideo;
+        const presented = this.getPresentedSize();
+
+        if (!video || !presented) {
+            return null;
+        }
+
+        const { width, height } = presented;
+        const isTransposed = width !== height && width === frame.displayHeight && height === frame.displayWidth;
+
+        if (!isTransposed) {
+            return null;
+        }
+
+        if (
+            !this.orientationCanvas ||
+            this.orientationCanvas.width !== width ||
+            this.orientationCanvas.height !== height
+        ) {
+            this.orientationCanvas = new OffscreenCanvas(width, height);
+            this.orientationContext = this.orientationCanvas.getContext('2d');
+        }
+
+        if (!this.orientationContext) {
+            return null;
+        }
+
+        try {
+            this.orientationContext.drawImage(video, 0, 0, width, height);
+
+            const orientedFrame = new VideoFrame(this.orientationCanvas, {
+                timestamp: frame.timestamp ?? Math.round(Date.now() * 1000),
+            });
+            this.isReorienting = true;
+
+            return orientedFrame;
+        } catch {
+            return null;
+        }
+    }
+
+    // Downscaling the reoriented surface for the segmenter would read it a second
+    // time. Drawing the element straight to segmentation size skips that, and
+    // carries the same rotation either way.
+    private drawSegmentationSource(frame: VideoFrame): OffscreenCanvas | null {
+        const video = this.inputVideo;
+        const resizeOptions = this.getResizeOptions(frame);
+        const width = resizeOptions?.resizeWidth;
+        const height = resizeOptions?.resizeHeight;
+
+        if (!this.isReorienting || !video || !width || !height) {
+            return null;
+        }
+
+        if (
+            !this.segmentationCanvas ||
+            this.segmentationCanvas.width !== width ||
+            this.segmentationCanvas.height !== height
+        ) {
+            this.segmentationCanvas = new OffscreenCanvas(width, height);
+            this.segmentationContext = this.segmentationCanvas.getContext('2d');
+        }
+
+        if (!this.segmentationContext) {
+            return null;
+        }
+
+        this.segmentationContext.drawImage(video, 0, 0, width, height);
+
+        return this.segmentationCanvas;
+    }
+
+    // Dropping (not enqueueing) is what makes the output track run at the lower rate.
+    // Warmup is exempt so the cap can't delay the first mask.
+    private shouldDropFrame(frameTimeMs: number) {
+        if (this.minOutputFrameIntervalMs === 0 || this.isFirstFrame || !this.hasInitialMask) {
+            return false;
+        }
+        return frameTimeMs - this.lastOutputFrameTimeMs < this.minOutputFrameIntervalMs;
+    }
+
     async transform(frame: VideoFrame, controller: TransformStreamDefaultController<VideoFrame>) {
-        let originalFrameTransferred = false;
+        let sourceFrame = frame;
+        let sourceFrameTransferred = false;
         try {
             if (!(frame instanceof VideoFrame) || frame.codedWidth === 0 || frame.codedHeight === 0) {
                 // Empty frame detected, ignoring
                 return;
             }
 
+            // Reorientation applies to passthrough too, but only on the fallback path:
+            // it republishes even disabled frames through its own canvas, which would
+            // otherwise put the camera on its side the moment the effect is turned off.
+            // The stream path passes disabled frames straight through, so reorienting
+            // them would just cost a full-size canvas copy per frame for nothing.
+            const shouldReorient = !this.isDisabled || !ProcessorWrapper.hasModernApiSupport;
+            const orientedFrame = shouldReorient ? this.createDisplayOrientedFrame(frame) : null;
+            if (orientedFrame) {
+                frame.close();
+                sourceFrame = orientedFrame;
+            }
+
             if (this.isDisabled) {
-                controller.enqueue(frame);
-                originalFrameTransferred = true;
+                controller.enqueue(sourceFrame);
+                sourceFrameTransferred = true;
+                return;
+            }
+
+            if (this.isRebuildingCompositor) {
                 return;
             }
 
             const frameTimeMs = Date.now();
+
+            if (this.shouldDropFrame(frameTimeMs)) {
+                return;
+            }
+
+            this.lastOutputFrameTimeMs = frameTimeMs;
+
             if (!this.canvas) {
                 throw TypeError('Canvas needs to be initialized first');
             }
-            if (this.lastCanvasWidth !== frame.displayWidth || this.lastCanvasHeight !== frame.displayHeight) {
-                this.canvas.width = frame.displayWidth;
-                this.canvas.height = frame.displayHeight;
-                this.lastCanvasWidth = frame.displayWidth;
-                this.lastCanvasHeight = frame.displayHeight;
+            if (
+                this.lastCanvasWidth !== sourceFrame.displayWidth ||
+                this.lastCanvasHeight !== sourceFrame.displayHeight
+            ) {
+                await this.resizeOutputCanvas(sourceFrame.displayWidth, sourceFrame.displayHeight);
             }
 
             if (this.isFirstFrame) {
                 this.isFirstFrame = false;
-                controller.enqueue(this.createBlackFrame(frame));
+                controller.enqueue(this.createBlackFrame(sourceFrame));
 
                 if (this.inputVideo) {
                     try {
@@ -577,7 +889,7 @@ export default abstract class BaseBackgroundProcessor<
 
                 // Prime the segmenter so the first composited frame doesn't pay the
                 // one-off cold-start inference cost. Fire-and-forget on a clone.
-                this.warmUpWorker(frame.clone());
+                this.warmUpWorker(sourceFrame.clone());
                 return;
             }
 
@@ -593,58 +905,99 @@ export default abstract class BaseBackgroundProcessor<
             // (drawFrame composites with whatever uploadCombinedMask last set),
             // which keeps the mask updating at the worker's throughput instead of
             // freezing it under a backlog.
-            if (!this.maskRequestInFlight) {
+            //
+            // Mobile additionally paces requests to one every segmentationFrameInterval
+            // composited frames, the ones in between reusing the mask the same way. The
+            // request is still awaited, so the frame that triggers it gets a mask of
+            // itself and staleness alternates between none and one frame.
+            if (this.shouldRequestMask()) {
+                this.framesSinceSegmentation = 0;
                 this.maskRequestInFlight = true;
+
+                let maskApplied = false;
+                let maskFailure: unknown;
+
                 try {
-                    const segmentation = await this.requestMask(frame);
-                    if (segmentation) {
-                        await this.uploadCombinedMask(segmentation.mask, segmentation.width, segmentation.height);
-                        this.hasInitialMask = true;
-                        this.consecutiveMaskFailures = 0;
-                    } else if (!this.hasInitialMask) {
-                        // Segmentation failed before it ever applied; give up after
-                        // too many consecutive failures.
-                        this.consecutiveMaskFailures += 1;
-                        if (this.consecutiveMaskFailures >= CONSECUTIVE_MASK_FAILURE_LIMIT) {
-                            this.rejectApplied(new Error('Background segmentation repeatedly failed'));
-                        }
-                    }
+                    const segmentation = await this.requestMask(sourceFrame);
+                    // The upload bails out on any GL failure, leaving LiveKit with the
+                    // previous mask (or none), so it must not count as applied.
+                    maskApplied = segmentation
+                        ? await this.uploadCombinedMask(segmentation.mask, segmentation.width, segmentation.height)
+                        : false;
+                } catch (error) {
+                    // The upload drives raw WebGL on LiveKit's context, so it can throw rather
+                    // than return false. Escaping here would skip the accounting below and land
+                    // in transform()'s catch-all, stalling initialization silently and forever.
+                    maskFailure = error;
                 } finally {
                     this.maskRequestInFlight = false;
                 }
-            }
 
-            this.drawFrame(frame);
-            const canRender = this.canvas && this.canvas.width > 0 && this.canvas.height > 0 && this.hasInitialMask;
-
-            if (canRender) {
-                const newFrame = new VideoFrame(this.canvas, {
-                    // VideoFrame.timestamp is microseconds; convert the Date.now() (ms)
-                    // fallback so units match, and only fall back when it's truly absent.
-                    timestamp: frame.timestamp ?? Math.round(frameTimeMs * 1000),
-                });
-                // Firefox uses LiveKit's canvas fallback, whose enqueue callback draws and closes
-                // the VideoFrame synchronously, so resolving afterwards would observe an already
-                // closed frame. Mark initialization complete before handing ownership over: the
-                // mask has been applied and the composited frame created successfully by now.
-                if (isFirefox()) {
-                    this.resolveApplied();
-                    controller.enqueue(newFrame);
-                } else {
-                    controller.enqueue(newFrame);
-                    this.resolveApplied();
+                if (maskApplied) {
+                    this.hasInitialMask = true;
+                    this.consecutiveMaskFailures = 0;
+                } else if (!this.hasInitialMask) {
+                    // Segmentation failed before it ever applied; give up after
+                    // too many consecutive failures.
+                    this.consecutiveMaskFailures += 1;
+                    if (maskFailure && this.consecutiveMaskFailures === 1) {
+                        // First failure of a streak; transform()'s catch-all would hide it.
+                        // eslint-disable-next-line no-console
+                        console.error('[bg-processor] mask pipeline threw', maskFailure);
+                    }
+                    if (this.consecutiveMaskFailures >= CONSECUTIVE_MASK_FAILURE_LIMIT) {
+                        this.rejectApplied(
+                            new Error(
+                                maskFailure instanceof Error
+                                    ? `Background segmentation repeatedly failed: ${maskFailure.message}`
+                                    : 'Background segmentation repeatedly failed'
+                            )
+                        );
+                    }
                 }
             } else {
-                // No mask yet (worker warming up or a transient failure). Emit an
-                // opaque black frame instead of the raw camera frame so the
-                // unprocessed background is never visible before it kicks in.
-                controller.enqueue(this.createBlackFrame(frame));
+                this.framesSinceSegmentation += 1;
+            }
+
+            try {
+                this.drawFrame(sourceFrame);
+                const canRender = this.canvas && this.canvas.width > 0 && this.canvas.height > 0 && this.hasInitialMask;
+
+                if (canRender) {
+                    const newFrame = new VideoFrame(this.canvas, {
+                        // VideoFrame.timestamp is microseconds; convert the Date.now() (ms)
+                        // fallback so units match, and only fall back when it's truly absent.
+                        timestamp: sourceFrame.timestamp ?? Math.round(frameTimeMs * 1000),
+                    });
+                    // Firefox uses LiveKit's canvas fallback, whose enqueue callback draws and closes
+                    // the VideoFrame synchronously, so resolving afterwards would observe an already
+                    // closed frame. Mark initialization complete before handing ownership over: the
+                    // mask has been applied and the composited frame created successfully by now.
+                    if (isFirefox()) {
+                        this.resolveApplied();
+                        controller.enqueue(newFrame);
+                    } else {
+                        controller.enqueue(newFrame);
+                        this.resolveApplied();
+                    }
+                } else {
+                    // No mask yet (worker warming up or a transient failure). Emit an
+                    // opaque black frame instead of the raw camera frame so the
+                    // unprocessed background is never visible before it kicks in.
+                    controller.enqueue(this.createBlackFrame(sourceFrame));
+                }
+            } finally {
+                // The mask reached LiveKit, so initialization is done even if compositing then
+                // threw. rejectApplied() is a no-op from here on, so this is the only way out.
+                if (this.hasInitialMask) {
+                    this.resolveApplied();
+                }
             }
         } catch {
             // Ignore
         } finally {
-            if (!originalFrameTransferred) {
-                frame.close();
+            if (!sourceFrameTransferred) {
+                sourceFrame.close();
             }
         }
     }
@@ -663,9 +1016,7 @@ export default abstract class BaseBackgroundProcessor<
         return {
             resizeWidth: Math.max(1, Math.round(frame.displayWidth * scale)),
             resizeHeight: Math.max(1, Math.round(frame.displayHeight * scale)),
-            // 'high' preserves fine detail (hair, fingers, edges) when downscaling;
-            // low-end stays on 'medium' to bound cost.
-            resizeQuality: this.options.isLowEndDevice ? 'medium' : 'high',
+            resizeQuality: getSegmentationResizeQuality(this.options),
         };
     }
 
@@ -682,7 +1033,11 @@ export default abstract class BaseBackgroundProcessor<
         try {
             // createImageBitmap on a VideoFrame is cheap (~1ms) and produces a
             // transferable. Awaiting it here keeps `frame` alive until it's done.
-            bitmap = await createImageBitmap(frame, this.getResizeOptions(frame));
+            const segmentationSource = this.drawSegmentationSource(frame);
+
+            bitmap = segmentationSource
+                ? await createImageBitmap(segmentationSource)
+                : await createImageBitmap(frame, this.getResizeOptions(frame));
         } catch {
             return null;
         }
@@ -1099,9 +1454,9 @@ export default abstract class BaseBackgroundProcessor<
      *
      * Reference: https://ai.google.dev/edge/mediapipe/solutions/vision/image_segmenter
      */
-    private async uploadCombinedMask(mask: Float32Array, width: number, height: number) {
+    private async uploadCombinedMask(mask: Float32Array, width: number, height: number): Promise<boolean> {
         if (!mask || mask.length === 0 || !this.gl || !this.canvas || width === 0 || height === 0) {
-            return;
+            return false;
         }
 
         // Use the WebGL context from the same canvas LiveKit is using so the
@@ -1112,7 +1467,7 @@ export default abstract class BaseBackgroundProcessor<
 
         const gl = this.maskGl;
         if (!gl) {
-            return;
+            return false;
         }
 
         const sizeChanged = this.maskWidth !== width || this.maskHeight !== height;
@@ -1122,33 +1477,35 @@ export default abstract class BaseBackgroundProcessor<
         // can't leave the shared context mutated.
         try {
             if (!this.initializeShaderResources(gl)) {
-                return;
+                return false;
             }
 
             if (!this.uploadCombinedMaskTexture(gl, mask, width, height, sizeChanged)) {
-                return;
+                return false;
             }
 
             if (this.maskClosingRadius > 0 && !this.ensureMorphTextures(gl, width, height, sizeChanged)) {
-                return;
+                return false;
             }
 
             if (!this.ensureOutputTexture(gl, width, height, sizeChanged)) {
-                return;
+                return false;
             }
 
             if (!this.configureShaderProgram(gl)) {
-                return;
+                return false;
             }
 
             if (!this.renderMask(gl, width, height)) {
-                return;
+                return false;
             }
 
             this.maskWidth = width;
             this.maskHeight = height;
 
             gl.flush();
+
+            return true;
         } finally {
             this.restoreWebGLState(gl, savedState);
         }

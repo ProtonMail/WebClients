@@ -43,6 +43,29 @@ if (typeof (self as { document?: unknown }).document === 'undefined') {
     );
 }
 
+// MediaPipe only allocates the R32F mask attachment its readPixels(RED, FLOAT)
+// readback expects when all three of these are present; otherwise it downgrades
+// to R16F and every mask reads back as zeros. Mobile GPUs frequently miss them.
+// The CPU delegate returns the mask as a Float32Array, with no readback at all.
+const GPU_MASK_READBACK_EXTENSIONS = ['EXT_color_buffer_float', 'OES_texture_float_linear', 'EXT_float_blend'];
+
+const supportsGpuMaskReadback = (): boolean => {
+    try {
+        const gl = new OffscreenCanvas(1, 1).getContext('webgl2');
+        if (!gl) {
+            return false;
+        }
+        const isSupported = GPU_MASK_READBACK_EXTENSIONS.every((extension) => !!gl.getExtension(extension));
+        gl.getExtension('WEBGL_lose_context')?.loseContext();
+        return isSupported;
+    } catch {
+        return false;
+    }
+};
+
+const resolveDelegate = (requestedDelegate: 'GPU' | 'CPU'): 'GPU' | 'CPU' =>
+    requestedDelegate === 'GPU' && !supportsGpuMaskReadback() ? 'CPU' : requestedDelegate;
+
 type InitMessage = {
     type: 'init';
     wasmLoaderUrl: string;
@@ -151,7 +174,7 @@ const applyTemporalSmoothing = (current: Float32Array): Float32Array => {
     return current;
 };
 
-const initSegmenter = async (msg: InitMessage, attemptDelegate: 'GPU' | 'CPU' = msg.delegate) => {
+const initSegmenter = async (msg: InitMessage, attemptDelegate: 'GPU' | 'CPU') => {
     offscreenCanvas = new OffscreenCanvas(256, 256);
 
     const fileSet = {
@@ -181,12 +204,13 @@ const initSegmenter = async (msg: InitMessage, attemptDelegate: 'GPU' | 'CPU' = 
 
 const handleInit = async (msg: InitMessage) => {
     applyConstantOverrides(msg.constantOverrides);
+    const delegate = resolveDelegate(msg.delegate);
     try {
-        await initSegmenter(msg, msg.delegate);
+        await initSegmenter(msg, delegate);
         self.postMessage({ type: 'ready', delegate: activeDelegate });
     } catch (error) {
         // Fall back to CPU delegate if GPU init fails inside the worker
-        if (msg.delegate === 'GPU') {
+        if (delegate === 'GPU') {
             try {
                 await initSegmenter(msg, 'CPU');
                 self.postMessage({ type: 'ready', delegate: activeDelegate });
@@ -205,7 +229,23 @@ const handleInit = async (msg: InitMessage) => {
 // 1 - background (= the sum of all person classes). The simple model only has
 // 0=background and 1=person (some variants emit a single person mask), so the
 // person mask is read directly.
-const extractPersonConfidence = (masks: vision.MPMask[]): Float32Array => {
+type PersonConfidence = {
+    mask: Float32Array;
+    // The masks never made it back from the GPU, so every class read as 0.0.
+    isSourceEmpty: boolean;
+};
+
+const hasEmptyBackgroundClass = (masks: vision.MPMask[]): boolean => {
+    if (masks.length < 2) {
+        return false;
+    }
+
+    const background = masks[0].getAsFloat32Array();
+
+    return background.length > 0 && background.every((confidence) => confidence === 0);
+};
+
+const extractPersonConfidence = (masks: vision.MPMask[]): PersonConfidence => {
     const isSimpleModel = masks.length <= 2;
     // Simple model: read the person mask directly. Multiclass: read background
     // and invert it (person = 1 - background).
@@ -216,17 +256,27 @@ const extractPersonConfidence = (masks: vision.MPMask[]): Float32Array => {
     }
     const source = masks[sourceIndex].getAsFloat32Array();
 
-    // getAsFloat32Array() hands us a fresh Float32Array, so when we're not
-    // inverting we can apply the gain in place rather than allocating again.
-    const out = invert ? new Float32Array(source.length) : source;
+    // Always write into our own buffer. getAsFloat32Array() can hand back a view over
+    // MediaPipe's WASM heap (the simple model's CPU readback does), and that buffer is
+    // not detachable, so transferring it to the main thread throws and every mask fails.
+    const out = new Float32Array(source.length);
 
     const boost = invert ? workerConstants.multiclassPersonConfidenceBoost : workerConstants.personConfidenceBoost;
+    let isSourceAllZero = source.length > 0;
     for (let pixel = 0; pixel < source.length; pixel++) {
-        const person = invert ? 1 - source[pixel] : source[pixel];
+        const confidence = source[pixel];
+        if (confidence !== 0) {
+            isSourceAllZero = false;
+        }
+        const person = invert ? 1 - confidence : confidence;
         out[pixel] = Math.min(1, person * boost);
     }
 
-    return out;
+    // Multiclass already reads the background class. The simple model doesn't, so its
+    // all-zero result is ambiguous and needs a second (costlier) readback to settle.
+    const isSourceEmpty = isSourceAllZero && (invert || hasEmptyBackgroundClass(masks));
+
+    return { mask: out, isSourceEmpty };
 };
 
 // MediaPipe's VIDEO running mode feeds packets into a graph that requires
@@ -260,8 +310,15 @@ const handleSegment = (msg: SegmentMessage) => {
 
                 const width = masks[0].width;
                 const height = masks[0].height;
+                const { mask, isSourceEmpty } = extractPersonConfidence(masks);
+
+                if (isSourceEmpty) {
+                    self.postMessage({ type: 'mask-failed', id });
+                    return;
+                }
+
                 // EMA here; the morphological close runs on the GPU main thread.
-                const combined = applyTemporalSmoothing(extractPersonConfidence(masks));
+                const combined = applyTemporalSmoothing(mask);
 
                 self.postMessage(
                     {

@@ -31,10 +31,10 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
+import { useIsBackgroundEffectsSupported } from '../../contexts/BackgroundEffects/useIsBackgroundEffectsSupported';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useDeviceLoading } from '../../hooks/useDeviceLoading';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
-import { supportsBackgroundEffects } from '../../processors/background-processor/createBackgroundProcessor';
 import { supportsSetSinkId } from '../../utils/browser';
 import { getCameraButtonAriaLabel, getMicrophoneButtonAriaLabel } from '../../utils/mediaButtonAriaLabels';
 import { cameraShortcutLabel, microphoneShortcutLabel } from '../../utils/mediaShortcuts';
@@ -87,7 +87,7 @@ export const DeviceSettings = ({
     const microphones = useMeetSelector(selectMicrophones);
     const speakers = useMeetSelector(selectSpeakers);
     const { handleRotateCamera, facingMode, handleMicrophoneToggle, handleCameraToggle } = useMediaManagementContext();
-    const isBackgroundBlurSupported = supportsBackgroundEffects();
+    const isBackgroundBlurSupported = useIsBackgroundEffectsSupported();
 
     const isVirtualBackgroundEnabled = useFlag('MeetVirtualBackground');
 
@@ -215,7 +215,7 @@ export const DeviceSettings = ({
 
     const { backgroundColor, profileColor } = getParticipantDisplayColorsByIndex(colorIndex);
 
-    const canSelectBackgrounds = isVirtualBackgroundEnabled && !isMobile();
+    const canSelectBackgrounds = isVirtualBackgroundEnabled;
     const backgroundsButtonLabel = c('Alt').t`Backgrounds`;
 
     const handleBackgroundsToggle = () => {
@@ -343,13 +343,15 @@ export const DeviceSettings = ({
                     </div>
                 )}
             </div>
-            {!isMobile() && (
-                <div className="relative">
-                    {isBackgroundsOpen && (
-                        <div className="absolute top-0 left-0 w-full">
-                            <PrejoinBackgrounds onClose={() => setIsBackgroundsOpen(false)} />
-                        </div>
-                    )}
+            <div className="relative">
+                {isBackgroundsOpen && (
+                    // On desktop the picker overlays the device selectors, which keeps the layout height stable.
+                    // On mobile there are no selectors underneath, so it has to take part in the normal flow.
+                    <div className={clsx(!isMobile() && 'absolute top-0 left-0 w-full')}>
+                        <PrejoinBackgrounds onClose={() => setIsBackgroundsOpen(false)} />
+                    </div>
+                )}
+                {!isMobile() && (
                     <div
                         className={clsx(
                             'device-selectors flex flex-nowrap gap-2 mt-2',
@@ -414,8 +416,8 @@ export const DeviceSettings = ({
                             }}
                         />
                     </div>
-                </div>
-            )}
+                )}
+            </div>
         </div>
     );
 };

@@ -14,11 +14,7 @@ import {
     createCustomBackgroundProcessor,
     ensureBackgroundProcessor,
 } from '../../processors/background-processor/createBackgroundProcessor';
-import type {
-    BackgroundBlurProcessor,
-    BackgroundProcessorVersion,
-    CustomBackgroundProcessor,
-} from '../../processors/background-processor/types';
+import type { BackgroundBlurProcessor, CustomBackgroundProcessor } from '../../processors/background-processor/types';
 import type { BackgroundEffectInitializationTracker } from '../BackgroundEffects/useBackgroundEffectInitializationTracker';
 
 interface UseCameraPreviewParams {
@@ -26,7 +22,6 @@ interface UseCameraPreviewParams {
     facingMode: 'environment' | 'user';
     isBackgroundBlurSupported: boolean;
     backgroundEffect: BackgroundEffect;
-    backgroundProcessorVersion: BackgroundProcessorVersion;
     room: Room;
     trackBackgroundEffectInitialization: BackgroundEffectInitializationTracker['trackBackgroundEffectInitialization'];
     cancelBackgroundEffectInitialization: BackgroundEffectInitializationTracker['cancelBackgroundEffectInitialization'];
@@ -37,7 +32,6 @@ export const useCameraPreview = ({
     facingMode,
     isBackgroundBlurSupported,
     backgroundEffect,
-    backgroundProcessorVersion,
     room,
     trackBackgroundEffectInitialization,
     cancelBackgroundEffectInitialization,
@@ -106,7 +100,7 @@ export const useCameraPreview = ({
         }
 
         const requestId = ++backgroundProcessorCreationRequestIdRef.current;
-        const processor = await createBackgroundProcessor(false, backgroundProcessorVersion);
+        const processor = await createBackgroundProcessor();
 
         if (requestId !== backgroundProcessorCreationRequestIdRef.current) {
             // Deps changed while awaiting: discard this now-stale processor.
@@ -117,7 +111,7 @@ export const useCameraPreview = ({
         backgroundBlurProcessorInstanceRef.current = processor;
 
         return processor;
-    }, [backgroundProcessorVersion]);
+    }, []);
 
     const ensurePreviewCustomBackgroundProcessor = useCallback(async (source: VirtualBackgroundSource) => {
         const creation = customBackgroundProcessorCreationRef.current ?? createCustomBackgroundProcessor(source);
