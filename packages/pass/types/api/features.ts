@@ -17,7 +17,6 @@ export enum PassFeature {
     PassDesktopSSHAgent = 'PassDesktopSSHAgent',
     PassDesktopUnlock = 'PassDesktopUnlock',
     PassEnableDesktopAutoUpdate = 'PassEnableDesktopAutoUpdate',
-    PassExperimentalWebsiteRules = 'PassExperimentalWebsiteRules',
     PassExtensionCustomTLDs = 'PassExtensionCustomTLDs',
     PassExtensionOfflineV1 = 'PassExtensionOfflineV1',
     PassFileAttachmentsEssentialsUpsell = 'PassFileAttachmentsEssentialsUpsell',
