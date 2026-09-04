@@ -2,7 +2,7 @@ import { useNotifications } from '@proton/app-context/useNotifications'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ListPlugin } from '@lexical/react/LexicalListPlugin'
 import { HorizontalRulePlugin } from '@lexical/react/LexicalHorizontalRulePlugin'
-import { BuildInitialEditorConfig, ShouldBootstrap } from '../Lib/InitialEditorConfig'
+import { BuildInitialEditorConfig, ShouldBootstrap } from '../../Lib/InitialEditorConfig'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { Provider } from '@lexical/yjs'
 import type {
@@ -16,60 +16,60 @@ import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry
 import { AnonymousUserDisplayName, GenerateUUID, DocProvider, getRandomAnonymousUserLetter } from '@proton/docs-shared'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
-import { MarkdownTransformers } from '../Tools/MarkdownTransformers'
-import CodeHighlightPlugin from '../Plugins/CodeHighlightPlugin'
-import CommentPlugin from '../Plugins/Comments/CommentPluginContainer'
-import Toolbar from '../Toolbar/Toolbar'
-import { CollaborationPlugin } from '../Plugins/Collaboration/CollaborationPlugin'
-import ImagesPlugin from '../Plugins/Image/ImagePlugin'
-import TypingBotPlugin from '../Plugins/TypingBot/TypingBotPlugin'
-import { EditorReadonlyPlugin } from '../Plugins/EditorReadonlyPlugin'
-import TableCellResizerPlugin from '../Plugins/TableCellResizer'
-import { LinkInfoPlugin } from '../Plugins/Link/LinkInfoPlugin'
-import { ReadonlyLinkFixPlugin } from '../Plugins/Link/ReadonlyLinkFixPlugin'
-import { DefaultFont } from '../Shared/Fonts'
+import { MarkdownTransformers } from '../../Tools/MarkdownTransformers'
+import CodeHighlightPlugin from '../../Plugins/CodeHighlightPlugin'
+import CommentPlugin from '../../Plugins/Comments/CommentPluginContainer'
+import Toolbar from '../../Toolbar/Toolbar'
+import { CollaborationPlugin } from '../../Plugins/Collaboration/CollaborationPlugin'
+import ImagesPlugin from '../../Plugins/Image/ImagePlugin'
+import TypingBotPlugin from '../../Plugins/TypingBot/TypingBotPlugin'
+import { EditorReadonlyPlugin } from '../../Plugins/EditorReadonlyPlugin'
+import TableCellResizerPlugin from '../../Plugins/TableCellResizer'
+import { LinkInfoPlugin } from '../../Plugins/Link/LinkInfoPlugin'
+import { ReadonlyLinkFixPlugin } from '../../Plugins/Link/ReadonlyLinkFixPlugin'
+import { DefaultFont } from '../../Shared/Fonts'
 import type { LexicalEditor } from 'lexical'
 import { EditorRefPlugin } from '@lexical/react/LexicalEditorRefPlugin'
-import { reportErrorToSentry } from '../Utils/errorMessage'
 import { TabIndentationPlugin } from '@lexical/react/LexicalTabIndentationPlugin'
-import { TablePlugin } from '../Plugins/Table/TablePlugin'
-import { SafeLexicalComposer } from '../Tools/SafeLexicalComposer'
-import { CheckListPlugin } from '../Plugins/CheckListPlugin'
-import { AutoFocusPlugin } from '../Plugins/AutoFocusPlugin'
-import type { EditorLoadResult } from '../Lib/EditorLoadResult'
-import { KeyboardShortcutsPlugin } from '../Plugins/KeyboardShortcuts/KeyboardShortcutsPlugin'
-import { PasteLimitPlugin } from '../Plugins/PasteLimitPlugin'
-import { CombiningMarkPasteGuardPlugin } from '../Plugins/CombiningMarkPasteGuardPlugin'
-import { SuggestionModePlugin } from '../Plugins/Suggestions/SuggestionModePlugin'
-import { CustomOrderedListPlugin } from '../Plugins/CustomList/CustomListPlugin'
-import { WordCountPlugin } from '../Plugins/WordCount/WordCountPlugin'
-import TreeViewPlugin from '../Plugins/TreeView/TreeViewPlugin'
-import { ProtonContentEditable } from '../ContentEditable/ProtonContentEditable'
-import { MarkNodesProvider } from '../Plugins/MarkNodesContext'
+import { TablePlugin } from '../../Plugins/Table/TablePlugin'
+import { SafeLexicalComposer } from '../../Tools/SafeLexicalComposer'
+import { CheckListPlugin } from '../../Plugins/CheckListPlugin'
+import { AutoFocusPlugin } from '../../Plugins/AutoFocusPlugin'
+import type { EditorLoadResult } from '../../Lib/EditorLoadResult'
+import { KeyboardShortcutsPlugin } from '../../Plugins/KeyboardShortcuts/KeyboardShortcutsPlugin'
+import { PasteLimitPlugin } from '../../Plugins/PasteLimitPlugin'
+import { CombiningMarkPasteGuardPlugin } from '../../Plugins/CombiningMarkPasteGuardPlugin'
+import { SuggestionModePlugin } from '../../Plugins/Suggestions/SuggestionModePlugin'
+import { CustomOrderedListPlugin } from '../../Plugins/CustomList/CustomListPlugin'
+import { WordCountPlugin } from '../../Plugins/WordCount/WordCountPlugin'
+import TreeViewPlugin from '../../Plugins/TreeView/TreeViewPlugin'
+import { ProtonContentEditable } from '../../ContentEditable/ProtonContentEditable'
+import { MarkNodesProvider } from '../../Plugins/MarkNodesContext'
 import clsx from '@proton/utils/clsx'
-import { ProtonLinkPlugin } from '../Plugins/Link/LinkPlugin'
-import { FormattingPlugin } from '../Plugins/FormattingPlugin'
-import { EditorUserMode } from '../Lib/EditorUserMode'
+import { ProtonLinkPlugin } from '../../Plugins/Link/LinkPlugin'
+import { FormattingPlugin } from '../../Plugins/FormattingPlugin'
+import { EditorUserMode } from '../../Lib/EditorUserMode'
 import { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
-import { BlockTypePlugin } from '../Plugins/BlockTypePlugin'
+import { BlockTypePlugin } from '../../Plugins/BlockTypePlugin'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
-import { YjsReadonlyPlugin } from '../Plugins/YjsReadonly/YjsReadonlyPlugin'
-import { useSyncedState } from '../Hooks/useSyncedState'
-import { FixBrokenListItemPlugin } from '../Plugins/FixBrokenListItemPlugin'
-import { CustomCollaborationContextProvider } from '../Plugins/Collaboration/CustomCollaborationContext'
-import { FixBrokenTabNode } from '../Plugins/FixBrokenTabNode'
+import { YjsReadonlyPlugin } from '../../Plugins/YjsReadonly/YjsReadonlyPlugin'
+import { useSyncedState } from '../../Hooks/useSyncedState'
+import { FixBrokenListItemPlugin } from '../../Plugins/FixBrokenListItemPlugin'
+import { CustomCollaborationContextProvider } from '../../Plugins/Collaboration/CustomCollaborationContext'
+import { FixBrokenTabNode } from '../../Plugins/FixBrokenTabNode'
 import { getAccentColorForUsername } from '@proton/atoms/UserAvatar/getAccentColorForUsername'
-import { PageBreakPlugin } from '../Plugins/PageBreak/PageBreakPlugin'
-import { useApplication } from './ApplicationProvider'
-import { SCROLL_TO_USER_CURSOR_COMMAND } from '../Plugins/Collaboration/ScrollToUserCursorPlugin'
+import { PageBreakPlugin } from '../../Plugins/PageBreak/PageBreakPlugin'
+import { useApplication } from '../ApplicationProvider'
+import { SCROLL_TO_USER_CURSOR_COMMAND } from '../../Plugins/Collaboration/ScrollToUserCursorPlugin'
 import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAlert'
-import { TableOfContents } from '../Components/TableOfContents/TableOfContents'
-import DocsLayout from './DocsLayout'
-import { useIsAlpha } from '../Hooks/useIsAlpha'
+import { TableOfContents } from '../../Components/TableOfContents/TableOfContents'
+import DocsLayout from '../DocsLayout'
+import { useIsAlpha } from '../../Hooks/useIsAlpha'
+import { useDocsDependencies } from './DocsDependenciesProvider'
 
 const TypingBotEnabled = false
 
-type Props = {
+export type EditorProps = {
   clientInvoker: EditorRequiresClientMethods
   docMap: YDocMap
   docState: DocStateInterface
@@ -113,7 +113,7 @@ export function Editor({
   lexicalError,
   logger,
   tableOfContentsVisible,
-}: Props) {
+}: EditorProps) {
   const { application } = useApplication()
   const isAlpha = useIsAlpha()
   const editorRef = useRef<LexicalEditor | null>(null)
@@ -121,6 +121,8 @@ export function Editor({
   const [collabCursorsContainer, setCollabCursorsContainer] = useState<HTMLDivElement | null>(null)
 
   const { userName } = useSyncedState()
+
+  const { openLink } = useDocsDependencies()
 
   const setEditorRef = useCallback(
     (instance: LexicalEditor | null) => {
@@ -138,13 +140,6 @@ export function Editor({
 
     return baseProvider
   }, [docState])
-
-  const openLink = useCallback(
-    (url: string) => {
-      void clientInvoker.openLink(url).catch(reportErrorToSentry)
-    },
-    [clientInvoker],
-  )
 
   const showGenericAlertModal = useCallback(
     (message: string) => {
