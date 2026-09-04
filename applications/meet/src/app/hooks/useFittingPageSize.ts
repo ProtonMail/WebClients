@@ -11,7 +11,8 @@ import { calculateFittingTileCount } from '../utils/calculateFittingTileCount';
 export const useFittingPageSize = (
     size: { width: number; height: number },
     tileAspectRatio: number,
-    getLayout: (count: number) => { cols: number; rows: number }
+    getLayout: (count: number) => { cols: number; rows: number },
+    reservedTiles = 0
 ) => {
     const dispatch = useMeetDispatch();
 
@@ -21,7 +22,7 @@ export const useFittingPageSize = (
             return;
         }
 
-        const pageSize = calculateFittingTileCount({
+        const fittingTileCount = calculateFittingTileCount({
             containerWidth: size.width,
             containerHeight: size.height,
             gap: GRID_GAP,
@@ -32,6 +33,6 @@ export const useFittingPageSize = (
             getLayout,
         });
 
-        dispatch(setPageSize(pageSize));
-    }, [dispatch, size.width, size.height, tileAspectRatio, getLayout]);
+        dispatch(setPageSize(Math.max(1, fittingTileCount - reservedTiles)));
+    }, [dispatch, size.width, size.height, tileAspectRatio, getLayout, reservedTiles]);
 };
