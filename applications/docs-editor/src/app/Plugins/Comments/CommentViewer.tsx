@@ -9,15 +9,14 @@ import { SafeLexicalComposer } from '../../Tools/SafeLexicalComposer'
 import { sanitizeLexicalState } from '../../Utils/SanitizeLexicalState'
 import { CommentLexicalNodes } from './CommentLexicalNodes'
 import { ReadonlyLinkFixPlugin } from '../Link/ReadonlyLinkFixPlugin'
-import { useCommentsContext } from './CommentsContext'
-
+import { useDocsDependencies } from '../../Containers/Docs/DocsDependenciesProvider'
 interface CommentViewerProps {
   content: string
   className: string
 }
 
 export const CommentViewer: React.FC<CommentViewerProps> = ({ content, className }) => {
-  const { openLink } = useCommentsContext()
+  const { openLink } = useDocsDependencies()
 
   let editorState: string
   try {

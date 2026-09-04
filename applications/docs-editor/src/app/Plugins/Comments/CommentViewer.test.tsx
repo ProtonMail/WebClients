@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { CommentViewer } from './CommentViewer'
+import { DocsDependenciesProvider } from '../../Containers/Docs/DocsDependenciesProvider'
 
 jest.mock('./CommentsContext', () => ({
   useCommentsContext: jest.fn(() => ({
@@ -12,7 +13,16 @@ describe('CommentViewer', () => {
     const invalidContent = '{invalid json}'
 
     expect(() => {
-      render(<CommentViewer content={invalidContent} className="test-class" />)
+      render(
+        <DocsDependenciesProvider
+          dependencies={{
+            openLink: jest.fn(),
+            isDevOrBlack: jest.fn(),
+          }}
+        >
+          <CommentViewer content={invalidContent} className="test-class" />
+        </DocsDependenciesProvider>,
+      )
     }).not.toThrow()
 
     const fallback = screen.getByText(invalidContent)

@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
-import type { MouseEventHandler } from 'react'
 import { SafeLexicalComposer } from '../Tools/SafeLexicalComposer'
 import { BuildInitialEditorConfig } from '../Lib/InitialEditorConfig'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
@@ -16,10 +15,11 @@ import { $unwrapAllCommentThreadMarks } from '../Tools/removeCommentThreadMarks'
 import { $rejectAllSuggestions } from '../Plugins/Suggestions/rejectAllSuggestions'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { setScrollableTablesActive } from '@lexical/table'
-import { isHTMLElement } from '../Utils/guard'
 import { TableOfContents } from '../Components/TableOfContents/TableOfContents'
 import DocsLayout from './DocsLayout'
 import { getDocsLayoutScrollContainer } from './docsLayoutUtils'
+import { ReadonlyLinkFixPlugin } from '../Plugins/Link/ReadonlyLinkFixPlugin'
+import { useDocsDependencies } from './Docs/DocsDependenciesProvider'
 
 interface PreviewModeEditorProps {
   clonedEditorState: EditorState
@@ -38,23 +38,6 @@ export function PreviewModeEditor({
   initialScrollTop,
   tableOfContentsVisible,
 }: PreviewModeEditorProps) {
-  const handlePreviewModeLinkClick: MouseEventHandler = useCallback(
-    (event) => {
-      const target = event.target
-      if (!isHTMLElement(target)) {
-        return
-      }
-      const parentLink = target.closest('a')
-      if (!parentLink) {
-        return
-      }
-      event.preventDefault()
-      const link = parentLink.href
-      clientInvoker.openLink(link).catch(console.error)
-    },
-    [clientInvoker],
-  )
-
   const getDocumentUrl = useMemo(() => clientInvoker.getDocumentUrl.bind(clientInvoker), [clientInvoker])
   const replaceDocumentUrl = useMemo(() => clientInvoker.replaceDocumentUrl.bind(clientInvoker), [clientInvoker])
   const reportTelemetry = useCallback(
@@ -63,6 +46,7 @@ export function PreviewModeEditor({
     },
     [clientInvoker],
   )
+  const { openLink } = useDocsDependencies()
 
   return (
     <SafeLexicalComposer
@@ -108,7 +92,6 @@ export function PreviewModeEditor({
                 }}
                 isSuggestionMode={false}
                 data-testid="preview-mode-editor"
-                onClick={handlePreviewModeLinkClick}
               />
             }
             placeholder={null}
@@ -121,6 +104,7 @@ export function PreviewModeEditor({
       <PreviewStateSyncPlugin clonedEditorState={clonedEditorState} />
       <PreviewScrollRestorePlugin initialScrollTop={initialScrollTop} />
       <PreviewCleanupPlugin />
+      <ReadonlyLinkFixPlugin openLink={openLink} />
     </SafeLexicalComposer>
   )
 }
