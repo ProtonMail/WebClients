@@ -165,11 +165,17 @@ describe("getAppURL / BASE_LOCAL_URL gating", () => {
 
     afterEach(() => {
         delete process.env.BASE_LOCAL_URL;
+        delete process.env.PLAYWRIGHT_TEST;
     });
 
-    function getAppURLWithLocalEnv(isPackaged: boolean, baseLocalUrl: string) {
+    function getAppURLWithLocalEnv(isPackaged: boolean, baseLocalUrl: string, playwrightTest = false) {
         mockApp.isPackaged = isPackaged;
         process.env.BASE_LOCAL_URL = baseLocalUrl;
+        if (playwrightTest) {
+            process.env.PLAYWRIGHT_TEST = "true";
+        } else {
+            delete process.env.PLAYWRIGHT_TEST;
+        }
         mockStoreGet.mockReturnValue(undefined);
         jest.resetModules();
         mockApp.isPackaged = isPackaged;
@@ -183,6 +189,14 @@ describe("getAppURL / BASE_LOCAL_URL gating", () => {
         // eslint-disable-next-line @typescript-eslint/no-require-imports
         const { defaultAppURL } = require("./urlStore");
         expect(getAppURLWithLocalEnv(true, "attacker.com")).toEqual(defaultAppURL);
+    });
+
+    test("honors BASE_LOCAL_URL in a packaged playwright test build", () => {
+        expect(getAppURLWithLocalEnv(true, "hutton.proton.black", true)).toEqual({
+            account: "https://account.hutton.proton.black",
+            mail: "https://mail.hutton.proton.black",
+            calendar: "https://calendar.hutton.proton.black",
+        });
     });
 
     test("honors BASE_LOCAL_URL in an unpackaged (dev) build", () => {
