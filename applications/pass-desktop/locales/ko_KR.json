@@ -804,6 +804,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "사용중이신 비밀번호 관리자가 여기 없나요? 추가하도록 요청하세요."
+      ],
+      "Multiple select": [
+        "다중 선택"
       ]
     },
     "Activity": {
@@ -2187,7 +2190,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -4555,6 +4558,15 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "이 URL은 자동완성이 차단되지 않습니다"
+      ],
+      "Enter a URL to check if it matches the current rule": [
+        "현재 규칙과 일치하는 경우 URL을 입력하여 확인합니다."
+      ],
+      "URL doesn't match the rule": [
+        "URL이 규칙과 일치하지 않습니다."
+      ],
+      "URL matches the rule": [
+        "URL이 규칙에 일치합니다"
       ]
     },
     "Security Center - Info": {
