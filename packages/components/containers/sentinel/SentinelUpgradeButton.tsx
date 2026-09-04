@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
+import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import {
     type APP_NAMES,
     PROTON_SENTINEL_NAME,
@@ -48,7 +49,7 @@ const SentinelUpgradeButton = ({ app, variant }: Props) => {
     return (
         <SettingsParagraph>
             <PromotionButton
-                iconName="upgrade"
+                iconComponent={IcUpgrade}
                 iconGradient={true}
                 onClick={handleUpgrade}
                 disabled={loadingSubscriptionModal}

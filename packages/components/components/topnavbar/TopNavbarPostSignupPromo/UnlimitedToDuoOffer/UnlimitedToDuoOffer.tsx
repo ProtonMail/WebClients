@@ -129,7 +129,7 @@ export const UnlimitedToDuoOffer = () => {
                     dimensions: { messageType: spotlightConfig.type },
                 });
             }}
-            promoIconName={spotlightConfig.topButton?.icon}
+            promoIcon={spotlightConfig.topButton?.icon}
             promoChildren={spotlightConfig.topButton?.title}
             promoColor="norm"
             spotlightShow={spotlightState}

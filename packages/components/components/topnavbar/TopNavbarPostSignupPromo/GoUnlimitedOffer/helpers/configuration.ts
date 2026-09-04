@@ -6,6 +6,7 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import { IcLightLightbulb } from '@proton/icons/icons/IcLightLightbulb';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { getPlanByName } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -130,7 +131,7 @@ export const useGoUnlimited2025Config = (): UnlimitedOfferConfig => {
             title: selectedTip.cta,
             variant: 'go-unlimited-2025',
             gradient: false,
-            icon: 'light-lightbulb',
+            icon: IcLightLightbulb,
         },
         loading: loadingRotationState ?? true,
     };
