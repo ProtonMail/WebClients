@@ -2779,6 +2779,20 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Amount due": [
+        "Suma datorată"
+      ],
+      "Amount due after trial": [
+        "Suma datorată după probare"
+      ],
+      "Amount due now": [
+        "Suma datorată acum"
+      ],
+      "Total for ${ cycle } month": [
+        "Total pentru ${ cycle } lună",
+        "Total pentru ${ cycle } luni",
+        "Total pentru ${ cycle } de luni"
       ]
     },
     "Collapsible tooltip": {
@@ -6114,6 +6128,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Contul utilizează ${ usedSpace } de stocare, care depășește cei ${ inviteSpace } care vi s-au alocat. Ștergeți unele date sau cereți administratorului planului să vă crească limita de stocare."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Ați primit o invitație să vă conectați contul ${ BRAND_NAME } la acest grup de familie și să vă bucurați împreună de toate funcțiile premium."
       ]
     },
     "familyOffer_2023:Label": {
@@ -9952,6 +9969,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate."
+      ],
+      "Do you remember your password?": [
+        "Vă amintiți parola?"
+      ],
+      "Opened a problem report": [
+        "S-a deschis un raport de problemă."
       ]
     },
     "info": {
@@ -13987,7 +14010,7 @@
         "Adresă e-mail"
       ],
       "End date": [
-        "Data de sfârșit"
+        "Dată sfârșit"
       ],
       "Enter a name": [
         "Introduceți un nume"
