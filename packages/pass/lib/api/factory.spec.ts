@@ -168,19 +168,19 @@ describe('API factory', () => {
 
     describe('Response', () => {
         test('should support JSON response', async () => {
-            const json = { id: Math.random() };
+            const json = { id: 'refresh-response-1' };
             fetchMock.mockResolvedValueOnce(mockAPIResponse(json, 200));
             expect(await api({ url: 'endpoint', output: 'json' })).toEqual(json);
         });
 
         test('should support RAW response', async () => {
-            const response = mockAPIResponse({ id: Math.random() }, 200);
+            const response = mockAPIResponse({ id: 'refresh-response-2' }, 200);
             fetchMock.mockResolvedValueOnce(response);
             expect(await api({ url: 'endpoint', output: 'raw' })).toEqual(response);
         });
 
         test('should support STREAM response', async () => {
-            const response = mockAPIResponse({ id: Math.random() }, 200);
+            const response = mockAPIResponse({ id: 'refresh-response-3' }, 200);
             fetchMock.mockResolvedValueOnce(response);
             expect(await api({ url: 'endpoint', output: 'stream' })).toEqual(response.body);
         });
@@ -275,8 +275,16 @@ describe('API factory', () => {
             expect(fetchMock).toHaveBeenCalledTimes(1);
         });
 
+        test('should not deactivate the session on a rate limited refresh', async () => {
+            refreshMock.mockRejectedValueOnce(new ApiError('Too many requests', 429, 'ApiError'));
+            fetchMock.mockResolvedValueOnce(mockAPIResponse({}, 401));
+
+            await expect(api({ url: 'some/protected/endpoint' })).rejects.toMatchObject({ status: 429 });
+            expect(api.getState().sessionInactive).toEqual(false);
+        });
+
         test('should try to refresh session', async () => {
-            const response = { id: Math.random() };
+            const response = { id: 'refresh-response-4' };
             refreshMock.mockResolvedValueOnce({ RefreshToken: 'refresh-001' });
 
             fetchMock
