@@ -1,21 +1,27 @@
 import { useEffect } from 'react';
 
-import { SCREEN_SHARE_PAGE_SIZE } from '@proton/meet/constants';
+import { PARTICIPANTS_SIDE_BAR_PAGE_SIZE } from '@proton/meet/constants';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectIsSpotlightLayout, selectShowsScreenShareInSidebar } from '@proton/meet/store/slices/layoutSlice';
 import {
     selectPage,
     selectPageCount,
+    selectSidebarPageCount,
     setPage,
     setPageSize,
 } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
-import { selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 
 export const usePaginationSizeUpdates = () => {
     const dispatch = useMeetDispatch();
     const page = useMeetSelector(selectPage);
-    const pageCount = useMeetSelector(selectPageCount);
+    const gridPageCount = useMeetSelector(selectPageCount);
+    const sidebarPageCount = useMeetSelector(selectSidebarPageCount);
 
-    const isScreenShare = useMeetSelector(selectIsScreenShare);
+    const isSpotlightLayout = useMeetSelector(selectIsSpotlightLayout);
+    const showsScreenShareInSidebar = useMeetSelector(selectShowsScreenShareInSidebar);
+
+    // Both containers share `page`, so the clamp has to follow whichever one is on screen
+    const pageCount = isSpotlightLayout ? sidebarPageCount : gridPageCount;
 
     useEffect(() => {
         if (pageCount - 1 < page) {
@@ -23,10 +29,11 @@ export const usePaginationSizeUpdates = () => {
         }
     }, [dispatch, pageCount, page]);
 
-    // The grid page size is owned by ParticipantGrid (useFittingPageSize); only screen share overrides it.
+    // The grid page size is owned by ParticipantGridLayout (useFittingPageSize); the spotlight sidebar
+    // has a fixed number of slots, so it is the only layout that overrides it.
     useEffect(() => {
-        if (isScreenShare) {
-            dispatch(setPageSize(SCREEN_SHARE_PAGE_SIZE));
+        if (isSpotlightLayout) {
+            dispatch(setPageSize(PARTICIPANTS_SIDE_BAR_PAGE_SIZE - (showsScreenShareInSidebar ? 1 : 0)));
         }
-    }, [dispatch, isScreenShare]);
+    }, [dispatch, isSpotlightLayout, showsScreenShareInSidebar]);
 };
