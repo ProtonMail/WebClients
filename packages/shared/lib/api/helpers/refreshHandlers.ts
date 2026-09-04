@@ -4,7 +4,7 @@ import noop from '@proton/utils/noop';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import { createOnceHandler } from '../../apiHandlers';
-import { OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY, RETRY_ATTEMPTS_MAX } from '../../constants';
+import { HTTP_STATUS_CODE, OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY, RETRY_ATTEMPTS_MAX } from '../../constants';
 import { HTTP_ERROR_CODES } from '../../errors';
 import type { ApiError } from '../../fetch/ApiError';
 import { wait } from '../../helpers/promise';
@@ -55,10 +55,15 @@ export const createRefreshHandlers = (refresh: (UID: string) => Promise<Response
     return refreshHandler;
 };
 
-export const getIsRefreshFailure = (error: ApiError) => {
-    // Any 4xx from the refresh call and the session is no longer valid, 429 is already handled in the refreshHandler
-    return error.status >= 400 && error.status <= 499;
-};
+// Statuses on which `/auth/refresh` rules the session invalid. Anything else
+// it returns (409, 429, 5xx) means retry later. 401 is listed to avoid looping.
+const SESSION_INVALID_REFRESH_STATUSES: number[] = [
+    HTTP_STATUS_CODE.BAD_REQUEST,
+    HTTP_STATUS_CODE.UNAUTHORIZED,
+    HTTP_STATUS_CODE.UNPROCESSABLE_ENTITY,
+];
+
+export const getIsRefreshFailure = (error: ApiError) => SESSION_INVALID_REFRESH_STATUSES.includes(error.status);
 
 /**
  * Handle refresh token. Happens when the access token has expired.
