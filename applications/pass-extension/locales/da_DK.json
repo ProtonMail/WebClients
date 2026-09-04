@@ -800,6 +800,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Er din adgangskodeadministrator her ikke? Anmod om den."
+      ],
+      "Bulk select items": [
+        "Vælg elementer i massevis"
+      ],
+      "Multiple select": [
+        "Markér flere"
       ]
     },
     "Activity": {
@@ -4578,6 +4584,15 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "Denne URL vil IKKE blive blokeret fra autofyld"
+      ],
+      "Enter a URL to check if it matches the current rule": [
+        "Indtast en URL for at tjekke om den matcher den nuværende regel"
+      ],
+      "URL doesn't match the rule": [
+        "URL matcher ikke reglen"
+      ],
+      "URL matches the rule": [
+        "URL matcher reglen"
       ]
     },
     "Security Center - Info": {
@@ -5672,6 +5687,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dit abonnement giver dig ikke mulighed for at oprette flere bokse. Alle elementer vil blive importeret til din første boks. For at importere til flere bokse skal du opgradere dit abonnement."
+      ],
+      "Identity could not be confirmed": [
+        "Identitet kunne ikke bekræftes"
       ]
     }
   }
