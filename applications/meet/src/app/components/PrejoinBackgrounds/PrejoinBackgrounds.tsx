@@ -62,7 +62,7 @@ export const PrejoinBackgrounds = ({ onClose }: PrejoinBackgroundsProps) => {
                     onSelect={(effect) => {
                         void selectBackgroundEffect(effect);
                     }}
-                    className="prejoin-backgrounds-options flex flex-nowrap gap-2 w-full"
+                    className="prejoin-backgrounds-options flex flex-nowrap gap-2"
                     tileClassName="prejoin-backgrounds-option"
                     renderActionTile={renderActionTile}
                     actionTileIndex={effectOptions.length}
