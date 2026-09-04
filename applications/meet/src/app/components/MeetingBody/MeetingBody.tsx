@@ -8,8 +8,8 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { TopBanner } from '@proton/components/index';
 import { IcMeetRotateCamera } from '@proton/icons/icons/IcMeetRotateCamera';
 import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectParticipantSideBarOpen } from '@proton/meet/store/slices/layoutSlice';
 import { selectMeetingLink } from '@proton/meet/store/slices/meetingInfo';
-import { selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { selectIsSideBarOpen } from '@proton/meet/store/slices/uiStateSlice';
 import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
@@ -75,13 +75,11 @@ export const MeetingBody = ({
     const { activeBreakpoint } = useActiveBreakpoint();
     const isXSmallScreen = activeBreakpoint === 'xsmall';
 
-    const [participantSideBarOpen, setParticipantSideBarOpen] = useState(true);
+    const participantSideBarOpen = useMeetSelector(selectParticipantSideBarOpen);
 
     const meetingLink = useMeetSelector(selectMeetingLink);
 
     const { handleRotateCamera, isVideoEnabled } = useMediaManagementContext();
-
-    const isScreenShare = useMeetSelector(selectIsScreenShare);
 
     const [bannerIsClosed, setBannerIsClosed] = useState(!isUsingTurnRelay);
 
@@ -118,8 +116,7 @@ export const MeetingBody = ({
             <MeetingTopBanner />
             <div
                 className={clsx(
-                    'w-full h-full flex flex-column flex-nowrap overflow-hidden pl-4 pr-4 pb-0 pt-4',
-                    isScreenShare ? 'gap-0' : 'gap-4',
+                    'w-full h-full flex flex-column flex-nowrap overflow-hidden gap-4 pl-4 pr-4 pb-0 pt-4',
                     isElectronApp && 'pt-6'
                 )}
             >
@@ -189,15 +186,12 @@ export const MeetingBody = ({
                         (participantSideBarOpen || isSideBarOpen) && isLargerThanMd ? 'gap-4' : 'gap-0'
                     )}
                 >
-                    <ParticipantsLayout
-                        participantSideBarOpen={participantSideBarOpen}
-                        setParticipantSideBarOpen={setParticipantSideBarOpen}
-                    />
+                    <ParticipantsLayout />
 
                     {isSideBarOpen && (
                         <div
                             className="h-full shrink-0 min-w-custom"
-                            style={{ flexGrow: isScreenShare ? 2 : 3, flexBasis: 0, '--min-w-custom': '20rem' }}
+                            style={{ flexGrow: 3, flexBasis: 0, '--min-w-custom': '20rem' }}
                         >
                             <ParticipantList />
                             <Settings />

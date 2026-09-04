@@ -14,7 +14,6 @@ import {
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { selectDisplayName } from '@proton/meet/store/slices/meetingInfo';
 import { selectParticipantName } from '@proton/meet/store/slices/participants/participantsSlice';
-import { selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { selectMeetSettings, selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -42,9 +41,10 @@ interface ParticipantTileProps {
 }
 
 export const ParticipantTile = memo(({ participant, viewSize = 'large' }: ParticipantTileProps) => {
+    const isExtraSmall = viewSize === 'xsmall';
+
     const displayName = useMeetSelector(selectDisplayName);
     const participantsWithDisabledVideos = useMeetSelector(selectParticipantsWithDisabledVideos);
-    const isScreenShare = useMeetSelector(selectIsScreenShare);
     const { register, unregister } = useCameraTrackSubscriptionManager();
     const [isRefreshing, setIsRefreshing] = useState(false);
     const showReloadTrackButton = useFlag('MeetShowReloadTrackButton');
@@ -215,8 +215,7 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
                     '--right-custom': `${POSITION_BY_SIZE[viewSize]}rem`,
                 }}
             >
-                {/* Reload track button for non-local participants on top right corner when noone is screen sharing */}
-                {!isLocalParticipant && showReloadTrackButton && !isScreenShare && (
+                {!isLocalParticipant && showReloadTrackButton && !isExtraSmall && (
                     <button
                         className={clsx(
                             'user-select-none flex items-center justify-center w-custom h-custom bg-weak rounded-full border-none cursor-pointer transition-opacity',
@@ -266,8 +265,7 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
                 )}
             </div>
 
-            {/* Reload track button for non-local participants on bottom right corner when someone is screen share */}
-            {!isLocalParticipant && showReloadTrackButton && isScreenShare && (
+            {!isLocalParticipant && showReloadTrackButton && isExtraSmall && (
                 <button
                     className={clsx(
                         'absolute z-up user-select-none flex items-center justify-center w-custom h-custom bg-weak rounded-full border-none cursor-pointer transition-opacity',
@@ -284,10 +282,7 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
                     aria-label={c('Action').t`Refresh audio and video tracks`}
                     title={c('Info').t`Refresh audio and video tracks`}
                 >
-                    <IcArrowsRotate
-                        size={viewSize === 'large' ? 4 : 3}
-                        className={clsx(isRefreshing && 'animate-spin')}
-                    />
+                    <IcArrowsRotate size={3} className={clsx(isRefreshing && 'animate-spin')} />
                 </button>
             )}
 
