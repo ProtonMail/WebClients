@@ -26,7 +26,8 @@ const OrganizationImportRow = ({ importerOrganization }: Props) => {
     const goToSettings = useSettingsLink();
 
     const { Provider, DomainName, CreateTime, State } = importerOrganization;
-    const company = capitalize(getImportProviderFromApiProvider(Provider));
+    const provider = getImportProviderFromApiProvider(Provider);
+    const company = capitalize(provider);
     const createTime = Number(CreateTime);
     const isMigrated = State === ApiImporterOrganizationState.FINALIZED;
 
@@ -69,7 +70,7 @@ const OrganizationImportRow = ({ importerOrganization }: Props) => {
                 <Button
                     icon
                     shape="ghost"
-                    onClick={() => goToSettings('/easy-switch/migration-assistant')}
+                    onClick={() => goToSettings(`/easy-switch/migration-assistant?provider=${provider}`)}
                     title={c('Action').t`Manage migration`}
                 >
                     <IcArrowRight />

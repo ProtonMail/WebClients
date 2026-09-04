@@ -1,5 +1,5 @@
 import { useApiEnvironmentConfig } from '@proton/mail/store/importerConfig/hooks';
-import { GSUITE_OAUTH_PATH } from '@proton/shared/lib/api/activation';
+import { GSUITE_OAUTH_PATH, MICROSOFT_BUSINESS_OAUTH_PATH } from '@proton/shared/lib/api/activation';
 import { createUrl } from '@proton/shared/lib/fetch/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -17,19 +17,24 @@ interface Props {
 }
 
 interface GoogleOAuth {
-    provider: ImportProvider.GOOGLE | OAUTH_PROVIDER.GOOGLE | OAUTH_PROVIDER.GSUITE;
+    provider: ImportProvider.GOOGLE | OAUTH_PROVIDER.GOOGLE;
     features: EASY_SWITCH_FEATURES[];
     loginHint?: string;
+}
+
+interface OlesOAuth {
+    provider: OAUTH_PROVIDER.GSUITE | OAUTH_PROVIDER.MICROSOFT_BUSINESS;
+    features: EASY_SWITCH_FEATURES[];
 }
 
 interface GenericOAuth {
     provider:
         | Exclude<ImportProvider, ImportProvider.GOOGLE>
-        | Exclude<OAUTH_PROVIDER, OAUTH_PROVIDER.GOOGLE | OAUTH_PROVIDER.GSUITE>;
+        | Exclude<OAUTH_PROVIDER, OAUTH_PROVIDER.GOOGLE | OAUTH_PROVIDER.GSUITE | OAUTH_PROVIDER.MICROSOFT_BUSINESS>;
     scope: string;
 }
 
-type OAuthArgs = (GoogleOAuth | GenericOAuth) & {
+type OAuthArgs = (OlesOAuth | GoogleOAuth | GenericOAuth) & {
     callback: (oauthProps: OAuthProps) => void | Promise<void>;
 };
 
@@ -50,10 +55,19 @@ const useOAuthPopup = ({ errorMessage }: Props) => {
                 break;
             }
             case OAUTH_PROVIDER.GSUITE: {
-                const { loginHint, features } = args;
+                const { features } = args;
                 authorizationUrl = `${createUrl(
                     GSUITE_OAUTH_PATH,
-                    generateGoogleOAuthParams({ loginHint, features, redirectUri }),
+                    generateGoogleOAuthParams({ features, redirectUri }),
+                    window.location.origin
+                )}`;
+                break;
+            }
+            case OAUTH_PROVIDER.MICROSOFT_BUSINESS: {
+                const { features } = args;
+                authorizationUrl = `${createUrl(
+                    MICROSOFT_BUSINESS_OAUTH_PATH,
+                    generateGoogleOAuthParams({ features, redirectUri }),
                     window.location.origin
                 )}`;
                 break;

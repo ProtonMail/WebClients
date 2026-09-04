@@ -89,11 +89,13 @@ const SettingsArea = ({ config, app }: Props) => {
     return (
         <Switch>
             {/* Organization Level Easy Switch */}
-            {hasAccessToOLES && (
-                <Route path={`${path}/migration-assistant`}>
-                    <OLESSettingsArea />
-                </Route>
-            )}
+            <Route
+                path={`${path}/migration-assistant`}
+                render={({ location }) => {
+                    const providerParam = new URLSearchParams(location.search).get('provider') ?? undefined;
+                    return <OLESSettingsArea key={providerParam} providerParam={providerParam} easySwitchPath={path} />;
+                }}
+            />
 
             {/* Easy Switch */}
             <Route>{DriveProvider ? <DriveProvider>{renderEasySwitch}</DriveProvider> : renderEasySwitch()}</Route>
