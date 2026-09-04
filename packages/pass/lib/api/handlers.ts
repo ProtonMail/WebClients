@@ -1,5 +1,6 @@
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { AppVersionBadError, InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
+import { getIsRefreshFailure } from '@proton/shared/lib/api/helpers/refreshHandlers';
 import { retryHandler } from '@proton/shared/lib/api/helpers/retryHandler';
 import { OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY, RETRY_ATTEMPTS_MAX } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -102,7 +103,7 @@ export const withApiHandlers = ({ state, call, getAuth, refreshHandler }: ApiHan
                         await refreshHandler(response, options);
                         return await next(attempts + 1, RETRY_ATTEMPTS_MAX);
                     } catch (err: any) {
-                        if (err.status >= 400 && err.status <= 499) throw InactiveSessionError();
+                        if (getIsRefreshFailure(err)) throw InactiveSessionError();
                         throw err;
                     } finally {
                         state.set('refreshing', false);
