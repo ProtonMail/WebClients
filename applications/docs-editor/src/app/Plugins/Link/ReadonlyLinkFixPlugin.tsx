@@ -7,7 +7,7 @@ import { useEffect } from 'react'
  * will open the link in the same iframe. This plugin will prevent that
  * by asking the parent window to open the link in a new tab.
  */
-export function ReadonlyLinkFixPlugin({ openLink }: { openLink: (url: string) => void }) {
+export function ReadonlyLinkFixPlugin({ openLink }: { openLink: (href: string) => void }) {
   const [editor] = useLexicalComposerContext()
   const isEditorEditable = useLexicalEditable()
 

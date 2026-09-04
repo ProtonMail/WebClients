@@ -34,10 +34,9 @@ export const $isLinkTextNode = (
 
 export const EDIT_LINK_COMMAND = createCommand('EDIT_LINK_COMMAND')
 
-export function LinkInfoPlugin({ openLink }: { openLink: (url: string) => void }) {
+export function LinkInfoPlugin({ openLink }: { openLink: (href: string) => void }) {
   const [editor] = useLexicalComposerContext()
   const isEditable = useLexicalEditable()
-
   const [linkNode, setLinkNode] = useState<LinkNode | null>(null)
   const [linkTextNode, setLinkTextNode] = useState<TextNode | null>(null)
   const [isEditingLink, setIsEditingLink] = useState(false)

@@ -20,7 +20,6 @@ import {
 import { bootstrapEditorApp } from '../Lib/Bootstrap'
 import { c } from 'ttag'
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
-import { Editor } from './Editor'
 import { EditorUserMode } from '../Lib/EditorUserMode'
 import { exportDataFromEditorState } from '../Conversion/Exporter/ExportDataFromEditorState'
 import { loadLocales } from '@proton/account/bootstrap'
@@ -58,6 +57,8 @@ import { SheetsAdapter } from './Spreadsheet/adapters/SheetsAdapter'
 import { StandaloneSheetsEditor } from './Spreadsheet/StandaloneSheetsEditor'
 import SheetsLayout from './SheetsLayout'
 import { useEditorTheme } from '../Theme/EditorThemeProvider'
+import { DocsAdapter } from './Docs/adapters/DocsAdapter'
+import { StandaloneDocsEditor } from './Docs/StandaloneDocsEditor'
 
 type AppProps = {
   documentType: DocumentType
@@ -692,39 +693,43 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
     return (
       <DocsLayout.Container isSuggestionMode={isSuggestionMode}>
         {showPreviewModeEditor && (
-          <PreviewModeEditor
-            clonedEditorState={clonedEditorState}
-            role={application.getRole()}
-            onUserModeChange={onUserModeChange}
-            clientInvoker={bridge.getClientInvoker()}
-            initialScrollTop={scrollPositionBeforePreview.current}
-            tableOfContentsVisible={tableOfContentsVisibleState}
-          />
+          <DocsAdapter clientInvoker={bridge.getClientInvoker()}>
+            <PreviewModeEditor
+              clonedEditorState={clonedEditorState}
+              role={application.getRole()}
+              onUserModeChange={onUserModeChange}
+              clientInvoker={bridge.getClientInvoker()}
+              initialScrollTop={scrollPositionBeforePreview.current}
+              tableOfContentsVisible={tableOfContentsVisibleState}
+            />
+          </DocsAdapter>
         )}
 
         <div style={{ display: isPreviewMode ? 'none' : 'contents' }}>
-          <Editor
-            clientInvoker={bridge.getClientInvoker()}
-            docMap={docMap}
-            docState={docState}
-            documentId={editorConfig.current.documentId}
-            editingLocked={editingLocked || userMode === EditorUserMode.Preview}
-            editorInitializationConfig={editorConfig.current.editorInitializationConfig}
-            hidden={editorHidden}
-            isSuggestionsFeatureEnabled={suggestionsEnabled}
-            lexicalError={editorError}
-            logger={application.logger}
-            onEditorError={onEditorError}
-            onEditorLoadResult={onEditorLoadResult}
-            onUserModeChange={onUserModeChange}
-            role={application.getRole()}
-            setEditorRef={setEditorRef}
-            showTreeView={showTreeView}
-            systemMode={systemMode}
-            userMode={userMode}
-            userAddress={editorConfig.current.userAddress}
-            tableOfContentsVisible={tableOfContentsVisibleState}
-          />
+          <DocsAdapter clientInvoker={bridge.getClientInvoker()}>
+            <StandaloneDocsEditor
+              clientInvoker={bridge.getClientInvoker()}
+              docMap={docMap}
+              docState={docState}
+              documentId={editorConfig.current.documentId}
+              editingLocked={editingLocked || userMode === EditorUserMode.Preview}
+              editorInitializationConfig={editorConfig.current.editorInitializationConfig}
+              hidden={editorHidden}
+              isSuggestionsFeatureEnabled={suggestionsEnabled}
+              lexicalError={editorError}
+              logger={application.logger}
+              onEditorError={onEditorError}
+              onEditorLoadResult={onEditorLoadResult}
+              onUserModeChange={onUserModeChange}
+              role={application.getRole()}
+              setEditorRef={setEditorRef}
+              showTreeView={showTreeView}
+              systemMode={systemMode}
+              userMode={userMode}
+              userAddress={editorConfig.current.userAddress}
+              tableOfContentsVisible={tableOfContentsVisibleState}
+            />
+          </DocsAdapter>
         </div>
       </DocsLayout.Container>
     )

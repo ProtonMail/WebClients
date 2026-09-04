@@ -13,7 +13,6 @@ type CommentsContextValue = {
   languageCode: Intl.LocalesArgument
   logger: LoggerInterface
   getDisplayNameForEmail: (email: string | undefined) => string
-  openLink: (url: string) => void
 
   activeIDs: string[]
   markNodeMap: Map<string, Set<NodeKey>>
