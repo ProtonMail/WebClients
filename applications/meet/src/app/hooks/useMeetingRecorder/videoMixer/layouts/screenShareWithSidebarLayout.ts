@@ -1,4 +1,4 @@
-import { SCREEN_SHARE_PAGE_SIZE } from '@proton/meet/constants';
+import { PARTICIPANTS_SIDE_BAR_PAGE_SIZE } from '@proton/meet/constants';
 
 import { BORDER_RADIUS, GAP, SIDEBAR_WIDTH } from '../constants';
 import {
@@ -12,7 +12,7 @@ import { type LayoutDrawContext, type RecordingLayout, screenShareKeyFor } from 
 
 // Layout used when a participant is sharing their screen and there are also
 // camera tiles to display: large screen-share area on the left, a vertical
-// sidebar of up to SCREEN_SHARE_PAGE_SIZE camera tiles on the right.
+// sidebar of up to PARTICIPANTS_SIDE_BAR_PAGE_SIZE camera tiles on the right.
 export const screenShareWithSidebarLayout: RecordingLayout = {
     id: 'screenShareWithSidebar',
     matches: (scene) => {
@@ -29,7 +29,8 @@ export const screenShareWithSidebarLayout: RecordingLayout = {
         }
 
         // Item height excludes the gaps that separate the sidebar tiles.
-        const sidebarItemHeight = (canvas.height - GAP * (SCREEN_SHARE_PAGE_SIZE + 1)) / SCREEN_SHARE_PAGE_SIZE;
+        const sidebarItemHeight =
+            (canvas.height - GAP * (PARTICIPANTS_SIDE_BAR_PAGE_SIZE + 1)) / PARTICIPANTS_SIDE_BAR_PAGE_SIZE;
 
         const screenShareX = GAP;
         const screenShareY = GAP;
@@ -59,7 +60,7 @@ export const screenShareWithSidebarLayout: RecordingLayout = {
 
         const sidebarX = screenShareX + screenShareWidth + GAP;
 
-        regularParticipants.slice(0, SCREEN_SHARE_PAGE_SIZE).forEach((participant, index) => {
+        regularParticipants.slice(0, PARTICIPANTS_SIDE_BAR_PAGE_SIZE).forEach((participant, index) => {
             const xPos = sidebarX;
             const yPos = GAP + index * (sidebarItemHeight + GAP);
             const tileWidth = SIDEBAR_WIDTH - 2 * GAP;
