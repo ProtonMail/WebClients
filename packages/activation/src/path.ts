@@ -2,3 +2,4 @@
 export const G_OAUTH_REDIRECT_PATH = '/oauth/callback';
 export const O_OAUTH_REDIRECT_PATH = '/oauth/callback';
 export const Z_OAUTH_REDIRECT_PATH = '/oauth/callback';
+export const M_OAUTH_REDIRECT_PATH = '/oauth/callback';
