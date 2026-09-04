@@ -220,6 +220,28 @@ describe('auth handlers', () => {
         expect(call).toHaveBeenCalledTimes(4);
     });
 
+    it('should not logout when the refresh call is rate limited', async () => {
+        const response = { headers: { get: () => '10' } } as unknown as Response;
+        const returns = [
+            () => Promise.reject(getApiError({ status: 401 })), // need refresh
+            () => Promise.reject(getApiError({ status: 429, response })), // retry-after too long to wait for
+            () => Promise.reject(getApiError({ status: 401 })), // need refresh
+            () => Promise.resolve(getApiResult('')), // refresh ok
+            () => Promise.resolve(getApiResult('123')), // actual result
+        ];
+        let i = 0;
+        const call = vi.fn(() => returns[i++]());
+
+        const api = withApiHandlers({ ...withApiHandlersDefaultParams, call });
+        (api as any).UID = '123';
+        await expect(api(123)).rejects.toMatchObject({ status: 429 });
+        expect(call).toHaveBeenCalledTimes(2);
+
+        const result = await api(123).then((result: any) => result.json());
+        expect(result).toBe('123');
+        expect(call).toHaveBeenCalledTimes(5);
+    });
+
     it('should only error with InactiveSession if the initial UID is the same', async () => {
         const returns = [
             () => Promise.reject(getApiError({ status: 401 })),
@@ -246,7 +268,7 @@ describe('auth handlers', () => {
         expect(handleError).toHaveBeenCalledTimes(2);
     });
 
-    it('should refresh once and handle 429 max attempts', async () => {
+    it('should not logout when the refresh 429 retries are exhausted', async () => {
         const returns = [
             () => Promise.reject(getApiError({ status: 401 })),
             () => Promise.reject(getApiError({ status: 429 })),
@@ -261,7 +283,7 @@ describe('auth handlers', () => {
 
         const api = withApiHandlers({ ...withApiHandlersDefaultParams, call });
         (api as any).UID = '126';
-        await expect(api(123)).rejects.toMatchObject({ name: 'InactiveSession', message: 'Inactive session' });
+        await expect(api(123)).rejects.toMatchObject({ status: 429 });
         expect(call).toHaveBeenCalledTimes(6);
     });
 
