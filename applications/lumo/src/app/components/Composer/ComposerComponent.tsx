@@ -31,7 +31,6 @@ import { notifyMobileAppLoaded } from '../../util/mobileAppNotification';
 import { createAttachmentFromPastedContent, getPasteConversionMessage } from '../../util/pastedContentHelper';
 import GuestDisclaimer from '../Notifications/GuestDisclaimer';
 import { GuestNotificationCard } from '../Notifications/GuestNotificationCard';
-import { ModelSwitchNotificationCard } from '../Notifications/ModelSwitchNotificationCard';
 import { ComposerAttachmentArea } from './ComposerAttachmentArea';
 import { ComposerEditorArea } from './ComposerEditorArea';
 import { ComposerExpirationBanner } from './ComposerExpirationBanner';
@@ -451,21 +450,6 @@ const ComposerComponentInner = ({
     return (
         <>
             <div className="flex flex-column w-full gap-2">
-                {/*
-                 * Deliberately outside the visibility wrapper below. When the native composer is
-                 * used, that wrapper is only kept in the layout to reserve space for the native
-                 * composer drawn over it — everything inside is `visibility: hidden`. A card
-                 * placed in there would be invisible yet still reserve its own height, and the
-                 * user could never reach its dismiss button to reclaim that space. Kept here it
-                 * stays visible and dismissible on native, and the reserved space stays equal to
-                 * the composer alone.
-                 */}
-                <ModelSwitchNotificationCard
-                    messageChain={messageChain}
-                    conversationId={messageChain?.[0]?.conversationId}
-                    isGenerating={isGenerating}
-                />
-
                 {/*
                  * Banners stay outside the fixed input section so they remain in document
                  * flow on mobile home/gallery (className may include fixed bottom-0).
