@@ -4,17 +4,15 @@ import type { LocalVideoTrack, Room } from 'livekit-client';
 import { createLocalVideoTrack } from 'livekit-client';
 
 import type { BackgroundEffect } from '@proton/meet/store/slices/backgroundSlice';
-import { resolveBackgroundSource } from '@proton/meet/utils/customBackgrounds';
-import type { VirtualBackgroundSource } from '@proton/meet/utils/virtualBackgrounds';
 import { isChrome, isMobile } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import {
     createBackgroundProcessor,
-    createCustomBackgroundProcessor,
     ensureBackgroundProcessor,
 } from '../../processors/background-processor/createBackgroundProcessor';
-import type { BackgroundBlurProcessor, CustomBackgroundProcessor } from '../../processors/background-processor/types';
+import type { BackgroundMode, BackgroundProcessor } from '../../processors/background-processor/types';
+import { resolveBackgroundMode } from '../BackgroundEffects/resolveBackgroundMode';
 import type { BackgroundEffectInitializationTracker } from '../BackgroundEffects/useBackgroundEffectInitializationTracker';
 
 interface UseCameraPreviewParams {
@@ -39,11 +37,8 @@ export const useCameraPreview = ({
     const previewTrackRef = useRef<LocalVideoTrack | null>(null);
     const previewEffectInitTokenRef = useRef<number | undefined>(undefined);
 
-    const backgroundBlurProcessorInstanceRef = useRef<BackgroundBlurProcessor | null>(null);
+    const processorInstanceRef = useRef<BackgroundProcessor | null>(null);
     const backgroundProcessorCreationRequestIdRef = useRef(0);
-
-    const customBackgroundProcessorInstanceRef = useRef<CustomBackgroundProcessor | null>(null);
-    const customBackgroundProcessorCreationRef = useRef<Promise<CustomBackgroundProcessor | null> | null>(null);
 
     const previewEffectQueueRef = useRef<Promise<void>>(Promise.resolve());
     const pendingPreviewEffectRef = useRef<BackgroundEffect | null>(null);
@@ -67,10 +62,7 @@ export const useCameraPreview = ({
         previewEffectInitTokenRef.current = undefined;
     }, [cancelBackgroundEffectInitialization]);
 
-    const isPreviewProcessor = (processor: unknown) =>
-        !!processor &&
-        (processor === backgroundBlurProcessorInstanceRef.current ||
-            processor === customBackgroundProcessorInstanceRef.current);
+    const isPreviewProcessor = (processor: unknown) => !!processor && processor === processorInstanceRef.current;
 
     const stopPreviewTrack = async () => {
         cancelPreviewEffectInitialization();
@@ -94,13 +86,14 @@ export const useCameraPreview = ({
         }
     };
 
-    const ensurePreviewBlurProcessor = useCallback(async () => {
-        if (backgroundBlurProcessorInstanceRef.current) {
-            return backgroundBlurProcessorInstanceRef.current;
+    const ensurePreviewProcessor = useCallback(async (mode: BackgroundMode) => {
+        if (processorInstanceRef.current) {
+            await processorInstanceRef.current.setMode(mode);
+            return processorInstanceRef.current;
         }
 
         const requestId = ++backgroundProcessorCreationRequestIdRef.current;
-        const processor = await createBackgroundProcessor();
+        const processor = await createBackgroundProcessor(mode);
 
         if (requestId !== backgroundProcessorCreationRequestIdRef.current) {
             // Deps changed while awaiting: discard this now-stale processor.
@@ -108,28 +101,7 @@ export const useCameraPreview = ({
             return null;
         }
 
-        backgroundBlurProcessorInstanceRef.current = processor;
-
-        return processor;
-    }, []);
-
-    const ensurePreviewCustomBackgroundProcessor = useCallback(async (source: VirtualBackgroundSource) => {
-        const creation = customBackgroundProcessorCreationRef.current ?? createCustomBackgroundProcessor(source);
-        customBackgroundProcessorCreationRef.current = creation;
-
-        let processor: CustomBackgroundProcessor | null = null;
-
-        try {
-            processor = await creation;
-        } finally {
-            if (!processor && customBackgroundProcessorCreationRef.current === creation) {
-                customBackgroundProcessorCreationRef.current = null;
-            }
-        }
-
-        customBackgroundProcessorInstanceRef.current = processor;
-
-        await processor?.setBackground?.(source);
+        processorInstanceRef.current = processor;
 
         return processor;
     }, []);
@@ -143,65 +115,36 @@ export const useCameraPreview = ({
             }
 
             if (effect === 'none') {
-                backgroundBlurProcessorInstanceRef.current?.disable?.();
-                customBackgroundProcessorInstanceRef.current?.disable?.();
+                processorInstanceRef.current?.disable?.();
                 cancelPreviewEffectInitialization();
                 return;
             }
 
-            if (effect === 'blur') {
-                const blurProcessor = await ensurePreviewBlurProcessor();
+            const mode = await resolveBackgroundMode(effect);
 
-                // The preview was torn down or restarted while the processor was loading.
-                if (!blurProcessor || previewTrackRef.current !== videoTrack) {
-                    return;
-                }
-
-                customBackgroundProcessorInstanceRef.current?.disable?.();
-
-                const processor = await ensureBackgroundProcessor(videoTrack, blurProcessor);
-                processor?.enable?.();
-
-                if (processor?.waitUntilBlurApplied) {
-                    const { waitUntilBlurApplied } = processor;
-                    previewEffectInitTokenRef.current = trackBackgroundEffectInitialization('blur', () =>
-                        waitUntilBlurApplied()
-                    );
-                }
-
+            if (!mode || previewTrackRef.current !== videoTrack) {
                 return;
             }
 
-            const source = await resolveBackgroundSource(effect);
+            const previewProcessor = await ensurePreviewProcessor(mode);
 
-            if (!source || previewTrackRef.current !== videoTrack) {
+            // The preview was torn down or restarted while the processor was loading.
+            if (!previewProcessor || previewTrackRef.current !== videoTrack) {
                 return;
             }
 
-            const customProcessor = await ensurePreviewCustomBackgroundProcessor(source);
-
-            if (!customProcessor || previewTrackRef.current !== videoTrack) {
-                return;
-            }
-
-            backgroundBlurProcessorInstanceRef.current?.disable?.();
-
-            const processor = await ensureBackgroundProcessor(videoTrack, customProcessor);
+            const processor = await ensureBackgroundProcessor(videoTrack, previewProcessor);
             processor?.enable?.();
 
-            if (processor?.waitUntilBackgroundApplied) {
-                const { waitUntilBackgroundApplied } = processor;
-                previewEffectInitTokenRef.current = trackBackgroundEffectInitialization('virtualBackground', () =>
-                    waitUntilBackgroundApplied()
+            // A mode switch is live on the next frame; only a real warmup is worth naming.
+            if (processor && !processor.hasAppliedMask()) {
+                previewEffectInitTokenRef.current = trackBackgroundEffectInitialization(
+                    effect === 'blur' ? 'blur' : 'virtualBackground',
+                    () => processor.waitUntilApplied()
                 );
             }
         },
-        [
-            cancelPreviewEffectInitialization,
-            ensurePreviewBlurProcessor,
-            ensurePreviewCustomBackgroundProcessor,
-            trackBackgroundEffectInitialization,
-        ]
+        [cancelPreviewEffectInitialization, ensurePreviewProcessor, trackBackgroundEffectInitialization]
     );
 
     const requestPreviewBackgroundEffect = useCallback(
@@ -289,19 +232,15 @@ export const useCameraPreview = ({
 
         await previewEffectQueueRef.current;
 
-        const processors = [backgroundBlurProcessorInstanceRef.current, customBackgroundProcessorInstanceRef.current];
+        const processor = processorInstanceRef.current;
 
-        backgroundBlurProcessorInstanceRef.current = null;
-        customBackgroundProcessorInstanceRef.current = null;
-        customBackgroundProcessorCreationRef.current = null;
+        processorInstanceRef.current = null;
 
-        for (const processor of processors) {
-            try {
-                await processor?.destroy();
-            } catch (error) {
-                // eslint-disable-next-line no-console
-                console.error(error);
-            }
+        try {
+            await processor?.destroy();
+        } catch (error) {
+            // eslint-disable-next-line no-console
+            console.error(error);
         }
     };
 
@@ -314,8 +253,7 @@ export const useCameraPreview = ({
 
     const handlePreviewBackgroundEffectUpdate = useCallback(async () => {
         if (!isBackgroundBlurSupported) {
-            backgroundBlurProcessorInstanceRef.current?.disable?.();
-            customBackgroundProcessorInstanceRef.current?.disable?.();
+            processorInstanceRef.current?.disable?.();
             return;
         }
 

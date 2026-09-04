@@ -2,7 +2,7 @@ import { Provider } from 'react-redux';
 
 import { configureStore } from '@reduxjs/toolkit';
 import { act, renderHook } from '@testing-library/react';
-import { afterEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import type { BackgroundEffect, BackgroundState } from '@proton/meet/store/slices/backgroundSlice';
 import { backgroundReducer, initialState } from '@proton/meet/store/slices/backgroundSlice';
@@ -35,12 +35,24 @@ vi.mock('@proton/meet/hooks/useMeetErrorReporting', () => ({
 const unleashMocks = vi.hoisted(() => ({ useFlag: vi.fn(() => true) }));
 vi.mock('@proton/unleash/useFlag', () => unleashMocks);
 
+const backgroundSourceMocks = vi.hoisted(() => ({
+    resolveBackgroundSource: vi.fn(),
+}));
+vi.mock('@proton/meet/utils/customBackgrounds', async (importOriginal) => ({
+    ...(await importOriginal()),
+    ...backgroundSourceMocks,
+}));
+
 const processorMocks = vi.hoisted(() => ({
     createBackgroundProcessor: vi.fn((): unknown => null),
-    createCustomBackgroundProcessor: vi.fn(),
     ensureBackgroundProcessor: vi.fn(),
 }));
 vi.mock('../../processors/background-processor/createBackgroundProcessor', () => processorMocks);
+
+const imageMode = (id: 'protonDark' | 'office' | 'mountain' | 'library' | 'beach') => ({
+    type: 'image',
+    ...getVirtualBackgroundSource(id),
+});
 
 interface SetupOptions {
     cameraState?: 'live' | 'off';
@@ -112,20 +124,22 @@ const setup = ({ cameraState = 'live', appliedBackgroundEffect = 'none' }: Setup
 };
 
 describe('useBackgroundEffects', () => {
-    const createCustomProcessor = () => ({
-        enable: vi.fn(),
-        disable: vi.fn(),
-        isEnabled: vi.fn(() => true),
-        setBackground: vi.fn().mockResolvedValue(undefined),
-        waitUntilBackgroundApplied: vi.fn().mockResolvedValue(undefined),
-    });
-
-    const createBlurProcessor = () => ({
+    // Every effect is a mode of this one processor.
+    const createProcessor = () => ({
         enable: vi.fn(),
         disable: vi.fn(),
         isEnabled: vi.fn(() => true),
         destroy: vi.fn().mockResolvedValue(undefined),
-        waitUntilBlurApplied: vi.fn().mockResolvedValue(undefined),
+        setMode: vi.fn().mockResolvedValue(undefined),
+        // Whether a mask is already on screen.
+        hasAppliedMask: vi.fn(() => false),
+        waitUntilApplied: vi.fn().mockResolvedValue(undefined),
+    });
+
+    beforeEach(() => {
+        backgroundSourceMocks.resolveBackgroundSource.mockImplementation(async (effect: BackgroundEffect) =>
+            getVirtualBackgroundSource(effect as Parameters<typeof getVirtualBackgroundSource>[0])
+        );
     });
 
     afterEach(() => {
@@ -136,14 +150,14 @@ describe('useBackgroundEffects', () => {
     });
 
     it('applies blur picked before the processor finished loading', async () => {
-        const blurProcessor = createBlurProcessor();
+        const processor = createProcessor();
         let finishLoading: () => void = () => {};
         processorMocks.createBackgroundProcessor.mockReturnValue(
             new Promise((resolve) => {
-                finishLoading = () => resolve(blurProcessor);
+                finishLoading = () => resolve(processor);
             })
         );
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => processor);
+        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
 
         const { getAppliedBackgroundEffect, result } = setup();
 
@@ -154,13 +168,14 @@ describe('useBackgroundEffects', () => {
         });
 
         expect(getAppliedBackgroundEffect()).toBe('blur');
-        expect(blurProcessor.enable).toHaveBeenCalled();
+        expect(processor.setMode).toHaveBeenCalledWith({ type: 'blur' });
+        expect(processor.enable).toHaveBeenCalled();
     });
 
     it('applies the full-size image of the picked background to the camera track', async () => {
-        const customProcessor = createCustomProcessor();
-        processorMocks.createCustomBackgroundProcessor.mockResolvedValue(customProcessor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => processor);
+        const processor = createProcessor();
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
 
         const { getAppliedBackgroundEffect, result } = setup();
 
@@ -168,22 +183,40 @@ describe('useBackgroundEffects', () => {
             await result.current.selectBackgroundEffect('office');
         });
 
-        const source = processorMocks.createCustomBackgroundProcessor.mock.calls[0][0] as { imageUrl?: string };
+        const [mode] = processor.setMode.mock.calls[0] as [{ imageUrl?: string }];
 
-        expect(source.imageUrl).toContain('03-blurred-office');
+        expect(mode.imageUrl).toContain('03-blurred-office');
         // The full-size image and its thumbnail share a basename, so the directory is what
         // tells them apart: the picker's thumbnail must never reach the processor.
-        expect(source.imageUrl).not.toContain('thumbnails');
-        expect(customProcessor.enable).toHaveBeenCalled();
+        expect(mode.imageUrl).not.toContain('thumbnails');
+        expect(processor.enable).toHaveBeenCalled();
         expect(getAppliedBackgroundEffect()).toBe('office');
     });
 
+    it('does not report an image as applied when its processor mode fails', async () => {
+        const processor = createProcessor();
+        processor.setMode.mockRejectedValueOnce(new Error('Failed to load background image'));
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+        const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {});
+
+        const { getAppliedBackgroundEffect, result } = setup();
+
+        await act(async () => {
+            await result.current.selectBackgroundEffect('office');
+        });
+        consoleError.mockRestore();
+
+        expect(getAppliedBackgroundEffect()).toBe('none');
+        expect(processorMocks.ensureBackgroundProcessor).not.toHaveBeenCalled();
+    });
+
     it('reports a virtual background, not blur, as the effect being initialized', async () => {
-        const customProcessor = createCustomProcessor();
+        const processor = createProcessor();
         // The pipeline is still warming up, so the overlay has to name what it is waiting for.
-        customProcessor.waitUntilBackgroundApplied.mockReturnValue(new Promise(() => {}));
-        processorMocks.createCustomBackgroundProcessor.mockResolvedValue(customProcessor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => processor);
+        processor.waitUntilApplied.mockReturnValue(new Promise(() => {}));
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
 
         const { getBackgroundState, result } = setup();
 
@@ -195,9 +228,9 @@ describe('useBackgroundEffects', () => {
     });
 
     it('clears the initializing state once the pipeline is running', async () => {
-        const customProcessor = createCustomProcessor();
-        processorMocks.createCustomBackgroundProcessor.mockResolvedValue(customProcessor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => processor);
+        const processor = createProcessor();
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
 
         const { getBackgroundState, result } = setup();
 
@@ -209,9 +242,9 @@ describe('useBackgroundEffects', () => {
     });
 
     it('applies the last pick when backgrounds are clicked in quick succession', async () => {
-        const customProcessor = createCustomProcessor();
-        processorMocks.createCustomBackgroundProcessor.mockResolvedValue(customProcessor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => processor);
+        const processor = createProcessor();
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
 
         const { getBackgroundState, result } = setup();
 
@@ -222,7 +255,7 @@ describe('useBackgroundEffects', () => {
             await Promise.all([first, second]);
         });
 
-        expect(customProcessor.setBackground).toHaveBeenLastCalledWith(getVirtualBackgroundSource('office'));
+        expect(processor.setMode).toHaveBeenLastCalledWith(imageMode('office'));
         expect(getBackgroundState()).toMatchObject({
             appliedBackgroundEffect: 'office',
             pendingBackgroundEffect: null,
@@ -230,9 +263,9 @@ describe('useBackgroundEffects', () => {
     });
 
     it('swaps the image on the running processor instead of building a new one', async () => {
-        const customProcessor = createCustomProcessor();
-        processorMocks.createCustomBackgroundProcessor.mockResolvedValue(customProcessor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => processor);
+        const processor = createProcessor();
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
 
         const { result, track, rawFrameToggles } = setup();
 
@@ -246,23 +279,62 @@ describe('useBackgroundEffects', () => {
         expect(rawFrameToggles).toEqual([false, true]);
 
         // The processor now stays on the track, so switching images must reuse it.
-        track.getProcessor.mockReturnValue(customProcessor);
+        track.getProcessor.mockReturnValue(processor);
 
         await act(async () => {
             await result.current.selectBackgroundEffect('mountain');
         });
 
-        expect(processorMocks.createCustomBackgroundProcessor).toHaveBeenCalledTimes(1);
-        expect(customProcessor.setBackground).toHaveBeenLastCalledWith(getVirtualBackgroundSource('mountain'));
+        expect(processorMocks.createBackgroundProcessor).toHaveBeenCalledTimes(1);
+        expect(processor.setMode).toHaveBeenLastCalledWith(imageMode('mountain'));
         expect(track.stopProcessor).not.toHaveBeenCalled();
         // Blanking the camera is only needed while swapping, so an image change must not flicker.
         expect(rawFrameToggles).toEqual([false, true]);
     });
 
+    it('switches between blur and a virtual background on the running processor', async () => {
+        const processor = createProcessor();
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+
+        const { getBackgroundState, result, track, rawFrameToggles } = setup();
+
+        await act(async () => {
+            await result.current.selectBackgroundEffect('blur');
+        });
+
+        // Blur is live on the track now.
+        processor.hasAppliedMask.mockReturnValue(true);
+        track.getProcessor.mockReturnValue(processor);
+        rawFrameToggles.length = 0;
+
+        await act(async () => {
+            await result.current.selectBackgroundEffect('mountain');
+        });
+
+        // A second processor is what used to make this switch stall: a new segmenter
+        // worker, a track swap and a run of black warmup frames.
+        expect(processorMocks.createBackgroundProcessor).toHaveBeenCalledTimes(1);
+        expect(processor.setMode).toHaveBeenLastCalledWith(imageMode('mountain'));
+        expect(track.stopProcessor).not.toHaveBeenCalled();
+        expect(rawFrameToggles).toEqual([]);
+        // Already on screen, so naming it as initializing would flash the overlay.
+        expect(getBackgroundState().initializingBackgroundEffect).toBeNull();
+        expect(getBackgroundState().appliedBackgroundEffect).toBe('mountain');
+
+        await act(async () => {
+            await result.current.selectBackgroundEffect('blur');
+        });
+
+        expect(processor.setMode).toHaveBeenLastCalledWith({ type: 'blur' });
+        expect(getBackgroundState().initializingBackgroundEffect).toBeNull();
+        expect(rawFrameToggles).toEqual([]);
+    });
+
     it('clears the virtual background when picking no effect', async () => {
-        const customProcessor = createCustomProcessor();
-        processorMocks.createCustomBackgroundProcessor.mockResolvedValue(customProcessor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => processor);
+        const processor = createProcessor();
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
 
         const { getAppliedBackgroundEffect, result } = setup();
 
@@ -273,18 +345,18 @@ describe('useBackgroundEffects', () => {
             await result.current.selectBackgroundEffect('none');
         });
 
-        expect(customProcessor.disable).toHaveBeenCalled();
+        expect(processor.disable).toHaveBeenCalled();
         expect(getAppliedBackgroundEffect()).toBe('none');
     });
 
     it('turns blur on without processing anything while the camera is off', async () => {
-        const blurProcessor = createBlurProcessor();
-        processorMocks.createBackgroundProcessor.mockResolvedValue(blurProcessor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => processor);
+        const processor = createProcessor();
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
 
         const { getAppliedBackgroundEffect, result } = setup({ cameraState: 'off' });
 
-        // Let the blur processor finish loading
+        // Let the processor finish loading
         await act(async () => {});
 
         await act(async () => {
@@ -294,15 +366,13 @@ describe('useBackgroundEffects', () => {
         expect(getAppliedBackgroundEffect()).toBe('blur');
         // Nothing may be attached or started: there is no frame to process yet
         expect(processorMocks.ensureBackgroundProcessor).not.toHaveBeenCalled();
-        expect(blurProcessor.enable).not.toHaveBeenCalled();
+        expect(processor.enable).not.toHaveBeenCalled();
     });
 
     it('replaces the virtual background with blur picked while the camera was off, once it is on', async () => {
-        const blurProcessor = createBlurProcessor();
-        const customProcessor = createCustomProcessor();
-        processorMocks.createBackgroundProcessor.mockResolvedValue(blurProcessor);
-        processorMocks.createCustomBackgroundProcessor.mockResolvedValue(customProcessor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => processor);
+        const processor = createProcessor();
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
 
         const { getAppliedBackgroundEffect, result, setCameraOff } = setup();
 
@@ -312,7 +382,7 @@ describe('useBackgroundEffects', () => {
             await result.current.selectBackgroundEffect('protonDark');
         });
 
-        expect(customProcessor.enable).toHaveBeenCalled();
+        expect(processor.enable).toHaveBeenCalled();
 
         setCameraOff(true);
 
@@ -322,10 +392,9 @@ describe('useBackgroundEffects', () => {
 
         // The toggle reflects the pick even though the camera cannot show it yet
         expect(getAppliedBackgroundEffect()).toBe('blur');
-        expect(blurProcessor.enable).not.toHaveBeenCalled();
 
         // The virtual background is dropped right away, so it cannot come back with the camera
-        expect(customProcessor.disable).toHaveBeenCalled();
+        expect(processor.setMode).toHaveBeenLastCalledWith({ type: 'blur' });
 
         setCameraOff(false);
 
@@ -334,17 +403,17 @@ describe('useBackgroundEffects', () => {
         });
 
         // Attaching is what puts blur on the track: setProcessor re-enables the processor it inits
-        expect(processorMocks.ensureBackgroundProcessor).toHaveBeenLastCalledWith(expect.anything(), blurProcessor);
+        expect(processorMocks.ensureBackgroundProcessor).toHaveBeenLastCalledWith(expect.anything(), processor);
     });
 
     it('does not attach blur to the stopped track left behind when the camera is turned off', async () => {
-        const blurProcessor = createBlurProcessor();
-        processorMocks.createBackgroundProcessor.mockResolvedValue(blurProcessor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => processor);
+        const processor = createProcessor();
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
 
         const { getBackgroundState, result, setCameraOff } = setup();
 
-        // Let the blur processor finish loading
+        // Let the processor finish loading
         await act(async () => {});
 
         await act(async () => {
@@ -366,8 +435,8 @@ describe('useBackgroundEffects', () => {
     });
 
     it('re-applies a background that failed to attach when it is picked again', async () => {
-        const customProcessor = createCustomProcessor();
-        processorMocks.createCustomBackgroundProcessor.mockResolvedValue(customProcessor);
+        const processor = createProcessor();
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
         // No processor could be attached to the track on the first attempt.
         processorMocks.ensureBackgroundProcessor.mockResolvedValueOnce(null);
 
@@ -377,27 +446,25 @@ describe('useBackgroundEffects', () => {
             await result.current.selectBackgroundEffect('protonDark');
         });
 
-        expect(customProcessor.enable).not.toHaveBeenCalled();
+        expect(processor.enable).not.toHaveBeenCalled();
 
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => processor);
+        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
 
         await act(async () => {
             await result.current.selectBackgroundEffect('protonDark');
         });
 
-        expect(customProcessor.enable).toHaveBeenCalled();
+        expect(processor.enable).toHaveBeenCalled();
     });
 
     it('stops reporting the previous effect once the next one fails to attach', async () => {
-        const blurProcessor = createBlurProcessor();
-        const customProcessor = createCustomProcessor();
-        processorMocks.createBackgroundProcessor.mockResolvedValue(blurProcessor);
-        processorMocks.createCustomBackgroundProcessor.mockResolvedValue(customProcessor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => processor);
+        const processor = createProcessor();
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
 
         const { getAppliedBackgroundEffect, getBackgroundState, result } = setup();
 
-        // Let the blur processor finish loading
+        // Let the processor finish loading
         await act(async () => {});
 
         await act(async () => {
@@ -415,39 +482,33 @@ describe('useBackgroundEffects', () => {
 
         // Blur is gone from the track, so continuing to report it would show the camera as
         // blurred while the raw frames are published to the whole meeting.
-        expect(blurProcessor.disable).toHaveBeenCalled();
+        expect(processor.disable).toHaveBeenCalled();
         expect(getAppliedBackgroundEffect()).toBe('none');
         expect(getBackgroundState().failedBackgroundEffect).toBe('virtualBackground');
     });
 
     it('keeps the pick when an attach is skipped because another one is already running', async () => {
-        const blurProcessor = createBlurProcessor();
-        const customProcessor = createCustomProcessor();
-        processorMocks.createBackgroundProcessor.mockResolvedValue(blurProcessor);
-        processorMocks.createCustomBackgroundProcessor.mockResolvedValue(customProcessor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => processor);
+        const processor = createProcessor();
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
 
         const { getAppliedBackgroundEffect, getBackgroundState, result } = setup();
 
-        // Let the blur processor finish loading
+        // Let the processor finish loading
         await act(async () => {});
 
         await act(async () => {
             await result.current.selectBackgroundEffect('blur');
         });
 
-        // Hold the blur attach open so the next pick runs into the in-progress guard.
-        let releaseBlurAttach: () => void = () => {};
-        const blurAttachStarted = new Promise<void>((onStarted) => {
-            processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => {
-                if (processor !== blurProcessor) {
-                    return processor;
-                }
-
+        // Hold the reapply attach open so the next pick runs into the in-progress guard.
+        let releaseAttach: () => void = () => {};
+        const attachStarted = new Promise<void>((onStarted) => {
+            processorMocks.ensureBackgroundProcessor.mockImplementationOnce((_track, instance) => {
                 onStarted();
 
                 return new Promise((resolve) => {
-                    releaseBlurAttach = () => resolve(processor);
+                    releaseAttach = () => resolve(instance);
                 });
             });
         });
@@ -455,11 +516,11 @@ describe('useBackgroundEffects', () => {
         await act(async () => {
             const reapplying = result.current.reapplyBackgroundEffect(true);
 
-            await blurAttachStarted;
+            await attachStarted;
 
             await result.current.selectBackgroundEffect('mountain');
 
-            releaseBlurAttach();
+            releaseAttach();
 
             await reapplying;
         });
@@ -471,9 +532,9 @@ describe('useBackgroundEffects', () => {
     });
 
     it('restores the background picked in a previous session', async () => {
-        const customProcessor = createCustomProcessor();
-        processorMocks.createCustomBackgroundProcessor.mockResolvedValue(customProcessor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => processor);
+        const processor = createProcessor();
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
 
         const { getAppliedBackgroundEffect } = setup({ appliedBackgroundEffect: 'beach' });
 
@@ -481,16 +542,45 @@ describe('useBackgroundEffects', () => {
 
         // The processor is warmed up ahead of the camera, so turning it on does not publish
         // unprocessed frames while the pipeline is built.
-        expect(processorMocks.createCustomBackgroundProcessor).toHaveBeenCalledWith(
-            getVirtualBackgroundSource('beach')
-        );
+        expect(processor.setMode).toHaveBeenCalledWith(imageMode('beach'));
         expect(getAppliedBackgroundEffect()).toBe('beach');
     });
 
+    it('does not let a slow restored-background warmup overwrite a newer pick', async () => {
+        const processor = createProcessor();
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+
+        let resolveRestoredSource: (source: ReturnType<typeof getVirtualBackgroundSource>) => void = () => {};
+        backgroundSourceMocks.resolveBackgroundSource
+            .mockImplementationOnce(
+                () =>
+                    new Promise((resolve) => {
+                        resolveRestoredSource = resolve;
+                    })
+            )
+            .mockImplementation(async (effect: BackgroundEffect) =>
+                getVirtualBackgroundSource(effect as Parameters<typeof getVirtualBackgroundSource>[0])
+            );
+
+        const { result } = setup({ appliedBackgroundEffect: 'beach' });
+
+        await act(async () => {
+            await result.current.selectBackgroundEffect('mountain');
+        });
+
+        await act(async () => {
+            resolveRestoredSource(getVirtualBackgroundSource('beach'));
+        });
+
+        expect(processor.setMode).toHaveBeenCalledTimes(1);
+        expect(processor.setMode).toHaveBeenCalledWith(imageMode('mountain'));
+    });
+
     it('leaves the restored background alone as it is picked again', async () => {
-        const customProcessor = createCustomProcessor();
-        processorMocks.createCustomBackgroundProcessor.mockResolvedValue(customProcessor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => processor);
+        const processor = createProcessor();
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
 
         const { result } = setup({ appliedBackgroundEffect: 'beach' });
 
@@ -502,16 +592,17 @@ describe('useBackgroundEffects', () => {
 
         // Warming up the restored pipeline is a one-off: following the applied effect instead would
         // rebuild it underneath every pick.
-        expect(processorMocks.createCustomBackgroundProcessor).toHaveBeenCalledTimes(1);
+        expect(processorMocks.createBackgroundProcessor).toHaveBeenCalledTimes(1);
+        expect(processor.setMode).toHaveBeenLastCalledWith(imageMode('mountain'));
     });
 
     it('ignores a stored virtual background once the feature is turned off', async () => {
         unleashMocks.useFlag.mockReturnValue(false);
         localStorage.setItem('meetVirtualBackground', 'protonDark');
 
-        const customProcessor = createCustomProcessor();
-        processorMocks.createCustomBackgroundProcessor.mockResolvedValue(customProcessor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => processor);
+        const processor = createProcessor();
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
 
         const { getAppliedBackgroundEffect, result } = setup({ appliedBackgroundEffect: 'protonDark' });
 
@@ -519,13 +610,13 @@ describe('useBackgroundEffects', () => {
 
         // Nothing is built or applied for it, so a rollback cannot strand the user with a
         // background they no longer have any way to change.
-        expect(processorMocks.createCustomBackgroundProcessor).not.toHaveBeenCalled();
+        expect(processor.setMode).not.toHaveBeenCalled();
 
         await act(async () => {
             await result.current.selectBackgroundEffect('office');
         });
 
-        expect(processorMocks.createCustomBackgroundProcessor).not.toHaveBeenCalled();
+        expect(processor.setMode).not.toHaveBeenCalled();
         // The pick is hidden on read rather than thrown away, so it comes back with the feature.
         expect(getAppliedBackgroundEffect()).toBe('protonDark');
         expect(localStorage.getItem('meetVirtualBackground')).toBe('protonDark');

@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import clsx from '@proton/utils/clsx';
 
 import { createBackgroundProcessor } from '../../../processors/background-processor/createBackgroundProcessor';
-import type { BackgroundBlurProcessor } from '../../../processors/background-processor/types';
+import type { BackgroundProcessor } from '../../../processors/background-processor/types';
 
 import './BackgroundBlurComparison.scss';
 import './BlurPreview.scss';
@@ -59,7 +59,7 @@ export const BlurRecorder = ({ selectedCameraId }: BlurRecorderProps) => {
         let rawStream: MediaStream | null = null;
         let clonedTrack: MediaStreamTrack | null = null;
         let blurTrack: LocalVideoTrack | null = null;
-        let processor: BackgroundBlurProcessor | null = null;
+        let processor: BackgroundProcessor | null = null;
 
         try {
             rawStream = await navigator.mediaDevices.getUserMedia({
