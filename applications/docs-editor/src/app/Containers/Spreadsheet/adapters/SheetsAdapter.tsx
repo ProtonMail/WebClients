@@ -8,6 +8,7 @@ import { useMemo } from 'react'
 import { useSyncedState } from '../../../Hooks/useSyncedState'
 import { reportErrorToSentry } from '../../../Utils/errorMessage'
 import { useApplication } from '../../ApplicationProvider'
+import { useEditorTheme } from '../../../Theme/EditorThemeProvider'
 import {
   SheetsDependenciesProvider,
   type SheetsDependencies,
@@ -28,6 +29,7 @@ type SheetsAdapterProps = PropsWithChildren<{
 export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
   const { createNotification } = useNotifications()
   const { application } = useApplication()
+  const { theme } = useEditorTheme()
   const appPlatform = useResolvedAppPlatform(clientInvoker)
 
   const { userName, receivedEverythingFromRTS } = useSyncedState()
@@ -49,9 +51,7 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
   const editorToShellActions = useMemo<SheetsEditorToShellActions>(
     () => ({
       isFeatureFlagEnabled: (featureFlag) => clientInvoker.checkIfFeatureFlagIsEnabled(featureFlag),
-      openLink: (url) => {
-        void clientInvoker.openLink(url).catch(reportErrorToSentry)
-      },
+      openLink: (url) => clientInvoker.openLink(url),
       handleFileMenuAction: (action) => clientInvoker.handleFileMenuAction(action),
       storeSpreadsheetAction: (type, content) => {
         void clientInvoker.storeSpreadsheetAction(type, content).catch(console.error)
@@ -69,6 +69,9 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
       },
       reportUserInterfaceError: (error, extraInfo) => {
         void clientInvoker.reportUserInterfaceError(error, extraInfo)
+      },
+      reportError: (error, extra) => {
+        reportErrorToSentry(error, undefined, extra)
       },
       reportSheetsYjsDriftDetected: (reason) => {
         void clientInvoker.reportSheetsYjsDriftDetected(reason)
@@ -93,6 +96,7 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
       },
       logger: application.logger,
       appPlatform,
+      theme,
     }),
     [
       appPlatform,
@@ -101,6 +105,7 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
       application.logger,
       canEdit,
       canTrash,
+      theme,
       receivedEverythingFromRTS,
       userName,
     ],
