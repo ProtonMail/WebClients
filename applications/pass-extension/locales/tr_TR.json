@@ -4584,6 +4584,15 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "Bu adres otomatik doldurmada engellenmeyecek"
+      ],
+      "Enter a URL to check if it matches the current rule": [
+        "Geçerli kural ile eşleşip eşleşmediğini denetlemek için bir adres yazın"
+      ],
+      "URL doesn't match the rule": [
+        "Adres kural ile eşleşmiyor"
+      ],
+      "URL matches the rule": [
+        "Adres kural ile eşleşiyor"
       ]
     },
     "Security Center - Info": {
@@ -5678,6 +5687,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonelik tarifeniz birden fazla kasa oluşturmanıza izin vermiyor. Tüm ögeler ilk kasanıza aktarılacak. İçe aktarımda birden fazla kasa kullanabilmek için abonelik tarifenizi yükseltin."
+      ],
+      "Identity could not be confirmed": [
+        "Kimlik doğrulanamadı"
       ]
     }
   }
