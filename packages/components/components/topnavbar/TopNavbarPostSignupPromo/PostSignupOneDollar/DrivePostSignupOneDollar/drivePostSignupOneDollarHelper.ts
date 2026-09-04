@@ -5,7 +5,7 @@ import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 
 import {
-    POST_SIGNUP_ONE_DOLLAR_ACCOUNT_AGE,
+    DRIVE_POST_SIGNUP_ONE_DOLLAR_ACCOUNT_AGE,
     POST_SIGNUP_ONE_DOLLAR_DURATION,
     type PostSubscriptionOneDollarOfferState,
 } from '../interface';
@@ -49,7 +49,7 @@ export const getIsUserEligibleForOneDollar = ({
     const offerExpirationDate = fromUnixTime(postSignupTimestamp);
 
     // Account must be created 3 days ago to be eligible
-    const isAccountOldEnough = differenceInDays(today, accountCreationDate) >= POST_SIGNUP_ONE_DOLLAR_ACCOUNT_AGE;
+    const isAccountOldEnough = differenceInDays(today, accountCreationDate) >= DRIVE_POST_SIGNUP_ONE_DOLLAR_ACCOUNT_AGE;
 
     // The offer is valid for 30 days after the first time it was shown to the user
     const isOfferStillValid =

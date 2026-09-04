@@ -1,4 +1,4 @@
-import { subDays } from 'date-fns';
+import { subDays, subHours } from 'date-fns';
 
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
@@ -9,6 +9,24 @@ const protonConfig = { APP_NAME: 'proton-mail' } as unknown as ProtonConfig;
 
 describe('Mail post signup one dollar eligibility', () => {
     describe('Account created after the release', () => {
+        it('should be eligible, account 5 hours old', () => {
+            const user = {
+                isFree: true,
+                isDelinquent: false,
+                CreateTime: subHours(today, 5).getTime() / 1000,
+            } as unknown as UserModel;
+
+            expect(
+                getIsUserEligibleForOneDollar({
+                    user,
+                    protonConfig,
+                    offerStartDateTimeStamp: 0,
+                    mailPostSignupOneDollarPromoDisabled: false,
+                    hasHadSubscription: false,
+                })
+            ).toBeTruthy();
+        });
+
         it('should be eligible, account 3 days old', () => {
             const user = {
                 isFree: true,
@@ -23,16 +41,15 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
-                    nbrEmailsInAllMail: 10,
                 })
             ).toBeTruthy();
         });
 
-        it('should not be eligible, account 3 days old but 4 messages', () => {
+        it('should not be eligible, account 4 hours old', () => {
             const user = {
                 isFree: true,
                 isDelinquent: false,
-                CreateTime: subDays(today, 3).getTime() / 1000,
+                CreateTime: subHours(today, 4).getTime() / 1000,
             } as unknown as UserModel;
 
             expect(
@@ -42,16 +59,15 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
-                    nbrEmailsInAllMail: 4,
                 })
             ).toBeFalsy();
         });
 
-        it('should not be eligible, account 2 days old', () => {
+        it('should not be eligible, account just created', () => {
             const user = {
                 isFree: true,
                 isDelinquent: false,
-                CreateTime: subDays(today, 2).getTime() / 1000,
+                CreateTime: today.getTime() / 1000,
             } as unknown as UserModel;
 
             expect(
@@ -61,7 +77,6 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
-                    nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
         });
@@ -80,7 +95,6 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: subDays(today, 30).getTime() / 1000,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
-                    nbrEmailsInAllMail: 10,
                 })
             ).toBeTruthy();
         });
@@ -99,7 +113,6 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: subDays(today, 31).getTime() / 1000,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
-                    nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
         });
@@ -124,7 +137,6 @@ describe('Mail post signup one dollar eligibility', () => {
                         automaticOfferReminders: 0,
                         offerStartDate: subDays(today.getTime(), 14).getTime() / 1000,
                     },
-                    nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
         });
@@ -147,7 +159,6 @@ describe('Mail post signup one dollar eligibility', () => {
                         automaticOfferReminders: 0,
                         offerStartDate: subDays(today.getTime(), 30).getTime() / 1000,
                     },
-                    nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
         });
@@ -170,7 +181,6 @@ describe('Mail post signup one dollar eligibility', () => {
                         automaticOfferReminders: 0,
                         offerStartDate: subDays(today.getTime(), 31).getTime() / 1000,
                     },
-                    nbrEmailsInAllMail: 10,
                 })
             ).toBeTruthy();
         });
@@ -192,7 +202,6 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: subDays(today, 30).getTime() / 1000,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
-                    nbrEmailsInAllMail: 10,
                 })
             ).toBeTruthy();
         });
@@ -212,7 +221,6 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: subDays(today, 30).getTime() / 1000,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
-                    nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
         });
@@ -221,7 +229,7 @@ describe('Mail post signup one dollar eligibility', () => {
             const nonFreeUser = {
                 isFree: false,
                 isDelinquent: false,
-                CreateTime: today.getTime() / 1000,
+                CreateTime: subDays(today, 3).getTime() / 1000,
             } as unknown as UserModel;
 
             expect(
@@ -231,7 +239,6 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     mailPostSignupOneDollarPromoDisabled: true,
                     hasHadSubscription: false,
-                    nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
         });
@@ -240,7 +247,7 @@ describe('Mail post signup one dollar eligibility', () => {
             const nonFreeUser = {
                 isFree: false,
                 isDelinquent: false,
-                CreateTime: today.getTime() / 1000,
+                CreateTime: subDays(today, 3).getTime() / 1000,
             } as unknown as UserModel;
 
             expect(
@@ -250,7 +257,6 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     mailPostSignupOneDollarPromoDisabled: true,
                     hasHadSubscription: true,
-                    nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
         });
@@ -259,7 +265,7 @@ describe('Mail post signup one dollar eligibility', () => {
             const nonFreeUser = {
                 isFree: false,
                 isDelinquent: false,
-                CreateTime: today.getTime() / 1000,
+                CreateTime: subDays(today, 3).getTime() / 1000,
             } as unknown as UserModel;
 
             expect(
@@ -269,7 +275,6 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
-                    nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
         });
@@ -278,7 +283,7 @@ describe('Mail post signup one dollar eligibility', () => {
             const delinquentUser = {
                 isFree: true,
                 isDelinquent: true,
-                CreateTime: today.getTime() / 1000,
+                CreateTime: subDays(today, 3).getTime() / 1000,
             } as unknown as UserModel;
 
             expect(
@@ -288,7 +293,6 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
-                    nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
         });
@@ -307,7 +311,6 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
-                    nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
         });

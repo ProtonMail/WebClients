@@ -4,9 +4,7 @@ import { usePreviousSubscription } from '@proton/account/previousSubscription/ho
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { FeatureCode, useFeature } from '@proton/features';
-import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { domIsBusy } from '@proton/shared/lib/busy';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import type { OfferHookReturnValue } from '../../common/helpers/interface';
@@ -26,9 +24,6 @@ export const useMailPostSignupOneDollar = (): OfferHookReturnValue => {
     const { pathname } = useLocation();
     const isNotInFolder = isRootFolder(pathname);
 
-    const [messageCount] = useMessageCounts();
-    const totalMessage = messageCount?.find((label) => label.LabelID === MAILBOX_LABEL_IDS.ALL_MAIL)?.Total || 0;
-
     const mailPostSignupOneDollarPromoDisabled = useFlag('MailPostSignupOneDollarPromoDisabled');
 
     // One flag to store the state of the offer and the different modals, and another to manage the progressive rollout
@@ -46,7 +41,6 @@ export const useMailPostSignupOneDollar = (): OfferHookReturnValue => {
             protonConfig,
             offerStartDateTimeStamp: mailOfferState?.Value?.offerStartDate ?? 0,
             mailPostSignupOneDollarPromoDisabled,
-            nbrEmailsInAllMail: totalMessage,
             hasHadSubscription,
             driveOfferStartDateTimestamp: driveOfferState?.Value,
         }),
