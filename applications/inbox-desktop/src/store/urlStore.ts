@@ -70,7 +70,9 @@ const validateURL = (override?: unknown): null | URLConfig => {
 };
 
 export const getAppURL = (): URLConfig => {
-    if (!app.isPackaged && process.env.BASE_LOCAL_URL) {
+    const isPlaywrightTest = process.env.PLAYWRIGHT_TEST === "true";
+
+    if ((!app.isPackaged || isPlaywrightTest) && process.env.BASE_LOCAL_URL) {
         return localUrls;
     }
 
