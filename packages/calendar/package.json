@@ -61,14 +61,13 @@
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-env": "workspace:^",
+        "@proton/jest-swc-preset": "workspace:^",
         "@proton/testing": "workspace:^",
-        "@swc/jest": "^0.2.39",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
         "@typescript/native": "npm:typescript@^7.0.2",
         "eslint": "^10.9.0",
         "jest": "^30.4.2",
-        "ts-jest": "^29.4.12",
         "typescript": "npm:@typescript/typescript6@^6.0.2"
     }
 }

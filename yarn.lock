@@ -10276,10 +10276,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/account@workspace:packages/account"
   dependencies:
-    "@babel/core": "npm:^7.29.7"
-    "@babel/preset-env": "npm:^7.29.7"
-    "@babel/preset-react": "npm:^7.29.7"
-    "@babel/preset-typescript": "npm:^7.29.7"
     "@jest/globals": "npm:^30.4.1"
     "@proton/app-context": "workspace:^"
     "@proton/atoms": "workspace:^"
@@ -10287,6 +10283,8 @@ __metadata:
     "@proton/features": "workspace:^"
     "@proton/hooks": "workspace:^"
     "@proton/icons": "workspace:^"
+    "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/key-transparency": "workspace:^"
     "@proton/metrics": "workspace:^"
     "@proton/react-redux-store": "workspace:^"
@@ -10305,20 +10303,17 @@ __metadata:
     "@types/deep-freeze": "npm:^0.1.5"
     "@types/react": "npm:^18.3.31"
     "@typescript/native": "npm:typescript@^7.0.2"
-    core-js: "npm:^3.50.0"
     date-fns: "npm:^2.30.0"
     deep-freeze: "npm:^0.0.1"
     eslint: "npm:^10.9.0"
     history: "npm:^4.10.1"
     idb: "npm:^8.0.3"
     jest: "npm:^30.4.2"
-    jest-environment-jsdom: "npm:^30.4.1"
     lodash: "npm:^4.18.1"
     prettier: "npm:^3.9.6"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-router-dom: "npm:^5.3.4"
-    ts-jest: "npm:^29.4.12"
     ttag: "npm:^1.8.12"
     typescript: "npm:@typescript/typescript6@^6.0.2"
   peerDependencies:
@@ -10347,6 +10342,7 @@ __metadata:
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/key-transparency": "workspace:^"
     "@proton/mail": "workspace:^"
     "@proton/payments": "workspace:^"
@@ -10398,6 +10394,7 @@ __metadata:
   dependencies:
     "@mlc-ai/web-llm": "patch:@mlc-ai/web-llm@npm%3A0.2.32#~/.yarn/patches/@mlc-ai-web-llm-npm-0.2.32-df249f5180.patch"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/llm": "workspace:^"
     "@proton/shared": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.9.1"
@@ -10424,9 +10421,9 @@ __metadata:
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/icons": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/utils": "workspace:^"
-    "@swc/jest": "npm:^0.2.39"
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@types/jest": "npm:^30.0.0"
     dompurify: "npm:^3.4.14"
@@ -10435,7 +10432,6 @@ __metadata:
     jest-environment-jsdom: "npm:^30.4.1"
     react: "npm:^18.3.1"
     react-test-renderer: "npm:^18.3.1"
-    ts-jest: "npm:^29.4.12"
     typescript: "npm:^6.0.3"
   languageName: unknown
   linkType: soft
@@ -10451,6 +10447,7 @@ __metadata:
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/react-polymorphic-types": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/utils": "workspace:^"
@@ -10493,6 +10490,7 @@ __metadata:
     "@proton/hooks": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/meet": "workspace:^"
     "@proton/redux-shared-store": "workspace:^"
     "@proton/shared": "workspace:^"
@@ -10501,7 +10499,6 @@ __metadata:
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
     "@protontech/crypto": "npm:*"
-    "@swc/jest": "npm:^0.2.39"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/react-hooks": "npm:^8.0.1"
@@ -10514,7 +10511,6 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-router-dom: "npm:^5.3.4"
-    ts-jest: "npm:^29.4.12"
     ttag: "npm:^1.8.12"
     typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
@@ -10527,6 +10523,7 @@ __metadata:
     "@proton/account": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/payments": "workspace:^"
     "@proton/react-redux-store": "workspace:^"
     "@proton/redux-shared-store-types": "workspace:^"
@@ -10537,7 +10534,6 @@ __metadata:
     "@proton/utils": "workspace:^"
     "@protontech/crypto": "npm:*"
     "@reduxjs/toolkit": "npm:^2.12.0"
-    "@swc/jest": "npm:^0.2.39"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
     "@typescript/native": "npm:typescript@^7.0.2"
@@ -10545,7 +10541,6 @@ __metadata:
     jest: "npm:^30.4.2"
     lodash: "npm:^4.18.1"
     react: "npm:^18.3.1"
-    ts-jest: "npm:^29.4.12"
     typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
@@ -10556,6 +10551,7 @@ __metadata:
   dependencies:
     "@fullhuman/postcss-purgecss": "npm:^7.0.2"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/utils": "workspace:^"
     "@testing-library/dom": "npm:^10.4.1"
@@ -10583,6 +10579,7 @@ __metadata:
     "@proton/ci-tools": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/gitlab": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@types/jest": "npm:^30.0.0"
     "@types/semver": "npm:^7.8.0"
     "@vercel/ncc": "npm:^0.45.0"
@@ -10591,7 +10588,6 @@ __metadata:
     eslint: "npm:^10.9.0"
     jest: "npm:^30.4.2"
     semver: "npm:^7.8.5"
-    ts-jest: "npm:^29.4.12"
     ts-node: "npm:^10.9.2"
     tsx: "npm:^4.23.12"
     typescript: "npm:^6.0.3"
@@ -10607,6 +10603,7 @@ __metadata:
     "@proton/ci-tools": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/gitlab": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/version": "workspace:^"
     "@types/async-retry": "npm:^1.4.9"
     "@types/jest": "npm:^30.0.0"
@@ -10616,7 +10613,6 @@ __metadata:
     eslint: "npm:^10.9.0"
     jest: "npm:^30.4.2"
     semver: "npm:^7.8.5"
-    ts-jest: "npm:^29.4.12"
     ts-node: "npm:^10.9.2"
     tsx: "npm:^4.23.12"
     typescript: "npm:^6.0.3"
@@ -10632,13 +10628,13 @@ __metadata:
     "@proton/ci-tools": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/gitlab": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@types/jest": "npm:^30.0.0"
     "@types/lodash": "npm:^4.17.25"
     eslint: "npm:^10.9.0"
     glob: "npm:^13.0.6"
     jest: "npm:^30.4.2"
     lodash: "npm:^4.18.1"
-    ts-jest: "npm:^29.4.12"
     ts-node: "npm:^10.9.2"
     tsx: "npm:^4.23.12"
     typescript: "npm:^6.0.3"
@@ -10653,12 +10649,12 @@ __metadata:
     "@prometheus-io/client": "npm:^0.16.0"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/gitlab": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@types/jest": "npm:^30.0.0"
     axios: "npm:^1.19.0"
     axios-retry: "npm:^4.5.0"
     eslint: "npm:^10.9.0"
     jest: "npm:^30.4.2"
-    ts-jest: "npm:^29.4.12"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^6.0.3"
   languageName: unknown
@@ -10670,10 +10666,10 @@ __metadata:
   dependencies:
     "@prometheus-io/client": "npm:^0.16.0"
     "@proton/ci-tools": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@types/jest": "npm:^30.0.0"
     bundlemon: "npm:^3.1.0"
     jest: "npm:^30.4.2"
-    ts-jest: "npm:^29.4.12"
     ts-node: "npm:^10.9.2"
     tsx: "npm:^4.23.12"
   languageName: unknown
@@ -10685,6 +10681,7 @@ __metadata:
   dependencies:
     "@jest/globals": "npm:^30.4.1"
     "@proton/eslint-config-proton": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/types": "workspace:^"
     "@proton/utils": "workspace:^"
     "@types/css-tree": "npm:^2.3.11"
@@ -10696,7 +10693,6 @@ __metadata:
     jest: "npm:^30.4.2"
     prettier: "npm:^3.9.6"
     tinycolor2: "npm:^1.6.0"
-    ts-jest: "npm:^29.4.12"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^6.0.3"
     webpack: "npm:^5.109.2"
@@ -10708,11 +10704,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/components@workspace:packages/components"
   dependencies:
-    "@babel/core": "npm:^7.29.7"
-    "@babel/plugin-transform-runtime": "npm:^7.29.7"
-    "@babel/preset-env": "npm:^7.29.7"
-    "@babel/preset-react": "npm:^7.29.7"
-    "@babel/preset-typescript": "npm:^7.29.7"
     "@dnd-kit/abstract": "npm:^0.5.0"
     "@dnd-kit/dom": "npm:^0.5.0"
     "@dnd-kit/react": "npm:^0.5.0"
@@ -10729,6 +10720,7 @@ __metadata:
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/logger": "workspace:^"
     "@proton/mail": "workspace:^"
     "@proton/metrics": "workspace:^"
@@ -10759,8 +10751,6 @@ __metadata:
     "@types/react-virtualized": "npm:^9.22.3"
     "@types/three": "npm:^0.185.4"
     "@webgpu/types": "npm:^0.1.72"
-    babel-jest: "npm:^30.4.1"
-    babel-plugin-transform-require-context: "npm:^0.1.1"
     card-validator: "npm:^10.0.4"
     codemirror: "npm:^5.65.21"
     core-js: "npm:^3.50.0"
@@ -10868,7 +10858,6 @@ __metadata:
     react-router-dom: "npm:^5.3.4"
     react-test-renderer: "npm:^18.3.1"
     react-window: "npm:^1.8.11"
-    ts-jest: "npm:^29.4.12"
     ttag: "npm:^1.8.12"
     typescript: "npm:^6.0.3"
     uuid: "npm:^14.0.2"
@@ -10889,7 +10878,6 @@ __metadata:
     eslint-plugin-prettier: "npm:^5.5.6"
     google-protobuf: "npm:^3.21.4"
     protoc-gen-ts: "npm:^0.8.7"
-    ts-jest: "npm:^29.4.12"
     typescript: "npm:^6.0.3"
   languageName: unknown
   linkType: soft
@@ -10926,7 +10914,6 @@ __metadata:
     jest-when: "npm:3.7.0"
     lib0: "npm:^0.2.117"
     react: "npm:^18.3.1"
-    ts-jest: "npm:^29.4.12"
     ttag: "npm:^1.8.12"
     typescript: "npm:^6.0.3"
     uuid: "npm:^14.0.2"
@@ -10954,6 +10941,7 @@ __metadata:
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/mail": "workspace:^"
     "@proton/metrics": "workspace:^"
     "@proton/pack": "workspace:^"
@@ -10978,7 +10966,6 @@ __metadata:
     "@types/react-router-dom": "npm:^5.3.3"
     "@types/react-window": "npm:^1.8.8"
     "@xmldom/xmldom": "npm:^0.9.12"
-    babel-plugin-transform-require-context: "npm:^0.1.1"
     client-zip: "npm:^2.5.0"
     comlink: "npm:^4.4.2"
     core-js: "npm:^3.50.0"
@@ -11024,6 +11011,7 @@ __metadata:
     "@proton/hooks": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/mail": "workspace:^"
     "@proton/metrics": "workspace:^"
     "@proton/payments": "workspace:^"
@@ -11053,7 +11041,6 @@ __metadata:
     jest-when: "npm:3.7.0"
     mime-types: "npm:^2.1.35"
     react: "npm:^18.3.1"
-    ts-jest: "npm:^29.4.12"
     ts-loader: "npm:^9.6.2"
     ts-node: "npm:^10.9.2"
     ttag: "npm:^1.8.12"
@@ -11074,6 +11061,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/i18n": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/mail": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/utils": "workspace:^"
@@ -11087,7 +11075,6 @@ __metadata:
     lodash: "npm:^4.18.1"
     playwright: "npm:^1.62.1"
     react: "npm:^18.3.1"
-    ts-jest: "npm:^29.4.12"
     ts-loader: "npm:^9.6.2"
     ttag: "npm:^1.8.12"
     typescript: "npm:^6.0.3"
@@ -11128,6 +11115,8 @@ __metadata:
   resolution: "@proton/features@workspace:packages/features"
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
+    "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/react-redux-store": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
@@ -11136,9 +11125,7 @@ __metadata:
     "@testing-library/jest-dom": "npm:^6.9.1"
     eslint: "npm:^10.9.0"
     jest: "npm:^30.4.2"
-    jest-environment-jsdom: "npm:^30.4.1"
     react: "npm:^18.3.1"
-    ts-jest: "npm:^29.4.12"
     typescript: "npm:^6.0.3"
   languageName: unknown
   linkType: soft
@@ -11148,12 +11135,12 @@ __metadata:
   resolution: "@proton/gitlab@workspace:utilities/gitlab"
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@types/jest": "npm:^30.0.0"
     axios: "npm:^1.19.0"
     axios-retry: "npm:^4.5.0"
     eslint: "npm:^10.9.0"
     jest: "npm:^30.4.2"
-    ts-jest: "npm:^29.4.12"
     ts-node: "npm:^10.9.2"
   languageName: unknown
   linkType: soft
@@ -11163,6 +11150,7 @@ __metadata:
   resolution: "@proton/hooks@workspace:packages/hooks"
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/utils": "workspace:^"
     "@testing-library/react": "npm:^15.0.7"
@@ -11174,7 +11162,6 @@ __metadata:
     react: "npm:^18.3.1"
     react-router-dom: "npm:^5.3.4"
     react-test-renderer: "npm:^18.3.1"
-    ts-jest: "npm:^29.4.12"
     typescript: "npm:^6.0.3"
   languageName: unknown
   linkType: soft
@@ -11220,6 +11207,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@proton/jest-swc-preset@workspace:^, @proton/jest-swc-preset@workspace:packages/jest-swc-preset":
+  version: 0.0.0-use.local
+  resolution: "@proton/jest-swc-preset@workspace:packages/jest-swc-preset"
+  dependencies:
+    "@swc/jest": "npm:^0.2.39"
+    core-js: "npm:^3.50.0"
+  languageName: unknown
+  linkType: soft
+
 "@proton/key-transparency@workspace:^, @proton/key-transparency@workspace:packages/key-transparency":
   version: 0.0.0-use.local
   resolution: "@proton/key-transparency@workspace:packages/key-transparency"
@@ -11253,6 +11249,7 @@ __metadata:
     "@proton/app-context": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/hooks": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/lumo-api-client": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/types": "workspace:^"
@@ -11264,7 +11261,6 @@ __metadata:
     jest: "npm:^30.4.2"
     lodash: "npm:^4.18.1"
     react: "npm:^18.3.1"
-    ts-jest: "npm:^29.4.12"
     ttag: "npm:^1.8.12"
     typescript: "npm:^6.0.3"
   languageName: unknown
@@ -11276,8 +11272,8 @@ __metadata:
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@protontech/crypto": "npm:*"
-    "@swc/jest": "npm:^0.2.39"
     "@types/jest": "npm:^30.0.0"
     comlink: "npm:^4.4.2"
     core-js: "npm:^3.50.0"
@@ -11296,12 +11292,12 @@ __metadata:
   resolution: "@proton/lumo-api-client@workspace:packages/lumo-api-client"
   dependencies:
     "@jest/globals": "npm:^30.4.1"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/shared": "workspace:^"
     "@protontech/crypto": "npm:*"
     "@types/jest": "npm:^30.0.0"
     eslint: "npm:^10.9.0"
     jest: "npm:^30.4.2"
-    ts-jest: "npm:^29.4.12"
     typescript: "npm:^6.0.3"
     uuid: "npm:^14.0.2"
   peerDependencies:
@@ -11317,6 +11313,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/types": "workspace:^"
     "@proton/utils": "workspace:^"
@@ -11346,6 +11343,7 @@ __metadata:
     "@proton/components": "workspace:^"
     "@proton/hooks": "workspace:^"
     "@proton/icons": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/mail": "workspace:^"
     "@proton/sanitize": "workspace:^"
     "@proton/shared": "workspace:^"
@@ -11362,7 +11360,6 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-redux: "npm:^9.3.0"
-    ts-jest: "npm:^29.4.12"
     ttag: "npm:^1.8.12"
     typescript: "npm:^6.0.3"
   languageName: unknown
@@ -11378,6 +11375,7 @@ __metadata:
     "@proton/features": "workspace:^"
     "@proton/hooks": "workspace:^"
     "@proton/icons": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/key-transparency": "workspace:^"
     "@proton/react-redux-store": "workspace:^"
     "@proton/redux-shared-store-types": "workspace:^"
@@ -11389,7 +11387,6 @@ __metadata:
     "@proton/utils": "workspace:^"
     "@protontech/crypto": "npm:*"
     "@reduxjs/toolkit": "npm:^2.12.0"
-    "@swc/jest": "npm:^0.2.39"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@types/turndown": "npm:^5.0.6"
@@ -11403,7 +11400,6 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-redux: "npm:^9.3.0"
     react-router-dom: "npm:^5.3.4"
-    ts-jest: "npm:^29.4.12"
     ttag: "npm:^1.8.12"
     turndown: "npm:^7.2.4"
     typescript: "npm:@typescript/typescript6@^6.0.2"
@@ -11456,6 +11452,7 @@ __metadata:
   resolution: "@proton/metrics@workspace:packages/metrics"
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/shared": "workspace:^"
     "@types/node": "npm:^24.13.3"
     eslint: "npm:^10.9.0"
@@ -11463,7 +11460,6 @@ __metadata:
     jest-fetch-mock: "npm:^3.2.0"
     prettier: "npm:^3.9.6"
     rimraf: "npm:^5.0.10"
-    ts-jest: "npm:^29.4.12"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^6.0.3"
   languageName: unknown
@@ -11577,6 +11573,7 @@ __metadata:
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/key-transparency": "workspace:^"
     "@proton/payments": "workspace:^"
     "@proton/polyfill": "workspace:^"
@@ -11654,6 +11651,7 @@ __metadata:
     "@proton/hooks": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/payments": "workspace:^"
     "@proton/redux-shared-store": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
@@ -11675,7 +11673,6 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-redux: "npm:^9.3.0"
-    ts-jest: "npm:^29.4.12"
     ttag: "npm:^1.8.12"
     typescript: "npm:^6.0.3"
     vat-validation: "npm:^3.0.0"
@@ -11689,18 +11686,17 @@ __metadata:
     "@proton/chargebee": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
     "@proton/utils": "workspace:^"
     "@sentry/browser": "npm:^7.120.4"
-    "@swc/jest": "npm:^0.2.39"
     date-fns: "npm:^2.30.0"
     eslint: "npm:^10.9.0"
     ibantools: "npm:4.5.4"
     jest: "npm:^30.4.2"
     lodash: "npm:^4.18.1"
-    ts-jest: "npm:^29.4.12"
     ttag: "npm:^1.8.12"
     typescript: "npm:^6.0.3"
     vat-validation: "npm:^3.0.0"
@@ -11786,10 +11782,10 @@ __metadata:
     "@pdfme/generator": "npm:^6.1.12"
     "@pdfme/schemas": "npm:^6.1.12"
     "@proton/eslint-config-proton": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/utils": "workspace:^"
     eslint: "npm:^10.9.0"
     jest: "npm:^30.4.2"
-    ts-jest: "npm:^29.4.12"
     typescript: "npm:^6.0.3"
   languageName: unknown
   linkType: soft
@@ -11834,19 +11830,18 @@ __metadata:
   resolution: "@proton/redux-utilities@workspace:packages/redux-utilities"
   dependencies:
     "@jest/globals": "npm:^30.4.1"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/react-redux-store": "workspace:^"
     "@proton/utils": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.12.0"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
-    core-js: "npm:^3.50.0"
     eslint: "npm:^10.9.0"
     jest: "npm:^30.4.2"
     jest-environment-jsdom: "npm:^30.4.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-redux: "npm:^9.3.0"
-    ts-jest: "npm:^29.4.12"
     typescript: "npm:^6.0.3"
   languageName: unknown
   linkType: soft
@@ -11855,11 +11850,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/sanitize@workspace:packages/sanitize"
   dependencies:
+    "@proton/jest-swc-preset": "workspace:^"
     dompurify: "npm:^3.4.14"
     eslint: "npm:^10.9.0"
     jest: "npm:^30.4.2"
     jest-environment-jsdom: "npm:^30.4.1"
-    ts-jest: "npm:^29.4.12"
     typescript: "npm:^6.0.3"
   languageName: unknown
   linkType: soft
@@ -11952,6 +11947,8 @@ __metadata:
   resolution: "@proton/sieve@workspace:packages/sieve"
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
+    "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/utils": "workspace:^"
     eslint: "npm:^10.9.0"
     jest: "npm:^30.4.2"
@@ -11989,11 +11986,11 @@ __metadata:
     "@proton/ci-tools": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/gitlab": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@types/jest": "npm:^30.0.0"
     "@vercel/ncc": "npm:^0.45.0"
     eslint: "npm:^10.9.0"
     jest: "npm:^30.4.2"
-    ts-jest: "npm:^29.4.12"
     ts-node: "npm:^10.9.2"
     tsx: "npm:^4.23.12"
   languageName: unknown
@@ -12035,9 +12032,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/unleash@workspace:packages/unleash"
   dependencies:
-    "@babel/preset-env": "npm:^7.29.7"
-    "@babel/preset-typescript": "npm:^7.29.7"
     "@proton/eslint-config-proton": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/shared": "workspace:^"
     "@types/react": "npm:^18.3.31"
     "@unleash/proxy-client-react": "npm:^5.1.0"
@@ -12059,11 +12055,11 @@ __metadata:
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@types/jest": "npm:^30.0.0"
     date-fns: "npm:^2.30.0"
     eslint: "npm:^10.9.0"
     jest: "npm:^30.4.2"
-    ts-jest: "npm:^29.4.12"
     typescript: "npm:^6.0.3"
   languageName: unknown
   linkType: soft
@@ -12075,13 +12071,13 @@ __metadata:
     "@manypkg/find-root": "npm:^3.1.0"
     "@manypkg/get-packages": "npm:^3.1.0"
     "@proton/eslint-config-proton": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@types/jest": "npm:^30.0.0"
     "@types/prompts": "npm:^2.4.9"
     commander: "npm:^14.0.3"
     execa: "npm:^5.1.1"
     jest: "npm:^30.4.2"
     prompts: "npm:^2.4.2"
-    ts-jest: "npm:^29.4.12"
     ts-node: "npm:^10.9.2"
     tsx: "npm:^4.23.12"
   languageName: unknown
@@ -12159,7 +12155,6 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-redux: "npm:^9.3.0"
-    ts-jest: "npm:^29.4.12"
     ttag: "npm:^1.8.12"
     typescript: "npm:^6.0.3"
     vite-plugin-wasm: "npm:^3.6.0"
@@ -21647,15 +21642,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bs-logger@npm:^0.2.6":
-  version: 0.2.6
-  resolution: "bs-logger@npm:0.2.6"
-  dependencies:
-    fast-json-stable-stringify: "npm:2.x"
-  checksum: 10/e6d3ff82698bb3f20ce64fb85355c5716a3cf267f3977abe93bf9c32a2e46186b253f48a028ae5b96ab42bacd2c826766d9ae8cf6892f9b944656be9113cf212
-  languageName: node
-  linkType: hard
-
 "bser@npm:2.1.1":
   version: 2.1.1
   resolution: "bser@npm:2.1.1"
@@ -27164,6 +27150,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "eslint-plugin-custom-rules@workspace:packages/eslint-plugin-custom-rules"
   dependencies:
+    "@proton/jest-swc-preset": "workspace:^"
     eslint: "npm:^10.9.0"
     jest: "npm:^30.4.2"
   languageName: unknown
@@ -28244,7 +28231,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-json-stable-stringify@npm:2.x, fast-json-stable-stringify@npm:^2.0.0, fast-json-stable-stringify@npm:^2.1.0":
+"fast-json-stable-stringify@npm:^2.0.0, fast-json-stable-stringify@npm:^2.1.0":
   version: 2.1.0
   resolution: "fast-json-stable-stringify@npm:2.1.0"
   checksum: 10/2c20055c1fa43c922428f16ca8bb29f2807de63e5c851f665f7ac9790176c01c3b40335257736b299764a8d383388dabc73c8083b8e1bc3d99f0a941444ec60e
@@ -30728,24 +30715,6 @@ __metadata:
   version: 2.0.1
   resolution: "handle-thing@npm:2.0.1"
   checksum: 10/441ec98b07f26819c70c702f6c874088eebeb551b242fe8fae4eab325746b82bf84ae7a1f6419547698accb3941fa26806c5f5f93c50e19f90e499065a711d61
-  languageName: node
-  linkType: hard
-
-"handlebars@npm:^4.7.9":
-  version: 4.7.9
-  resolution: "handlebars@npm:4.7.9"
-  dependencies:
-    minimist: "npm:^1.2.5"
-    neo-async: "npm:^2.6.2"
-    source-map: "npm:^0.6.1"
-    uglify-js: "npm:^3.1.4"
-    wordwrap: "npm:^1.0.0"
-  dependenciesMeta:
-    uglify-js:
-      optional: true
-  bin:
-    handlebars: bin/handlebars
-  checksum: 10/e755433d652e8a15fc02f83d7478e652359e7a4d354c4328818853ed4f8a39d4a09e1d22dad3c7213c5240864a65b3c840970b8b181745575dd957dd258f2b8d
   languageName: node
   linkType: hard
 
@@ -35808,7 +35777,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"make-error@npm:^1.1.1, make-error@npm:^1.3.6":
+"make-error@npm:^1.1.1":
   version: 1.3.6
   resolution: "make-error@npm:1.3.6"
   checksum: 10/b86e5e0e25f7f777b77fabd8e2cbf15737972869d852a22b7e73c17623928fccb826d8e46b9951501d3f20e51ad74ba8c59ed584f610526a48f8ccf88aaec402
@@ -41335,6 +41304,7 @@ __metadata:
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/key-transparency": "workspace:^"
     "@proton/mail": "workspace:^"
     "@proton/metrics": "workspace:^"
@@ -41366,7 +41336,6 @@ __metadata:
     "@types/react-router-dom": "npm:^5.3.3"
     "@typescript/native": "npm:typescript@^7.0.2"
     "@xstate/react": "npm:^6.1.0"
-    core-js: "npm:^3.50.0"
     cross-env: "npm:^10.1.0"
     date-fns: "npm:^2.30.0"
     eslint: "npm:^10.9.0"
@@ -41404,6 +41373,7 @@ __metadata:
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/metrics": "workspace:^"
     "@proton/pack": "workspace:^"
     "@proton/payments": "workspace:^"
@@ -41463,6 +41433,7 @@ __metadata:
     "@proton/hooks": "workspace:^"
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/pack": "workspace:^"
     "@proton/pass": "workspace:^"
     "@proton/polyfill": "workspace:^"
@@ -41534,6 +41505,7 @@ __metadata:
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/mail": "workspace:^"
     "@proton/meet": "workspace:^"
     "@proton/metrics": "workspace:^"
@@ -41552,7 +41524,6 @@ __metadata:
     "@protontech/crypto": "npm:*"
     "@protontech/interval-tree": "npm:^1.0.0"
     "@reduxjs/toolkit": "npm:^2.12.0"
-    "@swc/jest": "npm:^0.2.39"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/react-hooks": "npm:^8.0.1"
@@ -41562,7 +41533,6 @@ __metadata:
     "@types/react-dom": "npm:^18.3.7"
     "@types/react-router-dom": "npm:^5.3.3"
     "@typescript/native": "npm:typescript@^7.0.2"
-    core-js: "npm:^3.50.0"
     cross-env: "npm:^10.1.0"
     date-fns: "npm:^2.30.0"
     eslint: "npm:^10.9.0"
@@ -41715,6 +41685,7 @@ __metadata:
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/mail": "workspace:^"
     "@proton/metrics": "workspace:^"
     "@proton/pack": "workspace:^"
@@ -41792,6 +41763,7 @@ __metadata:
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/mail": "workspace:^"
     "@proton/metrics": "workspace:^"
     "@proton/pack": "workspace:^"
@@ -41931,6 +41903,7 @@ __metadata:
     "@electron-forge/publisher-github": "npm:^7.3.0"
     "@electron/fuses": "npm:^1.7.0"
     "@proton/i18n": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/types": "workspace:^"
     "@sentry/electron": "npm:^7.17.0"
@@ -41957,7 +41930,6 @@ __metadata:
     node-loader: "npm:^2.1.0"
     prettier: "npm:3.9.6"
     style-loader: "npm:^4.0.0"
-    ts-jest: "npm:^29.4.12"
     ts-loader: "npm:^9.6.2"
     ts-node: "npm:^10.9.2"
     ttag: "npm:^1.8.12"
@@ -41988,6 +41960,7 @@ __metadata:
     "@proton/hooks": "workspace:^"
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/lumo-api-client": "workspace:^"
     "@proton/lumo-ui": "workspace:^"
     "@proton/metrics": "workspace:^"
@@ -42059,7 +42032,6 @@ __metadata:
     tinycolor2: "npm:^1.6.0"
     tldts: "npm:^7.4.10"
     toposort: "npm:^2.0.2"
-    ts-jest: "npm:^29.4.12"
     ttag: "npm:^1.8.12"
     turndown: "npm:^7.2.4"
     typescript: "npm:^6.0.3"
@@ -42127,6 +42099,7 @@ __metadata:
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/llm": "workspace:^"
     "@proton/logger": "workspace:^"
     "@proton/lumo-ui": "workspace:^"
@@ -42222,6 +42195,7 @@ __metadata:
     "@electron-forge/publisher-github": "npm:^7.3.0"
     "@electron/fuses": "npm:^1.7.0"
     "@proton/i18n": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/types": "workspace:^"
     "@sentry/electron": "npm:^7.17.0"
@@ -42247,7 +42221,6 @@ __metadata:
     node-loader: "npm:^2.1.0"
     prettier: "npm:3.9.6"
     style-loader: "npm:^4.0.0"
-    ts-jest: "npm:^29.4.12"
     ts-loader: "npm:^9.6.2"
     ts-node: "npm:^10.9.2"
     ttag: "npm:^1.8.12"
@@ -42359,6 +42332,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/pack": "workspace:^"
     "@proton/pass": "workspace:^"
     "@proton/prettier-config-proton": "workspace:^"
@@ -42408,6 +42382,7 @@ __metadata:
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/pack": "workspace:^"
     "@proton/pass": "workspace:^"
     "@proton/shared": "workspace:^"
@@ -42464,6 +42439,7 @@ __metadata:
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/pack": "workspace:^"
     "@proton/pass": "workspace:^"
     "@proton/polyfill": "workspace:^"
@@ -42570,6 +42546,7 @@ __metadata:
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/jest-swc-preset": "workspace:^"
     "@proton/pack": "workspace:^"
     "@proton/polyfill": "workspace:^"
     "@proton/redux-shared-store": "workspace:^"
@@ -48849,46 +48826,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:^29.4.12":
-  version: 29.4.12
-  resolution: "ts-jest@npm:29.4.12"
-  dependencies:
-    bs-logger: "npm:^0.2.6"
-    fast-json-stable-stringify: "npm:^2.1.0"
-    handlebars: "npm:^4.7.9"
-    json5: "npm:^2.2.3"
-    lodash.memoize: "npm:^4.1.2"
-    make-error: "npm:^1.3.6"
-    semver: "npm:^7.8.5"
-    type-fest: "npm:^4.41.0"
-    yargs-parser: "npm:^21.1.1"
-  peerDependencies:
-    "@babel/core": ">=7.0.0-beta.0 <8"
-    "@jest/transform": ^29.0.0 || ^30.0.0
-    "@jest/types": ^29.0.0 || ^30.0.0
-    babel-jest: ^29.0.0 || ^30.0.0
-    jest: ^29.0.0 || ^30.0.0
-    jest-util: ^29.0.0 || ^30.0.0
-    typescript: ">=4.3 <7"
-  peerDependenciesMeta:
-    "@babel/core":
-      optional: true
-    "@jest/transform":
-      optional: true
-    "@jest/types":
-      optional: true
-    babel-jest:
-      optional: true
-    esbuild:
-      optional: true
-    jest-util:
-      optional: true
-  bin:
-    ts-jest: cli.js
-  checksum: 10/640678eb12d0911d99b0a2ac52ebfbf0ab170ba24ab73697d71de0e00ee95f2f468299a877a5e27dadf08265d5588e8cc982a6945c16b8893657390de7baa662
-  languageName: node
-  linkType: hard
-
 "ts-loader@npm:^9.6.2":
   version: 9.6.2
   resolution: "ts-loader@npm:9.6.2"
@@ -49229,7 +49166,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^4.18.2, type-fest@npm:^4.21.0, type-fest@npm:^4.26.1, type-fest@npm:^4.41.0, type-fest@npm:^4.6.0, type-fest@npm:^4.7.1":
+"type-fest@npm:^4.18.2, type-fest@npm:^4.21.0, type-fest@npm:^4.26.1, type-fest@npm:^4.6.0, type-fest@npm:^4.7.1":
   version: 4.41.0
   resolution: "type-fest@npm:4.41.0"
   checksum: 10/617ace794ac0893c2986912d28b3065ad1afb484cad59297835a0807dc63286c39e8675d65f7de08fafa339afcb8fe06a36e9a188b9857756ae1e92ee8bda212
@@ -49498,15 +49435,6 @@ __metadata:
   version: 1.6.3
   resolution: "ufo@npm:1.6.3"
   checksum: 10/79803984f3e414567273a666183d6a50d1bec0d852100a98f55c1e393cb705e3b88033e04029dd651714e6eec99e1b00f54fdc13f32404968251a16f8898cfe5
-  languageName: node
-  linkType: hard
-
-"uglify-js@npm:^3.1.4":
-  version: 3.19.3
-  resolution: "uglify-js@npm:3.19.3"
-  bin:
-    uglifyjs: bin/uglifyjs
-  checksum: 10/6b9639c1985d24580b01bb0ab68e78de310d38eeba7db45bec7850ab4093d8ee464d80ccfaceda9c68d1c366efbee28573b52f95e69ac792354c145acd380b11
   languageName: node
   linkType: hard
 
@@ -52056,13 +51984,6 @@ __metadata:
   version: 0.3.0
   resolution: "word@npm:0.3.0"
   checksum: 10/e28a233aca36f9897f08d6db1a881bbe4ceae9e2da6753e09f5fdaae4e8d04149f5c4d9c74dc277eeef0dc043e459b11d122e294b9ea0f2bd3f8310f0b117964
-  languageName: node
-  linkType: hard
-
-"wordwrap@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "wordwrap@npm:1.0.0"
-  checksum: 10/497d40beb2bdb08e6d38754faa17ce20b0bf1306327f80cb777927edb23f461ee1f6bc659b3c3c93f26b08e1cf4b46acc5bae8fda1f0be3b5ab9a1a0211034cd
   languageName: node
   linkType: hard
 

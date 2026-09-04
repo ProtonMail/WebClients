@@ -49,6 +49,7 @@
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-env": "workspace:^",
+        "@proton/jest-swc-preset": "workspace:^",
         "@proton/types": "workspace:^",
         "@swc/jest": "^0.2.39",
         "@testing-library/jest-dom": "^6.9.1",

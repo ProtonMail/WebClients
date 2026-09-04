@@ -17,9 +17,9 @@
     "devDependencies": {
         "@pdf-lib/standard-fonts": "^1.0.0",
         "@proton/eslint-config-proton": "workspace:^",
+        "@proton/jest-swc-preset": "workspace:^",
         "eslint": "^10.9.0",
         "jest": "^30.4.2",
-        "ts-jest": "^29.4.12",
         "typescript": "^6.0.3"
     },
     "installConfig": {
