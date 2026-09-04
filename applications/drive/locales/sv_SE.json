@@ -1953,6 +1953,19 @@
       "Total for ${ n } month": [
         "Totalt för ${ n } månad",
         "Totalt för ${ n } månader"
+      ],
+      "Amount due": [
+        "Belopp att betala"
+      ],
+      "Amount due after trial": [
+        "Belopp att betala efter provperiod"
+      ],
+      "Amount due now": [
+        "Belopp att betala nu"
+      ],
+      "Total for ${ cycle } month": [
+        "Totalt för ${ cycle } månad",
+        "Totalt för ${ cycle } månader"
       ]
     },
     "Collapsible tooltip": {
@@ -7796,6 +7809,12 @@
       ],
       "Link expired": [
         "Länk löpt ut"
+      ],
+      "Do you remember your password?": [
+        "Kommer du ihåg ditt lösenord?"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Loggar hjälper oss att förstå vad som hände innan problemet uppstod. De inkluderar app-åtgärder och felmeddelanden, men inget meddelandeinnehåll."
       ]
     },
     "info": {
@@ -14623,6 +14642,9 @@
       ],
       "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
         "Status för datamigrering från ${ providerName } till ${ BRAND_NAME }"
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Denna länk har löpt ut. Förläng utgångsdatumet."
       ]
     },
     "tooltip": {
