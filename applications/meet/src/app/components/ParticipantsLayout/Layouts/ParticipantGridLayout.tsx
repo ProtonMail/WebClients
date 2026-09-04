@@ -3,6 +3,7 @@ import { useCallback, useMemo, useRef } from 'react';
 import { useActiveBreakpoint } from '@proton/components/index';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectPagedIdentities } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
+import { selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 
 import { useSortedPagedParticipants } from '../../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useElementSize } from '../../../hooks/useElementSize';
@@ -15,11 +16,16 @@ import {
     calculateBestGridLayout,
 } from '../../../utils/calculateBestGridLayout';
 import { ParticipantTile } from './shared/ParticipantTile/ParticipantTile';
+import { ScreenShareTile } from './shared/ScreenShareTile';
 
 export const ParticipantGridLayout = () => {
     const pagedParticipantIdentities = useMeetSelector(selectPagedIdentities);
 
     const pagedParticipants = useSortedPagedParticipants();
+
+    const isScreenShare = useMeetSelector(selectIsScreenShare);
+
+    const screenShareTileCount = isScreenShare ? 1 : 0;
 
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -44,12 +50,11 @@ export const ParticipantGridLayout = () => {
         [isNarrow, size.width, size.height]
     );
 
-    useFittingPageSize(size, tileAspectRatio, getLayout);
+    useFittingPageSize(size, tileAspectRatio, getLayout, screenShareTileCount);
 
-    const { cols, rows } = useMemo(
-        () => getLayout(pagedParticipantIdentities.length),
-        [getLayout, pagedParticipantIdentities.length]
-    );
+    const tileCount = pagedParticipantIdentities.length + screenShareTileCount;
+
+    const { cols, rows } = useMemo(() => getLayout(tileCount), [getLayout, tileCount]);
 
     const gridStyle = useMemo(() => {
         const base = { gap: `${GRID_GAP}px` };
@@ -83,7 +88,7 @@ export const ParticipantGridLayout = () => {
 
     const { viewportWidth } = useActiveBreakpoint();
 
-    const getViewSize = (numberOfParticipants: number) => {
+    const getViewSize = (numberOfTiles: number) => {
         if (viewportWidth.xsmall) {
             return 'small';
         }
@@ -91,23 +96,20 @@ export const ParticipantGridLayout = () => {
             return 'medium';
         }
 
-        if (numberOfParticipants > 6 || viewportWidth.medium) {
+        if (numberOfTiles > 6 || viewportWidth.medium) {
             return 'midLarge';
         }
         return 'large';
     };
 
+    const viewSize = getViewSize(tileCount);
+
     return (
         <div ref={containerRef} className="flex-1 min-h-0 overflow-y-auto h-full">
             <div className="grid justify-center w-full h-full" style={gridStyle}>
+                {isScreenShare && <ScreenShareTile />}
                 {pagedParticipants.map((participant) => {
-                    return (
-                        <ParticipantTile
-                            key={participant.identity}
-                            participant={participant}
-                            viewSize={getViewSize(pagedParticipants.length)}
-                        />
-                    );
+                    return <ParticipantTile key={participant.identity} participant={participant} viewSize={viewSize} />;
                 })}
             </div>
         </div>
