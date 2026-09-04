@@ -9,6 +9,8 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useLoading } from '@proton/hooks';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
@@ -74,7 +76,7 @@ const renderDKIMIcon = (dkimState: Domain['DKIM']['State']) => {
                     title={c('Tooltip')
                         .t`We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.`}
                 >
-                    <RoundedIcon className="mr-1 md:mr-2 p-1 md:p-0" key="dkim-icon" type="error" name="cross" />
+                    <RoundedIcon className="mr-1 md:mr-2 p-1 md:p-0" key="dkim-icon" type="error" icon={IcCross} />
                 </Tooltip>
             );
         }
@@ -82,7 +84,12 @@ const renderDKIMIcon = (dkimState: Domain['DKIM']['State']) => {
         case DKIM_STATE_GOOD: {
             return (
                 <Tooltip title={c('Tooltip').t`Your DKIM signing is working.`}>
-                    <RoundedIcon className="mr-1 md:mr-2 p-1 md:p-0" key="dkim-icon" type="success" name="checkmark" />
+                    <RoundedIcon
+                        className="mr-1 md:mr-2 p-1 md:p-0"
+                        key="dkim-icon"
+                        type="success"
+                        icon={IcCheckmark}
+                    />
                 </Tooltip>
             );
         }
@@ -125,7 +132,7 @@ const getBreadcrumbs = ({ domain, domainAddresses }: { domain?: Domain; domainAd
                         className="mr-1 md:mr-2 p-1 md:p-0"
                         key="domain-icon"
                         type={domainState === DOMAIN_STATE.DOMAIN_STATE_VERIFIED ? 'success' : 'error'}
-                        name={domainState === DOMAIN_STATE.DOMAIN_STATE_VERIFIED ? 'checkmark' : 'cross'}
+                        icon={domainState === DOMAIN_STATE.DOMAIN_STATE_VERIFIED ? IcCheckmark : IcCross}
                     />
                 ),
         },
@@ -138,7 +145,7 @@ const getBreadcrumbs = ({ domain, domainAddresses }: { domain?: Domain; domainAd
                         className="mr-1 md:mr-2 p-1 md:p-0"
                         key="verify-icon"
                         type={verifyState === VERIFY_STATE.VERIFY_STATE_GOOD ? 'success' : 'error'}
-                        name={verifyState === VERIFY_STATE.VERIFY_STATE_GOOD ? 'checkmark' : 'cross'}
+                        icon={verifyState === VERIFY_STATE.VERIFY_STATE_GOOD ? IcCheckmark : IcCross}
                     />
                 ),
         },
@@ -146,7 +153,12 @@ const getBreadcrumbs = ({ domain, domainAddresses }: { domain?: Domain; domainAd
             label: c('Label in domain modal').t`Addresses`,
             disabled: !verified,
             icon: !domainAddresses?.length ? null : (
-                <RoundedIcon className="mr-1 md:mr-2 p-1 md:p-0" key="addresses-icon" type="success" name="checkmark" />
+                <RoundedIcon
+                    className="mr-1 md:mr-2 p-1 md:p-0"
+                    key="addresses-icon"
+                    type="success"
+                    icon={IcCheckmark}
+                />
             ),
         },
         {
@@ -158,7 +170,7 @@ const getBreadcrumbs = ({ domain, domainAddresses }: { domain?: Domain; domainAd
                         className="mr-1 md:mr-2 p-1 md:p-0"
                         key="mx-icon"
                         type={mxState === MX_STATE.MX_STATE_GOOD ? 'success' : 'error'}
-                        name={mxState === MX_STATE.MX_STATE_GOOD ? 'checkmark' : 'cross'}
+                        icon={mxState === MX_STATE.MX_STATE_GOOD ? IcCheckmark : IcCross}
                     />
                 ),
         },
@@ -171,7 +183,7 @@ const getBreadcrumbs = ({ domain, domainAddresses }: { domain?: Domain; domainAd
                         className="mr-1 md:mr-2 p-1 md:p-0"
                         key="spf-icon"
                         type={spfState === SPF_STATE.SPF_STATE_GOOD ? 'success' : 'error'}
-                        name={spfState === SPF_STATE.SPF_STATE_GOOD ? 'checkmark' : 'cross'}
+                        icon={spfState === SPF_STATE.SPF_STATE_GOOD ? IcCheckmark : IcCross}
                     />
                 ),
         },
@@ -189,7 +201,7 @@ const getBreadcrumbs = ({ domain, domainAddresses }: { domain?: Domain; domainAd
                         className="mr-1 md:mr-2 p-1 md:p-0"
                         key="dmarc-icon"
                         type={dmarcState === DMARC_STATE.DMARC_STATE_GOOD ? 'success' : 'error'}
-                        name={dmarcState === DMARC_STATE.DMARC_STATE_GOOD ? 'checkmark' : 'cross'}
+                        icon={dmarcState === DMARC_STATE.DMARC_STATE_GOOD ? IcCheckmark : IcCross}
                     />
                 ),
         },

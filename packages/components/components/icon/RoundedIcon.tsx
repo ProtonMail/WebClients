@@ -1,10 +1,8 @@
 import type { Ref } from 'react';
 import { forwardRef } from 'react';
 
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 import clsx from '@proton/utils/clsx';
-
-import Icon from './Icon';
 
 const TYPES = {
     success: 'bg-success',
@@ -13,16 +11,16 @@ const TYPES = {
 };
 
 interface Props {
-    iconClassName?: string;
     className?: string;
     type?: 'success' | 'warning' | 'error';
     title?: string;
     padding?: string;
-    name: IconName;
+    /** The badge fixes the icon size, so it takes the component rather than an element. */
+    icon: IconComponent;
 }
 
 const RoundedIcon = (
-    { className = '', iconClassName, type = 'success', padding = 'p-2', title, name, ...rest }: Props,
+    { className = '', type = 'success', padding = 'p-2', title, icon: Icon, ...rest }: Props,
     ref: Ref<HTMLSpanElement>
 ) => {
     return (
@@ -31,7 +29,7 @@ const RoundedIcon = (
             title={title}
             ref={ref}
         >
-            <Icon size={3} className={iconClassName} name={name} {...rest} />
+            <Icon size={3} {...rest} />
         </span>
     );
 };
