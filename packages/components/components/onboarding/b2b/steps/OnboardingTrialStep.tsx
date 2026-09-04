@@ -2,6 +2,7 @@ import { type ReactNode, useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
@@ -10,6 +11,7 @@ import { getPlanTitle } from '@proton/payments/core/subscription/helpers';
 import chronometerSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-chronometer.svg';
 import helpSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-help.svg';
 import hourglassSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-hourglass.svg';
+import paymentMethodSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-payment-method.svg';
 import clsx from '@proton/utils/clsx';
 
 import useActiveBreakpoint from '../../../../hooks/useActiveBreakpoint';
@@ -22,7 +24,17 @@ interface Props {
     onNext: () => void;
 }
 
-const getTrialElements = (trialEndsOn?: number, planTitle?: string) => {
+interface TrialElement {
+    id: string;
+    description: ReactNode;
+    img: string;
+}
+
+const getTrialElements = (
+    trialEndsOn: number | undefined,
+    planTitle: string | undefined,
+    hasPaymentMethod: boolean
+): TrialElement[] => {
     if (!trialEndsOn || !planTitle) {
         return [];
     }
@@ -34,12 +46,27 @@ const getTrialElements = (trialEndsOn?: number, planTitle?: string) => {
         .jt`You can use ${planTitle} until the trial ends, and you won’t be charged.`;
     const cancelAnytimeArray = [cancelAnytimeTitle, ' ', cancelAnytimeDescription];
 
+    // translator: full sentence is: Add a payment method to keep using all of the features after your trial ends.
+    const addPaymentMethodTitle = <b>{c('Onboarding Trial').t`Add a payment method`}</b>;
+    // translator: full sentence is: Add a payment method to keep using all of the features after your trial ends.
+    const addPaymentMethodDescription = c('Onboarding Trial')
+        .t`to keep using all of the features after your trial ends.`;
+    const addPaymentMethodArray = [addPaymentMethodTitle, ' ', addPaymentMethodDescription];
+
     // translator: full sentence is: Once your full subscription starts... You can still cancel within 30 days and get a pro-rata refund.
     const refundTitle = <b>{c('Onboarding Trial').jt`Once your full subscription starts...`}</b>;
 
     // translator: full sentence is: Once your full subscription starts... You can still cancel within 30 days and get a pro-rata refund.
     const refundDescription = c('Onboarding Trial').t`You can still cancel within 30 days and get a pro-rata refund.`;
     const refundArray = [refundTitle, ' ', refundDescription];
+
+    // translator: full sentence is: If you continue after your trial, you can cancel within 30 days and get a pro-rata refund.
+    const continueAfterTrialTitle = <b>{c('Onboarding Trial').t`If you continue after your trial,`}</b>;
+
+    // translator: full sentence is: If you continue after your trial, you can cancel within 30 days and get a pro-rata refund.
+    const continueAfterTrialDescription = c('Onboarding Trial')
+        .t`you can cancel within 30 days and get a pro-rata refund.`;
+    const continueAfterTrialArray = [continueAfterTrialTitle, ' ', continueAfterTrialDescription];
 
     // translator: full sentence is: If you need help, visit our help center or contact our support team.
     const helpCenterLink = (
@@ -60,14 +87,20 @@ const getTrialElements = (trialEndsOn?: number, planTitle?: string) => {
     const helpArray = [helpTitle, ' ', helpDescription];
 
     return [
-        {
-            id: 'cancelAnytime',
-            description: cancelAnytimeArray,
-            img: hourglassSvg,
-        },
+        hasPaymentMethod
+            ? {
+                  id: 'cancelAnytime',
+                  description: cancelAnytimeArray,
+                  img: hourglassSvg,
+              }
+            : {
+                  id: 'addPaymentMethod',
+                  description: addPaymentMethodArray,
+                  img: paymentMethodSvg,
+              },
         {
             id: 'refund',
-            description: refundArray,
+            description: hasPaymentMethod ? refundArray : continueAfterTrialArray,
             img: chronometerSvg,
         },
         {
@@ -100,13 +133,18 @@ const OnboardingTrialStep = ({ onNext }: Props) => {
     const [subscription] = useSubscription();
 
     const { hasAtLeastOneB2BTrial } = useTrialInfo();
+    const [paymentMethods, loadingPaymentMethods] = usePaymentMethods();
 
     const trialEndsOn = subscription?.PeriodEnd;
     const planTitle = getPlanTitle(subscription);
+    const hasPaymentMethod = !!paymentMethods?.length;
 
-    const trialElements = useMemo(() => getTrialElements(trialEndsOn, planTitle), [trialEndsOn, planTitle]);
+    const trialElements = useMemo(
+        () => getTrialElements(trialEndsOn, planTitle, hasPaymentMethod),
+        [trialEndsOn, planTitle, hasPaymentMethod]
+    );
 
-    if (!hasAtLeastOneB2BTrial) {
+    if (!hasAtLeastOneB2BTrial || loadingPaymentMethods) {
         return null;
     }
 
