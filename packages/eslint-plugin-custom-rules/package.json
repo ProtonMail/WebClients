@@ -11,6 +11,7 @@
         "test:ci": "jest --coverage --runInBand --ci --logHeapUsage"
     },
     "devDependencies": {
+        "@proton/jest-swc-preset": "workspace:^",
         "eslint": "^10.9.0",
         "jest": "^30.4.2"
     }

@@ -1,17 +1,8 @@
-import type { JestConfigWithTsJest } from 'ts-jest';
+import type { Config } from 'jest';
 
-const jestConfig: JestConfigWithTsJest = {
-    // Default is 5000 (5seconds)
+const jestConfig: Config = {
     testTimeout: 10000,
-    preset: 'ts-jest',
-    transform: {
-        '^.+\\.tsx?$': [
-            'ts-jest',
-            {
-                babelConfig: './babel.config.js',
-            },
-        ],
-    },
+    preset: '@proton/jest-swc-preset',
     setupFilesAfterEnv: ['./jest.setup.ts'],
     testEnvironment: 'jsdom',
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],

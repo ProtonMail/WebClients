@@ -27,14 +27,13 @@
     },
     "devDependencies": {
         "@jest/globals": "^30.4.1",
+        "@proton/jest-swc-preset": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
-        "core-js": "^3.50.0",
         "eslint": "^10.9.0",
         "jest": "^30.4.2",
         "jest-environment-jsdom": "^30.4.1",
         "react-dom": "^18.3.1",
-        "ts-jest": "^29.4.12",
         "typescript": "^6.0.3"
     }
 }

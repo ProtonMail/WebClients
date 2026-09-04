@@ -1,28 +1,9 @@
-import type { JestConfigWithTsJest } from 'ts-jest';
+import type { Config } from 'jest';
 
-const jestConfig: JestConfigWithTsJest = {
-    preset: 'ts-jest',
+const jestConfig: Config = {
     clearMocks: true,
     testEnvironment: 'jsdom',
-    transform: {
-        '^.+\\.(ts|js|mjs)x?$': [
-            '@swc/jest',
-            {
-                jsc: {
-                    transform: {
-                        react: {
-                            runtime: 'automatic',
-                        },
-                    },
-                    parser: {
-                        jsx: true,
-                        syntax: 'typescript',
-                        tsx: true,
-                    },
-                },
-            },
-        ],
-    },
+    preset: '@proton/jest-swc-preset',
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
 };
 
