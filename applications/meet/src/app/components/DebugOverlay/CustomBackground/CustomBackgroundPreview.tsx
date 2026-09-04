@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 
-import { createCustomBackgroundProcessor } from '../../../processors/background-processor/createBackgroundProcessor';
-import type { CustomBackgroundProcessor } from '../../../processors/background-processor/types';
+import { createBackgroundProcessor } from '../../../processors/background-processor/createBackgroundProcessor';
+import type { BackgroundProcessor } from '../../../processors/background-processor/types';
 
 import '../BackgroundBlurComparison/BlurPreview.scss';
 
@@ -15,16 +15,14 @@ type PreviewStatus = 'loading' | 'ready' | 'error';
 interface CustomBackgroundPreviewProps {
     /** Live source stream (camera). */
     stream?: MediaStream;
-    /** Solid CSS color background (mutually exclusive with `imageUrl`). */
-    backgroundColor?: string;
     /** Image URL background (object URL / data URL). */
-    imageUrl?: string;
+    imageUrl: string;
     label: string;
 }
 
-export const CustomBackgroundPreview = ({ stream, backgroundColor, imageUrl, label }: CustomBackgroundPreviewProps) => {
+export const CustomBackgroundPreview = ({ stream, imageUrl, label }: CustomBackgroundPreviewProps) => {
     const outputRef = useRef<HTMLVideoElement>(null);
-    const processorRef = useRef<CustomBackgroundProcessor | null>(null);
+    const processorRef = useRef<BackgroundProcessor | null>(null);
     const [status, setStatus] = useState<PreviewStatus>('loading');
 
     useEffect(() => {
@@ -35,7 +33,7 @@ export const CustomBackgroundPreview = ({ stream, backgroundColor, imageUrl, lab
 
         let cancelled = false;
         let track: LocalVideoTrack | null = null;
-        let processor: CustomBackgroundProcessor | null = null;
+        let processor: BackgroundProcessor | null = null;
 
         const setup = async () => {
             setStatus('loading');
@@ -54,7 +52,7 @@ export const CustomBackgroundPreview = ({ stream, backgroundColor, imageUrl, lab
             // userProvidedTrack = true: the track is ours, LiveKit must not reacquire it.
             track = new LocalVideoTrack(mediaStreamTrack, undefined, true);
 
-            processor = await createCustomBackgroundProcessor({ backgroundColor, imageUrl });
+            processor = await createBackgroundProcessor({ type: 'image', imageUrl });
             if (cancelled) {
                 await processor?.destroy?.();
                 mediaStreamTrack.stop();
@@ -103,8 +101,8 @@ export const CustomBackgroundPreview = ({ stream, backgroundColor, imageUrl, lab
 
     // Swap the background live, without rebuilding the segmentation pipeline.
     useEffect(() => {
-        void processorRef.current?.setBackground?.({ backgroundColor, imageUrl });
-    }, [backgroundColor, imageUrl]);
+        void processorRef.current?.setMode?.({ type: 'image', imageUrl });
+    }, [imageUrl]);
 
     const handleOpenFullSize = () => {
         void outputRef.current?.requestFullscreen?.().catch(() => {});
