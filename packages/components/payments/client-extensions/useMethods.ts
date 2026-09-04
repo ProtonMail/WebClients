@@ -1,7 +1,18 @@
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcBank } from '@proton/icons/icons/IcBank';
+import { IcBrandAmex } from '@proton/icons/icons/IcBrandAmex';
+import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
+import { IcBrandBitcoin } from '@proton/icons/icons/IcBrandBitcoin';
+import { IcBrandDiscover } from '@proton/icons/icons/IcBrandDiscover';
+import { IcBrandGoogle } from '@proton/icons/icons/IcBrandGoogle';
+import { IcBrandMastercard } from '@proton/icons/icons/IcBrandMastercard';
+import { IcBrandPaypal } from '@proton/icons/icons/IcBrandPaypal';
+import { IcBrandVisa } from '@proton/icons/icons/IcBrandVisa';
+import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
+import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import { isSignupFlow } from '@proton/payments/core/helpers';
 import type {
@@ -19,7 +30,7 @@ import type { MethodsHook, Props } from '../react-extensions/useMethods';
 import { useMethods as _useMethods } from '../react-extensions/useMethods';
 
 export interface ViewPaymentMethod extends AvailablePaymentMethod {
-    readonly icon?: IconName | undefined;
+    readonly icon?: IconComponent | undefined;
     readonly text: string;
 }
 
@@ -31,36 +42,36 @@ export interface ClientMethodsHook extends MethodsHook {
 }
 
 // CHARGEBEE_IDEAL icon is overriden in the paymentMetodSelector
-const getIcon = (paymentMethod: SavedPaymentMethod): IconName | undefined => {
+const getIcon = (paymentMethod: SavedPaymentMethod): IconComponent | undefined => {
     if (paymentMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
-        return 'brand-paypal';
+        return IcBrandPaypal;
     }
 
     if (paymentMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
         switch (paymentMethod.Details.Brand.toLowerCase()) {
             case 'american express':
-                return 'brand-amex';
+                return IcBrandAmex;
             case 'visa':
-                return 'brand-visa';
+                return IcBrandVisa;
             case 'mastercard':
-                return 'brand-mastercard';
+                return IcBrandMastercard;
             case 'Discover':
-                return 'brand-discover';
+                return IcBrandDiscover;
             default:
-                return 'credit-card';
+                return IcCreditCard;
         }
     }
 
     if (paymentMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT) {
-        return 'bank';
+        return IcBank;
     }
 
     if (paymentMethod.Type === PAYMENT_METHOD_TYPES.APPLE_PAY) {
-        return 'brand-apple';
+        return IcBrandApple;
     }
 
     if (paymentMethod.Type === PAYMENT_METHOD_TYPES.GOOGLE_PAY) {
-        return 'brand-google';
+        return IcBrandGoogle;
     }
 };
 
@@ -127,37 +138,37 @@ function convertMethod(
 
     if (method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
         return {
-            icon: 'brand-bitcoin' as const,
+            icon: IcBrandBitcoin,
             text: c('Payment method option').t`Bitcoin`,
             ...method,
         };
     } else if (method.type === PAYMENT_METHOD_TYPES.CASH) {
         return {
-            icon: 'money-bills' as const,
+            icon: IcMoneyBills,
             text: c('Label').t`Cash`,
             ...method,
         };
     } else if (method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
         return {
-            icon: 'credit-card' as const,
+            icon: IcCreditCard,
             text: c('Payment method option').t`Credit/debit card`,
             ...method,
         };
     } else if (method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
         return {
-            icon: 'brand-paypal' as const,
+            icon: IcBrandPaypal,
             text: c('Payment method option').t`PayPal`,
             ...method,
         };
     } else if (method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT) {
         return {
-            icon: 'bank' as const,
+            icon: IcBank,
             text: c('Payment method option').t`Bank transfer`,
             ...method,
         };
     } else if (method.type === PAYMENT_METHOD_TYPES.APPLE_PAY) {
         return {
-            icon: 'brand-apple' as const,
+            icon: IcBrandApple,
             text: c('Payment method option').t`Apple Pay`,
             ...method,
         };
@@ -174,7 +185,7 @@ function convertMethod(
     }
 
     return {
-        icon: 'credit-card' as const,
+        icon: IcCreditCard,
         text: isSignupFlow(flow)
             ? c('Payment method option').t`Credit/debit card`
             : c('Payment method option').t`New credit/debit card`,
