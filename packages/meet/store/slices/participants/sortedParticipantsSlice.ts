@@ -9,7 +9,9 @@ import { PAGE_SIZE } from '../../../constants';
 import { getIdealSortedParticipants } from '../../../utils/participants/getIdealSortedParticipants';
 import { getVisuallyStableSortedParticipants } from '../../../utils/participants/getVisuallyStableSortedParticipants';
 import type { MeetState } from '../../rootReducer';
+import { SpotlightSources, selectSpotlightSource } from '../layoutSlice';
 import { selectSelfView } from '../settings';
+import { selectActiveSpeakerIdentity, selectLocalParticipantIdentity } from './participantsSlice';
 
 export interface SortedParticipantsState {
     sortedParticipantIdentities: string[];
@@ -175,6 +177,53 @@ export const selectPagedIdentities = createSelector(
 export const selectPageCount = createSelector(
     [selectSortedParticipantIdentities, selectPageSize, selectSelfView],
     (identities, pageSize, selfView) => calculateTotalPageCount({ identities, pageSize, selfView })
+);
+
+export const selectSpotlightParticipantIdentity = createSelector(
+    [selectActiveSpeakerIdentity, selectSortedParticipantIdentities, selectLocalParticipantIdentity],
+    (activeSpeakerIdentity, identities, localParticipantIdentity) => {
+        if (activeSpeakerIdentity && identities.includes(activeSpeakerIdentity)) {
+            return activeSpeakerIdentity;
+        }
+
+        return identities.find((identity) => identity !== localParticipantIdentity) ?? localParticipantIdentity;
+    }
+);
+
+/** The spotlight participant is taken out here, before paging, so every page fills the same slots. */
+const selectSidebarIdentities = createSelector(
+    [
+        selectSortedParticipantIdentities,
+        selectLocalParticipantIdentity,
+        selectSelfView,
+        selectSpotlightParticipantIdentity,
+        selectSpotlightSource,
+    ],
+    (identities, localParticipantIdentity, selfView, spotlightParticipantIdentity, spotlightSource) => {
+        const hiddenIdentities = new Set<string>();
+
+        if (!selfView) {
+            hiddenIdentities.add(localParticipantIdentity);
+        }
+
+        if (spotlightSource === SpotlightSources.ActiveSpeaker) {
+            hiddenIdentities.add(spotlightParticipantIdentity);
+        }
+
+        return identities.filter((identity) => !hiddenIdentities.has(identity));
+    },
+    { memoizeOptions: { resultEqualityCheck: shallowEqual } }
+);
+
+export const selectSidebarPagedIdentities = createSelector(
+    [selectSidebarIdentities, selectPage, selectPageSize],
+    (identities, page, pageSize) => identities.slice(page * pageSize, page * pageSize + pageSize),
+    { memoizeOptions: { resultEqualityCheck: shallowEqual } }
+);
+
+export const selectSidebarPageCount = createSelector(
+    [selectSidebarIdentities, selectPageSize],
+    (identities, pageSize) => Math.max(1, Math.ceil(identities.length / pageSize))
 );
 
 export const { setSortedParticipantIdentities, resetSortedParticipants, setPage, setPageSize } = slice.actions;

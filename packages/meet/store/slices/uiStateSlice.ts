@@ -149,6 +149,7 @@ const slice = createSlice({
             state.popupState = initialState.popupState;
             state.permissionPromptStatus = initialState.permissionPromptStatus;
             state.noDeviceDetected = initialState.noDeviceDetected;
+            state.participantListTab = initialState.participantListTab;
         },
     },
 });

@@ -7,6 +7,7 @@ import { resetBackgroundEffectStatus } from './slices/backgroundSlice';
 import { resetChatAndReactions } from './slices/chatAndReactionsSlice';
 import { resetConnection } from './slices/connectionSlice';
 import { resetCurrentMeeting, stopMeetingDurationTimer } from './slices/currentMeeting';
+import { resetLayout } from './slices/layoutSlice';
 import { resetMeetingInfoModel } from './slices/meetingInfoModel';
 import { resetAgentParticipants } from './slices/participants/agentParticipantsSlice';
 import { resetParticipants } from './slices/participants/participantsSlice';
@@ -26,6 +27,7 @@ export const resetMeetingState =
         dispatch(resetMeetingInfoModel());
         dispatch(resetChatAndReactions());
         dispatch(resetUiState());
+        dispatch(resetLayout());
         dispatch(resetConnection());
         dispatch(resetParticipants());
         dispatch(resetAgentParticipants());
