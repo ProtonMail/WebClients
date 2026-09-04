@@ -5,14 +5,13 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
+import type { IconComponent } from '@proton/icons/component';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
-import type { IconName } from '@proton/icons/types';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';
 import Form from '../form/Form';
-import Icon from '../icon/Icon';
 import type { ModalProps } from '../modalTwo/Modal';
 import ModalTwo from '../modalTwo/Modal';
 import Mark from '../text/Mark';
@@ -21,7 +20,7 @@ import InputFieldTwo from '../v2/field/InputField';
 import './Commander.scss';
 
 export interface CommanderItemInterface {
-    icon: IconName;
+    icon: IconComponent;
     value: string;
     label: string;
     shortcuts?: string[];
@@ -157,8 +156,7 @@ const Commander = ({ onClose, list, ...rest }: Props) => {
                                                 className="w-full flex items-center justify-space-between text-left p-3"
                                             >
                                                 <span className="flex items-center text-left text-pre">
-                                                    <Icon
-                                                        name={item.icon}
+                                                    <item.icon
                                                         className={clsx('mr-4', item.iconProps?.iconClassName)}
                                                         data-color={item.iconProps?.iconDataColor}
                                                     />

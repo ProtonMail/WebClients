@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
-import type { IconName } from '@proton/icons/types';
-import { getCategoryIconName } from '@proton/mail/features/categoriesView/CategoryIcon';
+import type { IconComponent } from '@proton/icons/component';
+import { getCategoryIconComponent } from '@proton/mail/features/categoriesView/CategoryIcon';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -13,10 +13,9 @@ import type { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder'
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
+import { getStandardFolders } from '../../../../helpers/labels';
 import { categoryColorClassName } from '../../../categoryView/categoriesTabs/tabsInterface';
 import { useCategoriesView } from '../../../categoryView/useCategoriesView';
-
-import { getStandardFolders } from '../../../../helpers/labels';
 import useScheduleSendFeature from '../../../composer/actions/scheduleSend/useScheduleSendFeature';
 import { buildFolderOption, folderReducer } from './advancesSearchFieldHelpers';
 
@@ -26,7 +25,7 @@ interface ItemBase {
 }
 
 export interface ItemDefaultFolder extends ItemBase {
-    icon: IconName;
+    icon: IconComponent;
     url: string;
     className?: string;
     color?: string;
@@ -77,7 +76,7 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
                   value: category.id,
                   text: getLabelFromCategoryId(category.id),
                   url: `/${LABEL_IDS_TO_HUMAN[category.id]}`,
-                  icon: getCategoryIconName(category.id, 'filled'),
+                  icon: getCategoryIconComponent(category.id, 'filled'),
                   className: categoryColorClassName,
                   color: category.colorShade,
               };
