@@ -10,7 +10,7 @@ import {
 
 export const useNativeComposerModelTierApi = (
     modelTier: ModelTier,
-    setModelTier: (modelTier: ModelTier) => void,
+    setModelTier: (modelTier: ModelTier) => boolean,
     responseMode: ResponseMode,
     setResponseMode: (responseMode: ResponseMode) => void
 ) => {
@@ -26,8 +26,11 @@ export const useNativeComposerModelTierApi = (
         const unsubscribeChangeModel = onNativeChangeModelTier((e) => {
             console.log('Received model tier listener');
 
-            const { modelTier } = e.detail;
-            setModelTier(modelTier);
+            const { modelTier: requestedModelTier } = e.detail;
+            const didChangeModel = setModelTier(requestedModelTier);
+            if (!didChangeModel) {
+                setNativeModelTier(modelTier);
+            }
         });
         const unsubscribeChangeResponseMode = onNativeChangeResponseMode((e) => {
             console.log('Received response mode listener');
@@ -39,5 +42,5 @@ export const useNativeComposerModelTierApi = (
             unsubscribeChangeModel();
             unsubscribeChangeResponseMode();
         };
-    }, [setModelTier, setResponseMode]);
+    }, [modelTier, setModelTier, setResponseMode]);
 };

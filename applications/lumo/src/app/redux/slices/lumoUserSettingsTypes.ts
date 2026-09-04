@@ -64,4 +64,5 @@ export interface LumoUserSettings {
     memoryLastProcessedMessageAt?: string;
     preferredModelTier?: 'lumo-lite' | 'lumo-max' | 'apertus-15';
     preferredResponseMode?: 'fast' | 'thinking';
+    apertusOnboardingAcceptedAt?: number;
 }

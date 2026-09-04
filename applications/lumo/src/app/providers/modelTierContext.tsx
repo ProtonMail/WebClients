@@ -4,7 +4,7 @@ import type { ModelTier, ResponseMode } from './modelTierConstants';
 
 export interface ModelTierContextType {
     modelTier: ModelTier;
-    setModelTier: (mode: ModelTier) => void;
+    setModelTier: (mode: ModelTier) => boolean;
     setModelTierWithoutPersist: (mode: ModelTier) => void;
     responseMode: ResponseMode;
     setResponseMode: (mode: ResponseMode) => void;
