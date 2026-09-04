@@ -27,7 +27,7 @@
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-env": "workspace:^",
-        "@swc/jest": "^0.2.39",
+        "@proton/jest-swc-preset": "workspace:^",
         "@types/jest": "^30.0.0",
         "eslint": "^10.9.0",
         "fake-indexeddb": "^6.2.5",

@@ -293,6 +293,10 @@
             "entry": [],
             "project": ["**/*.{js,ts,tsx}"]
         },
+        "packages/jest-swc-preset": {
+            "entry": ["eslint.config.{js,mjs,ts}"],
+            "project": ["**/*.{js,ts,tsx}"]
+        },
         "packages/key-transparency": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"]
@@ -324,8 +328,7 @@
                 "constants.ts",
                 "components/MessageBodyIframe.tsx",
                 "helpers/transforms/transforms.ts",
-                "helpers/transforms/transformEscape.ts",
-                "babel.config.{js,ts}"
+                "helpers/transforms/transformEscape.ts"
             ],
             "project": ["**/*.{ts,tsx}"],
             "ignore": ["**"]
@@ -395,7 +398,7 @@
             "project": ["**/*.{ts,tsx}"]
         },
         "packages/redux-utilities": {
-            "entry": ["babel.config.{js,ts}"],
+            "entry": [],
             "project": ["**/*.{ts,tsx}"]
         },
         "packages/sanitize": {

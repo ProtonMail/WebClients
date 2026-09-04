@@ -11,14 +11,21 @@ import { getModelState } from '../tests';
 import { getServerEvent } from '../tests/getServerEvent';
 import { userReducer } from '../user';
 import { userPermissionsReducer } from '../userPermissions';
-import * as membersModule from './index';
-import { type MembersState, membersReducer, selectMembers } from './index';
+import { type MembersState, canFetchMembers, membersReducer, selectMembers } from './index';
 import { membersListener } from './membersListener';
 
 // Mirrors the private ValueType enum in ./index (dummy = free/unprivileged cache, complete = fetched list).
 const ValueType = { dummy: 0, complete: 1 } as const;
 
-const canFetchMembersSpy = jest.spyOn(membersModule, 'canFetchMembers');
+jest.mock('./index', () => {
+    const actual = jest.requireActual('./index');
+    return {
+        ...actual,
+        canFetchMembers: jest.fn(actual.canFetchMembers),
+    };
+});
+
+const canFetchMembersSpy = jest.mocked(canFetchMembers);
 
 const reducer = combineReducers({
     ...userReducer,
