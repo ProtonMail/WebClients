@@ -23,6 +23,7 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { APPS, SECOND } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -293,7 +294,7 @@ export const OutgoingEmergencyContactSettings = () => {
                 ) : (
                     <div>
                         <PromotionButton
-                            iconName="upgrade"
+                            iconComponent={IcUpgrade}
                             onClick={() => {
                                 controller.notify({ type: 'upsell' });
                             }}

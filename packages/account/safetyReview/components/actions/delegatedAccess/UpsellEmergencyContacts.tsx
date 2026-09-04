@@ -7,6 +7,7 @@ import SubscriptionModalProvider, {
 } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { APP_UPSELL_REF_PATH, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
@@ -70,7 +71,7 @@ const BaseUpsellEmergencyContacts = (props: Props) => {
             </SafetyReviewCardHeader>
 
             <PromotionButton
-                iconName="upgrade"
+                iconComponent={IcUpgrade}
                 loading={loadingSubscriptionModal}
                 onClick={() => {
                     handleUpsell();

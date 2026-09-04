@@ -7,6 +7,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useFeature from '@proton/features/useFeature';
+import { IcLightLightbulb } from '@proton/icons/icons/IcLightLightbulb';
 import { TelemetryPaidUsersNudge } from '@proton/shared/lib/api/telemetry';
 import { APPS, APPS_WITH_IN_APP_PAYMENTS } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
@@ -141,7 +142,7 @@ export const PaidUserNudgeOffer = ({ offerConfig, openSpotlight, isLoading }: Pr
                     setSpotlightState((val) => !val);
                 }
             }}
-            promoIconName="light-lightbulb"
+            promoIcon={IcLightLightbulb}
             promoColor="norm"
             promoChildren={
                 <span className="color-primary">
