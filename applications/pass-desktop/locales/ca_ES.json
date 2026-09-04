@@ -2222,7 +2222,8 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -4613,6 +4614,15 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "Aquest URL NO es bloquejarà per l'emplenament automàtic"
+      ],
+      "Enter a URL to check if it matches the current rule": [
+        "Introduïu un URL per comprovar si coincideix amb la regla actual"
+      ],
+      "URL doesn't match the rule": [
+        "L'URL no coincideix amb la regla"
+      ],
+      "URL matches the rule": [
+        "L'URL coincideix amb la regla"
       ]
     },
     "Security Center - Info": {
