@@ -19,8 +19,8 @@ import {
     selectMicrophonePermission,
     selectMicrophones,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import { selectIsSpotlightLayout } from '@proton/meet/store/slices/layoutSlice';
 import { selectPage, selectPageCount, setPage } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
-import { selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import {
     MeetingSideBars,
     PopUpControls,
@@ -30,6 +30,7 @@ import {
     toggleSideBarState,
 } from '@proton/meet/store/slices/uiStateSlice';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
@@ -52,6 +53,7 @@ import { LeaveMeetingPopup } from '../LeaveMeetingPopup/LeaveMeetingPopup';
 import { MeetingName } from '../MeetingName/MeetingName';
 import { MicrophoneWithVolumeWithMicrophoneState } from '../MicrophoneWithVolume';
 import { ParticipantsButton } from '../ParticipantsButton';
+import { LayoutSelector } from '../ParticipantsLayout/LayoutSelector/LayoutSelector';
 import { RecordingControls } from '../RecordingControls/RecordingControls';
 import { ScreenShareButton } from '../ScreenShareButton';
 import { ToggleButton } from '../ToggleButton/ToggleButton';
@@ -61,12 +63,14 @@ import { MenuButton } from './MenuButton';
 import './ParticipantControls.scss';
 
 export const ParticipantControls = () => {
+    const isMeetParticipantsLayoutsEnabled = useFlag('MeetParticipantsLayouts');
+
     const dispatch = useMeetDispatch();
     const { isEnabled: isDebugEnabled } = useDebugOverlayContext();
     const { container: deviceStateContainer, open: openDeviceStateWindow } = useDetachedWindow('Device Debugger');
     const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
     const [isCameraToggleLoading, withCameraToggleLoading] = useLoading();
-    const isScreenShare = useMeetSelector(selectIsScreenShare);
+    const isSpotlightLayout = useMeetSelector(selectIsSpotlightLayout);
     const page = useMeetSelector(selectPage);
     const isLargerThanMd = useIsLargerThanMd();
     const isNarrowHeight = useIsNarrowHeight();
@@ -138,7 +142,7 @@ export const ParticipantControls = () => {
     return (
         <div className="w-full flex flex-nowrap flex-column relative">
             <AudioPlaybackPrompt />
-            {!isLargerThanMd && !isNarrowHeight && pageCount > 1 && !isScreenShare && (
+            {!isLargerThanMd && !isNarrowHeight && pageCount > 1 && !isSpotlightLayout && (
                 <div className="w-full flex justify-center">
                     <Pagination
                         totalPages={pageCount}
@@ -298,14 +302,15 @@ export const ParticipantControls = () => {
 
                     <LeaveMeetingPopup />
                 </div>
-                <div className="flex flex-1 justify-end">
-                    {isLargerThanMd && !isScreenShare && pageCount > 1 && (
+                <div className="flex flex-1 justify-end items-center gap-2 pr-4">
+                    {isLargerThanMd && !isSpotlightLayout && pageCount > 1 && (
                         <Pagination
                             totalPages={pageCount}
                             currentPage={page}
                             onPageChange={(page) => dispatch(setPage(page))}
                         />
                     )}
+                    {isMeetParticipantsLayoutsEnabled && <LayoutSelector />}
                 </div>
             </div>
             {deviceStateContainer &&

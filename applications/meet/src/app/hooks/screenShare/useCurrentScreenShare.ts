@@ -10,7 +10,7 @@ import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting'
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { showPermissionsModal } from '@proton/meet/store/slices/deviceManagementSlice';
 import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagementSlice/types';
-import { setParticipantScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
+import { updateParticipantScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { isChrome, isMobile, isSafari, isWindows } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -47,7 +47,7 @@ export function useCurrentScreenShare({
     });
 
     useScreenShareRoomEvents(() => {
-        dispatch(setParticipantScreenShare(findScreenShare(room)?.participantIdentity ?? null));
+        dispatch(updateParticipantScreenShare(findScreenShare(room)?.participantIdentity ?? null));
     });
 
     const startScreenShare = useStableCallback(async () => {
