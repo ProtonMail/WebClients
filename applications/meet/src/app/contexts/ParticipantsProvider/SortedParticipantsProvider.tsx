@@ -12,6 +12,7 @@ import {
     removeSortedParticipant,
     resetSortedParticipants,
     selectPagedIdentities,
+    selectSidebarPagedIdentities,
     selectSortedParticipantIdentities,
     updateSortedParticipants,
 } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
@@ -110,9 +111,7 @@ export const SortedParticipantsProvider = ({ children }: { children: React.React
         };
     }, [throttledUpdateSortedParticipants, handleConnected, handleDisconnected, handleParticipantDisconnected, room]);
 
-    return (
-        <ParticipantsMapContext.Provider value={participantsMap}>{children}</ParticipantsMapContext.Provider>
-    );
+    return <ParticipantsMapContext.Provider value={participantsMap}>{children}</ParticipantsMapContext.Provider>;
 };
 
 export const useParticipantsMapContext = () => {
@@ -125,7 +124,9 @@ export const useSortedParticipants = () => {
 
     return useMemo(
         () =>
-            sortedParticipantIdentities.map((identity) => participantsMap.get(identity) as Participant).filter(Boolean),
+            sortedParticipantIdentities
+                .map((identity) => participantsMap.get(identity))
+                .filter((participant): participant is Participant => participant !== undefined),
         [sortedParticipantIdentities, participantsMap]
     );
 };
@@ -137,8 +138,21 @@ export const useSortedPagedParticipants = () => {
     return useMemo(
         () =>
             sortedPagedParticipantIdentities
-                .map((identity) => participantsMap.get(identity) as Participant)
-                .filter(Boolean),
+                .map((identity) => participantsMap.get(identity))
+                .filter((participant): participant is Participant => participant !== undefined),
         [sortedPagedParticipantIdentities, participantsMap]
+    );
+};
+
+export const useSidebarPagedParticipants = () => {
+    const sidebarPagedParticipantIdentities = useMeetSelector(selectSidebarPagedIdentities);
+    const participantsMap = useParticipantsMapContext();
+
+    return useMemo(
+        () =>
+            sidebarPagedParticipantIdentities
+                .map((identity) => participantsMap.get(identity))
+                .filter((participant): participant is Participant => participant !== undefined),
+        [sidebarPagedParticipantIdentities, participantsMap]
     );
 };

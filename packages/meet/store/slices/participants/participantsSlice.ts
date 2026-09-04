@@ -12,6 +12,7 @@ export interface ParticipantsState {
     participantsMap: Record<string, ParticipantEntity>;
     participantDecryptedNameMap: Record<string, string>;
     isFetchingParticipants: boolean;
+    activeSpeakerIdentity: string | null;
 }
 
 export const initialState: ParticipantsState = {
@@ -21,6 +22,7 @@ export const initialState: ParticipantsState = {
     participantsMap: {},
     participantDecryptedNameMap: {},
     isFetchingParticipants: false,
+    activeSpeakerIdentity: null,
 };
 
 const slice = createSlice({
@@ -35,6 +37,9 @@ const slice = createSlice({
         },
         setIsGuestAdmin: (state, action: PayloadAction<boolean>) => {
             state.isGuestAdmin = action.payload;
+        },
+        setActiveSpeakerIdentity: (state, action: PayloadAction<string>) => {
+            state.activeSpeakerIdentity = action.payload;
         },
         mergeParticipantsMap: (state, action: PayloadAction<Record<string, ParticipantEntity>>) => {
             state.participantsMap = { ...state.participantsMap, ...action.payload };
@@ -80,6 +85,7 @@ export const {
     resetParticipantMaps,
     setParticipantAdmin,
     setIsFetchingParticipants,
+    setActiveSpeakerIdentity,
     resetParticipants,
 } = slice.actions;
 
@@ -103,6 +109,8 @@ export const selectParticipantIsHostOrAdmin = createSelector(
 export const selectLocalParticipantColorIndex = (state: MeetState) => {
     return state.participants.localParticipantColorIndex;
 };
+
+export const selectActiveSpeakerIdentity = (state: MeetState) => state.participants.activeSpeakerIdentity;
 
 export const selectLocalParticipantIdentity = (state: MeetState) => {
     return state.participants.localParticipantIdentity;

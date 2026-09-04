@@ -3,42 +3,47 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcMeetParticipants } from '@proton/icons/icons/IcMeetParticipants';
-import { SCREEN_SHARE_PAGE_SIZE } from '@proton/meet/constants';
+import { PARTICIPANTS_SIDE_BAR_PAGE_SIZE } from '@proton/meet/constants';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
+    selectParticipantSideBarOpen,
+    selectShowsScreenShareInSidebar,
+    toggleParticipantSideBar,
+} from '@proton/meet/store/slices/layoutSlice';
+import {
     selectPage,
-    selectPageCount,
+    selectSidebarPageCount,
     setPage as setPageAction,
 } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import clsx from '@proton/utils/clsx';
 
 import { Pagination } from '../../../../../atoms/Pagination/Pagination';
-import { useSortedPagedParticipants } from '../../../../../contexts/ParticipantsProvider/SortedParticipantsProvider';
+import { useSidebarPagedParticipants } from '../../../../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { ParticipantTile } from '../ParticipantTile/ParticipantTile';
+import { ScreenShareTile } from '../ScreenShareTile';
 
 import './ParticipantSidebar.scss';
 
-export const ParticipantSidebar = ({
-    participantSideBarOpen,
-    setParticipantSideBarOpen,
-}: {
-    participantSideBarOpen: boolean;
-    setParticipantSideBarOpen: (open: boolean) => void;
-}) => {
+export const ParticipantSidebar = () => {
     const dispatch = useMeetDispatch();
     const page = useMeetSelector(selectPage);
     const setPage = (page: number) => dispatch(setPageAction(page));
-    const participants = useSortedPagedParticipants();
 
-    const pageCount = useMeetSelector(selectPageCount);
+    const participantSideBarOpen = useMeetSelector(selectParticipantSideBarOpen);
+
+    const sidebarParticipants = useSidebarPagedParticipants();
+
+    const pageCount = useMeetSelector(selectSidebarPageCount);
+
+    const showsScreenShareInSidebar = useMeetSelector(selectShowsScreenShareInSidebar);
 
     const ButtonIcon = participantSideBarOpen ? IcChevronRight : IcMeetParticipants;
 
     return (
-        <div className="participant-sidebar relative" style={{ '--items-per-page': SCREEN_SHARE_PAGE_SIZE }}>
+        <div className="participant-sidebar relative" style={{ '--items-per-page': PARTICIPANTS_SIDE_BAR_PAGE_SIZE }}>
             <Button
                 className="participant-sidebar__toggle absolute bg-weak border-none"
-                onClick={() => setParticipantSideBarOpen(!participantSideBarOpen)}
+                onClick={() => dispatch(toggleParticipantSideBar())}
                 title={participantSideBarOpen ? c('Action').t`Hide participants` : c('Action').t`Show participants`}
             >
                 <ButtonIcon size={6} />
@@ -54,12 +59,20 @@ export const ParticipantSidebar = ({
                         <Pagination totalPages={pageCount} currentPage={page} onPageChange={setPage} />
                     </div>
                 )}
-                {participantSideBarOpen &&
-                    participants.map((participant) => (
-                        <div key={participant.identity} className="participant-sidebar__list__item">
-                            <ParticipantTile participant={participant} viewSize="xsmall" />
-                        </div>
-                    ))}
+                {participantSideBarOpen && (
+                    <>
+                        {showsScreenShareInSidebar && (
+                            <div className="participant-sidebar__list__item">
+                                <ScreenShareTile />
+                            </div>
+                        )}
+                        {sidebarParticipants.map((participant) => (
+                            <div key={participant.identity} className="participant-sidebar__list__item">
+                                <ParticipantTile participant={participant} viewSize="xsmall" />
+                            </div>
+                        ))}
+                    </>
+                )}
             </div>
         </div>
     );
