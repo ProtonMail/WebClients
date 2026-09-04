@@ -372,13 +372,6 @@ export default function CommentPlugin({
   const { userName, suggestionsEnabled } = useSyncedState()
   const { displayNameForEmail } = useContactEmails()
 
-  const openLink = useCallback(
-    (url: string) => {
-      void controller.openLink(url).catch(reportErrorToSentry)
-    },
-    [controller],
-  )
-
   return (
     <CommentsProvider
       value={{
@@ -402,7 +395,6 @@ export default function CommentPlugin({
         userName,
         suggestionsEnabled,
         getDisplayNameForEmail: displayNameForEmail,
-        openLink,
         acceptSuggestion: controller.acceptSuggestion.bind(controller),
         rejectSuggestion: controller.rejectSuggestion.bind(controller),
         deleteThread: controller.deleteThread.bind(controller),
