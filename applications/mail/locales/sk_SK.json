@@ -2804,6 +2804,21 @@
       ],
       "Total": [
         "Celkom"
+      ],
+      "Amount due": [
+        "Dlžná suma"
+      ],
+      "Amount due after trial": [
+        "Splatná suma po skúšobnom období"
+      ],
+      "Amount due now": [
+        "Čiastka k zaplateniu teraz"
+      ],
+      "Total for ${ cycle } month": [
+        "Celkom za ${ cycle } mesiac",
+        "Celkom za ${ cycle } mesiace",
+        "Celkom za ${ cycle } mesiacov",
+        "Celkom za ${ cycle } mesiacov"
       ]
     },
     "Collapsible tooltip": {
@@ -6167,6 +6182,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet využíva ${ usedSpace } úložiska, čo presahuje pridelený priestor ${ inviteSpace }. Odstráňte niektoré údaje alebo požiadajte správcu plánu o navýšenie úložiska."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Pozývame vás, aby ste si prepojili svoj ${ BRAND_NAME } účet s touto rodinnou skupinou a mohli tak využívať všetky jej prémiové funkcie."
       ]
     },
     "familyOffer_2023:Label": {
@@ -10127,6 +10145,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "Do you remember your password?": [
+        "Pamätáte si svoje heslo?"
+      ],
+      "Opened a problem report": [
+        "Bolo vytvorené hlásenie o probléme"
       ]
     },
     "info": {

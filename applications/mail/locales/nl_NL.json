@@ -2748,6 +2748,19 @@
       ],
       "Total": [
         "Totaal"
+      ],
+      "Amount due": [
+        "Verschuldigd bedrag"
+      ],
+      "Amount due after trial": [
+        "Verschuldigd bedrag na proefperiode"
+      ],
+      "Amount due now": [
+        "Nu verschuldigd bedrag"
+      ],
+      "Total for ${ cycle } month": [
+        "Totaal voor ${ cycle } maand",
+        "Totaal voor ${ cycle } maanden"
       ]
     },
     "Collapsible tooltip": {
@@ -6055,6 +6068,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Uw account gebruikt ${ usedSpace } aan opslagruimte. Dat is meer dan de ${ inviteSpace } die aan u is toegewezen. Verwijder gegevens of vraag de abonnementsbeheerder uw opslagruimte uit te breiden."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "U wordt uitgenodigd om uw ${ BRAND_NAME }-account aan deze gezinsgroep te koppelen en van alle premiumfuncties te genieten."
       ]
     },
     "familyOffer_2023:Label": {
@@ -9741,6 +9757,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "U bent slechts een paar klikken verwijderd van een overzichtelijke inbox"
+      ],
+      "${ name } in ${ parentName }": [
+        "${ name } in ${ parentName }"
+      ],
+      "Change display setting": [
+        "Wijzig de weergave-instelling"
+      ],
+      "Do you remember your password?": [
+        "Weet u uw wachtwoord nog?"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Maak ${ MAIL_APP_NAME } uw standaard e-mailapplicatie."
+      ],
+      "Read your display settings": [
+        "Lees uw weergave-instellingen"
+      ],
+      "Update filter": [
+        "Update filter"
       ]
     },
     "info": {
@@ -10987,6 +11021,36 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Account holder name": [
+        "Naam van de rekeninghouder"
+      ],
+      "Column": [
+        "Kolom"
+      ],
+      "Comfortable": [
+        "Comfortabel"
+      ],
+      "Compact": [
+        "Compact"
+      ],
+      "Dropped frames": [
+        "Uitgevallen frames"
+      ],
+      "Encrypt": [
+        "Versleutelen"
+      ],
+      "Entries": [
+        "Invoer"
+      ],
+      "Grouped conversations": [
+        "Gegroepeerde gesprekken"
+      ],
+      "Row": [
+        "Rij"
+      ],
+      "Single messages": [
+        "Enkele berichten"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13166,6 +13230,9 @@
       ],
       "No parent folder": [
         "Geen bovenliggende map"
+      ],
+      "Remind me later": [
+        "Herinner mij later"
       ]
     },
     "Option group": {
@@ -17203,6 +17270,9 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "Change display setting": [
+        "Wijzig de weergave-instelling"
       ]
     },
     "Title header for keys table": {
