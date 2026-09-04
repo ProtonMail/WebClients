@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -30,15 +31,18 @@ export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
     });
     const { startFlow: startFeedbackFirstFlow, modals: feedbackFirstModals } = useFeedbackFirstCancellationFlow();
     const [subscription] = useSubscription();
+    const [paymentMethods, loadingPaymentMethods] = usePaymentMethods();
     const { isB2BTrial, isReferralTrial } = getTrialInfoForSingleSubscription(subscription);
     const [referralInfo] = useReferralInfo();
     const { referrerRewardAmount } = referralInfo.uiData;
 
     const { startCancellation } = useFeedbackFirstTelemetry();
 
-    if (loadingCancelSubscription) {
+    if (loadingCancelSubscription || loadingPaymentMethods) {
         return null;
     }
+
+    const hasPaymentMethod = !!paymentMethods?.length;
 
     const handleContinueClick = () => {
         if (isB2BTrial) {
@@ -57,8 +61,11 @@ export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
     let cancellationText = c('Info')
         .t`When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${BRAND_NAME} Free plan.`;
     if (isB2BTrial) {
-        cancellationText = c('b2b_trials_2025_Info')
-            .t`When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${BRAND_NAME} Free plan.`;
+        cancellationText = hasPaymentMethod
+            ? c('b2b_trials_2025_Info')
+                  .t`When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${BRAND_NAME} Free plan.`
+            : c('b2b_trials_2025_Info')
+                  .t`When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period.`;
     } else if (isReferralTrial) {
         cancellationText = c('Info')
             .t`When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${BRAND_NAME} Free plan.`;
