@@ -17,7 +17,7 @@ export type SheetsShellToEditorActions = {
 /** Editor→shell: the editor asks the shell to perform a side effect. */
 export type SheetsEditorToShellActions = {
   isFeatureFlagEnabled: (featureFlag: FeatureFlag) => Promise<boolean>
-  openLink: (url: string) => void
+  openLink: (url: string) => Promise<void>
   handleFileMenuAction: (action: FileMenuAction) => Promise<void>
   storeSpreadsheetAction: (type: SheetsActionType, content: unknown) => void
   storeSpreadsheetPatches: (patches: unknown, updateHash: string, type?: SheetsPatchesType) => void
@@ -32,6 +32,7 @@ export type SheetsEditorToShellActions = {
       lockEditor?: boolean
     },
   ) => void
+  reportError: (error: unknown, extra?: Record<string, unknown>) => void
   reportSheetsYjsDriftDetected: (reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs') => void
   showYjsDriftDetectedErrorModal: (driftLogDetails: Record<string, unknown>) => void
 }
@@ -49,6 +50,7 @@ export type SheetsSession = {
   }
   logger: SheetsLogger
   appPlatform: AppPlatform | null
+  theme: 'light' | 'dark'
 }
 
 export type SheetsDependencies = SheetsShellToEditorActions & SheetsEditorToShellActions & SheetsSession
