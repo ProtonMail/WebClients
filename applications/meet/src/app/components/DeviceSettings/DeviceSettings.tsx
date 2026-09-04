@@ -353,10 +353,8 @@ export const DeviceSettings = ({
                 )}
                 {!isMobile() && (
                     <div
-                        className={clsx(
-                            'device-selectors flex flex-nowrap gap-2 mt-2',
-                            isBackgroundsOpen && 'visibility-hidden'
-                        )}
+                        className="device-selectors flex flex-nowrap gap-2 mt-2"
+                        {...(isBackgroundsOpen ? { inert: '' } : {})}
                     >
                         <DeviceSelect
                             label={microphoneLabel}
