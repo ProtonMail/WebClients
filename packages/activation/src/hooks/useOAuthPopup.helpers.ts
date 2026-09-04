@@ -3,7 +3,7 @@ import { createUrl } from '@proton/shared/lib/fetch/helpers';
 import type { ApiEnvironmentConfig } from '@proton/shared/lib/interfaces';
 
 import { EASY_SWITCH_FEATURES, ImportProvider, ImportType, OAUTH_PROVIDER } from '../interface';
-import { G_OAUTH_REDIRECT_PATH, O_OAUTH_REDIRECT_PATH, Z_OAUTH_REDIRECT_PATH } from '../path';
+import { G_OAUTH_REDIRECT_PATH, M_OAUTH_REDIRECT_PATH, O_OAUTH_REDIRECT_PATH, Z_OAUTH_REDIRECT_PATH } from '../path';
 
 export const getEasySwitchFeaturesFromProducts = (importTypes: ImportType[]) => {
     const features: EASY_SWITCH_FEATURES[] = [];
@@ -72,23 +72,25 @@ const generateZoomOAuthUrl = (params: URLSearchParams, config: ApiEnvironmentCon
 export const getOAuthRedirectURL = (provider: ImportProvider | OAUTH_PROVIDER) => {
     const { protocol, host } = window.location;
 
-    if (
-        provider === ImportProvider.GOOGLE ||
-        provider === OAUTH_PROVIDER.GOOGLE ||
-        provider === OAUTH_PROVIDER.GSUITE
-    ) {
-        return `${protocol}//${host}${G_OAUTH_REDIRECT_PATH}`;
-    }
+    const path = (() => {
+        switch (provider) {
+            case ImportProvider.GOOGLE:
+            case OAUTH_PROVIDER.GOOGLE:
+            case OAUTH_PROVIDER.GSUITE:
+                return G_OAUTH_REDIRECT_PATH;
+            case ImportProvider.OUTLOOK:
+            case OAUTH_PROVIDER.OUTLOOK:
+                return O_OAUTH_REDIRECT_PATH;
+            case OAUTH_PROVIDER.MICROSOFT_BUSINESS:
+                return M_OAUTH_REDIRECT_PATH;
+            case OAUTH_PROVIDER.ZOOM:
+                return Z_OAUTH_REDIRECT_PATH;
+            default:
+                throw new Error('Provider does not exist');
+        }
+    })();
 
-    if (provider === ImportProvider.OUTLOOK || provider === OAUTH_PROVIDER.OUTLOOK) {
-        return `${protocol}//${host}${O_OAUTH_REDIRECT_PATH}`;
-    }
-
-    if (provider === OAUTH_PROVIDER.ZOOM) {
-        return `${protocol}//${host}${Z_OAUTH_REDIRECT_PATH}`;
-    }
-
-    throw new Error('Provider does not exist');
+    return `${protocol}//${host}${path}`;
 };
 
 export const getOAuthAuthorizationUrl = ({
@@ -139,6 +141,8 @@ export const getProviderNumber = (provider: ImportProvider | OAUTH_PROVIDER) => 
             return OAUTH_PROVIDER.ZOOM;
         case OAUTH_PROVIDER.GSUITE:
             return OAUTH_PROVIDER.GSUITE;
+        case OAUTH_PROVIDER.MICROSOFT_BUSINESS:
+            return OAUTH_PROVIDER.MICROSOFT_BUSINESS;
         default:
             throw new Error('Provider does not exist');
     }

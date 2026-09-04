@@ -255,7 +255,10 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
             isDisabled: !model.selectedProducts.length,
         },
         'install-app': {
-            text: c('Step').t`Install migration app`,
+            text:
+                model.provider.installApp.type === 'consent'
+                    ? c('Step').t`Grant access`
+                    : c('Step').t`Install migration app`,
             isCompleted: () => model.connectionState === 'connected',
             isDisabled: !model.selectedProducts.length || !model.tokens?.length,
         },
