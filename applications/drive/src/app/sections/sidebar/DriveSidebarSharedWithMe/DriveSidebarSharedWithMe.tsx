@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import clsx from '@proton/utils/clsx';
 
 import { useInvitationCountStore } from '../../../modules/invitations';
@@ -44,7 +45,7 @@ export const DriveSidebarSharedWithMe = ({ shareId, collapsed }: DriveSidebarSha
         invitationsCount
     );
     return (
-        <DriveSidebarListItem to="/shared-with-me" icon="users" shareId={shareId} collapsed={collapsed}>
+        <DriveSidebarListItem to="/shared-with-me" icon={IcUsers} shareId={shareId} collapsed={collapsed}>
             <span className={clsx('text-ellipsis', collapsed && 'sr-only')} title={c('Link').t`Shared with me`}>{c(
                 'Link'
             ).t`Shared with me`}</span>

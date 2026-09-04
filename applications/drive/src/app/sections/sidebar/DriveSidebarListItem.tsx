@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { SidebarListItem, SidebarListItemContent, SidebarListItemContentIcon } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import clsx from '@proton/utils/clsx';
 
@@ -13,7 +13,7 @@ import { useVolumesState } from '../../legacy/store/_volumes';
 
 interface DriveSidebarListItemProps {
     children: React.ReactNode;
-    icon: IconName;
+    icon: IconComponent;
     shareId?: string;
     to: string;
     rightIcon?: React.ReactNode;
@@ -28,7 +28,7 @@ interface DriveSidebarListItemProps {
 export const DriveSidebarListItem = ({
     to,
     children,
-    icon,
+    icon: Icon,
     shareId,
     rightIcon,
     onDoubleClick,
@@ -42,7 +42,7 @@ export const DriveSidebarListItem = ({
     const volumeState = useVolumesState();
     const [refreshing, withRefreshing] = useLoading(false);
 
-    const left = icon ? <SidebarListItemContentIcon name={icon} /> : null;
+    const left = Icon ? <SidebarListItemContentIcon icon={Icon} /> : null;
 
     const handleDoubleClick = () => {
         onDoubleClick?.();

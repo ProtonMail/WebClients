@@ -1,4 +1,4 @@
-import { getCategoryIconName } from '@proton/mail/features/categoriesView/CategoryIcon';
+import { getCategoryIconComponent } from '@proton/mail/features/categoriesView/CategoryIcon';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
@@ -12,7 +12,7 @@ export const getCategorySystemFolder = (category: CategoryTab): SystemFolder => 
     return {
         labelID: category.id,
         ID: category.id,
-        icon: getCategoryIconName(category.id, 'outlined'),
+        icon: getCategoryIconComponent(category.id, 'outlined'),
         text: label,
         visible: true,
         order: 0,

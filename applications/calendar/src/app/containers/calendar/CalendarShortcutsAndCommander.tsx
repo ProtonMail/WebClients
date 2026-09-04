@@ -6,6 +6,14 @@ import Commander from '@proton/components/components/commander/Commander';
 import type { CommanderItemInterface } from '@proton/components/components/commander/Commander';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import CalendarShortcutsModal from '@proton/components/containers/calendar/shortcutsModal/CalendarShortcutsModal';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
+import { IcCalendarDay } from '@proton/icons/icons/IcCalendarDay';
+import { IcCalendarMonth } from '@proton/icons/icons/IcCalendarMonth';
+import { IcCalendarToday } from '@proton/icons/icons/IcCalendarToday';
+import { IcCalendarWeek } from '@proton/icons/icons/IcCalendarWeek';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
+import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import type { AttendeeModel } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
@@ -75,7 +83,7 @@ const CalendarShortcutsAndCommander = ({
         () =>
             [
                 onCreateEvent && {
-                    icon: 'plus-circle',
+                    icon: IcPlusCircle,
                     label: c('Commander action').t`New event`,
                     value: 'create-event',
                     action: () => {
@@ -84,7 +92,7 @@ const CalendarShortcutsAndCommander = ({
                     shortcuts: ['N'],
                 },
                 {
-                    icon: 'calendar-today',
+                    icon: IcCalendarToday,
                     label: c('Commander action').t`Today`,
                     value: 'move-to-today',
                     action: () => {
@@ -93,7 +101,7 @@ const CalendarShortcutsAndCommander = ({
                     shortcuts: ['T'],
                 },
                 {
-                    icon: 'calendar-day',
+                    icon: IcCalendarDay,
                     label: c('Commander action').t`Day view`,
                     value: 'show-day-view',
                     action: () => {
@@ -102,7 +110,7 @@ const CalendarShortcutsAndCommander = ({
                     shortcuts: ['1'],
                 },
                 {
-                    icon: 'calendar-week',
+                    icon: IcCalendarWeek,
                     label: c('Commander action').t`Week view`,
                     value: 'show-week-view',
                     action: () => {
@@ -111,7 +119,7 @@ const CalendarShortcutsAndCommander = ({
                     shortcuts: ['2'],
                 },
                 {
-                    icon: 'calendar-month',
+                    icon: IcCalendarMonth,
                     label: c('Commander action').t`Month view`,
                     value: 'show-month-view',
                     action: () => {
@@ -120,7 +128,7 @@ const CalendarShortcutsAndCommander = ({
                     shortcuts: ['3'],
                 },
                 {
-                    icon: 'arrow-right',
+                    icon: IcArrowRight,
                     label: c('Commander action').t`Next period`,
                     value: 'go-to-next-view',
                     action: () => {
@@ -129,7 +137,7 @@ const CalendarShortcutsAndCommander = ({
                     shortcuts: ['→'],
                 },
                 {
-                    icon: 'arrow-left',
+                    icon: IcArrowLeft,
                     label: c('Commander action').t`Previous period`,
                     value: 'go-to-previous-view',
                     action: () => {
@@ -138,7 +146,7 @@ const CalendarShortcutsAndCommander = ({
                     shortcuts: ['←'],
                 },
                 {
-                    icon: 'magnifier',
+                    icon: IcMagnifier,
                     label: c('Commander action').t`Search events`,
                     value: 'focus-search-bar',
                     action: () => {

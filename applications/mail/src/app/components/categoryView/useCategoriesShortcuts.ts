@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import type { CommanderItemInterface } from '@proton/components/components/commander/Commander';
 import type { Hotkey, HotkeyTuple } from '@proton/components/hooks/useHotkeys';
-import { getCategoryIconName } from '@proton/mail/features/categoriesView/CategoryIcon';
+import { IcInbox } from '@proton/icons/icons/IcInbox';
+import { getCategoryIconComponent } from '@proton/mail/features/categoriesView/CategoryIcon';
 import { getCategoryCommanderKeyboardShortcut } from '@proton/mail/features/categoriesView/categoriesHelpers';
 import { getLabelFromCategoryIdInCommander } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
@@ -34,7 +35,7 @@ export const useCategoriesShortcuts = () => {
     const moveToCategoriesOption: CommanderItemInterface[] =
         isCategoryViewEnabled && activeCategoriesTabs.length > 0
             ? activeCategoriesTabs.map((category) => ({
-                  icon: getCategoryIconName(category.id, 'outlined'),
+                  icon: getCategoryIconComponent(category.id, 'outlined'),
                   label: getLabelFromCategoryIdInCommander(category.id),
                   value: category.id,
                   action: () => navigateToCategory(category.id, 'commander'),
@@ -46,7 +47,7 @@ export const useCategoriesShortcuts = () => {
               }))
             : [
                   {
-                      icon: 'inbox',
+                      icon: IcInbox,
                       label: c('Commander action').t`Go to Inbox`,
                       value: 'inbox',
                       action: () => navigateTo(MAILBOX_LABEL_IDS.INBOX),

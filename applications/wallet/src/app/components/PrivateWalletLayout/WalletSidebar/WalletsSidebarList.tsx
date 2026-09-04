@@ -18,8 +18,9 @@ import {
     SubSidebarListItem,
     useModalState,
 } from '@proton/components';
-import useToggle from '@proton/hooks/useToggle'
+import useToggle from '@proton/hooks/useToggle';
 import { IcCogDrawer } from '@proton/icons/icons/IcCogDrawer';
+import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData } from '@proton/wallet/types';
@@ -128,7 +129,7 @@ const WalletsSidebarListItem = ({ wallet, onAddWalletAccount, theme, apiWalletsD
                         <SidebarListItemButton onClick={() => onAddWalletAccount()}>
                             <SidebarListItemContent
                                 data-testid="wallet-sidebar:add-wallet-account-item"
-                                left={<SidebarListItemContentIcon className="color-hint" name="plus-circle" />}
+                                left={<SidebarListItemContentIcon icon={IcPlusCircle} className="color-hint" />}
                                 className="sidebar-item-content flex gap-2 w-full pl-6"
                             >
                                 <div className="flex flex-row flex-nowrap justify-space-between items-center w-full relative color-hint">

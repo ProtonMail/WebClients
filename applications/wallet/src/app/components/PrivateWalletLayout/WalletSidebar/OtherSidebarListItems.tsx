@@ -6,7 +6,6 @@ import { signoutAction } from '@proton/account';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import type { IconProps } from '@proton/components';
 import {
     AuthenticatedBugModal,
     SettingsLink,
@@ -20,8 +19,16 @@ import {
     useModalState,
 } from '@proton/components';
 import useToggle from '@proton/hooks/useToggle';
+import type { IconComponent } from '@proton/icons/component';
+import { IcArrowOutFromRectangle } from '@proton/icons/icons/IcArrowOutFromRectangle';
+import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
+import { IcLifeRing } from '@proton/icons/icons/IcLifeRing';
+import { IcShield2 } from '@proton/icons/icons/IcShield2';
+import { IcSquaresInSquare } from '@proton/icons/icons/IcSquaresInSquare';
+import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
+import { IcUser } from '@proton/icons/icons/IcUser';
 import { PLANS } from '@proton/payments/core/constants';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import clsx from '@proton/utils/clsx';
@@ -32,17 +39,17 @@ import { useUpsellModal } from '../../../hooks/useUpsellModal';
 interface Props {
     label: string;
     to: string;
-    icon: IconProps['name'];
+    icon: IconComponent;
     'data-testid'?: string;
     children?: ReactNode;
 }
 
-const SidebarItemContent = ({ label, to, icon, ...props }: Props) => {
+const SidebarItemContent = ({ label, to, icon: Icon, ...props }: Props) => {
     return (
         <SidebarListItemSettingsLink path={to} target="_blank">
             <SidebarListItemContent
                 data-testid={props['data-testid']}
-                left={<SidebarListItemContentIcon size={5} className="color-weak" name={icon} />}
+                left={<SidebarListItemContentIcon icon={Icon} size={5} className="color-weak" />}
                 className="sidebar-item-content flex gap-2 max-w-full pl-6"
             >
                 <div className="block text-ellipsis" title={label}>
@@ -88,7 +95,7 @@ export const OtherSidebarListItems = () => {
                 <SidebarListItem>
                     <SidebarListItemButton data-testid="wallet-sidebar:upgrade" onClick={openUpsellModal}>
                         <SidebarListItemContent
-                            left={<SidebarListItemContentIcon size={5} className="color-weak" name={'upgrade'} />}
+                            left={<SidebarListItemContentIcon icon={IcUpgrade} size={5} className="color-weak" />}
                             className="sidebar-item-content flex gap-2 max-w-full"
                         >
                             <div className="block text-ellipsis" title={upgradeLabel}>
@@ -102,7 +109,7 @@ export const OtherSidebarListItems = () => {
                 <SidebarListItemLink to={'/discover'}>
                     <SidebarListItemContent
                         data-testid="wallet-sidebar:discover"
-                        left={<SidebarListItemContentIcon size={5} className="color-weak" name="squares-in-square" />}
+                        left={<SidebarListItemContentIcon icon={IcSquaresInSquare} size={5} className="color-weak" />}
                         className="sidebar-item-content flex gap-2 max-w-full"
                     >
                         <div className="ml-1 flex flex-nowrap justify-space-between items-center w-full relative">
@@ -117,7 +124,7 @@ export const OtherSidebarListItems = () => {
                 <SidebarListItemSettingsLink path={'/'} target="_blank">
                     <SidebarListItemContent
                         data-testid="wallet-sidebar:settings"
-                        left={<SidebarListItemContentIcon size={5} className="color-weak" name="user" />}
+                        left={<SidebarListItemContentIcon icon={IcUser} size={5} className="color-weak" />}
                         right={
                             <SidebarExpandButton
                                 className="wallet-expand-button color-hint"
@@ -141,7 +148,7 @@ export const OtherSidebarListItems = () => {
                     <ul className="unstyled m-0">
                         <SidebarListItem itemClassName={'navigation-item w-full mb-0.5 my-2'}>
                             <SidebarItemContent
-                                icon="arrow-rotate-right"
+                                icon={IcArrowRotateRight}
                                 to="/recovery"
                                 data-testid="wallet-sidebar:recovery"
                                 label={recoveryLabel}
@@ -149,7 +156,7 @@ export const OtherSidebarListItems = () => {
                         </SidebarListItem>
                         <SidebarListItem itemClassName={'navigation-item w-full mb-0.5 my-2'}>
                             <SidebarItemContent
-                                icon="shield-2"
+                                icon={IcShield2}
                                 to="/security"
                                 data-testid="wallet-sidebar:security"
                                 label={securityLabel}
@@ -164,7 +171,7 @@ export const OtherSidebarListItems = () => {
                 <SidebarListItemButton onClick={() => setBugReportModal(true)}>
                     <SidebarListItemContent
                         data-testid="wallet-sidebar:support"
-                        left={<SidebarListItemContentIcon className="color-weak" size={5} name="life-ring" />}
+                        left={<SidebarListItemContentIcon icon={IcLifeRing} size={5} className="color-weak" />}
                         className="sidebar-item-content flex gap-2 full"
                     >
                         <div className="block text-ellipsis" title={supportLabel}>
@@ -179,9 +186,9 @@ export const OtherSidebarListItems = () => {
                         data-testid="wallet-sidebar:signout"
                         left={
                             <SidebarListItemContentIcon
-                                className="color-weak"
+                                icon={IcArrowOutFromRectangle}
                                 size={5}
-                                name="arrow-out-from-rectangle"
+                                className="color-weak"
                             />
                         }
                         className="sidebar-item-content flex gap-2 full"

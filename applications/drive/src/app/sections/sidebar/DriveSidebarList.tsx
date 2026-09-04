@@ -6,6 +6,10 @@ import { useShallow } from 'zustand/react/shallow';
 import { Loader, SidebarList } from '@proton/components';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { DirectoryTreeRootType, type directoryTreeFactory } from '@proton/drive/modules/directoryTree';
+import { IcImage } from '@proton/icons/icons/IcImage';
+import { IcInbox } from '@proton/icons/icons/IcInbox';
+import { IcLink } from '@proton/icons/icons/IcLink';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import clsx from '@proton/utils/clsx';
 
 import { useDriveSharingFlags } from '../../legacy/store';
@@ -70,7 +74,7 @@ export const DriveSidebarList = ({ shareId, store }: DriveSidebarListProps) => {
                     isCollapsed={isCollapsed}
                 />
             ) : (
-                <DriveSidebarListItem to="/" icon="inbox" collapsed={isCollapsed}>
+                <DriveSidebarListItem to="/" icon={IcInbox} collapsed={isCollapsed}>
                     <span className="text-ellipsis">{c('Title').t`My files`}</span>
                     <Loader className="drive-sidebar--icon inline-flex" />
                 </DriveSidebarListItem>
@@ -85,20 +89,20 @@ export const DriveSidebarList = ({ shareId, store }: DriveSidebarListProps) => {
                 />
             )}
 
-            <DriveSidebarListItem to="/photos" icon="image" collapsed={isCollapsed}>
+            <DriveSidebarListItem to="/photos" icon={IcImage} collapsed={isCollapsed}>
                 <span className={clsx('text-ellipsis', isCollapsed && 'sr-only')} title={c('Link').t`Photos`}>
                     {c('Link').t`Photos`}
                 </span>
             </DriveSidebarListItem>
 
-            <DriveSidebarListItem to="/shared-urls" icon="link" shareId={shareId} collapsed={isCollapsed}>
+            <DriveSidebarListItem to="/shared-urls" icon={IcLink} shareId={shareId} collapsed={isCollapsed}>
                 <span className={clsx('text-ellipsis', isCollapsed && 'sr-only')} title={c('Link').t`Shared`}>{c('Link')
                     .t`Shared`}</span>
             </DriveSidebarListItem>
 
             {showSharedWithMeSection && <DriveSidebarSharedWithMe shareId={shareId} collapsed={isCollapsed} />}
 
-            <DriveSidebarListItem to="/trash" icon="trash" shareId={shareId} collapsed={isCollapsed}>
+            <DriveSidebarListItem to="/trash" icon={IcTrash} shareId={shareId} collapsed={isCollapsed}>
                 <span className={clsx('text-ellipsis', isCollapsed && 'sr-only')} title={c('Link').t`Trash`}>{c('Link')
                     .t`Trash`}</span>
             </DriveSidebarListItem>
