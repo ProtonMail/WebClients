@@ -9,7 +9,15 @@ jest.mock('@proton/shared/lib/env', () => ({
 
 const mockIsDevOrBlackHost = isDevOrBlackHost as jest.MockedFunction<typeof isDevOrBlackHost>;
 
+const setWebDriver = (value: boolean) => {
+    Object.defineProperty(window.navigator, 'webdriver', { value, configurable: true });
+};
+
 describe('isUnleashToolbarEnabled', () => {
+    beforeEach(() => {
+        setWebDriver(false);
+    });
+
     afterEach(() => {
         jest.clearAllMocks();
         window.localStorage.clear();
@@ -47,6 +55,21 @@ describe('isUnleashToolbarEnabled', () => {
         mockIsDevOrBlackHost.mockReturnValue(false);
         window.localStorage.setItem(DISABLE_UNLEASH_TOOLBAR_KEY, 'true');
 
+        expect(isUnleashToolbarEnabled()).toBe(false);
+    });
+
+    it('returns false on a dev or black host driven by WebDriver', () => {
+        mockIsDevOrBlackHost.mockReturnValue(true);
+        setWebDriver(true);
+
+        expect(isUnleashToolbarEnabled()).toBe(false);
+    });
+
+    it('stays disabled under WebDriver with no opt-out key present', () => {
+        mockIsDevOrBlackHost.mockReturnValue(true);
+        setWebDriver(true);
+
+        expect(window.localStorage.getItem(DISABLE_UNLEASH_TOOLBAR_KEY)).toBeNull();
         expect(isUnleashToolbarEnabled()).toBe(false);
     });
 });
