@@ -3,8 +3,10 @@ import { useCallback, useRef, useState } from 'react';
 import { useModalStateObject } from '@proton/components';
 
 import PaperTrailPanel from '../../features/aiPaperTrail/PaperTrailPanel';
+import ApertusAnnouncementPanel from '../../features/notification/ApertusAnnouncementPanel';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
+import { useShouldShowApertusAnnouncement } from '../../hooks/useShouldShowApertusAnnouncement';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useConversationActions } from '../../providers/ConversationActionsProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
@@ -40,6 +42,8 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
     const { handleSendMessage } = useConversationActions();
     const { isSmallScreen } = useIsLumoSmallScreen();
     const { aiPaperTrailPopup, aiPaperTrailRoute } = useLumoFlags();
+    const { shouldShowApertusAnnouncement, dismissApertusAnnouncement } =
+        useShouldShowApertusAnnouncement();
 
     const filesContainerRef = useRef<HTMLDivElement>(null);
     const isGuest = useIsGuest();
@@ -103,7 +107,11 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                             <LumoCatAnimation isGhostMode={isGhostChatMode} />
                             <LumoMainText isSmallScreen={isSmallScreen} isGhostMode={isGhostChatMode} />
                         </div>
-                        {aiPaperTrailRoute && aiPaperTrailPopup && <PaperTrailPanel />}
+                        {shouldShowApertusAnnouncement ? (
+                            <ApertusAnnouncementPanel onDismiss={dismissApertusAnnouncement} />
+                        ) : (
+                            aiPaperTrailRoute && aiPaperTrailPopup && <PaperTrailPanel />
+                        )}
 
                         <div className="composer-container md:px-4 w-full relative">
                             <ImageLimitNotice exceedsLimit={imageLimitExceeded} />

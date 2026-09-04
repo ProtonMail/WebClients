@@ -4,6 +4,7 @@ import { useLumoFlags } from '../hooks/useLumoFlags';
 import { useLumoUserSettings } from '../hooks/useLumoUserSettings';
 import { useMaxModelAvailability } from '../hooks/useMaxModelAvailability';
 import { resolveAvailableModelTier, useRemainingLimits } from '../services/usageLimitsStore';
+import { getApertusOnboardingAcceptedAt } from '../util/apertusOnboardingStorage';
 import { useIsGuest } from './IsGuestProvider';
 import { useModelTier } from './modelTierContext';
 
@@ -31,6 +32,14 @@ export const ModelTierPreferencesSync = () => {
         }
 
         if (preferredModelTier) {
+            if (
+                preferredModelTier === 'apertus-15' &&
+                !lumoUserSettings.apertusOnboardingAcceptedAt &&
+                !getApertusOnboardingAcceptedAt()
+            ) {
+                return;
+            }
+
             const availableTier = resolveAvailableModelTier(preferredModelTier, remainingLimits, {
                 isMaxAvailable: isMaxAvailableByFlag,
                 isApertusEnabled: apertusModelAvailable,
@@ -43,6 +52,7 @@ export const ModelTierPreferencesSync = () => {
         isMaxAvailableByFlag,
         lumoUserSettings.preferredModelTier,
         lumoUserSettings.preferredResponseMode,
+        lumoUserSettings.apertusOnboardingAcceptedAt,
         remainingLimits,
         setModelTierWithoutPersist,
         setResponseModeWithoutPersist,
