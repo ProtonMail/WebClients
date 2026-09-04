@@ -10,7 +10,10 @@ import { getItem } from '@proton/shared/lib/helpers/storage';
  */
 export const DISABLE_UNLEASH_TOOLBAR_KEY = 'disable-unleash-toolbar';
 
+const isWebDriverControlled = () => navigator.webdriver === true;
+
 export const isUnleashToolbarEnabled = () =>
     typeof window !== 'undefined' &&
+    !isWebDriverControlled() &&
     getItem(DISABLE_UNLEASH_TOOLBAR_KEY) !== 'true' &&
     isDevOrBlackHost(window.location.host);
