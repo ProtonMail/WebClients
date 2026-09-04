@@ -9,7 +9,6 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
-    Checkbox,
     InputFieldTwo,
     ModalTwo,
     ModalTwoContent,
@@ -23,7 +22,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { APERTUS_15_MODEL } from '@proton/lumo-api-client/core/chat-completions';
 import type { AssistantFeedback } from '@proton/shared/lib/api/feedback';
 import { sendAssistantFeedback } from '@proton/shared/lib/api/feedback';
-import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { stripAttachmentMarkdown } from '../../lib/imageAttachment';
 import { useLumoSelector } from '../../redux/hooks';
@@ -41,7 +40,6 @@ import { getNativeAppInfo } from '../../util/userAgent';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
 
 type FeedbackIntroType = 'positive' | 'negative';
-type FeedbackStep = 'form' | 'preview';
 
 interface Props {
     result?: string;
@@ -64,18 +62,9 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
     const [selectedOption, setSelectedOption] = useState<string | undefined>(undefined);
     const [body, setBody] = useState<string | undefined>(undefined);
     const [introType, setIntroType] = useState<FeedbackIntroType | undefined>(undefined);
-    const [feedbackStep, setFeedbackStep] = useState<FeedbackStep>('form');
-    const [shareContentEnabled, setShareContentEnabled] = useState(false);
-    const [shareWithApertusEnabled, setShareWithApertusEnabled] = useState(false);
-    const [sharePrompt, setSharePrompt] = useState('');
-    const [shareResponse, setShareResponse] = useState('');
 
-    // Apertus is only ever served when the user explicitly selects it (never via `auto`), so the
-    // deterministic `requestedModel` hint is a reliable signal for offering the Apertus opt-in.
+    // Apertus is only ever served when the user explicitly selects it (never via `auto`).
     const isApertusModel = message.requestedModel?.startsWith(APERTUS_15_MODEL) ?? false;
-
-    const shareContentCheckboxId = `model-content-${message.id}`;
-    const shareWithApertusCheckboxId = `share-apertus-${message.id}`;
 
     const feedbackMetadata = useMemo((): Pick<
         AssistantFeedback,
@@ -107,11 +96,6 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
     const resetFeedbackForm = useCallback(() => {
         setSelectedOption(undefined);
         setBody(undefined);
-        setFeedbackStep('form');
-        setShareContentEnabled(false);
-        setShareWithApertusEnabled(false);
-        setSharePrompt('');
-        setShareResponse('');
     }, []);
 
     const feedbackModal = useModalStateObject({
@@ -138,6 +122,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                     ...feedbackMetadata,
                     Body: '',
                     Component: 'Lumo',
+                    ...(isApertusModel ? { ShareWithApertus: true } : {}),
                 })
             );
 
@@ -151,7 +136,13 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
             });
             setFeedbackSubmitted(false);
         }
-    }, [api, createNotification, feedbackMetadata, setFeedbackSubmitted]);
+    }, [
+        api,
+        createNotification,
+        feedbackMetadata,
+        isApertusModel,
+        setFeedbackSubmitted,
+    ]);
 
     const handleThumbUpClick = useCallback(() => {
         if (hasSeenPositiveFeedbackIntro()) {
@@ -228,39 +219,14 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
             Sentiment: 'Negative',
             Environment: 'Remote',
             ...feedbackMetadata,
-            ...(isApertusModel ? { ShareWithApertus: shareWithApertusEnabled } : {}),
+            ...(isApertusModel ? { ShareWithApertus: true } : {}),
             Body: body || '',
             Component: 'Lumo',
-            Prompt: undefined,
-            ModelOutput: undefined,
+            Prompt: stripAttachmentMarkdown(parentMessage?.content ?? ''),
+            ModelOutput: stripAttachmentMarkdown(message.content ?? ''),
         };
 
-        if (shareContentEnabled) {
-            setSharePrompt(stripAttachmentMarkdown(parentMessage?.content ?? ''));
-            setShareResponse(stripAttachmentMarkdown(message?.content ?? ''));
-            setFeedbackStep('preview');
-            return;
-        }
-
         await submitFeedback(requestBody);
-    };
-
-    const handlePreviewSubmit = async () => {
-        if (!selectedOption) {
-            return;
-        }
-
-        await submitFeedback({
-            Category: selectedOption,
-            Sentiment: 'Negative',
-            Environment: 'Remote',
-            ...feedbackMetadata,
-            ...(isApertusModel ? { ShareWithApertus: shareWithApertusEnabled } : {}),
-            Body: body || '',
-            Component: 'Lumo',
-            Prompt: stripAttachmentMarkdown(sharePrompt),
-            ModelOutput: stripAttachmentMarkdown(shareResponse),
-        });
     };
 
     const feedbackOptions = [
@@ -330,14 +296,14 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                 </Button>
             </Tooltip>
             <ModalTwo {...introModal.modalProps}>
-                <ModalTwoHeader title={c('collider_2025: Header').t`Your feedback is private`} />
+                <ModalTwoHeader title={c('collider_2025: Header').t`Help us improve`} />
                 <ModalTwoContent>
                     <p className="m-0 color-weak">
                         {introType === 'positive'
                             ? c('collider_2025: Info')
-                                  .t`This lets us know you were happy with the response. We never see your prompt or ${LUMO_SHORT_APP_NAME}'s reply.`
+                                  .t`This shares your general sentiment and response metadata with ${BRAND_NAME}. Your prompt and the response are not included.`
                             : c('collider_2025: Info')
-                                  .t`This lets us know you weren't happy with the response. We never see your prompt or ${LUMO_SHORT_APP_NAME}'s reply unless you explicitly share it with us.`}
+                                  .t`When you submit feedback, your prompt and this response are sent to ${BRAND_NAME} for analysis and improvement. Feedback about Apertus may also be shared with the Apertus team.`}
                     </p>
                 </ModalTwoContent>
                 <ModalTwoFooter className="flex justify-end">
@@ -346,141 +312,60 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                 </ModalTwoFooter>
             </ModalTwo>
             <ModalTwo
-                as={feedbackStep === 'form' ? 'form' : 'div'}
-                onSubmit={
-                    feedbackStep === 'form'
-                        ? (e: FormEvent<HTMLFormElement>) => withLoading(handleSubmit(e))
-                        : undefined
-                }
+                as="form"
+                onSubmit={(e: FormEvent<HTMLFormElement>) => withLoading(handleSubmit(e))}
                 {...feedbackModal.modalProps}
             >
-                <ModalTwoHeader
-                    title={
-                        feedbackStep === 'preview'
-                            ? c('collider_2025: Header').t`Review what you're sharing`
-                            : c('collider_2025: Header').t`Tell us more`
-                    }
-                />
+                <ModalTwoHeader title={c('collider_2025: Header').t`Tell us more`} />
                 <ModalTwoContent>
-                    {feedbackStep === 'form' ? (
-                        <>
-                            <ul className="unstyled m-0 mb-1">
-                                {feedbackOptions.map(({ label, value }) => {
-                                    const isSelected = selectedOption === value;
+                    <ul className="unstyled m-0 mb-1">
+                        {feedbackOptions.map(({ label, value }) => {
+                            const isSelected = selectedOption === value;
 
-                                    return (
-                                        <li className="inline-flex" key={value}>
-                                            <Button
-                                                size="small"
-                                                shape={isSelected ? 'solid' : 'outline'}
-                                                color={isSelected ? 'norm' : undefined}
-                                                className="mr-2 mb-2"
-                                                aria-pressed={isSelected}
-                                                onClick={() => setSelectedOption(value)}
-                                            >
-                                                {label}
-                                            </Button>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                            <InputFieldTwo
-                                as={TextAreaTwo}
-                                rows={3}
-                                label={textareaPlaceholder}
-                                maxLength={1000}
-                                value={body ?? ''}
-                                onChange={({ target }) => setBody(target.value)}
-                            />
-                            <div className="flex flex-nowrap items-start">
-                                <Checkbox
-                                    id={shareContentCheckboxId}
-                                    checked={shareContentEnabled}
-                                    onChange={({ target }) => setShareContentEnabled(target.checked)}
-                                    className="mr-2"
-                                />
-                                <label htmlFor={shareContentCheckboxId} className="flex-1 mt-0">
-                                    <span>{c('collider_2025: Info')
-                                        .t`Share your prompt and the response with us.`}</span>
-                                </label>
-                            </div>
-                            {isApertusModel && (
-                                <div className="flex flex-nowrap items-start mt-2">
-                                    <Checkbox
-                                        id={shareWithApertusCheckboxId}
-                                        checked={shareWithApertusEnabled}
-                                        onChange={({ target }) => setShareWithApertusEnabled(target.checked)}
-                                        className="mr-2"
-                                    />
-                                    <label htmlFor={shareWithApertusCheckboxId} className="flex-1 mt-0">
-                                        <span>{c('collider_2025: Info')
-                                            .t`Share this feedback with the Apertus team to help them improve their model.`}</span>
-                                    </label>
-                                </div>
-                            )}
-                        </>
-                    ) : (
-                        <>
-                            <p className="mt-0 mb-2 color-weak">{c('collider_2025: Info')
-                                .t`Only the text below will be sent. Images and other attachments are not included. Remove anything you don't want shared.`}</p>
-                            <p className="mt-0 mb-4 color-weak">{c('collider_2025: Info')
-                                .t`This is the only time we see your content. We use it to improve our system prompts and understand how issues occurred. This data is automatically deleted after 90 days.`}</p>
-                            <InputFieldTwo
-                                as={TextAreaTwo}
-                                rows={4}
-                                label={c('collider_2025: Label').t`Your prompt`}
-                                value={sharePrompt}
-                                onChange={({ target }) => setSharePrompt(target.value)}
-                                className="mb-4"
-                            />
-                            <InputFieldTwo
-                                as={TextAreaTwo}
-                                rows={6}
-                                label={c('collider_2025: Label').t`AI response`}
-                                value={shareResponse}
-                                onChange={({ target }) => setShareResponse(target.value)}
-                            />
-                        </>
-                    )}
+                            return (
+                                <li className="inline-flex" key={value}>
+                                    <Button
+                                        size="small"
+                                        shape={isSelected ? 'solid' : 'outline'}
+                                        color={isSelected ? 'norm' : undefined}
+                                        className="mr-2 mb-2"
+                                        aria-pressed={isSelected}
+                                        onClick={() => setSelectedOption(value)}
+                                    >
+                                        {label}
+                                    </Button>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                    <InputFieldTwo
+                        as={TextAreaTwo}
+                        rows={3}
+                        label={textareaPlaceholder}
+                        maxLength={1000}
+                        value={body ?? ''}
+                        onChange={({ target }) => setBody(target.value)}
+                    />
+                    <p className="m-0 text-sm color-weak">{c('collider_2025: Info')
+                        .t`Your prompt and this response will be sent to ${BRAND_NAME} for analysis and improvement. Images and other attachments are not included.`}</p>
                 </ModalTwoContent>
                 <ModalTwoFooter>
-                    {feedbackStep === 'preview' ? (
-                        <>
-                            <Button
-                                type="button"
-                                className="mr-1"
-                                disabled={loading}
-                                onClick={() => setFeedbackStep('form')}
-                            >{c('collider_2025: Action').t`Back`}</Button>
-                            <Button
-                                type="button"
-                                disabled={loading}
-                                loading={loading}
-                                color="norm"
-                                className="mr-1"
-                                onClick={() => withLoading(handlePreviewSubmit())}
-                            >{c('collider_2025: Action').t`Send feedback`}</Button>
-                        </>
-                    ) : (
-                        <>
-                            <Button
-                                type="button"
-                                className="mr-1"
-                                disabled={loading}
-                                onClick={() => {
-                                    feedbackModal.openModal(false);
-                                    setNativeComposerVisibility(true);
-                                }}
-                            >{c('collider_2025: Action').t`Cancel`}</Button>
-                            <Button
-                                type="submit"
-                                disabled={loading || !selectedOption}
-                                loading={loading}
-                                color="norm"
-                                className="mr-1"
-                            >{c('collider_2025: Action').t`Submit`}</Button>
-                        </>
-                    )}
+                    <Button
+                        type="button"
+                        className="mr-1"
+                        disabled={loading}
+                        onClick={() => {
+                            feedbackModal.openModal(false);
+                            setNativeComposerVisibility(true);
+                        }}
+                    >{c('collider_2025: Action').t`Cancel`}</Button>
+                    <Button
+                        type="submit"
+                        disabled={loading || !selectedOption}
+                        loading={loading}
+                        color="norm"
+                        className="mr-1"
+                    >{c('collider_2025: Action').t`Submit`}</Button>
                 </ModalTwoFooter>
             </ModalTwo>
         </>
