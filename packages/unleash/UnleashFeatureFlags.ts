@@ -75,6 +75,7 @@ export enum CommonFeatureFlag {
     DisablePostSubscriptionB2BOnboarding = 'DisablePostSubscriptionB2BOnboarding',
     EasySwitchB2CForDriveWeb = 'EasySwitchB2CForDriveWeb',
     EasySwitchB2CForDriveWebNewUI = 'EasySwitchB2CForDriveWebNewUI',
+    Oles365 = 'Oles365',
 }
 
 enum AccountFlag {

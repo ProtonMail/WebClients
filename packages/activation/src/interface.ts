@@ -14,6 +14,7 @@ export enum OAUTH_PROVIDER {
     OUTLOOK = 2,
     ZOOM = 3,
     GSUITE = 4,
+    MICROSOFT_BUSINESS = 5,
 }
 
 export interface OAuthProps {

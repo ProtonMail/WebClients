@@ -15,7 +15,6 @@ import clsx from '@proton/utils/clsx';
 
 import { EASY_SWITCH_SEARCH_SOURCES, EASY_SWITCH_SOURCES, ImportProvider } from '../../../interface';
 import { getOrganizationMigrationFeatures } from '../../../oles/migrationFeatures';
-import { isProviderSupported } from '../../../oles/providers';
 import useOLESFeatureStatus from '../../../oles/useOLESFeatureStatus';
 import { ProductSelectionModal } from '../../Modals/ProductSelectionModal/ProductSelectionModal';
 import ConnectGmailButton from '../ConnectGmailButton';
@@ -79,15 +78,17 @@ const ProviderCard = ({
         // Org-Level Easy Switch takes precedence over both BYOE
         // and normal ES imports for supported providers
         if (olesFeatureStatus.creatingEnabled) {
+            const isProviderEnabled = olesFeatureStatus.isProviderEnabled(provider);
+
             // For OLES-supported providers, only administrators can use Org-Level Easy Switch
-            if (isProviderSupported(provider) && !olesFeatureStatus.allowedForUser) {
+            if (isProviderEnabled && !olesFeatureStatus.allowedForUser) {
                 return createNotification({
                     text: c('Error').t`Contact your administrator to start a migration.`,
                 });
             }
 
             // Expand ProviderCard with features for unsupported providers
-            if (!isProviderSupported(provider) && olesFeatureStatus.allowedForUser) {
+            if (!isProviderEnabled && olesFeatureStatus.allowedForUser) {
                 setSelectedProvider(provider);
                 return setShowFeatures(true);
             }
@@ -95,8 +96,8 @@ const ProviderCard = ({
             // Provider buttons can only open the Org-Level Easy Switch assistant
             // if the org is OLES-eligible (roughly translates to being on a B2B plan),
             // and if the feature is not soft (client FF) or fully (backend FF) disabled
-            if (isProviderSupported(provider) && olesFeatureStatus.allowedForUser) {
-                return goToSettings('/easy-switch/migration-assistant');
+            if (isProviderEnabled && olesFeatureStatus.allowedForUser) {
+                return goToSettings(`/easy-switch/migration-assistant?provider=${provider}`);
             }
         }
 

@@ -1,5 +1,6 @@
-import { GSUITE_MARKETPLACE_URL } from '@proton/shared/lib/api/activation';
+import { GSUITE_MARKETPLACE_URL, MICROSOFT_BUSINESS_CONSENT_PATH } from '@proton/shared/lib/api/activation';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
+import microsoftLogo from '@proton/styles/assets/img/import/providers/microsoft.svg';
 
 import { ApiImportProvider } from '../api/api.interface';
 import { ImportProvider, OAUTH_PROVIDER } from '../interface';
@@ -16,19 +17,33 @@ type OlesProviderBase = {
     iconSrc: string;
     /** SPF include token the provider requires for dual delivery during the migration */
     spfInclude: string;
-    installApp: {
-        defaultUrl: string;
-        /** Key holding the URL override inside the OrganizationLevelEasySwitch feature flag payload */
-        urlOverrideKey: string;
-        /** Name of the store the migration app is installed from, e.g. "Google Workspace Marketplace" */
-        storeName: string;
-    };
+    installApp: InstallApp;
 };
+
+/**
+ * How the admin grants us access to their organization. Either they install an app
+ * from a store, or they grant consent to ours directly through the provider.
+ */
+type InstallApp =
+    | {
+          type: 'link';
+          defaultUrl: string;
+          /** Name of the store the migration app is installed from, e.g. "Google Workspace Marketplace" */
+          storeName: string;
+      }
+    | {
+          type: 'consent';
+          baseUrl: string;
+      };
 
 type ProviderIdentities = {
     [ImportProvider.GOOGLE]: {
         apiProvider: ApiImportProvider.GOOGLE;
         oauthProvider: OAUTH_PROVIDER.GSUITE;
+    };
+    [ImportProvider.OUTLOOK]: {
+        apiProvider: ApiImportProvider.OUTLOOK;
+        oauthProvider: OAUTH_PROVIDER.MICROSOFT_BUSINESS;
     };
 };
 
@@ -50,9 +65,24 @@ export const OLES_PROVIDERS: { [Id in SupportedProvider]: OlesProviderFor<Id> } 
         iconSrc: googleLogo,
         spfInclude: '_spf.google.com',
         installApp: {
+            type: 'link',
             defaultUrl: GSUITE_MARKETPLACE_URL,
-            urlOverrideKey: 'marketplaceUrl',
             storeName: 'Google Workspace Marketplace',
+        },
+    },
+    [ImportProvider.OUTLOOK]: {
+        id: ImportProvider.OUTLOOK,
+        apiProvider: ApiImportProvider.OUTLOOK,
+        oauthProvider: OAUTH_PROVIDER.MICROSOFT_BUSINESS,
+        brandName: 'Microsoft',
+        displayName: 'Microsoft',
+        mailAppName: 'Outlook',
+        adminConsoleName: 'Microsoft 365 Admin Center',
+        iconSrc: microsoftLogo,
+        spfInclude: 'spf.protection.outlook.com',
+        installApp: {
+            type: 'consent',
+            baseUrl: MICROSOFT_BUSINESS_CONSENT_PATH,
         },
     },
 };
