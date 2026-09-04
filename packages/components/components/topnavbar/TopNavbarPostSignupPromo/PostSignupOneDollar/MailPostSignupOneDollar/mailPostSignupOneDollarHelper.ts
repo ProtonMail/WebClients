@@ -1,11 +1,11 @@
-import { differenceInDays, fromUnixTime } from 'date-fns';
+import { differenceInDays, differenceInHours, fromUnixTime } from 'date-fns';
 
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 
 import {
-    POST_SIGNUP_ONE_DOLLAR_ACCOUNT_AGE,
+    MAIL_POST_SIGNUP_ONE_DOLLAR_ACCOUNT_AGE,
     POST_SIGNUP_ONE_DOLLAR_DURATION,
     type PostSubscriptionOneDollarOfferState,
 } from '../interface';
@@ -15,19 +15,15 @@ interface Props {
     protonConfig: ProtonConfig;
     offerStartDateTimeStamp: number;
     mailPostSignupOneDollarPromoDisabled: boolean;
-    nbrEmailsInAllMail: number;
     hasHadSubscription: boolean;
     driveOfferStartDateTimestamp?: PostSubscriptionOneDollarOfferState;
 }
-
-const POST_SIGNUP_REQUIRED_EMAILS = 5 as const;
 
 export const getIsUserEligibleForOneDollar = ({
     user,
     protonConfig,
     offerStartDateTimeStamp,
     mailPostSignupOneDollarPromoDisabled,
-    nbrEmailsInAllMail,
     hasHadSubscription,
     driveOfferStartDateTimestamp,
 }: Props) => {
@@ -50,22 +46,15 @@ export const getIsUserEligibleForOneDollar = ({
     const accountCreationDate = fromUnixTime(user.CreateTime);
     const offerExpirationDate = fromUnixTime(offerStartDateTimeStamp);
 
-    // Account must be created 3 days ago to be eligible
-    const isAccountOldEnough = differenceInDays(today, accountCreationDate) >= POST_SIGNUP_ONE_DOLLAR_ACCOUNT_AGE;
+    // Account must be created 5 hours ago to be eligible
+    const isAccountOldEnough = differenceInHours(today, accountCreationDate) >= MAIL_POST_SIGNUP_ONE_DOLLAR_ACCOUNT_AGE;
 
     // The offer is valid for 30 days after the first time it was shown to the user
     const isOfferStillValid =
         !offerStartDateTimeStamp || differenceInDays(today, offerExpirationDate) <= POST_SIGNUP_ONE_DOLLAR_DURATION;
 
-    // We consider the user has the required mail if the offer already started
-    const hasRequiredEmails = offerStartDateTimeStamp ? true : nbrEmailsInAllMail >= POST_SIGNUP_REQUIRED_EMAILS;
     const basicEligibility =
-        user.isFree &&
-        !user.isDelinquent &&
-        hasValidApp &&
-        hasRequiredEmails &&
-        !hasHadSubscription &&
-        !hasPassLifetime(user);
+        user.isFree && !user.isDelinquent && hasValidApp && !hasHadSubscription && !hasPassLifetime(user);
 
     return basicEligibility && isOfferStillValid && isAccountOldEnough;
 };
