@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import type { ThemeColor } from '@proton/colors';
+import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 
 import type { IconComponent } from '../../containers/layout/interface';
 import { PromotionButton } from '../button/PromotionButton';
@@ -23,7 +24,13 @@ function OptionalItemLink({ to, children }: { to?: string; children: ReactNode }
 function getRightComponent(notification: ThemeColor | undefined, upgradeRequired: boolean | undefined) {
     if (upgradeRequired) {
         return (
-            <PromotionButton as="span" icon iconName="upgrade" shape="ghost" title={c('Info').t`Upgrade required`}>
+            <PromotionButton
+                as="span"
+                icon
+                iconComponent={IcUpgrade}
+                shape="ghost"
+                title={c('Info').t`Upgrade required`}
+            >
                 {c('Label').t`Upgrade`}
             </PromotionButton>
         );
