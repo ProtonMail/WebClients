@@ -1,5 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import Icon from '@proton/components/components/icon/Icon';
 import useFolderColor from '@proton/components/hooks/useFolderColor';
 import { IcFolder } from '@proton/icons/icons/IcFolder';
 import { IcFolderFilled } from '@proton/icons/icons/IcFolderFilled';
@@ -15,8 +13,9 @@ const ItemIcon = ({ folderInfo }: Props) => {
     const folder = { Name: folderInfo.name, Color: folderInfo.color, ParentID: folderInfo.parentID } as Folder;
     const color = useFolderColor(folder);
 
-    if (folderInfo.icon !== 'folder') {
-        return <Icon name={folderInfo.icon} alt={folderInfo.name} />;
+    if (!folderInfo.isCustomFolder) {
+        const FolderInfoIcon = folderInfo.icon;
+        return <FolderInfoIcon alt={folderInfo.name} />;
     }
 
     return color ? (

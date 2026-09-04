@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Loader } from '@proton/components';
 import { splitNodeUid } from '@proton/drive/index';
 import type { TreeItemWithChildren } from '@proton/drive/modules/directoryTree';
+import { IcInbox } from '@proton/icons/icons/IcInbox';
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -41,7 +42,7 @@ export const DriveSidebarFoldersRoot = ({
         <DriveSidebarListItem
             key="root"
             to={url}
-            icon="inbox"
+            icon={IcInbox}
             shareId={shareId}
             onDoubleClick={handleExpand}
             collapsed={isCollapsed}
