@@ -1,5 +1,6 @@
 import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
-import type { IconName, IconSize } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import type { IconSize } from '@proton/icons/types';
 import type { Currency } from '@proton/payments/core/interface';
 
 import type { Feature } from '../../../../../containers/offers/interface';
@@ -21,7 +22,7 @@ export interface TopNavbarOfferConfig<TMessageType = string> {
         gradient?: boolean;
         iconGradient?: boolean;
         iconSize?: IconSize;
-        icon?: IconName;
+        icon?: IconComponent;
         title: string;
         variant?: string;
     };

@@ -1,3 +1,5 @@
+import { IcBrandProtonMailFilledPlus } from '@proton/icons/icons/IcBrandProtonMailFilledPlus';
+
 import { PromotionButton } from '../button/PromotionButton';
 
 interface Props {
@@ -7,7 +9,7 @@ interface Props {
 
 const MailUpsellButton = ({ onClick, text }: Props) => {
     return (
-        <PromotionButton iconName="brand-proton-mail-filled-plus" onClick={onClick}>
+        <PromotionButton iconComponent={IcBrandProtonMailFilledPlus} onClick={onClick}>
             {text}
         </PromotionButton>
     );

@@ -12,6 +12,7 @@ import { DownloadClientCard, SettingsLink, SettingsParagraph, SettingsSectionWid
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
 import { mapTelemetryOsVersionWithStore } from '@proton/components/helpers/mapTelemetryOsVersionWithStore';
+import { IcBrandProtonPassFilled } from '@proton/icons/icons/IcBrandProtonPassFilled';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { PLANS } from '@proton/payments/core/constants';
 import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -45,7 +46,7 @@ const PaidDownloadClientTitle = ({ title }: { title: string }) => {
         <div className="flex flex-nowrap items-center gap-2">
             <div>{title}</div>
             <Tooltip title={c('Label').t`Only available on ${PASS_SHORT_APP_NAME} paid plans`} openDelay={200}>
-                <PromotionButton iconName="brand-proton-pass-filled" size="small">
+                <PromotionButton iconComponent={IcBrandProtonPassFilled} size="small">
                     <IcPlus size={2.5} className="mb-0.5" />
                 </PromotionButton>
             </Tooltip>

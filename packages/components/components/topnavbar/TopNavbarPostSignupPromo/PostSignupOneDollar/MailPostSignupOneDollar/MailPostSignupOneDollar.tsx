@@ -4,6 +4,7 @@ import { differenceInDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { FeatureCode, useFeature } from '@proton/features';
+import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, SECOND, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
@@ -92,7 +93,7 @@ export const MailPostSignupOneDollar = () => {
     const originalUpgradeText = c('specialoffer: Link').jt`Upgrade for ${pricingTitle}`;
     // translators: keep the "Special offer" text as short as possible since this is a fallback if the offer text is too long
     const upgradeText = originalUpgradeText[0].length > 30 ? c('Offer').t`Special offer` : originalUpgradeText;
-    const upgradeIcon = upgradeText[0].length > 15 && viewportWidth['>=large'] ? undefined : 'upgrade';
+    const upgradeIcon = upgradeText[0].length > 15 && viewportWidth['>=large'] ? undefined : IcUpgrade;
 
     const handleClose = () => {
         setSpotlightState(false);
@@ -138,7 +139,7 @@ export const MailPostSignupOneDollar = () => {
                     setSpotlightState(true);
                 }
             }}
-            promoIconName={upgradeIcon}
+            promoIcon={upgradeIcon}
             promoChildren={upgradeText}
             promoColor="full-gradient"
             spotlightBorderRadius={daysSinceOffer >= LAST_REMINDER_DAY ? 'md' : 'xl'}
