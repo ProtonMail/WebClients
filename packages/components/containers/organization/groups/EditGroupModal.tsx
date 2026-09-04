@@ -11,6 +11,10 @@ import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissi
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import useLoading from '@proton/hooks/useLoading';
+import { IcEarth } from '@proton/icons/icons/IcEarth';
+import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcTextAlignLeft } from '@proton/icons/icons/IcTextAlignLeft';
+import { IcUser } from '@proton/icons/icons/IcUser';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { stripWhitespace } from '@proton/shared/lib/helpers/string';
@@ -114,7 +118,7 @@ const EditGroupModal = () => {
             <FormikProvider value={form}>
                 <Form id="groups" className="flex flex-column gap-4">
                     <InputFieldStackedGroup>
-                        <InputFieldStacked isGroupElement icon="user">
+                        <InputFieldStacked isGroupElement icon={<IcUser />}>
                             <InputFieldTwo
                                 data-protonpass-ignore={true}
                                 label={c('Label').t`Group name`}
@@ -139,7 +143,7 @@ const EditGroupModal = () => {
                                 disabled={isScimGroup}
                             />
                         </InputFieldStacked>
-                        <InputFieldStacked isGroupElement icon="text-align-left">
+                        <InputFieldStacked isGroupElement icon={<IcTextAlignLeft />}>
                             <InputFieldTwo
                                 data-protonpass-ignore={true}
                                 className="rounded-none p-0 resize-none"
@@ -158,7 +162,7 @@ const EditGroupModal = () => {
                     </InputFieldStackedGroup>
                     {!hideMail && (
                         <InputFieldStackedGroup>
-                            <InputFieldStacked isGroupElement icon="earth">
+                            <InputFieldStacked isGroupElement icon={<IcEarth />}>
                                 <InputFieldTwo
                                     data-protonpass-ignore={true}
                                     label={c('Label').t`Group address`}
@@ -195,7 +199,7 @@ const EditGroupModal = () => {
                                     })()}
                                 />
                             </InputFieldStacked>
-                            <InputFieldStacked isGroupElement icon="lock">
+                            <InputFieldStacked isGroupElement icon={<IcLock />}>
                                 <InputFieldTwo
                                     label={c('Label').t`Who can send to this group address?`}
                                     as={SelectTwo}

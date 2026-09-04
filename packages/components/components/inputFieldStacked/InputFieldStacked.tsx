@@ -1,15 +1,13 @@
 import { forwardRef } from 'react';
+import type { ReactElement } from 'react';
 
-import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
-
-import Icon from '../icon/Icon';
 
 import './InputFieldStacked.scss';
 
 interface InputFieldStackedProps {
     children: React.ReactNode;
-    icon?: IconName | React.ReactNode;
+    icon?: ReactElement;
     suffix?: React.ReactNode;
     hasError?: boolean;
     isBigger?: boolean;
@@ -31,12 +29,7 @@ const InputFieldStacked = forwardRef<HTMLDivElement, InputFieldStackedProps>(
             )}
             style={style}
         >
-            {icon &&
-                (typeof icon === 'string' ? (
-                    <Icon name={icon as IconName} className="shrink-0" />
-                ) : (
-                    <div className="shrink-0">{icon}</div>
-                ))}
+            {icon && <div className="shrink-0">{icon}</div>}
             <div className="flex-1">{children}</div>
             {suffix && <div className="shrink-0">{suffix}</div>}
         </div>
