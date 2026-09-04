@@ -13,9 +13,9 @@ import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { ApiImporterOrganizationState } from '../../api/api.interface';
-import { EASY_SWITCH_FEATURES, ImportProvider } from '../../interface';
+import { EASY_SWITCH_FEATURES } from '../../interface';
 import { getSubdomain } from '../domains';
-import { OLES_PROVIDERS } from '../providers';
+import type { OlesProvider } from '../providers';
 import { setupMigration } from '../thunk';
 import type { MigrationConfiguration, MigrationModel, MigrationSetupModel } from '../types';
 import { useConnectionState } from '../useConnectionState';
@@ -45,11 +45,10 @@ const SETUP_DEFAULTS: Omit<MigrationConfiguration, 'provider'> = {
     domainRegistrarId: 0,
 };
 
-const MigrationFlow = () => {
+const MigrationFlow = ({ provider }: { provider: OlesProvider }) => {
     const dispatch = useDispatch();
     const [customDomains] = useCustomDomains();
     const [importerOrganizations] = useImporterOrganizations();
-    const provider = OLES_PROVIDERS[ImportProvider.GOOGLE];
     const [tokens] = useProviderTokens(provider.oauthProvider, [EASY_SWITCH_FEATURES.OLES]);
     const [connectionState] = useConnectionState(provider, tokens);
     const [migrationConfig, setMigrationConfig] = useState<MigrationConfiguration>();
@@ -66,11 +65,13 @@ const MigrationFlow = () => {
         setMigrationConfig((prev) => ({ ...(prev || SETUP_DEFAULTS), provider, ...diff }));
 
     useEffect(() => {
-        if (!importerOrganizations?.length) {
+        const existingImporterOrganization = importerOrganizations?.find((io) => io.Provider === provider.apiProvider);
+
+        if (!existingImporterOrganization) {
             return;
         }
 
-        const [{ ImporterConfig, ImporterOrganizationID, DomainName, JoiningLink, State }] = importerOrganizations;
+        const { ImporterConfig, ImporterOrganizationID, DomainName, JoiningLink, State } = existingImporterOrganization;
 
         onUpdate({
             importerOrganizationId: ImporterOrganizationID,
