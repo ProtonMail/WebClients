@@ -270,10 +270,10 @@ export const useDynamicDeviceHandling = ({
             const failure = MediaDeviceFailure.getFailure(error) ?? 'Unknown';
 
             reportMeetError(`Livekit MediaDevicesError ${failure}`, {
-                error: error,
+                context: { error },
                 tags: {
                     failure,
-                    mediaDeviceKind: kind,
+                    mediaDeviceKind: kind ?? 'unknown',
                 },
             });
         };
