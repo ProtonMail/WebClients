@@ -17,6 +17,7 @@
     "devDependencies": {
         "@mlc-ai/web-llm": "patch:@mlc-ai/web-llm@npm%3A0.2.32#~/.yarn/patches/@mlc-ai-web-llm-npm-0.2.32-df249f5180.patch",
         "@proton/jest-env": "workspace:^",
+        "@proton/jest-swc-preset": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
         "browserslist": "^4.28.8",
         "core-js": "^3.50.0",

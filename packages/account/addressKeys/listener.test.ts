@@ -14,11 +14,18 @@ import { getModelState } from '../tests';
 import { getServerEvent } from '../tests/getServerEvent';
 import { userReducer } from '../user';
 import { userKeysReducer } from '../userKeys';
-import * as addressKeysModule from './index';
 import { addressKeysFulfilledAction, addressKeysReducer, addressKeysThunk, selectAddressKeys } from './index';
 import { addressKeysListener } from './listener';
 
-const mockedAddressKeysThunk = jest.spyOn(addressKeysModule, 'addressKeysThunk');
+jest.mock('./index', () => {
+    const actual = jest.requireActual('./index');
+    return {
+        ...actual,
+        addressKeysThunk: jest.fn(actual.addressKeysThunk),
+    };
+});
+
+const mockedAddressKeysThunk = jest.mocked(addressKeysThunk);
 
 jest.mock('@protontech/crypto/srp', () => {});
 jest.mock('@protontech/crypto', () => {

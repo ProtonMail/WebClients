@@ -19,12 +19,12 @@
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
+        "@proton/jest-swc-preset": "workspace:^",
         "@types/node": "^24.13.3",
         "eslint": "^10.9.0",
         "jest": "^30.4.2",
         "jest-fetch-mock": "^3.2.0",
         "rimraf": "^5.0.10",
-        "ts-jest": "^29.4.12",
         "ts-node": "^10.9.2"
     }
 }

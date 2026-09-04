@@ -36,9 +36,8 @@
         "unleash-proxy-client": "^3.8.0"
     },
     "devDependencies": {
-        "@babel/preset-env": "^7.29.7",
-        "@babel/preset-typescript": "^7.29.7",
         "@proton/eslint-config-proton": "workspace:^",
+        "@proton/jest-swc-preset": "workspace:^",
         "@types/react": "^18.3.31",
         "eslint": "^10.9.0",
         "jest": "^30.4.2",
