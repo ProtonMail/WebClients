@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 
 import { createBackgroundProcessor } from '../../../processors/background-processor/createBackgroundProcessor';
 import type { TunableConstantsOverrides } from '../../../processors/background-processor/tunableConstants';
-import type { BackgroundBlurProcessor } from '../../../processors/background-processor/types';
+import type { BackgroundProcessor } from '../../../processors/background-processor/types';
 
 import './BlurPreview.scss';
 
@@ -54,7 +54,7 @@ export const BlurPreview = ({
 
         let cancelled = false;
         let track: LocalVideoTrack | null = null;
-        let processor: BackgroundBlurProcessor | null = null;
+        let processor: BackgroundProcessor | null = null;
 
         const getSourceTrack = async (): Promise<MediaStreamTrack> => {
             if (stream) {
@@ -103,7 +103,7 @@ export const BlurPreview = ({
             // userProvidedTrack = true: the track is ours, LiveKit must not reacquire it.
             track = new LocalVideoTrack(mediaStreamTrack, undefined, true);
 
-            processor = await createBackgroundProcessor(useSimpleSegmentation, constantOverrides);
+            processor = await createBackgroundProcessor({ type: 'blur' }, useSimpleSegmentation, constantOverrides);
             if (cancelled) {
                 await processor?.destroy?.();
                 return;

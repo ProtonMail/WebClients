@@ -16,17 +16,16 @@ import {
 } from '@proton/meet/store/slices/backgroundSlice';
 import { selectInitialCameraState } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { resolveBackgroundSource } from '@proton/meet/utils/customBackgrounds';
-import type { VirtualBackgroundSource } from '@proton/meet/utils/virtualBackgrounds';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useStableCallback } from '../../hooks/useStableCallback';
 import {
     createBackgroundProcessor,
-    createCustomBackgroundProcessor,
     ensureBackgroundProcessor,
 } from '../../processors/background-processor/createBackgroundProcessor';
-import type { BackgroundBlurProcessor, CustomBackgroundProcessor } from '../../processors/background-processor/types';
+import type { BackgroundProcessor } from '../../processors/background-processor/types';
 import { getCurrentCameraTrack, hasLiveCameraTrack } from '../../utils/cameraTrack';
+import { resolveBackgroundMode } from './resolveBackgroundMode';
 import { useCustomBackgroundId, useVirtualBackgroundId } from './useAppliedBackgroundEffect';
 import { useBackgroundEffectInitializationTracker } from './useBackgroundEffectInitializationTracker';
 
@@ -48,7 +47,7 @@ export const useBackgroundEffects = ({ isBackgroundEffectsSupported }: UseBackgr
     const customBackgroundId = useCustomBackgroundId();
     const initialCameraState = useMeetSelector(selectInitialCameraState);
 
-    // Presets and custom uploads share one processor, so reattaching doesn't care which kind it is.
+    // Presets and custom uploads share one mode, so reattaching doesn't care which kind it is.
     const hasImageBackground = !!virtualBackgroundId || !!customBackgroundId;
 
     const room = useRoomContext();
@@ -63,15 +62,16 @@ export const useBackgroundEffects = ({ isBackgroundEffectsSupported }: UseBackgr
     const backgroundEffectChangeInProgress = useRef(false);
     const pendingBackgroundEffectRef = useRef<{ effect: BackgroundEffect } | null>(null);
     const processorAttachInProgress = useRef(false);
+    const backgroundSelectionGenerationRef = useRef(0);
 
     const preventAutoApplyingBlur = useRef(false);
 
-    const backgroundBlurProcessorInstanceRef = useRef<BackgroundBlurProcessor | null>(null);
-    const backgroundBlurProcessorCreationRef = useRef<Promise<BackgroundBlurProcessor | null> | null>(null);
-    const customBackgroundProcessorInstanceRef = useRef<CustomBackgroundProcessor | null>(null);
-    const customBackgroundProcessorCreationRef = useRef<Promise<CustomBackgroundProcessor | null> | null>(null);
+    // Blur and image backgrounds are modes of this one processor, so switching
+    // between them never rebuilds the segmentation pipeline.
+    const processorInstanceRef = useRef<BackgroundProcessor | null>(null);
+    const processorCreationRef = useRef<Promise<BackgroundProcessor | null> | null>(null);
 
-    const isProcessorAttached = (processor: BackgroundBlurProcessor | CustomBackgroundProcessor | null) =>
+    const isProcessorAttached = (processor: BackgroundProcessor | null) =>
         !!processor && getCurrentCameraTrack(room)?.getProcessor() === processor;
 
     const withBlankedRawFrames = async <T>(
@@ -94,175 +94,111 @@ export const useBackgroundEffects = ({ isBackgroundEffectsSupported }: UseBackgr
         }
     };
 
-    const attachBackgroundBlurProcessor = useStableCallback(async (blurProcessor?: BackgroundBlurProcessor | null) => {
-        if (processorAttachInProgress.current) {
-            return ATTACH_SKIPPED;
-        }
+    const attachProcessor = useStableCallback(
+        async (initializingEffect: InitializingBackgroundEffect, instance?: BackgroundProcessor | null) => {
+            if (processorAttachInProgress.current) {
+                return ATTACH_SKIPPED;
+            }
 
-        processorAttachInProgress.current = true;
+            processorAttachInProgress.current = true;
 
-        const processorToAttach = blurProcessor ?? backgroundBlurProcessorInstanceRef.current;
-        const videoTrack = getCurrentCameraTrack(room);
-        const isSwappingProcessor = !isProcessorAttached(processorToAttach);
+            const processorToAttach = instance ?? processorInstanceRef.current;
+            const videoTrack = getCurrentCameraTrack(room);
+            const isSwappingProcessor = !isProcessorAttached(processorToAttach);
 
-        try {
-            return await withBlankedRawFrames(videoTrack, isSwappingProcessor, async () => {
-                const result = await ensureBackgroundProcessor(videoTrack, processorToAttach);
+            try {
+                return await withBlankedRawFrames(videoTrack, isSwappingProcessor, async () => {
+                    const result = await ensureBackgroundProcessor(videoTrack, processorToAttach);
 
-                result?.enable?.();
+                    result?.enable?.();
 
-                if (result?.waitUntilBlurApplied) {
-                    const { waitUntilBlurApplied } = result;
-                    trackBackgroundEffectInitialization('blur', () => waitUntilBlurApplied());
-                }
+                    // A mode switch is live on the next frame, so reporting it would flash
+                    // the initializing overlay. Only a real warmup is worth naming.
+                    if (result && !result.hasAppliedMask()) {
+                        trackBackgroundEffectInitialization(initializingEffect, () => result.waitUntilApplied());
+                    }
 
-                return result;
-            });
-        } finally {
-            processorAttachInProgress.current = false;
-        }
-    });
-
-    const ensureCustomBackgroundProcessor = useStableCallback(async (source: VirtualBackgroundSource) => {
-        const creation = customBackgroundProcessorCreationRef.current ?? createCustomBackgroundProcessor(source);
-        customBackgroundProcessorCreationRef.current = creation;
-
-        let processor: CustomBackgroundProcessor | null = null;
-
-        try {
-            processor = await creation;
-        } finally {
-            if (!processor && customBackgroundProcessorCreationRef.current === creation) {
-                customBackgroundProcessorCreationRef.current = null;
+                    return result;
+                });
+            } finally {
+                processorAttachInProgress.current = false;
             }
         }
+    );
 
-        customBackgroundProcessorInstanceRef.current = processor;
-
-        await processor?.setBackground?.(source);
-
-        return processor;
-    });
-
-    const attachCustomBackgroundProcessor = useStableCallback(async () => {
-        if (processorAttachInProgress.current) {
-            return ATTACH_SKIPPED;
-        }
-
-        processorAttachInProgress.current = true;
-
-        const videoTrack = getCurrentCameraTrack(room);
-        const isSwappingProcessor = !isProcessorAttached(customBackgroundProcessorInstanceRef.current);
-
-        try {
-            return await withBlankedRawFrames(videoTrack, isSwappingProcessor, async () => {
-                const result = await ensureBackgroundProcessor(
-                    videoTrack,
-                    customBackgroundProcessorInstanceRef.current
-                );
-
-                result?.enable?.();
-
-                if (result?.waitUntilBackgroundApplied) {
-                    const { waitUntilBackgroundApplied } = result;
-                    trackBackgroundEffectInitialization('virtualBackground', () => waitUntilBackgroundApplied());
-                }
-
-                return result;
-            });
-        } finally {
-            processorAttachInProgress.current = false;
-        }
-    });
-
-    const abandonBackgroundEffects = (failedEffect: InitializingBackgroundEffect) => {
-        backgroundBlurProcessorInstanceRef.current?.disable?.();
-        customBackgroundProcessorInstanceRef.current?.disable?.();
+    const abandonBackgroundEffects = useStableCallback((failedEffect: InitializingBackgroundEffect) => {
+        processorInstanceRef.current?.disable?.();
         reportBackgroundEffectFailure(failedEffect);
         dispatch(applyBackgroundEffectAndPersist('none'));
-    };
+    });
 
-    const ensureBackgroundBlurProcessorInstance = useStableCallback(async () => {
-        if (backgroundBlurProcessorInstanceRef.current) {
-            return backgroundBlurProcessorInstanceRef.current;
+    const failRestoredBackground = useStableCallback((error: unknown) => {
+        reportError('Failed to warm up the restored virtual background', error);
+        abandonBackgroundEffects('virtualBackground');
+    });
+
+    const ensureProcessorInstance = useStableCallback(async () => {
+        if (processorInstanceRef.current) {
+            return processorInstanceRef.current;
         }
 
-        const creation = backgroundBlurProcessorCreationRef.current;
+        const creation = processorCreationRef.current;
         const processor = await creation;
 
-        return backgroundBlurProcessorCreationRef.current === creation ? processor : null;
+        return processorCreationRef.current === creation ? processor : null;
     });
 
     const applyBackgroundEffect = useStableCallback(async (effect: BackgroundEffect) => {
         if (effect === 'none') {
-            backgroundBlurProcessorInstanceRef.current?.disable?.();
-            customBackgroundProcessorInstanceRef.current?.disable?.();
+            processorInstanceRef.current?.disable?.();
             cancelBackgroundEffectInitialization();
-        } else if (effect === 'blur') {
-            // The processor is still loading when blur is picked right after landing on the page.
-            const blurProcessor = await ensureBackgroundBlurProcessorInstance();
+            dispatch(applyBackgroundEffectAndPersist(effect));
+            return;
+        }
 
-            if (!blurProcessor) {
-                reportError('The background blur processor is unavailable', { context: { effect } });
+        const isBlur = effect === 'blur';
+
+        if (!isBlur && !canApplyImageBackground) {
+            return;
+        }
+
+        const mode = await resolveBackgroundMode(effect);
+
+        if (!mode) {
+            reportError('The virtual background source is unavailable', { context: { effect } });
+            return;
+        }
+
+        // The processor is still loading when an effect is picked right after landing on the page.
+        const processor = await ensureProcessorInstance();
+
+        if (!processor) {
+            reportError('The background processor is unavailable', { context: { effect } });
+            return;
+        }
+
+        await processor.setMode(mode);
+
+        if (hasLiveCameraTrack(room)) {
+            const initializingEffect: InitializingBackgroundEffect = isBlur ? 'blur' : 'virtualBackground';
+            const attached = await attachProcessor(initializingEffect, processor);
+
+            if (!attached) {
+                reportError('Failed to attach the background processor', { context: { effect } });
+                abandonBackgroundEffects(initializingEffect);
                 return;
             }
 
-            if (hasLiveCameraTrack(room)) {
-                const processor = await attachBackgroundBlurProcessor(blurProcessor);
-
-                if (!processor) {
-                    reportError('Failed to attach the background blur processor', { context: { effect } });
-                    abandonBackgroundEffects('blur');
-                    return;
-                }
-
-                if (processor !== ATTACH_SKIPPED) {
-                    processor.enable?.();
-                }
+            if (attached !== ATTACH_SKIPPED) {
+                attached.enable?.();
             }
-
-            customBackgroundProcessorInstanceRef.current?.disable?.();
-        } else {
-            if (!canApplyImageBackground) {
-                return;
-            }
-
-            // A custom background is decrypted out of the cache, and possibly downloaded from Drive.
-            const source = await resolveBackgroundSource(effect);
-
-            if (!source) {
-                reportError('The virtual background source is unavailable', { context: { effect } });
-                return;
-            }
-
-            const customProcessor = await ensureCustomBackgroundProcessor(source);
-
-            if (!customProcessor) {
-                reportError('Failed to create the virtual background processor', { context: { effect } });
-                return;
-            }
-
-            if (hasLiveCameraTrack(room)) {
-                const processor = await attachCustomBackgroundProcessor();
-
-                if (!processor) {
-                    reportError('Failed to attach the virtual background processor', { context: { effect } });
-                    abandonBackgroundEffects('virtualBackground');
-                    return;
-                }
-
-                if (processor !== ATTACH_SKIPPED) {
-                    processor.enable?.();
-                }
-            }
-
-            backgroundBlurProcessorInstanceRef.current?.disable?.();
         }
 
         dispatch(applyBackgroundEffectAndPersist(effect));
     });
 
     const selectBackgroundEffect = useStableCallback(async (effect: BackgroundEffect) => {
+        backgroundSelectionGenerationRef.current += 1;
         pendingBackgroundEffectRef.current = { effect };
         dispatch(setPendingBackgroundEffect(effect));
 
@@ -299,21 +235,19 @@ export const useBackgroundEffects = ({ isBackgroundEffectsSupported }: UseBackgr
     // Called once the camera has been switched, so the effect follows the new device instead of
     // waiting for the publication event that a device swap does not always emit.
     const reapplyBackgroundEffect = useStableCallback(async (isCameraEnabled: boolean) => {
-        if (!isCameraEnabled || !hasLiveCameraTrack(room)) {
+        if (!isCameraEnabled || !hasLiveCameraTrack(room) || !processorInstanceRef.current) {
             return;
         }
 
-        if (backgroundBlur && backgroundBlurProcessorInstanceRef.current) {
-            // Prevent the localTrackPublished handler from also trying to attach the processor
-            preventAutoApplyingBlur.current = true;
-
-            // Use our guarded attachment to prevent concurrent initializations
-            await attachBackgroundBlurProcessor();
-        } else if (hasImageBackground && customBackgroundProcessorInstanceRef.current) {
-            preventAutoApplyingBlur.current = true;
-
-            await attachCustomBackgroundProcessor();
+        if (!backgroundBlur && !hasImageBackground) {
+            return;
         }
+
+        // Prevent the localTrackPublished handler from also trying to attach the processor
+        preventAutoApplyingBlur.current = true;
+
+        // Use our guarded attachment to prevent concurrent initializations
+        await attachProcessor(backgroundBlur ? 'blur' : 'virtualBackground');
     });
 
     useEffect(() => {
@@ -342,25 +276,19 @@ export const useBackgroundEffects = ({ isBackgroundEffectsSupported }: UseBackgr
             if (
                 publication.kind !== Track.Kind.Video ||
                 publication.source !== Track.Source.Camera ||
-                preventAutoApplyingBlur.current
+                preventAutoApplyingBlur.current ||
+                !processorInstanceRef.current ||
+                (!backgroundBlur && !hasImageBackground)
             ) {
                 return;
             }
 
-            if (backgroundBlur) {
-                preventAutoApplyingBlur.current = true;
-                const processor = await attachBackgroundBlurProcessor();
+            preventAutoApplyingBlur.current = true;
 
-                if (processor !== ATTACH_SKIPPED) {
-                    processor?.enable();
-                }
-            } else if (hasImageBackground && customBackgroundProcessorInstanceRef.current) {
-                preventAutoApplyingBlur.current = true;
-                const processor = await attachCustomBackgroundProcessor();
+            const processor = await attachProcessor(backgroundBlur ? 'blur' : 'virtualBackground');
 
-                if (processor !== ATTACH_SKIPPED) {
-                    processor?.enable();
-                }
+            if (processor !== ATTACH_SKIPPED) {
+                processor?.enable();
             }
         };
 
@@ -380,7 +308,7 @@ export const useBackgroundEffects = ({ isBackgroundEffectsSupported }: UseBackgr
         let cancelled = false;
 
         const creation = createBackgroundProcessor();
-        backgroundBlurProcessorCreationRef.current = creation;
+        processorCreationRef.current = creation;
 
         void (async () => {
             const processor = await creation;
@@ -391,14 +319,14 @@ export const useBackgroundEffects = ({ isBackgroundEffectsSupported }: UseBackgr
                 return;
             }
 
-            backgroundBlurProcessorInstanceRef.current = processor;
+            processorInstanceRef.current = processor;
         })();
 
         return () => {
             cancelled = true;
-            backgroundBlurProcessorCreationRef.current = null;
-            backgroundBlurProcessorInstanceRef.current?.disable?.();
-            void backgroundBlurProcessorInstanceRef.current?.destroy?.();
+            processorCreationRef.current = null;
+            processorInstanceRef.current?.disable?.();
+            void processorInstanceRef.current?.destroy?.();
         };
     }, [isBackgroundEffectsSupported]);
 
@@ -409,22 +337,38 @@ export const useBackgroundEffects = ({ isBackgroundEffectsSupported }: UseBackgr
         }
 
         const restoredEffect = selectAppliedBackgroundEffect(store.getState());
+        const selectionGeneration = backgroundSelectionGenerationRef.current;
+        let cancelled = false;
 
         void (async () => {
-            const source = await resolveBackgroundSource(restoredEffect);
+            try {
+                const source = await resolveBackgroundSource(restoredEffect);
 
-            if (source) {
-                await ensureCustomBackgroundProcessor(source);
+                // Resolving a custom background can involve cache decryption or a download.
+                // Do not let that stale warmup overwrite a choice made in the meantime.
+                if (cancelled || !source || selectionGeneration !== backgroundSelectionGenerationRef.current) {
+                    return;
+                }
+
+                const processor = await ensureProcessorInstance();
+
+                if (cancelled || selectionGeneration !== backgroundSelectionGenerationRef.current) {
+                    return;
+                }
+
+                await processor?.setMode({ type: 'image', ...source });
+            } catch (error) {
+                if (cancelled || selectionGeneration !== backgroundSelectionGenerationRef.current) {
+                    return;
+                }
+                failRestoredBackground(error);
             }
         })();
-    }, [canApplyImageBackground, ensureCustomBackgroundProcessor, hasImageBackground, store]);
 
-    useEffect(() => {
         return () => {
-            customBackgroundProcessorInstanceRef.current?.disable?.();
-            void customBackgroundProcessorInstanceRef.current?.destroy?.();
+            cancelled = true;
         };
-    }, []);
+    }, [canApplyImageBackground, ensureProcessorInstance, failRestoredBackground, hasImageBackground, store]);
 
     // Too frequent toggling can freeze the page completely
     const debouncedToggleBackgroundBlur = useMemo(
