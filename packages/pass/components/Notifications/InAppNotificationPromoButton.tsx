@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 
 import type { PrefetchResource } from '../../hooks/utils/usePrefetchResources';
 import { usePrefetchResources } from '../../hooks/utils/usePrefetchResources';
@@ -51,7 +52,7 @@ export const InAppNotificationPromoButton = WithInAppNotification(
                         disabled={!online}
                         icon={viewportWidth['<=medium']}
                         iconGradient
-                        iconName="upgrade"
+                        iconComponent={IcUpgrade}
                         iconSize={3.5}
                         onClick={() => setShowModal(true)}
                         style={{

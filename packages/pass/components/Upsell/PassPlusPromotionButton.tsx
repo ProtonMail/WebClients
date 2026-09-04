@@ -2,6 +2,7 @@ import type { FC } from 'react';
 
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import type { PromotionButtonProps } from '@proton/components/components/button/PromotionButton/PromotionButton';
+import { IcBrandProtonPassFilled } from '@proton/icons/icons/IcBrandProtonPassFilled';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import clsx from '@proton/utils/clsx';
 
@@ -11,7 +12,7 @@ type Props = Omit<PromotionButtonProps<'span'>, 'size'>;
 
 export const PassPlusPromotionButton: FC<Props> = ({ className, ...props }) => (
     <PromotionButton
-        iconName="brand-proton-pass-filled"
+        iconComponent={IcBrandProtonPassFilled}
         iconGradient={false}
         size="small"
         shape="outline"

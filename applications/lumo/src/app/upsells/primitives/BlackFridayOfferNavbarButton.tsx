@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
+import { IcGift } from '@proton/icons/icons/IcGift';
 
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { GetLumoPlusContent } from './GetLumoPlusContent';
@@ -27,7 +28,7 @@ export const BlackFridayOfferNavbarButton = ({
             buttonGradient={true}
             iconGradient={true}
             iconSize={4}
-            iconName="gift"
+            iconComponent={IcGift}
             fullGradient={!isMediumScreen}
             onClick={onUpgrade}
             className={className}

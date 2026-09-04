@@ -7,6 +7,7 @@ import { useWelcomeFlags } from '@proton/account';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
+import { IcBagPercent } from '@proton/icons/icons/IcBagPercent';
 import { CYCLE } from '@proton/payments/core/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
@@ -129,9 +130,9 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
 
     const CTAText = offerConfig.topButton?.getCTAContent?.() || c('specialoffer: Action').t`Special offer`;
     const IconContent = offerConfig.topButton?.iconContent;
-    const defaultIconName = IconContent ? undefined : 'bag-percent';
+    const defaultIcon = IconContent ? undefined : IcBagPercent;
     const upgradeIcon =
-        CTAText.length > 20 && viewportWidth['>=large'] ? undefined : (offerConfig.topButton?.icon ?? defaultIconName);
+        CTAText.length > 20 && viewportWidth['>=large'] ? undefined : (offerConfig.topButton?.icon ?? defaultIcon);
     const upgradeIconContent = IconContent ? <IconContent /> : undefined;
 
     const buttonSize =
@@ -153,7 +154,7 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
                     buttonGradient={offerConfig.topButton?.gradient}
                     iconGradient={!!offerConfig.topButton?.iconGradient}
                     iconSize={offerConfig.topButton?.iconSize}
-                    iconName={upgradeIcon}
+                    iconComponent={upgradeIcon}
                     iconContent={upgradeIconContent}
                     onClick={() => {
                         setOfferModalOpen(true);

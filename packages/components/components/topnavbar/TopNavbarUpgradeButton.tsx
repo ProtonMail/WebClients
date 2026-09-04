@@ -7,6 +7,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { useTrialInfo } from '@proton/payments-ui/ui/hooks/useTrialInfo';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -57,7 +58,7 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
         !hasAtLeastOneB2BTrial &&
         !location.pathname.endsWith(upgradePathname);
     const upgradeText = c('specialoffer: Link').t`Upgrade`;
-    const upgradeIcon = upgradeText.length > 20 && viewportWidth['>=large'] ? undefined : 'upgrade';
+    const upgradeIcon = upgradeText.length > 20 && viewportWidth['>=large'] ? undefined : IcUpgrade;
     const upsellConfig = useUpsellConfig({
         upsellRef,
         step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
@@ -83,7 +84,7 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
                             goToSettings(upsellConfig.upgradePath);
                         }
                     }}
-                    iconName={upgradeIcon}
+                    iconComponent={upgradeIcon}
                     size={
                         upgradeText.length > 14 && APP_NAME === APPS.PROTONCALENDAR && !viewportWidth['<=medium']
                             ? 'small'
