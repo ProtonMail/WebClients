@@ -1,5 +1,3 @@
-import { createRequire } from 'module';
-
 export default {
     setupFilesAfterEnv: ['./jest.setup.ts'],
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
@@ -7,30 +5,7 @@ export default {
     transformIgnorePatterns: [
         'node_modules/(?!(@proton/shared|@protontech/telemetry|mutex-browser|@protontech/crypto|bip39|@preact/signals-core)/)',
     ],
-    transform: {
-        '^.+\\.(ts|js|mjs)x?$': [
-            '@swc/jest',
-            {
-                jsc: {
-                    transform: {
-                        react: {
-                            runtime: 'automatic',
-                        },
-                    },
-                    parser: {
-                        jsx: true,
-                        syntax: 'typescript',
-                        tsx: true,
-                    },
-                },
-                env: {
-                    /* polyfill typed-array base64 and hex functions */ mode: 'usage',
-                    shippedProposals: true,
-                    coreJs: createRequire(import.meta.url)('core-js/package.json').version,
-                },
-            },
-        ],
-    },
+    preset: '@proton/jest-swc-preset',
 
     moduleNameMapper: {
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '<rootDir>/__mocks__/fileMock.js',

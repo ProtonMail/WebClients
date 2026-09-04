@@ -143,23 +143,18 @@
         "ttag": "^1.8.12"
     },
     "devDependencies": {
-        "@babel/core": "^7.29.7",
-        "@babel/preset-env": "^7.29.7",
-        "@babel/preset-react": "^7.29.7",
-        "@babel/preset-typescript": "^7.29.7",
         "@jest/globals": "^30.4.1",
         "@proton/eslint-config-proton": "workspace:^",
+        "@proton/jest-env": "workspace:^",
+        "@proton/jest-swc-preset": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
         "@types/deep-freeze": "^0.1.5",
         "@types/react": "^18.3.31",
         "@typescript/native": "npm:typescript@^7.0.2",
-        "core-js": "^3.50.0",
         "eslint": "^10.9.0",
         "jest": "^30.4.2",
-        "jest-environment-jsdom": "^30.4.1",
         "prettier": "^3.9.6",
-        "ts-jest": "^29.4.12",
         "typescript": "npm:@typescript/typescript6@^6.0.2"
     },
     "peerDependencies": {

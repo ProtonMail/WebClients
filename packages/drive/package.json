@@ -40,6 +40,7 @@
     },
     "devDependencies": {
         "@proton/jest-env": "workspace:^",
+        "@proton/jest-swc-preset": "workspace:^",
         "@proton/testing": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
@@ -51,7 +52,6 @@
         "fake-indexeddb": "^6.2.5",
         "jest": "^30.4.2",
         "jest-when": "3.7.0",
-        "ts-jest": "^29.4.12",
         "ts-loader": "^9.6.2",
         "ts-node": "^10.9.2",
         "typescript": "npm:@typescript/typescript6@^6.0.2",

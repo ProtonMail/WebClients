@@ -77,6 +77,7 @@
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-env": "workspace:^",
+        "@proton/jest-swc-preset": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
         "@testing-library/user-event": "^14.6.6",

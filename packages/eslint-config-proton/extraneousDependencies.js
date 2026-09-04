@@ -6,7 +6,6 @@ export const extraneousDependenciesDevDependencies = [
     // Types
     '**/global.d.ts',
     // Build
-    '**/babel.config.{js,ts}',
     '**/build.mjs',
     '**/postcss.config.{js,ts}',
     '**/webpack.config.{js,ts}',

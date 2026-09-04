@@ -11,11 +11,18 @@ import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 import { getModelState } from '../tests';
 import { getServerEvent } from '../tests/getServerEvent';
 import { userReducer } from '../user';
-import * as module from './index';
 import { selectUserKeys, userKeysReducer, userKeysThunk } from './index';
 import { userKeysListener } from './listener';
 
-const mockedUserKeysThunk = jest.spyOn(module, 'userKeysThunk');
+jest.mock('./index', () => {
+    const actual = jest.requireActual('./index');
+    return {
+        ...actual,
+        userKeysThunk: jest.fn(actual.userKeysThunk),
+    };
+});
+
+const mockedUserKeysThunk = jest.mocked(userKeysThunk);
 jest.mock('@protontech/crypto/srp', () => {});
 jest.mock('@protontech/crypto', () => {
     return {
