@@ -5,6 +5,7 @@ import { currentMeetingReducer } from './currentMeeting';
 import { customBackgroundsReducer } from './customBackgroundsSlice';
 import { devToolsReducer } from './devToolsSlice';
 import { deviceManagementReducer } from './deviceManagementSlice';
+import { layoutReducer } from './layoutSlice';
 import { meetAppStateReducer } from './meetAppStateSlice';
 import { meetingInfoModelReducer } from './meetingInfoModel';
 import { meetingsReducer } from './meetings';
@@ -26,6 +27,7 @@ export const meetReducers = {
     ...connectionReducer,
     ...devToolsReducer,
     ...deviceManagementReducer,
+    ...layoutReducer,
     ...meetAppStateReducer,
     ...currentMeetingReducer,
     ...customBackgroundsReducer,

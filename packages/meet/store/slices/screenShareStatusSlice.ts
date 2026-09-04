@@ -1,5 +1,7 @@
-import type { PayloadAction } from '@reduxjs/toolkit';
+import type { PayloadAction, ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
+
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 
 import type { MeetState } from '../rootReducer';
 import { selectParticipantName } from './participants/participantsSlice';
@@ -24,6 +26,16 @@ const slice = createSlice({
         },
     },
 });
+
+export const updateParticipantScreenShare =
+    (participantIdentity: string | null): ThunkAction<void, MeetState, ProtonThunkArguments, UnknownAction> =>
+    (dispatch, getState) => {
+        if (getState().screenShareStatus.participantScreenSharingIdentity === participantIdentity) {
+            return;
+        }
+
+        dispatch(slice.actions.setParticipantScreenShare(participantIdentity));
+    };
 
 export const selectIsLocalScreenShare = (state: MeetState) =>
     state.screenShareStatus.participantScreenSharingIdentity !== null &&
