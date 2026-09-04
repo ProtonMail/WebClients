@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { IcBrandProtonVpn } from '@proton/icons/icons/IcBrandProtonVpn';
 import { IcCalendarCheckmark } from '@proton/icons/icons/IcCalendarCheckmark';
@@ -106,6 +107,8 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
     const trialInfo = getTrialInfoForSingleSubscription(subscription);
     const [learnMoreModalProps, setLearnMoreModal, renderLearnMoreModal] = useModalState();
     const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
+    const [paymentMethods, loadingPaymentMethods] = usePaymentMethods();
+    const isPaymentlessB2BTrial = trialInfo.isB2BTrial && !paymentMethods?.length;
 
     const space = getSpace(user);
 
@@ -534,7 +537,7 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
 
         return (
             <>
-                {startsOnTime && (
+                {startsOnTime && !isPaymentlessB2BTrial && (
                     <div className="color-weak">{c('Info').jt`Subscription starts on ${startsOnTime}`}</div>
                 )}
                 <InlineLinkButton className="color-weak" onClick={() => setLearnMoreModal(true)}>
@@ -554,6 +557,16 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
                 {subscription?.PeriodEnd}
             </Time>
         );
+
+        if (isPaymentlessB2BTrial) {
+            if (loadingPaymentMethods) {
+                return null;
+            }
+
+            return (
+                <div className="color-weak">{c('b2b_trials_2025_Info').jt`Active until ${formattedPeriodEndDate}`}</div>
+            );
+        }
 
         return <p className="color-weak mt-1">{c('Info').jt`Trial ends on ${formattedPeriodEndDate}`}</p>;
     })();
