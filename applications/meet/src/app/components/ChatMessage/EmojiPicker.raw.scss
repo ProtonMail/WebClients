@@ -1,0 +1,70 @@
+// Theme overrides for the emoji-mart picker. The picker renders inside a shadow root, so these
+// rules are imported as a raw string and injected there instead of into the document. Proton's
+// custom properties still inherit across the shadow boundary, so they resolve as usual.
+
+// emoji-mart applies this to both the host and the picker body.
+:host {
+	--border-radius: 2rem;
+}
+
+#root {
+	// The palette emoji-mart derives its text colors from.
+	--color-a: var(--text-norm);
+	--color-b: var(--text-weak);
+	--color-c: var(--text-hint);
+
+	border: 1px solid var(--border-norm);
+	color: var(--text-norm);
+	background-color: var(--background-norm);
+
+	// Keeps the emoji grid from bleeding past the rounded corners.
+	overflow: hidden;
+}
+
+// Category headers, e.g. "Frequently used".
+.sticky {
+	color: var(--text-hint);
+	background-color: var(--background-norm);
+}
+
+// emoji-mart draws the thumb's padding in the picker background color.
+.scroll::-webkit-scrollbar-thumb {
+	border-color: var(--background-norm);
+}
+
+// Category icons above the emoji grid. Their resting and hover colors come from the palette above.
+#nav {
+	button[aria-selected] {
+		color: var(--interaction-norm);
+	}
+
+	// Underline under the selected category icon.
+	.bar {
+		background-color: var(--interaction-norm);
+	}
+}
+
+.search {
+	.icon {
+		color: var(--text-disabled);
+	}
+
+	input[type='search'] {
+		border: 1px solid var(--border-norm);
+		border-radius: 9999px;
+		color: var(--text-norm);
+		background-color: transparent;
+		caret-color: var(--interaction-norm);
+
+		&::placeholder {
+			color: var(--text-disabled);
+			opacity: 1;
+		}
+
+		&:focus {
+			border-color: var(--interaction-norm-major-1);
+			background-color: transparent;
+			box-shadow: none;
+		}
+	}
+}
