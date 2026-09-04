@@ -134,6 +134,19 @@ describe('URL parsers', () => {
             expect(result.protocol).toEqual(null);
         });
 
+        test('should not mismatch hostname/domain on schemeless url with backslash before userinfo separator', () => {
+            /* SECBTY-1891: sanitizeURL (WHATWG parser) treats the backslash as end of
+             * authority and resolves the origin to `evil.com`, whereas tldts on the raw
+             * input strips everything up to the last at-sign and resolves `bank.com`.
+             * parseUrl previously mixed both results, allowing an item validated as
+             * `evil.com` to be matched for autofill on `bank.com`. */
+            const result = parseUrl('//evil.com\\@bank.com/');
+            expect(result.domain).toEqual('evil.com');
+            expect(result.hostname).toEqual('evil.com');
+            expect(result.displayName).toEqual('evil');
+            expect(result.cleanUrl).toEqual('https://evil.com/@bank.com/');
+        });
+
         test('should respect custom private domains with single subdomain', () => {
             const result = parseUrl('https://chicken.food.blog', new Set(['food.blog']));
             expect(result.displayName).toEqual('chicken');
