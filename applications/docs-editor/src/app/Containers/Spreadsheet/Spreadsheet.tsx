@@ -10,7 +10,6 @@ import { functions } from '@rowsncolumns/functions'
 import { createCSVFromSheetData, createExcelFile, createODSFile } from '@rowsncolumns/toolkit'
 import type { ForwardedRef } from 'react'
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
-import type { EditorLoadResult } from '../../Lib/EditorLoadResult'
 import { useLocalState, useProtonSheetsState, useVersioning } from './state'
 
 import '@rowsncolumns/spreadsheet/dist/spreadsheet.min.css'
@@ -30,10 +29,8 @@ import { c } from 'ttag'
 import { useActiveBreakpoint } from './useActiveBreakpoint'
 
 import type { SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-audit'
-import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { useFeatureFlag } from './feature-flags'
 import { useSheetsDependencies } from './SheetsDependenciesProvider'
-import { useEditorTheme } from '../../Theme/EditorThemeProvider'
 import { getSheetNameFromFilename } from './sheet-import-name'
 
 export type SpreadsheetRef = {
@@ -47,7 +44,7 @@ export type SpreadsheetRef = {
 export type SpreadsheetProps = {
   docState: DocStateInterface
   hidden: boolean
-  onEditorLoadResult: EditorLoadResult
+  onEditorLoadResult: (result: TranslatedResult<void>) => void
   editorInitializationConfig: EditorInitializationConfig | undefined
   systemMode: EditorSystemMode
   editingLocked: boolean
@@ -77,12 +74,13 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     storeSpreadsheetPatches,
     hasBasePatchesStored,
     reportSheetsYjsDriftDetected,
+    reportError,
     showYjsDriftDetectedErrorModal,
     subscribeToSheetImport,
     subscribeToCollaboratorCursorNavigation,
+    theme,
   } = useSheetsDependencies()
   const { viewportWidth } = useActiveBreakpoint()
-  const { theme } = useEditorTheme()
 
   const didConvertFromFile = useRef(false)
   const [importType, setImportType] = useState<'excel' | 'ods'>()
@@ -100,19 +98,21 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       for (const difference of result.differences) {
         reportSheetsYjsDriftDetected(difference.reason)
       }
-      const error = new Error(
-        c('Error')
-          .t`This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.`,
-      )
-      reportErrorToSentry(error, undefined, {
-        driftResult: {
-          localChangedKeys: result.localChangedKeys,
-          observedYjsKeys: result.observedYjsKeys,
+      reportError(
+        new Error(
+          c('Error')
+            .t`This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.`,
+        ),
+        {
+          driftResult: {
+            localChangedKeys: result.localChangedKeys,
+            observedYjsKeys: result.observedYjsKeys,
+          },
         },
-      })
+      )
       showYjsDriftDetectedErrorModal(driftLogDetails)
     },
-    [reportSheetsYjsDriftDetected, showYjsDriftDetectedErrorModal],
+    [reportError, reportSheetsYjsDriftDetected, showYjsDriftDetectedErrorModal],
   )
 
   const isPatchesStorageEnabled = useFeatureFlag('SheetsPatchesStorageEnabled')

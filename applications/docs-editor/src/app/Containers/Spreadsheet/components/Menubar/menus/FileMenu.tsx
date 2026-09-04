@@ -5,7 +5,6 @@ import { c } from 'ttag'
 import { createStringifier } from '../../../stringifier'
 import * as UI from '../../ui'
 import type { FileMenuAction } from '@proton/docs-shared'
-import { reportErrorToSentry } from '../../../../../Utils/errorMessage'
 import { CircleLoader } from '../../CircleLoader/CircleLoader'
 import { useFeatureFlag } from '../../../feature-flags'
 import { useSheetsDependencies } from '../../../SheetsDependenciesProvider'
@@ -82,7 +81,7 @@ export interface FileMenuProps extends Ariakit.MenuProviderProps {
 }
 
 export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuProps) {
-  const { canEdit, canTrash, versionInfo, handleFileMenuAction } = useSheetsDependencies()
+  const { canEdit, canTrash, versionInfo, handleFileMenuAction, reportError } = useSheetsDependencies()
 
   const [showVersionNumber, setShowVersionNumber] = useState(false)
   const [showDebugToggle, setShowDebugToggle] = useState(false)
@@ -121,15 +120,8 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
   }, [mounted])
 
   const triggerMenuAction = useCallback(
-    async (action: FileMenuAction) => {
-      try {
-        await handleFileMenuAction(action)
-      } catch (error) {
-        console.error(error)
-        reportErrorToSentry(error)
-      }
-    },
-    [handleFileMenuAction],
+    (action: FileMenuAction) => handleFileMenuAction(action).catch(reportError),
+    [handleFileMenuAction, reportError],
   )
 
   return (
