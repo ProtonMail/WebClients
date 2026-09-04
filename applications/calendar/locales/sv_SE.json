@@ -1887,6 +1887,19 @@
       ],
       "Total": [
         "Totalt"
+      ],
+      "Amount due": [
+        "Belopp att betala"
+      ],
+      "Amount due after trial": [
+        "Belopp att betala efter provperiod"
+      ],
+      "Amount due now": [
+        "Belopp att betala nu"
+      ],
+      "Total for ${ cycle } month": [
+        "Totalt för ${ cycle } månad",
+        "Totalt för ${ cycle } månader"
       ]
     },
     "Collapsible tooltip": {
@@ -7032,6 +7045,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nått gränsen för antal bokningsbara tider (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Do you remember your password?": [
+        "Kommer du ihåg ditt lösenord?"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Loggar hjälper oss att förstå vad som hände innan problemet uppstod. De inkluderar app-åtgärder och felmeddelanden, men inget meddelandeinnehåll."
       ]
     },
     "info": {
