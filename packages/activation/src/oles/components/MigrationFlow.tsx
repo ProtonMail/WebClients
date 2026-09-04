@@ -164,7 +164,9 @@ const MigrationFlow = ({ provider }: { provider: OlesProvider }) => {
                 <MigrationSummary model={model as MigrationModel} />
             )}
 
-            {renderFinishModal && model.domain && <FinishModal initialView={'all-set'} modalProps={finishModalProps} />}
+            {renderFinishModal && model.domain && (
+                <FinishModal initialView={'all-set'} model={model} modalProps={finishModalProps} />
+            )}
         </div>
     );
 };
