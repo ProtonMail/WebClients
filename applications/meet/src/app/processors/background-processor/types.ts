@@ -7,8 +7,15 @@ import type {
 
 import type { TunableConstantsOverrides } from './tunableConstants';
 
-// Options shared by every background processor; background-specific options extend this.
-export interface BaseBackgroundProcessorOptions extends ProcessorWrapperOptions {
+// What the segmented person is composited over. Both variants run on the same
+// pipeline, so switching between them only changes compositor state.
+export type BackgroundMode =
+    | { type: 'blur'; blurRadius?: number }
+    // An object URL, data URL or remote URL.
+    | { type: 'image'; imageUrl: string };
+
+export interface BackgroundProcessorOptions extends ProcessorWrapperOptions {
+    mode?: BackgroundMode;
     segmenterOptions?: SegmenterOptions;
     assetPaths?: {
         tasksVisionFileSet?: string;
@@ -21,30 +28,14 @@ export interface BaseBackgroundProcessorOptions extends ProcessorWrapperOptions 
     constantOverrides?: TunableConstantsOverrides;
 }
 
-export interface BackgroundProcessorOptions extends BaseBackgroundProcessorOptions {
-    blurRadius?: number;
-}
-
-export interface CustomBackgroundProcessorOptions extends BaseBackgroundProcessorOptions {
-    // Solid CSS color used to fill the background (mutually exclusive with `imageUrl`).
-    backgroundColor?: string;
-    // Image source (object URL, data URL or remote URL) drawn as the background.
-    imageUrl?: string;
-}
-
-type SharedBackgroundProcessorHandle = ProcessorWrapper<BackgroundOptions> & {
+export type BackgroundProcessor = ProcessorWrapper<BackgroundOptions> & {
     enable: () => void;
     disable: () => void;
     isEnabled: () => boolean;
     getActiveDelegate: () => 'GPU' | 'CPU' | undefined;
-};
-
-export type BackgroundBlurProcessor = SharedBackgroundProcessorHandle & {
-    waitUntilBlurApplied?: () => Promise<void>;
-};
-
-export type CustomBackgroundProcessor = SharedBackgroundProcessorHandle & {
-    waitUntilBackgroundApplied?: () => Promise<void>;
-    // Update the background (color or image) without rebuilding the pipeline.
-    setBackground?: (background: { backgroundColor?: string; imageUrl?: string }) => Promise<void>;
+    waitUntilApplied: () => Promise<void>;
+    // Whether the effect is live rather than still warming up.
+    hasAppliedMask: () => boolean;
+    // Swap the background without rebuilding the segmentation pipeline.
+    setMode: (mode: BackgroundMode) => Promise<void>;
 };

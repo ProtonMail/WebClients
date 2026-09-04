@@ -9,6 +9,11 @@ import { withTimeout } from '@proton/meet/utils/withTimeout';
 import { isFirefox, isIos } from '@proton/shared/lib/helpers/browser';
 
 import {
+    BACKGROUND_IMAGE_DECODE_TIMEOUT_MS,
+    MAX_BACKGROUND_IMAGE_EDGE,
+    MAX_BACKGROUND_IMAGE_PIXELS,
+} from '../../utils/customBackgrounds/constants';
+import {
     DEFAULT_ASSET_PATH,
     DEFAULT_MODEL_PATH,
     MASK_CLOSING_MAX_RADIUS,
@@ -29,16 +34,22 @@ import {
     VERTICES,
     buildFragmentShaderSource,
 } from './constants';
+import { createProcessorWrapper } from './createProcessorWrapper';
 import {
+    DEFAULT_BLUR_RADIUS,
     type TunableConstantsOverrides,
     getDefaultMaskClosingRadius,
     getDefaultSegmentationInputMaxEdge,
     getSegmentationResizeQuality,
     pickWorkerOverrides,
 } from './tunableConstants';
-import type { BaseBackgroundProcessorOptions } from './types';
+import type { BackgroundMode, BackgroundProcessor, BackgroundProcessorOptions } from './types';
 
 const CACHE_NAME = 'proton-meet-background-blur-v1';
+
+// Decoded backgrounds kept so returning to a recent image skips the decode. Each
+// entry holds a full-resolution bitmap, hence the small bound.
+const MAX_CACHED_BACKGROUND_BITMAPS = 4;
 
 // Safety net for a wedged worker: if a single frame's mask doesn't come back in
 // this long we give up on it (reusing the previous mask) instead of freezing the
@@ -129,16 +140,19 @@ export const preloadBackgroundBlurAssets = async (assetPaths?: {
     }
 };
 
+const backgroundKey = (mode: BackgroundMode): string | null =>
+    mode.type === 'image' ? `image:${mode.imageUrl}` : null;
+
 /**
- * Shared segmentation + mask-compositing pipeline for every background
- * processor. It runs the MediaPipe segmenter in a worker, uploads and shapes the
- * person-confidence mask on the GPU, and hands the inverted mask to LiveKit's
- * WebGL compositor. Subclasses only decide what the background is (blur vs. a
- * custom image/color) by implementing {@link configureBackground}.
+ * Runs the MediaPipe segmenter in a worker, shapes the person-confidence mask on
+ * the GPU, and hands the inverted mask to LiveKit's WebGL compositor.
+ *
+ * Blur and image backgrounds are modes of this one pipeline, since the compositor
+ * holds a blur radius and a background image as independent state and picks
+ * between them per frame. {@link setMode} therefore swaps the look without
+ * restarting the segmenter or the track.
  */
-export default abstract class BaseBackgroundProcessor<
-    TOptions extends BaseBackgroundProcessorOptions = BaseBackgroundProcessorOptions,
-> extends VideoTransformer<BackgroundOptions> {
+export class BackgroundProcessorTransformer extends VideoTransformer<BackgroundOptions> {
     static get isSupported() {
         const canvas = document.createElement('canvas');
         const gl = canvas.getContext('webgl2');
@@ -156,11 +170,13 @@ export default abstract class BaseBackgroundProcessor<
         return isSupported;
     }
 
-    options: TOptions;
+    options: BackgroundProcessorOptions;
 
     isFirstFrame = true;
 
     private maskGl?: WebGL2RenderingContext | null;
+    // Canvas maskGl and every mask resource below were created against.
+    private maskGlCanvas: unknown = null;
     private maskShaderProgram?: WebGLProgram | null;
     private maskVertexBuffer?: WebGLBuffer | null;
     private maskFramebuffer?: WebGLFramebuffer | null;
@@ -258,23 +274,47 @@ export default abstract class BaseBackgroundProcessor<
 
     private outputSizeListener: ((width: number, height: number) => void) | null = null;
 
-    constructor(opts: TOptions) {
+    private mode: BackgroundMode;
+
+    // Most recently used last.
+    private backgroundBitmaps = new Map<string, ImageBitmap>();
+
+    // Currently on the compositor, so the cache never evicts it.
+    private appliedBackgroundKey: string | null = null;
+
+    // Blur radius currently on the compositor, or null when an image is.
+    private appliedBlurRadius: number | null = null;
+
+    // The compositor the two fields above describe. init()/restart() build a new
+    // one with its own blank state, so the bookkeeping cannot carry across them.
+    private appliedCompositor: unknown = null;
+
+    // Bumped per applyMode() call so a superseded swap can bail out.
+    private modeGeneration = 0;
+
+    // Swaps currently holding the compositor mid-change; transform() drops frames
+    // while any are. Tokens make teardown safe: a swap finishing after destroy()
+    // cannot decrement state belonging to a newer initialization.
+    private backgroundSwapsInFlight = new Set<symbol>();
+
+    constructor(opts: BackgroundProcessorOptions) {
         super();
         this.options = opts;
+        this.mode = opts.mode ?? { type: 'blur' };
 
         const overrides = opts.constantOverrides;
 
-        this.maskClosingRadius = BaseBackgroundProcessor.resolveInt(
+        this.maskClosingRadius = BackgroundProcessorTransformer.resolveInt(
             overrides?.maskClosingRadius,
             getDefaultMaskClosingRadius(opts),
             0
         );
-        this.segmentationInputMaxEdge = BaseBackgroundProcessor.resolveInt(
+        this.segmentationInputMaxEdge = BackgroundProcessorTransformer.resolveInt(
             overrides?.segmentationInputMaxEdge,
             getDefaultSegmentationInputMaxEdge(opts),
             1
         );
-        this.segmentationFrameInterval = BaseBackgroundProcessor.resolveInt(
+        this.segmentationFrameInterval = BackgroundProcessorTransformer.resolveInt(
             overrides?.segmentationFrameInterval,
             SEGMENTATION_FRAME_INTERVAL,
             1
@@ -291,13 +331,166 @@ export default abstract class BaseBackgroundProcessor<
             : fallback;
     }
 
-    /**
-     * Configure LiveKit's compositor with the concrete background this processor
-     * produces. Called after the worker is initialized and again on every
-     * {@link update}. Blur sets the blur radius; a custom background sets the
-     * background image/color.
-     */
-    protected abstract configureBackground(): void | Promise<void>;
+    private async loadBackgroundImage(imageUrl: string): Promise<ImageBitmap> {
+        const image = new Image();
+        image.crossOrigin = 'anonymous';
+
+        try {
+            await withTimeout(
+                new Promise<void>((resolve, reject) => {
+                    image.onload = () => resolve();
+                    image.onerror = () => reject(new Error('Failed to load background image'));
+                    image.src = imageUrl;
+                }),
+                'Loading the background image',
+                BACKGROUND_IMAGE_DECODE_TIMEOUT_MS
+            );
+        } finally {
+            image.onload = null;
+            image.onerror = null;
+        }
+
+        const { naturalWidth: width, naturalHeight: height } = image;
+
+        if (!width || !height) {
+            throw new Error('The background image decoded to no pixels');
+        }
+
+        if (
+            width > MAX_BACKGROUND_IMAGE_EDGE ||
+            height > MAX_BACKGROUND_IMAGE_EDGE ||
+            width * height > MAX_BACKGROUND_IMAGE_PIXELS
+        ) {
+            throw new Error(`The background image is too large to composite: ${width}x${height}`);
+        }
+
+        return createImageBitmap(image);
+    }
+
+    // Runs before the compositor is touched, so a slow decode never leaves the
+    // output stranded between backgrounds.
+    private async prepareBackgroundBitmap(mode: BackgroundMode): Promise<ImageBitmap | null> {
+        if (mode.type !== 'image') {
+            return null;
+        }
+
+        const key = backgroundKey(mode)!;
+
+        const cached = this.backgroundBitmaps.get(key);
+        if (cached) {
+            // Re-insert to mark as most recently used.
+            this.backgroundBitmaps.delete(key);
+            this.backgroundBitmaps.set(key, cached);
+            return cached;
+        }
+
+        const bitmap = await this.loadBackgroundImage(mode.imageUrl);
+
+        this.backgroundBitmaps.set(key, bitmap);
+        this.evictCachedBackgroundBitmaps();
+
+        return bitmap;
+    }
+
+    // Oldest first, skipping the one on screen. The compositor keeps its own
+    // cover-cropped copy, so closing the source it was built from is safe.
+    private evictCachedBackgroundBitmaps() {
+        for (const [key, bitmap] of this.backgroundBitmaps) {
+            if (this.backgroundBitmaps.size <= MAX_CACHED_BACKGROUND_BITMAPS) {
+                return;
+            }
+            if (key === this.appliedBackgroundKey) {
+                continue;
+            }
+            bitmap.close();
+            this.backgroundBitmaps.delete(key);
+        }
+    }
+
+    private isModeApplied(mode: BackgroundMode): boolean {
+        if (mode.type === 'blur') {
+            return this.appliedBackgroundKey === null && this.appliedBlurRadius === this.getBlurRadius(mode);
+        }
+        return this.appliedBlurRadius === null && this.appliedBackgroundKey === backgroundKey(mode);
+    }
+
+    // The compositor prefers blur whenever a radius is set, so an image has to
+    // clear the radius before uploading its bitmap.
+    private async applyMode(mode: BackgroundMode) {
+        if (!this.gl) {
+            return;
+        }
+
+        if (this.appliedCompositor !== this.gl) {
+            // A fresh compositor holds none of what the previous one did.
+            this.appliedCompositor = this.gl;
+            this.appliedBackgroundKey = null;
+            this.appliedBlurRadius = null;
+        } else if (this.isModeApplied(mode)) {
+            return;
+        }
+
+        const generation = ++this.modeGeneration;
+        const bitmap = await this.prepareBackgroundBitmap(mode);
+
+        // A newer swap took over, or the pipeline was torn down while decoding.
+        if (generation !== this.modeGeneration || !this.gl) {
+            return;
+        }
+
+        if (mode.type === 'image' && !bitmap) {
+            throw new Error('The background image could not be prepared');
+        }
+
+        const swap = Symbol();
+        this.backgroundSwapsInFlight.add(swap);
+
+        try {
+            if (mode.type === 'blur') {
+                // setBlurRadius() drops the background image, so the key has to go too.
+                this.appliedBackgroundKey = null;
+                this.appliedBlurRadius = this.getBlurRadius(mode);
+                this.gl.setBlurRadius(this.appliedBlurRadius);
+            } else {
+                this.gl.setBlurRadius(null);
+                this.appliedBlurRadius = null;
+                this.appliedBackgroundKey = backgroundKey(mode);
+                await this.gl.setBackgroundImage(bitmap);
+            }
+        } finally {
+            this.backgroundSwapsInFlight.delete(swap);
+        }
+    }
+
+    // The debug tuner's radius wins over the mode's, and 0 is valid there.
+    private getBlurRadius(mode: { blurRadius?: number }): number {
+        const override = this.options.constantOverrides?.blurRadius;
+        if (typeof override === 'number' && Number.isFinite(override)) {
+            return Math.max(0, Math.round(override));
+        }
+        return typeof mode.blurRadius === 'number' ? mode.blurRadius : DEFAULT_BLUR_RADIUS;
+    }
+
+    // The segmenter keeps running, so the new background lands on the next
+    // composited frame with no warmup.
+    async setMode(mode: BackgroundMode) {
+        const previousMode = this.mode;
+        this.mode = mode;
+        try {
+            await this.applyMode(mode);
+        } catch (error) {
+            // Keep the last working mode for future compositor rebuilds. A newer
+            // setMode() call owns the field if it changed while this one awaited.
+            if (this.mode === mode) {
+                this.mode = previousMode;
+            }
+            throw error;
+        }
+    }
+
+    hasAppliedMask() {
+        return this.hasInitialMask;
+    }
 
     // Compile-time morphology loop ceiling for the shader. Must be >= the active
     // closing radius; keeps the production default as a floor.
@@ -392,6 +585,11 @@ export default abstract class BaseBackgroundProcessor<
     }
 
     async init({ outputCanvas, inputElement: inputVideo }: VideoTransformerInitOptions) {
+        // One processor instance can be initialized against several camera tracks,
+        // and each one needs a fresh mask before it can be reported as applied.
+        this.hasInitialMask = false;
+        this.isFirstFrame = true;
+
         await super.init({ outputCanvas, inputElement: inputVideo });
 
         // Snapshot the track's own resolution before the first frame resizes the
@@ -401,7 +599,7 @@ export default abstract class BaseBackgroundProcessor<
         }
 
         await this.initializeWorker();
-        await this.configureBackground();
+        await this.applyMode(this.mode);
     }
 
     setOutputSizeListener(listener: ((width: number, height: number) => void) | null) {
@@ -441,7 +639,7 @@ export default abstract class BaseBackgroundProcessor<
         const wasDisabled = this.isDisabled;
         try {
             await super.restart({ outputCanvas: canvas, inputElement: this.inputVideo });
-            await this.configureBackground();
+            await this.applyMode(this.mode);
             this.reapplyLastMask();
         } finally {
             this.isDisabled = wasDisabled;
@@ -597,6 +795,8 @@ export default abstract class BaseBackgroundProcessor<
     }
 
     async destroy() {
+        // Invalidate image decodes that started against the compositor being torn down.
+        this.modeGeneration += 1;
         await super.destroy();
         this.teardownWorker();
         // Unblock any pending UI waiters (teardown isn't a failure, so resolve).
@@ -614,6 +814,12 @@ export default abstract class BaseBackgroundProcessor<
         this.isReorienting = false;
         this.segmentationCanvas = null;
         this.segmentationContext = null;
+        this.backgroundSwapsInFlight.clear();
+        this.appliedBackgroundKey = null;
+        this.appliedBlurRadius = null;
+        this.appliedCompositor = null;
+        this.backgroundBitmaps.forEach((bitmap) => bitmap.close());
+        this.backgroundBitmaps.clear();
         this.cleanupWebGLResources();
         this.resetMaskState();
     }
@@ -654,6 +860,7 @@ export default abstract class BaseBackgroundProcessor<
         this.maskWidth = 0;
         this.maskHeight = 0;
         this.maskGl = null;
+        this.maskGlCanvas = null;
     }
 
     private resetMaskState() {
@@ -696,7 +903,8 @@ export default abstract class BaseBackgroundProcessor<
         if (this.maskRequestInFlight) {
             return false;
         }
-        // Nothing composites until the first mask lands, so never pace that one.
+        // Nothing composites until this init() has a mask, so keep asking for it even
+        // while hidden. Bounded by the output frame cap like any other request.
         if (!this.hasInitialMask) {
             return true;
         }
@@ -807,9 +1015,12 @@ export default abstract class BaseBackgroundProcessor<
     }
 
     // Dropping (not enqueueing) is what makes the output track run at the lower rate.
-    // Warmup is exempt so the cap can't delay the first mask.
+    // The cap applies from the first real frame, warmup included: exempting warmup
+    // would buy one frame interval of first-mask latency in exchange for segmenting
+    // at camera rate for as long as no mask applies, and a pipeline whose masks are
+    // failing is exactly the one that can least afford it.
     private shouldDropFrame(frameTimeMs: number) {
-        if (this.minOutputFrameIntervalMs === 0 || this.isFirstFrame || !this.hasInitialMask) {
+        if (this.minOutputFrameIntervalMs === 0 || this.isFirstFrame) {
             return false;
         }
         return frameTimeMs - this.lastOutputFrameTimeMs < this.minOutputFrameIntervalMs;
@@ -842,7 +1053,9 @@ export default abstract class BaseBackgroundProcessor<
                 return;
             }
 
-            if (this.isRebuildingCompositor) {
+            // Compositing mid-swap would show the gap between the outgoing and
+            // incoming background; a dropped frame is invisible, that gap is not.
+            if (this.isRebuildingCompositor || this.backgroundSwapsInFlight.size > 0) {
                 return;
             }
 
@@ -1088,9 +1301,12 @@ export default abstract class BaseBackgroundProcessor<
             });
     }
 
-    async update(opts: Partial<TOptions>) {
+    async update(opts: Partial<BackgroundProcessorOptions>) {
         this.options = { ...this.options, ...opts };
-        await this.configureBackground();
+        if (opts.mode) {
+            this.mode = opts.mode;
+        }
+        await this.applyMode(this.mode);
     }
 
     private drawFrame(frame: VideoFrame) {
@@ -1172,7 +1388,7 @@ export default abstract class BaseBackgroundProcessor<
 
     private restoreWebGLState(
         gl: WebGL2RenderingContext,
-        state: ReturnType<BaseBackgroundProcessor['saveWebGLState']>
+        state: ReturnType<BackgroundProcessorTransformer['saveWebGLState']>
     ) {
         // Set the active unit before each bind so the saved texture lands on the
         // unit it came from, then restore the originally active unit.
@@ -1461,8 +1677,18 @@ export default abstract class BaseBackgroundProcessor<
 
         // Use the WebGL context from the same canvas LiveKit is using so the
         // resulting mask texture can be handed straight to LiveKit's updateMask().
+        // Checked per upload rather than at init(), because restart() swaps the
+        // compositor too: resources built against the previous canvas would upload
+        // into a context LiveKit no longer samples, so every mask would report as
+        // applied-but-invisible and the pipeline would never leave warmup.
+        if (this.maskGlCanvas && this.maskGlCanvas !== this.canvas) {
+            this.cleanupWebGLResources();
+            this.resetMaskState();
+        }
+
         if (!this.maskGl && typeof (this.canvas as any).getContext === 'function') {
             this.maskGl = (this.canvas as any).getContext('webgl2') as WebGL2RenderingContext | null;
+            this.maskGlCanvas = this.canvas;
         }
 
         const gl = this.maskGl;
@@ -1511,3 +1737,22 @@ export default abstract class BaseBackgroundProcessor<
         }
     }
 }
+
+export const createBackgroundProcessorHandle = (options: BackgroundProcessorOptions): BackgroundProcessor => {
+    const transformer = new BackgroundProcessorTransformer(options);
+    const processor = createProcessorWrapper<BackgroundOptions>(
+        transformer,
+        'background-effect',
+        options
+    ) as BackgroundProcessor;
+
+    processor.enable = () => transformer.enable();
+    processor.disable = () => transformer.disable();
+    processor.isEnabled = () => transformer.isEnabled();
+    processor.getActiveDelegate = () => transformer.activeDelegate;
+    processor.waitUntilApplied = () => transformer.waitUntilApplied();
+    processor.hasAppliedMask = () => transformer.hasAppliedMask();
+    processor.setMode = (mode) => transformer.setMode(mode);
+
+    return processor;
+};

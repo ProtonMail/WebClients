@@ -14,7 +14,6 @@ vi.mock('@proton/shared/lib/helpers/promise', () => ({ wait: () => Promise.resol
 
 vi.mock('../../processors/background-processor/createBackgroundProcessor', () => ({
     createBackgroundProcessor: vi.fn(),
-    createCustomBackgroundProcessor: vi.fn(),
     ensureBackgroundProcessor: vi.fn(),
 }));
 
