@@ -2,6 +2,7 @@ import type { Dispatch, SetStateAction } from 'react';
 
 import DOMPurify from 'dompurify';
 
+import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import { isElement } from '@proton/shared/lib/helpers/dom';
 
 import { NOTIFICATION_DEFAULT_EXPIRATION_TIME } from './constants';
@@ -64,7 +65,7 @@ function createNotificationManager(
         text,
         preWrap,
         showCloseButton = true,
-        icon = type === 'warning' || type === 'error' ? 'exclamation-triangle-filled' : undefined,
+        icon = type === 'warning' || type === 'error' ? IcExclamationTriangleFilled : undefined,
         deduplicate = true,
         ...rest
     }: CreateNotificationOptions) => {
