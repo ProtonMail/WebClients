@@ -124,7 +124,7 @@ export const GoUnlimited2025 = () => {
                 setSpotlightState(true);
                 sendTelemetryReportGoUnlimited2025(TelemetryUnlimitedOffer2025.clickTopNavbar, config.type);
             }}
-            promoIconName={config.topButton?.icon}
+            promoIcon={config.topButton?.icon}
             promoChildren={config.topButton?.title}
             promoColor="norm"
             spotlightShow={spotlightState}

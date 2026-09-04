@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
+
 import { TopBarReferralSpotlight } from '../../containers/referral/components/TopBarReferralSpotlight/TopBarReferralSpotlight';
 import { useReferralDiscover } from '../../containers/referral/hooks/useReferralDiscover';
 import { useReferralTelemetry } from '../../containers/referral/hooks/useReferralTelemetry';
@@ -34,7 +36,7 @@ const TopNavReferralButton = () => {
         >
             <PromotionButton
                 style={{ '--upgrade-color-stop-1': '#6243E5', '--upgrade-color-stop-2': '#D783FF' }}
-                iconName="money-bills"
+                iconComponent={IcMoneyBills}
                 onClick={() => {
                     sendTopBarButtonClick();
                     setShowTopBarSpotlight(!showTopBarSpotlight);

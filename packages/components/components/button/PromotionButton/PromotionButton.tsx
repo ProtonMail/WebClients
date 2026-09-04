@@ -4,21 +4,26 @@ import { forwardRef } from 'react';
 import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import type { IconName, IconSize } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import type { IconSize } from '@proton/icons/types';
 import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
 import type { Breakpoints } from '../../../hooks/useActiveBreakpoint';
 import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
 import useUid from '../../../hooks/useUid';
-import Icon from '../../icon/Icon';
 
 import './PromotionButton.scss';
 
 type ButtonButtonLikeProps = ButtonLikeProps<'button'>;
 
 interface OwnProps extends Omit<ButtonLikeProps<'button'>, 'as' | 'ref'> {
-    iconName?: IconName;
+    /**
+     * The gradient fill has to land as an inline style on the `svg` itself — a
+     * wrapper cannot win against the `fill: currentcolor` the size class sets — so
+     * the button takes the icon component rather than an element.
+     */
+    iconComponent?: IconComponent;
     iconContent?: ReactNode;
     icon?: boolean;
     iconSize?: IconSize;
@@ -41,7 +46,7 @@ const defaultElement = ButtonLike;
 const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
     {
         children,
-        iconName,
+        iconComponent: IconComponent,
         iconContent,
         icon,
         iconGradient = true,
@@ -110,9 +115,8 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
                     responsive && viewportWidth['>=large'] ? 'w-full' : undefined
                 )}
             >
-                {iconName && (
-                    <Icon
-                        name={iconName}
+                {IconComponent && (
+                    <IconComponent
                         className="shrink-0"
                         size={iconSize}
                         style={
@@ -126,7 +130,7 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
                 <span className={clsx(icon ? 'sr-only' : 'block text-ellipsis')}>{children}</span>
                 {loading && <CircleLoader />}
             </span>
-            {iconName && iconGradient ? (
+            {IconComponent && iconGradient ? (
                 <svg aria-hidden="true" focusable="false" className="sr-only">
                     <linearGradient id={uid}>
                         <stop offset="0%" stopColor="var(--color-stop-1)" />

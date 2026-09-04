@@ -1,8 +1,8 @@
 import { type ReactNode, useRef } from 'react';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import type { IconComponent } from '@proton/icons/component';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
-import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import { PromotionButton } from '../../../button/PromotionButton/index';
@@ -11,7 +11,7 @@ import Spotlight from '../../../spotlight/Spotlight';
 interface Props {
     promoOnClick: () => void;
     promoLoading?: boolean;
-    promoIconName?: IconName;
+    promoIcon?: IconComponent;
     promoChildren: ReactNode;
     promoColor: 'full-gradient' | 'norm' | 'outline-gradient';
     spotlightBorderRadius?: 'xl' | 'md';
@@ -28,7 +28,7 @@ interface Props {
 export const SpotlightWithPromo = ({
     promoOnClick,
     promoLoading = false,
-    promoIconName,
+    promoIcon,
     promoChildren,
     promoColor,
     spotlightBorderRadius = 'md',
@@ -57,7 +57,7 @@ export const SpotlightWithPromo = ({
                         promoColor === 'norm' && 'color-primary hover:color-primary'
                     )}
                     onClick={promoOnClick}
-                    iconName={promoIconName}
+                    iconComponent={promoIcon}
                     loading={promoLoading}
                     disabled={promoLoading}
                     size="medium"

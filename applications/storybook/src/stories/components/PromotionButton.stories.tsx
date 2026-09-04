@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
+import { IcBrandProtonMailFilledPlus } from '@proton/icons/icons/IcBrandProtonMailFilledPlus';
+import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 
 const meta: Meta<typeof PromotionButton> = {
     title: 'Components/Promotion Button',
@@ -28,14 +30,14 @@ export const Default: Story = {};
 
 export const WithIcon: Story = {
     args: {
-        iconName: 'brand-proton-mail-filled-plus',
+        iconComponent: IcBrandProtonMailFilledPlus,
         children: 'With Icon',
     },
 };
 
 export const IconOnly: Story = {
     args: {
-        iconName: 'upgrade',
+        iconComponent: IcUpgrade,
         icon: true,
         shape: 'ghost',
         children: 'Icon Ghost',
@@ -44,7 +46,7 @@ export const IconOnly: Story = {
 
 export const Responsive: Story = {
     args: {
-        iconName: 'upgrade',
+        iconComponent: IcUpgrade,
         icon: true,
         responsive: true,
         children: 'Responsive',
@@ -53,7 +55,7 @@ export const Responsive: Story = {
 
 export const Upsell: Story = {
     args: {
-        iconName: 'brand-proton-mail-filled-plus',
+        iconComponent: IcBrandProtonMailFilledPlus,
         icon: true,
         upsell: true,
         children: 'Upsell',
@@ -62,7 +64,7 @@ export const Upsell: Story = {
 
 export const NoIconGradient: Story = {
     args: {
-        iconName: 'brand-proton-mail-filled-plus',
+        iconComponent: IcBrandProtonMailFilledPlus,
         iconGradient: false,
         children: 'No icon gradient',
     },

@@ -7,6 +7,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { TelemetryMailDrivePostSignupOneDollarEvents } from '@proton/shared/lib/api/telemetry';
 import { APP_UPSELL_REF_PATH, DRIVE_UPSELL_PATHS, SECOND, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -76,7 +77,7 @@ export const DrivePostSignupOneDollar = () => {
     const originalUpgradeText = c('specialoffer: Link').jt`Upgrade for ${pricingTitle}`;
     // translators: keep the "Special offer" text as short as possible since this is a fallback if the offer text is too long
     const upgradeText = originalUpgradeText[0].length > 30 ? c('Offer').t`Special offer` : originalUpgradeText;
-    const upgradeIcon = upgradeText[0].length > 15 && viewportWidth['>=large'] ? undefined : 'upgrade';
+    const upgradeIcon = upgradeText[0].length > 15 && viewportWidth['>=large'] ? undefined : IcUpgrade;
 
     const handleClose = () => {
         setSpotlightState(false);
@@ -135,7 +136,7 @@ export const DrivePostSignupOneDollar = () => {
                     });
                 }
             }}
-            promoIconName={upgradeIcon}
+            promoIcon={upgradeIcon}
             promoChildren={upgradeText}
             promoColor="full-gradient"
             spotlightBorderRadius={daysSinceOffer >= LAST_REMINDER_DAY ? 'md' : 'xl'}

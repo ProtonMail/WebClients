@@ -6,6 +6,7 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import { IcLightbulb } from '@proton/icons/icons/IcLightbulb';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { getPlanByName } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -85,7 +86,7 @@ export const useUnlimitedToDuoConfig = (): UnlimitedToDuoOfferConfig => {
             shape: 'outline',
             title: selectedTip.cta,
             gradient: false,
-            icon: 'lightbulb',
+            icon: IcLightbulb,
         },
         loading: loadingRotationState ?? true,
     };
