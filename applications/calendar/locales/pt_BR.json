@@ -1894,6 +1894,13 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Amount due after trial": [
+        "Valor devido após o período de avaliação"
+      ],
+      "Total for ${ cycle } month": [
+        "Total por ${ cycle } mês",
+        "Total por ${ cycle } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -6994,6 +7001,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Você atingiu o limite de agendamentos (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "Marca de ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "Do you remember your password?": [
+        "Você lembra sua senha?"
       ]
     },
     "info": {
