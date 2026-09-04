@@ -14,7 +14,7 @@ import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { c } from 'ttag'
 
 import { DocumentLayout } from '~/components/document/DocumentLayout/DocumentLayout'
-import { DocumentConverter } from './__components/DocumentConverter'
+import { DocumentConverter, type NodeContentsGetter } from './__components/DocumentConverter'
 import { DocumentViewer } from '~/components/document/DocumentViewer/DocumentViewer'
 import { WordCountProvider } from '~/components/document/WordCount'
 import { useApplication } from '~/utils/application-context'
@@ -32,6 +32,7 @@ import { tmpConvertNewDocTypeToOld } from '@proton/drive-store/store/_documents'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 import { useDriveCompatSDK } from '~/utils/flags'
 import { getMyFilesNodeMeta } from '@proton/docs-core/lib/DriveSDK/getMyFilesNodeMeta'
+import { getNodeContents as getNodeContentsSDK } from '@proton/docs-core/lib/DriveSDK/getNodeContents'
 
 export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCompat }) {
   const application = useApplication()
@@ -181,6 +182,8 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
     return undefined
   }, [contentToInject, didCreateNewDocument])
 
+  const getNodeContents = replaceCompatWithSDK ? getNodeContentsSDK : driveCompat.getNodeContents
+
   return (
     <WordCountProvider>
       <DocsProvider publicContext={undefined} privateContext={{ user, compat: driveCompat }}>
@@ -191,7 +194,7 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
             openAction={openAction}
             actionMode={actionMode}
             isCreatingNewDocument={isCreatingNewDocument}
-            getNodeContents={driveCompat.getNodeContents}
+            getNodeContents={getNodeContents}
             editorInitializationConfig={editorInitializationConfig}
           />
         </DocumentLayout>
@@ -215,7 +218,7 @@ function Content({
   actionMode: DocumentAction['mode'] | undefined
   isCreatingNewDocument: boolean
   onConversionSuccess: (result: FileToDocConversionResult) => void
-  getNodeContents: DriveCompat['getNodeContents']
+  getNodeContents: NodeContentsGetter
   editorInitializationConfig?: EditorInitializationConfig
 }) {
   const [emailOptInModal, openEmailOptInModal] = useEmailOptInModal()

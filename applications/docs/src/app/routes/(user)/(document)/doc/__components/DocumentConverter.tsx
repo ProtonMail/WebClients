@@ -6,10 +6,15 @@ import { useCallback, useEffect, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
 
+export type NodeContentsGetter = (
+  meta: NodeMeta,
+  abortSignal?: AbortSignal,
+) => Promise<{ contents: Uint8Array<ArrayBuffer>; node: DecryptedNode }>
+
 export type DocumentConverterProps = {
   lookup: NodeMeta
   onSuccess: (result: FileToDocConversionResult) => void
-  getNodeContents: (meta: NodeMeta) => Promise<{ contents: Uint8Array<ArrayBuffer>; node: DecryptedNode }>
+  getNodeContents: NodeContentsGetter
 }
 
 export function DocumentConverter({ lookup, onSuccess, getNodeContents }: DocumentConverterProps) {
@@ -24,8 +29,10 @@ export function DocumentConverter({ lookup, onSuccess, getNodeContents }: Docume
   const [error, setError] = useState<Error | null>(null)
 
   useEffect(() => {
+    const abort = new AbortController()
+
     void withLoading(
-      getNodeContents(lookup)
+      getNodeContents(lookup, abort.signal)
         .then(({ contents, node }) => {
           setError(null)
           setContents(contents)
@@ -37,6 +44,8 @@ export function DocumentConverter({ lookup, onSuccess, getNodeContents }: Docume
           setNode(null)
         }),
     )
+
+    return () => abort.abort()
   }, [lookup, getNodeContents, withLoading])
 
   const performConversion = useCallback(async () => {
@@ -60,14 +69,7 @@ export function DocumentConverter({ lookup, onSuccess, getNodeContents }: Docume
         onSuccess(result.getValue())
       }
     }
-  }, [
-    isConverting,
-    conversionResult,
-    contents,
-    node,
-    application.createEmptyDocumentForConversionUseCase,
-    onSuccess,
-  ])
+  }, [isConverting, conversionResult, contents, node, application.createEmptyDocumentForConversionUseCase, onSuccess])
 
   useEffect(() => {
     if (!isConverting) {
