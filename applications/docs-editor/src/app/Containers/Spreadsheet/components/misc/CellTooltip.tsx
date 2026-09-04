@@ -223,7 +223,7 @@ function LinkInfo({
   const url = link.startsWith('http') ? link : 'https://' + link
   const isReadonly = useUI((state) => state.info.isReadonly)
 
-  const { openLink, showNotification } = useSheetsDependencies()
+  const { openLink, reportError, showNotification } = useSheetsDependencies()
   const copyLink = useCallback(() => {
     copyTextToClipboard(url)
     showNotification({ text: s('Copied') })
@@ -250,7 +250,7 @@ function LinkInfo({
           className="max-w-[20ch] text-ellipsis text-xs font-semibold leading-5 underline focus-visible:shadow-none focus-visible:outline-none"
           onClick={(e) => {
             e.preventDefault()
-            openLink(url)
+            void openLink(url).catch(reportError)
           }}
         >
           {link}
