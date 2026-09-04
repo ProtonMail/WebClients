@@ -44,6 +44,7 @@ import { getParticipantInitials } from '../../utils/getParticipantInitials';
 import { trimMessage } from '../../utils/trim-message';
 
 import './ChatMessage.scss';
+import emojiPickerStyles from './EmojiPicker.raw.scss';
 
 const EmojiPicker = ({
     autoFocus,
@@ -63,7 +64,21 @@ const EmojiPicker = ({
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        new Picker({ autoFocus, onEmojiSelect, set, skinTonePosition, previewPosition, perLine, data, ref });
+        const picker = new Picker({
+            autoFocus,
+            onEmojiSelect,
+            set,
+            skinTonePosition,
+            previewPosition,
+            perLine,
+            data,
+            ref,
+            theme: 'dark',
+        }) as unknown as HTMLElement;
+
+        const style = document.createElement('style');
+        style.textContent = emojiPickerStyles;
+        picker.shadowRoot?.appendChild(style);
     }, [autoFocus, onEmojiSelect, perLine, previewPosition, set, skinTonePosition]);
 
     return <div ref={ref} />;
