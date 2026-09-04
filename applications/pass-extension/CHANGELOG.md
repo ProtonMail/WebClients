@@ -1,4 +1,4 @@
-### Version 1.40.0
+### Version 1.40.1
 
 _Some features below are rolling out gradually and may not be available to everyone right away._
 
@@ -13,7 +13,6 @@ _Some features below are rolling out gradually and may not be available to every
 - Fix stuttering "Read More" animation on read-only text fields
 - Prompt to enable offline mode when it isn't already on
 - Fix PIN input not auto-focusing on Firefox
-- Autosaved items now use the page title instead of the domain
 - Add support for updating the autofill model remotely, without requiring an extension update
 - Identity autofill no longer suggested when adding a member in the admin panel
 - Fix passkey signing state being exposed to page scripts
