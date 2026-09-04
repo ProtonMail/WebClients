@@ -24,6 +24,8 @@
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
+        "@proton/jest-env": "workspace:^",
+        "@proton/jest-swc-preset": "workspace:^",
         "eslint": "^10.9.0",
         "jest": "^30.4.2",
         "prettier": "^3.9.6",

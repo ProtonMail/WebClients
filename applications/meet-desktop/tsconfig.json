@@ -13,6 +13,6 @@
         },
         "ignore": ["node_modules/(?!@proton)"]
     },
-    "include": ["src/**/*"],
+    "include": ["src/**/*", "jest.config.ts"],
     "exclude": ["src/**/*.test.ts", "src/**/*.spec.ts"]
 }
