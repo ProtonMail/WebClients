@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import { supportsScreenSharing } from '@livekit/components-core';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -94,7 +95,7 @@ export const MenuButton = ({ onOpenDeviceState }: { onOpenDeviceState: () => voi
             label: c('Alt').t`Meeting details`,
             onClick: () => handleClick(MeetingSideBars.MeetingDetails),
         },
-        ...(isSmallViewport
+        ...(isSmallViewport && supportsScreenSharing()
             ? [
                   {
                       icon: IcMeetScreenShare,

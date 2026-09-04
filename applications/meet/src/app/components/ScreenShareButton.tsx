@@ -1,3 +1,4 @@
+import { supportsScreenSharing } from '@livekit/components-core';
 import { c } from 'ttag';
 
 import { IcMeetScreenShare } from '@proton/icons/icons/IcMeetScreenShare';
@@ -18,6 +19,10 @@ export const ScreenShareButton = () => {
             void startScreenShare();
         }
     };
+
+    if (!supportsScreenSharing()) {
+        return null;
+    }
 
     return (
         <CircleButton

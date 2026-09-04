@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { Provider } from 'react-redux';
 
+import { supportsScreenSharing } from '@livekit/components-core';
 import { useLocalParticipant, useParticipants, useRoomContext } from '@livekit/components-react';
 import { configureStore } from '@reduxjs/toolkit';
 import { renderHook } from '@testing-library/react';
@@ -40,6 +41,10 @@ const mockTracks = [
         participant: mockLocalParticipant,
     },
 ];
+
+vi.mock('@livekit/components-core', () => ({
+    supportsScreenSharing: vi.fn(),
+}));
 
 vi.mock('@livekit/components-react', () => ({
     useLocalParticipant: vi.fn(),
@@ -97,6 +102,7 @@ const mockGetDisplayMedia = vi.fn().mockResolvedValue(mockMediaStream);
 const useLocalParticipantMock = useLocalParticipant as Mock;
 const useParticipantsMock = useParticipants as Mock;
 const useRoomContextMock = useRoomContext as Mock;
+const mockSupportsScreenSharing = supportsScreenSharing as Mock;
 
 const emitRoomEvent = (event: string, ...args: unknown[]) => {
     const handlers = mockRoom.on.mock.calls.filter((call) => call[0] === event).map((call) => call[1]);
@@ -141,6 +147,7 @@ describe('useCurrentScreenShare', () => {
 
         // Set up default mocks
         useRoomContextMock.mockReturnValue(mockRoom);
+        mockSupportsScreenSharing.mockReturnValue(true);
     });
 
     afterAll(() => {
@@ -192,6 +199,28 @@ describe('useCurrentScreenShare', () => {
         expect(createNotification).toHaveBeenCalledWith({
             type: 'info',
             text: 'Screen share is not supported on mobile browsers',
+        });
+    });
+
+    it('should show a notification if the screen share is not supported', async () => {
+        useParticipantsMock.mockReturnValue([mockLocalParticipant]);
+
+        (isMobile as Mock).mockReturnValue(false);
+        mockSupportsScreenSharing.mockReturnValue(false);
+
+        const createNotification = vi.fn();
+
+        (useNotifications as Mock).mockReturnValue({
+            createNotification,
+        });
+
+        const { result } = renderUseCurrentScreenShare();
+
+        await result.current.startScreenShare();
+
+        expect(createNotification).toHaveBeenCalledWith({
+            type: 'info',
+            text: 'Screen share is not supported on your device',
         });
     });
 

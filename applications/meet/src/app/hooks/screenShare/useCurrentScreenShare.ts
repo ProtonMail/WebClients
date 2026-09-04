@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 
+import { supportsScreenSharing } from '@livekit/components-core';
 import { useRoomContext } from '@livekit/components-react';
 import type { RemoteTrackPublication } from 'livekit-client';
 import { RoomEvent, Track } from 'livekit-client';
@@ -53,12 +54,14 @@ export function useCurrentScreenShare({
     const startScreenShare = useStableCallback(async () => {
         const start = performance.now();
         try {
-            const isOnMobile = isMobile();
+            const isNotSupported = isMobile() || !supportsScreenSharing();
 
-            if (isOnMobile) {
+            if (isNotSupported) {
                 notifications.createNotification({
                     type: 'info',
-                    text: c('Error').t`Screen share is not supported on mobile browsers`,
+                    text: isMobile()
+                        ? c('Error').t`Screen share is not supported on mobile browsers`
+                        : c('Error').t`Screen share is not supported on your device`,
                 });
 
                 return;
