@@ -1,3 +1,5 @@
+import { IcEnvelopes } from '@proton/icons/icons/IcEnvelopes';
+import { IcTrashClock } from '@proton/icons/icons/IcTrashClock';
 import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
 import { mockUseFolders } from '@proton/testing/lib/mockUseFolders';
 import { mockUseLabels } from '@proton/testing/lib/mockUseLabels';
@@ -88,7 +90,7 @@ describe('useLocationFieldOptions', () => {
                     value: '15',
                     text: 'All mail',
                     url: '/almost-all-mail',
-                    icon: 'envelopes',
+                    icon: IcEnvelopes,
                 },
                 ...expectedAll.slice(1),
             ]);
@@ -112,7 +114,7 @@ describe('useLocationFieldOptions', () => {
                 value: '40',
                 text: 'Deleted',
                 url: '/deleted',
-                icon: 'trash-clock',
+                icon: IcTrashClock,
             });
 
             expect(helper.all).toStrictEqual(expectedWithSoftDeleted);

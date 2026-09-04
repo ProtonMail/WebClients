@@ -1,4 +1,4 @@
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 import type { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 export interface UseMoveSystemFoldersProps {
@@ -25,7 +25,7 @@ export interface SystemFolderPayload {
 export interface BaseSystemFolder {
     labelID: MAILBOX_LABEL_IDS;
     ID: string;
-    icon: IconName;
+    icon: IconComponent;
     text: string;
     shortcutText?: string;
     visible: boolean;

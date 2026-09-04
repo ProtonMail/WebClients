@@ -5,7 +5,9 @@ import { c } from 'ttag';
 import { selectHasAccountSecurityIssue } from '@proton/account';
 import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import { ThemeColor } from '@proton/colors/types';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcShield } from '@proton/icons/icons/IcShield';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { baseUseSelector } from '@proton/react-redux-store';
 import type { OpenDrawerArgs } from '@proton/shared/lib/drawer/interfaces';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
@@ -17,7 +19,7 @@ import useSecurityCenter from './views/SecurityCenter/useSecurityCenter';
 
 interface SidebarDrawerItemProps {
     onClick: () => void;
-    icon: IconName;
+    icon: IconComponent;
     name: string;
     right?: ReactNode;
 }
@@ -25,7 +27,7 @@ interface SidebarDrawerItemProps {
 const SidebarDrawerItem = ({ name, icon, onClick, right }: SidebarDrawerItemProps) => {
     return (
         <button type="button" onClick={onClick} className="navigation-link">
-            <SidebarListItemContent left={<SidebarListItemContentIcon name={icon} />} right={right}>
+            <SidebarListItemContent left={<SidebarListItemContentIcon icon={icon} />} right={right}>
                 <span>{name}</span>
             </SidebarListItemContent>
         </button>
@@ -47,7 +49,7 @@ const SecurityCenterDrawerItem = ({
                 toggleHeaderDropdown();
                 toggleDrawerApp({ app: DRAWER_NATIVE_APPS.SECURITY_CENTER })();
             }}
-            icon="shield"
+            icon={IcShield}
             name={c('Header').t`Security Center`}
             right={
                 hasAccountSecurityWarning ? (
@@ -73,7 +75,7 @@ const SidebarDrawerItems = ({ toggleHeaderDropdown }: SidebarDrawerItemsProps) =
                     toggleHeaderDropdown();
                     toggleDrawerApp({ app: DRAWER_NATIVE_APPS.CONTACTS })();
                 }}
-                icon="users"
+                icon={IcUsers}
                 name={c('Header').t`Contacts`}
             />
             {displaySecurityCenter && (

@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import type { IconName, IconSize } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 
 import SidebarListItem from './SidebarListItem';
 import SidebarListItemContent from './SidebarListItemContent';
@@ -10,14 +10,12 @@ import SidebarListItemLink from './SidebarListItemLink';
 
 interface Props extends SidebarListItemProps {
     to: string;
-    icon?: IconName;
-    iconSize?: IconSize;
-    iconColor?: string;
+    icon?: IconComponent;
     children: ReactNode;
 }
 
-const SimpleSidebarListItemLink = ({ to, children, icon, iconSize, iconColor, ...rest }: Props) => {
-    const left = icon ? <SidebarListItemContentIcon name={icon} size={iconSize} color={iconColor} /> : null;
+const SimpleSidebarListItemLink = ({ to, children, icon, ...rest }: Props) => {
+    const left = icon ? <SidebarListItemContentIcon icon={icon} /> : null;
     return (
         <SidebarListItem>
             <SidebarListItemLink to={to} {...rest}>

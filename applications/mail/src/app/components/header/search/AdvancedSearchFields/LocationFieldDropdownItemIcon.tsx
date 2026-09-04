@@ -1,5 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import Icon from '@proton/components/components/icon/Icon';
 import FolderIcon from '@proton/components/containers/labels/FolderIcon';
 import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
@@ -15,10 +13,11 @@ interface Props {
 
 export const LocationFieldDropdownItemIcon = ({ value, item }: Props) => {
     if (isDefaultFolder(item)) {
+        const ItemIcon = item.icon;
+
         if (isCategoryLabel(item.value)) {
             return (
-                <Icon
-                    name={item.icon}
+                <ItemIcon
                     // This is here to avoid having the folder color when the item is selected
                     data-color={item.value === value ? undefined : item.color}
                     className={clsx('shrink-0 mr-2', item.className)}
@@ -26,7 +25,7 @@ export const LocationFieldDropdownItemIcon = ({ value, item }: Props) => {
             );
         }
 
-        return <Icon name={item.icon} className={'shrink-0 mr-2'} />;
+        return <ItemIcon className={'shrink-0 mr-2'} />;
     }
 
     if (isCustomFolder(item)) {
