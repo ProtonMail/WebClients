@@ -12,17 +12,11 @@ import clsx from '@proton/utils/clsx';
 
 import { CustomBackgroundPreview } from './CustomBackgroundPreview';
 
-type BackgroundMode = 'color' | 'image';
-
-const DEFAULT_COLOR = '#1b1340';
-
 const showTester = !isProduction(window.location.host);
 
 export const CustomBackgroundTester = () => {
     const selectedCameraId = useMeetSelector(selectSelectedCameraId);
 
-    const [mode, setMode] = useState<BackgroundMode>('color');
-    const [color, setColor] = useState(DEFAULT_COLOR);
     const [imageUrl, setImageUrl] = useState<string | null>(null);
     const [cameraEnabled, setCameraEnabled] = useState(false);
     const [cameraStream, setCameraStream] = useState<MediaStream | null>(null);
@@ -82,7 +76,6 @@ export const CustomBackgroundTester = () => {
         if (!file) {
             return;
         }
-        setMode('image');
         setImageUrl((previous) => {
             if (previous) {
                 URL.revokeObjectURL(previous);
@@ -90,9 +83,6 @@ export const CustomBackgroundTester = () => {
             return URL.createObjectURL(file);
         });
     };
-
-    const activeBackgroundColor = mode === 'color' ? color : undefined;
-    const activeImageUrl = mode === 'image' ? (imageUrl ?? undefined) : undefined;
 
     const renderPreview = () => {
         if (!cameraEnabled) {
@@ -104,7 +94,7 @@ export const CustomBackgroundTester = () => {
         if (!cameraStream) {
             return <p className="debug-empty">{c('Info').t`Starting camera…`}</p>;
         }
-        if (mode === 'image' && !activeImageUrl) {
+        if (!imageUrl) {
             return <p className="debug-empty">{c('Info').t`Upload an image to preview it as the background.`}</p>;
         }
 
@@ -112,9 +102,8 @@ export const CustomBackgroundTester = () => {
             <div className="w-full">
                 <CustomBackgroundPreview
                     stream={cameraStream}
-                    backgroundColor={activeBackgroundColor}
-                    imageUrl={activeImageUrl}
-                    label={mode === 'color' ? c('Label').t`Solid color` : c('Label').t`Uploaded image`}
+                    imageUrl={imageUrl}
+                    label={c('Label').t`Uploaded image`}
                 />
             </div>
         );
@@ -125,7 +114,7 @@ export const CustomBackgroundTester = () => {
             <h3>{c('Title').t`Custom background tester`}</h3>
             <p className="debug-empty">
                 {c('Info')
-                    .t`Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.`}
+                    .t`Run your live camera through the custom background processor. Upload an image to use as the background.`}
             </p>
 
             <div className="debug-section flex gap-8 flex-wrap items-center">
@@ -142,30 +131,6 @@ export const CustomBackgroundTester = () => {
                 </div>
 
                 <div className="flex gap-2 items-center">
-                    <label className="setting-label color-norm" htmlFor="custom-bg-mode-color">
-                        {c('Label').t`Solid color`}
-                    </label>
-                    <Button
-                        id="custom-bg-mode-color"
-                        size="small"
-                        shape={mode === 'color' ? 'solid' : 'outline'}
-                        onClick={() => setMode('color')}
-                    >
-                        {c('Action').t`Use color`}
-                    </Button>
-                    <input
-                        type="color"
-                        aria-label={c('Label').t`Background color`}
-                        value={color}
-                        onChange={(event) => {
-                            setColor(event.target.value);
-                            setMode('color');
-                        }}
-                        style={{ width: '2.5rem', height: '2rem', padding: 0, cursor: 'pointer' }}
-                    />
-                </div>
-
-                <div className="flex gap-2 items-center">
                     <label className="setting-label color-norm" htmlFor="custom-bg-mode-image">
                         {c('Label').t`Image`}
                     </label>
@@ -178,15 +143,6 @@ export const CustomBackgroundTester = () => {
                     >
                         {imageUrl ? c('Action').t`Upload another image` : c('Action').t`Upload image`}
                     </Button>
-                    {imageUrl && (
-                        <Button
-                            size="small"
-                            shape={mode === 'image' ? 'solid' : 'outline'}
-                            onClick={() => setMode('image')}
-                        >
-                            {c('Action').t`Use image`}
-                        </Button>
-                    )}
                 </div>
             </div>
 
