@@ -1960,6 +1960,19 @@
       "Total for ${ n } month": [
         "Totaal voor ${ n } maand",
         "Totaal voor ${ n } maanden"
+      ],
+      "Amount due": [
+        "Verschuldigd bedrag"
+      ],
+      "Amount due after trial": [
+        "Verschuldigd bedrag na proefperiode"
+      ],
+      "Amount due now": [
+        "Nu verschuldigd bedrag"
+      ],
+      "Total for ${ cycle } month": [
+        "Totaal voor ${ cycle } maand",
+        "Totaal voor ${ cycle } maanden"
       ]
     },
     "Collapsible tooltip": {
@@ -4830,6 +4843,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Uw account gebruikt ${ usedSpace } aan opslagruimte. Dat is meer dan de ${ inviteSpace } die aan u is toegewezen. Verwijder gegevens of vraag de abonnementsbeheerder uw opslagruimte uit te breiden."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "U wordt uitgenodigd om uw ${ BRAND_NAME }-account aan deze gezinsgroep te koppelen en van alle premiumfuncties te genieten."
       ]
     },
     "familyOffer_2023:Label": {
@@ -7843,6 +7859,9 @@
       ],
       "Link expired": [
         "Link is vervallen"
+      ],
+      "Do you remember your password?": [
+        "Weet u uw wachtwoord nog?"
       ]
     },
     "info": {
@@ -8747,6 +8766,9 @@
       ],
       "Allow editors to change permissions and share.": [
         "Sta bewerkers toe om toelatingen te wijzigen en te delen."
+      ],
+      "Account holder name": [
+        "Naam van de rekeninghouder"
       ]
     },
     "Label for contact group color": {
