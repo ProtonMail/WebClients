@@ -48,6 +48,7 @@ export enum TelemetryMeasurementGroups {
     categoriesView = 'mail.any.categories_view',
     passNudge = 'mail.web.pass_nudge',
     mailNewsletterSubscriptions = 'mail.web.newsletter_subscriptions',
+    mailCalendarCreateEvent = 'mail.web.calendar_create_event',
     unlimitedOffer2025 = 'any.web.unlimited_offer_2025',
     unlimitedToDuoOffer = 'any.web.unlimited_to_duo_offer',
     esMigrationTool = 'mail.es_migration_tool',
@@ -311,6 +312,10 @@ export enum TelemetryDesktopEvents {
 export enum TelemetryMailEvents {
     privacy_dropdown_opened = 'privacy_dropdown_opened',
     snooze_open_dropdown = 'snooze_open_dropdown',
+}
+
+export enum TelemetryMailCalendarCreateEventEvents {
+    create_event = 'mail_calendar_create_event',
 }
 
 export enum TelemetryMailForegroundEvents {

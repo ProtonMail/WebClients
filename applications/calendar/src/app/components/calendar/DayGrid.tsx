@@ -8,6 +8,7 @@ import chunk from '@proton/utils/chunk';
 
 import type { CalendarViewEvent, TargetEventData, TargetMoreData } from '../../containers/calendar/interface';
 import { useRect } from '../../hooks/useRect';
+import useCalendarMailDrop from '../../hooks/useCalendarMailDrop';
 import DayButtons from './DayGrid/DayButtons';
 import RowEvents from './DayGrid/RowEvents';
 import { DAY_EVENT_HEIGHT } from './constants';
@@ -68,6 +69,8 @@ const DayGrid = ({
         return chunk(eachDayOfInterval(start, end), daysInWeek);
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-305117
     }, [+start, +end]);
+
+    const { handleMailDropOnDayGrid, handleMailDragOver } = useCalendarMailDrop();
 
     const eventsPerRows = useDayGridEventLayout(rows, events, numberOfRows, dayEventHeight);
 
@@ -184,7 +187,17 @@ const DayGrid = ({
                         </div>
                     ) : null}
 
-                    <div className="flex flex-1 flex-column calendar-daygrid-rows" ref={rowsWrapperRef}>
+                    <div
+                        className="flex flex-1 flex-column calendar-daygrid-rows"
+                        ref={rowsWrapperRef}
+                        onDragOver={handleMailDragOver}
+                        onDrop={(event) =>
+                            handleMailDropOnDayGrid(event, {
+                                rows,
+                                dayGridEl: rowsWrapperRef.current!,
+                            })
+                        }
+                    >
                         {rows.map((days, rowIndex) => {
                             const { eventsInRow, eventsInRowStyles, eventsInRowSummary } = eventsPerRows[rowIndex];
 
