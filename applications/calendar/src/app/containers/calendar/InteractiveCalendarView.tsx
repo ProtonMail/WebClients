@@ -469,6 +469,7 @@ const InteractiveCalendarView = ({
         onChangeDate,
         tzid,
         setEventTargetAction,
+        onCreateEventFromMail: (payload) => interactiveRef.current?.createEventFromMail(payload),
     });
 
     useEffect(
@@ -2209,6 +2210,40 @@ const InteractiveCalendarView = ({
                 attendees,
                 title,
                 location,
+                description,
+            });
+        },
+        createEventFromMail: ({ subject, sender, start }) => {
+            // Minimal Mail reference for the event description. No body or
+            // content is ever copied into the event.
+            const description = sender ? c('Email').t`From: ${sender}` : undefined;
+
+            // No explicit start (menu action "Add to Calendar"): open the editor
+            // with the subject prefilled and Calendar's default date/time.
+            if (!start) {
+                handleCreateEvent({ title: subject, description });
+                return;
+            }
+
+            const baseModel = getCreateModel(false);
+            if (!baseModel) {
+                return;
+            }
+
+            // `start` is the number timestamp of a fake-UTC Date for the dropped
+            // slot, as produced by the time grid's slot-position logic in Mail.
+            // `end` is `start` + the calendar's default event duration.
+            const startDate = new Date(start);
+            const startModel = getUpdatedDateTime(baseModel, {
+                isAllDay: false,
+                start: startDate,
+                end: new Date(startDate.getTime() + baseModel.defaultEventDuration * 60000),
+                tzid,
+            });
+
+            handleCreateEvent({
+                startModel,
+                title: subject,
                 description,
             });
         },
