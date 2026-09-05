@@ -62,6 +62,11 @@ export enum DRAWER_EVENTS {
     REFRESH_WIDGET = 'outside-refresh-widget',
     OPEN_CONTACT_MODAL = 'open-contact-modal',
     OPEN_BUG_MODAL = 'open-bug-modal',
+
+    // Mail to calendar create-event events
+    CALENDAR_MAIL_DRAG_STATE = 'outside-calendar-mail-drag-state',
+    CALENDAR_MAIL_DROP = 'outside-calendar-mail-drop',
+    CALENDAR_CREATE_EVENT_FROM_MAIL = 'outside-calendar-create-event-from-mail',
 }
 
 // Global inside iframe events
@@ -224,6 +229,46 @@ type OPEN_BUG_MODAL = {
     payload?: BugModalPrefill;
 };
 
+/**
+ * Sent from Mail to Calendar while an email drag is active. Contains only
+ * generic state (no message metadata) so that decrypted content never leaves
+ * Mail until the user actually drops onto Calendar.
+ */
+interface CALENDAR_MAIL_DRAG_STATE {
+    type: DRAWER_EVENTS.CALENDAR_MAIL_DRAG_STATE;
+    payload: {
+        active: boolean;
+        count: number;
+    };
+}
+
+/**
+ * Sent from Calendar (inside the drawer iframe) to Mail when the user drops a
+ * dragged email onto a day/week time slot. Carries the computed start timestamp.
+ */
+interface CALENDAR_MAIL_DROP {
+    type: DRAWER_EVENTS.CALENDAR_MAIL_DROP;
+    payload: {
+        start: number;
+    };
+}
+
+/**
+ * Sent from Mail to Calendar after resolving the dropped message, carrying the
+ * minimal metadata needed to initialise the standard event editor. `start` is
+ * the drop target timestamp for drag/drop; it is omitted for the "Add to
+ * Calendar" menu action, which uses Calendar's default date/time.
+ */
+interface CALENDAR_CREATE_EVENT_FROM_MAIL {
+    type: DRAWER_EVENTS.CALENDAR_CREATE_EVENT_FROM_MAIL;
+    payload: {
+        messageID: string;
+        subject: string;
+        sender?: string;
+        start?: number;
+    };
+}
+
 export type DRAWER_ACTION =
     | CLOSE
     | SHOW
@@ -243,7 +288,10 @@ export type DRAWER_ACTION =
     | REQUEST_OPEN_EVENTS
     | REFRESH_WIDGET
     | OPEN_CONTACT_MODAL
-    | OPEN_BUG_MODAL;
+    | OPEN_BUG_MODAL
+    | CALENDAR_MAIL_DRAG_STATE
+    | CALENDAR_MAIL_DROP
+    | CALENDAR_CREATE_EVENT_FROM_MAIL;
 
 /**
  * QUICK SETTINGS

@@ -5,6 +5,20 @@ interface LayoutState {
     sidebarExpanded: boolean;
     selectAll: boolean;
     draggingElements: boolean;
+    /**
+     * Number of elements currently being dragged out of the mailbox list.
+     * `1` means a single message is eligible for the "create calendar event"
+     * drop target; anything greater than `1` disables it (multi-select drags
+     * are reserved for moving messages between folders/labels).
+     */
+    draggingElementsCount: number;
+    /**
+     * The message ID being dragged, but only when exactly one message is
+     * dragged (`draggingElementsCount === 1`). Kept local to Mail and only
+     * resolved into event metadata after a valid Calendar drop. `null` for
+     * multi-message drags so no IDs are retained unnecessarily.
+     */
+    draggedMessageID?: string | null;
 }
 
 export const layoutInitialState: LayoutState = {
@@ -18,6 +32,8 @@ export const layoutInitialState: LayoutState = {
      * outside of the list (category tabs, ...) use it to show their affordance.
      */
     draggingElements: false,
+    draggingElementsCount: 0,
+    draggedMessageID: null,
 };
 
 const name = 'layout';
@@ -36,6 +52,12 @@ const layoutSlice = createSlice({
         },
         setDraggingElements: (state, action: PayloadAction<boolean>) => {
             state.draggingElements = action.payload;
+        },
+        setDraggingElementsCount: (state, action: PayloadAction<number>) => {
+            state.draggingElementsCount = action.payload;
+        },
+        setDraggedMessageID: (state, action: PayloadAction<string | null>) => {
+            state.draggedMessageID = action.payload;
         },
     },
 });
