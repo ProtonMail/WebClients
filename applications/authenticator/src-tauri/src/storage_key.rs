@@ -50,8 +50,7 @@ fn secret_to_b64(secret: &Vec<u8>) -> String {
 #[specta::specta]
 pub fn get_storage_key(key_id: &str) -> Result<String, KeyringError> {
     let b64 = Entry::new(SERVICE_NAME, key_id)
-        .and_then(|entry| entry.get_secret())
-        .map(|secret| secret_to_b64(&secret))
+        .and_then(|entry| entry.get_password())
         .map_err(KeyringError::from)?;
 
     Ok(b64)
@@ -64,13 +63,14 @@ pub fn get_storage_key(key_id: &str) -> Result<String, KeyringError> {
 pub fn generate_storage_key(key_id: &str) -> Result<String, KeyringError> {
     let entry = Entry::new(SERVICE_NAME, key_id).map_err(KeyringError::from)?;
 
-    if let Ok(secret) = entry.get_secret() {
-        return Ok(secret_to_b64(&secret));
+    if let Ok(secret) = entry.get_password() {
+        return Ok(secret);
     }
 
     let secret = generate_encryption_key();
-    entry.set_secret(&secret).map_err(KeyringError::from)?;
-    Ok(secret_to_b64(&secret))
+    let b64 = secret_to_b64(&secret);
+    entry.set_password(&b64).map_err(KeyringError::from)?;
+    Ok(b64)
 }
 
 #[tauri::command]
