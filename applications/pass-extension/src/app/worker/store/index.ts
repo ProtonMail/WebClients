@@ -157,9 +157,8 @@ export const options: RootSagaOptions = {
     }),
 
     onFeatureFlags: withContext((ctx, data) => {
-        const offlineFlag = data.features.PassExtensionOfflineV1 ?? false;
         const offlineEnabled = selectOfflineEnabled(store.getState());
-        const autoEnableOffline = !offlineEnabled && offlineFlag && authStore.hasOfflinePassword();
+        const autoEnableOffline = !offlineEnabled && authStore.hasOfflinePassword();
         if (autoEnableOffline) store.dispatch(settingsEditIntent('offline', { offlineEnabled: true }, true));
 
         ctx.service.featureFlags.sync(data);
