@@ -1,5 +1,7 @@
 import noop from '@proton/utils/noop';
 
+import { getParentOrigin } from '../lib/get-parent-origin';
+import { toRedactedJson } from '../lib/redact-sensitive';
 import type {
     ApplePayAuthorizedPayload,
     ApplePayAvailability,
@@ -60,8 +62,8 @@ import {
     threeDsChallengeMessageType,
     unhandledError,
 } from '../lib/types';
-import { getParentOrigin } from '../lib/get-parent-origin';
-import { addCheckpoint, chargebeeWrapperVersion, getCheckpoints } from './checkpoints';
+import { addCheckpoint, chargebeeWrapperVersion, getCheckpoints, getLastCheckpointName } from './checkpoints';
+import { summarizeScriptLoadErrors } from './script-diagnostics';
 
 function isChargebeeEvent(event: any): boolean {
     return !!event?.cbEvent;
@@ -306,25 +308,22 @@ export interface ParentMessagesProps {
 const getEventListener = (messageBus: MessageBus) => async (e: MessageEvent) => {
     const parentOrigin = getParentOrigin(window.location.origin);
     if (e.source !== window.parent || e.origin !== parentOrigin) {
-        addCheckpoint('skipped_untrusted_inbound_message', { origin: e.origin });
         return;
     }
 
-    const parseEvent = (data: any) => {
+    const parseEvent = (data: any): { event: any; unparsedLength: number | null } => {
         if (typeof data !== 'string') {
-            return data;
+            return { event: data, unparsedLength: null };
         }
 
-        let props;
         try {
-            props = JSON.parse(data);
+            return { event: JSON.parse(data), unparsedLength: null };
         } catch (error) {
-            props = {};
+            return { event: {}, unparsedLength: data.length };
         }
-        return props;
     };
 
-    const event = parseEvent(e.data);
+    const { event, unparsedLength } = parseEvent(e.data);
 
     try {
         if (isSetConfigurationEvent(event)) {
@@ -445,9 +444,15 @@ const getEventListener = (messageBus: MessageBus) => async (e: MessageEvent) => 
         } else {
             // ignore unknown event
         }
-    } catch (error) {
-        addCheckpoint('failed_to_handle_parent_message', { error, event, eventRawData: e.data });
-        messageBus.sendUnhandledErrorMessage(error);
+    } catch (error: any) {
+        const stage = getLastCheckpointName();
+        addCheckpoint('failed_to_handle_parent_message', {
+            stage,
+            errorName: error?.name ?? null,
+            errorMessage: error?.message ?? null,
+            eventRawData: unparsedLength === null ? toRedactedJson(event) : `[unparsed: ${unparsedLength} chars]`,
+        });
+        messageBus.sendUnhandledErrorMessage(error, stage);
     }
 };
 
@@ -783,13 +788,23 @@ export class MessageBus {
         this.sendMessage(message);
     }
 
-    sendUnhandledErrorMessage(errorObj: any) {
+    /**
+     * The caller says which step failed. Working it out from the last checkpoint would name the
+     * reporting code instead, because every reporter records a checkpoint before sending.
+     */
+    sendUnhandledErrorMessage(errorObj: any, stage?: string) {
         try {
             const error = {
                 ...this.formatError(errorObj),
+                stage: stage ?? getLastCheckpointName(),
                 checkpoints: getCheckpoints(),
                 chargebeeWrapperVersion,
                 origin: window?.location?.origin,
+                /**
+                 * On every report, not just the Chargebee one. A blocked payment script explains a
+                 * form that appears and then cannot take a payment.
+                 */
+                ...summarizeScriptLoadErrors(),
             };
 
             const message: UnhandledErrorMessage = {
