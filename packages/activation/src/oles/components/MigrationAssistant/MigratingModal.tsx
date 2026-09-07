@@ -9,13 +9,16 @@ import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { MotionModeSetting } from '@proton/shared/lib/themes/constants';
 
+import { ImportProvider } from '../../../interface';
+import { exhaustiveMatchGuard } from '../../helpers';
+import type { SupportedProvider } from '../../providers';
 import { LazyLottie } from '../LazyLottie';
 
 import './MigratingModal.scss';
 
 type ModalVariant = 'migrating' | 'completing';
 
-const MigratingModal = ({ variant }: { variant: ModalVariant }) => {
+const MigratingModal = ({ variant, provider }: { variant: ModalVariant; provider: SupportedProvider }) => {
     const { information } = useTheme();
     const animationsEnabled = information.motionMode !== MotionModeSetting.Reduce && !information.features.animations;
 
@@ -34,7 +37,18 @@ const MigratingModal = ({ variant }: { variant: ModalVariant }) => {
             title: c('Title').t`Creating accounts`,
             subtitle: c('Info')
                 .t`We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${BRAND_NAME} account.`,
-            getAnimationData: () => import('../../animations/creatingAccounts.json'),
+            getAnimationData: () => {
+                switch (provider) {
+                    case ImportProvider.GOOGLE:
+                        return import('../../animations/creatingAccountsGoogle.json');
+                    case ImportProvider.OUTLOOK:
+                        return import('../../animations/creatingAccountsMicrosoft.json');
+                    default:
+                        // No default case for newly added providers, so guarding
+                        // this with the help of TypeScript's `never`
+                        return exhaustiveMatchGuard(provider);
+                }
+            },
             initialSegment: animationsEnabled ? undefined : [28, 28],
         },
         completing: {
