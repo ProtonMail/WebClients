@@ -471,6 +471,9 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "La conversion du document Word n'a pas abouti. Est-il protégé par un mot de passe ? Si c'est le cas, nous vous invitons à retirer le mot de passe et à réessayer."
+      ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "L'importation du fichier OpenDocument n'a pas abouti en raison d'une erreur inconnue."
       ]
     },
     "Error message": {
@@ -2347,6 +2350,11 @@
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "L'ajout de suggestions dans des blocs de code n'est pas pris en charge."
+      ]
+    },
+    "sheets_2025:Sheet tab rename": {
+      "A sheet with this name already exists": [
+        "Une feuille portant ce nom existe déjà."
       ]
     }
   }
