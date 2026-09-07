@@ -1,9 +1,9 @@
 import { type IDBPDatabase, openDB } from 'idb';
 
-import type { Database } from './schema';
+import { type Database, getDBName } from './schema';
 
 export function openContentSearchDB(userId: string): Promise<IDBPDatabase<Database>> {
-    return openDB<Database>(`content_search_v2_user:${userId}`, 2, {
+    return openDB<Database>(getDBName(userId), 2, {
         upgrade: (db, oldVersion) => {
             if (oldVersion < 1) {
                 db.createObjectStore('config');

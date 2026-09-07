@@ -103,10 +103,6 @@ const MailQuickSettings = () => {
     const [keyTransparencyDetailsModalProps, setKeyTransparencyDetailsModalOpen] = useModalState();
 
     const handleClearBrowserData = async () => {
-        if (collectLogs) {
-            await logger.clearLogs();
-        }
-
         if (isElectronMail && hasInboxDesktopFeature('ClearAppModal')) {
             void invokeInboxDesktopIPC({ type: 'clearAppData' });
         } else {
