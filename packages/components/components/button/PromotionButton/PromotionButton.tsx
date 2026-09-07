@@ -36,6 +36,7 @@ interface OwnProps extends Omit<ButtonLikeProps<'button'>, 'as' | 'ref'> {
     responsive?: boolean;
     buttonGradient?: boolean;
     fullGradient?: boolean;
+    purpleBlueGradient?: boolean;
     breakpoint?: keyof Breakpoints['viewportWidth'];
 }
 
@@ -60,6 +61,7 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
         responsive = false,
         buttonGradient = true,
         fullGradient = false,
+        purpleBlueGradient = false,
         breakpoint = '>=large',
         ...rest
     }: PromotionButtonProps<E>,
@@ -102,6 +104,7 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
                 buttonGradient && 'button-promotion',
                 iconGradient && 'button-promotion--icon-gradient',
                 fullGradient && 'button-promotion--full-gradient',
+                purpleBlueGradient && 'button-promotion--purple-blue-gradient',
                 upsell && 'button-promotion--upgrade',
                 size === 'small' && 'text-sm',
                 className
@@ -120,7 +123,7 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
                         className="shrink-0"
                         size={iconSize}
                         style={
-                            buttonGradient && !fullGradient
+                            buttonGradient && !fullGradient && !purpleBlueGradient
                                 ? { fill: `url(#${uid}) var(--text-norm)` }
                                 : { color: 'inherit' }
                         }
