@@ -72,7 +72,6 @@
         "vitest": "^4.1.11"
     },
     "peerDependencies": {
-        "@proton/app-context": "workspace:^",
         "@proton/key-transparency": "workspace:^",
         "@proton/metrics": "workspace:^",
         "@proton/payments": "workspace:^",
@@ -80,9 +79,6 @@
         "electron": "*"
     },
     "peerDependenciesMeta": {
-        "@proton/app-context": {
-            "optional": true
-        },
         "@proton/key-transparency": {
             "optional": true
         },

@@ -1,9 +1,6 @@
-import { useEffect } from 'react';
-
 import { differenceInDays, getUnixTime } from 'date-fns';
 
-import { useApi } from '@proton/app-context/useApi';
-
+import type { Api } from '../interfaces';
 import type { IPCInboxHostUpdateListenerRemover } from './desktopTypes';
 import { addIPCHostUpdateListener, emptyListener, hasInboxDesktopFeature } from './ipcHelpers';
 import {
@@ -53,38 +50,32 @@ const checkDailyStatIsNeeded = () => {
     void checkDailyStats();
 };
 
-// useInboxDesktopHeartbeat is for sending desktop app statistics once per day.
-export const useInboxDesktopHeartbeat = () => {
-    const api = useApi();
+/** Starts inbox desktop heartbeat listeners. Returns a cleanup function for use in React effects. */
+export const startInboxDesktopHeartbeat = (api: Api): (() => void) => {
+    // This won't be needed eventually. During transition we don't want to
+    // use default mailto telemetry, so we disable the flag in electron.
+    const defaultMailtoChecked: IPCInboxHostUpdateListenerRemover = hasInboxDesktopFeature('MailtoTelemetry')
+        ? addIPCHostUpdateListener('defaultMailtoChecked', (payload) =>
+              sendMailtoTelemetry(api, payload, getUnixTimeNow())
+          )
+        : emptyListener;
 
-    useEffect(() => {
-        // This won't be needed eventually. During transition we don't want to
-        // use default mailto telemetry, so we disable the flag in electron.
-        const defaultMailtoChecked: IPCInboxHostUpdateListenerRemover = hasInboxDesktopFeature('MailtoTelemetry')
-            ? addIPCHostUpdateListener('defaultMailtoChecked', (payload) =>
-                  sendMailtoTelemetry(api, payload, getUnixTimeNow())
-              )
-            : emptyListener;
+    const statsTelemetryChecked: IPCInboxHostUpdateListenerRemover = hasInboxDesktopFeature('StatsTelemetry')
+        ? addIPCHostUpdateListener('dailyStatsChecked', (payload) => sendDailyTelemetry(api, payload, getUnixTimeNow()))
+        : emptyListener;
 
-        const statsTelemetryChecked: IPCInboxHostUpdateListenerRemover = hasInboxDesktopFeature('StatsTelemetry')
-            ? addIPCHostUpdateListener('dailyStatsChecked', (payload) =>
-                  sendDailyTelemetry(api, payload, getUnixTimeNow())
-              )
-            : emptyListener;
-
+    checkDailyStatIsNeeded();
+    checkMailtoTelemetryIsNeeded();
+    const intervalFunction = setInterval(() => {
         checkDailyStatIsNeeded();
         checkMailtoTelemetryIsNeeded();
-        const intervalFunction = setInterval(() => {
-            checkDailyStatIsNeeded();
-            checkMailtoTelemetryIsNeeded();
-        }, HOUR_INTERVAL);
+    }, HOUR_INTERVAL);
 
-        return () => {
-            statsTelemetryChecked.removeListener();
-            defaultMailtoChecked.removeListener();
-            clearInterval(intervalFunction);
-        };
-    }, [api]);
+    return () => {
+        statsTelemetryChecked.removeListener();
+        defaultMailtoChecked.removeListener();
+        clearInterval(intervalFunction);
+    };
 };
 
 export const getUnixTimeNowTestOnly = getUnixTimeNow;
