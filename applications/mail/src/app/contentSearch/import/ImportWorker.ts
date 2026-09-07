@@ -12,7 +12,9 @@ export default class ImportWorker {
             indexV1Key: CryptoKey;
             indexV2Key: CryptoKey;
         },
-        notifications: ImportNotifications
+        notifications: ImportNotifications,
+        batchSize: number = BATCH_SIZE,
+        batchDelayMs: number = 0
     ): Promise<void> {
         if (this.running) {
             return;
@@ -27,7 +29,7 @@ export default class ImportWorker {
                 return;
             }
             const db = await openContentSearchDB(userId);
-            const importer = new Import(db, keys.indexV2Key, esReader, notifications, BATCH_SIZE);
+            const importer = new Import(db, keys.indexV2Key, esReader, notifications, batchSize, batchDelayMs);
             await importer.run();
         } finally {
             this.running = false;
