@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
+import type { PublicKeyReference } from '@protontech/crypto';
 import omit from 'lodash/omit';
 
-import type { PublicKeyReference } from '@protontech/crypto';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import type { Recipient, SimpleMap } from '@proton/shared/lib/interfaces';
 
@@ -18,7 +18,7 @@ export enum InvalidRecipientErrorCode {
 
 export type BtcAddressOrError = { value?: string; error?: InvalidRecipientErrorCode };
 
-export type MapItem = { btcAddress: BtcAddressOrError; recipient: Recipient; addressKey?: PublicKeyReference };
+type MapItem = { btcAddress: BtcAddressOrError; recipient: Recipient; addressKey?: PublicKeyReference };
 
 export type BtcAddressMap = SimpleMap<MapItem>;
 export type RecipientEmailMap = Partial<Record<Recipient['Address'], MapItem>>;

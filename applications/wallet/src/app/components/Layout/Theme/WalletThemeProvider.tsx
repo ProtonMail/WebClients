@@ -9,7 +9,7 @@ import walletDarkTheme from '@proton/colors/themes/dist/wallet-dark.theme.css';
 // @ts-ignore
 import walletLightTheme from '@proton/colors/themes/dist/wallet-light.theme.css';
 
-export const THEME_ID = 'wallet-theme';
+const THEME_ID = 'wallet-theme';
 
 type ThemeConfig = { className: string; styles: string };
 
@@ -22,7 +22,7 @@ const getThemeConfig = (theme: WalletThemeOption): ThemeConfig => {
     }
 };
 
-export const WalletThemeContext = createContext<WalletThemeOption>(getWalletDefaultTheme());
+const WalletThemeContext = createContext<WalletThemeOption>(getWalletDefaultTheme());
 
 export const WalletThemeProvider: FC<PropsWithChildren> = ({ children }) => {
     const hasDarkMode = useFlag('WalletDarkMode');

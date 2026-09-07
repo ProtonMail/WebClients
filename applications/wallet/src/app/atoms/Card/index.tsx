@@ -11,7 +11,7 @@ import { useResponsiveContainerContext } from '../../contexts/ResponsiveContaine
 
 import './Card.scss';
 
-export type CardType = 'info' | 'error';
+type CardType = 'info' | 'error';
 
 type ClassesMap = { [key in CardType]: string };
 

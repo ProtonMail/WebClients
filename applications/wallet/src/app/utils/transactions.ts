@@ -1,3 +1,4 @@
+import type { PublicKeyReference } from '@protontech/crypto';
 import { format, isSameWeek, isToday } from 'date-fns';
 import compact from 'lodash/compact';
 import { c } from 'ttag';
@@ -8,10 +9,8 @@ import type {
     WasmEmailIntegrationData,
     WasmNetwork,
     WasmPsbt,
-    WasmTransactionDetails,
     WasmTxOut,
 } from '@proton/andromeda';
-import type { PublicKeyReference } from '@protontech/crypto';
 import { SECOND } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { Address, DecryptedAddressKey, DecryptedKey, SimpleMap } from '@proton/shared/lib/interfaces';
@@ -23,11 +22,7 @@ import { getAccountWithChainDataFromManyWallets } from './accounts';
 import { isSelfAddress } from './email';
 import { formatReadableNameAndEmail, multilineStrToOnelineJsx } from './string';
 
-const toMsTimestamp = (ts: number | BigInt) => {
-    return Number(ts) * SECOND;
-};
-
-export const getNowTimestamp = (): string => {
+const getNowTimestamp = (): string => {
     return Math.floor(Date.now() / SECOND).toString();
 };
 
@@ -38,18 +33,6 @@ export const getTransactionValue = (tx?: TransactionData, includeFeeOnSent: bool
 
 export const isSentTransaction = (transaction?: TransactionData) => {
     return getTransactionValue(transaction) < 0;
-};
-
-export const transactionTime = (transaction: WasmTransactionDetails) => {
-    if (transaction.time?.confirmation_time) {
-        return toMsTimestamp(transaction.time?.confirmation_time);
-    }
-
-    if (transaction.time?.last_seen) {
-        return toMsTimestamp(transaction.time?.last_seen);
-    }
-
-    return new Date().getTime();
 };
 
 export const getFormattedPeriodSinceConfirmation = (now: Date, confirmation: Date) => {

@@ -183,30 +183,3 @@ export const AddressStatusDataListItem = ({
         />
     );
 };
-
-export const CopyAddressDataListItem = ({
-    address,
-    loading,
-}: {
-    lastUsedIndex?: number;
-    address?: WasmAddressDetails;
-    loading?: boolean;
-    isInPool?: boolean;
-}) => {
-    const { createNotification } = useNotifications();
-
-    return (
-        <DataListItem
-            bottomNode={
-                <Skeleton loading={loading}>
-                    <Copy
-                        value={address?.address ?? ''}
-                        onCopy={() => {
-                            createNotification({ text: c('Address list').t`Address copied` });
-                        }}
-                    />
-                </Skeleton>
-            }
-        />
-    );
-};
