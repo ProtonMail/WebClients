@@ -592,6 +592,75 @@ it('should send unhandled error message', () => {
     });
 });
 
+it('should report a script that failed long after load on an unrelated error', () => {
+    // The Apple Pay SDK is injected during renderApplePay, well after DOMContentLoaded.
+    window.__chargebeeScriptErrors = ['https://applepay.cdn-apple.com/jsapi/1.latest/apple-pay-sdk.js'];
+
+    messageBus?.sendUnhandledErrorMessage(new Error('Payment button never became clickable'));
+
+    const parsedArg = JSON.parse((window.parent.postMessage as jest.Mock).mock.calls[0][0]);
+
+    expect(parsedArg.error.message).toBe('Payment button never became clickable');
+    expect(parsedArg.error.scriptLoadErrors).toBe('https://applepay.cdn-apple.com/jsapi/1.latest/apple-pay-sdk.js');
+    expect(parsedArg.error.scriptLoadErrorCount).toBe(1);
+});
+
+it('should report no script failures when every script loaded', () => {
+    window.__chargebeeScriptErrors = [];
+
+    messageBus?.sendUnhandledErrorMessage(new Error('Unrelated failure'));
+
+    const parsedArg = JSON.parse((window.parent.postMessage as jest.Mock).mock.calls[0][0]);
+
+    expect(parsedArg.error.scriptLoadErrors).toBeNull();
+    expect(parsedArg.error.scriptLoadErrorCount).toBe(0);
+});
+
+const flushListener = () => new Promise((resolve) => setTimeout(resolve, 0));
+
+const getFailureCheckpoint = () => {
+    const calls = (window.parent.postMessage as jest.Mock).mock.calls;
+    const unhandledError = calls
+        .map(([message]) => JSON.parse(message))
+        .find(({ type }) => type === 'chargebee-unhandled-error');
+
+    return unhandledError?.error.checkpoints.find(
+        ({ name }: { name: string }) => name === 'failed_to_handle_parent_message'
+    );
+};
+
+const postToIframe = (data: any) =>
+    fireEvent(
+        window,
+        new MessageEvent('message', {
+            data,
+            source: window.parent,
+            origin: expectedParentOrigin,
+        })
+    );
+
+it('should report the redacted event when a handler throws', async () => {
+    messageBus!.onGetHeight = jest.fn(() => {
+        throw new Error('Chargebee is not defined');
+    });
+
+    postToIframe(JSON.stringify({ type: 'get-height', correlationId: 'id-7' }));
+    await flushListener();
+
+    const checkpoint = getFailureCheckpoint();
+    expect(checkpoint.data.errorMessage).toBe('Chargebee is not defined');
+    expect(checkpoint.data.errorName).toBe('Error');
+    expect(JSON.parse(checkpoint.data.eventRawData)).toEqual({ type: 'get-height', correlationId: 'id-7' });
+});
+
+it('should ignore a payload that is not valid JSON instead of reporting it', async () => {
+    postToIframe('{"type":"get-height",');
+    await flushListener();
+
+    expect(getFailureCheckpoint()).toBeUndefined();
+    expect(messageBus?.onGetHeight).not.toHaveBeenCalled();
+});
+
 it('should listen to direct debit submit event', () => {
     const event: DirectDebitSubmitEvent = {
         type: 'direct-debit-submit',
