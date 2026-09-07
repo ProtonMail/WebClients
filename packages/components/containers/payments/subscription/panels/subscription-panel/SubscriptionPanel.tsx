@@ -37,6 +37,7 @@ import {
     hasVPNPassProfessional,
     isTrial,
 } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -91,6 +92,40 @@ import { GetMoreButton } from './GetMoreButton';
 import type { Item } from './Item';
 import { SubscriptionItems } from './SubscriptionItems';
 
+const TrialCopy = ({ subscription, onLearnMore }: { subscription: Subscription; onLearnMore: () => void }) => {
+    const [paymentMethods, loadingPaymentMethods] = usePaymentMethods();
+
+    if (loadingPaymentMethods) {
+        return null;
+    }
+
+    const formattedPeriodEndDate = (
+        <Time format="PPP" key="period-end" data-testid="period-end">
+            {subscription.PeriodEnd}
+        </Time>
+    );
+
+    const trialCancelled = subscription.Renew === Renew.Disabled;
+    const paymentlessTrial = !paymentMethods?.length;
+
+    if (trialCancelled || paymentlessTrial) {
+        return (
+            <div className="color-weak mt-1">{c('b2b_trials_2025_Info')
+                .jt`Active until ${formattedPeriodEndDate}`}</div>
+        );
+    }
+
+    return (
+        <>
+            <div className="color-weak mt-1">{c('Info')
+                .jt`On ${formattedPeriodEndDate}, your free trial ends and your paid plan starts.`}</div>
+            <InlineLinkButton className="color-weak" onClick={onLearnMore}>
+                {c('Link').t`Learn more`}
+            </InlineLinkButton>
+        </>
+    );
+};
+
 interface Props {
     app: APP_NAMES;
     user: UserModel;
@@ -107,8 +142,6 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
     const trialInfo = getTrialInfoForSingleSubscription(subscription);
     const [learnMoreModalProps, setLearnMoreModal, renderLearnMoreModal] = useModalState();
     const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
-    const [paymentMethods, loadingPaymentMethods] = usePaymentMethods();
-    const isPaymentlessB2BTrial = trialInfo.isB2BTrial && !paymentMethods?.length;
 
     const space = getSpace(user);
 
@@ -126,8 +159,8 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
         return null;
     }
 
-    // Hide this panel for the regular trial case, but not for B2B trials
-    if (trialInfo.isTrial && !trialInfo.isB2BTrial) {
+    // Referral and family trials are rendered by dedicated TrialInfo panels
+    if (trialInfo.isReferralTrial || trialInfo.isFamilyTrial) {
         return null;
     }
 
@@ -526,57 +559,13 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
         </h2>
     );
 
-    const b2bTrialLearnMore = (() => {
-        const trialCancelled = isPaidSubscription(subscription) && subscription.Renew === Renew.Disabled;
-        if (!trialInfo.isB2BTrial || trialCancelled) {
-            return null;
-        }
-
-        const periodEnd = subscription?.PeriodEnd;
-        const startsOnTime = periodEnd ? <Time format="PPP">{periodEnd}</Time> : null;
-
-        return (
-            <>
-                {startsOnTime && !isPaymentlessB2BTrial && (
-                    <div className="color-weak">{c('Info').jt`Subscription starts on ${startsOnTime}`}</div>
-                )}
-                <InlineLinkButton className="color-weak" onClick={() => setLearnMoreModal(true)}>
-                    {c('Link').t`Learn more`}
-                </InlineLinkButton>
-            </>
-        );
-    })();
-
-    const trialEndsElement = (() => {
-        if (!isTrial(subscription)) {
-            return null;
-        }
-
-        const formattedPeriodEndDate = (
-            <Time format="PPP" key="period-end" data-testid="period-end">
-                {subscription?.PeriodEnd}
-            </Time>
-        );
-
-        if (isPaymentlessB2BTrial) {
-            if (loadingPaymentMethods) {
-                return null;
-            }
-
-            return (
-                <div className="color-weak">{c('b2b_trials_2025_Info').jt`Active until ${formattedPeriodEndDate}`}</div>
-            );
-        }
-
-        return <p className="color-weak mt-1">{c('Info').jt`Trial ends on ${formattedPeriodEndDate}`}</p>;
-    })();
-
     return (
         <>
             {renderLearnMoreModal && <LearnMoreModal {...learnMoreModalProps} />}
             <Panel data-testid="current-plan" titleDataTestId="plan-name" titleElement={planTitleElement}>
-                {trialEndsElement}
-                {b2bTrialLearnMore}
+                {isPaidSubscription(subscription) && trialInfo.isTrial && (
+                    <TrialCopy subscription={subscription} onLearnMore={() => setLearnMoreModal(true)} />
+                )}
                 {(() => {
                     if (user.isFree && app === APPS.PROTONVPN_SETTINGS) {
                         return getVpnAppFree();
