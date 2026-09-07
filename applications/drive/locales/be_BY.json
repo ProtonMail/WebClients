@@ -1361,6 +1361,9 @@
       ],
       "Copy debug transcript": [
         "Скапіяваць расшыфроўку адладкі"
+      ],
+      "Preview logs": [
+        "Папярэдні прагляд журналаў"
       ]
     },
     "Action: Docs": {
@@ -2016,6 +2019,21 @@
         "Усяго за ${ n } месяцы",
         "Усяго за ${ n } месяцаў",
         "Усяго за ${ n } месяцы"
+      ],
+      "Amount due": [
+        "Да аплаты"
+      ],
+      "Amount due after trial": [
+        "Сума да аплаты пасля пробнага перыяду"
+      ],
+      "Amount due now": [
+        "Сума да аплаты"
+      ],
+      "Total for ${ cycle } month": [
+        "Усяго за ${ cycle } месяц",
+        "Усяго за ${ cycle } месяцы",
+        "Усяго за ${ cycle } месяцаў",
+        "Усяго за ${ cycle } месяцаў"
       ]
     },
     "Collapsible tooltip": {
@@ -4915,6 +4933,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш уліковы запіс выкарыстоўвае ${ usedSpace } сховішча, што перавышае абмежаванне на ${ inviteSpace }. Выдаліце некаторыя даныя або папрасіце адміністратара тарыфнага плана павялічыць даступны аб'ём у сховішчы."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Вас запрашаюць далучыць свой уліковы запіс ${ BRAND_NAME } да гэтай сямейнай групы і разам выкарыстоўваць усе яго прэміяльныя функцыі."
       ]
     },
     "familyOffer_2023:Label": {
@@ -8125,6 +8146,12 @@
       ],
       "Link expired": [
         "Спасылка пратэрмінавана"
+      ],
+      "Do you remember your password?": [
+        "Вы памятаеце свой пароль?"
+      ],
+      "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
+        "Неабходна праіндэксаваць вашы файлы лакальна, каб уключыць пошук. Вы ўсё яшчэ можаце выкарыстоўваць ${ DRIVE_APP_NAME } у звычайным рэжыме. Пасля завяршэння індэксацыі вы атрымаеце апавяшчэнне. Індэксацыя будзе прыпынена і ўзноўлена пасля вашага вяртання, калі старонка будзе закрыта."
       ]
     },
     "info": {
