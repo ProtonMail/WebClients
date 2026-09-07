@@ -1538,7 +1538,8 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen"
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -2752,6 +2753,19 @@
       "Total for ${ n } month": [
         "Gesamtbetrag für ${ n } Monat",
         "Gesamtbetrag für ${ n } Monate"
+      ],
+      "Amount due": [
+        "Fälliger Betrag"
+      ],
+      "Amount due after trial": [
+        "Fälliger Betrag nach der Testversion"
+      ],
+      "Amount due now": [
+        "Jetzt fälliger Betrag"
+      ],
+      "Total for ${ cycle } month": [
+        "Gesamtbetrag für ${ cycle } Monat",
+        "Gesamtbetrag für ${ cycle } Monate"
       ]
     },
     "Collapsible tooltip": {
@@ -8140,8 +8154,7 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen",
-        "Bilder einfügen"
+        "Bild einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -9775,6 +9788,12 @@
       ],
       "Read your display settings": [
         "Deine Anzeigeeinstellungen anzeigen"
+      ],
+      "Do you remember your password?": [
+        "Erinnerst du dich an dein Passwort?"
+      ],
+      "Opened a problem report": [
+        "Ein Problembericht wurde erstellt"
       ]
     },
     "info": {
