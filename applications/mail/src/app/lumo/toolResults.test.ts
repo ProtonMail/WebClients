@@ -1,5 +1,6 @@
 import type { ToolDefinition } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { LOAD_GUIDE_TOOL_NAME } from '@proton/llm/lib/lumoAgent/engine/loadGuide';
+import { AutoReplyDuration } from '@proton/shared/lib/constants';
 
 import { buildLumoMailConfig } from './registry';
 import { updateFilterDefinition } from './skills/filters/updateFilter';
@@ -21,6 +22,7 @@ import { readThreadDefinition } from './skills/reads/readThread';
 import type { AgentEmailRow } from './skills/reads/rows';
 import { searchDefinition } from './skills/reads/search';
 import { viewEmailsDefinition } from './skills/reads/viewEmails';
+import { readAutoReplyDefinition, setAutoReplyDefinition } from './skills/settings/autoReply';
 import {
     CosmeticSetting,
     DensityToken,
@@ -151,6 +153,37 @@ const TOOL_PAYLOADS = [
     ]),
     payloads(changeSettingsDefinition, [
         { setting: CosmeticSetting.LAYOUT, value: LayoutToken.ROW, previous: LayoutToken.COLUMN },
+    ]),
+    payloads(readAutoReplyDefinition, [
+        { enabled: false, repeat: null, message: null, subject: null, startMs: null, endMs: null },
+        {
+            enabled: false,
+            repeat: AutoReplyDuration.FIXED,
+            message: 'On leave.',
+            subject: 'Auto',
+            startMs: 1783328400000,
+            endMs: 1783674000000,
+        },
+        {
+            enabled: true,
+            repeat: AutoReplyDuration.FIXED,
+            message: 'On leave.',
+            subject: 'Auto',
+            startMs: 1783328400000,
+            endMs: 1783674000000,
+        },
+        {
+            enabled: true,
+            repeat: AutoReplyDuration.DAILY,
+            message: 'On leave.',
+            subject: null,
+            startMs: null,
+            endMs: null,
+        },
+    ]),
+    payloads(setAutoReplyDefinition, [
+        { enabled: false },
+        { enabled: true, startMs: 1783328400000, endMs: 1783674000000 },
     ]),
 ];
 
