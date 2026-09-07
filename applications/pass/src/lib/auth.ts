@@ -207,9 +207,8 @@ export const createAuthService = ({
                 authStore.setLockToken(undefined);
                 authStore.setOfflineKD(undefined);
 
-                const offlineEnabled = (await core.settings.resolve(localID))?.offlineEnabled ?? false;
                 const offline = !connectivity.online;
-                const initialLockedStatus = getInitialLockedAppStatus(authStore, { offlineEnabled, offline });
+                const initialLockedStatus = getInitialLockedAppStatus(authStore, { offline });
 
                 if (initialLockedStatus) {
                     authStore.setPassword(undefined);
@@ -580,9 +579,7 @@ export const createAuthService = ({
             if (clientOffline(app.getState().status)) return;
 
             if (!app.getState().booted) {
-                const offlineEnabled = (await core.settings.resolve(authStore.getLocalID()))?.offlineEnabled ?? false;
-                const hasOfflineComponents = authStore.hasOfflineComponents();
-                const canOfflineUnlock = !sessionInvalid && hasOfflineComponents && offlineEnabled;
+                const canOfflineUnlock = !sessionInvalid && authStore.hasOfflineComponents();
                 const unlocked = options.unlocked && authStore.validOfflineSession(authStore.getSession());
 
                 /** If the user managed to unlock during the sequence but session resuming
@@ -592,7 +589,7 @@ export const createAuthService = ({
                 /** `offline: !sessionInvalid` is intentional: surface the offline lock screen
                  * even when `connectivity.online` is still true (handles flapping mid-resume,
                  * and rate-limited outages which never flip connectivity). */
-                const lockedStatus = getInitialLockedAppStatus(authStore, { offlineEnabled, offline: !sessionInvalid });
+                const lockedStatus = getInitialLockedAppStatus(authStore, { offline: !sessionInvalid });
                 app.setStatus(lockedStatus ?? AppStatus.ERROR);
                 app.setBooted(false);
             }

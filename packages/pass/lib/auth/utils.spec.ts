@@ -19,17 +19,12 @@ const makeAuthStore = (overrides: AuthStoreOverrides = {}): AuthStore =>
 describe('getInitialLockedAppStatus', () => {
     test('returns undefined when no offline components', () => {
         const store = makeAuthStore({ hasOfflineComponents: false, lockMode: LockMode.PASSWORD });
-        expect(getInitialLockedAppStatus(store, { offline: false, offlineEnabled: true })).toBeUndefined();
-        expect(getInitialLockedAppStatus(store, { offline: true, offlineEnabled: true })).toBeUndefined();
+        expect(getInitialLockedAppStatus(store, { offline: false })).toBeUndefined();
+        expect(getInitialLockedAppStatus(store, { offline: true })).toBeUndefined();
     });
 
-    test('returns undefined when offline and offline-mode disabled', () => {
-        const store = makeAuthStore({ lockMode: LockMode.PASSWORD });
-        expect(getInitialLockedAppStatus(store, { offline: true, offlineEnabled: false })).toBeUndefined();
-    });
-
-    describe('offline + offlineEnabled', () => {
-        const params = { offline: true, offlineEnabled: true };
+    describe('offline', () => {
+        const params = { offline: true };
 
         test('BIOMETRICS with encryptedOfflineKD → BIOMETRICS_LOCKED', () => {
             const store = makeAuthStore({ lockMode: LockMode.BIOMETRICS, encryptedOfflineKD: 'kd' });
@@ -58,7 +53,7 @@ describe('getInitialLockedAppStatus', () => {
     });
 
     describe('online', () => {
-        const params = { offline: false, offlineEnabled: true };
+        const params = { offline: false };
 
         test('BIOMETRICS with encryptedOfflineKD → BIOMETRICS_LOCKED', () => {
             const store = makeAuthStore({ lockMode: LockMode.BIOMETRICS, encryptedOfflineKD: 'kd' });
