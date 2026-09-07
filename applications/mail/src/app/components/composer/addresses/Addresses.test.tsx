@@ -10,7 +10,10 @@ import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { mergeMessages } from '../../../helpers/message/messages';
-import { addApiMock, clearAll, mailTestRender, minimalCache } from '../../../helpers/tests/helper';
+import { addApiMock } from '../../../helpers/tests/api';
+import { minimalCache } from '../../../helpers/tests/cache';
+import { clearAll } from '../../../helpers/tests/helper';
+import { mailTestRender } from '../../../helpers/tests/render';
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { addComposerAction } from '../../../store/composers/composerActions';
 import Addresses from './Addresses';

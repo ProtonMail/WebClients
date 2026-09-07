@@ -2,26 +2,23 @@ import { fireEvent } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/tests';
+import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 
+import { addApiMock } from '../../../helpers/tests/api';
+import { getCompleteAddress, minimalCache } from '../../../helpers/tests/cache';
 import type { GeneratedKey } from '../../../helpers/tests/crypto';
 import {
     addApiKeys,
+    decryptSessionKey,
     generateKeys,
     getAddressKeyCache,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
 } from '../../../helpers/tests/crypto';
-import {
-    addApiMock,
-    clearAll,
-    decryptMessage,
-    decryptSessionKey,
-    getCompleteAddress,
-    minimalCache,
-    parseDOMStringToBodyElement,
-} from '../../../helpers/tests/helper';
+import { clearAll } from '../../../helpers/tests/helper';
+import { decryptMessage } from '../../../helpers/tests/message';
 import { ID, clickSend, renderComposer, send } from './Composer.test.helpers';
 
 loudRejection();

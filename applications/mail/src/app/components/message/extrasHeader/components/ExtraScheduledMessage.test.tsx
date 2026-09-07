@@ -7,7 +7,8 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 
 import { formatDateToHuman } from '../../../../helpers/date';
-import { addApiMock, clearAll } from '../../../../helpers/tests/helper';
+import { addApiMock } from '../../../../helpers/tests/api';
+import { clearAll } from '../../../../helpers/tests/helper';
 import { mailTestRender } from '../../../../helpers/tests/render';
 import ExtraScheduledMessage from './ExtraScheduledMessage';
 

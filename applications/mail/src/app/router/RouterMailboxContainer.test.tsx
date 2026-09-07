@@ -4,7 +4,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { RetentionRule } from '@proton/shared/lib/interfaces/RetentionRule';
 import { buildUser } from '@proton/testing/builders/user';
 
-import { mailTestRender } from '../helpers/tests/helper';
+import { mailTestRender } from '../helpers/tests/render';
 import { newElementsState } from '../store/elements/elementsSlice';
 import { RouterMailboxContainer } from './RouterMailboxContainer';
 

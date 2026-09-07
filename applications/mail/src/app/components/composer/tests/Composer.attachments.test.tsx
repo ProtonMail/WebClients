@@ -3,31 +3,31 @@ import userEvent from '@testing-library/user-event';
 import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/tests';
+import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { AddressKey } from '@proton/shared/lib/interfaces';
 import type { AttachmentFullMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/tests/crypto';
-import type { GeneratedKey } from '../../../helpers/tests/helper';
+import { addApiMock, addApiResolver, parseFormData } from '../../../helpers/tests/api';
+import { getCompleteAddress, minimalCache } from '../../../helpers/tests/cache';
+import type { GeneratedKey } from '../../../helpers/tests/crypto';
 import {
     addApiKeys,
-    addApiMock,
-    addApiResolver,
-    clearAll,
-    createAttachment,
     decryptSessionKey,
     generateKeys,
-    getCompleteAddress,
+    getAddressKeyCache,
+    releaseCryptoProxy,
+    setupCryptoProxyForTesting,
+} from '../../../helpers/tests/crypto';
+import {
+    clearAll,
     getDropdown,
-    mailTestRender,
-    minimalCache,
-    parseDOMStringToBodyElement,
-    parseFormData,
-    tick,
     waitForNoNotification,
     waitForNotification,
     waitForSpyCall,
 } from '../../../helpers/tests/helper';
+import { createAttachment } from '../../../helpers/tests/message';
+import { mailTestRender, tick } from '../../../helpers/tests/render';
 import Composer from '../Composer';
 import { ID, getMessage, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
 

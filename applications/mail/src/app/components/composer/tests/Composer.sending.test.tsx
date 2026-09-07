@@ -3,35 +3,34 @@ import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/tests';
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
+import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { AddressKey, MailSettings } from '@proton/shared/lib/interfaces';
 import { SIGN } from '@proton/shared/lib/mail/mailSettings';
 
+import { addApiMock } from '../../../helpers/tests/api';
+import { getCompleteAddress, minimalCache } from '../../../helpers/tests/cache';
 import { addApiContact } from '../../../helpers/tests/contact';
 import type { GeneratedKey } from '../../../helpers/tests/crypto';
 import {
     addApiKeys,
+    decryptSessionKey,
     generateKeys,
     getAddressKeyCache,
     getStoredUserKey,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
 } from '../../../helpers/tests/crypto';
+import { clearAll } from '../../../helpers/tests/helper';
 import {
-    addApiMock,
-    clearAll,
     createAttachment,
     createEmbeddedImage,
     createMessageImages,
     decryptMessage,
     decryptMessageMultipart,
-    decryptSessionKey,
-    getCompleteAddress,
-    minimalCache,
-    parseDOMStringToBodyElement,
     readSessionKey,
-} from '../../../helpers/tests/helper';
+} from '../../../helpers/tests/message';
 import { addAttachment } from '../../../store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
 import type { MailState } from '../../../store/store';
