@@ -11,6 +11,15 @@ import type { ToolName as ServerToolName } from '@proton/lumo-api-client';
 import type { ServerToolSource } from '@proton/lumo-ui';
 import type { IconComponent } from '@proton/lumo-ui/types';
 
+/** `APPLYING` exists so the tile can record the outcome rather than the click that started it. */
+export enum ConfirmStatus {
+    PENDING = 'pending',
+    APPLYING = 'applying',
+    APPLIED = 'applied',
+    FAILED = 'failed',
+    CANCELLED = 'cancelled',
+}
+
 /** The chat items the panel renders — the human-facing view of the executor's event stream. */
 export type LumoAgentItem =
     | { id: number; kind: 'user'; text: string }
@@ -22,7 +31,7 @@ export type LumoAgentItem =
           kind: 'confirm';
           action: ActionRequest;
           labels: ReferenceLabels;
-          status: 'pending' | 'applied' | 'cancelled';
+          status: ConfirmStatus;
       }
     | { id: number; kind: 'error'; message: string };
 

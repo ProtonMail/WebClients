@@ -1,30 +1,36 @@
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
+import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import type { ActionRequest, ReferenceLabels } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { Disclosure } from '@proton/lumo-ui';
 import type { IconComponent } from '@proton/lumo-ui/types';
 import clsx from '@proton/utils/clsx';
 
-import type { CardRenderer, LumoAgentItem } from './types';
+import type { CardRenderer } from './types';
+import { ConfirmStatus } from './types';
 
-type SettledStatus = Exclude<Extract<LumoAgentItem, { kind: 'confirm' }>['status'], 'pending'>;
+/** `PENDING` is absent: the panel pins that one as an editable card instead of a row. */
+type TileStatus = Exclude<ConfirmStatus, ConfirmStatus.PENDING>;
 
-/** A further settled status fails to compile until it is given a mark of its own. */
-const STATUS_MARKS: Record<SettledStatus, { Icon: IconComponent; className: string }> = {
-    applied: { Icon: IcCheckmarkCircle, className: 'color-success' },
-    cancelled: { Icon: IcCrossCircle, className: 'color-weak' },
+/** A further status fails to compile until it is given a mark of its own. */
+const STATUS_MARKS: Record<TileStatus, { Icon: IconComponent; className: string }> = {
+    [ConfirmStatus.APPLYING]: { Icon: IcHourglass, className: 'color-weak' },
+    [ConfirmStatus.APPLIED]: { Icon: IcCheckmarkCircle, className: 'color-success' },
+    [ConfirmStatus.FAILED]: { Icon: IcExclamationCircle, className: 'color-danger' },
+    [ConfirmStatus.CANCELLED]: { Icon: IcCrossCircle, className: 'color-weak' },
 };
 
 interface Props {
     renderer: CardRenderer;
     action: ActionRequest;
     labels: ReferenceLabels;
-    status: SettledStatus;
+    status: TileStatus;
     className?: string;
 }
 
 /**
- * A settled mutation as one row in the assistant's column. A renderer with no `detail` gets the row
+ * A confirmed mutation as one row in the assistant's column. A renderer with no `detail` gets the row
  * without the `<details>` wrapper, so a chevron never invites the user to expand nothing.
  */
 const ResultTile = ({ renderer, action, labels, status, className }: Props) => {
