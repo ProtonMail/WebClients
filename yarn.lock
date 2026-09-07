@@ -11930,15 +11930,12 @@ __metadata:
     web-vitals: "npm:^4.2.4"
     zod: "npm:^3.25.76"
   peerDependencies:
-    "@proton/app-context": "workspace:^"
     "@proton/key-transparency": "workspace:^"
     "@proton/metrics": "workspace:^"
     "@proton/payments": "workspace:^"
     "@proton/unleash": "workspace:^"
     electron: "*"
   peerDependenciesMeta:
-    "@proton/app-context":
-      optional: true
     "@proton/key-transparency":
       optional: true
     "@proton/metrics":
