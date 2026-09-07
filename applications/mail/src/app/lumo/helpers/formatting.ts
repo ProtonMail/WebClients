@@ -11,6 +11,9 @@ export const formatLocalDate = (date: Date): string => {
     return lightFormat(date, 'yyyy-MM-dd');
 };
 
+/** Model-facing, so deliberately not localized: a stable shape the model can compare and echo back. */
+export const formatLocalDateTime = (date: Date): string => lightFormat(date, 'yyyy-MM-dd HH:mm');
+
 export const formatUnixDate = (time?: number): string => (time ? formatLocalDate(fromUnixTime(time)) : '');
 
 export const formatSender = (recipients: (Recipient | undefined)[]): string => {
