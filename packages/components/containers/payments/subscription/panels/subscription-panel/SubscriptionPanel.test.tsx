@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react';
 
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { createEntitlementResolver } from '@proton/payments/core/entitlements/resolver';
-import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
+import { Renew, SubscriptionPlatform, TrialType } from '@proton/payments/core/subscription/constants';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS } from '@proton/shared/lib/constants';
 import { buildUser } from '@proton/testing/builders/user';
@@ -17,6 +17,12 @@ jest.mock('@proton/vpn/constants/vpnServers', () => ({
     },
 }));
 
+let mockUsePaymentMethods: jest.Mock;
+
+jest.mock('@proton/account/paymentMethods/hooks', () => ({
+    usePaymentMethods: () => mockUsePaymentMethods(),
+}));
+
 describe('SubscriptionPanel', () => {
     const defaultEntitlements = createEntitlementResolver(undefined);
 
@@ -28,6 +34,10 @@ describe('SubscriptionPanel', () => {
         entitlements: defaultEntitlements,
     };
 
+    beforeEach(() => {
+        mockUsePaymentMethods = jest.fn().mockReturnValue([[{}] as any, false]);
+    });
+
     it('should not render if user cannot pay', () => {
         const { container } = renderWithProviders(
             <SubscriptionPanel {...defaultProps} user={buildUser({ canPay: false })} />
@@ -35,11 +45,132 @@ describe('SubscriptionPanel', () => {
         expect(container).toBeEmptyDOMElement();
     });
 
-    it('should not render for trial subscriptions', () => {
+    it('should not render for referral trials', () => {
         const { container } = renderWithProviders(
-            <SubscriptionPanel {...defaultProps} subscription={buildSubscription(undefined, { IsTrial: true })} />
+            <SubscriptionPanel
+                {...defaultProps}
+                subscription={buildSubscription(undefined, { IsTrial: true, TrialType: TrialType.ReferralProgram })}
+            />
         );
         expect(container).toBeEmptyDOMElement();
+    });
+
+    it('should not render for family trials', () => {
+        const { container } = renderWithProviders(
+            <SubscriptionPanel
+                {...defaultProps}
+                subscription={buildSubscription(undefined, { IsTrial: true, TrialType: TrialType.FamilyPlan })}
+            />
+        );
+        expect(container).toBeEmptyDOMElement();
+    });
+
+    it('should render combined sentence for manual trial with payment method', () => {
+        renderWithProviders(
+            <SubscriptionPanel
+                {...defaultProps}
+                subscription={buildSubscription(undefined, { IsTrial: true, TrialType: TrialType.Manual })}
+            />
+        );
+
+        expect(screen.getByText('Free trial')).toBeInTheDocument();
+        expect(screen.getByTestId('period-end')).toBeInTheDocument();
+        expect(screen.getByText('Learn more')).toBeInTheDocument();
+        expect(screen.getByText(/your free trial ends and your paid plan starts/i)).toBeInTheDocument();
+        expect(screen.queryByText(/Active until/)).not.toBeInTheDocument();
+    });
+
+    it('should render Active until without Learn more for manual trial without payment method', () => {
+        mockUsePaymentMethods = jest.fn().mockReturnValue([undefined, false]);
+
+        renderWithProviders(
+            <SubscriptionPanel
+                {...defaultProps}
+                subscription={buildSubscription(undefined, { IsTrial: true, TrialType: TrialType.Manual })}
+            />
+        );
+
+        expect(screen.getByText('Free trial')).toBeInTheDocument();
+        expect(screen.getByTestId('period-end')).toBeInTheDocument();
+        expect(screen.getByText(/Active until/)).toBeInTheDocument();
+        expect(screen.queryByText('Learn more')).not.toBeInTheDocument();
+        expect(screen.queryByText(/your free trial ends and your paid plan starts/i)).not.toBeInTheDocument();
+    });
+
+    it('should render Active until without Learn more for cancelled trial', () => {
+        mockUsePaymentMethods = jest.fn().mockReturnValue([[{}] as any, false]);
+
+        renderWithProviders(
+            <SubscriptionPanel
+                {...defaultProps}
+                subscription={buildSubscription(undefined, {
+                    IsTrial: true,
+                    TrialType: TrialType.Manual,
+                    Renew: Renew.Disabled,
+                })}
+            />
+        );
+
+        expect(screen.getByText('Free trial')).toBeInTheDocument();
+        expect(screen.getByTestId('period-end')).toBeInTheDocument();
+        expect(screen.getByText(/Active until/)).toBeInTheDocument();
+        expect(screen.queryByText('Learn more')).not.toBeInTheDocument();
+    });
+
+    it('should not render the trial date while payment methods are loading', () => {
+        mockUsePaymentMethods = jest.fn().mockReturnValue([undefined, true]);
+
+        renderWithProviders(
+            <SubscriptionPanel
+                {...defaultProps}
+                subscription={buildSubscription(undefined, { IsTrial: true, TrialType: TrialType.Manual })}
+            />
+        );
+
+        expect(screen.getByText('Free trial')).toBeInTheDocument();
+        expect(screen.queryByTestId('period-end')).not.toBeInTheDocument();
+    });
+
+    it('should render combined sentence for B2B trial with payment method', () => {
+        renderWithProviders(
+            <SubscriptionPanel
+                {...defaultProps}
+                subscription={buildSubscription(
+                    { planName: PLANS.MAIL_BUSINESS, currency: 'CHF', cycle: CYCLE.MONTHLY },
+                    { IsTrial: true }
+                )}
+            />
+        );
+
+        expect(screen.getByText('Free trial')).toBeInTheDocument();
+        expect(screen.getByTestId('period-end')).toBeInTheDocument();
+        expect(screen.getByText(/your free trial ends and your paid plan starts/i)).toBeInTheDocument();
+        expect(screen.getByText('Learn more')).toBeInTheDocument();
+    });
+
+    it('should render Active until without Learn more for B2B trial without payment method', () => {
+        mockUsePaymentMethods = jest.fn().mockReturnValue([undefined, false]);
+
+        renderWithProviders(
+            <SubscriptionPanel
+                {...defaultProps}
+                subscription={buildSubscription(
+                    { planName: PLANS.MAIL_BUSINESS, currency: 'CHF', cycle: CYCLE.MONTHLY },
+                    { IsTrial: true }
+                )}
+            />
+        );
+
+        expect(screen.getByText('Free trial')).toBeInTheDocument();
+        expect(screen.getByTestId('period-end')).toBeInTheDocument();
+        expect(screen.getByText(/Active until/)).toBeInTheDocument();
+        expect(screen.queryByText('Learn more')).not.toBeInTheDocument();
+    });
+
+    it('should not fetch payment methods for non-trial subscriptions', () => {
+        renderWithProviders(<SubscriptionPanel {...defaultProps} subscription={buildSubscription()} />);
+
+        expect(mockUsePaymentMethods).not.toHaveBeenCalled();
     });
 
     it('should render free plan correctly', () => {
