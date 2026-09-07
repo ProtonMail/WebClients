@@ -50,5 +50,3 @@ export const useAlwaysOnPolicy = ({ enabled }: { enabled: boolean }) => {
 
     return { policy, isLoading, setPolicy };
 };
-
-export default useAlwaysOnPolicy;
