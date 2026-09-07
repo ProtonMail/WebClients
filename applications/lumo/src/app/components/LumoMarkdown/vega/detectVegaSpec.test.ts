@@ -10,7 +10,7 @@ import {
 describe('looksLikeVegaSpec', () => {
     it('detects specs via $schema', () => {
         const code = JSON.stringify({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             mark: 'bar',
         });
 
@@ -54,7 +54,7 @@ describe('shouldRenderAsVegaChart', () => {
 
     it('accepts json fences that contain Vega-Lite', () => {
         const code = JSON.stringify({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             mark: 'bar',
             encoding: {
                 x: { field: 'month', type: 'ordinal' },
@@ -111,7 +111,7 @@ describe('shouldHoldVegaChartLoading', () => {
 
     it('allows rendering once a spec looks complete', () => {
         const code = JSON.stringify({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             mark: 'line',
             encoding: {
                 x: { field: 'week', type: 'ordinal' },

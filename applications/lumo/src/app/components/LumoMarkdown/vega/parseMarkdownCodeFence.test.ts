@@ -7,11 +7,11 @@ import {
 
 describe('parseMarkdownCodeFence', () => {
     it('parses a complete fenced block', () => {
-        const block = '```json\n{\n  "$schema": "https://vega.github.io/schema/vega-lite/v5.json"\n}\n```\n\n';
+        const block = '```json\n{\n  "$schema": "https://vega.github.io/schema/vega-lite/v6.json"\n}\n```\n\n';
 
         expect(parseMarkdownCodeFence(block)).toEqual({
             language: 'json',
-            code: '{\n  "$schema": "https://vega.github.io/schema/vega-lite/v5.json"\n}',
+            code: '{\n  "$schema": "https://vega.github.io/schema/vega-lite/v6.json"\n}',
         });
     });
 
@@ -27,7 +27,7 @@ describe('parseMarkdownCodeFence', () => {
 
     it('detects vega specs in complete fences for direct rendering', () => {
         const block = parseMarkdownCodeFence(
-            '```json\n{"$schema":"https://vega.github.io/schema/vega-lite/v5.json","data":{"values":[{"month":"Jan"}]},"title":{"text":"Geneva"}}\n```\n\n'
+            '```json\n{"$schema":"https://vega.github.io/schema/vega-lite/v6.json","data":{"values":[{"month":"Jan"}]},"title":{"text":"Geneva"}}\n```\n\n'
         );
 
         expect(block).not.toBeNull();
