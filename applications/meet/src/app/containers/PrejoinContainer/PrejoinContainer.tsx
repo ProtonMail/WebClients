@@ -144,16 +144,16 @@ export const PrejoinContainer = ({
         <div className="h-full overflow-y-auto relative flex flex-column flex-nowrap">
             <OpenDesktopAppBanner />
             {joiningInProgress && <div className="w-full h-full absolute top-0 left-0 z-up" />}
-            <div className="w-full meet-container-padding-x shrink-0">
+            <div className="w-full prejoin-padding-x shrink-0">
                 <PageHeader showAppSwitcher={false} isInstantJoin={isInstantJoin} />
             </div>
             <main
                 id="main-content"
-                className="prejoin-container flex flex-column md:flex-row md:items-center md:justify-center w-full meet-container-padding-x"
+                className="prejoin-container flex flex-column md:flex-row md:items-center md:justify-center w-full"
             >
                 <div
                     className={clsx(
-                        'prejoin-container-content w-full md:w-custom xl:w-custom flex flex-column flex-nowrap lg:flex-row gap-2 *:min-size-auto md:items-center px-2 md:px-4',
+                        'prejoin-container-content w-full md:w-custom xl:w-custom flex flex-column flex-nowrap lg:flex-row gap-2 *:min-size-auto md:items-center md:px-4',
                         isInstantJoin && 'justify-center'
                     )}
                     style={{ '--md-w-custom': '71rem', '--xl-w-custom': '76rem' }}
