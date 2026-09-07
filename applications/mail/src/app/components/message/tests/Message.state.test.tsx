@@ -4,7 +4,9 @@ import type { PublicPrivateKey } from '@proton/mail/store/messages/messagesTypes
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { addApiKeys, addApiMock, clearAll } from '../../../helpers/tests/helper';
+import { addApiMock } from '../../../helpers/tests/api';
+import { addApiKeys } from '../../../helpers/tests/crypto';
+import { clearAll } from '../../../helpers/tests/helper';
 // mock useGetMessageKeys on-the-fly when needed
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 import { initialize } from '../../../store/messages/read/messagesReadActions';

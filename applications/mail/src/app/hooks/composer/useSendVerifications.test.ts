@@ -6,7 +6,8 @@ import type { EncryptionPreferences } from '@proton/shared/lib/mail/encryptionPr
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 
-import { clearAll, renderHook } from '../../helpers/tests/helper';
+import { clearAll } from '../../helpers/tests/helper';
+import { renderHook } from '../../helpers/tests/render';
 import type { SendInfo } from '../../models/crypto';
 import { useSendVerifications } from './useSendVerifications';
 

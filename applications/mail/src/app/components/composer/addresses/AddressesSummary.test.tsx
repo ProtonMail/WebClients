@@ -5,7 +5,8 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import noop from '@proton/utils/noop';
 
 import { getRecipientLabel } from '../../../helpers/message/messageRecipients';
-import { clearAll, mailTestRender } from '../../../helpers/tests/helper';
+import { clearAll } from '../../../helpers/tests/helper';
+import { mailTestRender } from '../../../helpers/tests/render';
 import type { RecipientType } from '../../../models/address';
 import { refresh } from '../../../store/contacts/contactsActions';
 import { prepareMessage } from '../tests/Composer.test.helpers';

@@ -5,10 +5,18 @@ import { getModelState } from '@proton/account/tests';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Address, AddressKey, Recipient, UserModel } from '@proton/shared/lib/interfaces';
 
+import { addApiMock } from '../../../helpers/tests/api';
 import { minimalCache } from '../../../helpers/tests/cache';
-import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/tests/crypto';
-import type { GeneratedKey } from '../../../helpers/tests/helper';
-import { addApiKeys, addApiMock, clearAll, generateKeys, mailTestRender } from '../../../helpers/tests/helper';
+import type { GeneratedKey } from '../../../helpers/tests/crypto';
+import {
+    addApiKeys,
+    generateKeys,
+    getAddressKeyCache,
+    releaseCryptoProxy,
+    setupCryptoProxyForTesting,
+} from '../../../helpers/tests/crypto';
+import { clearAll } from '../../../helpers/tests/helper';
+import { mailTestRender } from '../../../helpers/tests/render';
 import { messageID } from '../../message/tests/Message.test.helpers';
 import Composer from '../Composer';
 import { ID, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
