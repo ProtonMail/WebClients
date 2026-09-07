@@ -19,7 +19,7 @@ import clsx from '@proton/utils/clsx';
 import { Button } from '../../atoms';
 import { getThemeByIndex } from '../../utils';
 
-export interface ExtendedPublicKeyModalOwnProps {
+interface ExtendedPublicKeyModalOwnProps {
     accountLabel: string;
     xpub: string;
     descriptor: string;

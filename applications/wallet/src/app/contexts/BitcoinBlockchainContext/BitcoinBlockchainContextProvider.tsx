@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { useContext, useMemo } from 'react';
+import { useMemo } from 'react';
 
 import { useApiWalletsData, useBitcoinNetwork } from '@proton/wallet/store/hooks';
 import { buildMapFromWallets } from '@proton/wallet/utils/wallet';
@@ -69,5 +69,3 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
         </BitcoinBlockchainContext.Provider>
     );
 };
-
-export const useBitcoinBlockchainContext = () => useContext(BitcoinBlockchainContext);

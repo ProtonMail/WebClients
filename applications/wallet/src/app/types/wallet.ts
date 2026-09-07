@@ -13,7 +13,7 @@ export type AccountWithChainData = {
 export type AccountChainDataByAccountId = SimpleMap<AccountWithChainData>;
 export type AccountIdByDerivationPathAndWalletId = SimpleMap<SimpleMap<string>>;
 
-export type WalletWithChainData = {
+type WalletWithChainData = {
     wallet: WasmWallet;
     accounts: AccountChainDataByAccountId;
 };
