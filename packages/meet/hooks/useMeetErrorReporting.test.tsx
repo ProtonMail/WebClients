@@ -6,7 +6,7 @@ import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { AnalyticsProvider } from '../contexts/AnalyticsContext';
-import { useMeetErrorReporting } from './useMeetErrorReporting';
+import { setMeetCoreErrorResolver, useMeetErrorReporting } from './useMeetErrorReporting';
 
 vi.mock('@proton/shared/lib/helpers/sentry', () => ({
     captureMessage: vi.fn(),
@@ -151,5 +151,58 @@ describe('useMeetErrorReporting', () => {
             tags: expectedTags,
         });
         expect(traceErrorMock).not.toHaveBeenCalled();
+    });
+
+    describe('with a meet core error resolver registered', () => {
+        const resolvedError = new Error('boom');
+
+        beforeEach(() => {
+            setMeetCoreErrorResolver((error) =>
+                error === 29 || error === resolvedError ? 'HttpClientError' : undefined
+            );
+        });
+
+        afterEach(() => {
+            setMeetCoreErrorResolver(() => undefined);
+        });
+
+        it('names the core error in the message and in its own tag', () => {
+            const { result } = renderHook(() => useMeetErrorReporting(), { wrapper });
+
+            result.current.reportMeetError('Something failed', 29);
+
+            expect(captureMessageMock).toHaveBeenCalledWith('Something failed: HttpClientError', {
+                level: 'error',
+                extra: { error: 29 },
+                fingerprint: undefined,
+                tags: { ...expectedTags, meetCoreError: 'HttpClientError' },
+            });
+        });
+
+        it('groups an exception by the named label and keeps the label tag unnamed', () => {
+            const { result } = renderHook(() => useMeetErrorReporting(), { wrapper });
+
+            result.current.reportMeetError('Something failed', resolvedError);
+
+            expect(traceErrorMock).toHaveBeenCalledWith(resolvedError, {
+                level: 'error',
+                extra: { error: resolvedError },
+                tags: { ...expectedTags, meetCoreError: 'HttpClientError' },
+                fingerprint: ['Something failed: HttpClientError'],
+            });
+        });
+
+        it('leaves a report the resolver does not recognise untouched', () => {
+            const { result } = renderHook(() => useMeetErrorReporting(), { wrapper });
+
+            result.current.reportMeetError('Something failed', { context: { error: 'boom' } });
+
+            expect(captureMessageMock).toHaveBeenCalledWith('Something failed', {
+                level: 'error',
+                extra: { error: 'boom' },
+                fingerprint: undefined,
+                tags: expectedTags,
+            });
+        });
     });
 });
