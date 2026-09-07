@@ -1529,7 +1529,8 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarer nøkkel"
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -2737,6 +2738,10 @@
       "Total for ${ n } month": [
         "Totalt for ${ n } måned",
         "Totalt for ${ n } måneder"
+      ],
+      "Total for ${ cycle } month": [
+        "Totalt for ${ cycle } måned",
+        "Totalt for ${ cycle } måneder"
       ]
     },
     "Collapsible tooltip": {
@@ -8077,8 +8082,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -9649,6 +9653,30 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "${ count } email": [
+        "${ count } e-post",
+        "${ count } e-poster"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } e-post · ${ names }",
+        "${ count } e-poster · ${ names }"
+      ],
+      "Apply labels": [
+        "Bruk etiketter"
+      ],
+      "Do you remember your password?": [
+        "Husker du passordet ditt?"
+      ],
+      "Found ${ count } contact": [
+        "Fant ${ count } kontakt",
+        "Fant ${ count } kontakter"
+      ],
+      "Mark all as unread": [
+        "Merk alle som ulest"
+      ],
+      "Searched the web": [
+        "Søkte på nettet"
       ]
     },
     "info": {
@@ -10865,6 +10893,9 @@
       ],
       "Conversation grouping": [
         "Samtalegruppering"
+      ],
+      "Return on": [
+        "Tilbake den"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13334,6 +13365,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kortet ditt ble avslått. Forsøk et annet kort eller kontakt banken din for å autorisere belastingen."
+      ],
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Kunne ikke initialisere ${ IDEAL_WERO_BRAND_NAME }. Prøv på nytt senere."
       ]
     },
     "Payments.error": {
@@ -16955,6 +16989,12 @@
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
+      ],
+      "Change display setting": [
+        "Endre visningsinnstilling"
+      ],
+      "Keep this banner hidden?": [
+        "Vil du holde dette banneret skjult?"
       ]
     },
     "Title header for keys table": {
@@ -17584,6 +17624,35 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Du har nå tilgang til nye ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "2 TB of secure storage": [
+        "2 TB med sikker lagring"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "for 12 måneder"
+      ],
+      "One plan, more power": [
+        "Én plan, mer kraft"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } e-post → ${ wakeTime }",
+        "${ count } e-poster → ${ wakeTime }"
       ]
     }
   }

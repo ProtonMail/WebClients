@@ -1538,7 +1538,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -2758,6 +2759,19 @@
       "Total for ${ n } month": [
         "I alt for ${ n } måned",
         "I alt for ${ n } måneder"
+      ],
+      "Amount due": [
+        "Forfaldent beløb"
+      ],
+      "Amount due after trial": [
+        "Forfaldent beløb efter prøveperioden"
+      ],
+      "Amount due now": [
+        "Forfaldent beløb nu"
+      ],
+      "Total for ${ cycle } month": [
+        "I alt for ${ cycle } måned",
+        "I alt for ${ cycle } måneder"
       ]
     },
     "Collapsible tooltip": {
@@ -6065,6 +6079,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Din konto bruger ${ usedSpace } lagerplads, hvilket overstiger de ${ inviteSpace } du har fået tildelt. Slet nogle data eller bed abonnementsadministratoren om at øge din lagerplads."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du er inviteret til at forbinde din ${ BRAND_NAME }-konto til denne familiegruppe og nyde alle dens premium-funktioner."
       ]
     },
     "familyOffer_2023:Label": {
@@ -8121,8 +8138,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -9787,6 +9803,18 @@
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til ${ IDEAL_WERO_BRAND_NAME } i en ny browserfane for at gennemføre transaktionen. Benytter du evt. pop-up blockere, så deaktiver disse for at fortsætte."
+      ],
+      "Change display setting": [
+        "Skift visningsindstillinger"
+      ],
+      "Do you remember your password?": [
+        "Kan du godt huske din adgangskode?"
+      ],
+      "Opened a problem report": [
+        "Rapportede et problem"
+      ],
+      "Read your display settings": [
+        "Læs dine visningsindstillinger"
       ]
     },
     "info": {
@@ -11072,6 +11100,24 @@
       ],
       "Conversation grouping": [
         "Samtalegruppering"
+      ],
+      "Column": [
+        "Kolonne"
+      ],
+      "Comfortable": [
+        "Behageligt"
+      ],
+      "Compact": [
+        "Kompakt"
+      ],
+      "Grouped conversations": [
+        "Grupperede samtaler"
+      ],
+      "Row": [
+        "Række"
+      ],
+      "Single messages": [
+        "Enkeltbeskeder"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17242,6 +17288,9 @@
       ],
       "Update filter": [
         "Opdater filter"
+      ],
+      "Change display setting": [
+        "Skift visningsindstillinger"
       ]
     },
     "Title header for keys table": {

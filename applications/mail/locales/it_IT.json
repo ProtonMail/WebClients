@@ -1520,7 +1520,8 @@
         "Considera attendibile"
       ],
       "Trust key": [
-        "Affida chiave"
+        "chiave attendibile",
+        "chiavi attendibili"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -1726,6 +1727,9 @@
       ],
       "Write ${ count } logs": [
         "Scrivi ${ count } log"
+      ],
+      "Open debug menu": [
+        "Apri menu di debug"
       ]
     },
     "action": {
@@ -7917,8 +7921,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -9522,6 +9525,10 @@
       ],
       "You": [
         "Tu"
+      ],
+      "Read ${ count } email on screen": [
+        "Leggi ${ count } email sullo schermo",
+        "Leggi ${ count } email sullo schermo"
       ]
     },
     "info": {

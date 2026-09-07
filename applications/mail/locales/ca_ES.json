@@ -1544,7 +1544,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -2758,6 +2759,19 @@
       "Total for ${ n } month": [
         "Total per ${ n } mes",
         "Total per ${ n } mesos"
+      ],
+      "Amount due": [
+        "Import pendent"
+      ],
+      "Amount due after trial": [
+        "Import a pagar després de la prova"
+      ],
+      "Amount due now": [
+        "Import a pagar ara"
+      ],
+      "Total for ${ cycle } month": [
+        "Total per ${ cycle } mes",
+        "Total per ${ cycle } mesos"
       ]
     },
     "Collapsible tooltip": {
@@ -6065,6 +6079,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "El vostre compte utilitza ${ usedSpace } d'emmagatzematge, que supera els ${ inviteSpace } que us van assignar. Elimineu algunes dades o demaneu a l'administrador del pla que augmenti l'emmagatzematge."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Esteu convidats a vincular el vostre compte de ${ BRAND_NAME } a aquest grup familiar i gaudir de totes les seves característiques prèmium."
       ]
     },
     "familyOffer_2023:Label": {
@@ -8139,8 +8156,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -9793,6 +9809,12 @@
       ],
       "Read your display settings": [
         "Llegiu la vostra configuració de pantalla"
+      ],
+      "Do you remember your password?": [
+        "Recordeu la vostra contrasenya?"
+      ],
+      "Opened a problem report": [
+        "S'ha obert informe d'un problema"
       ]
     },
     "info": {
@@ -11080,7 +11102,7 @@
         "Columna"
       ],
       "Comfortable": [
-        "Còmode"
+        "Agradable"
       ],
       "Compact": [
         "Compacte"
@@ -11095,7 +11117,7 @@
         "Fila"
       ],
       "Single messages": [
-        "Missatges simples"
+        "Missatges individuals"
       ]
     },
     "Label (begin date/advanced search)": {

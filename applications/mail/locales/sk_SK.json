@@ -1546,7 +1546,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -2810,6 +2813,21 @@
         "Celkom za ${ n } mesiace",
         "Celkom za ${ n } mesiacov",
         "Celkom za ${ n } mesiacov"
+      ],
+      "Amount due": [
+        "Dlžná suma"
+      ],
+      "Amount due after trial": [
+        "Splatná suma po skúšobnom období"
+      ],
+      "Amount due now": [
+        "Čiastka k zaplateniu teraz"
+      ],
+      "Total for ${ cycle } month": [
+        "Celkom za ${ cycle } mesiac",
+        "Celkom za ${ cycle } mesiace",
+        "Celkom za ${ cycle } mesiacov",
+        "Celkom za ${ cycle } mesiacov"
       ]
     },
     "Collapsible tooltip": {
@@ -6173,6 +6191,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet využíva ${ usedSpace } úložiska, čo presahuje pridelený priestor ${ inviteSpace }. Odstráňte niektoré údaje alebo požiadajte správcu plánu o navýšenie úložiska."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Pozývame vás, aby ste si prepojili svoj ${ BRAND_NAME } účet s touto rodinnou skupinou a mohli tak využívať všetky jej prémiové funkcie."
       ]
     },
     "familyOffer_2023:Label": {
@@ -8386,10 +8407,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -10139,6 +10157,18 @@
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Na dokončenie tejto transakcie vás presmerujeme do ${ IDEAL_WERO_BRAND_NAME } v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
+      ],
+      "Change display setting": [
+        "Zmeniť nastavenie displeja"
+      ],
+      "Do you remember your password?": [
+        "Pamätáte si svoje heslo?"
+      ],
+      "Opened a problem report": [
+        "Bolo vytvorené hlásenie o probléme"
+      ],
+      "Read your display settings": [
+        "Načítať vaše nastavenie displeja"
       ]
     },
     "info": {
@@ -11440,6 +11470,24 @@
       ],
       "Sieve script": [
         "Sieve skript"
+      ],
+      "Column": [
+        "Stĺpec"
+      ],
+      "Comfortable": [
+        "Komfortné"
+      ],
+      "Compact": [
+        "Kompaktné"
+      ],
+      "Grouped conversations": [
+        "Zoskupené konverzácie"
+      ],
+      "Row": [
+        "Riadok"
+      ],
+      "Single messages": [
+        "Jednotlivé správy"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17902,6 +17950,9 @@
       ],
       "Update filter": [
         "Aktualizovať filter"
+      ],
+      "Change display setting": [
+        "Zmeniť nastavenie displeja"
       ]
     },
     "Title header for keys table": {

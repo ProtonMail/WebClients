@@ -1715,6 +1715,9 @@
       ],
       "Migrate": [
         "遷移"
+      ],
+      "View guide": [
+        "檢視指南"
       ]
     },
     "action": {
@@ -2690,6 +2693,12 @@
       ],
       "Total for ${ n } month": [
         " ${ n } 個月總計"
+      ],
+      "Amount due": [
+        "應付金額"
+      ],
+      "Amount due now": [
+        "當前欠款"
       ]
     },
     "Collapsible tooltip": {
@@ -4363,6 +4372,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ],
+      "No ads. No trackers": [
+        "無廣告。無追蹤器"
       ]
     },
     "description": {
@@ -5455,6 +5467,15 @@
       ],
       "You can update a public link for your own files only": [
         "您只能更新您的檔案公開連結"
+      ],
+      "Cannot share root folder": [
+        "無法複製根資料夾"
+      ],
+      "Copy operation aborted": [
+        "以放棄移動操作"
+      ],
+      "Invitation not found": [
+        "未找到邀請"
       ]
     },
     "error": {
@@ -5989,6 +6010,15 @@
       ],
       "Unread": [
         "未讀"
+      ],
+      "Activated": [
+        "已啟用"
+      ],
+      "Errors": [
+        "錯誤"
+      ],
+      "Not activated": [
+        "未啟動"
       ]
     },
     "Filter Actions": {
@@ -7744,7 +7774,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -9251,6 +9281,27 @@
       ],
       "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
         "若要遷移此使用者，於您的 ${ provider.adminConsoleName } 取消封存它們的帳號。"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } 標記"
+      ],
+      "Change display setting": [
+        "變更顯示設定"
+      ],
+      "Create label": [
+        "建立標籤"
+      ],
+      "Do you remember your password?": [
+        "您記得您的密碼嗎?"
+      ],
+      "Move here": [
+        "移動至此處"
+      ],
+      "No email open": [
+        "無開啟的電子郵件"
+      ],
+      "Searched your mail": [
+        "搜尋您的電子郵件"
       ]
     },
     "info": {
@@ -10459,6 +10510,27 @@
       ],
       "Write": [
         "寫入"
+      ],
+      "At": [
+        "於"
+      ],
+      "Comfortable": [
+        "舒適"
+      ],
+      "Compact": [
+        "緊湊"
+      ],
+      "Encrypt": [
+        "加密"
+      ],
+      "Export size": [
+        "匯出大小"
+      ],
+      "Filter name": [
+        "篩選器名稱"
+      ],
+      "Grouped conversations": [
+        "群組對話"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10904,6 +10976,9 @@
       ],
       "for ${ price }": [
         "${ price } 版"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "添加 ${ LUMO_SHORT_APP_NAME } 撰寫幫手"
       ]
     },
     "Mailbox": {
@@ -11731,6 +11806,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
         "${ LUMO_SHORT_APP_NAME } 撰寫工具與擴充存取權"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫工具與限制存取權"
       ]
     },
     "new_plans: feature highlight": {
@@ -12582,6 +12660,12 @@
       ],
       "No parent folder": [
         "無上層資料夾"
+      ],
+      "Remind me later": [
+        "稍後提醒我"
+      ],
+      "Yes, don't show again": [
+        "是的，不再顯示"
       ]
     },
     "Option group": {
@@ -13275,6 +13359,12 @@
       ],
       "hash key": [
         "雜湊金鑰"
+      ],
+      "membership": [
+        "會員資格"
+      ],
+      "name": [
+        "名稱"
       ]
     },
     "Property type": {
@@ -15196,6 +15286,9 @@
       ],
       "User": [
         "使用者"
+      ],
+      "Migration status": [
+        "遷移狀態"
       ]
     },
     "TableHeader": {
@@ -16391,6 +16484,24 @@
       ],
       "Mark all as unread": [
         "全部標為未讀"
+      ],
+      "Apply labels": [
+        "套用標籤"
+      ],
+      "Change display setting": [
+        "變更顯示設定"
+      ],
+      "Create folder": [
+        "創建資料夾"
+      ],
+      "Mark all as read": [
+        "全部標示為已讀取"
+      ],
+      "September Sale": [
+        "九月的銷售"
+      ],
+      "Update filter": [
+        "更新過濾器"
       ]
     },
     "Title header for keys table": {
@@ -16982,6 +17093,12 @@
       ],
       "3 TB of secure storage": [
         "3TB 的安全儲存空間"
+      ],
+      "/month": [
+        "/每月"
+      ],
+      "500 GB of secure storage": [
+        "500 GB 安全儲存空間"
       ]
     },
     "q3campaign2026: Info, Drive first": {
@@ -16992,11 +17109,19 @@
     "q3campaign2026: Title": {
       "for 12 months": [
         "12 個月"
+      ],
+      "One plan, more power": [
+        "單一方案，更多能量"
       ]
     },
     "Snooze info": {
       "${ count } email → ${ wakeTime }": [
         "${ count } 則電子郵件 → ${ wakeTime }"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "取得優惠"
       ]
     }
   }
