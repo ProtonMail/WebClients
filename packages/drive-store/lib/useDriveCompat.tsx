@@ -222,37 +222,18 @@ export const useDriveCompat = (): DriveCompat => {
     };
 
     return {
-        createDocumentNode: withResolveShareId(createDocumentNode),
         getDocumentKeys: withResolveShareId(getDocumentKeys),
         getLatestNode: withResolveShareId(getLatestNode),
         getNodeContents: withResolveShareId(getNodeContents),
         getShareId: withResolveShareId(({ shareId }) => shareId),
-        renameDocument: withResolveShareId(renameDocument),
-        trashDocument: withResolveShareId(trashDocument),
-        restoreDocument: withResolveShareId(restoreDocument),
-        deleteDocumentPermanently: withResolveShareId(deleteDocumentPermanently),
         openDocument,
         openDocumentWindow,
-        openDocumentSharingModal: openShareModal,
-        openMoveToFolderModal,
         getVerificationKey,
-        modals: (
-            <>
-                {moveToFolderModal}
-                {linkSharingModal}
-                {confirmModal}
-            </>
-        ),
         getKeysForLocalStorageEncryption,
         getPrimaryAddressKeys,
-        // Used only in append-public-share-key-material-to-title.ts
-        getSharedLinkFromShareUrl: getSharedLink,
-        getPublicShareUrlInfo: (signal: AbortSignal) =>
-            withResolveShareId(({ shareId, linkId }) => loadShareUrl(signal, shareId, linkId)),
-        // Used only in RecentDocumentsService
-        getNodesAreShared,
-        getNodePaths,
-        getNodes,
+
+        // No feature parity in Drive SDK - has to be done in Realtime SDK
+        createDocumentNode: withResolveShareId(createDocumentNode),
 
         // SDK counterpart used when feature flag ON
         getNode: withResolveShareId(getNode),
@@ -260,5 +241,30 @@ export const useDriveCompat = (): DriveCompat => {
         findAvailableNodeName: withResolveShareId(findAvailableNodeName),
         // DocumentViewer calls DocLoader calls LoadDocument calls GetNodePermissions calls this
         getNodePermissions: withResolveShareId(getNodePermissions),
+        // Used only in RecentDocumentsService - remove after rollout of DocsLoadRecentsWithDriveSDK
+        getNodesAreShared,
+        getNodePaths,
+        getNodes,
+        // DocsSharingModalDriveSDK
+        openDocumentSharingModal: openShareModal,
+        getSharedLinkFromShareUrl: getSharedLink,
+        getPublicShareUrlInfo: (signal: AbortSignal) =>
+            withResolveShareId(({ shareId, linkId }) => loadShareUrl(signal, shareId, linkId)),
+        // DocsTrashWithDriveSDK
+        trashDocument: withResolveShareId(trashDocument),
+        restoreDocument: withResolveShareId(restoreDocument),
+        deleteDocumentPermanently: withResolveShareId(deleteDocumentPermanently),
+        // DocsRenameWithDriveSDK
+        renameDocument: withResolveShareId(renameDocument),
+        // DocsMoveModalDriveSDK
+        openMoveToFolderModal,
+
+        modals: (
+            <>
+                {moveToFolderModal}
+                {linkSharingModal}
+                {confirmModal}
+            </>
+        ),
     };
 };
