@@ -13,7 +13,7 @@ import { bootIntent, offlineResume } from '@proton/pass/store/actions/creators/c
 import type { MaybeNull } from '@proton/pass/types';
 import { type AppState, AppStatus } from '@proton/pass/types';
 import { createMemoryStore } from '@proton/pass/utils/store';
-import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
+import { ApiError, createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 
 import * as auth from './auth';
 import * as sessions from './sessions';
@@ -60,6 +60,7 @@ const setAppState = (next: Partial<AppState>) => (appState = { ...appState, ...n
 
 const genericError = new Error('unknown');
 const offlineError = createOfflineError({});
+const rateLimitedError = new ApiError('Too many requests', 429, 'StatusCodeError');
 
 const app = {
     getState: jest.fn(() => appState),
@@ -390,6 +391,19 @@ describe('AuthService', () => {
             await authService.config.onSessionFailure({}, offlineError);
 
             expect(app.setStatus).toHaveBeenCalledWith(AppStatus.BIOMETRICS_LOCKED);
+            expect(app.setBooted).toHaveBeenCalledWith(false);
+        });
+
+        test('rate limited + canOfflineUnlock + !unlocked → sets locked status', async () => {
+            settings.resolve.mockResolvedValueOnce({ offlineEnabled: true });
+            authStore.setOfflineConfig({ salt: '', params: ARGON2_PARAMS.RECOMMENDED });
+            authStore.setOfflineVerifier('offline-verifier');
+            authStore.setLockMode(LockMode.PASSWORD);
+
+            setAppState({ status: AppStatus.AUTHORIZING, booted: false });
+            await authService.config.onSessionFailure({}, rateLimitedError);
+
+            expect(app.setStatus).toHaveBeenCalledWith(AppStatus.PASSWORD_LOCKED);
             expect(app.setBooted).toHaveBeenCalledWith(false);
         });
 
