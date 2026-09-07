@@ -1963,6 +1963,19 @@
       "Total for ${ n } month": [
         "I alt for ${ n } måned",
         "I alt for ${ n } måneder"
+      ],
+      "Amount due": [
+        "Forfaldent beløb"
+      ],
+      "Amount due after trial": [
+        "Forfaldent beløb efter prøveperioden"
+      ],
+      "Amount due now": [
+        "Forfaldent beløb nu"
+      ],
+      "Total for ${ cycle } month": [
+        "I alt for ${ cycle } måned",
+        "I alt for ${ cycle } måneder"
       ]
     },
     "Collapsible tooltip": {
@@ -4836,6 +4849,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Din konto bruger ${ usedSpace } lagerplads, hvilket overstiger de ${ inviteSpace } du har fået tildelt. Slet nogle data eller bed abonnementsadministratoren om at øge din lagerplads."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du er inviteret til at forbinde din ${ BRAND_NAME }-konto til denne familiegruppe og nyde alle dens premium-funktioner."
       ]
     },
     "familyOffer_2023:Label": {
@@ -7883,6 +7899,9 @@
       ],
       "Link expired": [
         "Link udløbet"
+      ],
+      "Do you remember your password?": [
+        "Kan du godt huske din adgangskode?"
       ]
     },
     "info": {
@@ -14656,6 +14675,9 @@
       ],
       "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
         "Status for datamigration fra ${ providerName } til ${ BRAND_NAME }"
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Dette link er udløbet. Forlæng udløbsdatoen"
       ]
     },
     "tooltip": {
