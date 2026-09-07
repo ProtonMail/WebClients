@@ -5,7 +5,13 @@ import createListeners from '@proton/shared/lib/helpers/listeners';
 import type { DatabaseLock } from '../db/DatabaseLock';
 import { AsyncAbort } from '../utils/AsyncAbort';
 import type { Logger } from '../utils/logger';
-import { type ImportIssue, ImportIssueSeverity, type ImportNotifications } from './Import';
+import {
+    type ImportIssue,
+    ImportIssueSeverity,
+    type ImportNotifications,
+    resolveImportBatchDelayMs,
+    resolveImportBatchSize,
+} from './Import';
 import type ImportWorker from './ImportWorker';
 
 /**
@@ -60,13 +66,21 @@ export class ImportHandle {
         this._startTime = performance.now();
         const runPromise = this.dbLock.runIndexing(async (abortSignal) => {
             this.logger.info('starting import worker');
+            const batchSize = resolveImportBatchSize();
+            const batchDelayMs = resolveImportBatchDelayMs();
             // note that this callback can run multiple times if indexing is interrupted by search
             const worker = new Worker(new URL('./import.worker.ts', import.meta.url));
             // allow aborting from the db lock signal, and also from stop()
             const asyncAbort = new AsyncAbort([abortSignal, this.stopAbortController.signal]);
             try {
                 const wrappedWorker = Comlink.wrap<ImportWorker>(worker);
-                const workerPromise = wrappedWorker.import(this.userId, this.keys, this.createProgressListener());
+                const workerPromise = wrappedWorker.import(
+                    this.userId,
+                    this.keys,
+                    this.createProgressListener(),
+                    batchSize,
+                    batchDelayMs
+                );
                 await Promise.race([asyncAbort.promise, workerPromise]);
             } catch (err) {
                 if (err instanceof DOMException && err.name === 'AbortError') {
