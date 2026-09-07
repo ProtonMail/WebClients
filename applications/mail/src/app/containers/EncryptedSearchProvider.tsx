@@ -67,6 +67,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const [addresses] = useAddresses();
 
     const [esMailStatus, setESMailStatus] = useState<ESDBStatusMail>(defaultESMailStatus);
+    const [isStartupSettled, setIsStartupSettled] = useState(false);
     // Allow to track changes in page to set the elements list accordingly
     const pageRef = useRef<number>(0);
 
@@ -145,14 +146,24 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     };
 
     /**
+     * Announce that startup has settled, i.e. that searches may run. Until then anything choosing
+     * between the index and the server (see `isES`) is reading defaults, and a query started in that
+     * window would go to the server and stay there. When this happens is up to the engine in charge:
+     * it is handed to `initializeES` below, and each engine reports it once it is ready to answer.
+     */
+    const markStartupSettled = () => setIsStartupSettled(true);
+
+    /**
      * Report the status of IndexedDB with the addition of Mail-specific fields
      */
     const esStatus = useMemo(
         () => ({
             ...esLibraryFunctions.esStatus,
             ...esMailStatus,
+            // Composed from both engines above, so it doesn't live in `esMailStatus`
+            isStartupSettled,
         }),
-        [esLibraryFunctions.esStatus, esMailStatus]
+        [esLibraryFunctions.esStatus, esMailStatus, isStartupSettled]
     );
 
     /**
@@ -166,6 +177,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 // (or they loaded the page twice in a single incognito session)
                 const initialIndexing = getItem(getESFreeBlobKey(user.ID)) === 'true';
                 if (initialIndexing) {
+                    // There is no index yet, so searches go to the server for as long as this runs -
+                    // settle now rather than at the end of it.
+                    markStartupSettled();
                     // Start indexing
                     const success = await esLibraryFunctions.enableEncryptedSearch({ isBackgroundIndexing: true });
 
@@ -187,6 +201,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         const automaticallyEnableForElectronMail =
             isElectronMail && isESEnabledInbox && isESEnabledUserChoiceInboxDesktop(user.ID);
         if (automaticallyEnableForNewUser || automaticallyEnableForElectronMail) {
+            // Same as above: nothing to search locally until this first index exists.
+            markStartupSettled();
             return esLibraryFunctions.enableEncryptedSearch({ showErrorNotification: false }).then((success) => {
                 if (success) {
                     return enableContentSearch({ notify: false });
@@ -201,7 +217,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         const contentProgress = await contentIndexingProgress.read(user.ID);
         if (!contentProgress) {
-            return esLibraryFunctions.initializeES();
+            return esLibraryFunctions.initializeES({ onStateSettled: markStartupSettled });
         }
 
         // We need to cache the metadata directly, since the library is
@@ -215,7 +231,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             return esLibraryFunctions.esDelete();
         }
 
-        return esLibraryFunctions.initializeES();
+        return esLibraryFunctions.initializeES({ onStateSettled: markStartupSettled });
     };
 
     useSubscribeEventManager(async (event: Event) => {
@@ -280,9 +296,21 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     }, [isSearch]);
 
     useEffect(() => {
-        if (isIDBSupported) {
-            void initializeESMail();
+        // `null` while the support probe is still running
+        if (isIDBSupported === null) {
+            return;
         }
+        if (!isIDBSupported) {
+            markStartupSettled();
+            return;
+        }
+        // In a `finally`, so that a branch of `initializeESMail` that doesn't settle explicitly - or one
+        // that throws - still settles here. Search waits on this, so it may never be left unset. The
+        // branches that only resolve once a whole index has been built settle earlier by themselves,
+        // either directly or through `initializeES`'s `onStateSettled`.
+        void initializeESMail()
+            .catch((error: any) => logger.error('[EncryptedSearch] startup failed: ' + error?.toString()))
+            .finally(markStartupSettled);
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-617FCE
     }, [isIDBSupported]);
 
