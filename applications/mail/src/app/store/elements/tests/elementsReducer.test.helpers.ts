@@ -9,7 +9,7 @@ import type { Conversation, ConversationLabel } from '../../../models/conversati
 export const CUSTOM_LABEL_ID1 = 'custom-label-1';
 export const CUSTOM_LABEL_ID2 = 'custom-label-2';
 export const CUSTOM_FOLDER_ID1 = 'custom-folder-1';
-export const CUSTOM_FOLDER_ID2 = 'custom-folder-2';
+const CUSTOM_FOLDER_ID2 = 'custom-folder-2';
 export const CONVERSATION_ID = 'conversation-1';
 export const MESSAGE_ID = 'message-1';
 

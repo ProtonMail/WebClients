@@ -130,7 +130,7 @@ export type FetchAllEventsByUID = ({
     supportedRecurrenceId?: VcalDateOrDateTimeProperty;
 }>;
 
-export const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, legacyUid, calendars, api, recurrenceId }) => {
+const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, legacyUid, calendars, api, recurrenceId }) => {
     const timestamp = recurrenceId ? getUnixTime(propertyToUTCDate(recurrenceId)) : undefined;
     const allowedCalendarIDs = calendars.map(({ ID }) => ID);
 

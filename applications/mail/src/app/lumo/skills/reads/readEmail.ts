@@ -3,7 +3,6 @@ import { c, msgid } from 'ttag';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 
 import type { Element } from '../../../models/element';
-
 import type { DecryptedMessage } from '../../helpers/messages';
 import {
     createDecryptDeadline,
@@ -25,7 +24,7 @@ export interface ReadEmailParams {
     best_match: string | null;
 }
 
-export interface ReadEmailRow extends DecryptedMessage {
+interface ReadEmailRow extends DecryptedMessage {
     reference: string;
 }
 

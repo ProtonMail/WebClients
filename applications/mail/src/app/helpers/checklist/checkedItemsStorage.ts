@@ -1,6 +1,6 @@
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
-export const SESSIONS_STORAGE_KEY = 'checklistCheckedAccounts';
+const SESSIONS_STORAGE_KEY = 'checklistCheckedAccounts';
 
 const getData = () => {
     return JSON.parse(getItem(SESSIONS_STORAGE_KEY) || '{}');

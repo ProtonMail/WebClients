@@ -6,9 +6,6 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { selectLabelID } from '../../store/elements/elementsSelectors';
-import { useMailDispatch, useMailSelector, useMailStore } from '../../store/hooks';
-
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 import { hasError, hasErrorType } from '../../helpers/errors';
 import type { Conversation } from '../../models/conversation';
@@ -19,9 +16,11 @@ import {
     conversationsByIDs,
 } from '../../store/conversations/conversationsSelectors';
 import type { ConversationErrors, ConversationState } from '../../store/conversations/conversationsTypes';
+import { selectLabelID } from '../../store/elements/elementsSelectors';
+import { useMailDispatch, useMailSelector, useMailStore } from '../../store/hooks';
 import { useGetElementsFromIDs } from '../mailbox/useElements';
 
-export interface ConversationStateOptional {
+interface ConversationStateOptional {
     Conversation?: Conversation;
     Messages?: Message[];
     loadRetry: number;

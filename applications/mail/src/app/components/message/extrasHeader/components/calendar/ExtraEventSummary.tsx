@@ -7,7 +7,7 @@ import {
     getOrganizerSummaryText,
 } from '../../../../../helpers/calendar/summary';
 
-export const getSummaryContent = (hasBeenUpdatedText?: string, summaryText?: string) => {
+const getSummaryContent = (hasBeenUpdatedText?: string, summaryText?: string) => {
     if (!hasBeenUpdatedText && !summaryText) {
         return null;
     }
@@ -28,7 +28,7 @@ export const getSummaryContent = (hasBeenUpdatedText?: string, summaryText?: str
     );
 };
 
-export interface ExtraEventSummaryProps {
+interface ExtraEventSummaryProps {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
 }
 const ExtraEventSummary = ({ model }: ExtraEventSummaryProps) => {

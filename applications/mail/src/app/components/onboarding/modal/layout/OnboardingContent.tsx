@@ -3,7 +3,7 @@ import type { CSSProperties, ReactNode } from 'react';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import clsx from '@proton/utils/clsx';
 
-export interface Props {
+interface Props {
     description?: ReactNode;
     children?: ReactNode;
     topChildren?: ReactNode;

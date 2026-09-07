@@ -5,7 +5,7 @@ import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 
 import { exportPlainTextSignature } from './messageSignature';
 
-export const BLOCKQUOTE_SELECTORS = [
+const BLOCKQUOTE_SELECTORS = [
     '.protonmail_quote', // Proton Mail
     // Gmail creates both div.gmail_quote and blockquote.gmail_quote. The div
     // version marks text but does not cause indentation, but both should be
@@ -44,7 +44,7 @@ const BLOCKQUOTE_SELECTOR = BLOCKQUOTE_SELECTORS.map((selector) => `${selector}:
  * Returns content before and after match in the source
  * Beware, String.prototype.split does almost the same but will not if there is several match
  */
-export const split = (source: string, match: string): [string, string] => {
+const split = (source: string, match: string): [string, string] => {
     const index = source.indexOf(match);
     if (index === -1) {
         return [source, ''];

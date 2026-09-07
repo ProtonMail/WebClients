@@ -5,7 +5,6 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { SNOOZE_DURATION } from '../components/list/snooze/constant';
-
 import type { Conversation } from '../models/conversation';
 import type { Element } from '../models/element';
 import { getDate, isElementConversation, isElementMessage } from './elementTypeGuards';
@@ -88,7 +87,7 @@ export const getSnoozeDate = (element: Element | undefined, labelID: string) => 
     return getDate(element, labelID);
 };
 
-export const isConversationElementSnoozed = (element: Element | undefined, conversationMode: boolean) => {
+const isConversationElementSnoozed = (element: Element | undefined, conversationMode: boolean) => {
     if (!conversationMode) {
         return false;
     }
@@ -96,7 +95,7 @@ export const isConversationElementSnoozed = (element: Element | undefined, conve
     return (element as Conversation)?.Labels?.some(({ ID }) => ID === MAILBOX_LABEL_IDS.SNOOZED);
 };
 
-export const isMessageElementSnoozed = (element: Element | undefined, conversationMode: boolean) => {
+const isMessageElementSnoozed = (element: Element | undefined, conversationMode: boolean) => {
     if (conversationMode) {
         return false;
     }

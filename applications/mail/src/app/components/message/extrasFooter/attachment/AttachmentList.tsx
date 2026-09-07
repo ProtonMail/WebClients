@@ -12,19 +12,18 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import type { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
-import { isDummyAttachmentUpload } from '../../../../hooks/composer/useAttachments/helpers';
-import type { PendingUpload } from '../../../../hooks/composer/useAttachments/interface';
-import { useHasScroll } from '../../../../hooks/useHasScroll';
-
 import { canPreviewAttachment } from '../../../../helpers/attachment/attachment';
 import { getAttachmentCounts } from '../../../../helpers/message/messages';
 import { useDownload, useDownloadAll } from '../../../../hooks/attachments/useDownload';
+import { isDummyAttachmentUpload } from '../../../../hooks/composer/useAttachments/helpers';
+import type { PendingUpload } from '../../../../hooks/composer/useAttachments/interface';
+import { useHasScroll } from '../../../../hooks/useHasScroll';
 import AttachmentItem from './AttachmentItem';
 import type { AttachmentPreviewControls } from './AttachmentPreview';
 import AttachmentPreview from './AttachmentPreview';
 import { AttachmentAction } from './attachmentListTypes';
 
-export { AttachmentAction, type AttachmentHandler } from './attachmentListTypes';
+export { AttachmentAction } from './attachmentListTypes';
 
 interface Props {
     attachments: Attachment[];

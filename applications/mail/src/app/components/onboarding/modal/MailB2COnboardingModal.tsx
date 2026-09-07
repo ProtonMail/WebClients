@@ -7,11 +7,7 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import isTruthy from '@proton/utils/isTruthy';
 
-import GetMobileAppStep, {
-    isGetMobileAppStepEligible,
-} from './steps/GetMobileAppStep';
 import { useMailDispatch } from '../../../store/hooks';
-
 import { useMailOnboardingTelemetry } from '../useMailOnboardingTelemetry';
 import type { OnboardingStepEligibleCallback } from './interface';
 import ActivatePremiumFeaturesStep, {
@@ -19,6 +15,7 @@ import ActivatePremiumFeaturesStep, {
 } from './steps/ActivatePremiumFeaturesStep';
 import DisplayNameStep, { isDisplayNameStepEligible } from './steps/DisplayNameStep';
 import GetDesktopAppStep, { isGetDesktopAppStepEligible } from './steps/GetDesktopAppStep';
+import GetMobileAppStep, { isGetMobileAppStepEligible } from './steps/GetMobileAppStep';
 import NewOnboardingOrganizationStep, {
     isNewOnboardingOrganizationStepEligible,
 } from './steps/NewOnboardingOrganizationStep';
@@ -26,7 +23,7 @@ import NewOnboardingThemes, { isNewOnboardingThemesStepEligible } from './steps/
 import OnboardingWelcomeStep, { isOnboardingWelcomeStepEligible } from './steps/OnboardingWelcomeStep';
 import PartnerStep, { isPartnerStepEligible } from './steps/PartnerStep';
 
-export interface MailOnboardingProps {
+interface MailOnboardingProps {
     hideDiscoverApps?: boolean;
     showGenericSteps?: boolean;
     onClose?: () => void;

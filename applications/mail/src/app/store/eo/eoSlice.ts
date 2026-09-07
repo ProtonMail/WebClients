@@ -26,9 +26,7 @@ import {
     loadEOTokenFulfilled,
 } from './eoReducers';
 
-export { eoInitialState as initialState } from './eoInitialState';
-
-export const eoSlice = createSlice({
+const eoSlice = createSlice({
     name: 'eo',
     initialState: eoInitialState,
     reducers: {},

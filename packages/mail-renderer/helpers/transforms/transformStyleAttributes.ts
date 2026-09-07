@@ -158,7 +158,7 @@ const replaceNegativeTextIndentWithUnset = (element: HTMLElement) => {
 
 // some emails are using left and top to hide content, so we remove these properties only if using negative values
 // gmail and some others are doing the same https://www.caniemail.com/search/?s=margin
-export const removeNegativeMargins = (element: HTMLElement) => {
+const removeNegativeMargins = (element: HTMLElement) => {
     const marginLeft = element.style.marginLeft;
     const marginRight = element.style.marginRight;
     const marginTop = element.style.marginTop;

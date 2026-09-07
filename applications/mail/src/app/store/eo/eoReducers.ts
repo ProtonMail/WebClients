@@ -3,13 +3,12 @@ import type { Draft } from 'immer';
 
 import type { MessageRemoteImage, MessageState } from '@proton/mail/store/messages/messagesTypes';
 
-import type { EOStoreState } from './eoStore';
-
 import { markEmbeddedImagesAsLoaded } from '../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, getRemoteImages, updateImages } from '../../helpers/message/messageImages';
 import { loadBackgroundImages, loadImages } from '../../helpers/message/messageRemotes';
 import { eoInitialState } from './eoInitialState';
 import { eoMessageSelector, eoMessageStateSelector } from './eoSelectors';
+import type { EOStoreState } from './eoStore';
 import type {
     EODocumentInitializeParams,
     EOInitParams,
@@ -24,9 +23,9 @@ import type {
     EOTokenParams,
 } from './eoType';
 
-export const getMessageState = (state: Draft<EOState>) => eoMessageStateSelector({ eo: state } as EOStoreState);
+const getMessageState = (state: Draft<EOState>) => eoMessageStateSelector({ eo: state } as EOStoreState);
 
-export const getEOMessage = (state: Draft<EOState>) => eoMessageSelector({ eo: state } as EOStoreState);
+const getEOMessage = (state: Draft<EOState>) => eoMessageSelector({ eo: state } as EOStoreState);
 
 const getStateImage = <T extends { image: MessageRemoteImage }>(data: T, messageState: MessageState) => {
     const remoteImages = getRemoteImages(messageState);

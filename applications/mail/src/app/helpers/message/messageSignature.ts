@@ -17,7 +17,7 @@ import { CLASSNAME_BLOCKQUOTE } from './messageDraftConstants';
 
 export const CLASSNAME_SIGNATURE_CONTAINER = 'protonmail_signature_block';
 export const CLASSNAME_SIGNATURE_USER = 'protonmail_signature_block-user';
-export const CLASSNAME_SIGNATURE_PROTON = 'protonmail_signature_block-proton';
+const CLASSNAME_SIGNATURE_PROTON = 'protonmail_signature_block-proton';
 export const CLASSNAME_SIGNATURE_EMPTY = 'protonmail_signature_block-empty';
 
 // Cache signatures to make composing and signature change faster

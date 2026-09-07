@@ -6,7 +6,7 @@ import diff from '@proton/utils/diff';
 import type { MailState, MailThunkExtra } from '../store';
 import type { QueryResults, TaskRunningInfo } from './elementsTypes';
 
-export const TASK_RUNNING_POLLING_INTERVAL = 10000;
+const TASK_RUNNING_POLLING_INTERVAL = 10_000;
 
 /**
  * Each poll schedules the next one, so this thunk and `refreshTaskRunningTimeout` reference each
