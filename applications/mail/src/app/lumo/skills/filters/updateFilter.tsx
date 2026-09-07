@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import TextFieldBody from '@proton/components/components/lumoAgent/cardBodies/TextFieldBody';
-import type { CardBodyProps, CardRenderer } from '@proton/components/components/lumoAgent/types';
+import type { CardRenderer } from '@proton/components/components/lumoAgent/types';
 import { FILTER_VERSION } from '@proton/components/containers/filters/constants';
 import { IcFilter } from '@proton/icons/icons/IcFilter';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
@@ -11,12 +10,7 @@ import { PROTON_SIEVE_DIALECT_REFERENCE } from '../../guides/sieveGuide';
 import { resolveTypedId } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import { referenceName } from '../organise/emailSelection';
-
-/** Every editable param of this tool — and, because each is user words, every free-text one. */
-enum FilterField {
-    NAME = 'name',
-    SIEVE = 'sieve',
-}
+import { FilterField, hasEveryFilterFieldFilled, proposedFilterName, renderFilterFields } from './filterCard';
 
 export interface UpdateFilterParams {
     /** A filter-… reference from list_filters. */
@@ -36,9 +30,6 @@ export const updateFilterDefinition: ToolDefinition<UpdateFilterParams, void> = 
         required: ['filter', 'name', 'sieve'],
         properties: { filter: { type: 'string' }, name: { type: 'string' }, sieve: { type: 'string' } },
     },
-    // The guard matches a WHOLE param value against `<kind>-<6 base36>`, so a name like "e-ticket" would
-    // be rejected as an unknown reference. The script is exempt on the same principle — it is user text —
-    // though being multi-line it cannot match that pattern today. `filter` stays guarded.
     freeTextParams: Object.values(FilterField),
     examples: [
         {
@@ -78,35 +69,13 @@ const createUpdateFilterHandler =
         });
     };
 
-const fieldText = (params: Record<string, any>, field: FilterField): string => String(params[field] ?? '');
-
-/** An emptied field would send a nameless or scriptless filter the backend rejects. */
-const hasEveryFieldFilled = (params: Record<string, any>): boolean =>
-    Object.values(FilterField).every((field) => fieldText(params, field).trim().length > 0);
-
-const SIEVE_FIELD_ROWS = 10;
-
-const renderFilterField = ({ params, onChange }: CardBodyProps, field: FilterField, label: string, rows?: number) => (
-    <TextFieldBody
-        label={label}
-        value={fieldText(params, field)}
-        onChange={(value) => onChange({ ...params, [field]: value })}
-        rows={rows}
-    />
-);
-
 export const updateFilterCardRenderer: CardRenderer = {
     icon: IcFilter,
     title: () => c('Title').t`Update filter`,
     subtitle: (action, labels) => referenceName(action.filter, labels),
-    renderBody: (props) => (
-        <>
-            {renderFilterField(props, FilterField.NAME, c('Label').t`Filter name`)}
-            {renderFilterField(props, FilterField.SIEVE, c('Label').t`Sieve script`, SIEVE_FIELD_ROWS)}
-        </>
-    ),
-    canApply: hasEveryFieldFilled,
-    detail: (action) => fieldText(action, FilterField.NAME) || undefined,
+    renderBody: renderFilterFields,
+    canApply: hasEveryFilterFieldFilled,
+    detail: proposedFilterName,
 };
 
 export const updateFilterModule: MailToolModule = {
