@@ -1,4 +1,3 @@
-import { PassFeature } from '@proton/pass/types/api/features';
 import type { RequiredProps } from '@proton/pass/types/utils';
 import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
 import type { ExtensionForkPayload } from '@proton/shared/lib/authentication/fork/extension';
@@ -31,15 +30,6 @@ export const shouldForceLock = withContext<() => Promise<boolean>>(async (ctx) =
         }
 
         return false;
-    } catch {
-        return false;
-    }
-});
-
-export const isOfflineModeEnabled = withContext<() => Promise<boolean>>(async (ctx) => {
-    try {
-        const { features } = await ctx.service.featureFlags.resolve();
-        return features[PassFeature.PassExtensionOfflineV1] === true;
     } catch {
         return false;
     }
