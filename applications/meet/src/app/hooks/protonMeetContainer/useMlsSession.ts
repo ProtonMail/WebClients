@@ -18,6 +18,7 @@ import {
     setupLiveKitAdminChangeEvent,
     setupWasmDependencies,
 } from '../../utils/wasmUtils';
+import { getMeetCoreErrorName } from '../../wasm/meetCoreError';
 import { useLiveCaptionsFeatureEnabled } from '../captions/useLiveCaptionsFeatureEnabled';
 import { useNotifyError } from '../useNotifyError';
 
@@ -52,9 +53,6 @@ export const ADMISSION_SETTLE_MS = CAPTIONS_AGENT_RETRY_DELAYS_MS.reduce((total,
 interface AgentAdmissionController {
     admitPendingAgents: () => Promise<void>;
 }
-
-const getMeetCoreErrorName = (error: unknown) =>
-    typeof error === 'number' ? MeetCoreErrorEnum[error] || `MeetCoreError(${error})` : String(error);
 
 export const useMlsSession = ({
     getGroupKeyInfo,
@@ -270,7 +268,7 @@ export const useMlsSession = ({
                     message = c('Error').t`Failed to join meeting. Please try again later.`;
             }
             notifyError(message);
-            const err = new Error(`MLS setup failed: ${getMeetCoreErrorName(error)}`);
+            const err = new Error(`MLS setup failed: ${getMeetCoreErrorName(error) ?? String(error)}`);
             Object.assign(err, { userNotified: true, coreError: error });
             throw err;
         }

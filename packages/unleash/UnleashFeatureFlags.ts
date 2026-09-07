@@ -348,6 +348,7 @@ enum MeetFeatureFlag {
     MeetDtlnPerfMonitor = 'MeetDtlnPerfMonitor',
     MeetBlurPersonConfidenceBoost = 'MeetBlurPersonConfidenceBoost',
     MeetBlurMulticlassPersonConfidenceBoost = 'MeetBlurMulticlassPersonConfidenceBoost',
+    MeetRemoveSentryEventLimit = 'MeetRemoveSentryEventLimit',
     MeetChatThreads = 'MeetChatThreads',
     MeetVirtualBackground = 'MeetVirtualBackground',
     MeetCustomVirtualBackground = 'MeetCustomVirtualBackground',

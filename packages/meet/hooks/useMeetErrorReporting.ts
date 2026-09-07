@@ -11,6 +11,16 @@ import { useGetAnalyticsAttributes } from '../contexts/AnalyticsContext';
 
 const MAX_SAME_ERROR = 10;
 
+type MeetCoreErrorResolver = (error: unknown) => string | undefined;
+
+let resolveMeetCoreError: MeetCoreErrorResolver = () => undefined;
+
+// This package is shared with apps that do not ship the meet-core wasm bundle, so it cannot import
+// the error enum. The Meet app registers the resolver at bootstrap instead.
+export const setMeetCoreErrorResolver = (resolver: MeetCoreErrorResolver) => {
+    resolveMeetCoreError = resolver;
+};
+
 interface ReportMeetErrorOptions {
     level?: SeverityLevel;
     context?: Record<string, unknown>;
@@ -31,21 +41,13 @@ const getReportableException = (payload: unknown) =>
 
 export const useMeetErrorReporting = () => {
     const shouldReportError = useFlag('MeetErrorReporting');
+    const removeSentryEventLimit = useFlag('MeetRemoveSentryEventLimit');
     const errorCountMapRef = useRef<Map<string, number>>(new Map());
     const getAnalyticsAttributes = useGetAnalyticsAttributes();
 
     const reportMeetError = useCallback<ReportMeetError>(
         (label, options) => {
             if (shouldReportError) {
-                const currentCount = errorCountMapRef.current.get(label) ?? 0;
-
-                if (currentCount >= MAX_SAME_ERROR) {
-                    // do not report the error if it has been reported too many times
-                    return;
-                }
-
-                errorCountMapRef.current.set(label, currentCount + 1);
-
                 const {
                     level = 'error',
                     context,
@@ -55,7 +57,24 @@ export const useMeetErrorReporting = () => {
                     ? options
                     : { context: { error: options } };
 
-                const tagsWithAnalyticsAttributes = { ...getAnalyticsAttributes(), ...tags, label };
+                const meetCoreError = resolveMeetCoreError(context?.error);
+                const reportLabel = meetCoreError ? `${label}: ${meetCoreError}` : label;
+
+                const currentCount = errorCountMapRef.current.get(reportLabel) ?? 0;
+
+                if (!removeSentryEventLimit && currentCount >= MAX_SAME_ERROR) {
+                    // do not report the error if it has been reported too many times
+                    return;
+                }
+
+                errorCountMapRef.current.set(reportLabel, currentCount + 1);
+
+                const tagsWithAnalyticsAttributes = {
+                    ...getAnalyticsAttributes(),
+                    ...(meetCoreError && { meetCoreError }),
+                    ...tags,
+                    label,
+                };
                 const exception = getReportableException(context?.error);
 
                 if (exception) {
@@ -63,12 +82,12 @@ export const useMeetErrorReporting = () => {
                         level,
                         extra: context,
                         tags: tagsWithAnalyticsAttributes,
-                        fingerprint: fingerprint ?? [label],
+                        fingerprint: fingerprint ?? [reportLabel],
                     });
                     return;
                 }
 
-                captureMessage(label, {
+                captureMessage(reportLabel, {
                     level,
                     extra: context,
                     fingerprint,
@@ -76,7 +95,7 @@ export const useMeetErrorReporting = () => {
                 });
             }
         },
-        [shouldReportError, getAnalyticsAttributes]
+        [shouldReportError, removeSentryEventLimit, getAnalyticsAttributes]
     );
 
     const clearSentryReportErrorCounts = useCallback(() => {
