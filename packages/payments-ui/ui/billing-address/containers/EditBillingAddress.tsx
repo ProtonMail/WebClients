@@ -14,6 +14,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalTwoPromiseHandlers } from '@proton/components/components/modalTwo/useModalTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import { InfoBanner } from '@proton/components/containers/payments/subscription/confirm-button/InfoBanner';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { type FullBillingAddress, zipCodeValidator } from '@proton/payments/core/billing-address/billing-address';
@@ -305,6 +306,10 @@ export const EditBillingAddressModal = (props: Props) => {
                             rootClassName="flex-1"
                         />
                     </div>
+
+                    <InfoBanner>
+                        {c('Payments.InfoBanner').t`Changing your billing address may affect taxes on future invoices.`}
+                    </InfoBanner>
                 </div>
             </ModalTwoContent>
 
