@@ -5,6 +5,8 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
+import { clients } from '@proton/pass/clients';
+import { Clients } from '@proton/pass/constants';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import {
@@ -16,7 +18,6 @@ import {
     isIos,
     isSafari,
 } from '@proton/shared/lib/helpers/browser';
-import { Clients, clients } from '@proton/shared/lib/pass/constants';
 
 import Content from '../../public/Content';
 import Header from '../../public/Header';

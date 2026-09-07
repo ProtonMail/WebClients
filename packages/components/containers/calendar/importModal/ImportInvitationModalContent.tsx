@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { ICAL_METHODS_ATTENDEE } from '@proton/shared/lib/calendar/constants';
 import { extractTotals } from '@proton/shared/lib/calendar/import/import';
 import { BRAND_NAME, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
@@ -31,7 +32,7 @@ const ImportInvitationModalContent = ({ model }: Props) => {
                           totalToImport
                       )}
             </div>
-            {fileAttached && <AttachedFile file={fileAttached} iconName="calendar-grid" className="my-4" />}
+            {fileAttached && <AttachedFile file={fileAttached} icon={<IcCalendarGrid />} className="my-4" />}
             <div>
                 {c('Import calendar; import invitation')
                     .t`Imported invitations appear in ${CALENDAR_APP_NAME} as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${BRAND_NAME} email address.`}

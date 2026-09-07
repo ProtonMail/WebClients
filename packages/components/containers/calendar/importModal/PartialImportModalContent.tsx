@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IMPORT_CALENDAR_UNSUPPORTED_FAQ_URL } from '@proton/shared/lib/calendar/constants';
 import { extractTotals } from '@proton/shared/lib/calendar/import/import';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
@@ -41,7 +42,7 @@ const PartialImportModalContent = ({ model }: Props) => {
     return (
         <>
             <div>{c('Import calendar; import invitation').t`This file contains some data that we cannot import:`}</div>
-            {fileAttached && <AttachedFile file={fileAttached} iconName="calendar-grid" className="my-4" />}
+            {fileAttached && <AttachedFile file={fileAttached} icon={<IcCalendarGrid />} className="my-4" />}
             <Alert className="mb-4" type="warning">
                 {c('Import calendar warning')
                     .t`${CALENDAR_APP_NAME} currently does not support certain event types, details and formats.`}
