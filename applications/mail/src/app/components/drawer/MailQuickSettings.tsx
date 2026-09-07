@@ -15,10 +15,9 @@ import QuickSettingsButton from '@proton/components/components/drawer/views/quic
 import QuickSettingsButtonSection from '@proton/components/components/drawer/views/quickSettings/QuickSettingsButtonSection';
 import { QuickSettingsRequestNotifications } from '@proton/components/components/drawer/views/quickSettings/QuickSettingsRequestNotifications';
 import QuickSettingsSectionRow from '@proton/components/components/drawer/views/quickSettings/QuickSettingsSectionRow';
+import type { QuickSettingsReminders } from '@proton/components/components/drawer/views/quickSettings/interface';
 import DrawerAppScrollContainer from '@proton/components/components/drawer/views/shared/DrawerAppScrollContainer';
 import DrawerAppSection from '@proton/components/components/drawer/views/shared/DrawerAppSection';
-// eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import Icon from '@proton/components/components/icon/Icon';
 import { KeyTransparencyDetailsModal } from '@proton/components/components/keyTransparency';
 import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -33,7 +32,14 @@ import MailShortcutsModal from '@proton/components/containers/mail/MailShortcuts
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
 import { useLoading } from '@proton/hooks';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcColumnOne } from '@proton/icons/icons/IcColumnOne';
+import { IcColumnTwo } from '@proton/icons/icons/IcColumnTwo';
+import { IcDensityHigh } from '@proton/icons/icons/IcDensityHigh';
+import { IcDensityLow } from '@proton/icons/icons/IcDensityLow';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import { IcWindowMaximised } from '@proton/icons/icons/IcWindowMaximised';
+import { IcWindowSmall } from '@proton/icons/icons/IcWindowSmall';
 import { useAssistant } from '@proton/llm/lib';
 import { logger } from '@proton/logger';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
@@ -43,7 +49,6 @@ import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mai
 import { updateDensity } from '@proton/shared/lib/api/settings';
 import { DENSITY, LUMO_SHORT_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
-import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/interfaces';
 import { isChromiumBased, isFirefox, openNewTab } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
@@ -67,7 +72,7 @@ import MailDefaultHandlerModal from '../header/MailDefaultHandlerModal';
 interface QuickSettingsSelectOption {
     value: any;
     text: string;
-    icon?: IconName;
+    icon?: IconComponent;
 }
 
 const MailQuickSettings = () => {
@@ -112,12 +117,12 @@ const MailQuickSettings = () => {
 
     const viewLayoutOptions: QuickSettingsSelectOption[] = [
         {
-            icon: 'column-two',
+            icon: IcColumnTwo,
             value: VIEW_LAYOUT.COLUMN,
             text: c('Layout mode').t`Column`,
         },
         {
-            icon: 'column-one',
+            icon: IcColumnOne,
             value: VIEW_LAYOUT.ROW,
             text: c('Layout mode').t`Row`,
         },
@@ -127,12 +132,12 @@ const MailQuickSettings = () => {
 
     const densityOptions: QuickSettingsSelectOption[] = [
         {
-            icon: 'density-low',
+            icon: IcDensityLow,
             value: DENSITY.COMFORTABLE,
             text: c('Density mode').t`Comfortable`,
         },
         {
-            icon: 'density-high',
+            icon: IcDensityHigh,
             value: DENSITY.COMPACT,
             text: c('Density mode').t`Compact`,
         },
@@ -141,12 +146,12 @@ const MailQuickSettings = () => {
 
     const composerSizeOptions: QuickSettingsSelectOption[] = [
         {
-            icon: 'window-small',
+            icon: IcWindowSmall,
             value: COMPOSER_MODE.POPUP,
             text: c('Composer size').t`Normal`,
         },
         {
-            icon: 'window-maximised',
+            icon: IcWindowMaximised,
             value: COMPOSER_MODE.MAXIMIZED,
             text: c('Composer size').t`Maximized`,
         },
@@ -189,7 +194,7 @@ const MailQuickSettings = () => {
         const ktReminder: QuickSettingsReminders | undefined = showKT
             ? {
                   color: keyTransparencyNotification,
-                  icon: keyTransparencyNotification ? 'exclamation-circle-filled' : undefined,
+                  icon: keyTransparencyNotification ? IcExclamationCircleFilled : undefined,
                   text: c('loc_nightly: Key transparency details').t`Key verification`,
                   callback: handleShowKeyTransparencyModal,
                   testID: 'key-verification',
@@ -265,7 +270,7 @@ const MailQuickSettings = () => {
                                         className="flex items-center flex-nowrap gap-2 shrink-0"
                                     >
                                         <>
-                                            {option.icon && <Icon name={option.icon} className="shrink-0" />}
+                                            {option.icon && <option.icon className="shrink-0" />}
                                             <span className="text-nowrap">{option.text}</span>
                                         </>
                                     </Option>
@@ -301,7 +306,7 @@ const MailQuickSettings = () => {
                                         className="flex items-center flex-nowrap gap-2 shrink-0"
                                     >
                                         <>
-                                            {option.icon && <Icon name={option.icon} className="shrink-0" />}
+                                            {option.icon && <option.icon className="shrink-0" />}
                                             <span className="shrink-0">{option.text}</span>
                                         </>
                                     </Option>
@@ -337,7 +342,7 @@ const MailQuickSettings = () => {
                                         className="flex items-center flex-nowrap gap-2 shrink-0"
                                     >
                                         <>
-                                            {option.icon && <Icon name={option.icon} className="shrink-0" />}
+                                            {option.icon && <option.icon className="shrink-0" />}
                                             <span className="text-nowrap shrink-0">{option.text}</span>
                                         </>
                                     </Option>

@@ -1,12 +1,13 @@
 import { useMemo } from 'react';
 
-import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useRecoveryNotification from '../../../../hooks/useRecoveryNotification';
 import useSettingsLink from '../../../link/useSettingsLink';
 import DrawerAppSection from '../shared/DrawerAppSection';
 import QuickSettingsReminder from './QuickSettingsReminder';
+import type { QuickSettingsReminders } from './interface';
 
 interface Props {
     inAppReminders?: QuickSettingsReminders[];
@@ -20,7 +21,7 @@ const QuickSettingsRemindersSection = ({ inAppReminders = [] }: Props) => {
         const recoveryNotificationReminder: QuickSettingsReminders | undefined = insideDropdownRecoveryNotification
             ? {
                   text: insideDropdownRecoveryNotification.text,
-                  icon: 'exclamation-circle-filled',
+                  icon: IcExclamationCircleFilled,
                   color: insideDropdownRecoveryNotification.color,
                   callback: () => goToSettings(insideDropdownRecoveryNotification.path),
                   testID: 'recovery',

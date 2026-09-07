@@ -4,6 +4,8 @@ import { c } from 'ttag';
 
 import { type DisplayItem, SpotlightMenuButton } from '@proton/components/components/topnavbar/SpotlightMenuButton';
 import { useLocalState } from '@proton/components/index';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import globeVpnImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-globe-vpn.svg';
 import networkConfigurationImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-network-configuration.svg';
@@ -28,12 +30,12 @@ export const OnboardedQuickActions = ({ onDismiss }: Props) => {
                 dropdownLinks: [
                     {
                         label: c('Button').t`Add users manually`,
-                        icon: 'users',
+                        icon: IcUsers,
                         href: '/users-addresses',
                     },
                     {
                         label: c('Button').t`Set up SSO`,
-                        icon: 'key',
+                        icon: IcKey,
                         href: '/single-sign-on',
                     },
                 ],
