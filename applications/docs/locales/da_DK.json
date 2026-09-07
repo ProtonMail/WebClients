@@ -961,6 +961,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner",
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner"
+      ],
+      "Export this version (as odt) (Beta)": [
+        "Eksportér denne version (som odt) (beta)"
+      ],
+      "OpenDocument Text (.odt) (Beta)": [
+        "OpenDocument Text (.odt) (beta)"
       ]
     },
     "Actions message": {
@@ -4101,6 +4107,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Din konto bruger ${ usedSpace } lagerplads, hvilket overstiger de ${ inviteSpace } du har fået tildelt. Slet nogle data eller bed abonnementsadministratoren om at øge din lagerplads."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du er inviteret til at forbinde din ${ BRAND_NAME }-konto til denne familiegruppe og nyde alle dens premium-funktioner."
       ]
     },
     "familyOffer_2023:Label": {
@@ -6064,6 +6073,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "Do you remember your password?": [
+        "Kan du godt huske din adgangskode?"
       ]
     },
     "info": {
@@ -10869,6 +10881,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Vi har sendt dem en invitation til at tilgå emnet."
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Dette link er udløbet. Forlæng udløbsdatoen"
       ]
     },
     "tooltip": {

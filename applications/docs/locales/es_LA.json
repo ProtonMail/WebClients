@@ -961,6 +961,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No puede enviar archivos vCard de más de ${ maxAttachments } contacto.",
         "No puede enviar archivos vCard de más de ${ maxAttachments } contacto."
+      ],
+      "Export this version (as odt) (Beta)": [
+        "Exportar esta versión (como odt) (Beta)"
+      ],
+      "OpenDocument Text (.odt) (Beta)": [
+        "Texto de OpenDocument (.odt) (Beta)"
       ]
     },
     "Actions message": {
@@ -4101,6 +4107,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "La cuenta está usando ${ usedSpace } de almacenamiento, que supera los ${ inviteSpace } que tiene asignados. Elimine algunos datos o solicite al administrador del plan que aumente el almacenamiento."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Se le invitó a vincular su cuenta de ${ BRAND_NAME } a este grupo familiar y disfrutar de todas sus funciones premium."
       ]
     },
     "familyOffer_2023:Label": {
@@ -6064,6 +6073,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrá seguir viendo los datos de su propia cuenta, pero todas las cuentas de usuario serán eliminadas de su organización."
+      ],
+      "Do you remember your password?": [
+        "¿Recuerda su contraseña?"
       ]
     },
     "info": {
@@ -6609,6 +6621,9 @@
       ],
       "Your password (trusted contact)": [
         "Su contraseña (contacto de confianza)"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nombre indescifrable"
       ]
     },
     "Label for contact group color": {
@@ -10866,6 +10881,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Hemos enviado una invitación para acceder al elemento."
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Este enlace expiró. Extienda la fecha de expiración."
       ]
     },
     "tooltip": {
