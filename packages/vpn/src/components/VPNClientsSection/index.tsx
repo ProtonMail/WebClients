@@ -12,6 +12,13 @@ import DropdownMenuLink from '@proton/components/components/dropdown/DropdownMen
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
+import { IcBrandAndroid } from '@proton/icons/icons/IcBrandAndroid';
+import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
+import { IcBrandChrome } from '@proton/icons/icons/IcBrandChrome';
+import { IcBrandLinux } from '@proton/icons/icons/IcBrandLinux';
+import { IcBrandMac } from '@proton/icons/icons/IcBrandMac';
+import { IcBrandWindows } from '@proton/icons/icons/IcBrandWindows';
+import { IcTv } from '@proton/icons/icons/IcTv';
 import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { APPS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
@@ -131,20 +138,20 @@ export const VPNClientsSection = () => {
             <div className="flex gap-4 flex-column md:flex-row">
                 <DownloadClientCard
                     title={c('VPNClient').t`Android`}
-                    icon="brand-android"
+                    icon={IcBrandAndroid}
                     link={androidMarketplaceUrl}
                     items={androidLinks}
                     onClick={() => handleDownloadClick('google_play')}
                 />
                 <DownloadClientCard
                     title={c('VPNClient').t`iOS`}
-                    icon="brand-apple"
+                    icon={IcBrandApple}
                     link={iosMarketplaceUrl}
                     onClick={() => handleDownloadClick('app_store')}
                 />
                 <DownloadClientCard
                     title={c('VPNClient').t`Windows`}
-                    icon="brand-windows"
+                    icon={IcBrandWindows}
                     link="https://protonvpn.com/download-windows/"
                     items={links.windows?.map(({ title, link: href }) => (
                         <LinkItem
@@ -158,7 +165,7 @@ export const VPNClientsSection = () => {
                 />
                 <DownloadClientCard
                     title={c('VPNClient').t`macOS`}
-                    icon="brand-mac"
+                    icon={IcBrandMac}
                     link="https://protonvpn.com/download-macos/"
                     items={links.mac?.map(({ title, link: href }) => (
                         <LinkItem
@@ -172,7 +179,7 @@ export const VPNClientsSection = () => {
                 />
                 <DownloadClientCard
                     title={c('VPNClient').t`GNU/Linux`}
-                    icon="brand-linux"
+                    icon={IcBrandLinux}
                     link={
                         isDesktopDownloadApiEnabled
                             ? 'https://protonvpn.com/support/linux-vpn-setup'
@@ -182,7 +189,7 @@ export const VPNClientsSection = () => {
                 />
                 <DownloadClientCard
                     title={c('VPNClient').t`Chromebook`}
-                    icon="brand-chrome"
+                    icon={IcBrandChrome}
                     link={appendUrlSearchParams(VPN_MOBILE_APP_LINKS.playStore, {
                         utm_campaign: 'ww-all-2a-vpn-int_webapp-g_eng-apps_links_dashboard',
                         utm_source: 'account.protonvpn.com',
@@ -195,7 +202,7 @@ export const VPNClientsSection = () => {
                 />
                 <DownloadClientCard
                     title={c('VPNClient').t`Android TV`}
-                    icon="tv"
+                    icon={IcTv}
                     link={appendUrlSearchParams(VPN_MOBILE_APP_LINKS.playStore, {
                         utm_campaign: 'ww-all-2a-vpn-int_webapp-g_eng-apps_links_dashboard',
                         utm_source: 'account.protonvpn.com',

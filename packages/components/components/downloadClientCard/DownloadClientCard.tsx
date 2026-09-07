@@ -5,22 +5,21 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 
 import { ButtonGroup } from '../button/ButtonGroup';
 import DropdownMenu from '../dropdown/DropdownMenu';
 import SimpleDropdown from '../dropdown/SimpleDropdown';
-import Icon from '../icon/Icon';
 
 interface Props {
     title: ReactNode;
     link?: string;
-    icon: IconName;
+    icon: IconComponent;
     items?: ReactNode[];
     onClick?: () => void;
 }
 
-const DownloadClientCard = ({ title, link, items, icon, onClick }: Props) => {
+const DownloadClientCard = ({ title, link, items, icon: Icon, onClick }: Props) => {
     const downloadButton = (
         <ButtonLike as={Href} href={link} disabled={!link} onClick={onClick}>
             {c('Action').t`Download`}
@@ -32,7 +31,9 @@ const DownloadClientCard = ({ title, link, items, icon, onClick }: Props) => {
             className="border rounded-lg flex flex-column items-center justify-center min-w-custom p-8"
             style={{ '--min-w-custom': '13.5rem' }}
         >
-            <Icon className="mb-2" size={15} name={icon} />
+            <span className="mb-2 flex">
+                <Icon size={15} />
+            </span>
             <div className="mb-6">{title}</div>
 
             {!items ? (

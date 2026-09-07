@@ -3,6 +3,7 @@ import type { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import {
     IMPORT_CALENDAR_FAQ_URL,
     MAX_IMPORT_EVENTS_STRING,
@@ -61,7 +62,7 @@ const AttachingModalContent = ({ model, calendars, onSelectCalendar, onAttach, o
                     {model.fileAttached ? (
                         <AttachedFile
                             file={model.fileAttached}
-                            iconName="calendar-grid"
+                            icon={<IcCalendarGrid />}
                             clear={c('Action').t`Delete`}
                             onClear={onClear}
                         />

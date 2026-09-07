@@ -6,12 +6,12 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { clients } from '@proton/shared/lib/pass/constants';
 
 import onboardingExtension from '../../../assets/b2b-onboarding/icons/extension-icon.svg';
 import onboardingImport from '../../../assets/b2b-onboarding/icons/import-icon.svg';
 import onboardingShare from '../../../assets/b2b-onboarding/icons/share-icon.svg';
 import onboardingVault from '../../../assets/b2b-onboarding/icons/vault-icon.svg';
+import { clients } from '../../../clients';
 import { selectB2BOnboardingState, selectWritableVaults } from '../../../store/selectors';
 import { usePassCore } from '../../Core/PassCoreProvider';
 import { usePassExtensionLink } from '../../Core/PassExtensionLink';

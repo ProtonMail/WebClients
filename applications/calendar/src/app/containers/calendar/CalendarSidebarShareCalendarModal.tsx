@@ -4,6 +4,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import ActionCard from '@proton/components/components/actionCard/ActionCard';
 import BasicModal from '@proton/components/components/modalTwo/BasicModal';
 import type { ModalOwnProps as MainModalOwnProps } from '@proton/components/components/modalTwo/Modal';
+import { IcLink } from '@proton/icons/icons/IcLink';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 interface CalendarSidebarCreateCalendarModalProps extends MainModalOwnProps {
@@ -41,7 +43,7 @@ const CalendarSidebarShareCalendarModal = ({
         >
             <ActionCard
                 onClick={onSharePrivately}
-                iconName="users"
+                icon={<IcUsers />}
                 title={c('Action title').t`Share with ${BRAND_NAME} users`}
                 subtitle={c('Action subline').t`They can view or edit your calendar`}
                 loading={loadingFetchMembersAndInvitations}
@@ -49,7 +51,7 @@ const CalendarSidebarShareCalendarModal = ({
             <hr className="my-2" />
             <ActionCard
                 onClick={onSharePublicly}
-                iconName="link"
+                icon={<IcLink />}
                 title={c('Action title').t`Share with anyone`}
                 subtitle={c('Action subline').t`Anyone with the link can view your calendar`}
                 loading={loadingLinks}

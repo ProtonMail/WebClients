@@ -1,9 +1,11 @@
 import type { ReactNode } from 'react';
 
+import type { IconComponent } from '@proton/icons/component';
+
 export interface WalletClient {
     title: string;
     link?: string;
-    icon: 'brand-windows' | 'brand-android' | 'brand-apple' | 'brand-mac';
+    icon: IconComponent;
     items?: ReactNode[];
 }
 

@@ -1,21 +1,19 @@
-import type { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef, ReactElement } from 'react';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
-import type { IconName } from '@proton/icons/types';
 
-import Icon from '../icon/Icon';
 import Loader from '../loader/Loader';
 
 interface ActionCardProps extends ComponentPropsWithoutRef<'button'> {
     onClick: () => void;
-    iconName: IconName;
+    icon: ReactElement;
     title: string;
     subtitle?: string;
     loading?: boolean;
 }
 
-const ActionCard = ({ iconName, title, subtitle, loading, disabled, ...rest }: ActionCardProps) => {
+const ActionCard = ({ icon, title, subtitle, loading, disabled, ...rest }: ActionCardProps) => {
     return (
         <button
             type="button"
@@ -24,7 +22,7 @@ const ActionCard = ({ iconName, title, subtitle, loading, disabled, ...rest }: A
             {...rest}
         >
             <ButtonLike as="div" shape="solid" icon className="shrink-0 bg-strong pointer-events-none">
-                <Icon name={iconName} />
+                {icon}
             </ButtonLike>
             <div className="mr-auto flex-1">
                 <div className="h6 lh100 m-0 text-bold">{title}</div>
