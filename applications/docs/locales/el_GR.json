@@ -958,6 +958,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφή",
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
+      ],
+      "Export this version (as odt) (Beta)": [
+        "Εξαγωγή αυτής της έκδοσης (ως odt) (Beta)"
+      ],
+      "OpenDocument Text (.odt) (Beta)": [
+        "OpenDocument Κείμενο (.odt) (Beta)"
       ]
     },
     "Actions message": {
@@ -4098,6 +4104,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ο λογαριασμός σας χρησιμοποιεί αποθηκευτικό χώρο ${ usedSpace }, ο οποίος υπερβαίνει τα ${ inviteSpace } που σας έχουν εκχωρηθεί. Διαγράψτε ορισμένα δεδομένα ή ζητήστε από τον διαχειριστή του πλάνου να αυξήσει τον αποθηκευτικό σας χώρο."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Σας προσκαλούμε να συνδέσετε τον λογαριασμό σας ${ BRAND_NAME } με αυτήν την οικογενειακή ομάδα και να απολαύσετε όλες τις premium λειτουργίες της."
       ]
     },
     "familyOffer_2023:Label": {
@@ -6061,6 +6070,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Θα εξακολουθείτε να μπορείτε να βλέπετε τα δικά σας δεδομένα λογαριασμού, αλλά όλοι οι λογαριασμοί χρηστών θα καταργηθούν από τον οργανισμό σας."
+      ],
+      "Do you remember your password?": [
+        "Θυμάστε τον κωδικό πρόσβασής σας;"
       ]
     },
     "info": {
@@ -6606,6 +6618,9 @@
       ],
       "Your password (trusted contact)": [
         "Ο κωδικός πρόσβασής σας (έμπιστη επαφή)"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Μη αποκρυπτογραφήσιμο όνομα"
       ]
     },
     "Label for contact group color": {
@@ -10863,6 +10878,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Τους στείλαμε μια πρόσκληση για πρόσβαση στο στοιχείο."
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Αυτός ο σύνδεσμος έχει λήξει. Παρατείνετε την ημερομηνία λήξης"
       ]
     },
     "tooltip": {

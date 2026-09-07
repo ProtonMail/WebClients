@@ -3556,6 +3556,15 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️無法解密的名字"
+      ],
+      "Cannot share root folder": [
+        "無法複製根資料夾"
+      ],
+      "Copy operation aborted": [
+        "以放棄移動操作"
+      ],
+      "Invitation not found": [
+        "未找到邀請"
       ]
     },
     "error": {
@@ -4013,6 +4022,15 @@
       ],
       "Pending": [
         "等待中"
+      ],
+      "Activated": [
+        "已啟用"
+      ],
+      "Errors": [
+        "錯誤"
+      ],
+      "Not activated": [
+        "未啟動"
       ]
     },
     "Filter notification": {
@@ -5702,6 +5720,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍可瀏覽您的帳號資料，但所有使用者帳號將被從貴組織移除。"
+      ],
+      "Do you remember your password?": [
+        "您記得您的密碼嗎?"
       ]
     },
     "info": {
@@ -7087,6 +7108,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫工具與限制存取權"
       ]
     },
     "new_plans: feature highlight": {
@@ -8249,6 +8273,12 @@
       ],
       "key": [
         "金鑰"
+      ],
+      "membership": [
+        "會員資格"
+      ],
+      "name": [
+        "名稱"
       ]
     },
     "Property type": {
@@ -8389,6 +8419,12 @@
       ],
       "3 TB of secure storage": [
         "3TB 的安全儲存空間"
+      ],
+      "/month": [
+        "/每月"
+      ],
+      "500 GB of secure storage": [
+        "500 GB 安全儲存空間"
       ]
     },
     "q3campaign2026: Info, Drive first": {
@@ -8399,6 +8435,9 @@
     "q3campaign2026: Title": {
       "for 12 months": [
         "12 個月"
+      ],
+      "One plan, more power": [
+        "單一方案，更多能量"
       ]
     },
     "Recent documents table header": {
@@ -9456,6 +9495,9 @@
       ],
       "User": [
         "使用者"
+      ],
+      "Migration status": [
+        "遷移狀態"
       ]
     },
     "TableHeader": {
@@ -10445,6 +10487,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的試用將於 ${ textDate } 結束。若您在 ${ textDate } 前取消，則不會收費。${ action }"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "取得優惠"
       ]
     }
   }
