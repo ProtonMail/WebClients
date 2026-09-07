@@ -2,12 +2,7 @@ import { importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { c } from 'ttag';
 
 import { revoke, setLocalKey } from '@proton/shared/lib/api/auth';
-import {
-    getApiError,
-    getApiErrorMessage,
-    getIsConnectionIssue,
-    getIsOfflineError,
-} from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiError, getApiErrorMessage, getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { generateClientKey } from '@proton/shared/lib/authentication/clientKey';
 import type { ForkEncryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
 import { getForkDecryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
@@ -27,6 +22,7 @@ import { deleteKey } from '../../utils/object/zero';
 import { getEpoch } from '../../utils/time/epoch';
 import { PassErrorCode } from '../api/errors';
 import type { RefreshSessionData } from '../api/refresh';
+import { getIsApiUnavailable } from '../api/utils';
 import { generateOfflineComponents } from '../cache/crypto';
 import { PassCryptoError } from '../crypto/utils/errors';
 import { loadCoreCryptoWorker } from '../crypto/utils/worker';
@@ -697,7 +693,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                 /** Throw the underlying error in case of connectivity
                  * issues to avoid showing the wrong error message */
                 if (error instanceof PassCryptoError) throw error;
-                if (getIsConnectionIssue(error)) throw error;
+                if (getIsApiUnavailable(error)) throw error;
 
                 return false;
             } finally {
