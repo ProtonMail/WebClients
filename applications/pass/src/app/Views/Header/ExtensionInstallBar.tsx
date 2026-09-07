@@ -7,12 +7,13 @@ import brave from '@proton/pass/assets/import/brave-icon-48.png';
 import chrome from '@proton/pass/assets/import/chrome-icon-48.png';
 import edge from '@proton/pass/assets/import/edge-icon-48.png';
 import firefox from '@proton/pass/assets/import/firefox-icon-48.png';
+import { clients } from '@proton/pass/clients';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
 import { TopBar } from '@proton/pass/components/Layout/Bar/TopBar';
+import { Clients } from '@proton/pass/constants';
 import type { SupportedExtensionClient } from '@proton/pass/lib/extension/utils/browser';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { Clients, clients } from '@proton/shared/lib/pass/constants';
 
 const BrowserImages: Record<SupportedExtensionClient, string> = {
     [Clients.Brave]: brave,

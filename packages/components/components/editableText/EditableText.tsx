@@ -1,16 +1,16 @@
+import type { ReactElement } from 'react';
 import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import useToggle from '@proton/hooks/useToggle';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import type { IconName } from '@proton/icons/types';
+import { IcPen } from '@proton/icons/icons/IcPen';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import useToggle from '@proton/hooks/useToggle'
-import Icon from '../icon/Icon';
 import Input, { type Props as InputProps } from '../input/Input';
 
 interface Props extends Omit<InputProps, 'icon' | 'children' | 'onSubmit'> {
@@ -19,13 +19,13 @@ interface Props extends Omit<InputProps, 'icon' | 'children' | 'onSubmit'> {
     initialText?: string;
     readOnly?: boolean;
     children?: (props: { submit: (value: string) => void; toggleEditing: () => void }) => React.ReactNode;
-    icon?: IconName;
+    icon?: ReactElement;
     small?: boolean;
     formClassName?: string;
 }
 
 const EditableText = ({
-    icon = 'pen',
+    icon = <IcPen />,
     onSubmit,
     onCancel = noop,
     initialText = '',
@@ -86,7 +86,7 @@ const EditableText = ({
             {initialText === null ? '--' : initialText}
             {!readOnly && (
                 <Button icon onClick={toggleEditing} className="ml-2" title={c('Action').t`Toggle edit`}>
-                    <Icon name={icon} />
+                    {icon}
                 </Button>
             )}
         </>

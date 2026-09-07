@@ -10,6 +10,7 @@ import Bordered from '@proton/components/components/container/Bordered';
 import Dropzone from '@proton/components/components/dropzone/Dropzone';
 import FileInput from '@proton/components/components/input/FileInput';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
+import { IcFileLines } from '@proton/icons/icons/IcFileLines';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
@@ -156,7 +157,7 @@ export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'
                                 <AttachedFile
                                     file={form.values.file}
                                     className={clsx('border-none', busy && 'pointer-events-none')}
-                                    iconName="file-lines"
+                                    icon={<IcFileLines />}
                                     clear={c('Action').t`Delete`}
                                     onClear={() => form.setFieldValue('file', null)}
                                 />

@@ -14,11 +14,12 @@ import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUse
 import { mapTelemetryOsVersionWithStore } from '@proton/components/helpers/mapTelemetryOsVersionWithStore';
 import { IcBrandProtonPassFilled } from '@proton/icons/icons/IcBrandProtonPassFilled';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { clients } from '@proton/pass/clients';
+import { Clients } from '@proton/pass/constants';
 import { PLANS } from '@proton/payments/core/constants';
 import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { APPS, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { Clients, clients } from '@proton/shared/lib/pass/constants';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
 
