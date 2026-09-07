@@ -46,7 +46,7 @@
         "加入"
       ],
       "Add ${ photoCount } photo to a new album": [
-        "新增${ photoCount }照片至新相簿"
+        "新增 ${ photoCount } 張照片至新相簿"
       ],
       "Add account": [
         "加入帳號"
@@ -1891,6 +1891,12 @@
       ],
       "Subtotal": [
         "小計"
+      ],
+      "Amount due": [
+        "應付金額"
+      ],
+      "Amount due now": [
+        "當前欠款"
       ]
     },
     "Collapsible tooltip": {
@@ -4242,6 +4248,15 @@
       ],
       "You can update a public link for your own files only": [
         "您只能更新您的檔案公開連結"
+      ],
+      "Cannot share root folder": [
+        "無法複製根資料夾"
+      ],
+      "Copy operation aborted": [
+        "以放棄移動操作"
+      ],
+      "Invitation not found": [
+        "未找到邀請"
       ]
     },
     "error": {
@@ -4484,7 +4499,7 @@
     },
     "Failed": {
       "${ countOfFailedLinks } failed": [
-        "${ countOfFailedLinks }失敗"
+        "${ countOfFailedLinks } 個鏈結失敗"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -5218,7 +5233,7 @@
         "${ pausedCount } 個任務已暫停"
       ],
       "${ photoCount } item": [
-        "${ photoCount }項目"
+        "${ photoCount } 個項目"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
@@ -6745,7 +6760,7 @@
         "當您的密碼或其他資料在第三方服務中洩漏時取得通知。"
       ],
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
-        "您還有${ expiresInDays }天的時間領取您的 3 GB 歡迎獎勵，以及 "
+        "您還有 ${ expiresInDays } 天的時間領取您的 3 GB 歡迎獎勵，和 "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "您有一個試用期 ${ planTitle } 訂購授權。如果您希望在試用期完結後繼續您的訂購授權，請增加一個繳款方式。"
@@ -7424,6 +7439,12 @@
       ],
       "Link expired": [
         "連結已過期"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } 標記"
+      ],
+      "Do you remember your password?": [
+        "您記得您的密碼嗎?"
       ]
     },
     "info": {
@@ -8571,6 +8592,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "添加 ${ LUMO_SHORT_APP_NAME } 撰寫幫手"
       ]
     },
     "meet_2025: Feature": {
@@ -9391,6 +9415,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
         "${ LUMO_SHORT_APP_NAME } 撰寫工具與擴充存取權"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫工具與限制存取權"
       ]
     },
     "new_plans: feature highlight": {
@@ -10155,7 +10182,7 @@
         "載入共享詳細資料失敗"
       ],
       "Selected item was successfully removed from your list": [
-        "已成功從你的清單中移除選取的項目"
+        "選取項目已成功從清單移除"
       ],
       "Setting updated. Editors can change permissions and share.": [
         "設定已更新。編輯者可以變更權限和共享。"
@@ -12465,7 +12492,7 @@
         "${ countMergeableContacts } 個聯絡人似乎相同。"
       ],
       "${ countOfUnrecoveredLinksLeft } left": [
-        "剩餘${ countOfUnrecoveredLinksLeft }"
+        "剩餘 ${ countOfUnrecoveredLinksLeft } 個鏈結"
       ],
       "Address copied to clipboard": [
         "位址已複製到剪貼簿"
@@ -12632,6 +12659,9 @@
       ],
       "User": [
         "使用者"
+      ],
+      "Migration status": [
+        "遷移狀態"
       ]
     },
     "TableHeader": {
@@ -13822,6 +13852,9 @@
       ],
       "Select users to migrate": [
         "選取使用者以遷移"
+      ],
+      "September Sale": [
+        "九月的銷售"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14498,6 +14531,15 @@
       ],
       "Pending": [
         "等待中"
+      ],
+      "Activated": [
+        "已啟用"
+      ],
+      "Errors": [
+        "錯誤"
+      ],
+      "Not activated": [
+        "未啟動"
       ]
     },
     "Property": {
@@ -14512,6 +14554,12 @@
       ],
       "hash key": [
         "雜湊金鑰"
+      ],
+      "membership": [
+        "會員資格"
+      ],
+      "name": [
+        "名稱"
       ]
     },
     "ngc_access_banner: action": {
@@ -14525,6 +14573,12 @@
       ],
       "3 TB of secure storage": [
         "3TB 的安全儲存空間"
+      ],
+      "/month": [
+        "/每月"
+      ],
+      "500 GB of secure storage": [
+        "500 GB 安全儲存空間"
       ]
     },
     "q3campaign2026: Info, Drive first": {
@@ -14535,6 +14589,14 @@
     "q3campaign2026: Title": {
       "for 12 months": [
         "12 個月"
+      ],
+      "One plan, more power": [
+        "單一方案，更多能量"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "取得優惠"
       ]
     }
   }
