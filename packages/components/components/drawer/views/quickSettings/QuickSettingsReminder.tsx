@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
 import { ThemeColor } from '@proton/colors/types';
-import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import Icon from '../../../icon/Icon';
+import type { QuickSettingsReminders } from './interface';
 
 interface Props {
     reminder: QuickSettingsReminders;
@@ -15,13 +14,13 @@ const QuickSettingsReminder = ({ reminder }: Props) => {
         <button
             type="button"
             key={reminder.text}
-            className={clsx(reminder.icon && 'px-3', 'py-2 hover:text-underline')}
+            className={clsx(!!reminder.icon && 'px-3', 'py-2 hover:text-underline')}
             onClick={reminder.callback}
         >
             <span className="flex items-center gap-2">
                 {reminder.icon && (
                     <span className={clsx('flex shrink-0', reminder.color && `color-${reminder.color}`)}>
-                        <Icon name={reminder.icon} alt={c('Action').t`Attention required`} />
+                        <reminder.icon alt={c('Action').t`Attention required`} />
                     </span>
                 )}
                 <span
