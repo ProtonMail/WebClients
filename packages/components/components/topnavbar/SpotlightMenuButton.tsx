@@ -4,15 +4,14 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import useToggle from '@proton/hooks/useToggle';
+import type { IconComponent } from '@proton/icons/component';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
-import type { IconName } from '@proton/icons/types';
 
 import Dropdown from '../dropdown/Dropdown';
 import DropdownMenu from '../dropdown/DropdownMenu';
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';
-import Icon from '../icon/Icon';
 import SettingsLink from '../link/SettingsLink';
 import Spotlight from '../spotlight/Spotlight';
 import { GetStartedButton } from './GetStartedButton';
@@ -21,7 +20,7 @@ export type DisplayItem = DropdownDisplayItem | LinkDisplayItem;
 
 export interface DropdownDisplayItem extends DisplayItemBase {
     type: 'dropdown';
-    dropdownLinks: { label: string; icon: IconName; href: string }[];
+    dropdownLinks: { label: string; icon: IconComponent; href: string }[];
 }
 
 export interface LinkDisplayItem extends DisplayItemBase {
@@ -59,11 +58,11 @@ const DropdownItem = ({ item, onClick }: { item: DropdownDisplayItem; onClick: (
             </Button>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-end">
                 <DropdownMenu>
-                    {item.dropdownLinks?.map(({ label, icon, href }) => {
+                    {item.dropdownLinks?.map(({ label, icon: Icon, href }) => {
                         return (
                             <SettingsLink path={href} className="text-no-decoration" onClick={onClick} key={label}>
                                 <DropdownMenuButton className="text-left flex gap-2 items-center">
-                                    <Icon name={icon} size={4} />
+                                    <Icon size={4} />
                                     {label}
                                 </DropdownMenuButton>
                             </SettingsLink>

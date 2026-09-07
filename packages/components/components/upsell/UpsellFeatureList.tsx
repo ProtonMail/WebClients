@@ -5,7 +5,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import isFunction from '@proton/utils/isFunction';
 
-import Icon from '../icon/Icon';
 import Info from '../link/Info';
 import type { UpsellFeatureName } from './constants';
 import { upsellFeatures } from './constants';
@@ -42,11 +41,13 @@ const UpsellFeatureList = ({
                 if (!feature) {
                     return null;
                 }
+                const FeatureIcon = feature.icon;
+
                 return (
                     <li className={clsx('py-2 rounded', odd && 'pl-2')} key={featureName}>
                         <div className="flex flex-nowrap items-center">
                             <div className="mr-3 shrink-0 flex">
-                                <Icon className="color-primary m-auto" size={iconSize} name={feature.icon} />
+                                <FeatureIcon className="color-primary m-auto" size={iconSize} />
                             </div>
                             <div className="flex-1">
                                 <span className="align-middle">{feature.getText(scribeToLumo)}</span>

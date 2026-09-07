@@ -6,7 +6,6 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
-import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { ThemeModeSetting } from '@proton/shared/lib/themes/constants';
 import { PROTON_THEMES_MAP, getThemes } from '@proton/shared/lib/themes/themes';
@@ -23,6 +22,7 @@ import DrawerAppSection from '../shared/DrawerAppSection';
 import QuickSettingsRemindersSection from './QuickSettingsRemindersSection';
 import QuickSettingsSectionRow from './QuickSettingsSectionRow';
 import QuickSettingsStorageLimitBanner from './QuickSettingsStorageLimitBanner';
+import type { QuickSettingsReminders } from './interface';
 
 interface Props {
     inAppReminders?: QuickSettingsReminders[];

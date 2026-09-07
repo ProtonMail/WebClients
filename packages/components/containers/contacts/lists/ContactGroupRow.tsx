@@ -8,6 +8,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import genAccentShades from '@proton/colors/gen-accent-shades';
 import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
@@ -89,7 +90,7 @@ const ContactGroupRow = ({
                     name={Name}
                     checked={checked}
                     onChange={onCheck}
-                    iconName="users"
+                    icon={<IcUsers color="white" />}
                     color={checked ? colors[2] : Color}
                 />
                 <div className="flex-1 ml-2 conversation-titlesender">
