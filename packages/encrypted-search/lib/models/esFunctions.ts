@@ -5,6 +5,27 @@ import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 import type { CachedItem, ESEvent, ESIndexingState, ESItem, ESItemInfo, ESStatus, ESTimepoint } from './interfaces';
 
 /**
+ * What the initial checks concluded about the index: enough to tell whether it can serve searches
+ */
+export interface ESSettledState {
+    dbExists: boolean;
+    esEnabled: boolean;
+    contentIndexingDone: boolean;
+}
+
+/**
+ * Options for the initial checks run at startup
+ */
+export interface ESInitializeOptions {
+    /**
+     * Called with what the checks concluded, which happens earlier than the returned promise resolves
+     * whenever indexing has to be resumed or restarted. Consumers that need to know where they stand -
+     * rather than when the work is over - should wait on this.
+     */
+    onStateSettled?: (state: ESSettledState) => void;
+}
+
+/**
  * Show or update the search results in the UI
  */
 export type ESSetResultsList<ESItemMetadata, ESItemContent> = (
@@ -155,7 +176,7 @@ export interface EncryptedSearchFunctions<ESItemMetadata, ESSearchParameters, ES
      * the EncryptedSearchProvider runs, as it checks for new events, continues indexing in
      * case a previous one was started, checks whether the index key is still accessible
      */
-    initializeES: () => Promise<void>;
+    initializeES: (options?: ESInitializeOptions) => Promise<void>;
 
     /**
      * Pause the currently ongoing content indexing process, if any
