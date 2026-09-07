@@ -18,6 +18,8 @@ import { isSignupFlow } from '@proton/payments/core/helpers';
 import type {
     AvailablePaymentMethod,
     PaymentMethodFlow,
+    SavedMethodDetails,
+    SavedMethodType,
     SavedPaymentMethod,
     SepaDetails,
 } from '@proton/payments/core/interface';
@@ -41,38 +43,27 @@ export interface ClientMethodsHook extends MethodsHook {
     lastUsedMethod: ViewPaymentMethod | undefined;
 }
 
+const cardIconByLowercaseBrand: Partial<Record<string, IconComponent>> = {
+    'american express': IcBrandAmex,
+    visa: IcBrandVisa,
+    mastercard: IcBrandMastercard,
+    discover: IcBrandDiscover,
+};
+
 // CHARGEBEE_IDEAL icon is overriden in the paymentMetodSelector
+const savedMethodIconByType: Partial<Record<SavedMethodType, IconComponent>> = {
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL]: IcBrandPaypal,
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: IcBank,
+    [PAYMENT_METHOD_TYPES.APPLE_PAY]: IcBrandApple,
+    [PAYMENT_METHOD_TYPES.GOOGLE_PAY]: IcBrandGoogle,
+};
+
 const getIcon = (paymentMethod: SavedPaymentMethod): IconComponent | undefined => {
-    if (paymentMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
-        return IcBrandPaypal;
-    }
-
     if (paymentMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
-        switch (paymentMethod.Details.Brand.toLowerCase()) {
-            case 'american express':
-                return IcBrandAmex;
-            case 'visa':
-                return IcBrandVisa;
-            case 'mastercard':
-                return IcBrandMastercard;
-            case 'Discover':
-                return IcBrandDiscover;
-            default:
-                return IcCreditCard;
-        }
+        return cardIconByLowercaseBrand[paymentMethod.Details.Brand.toLowerCase()] ?? IcCreditCard;
     }
 
-    if (paymentMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT) {
-        return IcBank;
-    }
-
-    if (paymentMethod.Type === PAYMENT_METHOD_TYPES.APPLE_PAY) {
-        return IcBrandApple;
-    }
-
-    if (paymentMethod.Type === PAYMENT_METHOD_TYPES.GOOGLE_PAY) {
-        return IcBrandGoogle;
-    }
+    return savedMethodIconByType[paymentMethod.Type];
 };
 
 const NBSP_HTML = '\u00A0';
@@ -88,34 +79,59 @@ export function formattedSavedSepaDetails(details: SepaDetails): string {
     return `IBAN${NBSP_HTML}${iban}`;
 }
 
-const getMethod = (paymentMethod: SavedPaymentMethod): string => {
-    switch (paymentMethod.Type) {
-        case PAYMENT_METHOD_TYPES.CHARGEBEE_CARD:
-            const brand = paymentMethod.Details.Brand;
-            const last4 = paymentMethod.Details.Last4;
-            // translator: example would be: "Mastercard" ending in "7777"
-            return c('new_plans: info').t`${brand} ending in ${last4}`;
-        case PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL:
-            return `PayPal - ${paymentMethod.Details.PayerID}`;
-        case PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL:
-        case PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT:
-            const details = formattedSavedSepaDetails(paymentMethod.Details);
+const getBankTransferLabel = (details: SepaDetails): string => {
+    const iban = formattedSavedSepaDetails(details);
 
-            return (
-                // translator: for example "Bank transfer - IBAN •••• 0000"
-                c('Payments.Saved payment method details').t`Bank transfer - ${details}`
-            );
-        case PAYMENT_METHOD_TYPES.APPLE_PAY:
-            // translator: example "Apple Pay - card ending in 1234". Please do not translate brand "Apple Pay".
-            return c('Payments.Saved payment method details')
-                .t`Apple Pay - card ending in ${paymentMethod.Details.Last4}`;
-        case PAYMENT_METHOD_TYPES.GOOGLE_PAY:
-            // translator: example "Google Pay - card ending in 1234". Please do not translate brand "Google Pay".
-            return c('Payments.Saved payment method details')
-                .t`Google Pay - card ending in ${paymentMethod.Details.Last4}`;
-        default:
-            return '';
-    }
+    // translator: for example "Bank transfer - IBAN •••• 0000"
+    return c('Payments.Saved payment method details').t`Bank transfer - ${iban}`;
+};
+
+const savedMethodLabelByType: {
+    [T in SavedMethodType]: (details: Extract<SavedPaymentMethod, { Type: T }>['Details']) => string;
+} = {
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]: ({ Brand, Last4 }) =>
+        // translator: example would be: "Mastercard" ending in "7777"
+        c('new_plans: info').t`${Brand} ending in ${Last4}`,
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL]: ({ PayerID }) => `PayPal - ${PayerID}`,
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL]: getBankTransferLabel,
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: getBankTransferLabel,
+    [PAYMENT_METHOD_TYPES.APPLE_PAY]: ({ Last4 }) =>
+        // translator: example "Apple Pay - card ending in 1234". Please do not translate brand "Apple Pay".
+        c('Payments.Saved payment method details').t`Apple Pay - card ending in ${Last4}`,
+    [PAYMENT_METHOD_TYPES.GOOGLE_PAY]: ({ Last4 }) =>
+        // translator: example "Google Pay - card ending in 1234". Please do not translate brand "Google Pay".
+        c('Payments.Saved payment method details').t`Google Pay - card ending in ${Last4}`,
+};
+
+const getMethod = ({ Type, Details }: SavedPaymentMethod): string => {
+    const getLabel = savedMethodLabelByType[Type] as ((details: SavedMethodDetails) => string) | undefined;
+
+    return getLabel?.(Details) ?? '';
+};
+
+type NewMethodView = { icon?: IconComponent; text: string };
+
+const newMethodViewByType: Partial<Record<PAYMENT_METHOD_TYPES, () => NewMethodView>> = {
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN]: () => ({
+        icon: IcBrandBitcoin,
+        text: c('Payment method option').t`Bitcoin`,
+    }),
+    [PAYMENT_METHOD_TYPES.CASH]: () => ({ icon: IcMoneyBills, text: c('Label').t`Cash` }),
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]: () => ({
+        icon: IcCreditCard,
+        text: c('Payment method option').t`Credit/debit card`,
+    }),
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL]: () => ({
+        icon: IcBrandPaypal,
+        text: c('Payment method option').t`PayPal`,
+    }),
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: () => ({
+        icon: IcBank,
+        text: c('Payment method option').t`Bank transfer`,
+    }),
+    [PAYMENT_METHOD_TYPES.APPLE_PAY]: () => ({ icon: IcBrandApple, text: c('Payment method option').t`Apple Pay` }),
+    [PAYMENT_METHOD_TYPES.GOOGLE_PAY]: () => ({ text: c('Payment method option').t`Google Pay` }),
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL]: () => ({ text: IDEAL_WERO_BRAND_NAME }),
 };
 
 /**
@@ -136,52 +152,9 @@ function convertMethod(
         };
     }
 
-    if (method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
-        return {
-            icon: IcBrandBitcoin,
-            text: c('Payment method option').t`Bitcoin`,
-            ...method,
-        };
-    } else if (method.type === PAYMENT_METHOD_TYPES.CASH) {
-        return {
-            icon: IcMoneyBills,
-            text: c('Label').t`Cash`,
-            ...method,
-        };
-    } else if (method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
-        return {
-            icon: IcCreditCard,
-            text: c('Payment method option').t`Credit/debit card`,
-            ...method,
-        };
-    } else if (method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
-        return {
-            icon: IcBrandPaypal,
-            text: c('Payment method option').t`PayPal`,
-            ...method,
-        };
-    } else if (method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT) {
-        return {
-            icon: IcBank,
-            text: c('Payment method option').t`Bank transfer`,
-            ...method,
-        };
-    } else if (method.type === PAYMENT_METHOD_TYPES.APPLE_PAY) {
-        return {
-            icon: IcBrandApple,
-            text: c('Payment method option').t`Apple Pay`,
-            ...method,
-        };
-    } else if (method.type === PAYMENT_METHOD_TYPES.GOOGLE_PAY) {
-        return {
-            text: c('Payment method option').t`Google Pay`,
-            ...method,
-        };
-    } else if (method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL) {
-        return {
-            text: `${IDEAL_WERO_BRAND_NAME}`,
-            ...method,
-        };
+    const newMethodView = newMethodViewByType[method.type]?.();
+    if (newMethodView) {
+        return { ...newMethodView, ...method };
     }
 
     return {

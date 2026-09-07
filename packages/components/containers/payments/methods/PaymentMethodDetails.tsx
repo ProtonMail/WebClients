@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { type ReactNode, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -133,28 +133,14 @@ interface Props {
     details: SavedMethodDetails;
 }
 
-const PaymentMethodDetails = ({ type, details }: Props) => {
-    if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
-        if (!isSavedCardDetails(details)) {
-            return null;
-        }
-
-        return <PaymentMethodDetailsCard details={details} />;
-    }
-
-    if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
-        if (!isPaypalDetails(details)) {
-            return null;
-        }
-
-        return <PaymentMethodDetailsPaypal details={details} />;
-    }
-
-    if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT) {
-        return <PaymentMethodDetailsSepa details={details} />;
-    }
-
-    return null;
+const renderByType: Partial<Record<SavedMethodType, (details: SavedMethodDetails) => ReactNode>> = {
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]: (details) =>
+        isSavedCardDetails(details) ? <PaymentMethodDetailsCard details={details} /> : null,
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL]: (details) =>
+        isPaypalDetails(details) ? <PaymentMethodDetailsPaypal details={details} /> : null,
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: (details) => <PaymentMethodDetailsSepa details={details} />,
 };
+
+const PaymentMethodDetails = ({ type, details }: Props) => renderByType[type]?.(details) ?? null;
 
 export default PaymentMethodDetails;
