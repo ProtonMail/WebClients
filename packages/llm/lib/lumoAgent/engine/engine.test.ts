@@ -12,7 +12,7 @@ import type {
     ToolHandlers,
 } from '../contracts/types';
 import type { ConfirmController, ConfirmDecision, ToolChip } from './engine';
-import { createClientToolExecutor } from './engine';
+import { ConfirmOutcome, createClientToolExecutor } from './engine';
 import { createReferenceRegistry } from './referenceRegistry';
 
 // Fabricated tools + handlers + scripted calls — the framework is product-blind.
@@ -40,17 +40,23 @@ const call = (name: string, args: Record<string, any> = {}, id = `id-${name}`): 
     arguments: JSON.stringify(args),
 });
 
-/** A confirm controller that answers with a scripted decision and records what it was shown. */
+/** A confirm controller that answers with a scripted decision and records what it was shown and told. */
 const scriptedConfirm = (
     decision: ConfirmDecision
-): ConfirmController & { calls: { action: ActionRequest; labels: ReferenceLabels }[] } => {
+): ConfirmController & {
+    calls: { action: ActionRequest; labels: ReferenceLabels }[];
+    outcomes: ConfirmOutcome[];
+} => {
     const calls: { action: ActionRequest; labels: ReferenceLabels }[] = [];
+    const outcomes: ConfirmOutcome[] = [];
     return {
         calls,
+        outcomes,
         requestConfirmation: async (action, labels) => {
             calls.push({ action, labels });
             return decision;
         },
+        reportOutcome: (outcome) => outcomes.push(outcome),
     };
 };
 
@@ -64,7 +70,7 @@ const readItem = def('read_item', {
 });
 const moveItems = def('move_items', {
     kind: 'mutation',
-    paramsSchema: OBJECT_SCHEMA({ target: { type: 'string' } }, ['target']),
+    paramsSchema: OBJECT_SCHEMA({ target: { type: 'string' }, items: { type: 'array' } }, ['target']),
     serializeForLumo: () => '',
 });
 const createLabel = def('create_label', {
@@ -316,7 +322,9 @@ describe('createClientToolExecutor', () => {
 
             expect(handled).toEqual([{ target: 'editedTarget' }]);
             expect(result.is_error).toBeUndefined();
-            expect(result.content).toBe('Applied move_items successfully.');
+            expect(result.content).toBe(
+                'Applied move_items successfully. The user edited it before approving; it ran with exactly these parameters: {"target":"editedTarget"}. Describe only what those say.'
+            );
         });
 
         it('surfaces reference labels to the confirm card', async () => {
@@ -352,7 +360,9 @@ describe('createClientToolExecutor', () => {
             const [result] = await executor.execute([call('move_items', { target: 'x' })]);
             expect(handlerCalls).toEqual([]);
             expect(result.is_error).toBeUndefined();
-            expect(result.content).toBe('The user declined that change.');
+            expect(result.content).toBe(
+                'The user declined that change. Suggest an alternative or ask what they want instead.'
+            );
         });
 
         it('serialises a created entity reference into the success line for chaining', async () => {
@@ -369,6 +379,84 @@ describe('createClientToolExecutor', () => {
             });
             const [result] = await executor.execute([call('create_label', { name: 'Work' })]);
             expect(result.content).toMatch(/Applied create_label successfully\. New label is label-[0-9a-z]{6}\./);
+        });
+
+        it('tells the model what survived the confirm step, not what it proposed', async () => {
+            const executor = createClientToolExecutor({
+                definitions: DEFINITIONS,
+                references: createReferenceRegistry(),
+                handlers: { move_items: async () => ({}) },
+                confirm: scriptedConfirm({ action: 'apply', params: { target: 'Archive', items: ['a1'] } }),
+            });
+
+            const [result] = await executor.execute([
+                call('move_items', { target: 'Archive', items: ['a1', 'b2', 'c3'] }),
+            ]);
+
+            expect(result.content).toContain('1 of the 3 proposed items');
+            expect(result.content).not.toContain('b2');
+            expect(result.content).not.toContain('c3');
+        });
+
+        it('reports the handler outcome, not the approval, so a refused change cannot read as applied', async () => {
+            const applied = scriptedConfirm({ action: 'apply', params: { target: 'Archive' } });
+            const refused = scriptedConfirm({ action: 'apply', params: { target: 'Archive' } });
+            const declined = scriptedConfirm({ action: 'cancel' });
+            const build = (confirm: ConfirmController, handler: ToolHandlers['move_items']) =>
+                createClientToolExecutor({
+                    definitions: DEFINITIONS,
+                    references: createReferenceRegistry(),
+                    handlers: { move_items: handler },
+                    confirm,
+                    onTrace: () => {},
+                });
+
+            await build(applied, async () => ({})).execute([call('move_items', { target: 'Archive' })]);
+            const [failure] = await build(refused, async () => {
+                throw new Error('the mailbox refused that');
+            }).execute([call('move_items', { target: 'Archive' })]);
+            await build(declined, async () => ({})).execute([call('move_items', { target: 'Archive' })]);
+
+            expect(applied.outcomes).toEqual([ConfirmOutcome.APPLIED]);
+            expect(refused.outcomes).toEqual([ConfirmOutcome.FAILED]);
+            expect(failure.is_error).toBe(true);
+            expect(declined.outcomes).toEqual([]);
+        });
+
+        it('says nothing extra when the card came back untouched, sparing the model its own arguments', async () => {
+            const executor = createClientToolExecutor({
+                definitions: DEFINITIONS,
+                references: createReferenceRegistry(),
+                handlers: { move_items: async () => ({}) },
+                confirm: scriptedConfirm({ action: 'apply', params: { target: 'Archive', items: ['a1'] } }),
+            });
+
+            const [result] = await executor.execute([call('move_items', { target: 'Archive', items: ['a1'] })]);
+
+            expect(result.content).not.toContain('exactly these parameters');
+        });
+
+        it('settles the tile even when the apply throws, so it cannot hang mid-flight', async () => {
+            const confirm = scriptedConfirm({
+                action: 'apply',
+                params: { target: 'Archive', items: ['email-a1b2c3'] },
+            });
+            const executor = createClientToolExecutor({
+                definitions: DEFINITIONS,
+                references: {
+                    ...createReferenceRegistry(),
+                    has: () => {
+                        throw new Error('the registry is gone');
+                    },
+                },
+                handlers: { move_items: async () => ({}) },
+                confirm,
+            });
+
+            await expect(executor.execute([call('move_items', { target: 'Archive' })])).rejects.toThrow(
+                'the registry is gone'
+            );
+            expect(confirm.outcomes).toEqual([ConfirmOutcome.FAILED]);
         });
 
         it('rejects a mutation when no confirm controller is configured', async () => {
