@@ -1535,7 +1535,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -2746,6 +2747,13 @@
       "Total for ${ n } month": [
         "Total por ${ n } mês",
         "Total por ${ n } meses"
+      ],
+      "Amount due after trial": [
+        "Valor devido após o período de avaliação"
+      ],
+      "Total for ${ cycle } month": [
+        "Total por ${ cycle } mês",
+        "Total por ${ cycle } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -8028,8 +8036,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -9628,6 +9635,15 @@
       ],
       "Snooze emails": [
         "Adiar e-mails"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "Marca de ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "Change display setting": [
+        "Alterar configuração de exibição"
+      ],
+      "Do you remember your password?": [
+        "Você lembra sua senha?"
       ]
     },
     "info": {
@@ -10880,6 +10896,27 @@
       ],
       "Sieve script": [
         "Script Sieve"
+      ],
+      "At": [
+        "Às"
+      ],
+      "Column": [
+        "Coluna"
+      ],
+      "Comfortable": [
+        "Confortável"
+      ],
+      "Compact": [
+        "Compacto"
+      ],
+      "Grouped conversations": [
+        "Conversas agrupadas"
+      ],
+      "Row": [
+        "Linha"
+      ],
+      "Single messages": [
+        "Mensagens individuais"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17089,6 +17126,9 @@
       ],
       "Snooze emails": [
         "Adiar e-mails"
+      ],
+      "Change display setting": [
+        "Alterar configuração de exibição"
       ]
     },
     "Title header for keys table": {

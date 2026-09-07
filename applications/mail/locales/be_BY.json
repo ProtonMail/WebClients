@@ -1549,7 +1549,10 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу"
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -1757,6 +1760,9 @@
       ],
       "Emoji": [
         "Эмодзі"
+      ],
+      "Preview logs": [
+        "Папярэдні прагляд журналаў"
       ]
     },
     "action": {
@@ -2807,6 +2813,21 @@
         "Усяго за ${ n } месяцы",
         "Усяго за ${ n } месяцаў",
         "Усяго за ${ n } месяцы"
+      ],
+      "Amount due": [
+        "Да аплаты"
+      ],
+      "Amount due after trial": [
+        "Сума да аплаты пасля пробнага перыяду"
+      ],
+      "Amount due now": [
+        "Сума да аплаты"
+      ],
+      "Total for ${ cycle } month": [
+        "Усяго за ${ cycle } месяц",
+        "Усяго за ${ cycle } месяцы",
+        "Усяго за ${ cycle } месяцаў",
+        "Усяго за ${ cycle } месяцаў"
       ]
     },
     "Collapsible tooltip": {
@@ -6170,6 +6191,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш уліковы запіс выкарыстоўвае ${ usedSpace } сховішча, што перавышае абмежаванне на ${ inviteSpace }. Выдаліце некаторыя даныя або папрасіце адміністратара тарыфнага плана павялічыць даступны аб'ём у сховішчы."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Вас запрашаюць далучыць свой уліковы запіс ${ BRAND_NAME } да гэтай сямейнай групы і разам выкарыстоўваць усе яго прэміяльныя функцыі."
       ]
     },
     "familyOffer_2023:Label": {
@@ -8416,10 +8440,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -10124,6 +10145,12 @@
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на ${ IDEAL_WERO_BRAND_NAME }. Пераканайцеся, што ў вас адключаны праграмы блакіроўкі ўсплывальных вокнаў для працягу."
+      ],
+      "Do you remember your password?": [
+        "Вы памятаеце свой пароль?"
+      ],
+      "Opened a problem report": [
+        "Адкрыта справаздача аб праблеме"
       ]
     },
     "info": {

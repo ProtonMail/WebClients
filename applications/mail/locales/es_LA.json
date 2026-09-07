@@ -1544,7 +1544,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -2758,6 +2759,19 @@
       "Total for ${ n } month": [
         "Total por ${ n } mes",
         "Total por ${ n } meses"
+      ],
+      "Amount due": [
+        "Importe a pagar"
+      ],
+      "Amount due after trial": [
+        "Importe a pagar después de la prueba"
+      ],
+      "Amount due now": [
+        "Importe a pagar ahora"
+      ],
+      "Total for ${ cycle } month": [
+        "Total por ${ cycle } mes",
+        "Total por ${ cycle } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -6065,6 +6079,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "La cuenta está usando ${ usedSpace } de almacenamiento, que supera los ${ inviteSpace } que tiene asignados. Elimine algunos datos o solicite al administrador del plan que aumente el almacenamiento."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Se le invitó a vincular su cuenta de ${ BRAND_NAME } a este grupo familiar y disfrutar de todas sus funciones premium."
       ]
     },
     "familyOffer_2023:Label": {
@@ -8146,8 +8163,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9778,6 +9794,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "Change display setting": [
+        "Cambiar ajuste de pantalla"
+      ],
+      "Do you remember your password?": [
+        "¿Recuerda su contraseña?"
+      ],
+      "Opened a problem report": [
+        "Abrí un reporte de problema"
+      ],
+      "Read your display settings": [
+        "Lea sus ajustes de pantalla"
       ]
     },
     "info": {
@@ -11060,6 +11088,24 @@
       ],
       "Conversation grouping": [
         "Agrupar las conversaciones"
+      ],
+      "Column": [
+        "Columna"
+      ],
+      "Comfortable": [
+        "Cómoda"
+      ],
+      "Compact": [
+        "Compacta"
+      ],
+      "Grouped conversations": [
+        "Conversaciones agrupadas"
+      ],
+      "Row": [
+        "Fila"
+      ],
+      "Single messages": [
+        "Mensajes individuales"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17296,6 +17342,9 @@
       ],
       "Your shorter address is now ready": [
         "Su dirección en formato más corto ya está lista."
+      ],
+      "Change display setting": [
+        "Cambiar ajuste de pantalla"
       ]
     },
     "Title header for keys table": {
