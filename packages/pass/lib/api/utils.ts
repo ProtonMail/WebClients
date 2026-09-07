@@ -1,3 +1,6 @@
+import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
+
 import type { Maybe, MaybeNull } from '../../types';
 import type { ApiOptions, ApiState } from '../../types/api';
 import { objectHandler } from '../../utils/object/handler';
@@ -23,6 +26,13 @@ export const buildApiState = () =>
 
 export const getSilenced = ({ silence }: ApiOptions = {}, code: string | number): boolean =>
     Array.isArray(silence) ? silence.includes(code) : !!silence;
+
+/** Widens `getIsConnectionIssue` with 429: during an outage the API answers with a
+ * mix of 503 and 429, and only the former reads as a connection issue. Without this
+ * a rate limited response looks like a legitimate failure, so the offline unlock
+ * screen is skipped and the user lands on an error state. */
+export const getIsApiUnavailable = (err: unknown) =>
+    getIsConnectionIssue(err) || (err as { status?: number })?.status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS;
 
 export const isAccessRestricted = (code: number, url?: string) =>
     (code === PassErrorCode.MISSING_ORG_2FA || code === PassErrorCode.NOT_ALLOWED) &&
