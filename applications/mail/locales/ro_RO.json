@@ -1548,7 +1548,9 @@
         "Aprobare"
       ],
       "Trust key": [
-        "Aprobare cheie"
+        "Aprobare cheie",
+        "Aprobare chei",
+        "Aprobare chei"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -2784,6 +2786,20 @@
         "Total pentru o lună",
         "Total pentru ${ n } luni",
         "Total pentru ${ n } de luni"
+      ],
+      "Amount due": [
+        "Suma datorată"
+      ],
+      "Amount due after trial": [
+        "Suma datorată după probare"
+      ],
+      "Amount due now": [
+        "Suma datorată acum"
+      ],
+      "Total for ${ cycle } month": [
+        "Total pentru ${ cycle } lună",
+        "Total pentru ${ cycle } luni",
+        "Total pentru ${ cycle } de luni"
       ]
     },
     "Collapsible tooltip": {
@@ -6119,6 +6135,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Contul utilizează ${ usedSpace } de stocare, care depășește cei ${ inviteSpace } care vi s-au alocat. Ștergeți unele date sau cereți administratorului planului să vă crească limita de stocare."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Ați primit o invitație să vă conectați contul ${ BRAND_NAME } la acest grup de familie și să vă bucurați împreună de toate funcțiile premium."
       ]
     },
     "familyOffer_2023:Label": {
@@ -8287,9 +8306,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -9501,7 +9518,7 @@
         "Utilizați combinațiile de taste pentru a vă gestiona mai rapid mesajele."
       ],
       "username": [
-        "utilizator"
+        "nume de utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -9960,6 +9977,12 @@
       ],
       "Read your display settings": [
         "Citiți setările de afișare"
+      ],
+      "Do you remember your password?": [
+        "Vă amintiți parola?"
+      ],
+      "Opened a problem report": [
+        "S-a deschis un raport de problemă."
       ]
     },
     "info": {
@@ -10271,7 +10294,7 @@
         "${ boldActive } Mutare toate mesajele în ${ boldFolderName }"
       ],
       "${ BRAND_NAME } username": [
-        "Nnume de utilizator ${ BRAND_NAME }"
+        "Nume de utilizator ${ BRAND_NAME }"
       ],
       "${ count } unread conversation": [
         "${ count } conversație necitită",
@@ -11174,7 +11197,7 @@
         "Model URL cu caractere generice"
       ],
       "Username": [
-        "Nume utilizator"
+        "Nume de utilizator"
       ],
       "v1": [
         "V1"
@@ -13995,7 +14018,7 @@
         "Adresă e-mail"
       ],
       "End date": [
-        "Data de sfârșit"
+        "Dată sfârșit"
       ],
       "Enter a name": [
         "Introduceți un nume"
@@ -14043,7 +14066,7 @@
         "Nume"
       ],
       "Name or email address": [
-        "Nume utilizator/adresa de e-mail"
+        "Nume de utilizator/adresa de e-mail"
       ],
       "Optional feedback": [
         "Feedback opțional"
