@@ -11,8 +11,8 @@ import {
     setChatThreadExpanded,
     setChatThreadReplyDraft,
 } from '@proton/meet/store/slices/chatAndReactionsSlice';
-import { selectLocalParticipantIdentity } from '@proton/meet/store/slices/participants/participantsSlice';
 import type { MeetChatMessage } from '@proton/meet/types/types';
+import { isChatThreadExpanded } from '@proton/meet/utils/isChatThreadExpanded';
 import clsx from '@proton/utils/clsx';
 
 import { useChatMessage } from '../../hooks/bridges/useChatMessage';
@@ -43,7 +43,7 @@ export const ChatThread = ({ rootMessage, replies, roomName, isRootMissing = fal
 
     const dispatch = useMeetDispatch();
 
-    const expanded = rootMessage.expanded ?? false;
+    const expanded = isChatThreadExpanded(rootMessage);
     // Bumped each time the user clicks reply, so the (possibly already mounted) field remounts and
     // grabs focus.
     const [replyNonce, setReplyNonce] = useState(0);
@@ -97,23 +97,22 @@ export const ChatThread = ({ rootMessage, replies, roomName, isRootMissing = fal
         setExpanded(true);
         setReplyNonce((nonce) => nonce + 1);
     };
+
     const handleReplyComposerClose = () => {
-        setExpanded(false);
+        setReplyNonce(0);
         dispatch(setChatThreadReplyDraft({ messageId: rootMessage.id, draft: '' }));
     };
 
-    const localParticipantIdentity = useMeetSelector(selectLocalParticipantIdentity);
-
-    // The badge is only relevant to participants involved in the thread: the author of the root
-    // message or anyone who has already replied to it.
-    const isThreadParticipant =
-        rootMessage.identity === localParticipantIdentity ||
-        replies.some((reply) => reply.identity === localParticipantIdentity);
-
-    const hasUnseenMessage = isThreadParticipant && replies.some((reply) => !reply.seen);
+    // A collapsed thread hides its replies, so it carries a badge for the ones that were never
+    // revealed. Expanding the thread marks them as seen.
+    const hasUnseenMessage = !expanded && replies.some((reply) => !reply.seen);
 
     const replyDraft = useMeetSelector((state) => selectChatThreadReplyDraft(state, rootMessage.id));
     const hasReplyDraft = replyDraft.trim() !== '';
+
+    // An expanded thread without replies would otherwise show a reply composer under every message:
+    // the composer only opens once the participant asks for it or has a draft waiting.
+    const showThreadBody = expanded && (replyCount > 0 || replyNonce > 0 || hasReplyDraft);
 
     const threadRepliesId = `chat-thread-replies-${rootMessage.id}`;
 
@@ -181,12 +180,12 @@ export const ChatThread = ({ rootMessage, replies, roomName, isRootMissing = fal
             <div
                 className={clsx(
                     'chat-thread-body ml-custom pl-3',
-                    expanded ? 'chat-thread-body-open' : 'chat-thread-body-closed'
+                    showThreadBody ? 'chat-thread-body-open' : 'chat-thread-body-closed'
                 )}
                 style={{ '--ml-custom': '1.25rem' }}
             >
                 <div id={threadRepliesId}>
-                    {expanded && (
+                    {showThreadBody && (
                         <>
                             {replies.map((reply) => (
                                 <ChatItem

@@ -14,6 +14,7 @@ import {
 } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { MeetingSideBars, selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import type { MeetChatMessage } from '@proton/meet/types/types';
+import { isChatThreadExpanded } from '@proton/meet/utils/isChatThreadExpanded';
 import { escape } from '@proton/sanitize/escape';
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -125,18 +126,17 @@ export const useChat = () => {
                 const messagesToAdd: MeetChatMessage[] = [];
 
                 // A reply is only seen when the chat is open and its parent thread is expanded; a
-                // collapsed thread hides the reply, so it stays unseen. Threads default to expanded
-                // once they already have replies.
+                // collapsed thread hides the reply, so it stays unseen.
                 let seen = isChatOpen;
                 if (isReply) {
                     const chatMessages = selectChatMessages(store.getState());
-                    const root = chatMessages.find((m) => m.id === event.topic_id);
+                    let root = chatMessages.find((m) => m.id === event.topic_id);
 
                     // The thread's root message is not available locally (e.g. it was sent before the
                     // local participant joined). Create a placeholder root the first time so the
                     // thread's open/seen state can be tracked like any other thread.
                     if (!root) {
-                        messagesToAdd.push({
+                        root = {
                             id: event.topic_id as string,
                             timestamp: Number(event.received_at_ms),
                             identity: '',
@@ -144,17 +144,12 @@ export const useChat = () => {
                             message: '',
                             type: 'message',
                             topicId: event.topic_id,
-                            expanded: false,
                             isMissingRoot: true,
-                        });
+                        };
+                        messagesToAdd.push(root);
                     }
 
-                    if (isChatOpen) {
-                        const threadHasReplies = chatMessages.some(
-                            (m) => m.id !== event.topic_id && m.topicId === event.topic_id
-                        );
-                        seen = root?.expanded ?? threadHasReplies;
-                    }
+                    seen = isChatOpen && isChatThreadExpanded(root);
                 }
 
                 const newMessage: MeetChatMessage = {
