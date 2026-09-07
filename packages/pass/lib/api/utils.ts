@@ -9,9 +9,15 @@ import { PassErrorCode } from './errors';
 
 export const API_BODYLESS_STATUS_CODES = [101, 204, 205, 304];
 
+/** Consecutive failures before the API is considered unreachable. Requests
+ * that reached the network keep failing and nothing succeeded in between:
+ * whatever the statuses say, the client cannot complete its work. */
+export const API_FAILURE_THRESHOLD = 3;
+
 export const buildApiState = () =>
     objectHandler<ApiState>({
         appVersionBad: false,
+        failureCount: 0,
         online: true,
         pendingCount: 0,
         queued: [],
