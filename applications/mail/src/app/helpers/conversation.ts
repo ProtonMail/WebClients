@@ -3,17 +3,13 @@ import type { ConversationState } from '../store/conversations/conversationsType
 
 type LabelValue = 'NumMessages' | 'NumUnread' | 'Time' | 'Size' | 'NumAttachments';
 type LabelContextValue =
-    | 'ContextNumMessages'
-    | 'ContextNumUnread'
-    | 'ContextTime'
-    | 'ContextSize'
-    | 'ContextNumAttachments';
+    'ContextNumMessages' | 'ContextNumUnread' | 'ContextTime' | 'ContextSize' | 'ContextNumAttachments';
 
 export const getSenders = ({ Senders = [] }: Conversation) => Senders;
 
 export const getRecipients = ({ Recipients = [] }: Conversation) => Recipients;
 
-export const getConversationContextValue = (
+const getConversationContextValue = (
     conversation: Conversation | undefined,
     value: LabelValue,
     labelID: string | undefined
@@ -49,20 +45,17 @@ export const getNumAttachments = (conversation: Conversation | undefined, includ
 export const hasAttachments = (conversation: Conversation | undefined, includeInlineCount = true) =>
     getNumAttachments(conversation, includeInlineCount) > 0;
 
-export const getNumUnread = (conversation: Conversation | undefined, labelID: string | undefined) =>
+const getNumUnread = (conversation: Conversation | undefined, labelID: string | undefined) =>
     getConversationContextValue(conversation, 'NumUnread', labelID);
 
 export const isUnread = (conversation: Conversation | undefined, labelID: string | undefined) =>
     getNumUnread(conversation, labelID) !== 0;
 
-export const getNumMessages = (conversation: Conversation | undefined, labelID: string | undefined) =>
+const getNumMessages = (conversation: Conversation | undefined, labelID: string | undefined) =>
     getConversationContextValue(conversation, 'NumMessages', labelID);
 
 export const getTime = (conversation: Conversation | undefined, labelID: string | undefined) =>
     getConversationContextValue(conversation, 'Time', labelID);
-
-export const getSize = (conversation: Conversation | undefined, labelID: string | undefined) =>
-    getConversationContextValue(conversation, 'Size', labelID);
 
 /**
  * Returns a map of boolean with all labels on the conversation and for each true if all messages have the label and false if not

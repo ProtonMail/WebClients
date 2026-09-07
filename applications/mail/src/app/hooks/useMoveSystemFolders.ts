@@ -10,13 +10,8 @@ import { getSidebarNavItems, moveSystemFolders } from './useMoveSystemFolders.he
 import type { SystemFolder, SystemFolderPayload, UseMoveSystemFoldersProps } from './useMoveSystemFoldersTypes';
 import { SYSTEM_FOLDER_SECTION } from './useMoveSystemFoldersTypes';
 
-export type {
-    BaseSystemFolder,
-    SystemFolder,
-    SystemFolderPayload,
-    UseMoveSystemFoldersProps,
-} from './useMoveSystemFoldersTypes';
 export { SYSTEM_FOLDER_SECTION } from './useMoveSystemFoldersTypes';
+export type { SystemFolder } from './useMoveSystemFoldersTypes';
 
 type UseSidebarElementsResponse = [
     sidebarElements: SystemFolder[],

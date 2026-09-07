@@ -1,5 +1,4 @@
 import type { PropsWithChildren, ReactElement, ReactNode } from 'react';
-import * as React from 'react';
 import { Router } from 'react-router';
 import { Route } from 'react-router-dom';
 
@@ -56,7 +55,7 @@ const EOTestProvider = ({ children, routePath = EO_REDIRECT_PATH, history }: Pro
     );
 };
 
-export const getStoreWrapper = () => {
+const getStoreWrapper = () => {
     const store = setupStore();
 
     function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {

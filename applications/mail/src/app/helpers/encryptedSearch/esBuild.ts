@@ -1,5 +1,4 @@
 import { apiHelper } from '@proton/encrypted-search/esHelpers';
-import type { ESCiphertext } from '@proton/encrypted-search/models';
 import { removeBase64 } from '@proton/mail-renderer/helpers/transforms/transformEscape';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { removeHTMLComments } from '@proton/shared/lib/helpers/string';
@@ -27,7 +26,7 @@ export const getContentVersion = (): CONTENT_VERSION => {
 /**
  * Remove the specified tag from the given HTML element
  */
-export const removeTag = (element: HTMLElement, tagName: string) => {
+const removeTag = (element: HTMLElement, tagName: string) => {
     let removeTag = true;
     while (removeTag) {
         const tagInstances = element.getElementsByTagName(tagName);
@@ -235,15 +234,4 @@ export const fetchMessage = async (
     } catch (error: any) {
         return { error };
     }
-};
-
-export const prepareCiphertext = (itemToStore: ESMessage, aesGcmCiphertext: ESCiphertext) => {
-    const { ID, Time, Order, LabelIDs } = itemToStore;
-    return {
-        ID,
-        Time,
-        Order,
-        LabelIDs,
-        aesGcmCiphertext,
-    };
 };

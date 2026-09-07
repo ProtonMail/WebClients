@@ -1,5 +1,4 @@
-import { formatRelative, fromUnixTime } from 'date-fns';
-import type { Location } from 'history';
+import { fromUnixTime } from 'date-fns';
 
 import { isCustomLabel } from '@proton/mail/helpers/location';
 import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -20,7 +19,6 @@ import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/sea
 import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
 
-import { ELEMENT_TYPES } from '../constants';
 import type { Conversation } from '../models/conversation';
 import type { Element } from '../models/element';
 import type { LabelIDsChanges } from '../models/event';
@@ -33,18 +31,11 @@ import {
     getLabelsSetForConversation,
 } from './conversation';
 import { getDate, isElementConversation, isElementMessage } from './elementTypeGuards';
-import { isConversationMode } from './mailSettings';
 import { getLabelsSetForMessage } from './message';
 import { getSnoozeDate } from './snooze';
 
-export { getDate, isElementConversation, isElementMessage } from './elementTypeGuards';
 export { hasAttachmentsFilter, isEmpty, isSearch } from './elementSearch';
-
-export interface TypeParams {
-    labelID?: string;
-    mailSettings: any;
-    location: Location;
-}
+export { getDate, isElementConversation, isElementMessage } from './elementTypeGuards';
 
 interface ContextIdentifier {
     labelID: string;
@@ -60,17 +51,6 @@ interface ContextIdentifier {
     keyword?: string;
     newsletterSubscriptionID?: string;
 }
-
-export const getCurrentType = ({ labelID, mailSettings, location }: TypeParams) =>
-    isConversationMode(labelID, mailSettings, location) ? ELEMENT_TYPES.CONVERSATION : ELEMENT_TYPES.MESSAGE;
-
-/**
- * Get readable time to display from message / conversation
- * @param element.Time
- * @return Jan 17, 2016
- */
-export const getReadableTime = (element: Element | undefined, labelID: string | undefined) =>
-    formatRelative(getDate(element, labelID), new Date());
 
 /**
  * Return if the element is to be considered in read or unread status
@@ -99,7 +79,7 @@ export const getLabelIDs = (element: Element | undefined, contextLabelID: string
           }, {}) || {}
         : conversationGetLabelIDs(element, contextLabelID);
 
-export const getLabelsSetForElement = (element: Element | undefined): Set<string> => {
+const getLabelsSetForElement = (element: Element | undefined): Set<string> => {
     if (!element) {
         return new Set();
     }
@@ -196,7 +176,7 @@ export const getSenders = (element: Element) => {
     return conversationGetSenders(element as Conversation);
 };
 
-export const getRecipients = (element: Element) => {
+const getRecipients = (element: Element) => {
     if (isElementMessage(element)) {
         return messageGetRecipients(element);
     }
@@ -209,13 +189,6 @@ export const getAddressID = (element: Element) => {
     }
     // Default to empty string for conversations
     return '';
-};
-
-export const getFirstSenderAddress = (element: Element) => {
-    const senders = getSenders(element);
-    const [sender] = senders;
-    const { Address = '' } = sender || {};
-    return Address;
 };
 
 export const matchFrom = (element: Element, fromInput: string) => {

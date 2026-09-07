@@ -24,7 +24,7 @@ export const viewEmailsDefinition: ToolDefinition<Record<string, never>, AgentEm
 };
 
 /** Never navigates: what the model reads is what the user is already looking at. */
-export const createViewEmailsHandler =
+const createViewEmailsHandler =
     (mail: MailToolDeps): ToolHandler<Record<string, never>, AgentEmailPage> =>
     async (_params, { references }) =>
         buildAgentEmailRows(mail, references);

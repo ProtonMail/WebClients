@@ -3,7 +3,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import type { MailState } from '../rootReducer';
 import { DEFAULT_SORTING } from './constants';
 
-export const selectNewsletterSubscriptions = (state: MailState) => state.newsletterSubscriptions.value;
+const selectNewsletterSubscriptions = (state: MailState) => state.newsletterSubscriptions.value;
 export const selectedTab = (state: MailState) => state.newsletterSubscriptions.value?.selectedTab;
 export const selectedElementId = (state: MailState) => selectNewsletterSubscriptions(state)?.selectedElementId;
 const selectedSubscriptionID = (state: MailState) => selectNewsletterSubscriptions(state)?.selectedSubscriptionId;

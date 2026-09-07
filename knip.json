@@ -83,9 +83,8 @@
             "ignore": ["**"]
         },
         "applications/mail": {
-            "entry": ["src/app/index.{ts,tsx}", "src/app/eo.tsx"],
-            "project": ["src/**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "entry": ["src/app/index.{ts,tsx}", "src/app/eo.tsx", "webpack.config.{js,ts}"],
+            "project": ["src/**/*.{ts,tsx}"]
         },
         "applications/meet": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
@@ -188,13 +187,11 @@
         },
         "packages/activation": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/ai-assistant": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/app-context": {
             "entry": [],
@@ -257,8 +254,7 @@
         },
         "packages/encrypted-search": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/eslint-config-proton": {
             "entry": [],
@@ -331,7 +327,7 @@
                 "helpers/transforms/transformEscape.ts"
             ],
             "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "ignoreDependencies": ["@proton/styles"]
         },
         "packages/meet": {
             "entry": [],

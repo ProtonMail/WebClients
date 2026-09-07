@@ -49,7 +49,7 @@ export const decryptMessage = async (pack: any, privateKeys: PrivateKeyReference
  * @param options
  * @return {Promise<{getBody: (function(): Promise<{body, mimetype}>), getAttachments: (function(): Promise<any>), getEncryptedSubject: (function(): Promise<any>), verify: (function(): Promise<any>), errors: (function(): Promise<any>), stop: stop}>}
  */
-export async function decryptMIMEMessage(options: WorkerDecryptionOptions) {
+async function decryptMIMEMessage(options: WorkerDecryptionOptions) {
     const {
         data: rawData,
         verificationStatus,

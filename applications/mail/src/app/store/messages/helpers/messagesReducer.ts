@@ -8,25 +8,12 @@ import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 
-import type { Conversation } from '../../../models/conversation';
-import { applyLabelToMessage, removeLabelFromMessage } from '../../mailbox/locationHelpers';
-
 import { isElementMessage } from '../../../helpers/elements';
+import type { Conversation } from '../../../models/conversation';
 import type { QueryParams, QueryResults, TaskRunningInfo } from '../../elements/elementsTypes';
+import { applyLabelToMessage, removeLabelFromMessage } from '../../mailbox/locationHelpers';
 import type { MailState } from '../../store';
 import { localID as localIDSelector, messageByID, messagesByConversationID } from '../messagesSelectors';
-
-/**
- * Only takes technical stuff from the updated message
- */
-export const mergeSavedMessage = (messageSaved: Draft<Message>, messageReturned: Message) => {
-    Object.assign(messageSaved, {
-        ID: messageReturned.ID,
-        Time: messageReturned.Time,
-        ConversationID: messageReturned.ConversationID,
-        LabelIDs: messageReturned.LabelIDs,
-    });
-};
 
 export const getLocalID = (state: Draft<MessagesState>, ID: string) =>
     localIDSelector({ messages: state } as MailState, { ID });
@@ -34,7 +21,7 @@ export const getLocalID = (state: Draft<MessagesState>, ID: string) =>
 export const getMessage = (state: Draft<MessagesState>, ID: string) =>
     messageByID({ messages: state } as MailState, { ID });
 
-export const getMessagesByConversationID = (state: Draft<MessagesState>, ConversationID: string) =>
+const getMessagesByConversationID = (state: Draft<MessagesState>, ConversationID: string) =>
     messagesByConversationID({ messages: state } as MailState, { ConversationID });
 
 export const updateFromElements = (

@@ -157,36 +157,6 @@ export const queryElementsInBatch = async (
     );
 };
 
-export const queryElements = async (
-    api: Api,
-    abortController: AbortController | undefined,
-    conversationMode: boolean,
-    params: MailboxItemsQueryParams
-): Promise<QueryResults> => {
-    abortController?.abort();
-    const newAbortController = new AbortController();
-
-    const query = conversationMode
-        ? api({
-              ...queryConversations(params),
-              signal: newAbortController.signal,
-          })
-        : api({
-              ...queryMessageMetadata(params),
-              signal: newAbortController.signal,
-          });
-
-    const result = await query;
-
-    return {
-        abortController: newAbortController,
-        Total: result.Total,
-        Elements: conversationMode ? result.Conversations : result.Messages,
-        Stale: result.Stale,
-        TasksRunning: result.TasksRunning,
-    };
-};
-
 /**
  * A retry is the same request as before expecting a different result
  * @param payload: request params + expected total

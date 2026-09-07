@@ -16,7 +16,7 @@ export interface GetStartedChecklistApiResponse extends ChecklistApiResponse {
     RewardInGB: number;
 }
 
-export type Checklist = ChecklistApiResponse | GetStartedChecklistApiResponse;
+type Checklist = ChecklistApiResponse | GetStartedChecklistApiResponse;
 
 const useChecklist = () => {
     const [checklist, setChecklist] = useState<Checklist>({

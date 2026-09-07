@@ -95,7 +95,7 @@ export const resetMemoryCacheForTesting = () => {
  * @param content - The content element inside the container
  * @returns The width of the scrollbar in pixels
  */
-export const calculateScrollBarWidth = (container: HTMLElement, content: HTMLElement): number => {
+const calculateScrollBarWidth = (container: HTMLElement, content: HTMLElement): number => {
     if (!container || !content) {
         return 0;
     }
@@ -112,7 +112,7 @@ export const calculateScrollBarWidth = (container: HTMLElement, content: HTMLEle
  * @param persistKey - localStorage key
  * @returns Stored value or null if not found
  */
-export const getPersistedValue = (persistKey: string): string | null => {
+const getPersistedValue = (persistKey: string): string | null => {
     if (!persistKey) {
         return null;
     }
@@ -135,7 +135,7 @@ export const getPersistedValue = (persistKey: string): string | null => {
  * @param value - Value to store
  * @param persistKey - localStorage key
  */
-export const setPersistedValue = (value: string, persistKey: string): void => {
+const setPersistedValue = (value: string, persistKey: string): void => {
     if (!persistKey) {
         return;
     }

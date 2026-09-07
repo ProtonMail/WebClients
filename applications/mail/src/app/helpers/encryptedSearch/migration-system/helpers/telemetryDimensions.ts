@@ -28,7 +28,7 @@ const durationSecondsBuckets = (durationSeconds: number) => {
     return '+300';
 };
 
-export const contentCountBuckets = (contentCount: number) => {
+const contentCountBuckets = (contentCount: number) => {
     if (contentCount < 500) {
         return '<500';
     }

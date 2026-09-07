@@ -15,17 +15,17 @@ export const enum ACTION_TYPE {
     SNOOZE = 'SNOOZE',
     UNSNOOZE = 'UNSNOOZE',
     STAR = 'STAR',
-    UNSTAR = 'UNSTAR',
+    // UNSTAR = 'UNSTAR',
 
     MOVE_TO_INBOX = 'MOVE_TO_INBOX',
     MOVE_TO_TRASH = 'MOVE_TO_TRASH',
     MOVE_TO_ARCHIVE = 'MOVE_TO_ARCHIVE',
     MARK_AS_SPAM = 'MARK_AS_SPAM',
-    MARK_AS_NOT_SPAM = 'MARK_AS_NOT_SPAM',
+    // MARK_AS_NOT_SPAM = 'MARK_AS_NOT_SPAM',
     MOVE_TO_CUSTOM_FOLDER = 'MOVE_TO_CUSTOM_FOLDER',
-    LABEL = 'TOOLBAR_LABEL',
+    // LABEL = 'TOOLBAR_LABEL',
 
-    BLOCK_SENDER = 'BLOCK_SENDER',
+    // BLOCK_SENDER = 'BLOCK_SENDER',
 }
 
 export const enum SOURCE_ACTION {
@@ -40,7 +40,7 @@ export const enum SOURCE_ACTION {
     ITEM_STAR = 'ITEM_STAR',
 }
 
-export const enum TIME_RANGE {
+const enum TIME_RANGE {
     NIGHT = '0-6AM',
     MORNING = '6AM-11AM',
     DAY = '11AM-6PM',

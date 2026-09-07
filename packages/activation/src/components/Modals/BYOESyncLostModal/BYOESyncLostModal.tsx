@@ -8,7 +8,7 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
 
-export interface BYOESyncLostModalProps {
+interface BYOESyncLostModalProps {
     disconnectedEmails: string[];
     onCustomClose?: () => void;
 }

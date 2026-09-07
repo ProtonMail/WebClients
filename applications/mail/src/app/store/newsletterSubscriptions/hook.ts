@@ -10,4 +10,4 @@ export const useNewsletterSubscriptions = hooks.useValue as unknown as () => [
     NewsletterSubscriptionsInterface,
     boolean,
 ];
-export const useGetNewsletterSubscription = hooks.useGet;
+// export const useGetNewsletterSubscription = hooks.useGet;

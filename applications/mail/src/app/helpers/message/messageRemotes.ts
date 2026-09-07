@@ -6,16 +6,6 @@ import { getRemoteSelector } from './messageImages';
 
 export const urlCreator = () => window.URL || window.webkitURL;
 
-export const removeProtonPrefix = (match: HTMLElement) => {
-    MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD.forEach((attr) => {
-        const protonAttr = `proton-${attr}`;
-        if (match.hasAttribute(protonAttr)) {
-            match.setAttribute(attr, match.getAttribute(protonAttr) as string);
-            match.removeAttribute(protonAttr);
-        }
-    });
-};
-
 interface LoadBackgroundImagesProps {
     images?: MessageRemoteImage[];
     document?: Element;

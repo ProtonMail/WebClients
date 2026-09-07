@@ -161,7 +161,7 @@ export const moveSystemFolders: MoveSystemFolders = (draggedID, droppedId, syste
     return systemFolders;
 };
 
-export const getDefaultSystemFolders = (
+const getDefaultSystemFolders = (
     showMoved: MailSettings['ShowMoved'],
     showScheduled: UseMoveSystemFoldersProps['showScheduled'],
     showSnoozed: UseMoveSystemFoldersProps['showSnoozed'],
