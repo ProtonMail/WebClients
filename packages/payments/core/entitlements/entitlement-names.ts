@@ -12,6 +12,9 @@ export enum EntitlementName {
     /** Indicates whether this is a business. */
     Business = 'business',
     CatchAll = 'catch-all',
+    /**
+     * @deprecated Archived in Chargebee and scheduled for removal.
+     */
     CustomLogo = 'custom-logo',
     /** Custom Organization logo */
     CustomOrganizationLogo = 'custom-organization-logo',
@@ -20,6 +23,7 @@ export enum EntitlementName {
     DataRetentionPolicy = 'data-retention-policy',
     /** Indicates whether external managed members are supported for this plan. */
     ExternalManagedMembers = 'external-managed-members',
+    FamilyMemberTrial = 'family-member-trial',
     /** Drive features */
     FlagsDrive = 'flags-drive',
     /** Inbox features */
@@ -39,6 +43,7 @@ export enum EntitlementName {
     FullMembers = 'full-members',
     /** Determines eligibility for the groups feature. */
     Groups = 'groups',
+    InvitationRefillInterval = 'invitation-refill-interval',
     /** Loyalty Bonus Space for every year of loyalty */
     LoyaltyBonusSpace = 'loyalty-bonus-space',
     /** Indicates whether this plan supports managed members. */
@@ -58,6 +63,7 @@ export enum EntitlementName {
     MaxDriveSpace = 'max-drive-space',
     /** The maximum number of emergency contacts a user can have, for emergency access. */
     MaxEmergencyAccessContacts = 'max-emergency-access-contacts',
+    MaxInvitations = 'max-invitations',
     /** Max number of users having top priority access to Lumo */
     MaxLumoSeats = 'max-lumo-seats',
     /** The maximum duration of a meeting, in seconds */
