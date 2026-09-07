@@ -1,4 +1,10 @@
-import { looksLikeCardSpec, looksLikeCardSpecPartial, looksLikeMetricCardPartial, shouldRenderAsCard, splitAroundOpenCardCodeFence } from './detectCardSpec';
+import {
+    looksLikeCardSpec,
+    looksLikeCardSpecPartial,
+    looksLikeMetricCardPartial,
+    shouldRenderAsCard,
+    splitAroundOpenCardCodeFence,
+} from './detectCardSpec';
 import { parseCardSpec } from './parseCardSpec';
 
 describe('detectCardSpec', () => {
@@ -21,7 +27,7 @@ describe('detectCardSpec', () => {
 
     it('does not treat Vega specs as cards', () => {
         const code = JSON.stringify({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             mark: 'bar',
             encoding: { x: { field: 'a', type: 'nominal' }, y: { field: 'b', type: 'quantitative' } },
         });
@@ -41,7 +47,7 @@ describe('detectCardSpec', () => {
 
     it('does not treat Vega specs with axis titles as cards', () => {
         const code = JSON.stringify({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             title: {
                 text: 'Geneva Monthly Climate Overview',
                 subtitle: 'Temperatures peak at 24 °C in Jul',

@@ -6,12 +6,11 @@
 //   3. ```card        — finding/summary cards (single object per fence)
 // ─────────────────────────────────────────────────────────────────────────────
 
-
 export const VISUALIZATION_INSTRUCTIONS = `
 [Visualization]
 When numeric or time-series data is clearer as a chart than prose or a large table,
-emit a fenced \`vega-lite\` block containing valid Vega-Lite v5 JSON
-($schema "https://vega.github.io/schema/vega-lite/v5.json").
+emit a fenced \`vega-lite\` block containing valid Vega-Lite v6 JSON
+($schema "https://vega.github.io/schema/vega-lite/v6.json").
 
 Prefer native charts over generated images:
 - When you have structured numeric data to show (trends, comparisons, distributions, shares),
@@ -109,7 +108,7 @@ Canonical examples (copy these shapes — adapt fields/values only):
 Hourly bar chart:
 \`\`\`vega-lite
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "width": "container",
   "title": { "text": "API Error Rate by Hour", "subtitle": "Peak 1.3% at 03:00 UTC" },
   "data": {
@@ -129,7 +128,7 @@ Hourly bar chart:
 Multi-series line chart (preferred over root mark + layer):
 \`\`\`vega-lite
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "width": "container",
   "title": { "text": "FIFA Rankings by Country", "subtitle": "France leads at rank 1 in 2024" },
   "data": {
@@ -157,7 +156,7 @@ Multi-series line chart (preferred over root mark + layer):
 Donut chart (single arc layer — no text labels, no root mark + layer):
 \`\`\`vega-lite
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "width": "container",
   "title": { "text": "Auth Methods", "subtitle": "Password 41%, modern methods 47% combined" },
   "data": {
