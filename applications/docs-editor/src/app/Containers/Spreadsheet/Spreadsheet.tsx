@@ -50,7 +50,6 @@ export type SpreadsheetProps = {
   editingLocked: boolean
   updateLocalStateToLog: (state: unknown) => void
   isPublicMode: boolean
-  shouldUseCustomYjsInitialization: boolean
 }
 
 export const Spreadsheet = forwardRef(function Spreadsheet(
@@ -63,7 +62,6 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     editingLocked,
     updateLocalStateToLog,
     isPublicMode,
-    shouldUseCustomYjsInitialization,
   }: SpreadsheetProps,
   ref: ForwardedRef<SpreadsheetRef>,
 ) {
@@ -135,7 +133,6 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     colorMode: theme,
     onYjsDriftDetected: handleYjsDriftDetected,
     storeAction,
-    shouldUseCustomYjsInitialization,
   })
   const didSetInitialVersion = useRef(false)
   const { setInitialVersion } = useVersioning(canRunMigration, state)
