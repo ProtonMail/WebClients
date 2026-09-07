@@ -234,6 +234,24 @@ describe('chatAndReactionsSlice - new chat handling', () => {
             expect(state.chatMessages.find((m) => m.id === 'reply-1')?.seen).toBe(false);
         });
 
+        it('should mark replies of a thread that was never collapsed as seen', () => {
+            const root = createMessage({ id: 'root-1', topicId: 'root-1', seen: false });
+            const reply = createMessage({
+                id: 'reply-1',
+                identity: IDENTITY_BOB,
+                message: 'A reply',
+                timestamp: 2_000,
+                topicId: 'root-1',
+                inReplyToId: 'root-1',
+                seen: false,
+            });
+            const withMessages = reducer(getInitialState(), addChatMessages([root, reply]));
+
+            const state = reducer(withMessages, markChatMessagesAsSeen());
+
+            expect(state.chatMessages.find((m) => m.id === 'reply-1')?.seen).toBe(true);
+        });
+
         it('should mark replies of an expanded thread as seen', () => {
             const expandedRoot = createMessage({ id: 'root-1', topicId: 'root-1', expanded: true, seen: false });
             const reply = createMessage({
@@ -317,6 +335,20 @@ describe('chatAndReactionsSlice - new chat handling', () => {
                 const state = createMockState({ chatMessages: [root] });
 
                 expect(selectChatThreadExpanded(state, 'root-1')).toBe(true);
+            });
+
+            it('should treat a never-collapsed thread as expanded', () => {
+                const root = createMessage({ id: 'root-1' });
+                const state = createMockState({ chatMessages: [root] });
+
+                expect(selectChatThreadExpanded(state, 'root-1')).toBe(true);
+            });
+
+            it('should return false for a collapsed thread', () => {
+                const root = createMessage({ id: 'root-1', expanded: false });
+                const state = createMockState({ chatMessages: [root] });
+
+                expect(selectChatThreadExpanded(state, 'root-1')).toBe(false);
             });
         });
 
