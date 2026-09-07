@@ -18,6 +18,7 @@ import {
 import ResultTile from './ResultTile';
 import ConfirmCard, { defaultCardRenderer } from './cardRenderers';
 import type { CardRenderers, LumoAgentItem, ServerToolMeta } from './types';
+import { ConfirmStatus } from './types';
 
 interface Props {
     items: LumoAgentItem[];
@@ -63,7 +64,7 @@ const LumoAgentPanel = ({
         scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight });
     }, [items, isBusy]);
 
-    const pending = items.find((item) => item.kind === 'confirm' && item.status === 'pending');
+    const pending = items.find((item) => item.kind === 'confirm' && item.status === ConfirmStatus.PENDING);
 
     const isGenerating = isBusy && !pending;
 
@@ -107,7 +108,7 @@ const LumoAgentPanel = ({
                 );
             }
             case 'confirm':
-                if (item.status === 'pending') {
+                if (item.status === ConfirmStatus.PENDING) {
                     return null; // pinned above the composer instead
                 }
                 return (

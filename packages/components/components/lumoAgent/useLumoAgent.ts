@@ -1,11 +1,11 @@
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import type { ToolDefinition, ToolImage } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { ConfirmDecision, ToolChip } from '@proton/llm/lib/lumoAgent/engine/engine';
-import { createClientToolExecutor } from '@proton/llm/lib/lumoAgent/engine/engine';
+import { ConfirmOutcome, createClientToolExecutor } from '@proton/llm/lib/lumoAgent/engine/engine';
 import { LOAD_GUIDE_TOOL_NAME } from '@proton/llm/lib/lumoAgent/engine/loadGuide';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import { buildSystemPrompt } from '@proton/llm/lib/lumoAgent/prompt/buildSystemPrompt';
@@ -22,6 +22,13 @@ import { lumoImageMarker } from '@proton/lumo-api-client/utils';
 import type { ServerToolSource } from '@proton/lumo-ui';
 
 import type { LumoAgentConfig, LumoAgentItem } from './types';
+import { ConfirmStatus } from './types';
+
+/** The engine reports how a change went; the tile is a UI state. Neither vocabulary owns the other. */
+const OUTCOME_STATUS: Record<ConfirmOutcome, ConfirmStatus> = {
+    [ConfirmOutcome.APPLIED]: ConfirmStatus.APPLIED,
+    [ConfirmOutcome.FAILED]: ConfirmStatus.FAILED,
+};
 
 const SYSTEM = 'system' as Role;
 const USER = 'user' as Role;
@@ -219,13 +226,15 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         [nextId, pushItem]
     );
 
-    /** `appliedParams` replace the proposed ones, so the settled tile reports what ran, not what was offered. */
-    const settleLastPendingConfirm = useCallback(
-        (status: 'applied' | 'cancelled', appliedParams?: Record<string, any>) => {
+    /**
+     * Matching on `from` keeps the two hops a card makes distinct, so a late outcome cannot revive one
+     * the user has already cancelled. `approvedParams` replace the proposed ones, so the tile reports
+     * what ran, not what was offered.
+     */
+    const advanceLastConfirm = useCallback(
+        (from: ConfirmStatus, to: ConfirmStatus, approvedParams?: Record<string, any>) => {
             setItems((prev) => {
-                const index = [...prev]
-                    .reverse()
-                    .findIndex((item) => item.kind === 'confirm' && item.status === 'pending');
+                const index = [...prev].reverse().findIndex((item) => item.kind === 'confirm' && item.status === from);
                 if (index === -1) {
                     return prev;
                 }
@@ -234,8 +243,8 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                     i === realIndex && item.kind === 'confirm'
                         ? {
                               ...item,
-                              status,
-                              action: appliedParams ? { ...appliedParams, type: item.action.type } : item.action,
+                              status: to,
+                              action: approvedParams ? { ...approvedParams, type: item.action.type } : item.action,
                           }
                         : item
                 );
@@ -251,10 +260,11 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                 return;
             }
             confirmResolveRef.current = null;
-            settleLastPendingConfirm('applied', params);
+            // Not `applied` — the handler has not run yet, and it may still refuse the change.
+            advanceLastConfirm(ConfirmStatus.PENDING, ConfirmStatus.APPLYING, params);
             resolve({ action: 'apply', params });
         },
-        [settleLastPendingConfirm]
+        [advanceLastConfirm]
     );
 
     const cancel = useCallback(() => {
@@ -263,16 +273,36 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             return;
         }
         confirmResolveRef.current = null;
-        settleLastPendingConfirm('cancelled');
+        advanceLastConfirm(ConfirmStatus.PENDING, ConfirmStatus.CANCELLED);
         resolve({ action: 'cancel' });
-    }, [settleLastPendingConfirm]);
+    }, [advanceLastConfirm]);
 
-    const stop = useCallback(() => {
+    /** Release a card the user can no longer answer; without it the executor awaits it forever. */
+    const abandonPendingConfirm = useCallback(() => {
+        confirmResolveRef.current?.({ action: 'cancel' });
+        confirmResolveRef.current = null;
+    }, []);
+
+    const abortChain = useCallback(() => {
         controllerRef.current?.abort();
         controllerRef.current = null;
+    }, []);
+
+    // The mobile breakpoint unmounts the drawer outright, taking any parked card with it. Aborting
+    // first stops the released card from buying the chain another round nobody is rendering.
+    useEffect(
+        () => () => {
+            abortChain();
+            abandonPendingConfirm();
+        },
+        [abortChain, abandonPendingConfirm]
+    );
+
+    const stop = useCallback(() => {
+        abortChain();
         cancel();
         setIsBusy(false);
-    }, [cancel]);
+    }, [abortChain, cancel]);
 
     // Built once per session (per `sessionKey`); holds the reference registry + loaded-guide set so
     // they persist across messages. Confirmations resolve the executor's `ConfirmController` promise.
@@ -287,9 +317,10 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                 requestConfirmation: (action, labels) =>
                     new Promise<ConfirmDecision>((resolve) => {
                         finalizeReply();
-                        pushItem({ id: nextId(), kind: 'confirm', action, labels, status: 'pending' });
+                        pushItem({ id: nextId(), kind: 'confirm', action, labels, status: ConfirmStatus.PENDING });
                         confirmResolveRef.current = resolve;
                     }),
+                reportOutcome: (outcome) => advanceLastConfirm(ConfirmStatus.APPLYING, OUTCOME_STATUS[outcome]),
             },
             onChip: (chip: ToolChip) => {
                 finalizeReply();
@@ -307,7 +338,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                 });
             },
         });
-    }, [config, sessionKey, nextId, pushItem, finalizeReply]);
+    }, [config, sessionKey, nextId, pushItem, finalizeReply, advanceLastConfirm]);
 
     /**
      * Bank a finished chain's own turns — each round's narration, then its tool calls (id, name,
@@ -540,9 +571,8 @@ const useLumoAgent = (config: LumoAgentConfig) => {
     );
 
     const clear = useCallback(() => {
-        controllerRef.current?.abort();
-        controllerRef.current = null;
-        confirmResolveRef.current = null;
+        abortChain();
+        abandonPendingConfirm();
         historyRef.current = [];
         transcriptRef.current = [];
         projectedChainRef.current = [];
@@ -553,7 +583,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         setItems([]);
         setIsBusy(false);
         setSessionKey((key) => key + 1);
-    }, [clearPendingResume]);
+    }, [abortChain, abandonPendingConfirm, clearPendingResume]);
 
     return {
         items,

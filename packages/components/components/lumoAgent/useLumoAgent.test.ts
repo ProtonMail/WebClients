@@ -10,6 +10,7 @@ import type {
 } from '@proton/lumo-api-client';
 
 import type { LumoAgentConfig } from './types';
+import { ConfirmStatus } from './types';
 import useLumoAgent from './useLumoAgent';
 
 // The transport is driven, not reimplemented: each test sets a `script` that the mocked callAssistant
@@ -113,11 +114,54 @@ beforeEach(() => {
     script = async () => {};
 });
 
+type AgentResult = { current: ReturnType<typeof useLumoAgent> };
+
 describe('useLumoAgent', () => {
-    const pinConfirm = async (result: { current: ReturnType<typeof useLumoAgent> }) =>
+    const pinConfirm = async (result: AgentResult) =>
         waitFor(() =>
-            expect(result.current.items.some((item) => item.kind === 'confirm' && item.status === 'pending')).toBe(true)
+            expect(
+                result.current.items.some((item) => item.kind === 'confirm' && item.status === ConfirmStatus.PENDING)
+            ).toBe(true)
         );
+
+    /**
+     * Send the one message every mutation test sends, and wait for its card to pin. The still-running
+     * chain comes back wrapped: returned bare, `await` would chain it and block on the card being answered.
+     */
+    const sendAndPinConfirm = async (result: AgentResult) => {
+        let chain!: Promise<void>;
+        act(() => {
+            chain = result.current.send('move them');
+        });
+        await pinConfirm(result);
+        return { chain };
+    };
+
+    const confirmTile = (result: AgentResult) => result.current.items.find((item) => item.kind === 'confirm');
+
+    const runOneMutation: Script = async ({ executor }) => {
+        await executor.execute([{ id: '1', name: 'move_items', arguments: JSON.stringify({ target: 'Inbox' }) }]);
+    };
+
+    const withMoveHandler = (move: LumoAgentConfig['handlers']['move_items']): LumoAgentConfig => ({
+        ...config,
+        handlers: { ...config.handlers, move_items: move },
+    });
+
+    /** A move that parks inside the handler until released, so a test can read the tile mid-flight. */
+    const blockingMove = () => {
+        let resolveParked = () => {};
+        const parked = new Promise<void>((resolve) => {
+            resolveParked = resolve;
+        });
+        return {
+            config: withMoveHandler(async () => {
+                await parked;
+                return {};
+            }),
+            release: () => resolveParked(),
+        };
+    };
 
     it('streams a prose reply into a single reply item and toggles busy', async () => {
         script = async ({ chunk }) => {
@@ -238,27 +282,23 @@ describe('useLumoAgent', () => {
         };
 
         const { result } = renderHook(() => useLumoAgent(config));
+        const { chain } = await sendAndPinConfirm(result);
 
-        let sendPromise: Promise<void>;
-        act(() => {
-            sendPromise = result.current.send('move them');
-        });
-
-        await waitFor(() =>
-            expect(result.current.items.some((item) => item.kind === 'confirm' && item.status === 'pending')).toBe(true)
-        );
         expect(result.current.isBusy).toBe(true);
 
         await act(async () => {
             result.current.confirm({ target: 'Archive' });
-            await sendPromise;
+            await chain;
         });
 
         expect(handlerCalls).toEqual([{ name: 'move_items', params: { target: 'Archive' } }]);
         // A tile still reporting the proposal describes a mutation that never happened, so a param the
         // body dropped must not survive on it either.
         const settled = result.current.items.find((item) => item.kind === 'confirm');
-        expect(settled).toMatchObject({ status: 'applied', action: { type: 'move_items', target: 'Archive' } });
+        expect(settled).toMatchObject({
+            status: ConfirmStatus.APPLIED,
+            action: { type: 'move_items', target: 'Archive' },
+        });
         expect(settled).not.toMatchObject({ action: { ids: expect.anything() } });
         // A mutation is shown by its confirm tile, never also as a chip.
         expect(result.current.items.some((item) => item.kind === 'chip')).toBe(false);
@@ -271,25 +311,105 @@ describe('useLumoAgent', () => {
         };
 
         const { result } = renderHook(() => useLumoAgent(config));
-
-        let sendPromise: Promise<void>;
-        act(() => {
-            sendPromise = result.current.send('move them');
-        });
-        await waitFor(() =>
-            expect(result.current.items.some((item) => item.kind === 'confirm' && item.status === 'pending')).toBe(true)
-        );
+        const { chain } = await sendAndPinConfirm(result);
 
         await act(async () => {
             result.current.cancel();
-            await sendPromise;
+            await chain;
         });
 
         expect(handlerCalls).toEqual([]);
-        expect(result.current.items.find((item) => item.kind === 'confirm')).toMatchObject({
-            status: 'cancelled',
+        expect(confirmTile(result)).toMatchObject({
+            status: ConfirmStatus.CANCELLED,
             action: { type: 'move_items', target: 'Inbox' },
         });
+    });
+
+    it('holds the tile at applying until the handler answers, so the click alone never reads as done', async () => {
+        script = runOneMutation;
+        const move = blockingMove();
+
+        const { result } = renderHook(() => useLumoAgent(move.config));
+        const { chain } = await sendAndPinConfirm(result);
+
+        await act(async () => {
+            result.current.confirm({ target: 'Archive' });
+        });
+        expect(confirmTile(result)).toMatchObject({ status: ConfirmStatus.APPLYING });
+
+        await act(async () => {
+            move.release();
+            await chain;
+        });
+        expect(confirmTile(result)).toMatchObject({ status: ConfirmStatus.APPLIED });
+    });
+
+    it('settles a refused change as failed, so a success tile never sits above an apology', async () => {
+        script = runOneMutation;
+
+        const { result } = renderHook(() =>
+            useLumoAgent(
+                withMoveHandler(async () => {
+                    throw new Error('the mailbox refused that');
+                })
+            )
+        );
+        const { chain } = await sendAndPinConfirm(result);
+
+        await act(async () => {
+            result.current.confirm({ target: 'Archive' });
+            await chain;
+        });
+
+        expect(confirmTile(result)).toMatchObject({ status: ConfirmStatus.FAILED });
+    });
+
+    // `stop()` routes through `cancel()`, which only settles a card the user has yet to answer. An
+    // approved one is already inside the handler, and that call is not abortable.
+    it('lets a change the user already approved finish and report, even once the chain is stopped', async () => {
+        script = runOneMutation;
+        const move = blockingMove();
+
+        const { result } = renderHook(() => useLumoAgent(move.config));
+        const { chain } = await sendAndPinConfirm(result);
+
+        await act(async () => {
+            result.current.confirm({ target: 'Archive' });
+        });
+        act(() => result.current.stop());
+
+        await act(async () => {
+            move.release();
+            await chain;
+        });
+        expect(confirmTile(result)).toMatchObject({ status: ConfirmStatus.APPLIED });
+    });
+
+    it('releases a parked card on unmount, so the chain is not left awaiting an answer that cannot come', async () => {
+        script = runOneMutation;
+
+        const { result, unmount } = renderHook(() => useLumoAgent(config));
+        const { chain } = await sendAndPinConfirm(result);
+
+        unmount();
+
+        await expect(chain).resolves.toBeUndefined();
+        expect(handlerCalls).toEqual([]);
+    });
+
+    it('aborts the chain on unmount, so the released card cannot buy it another round', async () => {
+        script = async ({ executor }) => {
+            await executor.execute([{ id: '1', name: 'move_items', arguments: JSON.stringify({ target: 'Inbox' }) }]);
+            await executor.execute([{ id: '2', name: 'move_items', arguments: JSON.stringify({ target: 'Spam' }) }]);
+        };
+
+        const { result, unmount } = renderHook(() => useLumoAgent(config));
+        const { chain } = await sendAndPinConfirm(result);
+
+        unmount();
+
+        await expect(chain).resolves.toBeUndefined();
+        expect(handlerCalls).toEqual([]);
     });
 
     describe('stopping while a mutation is awaiting confirmation', () => {
@@ -313,9 +433,7 @@ describe('useLumoAgent', () => {
                 await sendPromise;
             });
 
-            expect(result.current.items.find((item) => item.kind === 'confirm')).toMatchObject({
-                status: 'cancelled',
-            });
+            expect(confirmTile(result)).toMatchObject({ status: ConfirmStatus.CANCELLED });
             expect(result.current.isBusy).toBe(false);
 
             act(() => result.current.confirm({ target: 'Archive' }));
@@ -395,9 +513,7 @@ describe('useLumoAgent', () => {
                 await sendPromise;
             });
 
-            expect(result.current.items.find((item) => item.kind === 'confirm')).toMatchObject({
-                status: 'cancelled',
-            });
+            expect(confirmTile(result)).toMatchObject({ status: ConfirmStatus.CANCELLED });
             expect(handlerCalls).toEqual([]);
             expect(result.current.items.map((item) => item.kind)).toEqual(['user', 'confirm', 'user', 'reply']);
             expect(sentTurns[1]).toEqual([
