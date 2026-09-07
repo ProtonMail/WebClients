@@ -6,6 +6,8 @@ import { c } from 'ttag';
 import { ConfigContext } from '@proton/app-context/configContext';
 import type { DisplayItem } from '@proton/components/components/topnavbar/SpotlightMenuButton';
 import { SpotlightMenuButton } from '@proton/components/components/topnavbar/SpotlightMenuButton';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import globeVpnImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-globe-vpn.svg';
 import networkConfigurationImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-network-configuration.svg';
@@ -54,8 +56,8 @@ export const Default: Story = {
                             .t`Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.`,
                         type: 'dropdown',
                         dropdownLinks: [
-                            { label: 'Add users manually', icon: 'users', href: '#/users-addresses' },
-                            { label: 'Set up SSO', icon: 'key', href: '#/single-sign-on' },
+                            { label: 'Add users manually', icon: IcUsers, href: '#/users-addresses' },
+                            { label: 'Set up SSO', icon: IcKey, href: '#/single-sign-on' },
                         ],
                     },
                     {

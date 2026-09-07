@@ -1,6 +1,3 @@
-import type { ThemeColor } from '@proton/colors/types';
-import type { IconName } from '@proton/icons/types';
-
 import type { PersistedSession } from '../authentication/SessionInterface';
 import type { OfflineKey } from '../authentication/offlineKey';
 import type { APPS } from '../constants';
@@ -250,11 +247,3 @@ export type DRAWER_ACTION =
  */
 
 export const KEY_TRANSPARENCY_REMINDER_UPDATE = 'KEY_TRANSPARENCY_REMINDER_UPDATE';
-
-export interface QuickSettingsReminders {
-    icon?: IconName;
-    color?: ThemeColor;
-    text?: string;
-    callback: () => void;
-    testID: string;
-}
