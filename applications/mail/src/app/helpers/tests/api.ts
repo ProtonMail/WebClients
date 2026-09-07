@@ -1,16 +1,10 @@
-import type { FeatureCode } from '@proton/features';
-import { addApiMock, addApiResolver, apiMock, apiMocksMap, clearApiMocks } from '@proton/testing/lib/api';
-import { getFeatureFlags as baseGetFeatureFlags } from '@proton/testing/lib/features';
+import { addApiMock, addApiResolver, apiMock, clearApiMocks } from '@proton/testing/lib/api';
 
 /**
  * Export for backward compatibility in the tests. It can be gradually migrated to use @proton/testing package directly
  * in the tests.
  */
-export { addApiMock, addApiResolver, clearApiMocks, apiMock as api, apiMocksMap as apiMocks };
-
-export const getFeatureFlags = (features: [FeatureCode, boolean][]) => {
-    return baseGetFeatureFlags([...features]);
-};
+export { addApiMock, addApiResolver, apiMock as api, clearApiMocks };
 
 export const parseFormData = (data: any) => {
     const result: any = {};

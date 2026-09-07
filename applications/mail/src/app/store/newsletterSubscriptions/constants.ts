@@ -2,18 +2,12 @@ import {
     type NewsletterSubscriptionsInterface,
     type NewsletterSubscriptionsTabState,
     SortSubscriptionsValue,
-    type SubscriptionCounts,
     SubscriptionTabs,
 } from './interface';
 import type { NewsletterSubscriptionsStateType } from './newsletterSubscriptionsModelTypes';
 import { getSortParams } from './newsletterSubscriptionsSortParams';
 
-export const DEFAULT_SUBSCRIPTION_COUNTS: SubscriptionCounts = {
-    active: 0,
-    unsubscribe: 0,
-};
-
-export const DEFAULT_PAGINATION_PAGE_SIZE = 100;
+const DEFAULT_PAGINATION_PAGE_SIZE = 100;
 export const MAX_FOLDER_NAME_LENGTH = 100;
 export const DEFAULT_SORTING = SortSubscriptionsValue.RecentlyReceived;
 
@@ -41,7 +35,7 @@ export const initialStateValue: NewsletterSubscriptionsInterface = {
     unsubscribingSubscriptionId: undefined,
 };
 
-export const DEFAULT_META = {
+const DEFAULT_META = {
     fetchedAt: 0,
     fetchedEphemeral: true,
 };

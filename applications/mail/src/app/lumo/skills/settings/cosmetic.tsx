@@ -114,7 +114,7 @@ export const readSettingsDefinition: ToolDefinition<Record<string, never>, ReadS
     summarizeChip: () => ({ label: c('Info').t`Read your display settings` }),
 };
 
-export const createReadSettingsHandler =
+const createReadSettingsHandler =
     (mail: MailToolDeps): ToolHandler<Record<string, never>, ReadSettingsResult> =>
     async () => ({
         layout: CURRENT_VALUES[CosmeticSetting.LAYOUT](mail),
@@ -238,7 +238,7 @@ const planChange = (setting: CosmeticSetting, value: string): PlannedChange => {
     }
 };
 
-export const createChangeSettingsHandler =
+const createChangeSettingsHandler =
     (mail: MailToolDeps): ToolHandler<ChangeSettingsParams, ChangeSettingsResult> =>
     async ({ setting, value }) => {
         const chosen = settingFrom(setting);

@@ -262,12 +262,6 @@ export const getConnectionStatus = (provider: ApiImportProvider) => ({
     method: 'GET',
 });
 
-export const getOrganizationImporterReport = (importerOrganizationId: string, params: { UserId?: string } = {}) => ({
-    url: `importer/v1/organizations/${importerOrganizationId}/reports`,
-    method: 'GET',
-    params,
-});
-
 export const getJoiningLink = (importerOrganizationId: string) => ({
     url: `importer/v1/organizations/${importerOrganizationId}/joining-link`,
     method: 'GET',

@@ -16,7 +16,7 @@ export interface FindContactsParams {
     query: string | null;
 }
 
-export interface ContactMatch {
+interface ContactMatch {
     /**
      * Minted from the ContactEmail, not the Contact: a contact with two addresses is two rows, and one
      * reference across both would leave the model unable to say which address it meant.

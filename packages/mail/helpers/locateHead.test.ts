@@ -1,6 +1,13 @@
-import { locateHead } from '@proton/mail/helpers/locateHead';
+import { locateHead } from './locateHead';
 
-import mails from './__fixtures__/messageHead.fixtures';
+const baseEmail = `
+<html>
+    <head>
+        <style type="text/css">a {padding:0;}</style>
+    </head>
+    <body>Test email</body>
+</html>
+`;
 
 /**
  * Creating a whole document each time is needed because locate blockquote is using xpath request
@@ -14,7 +21,7 @@ const createDocument = (content: string) => {
 
 describe('messageHead', () => {
     it(`Should find head in a basic email`, () => {
-        const head = locateHead(createDocument(mails.baseEmail));
+        const head = locateHead(createDocument(baseEmail));
         expect(head).toContain(`<style type="text/css">a {padding:0;}</style>`);
     });
 });

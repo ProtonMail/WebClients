@@ -1,7 +1,5 @@
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 
-import type { ApiImporterError, ApiImporterState, ApiReportRollbackState } from './api/api.interface';
-
 export enum ImportProvider {
     GOOGLE = 'google',
     YAHOO = 'yahoo',
@@ -137,13 +135,6 @@ export enum BYOE_ADDRESS_ERROR {
     ADDRESS_ALREADY_EXISTS = 2011,
 }
 
-interface ImportedFolder {
-    SourceFolder: string;
-    DestinationFolder?: MailImportDestinationFolder;
-    Processed: number;
-    Total: number;
-}
-
 export enum MailImportGmailCategories {
     FORUMS = 'Forums',
     PROMOTIONS = 'Promotions',
@@ -211,51 +202,8 @@ export interface DriveImportFolder {
     XAttr?: string;
 }
 
-export interface DriveImporterPayload {
+interface DriveImporterPayload {
     ImportFolder: DriveImportFolder;
-}
-
-/* Imports and Reports from Server */
-
-interface ImporterActiveProps {
-    CreateTime: number;
-    State: ApiImporterState;
-    ErrorCode?: ApiImporterError;
-    Mapping: ImportedFolder[];
-    Processed?: number;
-    Total?: number;
-}
-
-export interface Importer {
-    ID: string;
-    TokenID: string;
-    Account: string;
-    Provider: number;
-    Product: ImportType[];
-    Active?: {
-        [ImportType.MAIL]?: ImporterActiveProps;
-        [ImportType.CALENDAR]?: ImporterActiveProps;
-        [ImportType.CONTACTS]?: ImporterActiveProps;
-    };
-    ImapHost: string;
-    ImapPort: string;
-    Sasl: AuthenticationMethod;
-    AllowSelfSigned: boolean;
-    Email: string; // Soon to be deprecated
-}
-
-export interface ImportReport {
-    ID: string;
-    Account: string;
-    Provider: number;
-    TokenID: string;
-    CreateTime: number;
-    EndTime: number;
-    NumItems: number;
-    State: ApiImporterState;
-    TotalSize: number;
-    Product: ImportType;
-    RollbackState?: ApiReportRollbackState;
 }
 
 export enum EASY_SWITCH_SOURCES {

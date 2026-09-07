@@ -39,7 +39,6 @@ import {
     getIsProtonReply,
     getIsTimezoneComponent,
     getIsValidMethod,
-    getIsXOrIanaComponent,
     getIsYahooEvent,
     getPmSharedEventID,
     getPmSharedSessionKey,
@@ -81,7 +80,6 @@ import { getOriginalTo, hasSimpleLoginSender } from '@proton/shared/lib/mail/mes
 import unary from '@proton/utils/unary';
 
 import { hasIcalExtension } from '../attachment/attachment';
-
 import type { FetchAllEventsByUID } from './inviteApi';
 
 export enum EVENT_TIME_STATUS {
@@ -160,9 +158,7 @@ export const getHasInvitationApi = (model: InvitationModel): model is RequireSom
     return !!model.invitationApi;
 };
 
-export const getInvitationHasMethod = (
-    invitation: EventInvitation
-): invitation is RequireSome<EventInvitation, 'method'> => {
+const getInvitationHasMethod = (invitation: EventInvitation): invitation is RequireSome<EventInvitation, 'method'> => {
     return invitation.method !== undefined;
 };
 
@@ -178,13 +174,6 @@ export const getInvitationHasAttendee = (
     return invitation.attendee !== undefined;
 };
 
-export const getInvitationUID = (invitationOrError: EventInvitation | EventInvitationError) => {
-    if (invitationOrError instanceof EventInvitationError) {
-        return;
-    }
-    return getUidValue(invitationOrError.vevent);
-};
-
 export const getHasFullCalendarData = (data?: CalendarWidgetData): data is Required<CalendarWidgetData> => {
     const { memberID, addressKeys, calendarKeys, calendarSettings } = data || {};
     return !!(memberID && addressKeys && calendarKeys && calendarSettings);
@@ -194,7 +183,7 @@ export const filterAttachmentsForEvents = (attachments: Attachment[]): Attachmen
     attachments.filter(({ Name = '' }) => hasIcalExtension(Name));
 
 // Some external providers include UID and SEQUENCE outside the VEVENT component
-export const withOutsideUIDAndSequence = (vevent: VcalVeventComponent, vcal: NonRFCCompliantVcalendar) => {
+const withOutsideUIDAndSequence = (vevent: VcalVeventComponent, vcal: NonRFCCompliantVcalendar) => {
     const { uid: veventUid, sequence: veventSequence } = vevent;
     const { uid: vcalUid, sequence: vcalSequence } = vcal;
     const result = { ...vevent };
@@ -207,31 +196,25 @@ export const withOutsideUIDAndSequence = (vevent: VcalVeventComponent, vcal: Non
     return result;
 };
 
-export const getHasMultipleVevents = (vcal?: VcalVcalendar) => {
+const getHasMultipleVevents = (vcal?: VcalVcalendar) => {
     const numberOfVevents = vcal?.components?.filter(unary(getIsEventComponent)).length || 0;
     return numberOfVevents > 1;
 };
 
-export const extractVevent = (vcal?: VcalVcalendar): VcalVeventComponent | undefined => {
+const extractVevent = (vcal?: VcalVcalendar): VcalVeventComponent | undefined => {
     const result = vcal?.components?.find(getIsEventComponent);
     // return a copy
     return result ? { ...result } : undefined;
 };
 
-export const extractUniqueVTimezone = (vcal?: VcalVcalendar): VcalVtimezoneComponent | undefined => {
+const extractUniqueVTimezone = (vcal?: VcalVcalendar): VcalVtimezoneComponent | undefined => {
     const vtimezones = vcal?.components?.filter(getIsTimezoneComponent);
     if (vtimezones?.length === 1) {
         return vtimezones[0];
     }
 };
 
-export const extractXOrIanaComponents = (vcal?: VcalVcalendar): VcalXOrIanaComponent[] | undefined => {
-    const result = vcal?.components?.filter(getIsXOrIanaComponent);
-    // return a copy
-    return result ? { ...result } : undefined;
-};
-
-export const getIsOrganizerMode = (event: VcalVeventComponent, emailTo: string) => {
+const getIsOrganizerMode = (event: VcalVeventComponent, emailTo: string) => {
     if (!event.organizer) {
         return false;
     }

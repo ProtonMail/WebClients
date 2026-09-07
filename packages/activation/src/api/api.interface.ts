@@ -266,13 +266,13 @@ export enum ProductStatusState {
     Error = 3,
 }
 
-export type ProductStatus = {
+type ProductStatus = {
     Product: ApiImporterProduct;
     State: ProductStatusState;
     Error: string;
 };
 
-export interface ApiImporterOrganizationUserEligibility {
+interface ApiImporterOrganizationUserEligibility {
     IsEligible: boolean;
     Reasons: string[];
 }

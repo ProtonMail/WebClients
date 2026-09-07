@@ -29,23 +29,22 @@ import { getPublicRecipients, getRecipients, getSender } from '@proton/shared/li
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
-import ComposerAssistant from '../assistant/ComposerAssistant';
-import { insertTextBeforeContent, prepareContentToInsert } from '../../helpers/message/messageContent';
-import { useMailStore } from '../../store/hooks';
-
 import { DRAG_ADDRESS_KEY } from '../../constants';
+import { insertTextBeforeContent, prepareContentToInsert } from '../../helpers/message/messageContent';
 import { useComposerContent } from '../../hooks/composer/useComposerContent';
 import { ComposerInnerModalStates } from '../../hooks/composer/useComposerInnerModals';
 import { useScheduleSend } from '../../hooks/composer/useScheduleSend';
 import { useHasScroll } from '../../hooks/useHasScroll';
 import type { Event } from '../../models/event';
+import { useMailStore } from '../../store/hooks';
+import ComposerAssistant from '../assistant/ComposerAssistant';
 import ComposerContent from './ComposerContent';
 import ComposerMeta from './ComposerMeta';
 import ComposerActions from './actions/ComposerActions/ComposerActions';
 import type { ExternalEditorActions } from './editor/EditorWrapper';
 import ComposerInnerModals from './modals/ComposerInnerModals';
 
-export type MessageUpdate = PartialMessageState | ((message: MessageState) => PartialMessageState);
+type MessageUpdate = PartialMessageState | ((message: MessageState) => PartialMessageState);
 
 export interface MessageChange {
     (update: MessageUpdate, reloadSendInfo?: boolean): void;

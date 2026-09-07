@@ -23,7 +23,7 @@ import { useCategoriesTabsDensity } from './useCategoriesTabsDensity';
 
 import './CategoriesTabs.scss';
 
-export const CategoriesTabsList = () => {
+const CategoriesTabsList = () => {
     const recategorizeElement = useRecategorizeElement();
     const { activeCategoriesTabs } = useCategoriesView();
     const { tabSpotlightStep } = useCategoriesOnboarding();

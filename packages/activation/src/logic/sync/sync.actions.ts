@@ -56,12 +56,12 @@ export const deleteSyncItem = createAsyncThunk<
     }
 });
 
-export interface CreateSyncExistingToken {
+interface CreateSyncExistingToken {
     type: SyncTokenStrategy.useExisting;
     token: ImportToken;
 }
 
-export interface CreateSyncNeedsToken {
+interface CreateSyncNeedsToken {
     type: SyncTokenStrategy.create;
     Code: string;
     Provider: OAUTH_PROVIDER;
@@ -159,12 +159,12 @@ export const createSyncItem = createAsyncThunk<
     }
 });
 
-export interface ResumeSyncExistingToken {
+interface ResumeSyncExistingToken {
     type: SyncTokenStrategy.useExisting;
     token: ImportToken;
 }
 
-export interface ResumeSyncNeedsToken {
+interface ResumeSyncNeedsToken {
     type: SyncTokenStrategy.create;
     Code: string;
     Provider: OAUTH_PROVIDER;

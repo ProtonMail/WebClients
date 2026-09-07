@@ -195,7 +195,7 @@ export const createFolderCardRenderer = entityCardRenderer(
     () => c('Label').t`Folder name`
 );
 
-export const createLabelCardRenderer = entityCardRenderer(
+const createLabelCardRenderer = entityCardRenderer(
     IcTagPlus,
     () => c('Title').t`Create label`,
     () => c('Label').t`Label name`

@@ -45,11 +45,11 @@ export const defaultProps: MessageViewProps = {
     isComposerOpened: false,
 };
 
-export const initMessage = (store: MailStore, message: MessageState) => {
+const initMessage = (store: MailStore, message: MessageState) => {
     store.dispatch(initialize(message));
 };
 
-export const getMessage = (inputMessage: PartialMessageState = {}) => {
+const getMessage = (inputMessage: PartialMessageState = {}) => {
     const defaultMessage = {
         localID: messageID,
         data: {

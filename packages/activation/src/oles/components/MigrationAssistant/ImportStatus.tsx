@@ -13,7 +13,7 @@ import { ProductStatusState } from '../../../api/api.interface';
 import type { CreateMigrationBatchError } from '../../thunk';
 import { transferErrorUserFilter } from './ImportJournalModal';
 
-export const terminalStatuses = [ProductStatusState.Completed, ProductStatusState.Error];
+const terminalStatuses = [ProductStatusState.Completed, ProductStatusState.Error];
 
 export const coalesceStatus = (user: ApiImporterOrganizationUser, transferErrors?: CreateMigrationBatchError[]) => {
     if (transferErrors?.filter(transferErrorUserFilter(user)).length) {

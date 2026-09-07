@@ -11,7 +11,7 @@ import { BULK_ACTION_NOTE, formatAgentEmailRows } from './rows';
 
 /** The seven standard left-panel locations open_folder understands. A custom folder/label is opened
  *  via `target` (its folder-… / label-… reference) instead. */
-export const OPEN_FOLDER_LOCATIONS = ['inbox', 'all_mail', 'spam', 'drafts', 'starred', 'trash', 'archive'] as const;
+const OPEN_FOLDER_LOCATIONS = ['inbox', 'all_mail', 'spam', 'drafts', 'starred', 'trash', 'archive'] as const;
 
 export type OpenFolderLocation = (typeof OPEN_FOLDER_LOCATIONS)[number];
 

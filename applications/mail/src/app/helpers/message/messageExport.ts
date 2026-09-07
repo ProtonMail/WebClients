@@ -49,13 +49,13 @@ const encryptBody = async (content: string, messageKeys: PublicPrivateKey) => {
     return data;
 };
 
-export const prepareAndEncryptBody = async (message: MessageState, messageKeys: MessageKeys) => {
+const prepareAndEncryptBody = async (message: MessageState, messageKeys: MessageKeys) => {
     const plainText = isPlainText(message.data);
     const content = plainText ? getPlainTextContent(message) : prepareExport(message);
     return encryptBody(content, messageKeys as PublicPrivateKey);
 };
 
-export const encryptAttachmentKeyPackets = async (
+const encryptAttachmentKeyPackets = async (
     attachments: Attachment[],
     previousAddressDecryptionKeys: PrivateKeyReference[] = [],
     newAddressEncryptionKey: PublicKeyReference,

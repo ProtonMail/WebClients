@@ -34,7 +34,7 @@ export interface StatusIcon {
     senderVerificationDetails?: SenderVerificationDetails;
 }
 
-export interface SenderVerificationDetails {
+interface SenderVerificationDetails {
     description: string;
     showKeyTransparencyLearnMore?: boolean;
 }
@@ -43,7 +43,7 @@ export interface MapStatusIcons {
     [key: string]: StatusIcon | undefined;
 }
 
-export interface ContactSignatureInfo {
+interface ContactSignatureInfo {
     isVerified?: boolean;
     creationTime?: Date;
 }

@@ -37,7 +37,7 @@ import StepInviteUsers from './StepInviteUsers';
 
 import './MigrationSetup.scss';
 
-export type MigrationSetupProps = {
+type MigrationSetupProps = {
     model: MigrationSetupModel;
     onSubmit: (payload: MigrationConfiguration) => Promise<void>;
 };

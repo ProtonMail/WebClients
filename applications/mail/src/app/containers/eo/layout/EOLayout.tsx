@@ -33,7 +33,7 @@ import LanguageSelect from './EOLanguageSelect';
 
 import './EOLayout.scss';
 
-export interface Props {
+interface Props {
     children: ReactNode;
     hasLanguageSelect?: boolean;
     toApp: APP_NAMES;

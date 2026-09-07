@@ -4,7 +4,6 @@ import type { CreateEventItemUpdate, UpdateEventItemUpdate } from '@proton/share
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { getReceivedMessagesCount } from '../../components/view/NewsletterSubscription/helper';
-
 import { type NewsletterSubscriptionsInterface, SortSubscriptionsValue } from './interface';
 import type {
     deleteNewsletterSubscription,
@@ -13,7 +12,7 @@ import type {
 } from './newsletterSubscriptionsActions';
 import type { NewsletterSubscriptionsStateType } from './newsletterSubscriptionsSlice';
 
-export const filterNewsletterSubscriptionList = (list: string[], idToRemove?: string) => {
+const filterNewsletterSubscriptionList = (list: string[], idToRemove?: string) => {
     return list.filter((id) => id !== idToRemove);
 };
 

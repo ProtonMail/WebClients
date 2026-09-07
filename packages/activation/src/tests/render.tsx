@@ -2,7 +2,6 @@ import type { PropsWithChildren, ReactElement } from 'react';
 import { Router } from 'react-router';
 
 import { render as originalRender } from '@testing-library/react';
-import { renderHook } from '@testing-library/react-hooks';
 import { createMemoryHistory } from 'history';
 
 import { getModelState } from '@proton/account/tests';
@@ -81,7 +80,7 @@ const notificationsManager = {
 const history = createMemoryHistory();
 const api = createApi({ config });
 
-export const EasySwitchTestProviders = ({ children }: { children: JSX.Element | (JSX.Element | null)[] | null }) => (
+const EasySwitchTestProviders = ({ children }: { children: JSX.Element | (JSX.Element | null)[] | null }) => (
     <ConfigProvider config={config}>
         <NotificationsContext.Provider value={notificationsManager}>
             <ModalsProvider>
@@ -133,14 +132,3 @@ export const easySwitchRender = (ui: ReactElement, preloadedState?: any) => {
 
     return result;
 };
-
-const easySwitchHookWrapper = ({ children }: { children: any }) => {
-    const { Wrapper } = getStoreWrapper();
-    return (
-        <Wrapper>
-            <EasySwitchTestProviders>{children}</EasySwitchTestProviders>
-        </Wrapper>
-    );
-};
-
-export const easySwitchHookRender = (hook: any) => renderHook(() => hook(), { wrapper: easySwitchHookWrapper });
