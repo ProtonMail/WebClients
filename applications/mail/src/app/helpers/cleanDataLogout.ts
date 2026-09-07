@@ -1,19 +1,19 @@
-import { deleteESDB } from '@proton/encrypted-search/esIDB';
 import { logger } from '@proton/logger';
 import type { PersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
 
-import { deleteContentSearchDB } from '../contentSearch/db/delete';
+import { getExistingIndexService } from '../contentSearch/indexation/IndexService';
 
 /**
  * Clears persisted application data, used when the user logs out.
+ * The encrypted search database is not deleted to avoid re-indexing the whole mailbox
  */
 export const cleanDataLogout = async (persistedSession: PersistedSession) => {
+    const indexService = getExistingIndexService(persistedSession.UserID);
+
     await Promise.allSettled([
         // Logger removal
         logger.isInitialized() ? logger.clearLogs() : undefined,
         // Content search database removal
-        deleteContentSearchDB(persistedSession.UserID),
-        // Encrypted search database removal
-        deleteESDB(persistedSession.UserID),
+        indexService ? indexService.deleteIndex() : undefined,
     ]);
 };
