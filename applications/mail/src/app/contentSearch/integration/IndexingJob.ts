@@ -45,11 +45,6 @@ interface JobDeps {
      * from a stale DB). Reads the current v1 instance at call time.
      */
     waitForV1Sync: () => Promise<void>;
-    /**
-     * Called once the job has ended, so the adapter can drop its reference to it and decide what a
-     * failed import means for where searches are answered.
-     */
-    onFinished: (outcome: ImportOutcome) => void;
 }
 
 export class IndexingJob {
@@ -60,12 +55,27 @@ export class IndexingJob {
     private abandoned = false;
     /** How the import ended; only set once `phase` is `done`. */
     private outcome?: ImportOutcome;
+    /**
+     * Resolves when the job ends, however it ends - a finished import, or a teardown that reports no
+     * outcome of its own. Awaited by the adapter, which drops its reference to the job and decides what
+     * a failed import means for where searches are answered.
+     */
+    public readonly ended: Promise<ImportOutcome | 'disposed'>;
+    private resolveEnded!: (outcome: ImportOutcome | 'disposed') => void;
+    public readonly paused: Promise<void>;
+    private resolvePaused!: () => void;
 
     constructor(
         private readonly deps: JobDeps,
         public readonly mode: JobMode
     ) {
         this.lastV1Status = deps.initialV1Status;
+        this.ended = new Promise((resolve) => {
+            this.resolveEnded = resolve;
+        });
+        this.paused = new Promise((resolve) => {
+            this.resolvePaused = resolve;
+        });
         if (mode === 'refresh') {
             // A refresh imports the messages the event touched, but first has to wait for that event to
             // land in the v1 ES DB (the import's source). That wait is its own phase so that `import`
@@ -130,6 +140,8 @@ export class IndexingJob {
     /** Stop touching the setters — used when the adapter tears the job down (e.g. esDelete). */
     dispose() {
         this.abandoned = true;
+        this.resolveEnded('disposed');
+        this.resolvePaused();
         this.unsubscribe?.();
         // The import's source is the v1 ES DB, and a teardown means that DB is going away (esDelete, or
         // v1 wiping its own index after an error). Leaving the import running would have it read from a
@@ -237,7 +249,7 @@ export class IndexingJob {
         this.outcome = outcome;
         this.emitStatus();
         this.emitImportProgress();
-        this.deps.onFinished(outcome);
+        this.resolveEnded(outcome);
     }
 
     /** Emit the import's own 0→100 progress (index mode only; a refresh shows no bar). */
@@ -293,6 +305,9 @@ export class IndexingJob {
         // A pause is likewise only ours to report once we own the running phase; during v1's own phase
         // v1 reports it itself.
         const pausedByUs = this.phase === 'import-paused';
+        if (pausedByUs) {
+            this.resolvePaused();
+        }
         this.deps.updateESStatus({
             ...this.lastV1Status,
             isEnablingContentSearch: !pausedByUs && !this.lastV1Status.isContentIndexingPaused,
