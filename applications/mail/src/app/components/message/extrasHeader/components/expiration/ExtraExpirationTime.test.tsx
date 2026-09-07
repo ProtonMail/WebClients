@@ -2,7 +2,8 @@ import { screen } from '@testing-library/react';
 
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { clearAll, mailTestRender } from '../../../../../helpers/tests/helper';
+import { clearAll } from '../../../../../helpers/tests/helper';
+import { mailTestRender } from '../../../../../helpers/tests/render';
 import ExtraExpirationTime from './ExtraExpirationTime';
 
 const getExpirationTime = (numberOfSeconds: number) => {

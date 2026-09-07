@@ -10,18 +10,18 @@ import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 import { MAX_COLUMN_ATTACHMENT_THUMBNAILS } from '../../constants';
 import { filterAttachmentToPreview } from '../../helpers/attachment/attachmentThumbnails';
 import { addApiMock } from '../../helpers/tests/api';
-import type { GeneratedKey } from '../../helpers/tests/helper';
+import { assertIcon } from '../../helpers/tests/assertion';
+import { getCompleteAddress } from '../../helpers/tests/cache';
+import type { GeneratedKey } from '../../helpers/tests/crypto';
 import {
     addApiKeys,
-    assertIcon,
-    clearAll,
-    createAttachment,
     generateKeys,
     getAddressKeyCache,
-    getCompleteAddress,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '../../helpers/tests/helper';
+} from '../../helpers/tests/crypto';
+import { clearAll } from '../../helpers/tests/helper';
+import { createAttachment } from '../../helpers/tests/message';
 import { mailTestRender } from '../../helpers/tests/render';
 import type { Conversation } from '../../models/conversation';
 import { addAttachment } from '../../store/attachments/attachmentsActions';

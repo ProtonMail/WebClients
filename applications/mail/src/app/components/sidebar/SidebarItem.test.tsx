@@ -5,7 +5,9 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { mockUseCategoriesData } from '@proton/testing/lib/mockUseCategoriesData';
 import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 
-import { clearAll, mailTestRender, minimalCache } from '../../helpers/tests/helper';
+import { minimalCache } from '../../helpers/tests/cache';
+import { clearAll } from '../../helpers/tests/helper';
+import { mailTestRender } from '../../helpers/tests/render';
 import SidebarItem from './SidebarItem';
 
 jest.mock('proton-mail/hooks/mailbox/useElements', () => ({

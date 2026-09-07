@@ -9,7 +9,10 @@ import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 
-import { addApiMock, assertIcon, clearAll, minimalCache } from '../../../helpers/tests/helper';
+import { addApiMock } from '../../../helpers/tests/api';
+import { assertIcon } from '../../../helpers/tests/assertion';
+import { minimalCache } from '../../../helpers/tests/cache';
+import { clearAll } from '../../../helpers/tests/helper';
 import MessageView from '../MessageView';
 import { defaultProps, getIframeRootDiv, setup } from './Message.test.helpers';
 

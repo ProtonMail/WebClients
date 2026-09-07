@@ -7,17 +7,17 @@ import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 
 import { mergeMessages } from '../../../../helpers/message/messages';
+import { addApiMock } from '../../../../helpers/tests/api';
 import { getCompleteAddress, minimalCache } from '../../../../helpers/tests/cache';
-import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/tests/crypto';
 import {
     addApiKeys,
-    addApiMock,
-    clearAll,
     generateKeys,
-    mailTestRender,
-    waitForEventManagerCall,
-    waitForNotification,
-} from '../../../../helpers/tests/helper';
+    getAddressKeyCache,
+    releaseCryptoProxy,
+    setupCryptoProxyForTesting,
+} from '../../../../helpers/tests/crypto';
+import { clearAll, waitForEventManagerCall, waitForNotification } from '../../../../helpers/tests/helper';
+import { mailTestRender } from '../../../../helpers/tests/render';
 import { newElementsState } from '../../../../store/elements/elementsSlice';
 import ExtraUnsubscribe from './ExtraUnsubscribe';
 

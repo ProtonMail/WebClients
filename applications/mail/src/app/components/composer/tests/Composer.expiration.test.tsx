@@ -12,15 +12,16 @@ import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/tests/crypto';
+import { getCompleteAddress } from '../../../helpers/tests/cache';
 import {
     addApiKeys,
-    clearAll,
     generateKeys,
-    getCompleteAddress,
-    getDropdown,
-    mailTestRender,
-} from '../../../helpers/tests/helper';
+    getAddressKeyCache,
+    releaseCryptoProxy,
+    setupCryptoProxyForTesting,
+} from '../../../helpers/tests/crypto';
+import { clearAll, getDropdown } from '../../../helpers/tests/helper';
+import { mailTestRender } from '../../../helpers/tests/render';
 import Composer from '../Composer';
 import { AddressID, ID, fromAddress, prepareMessage, props, toAddress } from './Composer.test.helpers';
 

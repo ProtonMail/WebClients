@@ -3,7 +3,7 @@ import { act, fireEvent, screen } from '@testing-library/react';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
-import { mailTestRender } from '../../../../helpers/tests/helper';
+import { mailTestRender } from '../../../../helpers/tests/render';
 import { optimisticUpdateFlag } from '../../../../store/messages/optimistic/messagesOptimisticActions';
 import ExtraSpamScore from './ExtraSpamScore';
 
