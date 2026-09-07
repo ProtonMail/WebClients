@@ -44,6 +44,7 @@ import { DeviceSelect } from '../DeviceSelect/DeviceSelect';
 import { MicrophoneWithVolumeWithMicrophoneStateDirect } from '../MicrophoneWithVolume';
 import { ParticipantPlaceholder } from '../ParticipantPlaceholder/ParticipantPlaceholder';
 import { PrejoinBackgrounds } from '../PrejoinBackgrounds/PrejoinBackgrounds';
+import { PrejoinBackgroundsSheet } from '../PrejoinBackgrounds/PrejoinBackgroundsSheet';
 import { VideoPreview } from '../VideoPreview/VideoPreview';
 import { VideoSettingsDropdown } from '../VideoSettings/VideoSettingsDropdown';
 
@@ -224,6 +225,28 @@ export const DeviceSettings = ({
         setIsVideoSettingsOpen(false);
     };
 
+    const backgroundsButton = canSelectBackgrounds && (
+        <CircleButton
+            className="border white-border"
+            onClick={handleBackgroundsToggle}
+            IconComponent={IcImage}
+            variant={'transparent'}
+            noBorder={false}
+            buttonStyle={circleButtonStyle}
+            ariaLabel={backgroundsButtonLabel}
+            ariaPressed={isBackgroundsOpen}
+            ariaExpanded={isBackgroundsOpen}
+            disabled={!isBackgroundBlurSupported}
+            tooltipTitle={
+                isBackgroundBlurSupported
+                    ? backgroundsButtonLabel
+                    : c('Tooltip').t`Background effects are not supported on your browser`
+            }
+            tooltipClassName={isBackgroundBlurSupported ? 'meet-tooltip--nowrap' : undefined}
+            tooltipPlacement="top"
+        />
+    );
+
     return (
         <div
             className={clsx(
@@ -241,24 +264,26 @@ export const DeviceSettings = ({
                         {displayName}
                     </div>
                 )}
-                {isMobile() && initialCameraState && (
+                {isMobile() && (canSelectBackgrounds || initialCameraState) && (
+                    // The picker covers the bottom of the preview on mobile, so the buttons that
+                    // stay usable while it is open sit in the corner above it.
                     <div
-                        className="absolute right-custom top-custom z-up text-ellipsis"
-                        style={{ '--right-custom': '0.5rem', '--top-custom': '1.25rem' }}
+                        className="device-settings-preview-actions absolute right-custom top-custom z-up flex flex-column gap-2"
+                        style={{ '--right-custom': '1.25rem', '--top-custom': '1.25rem' }}
                     >
-                        <button
-                            className="flex items-center justify-center w-custom h-custom bg-weak rounded-full opacity-80"
-                            style={{
-                                '--w-custom': '2.25rem',
-                                '--h-custom': '2.25rem',
-                            }}
-                            aria-label={c('Alt').t`Rotate camera`}
-                            onClick={() => {
-                                handleRotateCamera();
-                            }}
-                        >
-                            <IcMeetRotateCamera />
-                        </button>
+                        {backgroundsButton}
+
+                        {initialCameraState && (
+                            <CircleButton
+                                className="border white-border"
+                                onClick={handleRotateCamera}
+                                IconComponent={IcMeetRotateCamera}
+                                variant={'transparent'}
+                                noBorder={false}
+                                buttonStyle={circleButtonStyle}
+                                ariaLabel={c('Alt').t`Rotate camera`}
+                            />
+                        )}
                     </div>
                 )}
 
@@ -312,7 +337,7 @@ export const DeviceSettings = ({
                     />
                 </div>
 
-                {canSelectBackgrounds && (
+                {!isMobile() && backgroundsButton && (
                     <div
                         className="absolute right-custom bottom-custom z-custom"
                         style={{
@@ -321,36 +346,20 @@ export const DeviceSettings = ({
                             '--z-custom': '2',
                         }}
                     >
-                        <CircleButton
-                            className="border white-border"
-                            onClick={handleBackgroundsToggle}
-                            IconComponent={IcImage}
-                            variant={'transparent'}
-                            noBorder={false}
-                            buttonStyle={circleButtonStyle}
-                            ariaLabel={backgroundsButtonLabel}
-                            ariaPressed={isBackgroundsOpen}
-                            ariaExpanded={isBackgroundsOpen}
-                            disabled={!isBackgroundBlurSupported}
-                            tooltipTitle={
-                                isBackgroundBlurSupported
-                                    ? backgroundsButtonLabel
-                                    : c('Tooltip').t`Background effects are not supported on your browser`
-                            }
-                            tooltipClassName={isBackgroundBlurSupported ? 'meet-tooltip--nowrap' : undefined}
-                            tooltipPlacement="top"
-                        />
+                        {backgroundsButton}
                     </div>
                 )}
             </div>
             <div className="relative">
-                {isBackgroundsOpen && (
-                    // On desktop the picker overlays the device selectors, which keeps the layout height stable.
-                    // On mobile there are no selectors underneath, so it has to take part in the normal flow.
-                    <div className={clsx(!isMobile() && 'absolute top-0 left-0 w-full')}>
-                        <PrejoinBackgrounds onClose={() => setIsBackgroundsOpen(false)} />
-                    </div>
-                )}
+                {isBackgroundsOpen &&
+                    (isMobile() ? (
+                        <PrejoinBackgroundsSheet onClose={() => setIsBackgroundsOpen(false)} />
+                    ) : (
+                        // The picker overlays the device selectors, which keeps the layout height stable.
+                        <div className="absolute top-0 left-0 w-full">
+                            <PrejoinBackgrounds onClose={() => setIsBackgroundsOpen(false)} />
+                        </div>
+                    ))}
                 {!isMobile() && (
                     <div
                         className="device-selectors flex flex-nowrap gap-2 mt-2"

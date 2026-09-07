@@ -3,6 +3,8 @@ import { useRef, useState } from 'react';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
+import './SlideClosable.scss';
+
 const CLOSE_THRESHOLD = 80;
 const MAX_DRAG = 300;
 
@@ -10,15 +12,37 @@ interface SlideClosableProps {
     className?: string;
     children: React.ReactNode;
     onClose: () => void;
+    /** A sheet rests on the bottom edge of the screen, a floating one hovers above it. */
+    variant?: 'floating' | 'sheet';
 }
 
-export const SlideClosable = ({ className, children, onClose }: SlideClosableProps) => {
+export const SlideClosable = ({ className, children, onClose, variant = 'floating' }: SlideClosableProps) => {
     const [dragY, setDragY] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
     const touchStartY = useRef<number>(0);
+    const wrapperRef = useRef<HTMLDivElement>(null);
+
+    // Swiping down over content that has been scrolled belongs to the scroll, not to the sheet.
+    const startsInsideScrolledContent = (target: EventTarget | null) => {
+        let element = target instanceof Element ? target : null;
+
+        while (element && element !== wrapperRef.current) {
+            if (element.scrollTop > 0) {
+                return true;
+            }
+
+            element = element.parentElement;
+        }
+
+        return false;
+    };
 
     const handleTouchStart = (e: React.TouchEvent) => {
+        if (startsInsideScrolledContent(e.target)) {
+            return;
+        }
+
         touchStartY.current = e.touches[0].clientY;
         setIsDragging(true);
     };
@@ -53,7 +77,12 @@ export const SlideClosable = ({ className, children, onClose }: SlideClosablePro
 
     return (
         <div
-            className={clsx('fixed bottom-0 left-0 w-full p-2 bg-transparent z-up', className)}
+            ref={wrapperRef}
+            className={clsx(
+                'fixed bottom-0 left-0 w-full z-up',
+                variant === 'sheet' ? 'slide-closable-sheet' : 'p-2 bg-transparent',
+                className
+            )}
             style={{
                 transform: `translateY(${isClosing ? '100%' : `${dragY}px`})`,
                 transition: isDragging ? 'none' : 'transform 0.3s ease-out',
