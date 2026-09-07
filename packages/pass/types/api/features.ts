@@ -18,7 +18,6 @@ export enum PassFeature {
     PassDesktopUnlock = 'PassDesktopUnlock',
     PassEnableDesktopAutoUpdate = 'PassEnableDesktopAutoUpdate',
     PassExtensionCustomTLDs = 'PassExtensionCustomTLDs',
-    PassExtensionOfflineV1 = 'PassExtensionOfflineV1',
     PassFileAttachmentsEssentialsUpsell = 'PassFileAttachmentsEssentialsUpsell',
     PassGroupInvitesV1 = 'PassGroupInvitesV1',
     PassHideShowVault = 'PassHideShowVault',
