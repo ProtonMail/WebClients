@@ -222,7 +222,6 @@ enum DocsFeatureFlag {
     SheetsCustomDateTimeFormatEnabled = 'SheetsCustomDateTimeFormatEnabled',
     SheetsActionsStorageEnabled = 'SheetsActionsStorageEnabled',
     SheetsTablesEnabled = 'SheetsTablesEnabled',
-    SheetsMountAfterInitialLoadDisabled = 'SheetsMountAfterInitialLoadDisabled',
     // Update compression and chunking
     DocsUpdateCompressionEnabled = 'DocsUpdateCompressionEnabled',
     DocsUpdateChunkingEnabled = 'DocsUpdateChunkingEnabled',

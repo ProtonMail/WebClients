@@ -18,7 +18,6 @@ export const StandaloneSheetsEditor = forwardRef(function StandaloneSheetsEditor
     editingLocked,
     updateLocalStateToLog,
     isPublicMode,
-    shouldUseCustomYjsInitialization,
   }: SpreadsheetProps,
   ref: ForwardedRef<SpreadsheetRef>,
 ) {
@@ -34,7 +33,6 @@ export const StandaloneSheetsEditor = forwardRef(function StandaloneSheetsEditor
         editingLocked={editingLocked}
         updateLocalStateToLog={updateLocalStateToLog}
         isPublicMode={isPublicMode}
-        shouldUseCustomYjsInitialization={shouldUseCustomYjsInitialization}
       />
     </SpreadsheetProvider>
   )
