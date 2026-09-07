@@ -43,8 +43,8 @@ export const rootCertificates: Map<KT_CERTIFICATE_ISSUER, string[]> = new Map([
  * See comment at the top of this file.
  */
 export const ctLogs ={
-  version: '89.11',
-  log_list_timestamp: '2026-08-07T13:38:19Z',
+  version: '90.7',
+  log_list_timestamp: '2026-09-07T13:35:45Z',
   operators: [
     {
       name: 'Google',
@@ -107,7 +107,7 @@ export const ctLogs ={
           submission_url: 'https://parcelyard2026h2.prod.certificate.transparency.goog/',
           monitoring_url: 'https://storage.googleapis.com/parcelyard2026h2.prod.certificate.transparency.goog/',
           mmd: 60,
-          state: { qualified: { timestamp: '2026-06-19T19:00:00Z' } },
+          state: { usable: { timestamp: '2026-08-31T13:50:00Z' } },
           temporal_interval: {
             start_inclusive: '2026-07-01T00:00:00Z',
             end_exclusive: '2027-01-01T00:00:00Z'
@@ -120,7 +120,7 @@ export const ctLogs ={
           submission_url: 'https://parcelyard2027h1.prod.certificate.transparency.goog/',
           monitoring_url: 'https://storage.googleapis.com/parcelyard2027h1.prod.certificate.transparency.goog/',
           mmd: 60,
-          state: { qualified: { timestamp: '2026-06-19T19:00:00Z' } },
+          state: { usable: { timestamp: '2026-08-31T13:50:00Z' } },
           temporal_interval: {
             start_inclusive: '2027-01-01T00:00:00Z',
             end_exclusive: '2027-07-01T00:00:00Z'
@@ -133,7 +133,7 @@ export const ctLogs ={
           submission_url: 'https://parcelyard2027h2.prod.certificate.transparency.goog/',
           monitoring_url: 'https://storage.googleapis.com/parcelyard2027h2.prod.certificate.transparency.goog/',
           mmd: 60,
-          state: { qualified: { timestamp: '2026-06-19T19:00:00Z' } },
+          state: { usable: { timestamp: '2026-08-31T13:50:00Z' } },
           temporal_interval: {
             start_inclusive: '2027-07-01T00:00:00Z',
             end_exclusive: '2028-01-01T00:00:00Z'
@@ -146,7 +146,7 @@ export const ctLogs ={
           submission_url: 'https://plumbersarms2026h2.prod.certificate.transparency.goog/',
           monitoring_url: 'https://storage.googleapis.com/plumbersarms2026h2.prod.certificate.transparency.goog/',
           mmd: 60,
-          state: { qualified: { timestamp: '2026-06-19T19:00:00Z' } },
+          state: { usable: { timestamp: '2026-08-31T13:50:00Z' } },
           temporal_interval: {
             start_inclusive: '2026-07-01T00:00:00Z',
             end_exclusive: '2027-01-01T00:00:00Z'
@@ -159,7 +159,7 @@ export const ctLogs ={
           submission_url: 'https://plumbersarms2027h1.prod.certificate.transparency.goog/',
           monitoring_url: 'https://storage.googleapis.com/plumbersarms2027h1.prod.certificate.transparency.goog/',
           mmd: 60,
-          state: { qualified: { timestamp: '2026-06-19T19:00:00Z' } },
+          state: { usable: { timestamp: '2026-08-31T13:50:00Z' } },
           temporal_interval: {
             start_inclusive: '2027-01-01T00:00:00Z',
             end_exclusive: '2027-07-01T00:00:00Z'
@@ -172,7 +172,7 @@ export const ctLogs ={
           submission_url: 'https://plumbersarms2027h2.prod.certificate.transparency.goog/',
           monitoring_url: 'https://storage.googleapis.com/plumbersarms2027h2.prod.certificate.transparency.goog/',
           mmd: 60,
-          state: { qualified: { timestamp: '2026-06-19T19:00:00Z' } },
+          state: { usable: { timestamp: '2026-08-31T13:50:00Z' } },
           temporal_interval: {
             start_inclusive: '2027-07-01T00:00:00Z',
             end_exclusive: '2028-01-01T00:00:00Z'
