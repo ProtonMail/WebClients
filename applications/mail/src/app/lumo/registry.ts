@@ -25,6 +25,7 @@ import { readOpenEmailModule } from './skills/reads/readOpenEmail';
 import { readThreadModule } from './skills/reads/readThread';
 import { searchModule } from './skills/reads/search';
 import { viewEmailsModule } from './skills/reads/viewEmails';
+import { readAutoReplyModule, setAutoReplyModule } from './skills/settings/autoReply';
 import { changeSettingsModule, readSettingsModule } from './skills/settings/cosmetic';
 import { openSupportTicketModule } from './skills/support/openSupportTicket';
 import type { MailToolDeps, MailToolModule } from './toolModule';
@@ -48,6 +49,7 @@ const MODULES: MailToolModule[] = [
     listFiltersModule,
     findContactsModule,
     readSettingsModule,
+    readAutoReplyModule,
     // Mutations
     moveEmailsModule,
     setStarredModule,
@@ -61,6 +63,7 @@ const MODULES: MailToolModule[] = [
     updateFilterModule,
     // Settings
     changeSettingsModule,
+    setAutoReplyModule,
     // Support
     openSupportTicketModule,
 ];
