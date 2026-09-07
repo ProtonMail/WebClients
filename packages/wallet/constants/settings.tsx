@@ -1,4 +1,6 @@
 import DropdownMenuLink from '@proton/components/components/dropdown/DropdownMenuLink';
+import { IcBrandAndroid } from '@proton/icons/icons/IcBrandAndroid';
+import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
 
 import { type WalletClient, WalletClientKeys } from '../types';
 
@@ -24,13 +26,13 @@ export const WALLET_SETTINGS_ROUTES = {
 export const WALLET_CLIENTS: { [key in WalletClientKeys]: WalletClient } = {
     [WalletClientKeys.Android]: {
         title: 'Android',
-        icon: 'brand-android',
+        icon: IcBrandAndroid,
         link: 'https://play.google.com/store/apps/details?id=me.proton.wallet.android&referrer=utm_source\%3Dproton.me\%26utm_medium\%3Dweb\%26utm_campaign\%3Dwa_set_btn',
         items: androidLinks,
     },
     [WalletClientKeys.iOS]: {
         title: 'iOS',
-        icon: 'brand-apple',
+        icon: IcBrandApple,
         link: 'https://apps.apple.com/app/apple-store/id6479609548?pt=106513916&ct=wa_set_btn&mt=8',
     },
 } as const;
