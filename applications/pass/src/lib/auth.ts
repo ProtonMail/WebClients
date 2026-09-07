@@ -26,6 +26,7 @@ import {
 import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { api } from '@proton/pass/lib/api/api';
+import { getIsApiUnavailable } from '@proton/pass/lib/api/utils';
 import { extractOfflineComponents, getStateKey } from '@proton/pass/lib/auth/fork';
 import { biometricsLockAdapterFactory, generateBiometricsKey } from '@proton/pass/lib/auth/lock/biometrics/adapter';
 import { passwordLockAdapterFactory } from '@proton/pass/lib/auth/lock/password/adapter';
@@ -60,7 +61,6 @@ import { logger } from '@proton/pass/utils/logger';
 import { objectHandler } from '@proton/pass/utils/object/handler';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { revoke } from '@proton/shared/lib/api/auth';
-import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
     getBasename,
@@ -564,7 +564,7 @@ export const createAuthService = ({
             await api.idle();
 
             /** Only advance the retry chain on server-side downtime */
-            const connectionIssue = getIsConnectionIssue(err);
+            const connectionIssue = getIsApiUnavailable(err);
             if (connectionIssue && connectivity.status === ConnectivityStatus.DOWNTIME) scheduler.attempt();
 
             /** Offline-booted: do not mutate app state on resume failures. */

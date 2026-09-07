@@ -1,3 +1,4 @@
+import { getIsApiUnavailable } from '@proton/pass/lib/api/utils';
 import {
     AccountForkResponse,
     extractOfflineComponents,
@@ -45,7 +46,6 @@ import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { deserialize } from '@proton/pass/utils/object/serialize';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
@@ -326,7 +326,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             if (!clientOffline(ctx.getState().status)) {
                 /** We do not rely on `connectivity` state on session failures in the case
                  * of partial downtime (eg: `/ping` returns 200 but `/auth` routes 5xx) */
-                const connectionIssue = getIsConnectionIssue(err);
+                const connectionIssue = getIsApiUnavailable(err);
                 const hasOfflineComponents = authStore.hasOfflineComponents();
                 const canOfflineUnlock = connectionIssue && hasOfflineComponents && (await isOfflineModeEnabled());
                 const unlocked = options.unlocked && authStore.validOfflineSession(authStore.getSession());
