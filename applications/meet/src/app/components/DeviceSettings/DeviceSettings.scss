@@ -7,6 +7,12 @@ im.$media-expressions: $media-expressions;
 .device-settings-container {
 	inline-size: 100%;
 
+	// The device selectors are not rendered on mobile, so their wrapper must not add a gap
+	// below the preview.
+	@include im.media('<=small') {
+		gap: 0;
+	}
+
 	@include im.media('>medium') {
 		inline-size: 35rem;
 		max-inline-size: 35rem;
@@ -46,23 +52,27 @@ im.$media-expressions: $media-expressions;
 	border-radius: 2rem;
 	font-weight: 500;
 	inline-size: 100%;
-	aspect-ratio: 16 / 9;
-	flex-grow: 1;
+	flex: 1;
 
 	@include im.media('>medium') {
 		inline-size: 35rem;
 		block-size: 19.25rem;
-		aspect-ratio: unset;
-		flex-grow: 0;
+		flex: 0 1 auto;
 	}
 
 	@include im.media('>large') {
 		inline-size: 41.69rem;
 		block-size: 23.25rem;
-		flex-grow: 0;
+		flex: 0 1 auto;
 	}
 }
 
 .white-border {
 	border-color: color-mix(in srgb, var(--background-invert), transparent 76%) !important;
+}
+
+// The corner buttons darken what is behind them, rather than laying the white film the transparent
+// variant uses against the app background elsewhere. Only rendered on mobile.
+.device-settings-preview-actions .circle-button-transparent {
+	--circle-button-bg: color-mix(in srgb, var(--interaction-weak-minor-3), transparent 60%);
 }
