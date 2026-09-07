@@ -23,6 +23,9 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { useCategoriesView } from '../../components/categoryView/useCategoriesView';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { isSearch } from '../../helpers/elements';
+import { getCustomViewFromRoute, isValidCustomViewLabel } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import {
     categoryIDFromUrl,
@@ -32,11 +35,6 @@ import {
     sortFromUrl,
     sortToString,
 } from '../../helpers/mailboxUrl';
-import { useMailDispatch, useMailSelector, useMailStore } from '../../store/hooks';
-
-import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { isSearch } from '../../helpers/elements';
-import { getCustomViewFromRoute, isValidCustomViewLabel } from '../../helpers/labels';
 import { pageCount } from '../../helpers/paging';
 import type { Element } from '../../models/element';
 import { conversationByID } from '../../store/conversations/conversationsSelectors';
@@ -65,6 +63,7 @@ import {
     totalReturned as totalReturnedSelector,
 } from '../../store/elements/elementsSelectors';
 import { getTotal } from '../../store/elements/helpers/elementTotal';
+import { useMailDispatch, useMailSelector, useMailStore } from '../../store/hooks';
 import { messageByID } from '../../store/messages/messagesSelectors';
 import type { MailState } from '../../store/store';
 import { useElementsEvents } from '../events/useElementsEvents';
@@ -162,8 +161,9 @@ export const useElements: UseElements = ({
     const disabledCategoriesIDs = useMailSelector(selectDisabledCategoriesIDs);
 
     const { esStatus } = useEncryptedSearchContext();
-    const { esEnabled } = esStatus;
+    const { esEnabled, dbExists } = esStatus;
     const esEnabledRef = useRef(esEnabled);
+    const dbExistsRef = useRef(dbExists);
 
     const counts = { counts: countValues, loading: countsLoading };
 
@@ -234,7 +234,12 @@ export const useElements: UseElements = ({
 
         // Define the core reset conditions
         const hasSearchKeywordChange = search.keyword !== stateParams.search.keyword;
-        const hasESEnabledChange = esEnabled !== esEnabledRef.current && isSearch(search);
+        // Both flags decide whether a search goes to the index or to the server (see `isES`), and they
+        // are read from IDB by different writers at startup - `esEnabled` by the ES config read,
+        // `dbExists` later by `initializeES`. Watching only the first means a search running in
+        // between is answered by the server and never retried against the index.
+        const hasESChange =
+            (esEnabled !== esEnabledRef.current || dbExists !== dbExistsRef.current) && isSearch(search);
         const hasPageJump = !pageIsConsecutive;
         const hasSortChange = sortToString(sort) !== sortToString(stateParams.sort);
 
@@ -242,7 +247,7 @@ export const useElements: UseElements = ({
             // Always reset for search keyword changes (even in newsletter view)
             hasSearchKeywordChange ||
             // For other changes, only reset if not in newsletter view
-            (!isNavigatingToNewsletterView && (hasESEnabledChange || hasPageJump || hasSortChange));
+            (!isNavigatingToNewsletterView && (hasESChange || hasPageJump || hasSortChange));
 
         /* When switching between encrypted and backend search, we have to reset the page in case the user is not on the first one
          * We have to do this BEFORE triggering a reset.
@@ -251,7 +256,7 @@ export const useElements: UseElements = ({
          * - Pass 1, page !== 0, navigate to page 0 and early return
          * - Pass 2, the location change triggers a reset, which is triggering a loading of the first page
          */
-        if (hasESEnabledChange && page !== 0) {
+        if (hasESChange && page !== 0) {
             onPage(0);
             return;
         }
@@ -273,6 +278,7 @@ export const useElements: UseElements = ({
         }
 
         esEnabledRef.current = esEnabled;
+        dbExistsRef.current = dbExists;
 
         if (shouldResetElementsState) {
             dispatch(
@@ -322,6 +328,7 @@ export const useElements: UseElements = ({
         mailSettings.ViewMode,
         labelIDs,
         esEnabled,
+        dbExists,
         onPage,
         isCategoryViewEnabled,
         disabledCategoriesIDs,

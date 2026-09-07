@@ -44,6 +44,12 @@ export interface ESDBStatusMail {
     dropdownOpened: boolean;
     temporaryToggleOff: boolean;
     lastContentTime: number;
+    /**
+     * Whether ES startup has settled, i.e. whether `dbExists` and `esEnabled` can be trusted. They are
+     * filled in asynchronously by `EncryptedSearchProvider`'s startup routine, so anything that decides
+     * between the index and the server (see `isES`) has to wait for this first.
+     */
+    isStartupSettled: boolean;
 }
 
 export interface EncryptedSearchFunctionsMail extends Pick<

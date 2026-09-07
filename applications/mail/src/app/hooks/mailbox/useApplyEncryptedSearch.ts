@@ -57,7 +57,7 @@ export const useApplyEncryptedSearch = ({
     const dispatch = useMailDispatch();
 
     const { esStatus, encryptedSearch } = useEncryptedSearchContext();
-    const { esEnabled } = esStatus;
+    const { esEnabled, isStartupSettled } = esStatus;
 
     const { sendPerformSearchReport } = useSearchTelemetry();
 
@@ -161,6 +161,14 @@ export const useApplyEncryptedSearch = ({
     };
 
     useEffect(() => {
+        // Until ES startup has settled, `esStatus` can't tell us whether this query belongs to the index
+        // or to the server. Searching now would hand it to the server and show those results for a beat
+        // before the index answers, so hold off - the flag flip re-runs this effect. The list shows its
+        // placeholders in the meantime.
+        if (!isStartupSettled) {
+            return;
+        }
+
         if (shouldLoadElements && isSearch(search)) {
             void executeSearch();
         }
@@ -172,5 +180,5 @@ export const useApplyEncryptedSearch = ({
             void runEncryptedSearch(messagesToLoadMoreES);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C75F36
-    }, [shouldLoadElements, messagesToLoadMoreES, search]);
+    }, [shouldLoadElements, messagesToLoadMoreES, search, isStartupSettled]);
 };
