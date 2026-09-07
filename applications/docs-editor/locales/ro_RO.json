@@ -471,6 +471,9 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Nu se poate converti documentul Word. Este protejat prin parolă? Dacă da, trebuie să eliminați parola și să reîncercați."
+      ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "Importul fișierului OpenDocument a eșuat din cauza unei erori necunoscute."
       ]
     },
     "Error message": {
@@ -2352,6 +2355,11 @@
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "Crearea de sugestii în interiorul blocurilor de cod nu este suportată."
+      ]
+    },
+    "sheets_2025:Sheet tab rename": {
+      "A sheet with this name already exists": [
+        "Există deja o foaie cu acest nume"
       ]
     }
   }
