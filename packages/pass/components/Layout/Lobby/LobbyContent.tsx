@@ -6,7 +6,6 @@ import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
-import noop from '@proton/utils/noop';
 
 import { PasswordVerification } from '../../../lib/auth/password';
 import type { AuthOptions } from '../../../lib/auth/service';
@@ -22,7 +21,6 @@ import {
 import { AppStatus, type Maybe } from '../../../types';
 import { useAuthStore } from '../../Core/AuthStoreProvider';
 import { useOnline } from '../../Core/ConnectivityProvider';
-import { usePassCore } from '../../Core/PassCoreProvider';
 import { BiometricsUnlock } from '../../Lock/BiometricsUnlock';
 import { DesktopUnlock } from '../../Lock/DesktopUnlock';
 import { PasswordConfirm } from '../../Lock/PasswordConfirm';
@@ -66,14 +64,15 @@ export const LobbyContent: FC<Props> = ({
     renderError,
     renderFooter,
 }) => {
-    const { settings } = usePassCore();
     const online = useOnline();
     const authStore = useAuthStore();
     const [criticalError, setCriticalError] = useState<Maybe<string>>(undefined);
     const [unlocking, setUnlocking] = useState(false);
-    const [offlineEnabled, setOfflineEnabled] = useState<Maybe<boolean>>(undefined);
 
-    const localID = authStore?.getLocalID();
+    /** Resolved from the crypto material rather than the `offlineEnabled` setting:
+     * synchronous, so the unlock form is never disabled while a read settles, and
+     * immune to a settings read failing into defaults that read as "disabled". */
+    const offlineEnabled = Boolean(authStore?.hasOfflineComponents());
 
     const hasExtraPassword = Boolean(authStore?.getExtraPassword());
     const isSSO = Boolean(authStore?.getSSO());
@@ -97,15 +96,6 @@ export const LobbyContent: FC<Props> = ({
             return () => clearTimeout(timer);
         }
     }, [stale, error]);
-
-    useEffect(() => {
-        (async () => {
-            if (localID !== undefined) {
-                const enabled = (await settings.resolve(localID))?.offlineEnabled ?? false;
-                setOfflineEnabled(enabled);
-            }
-        })().catch(noop);
-    }, [online, localID]);
 
     const brandNameJSX = <PassTextLogo key="pass-text-logo" className="pass-lobby--brand-text shrink-0 logo" />;
 
