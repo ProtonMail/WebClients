@@ -211,6 +211,93 @@ describe('useChat', () => {
             expect(getMessages(store)[0]).toEqual(expect.objectContaining({ seen: true }));
         });
 
+        it('should mark an incoming reply as seen when the chat is open and the thread was never collapsed', async () => {
+            const room = createMockRoom();
+            useRoomContextMock.mockReturnValue(room);
+
+            const event: ChatIncomingEventInfoData = {
+                kind: ChatEventKind.Message,
+                id: 'reply-1',
+                sender_participant_id: SENDER,
+                received_at_ms: 2_000n,
+                text: 'A reply',
+                topic_id: 'root-1',
+                in_reply_to_id: 'root-1',
+            } as ChatIncomingEventInfoData;
+
+            const store = createStore();
+            store.dispatch(toggleSideBarState(MeetingSideBars.Chat));
+            store.dispatch(
+                addChatMessages([
+                    {
+                        id: 'root-1',
+                        timestamp: 1_000,
+                        identity: SENDER,
+                        seen: true,
+                        message: 'Root message',
+                        type: 'message',
+                        topicId: 'root-1',
+                    },
+                ])
+            );
+            const client = createMeetCoreClient({ decodeChat: vi.fn().mockResolvedValue(event) });
+
+            renderHook(() => useChat(), { wrapper: createWrapper(store, client) });
+
+            const handler = getDataReceivedHandler(room);
+
+            await act(async () => {
+                await handler(encode({ type: 'message' }), participant);
+            });
+
+            expect(getMessages(store).find((m) => m.id === 'reply-1')).toEqual(expect.objectContaining({ seen: true }));
+        });
+
+        it('should leave an incoming reply unseen when its thread is collapsed', async () => {
+            const room = createMockRoom();
+            useRoomContextMock.mockReturnValue(room);
+
+            const event: ChatIncomingEventInfoData = {
+                kind: ChatEventKind.Message,
+                id: 'reply-1',
+                sender_participant_id: SENDER,
+                received_at_ms: 2_000n,
+                text: 'A reply',
+                topic_id: 'root-1',
+                in_reply_to_id: 'root-1',
+            } as ChatIncomingEventInfoData;
+
+            const store = createStore();
+            store.dispatch(toggleSideBarState(MeetingSideBars.Chat));
+            store.dispatch(
+                addChatMessages([
+                    {
+                        id: 'root-1',
+                        timestamp: 1_000,
+                        identity: SENDER,
+                        seen: true,
+                        message: 'Root message',
+                        type: 'message',
+                        topicId: 'root-1',
+                        expanded: false,
+                    },
+                ])
+            );
+            const client = createMeetCoreClient({ decodeChat: vi.fn().mockResolvedValue(event) });
+
+            renderHook(() => useChat(), { wrapper: createWrapper(store, client) });
+
+            const handler = getDataReceivedHandler(room);
+
+            await act(async () => {
+                await handler(encode({ type: 'message' }), participant);
+            });
+
+            expect(getMessages(store).find((m) => m.id === 'reply-1')).toEqual(
+                expect.objectContaining({ seen: false })
+            );
+        });
+
         it('should add a reaction to an existing message', async () => {
             const room = createMockRoom();
             useRoomContextMock.mockReturnValue(room);
