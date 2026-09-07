@@ -1,4 +1,18 @@
 /**
+ * The spam guard every Proton Sieve script must carry, verbatim: without it a user's filters run on spam
+ * too, so spam can be filed into normal folders, flagged or auto-replied to. Exported because the guide
+ * below and the filter tools' examples must all show the SAME bytes — five hand-kept copies is how one of
+ * them silently goes stale and starts teaching the model a guard that no longer matches. The `require`
+ * line is deliberately NOT part of this: it varies as extensions are merged into it.
+ */
+export const SIEVE_SPAM_GUARD = `# Generated: Do not run this script on spam messages
+if allof (environment :matches "vnd.proton.spam-threshold" "*",
+spamtest :value "ge" :comparator "i;ascii-numeric" "\${1}")
+{
+    return;
+}`;
+
+/**
  * The complete Proton-Sieve dialect reference — the full set of supported extensions, tests,
  * actions, match types and worked examples. This is the single source of truth for the dialect,
  * shared verbatim by every Lumo Sieve surface, so it must never invent syntax not listed here.
@@ -18,12 +32,7 @@ Every Proton Sieve script begins with this fixed prologue. It MUST always be pre
 \`\`\`sieve
 require ["include", "environment", "variables", "relational", "comparator-i;ascii-numeric", "spamtest"];
 
-# Generated: Do not run this script on spam messages
-if allof (environment :matches "vnd.proton.spam-threshold" "*",
-spamtest :value "ge" :comparator "i;ascii-numeric" "\${1}")
-{
-    return;
-}
+${SIEVE_SPAM_GUARD}
 \`\`\`
 Rules for this prologue:
 - By default it stays, unchanged. Never reorder, rewrite or "tidy" it, and never drop it on your own initiative.
@@ -86,6 +95,7 @@ Rules for this prologue:
 ═══════════════════════════════════════
 - :is — exact match (default).
 - :contains — substring present.
+- Choosing between them FOR A SENDER: use :is only with a complete address ("news@example.com"). When the user names a sender by brand or company ("Substack", "Ryanair", "Proton"), use :contains with a lowercase fragment, or :domain :is with the domain. :is against a bare name compares it to the WHOLE address, so it can never match and the filter silently never fires.
 - :matches — wildcard: \`*\` = zero or more chars, \`?\` = exactly one char. To match a literal star or question mark, escape it: \`\\*\` and \`\\?\`. Captured groups are exposed as variables \`\${1}\`, \`\${2}\`, ... and \`\${0}\` = the whole match (requires variables).
 - :regex — POSIX-style regular expression (requires regex). UNSUPPORTED shorthands: \`\\b\`, \`\\w\`, \`\\W\`, \`\\d\` — use explicit classes like \`[0-9]\` instead. Captures also populate \`\${1}\`, \`\${2}\`...
 - :value "<op>" / :count "<op>" (requires relational) — ordered comparison. Operators: "gt", "ge", "eq", "le", "lt". :count compares the NUMBER of matching fields. Add :comparator "i;ascii-numeric" (which also requires comparator-i;ascii-numeric) whenever the values are NUMBERS, or they are compared as text and "10" sorts below "5". The exception is the whole-date parts "date"/"time"/"std11" of §8, where the default comparator is correct because \`yyyy-mm-dd\` already sorts in date order.
@@ -147,12 +157,7 @@ Flag + file by sender — full output, prologue preserved and extensions merged 
 \`\`\`sieve
 require ["include", "environment", "variables", "relational", "comparator-i;ascii-numeric", "spamtest", "fileinto", "imap4flags"];
 
-# Generated: Do not run this script on spam messages
-if allof (environment :matches "vnd.proton.spam-threshold" "*",
-spamtest :value "ge" :comparator "i;ascii-numeric" "\${1}")
-{
-    return;
-}
+${SIEVE_SPAM_GUARD}
 
 if address :is "from" "sender@example.com" {
     addflag "\\\\Flagged";

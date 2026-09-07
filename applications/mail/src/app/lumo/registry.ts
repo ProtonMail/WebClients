@@ -7,6 +7,7 @@ import type { ToolDefinition, ToolHandlers } from '@proton/llm/lib/lumoAgent/con
 import { createLoadGuideDefinition } from '@proton/llm/lib/lumoAgent/engine/loadGuide';
 
 import { MAIL_RULES } from './rules';
+import { createFilterModule } from './skills/filters/createFilter';
 import { updateFilterModule } from './skills/filters/updateFilter';
 import { applyLabelsModule } from './skills/organise/applyLabels';
 import { createFolderModule, createLabelModule } from './skills/organise/createEntity';
@@ -62,6 +63,7 @@ const MODULES: MailToolModule[] = [
     snoozeEmailsModule,
     renameFolderModule,
     // Filters
+    createFilterModule,
     updateFilterModule,
     // Settings
     changeSettingsModule,
