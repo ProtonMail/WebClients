@@ -11,6 +11,7 @@ import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import type { NotificationsManager } from '@proton/app-context/notifications/manager';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account/guest';
 import { FeatureCode, fetchFeatures } from '@proton/features/index';
+import { setMeetCoreErrorResolver } from '@proton/meet/hooks/useMeetErrorReporting';
 import { meetEventLoop } from '@proton/meet/store/meetEventLoop';
 import type { MeetDispatch, MeetExtraThunkArguments, MeetState, MeetStore } from '@proton/meet/store/store';
 import { setupStore } from '@proton/meet/store/store';
@@ -46,7 +47,10 @@ import { installWaitingRoomCallbackNamespaces } from './utils/wasmUtils';
 import { DirectMeetCoreClient } from './wasm/DirectMeetCoreClient';
 import type { MeetCoreClient } from './wasm/MeetCoreClient';
 import { MeetCoreWorkerClient } from './wasm/MeetCoreWorkerClient';
+import { getMeetCoreErrorName } from './wasm/meetCoreError';
 import type { MeetCoreInitParams } from './wasm/meetCoreWorkerProtocol';
+
+setMeetCoreErrorResolver(getMeetCoreErrorName);
 
 const MEET_CORE_WORKER_FLAG = 'MeetCoreWorker';
 const MEET_USE_CACHED_SERVER_TIME_FLAG = 'MeetUseCachedServerTime';
