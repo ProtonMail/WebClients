@@ -29,6 +29,7 @@ import { searchModule } from './skills/reads/search';
 import { viewEmailsModule } from './skills/reads/viewEmails';
 import { readAutoReplyModule, setAutoReplyModule } from './skills/settings/autoReply';
 import { changeSettingsModule, readSettingsModule } from './skills/settings/cosmetic';
+import { changeSignatureModule, readSignatureModule } from './skills/settings/signature';
 import { openSupportTicketModule } from './skills/support/openSupportTicket';
 import type { MailToolDeps, MailToolModule } from './toolModule';
 
@@ -52,6 +53,7 @@ const MODULES: MailToolModule[] = [
     findContactsModule,
     readSettingsModule,
     readAutoReplyModule,
+    readSignatureModule,
     // Mutations
     moveEmailsModule,
     setStarredModule,
@@ -68,6 +70,7 @@ const MODULES: MailToolModule[] = [
     // Settings
     changeSettingsModule,
     setAutoReplyModule,
+    changeSignatureModule,
     // Support
     openSupportTicketModule,
 ];
