@@ -1,4 +1,4 @@
-import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getIs401Error, getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import type { Maybe, MaybeNull } from '../../types';
@@ -33,6 +33,12 @@ export const getSilenced = ({ silence }: ApiOptions = {}, code: string | number)
  * screen is skipped and the user lands on an error state. */
 export const getIsApiUnavailable = (err: unknown) =>
     getIsConnectionIssue(err) || (err as { status?: number })?.status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS;
+
+/** Gates the offline fallback: only a dead session refuses it. Listing what we
+ * refuse rather than what we accept keeps it right for unseen outage shapes.
+ * 422 is unlisted on purpose: a refresh route 422 becomes `InactiveSessionError` in
+ * `handlers.ts` before reaching here, and any other 422 must not kill the session. */
+export const getIsSessionInvalid = (err: unknown) => getIs401Error(err);
 
 export const isAccessRestricted = (code: number, url?: string) =>
     (code === PassErrorCode.MISSING_ORG_2FA || code === PassErrorCode.NOT_ALLOWED) &&
