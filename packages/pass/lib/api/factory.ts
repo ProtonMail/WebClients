@@ -34,6 +34,7 @@ import { waitUntil } from '../../utils/fp/wait-until';
 import { logger } from '../../utils/logger';
 import { createPubSub } from '../../utils/pubsub/factory';
 import { authStore } from '../auth/store';
+import { withQARefreshStatus } from '../qa/api';
 import { PassErrorCode, isAbortError } from './errors';
 import { withApiHandlers } from './handlers';
 import { refreshHandlerFactory } from './refresh';
@@ -69,7 +70,7 @@ export const createApi = ({
     const pubsub = createPubSub<ApiSubscriptionEvent>();
     const clientID = getClientID(config.APP_NAME);
 
-    const call = configureApi({ ...config, clientID, protonFetch } as any) as ApiCallFn;
+    const call = withQARefreshStatus(configureApi({ ...config, clientID, protonFetch } as any) as ApiCallFn);
 
     const refreshHandler = refreshHandlerFactory({
         call,
