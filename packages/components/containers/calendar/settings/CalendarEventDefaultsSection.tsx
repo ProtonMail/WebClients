@@ -6,6 +6,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { updateCalendarSettings } from '@proton/shared/lib/api/calendars';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { modelToNotifications } from '@proton/shared/lib/calendar/alarms/modelToNotifications';
@@ -200,7 +201,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
                                 notifications={model.partDayNotifications}
                                 canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
                                 disabled={loadingSavePartDayNotifications || cannotEdit}
-                                addIcon="plus"
+                                addIcon={IcPlus}
                                 defaultNotification={getDefaultModel().defaultPartDayNotification}
                                 onChange={(notifications: NotificationModel[]) => {
                                     setModel({
@@ -241,7 +242,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
                         notifications={model.fullDayNotifications}
                         canAdd={model.fullDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
                         disabled={loadingSaveFullDayNotifications || cannotEdit}
-                        addIcon="plus"
+                        addIcon={IcPlus}
                         defaultNotification={getDefaultModel().defaultFullDayNotification}
                         onChange={(notifications: NotificationModel[]) => {
                             setModel({

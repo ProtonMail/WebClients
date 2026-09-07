@@ -8,6 +8,10 @@ import {
 } from '@proton/account';
 import { useApi } from '@proton/app-context/useApi';
 import { FeatureCode, useFeature } from '@proton/features';
+import { IcMobile } from '@proton/icons/icons/IcMobile';
+import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
+import { IcStorage } from '@proton/icons/icons/IcStorage';
+import { IcUser } from '@proton/icons/icons/IcUser';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -58,7 +62,7 @@ const AccountSecurity = () => {
                                             .t`To ensure highest possible security of your account, set a recovery phrase.`}
                                         critical
                                         isDanger
-                                        icon="speech-bubble"
+                                        icon={IcSpeechBubble}
                                         path="/recovery#account"
                                     />
                                 )}
@@ -67,7 +71,7 @@ const AccountSecurity = () => {
                                         title={c('Title').t`Enable 2FA`}
                                         description={c('Description')
                                             .t`2FA adds an extra security layer, preventing unauthorized access.`}
-                                        icon="mobile"
+                                        icon={IcMobile}
                                         path="/account-password#two-fa"
                                         isDismissible
                                         onClick={() => {
@@ -108,7 +112,7 @@ const AccountSecurity = () => {
                                         description={c('Description')
                                             .t`Set a recovery method to prevent losing access to your account.`}
                                         critical
-                                        icon="user"
+                                        icon={IcUser}
                                         path="/recovery#account"
                                         onClick={() => {
                                             void sendSecurityCenterReport(api, {
@@ -124,7 +128,7 @@ const AccountSecurity = () => {
                                         description={c('Description')
                                             .t`Set a data recovery method to prevent data loss.`}
                                         critical
-                                        icon="storage"
+                                        icon={IcStorage}
                                         path="/recovery#data"
                                         onClick={() => {
                                             void sendSecurityCenterReport(api, {
@@ -139,7 +143,7 @@ const AccountSecurity = () => {
                                         title={c('Title').t`Enable 2FA`}
                                         description={c('Description')
                                             .t`2FA adds an extra security layer, preventing unauthorized access.`}
-                                        icon="mobile"
+                                        icon={IcMobile}
                                         path="/account-password#two-fa"
                                         isDismissible
                                         onClick={() => {

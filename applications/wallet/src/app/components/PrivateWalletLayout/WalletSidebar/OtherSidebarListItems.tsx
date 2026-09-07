@@ -19,7 +19,9 @@ import {
     SidebarListItemSettingsLink,
     useModalState,
 } from '@proton/components';
-import useToggle from '@proton/hooks/useToggle'
+import useToggle from '@proton/hooks/useToggle';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
 import { PLANS } from '@proton/payments/core/constants';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import clsx from '@proton/utils/clsx';
@@ -119,13 +121,12 @@ export const OtherSidebarListItems = () => {
                         right={
                             <SidebarExpandButton
                                 className="wallet-expand-button color-hint"
-                                size={4}
                                 title={c('Wallet Sidebar').t`Expand user settings`}
                                 expanded={showSettings}
                                 onClick={() => toggleShowSettings()}
                                 pill
-                                iconCollapsed="chevron-down"
-                                iconExpanded="chevron-up"
+                                iconCollapsed={<IcChevronDown size={4} />}
+                                iconExpanded={<IcChevronUp size={4} />}
                             />
                         }
                         className="sidebar-item-content flex gap-2 w-full"
