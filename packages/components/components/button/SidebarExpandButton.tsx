@@ -1,9 +1,10 @@
+import type { ReactElement } from 'react';
+
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
+import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
+import { IcChevronRightFilled } from '@proton/icons/icons/IcChevronRightFilled';
 import clsx from '@proton/utils/clsx';
-
-import type { IconProps } from '../icon/Icon';
-import Icon from '../icon/Icon';
 
 interface Props {
     title: string;
@@ -11,10 +12,9 @@ interface Props {
     expanded: boolean;
     onClick: () => void;
     style?: React.CSSProperties;
-    size?: IconProps['size'];
     pill?: ButtonProps['pill'];
-    iconCollapsed?: IconProps['name'];
-    iconExpanded?: IconProps['name'];
+    iconCollapsed?: ReactElement;
+    iconExpanded?: ReactElement;
 }
 
 export default function SidebarExpandButton({
@@ -23,10 +23,9 @@ export default function SidebarExpandButton({
     expanded,
     onClick,
     style,
-    size,
     pill,
-    iconCollapsed = 'chevron-right-filled',
-    iconExpanded = 'chevron-down-filled',
+    iconCollapsed = <IcChevronRightFilled />,
+    iconExpanded = <IcChevronDownFilled />,
 }: Props) {
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
@@ -47,7 +46,10 @@ export default function SidebarExpandButton({
             data-testid={expanded ? 'sidebar-expanded-folder' : 'sidebar-expand-folder'}
             pill={pill}
         >
-            <Icon size={size} name={expanded ? iconExpanded : iconCollapsed} alt={title} />
+            <>
+                {expanded ? iconExpanded : iconCollapsed}
+                <span className="sr-only">{title}</span>
+            </>
         </Button>
     );
 }

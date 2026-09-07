@@ -3,13 +3,12 @@ import type { ComponentProps } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import type { IconComponent } from '@proton/icons/component';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
-import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
-import Icon from '../../../../icon/Icon';
 import SettingsLink from '../../../../link/SettingsLink';
 
 import './AccountSecurityCard.scss';
@@ -19,7 +18,7 @@ interface Props {
     title: string;
     path: ComponentProps<typeof SettingsLink>['path'];
     description?: string;
-    icon: IconName;
+    icon: IconComponent;
     isDismissible?: boolean;
     isDanger?: boolean; //for sentinel user
     className?: string;
@@ -31,7 +30,7 @@ const AccountSecurityCard = ({
     critical,
     title,
     description,
-    icon,
+    icon: Icon,
     isDismissible,
     path,
     className,
@@ -56,7 +55,7 @@ const AccountSecurityCard = ({
             >
                 <span className="flex flex-nowrap items-start">
                     <span className="ratio-square rounded flex security-card-icon-container relative">
-                        <Icon name={icon} className="m-auto color-info" alt={iconAltText} />
+                        <Icon className="m-auto color-info" alt={iconAltText} />
                         {critical && (
                             <IcExclamationCircleFilled
                                 className={clsx(

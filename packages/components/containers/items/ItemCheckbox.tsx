@@ -1,14 +1,12 @@
-import type { ChangeEvent, FocusEventHandler, MouseEventHandler } from 'react';
+import type { ChangeEvent, FocusEventHandler, MouseEventHandler, ReactElement } from 'react';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import type { IconName } from '@proton/icons/types';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { toValidHtmlId } from '@proton/shared/lib/dom/toValidHtmlId';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import Icon from '../../components/icon/Icon';
 import Checkbox from '../../components/input/Checkbox';
 import ContactImage from '../contacts/ContactImage';
 
@@ -46,7 +44,7 @@ interface Props {
     ID?: string;
     name?: string;
     email?: string;
-    iconName?: IconName;
+    icon?: ReactElement;
     color?: string;
     compactClassName?: string;
     normalClassName?: string;
@@ -61,7 +59,7 @@ const ItemCheckbox = ({
     ID = '',
     name = '',
     email = '',
-    iconName,
+    icon,
     color,
     compactClassName,
     normalClassName,
@@ -125,8 +123,8 @@ const ItemCheckbox = ({
                 aria-hidden="true"
             >
                 <span className="m-auto item-abbr rounded overflow-hidden" aria-hidden="true">
-                    {iconName ? (
-                        <Icon name={iconName} color="white" />
+                    {icon ? (
+                        icon
                     ) : (
                         <ContactImage
                             email={email}

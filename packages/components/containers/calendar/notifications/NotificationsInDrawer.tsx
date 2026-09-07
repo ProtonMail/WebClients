@@ -1,5 +1,5 @@
 import { Button } from '@proton/atoms/Button/Button';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 import type { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 import addItem from '@proton/utils/addItem';
 import clsx from '@proton/utils/clsx';
@@ -7,7 +7,6 @@ import generateUID from '@proton/utils/generateUID';
 import removeItem from '@proton/utils/removeIndex';
 import updateItem from '@proton/utils/updateItem';
 
-import Icon from '../../../components/icon/Icon';
 import getNotificationsTexts from './getNotificationsTexts';
 import NotificationInputInDrawer from './inputs/NotificationInputInDrawer';
 
@@ -18,7 +17,7 @@ interface Props {
     hasType?: boolean;
     fullWidth?: boolean;
     canAdd?: boolean;
-    addIcon?: IconName;
+    addIcon?: IconComponent;
     defaultNotification: NotificationModel;
     disabled?: boolean;
     onChange: (value: NotificationModel[]) => void;
@@ -31,7 +30,7 @@ const NotificationsInDrawer = ({
     hasType,
     fullWidth = true,
     canAdd = true,
-    addIcon,
+    addIcon: AddIcon,
     defaultNotification,
     disabled,
     onChange,
@@ -60,8 +59,8 @@ const NotificationsInDrawer = ({
                 <div className={clsx(['mb-2', notifications.length === 0 && 'mt-2'])}>
                     <Button
                         className="p-0"
-                        shape={addIcon ? 'ghost' : 'underline'}
-                        color={addIcon ? 'weak' : 'norm'}
+                        shape={AddIcon ? 'ghost' : 'underline'}
+                        color={AddIcon ? 'weak' : 'norm'}
                         data-testid="add-notification"
                         title={addNotificationTitle}
                         disabled={disabled}
@@ -71,9 +70,9 @@ const NotificationsInDrawer = ({
                             )
                         }
                     >
-                        {addIcon ? (
+                        {AddIcon ? (
                             <span className="flex flex-nowrap w-full items-center">
-                                <Icon name={addIcon} className="mr-2 self-center my-auto" />
+                                <AddIcon className="mr-2 self-center my-auto" />
                                 {addNotificationText}
                             </span>
                         ) : (
