@@ -1,21 +1,10 @@
-import { useEffect } from 'react';
-
 import { c } from 'ttag';
 
-import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectPendingBackgroundEffect } from '@proton/meet/store/slices/backgroundSlice';
-
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
-import { useBackgroundEffectsContext } from '../../contexts/BackgroundEffects/BackgroundEffectsContext';
-import { useAppliedBackgroundEffect } from '../../contexts/BackgroundEffects/useAppliedBackgroundEffect';
 import { useIsBackgroundEffectsSupported } from '../../contexts/BackgroundEffects/useIsBackgroundEffectsSupported';
 import { BackgroundOptionGroup } from '../Backgrounds/BackgroundOptionGroup';
-import {
-    getBackgroundEffectOptions,
-    getUnsupportedBackgroundEffectsNotice,
-    getVirtualBackgroundOptions,
-} from '../Backgrounds/backgroundOptions';
-import { useCustomBackgroundTiles } from '../Backgrounds/useCustomBackgroundTiles';
+import { getUnsupportedBackgroundEffectsNotice } from '../Backgrounds/backgroundOptions';
+import { usePrejoinBackgroundOptions } from './usePrejoinBackgroundOptions';
 
 import './PrejoinBackgrounds.scss';
 
@@ -24,27 +13,10 @@ interface PrejoinBackgroundsProps {
 }
 
 export const PrejoinBackgrounds = ({ onClose }: PrejoinBackgroundsProps) => {
-    const appliedBackgroundEffect = useAppliedBackgroundEffect();
-    const pendingBackgroundEffect = useMeetSelector(selectPendingBackgroundEffect);
-
     const isBackgroundBlurSupported = useIsBackgroundEffectsSupported();
-    const { selectBackgroundEffect } = useBackgroundEffectsContext();
-    const {
-        options: customBackgroundOptions,
-        renderActionTile,
-        ensureLoaded,
-    } = useCustomBackgroundTiles({ className: 'prejoin-backgrounds-option' });
 
-    // Mounted only while the picker is open, so this is the moment Drive is worth asking.
-    useEffect(() => {
-        ensureLoaded();
-    }, [ensureLoaded]);
-
-    const selectedEffect = pendingBackgroundEffect ?? appliedBackgroundEffect;
-
-    const effectOptions = getBackgroundEffectOptions();
-
-    const options = [...effectOptions, ...customBackgroundOptions, ...getVirtualBackgroundOptions()];
+    const { options, actionTileIndex, renderActionTile, selectedEffect, pendingEffect, onSelect } =
+        usePrejoinBackgroundOptions({ tileClassName: 'prejoin-backgrounds-option' });
 
     return (
         <div className="prejoin-backgrounds flex flex-column flex-nowrap items-start gap-2 self-stretch p-2 mt-2 border meet-radius">
@@ -58,14 +30,12 @@ export const PrejoinBackgrounds = ({ onClose }: PrejoinBackgroundsProps) => {
                     label={c('Aria').t`Backgrounds`}
                     options={options}
                     selectedEffect={selectedEffect}
-                    pendingEffect={pendingBackgroundEffect}
-                    onSelect={(effect) => {
-                        void selectBackgroundEffect(effect);
-                    }}
+                    pendingEffect={pendingEffect}
+                    onSelect={onSelect}
                     className="prejoin-backgrounds-options flex flex-nowrap gap-2"
                     tileClassName="prejoin-backgrounds-option"
                     renderActionTile={renderActionTile}
-                    actionTileIndex={effectOptions.length}
+                    actionTileIndex={actionTileIndex}
                 />
             ) : (
                 <p className="m-0 px-2 w-full text-sm color-weak">{getUnsupportedBackgroundEffectsNotice()}</p>

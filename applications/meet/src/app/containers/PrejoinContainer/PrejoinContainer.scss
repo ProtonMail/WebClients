@@ -4,12 +4,34 @@
 im.$breakpoints: $breakpoints;
 im.$media-expressions: $media-expressions;
 
+// The prejoin page sits closer to the screen edges than the other meet pages, so it does not use
+// `.meet-container-padding-x`.
+.prejoin-padding-x {
+	padding-inline: var(--space-4);
+
+	@include im.media('>medium') {
+		padding-inline: var(--space-8);
+	}
+}
+
 .prejoin-container {
 	padding-inline: var(--space-4);
 	padding-block-end: var(--space-4);
 	flex: 1 0 auto;
 
+	@include im.media('<=small') {
+		padding-block-end: var(--space-1);
+	}
+
 	@include im.media('>medium') {
 		padding-inline: 0;
+	}
+}
+
+.prejoin-container-content {
+	flex: 1 0 auto;
+
+	@include im.media('>medium') {
+		flex: 0 1 auto;
 	}
 }
