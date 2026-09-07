@@ -120,5 +120,3 @@ export const useAlwaysOnPolicyTelemetry = () => {
         sendClientDownloadClickedReport,
     };
 };
-
-export default useAlwaysOnPolicyTelemetry;
