@@ -8,17 +8,12 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { PROMPT_PIN } from '@proton/shared/lib/mail/mailSettings';
 
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/tests/crypto';
-import {
-    addApiMock,
-    clearAll,
-    generateKeys,
-    getCompleteAddress,
-    mailTestRender,
-    minimalCache,
-    tick,
-} from '../../../../helpers/tests/helper';
+import { addApiMock } from '../../../../helpers/tests/api';
+import { getCompleteAddress, minimalCache } from '../../../../helpers/tests/cache';
+import { generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/tests/crypto';
+import { clearAll } from '../../../../helpers/tests/helper';
 import { message } from '../../../../helpers/tests/pinKeys';
+import { mailTestRender, tick } from '../../../../helpers/tests/render';
 import ExtraPinKey from './ExtraPinKey';
 
 const ownEmailAddress = 'sender@protonmail.com';

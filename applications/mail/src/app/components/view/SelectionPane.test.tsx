@@ -5,7 +5,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
 import { getElementContextIdentifier } from '../../helpers/elements';
-import { mailTestRender } from '../../helpers/tests/helper';
+import { mailTestRender } from '../../helpers/tests/render';
 import { newElementsState } from '../../store/elements/elementsSlice';
 import SelectionPane from './SelectionPane';
 

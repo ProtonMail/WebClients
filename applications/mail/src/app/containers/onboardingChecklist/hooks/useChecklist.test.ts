@@ -1,7 +1,8 @@
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { ChecklistType } from '@proton/shared/lib/interfaces';
 
-import { addApiMock, renderHook } from '../../../helpers/tests/helper';
+import { addApiMock } from '../../../helpers/tests/api';
+import { renderHook } from '../../../helpers/tests/render';
 import useChecklist from './useChecklist';
 
 const getChecklist = jest.fn(() => {

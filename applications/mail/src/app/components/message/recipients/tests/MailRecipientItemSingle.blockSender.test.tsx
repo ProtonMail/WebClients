@@ -8,15 +8,10 @@ import { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
 import type { IncomingDefault, MailSettings, Recipient } from '@proton/shared/lib/interfaces';
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 
-import {
-    addApiMock,
-    clearAll,
-    getCompleteAddress,
-    getDropdown,
-    mailTestRender,
-    minimalCache,
-    waitForNotification,
-} from '../../../../helpers/tests/helper';
+import { addApiMock } from '../../../../helpers/tests/api';
+import { getCompleteAddress, minimalCache } from '../../../../helpers/tests/cache';
+import { clearAll, getDropdown, waitForNotification } from '../../../../helpers/tests/helper';
+import { mailTestRender } from '../../../../helpers/tests/render';
 import { loadIncomingDefaults } from '../../../../store/incomingDefaults/incomingDefaultsActions';
 import MailRecipientItemSingle from '../MailRecipientItemSingle';
 
