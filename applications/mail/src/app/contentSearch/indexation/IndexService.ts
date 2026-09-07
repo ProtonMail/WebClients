@@ -22,7 +22,7 @@ export class IndexService {
     public readonly dbLock = new DatabaseLock();
 
     constructor(
-        private readonly userId: string,
+        public readonly userId: string,
         private readonly getUserKeys: () => Promise<DecryptedKey<PrivateKeyReference>[]>,
         private readonly logger: Logger
     ) {}
@@ -127,6 +127,9 @@ export class IndexService {
     }
 
     async deleteIndex(): Promise<void> {
+        // Cancel any running import to avoid blocked connections
+        this.importHandle?.value?.stop();
+
         await deleteContentSearchDB(this.userId);
     }
 }
@@ -141,4 +144,10 @@ export function getSharedIndexService(
         sharedIndexService = new IndexService(userId, getUserKeys, logger);
     }
     return sharedIndexService;
+}
+/**
+ * Gets the sharedIndexService for the given user, if it exists.
+ */
+export function getExistingIndexService(userId: string): IndexService | undefined {
+    return sharedIndexService?.userId === userId ? sharedIndexService : undefined;
 }
