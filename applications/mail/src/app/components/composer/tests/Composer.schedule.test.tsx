@@ -24,7 +24,8 @@ import { getFeatureFlagsState } from '@proton/testing/lib/features';
 import { getMinScheduleTime } from '../../../helpers/schedule';
 import { addApiMock } from '../../../helpers/tests/api';
 import { minimalCache } from '../../../helpers/tests/cache';
-import { addApiKeys, clearAll, getDropdown } from '../../../helpers/tests/helper';
+import { addApiKeys } from '../../../helpers/tests/crypto';
+import { clearAll, getDropdown } from '../../../helpers/tests/helper';
 import type { MailState } from '../../../store/store';
 import { ID, getMessage, renderComposer } from './Composer.test.helpers';
 

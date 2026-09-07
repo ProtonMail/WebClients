@@ -7,7 +7,9 @@ import { pick } from '@proton/shared/lib/helpers/object';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { addApiMock, clearAll, getDropdown, mailTestRender, tick } from '../../../helpers/tests/helper';
+import { addApiMock } from '../../../helpers/tests/api';
+import { clearAll, getDropdown } from '../../../helpers/tests/helper';
+import { mailTestRender, tick } from '../../../helpers/tests/render';
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { addComposerAction } from '../../../store/composers/composerActions';
 import type { MailStore } from '../../../store/store';

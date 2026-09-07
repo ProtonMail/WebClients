@@ -1,6 +1,6 @@
+import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
 import type { MessageImage, MessageImages, MessageState } from '@proton/mail/store/messages/messagesTypes';
 
-import { parseDOMStringToBodyElement } from '../tests/helper';
 import { removeProxyURLAttributes, replaceProxyWithOriginalURLAttributes } from './messageImages';
 
 const imageURL = 'imageURL';

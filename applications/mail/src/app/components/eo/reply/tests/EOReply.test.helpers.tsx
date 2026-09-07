@@ -1,9 +1,10 @@
 import type { RenderResult } from '@testing-library/react';
 import { fireEvent } from '@testing-library/react';
 
+import { addApiMock } from '../../../../helpers/tests/api';
 import { EORender } from '../../../../helpers/tests/eo/EORender';
 import type { EOOriginalMessageOptions } from '../../../../helpers/tests/eo/helpers';
-import { addApiMock, waitForNoNotification, waitForNotification } from '../../../../helpers/tests/helper';
+import { waitForNoNotification, waitForNotification } from '../../../../helpers/tests/helper';
 import EOReply from '../EOReply';
 
 export const setup = async (options?: EOOriginalMessageOptions) => {
