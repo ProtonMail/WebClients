@@ -158,7 +158,7 @@ const MigrationSummary: FC<{ model: MigrationModel }> = ({ model }) => {
             </div>
 
             {renderFinishModal && model.domain && (
-                <FinishModal initialView="instructions" modalProps={finishModalProps} />
+                <FinishModal initialView="instructions" model={model} modalProps={finishModalProps} />
             )}
 
             {reportUser && (

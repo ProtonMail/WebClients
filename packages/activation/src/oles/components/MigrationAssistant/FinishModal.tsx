@@ -12,6 +12,7 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
+import type { MigrationConfiguration } from '../../types';
 import DNSGroupRecords, { type DNSGroup } from '../MigrationSetup/DNSGroupRecords';
 import allSetGraphic from '../all-set.svg';
 
@@ -23,7 +24,8 @@ const FinishModal: FC<{
     initialView?: FinishModalView;
     onFinalize?: () => Promise<void>;
     modalProps: ModalStateProps;
-}> = ({ initialView = 'instructions', onFinalize, modalProps }) => {
+    model: MigrationConfiguration;
+}> = ({ initialView = 'instructions', onFinalize, modalProps, model }) => {
     const [loading, withLoading] = useLoading();
 
     const [view, setView] = useState<FinishModalView>(initialView);
@@ -80,7 +82,7 @@ const FinishModal: FC<{
                         {c('Info').t`Copy the below code and paste it in the DNS section of your domain host.`}
                     </p>
 
-                    <DNSGroupRecords group={group} />
+                    <DNSGroupRecords group={group} subdomain={model.subdomain} />
                 </ModalTwoContent>
             </>
         );
