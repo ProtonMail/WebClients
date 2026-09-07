@@ -4,6 +4,7 @@ import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/refere
 import type { Filter } from '@proton/sieve/filterModel';
 
 import type { MailToolDeps } from '../../toolModule';
+import { hasEveryFilterFieldFilled, renderFilterFields } from './filterCard';
 import { updateFilterCardRenderer, updateFilterDefinition, updateFilterModule } from './updateFilter';
 
 const NEWSLETTERS: Filter = {
@@ -86,11 +87,8 @@ describe('updateFilterModule', () => {
 });
 
 describe('updateFilterCardRenderer', () => {
-    it.each([
-        ['an emptied name', { name: '  ', sieve: SIEVE }, false],
-        ['an emptied script', { name: 'News', sieve: '' }, false],
-        ['both fields filled in', { name: 'News', sieve: SIEVE }, true],
-    ])('allows Confirm only when both fields are filled in: %s', (_case, params, applyable) => {
-        expect(updateFilterCardRenderer.canApply?.(params)).toBe(applyable);
+    it('shares the filter card body and its Confirm guard with create_filter', () => {
+        expect(updateFilterCardRenderer.renderBody).toBe(renderFilterFields);
+        expect(updateFilterCardRenderer.canApply).toBe(hasEveryFilterFieldFilled);
     });
 });
