@@ -4,6 +4,7 @@ import type {
     ClientToolResult,
     PendingClientToolCall,
 } from '@proton/lumo-api-client';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import getRandomString, { DEFAULT_LOWERCASE_CHARSET } from '@proton/utils/getRandomString';
 
 import { ToolInputError, UnknownReferenceError } from '../contracts/errors';
@@ -50,12 +51,19 @@ const createUntrustedFence = () => {
 
 export type ConfirmDecision = { action: 'apply'; params: Record<string, any> } | { action: 'cancel' };
 
+export enum ConfirmOutcome {
+    APPLIED = 'applied',
+    FAILED = 'failed',
+}
+
 /**
  * Human-in-the-loop confirmation for mutations, awaited inside `execute()` (the transport has no notion
  * of approval). The (possibly edited) params from an `apply` are what the handler runs with.
  */
 export interface ConfirmController {
     requestConfirmation(action: ActionRequest, labels: ReferenceLabels): Promise<ConfirmDecision>;
+    /** The click cannot stand in for this: a handler that refuses resolves like one that complied. */
+    reportOutcome(outcome: ConfirmOutcome): void;
 }
 
 /** A transparency chip emitted per tool run for the product's UI. `payload` is what was fed to the model. */
@@ -134,6 +142,24 @@ const collectLabels = (params: Record<string, any>, references: ReferenceRegistr
     };
     Object.values(params).forEach(collect);
     return labels;
+};
+
+/**
+ * What actually ran, for the model's closing prose. Left to itself the model reports the call it
+ * proposed — announcing three emails the user cut down to one at the confirm step. Silent when the
+ * card came back untouched, since restating the model's own arguments only costs context.
+ */
+const describeApplied = (proposed: Record<string, any>, approved: Record<string, any>): string => {
+    if (isDeepEqual(proposed, approved)) {
+        return '';
+    }
+    const shortened = Object.entries(approved)
+        .filter(([param, value]) => Array.isArray(value) && value.length < (proposed[param]?.length ?? 0))
+        .map(([param, value]) => `${value.length} of the ${proposed[param].length} proposed ${param}`);
+    const deselection = shortened.length
+        ? ` The user deselected some before approving, so it applied to ${shortened.join(', ')}.`
+        : '';
+    return `The user edited it before approving; it ran with exactly these parameters: ${JSON.stringify(approved)}.${deselection} Describe only what those say.`;
 };
 
 /** Per-batch wiring: both entries belong to the chain that started the batch, not to the executor. */
@@ -253,6 +279,37 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
         );
     };
 
+    /**
+     * Everything after the user approves, kept in one function so the confirm tile is settled on a
+     * single outcome no matter which of its exits the change takes.
+     */
+    const applyConfirmed = async (
+        definition: ToolDefinition,
+        proposedParams: Record<string, any>,
+        approvedParams: Record<string, any>,
+        options?: ExecuteOptions
+    ): Promise<ClientToolResult> => {
+        const approvedError = guardReferences(definition, approvedParams);
+        if (approvedError) {
+            return approvedError;
+        }
+        const applied = await runHandler(definition, approvedParams, options);
+        if (!applied.ok) {
+            return applied.error;
+        }
+        return okResult(
+            [
+                `Applied ${definition.name} successfully.`,
+                // A create_* tool serialises the new entity's reference here so the model can chain a
+                // follow-up without a re-read; other mutations serialise to ''.
+                applied.payload,
+                describeApplied(proposedParams, approvedParams),
+            ]
+                .filter(Boolean)
+                .join(' ')
+        );
+    };
+
     const executeOne = async (call: PendingClientToolCall, options?: ExecuteOptions): Promise<ClientToolResult> => {
         const definition = byName.get(call.name);
         if (!definition) {
@@ -282,21 +339,18 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
             const action: ActionRequest = { type: definition.name, ...args };
             const decision = await confirm.requestConfirmation(action, collectLabels(action, references));
             if (decision.action === 'cancel') {
-                return okResult('The user declined that change.');
+                return okResult('The user declined that change. Suggest an alternative or ask what they want instead.');
             }
-            const editedParams = decision.params;
-            const editedError = guardReferences(definition, editedParams);
-            if (editedError) {
-                return editedError;
+            // Unconditional: `guardReferences` re-throws anything that is not an `UnknownReferenceError`,
+            // and a tile left in `APPLYING` has no other way out.
+            try {
+                const result = await applyConfirmed(definition, args, decision.params, options);
+                confirm.reportOutcome(result.is_error ? ConfirmOutcome.FAILED : ConfirmOutcome.APPLIED);
+                return result;
+            } catch (error) {
+                confirm.reportOutcome(ConfirmOutcome.FAILED);
+                throw error;
             }
-            const applied = await runHandler(definition, editedParams, options);
-            if (!applied.ok) {
-                return applied.error;
-            }
-            // A create_* tool serialises the new entity's reference here so the model can chain a
-            // follow-up without a re-read; other mutations serialise to ''.
-            const detail = applied.payload;
-            return okResult(`Applied ${definition.name} successfully.${detail ? ` ${detail}` : ''}`);
         }
 
         const read = await runHandler(definition, args, options);

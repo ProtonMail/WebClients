@@ -6,6 +6,7 @@ import { IcPencil } from '@proton/icons/icons/IcPencil';
 
 import LumoAgentPanel from './LumoAgentPanel';
 import type { LumoAgentItem } from './types';
+import { ConfirmStatus } from './types';
 
 const userTurn: LumoAgentItem = { id: 1, kind: 'user', text: 'move the invoices to archive' };
 const reply: LumoAgentItem = { id: 2, kind: 'reply', text: 'Done.' };
@@ -14,7 +15,7 @@ const pendingConfirm: LumoAgentItem = {
     kind: 'confirm',
     action: { type: 'move_items', target: 'Archive' },
     labels: { m1: { title: 'Invoice' } },
-    status: 'pending',
+    status: ConfirmStatus.PENDING,
 };
 
 const baseProps: ComponentProps<typeof LumoAgentPanel> = {
