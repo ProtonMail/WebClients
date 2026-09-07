@@ -1,16 +1,13 @@
 import { PAYMENT_METHOD_TYPES } from '../constants';
-import type { Currency, PaymentMethodType } from '../interface';
+import type { Currency, PaymentMethodType, PlainPaymentMethodType } from '../interface';
 
-export const getMethodSupportedCurrencies = (type: PaymentMethodType | undefined): Currency[] | undefined => {
-    switch (type) {
-        case PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT:
-            return ['EUR'];
-        case PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL:
-            return ['EUR'];
-        default:
-            return undefined;
-    }
+const supportedCurrenciesByMethod: Partial<Record<PlainPaymentMethodType, Currency[]>> = {
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: ['EUR'],
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL]: ['EUR'],
 };
+
+export const getMethodSupportedCurrencies = (type: PaymentMethodType | undefined): Currency[] | undefined =>
+    supportedCurrenciesByMethod[type as PlainPaymentMethodType];
 
 export const isCurrencyRestrictedMethod = (type: PaymentMethodType | undefined): boolean => {
     return getMethodSupportedCurrencies(type) !== undefined;
