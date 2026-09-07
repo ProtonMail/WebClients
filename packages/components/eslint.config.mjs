@@ -2,6 +2,7 @@ import { defineConfig, globalIgnores } from 'eslint/config';
 
 import defaultConfig from '@proton/eslint-config-proton/all';
 import { createBarrelConfig, iconsPackage } from '@proton/eslint-config-proton/barrel';
+import { extraneousDependenciesDevDependencies } from '@proton/eslint-config-proton/extraneousDependencies';
 
 /** @type {import('eslint').Linter.LanguageOptions['globals']} */
 const vitestGlobals = {
@@ -35,8 +36,6 @@ export default defineConfig([
             'react/forbid-prop-types': ['warn'],
             'react/no-array-index-key': ['warn'],
             'import/no-internal-modules': ['error', { forbid: ['./index', './index'] }],
-            // TODO: Add the missing explicit deps and remove this rule
-            'import/no-extraneous-dependencies': 'off',
         },
     },
     globalIgnores(['**/iwad/**']),
@@ -49,14 +48,19 @@ export default defineConfig([
     {
         files: ['testing/**'],
         rules: {
+            'import/no-extraneous-dependencies': [
+                'error',
+                {
+                    devDependencies: [...extraneousDependenciesDevDependencies, '**/testing/**'],
+                    optionalDependencies: false,
+                },
+            ],
             'import/no-internal-modules': 'off',
         },
     },
     {
         files: ['**/*.test.ts', '**/*.test.tsx', '**/*.spec.ts', '**/*.spec.tsx', 'jest.setup.js'],
         rules: {
-            'custom-rules/no-package-self-import': 'off',
-            'import/no-extraneous-dependencies': 'off',
             'import/no-internal-modules': 'off',
         },
     },
