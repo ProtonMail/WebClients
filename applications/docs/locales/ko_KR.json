@@ -953,6 +953,12 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "vCard 파일을 ${ maxAttachments }개 이상 연락처로 보낼 수 없습니다"
+      ],
+      "Export this version (as odt) (Beta)": [
+        "이 버전을 odt로 내보내기 (베타)"
+      ],
+      "OpenDocument Text (.odt) (Beta)": [
+        "OpenDocument 텍스트 (.odt) (베타)"
       ]
     },
     "Actions message": {
@@ -4064,6 +4070,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "사용자의 계정이 할당된 ${ inviteSpace }을(를) 초과하는 스토리지의 ${ usedSpace }을(를) 사용하고 있습니다. 일부 데이터를 삭제하거나 플랜을 구매한 관리자에게 저장 공간을 늘리도록 요청하세요."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "회원님의 ${ BRAND_NAME } 계정이 이 가족 그룹에 합류하도록 초대되었습니다. 함께 모든 프리미엄 기능들을 즐겨보세요."
       ]
     },
     "familyOffer_2023:Label": {
@@ -5981,6 +5990,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "자신의 계정 데이터는 여전히 볼 수 있지만 모든 사용자 계정이 조직에서 제거됩니다."
+      ],
+      "Do you remember your password?": [
+        "비밀번호가 기억 나시나요?"
       ]
     },
     "info": {
@@ -6524,6 +6536,9 @@
       ],
       "Your password (trusted contact)": [
         "사용자 비밀번호 (신뢰할 수 있는 연락처)"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ 복호화할 수 없는 이름"
       ]
     },
     "Label for contact group color": {
@@ -10669,6 +10684,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "이 항목에 대한 접근을 초대하도록 초대장을 전송했습니다."
+      ],
+      "This link has expired. Please extend expiration date": [
+        "링크가 만료되었습니다. 만료일을 연장해 주세요."
       ]
     },
     "tooltip": {
