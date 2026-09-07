@@ -1,4 +1,4 @@
-import { compile, type TopLevelSpec } from 'vega-lite';
+import { type TopLevelSpec, compile } from 'vega-lite';
 
 import { sanitizeVegaSpec } from './sanitizeVegaSpec';
 
@@ -13,7 +13,7 @@ const boxData = ['nano', 'micro', 'standard', 'large'].flatMap((tier) =>
 describe('compileVegaSpec', () => {
     it('compiles a layered boxplot + jitter spec after sanitization', () => {
         const raw = JSON.stringify({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             width: 'container',
             autosize: { type: 'pad', contains: 'padding' },
             data: { values: boxData },
@@ -48,7 +48,7 @@ describe('compileVegaSpec', () => {
 
     it('compiles inferred charts from tier/latency inline data', () => {
         const raw = JSON.stringify({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             width: 'container',
             data: { values: boxData },
         });
@@ -66,7 +66,7 @@ describe('compileVegaSpec', () => {
         ];
 
         const raw = JSON.stringify({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             width: 'container',
             title: {
                 text: 'Weather overview',
@@ -101,23 +101,21 @@ describe('compileVegaSpec', () => {
 
         const spec = sanitizeVegaSpec(raw) as Record<string, unknown>;
         expect(spec.params).toEqual([{ name: 'brush', select: { type: 'interval', encodings: ['x'] } }]);
-        const colorEncoding = (
-            (spec as Record<string, unknown>).vconcat as Record<string, unknown>[]
-        )[0]?.encoding as Record<string, unknown>;
+        const colorEncoding = ((spec as Record<string, unknown>).vconcat as Record<string, unknown>[])[0]
+            ?.encoding as Record<string, unknown>;
         expect(colorEncoding.color).toMatchObject({
             condition: { param: 'brush', field: 'weather', type: 'nominal' },
             value: 'lightgray',
         });
-        const bottomTransform = (
-            (spec as Record<string, unknown>).vconcat as Record<string, unknown>[]
-        )[1]?.transform as Record<string, unknown>[];
+        const bottomTransform = ((spec as Record<string, unknown>).vconcat as Record<string, unknown>[])[1]
+            ?.transform as Record<string, unknown>[];
         expect(bottomTransform[0]?.filter).toMatchObject({ param: 'brush', empty: true });
         expect(() => compile(spec as unknown as TopLevelSpec)).not.toThrow();
     });
 
     it('compiles a dual-series climate layer chart after sanitization', () => {
         const raw = JSON.stringify({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             width: 'container',
             title: {
                 text: 'Geneva monthly temperature & sunshine',
@@ -236,7 +234,7 @@ describe('compileVegaSpec', () => {
 
     it('compiles donut charts when arc mark and label layer were emitted at the same level', () => {
         const raw = JSON.stringify({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             width: 'container',
             title: { text: 'Lumo Auth Methods', subtitle: 'Password still dominant at 41%' },
             data: {
@@ -271,7 +269,7 @@ describe('compileVegaSpec', () => {
 
     it('compiles hourly error bars with datum test highlight colors after sanitization', () => {
         const raw = JSON.stringify({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             width: 'container',
             title: { text: 'API Error Rate by Hour', subtitle: 'Peak 1.3% at 03:00 UTC' },
             data: {
@@ -298,7 +296,7 @@ describe('compileVegaSpec', () => {
 
     it('compiles layered horizontal MAU bars with growth labels after sanitization', () => {
         const raw = JSON.stringify({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             width: 'container',
             data: {
                 values: [
@@ -353,7 +351,7 @@ describe('compileVegaSpec', () => {
 
     it('compiles horizontal API route error bars after sanitization', () => {
         const raw = JSON.stringify({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             width: 'container',
             title: {
                 text: 'Errors by API Route (24h)',
@@ -385,7 +383,7 @@ describe('compileVegaSpec', () => {
 
     it('compiles authentication donut charts after sanitization', () => {
         const raw = JSON.stringify({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             width: 'container',
             title: {
                 text: 'Lumo Authentication Methods',
@@ -436,7 +434,7 @@ describe('compileVegaSpec', () => {
 
     it('compiles hourly line chart with empty layer placeholder and area highlight', () => {
         const raw = JSON.stringify({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             width: 'container',
             title: {
                 text: 'API Error Rate by Hour (UTC)',
@@ -473,7 +471,7 @@ describe('compileVegaSpec', () => {
 
     it('compiles hourly line chart with Excel-style :0 formats after sanitization', () => {
         const raw = JSON.stringify({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             width: 'container',
             title: { text: 'API Error Rate by Hour UTC', subtitle: 'Error spikes to 1.3% at 3:00 UTC' },
             data: {
@@ -509,7 +507,7 @@ describe('compileVegaSpec', () => {
 
     it('compiles FIFA ranking line chart with unsafe labelExpr after sanitization', () => {
         const raw = JSON.stringify({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             width: 'container',
             title: {
                 text: 'FIFA Rankings: England, France, Colombia, Ireland (1994-2024)',
@@ -556,7 +554,7 @@ describe('compileVegaSpec', () => {
 
     it('compiles FIFA evolution line chart with integer years after sanitization', () => {
         const raw = JSON.stringify({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             width: 'container',
             title: {
                 text: 'FIFA Rankings Evolution 1994-2024',
