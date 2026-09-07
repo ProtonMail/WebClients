@@ -3,11 +3,14 @@ import type {
     ESCallbacks,
     ESEvent,
     ESIndexingState,
+    ESInitializeOptions,
     ESSetResultsList,
+    ESSettledState,
     ESStatus,
     ESTimepoint,
     NormalizedSearchParams,
 } from '@proton/encrypted-search/models';
+import noop from '@proton/utils/noop';
 
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
 import type { IndexService } from '../indexation/IndexService';
@@ -97,7 +100,6 @@ export class ESAdapter implements FunctionsV2 {
      * `handleEvent` is reachable while this is false, and then it records without importing.
      */
     public isActive = false;
-
     private lastSearch?: Search;
     private coalescedResults?: FrameCoalescer<Parameters<ESSetResultsList<ESBaseMessage, ESMessageContent>>>;
     private isV1ContentIndexingDone = false;
@@ -219,13 +221,13 @@ export class ESAdapter implements FunctionsV2 {
         return this.isV1ContentIndexingDone;
     }
 
-    private startIndexingJob(mode: JobMode) {
+    private startIndexingJob(mode: JobMode): IndexingJob {
         if (mode === 'index') {
             // A fresh index is a new attempt at a complete v2 index, so a previous failure no longer
             // describes it — its own outcome will.
             this.isV2IndexIncomplete = false;
         }
-        this.job = new IndexingJob(
+        const job = new IndexingJob(
             {
                 indexService: this.indexService,
                 initialV1Status: this.lastV1Status!,
@@ -233,20 +235,24 @@ export class ESAdapter implements FunctionsV2 {
                 updateESProgress: this.updateESProgress,
                 // Read the current v1 instance at call time — its identity changes per render.
                 waitForV1Sync: () => this.esLibraryFunctionsV1.waitForSyncing?.() ?? Promise.resolve(),
-                onFinished: (outcome) => {
-                    this.job = undefined;
-                    // A fresh index whose import failed leaves the v2 index incomplete, with nothing
-                    // scheduled to complete it. Keep searches on the server for the rest of the session
-                    // rather than answering from a partial index; the next startup re-drives the import
-                    // and can clear this. A failed *refresh* is not disqualifying: the index is whole
-                    // except for the messages one event touched, and the next event retries.
-                    if (mode === 'index' && outcome === 'failed') {
-                        this.isV2IndexIncomplete = true;
-                    }
-                },
             },
             mode
         );
+        this.job = job;
+        void job.ended.then((outcome) => {
+            if (this.job === job) {
+                this.job = undefined;
+            }
+            // A fresh index whose import failed leaves the v2 index incomplete, with nothing scheduled
+            // to complete it. Keep searches on the server for the rest of the session rather than
+            // answering from a partial index; the next startup re-drives the import and can clear this.
+            // A failed *refresh* is not disqualifying: the index is whole except for the messages one
+            // event touched, and the next event retries.
+            if (mode === 'index' && outcome === 'failed') {
+                this.isV2IndexIncomplete = true;
+            }
+        });
+        return job;
     }
 
     /**
@@ -398,8 +404,44 @@ export class ESAdapter implements FunctionsV2 {
         await this.indexService.deleteIndex();
     }
 
-    initializeES() {
-        return this.esLibraryFunctionsV1.initializeES();
+    /**
+     * The caller's `onStateSettled` is deliberately not passed on: v1 reports through it because its
+     * promise resolves long after its status is final, whereas this one resolves exactly when we are
+     * ready to be searched, so returning is the report. Two outcomes matter here. Either v1's index
+     * can't serve searches - still indexing, disabled, not there - in which case neither can ours and
+     * there is nothing to wait for; or it is ready, and the import that copies it into our index is
+     * about to run. A query answered mid-import silently misses everything the import hasn't written
+     * yet, so we hold until it ends. That's affordable because the import resumes where the last
+     * session stopped rather than starting over.
+     */
+    async initializeES(_options?: ESInitializeOptions) {
+        let reportV1Settled = (_state?: ESSettledState) => {};
+        const v1Settled = new Promise<ESSettledState | undefined>((resolve) => {
+            reportV1Settled = resolve;
+        });
+        const v1Startup = this.esLibraryFunctionsV1
+            .initializeES({ onStateSettled: reportV1Settled })
+            // A branch that returns without concluding anything - no database, a corrupt one - has
+            // nothing for us to import from, which is the same answer as an index that isn't ready.
+            .then(() => undefined);
+        // Whichever comes first: v1 reports as soon as its checks are done, but its promise only
+        // resolves once indexing it resumed has finished.
+        const v1State = await Promise.race([v1Settled, v1Startup]);
+        // A failure after that report is v1's to handle, but it may not surface as an unhandled one.
+        void v1Startup.catch(noop);
+
+        if (!v1State?.contentIndexingDone) {
+            return;
+        }
+
+        // v1 is ready, so start the import now rather than when its status reaches us a render later.
+        // A job may already be running - a refresh triggered by an early event - in which case that is
+        // the import to wait for; the one this would start is guarded against by `onV1StatusUpdate`.
+        const job = this.job ?? this.startIndexingJob('index');
+        // What hands the job to its import phase, and the only reason we need the state v1 just
+        // reported: the status we last saw is a render behind and still says content isn't indexed.
+        job.onV1Status({ ...this.lastV1Status!, ...v1State });
+        await Promise.race([job.ended, job.paused]);
     }
 
     pauseContentIndexing() {
