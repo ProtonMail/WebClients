@@ -29,7 +29,7 @@ import { useCharts } from '@rowsncolumns/charts'
 import { useYSpreadsheetV2 } from '@rowsncolumns/y-spreadsheet'
 import type { DocStateInterface } from '@proton/docs-shared'
 import { DocProvider } from '@proton/docs-shared'
-import { create, useStore } from 'zustand'
+import { create } from 'zustand'
 import { useEvent } from './components/utils'
 import { c } from 'ttag'
 import { LoadedFontFamilies, loadFont } from './font-state'
@@ -37,7 +37,6 @@ import debounce from 'lodash/debounce'
 import type { Doc as YDoc, Transaction } from 'yjs'
 import { getCurrencyFromLocale, useAccountLocale, useLocaleAuto } from './locale'
 import { CURRENCY_SYMBOL } from './constants'
-import { useEditorState } from '../EditorStateProvider'
 import { getBufferHash } from '@proton/docs-core/lib/utils/hash'
 import { SheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBSchema'
 import type { SpreadsheetLocalYjsAuditKey, SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-audit'
@@ -865,11 +864,12 @@ const versionToMigrationMap: Record<number, (state: ProtonSheetsState) => void> 
   },
 }
 
-export function useVersioning(canRunMigration: boolean, state: ProtonSheetsState) {
+export function useVersioning(
+  canRunMigration: boolean,
+  state: ProtonSheetsState,
+  setMigrationEditingLocked: (inProgress: boolean) => void,
+) {
   const { receivedEverythingFromRTS, logger, reloadClient, reportUserInterfaceError } = useSheetsDependencies()
-  const editorState = useEditorState()
-  const setEditingLocked = useStore(editorState, (state) => state.setEditingLocked)
-  const setIsMigrating = useStore(editorState, (state) => state.setIsMigrating)
   const version = useKeyValueState((state) => state.version)
   const { kvSet, clientID } = state.yjsState
   const startThresholdTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -920,8 +920,7 @@ export function useVersioning(canRunMigration: boolean, state: ProtonSheetsState
   })
 
   const lockRequestedEvent = useEvent(() => {
-    setIsMigrating(true)
-    setEditingLocked(true)
+    setMigrationEditingLocked(true)
     if (startThresholdTimeout.current) {
       clearTimeout(startThresholdTimeout.current)
     }
@@ -947,8 +946,7 @@ export function useVersioning(canRunMigration: boolean, state: ProtonSheetsState
 
   const lockClearedEvent = useEvent(() => {
     logger.info('versioning: lock cleared, unlocking editor')
-    setIsMigrating(false)
-    setEditingLocked(false)
+    setMigrationEditingLocked(false)
 
     if (lockDurationTimeout.current) {
       clearTimeout(lockDurationTimeout.current)
