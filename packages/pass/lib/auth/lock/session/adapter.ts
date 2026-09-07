@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { getApiError, getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
@@ -9,6 +9,7 @@ import { NotificationKey } from '../../../../types/worker/notification';
 import { logger } from '../../../../utils/logger';
 import { getEpoch } from '../../../../utils/time/epoch';
 import { PassErrorCode } from '../../../api/errors';
+import { getIsApiUnavailable } from '../../../api/utils';
 import type { AuthService } from '../../service';
 import { SESSION_VERSION, decryptSessionBlob, getPersistedSessionKey } from '../../session';
 import type { LockAdapterSession } from '../types';
@@ -51,7 +52,7 @@ export const sessionLockAdapterFactory = (auth: AuthService): LockAdapterSession
                  * local TTL has not expired. Treat as non-locked to ensure `onLockUpdate`
                  * still fires and resets the auto-lock auth alarm. */
                 const ttl = authStore.getLockTTL();
-                if (getIsConnectionIssue(err)) return { mode: adapter.type, ttl, locked: false };
+                if (getIsApiUnavailable(err)) return { mode: adapter.type, ttl, locked: false };
                 throw err;
             });
 
