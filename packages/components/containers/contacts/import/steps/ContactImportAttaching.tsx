@@ -6,6 +6,7 @@ import { EASY_SWITCH_SEARCH_SOURCES } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { FeatureCode, useFeature } from '@proton/features';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { APPS } from '@proton/shared/lib/constants';
 import { MAX_IMPORT_FILE_SIZE, MAX_IMPORT_FILE_SIZE_STRING } from '@proton/shared/lib/contacts/constants';
 import { ImportFatalError } from '@proton/shared/lib/contacts/errors/ImportFatalError';
@@ -186,7 +187,7 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
                         {model.fileAttached ? (
                             <AttachedFile
                                 file={model.fileAttached}
-                                iconName="users"
+                                icon={<IcUsers />}
                                 clear={c('Action').t`Delete`}
                                 onClear={handleClear}
                             />
