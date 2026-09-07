@@ -153,8 +153,7 @@
         },
         "applications/preview-sandbox": {
             "entry": ["src/index.ts", "src/previews/index.ts"],
-            "project": ["src/**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["src/**/*.{ts,tsx}"]
         },
         "applications/storybook": {
             "entry": [
@@ -164,12 +163,12 @@
                 ".storybook/main.mjs"
             ],
             "project": ["src/**/*.{ts,tsx,mdx}"],
-            "ignore": ["**"]
+            "ignoreDependencies": ["@storybook/addon-links"]
         },
         "applications/verify": {
-            "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
+            "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}", "src/app/Verify.scss"],
             "project": ["src/**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "ignoreDependencies": ["@proton/styles"]
         },
         "applications/vpn-settings": {
             "entry": ["src/app/index.{ts,tsx}", "src/pages/**/*.{ts,tsx}", "webpack.config.{js,ts}"],
@@ -178,8 +177,7 @@
         },
         "applications/wallet": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
-            "project": ["src/**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["src/**/*.{ts,tsx}"]
         },
         "packages/account": {
             "entry": [],
