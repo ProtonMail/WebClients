@@ -1,6 +1,7 @@
 import type { IDBPDatabase } from 'idb';
 
 import createListeners from '@proton/shared/lib/helpers/listeners';
+import { getItem } from '@proton/shared/lib/helpers/storage';
 
 import type { ESBaseMessage } from '../../models/encryptedSearch';
 import type { Database } from '../db/schema.ts';
@@ -23,6 +24,50 @@ export interface ImportIssue {
 // this is the main tuning knob for the size and amount of blobs
 // we end up with in the new index, as the batch is written in one operation.
 export const BATCH_SIZE = 50;
+
+// Read on the main thread before spawning the import worker.
+export const DEBUG_CS_IMPORT_BATCH_SIZE_KEY = 'DEBUG_CS_IMPORT_BATCH_SIZE';
+export const DEBUG_CS_IMPORT_BATCH_DELAY_MS_KEY = 'DEBUG_CS_IMPORT_BATCH_DELAY_MS';
+export const MAX_DEBUG_IMPORT_BATCH_DELAY_MS = 5_000;
+
+const clampImportBatchSize = (size: number): number => Math.min(BATCH_SIZE, Math.max(1, Math.trunc(size)));
+
+const clampImportBatchDelayMs = (delayMs: number): number =>
+    Math.min(MAX_DEBUG_IMPORT_BATCH_DELAY_MS, Math.max(0, Math.trunc(delayMs)));
+
+const sleep = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));
+
+/**
+ * Resolves how many messages each V2 import batch writes. Production uses {@link BATCH_SIZE}.
+ * For debugging, set {@link DEBUG_CS_IMPORT_BATCH_SIZE_KEY} in localStorage before import
+ * starts — e.g. from the browser console or Playwright `context.addInitScript`. Changing it
+ * mid-import has no effect.
+ */
+export const resolveImportBatchSize = (): number => {
+    const stored = getItem(DEBUG_CS_IMPORT_BATCH_SIZE_KEY);
+    if (stored != null) {
+        const parsed = Number.parseInt(stored, 10);
+        if (Number.isFinite(parsed)) {
+            return clampImportBatchSize(parsed);
+        }
+    }
+    return BATCH_SIZE;
+};
+
+/**
+ * Optional pause between V2 import batch writes (debug / E2E only). Set
+ * {@link DEBUG_CS_IMPORT_BATCH_DELAY_MS_KEY} in localStorage before import starts; defaults to 0.
+ */
+export const resolveImportBatchDelayMs = (): number => {
+    const stored = getItem(DEBUG_CS_IMPORT_BATCH_DELAY_MS_KEY);
+    if (stored != null) {
+        const parsed = Number.parseInt(stored, 10);
+        if (Number.isFinite(parsed)) {
+            return clampImportBatchDelayMs(parsed);
+        }
+    }
+    return 0;
+};
 
 export interface ImportNotifications {
     onTotalAvailable(total: number): void;
@@ -47,7 +92,8 @@ export class Import {
         private indexKey: CryptoKey,
         private srcReader: EncryptedSearchReader,
         private notifications: ImportNotifications,
-        private batchSize: number
+        private batchSize: number,
+        private batchDelayMs: number = 0
     ) {}
 
     /** ids that are missing from the initial import */
@@ -184,6 +230,9 @@ export class Import {
                 importedIds.add(m.metadata.ID);
             }
             onMessageCompleted(messages.length);
+            if (this.batchDelayMs > 0) {
+                await sleep(this.batchDelayMs);
+            }
         }
         return importedIds;
     }

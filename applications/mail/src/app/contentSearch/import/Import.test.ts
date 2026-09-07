@@ -20,7 +20,17 @@ import { openContentSearchDB } from '../db/open';
 import { IndexReader } from '../search/IndexReader';
 import { initFoundationWasm } from '../testing/initFoundationWasm';
 import { EncryptedSearchReader } from './EncryptedSearchReader';
-import { Import, type ImportIssue, ImportIssueSeverity } from './Import';
+import {
+    BATCH_SIZE,
+    DEBUG_CS_IMPORT_BATCH_DELAY_MS_KEY,
+    DEBUG_CS_IMPORT_BATCH_SIZE_KEY,
+    Import,
+    type ImportIssue,
+    ImportIssueSeverity,
+    MAX_DEBUG_IMPORT_BATCH_DELAY_MS,
+    resolveImportBatchDelayMs,
+    resolveImportBatchSize,
+} from './Import';
 
 type Doc = { metadata: ESBaseMessage; body: string };
 
@@ -83,6 +93,76 @@ const seedOldIndex = async (userId: string, userKeys: DecryptedKey<PrivateKeyRef
     }
     esDB.close();
 };
+
+describe('resolveImportBatchSize', () => {
+    const originalValue = localStorage.getItem(DEBUG_CS_IMPORT_BATCH_SIZE_KEY);
+
+    afterEach(() => {
+        if (originalValue === null) {
+            localStorage.removeItem(DEBUG_CS_IMPORT_BATCH_SIZE_KEY);
+        } else {
+            localStorage.setItem(DEBUG_CS_IMPORT_BATCH_SIZE_KEY, originalValue);
+        }
+    });
+
+    it('returns the default batch size when no override is set', () => {
+        localStorage.removeItem(DEBUG_CS_IMPORT_BATCH_SIZE_KEY);
+        expect(resolveImportBatchSize()).toBe(BATCH_SIZE);
+    });
+
+    it('reads a valid batch size from localStorage', () => {
+        localStorage.setItem(DEBUG_CS_IMPORT_BATCH_SIZE_KEY, '1');
+        expect(resolveImportBatchSize()).toBe(1);
+    });
+
+    it('clamps localStorage values to 1..BATCH_SIZE', () => {
+        localStorage.setItem(DEBUG_CS_IMPORT_BATCH_SIZE_KEY, '0');
+        expect(resolveImportBatchSize()).toBe(1);
+
+        localStorage.setItem(DEBUG_CS_IMPORT_BATCH_SIZE_KEY, '999');
+        expect(resolveImportBatchSize()).toBe(BATCH_SIZE);
+    });
+
+    it('ignores invalid localStorage values', () => {
+        localStorage.setItem(DEBUG_CS_IMPORT_BATCH_SIZE_KEY, 'not-a-number');
+        expect(resolveImportBatchSize()).toBe(BATCH_SIZE);
+    });
+});
+
+describe('resolveImportBatchDelayMs', () => {
+    const originalValue = localStorage.getItem(DEBUG_CS_IMPORT_BATCH_DELAY_MS_KEY);
+
+    afterEach(() => {
+        if (originalValue === null) {
+            localStorage.removeItem(DEBUG_CS_IMPORT_BATCH_DELAY_MS_KEY);
+        } else {
+            localStorage.setItem(DEBUG_CS_IMPORT_BATCH_DELAY_MS_KEY, originalValue);
+        }
+    });
+
+    it('returns 0 when no override is set', () => {
+        localStorage.removeItem(DEBUG_CS_IMPORT_BATCH_DELAY_MS_KEY);
+        expect(resolveImportBatchDelayMs()).toBe(0);
+    });
+
+    it('reads a valid delay from localStorage', () => {
+        localStorage.setItem(DEBUG_CS_IMPORT_BATCH_DELAY_MS_KEY, '500');
+        expect(resolveImportBatchDelayMs()).toBe(500);
+    });
+
+    it('clamps localStorage values to 0..MAX_DEBUG_IMPORT_BATCH_DELAY_MS', () => {
+        localStorage.setItem(DEBUG_CS_IMPORT_BATCH_DELAY_MS_KEY, '-1');
+        expect(resolveImportBatchDelayMs()).toBe(0);
+
+        localStorage.setItem(DEBUG_CS_IMPORT_BATCH_DELAY_MS_KEY, '99999');
+        expect(resolveImportBatchDelayMs()).toBe(MAX_DEBUG_IMPORT_BATCH_DELAY_MS);
+    });
+
+    it('ignores invalid localStorage values', () => {
+        localStorage.setItem(DEBUG_CS_IMPORT_BATCH_DELAY_MS_KEY, 'not-a-number');
+        expect(resolveImportBatchDelayMs()).toBe(0);
+    });
+});
 
 describe('Importer', () => {
     let userKeys: DecryptedKey<PrivateKeyReference>[];
