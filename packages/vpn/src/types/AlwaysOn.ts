@@ -3,7 +3,7 @@ export interface AlwaysOnPolicyArtifact {
     Content: string;
 }
 
-export interface AlwaysOnPolicyArtifacts {
+interface AlwaysOnPolicyArtifacts {
     windows?: AlwaysOnPolicyArtifact;
     windowsUninstall?: AlwaysOnPolicyArtifact;
     rego?: AlwaysOnPolicyArtifact;

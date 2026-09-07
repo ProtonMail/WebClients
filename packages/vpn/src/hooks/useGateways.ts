@@ -109,5 +109,3 @@ export const useGateways = (organization: Organization | undefined, maxAge: numb
         refresh,
     };
 };
-
-export default useGateways;

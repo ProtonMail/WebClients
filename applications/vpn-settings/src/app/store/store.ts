@@ -55,7 +55,7 @@ export const extendStore = (newThunkArguments: Partial<AccountThunkArguments>) =
 };
 
 export type AccountStore = ReturnType<typeof setupStore>;
-export type AccountDispatch = AccountStore['dispatch'];
+type AccountDispatch = AccountStore['dispatch'];
 type ExtraArgument = typeof extraThunkArguments;
 
 export type AppStartListening = TypedStartListening<AccountState, AccountDispatch, ExtraArgument>;

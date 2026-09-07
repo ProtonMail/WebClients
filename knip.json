@@ -172,9 +172,9 @@
             "ignore": ["**"]
         },
         "applications/vpn-settings": {
-            "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
+            "entry": ["src/app/index.{ts,tsx}", "src/pages/**/*.{ts,tsx}", "webpack.config.{js,ts}"],
             "project": ["src/**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "ignoreDependencies": ["@proton/styles"]
         },
         "applications/wallet": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
@@ -439,8 +439,7 @@
         },
         "packages/vpn": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/wallet": {
             "entry": [],
