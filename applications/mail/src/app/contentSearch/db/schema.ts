@@ -1,5 +1,9 @@
 import type { DBSchema, IDBPTransaction, StoreNames } from 'idb';
 
+export function getDBName(userId: string): string {
+    return `content_search_v2_user:${userId}`;
+}
+
 export interface Database extends DBSchema {
     config: {
         key: string;
