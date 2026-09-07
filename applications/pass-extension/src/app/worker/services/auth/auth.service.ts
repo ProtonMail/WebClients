@@ -1,4 +1,4 @@
-import { getIsApiUnavailable } from '@proton/pass/lib/api/utils';
+import { getIsSessionInvalid } from '@proton/pass/lib/api/utils';
 import {
     AccountForkResponse,
     extractOfflineComponents,
@@ -325,10 +325,12 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
              * backoff rather than relying on another connectivity event. */
             if (!clientOffline(ctx.getState().status)) {
                 /** We do not rely on `connectivity` state on session failures in the case
-                 * of partial downtime (eg: `/ping` returns 200 but `/auth` routes 5xx) */
-                const connectionIssue = getIsApiUnavailable(err);
+                 * of partial downtime (eg: `/ping` returns 200 but `/auth` routes 5xx).
+                 * Nor on the failure status: only a definitively invalid session cancels
+                 * the offline fallback, anything else keeps the offline unlock available. */
+                const sessionInvalid = getIsSessionInvalid(err);
                 const hasOfflineComponents = authStore.hasOfflineComponents();
-                const canOfflineUnlock = connectionIssue && hasOfflineComponents && (await isOfflineModeEnabled());
+                const canOfflineUnlock = !sessionInvalid && hasOfflineComponents && (await isOfflineModeEnabled());
                 const unlocked = options.unlocked && authStore.validOfflineSession(authStore.getSession());
 
                 /** If the user managed to unlock during the sequence but session resuming

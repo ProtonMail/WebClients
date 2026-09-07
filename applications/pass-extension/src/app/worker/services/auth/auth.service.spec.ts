@@ -10,6 +10,7 @@ import { PassFeature } from '@proton/pass/types/api/features';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { AppStatus } from '@proton/pass/types/worker/state';
 import { createMemoryStore } from '@proton/pass/utils/store';
+import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 
 import { clearBrowserMocks } from '../../../../__mocks__/webextension-polyfill';
@@ -484,10 +485,18 @@ describe('Extension AuthService', () => {
                 expect(ctx.setBooted).toHaveBeenCalledWith(false);
             });
 
-            test('should set `ERROR` on non-connection error regardless of offline components', async () => {
+            test('should set `PASSWORD_LOCKED` on any error leaving the session valid', async () => {
                 ctx.status = AppStatus.IDLE;
                 setOfflineComponents();
                 await auth.config.onSessionFailure?.({ retryable: false }, genericError);
+                expect(ctx.setStatus).toHaveBeenCalledWith(AppStatus.PASSWORD_LOCKED);
+                expect(ctx.setBooted).toHaveBeenCalledWith(false);
+            });
+
+            test('should set `ERROR` on an invalid session even with offline components', async () => {
+                ctx.status = AppStatus.IDLE;
+                setOfflineComponents();
+                await auth.config.onSessionFailure?.({ retryable: false }, InactiveSessionError());
                 expect(ctx.setStatus).toHaveBeenCalledWith(AppStatus.ERROR);
                 expect(ctx.setBooted).toHaveBeenCalledWith(false);
             });
