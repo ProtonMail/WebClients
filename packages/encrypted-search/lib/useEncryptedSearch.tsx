@@ -70,6 +70,7 @@ import type {
     ESCache,
     ESCallbacks,
     ESEvent,
+    ESInitializeOptions,
     ESItem,
     ESProgress,
     ESStatus,
@@ -1383,7 +1384,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
      * the EncryptedSearchProvider runs, as it checks for new events, continues indexing in
      * case a previous one was started, checks whether the index key is still accessible
      */
-    const initializeES = async () => {
+    const initializeES = async ({ onStateSettled }: ESInitializeOptions = {}) => {
         // Check whether the ES IDB exists for the current user. Nothing else is
         // needed in case it doesn't
         const userHasESDB = await hasESDB(userID);
@@ -1441,6 +1442,9 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         const contentIndexingDone = contentProgress?.status === INDEXING_STATUS.ACTIVE;
 
         if (isIndexingContent) {
+            // Nothing left to conclude: content indexing is resuming, so this is the state callers get.
+            // Report it now rather than when the call returns, which is once the whole index is built.
+            onStateSettled?.({ dbExists: true, esEnabled, contentIndexingDone: false });
             return enableContentSearch();
         }
 
@@ -1450,6 +1454,11 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
             isContentIndexingPaused,
             contentIndexingDone,
         }));
+
+        // The checks are done for this startup, so callers can act on what they found. What follows is
+        // work - restarting the index, catching up on events - and restarting only returns once a whole
+        // index has been rebuilt, far too late for a caller that just needs to know where it stands.
+        onStateSettled?.({ dbExists: true, esEnabled, contentIndexingDone });
 
         // Compare the last event "seen" by the DB (saved in localStorage) and
         // the present one to check whether any event has happened while offline,
