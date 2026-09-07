@@ -11,6 +11,17 @@ im.$media-expressions: $media-expressions;
 	box-shadow: 0 0.25rem 0.25rem 0 rgb(0 0 0 / 0.25);
 }
 
+.prejoin-backgrounds-sheet {
+	// Tall option lists scroll inside the sheet rather than running off the top of the screen.
+	max-block-size: 80svh;
+	padding-block-end: var(--space-4);
+
+	// Landscape tiles rather than the squares the other views use.
+	.background-tile {
+		aspect-ratio: 9 / 7;
+	}
+}
+
 .prejoin-backgrounds-options {
 	overflow-x: auto;
 	scroll-snap-type: x proximity;

@@ -93,6 +93,8 @@ export const PreJoinDetails = ({
                     instantMeeting={instantMeeting}
                 />
             }
+            // The title and subtitle are hidden on mobile, so the wrapper must not take up space either
+            headerClassName="hidden md:flex"
             actions={[
                 ...(showHostScreen
                     ? [<WaitingRoomDropdown instantMeeting={instantMeeting} key="waiting-room-dropdown" />]

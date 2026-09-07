@@ -1,17 +1,20 @@
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import clsx from '@proton/utils/clsx';
 
 export const PreJoinDetailsShell = ({
     children,
     preHeader,
     header,
+    headerClassName,
     actions,
     loading,
 }: {
     preHeader?: React.ReactNode;
     children: React.ReactNode;
     header: React.ReactNode;
+    headerClassName?: string;
     actions?: React.ReactNode[];
     loading: boolean;
 }) => {
@@ -32,7 +35,14 @@ export const PreJoinDetailsShell = ({
             ) : (
                 <>
                     {preHeader}
-                    <div className="pre-join-details-header flex flex-column gap-2 py-2 lg:py-4 w-full">{header}</div>
+                    <div
+                        className={clsx(
+                            'pre-join-details-header flex flex-column gap-2 py-2 lg:py-4 w-full',
+                            headerClassName
+                        )}
+                    >
+                        {header}
+                    </div>
                     <div className="flex flex-column gap-2 lg:gap-4 w-full">{children}</div>
                     {actions}
                 </>
