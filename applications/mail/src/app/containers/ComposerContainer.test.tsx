@@ -12,7 +12,9 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
 
 import { formatFullDate } from '../helpers/date';
-import { clearAll, getCompleteAddress, mailTestRender, minimalCache, tick } from '../helpers/tests/helper';
+import { getCompleteAddress, minimalCache } from '../helpers/tests/cache';
+import { clearAll } from '../helpers/tests/helper';
+import { mailTestRender, tick } from '../helpers/tests/render';
 import type { OnCompose } from '../hooks/composer/useCompose';
 import { ComposeTypes } from '../hooks/composer/useCompose';
 import { useOnCompose } from './ComposeProvider';

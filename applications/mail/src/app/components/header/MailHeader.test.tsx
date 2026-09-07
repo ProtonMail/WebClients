@@ -5,7 +5,10 @@ import { getModelState } from '@proton/account/tests';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
-import { addApiMock, clearAll, getDropdown, mailTestRender, minimalCache, tick } from '../../helpers/tests/helper';
+import { addApiMock } from '../../helpers/tests/api';
+import { minimalCache } from '../../helpers/tests/cache';
+import { clearAll, getDropdown } from '../../helpers/tests/helper';
+import { mailTestRender, tick } from '../../helpers/tests/render';
 import type { ElementsStructure } from '../../hooks/mailbox/useElements';
 import type { MailboxActions } from '../../router/interface';
 import MailHeader from './MailHeader';

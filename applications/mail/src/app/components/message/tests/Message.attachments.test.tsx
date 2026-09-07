@@ -5,19 +5,19 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
+import { addApiMock } from '../../../helpers/tests/api';
 import { assertIcon } from '../../../helpers/tests/assertion';
-import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/tests/crypto';
-import type { GeneratedKey } from '../../../helpers/tests/helper';
+import { getCompleteAddress } from '../../../helpers/tests/cache';
+import type { GeneratedKey } from '../../../helpers/tests/crypto';
 import {
     addApiKeys,
-    addApiMock,
-    clearAll,
-    createEmbeddedImage,
-    createMessageImages,
-    encryptMessage,
     generateKeys,
-    getCompleteAddress,
-} from '../../../helpers/tests/helper';
+    getAddressKeyCache,
+    releaseCryptoProxy,
+    setupCryptoProxyForTesting,
+} from '../../../helpers/tests/crypto';
+import { clearAll } from '../../../helpers/tests/helper';
+import { createEmbeddedImage, createMessageImages, encryptMessage } from '../../../helpers/tests/message';
 import { addressID, body, messageID, setup, subject } from './Message.test.helpers';
 
 const cid = 'cid';

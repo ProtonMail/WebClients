@@ -7,15 +7,10 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
 import { mergeMessages } from '../../../helpers/message/messages';
-import {
-    addApiKeys,
-    addApiMock,
-    apiKeys,
-    mailTestRender,
-    parseFormData,
-    waitForNoNotification,
-    waitForNotification,
-} from '../../../helpers/tests/helper';
+import { addApiMock, parseFormData } from '../../../helpers/tests/api';
+import { addApiKeys, apiKeys } from '../../../helpers/tests/crypto';
+import { waitForNoNotification, waitForNotification } from '../../../helpers/tests/helper';
+import { mailTestRender } from '../../../helpers/tests/render';
 import { addComposerAction } from '../../../store/composers/composerActions';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
 import type { MailStore } from '../../../store/store';

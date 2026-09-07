@@ -8,15 +8,6 @@ import { clearApiContacts } from './contact';
 import { clearApiKeys } from './crypto';
 import { eventManagerListeners } from './event-manager';
 
-export { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
-export * from './api';
-export * from './assertion';
-export * from './cache';
-export * from './crypto';
-export * from './event-manager';
-export * from './message';
-export * from './render';
-
 const savedConsole = { ...console };
 
 export const clearAll = () => {

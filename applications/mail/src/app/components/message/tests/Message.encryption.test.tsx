@@ -7,25 +7,22 @@ import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { constructMime } from '../../../helpers/send/sendMimeBuilder';
+import { addApiMock, api } from '../../../helpers/tests/api';
+import { assertIcon } from '../../../helpers/tests/assertion';
+import { getCompleteAddress } from '../../../helpers/tests/cache';
 import { addApiContact } from '../../../helpers/tests/contact';
+import type { GeneratedKey } from '../../../helpers/tests/crypto';
 import {
+    addApiKeys,
     fromGeneratedKeysToMessageKeys,
+    generateKeys,
     getAddressKeyCache,
     getStoredUserKey,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
 } from '../../../helpers/tests/crypto';
-import type { GeneratedKey } from '../../../helpers/tests/helper';
-import {
-    addApiKeys,
-    addApiMock,
-    api,
-    assertIcon,
-    clearAll,
-    encryptMessage,
-    generateKeys,
-    getCompleteAddress,
-} from '../../../helpers/tests/helper';
+import { clearAll } from '../../../helpers/tests/helper';
+import { encryptMessage } from '../../../helpers/tests/message';
 import { X_PM_HEADERS } from '../../../models/crypto';
 import { addressID, body, getIframeRootDiv, localID, messageID, setup, subject } from './Message.test.helpers';
 

@@ -21,7 +21,10 @@ import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpo
 import range from '@proton/utils/range';
 
 import { filterToString, keywordToString, sortToString } from '../../../helpers/mailboxUrl';
-import { addApiMock, mailTestRender, minimalCache, triggerEvent } from '../../../helpers/tests/helper';
+import { addApiMock } from '../../../helpers/tests/api';
+import { minimalCache } from '../../../helpers/tests/cache';
+import { triggerEvent } from '../../../helpers/tests/event-manager';
+import { mailTestRender } from '../../../helpers/tests/render';
 import type { ConversationLabel } from '../../../models/conversation';
 import type { Element } from '../../../models/element';
 import type { Event } from '../../../models/event';

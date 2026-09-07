@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { mailTestRender } from '../../../helpers/tests/helper';
+import { mailTestRender } from '../../../helpers/tests/render';
 import { newElementsState } from '../../../store/elements/elementsSlice';
 import { layoutInitialState } from '../../../store/layout/layoutSlice';
 import { mockActiveCategoriesData } from '../testUtils/helpers';

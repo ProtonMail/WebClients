@@ -6,18 +6,17 @@ import { getModelState } from '@proton/account/tests';
 import type { PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 
-import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/tests/crypto';
+import { addApiMock } from '../../../helpers/tests/api';
+import { getCompleteAddress } from '../../../helpers/tests/cache';
 import {
     addApiKeys,
-    addApiMock,
-    clearAll,
     generateKeys,
-    getCompleteAddress,
-    getDropdown,
-    mailTestRender,
-    tick,
-    waitForNotification,
-} from '../../../helpers/tests/helper';
+    getAddressKeyCache,
+    releaseCryptoProxy,
+    setupCryptoProxyForTesting,
+} from '../../../helpers/tests/crypto';
+import { clearAll, getDropdown, waitForNotification } from '../../../helpers/tests/helper';
+import { mailTestRender, tick } from '../../../helpers/tests/render';
 import Composer from '../Composer';
 import { AddressID, ID, fromAddress, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
 

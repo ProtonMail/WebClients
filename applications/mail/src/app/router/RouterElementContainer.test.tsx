@@ -10,7 +10,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import type { OnboardingChecklistContext } from '../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import * as GetStartedChecklistProviderModule from '../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
-import { mailTestRender } from '../helpers/tests/helper';
+import { mailTestRender } from '../helpers/tests/render';
 import { newElementsState } from '../store/elements/elementsSlice';
 import { useMailboxLayoutProvider } from './components/MailboxLayoutContext';
 

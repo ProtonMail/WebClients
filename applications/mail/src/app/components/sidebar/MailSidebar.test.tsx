@@ -22,7 +22,10 @@ import range from '@proton/utils/range';
 
 import type { OnboardingChecklistContext } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import * as GetStartedChecklistProviderModule from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
-import { assertFocus, clearAll, getDropdown, mailTestRender, minimalCache } from '../../helpers/tests/helper';
+import { assertFocus } from '../../helpers/tests/assertion';
+import { minimalCache } from '../../helpers/tests/cache';
+import { clearAll, getDropdown } from '../../helpers/tests/helper';
+import { mailTestRender } from '../../helpers/tests/render';
 import { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
 import MailSidebar from './MailSidebar';
 

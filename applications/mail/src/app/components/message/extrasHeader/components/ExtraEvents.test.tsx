@@ -29,18 +29,19 @@ import { CalendarKeyFlags } from '@proton/shared/lib/interfaces/calendar';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 
 import * as inviteApi from '../../../../helpers/calendar/inviteApi';
+import { addApiMock } from '../../../../helpers/tests/api';
+import { getCompleteAddress, minimalCache } from '../../../../helpers/tests/cache';
 import { generateApiCalendarEvent } from '../../../../helpers/tests/calendar';
-import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/tests/crypto';
-import type { GeneratedKey } from '../../../../helpers/tests/helper';
+import type { GeneratedKey } from '../../../../helpers/tests/crypto';
 import {
-    addApiMock,
-    clearAll,
     generateKeys as generateAddressKeys,
     generateCalendarKeysAndPassphrase,
-    getCompleteAddress,
-    mailTestRender,
-    minimalCache,
-} from '../../../../helpers/tests/helper';
+    getAddressKeyCache,
+    releaseCryptoProxy,
+    setupCryptoProxyForTesting,
+} from '../../../../helpers/tests/crypto';
+import { clearAll } from '../../../../helpers/tests/helper';
+import { mailTestRender } from '../../../../helpers/tests/render';
 import ExtraEvents from './ExtraEvents';
 
 jest.setTimeout(20000);
