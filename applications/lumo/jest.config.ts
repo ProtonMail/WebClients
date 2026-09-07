@@ -2,6 +2,9 @@ import type { Config } from 'jest';
 
 const jestConfig: Config = {
     testEnvironment: '@proton/jest-env',
+    testEnvironmentOptions: {
+        customExportConditions: ['browser'],
+    },
     setupFiles: ['fake-indexeddb/auto'],
     setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
@@ -9,7 +12,7 @@ const jestConfig: Config = {
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/app/locales.ts'],
     resolver: './jest.resolver.js',
     transformIgnorePatterns: [
-        'node_modules/(?!(@proton/shared|@proton/components|@protontech/mutex-browser|@protontech/interval-tree|@protontech/telemetry|@protontech/crypto|@protontech/drive-sdk|openpgp|@openpgp/web-stream-tools|@protontech/bip39|emoji-mart|msw|@mswjs|until-async|p-limit|yocto-queue|sw-test-env|node-fetch|data-uri-to-buffer|fetch-blob|formdata-polyfill|uuid|xlsx|@preact/signals-core|@scure/base|unist-util-visit|unist-util-visit-parents|unist-util-is)/)',
+        'node_modules/(?!(@proton/shared|@proton/components|@protontech/mutex-browser|@protontech/interval-tree|@protontech/telemetry|@protontech/crypto|@protontech/drive-sdk|openpgp|@openpgp/web-stream-tools|@protontech/bip39|emoji-mart|msw|@mswjs|until-async|p-limit|yocto-queue|sw-test-env|node-fetch|data-uri-to-buffer|fetch-blob|formdata-polyfill|uuid|xlsx|@preact/signals-core|@scure/base|unist-util-visit|unist-util-visit-parents|unist-util-is|vega|vega-.*|d3-.*|internmap|delaunator|robust-predicates)/)',
     ],
     preset: '@proton/jest-swc-preset',
     moduleNameMapper: {

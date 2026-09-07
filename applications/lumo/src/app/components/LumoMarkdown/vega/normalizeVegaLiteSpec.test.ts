@@ -1,4 +1,14 @@
-import { normalizeArcDonutCharts, normalizeInvertedQuantitativeAxes, normalizeLayeredChartUnits, normalizeUnsafeVegaExpressions, normalizeVegaLiteSpec, normalizeInvalidD3Formats, normalizeStoredPercentFormats, normalizeTestBasedColorEncoding, splitDualAxisCharts } from './normalizeVegaLiteSpec';
+import {
+    normalizeArcDonutCharts,
+    normalizeInvalidD3Formats,
+    normalizeInvertedQuantitativeAxes,
+    normalizeLayeredChartUnits,
+    normalizeStoredPercentFormats,
+    normalizeTestBasedColorEncoding,
+    normalizeUnsafeVegaExpressions,
+    normalizeVegaLiteSpec,
+    splitDualAxisCharts,
+} from './normalizeVegaLiteSpec';
 import { applyResponsiveChartLayout } from './protonVegaTheme';
 
 describe('normalizeVegaLiteSpec', () => {
@@ -32,7 +42,7 @@ describe('normalizeVegaLiteSpec', () => {
             },
         });
 
-        expect(normalized.$schema).toBe('https://vega.github.io/schema/vega-lite/v5.json');
+        expect(normalized.$schema).toBe('https://vega.github.io/schema/vega-lite/v6.json');
         expect(normalized.vconcat).toBeDefined();
         expect(normalized.layer).toBeUndefined();
         expect(normalized.title).toEqual({ text: 'Geneva weather', subtitle: 'Sample data' });
@@ -41,7 +51,7 @@ describe('normalizeVegaLiteSpec', () => {
 
     it('coerces string titles into title objects', () => {
         const normalized = normalizeVegaLiteSpec({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             title: 'Latency distribution',
             data: { values: [{ tier: 'nano', latency: 88 }] },
             mark: 'bar',
@@ -56,7 +66,7 @@ describe('normalizeVegaLiteSpec', () => {
 
     it('infers encoding when the model emits mark without encoding', () => {
         const normalized = normalizeVegaLiteSpec({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             title: {
                 text: 'Geneva Weather — Monthly Climate Overview',
                 subtitle: 'Average temperature, precipitation, and sunshine hours',
@@ -79,7 +89,7 @@ describe('normalizeVegaLiteSpec', () => {
 
     it('removes empty layer placeholders and inherits x/y for highlight overlays', () => {
         const normalized = normalizeVegaLiteSpec({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             width: 'container',
             title: { text: 'API Error Rate by Hour (UTC)', subtitle: 'Spike at 14-15h' },
             data: {
@@ -135,7 +145,7 @@ describe('normalizeVegaLiteSpec', () => {
 
     it('splits dual-axis layered specs into vconcat', () => {
         const normalized = splitDualAxisCharts({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             title: 'Weather',
             data: {
                 values: [{ month: 'Jan', temp: 3, precip: 76 }],
@@ -346,7 +356,7 @@ describe('normalizeVegaLiteSpec', () => {
 
     it('hoists root arc mark into layer when LLMs add a label layer alongside unit spec', () => {
         const normalized = normalizeVegaLiteSpec({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             width: 'container',
             data: {
                 values: [
@@ -608,7 +618,10 @@ describe('normalizeVegaLiteSpec', () => {
 
         normalizeUnsafeVegaExpressions(spec);
 
-        const axis = ((spec.encoding as Record<string, unknown>).x as Record<string, unknown>).axis as Record<string, unknown>;
+        const axis = ((spec.encoding as Record<string, unknown>).x as Record<string, unknown>).axis as Record<
+            string,
+            unknown
+        >;
         expect(axis.labelExpr).toBeUndefined();
     });
 
@@ -632,7 +645,7 @@ describe('normalizeVegaLiteSpec', () => {
 
     it('normalizes FIFA ranking line charts with temporal year axis and inverted y', () => {
         const normalized = normalizeVegaLiteSpec({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             data: {
                 values: [
                     { year: 1994, country: 'England', ranking: 11 },
@@ -673,7 +686,7 @@ describe('normalizeVegaLiteSpec', () => {
 
     it('strips timeUnit from ordinal year axes and avoids duplicate line layers', () => {
         const normalized = normalizeVegaLiteSpec({
-            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
             data: {
                 values: [
                     { year: 1994, rank: 14, country: 'England' },

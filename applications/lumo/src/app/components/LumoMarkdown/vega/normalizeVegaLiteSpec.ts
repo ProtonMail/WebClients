@@ -1,10 +1,6 @@
-import {
-    PROTON_DRIVE_RED,
-    PROTON_PURPLE,
-    PROTON_STATIC_COLOR_BAND_FIELD,
-} from './protonChartTokens';
+import { PROTON_DRIVE_RED, PROTON_PURPLE, PROTON_STATIC_COLOR_BAND_FIELD } from './protonChartTokens';
 
-const VEGA_LITE_V5_SCHEMA = 'https://vega.github.io/schema/vega-lite/v5.json';
+const VEGA_LITE_V6_SCHEMA = 'https://vega.github.io/schema/vega-lite/v6.json';
 
 const DATUM_TEST_PATTERN = /datum\.(\w+)\s*(>=|>|<=|<|==)\s*(-?\d+(?:\.\d+)?)/;
 const METRIC_FILTER_PATTERN = /datum\.metric\s*(===|!==)\s*['"]([^'"]+)['"]/;
@@ -64,7 +60,9 @@ function extractInlineValues(spec: Record<string, unknown>): Record<string, unkn
         return null;
     }
 
-    return values.filter((row): row is Record<string, unknown> => !!row && typeof row === 'object' && !Array.isArray(row));
+    return values.filter(
+        (row): row is Record<string, unknown> => !!row && typeof row === 'object' && !Array.isArray(row)
+    );
 }
 
 function inferXField(keys: string[], sample: Record<string, unknown>): string {
@@ -288,7 +286,8 @@ export function normalizeRootUnitWithLayer(spec: Record<string, unknown>): void 
     });
 
     const hasDuplicateRootMark = normalizedLayers.some(
-        (layer) => !!layer && typeof layer === 'object' && !Array.isArray(layer) && getMarkTypeFromNode(layer) === rootMarkType
+        (layer) =>
+            !!layer && typeof layer === 'object' && !Array.isArray(layer) && getMarkTypeFromNode(layer) === rootMarkType
     );
 
     if (hasDuplicateRootMark) {
@@ -584,19 +583,16 @@ export function splitDualAxisCharts(spec: Record<string, unknown>): Record<strin
     const data = spec.data;
     const firstLayer = dataLayers[0]!;
     const xEncoding = (firstLayer.encoding as Record<string, unknown> | undefined)?.x as
-        | Record<string, unknown>
-        | undefined;
+        Record<string, unknown> | undefined;
 
     if (!xEncoding) {
         return spec;
     }
 
-    const subcharts = dataLayers.map((layer, index) =>
-        buildSubchart(layer, data, index, dataLayers.length, xEncoding)
-    );
+    const subcharts = dataLayers.map((layer, index) => buildSubchart(layer, data, index, dataLayers.length, xEncoding));
 
     return {
-        $schema: spec.$schema ?? VEGA_LITE_V5_SCHEMA,
+        $schema: spec.$schema ?? VEGA_LITE_V6_SCHEMA,
         title: spec.title,
         data,
         width: spec.width ?? 'container',
@@ -705,14 +701,14 @@ function normalizeTitle(spec: Record<string, unknown>): void {
 
 /**
  * Repairs common LLM Vega-Lite output so vega-embed can compile it:
- * - normalizes $schema to Vega-Lite v5
+ * - normalizes $schema to Vega-Lite v6
  * - moves subtitle into title
  * - infers mark/encoding from inline data.values when missing
  * - hoists root mark/encoding into layer when LLMs mix unit specs with label layers
  * - splits dual-axis layers into vconcat stacks
  */
 export function normalizeVegaLiteSpec(spec: Record<string, unknown>): Record<string, unknown> {
-    const normalized: Record<string, unknown> = { ...spec, $schema: VEGA_LITE_V5_SCHEMA };
+    const normalized: Record<string, unknown> = { ...spec, $schema: VEGA_LITE_V6_SCHEMA };
 
     normalizeTitle(normalized);
     stripFullVegaKeys(normalized);
@@ -966,7 +962,8 @@ function getCompositionChildren(spec: Record<string, unknown>): Record<string, u
         const children = spec[key];
         if (Array.isArray(children) && children.length > 0) {
             return children.filter(
-                (child): child is Record<string, unknown> => !!child && typeof child === 'object' && !Array.isArray(child)
+                (child): child is Record<string, unknown> =>
+                    !!child && typeof child === 'object' && !Array.isArray(child)
             );
         }
     }
@@ -1011,7 +1008,10 @@ export function hoistCompositionParams(spec: Record<string, unknown>): void {
         const rootParams = Array.isArray(spec.params) ? [...spec.params] : [];
         const seen = new Set(
             rootParams
-                .filter((param): param is VegaParamDefinition => !!param && typeof param === 'object' && !Array.isArray(param))
+                .filter(
+                    (param): param is VegaParamDefinition =>
+                        !!param && typeof param === 'object' && !Array.isArray(param)
+                )
                 .map((param) => param.name)
         );
 
@@ -1248,8 +1248,7 @@ export function normalizeTestBasedColorEncoding(spec: Record<string, unknown>): 
             return;
         }
 
-        const highlightValue =
-            typeof conditionObject.value === 'string' ? conditionObject.value : PROTON_DRIVE_RED;
+        const highlightValue = typeof conditionObject.value === 'string' ? conditionObject.value : PROTON_DRIVE_RED;
         const defaultValue = typeof colorObject.value === 'string' ? colorObject.value : PROTON_PURPLE;
 
         for (const row of values) {
@@ -1611,12 +1610,18 @@ export function normalizeInvertedQuantitativeAxes(spec: Record<string, unknown>)
 
         for (const channel of ['x', 'y'] as const) {
             const channelEncoding = encoding[channel] as Record<string, unknown> | undefined;
-            if (!channelEncoding || channelEncoding.type !== 'quantitative' || !isDescendingSort(channelEncoding.sort)) {
+            if (
+                !channelEncoding ||
+                channelEncoding.type !== 'quantitative' ||
+                !isDescendingSort(channelEncoding.sort)
+            ) {
                 continue;
             }
 
             channelEncoding.scale = {
-                ...(channelEncoding.scale && typeof channelEncoding.scale === 'object' && !Array.isArray(channelEncoding.scale)
+                ...(channelEncoding.scale &&
+                typeof channelEncoding.scale === 'object' &&
+                !Array.isArray(channelEncoding.scale)
                     ? (channelEncoding.scale as Record<string, unknown>)
                     : {}),
                 reverse: true,
