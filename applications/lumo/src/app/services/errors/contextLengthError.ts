@@ -1,5 +1,3 @@
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-
 import { CONTEXT_LENGTH_EXCEEDED_CODE } from '../../types-api';
 
 /**
@@ -48,7 +46,21 @@ function isVllmPreStreamContextLengthBody(data: unknown): boolean {
     }
 
     const body = data as Record<string, unknown>;
-    return body.type === 'BadRequestError' && body.object === 'error';
+    if (
+        body.type !== 'BadRequestError' ||
+        body.object !== 'error' ||
+        body.code !== 400 ||
+        typeof body.message !== 'string'
+    ) {
+        return false;
+    }
+
+    const message = body.message.toLowerCase();
+    return (
+        message.includes('maximum context length') ||
+        message.includes('context window') ||
+        message.includes('too many tokens')
+    );
 }
 
 function hasNormalisedContextLengthCode(data: unknown): boolean {
@@ -87,43 +99,21 @@ export function getContextLengthExceededUpstreamMessage(error: any): string | un
  * (or instead of) an SSE stream.
  */
 export function isContextLengthExceededApiError(error: any): boolean {
-    if (!error) {
+    // Raw pre-stream context overflows are only forwarded as HTTP 400.
+    // In-stream overflows stay HTTP 200 and are handled from their explicit
+    // SSE `context_length_exceeded` code before reaching this function.
+    if (!error || error.status !== 400) {
         return false;
     }
 
-    if (isVllmPreStreamContextLengthBody(error.data)) {
-        return true;
-    }
-
+    let data = error.data;
     if (typeof error.data === 'string') {
         try {
-            if (isVllmPreStreamContextLengthBody(JSON.parse(error.data))) {
-                return true;
-            }
+            data = JSON.parse(error.data);
         } catch {
-            // Ignore malformed JSON bodies.
+            return false;
         }
     }
 
-    if (hasNormalisedContextLengthCode(error.data)) {
-        return true;
-    }
-
-    const { code, message } = getApiError(error);
-
-    const haystacks: (string | undefined)[] = [
-        typeof code === 'string' ? code : undefined,
-        message,
-        error.message,
-        typeof error.data === 'string' ? error.data : undefined,
-        (() => {
-            try {
-                return error.data ? JSON.stringify(error.data) : undefined;
-            } catch {
-                return undefined;
-            }
-        })(),
-    ];
-
-    return haystacks.some((h) => typeof h === 'string' && h.toLowerCase().includes(CONTEXT_LENGTH_EXCEEDED_CODE));
+    return isVllmPreStreamContextLengthBody(data) || hasNormalisedContextLengthCode(data);
 }

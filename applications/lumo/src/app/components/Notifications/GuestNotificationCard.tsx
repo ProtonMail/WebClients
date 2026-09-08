@@ -10,7 +10,7 @@ import { useTierErrors } from '../../hooks/useTierErrors';
 import { getSelectedModelTier, useOptionalModelTier } from '../../providers/ModelTierProvider';
 import {
     isModelSwitchSuggestionEligible,
-    shouldShowWeeklyLimitUpsell,
+    shouldShowLimitUpsell,
     useRemainingLimits,
 } from '../../services/usageLimitsStore';
 import type { ConversationId, Message } from '../../types';
@@ -51,7 +51,7 @@ export const GuestNotificationCard = ({
     const { hasLumoPlus } = useLumoPlan();
     const { isMaxAvailableByFlag } = useMaxModelAvailability();
     const remainingLimits = useRemainingLimits();
-    const weeklyLimitUpsellVisible = shouldShowWeeklyLimitUpsell(remainingLimits, hasTierErrors, hasLumoPlus);
+    const limitUpsellVisible = shouldShowLimitUpsell(remainingLimits, hasTierErrors, hasLumoPlus);
     const modelTierContext = useOptionalModelTier();
     const selectedModelTier = modelTierContext ? getSelectedModelTier(modelTierContext.modelTier) : undefined;
     const modelSwitchSuggestionEligible =
@@ -60,7 +60,7 @@ export const GuestNotificationCard = ({
             hasLumoPlus,
             selectedModelTier,
             remainingLimits,
-            weeklyLimitUpsellVisible,
+            limitUpsellVisible,
             messageCount: messageChain.length,
             isMaxAvailableByFlag,
         });
@@ -81,7 +81,7 @@ export const GuestNotificationCard = ({
     const hasCompletedExchange = messageChain.length >= 2;
 
     const canEverShow =
-        !weeklyLimitUpsellVisible &&
+        !limitUpsellVisible &&
         !modelSwitchSuggestionEligible &&
         !isChatLimitBlocked &&
         hasCompletedExchange &&
