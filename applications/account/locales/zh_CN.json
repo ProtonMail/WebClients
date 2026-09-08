@@ -276,6 +276,90 @@
       ],
       "Zoom meeting links": [
         "Zoom 会议链接"
+      ],
+      "Audit log": [
+        "审计日志"
+      ],
+      "Automatically delete data": [
+        "自动删除数据"
+      ],
+      "Block sender": [
+        "屏蔽发件人"
+      ],
+      "Create organization": [
+        "创建组织"
+      ],
+      "Data breach alerts": [
+        "数据泄露警报"
+      ],
+      "Downgrade plan": [
+        "降级套餐"
+      ],
+      "Download apps": [
+        "下载应用"
+      ],
+      "Download recovery file": [
+        "下载恢复文件"
+      ],
+      "Email aliases": [
+        "邮箱别名"
+      ],
+      "Encryption backup file": [
+        "加密备份文件"
+      ],
+      "Export messages": [
+        "导出邮件"
+      ],
+      "External mailbox": [
+        "外部邮箱"
+      ],
+      "Group members": [
+        "群组成员"
+      ],
+      "Group plan invitation": [
+        "群组套餐邀请"
+      ],
+      "Linux desktop app": [
+        "Linux 桌面应用"
+      ],
+      "Mnemonic": [
+        "助记词"
+      ],
+      "Privacy guides": [
+        "隐私指南"
+      ],
+      "Privacy services": [
+        "隐私服务"
+      ],
+      "Protection from cyber attacks": [
+        "防范网络攻击"
+      ],
+      "Redeem discount code": [
+        "兑换折扣码"
+      ],
+      "Referral credits": [
+        "推荐积分"
+      ],
+      "Scan QR code": [
+        "扫描二维码"
+      ],
+      "Shared server access": [
+        "共享服务器访问"
+      ],
+      "Storage usage": [
+        "存储用量"
+      ],
+      "Verify domain": [
+        "验证域名"
+      ],
+      "Video conferencing": [
+        "视频会议"
+      ],
+      "VPN session details": [
+        "VPN 会话详情"
+      ],
+      "Writing assistant": [
+        "写作助手"
       ]
     },
     "Accounts": {
@@ -2203,6 +2287,18 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Increase licenses": [
+        "增加许可证"
+      ],
+      "Invoice options": [
+        "发票选项"
+      ],
+      "Sign in to ${ providerName }": [
+        "登录 ${ providerName }"
+      ],
+      "Template with invite links": [
+        "带邀请链接的模板"
       ]
     },
     "action": {
@@ -3981,6 +4077,9 @@
       ],
       "Used / allocated licenses": [
         "已用 / 已分配许可证"
+      ],
+      "Managers": [
+        "管理员"
       ]
     },
     "Condition for custom filter": {
@@ -9210,6 +9309,9 @@
     "Get started checklist instructions": {
       "${ appName } on App Store": [
         "App Store 上的 ${ appName }"
+      ],
+      "${ appName } on Play Store": [
+        "Play Store 上的 ${ appName }"
       ]
     },
     "Gmail forwarding": {
@@ -9553,6 +9655,9 @@
       ],
       "Your plan": [
         "您的套餐"
+      ],
+      "Invited friends": [
+        "已邀请的好友"
       ]
     },
     "Hint": {
@@ -14098,6 +14203,54 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "${ relevantCount } of ${ totalCount }": [
+        "${ relevantCount } / ${ totalCount }"
+      ],
+      "${ storeName } app to copy data to ${ BRAND_NAME }": [
+        "使用 ${ storeName } 应用将数据复制到 ${ BRAND_NAME }"
+      ],
+      "Allows IPv6 traffic to pass through the VPN tunnel. This improves compatibility with IPv6 websites and services.": [
+        "允许 IPv6 流量通过 VPN 隧道，以提高与 IPv6 网站和服务的兼容性。"
+      ],
+      "Are you sure you want to continue without ${ withoutString }?": [
+        "确定要在没有 ${ withoutString } 的情况下继续吗？"
+      ],
+      "Backup password enabled": [
+        "备用密码已启用"
+      ],
+      "Connects you to your destination country through servers physically located elsewhere.": [
+        "通过位于其他物理位置的服务器将您连接到目标国家/地区。"
+      ],
+      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
+        "DMARC 在 SPF 和 DKIM 的基础上，告知接收服务器如何处理未通过这些检查的邮件。它有助于保护您的域名免遭冒充，并提高整体的投递可靠性。"
+      ],
+      "Members are periodically prompted to verify their ${ BRAND_NAME } password to ensure they don't forget it. Enforcing check-ins prevents members from turning them off.": [
+        "系统会定期提示成员验证其 ${ BRAND_NAME } 密码，以确保他们不会忘记。强制检查可防止成员关闭此功能。"
+      ],
+      "Not detected correctly? Choose your provider from the list.": [
+        "未正确识别？请从列表中选择您的提供商。"
+      ],
+      "Select the accounts you would like to bring to ${ BRAND_NAME }. You can migrate your whole organization today or start small and bring the rest along when you are ready.": [
+        "请选择您希望迁移到 ${ BRAND_NAME } 的账户。您可以立即迁移整个组织，也可以从小范围开始，待准备就绪后再迁移其余部分。"
+      ],
+      "Setting up your access…": [
+        "正在设置您的访问权限…"
+      ],
+      "To bring your organization's data to ${ BRAND_NAME }, install ${ BRAND_NAME } Easy Switch from the ${ storeName }. After installing it, come back here to continue.": [
+        "若要将组织数据迁移至 ${ BRAND_NAME }，请从 ${ storeName } 安装 ${ BRAND_NAME } Easy Switch。安装完成后，请返回此处继续。"
+      ],
+      "Verified": [
+        "已验证"
+      ],
+      "We bill you monthly by averaging the peak allocated licenses from each day over the month.": [
+        "我们按月计费，取当月每日峰值已分配许可证数量的平均值。"
+      ],
+      "Whoever controls this address would get full access to your account and your data. Only continue if you recognize it and started this yourself.": [
+        "控制此地址的任何人都将获得对您账户和数据的完全访问权限。仅当您认识此地址且操作由您本人发起时，才请继续。"
+      ],
+      "You will not be able to copy these users' data later.": [
+        "您之后将无法复制这些用户的数据！"
       ]
     },
     "info": {
@@ -16415,6 +16568,24 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "${ BRAND_NAME } Easy Switch": [
+        "${ BRAND_NAME } Easy Switch"
+      ],
+      "Migration includes": [
+        "迁移内容包括"
+      ],
+      "Monthly average": [
+        "月平均值"
+      ],
+      "Peak allocated licenses": [
+        "峰值已分配许可证"
+      ],
+      "Select Linux package format": [
+        "选择 Linux 软件包格式"
+      ],
+      "Users migrated": [
+        "已迁移的用户"
       ]
     },
     "label": {
@@ -16840,6 +17011,12 @@
       ],
       "What’s this?": [
         "这是什么？"
+      ],
+      "invite link": [
+        "邀请链接"
+      ],
+      "Snap store": [
+        "Snap 商店"
       ]
     },
     "Link (Scribe)": {
@@ -17319,6 +17496,9 @@
       ],
       "Sign in": [
         "登录"
+      ],
+      "Resume role assignment": [
+        "恢复角色分配"
       ]
     },
     "Members table usage": {
@@ -17342,6 +17522,9 @@
       ],
       "Yesterday, ${ time }": [
         "昨天 ${ time }"
+      ],
+      "Monitor gateways connections": [
+        "监控网关连接"
       ]
     },
     "Message": {
@@ -19693,6 +19876,24 @@
       ],
       "Your users will receive an email to accept the unprivatization request.": [
         "您的用户将收到一封接受取消私有化请求的邮件。"
+      ],
+      "An unprivatization request is sent by email to the converted users": [
+        "取消私有化请求已通过邮件发送给已转换的用户"
+      ],
+      "Converting users to private": [
+        "正在将用户转换为私有"
+      ],
+      "Once your privileges have been restored, you'll be able to create non-private users and access their accounts.": [
+        "恢复权限后，您将能够创建非私有用户并访问其账户。"
+      ],
+      "Ready to reset your organization key?": [
+        "准备好重置组织密钥了吗？"
+      ],
+      "Reset organization key?": [
+        "重置组织密钥？"
+      ],
+      "To become non-private again, they must accept the request to enable admin access, from their account settings. You don't need to wait for this step.": [
+        "若要重新成为非私有用户，他们必须在其账户设置中接受启用管理员访问的请求。您无需等待此步骤。"
       ]
     },
     "Organization logo upload": {
@@ -20825,6 +21026,9 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "billing@company.com": [
+        "billing@company.com"
       ]
     },
     "placeholder": {
@@ -22258,6 +22462,9 @@
       ],
       "You can now sync groups alongside users. Changes push **automatically** when you update your groups on your identity provider.": [
         "您现在可以同时同步群组和用户。当您在身份提供商中更新群组时，更改将**自动**推送。"
+      ],
+      "**Groups you already set up** in your identity provider are imported automatically.": [
+        "您在身份提供商中**已设置的群组**将自动导入。"
       ]
     },
     "scim: Action": {
@@ -22328,6 +22535,9 @@
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "要重新启用与身份提供商的同步，需要再次完成 SCIM 集成。"
+      ],
+      "When you disable SCIM:": [
+        "禁用 SCIM 后："
       ]
     },
     "scim: Label": {
@@ -23889,6 +24099,15 @@
       ],
       "Your SSO configuration will be deleted.": [
         "您的 SSO 配置将被删除。"
+      ],
+      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
+        "由于您的组织已将您迁移至单点登录 (SSO)，**您的旧密码已保存为备用密码**。您可以在新设备上使用它来授权 SSO 登录。"
+      ],
+      "Continue to join as **${ username }**": [
+        "继续以 **${ username }** 身份加入"
+      ],
+      "Enter it to sign in. It is the same as your old password.": [
+        "请输入该密码进行登录，它与您的旧密码相同。"
       ]
     },
     "sso: auth device state": {
@@ -23997,6 +24216,9 @@
       ],
       "Waiting for MX...": [
         "正在等待 MX 记录..."
+      ],
+      "Activated": [
+        "已激活"
       ]
     },
     "Step": {
@@ -24032,6 +24254,12 @@
       ],
       "Set up secure sending (SPF)": [
         "设置安全发送 (SPF)"
+      ],
+      "Migrate accounts": [
+        "迁移账户"
+      ],
+      "Verify your domain": [
+        "验证您的域名"
       ]
     },
     "Step in filter modal": {
@@ -27396,6 +27624,27 @@
       ],
       "Your subscriptions": [
         "您的账户等级"
+      ],
+      "Going private": [
+        "转为私有"
+      ],
+      "Manage managers": [
+        "管理员管理"
+      ],
+      "Migration status": [
+        "迁移状态"
+      ],
+      "Privacy": [
+        "隐私设置"
+      ],
+      "Set up secure sending (SPF)": [
+        "设置安全发送 (SPF)"
+      ],
+      "Some accounts are not claimed": [
+        "部分账户尚未领取"
+      ],
+      "Update records for receiving": [
+        "更新接收记录"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27896,6 +28145,9 @@
     "Tooltip for members table": {
       "Last time this user connected to one of your organization's Gateways.": [
         "该用户最后一次连接到您组织网关的时间。"
+      ],
+      "Last time this user signed in or used the ${ VPN_APP_NAME } app on their device.": [
+        "该用户最后一次登录或在其设备上使用 ${ VPN_APP_NAME } 应用的时间。"
       ]
     },
     "Tooltip prompt to trust keys": {
@@ -28127,6 +28379,9 @@
       ],
       "You can safely remove this user from your organization.": [
         "您可以将这些用户从组织中安全移除。"
+      ],
+      "Your account was temporarily made private while your organization key was reset. Accept the request to restore it.": [
+        "在组织密钥重置期间，您的账户已临时转为私有。请接受请求以恢复。"
       ]
     },
     "Update font modal": {
@@ -28959,6 +29214,16 @@
       ],
       "Yearly, ${ untilString }": [
         "每一年，${ untilString }"
+      ]
+    },
+    "Invitation message": {
+      "We're moving to ${ BRAND_NAME }, the secure email service.\nAnd your ${ BRAND_NAME } account is ready to claim.\nClick the ${ inviteLink }.\nEnter your email address, we'll send a code to your ${ mailAppName }.\nUse it to set your password — and your ${ BRAND_NAME } account is yours.\nFor a little while, both will work side by side. ${ BRAND_NAME } and ${ mailAppName }.\nThen, when everyone has made the move, we will retire ${ mailAppName }. We'll remind you before it does.": [
+        "我们将迁移至 ${ BRAND_NAME }，这款安全邮箱服务。\n您的 ${ BRAND_NAME } 账户已准备就绪，请点击 ${ inviteLink } 领取。\n请输入您的邮箱地址，我们会向您的 ${ mailAppName } 发送验证码。\n使用验证码设置您的密码 — 您的 ${ BRAND_NAME } 账户就属于您了。\n在一段时间内，${ BRAND_NAME } 和 ${ mailAppName } 将并行运行。\n待所有人完成迁移后，我们将停用 ${ mailAppName }，在此之前我们会提前提醒您。"
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "银行账户"
       ]
     }
   }

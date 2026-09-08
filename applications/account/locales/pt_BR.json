@@ -3744,6 +3744,12 @@
       "Total for ${ cycle } month": [
         "Total por ${ cycle } mês",
         "Total por ${ cycle } meses"
+      ],
+      "Amount due": [
+        "Valor a pagar"
+      ],
+      "Amount due now": [
+        "Valor devido agora"
       ]
     },
     "Collapsible tooltip": {
@@ -29101,6 +29107,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Anualmente, ${ untilString }"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Experimente agora"
       ]
     }
   }
