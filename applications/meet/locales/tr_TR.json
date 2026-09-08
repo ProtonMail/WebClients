@@ -67,14 +67,32 @@
       "Background removed": [
         "Arka plan kaldırıldı"
       ],
+      "Beach landscape background applied": [
+        "Kumsal manzarası arka planı uygulandı"
+      ],
       "Blurred background applied": [
         "Bulanık arka plan uygulandı"
+      ],
+      "Blurred office background applied": [
+        "Bulanık ofis arka planı uygulandı"
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Bağlantı, ağ kısıtlamaları nedeniyle TURN aktarım kipi ile kuruldu. Gecikme ve arama kalitesi sorunları yaşanabilir."
       ],
       "Connection lost. Reconnecting…": [
         "Bağlantı kesildi. Yeniden bağlanıyor…"
+      ],
+      "Dark ${ BRAND_NAME } background applied": [
+        "Koyu ${ BRAND_NAME } arka planı uygulandı"
+      ],
+      "Library background applied": [
+        "Kitaplık arka planı uygulandı"
+      ],
+      "Light ${ BRAND_NAME } background applied": [
+        "Açık ${ BRAND_NAME } arka planı uygulandı"
+      ],
+      "Mountain landscape background applied": [
+        "Dağ manzarası arka planı uygulandı"
       ],
       "New chat message: ${ message }": [
         "Yeni sohbet iletisi: ${ message }"
@@ -207,6 +225,9 @@
       ],
       "Cancel": [
         "İptal"
+      ],
+      "Change layout": [
+        "Yerleşimi değiştir"
       ],
       "Change password": [
         "Parolayı değiştir"
@@ -363,6 +384,9 @@
       ],
       "Getting ready...": [
         "Hazırlanıyor..."
+      ],
+      "Grid": [
+        "Izgara"
       ],
       "Help and feedback": [
         "Yardım ve geri bildirim"
@@ -564,6 +588,9 @@
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } ile zamanla"
       ],
+      "Screen share": [
+        "Ekran paylaşımı"
+      ],
       "Search countries": [
         "Ülke ara"
       ],
@@ -605,6 +632,9 @@
       ],
       "Skip to main content": [
         "Ana içeriğe git"
+      ],
+      "Speaker": [
+        "Konuşmacı"
       ],
       "Start an instant meeting": [
         "Anında görüşme başlat"
@@ -692,12 +722,6 @@
       ],
       "Use camera": [
         "Kamerayı aç"
-      ],
-      "Use color": [
-        "Renk kulllanılsın"
-      ],
-      "Use image": [
-        "Görsel kullanılsın"
       ],
       "Use microphone": [
         "Mikrofonu aç"
@@ -2221,6 +2245,9 @@
       "Screen share is not supported on mobile browsers": [
         "Mobil tarayıcılar ekran paylaşımını desteklemiyor"
       ],
+      "Screen share is not supported on your device": [
+        "Aygıtınızda ekran paylaşımı desteklenmiyor"
+      ],
       "Signature is missing": [
         "İmza eksik"
       ],
@@ -2585,6 +2612,9 @@
         "${ replyCount } yanıt",
         "${ replyCount } yanıt"
       ],
+      "${ spotlightParticipantName } is the active speaker": [
+        "${ spotlightParticipantName } etkin konuşmacı"
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "Toplam ${ totalParticipantCount } katılımcıdan ${ maxParticipants } katılımcıya kadar"
       ],
@@ -2617,8 +2647,8 @@
       "Admitting": [
         "İzin veriliyor"
       ],
-      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
-        "Gelişmiş kip: Sonraki sürümün bulanıklık sabitlerini ayarlayın ardından ön izlemeyi yeniden oluşturmak için uygulayın. Bu ayarlar dosyaya ve belirtilmemiş değerlere göre önceliklidir."
+      "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Gelişmiş kip: Bulanıklık sabitlerini ayarlayın ardından ön izlemeyi yeniden oluşturmak için uygulayın. Bu ayarlar dosyaya ve belirtilmemiş değerlere göre önceliklidir."
       ],
       "Allow camera access to preview your background": [
         "Arka planınızın ön izlemesini görmek için kameraya erişme izni verin"
@@ -2902,8 +2932,8 @@
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
         "Günlük kayıtları sorunun ortaya çıkmasından önce neler olduğunu anlamamıza yardımcı olur. Bu günlük kayıtlarında uygulama işlemleri ve hata iletileri bulunur. Ancak iletilerin içeriği bulunmaz."
       ],
-      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
-        "Yüklediğiniz veya canlı kamera görüntüsünü iki arka plan bulanıklaştırma sürümünde yan yana sürekli oynatın."
+      "Loop an uploaded video or your live camera through background blur.": [
+        "Yüklediğiniz veya canlı kamera görüntüsünü arka plan bulanıklaştırması ile sürekli oynatın."
       ],
       "Lower participant's hand": [
         "Katılımcının elini indir"
@@ -3115,8 +3145,8 @@
       "Rejecting": [
         "Reddediliyor"
       ],
-      "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
-        "Canlı kamera görüntünüzde özel arka plan işleyici kullanın. Düz bir renk seçin ya da arka plan olarak kullanılacak bir görsel yükleyin."
+      "Run your live camera through the custom background processor. Upload an image to use as the background.": [
+        "Canlı kamera görüntünüzde özel arka plan işleyici kullanın. Arka plan olarak kullanılacak bir görsel yükleyin."
       ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Sonraki toplantınızı zamanlayın. Takviminizde toplantılar zamanlamak için bir hesap açın."
@@ -3412,11 +3442,14 @@
       "Auto-detect": [
         "Otomatik algılama"
       ],
-      "Background color": [
-        "Arka plan rengi"
+      "Beach landscape background": [
+        "Kumsal manzarası arka planı"
       ],
       "Blurred (next)": [
         "Bulanık (sonraki)"
+      ],
+      "Blurred office background": [
+        "Bulanık ofis arka planı"
       ],
       "Browser": [
         "Tarayıcı"
@@ -3454,8 +3487,8 @@
       "Created": [
         "Oluşturulma"
       ],
-      "Current": [
-        "Geçerli"
+      "Dark ${ BRAND_NAME } background": [
+        "Koyu ${ BRAND_NAME } arka planı"
       ],
       "Delete": [
         "Sil"
@@ -3526,6 +3559,12 @@
       "Leave meeting options": [
         "Görüşmeden ayrılma seçenekleri"
       ],
+      "Library background": [
+        "Kitaplık arka planı"
+      ],
+      "Light ${ BRAND_NAME } background": [
+        "Açık ${ BRAND_NAME } arka planı"
+      ],
       "Live caption agent": [
         "Canlı alt yazı aracısı"
       ],
@@ -3547,14 +3586,14 @@
       "Monday to Friday": [
         "Pazartesi ile Cuma arasında"
       ],
+      "Mountain landscape background": [
+        "Dağ manzarası arka planı"
+      ],
       "Muted": [
         "Sesi kapatılmış"
       ],
       "Name": [
         "Ad"
-      ],
-      "Next": [
-        "İlerle"
       ],
       "Operating system": [
         "İşletim sistemi"
@@ -3576,6 +3615,9 @@
       ],
       "Phone number": [
         "Telefon numarası"
+      ],
+      "Preview": [
+        "Ön izleme"
       ],
       "Raw": [
         "Ham"
@@ -3612,9 +3654,6 @@
       ],
       "Selected Speaker": [
         "Seçilmiş konuşmacı"
-      ],
-      "Solid color": [
-        "Düz renk"
       ],
       "Spoken language": [
         "Konuşulan dil"
@@ -4039,8 +4078,8 @@
       "Background": [
         "Arka plan"
       ],
-      "Background blur comparison": [
-        "Arka plan bulanıklığı karşılaştırması"
+      "Background blur preview": [
+        "Arka plan bulanıklaştırması ön izlemesi"
       ],
       "Backgrounds": [
         "Arka planlar"

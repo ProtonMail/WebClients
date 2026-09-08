@@ -226,6 +226,9 @@
       "Cancel": [
         "Cancel·la"
       ],
+      "Change layout": [
+        "Canviar la disposició"
+      ],
       "Change password": [
         "Canvia la contrasenya"
       ],
@@ -381,6 +384,9 @@
       ],
       "Getting ready...": [
         "S'està preparant..."
+      ],
+      "Grid": [
+        "Graella"
       ],
       "Help and feedback": [
         "Ajuda i comentaris"
@@ -582,6 +588,9 @@
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "Programeu-la a ${ CALENDAR_APP_NAME }"
       ],
+      "Screen share": [
+        "Compartir pantalla"
+      ],
       "Search countries": [
         "Cerca països"
       ],
@@ -623,6 +632,9 @@
       ],
       "Skip to main content": [
         "Aneu al contingut principal"
+      ],
+      "Speaker": [
+        "Altaveu"
       ],
       "Start an instant meeting": [
         "Inicieu una reunió ara mateix"
@@ -710,12 +722,6 @@
       ],
       "Use camera": [
         "Utilitzeu la càmera"
-      ],
-      "Use color": [
-        "Utilitzar el color"
-      ],
-      "Use image": [
-        "Utilitzar la imatge"
       ],
       "Use microphone": [
         "Utilitzeu el micròfon"
@@ -2239,6 +2245,9 @@
       "Screen share is not supported on mobile browsers": [
         "La compartició de pantalla no és compatible amb els navegadors de mòbil"
       ],
+      "Screen share is not supported on your device": [
+        "La compartició de pantalla no és compatible amb el vostre dispositiu"
+      ],
       "Signature is missing": [
         "Falta la signatura"
       ],
@@ -2603,6 +2612,9 @@
         "${ replyCount } resposta",
         "${ replyCount } respostes"
       ],
+      "${ spotlightParticipantName } is the active speaker": [
+        "${ spotlightParticipantName } és qui parla"
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } d'un màxim de ${ maxParticipants } participants"
       ],
@@ -2635,8 +2647,8 @@
       "Admitting": [
         "Admetent"
       ],
-      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
-        "Mode avançat: ajusteu cada constant de difuminat per a la versió següent i després apliqueu-ho per tornar a generar la previsualització. Les sobreescriptures tenen prioritat sobre els valors del fitxer i d'Unleash."
+      "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Mode avançat: ajusteu cada constant de desenfocament i després apliqueu-ho per tornar a generar la previsualització. Les superposicions tenen prioritat sobre els valors del fitxer i d'Unleash."
       ],
       "Allow camera access to preview your background": [
         "Permeteu l'accés a la càmera per veure la vista prèvia del vostre fons"
@@ -2920,8 +2932,8 @@
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
         "Els registres ens ajuden a entendre què va passar abans que es produís el problema. Inclouen accions de l'aplicació i missatges d'error, però no el contingut dels missatges."
       ],
-      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
-        "Reproduïu en bucle un vídeo penjat o de la vostra càmera en directe amb les dues versions de difuminat de fons, una al costat de l'altra."
+      "Loop an uploaded video or your live camera through background blur.": [
+        "Repetiu en bucle un vídeo carregat o la vostra càmera en directe mitjançant el desenfocament de fons."
       ],
       "Lower participant's hand": [
         "Abaixar la mà del participant"
@@ -3133,8 +3145,8 @@
       "Rejecting": [
         "Rebutjant"
       ],
-      "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
-        "Utilitzeu la vostra càmera en directe mitjançant el processador de fons personalitzat. Trieu un color pla o carregueu una imatge per utilitzar-la com a fons."
+      "Run your live camera through the custom background processor. Upload an image to use as the background.": [
+        "Utilitzeu la càmera en directe mitjançant el processador de fons personalitzat. Carregueu una imatge per utilitzar-la com a fons."
       ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Programeu la vostra pròxima reunió. Creeu un compte per a programar reunions amb el vostre calendari."
@@ -3430,9 +3442,6 @@
       "Auto-detect": [
         "Detecció automàtica"
       ],
-      "Background color": [
-        "Color de fons"
-      ],
       "Beach landscape background": [
         "Fons de paisatge de platja"
       ],
@@ -3477,9 +3486,6 @@
       ],
       "Created": [
         "Creat"
-      ],
-      "Current": [
-        "Actual"
       ],
       "Dark ${ BRAND_NAME } background": [
         "Fons fosc de ${ BRAND_NAME }"
@@ -3554,7 +3560,7 @@
         "Opcions per abandonar la reunió"
       ],
       "Library background": [
-        "Fons de la biblioteca"
+        "Fons de biblioteca"
       ],
       "Light ${ BRAND_NAME } background": [
         "Fons clar de ${ BRAND_NAME }"
@@ -3589,9 +3595,6 @@
       "Name": [
         "Nom"
       ],
-      "Next": [
-        "Següent"
-      ],
       "Operating system": [
         "Sistema operatiu"
       ],
@@ -3612,6 +3615,9 @@
       ],
       "Phone number": [
         "Número de telèfon"
+      ],
+      "Preview": [
+        "Vista prèvia"
       ],
       "Raw": [
         "En brut"
@@ -3648,9 +3654,6 @@
       ],
       "Selected Speaker": [
         "Altaveu seleccionat"
-      ],
-      "Solid color": [
-        "Color sòlid"
       ],
       "Spoken language": [
         "Idioma parlat"
@@ -4075,8 +4078,8 @@
       "Background": [
         "Fons"
       ],
-      "Background blur comparison": [
-        "Comparació del difuminat de fons"
+      "Background blur preview": [
+        "Vista prèvia del desenfocament de fons"
       ],
       "Backgrounds": [
         "Fons"

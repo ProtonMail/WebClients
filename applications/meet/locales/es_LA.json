@@ -64,14 +64,35 @@
       "Background effect turned off": [
         "Efecto de fondo desactivado"
       ],
+      "Background removed": [
+        "Fondo eliminado"
+      ],
+      "Beach landscape background applied": [
+        "Fondo de paisaje de playa aplicado"
+      ],
       "Blurred background applied": [
         "Fondo difuminado aplicado"
+      ],
+      "Blurred office background applied": [
+        "Fondo de oficina difuminado aplicado"
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Conexión mediante modo de retransmisión TURN debido a restricciones en la red. Esto puede aumentar la latencia y afectar a la calidad de la llamada."
       ],
       "Connection lost. Reconnecting…": [
         "Conexión perdida. Reconectando…"
+      ],
+      "Dark ${ BRAND_NAME } background applied": [
+        "Fondo oscuro de ${ BRAND_NAME } aplicado"
+      ],
+      "Library background applied": [
+        "Fondo de biblioteca aplicado"
+      ],
+      "Light ${ BRAND_NAME } background applied": [
+        "Fondo claro de ${ BRAND_NAME } aplicado"
+      ],
+      "Mountain landscape background applied": [
+        "Fondo de paisaje de montaña aplicado"
       ],
       "New chat message: ${ message }": [
         "Nuevo mensaje de chat: ${ message }"
@@ -138,6 +159,9 @@
       ],
       "Your camera has been turned off by the host": [
         "Su cámara fue desactivada por el anfitrión"
+      ],
+      "Your own background applied": [
+        "Su fondo propio aplicado"
       ]
     },
     "Action": {
@@ -154,6 +178,9 @@
       "Add another account": [
         "Añada otra cuenta"
       ],
+      "Add your own background": [
+        "Añadir su fondo propio"
+      ],
       "Admit ${ participantName }": [
         "Admitir a ${ participantName }"
       ],
@@ -162,6 +189,9 @@
       ],
       "Allow access": [
         "Permitir el acceso"
+      ],
+      "Allow live captions": [
+        "Permitir subtítulos en directo"
       ],
       "Anyone with the link can join immediately": [
         "CUalquiera con el enlace puede unirse automáticamente"
@@ -195,6 +225,9 @@
       ],
       "Cancel": [
         "Cancelar"
+      ],
+      "Change layout": [
+        "Cambiar el diseño"
       ],
       "Change password": [
         "Cambiar contraseña"
@@ -352,6 +385,9 @@
       "Getting ready...": [
         "Preparándose..."
       ],
+      "Grid": [
+        "Cuadrícula"
+      ],
       "Help and feedback": [
         "Ayuda y comentarios"
       ],
@@ -497,6 +533,9 @@
       "Rejoin meeting": [
         "Volver a unirse a la reunión"
       ],
+      "Remove ${ name }": [
+        "Eliminar ${ name }"
+      ],
       "Remove reaction ${ emoji }, ${ identities.length } reaction": [
         "Eliminar reacción ${ emoji }, ${ identities.length } reacción",
         "Eliminar reacción ${ emoji }, ${ identities.length } reacciones"
@@ -549,6 +588,9 @@
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "Programar en ${ CALENDAR_APP_NAME }"
       ],
+      "Screen share": [
+        "Compartir pantalla"
+      ],
       "Search countries": [
         "Buscar países"
       ],
@@ -590,6 +632,9 @@
       ],
       "Skip to main content": [
         "Saltar al contenido principal"
+      ],
+      "Speaker": [
+        "Hablante"
       ],
       "Start an instant meeting": [
         "Iniciar una reunión al instante"
@@ -678,12 +723,6 @@
       "Use camera": [
         "Usar cámara"
       ],
-      "Use color": [
-        "Usar color"
-      ],
-      "Use image": [
-        "Usar imagen"
-      ],
       "Use microphone": [
         "Usar micrófono"
       ],
@@ -716,6 +755,9 @@
       ]
     },
     "Alt": {
+      "Allow live captions": [
+        "Permitir subtítulos en directo"
+      ],
       "Audio settings": [
         "Ajustes de audio"
       ],
@@ -1902,6 +1944,12 @@
       "Copying item to a non-folder is not allowed": [
         "No se permite copiar un elemento en un elemento que no sea carpeta"
       ],
+      "Could not add this background. Check your connection and try again.": [
+        "No se pudo añadir este fondo. Compruebe su conexión e intente de nuevo."
+      ],
+      "Could not add this background. Please try again.": [
+        "No se pudo añadir este fondo. Intente de nuevo."
+      ],
       "Could not find an available name": [
         "No se pudo encontrar un nombre disponible"
       ],
@@ -1913,6 +1961,12 @@
       ],
       "Could not read part of this file: ${ message }": [
         "No se pudo leer parte de este archivo: ${ message }"
+      ],
+      "Could not remove this background. Check your connection and try again.": [
+        "No se pudo eliminar este fondo. Compruebe su conexión e intente de nuevo."
+      ],
+      "Could not remove this background. Please try again.": [
+        "No se pudo eliminar este fondo. Intente de nuevo."
       ],
       "Could not unlock the parent folder": [
         "No se pudo desbloquear la carpeta principal"
@@ -2031,6 +2085,9 @@
       "Failed to lock meeting": [
         "Error al bloquear la reunión"
       ],
+      "Failed to request live captions": [
+        "Error al solicitar los subtítulos en directo"
+      ],
       "Failed to rotate personal meeting link": [
         "Error al rotar el enlace de reunión personal"
       ],
@@ -2057,6 +2114,9 @@
       ],
       "Failed to update caption language. Please try again.": [
         "Error al actualizar el idioma de los subtítulos. Intente de nuevo."
+      ],
+      "Failed to update live captions availability": [
+        "Error al actualizar la disponibilidad de subtítulos en directo"
       ],
       "Failed to update live captions. Please try again.": [
         "Error al actualizar los subtítulos en directo. Intente de nuevo."
@@ -2164,6 +2224,9 @@
       "Photo not found": [
         "Foto no encontrada"
       ],
+      "Pick a JPEG, PNG or WebP image.": [
+        "Elija una imagen en JPEG, PNG o WebP."
+      ],
       "Please allow screen sharing in your system permissions, then try again": [
         "Permita compartir la pantalla en los permisos de su sistema y luego inténtelo de nuevo."
       ],
@@ -2181,6 +2244,9 @@
       ],
       "Screen share is not supported on mobile browsers": [
         "Compartir pantalla no se admite en navegadores móviles"
+      ],
+      "Screen share is not supported on your device": [
+        "Compartir pantalla no se admite en su dispositivo"
       ],
       "Signature is missing": [
         "Falta la firma"
@@ -2227,6 +2293,9 @@
       "The uploaded file does not match the original. Please try again.": [
         "El archivo cargado no coincide con el original. Intente de nuevo."
       ],
+      "This background could not be saved in this browser.": [
+        "No se pudo guardar este fondo en este navegador."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede el máximo de ${ maximumLength } caracteres."
       ],
@@ -2242,8 +2311,20 @@
       "This file has no version available to download": [
         "Este archivo no tiene una versión disponible para descargar"
       ],
+      "This file name is too long. Rename the image and try again.": [
+        "Este nombre de archivo es muy largo. Renombre la imagen e intente de nuevo."
+      ],
       "This file version could not be uploaded": [
         "No se pudo cargar esta versión del archivo"
+      ],
+      "This image could not be read. Pick another one.": [
+        "No se pudo leer esta imagen. Elija otra."
+      ],
+      "This image is too big. Pick one up to ${ maxEdge } pixels wide and tall.": [
+        "Esta imagen es muy grande. Elija otra de hasta ${ maxEdge } píxeles en ancho y largo."
+      ],
+      "This image is too large. Pick one under ${ maxMegabytes } MB.": [
+        "Esta imagen es demasiado grande. Elija otra menor a ${ maxMegabytes } MB."
       ],
       "This item has no image preview": [
         "Este elemento no tiene vista previa de imagen"
@@ -2304,6 +2385,9 @@
       ],
       "You do not have access to this shared item": [
         "No tiene acceso a este elemento compartido"
+      ],
+      "You have reached the maximum number of custom backgrounds.": [
+        "Ha alcanzado la cantidad máxima de fondos personalizados."
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "Su navegador se quedó sin espacio de almacenamiento. Se guardó la grabación hasta este momento."
@@ -2528,6 +2612,9 @@
         "${ replyCount } respuesta",
         "${ replyCount } respuestas"
       ],
+      "${ spotlightParticipantName } is the active speaker": [
+        "${ spotlightParticipantName } es el hablante activo"
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } de un máximo de ${ maxParticipants } participantes"
       ],
@@ -2551,14 +2638,17 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
       ],
+      "Adding ${ name }": [
+        "Añadiendo ${ name }"
+      ],
       "Admit": [
         "Admitir"
       ],
       "Admitting": [
         "Admitiendo"
       ],
-      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
-        "Modo avanzado: ajuste cada constante de difuminado para la siguiente versión y luego pulse en Aplicar para reconstruir la vista previa. Las anulaciones tienen prioridad sobre los valores de archivo y de Liberar."
+      "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Modo avanzado: ajuste cada constante de difuminado y luego pulse en Aplicar para reconstruir la vista previa. Las anulaciones tienen prioridad sobre los valores de archivo y de Liberar."
       ],
       "Allow camera access to preview your background": [
         "Permitir acceso a la cámara para previsualizar el fondo"
@@ -2770,6 +2860,9 @@
       "Host": [
         "Anfitrión"
       ],
+      "Host has disabled live captions for this meeting.": [
+        "El anfitrión desactivó los subtítulos en directo para esta reunión."
+      ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Organice sus propias reuniones seguras. Inicie una llamada en ${ MEET_APP_NAME } y comparta el enlace para invitar a quien quiera. Fácil, seguro y gratuito."
       ],
@@ -2839,8 +2932,8 @@
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
         "Los registros nos ayudan a comprender qué sucedió antes de que ocurriera el problema. Incluyen las acciones de la aplicación y los mensajes de error, pero no el contenido de los mensajes."
       ],
-      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
-        "Reproduzca en bucle un video cargado o su cámara en directo a través de ambas versiones con fondo difuminado, una al lado de la otra."
+      "Loop an uploaded video or your live camera through background blur.": [
+        "Reproduzca en bucle un video cargado o su cámara en directo a través de un fondo difuminado."
       ],
       "Lower participant's hand": [
         "Bajar la mano del participante"
@@ -2971,6 +3064,12 @@
       "Participant": [
         "Participante"
       ],
+      "Participants can turn live captions on. Turn on your own under Display.": [
+        "Los participantes pueden activar los subtítulos en directo. Active los suyos en Pantalla."
+      ],
+      "Participants can’t use live captions": [
+        "Los participantes no pueden usar subtítulos en directo"
+      ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Pegue su enlace de ${ MEET_APP_NAME } para unirse a una reunión segura"
       ],
@@ -3046,8 +3145,8 @@
       "Rejecting": [
         "Rechazando"
       ],
-      "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
-        "Ejecute su cámara en directo mediante el procesador de fondo personalizado. Elija un color liso o cargue una imagen para usarla como fondo."
+      "Run your live camera through the custom background processor. Upload an image to use as the background.": [
+        "Ejecute su cámara en directo mediante el procesador de fondo personalizado. Cargue una imagen para usarla como fondo."
       ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Programe su próxima reunión. Cree una cuenta para programar reuniones con su calendario."
@@ -3244,6 +3343,9 @@
       "You can now return to the application to continue": [
         "Ahora puede regresar a la aplicación para continuar."
       ],
+      "You can save up to ${ max } of your own backgrounds.": [
+        "Puede guardar hasta ${ max } de sus fondos propios."
+      ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Aún puede apagar su micrófono y cámara en cualquier momento de la reunión"
       ],
@@ -3270,6 +3372,9 @@
       ],
       "Your always available meeting room": [
         "Su sala de reunión siempre disponible"
+      ],
+      "Your backgrounds could not be loaded, so a new one cannot be added right now.": [
+        "No se pudieron cargar sus fondos así que no se puede añadir uno nuevo ahora."
       ],
       "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
         "Su navegador ha bloqueado el acceso a su cámara y micrófono. Para activarlos, actualice sus ajustes de navegador y únase nuevamene a la llamada."
@@ -3337,11 +3442,14 @@
       "Auto-detect": [
         "Autodetectar"
       ],
-      "Background color": [
-        "Color de fondo"
+      "Beach landscape background": [
+        "Fondo de paisaje de playa"
       ],
       "Blurred (next)": [
         "Difuminado (siguiente)"
+      ],
+      "Blurred office background": [
+        "Fondo de oficina difuminado"
       ],
       "Browser": [
         "Navegador"
@@ -3379,8 +3487,8 @@
       "Created": [
         "Creado"
       ],
-      "Current": [
-        "Actual"
+      "Dark ${ BRAND_NAME } background": [
+        "Fondo oscuro de ${ BRAND_NAME }"
       ],
       "Delete": [
         "Eliminar"
@@ -3451,6 +3559,12 @@
       "Leave meeting options": [
         "Abandonar opciones de la reunión"
       ],
+      "Library background": [
+        "Fondo de biblioteca"
+      ],
+      "Light ${ BRAND_NAME } background": [
+        "Fondo claro de ${ BRAND_NAME }"
+      ],
       "Live caption agent": [
         "Agente de subtítulos en directo"
       ],
@@ -3472,14 +3586,14 @@
       "Monday to Friday": [
         "De lunes a viernes"
       ],
+      "Mountain landscape background": [
+        "Fondo de paisaje de montaña"
+      ],
       "Muted": [
         "Silenciado"
       ],
       "Name": [
         "Nombre"
-      ],
-      "Next": [
-        "Siguiente"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -3501,6 +3615,9 @@
       ],
       "Phone number": [
         "Número telefónico"
+      ],
+      "Preview": [
+        "Vista previa"
       ],
       "Raw": [
         "En bruto"
@@ -3537,9 +3654,6 @@
       ],
       "Selected Speaker": [
         "Altavoz seleccionado"
-      ],
-      "Solid color": [
-        "Color sólido"
       ],
       "Spoken language": [
         "Idioma hablado"
@@ -3964,8 +4078,8 @@
       "Background": [
         "Fondo"
       ],
-      "Background blur comparison": [
-        "Comparación de fondo difuminado"
+      "Background blur preview": [
+        "Vista previa de fondo difuminado"
       ],
       "Backgrounds": [
         "Fondos"
