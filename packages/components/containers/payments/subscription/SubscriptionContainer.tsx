@@ -871,6 +871,7 @@ const SubscriptionContainerInner = ({
                 context: telemetryContext,
             }),
             isTrial: Boolean(trial),
+            initialBillingAddress: model.taxBillingAddress,
         });
     }, []);
 

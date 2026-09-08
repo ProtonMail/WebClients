@@ -21,6 +21,7 @@ import {
     DEFAULT_TAX_BILLING_ADDRESS,
     type FullBillingAddressFlat,
 } from '@proton/payments/core/billing-address/billing-address';
+import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { type PaymentsCheckoutUI, getCheckoutUi, type getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { computeOptimisticCheckResult } from '@proton/payments/core/computeOptimisticCheckResult';
 import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
@@ -230,6 +231,9 @@ export const PaymentsContextProvider = ({
                 freePlan: FREE_PLAN,
             };
             const paymentStatus = paymentStatusInitial;
+            const billingAddress = paymentStatus
+                ? getBillingAddressFromPaymentStatus(paymentStatus, { shouldRestoreZipCode: !authenticated })
+                : DEFAULT_TAX_BILLING_ADDRESS;
 
             const autoCurrency = getPreferredCurrency({
                 user,
@@ -282,7 +286,7 @@ export const PaymentsContextProvider = ({
             return {
                 telemetryContext: 'other',
                 product: 'generic',
-                billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
+                billingAddress,
                 subscription,
                 plansData,
                 paymentStatus,
