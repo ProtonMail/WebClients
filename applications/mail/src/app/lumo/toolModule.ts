@@ -1,10 +1,10 @@
 import type { History } from 'history';
 
 import type { updateAddressThunk } from '@proton/account/addresses/updateAddress';
-import type { CardRenderer } from '@proton/components/components/lumoAgent/types';
 import type { ThemeContextInterface } from '@proton/components/containers/themes/ThemeProvider';
 import type { ESStatusBooleans } from '@proton/encrypted-search/models';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import type {
     createLabel as createLabelAction,

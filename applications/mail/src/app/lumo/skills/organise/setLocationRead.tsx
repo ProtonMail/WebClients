@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import type { CardRenderer } from '@proton/components/components/lumoAgent/types';
 import { IcEnvelopes } from '@proton/icons/icons/IcEnvelopes';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type {
@@ -9,6 +8,7 @@ import type {
     ToolDefinition,
     ToolHandler,
 } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 import { CATEGORY_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LABEL_IDS_TO_HUMAN, MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 

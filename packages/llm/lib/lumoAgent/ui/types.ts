@@ -1,15 +1,10 @@
 import type { ComponentType, ReactNode } from 'react';
 
-import type {
-    ActionRequest,
-    ReferenceLabels,
-    ToolDefinition,
-    ToolHandlers,
-    ToolName,
-} from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { ToolName as ServerToolName } from '@proton/lumo-api-client';
 import type { ServerToolSource } from '@proton/lumo-ui';
 import type { IconComponent } from '@proton/lumo-ui/types';
+
+import type { ActionRequest, ReferenceLabels, ToolDefinition, ToolHandlers, ToolName } from '../contracts/types';
 
 /** `APPLYING` exists so the tile can record the outcome rather than the click that started it. */
 export enum ConfirmStatus {
