@@ -166,9 +166,8 @@ const scenarios = {
         });
     },
 
-    // TODO: update with weekly limit Error right now this is a general 429. need BE jails to be updted
-    weeklyLimit: () => {
-        console.log('🔶 Mock Scenario: Running weekly limit error scenario');
+    rateLimit: () => {
+        console.log('🔶 Mock Scenario: Running rate limit error scenario');
         return new HttpResponse(
             JSON.stringify({
                 Code: 2028,
@@ -194,11 +193,11 @@ if (process.env.NODE_ENV === 'development') {
         const scenario = mockConfig.getScenario();
         console.log('🔶 Mock Handler: Using scenario:', scenario);
 
-        if (scenario === 'weeklyLimit') {
-            return scenarios.weeklyLimit();
+        if (scenario === 'rateLimit') {
+            return scenarios.rateLimit();
         }
 
-        const generator = scenarios[scenario as Exclude<keyof typeof scenarios, 'weeklyLimit'>];
+        const generator = scenarios[scenario as Exclude<keyof typeof scenarios, 'rateLimit'>];
         return new HttpResponse(createStream(generator), {
             headers: {
                 'Content-Type': 'text/event-stream',

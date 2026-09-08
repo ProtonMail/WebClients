@@ -73,6 +73,19 @@ export const handleGenerationError = (error: GenerationError, userType: LUMO_USE
             );
             break;
 
+        case LUMO_API_ERRORS.RATE_LIMIT:
+            dispatch(
+                addConversationError({
+                    conversationId: error.conversationId,
+                    errorTitle: c('collider_2025: Error Title').t`Too many requests`,
+                    errorMessage: c('collider_2025: Error Message')
+                        .t`You've sent too many requests in a short time. Wait a moment and try again.`,
+                    errorType: error.type,
+                    actionParams: error.actionParams,
+                })
+            );
+            break;
+
         case LUMO_API_ERRORS.GENERATION_REJECTED:
             dispatch(
                 addConversationError({

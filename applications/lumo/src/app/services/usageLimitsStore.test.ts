@@ -1,18 +1,34 @@
 import {
+    applyUsageFromStreamMessage,
+    getDismissibleExhaustedModel,
+    getExhaustedLimitForModel,
+    getExhaustedLimitNotice,
+    getLimitCategoryForTier,
     getMaxModelAvailability,
     getRemainingForModelTier,
     getRemainingLimits,
+    getTierForLimitCategory,
     isAnyModelLimitExhausted,
     isModelSwitchSuggestionEligible,
     isModelTierSelectable,
     resolveAvailableModelTier,
     resolveDefaultModelTier,
     setDebugMaxModelOverride,
-    setDebugWeeklyLimitExhausted,
+    setDebugModelLimitsExhausted,
     setRemainingLimits,
     shouldShowLimitUpsell,
     shouldShowModelSwitchSuggestion,
 } from './usageLimitsStore';
+
+describe('model tier limit category mapping', () => {
+    it('maps tiers to quota buckets and back', () => {
+        expect(getLimitCategoryForTier('lumo-max')).toBe('max');
+        expect(getLimitCategoryForTier('lumo-lite')).toBe('lite');
+        expect(getLimitCategoryForTier('apertus-15')).toBe('lite');
+        expect(getTierForLimitCategory('max')).toBe('lumo-max');
+        expect(getTierForLimitCategory('lite')).toBe('lumo-lite');
+    });
+});
 
 describe('resolveDefaultModelTier', () => {
     it('prefers max when it is selectable', () => {
@@ -133,22 +149,98 @@ describe('shouldShowModelSwitchSuggestion', () => {
 describe('limit upsell', () => {
     it('is eligible when Lite is exhausted', () => {
         expect(isAnyModelLimitExhausted({ lite: 0, max: 20 })).toBe(true);
-        expect(shouldShowLimitUpsell({ lite: 0, max: 20 }, true, false)).toBe(true);
+        expect(shouldShowLimitUpsell({ lite: 0, max: 20 }, true, false, 'lumo-lite')).toBe(true);
     });
 
     it('is eligible when Max is exhausted', () => {
         expect(isAnyModelLimitExhausted({ lite: 100, max: 0 })).toBe(true);
-        expect(shouldShowLimitUpsell({ lite: 100, max: 0 }, true, false)).toBe(true);
+        expect(shouldShowLimitUpsell({ lite: 100, max: 0 }, true, false, 'lumo-max')).toBe(true);
     });
 
-    it('stays hidden while both model pools have requests remaining', () => {
-        expect(isAnyModelLimitExhausted({ lite: 100, max: 20 })).toBe(false);
-        expect(shouldShowLimitUpsell({ lite: 100, max: 20 }, true, false)).toBe(false);
+    it('stays hidden when only the unselected model is exhausted', () => {
+        expect(shouldShowLimitUpsell({ lite: 100, max: 0 }, true, false, 'lumo-lite')).toBe(false);
+        expect(shouldShowLimitUpsell({ lite: 0, max: 20 }, true, false, 'lumo-max')).toBe(false);
+    });
+
+    it('uses the Lite pool for Apertus', () => {
+        expect(shouldShowLimitUpsell({ lite: 0, max: 20 }, true, false, 'apertus-15')).toBe(true);
     });
 
     it('stays hidden for Plus users and before a tier error exists', () => {
-        expect(shouldShowLimitUpsell({ lite: 0, max: 0 }, true, true)).toBe(false);
-        expect(shouldShowLimitUpsell({ lite: 0, max: 0 }, false, false)).toBe(false);
+        expect(shouldShowLimitUpsell({ lite: 0, max: 0 }, true, true, 'lumo-lite')).toBe(false);
+        expect(shouldShowLimitUpsell({ lite: 0, max: 0 }, false, false, 'lumo-lite')).toBe(false);
+    });
+
+    it('is dismissible only when the other model remains available', () => {
+        expect(getDismissibleExhaustedModel({ lite: 0, max: 20 })).toBe('lite');
+        expect(getDismissibleExhaustedModel({ lite: 100, max: 0 })).toBe('max');
+        expect(getDismissibleExhaustedModel({ lite: 0, max: 0 })).toBeUndefined();
+        expect(getDismissibleExhaustedModel({ lite: 100, max: 20 })).toBeUndefined();
+    });
+});
+
+describe('exhausted limit notices', () => {
+    beforeEach(() => {
+        setRemainingLimits({ lite: 10, max: 10 });
+    });
+
+    it('records the consumed model before fallback when its pool reaches zero', () => {
+        applyUsageFromStreamMessage(
+            {
+                type: 'usage',
+                usage: {
+                    remaining_limits: { lite: 10, max: 0 },
+                    applied_limit_category: 'max',
+                },
+            },
+            'lumo-max'
+        );
+
+        expect(getExhaustedLimitNotice()).toEqual({
+            limitCategory: 'max',
+            modelTier: 'lumo-max',
+        });
+    });
+
+    it('preserves Apertus as the display model for the shared Lite pool', () => {
+        applyUsageFromStreamMessage(
+            {
+                type: 'usage',
+                usage: {
+                    remaining_limits: { lite: 0, max: 10 },
+                    applied_limit_category: 'lite',
+                },
+            },
+            'apertus-15'
+        );
+
+        expect(getExhaustedLimitNotice()).toEqual({
+            limitCategory: 'lite',
+            modelTier: 'apertus-15',
+        });
+    });
+
+    it('clears the notice when that pool refreshes above zero', () => {
+        applyUsageFromStreamMessage({
+            type: 'usage',
+            usage: {
+                remaining_limits: { lite: 10, max: 0 },
+                applied_limit_category: 'max',
+            },
+        });
+
+        setRemainingLimits({ lite: 10, max: 10 });
+
+        expect(getExhaustedLimitNotice()).toBeNull();
+    });
+
+    it('distinguishes a selected-model quota rejection from transient rate limiting', () => {
+        expect(getExhaustedLimitForModel({ lite: 10, max: 0 }, 'lumo-max')).toEqual({
+            limitCategory: 'max',
+            modelTier: 'lumo-max',
+        });
+        expect(getExhaustedLimitForModel({ lite: 10, max: 0 }, 'lumo-lite')).toBeNull();
+        expect(getExhaustedLimitForModel({ lite: 10, max: 10 }, 'lumo-max')).toBeNull();
     });
 });
 
@@ -176,7 +268,7 @@ describe('getMaxModelAvailability', () => {
 describe('setDebugMaxModelOverride', () => {
     afterEach(() => {
         setDebugMaxModelOverride(null);
-        setDebugWeeklyLimitExhausted(false);
+        setDebugModelLimitsExhausted(false);
     });
 
     it('pins max to zero for a forced limit while keeping the other pools intact', () => {
@@ -221,15 +313,15 @@ describe('setDebugMaxModelOverride', () => {
     });
 });
 
-describe('setDebugWeeklyLimitExhausted', () => {
+describe('setDebugModelLimitsExhausted', () => {
     afterEach(() => {
-        setDebugWeeklyLimitExhausted(false);
+        setDebugModelLimitsExhausted(false);
         setDebugMaxModelOverride(null);
     });
 
     it('pins lite and max to zero while keeping other pools intact', () => {
         setRemainingLimits({ lite: 10, max: 20, images: 3 });
-        setDebugWeeklyLimitExhausted(true);
+        setDebugModelLimitsExhausted(true);
 
         expect(getRemainingLimits()).toEqual({ lite: 0, max: 0, images: 3 });
     });
@@ -237,17 +329,17 @@ describe('setDebugWeeklyLimitExhausted', () => {
     it('reports both pools as exhausted even before the backend sends any limits', () => {
         jest.isolateModules(() => {
             const store = require('./usageLimitsStore');
-            store.setDebugWeeklyLimitExhausted(true);
+            store.setDebugModelLimitsExhausted(true);
 
             expect(store.getRemainingLimits()).toEqual({ lite: 0, max: 0 });
-            store.setDebugWeeklyLimitExhausted(false);
+            store.setDebugModelLimitsExhausted(false);
         });
     });
 
     it('restores backend limits when switched off', () => {
         setRemainingLimits({ lite: 10, max: 20 });
-        setDebugWeeklyLimitExhausted(true);
-        setDebugWeeklyLimitExhausted(false);
+        setDebugModelLimitsExhausted(true);
+        setDebugModelLimitsExhausted(false);
 
         expect(getRemainingLimits()).toEqual({ lite: 10, max: 20 });
     });
@@ -255,7 +347,7 @@ describe('setDebugWeeklyLimitExhausted', () => {
     it('takes precedence over the max-only debug override', () => {
         setRemainingLimits({ lite: 10, max: 20 });
         setDebugMaxModelOverride('unavailable_limit_reached');
-        setDebugWeeklyLimitExhausted(true);
+        setDebugModelLimitsExhausted(true);
 
         expect(getRemainingLimits()).toEqual({ lite: 0, max: 0 });
     });

@@ -7,8 +7,10 @@ import { clearTierErrors } from '../redux/slices/meta/errors';
 import { handleTierError } from '../services/errors/errorHandling';
 import {
     areAllModelLimitsExhausted,
+    getLimitCategoryForTier,
     isAnyModelLimitExhausted,
     isModelTierSelectable,
+    markModelLimitExhausted,
     resolveUsageModelTier,
     useRemainingLimits,
 } from '../services/usageLimitsStore';
@@ -42,10 +44,18 @@ export const useChatLimitGate = () => {
         (!hasLumoPlus && selectedModelLimitExhausted) || (selectedModelTier === 'apertus-15' && !apertusModelAvailable);
 
     const ensureTierError = useCallback(() => {
-        if (!hasLumoPlus && anyModelLimitExhausted && !hasTierErrors) {
+        if (!hasLumoPlus && selectedModelTier && selectedModelLimitExhausted && !hasTierErrors) {
+            markModelLimitExhausted(getLimitCategoryForTier(selectedModelTier), selectedModelTier);
             dispatch(handleTierError(lumoUserType));
         }
-    }, [hasLumoPlus, anyModelLimitExhausted, hasTierErrors, dispatch, lumoUserType]);
+    }, [
+        hasLumoPlus,
+        selectedModelTier,
+        selectedModelLimitExhausted,
+        hasTierErrors,
+        dispatch,
+        lumoUserType,
+    ]);
 
     const clearTierErrorIfModelAvailable = useCallback(() => {
         if (!anyModelLimitExhausted && hasTierErrors) {

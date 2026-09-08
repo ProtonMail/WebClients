@@ -143,6 +143,43 @@ describe('setToolResultInBlocks', () => {
         expect(blocks).toHaveLength(1);
         expect(blocks[0].content).toBe(final);
     });
+
+    it('pairs sequential id-less tool results with the first unpaired tagged tool calls', () => {
+        const googlCall = JSON.stringify({ id: 'call_0', name: 'stock', arguments: { symbol: 'GOOGL' } });
+        const aaplCall = JSON.stringify({ id: 'call_1', name: 'stock', arguments: { symbol: 'AAPL' } });
+        const metaCall = JSON.stringify({ id: 'call_2', name: 'stock', arguments: { symbol: 'META' } });
+        const googlResult = JSON.stringify({
+            current_price: 338.46,
+            monthly_trend: [{ date: '2026-09-04', price: 338.46, volume: 1 }],
+        });
+        const aaplResult = JSON.stringify({
+            current_price: 319.97,
+            monthly_trend: [{ date: '2026-09-04', price: 319.97, volume: 1 }],
+        });
+        const metaResult = JSON.stringify({
+            current_price: 616.77,
+            monthly_trend: [{ date: '2026-09-04', price: 616.77, volume: 1 }],
+        });
+
+        let blocks: ContentBlock[] = [];
+        blocks = setToolCallInBlocks(blocks, googlCall);
+        blocks = setToolCallInBlocks(blocks, aaplCall);
+        blocks = setToolCallInBlocks(blocks, metaCall);
+        blocks = setToolResultInBlocks(blocks, googlResult);
+        blocks = setToolResultInBlocks(blocks, aaplResult);
+        blocks = setToolResultInBlocks(blocks, metaResult);
+
+        const results = blocks.filter((block) => block.type === 'tool_result');
+        expect(results).toHaveLength(3);
+        expect(results[0].tool_call_id).toBe('call_0');
+        expect(results[1].tool_call_id).toBe('call_1');
+        expect(results[2].tool_call_id).toBe('call_2');
+
+        const calls = blocks.filter((block) => block.type === 'tool_call') as ToolCallBlock[];
+        expect(findToolResultForCall(blocks, calls[0])?.content).toBe(googlResult);
+        expect(findToolResultForCall(blocks, calls[1])?.content).toBe(aaplResult);
+        expect(findToolResultForCall(blocks, calls[2])?.content).toBe(metaResult);
+    });
 });
 
 describe('findToolResultForCall', () => {
@@ -160,6 +197,32 @@ describe('findToolResultForCall', () => {
 
         expect(findToolResultForCall(blocks, londonCall)?.content).toBe(londonResult);
         expect(findToolResultForCall(blocks, parisCall)?.content).toBe(parisResult);
+    });
+
+    it('pairs parallel stock calls with finance results using claim-based fallback', () => {
+        const googlCall = JSON.stringify({ id: 'call_0', name: 'stock', arguments: { symbol: 'GOOGL' } });
+        const aaplCall = JSON.stringify({ id: 'call_1', name: 'stock', arguments: { symbol: 'AAPL' } });
+        const googlResult = JSON.stringify({
+            current_price: 338.46,
+            monthly_trend: [{ date: '2026-09-04', price: 338.46, volume: 1 }],
+            company_info: { name: 'Alphabet Inc.' },
+        });
+        const aaplResult = JSON.stringify({
+            current_price: 319.97,
+            monthly_trend: [{ date: '2026-09-04', price: 319.97, volume: 1 }],
+            company_info: { name: 'Apple Inc.' },
+        });
+
+        const blocks: ContentBlock[] = [
+            { type: 'tool_call', content: googlCall, toolCall: JSON.parse(googlCall) },
+            { type: 'tool_call', content: aaplCall, toolCall: JSON.parse(aaplCall) },
+            { type: 'tool_result', content: googlResult },
+            { type: 'tool_result', content: aaplResult },
+        ];
+
+        const calls = blocks.filter((block) => block.type === 'tool_call') as ToolCallBlock[];
+        expect(findToolResultForCall(blocks, calls[0])?.content).toBe(googlResult);
+        expect(findToolResultForCall(blocks, calls[1])?.content).toBe(aaplResult);
     });
 
     it('falls back to the next untagged result for a legacy call', () => {
