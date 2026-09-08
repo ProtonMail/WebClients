@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 
-import { contactEmailsThunk } from '@proton/mail/store/contactEmails';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
 
+import { contactEmailsThunk } from '../../contactEmails';
 import { selectIsDelegatedAccessSupported } from '../../delegatedAccess';
 import { listOutgoingDelegatedAccess } from '../../delegatedAccess/outgoingActions';
 import { type RecoveryStateResult, selectRecoveryState } from './recoveryState';
