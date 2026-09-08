@@ -7,7 +7,7 @@ import { getDevicesHash, toSerializableDevice } from '@proton/meet/utils/deviceU
 
 const KINDS: DeviceKind[] = ['audioinput', 'audiooutput', 'videoinput'];
 
-const RECHECK_DELAY_MS = 150;
+export const RECHECK_DELAY_MS = 150;
 
 /**
  * Syncs the available device list to Redux by subscribing to
