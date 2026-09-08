@@ -54,9 +54,7 @@ const defaultProps: Props = {
     currency: 'USD',
     flow: 'credit',
     selectedPlanName: undefined,
-    enablePaypalRegionalCurrenciesBatch3: false,
-    enablePaypalKrw: false,
-    enableIdeal: false,
+    paymentMethodFlags: {},
 };
 
 // the wrapper has to be created once per test: a wrapper rebuilt on every render remounts the hook
@@ -208,8 +206,7 @@ describe('deriving the methods from the props', () => {
         const sepaProps: Partial<Props> = {
             paymentStatus,
             flow: 'subscription',
-            enableSepa: true,
-            enableSepaB2C: true,
+            paymentMethodFlags: { enableSepa: true, enableSepaB2C: true },
             billingAddress: { CountryCode: 'US', State: 'AL' },
         };
         const { result, rerender } = await renderLoadedMethods(sepaProps);
@@ -246,7 +243,7 @@ describe('deriving the methods from the props', () => {
 
         expect(result.current.newMethods).not.toContainEqual(newMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL));
 
-        rerender({ ...props, enableIdeal: true });
+        rerender({ ...props, paymentMethodFlags: { enableIdeal: true } });
 
         expect(result.current.newMethods).toContainEqual(newMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL));
     });
