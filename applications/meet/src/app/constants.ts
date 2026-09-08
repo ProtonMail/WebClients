@@ -39,3 +39,5 @@ export const CAPTIONS_AGENT_RETRY_DELAYS_MS = [
 ];
 
 export const CAPTIONS_DISABLED_METADATA_KEY = 'captions_disabled';
+
+export const CHAT_MESSAGE_MAX_LENGTH = 2048;

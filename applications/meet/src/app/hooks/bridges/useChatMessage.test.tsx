@@ -16,6 +16,7 @@ import { uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { CHAT_MESSAGE_MAX_LENGTH } from '../../constants';
 import { MeetCoreClientContext } from '../../contexts/MeetCoreClientContext';
 import type { ChatComposeResultData, MeetCoreClient } from '../../wasm/MeetCoreClient';
 import { useChatMessage } from './useChatMessage';
@@ -193,6 +194,46 @@ describe('useChatMessage', () => {
 
             expect(composeChatMessage).toHaveBeenCalledWith('Hello', 'msg-1', 'msg-1');
             expect(getMessages(store)[0]).toEqual(expect.objectContaining({ inReplyToId: 'msg-1', topicId: 'msg-1' }));
+        });
+
+        it('should not send messages that exceed the maximum character count', async () => {
+            const room = createMockRoom();
+            useRoomContextMock.mockReturnValue(room);
+
+            const store = createStore();
+            const composeChatMessage = vi.fn().mockResolvedValue(composeResult());
+            const client = createMeetCoreClient({ composeChatMessage });
+
+            const { result } = renderHook(() => useChatMessage(), { wrapper: createWrapper(store, client) });
+
+            let returnValue: boolean | undefined;
+            await act(async () => {
+                returnValue = await result.current.sendMessage('a'.repeat(CHAT_MESSAGE_MAX_LENGTH + 1));
+            });
+
+            expect(returnValue).toBe(false);
+            expect(composeChatMessage).not.toHaveBeenCalled();
+            expect(getMessages(store)).toEqual([]);
+        });
+
+        it('should send a message at the limit that only exceeds it through surrounding whitespace', async () => {
+            const room = createMockRoom();
+            useRoomContextMock.mockReturnValue(room);
+
+            const store = createStore();
+            const text = 'a'.repeat(CHAT_MESSAGE_MAX_LENGTH);
+            const composeChatMessage = vi.fn().mockResolvedValue(composeResult({ text }));
+            const client = createMeetCoreClient({ composeChatMessage });
+
+            const { result } = renderHook(() => useChatMessage(), { wrapper: createWrapper(store, client) });
+
+            let returnValue: boolean | undefined;
+            await act(async () => {
+                returnValue = await result.current.sendMessage(`  ${text}  `);
+            });
+
+            expect(returnValue).toBe(true);
+            expect(composeChatMessage).toHaveBeenCalledWith(text, undefined, undefined);
         });
     });
 
