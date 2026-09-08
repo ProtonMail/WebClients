@@ -1289,6 +1289,9 @@
       "View all reports": [
         "瀏覽全部報告"
       ],
+      "View guide": [
+        "檢視指南"
+      ],
       "View invoice": [
         "查看帳單"
       ],
@@ -2208,6 +2211,12 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 位使用者"
+      ],
+      "Amount due": [
+        "應付金額"
+      ],
+      "Amount due now": [
+        "當前欠款"
       ],
       "Subtotal": [
         "小計"
@@ -3589,6 +3598,9 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "大多數問題都可以在幾分鐘內透過我們的逐步指南解決。"
       ],
+      "No ads. No trackers": [
+        "無廣告。無追蹤器"
+      ],
       "No one in your organization can connect to shared servers.": [
         "於您的組織內無人可連接至於共享伺服器"
       ],
@@ -4631,6 +4643,9 @@
       "Cannot download a folder": [
         "無法下載個資料夾"
       ],
+      "Cannot share root folder": [
+        "無法複製根資料夾"
+      ],
       "Cannot verify the author of this file": [
         "無法驗證此檔案的作者"
       ],
@@ -4645,6 +4660,9 @@
       ],
       "Company name or personal name is required": [
         "公司名稱或個人名稱是需要的"
+      ],
+      "Copy operation aborted": [
+        "以放棄移動操作"
       ],
       "Copying item to a non-folder is not allowed": [
         "不允許將項目複製到非資料夾"
@@ -4819,6 +4837,9 @@
       ],
       "Invalid verification code": [
         "驗證碼無效"
+      ],
+      "Invitation not found": [
+        "未找到邀請"
       ],
       "Item not found": [
         "找不到項目"
@@ -5656,9 +5677,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "你必須先設定自訂網域，才可以創建新的使用者"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "我們邀請您將您的 ${ BRAND_NAME } 帳號連結至此家庭方案，並一起享受所有 ${ brandOrAppName } 進階功能。"
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "您帳號中的電子郵件位址多於此方案中可用的電子郵件位址。${ addressSettingsLink }"
       ],
@@ -6072,14 +6090,23 @@
       ]
     },
     "Filter": {
+      "Activated": [
+        "已啟用"
+      ],
       "All": [
         "全部"
+      ],
+      "Errors": [
+        "錯誤"
       ],
       "In progress": [
         "進行中"
       ],
       "Migrated": [
         "遷移"
+      ],
+      "Not activated": [
+        "未啟動"
       ],
       "Pending": [
         "等待中"
@@ -6773,6 +6800,9 @@
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
         "您組織中非 SSO 成員的 ${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } 使用雙重身分驗證登入您的組織。"
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } 標記"
+      ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "${ invitedMemberCount } 位使用者需要接受邀請才能開始接收群組電子郵件。"
       ],
@@ -7450,6 +7480,9 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "請切勿忘記此密碼。否則，您將無法管理您的組織。"
+      ],
+      "Do you remember your password?": [
+        "您記得您的密碼嗎?"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "您要撤銷除目前之外所有其它工作階段嗎？"
@@ -8630,9 +8663,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "訂購授權即將到期，請於${ byDate }前至Play 商店重新訂購以保留您的${ planName }權益。${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "訂閱開始於 ${ startsOnTime }"
-      ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "即將支援監控自訂網域及非${ BRAND_NAME }電子郵件地址。"
       ],
@@ -8929,9 +8959,6 @@
       ],
       "Total VPN connections": [
         "總 VPN 連線數量"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "試用期結束於 ${ formattedPeriodEndDate }"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "完全無風險地體驗 ${ productName } - 如果出於任何原因您改變主意，您將收到全額退款。無任何附加條件。"
@@ -11168,6 +11195,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "添加${ BRAND_NAME }訂閱撰寫扳手"
       ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "添加 ${ LUMO_SHORT_APP_NAME } 撰寫幫手"
+      ],
       "Add-on with free trial": [
         "可免費試用的擴充功能"
       ],
@@ -11578,6 +11608,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
         "${ LUMO_SHORT_APP_NAME } 撰寫工具與擴充存取權"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫工具與限制存取權"
       ],
       "${ n } calendar": [
         "${ n } 個行事曆"
@@ -12088,9 +12121,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } 後四碼 ${ last4 }"
-      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } 可讓您為創建電郵位址給子使用者並具備管理帳號權限。非常適合家庭親人和機構組織。"
       ],
@@ -13540,17 +13570,6 @@
         "續訂價格取決於計費區域和 VAT 號碼。"
       ]
     },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "APPle Pay - 卡片於 ${ paymentMethod.Details.Last4 } 結束"
-      ],
-      "Bank transfer - ${ details }": [
-        "匯款 - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - 卡片於 ${ paymentMethod.Details.Last4 } 結束"
-      ]
-    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "透過確認此付款，您授權 ${ BRAND_NAME } 和我們的支付服務提供者 Stripe 指示您的銀行從您的帳戶中扣款。根據您與銀行達成的協議條件，您可以在扣款日起 8 週內獲得退款。"
@@ -13833,6 +13852,12 @@
       ],
       "key": [
         "金鑰"
+      ],
+      "membership": [
+        "會員資格"
+      ],
+      "name": [
+        "名稱"
       ]
     },
     "Property type": {
@@ -13979,12 +14004,23 @@
         "夏季特賣"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "取得優惠"
+      ]
+    },
     "q3campaign2026: Info": {
+      "/month": [
+        "/每月"
+      ],
       "2 TB of secure storage": [
         "2TB 的安全儲存空間"
       ],
       "3 TB of secure storage": [
         "3TB 的安全儲存空間"
+      ],
+      "500 GB of secure storage": [
+        "500 GB 安全儲存空間"
       ]
     },
     "q3campaign2026: Info, Drive first": {
@@ -13995,6 +14031,9 @@
     "q3campaign2026: Title": {
       "for 12 months": [
         "12 個月"
+      ],
+      "One plan, more power": [
+        "單一方案，更多能量"
       ]
     },
     "Recovery Email": {
@@ -16951,6 +16990,9 @@
       "Activated": [
         "已啟用"
       ],
+      "Migration status": [
+        "遷移狀態"
+      ],
       "Size": [
         "大小"
       ],
@@ -18108,6 +18150,9 @@
       ],
       "Send new invite?": [
         "寄送新邀請?"
+      ],
+      "September Sale": [
+        "九月的銷售"
       ],
       "Service": [
         "服務"

@@ -45,14 +45,56 @@
       "AI assistant": [
         "Памочнік ШІ"
       ],
+      "Authentication logs": [
+        "Журнал аўтарызацыі"
+      ],
+      "Block sender for the organization": [
+        "Блакіраваць адпраўніка для арганізацыі"
+      ],
+      "Blog articles": [
+        "Артыкулы блогаў"
+      ],
       "Bulk user import": [
         "Масавы імпарт карыстальнікаў"
+      ],
+      "Cancel plan": [
+        "Скасаваць тарыфны план"
       ],
       "Close account": [
         "Выдаліць уліковы запіс"
       ],
+      "Compare plans": [
+        "Параўнанне тарыфных планаў"
+      ],
+      "Custom domain": [
+        "Карыстальніцкі дамен"
+      ],
+      "Customer support": [
+        "Служба падтрымкі"
+      ],
+      "Desktop and mobile apps": [
+        "Праграмы для камп'ютараў і мабільных прылад"
+      ],
       "Downgrade to Free": [
         "Панізіць да Free"
+      ],
+      "Download apps": [
+        "Спампоўка праграм"
+      ],
+      "Encryption backup in this browser": [
+        "Зашыфраваная рэзервовая копія ў гэтым браўзеры"
+      ],
+      "Gateway logs": [
+        "Журналы шлюза"
+      ],
+      "Group members": [
+        "Удзельнікі групы"
+      ],
+      "High-security mode": [
+        "Рэжым высокай бяспекі"
+      ],
+      "Import history": [
+        "Імпарт гісторыі"
       ],
       "Included apps": [
         "Уключаныя праграмы"
@@ -60,11 +102,32 @@
       "Join organization": [
         "Далучыцца да арганізацыі"
       ],
+      "Leaked password": [
+        "Злітыя паролі"
+      ],
       "Leave group": [
         "Выйсці з групы"
       ],
+      "Leave organization": [
+        "Выйсці з арганізацыі"
+      ],
+      "Mnemonic": [
+        "Мнемоніка"
+      ],
+      "One-time code": [
+        "Аднаразовы код"
+      ],
+      "Password reminders": [
+        "Напамін пароля"
+      ],
       "Password reset request": [
         "Запыт скідання пароля"
+      ],
+      "Receive misaddressed emails": [
+        "Атрымліваць лісты з памылковых адрасоў"
+      ],
+      "Recovery email address": [
+        "Адрас электроннай пошты для аднаўлення доступу"
       ],
       "Recovery phone number": [
         "Нумар тэлефона для аднаўлення"
@@ -75,14 +138,32 @@
       "Referral link": [
         "Рэферальная спасылка"
       ],
+      "Restrict app access": [
+        "Абмежаваць доступ да праграм"
+      ],
+      "Scan QR code": [
+        "Сканіраваць QR-код"
+      ],
       "Storage space": [
         "Аб'ём сховішча"
+      ],
+      "Storage usage": [
+        "Выкарыстана сховішча"
+      ],
+      "Subscription end date": [
+        "Дата заканчэння падпіскі"
       ],
       "Telemetry": [
         "Тэлеметрыя"
       ],
       "Trusted contact": [
         "Давераны кантакт"
+      ],
+      "Upgrade plan": [
+        "Палепшыць тарыфны план"
+      ],
+      "Verify domain": [
+        "Спраўдзіць дамен"
       ]
     },
     "Accounts": {
@@ -874,6 +955,9 @@
       "Pay ${ price } now": [
         "Аплаціць ${ price }"
       ],
+      "Preview logs": [
+        "Папярэдні прагляд журналаў"
+      ],
       "Previous": [
         "Папярэдні"
       ],
@@ -1231,6 +1315,9 @@
       "Take a tour": [
         "Пачаць знаёмства"
       ],
+      "Template with passwords": [
+        "Шаблон з паролямі"
+      ],
       "Test": [
         "Тэст"
       ],
@@ -1266,6 +1353,9 @@
       ],
       "Unlock data": [
         "Разблакіраваць даныя"
+      ],
+      "Update email": [
+        "Абнавіць электронную пошту"
       ],
       "Update recovery file": [
         "Абнавіць файл аднаўлення"
@@ -1359,6 +1449,9 @@
       ],
       "Verify password": [
         "Спраўдзіць пароль"
+      ],
+      "Verify recovery phrase": [
+        "Спраўдзіць фразу аднаўлення"
       ],
       "Verify the domain ${ unverifiedSSODomain.DomainName }": [
         "Спраўдзіць дамен ${ unverifiedSSODomain.DomainName }"
@@ -1789,6 +1882,9 @@
       ],
       "Try ${ selected } ${ freeForNDays }": [
         "Паспрабуйце ${ selected } ${ freeForNDays }"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period.": [
+        "Ваш бясплатны пробны перыяд не будзе пераўтвораны ў платную падпіску, калі адбудзецца скасаванне. Звярніце ўвагу, што вы ўсё яшчэ можаце атрымліваць асалоду ад пераваг тарыфнага плана да канца пробнага перыяду."
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ваш бясплатны пробны перыяд не будзе пераўтвораны ў платную падпіску, калі адбудзецца скасаванне. Звярніце ўвагу, што вы ўсё яшчэ можаце атрымліваць асалоду ад пераваг тарыфнага плана да канца пробнага перыяду. Пасля яго завяршэння вы будзеце паніжаны да тарыфнага плана ${ BRAND_NAME } Free."
@@ -2367,6 +2463,18 @@
         "${ users } карыстальнікаў",
         "${ users } карыстальнікаў"
       ],
+      "Amount due": [
+        "Да аплаты"
+      ],
+      "Amount due after trial": [
+        "Сума да аплаты пасля пробнага перыяду"
+      ],
+      "Amount due now": [
+        "Сума да аплаты"
+      ],
+      "month": [
+        "месяц"
+      ],
       "Subtotal": [
         "Прамежкавы вынік"
       ],
@@ -2376,8 +2484,17 @@
         "Прамежкавы вынік за ${ cycle } месяцаў",
         "Прамежкавы вынік за ${ cycle } месяцаў"
       ],
+      "Summary": [
+        "Зводка"
+      ],
       "Total": [
         "Агулам"
+      ],
+      "Total for ${ cycle } month": [
+        "Усяго за ${ cycle } месяц",
+        "Усяго за ${ cycle } месяцы",
+        "Усяго за ${ cycle } месяцаў",
+        "Усяго за ${ cycle } месяцаў"
       ]
     },
     "Collapsible tooltip": {
@@ -3912,6 +4029,9 @@
       "Are you sure you want to disable this address?": [
         "Вы сапраўды хочаце адключыць гэты адрас?"
       ],
+      "By disabling this address ${ address }, the member will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Адключэнне адраса з назвай ${ address } прывядзе да таго, што ўдзельнік больш не зможа адпраўляць або атрымліваць лісты з яго дапамогай, а ўсе спасылкі прадуктаў ${ BRAND_NAME } будуць адключаны."
+      ],
       "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
         "Адключэнне адраса з назвай ${ address } прывядзе да таго, што вы больш не зможаце адпраўляць або атрымліваць лісты з яго дапамогай, а ўсе спасылкі прадуктаў ${ BRAND_NAME } будуць адключаны."
       ],
@@ -4749,6 +4869,9 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Вы можаце выдаліць іх доступ у любы час, каб аднавіць эксклюзіўны кантроль над сваім уліковым запісам."
       ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Вас пакуль яшчэ ніхто не прызначаў у якасці экстраннага кантакту."
+      ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "Вы дасягнулі максімальнай колькасці ў ${ limit } экстранны кантакт.",
         "Вы дасягнулі максімальнай колькасці ў ${ limit } экстранныя кантакты.",
@@ -5370,6 +5493,12 @@
         "Не ўдалося выканаць прызначэнне ролі для ${ failedCount } груп",
         "Не ўдалося выканаць прызначэнне ролі для ${ failedCount } груп",
         "Не ўдалося выканаць прызначэнне ролі для ${ failedCount } груп"
+      ],
+      "Role assignment could not be completed for ${ failedCount } user": [
+        "Не ўдалося завяршыць прызначэнне ролі для ${ failedCount } удзельніка",
+        "Не ўдалося завяршыць прызначэнне ролі для ${ failedCount } удзельнікаў",
+        "Не ўдалося завяршыць прызначэнне ролі для ${ failedCount } удзельнікаў",
+        "Не ўдалося завяршыць прызначэнне ролі для ${ failedCount } удзельнікаў"
       ],
       "Server not found": [
         "Сервер не знойдзены"
@@ -6051,8 +6180,8 @@
       "You need to configure a custom domain before creating a new user.": [
         "Перад стварэннем новага карыстальніка неабходна сканфігураваць карыстальніцкі дамен."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Вас запрашаюць далучыць свой уліковы запіс ${ BRAND_NAME } да гэтага сямейнага тарыфнага плана, каб разам выкарыстоўваць усе прэміяльныя функцыі ${ brandOrAppName }."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Вас запрашаюць далучыць свой уліковы запіс ${ BRAND_NAME } да гэтай сямейнай групы і разам выкарыстоўваць усе яго прэміяльныя функцыі."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Колькасць адрасоў электроннай пошты вашага ўліковага запісу перавышае дазволенае значэнне для вашага бягучага тарыфнага плана. ${ addressSettingsLink }"
@@ -6589,6 +6718,12 @@
     "Gateway monitor upsell": {
       "Advanced security controls": [
         "Пашыраныя функцыі бяспекі"
+      ],
+      "In addition to connection monitoring, private gateways let you grant access by user or group - all running on dedicated servers with static IPs.": [
+        "Акрамя маніторынгу падключэнняў, прыватныя шлюзы дазваляюць даваць доступ карыстальнікам або групам — усе яны працуюць на вылучаных серверах са статычнымі IP-адрасамі."
+      ],
+      "Monitor gateway connections with VPN Professional": [
+        "Назіранне за падключэннямі шлюза з VPN Professional"
       ],
       "Unlock Single-Sign-on (SSO), admin policies, monitoring, enforced two-factor authentication and more.": [
         "Разблакіраваць аднаразовы ўваход (SSO), палітыкі адміністратара, маніторынг, прымусова ўжыць двухфактарную аўтэнтыфікацыю і зрабіць іншыя рэчы."
@@ -7344,6 +7479,12 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }. Кошт і дата падаўжэння вашай падпіскі ${ planTitle } застануцца нязменнымі."
       ],
+      "${ pendingKeysMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingKeysMemberCount } новы ўдзельнік дададзены праз вашага пастаўшчыка пасведчанняў і чакае разгляду.",
+        "${ pendingKeysMemberCount } новыя ўдзельнікі дададзены праз вашага пастаўшчыка пасведчанняў і чакаюць разгляду.",
+        "${ pendingKeysMemberCount } новых удзельнікаў дададзены праз вашага пастаўшчыка пасведчанняў і чакаюць разгляду.",
+        "${ pendingKeysMemberCount } новых удзельнікаў дададзены праз вашага пастаўшчыка пасведчанняў і чакаюць разгляду."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
       ],
@@ -7860,6 +8001,9 @@
       "Change your password": [
         "Змяніць свой пароль"
       ],
+      "Check if your recovery phrase can be used to fully recover your account.": [
+        "Праверце, ці можа быць выкарыстана ваша фраза аднаўлення для поўнага аднаўлення вашага ўліковага запісу."
+      ],
       "Choose a plan that works best for you.": [
         "Выберыце тарыфны план, які найлепш вам пасуе."
       ],
@@ -8091,6 +8235,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "НЕ забывайце гэты пароль. Калі вы яго забудзеце, то не зможаце кіраваць сваёй арганізацыяй."
       ],
+      "Do you remember your password?": [
+        "Вы памятаеце свой пароль?"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Вы сапраўды хочаце адклікаць усе іншыя сеансы, акрамя бягучага?"
       ],
@@ -8177,6 +8324,9 @@
       ],
       "email": [
         "электронная пошта"
+      ],
+      "Email address copied to clipboard": [
+        "Адрас электроннай пошты скапіяваны ў буфер абмену"
       ],
       "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
         "Электронная пошта і каляндар, якія інтэграваныя з ${ CONTACTS_APP_NAME }"
@@ -9138,6 +9288,9 @@
       "Recovery phrase is not associated with any outdated keys.": [
         "Фраза аднаўлення не звязана з састарэлымі ключамі."
       ],
+      "Recovery phrase verified": [
+        "Фраза аднаўлення спраўджана"
+      ],
       "Reddit": [
         "Reddit"
       ],
@@ -9354,9 +9507,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Завяршэнне падпіскі: перазапусціце сваю падпіску ў Google Play Store да ${ byDate }, каб далей пакінуць перавагі ${ planName }. ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "Падпіска пачнецца ${ startsOnTime }"
-      ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Неўзабаве з'явіцца падтрымка назірання карыстальніцкіх даменаў і адрасоў электроннай пошты, якія не належаць да ${ BRAND_NAME }."
       ],
@@ -9443,6 +9593,12 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Гэта імя ўбачаць вашы карыстальнікі, калі яны ўвойдуць у сістэму."
+      ],
+      "The process was interrupted for ${ pausedCount } ${ roleAssignmentSource }. Click Continue to resume assigning roles.": [
+        "Працэс быў перарваны для ${ pausedCount } ${ roleAssignmentSource }. Націсніце \"Працягнуць\", каб узнавіць прызначэнне роляў.",
+        "Працэс быў перарваны для ${ pausedCount } ${ roleAssignmentSource }. Націсніце \"Працягнуць\", каб узнавіць прызначэнне роляў.",
+        "Працэс быў перарваны для ${ pausedCount } ${ roleAssignmentSource }. Націсніце \"Працягнуць\", каб узнавіць прызначэнне роляў.",
+        "Працэс быў перарваны для ${ pausedCount } ${ roleAssignmentSource }. Націсніце \"Працягнуць\", каб узнавіць прызначэнне роляў."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Узнагарода па рэферальнай праграме ў выглядзе крэдытаў можа быць атрымана на працягу 2 месяцаў пасля завяршэння пробнага перыяду вашага сябра, і толькі калі ваш сябар падпісаўся на тарыфны план."
@@ -9696,9 +9852,6 @@
       "Total VPN connections": [
         "Колькасць падключэнняў па VPN"
       ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "Пробны перыяд міне ${ formattedPeriodEndDate }"
-      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Паспрабуйце ${ productName } абсалютна нічым не рызыкуючы. Вы атрымаеце поўнае вяртанне грашовых сродкаў, калі па нейкай прычыне зменіце сваё меркаванне. Без ніякіх пытанняў."
       ],
@@ -9876,6 +10029,9 @@
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "Ваш адрас нумар тэлефона для аднаўлення доступу можа выкарыстоўвацца, каб адправіць вам код спраўджання для скідання пароля і сувязі з вамі, калі будзе заўважана падазроная актыўнасць."
       ],
+      "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
+        "Немагчыма адправіць рахункі на ваш адрас электроннай пошты. Аўтаматычнае выстаўленне рахункаў будзе прыпынена да таго моманту, пакуль вы не абновіце адрас."
+      ],
       "We couldn’t process your payment.": [
         "Мы не можам апрацаваць ваш плацеж."
       ],
@@ -9945,6 +10101,9 @@
       "We’ll send a reset code to ${ boldValue }.": [
         "Код скідання адпраўлены на ${ boldValue }"
       ],
+      "When enabled, members cannot opt out of password check-ins in their own settings.": [
+        "Калі гэтая функцыя ўключана, удзельнікі не могуць адмовіцца ад рэгістрацыі пароляў у сваіх наладах."
+      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Пры ўключэнні SAML для ${ appName } у вашым пастаўшчыку пасведчанняў, вам магчыма будзе прапанавана скарыстацца зваротным выклікам URL (ACS) і ідэнтыфікатарам эмітэнта. Проста скапіюйце даныя знізу, а потым устаўце іх у палі вашага пастаўшчыка пасведчанняў."
       ],
@@ -9986,6 +10145,9 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Пры дапамозе груп, вы можаце хутка і лёгка адпраўляць лісты ўсім людзям у канкрэтнай групе."
+      ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "З дапамогай тарыфнага плана VPN Professional адміністратары могуць забяспечыць пастаянны VPN для ўсіх удзельнікаў арганізацыі, разам з прыватнымі шлюзамі, палітыкай доступу і маніторынгам."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Без актывацыі вы не зможаце ствараць новых карыстальнікаў, дадаваць адрасы да існуючых карыстальнікаў або атрымаць доступ да непрыватных уліковых запісаў."
@@ -10298,6 +10460,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
+      ],
+      "Your profile and changes to it will be visible to other ${ BRAND_NAME } users.": [
+        "Ваш профіль і змены ў ім будуць бачныя ўсім іншых карыстальнікам ${ BRAND_NAME }."
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Вашы нядаўнія змены былі апублікаваны. Яны будуць бачныя карыстальнікам у наступныя некалькі гадзін."
@@ -11438,6 +11603,9 @@
       "Unlimited": [
         "Unlimited"
       ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
       "Upload 1 or more encryption keys": [
         "Запампаваць 1 або больш ключоў шыфравання"
       ],
@@ -12247,6 +12415,12 @@
     "Members table usage": {
       "Setup your own private gateways to monitor VPN connection activity within your organization.": [
         "Наладзьце свае прыватныя шлюзы, каб назіраць за актыўнасцю падключэння па VPN у вашай арганізацыі."
+      ],
+      "Today": [
+        "Сёння"
+      ],
+      "Today, ${ time }": [
+        "Сёння ў ${ time }"
       ],
       "Yesterday": [
         "Учора"
@@ -13072,8 +13246,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand }, якая заканчваецца на ${ last4 }"
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand }, якая заканчваецца на ${ Last4 }"
       ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } дазваляе стварыць адрас электроннай пошты і кіраваць уліковымі запісамі для падпарадкаваных карыстальнікаў. Ідэальна для сямей і арганізацый."
@@ -13661,6 +13835,12 @@
       "OpenVPN credentials regenerated": [
         "Уліковыя даныя OpenVPN паўторна згенерыраваны"
       ],
+      "Password check-ins are not required anymore": [
+        "Праверка пароля цяпер не патрабуецца"
+      ],
+      "Password check-ins are now required for all members": [
+        "Праверка пароля цяпер патрабуецца ад усіх удзельнікаў"
+      ],
       "Reminder has been sent": [
         "Напамін адпраўлены"
       ],
@@ -14039,8 +14219,74 @@
       ]
     },
     "organization key reset": {
+      "Could not send the unprivatization request to ${ n } user. It will be retried automatically.": [
+        "Немагчыма адправіць неправатызаваны запыт ${ n } карыстальніку. Паўторная спроба будзе зроблена аўтаматычна.",
+        "Немагчыма адправіць неправатызаваны запыт ${ n } карыстальнікам. Паўторная спроба будзе зроблена аўтаматычна.",
+        "Немагчыма адправіць неправатызаваны запыт ${ n } карыстальнікам. Паўторная спроба будзе зроблена аўтаматычна.",
+        "Немагчыма адправіць неправатызаваны запыт ${ n } карыстальнікам. Паўторная спроба будзе зроблена аўтаматычна."
+      ],
+      "Get in touch with your other administrators, to see if they can help. They will be able to restore your privileges after using a data recovery method.": [
+        "Звярніце да сваіх іншых адміністратараў, каб зразумець, ці змогуць яны дапамагчы. Магчыма, што яны змогуць дапамагчы аднавіць вашы правы пасля выкарыстання спосабу аднаўлення даных."
+      ],
+      "I've notified my users that they'll receive an unprivatization request.": [
+        "Я апавясціў сваіх карыстальнікаў, што яны атрымаюць запыт на скасаванне прыватызацыі."
+      ],
+      "Non-private users": [
+        "Непрыватныя карыстальнікі"
+      ],
+      "Resetting organization key": [
+        "Скінуць ключ арганізацыі"
+      ],
+      "Resetting the organization key generates a new encryption key to keep your organization's data secure. **No data will be lost or destroyed in this process, but the users groups will be deleted.**": [
+        "Скіданне ключа арганізацыі згенерыруе новы ключ шыфравання для абароны даных вашай арганізацыі. **У гэтым працэсе даныя не будуць страчаны або знішчаны, але групы карыстальнікаў будуць выдалены.**"
+      ],
+      "See ${ n } user": [
+        "Паглядзець ${ n } карыстальніка",
+        "Паглядзець ${ n } карыстальнікаў",
+        "Паглядзець ${ n } карыстальнікаў",
+        "Паглядзець ${ n } карыстальнікаў"
+      ],
+      "See users": [
+        "Паглядзець карыстальнікаў"
+      ],
+      "Send unprivatization requests": [
+        "Адправіць непрыватызаваныя запыты"
+      ],
       "The organization key is reset": [
         "Ключ арганізацыі скінуты"
+      ],
+      "This process is automated:": [
+        "Гэты працэс аўтаматызаваны:"
+      ],
+      "This should take less than ${ minutes } minute. **Don't close this tab or let your device go to sleep** until it's finished.": [
+        "Гэта аперацыя павінна заняць менш за ${ minutes } хвіліну. **Не закрывайце ўкладку ў браўзеры і не давайце сваёй прыладзе перайсці ў рэжым сну** пакуль аперацыя не будзе завершана.",
+        "Гэта аперацыя павінна заняць менш за ${ minutes } хвіліны. **Не закрывайце ўкладку ў браўзеры і не давайце сваёй прыладзе перайсці ў рэжым сну** пакуль аперацыя не будзе завершана.",
+        "Гэта аперацыя павінна заняць менш за ${ minutes } хвілін. **Не закрывайце ўкладку ў браўзеры і не давайце сваёй прыладзе перайсці ў рэжым сну** пакуль аперацыя не будзе завершана.",
+        "Гэта аперацыя павінна заняць менш за ${ minutes } хвілін. **Не закрывайце ўкладку ў браўзеры і не давайце сваёй прыладзе перайсці ў рэжым сну** пакуль аперацыя не будзе завершана."
+      ],
+      "This should take less than ${ minutes } minute. **Keep this browser tab open and your device active** until it completes.": [
+        "Гэта аперацыя павінна заняць менш за ${ minutes } хвіліну. **Пакіньце гэту ўкладку браўзера адкрытай і не давайце прыладзе перайсці ў рэжым сну** пакуль аперацыя не будзе завершана.",
+        "Гэта аперацыя павінна заняць менш за ${ minutes } хвіліны. **Пакіньце гэту ўкладку браўзера адкрытай і не давайце прыладзе перайсці ў рэжым сну** пакуль аперацыя не будзе завершана.",
+        "Гэта аперацыя павінна заняць менш за ${ minutes } хвілін. **Пакіньце гэту ўкладку браўзера адкрытай і не давайце прыладзе перайсці ў рэжым сну** пакуль аперацыя не будзе завершана.",
+        "Гэта аперацыя павінна заняць менш за ${ minutes } хвілін. **Пакіньце гэту ўкладку браўзера адкрытай і не давайце прыладзе перайсці ў рэжым сну** пакуль аперацыя не будзе завершана."
+      ],
+      "To reset the organization key and restore your administrator privileges, **${ n } non-private user must be temporarily converted to private.**": [
+        "**${ n } непрыватны карыстальнік павінен быць часова пераўтвораны ў прыватнага**, каб скінуць ключ арганізацыі і аднавіць вашы правы адміністратара.",
+        "**${ n } непрыватныя карыстальнікі павінны быць часова пераўтвораны ў прыватных**, каб скінуць ключ арганізацыі і аднавіць вашы правы адміністратара.",
+        "**${ n } непрыватных карыстальнікаў павінны быць часова пераўтвораны ў прыватных**, каб скінуць ключ арганізацыі і аднавіць вашы правы адміністратара.",
+        "**${ n } непрыватных карыстальнікаў павінны быць часова пераўтвораны ў прыватных**, каб скінуць ключ арганізацыі і аднавіць вашы правы адміністратара."
+      ],
+      "Try another way": [
+        "Паспрабуйце іншы спосаб"
+      ],
+      "User (${ n })": [
+        "Карыстальнік (${ n })",
+        "Карыстальнікаў (${ n })",
+        "Карыстальнікаў (${ n })",
+        "Карыстальнікаў (${ n })"
+      ],
+      "You can reset your organization key to restore your administrator privileges. Then, you'll be able to create non-private users and access their accounts.": [
+        "Вы можаце скінуць ключ сваёй арганізацыі, каб аднавіць правы адміністратара. Пасля гэтага ў вас будзе магчымасць ствараць непрыватных карыстальнікаў і атрымліваць доступ да іх уліковых запісаў."
       ]
     },
     "Organization logo upload": {
@@ -14293,6 +14539,11 @@
         "Вам патрэбны доступ да ключа арганізацыі, каб выканаць гэту аперацыю."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Банкаўскі рахунак"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -14536,6 +14787,11 @@
         "Крэдыты будуць дададзены на ваш баланс"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Змяненне вашага адраса аплаты можа паўплываць на падаткі ў будучых рахунках"
+      ]
+    },
     "Payments.Lifetime Subscription": {
       "Lifetime accounts can be transferred or sold": [
         "Пажыццёвыя ўліковыя запісы могуць быць перададзены або прададзены"
@@ -14586,14 +14842,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - картка, якая заканчваецца на ${ paymentMethod.Details.Last4 }"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - картка, якая заканчваецца на ${ Last4 }"
       ],
-      "Bank transfer - ${ details }": [
-        "Банкаўскі перавод - ${ details }"
+      "Bank transfer - ${ iban }": [
+        "Банкаўскі перавод - ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay — картка, якая заканчваецца на ${ paymentMethod.Details.Last4 }"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay — картка, якая заканчваецца на ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -16099,6 +16355,9 @@
       ]
     },
     "scim: Info": {
+      "**Groups:** All groups convert to local ${ BRAND_NAME } groups. Syncing with your identity provider stops, and you'll manage membership in ${ BRAND_NAME } settings instead.": [
+        "**Групы:** Усе групы пераўтворацца ў лакальныя групы ${ BRAND_NAME }. Сінхранізацыя з вашым пастаўшчыком пасведчанняў спыніцца, і вы будзеце кіраваць прыналежнасцю ў наладах ${ BRAND_NAME }."
+      ],
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Абавязковая ўмова:** аўтэнтыфікацыя SAML павінна быць сканфігуравана для ўключэння падрыхтоўкі SCIM."
       ],
@@ -16140,6 +16399,9 @@
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Аўтаматычная падрыхтоўка SCIM будзе адключана да таго моманту, пакуль вамі не будзе ўведзены новы токен SCIM у налады вашага пастаўшчыка пасведчанняў."
+      ],
+      "This will delete your SCIM base URL and token.": [
+        "Гэта прывядзе да выдалення вашай URL-адраса базы SCIM і токена."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Для паўторнага ўключэння сінхранізацыі з вашым пастаўшчыком пасведчанняў, вам неабходна прайсці інтэграцыю SCIM яшчэ раз."
@@ -16591,6 +16853,11 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "Запыт скідання пароля"
+      ]
+    },
+    "Set invoice email form note": {
+      "Turn on automatic invoicing to receive bills via email. Enter the email address where you want to receive invoices.": [
+        "Уключыце аўтаматычнае выстаўленне рахункаў, каб атрымліваць іх на электронную пошту. Увядзіце адрас электроннай пошты, на які вы хочаце атрымліваць рахункі."
       ]
     },
     "Settings section title": {
@@ -17145,6 +17412,9 @@
       ],
       "This will sign you out of your other devices and you will have to create a new backup password.": [
         "Гэта дзеянне прывядзе да завяршэння сеанса на вашых іншых прыладах і вам давядзецца стварыць новы рэзервовы пароль."
+      ],
+      "This will sign you out of your other devices.": [
+        "Гэта дзеянне правядзе да выхаду з усіх іншых вашых прылад."
       ],
       "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
         "Праверце код пацвярджэння і ўхваліце запыт ад іншай прылады. Гэта дазволіць пераканацца ў тым, што менавіта вы спрабуеце ўвайсці ў электронную пошту **${ email }**."
@@ -19518,6 +19788,9 @@
       "Session management": [
         "Кіраванне сеансамі"
       ],
+      "Set invoice email": [
+        "Задаць электронную пошту для рахунка"
+      ],
       "Set new password": [
         "Задаць новы пароль"
       ],
@@ -19580,6 +19853,9 @@
       ],
       "Single sign-on": [
         "Адзіны ўваход"
+      ],
+      "Single sign-on (SSO)": [
+        "Адзіны ўваход (SSO)"
       ],
       "SMS verification": [
         "Спраўджанне SMS"
@@ -19749,6 +20025,9 @@
       "User converted to SSO": [
         "Карыстальнік пераўтвораны ў SSO"
       ],
+      "User profile": [
+        "Профіль карыстальніка"
+      ],
       "Users": [
         "Карыстальнікі"
       ],
@@ -19905,6 +20184,9 @@
       ],
       "Features": [
         "Функцыі"
+      ],
+      "Last app activity": [
+        "Апошняя актыўнасць праграмы"
       ],
       "Name": [
         "Імя"

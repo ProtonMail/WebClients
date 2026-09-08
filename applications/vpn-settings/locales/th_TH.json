@@ -5530,9 +5530,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "ต้องกำหนดค่าโดเมนที่กำหนดเองก่อนสร้างผู้ใช้ใหม่"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "คุณได้รับเชิญให้เชื่อมโยงบัญชี ${ BRAND_NAME } กับ Family plan นี้และเพลิดเพลินกับคุณสมบัติพรีเมียมทั้งหมดของ ${ brandOrAppName } ไปด้วยกัน"
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "บัญชีของคุณมีที่อยู่อีเมลมากกว่าจำนวนที่มีให้ในแผนนี้ ${ addressSettingsLink }"
       ],
@@ -8457,9 +8454,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "การสมัครสมาชิกกำลังจะสิ้นสุด: เพื่อรักษาสิทธิประโยชน์ ${ planName } ให้เริ่มการสมัครสมาชิกใหม่ใน Google Play Store ภายใน ${ byDate } ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "การสมัครสมาชิกเริ่มต้นในวันที่ ${ startsOnTime }"
-      ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "การรองรับสำหรับการตรวจสอบโดเมนที่กำหนดเองและที่อยู่อีเมลที่ไม่ใช่ของ ${ BRAND_NAME } จะมาในเร็วๆ นี้"
       ],
@@ -8744,9 +8738,6 @@
       ],
       "Total VPN connections": [
         "การเชื่อมต่อ VPN ทั้งหมด"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "การทดลองใช้สิ้นสุดลงในวันที่ ${ formattedPeriodEndDate }"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "ลองใช้ ${ productName } โดยไม่มีความเสี่ยง หากคุณเปลี่ยนใจด้วยเหตุผลใดก็ตาม คุณจะได้รับเงินคืนเต็มจำนวนโดยไม่มีการถามคำถามใดๆ"
@@ -11879,9 +11870,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } ลงท้ายด้วย ${ last4 }"
-      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } ช่วยให้คุณสร้างที่อยู่อีเมลและจัดการบัญชีสำหรับผู้ใช้ย่อยได้ เหมาะสำหรับครอบครัวและองค์กร"
       ],
@@ -13321,17 +13309,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "ราคาต่ออายุขึ้นอยู่กับภูมิภาคที่เรียกเก็บเงินและหมายเลขประจำตัวผู้เสียภาษี"
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - บัตรที่ลงท้ายด้วย ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "การโอนเงินผ่านธนาคาร - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - บัตรที่ลงท้ายด้วย ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

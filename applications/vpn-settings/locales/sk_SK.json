@@ -1982,6 +1982,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "Active until ${ formattedPeriodEndDate }": [
+        "Aktívne do ${ formattedPeriodEndDate }"
+      ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Po skončení skúšobného obdobia dňa ${ formattedDate1 } sa stane plateným predplatným, ktoré sa automaticky obnovuje každých ${ renewCycle } mesiacov. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate2 }."
       ],
@@ -2002,6 +2005,9 @@
       ],
       "Try ${ selected } ${ freeForNDays }": [
         "Vyskúšajte ${ selected } ${ freeForNDays }"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period.": [
+        "Po zrušení sa vaša bezplatná skúšobná verzia neprevedie na platené predplatné, ale výhody plánu môžete využívať až do konca skúšobného obdobia."
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Po zrušení sa vaša bezplatná skúšobná verzia neprevedie na platené predplatné, ale výhody plánu môžete využívať až do konca skúšobného obdobia. Po uplynutí tejto lehoty dôjde k zníženiu na ${ BRAND_NAME } Free plán."
@@ -2580,6 +2586,18 @@
         "${ users } používateľov",
         "${ users } používateľov"
       ],
+      "Amount due": [
+        "Dlžná suma"
+      ],
+      "Amount due after trial": [
+        "Splatná suma po skúšobnom období"
+      ],
+      "Amount due now": [
+        "Čiastka k zaplateniu teraz"
+      ],
+      "month": [
+        "mesiac"
+      ],
       "Subtotal": [
         "Medzisúčet"
       ],
@@ -2589,8 +2607,17 @@
         "Medzisúčet za ${ cycle } mesiacov",
         "Medzisúčet za ${ cycle } mesiacov"
       ],
+      "Summary": [
+        "Prehľad"
+      ],
       "Total": [
         "Celkom"
+      ],
+      "Total for ${ cycle } month": [
+        "Celkom za ${ cycle } mesiac",
+        "Celkom za ${ cycle } mesiace",
+        "Celkom za ${ cycle } mesiacov",
+        "Celkom za ${ cycle } mesiacov"
       ]
     },
     "Collapsible tooltip": {
@@ -6279,8 +6306,8 @@
       "You need to configure a custom domain before creating a new user.": [
         "Pred vytvorením nového používateľa, musíte nakonfigurovať vlastnú doménu."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Ste pozvaní prepojiť svoj ${ BRAND_NAME } účet s týmto rodinným plánom a spoločne využívať všetky prémiové funkcie ${ brandOrAppName }."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Pozývame vás, aby ste si prepojili svoj ${ BRAND_NAME } účet s touto rodinnou skupinou a mohli tak využívať všetky jej prémiové funkcie."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Váš účet má viac emailových adries než koľko máte k dispozícii v tomto pláne. ${ addressSettingsLink }"
@@ -8376,6 +8403,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Toto heslo NEZABUDNITE. Bez neho nebudete môcť spravovať svoju organizáciu."
       ],
+      "Do you remember your password?": [
+        "Pamätáte si svoje heslo?"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Chcete zrušiť všetky ostatné relácie okrem tejto?"
       ],
@@ -9180,6 +9210,9 @@
       "On": [
         "Zap."
       ],
+      "On ${ formattedPeriodEndDate }, your free trial ends and your paid plan starts.": [
+        "Dňa ${ formattedPeriodEndDate } sa skončí vaša bezplatná skúšobná verzia a začne platiť váš platený plán."
+      ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Akonáhle bude udelený prístup k vášmu účtu, budú môcť otvoriť vaše nastavenia **Obnovenia** a **zmeniť vaše heslo k aplikácii ${ ACCOUNT_APP_NAME }** za vás."
       ],
@@ -9669,9 +9702,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Predplatné sa končí: Ak si chcete ponechať výhody predplatného ${ planName }, reštartujte si predplatné v Obchode Google Play do ${ byDate }. ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "Predplatné začína ${ startsOnTime }"
-      ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Podpora monitorovania vlastných domén a emailových adries iných ako ${ BRAND_NAME } sa objaví čoskoro."
       ],
@@ -10019,9 +10049,6 @@
       ],
       "Total VPN connections": [
         "Celkom VPN pripojení"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "Skúšobná doba skončí ${ formattedPeriodEndDate }"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Vyskúšajte ${ productName } úplne bez rizika - ak si to z akéhokoľvek dôvodu rozmyslíte, dostanete plnú náhradu. Bez otázok."
@@ -13459,8 +13486,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } končiaca na ${ last4 }"
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } končiaca na ${ Last4 }"
       ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } vám umožňuje vytvárať emailové adresy a spravovať účty pre zverených používateľov. Ideálne pre rodiny a organizácie."
@@ -15059,6 +15086,11 @@
         "Kredity budú pridané k vášmu zostatku"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Zmena fakturačnej adresy môže mať vplyv na výšku daní na budúcich faktúrach."
+      ]
+    },
     "Payments.Lifetime Subscription": {
       "Lifetime accounts can be transferred or sold": [
         "Doživotné účty je možné previesť alebo predať."
@@ -15109,14 +15141,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - karta končiaca na ${ paymentMethod.Details.Last4 }"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - karta končiaca na ${ Last4 }"
       ],
-      "Bank transfer - ${ details }": [
-        "Bankový prevod – ${ details }"
+      "Bank transfer - ${ iban }": [
+        "Bankový prevod – ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - karta končiaca na ${ paymentMethod.Details.Last4 }"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - karta končiaca na ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
