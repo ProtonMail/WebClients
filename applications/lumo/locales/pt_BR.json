@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
+      "Accept dictation": [
+        "Aceitar ditado"
+      ],
       "Add": [
         "Adicionar"
       ],
@@ -50,6 +53,9 @@
       ],
       "Cancel": [
         "Cancelar"
+      ],
+      "Cancel dictation": [
+        "Cancelar ditado"
       ],
       "Cancel subscription": [
         "Cancelar assinatura"
@@ -951,6 +957,9 @@
         "${ users } usuário",
         "${ users } usuários"
       ],
+      "Amount due after trial": [
+        "Valor devido após o período de avaliação"
+      ],
       "Subtotal": [
         "Subtotal"
       ],
@@ -960,6 +969,10 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Total for ${ cycle } month": [
+        "Total por ${ cycle } mês",
+        "Total por ${ cycle } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -1079,6 +1092,9 @@
       "Light": [
         "Claro"
       ],
+      "Manage connectors": [
+        "Gerenciar conectores"
+      ],
       "Manage files": [
         "Gerenciar arquivos"
       ],
@@ -1115,9 +1131,6 @@
       "Select all": [
         "Selecionar tudo"
       ],
-      "Send feedback": [
-        "Enviar feedback"
-      ],
       "Send message": [
         "Enviar mensagem"
       ],
@@ -1138,9 +1151,6 @@
       ],
       "Submit": [
         "Enviar"
-      ],
-      "Switch to Max": [
-        "Alternar para Max"
       ],
       "System": [
         "Sistema"
@@ -1211,6 +1221,9 @@
       ],
       "Delete all": [
         "Excluir tudo"
+      ],
+      "Dictate": [
+        "Ditar"
       ],
       "Get started": [
         "Começar a usar"
@@ -1732,14 +1745,8 @@
       "Choose sheets to add": [
         "Escolha as planilhas a serem adicionadas"
       ],
-      "Review what you're sharing": [
-        "Revise o que você está compartilhando"
-      ],
       "Tell us more": [
         "Forneça mais informações"
-      ],
-      "Your feedback is private": [
-        "Seu feedback é privado"
       ]
     },
     "collider_2025: Hint": {
@@ -2060,9 +2067,6 @@
       "No usage yet": [
         "Não usado ainda"
       ],
-      "Only the text below will be sent. Images and other attachments are not included. Remove anything you don't want shared.": [
-        "Apenas o texto abaixo será enviado. Imagens e outros anexos não estão incluídos. Remova tudo o que você não deseja compartilhar."
-      ],
       "Over capacity": [
         "Excesso de capacidade"
       ],
@@ -2119,9 +2123,6 @@
       ],
       "Secure connection (encrypted)": [
         "Conexão segura (criptografada)"
-      ],
-      "Share your prompt and the response with us.": [
-        "Compartilhe seu prompt e a resposta conosco."
       ],
       "Shared by ${ file.sharedBy }": [
         "Compartilhado por ${ file.sharedBy }"
@@ -2198,15 +2199,6 @@
       "This folder is empty": [
         "Esta pasta está vazia"
       ],
-      "This is the only time we see your content. We use it to improve our system prompts and understand how issues occurred. This data is automatically deleted after 90 days.": [
-        "Esta é a única vez que vemos seu conteúdo. Nós o usamos para melhorar nossos prompts de sistema e entender como os problemas ocorreram. Esses dados são excluídos automaticamente após 90 dias."
-      ],
-      "This lets us know you were happy with the response. We never see your prompt or ${ LUMO_SHORT_APP_NAME }'s reply.": [
-        "Isso nos permite saber que você ficou satisfeito com a resposta. Nós nunca vemos seu prompt ou a resposta do ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "This lets us know you weren't happy with the response. We never see your prompt or ${ LUMO_SHORT_APP_NAME }'s reply unless you explicitly share it with us.": [
-        "Isso nos permite saber que você não ficou satisfeito com a resposta. Nós nunca vemos seu prompt ou a resposta do ${ LUMO_SHORT_APP_NAME }, a menos que você os compartilhe explicitamente conosco."
-      ],
       "To get started, please open ${ DRIVE_APP_NAME } to set up your secure storage.": [
         "Para começar, abra ${ DRIVE_APP_NAME } para configurar o armazenamento seguro."
       ],
@@ -2257,6 +2249,9 @@
       ],
       "Your memories are already up to date.": [
         "Suas memórias já estão atualizadas."
+      ],
+      "Your memories are already well organized.": [
+        "Suas memórias já estão bem organizadas."
       ]
     },
     "collider_2025: Job": {
@@ -2301,9 +2296,6 @@
     "collider_2025: Label": {
       "AI model": [
         "Modelo de IA"
-      ],
-      "AI response": [
-        "Resposta da IA"
       ],
       "Answer mode": [
         "Modo de resposta"
@@ -2433,9 +2425,6 @@
       ],
       "You": [
         "Você"
-      ],
-      "Your prompt": [
-        "Seu prompt"
       ],
       "Your workflow": [
         "Seu fluxo de trabalho"
@@ -3026,6 +3015,9 @@
       ],
       "Elevate your business AI experience": [
         "Eleve o nível da experiência de IA na sua empresa"
+      ],
+      "From only": [
+        "A partir de apenas"
       ],
       "Get": [
         "Obter"
@@ -4205,6 +4197,9 @@
       ]
     },
     "collider_2025:Project": {
+      "Develop stories, refine prose, and improve your writing craft": [
+        "Desenvolva histórias, refine a prosa e aprimore sua arte de escrever"
+      ],
       "Financial assistant": [
         "Assistente financeiro"
       ],
@@ -4216,6 +4211,9 @@
       ],
       "Plan financial goals with personalized insights": [
         "Planeje metas financeiras com insights personalizados"
+      ],
+      "Practice conversations, learn grammar, and build vocabulary in your target language": [
+        "Pratique conversas, aprenda gramática e amplie seu vocabulário no idioma que deseja aprender."
       ],
       "Research & Analysis Partner": [
         "Parceiro de pesquisa e análise"
@@ -6534,6 +6532,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente de escrita ${ BRAND_NAME } Scribe"
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "Marca de ${ IDEAL_WERO_BRAND_NAME }"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inclui ${ BRAND_NAME } assistente de escrita Scribe"
       ],
@@ -6657,6 +6658,12 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
+      ],
+      "Connecting…": [
+        "Conectando…"
+      ],
+      "Connection error": [
+        "Erro de conexão"
       ],
       "Country code": [
         "Código do país"
@@ -6817,6 +6824,9 @@
       ],
       "Learn more": [
         "Saiba mais"
+      ],
+      "Listening…": [
+        "Escutando…"
       ],
       "Loading": [
         "Carregando"
@@ -8394,9 +8404,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } com final ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB de armazenamento em nuvem que permite armazenar, sincronizar e compartilhar arquivos com facilidade. Protegido por criptografia de ponta a ponta."
       ],
@@ -9164,17 +9171,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "O preço de renovação depende da região de faturamento e do número de IVA."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - cartão terminado em ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Transferência bancária - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - cartão terminado em ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
