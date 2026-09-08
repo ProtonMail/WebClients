@@ -2172,7 +2172,7 @@
         "移動全部於\"${ payload.content.name }\"的項目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "將項目移動到另一個保管庫會消除其安全連結。"
+        "將項目移至另一個保管庫將會清除其安全連結。"
       ],
       "Moving items": [
         "正在移動檔案"
@@ -5534,6 +5534,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "您的訂閱不允許新增多重保管庫。預設會把所有項目匯入第一個保管庫。若要匯入多重保管庫，需升級訂閱。"
+      ],
+      "Identity could not be confirmed": [
+        "無法確認身分"
       ]
     }
   }
