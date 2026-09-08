@@ -11933,7 +11933,6 @@ __metadata:
     "@proton/app-context": "workspace:^"
     "@proton/key-transparency": "workspace:^"
     "@proton/metrics": "workspace:^"
-    "@proton/pass": "workspace:^"
     "@proton/payments": "workspace:^"
     "@proton/unleash": "workspace:^"
     electron: "*"
@@ -11943,8 +11942,6 @@ __metadata:
     "@proton/key-transparency":
       optional: true
     "@proton/metrics":
-      optional: true
-    "@proton/pass":
       optional: true
     "@proton/payments":
       optional: true
