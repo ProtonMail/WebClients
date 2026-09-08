@@ -1,5 +1,5 @@
 // Mock configuration types
-export type ScenarioType = 'success' | 'error' | 'timeout' | 'toolCall' | 'weeklyLimit' | 'rejected';
+export type ScenarioType = 'success' | 'error' | 'timeout' | 'toolCall' | 'rateLimit' | 'rejected';
 
 export interface IMockConfig {
     setScenario(scenario: ScenarioType): void;

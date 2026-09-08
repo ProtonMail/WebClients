@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 
-import { useTierErrors } from '../../../../../hooks/useTierErrors';
+import { useChatLimitGate } from '../../../../../hooks/useChatLimitGate';
 import { isImeComposing } from '../../../../../util/keyboard';
 
 interface MessageEditorProps {
@@ -14,7 +14,7 @@ interface MessageEditorProps {
 }
 
 const MessageEditor = ({ messageContent, handleEditMessage, handleCancel }: MessageEditorProps) => {
-    const { hasTierErrors } = useTierErrors();
+    const { isBlocked: isChatLimitBlocked } = useChatLimitGate();
     const [value, setValue] = useState(messageContent);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -78,7 +78,7 @@ const MessageEditor = ({ messageContent, handleEditMessage, handleCancel }: Mess
                         shape="solid"
                         color="norm"
                         onClick={handleSubmit}
-                        disabled={isUnchanged || hasTierErrors}
+                        disabled={isUnchanged || isChatLimitBlocked}
                     >
                         {c('collider_2025:Button').t`Send`}
                     </Button>
