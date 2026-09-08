@@ -28,6 +28,10 @@ export const getHasVpnOnlyB2BPlan = (subscription: MaybeFreeSubscription) => {
     return hasVpnPro(subscription) || hasVpnBusiness(subscription);
 };
 
+export const getHasVpnGatewaysUpsellPlan = (subscription: MaybeFreeSubscription) => {
+    return getHasVpnB2BPlan(subscription) || hasAnyB2bBundle(subscription);
+};
+
 export const getHasConsumerVpnPlan = (subscription: MaybeFreeSubscription) => {
     return hasDeprecatedVPN(subscription) || hasVPN2024(subscription) || hasVPNPassBundle(subscription);
 };

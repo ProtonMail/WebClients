@@ -23,11 +23,10 @@ import {
     getHasExternalMemberCapableB2BPlan,
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
+    getHasVpnGatewaysUpsellPlan,
     hasAnyB2bBundle,
     hasMeet,
     hasMeetBusiness,
-    hasVPNPassProfessional,
-    hasVpnBusiness,
 } from '@proton/payments/core/subscription/helpers';
 import { appSupportsSSO } from '@proton/shared/lib/apps/apps';
 import {
@@ -55,6 +54,7 @@ export const getOrganizationAppRoutes = ({
     user,
     organization,
     subscription,
+    entitlements,
     groups,
     isGroupOwner,
     flags,
@@ -97,11 +97,8 @@ export const getOrganizationAppRoutes = ({
         (isOrgConfigured || getIsB2BAudienceFromPlan(organization?.PlanName)) &&
         !!permissions['account.activity_log.read'];
 
-    //vpnbiz2023, and all business bundle plans have the Connection Events feature
-    const hasPlanWithEventLogging =
-        hasVpnBusiness(subscription) || hasAnyB2bBundle(subscription) || hasVPNPassProfessional(subscription);
     const canShowB2BConnectionEvents =
-        hasPlanWithEventLogging &&
+        entitlements.orgHasVpnActivityMonitor &&
         app === APPS.PROTONVPN_SETTINGS &&
         permissions['account.activity_log.read'] &&
         isOrgConfigured;
@@ -321,7 +318,9 @@ export const getOrganizationAppRoutes = ({
             text: c('Title').t`Gateways`,
             to: '/gateways',
             icon: IcServers,
-            available: permissions['account.gateway.read'] && (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
+            available:
+                permissions['account.gateway.read'] &&
+                (entitlements.orgHasMaxDedicatedIps || getHasVpnGatewaysUpsellPlan(subscription)),
             subsections: [
                 {
                     id: 'servers',
@@ -341,7 +340,7 @@ export const getOrganizationAppRoutes = ({
             available:
                 isSharedServerFeatureEnabled &&
                 permissions['account.shared_server.read'] &&
-                (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
+                entitlements.orgHasVpnLocationFilter,
             subsections: [
                 {
                     id: 'servers',

@@ -6,9 +6,9 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { defineSidebar } from '@proton/nav/api/defineSidebar';
+import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { isB2BAdmin } from '../functions/isB2BAdmin';
 import { useB2BAdminSidebarFeature } from './useB2BAdminSidebarFeature';
 
 vi.mock('@proton/account/user/hooks', () => ({ useUser: vi.fn() }));
@@ -28,19 +28,20 @@ vi.mock('../definitions/routes', () => ({ resolveNavigation: vi.fn(() => 'nav') 
 vi.mock('@proton/nav/api/applyPrefix', () => ({ applyPrefix: vi.fn((nav) => `${nav}-prefixed`) }));
 vi.mock('@proton/nav/api/defineSidebar', () => ({ defineSidebar: vi.fn(() => 'sidebar-tree') }));
 vi.mock('@proton/nav/api/defineSearchOptions', () => ({ defineSearchOptions: vi.fn(() => 'search-options') }));
-vi.mock('../functions/isB2BAdmin', () => ({ isB2BAdmin: vi.fn() }));
+vi.mock('@proton/payments-ui/entitlements/hooks', () => ({ useEntitlementChecks: vi.fn() }));
 
 const mockUseUser = useUser as MockedFunction<any>;
 const mockUseSubscription = useSubscription as MockedFunction<any>;
 const mockUseOrganization = useOrganization as MockedFunction<any>;
 const mockUseUserPermissions = useUserPermissions as MockedFunction<any>;
+const mockUseEntitlementChecks = useEntitlementChecks as MockedFunction<any>;
 const mockUseFlag = useFlag as MockedFunction<typeof useFlag>;
-const mockIsB2BAdmin = isB2BAdmin as MockedFunction<typeof isB2BAdmin>;
 const mockDefineSidebar = defineSidebar as MockedFunction<any>;
 
 const user = { ID: 'user' };
 const subscription = { ID: 'subscription' };
 const organization = { ID: 'organization' };
+const entitlements = { orgIsBusiness: true, orgHasVpn: true };
 const permissions = { 'organization.gateways': true };
 
 describe('useB2BAdminSidebarFeature', () => {
@@ -50,8 +51,8 @@ describe('useB2BAdminSidebarFeature', () => {
         mockUseSubscription.mockReturnValue([subscription, false]);
         mockUseOrganization.mockReturnValue([organization, false]);
         mockUseUserPermissions.mockReturnValue([{ permissions }, false]);
+        mockUseEntitlementChecks.mockReturnValue([entitlements, false]);
         mockUseFlag.mockReturnValue(true);
-        mockIsB2BAdmin.mockReturnValue(true);
         mockDefineSidebar.mockReturnValue('sidebar-tree');
     });
 
@@ -72,6 +73,7 @@ describe('useB2BAdminSidebarFeature', () => {
         ['subscription', () => mockUseSubscription.mockReturnValue([undefined, true])],
         ['organization', () => mockUseOrganization.mockReturnValue([undefined, true])],
         ['permissions', () => mockUseUserPermissions.mockReturnValue([{ permissions: null }, true])],
+        ['entitlements', () => mockUseEntitlementChecks.mockReturnValue([entitlements, true])],
     ])('while %s is loading', (_name, arrange) => {
         it('reports loading instead of disabled', () => {
             arrange();
@@ -90,8 +92,8 @@ describe('useB2BAdminSidebarFeature', () => {
         expect(result.current).toEqual({ enabled: false, loading: false, routes: undefined });
     });
 
-    it('is disabled and settled when the user is not a B2B admin', () => {
-        mockIsB2BAdmin.mockReturnValue(false);
+    it('is disabled and settled when the user holds no organization permission', () => {
+        mockUseUserPermissions.mockReturnValue([{ permissions: { 'organization.gateways': false } }, false]);
 
         const { result } = renderHook(() => useB2BAdminSidebarFeature({ prefix: '/vpn' }));
 
