@@ -18,9 +18,8 @@ import { getPremiumPasswordManagerText } from '@proton/shared/lib/helpers/checko
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getPremium } from '@proton/shared/lib/helpers/premium';
 import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/features';
-import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
+import { VPN_SERVERS } from '@proton/shared/lib/vpn/vpnServers';
 
-import { getScribeWritingAssistantText } from '../../assistant/helpers';
 import { getNUsersText } from '../../../features/highlights';
 import { getAccessToAdvancedAIText, getFullChatHistoryText, getUnlimitedChatsText } from '../../../features/lumo';
 import {
@@ -41,6 +40,7 @@ import {
     getSecureSharingText,
     getUnlimitedHideMyEmailAliasesText,
 } from '../../../features/pass';
+import { getScribeWritingAssistantText } from '../../assistant/helpers';
 
 export const getWhatsIncluded = ({
     planIDs,

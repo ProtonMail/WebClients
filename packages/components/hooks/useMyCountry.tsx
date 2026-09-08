@@ -5,7 +5,7 @@ import { singleCountryTimezoneDatabase } from '@proton/shared/lib/date/singleCou
 import { manualFindTimeZone } from '@proton/shared/lib/date/timezoneDatabase';
 import { getNaiveCountryCode } from '@proton/shared/lib/i18n/helper';
 import type { Api } from '@proton/shared/lib/interfaces';
-import type { MyLocationResponse } from '@proton/vpn/types/Server';
+import type { MyLocationResponse } from '@proton/shared/lib/vpn/location';
 
 import { useSilentApi } from './useSilentApi';
 
