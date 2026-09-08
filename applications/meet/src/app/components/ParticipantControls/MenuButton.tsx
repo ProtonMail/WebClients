@@ -21,12 +21,14 @@ import {
     toggleSideBarState as toggleSideBarStateAction,
 } from '@proton/meet/store/slices/uiStateSlice';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { useDebugOverlayContext } from '../../contexts/DebugOverlayContext';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { EMOJI_REACTIONS, type EmojiReaction, useEmojiReaction } from '../../hooks/bridges/useEmojiReaction';
 import { useRaiseHand } from '../../hooks/bridges/useRaiseHand';
+import { LayoutMenuItem } from '../ParticipantsLayout/LayoutSelector/LayoutMenuItem';
 import { SlideClosable } from '../SlideClosable/SlideClosable';
 
 import './MenuButton.scss';
@@ -36,6 +38,8 @@ export const MenuButton = ({ onOpenDeviceState }: { onOpenDeviceState: () => voi
     const { isEnabled: isDebugEnabled, open: openDebugOverlay } = useDebugOverlayContext();
 
     const { viewportWidth } = useActiveBreakpoint();
+
+    const isMeetParticipantsLayoutsEnabled = useFlag('MeetParticipantsLayouts');
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -185,6 +189,9 @@ export const MenuButton = ({ onOpenDeviceState }: { onOpenDeviceState: () => voi
 
                             <div className="w-full text-left color-weak">Meeting actions</div>
                             <div className="flex flex-column gap-0 items-center justify-center w-full">
+                                {isSmallViewport && isMeetParticipantsLayoutsEnabled && (
+                                    <LayoutMenuItem onLayoutSelected={() => setIsOpen(false)} />
+                                )}
                                 {items.map((item) => {
                                     return (
                                         <Button
