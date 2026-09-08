@@ -48,6 +48,7 @@ export type SpreadsheetProps = {
   editorInitializationConfig: EditorInitializationConfig | undefined
   systemMode: EditorSystemMode
   editingLocked: boolean
+  setMigrationEditingLocked: (inProgress: boolean) => void
   updateLocalStateToLog: (state: unknown) => void
   isPublicMode: boolean
 }
@@ -60,6 +61,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     editorInitializationConfig,
     systemMode,
     editingLocked,
+    setMigrationEditingLocked,
     updateLocalStateToLog,
     isPublicMode,
   }: SpreadsheetProps,
@@ -135,7 +137,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     storeAction,
   })
   const didSetInitialVersion = useRef(false)
-  const { setInitialVersion } = useVersioning(canRunMigration, state)
+  const { setInitialVersion } = useVersioning(canRunMigration, state, setMigrationEditingLocked)
   const { replaceLocalSpreadsheetState } = useLocalState(state, updateLocalStateToLog)
   const focusSheet = useFocusSheet()
 
