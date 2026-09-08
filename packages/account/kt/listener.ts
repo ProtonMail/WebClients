@@ -1,15 +1,20 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
 import { getKTActivationValue, getKTFlag } from '@proton/key-transparency/helpers';
-import type { MailSettingState } from '@proton/mail/store/mailSettings';
 import type { ProtonThunkArguments, SharedStartListening } from '@proton/redux-shared-store-types';
+import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { bootstrapEvent } from '../bootstrap/action';
 import { type KtState, ktSlice } from './index';
 
-// This is a hack to avoid having to add MailSettingState to all the account states
+interface MailSettingsStateSlice {
+    mailSettings?: ModelState<MailSettings>;
+}
+
+// Apps that mount mailSettings in the shared store expose KT here; others leave it undefined.
 const getMailSettingsValue = (state: KtState) => {
-    return (state as Partial<MailSettingState>).mailSettings?.value;
+    return (state as MailSettingsStateSlice).mailSettings?.value;
 };
 
 const updateKtStateThunk = (): ThunkAction<void, KtState, ProtonThunkArguments, UnknownAction> => {

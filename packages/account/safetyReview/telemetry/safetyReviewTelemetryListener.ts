@@ -1,6 +1,6 @@
-import type { ContactEmailsState } from '@proton/mail/store/contactEmails';
 import type { SharedStartListening } from '@proton/redux-shared-store/listenerInterface';
 
+import type { ContactEmailsState } from '../../contactEmails';
 import type { DelegatedAccessState } from '../../delegatedAccess';
 import { selectEnrichedOutgoingDelegatedAccess } from '../../delegatedAccess/shared/outgoing/selector';
 import { selectAccountRecovery } from '../../recovery/accountRecovery';

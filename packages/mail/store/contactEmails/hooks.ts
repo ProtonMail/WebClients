@@ -1,8 +1,1 @@
-import { createHooks } from '@proton/redux-utilities/hooks';
-
-import { contactEmailsThunk, selectContactEmails } from './index';
-
-const hooks = createHooks(contactEmailsThunk, selectContactEmails);
-
-export const useContactEmails = hooks.useValue;
-export const useGetContactEmails = hooks.useGet;
+export { useContactEmails, useGetContactEmails } from '@proton/account/contactEmails/hooks';
