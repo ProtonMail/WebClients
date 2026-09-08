@@ -241,6 +241,17 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
 
         setTaxBillingAddress(newValue);
         if (newValue.State && isPostalCodeValid(newValue.CountryCode, newValue.State, newZipCode) && !skipCallback) {
+            // Reported here rather than on every keystroke so that a zip code change means the same
+            // thing as a country or state change: one that actually refreshed the estimation.
+            checkoutTelemetry.reportBillingCountryChange({
+                action: 'change_zip_code',
+                context: props.telemetryContext,
+                currentCountry: current.CountryCode,
+                selectedCountry: newValue.CountryCode,
+                currentState: current.State ?? null,
+                selectedState: newValue.State,
+            });
+
             billingAddressChanged(newValue);
         }
     };
