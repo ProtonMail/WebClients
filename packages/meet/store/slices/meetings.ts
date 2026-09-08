@@ -78,7 +78,7 @@ const queryMeeting = async (api: Api, id: string) => {
     return Meeting;
 };
 
-export const { removeMeeting, updateMeeting, addMeeting, eventLoop } = slice.actions;
+export const { removeMeeting, updateMeeting, addMeeting } = slice.actions;
 
 export const meetingsReducer = { [name]: slice.reducer };
 export const meetingsThunk = modelThunk.thunk;
@@ -94,7 +94,7 @@ export const meetingsEventLoopThunk = ({
             events: event.MeetMeetings,
             get: (ID) => queryMeeting(api, ID),
             refetch: () => dispatch(meetingsThunk({ cache: CacheType.None })),
-            update: (result) => dispatch(eventLoop(result)),
+            update: (result) => dispatch(slice.actions.eventLoop(result)),
         });
     };
 };
