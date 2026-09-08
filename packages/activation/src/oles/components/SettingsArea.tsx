@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import useAppTitle from '@proton/components/hooks/useAppTitle';
 
-import { OLES_PROVIDERS } from '../providers';
+import { OLES_PROVIDERS, getProviderFromRouteSlug } from '../providers';
 import { ConnectionStateProvider } from '../useConnectionState';
 import { ImporterOrganizationsProvider } from '../useImporterOrganizations';
 import useOLESFeatureStatus from '../useOLESFeatureStatus';
@@ -23,9 +23,10 @@ const SettingsArea = ({ providerParam = '', easySwitchPath }: { providerParam?: 
 
     const hasAccessToOLES = olesFeatureStatus.featureSupported && olesFeatureStatus.allowedForUser;
 
+    const resolvedProvider = getProviderFromRouteSlug(providerParam);
     const provider =
-        hasAccessToOLES && olesFeatureStatus.isProviderEnabled(providerParam)
-            ? OLES_PROVIDERS[providerParam]
+        hasAccessToOLES && resolvedProvider && olesFeatureStatus.isProviderEnabled(resolvedProvider)
+            ? OLES_PROVIDERS[resolvedProvider]
             : undefined;
 
     if (!provider) {
