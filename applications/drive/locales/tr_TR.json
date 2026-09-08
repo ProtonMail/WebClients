@@ -10066,6 +10066,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "Sonu ${ Last4 } ile biten ${ Brand }"
       ]
     },
     "new_plans: Subtext": {
@@ -11543,6 +11546,15 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - ${ paymentMethod.Details.Last4 } ile biten kart"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - ${ Last4 } ile biten kart"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Banka havalesi - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - ${ Last4 } ile biten kart"
       ]
     },
     "Payments.Sepa": {
@@ -15381,6 +15393,11 @@
     "ngc_access_banner: info": {
       "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
         "Artık yeni ${ CALENDAR_APP_NAME } uygulamasına erişebilirsiniz. ${ link }"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Fatura adresinizi değiştirmek sonraki faturalardaki vergileri etkileyebilir."
       ]
     }
   }
