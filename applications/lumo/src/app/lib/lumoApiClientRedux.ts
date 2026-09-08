@@ -9,6 +9,7 @@ import type {
     Turn,
 } from '@proton/lumo-api-client/core/types';
 import { postProcessTitle } from '@proton/lumo-api-client/utils';
+import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { selectAttachmentsBySpaceId } from '../redux/selectors';
@@ -43,6 +44,18 @@ import { applyUsageFromStreamMessage } from '../services/usageLimitsStore';
 import { ConversationStatus, Role } from '../types';
 import { CONTEXT_LENGTH_EXCEEDED_CODE } from '../types-api';
 import { createImageAttachment, generateImageMarkdown } from './imageAttachment';
+
+export const getTerminalTypeForApiError = (error: unknown) => {
+    if (
+        typeof error === 'object' &&
+        error !== null &&
+        (error as { status?: number }).status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS
+    ) {
+        return null;
+    }
+
+    return getTerminalTypeFromApiError(error);
+};
 
 /**
  * Redux-integrated helper for sending messages with automatic Redux updates
@@ -409,7 +422,10 @@ export function sendMessageWithRedux(
                 });
             }
 
-            const terminalType = getTerminalTypeFromApiError(error);
+            // Preserve HTTP 429 so the action error handler can identify it as a
+            // rate/tier limit. Converting a nested generic `error` code here would
+            // discard the HTTP status and show a generic generation error instead.
+            const terminalType = getTerminalTypeForApiError(error);
             if (terminalType && errorHandler && conversationId) {
                 throw errorHandler({ type: terminalType }, conversationId);
             }

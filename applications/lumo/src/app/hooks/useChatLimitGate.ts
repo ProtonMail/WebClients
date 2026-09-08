@@ -7,6 +7,7 @@ import { clearTierErrors } from '../redux/slices/meta/errors';
 import { handleTierError } from '../services/errors/errorHandling';
 import {
     areAllModelLimitsExhausted,
+    isAnyModelLimitExhausted,
     isModelTierSelectable,
     resolveUsageModelTier,
     useRemainingLimits,
@@ -36,20 +37,21 @@ export const useChatLimitGate = () => {
             isApertusEnabled: apertusModelAvailable,
         });
     const allModelLimitsExhausted = areAllModelLimitsExhausted(remainingLimits);
+    const anyModelLimitExhausted = isAnyModelLimitExhausted(remainingLimits);
     const isBlocked =
         (!hasLumoPlus && selectedModelLimitExhausted) || (selectedModelTier === 'apertus-15' && !apertusModelAvailable);
 
     const ensureTierError = useCallback(() => {
-        if (!hasLumoPlus && allModelLimitsExhausted && !hasTierErrors) {
+        if (!hasLumoPlus && anyModelLimitExhausted && !hasTierErrors) {
             dispatch(handleTierError(lumoUserType));
         }
-    }, [hasLumoPlus, allModelLimitsExhausted, hasTierErrors, dispatch, lumoUserType]);
+    }, [hasLumoPlus, anyModelLimitExhausted, hasTierErrors, dispatch, lumoUserType]);
 
     const clearTierErrorIfModelAvailable = useCallback(() => {
-        if (!allModelLimitsExhausted && hasTierErrors) {
+        if (!anyModelLimitExhausted && hasTierErrors) {
             dispatch(clearTierErrors());
         }
-    }, [allModelLimitsExhausted, hasTierErrors, dispatch]);
+    }, [anyModelLimitExhausted, hasTierErrors, dispatch]);
 
     return {
         isBlocked,

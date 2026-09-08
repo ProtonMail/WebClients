@@ -160,7 +160,7 @@ export type ModelSwitchSuggestionArgs = {
     hasLumoPlus: boolean;
     selectedModelTier: UsageModelTier;
     remainingLimits: LumoRemainingLimits | null;
-    weeklyLimitUpsellVisible: boolean;
+    limitUpsellVisible: boolean;
     messageCount: number;
     isMaxAvailableByFlag: boolean;
 };
@@ -170,11 +170,11 @@ export function isModelSwitchSuggestionEligible({
     hasLumoPlus,
     selectedModelTier,
     remainingLimits,
-    weeklyLimitUpsellVisible,
+    limitUpsellVisible,
     messageCount,
     isMaxAvailableByFlag,
 }: ModelSwitchSuggestionArgs): boolean {
-    if (hasLumoPlus || weeklyLimitUpsellVisible || !remainingLimits || !isMaxAvailableByFlag) {
+    if (hasLumoPlus || limitUpsellVisible || !remainingLimits || !isMaxAvailableByFlag) {
         return false;
     }
 
@@ -324,12 +324,21 @@ export function areAllModelLimitsExhausted(limits: LumoRemainingLimits | null): 
     return knownLimits.every((remaining) => remaining === 0);
 }
 
-export function shouldShowWeeklyLimitUpsell(
+/** True when either chat-model pool reported by the backend is exhausted. */
+export function isAnyModelLimitExhausted(limits: LumoRemainingLimits | null): boolean {
+    if (!limits) {
+        return false;
+    }
+
+    return isLimitExhausted(limits.lite) || isLimitExhausted(limits.max);
+}
+
+export function shouldShowLimitUpsell(
     remainingLimits: LumoRemainingLimits | null,
     hasTierErrors: boolean,
     hasLumoPlus: boolean
 ): boolean {
-    return !hasLumoPlus && hasTierErrors && remainingLimits !== null && areAllModelLimitsExhausted(remainingLimits);
+    return !hasLumoPlus && hasTierErrors && isAnyModelLimitExhausted(remainingLimits);
 }
 
 /** @deprecated Use isModelTierLimitExhausted for the selected model tier. */

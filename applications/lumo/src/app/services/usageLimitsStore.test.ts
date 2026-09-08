@@ -2,6 +2,7 @@ import {
     getMaxModelAvailability,
     getRemainingForModelTier,
     getRemainingLimits,
+    isAnyModelLimitExhausted,
     isModelSwitchSuggestionEligible,
     isModelTierSelectable,
     resolveAvailableModelTier,
@@ -9,6 +10,7 @@ import {
     setDebugMaxModelOverride,
     setDebugWeeklyLimitExhausted,
     setRemainingLimits,
+    shouldShowLimitUpsell,
     shouldShowModelSwitchSuggestion,
 } from './usageLimitsStore';
 
@@ -80,7 +82,7 @@ describe('shouldShowModelSwitchSuggestion', () => {
         hasLumoPlus: false,
         selectedModelTier: 'lumo-lite' as const,
         remainingLimits: { lite: 10, max: 20 },
-        weeklyLimitUpsellVisible: false,
+        limitUpsellVisible: false,
         messageCount: 2,
         isGenerating: false,
         isMaxAvailableByFlag: true,
@@ -125,6 +127,28 @@ describe('shouldShowModelSwitchSuggestion', () => {
     it('hides while generating even when otherwise eligible', () => {
         expect(isModelSwitchSuggestionEligible(baseArgs)).toBe(true);
         expect(shouldShowModelSwitchSuggestion({ ...baseArgs, isGenerating: true })).toBe(false);
+    });
+});
+
+describe('limit upsell', () => {
+    it('is eligible when Lite is exhausted', () => {
+        expect(isAnyModelLimitExhausted({ lite: 0, max: 20 })).toBe(true);
+        expect(shouldShowLimitUpsell({ lite: 0, max: 20 }, true, false)).toBe(true);
+    });
+
+    it('is eligible when Max is exhausted', () => {
+        expect(isAnyModelLimitExhausted({ lite: 100, max: 0 })).toBe(true);
+        expect(shouldShowLimitUpsell({ lite: 100, max: 0 }, true, false)).toBe(true);
+    });
+
+    it('stays hidden while both model pools have requests remaining', () => {
+        expect(isAnyModelLimitExhausted({ lite: 100, max: 20 })).toBe(false);
+        expect(shouldShowLimitUpsell({ lite: 100, max: 20 }, true, false)).toBe(false);
+    });
+
+    it('stays hidden for Plus users and before a tier error exists', () => {
+        expect(shouldShowLimitUpsell({ lite: 0, max: 0 }, true, true)).toBe(false);
+        expect(shouldShowLimitUpsell({ lite: 0, max: 0 }, false, false)).toBe(false);
     });
 });
 
