@@ -777,6 +777,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "您的密码管理器不在这里？请求添加它。"
+      ],
+      "Bulk select items": [
+        "批量选择项目"
+      ],
+      "Multiple select": [
+        "多选"
       ]
     },
     "Activity": {
@@ -927,6 +933,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "您的个人信息在第三方服务数据泄露事件中被泄露。"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "正在检查 ${ compromised.progress.completed } / ${ compromised.progress.total }"
       ]
     },
     "Email": {
@@ -2091,7 +2100,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接！"
       ],
       "Moving items": [
         "正在移动"
@@ -2685,7 +2694,7 @@
         "您不能更改此别名的邮箱。"
       ],
       "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "您有 ${ aliasCount } 个在 SimpleLogin 中存在但在 ${ PASS_APP_NAME } 中丢失的别名。您想同步吗？"
+        "您有 ${ aliasCount } 个别名存在于 SimpleLogin 中，但在 ${ PASS_APP_NAME } 中缺失。是否要同步它们？"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "您还剩 ${ daysRemaining } 天来尝试这些及其他高级功能。"
@@ -2770,6 +2779,15 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "您的组织要求您确保您对 ${ PASS_APP_NAME }的访问"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "正在检查 ${ compromised.progress.completed } / ${ compromised.progress.total } 个密码"
+      ],
+      "None of your saved passwords have appeared in a known data breach.": [
+        "您保存的密码均未出现在已知数据泄露中。"
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "离线查看您的 ${ PASS_SHORT_APP_NAME } 项目，这需要您的密码才能启用。"
       ]
     },
     "Keyboard key": {
@@ -4352,6 +4370,15 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "此 URL 不会被阻止自动填充"
+      ],
+      "Enter a URL to check if it matches the current rule": [
+        "输入 URL 以检查其是否匹配当前规则"
+      ],
+      "URL doesn't match the rule": [
+        "URL 不匹配规则"
+      ],
+      "URL matches the rule": [
+        "URL 匹配规则"
       ]
     },
     "Security Center - Info": {
@@ -5059,6 +5086,9 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "您将永久删除 ${ aliasCount } 个别名。"
+      ],
+      "Enable offline mode": [
+        "启用离线模式"
       ]
     },
     "Title_cloned_item": {
