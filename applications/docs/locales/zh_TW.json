@@ -2990,6 +2990,9 @@
       "Cannot find move target": [
         "找不到移動目標"
       ],
+      "Cannot share root folder": [
+        "無法複製根資料夾"
+      ],
       "Cannot verify the author of this file": [
         "無法驗證此檔案的作者"
       ],
@@ -3004,6 +3007,9 @@
       ],
       "Contact signature not verified": [
         "聯絡人簽章尚未驗證"
+      ],
+      "Copy operation aborted": [
+        "以放棄移動操作"
       ],
       "Copying item to a non-folder is not allowed": [
         "不允許將項目複製到非資料夾"
@@ -3163,6 +3169,9 @@
       ],
       "Invalid verification code": [
         "驗證碼無效"
+      ],
+      "Invitation not found": [
+        "未找到邀請"
       ],
       "Item content cannot exceed 40KB": [
         "項目無法超越40KB"
@@ -3873,9 +3882,6 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "您有未付款的收據。請在加入家庭方案前繳付。"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "我們邀請您將您的 ${ BRAND_NAME } 帳號連結至此家庭方案，並一起享受所有 ${ brandOrAppName } 進階功能。"
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "您帳號中的電子郵件位址多於此方案中可用的電子郵件位址。${ addressSettingsLink }"
       ],
@@ -4002,14 +4008,23 @@
       ]
     },
     "Filter": {
+      "Activated": [
+        "已啟用"
+      ],
       "All": [
         "全部"
+      ],
+      "Errors": [
+        "錯誤"
       ],
       "In progress": [
         "進行中"
       ],
       "Migrated": [
         "遷移"
+      ],
+      "Not activated": [
+        "未啟動"
       ],
       "Pending": [
         "等待中"
@@ -4733,6 +4748,9 @@
       ],
       "Display word count": [
         "顯示字數統計"
+      ],
+      "Do you remember your password?": [
+        "您記得您的密碼嗎?"
       ],
       "Document is in trash": [
         "文件位於垃圾桶"
@@ -6644,6 +6662,9 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
         "${ LUMO_SHORT_APP_NAME } 撰寫工具與擴充存取權"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫工具與限制存取權"
+      ],
       "${ n } calendar": [
         "${ n } 個行事曆"
       ],
@@ -8249,6 +8270,12 @@
       ],
       "key": [
         "金鑰"
+      ],
+      "membership": [
+        "會員資格"
+      ],
+      "name": [
+        "名稱"
       ]
     },
     "Property type": {
@@ -8383,12 +8410,23 @@
         "夏季特賣"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "取得優惠"
+      ]
+    },
     "q3campaign2026: Info": {
+      "/month": [
+        "/每月"
+      ],
       "2 TB of secure storage": [
         "2TB 的安全儲存空間"
       ],
       "3 TB of secure storage": [
         "3TB 的安全儲存空間"
+      ],
+      "500 GB of secure storage": [
+        "500 GB 安全儲存空間"
       ]
     },
     "q3campaign2026: Info, Drive first": {
@@ -8399,6 +8437,9 @@
     "q3campaign2026: Title": {
       "for 12 months": [
         "12 個月"
+      ],
+      "One plan, more power": [
+        "單一方案，更多能量"
       ]
     },
     "Recent documents table header": {
@@ -9441,6 +9482,9 @@
       ],
       "Fingerprint": [
         "指紋"
+      ],
+      "Migration status": [
+        "遷移狀態"
       ],
       "Name": [
         "名稱"
