@@ -310,8 +310,7 @@
         },
         "packages/lumo-ui": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/mail": {
             "entry": [],
