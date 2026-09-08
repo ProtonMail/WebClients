@@ -1,4 +1,4 @@
-import { semver } from '@proton/pass/utils/string/semver';
+import { semver } from '@proton/utils/semver';
 
 import { RELEASE_CATEGORIES } from '../constants';
 import type { DesktopVersion } from './DesktopVersion';

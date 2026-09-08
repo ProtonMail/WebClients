@@ -19,12 +19,12 @@ import { or } from '@proton/pass/utils/fp/predicates';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { safeAsyncCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
-import { semver } from '@proton/pass/utils/string/semver';
 import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
+import { semver } from '@proton/utils/semver';
 
 import type { MessageHandlerCallback } from '../../../lib/message/message-broker';
 import { backgroundMessage } from '../../../lib/message/send-message';
