@@ -10376,6 +10376,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } končiaca na ${ Last4 }"
       ]
     },
     "new_plans: Subtext": {
@@ -11941,6 +11944,15 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - karta končiaca na ${ paymentMethod.Details.Last4 }"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - karta končiaca na ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Bankový prevod – ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - karta končiaca na ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -15827,6 +15839,11 @@
       ],
       "One plan, more power": [
         "Jeden plán, viac výkonu"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Zmena fakturačnej adresy môže mať vplyv na výšku daní na budúcich faktúrach."
       ]
     }
   }
