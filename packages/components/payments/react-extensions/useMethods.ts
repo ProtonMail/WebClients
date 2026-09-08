@@ -15,7 +15,10 @@ import type {
     PlanIDs,
     SavedPaymentMethod,
 } from '@proton/payments/core/interface';
-import type { PaymentMethodsContext } from '@proton/payments/core/payment-methods/paymentMethodAvailability';
+import type {
+    PaymentMethodFlags,
+    PaymentMethodsContext,
+} from '@proton/payments/core/payment-methods/paymentMethodAvailability';
 import {
     getNewMethods,
     getUsedMethods,
@@ -38,17 +41,13 @@ export interface Props {
     onMethodChanged?: OnMethodChangedHandler;
     selectedPlanName: PLANS | ADDON_NAMES | undefined;
     billingAddress?: BillingAddress;
-    enableSepa?: boolean;
-    enableSepaB2C?: boolean;
     user?: User;
     planIDs?: PlanIDs;
     subscription?: Subscription | FreeSubscription;
     canUseApplePay?: boolean;
     canUseGooglePay?: boolean;
     isTrial?: boolean;
-    enablePaypalRegionalCurrenciesBatch3: boolean;
-    enablePaypalKrw: boolean;
-    enableIdeal: boolean;
+    paymentMethodFlags: PaymentMethodFlags;
     sortNewMethods?: (methods: AvailablePaymentMethod[]) => AvailablePaymentMethod[];
 }
 
@@ -81,7 +80,7 @@ type FetchedData = {
 };
 
 export const useMethods = (
-    { paymentStatus, paymentMethods, coupon, onMethodChanged, sortNewMethods, ...props }: Props,
+    { paymentStatus, paymentMethods, coupon, onMethodChanged, sortNewMethods, paymentMethodFlags, ...props }: Props,
     { api, isAuthenticated }: Dependencies
 ): MethodsHook => {
     const [fetched, setFetched] = useState<FetchedData>();
@@ -126,7 +125,13 @@ export const useMethods = (
 
     const context: PaymentMethodsContext | undefined =
         status && savedMethods
-            ? { ...props, coupon: coupon ?? '', paymentStatus: status, paymentMethods: savedMethods }
+            ? {
+                  ...props,
+                  ...paymentMethodFlags,
+                  coupon: coupon ?? '',
+                  paymentStatus: status,
+                  paymentMethods: savedMethods,
+              }
             : undefined;
 
     const usedMethods = context ? getUsedMethods(context) : [];
