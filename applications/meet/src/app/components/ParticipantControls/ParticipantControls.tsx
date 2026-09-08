@@ -269,6 +269,7 @@ export const ParticipantControls = () => {
                         />
                         <RecordingControls />
                         <InfoButton />
+                        {isMeetParticipantsLayoutsEnabled && <LayoutSelector />}
                         {isDebugEnabled && (
                             <CircleButton
                                 IconComponent={IcBug}
@@ -297,6 +298,7 @@ export const ParticipantControls = () => {
                             </div>
                         )}
                         <RecordingControls />
+                        {isMeetParticipantsLayoutsEnabled && !viewportWidth['<=small'] && <LayoutSelector />}
                         <MenuButton onOpenDeviceState={openDeviceStateWindow} />
                     </div>
 
@@ -310,7 +312,6 @@ export const ParticipantControls = () => {
                             onPageChange={(page) => dispatch(setPage(page))}
                         />
                     )}
-                    {isMeetParticipantsLayoutsEnabled && <LayoutSelector />}
                 </div>
             </div>
             {deviceStateContainer &&
