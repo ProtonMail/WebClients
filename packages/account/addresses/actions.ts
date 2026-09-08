@@ -1,10 +1,6 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import {
-    convertToBYOEAddress as convertToBYOEAddressApi,
-    createBYOEAddress as createBYOEAddressApi,
-} from '@proton/activation/src/api/api';
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
@@ -305,61 +301,6 @@ export const setupExternalUserForProton = ({
             dispatch(userThunk({ cache: CacheType.None })),
             dispatch(addressesThunk({ cache: CacheType.None })),
         ]);
-    };
-};
-
-export const createBYOEAddress = ({
-    emailAddressParts,
-}: {
-    emailAddressParts: { Local: string; Domain: string };
-    displayName?: string;
-}): ThunkAction<Promise<Address | undefined>, RequiredState, ProtonThunkArguments, UnknownAction> => {
-    return async (dispatch, _, extra) => {
-        const organization = await dispatch(organizationThunk());
-
-        const api = getSilentApi(extra.api);
-        const emailAddress = `${emailAddressParts.Local}@${emailAddressParts.Domain}`;
-
-        // NOTE: Important this is done _before_ address creation so that the address is not created if keys can't be created.
-        const addressKeyCreationPayload = await dispatch(getCreateAddressKeysPayload());
-
-        const { Address } = await api<{ Address: Address }>(
-            createBYOEAddressApi({
-                Email: emailAddress,
-                OrganizationId: organization.ID,
-            })
-        );
-
-        const updatedAddresses = await dispatch(
-            createAddressKeysThunk({
-                addressKeyCreationPayload,
-                addressesToGenerate: [Address],
-            })
-        );
-
-        // Update user object for BYOE. TODO: Is this still needed?
-        dispatch(userThunk({ cache: CacheType.None })).catch(noop);
-
-        return updatedAddresses.find(({ ID }) => ID === Address.ID) || Address;
-    };
-};
-
-export const convertBYOEAddress = ({
-    addressID,
-}: {
-    addressID: string;
-}): ThunkAction<Promise<Address | undefined>, RequiredState, ProtonThunkArguments, UnknownAction> => {
-    return async (dispatch, _, extra) => {
-        const api = getSilentApi(extra.api);
-
-        const { Address } = await api<{ Address: Address }>(convertToBYOEAddressApi(addressID));
-
-        const [, result] = await Promise.all([
-            dispatch(userThunk({ cache: CacheType.None })),
-            dispatch(addressesThunk({ cache: CacheType.None })),
-        ]);
-
-        return result.find(({ ID }) => ID === Address.ID) || Address;
     };
 };
 

@@ -1,7 +1,5 @@
 import { c } from 'ttag';
 
-import { updateBYOEAddressConnection } from '@proton/account/addressKeys/actions';
-import { convertBYOEAddress, createBYOEAddress } from '@proton/account/addresses/actions';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -19,6 +17,8 @@ import { loadImporters } from '../logic/importers/importers.actions';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '../logic/store';
 import { loadSyncList } from '../logic/sync/sync.actions';
 import { getAllSync } from '../logic/sync/sync.selectors';
+import { convertBYOEAddress, createBYOEAddress } from '../thunks/byoeAddresses';
+import { updateBYOEAddressConnection } from '../thunks/updateBYOEAddressConnection';
 import useBYOEFeatureStatus from './useBYOEFeatureStatus';
 
 interface Props {
