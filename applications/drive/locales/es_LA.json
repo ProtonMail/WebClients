@@ -1865,6 +1865,15 @@
         "${ users } usuario",
         "${ users } usuarios"
       ],
+      "Amount due": [
+        "Importe a pagar"
+      ],
+      "Amount due after trial": [
+        "Importe a pagar después de la prueba"
+      ],
+      "Amount due now": [
+        "Importe a pagar ahora"
+      ],
       "Subtotal": [
         "Subtotal"
       ],
@@ -1874,6 +1883,10 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Total for ${ cycle } month": [
+        "Total por ${ cycle } mes",
+        "Total por ${ cycle } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -4652,8 +4665,8 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Tiene facturas sin pagar. Por favor, páguelas antes de unirse a un plan familiar."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Se le invitó a vincular la cuenta de ${ BRAND_NAME } a este plan familiar y disfrutar juntos de todas las funciones premium de ${ brandOrAppName }."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Se le invitó a vincular su cuenta de ${ BRAND_NAME } a este grupo familiar y disfrutar de todas sus funciones premium."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "La cuenta tiene más direcciones de correo de las que tiene disponibles en este plan. ${ addressSettingsLink }"
@@ -5814,6 +5827,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
+      ],
+      "Do you remember your password?": [
+        "¿Recuerda su contraseña?"
       ],
       "Do you still want to upload it?": [
         "¿Aún desea cargarlo?",
@@ -9531,9 +9547,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } que termina en ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB de almacenamiento en la nube que le permite almacenar, sincronizar y compartir archivos de forma fácil. Asegurado por cifrado de extremo a extremo."
       ],
@@ -10961,17 +10974,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "El precio de renovación depende de la región de facturación y del número de IVA."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - tarjeta terminada en ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Transferencia bancaria - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - tarjeta terminada en ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -14085,6 +14087,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nuevo ciclo de suscripción comienza el ${ formattedTime }"
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Este enlace expiró. Extienda la fecha de expiración."
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A menos que se descifren, las contraseñas cifradas permanecen seguras incluso si están expuestas."

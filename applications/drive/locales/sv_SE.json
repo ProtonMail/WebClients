@@ -1852,6 +1852,15 @@
         "${ users } användare",
         "${ users } användare"
       ],
+      "Amount due": [
+        "Belopp att betala"
+      ],
+      "Amount due after trial": [
+        "Belopp att betala efter provperiod"
+      ],
+      "Amount due now": [
+        "Belopp att betala nu"
+      ],
       "Subtotal": [
         "Delsumma"
       ],
@@ -1861,6 +1870,10 @@
       ],
       "Total": [
         "Totalt"
+      ],
+      "Total for ${ cycle } month": [
+        "Totalt för ${ cycle } månad",
+        "Totalt för ${ cycle } månader"
       ]
     },
     "Collapsible tooltip": {
@@ -4606,9 +4619,6 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Du har obetalda fakturor. Betala dem innan du går med i ett familjepaket."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Du är inbjuden att länka ditt ${ BRAND_NAME }-konto till detta familjepaket och tillsammans njuta av alla ${ brandOrAppName } premiumfunktioner."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ditt konto har fler e-postadresser än vad som är tillgängligt för dig i detta paket. ${ addressSettingsLink }"
       ],
@@ -5741,6 +5751,9 @@
       "Discover ProtectBuy logo": [
         "Logga för Discover ProtectBuy"
       ],
+      "Do you remember your password?": [
+        "Kommer du ihåg ditt lösenord?"
+      ],
       "Do you still want to upload it?": [
         "Vill du fortfarande ladda upp den?",
         "Vill du fortfarande ladda upp dem?"
@@ -6163,6 +6176,9 @@
       ],
       "Loading...": [
         "Laddar in …"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Loggar hjälper oss att förstå vad som hände innan problemet uppstod. De inkluderar app-åtgärder och felmeddelanden, men inget meddelandeinnehåll."
       ],
       "Looked at this image": [
         "Tittade på denna bild"
@@ -9379,9 +9395,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } slutar med ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB molnlagring som låter dig enkelt lagra, synkronisera och dela filer. Säkrat med end-to-end-kryptering."
       ],
@@ -10788,17 +10801,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Förnyelsepriset är beroende av faktureringsregion och momsregistreringsnummer."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - kort slutar på ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Banköverföring - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - kort slutar på ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -12481,6 +12483,9 @@
       "Your screenshots will appear here": [
         "Dina skärmdumpar kommer visas här"
       ],
+      "Your selfies photos will appear here": [
+        "Dina selfie-foton kommer visas här"
+      ],
       "Your tagged photos will appear here": [
         "Dina märkta foton kommer visas här"
       ],
@@ -13888,6 +13893,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Den nya prenumerationscykeln startar den ${ formattedTime }"
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Denna länk har löpt ut. Förläng utgångsdatumet."
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Om de inte avkodas förblir krypterade lösenord säkra även om de exponeras."

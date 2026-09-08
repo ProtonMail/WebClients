@@ -4437,9 +4437,6 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "У вас є неоплачені рахунки. Будь ласка, сплатіть їх до приєднання до сімейного плану."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Запрошуємо вас прив'язати свій ${ BRAND_NAME } до цього сімейного плану і разом користуватися всіма преміумфункціями ${ brandOrAppName }."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ваш обліковий запис має більше адрес електронної пошти, ніж доступно в цьому плані. ${ addressSettingsLink }"
       ],
@@ -5525,6 +5522,9 @@
       ],
       "Custom email domains": [
         "Власні домени електронної пошти"
+      ],
+      "Debug transcript copied": [
+        "Журнал налагодження скопійовано"
       ],
       "Decrypting files": [
         "Розшифрування файлів"
@@ -8808,9 +8808,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand }, що закінчується на ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 ТБ хмарного сховища для зручного зберігання, синхронізації та обміну файлами. Захищено наскрізним шифруванням."
       ],
@@ -10033,17 +10030,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Ціна поновлення залежить від платіжного регіону та податкового номера ПДВ."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay – картка, що закінчується на ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Банківський переказ – ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay – картка, що закінчується на ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
