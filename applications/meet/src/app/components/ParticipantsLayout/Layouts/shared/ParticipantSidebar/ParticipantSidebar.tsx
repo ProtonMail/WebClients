@@ -26,18 +26,21 @@ import './ParticipantSidebar.scss';
 
 export const ParticipantSidebar = () => {
     const dispatch = useMeetDispatch();
-    const page = useMeetSelector(selectPage);
-    const setPage = (page: number) => dispatch(setPageAction(page));
 
+    const page = useMeetSelector(selectPage);
+    const pageCount = useMeetSelector(selectSidebarPageCount);
     const participantSideBarOpen = useMeetSelector(selectParticipantSideBarOpen);
+    const showsScreenShareInSidebar = useMeetSelector(selectShowsScreenShareInSidebar);
 
     const sidebarParticipants = useSidebarPagedParticipants();
 
-    const pageCount = useMeetSelector(selectSidebarPageCount);
-
-    const showsScreenShareInSidebar = useMeetSelector(selectShowsScreenShareInSidebar);
+    const setPage = (page: number) => dispatch(setPageAction(page));
 
     const ButtonIcon = participantSideBarOpen ? IcChevronRight : IcMeetParticipants;
+
+    if (sidebarParticipants.length === 0 && !showsScreenShareInSidebar) {
+        return null;
+    }
 
     return (
         <div className="participant-sidebar relative" style={{ '--items-per-page': PARTICIPANTS_SIDE_BAR_PAGE_SIZE }}>
