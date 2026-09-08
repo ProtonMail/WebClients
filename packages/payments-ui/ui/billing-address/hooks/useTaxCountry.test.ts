@@ -6,6 +6,7 @@ import type { PaymentFacade } from '@proton/components/payments/client-extension
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
 import { WrongBillingAddressError } from '@proton/payments/core/errors';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { componentWrapper } from '@proton/testing/lib/context/hocs/helpers';
 import { withConfig } from '@proton/testing/lib/context/hocs/with-config';
 import { withReduxStore } from '@proton/testing/lib/context/hocs/with-redux-store';
@@ -25,6 +26,12 @@ jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: jest.fn().mockReturnValue({ createNotification: jest.fn() }),
 }));
 
+jest.mock('@proton/payments/telemetry/telemetry', () => ({
+    checkoutTelemetry: { reportBillingCountryChange: jest.fn() },
+}));
+
+const reportBillingCountryChange = checkoutTelemetry.reportBillingCountryChange as jest.Mock;
+
 const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
 
 const getWrapper = () => componentWrapper(withReduxStore(), withConfig());
@@ -41,6 +48,114 @@ describe('useTaxCountry hook', () => {
     beforeEach(() => {
         // Reset to default (enabled) before each test to match existing test expectations
         mockUseFlag.mockReturnValue(true);
+        reportBillingCountryChange.mockClear();
+    });
+
+    describe('Zip code change telemetry', () => {
+        const renderUsCalifornia = (onBillingAddressChange = jest.fn()) =>
+            renderHook(() =>
+                useTaxCountry({
+                    onBillingAddressChange,
+                    initialBillingAddress: { CountryCode: 'US', State: 'CA' },
+                    paymentFacade: mockValidZipCode,
+                    telemetryContext: 'subscription-modification',
+                })
+            );
+
+        it('reports the change once the zip code is complete, without its value', () => {
+            const { result } = renderUsCalifornia();
+
+            act(() => {
+                result.current.setZipCode('90210');
+            });
+
+            expect(reportBillingCountryChange).toHaveBeenCalledTimes(1);
+            const payload = reportBillingCountryChange.mock.calls[0][0];
+            expect(payload).toEqual({
+                action: 'change_zip_code',
+                context: 'subscription-modification',
+                currentCountry: 'US',
+                selectedCountry: 'US',
+                currentState: 'CA',
+                selectedState: 'CA',
+            });
+            expect(JSON.stringify(payload)).not.toContain('90210');
+        });
+
+        it('does not report while the zip code is still being typed', () => {
+            const { result } = renderUsCalifornia();
+
+            act(() => {
+                result.current.setZipCode('9');
+            });
+            act(() => {
+                result.current.setZipCode('90');
+            });
+            act(() => {
+                result.current.setZipCode('902');
+            });
+            act(() => {
+                result.current.setZipCode('9021');
+            });
+
+            expect(reportBillingCountryChange).not.toHaveBeenCalled();
+
+            act(() => {
+                result.current.setZipCode('90210');
+            });
+
+            expect(reportBillingCountryChange).toHaveBeenCalledTimes(1);
+        });
+
+        it('does not report an invalid zip code', () => {
+            const { result } = renderUsCalifornia();
+
+            act(() => {
+                result.current.setZipCode('invalid');
+            });
+
+            expect(reportBillingCountryChange).not.toHaveBeenCalled();
+        });
+
+        it('does not report when the same zip code is set again', () => {
+            const { result } = renderUsCalifornia();
+
+            act(() => {
+                result.current.setZipCode('90210');
+            });
+            act(() => {
+                result.current.setZipCode('90210');
+            });
+
+            expect(reportBillingCountryChange).toHaveBeenCalledTimes(1);
+        });
+
+        it('does not report when the caller skips the callback', () => {
+            const { result } = renderUsCalifornia();
+
+            act(() => {
+                result.current.setZipCode('90210', { skipCallback: true });
+            });
+
+            expect(reportBillingCountryChange).not.toHaveBeenCalled();
+        });
+
+        it('reports once per completed zip code change', () => {
+            const { result } = renderUsCalifornia();
+
+            act(() => {
+                result.current.setZipCode('90210');
+            });
+            act(() => {
+                result.current.setZipCode('90211');
+            });
+
+            expect(reportBillingCountryChange).toHaveBeenCalledTimes(2);
+            expect(reportBillingCountryChange.mock.calls.map(([payload]) => payload.action)).toEqual([
+                'change_zip_code',
+                'change_zip_code',
+            ]);
+        });
     });
 
     describe('Core Functionality', () => {
