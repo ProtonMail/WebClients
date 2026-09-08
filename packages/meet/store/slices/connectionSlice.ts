@@ -63,7 +63,5 @@ export const selectIsReconnecting = (state: MeetState) => state.connection.isRec
 export const selectReconnectionFailed = (state: MeetState) => state.connection.reconnectionFailed;
 export const selectMlsRetrying = (state: MeetState) => state.connection.mlsRetrying;
 export const selectPrejoinParticipantCount = (state: MeetState) => state.connection.prejoinParticipantCount;
-export const selectIsDisconnected = (state: MeetState) =>
-    state.connection.isReconnecting || state.connection.reconnectionFailed;
 
 export const connectionReducer = { connection: slice.reducer };

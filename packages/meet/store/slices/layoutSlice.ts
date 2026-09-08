@@ -14,14 +14,14 @@ export enum SpotlightSources {
     ScreenShare = 'ScreenShare',
 }
 
-export interface LayoutState {
+interface LayoutState {
     participantsLayout: ParticipantsLayouts;
     spotlightSource: SpotlightSources;
     layoutBeforeScreenShare: ParticipantsLayouts | null;
     participantSideBarOpen: boolean;
 }
 
-export const initialState: LayoutState = {
+const initialState: LayoutState = {
     participantsLayout: ParticipantsLayouts.Gallery,
     spotlightSource: SpotlightSources.ActiveSpeaker,
     layoutBeforeScreenShare: null,

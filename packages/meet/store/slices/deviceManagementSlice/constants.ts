@@ -1,8 +1,8 @@
 import type { DeviceKind } from './types';
 
-export const LAST_USED_CAMERA_ID_KEY = 'lastUsedCameraId';
-export const LAST_USED_MICROPHONE_ID_KEY = 'lastUsedMicrophoneId';
-export const LAST_USED_SPEAKER_ID_KEY = 'lastUsedSpeakerId';
+const LAST_USED_CAMERA_ID_KEY = 'lastUsedCameraId';
+const LAST_USED_MICROPHONE_ID_KEY = 'lastUsedMicrophoneId';
+const LAST_USED_SPEAKER_ID_KEY = 'lastUsedSpeakerId';
 
 export const getLastUsedDeviceIdKey = (deviceType: DeviceKind) => {
     switch (deviceType) {

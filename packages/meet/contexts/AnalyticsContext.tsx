@@ -1,6 +1,6 @@
 import { type ReactNode, createContext, useContext, useMemo, useRef } from 'react';
 
-export type AnalyticsAttributes = Record<string, string | number | boolean>;
+type AnalyticsAttributes = Record<string, string | number | boolean>;
 
 interface AnalyticsContextValue {
     getAnalyticsAttributes: () => AnalyticsAttributes;
