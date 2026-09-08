@@ -1,6 +1,9 @@
-import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
+import { useMemo } from 'react';
+
+import { createEntitlementResolver } from '@proton/payments/core/entitlements/resolver';
 import { createHooks } from '@proton/redux-utilities/hooks';
 
+import { useAllEntitlements } from '../entitlements/hooks';
 import { selectUserPermissions, userPermissionsThunk } from './index';
 
 const hooks = createHooks(userPermissionsThunk, selectUserPermissions);
@@ -15,7 +18,8 @@ export enum AdminRolesUIState {
 
 export const useAdminRolesUI = (): [AdminRolesUIState, boolean] => {
     const [userPermissions, loadingUserPermissions] = useUserPermissions();
-    const [entitlements, loadingEntitlements] = useEntitlementChecks();
+    const [allEntitlements, loadingEntitlements] = useAllEntitlements();
+    const entitlements = useMemo(() => createEntitlementResolver(allEntitlements), [allEntitlements]);
 
     const loading = loadingUserPermissions || loadingEntitlements;
 
