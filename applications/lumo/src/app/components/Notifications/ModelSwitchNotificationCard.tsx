@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,15 +8,14 @@ import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useMaxModelAvailability } from '../../hooks/useMaxModelAvailability';
 import { useTierErrors } from '../../hooks/useTierErrors';
-import { useIsGuest } from '../../providers/IsGuestProvider';
 import { getSelectedModelTier, useModelTier } from '../../providers/ModelTierProvider';
 import {
     isModelSwitchSuggestionEligible,
+    shouldShowLimitUpsell,
     shouldShowModelSwitchSuggestion,
-    shouldShowWeeklyLimitUpsell,
     useRemainingLimits,
 } from '../../services/usageLimitsStore';
-import type { ConversationId, Message } from '../../types';
+import type { Message } from '../../types';
 import {
     hasDismissedModelSwitchNotification,
     markModelSwitchNotificationDismissed,
@@ -28,35 +27,21 @@ import './ModelSwitchNotificationCard.scss';
 
 interface ModelSwitchNotificationCardProps {
     messageChain: Message[];
-    conversationId?: ConversationId;
     isGenerating?: boolean;
 }
 
 export const ModelSwitchNotificationCard = ({
     messageChain,
-    conversationId,
     isGenerating = false,
 }: ModelSwitchNotificationCardProps) => {
     const { isSmallScreen } = useIsLumoSmallScreen();
-    const isGuest = useIsGuest();
     const { modelTier, setModelTier } = useModelTier();
     const { hasLumoPlus } = useLumoPlan();
     const { isMaxAvailableByFlag } = useMaxModelAvailability();
     const { hasTierErrors } = useTierErrors();
     const remainingLimits = useRemainingLimits();
-    const weeklyLimitUpsellVisible = shouldShowWeeklyLimitUpsell(remainingLimits, hasTierErrors, hasLumoPlus);
-    const [dismissed, setDismissed] = useState(false);
-    const [dismissedAtMessageCount, setDismissedAtMessageCount] = useState(-1);
-
-    useEffect(() => {
-        if (isGuest && conversationId) {
-            setDismissed(hasDismissedModelSwitchNotification(conversationId));
-            return;
-        }
-
-        setDismissed(false);
-        setDismissedAtMessageCount(-1);
-    }, [conversationId, isGuest]);
+    const limitUpsellVisible = shouldShowLimitUpsell(remainingLimits, hasTierErrors, hasLumoPlus);
+    const [dismissed, setDismissed] = useState(hasDismissedModelSwitchNotification);
 
     const selectedModelTier = getSelectedModelTier(modelTier);
     const selectedModelLabel = selectedModelTier === 'apertus-15' ? 'Apertus 1.5 🇨🇭' : `${LUMO_SHORT_APP_NAME} Lite`;
@@ -65,48 +50,24 @@ export const ModelSwitchNotificationCard = ({
         hasLumoPlus,
         selectedModelTier,
         remainingLimits,
-        weeklyLimitUpsellVisible,
+        limitUpsellVisible,
         messageCount: messageChain.length,
         isMaxAvailableByFlag,
     };
     const isEligible = isModelSwitchSuggestionEligible(suggestionArgs);
     const shouldShow = shouldShowModelSwitchSuggestion({ ...suggestionArgs, isGenerating });
 
-    const isVisible =
-        shouldShow &&
-        (isGuest
-            ? !dismissed
-            : !dismissed || (messageChain.length > dismissedAtMessageCount && messageChain.length % 2 === 0));
+    const isVisible = shouldShow && !dismissed;
 
-    const persistGuestDismissal = useCallback(() => {
+    const persistDismissal = useCallback(() => {
         setDismissed(true);
-
-        if (conversationId) {
-            markModelSwitchNotificationDismissed(conversationId);
-        }
-    }, [conversationId]);
-
-    const handleDismiss = useCallback(() => {
-        if (isGuest) {
-            persistGuestDismissal();
-            return;
-        }
-
-        setDismissed(true);
-        setDismissedAtMessageCount(messageChain.length);
-    }, [isGuest, messageChain.length, persistGuestDismissal]);
+        markModelSwitchNotificationDismissed();
+    }, []);
 
     const handleSwitchToMax = useCallback(() => {
         setModelTier('lumo-max');
-
-        if (isGuest) {
-            persistGuestDismissal();
-            return;
-        }
-
-        setDismissed(true);
-        setDismissedAtMessageCount(messageChain.length);
-    }, [isGuest, messageChain.length, persistGuestDismissal, setModelTier]);
+        persistDismissal();
+    }, [persistDismissal, setModelTier]);
 
     // Stay mounted while eligible so dismiss state survives isGenerating toggles.
     if (isSmallScreen || !isEligible) {
@@ -129,7 +90,7 @@ export const ModelSwitchNotificationCard = ({
                 shape: 'outline',
             }}
             dismissible
-            onDismiss={handleDismiss}
+            onDismiss={persistDismissal}
             hidden={!isVisible}
         />
     );

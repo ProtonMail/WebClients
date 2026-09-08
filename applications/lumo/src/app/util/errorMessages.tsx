@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { LUMO_USER_TYPE } from '../types';
+import type { LumoRemainingLimits } from '../types-api';
 
 // const UpgradeLumoLink = () => {
 //     return (
@@ -41,8 +42,22 @@ export const getExceedTierErrorMessage = (userType: LUMO_USER_TYPE) => {
     throw new Error('Unknown user type');
 };
 
-export const getExceededTierErrorTitle = () => {
-    return c('collider_2025: Error Title').t`You've reached your weekly chat limit`;
+export const getExceededTierErrorTitle = (remainingLimits?: LumoRemainingLimits | null) => {
+    const liteExhausted = remainingLimits?.lite === 0;
+    const maxExhausted = remainingLimits?.max === 0;
+
+    if (liteExhausted && maxExhausted) {
+        return c('collider_2025: Error Title')
+            .t`You've reached your ${LUMO_SHORT_APP_NAME} 2.0 Lite and ${LUMO_SHORT_APP_NAME} 2.0 Max limits`;
+    }
+    if (liteExhausted) {
+        return c('collider_2025: Error Title').t`You've reached your ${LUMO_SHORT_APP_NAME} 2.0 Lite limit`;
+    }
+    if (maxExhausted) {
+        return c('collider_2025: Error Title').t`You've reached your ${LUMO_SHORT_APP_NAME} 2.0 Max limit`;
+    }
+
+    return c('collider_2025: Error Title').t`You've reached a model limit`;
 };
 
 export const getGenerationRejectedErrorMessage = (userType: LUMO_USER_TYPE) => {
