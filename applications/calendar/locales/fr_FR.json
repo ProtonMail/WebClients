@@ -1885,6 +1885,15 @@
         "${ users } utilisateur",
         "${ users } utilisateurs"
       ],
+      "Amount due": [
+        "Montant dû"
+      ],
+      "Amount due after trial": [
+        "Montant dû après la période d'essai"
+      ],
+      "Amount due now": [
+        "Montant dû maintenant"
+      ],
       "Subtotal": [
         "Sous-total"
       ],
@@ -1894,6 +1903,10 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Total for ${ cycle } month": [
+        "Total pour ${ cycle } mois",
+        "Total pour ${ cycle } mois"
       ]
     },
     "Collapsible tooltip": {
@@ -4745,8 +4758,8 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Vous avez des factures non payées. Nous vous invitons à les régler avant de rejoindre un abonnement familial."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Vous avez une invitation pour lier votre compte ${ BRAND_NAME } à cet abonnement familial pour profiter tous ensemble des fonctionnalités premium de ${ brandOrAppName }."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Vous avez une invitation pour lier votre compte ${ BRAND_NAME } à ce groupe familial et à profiter de toutes ses fonctionnalités premium."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Le nombre d'adresses e-mail de votre compte dépasse celui prévu avec cet abonnement. ${ addressSettingsLink }"
@@ -5818,6 +5831,9 @@
       ],
       "Display events for calendar ${ Name }": [
         "Afficher les événements du calendrier ${ Name }"
+      ],
+      "Do you remember your password?": [
+        "Vous souvenez-vous de votre mot de passe ?"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Rien ne s'affiche ? N'oubliez pas de désactiver les bloqueurs de fenêtres pop-up."
@@ -8949,8 +8965,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } se terminant par ${ last4 }"
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } se terminant par ${ Last4 }"
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 To d'espace de stockage cloud qui vous permet de stocker, synchroniser et partager des fichiers facilement. Sécurisé par un chiffrement de bout en bout."
@@ -10150,6 +10166,11 @@
         "Les crédits seront ajoutés à votre solde."
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "La modification de votre adresse de facturation peut avoir une incidence sur les taxes figurant sur vos prochaines factures."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Voulez-vous vraiment continuer ?"
@@ -10187,14 +10208,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - carte se terminant par les chiffres ${ paymentMethod.Details.Last4 }"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - carte se terminant par les chiffres ${ Last4 }"
       ],
-      "Bank transfer - ${ details }": [
-        "Virement bancaire - ${ details }"
+      "Bank transfer - ${ iban }": [
+        "Virement bancaire - ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - carte se terminant par les chiffres ${ paymentMethod.Details.Last4 }"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - carte se terminant par les chiffres ${ Last4 }"
       ]
     },
     "Payments.Sepa": {

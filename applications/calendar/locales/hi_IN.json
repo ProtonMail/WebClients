@@ -4559,9 +4559,6 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "आपके पास बिना भुगतान वाले चालान हैं। कृपया Family plan में शामिल होने से पहले उनका भुगतान करें।"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "आपको अपने ${ BRAND_NAME } खाता को इस Family plan से लिंक करने और साथ मिलकर सभी ${ brandOrAppName } प्रीमियम खासियत का आनंद लेने के लिए आमंत्रित किया गया है।"
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "आपके खाते में इस प्लैन में उपलब्ध ईमेल पतों से ज़्यादा ईमेल पते हैं। ${ addressSettingsLink }"
       ],
@@ -8647,9 +8644,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } खत्म होता है ${ last4 } से"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 टीबी क्लाउड स्टोरेज जो आपको फ़ाइलें आसानी से स्टोर, सिंक और शेयर करने देता है। शुरु-से-अंत तक एन्क्रिप्शन द्वारा सुरक्षित।"
       ],
@@ -9855,17 +9849,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "नवीनीकरण मूल्य बिलिंग क्षेत्र और वैट (VAT) नंबर पर निर्भर करता है।"
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - कार्ड जो ${ paymentMethod.Details.Last4 } पर समाप्त होता है"
-      ],
-      "Bank transfer - ${ details }": [
-        "बैंक ट्रांसफर - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - कार्ड जिसका अंत ${ paymentMethod.Details.Last4 } में होता है"
       ]
     },
     "Payments.Sepa": {
