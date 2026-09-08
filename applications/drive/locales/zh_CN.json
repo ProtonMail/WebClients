@@ -841,7 +841,7 @@
         "删除我"
       ],
       "Remove without saving": [
-        "不保存且删除"
+        "不保存直接移除"
       ],
       "Rename": [
         "重命名"
@@ -4068,7 +4068,7 @@
         "验证失败"
       ],
       "We cannot retrieve this item": [
-        "我们无法检索此项目"
+        "无法检索此项目"
       ],
       "We were not able to load some invitations": [
         "我们无法加载部分邀请"
@@ -4086,7 +4086,7 @@
         "我们无法加载您收到的部分共享项目邀请"
       ],
       "We were not able to load some of your saved shared links": [
-        "我们无法加载您部分已保存的共享链接"
+        "部分已保存的共享链接未能加载"
       ],
       "We were not able to load some of your shared items": [
         "我们无法加载您部分已共享的项目"
@@ -4453,6 +4453,9 @@
       ],
       "Could not grant access to the organization key": [
         "无法授予组织密钥访问权限"
+      ],
+      "Something went wrong, please try again later": [
+        "发生错误，请稍后重试"
       ]
     },
     "error": {
@@ -4596,7 +4599,7 @@
         "应用当前不可用"
       ],
       "Brace yourself till we get the error fixed.": [
-        "别担心，我们会解决的。"
+        "请稍候，我们正在修复此错误。"
       ],
       "Error: ${ errorMessage }": [
         "错误：${ errorMessage }"
@@ -5011,7 +5014,7 @@
         "最近使用"
       ],
       "Share ${ photoCount } photo via": [
-        "通过以下方式分享这 ${ photoCount } 张照片"
+        "通过以下方式分享 ${ photoCount } 张照片"
       ]
     },
     "Hint": {
@@ -5418,7 +5421,7 @@
         "App Store 上的${ DRIVE_APP_NAME }"
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
-        "Play Store 上的${ DRIVE_APP_NAME }"
+        "Play Store 上的 ${ DRIVE_APP_NAME }"
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } 邀请您加入 ${ albumName }"
@@ -5868,7 +5871,7 @@
         "首选邮箱地址"
       ],
       "Delete locked drive": [
-        "删除锁定的网盘"
+        "删除锁定的云端硬盘"
       ],
       "Details": [
         "详细信息"
@@ -6057,7 +6060,7 @@
         "文件夹将不会上传"
       ],
       "Folders you sync from your computer will appear here.": [
-        "从您的电脑同步的文件夹将显示在这里。"
+        "从计算机同步的文件夹将显示在此处。"
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "为了获得最佳效果，请避免流式传输和内存密集型活动，或将上传分成较小的批次。"
@@ -6075,7 +6078,7 @@
         "获取日志和其他信息以用于技术支持与故障排除"
       ],
       "Get the app to backup photos from your phone or upload them here.": [
-        "获取应用程序以备份手机中的照片或将其上传到此处。"
+        "获取应用以备份手机中的照片，或在此处上传。"
       ],
       "Get the desktop app to sync files from your computer.": [
         "获取桌面应用程序以同步计算机上的文件。"
@@ -6399,7 +6402,7 @@
         "在公共 WiFi 网络环境下"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        "其中一个加密网盘已被锁定。 这很可能是由于最近密码重置。"
+        "您的某个加密云端硬盘已锁定，很可能是由于最近重置了密码。"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您信任的某些密钥已被其所有者标为「已泄露」，建议您不再信任这些密钥。"
@@ -6852,7 +6855,7 @@
         "该项目已存在于您的库中"
       ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
-        "某些所选项目未保存在照片资料库中。如果从该相册中删除这些项目，您将永久无法访问它们。"
+        "部分所选项目未保存到您的照片库中。如果您从该相册中移除它们，将永久无法访问！"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此链接指向的网站可能会窃取您的密码、信用卡等信息。"
@@ -6864,7 +6867,7 @@
         "这意味着您的互联网服务提供商和您访问的网站都无法将您的个人身份信息与在线行为相关联。"
       ],
       "This month": [
-        "这个月"
+        "本月"
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "这段独特的识别码可能会被网站和互联网服务提供商（ISP）利用，将您的地理位置和浏览历史记录与您的设备相关联，从而导致您的隐私信息被追踪。"
@@ -7176,7 +7179,7 @@
         "想要恢复您的文件吗？"
       ],
       "Would you like to save it before removing?": [
-        "您想在删除前保存它们吗？"
+        "移除前是否要保存它们？"
       ],
       "Would you like to save them before removing?": [
         "您想在移除前保存它们吗？"
@@ -7245,7 +7248,7 @@
         "如果你的密码或其他数据从第三方服务泄露，你会收到通知。"
       ],
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
-        "您还有 ${ expiresInDays } 天的时间来领取 3 GB 欢迎奖金，并且 "
+        "您还有 ${ expiresInDays } 天可以领取 3 GB 迎新奖励，并且"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "您有一个试用版 ${ planTitle } 订阅。如果您想在试用期结束后继续订阅，请添加付款方式。"
@@ -7545,7 +7548,7 @@
         "无法将多张照片保存到您的云端硬盘"
       ],
       "We were not able to add this photo to your album": [
-        "无法将部分照片添加到您的相册"
+        "部分照片无法添加到您的相册"
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "信任“${ activeSignerText }”密钥以验证来自此联系人的新邮件"
@@ -7852,7 +7855,7 @@
         "下载次数"
       ],
       "${ albumProgress.added } of ${ albumProgress.total }": [
-        "共 ${ albumProgress.total }，已使用 ${ albumProgress.added }"
+        "${ albumProgress.added } / ${ albumProgress.total }"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 用户名"
@@ -8041,7 +8044,7 @@
         "删除"
       ],
       "Delete drive?": [
-        "删除网盘?"
+        "删除云端硬盘？"
       ],
       "Delete link and remove access for everyone": [
         "删除链接并移除所有人的访问权限"
@@ -9854,6 +9857,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您当前套餐享受优惠价格。如果降级账户，您将失去该优惠价格，且再次订阅时无法重新获得。"
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "尾号 ${ Last4 } 的 ${ Brand } 卡"
       ]
     },
     "new_plans: Subtext": {
@@ -10214,7 +10220,7 @@
         "${ count } 个项目解密失败"
       ],
       "${ errors.length } item failed to be copied": [
-        "${ errors.length } 个项目复制失败"
+        "复制失败 ${ errors.length } 项"
       ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } 个项目移至回收站失败"
@@ -10232,7 +10238,7 @@
         "${ nbSuccesses } 张照片已从 \"${ albumLink.name }\" 移除"
       ],
       "${ numberOfItems } copied item moved to trash": [
-        "${ numberOfItems } 个已复制的项目已移至回收站"
+        "已复制的 ${ numberOfItems } 项已移至回收站"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } 项目已删除"
@@ -10268,7 +10274,7 @@
         "${ numberOfItems } 个项目复制成功"
       ],
       "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } 个项目移动成功"
+        "成功移动 ${ numberOfItems } 项"
       ],
       "${ reason } has been disabled": [
         "${ reason } 已停用"
@@ -10358,7 +10364,7 @@
         "拒绝分享邀请失败"
       ],
       "Failed to remove device": [
-        "无法删除设备"
+        "移除设备失败"
       ],
       "Failed to remove the file": [
         "无法删除文件"
@@ -10406,10 +10412,10 @@
         "加载根目录失败"
       ],
       "Selected item was not removed from your list": [
-        "所选项目未能从您的列表中移除"
+        "所选项目未能从列表中移除"
       ],
       "Selected item was successfully removed from your list": [
-        "所选项目已成功从您的列表中移除"
+        "所选项目已成功从列表中移除"
       ],
       "Selected items were successfully removed from your list": [
         "所选项目已成功从您的列表中移除"
@@ -10514,7 +10520,7 @@
         "${ errors.length } 个项目删除失败"
       ],
       "${ numberOfItems } item copied": [
-        "${ numberOfItems } 个项目已复制"
+        "已复制 ${ numberOfItems } 项"
       ],
       "${ numberOfItems } item moved": [
         "${ numberOfItems } 个项目已移动"
@@ -10792,7 +10798,7 @@
         "坚持住就快好了"
       ],
       "Invitation accepted": [
-        "已接受邀请"
+        "邀请已接受"
       ],
       "Invitation received": [
         "已收到邀请"
@@ -10834,7 +10840,7 @@
         "上传您的第一个文件"
       ],
       "Work faster, smarter": [
-        "更快、更智能地工作"
+        "更高效、更智能地工作"
       ],
       "Work together": [
         "携手合作"
@@ -11287,6 +11293,15 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - 卡号末四位 ${ paymentMethod.Details.Last4 }"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - 尾号 ${ Last4 } 的卡片"
+      ],
+      "Bank transfer - ${ iban }": [
+        "银行转账 - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - 尾号 ${ Last4 } 的卡片"
       ]
     },
     "Payments.Sepa": {
@@ -13395,7 +13410,7 @@
         "启用高级账户保护"
       ],
       "Enable drive search": [
-        "启用网盘搜索"
+        "启用云端硬盘搜索"
       ],
       "Enhance security with 2FA": [
         "通过 2FA 增强安全性"
@@ -13731,7 +13746,7 @@
         "移除设备？"
       ],
       "Remove item?": [
-        "删除项目？"
+        "移除项目？"
       ],
       "Rename a file": [
         "重命名文件"
@@ -14951,6 +14966,11 @@
       ],
       "One plan, more power": [
         "一个套餐，更强性能"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "更改账单地址可能会影响未来发票的税费！"
       ]
     }
   }
