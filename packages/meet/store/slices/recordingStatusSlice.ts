@@ -94,7 +94,7 @@ export const resetRecordingStatus =
         dispatch(slice.actions._resetRecordingStatus());
     };
 
-export const selectParticipantsRecording = (state: MeetState) => state.recordingStatus.participantsRecording;
+const selectParticipantsRecording = (state: MeetState) => state.recordingStatus.participantsRecording;
 
 export const selectIsRecordingInProgress = (state: MeetState) => state.recordingStatus.participantsRecording.length > 0;
 
