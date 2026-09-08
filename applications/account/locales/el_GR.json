@@ -1280,6 +1280,9 @@
       "Got it": [
         "Το κατάλαβα"
       ],
+      "Grant access": [
+        "Παραχώρηση πρόσβασης"
+      ],
       "Group owner": [
         "Κάτοχος ομάδας"
       ],
@@ -2770,6 +2773,9 @@
       "Try it free for ${ TRIAL_DURATION_DAYS } days": [
         "Δοκιμάστε το δωρεάν για ${ TRIAL_DURATION_DAYS } ημέρες"
       ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period.": [
+        "Όταν ακυρώσετε, η δωρεάν δοκιμή σας δε θα μετατραπεί σε συνδρομή επί πληρωμή, αλλά θα εξακολουθείτε να απολαμβάνετε τα οφέλη του πλάνου μέχρι το τέλος της δοκιμαστικής περιόδου."
+      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Όταν ακυρώσετε, η δωρεάν δοκιμή σας δε θα μετατραπεί σε συνδρομή επί πληρωμή, αλλά θα εξακολουθείτε να απολαμβάνετε τα οφέλη του πλάνου μέχρι το τέλος της δοκιμαστικής περιόδου. Μετά από αυτό, θα υποβαθμιστείτε στο ${ BRAND_NAME } Free πλάνο."
       ],
@@ -3770,6 +3776,18 @@
         "${ users } χρήστης",
         "${ users } χρήστες"
       ],
+      "Amount due": [
+        "Οφειλόμενο ποσό"
+      ],
+      "Amount due after trial": [
+        "Οφειλόμενο ποσό μετά τη δοκιμαστική περίοδο"
+      ],
+      "Amount due now": [
+        "Οφειλόμενο ποσό τώρα"
+      ],
+      "month": [
+        "μήνα"
+      ],
       "Started ${ formattedStartDate }": [
         "Ξεκίνησε στις ${ formattedStartDate }"
       ],
@@ -3786,8 +3804,15 @@
         "Υποσύνολο για ${ cycle } μήνα",
         "Υποσύνολο για ${ cycle } μήνες"
       ],
+      "Summary": [
+        "Περίληψη"
+      ],
       "Total": [
         "Σύνολο"
+      ],
+      "Total for ${ cycle } month": [
+        "Σύνολο για ${ cycle } μήνα",
+        "Σύνολο για ${ cycle } μήνες"
       ]
     },
     "Collapsible tooltip": {
@@ -8645,8 +8670,8 @@
       "You're invited to join ${ invite.OrganizationName }": [
         "Έχετε προσκληθεί να συμμετάσχετε στον ${ invite.OrganizationName }"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Έχετε προσκληθεί να συνδέσετε τον λογαριασμό σας ${ BRAND_NAME } σε αυτό το οικογενειακό πλάνο και να απολαύσετε μαζί όλες τις premium δυνατότητες ${ brandOrAppName }."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Σας προσκαλούμε να συνδέσετε τον λογαριασμό σας ${ BRAND_NAME } με αυτήν την οικογενειακή ομάδα και να απολαύσετε όλες τις premium λειτουργίες της."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ο λογαριασμός σας έχει περισσότερες διευθύνσεις ηλεκτρονικού ταχυδρομείου από αυτές που είναι διαθέσιμες σε αυτό το πλάνο. ${ addressSettingsLink }"
@@ -11317,6 +11342,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "ΜΗΝ ξεχάσετε αυτόν τον κωδικό πρόσβασης. Αν τον ξεχάσετε, δεν θα είστε σε θέση να διαχειριστείτε τον οργανισμό σας."
       ],
+      "Do you remember your password?": [
+        "Θυμάστε τον κωδικό πρόσβασής σας;"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Θέλετε να ανακαλέσετε όλες τις άλλες συνεδρίες εκτός από τις τρέχουσες;"
       ],
@@ -11743,6 +11771,9 @@
       ],
       "Get VPN Plus": [
         "Αποκτήστε το VPN Plus"
+      ],
+      "Give ${ BRAND_NAME } permissions to import your ${ providerName } data.": [
+        "Δώστε στην ${ BRAND_NAME } άδεια εισαγωγής των δεδομένων σας από την ${ providerName }."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Δώστε στο διακριτικό ένα περιγραφικό όνομα, όπως την υπηρεσία με την οποία σκοπεύετε να το χρησιμοποιήσετε και επιλέξτε μία από τις ενεργές προσαρμοσμένες διευθύνσεις τομέα σας. Μόνο αυτή η διεύθυνση θα μπορεί να στέλνει μηνύματα ηλ. ταχυδρομείου με αυτό το διακριτικό."
@@ -13053,9 +13084,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Η συνδρομή λήγει: Για να διατηρήσετε τα οφέλη του ${ planName }, επανεκκινήστε τη συνδρομή σας στο Google Play Store έως ${ byDate }. ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "Η συνδρομή ξεκινά στις ${ startsOnTime }"
-      ],
       "Summary": [
         "Περίληψη"
       ],
@@ -13506,9 +13534,6 @@
       ],
       "Total: ${ totalPrice }": [
         "Σύνολο: ${ totalPrice }"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "Η δοκιμαστική περίοδος λήγει στις ${ formattedPeriodEndDate }"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Δοκιμάστε το ${ productName } εντελώς χωρίς κίνδυνο - εάν για οποιονδήποτε λόγο αλλάξετε γνώμη, θα λάβετε πλήρη επιστροφή χρημάτων. Χωρίς ερωτήσεις."
@@ -15049,9 +15074,6 @@
       ],
       "Account holder name": [
         "Όνομα κατόχου λογαριασμού"
-      ],
-      "Account holder: ${ sepaDetails.AccountName }": [
-        "Κάτοχος λογαριασμού: ${ sepaDetails.AccountName }"
       ],
       "Account storage": [
         "Χωρητικότητα λογαριασμού"
@@ -18697,9 +18719,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } που λήγει σε ${ last4 }"
-      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "Το ${ BRAND_NAME } σας επιτρέπει τη δημιουργία διευθύνσεων και τη διαχείριση λογαριασμών για άλλους χρήστες. Ιδανικό για οικογένειες και οργανισμούς."
       ],
@@ -20964,17 +20983,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και τον αριθμό ΦΠΑ."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - κάρτα που λήγει σε ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Τραπεζική μεταφορά - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - κάρτα που λήγει σε ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -24501,6 +24509,9 @@
       "Final step": [
         "Τελευταίο βήμα"
       ],
+      "Grant access": [
+        "Παραχώρηση πρόσβασης"
+      ],
       "Install migration app": [
         "Εγκατάσταση εφαρμογής μετεγκατάστασης"
       ],
@@ -26877,6 +26888,9 @@
       ],
       "Going private": [
         "Μετάβαση σε ιδιωτικό"
+      ],
+      "Grant access": [
+        "Παραχώρηση πρόσβασης"
       ],
       "Group": [
         "Ομάδα"
@@ -29275,6 +29289,9 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Εντοπίσαμε ένα πρόβλημα με τη ρύθμιση παραμέτρων DNS. Βεβαιωθείτε ότι τα αρχεία σας ταιριάζουν με τις παρακάτω οδηγίες. Εάν το πρόβλημα εξακολουθεί, θα πρέπει να αλλάξουμε την αποσύνδεση DKIM."
+      ],
+      "We were unable to verify access, please check that you have granted access in your ${ providerName } account and try again.": [
+        "Δεν μπορέσαμε να επαληθεύσουμε την πρόσβαση. Ελέγξτε ότι έχετε παραχωρήσει πρόσβαση στον λογαριασμό σας ${ providerName } και προσπαθήστε ξανά."
       ],
       "We were unable to verify the installation, please check that you have installed it in your ${ providerName } account and try again.": [
         "Δεν καταφέραμε να επαληθεύσουμε την εγκατάσταση, παρακαλούμε ελέγξτε ότι την έχετε εγκαταστήσει στο ${ providerName } λογαριασμό σας και προσπαθήστε ξανά."
