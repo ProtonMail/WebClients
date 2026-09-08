@@ -2,11 +2,11 @@ import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
-import type { ActionRequest, ReferenceLabels } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { Disclosure } from '@proton/lumo-ui';
 import type { IconComponent } from '@proton/lumo-ui/types';
 import clsx from '@proton/utils/clsx';
 
+import type { ActionRequest, ReferenceLabels } from '../contracts/types';
 import type { CardRenderer } from './types';
 import { ConfirmStatus } from './types';
 

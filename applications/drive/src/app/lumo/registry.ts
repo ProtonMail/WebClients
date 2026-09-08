@@ -1,5 +1,5 @@
-import type { LumoAgentConfig } from '@proton/components/components/lumoAgent/types';
 import type { ToolHandlers } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type { LumoAgentConfig } from '@proton/llm/lib/lumoAgent/ui/types';
 
 import { buildDriveRules } from './rules';
 import { getCurrentFolderModule } from './skills/reads/getCurrentFolder';

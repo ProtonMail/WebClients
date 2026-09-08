@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import TextFieldBody from '@proton/components/components/lumoAgent/cardBodies/TextFieldBody';
-import type { CardBodyProps, CardRenderer } from '@proton/components/components/lumoAgent/types';
 import type { ActionRequest } from '@proton/llm/lib/lumoAgent/contracts/types';
+import TextFieldBody from '@proton/llm/lib/lumoAgent/ui/cardBodies/TextFieldBody';
+import type { CardBodyProps, CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 
 /**
  * Every editable param of the filter tools. Each carries the user's own words, so each must reach

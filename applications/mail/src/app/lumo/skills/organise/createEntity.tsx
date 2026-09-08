@@ -1,7 +1,5 @@
 import { c } from 'ttag';
 
-import TextFieldBody from '@proton/components/components/lumoAgent/cardBodies/TextFieldBody';
-import type { CardBodyProps, CardRenderer } from '@proton/components/components/lumoAgent/types';
 import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 import { IcTagPlus } from '@proton/icons/icons/IcTagPlus';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
@@ -11,6 +9,8 @@ import type {
     ToolDefinition,
     ToolHandler,
 } from '@proton/llm/lib/lumoAgent/contracts/types';
+import TextFieldBody from '@proton/llm/lib/lumoAgent/ui/cardBodies/TextFieldBody';
+import type { CardBodyProps, CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAX_FOLDER_NESTING_LEVEL } from '@proton/shared/lib/constants';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';

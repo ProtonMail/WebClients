@@ -1,11 +1,11 @@
 import { fromUnixTime, parseISO } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import DateTimeBody from '@proton/components/components/lumoAgent/cardBodies/DateTimeBody';
-import type { CardBodyProps, CardRenderer } from '@proton/components/components/lumoAgent/types';
 import { IcClock } from '@proton/icons/icons/IcClock';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ActionRequest, ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
+import DateTimeBody from '@proton/llm/lib/lumoAgent/ui/cardBodies/DateTimeBody';
+import type { CardBodyProps, CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isValidDate } from '@proton/shared/lib/date/date';
 

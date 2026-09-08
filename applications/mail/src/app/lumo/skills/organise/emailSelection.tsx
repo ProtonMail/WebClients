@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import type { CardBodyProps } from '@proton/components/components/lumoAgent/types';
 import type { ActionRequest, ReferenceLabels } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type { CardBodyProps } from '@proton/llm/lib/lumoAgent/ui/types';
 import { MoveItemsCard } from '@proton/lumo-ui';
 
 export const referenceName = (reference: unknown, labels: ReferenceLabels): string => {
