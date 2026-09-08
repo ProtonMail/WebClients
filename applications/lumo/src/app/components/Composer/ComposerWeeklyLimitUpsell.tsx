@@ -1,29 +1,35 @@
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectTierErrors } from '../../redux/slices/meta/errors';
-import { shouldShowWeeklyLimitUpsell, useRemainingLimits } from '../../services/usageLimitsStore';
+import { shouldShowLimitUpsell, useRemainingLimits } from '../../services/usageLimitsStore';
 import { ComposerMode } from '../../types';
 import UpsellCard from '../../upsells/components/UpsellCard';
+import { getExceededTierErrorTitle } from '../../util/errorMessages';
 
 interface Props {
     composerMode: ComposerMode;
 }
 
 /**
- * Weekly chat quota upsell shown above the composer when all model pools are exhausted.
+ * Quota upsell shown above the composer when either chat-model pool is exhausted.
  * Rendered from ComposerComponent so every composer surface gets consistent limit UX.
  */
 export const ComposerWeeklyLimitUpsell = ({ composerMode }: Props) => {
     const tierErrors = useLumoSelector(selectTierErrors);
     const { hasLumoPlus } = useLumoPlan();
     const remainingLimits = useRemainingLimits();
-    const showWeeklyLimitUpsell = shouldShowWeeklyLimitUpsell(remainingLimits, tierErrors.length > 0, hasLumoPlus);
+    const showLimitUpsell = shouldShowLimitUpsell(remainingLimits, tierErrors.length > 0, hasLumoPlus);
 
-    if (!showWeeklyLimitUpsell || !tierErrors[0]) {
+    if (!showLimitUpsell || !tierErrors[0]) {
         return null;
     }
 
-    return <UpsellCard showSadCat={composerMode !== ComposerMode.NEW_CONVERSATION} error={tierErrors[0]} />;
+    const error = {
+        ...tierErrors[0],
+        errorTitle: getExceededTierErrorTitle(remainingLimits),
+    };
+
+    return <UpsellCard showSadCat={composerMode !== ComposerMode.NEW_CONVERSATION} error={error} />;
 };
 
 export default ComposerWeeklyLimitUpsell;
