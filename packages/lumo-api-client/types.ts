@@ -4,13 +4,11 @@
  * that the client relies on, so the package does not import from the lumo app.
  * Backend-aligned API types live in `./types-api`.
  */
-import { type EncryptedWireTurn, type UnencryptedWireTurn, type WireTurn, isWireTurn } from './types-api';
+import { type WireTurn, isWireTurn } from './types-api';
 
 // *** Turn aliases ***
 // Turn types are defined in types-api as WireTurn (matching backend schema).
 export type Turn = WireTurn;
-export type EncryptedTurn = EncryptedWireTurn;
-export type UnencryptedTurn = UnencryptedWireTurn;
 export const isTurn = isWireTurn;
 
 // *** Various string aliases ***
@@ -18,7 +16,7 @@ export type Base64 = string;
 export type AdString = string;
 
 // *** Ids ***
-export type Uuid = string;
+type Uuid = string;
 export type RequestId = Uuid;
 
 // *** Status ***

@@ -11299,7 +11299,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/lumo-api-client@workspace:packages/lumo-api-client"
   dependencies:
-    "@jest/globals": "npm:^30.4.1"
     "@proton/jest-swc-preset": "workspace:^"
     "@proton/shared": "workspace:^"
     "@protontech/crypto": "npm:*"

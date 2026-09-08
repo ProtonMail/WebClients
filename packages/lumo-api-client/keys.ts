@@ -18,7 +18,7 @@
            UserID: Proton Lumo (Prod Key 0002) <support@proton.me>
  */
 
-export const LUMO_GPG_PUB_KEY_PROD_2 = `-----BEGIN PGP PUBLIC KEY BLOCK-----
+const LUMO_GPG_PUB_KEY_PROD_2 = `-----BEGIN PGP PUBLIC KEY BLOCK-----
 
 xjMEaA9k7RYJKwYBBAHaRw8BAQdABaPA24xROahXs66iuekwPmdOpJbPE1a8A69r
 siWP8rfNL1Byb3RvbiBMdW1vIChQcm9kIEtleSAwMDAyKSA8c3VwcG9ydEBwcm90
