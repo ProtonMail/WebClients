@@ -12,12 +12,12 @@ import { defineSearchOptions } from '@proton/nav/api/defineSearchOptions';
 import { defineSidebar } from '@proton/nav/api/defineSidebar';
 import type { NavResolved } from '@proton/nav/types/nav';
 import type { SidebarTree } from '@proton/nav/types/sidebar';
+import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
 import { removeItem } from '@proton/shared/lib/helpers/storage';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { constants } from '../../constants';
 import { resolveNavigation } from '../definitions/routes';
-import { isB2BAdmin } from '../functions/isB2BAdmin';
 
 type Args = {
     prefix?: string;
@@ -37,13 +37,18 @@ export const useB2BAdminSidebarFeature = ({
     const [user, isUserLoading] = useUser();
     const [subscription, isSubscriptionLoading] = useSubscription();
     const [organization, isOrganizationLoading] = useOrganization();
+    const [entitlements, isEntitlementsLoading] = useEntitlementChecks();
 
     const [{ permissions }] = useUserPermissions();
 
-    const skip = isUserLoading || isSubscriptionLoading || isOrganizationLoading || permissions === null;
+    const skip =
+        isUserLoading ||
+        isSubscriptionLoading ||
+        isOrganizationLoading ||
+        isEntitlementsLoading ||
+        permissions === null;
     const isEnabled = useFlag('B2BSidebarRefreshEnabled');
     const { APP_NAME } = useConfig();
-    const isAdmin = isB2BAdmin({ user, organization, subscription });
     const recoveryNotification = useRecoveryNotification(false, false);
     const [{ isDataRecoveryAvailable }] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -66,13 +71,14 @@ export const useB2BAdminSidebarFeature = ({
     if (skip || !subscription || !organization || !permissions) {
         return disabled(true);
     }
-    if (!isEnabled || !isAdmin) {
+    if (!isEnabled || !Object.values(permissions).some(Boolean)) {
         return disabled(false);
     }
 
     const resolvedNavigation = resolveNavigation({
         user,
         subscription,
+        entitlements,
         organization,
         notifications: { recovery: recoveryNotification?.color },
         flags: {
@@ -82,7 +88,7 @@ export const useB2BAdminSidebarFeature = ({
             B2BAlwaysOnEnabled,
             SharedServerFeature,
         },
-        context: { isDataRecoveryAvailable, isSessionRecoveryAvailable, appName: APP_NAME, isAdmin },
+        context: { isDataRecoveryAvailable, isSessionRecoveryAvailable, appName: APP_NAME },
         permissions,
     });
 
