@@ -4,20 +4,26 @@ import {
 } from './modelSwitchNotificationStorage';
 
 describe('modelSwitchNotificationStorage', () => {
-    const conversationId = '00000000-0000-4000-8000-000000000001';
-
     beforeEach(() => {
         sessionStorage.clear();
     });
 
     it('returns false when the notification has not been dismissed', () => {
-        expect(hasDismissedModelSwitchNotification(conversationId)).toBe(false);
+        expect(hasDismissedModelSwitchNotification()).toBe(false);
     });
 
-    it('persists dismissal per conversation in sessionStorage', () => {
-        markModelSwitchNotificationDismissed(conversationId);
+    it('persists dismissal for the browser session', () => {
+        markModelSwitchNotificationDismissed();
 
-        expect(hasDismissedModelSwitchNotification(conversationId)).toBe(true);
-        expect(hasDismissedModelSwitchNotification('00000000-0000-4000-8000-000000000002')).toBe(false);
+        expect(hasDismissedModelSwitchNotification()).toBe(true);
+    });
+
+    it('honors dismissals stored by the former per-conversation implementation', () => {
+        sessionStorage.setItem(
+            'lumo-model-switch-notification-00000000-0000-4000-8000-000000000001',
+            '1'
+        );
+
+        expect(hasDismissedModelSwitchNotification()).toBe(true);
     });
 });

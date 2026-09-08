@@ -25,6 +25,18 @@ export function analyzeError(error: any): AnalyzedError {
         };
     }
 
+    // Tier limit error - from jails or HTTP 429 when limits are exhausted.
+    // This must take precedence over every body/type classification because
+    // wrappers may annotate a 429 with a generic generation error.
+    if (code === API_CUSTOM_ERROR_CODES.BANNED || status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
+        return {
+            category: 'api',
+            isRetryable: false,
+            shouldShowToUser: true,
+            lumoErrorType: LUMO_API_ERRORS.TIER_LIMIT,
+        };
+    }
+
     // Known Lumo API errors
     if (error.type && Object.values(LUMO_API_ERRORS).includes(error.type)) {
         return {
@@ -43,16 +55,6 @@ export function analyzeError(error: any): AnalyzedError {
             isRetryable: true,
             shouldShowToUser: true,
             lumoErrorType: getErrorTypeFromMessage(terminalType),
-        };
-    }
-
-    // Tier limit error - from jails or HTTP 429 when limits are exhausted
-    if (code === API_CUSTOM_ERROR_CODES.BANNED || status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
-        return {
-            category: 'api',
-            isRetryable: false,
-            shouldShowToUser: true,
-            lumoErrorType: LUMO_API_ERRORS.TIER_LIMIT,
         };
     }
 
