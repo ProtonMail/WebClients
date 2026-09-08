@@ -1,18 +1,33 @@
-import type { ConversationId } from '../types';
+const DISMISS_STORAGE_KEY = 'lumo-model-switch-notification-dismissed';
+const LEGACY_DISMISS_STORAGE_PREFIX = 'lumo-model-switch-notification-';
 
-const getDismissStorageKey = (conversationId: ConversationId) => `lumo-model-switch-notification-${conversationId}`;
-
-export const hasDismissedModelSwitchNotification = (conversationId: ConversationId): boolean => {
+export const hasDismissedModelSwitchNotification = (): boolean => {
     try {
-        return sessionStorage.getItem(getDismissStorageKey(conversationId)) === '1';
+        if (sessionStorage.getItem(DISMISS_STORAGE_KEY) === '1') {
+            return true;
+        }
+
+        // Preserve dismissals written by the former per-conversation implementation.
+        for (let index = 0; index < sessionStorage.length; index += 1) {
+            const key = sessionStorage.key(index);
+            if (
+                key?.startsWith(LEGACY_DISMISS_STORAGE_PREFIX) &&
+                key !== DISMISS_STORAGE_KEY &&
+                sessionStorage.getItem(key) === '1'
+            ) {
+                return true;
+            }
+        }
+
+        return false;
     } catch {
         return false;
     }
 };
 
-export const markModelSwitchNotificationDismissed = (conversationId: ConversationId): void => {
+export const markModelSwitchNotificationDismissed = (): void => {
     try {
-        sessionStorage.setItem(getDismissStorageKey(conversationId), '1');
+        sessionStorage.setItem(DISMISS_STORAGE_KEY, '1');
     } catch {
         // Fail silently if sessionStorage is unavailable.
     }
