@@ -20,16 +20,15 @@ import type { NavContext } from '@proton/nav/types/models';
 import type { NavDefinition, NavItemDefinition, NavItemResolved, NavResolved } from '@proton/nav/types/nav';
 import type { NavDefinitionIds, NavSectionIds as SectionIds } from '@proton/nav/types/navIds';
 import type { NavSectionResolved } from '@proton/nav/types/section';
+import type { EntitlementChecks } from '@proton/payments/core/entitlements/resolver';
 import { getIsB2BAudienceFromPlan, planSupportsSSO, upsellPlanSSO } from '@proton/payments/core/plan/helpers';
 import {
     type MaybeFreeSubscription,
     getHasExternalMemberCapableB2BPlan,
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
-    hasAnyB2bBundle,
+    getHasVpnGatewaysUpsellPlan,
     hasCancellablePlan,
-    hasVPNPassProfessional,
-    hasVpnBusiness,
     isCancellableOnlyViaSupport,
 } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -59,11 +58,11 @@ type PropContext = {
     isDataRecoveryAvailable: boolean;
     isSessionRecoveryAvailable: boolean;
     appName: APP_NAMES;
-    isAdmin: boolean;
 };
 
 type VpnNavContext = {
     subscription: MaybeFreeSubscription;
+    entitlements: EntitlementChecks;
     notifications?: Record<NavItemDefinition<NavContext>['id'], any>;
     canHaveOrganization: boolean;
     hasActiveOrganizationKey: boolean;
@@ -81,13 +80,14 @@ const routesDefinition = {
         {
             id: 'organization',
             label: () => c('Title').t`Organization`,
-            isVisible: ({ context }) => context.isAdmin,
+            isVisible: ({ context }) => context.entitlements.orgIsBusiness && context.entitlements.orgHasVpn,
             children: [
                 {
                     id: 'organization.home',
                     label: () => c('Title').t`Home`,
                     to: '/dashboard',
                     icon: IcHouse,
+                    isVisible: ({ context }) => context.permissions['account.dashboard.read'],
                     sections: [
                         {
                             id: 'organization.home.your-plan',
@@ -200,7 +200,8 @@ const routesDefinition = {
                             id: 'organization.org-and-people.multi-user',
                             label: () => c('Title').t`Multi-user support`,
                             to: '/multi-user-support',
-                            isVisible: ({ context }) => context.needsOrgSetup,
+                            isVisible: ({ context }) =>
+                                context.needsOrgSetup && context.permissions['account.organization_identity.read'],
                             sections: [
                                 {
                                     id: 'organization.org-and-people.multi-user.name',
@@ -249,7 +250,8 @@ const routesDefinition = {
                             to: '/gateways',
                             isVisible: ({ context }) =>
                                 context.permissions['account.gateway.read'] &&
-                                (getHasVpnB2BPlan(context.subscription) || hasAnyB2bBundle(context.subscription)),
+                                (context.entitlements.orgHasMaxDedicatedIps ||
+                                    getHasVpnGatewaysUpsellPlan(context.subscription)),
                             sections: [{ id: 'organization.vpn.gateways.servers', to: 'servers' }],
                         },
                         {
@@ -259,7 +261,7 @@ const routesDefinition = {
                             isVisible: ({ context }) =>
                                 !!context.flags.SharedServerFeature &&
                                 context.permissions['account.shared_server.read'] &&
-                                (getHasVpnB2BPlan(context.subscription) || hasAnyB2bBundle(context.subscription)),
+                                context.entitlements.orgHasVpnLocationFilter,
                             sections: [{ id: 'organization.vpn.shared-servers.servers', to: 'servers' }],
                         },
                         {
@@ -274,18 +276,10 @@ const routesDefinition = {
                             id: 'organization.vpn.gateway-monitor',
                             label: () => c('Title').t`Gateway monitor`,
                             to: '/gateway-monitor',
-                            isVisible: ({ context }) => {
-                                const hasPlanWithEventLogging =
-                                    hasVpnBusiness(context.subscription) ||
-                                    hasAnyB2bBundle(context.subscription) ||
-                                    hasVPNPassProfessional(context.subscription);
-
-                                return (
-                                    context.permissions['account.activity_log.read'] &&
-                                    hasPlanWithEventLogging &&
-                                    context.hasOrganizationAccess
-                                );
-                            },
+                            isVisible: ({ context }) =>
+                                context.permissions['account.activity_log.read'] &&
+                                context.entitlements.orgHasVpnActivityMonitor &&
+                                context.hasOrganizationAccess,
                             sections: [
                                 {
                                     id: 'organization.vpn.gateway-monitor.vpn-connection-events',
@@ -577,6 +571,7 @@ type Args = {
     organization?: NavContext['organization'];
     notifications?: Record<NavItemDefinition<NavContext>['id'], any>;
     subscription: MaybeFreeSubscription;
+    entitlements: EntitlementChecks;
     context: PropContext;
     flags?: Partial<Record<FeatureFlag, boolean>>;
     permissions: OrgPermissions;
@@ -587,6 +582,7 @@ export const resolveNavigation = ({
     notifications,
     user,
     subscription,
+    entitlements,
     organization,
     flags,
     context,
@@ -611,6 +607,7 @@ export const resolveNavigation = ({
         context: {
             user,
             subscription,
+            entitlements,
             organization,
             notifications,
             canHaveOrganization,

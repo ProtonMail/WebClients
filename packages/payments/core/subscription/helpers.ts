@@ -59,6 +59,7 @@ export {
     getHasMeetIncludedInPlan,
     getHasPassB2BPlan,
     getHasVpnB2BPlan,
+    getHasVpnGatewaysUpsellPlan,
     getHasVpnOnlyB2BPlan,
 } from './helpers/plan-b2b';
 export { getPlanIDs } from './helpers/plan-ids';
