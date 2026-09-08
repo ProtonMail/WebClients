@@ -1142,6 +1142,15 @@
         "${ users } používateľov",
         "${ users } používateľov"
       ],
+      "Amount due": [
+        "Dlžná suma"
+      ],
+      "Amount due after trial": [
+        "Splatná suma po skúšobnom období"
+      ],
+      "Amount due now": [
+        "Čiastka k zaplateniu teraz"
+      ],
       "Subtotal": [
         "Medzisúčet"
       ],
@@ -1153,6 +1162,12 @@
       ],
       "Total": [
         "Celkom"
+      ],
+      "Total for ${ cycle } month": [
+        "Celkom za ${ cycle } mesiac",
+        "Celkom za ${ cycle } mesiace",
+        "Celkom za ${ cycle } mesiacov",
+        "Celkom za ${ cycle } mesiacov"
       ]
     },
     "Collapsible tooltip": {
@@ -4425,8 +4440,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } končiaca na ${ last4 }"
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } končiaca na ${ Last4 }"
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB cloudového úložiska, ktoré vám umožní jednoducho ukladať, synchronizovať a zdieľať súbory. Zabezpečené end-to-end šifrovaním."
@@ -5153,6 +5168,11 @@
         "Kredity budú pridané k vášmu zostatku"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Zmena fakturačnej adresy môže mať vplyv na výšku daní na budúcich faktúrach."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Naozaj chcete pokračovať?"
@@ -5190,14 +5210,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - karta končiaca na ${ paymentMethod.Details.Last4 }"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - karta končiaca na ${ Last4 }"
       ],
-      "Bank transfer - ${ details }": [
-        "Bankový prevod – ${ details }"
+      "Bank transfer - ${ iban }": [
+        "Bankový prevod – ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - karta končiaca na ${ paymentMethod.Details.Last4 }"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - karta končiaca na ${ Last4 }"
       ]
     },
     "Payments.Sepa": {

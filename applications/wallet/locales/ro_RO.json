@@ -1127,6 +1127,15 @@
         "${ users } utilizatori",
         "${ users } de utilizatori"
       ],
+      "Amount due": [
+        "Suma datorată"
+      ],
+      "Amount due after trial": [
+        "Suma datorată după probare"
+      ],
+      "Amount due now": [
+        "Suma datorată acum"
+      ],
       "Subtotal": [
         "Subtotal"
       ],
@@ -1137,6 +1146,11 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Total for ${ cycle } month": [
+        "Total pentru ${ cycle } lună",
+        "Total pentru ${ cycle } luni",
+        "Total pentru ${ cycle } de luni"
       ]
     },
     "Collapsible tooltip": {
@@ -4361,8 +4375,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } care se termină cu ${ last4 }"
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } care se termină cu ${ Last4 }"
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TiB de stocare în cloud care vă permite stocarea, sincronizarea și partajarea ușoară a fișierelor. Securizat prin criptare bilaterală."
@@ -5078,6 +5092,11 @@
         "Creditele vă vor fi adăugate în soldul personal."
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Schimbarea adresei de facturare poate influența taxele pe facturile viitoare."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Sigur doriți să continuați?"
@@ -5115,14 +5134,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - card care se termină cu ${ paymentMethod.Details.Last4 }"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - card care se termină cu ${ Last4 }"
       ],
-      "Bank transfer - ${ details }": [
-        "Transfer bancar - ${ details }"
+      "Bank transfer - ${ iban }": [
+        "Transfer bancar - ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - card care se termină cu ${ paymentMethod.Details.Last4 }"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - card care se termină cu ${ Last4 }"
       ]
     },
     "Payments.Sepa": {

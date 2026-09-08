@@ -1112,6 +1112,15 @@
         "${ users } kullanıcı",
         "${ users } kullanıcı"
       ],
+      "Amount due": [
+        "Ödenecek tutar"
+      ],
+      "Amount due after trial": [
+        "Deneme süresinden sonra ödenecek tutar"
+      ],
+      "Amount due now": [
+        "Şimdi ödenecek tutar"
+      ],
       "Subtotal": [
         "Ara toplam"
       ],
@@ -1121,6 +1130,10 @@
       ],
       "Total": [
         "Toplam"
+      ],
+      "Total for ${ cycle } month": [
+        "${ cycle } ay için toplam",
+        "${ cycle } ay için toplam"
       ]
     },
     "Collapsible tooltip": {
@@ -4297,8 +4310,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand }, ${ last4 } içinde sona erecek"
+      "${ Brand } ending in ${ Last4 }": [
+        "Sonu ${ Last4 } ile biten ${ Brand }"
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "Dosyalarınızı saklamak, eşitlemek ve paylaşmak için 1 TB bulut depolama alanı. Uçtan uca şifreleme ile korunur."
@@ -5003,6 +5016,11 @@
         "Kalan kredi bakiyenize eklenecek"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Fatura adresinizi değiştirmek sonraki faturalardaki vergileri etkileyebilir."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "İlerlemek istediğinize emin misiniz?"
@@ -5040,14 +5058,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - ${ paymentMethod.Details.Last4 } ile biten kart"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - ${ Last4 } ile biten kart"
       ],
-      "Bank transfer - ${ details }": [
-        "Banka havalesi - ${ details }"
+      "Bank transfer - ${ iban }": [
+        "Banka havalesi - ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - ${ paymentMethod.Details.Last4 } ile biten kart"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - ${ Last4 } ile biten kart"
       ]
     },
     "Payments.Sepa": {
