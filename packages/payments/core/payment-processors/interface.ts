@@ -15,29 +15,6 @@ export type PaymentProcessorType =
     | PAYMENT_METHOD_TYPES.GOOGLE_PAY
     | PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL;
 
-export function getSystemByHookType(
-    type: PaymentProcessorType | 'n/a' | undefined
-): 'chargebee' | 'inhouse' | 'n/a' | undefined {
-    switch (type) {
-        case 'paypal':
-        case 'card':
-        case 'saved':
-        case 'bitcoin':
-            return 'inhouse';
-
-        case 'chargebee-card':
-        case 'chargebee-paypal':
-        case 'saved-chargebee':
-            return 'chargebee';
-
-        case 'n/a':
-            return 'n/a';
-
-        default:
-            return undefined;
-    }
-}
-
 export interface PaymentProcessorHook {
     fetchPaymentToken: () => Promise<unknown>;
     fetchingToken: boolean;
