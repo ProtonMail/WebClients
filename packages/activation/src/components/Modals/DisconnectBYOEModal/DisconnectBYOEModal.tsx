@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { updateBYOEAddressConnection } from '@proton/account/addressKeys/actions';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
@@ -15,6 +14,7 @@ import { isAdmin } from '@proton/shared/lib/user/helpers';
 
 import { useEasySwitchDispatch } from '../../../logic/store';
 import { loadSyncList } from '../../../logic/sync/sync.actions';
+import { updateBYOEAddressConnection } from '../../../thunks/updateBYOEAddressConnection';
 
 interface Props extends ModalProps {
     address: Address;
