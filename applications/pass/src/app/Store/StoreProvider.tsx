@@ -51,7 +51,7 @@ import {
 import { SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { semver } from '@proton/pass/utils/string/semver';
+import { semver } from '@proton/utils/semver';
 import noop from '@proton/utils/noop';
 
 import { resolveBroadcast } from './broadcast';
