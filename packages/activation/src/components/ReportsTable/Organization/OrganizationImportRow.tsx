@@ -14,7 +14,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import type { ApiImporterOrganization } from '../../../api/api.interface';
 import { ApiImporterOrganizationState } from '../../../api/api.interface';
 import { getImportProviderFromApiProvider } from '../../../helpers/getImportProviderFromApiProvider';
-import { OLES_PROVIDERS, isProviderSupported } from '../../../oles/providers';
+import { OLES_PROVIDERS, getProviderRouteSlug, isProviderSupported } from '../../../oles/providers';
 
 interface Props {
     importerOrganization: ApiImporterOrganization;
@@ -73,7 +73,9 @@ const OrganizationImportRow = ({ importerOrganization }: Props) => {
                 <Button
                     icon
                     shape="ghost"
-                    onClick={() => goToSettings(`/easy-switch/migration-assistant?provider=${provider}`)}
+                    onClick={() =>
+                        goToSettings(`/easy-switch/migration-assistant?provider=${getProviderRouteSlug(provider)}`)
+                    }
                     title={c('Action').t`Manage migration`}
                 >
                     <IcArrowRight />
