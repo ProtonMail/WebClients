@@ -35,40 +35,110 @@ ignore:
       type: npm
       version: 0.2.17
 
-  ## image-size (transitive via appdmg@0.6.6 → electron-installer-dmg → @electron-forge/maker-dmg)
-  # Accepted risk: no resolution override; resolves naturally to image-size@0.7.5.
-  # Only lockfile consumer. Used at macOS DMG build time to read background image dimensions
-  # (trusted build input, typically PNG) — not production runtime, not untrusted user input.
-  # image-size-next@2.x rejected: breaks appdmg path+callback API; supply-chain concern for SOC2.
-  # No patched upstream release exists (image-size is archived; advisory cites >=2.0.3, never published).
-  # 0.7.x lacks JXL/HEIF/JP2 parsers (CVE-2025-71329); ICNS parser present but not exercised by appdmg.
-  - vulnerability: CVE-2025-71330
+  ## react-router@6.30.6 (via react-router-dom-v5-compat in drive/docs/drive-store)
+  # Accepted risk: fix requires React Router >=7.18.0; apps remain on RR5 + v5-compat layer.
+  # Client-side SPA only — no SSR hydration path; v6 is EOL with no backported patch.
+  - vulnerability: GHSA-337j-9hxr-rhxg
     reason: >-
-      Accepted: build-time only via appdmg; natural dep 0.7.5; no vetted upgrade without
-      breaking DMG packaging API or adopting unvetted image-size-next fork.
+      Accepted: RR5 + v5-compat SPA only; no SSR hydration. Patched only in RR >=7.18.0;
+      full RR7 migration tracked separately.
     package:
-      name: image-size
+      name: react-router
       type: npm
-      version: 0.7.5
-  - vulnerability: GHSA-w3rx-r6r6-pgpr
+      version: 6.30.6
+  - vulnerability: GHSA-wrjc-x8rr-h8h6
     reason: >-
-      Accepted: build-time only via appdmg; natural dep 0.7.5; no vetted upgrade without
-      breaking DMG packaging API or adopting unvetted image-size-next fork.
+      Accepted: RR5 + v5-compat SPA only; no SSR hydration. Patched only in RR >=7.18.0;
+      full RR7 migration tracked separately.
     package:
-      name: image-size
+      name: react-router
       type: npm
-      version: 0.7.5
-  - vulnerability: CVE-2025-71329
+      version: 6.30.6
+
+  ## webpack-dev-server@4.15.2 (via @electron-forge/plugin-webpack on desktop apps)
+  # Accepted risk: dev-only build tool, not shipped runtime. Electron Forge 7.x still pins
+  # webpack-dev-server ^4.0.0; no stable Forge release with webpack-dev-server >=5.2.6 yet.
+  - vulnerability: GHSA-4v9v-hfq4-rm2v
     reason: >-
-      Accepted: 0.7.x lacks affected JXL/HEIF/JP2 parsers; build-time appdmg only.
+      Accepted: dev-server build-time only via Electron Forge; bound to localhost; not
+      exposed to untrusted networks in normal dev workflow.
     package:
-      name: image-size
+      name: webpack-dev-server
       type: npm
-      version: 0.7.5
-  - vulnerability: GHSA-5p2g-fcmc-qvqq
+      version: 4.15.2
+  - vulnerability: GHSA-m28w-2pqf-7qgj
     reason: >-
-      Accepted: 0.7.x lacks affected JXL/HEIF/JP2 parsers; build-time appdmg only.
+      Accepted: dev-server build-time only via Electron Forge; bound to localhost; not
+      exposed to untrusted networks in normal dev workflow.
     package:
-      name: image-size
+      name: webpack-dev-server
       type: npm
-      version: 0.7.5
+      version: 4.15.2
+  - vulnerability: GHSA-f5vj-f2hx-8m93
+    reason: >-
+      Accepted: dev-server build-time only via Electron Forge; bound to localhost; not
+      exposed to untrusted networks in normal dev workflow.
+    package:
+      name: webpack-dev-server
+      type: npm
+      version: 4.15.2
+  - vulnerability: GHSA-9jgg-88mc-972h
+    reason: >-
+      Accepted: dev-server build-time only via Electron Forge; bound to localhost; not
+      exposed to untrusted networks in normal dev workflow.
+    package:
+      name: webpack-dev-server
+      type: npm
+      version: 4.15.2
+  - vulnerability: GHSA-79cf-xcqc-c78w
+    reason: >-
+      Accepted: dev-server build-time only via Electron Forge; bound to localhost; not
+      exposed to untrusted networks in normal dev workflow.
+    package:
+      name: webpack-dev-server
+      type: npm
+      version: 4.15.2
+  - vulnerability: GHSA-mx8g-39q3-5c79
+    reason: >-
+      Accepted: dev-server build-time only via Electron Forge; bound to localhost; not
+      exposed to untrusted networks in normal dev workflow.
+    package:
+      name: webpack-dev-server
+      type: npm
+      version: 4.15.2
+
+  ## @protontech/fathom legacy chain (pass-extension build tooling via jsdom@11)
+  # Accepted risk: internal pinned package (0.0.38040317) with no newer registry release.
+  # jsdom@11 → request/tough-cookie are test/build-time deps, not production runtime.
+  - vulnerability: GHSA-p8p7-x288-28g6
+    reason: >-
+      Accepted: transitive via @protontech/fathom → jsdom@11; pass-extension build/test
+      tooling only; request is deprecated and not used in production bundles.
+    package:
+      name: request
+      type: npm
+      version: 2.88.2
+  - vulnerability: GHSA-72xf-g2v4-qvf3
+    reason: >-
+      Accepted: transitive via @protontech/fathom → jsdom@11; pass-extension build/test
+      tooling only; not used in production bundles.
+    package:
+      name: tough-cookie
+      type: npm
+      version: 2.5.0
+  - vulnerability: GHSA-6rw7-vpxm-498p
+    reason: >-
+      Accepted: transitive via @protontech/fathom → jsdom@11 → request; pass-extension
+      build/test tooling only; not used in production bundles.
+    package:
+      name: qs
+      type: npm
+      version: 6.5.5
+  - vulnerability: GHSA-4mjr-xmp4-gh2g
+    reason: >-
+      Accepted: transitive via @protontech/fathom → jsdom@11 → request; pass-extension
+      build/test tooling only; not used in production bundles.
+    package:
+      name: qs
+      type: npm
+      version: 6.5.5
