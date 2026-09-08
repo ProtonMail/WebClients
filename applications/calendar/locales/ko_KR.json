@@ -1862,6 +1862,15 @@
       "${ users } user": [
         "${ users }명 사용자"
       ],
+      "Amount due": [
+        "납부 금액"
+      ],
+      "Amount due after trial": [
+        "무료 체험 후 납부할 금액"
+      ],
+      "Amount due now": [
+        "지금 납부할 금액"
+      ],
       "Subtotal": [
         "부분합계"
       ],
@@ -1870,6 +1879,9 @@
       ],
       "Total": [
         "합계"
+      ],
+      "Total for ${ cycle } month": [
+        "${ cycle }개월의 합계"
       ]
     },
     "Collapsible tooltip": {
@@ -4801,8 +4813,8 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "결제되지 않은 청구서가 존재합니다. 가족 플랜에 참여하기 전에 결제해주세요."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "회원님의 ${ BRAND_NAME } 계정이 이 가족 플랜에 합류하도록 초대되었습니다. 함께 모든 ${ brandOrAppName } 프리미엄 기능들을 즐겨보세요."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "회원님의 ${ BRAND_NAME } 계정이 이 가족 그룹에 합류하도록 초대되었습니다. 함께 모든 프리미엄 기능들을 즐겨보세요."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "사용자의 계정이 사용자 플랜단에서 사용 가능한 이메일 주소 이상을 가지고 있습니다. ${ addressSettingsLink }"
@@ -5847,6 +5859,9 @@
       ],
       "Display events for calendar ${ Name }": [
         "${ Name } 캘린더의 이벤트 표시"
+      ],
+      "Do you remember your password?": [
+        "비밀번호가 기억 나시나요?"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "아무 화면도 보지 못하셨나요? 팝업 차단기를 비활성화 하는 것을 잊지 마세요. Google Pay로 결제하는 경우, 국내에서 지원되지 않는 서비스이므로 결제 진행이 되지 않을 수 있습니다."
@@ -8940,9 +8955,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ last4 }(으)로 끝나는 ${ brand }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "파일을 간편하게 저장, 동기화 및 공유하기 위한 종단간 암호화로 보호되는 1 TB의 클라우드 저장공간."
       ],
@@ -10139,17 +10151,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "갱신 가격은 청구 지역 및 VAT 번호에 따라 변동될 수 있습니다."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "번호가 ${ paymentMethod.Details.Last4 }(으)로 끝나는 Apple Pay 카드"
-      ],
-      "Bank transfer - ${ details }": [
-        "은행 송금 - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - 번호가 ${ paymentMethod.Details.Last4 }(으)로 끝나는 카드"
       ]
     },
     "Payments.Sepa": {
