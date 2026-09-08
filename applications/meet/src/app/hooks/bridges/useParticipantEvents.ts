@@ -33,7 +33,8 @@ export const useParticipantEvents = () => {
                     room.localParticipant.identity,
                     ...remoteParticipants.map((participant) => participant.identity),
                 ];
-                await meetCoreClient.setLivekitActiveUuids(allUuids);
+                const isAgentInLivekit = remoteParticipants.some((participant) => participant.isAgent);
+                await meetCoreClient.setLivekitActiveUuids(allUuids, isAgentInLivekit);
             } catch (error) {
                 // Logging error
                 // eslint-disable-next-line no-console
