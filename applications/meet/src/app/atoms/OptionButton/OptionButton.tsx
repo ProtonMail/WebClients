@@ -1,6 +1,7 @@
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import type { IconProps } from '@proton/components/components/icon/Icon';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import clsx from '@proton/utils/clsx';
 
 import { LabelAndDescription } from '../LabelAndDescription/LabelAndDescription';
@@ -13,7 +14,8 @@ interface OptionButtonProps {
     label: string;
     description?: string;
     onClick: () => void;
-    Icon: (props: Pick<IconProps, 'size' | 'style'>) => JSX.Element;
+    Icon?: (props: Pick<IconProps, 'size' | 'style'>) => JSX.Element;
+    LabelIcon?: (props: Pick<IconProps, 'size' | 'style'>) => JSX.Element;
     iconSize?: IconProps['size'];
     loading?: boolean;
     role?: string;
@@ -33,7 +35,7 @@ const CheckComponent = ({
     loading,
 }: {
     showIcon: boolean;
-    Icon: (props: Pick<IconProps, 'size' | 'style'>) => JSX.Element;
+    Icon?: (props: Pick<IconProps, 'size' | 'style'>) => JSX.Element;
     iconSize?: IconProps['size'];
     iconOnTheRight?: boolean;
     loading?: boolean;
@@ -60,7 +62,8 @@ export const OptionButton = ({
     label,
     description,
     onClick,
-    Icon,
+    Icon = IcCheckmark,
+    LabelIcon,
     iconSize,
     loading,
     role,
@@ -83,6 +86,8 @@ export const OptionButton = ({
         <TruncatedTextWithTooltip label={label} className="mr-4" />
     );
 
+    const labelIcon = LabelIcon && <LabelIcon size={iconSize ?? 5} style={{ color: 'var(--text-weak)' }} />;
+
     // The label only has to fill the row when something is rendered after it, so that the trailing
     // content lands on the far edge. Left content-sized otherwise.
     const labelFillsRow = Boolean(description || iconOnTheRight || rightContent);
@@ -104,11 +109,15 @@ export const OptionButton = ({
                 <CheckComponent showIcon={showIcon} Icon={Icon} iconSize={iconSize} loading={loading} />
             )}
             {labelFillsRow ? (
-                <div className={clsx('flex flex-column flex-nowrap flex-1 min-w-0 text-left', description && 'p-3')}>
-                    {labelContent}
+                <div className={clsx('flex items-center flex-nowrap gap-2 flex-1 min-w-0', description && 'p-3')}>
+                    {labelIcon}
+                    <div className="flex flex-column flex-nowrap flex-1 min-w-0 text-left">{labelContent}</div>
                 </div>
             ) : (
-                labelContent
+                <div className="flex items-center flex-nowrap gap-2">
+                    {labelIcon}
+                    {labelContent}
+                </div>
             )}
             {iconOnTheRight && <CheckComponent showIcon={showIcon} Icon={Icon} iconSize={iconSize} loading={loading} />}
             {rightContent}
