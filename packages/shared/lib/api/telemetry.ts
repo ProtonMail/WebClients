@@ -41,6 +41,7 @@ export enum TelemetryMeasurementGroups {
     mailActions = 'mail.web.clicks_mail_actions',
     mailListSettings = 'mail.web.list_settings',
     mailPostSignupOneDollar = 'mail.web.post_signup_one_dollar',
+    mailPostSignupZeroNinetyNine = 'mail.web.post_signup_zero_ninety_nine',
     mailPagingControls = 'mail.web.paging_controls',
     mailExpandBlockquotes = 'mail.web.expand_blockquotes',
     categoriesView = 'mail.any.categories_view',
@@ -533,6 +534,15 @@ export enum TelemetryUnlimitedOffer2025 {
     clickHideOffer = 'click_hide_offer',
 }
 
+export enum TelemetryMailPostSignupZeroNinetyNineEvents {
+    automaticModalOpen = 'automatic_modal_open',
+    clickTopNavbar = 'click_top_navbar',
+    clickUpsellButton = 'click_upsell_button',
+    closeOffer = 'close_offer',
+    clickHideOffer = 'click_hide_offer',
+    userSubscribed = 'user_subscribed',
+}
+
 export enum TelemetryUnlimitedToDuoOffer {
     clickUpsellButton = 'click_upsell_button',
     clickTopNavbar = 'click_top_navbar',
@@ -635,6 +645,7 @@ export type TelemetryEvents =
     | TelemetryMailNewsletterSubscriptions
     | TelemetryUnlimitedOffer2025
     | TelemetryAlwaysOnUpsellEvents
+    | TelemetryMailPostSignupZeroNinetyNineEvents
     | TelemetryUnlimitedToDuoOffer
     | TelemetryListSetting
     | TelemetryAppSwitcher
