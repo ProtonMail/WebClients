@@ -5733,9 +5733,6 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "未納の請求書があります。ファミリープランに参加する前にお支払いください。"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "${ BRAND_NAME }アカウントをこのファミリープランにリンクして、${ brandOrAppName }の全てのプレミアム機能を一緒にお楽しみください。"
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "あなたのアカウントはこのプランで利用可能なメールアドレスの上限を超えています。${ addressSettingsLink }"
       ],
@@ -7657,7 +7654,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -10157,6 +10154,9 @@
       "Sign emails": [
         "メールに署名"
       ],
+      "Signature": [
+        "署名"
+      ],
       "Size:": [
         "サイズ:"
       ],
@@ -11638,9 +11638,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ last4 } で終わる ${ brand }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "ファイルの保存、同期、共有を簡単に行える 1 TB のクラウド ストレージ。エンドツーエンド暗号化により保護されています。"
       ],
@@ -12442,6 +12439,99 @@
       ]
     },
     "Option": {
+      "10th of the month": [
+        "毎月 10 日"
+      ],
+      "11th of the month": [
+        "毎月 11 日"
+      ],
+      "12th of the month": [
+        "毎月 12 日"
+      ],
+      "13th of the month": [
+        "毎月 13 日"
+      ],
+      "14th of the month": [
+        "毎月 14 日"
+      ],
+      "15th of the month": [
+        "毎月15日"
+      ],
+      "16th of the month": [
+        "毎月 16 日"
+      ],
+      "17th of the month": [
+        "毎月 17 日"
+      ],
+      "18th of the month": [
+        "毎月 18 日"
+      ],
+      "19th of the month": [
+        "毎月 19 日"
+      ],
+      "1st of the month": [
+        "毎月 1 日"
+      ],
+      "20th of the month": [
+        "毎月 20 日"
+      ],
+      "21st of the month": [
+        "毎月 21 日"
+      ],
+      "22nd of the month": [
+        "毎月 22 日"
+      ],
+      "23rd of the month": [
+        "毎月23日"
+      ],
+      "24th of the month": [
+        "毎月 24 日"
+      ],
+      "25th of the month": [
+        "毎月 25 日"
+      ],
+      "26th of the month": [
+        "毎月26日"
+      ],
+      "27th of the month": [
+        "毎月 27 日"
+      ],
+      "28th of the month": [
+        "毎月 28 日"
+      ],
+      "29th of the month": [
+        "毎月 29 日"
+      ],
+      "2nd of the month": [
+        "毎月 2 日"
+      ],
+      "30th of the month": [
+        "毎月30日"
+      ],
+      "31st of the month": [
+        "毎月 31 日"
+      ],
+      "3rd of the month": [
+        "毎月 3 日"
+      ],
+      "4th of the month": [
+        "毎月 4 日"
+      ],
+      "5th of the month": [
+        "毎月 5 日"
+      ],
+      "6th of the month": [
+        "毎月 6 日"
+      ],
+      "7th of the month": [
+        "毎月 7 日"
+      ],
+      "8th of the month": [
+        "毎月 8 日"
+      ],
+      "9th of the month": [
+        "毎月 9 日"
+      ],
       "Add to existing group": [
         "既存のグループに追加"
       ],
@@ -12454,11 +12544,26 @@
       "Create new group": [
         "新しいグループを作成"
       ],
+      "Fixed duration": [
+        "固定期間"
+      ],
       "Ignore group": [
         "グループを無視"
       ],
       "No parent folder": [
         "親フォルダーなし"
+      ],
+      "Permanent": [
+        "永続"
+      ],
+      "Repeat daily": [
+        "毎日繰り返し"
+      ],
+      "Repeat monthly": [
+        "毎月繰り返し"
+      ],
+      "Repeat weekly": [
+        "毎週繰り返し"
       ]
     },
     "Option group": {
@@ -12802,17 +12907,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "更新価格は、請求地域およびVAT番号によって異なります。"
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - 末尾が${ paymentMethod.Details.Last4 }のカード"
-      ],
-      "Bank transfer - ${ details }": [
-        "銀行振込 - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - 末尾が${ paymentMethod.Details.Last4 }のカード"
       ]
     },
     "Payments.Sepa": {

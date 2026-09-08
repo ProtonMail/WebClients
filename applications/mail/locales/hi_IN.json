@@ -5714,9 +5714,6 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "आपके पास बिना भुगतान वाले चालान हैं। कृपया Family plan में शामिल होने से पहले उनका भुगतान करें।"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "आपको अपने ${ BRAND_NAME } खाता को इस Family plan से लिंक करने और साथ मिलकर सभी ${ brandOrAppName } प्रीमियम खासियत का आनंद लेने के लिए आमंत्रित किया गया है।"
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "आपके खाते में इस प्लैन में उपलब्ध ईमेल पतों से ज़्यादा ईमेल पते हैं। ${ addressSettingsLink }"
       ],
@@ -7684,6 +7681,9 @@
       ],
       "Initializing…": [
         "शुरू हो रहा है…"
+      ],
+      "Insert image": [
+        "तस्वीर डालें"
       ],
       "Insert link": [
         "लिंक डालें"
@@ -10162,6 +10162,9 @@
       "Sign emails": [
         "ईमेल पे हस्ताक्षर करें"
       ],
+      "Signature": [
+        "हस्ताक्षर"
+      ],
       "Size:": [
         "साइज़:"
       ],
@@ -11675,9 +11678,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } खत्म होता है ${ last4 } से"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 टीबी क्लाउड स्टोरेज जो आपको फ़ाइलें आसानी से स्टोर, सिंक और शेयर करने देता है। शुरु-से-अंत तक एन्क्रिप्शन द्वारा सुरक्षित।"
       ],
@@ -12483,6 +12483,99 @@
       ]
     },
     "Option": {
+      "10th of the month": [
+        "महीने की 10 तारीख"
+      ],
+      "11th of the month": [
+        "महीने की 11 तारीख"
+      ],
+      "12th of the month": [
+        "महीने की 12 तारीख"
+      ],
+      "13th of the month": [
+        "महीने की 13 तारीख"
+      ],
+      "14th of the month": [
+        "महीने की 14 तारीख"
+      ],
+      "15th of the month": [
+        "महीने की 15 तारीख"
+      ],
+      "16th of the month": [
+        "महीने की 16 तारीख"
+      ],
+      "17th of the month": [
+        "महीने की 17 तारीख"
+      ],
+      "18th of the month": [
+        "महीने की 18 तारीख"
+      ],
+      "19th of the month": [
+        "महीने की 19 तारीख"
+      ],
+      "1st of the month": [
+        "महीने की 1 तारीख"
+      ],
+      "20th of the month": [
+        "महीने की 20 तारीख"
+      ],
+      "21st of the month": [
+        "महीने की 21 तारीख"
+      ],
+      "22nd of the month": [
+        "महीने की 22 तारीख"
+      ],
+      "23rd of the month": [
+        "महीने की 23 तारीख"
+      ],
+      "24th of the month": [
+        "महीने की 24 तारीख"
+      ],
+      "25th of the month": [
+        "महीने की 25 तारीख"
+      ],
+      "26th of the month": [
+        "महीने की 26 तारीख"
+      ],
+      "27th of the month": [
+        "महीने की 27 तारीख"
+      ],
+      "28th of the month": [
+        "महीने की 28 तारीख"
+      ],
+      "29th of the month": [
+        "महीने की 29 तारीख"
+      ],
+      "2nd of the month": [
+        "महीने की 2 तारीख"
+      ],
+      "30th of the month": [
+        "महीने की 30 तारीख"
+      ],
+      "31st of the month": [
+        "महीने की 31 तारीख"
+      ],
+      "3rd of the month": [
+        "महीने की 3 तारीख"
+      ],
+      "4th of the month": [
+        "महीने की 4 तारीख"
+      ],
+      "5th of the month": [
+        "महीने की 5 तारीख"
+      ],
+      "6th of the month": [
+        "महीने की 6 तारीख"
+      ],
+      "7th of the month": [
+        "महीने की 7 तारीख"
+      ],
+      "8th of the month": [
+        "महीने की 8 तारीख"
+      ],
+      "9th of the month": [
+        "महीने की 9 तारीख"
+      ],
       "Add to existing group": [
         "मौजूदा समूह में जोड़ें"
       ],
@@ -12495,11 +12588,26 @@
       "Create new group": [
         "नया ग्रुप बनाएं"
       ],
+      "Fixed duration": [
+        "निश्चित अवधि"
+      ],
       "Ignore group": [
         "समूह पर ध्यान न दें"
       ],
       "No parent folder": [
         "कोई मूल फ़ोल्डर नहीं"
+      ],
+      "Permanent": [
+        "स्थायी"
+      ],
+      "Repeat daily": [
+        "प्रतिदिन दोहराएं"
+      ],
+      "Repeat monthly": [
+        "मासिक दोहराएं"
+      ],
+      "Repeat weekly": [
+        "साप्ताहिक दोहराएं"
       ]
     },
     "Option group": {
@@ -12850,17 +12958,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "नवीनीकरण मूल्य बिलिंग क्षेत्र और वैट नंबर पर निर्भर करता है।"
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - कार्ड जो ${ paymentMethod.Details.Last4 } पर समाप्त होता है"
-      ],
-      "Bank transfer - ${ details }": [
-        "बैंक ट्रांसफर - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - कार्ड जिसका अंत ${ paymentMethod.Details.Last4 } में होता है"
       ]
     },
     "Payments.Sepa": {

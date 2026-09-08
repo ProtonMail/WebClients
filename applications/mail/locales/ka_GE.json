@@ -5723,9 +5723,6 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "გაქვთ გადაუხდელი ინვოისები. გადაიხადეთ, სანამ საოჯახო გეგმას მიუერთდებით."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "გიწვევენ, თქვენი ${ BRAND_NAME }-ის ანგარიში ამ ოჯახის ტარიფს მიაბათ და ერთად ისიამოვნოთ ყველა ${ brandOrAppName }-ის ფასიანი ფუნქციით."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "თქვენს ანგარიშს იმაზე მეტი მისამართი გააჩნია, ვიდრე ეს თქვენი სატარიფო გეგმის მიერაა დაშვებული. ${ addressSettingsLink }"
       ],
@@ -7695,8 +7692,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
-        "გამოსახულებების ჩასმა"
+        "გამოსახულების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -10175,6 +10171,9 @@
       "Sign emails": [
         "ელფოსტის ხელმოწერა"
       ],
+      "Signature": [
+        "ხელმოწერა"
+      ],
       "Size:": [
         "ზომა:"
       ],
@@ -11688,9 +11687,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } დასრულდება ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 ტბ ღრუბლოვანი საცავი, რომელიც გაძლევთ საშუალებას ადვილად შეინახოთ, დაასინქრონოთ და გააზიაროთ ფაილები. დაცულია გამჭოლი დაშიფვრით."
       ],
@@ -12496,6 +12492,99 @@
       ]
     },
     "Option": {
+      "10th of the month": [
+        "თვის მეათე დღე"
+      ],
+      "11th of the month": [
+        "თვის მეთერთმეტე დღე"
+      ],
+      "12th of the month": [
+        "თვის 12-ე დღე"
+      ],
+      "13th of the month": [
+        "თვის მეცამეტე დღე"
+      ],
+      "14th of the month": [
+        "თვის მეთოთხმეტე დღე"
+      ],
+      "15th of the month": [
+        "თვის 15-ე დღე"
+      ],
+      "16th of the month": [
+        "თვის მეთექვსმეტე დღე"
+      ],
+      "17th of the month": [
+        "თვის მეჩვიდმეტე დღე"
+      ],
+      "18th of the month": [
+        "თვის მეთვრამეტე დრე"
+      ],
+      "19th of the month": [
+        "თვის 19-ე დღე"
+      ],
+      "1st of the month": [
+        "თვის პირველი დღე"
+      ],
+      "20th of the month": [
+        "თვის მეოცე დღე"
+      ],
+      "21st of the month": [
+        "თვის ოცდამეერთე დღე"
+      ],
+      "22nd of the month": [
+        "თვის 22-ე დღე"
+      ],
+      "23rd of the month": [
+        "თვის 23-ე დღე"
+      ],
+      "24th of the month": [
+        "თვის 24-ე დღე"
+      ],
+      "25th of the month": [
+        "თვის 25-ე დღე"
+      ],
+      "26th of the month": [
+        "თვის 26-ე დღე"
+      ],
+      "27th of the month": [
+        "თვის 27-ე დღე"
+      ],
+      "28th of the month": [
+        "თვის 28-ე დღე"
+      ],
+      "29th of the month": [
+        "თვის ოცდამეცხრე დღე"
+      ],
+      "2nd of the month": [
+        "თვის მეორე დღე"
+      ],
+      "30th of the month": [
+        "თვის 30-ე დღე"
+      ],
+      "31st of the month": [
+        "თვის ოცდამეთერთმეტე დღე"
+      ],
+      "3rd of the month": [
+        "თვის მესამე დღე"
+      ],
+      "4th of the month": [
+        "თვის მეოთხე დღე"
+      ],
+      "5th of the month": [
+        "თვის მეხუთე დღე"
+      ],
+      "6th of the month": [
+        "თვის მეექვსე დღე"
+      ],
+      "7th of the month": [
+        "თვის მეშვიდე დღე"
+      ],
+      "8th of the month": [
+        "თვის მერვე დღე"
+      ],
+      "9th of the month": [
+        "თვის მეცხრე დღე"
+      ],
       "Add to existing group": [
         "არსებულ ჯგუფში ჩამატება"
       ],
@@ -12508,11 +12597,26 @@
       "Create new group": [
         "ახალი ჯგუფის შექმნა"
       ],
+      "Fixed duration": [
+        "განსაზღვრული ხანგრძლივობა"
+      ],
       "Ignore group": [
         "ჯგუფის იგნორი"
       ],
       "No parent folder": [
         "მშობელი საქაღალდის გარეშე"
+      ],
+      "Permanent": [
+        "მუდმივი"
+      ],
+      "Repeat daily": [
+        "დღიურად გამეორება"
+      ],
+      "Repeat monthly": [
+        "თვეში ერთხელ გამეორება"
+      ],
+      "Repeat weekly": [
+        "ყოველკვირეულად გამეორება"
       ]
     },
     "Option group": {
@@ -12863,17 +12967,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "განახლების ფასი დამოკიდებულია გადახდის რეგიონსა და დღგ-ის ნომერზე."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - ბარათის ვადა იწურება ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "საბანკო გადარიცხვა - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - ბარათის ვადა იწურება ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
