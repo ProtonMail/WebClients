@@ -1,3 +1,4 @@
+import type { BillingAddress } from '../core/billing-address/billing-address';
 import type { PLANS } from '../core/constants';
 import type {
     Currency,
@@ -216,3 +217,37 @@ export type PaymentTelemetryContext =
     | 'account-home'
     /** Fallback for unmapped contexts */
     | 'other';
+
+/**
+ * The billing address facts reported by the initialization event.
+ *
+ * These describe what the user is shown in the billing address element when checkout opens, so they
+ * follow whatever the flow has already normalized or defaulted, not the raw API response.
+ */
+export type InitialBillingAddressTelemetryProperties = {
+    /** Country code shown initially, or null if the address has none */
+    initialCountry: string | null;
+    /** State shown initially, or null if the country has no states or none is set yet */
+    initialState: string | null;
+    /** Whether a zip code is shown initially. */
+    initialHasZipCode: boolean;
+};
+
+/**
+ * Reduces a billing address to the facts we are allowed to report.
+ *
+ * The address itself must never reach telemetry: depending on the flow it can carry the customer's
+ * name, street, city, company and zip code. Only the country, the state, and whether a zip code
+ * exists are returned, and the return type is pinned to those three fields so nothing else can be
+ * added here by accident.
+ */
+export function getInitialBillingAddressProperties(
+    billingAddress: BillingAddress
+): InitialBillingAddressTelemetryProperties {
+    // make sure to map undefined and empty strings to null
+    return {
+        initialCountry: billingAddress.CountryCode || null,
+        initialState: billingAddress.State || null,
+        initialHasZipCode: !!billingAddress.ZipCode,
+    };
+}

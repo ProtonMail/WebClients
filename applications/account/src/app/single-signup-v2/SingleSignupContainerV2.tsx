@@ -672,6 +672,7 @@ const SingleSignupContainerV2 = ({
                 product: toApp,
                 context: getTelemetryContext(session),
                 isTrial: signupTrial,
+                initialBillingAddress,
             });
 
             // TODO: How to define already paid behavior?

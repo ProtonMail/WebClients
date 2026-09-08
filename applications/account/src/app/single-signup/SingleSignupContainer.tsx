@@ -482,17 +482,19 @@ const SingleSignupContainer = ({
             const mode = getSignupMode(signupParameters.coupon, preferredCurrency);
             setModelDiff({ mode });
 
+            const billingAddress: BillingAddressExtended = {
+                ...getBillingAddressFromPaymentStatus(paymentStatus, { shouldRestoreZipCode: true }),
+                Company: signupParameters.orgName,
+                FirstName: signupParameters.firstName,
+                LastName: signupParameters.lastName,
+                Address: signupParameters.streetAddress,
+                City: signupParameters.city,
+            };
+
             const { plansMap, subscriptionData, cycleData, subscriptionDataCycleMapping } = await checkPlans({
                 plans,
                 preferredCurrency,
-                billingAddress: {
-                    ...getBillingAddressFromPaymentStatus(paymentStatus, { shouldRestoreZipCode: true }),
-                    Company: signupParameters.orgName,
-                    FirstName: signupParameters.firstName,
-                    LastName: signupParameters.lastName,
-                    Address: signupParameters.streetAddress,
-                    City: signupParameters.city,
-                },
+                billingAddress,
                 vatNumber: signupParameters.vatNumber,
             });
 
@@ -516,6 +518,7 @@ const SingleSignupContainer = ({
                 build: APP_NAME,
                 product: toApp,
                 isTrial: signupParameters.trial,
+                initialBillingAddress: billingAddress,
             });
 
             setModelDiff({
