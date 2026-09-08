@@ -1,7 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { selectContactEmails } from '@proton/mail/store/contactEmails';
-import { selectContactEmailsMap } from '@proton/mail/store/contactEmails/selector';
 import { getContactEmailKey } from '@proton/shared/lib/contacts/getContactEmailsMap';
 import type { Address } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
@@ -9,6 +7,8 @@ import { getLikelyHasKeysToReactivate } from '@proton/shared/lib/keys/getInactiv
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 
 import { selectAddresses } from '../../../addresses';
+import { selectContactEmails } from '../../../contactEmails';
+import { selectContactEmailsMap } from '../../../contactEmails/selector';
 import { selectProtonDomains } from '../../../protonDomains';
 import { getLastModifiedDate } from '../../../recovery/lastModifiedTime';
 import { selectUser } from '../../../user';

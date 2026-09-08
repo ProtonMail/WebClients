@@ -36,9 +36,9 @@ import {
     userSettingsReducer,
     welcomeFlagsReducer,
 } from '@proton/account';
+import { contactEmailsReducer } from '@proton/account/contactEmails';
 import { sessionRecoverySlice } from '@proton/account/recovery/sessionRecovery';
 import { featuresReducer } from '@proton/features';
-import { contactEmailsReducer } from '@proton/mail/store/contactEmails';
 import { contactsReducer } from '@proton/mail/store/contacts';
 import { contactReducer } from '@proton/mail/store/contacts/contactSlice';
 import { importerConfigReducer } from '@proton/mail/store/importerConfig';

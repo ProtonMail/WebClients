@@ -31,6 +31,10 @@
         "./appName": "./appName/index.ts",
         "./authenticationService": "./authenticationService/index.ts",
         "./bootstrap": "./bootstrap/index.ts",
+        "./contactEmails": "./contactEmails/index.ts",
+        "./contactEmails/getContactEmail": "./contactEmails/getContactEmail.ts",
+        "./contactEmails/hooks": "./contactEmails/hooks.ts",
+        "./contactEmails/selector": "./contactEmails/selector.ts",
         "./coreEventLoop": "./coreEventLoop/index.ts",
         "./delegatedAccess": "./delegatedAccess/index.ts",
         "./delegatedAccess/emergencyContact/EmergencyContactSection": "./delegatedAccess/emergencyContact/EmergencyContactSection.tsx",
@@ -159,7 +163,6 @@
     },
     "peerDependencies": {
         "@proton/components": "*",
-        "@proton/mail": "*",
         "@proton/payments": "*",
         "@proton/redux-shared-store": "*"
     }
