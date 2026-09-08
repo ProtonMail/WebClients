@@ -14,10 +14,10 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { getPlusServers } from '@proton/shared/lib/vpn/features';
+import { VPN_SERVERS } from '@proton/shared/lib/vpn/vpnServers';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 import isTruthy from '@proton/utils/isTruthy';
-import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
 import { getActivityLog, getRequire2FA, getSSOIntegration, getTeamPolicies } from './b2b';
 import { getCalendarAppFeature } from './calendar';

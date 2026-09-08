@@ -22,7 +22,7 @@ import { APPS, FREE_VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 import { getAutoSelectFromCountries, getCountriesWithoutPlus, getVpnDevices } from '@proton/shared/lib/vpn/features';
-import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
+import { VPN_SERVERS } from '@proton/shared/lib/vpn/vpnServers';
 
 import Time from '../../../../components/time/Time';
 import {

@@ -18,7 +18,7 @@ const mockUseSubscription = useSubscription as jest.MockedFunction<any>;
 jest.mock('@proton/unleash/useFlag');
 const mockUseFlag = useFlag as jest.MockedFunction<any>;
 
-jest.mock('@proton/vpn/constants/vpnServers', () => ({
+jest.mock('@proton/shared/lib/vpn/vpnServers', () => ({
     VPN_SERVERS: { paid: { countries: 10 } },
 }));
 
