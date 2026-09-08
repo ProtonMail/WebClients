@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import type { CardRenderer } from '@proton/components/components/lumoAgent/types';
 import { FILTER_VERSION } from '@proton/components/containers/filters/constants';
 import { IcFilter } from '@proton/icons/icons/IcFilter';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 import { FILTER_STATUS, FREE_USER_ACTIVE_FILTERS_LIMIT } from '@proton/shared/lib/constants';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 

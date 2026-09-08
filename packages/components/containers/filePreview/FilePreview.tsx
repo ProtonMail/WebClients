@@ -1,5 +1,5 @@
 import type { ReactNode, Ref } from 'react';
-import { Suspense, forwardRef, lazy, useEffect, useRef, useState } from 'react';
+import { Fragment, Suspense, forwardRef, lazy, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -27,7 +27,6 @@ import clsx from '@proton/utils/clsx';
 
 import LumoDrawerLogo from '../../components/drawer/drawerIcons/LumoDrawerLogo';
 import useFocusTrap from '../../components/focus/useFocusTrap';
-import type { LumoAgentConfig } from '../../components/lumoAgent/types';
 import useModalState from '../../components/modalTwo/useModalState';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import useBeforeUnload from '../../hooks/useBeforeUnload';
@@ -55,13 +54,6 @@ const IWADPreview = lazy(() => import(/* webpackChunkName: "iwad-preview" */ './
 
 // Lazy Loaded since it includes three.js and it's a rare file type (not common)
 const STLPreview = lazy(() => import(/* webpackChunkName: "stl-preview" */ './3DPreview/STLPreview'));
-
-// Lazy Loaded so the Lumo panel and its client stay out of the bundle until the assistant is opened
-const FilePreviewAssistant = lazy(() =>
-    import(/* webpackChunkName: "file-preview-assistant" */ './FilePreviewAssistant').then((module) => ({
-        default: module.FilePreviewAssistant,
-    }))
-);
 
 interface FilePreviewProps {
     isMetaLoading?: boolean;
@@ -104,10 +96,14 @@ interface FilePreviewProps {
     signatureStatus?: ReactNode;
     signatureConfirmation?: ReactNode;
 
-    /** Supply it to offer the Lumo assistant in a side panel; the product owns the tools and the rules. */
-    lumoConfig?: LumoAgentConfig;
-    /** Identifies the file the assistant conversation is about; changing it starts a fresh conversation. */
-    lumoConversationKey?: string;
+    /**
+     * When set, shows the Lumo assistant toggle and renders the panel via `renderPanel` once opened.
+     * The product owns the assistant config and panel contents.
+     */
+    lumoAssistant?: {
+        conversationKey?: string;
+        renderPanel: (props: { onClose: () => void }) => ReactNode;
+    };
 }
 
 export const FilePreviewContent = ({
@@ -349,8 +345,7 @@ const FilePreview = (
         onFavorite,
         isFavorite,
         date,
-        lumoConfig,
-        lumoConversationKey,
+        lumoAssistant,
     }: FilePreviewProps,
     ref: Ref<HTMLDivElement>
 ) => {
@@ -451,7 +446,7 @@ const FilePreview = (
                 isFavorite={isFavorite}
                 date={date}
                 assistantButton={
-                    lumoConfig ? (
+                    lumoAssistant ? (
                         <Tooltip title={c('Action').t`Toggle ${LUMO_SHORT_APP_NAME}`}>
                             <Button
                                 icon
@@ -509,7 +504,7 @@ const FilePreview = (
                 </div>
                 {/* Kept mounted once opened, and keyed on the file, so closing and reopening the panel
                     finds the same conversation while moving to another file starts a fresh one. */}
-                {lumoConfig && hasOpenedAssistant.current && (
+                {lumoAssistant && hasOpenedAssistant.current && (
                     <aside
                         className={clsx(
                             'shrink-0 border-left border-weak',
@@ -520,11 +515,9 @@ const FilePreview = (
                         data-testid="file-preview:assistant"
                     >
                         <Suspense fallback={null}>
-                            <FilePreviewAssistant
-                                key={lumoConversationKey}
-                                config={lumoConfig}
-                                onClose={() => setIsAssistantOpen(false)}
-                            />
+                            <Fragment key={lumoAssistant.conversationKey}>
+                                {lumoAssistant.renderPanel({ onClose: () => setIsAssistantOpen(false) })}
+                            </Fragment>
                         </Suspense>
                     </aside>
                 )}

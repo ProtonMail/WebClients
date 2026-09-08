@@ -2,7 +2,7 @@ import { createContext, useContext } from 'react';
 
 import type { ToolName as ServerToolName } from '@proton/lumo-api-client';
 
-import type { CardRenderers, LumoAgentItem, ServerToolMeta } from '../../../lumoAgent/types';
+import type { CardRenderers, LumoAgentItem, ServerToolMeta } from './types';
 
 /**
  * The conversation surface exposed by `useLumoAgent`, plus the product's render config. It bridges the

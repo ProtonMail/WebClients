@@ -13,19 +13,19 @@ import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 
-import { selectHasFocusedComposer } from '../../store/composers/composerSelectors';
-import { useMailDispatch, useMailSelector } from '../../store/hooks';
-import { selectLayoutIsExpanded } from '../../store/layout/layoutSliceSelectors';
-
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '../../constants';
 import { useOnCompose, useOnMailTo } from '../../containers/ComposeProvider';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import LumoMailProvider from '../../lumo/provider/LumoMailProvider';
+import { selectHasFocusedComposer } from '../../store/composers/composerSelectors';
+import { useMailDispatch, useMailSelector } from '../../store/hooks';
 import { layoutActions } from '../../store/layout/layoutSlice';
+import { selectLayoutIsExpanded } from '../../store/layout/layoutSliceSelectors';
 import MailQuickSettings from '../drawer/MailQuickSettings';
 import MailSidebar from '../sidebar/MailSidebar';
 
 const LazyInboxDesktopMailTop = lazy(() => import('@proton/components/containers/desktop/InboxDesktopMailTop'));
+const DrawerLumoView = lazy(() => import('@proton/llm/lib/lumoAgent/ui/DrawerLumoView'));
 
 interface Props {
     children: ReactNode;
@@ -78,6 +78,7 @@ const PrivateLayout = ({ children }: Props, ref: Ref<HTMLDivElement>) => {
                     onCompose={handleContactsCompose}
                     onMailTo={onMailTo}
                     customAppSettings={<MailQuickSettings />}
+                    lumoDrawerView={<DrawerLumoView />}
                     // when catching click action from drawer close overlay
                     onContainerClick={() => {
                         document.dispatchEvent(new CustomEvent(ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT));

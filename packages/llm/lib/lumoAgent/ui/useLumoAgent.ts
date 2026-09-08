@@ -3,12 +3,6 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
-import type { ToolDefinition, ToolImage } from '@proton/llm/lib/lumoAgent/contracts/types';
-import type { ConfirmDecision, ToolChip } from '@proton/llm/lib/lumoAgent/engine/engine';
-import { ConfirmOutcome, createClientToolExecutor } from '@proton/llm/lib/lumoAgent/engine/engine';
-import { LOAD_GUIDE_TOOL_NAME } from '@proton/llm/lib/lumoAgent/engine/loadGuide';
-import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
-import { buildSystemPrompt } from '@proton/llm/lib/lumoAgent/prompt/buildSystemPrompt';
 import type {
     ChatCompletionsFunctionTool,
     GenerationResponseMessage,
@@ -21,6 +15,12 @@ import type { WireImage } from '@proton/lumo-api-client/types-api';
 import { lumoImageMarker } from '@proton/lumo-api-client/utils';
 import type { ServerToolSource } from '@proton/lumo-ui';
 
+import type { ToolDefinition, ToolImage } from '../contracts/types';
+import type { ConfirmDecision, ToolChip } from '../engine/engine';
+import { ConfirmOutcome, createClientToolExecutor } from '../engine/engine';
+import { LOAD_GUIDE_TOOL_NAME } from '../engine/loadGuide';
+import { createReferenceRegistry } from '../engine/referenceRegistry';
+import { buildSystemPrompt } from '../prompt/buildSystemPrompt';
 import type { LumoAgentConfig, LumoAgentItem } from './types';
 import { ConfirmStatus } from './types';
 

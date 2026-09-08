@@ -1,4 +1,4 @@
-import { type ReactNode, useState } from 'react';
+import { type ReactNode, lazy, useState } from 'react';
 import { useLocation } from 'react-router-dom-v5-compat';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -15,11 +15,11 @@ import {
     useDrawer,
     useOpenDrawerOnLoad,
 } from '@proton/components';
-import useToggle from '@proton/hooks/useToggle'
 import DrawerApp from '@proton/components/components/drawer/DrawerApp';
 import LumoDrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/LumoDrawerAppButton';
 import useAllowedProducts from '@proton/components/containers/organization/accessControl/useAllowedProducts';
 import { useFlagsDriveLumo } from '@proton/drive/modules/flags';
+import useToggle from '@proton/hooks/useToggle';
 import { Product } from '@proton/shared/lib/ProductEnum';
 import { APPS } from '@proton/shared/lib/constants';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
@@ -34,6 +34,8 @@ import FileRecoveryBanner from '../ResolveLockedVolumes/LockedVolumesBanner';
 import DriveQuickSettings from '../drawer/DriveQuickSettings';
 import { getDriveDrawerPermissions } from './drawerPermissions';
 import { DriveHeaderPrivate } from './header/DriveHeaderPrivate';
+
+const DrawerLumoView = lazy(() => import('@proton/llm/lib/lumoAgent/ui/DrawerLumoView'));
 
 const DriveWindow = ({ children }: { children: ReactNode }) => {
     const location = useLocation();
@@ -103,7 +105,12 @@ const DriveWindow = ({ children }: { children: ReactNode }) => {
             top={top}
             header={header}
             sidebar={sidebar}
-            drawerApp={<DrawerApp customAppSettings={<DriveQuickSettings />} />}
+            drawerApp={
+                <DrawerApp
+                    customAppSettings={<DriveQuickSettings />}
+                    lumoDrawerView={isDriveLumoEnabled ? <DrawerLumoView /> : undefined}
+                />
+            }
         >
             <PrivateMainArea
                 drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
