@@ -339,6 +339,9 @@
       "Copy alias “${ name }”": [
         "复制别名“${ name }”"
       ],
+      "Copy debug transcript": [
+        "复制调试副本"
+      ],
       "Copy email to clipboard": [
         "复制邮箱地址"
       ],
@@ -624,6 +627,9 @@
       "Get in touch": [
         "保持联系"
       ],
+      "Get index size on disk": [
+        "获取磁盘上的索引大小"
+      ],
       "Get started": [
         "入门"
       ],
@@ -782,6 +788,9 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "加入 ${ MEET_APP_NAME }"
+      ],
+      "Keep going": [
+        "继续执行"
       ],
       "Keep inbox as before": [
         "恢复收件箱原样"
@@ -1239,6 +1248,9 @@
       "Run on ${ BRAND_NAME } servers": [
         "在 ${ BRAND_NAME } 服务器上运行"
       ],
+      "Run realistic session": [
+        "运行真实会话"
+      ],
       "Save": [
         "保存"
       ],
@@ -1460,6 +1472,9 @@
       ],
       "Stop generating result": [
         "停止生成结果"
+      ],
+      "Stop here": [
+        "在此停止"
       ],
       "Stop marking as read": [
         "停止标为已读"
@@ -1694,6 +1709,9 @@
       ],
       "Why not?": [
         "何不试试？"
+      ],
+      "Write ${ count } logs": [
+        "写入 ${ count } 条日志"
       ],
       "Write for me": [
         "为我撰写"
@@ -2703,6 +2721,15 @@
       "${ users } user": [
         "${ users } 位用户"
       ],
+      "Amount due": [
+        "应付金额"
+      ],
+      "Amount due after trial": [
+        "试用期后应付金额"
+      ],
+      "Amount due now": [
+        "当前应付金额"
+      ],
       "Subtotal": [
         "小计"
       ],
@@ -2711,6 +2738,9 @@
       ],
       "Total": [
         "总计"
+      ],
+      "Total for ${ cycle } month": [
+        "${ cycle } 月合计"
       ]
     },
     "Collapsible tooltip": {
@@ -4119,7 +4149,7 @@
         "在 ${ DRIVE_APP_NAME } 中添加文件夹和文件，并邀请团队成员查看或编辑。"
       ],
       "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
-        "随时在设置中添加或移除分类、管理通知以及调整您的配置。"
+        "您可随时在设置中添加或移除分类、管理通知，并调整各项配置。"
       ],
       "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
         "随时在设置中添加或移除分类、管理通知，或完全关闭通知。"
@@ -4219,6 +4249,9 @@
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "来自 ${ senderEmailAddress } 的新邮件将被直接删除，不再送达。"
+      ],
+      "No ads. No trackers": [
+        "无广告、无追踪"
       ],
       "No folders": [
         "无文件夹"
@@ -4825,6 +4858,9 @@
       ],
       "Could not find an available name": [
         "找不到可用的名称"
+      ],
+      "Could not grant access to the organization key": [
+        "无法授予组织密钥访问权限"
       ],
       "Could not load sharing details": [
         "无法加载共享详情"
@@ -5976,8 +6012,8 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "您有未付发票。请在加入家庭计划前支付。"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "请将您的 ${ BRAND_NAME } 账户与此家庭计划链接，共同享受所有 ${ brandOrAppName } 高级功能。"
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "您已被邀请将您的 ${ BRAND_NAME } 账户关联至此家庭组，并享受其所有高级功能。"
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "您已有的邮箱地址数量超过了此账户分配给您的邮箱地址数。${ addressSettingsLink }"
@@ -6936,11 +6972,20 @@
       "${ contactsLength } contact": [
         "${ contactsLength } 位联系人"
       ],
+      "${ count } email": [
+        "${ count } 封邮件"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } 封邮件 · ${ names }"
+      ],
       "${ count } email → ${ dest }": [
         "${ count } 封邮件 → ${ dest }"
       ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } / ${ totalProgress }"
+      ],
+      "${ dateString } at ${ formattedTime }": [
+        "${ dateString } ${ formattedTime }"
       ],
       "${ elementsCount } conversation will be labelled as:": [
         "${ elementsCount } 项会话将添加下列标签："
@@ -6984,6 +7029,9 @@
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 个群组"
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } 标记"
+      ],
       "${ issues.length } issue during import:": [
         "导入过程中出现 ${ issues.length } 个问题："
       ],
@@ -7006,7 +7054,7 @@
         "您的商务邮件也可以交由 ${ MAIL_APP_NAME } 保护。"
       ],
       "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
-        "${ MAIL_APP_NAME } 现在会自动将您的邮件归入主要、社交、促销等分类，帮助您更轻松地查找和管理邮件。"
+        "${ MAIL_APP_NAME } 现在会自动将您的邮件分类为主要、社交媒体、优惠促销等类别，帮助您更轻松地查找和管理邮件。"
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } 是一款端到端加密的视频会议解决方案。将其添加到您的套餐中即可主持安全会议。"
@@ -7016,6 +7064,9 @@
       ],
       "${ n } unread conversation": [
         "${ n } 项未读会话"
+      ],
+      "${ name } in ${ parentName }": [
+        "${ name }（位于 ${ parentName } 中）"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
         "已清理 ${ numberOfUTMTrackers } 个链接"
@@ -7281,6 +7332,9 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "任何子文件夹也将被删除。不过，储存在 ${ nameDeleted } 文件夹中的邮件不会被删除，且可以在“所有邮件”文件夹中找到。"
       ],
+      "Apply labels": [
+        "应用标签"
+      ],
       "Apply to future messages": [
         "应用于未来邮件"
       ],
@@ -7413,8 +7467,14 @@
       "Center": [
         "居中"
       ],
+      "Change display setting": [
+        "更改显示设置"
+      ],
       "Change your password": [
         "更改密码"
+      ],
+      "Checked Proton support": [
+        "已检查 Proton 支持"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "正在检查联系人 ${ progress } / ${ max }..."
@@ -7500,8 +7560,17 @@
       "Create a secure cloud for ${ memberCount } member": [
         "为 ${ memberCount } 位成员创建安全云端"
       ],
+      "Create filter": [
+        "创建筛选"
+      ],
+      "Create folder": [
+        "新建文件夹"
+      ],
       "Create in": [
         "创建于"
+      ],
+      "Create label": [
+        "新建标签"
       ],
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "我们的条款 ${ termsLink } 不允许创建多个免费账户。"
@@ -7536,6 +7605,9 @@
       "Daily": [
         "每天"
       ],
+      "Debug transcript copied": [
+        "调试副本已复制"
+      ],
       "Dedicated servers": [
         "专用服务器"
       ],
@@ -7565,6 +7637,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 图标"
+      ],
+      "Do you remember your password?": [
+        "您还记得密码吗？"
       ],
       "Do you want to download this attachment anyway?": [
         "您是否仍要下载这些附件？"
@@ -7731,6 +7806,9 @@
       "Everything in ${ planOrAppName }, plus:": [
         "包含 ${ planOrAppName } 所有功能，外加："
       ],
+      "Expand logs": [
+        "展开日志"
+      ],
       "Expand selection": [
         "展开选项"
       ],
@@ -7794,6 +7872,9 @@
       "Forgot password?": [
         "忘记密码？"
       ],
+      "Found ${ count } contact": [
+        "找到 ${ count } 联系人"
+      ],
       "Found a current encrypted search index with ${ oldIndexSize } message.": [
         "找到包含 ${ oldIndexSize } 封邮件的当前加密搜索索引。"
       ],
@@ -7842,6 +7923,9 @@
       "How hide-my-email aliases works": [
         "Hide-my-email 别名如何运作"
       ],
+      "I have not finished this one yet.": [
+        "该项尚未完成"
+      ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "我需要将此邮件发给非 ${ MAIL_APP_NAME } 邮箱用户"
       ],
@@ -7862,6 +7946,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "如果您无法访问验证器应用，可以使用设置 2FA 时提供的 16 个备用恢复码之一。${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "降级账户后您将不能再使用 ${ MAIL_APP_NAME } 和 ${ VPN_APP_NAME } 的收费功能。"
@@ -8023,10 +8110,13 @@
         "加载中..."
       ],
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
-        "日志有助于我们了解问题发生前的情况。其中包括应用操作和错误消息，但不包含消息内容。"
+        "日志帮助我们了解问题发生前的情况，包含应用操作和错误信息，但不包含消息内容。"
       ],
       "Low Priority": [
         "较低优先顺序"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "将 ${ MAIL_APP_NAME } 设为默认邮箱应用"
       ],
       "Manage your folders": [
         "管理文件夹"
@@ -8036,6 +8126,15 @@
       ],
       "Mark all as read": [
         "全部标为已读"
+      ],
+      "Mark all as unread": [
+        "全部标为未读"
+      ],
+      "Mark as read": [
+        "标为已读"
+      ],
+      "Mark as unread": [
+        "标为未读"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 图标"
@@ -8136,6 +8235,9 @@
       "No contacts added yet": [
         "尚未添加联系人"
       ],
+      "No contacts found": [
+        "未找到联系人"
+      ],
       "No conversation to read": [
         "没有已读会话"
       ],
@@ -8196,6 +8298,9 @@
       "Not connected": [
         "未连接"
       ],
+      "Not supported by this browser": [
+        "此浏览器不支持"
+      ],
       "Number of dedicated servers in the organization": [
         "组织中的专用服务器数量"
       ],
@@ -8222,6 +8327,9 @@
       ],
       "Opened ${ location }": [
         "已打开 ${ location }"
+      ],
+      "Opened a problem report": [
+        "已打开问题报告"
       ],
       "Optional": [
         "可选"
@@ -8415,6 +8523,15 @@
       "Read your ${ count } label": [
         "读取您的 ${ count } 标签"
       ],
+      "Read your auto-reply": [
+        "查看您的自动回复"
+      ],
+      "Read your display settings": [
+        "读取您的显示设置"
+      ],
+      "Read your signature": [
+        "查看您的签名"
+      ],
       "Recipient: ": [
         "收件人："
       ],
@@ -8438,6 +8555,9 @@
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "删除与此应用关联的所有数据 (包括已下载的邮件等)"
+      ],
+      "Rename folder": [
+        "重命名文件夹"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "您举报的邮件会被上传，以便我们分析并改进过滤机制。这意味着我们将能够查看邮件的完整内容。"
@@ -8499,6 +8619,9 @@
       "Searched for “${ keyword }”": [
         "已搜索“${ keyword }”"
       ],
+      "Searched the web": [
+        "已搜索网页"
+      ],
       "Searched your mail": [
         "已搜索您的邮件"
       ],
@@ -8559,6 +8682,12 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "将 ${ MAIL_APP_NAME } 设置为默认邮箱应用。当您点击邮件链接时，${ MAIL_APP_NAME } 将自动打开。"
       ],
+      "Set auto-reply": [
+        "设置自动回复"
+      ],
+      "Set signature": [
+        "设置签名"
+      ],
       "Set up your organization": [
         "设置您的组织"
       ],
@@ -8583,6 +8712,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
       ],
+      "Snooze emails": [
+        "稍后提醒"
+      ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "推迟邮件以便在您需要时将其置顶于收件箱顶部"
       ],
@@ -8606,6 +8738,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "对不起，邮件不存在或已过期。"
+      ],
+      "Star emails": [
+        "星标邮件"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "开始与联系人分享，并将其用于在线服务。"
@@ -8786,6 +8921,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "现在您的 ${ defaultEmailAddress } 将可用于发送新的电子邮件。"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "此操作步骤较多，是否继续？"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此链接指向的网站可能会窃取您的密码、信用卡等信息。"
@@ -8982,6 +9120,9 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "抢先体验尚未开放的 ${ BRAND_NAME } 新功能、新特性和新产品。此操作将导致页面重新载入。"
       ],
+      "Turn off auto-reply": [
+        "关闭自动回复"
+      ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "关闭后仅按日期、姓名、邮箱地址或主题行搜索。要禁用邮件内容搜索（并删除为启用此功能而下载的邮件），请前往设置。"
       ],
@@ -9003,11 +9144,17 @@
       "Unsaved changes": [
         "更改未保存"
       ],
+      "Unstar emails": [
+        "取消星标邮件"
+      ],
       "Unsubscribe": [
         "取消订阅"
       ],
       "Unsupported file": [
         "不支持文件"
+      ],
+      "Update filter": [
+        "更新筛选"
       ],
       "Updating message content search...": [
         "正在更新邮件内容..."
@@ -9141,6 +9288,9 @@
       "We use 3-D Secure to protect your payments": [
         "我们使用 3-D Secure 来保护您的付款"
       ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "我们将在新的浏览器标签页中重定向至 ${ IDEAL_WERO_BRAND_NAME } 以完成此交易。如果您使用了任何弹窗拦截器，请将其禁用后继续。"
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "我们将在新标签页中为您打开 PayPal 完成支付，如果您使用了弹窗屏蔽插件，请将其关闭后再继续。"
       ],
@@ -9187,13 +9337,19 @@
         "当您旅行或使用公共 WiFi 时，请连接 ${ VPN_APP_NAME } 以防止任何人跟踪您的在线活动或窃取您的数据。该服务免费。"
       ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
-        "借助新的邮件分类功能，只有重要邮件会进入主收件箱，其余邮件将自动归入相应分类。"
+        "借助全新的邮件分类功能，仅有重要邮件会进入主收件箱，其余邮件将自动归入相应分类。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想重新获取验证码还是更换验证方式？"
       ],
       "Would you like to receive a new verification code?": [
         "要重新发送验证码吗？"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "在一分钟内逐步写入 ${ REALISTIC_ENTRIES } 条真实日志条目，模拟实际会话行为，而非一次性全部写入。运行约需一分钟。请保持此标签页处于焦点状态：后台会暂停帧测量。"
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "连续写入真实日志条目，然后全部读回。展示写入和读取/导出成本如何随存储条目数量增加而变化。"
       ],
       "Writing assistant": [
         "写作助手"
@@ -9795,7 +9951,7 @@
         "${ count } 封未读邮件"
       ],
       "${ length }/${ maxLength } characters": [
-        "${ length }/${ maxLength } 字符"
+        "${ length } / ${ maxLength } 个字符"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 写作助手"
@@ -9814,6 +9970,9 @@
       ],
       "Account holder": [
         "账户持有人"
+      ],
+      "Account holder name": [
+        "账户持有人姓名"
       ],
       "Actions": [
         "操作"
@@ -9884,6 +10043,9 @@
       "Archive": [
         "归档"
       ],
+      "At": [
+        "在"
+      ],
       "Attach screenshot(s)": [
         "截图"
       ],
@@ -9892,6 +10054,9 @@
       ],
       "Automated confirmations and alerts": [
         "自动确认和提醒"
+      ],
+      "Away message": [
+        "离开邮件"
       ],
       "BCC": [
         "密送"
@@ -9919,6 +10084,9 @@
       ],
       "BTC amount": [
         "比特币金额"
+      ],
+      "Burst write": [
+        "批量写入"
       ],
       "Calendar": [
         "日历"
@@ -9971,8 +10139,17 @@
       "Colors": [
         "颜色"
       ],
+      "Column": [
+        "分列"
+      ],
+      "Comfortable": [
+        "宽松"
+      ],
       "Command line interface (CLI)": [
         "命令行界面 (CLI)"
+      ],
+      "Compact": [
+        "紧凑"
       ],
       "Company": [
         "公司"
@@ -10034,6 +10211,9 @@
       "Date:": [
         "日期："
       ],
+      "Deals, offers, and marketing emails": [
+        "优惠、促销和营销邮件"
+      ],
       "Delete": [
         "删除"
       ],
@@ -10069,6 +10249,9 @@
       ],
       "Drive": [
         "云盘"
+      ],
+      "Dropped frames": [
+        "丢帧"
       ],
       "Duration": [
         "持续时间"
@@ -10115,8 +10298,14 @@
       "Enable filter": [
         "启用筛选"
       ],
+      "Encrypt": [
+        "加密"
+      ],
       "Encrypt emails": [
         "加密电子邮件"
+      ],
+      "Entries": [
+        "条目"
       ],
       "Exact host matching": [
         "精确主机匹配"
@@ -10126,6 +10315,9 @@
       ],
       "Expires": [
         "有效期至"
+      ],
+      "Export size": [
+        "导出大小"
       ],
       "Extended address": [
         "详细地址"
@@ -10138,6 +10330,9 @@
       ],
       "Filter": [
         "筛选"
+      ],
+      "Filter name": [
+        "筛选名称"
       ],
       "Filter Name": [
         "筛选名称"
@@ -10162,6 +10357,12 @@
       ],
       "From": [
         "发件人"
+      ],
+      "From date": [
+        "起始日期"
+      ],
+      "From time": [
+        "起始时间"
       ],
       "From:": [
         "发件人："
@@ -10189,6 +10390,9 @@
       ],
       "Go to Updates": [
         "转至更新"
+      ],
+      "Grouped conversations": [
+        "按会话分组"
       ],
       "Has attachments": [
         "包含附件"
@@ -10226,6 +10430,9 @@
       "Include application logs in bug report": [
         "在问题反馈中包含应用日志"
       ],
+      "IndexedDB store": [
+        "IndexedDB 存储"
+      ],
       "Information": [
         "信息"
       ],
@@ -10250,6 +10457,9 @@
       "Label messages as": [
         "给导入的邮件加标签"
       ],
+      "Label name": [
+        "标签名称"
+      ],
       "Last 12 months only": [
         "仅过去 12 个月"
       ],
@@ -10270,6 +10480,12 @@
       ],
       "Location": [
         "位置"
+      ],
+      "Log performance": [
+        "日志性能"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "长任务（≥ 50 毫秒）"
       ],
       "Mail debugging information": [
         "邮件调试信息"
@@ -10336,6 +10552,9 @@
       ],
       "Never fill on this exact URL": [
         "绝不在此精确 URL 上填充"
+      ],
+      "New name": [
+        "新名称"
       ],
       "New password": [
         "新密码"
@@ -10437,7 +10656,7 @@
         "高级域名"
       ],
       "Primary": [
-        "基本的"
+        "主要"
       ],
       "Primary - Anything that needs your attention, plus emails from disabled categories": [
         "主要 - 所有需要您关注的内容，以及来自已禁用分类的邮件"
@@ -10459,6 +10678,12 @@
       ],
       "Read": [
         "已读"
+      ],
+      "Read / export": [
+        "读取 / 导出"
+      ],
+      "Realistic session": [
+        "真实会话"
       ],
       "Recipient": [
         "收件人"
@@ -10484,11 +10709,17 @@
       "Remove Zoom video conference": [
         "移除 Zoom 视频会议"
       ],
+      "Return on": [
+        "返回"
+      ],
       "Reveal password": [
         "显示密码"
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
+      "Row": [
+        "分行"
       ],
       "Search in": [
         "搜索范围"
@@ -10505,8 +10736,17 @@
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "通过 ${ CALENDAR_APP_NAME } 中的预约页面分享您的空闲时间，并使用 ${ MEET_APP_NAME } 主持安全会议。"
       ],
+      "Sieve script": [
+        "Sieve 脚本"
+      ],
       "Sign emails": [
         "签名电子邮件"
+      ],
+      "Signature": [
+        "落款"
+      ],
+      "Single messages": [
+        "单封邮件"
       ],
       "Size:": [
         "大小："
@@ -10562,6 +10802,9 @@
       "Subscription options": [
         "计费方式"
       ],
+      "Sum of write() calls": [
+        "write() 调用总数"
+      ],
       "Sync with system": [
         "跟随系统"
       ],
@@ -10616,6 +10859,12 @@
       "Unsubscribed from ${ truncatedName }.": [
         "已取消订阅 ${ truncatedName }"
       ],
+      "Until date": [
+        "截止日期"
+      ],
+      "Until time": [
+        "截止时间"
+      ],
       "Updates": [
         "更新"
       ],
@@ -10669,6 +10918,15 @@
       ],
       "Without attachment": [
         "不含附件"
+      ],
+      "Write": [
+        "写入"
+      ],
+      "Write (whole session)": [
+        "写入（整个会话）"
+      ],
+      "Write-chain drain after last line": [
+        "末行写入链清空"
       ],
       "Writing assistant": [
         "写作助手"
@@ -10812,6 +11070,12 @@
     "Link": {
       "Add a gift code": [
         "使用礼品码"
+      ],
+      "Add formatting, links or images": [
+        "添加格式、链接或图片"
+      ],
+      "Advanced auto-reply options": [
+        "高级自动回复选项"
       ],
       "All mail": [
         "全部邮件"
@@ -11525,6 +11789,12 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 写作助手"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手，已扩展访问权限"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手，有限访问权限"
+      ],
       "${ n } calendar": [
         "${ n } 份日历"
       ],
@@ -11998,8 +12268,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } 在${ last4 } 结束"
+      "${ Brand } ending in ${ Last4 }": [
+        "尾号 ${ Last4 } 的 ${ Brand } 卡"
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB 的云存储空间，让您轻松存储、同步和共享文件。端到端加密，安全可靠。"
@@ -12382,6 +12652,16 @@
       ],
       "Support for ${ n } custom email domain": [
         "支持 ${ n } 个自定义域"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "立即试用"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "您现在可以使用全新 ${ CALENDAR_APP_NAME }。${ link }"
       ]
     },
     "Notification": {
@@ -12802,6 +13082,99 @@
       ]
     },
     "Option": {
+      "10th of the month": [
+        "每月 10 号"
+      ],
+      "11th of the month": [
+        "每月 11 号"
+      ],
+      "12th of the month": [
+        "每月 12 号"
+      ],
+      "13th of the month": [
+        "每月 13 号"
+      ],
+      "14th of the month": [
+        "每月 14 号"
+      ],
+      "15th of the month": [
+        "每月 15 号"
+      ],
+      "16th of the month": [
+        "每月 16 号"
+      ],
+      "17th of the month": [
+        "每月 17 号"
+      ],
+      "18th of the month": [
+        "每月 18 号"
+      ],
+      "19th of the month": [
+        "每月 19 号"
+      ],
+      "1st of the month": [
+        "每月 1 号"
+      ],
+      "20th of the month": [
+        "每月 20 号"
+      ],
+      "21st of the month": [
+        "每月 21 号"
+      ],
+      "22nd of the month": [
+        "每月 22 号"
+      ],
+      "23rd of the month": [
+        "每月 23 号"
+      ],
+      "24th of the month": [
+        "每月 24 号"
+      ],
+      "25th of the month": [
+        "每月 25 号"
+      ],
+      "26th of the month": [
+        "每月 26 号"
+      ],
+      "27th of the month": [
+        "每月 27 号"
+      ],
+      "28th of the month": [
+        "每月 28 号"
+      ],
+      "29th of the month": [
+        "每月 29 号"
+      ],
+      "2nd of the month": [
+        "每月 2 号"
+      ],
+      "30th of the month": [
+        "每月 30 号"
+      ],
+      "31st of the month": [
+        "每月 31 号"
+      ],
+      "3rd of the month": [
+        "每月 3 号"
+      ],
+      "4th of the month": [
+        "每月 4 号"
+      ],
+      "5th of the month": [
+        "每月 5 号"
+      ],
+      "6th of the month": [
+        "每月 6 号"
+      ],
+      "7th of the month": [
+        "每月 7 号"
+      ],
+      "8th of the month": [
+        "每月 8 号"
+      ],
+      "9th of the month": [
+        "每月 9 号"
+      ],
       "Add to existing group": [
         "添加到已有队列"
       ],
@@ -12814,11 +13187,32 @@
       "Create new group": [
         "创建群组"
       ],
+      "Fixed duration": [
+        "固定期限"
+      ],
       "Ignore group": [
         "忽略分组"
       ],
       "No parent folder": [
         "无上层文件夹"
+      ],
+      "Permanent": [
+        "永久"
+      ],
+      "Remind me later": [
+        "稍后提醒"
+      ],
+      "Repeat daily": [
+        "每日重复"
+      ],
+      "Repeat monthly": [
+        "每月重复"
+      ],
+      "Repeat weekly": [
+        "每周重复"
+      ],
+      "Yes, don't show again": [
+        "是的，不再显示"
       ]
     },
     "Option group": {
@@ -13010,6 +13404,9 @@
       "More plans are available in other currencies": [
         "更多计划以及其他货币提供"
       ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "使用 ${ IDEAL_WERO_BRAND_NAME } 付款"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "您需要提供付款方式，以便试用期结束后激活订阅。"
       ],
@@ -13085,6 +13482,9 @@
       "You will soon be redirected to verify your payment.": [
         "您即将被重定向以验证付款"
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "您的货币已更改为欧元 (€)，因为 ${ IDEAL_WERO_BRAND_NAME } 仅支持欧元支付。"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "您的货币已更改为欧元 (€)，因为 SEPA 银行转账只支持欧元支付。"
       ],
@@ -13096,6 +13496,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "初始化 ${ IDEAL_WERO_BRAND_NAME } 失败，请稍后重试。"
+      ],
       "Invalid card number": [
         "卡号无效"
       ],
@@ -13104,6 +13507,9 @@
       ],
       "Invalid security code": [
         "无效安全码"
+      ],
+      "Please enter the account holder name": [
+        "请输入账户持有人姓名"
       ],
       "Something went wrong. Please try again later.": [
         "发生一些错误，请稍候再试。"
@@ -13120,12 +13526,22 @@
         "出错了，Google Pay 验证失败。"
       ]
     },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "确认即表示您授权 ${ BRAND_NAME } 及我们的支付服务商 Stripe 通过 SEPA 直接借记从该银行账户收取您订阅的未来款项，并授权您的银行执行这些扣款。您的首笔付款现通过 ${ IDEAL_WERO_BRAND_NAME } 完成。您的套餐将自动续订，直至您取消；我们会在每次扣款前通知您。对于直接借记扣款，根据您与银行达成的协议条款，您可在扣款日起 8 周内向银行申请退款。此规定不适用于您当前正在进行的 ${ IDEAL_WERO_BRAND_NAME } 付款。"
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "您先前套餐订阅未使用部分的抵扣金额"
       ],
       "Credits will be added to your balance": [
         "积分将添加到账户余额"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "更改账单地址可能会影响未来发票的税费！"
       ]
     },
     "Payments.ModificationWarning": {
@@ -13165,14 +13581,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - 卡号尾数为 ${ paymentMethod.Details.Last4 }"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - 尾号 ${ Last4 } 的卡片"
       ],
-      "Bank transfer - ${ details }": [
-        "银行转账 - ${ details }"
+      "Bank transfer - ${ iban }": [
+        "银行转账 - ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - 卡号末四位 ${ paymentMethod.Details.Last4 }"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - 尾号 ${ Last4 } 的卡片"
       ]
     },
     "Payments.Sepa": {
@@ -13647,6 +14063,79 @@
       ],
       "SUMMER SALE": [
         "夏季大促"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "获取优惠"
+      ],
+      "Special Offer": [
+        "超值特惠"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/月"
+      ],
+      "2 individual accounts": [
+        "2 个独立账户"
+      ],
+      "2 TB of secure storage": [
+        "2 TB 安全存储空间"
+      ],
+      "3 TB of secure storage": [
+        "3 TB 安全存储空间"
+      ],
+      "500 GB of secure storage": [
+        "500 GB 安全存储空间"
+      ],
+      "6 individual accounts": [
+        "6 个独立账户"
+      ],
+      "Advanced protection against cyber threats": [
+        "针对网络威胁的高级防护"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣基于标准月度价格。结算周期结束时，您的订阅将按标准年度费率续订。"
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ CALENDAR_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "高级版 ${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "高级版 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "年费"
+      ],
+      "One plan, full power": [
+        "一个套餐，全部功能"
+      ],
+      "One plan, max savings": [
+        "一个套餐，最大优惠"
+      ],
+      "One plan, more power": [
+        "一个套餐，更强性能"
       ]
     },
     "Received email icon": {
@@ -14211,6 +14700,11 @@
       ],
       "Private, fast, and organized": [
         "私密、快速、有序"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } 封邮件 → ${ wakeTime }"
       ]
     },
     "Snooze message": {
@@ -15631,6 +16125,9 @@
       "Apply gift code": [
         "使用礼品码"
       ],
+      "Apply labels": [
+        "应用标签"
+      ],
       "Archive all messages?": [
         "归档所有邮件？"
       ],
@@ -15688,6 +16185,9 @@
       "CC": [
         "抄送"
       ],
+      "Change display setting": [
+        "更改显示设置"
+      ],
       "Change my answer": [
         "更改我的回复"
       ],
@@ -15719,7 +16219,7 @@
         "确认收件人地址？"
       ],
       "Connect a Gmail address": [
-        "连接 Gmail 地址"
+        "关联 Gmail 地址"
       ],
       "Connect apps and devices": [
         "连接应用和设备"
@@ -15760,8 +16260,17 @@
       "Create contact": [
         "创建联系人"
       ],
+      "Create filter": [
+        "创建筛选"
+      ],
+      "Create folder": [
+        "新建文件夹"
+      ],
       "Create folder \"${ search }\"": [
         "创建文件夹“${ search }”"
+      ],
+      "Create label": [
+        "新建标签"
       ],
       "Create label \"${ search }\"": [
         "创建标签“${ search }”"
@@ -16033,6 +16542,9 @@
       "Invalid verification code": [
         "验证码无效"
       ],
+      "Keep this banner hidden?": [
+        "隐藏横幅？"
+      ],
       "Label as": [
         "标为"
       ],
@@ -16062,6 +16574,12 @@
       ],
       "Make your inbox your own": [
         "自定义您的收件箱"
+      ],
+      "Mark all as read": [
+        "全部标为已读"
+      ],
+      "Mark all as unread": [
+        "全部标为未读"
       ],
       "Mark all messages as read": [
         "将全部邮件标为已读"
@@ -16321,6 +16839,9 @@
       "Remove from list?": [
         "移出列表？"
       ],
+      "Rename folder": [
+        "重命名文件夹"
+      ],
       "Reply": [
         "回复"
       ],
@@ -16402,11 +16923,20 @@
       "Sending original message": [
         "正在发送原始邮件"
       ],
+      "September Sale": [
+        "九月特惠"
+      ],
+      "Set auto-reply": [
+        "设置自动回复"
+      ],
       "Set recovery methods": [
         "设置恢复方式"
       ],
       "Set recovery phrase": [
         "设置恢复短语"
+      ],
+      "Set signature": [
+        "设置签名"
       ],
       "Set up ${ protonDuoPlanName }": [
         "设置 ${ protonDuoPlanName }"
@@ -16444,11 +16974,17 @@
       "Snooze": [
         "延迟通知"
       ],
+      "Snooze emails": [
+        "稍后提醒"
+      ],
       "Snooze message": [
         "延迟通知"
       ],
       "Snooze:": [
         "延迟通知："
+      ],
+      "Star emails": [
+        "星标邮件"
       ],
       "Start a new import": [
         "开始导入"
@@ -16458,6 +16994,9 @@
       ],
       "Stay for 50% off your next month": [
         "下月继续享受 5 折优惠"
+      ],
+      "Still working on it": [
+        "正在处理"
       ],
       "Storage capacity warning": [
         "存储容量警告"
@@ -16498,11 +17037,17 @@
       "Trust public key?": [
         "信任公钥？"
       ],
+      "Turn off auto-reply": [
+        "关闭自动回复"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "启用 ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Two-factor authentication": [
         "双因素身份验证"
+      ],
+      "Unstar emails": [
+        "取消星标邮件"
       ],
       "Unsubscribe": [
         "取消订阅"
@@ -16515,6 +17060,9 @@
       ],
       "Unsubscribe request sent": [
         "退订请求已发送"
+      ],
+      "Update filter": [
+        "更新筛选"
       ],
       "Upgrade complete!": [
         "升级完成！"

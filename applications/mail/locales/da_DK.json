@@ -2745,6 +2745,15 @@
         "${ users } bruger",
         "${ users } brugere"
       ],
+      "Amount due": [
+        "Forfaldent beløb"
+      ],
+      "Amount due after trial": [
+        "Forfaldent beløb efter prøveperioden"
+      ],
+      "Amount due now": [
+        "Forfaldent beløb nu"
+      ],
       "Subtotal": [
         "I alt"
       ],
@@ -2754,6 +2763,10 @@
       ],
       "Total": [
         "I alt"
+      ],
+      "Total for ${ cycle } month": [
+        "I alt for ${ cycle } måned",
+        "I alt for ${ cycle } måneder"
       ]
     },
     "Collapsible tooltip": {
@@ -6053,8 +6066,8 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Du har ubetalte fakturaer. Betal dem venligst, før du tilmelder dig et familieabonnement."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Du er inviteret til at forbinde din ${ BRAND_NAME }-konto til dette familieabonnement og sammen nyde alle ${ brandOrAppName } premium-funktioner."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du er inviteret til at forbinde din ${ BRAND_NAME }-konto til denne familiegruppe og nyde alle dens premium-funktioner."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Din konto har flere e-mailadresser en det, der er tilgængeligt for dig på dette abonnement. ${ addressSettingsLink }"
@@ -7677,6 +7690,9 @@
         "Opret en sikker sky til ${ memberCount } medlem",
         "Opret en sikker sky til ${ memberCount } medlemmer"
       ],
+      "Create filter": [
+        "Opret filter"
+      ],
       "Create folder": [
         "Opret mappe"
       ],
@@ -7751,6 +7767,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
+      ],
+      "Do you remember your password?": [
+        "Kan du godt huske din adgangskode?"
       ],
       "Do you want to download this attachment anyway?": [
         "Vil du alligevel downloade denne vedhæftning?",
@@ -8142,8 +8161,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8451,6 +8469,9 @@
       "Opened ${ location }": [
         "Åbnede ${ location }"
       ],
+      "Opened a problem report": [
+        "Rapportede et problem"
+      ],
       "Optional": [
         "Valgfri"
       ],
@@ -8650,8 +8671,14 @@
         "Læs ${ count } etiket",
         "Læs dine ${ count } etiketter"
       ],
+      "Read your auto-reply": [
+        "Læs dit autosvar"
+      ],
       "Read your display settings": [
         "Læs dine visningsindstillinger"
+      ],
+      "Read your signature": [
+        "Læs din signatur"
       ],
       "Recipient: ": [
         "Modtager: "
@@ -8676,6 +8703,9 @@
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Fjerner alle tilknyttede data med denne app (inklusive hentede beskeder, ...)"
+      ],
+      "Rename folder": [
+        "Omdøb mappe"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Rapporteres en besked som et phishing-forsøg videresendes beskeden til os, så vi kan analysere den og forbedre vores filtre. Det betyder, at vi vil kunne se hele beskedindholdet."
@@ -8800,6 +8830,12 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Indstil ${ MAIL_APP_NAME } som din standard e-mail-applikation. ${ MAIL_APP_NAME } vil åbne automatisk, når du klikker på et e-mail-link."
+      ],
+      "Set auto-reply": [
+        "Indstil autosvar"
+      ],
+      "Set signature": [
+        "Indstil signatur"
       ],
       "Set up your organization": [
         "Konfigurer din organisation"
@@ -9236,6 +9272,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prøv nye ${ BRAND_NAME } funktioner, opdateringer og produkter, før de bliver frigivet til offentligheden. Dette vil genindlæse applikationen"
+      ],
+      "Turn off auto-reply": [
+        "Slå autosvar fra"
       ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "Slå fra for kun at søge efter dato, navn, e-mailadresse eller emnelinje. For at deaktivere søgning i beskedindhold (og slette beskeder downloadet for at aktivere denne funktion), skal du gå til indstillinger."
@@ -10199,6 +10238,9 @@
       "Automated confirmations and alerts": [
         "Automatiske bekræftelser og advarsler"
       ],
+      "Away message": [
+        "Ikke til stede-besked"
+      ],
       "BCC": [
         "BCC"
       ],
@@ -10499,6 +10541,12 @@
       "From": [
         "Fra"
       ],
+      "From date": [
+        "Fra dato"
+      ],
+      "From time": [
+        "Fra tid"
+      ],
       "From:": [
         "Fra:"
       ],
@@ -10688,6 +10736,9 @@
       "Never fill on this exact URL": [
         "Udfyld aldrig på denne nøjagtige URL"
       ],
+      "New name": [
+        "Nyt navn"
+      ],
       "New password": [
         "Ny adgangskode"
       ],
@@ -10874,6 +10925,9 @@
       "Sign emails": [
         "Signér e-mails"
       ],
+      "Signature": [
+        "Signatur"
+      ],
       "Single messages": [
         "Enkeltbeskeder"
       ],
@@ -10987,6 +11041,12 @@
       ],
       "Unsubscribed from ${ truncatedName }.": [
         "Afregistrer fra ${ truncatedName }"
+      ],
+      "Until date": [
+        "Indtil dato"
+      ],
+      "Until time": [
+        "Indtil tid"
       ],
       "Updates": [
         "Opdateringer"
@@ -11193,6 +11253,12 @@
     "Link": {
       "Add a gift code": [
         "Tilføj en gavekode"
+      ],
+      "Add formatting, links or images": [
+        "Tilføj formattering, links eller billeder"
+      ],
+      "Advanced auto-reply options": [
+        "Avancerede autosvar-muligheder"
       ],
       "All mail": [
         "Alle e-mails"
@@ -12426,8 +12492,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } slutter med ${ last4 }"
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand }, der slutter med ${ Last4 }"
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB lagerplads i skyen, som giver dig mulighed for nemt at gemme, synkronisere og dele filer. Sikret med end-to-end kryptering."
@@ -13244,6 +13310,99 @@
       ]
     },
     "Option": {
+      "10th of the month": [
+        "Månedligt d. 10."
+      ],
+      "11th of the month": [
+        "Månedligt d. 11."
+      ],
+      "12th of the month": [
+        "Månedligt d. 12."
+      ],
+      "13th of the month": [
+        "Månedligt d. 13."
+      ],
+      "14th of the month": [
+        "Månedligt d. 14."
+      ],
+      "15th of the month": [
+        "Den 15. i måneden"
+      ],
+      "16th of the month": [
+        "Månedligt d. 16."
+      ],
+      "17th of the month": [
+        "Månedligt d. 17."
+      ],
+      "18th of the month": [
+        "Månedligt d. 18."
+      ],
+      "19th of the month": [
+        "Månedligt d. 19."
+      ],
+      "1st of the month": [
+        "Den første i måneden"
+      ],
+      "20th of the month": [
+        "Månedligt d. 20."
+      ],
+      "21st of the month": [
+        "Månedligt d. 21."
+      ],
+      "22nd of the month": [
+        "Månedligt d. 22."
+      ],
+      "23rd of the month": [
+        "d. 23 i måneden"
+      ],
+      "24th of the month": [
+        "Månedligt d. 24."
+      ],
+      "25th of the month": [
+        "Månedligt d. 25."
+      ],
+      "26th of the month": [
+        "Månedligt d. 26."
+      ],
+      "27th of the month": [
+        "Månedligt d. 27."
+      ],
+      "28th of the month": [
+        "Månedligt d. 28."
+      ],
+      "29th of the month": [
+        "Månedligt d. 29."
+      ],
+      "2nd of the month": [
+        "Månedligt d. 2."
+      ],
+      "30th of the month": [
+        "Månedligt d. 30."
+      ],
+      "31st of the month": [
+        "Månedligt d. 31."
+      ],
+      "3rd of the month": [
+        "Månedligt d. 3."
+      ],
+      "4th of the month": [
+        "Månedligt d. 4."
+      ],
+      "5th of the month": [
+        "Månedligt d. 5."
+      ],
+      "6th of the month": [
+        "Månedligt d. 6."
+      ],
+      "7th of the month": [
+        "Månedligt d. 7."
+      ],
+      "8th of the month": [
+        "Månedligt d. 8."
+      ],
+      "9th of the month": [
+        "Månedligt d. 9."
+      ],
       "Add to existing group": [
         "Føj til eksisterende gruppe"
       ],
@@ -13256,14 +13415,29 @@
       "Create new group": [
         "Opret ny gruppe"
       ],
+      "Fixed duration": [
+        "Fast varighed"
+      ],
       "Ignore group": [
         "Ignorer gruppe"
       ],
       "No parent folder": [
         "Ingen overordnet mappe"
       ],
+      "Permanent": [
+        "Permanent"
+      ],
       "Remind me later": [
         "Påmind mig senere"
+      ],
+      "Repeat daily": [
+        "Gentag dagligt"
+      ],
+      "Repeat monthly": [
+        "Gentag månedligt"
+      ],
+      "Repeat weekly": [
+        "Gentag ugentligt"
       ],
       "Yes, don't show again": [
         "Ja, vis det ikke igen"
@@ -13600,6 +13774,11 @@
         "Kreditter vil blive tilføjet til din saldo"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Det kan påvirke afgifter på fremtidige fakturaer at ændre din faktureringsadresse."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Er du sikker på, at du vil fortsætte?"
@@ -13637,14 +13816,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - kort, der slutter på ${ paymentMethod.Details.Last4 }"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - kort, der slutter på ${ Last4 }"
       ],
-      "Bank transfer - ${ details }": [
-        "Bankoverførsel - ${ details }"
+      "Bank transfer - ${ iban }": [
+        "Bankoverførsel - ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - kort, der slutter på ${ paymentMethod.Details.Last4 }"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kort, der slutter på ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -16402,6 +16581,9 @@
       "Create contact": [
         "Opret kontakt"
       ],
+      "Create filter": [
+        "Opret filter"
+      ],
       "Create folder": [
         "Opret mappe"
       ],
@@ -16985,6 +17167,9 @@
       "Remove from list?": [
         "Fjern fra listen?"
       ],
+      "Rename folder": [
+        "Omdøb mappe"
+      ],
       "Reply": [
         "Besvar"
       ],
@@ -17069,11 +17254,17 @@
       "September Sale": [
         "Septemberudsalg"
       ],
+      "Set auto-reply": [
+        "Indstil autosvar"
+      ],
       "Set recovery methods": [
         "Indstil gendannelsesmetoder"
       ],
       "Set recovery phrase": [
         "Indstil gendannelsessætning"
+      ],
+      "Set signature": [
+        "Indstil signatur"
       ],
       "Set up ${ protonDuoPlanName }": [
         "Konfigurer ${ protonDuoPlanName }"
@@ -17174,6 +17365,9 @@
       ],
       "Trust public key?": [
         "Hav tillid til offentlig nøgle?"
+      ],
+      "Turn off auto-reply": [
+        "Slå autosvar fra"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå ${ DARK_WEB_MONITORING_NAME } til"

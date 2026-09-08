@@ -2729,6 +2729,15 @@
         "${ users } användare",
         "${ users } användare"
       ],
+      "Amount due": [
+        "Belopp att betala"
+      ],
+      "Amount due after trial": [
+        "Belopp att betala efter provperiod"
+      ],
+      "Amount due now": [
+        "Belopp att betala nu"
+      ],
       "Subtotal": [
         "Delsumma"
       ],
@@ -2738,6 +2747,10 @@
       ],
       "Total": [
         "Totalt"
+      ],
+      "Total for ${ cycle } month": [
+        "Totalt för ${ cycle } månad",
+        "Totalt för ${ cycle } månader"
       ]
     },
     "Collapsible tooltip": {
@@ -6007,9 +6020,6 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Du har obetalda fakturor. Betala dem innan du går med i ett familjepaket."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Du är inbjuden att länka ditt ${ BRAND_NAME }-konto till detta familjepaket och tillsammans njuta av alla ${ brandOrAppName } premiumfunktioner."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ditt konto har fler e-postadresser än vad som är tillgängligt för dig i detta paket. ${ addressSettingsLink }"
       ],
@@ -7533,6 +7543,9 @@
       "Center": [
         "Centrera"
       ],
+      "Change display setting": [
+        "Ändra visningsinställning"
+      ],
       "Change your password": [
         "Ändra ditt lösenord"
       ],
@@ -7693,6 +7706,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logga för Discover ProtectBuy"
+      ],
+      "Do you remember your password?": [
+        "Kommer du ihåg ditt lösenord?"
       ],
       "Do you want to download this attachment anyway?": [
         "Vill du ladda ner denna bilaga ändå?",
@@ -8081,8 +8097,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8170,6 +8185,9 @@
       ],
       "Loading...": [
         "Laddar in …"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Loggar hjälper oss att förstå vad som hände innan problemet uppstod. De inkluderar app-åtgärder och felmeddelanden, men inget meddelandeinnehåll."
       ],
       "Low Priority": [
         "Låg prioritet"
@@ -8386,6 +8404,9 @@
       ],
       "Opened ${ location }": [
         "Öppnade ${ location }"
+      ],
+      "Opened a problem report": [
+        "Öppnade en problemrapport"
       ],
       "Optional": [
         "Valfritt"
@@ -8748,6 +8769,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
+      ],
+      "Snooze emails": [
+        "Snooza e-post"
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Snooza meddelanden för senare så att de är högst upp i din inkorg när du vill"
@@ -10759,6 +10783,9 @@
       "Sign emails": [
         "Signera e-post"
       ],
+      "Signature": [
+        "Signatur"
+      ],
       "Size:": [
         "Storlek:"
       ],
@@ -12302,9 +12329,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } slutar med ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB molnlagring som låter dig enkelt lagra, synkronisera och dela filer. Säkrat med end-to-end-kryptering."
       ],
@@ -13120,6 +13144,99 @@
       ]
     },
     "Option": {
+      "10th of the month": [
+        "10:e dagen i månaden"
+      ],
+      "11th of the month": [
+        "11:e dagen i månaden"
+      ],
+      "12th of the month": [
+        "12:e dagen i månaden"
+      ],
+      "13th of the month": [
+        "13:e dagen i månaden"
+      ],
+      "14th of the month": [
+        "14:e dagen i månaden"
+      ],
+      "15th of the month": [
+        "15:e dagen i månaden"
+      ],
+      "16th of the month": [
+        "16:e dagen i månaden"
+      ],
+      "17th of the month": [
+        "17:e dagen i månaden"
+      ],
+      "18th of the month": [
+        "18:e dagen i månaden"
+      ],
+      "19th of the month": [
+        "19:e dagen i månaden"
+      ],
+      "1st of the month": [
+        "1:a dagen i månaden"
+      ],
+      "20th of the month": [
+        "20:e dagen i månaden"
+      ],
+      "21st of the month": [
+        "21:a dagen i månaden"
+      ],
+      "22nd of the month": [
+        "22:a dagen i månaden"
+      ],
+      "23rd of the month": [
+        "23:e dagen i månaden"
+      ],
+      "24th of the month": [
+        "24:e dagen i månaden"
+      ],
+      "25th of the month": [
+        "25:e dagen i månaden"
+      ],
+      "26th of the month": [
+        "26:e dagen i månaden"
+      ],
+      "27th of the month": [
+        "27:e dagen i månaden"
+      ],
+      "28th of the month": [
+        "28:e dagen i månaden"
+      ],
+      "29th of the month": [
+        "29:e dagen i månaden"
+      ],
+      "2nd of the month": [
+        "2:a dagen i månaden"
+      ],
+      "30th of the month": [
+        "30:e dagen i månaden"
+      ],
+      "31st of the month": [
+        "31:a dagen i månaden"
+      ],
+      "3rd of the month": [
+        "3:e dagen i månaden"
+      ],
+      "4th of the month": [
+        "4:e dagen i månaden"
+      ],
+      "5th of the month": [
+        "5:e dagen i månaden"
+      ],
+      "6th of the month": [
+        "6:e dagen i månaden"
+      ],
+      "7th of the month": [
+        "7:e dagen i månaden"
+      ],
+      "8th of the month": [
+        "8:e dagen i månaden"
+      ],
+      "9th of the month": [
+        "9:e dagen i månaden"
+      ],
       "Add to existing group": [
         "Lägg till i befintlig grupp"
       ],
@@ -13132,14 +13249,29 @@
       "Create new group": [
         "Skapa ny grupp"
       ],
+      "Fixed duration": [
+        "Fast varaktighet"
+      ],
       "Ignore group": [
         "Ignorera grupp"
       ],
       "No parent folder": [
         "Ingen överordnad mapp"
       ],
+      "Permanent": [
+        "Permanent"
+      ],
       "Remind me later": [
         "Påminn mig senare"
+      ],
+      "Repeat daily": [
+        "Upprepa varje dag"
+      ],
+      "Repeat monthly": [
+        "Upprepa varje månad"
+      ],
+      "Repeat weekly": [
+        "Upprepa varje vecka"
       ],
       "Yes, don't show again": [
         "Ja, visa inte igen"
@@ -13511,17 +13643,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Förnyelsepriset är beroende av faktureringsregion och momsregistreringsnummer."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - kort slutar på ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Banköverföring - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - kort slutar på ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -16192,6 +16313,9 @@
       "CC": [
         "Kopia"
       ],
+      "Change display setting": [
+        "Ändra visningsinställning"
+      ],
       "Change my answer": [
         "Ändra mitt svar"
       ],
@@ -16972,6 +17096,9 @@
       ],
       "Snooze": [
         "Snooza"
+      ],
+      "Snooze emails": [
+        "Snooza e-post"
       ],
       "Snooze message": [
         "Snooza meddelande"

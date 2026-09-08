@@ -2745,6 +2745,15 @@
         "${ users } kullanıcı",
         "${ users } kullanıcı"
       ],
+      "Amount due": [
+        "Ödenecek tutar"
+      ],
+      "Amount due after trial": [
+        "Deneme süresinden sonra ödenecek tutar"
+      ],
+      "Amount due now": [
+        "Şimdi ödenecek tutar"
+      ],
       "Subtotal": [
         "Ara toplam"
       ],
@@ -2754,6 +2763,10 @@
       ],
       "Total": [
         "Toplam"
+      ],
+      "Total for ${ cycle } month": [
+        "${ cycle } ay için toplam",
+        "${ cycle } ay için toplam"
       ]
     },
     "Collapsible tooltip": {
@@ -6053,8 +6066,8 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Ödenmemiş faturalarınız var. Bir Family tarifesine geçmeden önce lütfen onları ödeyin."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "${ BRAND_NAME } hesabınızı bu aile tarifesine bağlamaya ve birlikte ücretli tüm ${ brandOrAppName } özelliklerinin tadını çıkarmaya davet edildiniz."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "${ BRAND_NAME } hesabınızı bu aile grubuna bağlamaya ve tüm ücretli özelliklerinin tadını çıkarmaya davetlisiniz."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Hesabınızda, bu tarifede kullanabileceğinizden daha fazla e-posta adresi var. ${ addressSettingsLink }"
@@ -7677,6 +7690,9 @@
         "${ memberCount } üye için güvenli bir bulut oluşturun",
         "${ memberCount } üye için güvenli bir bulut oluşturun"
       ],
+      "Create filter": [
+        "Süzgeç oluştur"
+      ],
       "Create folder": [
         "Klasör oluştur"
       ],
@@ -7751,6 +7767,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logosu"
+      ],
+      "Do you remember your password?": [
+        "Parolanızı anımsıyor musunuz?"
       ],
       "Do you want to download this attachment anyway?": [
         "Bu ek dosyayı yine de indirmek istiyor musunuz?",
@@ -8142,8 +8161,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -8451,6 +8469,9 @@
       "Opened ${ location }": [
         "Açıldı ${ location }"
       ],
+      "Opened a problem report": [
+        "Bir sorun bildirimi yapıldı"
+      ],
       "Optional": [
         "İsteğe bağlı"
       ],
@@ -8650,8 +8671,14 @@
         "${ count } etiketinizi okuyun",
         "${ count } etiketinizi okuyun"
       ],
+      "Read your auto-reply": [
+        "Otomatik yanıtınızı okuyun"
+      ],
       "Read your display settings": [
         "Görüntü ayarlarınızı okuyun"
+      ],
+      "Read your signature": [
+        "İmzanızı okuyun"
       ],
       "Recipient: ": [
         "Alıcı: "
@@ -8676,6 +8703,9 @@
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Bu uygulama ile ilgili tüm verileri (ve indirilmiş iletileri, …) siler"
+      ],
+      "Rename folder": [
+        "Klasörü yeniden adlandır"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Bir iletiyi kimlik avı girişimi olarak bildirdiğinizde, ileti bize gönderilir. Böylece onu inceleyebilir ve süzgeçlerimizi geliştirebiliriz. Bu durum iletinin tüm içeriğini görebileceğimiz anlamına gelir."
@@ -8800,6 +8830,12 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "${ MAIL_APP_NAME } uygulamasını varsayılan e-posta uygulamanız olarak ayarlayın. Bir e-posta bağlantısına tıkladığınızda ${ MAIL_APP_NAME } otomatik olarak açılır."
+      ],
+      "Set auto-reply": [
+        "Otomatik yanıtı ayarla"
+      ],
+      "Set signature": [
+        "İmza ayarla"
       ],
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
@@ -9236,6 +9272,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Herkese açık olarak sunulmadan önce yeni ${ BRAND_NAME } özelliklerini, güncellemelerini ve ürünlerini deneyin. Uygulama yeniden yüklenir"
+      ],
+      "Turn off auto-reply": [
+        "Otomatik yanıtı kapat"
       ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "Yalnızca tarihe, ada, e-posta adresine veya konu satırına göre aramayı kapatın. İleti içeriğini aramayı kapatmak (ve bu özelliği açmak için indirilen iletileri silmek) için Ayarlar bölümüne gidin."
@@ -10199,6 +10238,9 @@
       "Automated confirmations and alerts": [
         "Otomatik onaylar ve uyarılar"
       ],
+      "Away message": [
+        "Uzakta iletisi"
+      ],
       "BCC": [
         "Gizli kopya"
       ],
@@ -10499,6 +10541,12 @@
       "From": [
         "Kimden"
       ],
+      "From date": [
+        "Başlangıç tarihi"
+      ],
+      "From time": [
+        "Başlangıç zamanı"
+      ],
       "From:": [
         "Kimden"
       ],
@@ -10688,6 +10736,9 @@
       "Never fill on this exact URL": [
         "Bu tam adres asla doldurulmasın"
       ],
+      "New name": [
+        "Yeni ad"
+      ],
       "New password": [
         "Yeni parola"
       ],
@@ -10874,6 +10925,9 @@
       "Sign emails": [
         "E-postaları imzala"
       ],
+      "Signature": [
+        "İmza"
+      ],
       "Single messages": [
         "Tekil iletiler"
       ],
@@ -10987,6 +11041,12 @@
       ],
       "Unsubscribed from ${ truncatedName }.": [
         "${ truncatedName } aboneliğinden çıkıldı."
+      ],
+      "Until date": [
+        "Bitiş tarihi"
+      ],
+      "Until time": [
+        "Bitiş zamanı"
       ],
       "Updates": [
         "Güncellemeler"
@@ -11193,6 +11253,12 @@
     "Link": {
       "Add a gift code": [
         "Bir hediye kodu ekleyin"
+      ],
+      "Add formatting, links or images": [
+        "Biçimlendirme, bağlantılar veya görseller ekleyin"
+      ],
+      "Advanced auto-reply options": [
+        "Gelişmiş otomatik yanıt seçenekleri"
       ],
       "All mail": [
         "Tüm e-postalar"
@@ -12426,8 +12492,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand }, ${ last4 } içinde sona erecek"
+      "${ Brand } ending in ${ Last4 }": [
+        "Sonu ${ Last4 } ile biten ${ Brand }"
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "Dosyalarınızı saklamak, eşitlemek ve paylaşmak için 1 TB bulut depolama alanı. Uçtan uca şifreleme ile korunur."
@@ -13244,6 +13310,99 @@
       ]
     },
     "Option": {
+      "10th of the month": [
+        "Ayın 10. günü"
+      ],
+      "11th of the month": [
+        "Ayın 11. günü"
+      ],
+      "12th of the month": [
+        "Ayın 12. günü"
+      ],
+      "13th of the month": [
+        "Ayın 13. günü"
+      ],
+      "14th of the month": [
+        "Ayın 14. günü"
+      ],
+      "15th of the month": [
+        "Ayın 15. günü"
+      ],
+      "16th of the month": [
+        "Ayın 16. günü"
+      ],
+      "17th of the month": [
+        "Ayın 17. günü"
+      ],
+      "18th of the month": [
+        "Ayın 18. günü"
+      ],
+      "19th of the month": [
+        "Ayın 19. günü"
+      ],
+      "1st of the month": [
+        "Ayın 1. günü"
+      ],
+      "20th of the month": [
+        "Ayın 20. günü"
+      ],
+      "21st of the month": [
+        "Ayın 21. günü"
+      ],
+      "22nd of the month": [
+        "Ayın 22. günü"
+      ],
+      "23rd of the month": [
+        "Ayın 23. günü"
+      ],
+      "24th of the month": [
+        "Ayın 24. günü"
+      ],
+      "25th of the month": [
+        "Ayın 25. günü"
+      ],
+      "26th of the month": [
+        "Ayın 26. günü"
+      ],
+      "27th of the month": [
+        "Ayın 27. günü"
+      ],
+      "28th of the month": [
+        "Ayın 28. günü"
+      ],
+      "29th of the month": [
+        "Ayın 29. günü"
+      ],
+      "2nd of the month": [
+        "Ayın 2. günü"
+      ],
+      "30th of the month": [
+        "Ayın 30. günü"
+      ],
+      "31st of the month": [
+        "Ayın 31. günü"
+      ],
+      "3rd of the month": [
+        "Ayın 3. günü"
+      ],
+      "4th of the month": [
+        "Ayın 4. günü"
+      ],
+      "5th of the month": [
+        "Ayın 5. günü"
+      ],
+      "6th of the month": [
+        "Ayın 6. günü"
+      ],
+      "7th of the month": [
+        "Ayın 7. günü"
+      ],
+      "8th of the month": [
+        "Ayın 8. günü"
+      ],
+      "9th of the month": [
+        "Ayın 9. günü"
+      ],
       "Add to existing group": [
         "Var olan gruba ekle"
       ],
@@ -13256,14 +13415,29 @@
       "Create new group": [
         "Yeni grup ekle"
       ],
+      "Fixed duration": [
+        "Sabit süreli"
+      ],
       "Ignore group": [
         "Grubu yok say"
       ],
       "No parent folder": [
         "Üst klasör yok"
       ],
+      "Permanent": [
+        "Kalıcı"
+      ],
       "Remind me later": [
         "Daha sonra anımsat"
+      ],
+      "Repeat daily": [
+        "Günlük yinelenen"
+      ],
+      "Repeat monthly": [
+        "Aylık yinelenen"
+      ],
+      "Repeat weekly": [
+        "Haftalık yinelensin"
       ],
       "Yes, don't show again": [
         "Evet bir daha görüntülenmesin"
@@ -13600,6 +13774,11 @@
         "Kalan kredi bakiyenize eklenecek"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Fatura adresinizi değiştirmek sonraki faturalardaki vergileri etkileyebilir."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "İlerlemek istediğinize emin misiniz?"
@@ -13637,14 +13816,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - ${ paymentMethod.Details.Last4 } ile biten kart"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - ${ Last4 } ile biten kart"
       ],
-      "Bank transfer - ${ details }": [
-        "Banka havalesi - ${ details }"
+      "Bank transfer - ${ iban }": [
+        "Banka havalesi - ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - ${ paymentMethod.Details.Last4 } ile biten kart"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - ${ Last4 } ile biten kart"
       ]
     },
     "Payments.Sepa": {
@@ -16402,6 +16581,9 @@
       "Create contact": [
         "Kişi ekle"
       ],
+      "Create filter": [
+        "Süzgeç oluştur"
+      ],
       "Create folder": [
         "Klasör oluştur"
       ],
@@ -16985,6 +17167,9 @@
       "Remove from list?": [
         "Listeden kaldırılsın mı?"
       ],
+      "Rename folder": [
+        "Klasörü yeniden adlandır"
+      ],
       "Reply": [
         "Yanıtla"
       ],
@@ -17069,11 +17254,17 @@
       "September Sale": [
         "Eylül indirimi"
       ],
+      "Set auto-reply": [
+        "Otomatik yanıtı ayarla"
+      ],
       "Set recovery methods": [
         "Kurtarma yöntemlerini ayarlayın"
       ],
       "Set recovery phrase": [
         "Kurtarma ifadesini ayarla"
+      ],
+      "Set signature": [
+        "İmza ayarla"
       ],
       "Set up ${ protonDuoPlanName }": [
         "${ protonDuoPlanName } ayarlarını yapın"
@@ -17174,6 +17365,9 @@
       ],
       "Trust public key?": [
         "Herkese açık anahtara güvenilsin mi?"
+      ],
+      "Turn off auto-reply": [
+        "Otomatik yanıtı kapat"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"
