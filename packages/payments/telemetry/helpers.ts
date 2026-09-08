@@ -30,7 +30,8 @@ function safeGetPlanNameFromIDs(planIDs: PlanIDs | null | undefined): PLANS | nu
  * before any modifications. They're used to compare against "selected*" properties
  * in telemetry events.
  *
- * @param userCurrency - The currency from the User object (fallback if no subscription)
+ * @param userCurrency - The currency from the User object. Undefined means there is no User object
+ *                       at all, so no "current*" property is applicable and every one of them is null.
  * @param subscription - The user's current subscription, or undefined/FreeSubscription for free users
  *
  * @returns Object containing:
@@ -40,14 +41,16 @@ function safeGetPlanNameFromIDs(planIDs: PlanIDs | null | undefined): PLANS | nu
  * - `currentCoupon`: Active coupon code, null if none
  *
  * @example
- * // Paid user with Mail Plus annual subscription
- * extractPropertiesFromUserAndSubscription('USD', paidSubscription)
- * // Returns: { currentCurrency: 'EUR', currentPlanIDs: { mail2022: 1 }, currentCycle: 12, currentCoupon: null }
+ * // Paid user whose Mail Plus annual subscription is billed in EUR: the subscription currency wins
+ * extractPropertiesFromUserAndSubscription('USD', eurMailPlusAnnualSubscription)
+ * // Returns: { currentCurrency: 'EUR', currentPlanIDs: { mail2022: 1 }, currentCycle: 12,
+ * //            currentCoupon: null, currentPlanName: 'mail2022' }
  *
  * @example
- * // Free user
+ * // Free user: no subscription to read, so the User currency is the fallback
  * extractPropertiesFromUserAndSubscription('USD', undefined)
- * // Returns: { currentCurrency: 'USD', currentPlanIDs: null, currentCycle: null, currentCoupon: null }
+ * // Returns: { currentCurrency: 'USD', currentPlanIDs: null, currentCycle: null,
+ * //            currentCoupon: null, currentPlanName: null }
  */
 function extractPropertiesFromUserAndSubscription(
     userCurrency: Currency | undefined,
@@ -59,6 +62,8 @@ function extractPropertiesFromUserAndSubscription(
     currentCoupon: string | null;
     currentPlanName: PLANS | null;
 } {
+    // An absent userCurrency means there is no User object, so there is no existing account state
+    // to describe. Every "current*" property is inapplicable rather than merely unknown.
     if (!userCurrency) {
         return {
             currentCurrency: null,
@@ -119,19 +124,19 @@ type TelemetryPaymentMethod = TelemetryMethodName | SavedPaymentMethods;
  * - New card → `'card'`
  * - Saved card → `'saved_card'`
  *
- * @param paymentMethodType - The plain payment method type (e.g., 'card', 'paypal')
+ * @param paymentMethodType - The plain payment method type (e.g., 'chargebee-card', 'chargebee-paypal')
  * @param paymentMethodValue - The full payment method value, used to detect if it's a saved method
  *
  * @returns Telemetry payment method string, or null if inputs are undefined
  *
  * @example
  * // New card payment
- * getTelemetryPaymentMethod({ paymentMethodType: 'card', paymentMethodValue: cardDetails })
+ * getTelemetryPaymentMethod({ paymentMethodType: 'chargebee-card', paymentMethodValue: 'chargebee-card' })
  * // Returns: 'card'
  *
  * @example
  * // Saved card payment
- * getTelemetryPaymentMethod({ paymentMethodType: 'card', paymentMethodValue: savedCardToken })
+ * getTelemetryPaymentMethod({ paymentMethodType: 'chargebee-card', paymentMethodValue: savedPaymentMethodID })
  * // Returns: 'saved_card'
  */
 export function getTelemetryPaymentMethod({
