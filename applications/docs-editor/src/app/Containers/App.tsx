@@ -44,7 +44,7 @@ import noop from '@proton/utils/noop'
 import type { EditorState, BaseSelection, SerializedLexicalNode } from 'lexical'
 import type { useBridge } from '../Lib/useBridge'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
-import { useEditorState } from './EditorStateProvider'
+import { useEditorState, useMigrationEditingLockCallback } from './EditorStateProvider'
 import { IS_CHROME } from '../Shared/environment'
 import type { SpreadsheetRef } from './Spreadsheet/Spreadsheet'
 import { $generateJSONFromSelectedNodes } from '@lexical/clipboard'
@@ -71,6 +71,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   const { suggestionsEnabled } = useSyncedState()
   const { userMode, setUserMode, editorHidden, setEditorHidden, editingLocked, setEditingLocked } =
     useStore(useEditorState())
+  const setMigrationEditingLocked = useMigrationEditingLockCallback()
 
   const [isPublicMode, setIsPublicMode] = useState(false)
   const { setTheme } = useEditorTheme()
@@ -724,6 +725,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
               editorInitializationConfig={editorInitializationConfig}
               systemMode={systemMode}
               editingLocked={editingLocked || userMode === EditorUserMode.Preview}
+              setMigrationEditingLocked={setMigrationEditingLocked}
               updateLocalStateToLog={(state) => {
                 latestSpreadsheetStateToLogRef.current = state
               }}
