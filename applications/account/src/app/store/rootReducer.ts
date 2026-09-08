@@ -8,7 +8,6 @@ import {
     memberAuthDevicesReducer,
     mspSubsidiariesReducer,
     passwordPoliciesReducer,
-    paymentMethodsReducer,
     retentionPoliciesReducer,
     safetyReviewTelemetryReducer,
     samlReducer,
@@ -27,7 +26,6 @@ import { sharedReducers } from '@proton/redux-shared-store/sharedReducers';
 export const rootReducer = combineReducers({
     ...sharedReducers,
     ...passwordPoliciesReducer,
-    ...paymentMethodsReducer,
     ...filtersReducer,
     ...incomingAddressForwardingsReducer,
     ...outgoingAddressForwardingsReducer,

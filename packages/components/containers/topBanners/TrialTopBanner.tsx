@@ -4,16 +4,19 @@ import { useLocation } from 'react-router-dom';
 import { fromUnixTime, isBefore } from 'date-fns';
 import { c } from 'ttag';
 
+import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import { useDateCountdown } from '@proton/hooks';
 import { Renew } from '@proton/payments/core/subscription/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, DAY } from '@proton/shared/lib/constants';
 
+import SettingsLink from '../../components/link/SettingsLink';
 import useModalState from '../../components/modalTwo/useModalState';
 import Time from '../../components/time/Time';
 import TimeRemaining from '../../components/timeRemaining/TimeRemaining';
@@ -23,6 +26,81 @@ import TrialCanceledModal from './TrialCanceledModal';
 import { OPEN_TRIAL_CANCELED_MODAL } from './constants';
 import LegacyReferralTopBanner from './trials/LegacyReferralTopBanner';
 import ReferralTopBanner from './trials/ReferralTopBanner';
+
+const WARNING_CARDLESS_TRIAL_THRESHOLD_DAYS = 7;
+const DANGER_CARDLESS_TRIAL_THRESHOLD_DAYS = 3;
+
+interface B2BTrialBannerProps {
+    trialEndsOn: number;
+    timeRemaining: ReactNode;
+    onClose: () => void;
+    onLearnMore: () => void;
+}
+
+const LearnMoreLink = ({ onLearnMore }: { onLearnMore: () => void }) => (
+    <InlineLinkButton onClick={onLearnMore}>{c('Action').t`Learn more`}</InlineLinkButton>
+);
+
+const CardlessTopBanner = ({ trialEndsOn, timeRemaining, onClose, onLearnMore }: B2BTrialBannerProps) => {
+    const addPaymentMethodLink = (
+        <SettingsLink key="add-payment-method" className="color-inherit" path="/dashboard#payment-methods">
+            {c('Action').t`Add a payment method`}
+        </SettingsLink>
+    );
+    const learnMoreLink = <LearnMoreLink key="learn-more" onLearnMore={onLearnMore} />;
+    const { diff } = useDateCountdown(fromUnixTime(trialEndsOn));
+    const daysRemaining = Math.round(diff / DAY); // same rounding logic as TimeRemaining component
+
+    if (daysRemaining <= DANGER_CARDLESS_TRIAL_THRESHOLD_DAYS) {
+        return (
+            <TopBanner onClose={onClose} className="bg-danger">
+                {c('Info')
+                    .jt`${timeRemaining} left in your trial. ${addPaymentMethodLink} to avoid losing access. ${learnMoreLink}`}
+            </TopBanner>
+        );
+    }
+
+    const className = daysRemaining <= WARNING_CARDLESS_TRIAL_THRESHOLD_DAYS ? 'bg-warning' : 'bg-info';
+
+    return (
+        <TopBanner onClose={onClose} className={className}>
+            {c('Info')
+                .jt`${timeRemaining} left in your trial. ${addPaymentMethodLink} to keep your subscription. ${learnMoreLink}`}
+        </TopBanner>
+    );
+};
+
+const CardfulTopBanner = ({ trialEndsOn, timeRemaining, onClose, onLearnMore }: B2BTrialBannerProps) => {
+    const trialEndsOnFormatted = <Time key="trial-end">{trialEndsOn}</Time>;
+
+    return (
+        <TopBanner onClose={onClose} className="bg-info">
+            <span className="mr-1">{c('Info').jt`Your trial will end in ${timeRemaining}.`}</span>
+            <span className="mr-1">{c('Info')
+                .jt`You won't be charged if you cancel before ${trialEndsOnFormatted}.`}</span>
+            <LearnMoreLink onLearnMore={onLearnMore} />
+        </TopBanner>
+    );
+};
+
+const B2BTrialBanner = ({ trialEndsOn, onClose, onLearnMore, timeRemaining }: B2BTrialBannerProps) => {
+    const [paymentMethods, loadingPaymentMethods] = usePaymentMethods();
+
+    if (loadingPaymentMethods) {
+        return null;
+    }
+
+    const B2BTrialBannerVariant = paymentMethods?.length ? CardfulTopBanner : CardlessTopBanner;
+
+    return (
+        <B2BTrialBannerVariant
+            trialEndsOn={trialEndsOn}
+            timeRemaining={timeRemaining}
+            onClose={onClose}
+            onLearnMore={onLearnMore}
+        />
+    );
+};
 
 const B2BTrialTopBanner = ({ subscription }: { subscription: Subscription }) => {
     const [closed, setClosed] = useState<boolean>(false);
@@ -48,20 +126,15 @@ const B2BTrialTopBanner = ({ subscription }: { subscription: Subscription }) => 
         return null;
     }
 
-    const timeRemaining = <TimeRemaining expiry={trialEndsOn} key="trial-remaining" />;
-    const trialEndsOnFormatted = <Time key="trial-end">{trialEndsOn}</Time>;
-
     return (
         <>
             {renderModal && <LearnMoreModal {...modalProps} />}
-            <TopBanner onClose={() => setClosed(true)} className="bg-info">
-                <span className="mr-1">{c('Info').jt`Your trial will end in ${timeRemaining}.`}</span>
-                <span className="mr-1">{c('Info')
-                    .jt`You won't be charged if you cancel before ${trialEndsOnFormatted}.`}</span>
-                <InlineLinkButton key="cancel-trial" onClick={() => setModal(true)}>
-                    {c('Action').t`Learn more`}
-                </InlineLinkButton>
-            </TopBanner>
+            <B2BTrialBanner
+                trialEndsOn={trialEndsOn}
+                timeRemaining={<TimeRemaining expiry={trialEndsOn} key="trial-remaining" />}
+                onClose={() => setClosed(true)}
+                onLearnMore={() => setModal(true)}
+            />
         </>
     );
 };
