@@ -18,7 +18,6 @@ import useOnline from '@proton/components/hooks/useOnline';
 import { usePreventWasmLoading } from '@proton/components/hooks/usePreventWasmLoading.ts';
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
 import { logger } from '@proton/logger';
-import { useInboxDesktopHeartbeat } from '@proton/shared/lib/desktop/heartbeat';
 
 import { ROUTE_MAIN } from './constants';
 import { CheckAllRefProvider } from './containers/CheckAllRefProvider';
@@ -27,6 +26,7 @@ import EncryptedSearchProvider from './containers/EncryptedSearchProvider';
 import { GlobalModalProvider } from './containers/globalModals/GlobalModalProvider';
 import ChecklistsProvider from './containers/onboardingChecklist/provider/ChecklistsProvider';
 import { MailContentRefProvider } from './hooks/useClickMailContent';
+import { useInboxDesktopHeartbeat } from './hooks/useInboxDesktopHeartbeat';
 import MailAppShell from './router/MailAppShell';
 import { extraThunkArguments } from './store/thunk';
 
