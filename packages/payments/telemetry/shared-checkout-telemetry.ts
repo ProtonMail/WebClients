@@ -272,17 +272,19 @@ type ChangeBillingCountryTelemetryPayload = {
     currentState: string | null;
     /** State/province after change */
     selectedState: string | null;
-    /** What was changed: country or state */
-    action: 'change_country' | 'change_state';
+    /** What was changed: country, state or zip code */
+    action: 'change_country' | 'change_state' | 'change_zip_code';
 };
 
 /** Event name mapping for billing country change events */
 export const CHANGE_BILLING_COUNTRY_CONTEXT_MAPPING = getMapping('change_billing_country');
 
 /**
- * Reports when user changes billing country or state.
+ * Reports when user changes billing country, state or zip code.
  *
- * **When to call:** When billing country or state input changes.
+ * **When to call:** When the billing country or state input changes, or when a zip code edit is
+ * complete enough to refresh the subscription estimation. The zip code itself is never reported -
+ * only the fact that it changed.
  * **Purpose:** Track geographic distribution and tax-related user behavior.
  *
  * @param payload - Country/state change details
