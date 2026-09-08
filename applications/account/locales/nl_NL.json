@@ -3391,6 +3391,15 @@
         "${ users } gebruiker",
         "${ users } gebruikers"
       ],
+      "Amount due": [
+        "Verschuldigd bedrag"
+      ],
+      "Amount due after trial": [
+        "Verschuldigd bedrag na proefperiode"
+      ],
+      "Amount due now": [
+        "Nu verschuldigd bedrag"
+      ],
       "Started ${ formattedStartDate }": [
         "Gestart op ${ formattedStartDate }"
       ],
@@ -3409,6 +3418,10 @@
       ],
       "Total": [
         "Totaal"
+      ],
+      "Total for ${ cycle } month": [
+        "Totaal voor ${ cycle } maand",
+        "Totaal voor ${ cycle } maanden"
       ]
     },
     "Collapsible tooltip": {
@@ -6419,6 +6432,9 @@
       "Enable auto-renew": [
         "Automatisch verlengen activeren"
       ],
+      "Enter your extra password": [
+        "Voer uw extra wachtwoord in"
+      ],
       "Explore plans": [
         "Verken abonnementen"
       ],
@@ -6597,6 +6613,9 @@
       ],
       "Unable to recover data": [
         "Kan gegevens niet herstellen"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Ontgrendel ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "Upgraden"
@@ -8211,8 +8230,8 @@
       "You're invited to join ${ invite.OrganizationName }": [
         "U bent uitgenodigd u aan te sluiten bij ${ invite.OrganizationName }"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "U bent uitgenodigd om uw ${ BRAND_NAME } account te linken aan dit familieplan en samen te genieten van de premiumfuncties van ${ brandOrAppName }."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "U wordt uitgenodigd om uw ${ BRAND_NAME }-account aan deze gezinsgroep te koppelen en van alle premiumfuncties te genieten."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Uw account heeft meer e-mailadressen dan is toegestaan in dit abonnement. ${ addressSettingsLink }"
@@ -10754,6 +10773,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Vergeet dit wachtwoord NIET. Als u het vergeet, kan u uw organisatie niet meer beheren."
       ],
+      "Do you remember your password?": [
+        "Weet u uw wachtwoord nog?"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Wilt u alle andere sessies intrekken behalve de huidige?"
       ],
@@ -12418,9 +12440,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Abonnement eindigt: Om uw ${ planName }-voordelen te behouden, kunt u uw abonnement herstarten in de Google Play Store vóór ${ byDate }. ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "Uw abonnement start op ${ startsOnTime }"
-      ],
       "Summary": [
         "Overzicht"
       ],
@@ -12861,9 +12880,6 @@
       ],
       "Total: ${ totalPrice }": [
         "Totaal: ${ totalPrice }"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "Proefversie eindigt op ${ formattedPeriodEndDate }"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Probeer ${ productName } volledig risicoloos - als u om een andere reden van gedachten verandert, krijgt u een volledige terugbetaling. Zonder vragen."
@@ -14340,8 +14356,8 @@
       "Account holder": [
         "Rekeninghouder"
       ],
-      "Account holder: ${ sepaDetails.AccountName }": [
-        "Rekeninghouder: ${ sepaDetails.AccountName }"
+      "Account holder name": [
+        "Naam van de rekeninghouder"
       ],
       "Account storage": [
         "Opslagruimte account"
@@ -17898,9 +17914,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } eindigend met ${ last4 }"
-      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "Met ${ BRAND_NAME } kunt u e-mailadressen maken en accounts beheren voor subgebruikers. Ideaal voor gezinnen en organisaties."
       ],
@@ -18440,7 +18453,7 @@
     },
     "ngc_access_banner: info": {
       "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
-        "U hebt nu toegang tot de nieuwe ${ CALENDAR_APP_NAME }. ${ link }"
+        "U heeft nu toegang tot de nieuwe ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     },
     "Notification": {
@@ -20033,17 +20046,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT-nummer."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - kaart eindigend op ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Bankoverschrijving - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - kaart eindigend op ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

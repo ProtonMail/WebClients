@@ -1097,6 +1097,9 @@
       "Got it": [
         "J'ai compris"
       ],
+      "Grant access": [
+        "Autoriser l'accès"
+      ],
       "Group owner": [
         "Propriétaire du groupe"
       ],
@@ -2545,6 +2548,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "Active until ${ formattedPeriodEndDate }": [
+        "Actif jusqu'au ${ formattedPeriodEndDate }"
+      ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Une fois la période d'essai terminée le ${ formattedDate1 }, l'abonnement deviendra payant et se renouvellera automatiquement tous les ${ renewCycle } mois. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate2 }."
       ],
@@ -2568,6 +2574,9 @@
       ],
       "Try it free for ${ TRIAL_DURATION_DAYS } days": [
         "Essayez-le gratuitement pendant ${ TRIAL_DURATION_DAYS } jours"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period.": [
+        "Lorsque vous annulez, votre essai gratuit ne sera pas converti en abonnement payant, mais vous pourrez toujours profiter des avantages de l'abonnement jusqu'à la fin de la période d'essai."
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Lorsque vous annulez, votre essai gratuit ne sera pas converti en abonnement payant, mais vous pourrez toujours profiter des avantages de l'abonnement jusqu'à la fin de la période d'essai. Après cela, vous passerez à un abonnement ${ BRAND_NAME } Free."
@@ -3569,6 +3578,18 @@
         "${ users } utilisateur",
         "${ users } utilisateurs"
       ],
+      "Amount due": [
+        "Montant dû"
+      ],
+      "Amount due after trial": [
+        "Montant dû après la période d'essai"
+      ],
+      "Amount due now": [
+        "Montant dû maintenant"
+      ],
+      "month": [
+        "mois"
+      ],
       "Started ${ formattedStartDate }": [
         "Commencé le ${ formattedStartDate }"
       ],
@@ -3585,8 +3606,15 @@
         "Sous-total pour ${ cycle } mois",
         "Sous-total pour ${ cycle } mois"
       ],
+      "Summary": [
+        "Résumé"
+      ],
       "Total": [
         "Total"
+      ],
+      "Total for ${ cycle } month": [
+        "Total pour ${ cycle } mois",
+        "Total pour ${ cycle } mois"
       ]
     },
     "Collapsible tooltip": {
@@ -8336,8 +8364,8 @@
       "You're invited to join ${ invite.OrganizationName }": [
         "Vous êtes invitée à rejoindre ${ invite.OrganizationName }."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Vous avez une invitation pour lier votre compte ${ BRAND_NAME } à cet abonnement familial pour profiter tous ensemble des fonctionnalités premium de ${ brandOrAppName }."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Vous avez une invitation pour lier votre compte ${ BRAND_NAME } à ce groupe familial et à profiter de toutes ses fonctionnalités premium."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Le nombre d'adresses e-mail de votre compte dépasse celui prévu avec cet abonnement. ${ addressSettingsLink }"
@@ -10926,6 +10954,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "N'oubliez PAS ce mot de passe. Si vous l'oubliez, vous ne pourrez plus gérer votre organisation."
       ],
+      "Do you remember your password?": [
+        "Vous souvenez-vous de votre mot de passe ?"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Voulez-vous révoquer toutes les autres sessions à l'exception de celle qui est en cours ?"
       ],
@@ -11995,6 +12026,9 @@
       "On": [
         "Activé"
       ],
+      "On ${ formattedPeriodEndDate }, your free trial ends and your paid plan starts.": [
+        "Le ${ formattedPeriodEndDate }, votre période d'essai gratuite prendra fin et votre abonnement payant commencera."
+      ],
       "On Ubuntu?": [
         "Sous Ubuntu ?"
       ],
@@ -12632,9 +12666,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Fin de l'abonnement : Pour conserver les avantages de votre ${ planName }, veuillez renouveler votre abonnement dans le Google Play Store avant le ${ byDate }. ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "Votre abonnement commence le ${ startsOnTime }"
-      ],
       "Summary": [
         "Résumé"
       ],
@@ -13064,9 +13095,6 @@
       ],
       "Total: ${ totalPrice }": [
         "Total : ${ totalPrice }"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "La version d'essai se termine le ${ formattedPeriodEndDate }"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Essayez ${ productName } en toute tranquillité. Si pour une raison quelconque vous changez d'avis, vous recevrez un remboursement complet. Aucune question ne vous sera posée."
@@ -14585,8 +14613,8 @@
       "Account holder name": [
         "Nom du titulaire du compte"
       ],
-      "Account holder: ${ sepaDetails.AccountName }": [
-        "Titulaire du compte : ${ sepaDetails.AccountName }"
+      "Account holder: ${ details.AccountName }": [
+        "Titulaire du compte : ${ details.AccountName }"
       ],
       "Account storage": [
         "Espace de stockage du compte"
@@ -18199,8 +18227,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } se terminant par ${ last4 }"
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } se terminant par ${ Last4 }"
       ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } vous permet de créer des adresses e-mail et de gérer les comptes utilisateurs de votre organisation. Idéal pour les familles et les entreprises."
@@ -20331,6 +20359,11 @@
         "Les crédits seront ajoutés à votre solde."
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "La modification de votre adresse de facturation peut avoir une incidence sur les taxes figurant sur vos prochaines factures."
+      ]
+    },
     "Payments.Lifetime Subscription": {
       "Lifetime accounts can be transferred or sold": [
         "Les comptes à vie peuvent être transférés ou vendus"
@@ -20381,14 +20414,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - carte se terminant par les chiffres ${ paymentMethod.Details.Last4 }"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - carte se terminant par les chiffres ${ Last4 }"
       ],
-      "Bank transfer - ${ details }": [
-        "Virement bancaire - ${ details }"
+      "Bank transfer - ${ iban }": [
+        "Virement bancaire - ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - carte se terminant par les chiffres ${ paymentMethod.Details.Last4 }"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - carte se terminant par les chiffres ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -23873,6 +23906,9 @@
       "Authenticate": [
         "S'authentifier"
       ],
+      "Grant access": [
+        "Autoriser l'accès"
+      ],
       "Install migration app": [
         "Installer l'application de migration"
       ],
@@ -26219,6 +26255,9 @@
       ],
       "Gift code": [
         "Code-cadeau"
+      ],
+      "Grant access": [
+        "Autoriser l'accès"
       ],
       "Group": [
         "Groupe"

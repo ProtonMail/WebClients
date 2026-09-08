@@ -1280,6 +1280,9 @@
       "Got it": [
         "Anladım"
       ],
+      "Grant access": [
+        "Erişme izni ver"
+      ],
       "Group owner": [
         "Grup sahibi"
       ],
@@ -2746,6 +2749,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "Active until ${ formattedPeriodEndDate }": [
+        "${ formattedPeriodEndDate } tarihine kadar kullanılabilir"
+      ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Deneme süresi ${ formattedDate1 } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve her ${ renewCycle } ayda bir otomatik olarak yenilenir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
@@ -2769,6 +2775,9 @@
       ],
       "Try it free for ${ TRIAL_DURATION_DAYS } days": [
         "${ TRIAL_DURATION_DAYS } gün süreyle ücretsiz deneme"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period.": [
+        "İptal ettiğinizde, ücretsiz deneme süreniz ücretli aboneliğe dönüştürülmez. Ancak deneme süresinin sonuna kadar tarifenizdeki özellikleri kullanmayı sürdürebilirsiniz."
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "İptal ettiğinizde, ücretsiz deneme süreniz ücretli aboneliğe dönüştürülmez. Ancak deneme süresinin sonuna kadar tarifenizdeki özellikleri kullanmayı sürdürebilirsiniz. Bundan sonra, ${ BRAND_NAME } Free tarifesine düşürüleceksiniz."
@@ -3770,6 +3779,18 @@
         "${ users } kullanıcı",
         "${ users } kullanıcı"
       ],
+      "Amount due": [
+        "Ödenecek tutar"
+      ],
+      "Amount due after trial": [
+        "Deneme süresinden sonra ödenecek tutar"
+      ],
+      "Amount due now": [
+        "Şimdi ödenecek tutar"
+      ],
+      "month": [
+        "ay"
+      ],
       "Started ${ formattedStartDate }": [
         "${ formattedStartDate } tarihinde başlatıldı"
       ],
@@ -3786,8 +3807,15 @@
         "${ cycle } aylık ara toplam",
         "${ cycle } aylık ara toplam"
       ],
+      "Summary": [
+        "Özet"
+      ],
       "Total": [
         "Toplam"
+      ],
+      "Total for ${ cycle } month": [
+        "${ cycle } ay için toplam",
+        "${ cycle } ay için toplam"
       ]
     },
     "Collapsible tooltip": {
@@ -8645,8 +8673,8 @@
       "You're invited to join ${ invite.OrganizationName }": [
         "${ invite.OrganizationName } grubuna katılmaya davet edildiniz"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "${ BRAND_NAME } hesabınızı bu aile tarifesine bağlamaya ve birlikte ücretli tüm ${ brandOrAppName } özelliklerinin tadını çıkarmaya davet edildiniz."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "${ BRAND_NAME } hesabınızı bu aile grubuna bağlamaya ve tüm ücretli özelliklerinin tadını çıkarmaya davetlisiniz."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Hesabınızda, bu tarifede kullanabileceğinizden daha fazla e-posta adresi var. ${ addressSettingsLink }"
@@ -11317,6 +11345,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Bu parolayı UNUTMAYIN. Unutursanız, kuruluşunuzu yönetemezsiniz."
       ],
+      "Do you remember your password?": [
+        "Parolanızı anımsıyor musunuz?"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Geçerli oturum dışındaki diğer tüm oturumları kapatmak istiyor musunuz?"
       ],
@@ -11743,6 +11774,9 @@
       ],
       "Get VPN Plus": [
         "VPN Plus edinin"
+      ],
+      "Give ${ BRAND_NAME } permissions to import your ${ providerName } data.": [
+        "${ providerName } verilerinizi içe aktarmak için ${ BRAND_NAME } izinlerini verin."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Kod için, kullanmayı düşündüğünüz hizmet gibi açıklayıcı bir ad yazın ve etkin özel etki alanı adreslerinizden birini seçin. Bu kod ile yalnızca bu adres e-posta gönderebilir."
@@ -12410,6 +12444,9 @@
       "On": [
         "Açık"
       ],
+      "On ${ formattedPeriodEndDate }, your free trial ends and your paid plan starts.": [
+        "${ formattedPeriodEndDate } tarihinde ücretsiz deneme süreniz sona erecek ve ücretli tarifeniz başlayacak."
+      ],
       "On Ubuntu?": [
         "Ubuntu üzerinde misiniz?"
       ],
@@ -13053,9 +13090,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Abonelik sona eriyor: ${ planName } avantajlarınızı sürdürmek için, aboneliğinizi Google Play Store üzerinden ${ byDate } tarihine kadar yeniden başlatın. ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "Abonelik ${ startsOnTime } zamanında başlar"
-      ],
       "Summary": [
         "Özet"
       ],
@@ -13506,9 +13540,6 @@
       ],
       "Total: ${ totalPrice }": [
         "Toplam: ${ totalPrice }"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "Deneme süresi ${ formattedPeriodEndDate } tarihinde sona eriyor"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "${ productName } uygulamasını risk almadan deneyin. Herhangi bir nedenle fikrinizi değiştirirseniz tam geri ödeme alabilirsiniz. Herhangi bir soru sorulmaz."
@@ -15050,8 +15081,8 @@
       "Account holder name": [
         "Hesap sahibinin adı"
       ],
-      "Account holder: ${ sepaDetails.AccountName }": [
-        "Hesap sahibi: ${ sepaDetails.AccountName }"
+      "Account holder: ${ details.AccountName }": [
+        "Hesap sahibi: ${ details.AccountName }"
       ],
       "Account storage": [
         "Hesap depolama alanı"
@@ -18697,8 +18728,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand }, ${ last4 } içinde sona erecek"
+      "${ Brand } ending in ${ Last4 }": [
+        "Sonu ${ Last4 } ile biten ${ Brand }"
       ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } alt kullanıcı hesapları ve e-posta adresleri ekleyerek yönetmenizi sağlar. Aile ve kuruluşlar için idealdir."
@@ -20917,6 +20948,11 @@
         "Kalan kredi bakiyenize eklenecek"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Fatura adresinizi değiştirmek sonraki faturalardaki vergileri etkileyebilir."
+      ]
+    },
     "Payments.Lifetime Subscription": {
       "Lifetime accounts can be transferred or sold": [
         "Lifetime hesapları devredilebilir veya satılabilir"
@@ -20967,14 +21003,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - ${ paymentMethod.Details.Last4 } ile biten kart"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - ${ Last4 } ile biten kart"
       ],
-      "Bank transfer - ${ details }": [
-        "Banka havalesi - ${ details }"
+      "Bank transfer - ${ iban }": [
+        "Banka havalesi - ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - ${ paymentMethod.Details.Last4 } ile biten kart"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - ${ Last4 } ile biten kart"
       ]
     },
     "Payments.Sepa": {
@@ -24501,6 +24537,9 @@
       "Final step": [
         "Son adım"
       ],
+      "Grant access": [
+        "Erişme izni ver"
+      ],
       "Install migration app": [
         "Aktarım uygulamasını kurun"
       ],
@@ -26877,6 +26916,9 @@
       ],
       "Going private": [
         "Gizliliğe geçiliyor"
+      ],
+      "Grant access": [
+        "Erişme izni ver"
       ],
       "Group": [
         "Grup"
@@ -29275,6 +29317,9 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "DNS yapılandırmanızda bir sorun bulduk. Lütfen kayıtlarınızın aşağıdaki yönergelere uygun olduğundan emin olun. Sorun sürerse, DKIM imzalamayı kapatmamız gerekecek."
+      ],
+      "We were unable to verify access, please check that you have granted access in your ${ providerName } account and try again.": [
+        "Erişim doğrulanamadı. Lütfen ${ providerName } hesabınıza erişim izni verdiğinizi denetleyip yeniden deneyin."
       ],
       "We were unable to verify the installation, please check that you have installed it in your ${ providerName } account and try again.": [
         "Kurulum doğrulanamadı. Lütfen ${ providerName } hesabınız ile kurduğunuzdan emin olun ve yeniden deneyin."

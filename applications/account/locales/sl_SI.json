@@ -607,6 +607,9 @@
       "Continue to ${ planOrAppName }": [
         "Nadaljuj v ${ planOrAppName }"
       ],
+      "Continue to sign in": [
+        "Nadaljuj za prijavo"
+      ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Nadaljujte z računom ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
@@ -6644,9 +6647,6 @@
       "You will lose access to all premium features included with ${ planName }.": [
         "Izgubili boste dostop do vseh premijskih funkcij, ki so del paketa ${ planName }."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Povabljeni ste, da povežete svoj ${ BRAND_NAME } račun s tem družinskim paketom in skupaj uživate v vseh premijskih funkcijah ${ brandOrAppName }."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Vaš račun ima več naslovov e-pošte, ko jih je na voljo za ta paket. ${ addressSettingsLink }"
       ],
@@ -10126,6 +10126,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Za potrditev vnesite ime uporabnika, katerega želite izbrisati."
       ],
+      "To continue to ${ product }": [
+        "za nadaljevanje v ${ product }"
+      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Z namenom nenehnega izboljševanja naših storitev včasih zbiramo podatke za spremljanje pravilnega delovanja naših aplikacij. Te informacije ne delimo s tretjimi osebami."
       ],
@@ -11283,9 +11286,6 @@
       ],
       "Account holder name": [
         "Ime imetnika računa"
-      ],
-      "Account holder: ${ sepaDetails.AccountName }": [
-        "Imetnik računa: ${ sepaDetails.AccountName }"
       ],
       "Account storage": [
         "Shramba računa"
@@ -14110,9 +14110,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand }, ki se konča z ${ last4 }"
-      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } vam omogoča odprtje e-poštnih naslovov in upravljanje računov za podrejene uporabnike. Idealno za družine in organizacije."
       ],
@@ -15941,11 +15938,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Cena obnove je odvisna od regije obračuna in DDV številke."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - kartica, ki se konča z ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -18562,6 +18554,9 @@
       ],
       "Yearly free storage bonuses": [
         "Letni bonusi za prostor za shranjevanje"
+      ],
+      "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
+        "Prednosti vašega trenutnega paketa lahko še naprej uporabljate do ${ boldedDate }."
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "Na paketu ${ planName } vam je preostalo še ${ expiryDate }. Dobroimetje za preostali čas bomo dodali na vaš račun ${ BRAND_NAME }. Pred preklicem naročnine se prepričajte, da niste presegli omejitev brezplačne naročnine. ${ learnMoreLink }"
