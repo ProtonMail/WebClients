@@ -7,15 +7,13 @@ const hooks = createHooks(entitlementsThunk, selectEntitlements);
 /**
  * Raw Redux hook — returns all entitlements and their loading state.
  *
- * For most use cases, prefer the higher-level hooks in `@proton/payments-ui/entitlements/hooks`:
- * - `useEntitlements()` — returns an EntitlementResolver with reactive updates
+ * For entitlement checks in UI, use `createEntitlementResolver` from `@proton/payments/core/entitlements/resolver`.
  */
 export const useAllEntitlements = hooks.useValue;
 
 /**
  * Raw Redux hook — returns a function that lazily fetches all entitlements.
  *
- * For most use cases, prefer the higher-level hooks in `@proton/payments-ui/entitlements/hooks`:
- * - `useGetEntitlements()` — returns a lazy getter that resolves an EntitlementResolver
+ * For lazy entitlement resolution, compose with `createEntitlementResolver` from `@proton/payments/core/entitlements/resolver`.
  */
 export const useGetAllEntitlements = hooks.useGet;
