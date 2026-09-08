@@ -1280,6 +1280,9 @@
       "Got it": [
         "Am înțeles"
       ],
+      "Grant access": [
+        "Aprobare acces"
+      ],
       "Group owner": [
         "Proprietar grup"
       ],
@@ -2758,6 +2761,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "Active until ${ formattedPeriodEndDate }": [
+        "Activ până la ${ formattedPeriodEndDate }"
+      ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "După ce perioada de evaluare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
       ],
@@ -2781,6 +2787,9 @@
       ],
       "Try it free for ${ TRIAL_DURATION_DAYS } days": [
         "Încercați-l gratuit timp de ${ TRIAL_DURATION_DAYS } zile"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period.": [
+        "Când anulați, perioada de probă gratuită nu va fi transformată într-un abonament plătit, dar vă puteți bucura în continuare de beneficiile planului până la sfârșitul perioadei de probă."
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Dacă anulați, perioada de evaluare gratuită nu va fi convertită într-un abonament cu plată, dar vă puteți bucura în continuare de beneficiile planului până la sfârșitul perioadei de evaluare. După aceea, planul va fi retrogradat la ${ BRAND_NAME } Free."
@@ -3794,6 +3803,18 @@
         "${ users } utilizatori",
         "${ users } de utilizatori"
       ],
+      "Amount due": [
+        "Suma datorată"
+      ],
+      "Amount due after trial": [
+        "Suma datorată după probare"
+      ],
+      "Amount due now": [
+        "Suma datorată acum"
+      ],
+      "month": [
+        "lună"
+      ],
       "Started ${ formattedStartDate }": [
         "A început ${ formattedStartDate }"
       ],
@@ -3811,8 +3832,16 @@
         "Subtotal pentru ${ cycle } luni",
         "Subtotal pentru ${ cycle } de luni"
       ],
+      "Summary": [
+        "Rezumat"
+      ],
       "Total": [
         "Total"
+      ],
+      "Total for ${ cycle } month": [
+        "Total pentru ${ cycle } lună",
+        "Total pentru ${ cycle } luni",
+        "Total pentru ${ cycle } de luni"
       ]
     },
     "Collapsible tooltip": {
@@ -8705,8 +8734,8 @@
       "You're invited to join ${ invite.OrganizationName }": [
         "Ați primit o invitație la ${ invite.OrganizationName }"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Ați primit o invitație să vă conectați contul ${ BRAND_NAME } la acest plan de familie și să vă bucurați împreună de toate funcțiile premium ale ${ brandOrAppName }."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Ați primit o invitație să vă conectați contul ${ BRAND_NAME } la acest grup de familie și să vă bucurați împreună de toate funcțiile premium."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Acest cont are mai multe adrese de e-mail decât cele disponibile în acest plan. ${ addressSettingsLink }"
@@ -11442,6 +11471,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NU uitați această parolă. În cazul în care o uitați, nu vă veți mai putea administra organizația."
       ],
+      "Do you remember your password?": [
+        "Vă amintiți parola?"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Doriți să anulați toate celelalte sesiuni în afară de cea curentă?"
       ],
@@ -11613,7 +11645,7 @@
         "Setările de criptare s-au actualizat."
       ],
       "End date": [
-        "Data de sfârșit"
+        "Dată sfârșit"
       ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
         "Pentru acest grup este dezactivată criptarea bilaterală a mesajelor pe e-mail deoarece se utilizează o adresă externe."
@@ -11869,6 +11901,9 @@
       ],
       "Get VPN Plus": [
         "Luați VPN Plus"
+      ],
+      "Give ${ BRAND_NAME } permissions to import your ${ providerName } data.": [
+        "Acordați permisiunea pentru ${ BRAND_NAME } de a vă importa datele de la ${ providerName }."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Dați un nume descriptiv codului de acces, cum ar fi serviciul pe care urmați să-l folosiți și selectați una din adresele de domeniu personale active. Numai această adresă va putea trimite mesaje cu acest cod de acces."
@@ -12539,6 +12574,9 @@
       "On": [
         "Activat"
       ],
+      "On ${ formattedPeriodEndDate }, your free trial ends and your paid plan starts.": [
+        "La ${ formattedPeriodEndDate } perioada de probare gratuită se încheie și începe planul cu plată."
+      ],
       "On Ubuntu?": [
         "Folosiți Ubuntu?"
       ],
@@ -13189,9 +13227,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Abonamentul se încheie: pentru a păstra vă beneficiile din ${ planName }, reactivați-vă abonamentul în Magazin Play de la Google până la ${ byDate }. ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "Abonamentul începe la ${ startsOnTime }"
-      ],
       "Summary": [
         "Sumar"
       ],
@@ -13641,9 +13676,6 @@
       ],
       "Total: ${ totalPrice }": [
         "Total: ${ totalPrice }"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "Perioada de evaluare expiră la ${ formattedPeriodEndDate }"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Încercați ${ productName } fără riscuri - dacă din orice motiv vă răzgândiți, veți primi o rambursare completă. Fără întrebări."
@@ -15204,8 +15236,8 @@
       "Account holder name": [
         "Nume titular cont"
       ],
-      "Account holder: ${ sepaDetails.AccountName }": [
-        "Titular cont: ${ sepaDetails.AccountName }"
+      "Account holder: ${ details.AccountName }": [
+        "Titular cont: ${ details.AccountName }"
       ],
       "Account storage": [
         "Spațiu cont"
@@ -15795,7 +15827,7 @@
         "Activă"
       ],
       "End date": [
-        "Data de sfârșit"
+        "Dată sfârșit"
       ],
       "End day of month": [
         "Ultima zi a lunii"
@@ -18898,8 +18930,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } care se termină cu ${ last4 }"
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } care se termină cu ${ Last4 }"
       ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } vă permite să creați adrese de e-mail și să gestionați conturi pentru utilizatori secundari. Ideal pentru familii și organizații."
@@ -21144,6 +21176,11 @@
         "Creditele vă vor fi adăugate în soldul personal."
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Schimbarea adresei de facturare poate influența taxele pe facturile viitoare."
+      ]
+    },
     "Payments.Lifetime Subscription": {
       "Lifetime accounts can be transferred or sold": [
         "Conturile pe viață pot fi transferate sau vândute"
@@ -21194,14 +21231,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - card care se termină cu ${ paymentMethod.Details.Last4 }"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - card care se termină cu ${ Last4 }"
       ],
-      "Bank transfer - ${ details }": [
-        "Transfer bancar - ${ details }"
+      "Bank transfer - ${ iban }": [
+        "Transfer bancar - ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - card care se termină cu ${ paymentMethod.Details.Last4 }"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - card care se termină cu ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -21336,7 +21373,7 @@
         "Adresă e-mail"
       ],
       "End date": [
-        "Data de sfârșit"
+        "Dată sfârșit"
       ],
       "Enter a name": [
         "Introduceți un nume"
@@ -24785,6 +24822,9 @@
       "Final step": [
         "Pas final"
       ],
+      "Grant access": [
+        "Aprobare acces"
+      ],
       "Install migration app": [
         "Instalați aplicația de migrare"
       ],
@@ -27204,6 +27244,9 @@
       "Going private": [
         "Devenire privat"
       ],
+      "Grant access": [
+        "Aprobare acces"
+      ],
       "Group": [
         "Grup"
       ],
@@ -29620,6 +29663,9 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Am detectat o problemă cu configurația DNS. Asigurați-vă că înregistrările tale se potrivesc cu instrucțiunile de mai jos. Dacă problema persistă, va trebui să oprim semnarea cu DKIM."
+      ],
+      "We were unable to verify access, please check that you have granted access in your ${ providerName } account and try again.": [
+        "Nu s-a putut verifica accesul. Verificați dacă ați acordat acces în contul ${ providerName } și reîncercați."
       ],
       "We were unable to verify the installation, please check that you have installed it in your ${ providerName } account and try again.": [
         "Nu s-a putut verifica instalarea. Verificați dacă ați instalat-o în contul din ${ providerName } și reîncercați."

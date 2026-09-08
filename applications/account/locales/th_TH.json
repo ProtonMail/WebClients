@@ -7814,9 +7814,6 @@
       "You're invited to join ${ invite.OrganizationName }": [
         "คุณได้รับเชิญให้เข้าร่วม ${ invite.OrganizationName }"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "คุณได้รับเชิญให้เชื่อมโยงบัญชี ${ BRAND_NAME } กับ Family plan นี้และเพลิดเพลินกับคุณสมบัติพรีเมียมทั้งหมดของ ${ brandOrAppName } ไปด้วยกัน"
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "บัญชีของคุณมีที่อยู่อีเมลมากกว่าจำนวนที่มีให้ในแผนนี้ ${ addressSettingsLink }"
       ],
@@ -11762,9 +11759,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "การสมัครสมาชิกกำลังจะสิ้นสุด: เพื่อรักษาสิทธิประโยชน์ ${ planName } ให้เริ่มการสมัครสมาชิกใหม่ใน Google Play Store ภายใน ${ byDate } ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "การสมัครสมาชิกเริ่มต้นในวันที่ ${ startsOnTime }"
-      ],
       "Summary": [
         "สรุป"
       ],
@@ -12151,9 +12145,6 @@
       ],
       "Total: ${ totalPrice }": [
         "รวม: ${ totalPrice }"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "การทดลองใช้สิ้นสุดลงในวันที่ ${ formattedPeriodEndDate }"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "ลองใช้ ${ productName } โดยไม่มีความเสี่ยง หากคุณเปลี่ยนใจด้วยเหตุผลใดก็ตาม คุณจะได้รับเงินคืนเต็มจำนวนโดยไม่มีการถามคำถามใดๆ"
@@ -13568,9 +13559,6 @@
       ],
       "Account holder": [
         "เจ้าของบัญชี"
-      ],
-      "Account holder: ${ sepaDetails.AccountName }": [
-        "เจ้าของบัญชี: ${ sepaDetails.AccountName }"
       ],
       "Account storage": [
         "พื้นที่จัดเก็บบัญชี"
@@ -17020,9 +17008,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } ลงท้ายด้วย ${ last4 }"
-      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } ช่วยให้คุณสร้างที่อยู่อีเมลและจัดการบัญชีสำหรับผู้ใช้ย่อยได้ เหมาะสำหรับครอบครัวและองค์กร"
       ],
@@ -19113,17 +19098,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "ราคาต่ออายุขึ้นอยู่กับภูมิภาคที่เรียกเก็บเงินและหมายเลขประจำตัวผู้เสียภาษี"
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - บัตรที่ลงท้ายด้วย ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "การโอนเงินผ่านธนาคาร - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - บัตรที่ลงท้ายด้วย ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
