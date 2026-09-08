@@ -1100,9 +1100,6 @@
       "Select all": [
         "Seleziona tutto"
       ],
-      "Send feedback": [
-        "Invia feedback"
-      ],
       "Send message": [
         "Invia il messaggio"
       ],
@@ -1120,9 +1117,6 @@
       ],
       "Submit": [
         "Invia"
-      ],
-      "Switch to Max": [
-        "Passa a Max"
       ],
       "System": [
         "Sistema"
@@ -1720,14 +1714,8 @@
       "Choose sheets to add": [
         "Scegli i fogli da aggiungere"
       ],
-      "Review what you're sharing": [
-        "Rivedi cosa stai condividendo"
-      ],
       "Tell us more": [
         "Dicci di più"
-      ],
-      "Your feedback is private": [
-        "Il tuo feedback è privato"
       ]
     },
     "collider_2025: Hint": {
@@ -2048,9 +2036,6 @@
       "No usage yet": [
         "Ancora nessun utilizzo"
       ],
-      "Only the text below will be sent. Images and other attachments are not included. Remove anything you don't want shared.": [
-        "Verrà inviato solo il testo qui sotto. Le immagini e gli altri allegati non sono inclusi. Rimuovi tutto ciò che non vuoi condividere."
-      ],
       "Over capacity": [
         "Capacità superata"
       ],
@@ -2107,12 +2092,6 @@
       ],
       "Secure connection (encrypted)": [
         "Connessione sicura (crittografata)"
-      ],
-      "Share this feedback with the Apertus team to help them improve their model.": [
-        "Condividi questo feedback con il team di Apertus per aiutarli a migliorare il loro modello."
-      ],
-      "Share your prompt and the response with us.": [
-        "Condividi il tuo prompt e la risposta con noi."
       ],
       "Shared by ${ file.sharedBy }": [
         "Condiviso da ${ file.sharedBy }"
@@ -2191,15 +2170,6 @@
       ],
       "This folder is empty": [
         "Questa cartella è vuota"
-      ],
-      "This is the only time we see your content. We use it to improve our system prompts and understand how issues occurred. This data is automatically deleted after 90 days.": [
-        "Questa è l'unica occasione in cui visualizziamo i tuoi contenuti. Li utilizziamo per migliorare i prompt di sistema e comprendere come si sono verificati i problemi. Questi dati vengono eliminati automaticamente dopo 90 giorni."
-      ],
-      "This lets us know you were happy with the response. We never see your prompt or ${ LUMO_SHORT_APP_NAME }'s reply.": [
-        "Questo ci permette di sapere che hai gradito la risposta. Non visualizzeremo mai il tuo prompt né la risposta di ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "This lets us know you weren't happy with the response. We never see your prompt or ${ LUMO_SHORT_APP_NAME }'s reply unless you explicitly share it with us.": [
-        "Questo ci fa sapere che non sei rimasto soddisfatto della risposta. Non vedremo mai il tuo prompt o la risposta di ${ LUMO_SHORT_APP_NAME } a meno che tu non li condivida esplicitamente con noi."
       ],
       "To get started, please open ${ DRIVE_APP_NAME } to set up your secure storage.": [
         "Per iniziare, apri ${ DRIVE_APP_NAME } per configurare la tua archiviazione sicura."
@@ -2295,9 +2265,6 @@
     "collider_2025: Label": {
       "AI model": [
         "Modello di IA"
-      ],
-      "AI response": [
-        "Risposta dell'IA"
       ],
       "Answer mode": [
         "Modalità di risposta"
@@ -2428,9 +2395,6 @@
       "You": [
         "Tu"
       ],
-      "Your prompt": [
-        "Il tuo prompt"
-      ],
       "Your workflow": [
         "Il tuo flusso di lavoro"
       ]
@@ -2506,9 +2470,6 @@
       ],
       "Create an account or sign in to save your chats and increase limits.": [
         "Crea un account o accedi per salvare le tue chat e aumentare i limiti."
-      ],
-      "You're on ${ selectedModelLabel }. Switch to Max for more capable answers.": [
-        "Stai utilizzando ${ selectedModelLabel }. Passa a Max per ottenere risposte più avanzate."
       ]
     },
     "collider_2025: Option": {
@@ -8145,9 +8106,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } che termina con ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB di archiviazione cloud che ti consente di archiviare, sincronizzare e condividere i file facilmente. Protetto da crittografia end-to-end."
       ],
@@ -8923,17 +8881,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Il prezzo del rinnovo dipende dalla regione di fatturazione e dal numero di partita IVA."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - carta che termina con ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Bonifico bancario - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - carta che termina con ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

@@ -948,6 +948,15 @@
         "${ users } gebruiker",
         "${ users } gebruikers"
       ],
+      "Amount due": [
+        "Verschuldigd bedrag"
+      ],
+      "Amount due after trial": [
+        "Verschuldigd bedrag na proefperiode"
+      ],
+      "Amount due now": [
+        "Nu verschuldigd bedrag"
+      ],
       "Subtotal": [
         "Subtotaal"
       ],
@@ -957,6 +966,10 @@
       ],
       "Total": [
         "Totaal"
+      ],
+      "Total for ${ cycle } month": [
+        "Totaal voor ${ cycle } maand",
+        "Totaal voor ${ cycle } maanden"
       ]
     },
     "Collapsible tooltip": {
@@ -1109,9 +1122,6 @@
       "Select all": [
         "Selecteer alles"
       ],
-      "Send feedback": [
-        "Feedback verzenden"
-      ],
       "Send message": [
         "Bericht verzenden"
       ],
@@ -1132,9 +1142,6 @@
       ],
       "Submit": [
         "Versturen"
-      ],
-      "Switch to Max": [
-        "Overschakelen naar Max"
       ],
       "System": [
         "Systeem"
@@ -1729,14 +1736,8 @@
       "Choose sheets to add": [
         "Kies de werkbladen die u wilt toevoegen"
       ],
-      "Review what you're sharing": [
-        "Controleer wat u deelt"
-      ],
       "Tell us more": [
         "Vertel ons meer"
-      ],
-      "Your feedback is private": [
-        "Uw feedback is privé"
       ]
     },
     "collider_2025: Hint": {
@@ -2057,9 +2058,6 @@
       "No usage yet": [
         "Nog niet gebruikt"
       ],
-      "Only the text below will be sent. Images and other attachments are not included. Remove anything you don't want shared.": [
-        "Alleen de onderstaande tekst wordt verzonden. Afbeeldingen en andere bijlagen zijn niet inbegrepen. Verwijder alles wat u niet wilt delen."
-      ],
       "Over capacity": [
         "Capaciteit overschreden"
       ],
@@ -2116,9 +2114,6 @@
       ],
       "Secure connection (encrypted)": [
         "Beveiligde verbinding (versleuteld)"
-      ],
-      "Share your prompt and the response with us.": [
-        "Deel uw prompt en de reactie met ons."
       ],
       "Shared by ${ file.sharedBy }": [
         "Gedeeld door ${ file.sharedBy }"
@@ -2197,15 +2192,6 @@
       ],
       "This folder is empty": [
         "Deze map is leeg"
-      ],
-      "This is the only time we see your content. We use it to improve our system prompts and understand how issues occurred. This data is automatically deleted after 90 days.": [
-        "Dit is de enige keer dat we uw inhoud zien. We gebruiken deze om onze systeemprompts te verbeteren en te begrijpen hoe problemen zijn ontstaan. Deze gegevens worden na 90 dagen automatisch verwijderd."
-      ],
-      "This lets us know you were happy with the response. We never see your prompt or ${ LUMO_SHORT_APP_NAME }'s reply.": [
-        "Hiermee laat u ons weten dat u tevreden was met de reactie. We zien uw prompt of het antwoord van ${ LUMO_SHORT_APP_NAME } nooit."
-      ],
-      "This lets us know you weren't happy with the response. We never see your prompt or ${ LUMO_SHORT_APP_NAME }'s reply unless you explicitly share it with us.": [
-        "Hierdoor weten we dat u niet tevreden was met de reactie. We zien uw prompt of de reactie van ${ LUMO_SHORT_APP_NAME } nooit, tenzij u deze expliciet met ons deelt."
       ],
       "To get started, please open ${ DRIVE_APP_NAME } to set up your secure storage.": [
         "Om te beginnen, open ${ DRIVE_APP_NAME } om uw beveiligde opslag in te stellen."
@@ -2307,9 +2293,6 @@
     "collider_2025: Label": {
       "AI model": [
         "AI-model"
-      ],
-      "AI response": [
-        "AI-reactie"
       ],
       "Answer mode": [
         "Antwoordmodus"
@@ -2439,9 +2422,6 @@
       ],
       "You": [
         "U"
-      ],
-      "Your prompt": [
-        "Uw prompt"
       ],
       "Your workflow": [
         "Uw workflow"
@@ -7181,6 +7161,9 @@
       "Account holder": [
         "Rekeninghouder"
       ],
+      "Account holder name": [
+        "Naam van de rekeninghouder"
+      ],
       "Additional comments": [
         "Aanvullende opmerkingen"
       ],
@@ -8395,9 +8378,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } eindigend met ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd met end-to-end versleuteling."
       ],
@@ -9173,17 +9153,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT-nummer."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - kaart eindigend op ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Bankoverschrijving - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - kaart eindigend op ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
