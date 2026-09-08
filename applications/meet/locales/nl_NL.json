@@ -624,12 +624,6 @@
       "Use camera": [
         "Gebruik camera"
       ],
-      "Use color": [
-        "Kleur gebruiken"
-      ],
-      "Use image": [
-        "Gebruik afbeelding"
-      ],
       "Use microphone": [
         "Gebruik microfoon"
       ],
@@ -2419,8 +2413,8 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Een telefoonnummer kan gebruikt worden ter verificatie van één ${ BRAND_NAME } account"
       ],
-      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
-        "Geavanceerde modus: stem elke vervagingsconstante af voor de volgende versie en klik vervolgens op Toepassen om het voorbeeld opnieuw op te bouwen. Overschrijvingen hebben voorrang op bestand- en Unleash-waarden."
+      "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Geavanceerde modus: stem elke vervagingsconstante af en pas vervolgens toe om het voorbeeld opnieuw op te bouwen. Overschrijvingen hebben voorrang op bestands- en Unleash-waarden."
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anoniem ${ particle } ${ participantNumber }"
@@ -2677,8 +2671,8 @@
       "Loading…": [
         "Laden…"
       ],
-      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
-        "Speel een geüploade video of uw live camera af via beide versies van achtergrondvervaging naast elkaar."
+      "Loop an uploaded video or your live camera through background blur.": [
+        "Herhaal een geüploade video of uw live camera door middel van achtergrondvervaging."
       ],
       "Lower participant's hand": [
         "Hand deelnemers laten zakken"
@@ -2874,9 +2868,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
-      ],
-      "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
-        "Voer uw live camera door de aangepaste achtergrondprocessor. Kies een effen kleur of upload een afbeelding om als achtergrond te gebruiken."
       ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Plan uw volgende vergadering. Maak een account om vergaderingen te plannen met uw agenda."
@@ -3142,9 +3133,6 @@
       "Authenticator app": [
         "Authenticatie app"
       ],
-      "Background color": [
-        "Achtergrondkleur"
-      ],
       "Blurred (next)": [
         "Vervagen (volgende)"
       ],
@@ -3183,9 +3171,6 @@
       ],
       "Created": [
         "Aangemaakt"
-      ],
-      "Current": [
-        "Huidig"
       ],
       "Delete": [
         "Verwijderen"
@@ -3280,9 +3265,6 @@
       "Name": [
         "Naam"
       ],
-      "Next": [
-        "Volgende"
-      ],
       "Operating system": [
         "Besturingssysteem"
       ],
@@ -3303,6 +3285,9 @@
       ],
       "Phone number": [
         "Telefoonnummer"
+      ],
+      "Preview": [
+        "Voorbeeld"
       ],
       "Raw": [
         "Ruw"
@@ -3339,9 +3324,6 @@
       ],
       "Selected Speaker": [
         "Geselecteerde luidspreker"
-      ],
-      "Solid color": [
-        "Effen kleur"
       ],
       "Subscribed": [
         "Geabonneerd"
@@ -3749,8 +3731,8 @@
       "Available Speakers": [
         "Beschikbare luidsprekers"
       ],
-      "Background blur comparison": [
-        "Vergelijking achtergrondvervaging"
+      "Background blur preview": [
+        "Voorbeeld van achtergrondonscherpte"
       ],
       "Camera and microphone are blocked": [
         "Camera en microfoon zijn geblokkeerd."

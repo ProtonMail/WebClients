@@ -67,14 +67,32 @@
       "Background removed": [
         "Το φόντο αφαιρέθηκε"
       ],
+      "Beach landscape background applied": [
+        "Εφαρμόστηκε φόντο τοπίου παραλίας"
+      ],
       "Blurred background applied": [
         "Εφαρμόστηκε θολό φόντο"
+      ],
+      "Blurred office background applied": [
+        "Εφαρμόστηκε θολό φόντο γραφείου"
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Συνδεδεμένος μέσω της λειτουργίας αναμετάδοσης TURN λόγω περιορισμών του δικτύου. Αυτό μπορεί να αυξήσει την καθυστέρηση και να επηρεάσει την ποιότητα της κλήσης."
       ],
       "Connection lost. Reconnecting…": [
         "Χάθηκε η σύνδεση. Επανασύνδεση…"
+      ],
+      "Dark ${ BRAND_NAME } background applied": [
+        "Εφαρμόστηκε σκοτεινό φόντο ${ BRAND_NAME }"
+      ],
+      "Library background applied": [
+        "Εφαρμόστηκε φόντο βιβλιοθήκης"
+      ],
+      "Light ${ BRAND_NAME } background applied": [
+        "Εφαρμόστηκε ανοιχτό φόντο ${ BRAND_NAME }"
+      ],
+      "Mountain landscape background applied": [
+        "Εφαρμόστηκε φόντο ορεινού τοπίου"
       ],
       "New chat message: ${ message }": [
         "Νέο μήνυμα συνομιλίας: ${ message }"
@@ -207,6 +225,9 @@
       ],
       "Cancel": [
         "Ακύρωση"
+      ],
+      "Change layout": [
+        "Αλλαγή διάταξης"
       ],
       "Change password": [
         "Αλλαγή κωδικού πρόσβασης"
@@ -363,6 +384,9 @@
       ],
       "Getting ready...": [
         "Ετοιμαζόμαστε..."
+      ],
+      "Grid": [
+        "Πλέγμα"
       ],
       "Help and feedback": [
         "Βοήθεια και σχόλια"
@@ -564,6 +588,9 @@
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "Προγραμματισμός στο ${ CALENDAR_APP_NAME }"
       ],
+      "Screen share": [
+        "Κοινή χρήση οθόνης"
+      ],
       "Search countries": [
         "Αναζήτηση χωρών"
       ],
@@ -605,6 +632,9 @@
       ],
       "Skip to main content": [
         "Μετάβαση στο κύριο περιεχόμενο"
+      ],
+      "Speaker": [
+        "Ομιλητής"
       ],
       "Start an instant meeting": [
         "Ξεκινήστε μια άμεση σύσκεψη"
@@ -692,12 +722,6 @@
       ],
       "Use camera": [
         "Χρήση κάμερας"
-      ],
-      "Use color": [
-        "Χρήση χρώματος"
-      ],
-      "Use image": [
-        "Χρήση εικόνας"
       ],
       "Use microphone": [
         "Χρήση μικροφώνου"
@@ -2221,6 +2245,9 @@
       "Screen share is not supported on mobile browsers": [
         "Η κοινή χρήση οθόνης δεν υποστηρίζεται σε προγράμματα περιήγησης για κινητά"
       ],
+      "Screen share is not supported on your device": [
+        "Η κοινή χρήση οθόνης δεν υποστηρίζεται στη συσκευή σας"
+      ],
       "Signature is missing": [
         "Λείπει η υπογραφή"
       ],
@@ -2585,6 +2612,9 @@
         "${ replyCount } απάντηση",
         "${ replyCount } απαντήσεις"
       ],
+      "${ spotlightParticipantName } is the active speaker": [
+        "Ο ${ spotlightParticipantName } είναι ο ενεργός ομιλητής"
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } από ${ maxParticipants } συμμετέχοντες"
       ],
@@ -2617,8 +2647,8 @@
       "Admitting": [
         "Αποδοχή"
       ],
-      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
-        "Λειτουργία για προχωρημένους: ρυθμίστε κάθε σταθερά θολώματος για την επόμενη έκδοση και, στη συνέχεια, εφαρμόστε για να δημιουργήσετε ξανά την προεπισκόπηση. Οι παρακάμψεις έχουν προτεραιότητα έναντι των τιμών αρχείου και Unleash."
+      "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Λειτουργία για προχωρημένους: ρυθμίστε κάθε σταθερά θολώματος και, στη συνέχεια, επιλέξτε Εφαρμογή για να δημιουργήσετε ξανά την προεπισκόπηση. Οι παρακάμψεις έχουν προτεραιότητα έναντι των τιμών αρχείου και Unleash."
       ],
       "Allow camera access to preview your background": [
         "Επιτρέψτε την πρόσβαση στην κάμερα για προεπισκόπηση του φόντου σας"
@@ -2902,8 +2932,8 @@
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
         "Τα αρχεία καταγραφής μας βοηθούν να κατανοήσουμε τι συνέβη πριν από την εμφάνιση του προβλήματος. Περιλαμβάνουν ενέργειες εφαρμογής και μηνύματα σφάλματος, αλλά όχι περιεχόμενο μηνύματος."
       ],
-      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
-        "Επαναλάβετε ένα μεταφορτωμένο βίντεο ή τη ζωντανή κάμερά σας μέσα από και τις δύο εκδόσεις θολώματος φόντου δίπλα-δίπλα."
+      "Loop an uploaded video or your live camera through background blur.": [
+        "Επαναλάβετε ένα μεταφορτωμένο βίντεο ή την ζωντανή κάμερά σας μέσω θολώματος φόντου."
       ],
       "Lower participant's hand": [
         "Κατέβασε το χέρι του συμμετέχοντα"
@@ -3115,8 +3145,8 @@
       "Rejecting": [
         "Απόρριψη"
       ],
-      "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
-        "Εκτελέστε τη ζωντανή κάμερά σας μέσω του προσαρμοσμένου επεξεργαστή φόντου. Επιλέξτε ένα απλό χρώμα ή ανεβάστε μια εικόνα για να τη χρησιμοποιήσετε ως φόντο."
+      "Run your live camera through the custom background processor. Upload an image to use as the background.": [
+        "Εκτελέστε τη ζωντανή κάμερά σας μέσω του προσαρμοσμένου επεξεργαστή φόντου. Ανεβάστε μια εικόνα για να τη χρησιμοποιήσετε ως φόντο."
       ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Προγραμματίστε την επόμενη σύσκεψή σας. Δημιουργήστε έναν λογαριασμό για να προγραμματίσετε συσκέψεις με το ημερολόγιό σας."
@@ -3412,11 +3442,14 @@
       "Auto-detect": [
         "Αυτόματος εντοπισμός"
       ],
-      "Background color": [
-        "Χρώμα φόντου"
+      "Beach landscape background": [
+        "Φόντο τοπίου παραλίας"
       ],
       "Blurred (next)": [
         "Θολό (επόμενο)"
+      ],
+      "Blurred office background": [
+        "Θολό φόντο γραφείου"
       ],
       "Browser": [
         "Πρόγραμμα περιήγησης"
@@ -3454,8 +3487,8 @@
       "Created": [
         "Δημιουργήθηκε"
       ],
-      "Current": [
-        "Τρέχουσα"
+      "Dark ${ BRAND_NAME } background": [
+        "Σκοτεινό φόντο ${ BRAND_NAME }"
       ],
       "Delete": [
         "Διαγραφή"
@@ -3526,6 +3559,12 @@
       "Leave meeting options": [
         "Επιλογές αποχώρησης από τη σύσκεψη"
       ],
+      "Library background": [
+        "Φόντο βιβλιοθήκης"
+      ],
+      "Light ${ BRAND_NAME } background": [
+        "Ανοιχτό φόντο ${ BRAND_NAME }"
+      ],
       "Live caption agent": [
         "Πράκτορας ζωντανών υποτίτλων"
       ],
@@ -3547,14 +3586,14 @@
       "Monday to Friday": [
         "Δευτέρα έως Παρασκευή"
       ],
+      "Mountain landscape background": [
+        "Φόντο ορεινού τοπίου"
+      ],
       "Muted": [
         "Σιγασμένο"
       ],
       "Name": [
         "Όνομα"
-      ],
-      "Next": [
-        "Επόμενο"
       ],
       "Operating system": [
         "Λειτουργικό σύστημα (OS)"
@@ -3576,6 +3615,9 @@
       ],
       "Phone number": [
         "Αριθμός τηλεφώνου"
+      ],
+      "Preview": [
+        "Προεπισκόπηση"
       ],
       "Raw": [
         "Ακατέργαστη"
@@ -3612,9 +3654,6 @@
       ],
       "Selected Speaker": [
         "Επιλεγμένος Ομιλητής"
-      ],
-      "Solid color": [
-        "Συμπαγές χρώμα"
       ],
       "Spoken language": [
         "Γλώσσα ομιλίας"
@@ -4039,8 +4078,8 @@
       "Background": [
         "Φόντο"
       ],
-      "Background blur comparison": [
-        "Σύγκριση θολώματος φόντου"
+      "Background blur preview": [
+        "Προεπισκόπηση θολώματος φόντου"
       ],
       "Backgrounds": [
         "Φόντα"

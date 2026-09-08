@@ -73,6 +73,12 @@
       "Connection lost. Reconnecting…": [
         "Anslutning förlorad. Återansluter …"
       ],
+      "Dark ${ BRAND_NAME } background applied": [
+        "Mörk ${ BRAND_NAME }-bakgrund tillämpad"
+      ],
+      "Library background applied": [
+        "Biblioteksbakgrund tillämpad"
+      ],
       "New chat message: ${ message }": [
         "Nytt chattmeddelande: ${ message }"
       ],
@@ -355,6 +361,9 @@
       "Getting ready...": [
         "Förbereder …"
       ],
+      "Grid": [
+        "Rutnät"
+      ],
       "Help and feedback": [
         "Hjälp och feedback"
       ],
@@ -494,6 +503,9 @@
       "Rejoin meeting": [
         "Gå med i möte igen"
       ],
+      "Remove ${ name }": [
+        "Ta bort ${ name }"
+      ],
       "Remove reaction ${ emoji }, ${ identities.length } reaction": [
         "Ta bort reaktion ${ emoji }, ${ identities.length } reaktion",
         "Ta bort reaktion ${ emoji }, ${ identities.length } reaktioner"
@@ -545,6 +557,9 @@
       ],
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "Schemalägg i ${ CALENDAR_APP_NAME }"
+      ],
+      "Screen share": [
+        "Skärmdelning"
       ],
       "Search countries": [
         "Sök länder"
@@ -671,12 +686,6 @@
       ],
       "Use camera": [
         "Använd kamera"
-      ],
-      "Use color": [
-        "Använd färg"
-      ],
-      "Use image": [
-        "Använd bild"
       ],
       "Use microphone": [
         "Använd mikrofon"
@@ -854,6 +863,9 @@
       ],
       "Meeting rooms": [
         "Mötesrum"
+      ],
+      "Microphone input level": [
+        "Mikrofoningångsnivå"
       ],
       "Participants": [
         "Deltagare"
@@ -1872,6 +1884,12 @@
       "Copying item to a non-folder is not allowed": [
         "Kopiering av objekt till utanför en mapp är inte tillåtet"
       ],
+      "Could not add this background. Check your connection and try again.": [
+        "Kunde inte lägga till denna bakgrund. Kontrollera din anslutning och försök igen."
+      ],
+      "Could not add this background. Please try again.": [
+        "Kunde inte lägga till denna bakgrund. Försök igen."
+      ],
       "Could not find an available name": [
         "Kunde inte hitta ett tillgängligt namn"
       ],
@@ -2500,9 +2518,6 @@
       "Adding ${ name }": [
         "Lägger till ${ name }"
       ],
-      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
-        "Avancerat läge: finjustera varje oskärpekonstant för nästa version, välj sedan Tillämpa för att bygga om förhandsgranskningen. Åsidosättningar har företräde framför fil- och Unleash-värden."
-      ],
       "Allow camera access to preview your background": [
         "Tillåt kameraåtkomst för att förhandsgranska din bakgrund"
       ],
@@ -2722,6 +2737,9 @@
       "Internet connection lost": [
         "Internetanslutning förlorades"
       ],
+      "Join request expired. The host didn't admit you in time. Send a new request to join.": [
+        "Begäran om att gå med har löpt ut. Värden släppte inte in dig i tid. Skicka en ny begäran om att gå med."
+      ],
       "Joined ${ roomNameLabel }": [
         "Gick med ${ roomNameLabel }"
       ],
@@ -2767,8 +2785,8 @@
       "Loading…": [
         "Laddar in …"
       ],
-      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
-        "Loopa en uppladdad video eller din livekamera genom båda versionerna av bakgrundsoskärpa sida vid sida."
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Loggar hjälper oss att förstå vad som hände innan problemet uppstod. De inkluderar app-åtgärder och felmeddelanden, men inget meddelandeinnehåll."
       ],
       "Lower participant's hand": [
         "Sänk deltagares hand"
@@ -3253,9 +3271,6 @@
       "Auto-detect": [
         "Automatisk upptäckt"
       ],
-      "Background color": [
-        "Bakgrundsfärg"
-      ],
       "Blurred (next)": [
         "Oskarp (nästa)"
       ],
@@ -3295,8 +3310,8 @@
       "Created": [
         "Skapad"
       ],
-      "Current": [
-        "Nuvarande"
+      "Dark ${ BRAND_NAME } background": [
+        "Mörk ${ BRAND_NAME }-bakgrund"
       ],
       "Delete": [
         "Ta bort"
@@ -3367,6 +3382,9 @@
       "Leave meeting options": [
         "Lämna mötesalternativ"
       ],
+      "Library background": [
+        "Biblioteksbakgrund"
+      ],
       "Manage recordings": [
         "Hantera inspelningar"
       ],
@@ -3391,9 +3409,6 @@
       "Name": [
         "Namn"
       ],
-      "Next": [
-        "Nästa"
-      ],
       "Operating system": [
         "Operativsystem"
       ],
@@ -3414,6 +3429,9 @@
       ],
       "Phone number": [
         "Telefonnummer"
+      ],
+      "Preview": [
+        "Förhandsgranska"
       ],
       "Raw": [
         "Rå"
@@ -3450,9 +3468,6 @@
       ],
       "Selected Speaker": [
         "Vald högtalare"
-      ],
-      "Solid color": [
-        "Solid färg"
       ],
       "Spoken language": [
         "Talat språk"
@@ -3791,6 +3806,9 @@
       "No": [
         "Nej"
       ],
+      "Transcribing...": [
+        "Transkriberar …"
+      ],
       "Yes": [
         "Ja"
       ]
@@ -3866,9 +3884,6 @@
       "Background": [
         "Bakgrund"
       ],
-      "Background blur comparison": [
-        "Jämförelse av bakgrundsoskärpa"
-      ],
       "Backgrounds": [
         "Bakgrunder"
       ],
@@ -3901,6 +3916,9 @@
       ],
       "Delete recording?": [
         "Ta bort inspelning?"
+      ],
+      "Display": [
+        "Visa"
       ],
       "Enter your password": [
         "Ange ditt lösenord"

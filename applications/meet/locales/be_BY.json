@@ -183,6 +183,9 @@
       "Back": [
         "Назад"
       ],
+      "Blur background": [
+        "Размыццё фону"
+      ],
       "Cancel": [
         "Скасаваць"
       ],
@@ -336,6 +339,9 @@
       "Get verification code": [
         "Атрымаць код спраўджання"
       ],
+      "Grid": [
+        "Сетка"
+      ],
       "Help and feedback": [
         "Даведка і зваротная сувязь"
       ],
@@ -416,6 +422,12 @@
       ],
       "Pause": [
         "Прыпыніць"
+      ],
+      "Playing back...": [
+        "Узнаўленне..."
+      ],
+      "Preview logs": [
+        "Папярэдні прагляд журналаў"
       ],
       "Previous month": [
         "Папярэдні месяц"
@@ -510,6 +522,9 @@
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "Запланаваць у ${ CALENDAR_APP_NAME }"
       ],
+      "Screen share": [
+        "Абагульванне экрана"
+      ],
       "Search countries": [
         "Пошук краін"
       ],
@@ -548,6 +563,9 @@
       ],
       "Skip to main content": [
         "Перайсці да асноўнага змесціва"
+      ],
+      "Speaker": [
+        "Дынамік"
       ],
       "Start an instant meeting": [
         "Пачаць імгненную сустрэчу"
@@ -597,6 +615,9 @@
       "Tap to unblock audio playback": [
         "Націсніце, каб разблакіраваць прайграванне аўдыя"
       ],
+      "Test microphone": [
+        "Тэсціраваць мікрафон"
+      ],
       "The current link will stop working.": [
         "Бягучая спасылка перастане працаваць."
       ],
@@ -614,6 +635,9 @@
       ],
       "Upload another video": [
         "Запампаваць іншае відэа"
+      ],
+      "Upload image": [
+        "Загрузіць відарыс"
       ],
       "Upload video": [
         "Запампаваць відэа"
@@ -656,6 +680,9 @@
       "Audio settings": [
         "Налады аўдыя"
       ],
+      "Backgrounds": [
+        "Фоны"
+      ],
       "Blur background": [
         "Размыць фон"
       ],
@@ -676,6 +703,9 @@
       ],
       "Debug overlay": [
         "Адладка накладання"
+      ],
+      "Device Debugger": [
+        "Адладка прылады"
       ],
       "Go to dashboard": [
         "Перайсці ў панэль кіравання"
@@ -764,6 +794,9 @@
       ],
       "Audio settings": [
         "Налады аўдыя"
+      ],
+      "Backgrounds": [
+        "Фоны"
       ],
       "Chat": [
         "Чат"
@@ -2412,8 +2445,8 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Нумар тэлефона можа быць выкарыстаны для спраўджання аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
-      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
-        "Пашыраны рэжым: наладзьце кожную канстанту размыцця для наступнай версіі, а потым прымяніце дзеянні для перабудовы папярэдняга прагляду. Перавызначэнні маюць прыярытэт над значэннямі з файла і Unleash."
+      "Admit": [
+        "Прыняць"
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Ананімны ${ particle } ${ participantNumber }"
@@ -2444,6 +2477,9 @@
       ],
       "Camera permission denied": [
         "Доступ да камеры забаронены"
+      ],
+      "Captions are on": [
+        "Субцітры ўключаны"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "Змены падрыхтаваны. Прымяніце іх, каб перабудаваць папярэдні прагляд з новымі канстантамі."
@@ -2651,9 +2687,6 @@
       ],
       "Loading…": [
         "Загрузка..."
-      ],
-      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
-        "Зацыкліце запампаванае відэа або трансляцыю з вашай камеры ў рэальным часе, каб параўнаць дзве версіі размыцця фону."
       ],
       "Lower participant's hand": [
         "Апусціць руку ўдзельніка"
@@ -3092,6 +3125,9 @@
       "Advanced mode": [
         "Пашыраны рэжым"
       ],
+      "Agent": [
+        "Агент"
+      ],
       "Anyone with the link can join": [
         "Любы чалавек са спасылкай можа далучыцца"
       ],
@@ -3142,9 +3178,6 @@
       ],
       "Created": [
         "Створана"
-      ],
-      "Current": [
-        "Бягучыя"
       ],
       "Delete": [
         "Выдаліць"
@@ -3203,6 +3236,9 @@
       "Identity": [
         "Ідэнтычнасць"
       ],
+      "Image": [
+        "Відарыс"
+      ],
       "Include application logs in bug report": [
         "Уключыць журналы праграмы ў справаздачу аб памылцы"
       ],
@@ -3236,9 +3272,6 @@
       "Name": [
         "Назва"
       ],
-      "Next": [
-        "Далей"
-      ],
       "Operating system": [
         "Аперацыйная сістэма"
       ],
@@ -3259,6 +3292,9 @@
       ],
       "Phone number": [
         "Нумар тэлефона"
+      ],
+      "Preview": [
+        "Папярэдні прагляд"
       ],
       "Raw": [
         "Raw"
@@ -3698,8 +3734,8 @@
       "Available Speakers": [
         "Даступныя дынамікі"
       ],
-      "Background blur comparison": [
-        "Параўнанне размытасці фону"
+      "Backgrounds": [
+        "Фоны"
       ],
       "Camera and microphone are blocked": [
         "Камера і мікрафон заблакіраваны"
@@ -3727,6 +3763,9 @@
       ],
       "Delete recording?": [
         "Выдаліць запіс?"
+      ],
+      "Display": [
+        "Адлюстраванне"
       ],
       "Enter your password": [
         "Увядзіце свой пароль"
@@ -3815,6 +3854,9 @@
       "Participants (${ filteredParticipants.length })": [
         "Удзельнікі (${ filteredParticipants.length })"
       ],
+      "People": [
+        "Людзі"
+      ],
       "Personal meeting room": [
         "Асабісты пакой для сустрэч"
       ],
@@ -3868,6 +3910,9 @@
       ],
       "Stop recording": [
         "Спыніць запіс"
+      ],
+      "System": [
+        "Сістэма"
       ],
       "Talk confidentially": [
         "Размаўляйце канфідэнцыяльна"
