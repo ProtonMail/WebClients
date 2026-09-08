@@ -10,8 +10,15 @@ import { createRestrictedImportRule } from '@proton/eslint-config-proton/restric
 
 const restrictedImportOptions = { paths: createBarrelPaths() };
 
+/**
+ * lint-staged runs ESLint from the monorepo root with repo-relative file paths
+ * (e.g. `applications/pass-desktop/src/lib/**`). Duplicate each package-local
+ * glob so `import/no-extraneous-dependencies` still allows electron there.
+ */
+const withLintStagedPaths = (patterns) => patterns.flatMap((pattern) => [pattern, `**/pass-desktop/${pattern}`]);
+
 /** Main-process sources import electron (devDependency required by Electron Forge). Renderer `src/app/**` is excluded. */
-const passDesktopMainProcessDevDependencies = [
+const passDesktopMainProcessDevDependencies = withLintStagedPaths([
     'src/main.ts',
     'src/preload.ts',
     'src/types.ts',
@@ -20,20 +27,22 @@ const passDesktopMainProcessDevDependencies = [
     'src/utils/squirrel.ts',
     'src/menu-view/**',
     'src/uninstallers/**',
-];
+]);
 
 /** Build/config entry points that import devDependencies. */
 const passDesktopDevDependencies = [
     ...extraneousDependenciesDevDependencies,
     ...passDesktopMainProcessDevDependencies,
-    'forge.config.ts',
-    'webpack.main.config.ts',
-    'webpack.renderer.config.ts',
-    'webpack.plugins.ts',
-    'webpack.options.ts',
-    'webpack.rules.ts',
-    'electron-builder.config.js',
-    'prettier.config.mjs',
+    ...withLintStagedPaths([
+        'forge.config.ts',
+        'webpack.main.config.ts',
+        'webpack.renderer.config.ts',
+        'webpack.plugins.ts',
+        'webpack.options.ts',
+        'webpack.rules.ts',
+        'electron-builder.config.js',
+        'prettier.config.mjs',
+    ]),
 ];
 
 export default defineConfig([
