@@ -1,29 +1,28 @@
-import { CommonFeatureFlag } from '@proton/unleash/Flags';
-import type { UnleashClient } from '@proton/unleash/UnleashClient';
-
 import { INTERVAL_EVENT_TIMER } from '../../lib/constants';
 import { getTimeoutIntervalsFromUnleash } from '../../lib/eventManager/getTimeoutIntervalsFromUnleash';
+import type { SharedUnleashClient } from '../../lib/unleash/sharedUnleashClient';
+import { EVENT_LOOP_INTERVAL_FLAG } from '../../lib/unleash/sharedUnleashClient';
 
 const MIN = INTERVAL_EVENT_TIMER;
 const MAX = INTERVAL_EVENT_TIMER * 10;
 
-const createClient = ({ enabled = true, payload }: { enabled?: boolean; payload?: unknown }): UnleashClient => {
+const createClient = ({ enabled = true, payload }: { enabled?: boolean; payload?: unknown }): SharedUnleashClient => {
     return {
-        isEnabled: (flag: unknown) => {
-            expect(flag).toBe(CommonFeatureFlag.EventLoopInterval);
+        isEnabled: (flag: string) => {
+            expect(flag).toBe(EVENT_LOOP_INTERVAL_FLAG);
             return enabled;
         },
         getVariant: () => ({
-            name: '',
-            enabled: true,
-            payload: payload !== undefined ? { type: '', value: JSON.stringify(payload) } : undefined,
+            payload: payload !== undefined ? { value: JSON.stringify(payload) } : undefined,
         }),
-    } as unknown as UnleashClient;
+        on: () => {},
+        off: () => {},
+    };
 };
 
 describe('getTimeoutIntervalsFromUnleash', () => {
     it('returns default values when client is undefined', () => {
-        const result = getTimeoutIntervalsFromUnleash(undefined as any);
+        const result = getTimeoutIntervalsFromUnleash(undefined);
 
         expect(result).toEqual({ foreground: MIN, background: MIN });
     });
@@ -75,14 +74,16 @@ describe('getTimeoutIntervalsFromUnleash', () => {
     });
 
     it('returns default values when JSON parsing throws', () => {
-        const brokenClient = () => ({
+        const brokenClient: SharedUnleashClient = {
             isEnabled: () => true,
             getVariant: () => ({
                 payload: { value: '{invalid json' },
             }),
-        });
+            on: () => {},
+            off: () => {},
+        };
 
-        const result = getTimeoutIntervalsFromUnleash(brokenClient as any);
+        const result = getTimeoutIntervalsFromUnleash(brokenClient);
 
         expect(result).toEqual({ foreground: MIN, background: MIN });
     });
