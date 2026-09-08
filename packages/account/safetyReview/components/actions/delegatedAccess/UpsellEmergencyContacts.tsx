@@ -8,7 +8,6 @@ import SubscriptionModalProvider, {
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
-import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { APP_UPSELL_REF_PATH, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -24,6 +23,7 @@ import type { SafetyReviewAllProps } from '../../interface';
 type Props = SafetyReviewAllProps & {
     recoveryItem: ExtractRecoveryActionItem<'upsellEmergencyContacts'>;
 };
+
 const BaseUpsellEmergencyContacts = (props: Props) => {
     const theme = useTheme();
     const isDarkTheme = theme.information.dark;
@@ -91,9 +91,7 @@ const BaseUpsellEmergencyContacts = (props: Props) => {
 export const UpsellEmergencyContacts = (props: Props) => {
     return (
         <SubscriptionModalProvider app={props.safetyReview.state.backLink.appName}>
-            <PaymentsContextProvider>
-                <BaseUpsellEmergencyContacts {...props} />
-            </PaymentsContextProvider>
+            <BaseUpsellEmergencyContacts {...props} />
         </SubscriptionModalProvider>
     );
 };
