@@ -14,6 +14,7 @@ export enum SupportedActions {
     PrivacySecuritySettings = 'privacy-security-settings', // ET
     CategoryView = 'category-view', // ET
     VPNLite = 'vpn-lite',
+    SignOut = 'sign-out',
 }
 
 const LITE_APP_BASE_PATH = '/lite/space';

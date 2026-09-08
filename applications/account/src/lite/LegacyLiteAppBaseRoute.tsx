@@ -14,6 +14,7 @@ import SpamFiltersSettings from './actions/SpamFiltersSettings';
 import SubscribeAccount from './actions/SubscribeAccount';
 import VPNLite from './actions/VPNLite';
 import WalletSettings from './actions/WalletSettings';
+import { SignOut } from './actions/sign-out/SignOut';
 import { SupportedActions } from './helper';
 
 interface Props {
@@ -23,9 +24,10 @@ interface Props {
     searchParams: URLSearchParams;
     loader: ReactNode;
     layout: (children: ReactNode, props?: any) => ReactNode;
+    initialHashParams: URLSearchParams;
 }
 
-const LegacyLiteAppBaseRoute = ({ action, redirect, app, searchParams, loader, layout }: Props) => {
+const LegacyLiteAppBaseRoute = ({ action, redirect, app, searchParams, loader, layout, initialHashParams }: Props) => {
     if (!action || !Object.values<string>(SupportedActions).includes(action)) {
         return <StandardErrorPage>No action parameter found.</StandardErrorPage>;
     }
@@ -39,6 +41,7 @@ const LegacyLiteAppBaseRoute = ({ action, redirect, app, searchParams, loader, l
             {action === SupportedActions.CategoryView && <CategoriesLiteView layout={layout} loader={loader} />}
             {action === SupportedActions.LabelsSettings && <LabelsSettings layout={layout} loader={loader} />}
             {action === SupportedActions.SpamFiltersSettings && <SpamFiltersSettings layout={layout} />}
+            {action === SupportedActions.SignOut && <SignOut layout={layout} initialHashParams={initialHashParams} />}
             {action === SupportedActions.PrivacySecuritySettings && (
                 <PrivacySecuritySettings layout={layout} loader={loader} />
             )}

@@ -46,6 +46,7 @@ import { extendStore } from '../app/store/store';
 import { extraThunkArguments } from '../app/store/thunk';
 import broadcast, { MessageType } from './broadcast';
 import ExpiredLink from './components/ExpiredLink';
+import type { SupportedActions } from './helper';
 
 const initializeTelemetry = (config: ProtonConfig, UID: string) => {
     // Deliberately ignoring user settings as lite app uses JWT token for auth and the token does not have permissions to fetch user settings
@@ -75,9 +76,10 @@ interface Props {
     children: ReactNode;
     api: ApiWithListener;
     loader: ReactNode;
+    action: SupportedActions | null;
 }
 
-const Setup = ({ api, onLogin, UID, children, loader }: Props) => {
+const Setup = ({ api, onLogin, UID, children, loader, action }: Props) => {
     const config = useConfig();
     const errorHandler = useErrorHandler();
     const dispatch = useAccountDispatch();
@@ -258,7 +260,7 @@ const Setup = ({ api, onLogin, UID, children, loader }: Props) => {
     }, []);
 
     if (expiredLinkError) {
-        return <ExpiredLink />;
+        return <ExpiredLink action={action} />;
     }
 
     if (error) {
