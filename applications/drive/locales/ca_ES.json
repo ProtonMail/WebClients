@@ -1872,7 +1872,7 @@
         "Import a pagar després de la prova"
       ],
       "Amount due now": [
-        "Import pendent de pagament"
+        "Import a pagar ara"
       ],
       "Subtotal": [
         "Subtotal"
@@ -4665,8 +4665,8 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Teniu factures pendents de pagar. Pagueu-les abans d'unir-vos a un pla familiar."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Esteu convidat a enllaçar el vostre compte de ${ BRAND_NAME } a aquest pla familiar i gaudir junts de totes les característiques prèmium de ${ brandOrAppName }."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Esteu convidats a vincular el vostre compte de ${ BRAND_NAME } a aquest grup familiar i gaudir de totes les seves característiques prèmium."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "El vostre compte té més adreces de correu electrònic de les que teniu disponibles en aquest pla. ${ addressSettingsLink }"
@@ -9547,8 +9547,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } que acaba amb ${ last4 }."
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } acabada en ${ Last4 }"
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB d'emmagatzematge al núvol que us permeten emmagatzemar, sincronitzar i compartir fitxers fàcilment. Protegit amb xifratge d'extrem a extrem."
@@ -10943,6 +10943,11 @@
         "Els crèdits s'afegiran al vostre saldo"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Canviar l'adreça de facturació podria afectar els impostos de les pròximes factures."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Esteu segur que voleu procedir?"
@@ -10980,14 +10985,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - targeta que acaba en ${ paymentMethod.Details.Last4 }"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - targeta acabada en ${ Last4 }"
       ],
-      "Bank transfer - ${ details }": [
-        "Transferència bancària - ${ details }"
+      "Bank transfer - ${ iban }": [
+        "Transferència bancària - ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - targeta que acaba en ${ paymentMethod.Details.Last4 }"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - targeta acabada en ${ Last4 }"
       ]
     },
     "Payments.Sepa": {

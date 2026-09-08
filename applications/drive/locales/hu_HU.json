@@ -3711,9 +3711,6 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Kifizetetlen számlái vannak. Kérjük, fizesse ki őket, mielőtt csatlakozik egy családi csomaghoz."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Meghívót kapott, hogy a ${ BRAND_NAME } fiókjával csatlakozzon ehhez a családi csomaghoz, és együtt használhassák a ${ brandOrAppName } prémium funkcióit."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "A fiókjában több e-mail cím van, mint amennyit a csomagja lehetővé tesz. ${ addressSettingsLink }"
       ],
@@ -7150,9 +7147,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand }, szám vége: ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB felhőalapú tárhely, amellyel könnyedén tárolhat, szinkronizálhat és oszthat meg fájlokat. Végpontok közti titkosítással védett."
       ],
@@ -8144,11 +8138,6 @@
     "Payments.plan_name": {
       "Free": [
         "Ingyenes"
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - kártya, a következő végződéssel: ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
