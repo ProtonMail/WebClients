@@ -6,6 +6,12 @@ import { ApiImportProvider } from '../api/api.interface';
 import { ImportProvider, OAUTH_PROVIDER } from '../interface';
 
 type OlesProviderBase = {
+    /**
+     * Slug used in the migration-assistant `?provider=` URL, intentionally decoupled from the
+     * internal `ImportProvider` enum value so the URL matches the brand the user sees
+     * ("microsoft") rather than the API/OAuth provider identity ("outlook").
+     */
+    routeSlug: string;
     /** Name of the other provider, e.g. "Google" */
     brandName: string;
     /** Name of the suite being migrated away from, e.g. "Google Workspace" */
@@ -58,6 +64,7 @@ export const OLES_PROVIDERS: { [Id in SupportedProvider]: OlesProviderFor<Id> } 
         id: ImportProvider.GOOGLE,
         apiProvider: ApiImportProvider.GOOGLE,
         oauthProvider: OAUTH_PROVIDER.GSUITE,
+        routeSlug: 'google',
         brandName: 'Google',
         displayName: 'Google Workspace',
         mailAppName: 'Gmail',
@@ -74,6 +81,7 @@ export const OLES_PROVIDERS: { [Id in SupportedProvider]: OlesProviderFor<Id> } 
         id: ImportProvider.OUTLOOK,
         apiProvider: ApiImportProvider.OUTLOOK,
         oauthProvider: OAUTH_PROVIDER.MICROSOFT_BUSINESS,
+        routeSlug: 'microsoft',
         brandName: 'Microsoft',
         displayName: 'Microsoft',
         mailAppName: 'Outlook',
@@ -89,3 +97,12 @@ export const OLES_PROVIDERS: { [Id in SupportedProvider]: OlesProviderFor<Id> } 
 
 export const isProviderSupported = (provider: string | ImportProvider): provider is SupportedProvider =>
     Object.hasOwn(OLES_PROVIDERS, provider);
+
+/** Slug to put in the ?provider= URL param. */
+export const getProviderRouteSlug = (provider: SupportedProvider): string => OLES_PROVIDERS[provider].routeSlug;
+
+/** Resolve a ?provider= URL slug back to its OLES provider, or undefined if unknown. */
+export const getProviderFromRouteSlug = (slug: string): SupportedProvider | undefined =>
+    (Object.keys(OLES_PROVIDERS) as SupportedProvider[]).find(
+        (provider) => OLES_PROVIDERS[provider].routeSlug === slug
+    );
