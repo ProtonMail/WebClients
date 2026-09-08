@@ -11,6 +11,7 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { telemetry } from '@proton/shared/lib/telemetry';
 
+import type { BillingAddress } from '../core/billing-address/billing-address';
 import type {
     Currency,
     Cycle,
@@ -24,6 +25,7 @@ import {
     type PaymentTelemetryContext,
     type SubscriptionModificationStepTelemetry,
     formatPaymentTelemetryPayload,
+    getInitialBillingAddressProperties,
     getTelemetryPaymentMethod,
 } from './helpers';
 
@@ -438,6 +440,8 @@ type PaymentInitTelemetryPayload = {
     context: PaymentTelemetryContext;
     /** Whether the initialized checkout is a trial */
     isTrial: boolean;
+    /** Billing address shown in the checkout when it opened. Reduced before being sent. */
+    initialBillingAddress: BillingAddress;
 };
 
 /** Event name mapping for initialization events */
@@ -468,12 +472,14 @@ export function reportInitialization({
     userCurrency,
     subscription,
     selectedPlanIDs,
+    initialBillingAddress,
     context,
     ...rest
 }: PaymentInitTelemetryPayload) {
     const eventName = INITIALIZATION_CONTEXT_MAPPING[context] ?? 'unknown_context_init';
     telemetry.sendCustomEvent(eventName, {
         ...formatPaymentTelemetryPayload(userCurrency, subscription, selectedPlanIDs),
+        ...getInitialBillingAddressProperties(initialBillingAddress),
         ...rest,
     });
 }

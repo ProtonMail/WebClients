@@ -356,6 +356,7 @@ const InnerSignupContextProvider = ({
             build: APP_NAME,
             product: app,
             isTrial: paymentsContext.isTrial,
+            initialBillingAddress: paymentsContext.billingAddress,
         });
     }, [paymentsContext.initialized]);
 
