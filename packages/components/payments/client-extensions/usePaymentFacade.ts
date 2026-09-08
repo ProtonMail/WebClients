@@ -28,7 +28,6 @@ import type { PaymentStage } from '@proton/payments/telemetry/shared-checkout-te
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api, User } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import useAuthentication from '../../hooks/useAuthentication';
 import type { OnMethodChangedHandler, Operations, OperationsData } from '../react-extensions';
@@ -36,6 +35,7 @@ import { usePaymentFacade as useInnerPaymentFacade } from '../react-extensions';
 import type { ThemeCode, ThemeLike } from './helpers';
 import { getThemeCode } from './helpers';
 import { wrapMethods } from './useMethods';
+import { usePaymentMethodFlags } from './usePaymentMethodFlags';
 import { type TelemetryPaymentFlow, usePaymentsTelemetry } from './usePaymentsTelemetry';
 import {
     useApplePayDependencies,
@@ -144,11 +144,7 @@ export const usePaymentFacade = ({
 }: PaymentFacadeProps) => {
     const { APP_NAME } = useConfig();
 
-    const enableSepa = useFlag('SepaPayments');
-    const enableSepaB2C = useFlag('SepaPaymentsB2C');
-    const enablePaypalRegionalCurrenciesBatch3 = useFlag('PaypalRegionalCurrenciesBatch3');
-    const enablePaypalKrw = useFlag('PaypalKrw');
-    const enableIdeal = useFlag('EnableIdeal');
+    const paymentMethodFlags = usePaymentMethodFlags();
 
     const defaultApi = useApi();
     const api = apiOverride ?? defaultApi;
@@ -266,16 +262,12 @@ export const usePaymentFacade = ({
             },
             user,
             subscription,
-            enableSepa,
-            enableSepaB2C,
             onBeforeSepaPayment,
             planIDs,
             isTrial,
             canUseApplePay,
             canUseGooglePay,
-            enablePaypalRegionalCurrenciesBatch3,
-            enablePaypalKrw,
-            enableIdeal,
+            paymentMethodFlags,
             telemetryContext,
             onDeclined: ({ selectedMethodType, selectedMethodValue }) =>
                 reportPaymentEvent('payment_declined', selectedMethodType, selectedMethodValue),

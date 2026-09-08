@@ -25,8 +25,23 @@ import { getIsB2BAudienceFromPlan } from '../plan/helpers';
 import { getHas2025OfferCoupon } from '../subscription/helpers';
 import type { Subscription } from '../subscription/interface';
 import { isFreeSubscription } from '../type-guards';
+import { getPaymentMethodConfig } from './registry';
 
-export type PaymentMethodsContext = {
+/**
+ * Every feature flag the availability rules read, resolved to a boolean.
+ *
+ * Threading these one by one through the facades is what made adding a flag an ~8-file change, so
+ * they travel as one object. `usePaymentMethodFlags` resolves them.
+ */
+export type PaymentMethodFlags = {
+    enableSepa?: boolean;
+    enableSepaB2C?: boolean;
+    enablePaypalRegionalCurrenciesBatch3?: boolean;
+    enablePaypalKrw?: boolean;
+    enableIdeal?: boolean;
+};
+
+export type PaymentMethodsContext = PaymentMethodFlags & {
     paymentStatus: PaymentStatus;
     paymentMethods: SavedPaymentMethod[];
     amount: number;
@@ -35,17 +50,12 @@ export type PaymentMethodsContext = {
     flow: PaymentMethodFlow;
     selectedPlanName: PLANS | ADDON_NAMES | undefined;
     billingAddress?: BillingAddress;
-    enableSepa?: boolean;
-    enableSepaB2C?: boolean;
     user?: User;
     planIDs?: PlanIDs;
     subscription?: Subscription | FreeSubscription;
     canUseApplePay?: boolean;
     canUseGooglePay?: boolean;
     isTrial?: boolean;
-    enablePaypalRegionalCurrenciesBatch3?: boolean;
-    enablePaypalKrw?: boolean;
-    enableIdeal?: boolean;
 };
 
 const sepaCountries = new Set([
@@ -287,22 +297,13 @@ export const getUsedMethods = (context: PaymentMethodsContext): AvailablePayment
     const { paymentMethods, paymentStatus } = context;
 
     const isSavedMethodUsable = ({ Type }: SavedPaymentMethod) => {
-        switch (Type) {
-            case PAYMENT_METHOD_TYPES.CHARGEBEE_CARD:
-                return paymentStatus.VendorStates.Card;
-            case PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL:
-                return paymentStatus.VendorStates.Paypal;
-            case PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT:
-                return paymentStatus.VendorStates.Card && flowSupportsSepaDirectDebit(context);
-            case PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL:
-                return paymentStatus.VendorStates.Ideal;
-            case PAYMENT_METHOD_TYPES.APPLE_PAY:
-                return paymentStatus.VendorStates.Apple;
-            case PAYMENT_METHOD_TYPES.GOOGLE_PAY:
-                return paymentStatus.VendorStates.Google;
-            default:
-                return false;
+        const config = getPaymentMethodConfig(Type);
+        if (!config?.savable || !config.vendorStateKey || !paymentStatus.VendorStates[config.vendorStateKey]) {
+            return false;
         }
+
+        // SEPA rides on the card vendor state, but is only offered in some flows
+        return Type !== PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT || flowSupportsSepaDirectDebit(context);
     };
 
     return paymentMethods.filter(isSavedMethodUsable).map((paymentMethod) => ({
