@@ -6,8 +6,10 @@ export const FE_PERMISSION_ONLY = [
     'account.organization_identity.read',
     'account.access_control.read',
     'account.organization_filter.read',
+    'account.always_on.read',
 ] as const;
 
+// These permissions was added to BE, do not modify this unless you also update it on BE
 export const PERMISSIONS = [
     'account.user.create',
     'account.user.read',
@@ -41,7 +43,6 @@ export const PERMISSIONS = [
     'account.gateway.delete',
     'account.shared_server.read',
     'account.shared_server.update',
-    'account.always_on.read',
     ...FE_PERMISSION_ONLY,
 ] as const;
 
