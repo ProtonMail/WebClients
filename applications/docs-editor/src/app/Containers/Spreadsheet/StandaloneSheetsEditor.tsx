@@ -16,6 +16,7 @@ export const StandaloneSheetsEditor = forwardRef(function StandaloneSheetsEditor
     editorInitializationConfig,
     systemMode,
     editingLocked,
+    setMigrationEditingLocked,
     updateLocalStateToLog,
     isPublicMode,
   }: SpreadsheetProps,
@@ -31,6 +32,7 @@ export const StandaloneSheetsEditor = forwardRef(function StandaloneSheetsEditor
         editorInitializationConfig={editorInitializationConfig}
         systemMode={systemMode}
         editingLocked={editingLocked}
+        setMigrationEditingLocked={setMigrationEditingLocked}
         updateLocalStateToLog={updateLocalStateToLog}
         isPublicMode={isPublicMode}
       />
