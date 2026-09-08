@@ -46,11 +46,11 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { getSpace } from '@proton/shared/lib/user/storage';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
+import { VPN_SERVERS } from '@proton/shared/lib/vpn/vpnServers';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
-import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
 import { Badge } from '../../../../../components/badge/Badge';
 import useModalState from '../../../../../components/modalTwo/useModalState';

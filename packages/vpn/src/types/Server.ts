@@ -1,10 +1,4 @@
-export interface MyLocationResponse {
-    IP: string;
-    Lat: number;
-    Long: number;
-    Country: string;
-    ISP: string;
-}
+export type { MyLocationResponse } from '@proton/shared/lib/vpn/location';
 
 export interface VPNServersCount {
     Capacity: number;
@@ -12,16 +6,7 @@ export interface VPNServersCount {
     Servers: number;
 }
 
-export interface VPNServersCountData {
-    free: {
-        countries: number;
-        servers: number;
-    };
-    paid: {
-        countries: number;
-        servers: number;
-    };
-}
+export type { VPNServersCountData } from '@proton/shared/lib/vpn/vpnServers';
 
 export interface VPNServersCounts {
     free: VPNServersCount;
