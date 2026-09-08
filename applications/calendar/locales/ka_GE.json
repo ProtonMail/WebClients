@@ -4562,9 +4562,6 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "გაქვთ გადაუხდელი ინვოისები. გადაიხადეთ, სანამ საოჯახო გეგმას მიუერთდებით."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "გიწვევენ, თქვენი ${ BRAND_NAME }-ის ანგარიში ამ ოჯახის ტარიფს მიაბათ და ერთად ისიამოვნოთ ყველა ${ brandOrAppName }-ის ფასიანი ფუნქციით."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "თქვენს ანგარიშს იმაზე მეტი მისამართი გააჩნია, ვიდრე ეს თქვენი სატარიფო გეგმის მიერაა დაშვებული. ${ addressSettingsLink }"
       ],
@@ -8650,9 +8647,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } დასრულდება ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 ტბ ღრუბლოვანი საცავი, რომელიც გაძლევთ საშუალებას ადვილად შეინახოთ, დაასინქრონოთ და გააზიაროთ ფაილები. დაცულია გამჭოლი დაშიფვრით."
       ],
@@ -9858,17 +9852,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "განახლების ფასი დამოკიდებულია ანგარიშსწორების რეგიონსა და დღგ-ის (VAT) ნომერზე."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - ბარათის ვადა იწურება ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "საბანკო გადარიცხვა - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - ბარათის ვადა იწურება ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
