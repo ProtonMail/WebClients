@@ -1109,6 +1109,15 @@
         "${ users } utilisateur",
         "${ users } utilisateurs"
       ],
+      "Amount due": [
+        "Montant dû"
+      ],
+      "Amount due after trial": [
+        "Montant dû après la période d'essai"
+      ],
+      "Amount due now": [
+        "Montant dû maintenant"
+      ],
       "Subtotal": [
         "Sous-total"
       ],
@@ -1118,6 +1127,10 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Total for ${ cycle } month": [
+        "Total pour ${ cycle } mois",
+        "Total pour ${ cycle } mois"
       ]
     },
     "Collapsible tooltip": {
@@ -4291,8 +4304,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } se terminant par ${ last4 }"
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } se terminant par ${ Last4 }"
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 To d'espace de stockage cloud qui vous permet de stocker, synchroniser et partager des fichiers facilement. Sécurisé par un chiffrement de bout en bout."
@@ -4997,6 +5010,11 @@
         "Les crédits seront ajoutés à votre solde."
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "La modification de votre adresse de facturation peut avoir une incidence sur les taxes figurant sur vos prochaines factures."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Voulez-vous vraiment continuer ?"
@@ -5034,14 +5052,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - carte se terminant par les chiffres ${ paymentMethod.Details.Last4 }"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - carte se terminant par les chiffres ${ Last4 }"
       ],
-      "Bank transfer - ${ details }": [
-        "Virement bancaire - ${ details }"
+      "Bank transfer - ${ iban }": [
+        "Virement bancaire - ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - carte se terminant par les chiffres ${ paymentMethod.Details.Last4 }"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - carte se terminant par les chiffres ${ Last4 }"
       ]
     },
     "Payments.Sepa": {

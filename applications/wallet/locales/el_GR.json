@@ -1112,6 +1112,15 @@
         "${ users } χρήστης",
         "${ users } χρήστες"
       ],
+      "Amount due": [
+        "Οφειλόμενο ποσό"
+      ],
+      "Amount due after trial": [
+        "Οφειλόμενο ποσό μετά τη δοκιμαστική περίοδο"
+      ],
+      "Amount due now": [
+        "Οφειλόμενο ποσό τώρα"
+      ],
       "Subtotal": [
         "Υποσύνολο"
       ],
@@ -1121,6 +1130,10 @@
       ],
       "Total": [
         "Σύνολο"
+      ],
+      "Total for ${ cycle } month": [
+        "Σύνολο για ${ cycle } μήνα",
+        "Σύνολο για ${ cycle } μήνες"
       ]
     },
     "Collapsible tooltip": {
@@ -4297,9 +4310,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } που λήγει σε ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB αποθηκευτικού χώρου στο cloud που σας επιτρέπει να αποθηκεύετε, συγχρονίζετε και μοιράζεστε αρχεία εύκολα. Προστατεύεται από διατερματική κρυπτογράφηση."
       ],
@@ -5037,17 +5047,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και τον αριθμό ΦΠΑ."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - κάρτα που λήγει σε ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Τραπεζική μεταφορά - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - κάρτα που λήγει σε ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
