@@ -1,7 +1,5 @@
 import { c } from 'ttag';
 
-import TextFieldBody from '@proton/components/components/lumoAgent/cardBodies/TextFieldBody';
-import type { CardBodyProps, CardRenderer } from '@proton/components/components/lumoAgent/types';
 import { IcPencil } from '@proton/icons/icons/IcPencil';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type {
@@ -10,6 +8,8 @@ import type {
     ToolDefinition,
     ToolHandler,
 } from '@proton/llm/lib/lumoAgent/contracts/types';
+import TextFieldBody from '@proton/llm/lib/lumoAgent/ui/cardBodies/TextFieldBody';
+import type { CardBodyProps, CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 
 import { resolveTypedId } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';

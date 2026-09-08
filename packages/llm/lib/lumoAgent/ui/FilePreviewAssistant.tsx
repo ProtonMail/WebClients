@@ -2,19 +2,19 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import LumoWordmark from '@proton/lumo-ui/LumoWordmark';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import LumoAgentPanel from '../../components/lumoAgent/LumoAgentPanel';
-import { LumoConversationHeaderActions } from '../../components/lumoAgent/LumoConversationHeaderActions';
-import type { LumoAgentConfig } from '../../components/lumoAgent/types';
-import useLumoAgent from '../../components/lumoAgent/useLumoAgent';
-import { useTheme } from '../themes/ThemeProvider';
+import LumoAgentPanel from './LumoAgentPanel';
+import { LumoConversationHeaderActions } from './LumoConversationHeaderActions';
+import type { LumoAgentConfig } from './types';
+import useLumoAgent from './useLumoAgent';
 
 import '@proton/lumo-ui/lumo-ui.scss';
 
-import '../../components/lumoAgent/lumoAgent.scss';
+import './lumoAgent.scss';
 
 // TODO: the conversation lives in this component's state, so it lasts as long as the file stays open.
 // Persist it the way Lumo's own history does (encrypted, server-side) rather than putting file contents

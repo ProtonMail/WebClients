@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import type { CardRenderers, LumoAgentConfig } from '@proton/components/components/lumoAgent/types';
 import { IcBrandProton } from '@proton/icons/icons/IcBrandProton';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import type { ToolDefinition, ToolHandlers } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createLoadGuideDefinition } from '@proton/llm/lib/lumoAgent/engine/loadGuide';
+import type { CardRenderers, LumoAgentConfig } from '@proton/llm/lib/lumoAgent/ui/types';
 
 import { MAIL_RULES } from './rules';
 import { createFilterModule } from './skills/filters/createFilter';

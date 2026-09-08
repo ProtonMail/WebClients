@@ -3,6 +3,13 @@ import { useRef } from 'react';
 import { FilePreview, NavigationControl } from '@proton/components';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { useFlagsDriveLumo, useFlagsDriveSheet } from '@proton/drive/modules/flags';
+import { lazy } from 'react';
+
+const FilePreviewAssistant = lazy(() =>
+    import(/* webpackChunkName: "file-preview-assistant" */ '@proton/llm/lib/lumoAgent/ui/FilePreviewAssistant').then(
+        (module) => ({ default: module.FilePreviewAssistant })
+    )
+);
 
 import { loadPreviewThumbnail } from '../../lumo/loadPreviewThumbnail';
 import type { OpenFile } from '../../lumo/toolModule';
@@ -143,8 +150,16 @@ export function Preview({
                 }
                 sheetsEnabled={sheetsEnabled}
                 date={date}
-                lumoConfig={canAskLumo && isDriveLumoEnabled ? lumoConfig : undefined}
-                lumoConversationKey={preview.node.nodeUid}
+                lumoAssistant={
+                    canAskLumo && isDriveLumoEnabled
+                        ? {
+                              conversationKey: preview.node.nodeUid,
+                              renderPanel: ({ onClose }) => (
+                                  <FilePreviewAssistant config={lumoConfig} onClose={onClose} />
+                              ),
+                          }
+                        : undefined
+                }
                 {...photos}
             />
             {detailsModal}

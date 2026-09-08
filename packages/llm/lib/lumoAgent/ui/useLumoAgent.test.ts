@@ -1,7 +1,5 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
-import type { ToolDefinition } from '@proton/llm/lib/lumoAgent/contracts/types';
-import { createLoadGuideDefinition } from '@proton/llm/lib/lumoAgent/engine/loadGuide';
 import type {
     ClientToolExecutor,
     GenerationResponseMessage,
@@ -9,6 +7,8 @@ import type {
     Turn,
 } from '@proton/lumo-api-client';
 
+import type { ToolDefinition } from '../contracts/types';
+import { createLoadGuideDefinition } from '../engine/loadGuide';
 import type { LumoAgentConfig } from './types';
 import { ConfirmStatus } from './types';
 import useLumoAgent from './useLumoAgent';

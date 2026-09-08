@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
-import LumoAgentDrawerContext from '@proton/components/components/drawer/views/lumoAgent/lumoAgentDrawerContext';
-import useLumoAgent from '@proton/components/components/lumoAgent/useLumoAgent';
+import LumoAgentDrawerContext from '@proton/llm/lib/lumoAgent/ui/lumoAgentDrawerContext';
+import useLumoAgent from '@proton/llm/lib/lumoAgent/ui/useLumoAgent';
 
 import { useLumoDriveConfig } from '../useLumoDriveConfig';
 
