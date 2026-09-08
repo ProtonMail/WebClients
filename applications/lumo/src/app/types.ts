@@ -1156,6 +1156,7 @@ export enum LUMO_USER_TYPE {
 export enum LUMO_API_ERRORS {
     CONTEXT_WINDOW_EXCEEDED = 'ContextWindow',
     HIGH_DEMAND = 'HighDemand',
+    RATE_LIMIT = 'RateLimit',
     GENERATION_ERROR = 'GenerationError', // This is a catch-all for any error that occurs during generation
     TIER_LIMIT = 'TierLimit', //not implemented yet for free and paid tiers - BE needs to be updated
     GENERATION_REJECTED = 'GenerationRejected',

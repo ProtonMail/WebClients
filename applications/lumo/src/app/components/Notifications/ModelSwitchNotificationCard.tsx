@@ -2,8 +2,6 @@ import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useMaxModelAvailability } from '../../hooks/useMaxModelAvailability';
@@ -13,10 +11,13 @@ import {
     isModelSwitchSuggestionEligible,
     shouldShowLimitUpsell,
     shouldShowModelSwitchSuggestion,
+    useExhaustedLimitNotice,
     useRemainingLimits,
 } from '../../services/usageLimitsStore';
 import type { Message } from '../../types';
+import { getModelDisplayName } from '../../util/modelTierDisplay';
 import {
+    type SuggestedModel,
     hasDismissedModelSwitchNotification,
     markModelSwitchNotificationDismissed,
 } from '../../util/modelSwitchNotificationStorage';
@@ -40,11 +41,21 @@ export const ModelSwitchNotificationCard = ({
     const { isMaxAvailableByFlag } = useMaxModelAvailability();
     const { hasTierErrors } = useTierErrors();
     const remainingLimits = useRemainingLimits();
-    const limitUpsellVisible = shouldShowLimitUpsell(remainingLimits, hasTierErrors, hasLumoPlus);
-    const [dismissed, setDismissed] = useState(hasDismissedModelSwitchNotification);
+    const exhaustedLimitNotice = useExhaustedLimitNotice();
+    const [dismissedModels, setDismissedModels] = useState<Set<SuggestedModel>>(
+        () =>
+            new Set(
+                (['lumo-lite', 'apertus-15'] as SuggestedModel[]).filter(hasDismissedModelSwitchNotification)
+            )
+    );
 
     const selectedModelTier = getSelectedModelTier(modelTier);
-    const selectedModelLabel = selectedModelTier === 'apertus-15' ? 'Apertus 1.5 🇨🇭' : `${LUMO_SHORT_APP_NAME} Lite`;
+    const suggestedModel: SuggestedModel =
+        selectedModelTier === 'apertus-15' ? 'apertus-15' : 'lumo-lite';
+    const limitUpsellVisible =
+        exhaustedLimitNotice !== null &&
+        shouldShowLimitUpsell(remainingLimits, hasTierErrors, hasLumoPlus, exhaustedLimitNotice.modelTier);
+    const selectedModelLabel = getModelDisplayName(selectedModelTier, { withFlag: true, liteLabel: 'short' });
 
     const suggestionArgs = {
         hasLumoPlus,
@@ -57,12 +68,12 @@ export const ModelSwitchNotificationCard = ({
     const isEligible = isModelSwitchSuggestionEligible(suggestionArgs);
     const shouldShow = shouldShowModelSwitchSuggestion({ ...suggestionArgs, isGenerating });
 
-    const isVisible = shouldShow && !dismissed;
+    const isVisible = shouldShow && !dismissedModels.has(suggestedModel);
 
     const persistDismissal = useCallback(() => {
-        setDismissed(true);
-        markModelSwitchNotificationDismissed();
-    }, []);
+        setDismissedModels((current) => new Set(current).add(suggestedModel));
+        markModelSwitchNotificationDismissed(suggestedModel);
+    }, [suggestedModel]);
 
     const handleSwitchToMax = useCallback(() => {
         setModelTier('lumo-max');

@@ -18,4 +18,13 @@
 	.upsell-card-button {
 		color: var(--text-error-banner-button);
 	}
+
+	&.upsell-card--dismissible {
+		padding-inline-end: 3rem;
+	}
+
+	.upsell-card-dismiss-button {
+		inset-block-start: 0.5rem;
+		inset-inline-end: 0.5rem;
+	}
 }

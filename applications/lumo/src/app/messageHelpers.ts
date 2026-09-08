@@ -144,6 +144,30 @@ export function getToolCallBlockId(block: ToolCallBlock): string | undefined {
  * to a different call.
  */
 export function findToolResultForCall(blocks: ContentBlock[], call: ToolCallBlock): ToolResultBlock | undefined {
+    const callName = readStringField(tryParseJSON(call.content), 'name');
+    if (callName === 'stock' || callName === 'cryptocurrency') {
+        const financeCalls = getFinanceToolCalls(blocks);
+        const financeResults = getFinanceToolResults(blocks);
+        const claimed = new Set<ToolResultBlock>();
+
+        for (const candidateCall of financeCalls) {
+            const callId = getToolCallBlockId(candidateCall);
+            const result =
+                (callId && financeResults.find((block) => block.tool_call_id === callId && !claimed.has(block))) ||
+                financeResults.find((block) => !claimed.has(block));
+
+            if (candidateCall === call) {
+                return result;
+            }
+
+            if (result) {
+                claimed.add(result);
+            }
+        }
+
+        return undefined;
+    }
+
     const callId = getToolCallBlockId(call);
     if (callId) {
         const tagged = findToolResult(blocks, (block) => block.tool_call_id === callId);
@@ -183,6 +207,87 @@ function findToolCallBlockIndex(blocks: ContentBlock[], parsed: unknown): number
         getToolCallBlockId(lastBlock) === undefined;
 
     return matchesTrailingCall ? lastIndex : -1;
+}
+
+/**
+ * Id of the earliest tool_call block that does not yet have a tagged tool_result.
+ * Used when a result chunk arrives without a call id but sibling calls were tagged
+ * (e.g. parallel stock lookups via server_tool_call + legacy tool_result stream).
+ */
+function findUnpairedToolCallId(blocks: ContentBlock[]): string | undefined {
+    for (const block of blocks) {
+        if (!isToolCallBlock(block)) {
+            continue;
+        }
+
+        const callId = getToolCallBlockId(block);
+        if (!callId) {
+            continue;
+        }
+
+        const hasResult = blocks.some(
+            (candidate) => isToolResultBlock(candidate) && candidate.tool_call_id === callId
+        );
+        if (!hasResult) {
+            return callId;
+        }
+    }
+
+    return undefined;
+}
+
+function countUnpairedIdLessToolCalls(blocks: ContentBlock[]): number {
+    const idLessCalls = blocks
+        .filter(isToolCallBlock)
+        .filter((block) => getToolCallBlockId(block) === undefined).length;
+    const untaggedResults = blocks.filter(
+        (block) => isToolResultBlock(block) && block.tool_call_id === undefined
+    ).length;
+
+    return Math.max(0, idLessCalls - untaggedResults);
+}
+
+function getFinanceResultIdentity(content: string): string | undefined {
+    try {
+        const parsed = JSON.parse(content) as { current_price?: unknown; company_info?: { name?: unknown } };
+        if (typeof parsed.current_price !== 'number') {
+            return undefined;
+        }
+        if (typeof parsed.company_info?.name === 'string' && parsed.company_info.name.length > 0) {
+            return parsed.company_info.name;
+        }
+        return String(parsed.current_price);
+    } catch {
+        return undefined;
+    }
+}
+
+function getFinanceSymbolFromCallContent(content: string): string | undefined {
+    const parsed = tryParseJSON(content) as { name?: unknown; arguments?: { symbol?: unknown } } | undefined;
+    if (parsed?.name !== 'stock' && parsed?.name !== 'cryptocurrency') {
+        return undefined;
+    }
+    const symbol = parsed.arguments?.symbol;
+    return typeof symbol === 'string' && symbol.trim().length > 0 ? symbol.trim() : undefined;
+}
+
+function getFinanceToolCalls(blocks: ContentBlock[]): ToolCallBlock[] {
+    return blocks.filter(
+        (block): block is ToolCallBlock => isToolCallBlock(block) && getFinanceSymbolFromCallContent(block.content) !== undefined
+    );
+}
+
+function getFinanceToolResults(blocks: ContentBlock[]): ToolResultBlock[] {
+    return blocks.filter(
+        (block): block is ToolResultBlock =>
+            isToolResultBlock(block) && getFinanceResultIdentity(block.content) !== undefined
+    );
+}
+
+function isDistinctFinanceUpdate(previous: string, next: string): boolean {
+    const prevIdentity = getFinanceResultIdentity(previous);
+    const nextIdentity = getFinanceResultIdentity(next);
+    return prevIdentity !== undefined && nextIdentity !== undefined && prevIdentity !== nextIdentity;
 }
 
 /** Index of the tool_result block an incoming chunk updates, or -1 when it starts a new result. */
@@ -226,15 +331,45 @@ export function setToolResultInBlocks(
     meta?: ToolResultBlock['meta'],
     toolCallId?: string
 ): ContentBlock[] {
-    const index = findToolResultBlockIndex(blocks, toolCallId);
+    const resolvedToolCallId = toolCallId ?? findUnpairedToolCallId(blocks);
+
+    if (resolvedToolCallId !== undefined) {
+        const index = findToolResultBlockIndex(blocks, resolvedToolCallId);
+        const prev = index === -1 ? undefined : (blocks[index] as ToolResultBlock);
+        if (prev && isDistinctFinanceUpdate(prev.content, toolResult)) {
+            const resolvedMeta = meta ?? prev.meta;
+            const block: ToolResultBlock = {
+                type: 'tool_result',
+                content: toolResult,
+                toolResult: tryParseJSON(toolResult),
+                ...(resolvedMeta ? { meta: resolvedMeta } : {}),
+            };
+
+            return [...blocks, block];
+        }
+
+        const resolvedMeta = meta ?? prev?.meta;
+        const block: ToolResultBlock = {
+            type: 'tool_result',
+            content: toolResult,
+            toolResult: tryParseJSON(toolResult),
+            tool_call_id: resolvedToolCallId,
+            ...(resolvedMeta ? { meta: resolvedMeta } : {}),
+        };
+
+        return index === -1 ? [...blocks, block] : replaceAt(blocks, index, block);
+    }
+
+    // Legacy id-less stream: update a trailing tool_result in place, otherwise append.
+    const trailingIndex = findToolResultBlockIndex(blocks, undefined);
+    const index = trailingIndex !== -1 && countUnpairedIdLessToolCalls(blocks) > 0 ? -1 : trailingIndex;
     const prev = index === -1 ? undefined : (blocks[index] as ToolResultBlock);
-    const callId = toolCallId ?? prev?.tool_call_id;
     const resolvedMeta = meta ?? prev?.meta;
     const block: ToolResultBlock = {
         type: 'tool_result',
         content: toolResult,
         toolResult: tryParseJSON(toolResult),
-        ...(callId ? { tool_call_id: callId } : {}),
+        ...(prev?.tool_call_id ? { tool_call_id: prev.tool_call_id } : {}),
         ...(resolvedMeta ? { meta: resolvedMeta } : {}),
     };
 

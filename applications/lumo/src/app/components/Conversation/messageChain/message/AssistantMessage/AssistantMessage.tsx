@@ -6,9 +6,9 @@ import { c } from 'ttag';
 import { useModalStateObject } from '@proton/components';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { useChatLimitGate } from '../../../../../hooks/useChatLimitGate';
 import { useCopyNotification } from '../../../../../hooks/useCopyNotification';
 import type { HandleRegenerateMessage } from '../../../../../hooks/useLumoActions';
-import { useTierErrors } from '../../../../../hooks/useTierErrors';
 import type { SearchItem, ToolCallName } from '../../../../../lib/toolCall/types';
 import { getMessageBlocks, getMessageContent, messagesEqualForRendering } from '../../../../../messageHelpers';
 import { useIsGuest } from '../../../../../providers/IsGuestProvider';
@@ -67,7 +67,7 @@ const AssistantActionToolbar = ({
     isGenerating,
     toolCallName,
 }: AssistantActionToolbarProps) => {
-    const { hasTierErrors } = useTierErrors();
+    const { isBlocked: isChatLimitBlocked } = useChatLimitGate();
     const isGuest = useIsGuest();
     const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
     const { showCopyNotification } = useCopyNotification(c('collider_2025:Notification').t`Copied to clipboard`);
@@ -129,7 +129,7 @@ const AssistantActionToolbar = ({
                                     onRetryPanelToggle(message.id, true, retryButtonRef.current);
                                 }
                             }}
-                            disabled={!isFinishedGenerating || generationFailed || hasTierErrors}
+                            disabled={!isFinishedGenerating || generationFailed || isChatLimitBlocked}
                         />
                     </div>
                 </>

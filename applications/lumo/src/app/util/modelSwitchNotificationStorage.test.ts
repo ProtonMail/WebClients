@@ -9,21 +9,13 @@ describe('modelSwitchNotificationStorage', () => {
     });
 
     it('returns false when the notification has not been dismissed', () => {
-        expect(hasDismissedModelSwitchNotification()).toBe(false);
+        expect(hasDismissedModelSwitchNotification('lumo-lite')).toBe(false);
     });
 
-    it('persists dismissal for the browser session', () => {
-        markModelSwitchNotificationDismissed();
+    it('persists dismissal independently for Lite and Apertus', () => {
+        markModelSwitchNotificationDismissed('lumo-lite');
 
-        expect(hasDismissedModelSwitchNotification()).toBe(true);
-    });
-
-    it('honors dismissals stored by the former per-conversation implementation', () => {
-        sessionStorage.setItem(
-            'lumo-model-switch-notification-00000000-0000-4000-8000-000000000001',
-            '1'
-        );
-
-        expect(hasDismissedModelSwitchNotification()).toBe(true);
+        expect(hasDismissedModelSwitchNotification('lumo-lite')).toBe(true);
+        expect(hasDismissedModelSwitchNotification('apertus-15')).toBe(false);
     });
 });

@@ -29,7 +29,7 @@ type BannerConfig = {
 
 /**
  * Inline banner shown above the composer for conversation length or project file limits.
- * Weekly chat quota is handled by ComposerWeeklyLimitUpsell (UpsellCard).
+ * Chat-model quota is handled by ComposerModelLimitUpsell (UpsellCard).
  */
 export const ComposerLimitBanner = ({ conversationId, spaceId, onOpenFiles }: Props) => {
     const history = useHistory();
