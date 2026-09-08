@@ -67,14 +67,32 @@
       "Background removed": [
         "Baggrund fjernet"
       ],
+      "Beach landscape background applied": [
+        "Stand-baggrund anvendt"
+      ],
       "Blurred background applied": [
         "Sløret baggrund anvendt"
+      ],
+      "Blurred office background applied": [
+        "Sløret kontor-baggrund anvendt"
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Forbundet via TURN-relætilstand på grund af dine netværksbegrænsninger. Dette kan øge latenstiden og påvirke opkaldskvaliteten."
       ],
       "Connection lost. Reconnecting…": [
         "Forbindelsen blev afbrudt. Genopretter forbindelse..."
+      ],
+      "Dark ${ BRAND_NAME } background applied": [
+        "Mørk ${ BRAND_NAME }-baggrund anvendt"
+      ],
+      "Library background applied": [
+        "Biblioteks-baggrund anvendt"
+      ],
+      "Light ${ BRAND_NAME } background applied": [
+        "Lys ${ BRAND_NAME }-baggrund anvendt"
+      ],
+      "Mountain landscape background applied": [
+        "Bjerg-baggrund anvendt"
       ],
       "New chat message: ${ message }": [
         "Ny chat-besked:${ message }"
@@ -207,6 +225,9 @@
       ],
       "Cancel": [
         "Annullér"
+      ],
+      "Change layout": [
+        "Skift layout"
       ],
       "Change password": [
         "Skift adgangskode"
@@ -363,6 +384,9 @@
       ],
       "Getting ready...": [
         "Forbereder..."
+      ],
+      "Grid": [
+        "Gitter"
       ],
       "Help and feedback": [
         "Hjælp og feedback"
@@ -564,6 +588,9 @@
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "Planlæg i ${ CALENDAR_APP_NAME }"
       ],
+      "Screen share": [
+        "Skærmdeling"
+      ],
       "Search countries": [
         "Søg lande"
       ],
@@ -605,6 +632,9 @@
       ],
       "Skip to main content": [
         "Spring til hovedindholdet"
+      ],
+      "Speaker": [
+        "Taler"
       ],
       "Start an instant meeting": [
         "Start et hurtigt møde"
@@ -692,12 +722,6 @@
       ],
       "Use camera": [
         "Brug kamera"
-      ],
-      "Use color": [
-        "Brug en farve"
-      ],
-      "Use image": [
-        "Brug et billede"
       ],
       "Use microphone": [
         "Brug mikrofon"
@@ -2221,6 +2245,9 @@
       "Screen share is not supported on mobile browsers": [
         "Skærmdeling understøttes ikke på mobile browsere"
       ],
+      "Screen share is not supported on your device": [
+        "Skærmdeling understøttes ikke på din enhed"
+      ],
       "Signature is missing": [
         "Signaturen mangler"
       ],
@@ -2585,6 +2612,9 @@
         "${ replyCount } svar",
         "${ replyCount } svar"
       ],
+      "${ spotlightParticipantName } is the active speaker": [
+        "${ spotlightParticipantName } er den aktive taler"
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } af op til ${ maxParticipants } deltagere"
       ],
@@ -2617,8 +2647,8 @@
       "Admitting": [
         "Lukker ind"
       ],
-      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
-        "Avanceret tilstand: Indstil hver sløringskonstant til den næste version, og tryk derefter på Anvend for at oprette forhåndsvisningen igen. Overrides prioriteres højere end fil- og Unleash-værdier."
+      "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Avanceret tilstand: Indstil hver sløringskonstant, og tryk derefter på Anvend for at oprette forhåndsvisningen igen. Overrides prioriteres højere end fil- og Unleash-værdier."
       ],
       "Allow camera access to preview your background": [
         "Tillad adgang til kameraet for at forhåndsvise din baggrund"
@@ -2902,8 +2932,8 @@
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
         "Logfiler hjælper os med at forstå hvad der skete før problemer opstod. De inkluderer handlinger og appen og fejlmeddelelser, men intet beskedindhold."
       ],
-      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
-        "Loop en uploadet video eller dit live kamera gennem begge versioner af baggrundssløring side om side."
+      "Loop an uploaded video or your live camera through background blur.": [
+        "Loop en uploadet video eller dit live kamera gennem baggrundssløring."
       ],
       "Lower participant's hand": [
         "Tag deltagerens hånd ned"
@@ -3115,8 +3145,8 @@
       "Rejecting": [
         "Afviser"
       ],
-      "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
-        "Kør dit live kamera igennem den brugerdefinerede baggrundsprocessor. Vælg en farve eller upload et billede, som skal bruges som baggrund."
+      "Run your live camera through the custom background processor. Upload an image to use as the background.": [
+        "Kør dit live kamera igennem den brugerdefinerede baggrundsprocessor. Upload et billede til at bruge som baggrund."
       ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Planlæg dit næste møde. Opret en konto for at planlægge møder med din kalender."
@@ -3412,11 +3442,14 @@
       "Auto-detect": [
         "Registrer automatisk"
       ],
-      "Background color": [
-        "Baggrundsfarve"
+      "Beach landscape background": [
+        "Strand-baggrund"
       ],
       "Blurred (next)": [
         "Sløret (næste)"
+      ],
+      "Blurred office background": [
+        "Sløret kontor-baggrund"
       ],
       "Browser": [
         "Browser"
@@ -3454,8 +3487,8 @@
       "Created": [
         "Oprettet"
       ],
-      "Current": [
-        "Nuværende"
+      "Dark ${ BRAND_NAME } background": [
+        "Mørk ${ BRAND_NAME }-baggrund"
       ],
       "Delete": [
         "Slet"
@@ -3526,6 +3559,12 @@
       "Leave meeting options": [
         "Forlad mødeindstillinger"
       ],
+      "Library background": [
+        "Biblioteks-baggrund"
+      ],
+      "Light ${ BRAND_NAME } background": [
+        "Lys ${ BRAND_NAME }-baggrund"
+      ],
       "Live caption agent": [
         "Agent til live undertekster"
       ],
@@ -3547,14 +3586,14 @@
       "Monday to Friday": [
         "Mandag til fredag"
       ],
+      "Mountain landscape background": [
+        "Bjerg-baggrund"
+      ],
       "Muted": [
         "Lydløs"
       ],
       "Name": [
         "Navn"
-      ],
-      "Next": [
-        "Næste"
       ],
       "Operating system": [
         "Operativsystem"
@@ -3576,6 +3615,9 @@
       ],
       "Phone number": [
         "Telefonnummer"
+      ],
+      "Preview": [
+        "Forhåndsvisning"
       ],
       "Raw": [
         "Raw"
@@ -3612,9 +3654,6 @@
       ],
       "Selected Speaker": [
         "Valgt højttaler"
-      ],
-      "Solid color": [
-        "Farve"
       ],
       "Spoken language": [
         "Talt sprog"
@@ -4039,8 +4078,8 @@
       "Background": [
         "Baggrund"
       ],
-      "Background blur comparison": [
-        "Sammenligning af baggrundssløring"
+      "Background blur preview": [
+        "Forhåndvisning af baggrundssløring"
       ],
       "Backgrounds": [
         "Baggrunde"
