@@ -3,17 +3,16 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { COUPON_CODES } from '@proton/payments/core/constants';
-import mailOfferSpotlight from '@proton/styles/assets/img/permanent-offer/mail_offer_spotlight.svg';
 
-import { OfferContent } from '../PostSignupOneDollar/components/OfferContent';
-import { OfferLastReminderSpotlight } from '../PostSignupOneDollar/components/OfferLastReminderSpotlight';
-import { PostSignupOneDollarCheck } from '../PostSignupOneDollar/components/PostSignupOneDollarCheck';
-import { LAST_REMINDER_DAY } from '../PostSignupOneDollar/interface';
+import { ZeroNinetyNineCheck } from './components/ZeroNinetyNineCheck';
+import { ZeroNinetyNineFooter } from './components/ZeroNinetyNineFooter';
+import { ZeroNinetyNineLastReminder } from './components/ZeroNinetyNineLastReminder';
+import { ZeroNinetyNineTable } from './components/ZeroNinetyNineTable';
+import { ZeroNinetyNineTitle } from './components/ZeroNinetyNineTitle';
+import { ZERO_NINETY_NINE_LAST_REMINDER_DAY } from './interface';
 
 interface Props {
     pricingTitle: ReactNode;
-    onClose: () => void;
     onUpsellClick: () => void;
     onNeverShow: () => void;
     daysSinceOffer: number;
@@ -22,18 +21,12 @@ interface Props {
 const MB = 1024 * 1024;
 const FREE_CHECKLIST_SPACE_MB = 500;
 
-export const MailPostSignup099Content = ({
-    daysSinceOffer,
-    onClose,
-    pricingTitle,
-    onUpsellClick,
-    onNeverShow,
-}: Props) => {
+export const MailPostSignup099Content = ({ daysSinceOffer, pricingTitle, onUpsellClick, onNeverShow }: Props) => {
     const [user] = useUser();
     const hasFinishedChecklist = user.MaxSpace / MB > FREE_CHECKLIST_SPACE_MB;
 
-    if (daysSinceOffer >= LAST_REMINDER_DAY) {
-        return <OfferLastReminderSpotlight product="mail" pricingTitle={pricingTitle} imgSrc={mailOfferSpotlight} />;
+    if (daysSinceOffer >= ZERO_NINETY_NINE_LAST_REMINDER_DAY) {
+        return <ZeroNinetyNineLastReminder pricingTitle={pricingTitle} />;
     }
 
     const features = [
@@ -44,7 +37,7 @@ export const MailPostSignup099Content = ({
             plus: '15 GB',
         },
         { id: 'addresses', title: c('Offer feature').t`Email addresses`, free: '1', plus: '10' },
-        { id: 'domain', title: c('Offer feature').t`Custom email domain`, free: '–', plus: PostSignupOneDollarCheck },
+        { id: 'domain', title: c('Offer feature').t`Custom email domain`, free: '–', plus: ZeroNinetyNineCheck },
         {
             id: 'short-domain',
             title: (
@@ -54,19 +47,15 @@ export const MailPostSignup099Content = ({
                 </div>
             ),
             free: '–',
-            plus: PostSignupOneDollarCheck,
+            plus: ZeroNinetyNineCheck,
         },
     ];
 
     return (
-        <OfferContent
-            product="mail"
-            features={features}
-            onClose={onClose}
-            onUpsellClick={onUpsellClick}
-            onNeverShow={onNeverShow}
-            coupon={COUPON_CODES.TRYMAILPLUS0926}
-            gradient="purple-blue"
-        />
+        <section className="p-6 pt-12">
+            <ZeroNinetyNineTitle />
+            <ZeroNinetyNineTable features={features} />
+            <ZeroNinetyNineFooter onUpsellClick={onUpsellClick} onNeverShow={onNeverShow} />
+        </section>
     );
 };
