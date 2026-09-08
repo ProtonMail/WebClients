@@ -9,7 +9,7 @@ import StreamingMarkdownRenderer from '../../../../../LumoMarkdown/StreamingMark
 import { parseToolCallBlock } from '../../toolCall/toolCallUtils';
 import { ThinkingPath, type ThinkingStep } from './ThinkingPath';
 import { WeatherToolResult, parseWeatherResult } from './WeatherToolResult';
-import { type FinanceComparisonItem, parseFinanceResult } from './financeUtils';
+import { type FinanceComparisonItem, collectFinanceComparisonItems } from './financeUtils';
 
 // Recharts (~341KB) lives only inside these two components. Lazy-load them so a finance
 // chart is fetched on demand (when a stock/crypto tool result renders) instead of sitting
@@ -314,37 +314,18 @@ export const RenderBlocks = ({
 
     const textBlocks = interleavedItems.filter((i) => i.type === 'text');
 
-    // Gather all rich-card-eligible steps globally so finance comparison always works
-    // regardless of whether the tool calls ended up in the same or different step groups.
-    const allStepItems = interleavedItems.filter(
-        (i): i is Extract<InterleavedItem, { type: 'steps' }> => i.type === 'steps'
-    );
-    const allRichCardSteps = allStepItems.flatMap((item) => getRichCardSteps(item.steps));
+    const globalFinanceItems: FinanceComparisonItem[] = collectFinanceComparisonItems(blocks);
 
-    const seenSymbols = new Set<string>();
-    const globalFinanceItems: FinanceComparisonItem[] = allRichCardSteps
-        .filter((s) => s.toolCall.name === 'stock' || s.toolCall.name === 'cryptocurrency')
-        .flatMap((s) => {
-            const data = parseFinanceResult(s.result!);
-            const symbol =
-                'arguments' in s.toolCall &&
-                s.toolCall.arguments != null &&
-                'symbol' in (s.toolCall.arguments as object)
-                    ? (s.toolCall.arguments as { symbol: string }).symbol
-                    : s.toolCall.name;
-            if (!data || seenSymbols.has(symbol)) return [];
-            seenSymbols.add(symbol);
-            return [{ data, symbol }];
-        });
-
-    // Find the last step group index that contains any finance items, so we can
+    // Find the last step group index that contains any finance tool calls, so we can
     // attach the (possibly global) comparison card to it.
     const lastFinanceGroupIdx = (() => {
         let last = -1;
         interleavedItems.forEach((item, idx) => {
             if (item.type === 'steps') {
-                const hasFinance = getRichCardSteps(item.steps).some(
-                    (s) => s.toolCall.name === 'stock' || s.toolCall.name === 'cryptocurrency'
+                const hasFinance = item.steps.some(
+                    (step) =>
+                        step.type === 'tool_call' &&
+                        (step.toolCall.name === 'stock' || step.toolCall.name === 'cryptocurrency')
                 );
                 if (hasFinance) last = idx;
             }

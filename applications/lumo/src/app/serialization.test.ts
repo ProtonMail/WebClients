@@ -94,4 +94,54 @@ describe('serialization', () => {
         expect(deserialized).toEqual(mockMessage);
         expect(deserialized?.usage).toEqual(mockMessage.usage);
     });
+
+    it('message with multiple finance tool blocks round-trips through encryption', async () => {
+        const makeFinanceResult = (company: string, price: number) =>
+            JSON.stringify({
+                current_price: price,
+                monthly_trend: [{ date: '2026-09-04', price, volume: 1 }],
+                company_info: { name: company },
+            });
+        const googlCall = JSON.stringify({ id: 'call_0', name: 'stock', arguments: { symbol: 'GOOGL' } });
+        const aaplCall = JSON.stringify({ id: 'call_1', name: 'stock', arguments: { symbol: 'AAPL' } });
+        const metaCall = JSON.stringify({ id: 'call_2', name: 'stock', arguments: { symbol: 'META' } });
+
+        const mockMessage: Message = {
+            id: 'MessageId',
+            createdAt: 'messageCreationData',
+            role: Role.Assistant,
+            parentId: 'ParentId',
+            conversationId: 'ConversationId',
+            placeholder: false,
+            status: 'succeeded',
+            blocks: [
+                { type: 'tool_call', content: googlCall, toolCall: JSON.parse(googlCall) },
+                { type: 'tool_call', content: aaplCall, toolCall: JSON.parse(aaplCall) },
+                { type: 'tool_call', content: metaCall, toolCall: JSON.parse(metaCall) },
+                {
+                    type: 'tool_result',
+                    content: makeFinanceResult('Alphabet Inc Class A', 338.46),
+                    tool_call_id: 'call_0',
+                },
+                {
+                    type: 'tool_result',
+                    content: makeFinanceResult('Apple Inc.', 319.97),
+                    tool_call_id: 'call_1',
+                },
+                {
+                    type: 'tool_result',
+                    content: makeFinanceResult('Meta Platforms Inc.', 616.77),
+                    tool_call_id: 'call_2',
+                },
+                { type: 'text', content: 'Here is a quick comparison of the three stocks.' },
+            ],
+        };
+
+        const spaceDek = await getSpaceDek(mockSpace);
+        const serialized = await serializeMessage(mockMessage, spaceDek);
+        expect(serialized).not.toBeNull();
+        const deserialized = await deserializeMessage(serialized!, spaceDek);
+
+        expect(deserialized).toEqual(mockMessage);
+    });
 });

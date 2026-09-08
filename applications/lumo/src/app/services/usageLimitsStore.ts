@@ -11,7 +11,7 @@ type Listener = () => void;
 export type DebugMaxModelOverride = Exclude<MaxModelAvailability, 'available'>;
 
 const DEBUG_MAX_AVAILABILITY_KEY = 'lumo_debug_max_availability';
-const DEBUG_WEEKLY_LIMIT_EXHAUSTED_KEY = 'lumo_debug_weekly_limit_exhausted';
+const DEBUG_MODEL_LIMITS_EXHAUSTED_KEY = 'lumo_debug_weekly_limit_exhausted';
 
 const readPersistedMaxOverride = (): DebugMaxModelOverride | null => {
     try {
@@ -22,17 +22,23 @@ const readPersistedMaxOverride = (): DebugMaxModelOverride | null => {
     }
 };
 
-const readPersistedWeeklyLimitExhausted = (): boolean => {
+const readPersistedModelLimitsExhausted = (): boolean => {
     try {
-        return localStorage.getItem(DEBUG_WEEKLY_LIMIT_EXHAUSTED_KEY) === 'true';
+        return localStorage.getItem(DEBUG_MODEL_LIMITS_EXHAUSTED_KEY) === 'true';
     } catch {
         return false;
     }
 };
 
 let remainingLimits: LumoRemainingLimits | null = null;
+let remainingLimitsRevision = 0;
+export type ExhaustedLimitNotice = {
+    limitCategory: 'lite' | 'max';
+    modelTier: UsageModelTier;
+};
+let exhaustedLimitNotice: ExhaustedLimitNotice | null = null;
 let debugMaxOverride = readPersistedMaxOverride();
-let debugWeeklyLimitExhausted = readPersistedWeeklyLimitExhausted();
+let debugModelLimitsExhausted = readPersistedModelLimitsExhausted();
 /**
  * What consumers actually observe: the backend limits with any debug override applied.
  * Cached so `useSyncExternalStore` keeps seeing a stable reference between updates.
@@ -43,7 +49,7 @@ const listeners = new Set<Listener>();
 export type UsageModelTier = ModelTier;
 
 function computeEffectiveLimits(): LumoRemainingLimits | null {
-    if (debugWeeklyLimitExhausted) {
+    if (debugModelLimitsExhausted) {
         return { ...(remainingLimits ?? {}), lite: 0, max: 0 };
     }
 
@@ -63,13 +69,55 @@ function publish(): void {
 
 publish();
 
-export function setRemainingLimits(limits: LumoRemainingLimits): void {
+type SetRemainingLimitsOptions = {
+    appliedLimitCategory?: string;
+    modelTier?: UsageModelTier;
+};
+
+const toLimitCategory = (category: string | undefined): 'lite' | 'max' | undefined => {
+    return category === 'lite' || category === 'max' ? category : undefined;
+};
+
+export function getLimitCategoryForTier(modelTier: UsageModelTier): 'lite' | 'max' {
+    return modelTier === 'lumo-max' ? 'max' : 'lite';
+}
+
+export function getTierForLimitCategory(category: 'lite' | 'max'): UsageModelTier {
+    return category === 'max' ? 'lumo-max' : 'lumo-lite';
+}
+
+export function setRemainingLimits(limits: LumoRemainingLimits, options: SetRemainingLimitsOptions = {}): void {
+    const previousLimits = remainingLimits;
     remainingLimits = limits;
+    remainingLimitsRevision += 1;
+
+    const appliedLimitCategory = toLimitCategory(options.appliedLimitCategory);
+    if (
+        appliedLimitCategory &&
+        limits[appliedLimitCategory] === 0 &&
+        previousLimits?.[appliedLimitCategory] !== 0
+    ) {
+        exhaustedLimitNotice = {
+            limitCategory: appliedLimitCategory,
+            modelTier: options.modelTier ?? getTierForLimitCategory(appliedLimitCategory),
+        };
+    } else if (
+        exhaustedLimitNotice &&
+        typeof limits[exhaustedLimitNotice.limitCategory] === 'number' &&
+        limits[exhaustedLimitNotice.limitCategory]! > 0
+    ) {
+        exhaustedLimitNotice = null;
+    }
+
     publish();
 }
 
 export function getRemainingLimits(): LumoRemainingLimits | null {
     return effectiveLimits;
+}
+
+export function getRemainingLimitsRevision(): number {
+    return remainingLimitsRevision;
 }
 
 function subscribeRemainingLimits(listener: Listener): () => void {
@@ -79,6 +127,19 @@ function subscribeRemainingLimits(listener: Listener): () => void {
 
 export function useRemainingLimits(): LumoRemainingLimits | null {
     return useSyncExternalStore(subscribeRemainingLimits, getRemainingLimits, getRemainingLimits);
+}
+
+export function getExhaustedLimitNotice(): ExhaustedLimitNotice | null {
+    return exhaustedLimitNotice;
+}
+
+export function useExhaustedLimitNotice(): ExhaustedLimitNotice | null {
+    return useSyncExternalStore(subscribeRemainingLimits, getExhaustedLimitNotice, getExhaustedLimitNotice);
+}
+
+export function markModelLimitExhausted(limitCategory: 'lite' | 'max', modelTier: UsageModelTier): void {
+    exhaustedLimitNotice = { limitCategory, modelTier };
+    publish();
 }
 
 /**
@@ -112,16 +173,24 @@ export function useDebugMaxModelOverride(): DebugMaxModelOverride | null {
 }
 
 /**
- * Debug View only: forces every chat model pool to zero so the weekly limit upsell
+ * Debug View only: forces every chat-model pool to zero so the model-limit upsell
  * can be previewed without waiting for a real quota exhaustion.
  */
-export function setDebugWeeklyLimitExhausted(exhausted: boolean): void {
-    debugWeeklyLimitExhausted = exhausted;
+export function setDebugModelLimitsExhausted(exhausted: boolean): void {
+    debugModelLimitsExhausted = exhausted;
+    if (exhausted) {
+        exhaustedLimitNotice = { limitCategory: 'lite', modelTier: 'lumo-lite' };
+    } else if (
+        exhaustedLimitNotice &&
+        remainingLimits?.[exhaustedLimitNotice.limitCategory] !== 0
+    ) {
+        exhaustedLimitNotice = null;
+    }
     try {
         if (exhausted) {
-            localStorage.setItem(DEBUG_WEEKLY_LIMIT_EXHAUSTED_KEY, 'true');
+            localStorage.setItem(DEBUG_MODEL_LIMITS_EXHAUSTED_KEY, 'true');
         } else {
-            localStorage.removeItem(DEBUG_WEEKLY_LIMIT_EXHAUSTED_KEY);
+            localStorage.removeItem(DEBUG_MODEL_LIMITS_EXHAUSTED_KEY);
         }
     } catch {
         // Storage unavailable — the override still applies for this session.
@@ -129,12 +198,12 @@ export function setDebugWeeklyLimitExhausted(exhausted: boolean): void {
     publish();
 }
 
-export function getDebugWeeklyLimitExhausted(): boolean {
-    return debugWeeklyLimitExhausted;
+export function getDebugModelLimitsExhausted(): boolean {
+    return debugModelLimitsExhausted;
 }
 
-export function useDebugWeeklyLimitExhausted(): boolean {
-    return useSyncExternalStore(subscribeRemainingLimits, getDebugWeeklyLimitExhausted, getDebugWeeklyLimitExhausted);
+export function useDebugModelLimitsExhausted(): boolean {
+    return useSyncExternalStore(subscribeRemainingLimits, getDebugModelLimitsExhausted, getDebugModelLimitsExhausted);
 }
 
 export function isLimitExhausted(remaining: number | undefined): boolean {
@@ -214,7 +283,7 @@ export function getRemainingForModelTier(
         return undefined;
     }
 
-    return modelTier === 'lumo-max' ? limits.max : limits.lite;
+    return limits[getLimitCategoryForTier(modelTier)];
 }
 
 export function isModelTierLimitExhausted(modelTier: UsageModelTier, limits: LumoRemainingLimits | null): boolean {
@@ -333,12 +402,40 @@ export function isAnyModelLimitExhausted(limits: LumoRemainingLimits | null): bo
     return isLimitExhausted(limits.lite) || isLimitExhausted(limits.max);
 }
 
+/** Returns the exhausted pool only when the other chat model still has quota. */
+export function getDismissibleExhaustedModel(limits: LumoRemainingLimits | null): 'lite' | 'max' | undefined {
+    if (limits?.lite === 0 && typeof limits.max === 'number' && limits.max > 0) {
+        return 'lite';
+    }
+    if (limits?.max === 0 && typeof limits.lite === 'number' && limits.lite > 0) {
+        return 'max';
+    }
+    return undefined;
+}
+
+export function getExhaustedLimitForModel(
+    limits: LumoRemainingLimits | null,
+    modelTier: UsageModelTier | undefined
+): ExhaustedLimitNotice | null {
+    if (!limits || !modelTier) {
+        return null;
+    }
+
+    const limitCategory = getLimitCategoryForTier(modelTier);
+    return limits[limitCategory] === 0 ? { limitCategory, modelTier } : null;
+}
+
 export function shouldShowLimitUpsell(
     remainingLimits: LumoRemainingLimits | null,
     hasTierErrors: boolean,
-    hasLumoPlus: boolean
+    hasLumoPlus: boolean,
+    selectedModelTier: UsageModelTier
 ): boolean {
-    return !hasLumoPlus && hasTierErrors && isAnyModelLimitExhausted(remainingLimits);
+    return (
+        !hasLumoPlus &&
+        hasTierErrors &&
+        isModelTierLimitExhausted(selectedModelTier, remainingLimits)
+    );
 }
 
 /** @deprecated Use isModelTierLimitExhausted for the selected model tier. */
@@ -354,24 +451,16 @@ export function resolveUsageModelTier(modelTier: ModelTier | undefined): UsageMo
     return getSelectedModelTier(modelTier);
 }
 
-export function applyUsageFromStreamMessage(message: GenerationResponseMessage): void {
+export function applyUsageFromStreamMessage(
+    message: GenerationResponseMessage,
+    modelTier?: UsageModelTier
+): void {
     if (message.type !== 'usage' || !message.usage.remaining_limits) {
         return;
     }
 
-    setRemainingLimits(message.usage.remaining_limits);
-}
-
-/**
- * Marks model pools as exhausted when the API rejects a request due to tier limits
- * (e.g. HTTP 429) before SSE usage data is available.
- */
-export function applyTierLimitRejectionFromApi(): void {
-    const current = remainingLimits ?? {};
-
-    setRemainingLimits({
-        ...current,
-        lite: 0,
-        max: 0,
+    setRemainingLimits(message.usage.remaining_limits, {
+        appliedLimitCategory: message.usage.applied_limit_category,
+        modelTier,
     });
 }
