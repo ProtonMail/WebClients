@@ -305,8 +305,7 @@
         },
         "packages/lumo-api-client": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/lumo-ui": {
             "entry": [],
