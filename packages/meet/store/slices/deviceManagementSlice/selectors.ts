@@ -86,34 +86,30 @@ export const selectPermissionsModals = (state: MeetState) => state.deviceManagem
 const isDeviceAvailable = (devices: SerializableDeviceInfo[], deviceId: string | null): boolean =>
     !!devices.find((d) => d.deviceId === deviceId);
 
-export const selectSelectedCameraId = createSelector(
-    [selectCameras, selectPreferredCameraId, selectActiveCameraId],
-    (cameras, preferredId, activeId) => {
-        if (preferredId && isDeviceAvailable(cameras, preferredId)) {
-            return preferredId;
-        }
+// What is in use right now, falling back to the saved preference while nothing is in use yet
+const resolveSelectedDeviceId = (devices: SerializableDeviceInfo[], preferredId: string | null, activeId: string) => {
+    if (isDeviceAvailable(devices, activeId)) {
         return activeId;
     }
+    if (preferredId && isDeviceAvailable(devices, preferredId)) {
+        return preferredId;
+    }
+    return activeId;
+};
+
+export const selectSelectedCameraId = createSelector(
+    [selectCameras, selectPreferredCameraId, selectActiveCameraId],
+    resolveSelectedDeviceId
 );
 
 export const selectSelectedMicrophoneId = createSelector(
     [selectMicrophones, selectPreferredMicrophoneId, selectActiveMicrophoneId],
-    (microphones, preferredId, activeId) => {
-        if (preferredId && isDeviceAvailable(microphones, preferredId)) {
-            return preferredId;
-        }
-        return activeId;
-    }
+    resolveSelectedDeviceId
 );
 
 export const selectSelectedAudioOutputId = createSelector(
     [selectSpeakers, selectPreferredSpeakerId, selectActiveAudioOutputId],
-    (speakers, preferredId, activeId) => {
-        if (preferredId && isDeviceAvailable(speakers, preferredId)) {
-            return preferredId;
-        }
-        return activeId;
-    }
+    resolveSelectedDeviceId
 );
 
 const getDefaultLabel = (systemDefault: SerializableDeviceInfo | null) =>
