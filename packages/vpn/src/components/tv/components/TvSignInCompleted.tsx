@@ -4,11 +4,12 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
-import { getOsDownloadUrl } from '../../../functions/getOsDownloadUrl';
+import { useOsDownloadUrl } from '../../../functions/useOsDownloadUrl';
 import desktopSuccess from '../assets/desktopSuccess.svg';
 import mobileSuccess from '../assets/mobileSuccess.svg';
 
 export const TvSignInCompleted = () => {
+    const downloadLink = useOsDownloadUrl();
     return (
         <>
             <div className="flex flex-column items-center mb-8">
@@ -22,7 +23,7 @@ export const TvSignInCompleted = () => {
             <hr className="w-full" />
             <div className="flex flex-column items-center gap-2 w-full mt-8">
                 <span>{c('Info').t`Protect this device too?`}</span>
-                <Href href={getOsDownloadUrl()} className="w-full">
+                <Href href={downloadLink} className="w-full">
                     <Button fullWidth color="norm" shape="solid">{c('Info').t`Download ${VPN_APP_NAME}`}</Button>
                 </Href>
             </div>
