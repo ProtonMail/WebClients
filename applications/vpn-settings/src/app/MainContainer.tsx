@@ -88,6 +88,7 @@ import useRecoveryNotification from '@proton/components/hooks/useRecoveryNotific
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import useToggle from '@proton/hooks/useToggle';
 import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
+import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { APPS, SECURITY_CHECKUP_PATHS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import { localeCode } from '@proton/shared/lib/i18n';
@@ -289,7 +290,9 @@ const MainContainer: FunctionComponent = () => {
                 </Route>
                 {/* Mounted outside of the settings layout so that the safety review gets the full page. */}
                 <Route path={SECURITY_CHECKUP_PATHS.ROOT}>
-                    <SafetyReviewRoute loader={<AccountLoaderPage />} />
+                    <PaymentsContextProvider>
+                        <SafetyReviewRoute loader={<AccountLoaderPage />} />
+                    </PaymentsContextProvider>
                 </Route>
                 <Route path="*">
                     <NavigationProvider>
