@@ -1,6 +1,5 @@
 import { c, msgid } from 'ttag';
 
-import type { CardRenderer } from '@proton/components/components/lumoAgent/types';
 import { IcFolderArrowIn } from '@proton/icons/icons/IcFolderArrowIn';
 import type {
     ActionRequest,
@@ -8,6 +7,7 @@ import type {
     ToolDefinition,
     ToolHandler,
 } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';

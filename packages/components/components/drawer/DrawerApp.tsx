@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Suspense, lazy, useEffect, useLayoutEffect } from 'react';
+import { Suspense, useEffect, useLayoutEffect } from 'react';
 
 import { c } from 'ttag';
 
@@ -31,15 +31,13 @@ import useVPNDrawer from './views/vpn/useVPNDrawer';
 
 import './DrawerApp.scss';
 
-// Lazy so the Lumo panel + @proton/lumo-ui load only when the tab is opened — kept out of the eager
-// bundle of every app that mounts the drawer.
-const DrawerLumoView = lazy(() => import('./views/DrawerLumoView'));
-
 interface Props {
     /**
      * Shared
      */
     customAppSettings?: ReactNode;
+    /** Lumo drawer tab content; supplied by the product so components stays free of @proton/llm. */
+    lumoDrawerView?: ReactNode;
     /**
      * Mail specific
      */
@@ -55,7 +53,14 @@ interface Props {
     onContainerClick?: () => void;
 }
 
-const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomActions, onContainerClick }: Props) => {
+const DrawerApp = ({
+    customAppSettings,
+    lumoDrawerView,
+    onCompose,
+    onMailTo,
+    contactCustomActions,
+    onContainerClick,
+}: Props) => {
     const { APP_NAME } = useConfig();
     const { appInView, iframeSrcMap } = useDrawer();
     const isSecurityCenterEnabled = useSecurityCenter();
@@ -144,9 +149,7 @@ const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomAction
                         {canShowDrawerApp && appInView === DRAWER_NATIVE_APPS.REFERRAL && <DrawerReferralView />}
 
                         {isLumoInAppEnabled && appInView === DRAWER_NATIVE_APPS.LUMO && (
-                            <Suspense fallback={<Loader size="large" />}>
-                                <DrawerLumoView />
-                            </Suspense>
+                            <Suspense fallback={<Loader size="large" />}>{lumoDrawerView}</Suspense>
                         )}
                     </div>
                 </ErrorBoundary>

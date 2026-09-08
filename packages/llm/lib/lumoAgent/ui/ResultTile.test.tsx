@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 
 import { IcPencil } from '@proton/icons/icons/IcPencil';
-import type { ActionRequest } from '@proton/llm/lib/lumoAgent/contracts/types';
 
+import type { ActionRequest } from '../contracts/types';
 import ResultTile from './ResultTile';
 import type { CardRenderer } from './types';
 import { ConfirmStatus } from './types';

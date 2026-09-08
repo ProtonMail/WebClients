@@ -1,6 +1,6 @@
-import ConfirmCard from '@proton/components/components/lumoAgent/cardRenderers';
-import type { CardRenderer } from '@proton/components/components/lumoAgent/types';
 import { IcShield } from '@proton/icons/icons/IcShield';
+import ConfirmCard from '@proton/llm/lib/lumoAgent/ui/cardRenderers';
+import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 import { ToolCallCard } from '@proton/lumo-ui';
 
 import { useDesktopToolApprovals } from './useDesktopToolApprovals';

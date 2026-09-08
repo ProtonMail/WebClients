@@ -1,17 +1,17 @@
+import type { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
+import DrawerView from '@proton/components/components/drawer/views/DrawerView';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import LumoWordmark from '@proton/lumo-ui/LumoWordmark';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import { useTheme } from '../../../containers/themes/ThemeProvider';
-import LumoAgentPanel from '../../lumoAgent/LumoAgentPanel';
-import { LumoConversationHeaderActions } from '../../lumoAgent/LumoConversationHeaderActions';
-import type { SelectedDrawerOption } from './DrawerView';
-import DrawerView from './DrawerView';
-import { useLumoAgentDrawer } from './lumoAgent/lumoAgentDrawerContext';
+import LumoAgentPanel from './LumoAgentPanel';
+import { LumoConversationHeaderActions } from './LumoConversationHeaderActions';
+import { useLumoAgentDrawer } from './lumoAgentDrawerContext';
 
 import '@proton/lumo-ui/lumo-ui.scss';
 
-import '../../lumoAgent/lumoAgent.scss';
 import './DrawerLumoView.scss';
+import './lumoAgent.scss';
 
 const DrawerLumoView = () => {
     const {

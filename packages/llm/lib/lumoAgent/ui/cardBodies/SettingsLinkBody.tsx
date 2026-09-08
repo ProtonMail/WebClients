@@ -1,4 +1,4 @@
-import SettingsLink from '../../link/SettingsLink';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 
 interface Props {
     /** Resolved against the current app's settings section, e.g. `/auto-reply` → `/mail/auto-reply`. */

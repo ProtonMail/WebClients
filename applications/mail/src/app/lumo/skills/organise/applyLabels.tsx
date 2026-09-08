@@ -1,6 +1,5 @@
 import { c, msgid } from 'ttag';
 
-import type { CardRenderer } from '@proton/components/components/lumoAgent/types';
 import { IcTag } from '@proton/icons/icons/IcTag';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type {
@@ -10,6 +9,7 @@ import type {
     ToolDefinition,
     ToolHandler,
 } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 
 import { resolveElements, resolveTypedId } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
