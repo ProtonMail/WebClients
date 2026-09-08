@@ -8,6 +8,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { chatAndReactionsReducer } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 
+import { CHAT_MESSAGE_MAX_LENGTH } from '../../constants';
 import { ChatMessage } from './ChatMessage';
 
 const createMockStore = () => {
@@ -277,5 +278,72 @@ describe('ChatMessage', () => {
         await user.type(textarea, '   ');
         await user.keyboard('{Enter}');
         expect(mockOnMessageSend).not.toHaveBeenCalled();
+    });
+
+    it('limits messages to the maximum character count', async () => {
+        const mockOnMessageSend = vi.fn();
+        const user = userEvent.setup();
+        render(
+            <Wrapper>
+                <ChatMessage onMessageSend={mockOnMessageSend} />
+            </Wrapper>
+        );
+
+        const textarea = screen.getByPlaceholderText(placeholderText);
+        const longMessage = 'a'.repeat(CHAT_MESSAGE_MAX_LENGTH + 10);
+
+        await user.click(textarea);
+        await user.paste(longMessage);
+
+        expect(textarea).toHaveValue('a'.repeat(CHAT_MESSAGE_MAX_LENGTH));
+        expect(
+            screen.getByText(`${CHAT_MESSAGE_MAX_LENGTH}/${CHAT_MESSAGE_MAX_LENGTH} characters`)
+        ).toBeInTheDocument();
+    });
+
+    it('counts only the trimmed message against the limit', async () => {
+        const mockOnMessageSend = vi.fn();
+        const user = userEvent.setup();
+        render(
+            <Wrapper>
+                <ChatMessage onMessageSend={mockOnMessageSend} />
+            </Wrapper>
+        );
+
+        const textarea = screen.getByPlaceholderText(placeholderText);
+        const content = 'a'.repeat(CHAT_MESSAGE_MAX_LENGTH);
+        const paddedMessage = `  ${content}  `;
+
+        await user.click(textarea);
+        await user.paste(paddedMessage);
+
+        expect(textarea).toHaveValue(paddedMessage);
+        expect(
+            screen.getByText(`${CHAT_MESSAGE_MAX_LENGTH}/${CHAT_MESSAGE_MAX_LENGTH} characters`)
+        ).toBeInTheDocument();
+    });
+
+    it('hides the character counter until the message reaches 90% of the limit', async () => {
+        const mockOnMessageSend = vi.fn();
+        const user = userEvent.setup();
+        render(
+            <Wrapper>
+                <ChatMessage onMessageSend={mockOnMessageSend} />
+            </Wrapper>
+        );
+
+        const textarea = screen.getByPlaceholderText(placeholderText);
+        const belowThreshold = 'a'.repeat(Math.floor(CHAT_MESSAGE_MAX_LENGTH * 0.9) - 1);
+        const atThreshold = 'a'.repeat(Math.ceil(CHAT_MESSAGE_MAX_LENGTH * 0.9));
+
+        await user.click(textarea);
+        await user.paste(belowThreshold);
+
+        expect(screen.queryByText(new RegExp(`\\d+/${CHAT_MESSAGE_MAX_LENGTH} characters`))).not.toBeInTheDocument();
+
+        await user.clear(textarea);
+        await user.paste(atThreshold);
+
+        expect(screen.getByText(`${atThreshold.length}/${CHAT_MESSAGE_MAX_LENGTH} characters`)).toBeInTheDocument();
     });
 });

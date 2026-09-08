@@ -18,6 +18,7 @@ import { MeetingSideBars, toggleSideBarState, uiStateReducer } from '@proton/mee
 import { ProtonStoreContext } from '@proton/react-redux-store';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { CHAT_MESSAGE_MAX_LENGTH } from '../../constants';
 import { MeetCoreClientContext } from '../../contexts/MeetCoreClientContext';
 import { addSpecialCharactersForMessageDisplay } from '../../utils/addSpecialCharactersForMessageDisplay';
 import type { ChatIncomingEventInfoData, MeetCoreClient } from '../../wasm/MeetCoreClient';
@@ -182,6 +183,32 @@ describe('useChat', () => {
             expect(storedMessage).toBe('a &lt; b &amp; &lt;test');
             expect(storedMessage).not.toMatch(/[<>]/);
             expect(addSpecialCharactersForMessageDisplay(storedMessage)).toBe(receivedText);
+        });
+
+        it('should truncate an incoming message that exceeds the maximum character count', async () => {
+            const room = createMockRoom();
+            useRoomContextMock.mockReturnValue(room);
+
+            const event: ChatIncomingEventInfoData = {
+                kind: ChatEventKind.Message,
+                id: 'msg-1',
+                sender_participant_id: SENDER,
+                received_at_ms: 1_000n,
+                text: 'a'.repeat(CHAT_MESSAGE_MAX_LENGTH + 10),
+            } as ChatIncomingEventInfoData;
+
+            const store = createStore();
+            const client = createMeetCoreClient({ decodeChat: vi.fn().mockResolvedValue(event) });
+
+            renderHook(() => useChat(), { wrapper: createWrapper(store, client) });
+
+            const handler = getDataReceivedHandler(room);
+
+            await act(async () => {
+                await handler(encode({ type: 'message' }), participant);
+            });
+
+            expect(getMessages(store)[0].message).toBe('a'.repeat(CHAT_MESSAGE_MAX_LENGTH));
         });
 
         it('should mark the incoming message as seen when the chat sidebar is open', async () => {
@@ -454,6 +481,32 @@ describe('useChat', () => {
                     type: 'message',
                 }),
             ]);
+        });
+
+        it('should truncate an incoming message that exceeds the maximum character count', async () => {
+            const room = createMockRoom();
+            useRoomContextMock.mockReturnValue(room);
+
+            const store = createStore();
+            const client = createMeetCoreClient({
+                decryptMessage: vi.fn().mockResolvedValue({
+                    sender_participant_id: SENDER,
+                    message: 'a'.repeat(CHAT_MESSAGE_MAX_LENGTH + 10),
+                }),
+            });
+
+            renderHook(() => useChat(), { wrapper: createWrapper(store, client) });
+
+            const handler = getDataReceivedHandler(room);
+
+            await act(async () => {
+                await handler(
+                    encode({ type: 'message', id: `${SENDER}-123`, message: 'encrypted', timestamp: 5_000 }),
+                    participant
+                );
+            });
+
+            expect(getMessages(store)[0].message).toBe('a'.repeat(CHAT_MESSAGE_MAX_LENGTH));
         });
     });
 });

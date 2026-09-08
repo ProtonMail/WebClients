@@ -20,6 +20,7 @@ import { usePopper } from '@proton/atoms/Popper/usePopper';
 import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
+import { getCharacterCountText } from '@proton/components/helpers/getCharacterCountText';
 import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import useLoading from '@proton/hooks/useLoading';
@@ -39,7 +40,9 @@ import {
 } from '@proton/meet/store/slices/participants/participantsSlice';
 import clsx from '@proton/utils/clsx';
 
+import { CHAT_MESSAGE_MAX_LENGTH } from '../../constants';
 import { useParticipantDisplayColors } from '../../hooks/useParticipantDisplayColors';
+import { clampChatMessageLength } from '../../utils/clampChatMessageLength';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
 import { trimMessage } from '../../utils/trim-message';
 
@@ -131,6 +134,19 @@ const VARIANT_CONFIG: Record<ChatMessageVariant, { minHeight: number; maxHeight:
     thread: { minHeight: 1.5, maxHeight: 5, buttonSize: '2.25rem' },
 };
 
+const CHAT_MESSAGE_COUNTER_THRESHOLD = CHAT_MESSAGE_MAX_LENGTH * 0.9;
+
+// The live region stays mounted while the count is hidden: content that arrives together with its
+// region is not announced, so it has to already exist by the time the count first appears.
+const CharacterCount = ({ length }: { length: number }) => (
+    <span
+        className={clsx('text-sm', length >= CHAT_MESSAGE_MAX_LENGTH ? 'color-danger' : 'color-warning')}
+        aria-live="polite"
+    >
+        {length >= CHAT_MESSAGE_COUNTER_THRESHOLD ? getCharacterCountText(length, CHAT_MESSAGE_MAX_LENGTH) : null}
+    </span>
+);
+
 export const ChatMessage = ({
     onMessageSend,
     variant = 'default',
@@ -185,15 +201,18 @@ export const ChatMessage = ({
     const threadDraftMessage = useMeetSelector((state) =>
         persistThreadDraft ? selectChatThreadReplyDraft(state, rootMessageId) : ''
     );
-    const [message, setMessage] = useState(isThread ? threadDraftMessage : defaultDraftMessage);
+    const [message, setMessage] = useState(() =>
+        clampChatMessageLength(isThread ? threadDraftMessage : defaultDraftMessage)
+    );
     const currentMessage = useRef(message);
 
     const updateMessage = useCallback(
         (value: string) => {
-            setMessage(value);
-            currentMessage.current = value;
+            const clampedValue = clampChatMessageLength(value);
+            setMessage(clampedValue);
+            currentMessage.current = clampedValue;
             if (persistThreadDraft) {
-                dispatch(setChatThreadReplyDraft({ messageId: rootMessageId, draft: value }));
+                dispatch(setChatThreadReplyDraft({ messageId: rootMessageId, draft: clampedValue }));
             }
         },
         [dispatch, persistThreadDraft, rootMessageId]
@@ -232,6 +251,8 @@ export const ChatMessage = ({
         }
         return `${minHeight}rem`;
     }, [message, minHeight, maxHeight]);
+
+    const trimmedMessageLength = trimMessage(message).length;
 
     const handleChatMessageSubmit = async () => {
         const messageToSend = message;
@@ -442,13 +463,16 @@ export const ChatMessage = ({
                         <IcCross size={4} />
                     </Button>
                 )}
-                <div className="chat-message-thread-pill flex flex-nowrap items-center gap-2 flex-1 min-w-0 rounded-full pl-2 pr-1">
-                    <LocalParticipantAvatar />
-                    {textarea}
-                    <div className="flex flex-nowrap items-center gap-1 shrink-0">
-                        {emojiButton}
-                        {sendButton}
+                <div className="flex flex-column gap-1 flex-1 min-w-0">
+                    <div className="chat-message-thread-pill flex flex-nowrap items-center gap-2 min-w-0 rounded-full pl-2 pr-1">
+                        <LocalParticipantAvatar />
+                        {textarea}
+                        <div className="flex flex-nowrap items-center gap-1 shrink-0">
+                            {emojiButton}
+                            {sendButton}
+                        </div>
                     </div>
+                    <CharacterCount length={trimmedMessageLength} />
                 </div>
 
                 {emojiPickerPopper}
@@ -462,12 +486,15 @@ export const ChatMessage = ({
                 className="w-custom border-top border-top-strong absolute top-0 left-custom"
                 style={{ '--left-custom': '0', '--w-custom': 'calc(100% + 2rem)' }}
             />
-            <div className="flex flex-nowrap items-start gap-4 w-full px-1 pt-4">
-                {textarea}
-                <div className="flex flex-nowrap items-start gap-1 shrink-0 ml-1">
-                    {emojiButton}
-                    {sendButton}
+            <div className="flex flex-column gap-1 w-full px-1 pt-4">
+                <div className="flex flex-nowrap items-start gap-4 w-full">
+                    {textarea}
+                    <div className="flex flex-nowrap items-start gap-1 shrink-0 ml-1">
+                        {emojiButton}
+                        {sendButton}
+                    </div>
                 </div>
+                <CharacterCount length={trimmedMessageLength} />
             </div>
             {emojiPickerPopper}
         </div>
