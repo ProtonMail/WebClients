@@ -5576,9 +5576,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "नया उपयोगकर्ता बनाने से पहले आपको एक कस्टम डोमेन कॉन्फ़िगर करना होगा।"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "आपको अपने ${ BRAND_NAME } खाता को इस Family plan से लिंक करने और साथ मिलकर सभी ${ brandOrAppName } प्रीमियम खासियत का आनंद लेने के लिए आमंत्रित किया गया है।"
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "आपके खाते में इस प्लैन में उपलब्ध ईमेल पतों से ज़्यादा ईमेल पते हैं। ${ addressSettingsLink }"
       ],
@@ -8572,9 +8569,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "सदस्यता समाप्त हो रही है: अपने ${ planName } लाभों को बनाए रखने के लिए, ${ byDate } तक Google Play Store में अपनी सदस्यता वापिस शुरु करें। ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "सदस्यता ${ startsOnTime } को शुरू होगी"
-      ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "कस्टम डोमेन और गैर-${ BRAND_NAME } ईमेल पता का पर्यवेक्षण समर्थन जल्द ही उपलब्ध होगा।"
       ],
@@ -8862,9 +8856,6 @@
       ],
       "Total VPN connections": [
         "कुल VPN कनेक्शन"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "ट्रायल ${ formattedPeriodEndDate } को समाप्त होगा"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "${ productName } को पूरी तरह से जोखिम मुक्त आज़माएँ - यदि किसी भी कारण से आप अपना मन बदलते हैं, तो आपको पूरा रिफंड मिलेगा। कोई सवाल नहीं।"
@@ -12057,9 +12048,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } खत्म होता है ${ last4 } से"
-      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } आपको ईमेल पते बनाने और उप-यूज़र के खाते संभालने देता हैं। परिवारों और संगठनों के लिए अच्छा।"
       ],
@@ -13513,17 +13501,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "नवीनीकरण मूल्य बिलिंग क्षेत्र और वैट नंबर पर निर्भर करता है।"
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - कार्ड जो ${ paymentMethod.Details.Last4 } पर समाप्त होता है"
-      ],
-      "Bank transfer - ${ details }": [
-        "बैंक ट्रांसफर - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - कार्ड जिसका अंत ${ paymentMethod.Details.Last4 } में होता है"
       ]
     },
     "Payments.Sepa": {
