@@ -1,6 +1,14 @@
 import type { LexicalEditor } from 'lexical'
 import type { Root } from 'react-dom/client'
-import { $createParagraphNode, $createTextNode, $getRoot, $insertNodes, $isParagraphNode } from 'lexical'
+import {
+  $createParagraphNode,
+  $createRangeSelectionFromDom,
+  $createTextNode,
+  $getRoot,
+  $insertNodes,
+  $isParagraphNode,
+  $isRangeSelection,
+} from 'lexical'
 import { AllNodes } from '../../AllNodes'
 import { createRoot } from 'react-dom/client'
 import { LexicalComposer } from '@lexical/react/LexicalComposer'
@@ -276,6 +284,44 @@ describe('TablePlugin', () => {
       expect(children.length).toBe(1)
       expect($isParagraphNode(children[0])).toBe(true)
     })
+  })
+
+  test('should resolve a selection through nested table DOM', async () => {
+    let anchorParagraphKey = ''
+    let focusParagraphKey = ''
+
+    await update(() => {
+      const table = $createTableNodeWithDimensions(2, 2)
+      const rows = table.getChildren<TableRowNode>()
+      anchorParagraphKey = rows[0].getFirstChildOrThrow<TableCellNode>().getFirstChildOrThrow().getKey()
+      focusParagraphKey = rows[1].getLastChildOrThrow<TableCellNode>().getFirstChildOrThrow().getKey()
+      $getRoot().append(table)
+    })
+
+    const table = container.querySelector('table')
+    const rows = Array.from(table?.querySelectorAll(':scope > tr') ?? [])
+    assertCondition(table !== null && rows.length === 2)
+
+    const tableBody = document.createElement('tbody')
+    table.append(tableBody)
+    tableBody.append(...rows)
+
+    const nativeSelection = window.getSelection()
+    assertCondition(nativeSelection !== null)
+    nativeSelection.setBaseAndExtent(tableBody, 0, rows[1], 1)
+
+    try {
+      editor!.read(() => {
+        const selection = $createRangeSelectionFromDom(nativeSelection, editor!)
+        assertCondition($isRangeSelection(selection))
+        expect(selection.anchor.key).toBe(anchorParagraphKey)
+        expect(selection.anchor.offset).toBe(0)
+        expect(selection.focus.key).toBe(focusParagraphKey)
+        expect(selection.focus.offset).toBe(0)
+      })
+    } finally {
+      nativeSelection.removeAllRanges()
+    }
   })
 
   describe('should normalize tables with missing cells or rows', () => {
