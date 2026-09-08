@@ -62,16 +62,37 @@
         "一名参与者回应了 ${ emoji }"
       ],
       "Background effect turned off": [
-        "已关闭背景效果"
+        "背景效果已关闭"
+      ],
+      "Background removed": [
+        "已移除背景"
+      ],
+      "Beach landscape background applied": [
+        "已应用海滩风景背景"
       ],
       "Blurred background applied": [
-        "已应用模糊背景"
+        "模糊背景已应用"
+      ],
+      "Blurred office background applied": [
+        "已应用模糊办公室背景"
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "由于网络限制，已通过 TURN 中继模式连接。这可能会增加延迟并影响通话质量。"
       ],
       "Connection lost. Reconnecting…": [
         "连接断开，正在重连…"
+      ],
+      "Dark ${ BRAND_NAME } background applied": [
+        "已应用深色 ${ BRAND_NAME } 背景"
+      ],
+      "Library background applied": [
+        "已应用图库背景"
+      ],
+      "Light ${ BRAND_NAME } background applied": [
+        "已应用浅色 ${ BRAND_NAME } 背景"
+      ],
+      "Mountain landscape background applied": [
+        "已应用山景背景"
       ],
       "New chat message: ${ message }": [
         "新聊天消息：${ message }"
@@ -138,6 +159,9 @@
       ],
       "Your camera has been turned off by the host": [
         "您已被主持人关闭摄像头"
+      ],
+      "Your own background applied": [
+        "已应用您的自定义背景"
       ]
     },
     "Action": {
@@ -153,6 +177,9 @@
       "Add another account": [
         "添加其他账户"
       ],
+      "Add your own background": [
+        "添加自定义背景"
+      ],
       "Admit ${ participantName }": [
         "批准 ${ participantName }"
       ],
@@ -161,6 +188,9 @@
       ],
       "Allow access": [
         "允许访问"
+      ],
+      "Allow live captions": [
+        "允许实时字幕"
       ],
       "Anyone with the link can join immediately": [
         "任何拥有链接的人均可立即加入"
@@ -194,6 +224,9 @@
       ],
       "Cancel": [
         "取消"
+      ],
+      "Change layout": [
+        "更改布局"
       ],
       "Change password": [
         "更改密码"
@@ -349,7 +382,10 @@
         "获取验证码"
       ],
       "Getting ready...": [
-        "准备中…"
+        "正在准备..."
+      ],
+      "Grid": [
+        "网格"
       ],
       "Help and feedback": [
         "帮助和反馈"
@@ -495,6 +531,9 @@
       "Rejoin meeting": [
         "重新加入会议"
       ],
+      "Remove ${ name }": [
+        "移除 ${ name }"
+      ],
       "Remove reaction ${ emoji }, ${ identities.length } reaction": [
         "移除回应 ${ emoji }，${ identities.length } 个回应"
       ],
@@ -546,11 +585,14 @@
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "在 ${ CALENDAR_APP_NAME } 中安排"
       ],
+      "Screen share": [
+        "屏幕共享"
+      ],
       "Search countries": [
         "搜索国家"
       ],
       "Self view": [
-        "自我视角"
+        "自身视图"
       ],
       "Send an encrypted message": [
         "发送加密消息"
@@ -587,6 +629,9 @@
       ],
       "Skip to main content": [
         "跳转到主要内容"
+      ],
+      "Speaker": [
+        "扬声器"
       ],
       "Start an instant meeting": [
         "开始即时会议"
@@ -675,12 +720,6 @@
       "Use camera": [
         "使用摄像头"
       ],
-      "Use color": [
-        "使用颜色"
-      ],
-      "Use image": [
-        "使用图像"
-      ],
       "Use microphone": [
         "使用麦克风"
       ],
@@ -713,6 +752,9 @@
       ]
     },
     "Alt": {
+      "Allow live captions": [
+        "允许实时字幕"
+      ],
       "Audio settings": [
         "音频设置"
       ],
@@ -804,7 +846,7 @@
         "屏幕共享"
       ],
       "Self view": [
-        "自我视角"
+        "自身视图"
       ],
       "Settings": [
         "设置"
@@ -853,7 +895,7 @@
         "背景"
       ],
       "Blur and personal": [
-        "模糊和私人"
+        "模糊与人像"
       ],
       "Chat": [
         "聊天"
@@ -871,7 +913,7 @@
         "会议室"
       ],
       "Microphone input level": [
-        "麦克风输入电平"
+        "麦克风输入音量"
       ],
       "Participants": [
         "参与者"
@@ -1899,6 +1941,12 @@
       "Copying item to a non-folder is not allowed": [
         "不允许将项目复制到非文件夹中"
       ],
+      "Could not add this background. Check your connection and try again.": [
+        "无法添加此背景，请检查网络连接后重试。"
+      ],
+      "Could not add this background. Please try again.": [
+        "无法添加背景，请重试。"
+      ],
       "Could not find an available name": [
         "找不到可用的名称"
       ],
@@ -1910,6 +1958,12 @@
       ],
       "Could not read part of this file: ${ message }": [
         "无法读取此文件的部分内容：${ message }"
+      ],
+      "Could not remove this background. Check your connection and try again.": [
+        "无法移除该背景，请检查网络连接后重试。"
+      ],
+      "Could not remove this background. Please try again.": [
+        "无法移除该背景，请重试。"
       ],
       "Could not unlock the parent folder": [
         "无法解锁父文件夹"
@@ -2028,6 +2082,9 @@
       "Failed to lock meeting": [
         "锁定会议失败"
       ],
+      "Failed to request live captions": [
+        "请求实时字幕失败"
+      ],
       "Failed to rotate personal meeting link": [
         "轮换个人会议链接失败"
       ],
@@ -2053,10 +2110,13 @@
         "解锁会议失败"
       ],
       "Failed to update caption language. Please try again.": [
-        "更新字幕语言失败。请重试。"
+        "更新字幕语言失败，请重试。"
+      ],
+      "Failed to update live captions availability": [
+        "更新实时字幕可用性失败"
       ],
       "Failed to update live captions. Please try again.": [
-        "更新实时字幕失败。请重试。"
+        "更新实时字幕失败，请重试。"
       ],
       "Failed to update waiting room setting. Please try again.": [
         "更新等候室设置失败，请重试。"
@@ -2095,7 +2155,7 @@
         "旧版公开链接无法更新，请重新创建新的公开链接！"
       ],
       "Live captions aren't working. Try turning them off and on again.": [
-        "实时字幕无法正常工作。请尝试将其关闭后再重新开启。"
+        "实时字幕无法使用，请尝试关闭后重新开启。"
       ],
       "Live captions couldn't be started.": [
         "无法开启实时字幕。"
@@ -2104,7 +2164,7 @@
         "已停用实时字幕。"
       ],
       "Microphone access is blocked. Allow it in your browser settings.": [
-        "麦克风访问被阻止。请在浏览器设置中允许访问。"
+        "麦克风访问被阻止，请在浏览器设置中允许访问。"
       ],
       "Missing inviter email": [
         "缺少邀请人邮箱"
@@ -2160,6 +2220,9 @@
       "Photo not found": [
         "未找到照片"
       ],
+      "Pick a JPEG, PNG or WebP image.": [
+        "请选择 JPEG、PNG 或 WebP 格式的图片。"
+      ],
       "Please allow screen sharing in your system permissions, then try again": [
         "请在系统权限中允许屏幕共享，然后重试"
       ],
@@ -2177,6 +2240,9 @@
       ],
       "Screen share is not supported on mobile browsers": [
         "移动浏览器不支持屏幕共享"
+      ],
+      "Screen share is not supported on your device": [
+        "您的设备不支持屏幕共享"
       ],
       "Signature is missing": [
         "缺少签名"
@@ -2223,6 +2289,9 @@
       "The uploaded file does not match the original. Please try again.": [
         "上传的文件与原始文件不匹配，请重试。"
       ],
+      "This background could not be saved in this browser.": [
+        "浏览器无法保存背景！"
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "此项超过了 ${ maximumLength } 个字符的长度限制。"
       ],
@@ -2238,8 +2307,20 @@
       "This file has no version available to download": [
         "此文件没有可下载的版本"
       ],
+      "This file name is too long. Rename the image and try again.": [
+        "文件名过长，请重命名图片后重试。"
+      ],
       "This file version could not be uploaded": [
         "此文件版本无法上传"
+      ],
+      "This image could not be read. Pick another one.": [
+        "无法读取图片，请选择其他图片。"
+      ],
+      "This image is too big. Pick one up to ${ maxEdge } pixels wide and tall.": [
+        "图片太大，请选择宽高不超过 ${ maxEdge } 像素的图片。"
+      ],
+      "This image is too large. Pick one under ${ maxMegabytes } MB.": [
+        "图片太大，请选择小于 ${ maxMegabytes } MB 的图片。"
       ],
       "This item has no image preview": [
         "此项目没有图片预览"
@@ -2278,7 +2359,7 @@
         "${ signatureType } 的验证密钥不可用"
       ],
       "Virtual background initialization failed. Please toggle your camera or pick a background again": [
-        "虚拟背景初始化失败。请切换您的摄像头或重新选择背景"
+        "虚拟背景初始化失败，请切换摄像头或重新选择背景"
       ],
       "We couldn’t send a verification code using this method.": [
         "我们无法通过此类方式发送验证码。"
@@ -2301,6 +2382,9 @@
       "You do not have access to this shared item": [
         "您无权访问此共享项目"
       ],
+      "You have reached the maximum number of custom backgrounds.": [
+        "您已达到自定义背景数量上限。"
+      ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "您的浏览器存储空间已满，我们已保存截至目前的录制。"
       ],
@@ -2308,7 +2392,7 @@
         "您的设备时钟似乎不同步。请检查您的系统时间并重试。"
       ],
       "Your microphone is busy. Close other apps or tabs using it, then try again.": [
-        "你的麦克风正忙。请关闭其他正在使用麦克风的应用或标签页，然后重试。"
+        "您的麦克风正忙，请关闭正在使用它的其他应用或标签页，然后重试。"
       ]
     },
     "Error message": {
@@ -2517,6 +2601,9 @@
       "${ replyCount } reply": [
         "${ replyCount } 条回复"
       ],
+      "${ spotlightParticipantName } is the active speaker": [
+        "${ spotlightParticipantName } 是当前发言者"
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } / ${ maxParticipants } 名参与者"
       ],
@@ -2538,14 +2625,17 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "每个手机号只能用于验证一个 ${ BRAND_NAME } 账户"
       ],
+      "Adding ${ name }": [
+        "正在添加 ${ name }"
+      ],
       "Admit": [
         "批准"
       ],
       "Admitting": [
         "正在批准"
       ],
-      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
-        "高级模式：调整下一版本中的每个模糊常量，然后点击“应用”以重建预览。覆盖优先级高于文件和 Unleash 值。"
+      "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "高级模式：调整每个模糊常量，然后点击“应用”以重建预览。覆盖值优先于文件和 Unleash 值。"
       ],
       "Allow camera access to preview your background": [
         "允许访问摄像头以预览您的背景"
@@ -2554,10 +2644,10 @@
         "匿名 ${ particle } ${ participantNumber }"
       ],
       "Anyone with the link can join immediately": [
-        "任何拥有链接的人都可以立即加入"
+        "任何拥有链接的人均可立即加入"
       ],
       "Approve participants before they can join": [
-        "在参与者加入前批准他们"
+        "参与者需要得到批准才能加入"
       ],
       "Are you sure you want to leave?": [
         "您确定要离开吗？"
@@ -2757,6 +2847,9 @@
       "Host": [
         "主持人"
       ],
+      "Host has disabled live captions for this meeting.": [
+        "主持人已禁用本次会议的实时字幕。"
+      ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "主持您自己的安全会议！在 ${ MEET_APP_NAME } 中发起通话，分享链接即可邀请任何人加入。简单、安全且免费。"
       ],
@@ -2765,6 +2858,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "如果您无法访问验证器应用，可以使用设置 2FA 时提供的 16 个备用恢复码之一。${ learnMoreLink }"
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "如果您正在使用 Firefox，请确保已启用 PeerConnection。"
@@ -2821,10 +2917,10 @@
         "正在加载…"
       ],
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
-        "日志有助于我们了解问题发生前的情况。其中包括应用操作和错误消息，但不包含消息内容。"
+        "日志帮助我们了解问题发生前的情况，包含应用操作和错误信息，但不包含消息内容。"
       ],
-      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
-        "循环播放上传的视频或实时摄像头画面，并排显示两种背景模糊版本。"
+      "Loop an uploaded video or your live camera through background blur.": [
+        "通过背景模糊，循环播放上传的视频或实时摄像头画面。"
       ],
       "Lower participant's hand": [
         "降低参与者的举手状态"
@@ -2955,6 +3051,12 @@
       "Participant": [
         "参与者"
       ],
+      "Participants can turn live captions on. Turn on your own under Display.": [
+        "参与者可开启实时字幕，您可在“显示”中开启自己的字幕。"
+      ],
+      "Participants can’t use live captions": [
+        "参与者无法使用实时字幕"
+      ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "粘贴您的 ${ MEET_APP_NAME } 链接以加入安全会议"
       ],
@@ -3030,8 +3132,8 @@
       "Rejecting": [
         "正在拒绝"
       ],
-      "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
-        "将实时摄像头画面通过自定义背景处理器处理，选择纯色或上传图像作为背景。"
+      "Run your live camera through the custom background processor. Upload an image to use as the background.": [
+        "通过自定义背景处理器运行实时摄像头画面，请上传一张图片作为背景。"
       ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "安排您的下一次会议，创建账户即可通过日历安排会议。"
@@ -3133,7 +3235,7 @@
         "要创建会议室，您需要**一个免费的 ${ BRAND_NAME } 账户**，以便我们保存该会议室。这仅需几秒钟。"
       ],
       "To create live captions, the captioning service needs access to the meeting audio. Captions are only visible to you and are not saved.": [
-        "要创建实时字幕，字幕服务需要访问会议音频。字幕仅对你可见，不会被保存。"
+        "要生成实时字幕，字幕服务需要访问会议音频。字幕仅您可见且不会保存。"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
@@ -3228,6 +3330,9 @@
       "You can now return to the application to continue": [
         "您现在可以返回到应用程序以继续"
       ],
+      "You can save up to ${ max } of your own backgrounds.": [
+        "您最多可保存 ${ max } 个自定义背景。"
+      ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "您仍可以在会议中随时关闭麦克风和摄像头"
       ],
@@ -3254,6 +3359,9 @@
       ],
       "Your always available meeting room": [
         "您的永久可用会议室"
+      ],
+      "Your backgrounds could not be loaded, so a new one cannot be added right now.": [
+        "您的背景无法加载，因此暂时无法添加新背景。"
       ],
       "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
         "您的浏览器已阻止访问相机和麦克风。若要启用它们，请更新浏览器设置并重新加入通话。"
@@ -3288,7 +3396,7 @@
         "${ BRAND_NAME } 用户名"
       ],
       "${ length }/${ maxLength } characters": [
-        "${ length }/${ maxLength } 字符"
+        "${ length } / ${ maxLength } 个字符"
       ],
       "${ numberOfStars } star": [
         "${ numberOfStars } 星"
@@ -3320,11 +3428,14 @@
       "Auto-detect": [
         "自动检测"
       ],
-      "Background color": [
-        "背景颜色"
+      "Beach landscape background": [
+        "海滩风景背景"
       ],
       "Blurred (next)": [
         "模糊（下一版本）"
+      ],
+      "Blurred office background": [
+        "模糊办公室背景"
       ],
       "Browser": [
         "浏览器"
@@ -3362,8 +3473,8 @@
       "Created": [
         "创建时间"
       ],
-      "Current": [
-        "当前"
+      "Dark ${ BRAND_NAME } background": [
+        "深色 ${ BRAND_NAME } 背景"
       ],
       "Delete": [
         "删除"
@@ -3434,6 +3545,12 @@
       "Leave meeting options": [
         "离开会议选项"
       ],
+      "Library background": [
+        "图库背景"
+      ],
+      "Light ${ BRAND_NAME } background": [
+        "浅色 ${ BRAND_NAME } 背景"
+      ],
       "Live caption agent": [
         "实时字幕智能体"
       ],
@@ -3455,14 +3572,14 @@
       "Monday to Friday": [
         "周一至周五"
       ],
+      "Mountain landscape background": [
+        "山景背景"
+      ],
       "Muted": [
         "已静音"
       ],
       "Name": [
         "名称"
-      ],
-      "Next": [
-        "下一步"
       ],
       "Operating system": [
         "操作系统"
@@ -3484,6 +3601,9 @@
       ],
       "Phone number": [
         "电话号码"
+      ],
+      "Preview": [
+        "预览"
       ],
       "Raw": [
         "原始"
@@ -3520,9 +3640,6 @@
       ],
       "Selected Speaker": [
         "已选扬声器"
-      ],
-      "Solid color": [
-        "纯色"
       ],
       "Spoken language": [
         "使用的语言"
@@ -3864,7 +3981,7 @@
         "否"
       ],
       "Transcribing...": [
-        "正在转录…"
+        "正在转录..."
       ],
       "Yes": [
         "是"
@@ -3872,7 +3989,7 @@
     },
     "Subtitle": {
       "This system agent creates live captions. It is not a participant and cannot send messages.": [
-        "此系统智能体会创建实时字幕。它不是参与者，无法发送消息。"
+        "系统智能体负责生成实时字幕。它不是会议参与者，也无法发送消息。"
       ]
     },
     "Success": {
@@ -3946,14 +4063,14 @@
       "Background": [
         "背景"
       ],
-      "Background blur comparison": [
-        "背景模糊对比"
+      "Background blur preview": [
+        "背景模糊预览"
       ],
       "Backgrounds": [
         "背景"
       ],
       "Blur and personal": [
-        "模糊和私人"
+        "模糊与人像"
       ],
       "Camera and microphone are blocked": [
         "相机和麦克风已被阻止"

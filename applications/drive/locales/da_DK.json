@@ -1865,6 +1865,15 @@
         "${ users } bruger",
         "${ users } brugere"
       ],
+      "Amount due": [
+        "Forfaldent beløb"
+      ],
+      "Amount due after trial": [
+        "Forfaldent beløb efter prøveperioden"
+      ],
+      "Amount due now": [
+        "Forfaldent beløb nu"
+      ],
       "Subtotal": [
         "I alt"
       ],
@@ -1874,6 +1883,10 @@
       ],
       "Total": [
         "I alt"
+      ],
+      "Total for ${ cycle } month": [
+        "I alt for ${ cycle } måned",
+        "I alt for ${ cycle } måneder"
       ]
     },
     "Collapsible tooltip": {
@@ -4652,8 +4665,8 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Du har ubetalte fakturaer. Betal dem venligst, før du tilmelder dig et familieabonnement."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Du er inviteret til at forbinde din ${ BRAND_NAME }-konto til dette familieabonnement og sammen nyde alle ${ brandOrAppName } premium-funktioner."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du er inviteret til at forbinde din ${ BRAND_NAME }-konto til denne familiegruppe og nyde alle dens premium-funktioner."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Din konto har flere e-mailadresser en det, der er tilgængeligt for dig på dette abonnement. ${ addressSettingsLink }"
@@ -5814,6 +5827,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
+      ],
+      "Do you remember your password?": [
+        "Kan du godt huske din adgangskode?"
       ],
       "Do you still want to upload it?": [
         "Vil du stadig uploade det?",
@@ -9471,8 +9487,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } slutter med ${ last4 }"
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand }, der slutter med ${ Last4 }"
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB lagerplads i skyen, som giver dig mulighed for nemt at gemme, synkronisere og dele filer. Sikret med end-to-end kryptering."
@@ -10867,6 +10883,11 @@
         "Kreditter vil blive tilføjet til din saldo"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Det kan påvirke afgifter på fremtidige fakturaer at ændre din faktureringsadresse."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Er du sikker på, at du vil fortsætte?"
@@ -10904,14 +10925,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - kort, der slutter på ${ paymentMethod.Details.Last4 }"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - kort, der slutter på ${ Last4 }"
       ],
-      "Bank transfer - ${ details }": [
-        "Bankoverførsel - ${ details }"
+      "Bank transfer - ${ iban }": [
+        "Bankoverførsel - ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - kort, der slutter på ${ paymentMethod.Details.Last4 }"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kort, der slutter på ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -14025,6 +14046,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Den nye abonnementscyklus starter ${ formattedTime }"
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Dette link er udløbet. Forlæng udløbsdatoen"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Medmindre de dechifreres, forbliver krypterede adgangskoder sikre, selv hvis de eksponeres."

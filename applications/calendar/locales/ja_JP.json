@@ -4567,9 +4567,6 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "未納の請求書があります。ファミリープランに参加する前にお支払いください。"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "${ BRAND_NAME }アカウントをこのファミリープランにリンクして、${ brandOrAppName }の全てのプレミアム機能を一緒にお楽しみください。"
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "あなたのアカウントはこのプランで利用可能なメールアドレスの上限を超えています。${ addressSettingsLink }"
       ],
@@ -8610,9 +8607,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ last4 } で終わる ${ brand }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "ファイルの保存、同期、共有を簡単に行える 1 TB のクラウド ストレージ。エンドツーエンド暗号化により保護されています。"
       ],
@@ -9782,17 +9776,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "更新価格は、請求地域およびVAT番号によって異なります。"
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - 末尾が${ paymentMethod.Details.Last4 }のカード"
-      ],
-      "Bank transfer - ${ details }": [
-        "銀行振込 - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - 末尾が${ paymentMethod.Details.Last4 }のカード"
       ]
     },
     "Payments.Sepa": {

@@ -1109,6 +1109,15 @@
         "${ users } gebruiker",
         "${ users } gebruikers"
       ],
+      "Amount due": [
+        "Verschuldigd bedrag"
+      ],
+      "Amount due after trial": [
+        "Verschuldigd bedrag na proefperiode"
+      ],
+      "Amount due now": [
+        "Nu verschuldigd bedrag"
+      ],
       "Subtotal": [
         "Subtotaal"
       ],
@@ -1118,6 +1127,10 @@
       ],
       "Total": [
         "Totaal"
+      ],
+      "Total for ${ cycle } month": [
+        "Totaal voor ${ cycle } maand",
+        "Totaal voor ${ cycle } maanden"
       ]
     },
     "Collapsible tooltip": {
@@ -3325,6 +3338,9 @@
       "Account holder": [
         "Rekeninghouder"
       ],
+      "Account holder name": [
+        "Naam van de rekeninghouder"
+      ],
       "Additional comments": [
         "Aanvullende opmerkingen"
       ],
@@ -4285,9 +4301,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } eindigend met ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd met end-to-end versleuteling."
       ],
@@ -5025,17 +5038,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT-nummer."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - kaart eindigend op ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Bankoverschrijving - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - kaart eindigend op ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

@@ -118,6 +118,9 @@
       "Bulk restore items from trash": [
         "Restaurar un grupo de elementos de la papelera"
       ],
+      "Bulk select items": [
+        "Seleccionar un grupo de elementos"
+      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -501,6 +504,9 @@
       ],
       "Move to Trash": [
         "Mover a la papelera"
+      ],
+      "Multiple select": [
+        "Selección múltiple"
       ],
       "New token": [
         "Token nuevo"
@@ -2241,8 +2247,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -4354,6 +4359,9 @@
       "Download": [
         "Descargar"
       ],
+      "Download \"${ filename }\"": [
+        "Descargar «${ filename }»"
+      ],
       "Download file": [
         "Descargar el archivo"
       ],
@@ -4431,6 +4439,9 @@
       ],
       "You can attach files to items for a better organization": [
         "Puede adjuntar archivos a los elementos para una mejor organización."
+      ],
+      "You may close this window after saving the file.": [
+        "Puede cerrar esta ventana después de guardar el archivo."
       ]
     },
     "Permission": {
@@ -4558,11 +4569,20 @@
       ]
     },
     "Result": {
+      "Enter a URL to check if it matches the current rule": [
+        "Ingrese una URL para comprobar si coincide con la regla actual"
+      ],
       "This URL will be blocked from autofill": [
         "Esta URL se bloqueará del completado automático"
       ],
       "This URL will NOT be blocked from autofill": [
         "Esta URL NO se bloqueará del completado automático"
+      ],
+      "URL doesn't match the rule": [
+        "La URL no coincide con la regla actual"
+      ],
+      "URL matches the rule": [
+        "La URL coincide con la regla"
       ]
     },
     "Security Center - Info": {
@@ -4738,6 +4758,9 @@
     "Title": {
       "${ BRAND_NAME } addresses": [
         "Direcciones de ${ BRAND_NAME }"
+      ],
+      "${ PASS_APP_NAME } Logs": [
+        "Registros de ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } Settings": [
         "Ajustes de ${ PASS_APP_NAME }"

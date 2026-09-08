@@ -1656,6 +1656,9 @@
       "View contact details": [
         "檢視聯絡人詳細資料"
       ],
+      "View guide": [
+        "檢視指南"
+      ],
       "View headers": [
         "檢視標頭"
       ],
@@ -2678,6 +2681,12 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 位使用者"
+      ],
+      "Amount due": [
+        "應付金額"
+      ],
+      "Amount due now": [
+        "當前欠款"
       ],
       "Subtotal": [
         "小計"
@@ -4196,6 +4205,9 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "從 ${ senderEmailAddress } 來的新電子郵件無法遞送而且將會被永久刪除。"
       ],
+      "No ads. No trackers": [
+        "無廣告。無追蹤器"
+      ],
       "No folders": [
         "暫無資料夾"
       ],
@@ -4733,6 +4745,9 @@
       "Cannot set expiration longer than retention policy allows.": [
         "無法設置長於保留政策允許的過期時間。"
       ],
+      "Cannot share root folder": [
+        "無法複製根資料夾"
+      ],
       "Cannot verify the author of this file": [
         "無法驗證此檔案的作者"
       ],
@@ -4774,6 +4789,9 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "無法啟用內文搜尋。請重新啟動應用程式或清除資料。"
+      ],
+      "Copy operation aborted": [
+        "以放棄移動操作"
       ],
       "Copying item to a non-folder is not allowed": [
         "不允許將項目複製到非資料夾"
@@ -4933,6 +4951,9 @@
       ],
       "Invalid verification code": [
         "驗證碼無效"
+      ],
+      "Invitation not found": [
+        "未找到邀請"
       ],
       "Item content cannot exceed 40KB": [
         "項目無法超越40KB"
@@ -5811,9 +5832,6 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "您有未付款的收據。請在加入家庭方案前繳付。"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "我們邀請您將您的 ${ BRAND_NAME } 帳號連結至此家庭方案，並一起享受所有 ${ brandOrAppName } 進階功能。"
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "您帳號中的電子郵件位址多於此方案中可用的電子郵件位址。${ addressSettingsLink }"
       ],
@@ -5954,8 +5972,14 @@
       ]
     },
     "Filter": {
+      "Activated": [
+        "已啟用"
+      ],
       "All": [
         "全部"
+      ],
+      "Errors": [
+        "錯誤"
       ],
       "Filter": [
         "過濾"
@@ -5974,6 +5998,9 @@
       ],
       "Migrated": [
         "遷移"
+      ],
+      "Not activated": [
+        "未啟動"
       ],
       "Pending": [
         "等待中"
@@ -6813,6 +6840,9 @@
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 個群組"
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } 標記"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } 包含 ${ BRAND_NAME } Scribe 撰稿助理"
       ],
@@ -7236,6 +7266,9 @@
       "Center": [
         "置中"
       ],
+      "Change display setting": [
+        "變更顯示設定"
+      ],
       "Change your password": [
         "變更您的密碼"
       ],
@@ -7329,6 +7362,9 @@
       "Create in": [
         "創建在"
       ],
+      "Create label": [
+        "建立標籤"
+      ],
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "根據我們的${ termsLink }不允許創建多重免費帳號。"
       ],
@@ -7391,6 +7427,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 商標"
+      ],
+      "Do you remember your password?": [
+        "您記得您的密碼嗎?"
       ],
       "Do you want to download this attachment anyway?": [
         "無論如何，您仍打算要下載這些附件嗎？"
@@ -7750,7 +7789,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -7932,6 +7971,9 @@
       "Move emails": [
         "將電郵移動到"
       ],
+      "Move here": [
+        "移動至此處"
+      ],
       "Move to Primary": [
         "移動到主要"
       ],
@@ -7958,6 +8000,9 @@
       ],
       "No email address": [
         "沒有電郵位址"
+      ],
+      "No email open": [
+        "無開啟的電子郵件"
       ],
       "No folder found": [
         "找不到資料夾"
@@ -8285,6 +8330,9 @@
       ],
       "Searched the web": [
         "搜尋此網頁"
+      ],
+      "Searched your mail": [
+        "搜尋您的電子郵件"
       ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "立刻使用免費的加密雲端儲存空間保護您的檔案。"
@@ -9638,6 +9686,9 @@
       "Archive": [
         "封存"
       ],
+      "At": [
+        "於"
+      ],
       "Attach screenshot(s)": [
         "附加螢幕截圖"
       ],
@@ -9719,8 +9770,14 @@
       "Colors": [
         "色彩"
       ],
+      "Comfortable": [
+        "舒適"
+      ],
       "Command line interface (CLI)": [
         "指令介面 (CLI)"
+      ],
+      "Compact": [
+        "緊湊"
       ],
       "Company": [
         "公司"
@@ -9863,6 +9920,9 @@
       "Enable filter": [
         "啟用過濾器"
       ],
+      "Encrypt": [
+        "加密"
+      ],
       "Encrypt emails": [
         "加密電郵"
       ],
@@ -9875,6 +9935,9 @@
       "Expires": [
         "有效期限"
       ],
+      "Export size": [
+        "匯出大小"
+      ],
       "Extended address": [
         "詳細位址"
       ],
@@ -9886,6 +9949,9 @@
       ],
       "Filter": [
         "過濾"
+      ],
+      "Filter name": [
+        "篩選器名稱"
       ],
       "Filter Name": [
         "篩選器名稱"
@@ -9937,6 +10003,9 @@
       ],
       "Go to Updates": [
         "前往更新"
+      ],
+      "Grouped conversations": [
+        "群組對話"
       ],
       "Has attachments": [
         "有附件"
@@ -10255,6 +10324,9 @@
       ],
       "Sign emails": [
         "簽署電郵"
+      ],
+      "Signature": [
+        "簽名"
       ],
       "Size:": [
         "大小："
@@ -10887,6 +10959,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "添加${ BRAND_NAME }訂閱撰寫扳手"
       ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "添加 ${ LUMO_SHORT_APP_NAME } 撰寫幫手"
+      ],
       "Add-on with free trial": [
         "可免費試用的擴充功能"
       ],
@@ -11275,6 +11350,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
         "${ LUMO_SHORT_APP_NAME } 撰寫工具與擴充存取權"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫工具與限制存取權"
       ],
       "${ n } calendar": [
         "${ n } 個行事曆"
@@ -11749,9 +11827,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } 後四碼 ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB 的雲端儲存空間，讓您可以輕鬆儲存、同步及共享檔案。受端對端加密保護。"
       ],
@@ -12558,6 +12633,99 @@
       ]
     },
     "Option": {
+      "10th of the month": [
+        "每月 10 日"
+      ],
+      "11th of the month": [
+        "每月 11 日"
+      ],
+      "12th of the month": [
+        "每月 12 日"
+      ],
+      "13th of the month": [
+        "每月 13 日"
+      ],
+      "14th of the month": [
+        "每月 14 日"
+      ],
+      "15th of the month": [
+        "每月 15 日"
+      ],
+      "16th of the month": [
+        "每月 16 日"
+      ],
+      "17th of the month": [
+        "每月 17 日"
+      ],
+      "18th of the month": [
+        "每月 18 日"
+      ],
+      "19th of the month": [
+        "每月 19 日"
+      ],
+      "1st of the month": [
+        "每月 1 日"
+      ],
+      "20th of the month": [
+        "每月 20 日"
+      ],
+      "21st of the month": [
+        "每月 21 日"
+      ],
+      "22nd of the month": [
+        "每月 22 日"
+      ],
+      "23rd of the month": [
+        "每月 23 日"
+      ],
+      "24th of the month": [
+        "每月 24 日"
+      ],
+      "25th of the month": [
+        "每月 25 日"
+      ],
+      "26th of the month": [
+        "每月 26 日"
+      ],
+      "27th of the month": [
+        "每月 27 日"
+      ],
+      "28th of the month": [
+        "每月 28 日"
+      ],
+      "29th of the month": [
+        "每月 29 日"
+      ],
+      "2nd of the month": [
+        "每月 2 日"
+      ],
+      "30th of the month": [
+        "每月 30 日"
+      ],
+      "31st of the month": [
+        "每月 31 日"
+      ],
+      "3rd of the month": [
+        "每月 3 日"
+      ],
+      "4th of the month": [
+        "每月 4 日"
+      ],
+      "5th of the month": [
+        "每月 5 日"
+      ],
+      "6th of the month": [
+        "每月 6 日"
+      ],
+      "7th of the month": [
+        "每月 7 日"
+      ],
+      "8th of the month": [
+        "每月 8 日"
+      ],
+      "9th of the month": [
+        "每月 9 日"
+      ],
       "Add to existing group": [
         "加入至現有群組"
       ],
@@ -12570,11 +12738,32 @@
       "Create new group": [
         "創建新群組"
       ],
+      "Fixed duration": [
+        "固定期間"
+      ],
       "Ignore group": [
         "忽略群組"
       ],
       "No parent folder": [
         "無上層資料夾"
+      ],
+      "Permanent": [
+        "永久"
+      ],
+      "Remind me later": [
+        "稍後提醒我"
+      ],
+      "Repeat daily": [
+        "每日重複"
+      ],
+      "Repeat monthly": [
+        "每月重複"
+      ],
+      "Repeat weekly": [
+        "每週重複"
+      ],
+      "Yes, don't show again": [
+        "是的，不再顯示"
       ]
     },
     "Option group": {
@@ -12923,17 +13112,6 @@
         "續訂價格取決於計費區域和 VAT 號碼。"
       ]
     },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "APPle Pay - 卡片於 ${ paymentMethod.Details.Last4 } 結束"
-      ],
-      "Bank transfer - ${ details }": [
-        "匯款 - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - 卡片於 ${ paymentMethod.Details.Last4 } 結束"
-      ]
-    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "透過確認此付款，您授權 ${ BRAND_NAME } 和我們的支付服務提供者 Stripe 指示您的銀行從您的帳戶中扣款。根據您與銀行達成的協議條件，您可以在扣款日起 8 週內獲得退款。"
@@ -13268,6 +13446,12 @@
       ],
       "key": [
         "金鑰"
+      ],
+      "membership": [
+        "會員資格"
+      ],
+      "name": [
+        "名稱"
       ]
     },
     "Property type": {
@@ -13402,12 +13586,23 @@
         "夏季特賣"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "取得優惠"
+      ]
+    },
     "q3campaign2026: Info": {
+      "/month": [
+        "/每月"
+      ],
       "2 TB of secure storage": [
         "2TB 的安全儲存空間"
       ],
       "3 TB of secure storage": [
         "3TB 的安全儲存空間"
+      ],
+      "500 GB of secure storage": [
+        "500 GB 安全儲存空間"
       ]
     },
     "q3campaign2026: Info, Drive first": {
@@ -13418,6 +13613,9 @@
     "q3campaign2026: Title": {
       "for 12 months": [
         "12 個月"
+      ],
+      "One plan, more power": [
+        "單一方案，更多能量"
       ]
     },
     "Received email icon": {
@@ -15187,6 +15385,9 @@
       "Fingerprint": [
         "指紋"
       ],
+      "Migration status": [
+        "遷移狀態"
+      ],
       "Name": [
         "名稱"
       ],
@@ -15398,6 +15599,9 @@
       "Apply gift code": [
         "套用禮品代碼"
       ],
+      "Apply labels": [
+        "套用標籤"
+      ],
       "Archive all messages?": [
         "封存全部訊息?"
       ],
@@ -15454,6 +15658,9 @@
       ],
       "CC": [
         "副本"
+      ],
+      "Change display setting": [
+        "變更顯示設定"
       ],
       "Change my answer": [
         "更改我的回答"
@@ -15526,6 +15733,9 @@
       ],
       "Create contact": [
         "創建聯絡人"
+      ],
+      "Create folder": [
+        "創建資料夾"
       ],
       "Create folder \"${ search }\"": [
         "建立資料夾「${ search }」"
@@ -15829,6 +16039,9 @@
       ],
       "Make a secure connection your default": [
         "將安全連線設為您的預設設定"
+      ],
+      "Mark all as read": [
+        "全部標示為已讀取"
       ],
       "Mark all as unread": [
         "全部標為未讀"
@@ -16172,6 +16385,9 @@
       "Sending original message": [
         "原始郵件傳送中"
       ],
+      "September Sale": [
+        "九月的銷售"
+      ],
       "Set recovery methods": [
         "設定復原方式"
       ],
@@ -16282,6 +16498,9 @@
       ],
       "Unsubscribe request sent": [
         "已傳送取消訂購需求"
+      ],
+      "Update filter": [
+        "更新過濾器"
       ],
       "Upgrade complete!": [
         "升級完成！"

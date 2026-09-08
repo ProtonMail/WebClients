@@ -2736,6 +2736,15 @@
         "${ users } utilisateur",
         "${ users } utilisateurs"
       ],
+      "Amount due": [
+        "Montant dû"
+      ],
+      "Amount due after trial": [
+        "Montant dû après la période d'essai"
+      ],
+      "Amount due now": [
+        "Montant dû maintenant"
+      ],
       "Subtotal": [
         "Sous-total"
       ],
@@ -2745,6 +2754,10 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Total for ${ cycle } month": [
+        "Total pour ${ cycle } mois",
+        "Total pour ${ cycle } mois"
       ]
     },
     "Collapsible tooltip": {
@@ -5942,8 +5955,8 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Vous avez des factures non payées. Nous vous invitons à les régler avant de rejoindre un abonnement familial."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Vous avez une invitation pour lier votre compte ${ BRAND_NAME } à cet abonnement familial pour profiter tous ensemble des fonctionnalités premium de ${ brandOrAppName }."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Vous avez une invitation pour lier votre compte ${ BRAND_NAME } à ce groupe familial et à profiter de toutes ses fonctionnalités premium."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Le nombre d'adresses e-mail de votre compte dépasse celui prévu avec cet abonnement. ${ addressSettingsLink }"
@@ -7551,6 +7564,9 @@
         "Créer un cloud sécurisé pour ${ memberCount } membre",
         "Créer un cloud sécurisé pour ${ memberCount } membres"
       ],
+      "Create filter": [
+        "Crée un filtre"
+      ],
       "Create folder": [
         "Créer un dossier"
       ],
@@ -7625,6 +7641,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
+      ],
+      "Do you remember your password?": [
+        "Vous souvenez-vous de votre mot de passe ?"
       ],
       "Do you want to download this attachment anyway?": [
         "Voulez-vous quand même télécharger cette pièce jointe ?",
@@ -8016,8 +8035,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8310,6 +8328,9 @@
       "Open the guide for recommended actions and helpful links.": [
         "Ouvrez le guide pour les actions recommandées et les liens utiles."
       ],
+      "Opened a problem report": [
+        "J'ai créé un ticket d'incident"
+      ],
       "Optional": [
         "Facultatif"
       ],
@@ -8486,6 +8507,12 @@
         "Lire ${ count } e-mail sur l'écran",
         "Lire ${ count } e-mails sur l'écran"
       ],
+      "Read your auto-reply": [
+        "Lire votre message de réponse automatique"
+      ],
+      "Read your signature": [
+        "Lire votre signature"
+      ],
       "Recipient: ": [
         "Destinataire : "
       ],
@@ -8509,6 +8536,9 @@
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Supprime toutes les données associées à cette application (y compris les messages téléchargés…)"
+      ],
+      "Rename folder": [
+        "Renommer un dossier"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Signaler un message comme une tentative de phishing/hameçonnage nous enverra le message afin que nous puissions l'analyser et améliorer nos filtres. Cela signifie que nous serons en mesure de voir le contenu du message dans son intégralité."
@@ -8633,6 +8663,12 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Définissez ${ MAIL_APP_NAME } comme votre application de messagerie par défaut. ${ MAIL_APP_NAME } s’ouvrira automatiquement lorsque vous cliquerez sur un lien de messagerie."
+      ],
+      "Set auto-reply": [
+        "Définir une réponse automatique"
+      ],
+      "Set signature": [
+        "Définir une signature"
       ],
       "Set up your organization": [
         "Configurez votre organisation"
@@ -9051,6 +9087,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Testez les nouveaux produits, mises à jour et fonctionnalités de ${ BRAND_NAME } avant qu'ils ne soient accessibles au public. Cela rechargera l'application."
+      ],
+      "Turn off auto-reply": [
+        "Désactiver la réponse automatique"
       ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "Désactivez cette option pour faire des recherches uniquement par date, nom, adresse e-mail ou objet du message. Pour désactiver la recherche dans le contenu des messages (et supprimer les messages qui ont été téléchargés pour permettre cette fonctionnalité), accédez aux paramètres."
@@ -10008,6 +10047,9 @@
       "Automated confirmations and alerts": [
         "Confirmations et alertes automatisées"
       ],
+      "Away message": [
+        "Message d'absence"
+      ],
       "BCC": [
         "Cci"
       ],
@@ -10287,6 +10329,12 @@
       "From": [
         "De"
       ],
+      "From date": [
+        "À partir de la date"
+      ],
+      "From time": [
+        "Heure de début"
+      ],
       "From:": [
         "De :"
       ],
@@ -10463,6 +10511,9 @@
       ],
       "Never fill on this exact URL": [
         "Ne saisissez jamais cette URL exacte"
+      ],
+      "New name": [
+        "Nouveau nom"
       ],
       "New password": [
         "Nouveau mot de passe"
@@ -10641,6 +10692,9 @@
       "Sign emails": [
         "Signer les e-mails"
       ],
+      "Signature": [
+        "Signature"
+      ],
       "Size:": [
         "Taille :"
       ],
@@ -10748,6 +10802,12 @@
       ],
       "Unsubscribed from ${ truncatedName }.": [
         "L'abonnement à ${ truncatedName } est annulé."
+      ],
+      "Until date": [
+        "Jusqu'à la date"
+      ],
+      "Until time": [
+        "Jusqu'au temps"
       ],
       "Updates": [
         "Mises à jour"
@@ -10945,6 +11005,12 @@
     "Link": {
       "Add a gift code": [
         "Ajouter un code-cadeau"
+      ],
+      "Add formatting, links or images": [
+        "Ajouter une mise en forme, des liens ou des images"
+      ],
+      "Advanced auto-reply options": [
+        "Options avancées de réponse automatique"
       ],
       "All mail": [
         "Tous les messages"
@@ -12178,8 +12244,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } se terminant par ${ last4 }"
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } se terminant par ${ Last4 }"
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 To d'espace de stockage cloud qui vous permet de stocker, synchroniser et partager des fichiers facilement. Sécurisé par un chiffrement de bout en bout."
@@ -12996,6 +13062,99 @@
       ]
     },
     "Option": {
+      "10th of the month": [
+        "Le 10 du mois"
+      ],
+      "11th of the month": [
+        "Le 11 du mois"
+      ],
+      "12th of the month": [
+        "12 du mois"
+      ],
+      "13th of the month": [
+        "13 du mois"
+      ],
+      "14th of the month": [
+        "14 du mois"
+      ],
+      "15th of the month": [
+        "15 du mois"
+      ],
+      "16th of the month": [
+        "16 du mois"
+      ],
+      "17th of the month": [
+        "Le 17 du mois"
+      ],
+      "18th of the month": [
+        "18 du mois"
+      ],
+      "19th of the month": [
+        "Le 19 du mois"
+      ],
+      "1st of the month": [
+        "1er jour du mois"
+      ],
+      "20th of the month": [
+        "20 du mois"
+      ],
+      "21st of the month": [
+        "Le 21 du mois"
+      ],
+      "22nd of the month": [
+        "Le 22 du mois"
+      ],
+      "23rd of the month": [
+        "Le 23 du mois"
+      ],
+      "24th of the month": [
+        "Le 24 du mois"
+      ],
+      "25th of the month": [
+        "Le 25 du mois"
+      ],
+      "26th of the month": [
+        "Le 26 du mois"
+      ],
+      "27th of the month": [
+        "Le 27 du mois"
+      ],
+      "28th of the month": [
+        "Le 28 du mois"
+      ],
+      "29th of the month": [
+        "29 du mois"
+      ],
+      "2nd of the month": [
+        "2ème jour du mois"
+      ],
+      "30th of the month": [
+        "Le 30 du mois"
+      ],
+      "31st of the month": [
+        "31 du mois"
+      ],
+      "3rd of the month": [
+        "3 du mois"
+      ],
+      "4th of the month": [
+        "4 du mois"
+      ],
+      "5th of the month": [
+        "Le 5 du mois"
+      ],
+      "6th of the month": [
+        "Le 6 du mois"
+      ],
+      "7th of the month": [
+        "Le 7 du mois"
+      ],
+      "8th of the month": [
+        "8 du mois"
+      ],
+      "9th of the month": [
+        "9 du mois"
+      ],
       "Add to existing group": [
         "Ajouter à un groupe existant"
       ],
@@ -13008,14 +13167,29 @@
       "Create new group": [
         "Créer un nouveau groupe"
       ],
+      "Fixed duration": [
+        "Durée déterminée"
+      ],
       "Ignore group": [
         "Ignorer le groupe"
       ],
       "No parent folder": [
         "Aucun dossier parent"
       ],
+      "Permanent": [
+        "Permanent"
+      ],
       "Remind me later": [
         "Me le rappeler plus tard"
+      ],
+      "Repeat daily": [
+        "Répéter chaque jour"
+      ],
+      "Repeat monthly": [
+        "Répéter chaque mois"
+      ],
+      "Repeat weekly": [
+        "Répéter chaque semaine"
       ],
       "Yes, don't show again": [
         "Oui, ne plus afficher"
@@ -13352,6 +13526,11 @@
         "Les crédits seront ajoutés à votre solde."
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "La modification de votre adresse de facturation peut avoir une incidence sur les taxes figurant sur vos prochaines factures."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Voulez-vous vraiment continuer ?"
@@ -13389,14 +13568,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - carte se terminant par les chiffres ${ paymentMethod.Details.Last4 }"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - carte se terminant par les chiffres ${ Last4 }"
       ],
-      "Bank transfer - ${ details }": [
-        "Virement bancaire - ${ details }"
+      "Bank transfer - ${ iban }": [
+        "Virement bancaire - ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - carte se terminant par les chiffres ${ paymentMethod.Details.Last4 }"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - carte se terminant par les chiffres ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -16142,6 +16321,9 @@
       "Create contact": [
         "Créer un contact"
       ],
+      "Create filter": [
+        "Crée un filtre"
+      ],
       "Create folder": [
         "Créer un dossier"
       ],
@@ -16725,6 +16907,9 @@
       "Remove from list?": [
         "Retirer de la liste ?"
       ],
+      "Rename folder": [
+        "Renommer un dossier"
+      ],
       "Reply": [
         "Répondre"
       ],
@@ -16806,11 +16991,17 @@
       "September Sale": [
         "Soldes de septembre"
       ],
+      "Set auto-reply": [
+        "Définir une réponse automatique"
+      ],
       "Set recovery methods": [
         "Définir les méthodes de récupération"
       ],
       "Set recovery phrase": [
         "Définir une phrase de récupération"
+      ],
+      "Set signature": [
+        "Définir une signature"
       ],
       "Set up ${ protonDuoPlanName }": [
         "Configurez ${ protonDuoPlanName }"
@@ -16911,6 +17102,9 @@
       ],
       "Trust public key?": [
         "Approuver la clé publique ?"
+      ],
+      "Turn off auto-reply": [
+        "Désactiver la réponse automatique"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activer ${ DARK_WEB_MONITORING_NAME }"

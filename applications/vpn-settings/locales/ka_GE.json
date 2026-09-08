@@ -5582,9 +5582,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "ახალი მომხმარებლის დამატებამდე თქვენი დომენის მორგება აუცილებელია."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "გიწვევენ, თქვენი ${ BRAND_NAME }-ის ანგარიში ამ ოჯახის ტარიფს მიაბათ და ერთად ისიამოვნოთ ყველა ${ brandOrAppName }-ის ფასიანი ფუნქციით."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "თქვენს ანგარიშს იმაზე მეტი მისამართი გააჩნია, ვიდრე ეს თქვენი სატარიფო გეგმის მიერაა დაშვებული. ${ addressSettingsLink }"
       ],
@@ -8581,9 +8578,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "გამოწერა მთავრდება: ${ planName }-ის უპირატესობების შესანარჩუნებლად, გადატვირთეთ თქვენი გამოწერა Google Play Store-ში ${ byDate }-მდე. ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "გამოწერა იწყება ${ startsOnTime }"
-      ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "მომხმარებლის დომენების და არა-${ BRAND_NAME }-ის ელფოსტის მისამართების მონიტორინგის მხარდაჭერა მალე გვექნება."
       ],
@@ -8871,9 +8865,6 @@
       ],
       "Total VPN connections": [
         "VPN შეერთებები სულ"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "საცდელი პერიოდი მთავრდება ${ formattedPeriodEndDate }"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "სცადეთ ${ productName } სრულიად რისკის გარეშე - თუ რაიმე მიზეზით გადაიფიქრებთ, თანხას სრულად დაგიბრუნებთ. ყოველგვარი კითხვების გარეშე."
@@ -12069,9 +12060,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } დასრულდება ${ last4 }"
-      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } საშუალებას გაძლევთ, შექმნათ ელფოსტის მისამართები და მართოთ ქვემომხმარებლების ანგარიშები. იდეალურია ოჯახისა და ორგანიზაციებისთვის."
       ],
@@ -13525,17 +13513,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "განახლების ფასი დამოკიდებულია გადახდის რეგიონსა და დღგ-ის ნომერზე."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - ბარათის ვადა იწურება ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "საბანკო გადარიცხვა - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - ბარათის ვადა იწურება ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

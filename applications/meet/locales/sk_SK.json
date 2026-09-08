@@ -67,14 +67,32 @@
       "Background removed": [
         "Pozadie odstránené"
       ],
+      "Beach landscape background applied": [
+        "Bolo použité pozadie s plážovou scenériou"
+      ],
       "Blurred background applied": [
         "Bolo použité rozmazané pozadie"
+      ],
+      "Blurred office background applied": [
+        "Bolo použité rozmazané pozadie kancelárie"
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Pripojené prostredníctvom režimu TURN relay z dôvodu obmedzení siete. Môže to zvýšiť latenciu a ovplyvniť kvalitu hovoru."
       ],
       "Connection lost. Reconnecting…": [
         "Pripojenie bolo prerušené. Opätovné pripájanie…"
+      ],
+      "Dark ${ BRAND_NAME } background applied": [
+        "Bolo použité tmavé pozadie ${ BRAND_NAME }"
+      ],
+      "Library background applied": [
+        "Bolo použité pozadie  s knižnicou"
+      ],
+      "Light ${ BRAND_NAME } background applied": [
+        "Bolo použité svetlé pozadie ${ BRAND_NAME }"
+      ],
+      "Mountain landscape background applied": [
+        "Bolo použité pozadie s horskou scenériou"
       ],
       "New chat message: ${ message }": [
         "Nová správa v chate: ${ message }"
@@ -209,6 +227,9 @@
       ],
       "Cancel": [
         "Zrušiť"
+      ],
+      "Change layout": [
+        "Zmeniť rozloženie"
       ],
       "Change password": [
         "Zmeniť heslo"
@@ -365,6 +386,9 @@
       ],
       "Getting ready...": [
         "Pripravuje sa..."
+      ],
+      "Grid": [
+        "Mriežka"
       ],
       "Help and feedback": [
         "Pomoc a spätná väzba"
@@ -570,6 +594,9 @@
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "Naplánovať v ${ CALENDAR_APP_NAME }"
       ],
+      "Screen share": [
+        "Zdieľanie obrazovky"
+      ],
       "Search countries": [
         "Vyhľadať krajiny"
       ],
@@ -611,6 +638,9 @@
       ],
       "Skip to main content": [
         "Prejsť na hlavný obsah"
+      ],
+      "Speaker": [
+        "Rečník"
       ],
       "Start an instant meeting": [
         "Začať okamžitú schôdzku"
@@ -698,12 +728,6 @@
       ],
       "Use camera": [
         "Použiť kameru"
-      ],
-      "Use color": [
-        "Použiť farbu"
-      ],
-      "Use image": [
-        "Použiť obrázok"
       ],
       "Use microphone": [
         "Použiť mikrofón"
@@ -2229,6 +2253,9 @@
       "Screen share is not supported on mobile browsers": [
         "Zdieľanie obrazovky nie je v mobilných prehliadačoch podporované"
       ],
+      "Screen share is not supported on your device": [
+        "Zdieľanie obrazovky nie je vo vašom zariadení podporované"
+      ],
       "Signature is missing": [
         "Chýba podpis"
       ],
@@ -2607,6 +2634,9 @@
         "${ replyCount } odpovedí",
         "${ replyCount } odpovedí"
       ],
+      "${ spotlightParticipantName } is the active speaker": [
+        "${ spotlightParticipantName } je aktívnym rečníkom"
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } z maximálne ${ maxParticipants } účastníkov"
       ],
@@ -2643,8 +2673,8 @@
       "Admitting": [
         "Povoľovanie"
       ],
-      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
-        "Pokročilý režim: nastavte všetky konštanty rozostrenia pre nasledujúcu verziu a potom kliknite na „Použiť“, aby sa znovu vygeneroval náhľad. Tieto nastavenia majú prednosť pred hodnotami v súbore a v nástroji Unleash."
+      "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Pokročilý režim: nastavte všetky konštanty rozostrenia a potom kliknite na „Použiť“, aby sa znovu vygeneroval náhľad. Tieto nastavenia majú prednosť pred hodnotami v súbore a v nástroji Unleash."
       ],
       "Allow camera access to preview your background": [
         "Povoľte kamere prístup k náhľadu vášho pozadia"
@@ -2928,8 +2958,8 @@
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
         "Záznamy nám pomáhajú pochopiť, čo sa udialo pred vznikom problému. Obsahujú akcie aplikácie a chybové hlásenia, nie však obsah správ."
       ],
-      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
-        "Prehrávajte nahraté video alebo obraz z vašej kamery v režime živého vysielania v oboch verziách s rozmazaným pozadím vedľa seba."
+      "Loop an uploaded video or your live camera through background blur.": [
+        "Nastavte prehrávanie nahratého videa alebo záberu z kamery v režime živého vysielania s rozmazaným pozadím."
       ],
       "Lower participant's hand": [
         "Spustiť ruku účastníka"
@@ -3141,8 +3171,8 @@
       "Rejecting": [
         "Zamietanie"
       ],
-      "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
-        "Spustite svoju živú kameru cez procesor na úpravu pozadia. Vyberte si jednoliatu farbu alebo nahrajte obrázok, ktorý chcete použiť ako pozadie."
+      "Run your live camera through the custom background processor. Upload an image to use as the background.": [
+        "Spustite svoju živú kameru cez procesor na úpravu pozadia.Nahrajte obrázok, ktorý chcete použiť ako pozadie."
       ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Naplánujte si ďalšiu schôdzu. Vytvorte si účet na plánovanie schôdzí pomocou vášho kalendára."
@@ -3440,11 +3470,14 @@
       "Auto-detect": [
         "Zistiť automaticky"
       ],
-      "Background color": [
-        "Farba pozadia"
+      "Beach landscape background": [
+        "Pozadie s plážovou scenériou"
       ],
       "Blurred (next)": [
         "Rozmazané (ďalej)"
+      ],
+      "Blurred office background": [
+        "Rozmazané pozadie kancelárie"
       ],
       "Browser": [
         "Prehliadač"
@@ -3482,8 +3515,8 @@
       "Created": [
         "Vytvorené"
       ],
-      "Current": [
-        "Aktuálne"
+      "Dark ${ BRAND_NAME } background": [
+        "Tmavé ${ BRAND_NAME } pozadie"
       ],
       "Delete": [
         "Odstrániť"
@@ -3554,6 +3587,12 @@
       "Leave meeting options": [
         "Opustiť možnosti schôdze"
       ],
+      "Library background": [
+        "Pozadie s knižnicou"
+      ],
+      "Light ${ BRAND_NAME } background": [
+        "Svetlé ${ BRAND_NAME } pozadie"
+      ],
       "Live caption agent": [
         "Agent živých titulkov"
       ],
@@ -3575,14 +3614,14 @@
       "Monday to Friday": [
         "Pondelok až piatok"
       ],
+      "Mountain landscape background": [
+        "Pozadie s horskou scenériou"
+      ],
       "Muted": [
         "Stíšené"
       ],
       "Name": [
         "Meno"
-      ],
-      "Next": [
-        "Ďalej"
       ],
       "Operating system": [
         "Operačný systém"
@@ -3604,6 +3643,9 @@
       ],
       "Phone number": [
         "Telefónne číslo"
+      ],
+      "Preview": [
+        "Náhľad"
       ],
       "Raw": [
         "Raw"
@@ -3640,9 +3682,6 @@
       ],
       "Selected Speaker": [
         "Vybraný rečník"
-      ],
-      "Solid color": [
-        "Jednofarebné"
       ],
       "Spoken language": [
         "Hovorený jazyk"
@@ -4069,8 +4108,8 @@
       "Background": [
         "Pozadie"
       ],
-      "Background blur comparison": [
-        "Porovnanie rozostrenia pozadia"
+      "Background blur preview": [
+        "Náhľad rozostreného pozadia"
       ],
       "Backgrounds": [
         "Pozadia"

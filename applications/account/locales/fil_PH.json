@@ -7869,9 +7869,6 @@
       "You're invited to join ${ invite.OrganizationName }": [
         "Iniimbitahan kang sumali sa ${ invite.OrganizationName }"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Iniimbitahan kang i-link ang iyong ${ BRAND_NAME } Account sa family plan na ito at sama-samang i-enjoy ang lahat ng premium feature ng ${ brandOrAppName }."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "May higit na email address ang account kaysa sa available sa planong ito. ${ addressSettingsLink }"
       ],
@@ -11888,9 +11885,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Matatapos na ang subscription: Para mapanatili ang mga benepisyo ng ${ planName }, i-restart ang subscription sa Google Play Store bago sumapit ang ${ byDate }. ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "Magsisimula ang subscription sa ${ startsOnTime }"
-      ],
       "Summary": [
         "Buod"
       ],
@@ -12280,9 +12274,6 @@
       ],
       "Total: ${ totalPrice }": [
         "Kabuuan: ${ totalPrice }"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "Matatapos ang pagsubok sa ${ formattedPeriodEndDate }"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Subukan ang ${ productName } nang walang panganib - kung magbago ang isip mo sa anumang dahilan, makakatanggap ka ng buong refund. Wala nang itatanong"
@@ -13716,9 +13707,6 @@
       ],
       "Account holder": [
         "Holder ng account"
-      ],
-      "Account holder: ${ sepaDetails.AccountName }": [
-        "May-ari ng account: ${ sepaDetails.AccountName }"
       ],
       "Account storage": [
         "Storage ng account"
@@ -17215,9 +17203,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } na nagtatapos sa ${ last4 }"
-      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "Hinahayaan ka ng ${ BRAND_NAME } na gumawa ng mga email address at pamahalaan ang mga account para sa mga sub-user. Mainam para sa mga pamilya at organisasyon."
       ],
@@ -19328,17 +19313,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Ang presyo ng pag-renew ay nakadepende sa rehiyon ng pagsingil at VAT number."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - card na nagtatapos sa ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Bank transfer - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - card na nagtatapos sa ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

@@ -48,6 +48,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add ${ photoCount } photo to a new album": [
+        "新增 ${ photoCount } 張照片至新相簿"
+      ],
       "Add account": [
         "加入帳號"
       ],
@@ -1610,6 +1613,12 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 位使用者"
+      ],
+      "Amount due": [
+        "應付金額"
+      ],
+      "Amount due now": [
+        "當前欠款"
       ],
       "Subtotal": [
         "小計"
@@ -3209,6 +3218,9 @@
       "Cannot find move target": [
         "找不到移動目標"
       ],
+      "Cannot share root folder": [
+        "無法複製根資料夾"
+      ],
       "Cannot verify the author of this file": [
         "無法驗證此檔案的作者"
       ],
@@ -3235,6 +3247,9 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "無法啟用內文搜尋。請重新啟動應用程式或清除資料。"
+      ],
+      "Copy operation aborted": [
+        "以放棄移動操作"
       ],
       "Copying item to a non-folder is not allowed": [
         "不允許將項目複製到非資料夾"
@@ -3412,6 +3427,9 @@
       ],
       "Invalid verification code": [
         "驗證碼無效"
+      ],
+      "Invitation not found": [
+        "未找到邀請"
       ],
       "Item content cannot exceed 40KB": [
         "項目無法超越40KB"
@@ -4051,6 +4069,11 @@
         "(無標題)"
       ]
     },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } 個鏈結失敗"
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 TB 的總儲存空間"
@@ -4142,9 +4165,6 @@
       ],
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "您有未付款的收據。請在加入家庭方案前繳付。"
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "我們邀請您將您的 ${ BRAND_NAME } 帳號連結至此家庭方案，並一起享受所有 ${ brandOrAppName } 進階功能。"
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "您帳號中的電子郵件位址多於此方案中可用的電子郵件位址。${ addressSettingsLink }"
@@ -4272,14 +4292,23 @@
       ]
     },
     "Filter": {
+      "Activated": [
+        "已啟用"
+      ],
       "All": [
         "全部"
+      ],
+      "Errors": [
+        "錯誤"
       ],
       "In progress": [
         "進行中"
       ],
       "Migrated": [
         "遷移"
+      ],
+      "Not activated": [
+        "未啟動"
       ],
       "Pending": [
         "等待中"
@@ -4350,6 +4379,11 @@
       ],
       "Username": [
         "使用者名稱"
+      ]
+    },
+    "Heading": {
+      "Share ${ photoCount } photo via": [
+        "共享 ${ photoCount } 照片透過"
       ]
     },
     "Hint": {
@@ -4689,6 +4723,9 @@
       "${ addressCount } email address": [
         "${ addressCount } 個電郵位址"
       ],
+      "${ albums } album": [
+        "${ albums } 相簿"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
       ],
@@ -4740,6 +4777,9 @@
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 個群組"
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } 標記"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } 包含 ${ BRAND_NAME } Scribe 撰稿助理"
       ],
@@ -4760,6 +4800,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME }終身方案無續約費,他是單次付款終身存取${ PASS_SHORT_APP_NAME }。您${ planTitle }訂閱價格及日期保持不便。"
+      ],
+      "${ photoCount } item": [
+        "${ photoCount } 個項目"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
@@ -5091,6 +5134,9 @@
       "default email address": [
         "預設電子信箱地址"
       ],
+      "Delete locked drive": [
+        "刪除鎖定的硬碟"
+      ],
       "Details": [
         "詳細資訊"
       ],
@@ -5102,6 +5148,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 商標"
+      ],
+      "Do you remember your password?": [
+        "您記得您的密碼嗎?"
       ],
       "Do you still want to upload it?": [
         "你仍要上載它們嗎？"
@@ -5432,6 +5481,9 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "大多數公共 WiFi 網路是安全的，但有些缺乏安全性，讓您暴露於網路威脅之下。VPN 會加密您的流量，保護您的安全。"
+      ],
+      "Move ${ folderCount } folder": [
+        "移動 ${ folderCount } 個資料夾"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "請命名您的新資料夾，並選取放置的上層資料夾。若您不選取上層資料夾，將以頂層資料夾創建。"
@@ -6083,6 +6135,9 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "當您的密碼或其他資料在第三方服務中洩漏時取得通知。"
+      ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "您還有 ${ expiresInDays } 天的時間領取您的 3 GB 歡迎獎勵，和 "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "您有一個試用期 ${ planTitle } 訂購授權。如果您希望在試用期完結後繼續您的訂購授權，請增加一個繳款方式。"
@@ -7166,6 +7221,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "添加${ BRAND_NAME }訂閱撰寫扳手"
       ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "添加 ${ LUMO_SHORT_APP_NAME } 撰寫幫手"
+      ],
       "Add-on with free trial": [
         "可免費試用的擴充功能"
       ],
@@ -7566,6 +7624,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
         "${ LUMO_SHORT_APP_NAME } 撰寫工具與擴充存取權"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫工具與限制存取權"
       ],
       "${ n } calendar": [
         "${ n } 個行事曆"
@@ -8040,9 +8101,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } 後四碼 ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB 的雲端儲存空間，讓您可以輕鬆儲存、同步及共享檔案。受端對端加密保護。"
       ],
@@ -8459,11 +8517,23 @@
       "\"${ newName }\" renamed successfully": [
         "「${ newName }」已成功重新命名"
       ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "已新增 ${ addedUids.length } 張照片至「${ albumName }」"
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } 個項目解密失敗"
       ],
+      "${ errors.length } item failed to be copied": [
+        "${ errors.length } 個項目複製失敗"
+      ],
       "${ errors.length } item failed to be deleted": [
         "${ errors.length } 個項目刪除失敗"
+      ],
+      "${ errors.length } item failed to be trashed": [
+        "${ errors.length } 個項目刪除失敗"
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } 個複製項目已移動到垃圾桶"
       ],
       "${ numberOfItems } item deleted": [
         "已刪除${ numberOfItems }項目"
@@ -8494,6 +8564,9 @@
       ],
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } 個項目已從垃圾桶中還原"
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "${ numberOfItems } 個項目已成功移動"
       ],
       "${ reason } has been disabled": [
         "${ reason } 已停用。"
@@ -8560,6 +8633,12 @@
       ],
       "Public link access updated": [
         "公開網址已更新存取權"
+      ],
+      "Selected item was not removed from your list": [
+        "選取項目未被從清單上移除"
+      ],
+      "Selected item was successfully removed from your list": [
+        "選取項目已成功從清單移除"
       ],
       "Setting updated. Editors can change permissions and share.": [
         "設定已更新。編輯者可以變更權限和共享。"
@@ -9139,17 +9218,6 @@
         "續訂價格取決於計費區域和 VAT 號碼。"
       ]
     },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "APPle Pay - 卡片於 ${ paymentMethod.Details.Last4 } 結束"
-      ],
-      "Bank transfer - ${ details }": [
-        "匯款 - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - 卡片於 ${ paymentMethod.Details.Last4 } 結束"
-      ]
-    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "透過確認此付款，您授權 ${ BRAND_NAME } 和我們的支付服務提供者 Stripe 指示您的銀行從您的帳戶中扣款。根據您與銀行達成的協議條件，您可以在扣款日起 8 週內獲得退款。"
@@ -9421,6 +9489,12 @@
       ],
       "key": [
         "金鑰"
+      ],
+      "membership": [
+        "會員資格"
+      ],
+      "name": [
+        "名稱"
       ]
     },
     "Property type": {
@@ -9555,12 +9629,23 @@
         "夏季特賣"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "取得優惠"
+      ]
+    },
     "q3campaign2026: Info": {
+      "/month": [
+        "/每月"
+      ],
       "2 TB of secure storage": [
         "2TB 的安全儲存空間"
       ],
       "3 TB of secure storage": [
         "3TB 的安全儲存空間"
+      ],
+      "500 GB of secure storage": [
+        "500 GB 安全儲存空間"
       ]
     },
     "q3campaign2026: Info, Drive first": {
@@ -9571,6 +9656,9 @@
     "q3campaign2026: Title": {
       "for 12 months": [
         "12 個月"
+      ],
+      "One plan, more power": [
+        "單一方案，更多能量"
       ]
     },
     "Referral": {
@@ -10695,6 +10783,9 @@
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } 個聯絡人似乎相同。"
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "剩餘 ${ countOfUnrecoveredLinksLeft } 個鏈結"
+      ],
       "Address copied to clipboard": [
         "位址已複製到剪貼簿"
       ],
@@ -10840,6 +10931,9 @@
       "Fingerprint": [
         "指紋"
       ],
+      "Migration status": [
+        "遷移狀態"
+      ],
       "Name": [
         "名稱"
       ],
@@ -10974,6 +11068,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "您確定要關閉預覽嗎？"
+      ],
+      "Are you sure you want to remove this item from your list?": [
+        "您確定要將此項目從清單中移除?"
       ],
       "Are you sure?": [
         "您確定嗎？"
@@ -11482,6 +11579,9 @@
       "Remove device?": [
         "移除裝置？"
       ],
+      "Remove item?": [
+        "移除項目？"
+      ],
       "Remove your access?": [
         "移除您的存取權限？"
       ],
@@ -11523,6 +11623,9 @@
       ],
       "Select users to migrate": [
         "選取使用者以遷移"
+      ],
+      "September Sale": [
+        "九月的銷售"
       ],
       "Set recovery methods": [
         "設定復原方式"

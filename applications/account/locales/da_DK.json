@@ -1280,6 +1280,9 @@
       "Got it": [
         "Forstået"
       ],
+      "Grant access": [
+        "Giv adgang"
+      ],
       "Group owner": [
         "Gruppeejer"
       ],
@@ -2746,6 +2749,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "Active until ${ formattedPeriodEndDate }": [
+        "Aktiv indtil ${ formattedPeriodEndDate }"
+      ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Efter prøveperioden udløber den ${ formattedDate1 }, vil det blive et betalt abonnement, der automatisk fornyes hver ${ renewCycle } måned. Du vil ikke blive opkrævet betaling, hvis du opsiger før den ${ formattedDate2 }."
       ],
@@ -2769,6 +2775,9 @@
       ],
       "Try it free for ${ TRIAL_DURATION_DAYS } days": [
         "Gratis afprøvning i ${ TRIAL_DURATION_DAYS } dage"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period.": [
+        "Afmelder du, vil din gratis prøveperiode ikke blive konverteret til et betalt abonnement, men du kan stadig nyde dine fordelene af abonnementet indtil udgangen af prøveperioden. Herefter vil du blive nedgraderet til gratis abonnement."
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Afmelder du, vil din gratis prøveperiode ikke blive konverteret til et betalt abonnement, men du kan stadig nyde dine abonnementetsfordele indtil udgangen af prøveperioden. Herefter vil du blive nedgraderet til ${ BRAND_NAME } gratis abonnement."
@@ -3770,6 +3779,18 @@
         "${ users } bruger",
         "${ users } brugere"
       ],
+      "Amount due": [
+        "Forfaldent beløb"
+      ],
+      "Amount due after trial": [
+        "Forfaldent beløb efter prøveperioden"
+      ],
+      "Amount due now": [
+        "Forfaldent beløb nu"
+      ],
+      "month": [
+        "måned"
+      ],
       "Started ${ formattedStartDate }": [
         "Startet ${ formattedStartDate }"
       ],
@@ -3786,8 +3807,15 @@
         "Deltotal for ${ cycle } måned",
         "Deltotal for ${ cycle } måneder"
       ],
+      "Summary": [
+        "Oversigt"
+      ],
       "Total": [
         "I alt"
+      ],
+      "Total for ${ cycle } month": [
+        "I alt for ${ cycle } måned",
+        "I alt for ${ cycle } måneder"
       ]
     },
     "Collapsible tooltip": {
@@ -8645,8 +8673,8 @@
       "You're invited to join ${ invite.OrganizationName }": [
         "Du er inviteret til at blive medlem af ${ invite.OrganizationName }"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Du er inviteret til at forbinde din ${ BRAND_NAME }-konto til dette familieabonnement og sammen nyde alle ${ brandOrAppName } premium-funktioner."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du er inviteret til at forbinde din ${ BRAND_NAME }-konto til denne familiegruppe og nyde alle dens premium-funktioner."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Din konto har flere e-mailadresser en det, der er tilgængeligt for dig på dette abonnement. ${ addressSettingsLink }"
@@ -11320,6 +11348,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Glem IKKE denne adgangskode. Glemmer du den, vil du ikke være i stand til at administrere din organisation."
       ],
+      "Do you remember your password?": [
+        "Kan du godt huske din adgangskode?"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Vil du tilbagekalde alle andre sessioner end den nuværende?"
       ],
@@ -11746,6 +11777,9 @@
       ],
       "Get VPN Plus": [
         "Få VPN Plus"
+      ],
+      "Give ${ BRAND_NAME } permissions to import your ${ providerName } data.": [
+        "Giv ${ BRAND_NAME } tilladelse til at importere dine ${ providerName }-data."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Giv tokenet et beskrivende navn, såsom den tjeneste, du planlægger at bruge det til, og vælg en af dine aktive brugerdomæneadresser. Kun denne adresse vil kunne sende e-mails med dette token."
@@ -12413,6 +12447,9 @@
       "On": [
         "Til"
       ],
+      "On ${ formattedPeriodEndDate }, your free trial ends and your paid plan starts.": [
+        "Den ${ formattedPeriodEndDate } slutter din gratis prøveperiode og dit betalte abonnement starter."
+      ],
       "On Ubuntu?": [
         "Er du på Ubuntu?"
       ],
@@ -13056,9 +13093,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Abonnement udløber: For at beholde dine ${ planName } fordele, skal du fornye din abonnement i Apple App Store inden ${ byDate }. ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "Abonnementet starter den ${ startsOnTime }"
-      ],
       "Summary": [
         "Sammenfatning"
       ],
@@ -13509,9 +13543,6 @@
       ],
       "Total: ${ totalPrice }": [
         "I alt: ${ totalPrice }"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "Prøveperioden slutter ${ formattedPeriodEndDate }"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Prøv ${ productName } helt uden risiko – hvis du af en eller anden grund ombestemmer dig, får du fuld refusion. Helt uden spørgsmål fra os."
@@ -15053,8 +15084,8 @@
       "Account holder name": [
         "Kontohavers navn"
       ],
-      "Account holder: ${ sepaDetails.AccountName }": [
-        "Kontoejer: ${ sepaDetails.AccountName }"
+      "Account holder: ${ details.AccountName }": [
+        "Kontoejer: ${ details.AccountName }"
       ],
       "Account storage": [
         "Kontolagerplads"
@@ -18700,8 +18731,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } slutter med ${ last4 }"
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand }, der slutter med ${ Last4 }"
       ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } lader dig oprette e-mail-adresser og administrere konti for underbrugere. Ideel til familier og organisationer."
@@ -20920,6 +20951,11 @@
         "Kreditter vil blive tilføjet til din saldo"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Det kan påvirke afgifter på fremtidige fakturaer at ændre din faktureringsadresse."
+      ]
+    },
     "Payments.Lifetime Subscription": {
       "Lifetime accounts can be transferred or sold": [
         "Livstidskonti kan overføres eller sælges"
@@ -20970,14 +21006,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - kort, der slutter på ${ paymentMethod.Details.Last4 }"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - kort, der slutter på ${ Last4 }"
       ],
-      "Bank transfer - ${ details }": [
-        "Bankoverførsel - ${ details }"
+      "Bank transfer - ${ iban }": [
+        "Bankoverførsel - ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - kort, der slutter på ${ paymentMethod.Details.Last4 }"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kort, der slutter på ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -24504,6 +24540,9 @@
       "Final step": [
         "Sidste trin"
       ],
+      "Grant access": [
+        "Giv adgang"
+      ],
       "Install migration app": [
         "Installer app til migration"
       ],
@@ -26880,6 +26919,9 @@
       ],
       "Going private": [
         "Bliver privat"
+      ],
+      "Grant access": [
+        "Giv adgang"
       ],
       "Group": [
         "Gruppe"
@@ -29278,6 +29320,9 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Vi fandt et problem med din DNS-konfiguration. Sørg for, at dine poster matcher instruktionerne nedenfor. Hvis problemet fortsætter, er vi nødt til at slå DKIM-signering fra."
+      ],
+      "We were unable to verify access, please check that you have granted access in your ${ providerName } account and try again.": [
+        "Vi kunne ikke bekræfte adgangen. Tjek at du har givet adgang på din ${ providerName }-konto og prøv igen."
       ],
       "We were unable to verify the installation, please check that you have installed it in your ${ providerName } account and try again.": [
         "Vi kunne ikke verificere installationen. Kontrollér, at du har installeret den i din ${ providerName }-konto, og prøv igen."

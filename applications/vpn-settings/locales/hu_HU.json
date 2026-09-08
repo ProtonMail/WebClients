@@ -4451,9 +4451,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "Új felhasználó létrehozása előtt konfigurálnia kell egy saját domain nevet."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Meghívót kapott, hogy a ${ BRAND_NAME } fiókjával csatlakozzon ehhez a családi csomaghoz, és együtt használhassák a ${ brandOrAppName } prémium funkcióit."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "A fiókjában több e-mail cím van, mint amennyit a csomagja lehetővé tesz. ${ addressSettingsLink }"
       ],
@@ -9612,9 +9609,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand }, szám vége: ${ last4 }"
-      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "A ${ BRAND_NAME } e-mail címek és al-felhasználók létrehozására biztosít lehetőséget. Ideális családoknak vagy szervezeteknek."
       ],
@@ -10877,11 +10871,6 @@
     "Payments.plan_name": {
       "Free": [
         "Ingyenes"
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - kártya, a következő végződéssel: ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

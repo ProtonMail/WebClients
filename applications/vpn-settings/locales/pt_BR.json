@@ -60,6 +60,9 @@
       "Automatic renewal": [
         "Renovação automática"
       ],
+      "Block sender for the organization": [
+        "Bloquear remetente para a organização"
+      ],
       "Blog articles": [
         "Artigos do blog"
       ],
@@ -2493,6 +2496,12 @@
         "${ users } usuário",
         "${ users } usuários"
       ],
+      "Amount due after trial": [
+        "Valor devido após o período de avaliação"
+      ],
+      "month": [
+        "mês"
+      ],
       "Subtotal": [
         "Subtotal"
       ],
@@ -2500,8 +2509,15 @@
         "Subtotal por ${ cycle } mês",
         "Subtotal por ${ cycle } meses"
       ],
+      "Summary": [
+        "Resumo"
+      ],
       "Total": [
         "Total"
+      ],
+      "Total for ${ cycle } month": [
+        "Total por ${ cycle } mês",
+        "Total por ${ cycle } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -6051,9 +6067,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "Você precisa configurar um domínio personalizado antes de criar um novo usuário."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Você está convidado a vincular sua conta ${ BRAND_NAME } a este plano familiar e, juntos, aproveitarem todos os recursos premium do ${ brandOrAppName }."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Sua conta tem mais endereços de e-mail do que a quantidade que está disponível para você neste plano. ${ addressSettingsLink }"
       ],
@@ -6578,6 +6591,9 @@
       ],
       "Enforce identity-based access controls": [
         "Forçar controles de acesso baseados em identidade"
+      ],
+      "Monitor gateway connections with VPN Professional": [
+        "Monitore as conexões do gateway com o VPN Professional"
       ],
       "User - ${ userPrice }": [
         "Usuário - ${ userPrice }"
@@ -7233,6 +7249,9 @@
       "${ helpTranslateLink } by joining our localization community.": [
         "${ helpTranslateLink } participando da nossa comunidade de localização."
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "Marca de ${ IDEAL_WERO_BRAND_NAME }"
+      ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "${ invitedMemberCount } usuário precisa aceitar o convite para começar a receber e-mails do grupo.",
         "${ invitedMemberCount } usuários precisam aceitar o convite para começar a receber e-mails do grupo."
@@ -7286,6 +7305,10 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }. O preço e a data de renovação da sua assinatura ${ planTitle } permanecem inalterados."
+      ],
+      "${ pendingKeysMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingKeysMemberCount } novo membro adicionado via seu provedor de identidade e pendente de revisão.",
+        "${ pendingKeysMemberCount } novos membros adicionados via seu provedor de identidade e pendentes de revisão."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer pelo menos 1 servidor dedicado ${ serverPricePerMonth }"
@@ -7986,6 +8009,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NÃO esqueça essa senha. Se você a esquecer, você não será capaz de gerenciar sua organização."
       ],
+      "Do you remember your password?": [
+        "Você lembra sua senha?"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Você deseja revogar todas as outras sessões deixando apenas a atual?"
       ],
@@ -8070,6 +8096,9 @@
       ],
       "email": [
         "e-mail"
+      ],
+      "Email address copied to clipboard": [
+        "Endereço de e-mail copiado para a área de transferência"
       ],
       "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
         "E-mail e calendário, integrados com ${ CONTACTS_APP_NAME }."
@@ -9231,9 +9260,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Fim da assinatura: Para manter os benefícios do seu ${ planName }, reinicie sua assinatura na Google Play Store até ${ byDate }. ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "Sua assinatura começa em ${ startsOnTime }"
-      ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "O suporte de monitoramento de domínios personalizados e endereços de e-mail não-${ BRAND_NAME } estará disponível em breve."
       ],
@@ -9314,6 +9340,10 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "O nome será visível aos seus usuários enquanto eles estiverem conectados."
+      ],
+      "The process was interrupted for ${ pausedCount } ${ roleAssignmentSource }. Click Continue to resume assigning roles.": [
+        "O processo foi interrompido para ${ pausedCount } ${ roleAssignmentSource }. Clique em Continuar para retomar a atribuição de funções.",
+        "O processo foi interrompido para ${ pausedCount } ${ roleAssignmentSource }. Clique em Continuar para retomar a atribuição de funções."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "O crédito por indicação pode ser concedido até dois meses após o término do período de avaliação do seu amigo, desde que ele tenha assinado um plano."
@@ -9551,9 +9581,6 @@
       ],
       "Total VPN connections": [
         "Conexões VPN adicionais"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "A avaliação termina em ${ formattedPeriodEndDate }"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Experimente ${ productName } totalmente sem riscos - se por algum motivo você mudar de ideia, você receberá um reembolso total. Sem perguntas."
@@ -12829,9 +12856,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } com final ${ last4 }"
-      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "A ${ BRAND_NAME } permite que você crie endereços de e-mail e gerencie contas para subusuários. Ideal para famílias e organizações."
       ],
@@ -13780,6 +13804,9 @@
       ]
     },
     "organization key reset": {
+      "Copy email list": [
+        "Copiar lista de e-mails"
+      ],
       "Non-private users": [
         "Usuários não privados"
       ],
@@ -13788,6 +13815,10 @@
       ],
       "Resetting organization key": [
         "Redefinindo a chave da organização"
+      ],
+      "See ${ n } user": [
+        "Ver ${ n } usuário",
+        "Ver ${ n } usuários"
       ],
       "See users": [
         "Ver usuários"
@@ -14328,17 +14359,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "O preço de renovação depende da região de faturamento e do número de IVA."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - cartão terminado em ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Transferência bancária - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - cartão terminado em ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
