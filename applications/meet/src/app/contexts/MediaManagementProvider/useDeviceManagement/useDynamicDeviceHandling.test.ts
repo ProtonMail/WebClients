@@ -38,6 +38,12 @@ vi.mock('@proton/meet/store/hooks', () => storeMocks);
 const browserMocks = vi.hoisted(() => ({ supportsSetSinkId: vi.fn(() => true) }));
 vi.mock('../../../utils/browser', () => browserMocks);
 
+const notificationMocks = vi.hoisted(() => ({
+    notifyPreferredAvailable: vi.fn(),
+    notifyActiveDeviceDisconnected: vi.fn(),
+}));
+vi.mock('./useDeviceNotifications', () => ({ useDeviceNotifications: () => notificationMocks }));
+
 const DEBOUNCE_MS = 200;
 
 const device = (deviceId: string, label: string, groupId = `group-${deviceId}`): SerializableDeviceInfo => ({
@@ -129,7 +135,7 @@ const setup = (options: SetupOptions = {}) => {
         vi.advanceTimersByTime(DEBOUNCE_MS);
     });
 
-    return { switchActiveDevice, toggleAudio, toggleVideo, rerender, selectorValues };
+    return { switchActiveDevice, toggleAudio, toggleVideo, rerender, selectorValues, ...notificationMocks };
 };
 
 describe('useDynamicDeviceHandling', () => {
@@ -179,16 +185,148 @@ describe('useDynamicDeviceHandling', () => {
             );
         });
 
-        it('switches to the preferred speaker when it is available', () => {
-            const { switchActiveDevice } = setup({
+        it('only notifies when the preferred speaker comes back during a call', () => {
+            const { switchActiveDevice, notifyPreferredAvailable } = setup({
                 speakers: UBUNTU_SPEAKERS,
                 activeAudioOutputId: 'builtin-speaker',
                 speakerState: deviceState({ preferredDeviceId: 'jabra' }),
+                isConnected: true,
+            });
+
+            expect(switchActiveDevice).not.toHaveBeenCalled();
+            expect(notifyPreferredAvailable).toHaveBeenCalledWith(
+                expect.objectContaining({ kind: 'audiooutput', deviceLabel: 'Jabra Evolve2 30 Analog Stereo' })
+            );
+        });
+
+        it('forwards the groupId so every kind of one headset shares a notification', () => {
+            const { notifyPreferredAvailable } = setup({
+                speakers: UBUNTU_SPEAKERS,
+                activeAudioOutputId: 'builtin-speaker',
+                speakerState: deviceState({ preferredDeviceId: 'jabra' }),
+                isConnected: true,
+            });
+
+            expect(notifyPreferredAvailable).toHaveBeenCalledWith(expect.objectContaining({ groupId: 'group-jabra' }));
+        });
+
+        it('stays quiet when the preferred speaker is already the one in use', () => {
+            const { switchActiveDevice, notifyPreferredAvailable } = setup({
+                speakers: UBUNTU_SPEAKERS,
+                activeAudioOutputId: 'jabra',
+                speakerState: deviceState({ preferredDeviceId: 'jabra' }),
+                isConnected: true,
+            });
+
+            expect(switchActiveDevice).not.toHaveBeenCalled();
+            expect(notifyPreferredAvailable).not.toHaveBeenCalled();
+        });
+
+        it('announces the preferred speaker once, not on every device list change', () => {
+            const { notifyPreferredAvailable, rerender, selectorValues } = setup({
+                speakers: UBUNTU_SPEAKERS,
+                activeAudioOutputId: 'builtin-speaker',
+                speakerState: deviceState({ preferredDeviceId: 'jabra' }),
+                isConnected: true,
+            });
+
+            expect(notifyPreferredAvailable).toHaveBeenCalledTimes(1);
+
+            selectorValues.set(selectFilteredSpeakers, filterDevices([...UBUNTU_SPEAKERS, device('dock', 'USB Dock')]));
+
+            act(() => {
+                rerender();
+            });
+
+            act(() => {
+                vi.advanceTimersByTime(DEBOUNCE_MS);
+            });
+
+            expect(notifyPreferredAvailable).toHaveBeenCalledTimes(1);
+        });
+
+        it('switches straight to the preferred speaker before joining', () => {
+            const { switchActiveDevice, notifyPreferredAvailable } = setup({
+                speakers: UBUNTU_SPEAKERS,
+                activeAudioOutputId: 'builtin-speaker',
+                speakerState: deviceState({ preferredDeviceId: 'jabra' }),
+                isConnected: false,
             });
 
             expect(switchActiveDevice).toHaveBeenCalledWith(
                 expect.objectContaining({ deviceType: 'audiooutput', deviceId: 'jabra' })
             );
+            expect(notifyPreferredAvailable).not.toHaveBeenCalled();
+        });
+
+        it('switches to the preferred speaker and stays quiet when the notification is acted on', () => {
+            const { switchActiveDevice, notifyPreferredAvailable } = setup({
+                speakers: UBUNTU_SPEAKERS,
+                activeAudioOutputId: 'builtin-speaker',
+                speakerState: deviceState({ preferredDeviceId: 'jabra' }),
+                isConnected: true,
+            });
+
+            notifyPreferredAvailable.mock.calls[0][0].onSwitch();
+
+            expect(switchActiveDevice).toHaveBeenCalledWith(
+                expect.objectContaining({ deviceType: 'audiooutput', deviceId: 'jabra' })
+            );
+        });
+
+        it('ignores the notification when the preferred speaker is gone by the time it is acted on', () => {
+            const { switchActiveDevice, notifyPreferredAvailable, rerender, selectorValues } = setup({
+                speakers: UBUNTU_SPEAKERS,
+                activeAudioOutputId: 'builtin-speaker',
+                speakerState: deviceState({ preferredDeviceId: 'jabra' }),
+                isConnected: true,
+            });
+
+            selectorValues.set(
+                selectFilteredSpeakers,
+                filterDevices(UBUNTU_SPEAKERS.filter((speaker) => speaker.deviceId !== 'jabra'))
+            );
+
+            act(() => {
+                rerender();
+            });
+
+            notifyPreferredAvailable.mock.calls[0][0].onSwitch();
+
+            expect(switchActiveDevice).not.toHaveBeenCalledWith(
+                expect.objectContaining({ deviceType: 'audiooutput', deviceId: 'jabra' })
+            );
+        });
+
+        it('notifies when the active speaker is disconnected', () => {
+            const { switchActiveDevice, notifyActiveDeviceDisconnected } = setup({
+                speakers: UBUNTU_SPEAKERS,
+                activeAudioOutputId: 'unplugged-dock',
+                speakerState: deviceState({
+                    systemDefault: device('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker'),
+                }),
+            });
+
+            expect(switchActiveDevice).toHaveBeenCalledWith(
+                expect.objectContaining({ deviceType: 'audiooutput', deviceId: 'builtin-speaker' })
+            );
+            expect(notifyActiveDeviceDisconnected).toHaveBeenCalledWith({
+                kind: 'audiooutput',
+                deviceLabel: 'Comet Lake PCH-LP cAVS Speaker',
+            });
+        });
+
+        it('does not notify a disconnection on the first initialization', () => {
+            const { notifyActiveDeviceDisconnected } = setup({
+                speakers: UBUNTU_SPEAKERS,
+                activeAudioOutputId: '',
+                speakerState: deviceState({
+                    systemDefault: device('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker'),
+                    useSystemDefault: true,
+                }),
+            });
+
+            expect(notifyActiveDeviceDisconnected).not.toHaveBeenCalled();
         });
 
         it('does nothing when the active speaker is still available', () => {
@@ -362,15 +500,18 @@ describe('useDynamicDeviceHandling', () => {
             expect(toggleVideo).not.toHaveBeenCalled();
         });
 
-        it('switches to the preferred camera when it is available', () => {
-            const { toggleVideo } = setup({
+        it('only notifies when the preferred camera comes back during a call', () => {
+            const { toggleVideo, notifyPreferredAvailable } = setup({
                 cameras: [device('builtin-cam', 'Built-in Camera'), device('usb-cam', 'USB Camera')],
                 activeCameraId: 'builtin-cam',
                 preferredCameraId: 'usb-cam',
                 isConnected: true,
             });
 
-            expect(toggleVideo).toHaveBeenCalledWith(expect.objectContaining({ videoDeviceId: 'usb-cam' }));
+            expect(toggleVideo).not.toHaveBeenCalled();
+            expect(notifyPreferredAvailable).toHaveBeenCalledWith(
+                expect.objectContaining({ kind: 'videoinput', deviceLabel: 'USB Camera' })
+            );
         });
     });
 
