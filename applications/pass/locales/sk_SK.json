@@ -783,6 +783,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Chýba tu váš správca hesiel? Požiadajte oň."
+      ],
+      "Bulk select items": [
+        "Hromadný výber položiek"
+      ],
+      "Multiple select": [
+        "Viacnásobný výber"
       ]
     },
     "Activity": {
@@ -2175,10 +2181,7 @@
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -4517,6 +4520,15 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "Táto URL adresa NEBUDE vylúčená z automatického vypĺňania"
+      ],
+      "Enter a URL to check if it matches the current rule": [
+        "Zadajte URL adresu, aby ste skontrolovali, či zodpovedá aktuálnemu pravidlu"
+      ],
+      "URL doesn't match the rule": [
+        "URL nezodpovedá pravidlu"
+      ],
+      "URL matches the rule": [
+        "URL zodpovedá pravidlu"
       ]
     },
     "Security Center - Info": {
