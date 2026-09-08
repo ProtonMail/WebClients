@@ -9,7 +9,7 @@ import { selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatus
 import { selectIsSideBarOpen } from '@proton/meet/store/slices/uiStateSlice';
 
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
-import { ParticipantGridLayout } from './Layouts/ParticipantGridLayout';
+import { ParticipantGalleryLayout } from './Layouts/ParticipantGalleryLayout';
 import { ShareScreenLayout } from './Layouts/ShareScreenLayout';
 import { SpeakerLayout } from './Layouts/SpeakerLayout';
 
@@ -32,7 +32,7 @@ export const ParticipantsLayout = () => {
     return (
         (isLargerThanMd || !isSideBarOpen) && (
             <div className="h-full shrink-0" style={{ flexGrow: 8, flexBasis: 0 }}>
-                <ParticipantGridLayout />
+                <ParticipantGalleryLayout />
             </div>
         )
     );

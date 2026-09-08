@@ -5,7 +5,7 @@ import type { MeetState } from '../rootReducer';
 import { selectIsScreenShare, setParticipantScreenShare } from './screenShareStatusSlice';
 
 export enum ParticipantsLayouts {
-    Grid = 'Grid',
+    Gallery = 'Gallery',
     Speaker = 'Speaker',
 }
 
@@ -22,7 +22,7 @@ export interface LayoutState {
 }
 
 export const initialState: LayoutState = {
-    participantsLayout: ParticipantsLayouts.Grid,
+    participantsLayout: ParticipantsLayouts.Gallery,
     spotlightSource: SpotlightSources.ActiveSpeaker,
     layoutBeforeScreenShare: null,
     participantSideBarOpen: true,
