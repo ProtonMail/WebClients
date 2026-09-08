@@ -1,7 +1,7 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useCallback, useContext, useState } from 'react'
+import { useStore, createStore } from 'zustand'
 import { EditorSystemMode } from '@proton/docs-shared'
 import type { StoreApi } from 'zustand'
-import { createStore } from 'zustand'
 import { EditorUserMode } from '../Lib/EditorUserMode'
 
 type EditorState = {
@@ -23,6 +23,25 @@ export function useEditorState() {
     throw new Error('EditorState instance not found')
   }
   return state
+}
+
+export function useMigrationEditingLockCallback() {
+  const editorState = useEditorState()
+  const setEditingLocked = useStore(editorState, (state) => state.setEditingLocked)
+  const setIsMigrating = useStore(editorState, (state) => state.setIsMigrating)
+
+  return useCallback(
+    (inProgress: boolean) => {
+      if (inProgress) {
+        setIsMigrating(true)
+        setEditingLocked(true)
+      } else {
+        setIsMigrating(false)
+        setEditingLocked(false)
+      }
+    },
+    [setEditingLocked, setIsMigrating],
+  )
 }
 
 export function EditorStateProvider({
