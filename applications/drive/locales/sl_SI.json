@@ -3780,7 +3780,7 @@
         "Pri iskanju je prišlo do napake: premalo prostora za shranjevanje."
       ],
       "Something went wrong, please try again later": [
-        "Nekaj ​​je šlo narobe. Prosim, poskusite kasneje"
+        "Nekaj ​​je šlo narobe. Poskusite kasneje."
       ],
       "Something went wrong. Please try again.": [
         "Nekaj je šlo narobe. Poskusite znova."
@@ -3981,7 +3981,7 @@
         "⚠️ Naprava, katere ni možno dešifrirati"
       ],
       "⚠️ Undecryptable name": [
-        "⚠️ Ne-dešifrirano ime"
+        "⚠️ Ime, ki ga ni mogoče dešifrirati"
       ]
     },
     "error": {
@@ -4319,9 +4319,6 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Imate neplačane račune. Plačajte jih, preden se boste pridružili družinskemu paketu."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Povabljeni ste, da povežete svoj ${ BRAND_NAME } račun s tem družinskim paketom in skupaj uživate v vseh premijskih funkcijah ${ brandOrAppName }."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Vaš račun ima več naslovov e-pošte, ko jih je na voljo za ta paket. ${ addressSettingsLink }"
       ],
@@ -4560,10 +4557,10 @@
         "Nedavno"
       ],
       "Share ${ photoCount } photo via": [
-        "Deli ${ photoCount } fotografiijo preko",
-        "Deli ${ photoCount } fotografiiji preko",
-        "Deli ${ photoCount } fotografiije preko",
-        "Deli ${ photoCount } fotografiij preko"
+        "Deli ${ photoCount } fotografijo preko",
+        "Deli ${ photoCount } fotografiji preko",
+        "Deli ${ photoCount } fotografije preko",
+        "Deli ${ photoCount } fotografij preko"
       ]
     },
     "Hint": {
@@ -5456,7 +5453,7 @@
         "Izbriši zaklenjeni pogon",
         "Izbriši zaklenjena pogona",
         "Izbriši zaklenjene pogone",
-        "Izbriši zaklenjene pogone"
+        "Izbriši zaklenjenih pogonov"
       ],
       "Details": [
         "Podrobnosti"
@@ -8878,9 +8875,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand }, ki se konča z ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB shrambe v oblaku, ki omogoča enostavno shranjevanje, sinhronizacijo in deljenje datotek. Zavarovano s šifriranjem od konca do konca."
       ],
@@ -9502,8 +9496,8 @@
       "Selected item was not removed from your list": [
         "Izbrani predmet ni bil odstranjen z vašega seznama",
         "Izbrana predmeta nista bila odstranjena z vašega seznama",
-        "Izbrani predmeti nisto bili odstranjeni z vašega seznama",
-        "Izbrani predmeti nisto bili odstranjeni z vašega seznama"
+        "Izbrani predmeti niso bili odstranjeni z vašega seznama",
+        "Izbrani predmeti niso bili odstranjeni z vašega seznama"
       ],
       "Selected item was successfully removed from your list": [
         "Izbrani predmet je bil uspešno odstranjen z vašega seznama.",
@@ -10210,11 +10204,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Cena obnove je odvisna od regije obračuna in DDV številke."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - kartica, ki se konča z ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -12244,7 +12233,7 @@
         "Izbrišem ${ total } predmet?",
         "Izbrišem ${ total } predmeta?",
         "Izbrišem ${ total } predmete?",
-        "Izbrišem ${ total } predmete?"
+        "Izbrišem ${ total } predmetov?"
       ],
       "Delete ${ value }": [
         "Izbriši ${ value }"
@@ -12667,7 +12656,7 @@
         "Rezultati iskanja"
       ],
       "Searching…": [
-        "Iskanje ..."
+        "Iskanje …"
       ],
       "Security center": [
         "Varnostno središče"

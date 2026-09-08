@@ -789,6 +789,9 @@
       "Preview contact": [
         "Папярэдні прагляд кантакту"
       ],
+      "Preview logs": [
+        "Папярэдні прагляд журналаў"
+      ],
       "Previous": [
         "Папярэдні"
       ],
@@ -1912,6 +1915,15 @@
         "${ users } карыстальнікаў",
         "${ users } карыстальнікаў"
       ],
+      "Amount due": [
+        "Да аплаты"
+      ],
+      "Amount due after trial": [
+        "Сума да аплаты пасля пробнага перыяду"
+      ],
+      "Amount due now": [
+        "Сума да аплаты"
+      ],
       "Subtotal": [
         "Прамежкавы вынік"
       ],
@@ -1923,6 +1935,12 @@
       ],
       "Total": [
         "Агулам"
+      ],
+      "Total for ${ cycle } month": [
+        "Усяго за ${ cycle } месяц",
+        "Усяго за ${ cycle } месяцы",
+        "Усяго за ${ cycle } месяцаў",
+        "Усяго за ${ cycle } месяцаў"
       ]
     },
     "Collapsible tooltip": {
@@ -4727,8 +4745,8 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "У вас ёсць неаплачаныя рахункі. Аплаціце іх перад тым, як далучыцца да сямейнага тарыфнага плана."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Вас запрашаюць далучыць свой уліковы запіс ${ BRAND_NAME } да гэтага сямейнага тарыфнага плана, каб разам выкарыстоўваць усе прэміяльныя функцыі ${ brandOrAppName }."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Вас запрашаюць далучыць свой уліковы запіс ${ BRAND_NAME } да гэтай сямейнай групы і разам выкарыстоўваць усе яго прэміяльныя функцыі."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Колькасць адрасоў электроннай пошты вашага ўліковага запісу перавышае дазволенае значэнне для вашага бягучага тарыфнага плана. ${ addressSettingsLink }"
@@ -5986,6 +6004,9 @@
       "Discover ProtectBuy logo": [
         "Лагатып Discover ProtectBuy"
       ],
+      "Do you remember your password?": [
+        "Вы памятаеце свой пароль?"
+      ],
       "Do you still want to upload it?": [
         "Вы ўсё яшчэ хочаце запампаваць яго?",
         "Вы ўсё яшчэ хочаце запампаваць іх?",
@@ -7122,6 +7143,9 @@
       ],
       "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
         "Адкрыйце гэтыя файлы ў ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME } і выканайце экспартаванне. Гэта неабходна для спампоўванння файлаў."
+      ],
+      "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
+        "Неабходна праіндэксаваць вашы файлы лакальна, каб уключыць пошук. Вы ўсё яшчэ можаце выкарыстоўваць ${ DRIVE_APP_NAME } у звычайным рэжыме. Пасля завяршэння індэксацыі вы атрымаеце апавяшчэнне. Індэксацыя будзе прыпынена і ўзноўлена пасля вашага вяртання, калі старонка будзе закрыта."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "${ DRIVE_APP_NAME } неабходна лакальна праіндэксаваць вашы файлы для таго, каб задзейнічаць сапраўды прыватны пошук."
@@ -9814,8 +9838,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand }, якая заканчваецца на ${ last4 }"
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand }, якая заканчваецца на ${ Last4 }"
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 ТБ воблачнага сховішча, якое дазваляе вам лёгка захоўваць, сінхранізаваць і абагульваць файлы. Абаронена скразным шыфраваннем."
@@ -10803,6 +10827,9 @@
       "Get the mobile app": [
         "Атрымаць мабільную праграму"
       ],
+      "Got an Android? We've got you covered.": [
+        "У вас Android? У нас нешта для вас ёсць."
+      ],
       "Got an iPhone? We've got you covered.": [
         "У вас iPhone? У нас нешта для вас ёсць."
       ],
@@ -11272,6 +11299,11 @@
         "Крэдыты будуць дададзены на ваш баланс"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Змяненне вашага адраса аплаты можа паўплываць на падаткі ў будучых рахунках"
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Вы сапраўды хочаце працягнуць?"
@@ -11309,14 +11341,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - картка, якая заканчваецца на ${ paymentMethod.Details.Last4 }"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - картка, якая заканчваецца на ${ Last4 }"
       ],
-      "Bank transfer - ${ details }": [
-        "Банкаўскі перавод - ${ details }"
+      "Bank transfer - ${ iban }": [
+        "Банкаўскі перавод - ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay — картка, якая заканчваецца на ${ paymentMethod.Details.Last4 }"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay — картка, якая заканчваецца на ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
