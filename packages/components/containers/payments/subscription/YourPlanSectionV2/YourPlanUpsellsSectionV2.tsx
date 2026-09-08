@@ -775,6 +775,7 @@ const YourPlanUpsellsSectionV2Inner = ({ app }: YourPlanSectionV2Props) => {
     const variant = useVariant('VPNDashboard');
     const [preferredCurrency, loadingCurrency] = useAutomaticCurrency();
     const currentPlanIDs = getPlanIDs(subscription);
+    const payments = usePayments();
 
     useLoad();
 
@@ -792,7 +793,7 @@ const YourPlanUpsellsSectionV2Inner = ({ app }: YourPlanSectionV2Props) => {
     const hasTrackedPageView = useRef(false);
 
     useEffect(() => {
-        if (loading || !subscription || hasTrackedPageView.current) {
+        if (loading || !subscription || !payments.initialized || hasTrackedPageView.current) {
             return;
         }
         hasTrackedPageView.current = true;
@@ -808,8 +809,9 @@ const YourPlanUpsellsSectionV2Inner = ({ app }: YourPlanSectionV2Props) => {
             selectedPlanIDs: currentPlanIDs,
             selectedStep: null,
             isTrial: false, // user's intention is not creation of trial
+            initialBillingAddress: payments.billingAddress,
         });
-    }, [loading, subscription]);
+    }, [loading, subscription, payments.initialized]);
 
     if (!subscription || !plans || loading) {
         return <Loader />;
