@@ -12,6 +12,7 @@ import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
 import SettingsDescription from '@proton/components/containers/account/SettingsDescription';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { type APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -41,12 +42,14 @@ export const EmergencyContactSubpage = ({ app }: { app: APP_NAMES }) => {
                 </SettingsDescription.Item>
             </SettingsDescription>
 
-            <OutgoingDelegatedAccessProvider>
-                <OutgoingEmergencyContactUpsell app={app} />
-                <OutgoingDelegatedAccessActions />
-                <OutgoingEmergencyContactSearchParams />
-                <OutgoingEmergencyContactSettings />
-            </OutgoingDelegatedAccessProvider>
+            <PaymentsContextProvider>
+                <OutgoingDelegatedAccessProvider>
+                    <OutgoingEmergencyContactUpsell app={app} />
+                    <OutgoingDelegatedAccessActions />
+                    <OutgoingEmergencyContactSearchParams />
+                    <OutgoingEmergencyContactSettings />
+                </OutgoingDelegatedAccessProvider>
+            </PaymentsContextProvider>
             <IncomingDelegatedAccessProvider>
                 <IncomingDelegatedAccessActions app={app} />
                 <IncomingEmergencyContactSettings hideEmptyIncomingHelpText={true} />

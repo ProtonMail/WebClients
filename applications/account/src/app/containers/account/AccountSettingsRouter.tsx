@@ -61,6 +61,7 @@ import DashboardComparePlansCTA from '@proton/components/containers/payments/sub
 import SignInWithAnotherDeviceSettings from '@proton/components/containers/recovery/SignInWithAnotherDeviceSettings';
 import ReferralPageTelemetry from '@proton/components/containers/referral/components/ReferralPageTelemetry';
 import { RewardSection } from '@proton/components/containers/referral/rewards/RewardSection';
+import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { VPNDownloadAndInfoSection } from '@proton/vpn/components/VPNDownloadSection';
 
@@ -230,7 +231,9 @@ const AccountSettingsRouter = ({
                         {/* The following two sections are for non-private users */}
                         <NonPrivateRecoverySection />
                         <SignInWithAnotherDeviceSettings />
-                        <EmergencyContactSection app={app} />
+                        <PaymentsContextProvider>
+                            <EmergencyContactSection app={app} />
+                        </PaymentsContextProvider>
                         <RecoveryContactSection app={app} />
                         <FamilyPlanSection />
                         {/* Those 3 sections are here for members of family plan that don't have access to the dashboard any more */}

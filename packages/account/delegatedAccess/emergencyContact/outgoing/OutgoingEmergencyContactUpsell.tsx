@@ -4,7 +4,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { type Upsell, isUpsellWithPlan } from '@proton/components/containers/payments/subscription/helpers';
-import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
+import { useGetUpsell } from '@proton/components/containers/payments/subscription/helpers/useGetUpsell';
 import {
     type APP_NAMES,
     APP_UPSELL_REF_PATH,
@@ -16,12 +16,12 @@ import noop from '@proton/utils/noop';
 
 import { useOutgoingController } from '../../shared/OutgoingDelegatedAccessProvider';
 import { UpsellOutgoingEmergencyContactModal } from './modals/UpsellOutgoingEmergencyContactModal';
-import { useGetUpsell } from './useGetUpsell';
 
 interface Props {
     app: APP_NAMES;
 }
-const BaseUpsellOutgoingEmergencyContactAction = ({ app }: Props) => {
+
+const OutgoingEmergencyContactUpsellContent = ({ app }: Props) => {
     const { subscribe } = useOutgoingController();
     const [modal, setModalOpen, renderModal] = useModalState();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
@@ -88,9 +88,5 @@ export const OutgoingEmergencyContactUpsell = (props: Props) => {
     if (!outgoingDelegatedAccess.emergencyContacts.hasUpsell) {
         return null;
     }
-    return (
-        <PaymentsContextProvider>
-            <BaseUpsellOutgoingEmergencyContactAction {...props} />
-        </PaymentsContextProvider>
-    );
+    return <OutgoingEmergencyContactUpsellContent {...props} />;
 };
