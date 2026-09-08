@@ -1,8 +1,8 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { selectContactEmailsMap } from '@proton/mail/store/contactEmails/selector';
 import { getContactEmailKey } from '@proton/shared/lib/contacts/getContactEmailsMap';
 
+import { selectContactEmailsMap } from '../../../contactEmails/selector';
 import { selectIncomingDelegatedAccess } from '../../index';
 import { getEnrichedIncomingDelegatedAccess } from './helper';
 import type { EnrichedIncomingDelegatedAccess } from './interface';
