@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { updateBYOEAddressConnection } from '@proton/account/addressKeys/actions';
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -23,6 +22,7 @@ import {
 import { useEasySwitchDispatch, useEasySwitchSelector } from '../logic/store';
 import { SyncTokenStrategy, createSyncItem, deleteSyncItem, resumeSyncItem } from '../logic/sync/sync.actions';
 import { selectSyncByEmail } from '../logic/sync/sync.selectors';
+import { updateBYOEAddressConnection } from '../thunks/updateBYOEAddressConnection';
 import useBYOEAddressesCounts from './useBYOEAddressesCounts';
 import useOAuthPopup from './useOAuthPopup';
 

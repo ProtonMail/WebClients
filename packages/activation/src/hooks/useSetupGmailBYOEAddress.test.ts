@@ -55,7 +55,7 @@ jest.mock('@proton/unleash/useFlag', () => ({
 jest.mock('./useBYOEFeatureStatus');
 const mockUseBYOEFeatureStatus = useBYOEFeatureStatus as jest.MockedFunction<typeof useBYOEFeatureStatus>;
 
-jest.mock('@proton/account/addresses/actions', () => ({
+jest.mock('../thunks/byoeAddresses', () => ({
     createBYOEAddress: jest.fn(),
     convertBYOEAddress: jest.fn(),
 }));
