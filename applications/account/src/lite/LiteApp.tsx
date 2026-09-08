@@ -99,6 +99,9 @@ const App = () => {
     const [initialSearchParams] = useState(() => {
         return new URLSearchParams(location.search);
     });
+    const [initialHashParams] = useState(() => {
+        return new URLSearchParams(window.location.hash.slice(1));
+    });
     const appVersion = searchParams.get('app-version');
 
     const [isLogout, setLogout] = useState(false);
@@ -184,6 +187,7 @@ const App = () => {
                                                             UID={UID}
                                                             onLogin={handleLogin}
                                                             loader={loader}
+                                                            action={action}
                                                         >
                                                             <Suspense fallback={loader}>
                                                                 <Switch>
@@ -195,6 +199,7 @@ const App = () => {
                                                                             redirect={redirect}
                                                                             app={app}
                                                                             searchParams={searchParams}
+                                                                            initialHashParams={initialHashParams}
                                                                         />
                                                                     </Route>
                                                                     <Route path={'*'}>
