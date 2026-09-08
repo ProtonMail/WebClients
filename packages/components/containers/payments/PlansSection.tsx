@@ -126,6 +126,7 @@ const PlansSectionInner = ({ app }: Props) => {
             selectedPlanIDs: currentPlanIDs,
             selectedStep: null,
             isTrial: searchParams.trial,
+            initialBillingAddress: paymentStatus,
         });
     }, [isLoading]);
 
