@@ -10,11 +10,11 @@
  * domain rules. Each product supplies its own tool pack (definitions + handlers + confirm cards) and
  * registers it with an instance of the framework.
  *
- * Layering (dependency direction: applications/<product> -> @proton/components -> @proton/llm):
+ * Layering (dependency direction: applications/<product> -> @proton/llm -> @proton/components):
  *   - This file and the tool DEFINITIONS live in @proton/llm and are pure (no store access).
  *   - The concrete tool HANDLERS ({@link ToolHandler}) are supplied by the product because they
  *     touch that product's store; a definition and its handler are matched by {@link ToolName}.
- *   - The loop controller + UI live in @proton/components; the product's confirm cards live in the
+ *   - The loop controller + UI live in @proton/llm; the product's confirm cards live in the
  *     product.
  */
 

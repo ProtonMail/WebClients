@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
-import type { PickerOption } from '@proton/components/components/lumoAgent/cardBodies/PickerFieldBody';
-import PickerFieldBody from '@proton/components/components/lumoAgent/cardBodies/PickerFieldBody';
-import type { CardRenderer } from '@proton/components/components/lumoAgent/types';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type { PickerOption } from '@proton/llm/lib/lumoAgent/ui/cardBodies/PickerFieldBody';
+import PickerFieldBody from '@proton/llm/lib/lumoAgent/ui/cardBodies/PickerFieldBody';
+import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { VIEW_LAYOUT, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { getThemes } from '@proton/shared/lib/themes/themes';

@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import type { CardRenderer } from '@proton/components/components/lumoAgent/types';
 import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { SOURCE_ACTION } from '../../../components/list/list-telemetry/useListTelemetry';
