@@ -1850,7 +1850,7 @@
         "Sulje tämä ikkuna käyttääksesi suojausavainta tai eri pääsyavainta."
       ],
       "Close this window in order to use another passkey manager.": [
-        "Sulje tämä ikkuna käyttääksesi jotain toista pääsyavainhallintaa."
+        "Sulje ikkuna käyttääksesi jotain toista pääsyavainhallintaa."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Vahvista lisäsalasanasi jatkaaksesi sen poistamista."
@@ -2223,8 +2223,7 @@
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
+        "Kohteen siirtäminen toiseen holviin pyyhkii sen suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -5624,6 +5623,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Tilauksesi ei salli useiden holvien luontia, joten kaikki kohteet tuodaan ensimmäiseen holviisi. Tuo useisiin holveihin päivittämällä tilauksesi."
+      ],
+      "Identity could not be confirmed": [
+        "Identiteettiä ei voitu vahvistaa"
       ]
     }
   }

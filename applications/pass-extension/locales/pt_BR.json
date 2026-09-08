@@ -800,6 +800,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Seu gerenciador de senhas não está aqui? Solicite."
+      ],
+      "Multiple select": [
+        "Seleção múltipla"
       ]
     },
     "Activity": {
@@ -2232,8 +2235,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro."
       ],
       "Moving items": [
         "Movendo itens"
@@ -4416,6 +4418,9 @@
       ],
       "You can attach files to items for a better organization": [
         "Você pode anexar arquivos aos itens para uma melhor organização"
+      ],
+      "Download \"${ filename }\"": [
+        "Baixar \"${ filename }\""
       ]
     },
     "Permission": {
@@ -5290,6 +5295,12 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Você está prestes a excluir permanentemente ${ aliasCount } alias.",
         "Você está prestes a excluir permanentemente ${ aliasCount } aliases."
+      ],
+      "${ PASS_APP_NAME } Logs": [
+        "Registros do ${ PASS_APP_NAME }"
+      ],
+      "Enable offline mode": [
+        "Ativar omodo off-line"
       ]
     },
     "Title_cloned_item": {
@@ -5645,6 +5656,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "A sua assinatura não permite que você crie múltiplos cofres. Todos os itens serão importados para o seu primeiro cofre. Para importar em múltiplos cofres, atualize a sua assinatura."
+      ],
+      "Identity could not be confirmed": [
+        "A identidade não pode ser confirmada."
       ]
     }
   }
