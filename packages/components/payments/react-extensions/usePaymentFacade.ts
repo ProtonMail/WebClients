@@ -25,6 +25,7 @@ import type {
     PlanIDs,
     SavedPaymentMethod,
 } from '@proton/payments/core/interface';
+import type { PaymentMethodFlags } from '@proton/payments/core/payment-methods/paymentMethodAvailability';
 import type { ChargebeePaypalModalHandles } from '@proton/payments/core/payment-processors/chargebeePaypalPayment';
 import type { PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
@@ -196,17 +197,13 @@ export const usePaymentFacade = (
         selectedPlanName,
         billingAddress,
         user,
-        enableSepa,
-        enableSepaB2C,
         onBeforeSepaPayment,
         planIDs,
         subscription,
         isTrial,
         canUseApplePay,
         canUseGooglePay,
-        enablePaypalRegionalCurrenciesBatch3,
-        enablePaypalKrw,
-        enableIdeal,
+        paymentMethodFlags,
         onDeclined,
         onValidationFailed,
         telemetryContext,
@@ -232,17 +229,13 @@ export const usePaymentFacade = (
         selectedPlanName: PLANS | ADDON_NAMES | undefined;
         billingAddress?: BillingAddress;
         user: User | undefined;
-        enableSepa?: boolean;
-        enableSepaB2C?: boolean;
         onBeforeSepaPayment?: () => Promise<boolean>;
         planIDs?: PlanIDs;
         subscription?: Subscription | FreeSubscription;
         isTrial?: boolean;
         canUseApplePay?: boolean;
         canUseGooglePay?: boolean;
-        enablePaypalRegionalCurrenciesBatch3: boolean;
-        enablePaypalKrw: boolean;
-        enableIdeal: boolean;
+        paymentMethodFlags: PaymentMethodFlags;
         telemetryContext: PaymentTelemetryContext;
         onDeclined: ({
             selectedMethodType,
@@ -305,17 +298,13 @@ export const usePaymentFacade = (
             paymentStatus,
             selectedPlanName,
             billingAddress,
-            enableSepa,
-            enableSepaB2C,
             user,
             planIDs,
             subscription,
             canUseApplePay,
             canUseGooglePay,
             isTrial,
-            enablePaypalRegionalCurrenciesBatch3,
-            enablePaypalKrw,
-            enableIdeal,
+            paymentMethodFlags,
             sortNewMethods,
         },
         {

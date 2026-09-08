@@ -1,7 +1,7 @@
 import { useApi } from '@proton/app-context/useApi';
 import type { ADDON_NAMES, PLANS } from '@proton/payments/core/constants';
 import type { Cycle, PaymentMethodFlow } from '@proton/payments/core/interface';
-import { type PaymentProcessorType, getSystemByHookType } from '@proton/payments/core/payment-processors/interface';
+import type { PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
 import { TelemetryMeasurementGroups, TelemetryPaymentsEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -115,7 +115,7 @@ export const usePaymentsTelemetry = ({
             plan: planOverride ?? plan ?? 'n/a',
             calledKillSwitch: 'not-called',
             chargebeeEnabled: 'chargebee-forced',
-            system: getSystemByHookType(method),
+            system: 'chargebee',
             method,
             cycle: formattedCycle,
         };

@@ -1,4 +1,4 @@
-import { PAYMENT_METHOD_TYPES, type PLANS } from '../core/constants';
+import type { PLANS } from '../core/constants';
 import type {
     Currency,
     Cycle,
@@ -7,6 +7,7 @@ import type {
     PlainPaymentMethodType,
     PlanIDs,
 } from '../core/interface';
+import { type TelemetryMethodName, getPaymentMethodConfig } from '../core/payment-methods/registry';
 import { getPlanNameFromIDs } from '../core/plan/helpers';
 import { getPlanIDs } from '../core/subscription/helpers/plan-ids';
 import type { Subscription } from '../core/subscription/interface';
@@ -98,49 +99,18 @@ export function formatPaymentTelemetryPayload(
 }
 
 /**
- * Payment methods that can be saved for future use.
- * When saved, they're prefixed with `saved_` in telemetry.
- */
-type SavablePaymentMethods = 'card' | 'paypal' | 'apple_pay' | 'google_pay' | 'sepa' | 'ideal';
-
-/**
  * Telemetry representation of a saved payment method.
  * Format: `saved_{original_method}`
+ *
+ * When adding a new payment method, set its `telemetryName` in the payment method registry and
+ * notify the data team about the new value.
  */
-type SavedPaymentMethods = `saved_${SavablePaymentMethods}`;
-
-/**
- * Payment methods that cannot be saved (one-time use only).
- */
-type NonSavablePaymentMethods = 'bitcoin' | 'cash' | 'token';
+type SavedPaymentMethods = `saved_${TelemetryMethodName}`;
 
 /**
  * All possible payment method values for telemetry.
  */
-type TelemetryPaymentMethod = SavablePaymentMethods | SavedPaymentMethods | NonSavablePaymentMethods;
-
-/**
- * Maps internal payment method types to telemetry-friendly strings.
- *
- * This mapping ensures all PlainPaymentMethodType values are handled.
- * TypeScript will error if new values are added to PAYMENT_METHOD_TYPES but not mapped here.
- *
- * When adding a new payment method:
- * 1. Add the mapping here
- * 2. Update documentation
- * 3. Notify the data team about the new value
- */
-const PAYMENT_METHOD_MAPPING = {
-    [PAYMENT_METHOD_TYPES.APPLE_PAY]: 'apple_pay',
-    [PAYMENT_METHOD_TYPES.GOOGLE_PAY]: 'google_pay',
-    [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL]: 'paypal',
-    [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]: 'card',
-    [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN]: 'bitcoin',
-    [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL]: 'ideal',
-    [PAYMENT_METHOD_TYPES.CASH]: 'cash',
-    [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: 'sepa',
-    [PAYMENT_METHOD_TYPES.TOKEN]: 'token',
-} as const satisfies Record<PlainPaymentMethodType, SavablePaymentMethods | NonSavablePaymentMethods>;
+type TelemetryPaymentMethod = TelemetryMethodName | SavedPaymentMethods;
 
 /**
  * Converts internal payment method types to telemetry-friendly format.
@@ -175,13 +145,14 @@ export function getTelemetryPaymentMethod({
         return null;
     }
 
-    const isSaved = isSavedPaymentMethod(paymentMethodValue);
+    const plainTelemetryPaymentMethod = getPaymentMethodConfig(paymentMethodType)?.telemetryName;
 
-    const plainTelemetryPaymentMethod: SavablePaymentMethods | NonSavablePaymentMethods =
-        PAYMENT_METHOD_MAPPING[paymentMethodType];
+    if (!plainTelemetryPaymentMethod) {
+        return null;
+    }
 
-    if (isSaved) {
-        return `saved_${plainTelemetryPaymentMethod}` as SavedPaymentMethods;
+    if (isSavedPaymentMethod(paymentMethodValue)) {
+        return `saved_${plainTelemetryPaymentMethod}`;
     }
 
     return plainTelemetryPaymentMethod;
