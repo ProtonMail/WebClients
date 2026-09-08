@@ -4063,9 +4063,6 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Du har ubetalte fakturaer. Betal dem før du blir med i en familieplan."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Du er invitert til å koble din ${ BRAND_NAME }-konto til denne familieplanen og sammen nyte alle ${ brandOrAppName }-premiumfunksjoner."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Kontoen din har flere e-postadresser enn det som er tilgjengelig for deg i denne planen. ${ addressSettingsLink }"
       ],
@@ -4971,11 +4968,17 @@
       "Custom email domains": [
         "Egendefinerte e-postdomener"
       ],
+      "Debug transcript copied": [
+        "Feilsøkingstranskripsjon kopiert"
+      ],
       "Decrypting your document": [
         "Dekrypterer dokumentet ditt"
       ],
       "Display word count": [
         "Vis antall ord"
+      ],
+      "Do you remember your password?": [
+        "Husker du passordet ditt?"
       ],
       "Document is in trash": [
         "Dokumentet er i papirkurven"
@@ -5144,6 +5147,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke finner e-posten i innboksen, sjekk søppelpostmappen din."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Hvis du har mistet tilgangen til autentiseringsappen din, kan du bruke én av de 16 reservekodene for gjenoppretting som du fikk da du konfigurerte tofaktorautentisering. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsetter med nedgraderingen, vil du miste tilgang til de betalte funksjonene til ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
@@ -7828,6 +7834,11 @@
         "Støtte for ${ n } egendefinerte e-postdomener"
       ]
     },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Du har nå tilgang til nye ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Notification": {
       "\"${ ellipsedName }\" created successfully": [
         "\"${ ellipsedName }\" opprettet"
@@ -8764,6 +8775,43 @@
       ],
       "SUMMER SALE": [
         "SOMMERSALG"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "2 TB of secure storage": [
+        "2 TB med sikker lagring"
+      ],
+      "500 GB of secure storage": [
+        "500 GB med sikker lagring"
+      ],
+      "Advanced protection against cyber threats": [
+        "Avansert beskyttelse mot cybertrusler"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "for 12 måneder"
+      ],
+      "One plan, full power": [
+        "Én plan, mer kraft"
+      ],
+      "One plan, more power": [
+        "Én plan, mer kraft"
       ]
     },
     "Recent documents table header": {
