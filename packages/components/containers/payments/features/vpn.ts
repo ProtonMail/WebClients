@@ -31,7 +31,7 @@ import {
     getPlusServers,
     getVpnServers,
 } from '@proton/shared/lib/vpn/features';
-import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
+import { VPN_SERVERS } from '@proton/shared/lib/vpn/vpnServers';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
