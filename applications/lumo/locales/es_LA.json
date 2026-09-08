@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
+      "Accept dictation": [
+        "Aceptar dictado"
+      ],
       "Add": [
         "Agregar"
       ],
@@ -50,6 +53,9 @@
       ],
       "Cancel": [
         "Cancelar"
+      ],
+      "Cancel dictation": [
+        "Cancelar dictado"
       ],
       "Cancel subscription": [
         "Cancelar suscripción"
@@ -951,6 +957,15 @@
         "${ users } usuario",
         "${ users } usuarios"
       ],
+      "Amount due": [
+        "Importe a pagar"
+      ],
+      "Amount due after trial": [
+        "Importe a pagar después de la prueba"
+      ],
+      "Amount due now": [
+        "Importe a pagar ahora"
+      ],
       "Subtotal": [
         "Subtotal"
       ],
@@ -960,6 +975,10 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Total for ${ cycle } month": [
+        "Total por ${ cycle } mes",
+        "Total por ${ cycle } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -1091,6 +1110,9 @@
       "New chat": [
         "Nuevo chat"
       ],
+      "Not now": [
+        "Ahora no"
+      ],
       "Open ${ DRIVE_APP_NAME }": [
         "Abrir ${ DRIVE_APP_NAME }"
       ],
@@ -1118,9 +1140,6 @@
       "Select all": [
         "Seleccionar todo"
       ],
-      "Send feedback": [
-        "Enviar comentarios"
-      ],
       "Send message": [
         "Enviar mensaje"
       ],
@@ -1142,14 +1161,14 @@
       "Submit": [
         "Enviar"
       ],
-      "Switch to Max": [
-        "Cambiar a Max"
-      ],
       "System": [
         "Sistema"
       ],
       "Try again": [
         "Reintentar"
+      ],
+      "Try Apertus": [
+        "Probar Apertus"
       ],
       "Turn off and delete": [
         "Desactivar y eliminar"
@@ -1175,6 +1194,9 @@
       ],
       "Upload from device": [
         "Cargar desde el dispositivo"
+      ],
+      "Use Apertus": [
+        "Usar Apertus"
       ],
       "Web search": [
         "Búsqueda web"
@@ -1214,6 +1236,9 @@
       ],
       "Delete all": [
         "Eliminar todo"
+      ],
+      "Dictate": [
+        "Dictar"
       ],
       "Get started": [
         "Comenzar"
@@ -1405,6 +1430,9 @@
       ]
     },
     "collider_2025: Description": {
+      "${ apertusArticleLink } is a fully open, Swiss-made AI model developed with leading Swiss universities. It is best suited to lighter everyday tasks.": [
+        "${ apertusArticleLink } es un modelo de IA suizo y totalmente abierto, desarrollado en colaboración con universidades suizas destacadas. Es especialmente adecuado para tareas cotidianas más ligeras."
+      ],
       "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
         "${ LUMO_SHORT_APP_NAME } consulta su memoria guardada para personalizar las respuestas, estilo de comunicación, experiencia, herramientas concurrentes y proyectos de larga duración."
       ],
@@ -1413,6 +1441,9 @@
       ],
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Agregue sus propios recuerdos, edite cualquier entrada autogenerada o borre todo en cualquier momento. Los recuerdos generados que editó se consideran como propios."
+      ],
+      "After you continue, Apertus will appear as the selected model in the model menu. You can use that menu to switch to another model at any time.": [
+        "Después de continuar, Apertus aparecerá como el modelo seleccionado en el menú de modelos. Puede usar ese menú para cambiar a otro modelo en cualquier momento."
       ],
       "Always enable web search for new conversations": [
         "Activar siempre la búsqueda web para nuevas conversaciones"
@@ -1426,11 +1457,20 @@
       "Encrypted search index for chats and Drive files.": [
         "Índice de búsqueda cifrado para chats y archivos de Drive."
       ],
+      "Fully open, Swiss-made model for lighter tasks": [
+        "Modelo suizo totalmente abierto para tareas más ligeras"
+      ],
       "High-performance model for complex tasks": [
         "Modelo de alto rendimiento para tareas complejas"
       ],
+      "If Apertus gives you a poor response, use the thumbs down button to send feedback. The related prompt and response will be shared with university research teams at ETH Zurich and EPFL to help improve the model. This feedback loop is especially valuable for fully open models, helping them improve faster and remain competitive.": [
+        "Si Apertus le ofrece una respuesta deficiente, utilizase el botón de «pulgar hacia abajo» para enviar comentarios. La instrucción y la respuesta correspondientes se compartirán con los equipos de investigación universitaria de ETH Zúrich y EPFL para ayudar a mejorar el modelo. Este ciclo de retroalimentación es especialmente valioso para los modelos totalmente abiertos, ya que contribuye a que mejoren más rápidamente y se mantengan competitivos."
+      ],
       "Include project conversations in the main chat history": [
         "Incluir conversaciones del proyecto en el historial de chat principal"
+      ],
+      "Its model weights, training data, values, and development details are open for inspection. The ${ apertusCharterLink } provides strong ethical guardrails for privacy, responsible data use, transparency, and human agency.": [
+        "Los pesos del modelo, los datos de entrenamiento, los valores y los detalles de desarrollo están abiertos a inspección. La ${ apertusCharterLink } establece salvaguardas éticas sólidas en materia de privacidad, uso responsable de los datos, transparencia y autonomía humana."
       ],
       "Keep it safe — it won't be shown again": [
         "Guárdela en un lugar seguro, no volverá a mostrarse"
@@ -1486,8 +1526,14 @@
       "This will permanently remove all saved memories. ${ LUMO_SHORT_APP_NAME } will no longer use them in future chats.": [
         "Esto borrará permamentemente toda la memoria guardada. ${ LUMO_SHORT_APP_NAME } ya no la usará en chats futuros."
       ],
+      "Try the new fully open, Swiss-made AI model developed with leading Swiss research institutions.": [
+        "Pruebe el nuevo modelo de IA suizo de código totalmente abierto, desarrollado en colaboración con instituciones de investigación suizas líderes."
+      ],
       "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
         "Desactivar la memoria eliminará peermanentemente todos los ${ memories.length } recuerdos guardados. Puede reactivar la memoria después, pero los recuerdos eliminados no se recuperarán."
+      ],
+      "You can learn more on the ${ protonBlogLink }.": [
+        "Puede obtener más información en el ${ protonBlogLink }."
       ],
       "Your experience shapes ${ LUMO_SHORT_APP_NAME }. Tell us what you think.": [
         "Su experiencia da forma a ${ LUMO_SHORT_APP_NAME }. Cuéntenos lo que opina."
@@ -1744,14 +1790,11 @@
       "Choose sheets to add": [
         "Elegir hoja para agregar"
       ],
-      "Review what you're sharing": [
-        "Revise lo que comparte"
+      "Help us improve": [
+        "Ayúdenos a mejorar"
       ],
       "Tell us more": [
         "Cuéntenos más"
-      ],
-      "Your feedback is private": [
-        "Su opinión es privada"
       ]
     },
     "collider_2025: Hint": {
@@ -2075,9 +2118,6 @@
       "No usage yet": [
         "Aún no se ha usado"
       ],
-      "Only the text below will be sent. Images and other attachments are not included. Remove anything you don't want shared.": [
-        "Solo se enviará el texto que aparece a continuación. Las imágenes y otros archivos adjuntos no se incluyen. Elimine todo lo que no desee compartir."
-      ],
       "Over capacity": [
         "Capacidad superada"
       ],
@@ -2134,9 +2174,6 @@
       ],
       "Secure connection (encrypted)": [
         "Conexión segura (cifrada)"
-      ],
-      "Share your prompt and the response with us.": [
-        "Comparta el prompt y la respuesta con nosotros."
       ],
       "Shared by ${ file.sharedBy }": [
         "Compartido por ${ file.sharedBy }"
@@ -2219,14 +2256,8 @@
       "This folder is empty": [
         "Esta carpeta está vacía"
       ],
-      "This is the only time we see your content. We use it to improve our system prompts and understand how issues occurred. This data is automatically deleted after 90 days.": [
-        "Esta es la única vez que vemos su contenido. Lo usamos para mejorar las indicaciones de nuestro sistema y comprender cómo ocurrieron los problemas. Estos datos se eliminan automáticamente después de 90 días."
-      ],
-      "This lets us know you were happy with the response. We never see your prompt or ${ LUMO_SHORT_APP_NAME }'s reply.": [
-        "Esto nos permite saber que le gustó la respuesta. Nunca vemos su prompt o la respuesta de ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "This lets us know you weren't happy with the response. We never see your prompt or ${ LUMO_SHORT_APP_NAME }'s reply unless you explicitly share it with us.": [
-        "Esto nos permite saber que no le gustó la respuesta. Nunca vemos su prompt o la respuesta de ${ LUMO_SHORT_APP_NAME } a menos que los comparta explícitamente con nosotros."
+      "This shares your general sentiment and response metadata with ${ BRAND_NAME }. Your prompt and the response are not included.": [
+        "Esto comparte su opinión general y los metadatos de la respuesta con ${ BRAND_NAME }. Su prompt y la respuesta no se incluyen."
       ],
       "To get started, please open ${ DRIVE_APP_NAME } to set up your secure storage.": [
         "Para empezar, abra ${ DRIVE_APP_NAME } para configurar su almacenamiento seguro."
@@ -2267,6 +2298,9 @@
       "We can help you get started with using the ${ LUMO_SHORT_APP_NAME } API. Describe what you want to automate. ${ LUMO_SHORT_APP_NAME } returns a workflow graph and sample code that calls the ${ LUMO_SHORT_APP_NAME } API.": [
         "Podemos ayudarle a comenzar a usar la API de ${ LUMO_SHORT_APP_NAME }. Describa lo que desea automatizar. ${ LUMO_SHORT_APP_NAME } devolverá un gráfico de flujo de trabajo y un código de ejemplo que llama a la API de ${ LUMO_SHORT_APP_NAME }."
       ],
+      "When you submit feedback, your prompt and this response are sent to ${ BRAND_NAME } for analysis and improvement. Feedback about Apertus may also be shared with the Apertus team.": [
+        "Al enviar comentarios, su prompt y esta respuesta se envían a ${ BRAND_NAME } para su análisis y mejora. Los comentarios sobre Apertus también pueden compartirse con el equipo de Apertus."
+      ],
       "You are about to visit an external website:": [
         "Está a punto de visitar un sitio web externo:"
       ],
@@ -2284,6 +2318,9 @@
       ],
       "Your memories are already well organized.": [
         "Sus memorias ya están bien organizadas."
+      ],
+      "Your prompt and this response will be sent to ${ BRAND_NAME } for analysis and improvement. Images and other attachments are not included.": [
+        "El prompt y esta respuesta se enviarán a ${ BRAND_NAME } para análisis y mejora. Las imágenes y otros adjuntos no se incluyen."
       ]
     },
     "collider_2025: Job": {
@@ -2328,9 +2365,6 @@
     "collider_2025: Label": {
       "AI model": [
         "Modelo de IA"
-      ],
-      "AI response": [
-        "Respuesta de la IA"
       ],
       "Answer mode": [
         "Modo de respuesta"
@@ -2461,9 +2495,6 @@
       "You": [
         "Usted"
       ],
-      "Your prompt": [
-        "Su prompt"
-      ],
       "Your workflow": [
         "Su flujo de trabajo"
       ]
@@ -2485,11 +2516,17 @@
       ]
     },
     "collider_2025: Link": {
+      "${ BRAND_NAME } blog": [
+        "Blog de ${ BRAND_NAME }"
+      ],
       "add ${ LUMO_SHORT_APP_NAME } Plus": [
         "agregar ${ LUMO_SHORT_APP_NAME } Plus"
       ],
       "Already have an account? ${ linkSignup }": [
         "¿Ya tiene una cuenta? ${ linkSignup }"
+      ],
+      "Apertus Charter": [
+        "Carta de Apertus"
       ],
       "Create a free account": [
         "Crear una cuenta gratuita"
@@ -2539,9 +2576,6 @@
       ],
       "Create an account or sign in to save your chats and increase limits.": [
         "Cree una cuenta o inicie sesión para guardar sus chats y aumentar los límites."
-      ],
-      "You're on ${ selectedModelLabel }. Switch to Max for more capable answers.": [
-        "Está en ${ selectedModelLabel }. Cambie a Max para respuestas más capaces."
       ]
     },
     "collider_2025: Option": {
@@ -2626,8 +2660,17 @@
       "${ BRAND_NAME } Workspace": [
         "${ BRAND_NAME } Workspace"
       ],
+      "${ LUMO_SHORT_APP_NAME } Plus": [
+        "${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "${ LUMO_SHORT_APP_NAME } Pro": [
+        "${ LUMO_SHORT_APP_NAME } Pro"
+      ],
       "Business": [
         "Business"
+      ],
+      "Personal": [
+        "Personal"
       ],
       "Plus": [
         "Plus"
@@ -2804,11 +2847,17 @@
       "Help and support": [
         "Ayuda y soporte"
       ],
+      "Help improve open-source AI": [
+        "Ayude a mejorar la IA de código abierto"
+      ],
       "Invalid Link": [
         "Enlace no válido"
       ],
       "Manage keys": [
         "Gestionar claves"
+      ],
+      "Meet Apertus 1.5": [
+        "Conozca Apertus 1.5"
       ],
       "Models": [
         "Modelos"
@@ -3048,6 +3097,9 @@
       "Elevate your business AI experience": [
         "Eleve su experiencia de IA de su negocio"
       ],
+      "From only": [
+        "Desde solo"
+      ],
       "Get": [
         "Obtener"
       ],
@@ -3060,8 +3112,17 @@
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Obtener ${ LUMO_SHORT_APP_NAME } Plus"
       ],
+      "Get ${ LUMO_SHORT_APP_NAME } Pro": [
+        "Obtener ${ LUMO_SHORT_APP_NAME } Pro"
+      ],
       "Upgrade": [
         "Actualizar"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Actualizar a ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Pro": [
+        "Actualizar a ${ LUMO_SHORT_APP_NAME } Pro"
       ]
     },
     "collider_2025: Warning": {
@@ -6817,6 +6878,12 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haga clic en \"Solicitar código nuevo\" para que se envíe un código de verificación nuevo a ${ strong }. Si este número telefónico es incorrecto, haga clic en \"Editar\" para corregirlo."
       ],
+      "Connecting…": [
+        "Conectando…"
+      ],
+      "Connection error": [
+        "Error de conexión"
+      ],
       "Country code": [
         "Código de país"
       ],
@@ -6976,6 +7043,9 @@
       ],
       "Learn more": [
         "Más información"
+      ],
+      "Listening…": [
+        "Escuchando…"
       ],
       "Loading": [
         "Cargando"
@@ -8580,9 +8650,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } que termina en ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB de almacenamiento en la nube que le permite almacenar, sincronizar y compartir archivos de forma fácil. Asegurado por cifrado de extremo a extremo."
       ],
@@ -9358,17 +9425,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "El precio de renovación depende de la región de facturación y del número de IVA."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - tarjeta terminada en ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Transferencia bancaria - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - tarjeta terminada en ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -10163,6 +10219,9 @@
     "Subtitle": {
       "per month, billed annually": [
         "al mes con facturación anual"
+      ],
+      "per user/month, billed annually": [
+        "por usuario/mes, facturado anualmente"
       ]
     },
     "Success": {
@@ -10405,6 +10464,9 @@
       ],
       "Payment verification": [
         "Verificación de pago"
+      ],
+      "Plan type": [
+        "Tipo de plan"
       ],
       "Processing...": [
         "Procesando..."

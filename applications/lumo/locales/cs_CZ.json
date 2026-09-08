@@ -1105,9 +1105,6 @@
       "Select all": [
         "Vybrat vše"
       ],
-      "Send feedback": [
-        "Odeslat zpětnou vazbu"
-      ],
       "Send message": [
         "Odeslat zprávu"
       ],
@@ -1125,9 +1122,6 @@
       ],
       "Submit": [
         "Odeslat"
-      ],
-      "Switch to Max": [
-        "Přepnout na Max"
       ],
       "System": [
         "Systém"
@@ -1717,14 +1711,8 @@
       "Choose sheets to add": [
         "Vyberte listy, které chcete přidat"
       ],
-      "Review what you're sharing": [
-        "Zkontrolujte, co sdílíte"
-      ],
       "Tell us more": [
         "Řekněte nám více"
-      ],
-      "Your feedback is private": [
-        "Vaše zpětná vazba je soukromá"
       ]
     },
     "collider_2025: Hint": {
@@ -2041,9 +2029,6 @@
       "No usage yet": [
         "Zatím nebylo použito"
       ],
-      "Only the text below will be sent. Images and other attachments are not included. Remove anything you don't want shared.": [
-        "Odeslán bude pouze níže uvedený text. Obrázky a jiné přílohy nejsou součástí. Odeberte vše, co nechcete sdílet."
-      ],
       "Over capacity": [
         "Kapacita překročena"
       ],
@@ -2100,9 +2085,6 @@
       ],
       "Secure connection (encrypted)": [
         "Zabezpečené připojení (šifrované)"
-      ],
-      "Share your prompt and the response with us.": [
-        "Sdílejte s námi své zadání a odpověď."
       ],
       "Shared by ${ file.sharedBy }": [
         "Sdílel(a) ${ file.sharedBy }"
@@ -2172,15 +2154,6 @@
       ],
       "This folder is empty": [
         "Tato složka je prázdná"
-      ],
-      "This is the only time we see your content. We use it to improve our system prompts and understand how issues occurred. This data is automatically deleted after 90 days.": [
-        "Toto je jediný okamžik, kdy vidíme váš obsah. Používáme jej ke zlepšování našich systémových pokynů a k pochopení toho, jak k problémům došlo. Tato data jsou po 90 dnech automaticky smazána."
-      ],
-      "This lets us know you were happy with the response. We never see your prompt or ${ LUMO_SHORT_APP_NAME }'s reply.": [
-        "Díky tomu víme, že jste byli s odpovědí spokojeni. Nikdy neuvidíme vaše zadání ani odpověď ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "This lets us know you weren't happy with the response. We never see your prompt or ${ LUMO_SHORT_APP_NAME }'s reply unless you explicitly share it with us.": [
-        "Díky tomu víme, že jste nebyli s odpovědí spokojeni. Nikdy neuvidíme vaše zadání ani odpověď ${ LUMO_SHORT_APP_NAME }, pokud je s námi výslovně nenasdílíte."
       ],
       "To get started, please open ${ DRIVE_APP_NAME } to set up your secure storage.": [
         "Chcete-li začít, otevřete aplikaci ${ DRIVE_APP_NAME } a nastavte své zabezpečené úložiště."
@@ -2273,9 +2246,6 @@
     "collider_2025: Label": {
       "AI model": [
         "Model AI"
-      ],
-      "AI response": [
-        "Odpověď AI"
       ],
       "Answer mode": [
         "Režim odpovědí"
@@ -2405,9 +2375,6 @@
       ],
       "You": [
         "Vy"
-      ],
-      "Your prompt": [
-        "Vaše zadání"
       ],
       "Your workflow": [
         "Váš pracovní postup"
@@ -7668,9 +7635,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } končící ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB úložného prostoru v cloudu, který vám umožní snadno ukládat, synchronizovat a sdílet soubory. Zabezpečeno koncovým šifrováním."
       ],
@@ -8448,17 +8412,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Cena obnovení závisí na fakturační oblasti a DIČ."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - karta končící čísly ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Bankovní převod - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - karta končící čísly ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
