@@ -164,7 +164,8 @@ export const pullFork = async (options: ConsumeForkOptions): Promise<PullForkRes
         (({ selector }) => {
             const pullForkParams = pullForkSession(selector);
             pullForkParams.url = apiUrl ? `${apiUrl}/${pullForkParams.url}` : pullForkParams.url;
-            return api<PullForkResponse>(pullForkParams);
+            /** `unauthenticated` to not be blocked by API error state */
+            return api<PullForkResponse>({ ...pullForkParams, unauthenticated: true });
         })
     )(payload);
 };
@@ -192,12 +193,21 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<Consumed
     const cookies = AUTH_MODE === AuthMode.COOKIE;
 
     const { UID, RefreshToken, LocalID, Payload, Scopes } = await pullFork(options);
-    const refresh = await api<RefreshSessionResponse>(withUIDHeaders(UID, refreshTokens({ RefreshToken })));
-    const { User } = await api<{ User: User }>(withAuthHeaders(UID, refresh.AccessToken, getUser()));
+
+    /** `unauthenticated` to not be blocked by API error state */
+    const refresh = await api<RefreshSessionResponse>({
+        ...withUIDHeaders(UID, refreshTokens({ RefreshToken })),
+        unauthenticated: true,
+    });
+
+    const { User } = await api<{ User: User }>({
+        ...withAuthHeaders(UID, refresh.AccessToken, getUser()),
+        unauthenticated: true,
+    });
 
     if (cookies) {
-        await api(
-            withAuthHeaders(
+        await api({
+            ...withAuthHeaders(
                 UID,
                 refresh.AccessToken,
                 setCookies({
@@ -206,8 +216,9 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<Consumed
                     State: getRandomString(24),
                     Persistent: payload.persistent,
                 })
-            )
-        );
+            ),
+            unauthenticated: true,
+        });
     }
 
     /** Note: When consuming an extension fork, we do not retrieve offline
