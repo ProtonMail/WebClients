@@ -18,7 +18,7 @@ import {
 import { ParticipantTile } from './shared/ParticipantTile/ParticipantTile';
 import { ScreenShareTile } from './shared/ScreenShareTile';
 
-export const ParticipantGridLayout = () => {
+export const ParticipantGalleryLayout = () => {
     const pagedParticipantIdentities = useMeetSelector(selectPagedIdentities);
 
     const pagedParticipants = useSortedPagedParticipants();
