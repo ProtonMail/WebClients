@@ -1,19 +1,30 @@
 import {
     ADD_LUMO_CONTEXT_MAPPING,
+    ADD_MEET_CONTEXT_MAPPING,
+    ADD_PASS_CONTEXT_MAPPING,
     CHANGE_BILLING_COUNTRY_CONTEXT_MAPPING,
-    ESTIMATION_PARAMETERS_CHANGE_CONTEXT_MAPPING,
+    ESTIMATION_CHANGE_CONTEXT_MAPPING,
     INITIALIZATION_CONTEXT_MAPPING,
     PAYMENT_CONTEXT_MAPPING,
     UPSELL_MODAL_OPEN_CONTEXT_MAPPING,
 } from './shared-checkout-telemetry';
 
-it('mappings must be complete', () => {
-    expect(Object.values(ADD_LUMO_CONTEXT_MAPPING).every((it) => !!it)).toBe(true);
-    expect(Object.values(CHANGE_BILLING_COUNTRY_CONTEXT_MAPPING).every((it) => !!it)).toBe(true);
-    expect(Object.values(ESTIMATION_PARAMETERS_CHANGE_CONTEXT_MAPPING).every((it) => !!it)).toBe(true);
-    expect(Object.values(INITIALIZATION_CONTEXT_MAPPING).every((it) => !!it)).toBe(true);
-    expect(Object.values(PAYMENT_CONTEXT_MAPPING).every((it) => !!it)).toBe(true);
-    expect(Object.values(UPSELL_MODAL_OPEN_CONTEXT_MAPPING).every((it) => !!it)).toBe(true);
+/**
+ * Event names are the contract with the data team: renaming one silently breaks their dashboards.
+ * The snapshot exists so that any rename shows up as a reviewable diff. If it fails, either revert
+ * the rename or update the snapshot and notify the data team.
+ */
+it('emits a stable event name for every context', () => {
+    expect({
+        add_lumo: ADD_LUMO_CONTEXT_MAPPING,
+        add_meet: ADD_MEET_CONTEXT_MAPPING,
+        add_pass: ADD_PASS_CONTEXT_MAPPING,
+        change_billing_country: CHANGE_BILLING_COUNTRY_CONTEXT_MAPPING,
+        estimation_change: ESTIMATION_CHANGE_CONTEXT_MAPPING,
+        init: INITIALIZATION_CONTEXT_MAPPING,
+        open_modal: UPSELL_MODAL_OPEN_CONTEXT_MAPPING,
+        payment: PAYMENT_CONTEXT_MAPPING,
+    }).toMatchSnapshot();
 });
 
 it('emits the event names from the upsell tracking spec', () => {

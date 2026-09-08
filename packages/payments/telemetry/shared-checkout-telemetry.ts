@@ -88,7 +88,7 @@ export function reportAddLumo({ context }: { context: PaymentTelemetryContext })
 // ============================================================================
 
 /** Event name mapping for Add Meet events */
-const ADD_MEET_CONTEXT_MAPPING = getMapping('add_meet');
+export const ADD_MEET_CONTEXT_MAPPING = getMapping('add_meet');
 
 /**
  * Reports when user interacts with the "Add Meet" button for the first time.
@@ -113,10 +113,10 @@ export function reportAddMeet({ context }: { context: PaymentTelemetryContext })
 // ============================================================================
 
 /** Event name mapping for Add Pass events */
-const ADD_PASS_CONTEXT_MAPPING = getMapping('add_pass');
+export const ADD_PASS_CONTEXT_MAPPING = getMapping('add_pass');
 
 /**
- * Reports when user interacts with the "Add Pass" button for the first time.
+ * Reports when user interacts with the "Add Pass" button.
  *
  * **When to call:** Each time user clicks/interacts with Add Pass button in a session.
  * **Purpose:** Track interest in the Pass addon.
@@ -149,6 +149,7 @@ export function reportAddPass({ context }: { context: PaymentTelemetryContext })
  * - `verification_rejected_by_user` - User cancelled verification
  * - `verification_success` - Verification passed (may be sent even without verification)
  * - `verification_failure` - Verification failed
+ * - `billing_address_failure` - Billing address was rejected as invalid or incomplete
  * - `payment_declined` - Payment processor rejected the charge
  * - `payment_success` - Payment successful, subscription modified
  */
@@ -301,7 +302,7 @@ export function reportBillingCountryChange({ context, ...rest }: ChangeBillingCo
 // #endregion
 
 // ============================================================================
-// #region reportEstimationParametersChange
+// #region reportSubscriptionEstimationChange
 // ============================================================================
 
 /**
@@ -356,7 +357,7 @@ export type EstimationChangePayload = {
 };
 
 /** Event name mapping for estimation change events */
-export const ESTIMATION_PARAMETERS_CHANGE_CONTEXT_MAPPING = getMapping('estimation_change');
+export const ESTIMATION_CHANGE_CONTEXT_MAPPING = getMapping('estimation_change');
 
 /**
  * Reports when user modifies subscription parameters.
@@ -395,7 +396,7 @@ export function reportSubscriptionEstimationChange({
     ...rest
 }: EstimationChangePayload) {
     const method = getTelemetryPaymentMethod({ paymentMethodType, paymentMethodValue });
-    const eventName = ESTIMATION_PARAMETERS_CHANGE_CONTEXT_MAPPING[context] ?? 'unknown_context_change';
+    const eventName = ESTIMATION_CHANGE_CONTEXT_MAPPING[context] ?? 'unknown_context_estimation_change';
     const payload = {
         method,
         selectedCoupon: selectedCoupon ? selectedCoupon : null,
@@ -479,7 +480,7 @@ export function reportInitialization({
 // #endregion
 
 // ============================================================================
-// #region reportUpsellPageView / reportUpsellModalOpen
+// #region reportUpsellModalOpen
 // ============================================================================
 
 /**
@@ -489,17 +490,20 @@ export function reportInitialization({
 export type UpsellTelemetryContext = Extract<PaymentTelemetryContext, 'settings-upgrade' | 'account-home'>;
 
 /**
- * Payload for the upsell-surface page-view and modal-open events.
+ * Payload for the upsell-surface modal-open event.
  *
- * These events describe a surface (which page the user is on), not an in-progress checkout,
- * so they only carry the "current*" subscription properties plus `build`/`product`.
+ * This event describes a surface (which page the user is on) rather than an in-progress checkout,
+ * so it carries the "current*" subscription properties plus `build`/`product`.
+ *
+ * Page views for these surfaces are reported through `reportInitialization` with the matching
+ * context, not through a dedicated function.
  */
 export type UpsellTelemetryPayload = {
     /** Which upsell surface emitted the event */
     context: UpsellTelemetryContext;
     /** User's default currency (from User object) */
     userCurrency: Currency | undefined;
-    /** Plan and addons being purchased */
+    /** Plans the modal is being opened with, if the surface preselected any */
     selectedPlanIDs: PlanIDs | undefined;
     /** User's current subscription (undefined or FreeSubscription for free users) */
     subscription: Subscription | FreeSubscription | undefined;
