@@ -1109,6 +1109,15 @@
         "${ users } användare",
         "${ users } användare"
       ],
+      "Amount due": [
+        "Belopp att betala"
+      ],
+      "Amount due after trial": [
+        "Belopp att betala efter provperiod"
+      ],
+      "Amount due now": [
+        "Belopp att betala nu"
+      ],
       "Subtotal": [
         "Delsumma"
       ],
@@ -1118,6 +1127,10 @@
       ],
       "Total": [
         "Totalt"
+      ],
+      "Total for ${ cycle } month": [
+        "Totalt för ${ cycle } månad",
+        "Totalt för ${ cycle } månader"
       ]
     },
     "Collapsible tooltip": {
@@ -3017,6 +3030,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Läser in kalender, vänta. Du kommer att omdirigeras till vår schemaläggningsplattform Calendly i en ny flik."
       ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Loggar hjälper oss att förstå vad som hände innan problemet uppstod. De inkluderar app-åtgärder och felmeddelanden, men inget meddelandeinnehåll."
+      ],
       "Mastercard SecureCode logo": [
         "Logga för Mastercard SecureCode"
       ],
@@ -4279,9 +4295,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } slutar med ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB molnlagring som låter dig enkelt lagra, synkronisera och dela filer. Säkrat med end-to-end-kryptering."
       ],
@@ -5020,17 +5033,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Förnyelsepriset är beroende av faktureringsregion och momsregistreringsnummer."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - kort slutar på ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Banköverföring - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - kort slutar på ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

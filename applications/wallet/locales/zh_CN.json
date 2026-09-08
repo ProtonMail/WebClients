@@ -1097,6 +1097,15 @@
       "${ users } user": [
         "${ users } 位用户"
       ],
+      "Amount due": [
+        "应付金额"
+      ],
+      "Amount due after trial": [
+        "试用期后应付金额"
+      ],
+      "Amount due now": [
+        "当前应付金额"
+      ],
       "Subtotal": [
         "小计"
       ],
@@ -1105,6 +1114,9 @@
       ],
       "Total": [
         "总计"
+      ],
+      "Total for ${ cycle } month": [
+        "${ cycle } 月合计"
       ]
     },
     "Collapsible tooltip": {
@@ -2317,6 +2329,9 @@
       "Contact could not be saved": [
         "无法保存联系人"
       ],
+      "Could not grant access to the organization key": [
+        "无法授予组织密钥访问权限"
+      ],
       "Domain not available, try again later": [
         "域名不可用，请稍后再试"
       ],
@@ -2734,6 +2749,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "写作助理 ${ BRAND_NAME } Scribe"
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } 标记"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } 内置 ${ BRAND_NAME } Scribe 写作助手"
       ],
@@ -2959,6 +2977,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "如果您无法访问验证器应用，可以使用设置 2FA 时提供的 16 个备用恢复码之一。${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "降级账户后您将不能再使用 ${ MAIL_APP_NAME } 和 ${ VPN_APP_NAME } 的收费功能。"
       ],
@@ -2993,7 +3014,7 @@
         "正在加载日历，请稍候。您将在新选项卡中重定向到我们的日程安排平台 Calendly。"
       ],
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
-        "日志有助于我们了解问题发生前的情况。其中包括应用操作和错误消息，但不包含消息内容。"
+        "日志帮助我们了解问题发生前的情况，包含应用操作和错误信息，但不包含消息内容。"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 图标"
@@ -3157,6 +3178,9 @@
       "We use 3-D Secure to protect your payments": [
         "我们使用 3-D Secure 来保护您的付款"
       ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "我们将在新的浏览器标签页中重定向至 ${ IDEAL_WERO_BRAND_NAME } 以完成此交易。如果您使用了任何弹窗拦截器，请将其禁用后继续。"
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "我们将在新标签页中为您打开 PayPal 完成支付，如果您使用了弹窗屏蔽插件，请将其关闭后再继续。"
       ],
@@ -3280,7 +3304,7 @@
         "${ BRAND_NAME } 用户名"
       ],
       "${ length }/${ maxLength } characters": [
-        "${ length }/${ maxLength } 字符"
+        "${ length } / ${ maxLength } 个字符"
       ],
       "${ n } month": [
         "${ n } 个月"
@@ -3290,6 +3314,9 @@
       ],
       "Account holder": [
         "账户持有人"
+      ],
+      "Account holder name": [
+        "账户持有人姓名"
       ],
       "Additional comments": [
         "附加备注"
@@ -3792,6 +3819,12 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 写作助手"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手，已扩展访问权限"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手，有限访问权限"
+      ],
       "${ n } calendar": [
         "${ n } 份日历"
       ],
@@ -4212,8 +4245,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } 在${ last4 } 结束"
+      "${ Brand } ending in ${ Last4 }": [
+        "尾号 ${ Last4 } 的 ${ Brand } 卡"
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB 的云存储空间，让您轻松存储、同步和共享文件。端到端加密，安全可靠。"
@@ -4772,6 +4805,9 @@
       "More plans are available in other currencies": [
         "更多计划以及其他货币提供"
       ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "使用 ${ IDEAL_WERO_BRAND_NAME } 付款"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "您需要提供付款方式，以便试用期结束后激活订阅。"
       ],
@@ -4847,6 +4883,9 @@
       "You will soon be redirected to verify your payment.": [
         "您即将被重定向以验证付款"
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "您的货币已更改为欧元 (€)，因为 ${ IDEAL_WERO_BRAND_NAME } 仅支持欧元支付。"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "您的货币已更改为欧元 (€)，因为 SEPA 银行转账只支持欧元支付。"
       ],
@@ -4858,6 +4897,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "初始化 ${ IDEAL_WERO_BRAND_NAME } 失败，请稍后重试。"
+      ],
       "Invalid card number": [
         "卡号无效"
       ],
@@ -4866,6 +4908,9 @@
       ],
       "Invalid security code": [
         "无效安全码"
+      ],
+      "Please enter the account holder name": [
+        "请输入账户持有人姓名"
       ],
       "Something went wrong. Please try again later.": [
         "发生一些错误，请稍候再试。"
@@ -4882,12 +4927,22 @@
         "出错了，Google Pay 验证失败。"
       ]
     },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "确认即表示您授权 ${ BRAND_NAME } 及我们的支付服务商 Stripe 通过 SEPA 直接借记从该银行账户收取您订阅的未来款项，并授权您的银行执行这些扣款。您的首笔付款现通过 ${ IDEAL_WERO_BRAND_NAME } 完成。您的套餐将自动续订，直至您取消；我们会在每次扣款前通知您。对于直接借记扣款，根据您与银行达成的协议条款，您可在扣款日起 8 周内向银行申请退款。此规定不适用于您当前正在进行的 ${ IDEAL_WERO_BRAND_NAME } 付款。"
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "您先前套餐订阅未使用部分的抵扣金额"
       ],
       "Credits will be added to your balance": [
         "积分将添加到账户余额"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "更改账单地址可能会影响未来发票的税费！"
       ]
     },
     "Payments.ModificationWarning": {
@@ -4927,14 +4982,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - 卡号尾数为 ${ paymentMethod.Details.Last4 }"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - 尾号 ${ Last4 } 的卡片"
       ],
-      "Bank transfer - ${ details }": [
-        "银行转账 - ${ details }"
+      "Bank transfer - ${ iban }": [
+        "银行转账 - ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - 卡号末四位 ${ paymentMethod.Details.Last4 }"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - 尾号 ${ Last4 } 的卡片"
       ]
     },
     "Payments.Sepa": {
@@ -5719,6 +5774,9 @@
       ],
       "Select a plan": [
         "选择账户等级"
+      ],
+      "September Sale": [
+        "九月特惠"
       ],
       "Set recovery methods": [
         "设置恢复方式"
