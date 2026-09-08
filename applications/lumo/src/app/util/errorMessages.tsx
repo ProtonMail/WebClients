@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import type { ModelTier } from '../providers/modelTierConstants';
 import { LUMO_USER_TYPE } from '../types';
 import type { LumoRemainingLimits } from '../types-api';
 
@@ -42,18 +43,17 @@ export const getExceedTierErrorMessage = (userType: LUMO_USER_TYPE) => {
     throw new Error('Unknown user type');
 };
 
-export const getExceededTierErrorTitle = (remainingLimits?: LumoRemainingLimits | null) => {
-    const liteExhausted = remainingLimits?.lite === 0;
-    const maxExhausted = remainingLimits?.max === 0;
-
-    if (liteExhausted && maxExhausted) {
-        return c('collider_2025: Error Title')
-            .t`You've reached your ${LUMO_SHORT_APP_NAME} 2.0 Lite and ${LUMO_SHORT_APP_NAME} 2.0 Max limits`;
+export const getExceededTierErrorTitle = (
+    remainingLimits?: LumoRemainingLimits | null,
+    selectedModelTier?: ModelTier
+) => {
+    if (selectedModelTier === 'apertus-15' && remainingLimits?.lite === 0) {
+        return c('collider_2025: Error Title').t`You've reached your Apertus 1.5 limit`;
     }
-    if (liteExhausted) {
+    if (selectedModelTier === 'lumo-lite' && remainingLimits?.lite === 0) {
         return c('collider_2025: Error Title').t`You've reached your ${LUMO_SHORT_APP_NAME} 2.0 Lite limit`;
     }
-    if (maxExhausted) {
+    if (selectedModelTier === 'lumo-max' && remainingLimits?.max === 0) {
         return c('collider_2025: Error Title').t`You've reached your ${LUMO_SHORT_APP_NAME} 2.0 Max limit`;
     }
 

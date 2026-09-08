@@ -279,7 +279,14 @@ export function sendMessageWithRedux(
                             break;
 
                         case 'usage':
-                            applyUsageFromStreamMessage(message);
+                            applyUsageFromStreamMessage(
+                                message,
+                                assistantOptions.modelTier === 'lumo-lite' ||
+                                    assistantOptions.modelTier === 'lumo-max' ||
+                                    assistantOptions.modelTier === 'apertus-15'
+                                    ? assistantOptions.modelTier
+                                    : undefined
+                            );
                             // Persist backend usage on the assistant message: token counts for
                             // context-size estimates and model id for feedback. Only the main
                             // generation reaches this path (title/compaction summaries use
