@@ -55,7 +55,7 @@ export const checkoutTelemetry = {
     reportAddLumo,
     /** Report Add Meet button interaction (first time only) */
     reportAddMeet,
-    /** Report Add Pass button interaction (first time only) */
+    /** Report Add Pass button interaction (every add) */
     reportAddPass,
     /** Report payment funnel events (attempt, verification, success, etc.) */
     reportPayment,
