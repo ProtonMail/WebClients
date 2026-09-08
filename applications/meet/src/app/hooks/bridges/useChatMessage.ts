@@ -16,6 +16,7 @@ import { sanitizeMessage } from '@proton/sanitize/purify';
 import { uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { CHAT_MESSAGE_MAX_LENGTH } from '../../constants';
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { PublishableDataTypes } from '../../types';
 import { retry } from '../../utils/retry';
@@ -196,7 +197,7 @@ export const useChatMessage = () => {
         const sanitizedEscapedContent = sanitizeMessage(escapedContent);
         const sanitizedContent = unescape(sanitizedEscapedContent);
 
-        if (!room || !sanitizedContent) {
+        if (!room || !sanitizedContent || trimmedContent.length > CHAT_MESSAGE_MAX_LENGTH) {
             return false;
         }
 
