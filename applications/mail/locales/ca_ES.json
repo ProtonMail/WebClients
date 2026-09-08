@@ -2752,7 +2752,7 @@
         "Import a pagar després de la prova"
       ],
       "Amount due now": [
-        "Import pendent de pagament"
+        "Import a pagar ara"
       ],
       "Subtotal": [
         "Subtotal"
@@ -6066,8 +6066,8 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Teniu factures pendents de pagar. Pagueu-les abans d'unir-vos a un pla familiar."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Esteu convidat a enllaçar el vostre compte de ${ BRAND_NAME } a aquest pla familiar i gaudir junts de totes les característiques prèmium de ${ brandOrAppName }."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Esteu convidats a vincular el vostre compte de ${ BRAND_NAME } a aquest grup familiar i gaudir de totes les seves característiques prèmium."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "El vostre compte té més adreces de correu electrònic de les que teniu disponibles en aquest pla. ${ addressSettingsLink }"
@@ -7690,6 +7690,9 @@
         "Crea un núvol segur per a ${ memberCount } membre",
         "Crea un núvol segur per a ${ memberCount } membres"
       ],
+      "Create filter": [
+        "Crear filtre"
+      ],
       "Create folder": [
         "Crea una carpeta"
       ],
@@ -8158,8 +8161,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -8468,7 +8470,7 @@
         "S'ha obert ${ location }"
       ],
       "Opened a problem report": [
-        "Opened a problem report"
+        "S'ha obert informe d'un problema"
       ],
       "Optional": [
         "Opcional"
@@ -8669,8 +8671,14 @@
         "Llegiu la vostra ${ count } etiqueta",
         "Llegiu les vostres ${ count } etiquetes"
       ],
+      "Read your auto-reply": [
+        "Llegiu la vostra resposta automàtica"
+      ],
       "Read your display settings": [
         "Llegiu la vostra configuració de pantalla"
+      ],
+      "Read your signature": [
+        "Llegiu la vostra signatura"
       ],
       "Recipient: ": [
         "Destinatari: "
@@ -8695,6 +8703,9 @@
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "S'esborraran totes les dades associades a aquesta aplicació (inclosos els missatges descarregats, etc.)"
+      ],
+      "Rename folder": [
+        "Canviar el nom de la carpeta"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Informar d'un missatge com a intent de suplantació d'identitat ens l'enviarà a nosaltres per a poder analitzar-lo i millorar els nostres filtres. Això vol dir que podrem veure el contingut complet del missatge."
@@ -8819,6 +8830,12 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Establiu el ${ MAIL_APP_NAME } com a aplicació de correu per defecte. El ${ MAIL_APP_NAME } s'obrirà automàticament quan feu clic a un enllaç de correu."
+      ],
+      "Set auto-reply": [
+        "Configurar la resposta automàtica"
+      ],
+      "Set signature": [
+        "Establir la signatura"
       ],
       "Set up your organization": [
         "Configuració de la vostra organització"
@@ -9255,6 +9272,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Es tornarà a carregar l'aplicació."
+      ],
+      "Turn off auto-reply": [
+        "Desactivar la resposta automàtica"
       ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "Desactiveu-ho per cercar només per data, nom, adreça de correu electrònic o assumpte. Per a desactivar la cerca en el contingut dels missatges (i suprimir els missatges descarregats per a activar aquesta funció), aneu a Preferències."
@@ -10218,6 +10238,9 @@
       "Automated confirmations and alerts": [
         "Confirmacions i alertes automatitzades"
       ],
+      "Away message": [
+        "Missatge d'absència"
+      ],
       "BCC": [
         "CCO"
       ],
@@ -10518,6 +10541,12 @@
       "From": [
         "De"
       ],
+      "From date": [
+        "Des de"
+      ],
+      "From time": [
+        "Des de les"
+      ],
       "From:": [
         "De:"
       ],
@@ -10707,6 +10736,9 @@
       "Never fill on this exact URL": [
         "No empleneu mai en aquest URL exacte"
       ],
+      "New name": [
+        "Nom nou"
+      ],
       "New password": [
         "Contrasenya nova"
       ],
@@ -10893,6 +10925,9 @@
       "Sign emails": [
         "Signar correu electrònics"
       ],
+      "Signature": [
+        "Signatura"
+      ],
       "Single messages": [
         "Missatges individuals"
       ],
@@ -11006,6 +11041,12 @@
       ],
       "Unsubscribed from ${ truncatedName }.": [
         "Us heu donat de baixa de ${ truncatedName }."
+      ],
+      "Until date": [
+        "Fins a la data"
+      ],
+      "Until time": [
+        "Fins que sigui l'hora"
       ],
       "Updates": [
         "Actualitzacions"
@@ -11212,6 +11253,12 @@
     "Link": {
       "Add a gift code": [
         "Afegeix un codi de regal"
+      ],
+      "Add formatting, links or images": [
+        "Afegir format, enllaços o imatges"
+      ],
+      "Advanced auto-reply options": [
+        "Opcions avançades de resposta automàtica"
       ],
       "All mail": [
         "Tot el correu"
@@ -12445,8 +12492,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } que acaba amb ${ last4 }."
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } acabada en ${ Last4 }"
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB d'emmagatzematge al núvol que us permeten emmagatzemar, sincronitzar i compartir fitxers fàcilment. Protegit amb xifratge d'extrem a extrem."
@@ -13263,6 +13310,99 @@
       ]
     },
     "Option": {
+      "10th of the month": [
+        "el dia 10 del mes"
+      ],
+      "11th of the month": [
+        "el dia 11 del mes"
+      ],
+      "12th of the month": [
+        "dia 12 del mes"
+      ],
+      "13th of the month": [
+        "el dia 13 del mes"
+      ],
+      "14th of the month": [
+        "el dia 14 del mes"
+      ],
+      "15th of the month": [
+        "el dia 15 del mes"
+      ],
+      "16th of the month": [
+        "el dia 16 del mes"
+      ],
+      "17th of the month": [
+        "el dia 17 del mes"
+      ],
+      "18th of the month": [
+        "el dia 18 del mes"
+      ],
+      "19th of the month": [
+        "el dia 19 del mes"
+      ],
+      "1st of the month": [
+        "el dia 1 del mes"
+      ],
+      "20th of the month": [
+        "el dia 20 del mes"
+      ],
+      "21st of the month": [
+        "el dia 21 del mes"
+      ],
+      "22nd of the month": [
+        "el dia 22 del mes"
+      ],
+      "23rd of the month": [
+        "el dia 23 del mes"
+      ],
+      "24th of the month": [
+        "el dia 24 del mes"
+      ],
+      "25th of the month": [
+        "25 del mes"
+      ],
+      "26th of the month": [
+        "el dia 26 del mes"
+      ],
+      "27th of the month": [
+        "el dia 27 del mes"
+      ],
+      "28th of the month": [
+        "el dia 28 del mes"
+      ],
+      "29th of the month": [
+        "el dia 29 del mes"
+      ],
+      "2nd of the month": [
+        "el dia 2 del mes"
+      ],
+      "30th of the month": [
+        "el dia 30 del mes"
+      ],
+      "31st of the month": [
+        "el dia 31 del mes"
+      ],
+      "3rd of the month": [
+        "el dia 3 del mes"
+      ],
+      "4th of the month": [
+        "el dia 4 del mes"
+      ],
+      "5th of the month": [
+        "el dia 5 del mes"
+      ],
+      "6th of the month": [
+        "el dia 6 del mes"
+      ],
+      "7th of the month": [
+        "el dia 7 del mes"
+      ],
+      "8th of the month": [
+        "el dia 8 del mes"
+      ],
+      "9th of the month": [
+        "el dia 9 del mes"
+      ],
       "Add to existing group": [
         "Afegeix a un grup existent"
       ],
@@ -13275,14 +13415,29 @@
       "Create new group": [
         "Crea un grup nou"
       ],
+      "Fixed duration": [
+        "Durada fixa"
+      ],
       "Ignore group": [
         "Ignorar grup"
       ],
       "No parent folder": [
         "No hi ha la carpeta pare"
       ],
+      "Permanent": [
+        "Permanent"
+      ],
       "Remind me later": [
         "Recordeu-m'ho més tard"
+      ],
+      "Repeat daily": [
+        "Repetiu-ho diàriament"
+      ],
+      "Repeat monthly": [
+        "Repetiu-ho mensualment"
+      ],
+      "Repeat weekly": [
+        "Repetiu-ho setmanalment"
       ],
       "Yes, don't show again": [
         "Sí, no ho torneu a mostrar"
@@ -13619,6 +13774,11 @@
         "Els crèdits s'afegiran al vostre saldo"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Canviar l'adreça de facturació podria afectar els impostos de les pròximes factures."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Esteu segur que voleu procedir?"
@@ -13656,14 +13816,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - targeta que acaba en ${ paymentMethod.Details.Last4 }"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - targeta acabada en ${ Last4 }"
       ],
-      "Bank transfer - ${ details }": [
-        "Transferència bancària - ${ details }"
+      "Bank transfer - ${ iban }": [
+        "Transferència bancària - ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - targeta que acaba en ${ paymentMethod.Details.Last4 }"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - targeta acabada en ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -16421,6 +16581,9 @@
       "Create contact": [
         "Crea un contacte"
       ],
+      "Create filter": [
+        "Crear filtre"
+      ],
       "Create folder": [
         "Crea una carpeta"
       ],
@@ -17004,6 +17167,9 @@
       "Remove from list?": [
         "Voleu eliminar-lo de la llista?"
       ],
+      "Rename folder": [
+        "Canviar el nom de la carpeta"
+      ],
       "Reply": [
         "Respondre"
       ],
@@ -17088,11 +17254,17 @@
       "September Sale": [
         "Oferta de setembre"
       ],
+      "Set auto-reply": [
+        "Configurar la resposta automàtica"
+      ],
       "Set recovery methods": [
         "Configuració dels mètodes de recuperació"
       ],
       "Set recovery phrase": [
         "Estableix la frase de recuperació"
+      ],
+      "Set signature": [
+        "Establir la signatura"
       ],
       "Set up ${ protonDuoPlanName }": [
         "Configureu ${ protonDuoPlanName }"
@@ -17193,6 +17365,9 @@
       ],
       "Trust public key?": [
         "Voleu confiar en la clau pública?"
+      ],
+      "Turn off auto-reply": [
+        "Desactivar la resposta automàtica"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activeu ${ DARK_WEB_MONITORING_NAME }"

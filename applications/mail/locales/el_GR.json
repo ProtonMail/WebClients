@@ -2745,6 +2745,15 @@
         "${ users } χρήστης",
         "${ users } χρήστες"
       ],
+      "Amount due": [
+        "Οφειλόμενο ποσό"
+      ],
+      "Amount due after trial": [
+        "Οφειλόμενο ποσό μετά τη δοκιμαστική περίοδο"
+      ],
+      "Amount due now": [
+        "Οφειλόμενο ποσό τώρα"
+      ],
       "Subtotal": [
         "Υποσύνολο"
       ],
@@ -2754,6 +2763,10 @@
       ],
       "Total": [
         "Σύνολο"
+      ],
+      "Total for ${ cycle } month": [
+        "Σύνολο για ${ cycle } μήνα",
+        "Σύνολο για ${ cycle } μήνες"
       ]
     },
     "Collapsible tooltip": {
@@ -6053,8 +6066,8 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Έχετε ανεξόφλητα τιμολόγια. Παρακαλούμε πληρώστε τα πριν συμμετάσχετε σε ένα οικογενειακό πλάνο."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Έχετε προσκληθεί να συνδέσετε τον λογαριασμό σας ${ BRAND_NAME } σε αυτό το οικογενειακό πλάνο και να απολαύσετε μαζί όλες τις premium δυνατότητες ${ brandOrAppName }."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Σας προσκαλούμε να συνδέσετε τον λογαριασμό σας ${ BRAND_NAME } με αυτήν την οικογενειακή ομάδα και να απολαύσετε όλες τις premium λειτουργίες της."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ο λογαριασμός σας έχει περισσότερες διευθύνσεις ηλεκτρονικού ταχυδρομείου από αυτές που είναι διαθέσιμες σε αυτό το πλάνο. ${ addressSettingsLink }"
@@ -7752,6 +7765,9 @@
       "Discover ProtectBuy logo": [
         "λογότυπο Discover ProtectBuy"
       ],
+      "Do you remember your password?": [
+        "Θυμάστε τον κωδικό πρόσβασής σας;"
+      ],
       "Do you want to download this attachment anyway?": [
         "Θέλετε να κατεβάσετε αυτό το συνημμένο ούτως ή άλλως;",
         "Θέλετε να κατεβάσετε αυτά τα συνημμένα ούτως ή άλλως;"
@@ -8142,8 +8158,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8450,6 +8465,9 @@
       ],
       "Opened ${ location }": [
         "Άνοιξε ${ location }"
+      ],
+      "Opened a problem report": [
+        "Άνοιξε μια αναφορά προβλήματος"
       ],
       "Optional": [
         "Προαιρετικό"
@@ -10874,6 +10892,9 @@
       "Sign emails": [
         "Υπογραφεί ηλεκτρονικών ταχυδρομείων"
       ],
+      "Signature": [
+        "Υπογραφή"
+      ],
       "Single messages": [
         "Μεμονωμένα μηνύματα"
       ],
@@ -12426,9 +12447,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } που λήγει σε ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB αποθηκευτικού χώρου στο cloud που σας επιτρέπει να αποθηκεύετε, συγχρονίζετε και μοιράζεστε αρχεία εύκολα. Προστατεύεται από διατερματική κρυπτογράφηση."
       ],
@@ -13244,6 +13262,99 @@
       ]
     },
     "Option": {
+      "10th of the month": [
+        "10η του μήνα"
+      ],
+      "11th of the month": [
+        "11η του μήνα"
+      ],
+      "12th of the month": [
+        "12η του μήνα"
+      ],
+      "13th of the month": [
+        "13η του μήνα"
+      ],
+      "14th of the month": [
+        "14η του μήνα"
+      ],
+      "15th of the month": [
+        "15η του μήνα"
+      ],
+      "16th of the month": [
+        "16η του μήνα"
+      ],
+      "17th of the month": [
+        "17η του μήνα"
+      ],
+      "18th of the month": [
+        "18η του μήνα"
+      ],
+      "19th of the month": [
+        "19η του μήνα"
+      ],
+      "1st of the month": [
+        "1η του μήνα"
+      ],
+      "20th of the month": [
+        "20ή του μήνα"
+      ],
+      "21st of the month": [
+        "21η του μήνα"
+      ],
+      "22nd of the month": [
+        "22η του μήνα"
+      ],
+      "23rd of the month": [
+        "23η του μήνα"
+      ],
+      "24th of the month": [
+        "24η του μήνα"
+      ],
+      "25th of the month": [
+        "25η του μήνα"
+      ],
+      "26th of the month": [
+        "26η του μήνα"
+      ],
+      "27th of the month": [
+        "27η του μήνα"
+      ],
+      "28th of the month": [
+        "28η του μήνα"
+      ],
+      "29th of the month": [
+        "29η του μήνα"
+      ],
+      "2nd of the month": [
+        "2η του μήνα"
+      ],
+      "30th of the month": [
+        "30ή του μήνα"
+      ],
+      "31st of the month": [
+        "31η του μήνα"
+      ],
+      "3rd of the month": [
+        "3η του μήνα"
+      ],
+      "4th of the month": [
+        "4η του μήνα"
+      ],
+      "5th of the month": [
+        "5η του μήνα"
+      ],
+      "6th of the month": [
+        "6η του μήνα"
+      ],
+      "7th of the month": [
+        "7η του μήνα"
+      ],
+      "8th of the month": [
+        "8η του μήνα"
+      ],
+      "9th of the month": [
+        "9η του μήνα"
+      ],
       "Add to existing group": [
         "Προσθήκη σε υπάρχουσα ομάδα"
       ],
@@ -13256,14 +13367,29 @@
       "Create new group": [
         "Δημιουργία νέας ομάδας"
       ],
+      "Fixed duration": [
+        "Σταθερή διάρκεια"
+      ],
       "Ignore group": [
         "Παράβλεψη ομάδας"
       ],
       "No parent folder": [
         "Δεν υπάρχει γονικός φάκελος"
       ],
+      "Permanent": [
+        "Μόνιμο"
+      ],
       "Remind me later": [
         "Υπενθύμιση αργότερα"
+      ],
+      "Repeat daily": [
+        "Επανάληψη καθημερινά"
+      ],
+      "Repeat monthly": [
+        "Επανάληψη μηνιαία"
+      ],
+      "Repeat weekly": [
+        "Επανάληψη εβδομαδιαία"
       ],
       "Yes, don't show again": [
         "Ναι, να μην εμφανιστεί ξανά"
@@ -13634,17 +13760,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και τον αριθμό ΦΠΑ."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - κάρτα που λήγει σε ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Τραπεζική μεταφορά - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - κάρτα που λήγει σε ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
