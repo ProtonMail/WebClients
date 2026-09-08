@@ -5668,9 +5668,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "Перед регистрацией нового пользователя необходимо настроить пользовательский домен."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Приглашаем вас подключить свой аккаунт ${ BRAND_NAME } к этому семейному тарифу и вместе пользоваться всеми платными функциями ${ brandOrAppName }."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "К аккаунту подключено больше адресов электронной почты, чем позволяет текущий тарифный план. ${ addressSettingsLink }"
       ],
@@ -8820,9 +8817,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Подписка заканчивается: чтобы сохранить преимущества ${ planName }, перезапустите подписку в Google Play Маркет до ${ byDate }. ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "Подписка начинается ${ startsOnTime }"
-      ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Поддержка контроля пользовательских доменов и адресов электронной почты, не относящихся к ${ BRAND_NAME }, появится в ближайшее время."
       ],
@@ -9116,9 +9110,6 @@
       ],
       "Total VPN connections": [
         "Всего подключений к VPN"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "Пробный период заканчивается ${ formattedPeriodEndDate }"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Попробуйте ${ productName } совершенно без риска - если по какой-то причине вы передумаете, вам вернут деньги. Никаких вопросов."
@@ -12428,9 +12419,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand }, заканчивающаяся на ${ last4 }"
-      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } позволяет создавать адреса электронной почты и управлять аккаунтами для подпользователей. Идеально подходит для семей и организаций."
       ],
@@ -13912,17 +13900,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Цена продления зависит от региона выставления счета и номера НДС."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay — карта, оканчивающаяся на ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Банковский перевод — ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay — карта, заканчивающаяся на ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

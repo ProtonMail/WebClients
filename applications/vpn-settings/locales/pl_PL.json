@@ -5671,9 +5671,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "Musisz skonfigurować niestandardową domenę przed utworzeniem nowego użytkownika."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Zaproszono Cię do połączenia konta ${ BRAND_NAME } z tym planem rodzinnym, aby razem korzystać z wszystkich funkcji premium ${ brandOrAppName }."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Twoje konto ma większą liczbę adresów, niż jest to dostępne w planie. ${ addressSettingsLink }"
       ],
@@ -8823,9 +8820,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Subskrypcja zakończyła się. Aby zachować korzyści planu ${ planName }, wznów subskrypcję w sklepie Google Play do dnia ${ byDate }. ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "Subskrypcja rozpoczyna się ${ startsOnTime }"
-      ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Monitoring niestandardowych domen i adresów e-mail spoza ${ BRAND_NAME } będzie dostępny wkrótce."
       ],
@@ -9119,9 +9113,6 @@
       ],
       "Total VPN connections": [
         "Połączenia VPN"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "Wersja próbna kończy się ${ formattedPeriodEndDate }"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Wypróbuj ${ productName } bez ryzyka — jeśli zmienisz zdanie, otrzymasz pełny zwrot pieniędzy. Bez zadawania pytań."
@@ -12434,9 +12425,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } kończąca się na ${ last4 }"
-      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } umożliwia tworzenie adresów e-mail i zarządzanie kontami użytkowników. Jest to idealne rozwiązanie dla rodzin i organizacji."
       ],
@@ -13918,17 +13906,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Cena odnowienia zależy od regionu rozliczeniowego i numeru VAT."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay — karta kończąca się na ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Przelew bankowy — ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay — karta kończąca się na ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
