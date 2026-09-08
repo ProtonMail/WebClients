@@ -90,6 +90,9 @@
       "Apply": [
         "应用"
       ],
+      "Ask me next time": [
+        "稍后提醒"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "每个群组最多只能有 ${ maxContacts } 位联系人"
       ],
@@ -218,6 +221,9 @@
       ],
       "Copy as markdown": [
         "以 markdown 格式复制"
+      ],
+      "Copy debug transcript": [
+        "复制调试副本"
       ],
       "Copy email to clipboard": [
         "复制邮箱地址"
@@ -372,6 +378,9 @@
       "Export this version (as docx)": [
         "导出此版本 (docx 格式)"
       ],
+      "Export this version (as odt) (Beta)": [
+        "导出此版本 (.odt) (Beta)"
+      ],
       "Export this version (as xlsx)": [
         "导出此版本 (xlsx 格式)"
       ],
@@ -464,6 +473,9 @@
       ],
       "Import from Outlook": [
         "从 Outlook 导入"
+      ],
+      "Keep going": [
+        "继续执行"
       ],
       "Keep my subscription": [
         "保留订阅"
@@ -588,6 +600,9 @@
       "Open navigation": [
         "打开导航栏"
       ],
+      "OpenDocument Text (.odt) (Beta)": [
+        "OpenDocument 文本  (.odt) (Beta)"
+      ],
       "PDF (.pdf)": [
         "PDF (.pdf)"
       ],
@@ -708,6 +723,9 @@
       "Save changes": [
         "保存更改"
       ],
+      "Save preferences": [
+        "保存偏好"
+      ],
       "Search": [
         "搜索"
       ],
@@ -809,6 +827,9 @@
       ],
       "Stop": [
         "停止"
+      ],
+      "Stop here": [
+        "在此停止"
       ],
       "Stop sharing": [
         "停止分享"
@@ -2999,6 +3020,9 @@
       "Authentication error.": [
         "验证出错。"
       ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "由于此文档位于共享文件夹中，只有文件夹所有者可以恢复它"
+      ],
       "Bookmark password is not available": [
         "书签密码不可用"
       ],
@@ -3046,6 +3070,9 @@
       ],
       "Could not find an available name": [
         "找不到可用的名称"
+      ],
+      "Could not grant access to the organization key": [
+        "无法授予组织密钥访问权限"
       ],
       "Could not load sharing details": [
         "无法加载共享详情"
@@ -3163,6 +3190,9 @@
       ],
       "Failed to fetch sharing info": [
         "无法获取共享信息"
+      ],
+      "Failed to fetch sharing information": [
+        "获取共享信息失败"
       ],
       "Failed to get inviter keys": [
         "获取邀请人密钥失败"
@@ -4032,8 +4062,8 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "您有未付发票。请在加入家庭计划前支付。"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "请将您的 ${ BRAND_NAME } 账户与此家庭计划链接，共同享受所有 ${ brandOrAppName } 高级功能。"
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "您已被邀请将您的 ${ BRAND_NAME } 账户关联至此家庭组，并享受其所有高级功能。"
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "您已有的邮箱地址数量超过了此账户分配给您的邮箱地址数。${ addressSettingsLink }"
@@ -4842,6 +4872,9 @@
       "Continue": [
         "继续"
       ],
+      "Converting document...": [
+        "正在转换文档..."
+      ],
       "Copied to clipboard": [
         "已复制到剪贴板"
       ],
@@ -4893,6 +4926,9 @@
       "Creating link to folder": [
         "正在创建文件夹链接"
       ],
+      "Creating new document...": [
+        "正在新建文档..."
+      ],
       "Current plan": [
         "当前等级"
       ],
@@ -4902,11 +4938,17 @@
       "Custom email domains": [
         "自有域名"
       ],
+      "Debug transcript copied": [
+        "调试副本已复制"
+      ],
       "Decrypting your document": [
         "正在解密您的文档"
       ],
       "Display word count": [
         "显示字数"
+      ],
+      "Do you remember your password?": [
+        "您还记得密码吗？"
       ],
       "Document is in trash": [
         "文档在回收站里"
@@ -4986,6 +5028,12 @@
       "Enter your own password (as trusted contact).": [
         "输入您自己的密码（作为可信联系人）"
       ],
+      "Error converting document: ${ errorMessage }": [
+        "转换文档失败：${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "加载文档失败：${ errorDetail }"
+      ],
       "Error Syncing": [
         "同步出错"
       ],
@@ -5040,6 +5088,12 @@
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
         "获取专业的 @your-company.com 邮箱、每位用户 1 TB 的安全存储空间、更长视频通话时长等更多权益，尽在 ${ BRAND_NAME } Workspace。"
       ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "接收文档评论和建议的邮件通知"
+      ],
+      "Get Notified About Comments": [
+        "接收评论通知"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "政府和网络供应商可以监视您的在线活动。Proton 通过隐藏您的真实 IP 地址并加密网络活动，让您的浏览私密无忧。"
       ],
@@ -5075,6 +5129,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "如果您无法访问验证器应用，可以使用设置 2FA 时提供的 16 个备用恢复码之一。${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "降级账户后您将不能再使用 ${ MAIL_APP_NAME } 和 ${ VPN_APP_NAME } 的收费功能。"
@@ -5194,13 +5251,16 @@
         "加载中..."
       ],
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
-        "日志有助于我们了解问题发生前的情况。其中包括应用操作和错误消息，但不包含消息内容。"
+        "日志帮助我们了解问题发生前的情况，包含应用操作和错误信息，但不包含消息内容。"
       ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "您似乎处于离线状态。离线时无法编辑文档。请检查设备的连接情况。"
       ],
       "Low Priority": [
         "较低优先顺序"
+      ],
+      "Making a copy...": [
+        "正在创建副本..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "最多 ${ MAX_SHARED_URL_PASSWORD_LENGTH } 个字符"
@@ -5231,6 +5291,9 @@
       ],
       "No contacts added yet": [
         "尚未添加联系人"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "链接中未提供文档，请返回 ${ DRIVE_APP_NAME } 并选择一个文档。"
       ],
       "No email address": [
         "无邮箱地址"
@@ -5523,6 +5586,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "此收件人已停用端到端加密。要能够向此收件人发送加密电子邮件，该收件人必须重新启用端到端加密。"
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "您输入的链接似乎未正确从 Slack 复制。从 Slack 复制长链接时，请右键点击链接，然后选择“复制链接”，而不是直接复制被截断的链接文本。"
+      ],
       "There are no documents in the trash.": [
         "回收站中没有文档。"
       ],
@@ -5556,6 +5622,9 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "这是用户将看到的组织名称或昵称，您可以随时更改。"
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "此操作步骤较多，是否继续？"
+      ],
       "This item already exists in your library": [
         "该项目已存在于您的库中"
       ],
@@ -5588,6 +5657,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "为了帮助排查问题，调试信息将上传至您的 Drive 并与 ${ BRAND_NAME } 支持团队安全共享，其中可能包含文件内容。您可以随时停止共享，审查完成后共享数据将被删除。"
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "为了帮助您记住密码，我们会要求您定期输入密码，后续提醒频率会逐渐降低。"
@@ -5980,7 +6052,7 @@
         "${ BRAND_NAME } 用户名"
       ],
       "${ length }/${ maxLength } characters": [
-        "${ length }/${ maxLength } 字符"
+        "${ length } / ${ maxLength } 个字符"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "（暂时不可用。请稍后再试。）"
@@ -6159,6 +6231,9 @@
       "Emails (last month)": [
         "邮件（上个月）"
       ],
+      "Enable email notifications": [
+        "启用邮件通知"
+      ],
       "Encrypt emails": [
         "加密电子邮件"
       ],
@@ -6215,6 +6290,12 @@
       ],
       "Include application logs in bug report": [
         "在问题反馈中包含应用日志"
+      ],
+      "Include debug information": [
+        "包含调试信息"
+      ],
+      "Include document name in notification": [
+        "在通知中包含文档名称"
       ],
       "Include message and file name in invite email": [
         "在邀请电子邮件中包含邮件和文件名"
@@ -6452,6 +6533,9 @@
       ],
       "Your password (trusted contact)": [
         "您的密码（可信联系人）"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ 无法解密的名称"
       ]
     },
     "Label for contact group color": {
@@ -6868,6 +6952,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 写作助手"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手，已扩展访问权限"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手，有限访问权限"
       ],
       "${ n } calendar": [
         "${ n } 份日历"
@@ -7714,6 +7804,16 @@
         "支持 ${ n } 个自定义域"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "立即试用"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "您现在可以使用全新 ${ CALENDAR_APP_NAME }。${ link }"
+      ]
+    },
     "Notification": {
       "\"${ ellipsedName }\" created successfully": [
         "“${ ellipsedName }”创建成功"
@@ -7820,6 +7920,9 @@
       "All items will soon be permanently deleted from trash": [
         "所有项目将很快从回收站永久删除"
       ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "由于此文档位于共享文件夹中，只有文件夹所有者可以恢复它"
+      ],
       "Cannot load link": [
         "无法加载链接"
       ],
@@ -7883,6 +7986,9 @@
       "Failed to restore document": [
         "恢复文档失败"
       ],
+      "Failed to submit report": [
+        "提交报告失败"
+      ],
       "Failed to trash document": [
         "将文档移入回收站失败"
       ],
@@ -7915,6 +8021,9 @@
       ],
       "Recent documents updated": [
         "最近更新的文件"
+      ],
+      "Report submitted successfully": [
+        "报告提交成功"
       ],
       "Root folder failed to be loaded": [
         "加载根目录失败"
@@ -8627,6 +8736,79 @@
         "夏季大促"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "获取优惠"
+      ],
+      "Special Offer": [
+        "超值特惠"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/月"
+      ],
+      "2 individual accounts": [
+        "2 个独立账户"
+      ],
+      "2 TB of secure storage": [
+        "2 TB 安全存储空间"
+      ],
+      "3 TB of secure storage": [
+        "3 TB 安全存储空间"
+      ],
+      "500 GB of secure storage": [
+        "500 GB 安全存储空间"
+      ],
+      "6 individual accounts": [
+        "6 个独立账户"
+      ],
+      "Advanced protection against cyber threats": [
+        "针对网络威胁的高级防护"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣基于标准月度价格。结算周期结束时，您的订阅将按标准年度费率续订。"
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ CALENDAR_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "高级版 ${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "高级版 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "年费"
+      ],
+      "One plan, full power": [
+        "一个套餐，全部功能"
+      ],
+      "One plan, max savings": [
+        "一个套餐，最大优惠"
+      ],
+      "One plan, more power": [
+        "一个套餐，更强性能"
+      ]
+    },
     "Recent documents table header": {
       "Created by": [
         "创建者"
@@ -9026,6 +9208,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "正在新建表格..."
+      ],
       "Detect automatically": [
         "自动检测"
       ],
@@ -10194,6 +10379,9 @@
       "Report a problem": [
         "反馈问题"
       ],
+      "Report issue": [
+        "报告问题"
+      ],
       "Request new code": [
         "请求新验证码"
       ],
@@ -10277,6 +10465,9 @@
       ],
       "Stay for 50% off your next month": [
         "下月继续享受 5 折优惠"
+      ],
+      "Still working on it": [
+        "正在处理"
       ],
       "Stop sharing": [
         "停止分享"
@@ -10475,6 +10666,9 @@
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
+      ],
+      "This link has expired. Please extend expiration date": [
+        "此链接已过期，请延长有效期"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "只要未被破译，即便加密密码遭到泄露，它们依然安全无虞。"

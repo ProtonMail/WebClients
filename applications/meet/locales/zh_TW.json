@@ -1764,11 +1764,17 @@
       "Cannot download a folder": [
         "無法下載個資料夾"
       ],
+      "Cannot share root folder": [
+        "無法複製根資料夾"
+      ],
       "Cannot verify the author of this file": [
         "無法驗證此檔案的作者"
       ],
       "Cannot verify who uploaded this file": [
         "無法驗證上傳此檔案的人"
+      ],
+      "Copy operation aborted": [
+        "以放棄移動操作"
       ],
       "Copying item to a non-folder is not allowed": [
         "不允許將項目複製到非資料夾"
@@ -1883,6 +1889,9 @@
       ],
       "Invalid verification code": [
         "驗證碼無效"
+      ],
+      "Invitation not found": [
+        "未找到邀請"
       ],
       "Item not found": [
         "找不到項目"
@@ -2250,9 +2259,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "電話號碼僅能用於驗證一組 ${ BRAND_NAME } 帳號"
       ],
-      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
-        "進階模式：調整下一個版本的每個模糊常數，然後點擊「套用」重建預覽。手動覆蓋值將優先於檔案和 Unleash 設定值。"
-      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "匿名 ${ particle } ${ participantNumber }"
       ],
@@ -2483,9 +2489,6 @@
       ],
       "Loading…": [
         "正在載入…"
-      ],
-      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
-        "並排循環播放上傳的影片或您的即時相機畫面，以比較兩種背景模糊版本。"
       ],
       "Lower participant's hand": [
         "放下參與者的手"
@@ -2966,9 +2969,6 @@
       "Created": [
         "已創建"
       ],
-      "Current": [
-        "目前"
-      ],
       "Delete": [
         "刪除"
       ],
@@ -3058,9 +3058,6 @@
       ],
       "Name": [
         "名稱"
-      ],
-      "Next": [
-        "下一步"
       ],
       "Operating system": [
         "作業系統"
@@ -3343,6 +3340,12 @@
       ],
       "key": [
         "金鑰"
+      ],
+      "membership": [
+        "會員資格"
+      ],
+      "name": [
+        "名稱"
       ]
     },
     "Role": {
@@ -3511,9 +3514,6 @@
       ],
       "Available Speakers": [
         "可使用的揚聲器"
-      ],
-      "Background blur comparison": [
-        "背景模糊比較"
       ],
       "Camera and microphone are blocked": [
         "相機與麥克風已被阻擋"

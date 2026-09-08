@@ -1865,6 +1865,15 @@
         "${ users } χρήστης",
         "${ users } χρήστες"
       ],
+      "Amount due": [
+        "Οφειλόμενο ποσό"
+      ],
+      "Amount due after trial": [
+        "Οφειλόμενο ποσό μετά τη δοκιμαστική περίοδο"
+      ],
+      "Amount due now": [
+        "Οφειλόμενο ποσό τώρα"
+      ],
       "Subtotal": [
         "Υποσύνολο"
       ],
@@ -1874,6 +1883,10 @@
       ],
       "Total": [
         "Σύνολο"
+      ],
+      "Total for ${ cycle } month": [
+        "Σύνολο για ${ cycle } μήνα",
+        "Σύνολο για ${ cycle } μήνες"
       ]
     },
     "Collapsible tooltip": {
@@ -4652,8 +4665,8 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Έχετε ανεξόφλητα τιμολόγια. Παρακαλούμε πληρώστε τα πριν συμμετάσχετε σε ένα οικογενειακό πλάνο."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Έχετε προσκληθεί να συνδέσετε τον λογαριασμό σας ${ BRAND_NAME } σε αυτό το οικογενειακό πλάνο και να απολαύσετε μαζί όλες τις premium δυνατότητες ${ brandOrAppName }."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Σας προσκαλούμε να συνδέσετε τον λογαριασμό σας ${ BRAND_NAME } με αυτήν την οικογενειακή ομάδα και να απολαύσετε όλες τις premium λειτουργίες της."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ο λογαριασμός σας έχει περισσότερες διευθύνσεις ηλεκτρονικού ταχυδρομείου από αυτές που είναι διαθέσιμες σε αυτό το πλάνο. ${ addressSettingsLink }"
@@ -5814,6 +5827,9 @@
       ],
       "Discover ProtectBuy logo": [
         "λογότυπο Discover ProtectBuy"
+      ],
+      "Do you remember your password?": [
+        "Θυμάστε τον κωδικό πρόσβασής σας;"
       ],
       "Do you still want to upload it?": [
         "Θέλετε ακόμα να το μεταμορφώσετε;",
@@ -9471,9 +9487,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } που λήγει σε ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB αποθηκευτικού χώρου στο cloud που σας επιτρέπει να αποθηκεύετε, συγχρονίζετε και μοιράζεστε αρχεία εύκολα. Προστατεύεται από διατερματική κρυπτογράφηση."
       ],
@@ -10901,17 +10914,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και τον αριθμό ΦΠΑ."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - κάρτα που λήγει σε ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Τραπεζική μεταφορά - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - κάρτα που λήγει σε ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -14025,6 +14027,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Ο νέος κύκλος συνδρομής ξεκινά στις ${ formattedTime }"
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Αυτός ο σύνδεσμος έχει λήξει. Παρατείνετε την ημερομηνία λήξης"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Εκτός αν αποκρυπτογραφηθούν, οι κρυπτογραφημένοι κωδικοί παραμένουν ασφαλείς ακόμα και αν εκτεθούν."

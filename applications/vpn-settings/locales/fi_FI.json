@@ -465,7 +465,7 @@
         "Muokkaa laskun tietoja"
       ],
       "Edit invoice note": [
-        "Muokkaa laskun muistiinpanoa"
+        "Muokkaa laskujen lisämerkintöjä"
       ],
       "Edit label": [
         "Muokkaa tunnistetta"
@@ -1683,10 +1683,10 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Kun kokeilu päättyy ${ formattedDate1 }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti ${ renewCycle } kuukauden välein. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate2 }."
+        "Kun kokeilujakso ${ formattedDate1 } päättyy, muuttuu se automaattisesti ${ renewCycle } kuukauden välein uudistuvaksi maksulliseksi tilaukseksi. Sinua ei veloiteta, jos perut sen ennen ${ formattedDate2 }."
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Kun kokeilu päättyy ${ formattedDate1 }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti kuukausittain. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate2 }."
+        "Kun kokeilujakso ${ formattedDate1 } päättyy, muuttuu se automaattisesti kuukausittain uudistuvaksi maksulliseksi tilaukseksi. Sinua ei veloiteta, jos perut sen ennen ${ formattedDate2 }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Klikkaamalla \"Kokeile\" hyväksytte meidän ${ termsAndConditions }."
@@ -1704,7 +1704,7 @@
         "Kokeile valintaa ${ selected } ${ freeForNDays }"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "Kun peruutat, ilmainen kokeilujaksosi ei muutu maksulliseksi tilaukseksi, mutta voit silti nauttia tilauseduista kokeilujakson loppuun asti. Sen jälkeen sinut alennetaan ${ BRAND_NAME } Free -tilaukseen."
+        "Kun perut, ei ilmainen kokeilujaksosi muutu maksulliseksi tilaukseksi, mutta voit edelleen nauttia tilauksen eduista kokeilujakson loppuun asti. Sen jälkeen tasoksesi alennetaan ${ BRAND_NAME } Free."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Voit saada enintään ${ TRIAL_MAX_DEDICATED_IPS } omaa palvelinta kokeilujakson aikana."
@@ -1780,7 +1780,7 @@
     },
     "bf2023: header": {
       "Save with Black Friday deals on a high-speed Swiss VPN": [
-        "Säästä mustan perjantain tarjouksilla nopeasta sveitsiläisestä VPN:stä"
+        "Hyödynnä Black Friday -tarjoukset ja säästä nopeasta sveitsiläisestä VPN:stä"
       ],
       "Select your Black Friday offer": [
         "Valitse Black Friday -tarjouksesi"
@@ -5636,9 +5636,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "Sinun on määritettävä oma verkkotunnus ennen kuin luot uuden käyttäjän."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Sinut on kutsuttu yhdistämään ${ BRAND_NAME } -tilisi tähän perhetilaukseen ja nauttimaan kaikista ${ brandOrAppName } -premium-ominaisuuksista yhdessä."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Tililläsi on enemmän sähköpostiosoitteita kuin mitä sinulla on käytettävissäsi tässä tilauksessa. ${ addressSettingsLink }"
       ],
@@ -7553,7 +7550,7 @@
         "Lataa sovellus ja tuo olemassa olevat koodit."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Lataa suosikkisovelluksesi tänään ja suojaa yksityisyytesi minne ikinä menetkin."
+        "Lataa suosikkisovelluksesi tänään ja suojaa yksityisyytesi missä ikinä oletkaan."
       ],
       "Drop file here to upload": [
         "Pudota ladattava tiedosto tähän"
@@ -8691,9 +8688,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Tilaus päättyy: Jotta ${ planName } -etusi säilyvät, käynnistä tilauksesi uudelleen Google Play Kaupassa viimeistään ${ byDate }. ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "Tilaus alkaa ${ startsOnTime }"
-      ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Tuki omien verkkotunnusten ja muiden kuin ${ BRAND_NAME }-osoitteiden valvonnalle on tulossa pian."
       ],
@@ -8809,7 +8803,7 @@
         "Tätä ei voi kumota."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
-        "Tämä saattaa kestää jonkin aikaa. Älä sulje tätä sivua tai katkaise Internet-yhteyttäsi."
+        "Tämä saattaa kestää jonkin aikaa. Älä sulje sivua tai katkaise Internet-yhteyttäsi."
       ],
       "This data recovery method requires a password reset option (email or SMS)": [
         "Tämä tietojen palautusmenetelmä edellyttää salasanan nollausvaihtoehtoa (sähköposti tai tekstiviesti)"
@@ -8987,9 +8981,6 @@
       ],
       "Total VPN connections": [
         "VPN-yhteyksiä yhteensä"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "Kokeilujakso päättyy ${ formattedPeriodEndDate }"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Kokeile palvelua ${ productName } täysin riskittömästi – jos muutat mieltäsi mistä tahansa syystä, saat täyden hyvityksen. Kysymyksiä ei esitetä."
@@ -9555,7 +9546,7 @@
         "Seuraava laskutuspäiväsi on ${ renewalTime }. Voit peruuttaa milloin tahansa."
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
-        "Seuraava laskutuspäivänne on ${ renewalTime }. Voitte peruuttaa tilauksen milloin tahansa. Ottakaa yhteyttä tukeen, jos haluatte muuttaa tilaustanne välittömästi."
+        "Seuraava laskutuspäiväsi on ${ renewalTime }. Voit perua tilauksen milloin tahansa. Jos sinun tarvitsee muuttaa tilaustasi viiveettä, ole yhteydessä asiakaspalveluun."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organisaatiosi käyttää kertakirjautumista (SSO). Jatka SSO-palveluntarjoajan kautta painamalla \"Kirjaudu sisään\"."
@@ -11326,7 +11317,7 @@
         "60 minuuttia per kokous"
       ],
       "Booking pages": [
-        "Ajanvaraussivut"
+        "Varaussivut"
       ],
       "Browser, mobile, and desktop apps": [
         "Selain, mobiili- ja työpöytäsovellukset"
@@ -11840,7 +11831,7 @@
         "Kaikki ${ BRAND_NAME } -peruspalvelut (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "Appointment scheduling": [
-        "Ajanvaraus"
+        "Ajanvaraukset"
       ],
       "Appointment scheduling with ${ n } booking page": [
         "Ajanvaraus ${ n } -varaussivulla",
@@ -12226,9 +12217,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand }, päättyy ${ last4 }"
-      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } mahdollistaa sähköpostiosoitteiden luonnin ja alikäyttäjien tilien hallinan. Ihanteellinen perheille ja organisaatioille."
       ],
@@ -12348,7 +12336,7 @@
         "Alkaen ${ priceLine }"
       ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
-        "Erityishinta ${ priceCoupon } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ priceLine } kuukausihintaan. Voit perua milloin tahansa."
+        "Erityishinta ${ priceCoupon } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ priceLine } kuukausihintaan. Voit perua sen milloin tahansa."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Avaa kaikki ${ BRAND_NAME } -premium-tuotteet ja -ominaisuudet hintaan ${ priceLine }. Peruuta milloin tahansa."
@@ -12664,55 +12652,55 @@
     },
     "news": {
       "${ app } and ${ additionalApp } product updates": [
-        "${ app } ja ${ additionalApp } -tuotepäivitykset"
+        "${ app }- ja ${ additionalApp }-tuotepäivitykset"
       ],
       "${ app } product updates": [
-        "${ app } -tuotepäivitykset"
+        "${ app }-tuotepäivitykset"
       ],
       "${ BRAND_NAME } for Business communications": [
-        "${ BRAND_NAME } for Business viestintään"
+        "${ BRAND_NAME } for Business -viestintä"
       ],
       "${ BRAND_NAME } important announcements": [
-        "Tärkeät ${ BRAND_NAME } -ilmoitukset"
+        "Tärkeät ${ BRAND_NAME }-ilmoitukset"
       ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME }-uutiskirje"
       ],
       "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME }in tarjoukset ja kampanjat"
+        "${ BRAND_NAME }-tarjoukset ja -kampanjat"
       ],
       "${ BRAND_NAME } product announcements": [
-        "${ BRAND_NAME } -tuotejulkaisut"
+        "${ BRAND_NAME }-tuotejulkaisut"
       ],
       "${ BRAND_NAME } user survey": [
-        "${ BRAND_NAME }-käyttäjäkyselyt"
+        "${ BRAND_NAME }-käyttäjätutkimukset"
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }-tervetuloviestit"
       ],
       "1 email per month": [
-        "1 sähköposti kuukaudessa"
+        "Yksi viesti kuukaudessa"
       ],
       "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "1 sähköposti kuukaudessa. Saat tuoreimmat tietosuojauutiset ja tietoa ${ BRAND_NAME }-universumin tapahtumista."
+        "Yksi viesti kuukaudessa. Saat tuoreimmat tietosuojauutiset sekä tietoa ${ BRAND_NAME }-universumin tapahtumista."
       ],
       "1 email per quarter": [
-        "1 sähköposti neljännesvuodessa"
+        "Yksi viesti neljännesvuodessa"
       ],
       "1-2 emails per month": [
-        "1 - 2 sähköpostiä kuukaudessa"
+        "1 - 2 viestiä kuukaudessa"
       ],
       "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "1–4 sähköpostiviestiä vuodessa. Muistutuksia palautusmenetelmien pitämisestä ajan tasalla."
+        "1–4 viestiä vuodessa. Muistuttaa palautusmenetelmien pitämisestä ajan tasalla."
       ],
       "2-4 emails per year": [
-        "2 - 4 sähköpostia vuodessa"
+        "2–4 viestiä vuodessa"
       ],
       "4-6 emails per year": [
-        "4 - 6 sähköpostia vuodessa"
+        "4–6 viestiä vuodessa"
       ],
       "Account email updates": [
-        "Tilin sähköpostipäivitykset"
+        "Tilisähköpostit"
       ],
       "Application notifications": [
         "Sovellusilmoitukset"
@@ -12724,10 +12712,10 @@
         "Päivittäiset sähköposti-ilmoitukset"
       ],
       "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
-        "Tämän poistaminen käytöstä tarkoittaa, ettet saa sovelluksen sisäisiä ilmoituksia kampanjoista, uusista ominaisuuksista, uusista ${ BRAND_NAME }-palveluista ja muistutuksista."
+        "Jos poista tämän käytöstä, et enää saa sovelluksensisäisiä ilmoituksia kampanjoista, uusista ominaisuuksista ja ${ BRAND_NAME }-palveluista, etkä muistutuksista."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
-        "Ensimmäisen ${ BRAND_NAME } -tuotteen käyttökuukautesi aikana"
+        "Ensimmäisen ${ BRAND_NAME }-tuotteen käyttökuukautesi aikana"
       ],
       "Email communications": [
         "Sähköpostiviestintä"
@@ -12736,10 +12724,10 @@
         "Sovelluksensisäiset ilmoitukset"
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Auta parantamaan ${ BRAND_NAME } -palveluita osallistumalla kyselyihin"
+        "Auta parantamaan ${ BRAND_NAME }in palveluita osallistumalla tutkimuksiin"
       ],
       "Product email updates": [
-        "Tuotesähköpostipäivitykset"
+        "Tuotesähköpostit"
       ],
       "Recovery checklist": [
         "Palautuksen tarkistuslista"
@@ -13475,7 +13463,7 @@
         "Turvakoodi"
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
-        "Et voi muuttaa tai peruuttaa tilaustasi tänä aikana. Odota, kunnes maksusi on suoritettu, ennen kuin yrität tehdä muutoksia. Kiitos kärsivällisyydestäsi."
+        "Tänä aikana et voi muuttaa tai perua tilaustasi. Odota, kunnes maksusi on suoritettu, ennen kuin yrität tehdä muutoksia. Kiitos kärsivällisyydestäsi."
       ],
       "Edit billing address": [
         "Muokkaa laskutusosoitetta"
@@ -13544,7 +13532,7 @@
         "Alennushinta on voimassa ${ subscriptionLength } kuukauden ajan."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
-        "Erityishinta on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua milloin tahansa."
+        "Erityishinta on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua sen milloin tahansa."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Erikoistarjoushinta ${ priceWithDiscount } on voimassa ${ couponRedemptions } kuukauden. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa.",
@@ -13555,14 +13543,14 @@
         "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäiset ${ subscriptionLength } kuukautta."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
-        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua milloin tahansa."
+        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua sen milloin tahansa."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Siirto on havaittu. Krediitit lisätään tilillesi, kun siirto on täysin vahvistettu."
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
-        "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit peruuttaa tilauksen milloin vain.",
-        "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit peruuttaa tilauksen milloin vain."
+        "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit perua tilauksen milloin vain.",
+        "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit perua tilauksen milloin vain."
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Tämä toiminto laajentaa olemassa olevaa tilausta. Sinua veloitetaan vain uusista lisäosista ja nykyisen laskutusjakson jäljellä olevasta ajasta. Tilauksesi uusimispäivä ei muutu."
@@ -13690,17 +13678,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Uusimishinta riippuu laskutusalueesta ja ALV-numerosta."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - kortti, jonka viimeiset numerot ovat ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Pankkisiirto - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - kortti, jonka viimeiset numerot ovat ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -15255,7 +15232,7 @@
         "Lasku"
       ],
       "Transactions": [
-        "Siirrot"
+        "Tapahtumat"
       ]
     },
     "Select search results": {
@@ -16747,7 +16724,7 @@
         "Kun peruutat ${ planName } -tilauksesi, sinut alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa enintään vain 1 Gt Mail- ja 5 Gt Drive-tallennustilaa. Menetät myös kaikki aiemmin myönnetyt tallennustilabonukset."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Kun peruutat ${ planName } -tilauksesi, sinut alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa enintään 1 Gt Mail- ja 5 Gt Drive-tallennustilaa. Ryhmäsi työnteko keskeytyy, koska ilmaistilaus ei tue lisäkäyttäjiä."
+        "Kun perut ${ planName }-tilauksesi, alennetaan tasoksesi ${ BRAND_NAME } Free, joka tarjoaa vain 1 Gt Mail- ja 5 Gt Drive-tallennustilaa. Tiimisi työskentely keskeytyy, koska ilmaistilaus ei tue lisäkäyttäjiä."
       ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Kun ${ planName }-tilauksesi päättyy ${ expiryDate }, sinut allennetaan ${ BRAND_NAME } Free -tilaukseen."
@@ -16954,7 +16931,7 @@
         "Sähköpostiosoite vaihdettiin"
       ],
       "Gift code applied": [
-        "Lahjakoodi käytetty"
+        "Lahjakoodi lisätty"
       ],
       "Import record deleted": [
         "Tuontitapahtuma poistettiin"
@@ -18866,7 +18843,7 @@
         "Identiteetintarjoajan julkinen avain, jota käytetään autentikointiväitteiden allekirjoitukseen. Hae varmenteen hajautusarvo identiteetintarjoajaltasi."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Mikäli ostit lahjakoodin tai sait sellaisen tueltamme, voit syöttää sen tähän."
+        "Mikäli ostit lahjakoodin tai sait sellaisen asiakaspalvelustamme, voit syöttää sen tähän."
       ],
       "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
         "Sisältää mukautetut sähköpostin verkkotunnukset ja rajattomasti hide-my-email-aliaksia ${ MAIL_APP_NAME }-sovelluksessa, pääsyn palvelimiin yli 120 maassa ${ VPN_SHORT_APP_NAME }-sovelluksessa, sisäänrakennetun 2FA-tunnistautumisen ja suojatun jakamisen ${ PASS_SHORT_APP_NAME }-sovelluksessa sekä paljon muuta."

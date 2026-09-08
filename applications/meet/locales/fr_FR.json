@@ -199,6 +199,9 @@
       "Cancel": [
         "Annuler"
       ],
+      "Change layout": [
+        "Changer la disposition"
+      ],
       "Change password": [
         "Changer le mot de passe"
       ],
@@ -354,6 +357,9 @@
       ],
       "Getting ready...": [
         "En cours de préparation..."
+      ],
+      "Grid": [
+        "Grille"
       ],
       "Help and feedback": [
         "Aide et commentaires"
@@ -540,6 +546,9 @@
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "Planifier dans ${ CALENDAR_APP_NAME }"
       ],
+      "Screen share": [
+        "Partage d'écran"
+      ],
       "Search countries": [
         "Rechercher dans les pays"
       ],
@@ -581,6 +590,9 @@
       ],
       "Skip to main content": [
         "Passer au contenu principal"
+      ],
+      "Speaker": [
+        "Intervenant"
       ],
       "Start an instant meeting": [
         "Démarrer une réunion instantanée"
@@ -668,12 +680,6 @@
       ],
       "Use camera": [
         "Utiliser la caméra"
-      ],
-      "Use color": [
-        "Utiliser la couleur"
-      ],
-      "Use image": [
-        "Utiliser l'image"
       ],
       "Use microphone": [
         "Utiliser le microphone"
@@ -2071,6 +2077,9 @@
       "Screen share is not supported on mobile browsers": [
         "Le partage d'écran n'est pas pris en charge sur les navigateurs mobiles"
       ],
+      "Screen share is not supported on your device": [
+        "Le partage d'écran n'est pas pris en charge sur votre appareil"
+      ],
       "Signature is missing": [
         "La signature est manquante"
       ],
@@ -2390,6 +2399,9 @@
         "${ replyCount } réponse",
         "${ replyCount } réponses"
       ],
+      "${ spotlightParticipantName } is the active speaker": [
+        "${ spotlightParticipantName } est l'intervenant actuel"
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } sur un maximum de ${ maxParticipants } participants"
       ],
@@ -2416,8 +2428,8 @@
       "Admit": [
         "Admettre"
       ],
-      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
-        "Mode avancé : réglez chaque constante de flou pour la version suivante, puis cliquez sur « Appliquer » pour actualiser l'aperçu. Les modifications manuelles ont priorité sur les valeurs définies dans le fichier et dans Unleash."
+      "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Mode avancé : réglez chaque constante de flou, puis cliquez sur « Appliquer » pour actualiser l'aperçu. Les modifications manuelles ont priorité sur les valeurs définies dans le fichier et dans Unleash."
       ],
       "Allow camera access to preview your background": [
         "Autorisez l'accès à la caméra pour prévisualiser votre arrière-plan"
@@ -2692,8 +2704,8 @@
       "Loading…": [
         "Chargement en cours…"
       ],
-      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
-        "Affichez en boucle une vidéo téléchargée ou le flux de votre caméra en direct sur les deux versions avec flou d'arrière-plan, côte à côte."
+      "Loop an uploaded video or your live camera through background blur.": [
+        "Affichez en boucle une vidéo téléchargée ou le flux de votre caméra en direct avec un flou d'arrière-plan."
       ],
       "Lower participant's hand": [
         "Baisser la main du participant"
@@ -2902,8 +2914,8 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
       ],
-      "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
-        "Utilisez le processeur d'arrière-plan personnalisé pour votre flux vidéo en direct. Choisissez une couleur unie ou importez une image en tant qu'arrière-plan."
+      "Run your live camera through the custom background processor. Upload an image to use as the background.": [
+        "Utilisez le processeur d'arrière-plan personnalisé pour votre flux vidéo en direct. Importez une image en tant qu'arrière-plan."
       ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Planifiez votre prochaine réunion. Créez un compte pour planifier des réunions avec votre calendrier."
@@ -3172,9 +3184,6 @@
       "Auto-detect": [
         "Détection automatique"
       ],
-      "Background color": [
-        "Couleur d'arrière-plan"
-      ],
       "Blurred (next)": [
         "Flou (suivant)"
       ],
@@ -3213,9 +3222,6 @@
       ],
       "Created": [
         "Créé"
-      ],
-      "Current": [
-        "Actuel"
       ],
       "Delete": [
         "Supprimer"
@@ -3310,9 +3316,6 @@
       "Name": [
         "Nom"
       ],
-      "Next": [
-        "Suivant"
-      ],
       "Operating system": [
         "Système d'exploitation"
       ],
@@ -3333,6 +3336,9 @@
       ],
       "Phone number": [
         "Numéro de téléphone"
+      ],
+      "Preview": [
+        "Aperçu"
       ],
       "Raw": [
         "Brut"
@@ -3369,9 +3375,6 @@
       ],
       "Selected Speaker": [
         "Haut-parleur sélectionné"
-      ],
-      "Solid color": [
-        "Couleur unie"
       ],
       "Spoken language": [
         "Langue parlée"
@@ -3791,8 +3794,8 @@
       "Background": [
         "Arrière plan"
       ],
-      "Background blur comparison": [
-        "Comparaison du flou d'arrière-plan"
+      "Background blur preview": [
+        "Aperçu du flou d'arrière-plan"
       ],
       "Backgrounds": [
         "Arrière-plans"

@@ -1890,6 +1890,15 @@
         "${ users } utilizatori",
         "${ users } de utilizatori"
       ],
+      "Amount due": [
+        "Suma datorată"
+      ],
+      "Amount due after trial": [
+        "Suma datorată după probare"
+      ],
+      "Amount due now": [
+        "Suma datorată acum"
+      ],
       "Subtotal": [
         "Subtotal"
       ],
@@ -1900,6 +1909,11 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Total for ${ cycle } month": [
+        "Total pentru ${ cycle } lună",
+        "Total pentru ${ cycle } luni",
+        "Total pentru ${ cycle } de luni"
       ]
     },
     "Collapsible tooltip": {
@@ -4691,8 +4705,8 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Aveți facturi neplătite. Trebuie să le achitați înainte de a vă alătura unui plan de familie."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Ați primit o invitație să vă conectați contul ${ BRAND_NAME } la acest plan de familie și să vă bucurați împreună de toate funcțiile premium ale ${ brandOrAppName }."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Ați primit o invitație să vă conectați contul ${ BRAND_NAME } la acest grup de familie și să vă bucurați împreună de toate funcțiile premium."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Acest cont are mai multe adrese de e-mail decât cele disponibile în acest plan. ${ addressSettingsLink }"
@@ -5901,6 +5915,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
+      ],
+      "Do you remember your password?": [
+        "Vă amintiți parola?"
       ],
       "Do you still want to upload it?": [
         "Încă doriți să-l încărcați?",
@@ -9623,8 +9640,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } care se termină cu ${ last4 }"
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } care se termină cu ${ Last4 }"
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TiB de stocare în cloud care vă permite stocarea, sincronizarea și partajarea ușoară a fișierelor. Securizat prin criptare bilaterală."
@@ -11054,6 +11071,11 @@
         "Creditele vă vor fi adăugate în soldul personal."
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Schimbarea adresei de facturare poate influența taxele pe facturile viitoare."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Sigur doriți să continuați?"
@@ -11091,14 +11113,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - card care se termină cu ${ paymentMethod.Details.Last4 }"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - card care se termină cu ${ Last4 }"
       ],
-      "Bank transfer - ${ details }": [
-        "Transfer bancar - ${ details }"
+      "Bank transfer - ${ iban }": [
+        "Transfer bancar - ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - card care se termină cu ${ paymentMethod.Details.Last4 }"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - card care se termină cu ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -14266,6 +14288,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Noul ciclu de abonament începe la ${ formattedTime }."
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Această legătură web a expirat. Prelungiți data expirării."
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Dacă nu sunt decriptate, parolele criptate rămân în siguranță chiar dacă au fost expuse."

@@ -451,6 +451,9 @@
       "Failed to import Markdown due to unknown error.": [
         "由于未知错误，无法导入 Markdown。"
       ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "由于未知错误，导入 OpenDocument 文件失败。"
+      ],
       "Failed to import Word document due to unknown error.": [
         "由于未知错误，无法导入 Word 文档。"
       ],
@@ -561,6 +564,9 @@
       "No title": [
         "无标题"
       ],
+      "Remote image blocked": [
+        "远程图片已被阻止。"
+      ],
       "Something went wrong:": [
         "出了些问题："
       ],
@@ -575,6 +581,9 @@
       ],
       "The language you're using isn’t currently supported in suggestion mode. Please switch to edit mode or change the language.": [
         "您使用的语言目前不受建议模式支持。请切换到编辑模式或更改语言。"
+      ],
+      "This paste was blocked because the text contains invalid characters.": [
+        "此粘贴已被阻止，因为文本包含无效字符。"
       ],
       "Viewing": [
         "查看中"
@@ -774,6 +783,11 @@
       ],
       "Rename": [
         "重命名"
+      ]
+    },
+    "sheets_2025:Sheet tab rename": {
+      "A sheet with this name already exists": [
+        "已存在同名的工作表"
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {

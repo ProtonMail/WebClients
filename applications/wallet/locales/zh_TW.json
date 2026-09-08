@@ -1088,6 +1088,12 @@
       "${ users } user": [
         "${ users } 位使用者"
       ],
+      "Amount due": [
+        "應付金額"
+      ],
+      "Amount due now": [
+        "當前欠款"
+      ],
       "Subtotal": [
         "小計"
       ],
@@ -2725,6 +2731,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME }訂閱撰寫扳手"
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } 標記"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } 包含 ${ BRAND_NAME } Scribe 撰稿助理"
       ],
@@ -3617,6 +3626,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "添加${ BRAND_NAME }訂閱撰寫扳手"
       ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "添加 ${ LUMO_SHORT_APP_NAME } 撰寫幫手"
+      ],
       "Add-on with free trial": [
         "可免費試用的擴充功能"
       ],
@@ -3764,6 +3776,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
         "${ LUMO_SHORT_APP_NAME } 撰寫工具與擴充存取權"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫工具與限制存取權"
       ],
       "${ n } calendar": [
         "${ n } 個行事曆"
@@ -4185,9 +4200,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } 後四碼 ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB 的雲端儲存空間，讓您可以輕鬆儲存、同步及共享檔案。受端對端加密保護。"
       ],
@@ -4900,17 +4912,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "續訂價格取決於計費區域和 VAT 號碼。"
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "APPle Pay - 卡片於 ${ paymentMethod.Details.Last4 } 結束"
-      ],
-      "Bank transfer - ${ details }": [
-        "匯款 - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - 卡片於 ${ paymentMethod.Details.Last4 } 結束"
       ]
     },
     "Payments.Sepa": {
@@ -5692,6 +5693,9 @@
       ],
       "Select a plan": [
         "請選擇一個方案"
+      ],
+      "September Sale": [
+        "九月的銷售"
       ],
       "Set recovery methods": [
         "設定復原方式"

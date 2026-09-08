@@ -5818,9 +5818,6 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Máte nezaplacené faktury. Před připojením k rodinnému tarifu je prosím uhraďte."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Můžete propojit svůj účet ${ BRAND_NAME } s tímto rodinným tarifem a společně využívat všechny prémiové funkce ${ brandOrAppName }."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Váš účet má více e-mailových adres, než kolik je v tomto tarifu k dispozici. ${ addressSettingsLink }"
       ],
@@ -7952,10 +7949,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -10506,6 +10500,9 @@
       "Sign emails": [
         "Podepsat e-maily"
       ],
+      "Signature": [
+        "Podpis"
+      ],
       "Size:": [
         "Velikost:"
       ],
@@ -12101,9 +12098,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } končící ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB úložného prostoru v cloudu, který vám umožní snadno ukládat, synchronizovat a sdílet soubory. Zabezpečeno koncovým šifrováním."
       ],
@@ -12917,6 +12911,99 @@
       ]
     },
     "Option": {
+      "10th of the month": [
+        "10. den v měsíci"
+      ],
+      "11th of the month": [
+        "11. den v měsíci"
+      ],
+      "12th of the month": [
+        "12. den v měsíci"
+      ],
+      "13th of the month": [
+        "13. den v měsíci"
+      ],
+      "14th of the month": [
+        "14. den v měsíci"
+      ],
+      "15th of the month": [
+        "15. den v měsíci"
+      ],
+      "16th of the month": [
+        "16. den v měsíci"
+      ],
+      "17th of the month": [
+        "17. den v měsíci"
+      ],
+      "18th of the month": [
+        "18. den v měsíci"
+      ],
+      "19th of the month": [
+        "19. den v měsíci"
+      ],
+      "1st of the month": [
+        "1. den v měsíci"
+      ],
+      "20th of the month": [
+        "20. den v měsíci"
+      ],
+      "21st of the month": [
+        "21. den v měsíci"
+      ],
+      "22nd of the month": [
+        "22. den v měsíci"
+      ],
+      "23rd of the month": [
+        "23. den v měsíci"
+      ],
+      "24th of the month": [
+        "24. den v měsíci"
+      ],
+      "25th of the month": [
+        "25. den v měsíci"
+      ],
+      "26th of the month": [
+        "26. den v měsíci"
+      ],
+      "27th of the month": [
+        "27. den v měsíci"
+      ],
+      "28th of the month": [
+        "28. den v měsíci"
+      ],
+      "29th of the month": [
+        "29. den v měsíci"
+      ],
+      "2nd of the month": [
+        "2. den v měsíci"
+      ],
+      "30th of the month": [
+        "30. den v měsíci"
+      ],
+      "31st of the month": [
+        "31. den v měsíci"
+      ],
+      "3rd of the month": [
+        "3. den v měsíci"
+      ],
+      "4th of the month": [
+        "4. den v měsíci"
+      ],
+      "5th of the month": [
+        "5. den v měsíci"
+      ],
+      "6th of the month": [
+        "6. den v měsíci"
+      ],
+      "7th of the month": [
+        "7. den v měsíci"
+      ],
+      "8th of the month": [
+        "8. den v měsíci"
+      ],
+      "9th of the month": [
+        "9. den v měsíci"
+      ],
       "Add to existing group": [
         "Přidat do existující skupiny"
       ],
@@ -12929,11 +13016,26 @@
       "Create new group": [
         "Vytvořit novou skupinu"
       ],
+      "Fixed duration": [
+        "Pevná doba trvání"
+      ],
       "Ignore group": [
         "Ignorovat skupinu"
       ],
       "No parent folder": [
         "Žádná nadřazená složka"
+      ],
+      "Permanent": [
+        "Trvale"
+      ],
+      "Repeat daily": [
+        "Opakovat denně"
+      ],
+      "Repeat monthly": [
+        "Opakovat měsíčně"
+      ],
+      "Repeat weekly": [
+        "Opakovat týdně"
       ]
     },
     "Option group": {
@@ -13298,17 +13400,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Cena obnovení závisí na fakturační oblasti a DIČ."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - karta končící čísly ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Bankovní převod - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - karta končící čísly ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

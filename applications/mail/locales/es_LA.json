@@ -2745,6 +2745,15 @@
         "${ users } usuario",
         "${ users } usuarios"
       ],
+      "Amount due": [
+        "Importe a pagar"
+      ],
+      "Amount due after trial": [
+        "Importe a pagar después de la prueba"
+      ],
+      "Amount due now": [
+        "Importe a pagar ahora"
+      ],
       "Subtotal": [
         "Subtotal"
       ],
@@ -2754,6 +2763,10 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Total for ${ cycle } month": [
+        "Total por ${ cycle } mes",
+        "Total por ${ cycle } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -6053,8 +6066,8 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Tiene facturas sin pagar. Por favor, páguelas antes de unirse a un plan familiar."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Se le invitó a vincular la cuenta de ${ BRAND_NAME } a este plan familiar y disfrutar juntos de todas las funciones premium de ${ brandOrAppName }."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Se le invitó a vincular su cuenta de ${ BRAND_NAME } a este grupo familiar y disfrutar de todas sus funciones premium."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "La cuenta tiene más direcciones de correo de las que tiene disponibles en este plan. ${ addressSettingsLink }"
@@ -7582,6 +7595,9 @@
       "Center": [
         "Centrar"
       ],
+      "Change display setting": [
+        "Cambiar ajuste de pantalla"
+      ],
       "Change your password": [
         "Cambie la contraseña"
       ],
@@ -7748,6 +7764,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
+      ],
+      "Do you remember your password?": [
+        "¿Recuerda su contraseña?"
       ],
       "Do you want to download this attachment anyway?": [
         "¿Desea descargar este archivo adjunto de todos modos?",
@@ -8139,8 +8158,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8448,6 +8466,9 @@
       "Opened ${ location }": [
         "Abierto ${ location }"
       ],
+      "Opened a problem report": [
+        "Abrí un reporte de problema"
+      ],
       "Optional": [
         "Opcional"
       ],
@@ -8646,6 +8667,9 @@
       "Read your ${ count } label": [
         "Leer ${ count } etiqueta",
         "Leer ${ count } etiquetas"
+      ],
+      "Read your display settings": [
+        "Lea sus ajustes de pantalla"
       ],
       "Recipient: ": [
         "Destinatario: "
@@ -10274,8 +10298,17 @@
       "Colors": [
         "Colores"
       ],
+      "Column": [
+        "Columna"
+      ],
+      "Comfortable": [
+        "Cómoda"
+      ],
       "Command line interface (CLI)": [
         "Interfaz de línea de comandos (CLI)"
+      ],
+      "Compact": [
+        "Compacta"
       ],
       "Company": [
         "Compañía"
@@ -10510,6 +10543,9 @@
       ],
       "Go to Updates": [
         "Ir a Actualizaciones"
+      ],
+      "Grouped conversations": [
+        "Conversaciones agrupadas"
       ],
       "Has attachments": [
         "Contiene adjuntos"
@@ -10832,6 +10868,9 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
       ],
+      "Row": [
+        "Fila"
+      ],
       "Search in": [
         "Buscar en"
       ],
@@ -10852,6 +10891,12 @@
       ],
       "Sign emails": [
         "Firmar correos electrónicos"
+      ],
+      "Signature": [
+        "Firma"
+      ],
+      "Single messages": [
+        "Mensajes individuales"
       ],
       "Size:": [
         "Tamaño:"
@@ -12402,9 +12447,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } que termina en ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB de almacenamiento en la nube que le permite almacenar, sincronizar y compartir archivos de forma fácil. Asegurado por cifrado de extremo a extremo."
       ],
@@ -13220,6 +13262,99 @@
       ]
     },
     "Option": {
+      "10th of the month": [
+        "10º del mes"
+      ],
+      "11th of the month": [
+        "11º del mes"
+      ],
+      "12th of the month": [
+        "12º del mes"
+      ],
+      "13th of the month": [
+        "13º del mes"
+      ],
+      "14th of the month": [
+        "14º del mes"
+      ],
+      "15th of the month": [
+        "15º del mes"
+      ],
+      "16th of the month": [
+        "16º del mes"
+      ],
+      "17th of the month": [
+        "17º del mes"
+      ],
+      "18th of the month": [
+        "18º del mes"
+      ],
+      "19th of the month": [
+        "19º del mes"
+      ],
+      "1st of the month": [
+        "1º del mes"
+      ],
+      "20th of the month": [
+        "20º del mes"
+      ],
+      "21st of the month": [
+        "21º del mes"
+      ],
+      "22nd of the month": [
+        "22º del mes"
+      ],
+      "23rd of the month": [
+        "23º del mes"
+      ],
+      "24th of the month": [
+        "24º del mes"
+      ],
+      "25th of the month": [
+        "25º del mes"
+      ],
+      "26th of the month": [
+        "26º del mes"
+      ],
+      "27th of the month": [
+        "27º del mes"
+      ],
+      "28th of the month": [
+        "28º del mes"
+      ],
+      "29th of the month": [
+        "29º del mes"
+      ],
+      "2nd of the month": [
+        "2º del mes"
+      ],
+      "30th of the month": [
+        "30º del mes"
+      ],
+      "31st of the month": [
+        "31º del mes"
+      ],
+      "3rd of the month": [
+        "3º del mes"
+      ],
+      "4th of the month": [
+        "4º del mes"
+      ],
+      "5th of the month": [
+        "5º del mes"
+      ],
+      "6th of the month": [
+        "6º del mes"
+      ],
+      "7th of the month": [
+        "7º del mes"
+      ],
+      "8th of the month": [
+        "8º del mes"
+      ],
+      "9th of the month": [
+        "9º del mes"
+      ],
       "Add to existing group": [
         "Agregar al grupo existente"
       ],
@@ -13232,14 +13367,29 @@
       "Create new group": [
         "Crear grupo nuevo"
       ],
+      "Fixed duration": [
+        "Duración fija"
+      ],
       "Ignore group": [
         "Ignorar grupo"
       ],
       "No parent folder": [
         "No hay carpeta principal"
       ],
+      "Permanent": [
+        "Permanente"
+      ],
       "Remind me later": [
         "Recordarme más tarde"
+      ],
+      "Repeat daily": [
+        "Repetir diariamente"
+      ],
+      "Repeat monthly": [
+        "Repetir mensualmente"
+      ],
+      "Repeat weekly": [
+        "Repetir semanalmente"
       ],
       "Yes, don't show again": [
         "Sí, no volver a mostrar"
@@ -13610,17 +13760,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "El precio de renovación depende de la región de facturación y del número de IVA."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - tarjeta terminada en ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Transferencia bancaria - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - tarjeta terminada en ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -16302,6 +16441,9 @@
       ],
       "CC": [
         "CC"
+      ],
+      "Change display setting": [
+        "Cambiar ajuste de pantalla"
       ],
       "Change my answer": [
         "Cambiar mi respuesta"

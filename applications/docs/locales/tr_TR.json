@@ -381,6 +381,9 @@
       "Export this version (as docx)": [
         "Bu sürümü dışa aktar (docx olarak)"
       ],
+      "Export this version (as odt) (Beta)": [
+        "Bu sürümü dışa aktar (odt olarak, Beta)"
+      ],
       "Export this version (as xlsx)": [
         "Bu sürümü dışa aktar (xlsx olarak)"
       ],
@@ -599,6 +602,9 @@
       ],
       "Open navigation": [
         "Gezinmeyi aç"
+      ],
+      "OpenDocument Text (.odt) (Beta)": [
+        "OpenDocument yazısı (.ods, Beta)"
       ],
       "PDF (.pdf)": [
         "PDF (.pdf)"
@@ -4090,8 +4096,8 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Ödenmemiş faturalarınız var. Bir Family tarifesine geçmeden önce lütfen onları ödeyin."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "${ BRAND_NAME } hesabınızı bu aile tarifesine bağlamaya ve birlikte ücretli tüm ${ brandOrAppName } özelliklerinin tadını çıkarmaya davet edildiniz."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "${ BRAND_NAME } hesabınızı bu aile grubuna bağlamaya ve tüm ücretli özelliklerinin tadını çıkarmaya davetlisiniz."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Hesabınızda, bu tarifede kullanabileceğinizden daha fazla e-posta adresi var. ${ addressSettingsLink }"
@@ -5012,6 +5018,9 @@
       ],
       "Display word count": [
         "Sözcük sayısı görüntülensin"
+      ],
+      "Do you remember your password?": [
+        "Parolanızı anımsıyor musunuz?"
       ],
       "Document is in trash": [
         "Belge çöp kutusunda"
@@ -10851,6 +10860,9 @@
       ],
       "The import will start with the most recent messages.": [
         "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Bu bağlantının geçerlilik süresi dolmuş. Lütfen geçerlilik sonu tarihini uzatın"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Şifrelenmiş parolalar, şifreleri çözülmediği sürece açığa çıksalar bile güvende kalırlar."

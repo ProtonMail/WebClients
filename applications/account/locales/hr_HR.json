@@ -7924,9 +7924,6 @@
       "You're invited to join ${ invite.OrganizationName }": [
         "Pozvani ste da se pridružite ${ invite.OrganizationName }"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Pozvani ste da povežete svoj ${ BRAND_NAME } korisnički račun s ovim obiteljskim planom i zajedno uživate u svim ${ brandOrAppName } premium značajkama."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Vaš korisnički račun ima više adresa e-pošte nego što vam je dostupno u ovom planu. ${ addressSettingsLink }"
       ],
@@ -12014,9 +12011,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Pretplata završava: kako biste zadržali pogodnosti plana ${ planName }, ponovno pokrenite pretplatu u trgovini Google Play Store do ${ byDate }. ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "Pretplata počinje ${ startsOnTime }"
-      ],
       "Summary": [
         "Sažetak"
       ],
@@ -12409,9 +12403,6 @@
       ],
       "Total: ${ totalPrice }": [
         "Ukupno: ${ totalPrice }"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "Probna verzija završava ${ formattedPeriodEndDate }"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Isprobajte ${ productName } potpuno bez rizika - ako se iz bilo kojeg razloga predomislite, dobit ćete puni povrat novca. Bez suvišnih pitanja."
@@ -13864,9 +13855,6 @@
       ],
       "Account holder": [
         "Vlasnik računa"
-      ],
-      "Account holder: ${ sepaDetails.AccountName }": [
-        "Imatelj računa: ${ sepaDetails.AccountName }"
       ],
       "Account storage": [
         "Prostor za pohranu računa"
@@ -17410,9 +17398,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } završava na ${ last4 }"
-      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } ti omogućuje izradu adresa e-pošte i upravljanje korisničkim računima za podkorisnike. Idealno za obitelji i organizacije."
       ],
@@ -19543,17 +19528,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Cijena obnove ovisi o regiji naplate i PDV broju."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay – kartica koja završava na ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Bankovni prijenos – ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - kartica koja završava na ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

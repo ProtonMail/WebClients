@@ -2739,6 +2739,15 @@
         "${ users } gebruiker",
         "${ users } gebruikers"
       ],
+      "Amount due": [
+        "Verschuldigd bedrag"
+      ],
+      "Amount due after trial": [
+        "Verschuldigd bedrag na proefperiode"
+      ],
+      "Amount due now": [
+        "Nu verschuldigd bedrag"
+      ],
       "Subtotal": [
         "Subtotaal"
       ],
@@ -2748,6 +2757,10 @@
       ],
       "Total": [
         "Totaal"
+      ],
+      "Total for ${ cycle } month": [
+        "Totaal voor ${ cycle } maand",
+        "Totaal voor ${ cycle } maanden"
       ]
     },
     "Collapsible tooltip": {
@@ -6047,8 +6060,8 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "U heeft onbetaalde facturen. Betaal deze voordat u zich aansluit bij een Family-abonnement"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "U bent uitgenodigd om uw ${ BRAND_NAME } account te linken aan dit familieplan en samen te genieten van de premiumfuncties van ${ brandOrAppName }."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "U wordt uitgenodigd om uw ${ BRAND_NAME }-account aan deze gezinsgroep te koppelen en van alle premiumfuncties te genieten."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Uw account heeft meer e-mailadressen dan is toegestaan in dit abonnement. ${ addressSettingsLink }"
@@ -7143,6 +7156,9 @@
         "${ n } ongelezen gesprek",
         "${ n } ongelezen gesprekken"
       ],
+      "${ name } in ${ parentName }": [
+        "${ name } in ${ parentName }"
+      ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } link opgeruimd",
         "${ numberOfUTMTrackers } links opgeruimd"
@@ -7573,6 +7589,9 @@
       "Center": [
         "Centreren"
       ],
+      "Change display setting": [
+        "Wijzig de weergave-instelling"
+      ],
       "Change your password": [
         "Wijzig uw wachtwoord"
       ],
@@ -7736,6 +7755,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
+      ],
+      "Do you remember your password?": [
+        "Weet u uw wachtwoord nog?"
       ],
       "Do you want to download this attachment anyway?": [
         "Wilt u deze bijlage toch downloaden?",
@@ -8127,8 +8149,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -8219,6 +8240,9 @@
       ],
       "Low Priority": [
         "Lage Prioriteit"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Maak ${ MAIL_APP_NAME } uw standaard e-mailapplicatie."
       ],
       "Manage your folders": [
         "Mappen beheren"
@@ -8622,6 +8646,9 @@
       "Read your ${ count } label": [
         "Lees uw ${ count } label",
         "Lees uw ${ count } labels"
+      ],
+      "Read your display settings": [
+        "Lees uw weergave-instellingen"
       ],
       "Recipient: ": [
         "Ontvanger: "
@@ -9236,6 +9263,9 @@
       ],
       "Unsupported file": [
         "Niet-ondersteund bestand"
+      ],
+      "Update filter": [
+        "Update filter"
       ],
       "Updating message content search...": [
         "Zoeken naar berichtinhoud bijwerken..."
@@ -10076,6 +10106,9 @@
       "Account holder": [
         "Rekeninghouder"
       ],
+      "Account holder name": [
+        "Naam van de rekeninghouder"
+      ],
       "Actions": [
         "Acties"
       ],
@@ -10235,8 +10268,17 @@
       "Colors": [
         "Kleuren"
       ],
+      "Column": [
+        "Kolom"
+      ],
+      "Comfortable": [
+        "Comfortabel"
+      ],
       "Command line interface (CLI)": [
         "Opdrachtregelinterface (CLI)"
+      ],
+      "Compact": [
+        "Compact"
       ],
       "Company": [
         "Bedrijf"
@@ -10337,6 +10379,9 @@
       "Drive": [
         "Drive"
       ],
+      "Dropped frames": [
+        "Uitgevallen frames"
+      ],
       "Duration": [
         "Duur"
       ],
@@ -10382,8 +10427,14 @@
       "Enable filter": [
         "Filter inschakelen"
       ],
+      "Encrypt": [
+        "Versleutelen"
+      ],
       "Encrypt emails": [
         "E-mails versleutelen"
+      ],
+      "Entries": [
+        "Invoer"
       ],
       "Exact host matching": [
         "Exacte hostovereenkomst"
@@ -10462,6 +10513,9 @@
       ],
       "Go to Updates": [
         "Ga naar Updates"
+      ],
+      "Grouped conversations": [
+        "Gegroepeerde gesprekken"
       ],
       "Has attachments": [
         "Heeft bijlagen"
@@ -10775,6 +10829,9 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
       ],
+      "Row": [
+        "Rij"
+      ],
       "Search in": [
         "Zoeken in"
       ],
@@ -10795,6 +10852,12 @@
       ],
       "Sign emails": [
         "E-mails ondertekenen"
+      ],
+      "Signature": [
+        "Handtekening"
+      ],
+      "Single messages": [
+        "Enkele berichten"
       ],
       "Size:": [
         "Grootte:"
@@ -12336,9 +12399,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } eindigend met ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd met end-to-end versleuteling."
       ],
@@ -12728,7 +12788,7 @@
     },
     "ngc_access_banner: info": {
       "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
-        "U hebt nu toegang tot de nieuwe ${ CALENDAR_APP_NAME }. ${ link }"
+        "U heeft nu toegang tot de nieuwe ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     },
     "Notification": {
@@ -13149,6 +13209,99 @@
       ]
     },
     "Option": {
+      "10th of the month": [
+        "10de van de maand"
+      ],
+      "11th of the month": [
+        "11de van de maand"
+      ],
+      "12th of the month": [
+        "12e dag van de maand"
+      ],
+      "13th of the month": [
+        "13de van de maand"
+      ],
+      "14th of the month": [
+        "14de van de maand"
+      ],
+      "15th of the month": [
+        "15e dag van de maand"
+      ],
+      "16th of the month": [
+        "16e van de maand"
+      ],
+      "17th of the month": [
+        "17e van de maand"
+      ],
+      "18th of the month": [
+        "18e van de maand"
+      ],
+      "19th of the month": [
+        "19e dag van de maand"
+      ],
+      "1st of the month": [
+        "1e van de maand"
+      ],
+      "20th of the month": [
+        "20ste van de maand"
+      ],
+      "21st of the month": [
+        "21ste van de maand"
+      ],
+      "22nd of the month": [
+        "22ste van de maand."
+      ],
+      "23rd of the month": [
+        "23ste dag van de maand"
+      ],
+      "24th of the month": [
+        "24ste van de maand"
+      ],
+      "25th of the month": [
+        "25ste van de maand"
+      ],
+      "26th of the month": [
+        "26ste van de maand"
+      ],
+      "27th of the month": [
+        "27ste van de maand."
+      ],
+      "28th of the month": [
+        "28ste van de maand"
+      ],
+      "29th of the month": [
+        "29ste van de maand"
+      ],
+      "2nd of the month": [
+        "2e van de maand"
+      ],
+      "30th of the month": [
+        "30ste van de maand"
+      ],
+      "31st of the month": [
+        "31ste van de maand"
+      ],
+      "3rd of the month": [
+        "3e van de maand"
+      ],
+      "4th of the month": [
+        "4e van de maand"
+      ],
+      "5th of the month": [
+        "5e van de maand"
+      ],
+      "6th of the month": [
+        "6de van de maand"
+      ],
+      "7th of the month": [
+        "7e van de maand"
+      ],
+      "8th of the month": [
+        "8ste van de maand"
+      ],
+      "9th of the month": [
+        "9de van de maand"
+      ],
       "Add to existing group": [
         "Toevoegen aan bestaande groep"
       ],
@@ -13161,11 +13314,29 @@
       "Create new group": [
         "Nieuwe groep maken"
       ],
+      "Fixed duration": [
+        "Vaste duur"
+      ],
       "Ignore group": [
         "Groep negeren"
       ],
       "No parent folder": [
         "Geen bovenliggende map"
+      ],
+      "Permanent": [
+        "Permanent"
+      ],
+      "Remind me later": [
+        "Herinner mij later"
+      ],
+      "Repeat daily": [
+        "Dagelijks herhalen"
+      ],
+      "Repeat monthly": [
+        "Maandelijks herhalen"
+      ],
+      "Repeat weekly": [
+        "Wekelijks herhalen"
       ]
     },
     "Option group": {
@@ -13533,17 +13704,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT-nummer."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - kaart eindigend op ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Bankoverschrijving - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - kaart eindigend op ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -16222,6 +16382,9 @@
       ],
       "CC": [
         "CC"
+      ],
+      "Change display setting": [
+        "Wijzig de weergave-instelling"
       ],
       "Change my answer": [
         "Mijn antwoord wijzigen"

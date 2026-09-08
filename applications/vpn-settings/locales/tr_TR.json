@@ -1958,6 +1958,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "Active until ${ formattedPeriodEndDate }": [
+        "${ formattedPeriodEndDate } tarihine kadar kullanılabilir"
+      ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Deneme süresi ${ formattedDate1 } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve her ${ renewCycle } ayda bir otomatik olarak yenilenir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
@@ -1978,6 +1981,9 @@
       ],
       "Try ${ selected } ${ freeForNDays }": [
         "${ selected } ${ freeForNDays } deneyin"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period.": [
+        "İptal ettiğinizde, ücretsiz deneme süreniz ücretli aboneliğe dönüştürülmez. Ancak deneme süresinin sonuna kadar tarifenizdeki özellikleri kullanmayı sürdürebilirsiniz."
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "İptal ettiğinizde, ücretsiz deneme süreniz ücretli aboneliğe dönüştürülmez. Ancak deneme süresinin sonuna kadar tarifenizdeki özellikleri kullanmayı sürdürebilirsiniz. Bundan sonra, ${ BRAND_NAME } Free tarifesine düşürüleceksiniz."
@@ -2538,6 +2544,18 @@
         "${ users } kullanıcı",
         "${ users } kullanıcı"
       ],
+      "Amount due": [
+        "Ödenecek tutar"
+      ],
+      "Amount due after trial": [
+        "Deneme süresinden sonra ödenecek tutar"
+      ],
+      "Amount due now": [
+        "Şimdi ödenecek tutar"
+      ],
+      "month": [
+        "ay"
+      ],
       "Subtotal": [
         "Ara toplam"
       ],
@@ -2545,8 +2563,15 @@
         "${ cycle } aylık ara toplam",
         "${ cycle } aylık ara toplam"
       ],
+      "Summary": [
+        "Özet"
+      ],
       "Total": [
         "Toplam"
+      ],
+      "Total for ${ cycle } month": [
+        "${ cycle } ay için toplam",
+        "${ cycle } ay için toplam"
       ]
     },
     "Collapsible tooltip": {
@@ -6177,8 +6202,8 @@
       "You need to configure a custom domain before creating a new user.": [
         "Yeni bir kullanıcı oluşturmadan önce özel bir etki alanı yapılandırmanız gerekir."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "${ BRAND_NAME } hesabınızı bu aile tarifesine bağlamaya ve birlikte ücretli tüm ${ brandOrAppName } özelliklerinin tadını çıkarmaya davet edildiniz."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "${ BRAND_NAME } hesabınızı bu aile grubuna bağlamaya ve tüm ücretli özelliklerinin tadını çıkarmaya davetlisiniz."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Hesabınızda, bu tarifede kullanabileceğinizden daha fazla e-posta adresi var. ${ addressSettingsLink }"
@@ -8152,6 +8177,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Bu parolayı UNUTMAYIN. Unutursanız, kuruluşunuzu yönetemezsiniz."
       ],
+      "Do you remember your password?": [
+        "Parolanızı anımsıyor musunuz?"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Geçerli oturum dışındaki diğer tüm oturumları kapatmak istiyor musunuz?"
       ],
@@ -8950,6 +8978,9 @@
       "On": [
         "Açık"
       ],
+      "On ${ formattedPeriodEndDate }, your free trial ends and your paid plan starts.": [
+        "${ formattedPeriodEndDate } tarihinde ücretsiz deneme süreniz sona erecek ve ücretli tarifeniz başlayacak."
+      ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Hesabınıza erişme izni verildiğinde **Kurtarma** ayarlarınıza erişebilir ve sizin adınıza **${ ACCOUNT_APP_NAME } parolanızı değiştirebilir.**"
       ],
@@ -9427,9 +9458,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Abonelik sona eriyor: ${ planName } avantajlarınızı sürdürmek için, aboneliğinizi Google Play Store üzerinden ${ byDate } tarihine kadar yeniden başlatın. ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "Abonelik ${ startsOnTime } zamanında başlar"
-      ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Özel etki alanlarının ve ${ BRAND_NAME } olmayan e-posta adreslerinin izlenmesi desteği yakında sunulacak."
       ],
@@ -9769,9 +9797,6 @@
       ],
       "Total VPN connections": [
         "Toplam VPN bağlantısı"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "Deneme süresi ${ formattedPeriodEndDate } tarihinde sona eriyor"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "${ productName } uygulamasını risk almadan deneyin. Herhangi bir nedenle fikrinizi değiştirirseniz tam geri ödeme alabilirsiniz. Herhangi bir soru sorulmaz."
@@ -13089,8 +13114,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand }, ${ last4 } içinde sona erecek"
+      "${ Brand } ending in ${ Last4 }": [
+        "Sonu ${ Last4 } ile biten ${ Brand }"
       ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } alt kullanıcı hesapları ve e-posta adresleri ekleyerek yönetmenizi sağlar. Aile ve kuruluşlar için idealdir."
@@ -14649,6 +14674,11 @@
         "Kalan kredi bakiyenize eklenecek"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Fatura adresinizi değiştirmek sonraki faturalardaki vergileri etkileyebilir."
+      ]
+    },
     "Payments.Lifetime Subscription": {
       "Lifetime accounts can be transferred or sold": [
         "Lifetime hesapları devredilebilir veya satılabilir"
@@ -14699,14 +14729,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - ${ paymentMethod.Details.Last4 } ile biten kart"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - ${ Last4 } ile biten kart"
       ],
-      "Bank transfer - ${ details }": [
-        "Banka havalesi - ${ details }"
+      "Bank transfer - ${ iban }": [
+        "Banka havalesi - ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - ${ paymentMethod.Details.Last4 } ile biten kart"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - ${ Last4 } ile biten kart"
       ]
     },
     "Payments.Sepa": {

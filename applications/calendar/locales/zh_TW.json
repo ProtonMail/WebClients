@@ -1835,6 +1835,12 @@
       "${ users } user": [
         "${ users } 位使用者"
       ],
+      "Amount due": [
+        "應付金額"
+      ],
+      "Amount due now": [
+        "當前欠款"
+      ],
       "Subtotal": [
         "小計"
       ],
@@ -3621,6 +3627,9 @@
       "Cannot export this contact": [
         "無法匯出通訊名片"
       ],
+      "Cannot share root folder": [
+        "無法複製根資料夾"
+      ],
       "Cannot verify the author of this file": [
         "無法驗證此檔案的作者"
       ],
@@ -3650,6 +3659,9 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "無法啟用內文搜尋。請重新啟動應用程式或清除資料。"
+      ],
+      "Copy operation aborted": [
+        "以放棄移動操作"
       ],
       "Copying item to a non-folder is not allowed": [
         "不允許將項目複製到非資料夾"
@@ -3824,6 +3836,9 @@
       ],
       "Invitation failed to be sent": [
         "邀請傳送失敗"
+      ],
+      "Invitation not found": [
+        "未找到邀請"
       ],
       "It is only possible to create events between ${ minDateString } - ${ maxDateString }": [
         "僅可在 ${ minDateString } - ${ maxDateString } 之間創立事件"
@@ -4636,9 +4651,6 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "您有未付款的收據。請在加入家庭方案前繳付。"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "我們邀請您將您的 ${ BRAND_NAME } 帳號連結至此家庭方案，並一起享受所有 ${ brandOrAppName } 進階功能。"
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "您帳號中的電子郵件位址多於此方案中可用的電子郵件位址。${ addressSettingsLink }"
       ],
@@ -4776,14 +4788,23 @@
       ]
     },
     "Filter": {
+      "Activated": [
+        "已啟用"
+      ],
       "All": [
         "全部"
+      ],
+      "Errors": [
+        "錯誤"
       ],
       "In progress": [
         "進行中"
       ],
       "Migrated": [
         "遷移"
+      ],
+      "Not activated": [
+        "未啟動"
       ],
       "Pending": [
         "等待中"
@@ -5269,6 +5290,9 @@
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 個群組"
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } 標記"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } 包含 ${ BRAND_NAME } Scribe 撰稿助理"
       ],
@@ -5658,6 +5682,9 @@
       ],
       "Display events for calendar ${ Name }": [
         "為行事曆${ Name }顯示行程"
+      ],
+      "Do you remember your password?": [
+        "您記得您的密碼嗎?"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "什麼都看不到嗎？記得關閉彈出視窗攔截程式。"
@@ -7824,6 +7851,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "添加${ BRAND_NAME }訂閱撰寫扳手"
       ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "添加 ${ LUMO_SHORT_APP_NAME } 撰寫幫手"
+      ],
       "Add-on with free trial": [
         "可免費試用的擴充功能"
       ],
@@ -8217,6 +8247,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
         "${ LUMO_SHORT_APP_NAME } 撰寫工具與擴充存取權"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫工具與限制存取權"
       ],
       "${ n } calendar": [
         "${ n } 個行事曆"
@@ -8691,9 +8724,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } 後四碼 ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB 的雲端儲存空間，讓您可以輕鬆儲存、同步及共享檔案。受端對端加密保護。"
       ],
@@ -9873,17 +9903,6 @@
         "續訂價格取決於計費區域和 VAT 號碼。"
       ]
     },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "APPle Pay - 卡片於 ${ paymentMethod.Details.Last4 } 結束"
-      ],
-      "Bank transfer - ${ details }": [
-        "匯款 - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - 卡片於 ${ paymentMethod.Details.Last4 } 結束"
-      ]
-    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "透過確認此付款，您授權 ${ BRAND_NAME } 和我們的支付服務提供者 Stripe 指示您的銀行從您的帳戶中扣款。根據您與銀行達成的協議條件，您可以在扣款日起 8 週內獲得退款。"
@@ -10184,6 +10203,12 @@
       ],
       "key": [
         "金鑰"
+      ],
+      "membership": [
+        "會員資格"
+      ],
+      "name": [
+        "名稱"
       ]
     },
     "Property type": {
@@ -10318,12 +10343,23 @@
         "夏季特賣"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "取得優惠"
+      ]
+    },
     "q3campaign2026: Info": {
+      "/month": [
+        "/每月"
+      ],
       "2 TB of secure storage": [
         "2TB 的安全儲存空間"
       ],
       "3 TB of secure storage": [
         "3TB 的安全儲存空間"
+      ],
+      "500 GB of secure storage": [
+        "500 GB 安全儲存空間"
       ]
     },
     "q3campaign2026: Info, Drive first": {
@@ -10334,6 +10370,9 @@
     "q3campaign2026: Title": {
       "for 12 months": [
         "12 個月"
+      ],
+      "One plan, more power": [
+        "單一方案，更多能量"
       ]
     },
     "Referral": {
@@ -11775,6 +11814,9 @@
       "Fingerprint": [
         "指紋"
       ],
+      "Migration status": [
+        "遷移狀態"
+      ],
       "Name": [
         "名稱"
       ],
@@ -12474,6 +12516,9 @@
       ],
       "Send invitation": [
         "送出邀請"
+      ],
+      "September Sale": [
+        "九月的銷售"
       ],
       "Set recovery methods": [
         "設定復原方式"

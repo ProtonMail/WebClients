@@ -378,6 +378,9 @@
       "Export this version (as docx)": [
         "이 버전 내보내기(docx 형식)"
       ],
+      "Export this version (as odt) (Beta)": [
+        "이 버전을 odt로 내보내기 (베타)"
+      ],
       "Export this version (as xlsx)": [
         "이 버전을 xlsx로 내보내기"
       ],
@@ -596,6 +599,9 @@
       ],
       "Open navigation": [
         "탐색 열기"
+      ],
+      "OpenDocument Text (.odt) (Beta)": [
+        "OpenDocument 텍스트 (.odt) (베타)"
       ],
       "PDF (.pdf)": [
         "PDF (.pdf)"
@@ -4056,8 +4062,8 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "결제되지 않은 청구서가 존재합니다. 가족 플랜에 참여하기 전에 결제해주세요."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "회원님의 ${ BRAND_NAME } 계정이 이 가족 플랜에 합류하도록 초대되었습니다. 함께 모든 ${ brandOrAppName } 프리미엄 기능들을 즐겨보세요."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "회원님의 ${ BRAND_NAME } 계정이 이 가족 그룹에 합류하도록 초대되었습니다. 함께 모든 프리미엄 기능들을 즐겨보세요."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "사용자의 계정이 사용자 플랜단에서 사용 가능한 이메일 주소 이상을 가지고 있습니다. ${ addressSettingsLink }"
@@ -4940,6 +4946,9 @@
       ],
       "Display word count": [
         "단어수 표시"
+      ],
+      "Do you remember your password?": [
+        "비밀번호가 기억 나시나요?"
       ],
       "Document is in trash": [
         "문서가 휴지통 내에 존재합니다."
@@ -6524,6 +6533,9 @@
       ],
       "Your password (trusted contact)": [
         "사용자 비밀번호 (신뢰할 수 있는 연락처)"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ 복호화할 수 없는 이름"
       ]
     },
     "Label for contact group color": {
@@ -10654,6 +10666,9 @@
       ],
       "The import will start with the most recent messages.": [
         "최근의 주된 메시지 불러오기가 곧 시작됩니다."
+      ],
+      "This link has expired. Please extend expiration date": [
+        "링크가 만료되었습니다. 만료일을 연장해 주세요."
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "해독되지 않는 한, 암호화된 비밀번호는 노출되더라도 안전하게 유지됩니다."

@@ -4149,9 +4149,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } akan berakhir dalam ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "Penyimpanan 1 TB yang memungkinkan Anda untuk menyimpan, menyinkronkan, dan membagikan file dengan mudah. Terlindung oleh enkripsi end-to-end."
       ],
@@ -4861,17 +4858,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Harga perpanjangan bergantung pada wilayah penagihan dan nomor PPN."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - kartu berakhiran ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Transfer bank - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - kartu yang berakhir dengan ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

@@ -2721,6 +2721,15 @@
       "${ users } user": [
         "${ users }명 사용자"
       ],
+      "Amount due": [
+        "납부 금액"
+      ],
+      "Amount due after trial": [
+        "무료 체험 후 납부할 금액"
+      ],
+      "Amount due now": [
+        "지금 납부할 금액"
+      ],
       "Subtotal": [
         "부분합계"
       ],
@@ -2729,6 +2738,9 @@
       ],
       "Total": [
         "합계"
+      ],
+      "Total for ${ cycle } month": [
+        "${ cycle }개월의 합계"
       ]
     },
     "Collapsible tooltip": {
@@ -6000,8 +6012,8 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "결제되지 않은 청구서가 존재합니다. 가족 플랜에 참여하기 전에 결제해주세요."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "회원님의 ${ BRAND_NAME } 계정이 이 가족 플랜에 합류하도록 초대되었습니다. 함께 모든 ${ brandOrAppName } 프리미엄 기능들을 즐겨보세요."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "회원님의 ${ BRAND_NAME } 계정이 이 가족 그룹에 합류하도록 초대되었습니다. 함께 모든 프리미엄 기능들을 즐겨보세요."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "사용자의 계정이 사용자 플랜단에서 사용 가능한 이메일 주소 이상을 가지고 있습니다. ${ addressSettingsLink }"
@@ -7623,6 +7635,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 로고"
       ],
+      "Do you remember your password?": [
+        "비밀번호가 기억 나시나요?"
+      ],
       "Do you want to download this attachment anyway?": [
         "이 첨부 파일을 다운로드할까요?"
       ],
@@ -8309,6 +8324,9 @@
       ],
       "Opened ${ location }": [
         "${ location }을(를) 열었음"
+      ],
+      "Opened a problem report": [
+        "문제 리포트 열림"
       ],
       "Optional": [
         "선택사항"
@@ -10688,6 +10706,9 @@
       "Sign emails": [
         "이메일 서명"
       ],
+      "Signature": [
+        "서명"
+      ],
       "Single messages": [
         "단문 메시지"
       ],
@@ -12199,9 +12220,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ last4 }(으)로 끝나는 ${ brand }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "파일을 간편하게 저장, 동기화 및 공유하기 위한 종단간 암호화로 보호되는 1 TB의 클라우드 저장공간."
       ],
@@ -13013,6 +13031,99 @@
       ]
     },
     "Option": {
+      "10th of the month": [
+        "매월 10일"
+      ],
+      "11th of the month": [
+        "매월 11일"
+      ],
+      "12th of the month": [
+        "매월 12일"
+      ],
+      "13th of the month": [
+        "매월 13일"
+      ],
+      "14th of the month": [
+        "매월 14일"
+      ],
+      "15th of the month": [
+        "매월 15일"
+      ],
+      "16th of the month": [
+        "매월 16일"
+      ],
+      "17th of the month": [
+        "매월 17일"
+      ],
+      "18th of the month": [
+        "매월 18일"
+      ],
+      "19th of the month": [
+        "매월 19일"
+      ],
+      "1st of the month": [
+        "매월 1일"
+      ],
+      "20th of the month": [
+        "매월 20일"
+      ],
+      "21st of the month": [
+        "매월 21일"
+      ],
+      "22nd of the month": [
+        "매월 22일"
+      ],
+      "23rd of the month": [
+        "매월 23일"
+      ],
+      "24th of the month": [
+        "매월 24일"
+      ],
+      "25th of the month": [
+        "매월 25일"
+      ],
+      "26th of the month": [
+        "매월 26일"
+      ],
+      "27th of the month": [
+        "매월 27일"
+      ],
+      "28th of the month": [
+        "매월 28일"
+      ],
+      "29th of the month": [
+        "매월 29일"
+      ],
+      "2nd of the month": [
+        "매월 2일"
+      ],
+      "30th of the month": [
+        "매월 30일"
+      ],
+      "31st of the month": [
+        "매월 31일"
+      ],
+      "3rd of the month": [
+        "매월 3일"
+      ],
+      "4th of the month": [
+        "매월 4일"
+      ],
+      "5th of the month": [
+        "매월 5일"
+      ],
+      "6th of the month": [
+        "매월 6일"
+      ],
+      "7th of the month": [
+        "매월 7일"
+      ],
+      "8th of the month": [
+        "매월 8일"
+      ],
+      "9th of the month": [
+        "매월 9일"
+      ],
       "Add to existing group": [
         "병합할 그룹 추가"
       ],
@@ -13025,14 +13136,29 @@
       "Create new group": [
         "새 그룹 만들기"
       ],
+      "Fixed duration": [
+        "고정된 기간"
+      ],
       "Ignore group": [
         "그룹 무시"
       ],
       "No parent folder": [
         "상위 폴더 없음"
       ],
+      "Permanent": [
+        "영구"
+      ],
       "Remind me later": [
         "나중에 다시 알림"
+      ],
+      "Repeat daily": [
+        "매일 반복"
+      ],
+      "Repeat monthly": [
+        "매달 반복"
+      ],
+      "Repeat weekly": [
+        "매주 반복"
       ],
       "Yes, don't show again": [
         "네, 다시 보지 않을게요."
@@ -13396,17 +13522,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "갱신 가격은 청구 지역 및 VAT 번호에 따라 변동될 수 있습니다."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "번호가 ${ paymentMethod.Details.Last4 }(으)로 끝나는 Apple Pay 카드"
-      ],
-      "Bank transfer - ${ details }": [
-        "은행 송금 - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - 번호가 ${ paymentMethod.Details.Last4 }(으)로 끝나는 카드"
       ]
     },
     "Payments.Sepa": {

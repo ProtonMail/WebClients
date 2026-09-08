@@ -5530,9 +5530,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "Anda harus mengatur domain kustom sebelum membuat pengguna baru."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Anda diundang untuk mengaitkan Akun ${ BRAND_NAME } Anda ke paket keluarga ini dan menikmati semua fitur premium ${ brandOrAppName } bersama."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Akun Anda memiliki alamat email lebih banyak dari yang tersedia kepada Anda dalam paket ini. ${ addressSettingsLink }"
       ],
@@ -8457,9 +8454,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Langganan akan segera berakhir: Untuk mempertahankan manfaat ${ planName } Anda, langgan kembali paket Anda di Google Play Store sebelum ${ byDate }. ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "Langganan dimulai pada ${ startsOnTime }"
-      ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Dukungan untuk memantau domain khusus dan alamat email non-${ BRAND_NAME } akan segera hadir."
       ],
@@ -8744,9 +8738,6 @@
       ],
       "Total VPN connections": [
         "Total koneksi VPN"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "Uji coba berakhir pada ${ formattedPeriodEndDate }"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Coba ${ productName } sepenuhnya tanpa risiko — jika dengan alasan apa pun Anda berubah pikiran, Anda akan menerima pengembalian dana penuh. Tanpa pertanyaan."
@@ -11879,9 +11870,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } akan berakhir dalam ${ last4 }"
-      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } memungkinkan Anda untuk membuat alamat email dan mengelola akun pada tingkatan sub-pengguna. Ideal bagi kebutuhan keluarga dan organisasi Anda."
       ],
@@ -13321,17 +13309,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Harga perpanjangan bergantung pada wilayah penagihan dan nomor PPN."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - kartu berakhiran ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Transfer bank - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - kartu yang berakhir dengan ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

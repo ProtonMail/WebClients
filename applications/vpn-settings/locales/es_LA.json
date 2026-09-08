@@ -1958,6 +1958,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "Active until ${ formattedPeriodEndDate }": [
+        "Activa hasta el ${ formattedPeriodEndDate }"
+      ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Cuando finalice la prueba el ${ formattedDate1 }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ renewCycle } meses. No se le cobrará nada si cancela antes del ${ formattedDate2 }."
       ],
@@ -1978,6 +1981,9 @@
       ],
       "Try ${ selected } ${ freeForNDays }": [
         "Pruebe ${ selected } ${ freeForNDays }"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period.": [
+        "Cuando cancele, su prueba gratuita no se convertirá en una suscripción de pago, pero aún podrá disfrutar de los beneficios del plan hasta el final del período de prueba."
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Cuando cancele, su prueba gratuita no se convertirá en una suscripción de pago, pero aún podrá disfrutar de los beneficios del plan hasta el final del período de prueba. Después de eso, será degradado al plan ${ BRAND_NAME } Free."
@@ -2538,6 +2544,18 @@
         "${ users } usuario",
         "${ users } usuarios"
       ],
+      "Amount due": [
+        "Importe a pagar"
+      ],
+      "Amount due after trial": [
+        "Importe a pagar después de la prueba"
+      ],
+      "Amount due now": [
+        "Importe a pagar ahora"
+      ],
+      "month": [
+        "mes"
+      ],
       "Subtotal": [
         "Subtotal"
       ],
@@ -2545,8 +2563,15 @@
         "Subtotal por ${ cycle } mes",
         "Subtotal por ${ cycle } meses"
       ],
+      "Summary": [
+        "Resumen"
+      ],
       "Total": [
         "Total"
+      ],
+      "Total for ${ cycle } month": [
+        "Total por ${ cycle } mes",
+        "Total por ${ cycle } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -6177,8 +6202,8 @@
       "You need to configure a custom domain before creating a new user.": [
         "Debe configurar un dominio personalizado antes de crear un nuevo usuario."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Se le invitó a vincular la cuenta de ${ BRAND_NAME } a este plan familiar y disfrutar juntos de todas las funciones premium de ${ brandOrAppName }."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Se le invitó a vincular su cuenta de ${ BRAND_NAME } a este grupo familiar y disfrutar de todas sus funciones premium."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "La cuenta tiene más direcciones de correo de las que tiene disponibles en este plan. ${ addressSettingsLink }"
@@ -8155,6 +8180,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NO olvide esta contraseña. Si la olvida, no podrá administrar la organización."
       ],
+      "Do you remember your password?": [
+        "¿Recuerda su contraseña?"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "¿Quiere revocar todas las demás sesiones y mantener la actual?"
       ],
@@ -9430,9 +9458,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Su suscripción finaliza: Para mantener los beneficios de su ${ planName }, reinicie su suscripción en Google Play Store antes del ${ byDate }. ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "Su suscripción inicia en ${ startsOnTime }"
-      ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "El soporte del monitoreo para dominios personalizados y direcciones de correo externas a ${ BRAND_NAME } estará disponible próximamente."
       ],
@@ -9773,9 +9798,6 @@
       "Total VPN connections": [
         "Conexiones VPN totales"
       ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "La prueba termina en ${ formattedPeriodEndDate }"
-      ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Pruebe ${ productName } totalmente sin riesgos. Si por cualquier motivo cambia de opinión, recibirá un reembolso completo. Sin preguntas."
       ],
@@ -9865,6 +9887,9 @@
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Use un método de recuperación para desactivar los métodos de autenticación de dos factores."
+      ],
+      "Use an existing email or create a free ${ protonDomain } address.": [
+        "Use un correo existente o cree una dirección de ${ protonDomain } gratuita."
       ],
       "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
         "Use múltiples direcciones de correo con ${ MAIL_APP_NAME }. Añada una nueva dirección de ${ BRAND_NAME } o conecte otra cuenta de correo electrónico para gestionar todo desde una sola bandeja de entrada."
@@ -13089,9 +13114,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } que termina en ${ last4 }"
-      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } le permite crear direcciones de correo y gestionar cuentas de usuarios secundarios. Es ideal para familias y empresas."
       ],
@@ -14696,17 +14718,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "El precio de renovación depende de la región de facturación y del número de IVA."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - tarjeta terminada en ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Transferencia bancaria - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - tarjeta terminada en ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

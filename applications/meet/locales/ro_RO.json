@@ -67,14 +67,32 @@
       "Background removed": [
         "Fundal eliminat"
       ],
+      "Beach landscape background applied": [
+        "Fundal cu peisaj de plajă aplicat."
+      ],
       "Blurred background applied": [
         "Fundal estompat aplicat"
+      ],
+      "Blurred office background applied": [
+        "Fundal cu birou estompat aplicat."
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Conectat prin modul releu TURN din cauza restricțiilor de rețea. Acest lucru poate crește latența și afecta calitatea apelurilor."
       ],
       "Connection lost. Reconnecting…": [
         "Conexiune pierdută. Se reconectează…"
+      ],
+      "Dark ${ BRAND_NAME } background applied": [
+        "Fundal ${ BRAND_NAME } întunecat aplicat."
+      ],
+      "Library background applied": [
+        "Fundalul cu biblioteca a fost aplicat."
+      ],
+      "Light ${ BRAND_NAME } background applied": [
+        "Fundal ${ BRAND_NAME } luminos aplicat."
+      ],
+      "Mountain landscape background applied": [
+        "Fundal cu peisaj montan aplicat."
       ],
       "New chat message: ${ message }": [
         "Mesaj nou: ${ message }"
@@ -208,6 +226,9 @@
       ],
       "Cancel": [
         "Anulare"
+      ],
+      "Change layout": [
+        "Modificare aspect"
       ],
       "Change password": [
         "Modificare parolă"
@@ -364,6 +385,9 @@
       ],
       "Getting ready...": [
         "Mă pregătesc..."
+      ],
+      "Grid": [
+        "Grilă"
       ],
       "Help and feedback": [
         "Ajutor și feedback"
@@ -567,6 +591,9 @@
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "Planificare în ${ CALENDAR_APP_NAME }"
       ],
+      "Screen share": [
+        "Partajare ecran"
+      ],
       "Search countries": [
         "Căutare țări"
       ],
@@ -608,6 +635,9 @@
       ],
       "Skip to main content": [
         "Salt la conținutul principal"
+      ],
+      "Speaker": [
+        "Difuzor"
       ],
       "Start an instant meeting": [
         "Pornire conferință instantanee"
@@ -695,12 +725,6 @@
       ],
       "Use camera": [
         "Utilizare cameră"
-      ],
-      "Use color": [
-        "Folosire culoare"
-      ],
-      "Use image": [
-        "Folosire imagine"
       ],
       "Use microphone": [
         "Folosire microfon"
@@ -2225,6 +2249,9 @@
       "Screen share is not supported on mobile browsers": [
         "Partajarea ecranului nu este acceptată pe navigatoarele web mobile."
       ],
+      "Screen share is not supported on your device": [
+        "Partajarea ecranului nu este acceptată pe acest dispozitiv."
+      ],
       "Signature is missing": [
         "Semnătura lipsește."
       ],
@@ -2596,6 +2623,9 @@
         "Răspunsuri: ${ replyCount }",
         "Răspunsuri: ${ replyCount }"
       ],
+      "${ spotlightParticipantName } is the active speaker": [
+        "${ spotlightParticipantName } este difuzorul activ"
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "Participanți: ${ totalParticipantCount } din ${ maxParticipants }"
       ],
@@ -2630,8 +2660,8 @@
       "Admitting": [
         "Se admite"
       ],
-      "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
-        "Mod avansat: ajustați fiecare constantă de estompare pentru următoarea versiune, apoi aplicați pentru a reconstrui examinarea. Suprascrierile au prioritate față de valorile fișierului și Unleash."
+      "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Mod avansat: ajustați fiecare constantă de estompare, apoi folosiți butonul „Aplicare” pentru a reconstrui examinarea. Suprascrierile au prioritate față de valorile fișierului și Unleash."
       ],
       "Allow camera access to preview your background": [
         "Permiteți accesul camerei pentru examinarea fundalului"
@@ -2915,8 +2945,8 @@
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
         "Jurnalele ne ajută să înțelegem ce s-a întâmplat înainte de apariția problemei. Acestea includ acțiuni ale aplicației și mesaje de eroare, dar nu și conținutul mesajelor."
       ],
-      "Loop an uploaded video or your live camera through both background blur versions side by side.": [
-        "Redă în buclă un videoclip încărcat sau camera live prin ambele versiuni de estompare a fundalului, una lângă alta."
+      "Loop an uploaded video or your live camera through background blur.": [
+        "Redați în buclă un videoclip încărcat sau camera live prin estomparea fundalului."
       ],
       "Lower participant's hand": [
         "Coborâți mâna participantului"
@@ -3128,8 +3158,8 @@
       "Rejecting": [
         "Se respinge"
       ],
-      "Run your live camera through the custom background processor. Pick a plain color or upload an image to use as the background.": [
-        "Rulați camera live prin procesorul de fundal personalizat. Alegeți o culoare simplă sau încărcați o imagine pentru a o folosi ca fundal."
+      "Run your live camera through the custom background processor. Upload an image to use as the background.": [
+        "Rulați camera live prin procesorul de fundal personalizat. Încărcați o imagine pentru a o folosi ca fundal."
       ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Planificați-vă următoarea întâlnire. Creați un cont pentru a vă planifica întâlniri din calendarul personal."
@@ -3426,11 +3456,14 @@
       "Auto-detect": [
         "Autodetectare"
       ],
-      "Background color": [
-        "Culoare fundal"
+      "Beach landscape background": [
+        "Fundal cu peisaj de plajă"
       ],
       "Blurred (next)": [
         "Estompat (următorul)"
+      ],
+      "Blurred office background": [
+        "Fundal cu birou estompat"
       ],
       "Browser": [
         "Navigator"
@@ -3468,8 +3501,8 @@
       "Created": [
         "Creat la"
       ],
-      "Current": [
-        "Actual"
+      "Dark ${ BRAND_NAME } background": [
+        "Fundal ${ BRAND_NAME } întunecat"
       ],
       "Delete": [
         "Ștergere"
@@ -3540,6 +3573,12 @@
       "Leave meeting options": [
         "Opțiuni părăsire conferință"
       ],
+      "Library background": [
+        "Fundal cu bibliotecă"
+      ],
+      "Light ${ BRAND_NAME } background": [
+        "Fundal ${ BRAND_NAME } luminos"
+      ],
       "Live caption agent": [
         "Agent subtitrări live"
       ],
@@ -3561,14 +3600,14 @@
       "Monday to Friday": [
         "De luni până vineri"
       ],
+      "Mountain landscape background": [
+        "Fundal cu peisaj montan"
+      ],
       "Muted": [
         "Dezactivat"
       ],
       "Name": [
         "Nume"
-      ],
-      "Next": [
-        "Următor"
       ],
       "Operating system": [
         "Sistem de operare"
@@ -3590,6 +3629,9 @@
       ],
       "Phone number": [
         "Număr de telefon"
+      ],
+      "Preview": [
+        "Examinare"
       ],
       "Raw": [
         "Brut"
@@ -3626,9 +3668,6 @@
       ],
       "Selected Speaker": [
         "Difuzor selectat"
-      ],
-      "Solid color": [
-        "Culoare uniformă"
       ],
       "Spoken language": [
         "Limba vorbită"
@@ -4054,8 +4093,8 @@
       "Background": [
         "Fundal"
       ],
-      "Background blur comparison": [
-        "Comparare estompare fundal"
+      "Background blur preview": [
+        "Examinare estompare fundal"
       ],
       "Backgrounds": [
         "Fundaluri"

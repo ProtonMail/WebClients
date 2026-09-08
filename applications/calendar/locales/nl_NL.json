@@ -1885,6 +1885,15 @@
         "${ users } gebruiker",
         "${ users } gebruikers"
       ],
+      "Amount due": [
+        "Verschuldigd bedrag"
+      ],
+      "Amount due after trial": [
+        "Verschuldigd bedrag na proefperiode"
+      ],
+      "Amount due now": [
+        "Nu verschuldigd bedrag"
+      ],
       "Subtotal": [
         "Subtotaal"
       ],
@@ -1894,6 +1903,10 @@
       ],
       "Total": [
         "Totaal"
+      ],
+      "Total for ${ cycle } month": [
+        "Totaal voor ${ cycle } maand",
+        "Totaal voor ${ cycle } maanden"
       ]
     },
     "Collapsible tooltip": {
@@ -4847,8 +4860,8 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "U heeft onbetaalde facturen. Betaal deze voordat u zich aansluit bij een Family-abonnement"
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "U bent uitgenodigd om uw ${ BRAND_NAME } account te linken aan dit familieplan en samen te genieten van de premiumfuncties van ${ brandOrAppName }."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "U wordt uitgenodigd om uw ${ BRAND_NAME }-account aan deze gezinsgroep te koppelen en van alle premiumfuncties te genieten."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Uw account heeft meer e-mailadressen dan is toegestaan in dit abonnement. ${ addressSettingsLink }"
@@ -5932,6 +5945,9 @@
       ],
       "Display events for calendar ${ Name }": [
         "Toon afspraken van agenda ${ Name }"
+      ],
+      "Do you remember your password?": [
+        "Weet u uw wachtwoord nog?"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ziet u niets? Denk eraan om het blokkeren van pop-ups uit te schakelen."
@@ -7298,6 +7314,9 @@
       ],
       "Account holder": [
         "Rekeninghouder"
+      ],
+      "Account holder name": [
+        "Naam van de rekeninghouder"
       ],
       "Add ${ MEET_APP_NAME } conferencing": [
         "Toevoegen ${ MEET_APP_NAME } videoconferentie"
@@ -9072,9 +9091,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } eindigend met ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd met end-to-end versleuteling."
       ],
@@ -9464,7 +9480,7 @@
     },
     "ngc_access_banner: info": {
       "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
-        "U hebt nu toegang tot de nieuwe ${ CALENDAR_APP_NAME }. ${ link }"
+        "U heeft nu toegang tot de nieuwe ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     },
     "Note": {
@@ -10302,17 +10318,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT-nummer."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - kaart eindigend op ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Bankoverschrijving - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - kaart eindigend op ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
