@@ -31,12 +31,13 @@ import { notifyMobileAppLoaded } from '../../util/mobileAppNotification';
 import { createAttachmentFromPastedContent, getPasteConversionMessage } from '../../util/pastedContentHelper';
 import GuestDisclaimer from '../Notifications/GuestDisclaimer';
 import { GuestNotificationCard } from '../Notifications/GuestNotificationCard';
+import { ModelSwitchNotificationCard } from '../Notifications/ModelSwitchNotificationCard';
 import { ComposerAttachmentArea } from './ComposerAttachmentArea';
 import { ComposerEditorArea } from './ComposerEditorArea';
 import { ComposerExpirationBanner } from './ComposerExpirationBanner';
 import { ComposerLimitBanner } from './ComposerLimitBanner';
+import { ComposerModelLimitUpsell } from './ComposerModelLimitUpsell';
 import { ComposerToolbar } from './ComposerToolbar';
-import { ComposerWeeklyLimitUpsell } from './ComposerWeeklyLimitUpsell';
 import { useExcelSheetSelection } from './ExcelSheetSelectionModal';
 import { useAllRelevantAttachments } from './hooks/useAllRelevantAttachments';
 import { useComposerWithImageGeneration } from './hooks/useComposerWithImageGeneration';
@@ -425,7 +426,9 @@ const ComposerComponentInner = ({
                 />
             )}
 
-            <ComposerWeeklyLimitUpsell composerMode={composerMode} />
+            <ModelSwitchNotificationCard messageChain={messageChain} isGenerating={isGenerating} />
+
+            <ComposerModelLimitUpsell composerMode={composerMode} />
 
             <ComposerLimitBanner
                 conversationId={messageChain?.[0]?.conversationId}

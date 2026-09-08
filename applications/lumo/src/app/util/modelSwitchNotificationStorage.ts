@@ -1,33 +1,18 @@
-const DISMISS_STORAGE_KEY = 'lumo-model-switch-notification-dismissed';
-const LEGACY_DISMISS_STORAGE_PREFIX = 'lumo-model-switch-notification-';
+export type SuggestedModel = 'lumo-lite' | 'apertus-15';
 
-export const hasDismissedModelSwitchNotification = (): boolean => {
+const getDismissStorageKey = (model: SuggestedModel) => `lumo-model-switch-notification-dismissed-${model}`;
+
+export const hasDismissedModelSwitchNotification = (model: SuggestedModel): boolean => {
     try {
-        if (sessionStorage.getItem(DISMISS_STORAGE_KEY) === '1') {
-            return true;
-        }
-
-        // Preserve dismissals written by the former per-conversation implementation.
-        for (let index = 0; index < sessionStorage.length; index += 1) {
-            const key = sessionStorage.key(index);
-            if (
-                key?.startsWith(LEGACY_DISMISS_STORAGE_PREFIX) &&
-                key !== DISMISS_STORAGE_KEY &&
-                sessionStorage.getItem(key) === '1'
-            ) {
-                return true;
-            }
-        }
-
-        return false;
+        return sessionStorage.getItem(getDismissStorageKey(model)) === '1';
     } catch {
         return false;
     }
 };
 
-export const markModelSwitchNotificationDismissed = (): void => {
+export const markModelSwitchNotificationDismissed = (model: SuggestedModel): void => {
     try {
-        sessionStorage.setItem(DISMISS_STORAGE_KEY, '1');
+        sessionStorage.setItem(getDismissStorageKey(model), '1');
     } catch {
         // Fail silently if sessionStorage is unavailable.
     }

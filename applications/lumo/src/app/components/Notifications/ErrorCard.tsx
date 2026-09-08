@@ -42,6 +42,7 @@ const ErrorCard = ({
     const isRetriable = [
         LUMO_API_ERRORS.GENERATION_ERROR,
         LUMO_API_ERRORS.HIGH_DEMAND,
+        LUMO_API_ERRORS.RATE_LIMIT,
         LUMO_API_ERRORS.GENERATION_REJECTED,
         LUMO_API_ERRORS.STREAM_DISCONNECTED,
     ].includes(error.errorType);

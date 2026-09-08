@@ -11,6 +11,7 @@ import { getSelectedModelTier, useOptionalModelTier } from '../../providers/Mode
 import {
     isModelSwitchSuggestionEligible,
     shouldShowLimitUpsell,
+    useExhaustedLimitNotice,
     useRemainingLimits,
 } from '../../services/usageLimitsStore';
 import type { ConversationId, Message } from '../../types';
@@ -51,9 +52,12 @@ export const GuestNotificationCard = ({
     const { hasLumoPlus } = useLumoPlan();
     const { isMaxAvailableByFlag } = useMaxModelAvailability();
     const remainingLimits = useRemainingLimits();
-    const limitUpsellVisible = shouldShowLimitUpsell(remainingLimits, hasTierErrors, hasLumoPlus);
+    const exhaustedLimitNotice = useExhaustedLimitNotice();
     const modelTierContext = useOptionalModelTier();
     const selectedModelTier = modelTierContext ? getSelectedModelTier(modelTierContext.modelTier) : undefined;
+    const limitUpsellVisible =
+        exhaustedLimitNotice !== null &&
+        shouldShowLimitUpsell(remainingLimits, hasTierErrors, hasLumoPlus, exhaustedLimitNotice.modelTier);
     const modelSwitchSuggestionEligible =
         selectedModelTier !== undefined &&
         isModelSwitchSuggestionEligible({
