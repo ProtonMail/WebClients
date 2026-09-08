@@ -22,6 +22,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { PublishableDataTypes } from '../../types';
+import { clampChatMessageLength } from '../../utils/clampChatMessageLength';
 import { isValidMessageString } from '../../utils/isValidMessageString';
 import { retry } from '../../utils/retry';
 import type { ChatIncomingEventInfoData } from '../../wasm/MeetCoreClient';
@@ -117,7 +118,7 @@ export const useChat = () => {
                     return;
                 }
 
-                const sanitizedMessage = escape(event.text);
+                const sanitizedMessage = escape(clampChatMessageLength(event.text));
 
                 // A reply carries the thread `topic_id` (which points at the root message id) and is
                 // therefore not a root message of its own thread.
@@ -253,7 +254,7 @@ export const useChat = () => {
                     return;
                 }
 
-                const sanitizedMessage = escape(decryptedMessage.message);
+                const sanitizedMessage = escape(clampChatMessageLength(decryptedMessage.message));
 
                 const newMessage: MeetChatMessage = {
                     id: decodedMessage.id,
