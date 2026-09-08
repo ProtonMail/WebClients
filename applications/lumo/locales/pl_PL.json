@@ -1108,9 +1108,6 @@
       "Select all": [
         "Zaznacz wszystko"
       ],
-      "Send feedback": [
-        "Wyślij opinię"
-      ],
       "Send message": [
         "Wyślij wiadomość"
       ],
@@ -1128,9 +1125,6 @@
       ],
       "Submit": [
         "Prześlij"
-      ],
-      "Switch to Max": [
-        "Przełącz na Max"
       ],
       "System": [
         "Systemowy"
@@ -1720,14 +1714,8 @@
       "Choose sheets to add": [
         "Wybierz arkusze do dodania"
       ],
-      "Review what you're sharing": [
-        "Sprawdź, co udostępniasz"
-      ],
       "Tell us more": [
         "Napisz więcej"
-      ],
-      "Your feedback is private": [
-        "Twoja opinia jest prywatna"
       ]
     },
     "collider_2025: Hint": {
@@ -2044,9 +2032,6 @@
       "No usage yet": [
         "Brak użycia"
       ],
-      "Only the text below will be sent. Images and other attachments are not included. Remove anything you don't want shared.": [
-        "Wysłany zostanie tylko poniższy tekst. Obrazy i inne załączniki nie są dołączone. Usuń wszystko, czego nie chcesz udostępniać."
-      ],
       "Over capacity": [
         "Przekroczenie limitu"
       ],
@@ -2103,9 +2088,6 @@
       ],
       "Secure connection (encrypted)": [
         "Bezpieczne połączenie (zaszyfrowane)"
-      ],
-      "Share your prompt and the response with us.": [
-        "Udostępnij nam swoje zapytanie i odpowiedź."
       ],
       "Shared by ${ file.sharedBy }": [
         "Udostępnione przez: ${ file.sharedBy }"
@@ -2175,15 +2157,6 @@
       ],
       "This folder is empty": [
         "Ten folder jest pusty"
-      ],
-      "This is the only time we see your content. We use it to improve our system prompts and understand how issues occurred. This data is automatically deleted after 90 days.": [
-        "To jedyny moment, w którym widzimy Twoje treści. Używamy ich do ulepszania naszych podpowiedzi systemowych i zrozumienia przyczyn problemów. Te dane są automatycznie usuwane po 90 dniach."
-      ],
-      "This lets us know you were happy with the response. We never see your prompt or ${ LUMO_SHORT_APP_NAME }'s reply.": [
-        "Dzięki temu wiemy, że odpowiedź Ci się podobała. Nigdy nie widzimy Twojego zapytania ani odpowiedzi ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "This lets us know you weren't happy with the response. We never see your prompt or ${ LUMO_SHORT_APP_NAME }'s reply unless you explicitly share it with us.": [
-        "Dzięki temu wiemy, że nie podobała Ci się ta odpowiedź. Nigdy nie widzimy Twojego zapytania ani odpowiedzi ${ LUMO_SHORT_APP_NAME }, chyba że wyraźnie je nam udostępnisz."
       ],
       "To get started, please open ${ DRIVE_APP_NAME } to set up your secure storage.": [
         "Aby rozpocząć, otwórz ${ DRIVE_APP_NAME }, aby skonfigurować Twoją bezpieczną przestrzeń dyskową."
@@ -2276,9 +2249,6 @@
     "collider_2025: Label": {
       "AI model": [
         "Model AI"
-      ],
-      "AI response": [
-        "Odpowiedź AI"
       ],
       "Answer mode": [
         "Tryb odpowiedzi"
@@ -2408,9 +2378,6 @@
       ],
       "You": [
         "Ty"
-      ],
-      "Your prompt": [
-        "Twoje zapytanie"
       ],
       "Your workflow": [
         "Twój przepływ pracy"
@@ -7689,9 +7656,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } kończąca się na ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB przestrzeni dyskowej w chmurze, która umożliwia łatwe przechowywanie, synchronizowanie i udostępnianie plików. Zabezpieczone za pomocą szyfrowania end-to-end."
       ],
@@ -8469,17 +8433,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Cena odnowienia zależy od regionu rozliczeniowego i numeru VAT."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay — karta kończąca się na ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Przelew bankowy — ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay — karta kończąca się na ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

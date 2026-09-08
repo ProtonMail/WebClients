@@ -1105,9 +1105,6 @@
       "Select all": [
         "Выбрать все"
       ],
-      "Send feedback": [
-        "Отправить обратную связь"
-      ],
       "Send message": [
         "Отправить сообщение"
       ],
@@ -1125,9 +1122,6 @@
       ],
       "Submit": [
         "Отправить"
-      ],
-      "Switch to Max": [
-        "Перейти на Max"
       ],
       "System": [
         "Системная"
@@ -1717,14 +1711,8 @@
       "Choose sheets to add": [
         "Выберите листы для добавления"
       ],
-      "Review what you're sharing": [
-        "Проверьте, чем вы делитесь"
-      ],
       "Tell us more": [
         "Расскажи подробнее"
-      ],
-      "Your feedback is private": [
-        "Ваша обратная связь конфиденциальна"
       ]
     },
     "collider_2025: Hint": {
@@ -2041,9 +2029,6 @@
       "No usage yet": [
         "Пока не использовался"
       ],
-      "Only the text below will be sent. Images and other attachments are not included. Remove anything you don't want shared.": [
-        "Будет отправлен только текст ниже. Изображения и другие вложения не прилагаются. Удалите все, чем вы не хотите делиться."
-      ],
       "Over capacity": [
         "Превышен лимит"
       ],
@@ -2100,9 +2085,6 @@
       ],
       "Secure connection (encrypted)": [
         "Безопасное соединение (зашифровано)"
-      ],
-      "Share your prompt and the response with us.": [
-        "Поделитесь с нами своим промптом и ответом."
       ],
       "Shared by ${ file.sharedBy }": [
         "Поделился: ${ file.sharedBy }"
@@ -2172,15 +2154,6 @@
       ],
       "This folder is empty": [
         "Эта папка пуста"
-      ],
-      "This is the only time we see your content. We use it to improve our system prompts and understand how issues occurred. This data is automatically deleted after 90 days.": [
-        "Это единственный случай, когда мы видим ваш контент. Мы используем его, чтобы улучшить наши системные промпты и понять, как возникли проблемы. Эти данные автоматически удаляются через 90 дней."
-      ],
-      "This lets us know you were happy with the response. We never see your prompt or ${ LUMO_SHORT_APP_NAME }'s reply.": [
-        "Так мы узнаем, что вы остались довольны ответом. Мы никогда не видим ваш промпт или ответ ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "This lets us know you weren't happy with the response. We never see your prompt or ${ LUMO_SHORT_APP_NAME }'s reply unless you explicitly share it with us.": [
-        "Так мы узнаем, что вы остались недовольны ответом. Мы никогда не видим ваш промпт или ответ ${ LUMO_SHORT_APP_NAME }, если только вы явно не поделитесь ими с нами."
       ],
       "To get started, please open ${ DRIVE_APP_NAME } to set up your secure storage.": [
         "Чтобы начать работу, пожалуйста, откройте ${ DRIVE_APP_NAME }, чтобы настроить защищенное хранилище."
@@ -2273,9 +2246,6 @@
     "collider_2025: Label": {
       "AI model": [
         "Модель ИИ"
-      ],
-      "AI response": [
-        "Ответ ИИ"
       ],
       "Answer mode": [
         "Режим ответов"
@@ -2405,9 +2375,6 @@
       ],
       "You": [
         "Вы"
-      ],
-      "Your prompt": [
-        "Ваш промпт"
       ],
       "Your workflow": [
         "Ваш рабочий процесс"
@@ -7683,9 +7650,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand }, заканчивающаяся на ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 ТБ в облачном хранилище для удобного хранения, синхронизации и обмена файлами. Защищено сквозным шифрованием."
       ],
@@ -8463,17 +8427,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Цена продления зависит от региона выставления счета и номера НДС."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay — карта, оканчивающаяся на ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Банковский перевод — ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay — карта, заканчивающаяся на ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

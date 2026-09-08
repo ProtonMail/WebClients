@@ -451,6 +451,9 @@
       "Failed to import Markdown due to unknown error.": [
         "Markdown kodu bilinmeyen bir sorun nedeniyle içe aktarılamadı."
       ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "OpenDocument dosyası bilinmeyen bir sorun nedeniyle içe aktarılamadı."
+      ],
       "Failed to import Word document due to unknown error.": [
         "Word dosyası bilinmeyen bir sorun nedeniyle içe aktarılamadı."
       ],
@@ -781,6 +784,11 @@
       ],
       "Rename": [
         "Yeniden adlandır"
+      ]
+    },
+    "sheets_2025:Sheet tab rename": {
+      "A sheet with this name already exists": [
+        "Aynı adlı bir sayfa zaten var"
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {

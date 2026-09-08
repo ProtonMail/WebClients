@@ -4605,9 +4605,6 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Imate neplaćene račune. Platite ih prije pridruživanja obiteljskom planu."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Pozvani ste da povežete svoj ${ BRAND_NAME } korisnički račun s ovim obiteljskim planom i zajedno uživate u svim ${ brandOrAppName } premium značajkama."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Vaš korisnički račun ima više adresa e-pošte nego što vam je dostupno u ovom planu. ${ addressSettingsLink }"
       ],
@@ -8788,9 +8785,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } završava na ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB pohrane u oblaku koja vam omogućuje jednostavno pohranjivanje, sinkronizaciju i dijeljenje datoteka. Zaštićeno end-to-end šifriranjem."
       ],
@@ -10032,17 +10026,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Cijena obnove ovisi o regiji naplate i PDV broju."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay – kartica koja završava na ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Bankovni prijenos – ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - kartica koja završava na ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

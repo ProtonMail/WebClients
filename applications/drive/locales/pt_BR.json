@@ -1862,6 +1862,9 @@
         "${ users } usuário",
         "${ users } usuários"
       ],
+      "Amount due after trial": [
+        "Valor devido após o período de avaliação"
+      ],
       "Subtotal": [
         "Subtotal"
       ],
@@ -1871,6 +1874,10 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Total for ${ cycle } month": [
+        "Total por ${ cycle } mês",
+        "Total por ${ cycle } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -4571,9 +4578,6 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Você tem faturas não pagas. Você deve pagá-las antes de aderir a um plano familiar."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Você está convidado a vincular sua conta ${ BRAND_NAME } a este plano familiar e, juntos, aproveitarem todos os recursos premium do ${ brandOrAppName }."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Sua conta tem mais endereços de e-mail do que a quantidade que está disponível para você neste plano. ${ addressSettingsLink }"
       ],
@@ -5260,6 +5264,9 @@
         "${ groupCounts } grupo(s) encontrado(s)",
         "${ groupCounts } grupo(s) encontrado(s)"
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "Marca de ${ IDEAL_WERO_BRAND_NAME }"
+      ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } convite pendente",
         "${ invitationsCount } convites pendentes"
@@ -5724,6 +5731,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
+      ],
+      "Do you remember your password?": [
+        "Você lembra sua senha?"
       ],
       "Do you still want to upload it?": [
         "Você ainda quer enviá-lo?",
@@ -6260,6 +6270,9 @@
       "Not enough storage space": [
         "Não há espaço suficiente no armazenamento"
       ],
+      "Not in My files": [
+        "Não em Meus arquivos"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Observação: Os dados ainda podem estar disponíveis localmente em dispositivos onde você instalou ${ DRIVE_APP_NAME }."
       ],
@@ -6465,6 +6478,9 @@
       ],
       "Re-indexing in progress": [
         "Nova indexação em andamento"
+      ],
+      "Read folder context": [
+        "Ler cotexto da pasta"
       ],
       "Read this file": [
         "Ler este arquivo"
@@ -9377,9 +9393,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } com final ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB de armazenamento em nuvem que permite armazenar, sincronizar e compartilhar arquivos com facilidade. Protegido por criptografia de ponta a ponta."
       ],
@@ -10791,17 +10804,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "O preço de renovação depende da região de faturamento e do número de IVA."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - cartão terminado em ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Transferência bancária - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - cartão terminado em ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

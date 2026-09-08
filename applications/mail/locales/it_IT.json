@@ -5861,9 +5861,6 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Hai delle fatture non pagate. Si prega di pagarle prima di aderire ad un piano famiglia."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Hai ricevuto un invito a collegare il tuo account ${ BRAND_NAME } a questo piano famiglia, per beneficiare insieme di tutte le funzioni premium di ${ brandOrAppName }."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Il tuo account ha più indirizzi email rispetto alla disponibilità di questo piano. ${ addressSettingsLink }"
       ],
@@ -7929,8 +7926,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -10586,6 +10582,9 @@
       "Sign emails": [
         "Firma email"
       ],
+      "Signature": [
+        "Firma"
+      ],
       "Size:": [
         "Dimensione:"
       ],
@@ -12114,9 +12113,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } che termina con ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB di archiviazione cloud che ti consente di archiviare, sincronizzare e condividere i file facilmente. Protetto da crittografia end-to-end."
       ],
@@ -12932,6 +12928,99 @@
       ]
     },
     "Option": {
+      "10th of the month": [
+        "10° giorno del mese"
+      ],
+      "11th of the month": [
+        "11° giorno del mese"
+      ],
+      "12th of the month": [
+        "12° giorno del mese"
+      ],
+      "13th of the month": [
+        "13° giorno del mese"
+      ],
+      "14th of the month": [
+        "14° giorno del mese"
+      ],
+      "15th of the month": [
+        "15° giorno del mese"
+      ],
+      "16th of the month": [
+        "16° giorno del mese"
+      ],
+      "17th of the month": [
+        "17° giorno del mese"
+      ],
+      "18th of the month": [
+        "18° giorno del mese"
+      ],
+      "19th of the month": [
+        "19° giorno del mese"
+      ],
+      "1st of the month": [
+        "1° giorno del mese"
+      ],
+      "20th of the month": [
+        "20° giorno del mese"
+      ],
+      "21st of the month": [
+        "21° giorno del mese"
+      ],
+      "22nd of the month": [
+        "22° giorno del mese"
+      ],
+      "23rd of the month": [
+        "23° giorno del mese"
+      ],
+      "24th of the month": [
+        "24° giorno del mese"
+      ],
+      "25th of the month": [
+        "25° giorno del mese"
+      ],
+      "26th of the month": [
+        "26° giorno del mese"
+      ],
+      "27th of the month": [
+        "27° giorno del mese"
+      ],
+      "28th of the month": [
+        "28° giorno del mese"
+      ],
+      "29th of the month": [
+        "29° giorno del mese"
+      ],
+      "2nd of the month": [
+        "2° giorno del mese"
+      ],
+      "30th of the month": [
+        "30° giorno del mese"
+      ],
+      "31st of the month": [
+        "31° giorno del mese"
+      ],
+      "3rd of the month": [
+        "3° giorno del mese"
+      ],
+      "4th of the month": [
+        "4° giorno del mese"
+      ],
+      "5th of the month": [
+        "5° giorno del mese"
+      ],
+      "6th of the month": [
+        "6° giorno del mese"
+      ],
+      "7th of the month": [
+        "7° giorno del mese"
+      ],
+      "8th of the month": [
+        "8° giorno del mese"
+      ],
+      "9th of the month": [
+        "9° giorno del mese"
+      ],
       "Add to existing group": [
         "Aggiungi al gruppo esistente"
       ],
@@ -12944,14 +13033,29 @@
       "Create new group": [
         "Crea nuovo gruppo"
       ],
+      "Fixed duration": [
+        "Durata fissa"
+      ],
       "Ignore group": [
         "Ignora gruppo"
       ],
       "No parent folder": [
         "Nessuna cartella principale"
       ],
+      "Permanent": [
+        "Permanente"
+      ],
       "Remind me later": [
         "Ricordamelo più tardi"
+      ],
+      "Repeat daily": [
+        "Ripeti ogni giorno"
+      ],
+      "Repeat monthly": [
+        "Ripetere ogni mese"
+      ],
+      "Repeat weekly": [
+        "Ripetere ogni settimana"
       ],
       "Yes, don't show again": [
         "Sì, non mostrare più"
@@ -13322,17 +13426,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Il prezzo del rinnovo dipende dalla regione di fatturazione e dal numero di partita IVA."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - carta che termina con ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Bonifico bancario - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - carta che termina con ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

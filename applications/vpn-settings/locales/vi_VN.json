@@ -5530,9 +5530,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "Cần cấu hình miền tùy chỉnh trước khi tạo người dùng mới."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Bạn được mời liên kết Tài khoản ${ BRAND_NAME } với gói family này và cùng tận hưởng tất cả tính năng cao cấp của ${ brandOrAppName }."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Tài khoản có nhiều địa chỉ email hơn mức cho phép trong gói này. ${ addressSettingsLink }"
       ],
@@ -8457,9 +8454,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Gói đăng ký sắp kết thúc: Để giữ quyền lợi ${ planName }, hãy bắt đầu lại gói đăng ký trong Google Play Store trước ${ byDate }. ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "Gói đăng ký bắt đầu vào ${ startsOnTime }"
-      ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Hỗ trợ giám sát các miền tùy chỉnh và địa chỉ email không thuộc ${ BRAND_NAME } sẽ sớm ra mắt."
       ],
@@ -8744,9 +8738,6 @@
       ],
       "Total VPN connections": [
         "Tổng số kết nối VPN"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "Bản dùng thử kết thúc vào ${ formattedPeriodEndDate }"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Dùng thử ${ productName } hoàn toàn không rủi ro - nếu vì bất kỳ lý do gì bạn thay đổi ý định, bạn sẽ được hoàn tiền đầy đủ. Không cần lý do."
@@ -11879,9 +11870,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } kết thúc bằng ${ last4 }"
-      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } cho phép tạo địa chỉ email và quản lý tài khoản cho người dùng phụ. Lý tưởng cho gia đình và tổ chức."
       ],
@@ -13321,17 +13309,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Giá gia hạn phụ thuộc vào khu vực thanh toán và mã số thuế VAT."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - thẻ có đuôi ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Chuyển khoản ngân hàng - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - thẻ có số đuôi ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

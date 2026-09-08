@@ -5917,9 +5917,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "Перш ніж створити нового користувача, потрібно налаштувати власний домен."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Запрошуємо вас прив'язати свій ${ BRAND_NAME } до цього сімейного плану і разом користуватися всіма преміумфункціями ${ brandOrAppName }."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ваш обліковий запис має більше адрес електронної пошти, ніж доступно в цьому плані. ${ addressSettingsLink }"
       ],
@@ -7838,6 +7835,9 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "Для відновлення даних необхідний спосіб скидання пароля (електронна пошта або SMS)"
       ],
+      "Debug transcript copied": [
+        "Журнал налагодження скопійовано"
+      ],
       "dedicated servers": [
         "виділені сервери"
       ],
@@ -9113,9 +9113,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Передплата закінчується: щоб зберегти переваги тарифного плану ${ planName }, поновіть передплату в Google Play Маркеті до ${ byDate }. ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "Передплата починається ${ startsOnTime }"
-      ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Незабаром з'явиться підтримка моніторингу власних доменів та адрес електронної пошти, що не належать до ${ BRAND_NAME }."
       ],
@@ -9442,9 +9439,6 @@
       ],
       "Total VPN connections": [
         "Усього VPN-з'єднань"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "Пробний період закінчується ${ formattedPeriodEndDate }"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Спробуйте ${ productName } абсолютно без ризику — якщо з будь-якої причини ви зміните свою думку, ви отримаєте повне повернення коштів. Без зайвих запитань."
@@ -12763,9 +12757,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand }, що закінчується на ${ last4 }"
-      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } дає вам змогу створювати адреси електронної пошти й керувати обліковими записами підлеглих користувачів. Ідеально для сім'ї та організацій."
       ],
@@ -14247,17 +14238,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Ціна поновлення залежить від платіжного регіону та податкового номера ПДВ."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay – картка, що закінчується на ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Банківський переказ – ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay – картка, що закінчується на ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

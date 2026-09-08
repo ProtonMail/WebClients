@@ -5576,9 +5576,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "Kailangang i-configure ang custom na domain bago gumawa ng bagong user."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Iniimbitahan kang i-link ang iyong ${ BRAND_NAME } Account sa family plan na ito at sama-samang i-enjoy ang lahat ng premium feature ng ${ brandOrAppName }."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "May higit na email address ang account kaysa sa available sa planong ito. ${ addressSettingsLink }"
       ],
@@ -8572,9 +8569,6 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Matatapos na ang subscription: Para mapanatili ang mga benepisyo ng ${ planName }, i-restart ang subscription sa Google Play Store bago sumapit ang ${ byDate }. ${ reactivateLink }"
       ],
-      "Subscription starts on ${ startsOnTime }": [
-        "Magsisimula ang subscription sa ${ startsOnTime }"
-      ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Paparating na ang suporta para sa pagsubaybay ng mga custom na domain at hindi ${ BRAND_NAME } na mga email address."
       ],
@@ -8862,9 +8856,6 @@
       ],
       "Total VPN connections": [
         "Kabuuang mga koneksyon ng VPN"
-      ],
-      "Trial ends on ${ formattedPeriodEndDate }": [
-        "Matatapos ang pagsubok sa ${ formattedPeriodEndDate }"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Subukan ang ${ productName } nang walang panganib - kung magbago ang isip mo sa anumang dahilan, makakatanggap ka ng buong refund. Wala nang itatanong"
@@ -12057,9 +12048,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } na nagtatapos sa ${ last4 }"
-      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "Hinahayaan ka ng ${ BRAND_NAME } na gumawa ng mga email address at pamahalaan ang mga account para sa mga sub-user. Mainam para sa mga pamilya at organisasyon."
       ],
@@ -13513,17 +13501,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Ang presyo ng pag-renew ay nakadepende sa rehiyon ng pagsingil at VAT number."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - card na nagtatapos sa ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Bank transfer - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - card na nagtatapos sa ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

@@ -451,6 +451,9 @@
       "Failed to import Markdown due to unknown error.": [
         "Αποτυχία εισαγωγής Markdown λόγω άγνωστου σφάλματος."
       ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "Η εισαγωγή του αρχείου OpenDocument απέτυχε λόγω άγνωστου σφάλματος."
+      ],
       "Failed to import Word document due to unknown error.": [
         "Αποτυχία εισαγωγής εγγράφου του Word λόγω άγνωστου σφάλματος."
       ],
@@ -781,6 +784,11 @@
       ],
       "Rename": [
         "Μετονομασία"
+      ]
+    },
+    "sheets_2025:Sheet tab rename": {
+      "A sheet with this name already exists": [
+        "Υπάρχει ήδη ένα φύλλο με αυτό το όνομα"
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {

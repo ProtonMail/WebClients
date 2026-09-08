@@ -124,6 +124,9 @@
       "Bulk restore items from trash": [
         "Restaurar un grupo de elementos de la papelera"
       ],
+      "Bulk select items": [
+        "Seleccionar un grupo de elementos"
+      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -510,6 +513,9 @@
       ],
       "Move to Trash": [
         "Mover a la papelera"
+      ],
+      "Multiple select": [
+        "Selección múltiple"
       ],
       "New token": [
         "Token nuevo"
@@ -4593,11 +4599,20 @@
       ]
     },
     "Result": {
+      "Enter a URL to check if it matches the current rule": [
+        "Ingrese una URL para comprobar si coincide con la regla actual"
+      ],
       "This URL will be blocked from autofill": [
         "Esta URL se bloqueará del completado automático"
       ],
       "This URL will NOT be blocked from autofill": [
         "Esta URL NO se bloqueará del completado automático"
+      ],
+      "URL doesn't match the rule": [
+        "La URL no coincide con la regla actual"
+      ],
+      "URL matches the rule": [
+        "La URL coincide con la regla"
       ]
     },
     "Security Center - Info": {

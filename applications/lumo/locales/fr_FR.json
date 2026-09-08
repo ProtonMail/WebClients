@@ -948,6 +948,15 @@
         "${ users } utilisateur",
         "${ users } utilisateurs"
       ],
+      "Amount due": [
+        "Montant dû"
+      ],
+      "Amount due after trial": [
+        "Montant dû après la période d'essai"
+      ],
+      "Amount due now": [
+        "Montant dû maintenant"
+      ],
       "Subtotal": [
         "Sous-total"
       ],
@@ -957,6 +966,10 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Total for ${ cycle } month": [
+        "Total pour ${ cycle } mois",
+        "Total pour ${ cycle } mois"
       ]
     },
     "Collapsible tooltip": {
@@ -1088,6 +1101,9 @@
       "New chat": [
         "Nouvelle session de chat"
       ],
+      "Not now": [
+        "Pas maintenant"
+      ],
       "Open ${ DRIVE_APP_NAME }": [
         "Ouvrir ${ DRIVE_APP_NAME }"
       ],
@@ -1115,9 +1131,6 @@
       "Select all": [
         "Tout sélectionner"
       ],
-      "Send feedback": [
-        "Envoyer un commentaire"
-      ],
       "Send message": [
         "Envoyer le message"
       ],
@@ -1139,14 +1152,14 @@
       "Submit": [
         "Envoyer"
       ],
-      "Switch to Max": [
-        "Passer au mode Max"
-      ],
       "System": [
         "Système"
       ],
       "Try again": [
         "Essayer à nouveau"
+      ],
+      "Try Apertus": [
+        "Essayer Apertus"
       ],
       "Turn off and delete": [
         "Désactiver et supprimer"
@@ -1172,6 +1185,9 @@
       ],
       "Upload from device": [
         "Importer depuis un appareil"
+      ],
+      "Use Apertus": [
+        "Utiliser Apertus"
       ],
       "Web search": [
         "Recherche web"
@@ -1744,14 +1760,11 @@
       "Choose sheets to add": [
         "Choisir les feuilles à ajouter"
       ],
-      "Review what you're sharing": [
-        "Vérifiez ce que vous partagez"
+      "Help us improve": [
+        "Aidez-nous à nous améliorer"
       ],
       "Tell us more": [
         "Dites-nous-en plus"
-      ],
-      "Your feedback is private": [
-        "Vos commentaires sont confidentiels"
       ]
     },
     "collider_2025: Hint": {
@@ -2075,9 +2088,6 @@
       "No usage yet": [
         "Aucune utilisation pour l'instant"
       ],
-      "Only the text below will be sent. Images and other attachments are not included. Remove anything you don't want shared.": [
-        "Seul le texte ci-dessous sera envoyé. Les images et autres pièces jointes ne seront pas transmises. Supprimez tout ce que vous ne souhaitez pas partager."
-      ],
       "Over capacity": [
         "Au-dessus de la capacité"
       ],
@@ -2134,12 +2144,6 @@
       ],
       "Secure connection (encrypted)": [
         "Connexion sécurisée (chiffrée)"
-      ],
-      "Share this feedback with the Apertus team to help them improve their model.": [
-        "Partagez ces commentaires avec l'équipe d'Apertus afin de l'aider à améliorer son modèle."
-      ],
-      "Share your prompt and the response with us.": [
-        "Partagez avec nous votre prompt et la réponse correspondante."
       ],
       "Shared by ${ file.sharedBy }": [
         "Partagé par ${ file.sharedBy }"
@@ -2215,15 +2219,6 @@
       ],
       "This folder is empty": [
         "Ce dossier est vide"
-      ],
-      "This is the only time we see your content. We use it to improve our system prompts and understand how issues occurred. This data is automatically deleted after 90 days.": [
-        "C'est la seule fois où nous avons accès à votre contenu. Nous l'utilisons pour améliorer les messages d'aide de notre système et comprendre comment les problèmes se sont produits. Ces données seront automatiquement supprimées au bout de 90 jours."
-      ],
-      "This lets us know you were happy with the response. We never see your prompt or ${ LUMO_SHORT_APP_NAME }'s reply.": [
-        "Cela nous indique que vous êtes satisfait de la réponse. Nous n'avons jamais accès à votre demande ni à la réponse de ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "This lets us know you weren't happy with the response. We never see your prompt or ${ LUMO_SHORT_APP_NAME }'s reply unless you explicitly share it with us.": [
-        "Cela nous indique que vous n'êtes pas satisfait de la réponse. Nous n'avons jamais accès à votre demande ni à la réponse de ${ LUMO_SHORT_APP_NAME }, sauf si vous choisissez explicitement de nous les communiquer."
       ],
       "To get started, please open ${ DRIVE_APP_NAME } to set up your secure storage.": [
         "Pour commencer, veuillez ouvrir ${ DRIVE_APP_NAME } pour configurer votre espace de stockage sécurisé."
@@ -2325,9 +2320,6 @@
     "collider_2025: Label": {
       "AI model": [
         "modèle IA"
-      ],
-      "AI response": [
-        "Réponse de l'IA"
       ],
       "Answer mode": [
         "Mode réponse"
@@ -2458,9 +2450,6 @@
       "You": [
         "Vous"
       ],
-      "Your prompt": [
-        "Votre prompt"
-      ],
       "Your workflow": [
         "Votre workflow"
       ]
@@ -2482,6 +2471,9 @@
       ]
     },
     "collider_2025: Link": {
+      "${ BRAND_NAME } blog": [
+        "Blog ${ BRAND_NAME }"
+      ],
       "add ${ LUMO_SHORT_APP_NAME } Plus": [
         "ajouter ${ LUMO_SHORT_APP_NAME } Plus"
       ],
@@ -2536,9 +2528,6 @@
       ],
       "Create an account or sign in to save your chats and increase limits.": [
         "Créez un compte ou connectez-vous pour enregistrer vos discussions et augmenter les limites."
-      ],
-      "You're on ${ selectedModelLabel }. Switch to Max for more capable answers.": [
-        "Vous utilisez ${ selectedModelLabel }. Passez à la version Max pour obtenir des réponses plus complètes."
       ]
     },
     "collider_2025: Option": {
@@ -6473,6 +6462,12 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur Demander un nouveau code pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone n'est pas correct, cliquez sur Modifier pour le corriger."
       ],
+      "Connecting…": [
+        "Connexion en cours…"
+      ],
+      "Connection error": [
+        "Erreur de connexion"
+      ],
       "Country code": [
         "Indicatif du pays"
       ],
@@ -6632,6 +6627,9 @@
       ],
       "Learn more": [
         "En savoir plus"
+      ],
+      "Listening…": [
+        "J'écoute…"
       ],
       "Loading": [
         "Chargement"
@@ -8230,8 +8228,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } se terminant par ${ last4 }"
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } se terminant par ${ Last4 }"
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 To d'espace de stockage cloud qui vous permet de stocker, synchroniser et partager des fichiers facilement. Sécurisé par un chiffrement de bout en bout."
@@ -8971,6 +8969,11 @@
         "Les crédits seront ajoutés à votre solde."
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "La modification de votre adresse de facturation peut avoir une incidence sur les taxes figurant sur vos prochaines factures."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Voulez-vous vraiment continuer ?"
@@ -9008,14 +9011,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - carte se terminant par les chiffres ${ paymentMethod.Details.Last4 }"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - carte se terminant par les chiffres ${ Last4 }"
       ],
-      "Bank transfer - ${ details }": [
-        "Virement bancaire - ${ details }"
+      "Bank transfer - ${ iban }": [
+        "Virement bancaire - ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - carte se terminant par les chiffres ${ paymentMethod.Details.Last4 }"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - carte se terminant par les chiffres ${ Last4 }"
       ]
     },
     "Payments.Sepa": {

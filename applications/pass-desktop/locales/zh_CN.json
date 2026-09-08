@@ -124,6 +124,9 @@
       "Bulk restore items from trash": [
         "从回收站中批量还原项目"
       ],
+      "Bulk select items": [
+        "批量选择项目"
+      ],
       "Cancel": [
         "取消"
       ],
@@ -510,6 +513,9 @@
       ],
       "Move to Trash": [
         "移至回收站"
+      ],
+      "Multiple select": [
+        "多选"
       ],
       "New token": [
         "新建令牌"
@@ -905,6 +911,9 @@
       ],
       "Check if your passwords have been exposed": [
         "检查您的密码是否已泄漏"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "正在检查 ${ compromised.progress.completed } / ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "创建唯一密码"
@@ -1814,6 +1823,9 @@
       "Change your password": [
         "更改密码"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "正在检查 ${ compromised.progress.completed } / ${ compromised.progress.total } 个密码"
+      ],
       "Confirm your extra password to proceed with its removal.": [
         "确认您的额外密码以继续删除。"
       ],
@@ -2227,6 +2239,9 @@
       ],
       "None": [
         "无"
+      ],
+      "None of your saved passwords have appeared in a known data breach.": [
+        "您保存的密码均未出现在已知数据泄露中。"
       ],
       "None selected": [
         "未选择"
@@ -2756,6 +2771,9 @@
       "Verification code sent.": [
         "验证码已发送。"
       ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "离线查看您的 ${ PASS_SHORT_APP_NAME } 项目，这需要您的密码才能启用。"
+      ],
       "Viewer": [
         "查看者"
       ],
@@ -2802,7 +2820,7 @@
         "您不能更改此别名的邮箱。"
       ],
       "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "您有 ${ aliasCount } 个在 SimpleLogin 中存在但在 ${ PASS_APP_NAME } 中丢失的别名。您想同步吗？"
+        "您有 ${ aliasCount } 个别名存在于 SimpleLogin 中，但在 ${ PASS_APP_NAME } 中缺失。是否要同步它们？"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "您还剩 ${ daysRemaining } 天来尝试这些及其他高级功能。"
@@ -4529,11 +4547,20 @@
       ]
     },
     "Result": {
+      "Enter a URL to check if it matches the current rule": [
+        "输入 URL 以检查其是否匹配当前规则"
+      ],
       "This URL will be blocked from autofill": [
         "此 URL 将被阻止自动填充"
       ],
       "This URL will NOT be blocked from autofill": [
         "此 URL 不会被阻止自动填充"
+      ],
+      "URL doesn't match the rule": [
+        "URL 不匹配规则"
+      ],
+      "URL matches the rule": [
+        "URL 匹配规则"
       ]
     },
     "Security Center - Info": {
@@ -4875,6 +4902,9 @@
       ],
       "Domain ownership verification": [
         "域名所有权验证"
+      ],
+      "Enable offline mode": [
+        "启用离线模式"
       ],
       "Encrypted import": [
         "已加密导入"

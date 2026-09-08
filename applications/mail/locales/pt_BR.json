@@ -2733,6 +2733,9 @@
         "${ users } usuário",
         "${ users } usuários"
       ],
+      "Amount due after trial": [
+        "Valor devido após o período de avaliação"
+      ],
       "Subtotal": [
         "Subtotal"
       ],
@@ -2742,6 +2745,10 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Total for ${ cycle } month": [
+        "Total por ${ cycle } mês",
+        "Total por ${ cycle } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -5960,9 +5967,6 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Você tem faturas não pagas. Você deve pagá-las antes de aderir a um plano familiar."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Você está convidado a vincular sua conta ${ BRAND_NAME } a este plano familiar e, juntos, aproveitarem todos os recursos premium do ${ brandOrAppName }."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Sua conta tem mais endereços de e-mail do que a quantidade que está disponível para você neste plano. ${ addressSettingsLink }"
       ],
@@ -7018,6 +7022,9 @@
         "${ groupCounts } grupo(s) encontrado(s)",
         "${ groupCounts } grupo(s) encontrado(s)"
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "Marca de ${ IDEAL_WERO_BRAND_NAME }"
+      ],
       "${ issues.length } issue during import:": [
         "${ issues.length } problema durante a importação:",
         "${ issues.length } problemas durante a importação:"
@@ -7486,6 +7493,9 @@
       "Center": [
         "Centralizar"
       ],
+      "Change display setting": [
+        "Alterar configuração de exibição"
+      ],
       "Change your password": [
         "Alterar sua senha"
       ],
@@ -7646,6 +7656,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
+      ],
+      "Do you remember your password?": [
+        "Você lembra sua senha?"
       ],
       "Do you want to download this attachment anyway?": [
         "Você deseja baixar este anexo mesmo assim?",
@@ -8034,8 +8047,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -10031,6 +10043,9 @@
       "Archive": [
         "Arquivar"
       ],
+      "At": [
+        "Às"
+      ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
       ],
@@ -10696,6 +10711,12 @@
       ],
       "Sign emails": [
         "Assinar e-mails"
+      ],
+      "Signature": [
+        "Assinatura"
+      ],
+      "Single messages": [
+        "Mensagens individuais"
       ],
       "Size:": [
         "Tamanho:"
@@ -12237,9 +12258,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand } com final ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB de armazenamento em nuvem que permite armazenar, sincronizar e compartilhar arquivos com facilidade. Protegido por criptografia de ponta a ponta."
       ],
@@ -13050,6 +13068,99 @@
       ]
     },
     "Option": {
+      "10th of the month": [
+        "10º dia do mês"
+      ],
+      "11th of the month": [
+        "11º dia do mês"
+      ],
+      "12th of the month": [
+        "12º dia do mês"
+      ],
+      "13th of the month": [
+        "13º dia do mês"
+      ],
+      "14th of the month": [
+        "14º dia do mês"
+      ],
+      "15th of the month": [
+        "15º dia do mês"
+      ],
+      "16th of the month": [
+        "16º dia do mês"
+      ],
+      "17th of the month": [
+        "17º dia do mês"
+      ],
+      "18th of the month": [
+        "18º dia do mês"
+      ],
+      "19th of the month": [
+        "19º dia do mês"
+      ],
+      "1st of the month": [
+        "1º dia do mês"
+      ],
+      "20th of the month": [
+        "20º dia do mês"
+      ],
+      "21st of the month": [
+        "21º dia do mês"
+      ],
+      "22nd of the month": [
+        "22º dia do mês"
+      ],
+      "23rd of the month": [
+        "23º dia do mês"
+      ],
+      "24th of the month": [
+        "24º dia do mês"
+      ],
+      "25th of the month": [
+        "25º dia do mês"
+      ],
+      "26th of the month": [
+        "26º dia do mês"
+      ],
+      "27th of the month": [
+        "27º dia do mês"
+      ],
+      "28th of the month": [
+        "28º dia do mês"
+      ],
+      "29th of the month": [
+        "29º dia do mês"
+      ],
+      "2nd of the month": [
+        "2º dia do mês"
+      ],
+      "30th of the month": [
+        "30º dia do mês"
+      ],
+      "31st of the month": [
+        "31º dia do mês"
+      ],
+      "3rd of the month": [
+        "3º dia do mês"
+      ],
+      "4th of the month": [
+        "4º dia do mês"
+      ],
+      "5th of the month": [
+        "5º dia do mês"
+      ],
+      "6th of the month": [
+        "6º dia do mês"
+      ],
+      "7th of the month": [
+        "7º dia do mês"
+      ],
+      "8th of the month": [
+        "8º dia do mês"
+      ],
+      "9th of the month": [
+        "9º dia do mês"
+      ],
       "Add to existing group": [
         "Adicionar a um grupo existente"
       ],
@@ -13062,14 +13173,29 @@
       "Create new group": [
         "Criar um grupo"
       ],
+      "Fixed duration": [
+        "Duração fixa"
+      ],
       "Ignore group": [
         "Ignorar grupo"
       ],
       "No parent folder": [
         "Nenhuma pasta acima"
       ],
+      "Permanent": [
+        "Permanente"
+      ],
       "Remind me later": [
         "Lembrar-me depois"
+      ],
+      "Repeat daily": [
+        "Repetir diariamente"
+      ],
+      "Repeat monthly": [
+        "Repetir mensalmente"
+      ],
+      "Repeat weekly": [
+        "Repetir semanalmente"
       ],
       "Yes, don't show again": [
         "Sim, não mostrar novamente"
@@ -13432,17 +13558,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "O preço de renovação depende da região de faturamento e do número de IVA."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - cartão terminado em ${ paymentMethod.Details.Last4 }"
-      ],
-      "Bank transfer - ${ details }": [
-        "Transferência bancária - ${ details }"
-      ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - cartão terminado em ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -16124,6 +16239,9 @@
       ],
       "CC": [
         "CC"
+      ],
+      "Change display setting": [
+        "Alterar configuração de exibição"
       ],
       "Change my answer": [
         "Alterar minha resposta"

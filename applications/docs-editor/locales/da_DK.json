@@ -451,6 +451,9 @@
       "Failed to import Markdown due to unknown error.": [
         "Kunne ikke importere Markdown pga. ukendt fejl."
       ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "Kunne ikke importere OpenDocument-filen på grund af en ukendt fejl."
+      ],
       "Failed to import Word document due to unknown error.": [
         "Kunne ikke importere Word-dokument pga. ukendt fejl."
       ],
@@ -781,6 +784,11 @@
       ],
       "Rename": [
         "Omdøb"
+      ]
+    },
+    "sheets_2025:Sheet tab rename": {
+      "A sheet with this name already exists": [
+        "Et ark med dette navn eksisterer allerede."
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {

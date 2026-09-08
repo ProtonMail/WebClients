@@ -1101,6 +1101,9 @@
       "Preview contact": [
         "Папярэдні прагляд кантакту"
       ],
+      "Preview logs": [
+        "Папярэдні прагляд журналаў"
+      ],
       "Previous": [
         "Папярэдні"
       ],
@@ -2790,6 +2793,15 @@
         "${ users } карыстальнікаў",
         "${ users } карыстальнікаў"
       ],
+      "Amount due": [
+        "Да аплаты"
+      ],
+      "Amount due after trial": [
+        "Сума да аплаты пасля пробнага перыяду"
+      ],
+      "Amount due now": [
+        "Сума да аплаты"
+      ],
       "Subtotal": [
         "Прамежкавы вынік"
       ],
@@ -2801,6 +2813,12 @@
       ],
       "Total": [
         "Агулам"
+      ],
+      "Total for ${ cycle } month": [
+        "Усяго за ${ cycle } месяц",
+        "Усяго за ${ cycle } месяцы",
+        "Усяго за ${ cycle } месяцаў",
+        "Усяго за ${ cycle } месяцаў"
       ]
     },
     "Collapsible tooltip": {
@@ -6156,8 +6174,8 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "У вас ёсць неаплачаныя рахункі. Аплаціце іх перад тым, як далучыцца да сямейнага тарыфнага плана."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Вас запрашаюць далучыць свой уліковы запіс ${ BRAND_NAME } да гэтага сямейнага тарыфнага плана, каб разам выкарыстоўваць усе прэміяльныя функцыі ${ brandOrAppName }."
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Вас запрашаюць далучыць свой уліковы запіс ${ BRAND_NAME } да гэтай сямейнай групы і разам выкарыстоўваць усе яго прэміяльныя функцыі."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Колькасць адрасоў электроннай пошты вашага ўліковага запісу перавышае дазволенае значэнне для вашага бягучага тарыфнага плана. ${ addressSettingsLink }"
@@ -7932,6 +7950,9 @@
         "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў",
         "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў"
       ],
+      "Create filter": [
+        "Стварыць фільтр"
+      ],
       "Create folder": [
         "Стварыць папку"
       ],
@@ -8006,6 +8027,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Лагатып Discover ProtectBuy"
+      ],
+      "Do you remember your password?": [
+        "Вы памятаеце свой пароль?"
       ],
       "Do you want to download this attachment anyway?": [
         "Вы сапраўды хочаце спампаваць гэта далучэнне?",
@@ -8419,10 +8443,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -8727,6 +8748,9 @@
       "Opened ${ location }": [
         "Адкрыта ${ location }"
       ],
+      "Opened a problem report": [
+        "Адкрыта справаздача аб праблеме"
+      ],
       "Optional": [
         "Неабавязкова"
       ],
@@ -8940,8 +8964,14 @@
         "Прачытайце свае ${ count } метак",
         "Прачытайце свае ${ count } метак"
       ],
+      "Read your auto-reply": [
+        "Чытанне вашага аўтаматычнага адказу"
+      ],
       "Read your display settings": [
         "Чытанне наладаў дысплэя"
+      ],
+      "Read your signature": [
+        "Чытанне вашага подпісу"
       ],
       "Recipient: ": [
         "Атрымальнік: "
@@ -8966,6 +8996,9 @@
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Выдаліце ўсе даныя, якія звязаны з гэтай праграмай (уключаючы спампаваныя паведамленні, …)"
+      ],
+      "Rename folder": [
+        "Перайменаваць папку"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Адпраўляючы скаргу пра спробу фішынгу, вы адправіце гэта паведамленне нам, каб мы маглі прааналізаваць яго і палепшыць нашы фільтры. Гэта азначае, што мы зможам цалкам убачыць змесціва гэтага паведамлення."
@@ -9092,6 +9125,12 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Задаць ${ MAIL_APP_NAME } у якасці прадвызначанай паштовай праграмы. ${ MAIL_APP_NAME } будзе адкрывацца аўтаматычна пры націску на спасылку электроннай пошты."
+      ],
+      "Set auto-reply": [
+        "Задаць аўтаматычны адказ"
+      ],
+      "Set signature": [
+        "Задаць подпіс"
       ],
       "Set up your organization": [
         "Наладзьце сваю арганізацыю"
@@ -9536,6 +9575,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Паспрабуйце новыя функцыі, абнаўленні і прадукты ${ BRAND_NAME } перад тым, як яны будуць выпушчаны для шырокага кола карыстальнікаў. Гэта прывядзе да перазапуску праграмы"
+      ],
+      "Turn off auto-reply": [
+        "Выключыць аўтаматычны адказ"
       ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "Выключыце, каб шукаць толькі па даце, імі, адрасе электроннай пошты або радку тэмы. Перайдзіце ў налады, каб адключыць пошук па змесціве паведамлення (і выдаліць спампаваныя паведамленні, каб уключыць гэту функцыю)."
@@ -10550,6 +10592,9 @@
       "Automated confirmations and alerts": [
         "Аўтаматычныя пацвярджэнні і абвесткі"
       ],
+      "Away message": [
+        "Паведамленне аб адсутнасці"
+      ],
       "BCC": [
         "Схаваная копія"
       ],
@@ -10850,6 +10895,12 @@
       "From": [
         "Ад"
       ],
+      "From date": [
+        "З даты"
+      ],
+      "From time": [
+        "З часу"
+      ],
       "From:": [
         "Ад:"
       ],
@@ -11039,6 +11090,9 @@
       "Never fill on this exact URL": [
         "Ніколі не запаўняць з гэтага дакладнага URL-адраса"
       ],
+      "New name": [
+        "Новая назва"
+      ],
       "New password": [
         "Новы пароль"
       ],
@@ -11225,6 +11279,9 @@
       "Sign emails": [
         "Падпісваць лісты"
       ],
+      "Signature": [
+        "Подпіс"
+      ],
       "Single messages": [
         "Асобныя паведамленні"
       ],
@@ -11338,6 +11395,12 @@
       ],
       "Unsubscribed from ${ truncatedName }.": [
         "Адпісаны ад ${ truncatedName }."
+      ],
+      "Until date": [
+        "Да даты"
+      ],
+      "Until time": [
+        "Да часу"
       ],
       "Updates": [
         "Абнаўленні"
@@ -11544,6 +11607,12 @@
     "Link": {
       "Add a gift code": [
         "Дадаць падарункавы код"
+      ],
+      "Add formatting, links or images": [
+        "Дадаць фарматаванне, спасылкі або відарысы"
+      ],
+      "Advanced auto-reply options": [
+        "Пашыраныя параметры аўтаматычнага адказу"
       ],
       "All mail": [
         "Уся пошта"
@@ -12859,8 +12928,8 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand }, якая заканчваецца на ${ last4 }"
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand }, якая заканчваецца на ${ Last4 }"
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 ТБ воблачнага сховішча, якое дазваляе вам лёгка захоўваць, сінхранізаваць і абагульваць файлы. Абаронена скразным шыфраваннем."
@@ -13685,6 +13754,99 @@
       ]
     },
     "Option": {
+      "10th of the month": [
+        "10-ае чысло месяца"
+      ],
+      "11th of the month": [
+        "11-ае чысло месяца"
+      ],
+      "12th of the month": [
+        "12-ае чысло месяца"
+      ],
+      "13th of the month": [
+        "13-ае чысло месяца"
+      ],
+      "14th of the month": [
+        "14-ае чысло месяца"
+      ],
+      "15th of the month": [
+        "15-ае чысло месяца"
+      ],
+      "16th of the month": [
+        "16-ае чысло месяца"
+      ],
+      "17th of the month": [
+        "17-ае чысло месяца"
+      ],
+      "18th of the month": [
+        "18-ае чысло месяца"
+      ],
+      "19th of the month": [
+        "19-ае чысло месяца"
+      ],
+      "1st of the month": [
+        "1-ае чысло месяца"
+      ],
+      "20th of the month": [
+        "20-ае чысло месяца"
+      ],
+      "21st of the month": [
+        "21-ае чысло месяца"
+      ],
+      "22nd of the month": [
+        "22-ое чысло месяца"
+      ],
+      "23rd of the month": [
+        "23-яе чысло месяца"
+      ],
+      "24th of the month": [
+        "24-ае чысло месяца"
+      ],
+      "25th of the month": [
+        "25-ае чысло месяца"
+      ],
+      "26th of the month": [
+        "26-ае чысло месяца"
+      ],
+      "27th of the month": [
+        "27-ае чысло месяца"
+      ],
+      "28th of the month": [
+        "28-ае чысло месяца"
+      ],
+      "29th of the month": [
+        "29-ае чысло месяца"
+      ],
+      "2nd of the month": [
+        "2-ое чысло месяца"
+      ],
+      "30th of the month": [
+        "30-ае чысло месяца"
+      ],
+      "31st of the month": [
+        "31-ае чысло месяца"
+      ],
+      "3rd of the month": [
+        "3-яе чысло месяца"
+      ],
+      "4th of the month": [
+        "4-ае чысло месяца"
+      ],
+      "5th of the month": [
+        "5-ае чысло месяца"
+      ],
+      "6th of the month": [
+        "6-ае чысло месяца"
+      ],
+      "7th of the month": [
+        "7-ае чысло месяца"
+      ],
+      "8th of the month": [
+        "8-ае чысло месяца"
+      ],
+      "9th of the month": [
+        "9-ае чысло месяца"
+      ],
       "Add to existing group": [
         "Дадаць у існуючую групу"
       ],
@@ -13697,14 +13859,29 @@
       "Create new group": [
         "Стварыць новую групу"
       ],
+      "Fixed duration": [
+        "Фіксаваная працягласць"
+      ],
       "Ignore group": [
         "Ігнараваць групу"
       ],
       "No parent folder": [
         "Адсутнічае бацькоўская папка"
       ],
+      "Permanent": [
+        "Пастаянна"
+      ],
       "Remind me later": [
         "Нагадаць мне пазней"
+      ],
+      "Repeat daily": [
+        "Паўтараць штодзень"
+      ],
+      "Repeat monthly": [
+        "Паўтараць штомесяц"
+      ],
+      "Repeat weekly": [
+        "Паўтараць штотыдзень"
       ],
       "Yes, don't show again": [
         "Так, больш не паказваць"
@@ -14050,6 +14227,11 @@
         "Крэдыты будуць дададзены на ваш баланс"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Змяненне вашага адраса аплаты можа паўплываць на падаткі ў будучых рахунках"
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Вы сапраўды хочаце працягнуць?"
@@ -14087,14 +14269,14 @@
       ]
     },
     "Payments.Saved payment method details": {
-      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - картка, якая заканчваецца на ${ paymentMethod.Details.Last4 }"
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - картка, якая заканчваецца на ${ Last4 }"
       ],
-      "Bank transfer - ${ details }": [
-        "Банкаўскі перавод - ${ details }"
+      "Bank transfer - ${ iban }": [
+        "Банкаўскі перавод - ${ iban }"
       ],
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay — картка, якая заканчваецца на ${ paymentMethod.Details.Last4 }"
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay — картка, якая заканчваецца на ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -17021,6 +17203,9 @@
       "Create contact": [
         "Стварэнне кантакту"
       ],
+      "Create filter": [
+        "Стварыць фільтр"
+      ],
       "Create folder": [
         "Стварыць папку"
       ],
@@ -17618,6 +17803,9 @@
       "Remove from list?": [
         "Выдаліць са спіса?"
       ],
+      "Rename folder": [
+        "Перайменаваць папку"
+      ],
       "Reply": [
         "Адказаць"
       ],
@@ -17702,11 +17890,17 @@
       "September Sale": [
         "Вераснёўскі распродаж"
       ],
+      "Set auto-reply": [
+        "Задаць аўтаматычны адказ"
+      ],
       "Set recovery methods": [
         "Прызначэнне спосабаў аднаўлення"
       ],
       "Set recovery phrase": [
         "Задаць фразу аднаўлення"
+      ],
+      "Set signature": [
+        "Задаць подпіс"
       ],
       "Set up ${ protonDuoPlanName }": [
         "Наладжванне ${ protonDuoPlanName }"
@@ -17809,6 +18003,9 @@
       ],
       "Trust public key?": [
         "Давяраць адкрытаму ключу?"
+      ],
+      "Turn off auto-reply": [
+        "Выключыць аўтаматычны адказ"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Уключэнне ${ DARK_WEB_MONITORING_NAME }"

@@ -5799,9 +5799,6 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Imate neplačane račune. Plačajte jih, preden se boste pridružili družinskemu paketu."
       ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Povabljeni ste, da povežete svoj ${ BRAND_NAME } račun s tem družinskim paketom in skupaj uživate v vseh premijskih funkcijah ${ brandOrAppName }."
-      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Vaš račun ima več naslovov e-pošte, ko jih je na voljo za ta paket. ${ addressSettingsLink }"
       ],
@@ -7918,10 +7915,7 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko",
-        "Vstavi sliki",
-        "Vstavi slike",
-        "Vstavi slik"
+        "Vstavi sliko"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -10451,6 +10445,9 @@
       "Sign emails": [
         "Podpiši sporočila"
       ],
+      "Signature": [
+        "Podpis"
+      ],
       "Size:": [
         "Velikost:"
       ],
@@ -11995,9 +11992,6 @@
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        "${ brand }, ki se konča z ${ last4 }"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB shrambe v oblaku, ki omogoča enostavno shranjevanje, sinhronizacijo in deljenje datotek. Zavarovano s šifriranjem od konca do konca."
       ],
@@ -12781,6 +12775,99 @@
       ]
     },
     "Option": {
+      "10th of the month": [
+        "10. v mesecu"
+      ],
+      "11th of the month": [
+        "11. v mesecu"
+      ],
+      "12th of the month": [
+        "12. v mesecu"
+      ],
+      "13th of the month": [
+        "13. v mesecu"
+      ],
+      "14th of the month": [
+        "14. v mesecu"
+      ],
+      "15th of the month": [
+        "15. v mesecu"
+      ],
+      "16th of the month": [
+        "16. v mesecu"
+      ],
+      "17th of the month": [
+        "17. v mesecu"
+      ],
+      "18th of the month": [
+        "18. v mesecu"
+      ],
+      "19th of the month": [
+        "19. v mesecu"
+      ],
+      "1st of the month": [
+        "1. v mesecu"
+      ],
+      "20th of the month": [
+        "20. v mesecu"
+      ],
+      "21st of the month": [
+        "21. v mesecu"
+      ],
+      "22nd of the month": [
+        "22. v mesecu"
+      ],
+      "23rd of the month": [
+        "23. v mesecu"
+      ],
+      "24th of the month": [
+        "24. v mesecu"
+      ],
+      "25th of the month": [
+        "25. v mesecu"
+      ],
+      "26th of the month": [
+        "26. v mesecu"
+      ],
+      "27th of the month": [
+        "27. v mesecu"
+      ],
+      "28th of the month": [
+        "28. v mesecu"
+      ],
+      "29th of the month": [
+        "29. v mesecu"
+      ],
+      "2nd of the month": [
+        "2. v mesecu"
+      ],
+      "30th of the month": [
+        "30. v mesecu"
+      ],
+      "31st of the month": [
+        "31. v mesecu"
+      ],
+      "3rd of the month": [
+        "3. v mesecu"
+      ],
+      "4th of the month": [
+        "4. v mesecu"
+      ],
+      "5th of the month": [
+        "5. v mesecu"
+      ],
+      "6th of the month": [
+        "6. v mesecu"
+      ],
+      "7th of the month": [
+        "7. v mesecu"
+      ],
+      "8th of the month": [
+        "8. v mesecu"
+      ],
+      "9th of the month": [
+        "9. v mesecu"
+      ],
       "Add to existing group": [
         "Dodaj v obstoječo skupino"
       ],
@@ -13117,11 +13204,6 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Cena obnove je odvisna od regije obračuna in DDV številke."
-      ]
-    },
-    "Payments.Saved payment method details": {
-      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Google Pay - kartica, ki se konča z ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
