@@ -1,18 +1,17 @@
-import { CommonFeatureFlag } from '@proton/unleash/Flags';
-import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 import clamp from '@proton/utils/clamp';
 
 import { INTERVAL_EVENT_TIMER } from '../constants';
+import { EVENT_LOOP_INTERVAL_FLAG, getSharedUnleashClient } from '../unleash/sharedUnleashClient';
 import type { EventManagerIntervals } from './eventManagerIntervals';
 
 const isValidNumber = (value: unknown): value is number => {
     return typeof value === 'number' && Number.isFinite(value);
 };
 
-export const getTimeoutIntervalsFromUnleash = (client = getStandaloneUnleashClient()): EventManagerIntervals => {
+export const getTimeoutIntervalsFromUnleash = (client = getSharedUnleashClient()): EventManagerIntervals => {
     try {
-        if (client?.isEnabled(CommonFeatureFlag.EventLoopInterval)) {
-            const variant = client.getVariant(CommonFeatureFlag.EventLoopInterval);
+        if (client?.isEnabled(EVENT_LOOP_INTERVAL_FLAG)) {
+            const variant = client.getVariant(EVENT_LOOP_INTERVAL_FLAG);
             const value: {
                 foreground: unknown;
                 background: unknown;

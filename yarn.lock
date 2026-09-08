@@ -11924,7 +11924,6 @@ __metadata:
     "@proton/key-transparency": "workspace:^"
     "@proton/metrics": "workspace:^"
     "@proton/payments": "workspace:^"
-    "@proton/unleash": "workspace:^"
     electron: "*"
   peerDependenciesMeta:
     "@proton/key-transparency":
@@ -11932,8 +11931,6 @@ __metadata:
     "@proton/metrics":
       optional: true
     "@proton/payments":
-      optional: true
-    "@proton/unleash":
       optional: true
     electron:
       optional: true
