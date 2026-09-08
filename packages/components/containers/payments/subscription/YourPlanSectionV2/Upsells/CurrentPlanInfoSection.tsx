@@ -20,7 +20,7 @@ import { APPS, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { everythingInPlanOrAppNameText, selectPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { getSelectFromNCountries, getVpnDevices } from '@proton/shared/lib/vpn/features';
-import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
+import { VPN_SERVERS } from '@proton/shared/lib/vpn/vpnServers';
 
 import Info from '../../../../../components/link/Info';
 import DriveLogo from '../../../../../components/logo/DriveLogo';

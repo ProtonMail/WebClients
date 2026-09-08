@@ -10,7 +10,7 @@ import { renderWithProviders } from '@proton/testing/lib/context/renderWithProvi
 
 import SubscriptionPanel from './SubscriptionPanel';
 
-jest.mock('@proton/vpn/constants/vpnServers', () => ({
+jest.mock('@proton/shared/lib/vpn/vpnServers', () => ({
     VPN_SERVERS: {
         free: { servers: 10, countries: 2000 },
         paid: { servers: 1700, countries: 63 },
