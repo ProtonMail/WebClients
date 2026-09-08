@@ -451,6 +451,9 @@
       "Failed to import Markdown due to unknown error.": [
         "No s'ha pogut importar el Markdown a causa d'un error desconegut."
       ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "No s'ha pogut importar el fitxer OpenDocument a causa d'un error desconegut."
+      ],
       "Failed to import Word document due to unknown error.": [
         "No s'ha pogut importar el document Word a causa d'un error desconegut."
       ],
@@ -781,6 +784,11 @@
       ],
       "Rename": [
         "Canviar el nom"
+      ]
+    },
+    "sheets_2025:Sheet tab rename": {
+      "A sheet with this name already exists": [
+        "Ja hi ha un full de càlcul amb aquest nom."
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {

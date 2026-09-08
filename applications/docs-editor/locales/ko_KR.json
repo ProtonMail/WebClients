@@ -451,6 +451,9 @@
       "Failed to import Markdown due to unknown error.": [
         "알 수 없는 오류로 인해 마크다운을 불러올 수 없습니다."
       ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "알 수 없는 오류로 인해 OpenDocument 문서를 불러올 수 없습니다."
+      ],
       "Failed to import Word document due to unknown error.": [
         "알 수 없는 오류로 인해 Word 문서를 불러올 수 없습니다."
       ],
@@ -780,6 +783,11 @@
       ],
       "Rename": [
         "이름 변경"
+      ]
+    },
+    "sheets_2025:Sheet tab rename": {
+      "A sheet with this name already exists": [
+        "같은 이름의 시트가 이미 있습니다"
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {

@@ -451,6 +451,9 @@
       "Failed to import Markdown due to unknown error.": [
         "L'importation du balisage/markdown n'a pas abouti en raison d'une erreur inconnue."
       ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "L'importation du fichier OpenDocument n'a pas abouti en raison d'une erreur inconnue."
+      ],
       "Failed to import Word document due to unknown error.": [
         "L'importation du document Word n'a pas abouti en raison d'une erreur inconnue."
       ],
@@ -781,6 +784,11 @@
       ],
       "Rename": [
         "Modifier le nom"
+      ]
+    },
+    "sheets_2025:Sheet tab rename": {
+      "A sheet with this name already exists": [
+        "Une feuille portant ce nom existe déjà."
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {
