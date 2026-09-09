@@ -1,8 +1,9 @@
 import type { ReactNode } from 'react';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useFido2Action } from '@proton/account/fido/useFido2Action';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -186,19 +187,7 @@ interface Fido2FormProps {
 }
 const Fido2Form = ({ onSubmit, fido2, cancelButton }: Fido2FormProps) => {
     const [loading, withLoading] = useLoading(false);
-    const [fidoError, setFidoError] = useState(false);
-    const [awaitingTouch, setAwaitingTouch] = useState(false);
-
-    const abortControllerRef = useRef<AbortController | null>(null);
-
-    const handleAbort = useCallback(() => {
-        abortControllerRef.current?.abort();
-        abortControllerRef.current = null;
-    }, []);
-
-    useEffect(() => {
-        return handleAbort;
-    }, []);
+    const { fidoError, awaitingTouch, runFido2Action } = useFido2Action();
 
     return (
         <>
@@ -217,27 +206,10 @@ const Fido2Form = ({ onSubmit, fido2, cancelButton }: Fido2FormProps) => {
                             return;
                         }
                         const run = async () => {
-                            let authenticationCredentialsPayload: Fido2Data;
-                            try {
-                                setFidoError(false);
-                                setAwaitingTouch(true);
-                                handleAbort();
-                                const abortController = new AbortController();
-                                abortControllerRef.current = abortController;
-                                authenticationCredentialsPayload = await getAuthentication(
-                                    fido2.AuthenticationOptions,
-                                    abortController.signal
-                                );
-                            } catch (error) {
-                                setFidoError(true);
-                                setAwaitingTouch(false);
-                                // Ignore console.error to help with debugging
-                                // eslint-disable-next-line no-console
-                                console.error(error);
-                                return;
-                            } finally {
-                                handleAbort();
-                            }
+                            const authenticationCredentialsPayload = await runFido2Action(
+                                (signal) => getAuthentication(fido2.AuthenticationOptions, signal),
+                                'auth'
+                            );
                             await onSubmit(authenticationCredentialsPayload);
                         };
                         withLoading(run()).catch(noop);

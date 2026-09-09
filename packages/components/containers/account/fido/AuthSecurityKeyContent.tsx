@@ -7,6 +7,8 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import physicalKey from '@proton/styles/assets/img/illustrations/physical-key.svg';
 
+import AwaitingTouchBanner from './AwaitingTouchBanner';
+
 const AuthSecurityKeyContent = ({ awaitingTouch, error }: { awaitingTouch: boolean; error?: boolean }) => {
     return (
         <>
@@ -14,12 +16,11 @@ const AuthSecurityKeyContent = ({ awaitingTouch, error }: { awaitingTouch: boole
                 <img src={physicalKey} alt={c('fido2: Info').t`Security key`} />
             </div>
             <div>
-                {awaitingTouch
-                    ? c('fido2: Info').t`Touch your security key.`
-                    : c('fido2: Info').t`Insert a security key linked to your ${BRAND_NAME} Account.`}
+                {c('fido2: Info').t`Insert a security key linked to your ${BRAND_NAME} Account.`}
                 <br />
                 <Href href={getKnowledgeBaseUrl('/two-factor-authentication-2fa')}>{c('Info').t`Learn more`}</Href>
             </div>
+            {awaitingTouch && <AwaitingTouchBanner />}
             {error && (
                 <div className="mt-4">
                     <Banner className="mb-3" variant="norm" icon={<IcExclamationCircle />}>

@@ -1,8 +1,9 @@
 import type { FormEvent } from 'react';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useFido2Action } from '@proton/account/fido/useFido2Action';
 import { userSettingsThunk } from '@proton/account/userSettings';
 import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
@@ -12,7 +13,6 @@ import { CacheType } from '@proton/redux-utilities/interface';
 import { getSecurityKeyChallenge, registerSecurityKey } from '@proton/shared/lib/api/settings';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { RegisterCredentialsPayload } from '@proton/shared/lib/webauthn/create';
 import { getCreatePayload } from '@proton/shared/lib/webauthn/create';
 import type { RegisterCredentials } from '@proton/shared/lib/webauthn/interface';
@@ -59,20 +59,9 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const { validator, onFormSubmit, reset } = useFormErrors();
     const [name, setName] = useState('');
-    const [fidoError, setFidoError] = useState(false);
-    const [awaitingTouch, setAwaitingTouch] = useState(false);
+    const { fidoError, awaitingTouch, runFido2Action, abort } = useFido2Action();
     const registrationPayloadRef = useRef<RegisterCredentialsPayload>();
     const [allowPlatformKeys, setAllowPlatformKeys] = useState(false);
-
-    const abortControllerRef = useRef<AbortController | null>(null);
-    const handleAbort = useCallback(() => {
-        abortControllerRef.current?.abort();
-        abortControllerRef.current = null;
-    }, []);
-
-    useEffect(() => {
-        return handleAbort;
-    }, []);
 
     const getRegistrationPayload = () => {
         const run = async () => {
@@ -84,29 +73,12 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
                 return;
             }
             try {
-                setFidoError(false);
-                setAwaitingTouch(true);
-
-                handleAbort();
-                const abortController = new AbortController();
-                abortControllerRef.current = abortController;
-
-                registrationPayloadRef.current = await getCreatePayload(response, abortController.signal);
-            } catch (error) {
-                setFidoError(true);
-                setAwaitingTouch(false);
-                captureMessage('Security key registration', {
-                    level: 'error',
-                    extra: { error },
-                });
-                // Purposefully logging the error for somewhat easier debugging
-                // eslint-disable-next-line no-console
-                console.error(error);
+                registrationPayloadRef.current = await runFido2Action(
+                    (signal) => getCreatePayload(response, signal),
+                    'registration'
+                );
+            } catch {
                 return;
-            } finally {
-                // It's important that it's aborted after failure/success so that extensions (LastPass) function correctly
-                // without a `OperationError: A request is already pending.`.
-                handleAbort();
             }
             reset();
             setStep(Steps.Name);
@@ -153,8 +125,7 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
     }
 
     const handleClose = () => {
-        if (abortControllerRef.current) {
-            handleAbort();
+        if (abort()) {
             return;
         }
         void silentApi(lockSensitiveSettings());
