@@ -1,17 +1,11 @@
-import type { ScopeContext } from '@sentry/types';
-
 import { CryptoProxy } from '@protontech/crypto';
+import type { ScopeContext } from '@sentry/types';
 
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import type { VerificationData } from '../interface';
 import type { Verifier } from './interface';
 
 const VERIFIER_ERROR_MESSAGE = 'Upload failed: Verification of data failed';
-
-export const isVerificationError = (err: any) => {
-    const message = err ? err.message || '' : '';
-    return message.includes(VERIFIER_ERROR_MESSAGE);
-};
 
 export class VerificationError extends EnrichedError {
     constructor(context?: Partial<ScopeContext>) {
