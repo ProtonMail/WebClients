@@ -124,8 +124,8 @@ describe('usePostSignupOffers', () => {
         expect(result.current.id).toBeUndefined();
     });
 
-    it('should prefer the one dollar offer over the 0.99 offer when both are eligible', () => {
-        // A never-subscribed new user qualifies for both; the intro offer must win
+    it('should prefer the 0.99 offer over the one dollar offer when both are eligible', () => {
+        // The 0.99 promo takes priority while it is running
         mockUseMailPostSignupOneDollar.mockReturnValue({
             isEligible: true,
             isLoading: false,
@@ -133,6 +133,17 @@ describe('usePostSignupOffers', () => {
         });
 
         mockUseMailPostSignup099.mockReturnValue({
+            isEligible: true,
+            isLoading: false,
+            openSpotlight: false,
+        });
+
+        const { result } = renderHook(() => usePostSignupOffers({ app: APPS.PROTONMAIL }));
+        expect(result.current.id).toBe('mail-zero-ninety-nine-offer');
+    });
+
+    it('should fall back to the one dollar offer when the 0.99 offer is not eligible', () => {
+        mockUseMailPostSignupOneDollar.mockReturnValue({
             isEligible: true,
             isLoading: false,
             openSpotlight: false,
