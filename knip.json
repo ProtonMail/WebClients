@@ -331,7 +331,8 @@
         },
         "packages/metrics": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"]
+            "project": ["**/*.{ts,tsx}"],
+            "ignoreDependencies": ["json-schema-to-typescript"]
         },
         "packages/nav": {
             "entry": [],
