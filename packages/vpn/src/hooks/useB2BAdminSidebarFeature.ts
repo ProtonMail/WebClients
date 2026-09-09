@@ -13,6 +13,7 @@ import { defineSidebar } from '@proton/nav/api/defineSidebar';
 import type { NavResolved } from '@proton/nav/types/nav';
 import type { SidebarTree } from '@proton/nav/types/sidebar';
 import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
+import { hasNoOrgPermissions } from '@proton/shared/lib/helpers/orgPermissions';
 import { removeItem } from '@proton/shared/lib/helpers/storage';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -71,7 +72,8 @@ export const useB2BAdminSidebarFeature = ({
     if (skip || !subscription || !organization || !permissions) {
         return disabled(true);
     }
-    if (!isEnabled || !Object.values(permissions).some(Boolean)) {
+    const hasVpnOrganization = entitlements.orgIsBusiness && entitlements.orgHasVpn;
+    if (!isEnabled || !hasVpnOrganization || hasNoOrgPermissions(permissions)) {
         return disabled(false);
     }
 
