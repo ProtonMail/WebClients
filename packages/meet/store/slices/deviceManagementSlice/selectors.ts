@@ -15,11 +15,8 @@ import type { MeetState } from '../../rootReducer';
 import type { MeetStore } from '../../store';
 import type { SliceDeviceState } from './types';
 
-export const selectDeviceManagement = (state: MeetState) => state.deviceManagement;
-
 export const selectCameraPermission = (state: MeetState) => state.deviceManagement.permissions.camera;
 export const selectMicrophonePermission = (state: MeetState) => state.deviceManagement.permissions.microphone;
-export const selectPermissions = (state: MeetState) => state.deviceManagement.permissions;
 
 export const selectCameras = (state: MeetState) => state.deviceManagement.cameras;
 export const selectMicrophones = (state: MeetState) => state.deviceManagement.microphones;

@@ -40,7 +40,7 @@ export enum WaitingRoomAdmissionStatus {
 
 export const ADMISSION_TIMEOUT_S = 300;
 
-export type WaitingRoomState = {
+type WaitingRoomState = {
     /** For host: list of waiting participants */
     waitingParticipants: WaitingRoomJoinRequest[];
 
@@ -54,7 +54,7 @@ export type WaitingRoomState = {
     admissionTimer: number | null;
 };
 
-export const initialState: WaitingRoomState = {
+const initialState: WaitingRoomState = {
     waitingParticipants: [],
     admissionStatus: WaitingRoomAdmissionStatus.INACTIVE,
     admissionCountdown: ADMISSION_TIMEOUT_S,
@@ -107,7 +107,7 @@ const slice = createSlice({
     },
 });
 
-export const stopWaitingRoomAdmissionTimer =
+const stopWaitingRoomAdmissionTimer =
     (): ThunkAction<void, MeetState, ProtonThunkArguments, UnknownAction> => (dispatch, getState) => {
         const { admissionTimer } = getState().waitingRoom;
 

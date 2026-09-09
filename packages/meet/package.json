@@ -37,7 +37,6 @@
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
-        "@proton/i18n": "workspace:packages/i18n",
         "@proton/polyfill": "workspace:^",
         "@proton/testing": "workspace:packages/testing",
         "@testing-library/jest-dom": "^6.9.1",

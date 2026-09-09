@@ -11,15 +11,15 @@ export interface OpfsRecording {
     folder?: string;
 }
 
-export type RecordingDownloadStatus = 'processing' | 'ready' | 'error';
+type RecordingDownloadStatus = 'processing' | 'ready' | 'error';
 
-export interface RecordingsState {
+interface RecordingsState {
     status: RecordingDownloadStatus | null;
     recording: OpfsRecording | null;
     recordings: OpfsRecording[];
 }
 
-export const initialState: RecordingsState = {
+const initialState: RecordingsState = {
     status: null,
     recording: null,
     recordings: [],

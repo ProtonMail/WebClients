@@ -103,7 +103,6 @@ export const {
     setDisableVideos,
     disableParticipantVideo,
     enableParticipantVideo,
-    setParticipantsWithDisabledVideos,
     setSelfView,
     setPipEnabled,
     setWaitingRoomSetting,

@@ -11,7 +11,7 @@ import type { MeetState } from '../../rootReducer';
 import { getLastUsedDeviceIdKey } from './constants';
 import { type DeviceKind, type DeviceManagementState, PermissionsModalType } from './types';
 
-export const deviceManagementInitialState: DeviceManagementState = {
+const deviceManagementInitialState: DeviceManagementState = {
     permissions: {
         camera: 'prompt',
         microphone: 'prompt',
@@ -220,7 +220,6 @@ export const setPreferredDeviceAndPersist =
 export const {
     setPermissions,
     setDeviceList,
-    setPreferredDevice,
     setActiveDevice,
     setInitialCameraState,
     setInitialAudioState,
@@ -228,7 +227,6 @@ export const {
     setMediaInitializing,
     dismissPermissionsModal,
     showPermissionsModal,
-    resetDeviceManagement,
 } = slice.actions;
 
 export const deviceManagementReducer = { deviceManagement: slice.reducer };
