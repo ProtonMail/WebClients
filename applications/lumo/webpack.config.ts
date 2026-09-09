@@ -10,6 +10,7 @@ import { addDevEntry } from '@proton/pack/webpack/entries';
 import appConfig from './appConfig';
 // Import custom optimization for better markdown/syntax highlighting chunking
 import getLumoOptimizations from './webpack.optimization';
+import { applyRevealJsWebpackConfig } from './webpack.reveal';
 
 /**
  * Load custom Lumo public key from file path if LUMO_PUB_KEY_PATH is set
@@ -35,6 +36,9 @@ function loadCustomLumoPubKey(): string | null {
 const result = (opts: WebpackEnvArguments): Configuration => {
     const webpackOptions = getWebpackOptions(opts, { appConfig });
     const config = getConfig(webpackOptions);
+
+    // Presentation artifacts embed reveal.js as inline <script>/<style> in a sandboxed iframe.
+    applyRevealJsWebpackConfig(config);
 
     // Override optimization with Lumo-specific configuration for better code splitting
     config.optimization = getLumoOptimizations(webpackOptions);

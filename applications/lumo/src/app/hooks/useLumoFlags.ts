@@ -23,6 +23,7 @@ import { useFlag } from '@proton/unleash/useFlag';
  * - memory: Enable the memory feature (saved memories used to personalize general chats)
  * - visualizationInstructions: Enable chart and KPI card formatting instructions in the system prompt
  * - customAgents: Enable the custom agents option in the composer tools dropdown
+ * - artifactsView: Enable the create-artifact composer tool and artifact panel interactions
  * - aiPaperTrailRoute: Enable the AI Paper Trail route (/aitrail)
  * - aiPaperTrailPopup: Show the AI Paper Trail popup panel on the home screen
  * - maxAvailableFree: When enabled, free users can select Lumo Max (default off during high load)
@@ -50,6 +51,7 @@ export const useLumoFlags = () => {
     const lumoNativeAuthAndroid = useFlag('LumoNativeAuthAndroid');
     const lumoNativeAuthIOS = useFlag('LumoNativeAuthIOS');
     const customAgents = useFlag('LumoCustomAgents');
+    const artifactsView = useFlag('LumoArtifactsView');
     const aiPaperTrailRoute = useFlag('LumoAiPaperTrailRoute');
     const aiPaperTrailPopup = useFlag('LumoAiPaperTrailPopup');
     const maxAvailableFree = useFlag('LumoMaxAvailableFree');
@@ -61,6 +63,7 @@ export const useLumoFlags = () => {
         memory,
         visualizationInstructions,
         customAgents,
+        artifactsView,
         aiPaperTrailRoute,
         aiPaperTrailPopup,
         imageTools,
