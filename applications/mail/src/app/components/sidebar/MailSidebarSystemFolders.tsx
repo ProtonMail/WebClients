@@ -10,12 +10,12 @@ import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { updateLastSeenEventId } from '@proton/mail/store/labels/actions';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import type { MoveParams } from '../../hooks/actions/applyLocation/interface';
 import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
 import { useMailboxCounter } from '../../hooks/mailboxCounter/useMailboxCounter';
-
 import type { SystemFolder } from '../../hooks/useMoveSystemFolders';
 import useMoveSystemFolders, { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
 import { getCategorySystemFolder } from '../categoryView/categoriesHelpers';
@@ -74,6 +74,8 @@ const MailSidebarSystemFolders = ({
     const { isCategoryViewEnabled, activeCategoriesTabs } = useCategoriesView();
     const { sendReportCategoriesNav } = useCategoriesTelemetry();
     const { getLocationCount } = useMailboxCounter();
+
+    const showCategoriesAgain = useFlag('DisplayCategoriesInSidebarAgain');
 
     const dispatch = useDispatch();
 
@@ -251,7 +253,9 @@ const MailSidebarSystemFolders = ({
             return;
         }
 
-        moreElements.push(getCategorySystemFolder(category));
+        if (showCategoriesAgain) {
+            moreElements.push(getCategorySystemFolder(category));
+        }
     });
 
     return (
