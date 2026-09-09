@@ -73,8 +73,7 @@
         "./lib/vitest/mockUseOrganization": "./lib/vitest/mockUseOrganization.ts",
         "./lib/vitest/mockUseUser": "./lib/vitest/mockUseUser.ts",
         "./lib/vitest/mockUseUserKeys": "./lib/vitest/mockUseUserKeys.ts",
-        "./lib/vitest/mockFlagSvg": "./lib/vitest/mockFlagSvg.ts",
-        "./configs/vitest.config": "./configs/vitest.config.ts"
+        "./lib/vitest/mockFlagSvg": "./lib/vitest/mockFlagSvg.ts"
     },
     "scripts": {
         "check-types": "tsc",
