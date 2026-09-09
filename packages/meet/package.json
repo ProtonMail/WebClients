@@ -39,6 +39,7 @@
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/polyfill": "workspace:^",
         "@proton/testing": "workspace:packages/testing",
+        "@proton/vitest-config": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
         "@vitejs/plugin-react": "^6.1.0",

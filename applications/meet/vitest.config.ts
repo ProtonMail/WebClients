@@ -3,7 +3,7 @@ import path from 'path';
 import wasm from 'vite-plugin-wasm';
 import { mergeConfig } from 'vitest/config';
 
-import { sharedVitestConfig } from '@proton/testing/configs/vitest.config';
+import { sharedVitestConfig } from '@proton/vitest-config/shared';
 
 export default mergeConfig(sharedVitestConfig, {
     plugins: [react(), wasm()],

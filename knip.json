@@ -448,6 +448,10 @@
             "entry": [],
             "project": ["**/*.{ts,tsx}"]
         },
+        "packages/vitest-config": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"]
+        },
         "packages/vpn": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"]
