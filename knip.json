@@ -339,9 +339,20 @@
             "project": ["**/*.{ts,tsx}"]
         },
         "packages/pack": {
-            "entry": [],
-            "project": ["**/*.{ts,tsx,scss,sass}"],
-            "ignore": ["**"]
+            "entry": [
+                "webpack.config.ts",
+                "lib/config.ts",
+                "lib/interface.ts",
+                "webpack/entries.ts",
+                "webpack/assets.loader.js",
+                "webpack/css.loader.js",
+                "webpack/js.loader.js",
+                "webpack/js.loader.swc.js",
+                "webpack/optimization.js",
+                "webpack/copy-index-html-webpack-plugin/index.ts"
+            ],
+            "project": ["**/*.{js,mjs,ts,tsx,scss,sass}"],
+            "ignoreDependencies": ["@proton/collect-metrics"]
         },
         "packages/pass": {
             "entry": [],
