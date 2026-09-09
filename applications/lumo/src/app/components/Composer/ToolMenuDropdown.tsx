@@ -26,6 +26,7 @@ import './ToolMenuDropdown.scss';
 
 interface ToolMenuDropdownProps extends Pick<MenuDropdownProps, 'isOpen' | 'anchorRef' | 'onClose'> {
     onClickCreateImageOption: () => void;
+    onClickCreateArtifactOption: () => void;
     canUseAgents?: boolean;
 }
 
@@ -34,18 +35,24 @@ export const ToolMenuDropdown = ({
     anchorRef,
     onClose,
     onClickCreateImageOption,
+    onClickCreateArtifactOption,
     canUseAgents = false,
 }: ToolMenuDropdownProps) => {
     const { isWebSearchButtonToggled, handleWebSearchButtonClick } = useWebSearch();
     const isGuest = useIsGuest();
-    const { imageTools: isImageToolsFlagEnabled, customAgents: isCustomAgentsFlagEnabled } = useLumoFlags();
+    const {
+        imageTools: isImageToolsFlagEnabled,
+        externalTools: isToolsFlagEnabled,
+        customAgents: isCustomAgentsFlagEnabled,
+        artifactsView: isArtifactsViewFlagEnabled,
+    } = useLumoFlags();
     const { hasLumoPlus } = useLumoPlan();
     const remainingLimits = useRemainingLimits();
     const imageLimitExhausted = isLimitExhausted(remainingLimits?.images);
     const imageUpsellConfig = useLumoPlusUpsellButtonConfig(LUMO_UPSELL_PATHS.COMPOSER_IMAGE_SELECTOR);
     const dispatch = useLumoDispatch();
     const [view, setView] = useState<'main' | 'connectors'>('main');
-    const showConnectors = isDesktopEnvironment();
+    const showConnectors = isToolsFlagEnabled && isDesktopEnvironment();
 
     useEffect(() => {
         if (!isOpen) {
@@ -98,8 +105,17 @@ export const ToolMenuDropdown = ({
                 : undefined,
             onClick: handleCreateImageClick,
             onClose: onClose,
-            canShow: isImageToolsFlagEnabled,
+            canShow: isToolsFlagEnabled && isImageToolsFlagEnabled,
             isDisabled: imageLimitExhausted,
+        },
+        {
+            icon: <LumoIcon name="FileText" size={16} />,
+            getLabel: () => c('collider_2025: Action').t`Create artifact`,
+            getDescription: undefined,
+            onClick: onClickCreateArtifactOption,
+            onClose: onClose,
+            canShow: isArtifactsViewFlagEnabled,
+            isDisabled: false,
         },
         {
             icon: <LumoIcon name="Bot" size={16} />,
@@ -107,7 +123,7 @@ export const ToolMenuDropdown = ({
             getDescription: isGuest ? () => c('collider_2025:Placeholder').t`Sign in required` : undefined,
             onClick: () => dispatch(openAgentPicker()),
             onClose: onClose,
-            canShow: isCustomAgentsFlagEnabled && (canUseAgents || isGuest),
+            canShow: isToolsFlagEnabled && isCustomAgentsFlagEnabled && (canUseAgents || isGuest),
             isDisabled: isGuest,
             isSignInRequired: isGuest,
         },
@@ -161,19 +177,22 @@ export const ToolMenuDropdown = ({
                         </div>
                     )}
 
-                    {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
-                    <div
-                        className="flex flex-row flex-nowrap items-center justify-space-between px-4 py-2 w-full gap-4"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <div className="flex items-center gap-3">
-                            <LumoIcon name="Globe" size={16} />
-                            <div className="flex flex-column">
-                                <span className="text-sm font-medium">{c('collider_2025: Action').t`Web search`}</span>
+                    {isToolsFlagEnabled && (
+                        /* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
+                        <div
+                            className="flex flex-row flex-nowrap items-center justify-space-between px-4 py-2 w-full gap-4"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <div className="flex items-center gap-3">
+                                <LumoIcon name="Globe" size={16} />
+                                <div className="flex flex-column">
+                                    <span className="text-sm font-medium">{c('collider_2025: Action')
+                                        .t`Web search`}</span>
+                                </div>
                             </div>
+                            <Toggle checked={isWebSearchButtonToggled} onChange={handleWebSearchToggleChange} />
                         </div>
-                        <Toggle checked={isWebSearchButtonToggled} onChange={handleWebSearchToggleChange} />
-                    </div>
+                    )}
 
                     {showConnectors && (
                         <DropdownMenuButton className="justify-start" onClick={() => setView('connectors')}>
