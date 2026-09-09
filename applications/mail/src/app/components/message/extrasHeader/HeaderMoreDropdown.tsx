@@ -21,6 +21,7 @@ import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
 import { IcArrowUpFromSquare } from '@proton/icons/icons/IcArrowUpFromSquare';
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcCode } from '@proton/icons/icons/IcCode';
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import { IcEnvelopeDot } from '@proton/icons/icons/IcEnvelopeDot';
@@ -49,8 +50,13 @@ import type {
     MessageStateWithData,
     MessageWithOptionalBody,
 } from '@proton/mail/store/messages/messagesTypes';
+import {
+    TelemetryMailCalendarCreateEventEvents,
+    TelemetryMeasurementGroups,
+} from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -67,6 +73,8 @@ import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/inter
 import { useApplyLocation } from '../../../hooks/actions/applyLocation/useApplyLocation';
 import { useMarkAs } from '../../../hooks/actions/markAs/useMarkAs';
 import { useGetAttachment } from '../../../hooks/attachments/useAttachment';
+import { getSenderFromMessage } from '../../../helpers/calendar/createEventFromMessage';
+import useCreateCalendarEventFromMessage from '../../../hooks/drawer/useCreateCalendarEventFromMessage';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 import type { Element } from '../../../models/element';
 import { updateAttachment } from '../../../store/attachments/attachmentsActions';
@@ -146,6 +154,7 @@ const HeaderMoreDropdown = ({
     const [messagePhishingModalProps, setMessagePhishingModalOpen, renderMessagePhishingModal] = useModalState();
     const [messagePermanentDeleteModalProps, setMessagePermanentDeleteModalOpen, renderMessagePermanentDeleteModal] =
         useModalState();
+    const createCalendarEventFromMessage = useCreateCalendarEventFromMessage();
     const canExpire = canSetExpiration(feature?.Value, user, message);
     const isStarred = IsMessageStarred(message.data || ({} as Element));
     const messageID = message.data?.ID || '';
@@ -218,6 +227,24 @@ const HeaderMoreDropdown = ({
                 showSuccessNotification: false,
             })
         );
+    };
+
+    const handleAddToCalendar = () => {
+        closeDropdown.current?.();
+
+        createCalendarEventFromMessage({
+            messageID,
+            subject: message.data?.Subject || '',
+            sender: getSenderFromMessage(message.data),
+        });
+
+        void sendTelemetryReport({
+            api,
+            measurementGroup: TelemetryMeasurementGroups.mailCalendarCreateEvent,
+            event: TelemetryMailCalendarCreateEventEvents.create_event,
+            silence: true,
+            dimensions: { entry_point: 'menu_action' },
+        });
     };
 
     const handleExpire = (days: number) => {
@@ -509,6 +536,15 @@ const HeaderMoreDropdown = ({
                                     >
                                         {isStarred ? <IcStarSlash className="mr-2" /> : <IcStar className="mr-2" />}
                                         <span className="flex-1 my-auto">{staringText}</span>
+                                    </DropdownMenuButton>
+
+                                    <DropdownMenuButton
+                                        className="text-left flex flex-nowrap items-center"
+                                        onClick={handleAddToCalendar}
+                                        data-testid="message-view-more-dropdown:add-to-calendar"
+                                    >
+                                        <IcCalendarGrid className="mr-2" />
+                                        <span className="flex-1 my-auto">{c('Action').t`Add to Calendar`}</span>
                                     </DropdownMenuButton>
 
                                     <hr className="my-2" />

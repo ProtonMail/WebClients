@@ -64,6 +64,7 @@ export interface TimeGridRef {
 
 export interface InteractiveRef {
     createEvent: (attendees: AttendeeModel[], title?: string, location?: string, description?: string) => void;
+    createEventFromMail: (payload: { subject: string; sender?: string; start?: number }) => void;
 }
 
 export interface CalendarViewEventTemporaryEvent extends CalendarViewEvent {

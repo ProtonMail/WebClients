@@ -89,11 +89,18 @@ export const useListSelection = ({
     // Helps components outside the list to know when an element drag is in progress.
     useEffect(() => {
         dispatch(layoutActions.setDraggingElements(isDraggingElements));
+        dispatch(layoutActions.setDraggingElementsCount(draggedIDs.length));
+        // Only retain the dragged ID for single-message drags, which is what the
+        // "create calendar event from mail" target supports. Multi-message drags
+        // keep no IDs in global state.
+        dispatch(layoutActions.setDraggedMessageID(draggedIDs.length === 1 ? draggedIDs[0] : null));
 
         return () => {
             dispatch(layoutActions.setDraggingElements(false));
+            dispatch(layoutActions.setDraggingElementsCount(0));
+            dispatch(layoutActions.setDraggedMessageID(null));
         };
-    }, [isDraggingElements, dispatch]);
+    }, [isDraggingElements, draggedIDs.length, draggedIDs, dispatch]);
 
     const draggedIDsMap = useMemo<{ [ID: string]: boolean }>(() => {
         return draggedIDs.reduce(

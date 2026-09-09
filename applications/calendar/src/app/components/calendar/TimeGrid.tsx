@@ -19,6 +19,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useBookings } from '../../containers/bookings/bookingsProvider/BookingsProvider';
 import { isBookingSlotEvent } from '../../containers/bookings/utils/calendar/calendarHelper';
+import useCalendarMailDrop from '../../hooks/useCalendarMailDrop';
 import type {
     CalendarViewBusyEvent,
     CalendarViewEvent,
@@ -120,6 +121,8 @@ const TimeGrid = ({
     const titleRef = useRef<HTMLDivElement>(null);
     const scrollRef = useRef<HTMLDivElement>(null);
     const partDayEventViewRef = useRef<HTMLDivElement>(null);
+
+    const { handleMailDrop, handleMailDragOver } = useCalendarMailDrop();
 
     const { viewportWidth } = useActiveBreakpoint();
 
@@ -479,7 +482,17 @@ const TimeGrid = ({
                             />
                         ) : null}
                         <HourTexts className="calendar-aside calendar-primary-timezone-cell" hours={formattedHours} />
-                        <div className="flex flex-1 relative calendar-grid-gridcells" ref={timeGridRef}>
+                        <div
+                            className="flex flex-1 relative calendar-grid-gridcells"
+                            ref={timeGridRef}
+                            onDragOver={handleMailDragOver}
+                            onDrop={(event) =>
+                                handleMailDrop(event, {
+                                    days: viewportWidth['<=small'] ? [date] : days,
+                                    timeGridEl: timeGridRef.current!,
+                                })
+                            }
+                        >
                             <HourLines hours={hours} />
                             {days.map((day, dayIndex) => {
                                 const key = getKey(day);
