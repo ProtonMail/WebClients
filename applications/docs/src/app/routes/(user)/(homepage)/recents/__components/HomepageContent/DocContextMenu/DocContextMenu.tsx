@@ -52,7 +52,7 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
   const isTrash = view === 'trash'
 
   const documentActions = useDocumentActions()
-  const onTrashed = useEvent((id: string) => {
+  const trashedListener = useEvent((id: string) => {
     if (currentDocument?.uniqueId() === id) {
       close()
     }
@@ -60,10 +60,10 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
     void updateRecentDocuments()
   })
   useEffect(() => {
-    documentActions.onTrashed(onTrashed)
-  }, [documentActions, onTrashed])
+    return documentActions.subscribeToTrashed(trashedListener)
+  }, [documentActions, trashedListener])
 
-  const onRestored = useEvent((id: string) => {
+  const restoredListener = useEvent((id: string) => {
     if (currentDocument?.uniqueId() === id) {
       close()
     }
@@ -71,8 +71,8 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
     void updateRecentDocuments()
   })
   useEffect(() => {
-    documentActions.onRestored(onRestored)
-  }, [documentActions, onRestored])
+    return documentActions.subscribeToRestored(restoredListener)
+  }, [documentActions, restoredListener])
 
   if (!currentDocument) {
     return null
