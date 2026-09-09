@@ -1901,6 +1901,19 @@
       "Total for ${ n } month": [
         "Total por ${ n } mes",
         "Total por ${ n } meses"
+      ],
+      "Amount due": [
+        "Importe a pagar"
+      ],
+      "Amount due after trial": [
+        "Importe a pagar después de la prueba"
+      ],
+      "Amount due now": [
+        "Importe a pagar ahora"
+      ],
+      "Total for ${ cycle } month": [
+        "Total por ${ cycle } mes",
+        "Total por ${ cycle } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -4862,6 +4875,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "La cuenta está usando ${ usedSpace } de almacenamiento, que supera los ${ inviteSpace } que tiene asignados. Elimine algunos datos o solicite al administrador del plan que aumente el almacenamiento."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Se le invitó a vincular su cuenta de ${ BRAND_NAME } a este grupo familiar y disfrutar de todas sus funciones premium."
       ]
     },
     "familyOffer_2023:Label": {
@@ -7106,6 +7122,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ha alcanzado el límite de franjas de reserva (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Do you remember your password?": [
+        "¿Recuerda su contraseña?"
       ]
     },
     "info": {

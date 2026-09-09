@@ -1059,6 +1059,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Perioada de încercare a versiunii pentru desktop se încheie ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add a payment method": [
+        "Adăugați o metodă de plată"
       ]
     },
     "action": {
@@ -1929,6 +1932,20 @@
         "Total pentru o lună",
         "Total pentru ${ n } luni",
         "Total pentru ${ n } de luni"
+      ],
+      "Amount due": [
+        "Suma datorată"
+      ],
+      "Amount due after trial": [
+        "Suma datorată după probare"
+      ],
+      "Amount due now": [
+        "Suma datorată acum"
+      ],
+      "Total for ${ cycle } month": [
+        "Total pentru ${ cycle } lună",
+        "Total pentru ${ cycle } luni",
+        "Total pentru ${ cycle } de luni"
       ]
     },
     "Collapsible tooltip": {
@@ -4912,6 +4929,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Contul utilizează ${ usedSpace } de stocare, care depășește cei ${ inviteSpace } care vi s-au alocat. Ștergeți unele date sau cereți administratorului planului să vă crească limita de stocare."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Ați primit o invitație să vă conectați contul ${ BRAND_NAME } la acest grup de familie și să vă bucurați împreună de toate funcțiile premium."
       ]
     },
     "familyOffer_2023:Label": {
@@ -6862,7 +6882,7 @@
         "Litere mari și mici"
       ],
       "username": [
-        "utilizator"
+        "nume de utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -7204,6 +7224,15 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ați atins limita locurilor de rezervare (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a evita pierderea accesului. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a vă păstra abonamentul. ${ learnMoreLink }"
+      ],
+      "Do you remember your password?": [
+        "Vă amintiți parola?"
       ]
     },
     "info": {
@@ -7399,7 +7428,7 @@
     },
     "Label": {
       "${ BRAND_NAME } username": [
-        "Nnume de utilizator ${ BRAND_NAME }"
+        "Nume de utilizator ${ BRAND_NAME }"
       ],
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } de caractere"
@@ -7946,7 +7975,7 @@
         "Model URL cu caractere generice"
       ],
       "Username": [
-        "Nume utilizator"
+        "Nume de utilizator"
       ],
       "Verification code": [
         "Cod de verificare"
@@ -9319,6 +9348,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } care se termină cu ${ Last4 }"
       ]
     },
     "new_plans: label": {
@@ -10518,6 +10550,15 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - card care se termină cu ${ paymentMethod.Details.Last4 }"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - card care se termină cu ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Transfer bancar - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - card care se termină cu ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -10682,7 +10723,7 @@
         "Nume participant"
       ],
       "Name or email address": [
-        "Nume utilizator/adresa de e-mail"
+        "Nume de utilizator/adresa de e-mail"
       ],
       "Optional feedback": [
         "Feedback opțional"
@@ -14156,6 +14197,11 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Schimbarea adresei de facturare poate influența taxele pe facturile viitoare."
       ]
     }
   }

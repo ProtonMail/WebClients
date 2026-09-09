@@ -1060,6 +1060,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ваш бясплатны пробны перыяд праграмы для камп'ютара завершыцца ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Preview logs": [
+        "Папярэдні прагляд журналаў"
       ]
     },
     "action": {
@@ -1954,6 +1957,21 @@
         "Усяго за ${ n } месяцы",
         "Усяго за ${ n } месяцаў",
         "Усяго за ${ n } месяцы"
+      ],
+      "Amount due": [
+        "Да аплаты"
+      ],
+      "Amount due after trial": [
+        "Сума да аплаты пасля пробнага перыяду"
+      ],
+      "Amount due now": [
+        "Сума да аплаты"
+      ],
+      "Total for ${ cycle } month": [
+        "Усяго за ${ cycle } месяц",
+        "Усяго за ${ cycle } месяцы",
+        "Усяго за ${ cycle } месяцаў",
+        "Усяго за ${ cycle } месяцаў"
       ]
     },
     "Collapsible tooltip": {
@@ -4959,6 +4977,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш уліковы запіс выкарыстоўвае ${ usedSpace } сховішча, што перавышае абмежаванне на ${ inviteSpace }. Выдаліце некаторыя даныя або папрасіце адміністратара тарыфнага плана павялічыць даступны аб'ём у сховішчы."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Вас запрашаюць далучыць свой уліковы запіс ${ BRAND_NAME } да гэтай сямейнай групы і разам выкарыстоўваць усе яго прэміяльныя функцыі."
       ]
     },
     "familyOffer_2023:Label": {
@@ -6254,7 +6275,7 @@
         "Урады і пастаўшчыкі паслуг інтэрнэту могуць сачыць за тым, якія сайты вы наведваеце. Ваш прагляд вэб-старонак у інтэрнэце становіцца прыватным дзякуючы хаванню вашага рэальнага IP-адраса і шыфраванню."
       ],
       "Have some more time to decide without interruption.": [
-        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення ў працы сэрвісу."
+        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення працы сэрвісу."
       ],
       "here": [
         "тут"
@@ -7296,6 +7317,9 @@
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на ${ IDEAL_WERO_BRAND_NAME }. Пераканайцеся, што ў вас адключаны праграмы блакіроўкі ўсплывальных вокнаў для працягу."
+      ],
+      "Do you remember your password?": [
+        "Вы памятаеце свой пароль?"
       ]
     },
     "info": {
@@ -9455,6 +9479,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand }, якая заканчваецца на ${ Last4 }"
       ]
     },
     "new_plans: label": {
@@ -10675,6 +10702,15 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay — картка, якая заканчваецца на ${ paymentMethod.Details.Last4 }"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - картка, якая заканчваецца на ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Банкаўскі перавод - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay — картка, якая заканчваецца на ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -14420,6 +14456,11 @@
     "ngc_access_banner: info": {
       "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
         "Цяпер у вас ёсць доступ да новага ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Змяненне вашага адраса аплаты можа паўплываць на падаткі ў будучых рахунках"
       ]
     }
   }

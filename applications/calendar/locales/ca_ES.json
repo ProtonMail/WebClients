@@ -1055,6 +1055,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add a payment method": [
+        "Afegiu un mètode de pagament"
       ]
     },
     "action": {
@@ -1901,6 +1904,19 @@
       "Total for ${ n } month": [
         "Total per ${ n } mes",
         "Total per ${ n } mesos"
+      ],
+      "Amount due": [
+        "Import pendent"
+      ],
+      "Amount due after trial": [
+        "Import a pagar després de la prova"
+      ],
+      "Amount due now": [
+        "Import a pagar ara"
+      ],
+      "Total for ${ cycle } month": [
+        "Total per ${ cycle } mes",
+        "Total per ${ cycle } mesos"
       ]
     },
     "Collapsible tooltip": {
@@ -4862,6 +4878,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "El vostre compte utilitza ${ usedSpace } d'emmagatzematge, que supera els ${ inviteSpace } que us van assignar. Elimineu algunes dades o demaneu a l'administrador del pla que augmenti l'emmagatzematge."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Esteu convidats a vincular el vostre compte de ${ BRAND_NAME } a aquest grup familiar i gaudir de totes les seves característiques prèmium."
       ]
     },
     "familyOffer_2023:Label": {
@@ -7106,6 +7125,15 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Heu arribat al límit de reserves (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Us queda ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per no perdre'n l'accés. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Us queden ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per a mantenir la vostra subscripció. ${ learnMoreLink }"
+      ],
+      "Do you remember your password?": [
+        "Recordeu la vostra contrasenya?"
       ]
     },
     "info": {
@@ -9174,6 +9202,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } acabada en ${ Last4 }"
       ]
     },
     "new_plans: label": {
@@ -10337,6 +10368,15 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - targeta que acaba en ${ paymentMethod.Details.Last4 }"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - targeta acabada en ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Transferència bancària - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - targeta acabada en ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -13875,6 +13915,11 @@
       ],
       "Passcode:": [
         "Codi d'accés:"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Canviar l'adreça de facturació podria afectar els impostos de les pròximes factures."
       ]
     }
   }
