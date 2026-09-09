@@ -20,7 +20,7 @@ const filterFieldText = (params: Record<string, any>, field: FilterField): strin
 export const hasEveryFilterFieldFilled = (params: Record<string, any>): boolean =>
     Object.values(FilterField).every((field) => filterFieldText(params, field).trim().length > 0);
 
-/** Serves as both the card's subtitle and the settled tile's detail; empty reads better as absent. */
+/** The settled tile's detail; empty reads better as absent. */
 export const proposedFilterName = (action: ActionRequest): string | undefined =>
     filterFieldText(action, FilterField.NAME) || undefined;
 

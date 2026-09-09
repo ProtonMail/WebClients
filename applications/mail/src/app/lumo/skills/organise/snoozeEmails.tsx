@@ -6,6 +6,7 @@ import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ActionRequest, ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import DateTimeBody from '@proton/llm/lib/lumoAgent/ui/cardBodies/DateTimeBody';
 import type { CardBodyProps, CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
+import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isValidDate } from '@proton/shared/lib/date/date';
 
@@ -15,7 +16,7 @@ import { getSnoozeUnixTime } from '../../../helpers/snooze';
 import { selectParams } from '../../../store/elements/elementsSelectors';
 import { resolveElements } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
-import { emailIds, hasEmailSelection, renderEmailSelectionBody } from './emailSelection';
+import { emailIds, emailSelectionSentence, hasEmailSelection, renderEmailSelectionBody } from './emailSelection';
 
 export interface SnoozeEmailsParams {
     ids: string[];
@@ -150,7 +151,18 @@ const canApplySnooze = (params: Record<string, any>): boolean => {
 
 export const snoozeEmailsCardRenderer: CardRenderer = {
     icon: IcClock,
-    title: () => c('Title').t`Snooze emails`,
+    sentence: (action) =>
+        emailSelectionSentence(action, (emails) => {
+            const wakeAt = wakeAtLabel(action);
+            if (!wakeAt) {
+                // translator: a snooze whose wake time the picker has not settled on yet, e.g. "Snooze 3 emails"
+                return c('Snooze info').jt`Snooze ${emails}`;
+            }
+            const wakeTime = sentenceValue(wakeAt);
+
+            // translator: the emails being snoozed and when they come back, e.g. "Snooze 3 emails until Saturday, July 11th, 2026 at 9:00 AM"
+            return c('Snooze info').jt`Snooze ${emails} until ${wakeTime}`;
+        }),
     renderBody: renderSnoozeBody,
     canApply: canApplySnooze,
     detail: (action) => {

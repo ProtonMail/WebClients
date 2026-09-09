@@ -1,5 +1,6 @@
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
+import sentenceText from '@proton/llm/lib/lumoAgent/ui/sentenceText';
 import { DENSITY } from '@proton/shared/lib/constants';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { VIEW_LAYOUT, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
@@ -206,19 +207,24 @@ describe('changeSettingsCardRenderer', () => {
         expect(changeSettingsCardRenderer.canApply?.(given)).toBe(applyable);
     });
 
-    it('names the setting and its chosen value in the words the card showed, not in tokens', () => {
+    it('names the chosen value in the words the card showed, not in tokens', () => {
         const action = {
             type: 'change_settings',
             ...params(CosmeticSetting.CONVERSATION_GROUPING, GroupingToken.SINGLE),
         };
 
-        expect(changeSettingsCardRenderer.subtitle?.(action, {})).toBe('Conversation grouping');
         expect(changeSettingsCardRenderer.detail?.(action, {})).toBe('Single messages');
     });
 
-    it('leaves the tile unsubtitled rather than captioning it with a setting the card cannot render', () => {
-        const action = { type: 'change_settings', ...params('font', 'big') };
+    // Every setting gets a sentence of its own, and a setting the params do not name still gets one
+    // rather than a card that describes nothing.
+    it('gives each setting its own sentence, and falls back for one it cannot name', () => {
+        const sentenceFor = (setting: string) =>
+            sentenceText(changeSettingsCardRenderer.sentence({ type: 'change_settings', ...params(setting, '') }, {}));
+        const named = Object.values(CosmeticSetting).map(sentenceFor);
 
-        expect(changeSettingsCardRenderer.subtitle?.(action, {})).toBeUndefined();
+        expect(new Set(named).size).toBe(named.length);
+        expect(sentenceFor('font')).toBeTruthy();
+        expect(named).not.toContain(sentenceFor('font'));
     });
 });

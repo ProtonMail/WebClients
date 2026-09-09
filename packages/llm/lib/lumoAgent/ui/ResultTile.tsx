@@ -7,6 +7,7 @@ import type { IconComponent } from '@proton/lumo-ui/types';
 import clsx from '@proton/utils/clsx';
 
 import type { ActionRequest, ReferenceLabels } from '../contracts/types';
+import sentenceText from './sentenceText';
 import type { CardRenderer } from './types';
 import { ConfirmStatus } from './types';
 
@@ -36,7 +37,9 @@ interface Props {
 const ResultTile = ({ renderer, action, labels, status, className }: Props) => {
     const { Icon: StatusIcon, className: statusClassName } = STATUS_MARKS[status];
     const TypeIcon = renderer.icon;
-    const title = renderer.title(action, labels);
+    // The tile's line clips, and a `title` attribute cannot hold a node, so the card's sentence is read
+    // back as plain text. The action here is the one that ran, so the tense is the only difference.
+    const title = sentenceText(renderer.sentence(action, labels));
     const detail = renderer.detail?.(action, labels);
 
     // Both glyphs lead the disclosure's own trigger line, so the status mark stays beside the title when

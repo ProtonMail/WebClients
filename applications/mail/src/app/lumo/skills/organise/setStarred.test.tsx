@@ -1,5 +1,6 @@
 import type { ActionRequest } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
+import sentenceText from '@proton/llm/lib/lumoAgent/ui/sentenceText';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
@@ -49,14 +50,14 @@ describe('setStarredCardRenderer', () => {
     };
     const labels = { 'email-a1b2c3': { title: 'Booking confirmation' }, 'email-d4e5f6': { title: 'Receipt' } };
 
-    it('titles the card by direction and leaves the subtitle unset (starring has no destination)', () => {
-        const starTitle = setStarredCardRenderer.title(starAction, labels);
-        const unstarTitle = setStarredCardRenderer.title(unstarAction, labels);
-
-        expect(starTitle).toBeTruthy();
-        expect(unstarTitle).toBeTruthy();
-        expect(starTitle).not.toBe(unstarTitle);
-        expect(setStarredCardRenderer.subtitle).toBeUndefined();
+    // Both directions run through the shared selection sentence, so both have to count the selection —
+    // and neither may go on claiming an action once every row is deselected.
+    it.each([
+        ['starring', starAction],
+        ['unstarring', unstarAction],
+    ])('counts the selection in the %s sentence, and stops at none', (_direction, action) => {
+        expect(sentenceText(setStarredCardRenderer.sentence(action, labels))).toContain('2');
+        expect(sentenceText(setStarredCardRenderer.sentence({ ...action, ids: [] }, labels))).not.toContain('2');
     });
 
     it('takes the shared selection body, its empty-apply rule and the shared count detail', () => {

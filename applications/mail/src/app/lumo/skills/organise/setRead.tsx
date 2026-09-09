@@ -9,7 +9,12 @@ import { SOURCE_ACTION } from '../../../components/list/list-telemetry/useListTe
 import { selectParams } from '../../../store/elements/elementsSelectors';
 import { resolveElements } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
-import { emailCountDetail, hasEmailSelection, renderEmailSelectionBody } from './emailSelection';
+import {
+    emailCountDetail,
+    emailSelectionSentence,
+    hasEmailSelection,
+    renderEmailSelectionBody,
+} from './emailSelection';
 
 export interface SetReadParams {
     ids: string[];
@@ -65,10 +70,16 @@ export const createSetReadHandler =
         });
     };
 
-/** No subtitle: there is no destination to show — the direction is in the title. */
 export const setReadCardRenderer: CardRenderer = {
     icon: IcEnvelope,
-    title: (action) => (action.read ? c('Title').t`Mark as read` : c('Title').t`Mark as unread`),
+    sentence: (action) =>
+        emailSelectionSentence(action, (emails) =>
+            action.read
+                ? // translator: e.g. "Mark 3 emails as read"
+                  c('Info').jt`Mark ${emails} as read`
+                : // translator: e.g. "Mark 3 emails as unread"
+                  c('Info').jt`Mark ${emails} as unread`
+        ),
     renderBody: renderEmailSelectionBody,
     canApply: hasEmailSelection,
     detail: emailCountDetail,
