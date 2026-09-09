@@ -162,21 +162,6 @@ im.$media-expressions: $media-expressions;
 }
 
 @media (hover: hover) and (pointer: fine) {
-	.all-chats-row .all-chats-row-select {
-		opacity: 0;
-		pointer-events: none;
-		visibility: hidden;
-	}
-
-	.all-chats-row:hover .all-chats-row-select,
-	.all-chats-row:focus-within .all-chats-row-select,
-	.all-chats-row-bulk-selected .all-chats-row-select,
-	.all-chats-has-bulk-selection .all-chats-row .all-chats-row-select {
-		opacity: 1;
-		pointer-events: auto;
-		visibility: visible;
-	}
-
 	.all-chats-row .all-chats-row-star {
 		opacity: 0;
 		pointer-events: none;
