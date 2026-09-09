@@ -11198,7 +11198,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/i18n@workspace:packages/i18n"
   dependencies:
-    cross-env: "npm:^10.1.0"
     eslint: "npm:^10.9.0"
     execa: "npm:^5.1.1"
     gettext-parser: "npm:^7.0.1"
