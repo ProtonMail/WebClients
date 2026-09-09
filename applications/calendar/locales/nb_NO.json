@@ -1043,6 +1043,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Den gratis prøveperioden for skrivebordsappen avsluttes ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add a payment method": [
+        "Legg til betalingsmåte"
       ]
     },
     "action": {
@@ -1885,6 +1888,19 @@
       ],
       "Total": [
         "Totalt"
+      ],
+      "Amount due": [
+        "Beløp å betale"
+      ],
+      "Amount due after trial": [
+        "Beløp som forfaller etter prøvetiden"
+      ],
+      "Amount due now": [
+        "Beløp å betale nå"
+      ],
+      "Total for ${ cycle } month": [
+        "Totalt for ${ cycle } måned",
+        "Totalt for ${ cycle } måneder"
       ]
     },
     "Collapsible tooltip": {
@@ -4448,6 +4464,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom-tilkoblingen har utløpt. Koble til på nytt for å fortsette."
+      ],
+      "Could not grant access to the organization key": [
+        "Kunne ikke gi tilgang til organisasjonsnøkkelen"
       ]
     },
     "error": {
@@ -4843,6 +4862,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Kontoen din bruker ${ usedSpace } med lagringsplass som overskrider de ${ inviteSpace } tildelt deg. Slett noen data, eller be planadministratoren om å øke lagringsplassen."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du er invitert til å koble ${ BRAND_NAME }-kontoen til denne familiegruppen og nyte alle premiumfunksjonene."
       ]
     },
     "familyOffer_2023:Label": {
@@ -7066,6 +7088,24 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nådd grensen for antall bestillingsplasser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } merket"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } igjen av prøveperioden. ${ addPaymentMethodLink } for å unngå å miste tilgang. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } igjen av prøveperioden. ${ addPaymentMethodLink } for å beholde abonnementet. ${ learnMoreLink }"
+      ],
+      "Do you remember your password?": [
+        "Husker du passordet ditt?"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Hvis du har mistet tilgangen til autentiseringsappen din, kan du bruke én av de 16 reservekodene for gjenoppretting som du fikk da du konfigurerte tofaktorautentisering. ${ learnMoreLink }"
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Vi vil sende deg til ${ IDEAL_WERO_BRAND_NAME } i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
       ]
     },
     "info": {
@@ -7854,6 +7894,9 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "Account holder name": [
+        "Kontoinnehaverens navn"
       ]
     },
     "label": {
@@ -9007,6 +9050,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med utvidet tilgang"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med begrenset tilgang"
       ]
     },
     "new_plans: feature highlight": {
@@ -9122,6 +9171,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du nedgraderer kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du forsøker å abonnere igjen."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } slutter på ${ Last4 }"
       ]
     },
     "new_plans: label": {
@@ -10178,6 +10230,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Betal med ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Valutaen er endret til euro (€) fordi ${ IDEAL_WERO_BRAND_NAME } kun støtter betalinger i euro."
       ]
     },
     "Payments.Error": {
@@ -10198,6 +10256,12 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kortet ditt ble avslått. Forsøk et annet kort eller kontakt banken din for å autorisere belastingen."
+      ],
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Kunne ikke initialisere ${ IDEAL_WERO_BRAND_NAME }. Prøv på nytt senere."
+      ],
+      "Please enter the account holder name": [
+        "Skriv inn kontoinnehaverens navn"
       ]
     },
     "Payments.error": {
@@ -10258,6 +10322,15 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - kort som slutter på ${ paymentMethod.Details.Last4 }"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - kort som slutter på ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Bankoverføring - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kort som slutter på ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -13089,6 +13162,9 @@
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
+      ],
+      "September Sale": [
+        "Septembersalg"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13714,6 +13790,99 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Prøv nå"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Du har nå tilgang til nye ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ved å bekrefte gir du ${ BRAND_NAME } og Stripe, vår betalingstjenesteleverandør, tillatelse til å innkreve fremtidige betalinger for abonnementet ditt fra denne bankkontoen via SEPA AvtaleGiro, og banken din til å debitere disse betalingene. Første betaling gjøres nå av ${ IDEAL_WERO_BRAND_NAME }. Abonnementet fornyes automatisk inntil du kansellerer. Vi varsler deg før hver innkreving. For innkreving via AvtaleGiro kan du be om refusjon fra banken innen 8 uker etter debiteringsdatoen, i henhold til vilkårene i avtalen med banken din. Dette gjelder ikke for ${ IDEAL_WERO_BRAND_NAME }-betalingen du foretar nå."
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Endring av faktureringsadresse kan påvirke skatter på fremtidige fakturaer."
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Benytt deg av tilbudet"
+      ],
+      "Special Offer": [
+        "Spesialtilbud"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "2 individual accounts": [
+        "2 individuelle kontoer"
+      ],
+      "2 TB of secure storage": [
+        "2 TB med sikker lagring"
+      ],
+      "3 TB of secure storage": [
+        "3 TB med sikker lagring"
+      ],
+      "500 GB of secure storage": [
+        "500 GB med sikker lagring"
+      ],
+      "6 individual accounts": [
+        "6 individuelle kontoer"
+      ],
+      "Advanced protection against cyber threats": [
+        "Avansert beskyttelse mot cybertrusler"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter er basert på standard månedspris. Abonnementet fornyes til standard årspris når faktureringssyklusen utløper."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "for 12 måneder"
+      ],
+      "One plan, full power": [
+        "Én plan, mer kraft"
+      ],
+      "One plan, max savings": [
+        "Én plan, maksimal besparelse"
+      ],
+      "One plan, more power": [
+        "Én plan, mer kraft"
       ]
     }
   }

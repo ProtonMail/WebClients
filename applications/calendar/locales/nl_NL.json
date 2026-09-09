@@ -9486,7 +9486,7 @@
     },
     "ngc_access_banner: info": {
       "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
-        "U hebt nu toegang tot de nieuwe ${ CALENDAR_APP_NAME }. ${ link }"
+        "U heeft nu toegang tot de nieuwe ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     },
     "Note": {
@@ -10335,6 +10335,9 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - kaart eindigend op ${ paymentMethod.Details.Last4 }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kaart eindigend op ${ Last4 }"
       ]
     },
     "Payments.Sepa": {

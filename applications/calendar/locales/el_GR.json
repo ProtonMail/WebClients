@@ -1055,6 +1055,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add a payment method": [
+        "Προσθέστε μία μέθοδο πληρωμής"
       ]
     },
     "action": {
@@ -1897,6 +1900,19 @@
       ],
       "Total": [
         "Σύνολο"
+      ],
+      "Amount due": [
+        "Οφειλόμενο ποσό"
+      ],
+      "Amount due after trial": [
+        "Οφειλόμενο ποσό μετά τη δοκιμαστική περίοδο"
+      ],
+      "Amount due now": [
+        "Οφειλόμενο ποσό τώρα"
+      ],
+      "Total for ${ cycle } month": [
+        "Σύνολο για ${ cycle } μήνα",
+        "Σύνολο για ${ cycle } μήνες"
       ]
     },
     "Collapsible tooltip": {
@@ -4858,6 +4874,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ο λογαριασμός σας χρησιμοποιεί αποθηκευτικό χώρο ${ usedSpace }, ο οποίος υπερβαίνει τα ${ inviteSpace } που σας έχουν εκχωρηθεί. Διαγράψτε ορισμένα δεδομένα ή ζητήστε από τον διαχειριστή του πλάνου να αυξήσει τον αποθηκευτικό σας χώρο."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Σας προσκαλούμε να συνδέσετε τον λογαριασμό σας ${ BRAND_NAME } με αυτήν την οικογενειακή ομάδα και να απολαύσετε όλες τις premium λειτουργίες της."
       ]
     },
     "familyOffer_2023:Label": {
@@ -7099,6 +7118,15 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Έχετε φτάσει στο όριο των διαθέσιμων θέσεων κράτησης (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Απομένουν ${ timeRemaining } στη δοκιμαστική σας περίοδο. ${ addPaymentMethodLink } για να αποφύγετε την απώλεια πρόσβασης. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Απομένουν ${ timeRemaining } στη δοκιμαστική σας περίοδο. ${ addPaymentMethodLink } για να διατηρήσετε τη συνδρομή σας. ${ learnMoreLink }"
+      ],
+      "Do you remember your password?": [
+        "Θυμάστε τον κωδικό πρόσβασής σας;"
       ]
     },
     "info": {
@@ -9167,6 +9195,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } που λήγει σε ${ Last4 }"
       ]
     },
     "new_plans: label": {
@@ -10330,6 +10361,15 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - κάρτα που λήγει σε ${ paymentMethod.Details.Last4 }"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - κάρτα που λήγει σε ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Τραπεζική μεταφορά - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - κάρτα που λήγει σε ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -13868,6 +13908,11 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Η αλλαγή της διεύθυνσης χρέωσής σας ενδέχεται να επηρεάσει τους φόρους σε μελλοντικά τιμολόγια."
       ]
     }
   }
