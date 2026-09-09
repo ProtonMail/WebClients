@@ -10,6 +10,7 @@
         "./models": "./lib/models/index.d.ts",
         "./useEncryptedSearch": "./lib/useEncryptedSearch.tsx",
         "./useSearchTelemetry": "./lib/useSearchTelemetry.ts",
+        "./useContentSearchTelemetry": "./lib/useContentSearchTelemetry.ts",
         "./useIndexedDBSupport": "./lib/hooks/useIndexedDBSupport.ts"
     },
     "scripts": {

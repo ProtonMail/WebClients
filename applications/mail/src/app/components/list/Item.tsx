@@ -2,6 +2,7 @@ import type { ChangeEvent, DragEvent, MouseEvent } from 'react';
 import { memo, useMemo, useRef } from 'react';
 
 import ItemCheckbox from '@proton/components/containers/items/ItemCheckbox';
+import { useContentSearchTelemetry } from '@proton/encrypted-search/useContentSearchTelemetry';
 import { isCustomLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { toValidHtmlId } from '@proton/shared/lib/dom/toValidHtmlId';
@@ -13,16 +14,15 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { filterAttachmentToPreview } from '../../helpers/attachment/attachmentThumbnails';
-import OneTimeCodeDetector from '../../helpers/message/otp/OneTimeCodeDetector';
-import { shouldRunOtpExtraction } from '../../helpers/message/otp/shouldRunOtpExtraction';
-import { useMailSelector } from '../../store/hooks';
-
 import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
 import { getDate, isElementMessage, isUnread } from '../../helpers/elements';
+import OneTimeCodeDetector from '../../helpers/message/otp/OneTimeCodeDetector';
+import { shouldRunOtpExtraction } from '../../helpers/message/otp/shouldRunOtpExtraction';
 import { getDisplayRecipients } from '../../helpers/recipients';
 import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
 import { useCategoryViewConversationPrefetch } from '../../hooks/conversation/useCategoryViewConversationPrefetch';
 import type { Element } from '../../models/element';
+import { useMailSelector } from '../../store/hooks';
 import { selectSnoozeDropdownState } from '../../store/snooze/snoozeSliceSelectors';
 import { useCategoriesOnboarding } from '../categoryView/categoriesOnboarding/CategoriesOnboardingContext';
 import { HIGHLIGHTED_ITEM_INDEX } from '../categoryView/categoriesOnboarding/onboardingInterface';
@@ -49,6 +49,8 @@ interface Props {
     element: Element;
     isSelected: boolean;
     useContentSearch: boolean;
+    isSearchResult: boolean;
+    getIsFirstSearchResultOpen: () => boolean;
     checked?: boolean;
     onCheck: (event: ChangeEvent, elementID: string) => void;
     onClick: (elementID: string | undefined) => void;
@@ -73,6 +75,8 @@ const Item = ({
     columnLayout,
     isSelected,
     useContentSearch,
+    isSearchResult,
+    getIsFirstSearchResultOpen,
     checked = false,
     onCheck,
     onClick,
@@ -91,6 +95,7 @@ const Item = ({
 
     const snoozeDropdownState = useMailSelector(selectSnoozeDropdownState);
     const isOneTimePasscodeEnabled = useFlag(MailFeatureFlag.OneTimePasscode);
+    const { sendResultOpenedReport } = useContentSearchTelemetry();
 
     const elementRef = useRef<HTMLDivElement>(null);
 
@@ -150,6 +155,17 @@ const Item = ({
         if (conversationID) {
             prefetchConversation(conversationID);
         }
+
+        if (isSearchResult) {
+            sendResultOpenedReport({
+                scrollerMode: conversationMode ? 'conversation' : 'message',
+                // No per-field match info is tracked for Encrypted Search results today
+                primaryMatchType: 'unknown',
+                isFirstOpen: getIsFirstSearchResultOpen(),
+                resultPosition: index + 1,
+            });
+        }
+
         onClick(element.ID);
     };
 

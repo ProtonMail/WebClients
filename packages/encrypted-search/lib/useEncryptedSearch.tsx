@@ -5,6 +5,7 @@ import type { IDBPDatabase } from 'idb';
 import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -86,6 +87,7 @@ import type {
     HighlightString,
     InternalESCallbacks,
 } from './models';
+import { getMailboxAddressType, useContentSearchTelemetry } from './useContentSearchTelemetry';
 import { useEncryptedSearchIndexingProgress } from './useEncryptedSearchIndexingProgress';
 import { useEncryptedSearchStatus } from './useEncryptedSearchStatus';
 import { SEARCH_TYPE, useSearchTelemetry } from './useSearchTelemetry';
@@ -115,6 +117,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
     const getUserKeys = useGetUserKeys();
     const [user] = useUser();
     const { ID: userID } = user;
+    const [addresses] = useAddresses();
     const { createNotification } = useNotifications();
     const esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent> = {
         ...defaultESCallbacks,
@@ -131,6 +134,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         sendPerformSearchReport,
         sendESSearchCompleteReport,
     } = useSearchTelemetry();
+    const { sendQueryCompletedReport, sendMailboxIndexCompletedReport } = useContentSearchTelemetry();
 
     // Keep a reference to cached items, such that they can be queried at any time
     const esCacheRef = useRef<ESCache<ESItemMetadata, ESItemContent>>(defaultESCache);
@@ -790,6 +794,17 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
                 numPauses,
             },
         });
+
+        // Mirrors mobile's `mailbox_index_completed`: only fired for the first full historic indexing
+        // pass, not on re-index or limit extension runs
+        if (!isRefreshed) {
+            sendMailboxIndexCompletedReport({
+                status: 'success',
+                totalMessagesIndexed: totalItems,
+                durationMs: indexTime,
+                mailboxAddressType: getMailboxAddressType(addresses),
+            });
+        }
     };
 
     /**
@@ -1014,6 +1029,13 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
             indexSize,
             cacheSize: esCacheRef.current.cacheSize,
             uncachedItemsFound,
+        });
+
+        sendQueryCompletedReport({
+            hasResults: !!itemsFound,
+            status: 'success',
+            resultCount: itemsFound,
+            durationMs: searchTime,
         });
     };
 
