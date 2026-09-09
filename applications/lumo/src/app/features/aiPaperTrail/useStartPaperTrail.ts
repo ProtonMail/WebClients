@@ -58,8 +58,9 @@ export const useStartPaperTrail = (): StartResult => {
             setError(undefined);
             setConversationId(undefined);
             setImportId(undefined);
-            setStatus('parsing');
 
+            // Read the upload before switching to the loading screen. That unmounts the file
+            // input; on several browsers the File handle is revoked once the input is gone.
             let exportData: NormalizedExport;
             try {
                 exportData = await parseExportFile(file);
