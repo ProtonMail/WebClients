@@ -439,8 +439,7 @@
         },
         "packages/wallet": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "tests": {
             "entry": [],
