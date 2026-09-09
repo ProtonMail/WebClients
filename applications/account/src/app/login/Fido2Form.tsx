@@ -1,12 +1,10 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
-
 import { c } from 'ttag';
 
+import { useFido2Action } from '@proton/account/fido/useFido2Action';
 import { Button } from '@proton/atoms/Button/Button';
 import { AuthSecurityKeyContent } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import type { Fido2Data, Fido2Response } from '@proton/shared/lib/authentication/interface';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getAuthentication } from '@proton/shared/lib/webauthn/get';
 import noop from '@proton/utils/noop';
 
@@ -17,18 +15,7 @@ interface Props {
 
 const Fido2Form = ({ onSubmit, fido2 }: Props) => {
     const [loading, withLoading] = useLoading(false);
-    const [fidoError, setFidoError] = useState(false);
-    const [awaitingTouch, setAwaitingTouch] = useState(false);
-    const abortControllerRef = useRef<AbortController | null>(null);
-
-    const handleAbort = useCallback(() => {
-        abortControllerRef.current?.abort();
-        abortControllerRef.current = null;
-    }, []);
-
-    useEffect(() => {
-        return handleAbort;
-    }, []);
+    const { fidoError, awaitingTouch, runFido2Action } = useFido2Action();
 
     return (
         <>
@@ -46,28 +33,10 @@ const Fido2Form = ({ onSubmit, fido2 }: Props) => {
                         return;
                     }
                     const run = async () => {
-                        let authenticationCredentialsPayload: Fido2Data;
-                        try {
-                            setFidoError(false);
-                            setAwaitingTouch(true);
-                            handleAbort();
-                            const abortController = new AbortController();
-                            abortControllerRef.current = abortController;
-                            authenticationCredentialsPayload = await getAuthentication(
-                                fido2.AuthenticationOptions,
-                                abortController.signal
-                            );
-                        } catch (error) {
-                            setFidoError(true);
-                            setAwaitingTouch(false);
-                            captureMessage('Security key auth', { level: 'error', extra: { error } });
-                            // Purposefully logging the error for somewhat easier debugging
-                            // eslint-disable-next-line no-console
-                            console.error(error);
-                            return;
-                        } finally {
-                            handleAbort();
-                        }
+                        const authenticationCredentialsPayload = await runFido2Action(
+                            (signal) => getAuthentication(fido2.AuthenticationOptions, signal),
+                            'auth'
+                        );
                         await onSubmit(authenticationCredentialsPayload);
                     };
                     withLoading(run()).catch(noop);
