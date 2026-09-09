@@ -275,9 +275,9 @@
             "project": ["**/*.{ts,tsx}"]
         },
         "packages/i18n": {
-            "entry": [],
-            "project": ["**/*.{js,ts,tsx}"],
-            "ignore": ["**"]
+            "entry": ["scripts/*.mjs"],
+            "project": ["**/*.{js,mjs,ts,tsx}"],
+            "ignore": ["test/input/js/**"]
         },
         "packages/icons": {
             "entry": [],
