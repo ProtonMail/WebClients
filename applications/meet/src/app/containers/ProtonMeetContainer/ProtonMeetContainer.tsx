@@ -5,6 +5,7 @@ import { useRoomContext } from '@livekit/components-react';
 import { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
 import { Track } from 'livekit-client';
 
+import LoaderPage from '@proton/components/containers/app/LoaderPage';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { resetMeetingState } from '@proton/meet/store/resetMeetingState';
@@ -478,7 +479,8 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
     }
 
     if (!isReadyToDecrypt) {
-        return null;
+        // Same loader as the bootstrap one, so the SRP handshake reads as a continuation of app startup
+        return <LoaderPage />;
     }
 
     return (
