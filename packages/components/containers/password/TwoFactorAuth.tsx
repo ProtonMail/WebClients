@@ -1,13 +1,13 @@
-import { type MutableRefObject, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
+import { type MutableRefObject, useEffect, useImperativeHandle, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useFido2Action } from '@proton/account/fido/useFido2Action';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import type { TwoFactorCredentials } from '@proton/shared/lib/api/auth';
 import type { Fido2Response } from '@proton/shared/lib/authentication/interface';
 import type { TwoFactorAuthTypes } from '@proton/shared/lib/authentication/twoFactor';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { type AuthenticationCredentialsPayload, getAuthentication } from '@proton/shared/lib/webauthn/get';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -89,26 +89,11 @@ interface Fido2FormProps {
     loading?: boolean;
 }
 const Fido2Form = ({ formId, onSubmit, twoFactorAuthRef, fido2, loading }: Fido2FormProps) => {
-    const [fidoError, setFidoError] = useState(false);
-    const [awaitingTouch, setAwaitingTouch] = useState(false);
-    const abortControllerRef = useRef<AbortController | null>(null);
-
-    const handleAbort = useCallback(() => {
-        const aborted = Boolean(abortControllerRef.current);
-        abortControllerRef.current?.abort();
-        abortControllerRef.current = null;
-        return aborted;
-    }, []);
+    const { fidoError, awaitingTouch, runFido2Action, abort } = useFido2Action();
 
     useImperativeHandle(twoFactorAuthRef, () => ({
-        abort: handleAbort,
+        abort,
     }));
-
-    useEffect(() => {
-        return () => {
-            handleAbort();
-        };
-    }, []);
 
     return (
         <Form
@@ -118,32 +103,13 @@ const Fido2Form = ({ formId, onSubmit, twoFactorAuthRef, fido2, loading }: Fido2
                     return;
                 }
 
-                const getPayload = async () => {
-                    try {
-                        setFidoError(false);
-                        setAwaitingTouch(true);
+                const getPayload = () =>
+                    runFido2Action((signal) => {
                         if (!fido2) {
                             throw new Error('Missing fido2 data');
                         }
-                        handleAbort();
-                        const abortController = new AbortController();
-                        abortControllerRef.current = abortController;
-
-                        return await getAuthentication(fido2.AuthenticationOptions, abortController.signal);
-                    } catch (error) {
-                        setFidoError(true);
-                        setAwaitingTouch(false);
-                        captureMessage('Security key auth', { level: 'error', extra: { error } });
-                        // Purposefully logging the error for somewhat easier debugging
-                        // eslint-disable-next-line no-console
-                        console.error(error);
-                        throw error;
-                    } finally {
-                        // It's important that it's aborted after failure/success so that extensions (LastPass) function correctly
-                        // without a `OperationError: A request is already pending.`.
-                        handleAbort();
-                    }
-                };
+                        return getAuthentication(fido2.AuthenticationOptions, signal);
+                    }, 'auth');
 
                 // NOTE: The promise is resolved by the consumer outside of this component so that they can show a
                 // loading spinner for example on the submit button.
