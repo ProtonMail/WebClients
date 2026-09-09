@@ -1,6 +1,5 @@
-import type { UnleashClient } from '@proton/unleash/UnleashClient';
-import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
-
+import type { SharedUnleashClient } from '../unleash/sharedUnleashClient';
+import { getSharedUnleashClient } from '../unleash/sharedUnleashClient';
 import type { EventManagerIntervalTypes, EventManagerIntervals } from './eventManagerIntervals';
 import { getTimeoutIntervalsFromUnleash } from './getTimeoutIntervalsFromUnleash';
 
@@ -10,10 +9,10 @@ import { getTimeoutIntervalsFromUnleash } from './getTimeoutIntervalsFromUnleash
  */
 export class TimeoutIntervalsState {
     private listeners = 0;
-    private readonly unleashClient: UnleashClient | undefined;
+    private readonly unleashClient: SharedUnleashClient | undefined;
     private value: EventManagerIntervals;
 
-    public constructor(unleashClient = getStandaloneUnleashClient()) {
+    public constructor(unleashClient = getSharedUnleashClient()) {
         this.unleashClient = unleashClient;
         this.value = getTimeoutIntervalsFromUnleash(unleashClient);
     }
