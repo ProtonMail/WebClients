@@ -12,7 +12,6 @@ import type {
   EditorInitializationConfig,
   DocumentRole,
 } from '@proton/docs-shared'
-import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 import { AnonymousUserDisplayName, GenerateUUID, DocProvider, getRandomAnonymousUserLetter } from '@proton/docs-shared'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
@@ -122,7 +121,17 @@ export function Editor({
 
   const { userName } = useSyncedState()
 
-  const { openLink } = useDocsDependencies()
+  const {
+    openLink,
+    showGenericAlertModal,
+    createSuggestionThread,
+    getAllThreads,
+    reopenSuggestion,
+    rejectSuggestion,
+    getDocumentUrl,
+    replaceDocumentUrl,
+    reportTelemetry,
+  } = useDocsDependencies()
 
   const setEditorRef = useCallback(
     (instance: LexicalEditor | null) => {
@@ -140,13 +149,6 @@ export function Editor({
 
     return baseProvider
   }, [docState])
-
-  const showGenericAlertModal = useCallback(
-    (message: string) => {
-      clientInvoker.showGenericAlertModal(message)
-    },
-    [clientInvoker],
-  )
 
   const isAnonymousUser = userName === AnonymousUserDisplayName
 
@@ -190,14 +192,6 @@ export function Editor({
     })
   }, [application.logger, application.syncedState])
 
-  const createSuggestionThread = useMemo(
-    () => clientInvoker.createSuggestionThread.bind(clientInvoker),
-    [clientInvoker],
-  )
-  const getAllThreads = useMemo(() => clientInvoker.getAllThreads.bind(clientInvoker), [clientInvoker])
-  const reopenSuggestion = useMemo(() => clientInvoker.reopenSuggestion.bind(clientInvoker), [clientInvoker])
-  const rejectSuggestion = useMemo(() => clientInvoker.rejectSuggestion.bind(clientInvoker), [clientInvoker])
-
   const { createNotification } = useNotifications()
   const createWarningNotification = useCallback(
     (message: string) => {
@@ -218,15 +212,6 @@ export function Editor({
       })
     },
     [showAlertModal],
-  )
-
-  const getDocumentUrl = useMemo(() => clientInvoker.getDocumentUrl.bind(clientInvoker), [clientInvoker])
-  const replaceDocumentUrl = useMemo(() => clientInvoker.replaceDocumentUrl.bind(clientInvoker), [clientInvoker])
-  const reportTelemetry = useCallback(
-    (event: TelemetryDocsEditorEvents) => {
-      void clientInvoker.editorReportingTelemetry(event)
-    },
-    [clientInvoker],
   )
 
   return (

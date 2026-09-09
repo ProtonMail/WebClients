@@ -16,8 +16,16 @@ describe('CommentViewer', () => {
       render(
         <DocsDependenciesProvider
           dependencies={{
+            getDocumentUrl: jest.fn(),
+            replaceDocumentUrl: jest.fn(),
+            reportTelemetry: jest.fn(),
             openLink: jest.fn(),
             isDevOrBlack: jest.fn(),
+            showGenericAlertModal: jest.fn(),
+            createSuggestionThread: jest.fn(),
+            getAllThreads: jest.fn(),
+            reopenSuggestion: jest.fn(),
+            rejectSuggestion: jest.fn(),
           }}
         >
           <CommentViewer content={invalidContent} className="test-class" />
