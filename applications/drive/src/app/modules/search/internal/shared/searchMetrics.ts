@@ -313,6 +313,7 @@ export const searchMetrics = {
      * SharedWorker connection-health error.
      */
     markWorkerHealthError({ kind, error }: { kind: SearchWorkerHealthErrorKind; error: unknown }): void {
+        metrics.drive_search_worker_health_total.increment({ category: `search-worker-${kind}` });
         sendErrorReportForSearch(`Search worker health error (${kind})`, error, {
             tags: { label: 'search-worker-health-error', kind },
         });
@@ -329,6 +330,7 @@ export const searchMetrics = {
         staleness: number;
         remainingClients: number;
     }): void {
+        metrics.drive_search_worker_health_total.increment({ category: 'main-thread-timeout' });
         sendErrorReportForSearch(
             'Search client disconnected by timeout',
             new Error('Search client disconnected by timeout'),
