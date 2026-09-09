@@ -1,6 +1,6 @@
 import JSZip from 'jszip';
 
-import { PaperTrailParseError, parseExportFile, parseExportText } from './index';
+import { PaperTrailParseError, formatPaperTrailFileReadError, parseExportFile, parseExportText } from './index';
 import { mergeConversationJsonTexts } from './zipConversations';
 
 describe('parseExportText', () => {
@@ -71,6 +71,19 @@ describe('mergeConversationJsonTexts', () => {
     });
 });
 
+describe('formatPaperTrailFileReadError', () => {
+    it('maps NotReadableError to a friendly upload message', () => {
+        const error = new DOMException(
+            'The requested file could not be read, typically due to permission problems that have occurred after a reference to a file was acquired.',
+            'NotReadableError'
+        );
+
+        expect(formatPaperTrailFileReadError(error)).toBe(
+            'We could not read this file. Select it again, or move it out of cloud storage before uploading.'
+        );
+    });
+});
+
 describe('parseExportFile', () => {
     it('parses ChatGPT zip exports with conversations-NNN.json files', async () => {
         const zip = new JSZip();
@@ -116,5 +129,39 @@ describe('parseExportFile', () => {
         expect(result.conversations.flatMap((conversation) => conversation.userPrompts.map((prompt) => prompt.text))).toEqual(
             ['hello from 000', 'hello from 001']
         );
+    });
+
+    it('parses privacy-portal exports with nested Conversations zip files', async () => {
+        const conversationsZip = new JSZip();
+        conversationsZip.file(
+            'conversations-000.json',
+            JSON.stringify([
+                {
+                    title: 'Nested export',
+                    mapping: {
+                        a: {
+                            message: {
+                                author: { role: 'user' },
+                                content: { parts: ['hello from nested zip'] },
+                            },
+                        },
+                    },
+                },
+            ])
+        );
+
+        const outerZip = new JSZip();
+        outerZip.file(
+            'Conversations__user-chatgpt-0001.zip',
+            await conversationsZip.generateAsync({ type: 'uint8array' })
+        );
+
+        const blob = await outerZip.generateAsync({ type: 'blob' });
+        const file = new File([blob], 'chatgpt-privacy-export.zip', { type: 'application/zip' });
+        const result = await parseExportFile(file);
+
+        expect(result.source).toBe('chatgpt');
+        expect(result.conversations).toHaveLength(1);
+        expect(result.conversations[0]?.userPrompts[0]?.text).toBe('hello from nested zip');
     });
 });
