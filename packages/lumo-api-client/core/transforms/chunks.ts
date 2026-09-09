@@ -24,11 +24,6 @@ const makeChunkParserTransformerWithCapture = (
     },
 });
 
-export const makeChunkParserTransformStream = (
-    defaultTarget: LumoCompletionTarget = 'message'
-): TransformStream<string, GenerationResponseMessage> =>
-    new TransformStream(makeChunkParserTransformerWithCapture(new StreamProcessor(defaultTarget)));
-
 export const makeChunkParserTransformStreamWithCapture = (
     defaultTarget: LumoCompletionTarget = 'message'
 ): ChunkParserCapture => {

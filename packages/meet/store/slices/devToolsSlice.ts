@@ -2,11 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import type { MeetState } from '../rootReducer';
 
-export interface DevToolsState {
+interface DevToolsState {
     krispDebug: boolean;
 }
 
-export const initialState: DevToolsState = {
+const initialState: DevToolsState = {
     krispDebug: false,
 };
 

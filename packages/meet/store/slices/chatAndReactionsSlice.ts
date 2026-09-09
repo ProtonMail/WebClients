@@ -10,7 +10,7 @@ import type {
 import { isChatThreadExpanded } from '../../utils/isChatThreadExpanded';
 import type { MeetState } from '../rootReducer';
 
-export interface ChatReactionRef {
+interface ChatReactionRef {
     messageId: string;
     emoji: string;
     identity: string;

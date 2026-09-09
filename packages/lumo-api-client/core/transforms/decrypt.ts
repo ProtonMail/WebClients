@@ -10,10 +10,6 @@ import type {
     ServerToolResultMessage,
 } from '../types';
 
-export type DecryptionTransformerParams = {
-    encryption: RequestEncryptionParams | null;
-};
-
 function makeResponseAd(requestId: string) {
     return `lumo.response.${requestId}.chunk`;
 }

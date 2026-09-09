@@ -13,7 +13,7 @@ import { selectExpirationTime, selectMaxDuration, selectMeetingInfoModel } from 
  * Meeting facts carried over by the dashboard navigation so the prejoin can paint before the
  * meeting info request resolves. Partial on purpose: the meetings list does not know the rest.
  */
-export interface NavigationMeetingSeed {
+interface NavigationMeetingSeed {
     meetingName: string;
     isPersonalRoom: boolean;
     canManageWaitingRoom: boolean;
@@ -133,16 +133,9 @@ export const stopMeetingDurationTimer =
         dispatch(slice.actions.setMeetingDurationTimer(null));
     };
 
-export const {
-    setCurrentMeeting,
-    setNavigationSeed,
-    setDisplayName,
-    setMlsGroupState,
-    resetCurrentMeeting,
-    addKeyRotationLog,
-} = slice.actions;
+export const { setCurrentMeeting, setNavigationSeed, setMlsGroupState, resetCurrentMeeting, addKeyRotationLog } =
+    slice.actions;
 
-export const selectCurrentMeeting = (state: MeetState) => state.currentMeeting;
 const selectNavigationSeed = (state: MeetState) => state.currentMeeting.navigationSeed;
 // TODO(follow-up): rename to selectMeetingName and migrate consumers
 export const selectRoomName = (state: MeetState) =>
@@ -182,6 +175,6 @@ export const selectIsMeetingLoading = (state: MeetState) => state.currentMeeting
 export const selectMeetingNavigationSeed = (state: MeetState) => state.currentMeeting.navigationSeed;
 
 export { selectMaxParticipants } from './meetingInfoModel';
-export { selectExpirationTime, selectMaxDuration };
+export { selectExpirationTime };
 
 export const currentMeetingReducer = { currentMeeting: slice.reducer };
