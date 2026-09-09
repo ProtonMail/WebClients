@@ -646,7 +646,7 @@ describe('useLumoAgent', () => {
                 releaseAbandoned();
                 await sendPromise;
             });
-            expect(result.current.isAtToolLimit).toBe(true);
+            expect(result.current.toolLimit).not.toBeNull();
 
             script = async ({ chunk }) => chunk(message('In Archive.'));
             await act(async () => {
@@ -681,7 +681,7 @@ describe('useLumoAgent', () => {
                 await result.current.send('find my festival tickets');
             });
 
-            expect(result.current.isAtToolLimit).toBe(true);
+            expect(result.current.toolLimit).not.toBeNull();
             expect(result.current.isBusy).toBe(false);
         });
 
@@ -699,7 +699,7 @@ describe('useLumoAgent', () => {
             });
 
             expect(sentTurns[1]).toEqual(chain);
-            expect(result.current.isAtToolLimit).toBe(false);
+            expect(result.current.toolLimit).toBeNull();
             expect(result.current.items.map((item) => item.kind)).toEqual(['user', 'reply', 'reply']);
         });
 
@@ -759,6 +759,65 @@ describe('useLumoAgent', () => {
             ]);
         });
 
+        // The card tells the user how far it has got, so the count is the chain's own tool calls and the
+        // note is the last step they were shown — neither is a stand-in for "a lot".
+        it("counts the parked chain's tool calls and keeps its last step", async () => {
+            script = async ({ executor, chunk }) => {
+                chunk(message('Checking the Inbox.'));
+                await executor.execute([{ id: '1', name: 'view_items', arguments: '{}' }]);
+                await executor.execute([{ id: '2', name: 'view_items', arguments: '{}' }]);
+                return {
+                    stoppedOnBudget: true,
+                    turns: afterToolRound(
+                        [{ role: 'user' as any, content: 'find my festival tickets' }],
+                        { role: 'tool_call', content: '{"id":"1","name":"view_items","arguments":{}}' },
+                        { role: 'tool_result', content: '2 items' },
+                        { role: 'tool_call', content: '{"id":"2","name":"view_items","arguments":{}}' },
+                        { role: 'tool_result', content: '2 items' }
+                    ),
+                };
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+            await act(async () => {
+                await result.current.send('find my festival tickets');
+            });
+
+            expect(result.current.toolLimit).toEqual({ steps: 2, activity: 'Read 2 items' });
+        });
+
+        // History keeps every tool call verbatim, so a count over the whole array reports steps the
+        // current question never took, against a budget it cannot exceed.
+        it('counts and names this exchange only, not the tool calls history carries', async () => {
+            script = async ({ executor, chunk }) => {
+                await executor.execute([{ id: '1', name: 'view_items', arguments: '{}' }]);
+                chunk(message('Two in the Inbox.'));
+                return {
+                    turns: afterToolRound(
+                        sentTurns[0],
+                        { role: 'tool_call', content: '{"id":"1","name":"view_items","arguments":{}}' },
+                        { role: 'tool_result', content: '2 items' }
+                    ),
+                };
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+            await act(async () => {
+                await result.current.send('how many are in my inbox');
+            });
+
+            script = async ({ chunk }) => {
+                chunk(message('Still looking.'));
+                return { stoppedOnBudget: true, turns: sentTurns[1] };
+            };
+            await act(async () => {
+                await result.current.send('and in Trash');
+            });
+
+            expect(sentTurns[1]).toContainEqual(expect.objectContaining({ role: 'tool_call' }));
+            expect(result.current.toolLimit).toEqual({ steps: 0 });
+        });
+
         it('keeps the offer, and the partial answer, when the resumed chain fails', async () => {
             script = stopOnBudget;
 
@@ -774,7 +833,7 @@ describe('useLumoAgent', () => {
                 await result.current.resume();
             });
 
-            expect(result.current.isAtToolLimit).toBe(true);
+            expect(result.current.toolLimit).not.toBeNull();
 
             script = async ({ chunk }) => chunk(message('Found them in Trash.'));
             await act(async () => {
@@ -782,7 +841,7 @@ describe('useLumoAgent', () => {
             });
 
             expect(sentTurns[2]).toEqual(chain);
-            expect(result.current.isAtToolLimit).toBe(false);
+            expect(result.current.toolLimit).toBeNull();
         });
 
         it('banks whatever it managed to say when the user declines and types instead', async () => {
@@ -798,7 +857,7 @@ describe('useLumoAgent', () => {
                 await result.current.send('never mind, what time is it');
             });
 
-            expect(result.current.isAtToolLimit).toBe(false);
+            expect(result.current.toolLimit).toBeNull();
             expect(sentTurns[1]).toEqual([
                 expect.objectContaining({ role: 'system' }),
                 { role: 'user', content: 'find my festival tickets' },

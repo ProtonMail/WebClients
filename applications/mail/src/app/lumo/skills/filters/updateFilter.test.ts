@@ -1,6 +1,8 @@
 import { FILTER_VERSION } from '@proton/components/containers/filters/constants';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
+import type { ActionRequest } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
+import sentenceText from '@proton/llm/lib/lumoAgent/ui/sentenceText';
 import type { Filter } from '@proton/sieve/filterModel';
 
 import type { MailToolDeps } from '../../toolModule';
@@ -90,5 +92,19 @@ describe('updateFilterCardRenderer', () => {
     it('shares the filter card body and its Confirm guard with create_filter', () => {
         expect(updateFilterCardRenderer.renderBody).toBe(renderFilterFields);
         expect(updateFilterCardRenderer.canApply).toBe(hasEveryFilterFieldFilled);
+    });
+
+    // A reference with no recorded name would otherwise put `filter-k8m2n4` — or `undefined` for a
+    // missing param — in the headline the user approves.
+    it('names the filter, or says "this filter" when no name was recorded', () => {
+        const action = { type: 'update_filter', filter: 'filter-k8m2n4' } as ActionRequest;
+
+        expect(
+            sentenceText(updateFilterCardRenderer.sentence(action, { 'filter-k8m2n4': { title: 'Newsletters' } }))
+        ).toContain('Newsletters');
+        expect(sentenceText(updateFilterCardRenderer.sentence(action, {}))).toBe('Update this filter');
+        expect(sentenceText(updateFilterCardRenderer.sentence({ type: 'update_filter' } as ActionRequest, {}))).toBe(
+            'Update this filter'
+        );
     });
 });

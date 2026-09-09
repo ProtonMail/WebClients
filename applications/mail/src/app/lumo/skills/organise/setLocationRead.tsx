@@ -9,6 +9,7 @@ import type {
     ToolHandler,
 } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
+import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
 import { CATEGORY_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LABEL_IDS_TO_HUMAN, MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
@@ -109,7 +110,7 @@ export const createSetLocationReadHandler =
         });
     };
 
-const targetName = (action: ActionRequest, labels: ReferenceLabels): string => {
+const targetName = (action: ActionRequest | Record<string, any>, labels: ReferenceLabels): string => {
     if (action.target) {
         return referenceName(action.target, labels);
     }
@@ -119,7 +120,7 @@ const targetName = (action: ActionRequest, labels: ReferenceLabels): string => {
     return '';
 };
 
-const scopeName = (action: ActionRequest, labels: ReferenceLabels): string => {
+const scopeName = (action: ActionRequest | Record<string, any>, labels: ReferenceLabels): string => {
     const location = targetName(action, labels);
     if (!location || !action.category) {
         return location;
@@ -131,12 +132,26 @@ const scopeName = (action: ActionRequest, labels: ReferenceLabels): string => {
 
 const scope = (action: ActionRequest, labels: ReferenceLabels) => scopeName(action, labels) || undefined;
 
-/** No body: a whole location has no rows to deselect. The card and the settled tile share one scope so they
- *  name the same blast radius. */
+/** No body: a whole location has no rows to deselect. The sentence and the settled tile's detail share one
+ *  scope so they name the same blast radius. */
 export const setLocationReadCardRenderer: CardRenderer = {
     icon: IcEnvelopes,
-    title: (action) => (action.read ? c('Title').t`Mark all as read` : c('Title').t`Mark all as unread`),
-    subtitle: scope,
+    sentence: (action, labels) => {
+        const namedScope = scopeName(action, labels);
+        if (!namedScope) {
+            return c('Info').t`No location selected`;
+        }
+        const place = sentenceValue(namedScope);
+
+        return action.read
+            ? // translator: everything in a location, e.g. "Mark the whole of Inbox as read"
+              c('Info').jt`Mark the whole of ${place} as read`
+            : // translator: everything in a location, e.g. "Mark the whole of Inbox as unread"
+              c('Info').jt`Mark the whole of ${place} as unread`;
+    },
+    // The same scope the sentence reads, so a card can never offer to apply what it cannot name. Labels
+    // only supply a custom target's display name, which is beside the point of whether one was given.
+    canApply: (params) => !!scopeName(params, {}),
     detail: scope,
 };
 

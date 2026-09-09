@@ -21,7 +21,7 @@ import { ConfirmOutcome, createClientToolExecutor } from '../engine/engine';
 import { LOAD_GUIDE_TOOL_NAME } from '../engine/loadGuide';
 import { createReferenceRegistry } from '../engine/referenceRegistry';
 import { buildSystemPrompt } from '../prompt/buildSystemPrompt';
-import type { LumoAgentConfig, LumoAgentItem } from './types';
+import type { LumoAgentConfig, LumoAgentItem, ToolLimit } from './types';
 import { ConfirmStatus } from './types';
 
 /** The engine reports how a change went; the tile is a UI state. Neither vocabulary owns the other. */
@@ -90,6 +90,15 @@ const projectChainForHistory = (chainWork: Turn[], definitions: ToolDefinition[]
 const withoutBlankAssistantTurns = (turns: Turn[]): Turn[] =>
     turns.filter((turn) => turn.role !== ASSISTANT || !!turn.content?.trim());
 
+/**
+ * Tool calls made since the question, resumed rounds included: a resumed chain is handed the whole turn
+ * array, banked history and all, and every one of this exchange's rounds sits after its user turn.
+ */
+const countToolCallsSinceQuestion = (turns: Turn[]): number => {
+    const question = turns.map((turn) => turn.role).lastIndexOf(USER);
+    return turns.slice(question + 1).filter((turn) => turn.role === TOOL_CALL).length;
+};
+
 /** Banked history replays as question-then-answer, so a trailing tool call or result is not banked. */
 const untilLastSpokenTurn = (turns: Turn[]): Turn[] => {
     const fromEnd = [...turns].reverse().findIndex((turn) => turn.role === ASSISTANT && !!turn.content);
@@ -153,7 +162,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
     const [items, setItems] = useState<LumoAgentItem[]>([]);
     const [isBusy, setIsBusy] = useState(false);
     const [sessionKey, setSessionKey] = useState(0);
-    const [isAtToolLimit, setIsAtToolLimit] = useState(false);
+    const [toolLimit, setToolLimit] = useState<ToolLimit | null>(null);
 
     const idRef = useRef(0);
     const controllerRef = useRef<AbortController | null>(null);
@@ -164,7 +173,9 @@ const useLumoAgent = (config: LumoAgentConfig) => {
     // The exchange's projected turns, waiting to be banked. Per exchange, not per chain: a chain that
     // stops on the round budget banks nothing, and the resumed chain only sees its own new turns.
     const projectedChainRef = useRef<Turn[]>([]);
-    const pendingResumeRef = useRef<{ turns: Turn[]; userText: string; reply: string } | null>(null);
+    const pendingResumeRef = useRef<{ turns: Turn[]; userText: string; reply: string; limit: ToolLimit } | null>(null);
+    // The last step the user was shown, so a chain parked on the budget can name where it got to.
+    const lastActivityRef = useRef('');
     const replyIdRef = useRef<number | null>(null);
     const replyTextRef = useRef('');
     // Every bubble of prose the current chain has written, carried across a resume so history keeps the
@@ -195,7 +206,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
 
     const clearPendingResume = useCallback(() => {
         pendingResumeRef.current = null;
-        setIsAtToolLimit(false);
+        setToolLimit(null);
     }, []);
 
     const discardPendingResume = useCallback(() => {
@@ -329,6 +340,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                 if (byName.get(chip.tool)?.kind === 'mutation' || chip.tool === LOAD_GUIDE_TOOL_NAME) {
                     return;
                 }
+                lastActivityRef.current = chip.summary.label;
                 pushItem({
                     id: nextId(),
                     kind: 'chip',
@@ -468,8 +480,12 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                         // `recordChainWork` has already run, so this one has to be projected by hand.
                         projectedChainRef.current = appendProse(projectedChainRef.current, unfinished);
                     }
-                    pendingResumeRef.current = { turns: chainTurns, userText, reply: chainReplyRef.current };
-                    setIsAtToolLimit(true);
+                    const limit: ToolLimit = {
+                        steps: countToolCallsSinceQuestion(chainTurns),
+                        activity: lastActivityRef.current || undefined,
+                    };
+                    pendingResumeRef.current = { turns: chainTurns, userText, reply: chainReplyRef.current, limit };
+                    setToolLimit(limit);
                     return;
                 }
                 clearPendingResume();
@@ -482,7 +498,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                 // the run most worth reporting never reach the transcript.
                 // The stash outlives a failed resume, so the offer to carry on comes back rather than
                 // taking the whole exchange down with it.
-                setIsAtToolLimit(pendingResumeRef.current !== null);
+                setToolLimit(pendingResumeRef.current?.limit ?? null);
             } finally {
                 // An abandoned chain must not clear state its successor already owns.
                 if (controllerRef.current === controller) {
@@ -533,8 +549,10 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             }
 
             discardPendingResume();
-            // Anything the last exchange left unbanked (an abandoned or failed chain) is not this one's.
+            // Anything the last exchange left unbanked (an abandoned or failed chain) is not this one's,
+            // and neither is the step it got as far as.
             projectedChainRef.current = [];
+            lastActivityRef.current = '';
             finalizeReply();
             pushItem({ id: nextId(), kind: 'user', text });
             transcriptRef.current.push({ role: USER, content: text });
@@ -551,7 +569,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         }
         // The stash stays put until `runChain` has banked the exchange: if the resume aborts or throws,
         // the partial answer and the offer to carry on are both still there.
-        setIsAtToolLimit(false);
+        setToolLimit(null);
         finalizeReply();
 
         await runChain(pending.turns, pending.userText, pending.reply);
@@ -579,6 +597,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         replyIdRef.current = null;
         replyTextRef.current = '';
         chainReplyRef.current = '';
+        lastActivityRef.current = '';
         clearPendingResume();
         setItems([]);
         setIsBusy(false);
@@ -588,7 +607,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
     return {
         items,
         isBusy,
-        isAtToolLimit,
+        toolLimit,
         hasConversation: items.length > 0,
         send,
         resume,

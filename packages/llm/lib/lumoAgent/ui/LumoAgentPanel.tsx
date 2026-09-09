@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
@@ -10,21 +10,24 @@ import {
     ConfirmCardShell,
     LumoLogo,
     LumoThinking,
+    NoteLine,
     PromptInput,
     ServerToolChip,
     renderReplyMarkdown,
+    sentenceValue,
 } from '@proton/lumo-ui';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import ResultTile from './ResultTile';
 import ConfirmCard, { defaultCardRenderer } from './cardRenderers';
-import type { CardRenderers, LumoAgentItem, ServerToolMeta } from './types';
+import type { CardRenderers, LumoAgentItem, ServerToolMeta, ToolLimit } from './types';
 import { ConfirmStatus } from './types';
 
 interface Props {
     items: LumoAgentItem[];
     isBusy: boolean;
-    /** The chain ran out of tool rounds and is waiting on the user to say whether it should carry on. */
-    isAtToolLimit: boolean;
+    /** Set while the chain has run out of tool rounds and waits on the user to say whether to carry on. */
+    toolLimit: ToolLimit | null;
     cardRenderers?: CardRenderers;
     serverToolMeta?: Partial<Record<ServerToolName, ServerToolMeta>>;
     thinkingLabel?: string;
@@ -37,6 +40,13 @@ interface Props {
     onDismissToolLimit: () => void;
 }
 
+const toolLimitSentence = (steps: number) => {
+    const count = sentenceValue(c('Info').ngettext(msgid`${steps} step`, `${steps} steps`, steps));
+
+    // translator: how many tool calls the assistant has made before pausing to ask, e.g. "Lumo has taken 10 steps so far. Keep going?"
+    return c('Info').jt`${LUMO_SHORT_APP_NAME} has taken ${count} so far. Keep going?`;
+};
+
 /**
  * The generic transcript + composer. It renders the hook's item stream and pins the single pending
  * confirm card above the composer; every visual element comes from `@proton/lumo-ui`, and the
@@ -45,7 +55,7 @@ interface Props {
 const LumoAgentPanel = ({
     items,
     isBusy,
-    isAtToolLimit,
+    toolLimit,
     cardRenderers,
     serverToolMeta,
     thinkingLabel,
@@ -151,11 +161,11 @@ const LumoAgentPanel = ({
                 />
             ) : null}
 
-            {isAtToolLimit ? (
+            {toolLimit ? (
                 <ConfirmCardShell
                     icon={IcHourglass}
-                    title={c('Title').t`Still working on it`}
-                    subtitle={c('Info').t`This is taking a lot of steps. Should it carry on?`}
+                    sentence={toolLimitSentence(toolLimit.steps)}
+                    note={toolLimit.activity ? <NoteLine>{toolLimit.activity}</NoteLine> : null}
                     applyLabel={c('Action').t`Keep going`}
                     cancelLabel={c('Action').t`Stop here`}
                     onApply={onResume}
