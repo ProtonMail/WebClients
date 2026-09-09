@@ -1544,7 +1544,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Sleutels vertrouwen"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -8143,8 +8144,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -11051,6 +11051,9 @@
       ],
       "Single messages": [
         "Enkele berichten"
+      ],
+      "Signature": [
+        "Handtekening"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12792,7 +12795,7 @@
     },
     "ngc_access_banner: info": {
       "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
-        "U hebt nu toegang tot de nieuwe ${ CALENDAR_APP_NAME }. ${ link }"
+        "U heeft nu toegang tot de nieuwe ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     },
     "Notification": {
@@ -13233,6 +13236,114 @@
       ],
       "Remind me later": [
         "Herinner mij later"
+      ],
+      "10th of the month": [
+        "10de van de maand"
+      ],
+      "11th of the month": [
+        "11de van de maand"
+      ],
+      "12th of the month": [
+        "12e dag van de maand"
+      ],
+      "13th of the month": [
+        "13de van de maand"
+      ],
+      "14th of the month": [
+        "14de van de maand"
+      ],
+      "15th of the month": [
+        "15e dag van de maand"
+      ],
+      "16th of the month": [
+        "16e van de maand"
+      ],
+      "17th of the month": [
+        "17e van de maand"
+      ],
+      "18th of the month": [
+        "18e van de maand"
+      ],
+      "19th of the month": [
+        "19e dag van de maand"
+      ],
+      "1st of the month": [
+        "1e van de maand"
+      ],
+      "20th of the month": [
+        "20ste van de maand"
+      ],
+      "21st of the month": [
+        "21ste van de maand"
+      ],
+      "22nd of the month": [
+        "22ste van de maand."
+      ],
+      "23rd of the month": [
+        "23ste dag van de maand"
+      ],
+      "24th of the month": [
+        "24ste van de maand"
+      ],
+      "25th of the month": [
+        "25ste van de maand"
+      ],
+      "26th of the month": [
+        "26ste van de maand"
+      ],
+      "27th of the month": [
+        "27ste van de maand."
+      ],
+      "28th of the month": [
+        "28ste van de maand"
+      ],
+      "29th of the month": [
+        "29ste van de maand"
+      ],
+      "2nd of the month": [
+        "2e van de maand"
+      ],
+      "30th of the month": [
+        "30ste van de maand"
+      ],
+      "31st of the month": [
+        "31ste van de maand"
+      ],
+      "3rd of the month": [
+        "3e van de maand"
+      ],
+      "4th of the month": [
+        "4e van de maand"
+      ],
+      "5th of the month": [
+        "5e van de maand"
+      ],
+      "6th of the month": [
+        "6de van de maand"
+      ],
+      "7th of the month": [
+        "7e van de maand"
+      ],
+      "8th of the month": [
+        "8ste van de maand"
+      ],
+      "9th of the month": [
+        "9de van de maand"
+      ],
+      "Fixed duration": [
+        "Vaste duur"
+      ],
+      "Permanent": [
+        "Permanent"
+      ],
+      "Repeat daily": [
+        "Dagelijks herhalen"
+      ],
+      "Repeat monthly": [
+        "Maandelijks herhalen"
+      ],
+      "Repeat weekly": [
+        "Wekelijks herhalen"
       ]
     },
     "Option group": {
@@ -13611,6 +13722,9 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - kaart eindigend op ${ paymentMethod.Details.Last4 }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kaart eindigend op ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
