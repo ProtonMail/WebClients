@@ -1,4 +1,6 @@
+import type { ActionRequest } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
+import sentenceText from '@proton/llm/lib/lumoAgent/ui/sentenceText';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { SOURCE_ACTION } from '../../../components/list/list-telemetry/useListTelemetry';
@@ -50,6 +52,14 @@ describe('snoozeEmailsCardRenderer', () => {
         expect(snoozeEmailsCardRenderer.canApply?.({ ids: ['email-a1b2c3'], wake_at: '2020-01-01T09:00:00Z' })).toBe(
             false
         );
+    });
+
+    // The picker in the body is editable, so an emptied or mistyped date reaches the sentence; it must
+    // not read "Snooze 1 email until " with the time missing.
+    it('drops the wake-time clause when the picker holds no usable date', () => {
+        const action: ActionRequest = { type: 'snooze_emails', ids: ['email-a1b2c3'], wake_at: '' };
+
+        expect(sentenceText(snoozeEmailsCardRenderer.sentence(action, {})).trimEnd()).toBe('Snooze 1 email');
     });
 });
 

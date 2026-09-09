@@ -89,8 +89,8 @@ const createFilterHandler =
 
 export const createFilterCardRenderer: CardRenderer = {
     icon: IcFilter,
-    title: () => c('Title').t`Create filter`,
-    subtitle: proposedFilterName,
+    // translator: the name and script are the fields below, so the sentence names only the action
+    sentence: () => c('Info').t`Create a filter`,
     renderBody: renderFilterFields,
     canApply: hasEveryFilterFieldFilled,
     detail: proposedFilterName,

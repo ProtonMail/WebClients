@@ -17,7 +17,7 @@ const DrawerLumoView = () => {
     const {
         items,
         isBusy,
-        isAtToolLimit,
+        toolLimit,
         cardRenderers,
         serverToolMeta,
         hasConversation,
@@ -54,7 +54,7 @@ const DrawerLumoView = () => {
             <LumoAgentPanel
                 items={items}
                 isBusy={isBusy}
-                isAtToolLimit={isAtToolLimit}
+                toolLimit={toolLimit}
                 cardRenderers={cardRenderers}
                 serverToolMeta={serverToolMeta}
                 onSend={send}
