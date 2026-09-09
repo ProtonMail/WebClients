@@ -1,4 +1,4 @@
-import { differenceInDays, fromUnixTime } from 'date-fns';
+import { differenceInDays, differenceInHours, fromUnixTime } from 'date-fns';
 
 import type { FreeSubscription } from '@proton/payments/core/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
@@ -32,6 +32,8 @@ export const getIsUserEligibleForZeroNinetyNine = ({
     offerStartDateTimeStamp,
     oneDollarOfferState,
 }: Props) => {
+    const ZERO_NINETY_NINE_ACCOUNT_AGE_HOURS = 5;
+
     // The two promos must never target the same user at once. The one-dollar offer takes
     // precedence, so stand down while it is still within its own validity window.
     const isOneDollarOfferRunning =
@@ -41,6 +43,11 @@ export const getIsUserEligibleForZeroNinetyNine = ({
     if (isOneDollarOfferRunning) {
         return false;
     }
+    const today = new Date();
+    const accountCreationDate = user.CreateTime;
+
+    // Account must be created 5 hours ago to be eligible
+    const isAccountOldEnough = differenceInHours(today, accountCreationDate) >= ZERO_NINETY_NINE_ACCOUNT_AGE_HOURS;
 
     // The offer is valid for 30 days after the first time it was shown to the user
     const isOfferStillValid =
@@ -54,6 +61,7 @@ export const getIsUserEligibleForZeroNinetyNine = ({
         noPassLifetime(user),
         hasNoScheduledSubscription(subscription),
         checkAppIsValid([APPS.PROTONMAIL], protonConfig, parentApp),
+        isAccountOldEnough,
         isOfferStillValid
     );
 };
