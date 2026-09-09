@@ -7,6 +7,8 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import physicalKey from '@proton/styles/assets/img/illustrations/physical-key.svg';
 
+import AwaitingTouchBanner from './AwaitingTouchBanner';
+
 interface Props {
     loading?: boolean;
     error?: boolean;
@@ -30,9 +32,9 @@ const RegisterSecurityKeyContent = ({ loading, awaitingTouch, error, checkbox }:
                 />
             </div>
             <div>
-                {awaitingTouch
-                    ? c('fido2: Info').t`Touch your security key.`
-                    : c('fido2: Info').t`Insert your security key into your device.`}
+                {c('fido2: Info').t`Insert your security key into your device.`}
+
+                {awaitingTouch && <AwaitingTouchBanner />}
             </div>
             {checkbox && <div className="mt-2">{checkbox}</div>}
             {error && (
