@@ -18,8 +18,8 @@ import { useLumoDispatch, useLumoMemoSelector, useLumoSelector } from '../../red
 import {
     selectConversationById,
     selectConversations,
-    selectMessagesByConversationId,
     selectMessageAttachmentIds,
+    selectMessagesByConversationId,
     selectProvisionalAttachments,
     selectSpaceByConversationId,
 } from '../../redux/selectors';
@@ -87,6 +87,8 @@ const ConversationPageComponentInner = () => {
     const {
         messageChain,
         handleSendMessage,
+        handleSendArtifactAction,
+        handleSaveManualArtifactEdit,
         handleEditMessage,
         handleRegenerateMessage,
         getSiblingInfo,
@@ -204,6 +206,8 @@ const ConversationPageComponentInner = () => {
     return (
         <ConversationActionsProvider
             handleSendMessage={handleSendMessage}
+            handleSendArtifactAction={handleSendArtifactAction}
+            handleSaveManualArtifactEdit={handleSaveManualArtifactEdit}
             handleAbort={handleAbort}
             handleEditMessage={handleEditMessage}
             handleRegenerateMessage={handleRegenerateMessage}

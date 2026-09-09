@@ -1,3 +1,4 @@
+import { type ArtifactType, isArtifactType } from './components/Conversation/artifact/parseArtifacts';
 import { deriveDataEncryptionKey } from './crypto';
 import type { Base64, EncryptedData } from './crypto/encryptedData';
 import type { AesGcmCryptoKey } from './crypto/types';
@@ -398,6 +399,58 @@ export type CompactionMeta = {
     createdAt: string; // ISO date
 };
 
+export type ArtifactActionKind = 'explain' | 'improve' | 'edit';
+
+/** UI metadata for artifact panel selection actions (Explain / Improve / Edit). */
+export type ArtifactActionMeta = {
+    kind: ArtifactActionKind;
+    artifactId: string;
+    artifactTitle: string;
+    artifactType: ArtifactType;
+    selection: string;
+    /** Present for document edits — the user's freeform change instruction. */
+    userInstruction?: string;
+};
+
+export function isArtifactActionMeta(value: unknown): value is ArtifactActionMeta {
+    if (typeof value !== 'object' || value === null) {
+        return false;
+    }
+    const meta = value as ArtifactActionMeta;
+    return (
+        (meta.kind === 'explain' || meta.kind === 'improve' || meta.kind === 'edit') &&
+        typeof meta.artifactId === 'string' &&
+        typeof meta.artifactTitle === 'string' &&
+        isArtifactType(meta.artifactType) &&
+        typeof meta.selection === 'string' &&
+        (meta.userInstruction === undefined || typeof meta.userInstruction === 'string')
+    );
+}
+
+/**
+ * Metadata stamped on a message that represents the user directly (manually) editing an
+ * artifact's content, as opposed to `ArtifactActionMeta` (AI-mediated explain/improve/edit).
+ * A message carrying this is a version-bearing, non-generating "manual edit" message: it
+ * contributes a version to the artifact registry but never triggers an assistant reply.
+ */
+export type ArtifactManualEditMeta = {
+    artifactId: string;
+    artifactTitle: string;
+    artifactType: ArtifactType;
+};
+
+export function isArtifactManualEditMeta(value: unknown): value is ArtifactManualEditMeta {
+    if (typeof value !== 'object' || value === null) {
+        return false;
+    }
+    const meta = value as ArtifactManualEditMeta;
+    return (
+        typeof meta.artifactId === 'string' &&
+        typeof meta.artifactTitle === 'string' &&
+        isArtifactType(meta.artifactType)
+    );
+}
+
 export type MessagePriv = {
     // Legacy fields (kept for backward compatibility)
     context?: string;
@@ -433,6 +486,16 @@ export type MessagePriv = {
     // rather than ordinary content: it records how the conversation was condensed
     // and is rendered as a divider in the UI. See CompactionMeta.
     compaction?: CompactionMeta;
+
+    /** When set, the user message was sent from the artifact panel selection UI. */
+    artifactAction?: ArtifactActionMeta;
+
+    /**
+     * When set, this is a synthetic, non-generating message representing the user manually
+     * editing an artifact's content directly (not via the LLM). Rendered as a clickable
+     * timeline marker rather than a normal bubble. See ArtifactManualEditMeta.
+     */
+    artifactManualEdit?: ArtifactManualEditMeta;
 
     // Exact token usage reported by the backend for the request that produced this
     // (assistant) message. Used to anchor context-size estimates on real numbers
@@ -529,7 +592,9 @@ export function isMessagePriv(value: any): value is MessagePriv {
         (value.modelID === undefined || typeof value.modelID === 'string') &&
         (value.requestedModel === undefined || typeof value.requestedModel === 'string') &&
         (value.compaction === undefined || (typeof value.compaction === 'object' && value.compaction !== null)) &&
-        (value.usage === undefined || (typeof value.usage === 'object' && value.usage !== null))
+        (value.usage === undefined || (typeof value.usage === 'object' && value.usage !== null)) &&
+        (value.artifactAction === undefined || isArtifactActionMeta(value.artifactAction)) &&
+        (value.artifactManualEdit === undefined || isArtifactManualEditMeta(value.artifactManualEdit))
     );
 }
 
@@ -554,6 +619,8 @@ export function getMessagePriv(m: MessagePriv): MessagePriv {
         modelID,
         requestedModel,
         compaction,
+        artifactAction,
+        artifactManualEdit,
         usage,
     } = m;
     return {
@@ -571,12 +638,18 @@ export function getMessagePriv(m: MessagePriv): MessagePriv {
         modelID,
         requestedModel,
         compaction,
+        artifactAction,
+        artifactManualEdit,
         usage,
     };
 }
 
 export function isCompactionMessage(message: MessagePriv): boolean {
     return message.compaction !== undefined;
+}
+
+export function isManualArtifactEditMessage(message: MessagePriv): boolean {
+    return message.artifactManualEdit !== undefined;
 }
 
 export function splitMessage(m: Message): { messagePriv: MessagePriv; messagePub: MessagePub } {
@@ -609,6 +682,7 @@ export function cleanMessage(message: Message): Message {
         modelID,
         requestedModel,
         compaction,
+        artifactManualEdit,
         usage,
     } = message;
     return {
@@ -633,6 +707,7 @@ export function cleanMessage(message: Message): Message {
         ...(modelID !== undefined && { modelID }),
         ...(requestedModel !== undefined && { requestedModel }),
         ...(compaction !== undefined && { compaction }),
+        ...(artifactManualEdit !== undefined && { artifactManualEdit }),
         ...(usage !== undefined && { usage }),
     };
 }
@@ -685,6 +760,7 @@ export function isEmptyMessagePriv(value: MessagePriv): boolean {
         value.modelID === undefined &&
         value.requestedModel === undefined &&
         value.compaction === undefined &&
+        value.artifactAction === undefined &&
         value.usage === undefined
     );
 }
@@ -1190,6 +1266,8 @@ export interface ActionParams {
     retryStrategy?: RetryStrategy;
     customRetryInstructions?: string;
     imageOptions?: ImageGenerationOptions;
+    artifactModeActive?: boolean;
+    artifactAction?: ArtifactActionMeta;
     /** True when the message was auto-sent from a ?q= URL parameter. */
     isFromQueryParam?: boolean;
 }
