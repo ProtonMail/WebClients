@@ -8,7 +8,12 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
 import { resolveElements } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
-import { emailCountDetail, hasEmailSelection, renderEmailSelectionBody } from './emailSelection';
+import {
+    emailCountDetail,
+    emailSelectionSentence,
+    hasEmailSelection,
+    renderEmailSelectionBody,
+} from './emailSelection';
 
 export interface SetStarredParams {
     ids: string[];
@@ -63,10 +68,16 @@ export const createSetStarredHandler =
         });
     };
 
-/** No subtitle: unlike move_emails, there is no destination to show — the direction is in the title. */
 export const setStarredCardRenderer: CardRenderer = {
     icon: IcStar,
-    title: (action) => (action.starred ? c('Title').t`Star emails` : c('Title').t`Unstar emails`),
+    sentence: (action) =>
+        emailSelectionSentence(action, (emails) =>
+            action.starred
+                ? // translator: e.g. "Star 3 emails"
+                  c('Info').jt`Star ${emails}`
+                : // translator: plainer than "unstar", e.g. "Remove the star from 3 emails"
+                  c('Info').jt`Remove the star from ${emails}`
+        ),
     renderBody: renderEmailSelectionBody,
     canApply: hasEmailSelection,
     detail: emailCountDetail,

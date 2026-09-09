@@ -1,5 +1,6 @@
 import type { ActionRequest } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
+import sentenceText from '@proton/llm/lib/lumoAgent/ui/sentenceText';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
@@ -43,21 +44,26 @@ describe('moveEmailsCardRenderer', () => {
     };
     const labels = { 'email-a1b2c3': { title: 'Booking confirmation' }, 'email-d4e5f6': { title: 'Receipt' } };
 
-    it('titles the card and subtitles a system-location move', () => {
-        expect(moveEmailsCardRenderer.title(action, labels)).toBeTruthy();
-        expect(moveEmailsCardRenderer.subtitle?.(action, labels)).toContain('Trash');
-    });
-
-    it('subtitles a folder move by the folder name', () => {
+    it('names the destination in the sentence, system location or folder', () => {
         const folderAction: ActionRequest = {
             type: 'move_emails',
             ids: ['email-a1b2c3'],
             folder: 'folder-x7b2q1',
             location: null,
         };
-        expect(moveEmailsCardRenderer.subtitle?.(folderAction, { 'folder-x7b2q1': { title: 'Travel' } })).toContain(
-            'Travel'
-        );
+
+        expect(sentenceText(moveEmailsCardRenderer.sentence(action, labels))).toContain('Trash');
+        expect(
+            sentenceText(moveEmailsCardRenderer.sentence(folderAction, { 'folder-x7b2q1': { title: 'Travel' } }))
+        ).toContain('Travel');
+    });
+
+    // A proposed action is unvalidated, so a destination-less move reaches the card; it must not read
+    // "Move 1 email to " with the destination missing.
+    it('drops the destination clause when the action names none', () => {
+        const unaddressed: ActionRequest = { type: 'move_emails', ids: ['email-a1b2c3'], folder: null, location: null };
+
+        expect(sentenceText(moveEmailsCardRenderer.sentence(unaddressed, labels)).trimEnd()).toBe('Move 1 email');
     });
 
     it('takes the shared selection body and its empty-apply rule', () => {

@@ -1,9 +1,11 @@
+import type { ActionRequest, ReferenceLabels } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
+import sentenceText from '@proton/llm/lib/lumoAgent/ui/sentenceText';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import type { Folder } from '@proton/shared/lib/interfaces';
 
 import type { MailToolDeps } from '../../toolModule';
-import { createRenameFolderHandler, renameFolderDefinition } from './renameFolder';
+import { createRenameFolderHandler, renameFolderDefinition, renameFolderModule } from './renameFolder';
 
 const folder = (overrides: Partial<Folder> = {}): Folder => ({
     ID: 'FOLDER_ID_1',
@@ -36,6 +38,21 @@ describe('renameFolderDefinition', () => {
         );
 
         expect(guarded).toEqual(['folder']);
+    });
+});
+
+describe('renameFolderCardRenderer', () => {
+    const sentence = (action: ActionRequest, labels: ReferenceLabels) =>
+        sentenceText(renameFolderModule.cardRenderer!.sentence(action, labels));
+
+    // A reference with no recorded name would otherwise put `folder-x7b2q1` — or `undefined` for a
+    // missing param — in the headline the user approves.
+    it('names the folder, or says "this folder" when no name was recorded', () => {
+        const action = { type: 'rename_folder', folder: 'folder-x7b2q1', name: '' } as ActionRequest;
+
+        expect(sentence(action, { 'folder-x7b2q1': { title: 'Travel' } })).toContain('Travel');
+        expect(sentence(action, {})).toBe('Rename this folder');
+        expect(sentence({ type: 'rename_folder' } as ActionRequest, {})).toBe('Rename this folder');
     });
 });
 

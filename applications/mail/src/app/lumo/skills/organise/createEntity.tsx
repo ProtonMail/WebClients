@@ -169,15 +169,14 @@ const describeEntity = (action: ActionRequest, labels: ReferenceLabels): string 
     return c('Info').t`${name} in ${parentName}`;
 };
 
-/** `title` and `fieldLabel` are thunks because their `ttag` strings must resolve at render time, not here. */
+/** `sentence` and `fieldLabel` are thunks because their `ttag` strings must resolve at render time, not here. */
 const entityCardRenderer = (
     icon: CardRenderer['icon'],
-    title: () => string,
+    sentence: () => string,
     fieldLabel: () => string
 ): CardRenderer => ({
     icon,
-    title,
-    subtitle: describeEntity,
+    sentence,
     renderBody: ({ params, onChange }: CardBodyProps) => (
         <TextFieldBody
             label={fieldLabel()}
@@ -191,13 +190,15 @@ const entityCardRenderer = (
 
 export const createFolderCardRenderer = entityCardRenderer(
     IcFolderPlus,
-    () => c('Title').t`Create folder`,
+    // translator: the name is the field below, so the sentence names only the kind of thing being made
+    () => c('Info').t`Create a folder`,
     () => c('Label').t`Folder name`
 );
 
 const createLabelCardRenderer = entityCardRenderer(
     IcTagPlus,
-    () => c('Title').t`Create label`,
+    // translator: the name is the field below, so the sentence names only the kind of thing being made
+    () => c('Info').t`Create a label`,
     () => c('Label').t`Label name`
 );
 

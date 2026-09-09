@@ -322,7 +322,8 @@ const AutoReplyBody = ({ params, onChange }: CardBodyProps) => {
 
 export const setAutoReplyCardRenderer: CardRenderer = {
     icon: IcClockPaperPlane,
-    title: (action) => (isTurningOff(action) ? c('Title').t`Turn off auto-reply` : c('Title').t`Set auto-reply`),
+    sentence: (action) =>
+        isTurningOff(action) ? c('Info').t`Turn off your away message` : c('Info').t`Turn on your away message`,
     renderBody: (props) => (isTurningOff(props.params) ? null : <AutoReplyBody {...props} />),
     // The range rules live here rather than in DateTimeBody, and they are the handler's own: letting the
     // user confirm a window the handler then rejects would surface as a failure they cannot act on.

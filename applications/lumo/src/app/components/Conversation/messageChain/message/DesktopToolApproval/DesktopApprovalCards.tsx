@@ -1,7 +1,9 @@
+import { c } from 'ttag';
+
 import { IcShield } from '@proton/icons/icons/IcShield';
 import ConfirmCard from '@proton/llm/lib/lumoAgent/ui/cardRenderers';
 import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
-import { ToolCallCard } from '@proton/lumo-ui';
+import { ToolCallCard, sentenceValue } from '@proton/lumo-ui';
 
 import { useDesktopToolApprovals } from './useDesktopToolApprovals';
 
@@ -17,8 +19,13 @@ const DesktopApprovalCards = () => {
             {approvals.map((approval) => {
                 const renderer: CardRenderer = {
                     icon: IcShield,
-                    title: () => approval.toolLabel,
-                    subtitle: () => approval.connectorName,
+                    sentence: () => {
+                        const tool = sentenceValue(approval.toolLabel);
+                        const connector = sentenceValue(approval.connectorName);
+
+                        // translator: a desktop connector asking to run one of its tools, e.g. "Run Search files with Obsidian"
+                        return c('Info').jt`Run ${tool} with ${connector}`;
+                    },
                     renderBody: () => <ToolCallCard args={approval.input} />,
                 };
                 return (

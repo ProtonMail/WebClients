@@ -1,5 +1,6 @@
 import type { ActionRequest } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
+import sentenceText from '@proton/llm/lib/lumoAgent/ui/sentenceText';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import { CATEGORIES_COLOR_SHADES } from '@proton/mail/features/categoriesView/categoriesConstants';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
@@ -57,8 +58,27 @@ describe('setLocationReadCardRenderer', () => {
     ])('names %s', (_case, overrides, expected) => {
         const action = { ...standardAction, ...overrides } as ActionRequest;
 
-        expect(setLocationReadCardRenderer.subtitle?.(action, labels)).toBe(expected);
         expect(setLocationReadCardRenderer.detail?.(action, labels)).toBe(expected);
+    });
+
+    // The sentence and the tile's detail read the same scope, so the card and its receipt name one blast
+    // radius rather than two.
+    it('names the same scope in the sentence as the settled tile reports', () => {
+        const narrowed = { ...standardAction, category: 'promotions' } as ActionRequest;
+
+        expect(sentenceText(setLocationReadCardRenderer.sentence(narrowed, labels))).toContain(
+            setLocationReadCardRenderer.detail?.(narrowed, labels) as string
+        );
+    });
+
+    // A scope the handler would reject must not reach the user as "the whole of  " with a hole in it,
+    // and Confirm must not be live over a card that names nothing.
+    it('says no scope is set rather than naming an empty one', () => {
+        const unscoped = { ...standardAction, location: null } as ActionRequest;
+
+        expect(sentenceText(setLocationReadCardRenderer.sentence(unscoped, labels))).toBe('No location selected');
+        expect(setLocationReadCardRenderer.canApply?.({ location: null, target: null })).toBe(false);
+        expect(setLocationReadCardRenderer.canApply?.({ location: 'inbox', target: null })).toBe(true);
     });
 });
 

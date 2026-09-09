@@ -15,6 +15,17 @@ export enum ConfirmStatus {
     CANCELLED = 'cancelled',
 }
 
+/**
+ * A chain parked on the round budget, and what it managed before it stopped — so the offer to carry on
+ * can say how far it has got rather than "this is taking a lot of steps".
+ */
+export interface ToolLimit {
+    /** Tool calls made this exchange, the resumed rounds included. */
+    steps: number;
+    /** The last step the user was shown; absent when that step was a mutation, which reports as a tile. */
+    activity?: string;
+}
+
 /** The chat items the panel renders — the human-facing view of the executor's event stream. */
 export type LumoAgentItem =
     | { id: number; kind: 'user'; text: string }
@@ -44,9 +55,13 @@ export interface CardBodyProps {
  */
 export interface CardRenderer {
     icon: IconComponent;
-    title: (action: ActionRequest, labels: ReferenceLabels) => string;
-    subtitle?: (action: ActionRequest, labels: ReferenceLabels) => string | undefined;
-    /** Optional editable body; omit for a plain confirm (title + apply/cancel only). */
+    /**
+     * What is about to happen, as one line: "Move 3 emails to Travel". The `action` this is handed
+     * carries the params the user is looking at *now*, not the ones the model proposed, so a sentence
+     * that counts a selection counts what Confirm would apply.
+     */
+    sentence: (action: ActionRequest, labels: ReferenceLabels) => ReactNode;
+    /** Optional editable body; omit for a plain confirm (sentence + apply/cancel only). */
     renderBody?: (props: CardBodyProps) => ReactNode;
     /** Whether the body's current `params` are applyable; false disables Confirm (e.g. nothing selected). */
     canApply?: (params: Record<string, any>) => boolean;

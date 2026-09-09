@@ -13,9 +13,13 @@ interface Props {
  * Shared confirm-card body for a mutation whose params carry one editable string (a name, a script, a
  * signature). Label, value and height arrive as props, so the body stays product-blind and the calling
  * renderer owns which param it maps onto.
+ *
+ * `dense` because nothing here fills the assistive line the field would otherwise reserve, and an empty
+ * one puts a gap between a card's fields.
  */
 const TextFieldBody = ({ label, value, onChange, rows }: Props) => (
     <InputFieldTwo
+        dense
         label={label}
         value={value}
         onValue={onChange}

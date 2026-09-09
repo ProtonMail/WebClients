@@ -13,7 +13,7 @@ interface Props {
 /**
  * Shared confirm-card body for "apply this action to N items" (move, label, star, snooze…): a
  * scrollable, deselectable list of the affected items. The action's target (destination folder, label)
- * belongs in the shell's subtitle, so this body is just the item selection — reusable across products.
+ * belongs in the shell's sentence, so this body is just the item selection — reusable across products.
  */
 const MoveItemsCard = ({ items, selectedIds, onToggle, disabled }: Props) => (
     <ItemCheckList
