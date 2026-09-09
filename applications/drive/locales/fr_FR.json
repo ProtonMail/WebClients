@@ -1347,6 +1347,9 @@
       ],
       "Copy debug transcript": [
         "Copier la transcription de débogage"
+      ],
+      "Add a payment method": [
+        "Ajouter une méthode de paiement"
       ]
     },
     "Action: Docs": {
@@ -7787,6 +7790,12 @@
       ],
       "Do you remember your password?": [
         "Vous souvenez-vous de votre mot de passe ?"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Il vous reste ${ timeRemaining } de votre période d'essai. ${ addPaymentMethodLink } pour ne pas perdre votre accès. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Il vous reste ${ timeRemaining } de votre période d'essai. ${ addPaymentMethodLink } pour conserver votre abonnement. ${ learnMoreLink }"
       ]
     },
     "info": {
