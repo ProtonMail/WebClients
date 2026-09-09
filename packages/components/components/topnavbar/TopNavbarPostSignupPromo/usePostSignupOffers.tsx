@@ -49,16 +49,16 @@ export const usePostSignupOffers = ({ app }: Props) => {
     // Define offers in order of priority
     const offers: Offer[] = [
         {
-            id: 'mail-one-dollar-offer',
-            isEligible: mailPostSignup.isEligible,
-            isLoading: mailPostSignup.isLoading,
-            Component: MailPostSignupOneDollar,
-        },
-        {
             id: 'mail-zero-ninety-nine-offer',
             isEligible: mailPostSignup099.isEligible,
             isLoading: mailPostSignup099.isLoading,
             Component: MailPostSignup099,
+        },
+        {
+            id: 'mail-one-dollar-offer',
+            isEligible: mailPostSignup.isEligible,
+            isLoading: mailPostSignup.isLoading,
+            Component: MailPostSignupOneDollar,
         },
         {
             id: 'drive-one-dollar-offer',
