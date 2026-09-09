@@ -80,6 +80,8 @@ interface PricesResult {
     checkoutUi: PaymentsCheckoutUI;
 }
 
+export type IsTrialResolver = (planIDs: PlanIDs) => boolean;
+
 export interface PaymentsContextType {
     createSubscription: () => Promise<void>;
     initialize: (props: InitializeProps) => Promise<void>;
@@ -111,6 +113,10 @@ export interface PaymentsContextType {
 
     /** User's intention to start a trial */
     isTrial: boolean;
+    /**
+     * Registers the flow's own trial resolver, overriding the `planToCheck.trial` based default.
+     */
+    setIsTrialResolver: (resolver: IsTrialResolver | undefined) => void;
 
     // paymentFacade: ReturnType<typeof usePaymentFacade>;
 
@@ -328,6 +334,24 @@ export const PaymentsContextProvider = ({
         plansMap: getPlansMap(),
     });
 
+    const isTrialResolverRef = useRef<IsTrialResolver | undefined>(undefined);
+
+    const getIsTrial = (planToCheck: PlanToCheck) => {
+        const resolver = isTrialResolverRef.current;
+        return resolver ? resolver(planToCheck.planIDs) : Boolean(planToCheck.trial);
+    };
+
+    const setIsTrialResolver = (resolver: IsTrialResolver | undefined) => {
+        if (isTrialResolverRef.current === resolver) {
+            return;
+        }
+
+        isTrialResolverRef.current = resolver;
+        // The rendered `isTrial` is derived from the resolver, so consumers reading it during render would otherwise
+        // keep seeing the answer from before the resolver was registered.
+        rerender({});
+    };
+
     const getShouldPassTrial = (planIDs: PlanIDs, cycle: Cycle, canDowngrade: boolean) => {
         return shouldPassIsTrial({
             plansMap: getPlansMap(),
@@ -475,7 +499,7 @@ export const PaymentsContextProvider = ({
                 paymentMethodValue: undefined,
                 build: APP_NAME,
                 product: stateRef.current.product,
-                isTrial: Boolean(newPlanToCheck.trial),
+                isTrial: getIsTrial(newPlanToCheck),
             });
         }
 
@@ -850,7 +874,8 @@ export const PaymentsContextProvider = ({
         getOptimisticCheckResult,
         getCoupon,
         checkResult: stateRef.current.checkResult,
-        isTrial: Boolean(stateRef.current.planToCheck.trial),
+        isTrial: getIsTrial(stateRef.current.planToCheck),
+        setIsTrialResolver,
         // paymentFacade,
         billingAddress: stateRef.current.billingAddress,
         checkoutUi: getCheckoutUi({
