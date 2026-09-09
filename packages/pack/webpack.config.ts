@@ -161,5 +161,3 @@ export const getConfig = (webpackOptions: WebpackOptions): Configuration => {
         },
     };
 };
-
-export default getConfig;
