@@ -1,8 +1,18 @@
+import type { ReactNode } from 'react';
+
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import type { ActionRequest } from '@proton/llm/lib/lumoAgent/contracts/types';
+import sentenceText from '@proton/llm/lib/lumoAgent/ui/sentenceText';
 
-import { emailCountDetail, hasEmailSelection, referenceName, renderEmailSelectionBody } from './emailSelection';
+import { formatSimpleDate } from '../../../helpers/date';
+import {
+    emailCountDetail,
+    emailSelectionSentence,
+    hasEmailSelection,
+    referenceName,
+    renderEmailSelectionBody,
+} from './emailSelection';
 
 const action: ActionRequest = {
     type: 'move_emails',
@@ -46,12 +56,55 @@ describe('emailCountDetail', () => {
     });
 });
 
+describe('emailSelectionSentence', () => {
+    const phrase = (emails: ReactNode): ReactNode => ['Move ', emails, ' to Trash'];
+
+    // The card hands this the params the user is looking at, so the count is the selection. A sentence
+    // still claiming two emails over one ticked row is the misreport this design exists to stop.
+    it('counts the selection it is given, singular at one', () => {
+        expect(sentenceText(emailSelectionSentence(action, phrase))).toContain('2');
+        expect(sentenceText(emailSelectionSentence({ ...action, ids: ['email-a1b2c3'] }, phrase))).toContain('1');
+    });
+
+    // Confirm is already disabled by `hasEmailSelection`; the sentence must not go on describing the move.
+    it('stops claiming the action once nothing is selected', () => {
+        expect(sentenceText(emailSelectionSentence({ ...action, ids: [] }, phrase))).not.toContain('Trash');
+    });
+});
+
 describe('renderEmailSelectionBody', () => {
     it('names every proposed email, so the user reads subjects rather than references', () => {
         renderBody([...action.ids]);
 
         expect(screen.getByText('Booking confirmation')).toBeInTheDocument();
         expect(screen.getByText('Receipt')).toBeInTheDocument();
+    });
+
+    // A row leads with the sender, not the subject — the reference records them the other way round.
+    it('leads a row with the sender, puts the subject beneath it and shows the date for a human', () => {
+        const onChange = jest.fn();
+        render(
+            <>
+                {renderEmailSelectionBody({
+                    action,
+                    labels: {
+                        'email-a1b2c3': {
+                            title: 'Booking confirmation',
+                            subtitle: 'Acme Travel',
+                            meta: '2026-08-11T09:30:00Z',
+                        },
+                        'email-d4e5f6': { title: 'Receipt' },
+                    },
+                    params: { ids: [...action.ids], folder: null, location: 'trash' },
+                    onChange,
+                })}
+            </>
+        );
+
+        // Which line each lands on is the whole point, so the sender is pinned to the leading one.
+        expect(screen.getByText('Acme Travel')).toHaveClass('text-semibold');
+        expect(screen.getByText('Booking confirmation')).not.toHaveClass('text-semibold');
+        expect(screen.getByText(formatSimpleDate(new Date('2026-08-11T09:30:00Z')))).toBeInTheDocument();
     });
 
     it('narrows the selection without touching the proposed set', () => {

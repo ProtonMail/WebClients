@@ -1,11 +1,13 @@
 import type { ComponentProps } from 'react';
 
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 import { IcPencil } from '@proton/icons/icons/IcPencil';
+import ItemCheckList from '@proton/lumo-ui/primitives/ItemCheckList';
 
+import type { ActionRequest } from '../contracts/types';
 import LumoAgentPanel from './LumoAgentPanel';
-import type { LumoAgentItem } from './types';
+import type { CardBodyProps, LumoAgentItem } from './types';
 import { ConfirmStatus } from './types';
 
 const userTurn: LumoAgentItem = { id: 1, kind: 'user', text: 'move the invoices to archive' };
@@ -21,8 +23,8 @@ const pendingConfirm: LumoAgentItem = {
 const baseProps: ComponentProps<typeof LumoAgentPanel> = {
     items: [],
     isBusy: false,
-    isAtToolLimit: false,
-    cardRenderers: { move_items: { icon: IcPencil, title: () => 'Move 1 email to Archive' } },
+    toolLimit: null,
+    cardRenderers: { move_items: { icon: IcPencil, sentence: () => 'Move 1 email to Archive' } },
     onSend: jest.fn(),
     onStop: jest.fn(),
     onConfirm: jest.fn(),
@@ -77,9 +79,52 @@ describe('LumoAgentPanel', () => {
         expect(screen.queryByRole('button', { name: 'Stop' })).toBeNull();
     });
 
+    // The sentence has to follow the body's live params, not the proposal: a card that says "3 emails"
+    // over an emptied selection is the exact misreport the design exists to stop.
+    it("counts the card body's current params in the sentence, not the proposed action", () => {
+        const cardRenderers = {
+            move_items: {
+                icon: IcPencil,
+                sentence: (action: ActionRequest) => `Move ${(action.ids as string[]).length} emails`,
+                renderBody: ({ action, params, onChange }: CardBodyProps) => (
+                    <ItemCheckList
+                        items={(action.ids as string[]).map((id) => ({ id, label: id }))}
+                        selectedIds={params.ids}
+                        onToggle={(id, checked) =>
+                            onChange({
+                                ...params,
+                                ids: checked
+                                    ? [...params.ids, id]
+                                    : (params.ids as string[]).filter((kept) => kept !== id),
+                            })
+                        }
+                    />
+                ),
+            },
+        };
+        const proposal: LumoAgentItem = {
+            ...pendingConfirm,
+            action: { type: 'move_items', ids: ['m1', 'm2'], target: 'Archive' },
+        };
+
+        renderPanel({ items: [userTurn, proposal], cardRenderers });
+        expect(screen.getByText('Move 2 emails')).toBeInTheDocument();
+
+        fireEvent.click(screen.getAllByRole('checkbox')[0]);
+        expect(screen.getByText('Move 1 emails')).toBeInTheDocument();
+    });
+
+    it('names the steps taken and the last one on the tool-limit card', () => {
+        renderPanel({ items: [userTurn], toolLimit: { steps: 10, activity: 'Found 12 emails' } });
+
+        expect(screen.getByText(/10 steps/)).toBeInTheDocument();
+        expect(screen.getByText('Found 12 emails')).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Keep going' })).toBeInTheDocument();
+    });
+
     it('closes off Confirm while the card body has nothing to apply', () => {
         const canApply = (params: Record<string, any>) => (params.ids as string[]).length > 0;
-        const cardRenderers = { move_items: { icon: IcPencil, title: () => 'Move emails', canApply } };
+        const cardRenderers = { move_items: { icon: IcPencil, sentence: () => 'Move emails', canApply } };
         const emptySelection: LumoAgentItem = {
             ...pendingConfirm,
             action: { type: 'move_items', ids: [], target: 'Archive' },

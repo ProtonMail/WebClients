@@ -14,12 +14,20 @@ import type { CardRenderer } from './types';
  */
 export const defaultCardRenderer: CardRenderer = {
     icon: IcPencil,
-    title: (action) => action.type,
+    sentence: (action) => action.type,
 };
 
 /** The action's params (everything but the `type` discriminator). */
 const paramsOf = (action: ActionRequest): Record<string, any> =>
     Object.fromEntries(Object.entries(action).filter(([key]) => key !== 'type'));
+
+/**
+ * The action as the card currently stands, so `sentence` describes what Confirm would apply rather
+ * than what was proposed. The same shape the hook stores once the card settles, which is what keeps
+ * the card and its result tile saying the same thing.
+ */
+const asEdited = (action: ActionRequest, params: Record<string, any>): ActionRequest =>
+    ({ ...params, type: action.type }) as ActionRequest;
 
 interface Props {
     renderer: CardRenderer;
@@ -40,8 +48,7 @@ const ConfirmCard = ({ renderer, action, labels, onApply, onCancel }: Props) => 
     return (
         <ConfirmCardShell
             icon={renderer.icon}
-            title={renderer.title(action, labels)}
-            subtitle={renderer.subtitle?.(action, labels)}
+            sentence={renderer.sentence(asEdited(action, params), labels)}
             applyLabel={c('Action').t`Confirm`}
             cancelLabel={c('Action').t`Cancel`}
             applyDisabled={renderer.canApply ? !renderer.canApply(params) : undefined}

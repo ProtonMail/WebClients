@@ -8,12 +8,19 @@ import type {
     ToolHandler,
 } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
+import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
 import { resolveElements, resolveId } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
-import { emailIds, hasEmailSelection, referenceName, renderEmailSelectionBody } from './emailSelection';
+import {
+    emailIds,
+    emailSelectionSentence,
+    hasEmailSelection,
+    referenceName,
+    renderEmailSelectionBody,
+} from './emailSelection';
 
 /** The three reversible system locations move_emails can send mail to. NOT deletion: mail in
  *  Trash/Archive/Spam can be moved back. Permanent delete is deliberately absent (no tool covers it). */
@@ -138,15 +145,22 @@ const moveTargetName = (action: ActionRequest, labels: ReferenceLabels): string 
 
 /**
  * The confirm card + result tile for move_emails: the shared selection body lets the user deselect
- * emails before applying, while the destination shows as the shell's subtitle.
+ * emails before applying, and the sentence counts what is still selected.
  */
 export const moveEmailsCardRenderer: CardRenderer = {
     icon: IcFolderArrowIn,
-    title: () => c('Title').t`Move emails`,
-    subtitle: (action, labels) => {
-        const dest = moveTargetName(action, labels);
-        return dest ? `→ ${dest}` : undefined;
-    },
+    sentence: (action, labels) =>
+        emailSelectionSentence(action, (emails) => {
+            const target = moveTargetName(action, labels);
+            if (!target) {
+                // translator: a move whose destination the model left out, e.g. "Move 3 emails"
+                return c('Info').jt`Move ${emails}`;
+            }
+            const destination = sentenceValue(target);
+
+            // translator: the emails being filed and where they are going, e.g. "Move 3 emails to Travel"
+            return c('Info').jt`Move ${emails} to ${destination}`;
+        }),
     renderBody: renderEmailSelectionBody,
     canApply: hasEmailSelection,
     detail: (action, labels) => {

@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import { IcPencil } from '@proton/icons/icons/IcPencil';
+import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
 
 import type { ActionRequest } from '../contracts/types';
 import ResultTile from './ResultTile';
@@ -11,13 +12,13 @@ const action: ActionRequest = { type: 'move_items', target: 'Archive' };
 
 const withDetail: CardRenderer = {
     icon: IcPencil,
-    title: () => 'Move 1 email to Archive',
+    sentence: (settled) => ['Move 1 email to ', sentenceValue(String(settled.target))],
     detail: () => '2 emails',
 };
 
 const withoutDetail: CardRenderer = {
     icon: IcPencil,
-    title: () => 'Move 1 email to Archive',
+    sentence: () => 'Move 1 email to Archive',
 };
 
 describe('ResultTile', () => {
@@ -60,5 +61,23 @@ describe('ResultTile', () => {
 
         expect(container.querySelector('details')).toBeNull();
         expect(screen.getByText('Move 1 email to Archive')).toBeInTheDocument();
+    });
+
+    // The row clips, so the sentence has to reach the `title` as text. The sentence is a node with its
+    // values emphasised, which is exactly what an attribute cannot hold.
+    it('carries the whole sentence, emphasis included, into the row title', () => {
+        const { container } = render(
+            <ResultTile
+                renderer={{ icon: IcPencil, sentence: withDetail.sentence }}
+                action={action}
+                labels={{}}
+                status={ConfirmStatus.APPLIED}
+            />
+        );
+
+        expect(container.querySelector('.lumo-agent-result-tile span[title]')).toHaveAttribute(
+            'title',
+            'Move 1 email to Archive'
+        );
     });
 });
