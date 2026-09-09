@@ -19,6 +19,23 @@ const isZip = (file: File): boolean =>
     file.type === 'application/zip' ||
     file.type === 'application/x-zip-compressed';
 
+const isNotReadableError = (error: unknown): boolean =>
+    (error instanceof DOMException || error instanceof Error) && error.name === 'NotReadableError';
+
+/** Map low-level file read failures to a short message suitable for the upload UI. */
+export const formatPaperTrailFileReadError = (error: unknown): string => {
+    if (error instanceof PaperTrailParseError) {
+        return error.message;
+    }
+    if (isNotReadableError(error)) {
+        return 'We could not read this file. Select it again, or move it out of cloud storage before uploading.';
+    }
+    if (error instanceof Error) {
+        return error.message;
+    }
+    return 'Could not read this file.';
+};
+
 /** Parse the raw text of a conversations.json into a normalized export. */
 export const parseExportText = (text: string): NormalizedExport => {
     let data: unknown;
@@ -43,7 +60,12 @@ export const parseExportText = (text: string): NormalizedExport => {
  * or the full `.zip` archive that the providers hand out.
  */
 export const parseExportFile = async (file: File): Promise<NormalizedExport> => {
-    const text = isZip(file) ? await readConversationsFromZip(file) : await file.text();
+    let text: string;
+    try {
+        text = isZip(file) ? await readConversationsFromZip(file) : await file.text();
+    } catch (error) {
+        throw new PaperTrailParseError(formatPaperTrailFileReadError(error));
+    }
     const result = parseExportText(text);
 
     if (result.conversations.length === 0) {
