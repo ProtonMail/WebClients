@@ -10,7 +10,7 @@ import {
   generateNodeUid,
   getDrive,
 } from '@proton/drive'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
 import { getFullPathFromAncestry, getIsSharedWithMe } from '~/drive-sdk'
@@ -124,60 +124,60 @@ export function useRecents(drive: ProtonDriveClient) {
     [docsApi, drive, logger],
   )
 
-  const abortFetchingDocuments = useRef(new AbortController())
-  const updateRecentDocuments = useCallback(() => {
-    abortFetchingDocuments.current.abort()
-    abortFetchingDocuments.current = new AbortController()
-    setIsRecentsUpdating(true)
-    return fetchRecents(abortFetchingDocuments.current.signal)
-      .then(({ documents, nodesByUid }) => {
-        const { setRecentDocuments, setInitialized } = useRecentsStore.getState()
+  const fetchRecentDocuments = useCallback(
+    (abort: AbortSignal) => {
+      setIsRecentsUpdating(true)
+      return fetchRecents(abort)
+        .then(({ documents, nodesByUid }) => {
+          const { setRecentDocuments, setInitialized } = useRecentsStore.getState()
 
-        const documentItems: RecentDocumentsItemValue[] = []
-        for (const document of documents) {
-          try {
-            const documentUid = generateNodeUid(document.VolumeID, document.LinkID)
-            const node = nodesByUid.get(documentUid)
-            if (!node) {
-              logger.debug('[LoadRecentsWithDriveSDK] Missing node for document', { document })
-              continue
+          const documentItems: RecentDocumentsItemValue[] = []
+          for (const document of documents) {
+            try {
+              const documentUid = generateNodeUid(document.VolumeID, document.LinkID)
+              const node = nodesByUid.get(documentUid)
+              if (!node) {
+                logger.debug('[LoadRecentsWithDriveSDK] Missing node for document', { document })
+                continue
+              }
+
+              const documentDetails = getDocumentDetails(document, node, nodesByUid, addresses)
+              documentItems.push(createDocumentItem(node, documentDetails))
+
+              if (documentDetails.isSharedWithMe) {
+                eventSubscriber.subscribeToSharedDocument(node.uid, node.treeEventScopeId)
+              }
+            } catch (error) {
+              logger.debug('[LoadRecentsWithDriveSDK] Could not process document', { error, document })
+              traceRecentsError(error)
             }
-
-            const documentDetails = getDocumentDetails(document, node, nodesByUid, addresses)
-            documentItems.push(createDocumentItem(node, documentDetails))
-
-            if (documentDetails.isSharedWithMe) {
-              eventSubscriber.subscribeToSharedDocument(node.uid, node.treeEventScopeId)
-            }
-          } catch (error) {
-            logger.debug('[LoadRecentsWithDriveSDK] Could not process document', { error, document })
-            traceRecentsError(error)
           }
-        }
 
-        if (documents.length > documentItems.length) {
+          if (documents.length > documentItems.length) {
+            createNotification({
+              type: 'error',
+              text: c('Error').t`Some documents could not be loaded`,
+            })
+          }
+
+          setRecentDocuments(documentItems)
+          setInitialized()
+          setIsRecentsUpdating(false)
+        })
+        .catch((error) => {
+          if (error instanceof Error && error.name === 'AbortError') {
+            return
+          }
+
+          traceRecentsError(error)
           createNotification({
             type: 'error',
-            text: c('Error').t`Some documents could not be loaded`,
+            text: c('Error').t`Failed to load recent documents`,
           })
-        }
-
-        setRecentDocuments(documentItems)
-        setInitialized()
-        setIsRecentsUpdating(false)
-      })
-      .catch((error) => {
-        if (error instanceof Error && error.name === 'AbortError') {
-          return
-        }
-
-        traceRecentsError(error)
-        createNotification({
-          type: 'error',
-          text: c('Error').t`Failed to load recent documents`,
         })
-      })
-  }, [fetchRecents, addresses, logger, eventSubscriber, createNotification])
+    },
+    [fetchRecents, addresses, logger, eventSubscriber, createNotification],
+  )
 
   const updateRenamedDocumentInCache = useCallback((uniqueId: string, name: string) => {
     const { recentDocuments, setDocument } = useRecentsStore.getState()
@@ -257,7 +257,7 @@ export function useRecents(drive: ProtonDriveClient) {
   }, [])
 
   return {
-    updateRecentDocuments,
+    fetchRecentDocuments,
     updateRenamedDocumentInCache,
     recentDocuments,
     recentDocumentsInitialized,
