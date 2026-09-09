@@ -25,6 +25,8 @@ import {
     getAppIntentFromReferralPlan,
     getReferralSelectedPlan,
 } from './helpers/plans';
+import { getReferralIsTrial } from './helpers/referralIsTrial';
+import { useIsVPNReferralWithoutTrialVariantB } from './helpers/useIsVPNPlanWithoutTrialVariant';
 import PaymentStep from './steps/PaymentStep';
 import RecoveryPhraseStep from './steps/RecoveryPhraseStep';
 import AccountDetailsStep from './steps/accountDetails/AccountDetailsStep';
@@ -143,9 +145,11 @@ const ReferralSignup = (props: BaseSignupContextProps) => {
 
     const planParam = signupSearchParams.getPlan(searchParams) || REFERRAL_DEFAULT_PLAN;
 
-    const { fetchEligibleTrials } = useEligibleTrials();
+    const { eligibleTrials, fetchEligibleTrials } = useEligibleTrials();
 
     const { flagsReady } = useFlagsStatus();
+
+    const isVariantB = useIsVPNReferralWithoutTrialVariantB();
 
     /**
      * Fetch eligible trials from API when referral identifier is available
@@ -156,6 +160,16 @@ const ReferralSignup = (props: BaseSignupContextProps) => {
             void fetchEligibleTrials(referralIdentifier);
         }
     }, []);
+
+    /**
+     * Whether this flow starts a trial is decided by the eligible trials endpoint and the A/B variant rather than by
+     * the subscription check, so the payments context is told how to resolve it for telemetry.
+     */
+    useEffect(() => {
+        payments.setIsTrialResolver((planIDs) => getReferralIsTrial({ planIDs, eligibleTrials, isVariantB }));
+
+        return () => payments.setIsTrialResolver(undefined);
+    }, [eligibleTrials, isVariantB]);
 
     if (!flagsReady) {
         return (
