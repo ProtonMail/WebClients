@@ -1715,6 +1715,9 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "View guide": [
+        "檢視指南"
       ]
     },
     "action": {
@@ -2687,6 +2690,12 @@
       ],
       "Total": [
         "總共"
+      ],
+      "Amount due": [
+        "應付金額"
+      ],
+      "Amount due now": [
+        "當前欠款"
       ]
     },
     "Collapsible tooltip": {
@@ -4360,6 +4369,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ],
+      "No ads. No trackers": [
+        "無廣告。無追蹤器"
       ]
     },
     "description": {
@@ -5452,6 +5464,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜尋結果過多。請縮小您的搜尋範圍並重新試試。"
+      ],
+      "Cannot share root folder": [
+        "無法複製根資料夾"
+      ],
+      "Copy operation aborted": [
+        "以放棄移動操作"
+      ],
+      "Invitation not found": [
+        "未找到邀請"
       ]
     },
     "error": {
@@ -5986,6 +6007,15 @@
       ],
       "Unread": [
         "未讀"
+      ],
+      "Activated": [
+        "已啟用"
+      ],
+      "Errors": [
+        "錯誤"
+      ],
+      "Not activated": [
+        "未啟動"
       ]
     },
     "Filter Actions": {
@@ -7750,7 +7780,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -9242,6 +9272,27 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "輕點幾下滑鼠，即可擁有整潔的收件匣"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } 標記"
+      ],
+      "Change display setting": [
+        "變更顯示設定"
+      ],
+      "Create label": [
+        "建立標籤"
+      ],
+      "Do you remember your password?": [
+        "您記得您的密碼嗎?"
+      ],
+      "Move here": [
+        "移動至此處"
+      ],
+      "No email open": [
+        "無開啟的電子郵件"
+      ],
+      "Searched your mail": [
+        "搜尋您的電子郵件"
       ]
     },
     "info": {
@@ -10447,6 +10498,30 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "At": [
+        "於"
+      ],
+      "Comfortable": [
+        "舒適"
+      ],
+      "Compact": [
+        "緊湊"
+      ],
+      "Encrypt": [
+        "加密"
+      ],
+      "Export size": [
+        "匯出大小"
+      ],
+      "Filter name": [
+        "篩選器名稱"
+      ],
+      "Grouped conversations": [
+        "群組對話"
+      ],
+      "Signature": [
+        "簽名"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10892,6 +10967,9 @@
       ],
       "for ${ price }": [
         "${ price } 版"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "添加 ${ LUMO_SHORT_APP_NAME } 撰寫幫手"
       ]
     },
     "Mailbox": {
@@ -11719,6 +11797,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫工具與限制存取權"
       ]
     },
     "new_plans: feature highlight": {
@@ -12575,6 +12656,120 @@
       ],
       "No parent folder": [
         "無上層資料夾"
+      ],
+      "10th of the month": [
+        "每月 10 日"
+      ],
+      "11th of the month": [
+        "每月 11 日"
+      ],
+      "12th of the month": [
+        "每月 12 日"
+      ],
+      "13th of the month": [
+        "每月 13 日"
+      ],
+      "14th of the month": [
+        "每月 14 日"
+      ],
+      "15th of the month": [
+        "每月 15 日"
+      ],
+      "16th of the month": [
+        "每月 16 日"
+      ],
+      "17th of the month": [
+        "每月 17 日"
+      ],
+      "18th of the month": [
+        "每月 18 日"
+      ],
+      "19th of the month": [
+        "每月 19 日"
+      ],
+      "1st of the month": [
+        "每月 1 日"
+      ],
+      "20th of the month": [
+        "每月 20 日"
+      ],
+      "21st of the month": [
+        "每月 21 日"
+      ],
+      "22nd of the month": [
+        "每月 22 日"
+      ],
+      "23rd of the month": [
+        "每月 23 日"
+      ],
+      "24th of the month": [
+        "每月 24 日"
+      ],
+      "25th of the month": [
+        "每月 25 日"
+      ],
+      "26th of the month": [
+        "每月 26 日"
+      ],
+      "27th of the month": [
+        "每月 27 日"
+      ],
+      "28th of the month": [
+        "每月 28 日"
+      ],
+      "29th of the month": [
+        "每月 29 日"
+      ],
+      "2nd of the month": [
+        "每月 2 日"
+      ],
+      "30th of the month": [
+        "每月 30 日"
+      ],
+      "31st of the month": [
+        "每月 31 日"
+      ],
+      "3rd of the month": [
+        "每月 3 日"
+      ],
+      "4th of the month": [
+        "每月 4 日"
+      ],
+      "5th of the month": [
+        "每月 5 日"
+      ],
+      "6th of the month": [
+        "每月 6 日"
+      ],
+      "7th of the month": [
+        "每月 7 日"
+      ],
+      "8th of the month": [
+        "每月 8 日"
+      ],
+      "9th of the month": [
+        "每月 9 日"
+      ],
+      "Fixed duration": [
+        "固定期間"
+      ],
+      "Permanent": [
+        "永久"
+      ],
+      "Remind me later": [
+        "稍後提醒我"
+      ],
+      "Repeat daily": [
+        "每日重複"
+      ],
+      "Repeat monthly": [
+        "每月重複"
+      ],
+      "Repeat weekly": [
+        "每週重複"
+      ],
+      "Yes, don't show again": [
+        "是的，不再顯示"
       ]
     },
     "Option group": {
@@ -13268,6 +13463,12 @@
       ],
       "key": [
         "金鑰"
+      ],
+      "membership": [
+        "會員資格"
+      ],
+      "name": [
+        "名稱"
       ]
     },
     "Property type": {
@@ -13408,6 +13609,12 @@
       ],
       "3 TB of secure storage": [
         "3TB 的安全儲存空間"
+      ],
+      "/month": [
+        "/每月"
+      ],
+      "500 GB of secure storage": [
+        "500 GB 安全儲存空間"
       ]
     },
     "q3campaign2026: Info, Drive first": {
@@ -13418,6 +13625,9 @@
     "q3campaign2026: Title": {
       "for 12 months": [
         "12 個月"
+      ],
+      "One plan, more power": [
+        "單一方案，更多能量"
       ]
     },
     "Received email icon": {
@@ -15201,6 +15411,9 @@
       ],
       "User": [
         "使用者"
+      ],
+      "Migration status": [
+        "遷移狀態"
       ]
     },
     "TableHeader": {
@@ -16396,6 +16609,24 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Apply labels": [
+        "套用標籤"
+      ],
+      "Change display setting": [
+        "變更顯示設定"
+      ],
+      "Create folder": [
+        "創建資料夾"
+      ],
+      "Mark all as read": [
+        "全部標示為已讀取"
+      ],
+      "September Sale": [
+        "九月的銷售"
+      ],
+      "Update filter": [
+        "更新過濾器"
       ]
     },
     "Title header for keys table": {
@@ -16974,6 +17205,11 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "取得優惠"
       ]
     }
   }

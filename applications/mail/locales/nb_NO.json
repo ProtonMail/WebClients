@@ -1529,7 +1529,8 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarer nøkkel"
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -1729,6 +1730,27 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Add a payment method": [
+        "Legg til betalingsmåte"
+      ],
+      "Copy debug transcript": [
+        "Kopier feilsøkingstranskripsjon"
+      ],
+      "Get index size on disk": [
+        "Hent indeksstørrelse på disk"
+      ],
+      "Keep going": [
+        "Fortsett"
+      ],
+      "Run realistic session": [
+        "Kjør realistisk økt"
+      ],
+      "Stop here": [
+        "Stopp her"
+      ],
+      "Write ${ count } logs": [
+        "Skriv ${ count } logger"
       ]
     },
     "action": {
@@ -2733,6 +2755,19 @@
       ],
       "Total": [
         "Totalt"
+      ],
+      "Amount due": [
+        "Beløp å betale"
+      ],
+      "Amount due after trial": [
+        "Beløp som forfaller etter prøvetiden"
+      ],
+      "Amount due now": [
+        "Beløp å betale nå"
+      ],
+      "Total for ${ cycle } month": [
+        "Totalt for ${ cycle } måned",
+        "Totalt for ${ cycle } måneder"
       ]
     },
     "Collapsible tooltip": {
@@ -4417,6 +4452,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
+      ],
+      "No ads. No trackers": [
+        "Ingen annonser. Ingen sporere"
       ]
     },
     "description": {
@@ -5664,6 +5702,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Søket samsvarte med for mange resultater. Begrens søket, og prøv på nytt."
+      ],
+      "Could not grant access to the organization key": [
+        "Kunne ikke gi tilgang til organisasjonsnøkkelen"
       ]
     },
     "error": {
@@ -6034,6 +6075,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Kontoen din bruker ${ usedSpace } med lagringsplass som overskrider de ${ inviteSpace } tildelt deg. Slett noen data, eller be planadministratoren om å øke lagringsplassen."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du er invitert til å koble ${ BRAND_NAME }-kontoen til denne familiegruppen og nyte alle premiumfunksjonene."
       ]
     },
     "familyOffer_2023:Label": {
@@ -8067,8 +8111,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -9639,6 +9682,147 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "${ count } email": [
+        "${ count } e-post",
+        "${ count } e-poster"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } e-post · ${ names }",
+        "${ count } e-poster · ${ names }"
+      ],
+      "${ dateString } at ${ formattedTime }": [
+        "${ dateString } kl. ${ formattedTime }"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } merket"
+      ],
+      "${ name } in ${ parentName }": [
+        "${ name } i ${ parentName }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } igjen av prøveperioden. ${ addPaymentMethodLink } for å unngå å miste tilgang. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } igjen av prøveperioden. ${ addPaymentMethodLink } for å beholde abonnementet. ${ learnMoreLink }"
+      ],
+      "Apply labels": [
+        "Bruk etiketter"
+      ],
+      "Change display setting": [
+        "Endre visningsinnstilling"
+      ],
+      "Checked Proton support": [
+        "Sjekket brukerstøtten til Proton"
+      ],
+      "Create filter": [
+        "Opprett filter"
+      ],
+      "Create folder": [
+        "Opprett mappe"
+      ],
+      "Create label": [
+        "Opprett etikett"
+      ],
+      "Debug transcript copied": [
+        "Feilsøkingstranskripsjon kopiert"
+      ],
+      "Do you remember your password?": [
+        "Husker du passordet ditt?"
+      ],
+      "Expand logs": [
+        "Utvid logger"
+      ],
+      "Found ${ count } contact": [
+        "Fant ${ count } kontakt",
+        "Fant ${ count } kontakter"
+      ],
+      "I have not finished this one yet.": [
+        "Jeg er ikke ferdig med denne ennå."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Hvis du har mistet tilgangen til autentiseringsappen din, kan du bruke én av de 16 reservekodene for gjenoppretting som du fikk da du konfigurerte tofaktorautentisering. ${ learnMoreLink }"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Gjør ${ MAIL_APP_NAME } til standard e-postapplikasjon."
+      ],
+      "Mark all as unread": [
+        "Merk alle som ulest"
+      ],
+      "Mark as read": [
+        "Merk som lest"
+      ],
+      "Mark as unread": [
+        "Merk som ulest"
+      ],
+      "No contacts found": [
+        "Ingen kontakter funnet"
+      ],
+      "Not supported by this browser": [
+        "Ikke støttet i denne nettleseren"
+      ],
+      "Opened a problem report": [
+        "Åpnet en problemrapport"
+      ],
+      "Read your auto-reply": [
+        "Les det automatiske svaret"
+      ],
+      "Read your display settings": [
+        "Leste visningsinnstillingene"
+      ],
+      "Read your signature": [
+        "Leste signaturen din"
+      ],
+      "Rename folder": [
+        "Endre mappenavn"
+      ],
+      "Searched ${ targetName }": [
+        "Søkte ${ targetName }"
+      ],
+      "Searched for mail from ${ sender }": [
+        "Søkte etter e-post fra ${ sender }"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "Søkte etter e-post til ${ recipient }"
+      ],
+      "Searched for “${ keyword }”": [
+        "Søkte etter \"${ keyword }\""
+      ],
+      "Searched the web": [
+        "Søkte på nettet"
+      ],
+      "Searched your mail": [
+        "Søkte i e-posten din"
+      ],
+      "Set auto-reply": [
+        "Angi automatisk svar"
+      ],
+      "Set signature": [
+        "Angi signatur"
+      ],
+      "Snooze emails": [
+        "Utsett e-poster"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Dette tar mange steg. Skal det fortsette?"
+      ],
+      "Turn off auto-reply": [
+        "Slå på automatisk svar"
+      ],
+      "Unstar emails": [
+        "Fjern stjernemerking fra e-poster"
+      ],
+      "Update filter": [
+        "Oppdater filter"
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Vi vil sende deg til ${ IDEAL_WERO_BRAND_NAME } i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Skriver ${ REALISTIC_ENTRIES } realistiske logglinjer som drypper inn i løpet av over et minutt, som en faktisk økt, i stedet for alt på en gang. Tar omtrent ett minutt å kjøre. Hold denne fanen fokusert: bildemålinger pauses i bakgrunnen."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "Skriver realistiske logglinjer etter hverandre, og leser dem deretter alle tilbake. Viser hvordan skrive- og lese-/eksportkostnader skaleres med antall lagrede oppføringer."
       ]
     },
     "info": {
@@ -10852,6 +11036,111 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Account holder name": [
+        "Kontoinnehaverens navn"
+      ],
+      "At": [
+        "Kl."
+      ],
+      "Away message": [
+        "Fraværsmelding"
+      ],
+      "Burst write": [
+        "Skriveburst"
+      ],
+      "Column": [
+        "Kolonne"
+      ],
+      "Comfortable": [
+        "Komfortabel"
+      ],
+      "Compact": [
+        "Komprimer"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Tilbud, kampanjer og markedsførings-e-poster"
+      ],
+      "Dropped frames": [
+        "Tapte bilder"
+      ],
+      "Encrypt": [
+        "Krypter"
+      ],
+      "Entries": [
+        "Oppføringer"
+      ],
+      "Export size": [
+        "Eksportstørrelse"
+      ],
+      "Filter name": [
+        "Filternavn"
+      ],
+      "From date": [
+        "Fra dato"
+      ],
+      "From time": [
+        "Fra kl."
+      ],
+      "Grouped conversations": [
+        "Grupperte samtaler"
+      ],
+      "IndexedDB store": [
+        "IndexedDB-lagring"
+      ],
+      "Label name": [
+        "Etikettnavn"
+      ],
+      "Log performance": [
+        "Loggfør ytelse"
+      ],
+      "New name": [
+        "Nytt navn"
+      ],
+      "No unread conversations": [
+        "Ingen uleste samtaler"
+      ],
+      "No unread messages": [
+        "Ingen uleste meldinger"
+      ],
+      "Read / export": [
+        "Les / eksport"
+      ],
+      "Realistic session": [
+        "Realistisk økt"
+      ],
+      "Return on": [
+        "Tilbake den"
+      ],
+      "Row": [
+        "Rad"
+      ],
+      "Sieve script": [
+        "Sieve-skript"
+      ],
+      "Signature": [
+        "Signatur"
+      ],
+      "Single messages": [
+        "Enkeltmeldinger"
+      ],
+      "Sum of write() calls": [
+        "Antall skrive()-kall"
+      ],
+      "Until date": [
+        "Inntil dato"
+      ],
+      "Until time": [
+        "Inntil"
+      ],
+      "Write": [
+        "Skriv"
+      ],
+      "Write (whole session)": [
+        "Skriv (hele økten)"
+      ],
+      "Write-chain drain after last line": [
+        "Skrivekjededrenering etter siste linje"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11199,6 +11488,12 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du må aktivere nøklene på nytt for å se den oppdaterte invitasjonen"
+      ],
+      "Add formatting, links or images": [
+        "Legg til formatering, koblinger eller bilder"
+      ],
+      "Advanced auto-reply options": [
+        "Avanserte alternativer for automatisk svar"
       ]
     },
     "Link to calendar event": {
@@ -12163,6 +12458,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med utvidet tilgang"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med begrenset tilgang"
       ]
     },
     "new_plans: feature highlight": {
@@ -12278,6 +12579,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du nedgraderer kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du forsøker å abonnere igjen."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } slutter på ${ Last4 }"
       ]
     },
     "new_plans: label": {
@@ -13020,6 +13324,120 @@
       ],
       "No parent folder": [
         "Ingen overordnet mappe"
+      ],
+      "10th of the month": [
+        "10. i måneden"
+      ],
+      "11th of the month": [
+        "11. i måneden"
+      ],
+      "12th of the month": [
+        "12. i måneden"
+      ],
+      "13th of the month": [
+        "13. i måneden"
+      ],
+      "14th of the month": [
+        "14. i måneden"
+      ],
+      "15th of the month": [
+        "15. i måneden"
+      ],
+      "16th of the month": [
+        "16. i måneden"
+      ],
+      "17th of the month": [
+        "17. i måneden"
+      ],
+      "18th of the month": [
+        "18. i måneden"
+      ],
+      "19th of the month": [
+        "19. i måneden"
+      ],
+      "1st of the month": [
+        "1. i måneden"
+      ],
+      "20th of the month": [
+        "20. i måneden"
+      ],
+      "21st of the month": [
+        "21. i måneden"
+      ],
+      "22nd of the month": [
+        "22. i måneden"
+      ],
+      "23rd of the month": [
+        "23. i måneden"
+      ],
+      "24th of the month": [
+        "24. i måneden"
+      ],
+      "25th of the month": [
+        "25. i måneden"
+      ],
+      "26th of the month": [
+        "26. i måneden"
+      ],
+      "27th of the month": [
+        "27. i måneden"
+      ],
+      "28th of the month": [
+        "28. i måneden"
+      ],
+      "29th of the month": [
+        "29. i måneden"
+      ],
+      "2nd of the month": [
+        "2. i måneden"
+      ],
+      "30th of the month": [
+        "30. i måneden"
+      ],
+      "31st of the month": [
+        "31. i måneden"
+      ],
+      "3rd of the month": [
+        "3. i måneden"
+      ],
+      "4th of the month": [
+        "4. i måneden"
+      ],
+      "5th of the month": [
+        "5. i måneden"
+      ],
+      "6th of the month": [
+        "6. i måneden"
+      ],
+      "7th of the month": [
+        "7. i måneden"
+      ],
+      "8th of the month": [
+        "8. i måneden"
+      ],
+      "9th of the month": [
+        "9. i måneden"
+      ],
+      "Fixed duration": [
+        "Fast varighet"
+      ],
+      "Permanent": [
+        "Permanent"
+      ],
+      "Remind me later": [
+        "Påminn meg senere"
+      ],
+      "Repeat daily": [
+        "Gjenta daglig"
+      ],
+      "Repeat monthly": [
+        "Gjenta månedlig"
+      ],
+      "Repeat weekly": [
+        "Gjenta ukentlig"
+      ],
+      "Yes, don't show again": [
+        "Ja, ikke vis igjen"
       ]
     },
     "Option group": {
@@ -13301,6 +13719,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Betal med ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Valutaen er endret til euro (€) fordi ${ IDEAL_WERO_BRAND_NAME } kun støtter betalinger i euro."
       ]
     },
     "Payments.Error": {
@@ -13321,6 +13745,12 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kortet ditt ble avslått. Forsøk et annet kort eller kontakt banken din for å autorisere belastingen."
+      ],
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Kunne ikke initialisere ${ IDEAL_WERO_BRAND_NAME }. Prøv på nytt senere."
+      ],
+      "Please enter the account holder name": [
+        "Skriv inn kontoinnehaverens navn"
       ]
     },
     "Payments.error": {
@@ -13381,6 +13811,15 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - kort som slutter på ${ paymentMethod.Details.Last4 }"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - kort som slutter på ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Bankoverføring - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kort som slutter på ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -16931,6 +17370,60 @@
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
+      ],
+      "Apply labels": [
+        "Bruk etiketter"
+      ],
+      "Change display setting": [
+        "Endre visningsinnstilling"
+      ],
+      "Create filter": [
+        "Opprett filter"
+      ],
+      "Create folder": [
+        "Opprett mappe"
+      ],
+      "Create label": [
+        "Opprett etikett"
+      ],
+      "Keep this banner hidden?": [
+        "Vil du holde dette banneret skjult?"
+      ],
+      "Mark all as read": [
+        "Marker alle som leste"
+      ],
+      "Mark all as unread": [
+        "Merk alle som uleste"
+      ],
+      "Rename folder": [
+        "Endre mappenavn"
+      ],
+      "September Sale": [
+        "Septembersalg"
+      ],
+      "Set auto-reply": [
+        "Angi automatisk svar"
+      ],
+      "Set signature": [
+        "Angi signatur"
+      ],
+      "Snooze emails": [
+        "Utsett e-poster"
+      ],
+      "Star emails": [
+        "Stjernemerk e-poster"
+      ],
+      "Still working on it": [
+        "Jobber fortsatt med det"
+      ],
+      "Turn off auto-reply": [
+        "Slå av automatisk svar"
+      ],
+      "Unstar emails": [
+        "Fjern stjernemerking fra e-poster"
+      ],
+      "Update filter": [
+        "Oppdater filter"
       ]
     },
     "Title header for keys table": {
@@ -17560,6 +18053,105 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Prøv nå"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Du har nå tilgang til nye ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ved å bekrefte gir du ${ BRAND_NAME } og Stripe, vår betalingstjenesteleverandør, tillatelse til å innkreve fremtidige betalinger for abonnementet ditt fra denne bankkontoen via SEPA AvtaleGiro, og banken din til å debitere disse betalingene. Første betaling gjøres nå av ${ IDEAL_WERO_BRAND_NAME }. Abonnementet fornyes automatisk inntil du kansellerer. Vi varsler deg før hver innkreving. For innkreving via AvtaleGiro kan du be om refusjon fra banken innen 8 uker etter debiteringsdatoen, i henhold til vilkårene i avtalen med banken din. Dette gjelder ikke for ${ IDEAL_WERO_BRAND_NAME }-betalingen du foretar nå."
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Endring av faktureringsadresse kan påvirke skatter på fremtidige fakturaer."
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Benytt deg av tilbudet"
+      ],
+      "Special Offer": [
+        "Spesialtilbud"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "2 individual accounts": [
+        "2 individuelle kontoer"
+      ],
+      "2 TB of secure storage": [
+        "2 TB med sikker lagring"
+      ],
+      "3 TB of secure storage": [
+        "3 TB med sikker lagring"
+      ],
+      "500 GB of secure storage": [
+        "500 GB med sikker lagring"
+      ],
+      "6 individual accounts": [
+        "6 individuelle kontoer"
+      ],
+      "Advanced protection against cyber threats": [
+        "Avansert beskyttelse mot cybertrusler"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter er basert på standard månedspris. Abonnementet fornyes til standard årspris når faktureringssyklusen utløper."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "for 12 måneder"
+      ],
+      "One plan, full power": [
+        "Én plan, mer kraft"
+      ],
+      "One plan, max savings": [
+        "Én plan, maksimal besparelse"
+      ],
+      "One plan, more power": [
+        "Én plan, mer kraft"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } e-post → ${ wakeTime }",
+        "${ count } e-poster → ${ wakeTime }"
       ]
     }
   }

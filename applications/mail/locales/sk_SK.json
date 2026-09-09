@@ -1555,7 +1555,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -1760,6 +1763,9 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Add a payment method": [
+        "Pridať spôsob platby"
       ]
     },
     "action": {
@@ -8440,10 +8446,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -10151,6 +10154,18 @@
       ],
       "Opened a problem report": [
         "Bolo vytvorené hlásenie o probléme"
+      ],
+      "Create filter": [
+        "Vytvoriť filter"
+      ],
+      "Rename folder": [
+        "Premenovať priečinok"
+      ],
+      "Set signature": [
+        "Nastaviť podpis"
+      ],
+      "Turn off auto-reply": [
+        "Vypnúť automatickú odpoveď"
       ]
     },
     "info": {
@@ -11467,6 +11482,15 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Away message": [
+        "Správa o neprítomnosti"
+      ],
+      "New name": [
+        "Nový názov"
+      ],
+      "Signature": [
+        "Podpis"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12981,6 +13005,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } končiaca na ${ Last4 }"
       ]
     },
     "new_plans: label": {
@@ -13747,6 +13774,114 @@
       ],
       "Yes, don't show again": [
         "Áno, viac nezobrazovať"
+      ],
+      "10th of the month": [
+        "10. deň v mesiaci"
+      ],
+      "11th of the month": [
+        "11. deň v mesiaci"
+      ],
+      "12th of the month": [
+        "12. deň v mesiaci"
+      ],
+      "13th of the month": [
+        "13. deň v mesiaci"
+      ],
+      "14th of the month": [
+        "14. deň v mesiaci"
+      ],
+      "15th of the month": [
+        "15. deň v mesiaci"
+      ],
+      "16th of the month": [
+        "16. deň v mesiaci"
+      ],
+      "17th of the month": [
+        "17. deň v mesiaci"
+      ],
+      "18th of the month": [
+        "18. deň v mesiaci"
+      ],
+      "19th of the month": [
+        "19. deň v mesiaci"
+      ],
+      "1st of the month": [
+        "1. deň v mesiaci"
+      ],
+      "20th of the month": [
+        "20. deň v mesiaci"
+      ],
+      "21st of the month": [
+        "21. deň v mesiaci"
+      ],
+      "22nd of the month": [
+        "22. deň v mesiaci"
+      ],
+      "23rd of the month": [
+        "23. deň v mesiaci"
+      ],
+      "24th of the month": [
+        "24. deň v mesiaci"
+      ],
+      "25th of the month": [
+        "25. deň v mesiaci"
+      ],
+      "26th of the month": [
+        "26. deň v mesiaci"
+      ],
+      "27th of the month": [
+        "27. deň v mesiaci"
+      ],
+      "28th of the month": [
+        "28. deň v mesiaci"
+      ],
+      "29th of the month": [
+        "29. deň v mesiaci"
+      ],
+      "2nd of the month": [
+        "2. deň v mesiaci"
+      ],
+      "30th of the month": [
+        "30. deň v mesiaci"
+      ],
+      "31st of the month": [
+        "31. deň v mesiaci"
+      ],
+      "3rd of the month": [
+        "3. deň v mesiaci"
+      ],
+      "4th of the month": [
+        "4. deň v mesiaci"
+      ],
+      "5th of the month": [
+        "5. deň v mesiaci"
+      ],
+      "6th of the month": [
+        "6. deň v mesiaci"
+      ],
+      "7th of the month": [
+        "7. deň v mesiaci"
+      ],
+      "8th of the month": [
+        "8. deň v mesiaci"
+      ],
+      "9th of the month": [
+        "9. deň v mesiaci"
+      ],
+      "Fixed duration": [
+        "Pevná doba trvania"
+      ],
+      "Permanent": [
+        "Trvale"
+      ],
+      "Repeat daily": [
+        "Opakovať denne"
+      ],
+      "Repeat monthly": [
+        "Opakovať mesačne"
+      ],
+      "Repeat weekly": [
+        "Opakovať týždenne"
       ]
     },
     "Option group": {
@@ -14139,6 +14274,15 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - karta končiaca na ${ paymentMethod.Details.Last4 }"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - karta končiaca na ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Bankový prevod – ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - karta končiaca na ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -18000,6 +18144,18 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "Create filter": [
+        "Vytvoriť filter"
+      ],
+      "Rename folder": [
+        "Premenovať priečinok"
+      ],
+      "Set auto-reply": [
+        "Nastaviť automatickú odpoveď"
+      ],
+      "Turn off auto-reply": [
+        "Vypnúť automatickú odpoveď"
       ]
     },
     "Title header for keys table": {
@@ -18719,6 +18875,11 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Zmena fakturačnej adresy môže mať vplyv na výšku daní na budúcich faktúrach."
       ]
     }
   }
