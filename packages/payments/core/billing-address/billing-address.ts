@@ -1,14 +1,12 @@
 import { c } from 'ttag';
 
+import type { BillingAddress } from '@proton/shared/lib/payments/billing-address';
+
 import { normalizePostalCode } from '../../postal-codes/format';
 import { isPostalCodeValid } from '../../postal-codes/postal-codes-validation';
 import { isCountryWithRequiredPostalCode, isCountryWithStates } from '../countries';
 
-export type BillingAddress = {
-    CountryCode: string;
-    State?: string | null;
-    ZipCode?: string | null;
-};
+export type { BillingAddress };
 
 export type BillingAddressProperty = {
     BillingAddress: BillingAddress;

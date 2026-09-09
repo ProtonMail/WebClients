@@ -1,6 +1,5 @@
-import { CYCLE, PLANS } from '@proton/payments/core/constants';
-
 import { isSamePlan } from '../../lib/helpers/plan';
+import { CYCLE, PLANS } from '../../lib/payments/constants';
 
 describe('isSamePlan', () => {
     it('should return true if the plans are the same', () => {
