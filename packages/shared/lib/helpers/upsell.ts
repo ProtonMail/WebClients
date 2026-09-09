@@ -1,9 +1,9 @@
-import { type COUPON_CODES, type CYCLE, PLANS } from '@proton/payments/core/constants';
-import { type MaybeFreeSubscription, getPlan } from '@proton/payments/core/subscription/helpers';
-
 import type { APP_NAMES, UPSELL_COMPONENT, UPSELL_FEATURE } from '../constants';
 import { APPS, APP_UPSELL_REF_PATH } from '../constants';
 import type { Audience, UserModel } from '../interfaces';
+import { type COUPON_CODES, type CYCLE, PLANS } from '../payments/constants';
+import { getPlan } from '../payments/subscription/helpers/plan-info';
+import type { MaybeFreeSubscription } from '../payments/subscription/interface';
 
 /**
  * Add an upsell ref param to a URL

@@ -1,4 +1,4 @@
-import type { Subscription } from '@proton/payments/core/subscription/interface';
+import type { Subscription } from '../payments/subscription/interface';
 
 const format = (
     subscription: Subscription,

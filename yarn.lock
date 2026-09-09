@@ -11920,14 +11920,11 @@ __metadata:
   peerDependencies:
     "@proton/key-transparency": "workspace:^"
     "@proton/metrics": "workspace:^"
-    "@proton/payments": "workspace:^"
     electron: "*"
   peerDependenciesMeta:
     "@proton/key-transparency":
       optional: true
     "@proton/metrics":
-      optional: true
-    "@proton/payments":
       optional: true
     electron:
       optional: true
