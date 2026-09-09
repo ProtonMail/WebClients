@@ -7,6 +7,7 @@ const logger = log.create({ logId: 'electron' });
 if (isProdEnv() && !Boolean(process.env.PASS_DEBUG)) {
     logger.transports.console.level = 'info';
     logger.transports.ipc.level = 'info';
+    logger.transports.file.level = 'info';
 }
 
 export default logger;
