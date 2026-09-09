@@ -1055,6 +1055,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bilgisayar uygulamasını ücretsiz deneme süreniz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
+      ],
+      "Add a payment method": [
+        "Bir ödeme yöntemi ekleyin"
       ]
     },
     "action": {
@@ -1901,6 +1904,19 @@
       "Total for ${ n } month": [
         "${ n } aylık toplam",
         "${ n } aylık toplam"
+      ],
+      "Amount due": [
+        "Ödenecek tutar"
+      ],
+      "Amount due after trial": [
+        "Deneme süresinden sonra ödenecek tutar"
+      ],
+      "Amount due now": [
+        "Şimdi ödenecek tutar"
+      ],
+      "Total for ${ cycle } month": [
+        "${ cycle } ay için toplam",
+        "${ cycle } ay için toplam"
       ]
     },
     "Collapsible tooltip": {
@@ -4862,6 +4878,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Hesabınız, size ayrılmış ${ inviteSpace } boyutunu aşan ${ usedSpace } depolama alanı kullanıyor. Bazı verileri silin ya da tarife yöneticisinden depolama alanınızı artırmasını isteyin."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "${ BRAND_NAME } hesabınızı bu aile grubuna bağlamaya ve tüm ücretli özelliklerinin tadını çıkarmaya davetlisiniz."
       ]
     },
     "familyOffer_2023:Label": {
@@ -7106,6 +7125,15 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Rezervasyon aralığı sayısı sınırına ulaştınız (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Erişiminizi kaybetmemek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Aboneliğinizi sürdürmek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "Do you remember your password?": [
+        "Parolanızı anımsıyor musunuz?"
       ]
     },
     "info": {
@@ -9174,6 +9202,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "Sonu ${ Last4 } ile biten ${ Brand }"
       ]
     },
     "new_plans: label": {
@@ -10337,6 +10368,15 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - ${ paymentMethod.Details.Last4 } ile biten kart"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - ${ Last4 } ile biten kart"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Banka havalesi - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - ${ Last4 } ile biten kart"
       ]
     },
     "Payments.Sepa": {
@@ -13875,6 +13915,11 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Fatura adresinizi değiştirmek sonraki faturalardaki vergileri etkileyebilir."
       ]
     }
   }

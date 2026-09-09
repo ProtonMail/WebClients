@@ -1063,6 +1063,9 @@
       ],
       "Preview logs": [
         "Náhľad záznamov"
+      ],
+      "Add a payment method": [
+        "Pridať spôsob platby"
       ]
     },
     "action": {
@@ -1957,6 +1960,21 @@
         "Celkom za ${ n } mesiace",
         "Celkom za ${ n } mesiacov",
         "Celkom za ${ n } mesiacov"
+      ],
+      "Amount due": [
+        "Dlžná suma"
+      ],
+      "Amount due after trial": [
+        "Splatná suma po skúšobnom období"
+      ],
+      "Amount due now": [
+        "Čiastka k zaplateniu teraz"
+      ],
+      "Total for ${ cycle } month": [
+        "Celkom za ${ cycle } mesiac",
+        "Celkom za ${ cycle } mesiace",
+        "Celkom za ${ cycle } mesiacov",
+        "Celkom za ${ cycle } mesiacov"
       ]
     },
     "Collapsible tooltip": {
@@ -4962,6 +4980,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet využíva ${ usedSpace } úložiska, čo presahuje pridelený priestor ${ inviteSpace }. Odstráňte niektoré údaje alebo požiadajte správcu plánu o navýšenie úložiska."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Pozývame vás, aby ste si prepojili svoj ${ BRAND_NAME } účet s touto rodinnou skupinou a mohli tak využívať všetky jej prémiové funkcie."
       ]
     },
     "familyOffer_2023:Label": {
@@ -7302,6 +7323,9 @@
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Na dokončenie tejto transakcie vás presmerujeme do ${ IDEAL_WERO_BRAND_NAME } v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
+      ],
+      "Do you remember your password?": [
+        "Pamätáte si svoje heslo?"
       ]
     },
     "info": {
@@ -9464,6 +9488,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } končiaca na ${ Last4 }"
       ]
     },
     "new_plans: label": {
@@ -10684,6 +10711,15 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - karta končiaca na ${ paymentMethod.Details.Last4 }"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - karta končiaca na ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Bankový prevod – ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - karta končiaca na ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -14437,6 +14473,11 @@
       ],
       "One plan, more power": [
         "Jeden plán, viac výkonu"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Zmena fakturačnej adresy môže mať vplyv na výšku daní na budúcich faktúrach."
       ]
     }
   }

@@ -1051,6 +1051,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
+      ],
+      "Add a payment method": [
+        "결제 방법 추가하기"
       ]
     },
     "action": {
@@ -1873,6 +1876,18 @@
       ],
       "Total for ${ n } month": [
         "${ n }개월의 합계"
+      ],
+      "Amount due": [
+        "납부 금액"
+      ],
+      "Amount due after trial": [
+        "무료 체험 후 납부할 금액"
+      ],
+      "Amount due now": [
+        "지금 납부할 금액"
+      ],
+      "Total for ${ cycle } month": [
+        "${ cycle }개월의 합계"
       ]
     },
     "Collapsible tooltip": {
@@ -4812,6 +4827,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "사용자의 계정이 할당된 ${ inviteSpace }을(를) 초과하는 스토리지의 ${ usedSpace }을(를) 사용하고 있습니다. 일부 데이터를 삭제하거나 플랜을 구매한 관리자에게 저장 공간을 늘리도록 요청하세요."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "회원님의 ${ BRAND_NAME } 계정이 이 가족 그룹에 합류하도록 초대되었습니다. 함께 모든 프리미엄 기능들을 즐겨보세요."
       ]
     },
     "familyOffer_2023:Label": {
@@ -7008,6 +7026,15 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "예약 슬롯 한도에 도달했습니다 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "무료 체험이 ${ timeRemaining }일 남았습니다. 접근 권한을 상실하지 않으려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "무료 체험이 ${ timeRemaining }일 남았습니다. 구독을 유지하려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "Do you remember your password?": [
+        "비밀번호가 기억 나시나요?"
       ]
     },
     "info": {
@@ -9029,6 +9056,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Last4 }(으)로 끝나는 ${ Brand }"
       ]
     },
     "new_plans: label": {
@@ -10156,6 +10186,15 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - 번호가 ${ paymentMethod.Details.Last4 }(으)로 끝나는 카드"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "번호가 ${ Last4 }(으)로 끝나는 Apple Pay 카드"
+      ],
+      "Bank transfer - ${ iban }": [
+        "은행 송금 - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - 번호가 ${ Last4 }(으)로 끝나는 카드"
       ]
     },
     "Payments.Sepa": {
@@ -13594,6 +13633,11 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "청구 주소 변경은 추후 청구서의 세율에 영향을 줄 수 있습니다."
       ]
     }
   }

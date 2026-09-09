@@ -1895,6 +1895,19 @@
       "Total for ${ n } month": [
         "Gesamtbetrag für ${ n } Monat",
         "Gesamtbetrag für ${ n } Monate"
+      ],
+      "Amount due": [
+        "Fälliger Betrag"
+      ],
+      "Amount due after trial": [
+        "Fälliger Betrag nach der Testversion"
+      ],
+      "Amount due now": [
+        "Jetzt fälliger Betrag"
+      ],
+      "Total for ${ cycle } month": [
+        "Gesamtbetrag für ${ cycle } Monat",
+        "Gesamtbetrag für ${ cycle } Monate"
       ]
     },
     "Collapsible tooltip": {
@@ -7097,6 +7110,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du hast das Limit für Buchungsplätze erreicht (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Do you remember your password?": [
+        "Erinnerst du dich an dein Passwort?"
       ]
     },
     "info": {
