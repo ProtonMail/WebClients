@@ -5,6 +5,10 @@ import { GRID_GAP, TILE_ASPECT_RATIO, balancedGridLayout, calculateBestGridLayou
 const layout = (count: number, width: number, height: number) =>
     calculateBestGridLayout(count, { width, height, gap: GRID_GAP, tileAspectRatio: TILE_ASPECT_RATIO });
 
+/** Narrow screens render square tiles. */
+const squareLayout = (count: number, width: number, height: number) =>
+    calculateBestGridLayout(count, { width, height, gap: GRID_GAP, tileAspectRatio: 1 });
+
 describe('calculateBestGridLayout', () => {
     it('handles empty and single-tile cases', () => {
         expect(layout(0, 1000, 800)).toEqual({ cols: 0, rows: 0 });
@@ -29,6 +33,22 @@ describe('calculateBestGridLayout', () => {
 
     it('falls back to a square-ish layout before the container is measured', () => {
         expect(layout(5, 0, 0)).toEqual({ cols: 3, rows: 2 });
+    });
+
+    it('keeps stacking a pair as the window narrows below the desktop breakpoint', () => {
+        expect(layout(2, 1200, 700)).toEqual({ cols: 1, rows: 2 });
+        expect(layout(2, 900, 700)).toEqual({ cols: 1, rows: 2 });
+        expect(layout(2, 700, 700)).toEqual({ cols: 1, rows: 2 });
+    });
+
+    describe('with square tiles (phone widths)', () => {
+        it('stacks a pair on a tall area rather than shrinking it side by side', () => {
+            expect(squareLayout(2, 390, 700)).toEqual({ cols: 1, rows: 2 });
+        });
+
+        it('puts a pair side by side once the area is wide and short', () => {
+            expect(squareLayout(2, 660, 320)).toEqual({ cols: 2, rows: 1 });
+        });
     });
 });
 
