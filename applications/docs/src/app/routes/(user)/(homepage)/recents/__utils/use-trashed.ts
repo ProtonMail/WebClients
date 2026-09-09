@@ -15,34 +15,39 @@ export function useTrashed(drive: ProtonDriveClient) {
   const [trashedDocumentItems, setTrashedDocumentItems] = useState<RecentDocumentsItemValue[]>([])
   const [isTrashLoading, setIsTrashLoading] = useState(false)
 
-  const fetchTrashed = useCallback(async () => {
-    setIsTrashLoading(true)
+  const fetchTrashed = useCallback(
+    async (abort: AbortSignal) => {
+      setIsTrashLoading(true)
 
-    const nodes: NodeEntity[] = []
-    try {
-      // TODO replace with "iterateTrashedNodeUids" and use AbortController (not time critical)
-      for await (const node of drive.iterateTrashedNodes()) {
-        if (!mimeTypeToProtonDocumentType(node.mediaType)) {
-          continue
+      const nodes: NodeEntity[] = []
+      try {
+        for await (const node of drive.iterateTrashedNodes(abort)) {
+          if (!mimeTypeToProtonDocumentType(node.mediaType)) {
+            continue
+          }
+          nodes.push(node)
         }
-        nodes.push(node)
+      } catch (error: any) {
+        if (error?.name === 'AbortError') {
+          return
+        }
+        traceError(error, {
+          tags: {
+            initiative: SentryRealtimeInitiatives.SDK_SWITCH,
+            feature: 'DocsLoadRecentsWithDriveSDK',
+          },
+        })
+        createNotification({
+          type: 'error',
+          text: c('Error').t`Some trashed documents could not be loaded`,
+        })
       }
-    } catch (error: any) {
-      traceError(error, {
-        tags: {
-          initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-          feature: 'DocsLoadRecentsWithDriveSDK',
-        },
-      })
-      createNotification({
-        type: 'error',
-        text: c('Error').t`Some trashed documents could not be loaded`,
-      })
-    }
 
-    setTrashedDocumentItems(nodes.map(nodeToTrashedDocumentItem))
-    setIsTrashLoading(false)
-  }, [createNotification, drive])
+      setTrashedDocumentItems(nodes.map(nodeToTrashedDocumentItem))
+      setIsTrashLoading(false)
+    },
+    [createNotification, drive],
+  )
 
   const trashedListener: SDKEventListener = useCallback(async (event: DriveEvent) => {
     const drive = getDrive()

@@ -18,13 +18,8 @@ import { getDrive, generateNodeUid } from '@proton/drive'
 import { useSharingModal } from '@proton/drive/public/sharingModal'
 import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 import { c } from 'ttag'
-import {
-  deleteDocument,
-  reportTrashError,
-  trashAndNotify,
-  restoreAndNotify,
-  handleRestoreError,
-} from '@proton/docs-core/lib/DriveSDK/trash'
+import { deleteDocument, reportTrashError } from '@proton/docs-core/lib/DriveSDK/trash'
+import { trashAndNotify, restoreAndNotify, handleRestoreError } from '~/drive-sdk/trash-restore-notify'
 import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
 
 export type DocumentActionsContextValue = {
@@ -32,9 +27,6 @@ export type DocumentActionsContextValue = {
   share: (document: RecentDocumentsItem) => void
   move: (document: RecentDocumentsItem) => void
   openParent: (document: RecentDocumentsItem) => void
-  // TODO: all rename-related stuff but `rename` probably belongs somewhere else,
-  // since this "document actions" context shouldn't hold UI state.
-  // Just something to keep in mind if this is refactored in the future.
   startRename: (document: RecentDocumentsItem) => void
   cancelRename: (force?: boolean) => void
   rename: (document: RecentDocumentsItem, newName: string) => Promise<void>
@@ -42,10 +34,16 @@ export type DocumentActionsContextValue = {
   isRenameSaving: boolean
   trash: (document: RecentDocumentsItem) => Promise<void>
   currentlyTrashingId?: string
-  onTrashed: (listener: (id: string) => void) => void
+  /**
+   * Returns a f-n that removes listener on unmount
+   */
+  subscribeToTrashed: (listener: (id: string) => void) => () => void
   restore: (document: RecentDocumentsItem) => Promise<void>
   currentlyRestoringId?: string
-  onRestored: (listener: (id: string) => void) => void
+  /**
+   * Returns a f-n that removes listener on unmount
+   */
+  subscribeToRestored: (listener: (id: string) => void) => () => void
   deletePermanently: (document: RecentDocumentsItem) => Promise<void>
 }
 
@@ -176,9 +174,11 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
     setCurrentlyTrashingId(document.uniqueId())
 
     if (trashWithSDK) {
+      const emitRestored = () => RESTORED_LISTENERS.forEach((listener) => listener(document.uniqueId()))
+
       try {
         const nodeUid = generateNodeUid(document.volumeId, document.linkId)
-        await trashAndNotify(createNotification, nodeUid)
+        await trashAndNotify(createNotification, nodeUid, emitRestored)
       } catch (error) {
         reportTrashError(error)
         createNotification({
@@ -197,19 +197,25 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
     application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_trashed)
   })
 
-  const onTrashed = useEvent((listener: (id: string) => void) => {
+  const subscribeToTrashed = useEvent((listener: (id: string) => void) => {
     TRASHED_LISTENERS.add(listener)
+    return () => {
+      TRASHED_LISTENERS.delete(listener)
+    }
   })
 
   const restore = useEvent(async (document: RecentDocumentsItem) => {
     setCurrentlyRestoringId(document.uniqueId())
 
     if (trashWithSDK) {
+      const emitTrashed = () => TRASHED_LISTENERS.forEach((listener) => listener(document.uniqueId()))
+
       try {
         const nodeUid = generateNodeUid(document.volumeId, document.linkId)
-        await restoreAndNotify(createNotification, nodeUid)
+        await restoreAndNotify(createNotification, nodeUid, emitTrashed)
       } catch (error: any) {
         handleRestoreError(createNotification, error)
+        setCurrentlyRestoringId(undefined)
         return
       }
     } else {
@@ -221,8 +227,11 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
     application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_restored)
   })
 
-  const onRestored = useEvent((listener: (id: string) => void) => {
+  const subscribeToRestored = useEvent((listener: (id: string) => void) => {
     RESTORED_LISTENERS.add(listener)
+    return () => {
+      RESTORED_LISTENERS.delete(listener)
+    }
   })
 
   const deletePermanently = useEvent(async (document: RecentDocumentsItem) => {
@@ -270,10 +279,10 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
       isRenameSaving,
       trash,
       currentlyTrashingId,
-      onTrashed,
+      subscribeToTrashed,
       restore,
       currentlyRestoringId,
-      onRestored,
+      subscribeToRestored,
       deletePermanently,
     }),
     [
@@ -288,10 +297,10 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
       isRenameSaving,
       trash,
       currentlyTrashingId,
-      onTrashed,
+      subscribeToTrashed,
       restore,
       currentlyRestoringId,
-      onRestored,
+      subscribeToRestored,
       deletePermanently,
     ],
   )
