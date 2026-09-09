@@ -1350,6 +1350,9 @@
       ],
       "Preview logs": [
         "Vista prèvia dels registres"
+      ],
+      "Add a payment method": [
+        "Afegiu un mètode de pagament"
       ]
     },
     "Action: Docs": {
@@ -7924,6 +7927,12 @@
       ],
       "Link expired": [
         "L’enllaç ha caducat."
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Us queda ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per no perdre'n l'accés. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Us queden ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per a mantenir la vostra subscripció. ${ learnMoreLink }"
       ]
     },
     "info": {

@@ -4758,8 +4758,8 @@
         "Viimeisin"
       ],
       "Share ${ photoCount } photo via": [
-        "Jaa ${ photoCount } kuva käyttäen",
-        "Jaa ${ photoCount } kuvaa käyttäen"
+        "Jaa ${ photoCount } kuva sovelluksessa",
+        "Jaa ${ photoCount } kuvaa sovelluksessa"
       ]
     },
     "Hint": {
@@ -5222,8 +5222,8 @@
         "${ pausedCount } pysäytettyä"
       ],
       "${ photoCount } item": [
-        "${ photoCount } kohde",
-        "${ photoCount } kohdetta"
+        "${ photoCount } kuva",
+        "${ photoCount } kuvaa"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vaatii ainakin yhden oman palvelimen ${ serverPricePerMonth }"
@@ -10148,8 +10148,8 @@
         "Juurikansion lataus epäonnistui"
       ],
       "Selected item was not removed from your list": [
-        "Valittua kohdetta ei poistettu listaltasi",
-        "Valittuja kohteita ei poistettu listaltasi"
+        "Tätä kohdetta ei poistettu listaltasi",
+        "Valittuja kohteita ei voitu poistaa listaltasi"
       ],
       "Selected item was successfully removed from your list": [
         "Valittu kohde on poistettu listastasi onnistuneesti",
@@ -13000,7 +13000,7 @@
         "Haluatko varmasti sulkea esikatselun?"
       ],
       "Are you sure you want to remove this item from your list?": [
-        "Haluatko varmasti poistaa tämän kohteen luettelostasi?",
+        "Haluatko varmasti poistaa tämän kohteen?",
         "Haluatko varmasti poistaa nämä kohteet listaltasi?"
       ],
       "Are you sure?": [
@@ -13292,8 +13292,8 @@
         "Kansion tiedot"
       ],
       "Found ${ resultCount } result": [
-        "Löytyi ${ resultCount } tulos",
-        "Löytyi ${ resultCount } tulosta"
+        "Haullasi löytyi ${ resultCount } tulos",
+        "Haullasi öytyi ${ resultCount } tulosta"
       ],
       "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
         "Hanki ${ DRIVE_SHORT_APP_NAME } puhelimeesi"

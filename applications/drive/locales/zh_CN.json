@@ -349,7 +349,7 @@
         "删除版本"
       ],
       "Delete without saving": [
-        "不保存且删除"
+        "不保存直接移除"
       ],
       "Deselect all": [
         "取消全选"
@@ -415,7 +415,7 @@
         "下载结果"
       ],
       "Drive Locked": [
-        "网盘已锁定"
+        "云端硬盘已锁定"
       ],
       "Edit": [
         "更改"
@@ -448,7 +448,7 @@
         "开启推送通知"
       ],
       "Enable drive search": [
-        "启用网盘搜索"
+        "启用云端硬盘搜索"
       ],
       "Encrypted": [
         "已加密"
@@ -538,7 +538,7 @@
         "转至标签"
       ],
       "Go to my files": [
-        "转到我的文件"
+        "前往我的文件"
       ],
       "Go to parent": [
         "上级目录"
@@ -622,7 +622,7 @@
         "离开"
       ],
       "Leave album": [
-        "退出相册"
+        "离开相册"
       ],
       "Let's talk": [
         "让我们聊聊"
@@ -838,7 +838,7 @@
         "移除礼品码"
       ],
       "Remove me": [
-        "删除我"
+        "将我删除"
       ],
       "Remove without saving": [
         "不保存直接移除"
@@ -928,7 +928,7 @@
         "保存更改"
       ],
       "Save photos and remove": [
-        "保存照片并删除"
+        "保存照片并移除"
       ],
       "Scan & Download": [
         "扫描并下载"
@@ -946,7 +946,7 @@
         "搜索国家"
       ],
       "Search drive": [
-        "搜索网盘"
+        "搜索云端硬盘"
       ],
       "See how": [
         "详细了解"
@@ -1000,7 +1000,7 @@
         "分享"
       ],
       "Share album": [
-        "分享相册"
+        "共享相册"
       ],
       "Share file": [
         "共享文件"
@@ -1090,7 +1090,7 @@
         "开始导览"
       ],
       "This album is empty": [
-        "此相册空空如也哦"
+        "相册为空"
       ],
       "Toggle Calendar app": [
         "切换至 Calendar 应用"
@@ -1228,7 +1228,7 @@
         "您不能发送超过 ${ maxAttachments } 个联系人的 vCard 文件"
       ],
       "Your 3 GB bonus": [
-        "您的 3 GB 奖金"
+        "您的 3 GB 奖励"
       ],
       "Zoom in": [
         "放大"
@@ -1343,6 +1343,9 @@
       ],
       "Stop here": [
         "在此停止"
+      ],
+      "Add a payment method": [
+        "添加支付方式"
       ]
     },
     "Action: Docs": {
@@ -1541,7 +1544,7 @@
     },
     "Badge": {
       "Invited": [
-        "已被邀请"
+        "已邀请"
       ]
     },
     "bf2023: Deal details": {
@@ -3242,10 +3245,10 @@
     },
     "Docs Info": {
       "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
-        "协作变得更简单。现在任何人都可以在不更改文档的情况下提出编辑建议。"
+        "协作变得更加简单！现在任何人都可以提出编辑建议，而无需更改文档。"
       ],
       "Suggestion mode is here": [
-        "建议模式在此"
+        "建议模式已上线"
       ]
     },
     "Downgrade account reason": {
@@ -3531,7 +3534,7 @@
         "日历数量达到上限"
       ],
       "Can't find any secure link": [
-        "找不到任何安全链接"
+        "未找到安全链接"
       ],
       "Can't retrieve device name": [
         "无法获取设备名称"
@@ -3594,7 +3597,7 @@
         "域名不可用，请稍后再试"
       ],
       "Downloads of desktop apps are currently unavailable": [
-        "桌面应用程序下载当前不可用"
+        "桌面应用下载目前不可用"
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "当前无法编辑账单地址，请稍后重试。"
@@ -3741,7 +3744,7 @@
         "无效IBAN"
       ],
       "Invalid JSON file": [
-        "无效的 JSON 文件"
+        "无效 JSON 文件"
       ],
       "Invalid name": [
         "名称无效"
@@ -4071,28 +4074,28 @@
         "无法检索此项目"
       ],
       "We were not able to load some invitations": [
-        "我们无法加载部分邀请"
+        "部分邀请未能加载"
       ],
       "We were not able to load some items": [
         "我们无法加载部分项目"
       ],
       "We were not able to load some items shared with you": [
-        "我们无法加载与您共享的部分项目"
+        "部分与您共享的项目未能加载"
       ],
       "We were not able to load some of your bookmarks": [
         "我们无法加载您的部分书签"
       ],
       "We were not able to load some of your invitation to shared items": [
-        "我们无法加载您收到的部分共享项目邀请"
+        "部分共享项目的邀请未能加载"
       ],
       "We were not able to load some of your saved shared links": [
         "部分已保存的共享链接未能加载"
       ],
       "We were not able to load some of your shared items": [
-        "我们无法加载您部分已共享的项目"
+        "部分共享项目未能加载"
       ],
       "We were not able to load some search results": [
-        "我们无法加载部分搜索结果"
+        "部分搜索结果未能加载"
       ],
       "We were not able to load the file history": [
         "无法加载文件历史"
@@ -4101,7 +4104,7 @@
         "无法加载文件夹内容"
       ],
       "We're sorry, but free upload is not available right now.": [
-        "很抱歉，当前无法使用免费上传功能。"
+        "很抱歉，免费上传目前不可用。"
       ],
       "Wrong billing address": [
         "错误的账单地址"
@@ -4593,7 +4596,7 @@
     },
     "Error message": {
       "Access denied": [
-        "访问被拒绝"
+        "拒绝访问"
       ],
       "App currently unavailable": [
         "应用当前不可用"
@@ -4605,7 +4608,7 @@
         "错误：${ errorMessage }"
       ],
       "Internal server error": [
-        "服务器内部错误"
+        "内部服务器错误"
       ],
       "Not found": [
         "未找到"
@@ -4976,10 +4979,10 @@
         "通讯录"
       ],
       "Create new album": [
-        "创建新相册"
+        "新建相册"
       ],
       "Create new shared album": [
-        "创建新的共享相册"
+        "新建共享相册"
       ],
       "Domain": [
         "域名"
@@ -5011,7 +5014,7 @@
         "所有相册"
       ],
       "Recent": [
-        "最近使用"
+        "最近"
       ],
       "Share ${ photoCount } photo via": [
         "通过以下方式分享 ${ photoCount } 张照片"
@@ -5418,7 +5421,7 @@
         "${ doneUploadsCount } 项已上传"
       ],
       "${ DRIVE_APP_NAME } on App Store": [
-        "App Store 上的${ DRIVE_APP_NAME }"
+        "App Store 上的 ${ DRIVE_APP_NAME }"
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "Play Store 上的 ${ DRIVE_APP_NAME }"
@@ -5550,7 +5553,7 @@
         "30 天内可退款。"
       ],
       "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
-        "新版本 ${ DRIVE_APP_NAME } 可用，请重新加载以继续使用搜索功能。"
+        "${ DRIVE_APP_NAME } 有新版本可用，请重新加载以继续使用搜索。"
       ],
       "A number will be added to the filename": [
         "将在文件名中添加一个编号"
@@ -5625,7 +5628,7 @@
         "金额 (${ amount }) 过小。"
       ],
       "An active recovery file": [
-        "一个激活的恢复文件"
+        "有效的恢复文件"
       ],
       "an anonymous user": [
         "匿名用户"
@@ -5637,13 +5640,13 @@
         "并"
       ],
       "And access it from anywhere": [
-        "即可随时随地下载"
+        "即可随时随地访问"
       ],
       "Anonymous": [
         "匿名"
       ],
       "Apr": [
-        "四月"
+        "4 月"
       ],
       "Are you sure you want to discard your changes?": [
         "确定要放弃修改吗？"
@@ -5655,7 +5658,7 @@
         "您确定要清空回收站并永久删除所有项目吗？"
       ],
       "Are you sure you want to permanently delete": [
-        "你确定你想要从"
+        "确定要永久删除吗"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "确定要从回收站中永久删除“${ itemName }”吗？"
@@ -5676,7 +5679,7 @@
         "需要关注"
       ],
       "Aug": [
-        "八月"
+        "8 月"
       ],
       "Available": [
         "可用"
@@ -5688,7 +5691,7 @@
         "您之前订阅的余额"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
-        "因为 ${ DRIVE_APP_NAME } 是端到端加密的，我们无法为您访问或解密您的文件。要在密码重置后解锁您的网盘，您必须具备以下条件之一："
+        "由于 ${ DRIVE_APP_NAME } 采用端到端加密，我们无法为您访问或解密文件。要在密码重置后解锁云端硬盘，您必须拥有以下任一选项："
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "重新接收验证码前，请先检查垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
@@ -5736,7 +5739,7 @@
         "链接加载失败"
       ],
       "Cannot load links": [
-        "链接加载失败"
+        "无法加载链接"
       ],
       "Cannot load shared link": [
         "分享链接加载失败"
@@ -5769,7 +5772,7 @@
         "清除加密的搜索数据"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "清除浏览器数据将清除此设备上的搜索索引，再次搜索时需要对所有文件进行重新索引。"
+        "清除浏览器数据将同时清除此设备上的搜索索引。使用搜索功能时，所有文件都需要重新建立索引。"
       ],
       "Clears browser data related to the encrypted search.": [
         "清除与加密搜索相关的浏览器数据。"
@@ -5808,7 +5811,7 @@
         "继续"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
-        "继续使用 ${ DRIVE_APP_NAME } 并稍后解锁网盘"
+        "继续使用 ${ DRIVE_APP_NAME }，稍后解锁云端硬盘"
       ],
       "Copy the link to clipboard": [
         "复制链接到剪贴板"
@@ -5838,7 +5841,7 @@
         "创建于"
       ],
       "Create links and share your files with others.": [
-        "创建共享链接即可将您的文件与他人分享。"
+        "创建链接并与他人共享文件。"
       ],
       "Creating": [
         "正在创建"
@@ -5856,7 +5859,7 @@
         "自有域名"
       ],
       "Dec": [
-        "十二月"
+        "12 月"
       ],
       "Decrypting files": [
         "正在解密文件"
@@ -5967,13 +5970,13 @@
         "正在启用自动删除…"
       ],
       "Enabling drive search": [
-        "正在启用网盘搜索"
+        "正在启用云端硬盘搜索"
       ],
       "Encrypted": [
         "已加密"
       ],
       "Encrypted search is here": [
-        "已推出加密搜索功能"
+        "加密搜索已上线"
       ],
       "End-to-end encrypted": [
         "端到端加密"
@@ -6018,13 +6021,13 @@
         "已过期"
       ],
       "Export diagnostic logs for technical support and troubleshooting": [
-        "导出诊断日志以提供技术支持和故障排除"
+        "导出诊断日志以用于技术支持和故障排查"
       ],
       "Failed": [
         "失败"
       ],
       "Feb": [
-        "二月"
+        "2 月"
       ],
       "File \"${ name }\" was deleted during download": [
         "文件“${ name }”在下载过程中被删除"
@@ -6039,7 +6042,7 @@
         "文件不会被更新"
       ],
       "Files and folders that others shared with you will appear here": [
-        "其他人与您共享的文件和文件夹将显示在此处"
+        "他人与您共享的文件和文件夹将显示在此处"
       ],
       "Finalizing": [
         "即将完成"
@@ -6069,19 +6072,19 @@
         "免费提供 5GB 加密存储空间，供您开始使用"
       ],
       "from the version history?": [
-        "版本历史记录中永久删除吗？"
+        "从版本历史中恢复？"
       ],
       "Geoblocking": [
         "地理限制"
       ],
       "Get logs and other information for technical support and troubleshooting": [
-        "获取日志和其他信息以用于技术支持与故障排除"
+        "获取日志及其他信息以用于技术支持和故障排查"
       ],
       "Get the app to backup photos from your phone or upload them here.": [
         "获取应用以备份手机中的照片，或在此处上传。"
       ],
       "Get the desktop app to sync files from your computer.": [
-        "获取桌面应用程序以同步计算机上的文件。"
+        "获取桌面应用以从计算机同步文件。"
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
         "了解 ${ DRIVE_APP_NAME } 并赢取 3 GB 存储空间奖励！立即行动吧。"
@@ -6099,7 +6102,7 @@
         "首要优先顺序"
       ],
       "How does encrypted search work?": [
-        "加密搜索如何工作？"
+        "加密搜索如何运作？"
       ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
         "如果这些文件未在 ${ deviceName } 本地完全下载，您将无法访问它们。"
@@ -6117,7 +6120,7 @@
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
-        "如果您有其中之一，请继续进行 ${ BRAND_NAME } 账户设置以开始解锁过程。"
+        "如果您拥有其中任意一项，请前往 ${ BRAND_NAME } 账户设置开始解锁流程。"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "降级账户后您将不能再使用 ${ MAIL_APP_NAME } 和 ${ VPN_APP_NAME } 的收费功能。"
@@ -6159,7 +6162,7 @@
         "正在索引"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "为项目编制索引：${ esProgress } 条 / 共 ${ totalProgressToShow } 条"
+        "正在建立索引：${ esProgress } / ${ totalProgressToShow }"
       ],
       "Indexing search results…": [
         "正在索引搜索结果…"
@@ -6201,7 +6204,7 @@
         "若不手动删除，回收站中的文件将一直保留"
       ],
       "Items moved to the trash will stay here until deleted": [
-        "移至回收站的项目将留在这里直至被删除"
+        "移至回收站的项目在删除前将一直保留在此处"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "建议您始终使用VPN，但在以下情况下，网络安全威胁可能最为严重："
@@ -6210,16 +6213,16 @@
         "简便与安全兼得"
       ],
       "Jan": [
-        "一月"
+        "1 月"
       ],
       "JCB logo": [
         "JCB 徽标"
       ],
       "Jul": [
-        "七月"
+        "7 月"
       ],
       "Jun": [
-        "六月"
+        "6 月"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "只需确认您的选择，剩下的交给我们即可。"
@@ -6273,7 +6276,7 @@
         "链接加载中"
       ],
       "Loading links": [
-        "链接加载中"
+        "正在加载链接"
       ],
       "Loading preview": [
         "正在载入预览"
@@ -6291,7 +6294,7 @@
         "检测到恶意软件"
       ],
       "Mar": [
-        "三月"
+        "3 月"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 图标"
@@ -6300,7 +6303,7 @@
         "最多 ${ MAX_SHARED_URL_PASSWORD_LENGTH } 个字符"
       ],
       "May": [
-        "五月"
+        "5 月"
       ],
       "Medium Priority": [
         "中等优先顺序"
@@ -6318,7 +6321,7 @@
         "监测账户"
       ],
       "More": [
-        "其他选项"
+        "更多"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "大多数公共 WiFi 网络都是安全的，但部分网络缺乏防护措施，使您面临网络威胁。通过 VPN 加密技术，您的网络活动将获得全程保护。"
@@ -6327,7 +6330,7 @@
         "正在移动文件"
       ],
       "My Links": [
-        "我的共享链接"
+        "我的链接"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "设置新文件夹的名称和位置，若不选取上层文件夹，则将创建顶层文件夹。"
@@ -6342,7 +6345,7 @@
         "否"
       ],
       "No Albums": [
-        "没有相册"
+        "暂无相册"
       ],
       "No contacts added yet": [
         "尚未添加联系人"
@@ -6363,7 +6366,7 @@
         "未找到结果"
       ],
       "No synced folders": [
-        "无已同步的文件夹"
+        "暂无同步文件夹"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "已上传的所有密钥都不能用于加密，如需向此地址发送邮件，请上传一份有效密钥或关闭邮件加密。"
@@ -6378,10 +6381,10 @@
         "未连接"
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
-        "请注意：安装过 ${ DRIVE_APP_NAME } 的设备上仍可能存在本地数据。"
+        "请注意：数据仍可能存在于已安装 ${ DRIVE_APP_NAME } 的设备本地。"
       ],
       "Nov": [
-        "十一月"
+        "11 月"
       ],
       "Number of dedicated servers in the organization": [
         "组织中的专用服务器数量"
@@ -6393,7 +6396,7 @@
         "数字"
       ],
       "Oct": [
-        "十月"
+        "10 月"
       ],
       "of": [
         "，共"
@@ -6414,7 +6417,7 @@
         "或发现其他功能："
       ],
       "Or use the \"+ New\" button": [
-        "或者使用“+新建”按钮"
+        "或使用“+ 新建”按钮"
       ],
       "Organization size": [
         "组织的规模"
@@ -6444,7 +6447,7 @@
         "支付安全由 TLS 加密和瑞士隐私法律保障。"
       ],
       "Permanently delete all files in your locked drive": [
-        "永久删除锁定的网盘中的所有文件"
+        "永久删除锁定云端硬盘中的所有文件"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline 只能用于纯文本邮件。"
@@ -6453,13 +6456,13 @@
         "PGP/MIME 可使用编辑器中指定的格式发送邮件。"
       ],
       "Photo is not saved to your library": [
-        "照片未保存到您的资料库"
+        "照片未保存到您的图库"
       ],
       "Photo is set as album cover": [
-        "照片被设为相册封面"
+        "照片已设为相册封面"
       ],
       "Photo was copied to stream and marked favorite there.": [
-        "照片被复制到流中并被标记为收藏。"
+        "照片已复制到时间线并标记为收藏。"
       ],
       "Photo(s) saved to your Drive": [
         "照片已保存至 Proton Drive"
@@ -6546,10 +6549,10 @@
         "暂不支持文档预览。"
       ],
       "Previous versions are kept for ${ retentionLabel }": [
-        "以前的版本将为 ${ retentionLabel } 保留"
+        "先前版本保留 ${ retentionLabel }"
       ],
       "Previous versions are not saved": [
-        "不保存以前的版本"
+        "不保存先前版本"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "价格已经考虑各种能用得上的周期计费优惠，以及账户中未过期的优惠券。"
@@ -6561,10 +6564,10 @@
         "隐私浏览模式（或称「无痕模式」）仅能隐藏您在设备上的活动痕迹。它能阻止浏览器保存历史记录和 Cookie，但无法让您真正隐身。您的互联网服务提供商、网络管理员以及访问的网站仍可追踪您的在线行为。"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "隐私搜索已启用，您可以关闭对话框并开始搜索文件和文件夹了。"
+        "隐私搜索已启用，您现在可以关闭此对话框并搜索文件和文件夹。"
       ],
       "Public link": [
-        "公共链接"
+        "公开链接"
       ],
       "Public sharing of documents is not yet supported.": [
         "暂不支持公开分享。"
@@ -6573,7 +6576,7 @@
         "等待中"
       ],
       "Ready to add some photos?": [
-        "准备好添加一些照片了吗？"
+        "准备好添加照片了吗？"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "只要不选择删除，账户数据恢复信息就会一直保存在此设备上。"
@@ -6594,7 +6597,7 @@
         "报告已发送"
       ],
       "Request access, or switch to an account with access.": [
-        "请求访问权限，或切换到具有访问权限的账户。"
+        "请求访问权限，或切换至有权访问的账户。"
       ],
       "Requested item doesn't exist anymore": [
         "请求的项目已不存在"
@@ -6609,10 +6612,10 @@
         "恢复的文件 ${ formattedDate }"
       ],
       "Restoring Photos... Please keep the tab open": [
-        "正在恢复照片...请保持选项卡打开"
+        "正在恢复照片…请保持标签页打开"
       ],
       "Running diagnostics...": [
-        "正在运行诊断…"
+        "正在运行诊断..."
       ],
       "Saving...": [
         "保存中..."
@@ -6627,7 +6630,7 @@
         "扫描以下载"
       ],
       "Search cannot be enabled in this browser": [
-        "此浏览器无法启用搜索功能"
+        "浏览器无法启用搜索"
       ],
       "Search Enabled": [
         "搜索已启用"
@@ -6639,16 +6642,16 @@
         "选择目标文件夹"
       ],
       "Select a folder to make the copy in": [
-        "选择一个文件夹来存放副本"
+        "选择要复制到的目标文件夹"
       ],
       "Select a folder to move to.": [
         "选择要移动到的文件夹。"
       ],
       "Select all items for": [
-        "选择所有项目"
+        "全部选择"
       ],
       "Select an uploaded file or folder and create a link to it.": [
-        "选择一个已上传的文件（夹）并为其创建链接。"
+        "选择已上传的文件或文件夹并为其创建链接。"
       ],
       "Select item": [
         "选择项目"
@@ -6660,7 +6663,7 @@
         "请选择要导入的日历。每份日历导入后将在您的账户中对应生成一份新日历，具体日历数量受您账户等级的限制。"
       ],
       "Sep": [
-        "九月"
+        "9 月"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA 付款目前尚不可用，请稍后再试。"
@@ -6687,10 +6690,10 @@
         "通过链接共享文件"
       ],
       "Shared": [
-        "已分享"
+        "已共享"
       ],
       "Shared by ": [
-        "分享者 "
+        "共享者 "
       ],
       "Shared by ${ sharedBy }": [
         "由 ${ sharedBy } 共享"
@@ -6735,10 +6738,10 @@
         "部分项目失败"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        "您的某些文件无法再访问，请恢复对其的访问权限。${ StartRecoveryButton }"
+        "您的某些文件已无法访问，请恢复对文件的访问权限。${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "本相册中的某些照片不会保存到您的时间轴。删除此相册将永久删除这些照片。"
+        "本相册中的部分照片未保存到您的时间线。删除此相册将永久删除这些照片。"
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "某些网站和流媒体服务会根据您所在的地区屏蔽内容。Proton VPN 可帮助您绕过这些地域限制，让您随时随地自由访问互联网。"
@@ -6792,7 +6795,7 @@
         "该账户可能有一个新密钥，或是以下内容可能已被篡改：${ items }。请务必在信任的情况下打开。"
       ],
       "The albums you create are shown here.": [
-        "您创建的相册将在此显示."
+        "您创建的相册将在此显示。"
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "数字签名已部分验证。该文件是由一个没有 ${ BRAND_NAME } 账户的用户使用可公开访问的共享链接上传的，因此无法验证其身份。"
@@ -6822,7 +6825,7 @@
         "当前仍有待传输的文件，关闭传输管理器将中断所有操作。"
       ],
       "There is nothing to see here": [
-        "这里啥也没有"
+        "暂无内容"
       ],
       "This action will delete the link and revoke access for all users.": [
         "此操作将删除此链接并撤销所有用户的访问权限。"
@@ -6834,7 +6837,7 @@
         "您目前使用的浏览器不支持查看 PDF 文件，请下载后打开。"
       ],
       "This can NOT be undone. Please enter the device name to confirm removal.": [
-        "此操作无法撤销，请输入设备名称以确认删除。"
+        "此操作无法撤销，请输入设备名称以确认移除。"
       ],
       "This file is too large to preview": [
         "此文件太大，无法预览"
@@ -6882,7 +6885,7 @@
         "此操作将取消所有剩余的上传，已取消的文件将不会保存到 ${ DRIVE_APP_NAME } 中。"
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
-        "这只会删除相册。您的照片将保留在时间轴中。此操作无法撤销。"
+        "此操作仅删除相册，您的照片仍会保留在时间线中。此操作无法撤销！"
       ],
       "This will permanently delete the file you uploaded.": [
         "这将永久删除您上传的文件。"
@@ -6924,10 +6927,10 @@
         "若要下载这些文件，请在 ${ DOCS_APP_NAME } 或 ${ SHEETS_APP_NAME } 中打开并导出它们。"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "为了在搜索过程中保护您的隐私，${ DRIVE_APP_NAME } 需要将文件下载至本设备后进行索引。"
+        "若要启用真正的隐私搜索，${ DRIVE_APP_NAME } 需要在本地为您的文件建立索引。"
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "为了保证搜索过程的安全性，文件索引需要在此设备上完成。您可以继续正常使用 ${ DRIVE_APP_NAME }，索引完成后我们将通知您。"
+        "若要启用真正的隐私搜索，我们需要在本地为您的文件建立索引。您可以正常使用 ${ DRIVE_APP_NAME }，索引完成后我们会通知您。"
       ],
       "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
         "若要启用隐私搜索，我们需要在本地为您的文件建立索引。您可以继续使用 ${ DRIVE_APP_NAME } - 索引完成后我们会通知您。"
@@ -6996,7 +6999,7 @@
         "抢先体验尚未开放的 ${ BRAND_NAME } 新功能、新特性和新产品。此操作将导致页面重新载入。"
       ],
       "Try searching by file name, date, or type.": [
-        "尝试搜索文件名称、日期或类型。"
+        "尝试按文件名、日期或类型搜索。"
       ],
       "Unexpected download error": [
         "意外的下载错误"
@@ -7011,7 +7014,7 @@
         "未知错误"
       ],
       "Unlock drive to recover files": [
-        "解锁网盘以恢复文件"
+        "解锁云端硬盘以恢复文件"
       ],
       "Unsaved changes": [
         "更改未保存"
@@ -7026,7 +7029,7 @@
         "需要更新"
       ],
       "Updating drive search...": [
-        "正在更新网盘搜索..."
+        "正在更新云端硬盘搜索..."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "现在升级账户可获得更大存储空间、更多功能，还能享受优惠"
@@ -7095,7 +7098,7 @@
         "注意"
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
-        "太棒了，您刚刚将存储空间增加到 5 GB！"
+        "太棒了，您刚刚将存储空间提升至 5 GB！"
       ],
       "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
         "我们遇到了技术问题。任何与相册相关的操作都将暂时关闭。"
@@ -7143,7 +7146,7 @@
         "您希望如何处理？"
       ],
       "What would you like to do?": [
-        "您想要做些什么？"
+        "您想执行什么操作？"
       ],
       "When working remotely": [
         "当您远程办公时"
@@ -7152,7 +7155,7 @@
         "当您连接 VPN 时，它会通过加密技术隐藏您的 IP 地址（即分配给您设备的唯一识别代码）。"
       ],
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
-        "当您将 ${ deviceName } 从同步设备中移除时，从该设备添加到“我的电脑”中的所有文件夹都将从 ${ DRIVE_APP_NAME } 中永久删除。"
+        "移除 ${ deviceName } 作为同步设备后，该设备添加到“我的电脑”的所有文件夹将从 ${ DRIVE_APP_NAME } 中永久删除。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "当您设置双因素身份验证时，我们会提供恢复码。如果您无法使用验证器，可以使用这些恢复码登录。"
@@ -7164,7 +7167,7 @@
         "谁有权访问"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
-        "将恢复到 ${ formattedRevisionDate } 开始的版本。所有其他版本仍将被保存。"
+        "将恢复至 ${ formattedRevisionDate } 的版本，其他版本仍将保留。"
       ],
       "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
         "使用 ${ DRIVE_APP_NAME } 您的数据将受到端到端加密的保护。"
@@ -7176,13 +7179,13 @@
         "要重新发送验证码吗？"
       ],
       "Would you like to restore your files?": [
-        "想要恢复您的文件吗？"
+        "是否要恢复您的文件？"
       ],
       "Would you like to save it before removing?": [
         "移除前是否要保存它们？"
       ],
       "Would you like to save them before removing?": [
-        "您想在移除前保存它们吗？"
+        "移除前是否要保存它们？"
       ],
       "Writing assistant": [
         "写作助手"
@@ -7200,7 +7203,7 @@
         "您的账户已经是免费版了"
       ],
       "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "您即将离开共享项目。在所有者与您共享之前，您将无法再次访问它。"
+        "您即将离开共享项目，在所有者重新与您共享之前，您将无法再次访问。"
       ],
       "You are about to open another browser tab and visit:": [
         "您即将在新标签页中打开："
@@ -7272,7 +7275,7 @@
         "您所作的改动将丢失。"
       ],
       "You will need to save it again from the public link page.": [
-        "您需要从公共链接页面重新保存它们。"
+        "您需要从公开链接页面重新保存它们。"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "即将为您转至 PayPal 确认支付。"
@@ -7329,7 +7332,7 @@
         "您的邮箱将只会用于此一次性验证。"
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "由于密码重置，无法再访问您的文件。请重新上传旧的加密密钥以重新获得访问权限。${ KeyReactivationButton }"
+        "由于密码重置，无法再访问您的文件。请重新上传旧加密密钥以恢复访问权限。${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved": [
         "文件会加密保存"
@@ -7431,7 +7434,7 @@
         "${ state.result.entries.length } 条目"
       ],
       "Index is empty.": [
-        "索引为空！"
+        "索引为空"
       ],
       "Search module is not available.": [
         "搜索模块不可用！"
@@ -7506,7 +7509,7 @@
         "搜索数据已损坏"
       ],
       "Search encountered an internal error. Rebuild the index to recover.": [
-        "搜索时发生内部错误，请重建索引以恢复。"
+        "搜索遇到内部错误，请重建索引以恢复。"
       ],
       "Search engine error": [
         "搜索引擎错误"
@@ -7524,7 +7527,7 @@
         "搜索引擎遇到内部错误，请重建索引以恢复。"
       ],
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
-        "浏览器在索引文件以进行搜索时空间不足。请释放存储空间，然后重建索引。"
+        "在为搜索建立索引时，您的浏览器空间不足。请释放存储空间，然后重建索引。"
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } 隐藏您的流量，${ PASS_SHORT_APP_NAME } 隐藏您的身份\n— 无限制的 **Hide-my-email 别名** 和 **暗网警报**（当您的数据被泄露时）。"
@@ -7566,7 +7569,7 @@
         "已找到 ${ total } 位用户"
       ],
       "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
-        "${ BRAND_NAME } Workspace 让您的团队高效协作，同时绝不将公司数据置于风险之中。"
+        "${ BRAND_NAME } Workspace 使您的团队能够高效协作，同时绝不会让公司数据面临风险。"
       ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "通过您的推荐链接 **邀请朋友加入 ${ BRAND_NAME }**"
@@ -7584,7 +7587,7 @@
         "忘记密码？"
       ],
       "One encrypted suite. Full business protection.": [
-        "一套加密套件，全方位的企业保护。"
+        "一体化加密套件，全方位企业保护。"
       ],
       "Password verified": [
         "密码已验证"
@@ -7756,6 +7759,36 @@
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "我们将在新的浏览器标签页中重定向至 ${ IDEAL_WERO_BRAND_NAME } 以完成此交易。如果您使用了任何弹窗拦截器，请将其禁用后继续。"
+      ],
+      "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } 无法解密本地搜索索引，请重建索引以恢复搜索。"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "试用期剩余 ${ timeRemaining }。${ addPaymentMethodLink } 以避免失去访问权限。${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "试用期剩余 ${ timeRemaining }。${ addPaymentMethodLink } 以保留您的订阅。${ learnMoreLink }"
+      ],
+      "Can't read this file": [
+        "无法读取文件"
+      ],
+      "Loading folder": [
+        "正在加载文件夹"
+      ],
+      "Looked at this image": [
+        "看过此图片"
+      ],
+      "Not in My files": [
+        "不在“我的文件”中"
+      ],
+      "Read folder context": [
+        "读取文件夹内容"
+      ],
+      "Read this file": [
+        "读取文件"
+      ],
+      "Search data can't be read": [
+        "无法读取搜索数据"
       ]
     },
     "info": {
@@ -7870,7 +7903,7 @@
         "${ nbYear } 年"
       ],
       "(Expired)": [
-        "（已失效）"
+        "(已过期)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "（暂时不可用。请稍后再试。）"
@@ -7921,7 +7954,7 @@
         "应用密码"
       ],
       "Applications in a business setting": [
-        "商业环境中的应用"
+        "企业环境中的应用"
       ],
       "Apply to all duplicated files": [
         "应用于所有重复的文件"
@@ -8053,7 +8086,7 @@
         "删除恢复相关的数据"
       ],
       "Deleted": [
-        "删除时间"
+        "已删除"
       ],
       "Device": [
         "设备"
@@ -8245,7 +8278,7 @@
         "必须至少有 ${ MIN_PASSWORD_LENGTH } 个字符"
       ],
       "My Albums": [
-        "我的图库"
+        "我的相册"
       ],
       "Name": [
         "名称"
@@ -8368,7 +8401,7 @@
         "共享者"
       ],
       "Shared on": [
-        "共享于"
+        "共享时间"
       ],
       "Shared with me": [
         "与我共享"
@@ -8425,7 +8458,7 @@
         "主题"
       ],
       "This will permanently delete all files in your locked drive.": [
-        "这将永久删除您的锁定网盘中的所有文件。"
+        "这将永久删除您加密驱动器中的所有文件！"
       ],
       "Thomas": [
         "Thomas"
@@ -8440,10 +8473,10 @@
         "类型"
       ],
       "Unlock drive": [
-        "解锁网盘"
+        "解锁云端硬盘"
       ],
       "Unlock drive (recommended)": [
-        "解锁网盘（推荐）"
+        "解锁云端硬盘（推荐）"
       ],
       "Unlock later": [
         "稍后解锁"
@@ -8542,13 +8575,13 @@
         "可见列："
       ],
       "${ downloads } downloads": [
-        "下载次数 ${ downloads }"
+        "${ downloads } 下载"
       ],
       "Created ${ created }": [
         "创建时间 ${ created }"
       ],
       "Deleted ${ deleted }": [
-        "已删除 ${ deleted }"
+        "删除时间 ${ deleted }"
       ],
       "Device #${ position }": [
         "设备 #${ position }"
@@ -8590,7 +8623,7 @@
         "通过公开链接共享"
       ],
       "Shared on ${ sharedOn }": [
-        "共享于 ${ sharedOn }"
+        "共享时间 ${ sharedOn }"
       ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length } / ${ maxLength } 个字符"
@@ -8809,7 +8842,7 @@
         "设置"
       ],
       "Shared": [
-        "共享"
+        "已共享"
       ],
       "Shared with me": [
         "与我共享"
@@ -10367,10 +10400,10 @@
         "移除设备失败"
       ],
       "Failed to remove the file": [
-        "无法删除文件"
+        "移除文件失败"
       ],
       "Failed to rename device": [
-        "无法重命名设备"
+        "重命名设备失败"
       ],
       "Failed to upload files: ${ err }": [
         "上传文件失败：${ err }"
@@ -10385,7 +10418,7 @@
         "文件或文件夹缺少名称"
       ],
       "File removed": [
-        "文件已删除"
+        "文件已移除"
       ],
       "Invitation's email was sent again": [
         "邀请邮件已再次发送"
@@ -10406,7 +10439,7 @@
         "没有足够的空间来上传这 ${ formattedTotal }"
       ],
       "Public link access updated": [
-        "公共链接访问已更新"
+        "公开链接访问已更新"
       ],
       "Root folder failed to be loaded": [
         "加载根目录失败"
@@ -10448,7 +10481,7 @@
         "文档创建失败"
       ],
       "The item was not added to your drive": [
-        "项目未添加到您的驱动器"
+        "项目未添加到您的云端硬盘"
       ],
       "The item was successfully added to your drive": [
         "项目已成功添加到您的驱动器"
@@ -10469,7 +10502,7 @@
         "您已停止共享此项目"
       ],
       "Your old files will be deleted in 72 hours": [
-        "您的旧文件将在 72 小时内删除"
+        "您的旧文件将在 72 小时后删除"
       ],
       "Your settings have been changed successfully": [
         "设置已更改"
@@ -10487,22 +10520,22 @@
         "“${ ellipsedName }”创建成功"
       ],
       "\"${ ellipsedName }\" deleted": [
-        "${ ellipsedName }”已删除"
+        "“${ ellipsedName }”已删除"
       ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
-        "已从回收站彻底删除“${ ellipsedName }”"
+        "已从回收站永久删除“${ ellipsedName }”"
       ],
       "\"${ ellipsedName }\" failed to be created": [
         "“${ ellipsedName }”创建失败"
       ],
       "\"${ ellipsedName }\" failed to be deleted": [
-        "“${ ellipsedName }”删除失败"
+        "删除“${ ellipsedName }”失败"
       ],
       "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
-        "从回收站彻底删除“${ ellipsedName }”失败"
+        "从回收站永久删除“${ ellipsedName }”失败"
       ],
       "\"${ ellipsedName }\" failed to be moved": [
-        "“${ ellipsedName }”移动失败"
+        "移动“${ ellipsedName }”失败"
       ],
       "\"${ ellipsedName }\" failed to be restored from trash": [
         "从回收站恢复“${ ellipsedName }”失败"
@@ -10694,7 +10727,7 @@
         "创建文档"
       ],
       "Get started": [
-        "立即体验"
+        "开始使用"
       ],
       "Install and continue": [
         "安装并继续"
@@ -10709,7 +10742,7 @@
         "以后再说"
       ],
       "Maybe later": [
-        "以后再说"
+        "稍后再说"
       ],
       "Select theme": [
         "选择主题"
@@ -10721,7 +10754,7 @@
         "暂时跳过"
       ],
       "Try the app": [
-        "试用应用程序"
+        "试用程序"
       ],
       "Upload file": [
         "上传文件"
@@ -10738,7 +10771,7 @@
         "10 分钟"
       ],
       "Access your files on the go": [
-        "随时访问您的文件"
+        "随时随地访问您的文件"
       ],
       "Back up your photos and memories": [
         "备份您的照片和回忆"
@@ -10747,13 +10780,13 @@
         "备份您的照片和回忆"
       ],
       "Choose your favorite theme": [
-        "选择您最喜欢的主题"
+        "选择您喜欢的主题"
       ],
       "Collaborate on documents": [
-        "在文档上协作"
+        "协作处理文档"
       ],
       "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
-        "您喜欢浅色还是深色模式的 ${ DRIVE_APP_NAME }？选择最能激发您灵感的配色主题。"
+        "您更喜欢 ${ DRIVE_APP_NAME } 的浅色还是深色模式？请选择最能激发您灵感的颜色。"
       ],
       "Drag and drop your files here": [
         "将文件拖放到此处"
@@ -10774,13 +10807,13 @@
         "现在上传的文件将不计入您的存储空间限额"
       ],
       "Final approval in progress": [
-        "正在进行最后审批"
+        "正在进行最终审批"
       ],
       "Final approval pending": [
-        "最后审批待定"
+        "最终审批待定"
       ],
       "Free up hard drive space on your computer": [
-        "释放您计算机上的硬盘空间"
+        "释放计算机硬盘空间"
       ],
       "Get the desktop app": [
         "获取桌面应用"
@@ -10789,13 +10822,13 @@
         "获取移动应用"
       ],
       "Got an Android? We've got you covered.": [
-        "有安卓手机吗？我们会帮你搞定。"
+        "使用 Android 设备？我们已为您准备就绪。"
       ],
       "Got an iPhone? We've got you covered.": [
-        "有苹果手机吗？我们会帮你搞定。"
+        "有 iPhone？我们已为您准备就绪。"
       ],
       "Hang tight": [
-        "坚持住就快好了"
+        "请您稍等"
       ],
       "Invitation accepted": [
         "邀请已接受"
@@ -10807,34 +10840,34 @@
         "邀请团队成员"
       ],
       "Keep the momentum going by uploading more files using the storage included with your plan.": [
-        "使用您计划包含的存储空间上传更多文件，保持良好势头。"
+        "继续使用您套餐内包含的存储空间上传更多文件，保持良好势头。"
       ],
       "Manage access": [
         "管理访问权限"
       ],
       "Organize files right from your desktop": [
-        "直接从桌面整理文件"
+        "直接在桌面整理文件"
       ],
       "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
-        "使用端到端加密技术保护您的财务文件、身份证、项目文件、照片等。"
+        "使用端到端加密保护您的财务文档、身份证件、项目文件、照片等。"
       ],
       "Scan the QR code to install the mobile app": [
-        "扫描二维码以安装移动应用"
+        "扫描二维码安装移动应用"
       ],
       "Secure your files": [
         "保护您的文件"
       ],
       "Securely share files and folders": [
-        "安全分享文件和文件夹"
+        "安全共享文件和文件夹"
       ],
       "Share files & folders": [
-        "分享文件和文件夹"
+        "共享文件和文件夹"
       ],
       "Sync and access your files from anywhere": [
         "随时随地同步并访问您的文件"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
-        "所有者需要确认共享权限。确认完成后，您将收到一封电子邮件。"
+        "所有者需要确认共享访问权限，完成后您将收到邮件通知。"
       ],
       "Upload your first file": [
         "上传您的第一个文件"
@@ -10843,10 +10876,10 @@
         "更高效、更智能地工作"
       ],
       "Work together": [
-        "携手合作"
+        "协同处理"
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
-        "您刚刚快速获取了一些免费数据，并以端到端加密保护了您的文件！"
+        "您刚刚以创纪录的速度获得了一些免费空间，并已使用端到端加密保护了您的文件！"
       ]
     },
     "Onboarding Trial": {
@@ -11403,7 +11436,7 @@
         "邮箱"
       ],
       "Enter a new file name": [
-        "输入新文件名称"
+        "请输入新文件名"
       ],
       "Enter a new folder name": [
         "输入新文件夹名称"
@@ -12204,10 +12237,10 @@
         "此项目的链接已保存在您的硬盘中。您可以稍后在 “与我共享 ”部分访问它。"
       ],
       "Encrypted search is here": [
-        "已推出加密搜索功能"
+        "加密搜索已上线"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
-        "现在，您可以保持数据安全，同时轻松搜索网盘文件。"
+        "现在您可以轻松搜索云端硬盘文件，同时确保数据安全。"
       ],
       "Editor permissions": [
         "编辑者权限"
@@ -12745,10 +12778,10 @@
     },
     "Subtitle": {
       "Albums shared with you will appear here": [
-        "与您分享的相册将在此处显示"
+        "与您共享的相册将在此处显示"
       ],
       "Albums you've shared will appear here": [
-        "您分享的相册将在此处显示"
+        "您共享的相册将在此处显示"
       ],
       "Securely share your favorite moments with friends and family using Albums.": [
         "使用相册安全地与朋友和家人分享您最喜欢的时刻。"
@@ -12766,10 +12799,10 @@
         "您的全景照片将在此处显示"
       ],
       "Your photo bursts will appear here": [
-        "您的照片连拍将在此处显示"
+        "您的连拍照片将在此处显示"
       ],
       "Your portraits photos will appear here": [
-        "你的肖像照片将在此处显示"
+        "您的肖像照片将在此处显示"
       ],
       "Your RAW photos will appear here": [
         "您的 RAW 照片将在此处显示"
@@ -12864,7 +12897,7 @@
         "问题报告"
       ],
       "Recovery has started": [
-        "恢复已开始。"
+        "恢复已开始"
       ],
       "Secure link copied": [
         "已复制安全链接"
@@ -13007,7 +13040,7 @@
         "实况照片"
       ],
       "Panoramas": [
-        "全景图"
+        "全景"
       ],
       "Portraits": [
         "肖像"
@@ -13019,7 +13052,7 @@
         "截图"
       ],
       "Selfies": [
-        "自拍照"
+        "自拍"
       ],
       "Videos": [
         "视频"
@@ -13431,7 +13464,7 @@
         "文件详细信息"
       ],
       "File recovery process": [
-        "文件恢复进程"
+        "文件恢复流程"
       ],
       "Folder": [
         "文件夹"
@@ -13443,7 +13476,7 @@
         "找到 ${ resultCount } 个结果"
       ],
       "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
-        "在您的手机上获取 ${ DRIVE_SHORT_APP_NAME }"
+        "在手机上获取 ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "订阅 ${ planTitle } 可获得 **${ referralInfo.uiData.refereeRewardAmount }** 积分奖励"
@@ -13452,7 +13485,7 @@
         "获取 ${ CALENDAR_APP_NAME } 的完整访问权限"
       ],
       "Get mobile and desktop apps": [
-        "获取移动和桌面应用程序"
+        "获取移动和桌面应用"
       ],
       "Get more from your VPN": [
         "从您的 VPN 获取更多信息"
@@ -13545,7 +13578,7 @@
         "日志"
       ],
       "Make a copy": [
-        "制作副本"
+        "创建副本"
       ],
       "Make a secure connection your default": [
         "将安全连接设为默认首选"
@@ -13599,46 +13632,46 @@
         "夜间模式"
       ],
       "No albums shared with me": [
-        "无与我共享的相册"
+        "暂无与我共享的相册"
       ],
       "No breaches detected": [
         "未检测到数据泄露"
       ],
       "No bursts": [
-        "无突发事件"
+        "暂无连拍"
       ],
       "No favorites": [
-        "无收藏夹"
+        "暂无收藏"
       ],
       "No Live Photos": [
-        "无实况照片"
+        "暂无实况照片"
       ],
       "No panorama": [
-        "无全景图"
+        "暂无全景"
       ],
       "No photos": [
-        "无照片"
+        "暂无照片"
       ],
       "No portraits": [
-        "无肖像"
+        "暂无肖像"
       ],
       "No RAW": [
-        "无 RAW"
+        "暂无 RAW"
       ],
       "No results found": [
         "未找到结果"
       ],
       "No screenshots": [
-        "无屏幕截图"
+        "暂无截图"
       ],
       "No selfies": [
-        "无自拍照"
+        "暂无自拍"
       ],
       "No shared albums": [
-        "无共享相册"
+        "暂无共享相册"
       ],
       "No videos": [
-        "无视频"
+        "暂无视频"
       ],
       "Notes": [
         "便签"
@@ -13647,7 +13680,7 @@
         "下载次数"
       ],
       "Number of items": [
-        "项目数"
+        "项目数量"
       ],
       "One email, many recipients": [
         "一封邮件，多个收件人"
@@ -14046,7 +14079,7 @@
         "您的 ${ planTitle } 订阅已开始"
       ],
       "Your 3 GB bonus": [
-        "您的 3 GB 奖金"
+        "您的 3 GB 奖励"
       ],
       "Your account is protected": [
         "您的账户已受保护"
