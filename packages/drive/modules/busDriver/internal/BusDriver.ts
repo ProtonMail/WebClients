@@ -17,10 +17,10 @@ import {
 import { sendErrorReport } from './errorHandling';
 
 const logger = logging.getLogger('bus-driver');
-export const logDebug = (label: string, rest: string | Record<string, unknown> = '') => {
+const logDebug = (label: string, rest: string | Record<string, unknown> = '') => {
     logger.debug(`${label}: ${JSON.stringify(rest)}`);
 };
-export const logWarning = (label: string, rest: string | Record<string, unknown> = '') => {
+const logWarning = (label: string, rest: string | Record<string, unknown> = '') => {
     logger.warn(`${label}: ${JSON.stringify(rest)}`);
 };
 

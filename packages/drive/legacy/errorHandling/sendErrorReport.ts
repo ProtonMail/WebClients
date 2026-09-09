@@ -19,10 +19,6 @@ export function isIgnoredError(error: unknown) {
     return !error || (error instanceof Error && IGNORED_ERRORS.includes(error.name));
 }
 
-export function isAbortError(error: unknown) {
-    return error instanceof Error && (error.name === 'AbortError' || error.name === 'TransferCancel');
-}
-
 /**
  * logErrors logs error to console if its not ignored error.
  */

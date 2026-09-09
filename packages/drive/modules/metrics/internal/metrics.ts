@@ -5,7 +5,7 @@ import { DrivePerformanceMetrics } from './drivePerformanceMetrics';
 import { GlobalErrorsMetrics } from './globalErrorsMetrics';
 import { MetricUserPlan } from './types';
 
-export class Metrics {
+class Metrics {
     private user?: User;
     private isPublicContext = false;
 
