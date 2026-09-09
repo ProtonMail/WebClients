@@ -13,7 +13,7 @@ import type {
 import type { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
 import type { DENSITY } from '@proton/shared/lib/constants';
 import type { Address, Folder, Label, MailSettings, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
+import type { ContactEmail, ContactMetadata } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import type { VIEW_LAYOUT, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import type { ThemeInformation } from '@proton/shared/lib/themes/themes';
@@ -59,7 +59,11 @@ export interface MailToolDeps {
     getActiveCategoryTabs: () => CategoryTab[];
     getMailSettings: () => MailSettings;
     getContactEmails: () => ContactEmail[];
-    saveVCardContact: (contactID: string | undefined, vCardContact: VCardContact) => Promise<void>;
+    /** Resolves with the saved contact, whose `ContactEmails` carry the id a contact reference is minted from. */
+    saveVCardContact: (
+        contactID: string | undefined,
+        vCardContact: VCardContact
+    ) => Promise<ContactMetadata | undefined>;
     getUserSettings: () => UserSettings;
     getUser: () => UserModel;
     getAddresses: () => Address[];

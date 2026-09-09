@@ -144,8 +144,10 @@ const LumoMailProvider = ({ children }: Props) => {
             getContactEmails: () => latest.current.contactEmails,
             // The save writes straight to the API, so the store only reflects it after an event refresh.
             saveVCardContact: async (contactID, vCardContact) => {
-                await latest.current.saveVCardContact(contactID, vCardContact);
+                const contact = await latest.current.saveVCardContact(contactID, vCardContact);
                 await latest.current.refreshEvents();
+
+                return contact;
             },
             getUserSettings: () => latest.current.userSettings,
             getUser: () => latest.current.user,

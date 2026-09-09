@@ -9,6 +9,7 @@ import type { CardRenderers, LumoAgentConfig } from '@proton/llm/lib/lumoAgent/u
 import { MAIL_RULES } from './rules';
 import { createFilterModule } from './skills/filters/createFilter';
 import { updateFilterModule } from './skills/filters/updateFilter';
+import { addContactModule } from './skills/organise/addContact';
 import { applyLabelsModule } from './skills/organise/applyLabels';
 import { createFolderModule, createLabelModule } from './skills/organise/createEntity';
 import { moveEmailsModule } from './skills/organise/moveEmails';
@@ -64,6 +65,7 @@ const MODULES: MailToolModule[] = [
     createLabelModule,
     snoozeEmailsModule,
     renameFolderModule,
+    addContactModule,
     // Filters
     createFilterModule,
     updateFilterModule,
