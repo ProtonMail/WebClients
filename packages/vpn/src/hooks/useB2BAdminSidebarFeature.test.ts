@@ -99,4 +99,15 @@ describe('useB2BAdminSidebarFeature', () => {
 
         expect(result.current).toEqual({ enabled: false, loading: false, routes: undefined });
     });
+
+    it.each([
+        ['the organization is not a business one', { orgIsBusiness: false, orgHasVpn: true }],
+        ['the organization has no vpn', { orgIsBusiness: true, orgHasVpn: false }],
+    ])('is disabled and settled when %s', (_name, entitlements) => {
+        mockUseEntitlementChecks.mockReturnValue([entitlements, false]);
+
+        const { result } = renderHook(() => useB2BAdminSidebarFeature({ prefix: '/vpn' }));
+
+        expect(result.current).toEqual({ enabled: false, loading: false, routes: undefined });
+    });
 });
