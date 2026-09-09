@@ -6,6 +6,7 @@ import { useUser } from '@proton/account/user/hooks';
 import DrawerSidebar from '@proton/components/components/drawer/DrawerSidebar';
 import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import InboxQuickSettingsAppButton from '@proton/components/components/drawer/drawerAppButtons/InboxQuickSettingsAppButton';
+import useLumoInMail from '@proton/components/components/drawer/views/lumoAgent/useLumoInMail';
 import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
@@ -17,6 +18,7 @@ import clsx from '@proton/utils/clsx';
 import { CategoriesOnboardingProvider } from '../components/categoryView/categoriesOnboarding/CategoriesOnboardingContext';
 import { CategoriesOnboardingSpotlight } from '../components/categoryView/categoriesOnboarding/CategoriesOnboardingSpotlights';
 import { OnboardingStep } from '../components/categoryView/categoriesOnboarding/onboardingInterface';
+import LumoHeaderButton from '../components/drawer/LumoHeaderButton';
 import MailHeader from '../components/header/MailHeader';
 import { NewsletterSubscriptionView } from '../components/view/NewsletterSubscription/NewsletterSubscriptionView';
 import { ROUTE_LABEL } from '../constants';
@@ -24,11 +26,9 @@ import { MailboxContainerContextProvider } from '../containers/mailbox/MailboxCo
 import { getInboxRedirectUrl } from '../helpers/mailboxUrl';
 import useMailDrawer from '../hooks/drawer/useMailDrawer';
 import { useElements } from '../hooks/mailbox/useElements';
-import { useScrollListToTopOnViewChange } from './hooks/useScrollListToTopOnViewChange';
 import { selectElementID, selectIsSearching, selectLabelID } from '../store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from '../store/hooks';
 import { layoutActions } from '../store/layout/layoutSlice';
-
 import { RouterLabelContainer } from './RouterLabelContainer';
 import { useMailboxLayoutProvider } from './components/MailboxLayoutContext';
 import { MailboxToolbar } from './components/MailboxToolbar';
@@ -36,6 +36,7 @@ import { useElementActions } from './hooks/useElementActions';
 import { useGetElementParams } from './hooks/useGetElementParams';
 import { useMeasureSearchDuration } from './hooks/useMeasureSearchDuration';
 import { useRouterNavigation } from './hooks/useRouterNavigation';
+import { useScrollListToTopOnViewChange } from './hooks/useScrollListToTopOnViewChange';
 import { useMailboxContainerSideEffects } from './sideEffects/useMailboxContainerSideEffects';
 
 export const RouterMailboxContainer = () => {
@@ -55,6 +56,7 @@ export const RouterMailboxContainer = () => {
     useScrollListToTopOnViewChange();
 
     const { drawerSidebarButtons, showDrawerSidebar } = useMailDrawer();
+    const isLumoInMailEnabled = useLumoInMail();
 
     const canShowDrawer = drawerSidebarButtons.length > 0;
     const hasRowMode = !isColumnModeActive;
@@ -110,6 +112,7 @@ export const RouterMailboxContainer = () => {
                     elementsData={elementsData}
                     actions={actions}
                     labelID={labelID}
+                    assistantButton={isLumoInMailEnabled ? <LumoHeaderButton /> : undefined}
                     settingsButton={
                         <CategoriesOnboardingSpotlight step={OnboardingStep.CUSTOMIZE}>
                             <InboxQuickSettingsAppButton />

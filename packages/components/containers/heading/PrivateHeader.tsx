@@ -21,6 +21,7 @@ import { useTheme } from '../themes/ThemeProvider';
 interface Props extends HeaderProps {
     onBoardingButton?: ReactNode;
     downloadAppButton?: ReactNode;
+    assistantButton?: ReactNode;
     settingsButton?: ReactNode;
     hideSettingsButton?: boolean;
     userDropdown?: ReactNode;
@@ -43,6 +44,7 @@ const PrivateHeader = ({
     upsellButton,
     userDropdown,
     downloadAppButton,
+    assistantButton,
     settingsButton,
     hideSettingsButton = false,
     feedbackButton,
@@ -78,6 +80,11 @@ const PrivateHeader = ({
                     {upsellButton !== undefined ? upsellButton : !hideUpsellButton && <TopNavbarUpsell app={app} />}
                     {feedbackButton ? <TopNavbarListItem noShrink>{feedbackButton}</TopNavbarListItem> : null}
                     {downloadAppButton ? <TopNavbarListItem noShrink>{downloadAppButton}</TopNavbarListItem> : null}
+                    {assistantButton ? (
+                        <TopNavbarListItem noShrink className="hidden md:flex">
+                            {assistantButton}
+                        </TopNavbarListItem>
+                    ) : null}
                     {settingsButton && !hideSettingsButton ? (
                         <TopNavbarListItem noShrink className="hidden md:flex">
                             {settingsButton}
