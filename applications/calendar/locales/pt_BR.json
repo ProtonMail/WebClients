@@ -1901,6 +1901,12 @@
       "Total for ${ cycle } month": [
         "Total por ${ cycle } mês",
         "Total por ${ cycle } meses"
+      ],
+      "Amount due": [
+        "Valor a pagar"
+      ],
+      "Amount due now": [
+        "Valor devido agora"
       ]
     },
     "Collapsible tooltip": {
@@ -10225,6 +10231,15 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - cartão terminado em ${ paymentMethod.Details.Last4 }"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - cartão terminado em ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Transferência bancária - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - cartão terminado em ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -13763,6 +13778,11 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Experimente agora"
       ]
     }
   }
