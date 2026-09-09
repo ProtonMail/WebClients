@@ -38,11 +38,6 @@ export const useMailPostSignup099 = (): OfferHookReturnValue => {
         FeatureCode.HideMailPostSignupZeroNinetyNineOffer
     );
 
-    // The one-dollar offer takes precedence, so this one stands down while that is running
-    const { feature: oneDollarOfferState, loading: oneDollarOfferStateLoading } = useFeature<{
-        offerStartDate: number;
-    }>(FeatureCode.MailPostSignupOneDollarState);
-
     const isDomBusy = domIsBusy();
 
     return {
@@ -55,15 +50,8 @@ export const useMailPostSignup099 = (): OfferHookReturnValue => {
                 protonConfig,
                 parentApp,
                 offerStartDateTimeStamp: offerState?.Value?.offerStartDate ?? 0,
-                oneDollarOfferState: oneDollarOfferState?.Value,
             }),
-        isLoading: !!(
-            userLoading ||
-            subscriptionLoading ||
-            offerStateLoading ||
-            hideOfferLoading ||
-            oneDollarOfferStateLoading
-        ),
+        isLoading: !!(userLoading || subscriptionLoading || offerStateLoading || hideOfferLoading),
         openSpotlight: isNotInFolder && shouldOpenZeroNinetyNineOffer(offerState?.Value) && !isDomBusy,
     };
 };

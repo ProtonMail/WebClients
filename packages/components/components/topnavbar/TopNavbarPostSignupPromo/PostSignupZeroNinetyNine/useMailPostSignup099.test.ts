@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+import { getUnixTime, subDays } from 'date-fns';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -40,7 +41,17 @@ const setFeatures = ({ hideOffer = false }: { hideOffer?: boolean }) => {
 
 describe('useMailPostSignup099', () => {
     beforeEach(() => {
-        mockUseUser.mockReturnValue([{ isFree: true, isDelinquent: false, canPay: true, Flags: {} }, false]);
+        mockUseUser.mockReturnValue([
+            {
+                isFree: true,
+                isDelinquent: false,
+                canPay: true,
+                Flags: {},
+                // Older than the 5 hour minimum account age
+                CreateTime: getUnixTime(subDays(new Date(), 30)),
+            },
+            false,
+        ]);
         mockUseSubscription.mockReturnValue([undefined, false]);
         mockUseConfig.mockReturnValue({ APP_NAME: APPS.PROTONMAIL });
         mockUseFlag.mockReturnValue(true);

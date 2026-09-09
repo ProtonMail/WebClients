@@ -40,13 +40,27 @@ describe('Mail post signup 0.99 eligibility', () => {
             // whereas the one dollar intro offer excludes them.
             expect(getEligibility({ subscription: freeSubscription })).toBeTruthy();
         });
+    });
 
-        it('should be eligible for a brand new account, with no minimum age', () => {
-            expect(getEligibility({ user: getUser({ CreateTime: getUnixTime(today) }) })).toBeTruthy();
+    describe('Account age', () => {
+        it('should not be eligible for an account created just now', () => {
+            expect(getEligibility({ user: getUser({ CreateTime: getUnixTime(today) }) })).toBeFalsy();
         });
 
-        it('should be eligible for an account only 1 hour old', () => {
-            expect(getEligibility({ user: getUser({ CreateTime: getUnixTime(subHours(today, 1)) }) })).toBeTruthy();
+        it('should not be eligible for an account 1 hour old', () => {
+            expect(getEligibility({ user: getUser({ CreateTime: getUnixTime(subHours(today, 1)) }) })).toBeFalsy();
+        });
+
+        it('should not be eligible for an account 4 hours old', () => {
+            expect(getEligibility({ user: getUser({ CreateTime: getUnixTime(subHours(today, 4)) }) })).toBeFalsy();
+        });
+
+        it('should be eligible for an account exactly 5 hours old', () => {
+            expect(getEligibility({ user: getUser({ CreateTime: getUnixTime(subHours(today, 5)) }) })).toBeTruthy();
+        });
+
+        it('should be eligible for an account 3 days old', () => {
+            expect(getEligibility({ user: getUser({ CreateTime: getUnixTime(subDays(today, 3)) }) })).toBeTruthy();
         });
     });
 
@@ -106,35 +120,12 @@ describe('Mail post signup 0.99 eligibility', () => {
         });
     });
 
-    describe('Mutual exclusion with the one dollar offer', () => {
-        it('should not be eligible while the one dollar offer is running', () => {
-            expect(
-                getEligibility({
-                    oneDollarOfferState: {
-                        offerStartDate: getUnixTime(subDays(today, 3)),
-                        automaticOfferReminders: 1,
-                    },
-                })
-            ).toBeFalsy();
-        });
-
-        it('should be eligible once the one dollar offer has expired', () => {
-            expect(
-                getEligibility({
-                    oneDollarOfferState: {
-                        offerStartDate: getUnixTime(subDays(today, 31)),
-                        automaticOfferReminders: 3,
-                    },
-                })
-            ).toBeTruthy();
-        });
-
-        it('should be eligible when the one dollar offer never started', () => {
-            expect(
-                getEligibility({
-                    oneDollarOfferState: { offerStartDate: 0, automaticOfferReminders: 0 },
-                })
-            ).toBeTruthy();
+    describe('Relationship to the one dollar offer', () => {
+        it('should be eligible even for a user part-way through the one dollar offer', () => {
+            // The 0.99 promo outranks the one dollar offer while it runs. Priority is
+            // decided by the offers list in usePostSignupOffers, not here, so this helper
+            // deliberately does not consider the one dollar offer at all.
+            expect(getEligibility()).toBeTruthy();
         });
     });
 });
