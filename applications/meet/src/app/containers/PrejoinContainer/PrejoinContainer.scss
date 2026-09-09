@@ -29,9 +29,7 @@ im.$media-expressions: $media-expressions;
 }
 
 .prejoin-container-content {
-	flex: 1 0 auto;
-
-	@include im.media('>medium') {
-		flex: 0 1 auto;
+	@include im.media('<=small') {
+		flex: 1 0 auto;
 	}
 }
