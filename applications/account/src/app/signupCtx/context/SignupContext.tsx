@@ -245,6 +245,8 @@ const InnerSignupContextProvider = ({
     const { referralData, initReferralData } = useReferralData();
 
     const paymentsContext = usePaymentOptimistic();
+    // Tracks that *this* provider finished initializing the payments context.
+    const [paymentsInitialized, setPaymentsInitialized] = useState(false);
     const setupUserResponseRef = useRef<Unwrap<ReturnType<typeof handleSetupUser>>>();
     const signupDataRef = useRef<SignupData>();
     const [recoveryPhraseData, setRecoveryPhraseData] = useState<DeferredMnemonicData | undefined>();
@@ -296,6 +298,8 @@ const InnerSignupContextProvider = ({
                     product: app,
                     onChargeable: async () => {},
                 });
+
+                setPaymentsInitialized(true);
             };
 
             await Promise.all([
@@ -332,7 +336,7 @@ const InnerSignupContextProvider = ({
     }, []);
 
     useEffect(() => {
-        if (!paymentsContext.initialized) {
+        if (!paymentsInitialized) {
             return;
         }
 
@@ -358,7 +362,7 @@ const InnerSignupContextProvider = ({
             isTrial: paymentsContext.isTrial,
             initialBillingAddress: paymentsContext.billingAddress,
         });
-    }, [paymentsContext.initialized]);
+    }, [paymentsInitialized]);
 
     /**
      * Creates the user
