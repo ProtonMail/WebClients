@@ -48,7 +48,7 @@ describe('resolveNavigation', () => {
         Scope: EntitlementScope.Global,
     });
 
-    const entitlements = createEntitlementResolver(
+    const b2bEntitlements = createEntitlementResolver(
         makeEntitlements([
             orgSwitch(EntitlementName.Business),
             orgSwitch(EntitlementName.FlagsVpn),
@@ -58,7 +58,9 @@ describe('resolveNavigation', () => {
         ])
     );
 
-    const organization = {
+    const b2cEntitlements = createEntitlementResolver(makeEntitlements([orgSwitch(EntitlementName.FlagsVpn)]));
+
+    const b2bOrganization = {
         Name: 'org',
         PlanName: PLANS.VPN_BUSINESS,
         State: ORGANIZATION_STATE.ACTIVE,
@@ -68,11 +70,24 @@ describe('resolveNavigation', () => {
         Settings: { VideoConferencingEnabled: false },
     } as OrganizationExtended;
 
-    const buildArgs = (user: UserModel, permissions: OrgPermissions) => ({
+    const b2cOrganization = {
+        Name: '',
+        PlanName: PLANS.VPN2024,
+        State: ORGANIZATION_STATE.ACTIVE,
+        RequiresKey: 0,
+        HasKeys: 0,
+        MaxMembers: 1,
+        Settings: { VideoConferencingEnabled: false },
+    } as OrganizationExtended;
+
+    const buildArgs = (
+        user: UserModel,
+        permissions: OrgPermissions,
+        org = { organization: b2bOrganization, entitlements: b2bEntitlements }
+    ) => ({
         user,
-        organization,
+        ...org,
         permissions,
-        entitlements,
         subscription: FREE_SUBSCRIPTION,
         flags: { SharedServerFeature: true, B2BAlwaysOnEnabled: true },
         context: {
@@ -95,5 +110,16 @@ describe('resolveNavigation', () => {
         const nav = resolveNavigation(buildArgs(admin, getOrgPermissions(['account.dashboard.read'], false)));
 
         expect(nav.items.map((item) => item.id)).toContain('organization');
+    });
+
+    it('hides the organization group and its dashboard from a b2c admin who holds every permission', () => {
+        const nav = resolveNavigation(
+            buildArgs(admin, getOrgPermissions([], true), {
+                organization: b2cOrganization,
+                entitlements: b2cEntitlements,
+            })
+        );
+
+        expect(nav.items.map((item) => item.id)).toEqual(['my-account', 'my-vpn']);
     });
 });
