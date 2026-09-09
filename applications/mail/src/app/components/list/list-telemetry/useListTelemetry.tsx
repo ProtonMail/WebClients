@@ -1,10 +1,13 @@
 import { useApi } from '@proton/app-context/useApi';
+import type { ContentSearchResultAction } from '@proton/encrypted-search/models';
+import { useContentSearchTelemetry } from '@proton/encrypted-search/useContentSearchTelemetry';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { TelemetryMailListEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { selectIsSearching } from '../../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../../store/hooks';
 import { folderLocation } from './listTelemetryHelper';
 
@@ -15,7 +18,7 @@ export const enum ACTION_TYPE {
     SNOOZE = 'SNOOZE',
     UNSNOOZE = 'UNSNOOZE',
     STAR = 'STAR',
-    // UNSTAR = 'UNSTAR',
+    UNSTAR = 'UNSTAR',
 
     MOVE_TO_INBOX = 'MOVE_TO_INBOX',
     MOVE_TO_TRASH = 'MOVE_TO_TRASH',
@@ -23,7 +26,7 @@ export const enum ACTION_TYPE {
     MARK_AS_SPAM = 'MARK_AS_SPAM',
     // MARK_AS_NOT_SPAM = 'MARK_AS_NOT_SPAM',
     MOVE_TO_CUSTOM_FOLDER = 'MOVE_TO_CUSTOM_FOLDER',
-    // LABEL = 'TOOLBAR_LABEL',
+    LABEL = 'TOOLBAR_LABEL',
 
     // BLOCK_SENDER = 'BLOCK_SENDER',
 }
@@ -112,13 +115,40 @@ export const numberSelectionElements = (selected: number) => {
     }
 };
 
+/** Maps a list-action to the coarser `result_action` action taxonomy shared with mobile's Content Search schema */
+const getResultActionType = (actionType?: ACTION_TYPE): ContentSearchResultAction => {
+    switch (actionType) {
+        case ACTION_TYPE.DELETE_PERMANENTLY:
+            return 'delete';
+        case ACTION_TYPE.STAR:
+            return 'star';
+        case ACTION_TYPE.UNSTAR:
+            return 'unstar';
+        case ACTION_TYPE.MOVE_TO_INBOX:
+        case ACTION_TYPE.MOVE_TO_TRASH:
+        case ACTION_TYPE.MOVE_TO_ARCHIVE:
+        case ACTION_TYPE.MOVE_TO_CUSTOM_FOLDER:
+            return 'move';
+        case ACTION_TYPE.LABEL:
+            return 'label';
+        case ACTION_TYPE.MARK_AS_READ:
+            return 'read';
+        case ACTION_TYPE.MARK_AS_UNREAD:
+            return 'unread';
+        default:
+            return 'other';
+    }
+};
+
 const useListTelemetry = () => {
     const api = useApi();
     const [folders = []] = useFolders();
     const [labels = []] = useLabels();
     const labelID = useMailSelector((store) => store.elements.params.labelID);
+    const isSearching = useMailSelector(selectIsSearching);
 
     const isListTelemetryEnabled = useFlag('MailWebListTelemetry');
+    const { sendResultActionReport } = useContentSearchTelemetry();
 
     const sendSimpleActionReport = ({
         actionType,
@@ -154,6 +184,13 @@ const useListTelemetry = () => {
                     numberMessage: numberMessage,
                 },
                 delay: false,
+            });
+        }
+
+        if (isSearching) {
+            sendResultActionReport({
+                action: getResultActionType(actionType),
+                actionSurface: actionLocation === SOURCE_ACTION.MESSAGE_VIEW ? 'opened_message' : 'result_list',
             });
         }
     };
