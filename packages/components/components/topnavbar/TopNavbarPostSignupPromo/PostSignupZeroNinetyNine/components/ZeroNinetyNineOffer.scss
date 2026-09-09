@@ -28,3 +28,12 @@
 	background-clip: text;
 	background-image: linear-gradient(to right, #7f5cff 0%, #6fb0ff 100%);
 }
+
+.zero-ninety-nine-check {
+	box-shadow: 0 2px 6px rgb(var(--shadow-color, var(--shadow-default-color)) / 0.2);
+}
+
+.zero-ninety-nine-check svg path {
+	stroke: currentcolor;
+	stroke-width: 1;
+}
