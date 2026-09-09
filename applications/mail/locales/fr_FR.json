@@ -1742,6 +1742,9 @@
       ],
       "Emoji": [
         "Emoji"
+      ],
+      "Add a payment method": [
+        "Ajouter une méthode de paiement"
       ]
     },
     "action": {
@@ -9615,6 +9618,33 @@
       ],
       "Opened a problem report": [
         "J'ai créé un ticket d'incident"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Il vous reste ${ timeRemaining } de votre période d'essai. ${ addPaymentMethodLink } pour ne pas perdre votre accès. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Il vous reste ${ timeRemaining } de votre période d'essai. ${ addPaymentMethodLink } pour conserver votre abonnement. ${ learnMoreLink }"
+      ],
+      "Create filter": [
+        "Crée un filtre"
+      ],
+      "Read your auto-reply": [
+        "Lire votre message de réponse automatique"
+      ],
+      "Read your signature": [
+        "Lire votre signature"
+      ],
+      "Rename folder": [
+        "Renommer un dossier"
+      ],
+      "Set auto-reply": [
+        "Définir une réponse automatique"
+      ],
+      "Set signature": [
+        "Définir une signature"
+      ],
+      "Turn off auto-reply": [
+        "Désactiver la réponse automatique"
       ]
     },
     "info": {
@@ -10858,6 +10888,27 @@
       ],
       "Conversation grouping": [
         "Activer le mode conversation"
+      ],
+      "Away message": [
+        "Message d'absence"
+      ],
+      "From date": [
+        "À partir de la date"
+      ],
+      "From time": [
+        "Heure de début"
+      ],
+      "New name": [
+        "Nouveau nom"
+      ],
+      "Signature": [
+        "Signature"
+      ],
+      "Until date": [
+        "Jusqu'à la date"
+      ],
+      "Until time": [
+        "Jusqu'au temps"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11205,6 +11256,12 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Vous devez réactiver vos clés pour voir l'invitation mise à jour."
+      ],
+      "Add formatting, links or images": [
+        "Ajouter une mise en forme, des liens ou des images"
+      ],
+      "Advanced auto-reply options": [
+        "Options avancées de réponse automatique"
       ]
     },
     "Link to calendar event": {
@@ -12290,6 +12347,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } se terminant par ${ Last4 }"
       ]
     },
     "new_plans: label": {
@@ -13048,6 +13108,114 @@
       ],
       "Yes, don't show again": [
         "Oui, ne plus afficher"
+      ],
+      "10th of the month": [
+        "Le 10 du mois"
+      ],
+      "11th of the month": [
+        "Le 11 du mois"
+      ],
+      "12th of the month": [
+        "12 du mois"
+      ],
+      "13th of the month": [
+        "13 du mois"
+      ],
+      "14th of the month": [
+        "14 du mois"
+      ],
+      "15th of the month": [
+        "15 du mois"
+      ],
+      "16th of the month": [
+        "16 du mois"
+      ],
+      "17th of the month": [
+        "Le 17 du mois"
+      ],
+      "18th of the month": [
+        "18 du mois"
+      ],
+      "19th of the month": [
+        "Le 19 du mois"
+      ],
+      "1st of the month": [
+        "1er jour du mois"
+      ],
+      "20th of the month": [
+        "20 du mois"
+      ],
+      "21st of the month": [
+        "Le 21 du mois"
+      ],
+      "22nd of the month": [
+        "Le 22 du mois"
+      ],
+      "23rd of the month": [
+        "Le 23 du mois"
+      ],
+      "24th of the month": [
+        "Le 24 du mois"
+      ],
+      "25th of the month": [
+        "Le 25 du mois"
+      ],
+      "26th of the month": [
+        "Le 26 du mois"
+      ],
+      "27th of the month": [
+        "Le 27 du mois"
+      ],
+      "28th of the month": [
+        "Le 28 du mois"
+      ],
+      "29th of the month": [
+        "29 du mois"
+      ],
+      "2nd of the month": [
+        "2ème jour du mois"
+      ],
+      "30th of the month": [
+        "Le 30 du mois"
+      ],
+      "31st of the month": [
+        "31 du mois"
+      ],
+      "3rd of the month": [
+        "3 du mois"
+      ],
+      "4th of the month": [
+        "4 du mois"
+      ],
+      "5th of the month": [
+        "Le 5 du mois"
+      ],
+      "6th of the month": [
+        "Le 6 du mois"
+      ],
+      "7th of the month": [
+        "Le 7 du mois"
+      ],
+      "8th of the month": [
+        "8 du mois"
+      ],
+      "9th of the month": [
+        "9 du mois"
+      ],
+      "Fixed duration": [
+        "Durée déterminée"
+      ],
+      "Permanent": [
+        "Permanent"
+      ],
+      "Repeat daily": [
+        "Répéter chaque jour"
+      ],
+      "Repeat monthly": [
+        "Répéter chaque mois"
+      ],
+      "Repeat weekly": [
+        "Répéter chaque semaine"
       ]
     },
     "Option group": {
@@ -13426,6 +13594,15 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - carte se terminant par les chiffres ${ paymentMethod.Details.Last4 }"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - carte se terminant par les chiffres ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Virement bancaire - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - carte se terminant par les chiffres ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -17079,6 +17256,21 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Create filter": [
+        "Crée un filtre"
+      ],
+      "Rename folder": [
+        "Renommer un dossier"
+      ],
+      "Set auto-reply": [
+        "Définir une réponse automatique"
+      ],
+      "Set signature": [
+        "Définir une signature"
+      ],
+      "Turn off auto-reply": [
+        "Désactiver la réponse automatique"
       ]
     },
     "Title header for keys table": {
@@ -17702,6 +17894,11 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "La modification de votre adresse de facturation peut avoir une incidence sur les taxes figurant sur vos prochaines factures."
       ]
     }
   }

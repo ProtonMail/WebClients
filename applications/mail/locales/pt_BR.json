@@ -2754,6 +2754,12 @@
       "Total for ${ cycle } month": [
         "Total por ${ cycle } mês",
         "Total por ${ cycle } meses"
+      ],
+      "Amount due": [
+        "Valor a pagar"
+      ],
+      "Amount due now": [
+        "Valor devido agora"
       ]
     },
     "Collapsible tooltip": {
@@ -9644,6 +9650,30 @@
       ],
       "Do you remember your password?": [
         "Você lembra sua senha?"
+      ],
+      "Create filter": [
+        "Criar filtro"
+      ],
+      "Rename folder": [
+        "Renomear pasta"
+      ],
+      "Searched ${ targetName }": [
+        "Pesquisei ${ targetName }"
+      ],
+      "Searched for mail from ${ sender }": [
+        "Pesquisei por e-mails do ${ sender }"
+      ],
+      "Searched your mail": [
+        "Pesquisei no seu e-mail"
+      ],
+      "Set auto-reply": [
+        "Configurar resposta automática"
+      ],
+      "Set signature": [
+        "Definir assinatura"
+      ],
+      "Turn off auto-reply": [
+        "Desativa resposta automática"
       ]
     },
     "info": {
@@ -10917,6 +10947,18 @@
       ],
       "Single messages": [
         "Mensagens individuais"
+      ],
+      "Away message": [
+        "Mensagem de ausência"
+      ],
+      "New name": [
+        "Novo nome"
+      ],
+      "Return on": [
+        "Retorne em"
+      ],
+      "Signature": [
+        "Assinatura"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11264,6 +11306,12 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Você precisa reativar suas chaves para ver o convite atualizado"
+      ],
+      "Add formatting, links or images": [
+        "Adicione formatação, links ou imagens"
+      ],
+      "Advanced auto-reply options": [
+        "Opções avançadas de resposta automática"
       ]
     },
     "Link to calendar event": {
@@ -13097,6 +13145,114 @@
       ],
       "Remind me later": [
         "Lembrar-me depois"
+      ],
+      "10th of the month": [
+        "10º dia do mês"
+      ],
+      "11th of the month": [
+        "11º dia do mês"
+      ],
+      "12th of the month": [
+        "12º dia do mês"
+      ],
+      "13th of the month": [
+        "13º dia do mês"
+      ],
+      "14th of the month": [
+        "14º dia do mês"
+      ],
+      "15th of the month": [
+        "15º dia do mês"
+      ],
+      "16th of the month": [
+        "16º dia do mês"
+      ],
+      "17th of the month": [
+        "17º dia do mês"
+      ],
+      "18th of the month": [
+        "18º dia do mês"
+      ],
+      "19th of the month": [
+        "19º dia do mês"
+      ],
+      "1st of the month": [
+        "1º dia do mês"
+      ],
+      "20th of the month": [
+        "20º dia do mês"
+      ],
+      "21st of the month": [
+        "21º dia do mês"
+      ],
+      "22nd of the month": [
+        "22º dia do mês"
+      ],
+      "23rd of the month": [
+        "23º dia do mês"
+      ],
+      "24th of the month": [
+        "24º dia do mês"
+      ],
+      "25th of the month": [
+        "25º dia do mês"
+      ],
+      "26th of the month": [
+        "26º dia do mês"
+      ],
+      "27th of the month": [
+        "27º dia do mês"
+      ],
+      "28th of the month": [
+        "28º dia do mês"
+      ],
+      "29th of the month": [
+        "29º dia do mês"
+      ],
+      "2nd of the month": [
+        "2º dia do mês"
+      ],
+      "30th of the month": [
+        "30º dia do mês"
+      ],
+      "31st of the month": [
+        "31º dia do mês"
+      ],
+      "3rd of the month": [
+        "3º dia do mês"
+      ],
+      "4th of the month": [
+        "4º dia do mês"
+      ],
+      "5th of the month": [
+        "5º dia do mês"
+      ],
+      "6th of the month": [
+        "6º dia do mês"
+      ],
+      "7th of the month": [
+        "7º dia do mês"
+      ],
+      "8th of the month": [
+        "8º dia do mês"
+      ],
+      "9th of the month": [
+        "9º dia do mês"
+      ],
+      "Fixed duration": [
+        "Duração fixa"
+      ],
+      "Permanent": [
+        "Permanente"
+      ],
+      "Repeat daily": [
+        "Repetir diariamente"
+      ],
+      "Repeat monthly": [
+        "Repetir mensalmente"
+      ],
+      "Repeat weekly": [
+        "Repetir semanalmente"
       ]
     },
     "Option group": {
@@ -13467,6 +13623,15 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - cartão terminado em ${ paymentMethod.Details.Last4 }"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - cartão terminado em ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Transferência bancária - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - cartão terminado em ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -17129,6 +17294,21 @@
       ],
       "Change display setting": [
         "Alterar configuração de exibição"
+      ],
+      "Create filter": [
+        "Criar filtro"
+      ],
+      "Rename folder": [
+        "Renomear pasta"
+      ],
+      "Set auto-reply": [
+        "Configurar resposta automática"
+      ],
+      "Set signature": [
+        "Definir assinatura"
+      ],
+      "Turn off auto-reply": [
+        "Desativa resposta automática"
       ]
     },
     "Title header for keys table": {
@@ -17769,6 +17949,11 @@
       "${ count } email → ${ wakeTime }": [
         "${ count } e-mail → ${ wakeTime }",
         "${ count } e-mails → ${ wakeTime }"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Experimente agora"
       ]
     }
   }

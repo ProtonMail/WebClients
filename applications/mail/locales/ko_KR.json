@@ -1745,6 +1745,9 @@
       ],
       "Emoji": [
         "이모티콘"
+      ],
+      "Add a payment method": [
+        "결제 방법 추가하기"
       ]
     },
     "action": {
@@ -9629,6 +9632,33 @@
       ],
       "Read your display settings": [
         "디스플레이 설정 읽기"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "무료 체험이 ${ timeRemaining }일 남았습니다. 접근 권한을 상실하지 않으려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "무료 체험이 ${ timeRemaining }일 남았습니다. 구독을 유지하려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "Create filter": [
+        "필터 생성"
+      ],
+      "Read your auto-reply": [
+        "자동 회신 읽기"
+      ],
+      "Read your signature": [
+        "서명 읽기"
+      ],
+      "Rename folder": [
+        "폴더 이름 변경"
+      ],
+      "Set auto-reply": [
+        "자동 회신 설정"
+      ],
+      "Set signature": [
+        "서명 설정"
+      ],
+      "Turn off auto-reply": [
+        "자동 회신 비활성화"
       ]
     },
     "info": {
@@ -10918,6 +10948,24 @@
       ],
       "Single messages": [
         "단문 메시지"
+      ],
+      "Away message": [
+        "부재중 메시지"
+      ],
+      "From date": [
+        "시작일"
+      ],
+      "From time": [
+        "시작일"
+      ],
+      "New name": [
+        "새 이름"
+      ],
+      "Signature": [
+        "서명"
+      ],
+      "Until date": [
+        "종료일"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11265,6 +11313,12 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "업데이트된 초대장을 보려면 키를 다시 활성화하셔야 합니다"
+      ],
+      "Add formatting, links or images": [
+        "형식, 링크 및 이미지 추가"
+      ],
+      "Advanced auto-reply options": [
+        "고급 자동 회신 옵션"
       ]
     },
     "Link to calendar event": {
@@ -12309,6 +12363,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Last4 }(으)로 끝나는 ${ Brand }"
       ]
     },
     "new_plans: label": {
@@ -13063,6 +13120,114 @@
       ],
       "Yes, don't show again": [
         "네, 다시 보지 않을게요."
+      ],
+      "10th of the month": [
+        "매월 10일"
+      ],
+      "11th of the month": [
+        "매월 11일"
+      ],
+      "12th of the month": [
+        "매월 12일"
+      ],
+      "13th of the month": [
+        "매월 13일"
+      ],
+      "14th of the month": [
+        "매월 14일"
+      ],
+      "15th of the month": [
+        "매월 15일"
+      ],
+      "16th of the month": [
+        "매월 16일"
+      ],
+      "17th of the month": [
+        "매월 17일"
+      ],
+      "18th of the month": [
+        "매월 18일"
+      ],
+      "19th of the month": [
+        "매월 19일"
+      ],
+      "1st of the month": [
+        "매월 1일"
+      ],
+      "20th of the month": [
+        "매월 20일"
+      ],
+      "21st of the month": [
+        "매월 21일"
+      ],
+      "22nd of the month": [
+        "매월 22일"
+      ],
+      "23rd of the month": [
+        "매월 23일"
+      ],
+      "24th of the month": [
+        "매월 24일"
+      ],
+      "25th of the month": [
+        "매월 25일"
+      ],
+      "26th of the month": [
+        "매월 26일"
+      ],
+      "27th of the month": [
+        "매월 27일"
+      ],
+      "28th of the month": [
+        "매월 28일"
+      ],
+      "29th of the month": [
+        "매월 29일"
+      ],
+      "2nd of the month": [
+        "매월 2일"
+      ],
+      "30th of the month": [
+        "매월 30일"
+      ],
+      "31st of the month": [
+        "매월 31일"
+      ],
+      "3rd of the month": [
+        "매월 3일"
+      ],
+      "4th of the month": [
+        "매월 4일"
+      ],
+      "5th of the month": [
+        "매월 5일"
+      ],
+      "6th of the month": [
+        "매월 6일"
+      ],
+      "7th of the month": [
+        "매월 7일"
+      ],
+      "8th of the month": [
+        "매월 8일"
+      ],
+      "9th of the month": [
+        "매월 9일"
+      ],
+      "Fixed duration": [
+        "고정된 기간"
+      ],
+      "Permanent": [
+        "영구"
+      ],
+      "Repeat daily": [
+        "매일 반복"
+      ],
+      "Repeat monthly": [
+        "매달 반복"
+      ],
+      "Repeat weekly": [
+        "매주 반복"
       ]
     },
     "Option group": {
@@ -13434,6 +13599,15 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - 번호가 ${ paymentMethod.Details.Last4 }(으)로 끝나는 카드"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "번호가 ${ Last4 }(으)로 끝나는 Apple Pay 카드"
+      ],
+      "Bank transfer - ${ iban }": [
+        "은행 송금 - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - 번호가 ${ Last4 }(으)로 끝나는 카드"
       ]
     },
     "Payments.Sepa": {
@@ -17010,6 +17184,21 @@
       ],
       "Change display setting": [
         "디스플레이 설정 변경"
+      ],
+      "Create filter": [
+        "필터 생성"
+      ],
+      "Rename folder": [
+        "폴더 이름 변경"
+      ],
+      "Set auto-reply": [
+        "자동 회신 설정"
+      ],
+      "Set signature": [
+        "서명 설정"
+      ],
+      "Turn off auto-reply": [
+        "자동 회신 비활성화"
       ]
     },
     "Title header for keys table": {
@@ -17594,6 +17783,11 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "청구 주소 변경은 추후 청구서의 세율에 영향을 줄 수 있습니다."
       ]
     }
   }
