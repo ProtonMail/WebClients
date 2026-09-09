@@ -11478,6 +11478,9 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - kaart eindigend op ${ paymentMethod.Details.Last4 }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kaart eindigend op ${ Last4 }"
       ]
     },
     "Payments.Sepa": {

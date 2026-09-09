@@ -1350,6 +1350,9 @@
       ],
       "Preview logs": [
         "Günlük ön izlemesi"
+      ],
+      "Add a payment method": [
+        "Bir ödeme yöntemi ekleyin"
       ]
     },
     "Action: Docs": {
@@ -7924,6 +7927,12 @@
       ],
       "Link expired": [
         "Bağlantının süresi doldu"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Erişiminizi kaybetmemek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Aboneliğinizi sürdürmek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
       ]
     },
     "info": {

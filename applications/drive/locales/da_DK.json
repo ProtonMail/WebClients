@@ -1350,6 +1350,9 @@
       ],
       "Preview logs": [
         "Preview logfiler"
+      ],
+      "Add a payment method": [
+        "Tilføj en betalingsmetode"
       ]
     },
     "Action: Docs": {
@@ -7902,6 +7905,12 @@
       ],
       "Do you remember your password?": [
         "Kan du godt huske din adgangskode?"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Der er ${ timeRemaining } tilbage tilbage i prøveversionen. ${ addPaymentMethodLink } for at undgå at miste adgang. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Der er ${ timeRemaining } tilbage tilbage i prøveversionen. ${ addPaymentMethodLink } for at beholde dit abonnement. ${ learnMoreLink }"
       ]
     },
     "info": {
