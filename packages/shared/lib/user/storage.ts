@@ -1,16 +1,14 @@
 import { c } from 'ttag';
 
 import { ThemeColor } from '@proton/colors/types';
-import { PLANS } from '@proton/payments/core/constants';
-import {
-    type MaybeFreeSubscription,
-    getHasMailB2BPlan,
-    hasVisionary,
-} from '@proton/payments/core/subscription/helpers';
 
 import type { APP_NAMES } from '../constants';
 import { APPS } from '../constants';
 import type { User, UserModel } from '../interfaces';
+import { PLANS } from '../payments/constants';
+import { getHasMailB2BPlan } from '../payments/subscription/helpers/plan-b2b';
+import { hasVisionary } from '../payments/subscription/helpers/plan-matching';
+import type { MaybeFreeSubscription } from '../payments/subscription/interface';
 
 export const getHasStorageSplit = (user: User) => {
     return user.MaxBaseSpace !== undefined;

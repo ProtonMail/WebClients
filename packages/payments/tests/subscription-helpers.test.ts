@@ -1,8 +1,10 @@
 import { addWeeks, subDays } from 'date-fns';
 
-import { ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';
-import type { Plan, SubscriptionPlan } from '@proton/payments/core/plan/interface';
-import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
+import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/payments/constants';
+import type { Plan, SubscriptionPlan } from '@proton/shared/lib/payments/plan/interface';
+import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
+import type { Subscription } from '@proton/shared/lib/payments/subscription/interface';
+
 import {
     allCycles,
     customCycles,
@@ -16,9 +18,8 @@ import {
     isTrialExpired,
     regularCycles,
     willTrialExpireInLessThan1Week,
-} from '@proton/payments/core/subscription/helpers';
-import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+} from '../core/subscription/helpers';
+import { buildSubscription } from '../testing/buildSubscription';
 
 let subscription: Subscription;
 let defaultPlan: SubscriptionPlan;
@@ -290,7 +291,7 @@ describe('hasCancellablePlan', () => {
 
         testCases.forEach((plan) => {
             subscription.Plans[0].Name = plan;
-            expect(hasCancellablePlan(subscription), `plan: ${plan}`).toEqual(true);
+            expect({ plan, cancellable: hasCancellablePlan(subscription) }).toEqual({ plan, cancellable: true });
         });
     });
 
@@ -301,7 +302,7 @@ describe('hasCancellablePlan', () => {
 
         testCases.forEach((plan) => {
             subscription.Plans[0].Name = plan;
-            expect(hasCancellablePlan(subscription), `plan: ${plan}`).toEqual(false);
+            expect({ plan, cancellable: hasCancellablePlan(subscription) }).toEqual({ plan, cancellable: false });
         });
     });
 
@@ -322,7 +323,10 @@ describe('hasCancellablePlan', () => {
         testCases.forEach((testCase) => {
             subscription.Plans[0].Name = testCase.plan;
             subscription.Plans.push({ Name: testCase.addon, Quantity: 1 } as Plan);
-            expect(hasCancellablePlan(subscription), `plan: ${testCase.plan}, addon: ${testCase.addon}`).toEqual(false);
+            expect({ ...testCase, cancellable: hasCancellablePlan(subscription) }).toEqual({
+                ...testCase,
+                cancellable: false,
+            });
         });
     });
 });

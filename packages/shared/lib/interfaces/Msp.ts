@@ -1,7 +1,6 @@
-import type { Currency } from '@proton/payments/core/interface';
-
 import type { MspDelegatedManager } from '../api/msp';
 import type { ORGANIZATION_STATE } from '../constants';
+import type { Currency } from '../payments/interface';
 
 export interface MspSubsidiary {
     ID: string;

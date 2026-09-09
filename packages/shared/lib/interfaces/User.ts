@@ -1,8 +1,7 @@
-import type { Currency } from '@proton/payments/core/interface';
-
 import type { Product } from '../ProductEnum';
 import type { AccessType } from '../authentication/accessType';
 import type { USER_ROLES } from '../constants';
+import type { Currency } from '../payments/interface';
 import type { Key } from './Key';
 
 export enum MNEMONIC_STATUS {

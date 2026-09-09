@@ -1,10 +1,3 @@
-import {
-    type MaybeFreeSubscription,
-    getIsB2BAudienceFromSubscription,
-    getPlanName,
-} from '@proton/payments/core/subscription/helpers';
-import { isFreeSubscription } from '@proton/payments/core/type-guards';
-
 import { getSilentApi } from '../api/helpers/customConfig';
 import { metrics } from '../api/metrics';
 import type { TelemetryReport } from '../api/telemetry';
@@ -12,6 +5,10 @@ import { sendMultipleTelemetryData } from '../api/telemetry';
 import type { METRICS_LOG } from '../constants';
 import { SECOND } from '../constants';
 import type { Api, UserModel, UserSettings } from '../interfaces';
+import { getIsB2BAudienceFromSubscription } from '../payments/subscription/helpers/plan-audience';
+import { getPlanName } from '../payments/subscription/helpers/plan-info';
+import type { MaybeFreeSubscription } from '../payments/subscription/interface';
+import { isFreeSubscription } from '../payments/type-guards';
 import { BatchQueue } from './batchQueue';
 import { getAccountAgeForDimension, getCycleForDimension } from './metrics.helpers';
 import { wait } from './promise';
