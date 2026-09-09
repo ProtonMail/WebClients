@@ -1,14 +1,13 @@
-export { ComponentTag, EnrichedError, convertSafeError, isEnrichedError } from './EnrichedError';
+export { ComponentTag, EnrichedError } from './EnrichedError';
 export { ValidationError, isValidationError } from './ValidationError';
-export { is4xx, is5xx, isCryptoEnrichedError } from './apiErrors';
+export { is4xx, is5xx } from './apiErrors';
 export {
     errorToString,
-    isAbortError,
     isIgnoredError,
     isIgnoredErrorForReporting,
     logError,
     sendErrorReport,
 } from './sendErrorReport';
-export { handleSdkError, shouldShowNotification, shouldTrackError } from './handleSdkError';
+export { handleSdkError } from './handleSdkError';
 export { showAggregatedErrorNotification } from './errorNotifications';
-export { WebpackChunkFailedToLoad, getWebpackChunkFailedToLoadError } from './WebpackChunkFailedToLoadError';
+export { getWebpackChunkFailedToLoadError } from './WebpackChunkFailedToLoadError';

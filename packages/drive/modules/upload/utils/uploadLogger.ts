@@ -1,6 +1,6 @@
 import { logging } from '../../logging';
 
-export const uploadLogger = logging.getLogger('upload-manager');
+const uploadLogger = logging.getLogger('upload-manager');
 
 export const uploadLogDebug = (label: string, rest: string | Record<string, unknown> = '') => {
     uploadLogger.debug(`${label}: ${JSON.stringify(rest)}`);

@@ -1,6 +1,5 @@
-export { directoryTreeFactory } from './internal/useDirectoryTree';
 export { getNodeUidFromTreeItemId, makeTreeItemId } from './internal/helpers';
+export { directoryTreeFactory } from './internal/useDirectoryTree';
 
-export { DirectoryTreeRootType } from './internal/types';
-export type { DirectoryTreeStore } from './internal/types';
 export type { TreeItemWithChildren } from './internal/toTree';
+export { DirectoryTreeRootType } from './internal/types';

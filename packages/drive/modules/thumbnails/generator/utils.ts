@@ -60,7 +60,7 @@ export function getMaxThumbnailSize(thumbnailType: ThumbnailType): number {
     return thumbnailType === ThumbnailType.Type2 ? HD_THUMBNAIL_MAX_SIZE * 0.9 : THUMBNAIL_MAX_SIZE * 0.9;
 }
 
-export async function optimizeCanvasForThumbnail(
+async function optimizeCanvasForThumbnail(
     canvas: HTMLCanvasElement,
     thumbnailType: ThumbnailType = ThumbnailType.Type1,
     mimeType: SupportedMimeTypes.webp | SupportedMimeTypes.jpg = SupportedMimeTypes.webp
@@ -162,7 +162,7 @@ export async function scaleImage(
     });
 }
 
-export async function generateThumbnailFromCanvas(options: {
+async function generateThumbnailFromCanvas(options: {
     canvas: HTMLCanvasElement;
     ctx: CanvasRenderingContext2D;
     img: { width: number; height: number };

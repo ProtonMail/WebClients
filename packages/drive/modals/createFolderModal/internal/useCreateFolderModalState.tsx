@@ -17,7 +17,7 @@ import { validateNodeName } from '../../../modules/validation';
 
 type Drive = Pick<ProtonDriveClient, 'createFolder' | 'getNode'>;
 
-export type CreateFolderModalInnerProps = {
+type CreateFolderModalInnerProps = {
     drive?: Drive;
     parentFolderUid?: string;
     onSuccess?: ({

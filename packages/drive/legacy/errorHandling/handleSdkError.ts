@@ -13,7 +13,7 @@ import { getNotificationsManager } from '../../modules/notifications';
 import { EnrichedError } from './EnrichedError';
 import { sendErrorReport } from './sendErrorReport';
 
-export const shouldTrackError = (err: Error) =>
+const shouldTrackError = (err: Error) =>
     !(err instanceof ValidationError) &&
     !(err instanceof AbortError) &&
     !(err instanceof RateLimitedError) &&
@@ -24,7 +24,7 @@ export const shouldTrackError = (err: Error) =>
     // where client is listing nodes and some nodes cannot be returned.
     !(err instanceof DecryptionError);
 
-export const shouldShowNotification = (err: Error) => !(err instanceof AbortError);
+const shouldShowNotification = (err: Error) => !(err instanceof AbortError);
 
 type HandleErrorOptions = {
     fallbackMessage?: string;

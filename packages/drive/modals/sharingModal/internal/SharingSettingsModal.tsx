@@ -12,7 +12,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { useEditorsManageAccessContext } from './useEditorsManageAccess';
 
-export interface SharingSettingsModalProps {
+interface SharingSettingsModalProps {
     sharedFileName: string;
     stopSharing: () => Promise<void>;
 }
