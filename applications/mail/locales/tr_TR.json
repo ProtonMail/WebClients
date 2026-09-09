@@ -1547,7 +1547,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1750,6 +1751,9 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Add a payment method": [
+        "Bir ödeme yöntemi ekleyin"
       ]
     },
     "action": {
@@ -8158,8 +8162,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -9799,6 +9802,33 @@
       ],
       "Opened a problem report": [
         "Bir sorun bildirimi yapıldı"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Erişiminizi kaybetmemek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Aboneliğinizi sürdürmek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "Create filter": [
+        "Süzgeç oluştur"
+      ],
+      "Read your auto-reply": [
+        "Otomatik yanıtınızı okuyun"
+      ],
+      "Read your signature": [
+        "İmzanızı okuyun"
+      ],
+      "Rename folder": [
+        "Klasörü yeniden adlandır"
+      ],
+      "Set auto-reply": [
+        "Otomatik yanıtı ayarla"
+      ],
+      "Set signature": [
+        "İmza ayarla"
+      ],
+      "Turn off auto-reply": [
+        "Otomatik yanıtı kapat"
       ]
     },
     "info": {
@@ -11099,6 +11129,27 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Away message": [
+        "Uzakta iletisi"
+      ],
+      "From date": [
+        "Başlangıç tarihi"
+      ],
+      "From time": [
+        "Başlangıç zamanı"
+      ],
+      "New name": [
+        "Yeni ad"
+      ],
+      "Signature": [
+        "İmza"
+      ],
+      "Until date": [
+        "Bitiş tarihi"
+      ],
+      "Until time": [
+        "Bitiş zamanı"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11446,6 +11497,12 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Güncellenen daveti görmek için anahtarlarınızı yeniden kullanıma almalısınız"
+      ],
+      "Add formatting, links or images": [
+        "Biçimlendirme, bağlantılar veya görseller ekleyin"
+      ],
+      "Advanced auto-reply options": [
+        "Gelişmiş otomatik yanıt seçenekleri"
       ]
     },
     "Link to calendar event": {
@@ -12531,6 +12588,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "Sonu ${ Last4 } ile biten ${ Brand }"
       ]
     },
     "new_plans: label": {
@@ -13289,6 +13349,114 @@
       ],
       "Yes, don't show again": [
         "Evet bir daha görüntülenmesin"
+      ],
+      "10th of the month": [
+        "Ayın 10. günü"
+      ],
+      "11th of the month": [
+        "Ayın 11. günü"
+      ],
+      "12th of the month": [
+        "Ayın 12. günü"
+      ],
+      "13th of the month": [
+        "Ayın 13. günü"
+      ],
+      "14th of the month": [
+        "Ayın 14. günü"
+      ],
+      "15th of the month": [
+        "Ayın 15. günü"
+      ],
+      "16th of the month": [
+        "Ayın 16. günü"
+      ],
+      "17th of the month": [
+        "Ayın 17. günü"
+      ],
+      "18th of the month": [
+        "Ayın 18. günü"
+      ],
+      "19th of the month": [
+        "Ayın 19. günü"
+      ],
+      "1st of the month": [
+        "Ayın 1. günü"
+      ],
+      "20th of the month": [
+        "Ayın 20. günü"
+      ],
+      "21st of the month": [
+        "Ayın 21. günü"
+      ],
+      "22nd of the month": [
+        "Ayın 22. günü"
+      ],
+      "23rd of the month": [
+        "Ayın 23. günü"
+      ],
+      "24th of the month": [
+        "Ayın 24. günü"
+      ],
+      "25th of the month": [
+        "Ayın 25. günü"
+      ],
+      "26th of the month": [
+        "Ayın 26. günü"
+      ],
+      "27th of the month": [
+        "Ayın 27. günü"
+      ],
+      "28th of the month": [
+        "Ayın 28. günü"
+      ],
+      "29th of the month": [
+        "Ayın 29. günü"
+      ],
+      "2nd of the month": [
+        "Ayın 2. günü"
+      ],
+      "30th of the month": [
+        "Ayın 30. günü"
+      ],
+      "31st of the month": [
+        "Ayın 31. günü"
+      ],
+      "3rd of the month": [
+        "Ayın 3. günü"
+      ],
+      "4th of the month": [
+        "Ayın 4. günü"
+      ],
+      "5th of the month": [
+        "Ayın 5. günü"
+      ],
+      "6th of the month": [
+        "Ayın 6. günü"
+      ],
+      "7th of the month": [
+        "Ayın 7. günü"
+      ],
+      "8th of the month": [
+        "Ayın 8. günü"
+      ],
+      "9th of the month": [
+        "Ayın 9. günü"
+      ],
+      "Fixed duration": [
+        "Sabit süreli"
+      ],
+      "Permanent": [
+        "Kalıcı"
+      ],
+      "Repeat daily": [
+        "Günlük yinelenen"
+      ],
+      "Repeat monthly": [
+        "Aylık yinelenen"
+      ],
+      "Repeat weekly": [
+        "Haftalık yinelensin"
       ]
     },
     "Option group": {
@@ -13667,6 +13835,15 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - ${ paymentMethod.Details.Last4 } ile biten kart"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - ${ Last4 } ile biten kart"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Banka havalesi - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - ${ Last4 } ile biten kart"
       ]
     },
     "Payments.Sepa": {
@@ -17338,6 +17515,21 @@
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
+      ],
+      "Create filter": [
+        "Süzgeç oluştur"
+      ],
+      "Rename folder": [
+        "Klasörü yeniden adlandır"
+      ],
+      "Set auto-reply": [
+        "Otomatik yanıtı ayarla"
+      ],
+      "Set signature": [
+        "İmza ayarla"
+      ],
+      "Turn off auto-reply": [
+        "Otomatik yanıtı kapat"
       ]
     },
     "Title header for keys table": {
@@ -17967,6 +18159,11 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Fatura adresinizi değiştirmek sonraki faturalardaki vergileri etkileyebilir."
       ]
     }
   }

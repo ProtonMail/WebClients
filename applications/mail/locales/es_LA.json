@@ -1547,7 +1547,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -2754,6 +2755,19 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Amount due": [
+        "Importe a pagar"
+      ],
+      "Amount due after trial": [
+        "Importe a pagar después de la prueba"
+      ],
+      "Amount due now": [
+        "Importe a pagar ahora"
+      ],
+      "Total for ${ cycle } month": [
+        "Total por ${ cycle } mes",
+        "Total por ${ cycle } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -6061,6 +6075,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "La cuenta está usando ${ usedSpace } de almacenamiento, que supera los ${ inviteSpace } que tiene asignados. Elimine algunos datos o solicite al administrador del plan que aumente el almacenamiento."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Se le invitó a vincular su cuenta de ${ BRAND_NAME } a este grupo familiar y disfrutar de todas sus funciones premium."
       ]
     },
     "familyOffer_2023:Label": {
@@ -8139,8 +8156,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9771,6 +9787,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "Change display setting": [
+        "Cambiar ajuste de pantalla"
+      ],
+      "Do you remember your password?": [
+        "¿Recuerda su contraseña?"
+      ],
+      "Opened a problem report": [
+        "Abrí un reporte de problema"
+      ],
+      "Read your display settings": [
+        "Lea sus ajustes de pantalla"
       ]
     },
     "info": {
@@ -11053,6 +11081,27 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Column": [
+        "Columna"
+      ],
+      "Comfortable": [
+        "Cómoda"
+      ],
+      "Compact": [
+        "Compacta"
+      ],
+      "Grouped conversations": [
+        "Conversaciones agrupadas"
+      ],
+      "Row": [
+        "Fila"
+      ],
+      "Signature": [
+        "Firma"
+      ],
+      "Single messages": [
+        "Mensajes individuales"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13243,6 +13292,114 @@
       ],
       "Yes, don't show again": [
         "Sí, no volver a mostrar"
+      ],
+      "10th of the month": [
+        "10º del mes"
+      ],
+      "11th of the month": [
+        "11º del mes"
+      ],
+      "12th of the month": [
+        "12º del mes"
+      ],
+      "13th of the month": [
+        "13º del mes"
+      ],
+      "14th of the month": [
+        "14º del mes"
+      ],
+      "15th of the month": [
+        "15º del mes"
+      ],
+      "16th of the month": [
+        "16º del mes"
+      ],
+      "17th of the month": [
+        "17º del mes"
+      ],
+      "18th of the month": [
+        "18º del mes"
+      ],
+      "19th of the month": [
+        "19º del mes"
+      ],
+      "1st of the month": [
+        "1º del mes"
+      ],
+      "20th of the month": [
+        "20º del mes"
+      ],
+      "21st of the month": [
+        "21º del mes"
+      ],
+      "22nd of the month": [
+        "22º del mes"
+      ],
+      "23rd of the month": [
+        "23º del mes"
+      ],
+      "24th of the month": [
+        "24º del mes"
+      ],
+      "25th of the month": [
+        "25º del mes"
+      ],
+      "26th of the month": [
+        "26º del mes"
+      ],
+      "27th of the month": [
+        "27º del mes"
+      ],
+      "28th of the month": [
+        "28º del mes"
+      ],
+      "29th of the month": [
+        "29º del mes"
+      ],
+      "2nd of the month": [
+        "2º del mes"
+      ],
+      "30th of the month": [
+        "30º del mes"
+      ],
+      "31st of the month": [
+        "31º del mes"
+      ],
+      "3rd of the month": [
+        "3º del mes"
+      ],
+      "4th of the month": [
+        "4º del mes"
+      ],
+      "5th of the month": [
+        "5º del mes"
+      ],
+      "6th of the month": [
+        "6º del mes"
+      ],
+      "7th of the month": [
+        "7º del mes"
+      ],
+      "8th of the month": [
+        "8º del mes"
+      ],
+      "9th of the month": [
+        "9º del mes"
+      ],
+      "Fixed duration": [
+        "Duración fija"
+      ],
+      "Permanent": [
+        "Permanente"
+      ],
+      "Repeat daily": [
+        "Repetir diariamente"
+      ],
+      "Repeat monthly": [
+        "Repetir mensualmente"
+      ],
+      "Repeat weekly": [
+        "Repetir semanalmente"
       ]
     },
     "Option group": {
@@ -17289,6 +17446,9 @@
       ],
       "Your shorter address is now ready": [
         "Su dirección en formato más corto ya está lista."
+      ],
+      "Change display setting": [
+        "Cambiar ajuste de pantalla"
       ]
     },
     "Title header for keys table": {
