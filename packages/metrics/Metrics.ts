@@ -205,6 +205,7 @@ import type { HttpsProtonMeWebDriveSearchPermanentErrorsTotalV1SchemaJson } from
 import type { HttpsProtonMeWebDriveSearchQueryTimeHistogramV1SchemaJson } from './types/web_drive_search_query_time_histogram_v1.schema';
 import type { HttpsProtonMeWebDriveSearchQueryTotalV1SchemaJson } from './types/web_drive_search_query_total_v1.schema';
 import type { HttpsProtonMeWebDriveSearchTransientErrorsTotalV2SchemaJson } from './types/web_drive_search_transient_errors_total_v2.schema';
+import type { HttpsProtonMeWebDriveSearchWorkerHealthTotalV1SchemaJson } from './types/web_drive_search_worker_health_total_v1.schema';
 import type { HttpsProtonMeWebDriveWarningsTotalV1SchemaJson } from './types/web_drive_warnings_total_v1.schema';
 import type { EmailContentRenderTime } from './types/web_mail_performance_email_content_render_time_histogram_v1.schema';
 import type { EmailContentRenderTimeSeconds } from './types/web_mail_performance_email_content_render_time_second_histogram_v1.schema';
@@ -605,6 +606,8 @@ class Metrics extends MetricsBase {
     public drive_search_query_total: Counter<HttpsProtonMeWebDriveSearchQueryTotalV1SchemaJson>;
 
     public drive_search_transient_errors_total: Counter<HttpsProtonMeWebDriveSearchTransientErrorsTotalV2SchemaJson>;
+
+    public drive_search_worker_health_total: Counter<HttpsProtonMeWebDriveSearchWorkerHealthTotalV1SchemaJson>;
 
     public drive_warnings_total: Counter<HttpsProtonMeWebDriveWarningsTotalV1SchemaJson>;
 
@@ -1680,6 +1683,11 @@ class Metrics extends MetricsBase {
                 { name: 'web_drive_search_transient_errors_total', version: 2 },
                 this.requestService
             );
+
+        this.drive_search_worker_health_total = new Counter<HttpsProtonMeWebDriveSearchWorkerHealthTotalV1SchemaJson>(
+            { name: 'web_drive_search_worker_health_total', version: 1 },
+            this.requestService
+        );
 
         this.drive_warnings_total = new Counter<HttpsProtonMeWebDriveWarningsTotalV1SchemaJson>(
             { name: 'web_drive_warnings_total', version: 1 },

@@ -22,6 +22,7 @@ jest.mock('@proton/metrics', () => ({
         drive_search_permanent_errors_total: { increment: jest.fn() },
         drive_search_transient_errors_total: { increment: jest.fn() },
         drive_search_query_total: { increment: jest.fn() },
+        drive_search_worker_health_total: { increment: jest.fn() },
     },
 }));
 
@@ -33,6 +34,7 @@ jest.mock('./errors', () => ({
 const sendErrorReportMock = sendErrorReportForSearch as jest.MockedFunction<typeof sendErrorReportForSearch>;
 const transientCounter = metrics.drive_search_transient_errors_total.increment as jest.Mock;
 const permanentCounter = metrics.drive_search_permanent_errors_total.increment as jest.Mock;
+const workerHealthCounter = metrics.drive_search_worker_health_total.increment as jest.Mock;
 
 const TASK_KIND: IndexerTaskKind = 'index-populator-task';
 
@@ -382,6 +384,42 @@ describe('searchMetrics.markSearchQueryFailed', () => {
             'Search query failed',
             expect.any(Error),
             expect.objectContaining({ extra: undefined })
+        );
+    });
+});
+
+describe('searchMetrics worker health', () => {
+    beforeEach(() => {
+        sendErrorReportMock.mockClear();
+        workerHealthCounter.mockClear();
+    });
+
+    it.each([
+        ['heartbeat-timeout', 'search-worker-heartbeat-timeout'],
+        ['heartbeat-error', 'search-worker-heartbeat-error'],
+        ['reconnect-failure', 'search-worker-reconnect-failure'],
+    ] as const)('markWorkerHealthError(%s) increments the %s category', (kind, category) => {
+        searchMetrics.markWorkerHealthError({ kind, error: new Error('boom') });
+
+        expect(workerHealthCounter).toHaveBeenCalledWith({ category });
+        expect(sendErrorReportMock).toHaveBeenCalledWith(
+            `Search worker health error (${kind})`,
+            expect.any(Error),
+            expect.objectContaining({ tags: expect.objectContaining({ label: 'search-worker-health-error', kind }) })
+        );
+    });
+
+    it('markClientDisconnectTimeout increments the main-thread-timeout category', () => {
+        searchMetrics.markClientDisconnectTimeout({ staleness: 1000, remainingClients: 2 });
+
+        expect(workerHealthCounter).toHaveBeenCalledWith({ category: 'main-thread-timeout' });
+        expect(sendErrorReportMock).toHaveBeenCalledWith(
+            'Search client disconnected by timeout',
+            expect.any(Error),
+            expect.objectContaining({
+                tags: expect.objectContaining({ label: 'search-client-disconnect-timeout' }),
+                extra: { staleness: 1000, remainingClients: 2 },
+            })
         );
     });
 });
