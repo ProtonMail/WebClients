@@ -1,11 +1,19 @@
 import React, { type ReactNode, createContext, useContext } from 'react';
 
-import type { HandleEditMessage, HandleRegenerateMessage, HandleSendMessage } from '../hooks/useLumoActions';
+import type {
+    HandleEditMessage,
+    HandleRegenerateMessage,
+    HandleSaveManualArtifactEdit,
+    HandleSendArtifactAction,
+    HandleSendMessage,
+} from '../hooks/useLumoActions';
 import type { ConversationError } from '../redux/slices/meta/errors';
 import type { Message, SiblingInfo } from '../types';
 
 interface ConversationActionsContextType {
     handleSendMessage: HandleSendMessage;
+    handleSendArtifactAction: HandleSendArtifactAction;
+    handleSaveManualArtifactEdit: HandleSaveManualArtifactEdit;
     handleAbort: () => void;
     handleEditMessage: HandleEditMessage;
     handleRegenerateMessage: HandleRegenerateMessage;
@@ -20,6 +28,8 @@ const ConversationActionsContext = createContext<ConversationActionsContextType 
 interface ConversationActionsProviderProps {
     children: ReactNode;
     handleSendMessage: HandleSendMessage;
+    handleSendArtifactAction: HandleSendArtifactAction;
+    handleSaveManualArtifactEdit: HandleSaveManualArtifactEdit;
     handleAbort: () => void;
     handleEditMessage: HandleEditMessage;
     handleRegenerateMessage: HandleRegenerateMessage;
@@ -32,6 +42,8 @@ interface ConversationActionsProviderProps {
 export const ConversationActionsProvider = ({
     children,
     handleSendMessage,
+    handleSendArtifactAction,
+    handleSaveManualArtifactEdit,
     handleAbort,
     handleEditMessage,
     handleRegenerateMessage,
@@ -44,6 +56,8 @@ export const ConversationActionsProvider = ({
         <ConversationActionsContext.Provider
             value={{
                 handleSendMessage,
+                handleSendArtifactAction,
+                handleSaveManualArtifactEdit,
                 handleAbort,
                 handleEditMessage,
                 handleRegenerateMessage,

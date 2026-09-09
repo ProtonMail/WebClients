@@ -1,4 +1,4 @@
-import { memo, useCallback, useMemo, useRef, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
@@ -23,6 +23,14 @@ import { LumoIcon } from '../../../../LumoIcon/LumoIcon';
 import AssistantFeedbackModal from '../../../../Modals/AssistantFeedbackModal';
 import LinkWarningModal from '../../../../Modals/LinkWarningModal';
 import SiblingSelector from '../../../../SiblingSelector';
+import { ArtifactChip } from '../../../artifact/ArtifactChip';
+import { useArtifactContext } from '../../../artifact/ArtifactContext';
+import { getArtifactVersionIndexForMessage } from '../../../artifact/artifactRegistry';
+import {
+    CREATE_ARTIFACT_TOOL_NAME,
+    extractCompleteArtifactsFromBlocks,
+    getCompleteArtifactBlocksKey,
+} from '../../../artifact/createArtifactTool';
 import LumoCopyButton from '../actionToolbar/LumoCopyButton';
 import { SourcesButton } from '../toolCall/SourcesBlock';
 import { extractSearchResults, parseToolCallBlock } from '../toolCall/toolCallUtils';
@@ -228,6 +236,83 @@ const AssistantMessage = ({
     );
     const hasContent = blocks.length > 0;
 
+    // Extract create_artifact tool calls directly from the structured blocks — no text parsing.
+    // In practice arguments arrive as a parsed object in one shot (see DESIGN.md); partial
+    // string arguments are ignored until JSON completes.
+    const artifactBlocksKey = useMemo(() => {
+        return getCompleteArtifactBlocksKey(blocks);
+    }, [blocks]);
+    const completeArtifacts = useMemo(() => {
+        return extractCompleteArtifactsFromBlocks(blocks);
+    }, [artifactBlocksKey, blocks]);
+
+    const hasArtifacts = completeArtifacts.length > 0;
+
+    // Hide create_artifact tool_call/tool_result blocks from the generic tool-call timeline —
+    // ArtifactChip renders them instead, below.
+    const cleanedBlocks = useMemo(() => {
+        if (!hasArtifacts) {
+            return blocks;
+        }
+        const artifactCallIndices = new Set<number>();
+        blocks.forEach((block, idx) => {
+            const parsed = block.type === 'tool_call' ? (block.toolCall as { name?: string } | undefined) : undefined;
+            if (parsed?.name === CREATE_ARTIFACT_TOOL_NAME) {
+                artifactCallIndices.add(idx);
+            }
+        });
+        return blocks.filter((block, idx) => {
+            if (artifactCallIndices.has(idx)) {
+                return false;
+            }
+            return !(block.type === 'tool_result' && artifactCallIndices.has(idx - 1));
+        });
+    }, [blocks, hasArtifacts]);
+
+    const { selectedId, openArtifact, registry, panelUserClosed, resetPanelUserClosed } = useArtifactContext();
+
+    const wasGeneratingRef = useRef(isGenerating);
+    useEffect(() => {
+        const generationStarted = !wasGeneratingRef.current && isGenerating;
+        wasGeneratingRef.current = isGenerating;
+
+        if (isLastMessage && generationStarted) {
+            resetPanelUserClosed();
+        }
+    }, [isLastMessage, isGenerating, resetPanelUserClosed]);
+
+    const hasAutoOpenedRef = useRef(false);
+    useEffect(() => {
+        hasAutoOpenedRef.current = false;
+    }, [message.id]);
+
+    useEffect(() => {
+        if (!isLastMessage || completeArtifacts.length === 0 || !completeArtifacts[0] || hasAutoOpenedRef.current) {
+            return;
+        }
+
+        const artifact = completeArtifacts[0];
+        const versionIndex = getArtifactVersionIndexForMessage(registry, artifact.id, message.id);
+        if (versionIndex === null) {
+            return;
+        }
+
+        if (panelUserClosed) {
+            return;
+        }
+
+        // Only auto-open into an empty panel. If something is already open — including the same
+        // artifact at a specific version the user picked via a chip — do not override that choice.
+        // (Re-listing selectedId here re-ran this effect on every chip click and snapped back to
+        // the latest version from the last message.)
+        if (selectedId !== null) {
+            return;
+        }
+
+        hasAutoOpenedRef.current = true;
+        openArtifact(artifact.id, versionIndex);
+    }, [isLastMessage, completeArtifacts, registry, message.id, panelUserClosed, selectedId, openArtifact]);
+
     // Extract search results for legacy sources button
     const searchResults = useMemo(() => extractSearchResults(blocks), [blocks]);
 
@@ -296,16 +381,29 @@ const AssistantMessage = ({
                                 <div className="w-full" style={{ minHeight: '2em' }}>
                                     {/* Always show RenderBlocks if there's reasoning, content, or tool calls */}
                                     {hasContent || doNotShowEmptyMessage || message.reasoning || hasToolCall ? (
-                                        <RenderBlocks
-                                            blocks={blocks}
-                                            message={message}
-                                            isGenerating={isGenerating}
-                                            isLastMessage={isLastMessage}
-                                            handleLinkClick={handleLinkClick}
-                                            sourcesContainerRef={sourcesContainerRef}
-                                            messageContentContainerRef={markdownContainerRef}
-                                            reasoning={message.reasoning}
-                                        />
+                                        <>
+                                            <RenderBlocks
+                                                blocks={cleanedBlocks}
+                                                message={message}
+                                                isGenerating={isGenerating}
+                                                isLastMessage={isLastMessage}
+                                                handleLinkClick={handleLinkClick}
+                                                sourcesContainerRef={sourcesContainerRef}
+                                                messageContentContainerRef={markdownContainerRef}
+                                                reasoning={message.reasoning}
+                                            />
+                                            {hasArtifacts && (
+                                                <div className="flex flex-column gap-1 mt-1">
+                                                    {completeArtifacts.map((artifact) => (
+                                                        <ArtifactChip
+                                                            key={`${artifact.id}-${message.id}`}
+                                                            artifact={artifact}
+                                                            messageId={message.id}
+                                                        />
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </>
                                     ) : (
                                         <EmptyMessage />
                                     )}
@@ -341,6 +439,9 @@ const AssistantMessage = ({
                         {c('collider_2025:Info').t`Conversation encrypted`}
                     </div>
                 )}
+                {/* <p>{message?.content}</p>
+                <p>{message.toolCall}</p>
+                <p>{message.toolResult}</p> */}
             </div>
 
             {linkWarningModal.render && (
