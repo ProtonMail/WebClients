@@ -6,9 +6,11 @@
  */
 
 /**
- * Measures how often a file has no thumbnail handler at all
+ * Per-file upload throughput in kibibytes/s for files of 128KB or larger
  */
-export interface HttpsProtonMeDriveThumbnailNoHandlerTotalV1SchemaJson {
-  Labels: {};
+export interface HttpsProtonMeDriveSdkUploadLargeFileThroughputHistogramV1SchemaJson {
   Value: number;
+  Labels: {
+    blockCount: "single" | "few" | "many";
+  };
 }

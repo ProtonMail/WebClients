@@ -6,9 +6,11 @@
  */
 
 /**
- * Measures how often a file has no thumbnail handler at all
+ * Counter of sheets yjs drift detected.
  */
-export interface HttpsProtonMeDriveThumbnailNoHandlerTotalV1SchemaJson {
-  Labels: {};
+export interface HttpsProtonMeDocsSheetsYjsDriftDetectedTotalV2SchemaJson {
+  Labels: {
+    reason: "local-differs-from-yjs" | "local-change-not-observed-by-yjs" | "both";
+  };
   Value: number;
 }

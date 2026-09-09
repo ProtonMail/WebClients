@@ -34,7 +34,7 @@ import type { HttpsProtonMeDocsReadonlyModeDocumentsTotalV1SchemaJson } from './
 import type { HttpsProtonMeDocsRealtimeDisconnectErrorTotalV2SchemaJson } from './types/docs_realtime_disconnect_error_total_v2.schema';
 import type { HttpsProtonMeDocsRealtimeEditLatencyHistogramV1SchemaJson } from './types/docs_realtime_edit_latency_histogram_v1.schema';
 import type { HttpsProtonMeDocsRealtimeEditTimeToAckHistogramV1SchemaJson } from './types/docs_realtime_edit_time_to_ack_histogram_v1.schema';
-import type { HttpsProtonMeDocsSheetsYjsDriftDetectedTotalV1SchemaJson } from './types/docs_sheets_yjs_drift_detected_total_v1.schema';
+import type { HttpsProtonMeDocsSheetsYjsDriftDetectedTotalV2SchemaJson } from './types/docs_sheets_yjs_drift_detected_total_v2.schema';
 import type { HttpsProtonMeDocsSquashesLatencyHistogramV1SchemaJson } from './types/docs_squashes_latency_histogram_v1.schema';
 import type { HttpsProtonMeDocsSquashesTotalV1SchemaJson } from './types/docs_squashes_total_v1.schema';
 import type { HttpsProtonMeDocsSuggestionsCreatedTotalV1SchemaJson } from './types/docs_suggestions_created_total_v1.schema';
@@ -73,6 +73,10 @@ import type { HttpsProtonMeDriveSdkUploadErroringUsersTotalV1SchemaJson } from '
 import type { HttpsProtonMeDriveSdkUploadErrorsFileSizeHistogramV1SchemaJson } from './types/drive_sdk_upload_errors_file_size_histogram_v1.schema';
 import type { HttpsProtonMeDriveSdkUploadErrorsTotalV1SchemaJson } from './types/drive_sdk_upload_errors_total_v1.schema';
 import type { HttpsProtonMeDriveSdkUploadErrorsTransferSizeHistogramV1SchemaJson } from './types/drive_sdk_upload_errors_transfer_size_histogram_v1.schema';
+import type { HttpsProtonMeDriveSdkUploadLargeFileActiveTimeShareHistogramV1SchemaJson } from './types/drive_sdk_upload_large_file_active_time_share_histogram_v1.schema';
+import type { HttpsProtonMeDriveSdkUploadLargeFileThroughputHistogramV1SchemaJson } from './types/drive_sdk_upload_large_file_throughput_histogram_v1.schema';
+import type { HttpsProtonMeDriveSdkUploadSmallFileActiveTimeShareHistogramV1SchemaJson } from './types/drive_sdk_upload_small_file_active_time_share_histogram_v1.schema';
+import type { HttpsProtonMeDriveSdkUploadSmallFileThroughputHistogramV1SchemaJson } from './types/drive_sdk_upload_small_file_throughput_histogram_v1.schema';
 import type { HttpsProtonMeDriveSdkUploadSuccessRateTotalV1SchemaJson } from './types/drive_sdk_upload_success_rate_total_v1.schema';
 import type { HttpsProtonMeDriveSdkVolumeEventsSubscriptionsHistogramV1SchemaJson } from './types/drive_sdk_volume_events_subscriptions_histogram_v1.schema';
 import type { HttpsProtonMeDriveSyncErroringUsersTotalV1SchemaJson } from './types/drive_sync_erroring_users_total_v1.schema';
@@ -81,7 +85,6 @@ import type { HttpsProtonMeDriveSyncEventTotalV2SchemaJson } from './types/drive
 import type { HttpsProtonMeDriveSyncEventUnecessaryTotalV2SchemaJson } from './types/drive_sync_event_unecessary_total_v2.schema';
 import type { HttpsProtonMeDriveSyncItemsTotalV1SchemaJson } from './types/drive_sync_items_total_v1.schema';
 import type { HttpsProtonMeDriveSyncResyncItemsTotalV1SchemaJson } from './types/drive_sync_resync_items_total_v1.schema';
-import type { HttpsProtonMeDriveSyncResyncSuccessTotalV1SchemaJson } from './types/drive_sync_resync_success_total_v1.schema';
 import type { HttpsProtonMeDriveSyncResyncTotalV1SchemaJson } from './types/drive_sync_resync_total_v1.schema';
 import type { HttpsProtonMeDriveThumbnailErrorsTotalV1SchemaJson } from './types/drive_thumbnail_errors_total_v1.schema';
 import type { HttpsProtonMeDriveThumbnailNoHandlerTotalV1SchemaJson } from './types/drive_thumbnail_no_handler_total_v1.schema';
@@ -211,8 +214,6 @@ import type { EmailContentRenderTime } from './types/web_mail_performance_email_
 import type { EmailContentRenderTimeSeconds } from './types/web_mail_performance_email_content_render_time_second_histogram_v1.schema';
 import type { EmailListDisplayTime } from './types/web_mail_performance_email_list_display_time_histogram_v1.schema';
 import type { PageTransitionTime } from './types/web_mail_performance_page_transition_time_histogram_v1.schema';
-import type { WebPaymentsSubscriptionStepsTotal } from './types/web_payments_subscription_steps_total_v1.schema';
-import type { WebPaymentsSubscriptionTotal } from './types/web_payments_subscription_total_v1.schema';
 
 class Metrics extends MetricsBase {
     public core_ui_blocking_error_page_total: Counter<HttpsProtonMeCoreUiBlockingErrorPageTotalV1SchemaJson>;
@@ -265,7 +266,7 @@ class Metrics extends MetricsBase {
 
     public docs_realtime_edit_time_to_ack_histogram: Histogram<HttpsProtonMeDocsRealtimeEditTimeToAckHistogramV1SchemaJson>;
 
-    public docs_sheets_yjs_drift_detected_total: Counter<HttpsProtonMeDocsSheetsYjsDriftDetectedTotalV1SchemaJson>;
+    public docs_sheets_yjs_drift_detected_total: Counter<HttpsProtonMeDocsSheetsYjsDriftDetectedTotalV2SchemaJson>;
 
     public docs_squashes_latency_histogram: Histogram<HttpsProtonMeDocsSquashesLatencyHistogramV1SchemaJson>;
 
@@ -343,6 +344,14 @@ class Metrics extends MetricsBase {
 
     public drive_sdk_upload_errors_transfer_size_histogram: Histogram<HttpsProtonMeDriveSdkUploadErrorsTransferSizeHistogramV1SchemaJson>;
 
+    public drive_sdk_upload_large_file_active_time_share_histogram: Histogram<HttpsProtonMeDriveSdkUploadLargeFileActiveTimeShareHistogramV1SchemaJson>;
+
+    public drive_sdk_upload_large_file_throughput_histogram: Histogram<HttpsProtonMeDriveSdkUploadLargeFileThroughputHistogramV1SchemaJson>;
+
+    public drive_sdk_upload_small_file_active_time_share_histogram: Histogram<HttpsProtonMeDriveSdkUploadSmallFileActiveTimeShareHistogramV1SchemaJson>;
+
+    public drive_sdk_upload_small_file_throughput_histogram: Histogram<HttpsProtonMeDriveSdkUploadSmallFileThroughputHistogramV1SchemaJson>;
+
     public drive_sdk_upload_success_rate_total: Counter<HttpsProtonMeDriveSdkUploadSuccessRateTotalV1SchemaJson>;
 
     public drive_sdk_volume_events_subscriptions_histogram: Histogram<HttpsProtonMeDriveSdkVolumeEventsSubscriptionsHistogramV1SchemaJson>;
@@ -358,8 +367,6 @@ class Metrics extends MetricsBase {
     public drive_sync_items_total: Counter<HttpsProtonMeDriveSyncItemsTotalV1SchemaJson>;
 
     public drive_sync_resync_items_total: Counter<HttpsProtonMeDriveSyncResyncItemsTotalV1SchemaJson>;
-
-    public drive_sync_resync_success_total: Counter<HttpsProtonMeDriveSyncResyncSuccessTotalV1SchemaJson>;
 
     public drive_sync_resync_total: Counter<HttpsProtonMeDriveSyncResyncTotalV1SchemaJson>;
 
@@ -619,10 +626,6 @@ class Metrics extends MetricsBase {
 
     public mail_performance_page_transition_time_histogram: Histogram<PageTransitionTime>;
 
-    public payments_subscription_steps_total: Counter<WebPaymentsSubscriptionStepsTotal>;
-
-    public payments_subscription_total: Counter<WebPaymentsSubscriptionTotal>;
-
     constructor(requestService: IMetricsRequestService) {
         super(requestService);
 
@@ -763,8 +766,8 @@ class Metrics extends MetricsBase {
             );
 
         this.docs_sheets_yjs_drift_detected_total =
-            new Counter<HttpsProtonMeDocsSheetsYjsDriftDetectedTotalV1SchemaJson>(
-                { name: 'docs_sheets_yjs_drift_detected_total', version: 1 },
+            new Counter<HttpsProtonMeDocsSheetsYjsDriftDetectedTotalV2SchemaJson>(
+                { name: 'docs_sheets_yjs_drift_detected_total', version: 2 },
                 this.requestService
             );
 
@@ -979,6 +982,30 @@ class Metrics extends MetricsBase {
                 this.requestService
             );
 
+        this.drive_sdk_upload_large_file_active_time_share_histogram =
+            new Histogram<HttpsProtonMeDriveSdkUploadLargeFileActiveTimeShareHistogramV1SchemaJson>(
+                { name: 'drive_sdk_upload_large_file_active_time_share_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.drive_sdk_upload_large_file_throughput_histogram =
+            new Histogram<HttpsProtonMeDriveSdkUploadLargeFileThroughputHistogramV1SchemaJson>(
+                { name: 'drive_sdk_upload_large_file_throughput_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.drive_sdk_upload_small_file_active_time_share_histogram =
+            new Histogram<HttpsProtonMeDriveSdkUploadSmallFileActiveTimeShareHistogramV1SchemaJson>(
+                { name: 'drive_sdk_upload_small_file_active_time_share_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.drive_sdk_upload_small_file_throughput_histogram =
+            new Histogram<HttpsProtonMeDriveSdkUploadSmallFileThroughputHistogramV1SchemaJson>(
+                { name: 'drive_sdk_upload_small_file_throughput_histogram', version: 1 },
+                this.requestService
+            );
+
         this.drive_sdk_upload_success_rate_total = new Counter<HttpsProtonMeDriveSdkUploadSuccessRateTotalV1SchemaJson>(
             { name: 'drive_sdk_upload_success_rate_total', version: 1 },
             this.requestService
@@ -1017,11 +1044,6 @@ class Metrics extends MetricsBase {
 
         this.drive_sync_resync_items_total = new Counter<HttpsProtonMeDriveSyncResyncItemsTotalV1SchemaJson>(
             { name: 'drive_sync_resync_items_total', version: 1 },
-            this.requestService
-        );
-
-        this.drive_sync_resync_success_total = new Counter<HttpsProtonMeDriveSyncResyncSuccessTotalV1SchemaJson>(
-            { name: 'drive_sync_resync_success_total', version: 1 },
             this.requestService
         );
 
@@ -1711,16 +1733,6 @@ class Metrics extends MetricsBase {
 
         this.mail_performance_page_transition_time_histogram = new Histogram<PageTransitionTime>(
             { name: 'web_mail_performance_page_transition_time_histogram', version: 1 },
-            this.requestService
-        );
-
-        this.payments_subscription_steps_total = new Counter<WebPaymentsSubscriptionStepsTotal>(
-            { name: 'web_payments_subscription_steps_total', version: 1 },
-            this.requestService
-        );
-
-        this.payments_subscription_total = new Counter<WebPaymentsSubscriptionTotal>(
-            { name: 'web_payments_subscription_total', version: 1 },
             this.requestService
         );
     }
