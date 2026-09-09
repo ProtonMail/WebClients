@@ -5,6 +5,7 @@ import { AutoReplyDuration } from '@proton/shared/lib/constants';
 import { buildLumoMailConfig } from './registry';
 import { createFilterDefinition } from './skills/filters/createFilter';
 import { updateFilterDefinition } from './skills/filters/updateFilter';
+import { addContactDefinition } from './skills/organise/addContact';
 import { applyLabelsDefinition } from './skills/organise/applyLabels';
 import { createFolderDefinition, createLabelDefinition } from './skills/organise/createEntity';
 import { moveEmailsDefinition } from './skills/organise/moveEmails';
@@ -146,6 +147,10 @@ const TOOL_PAYLOADS = [
     payloads(createLabelDefinition, [{ reference: 'label-m3n4p5', name: 'Receipts' }]),
     payloads(snoozeEmailsDefinition, [undefined]),
     payloads(renameFolderDefinition, [undefined]),
+    payloads(addContactDefinition, [
+        { reference: 'contact-k9d2s1', name: 'Ada Lovelace', email: 'ada@example.com' },
+        { name: 'Ada Lovelace' },
+    ]),
     payloads(createFilterDefinition, [{ reference: 'filter-q1w2e3', name: 'Travel' }]),
     payloads(updateFilterDefinition, [undefined]),
     payloads(readSettingsDefinition, [
