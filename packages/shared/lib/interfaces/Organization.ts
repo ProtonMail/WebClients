@@ -1,5 +1,3 @@
-import type { PLANS } from '@proton/payments/core/constants';
-
 import type { Product } from '../ProductEnum';
 import type {
     INVOICE_EMAIL_STATE,
@@ -10,6 +8,7 @@ import type {
     OrganizationPlanFlag,
     SETTINGS_PROTON_SENTINEL_STATE,
 } from '../constants';
+import type { PLANS } from '../payments/constants';
 import type { MEMBER_STATE } from './Member';
 import type { PasswordPolicySettings } from './PasswordPolicy';
 

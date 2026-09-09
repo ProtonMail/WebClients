@@ -1,8 +1,8 @@
-import { CYCLE, PLANS } from '@proton/payments/core/constants';
-import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { CYCLE, PLANS } from '@proton/shared/lib/payments/constants';
+import type { Subscription } from '@proton/shared/lib/payments/subscription/interface';
+import format from '@proton/shared/lib/subscription/format';
 
-import format from '../../lib/subscription/format';
+import { buildSubscription } from '../testing/buildSubscription';
 
 describe('Subscription Format', () => {
     let subscription: Subscription;

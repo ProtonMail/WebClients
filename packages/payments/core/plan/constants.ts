@@ -1,4 +1,1 @@
-export enum PlanState {
-    Unavailable = 0,
-    Available = 1,
-}
+export * from '@proton/shared/lib/payments/plan/constants';
