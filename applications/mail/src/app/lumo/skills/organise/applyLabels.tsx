@@ -10,10 +10,17 @@ import type {
     ToolHandler,
 } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
+import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
 
 import { resolveElements, resolveTypedId } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
-import { emailIds, hasEmailSelection, referenceName, renderEmailSelectionBody } from './emailSelection';
+import {
+    emailIds,
+    emailSelectionSentence,
+    hasEmailSelection,
+    referenceName,
+    renderEmailSelectionBody,
+} from './emailSelection';
 
 export interface ApplyLabelsParams {
     ids: string[];
@@ -81,8 +88,18 @@ const labelNames = (action: ActionRequest, labels: ReferenceLabels): string =>
  *  tool description exists to prevent. */
 export const applyLabelsCardRenderer: CardRenderer = {
     icon: IcTag,
-    title: () => c('Title').t`Apply labels`,
-    subtitle: (action, labels) => labelNames(action, labels) || undefined,
+    sentence: (action, labels) =>
+        emailSelectionSentence(action, (emails) => {
+            const namedLabels = labelNames(action, labels);
+            if (!namedLabels) {
+                // translator: labels the model left out, e.g. "Label 3 emails"
+                return c('Info').jt`Label ${emails}`;
+            }
+            const names = sentenceValue(namedLabels);
+
+            // translator: "as", never an arrow: an arrow would read as moving. e.g. "Label 3 emails as Receipts"
+            return c('Info').jt`Label ${emails} as ${names}`;
+        }),
     renderBody: renderEmailSelectionBody,
     canApply: hasEmailSelection,
     detail: (action, labels) => {

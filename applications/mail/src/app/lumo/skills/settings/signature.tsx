@@ -153,7 +153,8 @@ const SignatureBody = ({ params, onChange }: CardBodyProps) => (
 
 export const changeSignatureCardRenderer: CardRenderer = {
     icon: IcPenSquare,
-    title: () => c('Title').t`Set signature`,
+    // translator: the signature itself is the field below, so the sentence names only the action
+    sentence: () => c('Info').t`Set your signature`,
     renderBody: (props) => <SignatureBody {...props} />,
     // The settled tile is handed the params that ran, so this names what was applied, not what was offered.
     detail: (action) => signatureText(action).trim().split('\n')[0] || undefined,

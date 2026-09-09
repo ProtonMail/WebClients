@@ -36,7 +36,7 @@ export const FilePreviewAssistant = ({ config, onClose }: Props) => {
     const {
         items,
         isBusy,
-        isAtToolLimit,
+        toolLimit,
         hasConversation,
         send,
         stop,
@@ -72,7 +72,7 @@ export const FilePreviewAssistant = ({ config, onClose }: Props) => {
                 <LumoAgentPanel
                     items={items}
                     isBusy={isBusy}
-                    isAtToolLimit={isAtToolLimit}
+                    toolLimit={toolLimit}
                     cardRenderers={config.cardRenderers}
                     serverToolMeta={config.serverToolMeta}
                     onSend={send}

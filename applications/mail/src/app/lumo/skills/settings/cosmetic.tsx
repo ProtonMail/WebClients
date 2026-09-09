@@ -293,10 +293,23 @@ const chosenOption = (params: Record<string, any>): PickerOption | undefined => 
     return optionsFor(settingOf(params)).find((option) => option.value === value);
 };
 
+/** One sentence per setting, so the card names what it is about to change rather than its category. */
+const settingSentences = (): Record<CosmeticSetting, string> => ({
+    [CosmeticSetting.LAYOUT]: c('Info').t`Change your mailbox layout`,
+    [CosmeticSetting.CONVERSATION_GROUPING]: c('Info').t`Change how your mail is grouped`,
+    [CosmeticSetting.DENSITY]: c('Info').t`Change your list density`,
+    [CosmeticSetting.THEME]: c('Info').t`Change your theme`,
+});
+
 export const changeSettingsCardRenderer: CardRenderer = {
     icon: IcCogWheel,
-    title: () => c('Title').t`Change display setting`,
-    subtitle: (action) => settingLabel(settingOf(action)) || undefined,
+    sentence: (action) => {
+        const setting = settingOf(action);
+
+        // A setting the params do not name is a real case (they come from the model), so the sentence
+        // falls back rather than claiming a change it cannot describe.
+        return setting ? settingSentences()[setting] : c('Info').t`Change a display setting`;
+    },
     renderBody: (props) => {
         const setting = settingOf(props.params);
         return (

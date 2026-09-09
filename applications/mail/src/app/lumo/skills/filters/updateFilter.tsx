@@ -5,11 +5,12 @@ import { IcFilter } from '@proton/icons/icons/IcFilter';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
+import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
 
 import { PROTON_SIEVE_DIALECT_REFERENCE } from '../../guides/sieveGuide';
 import { resolveTypedId } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
-import { referenceName } from '../organise/emailSelection';
+import { recordedName } from '../organise/emailSelection';
 import { FilterField, hasEveryFilterFieldFilled, proposedFilterName, renderFilterFields } from './filterCard';
 
 export interface UpdateFilterParams {
@@ -71,8 +72,16 @@ const createUpdateFilterHandler =
 
 export const updateFilterCardRenderer: CardRenderer = {
     icon: IcFilter,
-    title: () => c('Title').t`Update filter`,
-    subtitle: (action, labels) => referenceName(action.filter, labels),
+    sentence: (action, labels) => {
+        const named = recordedName(action.filter, labels);
+        if (!named) {
+            return c('Info').t`Update this filter`;
+        }
+        const filter = sentenceValue(named);
+
+        // translator: the filter being rewritten; its name and script are the fields below, e.g. "Update the filter Receipts"
+        return c('Info').jt`Update the filter ${filter}`;
+    },
     renderBody: renderFilterFields,
     canApply: hasEveryFilterFieldFilled,
     detail: proposedFilterName,

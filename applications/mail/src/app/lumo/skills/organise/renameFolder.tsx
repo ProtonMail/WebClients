@@ -10,10 +10,11 @@ import type {
 } from '@proton/llm/lib/lumoAgent/contracts/types';
 import TextFieldBody from '@proton/llm/lib/lumoAgent/ui/cardBodies/TextFieldBody';
 import type { CardBodyProps, CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
+import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
 
 import { resolveTypedId } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
-import { referenceName } from './emailSelection';
+import { recordedName, referenceName } from './emailSelection';
 
 export interface RenameFolderParams {
     folder: string;
@@ -72,8 +73,16 @@ const currentFolderName = (action: ActionRequest, labels: ReferenceLabels): stri
 
 const renameFolderCardRenderer: CardRenderer = {
     icon: IcPencil,
-    title: () => c('Title').t`Rename folder`,
-    subtitle: currentFolderName,
+    sentence: (action, labels) => {
+        const named = recordedName(action.folder, labels);
+        if (!named) {
+            return c('Info').t`Rename this folder`;
+        }
+        const folder = sentenceValue(named);
+
+        // translator: the folder being renamed; the new name is the field below, e.g. "Rename Travel to…"
+        return c('Info').jt`Rename ${folder} to…`;
+    },
     renderBody: ({ params, onChange }: CardBodyProps) => (
         <TextFieldBody
             label={c('Label').t`New name`}

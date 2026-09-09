@@ -1,5 +1,6 @@
 import type { ActionRequest } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
+import sentenceText from '@proton/llm/lib/lumoAgent/ui/sentenceText';
 
 import type { MailToolDeps } from '../../toolModule';
 import {
@@ -75,8 +76,19 @@ describe('applyLabelsCardRenderer', () => {
 
     // An arrow reads as "moved into Receipts", the exact confusion the tool description exists to prevent.
     it('names the labels without an arrow, on the card and on the settled tile', () => {
-        expect(applyLabelsCardRenderer.subtitle?.(action, labels)).toBe('Receipts, Invoices');
+        const sentence = sentenceText(applyLabelsCardRenderer.sentence(action, labels));
+
+        expect(sentence).toContain('Receipts, Invoices');
+        expect(sentence).not.toContain('→');
         expect(applyLabelsCardRenderer.detail?.(action, labels)).toBe('2 emails · Receipts, Invoices');
+    });
+
+    // The params schema has no `minItems` and `resolveLabelChanges` only rejects an empty list at apply
+    // time, so it reaches the card; the sentence must not read "Label 2 emails as " with nothing named.
+    it('drops the "as" clause when the action names no labels', () => {
+        const unlabelled = { ...action, labels: [] } as ActionRequest;
+
+        expect(sentenceText(applyLabelsCardRenderer.sentence(unlabelled, labels)).trimEnd()).toBe('Label 2 emails');
     });
 });
 

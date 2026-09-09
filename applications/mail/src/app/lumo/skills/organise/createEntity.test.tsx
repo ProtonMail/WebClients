@@ -105,10 +105,10 @@ describe('createFolderCardRenderer', () => {
     it('names the parent the folder nests under, and says nothing when that name was never recorded', () => {
         const action: ActionRequest = { type: 'create_folder', name: 'Hotels', parentId: 'folder-x7b2q1' };
 
-        expect(createFolderCardRenderer.subtitle?.(action, { 'folder-x7b2q1': { title: 'Travel' } })).toBe(
+        expect(createFolderCardRenderer.detail?.(action, { 'folder-x7b2q1': { title: 'Travel' } })).toBe(
             'Hotels in Travel'
         );
-        expect(createFolderCardRenderer.subtitle?.(action, {})).toBe('Hotels');
+        expect(createFolderCardRenderer.detail?.(action, {})).toBe('Hotels');
     });
 });
 
