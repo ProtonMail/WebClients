@@ -12,15 +12,14 @@ import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
+import { useOnCompose } from '../../containers/ComposeProvider';
+import { getLabelName } from '../../helpers/labels';
+import { ComposeTypes } from '../../hooks/composer/useCompose';
 import type { ElementsStructure } from '../../hooks/mailbox/useElements';
 import type { MailboxActions } from '../../router/interface';
 import { selectHasFocusedComposer } from '../../store/composers/composerSelectors';
 import { selectElementID } from '../../store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from '../../store/hooks';
-
-import { useOnCompose } from '../../containers/ComposeProvider';
-import { getLabelName } from '../../helpers/labels';
-import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { layoutActions } from '../../store/layout/layoutSlice';
 import { selectLayoutIsExpanded } from '../../store/layout/layoutSliceSelectors';
 import { useCategoriesOnboarding } from '../categoryView/categoriesOnboarding/CategoriesOnboardingContext';
@@ -32,11 +31,12 @@ interface Props {
     labelID: string;
     elementsData: ElementsStructure;
     actions: MailboxActions;
+    assistantButton?: ReactNode;
     settingsButton?: ReactNode;
     toolbar?: ReactNode | undefined;
 }
 
-const MailHeader = ({ labelID, elementsData, actions, toolbar, settingsButton }: Props) => {
+const MailHeader = ({ labelID, elementsData, actions, toolbar, assistantButton, settingsButton }: Props) => {
     const elementID = useMailSelector(selectElementID);
 
     const [labels = []] = useLabels();
@@ -83,6 +83,7 @@ const MailHeader = ({ labelID, elementsData, actions, toolbar, settingsButton }:
                 expanded={expanded}
                 onToggleExpand={onToggleExpand}
                 isSmallViewport={breakpoints.viewportWidth['<=small']}
+                assistantButton={assistantButton}
                 settingsButton={settingsButton}
                 floatingButton={
                     <FloatingButton
