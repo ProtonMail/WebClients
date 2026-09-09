@@ -28,8 +28,6 @@ import { changeSearchParams } from '@proton/shared/lib/helpers/url';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import clsx from '@proton/utils/clsx';
 
-import AddressInput from '../../composer/addresses/AddressInput';
-
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 import {
     categoryIDFromUrl,
@@ -38,11 +36,13 @@ import {
     keywordToString,
     setFilterInUrl,
 } from '../../../helpers/mailboxUrl';
+import AddressInput from '../../composer/addresses/AddressInput';
 import AddressesInput from '../../composer/addresses/AddressesInput';
 import EncryptedSearchField from './AdvancedSearchFields/EncryptedSearchField';
 import LocationField from './AdvancedSearchFields/LocationField';
 import SearchField from './AdvancedSearchFields/SearchField';
 import { ContentSearchVersionToggle } from './ContentSearchVersionToggle';
+import { LastSearchSource } from './LastSearchSource';
 
 interface SearchModel {
     keyword: string;
@@ -273,6 +273,7 @@ const AdvancedSearch = ({
                 />
             </div>
             <div className="pt-4 px-5 pb-0">
+                <LastSearchSource />
                 {showEncryptedSearch && <EncryptedSearchField esIndexingProgressState={esIndexingProgressState} />}
                 <div>
                     <LocationField
