@@ -8,13 +8,7 @@ import { selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatus
 import { useSortedPagedParticipants } from '../../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useElementSize } from '../../../hooks/useElementSize';
 import { useFittingPageSize } from '../../../hooks/useFittingPageSize';
-import { useIsLargerThanMd } from '../../../hooks/useIsLargerThanMd';
-import {
-    GRID_GAP,
-    TILE_ASPECT_RATIO,
-    balancedGridLayout,
-    calculateBestGridLayout,
-} from '../../../utils/calculateBestGridLayout';
+import { GRID_GAP, TILE_ASPECT_RATIO, calculateBestGridLayout } from '../../../utils/calculateBestGridLayout';
 import { ParticipantTile } from './shared/ParticipantTile/ParticipantTile';
 import { ScreenShareTile } from './shared/ScreenShareTile';
 
@@ -31,23 +25,19 @@ export const ParticipantGalleryLayout = () => {
 
     const size = useElementSize(containerRef);
 
-    const isNarrow = !useIsLargerThanMd();
+    const { viewportWidth } = useActiveBreakpoint();
 
-    // Narrow screens use a balanced grid of square tiles (e.g. 4 → 2×2); wider screens maximize
-    // 16:9 tiles for the available shape. Capacity and render share this so the page size reflects
-    // the tiles that are actually drawn.
+    const isNarrow = viewportWidth['<=small'];
     const tileAspectRatio = isNarrow ? 1 : TILE_ASPECT_RATIO;
     const getLayout = useCallback(
         (count: number) =>
-            isNarrow
-                ? balancedGridLayout(count)
-                : calculateBestGridLayout(count, {
-                      width: size.width,
-                      height: size.height,
-                      gap: GRID_GAP,
-                      tileAspectRatio: TILE_ASPECT_RATIO,
-                  }),
-        [isNarrow, size.width, size.height]
+            calculateBestGridLayout(count, {
+                width: size.width,
+                height: size.height,
+                gap: GRID_GAP,
+                tileAspectRatio,
+            }),
+        [tileAspectRatio, size.width, size.height]
     );
 
     useFittingPageSize(size, tileAspectRatio, getLayout, screenShareTileCount);
@@ -85,8 +75,6 @@ export const ParticipantGalleryLayout = () => {
             gridTemplateRows: `repeat(${rows}, 1fr)`,
         };
     }, [isNarrow, size.width, size.height, cols, rows]);
-
-    const { viewportWidth } = useActiveBreakpoint();
 
     const getViewSize = (numberOfTiles: number) => {
         if (viewportWidth.xsmall) {
