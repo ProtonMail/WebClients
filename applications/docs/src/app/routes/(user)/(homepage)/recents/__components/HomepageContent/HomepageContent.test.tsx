@@ -149,10 +149,10 @@ describe('HomepageContent', () => {
           isRenameSaving: false,
           move: jest.fn(),
           share: jest.fn(),
-          onTrashed: jest.fn(),
+          subscribeToTrashed: jest.fn(),
           currentlyTrashingId: undefined,
           restore: jest.fn(),
-          onRestored: jest.fn(),
+          subscribeToRestored: jest.fn(),
           currentlyRestoringId: undefined,
           deletePermanently: jest.fn(),
         }}

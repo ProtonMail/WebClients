@@ -5,7 +5,7 @@ import { getDrive } from '@proton/drive'
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useRouteMatch } from 'react-router'
 import { HOMEPAGE_TRASH_PATH } from '../../../__utils/homepage-paths'
 import {
@@ -45,29 +45,36 @@ export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps)
   const [addresses] = useAddresses()
   const [type] = useType()
 
-  const isTrashRoute = Boolean(useRouteMatch(HOMEPAGE_TRASH_PATH))
-
   const {
     recentDocuments,
     recentDocumentsInitialized,
     isRecentsUpdating,
-    updateRecentDocuments,
+    fetchRecentDocuments,
     updateRenamedDocumentInCache,
     removeDocument,
     recentsListener,
   } = useRecents(drive)
   const { fetchTrashed, trashedDocumentItems, isTrashLoading, trashedListener } = useTrashed(drive)
 
-  useEffect(
-    function loadData() {
-      if (isTrashRoute) {
-        void fetchTrashed()
-      } else {
-        void updateRecentDocuments()
-      }
-    },
-    [fetchTrashed, isTrashRoute, updateRecentDocuments],
-  )
+  const isTrashRoute = Boolean(useRouteMatch(HOMEPAGE_TRASH_PATH))
+
+  const abortLoad = useRef<AbortController>()
+  const loadData = useCallback(() => {
+    abortLoad.current?.abort()
+    abortLoad.current = new AbortController()
+
+    if (isTrashRoute) {
+      return fetchTrashed(abortLoad.current.signal)
+    } else {
+      return fetchRecentDocuments(abortLoad.current.signal)
+    }
+  }, [isTrashRoute, fetchTrashed, fetchRecentDocuments])
+
+  // Will reload it each time we change between routes
+  useEffect(() => {
+    void loadData()
+    return () => abortLoad.current?.abort()
+  }, [loadData])
 
   // Loading it once here to avoid doing it every time we subscribe
   const [myFilesNode, setMyFilesNode] = useState<NodeEntity>()
@@ -144,12 +151,12 @@ export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps)
       state,
       setRecentsSort,
       setSearch,
-      updateRecentDocuments,
+      updateRecentDocuments: loadData,
       updateRenamedDocumentInCache,
       isRecentsUpdating,
       type,
     }),
-    [state, setRecentsSort, setSearch, updateRecentDocuments, updateRenamedDocumentInCache, isRecentsUpdating, type],
+    [state, setRecentsSort, setSearch, loadData, updateRenamedDocumentInCache, isRecentsUpdating, type],
   )
 
   return <HomepageViewContext.Provider value={value}>{children}</HomepageViewContext.Provider>
