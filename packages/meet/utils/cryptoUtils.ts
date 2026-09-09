@@ -130,15 +130,7 @@ export const encryptMeetingName = async (meetingName: string, sessionKey: Sessio
     return encryptedMeetingName;
 };
 
-export const encryptDisplayName = async (displayName: string, sessionKey: SessionKey) => {
-    const displayNameEncryptionKey = await deriveEncryptionKeyFromSessionKey(sessionKey);
-
-    const encryptedDisplayName = await encryptDisplayNameWithKey(displayNameEncryptionKey, displayName);
-
-    return encryptedDisplayName;
-};
-
-export const encryptMeetingPassword = async (password: string, primaryUserKey: PrivateKeyReference) => {
+const encryptMeetingPassword = async (password: string, primaryUserKey: PrivateKeyReference) => {
     const result = await CryptoProxy.encryptMessage({
         textData: password,
         encryptionKeys: [primaryUserKey],
@@ -173,7 +165,7 @@ export const decryptMeetingPassword = async (
     return result.data;
 };
 
-export const encryptSessionKey = async (sessionKey: SessionKey, passwordHash: string) => {
+const encryptSessionKey = async (sessionKey: SessionKey, passwordHash: string) => {
     const result = await CryptoProxy.encryptSessionKey({
         ...sessionKey,
         passwords: [passwordHash],
@@ -183,7 +175,7 @@ export const encryptSessionKey = async (sessionKey: SessionKey, passwordHash: st
     return result.toBase64();
 };
 
-export const hashPasswordWithSalt = async (password: string, salt?: string) => {
+const hashPasswordWithSalt = async (password: string, salt?: string) => {
     const saltForHash = salt || generateBcryptSalt();
 
     const passwordHash = await computeBcryptHash(password, saltForHash);

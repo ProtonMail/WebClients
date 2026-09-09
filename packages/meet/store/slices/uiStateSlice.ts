@@ -27,12 +27,12 @@ export enum PermissionPromptStatus {
     CLOSED = 'CLOSED',
 }
 
-export enum ParticipantListTabs {
+enum ParticipantListTabs {
     WaitingRoom,
     AllParticipants,
 }
 
-export interface UIState {
+interface UIState {
     meetingReadyPopupOpen: boolean;
     emojiReactionPopupOpen: boolean;
     showDuration: boolean;
@@ -161,11 +161,8 @@ export const {
     toggleSideBarState,
     setParticipantListTab,
     openWaitingRoomSideBar,
-    closeSideBar,
-    closeAllSideBars,
     togglePopupState,
     setPopupStateValue,
-    closeAllPopups,
     setPermissionPromptStatus,
     setNoDeviceDetected,
     resetUiState,

@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { UpsellModalTypes } from '../../types/types';
 import type { MeetState } from '../store';
 
-export interface MeetAppState {
+interface MeetAppState {
     previousMeetingLink: string | null;
     upsellModalType: UpsellModalTypes | null;
     invalidMeetingLinkModalOpen: boolean;

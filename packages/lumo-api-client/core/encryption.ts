@@ -9,21 +9,13 @@ export const DEFAULT_LUMO_PUB_KEY = LUMO_GPG_PUB_KEY;
 
 export { decryptString, decryptUint8Array, encryptString };
 
-export function base64StringToUint8Array(base64: string): Uint8Array<ArrayBuffer> {
+function base64StringToUint8Array(base64: string): Uint8Array<ArrayBuffer> {
     const binaryString = atob(base64);
     const bytes = new Uint8Array(binaryString.length);
     for (let i = 0; i < binaryString.length; i++) {
         bytes[i] = binaryString.charCodeAt(i);
     }
     return bytes;
-}
-
-export function uint8ArrayToBase64String(bytes: Uint8Array<ArrayBuffer>): string {
-    let binaryString = '';
-    for (let i = 0; i < bytes.length; i++) {
-        binaryString += String.fromCharCode(bytes[i]);
-    }
-    return btoa(binaryString);
 }
 
 /**

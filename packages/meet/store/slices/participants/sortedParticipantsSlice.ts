@@ -152,7 +152,7 @@ export const selectPage = (state: MeetState) => {
     return state.sortedParticipants.page;
 };
 
-export const selectPageSize = (state: MeetState) => {
+const selectPageSize = (state: MeetState) => {
     return state.sortedParticipants.pageSize;
 };
 

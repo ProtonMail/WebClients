@@ -1,6 +1,6 @@
 import { Role, type Turn } from './types';
 
-export const TITLE_MAX_LINES = 4;
+const TITLE_MAX_LINES = 4;
 const ATTACHMENT_LINE_MAX_CHARS = 256;
 const ATTACHMENT_HEAD_LINES = 3;
 const ATTACHMENT_TAIL_LINES = 3;
