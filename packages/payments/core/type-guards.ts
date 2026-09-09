@@ -4,7 +4,6 @@ import type {
     CreateCardDetailsBackend,
     ExistingPaymentMethod,
     ExtendedTokenPayment,
-    FreeSubscription,
     PayPalDetails,
     PaymentMethodApplePay,
     PaymentMethodGooglePay,
@@ -22,7 +21,6 @@ import type {
     V5PaymentToken,
     V5Payments,
 } from './interface';
-import type { MaybeFreeSubscription, Subscription } from './subscription/interface';
 
 export function isTokenPayment(
     payment:
@@ -120,13 +118,8 @@ export function isSepaDetails(obj: any): obj is SepaDetails {
     return props.every((prop) => typeof obj[prop] === 'string');
 }
 
-export function isFreeSubscription(obj: any): obj is FreeSubscription {
-    return !!obj && obj.isFreeSubscription && Object.keys(obj).filter((key) => obj[key] !== undefined).length === 1;
-}
+export { isFreeSubscription, isPaidSubscription } from '@proton/shared/lib/payments/type-guards';
 
-export function isPaidSubscription(subscription: MaybeFreeSubscription | null): subscription is Subscription {
-    return !!subscription && !isFreeSubscription(subscription);
-}
 export function isTransaction(obj: any): obj is Transaction {
     return !!obj && !!obj.TransactionID;
 }

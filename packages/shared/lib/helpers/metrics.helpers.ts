@@ -1,7 +1,6 @@
-import { CYCLE } from '@proton/payments/core/constants';
-import type { Cycle } from '@proton/payments/core/interface';
-
 import type { UserModel } from '../interfaces';
+import { CYCLE } from '../payments/constants';
+import type { Cycle } from '../payments/interface';
 import { getUserCreationDate, getUserDaysSinceCreation } from '../user/helpers';
 
 export const getAccountAgeForDimension = (user: UserModel) => {

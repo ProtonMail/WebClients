@@ -74,7 +74,6 @@
     "peerDependencies": {
         "@proton/key-transparency": "workspace:^",
         "@proton/metrics": "workspace:^",
-        "@proton/payments": "workspace:^",
         "electron": "*"
     },
     "peerDependenciesMeta": {
@@ -82,9 +81,6 @@
             "optional": true
         },
         "@proton/metrics": {
-            "optional": true
-        },
-        "@proton/payments": {
             "optional": true
         },
         "electron": {

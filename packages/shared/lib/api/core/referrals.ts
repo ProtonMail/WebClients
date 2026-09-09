@@ -1,8 +1,7 @@
-import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
-import type { CYCLE, PLANS } from '@proton/payments/core/constants';
-import type { Currency } from '@proton/payments/core/interface';
-
 import type { ReferralData } from '../../interfaces';
+import type { BillingAddress } from '../../payments/billing-address';
+import type { CYCLE, PLANS } from '../../payments/constants';
+import type { Currency } from '../../payments/interface';
 
 interface GetReferralsProps {
     Offset?: number;
