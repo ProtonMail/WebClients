@@ -88,7 +88,7 @@ const PaymentMethodSelector = ({
         <InputFieldStackedGroup classname="my-4">
             {showSavedPaymentMethods ? (
                 <InputFieldStacked isGroupElement>
-                    <SavedPaymentMethodDetails type={savedMethod.Type} details={savedMethod.Details} />
+                    <SavedPaymentMethodDetails method={savedMethod} />
                 </InputFieldStacked>
             ) : (
                 <AvailablePaymentMethods

@@ -10,15 +10,13 @@ import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type {
     PayPalDetails,
     SavedCardDetails,
-    SavedMethodDetails,
     SavedMethodType,
+    SavedPaymentMethod,
     SepaDetails,
 } from '@proton/payments/core/interface';
-import { isPaypalDetails, isSavedCardDetails, isSepaDetails } from '@proton/payments/core/type-guards';
 
 interface Props {
-    type: SavedMethodType;
-    details: SavedMethodDetails;
+    method: SavedPaymentMethod;
 }
 
 const CardRow = ({ details: { Brand, ExpMonth, ExpYear, Last4 } }: { details: SavedCardDetails }) => {
@@ -59,15 +57,19 @@ const SepaRow = ({ details }: { details: SepaDetails }) => {
     );
 };
 
-const renderByType: Partial<Record<SavedMethodType, (details: SavedMethodDetails) => ReactNode>> = {
-    [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]: (details) =>
-        isSavedCardDetails(details) ? <CardRow details={details} /> : null,
-    [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL]: (details) =>
-        isPaypalDetails(details) ? <PaypalRow details={details} /> : null,
-    [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: (details) =>
-        isSepaDetails(details) ? <SepaRow details={details} /> : null,
+const renderByType: {
+    [T in SavedMethodType]?: (method: Extract<SavedPaymentMethod, { Type: T }>) => ReactNode;
+} = {
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]: (method) => <CardRow details={method.Details} />,
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL]: (method) => <PaypalRow details={method.Details} />,
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: (method) => <SepaRow details={method.Details} />,
 };
 
-const SavedPaymentMethodDetails = ({ type, details }: Props) => renderByType[type]?.(details) ?? null;
+const SavedPaymentMethodDetails = ({ method }: Props) => {
+    // Type already discriminates Details, but TS won't carry that through the index access
+    const renderMethod = renderByType[method.Type] as ((method: SavedPaymentMethod) => ReactNode) | undefined;
+
+    return renderMethod?.(method) ?? null;
+};
 
 export default SavedPaymentMethodDetails;
