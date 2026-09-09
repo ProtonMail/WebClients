@@ -60,7 +60,7 @@ describe('useRecents', () => {
     })
 
     await act(async () => {
-      await result.current.updateRecentDocuments()
+      await result.current.fetchRecentDocuments(new AbortController().signal)
     })
 
     const storedDocuments = useRecentsStore.getState().recentDocuments
