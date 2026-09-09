@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { isGeneratedImageAttachment } from '../../lib/imageAttachment';
-import { getMessageContent } from '../../messageHelpers';
+import { getMessageDisplayContent } from '../../messageHelpers';
 import type { AttachmentMap } from '../../redux/slices/core/attachments';
 import type { Message } from '../../types';
 
@@ -44,7 +44,7 @@ const messageHasImages = (message: Message, attachments: AttachmentMap): boolean
 
 export const getConversationPreview = (conversationMessages: Message[], attachments: AttachmentMap): string => {
     for (const message of conversationMessages) {
-        const rawContent = getMessageContent(message);
+        const rawContent = getMessageDisplayContent(message);
         const content = stripMarkdownForPreview(rawContent);
         if (content) {
             return truncatePreview(content);

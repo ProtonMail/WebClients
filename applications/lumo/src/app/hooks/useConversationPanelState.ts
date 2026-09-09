@@ -6,12 +6,11 @@ import { useRightPanel } from '../providers/RightPanelProvider';
 import type { Attachment, Message } from '../types';
 
 type PanelState = {
-    type: 'sources' | 'files' | 'file-preview' | 'html-preview' | null;
+    type: 'sources' | 'files' | 'file-preview' | null;
     message?: Message;
     filterMessage?: Message;
     autoShowDriveBrowser?: boolean;
     attachment?: Attachment;
-    htmlContent?: string;
 };
 
 export const useConversationPanelState = () => {
@@ -79,10 +78,6 @@ export const useConversationPanelState = () => {
         [open]
     );
 
-    const handleOpenHtmlPreview = useCallback((html: string) => {
-        setOpenPanel({ type: 'html-preview', htmlContent: html });
-    }, []);
-
     const handleClearFilter = useCallback(() => {
         setOpenPanel((prev) => {
             return prev.type === 'files' ? { type: 'files', filterMessage: undefined } : prev;
@@ -97,7 +92,6 @@ export const useConversationPanelState = () => {
         handleShowDriveBrowser,
         handleClosePanel,
         handleOpenFilePreview,
-        handleOpenHtmlPreview,
         handleClearFilter,
     };
 };

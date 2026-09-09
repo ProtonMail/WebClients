@@ -3,6 +3,9 @@ import { useRef } from 'react';
 import { useApi } from '@proton/app-context/useApi';
 import type { User } from '@proton/shared/lib/interfaces';
 
+import { buildArtifactActionLlmPrompt } from '../components/Conversation/artifact/artifactActionPrompts';
+import { CREATE_ARTIFACT_TOOL_NAME } from '../components/Conversation/artifact/createArtifactTool';
+import type { ArtifactType } from '../components/Conversation/artifact/parseArtifacts';
 import {
     formatPersonalization,
     regenerateMessage,
@@ -12,6 +15,7 @@ import {
 import type { AesGcmCryptoKey } from '../crypto/types';
 import { useLumoPlan } from '../hooks/useLumoPlan';
 import { addContextToMessages, fillAttachmentData } from '../llm/attachments';
+import { addToolCallBlock, addToolResultBlock } from '../messageHelpers';
 import { buildLinearChain } from '../messageTree';
 import { useGhostChat } from '../providers/GhostChatProvider';
 import { useModelTier } from '../providers/ModelTierProvider';
@@ -24,12 +28,19 @@ import {
 } from '../redux/selectors';
 import { clearProvisionalAttachments, upsertAttachment } from '../redux/slices/core/attachments';
 import type { MessageMap } from '../redux/slices/core/messages';
-import { addMessage, createDate, newMessageId } from '../redux/slices/core/messages';
+import { addMessage, createDate, newMessageId, pushMessageRequest } from '../redux/slices/core/messages';
 import type { ConversationError } from '../redux/slices/meta/errors';
 import { useActionErrorHandler } from '../services/errors/useActionErrorHandler';
 import { OPERATION_IN_PROGRESS_MESSAGE, generationRegistry } from '../services/generation/generationRegistry';
 import { SearchService } from '../services/search/searchService';
-import type { ActionParams, Attachment, ErrorContext, ImageGenerationOptions, RetryStrategy } from '../types';
+import type {
+    ActionParams,
+    ArtifactActionMeta,
+    Attachment,
+    ErrorContext,
+    ImageGenerationOptions,
+    RetryStrategy,
+} from '../types';
 import { type ConversationId, type Message, Role, type Space, type SpaceId, getSpaceDek } from '../types';
 import {
     fillAttachmentFromSearchIndex,
@@ -66,8 +77,10 @@ export type HandleSendMessage = (
     newMessage: string,
     isWebSearchButtonToggled: boolean,
     imageOptions?: ImageGenerationOptions,
+    artifactModeActive?: boolean,
     isFromQueryParam?: boolean
 ) => Promise<void>;
+export type HandleSendArtifactAction = (meta: ArtifactActionMeta, isWebSearchButtonToggled: boolean) => Promise<void>;
 export type HandleRegenerateMessage = (
     message: Message,
     isWebSearchButtonToggled: boolean,
@@ -79,6 +92,12 @@ export type HandleEditMessage = (
     newContent: string,
     isWebSearchButtonToggled: boolean
 ) => Promise<void>;
+export type HandleSaveManualArtifactEdit = (params: {
+    artifactId: string;
+    artifactType: ArtifactType;
+    artifactTitle: string;
+    newContent: string;
+}) => void;
 
 export const useLumoActions = ({
     user,
@@ -99,6 +118,7 @@ export const useLumoActions = ({
         externalTools: ffExternalTools,
         imageTools: ffImageTools,
         memory: ffMemory,
+        artifactsView: ffArtifactsView,
         visualizationInstructions: ffVisualizationInstructions,
     } = useLumoFlags();
     const contextFilters = useLumoSelector(selectContextFilters);
@@ -194,7 +214,14 @@ export const useLumoActions = ({
         spaceDek: AesGcmCryptoKey | undefined,
         signal: AbortSignal
     ) => {
-        const { newMessageContent, isWebSearchButtonToggled, imageOptions, isFromQueryParam } = actionParams;
+        const {
+            newMessageContent,
+            isWebSearchButtonToggled,
+            imageOptions,
+            artifactModeActive,
+            artifactAction,
+            isFromQueryParam,
+        } = actionParams;
         if (!newMessageContent?.trim() && provisionalAttachments.length === 0) return;
 
         const enableExternalTools = ffExternalTools && isWebSearchButtonToggled;
@@ -254,6 +281,7 @@ export const useLumoActions = ({
                 newMessageData: {
                     content: newMessageContent ?? '',
                     attachments: filledAttachments,
+                    ...(artifactAction && { artifactAction }),
                 },
                 conversationContext: {
                     spaceId,
@@ -271,11 +299,13 @@ export const useLumoActions = ({
                     enableSmoothing,
                     isGhostMode,
                     imageAspectRatio: imageOptions?.aspectRatio,
+                    canvasModeActive: artifactModeActive ?? false,
                     isFromQueryParam,
                 },
                 settingsContext: {
                     personalization,
                     isMemoryFeatureEnabled: ffMemory,
+                    isArtifactsViewFeatureEnabled: ffArtifactsView,
                     hasLumoPlus,
                     isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
                 },
@@ -369,6 +399,7 @@ export const useLumoActions = ({
                 },
                 settingsContext: {
                     personalization,
+                    isArtifactsViewFeatureEnabled: ffArtifactsView,
                     isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
                 },
                 retryData: {
@@ -435,6 +466,7 @@ export const useLumoActions = ({
                 },
                 settingsContext: {
                     personalization,
+                    isArtifactsViewFeatureEnabled: ffArtifactsView,
                     isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
                 },
             })
@@ -534,6 +566,7 @@ export const useLumoActions = ({
                 },
                 settingsContext: {
                     personalization,
+                    isArtifactsViewFeatureEnabled: ffArtifactsView,
                     isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
                 },
                 regenerateData: {
@@ -637,6 +670,7 @@ export const useLumoActions = ({
         messageContent: string,
         isWebSearchButtonToggled: boolean,
         imageOptions?: ImageGenerationOptions,
+        artifactModeActive?: boolean,
         isFromQueryParam?: boolean
     ) => {
         sendMessageSendEvent();
@@ -646,7 +680,26 @@ export const useLumoActions = ({
             newMessageContent: messageContent,
             isWebSearchButtonToggled,
             imageOptions,
+            artifactModeActive,
             isFromQueryParam,
+        });
+    };
+
+    const handleSendArtifactAction: HandleSendArtifactAction = async (
+        meta: ArtifactActionMeta,
+        isWebSearchButtonToggled: boolean
+    ) => {
+        if (!ffArtifactsView) {
+            return;
+        }
+
+        sendMessageSendEvent();
+
+        return handleMessageAction({
+            actionType: 'send',
+            newMessageContent: buildArtifactActionLlmPrompt(meta),
+            isWebSearchButtonToggled,
+            artifactAction: meta,
         });
     };
 
@@ -682,6 +735,56 @@ export const useLumoActions = ({
             originalMessage,
             isWebSearchButtonToggled,
         });
+    };
+
+    // Saves a direct, manual edit of an artifact's content as a new version, without involving
+    // the LLM. Modeled on the compaction boundary message (`compactionFlow.ts`'s
+    // `compactAndBranch`), not on `handleMessageAction`: this must NOT create an assistant
+    // placeholder or trigger a generation saga — it's a synchronous, non-generating message
+    // insertion. The message extends the current chain tip directly (only reachable from the UI
+    // while viewing an artifact's latest version, so there's no sibling to fork against).
+    const handleSaveManualArtifactEdit: HandleSaveManualArtifactEdit = ({
+        artifactId,
+        artifactType,
+        artifactTitle,
+        newContent,
+    }) => {
+        if (!ffArtifactsView) {
+            return;
+        }
+
+        const tip = messageChain[messageChain.length - 1];
+        if (!tip) {
+            return;
+        }
+
+        const toolCallPayload = {
+            name: CREATE_ARTIFACT_TOOL_NAME,
+            arguments: { id: artifactId, type: artifactType, title: artifactTitle, content: newContent },
+        };
+        const toolResultPayload = {
+            ok: true,
+            message: "Artifact content updated by the user's manual edit — don't repeat it in your reply.",
+        };
+        const blocks = addToolResultBlock(
+            addToolCallBlock([], JSON.stringify(toolCallPayload)),
+            JSON.stringify(toolResultPayload)
+        );
+
+        const manualEdit: Message = {
+            id: newMessageId(),
+            parentId: tip.id,
+            conversationId,
+            createdAt: createDate(),
+            role: Role.User,
+            status: 'succeeded',
+            placeholder: false,
+            blocks,
+            artifactManualEdit: { artifactId, artifactTitle, artifactType },
+        };
+
+        dispatch(addMessage(manualEdit));
+        dispatch(pushMessageRequest({ id: manualEdit.id }));
     };
 
     const handleAbort = () => {
@@ -758,6 +861,8 @@ export const useLumoActions = ({
         getSiblingInfo,
         handleRegenerateMessage,
         handleSendMessage,
+        handleSendArtifactAction,
+        handleSaveManualArtifactEdit,
         handleEditMessage,
         handleAbort,
         messageChainRef,

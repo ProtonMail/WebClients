@@ -22,6 +22,7 @@ import { canShowWebComposer, canUseNativeEditMode, isNativeMobileApp } from '../
 import { AttachmentFileCard } from '../../../../Files/Common';
 import { LumoIcon } from '../../../../LumoIcon/LumoIcon';
 import SiblingSelector from '../../../../SiblingSelector';
+import { ArtifactActionUserMessage } from '../../../artifact/ArtifactActionUserMessage';
 import useCollapsibleMessageContent from '../useCollapsibleMessageContent';
 import MessageEditor from './MessageEditor';
 import useNativeMessageEdit from './useNativeMessageEdit';
@@ -124,15 +125,24 @@ interface UserActionToolbarProps {
     onToggleCollapse: () => void;
     isCollapsed: boolean;
     canBeCollapsed: boolean;
+    showEdit: boolean;
 }
-const UserActionToolbar = ({ onEdit, onToggleCollapse, isCollapsed, canBeCollapsed }: UserActionToolbarProps) => {
+const UserActionToolbar = ({
+    onEdit,
+    onToggleCollapse,
+    isCollapsed,
+    canBeCollapsed,
+    showEdit,
+}: UserActionToolbarProps) => {
     return (
         <div className="flex flex-row flex-nowrap gap-px p-0.5" style={{ inlineSize: 'max-content' }}>
-            <Tooltip title={c('collider_2025:Button').t`Edit`} originalPlacement="top">
-                <Button icon shape="ghost" className="shrink-0" onClick={onEdit} size="small">
-                    <LumoIcon name="Pencil" aria-label={c('collider_2025:Button').t`Edit`} />
-                </Button>
-            </Tooltip>
+            {showEdit && (
+                <Tooltip title={c('collider_2025:Button').t`Edit`} originalPlacement="top">
+                    <Button icon shape="ghost" className="shrink-0" onClick={onEdit} size="small">
+                        <LumoIcon name="Pencil" aria-label={c('collider_2025:Button').t`Edit`} />
+                    </Button>
+                </Tooltip>
+            )}
             {canBeCollapsed && (
                 <Tooltip
                     title={isCollapsed ? c('collider_2025:Button').t`Expand` : c('collider_2025').t`Collapse`}
@@ -204,7 +214,8 @@ const UserMessage = ({
         .filter(Boolean) as Attachment[];
 
     const hasAttachments = manualAttachments.length > 0;
-    const hasTextContent = Boolean(messageContent?.trim());
+    const isArtifactActionMessage = Boolean(message.artifactAction);
+    const hasTextContent = Boolean(messageContent?.trim()) || isArtifactActionMessage;
     const isAttachmentOnly = hasAttachments && !hasTextContent;
 
     const { contentRef, isCollapsed, showCollapseButton, toggleCollapse } = useCollapsibleMessageContent(message);
@@ -239,6 +250,7 @@ const UserMessage = ({
                     onToggleCollapse={toggleCollapse}
                     isCollapsed={isCollapsed}
                     canBeCollapsed={canBeCollapsed}
+                    showEdit={!isArtifactActionMessage}
                 />
             </div>
             {hasSiblingInfo && (
@@ -292,6 +304,12 @@ const UserMessage = ({
                                 setIsEditing(false);
                             }}
                             handleCancel={() => setIsEditing(false)}
+                        />
+                    ) : message.artifactAction ? (
+                        <ArtifactActionUserMessage
+                            artifactAction={message.artifactAction}
+                            isCollapsed={isCollapsed}
+                            contentRef={contentRef}
                         />
                     ) : (
                         <div className="test-container flex *:min-size-auto flex-1 flex-row flex-nowrap gap-2 justify-space-between items-center">
