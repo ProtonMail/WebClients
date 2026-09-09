@@ -131,7 +131,7 @@ interface ConversationRowProps {
     rowData: AllChatsRowData;
     isActive: boolean;
     isBulkSelected: boolean;
-    showBulkSelectCheckbox: boolean;
+    isSelectionMode: boolean;
     onToggleBulkSelect: (conversationId: ConversationId) => void;
     sortField: ChatHistoryDateField;
 }
@@ -142,7 +142,7 @@ const ConversationRow = memo(
         rowData,
         isActive,
         isBulkSelected,
-        showBulkSelectCheckbox,
+        isSelectionMode,
         onToggleBulkSelect,
         sortField,
     }: ConversationRowProps) => {
@@ -244,15 +244,25 @@ const ConversationRow = memo(
                 )}
                 style={{ height: `${ROW_HEIGHT}px` }}
             >
-                {!isRenaming && (
+                {!isRenaming && isSelectionMode ? (
+                    <button
+                        type="button"
+                        className="all-chats-row-link absolute inset-0 button button-ghost-weak"
+                        aria-label={c('collider_2025:Action').t`Toggle selection`}
+                        onClick={() => {
+                            onToggleBulkSelect(conversation.id);
+                        }}
+                    />
+                ) : null}
+                {!isRenaming && !isSelectionMode ? (
                     <LumoLink
                         to={`/c/${conversation.id}`}
                         className="all-chats-row-link absolute inset-0 button button-ghost-weak"
                         aria-current={isActive ? 'page' : undefined}
                     />
-                )}
+                ) : null}
 
-                {showBulkSelectCheckbox ? (
+                {isSelectionMode ? (
                     <Checkbox
                         checked={isBulkSelected}
                         onChange={() => {
@@ -326,7 +336,7 @@ const ConversationRow = memo(
                     )}
                 </div>
 
-                {!isRenaming ? (
+                {!isRenaming && !isSelectionMode ? (
                     <div className="all-chats-row-meta relative z-2 shrink-0 flex items-center justify-end self-stretch">
                         <span className="all-chats-row-date">{timestamp}</span>
                         <div className="all-chats-row-actions">
@@ -405,6 +415,8 @@ interface AllChatsHeaderProps {
     onBulkDelete?: () => void;
     onBulkFavorite?: () => void;
     onCancelSelection?: () => void;
+    onToggleSelectionMode?: () => void;
+    showManageButton?: boolean;
 }
 
 const AllChatsHeader = ({
@@ -423,18 +435,25 @@ const AllChatsHeader = ({
     onBulkDelete,
     onBulkFavorite,
     onCancelSelection,
+    onToggleSelectionMode,
+    showManageButton = false,
 }: AllChatsHeaderProps) => {
     const hasSelection = selectedCount > 0;
-    const showSelectionActions = isMobileLayout ? isSelectionMode : hasSelection;
-    const showConversationCount = isMobileLayout ? !isSelectionMode : !hasSelection;
+    const showSelectionActions = isSelectionMode;
+    const showConversationCount = !isSelectionMode;
     const showFilterSort =
-        !isMobileLayout && !hasSelection && filter !== undefined && onFilterChange && sortField && onSortFieldChange;
+        !isMobileLayout &&
+        !isSelectionMode &&
+        filter !== undefined &&
+        onFilterChange &&
+        sortField &&
+        onSortFieldChange;
 
     return (
         <div
             className={clsx(
                 'all-chats-header flex items-center gap-3 mb-4 shrink-0',
-                (showSelectionActions || showFilterSort) && 'justify-space-between'
+                (showSelectionActions || showFilterSort || showManageButton) && 'justify-space-between'
             )}
         >
             <div className="flex items-center gap-3 min-w-0 ml-2 md:ml-3">
@@ -453,7 +472,7 @@ const AllChatsHeader = ({
                 ) : null}
                 <div className="flex items-baseline gap-2 min-w-0">
                     <h1 className="main-text m-0">{c('collider_2025:Title').t`Chats`}</h1>
-                    {hasSelection && !isMobileLayout ? (
+                    {isSelectionMode && !isMobileLayout ? (
                         <span className="all-chats-selected-count tx-lg">{c('collider_2025:Label')
                             .t`${selectedCount} selected`}</span>
                     ) : null}
@@ -462,35 +481,47 @@ const AllChatsHeader = ({
                     ) : null}
                 </div>
             </div>
-            {showFilterSort ? (
-                <AllChatsFilterSortMenu
-                    filter={filter}
-                    onFilterChange={onFilterChange}
-                    sortField={sortField}
-                    onSortFieldChange={onSortFieldChange}
-                />
-            ) : null}
-            {showSelectionActions && onBulkDelete && onBulkFavorite ? (
-                <div className="all-chats-header-selection-actions flex items-center gap-2 shrink-0 flex-nowrap">
-                    <AllChatsBulkActionButtons
-                        size="small"
-                        disabled={isMobileLayout && !hasSelection}
-                        onBulkDelete={onBulkDelete}
-                        onBulkFavorite={onBulkFavorite}
+            <div className="all-chats-header-right-actions flex items-center gap-2 shrink-0 flex-nowrap">
+                {showFilterSort ? (
+                    <AllChatsFilterSortMenu
+                        filter={filter}
+                        onFilterChange={onFilterChange}
+                        sortField={sortField}
+                        onSortFieldChange={onSortFieldChange}
                     />
-                    {!isMobileLayout && onCancelSelection ? (
-                        <Button
-                            shape="solid"
-                            color="norm"
+                ) : null}
+                {showManageButton && onToggleSelectionMode ? (
+                    <Button
+                        shape="ghost"
+                        size="small"
+                        className="all-chats-header-action-button shrink-0 text-sm"
+                        onClick={onToggleSelectionMode}
+                    >
+                        {c('collider_2025:Action').t`Manage chats`}
+                    </Button>
+                ) : null}
+                {showSelectionActions && onBulkDelete && onBulkFavorite ? (
+                    <div className="all-chats-header-selection-actions flex items-center gap-2 shrink-0 flex-nowrap">
+                        <AllChatsBulkActionButtons
                             size="small"
-                            className="all-chats-header-action-button shrink-0"
-                            onClick={onCancelSelection}
-                        >
-                            {c('collider_2025:Action').t`Cancel`}
-                        </Button>
-                    ) : null}
-                </div>
-            ) : null}
+                            disabled={!hasSelection}
+                            onBulkDelete={onBulkDelete}
+                            onBulkFavorite={onBulkFavorite}
+                        />
+                        {!isMobileLayout && onCancelSelection ? (
+                            <Button
+                                shape="solid"
+                                color="norm"
+                                size="small"
+                                className="all-chats-header-action-button shrink-0"
+                                onClick={onCancelSelection}
+                            >
+                                {c('collider_2025:Action').t`Cancel`}
+                            </Button>
+                        ) : null}
+                    </div>
+                ) : null}
+            </div>
         </div>
     );
 };
@@ -594,10 +625,6 @@ export const AllChatsView = () => {
         });
     }, []);
 
-    const clearSelection = useCallback(() => {
-        setSelectedIds(new Set());
-    }, []);
-
     const handleSelectionModeChange = useCallback((enabled: boolean) => {
         setIsSelectionMode(enabled);
 
@@ -609,6 +636,13 @@ export const AllChatsView = () => {
     const handleCancelSelection = useCallback(() => {
         setSelectedIds(new Set());
         setIsSelectionMode(false);
+    }, []);
+
+    const toggleSelectionMode = useCallback(() => {
+        setIsSelectionMode((previousIsSelectionMode) => {
+            return !previousIsSelectionMode;
+        });
+        setSelectedIds(new Set());
     }, []);
 
     const handleFilterChange = useCallback((value: FilterValue) => {
@@ -677,6 +711,7 @@ export const AllChatsView = () => {
                         : c('Success').jt`Conversation deleted`,
             });
             setSelectedIds(new Set());
+            setIsSelectionMode(false);
             confirmDeleteModal.openModal(false);
         } catch (error) {
             createNotification({ text: <>{error}</>, type: 'error' });
@@ -752,9 +787,7 @@ export const AllChatsView = () => {
                             allSelected={allSelected}
                             someSelected={someSelected}
                             showSelectAll={
-                                !isChatHistoryHydrating &&
-                                filteredConversations.length > 0 &&
-                                (!isMobileLayout || isSelectionMode)
+                                !isChatHistoryHydrating && filteredConversations.length > 0 && isSelectionMode
                             }
                             onToggleSelectAll={toggleSelectAll}
                             isMobileLayout={isMobileLayout}
@@ -766,7 +799,11 @@ export const AllChatsView = () => {
                             onFilterChange={handleFilterChange}
                             onBulkDelete={requestBulkDelete}
                             onBulkFavorite={handleBulkFavorite}
-                            onCancelSelection={isMobileLayout ? handleCancelSelection : clearSelection}
+                            onCancelSelection={handleCancelSelection}
+                            onToggleSelectionMode={toggleSelectionMode}
+                            showManageButton={
+                                !isMobileLayout && !isSelectionMode && !isChatHistoryHydrating && !isEmpty
+                            }
                         />
 
                         <div className="all-chats-panel flex flex-column flex-1 min-h-0 overflow-hidden">
@@ -775,7 +812,7 @@ export const AllChatsView = () => {
                                 className={clsx(
                                     'flex-1 overflow-auto min-h-0 pb-2',
                                     isMobileLayout && isSelectionMode && 'all-chats-list-with-mobile-bulk-actions',
-                                    !isMobileLayout && selectedCount > 0 && 'all-chats-has-bulk-selection'
+                                    isSelectionMode && 'all-chats-is-selection-mode'
                                 )}
                             >
                                 {isChatHistoryHydrating ? (
@@ -808,7 +845,7 @@ export const AllChatsView = () => {
                                                         rowData={rowData}
                                                         isActive={conversation.id === conversationId}
                                                         isBulkSelected={selectedIds.has(conversation.id)}
-                                                        showBulkSelectCheckbox={!isMobileLayout || isSelectionMode}
+                                                        isSelectionMode={isSelectionMode}
                                                         onToggleBulkSelect={toggleSelectConversation}
                                                         sortField={sortField}
                                                     />
