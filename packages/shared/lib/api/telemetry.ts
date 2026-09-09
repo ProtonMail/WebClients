@@ -47,6 +47,10 @@ export enum TelemetryMeasurementGroups {
     mailExpandBlockquotes = 'mail.web.expand_blockquotes',
     categoriesView = 'mail.any.categories_view',
     passNudge = 'mail.web.pass_nudge',
+    /** Shared with mobile clients: compares Encrypted Search (searchVersion 'v1') against Content Search (searchVersion 'v2') */
+    contentSearch = 'mail.any.search',
+    /** Shared with mobile clients: indexing telemetry for the same v1/v2 comparison as `contentSearch` */
+    contentSearchIndex = 'mail.any.search_index',
     mailNewsletterSubscriptions = 'mail.web.newsletter_subscriptions',
     unlimitedOffer2025 = 'any.web.unlimited_offer_2025',
     unlimitedToDuoOffer = 'any.web.unlimited_to_duo_offer',
@@ -472,6 +476,18 @@ export enum TelemetryEncryptedSearchEvents {
     switch_search_type = 'switch_search_type',
 }
 
+/** Events under `TelemetryMeasurementGroups.contentSearch`, shared with mobile's Content Search schema */
+export enum TelemetryContentSearchEvents {
+    query_completed = 'query_completed',
+    result_opened = 'result_opened',
+    result_action = 'result_action',
+}
+
+/** Events under `TelemetryMeasurementGroups.contentSearchIndex`, shared with mobile's Content Search schema */
+export enum TelemetryContentSearchIndexEvents {
+    mailbox_index_completed = 'mailbox_index_completed',
+}
+
 export enum TelemetryB2BOnboardingEvents {
     modal_displayed = 'modal_displayed',
     click_modal_item = 'click_modal_item',
@@ -615,6 +631,8 @@ export type TelemetryEvents =
     | TelemetryDocsHomepageEvents
     | TelemetryCalendarVideoConferencing
     | TelemetryEncryptedSearchEvents
+    | TelemetryContentSearchEvents
+    | TelemetryContentSearchIndexEvents
     | TelemetryB2BOnboardingEvents
     | TelemetryBringYourOwnEmailEvents
     | TelemetryPostSubscriptionTourEvents
