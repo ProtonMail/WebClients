@@ -288,7 +288,6 @@ app.addListener('web-contents-created', (_, contents) => {
 
         // Shell out to the OS handler for http(s) and mailto
         if (['http:', 'https:', 'mailto:'].includes(url.protocol)) {
-            logger.debug(`[setWindowOpenHandler] opening url externally: ${href}`);
             shell.openExternal(href).catch(noop);
         }
 
