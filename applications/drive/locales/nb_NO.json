@@ -4171,7 +4171,7 @@
         "⚠️ Navn som ikke kan dekrypteres"
       ],
       "Something went wrong with search. Please try again later.": [
-        "Noe gikk galt. Prøv på nytt senere."
+        "Noe gikk galt med søket. Prøv på nytt senere."
       ],
       "Something went wrong with search: Not enough storage space.": [
         "Noe gikk galt med søket: Ikke nok lagringsplass."
@@ -5817,7 +5817,7 @@
         "Kan ikke flytte en mappe inn i seg selv"
       ],
       "Can't rename to same name": [
-        "Kan ikke gi nytt navn til samme navn"
+        "Kan ikke endre navn til samme navn"
       ],
       "Can't write into folder": [
         "Kan ikke skrive inn i mappen"
@@ -6157,7 +6157,7 @@
         "Mappen blir ikke lastet opp"
       ],
       "Folders you sync from your computer will appear here.": [
-        "Mapper du synkroniserer fra datamaskinen din vil vises her."
+        "Mapper du synkroniserer fra datamaskinen vil vises her."
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Du får best resultat hvis du unngår strømming og minneintensive oppgaver, eller deler opp opplastingen i mindre grupper."
@@ -6712,7 +6712,7 @@
         "Gjenoppretter bilder...Hold fanen åpen"
       ],
       "Running diagnostics...": [
-        "Kjører diagnostikk..."
+        "Kjører diagnostikk ..."
       ],
       "Saving...": [
         "Lagrer..."
@@ -6835,7 +6835,7 @@
         "Noen elementer mislyktes"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        "Noen av filene dine er ikke lenger tilgjengelige. Gjenopprett tilgangen til filene dine. ${ StartRecoveryButton }"
+        "Noen av filene dine er ikke lenger tilgjengelige. Gjenopprett tilgangen til filene. ${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "Noen bilder i dette albumet er ikke lagret på tidslinjen din. Hvis du sletter dette albumet, slettes disse bildene permanent."
@@ -7873,6 +7873,9 @@
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vi vil sende deg til ${ IDEAL_WERO_BRAND_NAME } i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
+      ],
+      "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } kunne ikke dekryptere den lokale søkeindeksen. Gjenopprett indeksen for å gjenopprette søket."
       ]
     },
     "info": {
@@ -8236,7 +8239,7 @@
         "Krypter e-poster"
       ],
       "Enter device name": [
-        "Skriv enhetsnavn"
+        "Angi enhetsnavn"
       ],
       "Expired": [
         "Utløpt"
@@ -8707,7 +8710,7 @@
         "Utløper aldri"
       ],
       "Pending invitation": [
-        "Ventende invitasjon"
+        "Venter på invitasjon"
       ],
       "Shared by ${ sharedBy }": [
         "Delt av ${ sharedBy }"
@@ -10600,13 +10603,13 @@
         "Kunne ikke avvise delingsinvitasjon"
       ],
       "Failed to remove device": [
-        "Fjerning av enhet mislyktes"
+        "Kunne ikke fjerne enheten"
       ],
       "Failed to remove the file": [
         "Fjerning av filen mislyktes"
       ],
       "Failed to rename device": [
-        "Kan ikke gi nytt navn til enhet"
+        "Kunne ikke gi enheten nytt navn"
       ],
       "Failed to upload files: ${ err }": [
         "Kunne ikke laste opp filer: ${ err }"
@@ -11017,10 +11020,10 @@
         "Raskere opplastinger for store eller flere filer"
       ],
       "Files uploaded during this time won’t count towards your storage limit.": [
-        "Filer som lastes opp i denne perioden vil ikke telle med i lagringsgrensen din."
+        "Filer som lastes opp i denne perioden vil ikke telle med i lagringsgrensen."
       ],
       "Files uploaded now will not count towards your storage limit": [
-        "Filer som lastes opp nå teller ikke med i lagringsgrensen din"
+        "Filer som lastes opp nå telles ikke med i lagringsgrensen"
       ],
       "Final approval in progress": [
         "Endelig godkjenning pågår"
@@ -11035,7 +11038,7 @@
         "Skaff deg skrivebordsappen"
       ],
       "Get the mobile app": [
-        "Skaff deg mobilappen"
+        "Last ned mobilappen"
       ],
       "Got an Android? We've got you covered.": [
         "Har du en Android? Du er dekket."
@@ -11086,7 +11089,7 @@
         "Eieren må bekrefte delingstilgang. Du får en e-post når det er gjort."
       ],
       "Upload your first file": [
-        "Last opp din første fil"
+        "Last opp første fil"
       ],
       "Work faster, smarter": [
         "Arbeid raskere, smartere"
@@ -11095,7 +11098,7 @@
         "Arbeid sammen"
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
-        "Du har nettopp sikret deg litt gratis data og sikret filene dine med ende-til-ende-kryptering – på rekordtid!"
+        "Du har nettopp sikret deg litt gratis data og sikret filene med ende-til-ende-kryptering – på rekordtid!"
       ]
     },
     "Onboarding Trial": {
@@ -11650,13 +11653,13 @@
         "E-post"
       ],
       "Enter a new file name": [
-        "Angi et nytt filnavn"
+        "Skriv inn et nytt filnavn"
       ],
       "Enter a new folder name": [
         "Angi et nytt mappenavn"
       ],
       "Enter device name": [
-        "Skriv enhetsnavn"
+        "Angi enhetsnavn"
       ],
       "Enter your email address": [
         "Skriv inn din e-postadresse"
@@ -13137,7 +13140,7 @@
         "Delt av ${ sharedBy }"
       ],
       "Your favorited photos will appear here": [
-        "Dine favorittbilder vises her"
+        "Favorittbildene vil vises her"
       ],
       "Your Live Photos will appear here": [
         "Dine Live-bilder vises her"
@@ -13152,7 +13155,7 @@
         "Portrettbildene dine vises her"
       ],
       "Your RAW photos will appear here": [
-        "RAW-bildene dine vises her"
+        "RAW-bildene vil vises her"
       ],
       "Your screenshots will appear here": [
         "Skjermbildene dine vises her"
@@ -13500,7 +13503,7 @@
         "Albumdetaljer"
       ],
       "Albums": [
-        "Album"
+        "Albumer"
       ],
       "All": [
         "Alle"
@@ -13841,7 +13844,7 @@
         "Fant ${ resultCount } resultater"
       ],
       "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
-        "Få ${ DRIVE_SHORT_APP_NAME } på telefonen din"
+        "Få ${ DRIVE_SHORT_APP_NAME } på telefonen"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Få **${ referralInfo.uiData.refereeRewardAmount }** i kreditter med ${ planTitle }"
