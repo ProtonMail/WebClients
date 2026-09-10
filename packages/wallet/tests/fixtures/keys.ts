@@ -1,3 +1,4 @@
+// nosemgrep: detected-pgp-private-key-block -- test-only fixture keypair, not a real credential
 export const addressPgpPrvKey = `-----BEGIN PGP PRIVATE KEY BLOCK-----
 Version: Keybase OpenPGP v2.0.76
 Comment: https://keybase.io/crypto
