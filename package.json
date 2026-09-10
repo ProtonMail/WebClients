@@ -119,7 +119,8 @@
         "ws@npm:^5.2.0": "5.2.7",
         "ws@npm:^7.4.6": "7.5.13",
         "xlsx@npm:0.18.5": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
-        "xlsx@npm:^0.18.5": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+        "xlsx@npm:^0.18.5": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
+        "plist": "^3.1.1"
     },
     "dependencies": {
         "@proton/eslint-config-proton": "workspace:^",
