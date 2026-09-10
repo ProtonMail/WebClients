@@ -20,6 +20,7 @@ const MailSearchInput = ({ value, onOpen, onClearSearch, loading, adaptWidth }: 
     const inputRef = useRef<HTMLInputElement>(null);
 
     const handleClear = () => {
+        console.log('clearField');
         onClearSearch();
         onOpen();
     };

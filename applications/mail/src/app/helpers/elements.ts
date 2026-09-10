@@ -34,7 +34,7 @@ import { getDate, isElementConversation, isElementMessage } from './elementTypeG
 import { getLabelsSetForMessage } from './message';
 import { getSnoozeDate } from './snooze';
 
-export { hasAttachmentsFilter, isEmpty, isSearch } from './elementSearch';
+export { hasAttachmentsFilter, isEmpty, isSameSearch, isSearch } from './elementSearch';
 export { getDate, isElementConversation, isElementMessage } from './elementTypeGuards';
 
 interface ContextIdentifier {

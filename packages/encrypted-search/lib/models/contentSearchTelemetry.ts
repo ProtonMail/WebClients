@@ -21,3 +21,6 @@ export type ContentSearchResultAction =
     'reply' | 'delete' | 'forward' | 'move' | 'label' | 'star' | 'unstar' | 'read' | 'unread' | 'other';
 
 export type ContentSearchActionSurface = 'result_list' | 'opened_message';
+
+// TODO how do we integrate the appSwitch and tabClose?
+export type ContentSearchEndReason = 'newSearch' | 'clearField' | 'navigation' | 'appSwitch' | 'tabClose';
