@@ -1,22 +1,3 @@
 {
-    "compilerOptions": {
-        "target": "esnext",
-        "useDefineForClassFields": false,
-        "module": "ESNext",
-        "lib": ["ES2020", "DOM", "DOM.Iterable", "WebWorker"],
-        "skipLibCheck": true,
-        /* Bundler mode */
-        "allowImportingTsExtensions": true,
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "noEmit": true,
-        "allowSyntheticDefaultImports": true,
-        /* Linting */
-        "strict": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "noFallthroughCasesInSwitch": true
-    },
-    "include": ["src"],
-    "exclude": ["node_modules"]
+    "extends": "../../tsconfig.base.json"
 }
