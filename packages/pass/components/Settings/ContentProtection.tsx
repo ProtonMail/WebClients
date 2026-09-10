@@ -2,14 +2,16 @@ import { type FC, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { Banner } from '@proton/atoms/Banner/Banner';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import noop from '@proton/utils/noop';
 
 import { SettingsPanel } from './SettingsPanel';
 
-export const ContentProtection: FC = () => {
-    const [enabled, setEnabled] = useState(false);
+const ContentProtectionDesktop: FC = () => {
+    const { createNotification } = useNotifications();
+    const [enabled, setEnabled] = useState<boolean>();
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -26,7 +28,9 @@ export const ContentProtection: FC = () => {
             .then((value) => {
                 if (active) setEnabled(value);
             })
-            .catch(noop)
+            .catch(() => {
+                if (active) setEnabled(undefined);
+            })
             .finally(() => {
                 if (active) setLoading(false);
             });
@@ -38,16 +42,19 @@ export const ContentProtection: FC = () => {
 
     const handleToggle = async () => {
         const bridge = window.ctxBridge;
-        if (!bridge) return;
+        if (!bridge || enabled === undefined || loading) return;
 
         const nextEnabled = !enabled;
-        setEnabled(nextEnabled);
         setLoading(true);
 
         try {
             await bridge.setContentProtection(nextEnabled);
+            setEnabled(nextEnabled);
         } catch {
-            setEnabled(enabled);
+            createNotification({
+                type: 'error',
+                text: c('Error').t`Unable to update screen privacy. Please try again.`,
+            });
         } finally {
             setLoading(false);
         }
@@ -55,15 +62,36 @@ export const ContentProtection: FC = () => {
 
     return (
         <SettingsPanel title={c('Label').t`Screen privacy`}>
-            <Checkbox checked={enabled} disabled={loading} onChange={handleToggle} loading={loading}>
-                <span>
-                    {c('Label').t`Hide ${PASS_APP_NAME} from screen captures`}
-                    <span className="block color-weak text-sm">
-                        {c('Info')
-                            .t`When enabled, ${PASS_APP_NAME} hides its window from screenshots, screen recordings, and screen sharing when supported by your operating system.`}
-                    </span>
-                </span>
+            {!loading && enabled === undefined && (
+                <Banner variant="danger" role="alert" className="mb-3">
+                    {c('Error').t`Unable to load screen privacy. Reopen Settings to try again.`}
+                </Banner>
+            )}
+            <Checkbox
+                checked={enabled === true}
+                indeterminate={enabled === undefined}
+                disabled={loading || enabled === undefined}
+                onChange={handleToggle}
+                loading={loading}
+                aria-describedby="content-protection-description"
+            >
+                {c('Label').t`Hide ${PASS_APP_NAME} from screen captures`}
             </Checkbox>
+            <p id="content-protection-description" className="color-weak text-sm mt-2 mb-0">
+                {c('Info')
+                    .t`Helps prevent accidental exposure of the ${PASS_APP_NAME} window in screenshots, screen recordings, and screen sharing. Some capture tools may still capture its contents.`}
+            </p>
+            {BUILD_TARGET === 'darwin' && (
+                <Banner variant="warning" className="mt-3">
+                    {c('Warning')
+                        .t`On macOS, apps using ScreenCaptureKit can still capture this window, even when screen privacy is enabled.`}
+                </Banner>
+            )}
         </SettingsPanel>
     );
+};
+
+export const ContentProtection: FC = () => {
+    if (!DESKTOP_BUILD || (BUILD_TARGET !== 'win32' && BUILD_TARGET !== 'darwin')) return null;
+    return <ContentProtectionDesktop />;
 };

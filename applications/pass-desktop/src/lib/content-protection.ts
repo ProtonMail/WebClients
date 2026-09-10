@@ -3,6 +3,7 @@ import type { BrowserWindow } from 'electron';
 import type { MaybeNull } from '@proton/pass/types';
 
 import { store } from '../store';
+import { isMac, isWindows } from '../utils/platform';
 import { setupIpcHandler } from './ipc';
 
 declare module 'proton-pass-desktop/lib/ipc' {
@@ -12,14 +13,17 @@ declare module 'proton-pass-desktop/lib/ipc' {
     }
 }
 
-export const getContentProtection = () => store.get('contentProtection') === true;
+const isSupported = () => isMac() || isWindows();
+
+export const getContentProtection = () => isSupported() && store.get('contentProtection') === true;
 
 export const applyContentProtection = (browserWindow: MaybeNull<BrowserWindow>, enabled = getContentProtection()) => {
-    browserWindow?.setContentProtection(Boolean(enabled && !process.env.PASS_DEBUG));
+    if (isSupported()) browserWindow?.setContentProtection(enabled);
 };
 
 export const setContentProtection = (getWindow: () => MaybeNull<BrowserWindow>, enabled: boolean) => {
     const value = enabled === true;
+    if (value && !isSupported()) throw new Error('Screen privacy is not supported on this platform');
     store.set('contentProtection', value);
     applyContentProtection(getWindow(), value);
 };
