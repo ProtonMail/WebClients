@@ -61,6 +61,7 @@ const defaultAdapter: ReturnType<typeof useSearchViewModel> = {
     isSearchAvailable: true,
     isSearchEnabled: true,
     isSearchable: true,
+    isRunningOutdatedVersion: false,
     startIndexing: jest.fn(),
     isSearching: false,
     refreshResults: jest.fn(),
@@ -142,5 +143,28 @@ describe('SearchView', () => {
         } as any);
         render(<SearchView />);
         expect(screen.getByTestId('drive-explorer')).toBeInTheDocument();
+    });
+
+    it('keeps showing existing results instead of EnableSearchView when deactivated as outdated', () => {
+        withAdapter({ isSearchEnabled: false, isSearchable: false, isRunningOutdatedVersion: true });
+        mockedUseSearchResultItems.mockReturnValue({
+            sortedItemUids: ['uid-1', 'uid-2'],
+            loading: false,
+            sortParams: { sortField: 'name', sortOrder: 'ASC' },
+            handleOpenItem: jest.fn(),
+            handleSorting: jest.fn(),
+            handleRenderItem: jest.fn(),
+            layout: 0,
+            previewModal: null,
+        } as any);
+        render(<SearchView />);
+        expect(screen.getByTestId('drive-explorer')).toBeInTheDocument();
+        expect(screen.queryByRole('button', { name: /enable drive search/i })).not.toBeInTheDocument();
+    });
+
+    it('shows EnableSearchView when deactivated as outdated with no prior results', () => {
+        withAdapter({ isSearchEnabled: false, isSearchable: false, isRunningOutdatedVersion: true });
+        render(<SearchView />);
+        expect(screen.getByRole('button', { name: /enable drive search/i })).toBeInTheDocument();
     });
 });
