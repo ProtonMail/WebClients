@@ -6,6 +6,8 @@ import noop from '@proton/utils/noop';
 
 import { getJoiningLink, getOrganizationImporter } from '../api';
 import type { ApiImporterOrganization, ApiJoiningLinkData } from '../api/api.interface';
+import { getImportProviderFromApiProvider } from '../helpers/getImportProviderFromApiProvider';
+import { isProviderSupported } from './providers';
 import { parseJoiningLinkData } from './thunk';
 import type { JoiningLink } from './types';
 
@@ -45,20 +47,25 @@ export const useImporterOrganizations = (): [StateData | undefined, boolean, () 
         return api<{ ImporterOrganizations: ApiImporterOrganization[] }>(getOrganizationImporter())
             .then((result) =>
                 Promise.all(
-                    result.ImporterOrganizations.map(async (io) => {
-                        const JoiningLink = await api<{ JoiningLinkData: ApiJoiningLinkData | null }>(
-                            getJoiningLink(io.ImporterOrganizationID)
-                        )
-                            .then(({ JoiningLinkData }) =>
-                                JoiningLinkData ? dispatch(parseJoiningLinkData(JoiningLinkData)).unwrap() : undefined
+                    result.ImporterOrganizations
+                        // Only surface migrations for providers the app supports
+                        .filter((io) => isProviderSupported(getImportProviderFromApiProvider(io.Provider)))
+                        .map(async (io) => {
+                            const JoiningLink = await api<{ JoiningLinkData: ApiJoiningLinkData | null }>(
+                                getJoiningLink(io.ImporterOrganizationID)
                             )
-                            .catch(() => undefined);
+                                .then(({ JoiningLinkData }) =>
+                                    JoiningLinkData
+                                        ? dispatch(parseJoiningLinkData(JoiningLinkData)).unwrap()
+                                        : undefined
+                                )
+                                .catch(() => undefined);
 
-                        return {
-                            ...io,
-                            JoiningLink,
-                        };
-                    })
+                            return {
+                                ...io,
+                                JoiningLink,
+                            };
+                        })
                 )
             )
             .then((resultWithJoiningLink) => setData(resultWithJoiningLink))
