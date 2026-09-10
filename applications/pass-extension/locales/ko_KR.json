@@ -795,6 +795,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "사용중이신 비밀번호 관리자가 여기 없나요? 추가하도록 요청하세요."
+      ],
+      "Multiple select": [
+        "다중 선택"
       ]
     },
     "Activity": {
@@ -4377,6 +4380,12 @@
       ],
       "You can attach files to items for a better organization": [
         "더 나은 조직을 위해 항목에 파일 첨부가 가능합니다."
+      ],
+      "Download \"${ filename }\"": [
+        "\"${ filename }\" 다운로드"
+      ],
+      "You may close this window after saving the file.": [
+        "파일 저장 후 이 창을 닫아도 됩니다."
       ]
     },
     "Permission": {
@@ -4518,6 +4527,15 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "이 URL은 자동완성이 차단되지 않습니다"
+      ],
+      "Enter a URL to check if it matches the current rule": [
+        "현재 규칙과 일치하는 경우 URL을 입력하여 확인합니다."
+      ],
+      "URL doesn't match the rule": [
+        "URL이 규칙과 일치하지 않습니다."
+      ],
+      "URL matches the rule": [
+        "URL이 규칙에 일치합니다"
       ]
     },
     "Security Center - Info": {
@@ -5246,6 +5264,9 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "별칭 ${ aliasCount }개를 영구적으로 삭제하게 됩니다."
+      ],
+      "${ PASS_APP_NAME } Logs": [
+        "${ PASS_APP_NAME } 로그"
       ]
     },
     "Title_cloned_item": {
@@ -5597,6 +5618,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "현재 구독에서 다중 금고 생성을 지원하지 않습니다. 모든 항목이 처음 금고에 저장됩니다. 여러 개의 금고를 생성하려면 구독을 업그레이드 하세요."
+      ],
+      "Identity could not be confirmed": [
+        "신원을 확인하지 못했습니다"
       ]
     }
   }
