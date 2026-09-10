@@ -14,7 +14,6 @@ import { DEFAULT_MAIL_SETTINGS, VIEW_MODE } from '@proton/shared/lib/mail/mailSe
 import { useCategoriesView } from '../../components/categoryView/useCategoriesView';
 import { selectCategoryIDs, selectLabelID } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
-
 import { useMailboxCounter } from './useMailboxCounter';
 
 jest.mock('@proton/mail/store/mailSettings/hooks');
@@ -56,7 +55,6 @@ const mockSelector = (
 const getMockCategoryView = (override: Partial<CategoryViewType> = {}): CategoryViewType => ({
     isCategoryViewEnabled: false,
     isCategoryViewEnabledSettled: true,
-    shouldSeeWideToolbars: false,
     shouldShowTabs: false,
     categoriesStore: [],
     activeCategoriesTabs: [],

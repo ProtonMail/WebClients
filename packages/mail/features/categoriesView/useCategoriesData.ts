@@ -43,9 +43,6 @@ export const useCategoriesData = () => {
     const canUseCategoryView = categoryViewFlag || hasBetaAccess || variantWithCategoryViewAccess;
     const isCategoryViewEnabled = canUseCategoryView && settingAccess;
 
-    const isRefreshedToolbarUIDisabled = useFlag('NewToolbarKillSwitch');
-    const shouldSeeWideToolbars = canUseCategoryView ? !isRefreshedToolbarUIDisabled : false;
-
     // Redirect decisions must wait until every input behind `categoryViewAccess` has loaded.
     const isCategoryViewEnabledSettled = !isLoading && !betaFlag.loading && flagsReady;
 
@@ -55,6 +52,5 @@ export const useCategoriesData = () => {
         activeCategoriesTabs: isCategoryViewEnabled ? activeCategoriesTabs : EMPTY_ARRAY,
         isCategoryViewEnabled,
         isCategoryViewEnabledSettled,
-        shouldSeeWideToolbars,
     };
 };
