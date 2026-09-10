@@ -25,7 +25,6 @@ describe('useCategoriesShortcuts', () => {
                 activeCategoriesTabs: [],
                 isCategoryViewEnabled: false,
                 isCategoryViewEnabledSettled: true,
-                shouldSeeWideToolbars: false,
                 shouldShowTabs: false,
                 canUseCategoryView: false,
             });
@@ -50,7 +49,6 @@ describe('useCategoriesShortcuts', () => {
                 activeCategoriesTabs: [],
                 isCategoryViewEnabled: true,
                 isCategoryViewEnabledSettled: true,
-                shouldSeeWideToolbars: false,
                 shouldShowTabs: true,
                 canUseCategoryView: false,
             });
@@ -75,7 +73,6 @@ describe('useCategoriesShortcuts', () => {
                 activeCategoriesTabs: mockActiveCategoriesData,
                 isCategoryViewEnabled: false,
                 isCategoryViewEnabledSettled: true,
-                shouldSeeWideToolbars: false,
                 shouldShowTabs: false,
                 canUseCategoryView: false,
             });
@@ -93,7 +90,6 @@ describe('useCategoriesShortcuts', () => {
                 activeCategoriesTabs: mockActiveCategoriesData,
                 isCategoryViewEnabled: true,
                 isCategoryViewEnabledSettled: true,
-                shouldSeeWideToolbars: false,
                 shouldShowTabs: true,
                 canUseCategoryView: false,
             });
@@ -113,7 +109,6 @@ describe('useCategoriesShortcuts', () => {
                 ],
                 isCategoryViewEnabled: true,
                 isCategoryViewEnabledSettled: true,
-                shouldSeeWideToolbars: false,
                 shouldShowTabs: true,
                 canUseCategoryView: false,
             });

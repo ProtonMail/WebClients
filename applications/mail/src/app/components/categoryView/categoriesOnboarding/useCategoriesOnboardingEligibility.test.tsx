@@ -18,7 +18,6 @@ import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 import { useGetStartedChecklist } from '../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { useMailboxCounter } from '../../../hooks/mailboxCounter/useMailboxCounter';
 import { useMailSelector } from '../../../store/hooks';
-
 import { useCategoriesView } from '../useCategoriesView';
 import { OnboardingFlow } from './onboardingInterface';
 import { useCategoriesOnboardingEligibility } from './useCategoriesOnboardingEligibility';
@@ -54,7 +53,6 @@ const defaultCategoriesView: ReturnType<typeof useCategoriesView> = {
     shouldShowTabs: true,
     categoriesStore: [],
     activeCategoriesTabs: [],
-    shouldSeeWideToolbars: true,
 };
 
 const defaultWelcomeFlags: ReturnType<typeof useWelcomeFlags> = {
