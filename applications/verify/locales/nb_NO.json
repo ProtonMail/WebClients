@@ -943,9 +943,6 @@
       ],
       "Security key": [
         "Sikkerhetsnøkkel"
-      ],
-      "Touch your security key.": [
-        "Berør sikkerhetsnøkkelen din."
       ]
     },
     "fido2: Label": {
@@ -1207,6 +1204,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med utvidet tilgang"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med begrenset tilgang"
       ],
       "${ n } custom email domain": [
         "${ n } egendefinert e-postdomene",
