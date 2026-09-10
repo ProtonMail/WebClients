@@ -1,3 +1,7 @@
+### Version 1.40.2
+
+- Fix being logged out during temporary server issues, keeping offline mode available
+
 ### Version 1.40.0
 
 _Some features below are rolling out gradually and may not be available to everyone right away._
