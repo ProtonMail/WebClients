@@ -15,7 +15,6 @@ import { useMailboxLayoutProvider } from '../../router/components/MailboxLayoutC
 import type { MailboxActions } from '../../router/interface';
 import { selectElementID, selectIsSearching, selectLabelID } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
-
 import { CategoriesTabs } from '../categoryView/categoriesTabs/CategoriesTabs';
 import { useCategoriesView } from '../categoryView/useCategoriesView';
 import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
@@ -55,6 +54,7 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
     const [labels] = useLabels();
     const [folders] = useFolders();
     const labelName = getLabelNameForToolbar(labelID, labels, folders);
+    const isUserInNewsletterSubscription = isLabelIDNewsletterSubscription(labelID);
 
     const handlePage = (pageNumber: number) => {
         history.push(setPageInUrl(history.location, pageNumber));
@@ -72,7 +72,8 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
                     ref={ref}
                     className={clsx(
                         'mail-toolbar toolbar toolbar--heavy flex flex-nowrap shrink-0 items-center gap-2 no-print w-full justify-space-between py-2 pl-3 pr-2 md:py-1 md:pl-4',
-                        shouldShowTabs && 'toolbar--in-container h-auto'
+                        shouldShowTabs && 'toolbar--in-container h-auto',
+                        isUserInNewsletterSubscription && 'toolbar--no-bg toolbar--in-container'
                     )}
                     data-shortcut-target="mailbox-toolbar"
                     aria-label={c('Label').t`Toolbar`}
@@ -88,7 +89,7 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
                     </div>
 
                     <div className="flex items-center shrink-0 flex-nowrap toolbar-inner gap-2">
-                        {isLabelIDNewsletterSubscription(labelID) ? null : <FilterList />}
+                        {isUserInNewsletterSubscription ? null : <FilterList />}
 
                         <PagingControls
                             loading={elementsData.loading}
@@ -116,7 +117,8 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
                 ref={ref}
                 className={clsx(
                     'mail-toolbar toolbar toolbar--heavy flex flex-nowrap shrink-0 items-center gap-2 no-print w-full justify-space-between py-1 pl-4 pr-2',
-                    shouldShowTabs && 'toolbar--in-container h-auto'
+                    shouldShowTabs && 'toolbar--in-container h-auto',
+                    isUserInNewsletterSubscription && 'toolbar--no-bg toolbar--in-container'
                 )}
                 data-shortcut-target="mailbox-toolbar"
                 aria-label={c('Label').t`Toolbar`}
@@ -174,7 +176,7 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
                 </div>
 
                 <div className="flex items-center shrink-0 flex-nowrap toolbar-inner gap-2">
-                    {isLabelIDNewsletterSubscription(labelID) ? null : <FilterList />}
+                    {isUserInNewsletterSubscription ? null : <FilterList />}
 
                     <PagingControls
                         loading={elementsData.loading}
