@@ -394,12 +394,14 @@ export const searchMetrics = {
     },
 
     /**
-     * Report other search error.
+     * Report other search error. `message` becomes the Sentry issue title - pass something
+     * specific to the call site, since every call otherwise reports under the same generic
+     * title and becomes indistinguishable in Sentry.
      */
-    markSearchOtherError({ error }: { error: unknown }): void {
+    markSearchOtherError({ error, message = 'Search other error' }: { error: unknown; message?: string }): void {
         metrics.drive_search_other_error_total.increment({});
 
-        sendErrorReportForSearch('Search other error', error, {
+        sendErrorReportForSearch(message, error, {
             tags: { label: 'search-other-errors' },
         });
     },

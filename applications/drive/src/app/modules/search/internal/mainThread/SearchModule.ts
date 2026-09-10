@@ -22,7 +22,7 @@ import type {
     SerializedIndexEntry,
     UserId,
 } from '../shared/types';
-import { AppVersionGuard } from './AppVersionGuard';
+import { ClientAppVersionGuard } from './ClientAppVersionGuard';
 import type { FetchLastEventIdForTreeScopeId } from './MainThreadBridge';
 import { MainThreadBridge } from './MainThreadBridge';
 import { SearchOptInManager } from './SearchOptInManager';
@@ -173,7 +173,9 @@ export class SearchModule {
                     ...indexerState,
                 });
 
-                new AppVersionGuard(context.userId, async () => SearchModule.instance?.deactivate());
+                new ClientAppVersionGuard(context.userId, context.appVersion, async () =>
+                    SearchModule.instance?.deactivateAsOutdated()
+                );
 
                 return SearchModule.instance;
             })().catch((error) => {
@@ -214,7 +216,7 @@ export class SearchModule {
         this.stateUpdateListeners.forEach((cb) => cb(state));
     }
 
-    private async deactivate(): Promise<void> {
+    private async deactivateAsOutdated(): Promise<void> {
         const searchDb = await this.searchDbPromise;
         searchDb.close();
 

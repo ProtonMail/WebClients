@@ -42,6 +42,7 @@ export const SearchView = () => {
         isSearchAvailable,
         isSearchEnabled,
         isSearchable,
+        isRunningOutdatedVersion,
         startIndexing,
         isSearching,
         refreshResults,
@@ -106,7 +107,12 @@ export const SearchView = () => {
 
     // TODO: Maybe show in the view why the search feature is not available.
 
-    if (!isSearchEnabled || !isSearchable) {
+    // A version mismatch deactivates search mid-session (see ClientAppVersionGuard). Re-opting in
+    // wouldn't help - this tab is done until reload - so if results are already on screen, leave
+    // them as-is instead of replacing them with the opt-in screen.
+    const keepShowingStaleResults = isRunningOutdatedVersion && sortedItemUids.length > 0;
+
+    if ((!isSearchEnabled || !isSearchable) && !keepShowingStaleResults) {
         const isIndexingInProgress = isSearchEnabled && !isSearchable;
         return (
             <EnableSearchView
