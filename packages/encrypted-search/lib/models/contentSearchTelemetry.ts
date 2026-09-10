@@ -24,3 +24,9 @@ export type ContentSearchActionSurface = 'result_list' | 'opened_message';
 
 // TODO how do we integrate the appSwitch and tabClose?
 export type ContentSearchEndReason = 'newSearch' | 'clearField' | 'navigation' | 'appSwitch' | 'tabClose';
+
+/**
+ * `firstActionType` on a session can be a result open, which isn't one of the `ContentSearchResultAction`
+ * values reported by `sendResultActionReport` (opening has its own `result_opened` event).
+ */
+export type ContentSearchSessionActionType = ContentSearchResultAction | 'open';
