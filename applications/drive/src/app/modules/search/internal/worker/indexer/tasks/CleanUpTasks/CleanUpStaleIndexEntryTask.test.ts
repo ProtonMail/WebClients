@@ -295,7 +295,7 @@ describe('CleanUpStaleIndexEntryTask', () => {
         await expect(new CleanUpStaleIndexEntryTask().execute(ctx)).rejects.toBeInstanceOf(SearchLibraryError);
     });
 
-    it('flushes write commits every 50 stale entries during the export pass', async () => {
+    it('removes stale entries in write-session batches of 50, after the export pass', async () => {
         const p = { populatorKind: 'myfiles', scopeId: 'vol-1', version: 1, generation: 2 };
         const instance = await indexRegistry.get(IndexKind.MAIN, db);
 
@@ -325,5 +325,62 @@ describe('CleanUpStaleIndexEntryTask', () => {
         // Two write sessions: one for the first 50, one for the final 1.
         expect(startSpy).toHaveBeenCalledTimes(2);
         expect(await getRemainingIds(instance.indexReader)).toEqual(['current']);
+    });
+
+    it('never opens a write session while the export read is still active', async () => {
+        // Regression test for the write-in-open-read spike: committing while exportEntries' read
+        // is still open prevents the blob store from freeing anything until the whole scan ends
+        // (measured: 541 deferred handles, WASM 190MB -> 2135MB removing 3k of 10k documents).
+        // Spy on the blob store's read bracket and the writer's session starts, and assert no
+        // startWriteSession() call ever lands between a beginRead() and its matching endRead().
+        const p = { populatorKind: 'myfiles', scopeId: 'vol-1', version: 1, generation: 2 };
+        const instance = await indexRegistry.get(IndexKind.MAIN, db);
+
+        const staleEntries = Array.from({ length: 120 }, (_, i) => entryWith(`stale-${i}`, { ...p, generation: 1 }));
+        await indexDocuments(instance.indexWriter, staleEntries);
+        await db.putPopulatorState({
+            uid: `${p.populatorKind}:${p.scopeId}`,
+            indexKind: IndexKind.MAIN,
+            indexPopulatorKind: p.populatorKind,
+            treeEventScopeId: p.scopeId as TreeEventScopeId,
+            generation: p.generation,
+            version: p.version,
+            done: true,
+            progress: { files: 0, folders: 0, albums: 0, photos: 0 },
+        });
+
+        let readDepth = 0;
+        const events: string[] = [];
+        const realStartWriteSession = instance.indexWriter.startWriteSession.bind(instance.indexWriter);
+        jest.spyOn(instance.blobStore, 'beginRead').mockImplementation(() => {
+            readDepth++;
+            events.push(`beginRead(${readDepth})`);
+        });
+        jest.spyOn(instance.blobStore, 'endRead').mockImplementation(() => {
+            events.push(`endRead(${readDepth})`);
+            readDepth--;
+        });
+        const violations: number[] = [];
+        jest.spyOn(instance.indexWriter, 'startWriteSession').mockImplementation(() => {
+            events.push(`startWriteSession(readDepth=${readDepth})`);
+            if (readDepth !== 0) {
+                violations.push(readDepth);
+            }
+            return realStartWriteSession();
+        });
+
+        const ctx = makeTaskContext({
+            indexRegistry,
+            db,
+            activeIndexPopulators: [{ indexPopulatorKind: 'myfiles', treeEventScopeId: 'vol-1' as TreeEventScopeId }],
+        });
+        await new CleanUpStaleIndexEntryTask().execute(ctx);
+
+        // Sanity: the scan actually opened a read and the removals actually opened write sessions,
+        // so the assertion below had something to check.
+        expect(events.some((e) => e.startsWith('beginRead'))).toBe(true);
+        expect(events.filter((e) => e.startsWith('startWriteSession')).length).toBeGreaterThan(0);
+        expect(violations).toEqual([]);
+        expect(await getRemainingIds(instance.indexReader)).toEqual([]);
     });
 });
