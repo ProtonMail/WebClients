@@ -9,11 +9,11 @@ import { startHolidaysDirectoryListener } from '@proton/calendar/holidaysDirecto
 import { mailSettingsHeartbeatListener } from '@proton/redux-shared-store/mailSettingsHeartbeatListener';
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
 
-import { startElementsListener } from './elements/elementsListener';
-
 import { startCategoriesUnseenListener } from './categories/categoriesUnseenListener';
+import { startElementsListener } from './elements/elementsListener';
 import { startIncomingDefaultListener } from './incomingDefaults/incomingDefaultListener';
 import { getMailPersistedState } from './persistReducer';
+import { startSearchChangeListener } from './search/searchChangeListener';
 import type { AppStartListening } from './store';
 
 export const start = ({ startListening }: { startListening: AppStartListening }) => {
@@ -28,4 +28,5 @@ export const start = ({ startListening }: { startListening: AppStartListening })
     startIncomingDefaultListener(startListening);
     startElementsListener(startListening);
     startCategoriesUnseenListener(startListening);
+    startSearchChangeListener(startListening);
 };
