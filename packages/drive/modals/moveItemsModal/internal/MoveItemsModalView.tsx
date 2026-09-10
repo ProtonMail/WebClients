@@ -29,7 +29,7 @@ export type MoveItemsModalViewProps =
       } & LoadedMoveItemsModalViewProps)
     | { loaded: false };
 
-export type LoadedMoveItemsModalViewProps = {
+type LoadedMoveItemsModalViewProps = {
     nodes: NodeTarget[];
     handleSubmit: () => Promise<void>;
     createFolder: () => void;
@@ -42,7 +42,7 @@ export type LoadedMoveItemsModalViewProps = {
     handleSelect: (treeItemId: string, targetItem: DirectoryTreeItem) => void;
 };
 
-export const MoveItemsModalContent = ({
+const MoveItemsModalContent = ({
     nodes,
     handleSubmit,
     createFolder,

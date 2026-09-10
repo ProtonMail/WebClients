@@ -52,7 +52,7 @@ export enum BusDriverEventName {
     ALL = '*',
 }
 
-export interface MovedNodesEvent {
+interface MovedNodesEvent {
     type: BusDriverEventName.MOVED_NODES;
     items: { uid: string; parentUid: string | undefined }[];
 }
@@ -61,17 +61,17 @@ export interface TrashedNodesEvent {
     type: BusDriverEventName.TRASHED_NODES;
     uids: string[];
 }
-export interface RestoredNodesEvent {
+interface RestoredNodesEvent {
     type: BusDriverEventName.RESTORED_NODES;
     items: { uid: string; parentUid: string | undefined }[];
 }
 
-export interface RenamedNodesEvent {
+interface RenamedNodesEvent {
     type: BusDriverEventName.RENAMED_NODES;
     items: { newName: string; uid: string }[];
 }
 
-export interface UpdatedNodesEvent {
+interface UpdatedNodesEvent {
     type: BusDriverEventName.UPDATED_NODES;
     items: NodeEventMeta[];
 }
@@ -81,17 +81,17 @@ export interface CreatedNodesEvent {
     items: NodeEventMeta[];
 }
 
-export interface DeletedNodesEvent {
+interface DeletedNodesEvent {
     type: BusDriverEventName.DELETED_NODES;
     uids: string[];
 }
 
-export interface RenamedDevicesEvent {
+interface RenamedDevicesEvent {
     type: BusDriverEventName.RENAMED_DEVICES;
     items: { newName: string; deviceUid: string }[];
 }
 
-export interface RemovedDevicesEvent {
+interface RemovedDevicesEvent {
     type: BusDriverEventName.REMOVED_DEVICES;
     deviceUids: string[];
 }
@@ -110,7 +110,7 @@ export interface RejectInvitationsEvent {
     uids: string[];
 }
 
-export interface RemoveMeEvent {
+interface RemoveMeEvent {
     type: BusDriverEventName.REMOVE_ME;
     uids: string[];
 }

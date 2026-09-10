@@ -241,9 +241,8 @@
             "ignore": ["**"]
         },
         "packages/drive": {
-            "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "entry": ["public/**/index.ts"],
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/drive-store": {
             "entry": [],
