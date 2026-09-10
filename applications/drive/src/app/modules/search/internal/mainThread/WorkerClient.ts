@@ -5,6 +5,7 @@ import { Logger } from '../shared/Logger';
 import { registerComlinkErrorTransferHandler } from '../shared/comlinkErrorTransferHandler';
 import { SearchWorkerDisconnectedError, SharedWorkerHeartbeatTimeout } from '../shared/errors';
 import { searchMetrics } from '../shared/searchMetrics';
+import { createSharedWorkerName } from '../shared/sharedWorkerName';
 import type {
     ClientId,
     IndexKind,
@@ -48,7 +49,7 @@ export class WorkerClient {
     }
 
     private createWorker(): Comlink.Remote<SharedWorkerAPI> {
-        const sharedWorkerName = `drive-search-worker/${this.appVersion}/${this.userId}`;
+        const sharedWorkerName = createSharedWorkerName({ appVersion: this.appVersion, userId: this.userId });
         Logger.info(`Starting worker client for worker <${sharedWorkerName}>`);
 
         /* webpackChunkName: "drive-search-sharedworker" */

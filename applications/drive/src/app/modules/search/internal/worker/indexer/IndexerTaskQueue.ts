@@ -87,6 +87,7 @@ export class IndexerTaskQueue {
     private stateListeners = new Set<IndexerStateListener>();
 
     private progressNotifyTimeout: ReturnType<typeof setTimeout> | null = null;
+    private processLoopDone: Promise<void> = Promise.resolve();
 
     constructor(
         private readonly userId: UserId,
@@ -102,6 +103,15 @@ export class IndexerTaskQueue {
     private postBootstrapTasks: BaseTask[] = [];
 
     async start(): Promise<void> {
+        // Assigned before any await so a stop() concurrent with the startup sequence below
+        // (isSearchable/createTasks - the latter makes a network call) waits for this whole
+        // method to actually finish, rather than resolving against a stale, already-settled
+        // promise and reporting "the loop has exited" before it has even started.
+        this.processLoopDone = this.startAndRunProcessLoop();
+        await this.processLoopDone;
+    }
+
+    private async startAndRunProcessLoop(): Promise<void> {
         Logger.info('IndexerTaskQueue: starting');
         this.stopped = false;
         this.abortController = new AbortController();
@@ -124,7 +134,7 @@ export class IndexerTaskQueue {
         await this.processLoop();
     }
 
-    stop(): void {
+    async stop(): Promise<void> {
         this.stopped = true;
         this.abortController.abort();
         this.wakeUp?.();
@@ -142,6 +152,12 @@ export class IndexerTaskQueue {
         this.onlineMonitor.cancelWaits();
 
         this.populators.clear();
+
+        // Wait for processLoop to actually exit before returning, so callers can safely
+        // disposeAll() the engine right after stop().
+        await this.processLoopDone.catch((error: unknown) =>
+            this.searchMetrics.markSearchOtherError({ error, message: 'IndexerTaskQueue: processLoop failed' })
+        );
     }
 
     notifyIndexingProgress(): void {
@@ -365,7 +381,11 @@ export class IndexerTaskQueue {
             if (decision.kind === 'permanent') {
                 this.taskAttempts.delete(uid);
                 await this.updateState({ permanentError: decision.reason });
-                this.stop();
+                // Fire-and-forget: this runs inside processLoop (via run()), and stop() now
+                // awaits processLoopDone - awaiting it here would deadlock the loop on itself.
+                this.stop().catch((error: unknown) =>
+                    this.searchMetrics.markSearchOtherError({ error, message: 'IndexerTaskQueue: stop() failed' })
+                );
                 return;
             }
 

@@ -5,6 +5,7 @@ export type SearchViewModelAdapter = {
     isSearchAvailable: boolean;
     isSearchEnabled: boolean;
     isSearchable: boolean;
+    isRunningOutdatedVersion: boolean;
     startIndexing: () => void;
     isSearching: boolean;
     refreshResults: () => void;

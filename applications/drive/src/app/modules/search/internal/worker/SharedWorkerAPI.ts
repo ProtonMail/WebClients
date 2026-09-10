@@ -5,6 +5,8 @@ import { Logger } from '../shared/Logger';
 import { SearchDB } from '../shared/SearchDB';
 import { SEARCH_LIBRARY_BLOB_VERSION } from '../shared/config';
 import { SearchDBUserMismatchError, classifyPermanentError } from '../shared/errors';
+import type { SearchAppVersionChannel } from '../shared/searchAppVersionChannel';
+import { createSearchAppVersionChannel } from '../shared/searchAppVersionChannel';
 import { type SearchMetrics, searchMetrics, startSearchTimer } from '../shared/searchMetrics';
 import type { SearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
 import { createSearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
@@ -46,9 +48,42 @@ export class SharedWorkerAPI {
     private searcher: SearchQueryExecutor | null = null;
     private stateChannel: SearchModuleStateUpdateChannel | null = null;
     private searchMetrics: SearchMetrics | null = null;
+    private appVersionChannel: SearchAppVersionChannel;
+    private releaseEngineLock: (() => void) | null = null;
 
-    constructor() {
+    constructor(
+        private appVersion: string,
+        private userId: UserId,
+        private onShutdown: () => void
+    ) {
         this.clientsCoordinator.subscribeClientChanged(this.handleActiveClientChanged.bind(this));
+
+        this.appVersionChannel = createSearchAppVersionChannel(userId);
+
+        // Announce our version so other SharedWorker instances for this user (e.g. an older
+        // deploy still running in another tab) can detect the mismatch.
+        this.appVersionChannel.postMessage(this.appVersion);
+
+        // Each deploy spawns its own SharedWorker, named after its app version, so any other
+        // version we hear is a different worker still holding the engine lock (see
+        // acquireEngineLock). We shut ourselves down so only the most recently started worker
+        // stays alive - even on a rollback to an older version - so compare by inequality, not
+        // "is theirs newer".
+        this.appVersionChannel.onmessage = ({ data: theirVersion }) => {
+            if (theirVersion !== this.appVersion) {
+                Logger.info(
+                    `SharedWorkerAPI: search version mismatch (ours: ${this.appVersion}, theirs: ${theirVersion}), shutting down`
+                );
+                this.disposeInternals()
+                    .catch((error: unknown) =>
+                        searchMetrics.markSearchOtherError({
+                            error,
+                            message: 'SharedWorkerAPI: teardown failed during version-mismatch shutdown',
+                        })
+                    )
+                    .finally(() => this.onShutdown());
+            }
+        };
     }
 
     private async getDb(userId: string) {
@@ -85,7 +120,7 @@ export class SharedWorkerAPI {
     /** Clear all search data and restart indexing from scratch. */
     async reset(): Promise<void> {
         Logger.info('SharedWorkerAPI: resetting search data');
-        this.indexer?.stop();
+        await this.indexer?.stop();
         this.indexer = null;
         this.searcher = null;
 
@@ -114,7 +149,7 @@ export class SharedWorkerAPI {
      */
     async rebuild(): Promise<void> {
         Logger.info('SharedWorkerAPI: rebuilding search index');
-        this.indexer?.stop();
+        await this.indexer?.stop();
         this.indexer = null;
         this.searcher = null;
 
@@ -218,14 +253,24 @@ export class SharedWorkerAPI {
 
     private handleActiveClientChanged(newClientContext: ClientContext | null) {
         if (newClientContext) {
-            void this.onClientAvailable(newClientContext);
+            // onClientAvailable already reports classified errors to stateChannel/Sentry
+            // internally before re-throwing; this catch only stops that re-throw from
+            // becoming an unhandled rejection.
+            this.onClientAvailable(newClientContext).catch((error: unknown) =>
+                Logger.error('SharedWorkerAPI: onClientAvailable failed', error)
+            );
         } else {
-            this.disposeInternals();
+            this.disposeInternals().catch((error: unknown) =>
+                searchMetrics.markSearchOtherError({
+                    error,
+                    message: 'SharedWorkerAPI: disposeInternals failed after last client disconnected',
+                })
+            );
         }
     }
 
-    private disposeInternals() {
-        this.indexer?.stop();
+    private async disposeInternals(): Promise<void> {
+        await this.indexer?.stop();
         this.indexer = null;
         this.searcher = null;
         this.stateChannel?.close();
@@ -233,15 +278,24 @@ export class SharedWorkerAPI {
         this.indexRegistry?.disposeAll();
         this.indexRegistry = null;
         this.searchMetrics = null;
+        this.releaseEngineLock?.();
+        this.releaseEngineLock = null;
     }
 
     /**
      * Lazily creates the IndexRegistry, resolving the crypto key on first call.
+     *
+     * Only one SharedWorker instance for a given user may hold the engine at a time -
+     * acquiring `search-engine:${userId}` here blocks until any stale worker (e.g. from a
+     * previous deploy, see appVersionChannel above) has released it, so two engines never
+     * touch the same IndexedDB blobs concurrently. The lock is released in disposeInternals.
      */
     private async getRegistry(db: SearchDB, bridge: MainThreadBridge): Promise<IndexRegistry> {
         if (this.indexRegistry) {
             return this.indexRegistry;
         }
+
+        await this.acquireEngineLock();
 
         const { cryptoKey } = await SearchIndexKeyManager.getOrCreateKey(db, bridge);
         await db.ensureCompatibleBlobVersion(SEARCH_LIBRARY_BLOB_VERSION);
@@ -250,8 +304,24 @@ export class SharedWorkerAPI {
         return this.indexRegistry;
     }
 
+    private async acquireEngineLock(): Promise<void> {
+        if (this.releaseEngineLock) {
+            return;
+        }
+        await new Promise<void>((acquired, rejected) => {
+            navigator.locks
+                .request(`search-engine:${this.userId}`, () => {
+                    acquired();
+                    return new Promise<void>((release) => {
+                        this.releaseEngineLock = release;
+                    });
+                })
+                .catch(rejected);
+        });
+    }
+
     private async onClientAvailable(clientContext: ClientContext): Promise<void> {
-        this.disposeInternals();
+        await this.disposeInternals();
 
         // Opened before any of the work below so a startup failure still has a channel to report
         // itself on (resolving the search key is the first thing that can fail permanently).
