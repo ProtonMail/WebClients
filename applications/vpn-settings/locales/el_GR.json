@@ -304,6 +304,9 @@
       "Add ${ BRAND_NAME } address": [
         "Προσθήκη διεύθυνσης ${ BRAND_NAME }"
       ],
+      "Add a payment method": [
+        "Προσθέστε μία μέθοδο πληρωμής"
+      ],
       "Add account": [
         "Προσθήκη λογαριασμού"
       ],
@@ -439,9 +442,6 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Δημιουργήστε τη δωρεάν ${ BRAND_NAME } διεύθυνσή σας"
       ],
-      "Clear conversation": [
-        "Εκκαθάριση συνομιλίας"
-      ],
       "Close": [
         "Κλείσιμο"
       ],
@@ -522,9 +522,6 @@
       ],
       "Copy address": [
         "Αντιγραφή διεύθυνσης"
-      ],
-      "Copy debug transcript": [
-        "Αντιγραφή μεταγραφής εντοπισμού σφαλμάτων"
       ],
       "Copy key to the clipboard": [
         "Αντιγραφή του κλειδιού στο πρόχειρο"
@@ -931,9 +928,6 @@
       "Keep editing": [
         "Συνέχιση επεξεργασίας"
       ],
-      "Keep going": [
-        "Συνεχίστε"
-      ],
       "Keep logo": [
         "Διατηρήστε το λογότυπο"
       ],
@@ -1273,9 +1267,6 @@
       "select file": [
         "επιλέξτε αρχείο"
       ],
-      "Send": [
-        "Αποστολή"
-      ],
       "Send code": [
         "Αποστολή κωδικού"
       ],
@@ -1395,12 +1386,6 @@
       ],
       "Stay": [
         "Παραμονή"
-      ],
-      "Stop": [
-        "Σταμάτα"
-      ],
-      "Stop here": [
-        "Σταμάτησε εδώ"
       ],
       "Stop using single sign-on": [
         "Διακοπή χρήσης καθολικής σύνδεσης"
@@ -1958,6 +1943,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "Active until ${ formattedPeriodEndDate }": [
+        "Ενεργό μέχρι ${ formattedPeriodEndDate }"
+      ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate1 }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate2 }."
       ],
@@ -6551,11 +6539,14 @@
       "Security key updated": [
         "Το κλειδί ασφαλείας ενημερώθηκε"
       ],
+      "Still waiting?": [
+        "Ακόμα περιμένετε;"
+      ],
       "This will delete all security keys linked to your account.": [
         "Αυτό θα διαγράψει όλα τα κλειδιά ασφαλείας που είναι συνδεδεμένα με τον λογαριασμό σας."
       ],
-      "Touch your security key.": [
-        "Αγγίξτε το κλειδί ασφαλείας σας."
+      "Touch your security key to continue.": [
+        "Πατήστε το κλειδί ασφαλείας σας για να συνεχίσετε."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Επαληθεύστε την ταυτότητά σας με ένα φυσικό κλειδί ασφαλείας U2F ή FIDO2"
@@ -7531,6 +7522,12 @@
       "${ storage } storage": [
         "${ storage } αποθηκευτικού χώρου"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Απομένουν ${ timeRemaining } στη δοκιμαστική σας περίοδο. ${ addPaymentMethodLink } για να αποφύγετε την απώλεια πρόσβασης. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Απομένουν ${ timeRemaining } στη δοκιμαστική σας περίοδο. ${ addPaymentMethodLink } για να διατηρήσετε τη συνδρομή σας. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } χρήστης βρέθηκε",
         "${ total } χρήστες βρέθηκαν"
@@ -8098,9 +8095,6 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "Η ανάκτηση δεδομένων απαιτεί επιλογή επαναφοράς κωδικού (ηλεκτρονικό ταχυδρομείο ή SMS)"
       ],
-      "Debug transcript copied": [
-        "Η μεταγραφή εντοπισμού σφαλμάτων αντιγράφηκε"
-      ],
       "dedicated servers": [
         "αφοσιωμένοι διακομιστές"
       ],
@@ -8525,9 +8519,6 @@
       ],
       "How your emergency contact can change your password for you:": [
         "Πώς μπορεί η επαφή έκτακτης ανάγκης να αλλάξει τον κωδικό πρόσβασής σας:"
-      ],
-      "I have not finished this one yet.": [
-        "Δεν το έχω τελειώσει ακόμα αυτό."
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Δημόσιο κλειδί της υπηρεσίας παροχής ταυτότητας για την υπογραφή ισχυρισμών ελέγχου ταυτότητας. Θα πρέπει να υπάρχει ένα μέρος για τη λήψη ή την αντιγραφή του κατακερματισμού πιστοποιητικού από την υπηρεσία παροχής ταυτότητας. Απλώς επικολλήστε τον κατακερματισμό του πιστοποιητικού στο πεδίο περιοχής κειμένου."
@@ -8974,6 +8965,9 @@
       ],
       "On": [
         "Ενεργό"
+      ],
+      "On ${ formattedPeriodEndDate }, your free trial ends and your paid plan starts.": [
+        "Στις ${ formattedPeriodEndDate }, η δωρεάν δοκιμαστική σας περίοδος λήγει και ξεκινά το πρόγραμμα επί πληρωμή."
       ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Μόλις τους παραχωρηθεί πρόσβαση στον λογαριασμό σας, μπορούν να έχουν πρόσβαση στις ρυθμίσεις **Ανάκτησης** και **να αλλάξουν τον κωδικό πρόσβασής σας ${ ACCOUNT_APP_NAME }** για εσάς."
@@ -9558,9 +9552,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Αυτά τα διαπιστευτήρια δεν μπορούν να χρησιμοποιηθούν για σύνδεση στις επίσημες ${ VPN_APP_NAME } εφαρμογές μας. ${ learnMore }"
       ],
-      "Thinking about this": [
-        "Το σκέφτομαι αυτό"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
       ],
@@ -9599,9 +9590,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Αυτή είναι τώρα η ${ defaultEmailAddress } για την αποστολή νέων μηνυμάτων."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Αυτό απαιτεί πολλά βήματα. Να συνεχίσω;"
       ],
       "This is the password you used before the password reset.": [
         "Αυτός είναι ο κωδικός που χρησιμοποιούσατε πριν την επαναφορά κωδικού πρόσβασης."
@@ -13108,6 +13096,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } που λήγει σε ${ Last4 }"
+      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "Το ${ BRAND_NAME } σας επιτρέπει τη δημιουργία διευθύνσεων και τη διαχείριση λογαριασμών για άλλους χρήστες. Ιδανικό για οικογένειες και οργανισμούς."
       ],
@@ -14665,6 +14656,11 @@
         "Οι πιστώσεις θα προστεθούν στο υπόλοιπό σας"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Η αλλαγή της διεύθυνσης χρέωσής σας ενδέχεται να επηρεάσει τους φόρους σε μελλοντικά τιμολόγια."
+      ]
+    },
     "Payments.Lifetime Subscription": {
       "Lifetime accounts can be transferred or sold": [
         "Οι λογαριασμοί εφ' όρου ζωής μπορούν να μεταφερθούν ή να πωληθούν"
@@ -14712,6 +14708,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και τον αριθμό ΦΠΑ."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - κάρτα που λήγει σε ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Τραπεζική μεταφορά - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - κάρτα που λήγει σε ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -14783,9 +14790,6 @@
       ],
       "Anytown": [
         "Αθήνα"
-      ],
-      "Ask anything…": [
-        "Ρωτήστε οτιδήποτε…"
       ],
       "billing@company.com": [
         "billing@company.com"
@@ -19628,9 +19632,6 @@
       ],
       "Stay secure and connected anywhere": [
         "Παραμείνετε ασφαλείς και συνδεδεμένοι οπουδήποτε"
-      ],
-      "Still working on it": [
-        "Ακόμα δουλεύω πάνω σε αυτό"
       ],
       "Subscription": [
         "Συνδρομή"
