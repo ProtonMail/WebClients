@@ -31,7 +31,6 @@ import { useMailDispatch, useMailSelector } from '../store/hooks';
 import { layoutActions } from '../store/layout/layoutSlice';
 import { RouterLabelContainer } from './RouterLabelContainer';
 import { useMailboxLayoutProvider } from './components/MailboxLayoutContext';
-import { MailboxToolbar } from './components/MailboxToolbar';
 import { useElementActions } from './hooks/useElementActions';
 import { useGetElementParams } from './hooks/useGetElementParams';
 import { useMeasureSearchDuration } from './hooks/useMeasureSearchDuration';
@@ -63,7 +62,7 @@ export const RouterMailboxContainer = () => {
 
     const [isResizing, setIsResizing] = useState(false);
 
-    const { shouldSeeWideToolbars, isCategoryViewEnabled, isCategoryViewEnabledSettled } = useCategoriesData();
+    const { isCategoryViewEnabled, isCategoryViewEnabledSettled } = useCategoriesData();
 
     /**
      * Temporary: Router mailbox side effects
@@ -103,8 +102,6 @@ export const RouterMailboxContainer = () => {
         return inboxRedirect;
     }
 
-    const viewPortIsNarrow = breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium;
-
     return (
         <MailboxContainerContextProvider containerRef={messageContainerRef} isResizing={isResizing}>
             <CategoriesOnboardingProvider>
@@ -117,17 +114,6 @@ export const RouterMailboxContainer = () => {
                         <CategoriesOnboardingSpotlight step={OnboardingStep.CUSTOMIZE}>
                             <InboxQuickSettingsAppButton />
                         </CategoriesOnboardingSpotlight>
-                    }
-                    toolbar={
-                        // Show toolbar in header when in row layout and an email is selected
-                        !shouldSeeWideToolbars && ((!isColumnModeActive && elementID) || viewPortIsNarrow) ? (
-                            <MailboxToolbar
-                                inHeader
-                                navigation={navigation}
-                                elementsData={elementsData}
-                                actions={actions}
-                            />
-                        ) : undefined
                     }
                 />
                 <PrivateMainArea
