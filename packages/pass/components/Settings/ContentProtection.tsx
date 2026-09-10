@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import Checkbox from '@proton/components/components/input/Checkbox';
+import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SettingsPanel } from './SettingsPanel';
@@ -82,9 +83,17 @@ const ContentProtectionDesktop: FC = () => {
                     .t`Helps prevent accidental exposure of the ${PASS_APP_NAME} window in screenshots, screen recordings, and screen sharing. Some capture tools may still capture its contents.`}
             </p>
             {BUILD_TARGET === 'darwin' && (
-                <Banner variant="warning" className="mt-3">
-                    {c('Warning')
-                        .t`On macOS, apps using ScreenCaptureKit can still capture this window, even when screen privacy is enabled.`}
+                <Banner
+                    variant="warning"
+                    className="mt-3"
+                    noIcon
+                    contentWrapperClassName="flex flex-nowrap items-center gap-2"
+                >
+                    <IcExclamationTriangleFilled className="shrink-0" color="var(--banner-accent-color)" />
+                    <span>
+                        {c('Warning')
+                            .t`On macOS, apps using ScreenCaptureKit can still capture this window, even when screen privacy is enabled.`}
+                    </span>
                 </Banner>
             )}
         </SettingsPanel>
