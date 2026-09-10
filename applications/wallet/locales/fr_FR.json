@@ -2325,6 +2325,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } est votre nom d'utilisateur. Pour créer ${ emailAddress }, dirigez-vous vers Paramètres > Identités et adresses > Domaine court (pm.me)."
       ],
+      "A contact with this email address already exists": [
+        "Un contact portant cette adresse e-mail existe déjà."
+      ],
       "Amount above the maximum.": [
         "Le montant est supérieur au maximum."
       ],
@@ -2622,9 +2625,6 @@
       ],
       "Security key": [
         "Clé de sécurité"
-      ],
-      "Touch your security key.": [
-        "Touchez votre clé de sécurité."
       ]
     },
     "fido2: Label": {
