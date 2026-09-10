@@ -200,7 +200,7 @@ describe('IndexerTaskQueue', () => {
         queue.start().catch(() => {});
 
         const searchable = await state.waitForSearchable();
-        queue.stop();
+        await queue.stop();
 
         // Initial indexing must have occurred at some point: indexing while no usable index yet.
         expect(state.history.some((s) => s.isIndexing && !s.isSearchable)).toBe(true);
@@ -214,9 +214,50 @@ describe('IndexerTaskQueue', () => {
     it('stop() aborts processing and start resolves', async () => {
         const queue = createQueue();
         const startPromise = queue.start();
-        queue.stop();
+        await queue.stop();
 
         await expect(startPromise).resolves.not.toThrow();
+    });
+
+    it('stop() waits for a task suspended mid-await to actually return before resolving', async () => {
+        const queue = createQueue();
+        const state = new IndexerStateStream(queue);
+        queue.start().catch(() => {});
+        await state.waitForSearchable();
+
+        let releaseTask: (() => void) | undefined;
+        let taskReturned = false;
+        const stallingTask: BaseTask = {
+            getUid: () => 'stalling-task',
+            getKind: () => 'cleanup-stale-blobs-task',
+            execute: async () => {
+                await new Promise<void>((resolve) => {
+                    releaseTask = resolve;
+                });
+                taskReturned = true;
+            },
+        };
+        queue.enqueue(stallingTask);
+
+        // Give the queue a tick to pick up the task and reach the mid-await point.
+        await waitForCondition(() => releaseTask !== undefined);
+
+        const stopPromise = queue.stop();
+        let stopResolved = false;
+        void stopPromise.then(() => {
+            stopResolved = true;
+        });
+
+        // stop() must not resolve while the task is still suspended mid-await.
+        await new Promise((resolve) => setTimeout(resolve, 50));
+        expect(stopResolved).toBe(false);
+        expect(taskReturned).toBe(false);
+
+        releaseTask?.();
+        await stopPromise;
+
+        expect(taskReturned).toBe(true);
+        expect(stopResolved).toBe(true);
     });
 
     it('PersistDataTask runs after bootstrap (cursors persisted to DB)', async () => {
@@ -225,7 +266,7 @@ describe('IndexerTaskQueue', () => {
         queue.start().catch(() => {});
 
         await state.waitForSearchable();
-        queue.stop();
+        await queue.stop();
 
         const subs = await db.getAllSubscriptions();
         expect(subs).toHaveLength(1);
@@ -255,7 +296,7 @@ describe('IndexerTaskQueue', () => {
         expect(populators[0].generation).toBe(1);
 
         await state.waitForSearchable();
-        queue.stop();
+        await queue.stop();
 
         const indexPopulatorStates = await db.getAllPopulatorStates();
         expect(indexPopulatorStates).toHaveLength(1);
@@ -273,7 +314,7 @@ describe('IndexerTaskQueue', () => {
         const state = new IndexerStateStream(queue);
         queue.start().catch(() => {});
         await state.waitForSearchable();
-        queue.stop();
+        await queue.stop();
 
         expect(listener1).toHaveBeenCalled();
         expect(listener2).toHaveBeenCalled();
@@ -301,7 +342,7 @@ describe('IndexerTaskQueue', () => {
         const reg = treeSubRegistry.getAllRegistrations()[0];
         await waitForCondition(() => reg.lastEventId === 'evt-2');
 
-        queue.stop();
+        await queue.stop();
     });
 
     it('deletes legacy encrypted-search DB after bootstrap', async () => {
@@ -327,7 +368,7 @@ describe('IndexerTaskQueue', () => {
             return !dbs.some(({ name }) => name === 'ES:test-user:DB');
         });
 
-        queue.stop();
+        await queue.stop();
     });
 
     it('re-indexes when populator version changed since last run', async () => {
@@ -377,7 +418,7 @@ describe('IndexerTaskQueue', () => {
 
         // If version check works, the queue re-indexes (isIndexing) then becomes searchable.
         await state.waitForSearchable();
-        queue.stop();
+        await queue.stop();
 
         // Verify that it went through reindexing.
         expect(state.history.some((s) => s.isIndexing)).toBe(true);
@@ -415,7 +456,7 @@ describe('IndexerTaskQueue', () => {
             return s?.done === true && s?.generation === 2;
         });
 
-        queue.stop();
+        await queue.stop();
 
         // Verify generation was bumped and entries were re-indexed at generation 2.
         const populatorAfter = await db.getPopulatorState(`myfiles:${SCOPE_ID}`);
@@ -471,7 +512,7 @@ describe('IndexerTaskQueue', () => {
         queue.start().catch(() => {});
 
         await state.waitForSearchable();
-        queue.stop();
+        await queue.stop();
 
         // Generation should have incremented from 3 → 4 due to version mismatch.
         const persisted = await db.getPopulatorState(`myfiles:${SCOPE_ID}`);
@@ -512,7 +553,7 @@ describe('IndexerTaskQueue', () => {
             return s?.done === true && s?.generation === 2;
         });
 
-        queue.stop();
+        await queue.stop();
 
         // Entries are re-indexed at generation 2 (same document IDs, overwritten in-place).
         const gen2Results = await findDocuments(instance.indexReader, { indexPopulatorGeneration: BigInt(2) });
@@ -628,7 +669,7 @@ describe('IndexerTaskQueue', () => {
             return callCount >= 2 && s?.done === true;
         });
 
-        queue.stop();
+        await queue.stop();
 
         expect(callCount).toBe(2);
         const populatorState = await db.getPopulatorState(`myfiles:${SCOPE_ID}`);
@@ -675,7 +716,7 @@ describe('IndexerTaskQueue', () => {
             const first = makeFailingQueue();
             first.queue.start().catch(() => {});
             await waitForCondition(() => counter.mock.calls.length >= 1);
-            first.queue.stop();
+            await first.queue.stop();
             expect(counter).toHaveBeenNthCalledWith(1, { outcome: 'failure', isInitialAttempt: 'true' });
             expect(await readFlag()).toBe(true);
 
@@ -684,7 +725,7 @@ describe('IndexerTaskQueue', () => {
             const second = makeFailingQueue();
             second.queue.start().catch(() => {});
             await waitForCondition(() => counter.mock.calls.length >= 2);
-            second.queue.stop();
+            await second.queue.stop();
             expect(counter).toHaveBeenNthCalledWith(2, { outcome: 'failure', isInitialAttempt: 'false' });
 
             counter.mockRestore();
@@ -700,7 +741,7 @@ describe('IndexerTaskQueue', () => {
             // enough to prove the guard (an unguarded write would already be at 2) and only costs
             // one backoff step (~1s), keeping this well inside the default 5s test timeout.
             await waitForCondition(() => counter.mock.calls.length >= 2, 120);
-            queue.stop();
+            await queue.stop();
 
             expect(counter.mock.calls.length).toBeGreaterThanOrEqual(2);
             expect(markSpy).toHaveBeenCalledTimes(1);
@@ -721,7 +762,7 @@ describe('IndexerTaskQueue', () => {
             queue.start().catch(() => {});
             await state.waitForSearchable();
             await waitForCondition(() => counter.mock.calls.length >= 1);
-            queue.stop();
+            await queue.stop();
 
             // Success is reported as a retried success, since a prior session had failed.
             expect(counter).toHaveBeenCalledWith({ outcome: 'success', isInitialAttempt: 'false' });
@@ -769,7 +810,7 @@ describe('IndexerTaskQueue', () => {
 
         // Abort errors should not retry: the queue empties and goes searchable.
         const searchable = await state.waitForSearchable();
-        queue.stop();
+        await queue.stop();
 
         // Yield to confirm no late retry sneaks in.
         await new Promise((r) => setTimeout(r, 50));
@@ -816,7 +857,7 @@ describe('IndexerTaskQueue', () => {
         await waitForCondition(() => pending.size > 0);
         expect(pending.size).toBeGreaterThan(0);
 
-        queue.stop();
+        await queue.stop();
         expect(pending.size).toBe(0);
     });
 
@@ -859,7 +900,7 @@ describe('IndexerTaskQueue', () => {
 
         const errored = await state.waitForPermanentError();
         expect(errored.permanentError).toBe('corrupted_db');
-        queue.stop();
+        await queue.stop();
     });
 
     it('permanent error: invalid_indexer_state', async () => {
@@ -869,7 +910,7 @@ describe('IndexerTaskQueue', () => {
 
         const errored = await state.waitForPermanentError();
         expect(errored.permanentError).toBe('invalid_indexer_state');
-        queue.stop();
+        await queue.stop();
     });
 
     it('permanent error: search_library_error', async () => {
@@ -879,7 +920,7 @@ describe('IndexerTaskQueue', () => {
 
         const errored = await state.waitForPermanentError();
         expect(errored.permanentError).toBe('search_library_error');
-        queue.stop();
+        await queue.stop();
     });
 
     // The state assertion above passes even when the metric is wrong, because the queue's own
@@ -897,7 +938,7 @@ describe('IndexerTaskQueue', () => {
         await state.waitForPermanentError();
         // The metric hop is fire-and-forget (Promise.resolve().then in createBridgedSearchMetrics).
         await waitForCondition(() => permanentCounter.mock.calls.length > 0);
-        queue.stop();
+        await queue.stop();
 
         expect(permanentCounter).toHaveBeenCalledWith({ errorKind: 'search_library_error' });
         expect(transientCounter).not.toHaveBeenCalled();
@@ -957,7 +998,7 @@ describe('IndexerTaskQueue', () => {
             await fakeAdvance(0);
             expect(callCount).toBe(2);
         } finally {
-            queue?.stop();
+            await queue?.stop();
             jest.useRealTimers();
         }
     });
@@ -1021,7 +1062,7 @@ describe('IndexerTaskQueue', () => {
             expect(reportsAfterWindow.length).toBeLessThanOrEqual(SENTRY_REPORT_BURST_MAX_ATTEMPTS * 2);
             expect(reportsAfterWindow.every(([msg]) => msg === 'Search transient error (unknown)')).toBe(true);
         } finally {
-            queue?.stop();
+            await queue?.stop();
             jest.useRealTimers();
             randomSpy.mockRestore();
         }
@@ -1077,6 +1118,6 @@ describe('IndexerTaskQueue', () => {
         const pending = (queue as unknown as { pendingTimeouts: Set<unknown> }).pendingTimeouts;
         expect(pending.size).toBe(0);
 
-        queue.stop();
+        await queue.stop();
     });
 });

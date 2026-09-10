@@ -19,6 +19,7 @@ import type {
 } from '../shared/types';
 import { IndexKind } from '../shared/types';
 import { FakeBroadcastChannel } from '../testing/FakeBroadcastChannel';
+import { FakeLockManager } from '../testing/FakeLockManager';
 import { FakeMainThreadBridge } from '../testing/FakeMainThreadBridge';
 import { setupRealSearchLibraryWasm } from '../testing/setupRealSearchLibraryWasm';
 import { SharedWorkerAPI } from './SharedWorkerAPI';
@@ -32,12 +33,16 @@ jest.mock('../shared/errors', () => {
 });
 
 global.BroadcastChannel = FakeBroadcastChannel as unknown as typeof BroadcastChannel;
+// jsdom does not implement the Web Locks API.
+const fakeLockManager = new FakeLockManager();
+Object.defineProperty(global.navigator, 'locks', { value: fakeLockManager, configurable: true });
 
 // --- Constants ---
 
 const USER_ID = 'test-user' as UserId;
 const CLIENT_A = 'client-a' as ClientId;
 const CLIENT_B = 'client-b' as ClientId;
+const APP_VERSION = '1.0.0';
 const SCOPE_ID = 'scope-1' as TreeEventScopeId;
 const SCOPE_ID_2 = 'scope-2' as TreeEventScopeId;
 const STATE_CHANNEL = `search-state-${USER_ID}`;
@@ -470,7 +475,8 @@ describe('SharedWorkerAPI integration', () => {
         // In memory indexedDB
         indexedDB = new IDBFactory();
         FakeBroadcastChannel.reset();
-        api = new SharedWorkerAPI();
+        fakeLockManager.reset();
+        api = new SharedWorkerAPI(APP_VERSION, USER_ID, jest.fn());
         bridge = createBridge();
         state = new SearchModuleStateStream();
     });
@@ -509,7 +515,7 @@ describe('SharedWorkerAPI integration', () => {
             // First, forget about past states.
             state.checkpoint();
 
-            api = new SharedWorkerAPI();
+            api = new SharedWorkerAPI(APP_VERSION, USER_ID, jest.fn());
             const freshBridge = createBridge();
 
             // Second boot: DB already has populator state (done=true), so no initial indexing
@@ -621,7 +627,7 @@ describe('SharedWorkerAPI integration', () => {
             // Simulate reload: fresh API + bridge, same IndexedDB.
             api.disconnectClient(CLIENT_A);
             state.checkpoint();
-            api = new SharedWorkerAPI();
+            api = new SharedWorkerAPI(APP_VERSION, USER_ID, jest.fn());
             const freshBridge = createBridge();
             await api.registerClient(USER_ID, CLIENT_A, freshBridge.asBridge());
 
@@ -651,7 +657,7 @@ describe('SharedWorkerAPI integration', () => {
             // Simulate reload where the SDK now reports the MyFiles root under a DIFFERENT scope id.
             api.disconnectClient(CLIENT_A);
             state.checkpoint();
-            api = new SharedWorkerAPI();
+            api = new SharedWorkerAPI(APP_VERSION, USER_ID, jest.fn());
             const freshBridge = createBridge();
             freshBridge.setMyFilesRootNode(
                 createMockNodeEntity({
@@ -802,7 +808,7 @@ describe('SharedWorkerAPI integration', () => {
             // uids so session.insert doesn't replace the old entries.
             api.disconnectClient(CLIENT_A);
             state.checkpoint();
-            api = new SharedWorkerAPI();
+            api = new SharedWorkerAPI(APP_VERSION, USER_ID, jest.fn());
 
             const bridge2 = new FakeMainThreadBridge();
             bridge2.setMyFilesRootNode(
@@ -1287,7 +1293,7 @@ describe('SharedWorkerAPI integration', () => {
             bridge.clearIterateNodesError('report-q3');
             api.disconnectClient(CLIENT_A);
             state.checkpoint();
-            api = new SharedWorkerAPI();
+            api = new SharedWorkerAPI(APP_VERSION, USER_ID, jest.fn());
 
             await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
             await state.waitForSearchable();
