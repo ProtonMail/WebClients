@@ -52,6 +52,9 @@
         "Tilføj ${ photoCount } foto til et nyt album",
         "Tilføj ${ photoCount } fotos til et nyt album"
       ],
+      "Add a payment method": [
+        "Tilføj en betalingsmetode"
+      ],
       "Add account": [
         "Tilføj konto"
       ],
@@ -3417,6 +3420,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } er dit brugernavn. For at oprette ${ emailAddress } skal du gå til Indstillinger > Identitet og adresser > Kort domæne (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "En kontakt med denne e-mailadresse eksisterer allerede"
+      ],
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
@@ -4750,8 +4756,11 @@
       "Security key": [
         "Sikkerhedsnøgle"
       ],
-      "Touch your security key.": [
-        "Tryk på din sikkerhedsnøgle."
+      "Still waiting?": [
+        "Venter du stadig?"
+      ],
+      "Touch your security key to continue.": [
+        "Tryk på din sikkerhedsnøgle for at fortsætte."
       ]
     },
     "fido2: Label": {
@@ -5370,6 +5379,9 @@
       "${ LUMO_APP_NAME } includes the writing assistant": [
         "${ LUMO_APP_NAME } inkluderer skriveassistenten"
       ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } har foretaget ${ count } indtil videre. Forsæt?"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
@@ -5440,8 +5452,18 @@
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } indtastninger"
       ],
+      "${ steps } step": [
+        "${ steps } trin",
+        "${ steps } trin"
+      ],
       "${ storage } storage": [
         "${ storage } lagerplads"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Der er ${ timeRemaining } tilbage tilbage i prøveversionen. ${ addPaymentMethodLink } for at undgå at miste adgang. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Der er ${ timeRemaining } tilbage tilbage i prøveversionen. ${ addPaymentMethodLink } for at beholde dit abonnement. ${ learnMoreLink }"
       ],
       "${ total } user found": [
         "${ total } bruger fundet",
@@ -6879,9 +6901,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dette er nu din ${ defaultEmailAddress } til afsendelse af nye beskeder."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Det her kræver meget... Skal det fortsætte?"
       ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Det valgte element er ikke gemt i dit billedbibliotek. Hvis du fjerner det fra dette album, mister du permanent adgang til det.",
@@ -13713,9 +13732,6 @@
       ],
       "Stay for 50% off your next month": [
         "Bliv hængende for 50% rabat i den næste måned"
-      ],
-      "Still working on it": [
-        "Arbejder stadig på det"
       ],
       "Stop sharing": [
         "Stop deling"
