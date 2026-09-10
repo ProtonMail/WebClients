@@ -197,9 +197,6 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Claim uw gratis ${ BRAND_NAME }-adres"
       ],
-      "Clear conversation": [
-        "Gesprek wissen"
-      ],
       "Close": [
         "Sluiten"
       ],
@@ -280,9 +277,6 @@
       ],
       "Copy address": [
         "Adres kopiëren"
-      ],
-      "Copy debug transcript": [
-        "Kopieer het foutopsporingstranscript"
       ],
       "Copy key to the clipboard": [
         "Kopieer sleutel naar klembord"
@@ -683,9 +677,6 @@
       "Keep editing": [
         "Blijf bewerken"
       ],
-      "Keep going": [
-        "Blijf doorgaan"
-      ],
       "Keep logo": [
         "Logo behouden"
       ],
@@ -1022,9 +1013,6 @@
       "select file": [
         "selecteer bestand"
       ],
-      "Send": [
-        "Verstuur"
-      ],
       "Send code": [
         "Code versturen"
       ],
@@ -1141,12 +1129,6 @@
       ],
       "Stay": [
         "Blijf"
-      ],
-      "Stop": [
-        "Stop"
-      ],
-      "Stop here": [
-        "Hier stoppen"
       ],
       "Stop using single sign-on": [
         "Stop met single sign-on"
@@ -6268,11 +6250,14 @@
       "Security key updated": [
         "Veiligheidssleutel bijgewerkt"
       ],
+      "Still waiting?": [
+        "Nog aan het wachten?"
+      ],
       "This will delete all security keys linked to your account.": [
         "Dit zal alle beveiligingssleutels voor uw account verwijderen."
       ],
-      "Touch your security key.": [
-        "Raak uw beveiligingssleutel aan."
+      "Touch your security key to continue.": [
+        "Raak uw beveiligingssleutel aan om door te gaan."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifieer uw identiteit met een fysieke U2F of FIDO2 beveiligingssleutel"
@@ -7764,9 +7749,6 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "Voor gegevensherstel is een optie voor het opnieuw instellen van het wachtwoord vereist (via e-mail of sms)."
       ],
-      "Debug transcript copied": [
-        "Foutopsporings-transcript gekopieerd"
-      ],
       "dedicated servers": [
         "toegewijde servers"
       ],
@@ -8182,9 +8164,6 @@
       ],
       "How your emergency contact can change your password for you:": [
         "Hoe uw contactpersoon voor noodgevallen uw wachtwoord voor u kan wijzigen:"
-      ],
-      "I have not finished this one yet.": [
-        "Deze heb ik nog niet afgemaakt."
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Identiteitsprovider heeft een publieke sleutel om authenticatieverklaringen te ondertekenen. Er moet een plaats zijn om de certificaathash van de identiteitsprovider te downloaden of te kopiëren. Plak gewoon de certificaathash in het tekstveld."
@@ -9193,9 +9172,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Deze inloggegevens kunnen niet gebruikt worden om in te loggen op onze officiële ${ VPN_APP_NAME } apps. ${ learnMore }"
       ],
-      "Thinking about this": [
-        "Hierover aan het nadenken"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Dit account is opgeschort vanwege een potentiële schending van het beleid."
       ],
@@ -9234,9 +9210,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dit is nu uw ${ defaultEmailAddress } voor het verzenden van nieuwe berichten."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Dit vergt veel stappen. Moet het doorgaan?"
       ],
       "This is the password you used before the password reset.": [
         "Dit is het wachtwoord dat u gebruikte vóór de wachtwoordreset."
@@ -14161,6 +14134,11 @@
         "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT-nummer."
       ]
     },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kaart eindigend op ${ Last4 }"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Door deze betaling te bevestigen, machtigt u ${ BRAND_NAME } en Stripe, onze betalingsserviceprovider, om uw bank opdracht te geven om uw factuur naar behoren in rekening te brengen. U kunt een restitutie ontvangen binnen 8 weken van de betaaldatum, onder de voorwaarden van uw overeenkomst met uw bank."
@@ -14230,9 +14208,6 @@
       ],
       "Anytown": [
         "Willekeurige stad"
-      ],
-      "Ask anything…": [
-        "Vraag alles..."
       ],
       "Choose a name": [
         "Kies een naam"
@@ -19028,9 +19003,6 @@
       ],
       "Stay secure and connected anywhere": [
         "Blijf overal veilig en verbonden"
-      ],
-      "Still working on it": [
-        "Er wordt nog steeds aan gewerkt"
       ],
       "Subscription": [
         "Abonnement"

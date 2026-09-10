@@ -304,6 +304,9 @@
       "Add ${ BRAND_NAME } address": [
         "Tilføj ${ BRAND_NAME }-adresse"
       ],
+      "Add a payment method": [
+        "Tilføj en betalingsmetode"
+      ],
       "Add account": [
         "Tilføj konto"
       ],
@@ -439,9 +442,6 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Gør krav på din gratis ${ BRAND_NAME } address"
       ],
-      "Clear conversation": [
-        "Ryd samtale"
-      ],
       "Close": [
         "Luk"
       ],
@@ -522,9 +522,6 @@
       ],
       "Copy address": [
         "Kopier adresse"
-      ],
-      "Copy debug transcript": [
-        "Kopiér fejlfindingstranskibering"
       ],
       "Copy key to the clipboard": [
         "Kopiér nøgle til udklipsholder"
@@ -931,9 +928,6 @@
       "Keep editing": [
         "Fortsæt redigering"
       ],
-      "Keep going": [
-        "Fortsæt"
-      ],
       "Keep logo": [
         "Behold logo"
       ],
@@ -1273,9 +1267,6 @@
       "select file": [
         "vælg fil"
       ],
-      "Send": [
-        "Send"
-      ],
       "Send code": [
         "Send kode"
       ],
@@ -1395,12 +1386,6 @@
       ],
       "Stay": [
         "Bliv her"
-      ],
-      "Stop": [
-        "Stop"
-      ],
-      "Stop here": [
-        "Stop her"
       ],
       "Stop using single sign-on": [
         "Stop med at bruge enkeltlogon"
@@ -6557,11 +6542,14 @@
       "Security key updated": [
         "Sikkerhedsnøgle opdateret"
       ],
+      "Still waiting?": [
+        "Venter du stadig?"
+      ],
       "This will delete all security keys linked to your account.": [
         "Dette vil slette alle sikkerhedsnøgler forbundet til din konto."
       ],
-      "Touch your security key.": [
-        "Tryk på din sikkerhedsnøgle."
+      "Touch your security key to continue.": [
+        "Tryk på din sikkerhedsnøgle for at fortsætte."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bekræft din identitet med en fysisk U2F- eller FIDO2-sikkerhedsnøgle"
@@ -7537,6 +7525,12 @@
       "${ storage } storage": [
         "${ storage } lagerplads"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Der er ${ timeRemaining } tilbage tilbage i prøveversionen. ${ addPaymentMethodLink } for at undgå at miste adgang. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Der er ${ timeRemaining } tilbage tilbage i prøveversionen. ${ addPaymentMethodLink } for at beholde dit abonnement. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } bruger fundet",
         "${ total } brugere fundet"
@@ -8104,9 +8098,6 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "Datagendannelse kræver en metode til at nulstille adgangskoden (e-mail eller SMS)"
       ],
-      "Debug transcript copied": [
-        "Fejlfindingstranskibering kopieret"
-      ],
       "dedicated servers": [
         "dedikerede servere"
       ],
@@ -8531,9 +8522,6 @@
       ],
       "How your emergency contact can change your password for you:": [
         "Sådan kan din nødkontakt ændre din adgangskode for dig:"
-      ],
-      "I have not finished this one yet.": [
-        "Denne er endnu ikke afsluttet."
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Identitetsudbyderens offentlige nøgle til at underskrive godkendelsespåstande. Der bør være et sted, hvor man kan downloade eller kopiere certifikatets hash fra identitetsudbyderen. Du skal bare indsætte certifikatets hash i tekstområdets felt."
@@ -9567,9 +9555,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Disse legitimationsoplysninger kan ikke bruges til at logge ind på vores officielle ${ VPN_APP_NAME }-apps. ${ learnMore }"
       ],
-      "Thinking about this": [
-        "Overvejer..."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
       ],
@@ -9608,9 +9593,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dette er nu din ${ defaultEmailAddress } til afsendelse af nye beskeder."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Det her kræver meget... Skal det fortsætte?"
       ],
       "This is the password you used before the password reset.": [
         "Dette er den adgangskode, du brugte før adgangskodenulstillingen."
@@ -14812,9 +14794,6 @@
       "Anytown": [
         "Skovhavn"
       ],
-      "Ask anything…": [
-        "Spørg om hvad som helst..."
-      ],
       "billing@company.com": [
         "faktura@firma.dk"
       ],
@@ -19656,9 +19635,6 @@
       ],
       "Stay secure and connected anywhere": [
         "Vær sikker og forbundet overalt"
-      ],
-      "Still working on it": [
-        "Arbejder stadig på det"
       ],
       "Subscription": [
         "Abonnement"
