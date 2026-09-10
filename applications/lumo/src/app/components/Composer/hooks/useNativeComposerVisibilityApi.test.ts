@@ -2,6 +2,7 @@ import { renderHook } from '@testing-library/react';
 
 import { useIsLumoSmallScreen } from '../../../hooks/useIsLumoSmallScreen';
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
+import { useOptionalRightPanel } from '../../../providers/RightPanelProvider';
 import { useOptionalSidebar } from '../../../providers/SidebarProvider';
 import { setNativeComposerVisibility } from '../../../remote/nativeComposerBridgeHelpers';
 import { canUseNativeSidebarLayout } from '../../../util/userAgent';
@@ -10,12 +11,14 @@ import { useNativeComposerHostVisibilityApi, useNativeComposerVisibilityApi } fr
 jest.mock('../../../hooks/useLumoFlags');
 jest.mock('../../../hooks/useIsLumoSmallScreen');
 jest.mock('../../../providers/SidebarProvider');
+jest.mock('../../../providers/RightPanelProvider');
 jest.mock('../../../remote/nativeComposerBridgeHelpers');
 jest.mock('../../../util/userAgent');
 jest.mock('@proton/components', () => ({ useActiveBreakpoint: jest.fn() }));
 
 const mockedUseLumoFlags = useLumoFlags as jest.Mock;
 const mockedUseOptionalSidebar = useOptionalSidebar as jest.Mock;
+const mockedUseOptionalRightPanel = useOptionalRightPanel as jest.Mock;
 const mockedUseIsLumoSmallScreen = useIsLumoSmallScreen as jest.Mock;
 
 /** `null` stands for a route rendered outside the sidebar layout, which has no provider. */
@@ -23,12 +26,17 @@ const givenSidebar = (sidebar: { isVisible: boolean; isSmallScreen: boolean } | 
     mockedUseOptionalSidebar.mockReturnValue(sidebar);
     mockedUseIsLumoSmallScreen.mockReturnValue({ isSmallScreen: sidebar?.isSmallScreen ?? false });
 };
+/** `isOverlay` is the provider's own "open and covering the screen" flag — small screens only. */
+const givenRightPanel = (rightPanel: { isOverlay: boolean } | null) => {
+    mockedUseOptionalRightPanel.mockReturnValue(rightPanel);
+};
 const mockedCanUseNativeSidebarLayout = canUseNativeSidebarLayout as jest.Mock;
 
 describe('useNativeComposerVisibilityApi', () => {
     beforeEach(() => {
         jest.clearAllMocks();
         mockedUseLumoFlags.mockReturnValue({ nativeComposer: true });
+        givenRightPanel({ isOverlay: false });
     });
 
     describe('the composer itself', () => {
@@ -97,6 +105,29 @@ describe('useNativeComposerVisibilityApi', () => {
             rerender();
 
             expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(false);
+        });
+
+        it('hides the native composer while the right panel overlays the screen', () => {
+            givenSidebar({ isVisible: false, isSmallScreen: true });
+            givenRightPanel({ isOverlay: true });
+            mockedCanUseNativeSidebarLayout.mockReturnValue(true);
+
+            renderHook(() => useNativeComposerHostVisibilityApi());
+
+            expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(false);
+        });
+
+        it('brings the native composer back when the right panel closes', () => {
+            givenSidebar({ isVisible: false, isSmallScreen: true });
+            givenRightPanel({ isOverlay: true });
+            mockedCanUseNativeSidebarLayout.mockReturnValue(true);
+
+            const { rerender } = renderHook(() => useNativeComposerHostVisibilityApi());
+
+            givenRightPanel({ isOverlay: false });
+            rerender();
+
+            expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(true);
         });
 
         it('shows the native composer on a route with no sidebar layout at all', () => {
