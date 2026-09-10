@@ -5,16 +5,14 @@ import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
 
-import { isLabelIDNewsletterSubscription } from '../../../helpers/labels';
 import { FilterList } from '../filter-list/FilterList';
 
 interface Props {
     classname: string;
-    labelID: string;
     selectAll: ReactElement;
 }
 
-const ToolbarNarrow = ({ classname, selectAll, labelID }: Props) => {
+const ToolbarNarrow = ({ classname, selectAll }: Props) => {
     const toolbarRef = useRef<HTMLDivElement>(null);
 
     return (
@@ -28,7 +26,7 @@ const ToolbarNarrow = ({ classname, selectAll, labelID }: Props) => {
                 <div className="flex items-center toolbar-inner gap-2">{selectAll}</div>
 
                 <div className="flex items-center toolbar-inner gap-2">
-                    {isLabelIDNewsletterSubscription(labelID) ? null : <FilterList />}
+                    <FilterList />
                 </div>
             </nav>
         </div>

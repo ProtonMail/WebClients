@@ -7,11 +7,9 @@ import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { isInDeletedFolder } from '../../helpers/elements';
 import { selectElementID } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
-
-import { isInDeletedFolder } from '../../helpers/elements';
-import { isLabelIDNewsletterSubscription } from '../../helpers/labels';
 import { useCategoriesView } from '../categoryView/useCategoriesView';
 import type { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 import { ClaimProtonAddressToolbarButton } from './actions/ClaimProtonAddressToolbarButton';
@@ -55,13 +53,7 @@ export interface Props {
 }
 
 type Variant =
-    | 'columnWide'
-    | 'rowWide'
-    | 'headerMessageWide'
-    | 'headerMessageNarrow'
-    | 'headerNarrow'
-    | 'narrow'
-    | undefined;
+    'columnWide' | 'rowWide' | 'headerMessageWide' | 'headerMessageNarrow' | 'headerNarrow' | 'narrow' | undefined;
 
 const Toolbar = (props: Props) => {
     const elementID = useMailSelector(selectElementID);
@@ -85,12 +77,7 @@ const Toolbar = (props: Props) => {
         columnWide: () => listInView && columnMode && !viewPortIsNarrow,
     }).find(([, value]) => value() === true)?.[0] as Variant;
 
-    const classname = clsx(
-        BASE_TOOLBAR_CLASSNAME,
-        // In the newsletter subscription list, the toolbar must have no background and no border
-        isLabelIDNewsletterSubscription(props.labelID) && 'toolbar--no-bg toolbar--in-container',
-        shouldShowTabs && 'toolbar--in-container'
-    );
+    const classname = clsx(BASE_TOOLBAR_CLASSNAME, shouldShowTabs && 'toolbar--in-container');
 
     const selectAllProps = pick(props, ['labelID', 'elementIDs', 'checkedIDs', 'onCheck', 'loading']);
     const commonProps = {
