@@ -7,10 +7,9 @@ import useElementBreakpoints from '@proton/components/hooks/useElementBreakpoint
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import clsx from '@proton/utils/clsx';
 
-import { useSelectAll } from '../../../hooks/useSelectAll';
-
-import { getLabelNameForToolbar, isLabelIDNewsletterSubscription } from '../../../helpers/labels';
+import { getLabelNameForToolbar } from '../../../helpers/labels';
 import { getToolbarResponsiveSizes } from '../../../helpers/toolbar/getToolbarResponsiveSizes';
+import { useSelectAll } from '../../../hooks/useSelectAll';
 import SnoozeToolbarDropdown from '../../list/snooze/containers/SnoozeToolbarDropdown';
 import type { Props as ToolbarProps } from '../Toolbar';
 import LabelName from '../actions/LabelName';
@@ -119,7 +118,7 @@ const ToolbarRowWide = ({
                 </div>
 
                 <div className="flex items-center shrink-0 flex-nowrap toolbar-inner gap-2">
-                    {isLabelIDNewsletterSubscription(labelID) ? null : <FilterList />}
+                    <FilterList />
 
                     <PagingControls loading={loading} page={page} total={total} onPage={onPage} />
                 </div>
