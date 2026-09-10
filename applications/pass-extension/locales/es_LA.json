@@ -800,6 +800,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "¿No aparece su gestor de contraseñas? Solicítelo."
+      ],
+      "Bulk select items": [
+        "Seleccionar un grupo de elementos"
+      ],
+      "Multiple select": [
+        "Selección múltiple"
       ]
     },
     "Activity": {
@@ -4431,6 +4437,12 @@
       ],
       "You can attach files to items for a better organization": [
         "Puede adjuntar archivos a los elementos para una mejor organización."
+      ],
+      "Download \"${ filename }\"": [
+        "Descargar «${ filename }»"
+      ],
+      "You may close this window after saving the file.": [
+        "Puede cerrar esta ventana después de guardar el archivo."
       ]
     },
     "Permission": {
@@ -4572,6 +4584,15 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "Esta URL NO se bloqueará del completado automático"
+      ],
+      "Enter a URL to check if it matches the current rule": [
+        "Ingrese una URL para comprobar si coincide con la regla actual"
+      ],
+      "URL doesn't match the rule": [
+        "La URL no coincide con la regla actual"
+      ],
+      "URL matches the rule": [
+        "La URL coincide con la regla"
       ]
     },
     "Security Center - Info": {
@@ -5308,6 +5329,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Está a punto de eliminar definitivamente ${ aliasCount } alias.",
         "Está a punto de eliminar definitivamente ${ aliasCount } alias."
+      ],
+      "${ PASS_APP_NAME } Logs": [
+        "Registros de ${ PASS_APP_NAME }"
       ]
     },
     "Title_cloned_item": {
@@ -5663,6 +5687,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La suscripción no le permite crear varias bóvedas. Todos los elementos serán importados a la primera bóveda. Para importar a varias bóvedas mejore la suscripción."
+      ],
+      "Identity could not be confirmed": [
+        "No se pudo confirmar la identidad."
       ]
     }
   }
