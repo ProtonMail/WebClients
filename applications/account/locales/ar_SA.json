@@ -1913,6 +1913,9 @@
       ],
       "Zoom out": [
         "تصغير"
+      ],
+      "Add a payment method": [
+        "إضافة طريقة دفع"
       ]
     },
     "action": {
@@ -13759,6 +13762,12 @@
       ],
       "Zoom meeting": [
         "اجتماع Zoom"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "تبقّى ${ timeRemaining } من فترتك التجريبية. ${ addPaymentMethodLink } لتجنب فقدان إمكانية الوصول. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "تبقّى ${ timeRemaining } من فترتك التجريبية. ${ addPaymentMethodLink } للاحتفاظ باشتراكك. ${ learnMoreLink }"
       ]
     },
     "info": {

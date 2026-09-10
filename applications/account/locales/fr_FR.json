@@ -2101,6 +2101,9 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Add a payment method": [
+        "Ajouter une méthode de paiement"
       ]
     },
     "action": {
@@ -13944,6 +13947,12 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Il vous reste ${ timeRemaining } de votre période d'essai. ${ addPaymentMethodLink } pour ne pas perdre votre accès. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Il vous reste ${ timeRemaining } de votre période d'essai. ${ addPaymentMethodLink } pour conserver votre abonnement. ${ learnMoreLink }"
       ]
     },
     "info": {
