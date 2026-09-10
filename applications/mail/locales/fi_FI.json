@@ -5857,9 +5857,6 @@
       ],
       "Security key": [
         "Suojausavain"
-      ],
-      "Touch your security key.": [
-        "Koskettakaa suoja-avaintanne."
       ]
     },
     "fido2: Label": {
@@ -7758,7 +7755,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -8569,9 +8567,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Tämä on nyt ${ defaultEmailAddress } uusien viestien lähettämistä varten."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Tämä vaatii paljon ajattelua. Jatketaanko?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tämä linkki johtaa sivustolle, joka voi pyrkiä varastamaan salasanojesi ja maksukorttiesi tietojen kaltaisia tietoja."
@@ -9832,6 +9827,9 @@
       ],
       "Did not follow instructions": [
         "Ei seurannut ohjeitani"
+      ],
+      "Display name": [
+        "Näyttönimi"
       ],
       "Don't ask again": [
         "Älä kysy uudelleen"
@@ -15670,9 +15668,6 @@
       "Apply gift code": [
         "Käytä lahjakoodia"
       ],
-      "Apply labels": [
-        "Merkitse tunnisteilla"
-      ],
       "Archive all messages?": [
         "Arkistoidaanko kaikki viestit?"
       ],
@@ -16106,12 +16101,6 @@
       "Make a secure connection your default": [
         "Aseta suojattu yhteys oletukseksesi"
       ],
-      "Mark all as read": [
-        "Merkitse kaikki luetuksi"
-      ],
-      "Mark all as unread": [
-        "Merkitse kaikki lukemattomiksi"
-      ],
       "Mark all messages as read": [
         "Merkitse kaikki viestit luetuiksi"
       ],
@@ -16183,9 +16172,6 @@
       ],
       "Move all messages to trash": [
         "Siirrä kaikki viestit roskakoriin"
-      ],
-      "Move emails": [
-        "Siirrä sähköpostit"
       ],
       "Move to": [
         "Siirrä kohteeseen"
@@ -16501,9 +16487,6 @@
       ],
       "Start import process": [
         "Aloita tuonti"
-      ],
-      "Still working on it": [
-        "Jatketaan ajattelemista"
       ],
       "Storage capacity warning": [
         "Tallennuskapasiteetin varoitus"

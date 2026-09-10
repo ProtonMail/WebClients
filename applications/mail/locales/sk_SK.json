@@ -54,6 +54,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Pridať ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add a payment method": [
+        "Pridať spôsob platby"
+      ],
       "Add account": [
         "Pridať účet"
       ],
@@ -6273,8 +6276,8 @@
       "Security key": [
         "Bezpečnostný kľúč"
       ],
-      "Touch your security key.": [
-        "Dotknite sa svojho bezpečnostného kľúča."
+      "Still waiting?": [
+        "Stále čakáte?"
       ]
     },
     "fido2: Label": {
@@ -7950,6 +7953,9 @@
         "Vytvoriť bezpečný cloud pre ${ memberCount } členov",
         "Vytvoriť bezpečný cloud pre ${ memberCount } členov"
       ],
+      "Create filter": [
+        "Vytvoriť filter"
+      ],
       "Create folder": [
         "Vytvoriť priečinok"
       ],
@@ -8440,7 +8446,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -8991,6 +9000,9 @@
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Odstráni všetky dáta spojené s touto aplikáciou (vrátane stiahnutých správ, …)"
       ],
+      "Rename folder": [
+        "Premenovať priečinok"
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Nahlásenie tejto správy ako pokusu o phishing odošle túto správu Nám, aby sme ju mohli analyzovať a zlepšiť tým Naše filtre. To znamená, že uvidíme kompletne celý obsah tejto správy."
       ],
@@ -9116,6 +9128,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Nastavte ${ MAIL_APP_NAME } ako vašu predvolenú emailovú aplikáciu. ${ MAIL_APP_NAME } sa otvorí automaticky po kliknutí na emailový odkaz."
+      ],
+      "Set signature": [
+        "Nastaviť podpis"
       ],
       "Set up your organization": [
         "Nastavte svoju organizáciu"
@@ -9360,9 +9375,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Toto je teraz vaša ${ defaultEmailAddress } pre odosielanie nových správ."
       ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Je to dosť zdĺhavé. Mám v tom pokračovať?"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tento odkaz vedie na webovú stránku, ktorá sa môže pokúsiť ukradnúť vaše informácie, ako sú heslá a údaje z platobnej karty."
       ],
@@ -9560,6 +9572,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyskúšajte nové ${ BRAND_NAME } funkcie, aktualizácie a produkty pred ich zverejnením. Týmto sa obnoví aplikácia"
+      ],
+      "Turn off auto-reply": [
+        "Vypnúť automatickú odpoveď"
       ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "Vypnite vyhľadávanie len podľa dátumu, mena, emailovej adresy alebo predmetu. Ak chcete vypnúť vyhľadávanie obsahu správ (a vymazať správy prevzaté na zapnutie tejto funkcie), prejdite do časti Nastavenia."
@@ -10583,6 +10598,9 @@
       "Automated confirmations and alerts": [
         "Automatické potvrdenia a upozornenia"
       ],
+      "Away message": [
+        "Správa o neprítomnosti"
+      ],
       "BCC": [
         "Skrytá kópia (BCC)"
       ],
@@ -10750,6 +10768,9 @@
       ],
       "Did not follow instructions": [
         "Nezodpovedalo inštrukciám"
+      ],
+      "Display name": [
+        "Zobrazované meno"
       ],
       "Document ID": [
         "ID dokumentu"
@@ -11071,6 +11092,9 @@
       ],
       "Never fill on this exact URL": [
         "Nikdy nevypĺňať túto presnú URL adresu"
+      ],
+      "New name": [
+        "Nový názov"
       ],
       "New password": [
         "Nové heslo"
@@ -17043,9 +17067,6 @@
       "Apply gift code": [
         "Použiť darčekový kód"
       ],
-      "Apply labels": [
-        "Použiť štítky"
-      ],
       "Archive all messages?": [
         "Archivovať všetky správy?"
       ],
@@ -17102,9 +17123,6 @@
       ],
       "CC": [
         "Kópia (CC)"
-      ],
-      "Change display setting": [
-        "Zmeniť nastavenie displeja"
       ],
       "Change my answer": [
         "Zmeniť odpoveď"
@@ -17178,14 +17196,8 @@
       "Create contact": [
         "Vytvoriť kontakt"
       ],
-      "Create folder": [
-        "Vytvoriť priečinok"
-      ],
       "Create folder \"${ search }\"": [
         "Vytvoriť priečinok „${ search }“"
-      ],
-      "Create label": [
-        "Vytvoriť štítok"
       ],
       "Create label \"${ search }\"": [
         "Vytvoriť štítok „${ search }“"
@@ -17511,12 +17523,6 @@
       "Make your inbox your own": [
         "Prispôsobte si svoju doručenú poštu podľa seba"
       ],
-      "Mark all as read": [
-        "Označiť všetko ako prečítané"
-      ],
-      "Mark all as unread": [
-        "Označiť všetko ako neprečítané"
-      ],
       "Mark all messages as read": [
         "Označiť všetky správy ako prečítané"
       ],
@@ -17588,9 +17594,6 @@
       ],
       "Move all messages to trash": [
         "Presunúť všetky správy do koša"
-      ],
-      "Move emails": [
-        "Presunúť emaily"
       ],
       "Move to": [
         "Presunúť do"
@@ -17901,17 +17904,11 @@
       "Snooze": [
         "Odložiť"
       ],
-      "Snooze emails": [
-        "Odložiť emaily"
-      ],
       "Snooze message": [
         "Odložiť správu"
       ],
       "Snooze:": [
         "Odložiť:"
-      ],
-      "Star emails": [
-        "Označiť emaily hviezdičkou"
       ],
       "Start a new import": [
         "Zahájiť nový import"
@@ -17921,9 +17918,6 @@
       ],
       "Stay for 50% off your next month": [
         "Zostaňte a získajte 50 % zľavu na nasledujúci mesiac"
-      ],
-      "Still working on it": [
-        "Stále na tom pracujem"
       ],
       "Storage capacity warning": [
         "Upozornenie na kapacitu úložiska"
@@ -17973,9 +17967,6 @@
       "Two-factor authentication": [
         "Dvojstupňové overenie"
       ],
-      "Unstar emails": [
-        "Odobrať hviezdičku z emailov"
-      ],
       "Unsubscribe": [
         "Odhlásiť sa z odberu"
       ],
@@ -17987,9 +17978,6 @@
       ],
       "Unsubscribe request sent": [
         "Žiadosť o odhlásenie odoslaná"
-      ],
-      "Update filter": [
-        "Aktualizovať filter"
       ],
       "Upgrade complete!": [
         "Aktualizácia dokončená!"
