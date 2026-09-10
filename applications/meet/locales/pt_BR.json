@@ -61,6 +61,9 @@
       "A participant reacted with ${ emoji }": [
         "Um participante reagiu com ${ emoji }"
       ],
+      "Background effect turned off": [
+        "Efeito de plano de fundo desativado"
+      ],
       "Background removed": [
         "Plano de fundo removido"
       ],
@@ -211,6 +214,9 @@
       "Cancel": [
         "Cancelar"
       ],
+      "Change layout": [
+        "Alterar layout"
+      ],
       "Change password": [
         "Alterar senha"
       ],
@@ -354,6 +360,9 @@
       ],
       "Full size": [
         "Tamanho completo"
+      ],
+      "Gallery": [
+        "Galeria"
       ],
       "Generate a new meeting link.": [
         "Gerar um novo link de reunião."
@@ -770,6 +779,9 @@
       "Incoming video": [
         "Vídeo recebido"
       ],
+      "Layout: ${ selectedLabel }": [
+        "Layout: ${ selectedLabel }"
+      ],
       "Leave Meeting": [
         "Sair da reunião"
       ],
@@ -875,6 +887,9 @@
       ],
       "Device settings": [
         "Configurações do dispositivo"
+      ],
+      "Layouts": [
+        "Layouts"
       ],
       "Meeting details": [
         "Detalhes da reunião"
@@ -2270,9 +2285,6 @@
       ],
       "Security key": [
         "Chave de segurança"
-      ],
-      "Touch your security key.": [
-        "Toque na sua chave de segurança."
       ]
     },
     "fido2: Label": {
@@ -2475,6 +2487,9 @@
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anônimo ${ particle } ${ participantNumber }"
+      ],
+      "Anyone with the link can join immediately": [
+        "Qualquer pessoa que tenha o link pode participar imediatamente"
       ],
       "Approve participants before they can join": [
         "Aprovar os participantes antes que eles possam entrar"

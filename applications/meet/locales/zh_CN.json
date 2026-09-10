@@ -372,6 +372,9 @@
       "Full size": [
         "完整大小"
       ],
+      "Gallery": [
+        "图库"
+      ],
       "Generate a new meeting link.": [
         "生成新的会议链接。"
       ],
@@ -383,9 +386,6 @@
       ],
       "Getting ready...": [
         "正在准备..."
-      ],
-      "Grid": [
-        "网格"
       ],
       "Help and feedback": [
         "帮助和反馈"
@@ -720,6 +720,9 @@
       "Use camera": [
         "使用摄像头"
       ],
+      "Use it": [
+        "应用"
+      ],
       "Use microphone": [
         "使用麦克风"
       ],
@@ -793,6 +796,9 @@
       ],
       "Incoming video": [
         "传入视频"
+      ],
+      "Layout: ${ selectedLabel }": [
+        "布局：${ selectedLabel }"
       ],
       "Leave Meeting": [
         "离开会议"
@@ -905,6 +911,9 @@
       ],
       "Device settings": [
         "设备设置"
+      ],
+      "Layouts": [
+        "布局"
       ],
       "Meeting details": [
         "会议详情"
@@ -2437,9 +2446,6 @@
       ],
       "Security key": [
         "安全密钥"
-      ],
-      "Touch your security key.": [
-        "请触碰您的安全密钥！"
       ]
     },
     "fido2: Label": {
@@ -2564,6 +2570,9 @@
     "Info": {
       " and ": [
         "和"
+      ],
+      "${ deviceLabel } is available again": [
+        "${ deviceLabel } 已恢复可用"
       ],
       "${ maxParticipants } participant limit reached": [
         "已达到 ${ maxParticipants } 名参与者上限"
@@ -3378,14 +3387,38 @@
       "Your browser or device isn’t supported": [
         "您的浏览器或设备不受支持"
       ],
+      "Your camera was disconnected. Now using ${ deviceLabel }.": [
+        "您的摄像头已断开连接，现使用 ${ deviceLabel }。"
+      ],
+      "Your device was disconnected. Now using ${ deviceLabel }.": [
+        "您的设备已断开连接，现使用 ${ deviceLabel }。"
+      ],
       "Your email will only be used for this one-time verification.": [
         "您的邮箱将只会用于此一次性验证。"
       ],
       "Your meeting is ready": [
         "您的会议已准备就绪"
       ],
+      "Your microphone and camera were disconnected. Now using other devices.": [
+        "您的麦克风和摄像头已断开连接，现使用其他设备。"
+      ],
+      "Your microphone and speaker were disconnected. Now using other devices.": [
+        "您的麦克风和扬声器已断开连接，现使用其他设备。"
+      ],
+      "Your microphone was disconnected. Now using ${ deviceLabel }.": [
+        "您的麦克风已断开连接，现使用 ${ deviceLabel }。"
+      ],
+      "Your microphone, speaker and camera were disconnected. Now using other devices.": [
+        "您的麦克风、扬声器和摄像头已断开连接，现使用其他设备。"
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "您的电话号码将只会用于此一次性验证。"
+      ],
+      "Your speaker and camera were disconnected. Now using other devices.": [
+        "您的扬声器和摄像头已断开连接，现使用其他设备。"
+      ],
+      "Your speaker was disconnected. Now using ${ deviceLabel }.": [
+        "您的扬声器已断开连接，现使用 ${ deviceLabel }。"
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "您即将在新标签页中打开一个链接。请确保您信任该网站，然后再继续。"
