@@ -3,6 +3,13 @@
 	block-size: 100%;
 }
 
+// Full-screen artifact view on small viewports — portaled to document.body, not the files drawer.
+.artifact-panel-mobile-overlay {
+	position: fixed;
+	inset: 0;
+	z-index: 200;
+}
+
 .artifact-inline-edit {
 	border: 1px solid var(--border-norm);
 	z-index: var(--z-up, 10);
