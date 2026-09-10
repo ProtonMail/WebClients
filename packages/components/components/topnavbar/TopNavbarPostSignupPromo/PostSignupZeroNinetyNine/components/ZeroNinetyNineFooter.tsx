@@ -23,7 +23,7 @@ export const ZeroNinetyNineFooter = ({ onUpsellClick, onNeverShow }: Props) => {
             </div>
             <div className="text-center">
                 <Button onClick={onNeverShow} shape="underline" color="norm" className="p-0">
-                    {c('Offer').t`Don't show this offer again`}
+                    {c('Offer').t`Don’t show this offer again`}
                 </Button>
             </div>
         </>
