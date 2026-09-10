@@ -4504,6 +4504,9 @@
       ],
       "Could not grant access to the organization key": [
         "Δεν ήταν δυνατή η παραχώρηση πρόσβασης στο κλειδί οργανισμού"
+      ],
+      "A contact with this email address already exists": [
+        "Υπάρχει ήδη επαφή με αυτή την ηλεκτρονική διεύθυνση."
       ]
     },
     "error": {
@@ -4934,6 +4937,12 @@
       ],
       "Touch your security key.": [
         "Αγγίξτε το κλειδί ασφαλείας σας."
+      ],
+      "Still waiting?": [
+        "Ακόμα περιμένετε;"
+      ],
+      "Touch your security key to continue.": [
+        "Πατήστε το κλειδί ασφαλείας σας για να συνεχίσετε."
       ]
     },
     "fido2: Label": {
@@ -7933,6 +7942,13 @@
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "Απομένουν ${ timeRemaining } στη δοκιμαστική σας περίοδο. ${ addPaymentMethodLink } για να διατηρήσετε τη συνδρομή σας. ${ learnMoreLink }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "Το ${ LUMO_SHORT_APP_NAME } έχει διανύσει ${ count } μέχρι στιγμής. Θέλετε να συνεχίσετε;"
+      ],
+      "${ steps } step": [
+        "${ steps } βήμα",
+        "${ steps } βήματα"
       ]
     },
     "info": {

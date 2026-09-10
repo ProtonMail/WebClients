@@ -4543,6 +4543,9 @@
       ],
       "Could not grant access to the organization key": [
         "Nu s-a putut acorda acces la cheia organizației."
+      ],
+      "A contact with this email address already exists": [
+        "Deja există un contact cu această adresă de e-mail."
       ]
     },
     "error": {
@@ -4976,6 +4979,12 @@
       ],
       "Touch your security key.": [
         "Atingeți cheia de securitate."
+      ],
+      "Still waiting?": [
+        "Încă așteptați?"
+      ],
+      "Touch your security key to continue.": [
+        "Atingeți cheia de securitate pentru a continua."
       ]
     },
     "fido2: Label": {
@@ -8056,6 +8065,14 @@
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a vă păstra abonamentul. ${ learnMoreLink }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } a efectuat ${ count } pană acum. Să mai continue?"
+      ],
+      "${ steps } step": [
+        "${ steps } pas",
+        "${ steps } pași",
+        "${ steps } de pași"
       ]
     },
     "info": {
