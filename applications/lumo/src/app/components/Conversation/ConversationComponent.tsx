@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useConversationPanelState } from '../../hooks/useConversationPanelState';
+import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useRetryPanel } from '../../hooks/useRetryPanel';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useConversationActions } from '../../providers/ConversationActionsProvider';
@@ -21,6 +22,7 @@ import { ConversationSurvey } from '../Survey/ConversationSurvey';
 import { ImageLimitNotice } from './ImageLimitNotice';
 import { ArtifactProvider, useArtifactContext } from './artifact/ArtifactContext';
 import ArtifactPanel from './artifact/ArtifactPanel';
+import { ArtifactPanelMobileOverlay } from './artifact/ArtifactPanelMobileOverlay';
 import { ConversationHeader } from './messageChain/ConversationHeader';
 import { MessageChainComponent } from './messageChain/MessageChainComponent';
 import DesktopApprovalCards from './messageChain/message/DesktopToolApproval/DesktopApprovalCards';
@@ -91,6 +93,7 @@ const ConversationLayout = ({
 
     // Artifact panel split state
     const { isPanelOpen } = useArtifactContext();
+    const { isSmallScreen: isArtifactMobileLayout } = useIsLumoSmallScreen();
     const [panelWidthPct, setPanelWidthPct] = useState(55);
 
     const handleDividerMouseDown = useCallback(
@@ -164,7 +167,11 @@ const ConversationLayout = ({
             >
                 <div
                     className="w-full h-full flex flex-row"
-                    style={isPanelOpen ? { flex: `1 0 calc(${100 - panelWidthPct}% - 4px)` } : { flex: '1 1 auto' }}
+                    style={
+                        isPanelOpen && !isArtifactMobileLayout
+                            ? { flex: `1 0 calc(${100 - panelWidthPct}% - 4px)` }
+                            : { flex: '1 1 auto' }
+                    }
                 >
                     <div
                         ref={chatContainerRef}
@@ -234,7 +241,7 @@ const ConversationLayout = ({
                         />
                     )}
 
-                    {isPanelOpen && (
+                    {isPanelOpen && !isArtifactMobileLayout && (
                         <>
                             {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
                             <div
@@ -250,6 +257,10 @@ const ConversationLayout = ({
                         </>
                     )}
                 </div>
+                <ArtifactPanelMobileOverlay
+                    isOpen={isPanelOpen && isArtifactMobileLayout}
+                    isGenerating={isGenerating}
+                />
             </LumoLayoutWithDrawer>
         </>
     );

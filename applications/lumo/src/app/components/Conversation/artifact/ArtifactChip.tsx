@@ -128,7 +128,7 @@ export const ArtifactChip = ({ artifact, messageId }: CompleteChipProps) => {
         <button
             tabIndex={versionIndex === null ? -1 : 0}
             className={clsx(
-                'artifact-chip flex flex-row items-center gap-3 border rounded-lg p-3 mt-2 mb-4 w-full',
+                'artifact-chip flex flex-row items-center gap-3 border rounded-lg p-3 mt-2 mb-4 w-full text-left',
                 visualState === 'default' && 'bg-norm border-weak',
                 visualState === 'active' && 'artifact-chip--active',
                 visualState === 'superseded' && 'bg-norm border-weak artifact-chip--superseded',
@@ -146,7 +146,7 @@ export const ArtifactChip = ({ artifact, messageId }: CompleteChipProps) => {
             }}
         >
             <ArtifactChipIcon type={artifact.type} visualState={visualState} />
-            <div className="flex-1 min-w-0 flex flex-column gap-0.5">
+            <div className="flex-1 min-w-0 flex flex-column items-start gap-0.5 text-left">
                 <span
                     className={clsx(
                         'text-sm text-ellipsis overflow-hidden whitespace-nowrap',
