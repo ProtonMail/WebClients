@@ -4504,6 +4504,9 @@
       ],
       "Could not grant access to the organization key": [
         "Kuruluş anahtarına erişme izni verilemedi"
+      ],
+      "A contact with this email address already exists": [
+        "Bu e-posta adresiyle bir kişi kaydı zaten var"
       ]
     },
     "error": {
@@ -4934,6 +4937,12 @@
       ],
       "Touch your security key.": [
         "Güvenlik anahtarınıza dokunun."
+      ],
+      "Still waiting?": [
+        "Hâlâ bekliyor musunuz?"
+      ],
+      "Touch your security key to continue.": [
+        "İlerlemek için güvenlik anahtarınıza dokunun."
       ]
     },
     "fido2: Label": {
@@ -7933,6 +7942,13 @@
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Aboneliğinizi sürdürmek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } şu ana kadar ${ count } ilerledi. Sürdürmek istiyor musunuz?"
+      ],
+      "${ steps } step": [
+        "${ steps } adım",
+        "${ steps } adım"
       ]
     },
     "info": {

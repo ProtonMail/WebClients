@@ -4504,6 +4504,9 @@
       ],
       "Could not grant access to the organization key": [
         "Kunne ikke give adgang til organistationsnøglen"
+      ],
+      "A contact with this email address already exists": [
+        "En kontakt med denne e-mailadresse eksisterer allerede"
       ]
     },
     "error": {
@@ -4929,6 +4932,12 @@
       ],
       "Touch your security key.": [
         "Tryk på din sikkerhedsnøgle."
+      ],
+      "Still waiting?": [
+        "Venter du stadig?"
+      ],
+      "Touch your security key to continue.": [
+        "Tryk på din sikkerhedsnøgle for at fortsætte."
       ]
     },
     "fido2: Label": {
@@ -7911,6 +7920,13 @@
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "Der er ${ timeRemaining } tilbage tilbage i prøveversionen. ${ addPaymentMethodLink } for at beholde dit abonnement. ${ learnMoreLink }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } har foretaget ${ count } indtil videre. Forsæt?"
+      ],
+      "${ steps } step": [
+        "${ steps } trin",
+        "${ steps } trin"
       ]
     },
     "info": {
