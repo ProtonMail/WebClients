@@ -25,7 +25,7 @@ import { selectLayoutIsExpanded } from '../../store/layout/layoutSliceSelectors'
 import { useCategoriesOnboarding } from '../categoryView/categoriesOnboarding/CategoriesOnboardingContext';
 import { CategoriesOnboardingSpotlight } from '../categoryView/categoriesOnboarding/CategoriesOnboardingSpotlights';
 import { OnboardingStep } from '../categoryView/categoriesOnboarding/onboardingInterface';
-import { MailHeaderActionArea } from './MailHeaderActionArea';
+import { MailToolbar } from '../toolbar/MailToolbar';
 
 interface Props {
     labelID: string;
@@ -33,10 +33,9 @@ interface Props {
     actions: MailboxActions;
     assistantButton?: ReactNode;
     settingsButton?: ReactNode;
-    toolbar?: ReactNode | undefined;
 }
 
-const MailHeader = ({ labelID, elementsData, actions, toolbar, assistantButton, settingsButton }: Props) => {
+const MailHeader = ({ labelID, elementsData, actions, assistantButton, settingsButton }: Props) => {
     const elementID = useMailSelector(selectElementID);
 
     const [labels = []] = useLabels();
@@ -79,7 +78,7 @@ const MailHeader = ({ labelID, elementsData, actions, toolbar, assistantButton, 
                 overrideMenuButton={customMenuButton}
                 hideUpsellButton={hideUpsellButton}
                 title={labelName}
-                actionArea={<MailHeaderActionArea toolbar={toolbar} actions={actions} elementsData={elementsData} />}
+                actionArea={<MailToolbar placement="header" actions={actions} elementsData={elementsData} />}
                 expanded={expanded}
                 onToggleExpand={onToggleExpand}
                 isSmallViewport={breakpoints.viewportWidth['<=small']}
