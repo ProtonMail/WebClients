@@ -2299,6 +2299,15 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Add a payment method": [
+        "Bir ödeme yöntemi ekleyin"
+      ],
+      "Sign out on all devices": [
+        "Tüm aygıtlardaki oturumları kapat"
+      ],
+      "Upgrade to 2 devices or more": [
+        "2 ya da daha fazla aygıta yükseltin"
       ]
     },
     "action": {
@@ -5665,6 +5674,21 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor",
         "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor"
+      ],
+      "The link to sign out on all your devices has expired. Try signing in again to receive a new one.": [
+        "Tüm aygıtlarınızdaki oturumları kapatma bağlantısının geçerlilik süresi dolmuş. Yeni bir bağlantı almak için yeniden oturum açmayı deneyin."
+      ],
+      "To stay signed in everywhere, upgrade your plan instead.": [
+        "Her yerdeki oturumlarınızın açık kalması için tarifenizi yükseltin."
+      ],
+      "Too many devices are connected to your account. To use ${ BRAND_NAME } on a new device or browser, end all existing sessions. You'll be signed out on every device.": [
+        "Hesabınıza çok fazla aygıt bağlı. Yeni bir aygıtta veya tarayıcıda ${ BRAND_NAME } kullanmak için var olan tüm oturumları kapatın. Her aygıttaki oturumunuz kapatılacak."
+      ],
+      "Upgrade anytime to stay signed in on multiple devices.": [
+        "Birden fazla aygıt üzerinde oturum açmak gerektiğinde tarifenizi yükseltin."
+      ],
+      "Your other sessions have been ended. You can now sign in on this device.": [
+        "Diğer oturumlarınız kapatıldı. Artık bu aygıt üzerinde oturum açabilirsiniz."
       ]
     },
     "description": {
@@ -8140,6 +8164,9 @@
       ],
       "Zero keys reactivated": [
         "Hiç bir anahtar yeniden kullanıma alınmadı"
+      ],
+      "Something went wrong, please try again": [
+        "Bir sorun çıktı. Lütfen yeniden deneyin"
       ]
     },
     "error": {
@@ -9043,6 +9070,12 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "İki adımlı doğrulama anahtarınız kullanılmaya hazır."
+      ],
+      "Still waiting?": [
+        "Hâlâ bekliyor musunuz?"
+      ],
+      "Touch your security key to continue.": [
+        "İlerlemek için güvenlik anahtarınıza dokunun."
       ]
     },
     "fido2: Label": {
@@ -14404,6 +14437,12 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Erişiminizi kaybetmemek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Aboneliğinizi sürdürmek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -27989,6 +28028,12 @@
       ],
       "Your subscriptions": [
         "Abonelikleriniz"
+      ],
+      "Other devices signed out": [
+        "Diğer aygıtlardaki oturumlar kapatıldı"
+      ],
+      "Sign out on all devices?": [
+        "Tüm aygıtlardaki oturumlar kapatılsın mı?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

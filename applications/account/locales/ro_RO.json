@@ -2299,6 +2299,15 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Add a payment method": [
+        "Adăugați o metodă de plată"
+      ],
+      "Sign out on all devices": [
+        "Deconectare de pe toate dispozitivele"
+      ],
+      "Upgrade to 2 devices or more": [
+        "Treceți la două sau mai multe dispozitive simultan"
       ]
     },
     "action": {
@@ -5702,6 +5711,21 @@
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adresă Gmail",
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adrese Gmail",
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } de adrese Gmail"
+      ],
+      "The link to sign out on all your devices has expired. Try signing in again to receive a new one.": [
+        "Legătura web pentru deconectare de pe toate dispozitivele a expirat. Încercați să vă reconectați pentru a primi una nouă."
+      ],
+      "To stay signed in everywhere, upgrade your plan instead.": [
+        "Pentru a vă păstra conexiunea peste tot, modificați abonamentul actual."
+      ],
+      "Too many devices are connected to your account. To use ${ BRAND_NAME } on a new device or browser, end all existing sessions. You'll be signed out on every device.": [
+        "Sunt prea multe dispozitive conectate la cont. Pentru a utiliza ${ BRAND_NAME } pe un dispozitiv sau navigator web nou, încheiați toate sesiunile existente. Toate dispozitivele vor fi deconectate."
+      ],
+      "Upgrade anytime to stay signed in on multiple devices.": [
+        "Modificați-vă abonamentul pentru a vă păstra conexiunea pe dispozitive multiple."
+      ],
+      "Your other sessions have been ended. You can now sign in on this device.": [
+        "Celelalte sesiuni s-au încheiat. Acum vă puteți conecta pe acest dispozitiv."
       ]
     },
     "description": {
@@ -8194,6 +8218,9 @@
       ],
       "Zero keys reactivated": [
         "Zero taste reactivate."
+      ],
+      "Something went wrong, please try again": [
+        "Ceva nu a funcționat bine. Reîncercați"
       ]
     },
     "error": {
@@ -9108,6 +9135,12 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Cheia de autentificare cu doi factori este pregătită de utilizare."
+      ],
+      "Still waiting?": [
+        "Încă așteptați?"
+      ],
+      "Touch your security key to continue.": [
+        "Atingeți cheia de securitate pentru a continua."
       ]
     },
     "fido2: Label": {
@@ -14552,6 +14585,12 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a evita pierderea accesului. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a vă păstra abonamentul. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -28318,6 +28357,12 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "Other devices signed out": [
+        "Alte dispozitive deconectate"
+      ],
+      "Sign out on all devices?": [
+        "Vă deconectați de pe toate dispozitivele?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

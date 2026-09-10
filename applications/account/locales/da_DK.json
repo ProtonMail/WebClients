@@ -2299,6 +2299,15 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Add a payment method": [
+        "Tilføj en betalingsmetode"
+      ],
+      "Sign out on all devices": [
+        "Log ud på alle enheder"
+      ],
+      "Upgrade to 2 devices or more": [
+        "Opgrader til 2 eller flere enheder"
       ]
     },
     "action": {
@@ -5665,6 +5674,21 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresse",
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "The link to sign out on all your devices has expired. Try signing in again to receive a new one.": [
+        "Linket til at logge ud på alle dine enheder er udløbet. Prøv at logge ind igen for at modtage et nyt."
+      ],
+      "To stay signed in everywhere, upgrade your plan instead.": [
+        "Opgrader dit abonnement i stedet for at forblive logget ind overalt."
+      ],
+      "Too many devices are connected to your account. To use ${ BRAND_NAME } on a new device or browser, end all existing sessions. You'll be signed out on every device.": [
+        "For mange enheder er tilsluttet din konto. Afslut alle eksisterende sessioner for at bruge ${ BRAND_NAME } på en ny enhed eller browser. Du vil blive logget ud på alle enheder."
+      ],
+      "Upgrade anytime to stay signed in on multiple devices.": [
+        "Opgrader når som helst for at forblive logget ind på flere enheder."
+      ],
+      "Your other sessions have been ended. You can now sign in on this device.": [
+        "Dine andre sessioner er blevet afsluttet. Du kan nu logge ind på denne enhed."
       ]
     },
     "description": {
@@ -8140,6 +8164,9 @@
       ],
       "Zero keys reactivated": [
         "Nul nøgler genaktiveret"
+      ],
+      "Something went wrong, please try again": [
+        "Noget gik galt, prøv igen"
       ]
     },
     "error": {
@@ -9046,6 +9073,12 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Din to-faktor-godkendelsesnøgle er klar til brug."
+      ],
+      "Still waiting?": [
+        "Venter du stadig?"
+      ],
+      "Touch your security key to continue.": [
+        "Tryk på din sikkerhedsnøgle for at fortsætte."
       ]
     },
     "fido2: Label": {
@@ -14407,6 +14440,12 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Der er ${ timeRemaining } tilbage tilbage i prøveversionen. ${ addPaymentMethodLink } for at undgå at miste adgang. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Der er ${ timeRemaining } tilbage tilbage i prøveversionen. ${ addPaymentMethodLink } for at beholde dit abonnement. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -27992,6 +28031,12 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Other devices signed out": [
+        "Andre enheder logget ud"
+      ],
+      "Sign out on all devices?": [
+        "Log ud på alle enheder?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
