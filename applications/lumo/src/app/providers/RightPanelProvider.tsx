@@ -81,9 +81,17 @@ export const RightPanelProvider = ({ children }: { children: ReactNode }) => {
 };
 
 export const useRightPanel = (): RightPanelContextValue => {
-    const ctx = useContext(RightPanelContext);
+    const ctx = useOptionalRightPanel();
     if (!ctx) {
         throw new Error('useRightPanel must be used within RightPanelProvider');
     }
     return ctx;
 };
+
+/**
+ * The right panel state, or `null` on the full-screen routes that render outside the main layout
+ * (the AI paper trail). Only for code that has to work on both — a missing provider there means
+ * there is no right panel, not a bug. Anything inside the layout should use `useRightPanel` and
+ * let it throw.
+ */
+export const useOptionalRightPanel = (): RightPanelContextValue | null => useContext(RightPanelContext);
