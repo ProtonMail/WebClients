@@ -74,14 +74,19 @@ const ContentProtectionDesktop: FC = () => {
                 disabled={loading || enabled === undefined}
                 onChange={handleToggle}
                 loading={loading}
+                aria-labelledby="content-protection-label"
                 aria-describedby="content-protection-description"
             >
-                {c('Label').t`Hide ${PASS_APP_NAME} from screen captures`}
+                <span>
+                    <span id="content-protection-label">
+                        {c('Label').t`Hide ${PASS_APP_NAME} from screen captures`}
+                    </span>
+                    <span id="content-protection-description" className="block color-weak text-sm">
+                        {c('Info')
+                            .t`Helps prevent accidental exposure of the ${PASS_APP_NAME} window in screenshots, screen recordings, and screen sharing. Some capture tools may still capture its contents.`}
+                    </span>
+                </span>
             </Checkbox>
-            <p id="content-protection-description" className="color-weak text-sm mt-2 mb-0">
-                {c('Info')
-                    .t`Helps prevent accidental exposure of the ${PASS_APP_NAME} window in screenshots, screen recordings, and screen sharing. Some capture tools may still capture its contents.`}
-            </p>
             {BUILD_TARGET === 'darwin' && (
                 <Banner
                     variant="warning"
