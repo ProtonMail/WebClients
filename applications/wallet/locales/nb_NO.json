@@ -1109,6 +1109,9 @@
         "${ users } bruker",
         "${ users } brukere"
       ],
+      "Amount due": [
+        "Beløp å betale"
+      ],
       "Amount due after trial": [
         "Beløp som forfaller etter prøvetiden"
       ],
@@ -2340,6 +2343,9 @@
       "Contact could not be saved": [
         "Kontakten kunne ikke lagres."
       ],
+      "Could not grant access to the organization key": [
+        "Kunne ikke gi tilgang til organisasjonsnøkkelen"
+      ],
       "Domain not available, try again later": [
         "Domenet er ikke tilgjengelig. Prøv igjen senere."
       ],
@@ -2616,9 +2622,6 @@
       ],
       "Security key": [
         "Sikkerhetsnøkkel"
-      ],
-      "Touch your security key.": [
-        "Berør sikkerhetsnøkkelen din."
       ]
     },
     "fido2: Label": {
@@ -3193,6 +3196,9 @@
       "We use 3-D Secure to protect your payments": [
         "Vi bruker 3-D Secure for å beskytte dine betalinger"
       ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Vi vil sende deg til ${ IDEAL_WERO_BRAND_NAME } i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vi vil sende deg til PayPal i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
       ],
@@ -3328,6 +3334,9 @@
       ],
       "Account holder": [
         "Kontoinnehaver"
+      ],
+      "Account holder name": [
+        "Kontoinnehaverens navn"
       ],
       "Additional comments": [
         "Ytterligere kommentarer"
@@ -3838,6 +3847,12 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med utvidet tilgang"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med begrenset tilgang"
+      ],
       "${ n } calendar": [
         "${ n } kalender",
         "${ n } kalendere"
@@ -4283,6 +4298,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } slutter på ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB med skylagring som lett lar deg lagre, synkronisere og dele filer. Sikret med ende-til-ende-kryptering."
       ],
@@ -4955,6 +4973,9 @@
       "Invalid security code": [
         "Ugyldig sikkerhetskode"
       ],
+      "Please enter the account holder name": [
+        "Skriv inn kontoinnehaverens navn"
+      ],
       "Something went wrong. Please try again later.": [
         "Noe gikk galt. Prøv på nytt senere."
       ],
@@ -4981,6 +5002,11 @@
       ],
       "Credits will be added to your balance": [
         "Kreditter vil bli lagt til saldoen din"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Endring av faktureringsadresse kan påvirke skatter på fremtidige fakturaer."
       ]
     },
     "Payments.ModificationWarning": {
@@ -5020,6 +5046,12 @@
       ]
     },
     "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - kort som slutter på ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Bankoverføring - ${ iban }"
+      ],
       "Google Pay - card ending in ${ Last4 }": [
         "Google Pay - kort som slutter på ${ Last4 }"
       ]
@@ -5814,6 +5846,9 @@
       ],
       "Select a plan": [
         "Velg en plan"
+      ],
+      "September Sale": [
+        "Septembersalg"
       ],
       "Set recovery methods": [
         "Angi gjenopprettingsmetoder"
