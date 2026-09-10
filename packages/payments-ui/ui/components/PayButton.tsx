@@ -119,6 +119,7 @@ export const PayButton = ({
                         event.stopPropagation();
 
                         openBillingAddressModal({
+                            source: 'pay-button',
                             subscription: paymentFacade.subscription,
                             paymentsApi: taxCountry.paymentsApi,
                             loadingKey: 'editBillingAddress',

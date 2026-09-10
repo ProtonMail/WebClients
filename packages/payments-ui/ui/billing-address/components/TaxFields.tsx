@@ -21,6 +21,7 @@ export const TaxFields = ({ user, taxCountry, vatNumber, subscription }: Props) 
 
     const onEditClick = (loadingKey: string) => {
         openBillingAddressModal({
+            source: 'tax-fields',
             paymentsApi: taxCountry?.paymentsApi,
             loadingKey,
             subscription,
