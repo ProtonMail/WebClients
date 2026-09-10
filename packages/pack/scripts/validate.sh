@@ -26,12 +26,14 @@ function detect {
 function detectEmpty {
   local total=0;
 
-  for file in $(echo "$OUTPUT_FILES" | grep -E "\.$1$"); do
+  # Not `for file in $(...)`: that word-splits paths containing spaces.
+  while IFS= read -r file; do
+    [ -n "$file" ] || continue;
     if [ ! -s "$file" ]; then
-      ((total++))
+      total=$((total + 1));
       echo "[error] empty file: $file"  >&2;
     fi;
-  done;
+  done < <(echo "$OUTPUT_FILES" | grep -E "\.$1$");
 
   echo "$total";
 }
