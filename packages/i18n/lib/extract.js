@@ -1,7 +1,16 @@
+const path = require('path');
+
 const { TEMPLATE_FILE } = require('../config');
 const { success, debug } = require('./helpers/log')('proton-i18n');
 const { hasDirectory } = require('./helpers/file');
 const { script, bash } = require('./helpers/cli');
+
+// npx and dlx resolve from the registry instead of the version we have installed,
+// so we point to the binary of the local ttag-cli
+const TTAG_BIN = path.resolve(
+    path.dirname(require.resolve('ttag-cli/package.json')),
+    require('ttag-cli/package.json').bin.ttag
+);
 
 const PATHS = {
     reactComponents: ['{components,containers,helpers,hooks}'],
@@ -16,7 +25,7 @@ async function extractor(app = 'app') {
         if (!dest) {
             throw new Error('Unknown app target');
         }
-        const cmd = `yarn dlx -p ttag-cli ttag extract $(find ${dest} -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx' -o -name '*.jsx') -o ${TEMPLATE_FILE}`;
+        const cmd = `"${TTAG_BIN}" extract $(find ${dest} -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx' -o -name '*.jsx') -o ${TEMPLATE_FILE}`;
         debug(cmd);
         return bash(cmd);
     }
