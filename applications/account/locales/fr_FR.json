@@ -239,6 +239,9 @@
       "Add ${ BRAND_NAME } address": [
         "Ajouter l'adresse ${ BRAND_NAME }"
       ],
+      "Add a payment method": [
+        "Ajouter une méthode de paiement"
+      ],
       "Add account": [
         "Ajouter un compte"
       ],
@@ -431,9 +434,6 @@
       "Clear all formatting": [
         "Effacer toute la mise en forme"
       ],
-      "Clear conversation": [
-        "Effacer la conversation"
-      ],
       "Close": [
         "Fermer"
       ],
@@ -547,9 +547,6 @@
       ],
       "Copy address": [
         "Copier l'adresse"
-      ],
-      "Copy debug transcript": [
-        "Copier la transcription de débogage"
       ],
       "Copy key to the clipboard": [
         "Copier la clé dans le presse-papiers"
@@ -1205,9 +1202,6 @@
       "Keep editing": [
         "Continuer les modifications"
       ],
-      "Keep going": [
-        "Continuer"
-      ],
       "Keep logo": [
         "Conserver le logo"
       ],
@@ -1679,9 +1673,6 @@
       "Select time zone": [
         "Sélectionner le fuseau horaire"
       ],
-      "Send": [
-        "Envoyer"
-      ],
       "send auto-reply email": [
         "envoyer un message de réponse automatique"
       ],
@@ -1840,12 +1831,6 @@
       ],
       "Stay": [
         "Rester"
-      ],
-      "Stop": [
-        "Arrêter"
-      ],
-      "Stop here": [
-        "S'arrêter ici"
       ],
       "Stop using single sign-on": [
         "Arrêter d'utiliser l'authentification unique"
@@ -8725,9 +8710,6 @@
       "This will delete all security keys linked to your account.": [
         "Cela supprimera toutes les clés de sécurité liées à votre compte."
       ],
-      "Touch your security key.": [
-        "Touchez votre clé de sécurité."
-      ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Confirmez votre identité avec une clé de sécurité physique U2F ou FIDO2."
       ],
@@ -10068,6 +10050,12 @@
       "${ storage } storage": [
         "${ storage } d'espace de stockage"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Il vous reste ${ timeRemaining } de votre période d'essai. ${ addPaymentMethodLink } pour ne pas perdre votre accès. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Il vous reste ${ timeRemaining } de votre période d'essai. ${ addPaymentMethodLink } pour conserver votre abonnement. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } utilisateur trouvé",
         "${ total } utilisateurs trouvés"
@@ -10863,9 +10851,6 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "La récupération des données nécessite une option de réinitialisation du mot de passe (e-mail ou SMS)."
       ],
-      "Debug transcript copied": [
-        "Transcription de débogage copiée"
-      ],
       "dedicated servers": [
         "serveurs dédiés"
       ],
@@ -11428,9 +11413,6 @@
       ],
       "How your emergency contact can change your password for you:": [
         "Comment votre contact d'urgence peut changer votre mot de passe pour vous :"
-      ],
-      "I have not finished this one yet.": [
-        "Je n'ai pas encore fini celui-là."
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN : ${ formattedIBAN }"
@@ -12823,9 +12805,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Ces identifiants ne peuvent pas être utilisés pour se connecter aux applications ${ VPN_APP_NAME } officielles. ${ learnMore }"
       ],
-      "Thinking about this": [
-        "Réflexion en cours..."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Ce compte a été suspendu en raison d’une violation potentielle des règles d’utilisation."
       ],
@@ -12873,9 +12852,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Ceci est désormais votre ${ defaultEmailAddress } pour envoyer de nouveaux messages."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Cela demande beaucoup d'étapes. Faut-il continuer ?"
       ],
       "This is the password you used before the password reset.": [
         "Il s'agit du mot de passe que vous avez utilisé avant la réinitialisation du mot de passe."
@@ -20513,9 +20489,6 @@
       "Anytown": [
         "Boisclair"
       ],
-      "Ask anything…": [
-        "Demandez ce que vous voulez…"
-      ],
       "billing@company.com": [
         "facturation@entreprise.com"
       ],
@@ -26964,9 +26937,6 @@
       ],
       "Stay secure and connected anywhere": [
         "Restez en sécurité et connecté partout"
-      ],
-      "Still working on it": [
-        "Je suis encore en train d'y travailler"
       ],
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "Renforcez votre sécurité sur tous vos appareils avec ${ passPlusPlanName }. ${ upgradeButton }"

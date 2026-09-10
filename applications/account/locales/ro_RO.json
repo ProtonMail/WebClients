@@ -410,6 +410,9 @@
       "Add ${ BRAND_NAME } address": [
         "Adăugare adresă ${ BRAND_NAME }"
       ],
+      "Add a payment method": [
+        "Adăugați o metodă de plată"
+      ],
       "Add account": [
         "Adăugare cont"
       ],
@@ -608,9 +611,6 @@
       "Clear all formatting": [
         "Eliminare formatări"
       ],
-      "Clear conversation": [
-        "Golire conversație"
-      ],
       "Close": [
         "Închidere"
       ],
@@ -727,9 +727,6 @@
       ],
       "Copy address": [
         "Copiere adresă"
-      ],
-      "Copy debug transcript": [
-        "Copiere transcriere depanare"
       ],
       "Copy key to the clipboard": [
         "Copiere cheie în memorie"
@@ -1391,9 +1388,6 @@
       "Keep editing": [
         "Continuare editare"
       ],
-      "Keep going": [
-        "Continuă"
-      ],
       "Keep logo": [
         "Păstrare logo"
       ],
@@ -1871,9 +1865,6 @@
       "Select time zone": [
         "Selectare fus orar"
       ],
-      "Send": [
-        "Trimitere"
-      ],
       "send auto-reply email": [
         "trimitere răspuns automat"
       ],
@@ -1997,6 +1988,9 @@
       "Sign out of all accounts": [
         "Deconectare din toate conturile"
       ],
+      "Sign out on all devices": [
+        "Deconectare de pe toate dispozitivele"
+      ],
       "sign up for free": [
         "înscrieți-vă gratuit"
       ],
@@ -2035,12 +2029,6 @@
       ],
       "Stay": [
         "Nu închide"
-      ],
-      "Stop": [
-        "Stop\n"
-      ],
-      "Stop here": [
-        "Oprește aici"
       ],
       "Stop using single sign-on": [
         "Oprire utilizare conectare unică"
@@ -2149,6 +2137,9 @@
       ],
       "Upgrade now": [
         "Modificare"
+      ],
+      "Upgrade to 2 devices or more": [
+        "Treceți la două sau mai multe dispozitive simultan"
       ],
       "Upgrade to Business": [
         "Trecere la Business"
@@ -5582,6 +5573,9 @@
       "Still need help? Our support team is here for you.": [
         "Încă aveți nevoie de ajutor? Echipa noastră de asistență este aici să vă ajute."
       ],
+      "The link to sign out on all your devices has expired. Try signing in again to receive a new one.": [
+        "Legătura web pentru deconectare de pe toate dispozitivele a expirat. Încercați să vă reconectați pentru a primi una nouă."
+      ],
       "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
         "Acest lucru vă permite să redobândiți accesul la cont ${ BRAND_NAME }, dar nu vă recuperează datele criptate."
       ],
@@ -5611,11 +5605,20 @@
       "To start, give your organization a name.": [
         "Pentru a începe, dați un nume organizației."
       ],
+      "To stay signed in everywhere, upgrade your plan instead.": [
+        "Pentru a vă păstra conexiunea peste tot, modificați abonamentul actual."
+      ],
+      "Too many devices are connected to your account. To use ${ BRAND_NAME } on a new device or browser, end all existing sessions. You'll be signed out on every device.": [
+        "Sunt prea multe dispozitive conectate la cont. Pentru a utiliza ${ BRAND_NAME } pe un dispozitiv sau navigator web nou, încheiați toate sesiunile existente. Toate dispozitivele vor fi deconectate."
+      ],
       "Track the status and activity of your referrals": [
         "Urmăriți starea și activitatea celor recomandați."
       ],
       "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
         "Deblocați 15 GiB de spațiu pentru doar ${ config.offerPrice }."
+      ],
+      "Upgrade anytime to stay signed in on multiple devices.": [
+        "Modificați-vă abonamentul pentru a vă păstra conexiunea pe dispozitive multiple."
       ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Treceți la ${ planName } pentru a conecta până la ${ MAX_SYNC_PAID_USER } conturi."
@@ -5692,6 +5695,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Contul gratuit ${ MAIL_APP_NAME } are un spațiu de stocare limitat, așa că se vor importa doar cele mai recente mesaje din Gmail."
+      ],
+      "Your other sessions have been ended. You can now sign in on this device.": [
+        "Celelalte sesiuni s-au încheiat. Acum vă puteți conecta pe acest dispozitiv."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Planul actual permite ${ MAX_SYNC_FREE_USER } adresă Gmail.",
@@ -7946,6 +7952,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
       ],
+      "Something went wrong, please try again": [
+        "Ceva nu a funcționat bine. Reîncercați"
+      ],
       "Something went wrong. Please try again.": [
         "Ceva nu a funcționat bine. Mai încercați."
       ],
@@ -9092,11 +9101,14 @@
       "Security key updated": [
         "Cheia de securitate a fost actualizată."
       ],
+      "Still waiting?": [
+        "Încă așteptați?"
+      ],
       "This will delete all security keys linked to your account.": [
         "Se vor șterge toate cheile de securitate asociate contului."
       ],
-      "Touch your security key.": [
-        "Atingeți cheia de securitate."
+      "Touch your security key to continue.": [
+        "Atingeți cheia de securitate pentru a continua."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Vă verificați identitatea cu o cheie fizică U2F sau FIDO2."
@@ -10540,6 +10552,12 @@
       "${ storeName } app to copy data to ${ BRAND_NAME }": [
         "Aplicația ${ storeName } pentru a copia date în ${ BRAND_NAME }"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a evita pierderea accesului. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a vă păstra abonamentul. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "Utilizatori găsiți: ${ total }",
         "Utilizatori găsiți: ${ total }",
@@ -11373,9 +11391,6 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "Recuperarea datelor necesită o opțiune de resetare a parolei (e-mail sau SMS)."
       ],
-      "Debug transcript copied": [
-        "Transcrierea depanării a fost copiată."
-      ],
       "dedicated servers": [
         "servere dedicate"
       ],
@@ -11961,9 +11976,6 @@
       ],
       "How your emergency contact can change your password for you:": [
         "Cum vă poate reseta parola contactul de urgență:"
-      ],
-      "I have not finished this one yet.": [
-        "Pe acesta încă nu l-am terminat încă."
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -13383,9 +13395,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Aceste acreditări nu pot fi utilizate pentru autentificarea în aplicațiile ${ VPN_APP_NAME } oficiale. ${ learnMore }"
       ],
-      "Thinking about this": [
-        "Mă gândesc la asta"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Acest cont a fost suspendat din cauza unei posibile încălcări a politicii."
       ],
@@ -13436,9 +13445,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Aceasta este acum ${ defaultEmailAddress } pentru trimiterea de mesaje noi."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Asta necesită mulți pași. Ar trebui să continui?"
       ],
       "This is the password you used before the password reset.": [
         "Aceasta este parola pe care ați utilizat-o înainte de resetarea parolei."
@@ -21330,9 +21336,6 @@
       "Anytown": [
         "București"
       ],
-      "Ask anything…": [
-        "Întreabă-mă orice…"
-      ],
       "billing@company.com": [
         "facturi@companie.com"
       ],
@@ -27555,6 +27558,9 @@
       "Other calendars": [
         "Alte calendare"
       ],
+      "Other devices signed out": [
+        "Alte dispozitive deconectate"
+      ],
       "Other features included in your plan": [
         "Alte funcții incluse în plan"
       ],
@@ -27912,6 +27918,9 @@
       "Sign out": [
         "Deconectare"
       ],
+      "Sign out on all devices?": [
+        "Vă deconectați de pe toate dispozitivele?"
+      ],
       "Signed in successfully!": [
         "Autentificare reușită!"
       ],
@@ -27986,9 +27995,6 @@
       ],
       "Stay secure and connected anywhere": [
         "Rămâneți în siguranță și vă conectați oriunde"
-      ],
-      "Still working on it": [
-        "Încă lucrez la asta"
       ],
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "Consolidați-vă securitatea pe toate dispozitivele cu ${ passPlusPlanName }. ${ upgradeButton }"
