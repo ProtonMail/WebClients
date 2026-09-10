@@ -1,3 +1,5 @@
+import { endSearchSession, startSearchSession } from '@proton/encrypted-search/searchSession';
+
 import { isSameSearch } from '../../helpers/elements';
 import { selectIsSearchActive, selectSearch } from '../elements/elementsSelectors';
 import type { AppStartListening } from '../store';
@@ -16,12 +18,19 @@ export const startSearchChangeListener = (startListening: AppStartListening) => 
 
             const isSame = isSameSearch(selectSearch(previousState), selectSearch(currentState));
 
+            if (!wasSearching && isSearching) {
+                startSearchSession();
+                return;
+            }
+
             if (wasSearching && isSearching && !isSame) {
-                console.log('newSearch');
+                endSearchSession(listenerApi.extra.api, 'newSearch');
+                startSearchSession();
+                return;
             }
 
             if (wasSearching && !isSearching) {
-                console.log('navigation');
+                endSearchSession(listenerApi.extra.api, 'navigation');
             }
         },
     });

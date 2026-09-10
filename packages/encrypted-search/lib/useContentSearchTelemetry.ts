@@ -12,21 +12,18 @@ import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import type {
     ContentSearchActionSurface,
-    ContentSearchEndReason,
     ContentSearchEventStatus,
     ContentSearchMailboxAddressType,
     ContentSearchPrimaryMatchType,
     ContentSearchResultAction,
     ContentSearchScrollerMode,
-    ContentSearchVersion,
 } from './models/contentSearchTelemetry';
-
-/**
- * Events shared with mobile's Content Search schema (measurement_group `mail.any.search`), used to compare
- * Encrypted Search (`searchVersion` 'v1', sent from here) against Content Search ('v2', sent separately from
- * mail's contentSearch module). Only sent for mail, since Content Search doesn't exist for calendar/drive.
- */
-const SEARCH_VERSION_V1: ContentSearchVersion = 'v1';
+import {
+    SEARCH_VERSION_V1,
+    recordSearchResultAction,
+    recordSearchResultOpened,
+    setSearchSessionResults,
+} from './searchSession';
 
 /**
  * Classifies an account's addresses for the `mailboxAddressType` dimension, used to break out BYOE
@@ -66,6 +63,8 @@ export const useContentSearchTelemetry = () => {
         resultCount: number;
         durationMs: number;
     }) => {
+        setSearchSessionResults({ hasResults });
+
         if (!isMailApp) {
             return;
         }
@@ -102,6 +101,8 @@ export const useContentSearchTelemetry = () => {
         isFirstOpen: boolean;
         resultPosition: number;
     }) => {
+        recordSearchResultOpened({ position: resultPosition, scrollerMode });
+
         if (!isMailApp) {
             return;
         }
@@ -134,6 +135,8 @@ export const useContentSearchTelemetry = () => {
         actionSurface: ContentSearchActionSurface;
         resultPosition?: number;
     }) => {
+        recordSearchResultAction({ action });
+
         if (!isMailApp) {
             return;
         }
@@ -194,50 +197,10 @@ export const useContentSearchTelemetry = () => {
         });
     };
 
-    const sendSearchSessionCompletedReport = ({
-        endReason,
-        scrollerMode,
-        hasResults,
-        firstActionType,
-        firstOpenedPosition,
-        timeToFirstActionMs,
-        sessionDurationMs,
-        resultsOpened,
-        actionsPerformed,
-    }: {
-        endReason: ContentSearchEndReason;
-        scrollerMode: ContentSearchScrollerMode;
-        firstActionType: ContentSearchResultAction;
-        hasResults: boolean;
-        // TODO some of those values might be calculated in the method directly
-        firstOpenedPosition: number;
-        timeToFirstActionMs: number;
-        sessionDurationMs: number;
-        resultsOpened: number;
-        actionsPerformed: number;
-    }) => {
-        void sendTelemetryReport({
-            api,
-            measurementGroup: TelemetryMeasurementGroups.contentSearchIndex,
-            event: TelemetryContentSearchEvents.search_session_completed,
-            values: { resultsOpened, firstOpenedPosition, timeToFirstActionMs, sessionDurationMs, actionsPerformed },
-            dimensions: {
-                endReason,
-                scrollerMode,
-                firstActionType,
-                hasResults: hasResults.toString(),
-                searchSource: 'local',
-                searchVersion: SEARCH_VERSION_V1,
-            },
-            delay: true,
-        });
-    };
-
     return {
         sendQueryCompletedReport,
         sendResultOpenedReport,
         sendResultActionReport,
         sendMailboxIndexCompletedReport,
-        sendSearchSessionCompletedReport,
     };
 };
