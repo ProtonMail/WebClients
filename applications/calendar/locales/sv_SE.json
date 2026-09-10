@@ -56,6 +56,9 @@
       "Add a date": [
         "Lägg till ett datum"
       ],
+      "Add a payment method": [
+        "Lägg till en betalningsmetod"
+      ],
       "Add account": [
         "Lägg till konto"
       ],
@@ -155,9 +158,6 @@
       ],
       "Clear browser data": [
         "Rensa webbläsardata"
-      ],
-      "Clear conversation": [
-        "Rensa konversation"
       ],
       "Clear data": [
         "Rensa data"
@@ -548,9 +548,6 @@
       "Keep current time zone": [
         "Behåll nuvarande tidszon"
       ],
-      "Keep going": [
-        "Fortsätt"
-      ],
       "Keep my subscription": [
         "Behåll min prenumeration"
       ],
@@ -731,9 +728,6 @@
       "Refresh the page": [
         "Uppdatera sidan"
       ],
-      "Reject": [
-        "Avvisa"
-      ],
       "Remove": [
         "Ta bort"
       ],
@@ -904,12 +898,6 @@
       ],
       "Stay": [
         "Stanna"
-      ],
-      "Stop": [
-        "Stoppa"
-      ],
-      "Stop here": [
-        "Stoppa här"
       ],
       "Submit": [
         "Skicka"
@@ -4823,6 +4811,9 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Du har obetalda fakturor. Betala dem innan du går med i ett familjepaket."
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du är inbjuden att länka ditt ${ BRAND_NAME }-konto till denna familjegrupp och njuta av alla dess premiumfunktioner."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ditt konto har fler e-postadresser än vad som är tillgängligt för dig i detta paket. ${ addressSettingsLink }"
       ],
@@ -4915,9 +4906,6 @@
       ],
       "Security key": [
         "Säkerhetsnyckel"
-      ],
-      "Touch your security key.": [
-        "Tryck din säkerhetsnyckel."
       ]
     },
     "fido2: Label": {
@@ -5550,6 +5538,9 @@
       ],
       "${ storage } storage": [
         "${ storage } lagringsutrymme"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att undvika att förlora åtkomst. ${ learnMoreLink }"
       ],
       "${ total } user found": [
         "${ total } användare hittades",
@@ -6579,9 +6570,6 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifieringsprocessen öppnar en ny webbläsarflik. Inaktivera alla aktiva popup-blockerare."
-      ],
-      "Thinking about this": [
-        "Tänker på detta"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denna adress är inaktiverad. För att kunna skicka till denna adress måste ägaren först aktivera adressen."
@@ -9033,6 +9021,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } slutar med ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB molnlagring som låter dig enkelt lagra, synkronisera och dela filer. Säkrat med end-to-end-kryptering."
       ],
@@ -10268,6 +10259,14 @@
         "Förnyelsepriset beror på faktureringsregion och momsregistreringsnummer."
       ]
     },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - kort slutar på ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Banköverföring - ${ iban }"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Genom att bekräfta denna betalning auktoriserar du ${ BRAND_NAME } och Stripe, vår betaltjänstleverantör, att instruera din bank att debitera ditt konto i enlighet med detta. Du kan få en återbetalning inom 8 veckor från debiteringsdagen, enligt villkoren i ditt avtal med din bank."
@@ -10371,9 +10370,6 @@
       ],
       "Anytown": [
         "Alingsås"
-      ],
-      "Ask anything…": [
-        "Fråga vad som helst …"
       ],
       "Company name": [
         "Företagsnamn"
