@@ -809,6 +809,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "¿No aparece su gestor de contraseñas? Solicítelo."
+      ],
+      "Bulk select items": [
+        "Seleccionar un grupo de elementos"
+      ],
+      "Multiple select": [
+        "Selección múltiple"
       ]
     },
     "Activity": {
@@ -2216,7 +2222,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros."
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -4607,6 +4614,15 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "Esta URL NO se bloqueará del completado automático"
+      ],
+      "Enter a URL to check if it matches the current rule": [
+        "Ingrese una URL para comprobar si coincide con la regla actual"
+      ],
+      "URL doesn't match the rule": [
+        "La URL no coincide con la regla actual"
+      ],
+      "URL matches the rule": [
+        "La URL coincide con la regla"
       ]
     },
     "Security Center - Info": {

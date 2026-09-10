@@ -2222,7 +2222,8 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri."
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
+        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -4610,6 +4611,15 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "Questo URL NON sarà bloccato dal riempimento automatico"
+      ],
+      "Enter a URL to check if it matches the current rule": [
+        "Inserisci un URL per verificare se corrisponde alla regola corrente"
+      ],
+      "URL doesn't match the rule": [
+        "L'URL non corrisponde alla regola"
+      ],
+      "URL matches the rule": [
+        "L'URL corrisponde alla regola"
       ]
     },
     "Security Center - Info": {

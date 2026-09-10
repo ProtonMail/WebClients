@@ -806,6 +806,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Är din lösenordshanterare inte här? Begär den."
+      ],
+      "Multiple select": [
+        "Välj flera"
       ]
     },
     "Activity": {
@@ -2210,7 +2213,8 @@
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till ett annat valv kommer att radera dess säkra länkar."
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -4598,6 +4602,15 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "Denna URL kommer INTE att blockeras från automatisk ifyllning"
+      ],
+      "Enter a URL to check if it matches the current rule": [
+        "Ange en URL för att kontrollera om den matchar den nuvarande regeln"
+      ],
+      "URL doesn't match the rule": [
+        "URL matchar inte regeln"
+      ],
+      "URL matches the rule": [
+        "URL matchar regeln"
       ]
     },
     "Security Center - Info": {
