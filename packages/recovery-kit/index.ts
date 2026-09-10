@@ -1,5 +1,4 @@
 import type { Template } from '@pdfme/common';
-import { generate } from '@pdfme/generator';
 
 import chunk from '@proton/utils/chunk';
 
@@ -160,6 +159,12 @@ export async function generatePDFKit({
             'email title': emailAddress,
         },
     ];
+
+    if (typeof Intl === 'undefined' || !Intl.Segmenter) {
+        await import('@formatjs/intl-segmenter/polyfill-force.js');
+    }
+
+    const { generate } = await import('@pdfme/generator');
 
     /**
      * There is an issue where links are stripped from the pdf
