@@ -33,6 +33,17 @@ const subsections = [
 jest.mock('@proton/account/user/hooks');
 const mockUseUser = useUser as jest.MockedFunction<any>;
 
+jest.mock('../../oles/useOLESFeatureStatus', () => ({
+    __esModule: true,
+    default: () => ({
+        featureSupported: false,
+        creatingEnabled: false,
+        allowedForUser: false,
+        isProviderEnabled: () => false,
+        loading: false,
+    }),
+}));
+
 describe('SettingsArea', () => {
     it('Should render the forward section if feature is enabled', async () => {
         mockUseUser.mockReturnValue([{ Flags: [] }, false]);

@@ -79,6 +79,17 @@ const mockUseBYOEAddressesCounts = useBYOEAddressesCounts as jest.MockedFunction
 jest.mock('@proton/account/user/hooks');
 const mockUseUser = useUser as jest.MockedFunction<any>;
 
+jest.mock('../../../oles/useOLESFeatureStatus', () => ({
+    __esModule: true,
+    default: () => ({
+        featureSupported: false,
+        creatingEnabled: false,
+        allowedForUser: false,
+        isProviderEnabled: () => false,
+        loading: false,
+    }),
+}));
+
 jest.mock('@proton/calendar/calendars/hooks', () => {});
 jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
     useCalendarUserSettings: () => [],

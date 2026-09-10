@@ -83,7 +83,14 @@ export const enum BYOE_CLAIM_PROTON_ADDRESS_SOURCE {
     SHARED_PLAN_PENDING_INVITATION = 'SHARED_PLAN_PENDING_INVITATION',
 }
 
-export const providerMap = {
+export type ProviderDisplay = {
+    getName: () => string;
+    logo: string;
+    width: number;
+    height: number;
+};
+
+export const providerMap: Record<ImportProvider, ProviderDisplay> = {
     [ImportProvider.GOOGLE]: {
         getName: () => 'Google',
         logo: googleLogo,

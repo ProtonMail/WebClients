@@ -19,7 +19,7 @@ import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '../../../constants';
+import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE, providerMap } from '../../../constants';
 import { type EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '../../../interface';
 import { useDriveSdk } from '../../../logic/driveContext';
 import { EasySwitchProviderName } from '../../ProviderName/EasySwitchProviderName';
@@ -130,7 +130,7 @@ export const ProductSelectionModal = ({ onClose, provider, source, onComplete, .
                                 {importProviders.map((provider) => (
                                     <Option key={provider} value={provider} title={provider}>
                                         <EasySwitchProviderName
-                                            provider={provider}
+                                            provider={providerMap[provider]}
                                             data-testid={`productSelectionModal:${provider}`}
                                         />
                                     </Option>
