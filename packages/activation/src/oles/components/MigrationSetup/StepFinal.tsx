@@ -187,7 +187,7 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
                 </BorderedContainerItem>
             </BorderedContainer>
 
-            {loading && <MigratingModal variant="completing" />}
+            {loading && <MigratingModal provider={model.provider.id} variant="completing" />}
 
             {renderWarningModal && (
                 <ModalTwo {...warningModalProps} size="small" className="rounded-xxl">
