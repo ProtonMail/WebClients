@@ -68,6 +68,7 @@ function renderEditBillingAddressModal({
             initialFullBillingAddress={initialFullBillingAddress}
             paymentsApi={paymentsApi ?? defaultPaymentsApi}
             subscription={undefined}
+            source="invoices"
             onResolve={onResolve}
             onReject={onReject}
         />
