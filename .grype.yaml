@@ -142,3 +142,20 @@ ignore:
       name: qs
       type: npm
       version: 6.5.5
+
+  ## maplibre-gl@4.7.1 (via plotly.js in vendor/rowsncolumns/charts)
+  # Accepted risk: not bundled into any shipped app. plotly.js is only a devDependency and
+  # peerDependency of the vendored @rowsncolumns/charts, and the sole importer is its
+  # ./plotly/basic-chart export subpath, which no application imports — docs-editor is the
+  # only consumer and uses the barrel, which never reaches that folder.
+  # No upstream fix: the patch lands in maplibre-gl 6.4.1, but plotly.js 3.x pins
+  # maplibre-gl ^4.7.1 and the latest plotly.js 4.1.0 only reaches ^5.24.0.
+  - vulnerability: GHSA-jrc7-96c5-q579
+    reason: >-
+      Accepted: transitive via plotly.js, a dev/peer dependency of the vendored
+      @rowsncolumns/charts; reachable only through the unused ./plotly/basic-chart export,
+      so it is never bundled. No plotly.js release depends on a patched maplibre-gl >=6.4.1.
+    package:
+      name: maplibre-gl
+      type: npm
+      version: 4.7.1
