@@ -9,6 +9,7 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "@formatjs/intl-segmenter": "^12.2.13",
         "@pdfme/common": "^6.1.12",
         "@pdfme/generator": "^6.1.12",
         "@pdfme/schemas": "^6.1.12",
