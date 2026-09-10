@@ -19,6 +19,7 @@
  * checkoutTelemetry.subscriptionContainer.reportChangeStep({ ... });
  *
  */
+import { reportBillingAddressEditSuccess } from './billing-address';
 import {
     reportAddLumo,
     reportAddMeet,
@@ -61,6 +62,8 @@ export const checkoutTelemetry = {
     reportPayment,
     /** Report that the subscription modal opened from an upsell surface. Call once per modal open. */
     reportUpsellModalOpen,
+    /** Report a successful save in the "Edit billing address" modal */
+    reportBillingAddressEditSuccess,
 
     /**
      * Events specific to the subscription modification modal.

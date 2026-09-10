@@ -24,6 +24,8 @@ import { WrongBillingAddressError, backendBillingAddressFieldError } from '@prot
 import type { FreeSubscription, PaymentsApi } from '@proton/payments/core/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
+import type { BillingAddressEditSource } from '@proton/payments/telemetry/billing-address';
+import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
 import { CountryStateSelector } from '../components/CountryStateSelector';
@@ -35,6 +37,8 @@ export interface EditBillingAdressModalInputs {
     initialFullBillingAddress: FullBillingAddress;
     paymentsApi?: PaymentsApi;
     subscription: Subscription | FreeSubscription | undefined;
+    /** Which surface opened the modal, reported with the save event */
+    source: BillingAddressEditSource;
 }
 
 type Props = ModalProps & ModalTwoPromiseHandlers<FullBillingAddress> & EditBillingAdressModalInputs;
@@ -65,6 +69,7 @@ export const EditBillingAddressModal = (props: Props) => {
         onResolve,
         paymentsApi: paymentsApiParam,
         subscription,
+        source,
         ...rest
     } = props;
 
@@ -124,6 +129,11 @@ export const EditBillingAddressModal = (props: Props) => {
 
                 onResolve?.(submittedBillingAddress);
                 createNotification({ text: c('Success').t`Billing details updated` });
+                checkoutTelemetry.reportBillingAddressEditSuccess({
+                    source,
+                    previousBillingAddress: initialFullBillingAddress,
+                    nextBillingAddress: submittedBillingAddress,
+                });
             } catch (error: any) {
                 if (error instanceof WrongBillingAddressError) {
                     if (error.validationResult) {
