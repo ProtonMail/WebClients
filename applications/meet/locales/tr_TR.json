@@ -373,6 +373,9 @@
       "Full size": [
         "Tam boyut"
       ],
+      "Gallery": [
+        "Galeri"
+      ],
       "Generate a new meeting link.": [
         "Yeni görüşme bağlantısı oluştur."
       ],
@@ -384,9 +387,6 @@
       ],
       "Getting ready...": [
         "Hazırlanıyor..."
-      ],
-      "Grid": [
-        "Izgara"
       ],
       "Help and feedback": [
         "Yardım ve geri bildirim"
@@ -723,6 +723,9 @@
       "Use camera": [
         "Kamerayı aç"
       ],
+      "Use it": [
+        "Onu kullan"
+      ],
       "Use microphone": [
         "Mikrofonu aç"
       ],
@@ -796,6 +799,9 @@
       ],
       "Incoming video": [
         "Gelen görüntü"
+      ],
+      "Layout: ${ selectedLabel }": [
+        "Yerleşim: ${ selectedLabel }"
       ],
       "Leave Meeting": [
         "Görüşmeden ayrıl"
@@ -908,6 +914,9 @@
       ],
       "Device settings": [
         "Aygıt ayarları"
+      ],
+      "Layouts": [
+        "Yerleşimler"
       ],
       "Meeting details": [
         "Görüşme ayrıntıları"
@@ -2442,8 +2451,11 @@
       "Security key": [
         "Güvenlik anahtarı"
       ],
-      "Touch your security key.": [
-        "Güvenlik anahtarınıza dokunun."
+      "Still waiting?": [
+        "Hâlâ bekliyor musunuz?"
+      ],
+      "Touch your security key to continue.": [
+        "İlerlemek için güvenlik anahtarınıza dokunun."
       ]
     },
     "fido2: Label": {
@@ -2574,6 +2586,9 @@
     "Info": {
       " and ": [
         " ve "
+      ],
+      "${ deviceLabel } is available again": [
+        "${ deviceLabel } yeniden kullanılabilir oldu"
       ],
       "${ maxParticipants } participant limit reached": [
         "${ maxParticipants } katılımcı sınırına ulaşıldı"
@@ -3391,14 +3406,38 @@
       "Your browser or device isn’t supported": [
         "Tarayıcınız veya aygıtınız desteklenmiyor"
       ],
+      "Your camera was disconnected. Now using ${ deviceLabel }.": [
+        "Kameranızın bağlantısı kesildi. Şimdi ${ deviceLabel } kullanılıyor."
+      ],
+      "Your device was disconnected. Now using ${ deviceLabel }.": [
+        "Aygıtınızın bağlantısı kesildi. Şimdi ${ deviceLabel } kullanıyor."
+      ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
       "Your meeting is ready": [
         "Görüşmeniz hazır"
       ],
+      "Your microphone and camera were disconnected. Now using other devices.": [
+        "Mikrofonunuzun ve kameranızın bağlantısı kesildi. Şimdi diğer aygıtlar kullanılıyor."
+      ],
+      "Your microphone and speaker were disconnected. Now using other devices.": [
+        "Mikrofonunuzun ve hoparlörünüzün bağlantısı kesildi. Şimdi diğer aygıtlar kullanılıyor."
+      ],
+      "Your microphone was disconnected. Now using ${ deviceLabel }.": [
+        "Mikrofonunuzun bağlantısı kesildi. Şimdi ${ deviceLabel } kullanılıyor."
+      ],
+      "Your microphone, speaker and camera were disconnected. Now using other devices.": [
+        "Mikrofonunuzun, hoparlörünüzün ve kameranızın bağlantısı kesildi. Şimdi diğer aygıtlar kullanılıyor."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
+      ],
+      "Your speaker and camera were disconnected. Now using other devices.": [
+        "Hoparlörünüzün ve kameranızın bağlantısı kesildi. Şimdi diğer aygıtlar kullanılıyor."
+      ],
+      "Your speaker was disconnected. Now using ${ deviceLabel }.": [
+        "Hoparlörünüzün bağlantısı kesildi. Şimdi ${ deviceLabel } kullanılıyor."
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Bir bağlantıyı yeni bir sekmede açmak üzeresiniz. İlerlemeden önce siteye güvendiğinizden emin olun."

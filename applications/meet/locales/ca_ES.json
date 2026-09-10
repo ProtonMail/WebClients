@@ -373,6 +373,9 @@
       "Full size": [
         "Mida completa"
       ],
+      "Gallery": [
+        "Galeria"
+      ],
       "Generate a new meeting link.": [
         "Generar un nou enllaç de reunió."
       ],
@@ -384,9 +387,6 @@
       ],
       "Getting ready...": [
         "S'està preparant..."
-      ],
-      "Grid": [
-        "Graella"
       ],
       "Help and feedback": [
         "Ajuda i comentaris"
@@ -723,6 +723,9 @@
       "Use camera": [
         "Utilitzeu la càmera"
       ],
+      "Use it": [
+        "Utilitzeu-lo"
+      ],
       "Use microphone": [
         "Utilitzeu el micròfon"
       ],
@@ -796,6 +799,9 @@
       ],
       "Incoming video": [
         "Vídeo entrant"
+      ],
+      "Layout: ${ selectedLabel }": [
+        "Disseny: ${ selectedLabel }"
       ],
       "Leave Meeting": [
         "Sortiu de la reunió"
@@ -908,6 +914,9 @@
       ],
       "Device settings": [
         "Configuració del dispositiu"
+      ],
+      "Layouts": [
+        "Dissenys"
       ],
       "Meeting details": [
         "Detalls de la reunió"
@@ -2442,8 +2451,11 @@
       "Security key": [
         "Clau de seguretat"
       ],
-      "Touch your security key.": [
-        "Toqueu la vostra clau de seguretat."
+      "Still waiting?": [
+        "Encara esteu esperant?"
+      ],
+      "Touch your security key to continue.": [
+        "Toqueu la clau de seguretat per continuar."
       ]
     },
     "fido2: Label": {
@@ -2574,6 +2586,9 @@
     "Info": {
       " and ": [
         " i "
+      ],
+      "${ deviceLabel } is available again": [
+        "${ deviceLabel } torna a estar disponible"
       ],
       "${ maxParticipants } participant limit reached": [
         "S'ha arribat al límit de ${ maxParticipants } participants"
@@ -3391,14 +3406,38 @@
       "Your browser or device isn’t supported": [
         "El vostre navegador o dispositiu no és compatible"
       ],
+      "Your camera was disconnected. Now using ${ deviceLabel }.": [
+        "S'ha desconnectat la vostra càmera. Ara s'està utilitzant\n ${ deviceLabel }."
+      ],
+      "Your device was disconnected. Now using ${ deviceLabel }.": [
+        "S'ha desconnectat el vostre dispositiu. Ara s'està utilitzant ${ deviceLabel }."
+      ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
       ],
       "Your meeting is ready": [
         "La vostra reunió està a punt"
       ],
+      "Your microphone and camera were disconnected. Now using other devices.": [
+        "El micròfon i la càmera estaven desconnectats. Ara s'estan utilitzant altres dispositius."
+      ],
+      "Your microphone and speaker were disconnected. Now using other devices.": [
+        "S'han desconnectat el vostre micròfon i altaveu. Ara s'estan utilitzant altres dispositius."
+      ],
+      "Your microphone was disconnected. Now using ${ deviceLabel }.": [
+        "S'ha desconnectat el vostre micròfon. Ara s'està utilitzant ${ deviceLabel }."
+      ],
+      "Your microphone, speaker and camera were disconnected. Now using other devices.": [
+        "S'han desconnectat el vostre micròfon, altaveu i càmera. Ara s'estan utilitzant altres dispositius."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
+      ],
+      "Your speaker and camera were disconnected. Now using other devices.": [
+        "S'han desconnectat el vostre altaveu i la vostra càmera. Ara s'estan utilitzant altres dispositius."
+      ],
+      "Your speaker was disconnected. Now using ${ deviceLabel }.": [
+        "S'ha desconnectat el vostre altaveu. Ara s'està utilitzant ${ deviceLabel }."
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Esteu a punt d'obrir un enllaç en una pestanya nova. Assegureu-vos que confieu en el lloc web abans de continuar."
