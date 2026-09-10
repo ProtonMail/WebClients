@@ -4504,6 +4504,9 @@
       ],
       "Could not grant access to the organization key": [
         "No s'ha pogut concedir accés a la clau de l'organització"
+      ],
+      "A contact with this email address already exists": [
+        "Ja existeix un contacte amb aquesta adreça de correu electrònic"
       ]
     },
     "error": {
@@ -4934,6 +4937,12 @@
       ],
       "Touch your security key.": [
         "Toqueu la vostra clau de seguretat."
+      ],
+      "Still waiting?": [
+        "Encara esteu esperant?"
+      ],
+      "Touch your security key to continue.": [
+        "Toqueu la clau de seguretat per continuar."
       ]
     },
     "fido2: Label": {
@@ -7933,6 +7942,13 @@
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "Us queden ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per a mantenir la vostra subscripció. ${ learnMoreLink }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } ha fet ${ count } fins ara. Voleu continuar?"
+      ],
+      "${ steps } step": [
+        "${ steps } pas",
+        "${ steps } passos"
       ]
     },
     "info": {
