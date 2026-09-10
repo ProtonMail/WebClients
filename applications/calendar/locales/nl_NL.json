@@ -156,9 +156,6 @@
       "Clear browser data": [
         "Wis browsergegevens"
       ],
-      "Clear conversation": [
-        "Gesprek wissen"
-      ],
       "Clear data": [
         "Gegevens wissen"
       ],
@@ -239,9 +236,6 @@
       ],
       "Copy booking page link": [
         "Kopieer link naar boekingspagina"
-      ],
-      "Copy debug transcript": [
-        "Kopieer het foutopsporingstranscript"
       ],
       "Copy email address": [
         "Kopieer e-mailadres"
@@ -551,9 +545,6 @@
       "Keep current time zone": [
         "Behoudt huidige tijdzone"
       ],
-      "Keep going": [
-        "Blijf doorgaan"
-      ],
       "Keep my subscription": [
         "Mijn abonnement behouden"
       ],
@@ -731,9 +722,6 @@
       "Refresh the page": [
         "Pagina vernieuwen"
       ],
-      "Reject": [
-        "Afwijzen"
-      ],
       "Remove": [
         "Verwijderen"
       ],
@@ -904,12 +892,6 @@
       ],
       "Stay": [
         "Blijf"
-      ],
-      "Stop": [
-        "Stop"
-      ],
-      "Stop here": [
-        "Hier stoppen"
       ],
       "Submit": [
         "Versturen"
@@ -4956,8 +4938,11 @@
       "Security key": [
         "Beveiligingssleutel"
       ],
-      "Touch your security key.": [
-        "Raak uw beveiligingssleutel aan."
+      "Still waiting?": [
+        "Nog aan het wachten?"
+      ],
+      "Touch your security key to continue.": [
+        "Raak uw beveiligingssleutel aan om door te gaan."
       ]
     },
     "fido2: Label": {
@@ -5915,9 +5900,6 @@
       "Daily": [
         "Dagelijks"
       ],
-      "Debug transcript copied": [
-        "Foutopsporings-transcript gekopieerd"
-      ],
       "Dedicated servers": [
         "Dedicated servers"
       ],
@@ -6629,9 +6611,6 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Het verificatieproces zal een nieuw browsertabblad openen. Schakel het blokkeren van alle pop-ups uit."
       ],
-      "Thinking about this": [
-        "Hierover aan het nadenken"
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Dit adres is uitgeschakeld. Om berichten naar dit adres te versturen moet de eigenaar het adres eerst activeren."
       ],
@@ -6658,9 +6637,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dit is nu uw ${ defaultEmailAddress } voor het verzenden van nieuwe berichten."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Dit vergt veel stappen. Moet het doorgaan?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Deze koppeling leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
@@ -10320,6 +10296,11 @@
         "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT-nummer."
       ]
     },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kaart eindigend op ${ Last4 }"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Door deze betaling te bevestigen, machtigt u ${ BRAND_NAME } en Stripe, onze betalingsserviceprovider, om uw bank opdracht te geven om uw factuur naar behoren in rekening te brengen. U kunt een restitutie ontvangen binnen 8 weken van de betaaldatum, onder de voorwaarden van uw overeenkomst met uw bank."
@@ -10423,9 +10404,6 @@
       ],
       "Anytown": [
         "Willekeurige stad"
-      ],
-      "Ask anything…": [
-        "Vraag alles..."
       ],
       "Company name": [
         "Bedrijfsnaam"
@@ -13081,9 +13059,6 @@
       ],
       "Stay for 50% off your next month": [
         "Blijf en ontvang 50% korting op uw volgende maand"
-      ],
-      "Still working on it": [
-        "Er wordt nog steeds aan gewerkt"
       ],
       "Subscription canceled": [
         "Abonnement opgezegd"
