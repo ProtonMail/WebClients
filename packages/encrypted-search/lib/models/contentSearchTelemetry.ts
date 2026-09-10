@@ -15,6 +15,14 @@ export type ContentSearchEventStatus = 'success' | 'error';
 
 export type ContentSearchScrollerMode = 'message' | 'conversation';
 
+/**
+ * `isConversationMode()` (mail's `helpers/mailSettings.ts`) forces message view whenever a search
+ * is active, regardless of the user's `ViewMode` setting, so search results are never grouped as
+ * conversations today. Every search-related event hardcodes this instead of reading conversation
+ * mode from state; kept as a dimension for schema parity with mobile, where it may actually vary.
+ */
+export const SEARCH_RESULT_SCROLLER_MODE: ContentSearchScrollerMode = 'message';
+
 export type ContentSearchPrimaryMatchType = 'sender' | 'subject' | 'body' | 'unknown';
 
 export type ContentSearchResultAction =

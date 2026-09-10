@@ -10,19 +10,20 @@ import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 
-import type {
-    ContentSearchActionSurface,
-    ContentSearchEventStatus,
-    ContentSearchMailboxAddressType,
-    ContentSearchPrimaryMatchType,
-    ContentSearchResultAction,
-    ContentSearchScrollerMode,
+import {
+    type ContentSearchActionSurface,
+    type ContentSearchEventStatus,
+    type ContentSearchMailboxAddressType,
+    type ContentSearchPrimaryMatchType,
+    type ContentSearchResultAction,
+    SEARCH_RESULT_SCROLLER_MODE,
 } from './models/contentSearchTelemetry';
 import {
     SEARCH_VERSION_V1,
     recordSearchResultAction,
     recordSearchResultOpened,
     setSearchSessionResults,
+    setSearchSessionScroller,
 } from './searchSession';
 
 /**
@@ -64,6 +65,7 @@ export const useContentSearchTelemetry = () => {
         durationMs: number;
     }) => {
         setSearchSessionResults({ hasResults });
+        setSearchSessionScroller(SEARCH_RESULT_SCROLLER_MODE);
 
         if (!isMailApp) {
             return;
@@ -83,6 +85,7 @@ export const useContentSearchTelemetry = () => {
                 hasResults: hasResults.toString(),
                 status,
                 errorKind,
+                scrollerMode: SEARCH_RESULT_SCROLLER_MODE,
                 searchVersion: SEARCH_VERSION_V1,
             },
             // We want to delay search events so that we cannot correlate search results with user actions
@@ -91,17 +94,15 @@ export const useContentSearchTelemetry = () => {
     };
 
     const sendResultOpenedReport = ({
-        scrollerMode,
         primaryMatchType,
         isFirstOpen,
         resultPosition,
     }: {
-        scrollerMode: ContentSearchScrollerMode;
         primaryMatchType: ContentSearchPrimaryMatchType;
         isFirstOpen: boolean;
         resultPosition: number;
     }) => {
-        recordSearchResultOpened({ position: resultPosition, scrollerMode });
+        recordSearchResultOpened({ position: resultPosition });
 
         if (!isMailApp) {
             return;
@@ -116,7 +117,7 @@ export const useContentSearchTelemetry = () => {
             },
             dimensions: {
                 searchSource: 'local',
-                scrollerMode,
+                scrollerMode: SEARCH_RESULT_SCROLLER_MODE,
                 primaryMatchType,
                 isFirstOpen: isFirstOpen.toString(),
                 searchVersion: SEARCH_VERSION_V1,
@@ -152,6 +153,7 @@ export const useContentSearchTelemetry = () => {
                 action,
                 actionSurface,
                 searchSource: 'local',
+                scrollerMode: SEARCH_RESULT_SCROLLER_MODE,
                 searchVersion: SEARCH_VERSION_V1,
             },
             // We want to delay search events so that we cannot correlate search results with user actions
