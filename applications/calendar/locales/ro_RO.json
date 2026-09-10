@@ -56,6 +56,9 @@
       "Add a date": [
         "Adăugare dată"
       ],
+      "Add a payment method": [
+        "Adăugați o metodă de plată"
+      ],
       "Add account": [
         "Adăugare cont"
       ],
@@ -157,9 +160,6 @@
       "Clear browser data": [
         "Ștergere date din navigator"
       ],
-      "Clear conversation": [
-        "Golire conversație"
-      ],
       "Clear data": [
         "Ștergere date"
       ],
@@ -240,9 +240,6 @@
       ],
       "Copy booking page link": [
         "Copiere legătură web pagină de rezervare"
-      ],
-      "Copy debug transcript": [
-        "Copiere transcriere depanare"
       ],
       "Copy email address": [
         "Copiere adresă e-mail"
@@ -554,9 +551,6 @@
       "Keep current time zone": [
         "Păstrare fus orar actual"
       ],
-      "Keep going": [
-        "Continuă"
-      ],
       "Keep my subscription": [
         "Îmi păstrez abonamentul"
       ],
@@ -737,9 +731,6 @@
       "Refresh the page": [
         "Împrospătare pagină"
       ],
-      "Reject": [
-        "Respingere"
-      ],
       "Remove": [
         "Eliminare"
       ],
@@ -910,12 +901,6 @@
       ],
       "Stay": [
         "Nu închide"
-      ],
-      "Stop": [
-        "Stop\n"
-      ],
-      "Stop here": [
-        "Oprește aici"
       ],
       "Submit": [
         "Trimitere"
@@ -3662,6 +3647,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Numele de utilizator este ${ user.Name }. Pentru a crea adresa ${ emailAddress }, accesați Setări > Identitate și adrese > Domeniu scurt (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Deja există un contact cu această adresă de e-mail."
+      ],
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
       ],
@@ -5009,8 +4997,11 @@
       "Security key": [
         "Cheie de securitate"
       ],
-      "Touch your security key.": [
-        "Atingeți cheia de securitate."
+      "Still waiting?": [
+        "Încă așteptați?"
+      ],
+      "Touch your security key to continue.": [
+        "Atingeți cheia de securitate pentru a continua."
       ]
     },
     "fido2: Label": {
@@ -5676,6 +5667,12 @@
       "${ storage } storage": [
         "Stocare ${ storage }"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a evita pierderea accesului. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a vă păstra abonamentul. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "Utilizatori găsiți: ${ total }",
         "Utilizatori găsiți: ${ total }",
@@ -6005,9 +6002,6 @@
       ],
       "Daily": [
         "Zilnic"
-      ],
-      "Debug transcript copied": [
-        "Transcrierea depanării a fost copiată."
       ],
       "Dedicated servers": [
         "Servere dedicate"
@@ -6729,9 +6723,6 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Procesul de verificare va deschide o nouă filă. Dezactivați orice modul de blocare ferestre flotante."
       ],
-      "Thinking about this": [
-        "Mă gândesc la asta"
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Această adresă este dezactivată. Pentru a putea trimite la această adresă, proprietarul trebuie s-o activeze mai întâi."
       ],
@@ -6758,9 +6749,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Aceasta este acum ${ defaultEmailAddress } pentru trimiterea de mesaje noi."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Asta necesită mulți pași. Ar trebui să continui?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Această legătură web duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
@@ -10638,9 +10626,6 @@
       "Anytown": [
         "București"
       ],
-      "Ask anything…": [
-        "Întreabă-mă orice…"
-      ],
       "Company name": [
         "Nume companie"
       ],
@@ -13354,9 +13339,6 @@
       ],
       "Stay for 50% off your next month": [
         "Rămâneți cu o reducere de 50% luna următoare"
-      ],
-      "Still working on it": [
-        "Încă lucrez la asta"
       ],
       "Subscription canceled": [
         "Abonament anulat"
