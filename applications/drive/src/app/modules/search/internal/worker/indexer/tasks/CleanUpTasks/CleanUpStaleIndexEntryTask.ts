@@ -27,6 +27,9 @@ const YIELD_EVENT_LOOP_EVERY = 200;
  *  - belong to a populator kind that is no longer active (removed, disabled, unregistered),
  *  - belong to a tree-event-scope that is no longer active (volume unshared, etc.),
  *  - are missing one or more of the core classification attributes (unclassifiable).
+ *
+ * Runs in two phases per instance - scan the whole index, then remove - because removing while the
+ * export is still open prevents the blob store from freeing anything (see `cleanupInstance`).
  */
 export class CleanUpStaleIndexEntryTask extends BaseTask {
     getUid(): string {
@@ -77,33 +80,41 @@ export class CleanUpStaleIndexEntryTask extends BaseTask {
             stateByUid.set(state.uid, state);
         }
 
-        let totalRemoved = 0;
-        let pending: string[] = [];
-        const removePendingStaleIndexEntries = async () => {
-            if (pending.length === 0) {
-                return;
-            }
-            const ids = pending;
-            pending = [];
-            totalRemoved += await removeDocumentIds(instance, ids, signal);
-        };
-
+        // Two phases, deliberately not interleaved: collect every stale id while the export is
+        // open, then close it before removing anything.
+        //
+        // exportEntries holds IndexBlobStore in a "read" state for its entire scan. Committing a
+        // removal inside that scan would still evict blobs from the 20-slot cache to make room,
+        // but each evicted blob can't be freed while the store is busy reading, so it lands in the
+        // unbounded pendingFrees queue instead - held there for the rest of the scan, not just
+        // until the next commit. Measured on a 10k-document index removing 3k entries: 550
+        // deferred frees and WASM growing ~200MB -> ~2000MB, versus no growth at all when the
+        // removals happen after the export is closed. The queue does drain once the scan ends, but
+        // WASM memory never shrinks (see getWasmMemoryBytes), so that peak becomes the worker's
+        // permanent floor for the rest of the session and can reach the allocator-abort threshold.
+        //
+        // The cost of this shape is holding the stale ids in memory: ~40 bytes each, bounded by the
+        // number of stale entries rather than by index size.
+        const staleIds: string[] = [];
         let processedSinceYield = 0;
         for await (const entry of exportEntries(instance, signal)) {
             if (isEntryStale(entry, stateByUid, activePopulatorKinds, activeTreeEventScopeIds)) {
-                pending.push(engineCall('read entry identifier', () => entry.identifier()));
-            }
-            if (pending.length >= DEFAULT_BATCH_SIZE) {
-                await removePendingStaleIndexEntries();
-                processedSinceYield = 0; // removeDocumentIds already relinquished the thread
-                continue;
+                staleIds.push(engineCall('read entry identifier', () => entry.identifier()));
             }
             if (++processedSinceYield >= YIELD_EVENT_LOOP_EVERY) {
                 await yieldToEventLoop();
                 processedSinceYield = 0;
             }
         }
-        await removePendingStaleIndexEntries();
+
+        Logger.info(`${this.getUid()}: ${staleIds.length} stale entries collected for <${instance.indexKind}>`);
+
+        // The export is closed here: deferred frees can drain, and each commit (for each remove operation) below
+        // frees its own removed blobs immediately.
+        let totalRemoved = 0;
+        for (let i = 0; i < staleIds.length; i += DEFAULT_BATCH_SIZE) {
+            totalRemoved += await removeDocumentIds(instance, staleIds.slice(i, i + DEFAULT_BATCH_SIZE), signal);
+        }
 
         if (totalRemoved > 0) {
             Logger.info(`${this.getUid()}: removed ${totalRemoved} stale entries for <${instance.indexKind}>`);
