@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { useIsLumoSmallScreen } from '../../../hooks/useIsLumoSmallScreen';
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
+import { useOptionalRightPanel } from '../../../providers/RightPanelProvider';
 import { useOptionalSidebar } from '../../../providers/SidebarProvider';
 import { setNativeComposerVisibility, setNativeIsSmallScreen } from '../../../remote/nativeComposerBridgeHelpers';
 import { canShowWebComposer, canUseNativeSidebarLayout } from '../../../util/userAgent';
@@ -17,16 +18,19 @@ interface NativeComposerVisibilityConfig {
 
 /**
  * The default visibility: what the composer's own conditions call for when nothing is covering
- * it — the native composer flag, and whether the sidebar left it any room.
+ * it — the native composer flag, and whether the sidebar and the right panel left it any room.
  */
 const useDefaultVisibility = (): boolean => {
     // A route with no sidebar layout (the paper trail) has nothing competing for the screen.
     const isSidebarVisible = useOptionalSidebar()?.isVisible ?? false;
+    // `isOverlay` is already small-screen-only: on a large screen the panel sits beside the
+    // content instead of over it, so it never covers the composer.
+    const isRightPanelOverlay = useOptionalRightPanel()?.isOverlay ?? false;
     const { isSmallScreen } = useIsLumoSmallScreen();
     const { nativeComposer: lumoNativeComposerEnabled } = useLumoFlags();
 
     const shouldShowNativeComposer = isSmallScreen
-        ? !isSidebarVisible // phone: the sidebar drawer covers the screen
+        ? !isSidebarVisible && !isRightPanelOverlay // phone: either drawer covers the screen
         : canUseNativeSidebarLayout() || isSidebarVisible; // large: always, or legacy behavior
 
     return lumoNativeComposerEnabled && shouldShowNativeComposer;
