@@ -1056,6 +1056,9 @@
       "Continue": [
         "İlerle"
       ],
+      "Create artifact": [
+        "Yapıt oluştur"
+      ],
       "Create folder": [
         "Klasör oluştur"
       ],
@@ -1161,6 +1164,9 @@
       "Submit": [
         "Gönder"
       ],
+      "Switch to Max": [
+        "Max modeline geç"
+      ],
       "System": [
         "Sistem"
       ],
@@ -1230,6 +1236,9 @@
       ],
       "Continue": [
         "İlerle"
+      ],
+      "Create artifact": [
+        "Yapıt oluştur"
       ],
       "Create image": [
         "Görsel oluştur"
@@ -1691,6 +1700,12 @@
       "We're experiencing unusually high demand. If retrying doesn't work, check back in a few minutes or upgrade for priority access to ${ LUMO_SHORT_APP_NAME }.": [
         "Olağandışı yüksek bir talep var. Yeniden denemek işe yaramazsa, birkaç dakika sonra yeniden deneyin veya öncelikli ${ LUMO_SHORT_APP_NAME } erişimi edinmek için tarifenizi yükseltin."
       ],
+      "We've switched you to ${ selectedModelLabel }, which is still available. ${ fallbackUpsellMessage }": [
+        "Sizi kullanmayı sürdürebileceğiniz ${ selectedModelLabel } modeline geçirdik. ${ fallbackUpsellMessage }"
+      ],
+      "You've sent too many requests in a short time. Wait a moment and try again.": [
+        "Kısa sürede çok fazla sayıda istek gönderdiniz. Bir dakika bekleyip yeniden deneyin."
+      ],
       "Your request didn't go through or couldn't be completed. Try sending it again.": [
         "İsteğiniz üzerinden geçilemedi veya tamamlanamadı. Yeniden göndermeyi deneyin."
       ],
@@ -1714,8 +1729,20 @@
       "Something went wrong": [
         "Bir sorun çıktı"
       ],
-      "You've reached your weekly chat limit": [
-        "Haftalık sohbet sınırınıza ulaştınız"
+      "Too many requests": [
+        "Çok fazla sayıda istek yapıldı"
+      ],
+      "You've reached a model limit": [
+        "Bir modelin kullanım sınırına ulaştınız"
+      ],
+      "You've reached your ${ LUMO_SHORT_APP_NAME } 2.0 Lite limit": [
+        "Kullandığınız ${ LUMO_SHORT_APP_NAME } 2.0 Lite modelinin sınırına ulaştınız"
+      ],
+      "You've reached your ${ LUMO_SHORT_APP_NAME } 2.0 Max limit": [
+        "Kullandığınız ${ LUMO_SHORT_APP_NAME } 2.0 Max modelinin sınırına ulaştınız"
+      ],
+      "You've reached your Apertus 1.5 limit": [
+        "Apertus 1.5 modelinizin sınırlarına ulaştınız"
       ]
     },
     "collider_2025: Failure": {
@@ -2576,6 +2603,9 @@
       ],
       "Create an account or sign in to save your chats and increase limits.": [
         "Sohbetlerinizi kaydetmek ve sınırlarınızı artırmak için hesap ya da oturum açın."
+      ],
+      "You're on ${ selectedModelLabel }. Switch to Max for more capable answers.": [
+        "${ selectedModelLabel } modelini kullanıyorsunuz. Daha kapsamlı yanıtlar almak için Max modeline geçin."
       ]
     },
     "collider_2025: Option": {
@@ -3265,8 +3295,17 @@
       "Close": [
         "Kapat"
       ],
+      "Close panel": [
+        "Panoyu kapat"
+      ],
+      "Code": [
+        "Kod"
+      ],
       "Continue": [
         "İlerle"
+      ],
+      "Copy content": [
+        "İçeriği kopyala"
       ],
       "Copy link & caption": [
         "Bağlantıyı ve açıklamayı kopyala"
@@ -3313,6 +3352,9 @@
       "Download image": [
         "Görseli indir"
       ],
+      "Edit": [
+        "Düzenle"
+      ],
       "Edit agent": [
         "Aracıyı düzenle"
       ],
@@ -3328,6 +3370,9 @@
       "Expand": [
         "Genişlet"
       ],
+      "Explain": [
+        "Açıkla"
+      ],
       "Favorite": [
         "Sık kullanılanlara ekle"
       ],
@@ -3342,6 +3387,9 @@
       ],
       "Hide knowledge panel": [
         "Bilgi panosunu gizle"
+      ],
+      "Improve": [
+        "İyileştir"
       ],
       "Light": [
         "Açık"
@@ -3370,11 +3418,23 @@
       "Next message": [
         "Sonraki ileti"
       ],
+      "Next version": [
+        "Sonraki sürüm"
+      ],
+      "Open": [
+        "Aç"
+      ],
       "Open conversation": [
         "Yazışmayı aç"
       ],
+      "Preview": [
+        "Ön izleme"
+      ],
       "Previous message": [
         "Önceki ileti"
+      ],
+      "Previous version": [
+        "Önceki sürüm"
       ],
       "Regenerate": [
         "Yeniden üret"
@@ -3412,6 +3472,12 @@
       "Reveal my profile": [
         "Profilimi göster"
       ],
+      "Save": [
+        "Kaydet"
+      ],
+      "Save to Drive": [
+        "Drive üzerine kaydet"
+      ],
       "Select all": [
         "Tümünü seç"
       ],
@@ -3420,6 +3486,9 @@
       ],
       "Select conversation": [
         "Yazışmayı seçin"
+      ],
+      "Send": [
+        "Gönder"
       ],
       "Share": [
         "Paylaş"
@@ -3468,6 +3537,9 @@
       ],
       "Upload your AI export": [
         "Yapay zeka dışa aktarma dosyanızı yükleyin"
+      ],
+      "View v${ versionNumber }": [
+        "${ versionNumber } sürümünü görüntüle"
       ],
       "What needs changed?": [
         "Neyin değiştirilmesi gerekiyor?"
@@ -3578,6 +3650,9 @@
       "Save": [
         "Kaydet"
       ],
+      "Save here": [
+        "Buraya kaydet"
+      ],
       "Search": [
         "Ara"
       ],
@@ -3630,6 +3705,9 @@
       ],
       "Failed to process file: ${ file.name }": [
         "Dosya işlenemedi: ${ file.name }"
+      ],
+      "Failed to save file": [
+        "Dosya kaydedilemedi"
       ],
       "Failed to unlink Drive folder": [
         "Drive klasörü bağlantısı kaldırılamadı"
@@ -3700,6 +3778,10 @@
       "\"${ file.name }\" is still being indexed. Content will be loaded when you send.": [
         "\"${ file.name }\" dosyası dizine ekleniyor. Gönderdiğinizde içerik yüklenecek."
       ],
+      "${ lineCount } line": [
+        "${ lineCount } satır",
+        "${ lineCount } satır"
+      ],
       "${ LUMO_SHORT_APP_NAME } is a private AI. Your conversations are encrypted and never used to train AI models.": [
         "${ LUMO_SHORT_APP_NAME } gizliliği koruyan bir yapay zekadır. Yazışmalarınız şifrelenir ve hiçbir zaman yapay zeka modellerini eğitmek için kullanılmaz."
       ],
@@ -3726,6 +3808,10 @@
       ],
       "${ report.sensitiveCategories.length } sensitive categories": [
         "${ report.sensitiveCategories.length } önemli kategori"
+      ],
+      "${ wordCount } word": [
+        "${ wordCount } sözcük",
+        "${ wordCount } sözcük"
       ],
       "ad value": [
         "reklam değeri"
@@ -3769,6 +3855,9 @@
       "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
         "Bu projeye bağlamak istediğiniz ${ DRIVE_SHORT_APP_NAME } klasörüne gidin ve ardından “Bu klasörü bağla” seçeneğine tıklayın."
       ],
+      "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to save this document to, then click \"Save here\".": [
+        "Bu belgeyi kaydetmek istediğiniz ${ DRIVE_SHORT_APP_NAME } klasörüne gidin. Ardından \"Buraya kaydet\" üzerine tıklayın."
+      ],
       "Built by ${ BRAND_NAME }, the privacy brand trusted by over 100 million people and the team behind ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }.": [
         "100 milyondan fazla kişinin güvendiği ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME } ve ${ PASS_APP_NAME } ürünlerinin arkasındaki gizlilik markası ${ BRAND_NAME } ekibi tarafından geliştirilmiştir."
       ],
@@ -3801,6 +3890,9 @@
       ],
       "Cookies or website data are blocked in your browser settings": [
         "Tarayıcı ayarlarınızda tanımlama bilgileri veya site verileri engellenmiş"
+      ],
+      "Copied": [
+        "Kopyalandı"
       ],
       "Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.": [
         "Görseller oluşturun, tarzlar uygulayın ve fikirlerinizin taslağını oluşturun. Yaptıklarınızı kaydetmek için oturum veya ücretsiz bir hesap açın."
@@ -3901,6 +3993,9 @@
       "Look for Export data, then click Export": [
         "Verileri dışa aktar seçeneğini arayın, ardından Dışa aktar üzerine tıklayın"
       ],
+      "No content generated": [
+        "Herhangi bir içerik oluşturulmamış"
+      ],
       "No favorites yet. Star a chat to find it here quickly.": [
         "Henüz bir sık kullanılan yok. Bir sohbeti sık kullanılanlara ekleyerek buradan hızlıca bulabilirsiniz."
       ],
@@ -3912,6 +4007,9 @@
       ],
       "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
         "iPhone veya iPad üzerinde Ayarlar → Uygulamalar → Safari → İleri Düzey yolunu izleyin ve \"Tüm Çerezleri Engelle\" seçeneğinin kapalı olduğundan emin olun. Ardından sayfayı yeniden yükleyin."
+      ],
+      "Open in panel • v${ versionNumber }": [
+        "Panoda aç • ${ versionNumber } sürümü"
       ],
       "PASTED": [
         "YAPIŞTIRILDI"
@@ -4009,8 +4107,17 @@
       "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
         "${ DRIVE_APP_NAME } kullanıldığında ${ LUMO_SHORT_APP_NAME } daha büyük dosyalarla çalışabilir."
       ],
+      "v${ versionNumber }": [
+        "${ versionNumber } sürümü"
+      ],
+      "v${ versionNumber } of ${ totalVersions }": [
+        "${ versionNumber } sürümü / ${ totalVersions }"
+      ],
       "We'll save your card so you can attach it to the post — social sites can't add the image for you.": [
         "Kartınızı, gönderiye ekleyebilmeniz için kaydedeceğiz. Sosyal ağ siteleri görseli sizin için ekleyemez."
+      ],
+      "You edited ${ meta.artifactTitle }": [
+        "${ meta.artifactTitle } yapıtını oluşturdunuz"
       ],
       "You're using private browsing": [
         "Gizli gezinme kipini kullanıyorsunuz"
@@ -4292,6 +4399,9 @@
       "Describe the role, scope, and behavior you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
         "${ LUMO_SHORT_APP_NAME } uygulamasının üstlenmesini istediğiniz rolü, kapsamı ve davranışı tanımlayın."
       ],
+      "Describe what you would like to update...": [
+        "Neyi güncellemek istediğinizi açıklayın..."
+      ],
       "Describe your image...": [
         "Görselinizi tanımlayın..."
       ],
@@ -4327,8 +4437,17 @@
       ]
     },
     "collider_2025:Prefill": {
+      "Edit the \"${ artifactTitle }\" artifact (id: ${ artifactId }). Replace this part:\n\n\"${ selection }\"\n\nwith: ${ instruction }": [
+        "\"${ artifactTitle }\" yapıtını düzenleyin (kimlik: ${ artifactId }). Şu parçayı bulun:\n\n\"${ selection }\"\n\nve şununla değiştirin: ${ instruction }"
+      ],
       "Edit this image:": [
         "Bu görseli düzenle:"
+      ],
+      "Explain this selected part of the \"${ artifactTitle }\" code artifact (id: ${ artifactId }):\n\n\"${ selection }\"": [
+        "\"${ artifactTitle }\" kod yapıtının bu seçilmiş bölümünü açıklayın (kimlik: ${ artifactId }):\n\n\"${ selection }\""
+      ],
+      "Improve this selected part of the \"${ artifactTitle }\" code artifact (id: ${ artifactId }). Update the artifact, replacing:\n\n\"${ selection }\"\n\nwith improved code.": [
+        "\"${ artifactTitle }\" kod yapıtının bu seçilmiş bölümünü iyileştirin (kimlik: ${ artifactId }). Şunu değiştirerek yapıtı güncelleyin:\n\n\"${ selection }\"\n\nve kodu iyileştirin."
       ]
     },
     "collider_2025:Project": {
@@ -4704,6 +4823,9 @@
       ],
       "Folder created successfully": [
         "Klasör oluşturuldu"
+      ],
+      "Saved to ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } üzerine kaydedildi"
       ]
     },
     "collider_2025:Tab": {
@@ -4906,6 +5028,9 @@
       "Review privacy settings": [
         "Gizlilik ayarlarını gözden geçirin"
       ],
+      "Save to ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } üzerine kaydet"
+      ],
       "See what Big Tech AI already knows about you": [
         "Big Tech şirketlerinin yapay zekasının sizinle ilgili neler bildiğini görün"
       ],
@@ -5001,6 +5126,9 @@
     "collider_2025:Warning": {
       "Cannot Link Drive Folder": [
         "Drive Klasörü bağlanamadı"
+      ],
+      "Preview unavailable": [
+        "Ön izleme kullanılamıyor"
       ],
       "This folder contains ${ result.totalFiles } indexable files. Only the first ${ MAX_INDEXABLE_FILES } files were indexed. ${ result.skippedFiles } files were skipped.": [
         "Bu klasörde dizine eklenebilecek ${ result.totalFiles } dosya var. Yalnızca ilk ${ MAX_INDEXABLE_FILES } dosya dizine eklendi. ${ result.skippedFiles } dosya atlandı."
@@ -6629,8 +6757,11 @@
       "Security key": [
         "Güvenlik anahtarı"
       ],
-      "Touch your security key.": [
-        "Güvenlik anahtarınıza dokunun."
+      "Still waiting?": [
+        "Hâlâ bekliyor musunuz?"
+      ],
+      "Touch your security key to continue.": [
+        "İlerlemek için güvenlik anahtarınıza dokunun."
       ]
     },
     "fido2: Label": {
@@ -7145,6 +7276,9 @@
       ],
       "Rendered spec": [
         "Görselleştirilmiş özellik"
+      ],
+      "Run ${ tool } with ${ connector }": [
+        "${ tool } aracını ${ connector } ile çalıştır"
       ],
       "Searchable chunks": [
         "Aranabilir öbekler"
@@ -7799,8 +7933,8 @@
       "Forces either unavailable state, without burning a real quota or waiting for a flag rollout. \"unavailable_limit_reached\" pins the Max pool to 0 remaining, exactly as the backend would after the weekly cap; \"unavailable_high_load\" switches off the availability flag. Both disable the Max row in the picker, fall the selection back to Lite, and push maxModelAvailability to native. Persists across reloads until switched off.": [
         "Gerçek bir kota harcamadan veya bir işaretin kullanıma sunulmasını beklemeden kullanılamaz durumu dayatır. \"unavailable_limit_reached\", arka ucun haftalık sınırdan sonra yapacağı gibi, en fazla havuzu 0 kalana sabitler. \"unavailable_high_load\" kullanılabilirlik işaretini kapatır. Her ikisi de seçicideki En fazla satırını etkisizleştirir, seçimi Lite olarak değiştirir ve maxModelAvailability değerini yerel olarak iter. Kapatılana kadar yeniden yüklemeler boyunca sürer."
       ],
-      "Forces Lite and Max pools to zero and lets UsageLimitsTierSync dispatch the tier error, so you can preview the weekly limit UpsellCard above the composer. Hidden for Plus accounts. Persists across reloads until switched off.": [
-        "Lite ve Max havuzlarını sıfıra zorlar ve UsageLimitsTierSync tarafından katman hatasının gönderilmesini sağlar. Böylece oluşturucunun üzerindeki haftalık limit UpsellCard değerini ön izleyebilirsiniz. Plus hesapları için gizlidir. Kapatılana kadar yeniden yüklemeler boyunca kalır."
+      "Forces Lite and Max pools to zero so you can preview the model-limit UpsellCard above the composer. Hidden for Plus accounts. Persists across reloads until switched off.": [
+        "Lite ve Max modellerinin havuzlarını sıfırlamaya zorlar. Böylece oluşturucu üzerindeki modeli sınırlayan üst sürüm satışı kartının ön izlemesine bakabilirsiniz. Plus hesapları için gizlidir. Kapatılana kadar yeniden yüklemelerde kalır."
       ],
       "Forces the inline composer banner into \"approaching\" or \"at limit\" state so you can preview it in any context.": [
         "Satır arası oluşturucu başlığını \"yaklaşıyor\" ya da \"sınırda\" durumuna getirir. Böylece herhangi bir bağlamda ön izleme yapabilirsiniz."
