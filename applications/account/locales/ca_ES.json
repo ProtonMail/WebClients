@@ -410,6 +410,9 @@
       "Add ${ BRAND_NAME } address": [
         "Afegiu l'adreça de ${ BRAND_NAME }"
       ],
+      "Add a payment method": [
+        "Afegiu un mètode de pagament"
+      ],
       "Add account": [
         "Afegeix un compte"
       ],
@@ -608,9 +611,6 @@
       "Clear all formatting": [
         "Esborra tot el format"
       ],
-      "Clear conversation": [
-        "Netejar la conversa"
-      ],
       "Close": [
         "Tanca"
       ],
@@ -727,9 +727,6 @@
       ],
       "Copy address": [
         "Copia l'adreça"
-      ],
-      "Copy debug transcript": [
-        "Copia la transcripció de depuració"
       ],
       "Copy key to the clipboard": [
         "Copia la clau al porta-retalls"
@@ -1391,9 +1388,6 @@
       "Keep editing": [
         "Continua editant"
       ],
-      "Keep going": [
-        "Continua"
-      ],
       "Keep logo": [
         "Manté el logo"
       ],
@@ -1871,9 +1865,6 @@
       "Select time zone": [
         "Selecciona el fus horari"
       ],
-      "Send": [
-        "Enviar"
-      ],
       "send auto-reply email": [
         "envia un correu de resposta automàtica"
       ],
@@ -1997,6 +1988,9 @@
       "Sign out of all accounts": [
         "Tanca tots els comptes"
       ],
+      "Sign out on all devices": [
+        "Tancar la sessió en tots els dispositius"
+      ],
       "sign up for free": [
         "creeu un compte gratuïtament"
       ],
@@ -2035,12 +2029,6 @@
       ],
       "Stay": [
         "Mantenir"
-      ],
-      "Stop": [
-        "Atura"
-      ],
-      "Stop here": [
-        "Parar aquí"
       ],
       "Stop using single sign-on": [
         "Deixa d'utilitzar l'inici de sessió únic"
@@ -2149,6 +2137,9 @@
       ],
       "Upgrade now": [
         "Millora el pla ara"
+      ],
+      "Upgrade to 2 devices or more": [
+        "Milloreu a 2 dispositius o més"
       ],
       "Upgrade to Business": [
         "Millora a Business"
@@ -5550,6 +5541,9 @@
       "Still need help? Our support team is here for you.": [
         "Encara necessiteu ajuda? El nostre equip de suport és a la vostra disposició."
       ],
+      "The link to sign out on all your devices has expired. Try signing in again to receive a new one.": [
+        "L'enllaç per tancar la sessió a tots els vostres dispositius ha caducat. Torneu a iniciar sessió per rebre'n un de nou."
+      ],
       "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
         "Això us permet recuperar l'accés al compte de ${ BRAND_NAME }, però no recupera les dades xifrades."
       ],
@@ -5578,11 +5572,20 @@
       "To start, give your organization a name.": [
         "Per començar, assigneu un nom a la vostra organització."
       ],
+      "To stay signed in everywhere, upgrade your plan instead.": [
+        "Per mantenir la sessió iniciada a tot arreu, cal que milloreu el vostre pla."
+      ],
+      "Too many devices are connected to your account. To use ${ BRAND_NAME } on a new device or browser, end all existing sessions. You'll be signed out on every device.": [
+        "Hi ha massa dispositius connectats al vostre compte. Per utilitzar ${ BRAND_NAME } en un dispositiu o navegador nou, tanqueu totes les sessions existents. Se us desconnectarà de tots els dispositius."
+      ],
       "Track the status and activity of your referrals": [
         "Feu un seguiment de l'estat i l'activitat de les vostres referències"
       ],
       "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
         "Desbloquegeu 15 GB d'emmagatzematge per només ${ config.offerPrice }."
+      ],
+      "Upgrade anytime to stay signed in on multiple devices.": [
+        "Milloreu el vostre pla en qualsevol moment per mantenir la sessió iniciada en diversos dispositius."
       ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Milloreu a ${ planName } per connectar fins a ${ MAX_SYNC_PAID_USER } comptes"
@@ -5657,6 +5660,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "El vostre compte gratuït de ${ MAIL_APP_NAME } ve amb emmagatzematge limitat, de manera que només importarem els vostres correus electrònics més recents de Gmail."
+      ],
+      "Your other sessions have been ended. You can now sign in on this device.": [
+        "S'han tancat les vostres altres sessions. Ara podeu iniciar sessió en aquest dispositiu."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "El vostre pla admet ${ MAX_SYNC_FREE_USER } adreça de Gmail.",
@@ -7892,6 +7898,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
       ],
+      "Something went wrong, please try again": [
+        "Alguna cosa ha anat malament, torneu-ho a provar"
+      ],
       "Something went wrong. Please try again.": [
         "Alguna cosa ha anat malament. Torneu a provar-ho."
       ],
@@ -9028,11 +9037,14 @@
       "Security key updated": [
         "S'ha actualitzat la clau de seguretat"
       ],
+      "Still waiting?": [
+        "Encara esteu esperant?"
+      ],
       "This will delete all security keys linked to your account.": [
         "Això eliminarà totes les claus de seguretat vinculades al vostre compte."
       ],
-      "Touch your security key.": [
-        "Toqueu la vostra clau de seguretat."
+      "Touch your security key to continue.": [
+        "Toqueu la clau de seguretat per continuar."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Confirmeu la vostra identitat amb una clau de seguretat física U2F o FIDO2."
@@ -10431,6 +10443,12 @@
       "${ storeName } app to copy data to ${ BRAND_NAME }": [
         "Aplicació ${ storeName } per copiar dades a ${ BRAND_NAME }"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Us queda ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per no perdre'n l'accés. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Us queden ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per a mantenir la vostra subscripció. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "S'ha trobat ${ total } usuari",
         "S'han trobat ${ total } usuaris"
@@ -11245,9 +11263,6 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "La recuperació de dades requereix una opció de restabliment de contrasenya (correu electrònic o SMS)"
       ],
-      "Debug transcript copied": [
-        "S'ha copiat la transcripció de depuració"
-      ],
       "dedicated servers": [
         "servidors dedicats"
       ],
@@ -11831,9 +11846,6 @@
       ],
       "How your emergency contact can change your password for you:": [
         "Com pot el vostre contacte d'emergència canviar la contrasenya per vosaltres:"
-      ],
-      "I have not finished this one yet.": [
-        "Encara no he acabat aquesta."
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -13244,9 +13256,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Aquestes credencials no es poden utilitzar per a iniciar sessió a les nostres aplicacions oficials de ${ VPN_APP_NAME }. ${ learnMore }"
       ],
-      "Thinking about this": [
-        "Hi estem pensant"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Aquest compte ha estat suspès a causa d'una possible infracció de les polítiques."
       ],
@@ -13297,9 +13306,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Aquesta és ara la vostra ${ defaultEmailAddress } per enviar missatges nous."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Això està prenent molts passos. Hauria de continuar?"
       ],
       "This is the password you used before the password reset.": [
         "Això és la contrasenya que utilitzàveu abans del restabliment de contrasenya."
@@ -21099,9 +21105,6 @@
       "Anytown": [
         "Castellvent"
       ],
-      "Ask anything…": [
-        "Pregunteu qualsevol cosa…"
-      ],
       "billing@company.com": [
         "facturacio@empresa.com"
       ],
@@ -27227,6 +27230,9 @@
       "Other calendars": [
         "Altres calendaris"
       ],
+      "Other devices signed out": [
+        "S'ha tancat la sessió en altres dispositius"
+      ],
       "Other features included in your plan": [
         "Altres característiques incloses en el vostre pla"
       ],
@@ -27584,6 +27590,9 @@
       "Sign out": [
         "Tanca la sessió"
       ],
+      "Sign out on all devices?": [
+        "Voleu tancar la sessió en tots els dispositius?"
+      ],
       "Signed in successfully!": [
         "Heu iniciat la sessió."
       ],
@@ -27658,9 +27667,6 @@
       ],
       "Stay secure and connected anywhere": [
         "Mantingueu-vos segurs i connectats a tot arreu"
-      ],
-      "Still working on it": [
-        "Encara hi estem treballant"
       ],
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "Reforceu la seguretat a tots els vostres dispositius amb ${ passPlusPlanName }. ${ upgradeButton }"

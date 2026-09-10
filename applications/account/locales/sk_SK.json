@@ -410,6 +410,9 @@
       "Add ${ BRAND_NAME } address": [
         "Pridať ${ BRAND_NAME } adresu"
       ],
+      "Add a payment method": [
+        "Pridať spôsob platby"
+      ],
       "Add account": [
         "Pridať účet"
       ],
@@ -608,9 +611,6 @@
       "Clear all formatting": [
         "Vymazať všetky formátovania"
       ],
-      "Clear conversation": [
-        "Vyčistiť konverzáciu"
-      ],
       "Close": [
         "Zatvoriť"
       ],
@@ -727,9 +727,6 @@
       ],
       "Copy address": [
         "Kopírovať adresu"
-      ],
-      "Copy debug transcript": [
-        "Kopírovať prepis ladenia"
       ],
       "Copy key to the clipboard": [
         "Skopírovať kľúč do schránky"
@@ -1391,9 +1388,6 @@
       "Keep editing": [
         "Pokračovať v úpravách"
       ],
-      "Keep going": [
-        "Pokračujte"
-      ],
       "Keep logo": [
         "Ponechať logo"
       ],
@@ -1871,9 +1865,6 @@
       "Select time zone": [
         "Vyberte časové pásmo"
       ],
-      "Send": [
-        "Odoslať"
-      ],
       "send auto-reply email": [
         "odoslať automatickú odpoveď"
       ],
@@ -2035,12 +2026,6 @@
       ],
       "Stay": [
         "Zostať"
-      ],
-      "Stop": [
-        "Zastaviť"
-      ],
-      "Stop here": [
-        "Tu zastav"
       ],
       "Stop using single sign-on": [
         "Ukončiť používanie jednotného prihlásenia"
@@ -9156,11 +9141,11 @@
       "Security key updated": [
         "Bezpečnostný kľúč bol aktualizovaný"
       ],
+      "Still waiting?": [
+        "Stále čakáte?"
+      ],
       "This will delete all security keys linked to your account.": [
         "Týmto odstránite všetky bezpečnostné kľúče prepojené s vaším účtom."
-      ],
-      "Touch your security key.": [
-        "Dotknite sa svojho bezpečnostného kľúča."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Overte svoju identitu fyzickým bezpečnostným kľúčom U2F alebo FIDO2"
@@ -11498,9 +11483,6 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "Obnovenie údajov si vyžaduje možnosť obnovenia hesla (emailom alebo SMS)"
       ],
-      "Debug transcript copied": [
-        "Prepis ladenia skopírovaný"
-      ],
       "dedicated servers": [
         "dedikované servery"
       ],
@@ -12088,9 +12070,6 @@
       ],
       "How your emergency contact can change your password for you:": [
         "Ako vám môže vaša núdzová kontaktná osoba zmeniť heslo:"
-      ],
-      "I have not finished this one yet.": [
-        "Ešte som to nedokončil."
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -13529,9 +13508,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Tieto prihlasovacie údaje nie je možné použiť na prihlásenie do našich oficiálnych aplikácií ${ VPN_APP_NAME }. ${ learnMore }"
       ],
-      "Thinking about this": [
-        "Premýšľam o tom"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Tento účet bol zablokovaný kvôli možnému porušeniu pravidiel."
       ],
@@ -13582,9 +13558,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Toto je teraz vaša ${ defaultEmailAddress } pre odosielanie nových správ."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Je to dosť zdĺhavé. Mám v tom pokračovať?"
       ],
       "This is the password you used before the password reset.": [
         "Toto je heslo, ktoré ste už použili pred obnovou hesla."
@@ -21568,9 +21541,6 @@
       "Anytown": [
         "Niekdetam"
       ],
-      "Ask anything…": [
-        "Opýtajte sa na čokoľvek..."
-      ],
       "billing@company.com": [
         "faktury@vasa-firma.sk"
       ],
@@ -28324,9 +28294,6 @@
       ],
       "Stay secure and connected anywhere": [
         "Buďte v bezpečí a pripojení kdekoľvek"
-      ],
-      "Still working on it": [
-        "Stále na tom pracujem"
       ],
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "Posilnite bezpečnosť všetkých vašich zariadení pomocou ${ passPlusPlanName }. ${ upgradeButton }"

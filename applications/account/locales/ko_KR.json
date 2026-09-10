@@ -407,6 +407,9 @@
       "Add ${ BRAND_NAME } address": [
         "${ BRAND_NAME } 주소 추가"
       ],
+      "Add a payment method": [
+        "결제 방법 추가하기"
+      ],
       "Add account": [
         "계정 추가"
       ],
@@ -605,9 +608,6 @@
       "Clear all formatting": [
         "모든 서식 지우기"
       ],
-      "Clear conversation": [
-        "대화 삭제"
-      ],
       "Close": [
         "닫기"
       ],
@@ -724,9 +724,6 @@
       ],
       "Copy address": [
         "주소 복사하기"
-      ],
-      "Copy debug transcript": [
-        "디버그 기록 복사"
       ],
       "Copy key to the clipboard": [
         "클립보드에 키 복사"
@@ -1388,9 +1385,6 @@
       "Keep editing": [
         "계속 수정하기"
       ],
-      "Keep going": [
-        "계속하기"
-      ],
       "Keep logo": [
         "로고 유지"
       ],
@@ -1868,9 +1862,6 @@
       "Select time zone": [
         "시간대 선택"
       ],
-      "Send": [
-        "보내기"
-      ],
       "send auto-reply email": [
         "자동 회신 이메일 보내기"
       ],
@@ -1994,6 +1985,9 @@
       "Sign out of all accounts": [
         "모든 계정 로그아웃"
       ],
+      "Sign out on all devices": [
+        "다른 모든 기기에서 로그아웃하기"
+      ],
       "sign up for free": [
         "무료로 가입하세요"
       ],
@@ -2032,12 +2026,6 @@
       ],
       "Stay": [
         "기다리기"
-      ],
-      "Stop": [
-        "중지"
-      ],
-      "Stop here": [
-        "여기서 중단"
       ],
       "Stop using single sign-on": [
         "싱글 사인온 (SSO) 중지"
@@ -2143,6 +2131,9 @@
       ],
       "Upgrade now": [
         "지금 업그레이드"
+      ],
+      "Upgrade to 2 devices or more": [
+        "2대 기기 이상에서 진행하려면 업그레이드하세요"
       ],
       "Upgrade to Business": [
         "Business로 업그레이드"
@@ -2731,6 +2722,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "Active until ${ formattedPeriodEndDate }": [
+        "${ formattedPeriodEndDate }까지 활성화"
+      ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "${ formattedDate1 }에 무료 체험이 종료된 후, 유료 구독으로 전환되어 매 ${ renewCycle }개월마다 자동 갱신됩니다. ${ formattedDate2 } 이전에 취소 시 요금 청구가 되지 않습니다."
       ],
@@ -5509,6 +5503,9 @@
       "Still need help? Our support team is here for you.": [
         "여전히 도움이 필요하신가요? 지원 팀이 회원님을 위해 대기하고 있습니다."
       ],
+      "The link to sign out on all your devices has expired. Try signing in again to receive a new one.": [
+        "다른 모든 기기에서 로그아웃하기 위한 링크가 만료되었습니다. 로그인 시도 후 새로운 링크를 받아주세요."
+      ],
       "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
         "아래 복구 방법으로 ${ BRAND_NAME } 계정에 다시 접근할 수 있으나, 암호화된 데이터를 복구할 수는 없습니다."
       ],
@@ -5535,6 +5532,12 @@
       ],
       "To start, give your organization a name.": [
         "시작하려면 먼저 조직의 이름을 지정하세요."
+      ],
+      "To stay signed in everywhere, upgrade your plan instead.": [
+        "언제 어디서든 로그인 상태를 유지하세요. 플랜을 업그레이드하세요."
+      ],
+      "Too many devices are connected to your account. To use ${ BRAND_NAME } on a new device or browser, end all existing sessions. You'll be signed out on every device.": [
+        "연결된 기기가 너무 많습니다. 다른 기기나 브라우저에서 ${ BRAND_NAME }을(를) 사용하려면 사용하지 않는 모든 세션을 종료하세요. 모든 기기에서 로그아웃됩니다."
       ],
       "Track the status and activity of your referrals": [
         "추천인 상태와 활동을 추적하세요."
@@ -5613,6 +5616,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "${ MAIL_APP_NAME } 무료 계정에 저장공간이 제한되어 있으므로 가장 최근의 Gmail 이메일만 불러옵니다."
+      ],
+      "Your other sessions have been ended. You can now sign in on this device.": [
+        "다른 세션이 종료되었습니다. 이 기기에서 이제 로그인할 수 있습니다."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "현재 플랜에서 ${ MAX_SYNC_FREE_USER }개의 Gmail 주소를 지원합니다."
@@ -7829,6 +7835,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "문제가 발생했습니다. 진행하려면 ${ refresh } 해주세요. 그래도 이 오류가 지속될 경우 ${ supportTeam } 으로 문의해 주세요."
       ],
+      "Something went wrong, please try again": [
+        "문제가 발생했습니다. 나중에 다시 시도하십시오."
+      ],
       "Something went wrong. Please try again.": [
         "문제가 발생했습니다. 다시 시도해주세요."
       ],
@@ -8957,9 +8966,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "이 작업은 사용자의 계정에 연결된 모든 보안 키를 삭제합니다."
-      ],
-      "Touch your security key.": [
-        "보안 키를 터치해 주세요."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "물리적 U2F 또는 FIDO2 보안 키로 신원을 확인하세요"
@@ -10313,6 +10319,12 @@
       "${ storeName } app to copy data to ${ BRAND_NAME }": [
         "${ BRAND_NAME }으로 데이터를 복사하기 위한 ${ storeName } 앱"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "무료 체험이 ${ timeRemaining }일 남았습니다. 접근 권한을 상실하지 않으려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "무료 체험이 ${ timeRemaining }일 남았습니다. 구독을 유지하려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total }명 사용자 찾음"
       ],
@@ -11114,9 +11126,6 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "데이터 복구 방법을 설정하려면 비밀번호 재설정 방법 (이메일 또는 SMS)이 필요합니다."
       ],
-      "Debug transcript copied": [
-        "디버그 기록 복사됨"
-      ],
       "dedicated servers": [
         "전용 서버"
       ],
@@ -11698,9 +11707,6 @@
       ],
       "How your emergency contact can change your password for you:": [
         "비상 연락처가 나를 대신하여 비밀번호를 변경하는 방법:"
-      ],
-      "I have not finished this one yet.": [
-        "아직 마무리하지 않았어요."
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -12304,6 +12310,9 @@
       ],
       "On": [
         "켬"
+      ],
+      "On ${ formattedPeriodEndDate }, your free trial ends and your paid plan starts.": [
+        "${ formattedPeriodEndDate }에, 무료 체험이 종료되며 유료 플랜으로 자동 전환될 예정입니다."
       ],
       "On Ubuntu?": [
         "Ubuntu를 사용하시나요?"
@@ -13094,9 +13103,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "이 자격증명을 공식 ${ VPN_APP_NAME } 앱에 로그인 할 때 사용하지 못할 수 있습니다. ${ learnMore }"
       ],
-      "Thinking about this": [
-        "이것에 대해 생각해 보기"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "이 계정은 규정 위반이 의심되어 정지되었습니다."
       ],
@@ -13147,9 +13153,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "이제 ${ defaultEmailAddress }가 메시지를 보내는 주소입니다."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "정말 많은 단계를 거쳐야될 수 있어요. 정말 계속하시겠어요?"
       ],
       "This is the password you used before the password reset.": [
         "비밀번호를 재설정하기 전에 사용한 비밀번호입니다."
@@ -14905,6 +14908,9 @@
       ],
       "Account holder name": [
         "예금주 이름"
+      ],
+      "Account holder: ${ details.AccountName }": [
+        "예금주: ${ details.AccountName }"
       ],
       "Account storage": [
         "계정 저장공간"
@@ -18503,6 +18509,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Last4 }(으)로 끝나는 ${ Brand }"
+      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } 일부 플랜에서는 하위 사용자를 위한 이메일 주소를 생성하거나 계정을 관리할 수 있습니다. 가족과 조직에 이상적인 기능입니다."
       ],
@@ -20691,6 +20700,11 @@
         "크레딧이 잔액에 추가됩니다."
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "청구 주소 변경은 추후 청구서의 세율에 영향을 줄 수 있습니다."
+      ]
+    },
     "Payments.Lifetime Subscription": {
       "Lifetime accounts can be transferred or sold": [
         "평생 플랜 계정은 이전하거나 판매할 수 있습니다"
@@ -20738,6 +20752,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "갱신 가격은 청구 지역 및 VAT 번호에 따라 변동될 수 있습니다."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "번호가 ${ Last4 }(으)로 끝나는 Apple Pay 카드"
+      ],
+      "Bank transfer - ${ iban }": [
+        "은행 송금 - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - 번호가 ${ Last4 }(으)로 끝나는 카드"
       ]
     },
     "Payments.Sepa": {
@@ -20828,9 +20853,6 @@
       ],
       "Anytown": [
         "서울특별시 낙원구"
-      ],
-      "Ask anything…": [
-        "무엇이든 물어보세요..."
       ],
       "billing@company.com": [
         "billing@company.co.kr"
@@ -26845,6 +26867,9 @@
       "Other calendars": [
         "다른 달력"
       ],
+      "Other devices signed out": [
+        "다른 기기에서 로그아웃되었습니다"
+      ],
       "Other features included in your plan": [
         "다른 기능들이 플랜에 포함되어 있습니다"
       ],
@@ -27202,6 +27227,9 @@
       "Sign out": [
         "로그아웃"
       ],
+      "Sign out on all devices?": [
+        "다른 모든 기기에서 로그아웃하시겠습니까?"
+      ],
       "Signed in successfully!": [
         "성공적으로 로그인 했습니다!"
       ],
@@ -27276,9 +27304,6 @@
       ],
       "Stay secure and connected anywhere": [
         "언제 어디서나 안전하게 연결하세요"
-      ],
-      "Still working on it": [
-        "아직 작업 중"
       ],
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "모든 회원님의 기기에서 ${ passPlusPlanName }로 보안을 강화하세요. ${ upgradeButton }"

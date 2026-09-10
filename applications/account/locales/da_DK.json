@@ -410,6 +410,9 @@
       "Add ${ BRAND_NAME } address": [
         "Tilføj ${ BRAND_NAME }-adresse"
       ],
+      "Add a payment method": [
+        "Tilføj en betalingsmetode"
+      ],
       "Add account": [
         "Tilføj konto"
       ],
@@ -608,9 +611,6 @@
       "Clear all formatting": [
         "Ryd al formatering"
       ],
-      "Clear conversation": [
-        "Ryd samtale"
-      ],
       "Close": [
         "Luk"
       ],
@@ -727,9 +727,6 @@
       ],
       "Copy address": [
         "Kopier adresse"
-      ],
-      "Copy debug transcript": [
-        "Kopiér fejlfindingstranskibering"
       ],
       "Copy key to the clipboard": [
         "Kopiér nøgle til udklipsholder"
@@ -1391,9 +1388,6 @@
       "Keep editing": [
         "Fortsæt redigering"
       ],
-      "Keep going": [
-        "Fortsæt"
-      ],
       "Keep logo": [
         "Behold logo"
       ],
@@ -1871,9 +1865,6 @@
       "Select time zone": [
         "Vælg tidszone"
       ],
-      "Send": [
-        "Send"
-      ],
       "send auto-reply email": [
         "send e-mail med auto-svar"
       ],
@@ -1997,6 +1988,9 @@
       "Sign out of all accounts": [
         "Log ud af alle konti"
       ],
+      "Sign out on all devices": [
+        "Log ud på alle enheder"
+      ],
       "sign up for free": [
         "tilmeld dig gratis"
       ],
@@ -2035,12 +2029,6 @@
       ],
       "Stay": [
         "Bliv her"
-      ],
-      "Stop": [
-        "Stop"
-      ],
-      "Stop here": [
-        "Stop her"
       ],
       "Stop using single sign-on": [
         "Stop med at bruge enkeltlogon"
@@ -2149,6 +2137,9 @@
       ],
       "Upgrade now": [
         "Opgradér nu"
+      ],
+      "Upgrade to 2 devices or more": [
+        "Opgrader til 2 eller flere enheder"
       ],
       "Upgrade to Business": [
         "Opgrader til Business"
@@ -5550,6 +5541,9 @@
       "Still need help? Our support team is here for you.": [
         "Har du stadig brug for hjælp? Vores supportteam er her for at hjælpe."
       ],
+      "The link to sign out on all your devices has expired. Try signing in again to receive a new one.": [
+        "Linket til at logge ud på alle dine enheder er udløbet. Prøv at logge ind igen for at modtage et nyt."
+      ],
       "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
         "Dette giver dig mulighed for at tilgå din ${ BRAND_NAME }-konto igen, men det gendanner ikke din krypterede data."
       ],
@@ -5578,11 +5572,20 @@
       "To start, give your organization a name.": [
         "Start med at give deres organisation et navn."
       ],
+      "To stay signed in everywhere, upgrade your plan instead.": [
+        "Opgrader dit abonnement i stedet for at forblive logget ind overalt."
+      ],
+      "Too many devices are connected to your account. To use ${ BRAND_NAME } on a new device or browser, end all existing sessions. You'll be signed out on every device.": [
+        "For mange enheder er tilsluttet din konto. Afslut alle eksisterende sessioner for at bruge ${ BRAND_NAME } på en ny enhed eller browser. Du vil blive logget ud på alle enheder."
+      ],
       "Track the status and activity of your referrals": [
         "Følg status og aktivitet for dine henvisninger"
       ],
       "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
         "Lås op for 15 GB lagerplads til kun ${ config.offerPrice }."
+      ],
+      "Upgrade anytime to stay signed in on multiple devices.": [
+        "Opgrader når som helst for at forblive logget ind på flere enheder."
       ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Opgrader til ${ planName } for at forbinde op til ${ MAX_SYNC_PAID_USER } konti"
@@ -5657,6 +5660,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Din gratis ${ MAIL_APP_NAME }-konto har begrænset lagerplads, så vi importerer kun dine seneste Gmail-beskeder."
+      ],
+      "Your other sessions have been ended. You can now sign in on this device.": [
+        "Dine andre sessioner er blevet afsluttet. Du kan nu logge ind på denne enhed."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Dit abonnement understøtter ${ MAX_SYNC_FREE_USER } Gmail-adresse.",
@@ -7892,6 +7898,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noget gik galt. ${ refresh } venligst siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
       ],
+      "Something went wrong, please try again": [
+        "Noget gik galt, prøv igen"
+      ],
       "Something went wrong. Please try again.": [
         "Et eller andet gik galt. Prøv igen."
       ],
@@ -9031,11 +9040,14 @@
       "Security key updated": [
         "Sikkerhedsnøgle opdateret"
       ],
+      "Still waiting?": [
+        "Venter du stadig?"
+      ],
       "This will delete all security keys linked to your account.": [
         "Dette vil slette alle sikkerhedsnøgler forbundet til din konto."
       ],
-      "Touch your security key.": [
-        "Tryk på din sikkerhedsnøgle."
+      "Touch your security key to continue.": [
+        "Tryk på din sikkerhedsnøgle for at fortsætte."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bekræft din identitet med en fysisk U2F- eller FIDO2-sikkerhedsnøgle"
@@ -10434,6 +10446,12 @@
       "${ storeName } app to copy data to ${ BRAND_NAME }": [
         "${ storeName } app for at kopiere data til ${ BRAND_NAME }"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Der er ${ timeRemaining } tilbage tilbage i prøveversionen. ${ addPaymentMethodLink } for at undgå at miste adgang. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Der er ${ timeRemaining } tilbage tilbage i prøveversionen. ${ addPaymentMethodLink } for at beholde dit abonnement. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } bruger fundet",
         "${ total } brugere fundet"
@@ -11251,9 +11269,6 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "Datagendannelse kræver en metode til at nulstille adgangskoden (e-mail eller SMS)"
       ],
-      "Debug transcript copied": [
-        "Fejlfindingstranskibering kopieret"
-      ],
       "dedicated servers": [
         "dedikerede servere"
       ],
@@ -11837,9 +11852,6 @@
       ],
       "How your emergency contact can change your password for you:": [
         "Sådan kan din nødkontakt ændre din adgangskode for dig:"
-      ],
-      "I have not finished this one yet.": [
-        "Denne er endnu ikke afsluttet."
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -13250,9 +13262,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Disse legitimationsoplysninger kan ikke bruges til at logge ind på vores officielle ${ VPN_APP_NAME }-apps. ${ learnMore }"
       ],
-      "Thinking about this": [
-        "Overvejer..."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
       ],
@@ -13303,9 +13312,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dette er nu din ${ defaultEmailAddress } til afsendelse af nye beskeder."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Det her kræver meget... Skal det fortsætte?"
       ],
       "This is the password you used before the password reset.": [
         "Dette er den adgangskode, du brugte før adgangskodenulstillingen."
@@ -21105,9 +21111,6 @@
       "Anytown": [
         "Skovhavn"
       ],
-      "Ask anything…": [
-        "Spørg om hvad som helst..."
-      ],
       "billing@company.com": [
         "faktura@firma.dk"
       ],
@@ -27230,6 +27233,9 @@
       "Other calendars": [
         "Andre kalendere"
       ],
+      "Other devices signed out": [
+        "Andre enheder logget ud"
+      ],
       "Other features included in your plan": [
         "Andre funktioner inkluderet i dit abonnement"
       ],
@@ -27587,6 +27593,9 @@
       "Sign out": [
         "Log ud"
       ],
+      "Sign out on all devices?": [
+        "Log ud på alle enheder?"
+      ],
       "Signed in successfully!": [
         "Det lykkedes at logge ind!"
       ],
@@ -27661,9 +27670,6 @@
       ],
       "Stay secure and connected anywhere": [
         "Vær sikker og forbundet overalt"
-      ],
-      "Still working on it": [
-        "Arbejder stadig på det"
       ],
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "Styrk din sikkerhed på alle dine enheder med ${ passPlusPlanName }. ${ upgradeButton }"
