@@ -7,10 +7,9 @@ import useElementBreakpoints from '@proton/components/hooks/useElementBreakpoint
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import clsx from '@proton/utils/clsx';
 
-import { useSelectAll } from '../../../hooks/useSelectAll';
-
-import { getLabelNameForToolbar, isLabelIDNewsletterSubscription } from '../../../helpers/labels';
+import { getLabelNameForToolbar } from '../../../helpers/labels';
 import { getToolbarResponsiveSizes } from '../../../helpers/toolbar/getToolbarResponsiveSizes';
+import { useSelectAll } from '../../../hooks/useSelectAll';
 import SnoozeToolbarDropdown from '../../list/snooze/containers/SnoozeToolbarDropdown';
 import type { Props as ToolbarProps } from '../Toolbar';
 import LabelName from '../actions/LabelName';
@@ -126,7 +125,9 @@ const ToolbarColumnWide = ({
 
             <div className="toolbar flex gap-2 flex-nowrap justify-space-between bg-norm border-bottom border-weak pl-4 pr-2 py-1">
                 <div className="mr-auto">{selectAll}</div>
-                <div className="ml-auto">{isLabelIDNewsletterSubscription(labelID) ? null : <FilterList />}</div>
+                <div className="ml-auto">
+                    <FilterList />
+                </div>
             </div>
         </div>
     );

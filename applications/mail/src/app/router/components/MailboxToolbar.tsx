@@ -2,7 +2,6 @@ import Toolbar from '../../components/toolbar/Toolbar';
 import type { ElementsStructure } from '../../hooks/mailbox/useElements';
 import { selectParams } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
-
 import type { MailboxActions, RouterNavigation } from '../interface';
 import { useMailboxLayoutProvider } from './MailboxLayoutContext';
 
@@ -11,20 +10,9 @@ interface MailboxToolbarProps {
     navigation: RouterNavigation;
     elementsData: ElementsStructure;
     actions: MailboxActions;
-
-    /**
-     * Override the column mode of the toolbar. If not provided it is determined by the columnMode of the MailboxLayoutProvider.
-     */
-    overrideColumnMode?: boolean;
 }
 
-export const MailboxToolbar = ({
-    inHeader = false,
-    navigation,
-    elementsData,
-    actions,
-    overrideColumnMode,
-}: MailboxToolbarProps) => {
+export const MailboxToolbar = ({ inHeader = false, navigation, elementsData, actions }: MailboxToolbarProps) => {
     const { conversationMode, labelID, messageID, isSearching } = useMailSelector(selectParams);
     const { handleBack, handlePage, page } = navigation;
     const { loading, total, elementIDs } = elementsData;
@@ -49,7 +37,7 @@ export const MailboxToolbar = ({
                 selectedIDs={selectedIDs}
                 checkedIDs={checkedIDs}
                 elementIDs={elementIDs}
-                columnMode={overrideColumnMode ?? isColumnModeActive}
+                columnMode={isColumnModeActive}
                 conversationMode={conversationMode}
                 onCheck={handleCheck}
                 page={page}
