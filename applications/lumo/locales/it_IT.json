@@ -1637,9 +1637,6 @@
       ],
       "Something went wrong": [
         "Si è verificato un errore"
-      ],
-      "You've reached your weekly chat limit": [
-        "Hai raggiunto il limite di chat settimanali"
       ]
     },
     "collider_2025: Failure": {
@@ -6120,9 +6117,6 @@
       ],
       "Security key": [
         "Chiave di sicurezza"
-      ],
-      "Touch your security key.": [
-        "Tocca la tua chiave di sicurezza."
       ]
     },
     "fido2: Label": {
@@ -7269,9 +7263,6 @@
       ],
       "Forces either unavailable state, without burning a real quota or waiting for a flag rollout. \"unavailable_limit_reached\" pins the Max pool to 0 remaining, exactly as the backend would after the weekly cap; \"unavailable_high_load\" switches off the availability flag. Both disable the Max row in the picker, fall the selection back to Lite, and push maxModelAvailability to native. Persists across reloads until switched off.": [
         "Forza uno degli stati di non disponibilità, senza consumare la quota reale o attendere il rilascio di un flag. \"unavailable_limit_reached\" imposta il limite del pool Max a 0 rimanenti, esattamente come farebbe il backend dopo il limite settimanale; \"unavailable_high_load\" disattiva il flag di disponibilità. Entrambi disabilitano la riga Max nel selettore, reindirizzano la selezione su Lite e inviano maxModelAvailability al sistema nativo. Persiste tra i ricarichi finché non viene disattivato."
-      ],
-      "Forces Lite and Max pools to zero and lets UsageLimitsTierSync dispatch the tier error, so you can preview the weekly limit UpsellCard above the composer. Hidden for Plus accounts. Persists across reloads until switched off.": [
-        "Forza i pool Lite e Max a zero e consente a UsageLimitsTierSync di inviare l'errore di livello, permettendo di visualizzare l'anteprima della UpsellCard del limite settimanale sopra il composer. Nascosto per gli account Plus. Persiste al ricaricamento finché non viene disattivato."
       ],
       "Forces the inline composer banner into \"approaching\" or \"at limit\" state so you can preview it in any context.": [
         "Forza il banner del compositore inline nello stato \"in esaurimento\" o \"al limite\" in modo da poterlo visualizzare in anteprima in qualsiasi contesto."
