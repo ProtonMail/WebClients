@@ -52,6 +52,9 @@
         "${ photoCount } fotoğrafı yeni bir albüme ekle",
         "${ photoCount } fotoğrafı yeni bir albüme ekle"
       ],
+      "Add a payment method": [
+        "Bir ödeme yöntemi ekleyin"
+      ],
       "Add account": [
         "Hesap ekle"
       ],
@@ -3417,6 +3420,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Kullanıcı adınız: ${ user.Name }. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa etki alanı (pm.me) bölümüne gidin."
       ],
+      "A contact with this email address already exists": [
+        "Bu e-posta adresiyle bir kişi kaydı zaten var"
+      ],
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
@@ -4750,8 +4756,11 @@
       "Security key": [
         "Güvenlik anahtarı"
       ],
-      "Touch your security key.": [
-        "Güvenlik anahtarınıza dokunun."
+      "Still waiting?": [
+        "Hâlâ bekliyor musunuz?"
+      ],
+      "Touch your security key to continue.": [
+        "İlerlemek için güvenlik anahtarınıza dokunun."
       ]
     },
     "fido2: Label": {
@@ -5370,6 +5379,9 @@
       "${ LUMO_APP_NAME } includes the writing assistant": [
         "${ LUMO_APP_NAME } içinde yazma yardımcısı bulunur"
       ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } şu ana kadar ${ count } ilerledi. Sürdürmek istiyor musunuz?"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ],
@@ -5440,8 +5452,18 @@
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } kayıt"
       ],
+      "${ steps } step": [
+        "${ steps } adım",
+        "${ steps } adım"
+      ],
       "${ storage } storage": [
         "${ storage } depolama alanı"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Erişiminizi kaybetmemek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Aboneliğinizi sürdürmek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
       ],
       "${ total } user found": [
         "${ total } kullanıcı bulundu",
@@ -6879,9 +6901,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Artık yeni iletileri göndermek için ${ defaultEmailAddress } budur."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Bu işlem için birçok adım atılıyor. İlerlensin mi?"
       ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Bu öge Fotoğraflar kitaplığınızda kayıtlı değil. Ögeyi bu albümden kaldırırsanız, ögeye erişiminizi kalıcı olarak kaybedersiniz.",
@@ -13713,9 +13732,6 @@
       ],
       "Stay for 50% off your next month": [
         "Sonraki ay %50 indirimden yararlanın"
-      ],
-      "Still working on it": [
-        "Üzerinde çalışılıyor"
       ],
       "Stop sharing": [
         "Paylaşımdan kaldır"
