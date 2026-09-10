@@ -24,3 +24,7 @@ export const shouldCreateUserPredicate =
 
 export const isProviderUserSelectable = (u: ApiImporterOrganizationUser) =>
     !u.ImporterOrganizationUser && u.Eligibility.IsEligible;
+
+export const exhaustiveMatchGuard = (arg: never): never => {
+    throw new Error(`Exhaustive guard called with ${arg}`);
+};
