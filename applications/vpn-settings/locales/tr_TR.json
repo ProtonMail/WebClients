@@ -304,6 +304,9 @@
       "Add ${ BRAND_NAME } address": [
         "${ BRAND_NAME } adresini ekle"
       ],
+      "Add a payment method": [
+        "Bir ödeme yöntemi ekleyin"
+      ],
       "Add account": [
         "Hesap ekle"
       ],
@@ -439,9 +442,6 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Ücretsiz ${ BRAND_NAME } adresinizi alın"
       ],
-      "Clear conversation": [
-        "Yazışmayı temizle"
-      ],
       "Close": [
         "Kapat"
       ],
@@ -522,9 +522,6 @@
       ],
       "Copy address": [
         "Adresi kopyala"
-      ],
-      "Copy debug transcript": [
-        "Hata ayıklama çıktısını kopyala"
       ],
       "Copy key to the clipboard": [
         "Anahtarı panoya kopyala"
@@ -931,9 +928,6 @@
       "Keep editing": [
         "Düzenlemeyi sürdür"
       ],
-      "Keep going": [
-        "İlerle"
-      ],
       "Keep logo": [
         "Logoyu tut"
       ],
@@ -1273,9 +1267,6 @@
       "select file": [
         "dosya seçin"
       ],
-      "Send": [
-        "Gönder"
-      ],
       "Send code": [
         "Kodu gönder"
       ],
@@ -1395,12 +1386,6 @@
       ],
       "Stay": [
         "Kal"
-      ],
-      "Stop": [
-        "Durdur"
-      ],
-      "Stop here": [
-        "Burada dur"
       ],
       "Stop using single sign-on": [
         "Tek oturum açma kullanmayı bırak"
@@ -6554,11 +6539,14 @@
       "Security key updated": [
         "Güvenlik anahtarı güncellendi"
       ],
+      "Still waiting?": [
+        "Hâlâ bekliyor musunuz?"
+      ],
       "This will delete all security keys linked to your account.": [
         "Bu işlem, hesabınızla bağlantılı tüm güvenlik anahtarlarını siler."
       ],
-      "Touch your security key.": [
-        "Güvenlik anahtarınıza dokunun."
+      "Touch your security key to continue.": [
+        "İlerlemek için güvenlik anahtarınıza dokunun."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Kimliğinizi fiziksel bir U2F ya da FIDO2 güvenlik anahtarıyla doğrulayın"
@@ -7534,6 +7522,12 @@
       "${ storage } storage": [
         "${ storage } depolama alanı"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Erişiminizi kaybetmemek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Aboneliğinizi sürdürmek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } kullanıcı bulundu",
         "${ total } kullanıcı bulundu"
@@ -8101,9 +8095,6 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "Veri kurtarma işlemi için bir parola sıfırlama seçeneği (e-posta veya SMS) gereklidir"
       ],
-      "Debug transcript copied": [
-        "Hata ayıklama çıktısı kopyalandı"
-      ],
       "dedicated servers": [
         "size ayrılmış sunucular"
       ],
@@ -8528,9 +8519,6 @@
       ],
       "How your emergency contact can change your password for you:": [
         "Acil durum kişiniz sizin adınıza parolanızı nasıl değiştirebilir:"
-      ],
-      "I have not finished this one yet.": [
-        "Bunu henüz bitirmedim."
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Kimlik hizmeti sağlayıcının, kimlik doğrulama isteklerini imzalamakta kullanacağı herkese açık anahtarı. Kimlik hizmeti sağlayıcıdan sertifika karmasının indirileceği veya kopyalanacağı bir yer bulunmalıdır. Sertifika karmasını metin alanı alanına yapıştırmanız yeterlidir."
@@ -9564,9 +9552,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Bu kimlik doğrulama bilgileri resmi ${ VPN_APP_NAME } uygulamalarımızda oturum açmak için kullanılamaz. ${ learnMore }"
       ],
-      "Thinking about this": [
-        "Bunun hakkında düşünülüyor"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, ilkeye aykırı kullanım olasılığı nedeniyle askıya alınmış."
       ],
@@ -9605,9 +9590,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Artık yeni iletileri göndermek için ${ defaultEmailAddress } budur."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Bu işlem için birçok adım atılıyor. İlerlensin mi?"
       ],
       "This is the password you used before the password reset.": [
         "Bu parola, sıfırlama öncesinde kullandığınız paroladır."
@@ -14809,9 +14791,6 @@
       "Anytown": [
         "İl"
       ],
-      "Ask anything…": [
-        "Herhangi bir şey sorun…"
-      ],
       "billing@company.com": [
         "fatura@ornek.com"
       ],
@@ -19653,9 +19632,6 @@
       ],
       "Stay secure and connected anywhere": [
         "Her yerde güvende ve bağlı kalın"
-      ],
-      "Still working on it": [
-        "Üzerinde çalışılıyor"
       ],
       "Subscription": [
         "Abonelik"

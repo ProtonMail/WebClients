@@ -62,6 +62,9 @@
       "Add ${ BRAND_NAME } address": [
         "Legg til ${ BRAND_NAME }-adresse"
       ],
+      "Add a payment method": [
+        "Legg til betalingsmåte"
+      ],
       "Add account": [
         "Legg til konto"
       ],
@@ -196,9 +199,6 @@
       ],
       "Claim your free ${ BRAND_NAME } address": [
         "Gjør krav på din gratis ${ BRAND_NAME }-adresse"
-      ],
-      "Clear conversation": [
-        "Rensk samtalen"
       ],
       "Close": [
         "Lukk"
@@ -1019,9 +1019,6 @@
       "select file": [
         "velg fil"
       ],
-      "Send": [
-        "Send"
-      ],
       "Send code": [
         "Send kode"
       ],
@@ -1138,9 +1135,6 @@
       ],
       "Stay": [
         "Bli"
-      ],
-      "Stop": [
-        "Stopp"
       ],
       "Stop using single sign-on": [
         "Slutt å bruke enkel pålogging"
@@ -2268,6 +2262,9 @@
       "${ users } user": [
         "${ users } bruker",
         "${ users } brukere"
+      ],
+      "Amount due": [
+        "Beløp å betale"
       ],
       "Amount due after trial": [
         "Beløp som forfaller etter prøvetiden"
@@ -3662,6 +3659,9 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "De fleste problemer kan løses på få minutter med våre trinnvise veiledninger."
       ],
+      "No ads. No trackers": [
+        "Ingen annonser. Ingen sporere"
+      ],
       "No one in your organization can connect to shared servers.": [
         "Ingen i organisasjonen kan koble til delte servere."
       ],
@@ -4764,6 +4764,9 @@
       ],
       "Could not generate the device profile. Please try again.": [
         "Kunne ikke generere enhetsprofilen. Prøv på nytt."
+      ],
+      "Could not grant access to the organization key": [
+        "Kunne ikke gi tilgang til organisasjonsnøkkelen"
       ],
       "Could not load sharing details": [
         "Kunne ikke laste inn delingsdetaljene"
@@ -5901,6 +5904,9 @@
       "You need to configure a custom domain before creating a new user.": [
         "Du må konfigurere et egendefinert domene før du kan opprette en ny bruker."
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du er invitert til å koble ${ BRAND_NAME }-kontoen til denne familiegruppen og nyte alle premiumfunksjonene."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Kontoen din har flere e-postadresser enn det som er tilgjengelig for deg i denne planen. ${ addressSettingsLink }"
       ],
@@ -6252,9 +6258,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Dette vil slette alle sikkerhetsnøkler tilknyttet kontoen din."
-      ],
-      "Touch your security key.": [
-        "Berør sikkerhetsnøkkelen din."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bekreft din identitet med en fysisk U2F eller FIDO2-sikkerhetsnøkkel"
@@ -7205,6 +7208,12 @@
       "${ storage } storage": [
         "${ storage } lagringsplass"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } igjen av prøveperioden. ${ addPaymentMethodLink } for å unngå å miste tilgang. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } igjen av prøveperioden. ${ addPaymentMethodLink } for å beholde abonnementet. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } bruker funnet",
         "${ total } brukere funnet"
@@ -7753,9 +7762,6 @@
       ],
       "Data recovery requires a password reset option (email or SMS)": [
         "Datagjenoppretting krever et alternativ for tilbakestilling av passord (e-post eller SMS)"
-      ],
-      "Debug transcript copied": [
-        "Feilsøkingstranskripsjon kopiert"
       ],
       "dedicated servers": [
         "dedikerte servere"
@@ -9177,9 +9183,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Denne påloggingsinformasjonen kan ikke brukes til å logge på våre offisielle ${ VPN_APP_NAME }-apper. ${ learnMore }"
       ],
-      "Thinking about this": [
-        "Tenker på dette"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne kontoen er suspendert på grunn av et potensielt brudd på retningslinjene."
       ],
@@ -9623,6 +9626,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi bruker 3-D Secure for å beskytte dine betalinger"
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Vi vil sende deg til ${ IDEAL_WERO_BRAND_NAME } i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vi vil sende deg til PayPal i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
@@ -10252,6 +10258,9 @@
       ],
       "Account holder": [
         "Kontoinnehaver"
+      ],
+      "Account holder name": [
+        "Kontoinnehaverens navn"
       ],
       "Account storage": [
         "Kontolagring"
@@ -12120,6 +12129,12 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med utvidet tilgang"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med begrenset tilgang"
+      ],
       "${ n } calendar": [
         "${ n } kalender",
         "${ n } kalendere"
@@ -12655,6 +12670,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } slutter på ${ Last4 }"
+      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } lar deg opprette e-postadresser og administrere kontoer for underbrukere. Ideell for familier og organisasjoner."
       ],
@@ -13169,6 +13187,11 @@
       ],
       "Recovery checklist": [
         "Sjekkliste for gjenoppretting"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Prøv nå"
       ]
     },
     "ngc_access_banner: info": {
@@ -14052,6 +14075,9 @@
       "Invalid security code": [
         "Ugyldig sikkerhetskode"
       ],
+      "Please enter the account holder name": [
+        "Skriv inn kontoinnehaverens navn"
+      ],
       "Something went wrong. Please try again later.": [
         "Noe gikk galt. Prøv på nytt senere."
       ],
@@ -14078,6 +14104,11 @@
       ],
       "Credits will be added to your balance": [
         "Kreditter vil bli lagt til saldoen din"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Endring av faktureringsadresse kan påvirke skatter på fremtidige fakturaer."
       ]
     },
     "Payments.Lifetime Subscription": {
@@ -14130,6 +14161,12 @@
       ]
     },
     "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - kort som slutter på ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Bankoverføring - ${ iban }"
+      ],
       "Google Pay - card ending in ${ Last4 }": [
         "Google Pay - kort som slutter på ${ Last4 }"
       ]
@@ -14203,9 +14240,6 @@
       ],
       "Anytown": [
         "By"
-      ],
-      "Ask anything…": [
-        "Spør om hva som helst…"
       ],
       "Choose a name": [
         "Velg et navn"
@@ -14570,15 +14604,43 @@
         "SOMMERSALG"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Benytt deg av tilbudet"
+      ],
+      "Special Offer": [
+        "Spesialtilbud"
+      ]
+    },
     "q3campaign2026: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "2 individual accounts": [
+        "2 individuelle kontoer"
+      ],
       "2 TB of secure storage": [
         "2 TB med sikker lagring"
+      ],
+      "3 TB of secure storage": [
+        "3 TB med sikker lagring"
       ],
       "500 GB of secure storage": [
         "500 GB med sikker lagring"
       ],
+      "6 individual accounts": [
+        "6 individuelle kontoer"
+      ],
       "Advanced protection against cyber threats": [
         "Avansert beskyttelse mot cybertrusler"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter er basert på standard månedspris. Abonnementet fornyes til standard årspris når faktureringssyklusen utløper."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "q3campaign2026: Info, Drive first": {
@@ -14589,6 +14651,11 @@
     "q3campaign2026: Info, Family, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
         "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "q3campaign2026: Info, Mail first": {
@@ -14602,6 +14669,9 @@
       ],
       "One plan, full power": [
         "Én plan, mer kraft"
+      ],
+      "One plan, max savings": [
+        "Én plan, maksimal besparelse"
       ],
       "One plan, more power": [
         "Én plan, mer kraft"
@@ -18857,6 +18927,9 @@
       ],
       "Send new invite?": [
         "Sende ny invitasjon?"
+      ],
+      "September Sale": [
+        "Septembersalg"
       ],
       "Service": [
         "Tjeneste"

@@ -304,6 +304,9 @@
       "Add ${ BRAND_NAME } address": [
         "Afegiu l'adreça de ${ BRAND_NAME }"
       ],
+      "Add a payment method": [
+        "Afegiu un mètode de pagament"
+      ],
       "Add account": [
         "Afegeix un compte"
       ],
@@ -439,9 +442,6 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Aconseguiu la vostra adreça gratuïta de ${ BRAND_NAME }"
       ],
-      "Clear conversation": [
-        "Netejar la conversa"
-      ],
       "Close": [
         "Tanca"
       ],
@@ -522,9 +522,6 @@
       ],
       "Copy address": [
         "Copia l'adreça"
-      ],
-      "Copy debug transcript": [
-        "Copia la transcripció de depuració"
       ],
       "Copy key to the clipboard": [
         "Copia la clau al porta-retalls"
@@ -931,9 +928,6 @@
       "Keep editing": [
         "Continua editant"
       ],
-      "Keep going": [
-        "Continua"
-      ],
       "Keep logo": [
         "Manté el logo"
       ],
@@ -1273,9 +1267,6 @@
       "select file": [
         "selecciona un fitxer"
       ],
-      "Send": [
-        "Enviar"
-      ],
       "Send code": [
         "Enviar codi"
       ],
@@ -1395,12 +1386,6 @@
       ],
       "Stay": [
         "Mantenir"
-      ],
-      "Stop": [
-        "Atura"
-      ],
-      "Stop here": [
-        "Parar aquí"
       ],
       "Stop using single sign-on": [
         "Deixa d'utilitzar l'inici de sessió únic"
@@ -6554,11 +6539,14 @@
       "Security key updated": [
         "S'ha actualitzat la clau de seguretat"
       ],
+      "Still waiting?": [
+        "Encara esteu esperant?"
+      ],
       "This will delete all security keys linked to your account.": [
         "Això eliminarà totes les claus de seguretat vinculades al vostre compte."
       ],
-      "Touch your security key.": [
-        "Toqueu la vostra clau de seguretat."
+      "Touch your security key to continue.": [
+        "Toqueu la clau de seguretat per continuar."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Confirmeu la vostra identitat amb una clau de seguretat física U2F o FIDO2."
@@ -7534,6 +7522,12 @@
       "${ storage } storage": [
         "${ storage } d'emmagatzematge"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Us queda ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per no perdre'n l'accés. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Us queden ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per a mantenir la vostra subscripció. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "S'ha trobat ${ total } usuari",
         "S'han trobat ${ total } usuaris"
@@ -8098,9 +8092,6 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "La recuperació de dades requereix una opció de restabliment de contrasenya (correu electrònic o SMS)"
       ],
-      "Debug transcript copied": [
-        "S'ha copiat la transcripció de depuració"
-      ],
       "dedicated servers": [
         "servidors dedicats"
       ],
@@ -8525,9 +8516,6 @@
       ],
       "How your emergency contact can change your password for you:": [
         "Com pot el vostre contacte d'emergència canviar la contrasenya per vosaltres:"
-      ],
-      "I have not finished this one yet.": [
-        "Encara no he acabat aquesta."
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Clau pública del proveïdor d'identitat per a signar les assercions d'autenticació. Hi ha d'haver un lloc on descarregar o copiar l'empremta electrònica del certificat del proveïdor d'identitat. Simplement, enganxeu-la al camp de l'àrea de text."
@@ -9561,9 +9549,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Aquestes credencials no es poden utilitzar per a iniciar sessió a les nostres aplicacions oficials de ${ VPN_APP_NAME }. ${ learnMore }"
       ],
-      "Thinking about this": [
-        "Hi estem pensant"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Aquest compte ha estat suspès a causa d'una possible infracció de les polítiques."
       ],
@@ -9602,9 +9587,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Aquesta és ara la vostra ${ defaultEmailAddress } per enviar missatges nous."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Això està prenent molts passos. Hauria de continuar?"
       ],
       "This is the password you used before the password reset.": [
         "Això és la contrasenya que utilitzàveu abans del restabliment de contrasenya."
@@ -14806,9 +14788,6 @@
       "Anytown": [
         "Castellvent"
       ],
-      "Ask anything…": [
-        "Pregunteu qualsevol cosa…"
-      ],
       "billing@company.com": [
         "facturacio@empresa.com"
       ],
@@ -19653,9 +19632,6 @@
       ],
       "Stay secure and connected anywhere": [
         "Mantingueu-vos segurs i connectats a tot arreu"
-      ],
-      "Still working on it": [
-        "Encara hi estem treballant"
       ],
       "Subscription": [
         "Subscripció"
