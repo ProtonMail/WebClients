@@ -54,6 +54,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add a payment method": [
+        "添加支付方式"
+      ],
       "Add account": [
         "添加账户"
       ],
@@ -6110,9 +6113,6 @@
       ],
       "Security key": [
         "安全密钥"
-      ],
-      "Touch your security key.": [
-        "请触碰您的安全密钥！"
       ]
     },
     "fido2: Label": {
@@ -7136,6 +7136,12 @@
       ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } 封未读"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "试用期剩余 ${ timeRemaining }。${ addPaymentMethodLink } 以避免失去访问权限。${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "试用期剩余 ${ timeRemaining }。${ addPaymentMethodLink } 以保留您的订阅。${ learnMoreLink }"
       ],
       "${ total } conversation": [
         "${ total } 项会话"
@@ -8922,9 +8928,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "现在您的 ${ defaultEmailAddress } 将可用于发送新的电子邮件。"
       ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "此操作步骤较多，是否继续？"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此链接指向的网站可能会窃取您的密码、信用卡等信息。"
       ],
@@ -10225,6 +10228,9 @@
       ],
       "Did not follow instructions": [
         "未遵循指令"
+      ],
+      "Display name": [
+        "称呼"
       ],
       "Document ID": [
         "文档 ID"
@@ -16125,9 +16131,6 @@
       "Apply gift code": [
         "使用礼品码"
       ],
-      "Apply labels": [
-        "应用标签"
-      ],
       "Archive all messages?": [
         "归档所有邮件？"
       ],
@@ -16184,9 +16187,6 @@
       ],
       "CC": [
         "抄送"
-      ],
-      "Change display setting": [
-        "更改显示设置"
       ],
       "Change my answer": [
         "更改我的回复"
@@ -16260,17 +16260,8 @@
       "Create contact": [
         "创建联系人"
       ],
-      "Create filter": [
-        "创建筛选"
-      ],
-      "Create folder": [
-        "新建文件夹"
-      ],
       "Create folder \"${ search }\"": [
         "创建文件夹“${ search }”"
-      ],
-      "Create label": [
-        "新建标签"
       ],
       "Create label \"${ search }\"": [
         "创建标签“${ search }”"
@@ -16575,12 +16566,6 @@
       "Make your inbox your own": [
         "自定义您的收件箱"
       ],
-      "Mark all as read": [
-        "全部标为已读"
-      ],
-      "Mark all as unread": [
-        "全部标为未读"
-      ],
       "Mark all messages as read": [
         "将全部邮件标为已读"
       ],
@@ -16652,9 +16637,6 @@
       ],
       "Move all messages to trash": [
         "将所有邮件移至回收站"
-      ],
-      "Move emails": [
-        "移动邮件"
       ],
       "Move to": [
         "移至"
@@ -16839,9 +16821,6 @@
       "Remove from list?": [
         "移出列表？"
       ],
-      "Rename folder": [
-        "重命名文件夹"
-      ],
       "Reply": [
         "回复"
       ],
@@ -16926,17 +16905,11 @@
       "September Sale": [
         "九月特惠"
       ],
-      "Set auto-reply": [
-        "设置自动回复"
-      ],
       "Set recovery methods": [
         "设置恢复方式"
       ],
       "Set recovery phrase": [
         "设置恢复短语"
-      ],
-      "Set signature": [
-        "设置签名"
       ],
       "Set up ${ protonDuoPlanName }": [
         "设置 ${ protonDuoPlanName }"
@@ -16974,17 +16947,11 @@
       "Snooze": [
         "延迟通知"
       ],
-      "Snooze emails": [
-        "稍后提醒"
-      ],
       "Snooze message": [
         "延迟通知"
       ],
       "Snooze:": [
         "延迟通知："
-      ],
-      "Star emails": [
-        "星标邮件"
       ],
       "Start a new import": [
         "开始导入"
@@ -16994,9 +16961,6 @@
       ],
       "Stay for 50% off your next month": [
         "下月继续享受 5 折优惠"
-      ],
-      "Still working on it": [
-        "正在处理"
       ],
       "Storage capacity warning": [
         "存储容量警告"
@@ -17037,17 +17001,11 @@
       "Trust public key?": [
         "信任公钥？"
       ],
-      "Turn off auto-reply": [
-        "关闭自动回复"
-      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "启用 ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Two-factor authentication": [
         "双因素身份验证"
-      ],
-      "Unstar emails": [
-        "取消星标邮件"
       ],
       "Unsubscribe": [
         "取消订阅"
@@ -17060,9 +17018,6 @@
       ],
       "Unsubscribe request sent": [
         "退订请求已发送"
-      ],
-      "Update filter": [
-        "更新筛选"
       ],
       "Upgrade complete!": [
         "升级完成！"

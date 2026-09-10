@@ -54,6 +54,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
       ],
+      "Add a payment method": [
+        "Legg til betalingsmåte"
+      ],
       "Add account": [
         "Legg til konto"
       ],
@@ -339,6 +342,9 @@
       ],
       "Copy alias “${ name }”": [
         "Kopier alias \"${ name }\""
+      ],
+      "Copy debug transcript": [
+        "Kopier feilsøkingstranskripsjon"
       ],
       "Copy email to clipboard": [
         "Kopier e-post til utklippstavlen"
@@ -627,6 +633,9 @@
       "Get in touch": [
         "Ta kontakt"
       ],
+      "Get index size on disk": [
+        "Hent indeksstørrelse på disk"
+      ],
       "Get started": [
         "Kom i gang"
       ],
@@ -786,6 +795,9 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "Bli med med ${ MEET_APP_NAME }"
+      ],
+      "Keep going": [
+        "Fortsett"
       ],
       "Keep inbox as before": [
         "Behold innboksen som før"
@@ -1465,6 +1477,9 @@
       "Stop generating result": [
         "Slutt å generere resultater"
       ],
+      "Stop here": [
+        "Stopp her"
+      ],
       "Stop marking as read": [
         "Stopp merking som lest"
       ],
@@ -1698,6 +1713,9 @@
       ],
       "Why not?": [
         "Hvorfor ikke?"
+      ],
+      "Write ${ count } logs": [
+        "Skriv ${ count } logger"
       ],
       "Write for me": [
         "Skriv for meg"
@@ -2726,6 +2744,9 @@
       "${ users } user": [
         "${ users } bruker",
         "${ users } brukere"
+      ],
+      "Amount due": [
+        "Beløp å betale"
       ],
       "Amount due after trial": [
         "Beløp som forfaller etter prøvetiden"
@@ -4260,6 +4281,9 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Nye e-postmeldinger fra ${ senderEmailAddress } vil ikke leveres og slettes permanent."
       ],
+      "No ads. No trackers": [
+        "Ingen annonser. Ingen sporere"
+      ],
       "No folders": [
         "Ingen mapper"
       ],
@@ -4874,6 +4898,9 @@
       ],
       "Could not find an available name": [
         "Finner ikke et tilgjengelig navn"
+      ],
+      "Could not grant access to the organization key": [
+        "Kunne ikke gi tilgang til organisasjonsnøkkelen"
       ],
       "Could not load sharing details": [
         "Kunne ikke laste inn delingsdetaljene"
@@ -6039,6 +6066,9 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Du har ubetalte fakturaer. Betal dem før du blir med i en familieplan."
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du er invitert til å koble ${ BRAND_NAME }-kontoen til denne familiegruppen og nyte alle premiumfunksjonene."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Kontoen din har flere e-postadresser enn det som er tilgjengelig for deg i denne planen. ${ addressSettingsLink }"
       ],
@@ -6134,9 +6164,6 @@
       ],
       "Security key": [
         "Sikkerhetsnøkkel"
-      ],
-      "Touch your security key.": [
-        "Berør sikkerhetsnøkkelen din."
       ]
     },
     "fido2: Label": {
@@ -7132,6 +7159,9 @@
         "${ n } ulest samtale",
         "${ n } uleste samtaler"
       ],
+      "${ name } in ${ parentName }": [
+        "${ name } i ${ parentName }"
+      ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } kobling renset",
         "${ numberOfUTMTrackers } koblinger renset"
@@ -7214,6 +7244,12 @@
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } ulest",
         "${ subscription.UnreadMessageCount } uleste"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } igjen av prøveperioden. ${ addPaymentMethodLink } for å unngå å miste tilgang. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } igjen av prøveperioden. ${ addPaymentMethodLink } for å beholde abonnementet. ${ learnMoreLink }"
       ],
       "${ total } conversation": [
         "${ total } samtale",
@@ -7562,8 +7598,14 @@
       "Center": [
         "Midtstill"
       ],
+      "Change display setting": [
+        "Endre visningsinnstilling"
+      ],
       "Change your password": [
         "Endre passordet ditt"
+      ],
+      "Checked Proton support": [
+        "Sjekket brukerstøtten til Proton"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Sjekker kontakt ${ progress } av ${ max }..."
@@ -7651,11 +7693,17 @@
         "Opprett en sikker sky for ${ memberCount } medlem",
         "Opprett en sikker sky for ${ memberCount } medlemmer"
       ],
+      "Create filter": [
+        "Opprett filter"
+      ],
       "Create folder": [
         "Opprett mappe"
       ],
       "Create in": [
         "Opprett i"
+      ],
+      "Create label": [
+        "Opprett etikett"
       ],
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Å opprette flere gratis kontoer er ikke tillatt etter våre ${ termsLink }."
@@ -7894,6 +7942,9 @@
       "Everything in ${ planOrAppName }, plus:": [
         "Alt i ${ planOrAppName }, pluss:"
       ],
+      "Expand logs": [
+        "Utvid logger"
+      ],
       "Expand selection": [
         "Utvid utvalget"
       ],
@@ -8015,6 +8066,9 @@
       "How hide-my-email aliases works": [
         "Hvordan hide-my-email-aliaser fungerer"
       ],
+      "I have not finished this one yet.": [
+        "Jeg er ikke ferdig med denne ennå."
+      ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Jeg sender denne meldingen til en ikke-${ MAIL_APP_NAME }-bruker."
       ],
@@ -8110,7 +8164,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8202,6 +8257,9 @@
       "Low Priority": [
         "Lav prioritet"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Gjør ${ MAIL_APP_NAME } til standard e-postapplikasjon."
+      ],
       "Manage your folders": [
         "Administrer mappene dine"
       ],
@@ -8216,6 +8274,9 @@
       ],
       "Mark as read": [
         "Merk som lest"
+      ],
+      "Mark as unread": [
+        "Merk som ulest"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -8379,6 +8440,15 @@
       "Not connected": [
         "Ikke tilkoblet"
       ],
+      "Not found in the encrypted search index.": [
+        "Finnes ikke i den krypterte søkeindeksen."
+      ],
+      "Not found in the foundation-search index.": [
+        "Ikke funnet i stiftelsesøkindeksen."
+      ],
+      "Not supported by this browser": [
+        "Ikke støttet i denne nettleseren"
+      ],
       "Number of dedicated servers in the organization": [
         "Antall dedikerte servere i organisasjonen"
       ],
@@ -8405,6 +8475,9 @@
       ],
       "Opened ${ location }": [
         "Åpnet ${ location }"
+      ],
+      "Opened a problem report": [
+        "Åpnet en problemrapport"
       ],
       "Optional": [
         "Valgfritt"
@@ -8611,6 +8684,9 @@
       "Read your display settings": [
         "Leste visningsinnstillingene"
       ],
+      "Read your signature": [
+        "Leste signaturen din"
+      ],
       "Recipient: ": [
         "Mottaker: "
       ],
@@ -8646,6 +8722,12 @@
       ],
       "Restore": [
         "Gjenopprett"
+      ],
+      "Results came from the local search.": [
+        "Resultatene kom fra det lokale søket."
+      ],
+      "Results came from the server.": [
+        "Resultatene kom fra serveren."
       ],
       "Right to Left": [
         "Høyre til venstre"
@@ -8686,11 +8768,23 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Tar søket for lang tid? ${ dropdownButton } eller ${ toggleOffButton } fra denne søkeøkten."
       ],
+      "Searched ${ targetName }": [
+        "Søkte ${ targetName }"
+      ],
+      "Searched for mail from ${ sender }": [
+        "Søkte etter e-post fra ${ sender }"
+      ],
       "Searched for mail to ${ recipient }": [
         "Søkte etter e-post til ${ recipient }"
       ],
+      "Searched for “${ keyword }”": [
+        "Søkte etter \"${ keyword }\""
+      ],
       "Searched the web": [
         "Søkte på nettet"
+      ],
+      "Searched your mail": [
+        "Søkte i e-posten din"
       ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "Sikre filene dine med gratis kryptert skylagring i dag."
@@ -8750,6 +8844,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Angi ${ MAIL_APP_NAME } som din standard e-postapplikasjon. ${ MAIL_APP_NAME } vil åpne automatisk når du klikker en e-postkobling."
       ],
+      "Set auto-reply": [
+        "Angi automatisk svar"
+      ],
       "Set signature": [
         "Angi signatur"
       ],
@@ -8777,6 +8874,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
       ],
+      "Snooze emails": [
+        "Utsett e-poster"
+      ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Slumre meldinger til senere, slik at de er øverst i innboksen din når du vil"
       ],
@@ -8800,6 +8900,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Beklager, denne meldingen finnes ikke eller har løpt ut."
+      ],
+      "Source document in encrypted search index": [
+        "Kildedokument i kryptert søkeindeks"
       ],
       "Star emails": [
         "Stjernemerk e-poster"
@@ -9207,11 +9310,17 @@
       "Unsaved changes": [
         "Endringer som ikke er lagret"
       ],
+      "Unstar emails": [
+        "Fjern stjernemerking fra e-poster"
+      ],
       "Unsubscribe": [
         "Avslutt abonnementet"
       ],
       "Unsupported file": [
         "Fil som ikke støttes"
+      ],
+      "Update filter": [
+        "Oppdater filter"
       ],
       "Updating message content search...": [
         "Oppdaterer meldingsinnholdssøk..."
@@ -9345,6 +9454,9 @@
       "We use 3-D Secure to protect your payments": [
         "Vi bruker 3-D Secure for å beskytte dine betalinger"
       ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Vi vil sende deg til ${ IDEAL_WERO_BRAND_NAME } i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vi vil sende deg til PayPal i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
       ],
@@ -9398,6 +9510,12 @@
       ],
       "Would you like to receive a new verification code?": [
         "Ønsker du å motta en ny verifiseringskode?"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Skriver ${ REALISTIC_ENTRIES } realistiske logglinjer som drypper inn i løpet av over et minutt, som en faktisk økt, i stedet for alt på en gang. Tar omtrent ett minutt å kjøre. Hold denne fanen fokusert: bildemålinger pauses i bakgrunnen."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "Skriver realistiske logglinjer etter hverandre, og leser dem deretter alle tilbake. Viser hvordan skrive- og lese-/eksportkostnader skaleres med antall lagrede oppføringer."
       ],
       "Writing assistant": [
         "Skriveassistent"
@@ -10046,6 +10164,9 @@
       "Account holder": [
         "Kontoinnehaver"
       ],
+      "Account holder name": [
+        "Kontoinnehaverens navn"
+      ],
       "Actions": [
         "Handlinger"
       ],
@@ -10114,6 +10235,9 @@
       ],
       "Archive": [
         "Arkiv"
+      ],
+      "At": [
+        "Kl."
       ],
       "Attach screenshot(s)": [
         "Legg ved skjermbilde(r)"
@@ -10208,6 +10332,12 @@
       "Colors": [
         "Farger"
       ],
+      "Column": [
+        "Kolonne"
+      ],
+      "Comfortable": [
+        "Komfortabel"
+      ],
       "Command line interface (CLI)": [
         "Kommandolinjegrensesnitt (CLI)"
       ],
@@ -10289,6 +10419,9 @@
       "Did not follow instructions": [
         "Fulgte ikke instruksjoner"
       ],
+      "Display name": [
+        "Visningsnavn"
+      ],
       "Document ID": [
         "Dokument-ID"
       ],
@@ -10312,6 +10445,9 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Dropped frames": [
+        "Tapte bilder"
       ],
       "Duration": [
         "Varighet"
@@ -10358,8 +10494,14 @@
       "Enable filter": [
         "Aktiver filter"
       ],
+      "Encrypt": [
+        "Krypter"
+      ],
       "Encrypt emails": [
         "Krypter e-poster"
+      ],
+      "Entries": [
+        "Oppføringer"
       ],
       "Exact host matching": [
         "Nøyaktig vertsmatching"
@@ -10369,6 +10511,9 @@
       ],
       "Expires": [
         "Utløper"
+      ],
+      "Export size": [
+        "Eksportstørrelse"
       ],
       "Extended address": [
         "Utvidet adresse"
@@ -10381,6 +10526,9 @@
       ],
       "Filter": [
         "Filter"
+      ],
+      "Filter name": [
+        "Filternavn"
       ],
       "Filter Name": [
         "Filternavn"
@@ -10405,6 +10553,12 @@
       ],
       "From": [
         "Fra"
+      ],
+      "From date": [
+        "Fra dato"
+      ],
+      "From time": [
+        "Fra kl."
       ],
       "From:": [
         "Fra:"
@@ -10472,6 +10626,9 @@
       "Include application logs in bug report": [
         "Inkluder applikasjonslogger i feilrapport"
       ],
+      "IndexedDB store": [
+        "IndexedDB-lagring"
+      ],
       "Information": [
         "Informasjon"
       ],
@@ -10496,6 +10653,9 @@
       "Label messages as": [
         "Merk meldinger som"
       ],
+      "Label name": [
+        "Etikettnavn"
+      ],
       "Last 12 months only": [
         "Kun siste 12 måneder"
       ],
@@ -10516,6 +10676,9 @@
       ],
       "Location": [
         "Plassering"
+      ],
+      "Log performance": [
+        "Loggfør ytelse"
       ],
       "Long tasks (≥ 50 ms)": [
         "Lange oppgaver (≥ 50 ms)"
@@ -10603,6 +10766,12 @@
       ],
       "No label found": [
         "Ingen etikett funnet"
+      ],
+      "No unread conversations": [
+        "Ingen uleste samtaler"
+      ],
+      "No unread messages": [
+        "Ingen uleste meldinger"
       ],
       "Non-promotional content and news": [
         "Ikke-salgsfremmende innhold og nyheter"
@@ -10708,6 +10877,9 @@
       ],
       "Read / export": [
         "Les / eksport"
+      ],
+      "Realistic session": [
+        "Realistisk økt"
       ],
       "Recipient": [
         "Mottaker"
@@ -10826,6 +10998,9 @@
       "Subscription options": [
         "Abonnementalternativer"
       ],
+      "Sum of write() calls": [
+        "Antall skrive()-kall"
+      ],
       "Sync with system": [
         "Synkroniser med system"
       ],
@@ -10879,6 +11054,12 @@
       ],
       "Unsubscribed from ${ truncatedName }.": [
         "Avmeldt fra abonnementet på ${ truncatedName }."
+      ],
+      "Until date": [
+        "Inntil dato"
+      ],
+      "Until time": [
+        "Inntil"
       ],
       "Updates": [
         "Oppdateringer"
@@ -10936,6 +11117,12 @@
       ],
       "Write": [
         "Skriv"
+      ],
+      "Write (whole session)": [
+        "Skriv (hele økten)"
+      ],
+      "Write-chain drain after last line": [
+        "Skrivekjededrenering etter siste linje"
       ],
       "Writing assistant": [
         "Skriveassistent"
@@ -11079,6 +11266,12 @@
     "Link": {
       "Add a gift code": [
         "Legg til gavekode"
+      ],
+      "Add formatting, links or images": [
+        "Legg til formatering, koblinger eller bilder"
+      ],
+      "Advanced auto-reply options": [
+        "Avanserte alternativer for automatisk svar"
       ],
       "All mail": [
         "All e-post"
@@ -11808,6 +12001,12 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med utvidet tilgang"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med begrenset tilgang"
+      ],
       "${ n } calendar": [
         "${ n } kalender",
         "${ n } kalendere"
@@ -12306,6 +12505,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } slutter på ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB med skylagring som lett lar deg lagre, synkronisere og dele filer. Sikret med ende-til-ende-kryptering."
       ],
@@ -12691,6 +12893,11 @@
       "Support for ${ n } custom email domain": [
         "Støtte for ${ n } egendefinert e-postdomene",
         "Støtte for ${ n } egendefinerte e-postdomener"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Prøv nå"
       ]
     },
     "ngc_access_banner: info": {
@@ -13233,6 +13440,9 @@
       "Permanent": [
         "Permanent"
       ],
+      "Remind me later": [
+        "Påminn meg senere"
+      ],
       "Repeat daily": [
         "Gjenta daglig"
       ],
@@ -13241,6 +13451,9 @@
       ],
       "Repeat weekly": [
         "Gjenta ukentlig"
+      ],
+      "Yes, don't show again": [
+        "Ja, ikke vis igjen"
       ]
     },
     "Option group": {
@@ -13543,6 +13756,9 @@
       "Invalid security code": [
         "Ugyldig sikkerhetskode"
       ],
+      "Please enter the account holder name": [
+        "Skriv inn kontoinnehaverens navn"
+      ],
       "Something went wrong. Please try again later.": [
         "Noe gikk galt. Prøv på nytt senere."
       ],
@@ -13569,6 +13785,11 @@
       ],
       "Credits will be added to your balance": [
         "Kreditter vil bli lagt til saldoen din"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Endring av faktureringsadresse kan påvirke skatter på fremtidige fakturaer."
       ]
     },
     "Payments.ModificationWarning": {
@@ -13608,6 +13829,12 @@
       ]
     },
     "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - kort som slutter på ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Bankoverføring - ${ iban }"
+      ],
       "Google Pay - card ending in ${ Last4 }": [
         "Google Pay - kort som slutter på ${ Last4 }"
       ]
@@ -14090,15 +14317,43 @@
         "SOMMERSALG"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Benytt deg av tilbudet"
+      ],
+      "Special Offer": [
+        "Spesialtilbud"
+      ]
+    },
     "q3campaign2026: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "2 individual accounts": [
+        "2 individuelle kontoer"
+      ],
       "2 TB of secure storage": [
         "2 TB med sikker lagring"
+      ],
+      "3 TB of secure storage": [
+        "3 TB med sikker lagring"
       ],
       "500 GB of secure storage": [
         "500 GB med sikker lagring"
       ],
+      "6 individual accounts": [
+        "6 individuelle kontoer"
+      ],
       "Advanced protection against cyber threats": [
         "Avansert beskyttelse mot cybertrusler"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter er basert på standard månedspris. Abonnementet fornyes til standard årspris når faktureringssyklusen utløper."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "q3campaign2026: Info, Drive first": {
@@ -14109,6 +14364,11 @@
     "q3campaign2026: Info, Family, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
         "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "q3campaign2026: Info, Mail first": {
@@ -14122,6 +14382,9 @@
       ],
       "One plan, full power": [
         "Én plan, mer kraft"
+      ],
+      "One plan, max savings": [
+        "Én plan, maksimal besparelse"
       ],
       "One plan, more power": [
         "Én plan, mer kraft"
@@ -16250,9 +16513,6 @@
       "CC": [
         "Kopi"
       ],
-      "Change display setting": [
-        "Endre visningsinnstilling"
-      ],
       "Change my answer": [
         "Endre svaret mitt"
       ],
@@ -16325,14 +16585,8 @@
       "Create contact": [
         "Opprett kontakt"
       ],
-      "Create filter": [
-        "Opprett filter"
-      ],
       "Create folder \"${ search }\"": [
         "Opprett mappe \"${ search }\""
-      ],
-      "Create label": [
-        "Opprett etikett"
       ],
       "Create label \"${ search }\"": [
         "Opprett etikett \"${ search }\""
@@ -16644,9 +16898,6 @@
       "Make your inbox your own": [
         "Tilpass innboksen slik du vil ha den"
       ],
-      "Mark all as unread": [
-        "Merk alle som uleste"
-      ],
       "Mark all messages as read": [
         "Merk alle meldinger som lest"
       ],
@@ -16718,9 +16969,6 @@
       ],
       "Move all messages to trash": [
         "Flytt alle meldingene til papirkurven"
-      ],
-      "Move emails": [
-        "Flytt e-poster"
       ],
       "Move to": [
         "Flytt til"
@@ -16905,9 +17153,6 @@
       "Remove from list?": [
         "Fjerne fra listen?"
       ],
-      "Rename folder": [
-        "Endre mappenavn"
-      ],
       "Reply": [
         "Svar"
       ],
@@ -16989,8 +17234,8 @@
       "Sending original message": [
         "Sender opprinnelig melding"
       ],
-      "Set auto-reply": [
-        "Angi automatisk svar"
+      "September Sale": [
+        "Septembersalg"
       ],
       "Set recovery methods": [
         "Angi gjenopprettingsmetoder"
@@ -17033,9 +17278,6 @@
       ],
       "Snooze": [
         "Slumre"
-      ],
-      "Snooze emails": [
-        "Utsett e-poster"
       ],
       "Snooze message": [
         "Slumre/utsett melding"
@@ -17091,9 +17333,6 @@
       ],
       "Trust public key?": [
         "Klarére offentlig nøkkel?"
-      ],
-      "Turn off auto-reply": [
-        "Slå av automatisk svar"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"

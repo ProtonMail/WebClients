@@ -6164,9 +6164,6 @@
       ],
       "Security key": [
         "Clave de seguridad"
-      ],
-      "Touch your security key.": [
-        "Toque su llave de seguridad."
       ]
     },
     "fido2: Label": {
@@ -8158,7 +8155,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9055,9 +9053,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Esta es ahora su ${ defaultEmailAddress } para enviar mensajes nuevos."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Esto implica muchos pasos. ¿Debería continuar?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Este enlace conduce a un sitio web que podría estar intentando robar informaciiones, como contraseñas y datos de tarjetas de crédito."
@@ -10384,6 +10379,9 @@
       ],
       "Did not follow instructions": [
         "Las instrucciones no fueron seguidas."
+      ],
+      "Display name": [
+        "Nombre a mostrar"
       ],
       "Document ID": [
         "ID del documento"
@@ -16382,9 +16380,6 @@
       "Apply gift code": [
         "Aplicar código de regalo"
       ],
-      "Apply labels": [
-        "Aplicar etiquetas"
-      ],
       "Archive all messages?": [
         "¿Archivar todos los mensajes?"
       ],
@@ -16441,9 +16436,6 @@
       ],
       "CC": [
         "CC"
-      ],
-      "Change display setting": [
-        "Cambiar ajuste de pantalla"
       ],
       "Change my answer": [
         "Cambiar mi respuesta"
@@ -16517,14 +16509,8 @@
       "Create contact": [
         "Crear contacto"
       ],
-      "Create folder": [
-        "Crear carpeta"
-      ],
       "Create folder \"${ search }\"": [
         "Crear carpeta «${ search }»"
-      ],
-      "Create label": [
-        "Crear etiqueta"
       ],
       "Create label \"${ search }\"": [
         "Crear etiqueta «${ search }»"
@@ -16836,12 +16822,6 @@
       "Make your inbox your own": [
         "Haga propia su bandeja de entrada"
       ],
-      "Mark all as read": [
-        "Marcar todo como leído"
-      ],
-      "Mark all as unread": [
-        "Marcar todo como no leído"
-      ],
       "Mark all messages as read": [
         "Marcar todos los mensajes como leídos"
       ],
@@ -16913,9 +16893,6 @@
       ],
       "Move all messages to trash": [
         "Mover todos los mensajes a la papelera"
-      ],
-      "Move emails": [
-        "Mover correos"
       ],
       "Move to": [
         "Mover a"
@@ -17226,17 +17203,11 @@
       "Snooze": [
         "Pausar"
       ],
-      "Snooze emails": [
-        "Pausar correos electrónicos"
-      ],
       "Snooze message": [
         "Pausar el mensaje"
       ],
       "Snooze:": [
         "Pausar:"
-      ],
-      "Star emails": [
-        "Destacar correos"
       ],
       "Start a new import": [
         "Iniciar una importación nueva"
@@ -17246,9 +17217,6 @@
       ],
       "Stay for 50% off your next month": [
         "Quédese y obtenga un 50% de descuento en su próximo mes"
-      ],
-      "Still working on it": [
-        "Todavía trabajando en ello"
       ],
       "Storage capacity warning": [
         "Advertencia de capacidad de almacenamiento"
@@ -17296,9 +17264,6 @@
       "Two-factor authentication": [
         "Autenticación de dos factores"
       ],
-      "Unstar emails": [
-        "No destacar correos"
-      ],
       "Unsubscribe": [
         "Cancele la suscripción"
       ],
@@ -17310,9 +17275,6 @@
       ],
       "Unsubscribe request sent": [
         "Solicitud de cancelación de suscripción enviada"
-      ],
-      "Update filter": [
-        "Actualizar filtro"
       ],
       "Upgrade complete!": [
         "Se ha mejorado su plan."
