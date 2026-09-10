@@ -51,6 +51,9 @@
       "Add": [
         "Tilføj"
       ],
+      "Add a payment method": [
+        "Tilføj en betalingsmetode"
+      ],
       "Add account": [
         "Tilføj konto"
       ],
@@ -145,9 +148,6 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Gør krav på din gratis ${ BRAND_NAME } address"
       ],
-      "Clear conversation": [
-        "Ryd samtale"
-      ],
       "Clear data": [
         "Ryd data"
       ],
@@ -222,9 +222,6 @@
       ],
       "Copy as markdown": [
         "Kopier som markdown"
-      ],
-      "Copy debug transcript": [
-        "Kopiér fejlfindingstranskibering"
       ],
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
@@ -477,9 +474,6 @@
       "Import from Outlook": [
         "Importér fra Outlook"
       ],
-      "Keep going": [
-        "Fortsæt"
-      ],
       "Keep my subscription": [
         "Bevar mit abonnement"
       ],
@@ -651,9 +645,6 @@
       "Refresh the page": [
         "Opdater siden"
       ],
-      "Reject": [
-        "Afvis"
-      ],
       "Reload": [
         "Genindlæs"
       ],
@@ -762,9 +753,6 @@
       "Select all": [
         "Vælg alle"
       ],
-      "Send": [
-        "Send"
-      ],
       "Set password or expiration date": [
         "Indstil adgangskode eller udløbsdato"
       ],
@@ -830,12 +818,6 @@
       ],
       "Stay": [
         "Bliv her"
-      ],
-      "Stop": [
-        "Stop"
-      ],
-      "Stop here": [
-        "Stop her"
       ],
       "Stop sharing": [
         "Stop deling"
@@ -2980,6 +2962,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } er dit brugernavn. For at oprette ${ emailAddress } skal du gå til Indstillinger > Identitet og adresser > Kort domæne (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "En kontakt med denne e-mailadresse eksisterer allerede"
+      ],
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
@@ -4184,8 +4169,11 @@
       "Security key": [
         "Sikkerhedsnøgle"
       ],
-      "Touch your security key.": [
-        "Tryk på din sikkerhedsnøgle."
+      "Still waiting?": [
+        "Venter du stadig?"
+      ],
+      "Touch your security key to continue.": [
+        "Tryk på din sikkerhedsnøgle for at fortsætte."
       ]
     },
     "fido2: Label": {
@@ -4761,6 +4749,12 @@
         "${ selectedFoldersCountLocalized } etiket valgt",
         "${ selectedFoldersCountLocalized } etiketter valgt"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Der er ${ timeRemaining } tilbage tilbage i prøveversionen. ${ addPaymentMethodLink } for at undgå at miste adgang. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Der er ${ timeRemaining } tilbage tilbage i prøveversionen. ${ addPaymentMethodLink } for at beholde dit abonnement. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } bruger fundet",
         "${ total } brugere fundet"
@@ -5012,9 +5006,6 @@
       ],
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
-      ],
-      "Debug transcript copied": [
-        "Fejlfindingstranskibering kopieret"
       ],
       "Decrypting your document": [
         "Dekrypterer dit dokument"
@@ -5671,9 +5662,6 @@
       "There are no documents in the trash.": [
         "Der er ingen dokumenter i papirkurven."
       ],
-      "Thinking about this": [
-        "Overvejer..."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Denne handling vil slette linket og fjerne adgangen for alle brugere."
       ],
@@ -5700,9 +5688,6 @@
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Dette er et navn eller kaldenavn for din organisation, som dine brugere vil se. Du kan ændre det når som helst."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Det her kræver meget... Skal det fortsætte?"
       ],
       "This item already exists in your library": [
         "Dette element findes allerede i dit bibliotek"
@@ -8614,9 +8599,6 @@
       "Anything you'd like us to know": [
         "Noget du gerne vil have vi ved"
       ],
-      "Ask anything…": [
-        "Spørg om hvad som helst..."
-      ],
       "Choose password": [
         "Vælg adgangskode"
       ],
@@ -10662,9 +10644,6 @@
       ],
       "Stay for 50% off your next month": [
         "Bliv hængende for 50% rabat i den næste måned"
-      ],
-      "Still working on it": [
-        "Arbejder stadig på det"
       ],
       "Stop sharing": [
         "Stop deling"
