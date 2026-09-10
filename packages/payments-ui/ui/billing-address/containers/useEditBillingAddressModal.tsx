@@ -26,6 +26,7 @@ export const useEditBillingAddressModal = () => {
         // properties are set correctly before the modal is shown.
         initialFullBillingAddress: {} as FullBillingAddress,
         subscription: undefined,
+        source: 'invoices',
     }));
 
     const { paymentsApi: defaultPaymentsApi } = usePaymentsApi();
@@ -46,7 +47,7 @@ export const useEditBillingAddressModal = () => {
     };
 
     const openBillingAddressModal = async (
-        props: Pick<EditBillingAdressModalInputs, 'subscription' | 'paymentsApi'> & {
+        props: Pick<EditBillingAdressModalInputs, 'subscription' | 'paymentsApi' | 'source'> & {
             loadingKey: string;
             taxCountry?: TaxCountryHook;
             vatNumber?: VatNumberHook;
