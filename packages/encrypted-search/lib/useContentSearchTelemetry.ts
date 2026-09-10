@@ -12,6 +12,7 @@ import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import type {
     ContentSearchActionSurface,
+    ContentSearchEndReason,
     ContentSearchEventStatus,
     ContentSearchMailboxAddressType,
     ContentSearchPrimaryMatchType,
@@ -193,10 +194,50 @@ export const useContentSearchTelemetry = () => {
         });
     };
 
+    const sendSearchSessionCompletedReport = ({
+        endReason,
+        scrollerMode,
+        hasResults,
+        firstActionType,
+        firstOpenedPosition,
+        timeToFirstActionMs,
+        sessionDurationMs,
+        resultsOpened,
+        actionsPerformed,
+    }: {
+        endReason: ContentSearchEndReason;
+        scrollerMode: ContentSearchScrollerMode;
+        firstActionType: ContentSearchResultAction;
+        hasResults: boolean;
+        // TODO some of those values might be calculated in the method directly
+        firstOpenedPosition: number;
+        timeToFirstActionMs: number;
+        sessionDurationMs: number;
+        resultsOpened: number;
+        actionsPerformed: number;
+    }) => {
+        void sendTelemetryReport({
+            api,
+            measurementGroup: TelemetryMeasurementGroups.contentSearchIndex,
+            event: TelemetryContentSearchEvents.search_session_completed,
+            values: { resultsOpened, firstOpenedPosition, timeToFirstActionMs, sessionDurationMs, actionsPerformed },
+            dimensions: {
+                endReason,
+                scrollerMode,
+                firstActionType,
+                hasResults: hasResults.toString(),
+                searchSource: 'local',
+                searchVersion: SEARCH_VERSION_V1,
+            },
+            delay: true,
+        });
+    };
+
     return {
         sendQueryCompletedReport,
         sendResultOpenedReport,
         sendResultActionReport,
         sendMailboxIndexCompletedReport,
+        sendSearchSessionCompletedReport,
     };
 };
