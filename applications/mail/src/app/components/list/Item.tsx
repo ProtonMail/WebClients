@@ -158,7 +158,6 @@ const Item = ({
 
         if (isSearchResult) {
             sendResultOpenedReport({
-                scrollerMode: conversationMode ? 'conversation' : 'message',
                 // No per-field match info is tracked for Encrypted Search results today
                 primaryMatchType: 'unknown',
                 isFirstOpen: getIsFirstSearchResultOpen(),

@@ -66,19 +66,12 @@ export const setSearchSessionScroller = (scrollerMode: ContentSearchScrollerMode
     session.scrollerMode = scrollerMode;
 };
 
-export const recordSearchResultOpened = ({
-    position,
-    scrollerMode,
-}: {
-    position: number;
-    scrollerMode: ContentSearchScrollerMode;
-}) => {
+export const recordSearchResultOpened = ({ position }: { position: number }) => {
     if (!session) {
         return;
     }
     session.resultsOpened += 1;
     session.actionsPerformed += 1;
-    session.scrollerMode = scrollerMode;
     if (session.firstOpenedPosition === undefined) {
         session.firstOpenedPosition = position;
     }
