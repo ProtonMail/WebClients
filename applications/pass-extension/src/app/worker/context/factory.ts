@@ -118,7 +118,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             nativeMessaging,
             otp: createOTPService(),
             passkey: createPasskeyService(),
-            sentry: createSentryService(),
+            sentry: BUILD_TARGET !== 'firefox' ? createSentryService() : null,
             settings: createSettingsService(),
             spotlight: createSpotlightService(storage.local, store),
             storage,
