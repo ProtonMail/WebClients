@@ -2293,6 +2293,15 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "Add a payment method": [
+        "결제 방법 추가하기"
+      ],
+      "Sign out on all devices": [
+        "다른 모든 기기에서 로그아웃하기"
+      ],
+      "Upgrade to 2 devices or more": [
+        "2대 기기 이상에서 진행하려면 업그레이드하세요"
       ]
     },
     "action": {
@@ -2781,6 +2790,9 @@
       ],
       "You have reached the trial limit.": [
         "무료 체험 한도에 도달했습니다."
+      ],
+      "Active until ${ formattedPeriodEndDate }": [
+        "${ formattedPeriodEndDate }까지 활성화"
       ]
     },
     "b2b_trials_Action": {
@@ -5619,6 +5631,18 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "회원님의 플랜은 총 ${ MAX_SYNC_PAID_USER }개의 Gmail 주소를 지원합니다"
+      ],
+      "The link to sign out on all your devices has expired. Try signing in again to receive a new one.": [
+        "다른 모든 기기에서 로그아웃하기 위한 링크가 만료되었습니다. 로그인 시도 후 새로운 링크를 받아주세요."
+      ],
+      "To stay signed in everywhere, upgrade your plan instead.": [
+        "언제 어디서든 로그인 상태를 유지하세요. 플랜을 업그레이드하세요."
+      ],
+      "Too many devices are connected to your account. To use ${ BRAND_NAME } on a new device or browser, end all existing sessions. You'll be signed out on every device.": [
+        "연결된 기기가 너무 많습니다. 다른 기기나 브라우저에서 ${ BRAND_NAME }을(를) 사용하려면 사용하지 않는 모든 세션을 종료하세요. 모든 기기에서 로그아웃됩니다."
+      ],
+      "Your other sessions have been ended. You can now sign in on this device.": [
+        "다른 세션이 종료되었습니다. 이 기기에서 이제 로그인할 수 있습니다."
       ]
     },
     "description": {
@@ -8077,6 +8101,9 @@
       ],
       "Zero keys reactivated": [
         "제로 키 재활성화됨"
+      ],
+      "Something went wrong, please try again": [
+        "문제가 발생했습니다. 나중에 다시 시도하십시오."
       ]
     },
     "error": {
@@ -14236,6 +14263,15 @@
       ],
       "Zoom meeting": [
         "Zoom 미팅"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "무료 체험이 ${ timeRemaining }일 남았습니다. 접근 권한을 상실하지 않으려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "무료 체험이 ${ timeRemaining }일 남았습니다. 구독을 유지하려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "On ${ formattedPeriodEndDate }, your free trial ends and your paid plan starts.": [
+        "${ formattedPeriodEndDate }에, 무료 체험이 종료되며 유료 플랜으로 자동 전환될 예정입니다."
       ]
     },
     "info": {
@@ -16573,6 +16609,9 @@
       ],
       "ZIP code": [
         "우편번호"
+      ],
+      "Account holder: ${ details.AccountName }": [
+        "예금주: ${ details.AccountName }"
       ]
     },
     "label": {
@@ -18589,6 +18628,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Last4 }(으)로 끝나는 ${ Brand }"
       ]
     },
     "new_plans: Info": {
@@ -27606,6 +27648,12 @@
       ],
       "Your subscriptions": [
         "구독"
+      ],
+      "Other devices signed out": [
+        "다른 기기에서 로그아웃되었습니다"
+      ],
+      "Sign out on all devices?": [
+        "다른 모든 기기에서 로그아웃하시겠습니까?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -29178,6 +29226,22 @@
       ],
       "Yearly, ${ untilString }": [
         "연간, ${ untilString }"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "청구 주소 변경은 추후 청구서의 세율에 영향을 줄 수 있습니다."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "번호가 ${ Last4 }(으)로 끝나는 Apple Pay 카드"
+      ],
+      "Bank transfer - ${ iban }": [
+        "은행 송금 - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - 번호가 ${ Last4 }(으)로 끝나는 카드"
       ]
     }
   }

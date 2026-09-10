@@ -8600,6 +8600,12 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Uw tweestapsverificatiesleutel is klaar voor gebruik."
+      ],
+      "Still waiting?": [
+        "Nog aan het wachten?"
+      ],
+      "Touch your security key to continue.": [
+        "Raak uw beveiligingssleutel aan om door te gaan."
       ]
     },
     "fido2: Label": {
@@ -28381,6 +28387,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Jaarlijks ${ untilString }"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kaart eindigend op ${ Last4 }"
       ]
     }
   }

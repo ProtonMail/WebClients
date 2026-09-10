@@ -2299,6 +2299,15 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Add a payment method": [
+        "Afegiu un mètode de pagament"
+      ],
+      "Sign out on all devices": [
+        "Tancar la sessió en tots els dispositius"
+      ],
+      "Upgrade to 2 devices or more": [
+        "Milloreu a 2 dispositius o més"
       ]
     },
     "action": {
@@ -5665,6 +5674,21 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "El vostre pla admet un total de ${ MAX_SYNC_PAID_USER } adreça de Gmail",
         "El vostre pla admet un total de ${ MAX_SYNC_PAID_USER } adreces de Gmail"
+      ],
+      "The link to sign out on all your devices has expired. Try signing in again to receive a new one.": [
+        "L'enllaç per tancar la sessió a tots els vostres dispositius ha caducat. Torneu a iniciar sessió per rebre'n un de nou."
+      ],
+      "To stay signed in everywhere, upgrade your plan instead.": [
+        "Per mantenir la sessió iniciada a tot arreu, cal que milloreu el vostre pla."
+      ],
+      "Too many devices are connected to your account. To use ${ BRAND_NAME } on a new device or browser, end all existing sessions. You'll be signed out on every device.": [
+        "Hi ha massa dispositius connectats al vostre compte. Per utilitzar ${ BRAND_NAME } en un dispositiu o navegador nou, tanqueu totes les sessions existents. Se us desconnectarà de tots els dispositius."
+      ],
+      "Upgrade anytime to stay signed in on multiple devices.": [
+        "Milloreu el vostre pla en qualsevol moment per mantenir la sessió iniciada en diversos dispositius."
+      ],
+      "Your other sessions have been ended. You can now sign in on this device.": [
+        "S'han tancat les vostres altres sessions. Ara podeu iniciar sessió en aquest dispositiu."
       ]
     },
     "description": {
@@ -8140,6 +8164,9 @@
       ],
       "Zero keys reactivated": [
         "Cap clau s'ha reactivat"
+      ],
+      "Something went wrong, please try again": [
+        "Alguna cosa ha anat malament, torneu-ho a provar"
       ]
     },
     "error": {
@@ -9043,6 +9070,12 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "La vostra clau d'autenticació de doble factor està llesta."
+      ],
+      "Still waiting?": [
+        "Encara esteu esperant?"
+      ],
+      "Touch your security key to continue.": [
+        "Toqueu la clau de seguretat per continuar."
       ]
     },
     "fido2: Label": {
@@ -14401,6 +14434,12 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Us queda ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per no perdre'n l'accés. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Us queden ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per a mantenir la vostra subscripció. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -27989,6 +28028,12 @@
       ],
       "Your subscriptions": [
         "Les vostres subscripcions"
+      ],
+      "Other devices signed out": [
+        "S'ha tancat la sessió en altres dispositius"
+      ],
+      "Sign out on all devices?": [
+        "Voleu tancar la sessió en tots els dispositius?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

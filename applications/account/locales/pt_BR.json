@@ -315,6 +315,27 @@
       ],
       "Zoom meeting links": [
         "Links da reunião do Zoom"
+      ],
+      "Auto-add invitations to calendar": [
+        "Adicionar convites automaticamente ao calendário"
+      ],
+      "Automatically delete data": [
+        "Exluir os dados automaticamente"
+      ],
+      "Encryption backup file": [
+        "Arquivo de backup criptografado"
+      ],
+      "Permanently delete data": [
+        "Excluir os dados permanentemente"
+      ],
+      "Protection from cyber attacks": [
+        "Proteção contra ataques cibernéticos"
+      ],
+      "Shared server access": [
+        "Acesso ao servidor compartilhado"
+      ],
+      "VPN session details": [
+        "Detalhes da sessão VPN"
       ]
     },
     "Accounts": {
@@ -2242,6 +2263,15 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Sign out on all devices": [
+        "Encerrar sessão em todos os dispositivos"
+      ],
+      "Template with invite links": [
+        "Modelo com links de convite"
+      ],
+      "Upgrade to 2 devices or more": [
+        "Faça upgrade para 2 dispositivos ou mais"
       ]
     },
     "action": {
@@ -2609,6 +2639,9 @@
       ],
       "Secure online sheets": [
         "Planilhas on-line seguras"
+      ],
+      "Secure and end-to-end encrypted": [
+        "Seguro e criptografado de ponta a ponta"
       ]
     },
     "Apps dropdown": {
@@ -2736,6 +2769,9 @@
       ],
       "You have reached the trial limit.": [
         "Você atingiu o limite de avaliação."
+      ],
+      "Active until ${ formattedPeriodEndDate }": [
+        "Ativo até ${ formattedPeriodEndDate }"
       ]
     },
     "b2b_trials_Action": {
@@ -3744,6 +3780,12 @@
       "Total for ${ cycle } month": [
         "Total por ${ cycle } mês",
         "Total por ${ cycle } meses"
+      ],
+      "Amount due": [
+        "Valor a pagar"
+      ],
+      "Amount due now": [
+        "Valor devido agora"
       ]
     },
     "Collapsible tooltip": {
@@ -5927,6 +5969,9 @@
       ],
       "You can also download the app through the ${ linkSnapStore }.": [
         "Você também pode baixar o aplicativo através da ${ linkSnapStore }."
+      ],
+      ".deb for Debian / Ubuntu": [
+        ".deb para Debian / Ubuntu"
       ]
     },
     "drive_signup_2023: Title": {
@@ -14104,6 +14149,12 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "${ storeName } app to copy data to ${ BRAND_NAME }": [
+        "Aplicativo de ${ storeName } para copiar os dados da ${ BRAND_NAME }"
+      ],
+      "Email addresses copied to clipboard": [
+        "Endereços de e-mail copiados para a área de transferência"
       ]
     },
     "info": {
@@ -16438,6 +16489,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Send invoices by email": [
+        "Enviar faturas por e-mail"
       ]
     },
     "label": {
@@ -17364,6 +17418,9 @@
       ],
       "Sign in": [
         "Iniciar sessão"
+      ],
+      "Resume role assignment": [
+        "Retornar a atribuição de função"
       ]
     },
     "Members table usage": {
@@ -19707,6 +19764,24 @@
       "User (${ n })": [
         "Usuário (${ n })",
         "Usuários (${ n })"
+      ],
+      "Converting users to private": [
+        "Convertendo usuários para privados"
+      ],
+      "Organization key reset": [
+        "Redefinição da chave de organização"
+      ],
+      "Ready to reset your organization key?": [
+        "Pronto para redefinir a chave da organização?"
+      ],
+      "Reset organization key?": [
+        "Redefinir a chave da organização?"
+      ],
+      "The organization key is reset": [
+        "A chave de organização está redefinida"
+      ],
+      "This process is automated:": [
+        "O processo é automatizado:"
       ]
     },
     "Organization logo upload": {
@@ -25076,6 +25151,9 @@
       ],
       "Your address has been activated": [
         "Seu endereço foi ativado"
+      ],
+      "Invoice email updated": [
+        "E-mail de faturamento atualizado"
       ]
     },
     "Success message": {
@@ -27498,6 +27576,9 @@
       ],
       "Your subscriptions": [
         "Suas assinaturas"
+      ],
+      "Sign out on all devices?": [
+        "Encerrar sessão em todos os dispositivos?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -29101,6 +29182,22 @@
       ],
       "Yearly, ${ untilString }": [
         "Anualmente, ${ untilString }"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Experimente agora"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - cartão terminado em ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Transferência bancária - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - cartão terminado em ${ Last4 }"
       ]
     }
   }
