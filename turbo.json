@@ -10,6 +10,7 @@
         "NO_PROXY",
         "WEBPACK_PARALLELISM",
         "JEST_MAX_WORKERS",
+        "JEST_WORKER_IDLE_MEMORY_LIMIT",
         "CI_COMMIT_SHA",
         "CI_COMMIT_REF_NAME",
         "SENTRY_ORG",
