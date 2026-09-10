@@ -85,8 +85,14 @@
       "Authentication logs": [
         "Registros de autenticação"
       ],
+      "Auto-add invitations to calendar": [
+        "Adicionar convites automaticamente ao calendário"
+      ],
       "Automatic renewal": [
         "Renovação automática"
+      ],
+      "Automatically delete data": [
+        "Exluir os dados automaticamente"
       ],
       "Back up emails": [
         "Backup de e-mails"
@@ -150,6 +156,9 @@
       ],
       "Email aliases": [
         "Aliases para o e-mail"
+      ],
+      "Encryption backup file": [
+        "Arquivo de backup criptografado"
       ],
       "Export messages": [
         "Exportar mensagens"
@@ -235,6 +244,9 @@
       "Password reset request": [
         "Solicitar redefinição de senha"
       ],
+      "Permanently delete data": [
+        "Excluir os dados permanentemente"
+      ],
       "Play Store": [
         "Play Store"
       ],
@@ -243,6 +255,9 @@
       ],
       "Privacy services": [
         "Serviços de privacidade"
+      ],
+      "Protection from cyber attacks": [
+        "Proteção contra ataques cibernéticos"
       ],
       "Recovery email address": [
         "Endereço de e-mail de recuperação"
@@ -270,6 +285,9 @@
       ],
       "Server access policy": [
         "Política de acesso ao servidor"
+      ],
+      "Shared server access": [
+        "Acesso ao servidor compartilhado"
       ],
       "Sign out other devices": [
         "Encerrar sessão em outros dispositivos"
@@ -309,6 +327,9 @@
       ],
       "Video conferencing": [
         "Videoconferência"
+      ],
+      "VPN session details": [
+        "Detalhes da sessão VPN"
       ],
       "Writing assistant": [
         "Assistente de escrita"
@@ -559,9 +580,6 @@
       ],
       "Clear all formatting": [
         "Limpar toda a formatação"
-      ],
-      "Clear conversation": [
-        "Limpar conversa"
       ],
       "Close": [
         "Fechar"
@@ -1337,9 +1355,6 @@
       "Keep editing": [
         "Continuar editando"
       ],
-      "Keep going": [
-        "Continue"
-      ],
       "Keep logo": [
         "Manter logotipo"
       ],
@@ -1817,9 +1832,6 @@
       "Select time zone": [
         "Selecionar fuso horário"
       ],
-      "Send": [
-        "Enviar"
-      ],
       "send auto-reply email": [
         "enviar e-mail de resposta automática"
       ],
@@ -1943,6 +1955,9 @@
       "Sign out of all accounts": [
         "Encerrar sessão de todas as contas"
       ],
+      "Sign out on all devices": [
+        "Encerrar sessão em todos os dispositivos"
+      ],
       "sign up for free": [
         "cadastre-se gratuitamente"
       ],
@@ -1982,12 +1997,6 @@
       "Stay": [
         "Permanecer"
       ],
-      "Stop": [
-        "Parar"
-      ],
-      "Stop here": [
-        "Parar aqui"
-      ],
       "Stop using single sign-on": [
         "Parar de usar início de sessão único"
       ],
@@ -2017,6 +2026,9 @@
       ],
       "Take a tour": [
         "Faça um tour"
+      ],
+      "Template with invite links": [
+        "Modelo com links de convite"
       ],
       "Template with passwords": [
         "Modelo com senhas"
@@ -2092,6 +2104,9 @@
       ],
       "Upgrade now": [
         "Atualizar agora"
+      ],
+      "Upgrade to 2 devices or more": [
+        "Faça upgrade para 2 dispositivos ou mais"
       ],
       "Upgrade to Business": [
         "Fazer upgrade para o Business"
@@ -2601,6 +2616,9 @@
       "Private scheduling": [
         "Agendamento privado"
       ],
+      "Secure and end-to-end encrypted": [
+        "Seguro e criptografado de ponta a ponta"
+      ],
       "Secure cloud storage": [
         "Armazenamento na nuvem seguro"
       ],
@@ -2689,6 +2707,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "Active until ${ formattedPeriodEndDate }": [
+        "Ativo até ${ formattedPeriodEndDate }"
+      ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Quando o período de avaliação terminar em ${ formattedDate1 }, ela se tornará uma assinatura paga renovada automaticamente a cada ${ renewCycle } meses. Você não será cobrado se cancelar antes de ${ formattedDate2 }."
       ],
@@ -3713,8 +3734,14 @@
         "${ users } usuário",
         "${ users } usuários"
       ],
+      "Amount due": [
+        "Valor a pagar"
+      ],
       "Amount due after trial": [
         "Valor devido após o período de avaliação"
+      ],
+      "Amount due now": [
+        "Valor devido agora"
       ],
       "month": [
         "mês"
@@ -5922,6 +5949,9 @@
       ]
     },
     "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb para Debian / Ubuntu"
+      ],
       ".rpm for Fedora / Red Hat": [
         ".rpm para Fedora / Red Hat"
       ],
@@ -8863,9 +8893,6 @@
       "This will delete all security keys linked to your account.": [
         "Isso excluirá todas as chaves de seguranças vinculadas a sua conta."
       ],
-      "Touch your security key.": [
-        "Toque na sua chave de segurança."
-      ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifique a sua identidade com chave de segurança física U2F ou FIDO2"
       ],
@@ -10248,6 +10275,9 @@
       "${ storage } storage": [
         "${ storage } de armazenamento"
       ],
+      "${ storeName } app to copy data to ${ BRAND_NAME }": [
+        "Aplicativo de ${ storeName } para copiar os dados da ${ BRAND_NAME }"
+      ],
       "${ total } user found": [
         "${ total } usuário encontrado",
         "${ total } usuários encontrados"
@@ -11252,6 +11282,9 @@
       ],
       "Email address copied to clipboard": [
         "Endereço de e-mail copiado para a área de transferência"
+      ],
+      "Email addresses copied to clipboard": [
+        "Endereços de e-mail copiados para a área de transferência"
       ],
       "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
         "E-mail e calendário, integrados com ${ CONTACTS_APP_NAME }."
@@ -13000,9 +13033,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Essas credenciais não podem ser usadas para fazer login em nossos aplicativos oficiais ${ VPN_APP_NAME }. ${ learnMore }"
-      ],
-      "Thinking about this": [
-        "Pensando nisso"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Essa conta foi suspensa devido a uma potencial violação da política."
@@ -16060,6 +16090,9 @@
       "Send in": [
         "Enviar"
       ],
+      "Send invoices by email": [
+        "Enviar faturas por e-mail"
+      ],
       "Sequences": [
         "Sequências"
       ],
@@ -17358,6 +17391,9 @@
       ],
       "Resend invite link": [
         "Reenviar link de convite"
+      ],
+      "Resume role assignment": [
+        "Retornar a atribuição de função"
       ],
       "Revoke sessions": [
         "Revogar sessões"
@@ -18944,6 +18980,11 @@
         "Lista de verificação de recuperação"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Experimente agora"
+      ]
+    },
     "ngc_access_banner: info": {
       "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
         "Você agora tem acesso ao novo ${ CALENDAR_APP_NAME }. ${ link }"
@@ -19682,14 +19723,26 @@
       ]
     },
     "organization key reset": {
+      "Converting users to private": [
+        "Convertendo usuários para privados"
+      ],
       "Copy email list": [
         "Copiar lista de e-mails"
       ],
       "Non-private users": [
         "Usuários não privados"
       ],
+      "Organization key reset": [
+        "Redefinição da chave de organização"
+      ],
+      "Ready to reset your organization key?": [
+        "Pronto para redefinir a chave da organização?"
+      ],
       "Reset key": [
         "Redefinir chave"
+      ],
+      "Reset organization key?": [
+        "Redefinir a chave da organização?"
       ],
       "Resetting organization key": [
         "Redefinindo a chave da organização"
@@ -19700,6 +19753,12 @@
       ],
       "See users": [
         "Ver usuários"
+      ],
+      "The organization key is reset": [
+        "A chave de organização está redefinida"
+      ],
+      "This process is automated:": [
+        "O processo é automatizado:"
       ],
       "Try another way": [
         "Tentar de outra forma"
@@ -20572,6 +20631,17 @@
         "O preço de renovação depende da região de faturamento e do número de IVA."
       ]
     },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - cartão terminado em ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Transferência bancária - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - cartão terminado em ${ Last4 }"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Ao confirmar este pagamento, você autoriza a ${ BRAND_NAME } e Stripe, nosso provedor de serviços de pagamento, a instruir seu banco a debitar sua conta de acordo. Você pode obter um reembolso no prazo de 8 semanas a partir da data do débito, de acordo com as condições do seu contrato com o banco."
@@ -20660,9 +20730,6 @@
       ],
       "Anytown": [
         "Nova Esperança"
-      ],
-      "Ask anything…": [
-        "Pergunte qualquer coisa…"
       ],
       "billing@company.com": [
         "faturamento@empresa.com"
@@ -24935,6 +25002,9 @@
       "Invoice customized": [
         "Fatura personalizada"
       ],
+      "Invoice email updated": [
+        "E-mail de faturamento atualizado"
+      ],
       "Invoice paid": [
         "Fatura paga"
       ],
@@ -27090,6 +27160,9 @@
       "Sign out": [
         "Encerrar sessão"
       ],
+      "Sign out on all devices?": [
+        "Encerrar sessão em todos os dispositivos?"
+      ],
       "Signed in successfully!": [
         "Iniciado sessão"
       ],
@@ -27164,9 +27237,6 @@
       ],
       "Stay secure and connected anywhere": [
         "Fique seguro e conectado em qualquer lugar"
-      ],
-      "Still working on it": [
-        "Ainda estou trabalhando nisso"
       ],
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "Fortaleça sua segurança em todos os seus dispositivos com ${ passPlusPlanName }. ${ upgradeButton }"
