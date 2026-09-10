@@ -22,7 +22,7 @@ module.exports = ({ inlineIcons } = { inlineIcons: false }) => [
                 test: /\.source\.svg/,
                 // Special case for the email sprite icons which is injected into the MessageBodyIframe.tsx from getIframeHtml
                 type: 'asset/source',
-                loader: 'svgo-loader',
+                loader: require.resolve('svgo-loader'),
                 options: {
                     plugins: ['removeComments'],
                 },
@@ -30,7 +30,7 @@ module.exports = ({ inlineIcons } = { inlineIcons: false }) => [
             {
                 test: new RegExp(`${DESIGN_SYSTEM_ICONS_SVG}$`),
                 type: inlineIcons ? 'asset/source' : 'asset/resource',
-                loader: 'svgo-loader',
+                loader: require.resolve('svgo-loader'),
                 options: {
                     plugins: ['removeComments'],
                 },
