@@ -122,6 +122,7 @@ export const useSearchViewModel = (): SearchViewModelAdapter => {
         isSearchAvailable: searchModule.isAvailable,
         isSearchEnabled: searchModule.isAvailable ? searchModule.isUserOptIn : false,
         isSearchable: searchModule.isAvailable ? searchModule.isSearchable : false,
+        isRunningOutdatedVersion: searchModule.isAvailable ? searchModule.isRunningOutdatedVersion : false,
         startIndexing,
         isSearching,
         refreshResults: refresh,

@@ -23,8 +23,8 @@ jest.mock('../mainThread/WorkerClient', () => ({
     })),
 }));
 
-jest.mock('../mainThread/AppVersionGuard', () => ({
-    AppVersionGuard: jest.fn(),
+jest.mock('../mainThread/ClientAppVersionGuard', () => ({
+    ClientAppVersionGuard: jest.fn(),
 }));
 
 jest.mock('../shared/errors', () => {
