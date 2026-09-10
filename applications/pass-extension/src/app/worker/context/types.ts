@@ -62,7 +62,7 @@ export interface WorkerContextInterface {
         nativeMessaging: NativeMessagingService;
         otp: OTPService;
         passkey: Passkeyservice;
-        sentry: SentryService;
+        sentry: MaybeNull<SentryService>;
         settings: SettingsService;
         spotlight: SpotlightService;
         storage: StorageService;
