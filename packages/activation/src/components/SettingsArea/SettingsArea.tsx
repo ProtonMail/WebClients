@@ -62,6 +62,7 @@ const SettingsArea = ({ config, app }: Props) => {
                         <ProviderCard
                             app={app}
                             entryView={isDriveNewUIEnabled ? DriveConnectEntry : undefined}
+                            showAdvancedImport={!isDriveNewUIEnabled}
                             source={
                                 hasAccessToBYOE
                                     ? EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS_BYOE

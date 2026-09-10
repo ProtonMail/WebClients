@@ -10,13 +10,11 @@ import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcClock } from '@proton/icons/icons/IcClock';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import capitalize from '@proton/utils/capitalize';
 
 import type { ApiImporterOrganization } from '../../../api/api.interface';
 import { ApiImporterOrganizationState } from '../../../api/api.interface';
 import { getImportProviderFromApiProvider } from '../../../helpers/getImportProviderFromApiProvider';
-import { ImportType } from '../../../interface';
-import { ReportsTableIcon } from '../ReportsTableIcon';
+import { OLES_PROVIDERS, isProviderSupported } from '../../../oles/providers';
 
 interface Props {
     importerOrganization: ApiImporterOrganization;
@@ -27,7 +25,12 @@ const OrganizationImportRow = ({ importerOrganization }: Props) => {
 
     const { Provider, DomainName, CreateTime, State } = importerOrganization;
     const provider = getImportProviderFromApiProvider(Provider);
-    const company = capitalize(provider);
+    // Organization migrations only surface supported providers, so we render their OLES branding
+    // (e.g. Outlook shown as "Microsoft") directly; the guard just narrows the type for the lookup.
+    if (!isProviderSupported(provider)) {
+        return null;
+    }
+    const olesProvider = OLES_PROVIDERS[provider];
     const createTime = Number(CreateTime);
     const isMigrated = State === ApiImporterOrganizationState.FINALIZED;
 
@@ -36,13 +39,13 @@ const OrganizationImportRow = ({ importerOrganization }: Props) => {
             <TableCell>
                 <div className="flex">
                     <div className="shrink-0 mr-2 hidden md:flex">
-                        <ReportsTableIcon provider={Provider} product={ImportType.MAIL} />
+                        <img src={olesProvider.iconSrc} alt="" className="self-center mr-4" width={20} />
                     </div>
                     <div className="flex-1">
                         <div className="w-full text-ellipsis" title={DomainName}>
                             {DomainName}
                         </div>
-                        <div className="color-weak">{company}</div>
+                        <div className="color-weak">{olesProvider.brandName}</div>
                     </div>
                 </div>
             </TableCell>

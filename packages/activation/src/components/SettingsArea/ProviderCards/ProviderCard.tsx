@@ -10,11 +10,14 @@ import { useCalendars } from '@proton/calendar/calendars/hooks';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import B2BOnboardingFeatureItem from '@proton/components/components/onboarding/b2b/B2BOnboardingFeatureItem';
+import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import { type ProviderDisplay, providerMap } from '../../../constants';
 import { EASY_SWITCH_SEARCH_SOURCES, EASY_SWITCH_SOURCES, ImportProvider } from '../../../interface';
 import { getOrganizationMigrationFeatures } from '../../../oles/migrationFeatures';
+import { OLES_PROVIDERS } from '../../../oles/providers';
 import useOLESFeatureStatus from '../../../oles/useOLESFeatureStatus';
 import { ProductSelectionModal } from '../../Modals/ProductSelectionModal/ProductSelectionModal';
 import ConnectGmailButton from '../ConnectGmailButton';
@@ -108,6 +111,90 @@ const ProviderCard = ({
         onEasySwitchClick: () => handleOpenSelectionModal(selectedProvider),
     });
 
+    const renderProviderButtons = (): ReactNode => {
+        // Wait for the OLES status before committing to an order/branding, otherwise the row would
+        // flash from the default layout to the Microsoft one once the org data resolves.
+        if (olesFeatureStatus.loading) {
+            return (
+                <div className="flex flex-nowrap gap-2">
+                    {[0, 1, 2].map((index) => (
+                        <SkeletonLoader key={index} width="7rem" height="2.25rem" className="mb-2 rounded-lg" />
+                    ))}
+                </div>
+            );
+        }
+
+        // In a B2B/OLES context with Outlook migrations enabled, Outlook is presented as "Microsoft"
+        // and moved ahead of Yahoo. Clicks still resolve the OLES-vs-normal flow via handleProviderChoice.
+        const outlookAsMicrosoft =
+            olesFeatureStatus.creatingEnabled && olesFeatureStatus.isProviderEnabled(ImportProvider.OUTLOOK);
+
+        const microsoftDisplay: ProviderDisplay = {
+            ...providerMap[ImportProvider.OUTLOOK],
+            getName: () => OLES_PROVIDERS[ImportProvider.OUTLOOK].brandName,
+            logo: OLES_PROVIDERS[ImportProvider.OUTLOOK].iconSrc,
+        };
+
+        const order = outlookAsMicrosoft
+            ? [ImportProvider.GOOGLE, ImportProvider.OUTLOOK, ImportProvider.YAHOO]
+            : [ImportProvider.GOOGLE, ImportProvider.YAHOO, ImportProvider.OUTLOOK];
+
+        const buttonClassName = 'mb-2 inline-flex items-center justify-center rounded-lg';
+
+        const renderButton = (provider: ImportProvider) => {
+            switch (provider) {
+                case ImportProvider.GOOGLE:
+                    // In Mail, without Org-Level Easy Switch, Google opens the BYOE / auto-forwarding flow.
+                    return app === APPS.PROTONMAIL && !olesFeatureStatus.creatingEnabled ? (
+                        <ConnectGmailButton
+                            key={provider}
+                            className={clsx(buttonClassName, 'gap-2')}
+                            showIcon
+                            buttonText={c('Action').t`Google`}
+                            onComplete={onComplete}
+                            onBYOEFlowStart={onBYOEFlowStart}
+                            source={source}
+                        />
+                    ) : (
+                        <ProviderButton
+                            key={provider}
+                            provider={providerMap[ImportProvider.GOOGLE]}
+                            onClick={() => handleProviderChoice(ImportProvider.GOOGLE)}
+                            className={buttonClassName}
+                            data-testid="ProviderButton:googleCard"
+                            disabled={loadingCalendars}
+                        />
+                    );
+                case ImportProvider.YAHOO:
+                    return (
+                        <ProviderButton
+                            key={provider}
+                            provider={providerMap[ImportProvider.YAHOO]}
+                            onClick={() => handleProviderChoice(ImportProvider.YAHOO)}
+                            className={buttonClassName}
+                            data-testid="ProviderButton:yahooCard"
+                            disabled={loadingCalendars}
+                        />
+                    );
+                case ImportProvider.OUTLOOK:
+                    return (
+                        <ProviderButton
+                            key={provider}
+                            provider={outlookAsMicrosoft ? microsoftDisplay : providerMap[ImportProvider.OUTLOOK]}
+                            onClick={() => handleProviderChoice(ImportProvider.OUTLOOK)}
+                            className={buttonClassName}
+                            data-testid="ProviderButton:outlookCard"
+                            disabled={loadingCalendars}
+                        />
+                    );
+                default:
+                    return null;
+            }
+        };
+
+        return <div className="flex flex-nowrap gap-2">{order.map(renderButton)}</div>;
+    };
+
     const renderContent = (): ReactNode => {
         if (showFeatures) {
             return (
@@ -133,55 +220,10 @@ const ProviderCard = ({
             );
         }
 
-        if (EntryView) {
-            return (
-                <>
-                    <div className="mb-4">{header ?? c('Info').t`Choose your service to connect with`}</div>
-                    <EntryView source={source} />
-                </>
-            );
-        }
-
         return (
             <>
                 <div className="mb-4">{header ?? c('Info').t`Choose your service to connect with`}</div>
-                <div className="flex flex-nowrap gap-2">
-                    {/* Google */}
-                    {app === APPS.PROTONMAIL && !olesFeatureStatus.creatingEnabled ? (
-                        <ConnectGmailButton
-                            className="mb-2 inline-flex items-center justify-center gap-2 rounded-lg"
-                            showIcon
-                            buttonText={c('Action').t`Google`}
-                            onComplete={onComplete}
-                            onBYOEFlowStart={onBYOEFlowStart}
-                            source={source}
-                        />
-                    ) : (
-                        <ProviderButton
-                            provider={ImportProvider.GOOGLE}
-                            onClick={() => handleProviderChoice(ImportProvider.GOOGLE)}
-                            className="mb-2 inline-flex items-center justify-center rounded-lg"
-                            data-testid="ProviderButton:googleCard"
-                            disabled={loadingCalendars}
-                        />
-                    )}
-
-                    <ProviderButton
-                        provider={ImportProvider.YAHOO}
-                        onClick={() => handleProviderChoice(ImportProvider.YAHOO)}
-                        className="mb-2 inline-flex items-center justify-center rounded-lg"
-                        data-testid="ProviderButton:yahooCard"
-                        disabled={loadingCalendars}
-                    />
-
-                    <ProviderButton
-                        provider={ImportProvider.OUTLOOK}
-                        onClick={() => handleProviderChoice(ImportProvider.OUTLOOK)}
-                        className="mb-2 inline-flex items-center justify-center rounded-lg"
-                        data-testid="ProviderButton:outlookCard"
-                        disabled={loadingCalendars}
-                    />
-                </div>
+                {EntryView ? <EntryView source={source} /> : renderProviderButtons()}
                 {showAdvancedImport && (
                     <Button
                         shape="underline"
