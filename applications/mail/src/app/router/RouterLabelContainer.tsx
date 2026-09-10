@@ -1,16 +1,12 @@
-import { useCallback, useRef } from 'react';
+import { useRef } from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import Commander from '@proton/components/components/commander/Commander';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
-import { useFolders } from '@proton/mail/store/labels/hooks';
 import clsx from '@proton/utils/clsx';
 
-import { CategoriesTabs } from '../components/categoryView/categoriesTabs/CategoriesTabs';
-import { useCategoriesView } from '../components/categoryView/useCategoriesView';
 import { useCategoryFlagWatcher } from '../components/categoryView/useCategoryFlagWatcher';
 import MailboxList from '../components/list/MailboxList';
 import { ResizableWrapper } from '../components/list/ResizableWrapper';
@@ -18,11 +14,8 @@ import { ResizeHandlePosition } from '../components/list/ResizeHandle';
 import { MailToolbar } from '../components/toolbar/MailToolbar';
 import { ROUTE_ELEMENT } from '../constants';
 import MailboxContainerPlaceholder from '../containers/mailbox/MailboxContainerPlaceholder';
-import { APPLY_LOCATION_TYPES } from '../hooks/actions/applyLocation/interface';
-import { useApplyLocation } from '../hooks/actions/applyLocation/useApplyLocation';
-import { MoveAllType } from '../hooks/actions/move/useMoveAllToFolder';
 import { useMailCommander } from '../hooks/commander/useMailCommander';
-import { type ElementsStructure, useGetElementsFromIDs } from '../hooks/mailbox/useElements';
+import type { ElementsStructure } from '../hooks/mailbox/useElements';
 import { useMailboxFocus } from '../hooks/mailbox/useMailboxFocus';
 import { useMailboxHotkeys } from '../hooks/mailbox/useMailboxHotkeys';
 import { useWelcomeFlag } from '../hooks/mailbox/useWelcomeFlag';
@@ -30,10 +23,8 @@ import { DEFAULT_MIN_WIDTH_OF_MAILBOX_LIST } from '../hooks/useResizableUtils';
 import { selectComposersCount } from '../store/composers/composerSelectors';
 import { selectElementID, selectLabelID, selectMessageID } from '../store/elements/elementsSelectors';
 import { useMailSelector } from '../store/hooks';
-
 import { RouterElementContainer } from './RouterElementContainer';
 import { useMailboxLayoutProvider } from './components/MailboxLayoutContext';
-import { MailboxToolbar } from './components/MailboxToolbar';
 import type { MailboxActions, RouterNavigation } from './interface';
 import { useUnreadCategoryCount } from './useUnreadCategoryCount';
 
@@ -87,16 +78,11 @@ export const RouterLabelContainer = ({
     } = useMailboxLayoutProvider();
 
     const composersCount = useMailSelector(selectComposersCount);
-    const { shouldSeeWideToolbars } = useCategoriesData();
 
-    const categoryViewControl = useCategoriesView();
     useCategoryFlagWatcher();
 
     const [commanderModalProps, showCommander, commanderRender] = useModalState();
     const welcomeFlag = useWelcomeFlag([labelID, selectedIDs.length]);
-
-    const [folders] = useFolders();
-    const getElementsFromIDs = useGetElementsFromIDs();
 
     const showList = isColumnModeActive || !elementID;
     const showContentPanel = isColumnModeActive || !!elementID;
@@ -104,7 +90,6 @@ export const RouterLabelContainer = ({
     const showRightPlaceholder = isColumnModeActive && (!elementID || !!checkedIDs.length);
 
     const { commanderList } = useMailCommander();
-    const { applyLocation } = useApplyLocation();
 
     const { focusID, setFocusID, focusLastID, focusFirstID, focusNextID, focusPreviousID } = useMailboxFocus({
         showList,
@@ -114,8 +99,6 @@ export const RouterLabelContainer = ({
     });
 
     const {
-        moveAllToFolder,
-        selectAll,
         elementRef,
         deleteSelectionModal: hotkeyDeleteSelectionShortcutModal,
         deleteAllModal: hotkeyDeleteAllShortcutModal,
@@ -151,28 +134,6 @@ export const RouterLabelContainer = ({
         }
     );
 
-    const handleMove = useCallback(
-        async (newLabelID: string): Promise<void> => {
-            const elements = getElementsFromIDs(selectedIDs);
-            if (selectAll) {
-                await moveAllToFolder({
-                    type: MoveAllType.selectAll,
-                    elements,
-                    sourceLabelID: labelID,
-                    destinationLabelID: newLabelID,
-                });
-
-                if (selectedIDs.includes(elementID || '')) {
-                    handleBack();
-                }
-            } else {
-                await applyLocation({ type: APPLY_LOCATION_TYPES.MOVE, elements, destinationLabelID: newLabelID });
-            }
-        },
-        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-D39BF9
-        [selectedIDs, elementID, labelID, folders, handleBack, selectAll]
-    );
-
     const mailboxColumns = (
         <>
             <ResizableWrapper
@@ -191,18 +152,6 @@ export const RouterLabelContainer = ({
                 <MailboxList
                     actions={actions}
                     elementsData={elementsData}
-                    toolbar={
-                        shouldSeeWideToolbars ? null : (
-                            <>
-                                <MailboxToolbar
-                                    navigation={navigation}
-                                    elementsData={elementsData}
-                                    actions={{ ...actions, handleMove }}
-                                />
-                                {categoryViewControl.shouldShowTabs && <CategoriesTabs />}
-                            </>
-                        )
-                    }
                     listRef={listRef}
                     scrollContainerRef={scrollContainerRef}
                     noBorder={hasRowMode || !showContentPanel}
@@ -236,22 +185,16 @@ export const RouterLabelContainer = ({
         </>
     );
 
-    // This can be removed once the refreshed toolbar UI is fully implemented and validated
     // elementRef must include the toolbar so that hotkeys remain active when focus is on toolbar elements (e.g. SelectAll checkbox)
     return (
         <div
             ref={elementRef}
             tabIndex={-1}
-            className={clsx(
-                'outline-none relative',
-                shouldSeeWideToolbars ? 'flex flex-column flex-1 flex-nowrap' : 'flex flex-1 flex-nowrap'
-            )}
+            className="outline-none relative flex flex-column flex-1 flex-nowrap"
             data-testid="mailbox"
         >
-            {shouldSeeWideToolbars && (
-                <MailToolbar placement="list" actions={{ ...actions, handleMove }} elementsData={elementsData} />
-            )}
-            {shouldSeeWideToolbars ? <div className="flex flex-1 flex-nowrap">{mailboxColumns}</div> : mailboxColumns}
+            <MailToolbar placement="list" actions={actions} elementsData={elementsData} />
+            <div className="flex flex-1 flex-nowrap">{mailboxColumns}</div>
             {commanderRender ? <Commander list={commanderList} {...commanderModalProps} /> : null}
             {deleteAllModal}
             {selectAllMoveModal}
