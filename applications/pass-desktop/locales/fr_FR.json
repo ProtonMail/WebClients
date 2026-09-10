@@ -2219,7 +2219,8 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort supprimera ses liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -4610,6 +4611,15 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "Cette URL ne sera PAS exclue de la fonction de remplissage automatique"
+      ],
+      "Enter a URL to check if it matches the current rule": [
+        "Saisissez une URL pour vérifier si elle correspond à la règle actuelle"
+      ],
+      "URL doesn't match the rule": [
+        "L'URL ne correspond pas à la règle"
+      ],
+      "URL matches the rule": [
+        "L'URL correspond à la règle"
       ]
     },
     "Security Center - Info": {
