@@ -54,6 +54,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Дадаць ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add a payment method": [
+        "Дадаць спосаб аплаты"
+      ],
       "Add account": [
         "Дадаць уліковы запіс"
       ],
@@ -86,6 +89,9 @@
       ],
       "Add group": [
         "Дадаць групу"
+      ],
+      "Add more details": [
+        "Дадаць падрабязнасці"
       ],
       "Add new group": [
         "Дадаць новую групу"
@@ -4835,6 +4841,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } з'яўляецца вашым імем карыстальніка. Перайдзіце ў Налады -> Ідэнтычнасць і адрасы -> Кароткі дамен (pm.me), каб стварыць ${ emailAddress }."
       ],
+      "A contact with this email address already exists": [
+        "Кантакт з гэтым адрасам электроннай пошты ўжо існуе"
+      ],
       "A group with this name already exists": [
         "Група з такой назвай ужо існуе"
       ],
@@ -6272,9 +6281,6 @@
       ],
       "Security key": [
         "Ключ бяспекі"
-      ],
-      "Touch your security key.": [
-        "Дакраніцеся да свайго ключа бяспекі."
       ]
     },
     "fido2: Label": {
@@ -7329,6 +7335,9 @@
       "${ LUMO_APP_NAME } includes the writing assistant": [
         "${ LUMO_APP_NAME } уключае памочніка ў напісанні"
       ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } ужо выканаў ${ count }. Працягваць?"
+      ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
         "${ LUMO_SHORT_APP_NAME } дапаможа вам хутка і лёгка ствараць лепшыя лісты."
       ],
@@ -7460,6 +7469,12 @@
         "Выбрана ${ selectedFoldersCountLocalized } меткі",
         "Выбрана ${ selectedFoldersCountLocalized } метак",
         "Выбрана ${ selectedFoldersCountLocalized } метак"
+      ],
+      "${ steps } step": [
+        "${ steps } крок",
+        "${ steps } крокі",
+        "${ steps } крокаў",
+        "${ steps } крокаў"
       ],
       "${ storage } storage": [
         "${ storage } сховішча"
@@ -7617,8 +7632,17 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Дадаванне ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add ${ contact } to your contacts": [
+        "Дадаць ${ contact } у вашы кантакты"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Дадаць ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Add a contact": [
+        "Дадаць кантакт"
+      ],
+      "Add contact": [
+        "Дадаць кантакт"
       ],
       "Add image URL": [
         "Дадаць URL-адрас відарыса"
@@ -7851,11 +7875,26 @@
       "Center": [
         "Па цэнтры"
       ],
+      "Change a display setting": [
+        "Змяніць налады дысплэя"
+      ],
       "Change display setting": [
         "Змяніць налады дысплэя"
       ],
+      "Change how your mail is grouped": [
+        "Змяніць спосаб групавання вашых лістоў"
+      ],
+      "Change your list density": [
+        "Змяніць шчыльнасць спіса"
+      ],
+      "Change your mailbox layout": [
+        "Змяніць макет вашай паштовай скрыні"
+      ],
       "Change your password": [
         "Змяніць свой пароль"
+      ],
+      "Change your theme": [
+        "Змяніце тэму"
       ],
       "Checked Proton support": [
         "Праверана падтрымкай Proton"
@@ -7932,8 +7971,17 @@
         "Стварыць ${ calendarsToBeCreatedCount } новых календароў",
         "Стварыць ${ calendarsToBeCreatedCount } новыя календары"
       ],
+      "Create a filter": [
+        "Стварыць фільтр"
+      ],
+      "Create a folder": [
+        "Стварыць папку"
+      ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "Стварэнне такой папкі як \"${ suggestedFolderName }\" прывядзе да захавання ўсіх вашых квітанцый з інтэрнэту ў адным месцы."
+      ],
+      "Create a label": [
+        "Стварыць метку"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Стварыць метку для імпартаваных паведамленняў, прамежак часу для гэтага імпартавання і тыя папкі, якія вы хочаце імпартаваць."
@@ -8042,6 +8090,9 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Вы сапраўды хочаце паўторна падпісаць кантактныя звесткі?"
+      ],
+      "Document lookup failed": [
+        "Збой пошуку дакумента"
       ],
       "Don't forget to share the password with the recipient": [
         "Не забудзьце абагуліць ваш пароль з атрымальнікам"
@@ -8329,7 +8380,7 @@
         "Змяшчае ${ numAttachments } далучэнняў (${ numAttachmentsSize })"
       ],
       "Have some more time to decide without interruption.": [
-        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення ў працы сэрвісу."
+        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення працы сэрвісу."
       ],
       "here": [
         "тут"
@@ -8443,7 +8494,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -8486,6 +8540,12 @@
       ],
       "Key fingerprint": [
         "Адбітак ключа"
+      ],
+      "Label ${ emails }": [
+        "Метка ${ emails }"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "Метка ${ emails } як ${ names }"
       ],
       "Label all imported messages as": [
         "Пазначыць усе імпартаваныя паведамленні як"
@@ -8532,6 +8592,9 @@
       "Loading...": [
         "Загрузка..."
       ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Пошук дакумента ${ lookup.result.docId }"
+      ],
       "Low Priority": [
         "Нізкі прыярытэт"
       ],
@@ -8544,6 +8607,12 @@
       "Manage your labels": [
         "Кіруйце сваімі меткамі"
       ],
+      "Mark ${ emails } as read": [
+        "Пазначыць ${ emails } як прачытаны"
+      ],
+      "Mark ${ emails } as unread": [
+        "Пазначыць ${ emails } як непрачытаны"
+      ],
       "Mark all as read": [
         "Пазначыць усе як прачытаныя"
       ],
@@ -8555,6 +8624,12 @@
       ],
       "Mark as unread": [
         "Пазначыць як непрачытанае"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "Пазначыць увесь ${ place } як прачытаны"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "Пазначць увесь ${ place } як непрачытаны"
       ],
       "Mastercard SecureCode logo": [
         "Лагатып Mastercard SecureCode"
@@ -8628,6 +8703,12 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Большасць агульнадаступных сетак Wi-Fi з'яўляюцца бяспечнымі, але ў некаторых адсутнічаюць функцыі бяспекі і гэта падвяргае вас кіберпагрозам. VPN шыфруе трафік і абараняе ваша падключэнне."
       ],
+      "Move ${ emails }": [
+        "Перамясціць ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Перамясціць ${ emails } у ${ destination }"
+      ],
       "Move emails": [
         "Перамясціць лісты"
       ],
@@ -8667,6 +8748,9 @@
       "No email open": [
         "Ніводны ліст не адкрыты"
       ],
+      "No emails selected": [
+        "Лісты не выбраны"
+      ],
       "No folder found": [
         "Папка не знойдзена"
       ],
@@ -8684,6 +8768,9 @@
       ],
       "No links cleaned": [
         "Спасылкі не ачышчаны"
+      ],
+      "No location selected": [
+        "Месцазнаходжанне не выбрана"
       ],
       "No messages to show": [
         "Няма паведамленняў для паказу"
@@ -8717,6 +8804,9 @@
       ],
       "Not connected": [
         "Не падключана"
+      ],
+      "Not found in the encrypted search index.": [
+        "Не знойдзены ў зашыфраваным пошукавым індэксе."
       ],
       "Not supported by this browser": [
         "Не падтрымліваецца гэтым браўзерам"
@@ -8994,11 +9084,20 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Не забудзьцеся абнавіць яго ў менеджары пароляў або ў тым месцы, дзе вы захоўваеце ўліковы запіс і звесткі для яго ўваходу."
       ],
+      "Remove the star from ${ emails }": [
+        "Выдаліць пазнаку зорачкі з ${ emails }"
+      ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Выдаліце ўсе даныя, якія звязаны з гэтай праграмай (уключаючы спампаваныя паведамленні, …)"
       ],
+      "Rename ${ folder } to…": [
+        "Перайменаваць ${ folder } на…"
+      ],
       "Rename folder": [
         "Перайменаваць папку"
+      ],
+      "Rename this folder": [
+        "Перайменаваць гэту папку"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Адпраўляючы скаргу пра спробу фішынгу, вы адправіце гэта паведамленне нам, каб мы маглі прааналізаваць яго і палепшыць нашы фільтры. Гэта азначае, што мы зможам цалкам убачыць змесціва гэтага паведамлення."
@@ -9008,6 +9107,12 @@
       ],
       "Restore": [
         "Аднавіць"
+      ],
+      "Results came from the local search.": [
+        "Вынікі былі атрыманы з лакальнага пошуку."
+      ],
+      "Results came from the server.": [
+        "Вынікі былі атрыманы з сервера."
       ],
       "Right to Left": [
         "Справа налева"
@@ -9135,6 +9240,9 @@
       "Set up your organization": [
         "Наладзьце сваю арганізацыю"
       ],
+      "Set your signature": [
+        "Задайць подпіс"
+      ],
       "Setting up ${ feature }…": [
         "Наладжванне ${ feature }..."
       ],
@@ -9182,6 +9290,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Прабачце, але гэтага паведамлення не існуе або яно ўжо пратэрмінавана."
+      ],
+      "Star ${ emails }": [
+        "Пазначыць ${ emails }"
       ],
       "Star emails": [
         "Пазначаныя зорачкай лісты"
@@ -9374,9 +9485,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Цяпер гэта ваш ${ defaultEmailAddress } для адпраўкі новых паведамленняў."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "На гэта спатрэбіцца шмат крокаў. Працягваць?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Гэта спасылка вядзе на вэб-сайт, на якім могуць паспрабаваць скрасці вашы даныя: паролі або інфармацыю аб крэдытных картках."
@@ -9582,8 +9690,14 @@
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "Выключыце, каб шукаць толькі па даце, імі, адрасе электроннай пошты або радку тэмы. Перайдзіце ў налады, каб адключыць пошук па змесціве паведамлення (і выдаліць спампаваныя паведамленні, каб уключыць гэту функцыю)."
       ],
+      "Turn off your away message": [
+        "Адключыць паведамленне пра адсутнасць"
+      ],
       "Turn on to search the content of your messages": [
         "Уключыце, каб шукаць змесціва вашых паведамленняў"
+      ],
+      "Turn on your away message": [
+        "Уключыце паведамленне пра адсутнасць"
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "Немагчыма атрымаць доступ да магчымасцяў сховішча ў гэтым браўзеры. Гэта падтрымка неабходна, каб уключыць пошук па змесціве."
@@ -9611,6 +9725,12 @@
       ],
       "Update filter": [
         "Абнавіць фільтр"
+      ],
+      "Update the filter ${ filter }": [
+        "Абнавіць фільтр ${ filter }"
+      ],
+      "Update this filter": [
+        "Абнавіць гэты фільтр"
       ],
       "Updating message content search...": [
         "Абнаўленне пошуку па змесціве паведамлення..."
@@ -10762,6 +10882,9 @@
       ],
       "Did not follow instructions": [
         "Не прытрымліваецца інструкцый"
+      ],
+      "Display name": [
+        "Бачнае імя"
       ],
       "Document ID": [
         "Ідэнтыфікатар дакумента"
@@ -15465,6 +15588,12 @@
         "${ count } лісты → ${ wakeTime }",
         "${ count } лістоў → ${ wakeTime }",
         "${ count } лістоў → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "Адкласці ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "Адкласці ${ emails } да ${ wakeTime }"
       ]
     },
     "Snooze message": {
@@ -17068,9 +17197,6 @@
       "Apply gift code": [
         "Прымяніць падарункавы код"
       ],
-      "Apply labels": [
-        "Прымяніць меткі"
-      ],
       "Archive all messages?": [
         "Архіваваць усе паведамленні?"
       ],
@@ -17127,9 +17253,6 @@
       ],
       "CC": [
         "Копія"
-      ],
-      "Change display setting": [
-        "Змяніць налады дысплэя"
       ],
       "Change my answer": [
         "Змяніць мой адказ"
@@ -17203,17 +17326,8 @@
       "Create contact": [
         "Стварэнне кантакту"
       ],
-      "Create filter": [
-        "Стварыць фільтр"
-      ],
-      "Create folder": [
-        "Стварыць папку"
-      ],
       "Create folder \"${ search }\"": [
         "Стварыць папку \"${ search }\""
-      ],
-      "Create label": [
-        "Стварыць метку"
       ],
       "Create label \"${ search }\"": [
         "Стварэнне меткі \"${ search }\""
@@ -17539,12 +17653,6 @@
       "Make your inbox your own": [
         "Зрабіце паштовую скрыню сваёй уласнасцю"
       ],
-      "Mark all as read": [
-        "Пазначыць усе як прачытаныя"
-      ],
-      "Mark all as unread": [
-        "Пазначыць усе як непрачытаныя"
-      ],
       "Mark all messages as read": [
         "Пазначыць усе паведамленні як прачытаныя"
       ],
@@ -17616,9 +17724,6 @@
       ],
       "Move all messages to trash": [
         "Перамясціць усе паведамленні ў сметніцу"
-      ],
-      "Move emails": [
-        "Перамясціць лісты"
       ],
       "Move to": [
         "Перамясціць у"
@@ -17803,9 +17908,6 @@
       "Remove from list?": [
         "Выдаліць са спіса?"
       ],
-      "Rename folder": [
-        "Перайменаваць папку"
-      ],
       "Reply": [
         "Адказаць"
       ],
@@ -17890,17 +17992,11 @@
       "September Sale": [
         "Вераснёўскі распродаж"
       ],
-      "Set auto-reply": [
-        "Задаць аўтаматычны адказ"
-      ],
       "Set recovery methods": [
         "Прызначэнне спосабаў аднаўлення"
       ],
       "Set recovery phrase": [
         "Задаць фразу аднаўлення"
-      ],
-      "Set signature": [
-        "Задаць подпіс"
       ],
       "Set up ${ protonDuoPlanName }": [
         "Наладжванне ${ protonDuoPlanName }"
@@ -17938,17 +18034,11 @@
       "Snooze": [
         "Адкладанне"
       ],
-      "Snooze emails": [
-        "Адкласці лісты"
-      ],
       "Snooze message": [
         "Адкласці паведамленне"
       ],
       "Snooze:": [
         "Адкладанне:"
-      ],
-      "Star emails": [
-        "Пазначаныя зорачкай лісты"
       ],
       "Start a new import": [
         "Пачаць новае імпартаванне"
@@ -17958,9 +18048,6 @@
       ],
       "Stay for 50% off your next month": [
         "У наступным месяцы скарыстайцеся скідкай у памеры 50%"
-      ],
-      "Still working on it": [
-        "Усё яшчэ працуем над гэтым"
       ],
       "Storage capacity warning": [
         "Папярэджанне пра ёмістасць сховішча"
@@ -18004,17 +18091,11 @@
       "Trust public key?": [
         "Давяраць адкрытаму ключу?"
       ],
-      "Turn off auto-reply": [
-        "Выключыць аўтаматычны адказ"
-      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Уключэнне ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Two-factor authentication": [
         "Двухфактарная аўтэнтыфікацыя"
-      ],
-      "Unstar emails": [
-        "Не пазначаныя зорачкай лісты"
       ],
       "Unsubscribe": [
         "Адпісацца"
@@ -18027,9 +18108,6 @@
       ],
       "Unsubscribe request sent": [
         "Запыт на скасаванне падпіскі адпраўлены"
-      ],
-      "Update filter": [
-        "Абнавіць фільтр"
       ],
       "Upgrade complete!": [
         "Абнаўленне завершана!"

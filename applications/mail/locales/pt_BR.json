@@ -87,6 +87,9 @@
       "Add group": [
         "Adicionar grupo"
       ],
+      "Add more details": [
+        "Adicionar mais detalhes"
+      ],
       "Add new group": [
         "Adicionar um grupo"
       ],
@@ -2733,8 +2736,14 @@
         "${ users } usuário",
         "${ users } usuários"
       ],
+      "Amount due": [
+        "Valor a pagar"
+      ],
       "Amount due after trial": [
         "Valor devido após o período de avaliação"
+      ],
+      "Amount due now": [
+        "Valor devido agora"
       ],
       "Subtotal": [
         "Subtotal"
@@ -6062,9 +6071,6 @@
       ],
       "Security key": [
         "Chave de segurança"
-      ],
-      "Touch your security key.": [
-        "Toque na sua chave de segurança."
       ]
     },
     "fido2: Label": {
@@ -7271,8 +7277,17 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Adicionar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add ${ contact } to your contacts": [
+        "Adicionar ${ contact } para seus contatos"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Adicionar ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Add a contact": [
+        "Adicionar um contato"
+      ],
+      "Add contact": [
+        "Adicionar contato"
       ],
       "Add image URL": [
         "Adicionar a URL da imagem"
@@ -7499,6 +7514,9 @@
       "Change your password": [
         "Alterar sua senha"
       ],
+      "Change your theme": [
+        "Alterar o seu tema"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Verificando contato ${ progress } de ${ max }..."
       ],
@@ -7569,8 +7587,17 @@
         "Criar ${ calendarsToBeCreatedCount } calendário",
         "Criar ${ calendarsToBeCreatedCount } calendários"
       ],
+      "Create a filter": [
+        "Criar um filtro"
+      ],
+      "Create a folder": [
+        "Criar uma pasta"
+      ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "Crie uma pasta como “${ suggestedFolderName }” para manter todos os seus comprovantes on-line em um só lugar."
+      ],
+      "Create a label": [
+        "Criar um marcador"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Crie um marcador para as mensagens importadas, um intervalo de tempo para esta importação e as pastas que deseja de importar."
@@ -7584,6 +7611,9 @@
       "Create a secure cloud for ${ memberCount } member": [
         "Criar uma nuvem segura para ${ memberCount } membro",
         "Criar uma nuvem segura para ${ memberCount } membros"
+      ],
+      "Create filter": [
+        "Criar filtro"
       ],
       "Create folder": [
         "Criar pasta"
@@ -8047,7 +8077,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -8148,6 +8179,9 @@
       "Manage your labels": [
         "Gerenciar seus marcadores"
       ],
+      "Mark ${ emails } as unread": [
+        "Marca ${ emails } como lido"
+      ],
       "Mark all as read": [
         "Marcar tudo como lido"
       ],
@@ -8232,6 +8266,12 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "A maioria das redes Wi-Fi públicas é segura, mas algumas são vulneráveis, expondo você a ameaças cibernéticas. Uma VPN criptografa seu tráfego, mantendo você protegido."
       ],
+      "Move ${ emails }": [
+        "Mover ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Mover ${ emails } para ${ destination }"
+      ],
       "Move emails": [
         "Mover e-mails"
       ],
@@ -8288,6 +8328,9 @@
       ],
       "No links cleaned": [
         "Nenhum link limpo"
+      ],
+      "No location selected": [
+        "Nenhuma localização selecionada"
       ],
       "No messages to show": [
         "Nenhuma mensagem para mostrar"
@@ -8572,6 +8615,15 @@
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Remove todos os dados associados com esse aplicativo (incluindo mensagens baixadas, …)"
       ],
+      "Rename ${ folder } to…": [
+        "Renomear ${ folder } para…"
+      ],
+      "Rename folder": [
+        "Renomear pasta"
+      ],
+      "Rename this folder": [
+        "Renomear esta pasta"
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Reportar uma mensagem como tentativa de phishing enviará a mensagem para nós, para podermos analisá-la e aprimorar nossos filtros. Isso significa que conseguiremos ver todo o conteúdo da mensagem."
       ],
@@ -8620,11 +8672,20 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "A pesquisa está demorando demais? ${ dropdownButton } ou ${ toggleOffButton } nesta pesquisa."
       ],
+      "Searched ${ targetName }": [
+        "Pesquisei ${ targetName }"
+      ],
+      "Searched for mail from ${ sender }": [
+        "Pesquisei por e-mails do ${ sender }"
+      ],
       "Searched for mail to ${ recipient }": [
         "Pesquisei por e-mails para ${ recipient }"
       ],
       "Searched the web": [
         "Pesquisou na web"
+      ],
+      "Searched your mail": [
+        "Pesquisei no seu e-mail"
       ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "Proteja seus arquivos com armazenamento em nuvem criptografado gratuitamente, hoje mesmo."
@@ -8684,8 +8745,17 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Definir ${ MAIL_APP_NAME } como seu aplicativo de e-mails padrão. O ${ MAIL_APP_NAME } será aberto automaticamente quando você clicar em um link de e-mail."
       ],
+      "Set auto-reply": [
+        "Configurar resposta automática"
+      ],
+      "Set signature": [
+        "Definir assinatura"
+      ],
       "Set up your organization": [
         "Configure a sua organização"
+      ],
+      "Set your signature": [
+        "Definir sua assinatura"
       ],
       "Setting up ${ feature }…": [
         "Configurando ${ feature }…"
@@ -9105,6 +9175,9 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Experimente os novos recursos, atualizações e produtos da ${ BRAND_NAME } antes de serem lançados ao público. Isso recarregará o aplicativo"
       ],
+      "Turn off auto-reply": [
+        "Desativa resposta automática"
+      ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "Desative para pesquisar apenas por data, nome, endereço de e-mail ou linha de assunto. Para desabilitar a pesquisa de conteúdo de mensagem (e excluir mensagens baixadas para habilitar esse recurso), vá para Configurações."
       ],
@@ -9137,6 +9210,12 @@
       ],
       "Update filter": [
         "Atualizar filtro"
+      ],
+      "Update the filter ${ filter }": [
+        "Atualizar filtro ${ filter }"
+      ],
+      "Update this filter": [
+        "Atualizar este filtro"
       ],
       "Updating message content search...": [
         "Atualizando pesquisa de conteúdo de mensagens..."
@@ -10055,6 +10134,9 @@
       "Automated confirmations and alerts": [
         "Confirmações e alertas automatizados"
       ],
+      "Away message": [
+        "Mensagem de ausência"
+      ],
       "BCC": [
         "CCO"
       ],
@@ -10219,6 +10301,9 @@
       ],
       "Did not follow instructions": [
         "Não seguiu as instruções"
+      ],
+      "Display name": [
+        "Nome de exibição"
       ],
       "Document ID": [
         "ID do documento"
@@ -10532,6 +10617,9 @@
       "Never fill on this exact URL": [
         "Nunca preencher nesta URL exata"
       ],
+      "New name": [
+        "Novo nome"
+      ],
       "New password": [
         "Nova senha"
       ],
@@ -10681,6 +10769,9 @@
       ],
       "Remove Zoom video conference": [
         "Remover videoconferência do Zoom"
+      ],
+      "Return on": [
+        "Retorne em"
       ],
       "Reveal password": [
         "Mostrar senha"
@@ -11025,6 +11116,12 @@
     "Link": {
       "Add a gift code": [
         "Adicionar código de vale-presente"
+      ],
+      "Add formatting, links or images": [
+        "Adicione formatação, links ou imagens"
+      ],
+      "Advanced auto-reply options": [
+        "Opções avançadas de resposta automática"
       ],
       "All mail": [
         "Todos os e-mails"
@@ -12645,6 +12742,11 @@
         "Suporte para ${ n } domínios de e-mail personalizados"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Experimente agora"
+      ]
+    },
     "ngc_access_banner: info": {
       "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
         "Você agora tem acesso ao novo ${ CALENDAR_APP_NAME }. ${ link }"
@@ -13558,6 +13660,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "O preço de renovação depende da região de faturamento e do número de IVA."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - cartão terminado em ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Transferência bancária - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - cartão terminado em ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -14699,6 +14812,12 @@
       "${ count } email → ${ wakeTime }": [
         "${ count } e-mail → ${ wakeTime }",
         "${ count } e-mails → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "Adiar ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "Adiar ${ emails } até ${ wakeTime }"
       ]
     },
     "Snooze message": {
@@ -16180,9 +16299,6 @@
       "Apply gift code": [
         "Adicionar código de vale-presente"
       ],
-      "Apply labels": [
-        "Aplicar marcadores"
-      ],
       "Archive all messages?": [
         "Arquivar todas as mensagens?"
       ],
@@ -16239,9 +16355,6 @@
       ],
       "CC": [
         "CC"
-      ],
-      "Change display setting": [
-        "Alterar configuração de exibição"
       ],
       "Change my answer": [
         "Alterar minha resposta"
@@ -16315,14 +16428,8 @@
       "Create contact": [
         "Criar contato"
       ],
-      "Create folder": [
-        "Criar pasta"
-      ],
       "Create folder \"${ search }\"": [
         "Criar pasta \"${ search }\""
-      ],
-      "Create label": [
-        "Criar rótulo"
       ],
       "Create label \"${ search }\"": [
         "Criar o marcador \"${ search }\""
@@ -16631,12 +16738,6 @@
       "Make your inbox your own": [
         "Deixe sua caixa de entrada do jeito que você quiser"
       ],
-      "Mark all as read": [
-        "Marcar tudo como lido."
-      ],
-      "Mark all as unread": [
-        "Marcar tudo como não lido"
-      ],
       "Mark all messages as read": [
         "Marcar todas as mensagens como lidas"
       ],
@@ -16708,9 +16809,6 @@
       ],
       "Move all messages to trash": [
         "Mover todas as mensagens para a lixeira"
-      ],
-      "Move emails": [
-        "Mover e-mails"
       ],
       "Move to": [
         "Mover para"
@@ -17021,17 +17119,11 @@
       "Snooze": [
         "Adiar"
       ],
-      "Snooze emails": [
-        "Adiar e-mails"
-      ],
       "Snooze message": [
         "Adiar mensagem"
       ],
       "Snooze:": [
         "Adiar:"
-      ],
-      "Star emails": [
-        "Favoritar e-mails"
       ],
       "Start a new import": [
         "Iniciar uma nova importação"
@@ -17041,9 +17133,6 @@
       ],
       "Stay for 50% off your next month": [
         "Fique por mais um mês com 50% de desconto"
-      ],
-      "Still working on it": [
-        "Ainda estou trabalhando nisso"
       ],
       "Storage capacity warning": [
         "Aviso de capacidade de armazenamento"
@@ -17091,9 +17180,6 @@
       "Two-factor authentication": [
         "Autenticação de dois fatores"
       ],
-      "Unstar emails": [
-        "Remover favorito de e-mails"
-      ],
       "Unsubscribe": [
         "Cancelar inscrição"
       ],
@@ -17105,9 +17191,6 @@
       ],
       "Unsubscribe request sent": [
         "Pedido de cancelamento da assinatura enviado"
-      ],
-      "Update filter": [
-        "Atualizar filtro"
       ],
       "Upgrade complete!": [
         "Upgrade concluído!"

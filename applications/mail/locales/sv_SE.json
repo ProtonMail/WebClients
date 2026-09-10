@@ -54,6 +54,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Lägg till ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add a payment method": [
+        "Lägg till en betalningsmetod"
+      ],
       "Add account": [
         "Lägg till konto"
       ],
@@ -6020,6 +6023,9 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Du har obetalda fakturor. Betala dem innan du går med i ett familjepaket."
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du är inbjuden att länka ditt ${ BRAND_NAME }-konto till denna familjegrupp och njuta av alla dess premiumfunktioner."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ditt konto har fler e-postadresser än vad som är tillgängligt för dig i detta paket. ${ addressSettingsLink }"
       ],
@@ -6115,9 +6121,6 @@
       ],
       "Security key": [
         "Säkerhetsnyckel"
-      ],
-      "Touch your security key.": [
-        "Tryck din säkerhetsnyckel."
       ]
     },
     "fido2: Label": {
@@ -7196,6 +7199,9 @@
         "${ subscription.UnreadMessageCount } oläst",
         "${ subscription.UnreadMessageCount } olästa"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att undvika att förlora åtkomst. ${ learnMoreLink }"
+      ],
       "${ total } conversation": [
         "${ total } konversation",
         "${ total } konversationer"
@@ -7634,6 +7640,9 @@
       "Create a secure cloud for ${ memberCount } member": [
         "Skapa ett säkert moln för ${ memberCount } medlem",
         "Skapa ett säkert moln för ${ memberCount } medlemmar"
+      ],
+      "Create filter": [
+        "Skapa filter"
       ],
       "Create folder": [
         "Skapa mapp"
@@ -8097,7 +8106,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8601,6 +8611,12 @@
         "Läs din ${ count } etikett",
         "Läs dina ${ count } etiketter"
       ],
+      "Read your auto-reply": [
+        "Läs ditt automatiska svar"
+      ],
+      "Read your signature": [
+        "Läs din signatur"
+      ],
       "Recipient: ": [
         "Mottagare: "
       ],
@@ -8624,6 +8640,9 @@
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Tar bort all data associerad med denna app (inklusive nedladdade meddelanden …)"
+      ],
+      "Rename folder": [
+        "Byt namn på mapp"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Att rapportera ett meddelande som ett nätfiskeförsök kommer skicka meddelandet till oss så att vi kan analysera det och förbättra våra filter. Detta innebär att vi kommer kunna se innehållet i meddelandet i sin helhet."
@@ -8745,6 +8764,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Ställ in ${ MAIL_APP_NAME } som din standardapplikation för e-post. ${ MAIL_APP_NAME } kommer öppnas automatiskt när du klickar på en e-postlänk."
+      ],
+      "Set signature": [
+        "Ställ in signatur"
       ],
       "Set up your organization": [
         "Ställ in din organisation"
@@ -9169,6 +9191,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nya ${ BRAND_NAME }-funktioner, uppdateringar och produkter innan de släpps för allmänheten. Detta kommer ladda om applikationen"
+      ],
+      "Turn off auto-reply": [
+        "Stäng av automatiskt svar"
       ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "Stäng av för att endast söka efter datum, namn, e-postadress eller ämnesrad. För att inaktivera sökning av meddelandeinnehåll (och ta bort nedladdade meddelanden för att aktivera denna funktion) gå till inställningar."
@@ -10120,6 +10145,9 @@
       "Automated confirmations and alerts": [
         "Automatiserade bekräftelser och varningar"
       ],
+      "Away message": [
+        "Frånvaromeddelande"
+      ],
       "BCC": [
         "Hemlig kopia"
       ],
@@ -10288,6 +10316,9 @@
       "Did not follow instructions": [
         "Följde inte instruktionerna"
       ],
+      "Display name": [
+        "Visningsnamn"
+      ],
       "Document ID": [
         "Dokument-ID"
       ],
@@ -10419,6 +10450,12 @@
       ],
       "From": [
         "Från"
+      ],
+      "From date": [
+        "Från datum"
+      ],
+      "From time": [
+        "Från tid"
       ],
       "From:": [
         "Från:"
@@ -10602,6 +10639,9 @@
       ],
       "Never fill on this exact URL": [
         "Fyll aldrig på denna exakta URL"
+      ],
+      "New name": [
+        "Nytt namn"
       ],
       "New password": [
         "Nytt lösenord"
@@ -12329,6 +12369,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } slutar med ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB molnlagring som låter dig enkelt lagra, synkronisera och dela filer. Säkrat med end-to-end-kryptering."
       ],
@@ -13643,6 +13686,14 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Förnyelsepriset är beroende av faktureringsregion och momsregistreringsnummer."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - kort slutar på ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Banköverföring - ${ iban }"
       ]
     },
     "Payments.Sepa": {
@@ -16253,9 +16304,6 @@
       "Apply gift code": [
         "Tillämpa presentkod"
       ],
-      "Apply labels": [
-        "Tillämpa etiketter"
-      ],
       "Archive all messages?": [
         "Arkivera alla meddelanden?"
       ],
@@ -16312,9 +16360,6 @@
       ],
       "CC": [
         "Kopia"
-      ],
-      "Change display setting": [
-        "Ändra visningsinställning"
       ],
       "Change my answer": [
         "Ändra mitt svar"
@@ -16388,14 +16433,8 @@
       "Create contact": [
         "Skapa kontakt"
       ],
-      "Create folder": [
-        "Skapa mapp"
-      ],
       "Create folder \"${ search }\"": [
         "Skapa mapp ”${ search }”"
-      ],
-      "Create label": [
-        "Skapa etikett"
       ],
       "Create label \"${ search }\"": [
         "Skapa etikett ”${ search }”"
@@ -16707,12 +16746,6 @@
       "Make your inbox your own": [
         "Gör din inkorg till din egen"
       ],
-      "Mark all as read": [
-        "Markera alla som lästa"
-      ],
-      "Mark all as unread": [
-        "Markera alla som olästa"
-      ],
       "Mark all messages as read": [
         "Markera alla meddelanden som lästa"
       ],
@@ -16784,9 +16817,6 @@
       ],
       "Move all messages to trash": [
         "Flytta alla meddelanden till papperskorg"
-      ],
-      "Move emails": [
-        "Flytta e-post"
       ],
       "Move to": [
         "Flytta till"
@@ -17097,17 +17127,11 @@
       "Snooze": [
         "Snooza"
       ],
-      "Snooze emails": [
-        "Snooza e-post"
-      ],
       "Snooze message": [
         "Snooza meddelande"
       ],
       "Snooze:": [
         "Snooza:"
-      ],
-      "Star emails": [
-        "Stjärnmärk e-post"
       ],
       "Start a new import": [
         "Starta en ny import"
@@ -17164,9 +17188,6 @@
       "Two-factor authentication": [
         "Tvåfaktorsautentisering"
       ],
-      "Unstar emails": [
-        "Ta bort stjärnmarkering från e-post"
-      ],
       "Unsubscribe": [
         "Avsluta prenumeration"
       ],
@@ -17178,9 +17199,6 @@
       ],
       "Unsubscribe request sent": [
         "Begäran om att avsluta prenumeration skickad"
-      ],
-      "Update filter": [
-        "Uppdatera filter"
       ],
       "Upgrade complete!": [
         "Uppgradering slutförd!"
