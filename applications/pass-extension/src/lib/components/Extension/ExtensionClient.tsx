@@ -75,17 +75,19 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
     );
 
     useEffect(() => {
-        sentry({
-            config,
-            denyUrls: [],
-            sentryConfig: {
-                host: new URL(config.API_URL).host,
-                release: config.APP_VERSION,
-                environment: `browser-pass::${core.endpoint}`,
-            },
-            beforeSendIgnore: isRuntimeStale,
-            setupIgnore: () => false,
-        });
+        if (BUILD_TARGET !== 'firefox') {
+            sentry({
+                config,
+                denyUrls: [],
+                sentryConfig: {
+                    host: new URL(config.API_URL).host,
+                    release: config.APP_VERSION,
+                    environment: `browser-pass::${core.endpoint}`,
+                },
+                beforeSendIgnore: isRuntimeStale,
+                setupIgnore: () => false,
+            });
+        }
 
         core.setExtensionClientState?.({ url: frameUrl, tabId: senderTabId, port: port.name });
 
