@@ -52,6 +52,5 @@ export const useCategoriesData = () => {
         activeCategoriesTabs: isCategoryViewEnabled ? activeCategoriesTabs : EMPTY_ARRAY,
         isCategoryViewEnabled,
         isCategoryViewEnabledSettled,
-        shouldSeeWideToolbars: canUseCategoryView,
     };
 };

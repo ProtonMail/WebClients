@@ -112,31 +112,6 @@ describe('useCategoriesData', () => {
         jest.clearAllMocks();
     });
 
-    describe('shouldSeeWideToolbars', () => {
-        it('is true when access comes from the CategoryView flag and the kill switch is off', () => {
-            mockFlags({ categoryView: true });
-
-            const { result } = renderHook(() => useCategoriesData());
-            expect(result.current.shouldSeeWideToolbars).toBe(true);
-        });
-
-        it('is true when access comes from beta access and the kill switch is off', () => {
-            mockFlags({ categoryView: false });
-            mockBetaAccess(true);
-
-            const { result } = renderHook(() => useCategoriesData());
-            expect(result.current.shouldSeeWideToolbars).toBe(true);
-        });
-
-        it('is false without access even when the kill switch is off', () => {
-            mockFlags({ categoryView: false });
-            mockBetaAccess(false);
-
-            const { result } = renderHook(() => useCategoriesData());
-            expect(result.current.shouldSeeWideToolbars).toBe(false);
-        });
-    });
-
     describe('CategoryViewVariant access', () => {
         it.each<CategoryViewVariantVariant>([
             'FeatureAccessOn',
@@ -183,15 +158,6 @@ describe('useCategoriesData', () => {
             const { result } = renderHook(() => useCategoriesData());
             expect(result.current.canUseCategoryView).toBe(false);
         });
-
-        it('keeps wide toolbars enabled when access comes from the variant and the kill switch is off', () => {
-            mockFlags({ categoryView: false });
-            mockBetaAccess(false);
-            mockVariant('RecategorizationButton');
-
-            const { result } = renderHook(() => useCategoriesData());
-            expect(result.current.shouldSeeWideToolbars).toBe(true);
-        });
     });
 
     /**
@@ -222,15 +188,6 @@ describe('useCategoriesData', () => {
             const { result } = renderHook(() => useCategoriesData());
             expect(result.current.canUseCategoryView).toBe(true);
             expect(result.current.isCategoryViewEnabled).toBe(true);
-        });
-
-        it.each(NO_ACCESS_VARIANTS)('keeps wide toolbars on the %s variant', (variant) => {
-            mockFlags({ categoryView: true });
-            mockBetaAccess(false);
-            mockVariant(variant);
-
-            const { result } = renderHook(() => useCategoriesData());
-            expect(result.current.shouldSeeWideToolbars).toBe(true);
         });
     });
 
