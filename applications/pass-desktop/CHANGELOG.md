@@ -1,3 +1,7 @@
+### Unreleased
+
+- Add an optional Screen privacy setting on Windows and macOS, with capture limitations explained in Settings.
+
 ### Version 1.40.2
 
 - Fix being logged out during temporary server issues, keeping offline mode available
