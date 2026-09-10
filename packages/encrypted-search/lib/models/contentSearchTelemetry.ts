@@ -13,6 +13,20 @@ export type ContentSearchMailboxAddressType = 'proton' | 'byoe' | 'mixed';
 
 export type ContentSearchEventStatus = 'success' | 'error';
 
+/**
+ * `errorKind` on `mailbox_index_completed` (measurement_group `mail.any.search_index`) is an
+ * `allowed_values` dimension there, unlike the free-text `errorKind` on `mail.any.search`'s events.
+ */
+export type ContentSearchIndexErrorKind =
+    | 'network_offline'
+    | 'task_cancelled'
+    | 'api_error'
+    | 'crypto_error'
+    | 'prepare_error'
+    | 'storage_error'
+    | 'index_write_error'
+    | 'other';
+
 export type ContentSearchScrollerMode = 'message' | 'conversation';
 
 /**
@@ -31,7 +45,7 @@ export type ContentSearchResultAction =
 export type ContentSearchActionSurface = 'result_list' | 'opened_message';
 
 // TODO how do we integrate the appSwitch and tabClose?
-export type ContentSearchEndReason = 'newSearch' | 'clearField' | 'navigation' | 'appSwitch' | 'tabClose';
+export type ContentSearchEndReason = 'newSearch' | 'clearField' | 'navigation';
 
 /**
  * `firstActionType` on a session can be a result open, which isn't one of the `ContentSearchResultAction`

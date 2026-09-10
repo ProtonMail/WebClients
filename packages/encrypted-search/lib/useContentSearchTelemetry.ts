@@ -13,6 +13,7 @@ import type { Address } from '@proton/shared/lib/interfaces/Address';
 import {
     type ContentSearchActionSurface,
     type ContentSearchEventStatus,
+    type ContentSearchIndexErrorKind,
     type ContentSearchMailboxAddressType,
     type ContentSearchPrimaryMatchType,
     type ContentSearchResultAction,
@@ -57,12 +58,16 @@ export const useContentSearchTelemetry = () => {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         resultCount,
         durationMs,
+        startTime,
+        endTime,
     }: {
         hasResults: boolean;
         status: ContentSearchEventStatus;
         errorKind?: string;
         resultCount: number;
         durationMs: number;
+        startTime: number;
+        endTime: number;
     }) => {
         setSearchSessionResults({ hasResults });
         setSearchSessionScroller(SEARCH_RESULT_SCROLLER_MODE);
@@ -79,6 +84,8 @@ export const useContentSearchTelemetry = () => {
                 // TODO this can be changed once INWEB-1184 is fixed
                 resultCount: 0,
                 durationMs,
+                startTime,
+                endTime,
             },
             dimensions: {
                 searchSource: 'local',
@@ -97,10 +104,12 @@ export const useContentSearchTelemetry = () => {
         primaryMatchType,
         isFirstOpen,
         resultPosition,
+        messageAgeDays,
     }: {
         primaryMatchType: ContentSearchPrimaryMatchType;
         isFirstOpen: boolean;
         resultPosition: number;
+        messageAgeDays: number;
     }) => {
         recordSearchResultOpened({ position: resultPosition });
 
@@ -114,6 +123,7 @@ export const useContentSearchTelemetry = () => {
             event: TelemetryContentSearchEvents.result_opened,
             values: {
                 resultPosition,
+                messageAgeDays,
             },
             dimensions: {
                 searchSource: 'local',
@@ -170,7 +180,7 @@ export const useContentSearchTelemetry = () => {
         mailboxAddressType,
     }: {
         status: ContentSearchEventStatus;
-        errorKind?: string;
+        errorKind?: ContentSearchIndexErrorKind;
         totalMessagesIndexed: number;
         durationMs: number;
         mailboxMessagesTotal?: number;
