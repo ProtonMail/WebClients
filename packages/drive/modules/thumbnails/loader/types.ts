@@ -1,6 +1,6 @@
 import { type ProtonDriveClient, ThumbnailType } from '@protontech/drive-sdk';
 
-export type ThumbnailStatus = 'loading' | 'loaded';
+type ThumbnailStatus = 'loading' | 'loaded';
 
 /**
  * Holds the loaded state for a single thumbnail entry, keyed by its store key

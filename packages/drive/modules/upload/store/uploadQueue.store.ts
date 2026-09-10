@@ -11,7 +11,7 @@ import {
     UploadStatus,
 } from '../types';
 
-export type UploadItemConflict = UploadItem & {
+type UploadItemConflict = UploadItem & {
     status: UploadStatus.ConflictFound;
     conflictType: UploadConflictType;
     nodeType: NodeType;

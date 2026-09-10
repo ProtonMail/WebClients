@@ -1,8 +1,4 @@
-import type { ExpandedTags } from 'exifreader';
-
 import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
-
-export type ExifInfo = ExpandedTags;
 
 export interface MediaInfo {
     width?: number;
@@ -85,10 +81,6 @@ export interface ParsedAdditionalMetadata {
         iCloudId?: string;
         modificationTime?: string;
     };
-}
-
-export interface ExtendedAttributesResult {
-    metadata: ExtendedAttributesMetadata;
 }
 
 export interface PhotosExtendedAttributesResult {

@@ -2,13 +2,7 @@ import { useModalTwoStatic } from '@proton/components';
 
 import { withHoc } from '../../../../../internal/withHoc';
 import { DriveUpsellModalView, type DriveUpsellModalViewProps } from './DriveUpsellModalView';
-import {
-    type DriveUpsellModalProps,
-    type UseDriveUpsellModalStateProps,
-    useDriveUpsellModalState,
-} from './useDriveUpsellModalState';
-
-export type { DriveUpsellModalProps };
+import { type UseDriveUpsellModalStateProps, useDriveUpsellModalState } from './useDriveUpsellModalState';
 
 const DriveUpsellModal = withHoc<UseDriveUpsellModalStateProps, DriveUpsellModalViewProps>(
     useDriveUpsellModalState,

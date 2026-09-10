@@ -7,8 +7,6 @@ import useLoading from '@proton/hooks/useLoading';
 
 import { DropdownMenuItem } from '../DropdownMenuItem';
 
-export const roleOptions = [MemberRole.Viewer, MemberRole.Editor];
-
 interface Props {
     selectedRole: MemberRole;
     onChangeRole: (role: MemberRole) => Promise<void>;

@@ -83,17 +83,6 @@ export type FolderCreationTask = {
 
 export type UploadTask = FileUploadTask | PhotosUploadTask | FolderCreationTask;
 
-export type ExecutionResult = {
-    success: boolean;
-    uploadId: string;
-    nodeUid?: string;
-    error?: Error;
-    needsConflictResolution?: boolean;
-    conflictError?: NodeWithSameNameExistsValidationError;
-    controller?: UploadController;
-    abortController?: AbortController;
-};
-
 export type SchedulerLoad = {
     activePreparingFiles: number;
     activeUploadingFiles: number;
@@ -102,7 +91,7 @@ export type SchedulerLoad = {
     taskLoads: Map<string, { totalBytes: number; uploadedBytes: number }>;
 };
 
-export enum BaseTransferStatus {
+enum BaseTransferStatus {
     InProgress = 'inProgress',
     Failed = 'failed',
     Paused = 'paused',
@@ -146,7 +135,7 @@ export enum UploadStatus {
     EmptyFile = 'emptyFile',
 }
 
-export type BaseUploadItem = {
+type BaseUploadItem = {
     uploadId: string;
     name: string;
     status: UploadStatus;
@@ -214,7 +203,7 @@ export function isTerminalStatus(status: UploadStatus | undefined): boolean {
     return status !== undefined && TERMINAL_UPLOAD_STATUSES.has(status);
 }
 
-export type DriveUploadClient = ProtonDriveClient | ProtonDrivePublicLinkClient | ProtonDrivePhotosClient;
+type DriveUploadClient = ProtonDriveClient | ProtonDrivePublicLinkClient | ProtonDrivePhotosClient;
 
 export type EventCallback = (event: UploadEvent) => Promise<void>;
 
