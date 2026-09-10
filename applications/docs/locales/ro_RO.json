@@ -51,6 +51,9 @@
       "Add": [
         "Adăugare"
       ],
+      "Add a payment method": [
+        "Adăugați o metodă de plată"
+      ],
       "Add account": [
         "Adăugare cont"
       ],
@@ -146,9 +149,6 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Revendicați adresa gratuită ${ BRAND_NAME }"
       ],
-      "Clear conversation": [
-        "Golire conversație"
-      ],
       "Clear data": [
         "Ștergere date"
       ],
@@ -223,9 +223,6 @@
       ],
       "Copy as markdown": [
         "Copiere în format markdown"
-      ],
-      "Copy debug transcript": [
-        "Copiere transcriere depanare"
       ],
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
@@ -480,9 +477,6 @@
       "Import from Outlook": [
         "Importare din Outlook"
       ],
-      "Keep going": [
-        "Continuă"
-      ],
       "Keep my subscription": [
         "Îmi păstrez abonamentul"
       ],
@@ -651,9 +645,6 @@
       "Refresh the page": [
         "Împrospătare pagină"
       ],
-      "Reject": [
-        "Respingere"
-      ],
       "Reload": [
         "Reîncărcare"
       ],
@@ -762,9 +753,6 @@
       "Select all": [
         "Selectare toate"
       ],
-      "Send": [
-        "Trimitere"
-      ],
       "Set password or expiration date": [
         "Setare parolă sau dată de expirare"
       ],
@@ -830,12 +818,6 @@
       ],
       "Stay": [
         "Nu închide"
-      ],
-      "Stop": [
-        "Stop\n"
-      ],
-      "Stop here": [
-        "Oprește aici"
       ],
       "Stop sharing": [
         "Oprire partajare"
@@ -3000,6 +2982,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Numele de utilizator este ${ user.Name }. Pentru a crea adresa ${ emailAddress }, accesați Setări > Identitate și adrese > Domeniu scurt (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Deja există un contact cu această adresă de e-mail."
+      ],
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
       ],
@@ -4215,8 +4200,11 @@
       "Security key": [
         "Cheie de securitate"
       ],
-      "Touch your security key.": [
-        "Atingeți cheia de securitate."
+      "Still waiting?": [
+        "Încă așteptați?"
+      ],
+      "Touch your security key to continue.": [
+        "Atingeți cheia de securitate pentru a continua."
       ]
     },
     "fido2: Label": {
@@ -4821,6 +4809,12 @@
         "Etichete selectate: ${ selectedFoldersCountLocalized }",
         "Etichete selectate: ${ selectedFoldersCountLocalized }"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a evita pierderea accesului. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a vă păstra abonamentul. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "Utilizatori găsiți: ${ total }",
         "Utilizatori găsiți: ${ total }",
@@ -5081,9 +5075,6 @@
       ],
       "Custom email domains": [
         "Domenii personale de e-mail"
-      ],
-      "Debug transcript copied": [
-        "Transcrierea depanării a fost copiată."
       ],
       "Decrypting your document": [
         "Se decriptează documentul"
@@ -5744,9 +5735,6 @@
       "There are no documents in the trash.": [
         "Nu există documente în gunoi."
       ],
-      "Thinking about this": [
-        "Mă gândesc la asta"
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Această acțiune va șterge legătura web și va anula accesul pentru toți utilizatorii."
       ],
@@ -5773,9 +5761,6 @@
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Acesta este un nume sau o poreclă pentru organizație pe care o vor vedea utilizatorii acesteia. Se poate schimba oricând."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Asta necesită mulți pași. Ar trebui să continui?"
       ],
       "This item already exists in your library": [
         "Articolul există deja în librăria proprie."
@@ -8756,9 +8741,6 @@
       "Anything you'd like us to know": [
         "Orice ați dori să știm"
       ],
-      "Ask anything…": [
-        "Întreabă-mă orice…"
-      ],
       "Choose password": [
         "Alegere parolă"
       ],
@@ -10853,9 +10835,6 @@
       ],
       "Stay for 50% off your next month": [
         "Rămâneți cu o reducere de 50% luna următoare"
-      ],
-      "Still working on it": [
-        "Încă lucrez la asta"
       ],
       "Stop sharing": [
         "Oprire partajare"

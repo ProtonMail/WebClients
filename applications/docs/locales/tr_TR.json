@@ -51,6 +51,9 @@
       "Add": [
         "Ekle"
       ],
+      "Add a payment method": [
+        "Bir ödeme yöntemi ekleyin"
+      ],
       "Add account": [
         "Hesap ekle"
       ],
@@ -145,9 +148,6 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Ücretsiz ${ BRAND_NAME } adresinizi alın"
       ],
-      "Clear conversation": [
-        "Yazışmayı temizle"
-      ],
       "Clear data": [
         "Veriyi temizle"
       ],
@@ -222,9 +222,6 @@
       ],
       "Copy as markdown": [
         "Markdown olarak kopyala"
-      ],
-      "Copy debug transcript": [
-        "Hata ayıklama çıktısını kopyala"
       ],
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
@@ -477,9 +474,6 @@
       "Import from Outlook": [
         "Outlook üzerinden içe aktar"
       ],
-      "Keep going": [
-        "İlerle"
-      ],
       "Keep my subscription": [
         "Aboneliğimi sürdür"
       ],
@@ -648,9 +642,6 @@
       "Refresh the page": [
         "Sayfayı yenile"
       ],
-      "Reject": [
-        "Reddet"
-      ],
       "Reload": [
         "Yenile"
       ],
@@ -759,9 +750,6 @@
       "Select all": [
         "Tümünü seç"
       ],
-      "Send": [
-        "Gönder"
-      ],
       "Set password or expiration date": [
         "Parola veya geçerlilik süresi belirleyin"
       ],
@@ -827,12 +815,6 @@
       ],
       "Stay": [
         "Kal"
-      ],
-      "Stop": [
-        "Durdur"
-      ],
-      "Stop here": [
-        "Burada dur"
       ],
       "Stop sharing": [
         "Paylaşımdan kaldır"
@@ -2977,6 +2959,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Kullanıcı adınız: ${ user.Name }. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa etki alanı (pm.me) bölümüne gidin."
       ],
+      "A contact with this email address already exists": [
+        "Bu e-posta adresiyle bir kişi kaydı zaten var"
+      ],
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
@@ -4181,8 +4166,11 @@
       "Security key": [
         "Güvenlik anahtarı"
       ],
-      "Touch your security key.": [
-        "Güvenlik anahtarınıza dokunun."
+      "Still waiting?": [
+        "Hâlâ bekliyor musunuz?"
+      ],
+      "Touch your security key to continue.": [
+        "İlerlemek için güvenlik anahtarınıza dokunun."
       ]
     },
     "fido2: Label": {
@@ -4758,6 +4746,12 @@
         "${ selectedFoldersCountLocalized } etiket seçildi",
         "${ selectedFoldersCountLocalized } etiket seçildi"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Erişiminizi kaybetmemek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Aboneliğinizi sürdürmek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } kullanıcı bulundu",
         "${ total } kullanıcı bulundu"
@@ -5009,9 +5003,6 @@
       ],
       "Custom email domains": [
         "Özel e-posta etki alanları"
-      ],
-      "Debug transcript copied": [
-        "Hata ayıklama çıktısı kopyalandı"
       ],
       "Decrypting your document": [
         "Belgenizin şifresi çözülüyor"
@@ -5668,9 +5659,6 @@
       "There are no documents in the trash.": [
         "Çöpte herhangi bir belge yok."
       ],
-      "Thinking about this": [
-        "Bunun hakkında düşünülüyor"
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Bu işlem bağlantıyı silecek ve tüm kullanıcılar için erişimi iptal edecek."
       ],
@@ -5697,9 +5685,6 @@
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Kullanıcılarınıza görüntülenecek kuruluş adınız veya kısaltmanız. İstediğiniz zaman değiştirebilirsiniz."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Bu işlem için birçok adım atılıyor. İlerlensin mi?"
       ],
       "This item already exists in your library": [
         "Bu öge kitaplığınızda zaten var"
@@ -8611,9 +8596,6 @@
       "Anything you'd like us to know": [
         "Bizimle paylaşmak istediğiniz bir şey var mı?"
       ],
-      "Ask anything…": [
-        "Herhangi bir şey sorun…"
-      ],
       "Choose password": [
         "Parola seçin"
       ],
@@ -10659,9 +10641,6 @@
       ],
       "Stay for 50% off your next month": [
         "Sonraki ay %50 indirimden yararlanın"
-      ],
-      "Still working on it": [
-        "Üzerinde çalışılıyor"
       ],
       "Stop sharing": [
         "Paylaşımdan kaldır"
