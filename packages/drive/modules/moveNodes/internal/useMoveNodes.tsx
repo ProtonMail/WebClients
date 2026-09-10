@@ -5,7 +5,7 @@ import { handleSdkError } from '../../../legacy/errorHandling';
 import { BusDriverEventName, type NodeEventMeta, getBusDriver } from '../../../modules/busDriver';
 import { useMovedItemsNotification } from './useMovedItemsNotification';
 
-export type MoveNodeItem = {
+type MoveNodeItem = {
     name: string;
     parentUid: string;
 };

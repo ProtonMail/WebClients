@@ -23,7 +23,7 @@ export type CopyModalItem = {
     name: string;
 };
 
-export type CopyItemsModalInnerProps = {
+type CopyItemsModalInnerProps = {
     itemsToCopy: CopyModalItem[];
 };
 

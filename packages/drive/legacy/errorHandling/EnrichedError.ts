@@ -1,7 +1,5 @@
 import type { ScopeContext } from '@sentry/types';
 
-import type { SafeErrorObject } from '@proton/utils/getSafeErrorObject';
-
 export enum ComponentTag {
     driveSdk = 'drive-sdk',
 }
@@ -55,25 +53,3 @@ export class EnrichedError extends Error {
         this.sentryMessage = sentryMessage;
     }
 }
-
-/**
- * Converts a `SafeErrorObject` to the appropriate `Error` or `EnrichedError`.
- */
-export const convertSafeError = (obj: SafeErrorObject) => {
-    let error;
-
-    if (isEnrichedError(obj)) {
-        error = new EnrichedError(obj.message, obj.context);
-    } else {
-        error = new Error(obj.message);
-    }
-    error.name = obj.name;
-    error.stack = obj.stack;
-
-    // Sentry message may be present on other error types
-    if (obj.sentryMessage) {
-        (error as any).sentryMessage = obj.sentryMessage;
-    }
-
-    return error;
-};
