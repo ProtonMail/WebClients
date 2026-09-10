@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -17,6 +18,7 @@ import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useConversationActions } from '../../../providers/ConversationActionsProvider';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
+import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import DropdownMenu from '../../DropdownMenu';
 import { ArtifactContent } from './ArtifactContent';
 import type { WebpageViewMode } from './ArtifactContent';
@@ -68,6 +70,8 @@ interface PanelHeaderProps {
     // Save-to-Drive — document artifacts only (see `canSaveToDrive` in ArtifactPanel).
     canSaveToDrive?: boolean;
     onSaveToDrive?: () => void;
+    isMobileView?: boolean;
+    onBack?: () => void;
 }
 
 const getVersionLabel = (versionNumber: number, totalVersions: number) => {
@@ -99,8 +103,23 @@ const PanelHeader = ({
     onCancelManualEdit,
     canSaveToDrive,
     onSaveToDrive,
+    isMobileView,
+    onBack,
 }: PanelHeaderProps) => (
     <div className="artifact-panel-header flex flex-row items-center gap-2 px-3 py-2 border-bottom border-weak shrink-0 w-full">
+        {isMobileView && onBack && (
+            <Button
+                icon
+                shape="ghost"
+                size="small"
+                onClick={onBack}
+                className="artifact-btn shrink-0"
+                title={c('collider_2025:Action').t`Back to chat`}
+                aria-label={c('collider_2025:Action').t`Back to chat`}
+            >
+                <IcChevronLeft size={4} className="color-hint" />
+            </Button>
+        )}
         {type ? (
             <span className="artifact-type-badge flex flex-row items-center gap-1 shrink-0 bg-strong">
                 {(() => {
@@ -283,16 +302,18 @@ const PanelHeader = ({
                     </Button>
                 </>
             )}
-            <Button
-                icon
-                shape="ghost"
-                size="small"
-                onClick={onClose}
-                className="artifact-btn"
-                title={c('collider_2025:Action').t`Close panel`}
-            >
-                <IcCross size={4} className="color-hint" />
-            </Button>
+            {!isMobileView && (
+                <Button
+                    icon
+                    shape="ghost"
+                    size="small"
+                    onClick={onClose}
+                    className="artifact-btn"
+                    title={c('collider_2025:Action').t`Close panel`}
+                >
+                    <IcCross size={4} className="color-hint" />
+                </Button>
+            )}
         </div>
     </div>
 );
@@ -321,9 +342,11 @@ function buildSwitcherEntries(
 
 interface ArtifactPanelProps {
     isGenerating?: boolean;
+    isMobileView?: boolean;
 }
 
-const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
+const ArtifactPanel = ({ isGenerating = false, isMobileView = false }: ArtifactPanelProps) => {
+    useNativeComposerVisibilityApi({ hideComposer: isMobileView });
     const {
         registry,
         selectedArtifact,
@@ -423,7 +446,12 @@ const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
     };
 
     return (
-        <div className="artifact-panel flex flex-column h-full overflow-hidden w-full rounded-xl mb-6">
+        <div
+            className={clsx(
+                'artifact-panel flex flex-column h-full overflow-hidden w-full',
+                !isMobileView && 'rounded-xl mb-6'
+            )}
+        >
             <PanelHeader
                 type={artifact.type}
                 language={artifact.language}
@@ -433,6 +461,8 @@ const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
                 copySuccess={copySuccess}
                 onDownload={handleDownload}
                 onClose={closePanel}
+                isMobileView={isMobileView}
+                onBack={isMobileView ? closePanel : undefined}
                 versionIndex={selectedVersionIndex}
                 versionCount={versionCount}
                 onPrevVersion={() => {
