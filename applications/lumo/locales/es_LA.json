@@ -1713,9 +1713,6 @@
       ],
       "Something went wrong": [
         "Se ha producido un error."
-      ],
-      "You've reached your weekly chat limit": [
-        "Ha alcanzado su límite de chat semanal."
       ]
     },
     "collider_2025: Failure": {
@@ -6628,9 +6625,6 @@
       ],
       "Security key": [
         "Clave de seguridad"
-      ],
-      "Touch your security key.": [
-        "Toque su llave de seguridad."
       ]
     },
     "fido2: Label": {
@@ -7798,9 +7792,6 @@
       ],
       "Forces either unavailable state, without burning a real quota or waiting for a flag rollout. \"unavailable_limit_reached\" pins the Max pool to 0 remaining, exactly as the backend would after the weekly cap; \"unavailable_high_load\" switches off the availability flag. Both disable the Max row in the picker, fall the selection back to Lite, and push maxModelAvailability to native. Persists across reloads until switched off.": [
         "Fuerza el estado de no disponible, sin consumir una cuota real ni esperar a que se implemente una bandera. «unavailable_limit_reached» fija el grupo máximo a 0 restantes, exactamente como lo haría el backend después del límite semanal; «unavailable_high_load» desactiva la bandera de disponibilidad. Ambas desactivan la fila Max en el selector, reducen la selección a Lite y envían maxModelAvailability a nativo. Persiste entre recargas hasta que se desactiva."
-      ],
-      "Forces Lite and Max pools to zero and lets UsageLimitsTierSync dispatch the tier error, so you can preview the weekly limit UpsellCard above the composer. Hidden for Plus accounts. Persists across reloads until switched off.": [
-        "Fuerza los grupos de Lite y Max a cero y permite que UsageLimitsTierSync envíe el error de nivel, para que pueda previsualizar el límite semanal UpsellCard encima del compositor. Oculto para cuentas Plus. Persiste entre recargas hasta que se desactive."
       ],
       "Forces the inline composer banner into \"approaching\" or \"at limit\" state so you can preview it in any context.": [
         "Fuerza al banner del editor en línea a un estado de «aproximado» o «en límite» para que pueda previsualizarlo en cualquier contexto."
