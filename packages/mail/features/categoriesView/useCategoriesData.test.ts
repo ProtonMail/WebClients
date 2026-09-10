@@ -36,16 +36,12 @@ jest.mock('../../store/categoriesView/categoriesViewSelector', () => ({
 
 interface FlagOptions {
     categoryView?: boolean;
-    newToolbarKillSwitch?: boolean;
 }
 
-const mockFlags = ({ categoryView = false, newToolbarKillSwitch = false }: FlagOptions = {}) => {
+const mockFlags = ({ categoryView = false }: FlagOptions = {}) => {
     jest.mocked(useFlag).mockImplementation((flag) => {
         if (flag === 'CategoryView') {
             return categoryView;
-        }
-        if (flag === 'NewToolbarKillSwitch') {
-            return newToolbarKillSwitch;
         }
         return false;
     });
@@ -118,45 +114,22 @@ describe('useCategoriesData', () => {
 
     describe('shouldSeeWideToolbars', () => {
         it('is true when access comes from the CategoryView flag and the kill switch is off', () => {
-            mockFlags({ categoryView: true, newToolbarKillSwitch: false });
+            mockFlags({ categoryView: true });
 
             const { result } = renderHook(() => useCategoriesData());
             expect(result.current.shouldSeeWideToolbars).toBe(true);
         });
 
         it('is true when access comes from beta access and the kill switch is off', () => {
-            mockFlags({ categoryView: false, newToolbarKillSwitch: false });
+            mockFlags({ categoryView: false });
             mockBetaAccess(true);
 
             const { result } = renderHook(() => useCategoriesData());
             expect(result.current.shouldSeeWideToolbars).toBe(true);
         });
 
-        it('is false when access is granted but the kill switch is on', () => {
-            mockFlags({ categoryView: true, newToolbarKillSwitch: true });
-
-            const { result } = renderHook(() => useCategoriesData());
-            expect(result.current.shouldSeeWideToolbars).toBe(false);
-        });
-
-        it('is false when beta access is granted but the kill switch is on', () => {
-            mockFlags({ categoryView: false, newToolbarKillSwitch: true });
-            mockBetaAccess(true);
-
-            const { result } = renderHook(() => useCategoriesData());
-            expect(result.current.shouldSeeWideToolbars).toBe(false);
-        });
-
         it('is false without access even when the kill switch is off', () => {
-            mockFlags({ categoryView: false, newToolbarKillSwitch: false });
-            mockBetaAccess(false);
-
-            const { result } = renderHook(() => useCategoriesData());
-            expect(result.current.shouldSeeWideToolbars).toBe(false);
-        });
-
-        it('is false without access when the kill switch is on', () => {
-            mockFlags({ categoryView: false, newToolbarKillSwitch: true });
+            mockFlags({ categoryView: false });
             mockBetaAccess(false);
 
             const { result } = renderHook(() => useCategoriesData());
@@ -212,21 +185,12 @@ describe('useCategoriesData', () => {
         });
 
         it('keeps wide toolbars enabled when access comes from the variant and the kill switch is off', () => {
-            mockFlags({ categoryView: false, newToolbarKillSwitch: false });
+            mockFlags({ categoryView: false });
             mockBetaAccess(false);
             mockVariant('RecategorizationButton');
 
             const { result } = renderHook(() => useCategoriesData());
             expect(result.current.shouldSeeWideToolbars).toBe(true);
-        });
-
-        it('disables wide toolbars via the kill switch even when access comes from the variant', () => {
-            mockFlags({ categoryView: false, newToolbarKillSwitch: true });
-            mockBetaAccess(false);
-            mockVariant('RecategorizationButton');
-
-            const { result } = renderHook(() => useCategoriesData());
-            expect(result.current.shouldSeeWideToolbars).toBe(false);
         });
     });
 
@@ -261,7 +225,7 @@ describe('useCategoriesData', () => {
         });
 
         it.each(NO_ACCESS_VARIANTS)('keeps wide toolbars on the %s variant', (variant) => {
-            mockFlags({ categoryView: true, newToolbarKillSwitch: false });
+            mockFlags({ categoryView: true });
             mockBetaAccess(false);
             mockVariant(variant);
 
