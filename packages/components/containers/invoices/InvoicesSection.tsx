@@ -141,6 +141,7 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
                         key: 'editBillingAddress',
                         onClick: () =>
                             openBillingAddressModal({
+                                source: 'invoices',
                                 loadingKey: editBillingAddressLoadingKey,
                                 subscription,
                             }).catch(noop),
