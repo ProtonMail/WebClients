@@ -51,6 +51,9 @@
       "Add": [
         "Προσθήκη"
       ],
+      "Add a payment method": [
+        "Προσθέστε μία μέθοδο πληρωμής"
+      ],
       "Add account": [
         "Προσθήκη λογαριασμού"
       ],
@@ -145,9 +148,6 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Δημιουργήστε τη δωρεάν ${ BRAND_NAME } διεύθυνσή σας"
       ],
-      "Clear conversation": [
-        "Εκκαθάριση συνομιλίας"
-      ],
       "Clear data": [
         "Εκκαθάριση δεδομένων"
       ],
@@ -222,9 +222,6 @@
       ],
       "Copy as markdown": [
         "Αντιγραφή ως markdown"
-      ],
-      "Copy debug transcript": [
-        "Αντιγραφή μεταγραφής εντοπισμού σφαλμάτων"
       ],
       "Copy email to clipboard": [
         "Αντιγραφή μηνύματος στο πρόχειρο"
@@ -477,9 +474,6 @@
       "Import from Outlook": [
         "Εισαγωγή από Outlook"
       ],
-      "Keep going": [
-        "Συνεχίστε"
-      ],
       "Keep my subscription": [
         "Διατηρήστε την συνδρομή μου"
       ],
@@ -648,9 +642,6 @@
       "Refresh the page": [
         "Ανανέωση της σελίδας"
       ],
-      "Reject": [
-        "Απόρριψη"
-      ],
       "Reload": [
         "Ανανέωση"
       ],
@@ -759,9 +750,6 @@
       "Select all": [
         "Επιλογή όλων"
       ],
-      "Send": [
-        "Αποστολή"
-      ],
       "Set password or expiration date": [
         "Ορισμός κωδικού πρόσβασης ή ημερομηνίας λήξης"
       ],
@@ -827,12 +815,6 @@
       ],
       "Stay": [
         "Παραμονή"
-      ],
-      "Stop": [
-        "Σταμάτα"
-      ],
-      "Stop here": [
-        "Σταμάτησε εδώ"
       ],
       "Stop sharing": [
         "Διακοπή κοινής χρήσης"
@@ -2977,6 +2959,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } είναι το όνομα χρήστη σας. Για να δημιουργήσετε το ${ emailAddress }, παρακαλούμε μεταβείτε στις Ρυθμίσεις > Ταυτότητα και διευθύνσεις > Σύντομος τομέας (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Υπάρχει ήδη επαφή με αυτή την ηλεκτρονική διεύθυνση."
+      ],
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
       ],
@@ -4181,8 +4166,11 @@
       "Security key": [
         "Κλειδί ασφαλείας"
       ],
-      "Touch your security key.": [
-        "Αγγίξτε το κλειδί ασφαλείας σας."
+      "Still waiting?": [
+        "Ακόμα περιμένετε;"
+      ],
+      "Touch your security key to continue.": [
+        "Πατήστε το κλειδί ασφαλείας σας για να συνεχίσετε."
       ]
     },
     "fido2: Label": {
@@ -4758,6 +4746,12 @@
         "${ selectedFoldersCountLocalized } ετικέτα επιλέχθηκε",
         "${ selectedFoldersCountLocalized } ετικέτες επιλέχθηκαν"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Απομένουν ${ timeRemaining } στη δοκιμαστική σας περίοδο. ${ addPaymentMethodLink } για να αποφύγετε την απώλεια πρόσβασης. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Απομένουν ${ timeRemaining } στη δοκιμαστική σας περίοδο. ${ addPaymentMethodLink } για να διατηρήσετε τη συνδρομή σας. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } χρήστης βρέθηκε",
         "${ total } χρήστες βρέθηκαν"
@@ -5009,9 +5003,6 @@
       ],
       "Custom email domains": [
         "Προσαρμοσμένοι τομείς"
-      ],
-      "Debug transcript copied": [
-        "Η μεταγραφή εντοπισμού σφαλμάτων αντιγράφηκε"
       ],
       "Decrypting your document": [
         "Γίνεται αποκρυπτογράφηση του εγγράφου σας"
@@ -5668,9 +5659,6 @@
       "There are no documents in the trash.": [
         "Δεν υπάρχουν έγγραφα στον κάδο απορριμμάτων."
       ],
-      "Thinking about this": [
-        "Το σκέφτομαι αυτό"
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Αυτή η ενέργεια θα διαγράψει τον σύνδεσμο και θα ανακαλέσει την πρόσβαση για όλους τους χρήστες."
       ],
@@ -5697,9 +5685,6 @@
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Αυτό είναι ένα όνομα ή παρατσούκλι για τον οργανισμό σας, το οποίο θα βλέπουν οι χρήστες σας. Μπορείτε να το αλλάξετε ανά πάσα στιγμή."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Αυτό απαιτεί πολλά βήματα. Να συνεχίσω;"
       ],
       "This item already exists in your library": [
         "Αυτό το στοιχείο υπάρχει ήδη στη βιβλιοθήκη σας"
@@ -8611,9 +8596,6 @@
       "Anything you'd like us to know": [
         "Οτιδήποτε θα θέλατε να ξέρουμε"
       ],
-      "Ask anything…": [
-        "Ρωτήστε οτιδήποτε…"
-      ],
       "Choose password": [
         "Επιλογή κωδικού πρόσβασης"
       ],
@@ -10659,9 +10641,6 @@
       ],
       "Stay for 50% off your next month": [
         "Μείνετε με έκπτωση 50% τον επόμενο μήνα"
-      ],
-      "Still working on it": [
-        "Ακόμα δουλεύω πάνω σε αυτό"
       ],
       "Stop sharing": [
         "Διακοπή κοινής χρήσης"
