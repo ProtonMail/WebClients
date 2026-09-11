@@ -1051,6 +1051,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "您的桌面应用免费试用将在 ${ formattedEndDate }结束。 ${ upgradeButton }"
+      ],
+      "Add a payment method": [
+        "添加支付方式"
       ]
     },
     "action": {
@@ -7017,6 +7020,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "您已达到预约时段数量上限 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "试用期剩余 ${ timeRemaining }。${ addPaymentMethodLink } 以避免失去访问权限。${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "试用期剩余 ${ timeRemaining }。${ addPaymentMethodLink } 以保留您的订阅。${ learnMoreLink }"
       ]
     },
     "info": {

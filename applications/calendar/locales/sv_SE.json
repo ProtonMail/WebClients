@@ -1052,6 +1052,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din gratis provperiod av din app för stationär dator slutar den ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add a payment method": [
+        "Lägg till en betalningsmetod"
       ]
     },
     "action": {
@@ -4828,6 +4831,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ditt konto använder ${ usedSpace } lagringsutrymme, vilket överstiger ${ inviteSpace } du tilldelades. Ta bort lite data eller be administratören för paketet att öka ditt lagringsutrymme."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du är inbjuden att länka ditt ${ BRAND_NAME }-konto till denna familjegrupp och njuta av alla dess premiumfunktioner."
       ]
     },
     "familyOffer_2023:Label": {
@@ -7048,6 +7054,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nått gränsen för antal bokningsbara tider (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att undvika att förlora åtkomst. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -9113,6 +9122,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } slutar med ${ Last4 }"
       ]
     },
     "new_plans: label": {
@@ -13792,6 +13804,14 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - kort slutar på ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Banköverföring - ${ iban }"
       ]
     }
   }
