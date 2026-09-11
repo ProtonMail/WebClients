@@ -1,6 +1,7 @@
 import type { ESCallbacks, NormalizedSearchParams } from '@proton/encrypted-search/models';
 
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
+import type { MetricService } from '../metrics/MetricService';
 import type { SearchService } from '../search/SearchService';
 import { ESAdapter } from './ESAdapter';
 import { fakeImportHandle, fakeIndexService, fakeV1Functions, flushPromises } from './testFakes';
@@ -25,12 +26,19 @@ const fakeSearchService = () =>
         })),
     }) as unknown as SearchService;
 
+const fakeMetricService = () =>
+    ({
+        sendQueryCompletedReport: jest.fn(),
+        sendResultOpenedReport: jest.fn(),
+    }) as unknown as MetricService;
+
 const setup = ({ withImport = true }: { withImport?: boolean } = {}) => {
     const v1 = fakeV1Functions();
     const importRun = fakeImportHandle();
     const adapter = new ESAdapter({
         searchService: fakeSearchService(),
         indexService: fakeIndexService(withImport ? importRun.handle : undefined),
+        metricService: fakeMetricService(),
         esCallbacks,
         esLibraryFunctionsV1: v1.functions,
         updateESStatus: jest.fn(),

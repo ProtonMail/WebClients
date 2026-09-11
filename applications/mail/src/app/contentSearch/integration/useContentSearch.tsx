@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { defaultESIndexingState, defaultESStatus } from '@proton/encrypted-search/constants';
 import type { IndexingMetrics } from '@proton/encrypted-search/esHelpers';
 import type {
@@ -17,6 +18,7 @@ import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSear
 import { esSearching, selectSearch } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
 import { getSharedIndexService } from '../indexation/IndexService';
+import { MetricService } from '../metrics/MetricService';
 import { SearchService } from '../search/SearchService';
 import { logger } from '../utils/logger';
 import { ESAdapter, type ESStatusConcrete } from './ESAdapter';
@@ -79,6 +81,7 @@ const toBoundFunctions = (adapter: ESAdapter): FunctionsV2 => ({
  * functions object whenever they change so consumers re-render — exactly like `useEncryptedSearch`.
  */
 export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1, isActive }: Props): FunctionsV1 => {
+    const api = useApi();
     const [user] = useUser();
     const getUserKeys = useGetUserKeys();
 
@@ -101,9 +104,12 @@ export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1, isActive }
     if (!adapterRef.current) {
         const indexService = getSharedIndexService(user.ID, getUserKeys, logger);
         const searchService = new SearchService(user.ID, getUserKeys, indexService.dbLock, logger);
+        const metricService = new MetricService(api, logger);
+
         adapterRef.current = new ESAdapter({
             searchService,
             indexService,
+            metricService,
             esCallbacks,
             esLibraryFunctionsV1,
             updateESStatus: setESStatus,
