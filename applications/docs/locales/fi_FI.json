@@ -943,6 +943,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston",
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston"
+      ],
+      "Ask me next time": [
+        "Kysy seuraavalla kerralla"
       ]
     },
     "Actions message": {
@@ -1089,10 +1092,10 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Kun kokeilu päättyy ${ formattedDate1 }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti ${ renewCycle } kuukauden välein. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate2 }."
+        "Kun kokeilujakso ${ formattedDate1 } päättyy, muuttuu se automaattisesti ${ renewCycle } kuukauden välein uudistuvaksi maksulliseksi tilaukseksi. Sinua ei veloiteta, jos perut sen ennen ${ formattedDate2 }."
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Kun kokeilu päättyy ${ formattedDate1 }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti kuukausittain. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate2 }."
+        "Kun kokeilujakso ${ formattedDate1 } päättyy, muuttuu se automaattisesti kuukausittain uudistuvaksi maksulliseksi tilaukseksi. Sinua ei veloiteta, jos perut sen ennen ${ formattedDate2 }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Voit saada enintään ${ TRIAL_MAX_DEDICATED_IPS } omaa palvelinta kokeilujakson aikana."
@@ -5510,7 +5513,7 @@
         "Sinulla on jo ilmainen tili"
       ],
       "You are about to open another browser tab and visit:": [
-        "Olet avaamassa uutta selaimen välilehteä sivustolle:"
+        "Olet avaamassa uuteen selainvälilehteen osoitetta:"
       ],
       "You are about to open your default browser and visit:": [
         "Olet avaamassa oletusselaimeesi osoitetta:"
@@ -5606,10 +5609,10 @@
         "Selaimesi tulostusikkuna avautuu nyt, josta voit viedä dokumentin PDF-muotoon."
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
-        "Muutoksesi synkronoidaan Driveen. Älä sulje verkkosivua."
+        "Muutoksiasi synkronoidaan Driveen. Älä sulje verkkosivua."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
-        "Muutoksiesi synkronointi epäonnistui. Drive yrittää automaattisesti tallentaa muutokset. Älä sulje verkkosivua."
+        "Muutostesi synkronointi epäonnistui. Drive pyrkii tallentamaan ne automaattisesti. Älä sulje verkkosivua."
       ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "Nykyinen dokumenttisi korvataan tällä versiolla. Kommentit ja ehdotukset poistetaan dokumentista, mutta ne pysyvät saatavilla kommenttihistoriassa."
@@ -5651,7 +5654,7 @@
         "Seuraava laskutuspäiväsi on ${ renewalTime }. Voit peruuttaa milloin tahansa."
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
-        "Seuraava laskutuspäivänne on ${ renewalTime }. Voitte peruuttaa tilauksen milloin tahansa. Ottakaa yhteyttä tukeen, jos haluatte muuttaa tilaustanne välittömästi."
+        "Seuraava laskutuspäiväsi on ${ renewalTime }. Voit perua tilauksen milloin tahansa. Jos sinun tarvitsee muuttaa tilaustasi viiveettä, ole yhteydessä asiakaspalveluun."
       ],
       "Your online activity is protected": [
         "Verkkotoimintasi on suojattu"
@@ -5686,6 +5689,21 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
+      ],
+      "Creating new document...": [
+        "Luodaan uutta tiedostoa..."
+      ],
+      "Error converting document: ${ errorMessage }": [
+        "Virhe tiedostoa muuttaessa: ${ errorMessage }"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Saa sähköpostipäivityksiä dokumentteihisi lisätyistä kommenteista ja ehdotuksista."
+      ],
+      "Link expired": [
+        "Linkki vanhentunut"
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Syöttämäsi URL-osoite on ilmeisesti kopioitu Slackista virheellisesti. Kun kopioit pitkiä linkkejä Slackista, napsauta niitä hiiren kakkospainikkeella ja valitse \"Kopioi linkki\" sen sijaan, että kopioisit typistetyn URL-osoitteen suoraan."
       ]
     },
     "info": {
@@ -6225,6 +6243,12 @@
       ],
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } merkkiä"
+      ],
+      "Enable email notifications": [
+        "Ota käyttöön sähköposti-ilmoitukset"
+      ],
+      "Include document name in notification": [
+        "Sisällytä tiedoston nimi ilmoitukseen"
       ]
     },
     "Label for contact group color": {
@@ -6482,7 +6506,7 @@
         "60 minuuttia per kokous"
       ],
       "Booking pages": [
-        "Ajanvaraussivut"
+        "Varaussivut"
       ],
       "Browser, mobile, and desktop apps": [
         "Selain, mobiili- ja työpöytäsovellukset"
@@ -6973,7 +6997,7 @@
         "Kaikki ${ BRAND_NAME } -peruspalvelut (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "Appointment scheduling": [
-        "Ajanvaraus"
+        "Ajanvaraukset"
       ],
       "Appointment scheduling with ${ n } booking page": [
         "Ajanvaraus ${ n } -varaussivulla",
@@ -7421,7 +7445,7 @@
         "Alkaen ${ priceLine }"
       ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
-        "Erityishinta ${ priceCoupon } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ priceLine } kuukausihintaan. Voit perua milloin tahansa."
+        "Erityishinta ${ priceCoupon } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ priceLine } kuukausihintaan. Voit perua sen milloin tahansa."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Avaa kaikki ${ BRAND_NAME } -premium-tuotteet ja -ominaisuudet hintaan ${ priceLine }. Peruuta milloin tahansa."
@@ -7965,6 +7989,18 @@
       ],
       "Your settings have been changed successfully": [
         "Tekemäsi asetusmuutokset on tallennettu"
+      ],
+      "\"Document deleted permanently": [
+        "\"Tiedosto poistettiin pysyvästi"
+      ],
+      "Failed to delete document": [
+        "Tiedoston poistaminen epäonnistui"
+      ],
+      "Failed to restore document": [
+        "Tiedoston palauttaminen epäonnistui"
+      ],
+      "Failed to trash document": [
+        "Tiedoston siirtäminen roskakoriin epäonnistui"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8308,7 +8344,7 @@
         "Alennushinta on voimassa ${ subscriptionLength } kuukauden ajan."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
-        "Erityishinta on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua milloin tahansa."
+        "Erityishinta on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua sen milloin tahansa."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Erikoistarjoushinta ${ priceWithDiscount } on voimassa ${ couponRedemptions } kuukauden. Sen jälkeen se uusitaan automaattisesti hintaan ${ renewPriceStr } yhden kuukauden ajaksi. Voit peruuttaa tilauksen milloin tahansa.",
@@ -8319,11 +8355,11 @@
         "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäiset ${ subscriptionLength } kuukautta."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
-        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua milloin tahansa."
+        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua sen milloin tahansa."
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
-        "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit peruuttaa tilauksen milloin vain.",
-        "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit peruuttaa tilauksen milloin vain."
+        "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit perua tilauksen milloin vain.",
+        "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit perua tilauksen milloin vain."
       ]
     },
     "PGP key encryption warning": {
@@ -9111,6 +9147,9 @@
       ],
       "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
         "Nykyinen laskentataulukkonne ja kaikki sen sisältämät taulukot korvataan tällä versiolla."
+      ],
+      "Creating new spreadsheet...": [
+        "Luodaan laskentataulukkoa..."
       ]
     },
     "sheets_2025:Label": {
@@ -10496,7 +10535,7 @@
         "Vaihda valitsemiesi päivä- ja yöteemojen välillä automaattisesti järjestelmäsi päivä-/yötilan mukaisesti"
       ],
       "Change shared item settings": [
-        "Muuta jaettavan kohteen asetuksia"
+        "Muuta jaetun kohteen asetuksia"
       ],
       "Customize import to reduce the number of folders": [
         "Vähennä kansioiden määrää mukauttamalla tuontia"
