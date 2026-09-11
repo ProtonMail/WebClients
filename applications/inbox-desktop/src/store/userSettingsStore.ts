@@ -1,6 +1,5 @@
-import Store from "electron-store";
-
 import type { ESUserChoice } from "@proton/shared/lib/desktop/desktopTypes";
+import { SafeStore } from "./safeStore/safeStore";
 
 type UserSettings = {
     esUserChoice?: ESUserChoice;
@@ -13,9 +12,7 @@ const defaultUserSettings: UserSettings = {
 type UserSettingsStore = { [userID: string]: UserSettings };
 const USER_SETTINGS = "userSettings";
 
-const store = new Store<{ userSettings?: UserSettingsStore }>({
-    configFileMode: 0o600,
-});
+const store = new SafeStore<{ userSettings?: UserSettingsStore }>("userSettings");
 
 const getUserSettings = (userID: string): UserSettings | null => {
     const storedSettings = store.get(USER_SETTINGS);

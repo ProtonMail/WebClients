@@ -4,6 +4,8 @@ import { defineConfig, globalIgnores } from "eslint/config";
 import js from "@eslint/js";
 import importPlugin from "eslint-plugin-import";
 
+import noElectronStoreDirect from "./eslint-rules/no-electron-store-direct.mjs";
+
 export default defineConfig(
     js.configs.recommended,
     configs.eslintRecommended,
@@ -34,6 +36,13 @@ export default defineConfig(
                 },
             },
         },
+        plugins: {
+            "inbox-desktop": {
+                rules: {
+                    "no-direct-electron-store-access": noElectronStoreDirect,
+                },
+            },
+        },
         rules: {
             "@typescript-eslint/no-unused-vars": [
                 "error",
@@ -46,6 +55,7 @@ export default defineConfig(
                     ignoreRestSiblings: true,
                 },
             ],
+            "inbox-desktop/no-direct-electron-store-access": "error",
         },
     },
     globalIgnores([".webpack"]),
