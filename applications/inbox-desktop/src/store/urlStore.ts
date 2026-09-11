@@ -1,9 +1,9 @@
 import { PROTON_LOCAL_DOMAIN } from "@proton/shared/lib/localDev";
 import { app } from "electron";
-import Store from "electron-store";
 import { z } from "zod";
 import { mainLogger } from "../utils/log";
 import { updateSettings } from "./settingsStore";
+import { SafeStore } from "./safeStore/safeStore";
 
 const BASE_LOCAL_URL = process.env.BASE_LOCAL_URL || PROTON_LOCAL_DOMAIN;
 const localUrls = {
@@ -12,9 +12,7 @@ const localUrls = {
     calendar: `https://calendar.${BASE_LOCAL_URL}`,
 };
 
-const store = new Store({
-    configFileMode: 0o600,
-});
+const store = new SafeStore("url");
 
 const ALLOWED_HOSTNAME_PATTERNS: Record<string, RegExp> = {
     account: /^account\.(?:[a-z0-9-]+\.)?proton\.(?:black|pink)$|^account\.proton\.(?:me|dev)$/,

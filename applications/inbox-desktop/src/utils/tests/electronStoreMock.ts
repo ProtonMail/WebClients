@@ -1,18 +1,18 @@
-import Store from "electron-store";
 import { WindowBounds } from "../../store/boundsStore";
+import { SafeStore } from "../../store/safeStore/safeStore";
 import { SettingsStore } from "../../store/settingsStore";
 
 interface Singleton<T> {
     INSTANCE: T;
 }
 
-jest.mock("electron-store", () =>
-    getSingleton<(typeof MockedStore)["INSTANCE"]>(() => ({
+jest.mock("../../store/safeStore/safeStore", () => ({
+    SafeStore: getSingleton<(typeof MockedStore)["INSTANCE"]>(() => ({
         get: jest.fn(),
         set: jest.fn(),
         delete: jest.fn(),
     })),
-);
+}));
 
 function getSingleton<T extends Record<string, unknown>>(getInstance: () => T) {
     return class SingletonImpl {
@@ -29,7 +29,7 @@ function getSingleton<T extends Record<string, unknown>>(getInstance: () => T) {
     };
 }
 
-export const MockedStore = Store as unknown as Singleton<{
+export const MockedStore = SafeStore as unknown as Singleton<{
     get: jest.MockedFn<() => SettingsStore | WindowBounds>;
     set: () => void;
     delete: () => void;
