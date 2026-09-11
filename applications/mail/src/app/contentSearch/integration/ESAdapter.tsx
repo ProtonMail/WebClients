@@ -10,6 +10,8 @@ import type {
     ESTimepoint,
     NormalizedSearchParams,
 } from '@proton/encrypted-search/models';
+import { getMailboxAddressType } from '@proton/encrypted-search/useContentSearchTelemetry';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 import noop from '@proton/utils/noop';
 
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
@@ -97,6 +99,8 @@ export class ESAdapter implements FunctionsV2 {
     public esCallbacks: ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent>;
     /** Per-render dependency, refreshed by `useContentSearch` — the legacy `useEncryptedSearch` instance. */
     public esLibraryFunctionsV1: FunctionsV1;
+    /** Per-render dependency, refreshed by `useContentSearch` — for `mailbox_index_completed`'s `mailboxAddressType`. */
+    public addresses: Address[] | undefined;
     /**
      * Whether v2 is the engine in charge this session (see `useContentSearch`'s `isActive`). Only
      * `handleEvent` is reachable while this is false, and then it records without importing.
@@ -275,6 +279,16 @@ export class ESAdapter implements FunctionsV2 {
             // event touched, and the next event retries.
             if (mode === 'index' && outcome === 'failed') {
                 this.isV2IndexIncomplete = true;
+            }
+            // Mirrors v1's `mailbox_index_completed`: only the first full historic pass, spanning both
+            // v1's own indexing and the v2 import that follows it — never a refresh or limit extension.
+            if (mode === 'index' && outcome === 'completed') {
+                this.metricService.sendMailboxIndexCompletedReport({
+                    status: 'success',
+                    totalMessagesIndexed: job.totalMessagesIndexed,
+                    durationMs: Date.now() - job.startedAt,
+                    mailboxAddressType: getMailboxAddressType(this.addresses),
+                });
             }
         });
         return job;
