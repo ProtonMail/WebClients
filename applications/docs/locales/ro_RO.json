@@ -963,6 +963,15 @@
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }"
+      ],
+      "Add a payment method": [
+        "Adăugați o metodă de plată"
+      ],
+      "Export this version (as odt) (Beta)": [
+        "Exportare această versiune (ca odt) (Beta)"
+      ],
+      "OpenDocument Text (.odt) (Beta)": [
+        "Text OpenDocument (.odt) (Beta)"
       ]
     },
     "Actions message": {
@@ -3803,6 +3812,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nume nedecriptabil."
+      ],
+      "A contact with this email address already exists": [
+        "Deja există un contact cu această adresă de e-mail."
       ]
     },
     "error": {
@@ -4132,6 +4144,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Contul utilizează ${ usedSpace } de stocare, care depășește cei ${ inviteSpace } care vi s-au alocat. Ștergeți unele date sau cereți administratorului planului să vă crească limita de stocare."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Ați primit o invitație să vă conectați contul ${ BRAND_NAME } la acest grup de familie și să vă bucurați împreună de toate funcțiile premium."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4211,6 +4226,12 @@
       ],
       "Touch your security key.": [
         "Atingeți cheia de securitate."
+      ],
+      "Still waiting?": [
+        "Încă așteptați?"
+      ],
+      "Touch your security key to continue.": [
+        "Atingeți cheia de securitate pentru a continua."
       ]
     },
     "fido2: Label": {
@@ -5880,7 +5901,7 @@
         "Litere mari și mici"
       ],
       "username": [
-        "utilizator"
+        "nume de utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -6141,6 +6162,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Veți putea totuși să vă vizualizați datele propriului cont, dar toate conturile de utilizator vor fi eliminate din organizație."
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a evita pierderea accesului. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a vă păstra abonamentul. ${ learnMoreLink }"
+      ],
+      "Do you remember your password?": [
+        "Vă amintiți parola?"
+      ],
+      "Link expired": [
+        "legătură web expirată."
       ]
     },
     "info": {
@@ -6204,7 +6237,7 @@
     },
     "Label": {
       "${ BRAND_NAME } username": [
-        "Nnume de utilizator ${ BRAND_NAME }"
+        "Nume de utilizator ${ BRAND_NAME }"
       ],
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } de caractere"
@@ -6645,7 +6678,7 @@
         "Model URL cu caractere generice"
       ],
       "Username": [
-        "Nume utilizator"
+        "Nume de utilizator"
       ],
       "Verification code": [
         "Cod de verificare"
@@ -6688,6 +6721,9 @@
       ],
       "Your password (trusted contact)": [
         "Parola dvs. (contact aprobat)"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nume nedecriptabil"
       ]
     },
     "Label for contact group color": {
@@ -8972,7 +9008,7 @@
         "Nume"
       ],
       "Name or email address": [
-        "Nume utilizator/adresa de e-mail"
+        "Nume de utilizator/adresa de e-mail"
       ],
       "Organization name": [
         "Nume organizație"
@@ -11245,6 +11281,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Li s-a trimis o invitație pentru a accesa articolul."
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Această legătură web a expirat. Prelungiți data expirării."
       ]
     },
     "tooltip": {

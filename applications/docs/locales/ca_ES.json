@@ -961,6 +961,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte.",
         "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte."
+      ],
+      "Add a payment method": [
+        "Afegiu un mètode de pagament"
+      ],
+      "Export this version (as odt) (Beta)": [
+        "Exportar aquesta versió (com a odt) (Beta)"
+      ],
+      "OpenDocument Text (.odt) (Beta)": [
+        "Text OpenDocument (.odt) (Beta)"
       ]
     },
     "Actions message": {
@@ -3774,6 +3783,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ No es pot desxifrar aquest nom"
+      ],
+      "A contact with this email address already exists": [
+        "Ja existeix un contacte amb aquesta adreça de correu electrònic"
       ]
     },
     "error": {
@@ -4101,6 +4113,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "El vostre compte utilitza ${ usedSpace } d'emmagatzematge, que supera els ${ inviteSpace } que us van assignar. Elimineu algunes dades o demaneu a l'administrador del pla que augmenti l'emmagatzematge."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Esteu convidats a vincular el vostre compte de ${ BRAND_NAME } a aquest grup familiar i gaudir de totes les seves característiques prèmium."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4180,6 +4195,12 @@
       ],
       "Touch your security key.": [
         "Toqueu la vostra clau de seguretat."
+      ],
+      "Still waiting?": [
+        "Encara esteu esperant?"
+      ],
+      "Touch your security key to continue.": [
+        "Toqueu la clau de seguretat per continuar."
       ]
     },
     "fido2: Label": {
@@ -6064,6 +6085,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Encara podreu veure les dades del vostre compte, però tots els comptes d'usuari s'eliminaran de la vostra organització."
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Us queda ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per no perdre'n l'accés. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Us queden ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per a mantenir la vostra subscripció. ${ learnMoreLink }"
+      ],
+      "Do you remember your password?": [
+        "Recordeu la vostra contrasenya?"
+      ],
+      "Link expired": [
+        "L’enllaç ha caducat."
       ]
     },
     "info": {
@@ -6609,6 +6642,9 @@
       ],
       "Your password (trusted contact)": [
         "La vostra contrasenya (contacte de confiança)"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️Aquest nom no es pot desencriptar"
       ]
     },
     "Label for contact group color": {
@@ -11111,6 +11147,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Els hem enviat una invitació per accedir a l'element."
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Aquest enllaç ha caducat. Amplieu la data de caducitat"
       ]
     },
     "tooltip": {

@@ -4083,6 +4083,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Uw account gebruikt ${ usedSpace } aan opslagruimte. Dat is meer dan de ${ inviteSpace } die aan u is toegewezen. Verwijder gegevens of vraag de abonnementsbeheerder uw opslagruimte uit te breiden."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "U wordt uitgenodigd om uw ${ BRAND_NAME }-account aan deze gezinsgroep te koppelen en van alle premiumfuncties te genieten."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4162,6 +4165,12 @@
       ],
       "Touch your security key.": [
         "Raak uw beveiligingssleutel aan."
+      ],
+      "Still waiting?": [
+        "Nog aan het wachten?"
+      ],
+      "Touch your security key to continue.": [
+        "Raak uw beveiligingssleutel aan om door te gaan."
       ]
     },
     "fido2: Label": {
@@ -6010,6 +6019,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "U kunt nog steeds uw eigen accountgegevens bekijken, maar alle gebruikersaccounts worden verwijderd uit uw organisatie."
+      ],
+      "Do you remember your password?": [
+        "Weet u uw wachtwoord nog?"
+      ],
+      "Link expired": [
+        "Link is vervallen"
       ]
     },
     "info": {
@@ -6543,6 +6558,9 @@
       ],
       "Your password (trusted contact)": [
         "Uw wachtwoord (vertrouwd contact)"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Onversleutelbare naam"
       ]
     },
     "Label for contact group color": {
@@ -8042,7 +8060,7 @@
     },
     "ngc_access_banner: info": {
       "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
-        "U hebt nu toegang tot de nieuwe ${ CALENDAR_APP_NAME }. ${ link }"
+        "U heeft nu toegang tot de nieuwe ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     },
     "Notification": {

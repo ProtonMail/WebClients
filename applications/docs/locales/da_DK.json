@@ -961,6 +961,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner",
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner"
+      ],
+      "Add a payment method": [
+        "Tilføj en betalingsmetode"
+      ],
+      "Export this version (as odt) (Beta)": [
+        "Eksportér denne version (som odt) (beta)"
+      ],
+      "OpenDocument Text (.odt) (Beta)": [
+        "OpenDocument Text (.odt) (beta)"
       ]
     },
     "Actions message": {
@@ -3774,6 +3783,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn, der ikke kan dekrypteres"
+      ],
+      "A contact with this email address already exists": [
+        "En kontakt med denne e-mailadresse eksisterer allerede"
       ]
     },
     "error": {
@@ -4101,6 +4113,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Din konto bruger ${ usedSpace } lagerplads, hvilket overstiger de ${ inviteSpace } du har fået tildelt. Slet nogle data eller bed abonnementsadministratoren om at øge din lagerplads."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du er inviteret til at forbinde din ${ BRAND_NAME }-konto til denne familiegruppe og nyde alle dens premium-funktioner."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4180,6 +4195,12 @@
       ],
       "Touch your security key.": [
         "Tryk på din sikkerhedsnøgle."
+      ],
+      "Still waiting?": [
+        "Venter du stadig?"
+      ],
+      "Touch your security key to continue.": [
+        "Tryk på din sikkerhedsnøgle for at fortsætte."
       ]
     },
     "fido2: Label": {
@@ -6064,6 +6085,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Der er ${ timeRemaining } tilbage tilbage i prøveversionen. ${ addPaymentMethodLink } for at undgå at miste adgang. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Der er ${ timeRemaining } tilbage tilbage i prøveversionen. ${ addPaymentMethodLink } for at beholde dit abonnement. ${ learnMoreLink }"
+      ],
+      "Do you remember your password?": [
+        "Kan du godt huske din adgangskode?"
+      ],
+      "Link expired": [
+        "Link udløbet"
       ]
     },
     "info": {
@@ -6609,6 +6642,9 @@
       ],
       "Your password (trusted contact)": [
         "Din adgangskode (betroet kontakt)"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Navn, der ikke kan dekrypteres"
       ]
     },
     "Label for contact group color": {
@@ -11054,6 +11090,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Vi har sendt dem en invitation til at tilgå emnet."
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Dette link er udløbet. Forlæng udløbsdatoen"
       ]
     },
     "tooltip": {
