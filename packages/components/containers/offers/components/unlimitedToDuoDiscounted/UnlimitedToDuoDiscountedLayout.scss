@@ -1,0 +1,181 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+$duo-discount-ink: #372580;
+$duo-discount-dark-bg: #1b1340;
+
+// Remove the content margin so the header image bleeds to the dialog edges.
+// Do NOT touch .modal-two padding, that's the viewport breathing room.
+.modal-two:has(.offer-unlimited-to-duo-discounted) {
+	.modal-two-content {
+		margin: 0;
+	}
+}
+
+.duoDiscountHeaderSection {
+	position: relative;
+	min-block-size: 13.5rem;
+	overflow: hidden;
+
+	// Flat base with a radial highlight over it at 80%, matching the Figma background stack. The
+	// highlight is centred just outside the bottom-right corner, so only its falloff is in frame.
+	background:
+		radial-gradient(58% 106% at 104% 125%, rgb(167 146 255 / 0.8) 0%, rgb(27 19 64 / 0.8) 100%), $duo-discount-dark-bg;
+
+	@include im.media('<=small') {
+		min-block-size: 11rem;
+	}
+}
+
+.duoDiscountKVImage {
+	position: absolute;
+	inset-block-start: 50%;
+	inset-inline-end: 8%;
+	inline-size: 46%;
+	block-size: auto;
+	max-block-size: 60%;
+	object-fit: contain;
+	transform: translateY(-50%);
+}
+
+.duoDiscountHeaderContent {
+	position: relative;
+	inline-size: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 2rem;
+	padding-block: 2.5rem 1.75rem;
+	padding-inline: 3rem;
+	color: white;
+
+	@include im.media('<=small') {
+		gap: 1.25rem;
+		padding-block: 1.5rem 1.25rem;
+		padding-inline: 1.5rem;
+	}
+}
+
+.duoDiscountBadge {
+	display: inline-flex;
+	align-items: center;
+	padding-block: 0.25rem;
+	padding-inline: 0.625rem;
+	border-radius: 0.1875rem;
+	background: #6d4aff;
+	color: white;
+	font-size: 2.5rem;
+	line-height: 1.15;
+	letter-spacing: -0.04em;
+
+	@include im.media('<=small') {
+		font-size: 2rem;
+	}
+}
+
+.duoDiscountPlanLockup {
+	.logo {
+		margin-inline-end: -0.25rem;
+	}
+}
+
+.duoDiscountPlanName {
+	font-size: 1.5rem;
+}
+
+.duoDiscountForMonths {
+	font-size: 1rem;
+}
+
+.duoDiscountContent {
+	padding-block: 1.25rem;
+	padding-inline: 3rem;
+	background: white;
+
+	@include im.media('<=small') {
+		padding-inline: 1.5rem;
+	}
+}
+
+.duoDiscountPrice {
+	font-size: 3rem;
+	line-height: 1;
+	color: $duo-discount-ink;
+}
+
+.duoDiscountFeatures {
+	padding: 0;
+	list-style-type: none;
+	color: $duo-discount-ink;
+
+	li:not(:last-child) {
+		border-block-end: 1px solid rgb(55 37 128 / 0.28);
+	}
+}
+
+.offer-modal.offer-unlimited-to-duo-discounted {
+	max-inline-size: 31rem;
+	background: white;
+
+	.offer-close-button {
+		--top-custom: 0 !important;
+
+		background: #fffc;
+		border-radius: 50%;
+		inline-size: 2rem;
+		block-size: 2rem;
+		margin-block-start: 0.75rem;
+		margin-inline-end: 0.75rem;
+	}
+
+	.modal-close-icon {
+		fill: black;
+	}
+
+	.offer-disable-button {
+		color: $duo-discount-ink;
+	}
+
+	.scroll-child {
+		overflow-y: scroll;
+	}
+
+	&.offer-modal--one-deal {
+		&#{&} {
+			.scroll-outer-vertical .scroll-inner,
+			.scroll-outer-vertical .scroll-child {
+				overflow: overlay;
+			}
+		}
+	}
+}
+
+[data-theme-mode='dark'] {
+	.duoDiscountContent {
+		background: $duo-discount-dark-bg;
+	}
+
+	.duoDiscountPrice {
+		color: white;
+	}
+
+	.duoDiscountFeatures {
+		color: white;
+
+		li:not(:last-child) {
+			border-block-end-color: rgb(255 255 255 / 0.28);
+		}
+	}
+
+	.offer-modal.offer-unlimited-to-duo-discounted {
+		background: $duo-discount-dark-bg;
+
+		.offer-disable-button {
+			color: white;
+		}
+	}
+}
