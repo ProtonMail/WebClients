@@ -1745,6 +1745,9 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "Add a payment method": [
+        "결제 방법 추가하기"
       ]
     },
     "action": {
@@ -9620,6 +9623,33 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "몇 번의 클릭만으로 정리된 받은 편지함을 만들어 보세요"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "무료 체험이 ${ timeRemaining }일 남았습니다. 접근 권한을 상실하지 않으려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "무료 체험이 ${ timeRemaining }일 남았습니다. 구독을 유지하려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "Create filter": [
+        "필터 생성"
+      ],
+      "Read your auto-reply": [
+        "자동 회신 읽기"
+      ],
+      "Read your signature": [
+        "서명 읽기"
+      ],
+      "Rename folder": [
+        "폴더 이름 변경"
+      ],
+      "Set auto-reply": [
+        "자동 회신 설정"
+      ],
+      "Set signature": [
+        "서명 설정"
+      ],
+      "Turn off auto-reply": [
+        "자동 회신 비활성화"
       ]
     },
     "info": {
@@ -10912,6 +10942,24 @@
       ],
       "ZIP code": [
         "우편번호"
+      ],
+      "Away message": [
+        "부재중 메시지"
+      ],
+      "Display name": [
+        "표시되는 이름"
+      ],
+      "From date": [
+        "시작일"
+      ],
+      "From time": [
+        "시작일"
+      ],
+      "New name": [
+        "새 이름"
+      ],
+      "Until date": [
+        "종료일"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11259,6 +11307,12 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "업데이트된 초대장을 보려면 키를 다시 활성화하셔야 합니다"
+      ],
+      "Add formatting, links or images": [
+        "형식, 링크 및 이미지 추가"
+      ],
+      "Advanced auto-reply options": [
+        "고급 자동 회신 옵션"
       ]
     },
     "Link to calendar event": {
@@ -12300,6 +12354,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Last4 }(으)로 끝나는 ${ Brand }"
       ]
     },
     "new_plans: label": {
@@ -17682,6 +17739,22 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "청구 주소 변경은 추후 청구서의 세율에 영향을 줄 수 있습니다."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "번호가 ${ Last4 }(으)로 끝나는 Apple Pay 카드"
+      ],
+      "Bank transfer - ${ iban }": [
+        "은행 송금 - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - 번호가 ${ Last4 }(으)로 끝나는 카드"
       ]
     }
   }

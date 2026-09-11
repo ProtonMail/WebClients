@@ -1547,7 +1547,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -1750,6 +1751,12 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Add a payment method": [
+        "Tilføj en betalingsmetode"
+      ],
+      "Add more details": [
+        "Tilføj flere oplysninger"
       ]
     },
     "action": {
@@ -5704,6 +5711,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din søgning gav for mange resultater. Begræns din søgning, og forsøg igen."
+      ],
+      "A contact with this email address already exists": [
+        "En kontakt med denne e-mailadresse eksisterer allerede"
       ]
     },
     "error": {
@@ -6167,6 +6177,12 @@
       ],
       "Touch your security key.": [
         "Tryk på din sikkerhedsnøgle."
+      ],
+      "Still waiting?": [
+        "Venter du stadig?"
+      ],
+      "Touch your security key to continue.": [
+        "Tryk på din sikkerhedsnøgle for at fortsætte."
       ]
     },
     "fido2: Label": {
@@ -9816,6 +9832,133 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er få klik fra en ryddelig indbakke."
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } har foretaget ${ count } indtil videre. Forsæt?"
+      ],
+      "${ steps } step": [
+        "${ steps } trin",
+        "${ steps } trin"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Der er ${ timeRemaining } tilbage tilbage i prøveversionen. ${ addPaymentMethodLink } for at undgå at miste adgang. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Der er ${ timeRemaining } tilbage tilbage i prøveversionen. ${ addPaymentMethodLink } for at beholde dit abonnement. ${ learnMoreLink }"
+      ],
+      "Add ${ contact } to your contacts": [
+        "Tilføj ${ contact } til dine kontakter"
+      ],
+      "Add a contact": [
+        "Tilføj en kontakt"
+      ],
+      "Add contact": [
+        "Opret kontakt"
+      ],
+      "Change a display setting": [
+        "Skift en visningsindstilling"
+      ],
+      "Change how your mail is grouped": [
+        "Skift måden din e-mails bliver grupperet"
+      ],
+      "Change your list density": [
+        "Skift tætheden på listen"
+      ],
+      "Change your mailbox layout": [
+        "Skift din postkasses layout"
+      ],
+      "Change your theme": [
+        "Skift dit tema"
+      ],
+      "Create a filter": [
+        "Opret et filter"
+      ],
+      "Create a folder": [
+        "Opret en mappe"
+      ],
+      "Create a label": [
+        "Opret en etiket"
+      ],
+      "Document in foundation-search index": [
+        "Dokument i foundation-søgeindeks."
+      ],
+      "Document lookup failed": [
+        "Opslag af dokument mislykkedes"
+      ],
+      "Label ${ emails }": [
+        "Sæt etiket på ${ emails }"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "Sæt etiketten ${ names } på ${ emails }"
+      ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Opslag af dokumentet ${ lookup.result.docId }"
+      ],
+      "Mark ${ emails } as read": [
+        "Markér ${ emails } som læste"
+      ],
+      "Mark ${ emails } as unread": [
+        "Markér ${ emails } som ulæste"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "Markér hele ${ place } som læst"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "Markér hele ${ place } som ulæst"
+      ],
+      "Move ${ emails }": [
+        "Flyt ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Flyt ${ emails } til ${ destination }"
+      ],
+      "No emails selected": [
+        "Ingen valgte e-mails"
+      ],
+      "No location selected": [
+        "Ingen placering valgt"
+      ],
+      "Not found in the encrypted search index.": [
+        "Ikke fundet i det kryterede søgeindeks."
+      ],
+      "Not found in the foundation-search index.": [
+        "Ikke fundet i foundation-søgeindekset."
+      ],
+      "Remove the star from ${ emails }": [
+        "Fjern stjernemarkeringen fra ${ emails }"
+      ],
+      "Rename ${ folder } to…": [
+        "Omdøb ${ folder } til..."
+      ],
+      "Rename this folder": [
+        "Omdøb denne mappe"
+      ],
+      "Results came from the local search.": [
+        "Resultaterne kom fra den lokale søgning."
+      ],
+      "Results came from the server.": [
+        "Resultaterne kom fra serveren."
+      ],
+      "Set your signature": [
+        "Indstil din signatur"
+      ],
+      "Source document in encrypted search index": [
+        "Kildedokument i krypteret søgeindeks"
+      ],
+      "Star ${ emails }": [
+        "Stjernemarkér ${ emails }"
+      ],
+      "Turn off your away message": [
+        "Slå din ikke til stede-besked fra"
+      ],
+      "Turn on your away message": [
+        "Slå din ikke til stede-besked til"
+      ],
+      "Update the filter ${ filter }": [
+        "Opdater filteret ${ filter }"
+      ],
+      "Update this filter": [
+        "Opdater dette filter"
       ]
     },
     "info": {
@@ -11137,6 +11280,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Display name": [
+        "Visningsnavn"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14965,6 +15111,12 @@
       "${ count } email → ${ wakeTime }": [
         "${ count } e-mail → ${ wakeTime }",
         "${ count } e-mails → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "Udsæt ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "Udsæt ${ emails } indtil ${ wakeTime }"
       ]
     },
     "Snooze message": {
