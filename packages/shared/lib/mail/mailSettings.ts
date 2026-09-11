@@ -214,6 +214,7 @@ export const DEFAULT_MAIL_SETTINGS: MailSettings & { _isDefault: boolean } = {
     DelaySendSeconds: DELAY_IN_SECONDS.MEDIUM,
     EnableFolderColor: FOLDER_COLOR.DISABLED,
     InheritParentFolderColor: INHERIT_PARENT_FOLDER_COLOR.ENABLED,
+    IncludeSubfolderUnreadCount: true,
     FontFace: null,
     FontSize: null,
     PMSignatureReferralLink: PM_SIGNATURE_REFERRAL.DISABLED,

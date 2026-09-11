@@ -27,6 +27,7 @@ import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import SettingsSection from '../account/SettingsSection';
 import FolderTreeViewList from './FolderTreeViewList';
 import ToggleEnableFolderColor from './ToggleEnableFolderColor';
+import ToggleIncludeSubfolderUnreadCount from './ToggleIncludeSubfolderUnreadCount';
 import ToggleInheritParentFolderColor from './ToggleInheritParentFolderColor';
 import ConfirmSortModal from './modals/ConfirmSortModal';
 import EditLabelModal from './modals/EditLabelModal';
@@ -110,6 +111,17 @@ export default function FoldersSection({ showPromptOnAction = false }: Props) {
                             </SettingsLayoutRight>
                         </SettingsLayout>
                     ) : null}
+
+                    <SettingsLayout>
+                        <SettingsLayoutLeft>
+                            <label htmlFor="subfolder-unread-count" className="text-semibold">
+                                {c('Label').t`Include unread counts from subfolders`}
+                            </label>
+                        </SettingsLayoutLeft>
+                        <SettingsLayoutRight isToggleContainer>
+                            <ToggleIncludeSubfolderUnreadCount id="subfolder-unread-count" />
+                        </SettingsLayoutRight>
+                    </SettingsLayout>
 
                     <div className="flex gap-4 my-7 folders-action">
                         {canCreateFolder ? (

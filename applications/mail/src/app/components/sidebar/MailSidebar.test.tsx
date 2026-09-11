@@ -5,11 +5,11 @@ import loudRejection from 'loud-rejection';
 import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
 import { getModelState } from '@proton/account/tests';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import type { IconComponent } from '@proton/icons/component';
 import { IcFolder } from '@proton/icons/icons/IcFolder';
 import { IcFolders } from '@proton/icons/icons/IcFolders';
 import { conversationCountsActions } from '@proton/mail/store/counts/conversationCountsSlice';
+import { mailSettingsState } from '@proton/mail/store/mailSettings/mailSettings.testing';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
@@ -55,6 +55,12 @@ const getIconMarkup = (Icon: IconComponent) => {
 
 const folder = { ID: 'folder1', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder1' } as Folder;
 const subfolder = { ID: 'folder2', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder2', ParentID: folder.ID } as Folder;
+const subsubfolder = {
+    ID: 'folder3',
+    Type: LABEL_TYPE.MESSAGE_FOLDER,
+    Name: 'folder3',
+    ParentID: subfolder.ID,
+} as Folder;
 const label = { ID: 'label1', Type: LABEL_TYPE.MESSAGE_LABEL, Name: 'label1' } as Label;
 const systemFolders = [
     {
@@ -110,6 +116,8 @@ const inboxMessages = { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 3, Total: 20 }
 const allMailMessages = { LabelID: MAILBOX_LABEL_IDS.ALL_MAIL, Unread: 10000, Total: 10001 };
 const scheduledMessages = { LabelID: MAILBOX_LABEL_IDS.SCHEDULED, Unread: 1, Total: 4 };
 const folderMessages = { LabelID: folder.ID, Unread: 1, Total: 2 };
+const subfolderMessages = { LabelID: subfolder.ID, Unread: 4, Total: 5 };
+const subsubfolderMessages = { LabelID: subsubfolder.ID, Unread: 5, Total: 6 };
 const labelMessages = { LabelID: label.ID, Unread: 2, Total: 3 };
 
 describe('MailSidebar', () => {
@@ -320,28 +328,71 @@ describe('MailSidebar', () => {
 
     it('should show unread counters', async () => {
         setupTest();
+        setItem('folder_expanded_state_folder1', 'true');
+        setItem('folder_expanded_state_folder2', 'true');
+        setItem('folder_expanded_state_folder3', 'true');
 
         await mailTestRender(<MailSidebar />, {
             preloadedState: {
-                categories: getModelState([folder, label, ...systemFolders]),
-                conversationCounts: getModelState([inboxMessages, allMailMessages, folderMessages, labelMessages]),
+                categories: getModelState([folder, subfolder, subsubfolder, label, ...systemFolders]),
+                conversationCounts: getModelState([
+                    inboxMessages,
+                    allMailMessages,
+                    folderMessages,
+                    subfolderMessages,
+                    subsubfolderMessages,
+                    labelMessages,
+                ]),
             },
         });
 
         const inboxElement = screen.getByTestId(`navigation-link:inbox`);
         const allMailElement = screen.getByTestId(`navigation-link:all-mail`);
         const folderElement = screen.getByTestId(`navigation-link:${folder.ID}`);
+        const subfolderElement = screen.getByTestId(`navigation-link:${subfolder.ID}`);
         const labelElement = screen.getByTestId(`navigation-link:${label.ID}`);
 
         const inBoxLocationAside = inboxElement.querySelector('.navigation-counter-item');
         const allMailLocationAside = allMailElement.querySelector('.navigation-counter-item');
         const folderLocationAside = folderElement.querySelector('.navigation-counter-item');
+        const subfolderLocationAside = subfolderElement.querySelector('.navigation-counter-item');
         const labelLocationAside = labelElement.querySelector('.navigation-counter-item');
 
         expect(inBoxLocationAside?.innerHTML).toBe(`${inboxMessages.Unread}`);
         expect(allMailLocationAside?.innerHTML).toBe('9999+');
         expect(folderLocationAside?.innerHTML).toBe(`${folderMessages.Unread}`);
+        expect(subfolderLocationAside?.innerHTML).toBe(`${subfolderMessages.Unread}`);
         expect(labelLocationAside?.innerHTML).toBe(`${labelMessages.Unread}`);
+
+        fireEvent.click(folderElement.querySelector('button')!);
+
+        expect(folderElement.querySelector('.navigation-counter-item')?.innerHTML).toBe(
+            `${folderMessages.Unread + subfolderMessages.Unread + subsubfolderMessages.Unread}`
+        );
+
+        fireEvent.click(folderElement.querySelector('button')!);
+        fireEvent.click(subfolderElement.querySelector('button')!);
+
+        expect(subfolderElement.querySelector('.navigation-counter-item')?.innerHTML).toBe(
+            `${subfolderMessages.Unread + subsubfolderMessages.Unread}`
+        );
+    });
+
+    it('should show only direct unread counters when subfolder counts are disabled', async () => {
+        setupTest();
+        setItem('folder_expanded_state_folder1', 'false');
+
+        await mailTestRender(<MailSidebar />, {
+            preloadedState: {
+                categories: getModelState([folder, subfolder, subsubfolder, ...systemFolders]),
+                conversationCounts: getModelState([folderMessages, subfolderMessages, subsubfolderMessages]),
+                mailSettings: mailSettingsState({ IncludeSubfolderUnreadCount: false }),
+            },
+        });
+
+        const folderElement = screen.getByTestId(`navigation-link:${folder.ID}`);
+
+        expect(folderElement.querySelector('.navigation-counter-item')?.innerHTML).toBe(`${folderMessages.Unread}`);
     });
 
     it('should navigate to the label on click', async () => {

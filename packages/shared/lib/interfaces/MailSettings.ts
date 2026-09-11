@@ -76,6 +76,7 @@ export interface MailSettings {
     DelaySendSeconds: DELAY_IN_SECONDS;
     EnableFolderColor: FOLDER_COLOR;
     InheritParentFolderColor: INHERIT_PARENT_FOLDER_COLOR;
+    IncludeSubfolderUnreadCount: boolean;
     /**
      * FontFace value is a FONT_FACES.${FONT}.id value or null.
      */
