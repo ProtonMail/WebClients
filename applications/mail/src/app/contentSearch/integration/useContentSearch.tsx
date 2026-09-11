@@ -29,9 +29,10 @@ export type FunctionsV1 = EncryptedSearchFunctions<ESBaseMessage, NormalizedSear
 export type FunctionsV2 = Omit<FunctionsV1, 'esStatus' | 'esIndexingProgressState' | 'progressRecorderRef'> & {
     /** v2-only: not part of the generic `EncryptedSearchFunctions` surface v1 also implements. */
     reportResultOpened: ESAdapter['reportResultOpened'];
+    reportResultAction: ESAdapter['reportResultAction'];
 };
 /** `useContentSearch`'s return type: the generic v1 surface plus the v2-only additions above. */
-export type ContentSearchFunctions = FunctionsV1 & Pick<FunctionsV2, 'reportResultOpened'>;
+export type ContentSearchFunctions = FunctionsV1 & Pick<FunctionsV2, 'reportResultOpened' | 'reportResultAction'>;
 
 interface Props {
     refreshMask: number;
@@ -76,6 +77,7 @@ const toBoundFunctions = (adapter: ESAdapter): FunctionsV2 => ({
     getCache: adapter.getCache.bind(adapter),
     resetCache: adapter.resetCache.bind(adapter),
     reportResultOpened: adapter.reportResultOpened.bind(adapter),
+    reportResultAction: adapter.reportResultAction.bind(adapter),
 });
 
 /**
