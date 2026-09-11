@@ -90,7 +90,7 @@ const StepAuthenticate: FC<StepComponentProps> = ({ model: { provider }, onNext 
             <p className="color-weak mt-0">
                 {c('Info')
                     .t`Sign-in with a ${providerName} administrator account for ${BRAND_NAME} to setup the migration.`}{' '}
-                <Href href={getKnowledgeBaseUrl('/easy-switch-for-business')} className="inline-block">{c('Link')
+                <Href href={getKnowledgeBaseUrl(provider.knowledgeBaseSlug)} className="inline-block">{c('Link')
                     .t`Learn more`}</Href>
             </p>
             {tokens && Boolean(tokens.length) && (

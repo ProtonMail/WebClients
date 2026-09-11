@@ -12,6 +12,8 @@ type OlesProviderBase = {
      * ("microsoft") rather than the API/OAuth provider identity ("outlook").
      */
     routeSlug: string;
+    /** Knowledge base slug for this provider's Easy Switch for Business article */
+    knowledgeBaseSlug: string;
     /** Name of the other provider, e.g. "Google" */
     brandName: string;
     /** Name of the suite being migrated away from, e.g. "Google Workspace" */
@@ -65,6 +67,7 @@ export const OLES_PROVIDERS: { [Id in SupportedProvider]: OlesProviderFor<Id> } 
         apiProvider: ApiImportProvider.GOOGLE,
         oauthProvider: OAUTH_PROVIDER.GSUITE,
         routeSlug: 'google',
+        knowledgeBaseSlug: '/easy-switch-for-business',
         brandName: 'Google',
         displayName: 'Google Workspace',
         mailAppName: 'Gmail',
@@ -82,6 +85,7 @@ export const OLES_PROVIDERS: { [Id in SupportedProvider]: OlesProviderFor<Id> } 
         apiProvider: ApiImportProvider.OUTLOOK,
         oauthProvider: OAUTH_PROVIDER.MICROSOFT_BUSINESS,
         routeSlug: 'microsoft',
+        knowledgeBaseSlug: '/easy-switch-for-business-microsoft',
         brandName: 'Microsoft',
         displayName: 'Microsoft',
         mailAppName: 'Outlook',
