@@ -338,7 +338,7 @@ export function Editor({
         )}
         <FixBrokenListItemPlugin />
         <CodeHighlightPlugin />
-        <ImagesPlugin />
+        <ImagesPlugin createWarningNotification={createWarningNotification} />
         <EditorReadonlyPlugin editingEnabled={!editingLocked} />
         {hasMutationDisplay && <PasteLimitPlugin showGenericAlertModal={showGenericAlertModal} />}
         {hasMutationDisplay && <CombiningMarkPasteGuardPlugin showGenericAlertModal={showGenericAlertModal} />}
