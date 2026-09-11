@@ -952,6 +952,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contacts.",
         "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contacts."
+      ],
+      "Add a payment method": [
+        "Ajouter une méthode de paiement"
+      ],
+      "Export this version (as odt) (Beta)": [
+        "Exporter cette version (en odt) (Bêta)"
+      ],
+      "OpenDocument Text (.odt) (Beta)": [
+        "Texte OpenDocument (.odt) (Bêta)"
       ]
     },
     "Actions message": {
@@ -3663,6 +3672,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nom indéchiffrable"
+      ],
+      "A contact with this email address already exists": [
+        "Un contact portant cette adresse e-mail existe déjà."
       ]
     },
     "error": {
@@ -3990,6 +4002,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Votre compte utilise ${ usedSpace } d'espace de stockage, ce qui dépasse les ${ inviteSpace } dont vous disposez. Supprimez certaines données ou demandez à l'administrateur de l'abonnement d'augmenter votre espace de stockage."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Vous avez une invitation pour lier votre compte ${ BRAND_NAME } à ce groupe familial et à profiter de toutes ses fonctionnalités premium."
       ]
     },
     "familyOffer_2023:Label": {
@@ -5890,6 +5905,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Vous pourrez toujours consulter les données de votre propre compte, mais tous les comptes utilisateur seront retirés de votre organisation."
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Il vous reste ${ timeRemaining } de votre période d'essai. ${ addPaymentMethodLink } pour ne pas perdre votre accès. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Il vous reste ${ timeRemaining } de votre période d'essai. ${ addPaymentMethodLink } pour conserver votre abonnement. ${ learnMoreLink }"
+      ],
+      "Do you remember your password?": [
+        "Vous souvenez-vous de votre mot de passe ?"
+      ],
+      "Link expired": [
+        "Le lien a expiré."
       ]
     },
     "info": {
@@ -6426,6 +6453,9 @@
       ],
       "Your password (trusted contact)": [
         "Votre mot de passe (contacts de confiance)"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nom indéchiffrable"
       ]
     },
     "Label for contact group color": {
@@ -10895,6 +10925,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Nous leur avons envoyé une invitation pour accéder à l'élément."
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Ce lien a expiré. Veuillez prolonger sa durée de validité."
       ]
     },
     "tooltip": {

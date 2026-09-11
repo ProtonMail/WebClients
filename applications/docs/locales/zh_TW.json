@@ -929,6 +929,9 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能傳送有超過 ${ maxAttachments } 個聯絡人的 vCard 檔案"
+      ],
+      "Migrate": [
+        "遷移"
       ]
     },
     "Actions message": {
@@ -3532,6 +3535,36 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️無法解密的名字"
+      ],
+      "Cannot share root folder": [
+        "無法複製根資料夾"
+      ],
+      "Cannot verify the author of this file": [
+        "無法驗證此檔案的作者"
+      ],
+      "Copy operation aborted": [
+        "以放棄移動操作"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "解密書籤密碼失敗: ${ message }"
+      ],
+      "Image preview not found": [
+        "查無照片預覽"
+      ],
+      "Invitation not found": [
+        "未找到邀請"
+      ],
+      "Missing inviter email": [
+        "缺少邀請電子郵件"
+      ],
+      "Missing organization private key": [
+        "缺少組織私有密鑰"
+      ],
+      "This item is no longer shared": [
+        "此項目已停止共享"
+      ],
+      "You can update a public link for your own files only": [
+        "您只能更新您的檔案公開連結"
       ]
     },
     "error": {
@@ -3989,6 +4022,15 @@
       ],
       "Pending": [
         "等待中"
+      ],
+      "Activated": [
+        "已啟用"
+      ],
+      "Errors": [
+        "錯誤"
+      ],
+      "Not activated": [
+        "未啟動"
       ]
     },
     "Filter notification": {
@@ -5672,6 +5714,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍可瀏覽您的帳號資料，但所有使用者帳號將被從貴組織移除。"
+      ],
+      "Do you remember your password?": [
+        "您記得您的密碼嗎?"
+      ],
+      "Link expired": [
+        "連結已過期"
+      ],
+      "No users to display": [
+        "無使用者可顯示"
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "若要遷移此使用者，於您的 ${ provider.adminConsoleName } 取消封存它們的帳號。"
       ]
     },
     "info": {
@@ -7242,6 +7296,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫工具與擴充存取權"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } 撰寫工具與限制存取權"
       ]
     },
     "new_plans: feature highlight": {
@@ -8401,6 +8461,15 @@
       ],
       "key": [
         "金鑰"
+      ],
+      "hash key": [
+        "雜湊金鑰"
+      ],
+      "membership": [
+        "會員資格"
+      ],
+      "name": [
+        "名稱"
       ]
     },
     "Property type": {
@@ -9590,6 +9659,9 @@
       ],
       "User": [
         "使用者"
+      ],
+      "Migration status": [
+        "遷移狀態"
       ]
     },
     "TableHeader": {
@@ -10579,6 +10651,38 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的試用將於 ${ textDate } 結束。若您在 ${ textDate } 前取消，則不會收費。${ action }"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "取得優惠"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/每月"
+      ],
+      "2 TB of secure storage": [
+        "2TB 的安全儲存空間"
+      ],
+      "3 TB of secure storage": [
+        "3TB 的安全儲存空間"
+      ],
+      "500 GB of secure storage": [
+        "500 GB 安全儲存空間"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "全部的頂級質子版 ${ DRIVE_SHORT_APP_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 和 ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "12 個月"
+      ],
+      "One plan, more power": [
+        "單一方案，更多能量"
       ]
     }
   }

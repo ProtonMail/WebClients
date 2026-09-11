@@ -958,6 +958,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz",
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz"
+      ],
+      "Add a payment method": [
+        "Bir ödeme yöntemi ekleyin"
+      ],
+      "Export this version (as odt) (Beta)": [
+        "Bu sürümü dışa aktar (odt olarak, Beta)"
+      ],
+      "OpenDocument Text (.odt) (Beta)": [
+        "OpenDocument yazısı (.ods, Beta)"
       ]
     },
     "Actions message": {
@@ -3771,6 +3780,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Şifresi çözülemeyen ad"
+      ],
+      "A contact with this email address already exists": [
+        "Bu e-posta adresiyle bir kişi kaydı zaten var"
       ]
     },
     "error": {
@@ -4098,6 +4110,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Hesabınız, size ayrılmış ${ inviteSpace } boyutunu aşan ${ usedSpace } depolama alanı kullanıyor. Bazı verileri silin ya da tarife yöneticisinden depolama alanınızı artırmasını isteyin."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "${ BRAND_NAME } hesabınızı bu aile grubuna bağlamaya ve tüm ücretli özelliklerinin tadını çıkarmaya davetlisiniz."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4177,6 +4192,12 @@
       ],
       "Touch your security key.": [
         "Güvenlik anahtarınıza dokunun."
+      ],
+      "Still waiting?": [
+        "Hâlâ bekliyor musunuz?"
+      ],
+      "Touch your security key to continue.": [
+        "İlerlemek için güvenlik anahtarınıza dokunun."
       ]
     },
     "fido2: Label": {
@@ -6061,6 +6082,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Erişiminizi kaybetmemek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Aboneliğinizi sürdürmek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "Do you remember your password?": [
+        "Parolanızı anımsıyor musunuz?"
+      ],
+      "Link expired": [
+        "Bağlantının süresi doldu"
       ]
     },
     "info": {
@@ -6606,6 +6639,9 @@
       ],
       "Your password (trusted contact)": [
         "Parolanız (güvenilen kişi)"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Şifresi çözülemeyen ad"
       ]
     },
     "Label for contact group color": {
@@ -11051,6 +11087,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Dosyaya erişebilmeleri için bir davetiye gönderdik."
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Bu bağlantının geçerlilik süresi dolmuş. Lütfen geçerlilik sonu tarihini uzatın"
       ]
     },
     "tooltip": {
