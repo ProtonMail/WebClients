@@ -16,14 +16,6 @@ import { getDaysSincePeriodStart, isInOfferWindow } from './offerWindow';
 
 const ELIGIBLE_CYCLES: CYCLE[] = [CYCLE.YEARLY, CYCLE.TWO_YEARS];
 
-/**
- * The offer runs in Mail, Calendar and Drive, plus the matching product dashboards in the account
- * app. The audience is defined by plan rather than by app, so an Unlimited subscriber is eligible in
- * any of the three; which app they were in is recorded in the tracking ref instead.
- *
- * Deliberately local rather than shared with the seasonal campaign helpers: this offer's app scope is
- * its own decision and should not move when a campaign changes.
- */
 const ELIGIBLE_APPS = new Set<APP_NAMES>([APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE]);
 
 const isEligibleApp = (protonConfig: ProtonConfig, pathname: string): boolean => {
@@ -41,9 +33,6 @@ const isEligibleApp = (protonConfig: ProtonConfig, pathname: string): boolean =>
 /**
  * Targets Unlimited subscribers on a yearly or two-yearly web plan who are approaching renewal,
  * offering Duo 12M at a discount. Runs in Mail, Calendar and Drive.
- *
- * Auto-renew state is deliberately not checked: a subscriber who has cancelled is exactly the
- * at-risk audience this offer exists for, so they are treated identically to one who will renew.
  */
 export function getIsEligible({
     user,
