@@ -143,6 +143,20 @@
 		}
 	}
 
+	// Unlimited to Duo discounted offer
+	&--unlimited-to-duo-discounted {
+		&#{&} {
+			color: var(--primary);
+			border-color: var(--interaction-weak-major-1);
+			border-radius: var(--border-radius-md);
+
+			svg {
+				color: var(--primary);
+				fill: var(--primary);
+			}
+		}
+	}
+
 	// Unlimited permanent offer 2025
 	&--go-unlimited-2025 {
 		&#{&} {
