@@ -1,6 +1,12 @@
 import { destroyFeatureFlagManagerTest, getFeatureFlagManager, initializeFeatureFlagManagerTest } from "./manager";
 
-jest.mock("electron-store");
+jest.mock("../../store/safeStore/safeStore", () => ({
+    SafeStore: class {
+        get = jest.fn();
+        set = jest.fn();
+        delete = jest.fn();
+    },
+}));
 
 jest.mock("../log", () => ({
     flagManagerLogger: {

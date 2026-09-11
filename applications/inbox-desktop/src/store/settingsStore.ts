@@ -1,12 +1,10 @@
-import Store from "electron-store";
 import { settingsLogger } from "../utils/log";
 import { RELEASE_CATEGORIES } from "@proton/shared/lib/constants";
 import { Environment } from "@proton/shared/lib/interfaces/Environment";
 import { ThemeSetting } from "@proton/shared/lib/themes/themes";
+import { SafeStore } from "./safeStore/safeStore";
 
-const store = new Store<{ settings: SettingsStore }>({
-    configFileMode: 0o600,
-});
+const store = new SafeStore<{ settings: SettingsStore }>("settings");
 
 export interface SettingsStore {
     spellChecker: boolean;
