@@ -17,8 +17,6 @@ export type EndpointContext = {
     /** Parsed URL of the current endpoint. In iframe contexts, this represents
      * the iframe's URL. Use `tabUrl` to access the top-level frame's tab URL. */
     frameUrl: MaybeNull<ParsedUrl>;
-    /** Title of the top-level browser tab (`tabs.Tab.title`). */
-    tabTitle: MaybeNull<string>;
     /** Origin of the top-level tab frame. In non-iframe contexts, this
      * matches `url`. */
     tabUrl: MaybeNull<ParsedUrl>;
