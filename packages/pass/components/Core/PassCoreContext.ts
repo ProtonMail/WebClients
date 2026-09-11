@@ -28,8 +28,6 @@ export interface PopupController {
 export type ExtensionClientState = {
     /** Parsed URL of the underlying active tab */
     url: MaybeNull<ParsedUrl>;
-    /** Title of the underlying active browser tab */
-    title: MaybeNull<string>;
     /** tabID of the current context window */
     tabId?: TabId;
     /** Port name of the current client */
