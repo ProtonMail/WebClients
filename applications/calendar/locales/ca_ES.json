@@ -1055,6 +1055,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add a payment method": [
+        "Afegiu un mètode de pagament"
       ]
     },
     "action": {
@@ -4476,6 +4479,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "La vostra connexió de Zoom ha caducat. Torneu a connectar-vos per continuar."
+      ],
+      "A contact with this email address already exists": [
+        "Ja existeix un contacte amb aquesta adreça de correu electrònic"
       ]
     },
     "error": {
@@ -4961,6 +4967,12 @@
       ],
       "Touch your security key.": [
         "Toqueu la vostra clau de seguretat."
+      ],
+      "Still waiting?": [
+        "Encara esteu esperant?"
+      ],
+      "Touch your security key to continue.": [
+        "Toqueu la clau de seguretat per continuar."
       ]
     },
     "fido2: Label": {
@@ -7115,6 +7127,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Heu arribat al límit de reserves (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Us queda ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per no perdre'n l'accés. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Us queden ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per a mantenir la vostra subscripció. ${ learnMoreLink }"
       ]
     },
     "info": {
