@@ -1,3 +1,7 @@
+import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
+
+import { notifyDesktopOAuthPopupFinished, notifyDesktopOAuthPopupStarted } from '../helpers/oauthDesktopSession';
+
 const WINDOW_WIDTH = 500;
 const WINDOW_HEIGHT = 600;
 
@@ -6,13 +10,11 @@ const POLLING_INTERVAL = 50;
 /**
  * Opens a provider's admin consent page in a popup and resolves once the admin is done with it,
  * either because it came back to `redirectUri`, because they closed it, or because the caller
- * aborted through `signal` (in which case the popup is closed for them).
- *
- * Unlike `openOAuthPopup` this exchanges nothing and stores no token: consent is granted to our
- * app on the admin's tenant, so whether it worked is only ever answered by the connectivity
- * endpoint. Callers should verify regardless of how this resolves, unless it was aborted.
+ * aborted. Unlike `openOAuthPopup` this exchanges nothing / stores no tokens, so whether it
+ * worked is answered only by the connectivity endpoint (which itself may be delayed depending on
+ * how the end provider implements it).
  */
-export const openAdminConsentPopup = ({
+export const openAdminConsentPopup = async ({
     url,
     redirectUri,
     signal,
@@ -20,13 +22,24 @@ export const openAdminConsentPopup = ({
     url: string;
     redirectUri: string;
     signal?: AbortSignal;
-}): Promise<void> =>
-    new Promise((resolve) => {
-        if (signal?.aborted) {
-            resolve();
-            return;
-        }
+}): Promise<void> => {
+    if (signal?.aborted) {
+        return;
+    }
 
+    const sessionId = generateProtonWebUID();
+
+    // Let the desktop (Electron) app know an OAuth-style popup is opening so
+    // it renders it as a native window rather than the system browser
+    await notifyDesktopOAuthPopupStarted(url, sessionId);
+
+    if (signal?.aborted) {
+        // Lost interest during the up-to-5s IPC wait: don't open a popup, and balance `Started` above.
+        void notifyDesktopOAuthPopupFinished(sessionId);
+        return;
+    }
+
+    return new Promise((resolve) => {
         const consentWindow = window.open(
             url,
             'adminConsentPopup',
@@ -36,6 +49,7 @@ export const openAdminConsentPopup = ({
         );
 
         if (!consentWindow) {
+            void notifyDesktopOAuthPopupFinished(sessionId);
             resolve();
             return;
         }
@@ -44,19 +58,18 @@ export const openAdminConsentPopup = ({
 
         let interval: number;
 
-        /** Drops our `abort` listener from the caller's signal once we're done with it */
         const listenerCleanup = new AbortController();
 
         const finish = () => {
             window.clearInterval(interval);
             listenerCleanup.abort();
+            void notifyDesktopOAuthPopupFinished(sessionId);
             resolve();
         };
 
         signal?.addEventListener(
             'abort',
             () => {
-                // The caller lost interest (e.g. the step unmounted): close the popup and stop polling
                 consentWindow.close();
                 finish();
             },
@@ -69,11 +82,11 @@ export const openAdminConsentPopup = ({
             }
 
             try {
-                // Throws while the popup is still on the provider's origin
                 if (!consentWindow.location.href.startsWith(redirectUri)) {
                     return;
                 }
             } catch {
+                // Throws while the popup is still on the provider's origin
                 return;
             }
 
@@ -81,3 +94,4 @@ export const openAdminConsentPopup = ({
             finish();
         }, POLLING_INTERVAL);
     });
+};
