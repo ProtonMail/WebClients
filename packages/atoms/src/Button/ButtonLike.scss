@@ -1,6 +1,7 @@
 @use 'sass:math';
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
 @use '~@proton/styles/scss/lib/dash-join' as *;
 @use '~@proton/styles/scss/lib/easing' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
@@ -198,11 +199,7 @@ im.$media-expressions: $media-expressions;
 
 	// Solid shape
 	.button-solid-#{$color} {
-		$solid-text-color: var(
-			--#{if(
-					sass($color == 'weak'): 'text-norm' ; else: dash-join($group, $color, 'contrast'),
-				)}
-		);
+		$solid-text-color: var(--#{if(sass($color == 'weak'): 'text-norm'; else: dash-join($group, $color, 'contrast'))});
 
 		--button-default-background-color: var(--#{dash-join($group, $color)});
 		--button-hover-background-color: var(--#{dash-join($group, $color, 'major-1')});
@@ -225,13 +222,13 @@ im.$media-expressions: $media-expressions;
 		--button-hover-border-color: var(--#{dash-join($group, $color, 'major-2')});
 		--button-active-border-color: var(--#{dash-join($group, $color, 'major-3')});
 		--button-default-text-color: var(
-			--#{if(sass($color == 'weak' or $color == 'norm'): 'text-norm' ; else: dash-join($group, $color, 'major-1'))}
+			--#{if(sass($color == 'weak' or $color == 'norm'): 'text-norm'; else: dash-join($group, $color, 'major-1'))}
 		);
 		--button-hover-text-color: var(
-			--#{if(sass($color == 'weak' or $color == 'norm'): 'text-norm' ; else: dash-join($group, $color, 'major-2'))}
+			--#{if(sass($color == 'weak' or $color == 'norm'): 'text-norm'; else: dash-join($group, $color, 'major-2'))}
 		);
 		--button-active-text-color: var(
-			--#{if(sass($color == 'weak' or $color == 'norm'): 'text-norm' ; else: dash-join($group, $color, 'major-3'))}
+			--#{if(sass($color == 'weak' or $color == 'norm'): 'text-norm'; else: dash-join($group, $color, 'major-3'))}
 		);
 	}
 
@@ -241,26 +238,26 @@ im.$media-expressions: $media-expressions;
 		--button-hover-background-color: var(--interaction-default-hover);
 		--button-active-background-color: var(--interaction-default-active);
 		--button-default-text-color: var(
-			--#{if(sass($color == 'weak'): 'text-norm' ; else: dash-join($group, $color, 'major-1'))}
+			--#{if(sass($color == 'weak'): 'text-norm'; else: dash-join($group, $color, 'major-1'))}
 		);
 		--button-hover-text-color: var(
-			--#{if(sass($color == 'weak'): 'text-norm' ; else: dash-join($group, $color, 'major-2'))}
+			--#{if(sass($color == 'weak'): 'text-norm'; else: dash-join($group, $color, 'major-2'))}
 		);
 		--button-active-text-color: var(
-			--#{if(sass($color == 'weak'): 'text-norm' ; else: dash-join($group, $color, 'major-3'))}
+			--#{if(sass($color == 'weak'): 'text-norm'; else: dash-join($group, $color, 'major-3'))}
 		);
 	}
 
 	// Underline shape
 	.button-underline-#{$color} {
 		--button-default-text-color: var(
-			--#{if(sass($color == 'weak'): 'text-norm' ; else: dash-join($group, $color, 'major-1'))}
+			--#{if(sass($color == 'weak'): 'text-norm'; else: dash-join($group, $color, 'major-1'))}
 		);
 		--button-hover-text-color: var(
-			--#{if(sass($color == 'weak'): 'text-norm' ; else: dash-join($group, $color, 'major-2'))}
+			--#{if(sass($color == 'weak'): 'text-norm'; else: dash-join($group, $color, 'major-2'))}
 		);
 		--button-active-text-color: var(
-			--#{if(sass($color == 'weak'): 'text-norm' ; else: dash-join($group, $color, 'major-3'))}
+			--#{if(sass($color == 'weak'): 'text-norm'; else: dash-join($group, $color, 'major-3'))}
 		);
 	}
 }
@@ -443,4 +440,16 @@ im.$media-expressions: $media-expressions;
 
 .button-pill {
 	border-radius: 2em;
+}
+
+.button-increase-click-area {
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: rem(-6);
+		background: transparent;
+		z-index: 0;
+	}
 }
