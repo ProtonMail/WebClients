@@ -39,6 +39,7 @@ export const selectConversationMode = createSelector([selectParams], (params) =>
 export const selectSort = createSelector([selectParams], (params) => params.sort);
 export const selectFilter = createSelector([selectParams], (params) => params.filter);
 export const selectSearch = createSelector([selectParams], (params) => params.search);
+export const selectIsSearchActive = createSelector([selectSearch], (search) => isSearch(search));
 export const selectIsSearching = createSelector([selectParams], (params) => params.isSearching);
 export const selectNewsletterSubscriptionID = createSelector(
     [selectParams],

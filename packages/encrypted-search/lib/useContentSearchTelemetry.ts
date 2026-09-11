@@ -10,22 +10,22 @@ import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 
-import type {
-    ContentSearchActionSurface,
-    ContentSearchEventStatus,
-    ContentSearchMailboxAddressType,
-    ContentSearchPrimaryMatchType,
-    ContentSearchResultAction,
-    ContentSearchScrollerMode,
-    ContentSearchVersion,
+import {
+    type ContentSearchActionSurface,
+    type ContentSearchEventStatus,
+    type ContentSearchIndexErrorKind,
+    type ContentSearchMailboxAddressType,
+    type ContentSearchPrimaryMatchType,
+    type ContentSearchResultAction,
+    SEARCH_RESULT_SCROLLER_MODE,
 } from './models/contentSearchTelemetry';
-
-/**
- * Events shared with mobile's Content Search schema (measurement_group `mail.any.search`), used to compare
- * Encrypted Search (`searchVersion` 'v1', sent from here) against Content Search ('v2', sent separately from
- * mail's contentSearch module). Only sent for mail, since Content Search doesn't exist for calendar/drive.
- */
-const SEARCH_VERSION_V1: ContentSearchVersion = 'v1';
+import {
+    SEARCH_VERSION_V1,
+    recordSearchResultAction,
+    recordSearchResultOpened,
+    setSearchSessionResults,
+    setSearchSessionScroller,
+} from './searchSession';
 
 /**
  * Classifies an account's addresses for the `mailboxAddressType` dimension, used to break out BYOE
@@ -58,13 +58,20 @@ export const useContentSearchTelemetry = () => {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         resultCount,
         durationMs,
+        startTime,
+        endTime,
     }: {
         hasResults: boolean;
         status: ContentSearchEventStatus;
         errorKind?: string;
         resultCount: number;
         durationMs: number;
+        startTime: number;
+        endTime: number;
     }) => {
+        setSearchSessionResults({ hasResults });
+        setSearchSessionScroller(SEARCH_RESULT_SCROLLER_MODE);
+
         if (!isMailApp) {
             return;
         }
@@ -77,12 +84,15 @@ export const useContentSearchTelemetry = () => {
                 // TODO this can be changed once INWEB-1184 is fixed
                 resultCount: 0,
                 durationMs,
+                startTime,
+                endTime,
             },
             dimensions: {
                 searchSource: 'local',
                 hasResults: hasResults.toString(),
                 status,
                 errorKind,
+                scrollerMode: SEARCH_RESULT_SCROLLER_MODE,
                 searchVersion: SEARCH_VERSION_V1,
             },
             // We want to delay search events so that we cannot correlate search results with user actions
@@ -91,16 +101,18 @@ export const useContentSearchTelemetry = () => {
     };
 
     const sendResultOpenedReport = ({
-        scrollerMode,
         primaryMatchType,
         isFirstOpen,
         resultPosition,
+        messageAgeDays,
     }: {
-        scrollerMode: ContentSearchScrollerMode;
         primaryMatchType: ContentSearchPrimaryMatchType;
         isFirstOpen: boolean;
         resultPosition: number;
+        messageAgeDays: number;
     }) => {
+        recordSearchResultOpened({ position: resultPosition });
+
         if (!isMailApp) {
             return;
         }
@@ -111,10 +123,11 @@ export const useContentSearchTelemetry = () => {
             event: TelemetryContentSearchEvents.result_opened,
             values: {
                 resultPosition,
+                messageAgeDays,
             },
             dimensions: {
                 searchSource: 'local',
-                scrollerMode,
+                scrollerMode: SEARCH_RESULT_SCROLLER_MODE,
                 primaryMatchType,
                 isFirstOpen: isFirstOpen.toString(),
                 searchVersion: SEARCH_VERSION_V1,
@@ -133,6 +146,8 @@ export const useContentSearchTelemetry = () => {
         actionSurface: ContentSearchActionSurface;
         resultPosition?: number;
     }) => {
+        recordSearchResultAction({ action });
+
         if (!isMailApp) {
             return;
         }
@@ -148,6 +163,7 @@ export const useContentSearchTelemetry = () => {
                 action,
                 actionSurface,
                 searchSource: 'local',
+                scrollerMode: SEARCH_RESULT_SCROLLER_MODE,
                 searchVersion: SEARCH_VERSION_V1,
             },
             // We want to delay search events so that we cannot correlate search results with user actions
@@ -164,7 +180,7 @@ export const useContentSearchTelemetry = () => {
         mailboxAddressType,
     }: {
         status: ContentSearchEventStatus;
-        errorKind?: string;
+        errorKind?: ContentSearchIndexErrorKind;
         totalMessagesIndexed: number;
         durationMs: number;
         mailboxMessagesTotal?: number;

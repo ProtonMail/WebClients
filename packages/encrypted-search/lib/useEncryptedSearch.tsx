@@ -1018,6 +1018,10 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         uncachedItemsFound?: number;
     }) => {
         const indexSize = (await readSize(userID)) || 0;
+        // performance.now() timings aren't Unix time; derive the wall-clock bounds from `searchTime`
+        // (already the duration in ms) so `query_completed` can report the timestamps mobile sends.
+        const endTime = Date.now();
+        const startTime = endTime - searchTime;
 
         sendESSearchCompleteReport({
             searchTime,
@@ -1036,6 +1040,8 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
             status: 'success',
             resultCount: itemsFound,
             durationMs: searchTime,
+            startTime,
+            endTime,
         });
     };
 

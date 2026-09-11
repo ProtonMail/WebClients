@@ -481,6 +481,7 @@ export enum TelemetryContentSearchEvents {
     query_completed = 'query_completed',
     result_opened = 'result_opened',
     result_action = 'result_action',
+    search_session_completed = 'search_session_completed',
 }
 
 /** Events under `TelemetryMeasurementGroups.contentSearchIndex`, shared with mobile's Content Search schema */
