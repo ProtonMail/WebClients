@@ -471,6 +471,9 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Word 문서로 변환할 수 없음. 비밀번호로 보호되는 문서라면 삭제 후 다시 시도하세요."
+      ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "알 수 없는 오류로 인해 OpenDocument 문서를 불러올 수 없습니다."
       ]
     },
     "Error message": {
@@ -584,6 +587,9 @@
       ],
       "You cannot undo this action.": [
         "이 동작은 실행취소할 수 없습니다."
+      ],
+      "Remote image blocked": [
+        "원격 이미지 차단됨"
       ]
     },
     "Label": {
@@ -2339,6 +2345,11 @@
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "코드 블록 내에 제안 추가가 지원되지 않습니다."
+      ]
+    },
+    "sheets_2025:Sheet tab rename": {
+      "A sheet with this name already exists": [
+        "같은 이름의 시트가 이미 있습니다"
       ]
     }
   }

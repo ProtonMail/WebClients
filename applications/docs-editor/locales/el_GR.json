@@ -471,6 +471,9 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Δεν είναι δυνατή η μετατροπή εγγράφου του Word. Προστατεύεται με κωδικό πρόσβασης; Εάν ναι, παρακαλούμε καταργήστε τον κωδικό πρόσβασης και προσπαθήστε ξανά."
+      ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "Η εισαγωγή του αρχείου OpenDocument απέτυχε λόγω άγνωστου σφάλματος."
       ]
     },
     "Error message": {
@@ -2347,6 +2350,11 @@
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "Η υποβολή προτάσεων μέσα σε μπλοκ κώδικα δεν υποστηρίζεται"
+      ]
+    },
+    "sheets_2025:Sheet tab rename": {
+      "A sheet with this name already exists": [
+        "Υπάρχει ήδη ένα φύλλο με αυτό το όνομα"
       ]
     }
   }
