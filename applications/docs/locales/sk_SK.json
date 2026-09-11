@@ -962,6 +962,18 @@
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov"
+      ],
+      "Add a payment method": [
+        "Pridať spôsob platby"
+      ],
+      "Export this version (as odt) (Beta)": [
+        "Exportovať túto verziu (ako odt) (Beta)"
+      ],
+      "OpenDocument Text (.odt) (Beta)": [
+        "OpenDocument Text (.odt) (Beta)"
+      ],
+      "Preview logs": [
+        "Náhľad záznamov"
       ]
     },
     "Actions message": {
@@ -3826,6 +3838,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nerozšifrovateľný názov"
+      ],
+      "A contact with this email address already exists": [
+        "Kontakt s touto emailovou adresou už existuje"
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Keďže sa tento dokument nachádzal v zdieľanej zložke, obnoviť ho môže iba vlastník zložky"
       ]
     },
     "error": {
@@ -4157,6 +4175,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet využíva ${ usedSpace } úložiska, čo presahuje pridelený priestor ${ inviteSpace }. Odstráňte niektoré údaje alebo požiadajte správcu plánu o navýšenie úložiska."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Pozývame vás, aby ste si prepojili svoj ${ BRAND_NAME } účet s touto rodinnou skupinou a mohli tak využívať všetky jej prémiové funkcie."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4236,6 +4257,12 @@
       ],
       "Touch your security key.": [
         "Dotknite sa svojho bezpečnostného kľúča."
+      ],
+      "Still waiting?": [
+        "Stále čakáte?"
+      ],
+      "Touch your security key to continue.": [
+        "Dotknite sa svojho bezpečnostného kľúča, aby ste pokračovali."
       ]
     },
     "fido2: Label": {
@@ -6203,6 +6230,24 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále si budete môcť prezerať svoje vlastné údaje, ale všetky používateľské účty budú z vašej organizácie odstránené."
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Zostáva vám ešte ${ timeRemaining } v rámci skúšobnej doby. Kliknite na ${ addPaymentMethodLink }, aby ste neprišli o prístup. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Zostáva vám ${ timeRemaining } skúšobnej doby. Kliknite na ${ addPaymentMethodLink }, ak si chcete predplatné zachovať. ${ learnMoreLink }"
+      ],
+      "Do you remember your password?": [
+        "Pamätáte si svoje heslo?"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Ak ste stratili prístup k aplikácii na overovanie, môžete použiť jeden zo 16 záložných obnovovacích kódov, ktoré ste dostali pri nastavovaní dvojfaktorovej autentifikácie. ${ learnMoreLink }"
+      ],
+      "Link expired": [
+        "Platnosť odkazu vypršala"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Záznamy nám pomáhajú pochopiť, čo sa udialo pred vznikom problému. Obsahujú akcie aplikácie a chybové hlásenia, nie však obsah správ."
       ]
     },
     "info": {
@@ -6749,6 +6794,12 @@
       ],
       "Your password (trusted contact)": [
         "Vaše heslo (dôveryhodný kontakt)"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } znakov"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nerozšifrovateľný názov"
       ]
     },
     "Label for contact group color": {
@@ -11335,6 +11386,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali sme im pozvánku s prístupom k položke."
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Platnosť tohto odkazu vypršala. Predĺžte dátum vypršania platnosti, prosím."
       ]
     },
     "tooltip": {
@@ -11591,6 +11645,89 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaše skúšobné obdobie skončí dňa ${ textDate }. Ak ho zrušíte pred ${ textDate }, nebudú vám účtované žiadne poplatky. ${ action }"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Skúste to teraz"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Teraz máte prístup k novej aplikácii ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Využiť ponuku"
+      ],
+      "Special Offer": [
+        "Špeciálna ponuka"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/mesiac"
+      ],
+      "2 individual accounts": [
+        "2 samostatné účty"
+      ],
+      "2 TB of secure storage": [
+        "2 TB bezpečného úložiska"
+      ],
+      "3 TB of secure storage": [
+        "3 TB bezpečného úložiska"
+      ],
+      "500 GB of secure storage": [
+        "500 GB bezpečného úložiska"
+      ],
+      "6 individual accounts": [
+        "6 samostatných účtov"
+      ],
+      "Advanced protection against cyber threats": [
+        "Pokročilá ochrana pred kybernetickými hrozbami"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zľavy sa vzťahujú na štandardné mesačné ceny. Vaše predplatné sa po skončení fakturačného cyklu obnoví za štandardnú ročnú sadzbu."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "na 12 mesiacov"
+      ],
+      "One plan, full power": [
+        "Jeden plán, plný výkon"
+      ],
+      "One plan, max savings": [
+        "Jeden plán, maximálne úspory"
+      ],
+      "One plan, more power": [
+        "Jeden plán, viac výkonu"
       ]
     }
   }

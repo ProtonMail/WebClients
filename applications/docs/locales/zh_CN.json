@@ -935,6 +935,24 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能发送超过 ${ maxAttachments } 个联系人的 vCard 文件"
+      ],
+      "Add a payment method": [
+        "添加支付方式"
+      ],
+      "Ask me next time": [
+        "稍后提醒"
+      ],
+      "Export this version (as odt) (Beta)": [
+        "导出此版本 (.odt) (Beta)"
+      ],
+      "OpenDocument Text (.odt) (Beta)": [
+        "OpenDocument 文本  (.odt) (Beta)"
+      ],
+      "Preview logs": [
+        "预览日志"
+      ],
+      "Save preferences": [
+        "保存偏好"
       ]
     },
     "Actions message": {
@@ -3712,6 +3730,15 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 无法解密的名称"
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "由于此文档位于共享文件夹中，只有文件夹所有者可以恢复它"
+      ],
+      "Could not grant access to the organization key": [
+        "无法授予组织密钥访问权限"
+      ],
+      "Failed to fetch sharing information": [
+        "获取共享信息失败"
       ]
     },
     "error": {
@@ -4037,6 +4064,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "您已使用 ${ usedSpace } 存储空间，超过了账户分配的 ${ inviteSpace } 上限。请清理部分数据或要求账户管理员为您的邮箱扩容。"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "您已被邀请将您的 ${ BRAND_NAME } 账户关联至此家庭组，并享受其所有高级功能。"
       ]
     },
     "familyOffer_2023:Label": {
@@ -5912,6 +5942,54 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍然可以查看您自己的账户数据，但所有用户账户将从您的组织中移除。"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "试用期剩余 ${ timeRemaining }。${ addPaymentMethodLink } 以避免失去访问权限。${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "试用期剩余 ${ timeRemaining }。${ addPaymentMethodLink } 以保留您的订阅。${ learnMoreLink }"
+      ],
+      "Converting document...": [
+        "正在转换文档..."
+      ],
+      "Creating new document...": [
+        "正在新建文档..."
+      ],
+      "Do you remember your password?": [
+        "您还记得密码吗？"
+      ],
+      "Error converting document: ${ errorMessage }": [
+        "转换文档失败：${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "加载文档失败：${ errorDetail }"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "接收文档评论和建议的邮件通知"
+      ],
+      "Get Notified About Comments": [
+        "接收评论通知"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "如果您无法访问验证器应用，可以使用设置 2FA 时提供的 16 个备用恢复码之一。${ learnMoreLink }"
+      ],
+      "Link expired": [
+        "链接已过期"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "日志帮助我们了解问题发生前的情况，包含应用操作和错误信息，但不包含消息内容。"
+      ],
+      "Making a copy...": [
+        "正在创建副本..."
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "链接中未提供文档，请返回 ${ DRIVE_APP_NAME } 并选择一个文档。"
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "您输入的链接似乎未正确从 Slack 复制。从 Slack 复制长链接时，请右键点击链接，然后选择“复制链接”，而不是直接复制被截断的链接文本。"
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "为了帮助排查问题，调试信息将上传至您的 Drive 并与 ${ BRAND_NAME } 支持团队安全共享，其中可能包含文件内容。您可以随时停止共享，审查完成后共享数据将被删除。"
       ]
     },
     "info": {
@@ -6443,6 +6521,21 @@
       ],
       "Your password (trusted contact)": [
         "您的密码（可信联系人）"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length } / ${ maxLength } 个字符"
+      ],
+      "Enable email notifications": [
+        "启用邮件通知"
+      ],
+      "Include debug information": [
+        "包含调试信息"
+      ],
+      "Include document name in notification": [
+        "在通知中包含文档名称"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ 无法解密的名称"
       ]
     },
     "Label for contact group color": {
@@ -7491,6 +7584,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我们会扫描暗网，检查您的 ${ BRAND_NAME } 地址或别名是否被泄露，一旦发现任何情况，我们会立即提醒您。"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手，已扩展访问权限"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } 写作助手，有限访问权限"
       ]
     },
     "new_plans: feature highlight": {
@@ -8087,7 +8186,7 @@
         "移动 ${ n } 个项目"
       ],
       "Public link access updated": [
-        "公共链接访问已更新"
+        "公开链接访问已更新"
       ],
       "Public link update access failed ": [
         "公共链接更新访问失败 "
@@ -8136,6 +8235,15 @@
       ],
       "Your settings have been changed successfully": [
         "设置已更改"
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "由于此文档位于共享文件夹中，只有文件夹所有者可以恢复它"
+      ],
+      "Failed to submit report": [
+        "提交报告失败"
+      ],
+      "Report submitted successfully": [
+        "报告提交成功"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8912,6 +9020,9 @@
       ],
       "User Admin": [
         "用户管理员"
+      ],
+      "Organization Admin": [
+        "组织管理员"
       ]
     },
     "Safety review": {
@@ -9222,6 +9333,9 @@
       ],
       "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
         "当前电子表格（包括其中的所有工作表）将被此版本替换。"
+      ],
+      "Creating new spreadsheet...": [
+        "正在新建表格..."
       ]
     },
     "sheets_2025:Label": {
@@ -10549,6 +10663,9 @@
       ],
       "Your exposed information": [
         "您的泄露信息"
+      ],
+      "Report issue": [
+        "报告问题"
       ]
     },
     "Title header for keys table": {
@@ -10666,6 +10783,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "我们已向他们发送了访问该项目的邀请。"
+      ],
+      "This link has expired. Please extend expiration date": [
+        "此链接已过期，请延长有效期"
       ]
     },
     "tooltip": {
@@ -10877,6 +10997,89 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的试用将于 ${ textDate } 结束。若在 ${ textDate } 前取消，则不会向您收费。${ action }"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "立即试用"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "您现在可以使用全新 ${ CALENDAR_APP_NAME }。${ link }"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "获取优惠"
+      ],
+      "Special Offer": [
+        "超值特惠"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/月"
+      ],
+      "2 individual accounts": [
+        "2 个独立账户"
+      ],
+      "2 TB of secure storage": [
+        "2 TB 安全存储空间"
+      ],
+      "3 TB of secure storage": [
+        "3 TB 安全存储空间"
+      ],
+      "500 GB of secure storage": [
+        "500 GB 安全存储空间"
+      ],
+      "6 individual accounts": [
+        "6 个独立账户"
+      ],
+      "Advanced protection against cyber threats": [
+        "针对网络威胁的高级防护"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣基于标准月度价格。结算周期结束时，您的订阅将按标准年度费率续订。"
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ CALENDAR_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "高级版 ${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "高级版 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "高级版 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "年费"
+      ],
+      "One plan, full power": [
+        "一个套餐，全部功能"
+      ],
+      "One plan, max savings": [
+        "一个套餐，最大优惠"
+      ],
+      "One plan, more power": [
+        "一个套餐，更强性能"
       ]
     }
   }

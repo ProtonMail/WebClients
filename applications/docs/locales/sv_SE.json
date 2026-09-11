@@ -955,6 +955,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter",
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter"
+      ],
+      "Add a payment method": [
+        "Lägg till en betalningsmetod"
       ]
     },
     "Actions message": {
@@ -3728,6 +3731,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Odekrypterbart namn"
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Eftersom detta dokument var i en delad mapp kan endast mappens ägaren återställa det"
       ]
     },
     "error": {
@@ -4055,6 +4061,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ditt konto använder ${ usedSpace } lagringsutrymme, vilket överstiger ${ inviteSpace } du tilldelades. Ta bort lite data eller be administratören för paketet att öka ditt lagringsutrymme."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du är inbjuden att länka ditt ${ BRAND_NAME }-konto till denna familjegrupp och njuta av alla dess premiumfunktioner."
       ]
     },
     "familyOffer_2023:Label": {
@@ -5991,6 +6000,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att undvika att förlora åtkomst. ${ learnMoreLink }"
+      ],
+      "Do you remember your password?": [
+        "Kommer du ihåg ditt lösenord?"
+      ],
+      "Link expired": [
+        "Länk löpt ut"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Loggar hjälper oss att förstå vad som hände innan problemet uppstod. De inkluderar app-åtgärder och felmeddelanden, men inget meddelandeinnehåll."
       ]
     },
     "info": {
@@ -11029,6 +11050,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Vi har skickat dem en inbjudan att komma åt objektet."
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Denna länk har löpt ut. Förläng utgångsdatumet."
       ]
     },
     "tooltip": {

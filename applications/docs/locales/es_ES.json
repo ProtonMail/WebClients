@@ -5630,6 +5630,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrás seguir viendo los datos de tu propia cuenta, pero todas las cuentas de usuario serán eliminadas de tu organización."
+      ],
+      "Link expired": [
+        "Enlace expirado"
       ]
     },
     "info": {
@@ -10731,6 +10734,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Tu prueba terminará el ${ textDate }. No se te cobrará si cancelas antes del ${ textDate }. ${ action }"
+      ]
+    },
+    "Filter": {
+      "Pending": [
+        "Pendiente"
       ]
     }
   }
