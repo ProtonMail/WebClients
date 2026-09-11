@@ -52,3 +52,5 @@ export type ContentSearchEndReason = 'newSearch' | 'clearField' | 'navigation';
  * values reported by `sendResultActionReport` (opening has its own `result_opened` event).
  */
 export type ContentSearchSessionActionType = ContentSearchResultAction | 'open';
+
+export type ContentSearchSearchSource = 'local' | 'remote' | 'hybrid';
