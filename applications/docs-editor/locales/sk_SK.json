@@ -471,6 +471,9 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Nie je možné previesť dokument programu Word. Je chránený heslom? Ak áno, odstráňte heslo a skúste to znova."
+      ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "Nepodarilo sa importovať súbor OpenDocument z dôvodu neznámej chyby."
       ]
     },
     "Error message": {
@@ -587,6 +590,9 @@
       ],
       "You cannot undo this action.": [
         "Túto akciu nie je možné vrátiť späť."
+      ],
+      "Remote image blocked": [
+        "Vzdialený obrázok bol zablokovaný"
       ]
     },
     "Label": {
@@ -2354,6 +2360,11 @@
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "Vytváranie návrhov vo vnútri blokov kódu nie je podporované"
+      ]
+    },
+    "sheets_2025:Sheet tab rename": {
+      "A sheet with this name already exists": [
+        "Hárok s týmto názvom už existuje"
       ]
     }
   }
