@@ -1,3 +1,4 @@
+import { getIsSessionInvalid } from '@proton/pass/lib/api/utils';
 import {
     AccountForkResponse,
     extractOfflineComponents,
@@ -45,7 +46,6 @@ import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { deserialize } from '@proton/pass/utils/object/serialize';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
@@ -63,7 +63,7 @@ import WorkerMessageBroker from '../../channel';
 import { withContext } from '../../context/inject';
 import type { AuthAlarms } from './auth.alarms';
 import { createAuthAlarms } from './auth.alarms';
-import { isOfflineModeEnabled, shouldForceLock, validateExtensionForkPayload } from './auth.utils';
+import { shouldForceLock, validateExtensionForkPayload } from './auth.utils';
 
 export interface ExtensionAuthService extends AuthService {
     /** Starts extension specific listeners. Moved outside
@@ -234,7 +234,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             ctx.setBooted(false);
 
             const offline = !ctx.service.connectivity.online;
-            const forcePasswordLock = offline && authStore.hasOfflineComponents() && (await isOfflineModeEnabled());
+            const forcePasswordLock = offline && authStore.hasOfflineComponents();
 
             if (forcePasswordLock) ctx.setStatus(AppStatus.PASSWORD_LOCKED);
             else ctx.setStatus(AppStatusFromLockMode[mode]);
@@ -277,7 +277,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             const offline = !ctx.service.connectivity.online;
             const booted = ctx.booted;
 
-            if (hasOfflineSession && offline && !booted && (await isOfflineModeEnabled())) {
+            if (hasOfflineSession && offline && !booted) {
                 if (await shouldForceLock()) ctx.setStatus(AppStatus.PASSWORD_LOCKED);
                 else boot({ offline: true });
                 return false;
@@ -325,10 +325,12 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
              * backoff rather than relying on another connectivity event. */
             if (!clientOffline(ctx.getState().status)) {
                 /** We do not rely on `connectivity` state on session failures in the case
-                 * of partial downtime (eg: `/ping` returns 200 but `/auth` routes 5xx) */
-                const connectionIssue = getIsConnectionIssue(err);
+                 * of partial downtime (eg: `/ping` returns 200 but `/auth` routes 5xx).
+                 * Nor on the failure status: only a definitively invalid session cancels
+                 * the offline fallback, anything else keeps the offline unlock available. */
+                const sessionInvalid = getIsSessionInvalid(err);
                 const hasOfflineComponents = authStore.hasOfflineComponents();
-                const canOfflineUnlock = connectionIssue && hasOfflineComponents && (await isOfflineModeEnabled());
+                const canOfflineUnlock = !sessionInvalid && hasOfflineComponents;
                 const unlocked = options.unlocked && authStore.validOfflineSession(authStore.getSession());
 
                 /** If the user managed to unlock during the sequence but session resuming
@@ -471,8 +473,6 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
     /** Force password-lock when user explicitly switches to offline mode */
     const handleOfflineSwitch: MessageHandlerCallback<WorkerMessageType.AUTH_OFFLINE_SWITCH> = withContext(
         async (ctx) => {
-            if (!(await isOfflineModeEnabled())) return false;
-
             if (!ctx.service.connectivity.online) {
                 ctx.setBooted(false);
                 ctx.setStatus(AppStatus.PASSWORD_LOCKED);

@@ -39,12 +39,15 @@ describe('API factory', () => {
     const listener = jest.fn();
 
     (global as any).fetch = fetchMock;
-    const api = createApi({ config, getAuth });
+
+    /** Recreated per test: connectivity state is intentionally preserved by
+     * `api.reset`, so a shared instance would carry `failureCount` and
+     * `unreachable` from one scenario into the next. */
+    let api: ReturnType<typeof createApi>;
 
     beforeEach(async () => {
         auth = undefined;
-        api.unsubscribe();
-        await api.reset();
+        api = createApi({ config, getAuth });
         api.setResumeLock(false);
         api.subscribe(listener);
         listener.mockClear();
@@ -56,6 +59,7 @@ describe('API factory', () => {
         test('should create initial API state', () => {
             expect(api.getState()).toEqual({
                 appVersionBad: false,
+                failureCount: 0,
                 online: true,
                 ticksUntilOnline: 0,
                 pendingCount: 0,
@@ -389,6 +393,85 @@ describe('API factory', () => {
             await expect(api({})).rejects.toThrow();
             expect(api.getState().online).toBe(false);
             expect(listener).toHaveBeenCalledWith({ type: 'connectivity', online: false, unreachable: false });
+        });
+    });
+
+    describe('Consecutive failures', () => {
+        /** `retry-after` above `RETRY_DELAY_MAX` so a 429 escapes `retryHandler`
+         * instead of being absorbed by a retry. This is the outage condition. */
+        const failWith = async (status: number) => {
+            fetchMock.mockResolvedValueOnce(
+                mockAPIResponse({}, status, { date: TEST_SERVER_TIME.toUTCString(), 'retry-after': '30' })
+            );
+            await expect(api({ url: 'some/endpoint' })).rejects.toThrow(ApiError);
+        };
+
+        test('should stay reachable below the failure threshold', async () => {
+            await failWith(429);
+            await failWith(429);
+
+            expect(api.getState().failureCount).toBe(2);
+            expect(api.getState().unreachable).toBe(false);
+        });
+
+        test('should become unreachable once the threshold is reached', async () => {
+            await failWith(429);
+            await failWith(429);
+            await failWith(429);
+
+            expect(api.getState().failureCount).toBe(3);
+            expect(api.getState().unreachable).toBe(true);
+            expect(listener).toHaveBeenCalledWith({ type: 'connectivity', online: true, unreachable: true });
+        });
+
+        test('should count failures of any status, not just rate limits', async () => {
+            await failWith(429);
+            await failWith(408);
+            await failWith(404);
+
+            expect(api.getState().unreachable).toBe(true);
+        });
+
+        test('should clear the count on a successful response', async () => {
+            await failWith(429);
+            await failWith(429);
+
+            fetchMock.mockResolvedValueOnce(mockAPIResponse({}));
+            await expect(api({ url: 'some/endpoint' })).resolves.toEqual({});
+
+            expect(api.getState().failureCount).toBe(0);
+
+            await failWith(429);
+            expect(api.getState().unreachable).toBe(false);
+        });
+
+        test('should not count failures thrown before the request left the client', async () => {
+            fetchMock.mockResolvedValueOnce(
+                mockAPIResponse({ Code: PassErrorCode.SESSION_LOCKED, Error: 'Locked' }, 422)
+            );
+
+            /** The first call reaches the API but its 422 is mapped to a `LockedSessionError`,
+             * subsequent ones short-circuit on `sessionLocked` without leaving the client.
+             * None of them says anything about server health. */
+            await expect(api({ url: 'some/endpoint' })).rejects.toThrow(LockedSessionError());
+            await expect(api({ url: 'some/endpoint' })).rejects.toThrow(LockedSessionError());
+            await expect(api({ url: 'some/endpoint' })).rejects.toThrow(LockedSessionError());
+            await expect(api({ url: 'some/endpoint' })).rejects.toThrow(LockedSessionError());
+
+            expect(fetchMock).toHaveBeenCalledTimes(1);
+            expect(api.getState().failureCount).toBe(0);
+            expect(api.getState().unreachable).toBe(false);
+        });
+
+        test('should not count an invalidated session', async () => {
+            refreshMock.mockRejectedValue(InactiveSessionError());
+            auth = { type: AuthMode.COOKIE, UID: 'test-uid' };
+
+            fetchMock.mockResolvedValueOnce(mockAPIResponse({}, 401));
+            await expect(api({ url: 'some/endpoint' })).rejects.toThrow(InactiveSessionError());
+
+            expect(api.getState().failureCount).toBe(0);
+            expect(api.getState().unreachable).toBe(false);
         });
     });
 

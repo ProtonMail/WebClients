@@ -5,9 +5,9 @@ import type { ConnectivityEvent, ConnectivityService } from '@proton/pass/lib/ne
 import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import { bootIntent, offlineResume } from '@proton/pass/store/actions';
 import type { Api, Maybe } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { AppStatus } from '@proton/pass/types/worker/state';
 import { createMemoryStore } from '@proton/pass/utils/store';
+import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { createApiError, createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
@@ -47,6 +47,12 @@ const wireTestAlarm = () => {
 const genericError = new Error('unknown');
 const offlineError = createOfflineError({});
 const connectionError = createApiError('StatusCodeError', { status: 503, statusText: 'Unreachable' } as any, {}, {});
+const rateLimitedError = createApiError(
+    'StatusCodeError',
+    { status: 429, statusText: 'Too many requests' } as any,
+    {},
+    {}
+);
 
 /** The connectivity subscriber dispatches `void alarms.setAutoResume()`:
  * fire-and-forget. `setAutoResume` chains multiple awaits internally
@@ -108,11 +114,7 @@ describe('Auth integration', () => {
                 apiProxy: { clear: jest.fn() },
                 autofill: { clear: jest.fn() },
                 connectivity,
-                featureFlags: {
-                    resolve: jest
-                        .fn()
-                        .mockResolvedValue({ features: { [PassFeature.PassExtensionOfflineV1]: true }, variants: {} }),
-                },
+                featureFlags: { resolve: jest.fn().mockResolvedValue({ features: {}, variants: {} }) },
                 formTracker: { clear: jest.fn() },
                 logger: { clear: jest.fn() },
                 nativeMessaging: { disconnect: jest.fn() },
@@ -158,12 +160,20 @@ describe('Auth integration', () => {
             expect(ctx.setStatus).not.toHaveBeenCalled();
         });
 
-        test('should land in `ERROR` on non-connection error even with offline components', async () => {
+        test('should land in `ERROR` on an invalid session even with offline components', async () => {
             ctx.status = AppStatus.IDLE;
             setOfflineUnlocked();
-            await auth.config.onSessionFailure?.({ retryable: false }, genericError);
+            await auth.config.onSessionFailure?.({ retryable: false }, InactiveSessionError());
             expect(ctx.setStatus).toHaveBeenCalledWith(AppStatus.ERROR);
             expect(ctx.service.store.dispatch).not.toHaveBeenCalledWith(bootIntent({ offline: true }));
+        });
+
+        test('should land in `PASSWORD_LOCKED` when rate limited with offline components', async () => {
+            ctx.status = AppStatus.IDLE;
+            authStore.setOfflineConfig({} as any);
+            authStore.setOfflineVerifier('verifier');
+            await auth.config.onSessionFailure?.({ retryable: false }, rateLimitedError);
+            expect(ctx.setStatus).toHaveBeenCalledWith(AppStatus.PASSWORD_LOCKED);
         });
 
         test('should land in `PASSWORD_LOCKED` on connection error without unlocked context', async () => {

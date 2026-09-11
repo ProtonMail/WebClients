@@ -13,7 +13,8 @@ import { bootIntent, offlineResume } from '@proton/pass/store/actions/creators/c
 import type { MaybeNull } from '@proton/pass/types';
 import { type AppState, AppStatus } from '@proton/pass/types';
 import { createMemoryStore } from '@proton/pass/utils/store';
-import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
+import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
+import { ApiError, createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 
 import * as auth from './auth';
 import * as sessions from './sessions';
@@ -60,6 +61,8 @@ const setAppState = (next: Partial<AppState>) => (appState = { ...appState, ...n
 
 const genericError = new Error('unknown');
 const offlineError = createOfflineError({});
+const rateLimitedError = new ApiError('Too many requests', 429, 'StatusCodeError');
+const inactiveSessionError = InactiveSessionError();
 
 const app = {
     getState: jest.fn(() => appState),
@@ -353,13 +356,33 @@ describe('AuthService', () => {
             expect(authService.scheduler.isThrottled()).toBe(false);
         });
 
-        test('non-connection error while offline-booted: no-op', async () => {
+        test('any error leaving the session valid advances the scheduler, whatever its status', async () => {
             setAppState({ status: AppStatus.OFFLINE, booted: true });
             await authService.config.onSessionFailure({}, genericError);
 
             expect(app.setStatus).not.toHaveBeenCalled();
             expect(app.setBooted).not.toHaveBeenCalled();
+            expect(authService.scheduler.isThrottled()).toBe(true);
+        });
+
+        test('an invalid session does not advance the scheduler', async () => {
+            setAppState({ status: AppStatus.OFFLINE, booted: true });
+            await authService.config.onSessionFailure({}, inactiveSessionError);
+
             expect(authService.scheduler.isThrottled()).toBe(false);
+        });
+
+        test('rate limited resume surfaces the offline lock screen', async () => {
+            settings.resolve.mockResolvedValueOnce({ offlineEnabled: true });
+            authStore.setOfflineConfig({ salt: '', params: ARGON2_PARAMS.RECOMMENDED });
+            authStore.setOfflineVerifier('offline-verifier');
+            authStore.setLockMode(LockMode.PASSWORD);
+            setAppState({ status: AppStatus.AUTHORIZING, booted: false });
+            connectivity.status = ConnectivityStatus.ONLINE;
+
+            await authService.config.onSessionFailure({}, rateLimitedError);
+
+            expect(app.setStatus).toHaveBeenCalledWith(AppStatus.PASSWORD_LOCKED);
         });
 
         test('connection issue + canOfflineUnlock + unlocked → boots offline', async () => {
@@ -393,12 +416,36 @@ describe('AuthService', () => {
             expect(app.setBooted).toHaveBeenCalledWith(false);
         });
 
+        test('rate limited + canOfflineUnlock + !unlocked → sets locked status', async () => {
+            settings.resolve.mockResolvedValueOnce({ offlineEnabled: true });
+            authStore.setOfflineConfig({ salt: '', params: ARGON2_PARAMS.RECOMMENDED });
+            authStore.setOfflineVerifier('offline-verifier');
+            authStore.setLockMode(LockMode.PASSWORD);
+
+            setAppState({ status: AppStatus.AUTHORIZING, booted: false });
+            await authService.config.onSessionFailure({}, rateLimitedError);
+
+            expect(app.setStatus).toHaveBeenCalledWith(AppStatus.PASSWORD_LOCKED);
+            expect(app.setBooted).toHaveBeenCalledWith(false);
+        });
+
         test('non-connection error + not booted → ERROR status', async () => {
             setAppState({ status: AppStatus.AUTHORIZING, booted: false });
             await authService.config.onSessionFailure({}, genericError);
 
             expect(app.setStatus).toHaveBeenCalledWith(AppStatus.ERROR);
             expect(app.setBooted).toHaveBeenCalledWith(false);
+        });
+
+        test('an invalid session with offline components → ERROR status', async () => {
+            authStore.setOfflineConfig({ salt: '', params: ARGON2_PARAMS.RECOMMENDED });
+            authStore.setOfflineVerifier('offline-verifier');
+            authStore.setLockMode(LockMode.NONE);
+
+            setAppState({ status: AppStatus.AUTHORIZING, booted: false });
+            await authService.config.onSessionFailure({}, inactiveSessionError);
+
+            expect(app.setStatus).toHaveBeenCalledWith(AppStatus.ERROR);
         });
     });
 

@@ -92,18 +92,21 @@ export const withApiHandlers = ({ state, call, getAuth, refreshHandler }: ApiHan
 
                 if (status === HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY) {
                     /* Catch inactive session errors during cookie upgrade */
-                    if (code === PassErrorCode.INVALID_COOKIES_REFRESH) throw InactiveSessionError();
+                    if (code === PassErrorCode.INVALID_COOKIES_REFRESH) throw InactiveSessionError(error);
                 }
 
                 if (status === HTTP_ERROR_CODES.UNAUTHORIZED && !ignoreHandler.includes(status)) {
-                    if (code === PassErrorCode.SESSION_ERROR) throw InactiveSessionError();
+                    if (code === PassErrorCode.SESSION_ERROR) throw InactiveSessionError(error);
 
                     try {
                         state.set('refreshing', true);
                         await refreshHandler(response, options);
                         return await next(attempts + 1, RETRY_ATTEMPTS_MAX);
                     } catch (err: any) {
-                        if (getIsRefreshFailure(err)) throw InactiveSessionError();
+                        /** Carry the refresh failure: without it a logout caused by a
+                         * transient refresh error is indistinguishable from a real session
+                         * expiry, in Sentry and everywhere downstream. */
+                        if (getIsRefreshFailure(err)) throw InactiveSessionError(err);
                         throw err;
                     } finally {
                         state.set('refreshing', false);

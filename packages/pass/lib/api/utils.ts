@@ -1,3 +1,6 @@
+import { getIs401Error, getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
+
 import type { Maybe, MaybeNull } from '../../types';
 import type { ApiOptions, ApiState } from '../../types/api';
 import { objectHandler } from '../../utils/object/handler';
@@ -6,9 +9,15 @@ import { PassErrorCode } from './errors';
 
 export const API_BODYLESS_STATUS_CODES = [101, 204, 205, 304];
 
+/** Consecutive failures before the API is considered unreachable. Requests
+ * that reached the network keep failing and nothing succeeded in between:
+ * whatever the statuses say, the client cannot complete its work. */
+export const API_FAILURE_THRESHOLD = 3;
+
 export const buildApiState = () =>
     objectHandler<ApiState>({
         appVersionBad: false,
+        failureCount: 0,
         online: true,
         pendingCount: 0,
         queued: [],
@@ -23,6 +32,19 @@ export const buildApiState = () =>
 
 export const getSilenced = ({ silence }: ApiOptions = {}, code: string | number): boolean =>
     Array.isArray(silence) ? silence.includes(code) : !!silence;
+
+/** Widens `getIsConnectionIssue` with 429: during an outage the API answers with a
+ * mix of 503 and 429, and only the former reads as a connection issue. Without this
+ * a rate limited response looks like a legitimate failure, so the offline unlock
+ * screen is skipped and the user lands on an error state. */
+export const getIsApiUnavailable = (err: unknown) =>
+    getIsConnectionIssue(err) || (err as { status?: number })?.status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS;
+
+/** Gates the offline fallback: only a dead session refuses it. Listing what we
+ * refuse rather than what we accept keeps it right for unseen outage shapes.
+ * 422 is unlisted on purpose: a refresh route 422 becomes `InactiveSessionError` in
+ * `handlers.ts` before reaching here, and any other 422 must not kill the session. */
+export const getIsSessionInvalid = (err: unknown) => getIs401Error(err);
 
 export const isAccessRestricted = (code: number, url?: string) =>
     (code === PassErrorCode.MISSING_ORG_2FA || code === PassErrorCode.NOT_ALLOWED) &&
