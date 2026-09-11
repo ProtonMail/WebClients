@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useApi } from '@proton/app-context/useApi';
@@ -92,6 +93,7 @@ export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1, isActive }
     const api = useApi();
     const [user] = useUser();
     const getUserKeys = useGetUserKeys();
+    const [addresses] = useAddresses();
 
     // The reactive surface, owned by the hook. The adapter pushes updates into these via the setters
     // passed at construction (see below). progressRecorderRef stays a ref like in V1 — it's the raw
@@ -133,6 +135,7 @@ export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1, isActive }
     // stale values — esLibraryFunctionsV1's identity changes when V1's esStatus does.
     adapter.esCallbacks = esCallbacks;
     adapter.esLibraryFunctionsV1 = esLibraryFunctionsV1;
+    adapter.addresses = addresses;
     adapter.isActive = isActive;
 
     // Observe V1's status and progress and forward them into the adapter, which decides what to push

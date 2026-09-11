@@ -1,4 +1,9 @@
-import type { ContentSearchActionSurface, ContentSearchResultAction } from '@proton/encrypted-search/models';
+import type {
+    ContentSearchActionSurface,
+    ContentSearchIndexErrorKind,
+    ContentSearchMailboxAddressType,
+    ContentSearchResultAction,
+} from '@proton/encrypted-search/models';
 import {
     type ContentSearchEventStatus,
     type ContentSearchSearchSource,
@@ -6,7 +11,11 @@ import {
     SEARCH_RESULT_PRIMARY_MATCH_TYPE,
     SEARCH_RESULT_SCROLLER_MODE,
 } from '@proton/encrypted-search/models';
-import { TelemetryContentSearchEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import {
+    TelemetryContentSearchEvents,
+    TelemetryContentSearchIndexEvents,
+    TelemetryMeasurementGroups,
+} from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { Api } from '@proton/shared/lib/interfaces';
 
@@ -108,6 +117,40 @@ export class MetricService {
             },
             values: {
                 resultPosition,
+            },
+            delay: true,
+        });
+    }
+
+    sendMailboxIndexCompletedReport({
+        status,
+        errorKind,
+        totalMessagesIndexed,
+        durationMs,
+        mailboxMessagesTotal,
+        mailboxAddressType,
+    }: {
+        status: ContentSearchEventStatus;
+        errorKind?: ContentSearchIndexErrorKind;
+        mailboxAddressType: ContentSearchMailboxAddressType;
+        totalMessagesIndexed: number;
+        durationMs: number;
+        mailboxMessagesTotal?: number;
+    }) {
+        void sendTelemetryReport({
+            api: this.api,
+            measurementGroup: TelemetryMeasurementGroups.contentSearchIndex,
+            event: TelemetryContentSearchIndexEvents.mailbox_index_completed,
+            dimensions: {
+                status,
+                errorKind,
+                mailboxAddressType,
+                searchVersion: SEARCH_VERSION_V2,
+            },
+            values: {
+                totalMessagesIndexed,
+                durationMs,
+                mailboxMessagesTotal,
             },
             delay: true,
         });
