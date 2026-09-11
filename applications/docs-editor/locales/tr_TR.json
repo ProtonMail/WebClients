@@ -471,6 +471,9 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Word dosyası dönüştürülemedi. Parola ile korunmuş olabilir mi? Öyleyse lütfen parolayı kaldırıp yeniden deneyin."
+      ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "OpenDocument dosyası bilinmeyen bir sorun nedeniyle içe aktarılamadı."
       ]
     },
     "Error message": {
@@ -2347,6 +2350,11 @@
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "Kod blokları içinde öneride bulunulamaz"
+      ]
+    },
+    "sheets_2025:Sheet tab rename": {
+      "A sheet with this name already exists": [
+        "Aynı adlı bir sayfa zaten var"
       ]
     }
   }
