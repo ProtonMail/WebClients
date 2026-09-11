@@ -10,8 +10,6 @@ import type {
     ESTimepoint,
     NormalizedSearchParams,
 } from '@proton/encrypted-search/models';
-import { getMailboxAddressType } from '@proton/encrypted-search/useContentSearchTelemetry';
-import type { Address } from '@proton/shared/lib/interfaces/Address';
 import noop from '@proton/utils/noop';
 
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
@@ -94,13 +92,12 @@ function errorBeforeFirstResults(search: Search): Promise<SearchOutcome | undefi
 export class ESAdapter implements FunctionsV2 {
     private readonly searchService: SearchService;
     private readonly indexService: IndexService;
-    private readonly metricService: MetricService;
+    /** Public so `useContentSearch` can refresh `metricService.addresses` directly — see there. */
+    public readonly metricService: MetricService;
     /** Per-render dependency, refreshed by `useContentSearch` — provides getSearchParams/getKeywords. */
     public esCallbacks: ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent>;
     /** Per-render dependency, refreshed by `useContentSearch` — the legacy `useEncryptedSearch` instance. */
     public esLibraryFunctionsV1: FunctionsV1;
-    /** Per-render dependency, refreshed by `useContentSearch` — for `mailbox_index_completed`'s `mailboxAddressType`. */
-    public addresses: Address[] | undefined;
     /**
      * Whether v2 is the engine in charge this session (see `useContentSearch`'s `isActive`). Only
      * `handleEvent` is reachable while this is false, and then it records without importing.
@@ -255,6 +252,7 @@ export class ESAdapter implements FunctionsV2 {
             // A fresh index is a new attempt at a complete v2 index, so a previous failure no longer
             // describes it — its own outcome will.
             this.isV2IndexIncomplete = false;
+            this.metricService.startMailboxIndexing();
         }
         const job = new IndexingJob(
             {
@@ -286,8 +284,6 @@ export class ESAdapter implements FunctionsV2 {
                 this.metricService.sendMailboxIndexCompletedReport({
                     status: 'success',
                     totalMessagesIndexed: job.totalMessagesIndexed,
-                    durationMs: Date.now() - job.startedAt,
-                    mailboxAddressType: getMailboxAddressType(this.addresses),
                 });
             }
         });
