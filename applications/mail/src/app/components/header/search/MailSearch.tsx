@@ -3,11 +3,13 @@ import { useEffect, useState } from 'react';
 import type { Location } from 'history';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import TopNavbarListItemSearchButton from '@proton/components/components/topnavbar/TopNavbarListItemSearchButton';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useToggle from '@proton/hooks/useToggle'
+import { endSearchSession } from '@proton/encrypted-search/searchSession';
 import { useSearchTelemetry } from '@proton/encrypted-search/useSearchTelemetry';
+import useToggle from '@proton/hooks/useToggle';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import generateUID from '@proton/utils/generateUID';
@@ -29,6 +31,7 @@ interface Props {
 }
 
 const MailSearch = ({ labelID, location, columnMode }: Props) => {
+    const api = useApi();
     const [uid] = useState(generateUID('advanced-search-overlay'));
     const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLInputElement>();
     const searchParams = extractSearchParameters(location);
@@ -96,6 +99,7 @@ const MailSearch = ({ labelID, location, columnMode }: Props) => {
 
     const handleClearSearchField = () => {
         setSearchInputValue('');
+        endSearchSession(api, 'clearField');
         sendClearSearchFieldsReport(esEnabled);
     };
 
