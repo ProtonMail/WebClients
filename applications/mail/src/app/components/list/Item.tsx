@@ -4,7 +4,7 @@ import { memo, useMemo, useRef } from 'react';
 import ItemCheckbox from '@proton/components/containers/items/ItemCheckbox';
 import { useContentSearchTelemetry } from '@proton/encrypted-search/useContentSearchTelemetry';
 import { isCustomLabel } from '@proton/mail/helpers/location';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { DAY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { toValidHtmlId } from '@proton/shared/lib/dom/toValidHtmlId';
 import type { Label, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -158,11 +158,11 @@ const Item = ({
 
         if (isSearchResult) {
             sendResultOpenedReport({
-                scrollerMode: conversationMode ? 'conversation' : 'message',
                 // No per-field match info is tracked for Encrypted Search results today
                 primaryMatchType: 'unknown',
                 isFirstOpen: getIsFirstSearchResultOpen(),
                 resultPosition: index + 1,
+                messageAgeDays: Math.floor((Date.now() - getDate(element, labelID).getTime()) / DAY),
             });
         }
 
