@@ -1,8 +1,9 @@
 import type { ReactNode } from 'react';
 
+import { c } from 'ttag';
+
 import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
-import { IcPencil } from '@proton/icons/icons/IcPencil';
 import clsx from '@proton/utils/clsx';
 
 const SettingsValueRowLabel = ({ children, className }: { children: ReactNode; className?: string }) => {
@@ -15,8 +16,8 @@ const SettingsValueRowDescription = ({ children }: { children: ReactNode }) => {
 
 const SettingsValueRowEditButton = (props: ButtonProps) => {
     return (
-        <Button icon shape="ghost" size="small" className="shrink-0 color-weak" {...props}>
-            <IcPencil />
+        <Button shape="outline" size="small" increasedClickArea className="shrink-0" {...props}>
+            {c('Action').t`Change`}
         </Button>
     );
 };
