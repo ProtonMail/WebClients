@@ -27,32 +27,8 @@ import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '../../utils/time/constants';
 import { getEpoch } from '../../utils/time/epoch';
 import PassUI from '../core/ui.proxy';
 import { parseOTPValue } from '../otp/otp';
-import type { ParsedUrl } from '../urls/types';
 import { getFirstUrl } from '../urls/utils/autofill';
-import { resolveSubdomain } from '../urls/utils/utils';
 import { hasUserIdentifier, isEditItemDraft, isExtraOTPField } from './item.predicates';
-
-/** Default item title when creating from a web page: prefer the page title when
- * present, otherwise fall back to the hostname (previous default behaviour). */
-export const resolveDefaultItemName = ({
-    title,
-    url,
-    fallback,
-}: {
-    title?: MaybeNull<string>;
-    url?: MaybeNull<ParsedUrl>;
-    fallback?: MaybeNull<string>;
-}): string => {
-    const trimmedTitle = title?.trim();
-    if (trimmedTitle) return trimmedTitle.slice(0, MAX_ITEM_NAME_LENGTH);
-
-    if (url) {
-        const fromUrl = resolveSubdomain(url);
-        if (fromUrl) return fromUrl;
-    }
-
-    return fallback?.trim() ?? '';
-};
 
 export const compoundItemFilters: Partial<Record<ItemType, ItemType[]>> = {
     custom: ['custom', 'sshKey', 'wifi'],

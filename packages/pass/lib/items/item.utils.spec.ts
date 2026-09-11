@@ -8,7 +8,6 @@ import type { CCItemData, IndexedByShareIdAndItemId, ItemRevision, LoginItem, Se
 import { AutofillMode, CardType } from '../../types/protobuf';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '../../utils/time/constants';
 import { getEpoch } from '../../utils/time/epoch';
-import { parseUrl } from '../urls/utils/parser';
 import { itemBuilder } from './item.builder';
 import { createTestItem } from './item.test.utils';
 import {
@@ -29,7 +28,6 @@ import {
     intoSelectedItem,
     intoUserIdentifier,
     matchDraftsForShare,
-    resolveDefaultItemName,
     smartCloneItemName,
     sortItems,
 } from './item.utils';
@@ -637,27 +635,6 @@ describe('Item utils', () => {
             login.set('extraFields', [{ fieldName: '2FA', type: 'totp', data: { totpUri: extraFieldTotpUri } }]);
             const item = createTestItem('login', { data: login.data });
             expect(getItemTOTPUri(item)).toBe(topLevelTotpUri);
-        });
-    });
-
-    describe('resolveDefaultItemName', () => {
-        test('should prefer a non-empty page title', () => {
-            expect(
-                resolveDefaultItemName({
-                    title: 'Sign in · Example',
-                    url: parseUrl('https://login.example.com'),
-                })
-            ).toBe('Sign in · Example');
-        });
-
-        test('should fall back to the domain when the title is missing or empty', () => {
-            expect(resolveDefaultItemName({ title: null, url: parseUrl('https://login.example.com') })).toBe(
-                'login.example.com'
-            );
-            expect(resolveDefaultItemName({ title: '   ', url: parseUrl('https://login.example.com') })).toBe(
-                'login.example.com'
-            );
-            expect(resolveDefaultItemName({ title: null, fallback: 'example.com' })).toBe('example.com');
         });
     });
 });

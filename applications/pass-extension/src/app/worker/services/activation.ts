@@ -346,14 +346,7 @@ export const createActivationService = () => {
             if (!(current && current?.id)) throw new Error('No active tabs');
             const tabUrl = parseUrl(current.url);
             const senderTabId = tab?.id ?? 0; /** NOTE: on firefox, popup does not have a tab */
-            return {
-                tabId: current.id,
-                frameUrl: tabUrl,
-                tabUrl,
-                tabTitle: current.title?.trim() || null,
-                senderTabId,
-                frameId,
-            };
+            return { tabId: current.id, frameUrl: tabUrl, tabUrl, senderTabId, frameId };
         }
 
         return resolveEndpointContext(tab, frameId);

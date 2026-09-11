@@ -9,10 +9,8 @@ import usePrevious from '@proton/hooks/usePrevious';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
-import { resolveDefaultItemName } from '@proton/pass/lib/items/item.utils';
 import { validateItemName } from '@proton/pass/lib/validation/item';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
 import type { AutosaveFormValues, AutosavePayload } from '@proton/pass/types/worker/autosave';
 import { AutosaveMode } from '@proton/pass/types/worker/autosave';
 import { withMerge } from '@proton/pass/utils/object/merge';
@@ -34,17 +32,14 @@ type Props = Extract<NotificationRequest, { action: NotificationAction.AUTOSAVE 
 
 const getInitialValues = (
     { userIdentifier, password, type, iframeUrl }: AutosavePayload,
-    { domain, title, optimisticId }: { domain: string; title: MaybeNull<string>; optimisticId: string }
-): AutosaveFormValues => {
-    const name = resolveDefaultItemName({ title, fallback: domain });
-
-    return type === AutosaveMode.UPDATE
-        ? { itemId: '', name, password, shareId: '', step: 'select', type, userIdentifier, iframeUrl }
-        : { name, optimisticId, password, shareId: '', step: 'edit', type, userIdentifier, iframeUrl };
-};
+    { domain, optimisticId }: { domain: string; optimisticId: string }
+): AutosaveFormValues =>
+    type === AutosaveMode.UPDATE
+        ? { itemId: '', name: domain, password, shareId: '', step: 'select', type, userIdentifier, iframeUrl }
+        : { name: domain, optimisticId, password, shareId: '', step: 'edit', type, userIdentifier, iframeUrl };
 
 export const Autosave: FC<Props> = ({ data }) => {
-    const { visible, domain, title } = useIFrameAppState();
+    const { visible, domain } = useIFrameAppState();
     const controller = useIFrameAppController();
     const { onTelemetry } = usePassCore();
     const { createNotification } = useNotifications();
@@ -77,7 +72,7 @@ export const Autosave: FC<Props> = ({ data }) => {
     const shouldDiscard = data.submittedAt !== null;
 
     const form = useFormik<AutosaveFormValues>({
-        initialValues: getInitialValues(data, { domain, title, optimisticId }),
+        initialValues: getInitialValues(data, { domain, optimisticId }),
         validateOnChange: true,
         validate: (values) => {
             const errors: FormikErrors<AutosaveFormValues> = {};
@@ -142,7 +137,7 @@ export const Autosave: FC<Props> = ({ data }) => {
     useEffect(() => {
         if (shouldUpdate) {
             form.setValues({
-                ...getInitialValues(data, { domain, title, optimisticId }),
+                ...getInitialValues(data, { domain, optimisticId }),
                 shareId: form.values.shareId,
             }).catch(noop);
         }
