@@ -12,12 +12,7 @@ import { useItemDraft } from '../../../hooks/useItemDraft';
 import { usePortal } from '../../../hooks/usePortal';
 import { filesFormInitializer } from '../../../lib/file-attachments/helpers';
 import { obfuscateExtraFields } from '../../../lib/items/item.obfuscation';
-import {
-    bindOTPSanitizer,
-    getSanitizedUserIdentifiers,
-    resolveDefaultItemName,
-    sanitizeExtraField,
-} from '../../../lib/items/item.utils';
+import { bindOTPSanitizer, getSanitizedUserIdentifiers, sanitizeExtraField } from '../../../lib/items/item.utils';
 import { getSecretOrUri } from '../../../lib/otp/otp';
 import { createNewUrlItem, fromItems } from '../../../lib/urls/utils/autofill';
 import { sanitizeURL } from '../../../lib/urls/utils/sanitize';
@@ -31,7 +26,6 @@ import { pipe } from '../../../utils/fp/pipe';
 import { obfuscate } from '../../../utils/obfuscate/xor';
 import { isEmptyString } from '../../../utils/string/is-empty-string';
 import { uniqueId } from '../../../utils/string/unique-id';
-import { usePassCore } from '../../Core/PassCoreProvider';
 import { FileAttachmentsField } from '../../FileAttachments/FileAttachmentsField';
 import { ValueControl } from '../../Form/Field/Control/ValueControl';
 import { ExtraFieldGroup } from '../../Form/Field/ExtraFieldGroup/ExtraFieldGroup';
@@ -50,7 +44,6 @@ import { LoginEditCredentials } from './Login.edit.credentials';
 const FORM_ID = 'new-login';
 
 export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentUrl, onCancel, onSubmit }) => {
-    const { getExtensionClientState } = usePassCore();
     const { vaultTotalCount } = useSelector(selectVaultLimits);
     const { needsUpgrade } = useSelector(selectTOTPLimits);
 
@@ -75,9 +68,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
             itemEmail: clone?.content.itemEmail ?? searchParams.get('email') ?? '',
             itemUsername: clone?.content.itemUsername ?? '',
             mailboxes: [],
-            name:
-                clone?.metadata.name ??
-                resolveDefaultItemName({ title: getExtensionClientState?.()?.title, url: currentUrl }),
+            name: clone?.metadata.name ?? domain ?? '',
             note: clone?.metadata.note ?? '',
             passkeys: [],
             password: clone?.content.password ?? '',

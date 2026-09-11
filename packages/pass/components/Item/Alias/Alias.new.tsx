@@ -14,7 +14,7 @@ import { usePortal } from '../../../hooks/usePortal';
 import { deriveAliasPrefix } from '../../../lib/alias/alias.utils';
 import { filesFormInitializer } from '../../../lib/file-attachments/helpers';
 import { obfuscateExtraFields } from '../../../lib/items/item.obfuscation';
-import { bindOTPSanitizer, resolveDefaultItemName, sanitizeExtraField } from '../../../lib/items/item.utils';
+import { bindOTPSanitizer, sanitizeExtraField } from '../../../lib/items/item.utils';
 import { resolveSubdomain } from '../../../lib/urls/utils/utils';
 import { reconciliateAliasFromDraft, validateNewAliasForm } from '../../../lib/validation/alias';
 import { selectAliasLimits, selectVaultLimits } from '../../../store/selectors';
@@ -24,7 +24,6 @@ import { awaiter } from '../../../utils/fp/promises';
 import { obfuscate } from '../../../utils/obfuscate/xor';
 import { isEmptyString } from '../../../utils/string/is-empty-string';
 import { uniqueId } from '../../../utils/string/unique-id';
-import { usePassCore } from '../../Core/PassCoreProvider';
 import { FeatureFlag } from '../../Core/WithFeatureFlag';
 import { FileAttachmentsField } from '../../FileAttachments/FileAttachmentsField';
 import { ValueControl } from '../../Form/Field/Control/ValueControl';
@@ -49,7 +48,6 @@ const FORM_ID = 'new-alias';
 const getPlaceholderNote = (url: string) => c('Placeholder').t`Used on ${url}`;
 
 export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit, onCancel }) => {
-    const { getExtensionClientState } = usePassCore();
     const { ParentPortal, openPortal } = usePortal();
     const { current: draftHydrated } = useRef(awaiter<MaybeNull<NewAliasFormValues>>());
 
@@ -67,11 +65,10 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
 
     const { aliasPrefix: defaultAliasPrefix, ...defaults } = useMemo(() => {
         const domain = url ? resolveSubdomain(url) : null;
-        const name = resolveDefaultItemName({ title: getExtensionClientState?.()?.title, url });
 
         return domain
-            ? { name, note: getPlaceholderNote(domain), aliasPrefix: deriveAliasPrefix(domain) }
-            : { name, note: '', aliasPrefix: '' };
+            ? { name: domain, note: getPlaceholderNote(domain), aliasPrefix: deriveAliasPrefix(domain) }
+            : { name: '', note: '', aliasPrefix: '' };
     }, []);
 
     /* set initial `aliasPrefix` to an empty string to avoid a
