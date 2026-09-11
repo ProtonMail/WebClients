@@ -83,6 +83,10 @@ export interface ButtonLikeOwnProps {
      * If the disabled styles should disabled
      */
     noDisabledStyles?: boolean;
+    /**
+     * Increases click area using a pseudo element
+     */
+    increasedClickArea?: boolean;
 }
 
 export type ButtonLikeProps<E extends ElementType> = PolymorphicPropsWithRef<ButtonLikeOwnProps, E>;
@@ -107,6 +111,7 @@ const ButtonLikeBase = <E extends ElementType = typeof defaultElement>(
         as,
         'data-testid': dataTestId,
         noDisabledStyles,
+        increasedClickArea,
         ...restProps
     }: ButtonLikeProps<E>,
     ref: ForwardedRef<Element>
@@ -129,6 +134,7 @@ const ButtonLikeBase = <E extends ElementType = typeof defaultElement>(
         `button-${shape}-${color}`,
         Element !== 'button' && 'inline-block text-center',
         noDisabledStyles && `no-disabled-styles`,
+        increasedClickArea && `button-increase-click-area`,
         className
     );
 
