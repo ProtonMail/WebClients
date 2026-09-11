@@ -12,7 +12,12 @@ import type { PlanCardFeatureIcon } from '../payments/features/interface';
 import type { OfferProduct } from './helpers/getOfferProduct';
 import type { Q3Sale2026OfferId } from './operations/q3Sale2026offers';
 
-export type OfferId = 'go-unlimited-2022' | 'mail-trial-2023' | 'pass-family-plan-2024-yearly' | Q3Sale2026OfferId;
+export type OfferId =
+    | 'go-unlimited-2022'
+    | 'mail-trial-2023'
+    | 'pass-family-plan-2024-yearly'
+    | 'unlimited-to-duo-discounted'
+    | Q3Sale2026OfferId;
 
 export type OfferGlobalFeatureCodeValue = Record<OfferId, boolean>;
 
@@ -53,6 +58,14 @@ export interface OfferDealSaveSentenceType {
     sentenceSaveType?: 'switch-yearly' | 'limited-time-deal';
 }
 
+export interface OfferTracking {
+    onTopNavbarClick?: () => void;
+    onCloseModal?: () => void;
+    onSelectDeal?: () => void;
+    onHideOffer?: () => void;
+    onSubscribed?: () => void;
+}
+
 export interface OfferConfig {
     ID: OfferId;
     featureCode: FeatureCode;
@@ -72,9 +85,13 @@ export interface OfferConfig {
         iconSize?: IconSize;
         icon?: IconComponent;
         iconContent?: ComponentType;
-        getCTAContent?: () => string;
+        // `discount` is the live coupon discount as a percentage, resolved by the offer's `useOffer`.
+        getCTAContent?: (discount?: number) => string;
         variant?: string;
     };
+    // Live coupon discount as a percentage, resolved at runtime by the offer's `useOffer` and passed to
+    topButtonDiscount?: number;
+    tracking?: OfferTracking;
     images?: OfferImages;
     darkBackground?: boolean; // Will use a light close button if true (ghost button with white text)
     enableCycleSelector?: boolean; // Allow the selection of cycles if true in the checkout process
