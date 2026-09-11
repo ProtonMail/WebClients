@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
 
 import { getProviderNumber } from '../hooks/useOAuthPopup.helpers';
 import type { ImportProvider, OAUTH_PROVIDER } from '../interface';
+import { notifyDesktopOAuthPopupFinished, notifyDesktopOAuthPopupStarted } from './oauthDesktopSession';
 
 const WINDOW_WIDTH = 500;
 const WINDOW_HEIGHT = 600;
@@ -58,14 +58,7 @@ export const openOAuthPopup = async ({
 
     const uid = generateProtonWebUID();
 
-    if (hasInboxDesktopFeature('OAuthPopupV2')) {
-        await invokeInboxDesktopIPC({
-            type: 'oauthPopupOpenedV2',
-            payload: { action: 'oauthPopupStarted', authorizationUrl, sessionId: uid },
-        });
-    } else {
-        await invokeInboxDesktopIPC({ type: 'oauthPopupOpened', payload: 'oauthPopupStarted' });
-    }
+    await notifyDesktopOAuthPopupStarted(authorizationUrl, uid);
 
     const authWindow = window.open(
         `${authorizationUrl}&state=${uid}`,
@@ -85,14 +78,7 @@ export const openOAuthPopup = async ({
         */
         interval = window.setInterval(async () => {
             if (authWindow.closed) {
-                if (hasInboxDesktopFeature('OAuthPopupV2')) {
-                    await invokeInboxDesktopIPC({
-                        type: 'oauthPopupOpenedV2',
-                        payload: { action: 'oauthPopupFinished', sessionId: uid },
-                    });
-                } else {
-                    await invokeInboxDesktopIPC({ type: 'oauthPopupOpened', payload: 'oauthPopupFinished' });
-                }
+                await notifyDesktopOAuthPopupFinished(uid);
                 window.clearInterval(interval);
                 return;
             }
