@@ -48,8 +48,6 @@ interface JobDeps {
 }
 
 export class IndexingJob {
-    /** Wall-clock start of the whole v1+v2 pipeline, for `mailbox_index_completed`'s `durationMs`. */
-    public readonly startedAt = Date.now();
     private phase: 'v1' | 'v1-sync' | 'import' | 'import-paused' | 'done';
     private lastV1Status: ESStatusConcrete;
     private handle?: ImportHandle;
