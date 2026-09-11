@@ -49,12 +49,14 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
     const { offline = false, reauth } = payload ?? {};
 
     try {
-        const settings: ProxiedSettings = yield options.getSettings();
-        if (offline && !settings.offlineEnabled) throw new Error('Unauthorized offline boot');
-
         const online = !offline;
         const authStore = options.getAuthStore();
         const userID = authStore.getUserID()!;
+
+        /** Gate on the crypto material rather than the `offlineEnabled` setting: the
+         * setting is a projection of it, and reading it can fail into defaults that
+         * read as "disabled" (`settings.resolve` never rejects). */
+        if (offline && !authStore.hasOfflineComponents()) throw new Error('Unauthorized offline boot');
 
         options.setAppStatus(AppStatus.BOOTING);
         yield put(stopEventPolling());

@@ -4,12 +4,11 @@ import { createAuthStore } from '@proton/pass/lib/auth/store';
 import type { ConnectivityEvent, ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import { bootIntent, offlineResume } from '@proton/pass/store/actions';
-import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { Api } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { AppStatus } from '@proton/pass/types/worker/state';
 import { createMemoryStore } from '@proton/pass/utils/store';
+import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 
 import { clearBrowserMocks } from '../../../../__mocks__/webextension-polyfill';
@@ -32,7 +31,6 @@ describe('Extension AuthService', () => {
     let authStore: AuthStore;
     let connectivity: { -readonly [P in keyof ConnectivityService]: ConnectivityService[P] };
     let ctx: WorkerContextInterface;
-    let featureFlags: FeatureFlagState = {};
 
     beforeEach(() => {
         jest.clearAllMocks();
@@ -50,8 +48,6 @@ describe('Extension AuthService', () => {
             subscribe: jest.fn(),
         } as any;
 
-        featureFlags = { [PassFeature.PassExtensionOfflineV1]: true };
-
         ctx = {
             booted: false,
             status: AppStatus.IDLE,
@@ -63,7 +59,7 @@ describe('Extension AuthService', () => {
                 apiProxy: { clear: jest.fn().mockResolvedValue(undefined) },
                 autofill: { clear: jest.fn() },
                 connectivity,
-                featureFlags: { resolve: jest.fn().mockResolvedValue({ features: featureFlags }) },
+                featureFlags: { resolve: jest.fn().mockResolvedValue({ features: {} }) },
                 formTracker: { clear: jest.fn() },
                 logger: { clear: jest.fn().mockResolvedValue(undefined) },
                 nativeMessaging: { disconnect: jest.fn() },
@@ -138,23 +134,21 @@ describe('Extension AuthService', () => {
                 authStore.setOfflineVerifier('test-verifier');
             };
 
-            test('should set `PASSWORD_LOCKED` when offline + components + flag ON', async () => {
+            test('should set `PASSWORD_LOCKED` when offline + components', async () => {
                 connectivity.online = false;
                 setOfflineComponents();
                 await auth.config.onLocked?.(LockMode.SESSION, undefined, false);
                 expect(ctx.setStatus).toHaveBeenCalledWith(AppStatus.PASSWORD_LOCKED);
             });
 
-            test('should NOT set `PASSWORD_LOCKED` when flag is OFF, even with components + offline', async () => {
-                featureFlags.PassExtensionOfflineV1 = false;
+            test('should NOT set `PASSWORD_LOCKED` without offline components, even when offline', async () => {
                 connectivity.online = false;
-                setOfflineComponents();
                 await auth.config.onLocked?.(LockMode.SESSION, undefined, false);
                 expect(ctx.setStatus).not.toHaveBeenCalledWith(AppStatus.PASSWORD_LOCKED);
                 expect(ctx.setStatus).toHaveBeenCalledWith(AppStatus.SESSION_LOCKED);
             });
 
-            test('should fall back to lock-mode status when online (regardless of flag)', async () => {
+            test('should fall back to lock-mode status when online', async () => {
                 connectivity.online = true;
                 setOfflineComponents();
                 await auth.config.onLocked?.(LockMode.SESSION, undefined, false);
@@ -361,19 +355,6 @@ describe('Extension AuthService', () => {
                 expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
             });
 
-            test('should NOT offline-boot when flag is OFF, even with valid offline session + offline', async () => {
-                permissions.hasHostPermissions.mockResolvedValueOnce(true);
-                featureFlags.PassExtensionOfflineV1 = false;
-                connectivity.online = false;
-                ctx.booted = false;
-
-                const memorySession = { UID: 'test-uid', UserID: 'test-user-id', offlineKD: 'test-offline-kd' };
-                const result = await auth.config.onResumeStart?.({ hasSession: true, memorySession });
-
-                expect(result).toBe(true);
-                expect(ctx.service.store.dispatch).not.toHaveBeenCalledWith(bootIntent({ offline: true }));
-            });
-
             test('should set `PASSWORD_LOCKED` instead of offline-booting when force-locked', async () => {
                 permissions.hasHostPermissions.mockResolvedValueOnce(true);
                 connectivity.online = false;
@@ -484,10 +465,18 @@ describe('Extension AuthService', () => {
                 expect(ctx.setBooted).toHaveBeenCalledWith(false);
             });
 
-            test('should set `ERROR` on non-connection error regardless of offline components', async () => {
+            test('should set `PASSWORD_LOCKED` on any error leaving the session valid', async () => {
                 ctx.status = AppStatus.IDLE;
                 setOfflineComponents();
                 await auth.config.onSessionFailure?.({ retryable: false }, genericError);
+                expect(ctx.setStatus).toHaveBeenCalledWith(AppStatus.PASSWORD_LOCKED);
+                expect(ctx.setBooted).toHaveBeenCalledWith(false);
+            });
+
+            test('should set `ERROR` on an invalid session even with offline components', async () => {
+                ctx.status = AppStatus.IDLE;
+                setOfflineComponents();
+                await auth.config.onSessionFailure?.({ retryable: false }, InactiveSessionError());
                 expect(ctx.setStatus).toHaveBeenCalledWith(AppStatus.ERROR);
                 expect(ctx.setBooted).toHaveBeenCalledWith(false);
             });
@@ -561,24 +550,6 @@ describe('Extension AuthService', () => {
                 expect(auth.alarms.scheduleAutoResume).not.toHaveBeenCalled();
             });
 
-            test('should land in `ERROR` (not PASSWORD_LOCKED) on connection error when flag is OFF', async () => {
-                ctx.status = AppStatus.IDLE;
-                featureFlags.PassExtensionOfflineV1 = false;
-                setOfflineComponents();
-                await auth.config.onSessionFailure?.({ retryable: false }, connectionError);
-                expect(ctx.setStatus).toHaveBeenCalledWith(AppStatus.ERROR);
-                expect(ctx.setStatus).not.toHaveBeenCalledWith(AppStatus.PASSWORD_LOCKED);
-            });
-
-            test('should NOT offline-boot when flag is OFF, even with components + unlocked + connection error', async () => {
-                ctx.status = AppStatus.IDLE;
-                featureFlags.PassExtensionOfflineV1 = false;
-                setOfflineComponents();
-                await auth.config.onSessionFailure?.({ retryable: false, unlocked: true }, connectionError);
-                expect(ctx.service.store.dispatch).not.toHaveBeenCalledWith(bootIntent({ offline: true }));
-                expect(ctx.setStatus).toHaveBeenCalledWith(AppStatus.ERROR);
-            });
-
             test('should always burn a resume-retry slot regardless of error type', async () => {
                 ctx.status = AppStatus.IDLE;
 
@@ -644,20 +615,6 @@ describe('Extension AuthService', () => {
                 const result = await handler?.({}, {});
 
                 expect(result).toBe(true);
-                expect(ctx.setBooted).not.toHaveBeenCalled();
-                expect(ctx.setStatus).not.toHaveBeenCalled();
-            });
-
-            test('should reject the switch when flag is OFF', async () => {
-                featureFlags.PassExtensionOfflineV1 = false;
-                connectivity.online = false;
-                ctx.status = AppStatus.READY;
-                ctx.booted = true;
-
-                const handler = mockHandlers.get(WorkerMessageType.AUTH_OFFLINE_SWITCH);
-                const result = await handler?.({}, {});
-
-                expect(result).toBe(false);
                 expect(ctx.setBooted).not.toHaveBeenCalled();
                 expect(ctx.setStatus).not.toHaveBeenCalled();
             });
