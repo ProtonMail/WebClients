@@ -2,7 +2,6 @@ import type { ChangeEvent, DragEvent, MouseEvent } from 'react';
 import { memo, useMemo, useRef } from 'react';
 
 import ItemCheckbox from '@proton/components/containers/items/ItemCheckbox';
-import { useContentSearchTelemetry } from '@proton/encrypted-search/useContentSearchTelemetry';
 import { isCustomLabel } from '@proton/mail/helpers/location';
 import { DAY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { toValidHtmlId } from '@proton/shared/lib/dom/toValidHtmlId';
@@ -13,6 +12,7 @@ import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { filterAttachmentToPreview } from '../../helpers/attachment/attachmentThumbnails';
 import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
 import { getDate, isElementMessage, isUnread } from '../../helpers/elements';
@@ -95,7 +95,7 @@ const Item = ({
 
     const snoozeDropdownState = useMailSelector(selectSnoozeDropdownState);
     const isOneTimePasscodeEnabled = useFlag(MailFeatureFlag.OneTimePasscode);
-    const { sendResultOpenedReport } = useContentSearchTelemetry();
+    const { reportResultOpened } = useEncryptedSearchContext();
 
     const elementRef = useRef<HTMLDivElement>(null);
 
@@ -157,9 +157,7 @@ const Item = ({
         }
 
         if (isSearchResult) {
-            sendResultOpenedReport({
-                // No per-field match info is tracked for Encrypted Search results today
-                primaryMatchType: 'unknown',
+            reportResultOpened({
                 isFirstOpen: getIsFirstSearchResultOpen(),
                 resultPosition: index + 1,
                 messageAgeDays: Math.floor((Date.now() - getDate(element, labelID).getTime()) / DAY),

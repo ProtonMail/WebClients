@@ -39,6 +39,9 @@ export const SEARCH_RESULT_SCROLLER_MODE: ContentSearchScrollerMode = 'message';
 
 export type ContentSearchPrimaryMatchType = 'sender' | 'subject' | 'body' | 'unknown';
 
+/** No per-field match info is tracked for search results today, on either engine. */
+export const SEARCH_RESULT_PRIMARY_MATCH_TYPE: ContentSearchPrimaryMatchType = 'unknown';
+
 export type ContentSearchResultAction =
     'reply' | 'delete' | 'forward' | 'move' | 'label' | 'star' | 'unstar' | 'read' | 'unread' | 'other';
 

@@ -26,7 +26,12 @@ import { ESAdapter, type ESStatusConcrete } from './ESAdapter';
 export type FunctionsV1 = EncryptedSearchFunctions<ESBaseMessage, NormalizedSearchParams, ESMessageContent>;
 // The reactive surface (esStatus/esIndexingProgressState/progressRecorderRef) is owned by the hook,
 // not the adapter, so the hook can rebuild the functions object when it changes — mirroring V1.
-export type FunctionsV2 = Omit<FunctionsV1, 'esStatus' | 'esIndexingProgressState' | 'progressRecorderRef'>;
+export type FunctionsV2 = Omit<FunctionsV1, 'esStatus' | 'esIndexingProgressState' | 'progressRecorderRef'> & {
+    /** v2-only: not part of the generic `EncryptedSearchFunctions` surface v1 also implements. */
+    reportResultOpened: ESAdapter['reportResultOpened'];
+};
+/** `useContentSearch`'s return type: the generic v1 surface plus the v2-only additions above. */
+export type ContentSearchFunctions = FunctionsV1 & Pick<FunctionsV2, 'reportResultOpened'>;
 
 interface Props {
     refreshMask: number;
@@ -70,6 +75,7 @@ const toBoundFunctions = (adapter: ESAdapter): FunctionsV2 => ({
     toggleEncryptedSearch: adapter.toggleEncryptedSearch.bind(adapter),
     getCache: adapter.getCache.bind(adapter),
     resetCache: adapter.resetCache.bind(adapter),
+    reportResultOpened: adapter.reportResultOpened.bind(adapter),
 });
 
 /**
@@ -80,7 +86,7 @@ const toBoundFunctions = (adapter: ESAdapter): FunctionsV2 => ({
  * adapter drives these through the setters passed at construction, and the hook rebuilds the returned
  * functions object whenever they change so consumers re-render — exactly like `useEncryptedSearch`.
  */
-export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1, isActive }: Props): FunctionsV1 => {
+export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1, isActive }: Props): ContentSearchFunctions => {
     const api = useApi();
     const [user] = useUser();
     const getUserKeys = useGetUserKeys();
@@ -158,7 +164,7 @@ export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1, isActive }
     // Rebuild the functions object whenever the reactive surface changes — the same mechanism V1 uses
     // (its `useMemo` keyed on esStatus/esIndexingProgressState). The bound method surface is stable, so
     // a new object identity here is what propagates fresh status/progress to consumers.
-    return useMemo<FunctionsV1>(
+    return useMemo<ContentSearchFunctions>(
         () => ({
             ...toBoundFunctions(adapter),
             esStatus: {

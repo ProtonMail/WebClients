@@ -15,8 +15,8 @@ import {
     type ContentSearchEventStatus,
     type ContentSearchIndexErrorKind,
     type ContentSearchMailboxAddressType,
-    type ContentSearchPrimaryMatchType,
     type ContentSearchResultAction,
+    SEARCH_RESULT_PRIMARY_MATCH_TYPE,
     SEARCH_RESULT_SCROLLER_MODE,
 } from './models/contentSearchTelemetry';
 import {
@@ -101,12 +101,10 @@ export const useContentSearchTelemetry = () => {
     };
 
     const sendResultOpenedReport = ({
-        primaryMatchType,
         isFirstOpen,
         resultPosition,
         messageAgeDays,
     }: {
-        primaryMatchType: ContentSearchPrimaryMatchType;
         isFirstOpen: boolean;
         resultPosition: number;
         messageAgeDays: number;
@@ -128,7 +126,7 @@ export const useContentSearchTelemetry = () => {
             dimensions: {
                 searchSource: 'local',
                 scrollerMode: SEARCH_RESULT_SCROLLER_MODE,
-                primaryMatchType,
+                primaryMatchType: SEARCH_RESULT_PRIMARY_MATCH_TYPE,
                 isFirstOpen: isFirstOpen.toString(),
                 searchVersion: SEARCH_VERSION_V1,
             },
