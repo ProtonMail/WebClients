@@ -135,7 +135,7 @@ export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1, isActive }
     // stale values — esLibraryFunctionsV1's identity changes when V1's esStatus does.
     adapter.esCallbacks = esCallbacks;
     adapter.esLibraryFunctionsV1 = esLibraryFunctionsV1;
-    adapter.addresses = addresses;
+    adapter.metricService.addresses = addresses;
     adapter.isActive = isActive;
 
     // Observe V1's status and progress and forward them into the adapter, which decides what to push

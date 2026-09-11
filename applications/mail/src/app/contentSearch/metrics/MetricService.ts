@@ -1,7 +1,6 @@
 import type {
     ContentSearchActionSurface,
     ContentSearchIndexErrorKind,
-    ContentSearchMailboxAddressType,
     ContentSearchResultAction,
 } from '@proton/encrypted-search/models';
 import {
@@ -11,6 +10,7 @@ import {
     SEARCH_RESULT_PRIMARY_MATCH_TYPE,
     SEARCH_RESULT_SCROLLER_MODE,
 } from '@proton/encrypted-search/models';
+import { getMailboxAddressType } from '@proton/encrypted-search/useContentSearchTelemetry';
 import {
     TelemetryContentSearchEvents,
     TelemetryContentSearchIndexEvents,
@@ -18,6 +18,7 @@ import {
 } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { Api } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import type { Logger } from '../utils/logger';
 
@@ -25,10 +26,21 @@ const SEARCH_VERSION_V2: ContentSearchVersion = 'v2';
 const SEARCH_SOURCE: ContentSearchSearchSource = 'local';
 
 export class MetricService {
+    /** Set by `startMailboxIndexing`; `mailbox_index_completed`'s `durationMs` is measured from here. */
+    private indexingStartedAt?: number;
+
+    /** Refreshed per render by `useContentSearch` — for `mailbox_index_completed`'s `mailboxAddressType`. */
+    public addresses: Address[] | undefined;
+
     constructor(
         private readonly api: Api,
         private readonly logger: Logger
     ) {}
+
+    /** Call once, when the v1+v2 indexing pipeline begins — see `ESAdapter.startIndexingJob`. */
+    startMailboxIndexing() {
+        this.indexingStartedAt = Date.now();
+    }
 
     sendQueryCompletedReport({
         hasResults,
@@ -126,17 +138,16 @@ export class MetricService {
         status,
         errorKind,
         totalMessagesIndexed,
-        durationMs,
         mailboxMessagesTotal,
-        mailboxAddressType,
     }: {
         status: ContentSearchEventStatus;
         errorKind?: ContentSearchIndexErrorKind;
-        mailboxAddressType: ContentSearchMailboxAddressType;
         totalMessagesIndexed: number;
-        durationMs: number;
         mailboxMessagesTotal?: number;
     }) {
+        const durationMs = this.indexingStartedAt !== undefined ? Date.now() - this.indexingStartedAt : 0;
+        this.indexingStartedAt = undefined;
+
         void sendTelemetryReport({
             api: this.api,
             measurementGroup: TelemetryMeasurementGroups.contentSearchIndex,
@@ -144,7 +155,7 @@ export class MetricService {
             dimensions: {
                 status,
                 errorKind,
-                mailboxAddressType,
+                mailboxAddressType: getMailboxAddressType(this.addresses),
                 searchVersion: SEARCH_VERSION_V2,
             },
             values: {
