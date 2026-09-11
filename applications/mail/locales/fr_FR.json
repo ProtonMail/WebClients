@@ -1541,7 +1541,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1741,6 +1742,12 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Add a payment method": [
+        "Ajouter une méthode de paiement"
+      ],
+      "Add more details": [
+        "Ajouter plus d'informations"
       ]
     },
     "action": {
@@ -5593,6 +5600,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Votre recherche a donné trop de résultats. Nous vous invitons à limiter votre recherche et à réessayer."
+      ],
+      "A contact with this email address already exists": [
+        "Un contact portant cette adresse e-mail existe déjà."
       ]
     },
     "error": {
@@ -9625,6 +9635,60 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Il vous reste ${ timeRemaining } de votre période d'essai. ${ addPaymentMethodLink } pour ne pas perdre votre accès. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Il vous reste ${ timeRemaining } de votre période d'essai. ${ addPaymentMethodLink } pour conserver votre abonnement. ${ learnMoreLink }"
+      ],
+      "Add ${ contact } to your contacts": [
+        "Ajouter ${ contact } à vos contacts"
+      ],
+      "Add a contact": [
+        "Ajouter un contact"
+      ],
+      "Add contact": [
+        "Ajouter un contact"
+      ],
+      "Change your theme": [
+        "Changer votre thème"
+      ],
+      "Create a filter": [
+        "Créer un filtre"
+      ],
+      "Create a folder": [
+        "Créer un dossier"
+      ],
+      "Create a label": [
+        "Créer un label"
+      ],
+      "Mark ${ emails } as unread": [
+        "Marquer ${ emails } comme non lus"
+      ],
+      "Move ${ emails }": [
+        "Déplacer ${ emails }"
+      ],
+      "No emails selected": [
+        "Aucun e-mail sélectionné"
+      ],
+      "No location selected": [
+        "Aucun emplacement sélectionné"
+      ],
+      "Rename this folder": [
+        "Renommez ce dossier"
+      ],
+      "Set your signature": [
+        "Définir votre signature"
+      ],
+      "Turn off your away message": [
+        "Désactivez votre message d'absence"
+      ],
+      "Turn on your away message": [
+        "Activez votre message d'absence"
+      ],
+      "Update this filter": [
+        "Mettre à jour ce filtre"
       ]
     },
     "info": {
@@ -10889,6 +10953,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Display name": [
+        "Nom d'affichage"
       ]
     },
     "Label (begin date/advanced search)": {

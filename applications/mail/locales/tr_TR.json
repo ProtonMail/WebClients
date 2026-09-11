@@ -1547,7 +1547,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1750,6 +1751,12 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Add a payment method": [
+        "Bir ödeme yöntemi ekleyin"
+      ],
+      "Add more details": [
+        "Daha fazla ayrıntı ekle"
       ]
     },
     "action": {
@@ -5704,6 +5711,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
+      ],
+      "A contact with this email address already exists": [
+        "Bu e-posta adresiyle bir kişi kaydı zaten var"
       ]
     },
     "error": {
@@ -6167,6 +6177,12 @@
       ],
       "Touch your security key.": [
         "Güvenlik anahtarınıza dokunun."
+      ],
+      "Still waiting?": [
+        "Hâlâ bekliyor musunuz?"
+      ],
+      "Touch your security key to continue.": [
+        "İlerlemek için güvenlik anahtarınıza dokunun."
       ]
     },
     "fido2: Label": {
@@ -9816,6 +9832,133 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } şu ana kadar ${ count } ilerledi. Sürdürmek istiyor musunuz?"
+      ],
+      "${ steps } step": [
+        "${ steps } adım",
+        "${ steps } adım"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Erişiminizi kaybetmemek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Aboneliğinizi sürdürmek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "Add ${ contact } to your contacts": [
+        "${ contact } kullanıcısını kişilerinize ekleyin"
+      ],
+      "Add a contact": [
+        "Bir kişi ekle"
+      ],
+      "Add contact": [
+        "Kişi ekle"
+      ],
+      "Change a display setting": [
+        "Bir ekran ayarını değiştir"
+      ],
+      "Change how your mail is grouped": [
+        "E-postalarınızın nasıl gruplanacağını değiştirin"
+      ],
+      "Change your list density": [
+        "Listenizin yoğunluğunu değiştirin"
+      ],
+      "Change your mailbox layout": [
+        "E-posta kutunuzun yerleşimini değiştirin"
+      ],
+      "Change your theme": [
+        "Temanızı değiştirin"
+      ],
+      "Create a filter": [
+        "Bir süzgeç oluştur"
+      ],
+      "Create a folder": [
+        "Klasör oluştur"
+      ],
+      "Create a label": [
+        "Bir etiket oluştur"
+      ],
+      "Document in foundation-search index": [
+        "Belge temel arama dizininde var"
+      ],
+      "Document lookup failed": [
+        "Belge aranamadı"
+      ],
+      "Label ${ emails }": [
+        "${ emails }yı etiketle"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "${ emails }yı ${ names } olarak etiketle"
+      ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "${ lookup.result.docId } belgesini ara"
+      ],
+      "Mark ${ emails } as read": [
+        "${ emails }yı okunmuş olarak işaretle"
+      ],
+      "Mark ${ emails } as unread": [
+        "${ emails }yı okunmamış olarak işaretle"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "${ place } içindekilerin tümünü okunmuş olarak işaretle"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "${ place } içindekilerin tümünü okunmamış olarak işaretle"
+      ],
+      "Move ${ emails }": [
+        "${ emails }yı taşı"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "${ emails }yı ${ destination } konumuna taşı"
+      ],
+      "No emails selected": [
+        "Herhangi bir e-posta seçilmemiş"
+      ],
+      "No location selected": [
+        "Bir konum seçilmemiş"
+      ],
+      "Not found in the encrypted search index.": [
+        "Şifrelenmiş arama dizininde bulunamadı."
+      ],
+      "Not found in the foundation-search index.": [
+        "Temel arama dizininde bulunamadı."
+      ],
+      "Remove the star from ${ emails }": [
+        "${ emails }dan yıldızı kaldır"
+      ],
+      "Rename ${ folder } to…": [
+        "${ folder } adını değiştir…"
+      ],
+      "Rename this folder": [
+        "Bu klasörü yeniden adlandır"
+      ],
+      "Results came from the local search.": [
+        "Sonuçlar yerel aramadan geliyor."
+      ],
+      "Results came from the server.": [
+        "Sonuçlar sunucudan geliyor."
+      ],
+      "Set your signature": [
+        "İmzanızı ayarlayın"
+      ],
+      "Source document in encrypted search index": [
+        "Şifrelenmiş arama dizinindeki kaynak belge"
+      ],
+      "Star ${ emails }": [
+        " ${ emails } e-postaya yıldız koy"
+      ],
+      "Turn off your away message": [
+        "Uzakta iletinizi kapatın"
+      ],
+      "Turn on your away message": [
+        "Uzakta iletinizi açın"
+      ],
+      "Update the filter ${ filter }": [
+        "${ filter } süzgecini güncelle"
+      ],
+      "Update this filter": [
+        "Bu süzgeci güncelle"
       ]
     },
     "info": {
@@ -11137,6 +11280,9 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Display name": [
+        "Görüntülenecek ad"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14965,6 +15111,12 @@
       "${ count } email → ${ wakeTime }": [
         "${ count } e-posta → ${ wakeTime }",
         "${ count } e-posta → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "${ emails }yı ertele"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "${ emails }yı ${ wakeTime } zamanına ertele"
       ]
     },
     "Snooze message": {

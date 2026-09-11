@@ -1538,7 +1538,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1738,6 +1739,9 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Add more details": [
+        "Adicionar mais detalhes"
       ]
     },
     "action": {
@@ -2749,6 +2753,12 @@
       "Total for ${ cycle } month": [
         "Total por ${ cycle } mês",
         "Total por ${ cycle } meses"
+      ],
+      "Amount due": [
+        "Valor a pagar"
+      ],
+      "Amount due now": [
+        "Valor devido agora"
       ]
     },
     "Collapsible tooltip": {
@@ -9633,6 +9643,78 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Você está a alguns cliques de distância de ter uma caixa de entrada organizada"
+      ],
+      "Add ${ contact } to your contacts": [
+        "Adicionar ${ contact } para seus contatos"
+      ],
+      "Add a contact": [
+        "Adicionar um contato"
+      ],
+      "Add contact": [
+        "Adicionar contato"
+      ],
+      "Change your theme": [
+        "Alterar o seu tema"
+      ],
+      "Create a filter": [
+        "Criar um filtro"
+      ],
+      "Create a folder": [
+        "Criar uma pasta"
+      ],
+      "Create a label": [
+        "Criar um marcador"
+      ],
+      "Create filter": [
+        "Criar filtro"
+      ],
+      "Mark ${ emails } as unread": [
+        "Marca ${ emails } como lido"
+      ],
+      "Move ${ emails }": [
+        "Mover ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Mover ${ emails } para ${ destination }"
+      ],
+      "No location selected": [
+        "Nenhuma localização selecionada"
+      ],
+      "Rename ${ folder } to…": [
+        "Renomear ${ folder } para…"
+      ],
+      "Rename folder": [
+        "Renomear pasta"
+      ],
+      "Rename this folder": [
+        "Renomear esta pasta"
+      ],
+      "Searched ${ targetName }": [
+        "Pesquisei ${ targetName }"
+      ],
+      "Searched for mail from ${ sender }": [
+        "Pesquisei por e-mails do ${ sender }"
+      ],
+      "Searched your mail": [
+        "Pesquisei no seu e-mail"
+      ],
+      "Set auto-reply": [
+        "Configurar resposta automática"
+      ],
+      "Set signature": [
+        "Definir assinatura"
+      ],
+      "Set your signature": [
+        "Definir sua assinatura"
+      ],
+      "Turn off auto-reply": [
+        "Desativa resposta automática"
+      ],
+      "Update the filter ${ filter }": [
+        "Atualizar filtro ${ filter }"
+      ],
+      "Update this filter": [
+        "Atualizar este filtro"
       ]
     },
     "info": {
@@ -10909,6 +10991,18 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Away message": [
+        "Mensagem de ausência"
+      ],
+      "Display name": [
+        "Nome de exibição"
+      ],
+      "New name": [
+        "Novo nome"
+      ],
+      "Return on": [
+        "Retorne em"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11256,6 +11350,12 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Você precisa reativar suas chaves para ver o convite atualizado"
+      ],
+      "Add formatting, links or images": [
+        "Adicione formatação, links ou imagens"
+      ],
+      "Advanced auto-reply options": [
+        "Opções avançadas de resposta automática"
       ]
     },
     "Link to calendar event": {
@@ -14699,6 +14799,12 @@
       "${ count } email → ${ wakeTime }": [
         "${ count } e-mail → ${ wakeTime }",
         "${ count } e-mails → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "Adiar ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "Adiar ${ emails } até ${ wakeTime }"
       ]
     },
     "Snooze message": {
@@ -17855,6 +17961,22 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Experimente agora"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - cartão terminado em ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Transferência bancária - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - cartão terminado em ${ Last4 }"
       ]
     }
   }

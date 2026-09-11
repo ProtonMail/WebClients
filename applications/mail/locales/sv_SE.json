@@ -1541,7 +1541,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1741,6 +1742,12 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Add a payment method": [
+        "Lägg till en betalningsmetod"
+      ],
+      "Add more details": [
+        "Lägg till fler detaljer"
       ]
     },
     "action": {
@@ -6025,6 +6032,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ditt konto använder ${ usedSpace } lagringsutrymme, vilket överstiger ${ inviteSpace } du tilldelades. Ta bort lite data eller be administratören för paketet att öka ditt lagringsutrymme."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du är inbjuden att länka ditt ${ BRAND_NAME }-konto till denna familjegrupp och njuta av alla dess premiumfunktioner."
       ]
     },
     "familyOffer_2023:Label": {
@@ -9701,6 +9711,70 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "${ steps } step": [
+        "${ steps } steg",
+        "${ steps } steg"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att undvika att förlora åtkomst. ${ learnMoreLink }"
+      ],
+      "Add a contact": [
+        "Lägg till en kontakt"
+      ],
+      "Add contact": [
+        "Lägg till kontakt"
+      ],
+      "Change your theme": [
+        "Ändra ditt tema"
+      ],
+      "Create a filter": [
+        "Skapa ett filter"
+      ],
+      "Create a folder": [
+        "Skapa en mapp"
+      ],
+      "Create a label": [
+        "Skapa en etikett"
+      ],
+      "Create filter": [
+        "Skapa filter"
+      ],
+      "Label ${ emails }": [
+        "Etikett ${ emails }"
+      ],
+      "Move ${ emails }": [
+        "Flytta ${ emails }"
+      ],
+      "No location selected": [
+        "Ingen plats vald"
+      ],
+      "Read your auto-reply": [
+        "Läs ditt automatiska svar"
+      ],
+      "Read your signature": [
+        "Läs din signatur"
+      ],
+      "Rename folder": [
+        "Byt namn på mapp"
+      ],
+      "Rename this folder": [
+        "Byt namn på denna mapp"
+      ],
+      "Set signature": [
+        "Ställ in signatur"
+      ],
+      "Set your signature": [
+        "Ställ in din signatur"
+      ],
+      "Turn off auto-reply": [
+        "Stäng av automatiskt svar"
+      ],
+      "Update the filter ${ filter }": [
+        "Uppdatera filtret ${ filter }"
+      ],
+      "Update this filter": [
+        "Uppdatera detta filter"
       ]
     },
     "info": {
@@ -10980,6 +11054,21 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Away message": [
+        "Frånvaromeddelande"
+      ],
+      "Display name": [
+        "Visningsnamn"
+      ],
+      "From date": [
+        "Från datum"
+      ],
+      "From time": [
+        "Från tid"
+      ],
+      "New name": [
+        "Nytt namn"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12409,6 +12498,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } slutar med ${ Last4 }"
       ]
     },
     "new_plans: label": {
@@ -17925,6 +18017,19 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - kort slutar på ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Banköverföring - ${ iban }"
+      ]
+    },
+    "Snooze info": {
+      "Snooze ${ emails }": [
+        "Snooza ${ emails }"
       ]
     }
   }

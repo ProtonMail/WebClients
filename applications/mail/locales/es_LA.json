@@ -1547,7 +1547,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1750,6 +1751,12 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Add a payment method": [
+        "Añadir un método de pago"
+      ],
+      "Add more details": [
+        "Añadir más detalles"
       ]
     },
     "action": {
@@ -5704,6 +5711,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La búsqueda coincidió con muchos resultados. Limite la búsqueda e inténtelo de nuevo."
+      ],
+      "A contact with this email address already exists": [
+        "Ya existe un contacto con esta dirección de correo"
       ]
     },
     "error": {
@@ -6167,6 +6177,12 @@
       ],
       "Touch your security key.": [
         "Toque su llave de seguridad."
+      ],
+      "Still waiting?": [
+        "¿Sigue esperando?"
+      ],
+      "Touch your security key to continue.": [
+        "Toque su llave de seguridad para continuar."
       ]
     },
     "fido2: Label": {
@@ -9795,6 +9811,154 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } ha tomado ${ count } hasta ahora. ¿Continuar?"
+      ],
+      "${ steps } step": [
+        "${ steps } paso",
+        "${ steps } pasos"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } restante en su prueba. ${ addPaymentMethodLink } para evitar la pérdida de datos. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } restante en su prueba. ${ addPaymentMethodLink } para mantener la suscripción. ${ learnMoreLink }"
+      ],
+      "Add ${ contact } to your contacts": [
+        "Añadir ${ contact } a sus contactos"
+      ],
+      "Add a contact": [
+        "Añadir un contacto"
+      ],
+      "Add contact": [
+        "Añadir contacto"
+      ],
+      "Change a display setting": [
+        "Cambiar un ajuste de pantalla"
+      ],
+      "Change how your mail is grouped": [
+        "Cambie cómo se agrupa su correo"
+      ],
+      "Change your list density": [
+        "Cambie la densidad de su lista"
+      ],
+      "Change your mailbox layout": [
+        "Cambie el diseño de su buzón"
+      ],
+      "Change your theme": [
+        "Cambie su tema"
+      ],
+      "Create a filter": [
+        "Crear un filtro"
+      ],
+      "Create a folder": [
+        "Crear una carpeta"
+      ],
+      "Create a label": [
+        "Crear una etiqueta"
+      ],
+      "Create filter": [
+        "Crear filtro"
+      ],
+      "Document in foundation-search index": [
+        "Documento en el índice de búsqueda de la fundación"
+      ],
+      "Document lookup failed": [
+        "Error en la búsqueda del documento"
+      ],
+      "Label ${ emails }": [
+        "Etiquetar ${ emails }"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "Etiquetar ${ emails } como ${ names }"
+      ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Búsqueda del documento ${ lookup.result.docId }"
+      ],
+      "Mark ${ emails } as read": [
+        "Marcar ${ emails } como leído(s)"
+      ],
+      "Mark ${ emails } as unread": [
+        "Marcar ${ emails } como no leído(s)"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "Marcar todo en ${ place } como leído"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "Marcar todo en ${ place } como no leído"
+      ],
+      "Move ${ emails }": [
+        "Mover ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Mover ${ emails } a ${ destination }"
+      ],
+      "No emails selected": [
+        "Ningún correo seleccionado"
+      ],
+      "No location selected": [
+        "Ninguna ubicación seleccionada"
+      ],
+      "Not found in the encrypted search index.": [
+        "No se encontró en el índice de búsqueda cifrado."
+      ],
+      "Not found in the foundation-search index.": [
+        "No se encontró en el índice de búsqueda de la fundación."
+      ],
+      "Read your auto-reply": [
+        "Lea su respuesta automática"
+      ],
+      "Read your signature": [
+        "Lea su firma"
+      ],
+      "Remove the star from ${ emails }": [
+        "Eliminar destacado de ${ emails }"
+      ],
+      "Rename ${ folder } to…": [
+        "Renombrar ${ folder } a…"
+      ],
+      "Rename folder": [
+        "Renombrar carpeta"
+      ],
+      "Rename this folder": [
+        "Renombrar esta carpeta"
+      ],
+      "Results came from the local search.": [
+        "Los resultados vinieron de la búsqueda local."
+      ],
+      "Results came from the server.": [
+        "Los resultados vinieron del servidor."
+      ],
+      "Set auto-reply": [
+        "Configurar respuesta automática"
+      ],
+      "Set signature": [
+        "Configurar una firma"
+      ],
+      "Set your signature": [
+        "Configure su firma"
+      ],
+      "Source document in encrypted search index": [
+        "Documento fuente en índice de búsqueda cifrado"
+      ],
+      "Star ${ emails }": [
+        "Destacar ${ emails }"
+      ],
+      "Turn off auto-reply": [
+        "Desactivar respuesta automática"
+      ],
+      "Turn off your away message": [
+        "Desactive su mensaje de ausencia"
+      ],
+      "Turn on your away message": [
+        "Active su mensaje de ausencia"
+      ],
+      "Update the filter ${ filter }": [
+        "Actualizar este filtro ${ filter }"
+      ],
+      "Update this filter": [
+        "Actualizar este filtro"
       ]
     },
     "info": {
@@ -11098,6 +11262,27 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Away message": [
+        "Mensaje de ausencia"
+      ],
+      "Display name": [
+        "Nombre a mostrar"
+      ],
+      "From date": [
+        "De la fecha"
+      ],
+      "From time": [
+        "De la hora"
+      ],
+      "New name": [
+        "Nombre nuevo"
+      ],
+      "Until date": [
+        "Hasta la fecha"
+      ],
+      "Until time": [
+        "Hasta la hora"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11445,6 +11630,12 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Necesita reactivar las claves para ver la invitación actualizada"
+      ],
+      "Add formatting, links or images": [
+        "Añadir formato, enlaces o imágenes"
+      ],
+      "Advanced auto-reply options": [
+        "Opciones de respuesta automática avanzadas"
       ]
     },
     "Link to calendar event": {
@@ -12527,6 +12718,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está disfrutando de un precio promocional en el plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } que termina en ${ Last4 }"
       ]
     },
     "new_plans: label": {
@@ -14901,6 +15095,12 @@
       "${ count } email → ${ wakeTime }": [
         "${ count } correo → ${ wakeTime }",
         "${ count } correos → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "Pausar ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "Pausar ${ emails } hasta el ${ wakeTime }"
       ]
     },
     "Snooze message": {
@@ -18060,6 +18260,22 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Cambiar su dirección de facturación podría afectar los impuestos en facturas futuras."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - tarjeta terminada en ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Transferencia bancaria - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - tarjeta terminada en ${ Last4 }"
       ]
     }
   }

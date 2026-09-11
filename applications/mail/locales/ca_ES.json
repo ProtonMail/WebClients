@@ -1547,7 +1547,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1750,6 +1751,12 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Add a payment method": [
+        "Afegiu un mètode de pagament"
+      ],
+      "Add more details": [
+        "Afegeix més detalls"
       ]
     },
     "action": {
@@ -5704,6 +5711,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La vostra cerca coincideix amb massa resultats. Limiteu-la i torneu-ho a provar."
+      ],
+      "A contact with this email address already exists": [
+        "Ja existeix un contacte amb aquesta adreça de correu electrònic"
       ]
     },
     "error": {
@@ -6167,6 +6177,12 @@
       ],
       "Touch your security key.": [
         "Toqueu la vostra clau de seguretat."
+      ],
+      "Still waiting?": [
+        "Encara esteu esperant?"
+      ],
+      "Touch your security key to continue.": [
+        "Toqueu la clau de seguretat per continuar."
       ]
     },
     "fido2: Label": {
@@ -9816,6 +9832,133 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sou tot just a uns quants clics d'una safata d'entrada ordenada"
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } ha fet ${ count } fins ara. Voleu continuar?"
+      ],
+      "${ steps } step": [
+        "${ steps } pas",
+        "${ steps } passos"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Us queda ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per no perdre'n l'accés. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Us queden ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per a mantenir la vostra subscripció. ${ learnMoreLink }"
+      ],
+      "Add ${ contact } to your contacts": [
+        "Afegir ${ contact } als vostres contactes"
+      ],
+      "Add a contact": [
+        "Afegeix un contacte"
+      ],
+      "Add contact": [
+        "Afegeix un contacte"
+      ],
+      "Change a display setting": [
+        "Canvieu un paràmetre de visualització"
+      ],
+      "Change how your mail is grouped": [
+        "Canvieu com s'agrupa el vostre correu"
+      ],
+      "Change your list density": [
+        "Canvia la densitat de la vostra llista"
+      ],
+      "Change your mailbox layout": [
+        "Canviar el disseny de la vostra bústia de correu"
+      ],
+      "Change your theme": [
+        "Canvieu el vostre tema"
+      ],
+      "Create a filter": [
+        "Creeu un filtre"
+      ],
+      "Create a folder": [
+        "Crea una carpeta"
+      ],
+      "Create a label": [
+        "Crea una etiqueta"
+      ],
+      "Document in foundation-search index": [
+        "Document a l'índex base de la cerca"
+      ],
+      "Document lookup failed": [
+        "S'ha produït un error en la cerca del document"
+      ],
+      "Label ${ emails }": [
+        "Etiqueta ${ emails }"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "Etiquetar ${ emails } com a ${ names }"
+      ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Cerca del document ${ lookup.result.docId }"
+      ],
+      "Mark ${ emails } as read": [
+        "Marcar ${ emails } com a llegits"
+      ],
+      "Mark ${ emails } as unread": [
+        "Marcar ${ emails } com a no llegits"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "Marcar tot ${ place } com a llegit"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "Marcar tot ${ place } com a no llegit"
+      ],
+      "Move ${ emails }": [
+        "Moveu ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Moure ${ emails } a ${ destination }"
+      ],
+      "No emails selected": [
+        "No s'ha seleccionat cap correu electrònic"
+      ],
+      "No location selected": [
+        "No s'ha seleccionat cap ubicació"
+      ],
+      "Not found in the encrypted search index.": [
+        "No s'ha trobat a l'índex de cerca xifrat."
+      ],
+      "Not found in the foundation-search index.": [
+        "No s'ha trobat a l'índex base de la cerca."
+      ],
+      "Remove the star from ${ emails }": [
+        "Esborra l'estrella de ${ emails }"
+      ],
+      "Rename ${ folder } to…": [
+        "Canviar el nom de ${ folder } per..."
+      ],
+      "Rename this folder": [
+        "Canviar el nom de la carpeta"
+      ],
+      "Results came from the local search.": [
+        "Els resultats provenen de la cerca local."
+      ],
+      "Results came from the server.": [
+        "Els resultats han provingut del servidor."
+      ],
+      "Set your signature": [
+        "Definiu la vostra signatura"
+      ],
+      "Source document in encrypted search index": [
+        "Document font a l'índex de cerca xifrat"
+      ],
+      "Star ${ emails }": [
+        "Destacar ${ emails }"
+      ],
+      "Turn off your away message": [
+        "Desactiveu el missatge d'absència"
+      ],
+      "Turn on your away message": [
+        "Activar el missatge d'absència"
+      ],
+      "Update the filter ${ filter }": [
+        "Actualitza el filtre ${ filter }"
+      ],
+      "Update this filter": [
+        "Actualitzar aquest filtre"
       ]
     },
     "info": {
@@ -11137,6 +11280,9 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Display name": [
+        "Nom per a mostrar"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14965,6 +15111,12 @@
       "${ count } email → ${ wakeTime }": [
         "${ count } correu electrònic → ${ wakeTime }",
         "${ count } correus electrònics → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "Ajorneu ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "Ajornar ${ emails } fins a les ${ wakeTime }"
       ]
     },
     "Snooze message": {
