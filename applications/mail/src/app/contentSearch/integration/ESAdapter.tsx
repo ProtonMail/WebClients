@@ -14,6 +14,7 @@ import noop from '@proton/utils/noop';
 
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
 import type { IndexService } from '../indexation/IndexService';
+import type { MetricService } from '../metrics/MetricService';
 import type { Search, SearchOutcome } from '../search/Search';
 import type { SearchService } from '../search/SearchService';
 import { IndexingJob, type JobMode } from './IndexingJob';
@@ -91,6 +92,7 @@ function errorBeforeFirstResults(search: Search): Promise<SearchOutcome | undefi
 export class ESAdapter implements FunctionsV2 {
     private readonly searchService: SearchService;
     private readonly indexService: IndexService;
+    private readonly metricService: MetricService;
     /** Per-render dependency, refreshed by `useContentSearch` — provides getSearchParams/getKeywords. */
     public esCallbacks: ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent>;
     /** Per-render dependency, refreshed by `useContentSearch` — the legacy `useEncryptedSearch` instance. */
@@ -117,6 +119,7 @@ export class ESAdapter implements FunctionsV2 {
     constructor({
         searchService,
         indexService,
+        metricService,
         esCallbacks,
         esLibraryFunctionsV1,
         updateESStatus,
@@ -124,6 +127,7 @@ export class ESAdapter implements FunctionsV2 {
     }: {
         searchService: SearchService;
         indexService: IndexService;
+        metricService: MetricService;
         /** Per-render dependency, refreshed by `useContentSearch` — provides getSearchParams/getKeywords. */
         esCallbacks: ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent>;
         /** Per-render dependency, refreshed by `useContentSearch` — the legacy `useEncryptedSearch` instance. */
@@ -133,6 +137,7 @@ export class ESAdapter implements FunctionsV2 {
     }) {
         this.searchService = searchService;
         this.indexService = indexService;
+        this.metricService = metricService;
         this.esCallbacks = esCallbacks;
         this.esLibraryFunctionsV1 = esLibraryFunctionsV1;
         this.updateESStatus = updateESStatus;
@@ -193,6 +198,7 @@ export class ESAdapter implements FunctionsV2 {
         } else {
             this.lastSearch?.dispose();
             this.coalescedResults?.cancel();
+            const searchStartedAt = Date.now();
             this.lastSearch = this.searchService.search(esSearchParams);
             // Content search streams a full snapshot per bucket; coalesce those to one dispatch per
             // frame so a large query doesn't flood the store with hundreds of synchronous updates.
@@ -212,6 +218,15 @@ export class ESAdapter implements FunctionsV2 {
                 this.lastSearch = undefined;
                 this.coalescedResults?.cancel();
                 return false;
+            }
+            if (outcome === 'completed') {
+                const resultCount = this.lastSearch.results?.length ?? 0;
+                this.metricService.sendQueryCompletedReport({
+                    hasResults: resultCount > 0,
+                    status: 'success',
+                    resultCount,
+                    durationMs: Date.now() - searchStartedAt,
+                });
             }
         }
         return true;
