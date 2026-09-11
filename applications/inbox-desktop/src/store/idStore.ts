@@ -1,11 +1,9 @@
 import { createHash, randomUUID } from "node:crypto";
-import Store from "electron-store";
 import { mainLogger } from "../utils/log";
 import { z } from "zod";
+import { SafeStore } from "./safeStore/safeStore";
 
-const store = new Store<{ appID: AppID }>({
-    configFileMode: 0o600,
-});
+const store = new SafeStore<{ appID: AppID }>("id");
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const appIDSchema = z.object({

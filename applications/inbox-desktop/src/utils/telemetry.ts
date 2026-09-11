@@ -1,5 +1,3 @@
-import Store from "electron-store";
-
 import { RELEASE_CATEGORIES } from "@proton/shared/lib/constants";
 import {
     DailyStatsStored,
@@ -14,6 +12,7 @@ import { getSettings } from "../store/settingsStore";
 import { mainLogger } from "../utils/log";
 import { checkDefaultMailto, getDefaultMailto } from "../utils/protocol/default";
 import { BrowserWindow, WebContentsView } from "electron";
+import { SafeStore } from "../store/safeStore/safeStore";
 
 type TelemetryStored = {
     dailyStats: DailyStatsStored;
@@ -154,9 +153,7 @@ class TelemetryService {
     }
 
     // Store
-    private store = new Store<{ telemetry: TelemetryStored }>({
-        configFileMode: 0o600,
-    });
+    private store = new SafeStore<{ telemetry: TelemetryStored }>("telemetry");
 
     private updateStats<M extends Measurement>(
         measurement: M,

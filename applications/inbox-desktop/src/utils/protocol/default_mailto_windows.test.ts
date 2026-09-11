@@ -7,15 +7,13 @@ jest.mock("electron", () => ({
     shell: { openExternal: jest.fn().mockResolvedValue(undefined) },
 }));
 
-jest.mock(
-    "electron-store",
-    () =>
-        class {
-            get = jest.fn();
-            set = jest.fn();
-            delete = jest.fn();
-        },
-);
+jest.mock("../../store/safeStore/safeStore", () => ({
+    SafeStore: class {
+        get = jest.fn();
+        set = jest.fn();
+        delete = jest.fn();
+    },
+}));
 
 jest.mock("../log", () => ({
     protocolLogger: { info: jest.fn(), error: jest.fn(), log: jest.fn(), debug: jest.fn(), warn: jest.fn() },

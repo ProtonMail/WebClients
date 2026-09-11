@@ -5,11 +5,11 @@ jest.mock("electron", () => ({
     app: mockApp,
 }));
 
-jest.mock("electron-store", () => {
-    return jest.fn().mockImplementation(() => ({
+jest.mock("./safeStore/safeStore", () => ({
+    SafeStore: jest.fn().mockImplementation(() => ({
         get: mockStoreGet,
-    }));
-});
+    })),
+}));
 
 jest.mock("./settingsStore", () => ({
     updateSettings: jest.fn(),
