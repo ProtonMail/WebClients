@@ -254,7 +254,6 @@ const UsernameSection = ({ app }: Props) => {
                                     canEditExternalAddress && (
                                         <SettingsValueRow.EditButton
                                             title={c('Action').t`Edit email address`}
-                                            aria-label={c('Action').t`Edit email address`}
                                             onClick={() => {
                                                 setTmpAddress(primaryAddress);
                                                 setEditAddressModalOpen(true);
@@ -288,7 +287,6 @@ const UsernameSection = ({ app }: Props) => {
                                             !loadingAddresses && (
                                                 <SettingsValueRow.EditButton
                                                     title={c('Action').t`Edit display name`}
-                                                    aria-label={c('Action').t`Edit display name`}
                                                     onClick={() => {
                                                         setTmpAddress(primaryAddress);
                                                         setModalOpen(true);

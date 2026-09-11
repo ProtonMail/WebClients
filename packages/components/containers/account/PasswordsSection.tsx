@@ -237,7 +237,6 @@ const PasswordsSection = () => {
                                                 <SettingsValueRow.EditButton
                                                     id="passwordChange"
                                                     title={c('sso').t`Change backup password`}
-                                                    aria-label={c('sso').t`Change backup password`}
                                                     onClick={() => setChangeBackupPasswordModalOpen(true)}
                                                 />
                                             }
@@ -267,7 +266,6 @@ const PasswordsSection = () => {
                                                 id="passwordChange"
                                                 data-testid="change-password-button"
                                                 title={passwordButtonLabel}
-                                                aria-label={passwordButtonLabel}
                                                 onClick={() => handleChangePassword(changePasswordMode)}
                                             />
                                         }
@@ -328,7 +326,6 @@ const PasswordsSection = () => {
                                                                 id="changeSecondPassword"
                                                                 data-testid="change-second-password-button"
                                                                 title={c('Action').t`Change second password`}
-                                                                aria-label={c('Action').t`Change second password`}
                                                                 onClick={() =>
                                                                     handleChangePassword(
                                                                         MODES.CHANGE_TWO_PASSWORD_MAILBOX_MODE
