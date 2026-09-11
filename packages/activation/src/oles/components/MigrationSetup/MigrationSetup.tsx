@@ -1,4 +1,4 @@
-import React, { type FC, useEffect, useState } from 'react';
+import React, { type FC, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -20,6 +20,7 @@ import {
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import type { OlesProvider } from '../../providers';
 import type { MigrationConfiguration, MigrationModel, MigrationSetupModel } from '../../types';
 import { useProviderUsers } from '../../useProviderUsers';
 import { isTerminal } from '../MigrationAssistant/ImportStatus';
@@ -56,38 +57,44 @@ type StepId =
     | 'invite-users'
     | 'final';
 
-const STEPS: { id: StepId; component?: FC<StepComponentProps>; steps?: typeof STEPS }[] = [
-    { id: 'configure-migration', component: StepConfigureMigration },
-    { id: 'authenticate', component: StepAuthenticate },
-    { id: 'install-app', component: StepInstallApp },
-    {
-        id: 'domain-setup',
-        component: StepDomain,
-        steps: [
-            { id: 'domain-verify', component: StepDomainVerify },
-            { id: 'spf-records', component: StepDomainSPF },
-            { id: 'dkim-records', component: StepDomainDKIM },
-            { id: 'dmarc-records', component: StepDomainDMARC },
-        ],
-    },
-    {
-        id: 'configure-users',
-        steps: [
-            {
-                id: 'migrate-accounts',
-                component: MigrationAssistant,
-            },
-            {
-                id: 'invite-users',
-                component: StepInviteUsers,
-            },
-        ],
-    },
-    {
-        id: 'final',
-        component: StepFinal,
-    },
-];
+type Step = { id: StepId; component?: FC<StepComponentProps>; steps?: Step[] };
+
+/**
+ * Grant-access (consent) providers, e.g. Microsoft, present "Grant access" as a sub-step of Authenticate;
+ * marketplace-install (link) providers, e.g. Google, keep "Install migration app" as its own top-level step.
+ */
+const buildSteps = (provider: OlesProvider): Step[] => {
+    const grantAccessStep: Step = { id: 'install-app', component: StepInstallApp };
+    const grantAccessIsSubstep = provider.installApp.type === 'consent';
+
+    return [
+        { id: 'configure-migration', component: StepConfigureMigration },
+        {
+            id: 'authenticate',
+            component: StepAuthenticate,
+            steps: grantAccessIsSubstep ? [grantAccessStep] : undefined,
+        },
+        ...(grantAccessIsSubstep ? [] : [grantAccessStep]),
+        {
+            id: 'domain-setup',
+            component: StepDomain,
+            steps: [
+                { id: 'domain-verify', component: StepDomainVerify },
+                { id: 'spf-records', component: StepDomainSPF },
+                { id: 'dkim-records', component: StepDomainDKIM },
+                { id: 'dmarc-records', component: StepDomainDMARC },
+            ],
+        },
+        {
+            id: 'configure-users',
+            steps: [
+                { id: 'migrate-accounts', component: MigrationAssistant },
+                { id: 'invite-users', component: StepInviteUsers },
+            ],
+        },
+        { id: 'final', component: StepFinal },
+    ];
+};
 
 export type StepComponentProps = {
     // MigrationSetupModal before the migration is POSTed,
@@ -181,6 +188,7 @@ const MigrationNavigationListStepButton = ({
 
 const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
     const api = useSilentApi();
+    const STEPS = useMemo(() => buildSteps(model.provider), [model.provider]);
     const [providerUsers, , refreshProviderUsers] = useProviderUsers(model.domainName);
     const [state, setState] = useState<MigrationSetupState>({
         currentStep: model.importerOrganizationId ? 'migrate-accounts' : 'configure-migration',
@@ -321,7 +329,7 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
     const activeStep = flatSteps[stepIndex.get(state.currentStep)!];
     const isLastStep = state.currentStep === flatSteps.at(-1)!.id;
 
-    const stepStatusIcon = (step: (typeof STEPS)[number]): React.JSX.Element => {
+    const stepStatusIcon = (step: Step): React.JSX.Element => {
         const defaultIcon = <IcExclamationCircle className="color-weak shrink-0 visibility-hidden" />;
 
         const stepConfig = stepConfigs[step.id];
