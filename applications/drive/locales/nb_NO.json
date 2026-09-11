@@ -4495,6 +4495,9 @@
       ],
       "Could not grant access to the organization key": [
         "Kunne ikke gi tilgang til organisasjonsnøkkelen"
+      ],
+      "A contact with this email address already exists": [
+        "En kontakt med denne e-postadressen finnes allerede"
       ]
     },
     "error": {
@@ -5060,7 +5063,7 @@
         "Alle album"
       ],
       "Recent": [
-        "Nylige"
+        "Nylig"
       ],
       "Share ${ photoCount } photo via": [
         "Del ${ photoCount } bilde via",
@@ -5736,7 +5739,7 @@
         "Anonym"
       ],
       "Apr": [
-        "Apr"
+        "apr."
       ],
       "Are you sure you want to discard your changes?": [
         "Er du sikker på at du vil forkaste de ulagrede endringene dine?"
@@ -5769,7 +5772,7 @@
         "Oppmerksomhet kreves"
       ],
       "Aug": [
-        "Aug"
+        "aug."
       ],
       "Available": [
         "Tilgjengelig"
@@ -5951,7 +5954,7 @@
         "Egendefinerte e-postdomener"
       ],
       "Dec": [
-        "Des"
+        "des."
       ],
       "Decrypting files": [
         "Dekrypterer filer"
@@ -6121,7 +6124,7 @@
         "Mislyktes"
       ],
       "Feb": [
-        "Feb"
+        "feb."
       ],
       "File \"${ name }\" was deleted during download": [
         "Fil \"${ name }\" ble slettet under nedlasting"
@@ -6308,16 +6311,16 @@
         "Det er enkelt og sikkert"
       ],
       "Jan": [
-        "Jan"
+        "jan."
       ],
       "JCB logo": [
         "JCB-logo"
       ],
       "Jul": [
-        "Jul"
+        "jul."
       ],
       "Jun": [
-        "Jun"
+        "jun."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bare bekreft valget ditt og vi vil gjøre resten."
@@ -6399,7 +6402,7 @@
         "Maksimum ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn"
       ],
       "May": [
-        "Mai"
+        "mai"
       ],
       "Medium Priority": [
         "Middels prioritet"
@@ -6480,7 +6483,7 @@
         "Merk: data kan fortsatt være tilgjengelig lokalt på enheter der du har installert ${ DRIVE_APP_NAME }."
       ],
       "Nov": [
-        "Nov"
+        "nov."
       ],
       "Number of dedicated servers in the organization": [
         "Antall dedikerte servere i organisasjonen"
@@ -6984,7 +6987,7 @@
         "Dette vil avbryte eventuelle gjenværende opplastinger. Avbrutte filer vil ikke bli lagret i ${ DRIVE_APP_NAME }."
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
-        "Dette vil bare slette albumet. Bildene dine forblir på tidslinjen din. Denne handlingen kan ikke angres."
+        "Dette vil bare slette albumet. Bildene dine forblir på tidslinjen. Denne handlingen kan ikke angres."
       ],
       "This will permanently delete the file you uploaded.": [
         "Dette vil slette filen du lastet opp permanent."
@@ -7017,7 +7020,7 @@
         "Dette vil laste opp en ny versjon av mappen"
       ],
       "Time": [
-        "Tid"
+        "Tidspunkt"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "For å fullføre betalingen, send ${ btcAmountBold } til adressen nedenfor."
@@ -7026,7 +7029,7 @@
         "For å laste ned disse filene, åpne dem i ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME } og eksporter dem."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "For å muliggjøre virkelig privat søk, må ${ DRIVE_APP_NAME } indeksere filene dine lokalt."
+        "For å muliggjøre virkelig privat søk, må ${ DRIVE_APP_NAME } indeksere filene lokalt."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "For å muliggjøre virkelig privat søk, må vi indeksere filene dine lokalt. Du kan fremdeles bruke ${ DRIVE_APP_NAME } som normalt - vi gir deg beskjed når indekseringen er ferdig."
@@ -7876,6 +7879,31 @@
       ],
       "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
         "${ DRIVE_APP_NAME } kunne ikke dekryptere den lokale søkeindeksen. Gjenopprett indeksen for å gjenopprette søket."
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } har tatt ${ count } så langt. Fortsette?"
+      ],
+      "${ steps } step": [
+        "${ steps } trinn",
+        "${ steps } trinn"
+      ],
+      "Can't read this file": [
+        "Kan ikke lese denne filen"
+      ],
+      "Looked at this image": [
+        "Så på dette bildet"
+      ],
+      "Not in My files": [
+        "Ikke i Mine filer"
+      ],
+      "Read folder context": [
+        "Lest mappekontekst"
+      ],
+      "Read this file": [
+        "Les denne filen"
+      ],
+      "Search data can't be read": [
+        "Søkedataene kan ikke leses"
       ]
     },
     "info": {
@@ -8494,7 +8522,7 @@
         "Delt av"
       ],
       "Shared on": [
-        "Delt den"
+        "Delt"
       ],
       "Shared with me": [
         "Delt med meg"
@@ -10946,7 +10974,7 @@
         "Opprett et dokument"
       ],
       "Get started": [
-        "Kom i gang"
+        "Kom igang"
       ],
       "Install and continue": [
         "Installer og fortsett"
@@ -11168,7 +11196,7 @@
         "Ingen overordnet mappe"
       ],
       "Only current location": [
-        "Kun nåværende plassering"
+        "Kun gjeldende plassering"
       ],
       "Only current location: ${ name }": [
         "Kun nåværende plassering: ${ name }"
@@ -12576,7 +12604,7 @@
         "Kryptert søk er her"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
-        "Nå kan du enkelt søke i Drive-filer samtidig som du holder dataene dine sikre."
+        "Nå kan du enkelt søke i Drive-filer samtidig som du holder dataene sikre."
       ],
       "Editor permissions": [
         "Redigeringstillatelser"
@@ -13251,7 +13279,7 @@
         "Problem rapportert"
       ],
       "Recovery has started": [
-        "Gjenopprettingen har startet"
+        "Gjenopprettingen er i gang"
       ],
       "Secure link copied": [
         "Sikker kobling kopiert"
@@ -14176,7 +14204,7 @@
         "Lagre den til senere i ${ DRIVE_APP_NAME }"
       ],
       "Search results": [
-        "Søkeresultater"
+        "Søketreff"
       ],
       "Searching…": [
         "Søker..."
