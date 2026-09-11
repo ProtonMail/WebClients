@@ -11,15 +11,13 @@ import { useEpoch } from '../../hooks/useEpoch';
 import { nextOfflinePrompt, shouldPromptOfflineSetup } from '../../lib/settings/offline-prompt';
 import { settingsEditIntent } from '../../store/actions';
 import { selectOfflineEnabled, selectOfflinePrompt } from '../../store/selectors';
-import { PassFeature } from '../../types/api/features';
 import { getEpoch } from '../../utils/time/epoch';
 import { useOnline } from '../Core/ConnectivityProvider';
-import { WithFeatureFlag } from '../Core/WithFeatureFlag';
 import { NotificationBanner } from './InAppNotificationBanner';
 
 type Props = { dense?: boolean };
 
-const OfflineSetupBanner: FC<Props> = ({ dense }) => {
+export const OfflineSetupNotification: FC<Props> = ({ dense }) => {
     const dispatch = useDispatch();
     const online = useOnline();
     const offlineEnabled = useSelector(selectOfflineEnabled);
@@ -48,9 +46,3 @@ const OfflineSetupBanner: FC<Props> = ({ dense }) => {
         />
     );
 };
-
-/** Offline mode is flag-gated on the extension only: `offlineEnabled` hydration
- * has no feature flag on web & desktop (see `hydrate.saga`). */
-export const OfflineSetupNotification: FC<Props> = EXTENSION_BUILD
-    ? WithFeatureFlag(OfflineSetupBanner, PassFeature.PassExtensionOfflineV1)
-    : OfflineSetupBanner;

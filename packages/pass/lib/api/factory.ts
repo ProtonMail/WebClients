@@ -34,10 +34,18 @@ import { waitUntil } from '../../utils/fp/wait-until';
 import { logger } from '../../utils/logger';
 import { createPubSub } from '../../utils/pubsub/factory';
 import { authStore } from '../auth/store';
+import { withQARefreshStatus } from '../qa/api';
 import { PassErrorCode, isAbortError } from './errors';
 import { withApiHandlers } from './handlers';
 import { refreshHandlerFactory } from './refresh';
-import { buildApiState, getSilenced, isAccessRestricted, isSessionResumeRoute } from './utils';
+import {
+    API_FAILURE_THRESHOLD,
+    buildApiState,
+    getIsSessionInvalid,
+    getSilenced,
+    isAccessRestricted,
+    isSessionResumeRoute,
+} from './utils';
 
 export type ApiFactoryOptions = {
     config: ProtonConfig;
@@ -69,7 +77,7 @@ export const createApi = ({
     const pubsub = createPubSub<ApiSubscriptionEvent>();
     const clientID = getClientID(config.APP_NAME);
 
-    const call = configureApi({ ...config, clientID, protonFetch } as any) as ApiCallFn;
+    const call = withQARefreshStatus(configureApi({ ...config, clientID, protonFetch } as any) as ApiCallFn);
 
     const refreshHandler = refreshHandlerFactory({
         call,
@@ -119,6 +127,7 @@ export const createApi = ({
                     const broadcast = !state.get('online') || state.get('unreachable');
                     const pendingCount = state.get('pendingCount');
                     state.set('serverTime', updateServerTime(serverTime));
+                    state.set('failureCount', 0);
                     state.set('unreachable', false);
                     state.set('online', true);
 
@@ -158,13 +167,25 @@ export const createApi = ({
                 const missingScope = code === PassErrorCode.MISSING_SCOPE;
                 const restricted = isAccessRestricted(code, options.url);
                 const online = !(offline || timedOut || networkError);
-                const unreachable = getIsUnreachableError(e);
                 const sessionLocked = e.name === 'LockedSession';
                 const sessionInactive = e.name === 'InactiveSession' || code === PassErrorCode.SRP_ERROR;
+
+                /** Count failures that reached the network and left the session valid. A single
+                 * status cannot tell an outage from a legitimate error, but a run of failures
+                 * with nothing succeeding in between means the API is unusable whatever it
+                 * answers. This is what surfaces a rate-limited outage as DOWNTIME, since
+                 * `getIsUnreachableError` only covers 5xx. Only a success clears the count:
+                 * losing the network or the session says nothing about server health.
+                 * `status > 0` excludes errors thrown before the request left the client
+                 * (`handlers.ts` short-circuits on a bad app version or a locked session). */
+                const counts = online && e.status > 0 && !getIsSessionInvalid(e);
+                const failureCount = state.get('failureCount') + (counts ? 1 : 0);
+                const unreachable = getIsUnreachableError(e) || failureCount >= API_FAILURE_THRESHOLD;
                 const broadcast = state.get('online') !== online || state.get('unreachable') !== unreachable;
 
                 if (serverTime) state.set('serverTime', updateServerTime(serverTime));
                 state.set('appVersionBad', e.name === 'AppVersionBadError');
+                state.set('failureCount', failureCount);
                 state.set('sessionInactive', sessionInactive);
                 state.set('sessionLocked', sessionLocked);
                 state.set('unreachable', unreachable);

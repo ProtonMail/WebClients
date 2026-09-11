@@ -26,6 +26,7 @@ import {
 import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { api } from '@proton/pass/lib/api/api';
+import { getIsSessionInvalid } from '@proton/pass/lib/api/utils';
 import { extractOfflineComponents, getStateKey } from '@proton/pass/lib/auth/fork';
 import { biometricsLockAdapterFactory, generateBiometricsKey } from '@proton/pass/lib/auth/lock/biometrics/adapter';
 import { passwordLockAdapterFactory } from '@proton/pass/lib/auth/lock/password/adapter';
@@ -60,7 +61,6 @@ import { logger } from '@proton/pass/utils/logger';
 import { objectHandler } from '@proton/pass/utils/object/handler';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { revoke } from '@proton/shared/lib/api/auth';
-import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
     getBasename,
@@ -207,9 +207,8 @@ export const createAuthService = ({
                 authStore.setLockToken(undefined);
                 authStore.setOfflineKD(undefined);
 
-                const offlineEnabled = (await core.settings.resolve(localID))?.offlineEnabled ?? false;
                 const offline = !connectivity.online;
-                const initialLockedStatus = getInitialLockedAppStatus(authStore, { offlineEnabled, offline });
+                const initialLockedStatus = getInitialLockedAppStatus(authStore, { offline });
 
                 if (initialLockedStatus) {
                     authStore.setPassword(undefined);
@@ -563,27 +562,34 @@ export const createAuthService = ({
             logger.info('[AuthServiceProvider] Session resume failure');
             await api.idle();
 
-            /** Only advance the retry chain on server-side downtime */
-            const connectionIssue = getIsConnectionIssue(err);
-            if (connectionIssue && connectivity.status === ConnectivityStatus.DOWNTIME) scheduler.attempt();
+            /** Only a definitively invalid session cancels the offline fallback: any other
+             * failure keeps the offline unlock available. Classifying the failure instead
+             * would require deciding which statuses mean "the API is down", which no status
+             * list can answer for an outage shape we have not seen. */
+            const sessionInvalid = getIsSessionInvalid(err);
+
+            /** Advance the retry chain whenever we reached the network and the session
+             * survived. Previously gated on `DOWNTIME`, which a rate-limited outage never
+             * reaches since `connectivity` stays ONLINE. Having no network at all is the
+             * one case that must not back off: the connectivity subscriber resets the
+             * cooldown on reconnect and resumes immediately. */
+            if (!sessionInvalid && connectivity.status !== ConnectivityStatus.OFFLINE) scheduler.attempt();
 
             /** Offline-booted: do not mutate app state on resume failures. */
             if (clientOffline(app.getState().status)) return;
 
             if (!app.getState().booted) {
-                const offlineEnabled = (await core.settings.resolve(authStore.getLocalID()))?.offlineEnabled ?? false;
-                const hasOfflineComponents = authStore.hasOfflineComponents();
-                const canOfflineUnlock = connectionIssue && hasOfflineComponents && offlineEnabled;
+                const canOfflineUnlock = !sessionInvalid && authStore.hasOfflineComponents();
                 const unlocked = options.unlocked && authStore.validOfflineSession(authStore.getSession());
 
                 /** If the user managed to unlock during the sequence but session resuming
                  * failed: fallback to offline booting. `unlocked: true` is set on `onUnlocked`  */
                 if (canOfflineUnlock && unlocked) return boot({ offline: true });
 
-                /** `offline: connectionIssue` is intentional: we treat any connection-issue
-                 *  signal as "offline enough" to surface the offline lock screen, even when
-                 *  `connectivity.online` is still true (handles flapping mid-resume). */
-                const lockedStatus = getInitialLockedAppStatus(authStore, { offlineEnabled, offline: connectionIssue });
+                /** `offline: !sessionInvalid` is intentional: surface the offline lock screen
+                 * even when `connectivity.online` is still true (handles flapping mid-resume,
+                 * and rate-limited outages which never flip connectivity). */
+                const lockedStatus = getInitialLockedAppStatus(authStore, { offline: !sessionInvalid });
                 app.setStatus(lockedStatus ?? AppStatus.ERROR);
                 app.setBooted(false);
             }

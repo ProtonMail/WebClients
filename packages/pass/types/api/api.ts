@@ -17,6 +17,9 @@ export type ApiAuth =
 
 export type ApiState = {
     appVersionBad: boolean;
+    /** Consecutive failures that reached the network and left the session valid.
+     * Reset by any successful response. Drives `unreachable` past its threshold. */
+    failureCount: number;
     online: boolean;
     pendingCount: number;
     queued: Awaiter<void>[];
