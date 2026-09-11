@@ -195,6 +195,12 @@ export const updateInheritParentFolderColor = (InheritParentFolderColor: number)
     data: { InheritParentFolderColor },
 });
 
+export const updateIncludeSubfolderUnreadCount = (IncludeSubfolderUnreadCount: number) => ({
+    url: 'mail/v4/settings/includesubfolderunreadcount',
+    method: 'put',
+    data: { IncludeSubfolderUnreadCount },
+});
+
 export const updateFontFace = (FontFace: string) => ({
     url: 'mail/v4/settings/fontface',
     method: 'put',

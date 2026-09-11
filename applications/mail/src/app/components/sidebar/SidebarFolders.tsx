@@ -8,6 +8,7 @@ import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces
 
 import type { MoveParams } from '../../hooks/actions/applyLocation/interface';
 import { useMailboxCounter } from '../../hooks/mailboxCounter/useMailboxCounter';
+import { useMailSettings } from '../../store/mailSettings/hooks';
 
 import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
 import SidebarFolder from './SidebarFolder';
@@ -34,6 +35,17 @@ const SidebarFolders = ({
     const onlyOneLevel = foldersTreeview.every((folder) => !folder.subfolders?.length);
     const emptyFolders = !loadingFolders && !folders?.length;
     const { getLocationCount } = useMailboxCounter();
+    const [mailSettings] = useMailSettings();
+
+    const getFolderUnreadCount = (folder: FolderWithSubFolders): number => {
+        return (
+            getLocationCount(folder.ID).Unread +
+            (folder.subfolders?.reduce(
+                (unreadCount, subfolder) => unreadCount + getFolderUnreadCount(subfolder as FolderWithSubFolders),
+                0
+            ) ?? 0)
+        );
+    };
 
     const treeviewReducer = (acc: ReactNode[], folder: FolderWithSubFolders, level = 0): any[] => {
         acc.push(
@@ -44,7 +56,11 @@ const SidebarFolders = ({
                 level={level}
                 onToggle={handleToggleFolder}
                 expanded={Boolean(folder.Expanded)}
-                unreadCount={getLocationCount(folder.ID).Unread}
+                unreadCount={
+                    mailSettings.IncludeSubfolderUnreadCount && !folder.Expanded
+                        ? getFolderUnreadCount(folder)
+                        : getLocationCount(folder.ID).Unread
+                }
                 id={folder.ID}
                 onFocus={updateFocusItem}
                 treeMode={!onlyOneLevel}
