@@ -167,7 +167,7 @@ const StepInstallApp: FC<StepComponentProps> = ({ model, onNext }) => {
             </div>
             <p className="color-weak mt-0">
                 {stepTranslations.description}{' '}
-                <Href href={getKnowledgeBaseUrl('/easy-switch-for-business')}>{c('Link').t`Learn more`}</Href>
+                <Href href={getKnowledgeBaseUrl(provider.knowledgeBaseSlug)}>{c('Link').t`Learn more`}</Href>
             </p>
             <div className="flex flex-nowrap border border-weak rounded-xxl p-4 items-center mb-8 gap-4">
                 <CircledLogoWithProton

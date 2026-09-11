@@ -83,7 +83,7 @@ const StepConfigureMigration: FC<StepComponentProps> = ({ model, onNext }) => {
             </BorderedContainer>
             <p className="color-weak inline-flex items-center gap-1 mt-0">
                 {c('Info').t`Find out what can be migrated.`}
-                <Href href={getKnowledgeBaseUrl('/easy-switch-for-business')} className="inline-block">{c('Link')
+                <Href href={getKnowledgeBaseUrl(model.provider.knowledgeBaseSlug)} className="inline-block">{c('Link')
                     .t`Learn more`}</Href>
             </p>
         </div>
