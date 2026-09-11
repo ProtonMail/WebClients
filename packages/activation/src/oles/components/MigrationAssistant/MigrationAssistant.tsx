@@ -153,6 +153,12 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
             return c('Tooltip').t`Reauthenticate your ${providerName} account to start a migration`;
         }
 
+        if (model.connectionState !== 'connected') {
+            return model.provider.installApp.type === 'consent'
+                ? c('Tooltip').t`Grant access to your ${providerName} account to start a migration`
+                : c('Tooltip').t`Install the migration app in your ${providerName} account to start a migration`;
+        }
+
         if (!filteredSelected.length) {
             return c('Tooltip').t`Select at least one user to start a migration`;
         }
