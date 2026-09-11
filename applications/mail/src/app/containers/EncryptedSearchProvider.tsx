@@ -109,12 +109,20 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
     const esLibraryFunctions = isV2Active ? esLibraryFunctionsV2 : esLibraryFunctionsV1;
 
-    const { sendResultOpenedReport } = useContentSearchTelemetry();
+    const { sendResultOpenedReport, sendResultActionReport } = useContentSearchTelemetry();
     const reportResultOpened: typeof sendResultOpenedReport = (params) => {
         if (isV2Active) {
             esLibraryFunctionsV2.reportResultOpened(params);
         } else {
             sendResultOpenedReport(params);
+        }
+    };
+
+    const reportResultAction: typeof sendResultActionReport = (params) => {
+        if (isV2Active) {
+            esLibraryFunctionsV2.reportResultAction(params);
+        } else {
+            sendResultActionReport(params);
         }
     };
 
@@ -332,6 +340,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         closeDropdown,
         setTemporaryToggleOff,
         reportResultOpened,
+        reportResultAction,
     };
 
     return <EncryptedSearchContext.Provider value={esFunctions}>{children}</EncryptedSearchContext.Provider>;

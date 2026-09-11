@@ -82,6 +82,7 @@ export const defaultESContextMail: EncryptedSearchFunctionsMail = {
     setTemporaryToggleOff: () => {},
     esStatus: { ...defaultESContext.esStatus, ...defaultESMailStatus },
     reportResultOpened: () => {},
+    reportResultAction: () => {},
 };
 export const MAIL_EVENTLOOP_NAME = 'core';
 
