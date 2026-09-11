@@ -311,8 +311,8 @@ const ProviderUsersTable: FC<Props> = ({
                                                 title={getEligibilityReasonTranslation(u.Eligibility.Reasons[0])}
                                                 openDelay={0}
                                             >
-                                                <div className="mr-4">
-                                                    <IcExclamationCircle size={5} className="shrink-0 color-hint" />
+                                                <div className="mr-4 shrink-0">
+                                                    <IcExclamationCircle size={5} className="color-hint" />
                                                 </div>
                                             </Tooltip>
                                         ))}
