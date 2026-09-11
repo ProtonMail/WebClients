@@ -1052,6 +1052,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Votre essai gratuit de l'application de bureau se termine le ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add a payment method": [
+        "Ajouter une méthode de paiement"
       ]
     },
     "action": {
@@ -4371,6 +4374,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Votre connexion Zoom a expiré. Veuillez vous reconnecter pour continuer."
+      ],
+      "A contact with this email address already exists": [
+        "Un contact portant cette adresse e-mail existe déjà."
       ]
     },
     "error": {
@@ -6980,6 +6986,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Vous avez atteint la limite de créneaux de réservation (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Il vous reste ${ timeRemaining } de votre période d'essai. ${ addPaymentMethodLink } pour ne pas perdre votre accès. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Il vous reste ${ timeRemaining } de votre période d'essai. ${ addPaymentMethodLink } pour conserver votre abonnement. ${ learnMoreLink }"
       ]
     },
     "info": {
