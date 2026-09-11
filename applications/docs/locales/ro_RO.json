@@ -969,6 +969,9 @@
       ],
       "OpenDocument Text (.odt) (Beta)": [
         "Text OpenDocument (.odt) (Beta)"
+      ],
+      "Add a payment method": [
+        "Adăugați o metodă de plată"
       ]
     },
     "Actions message": {
@@ -3809,6 +3812,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nume nedecriptabil."
+      ],
+      "A contact with this email address already exists": [
+        "Deja există un contact cu această adresă de e-mail."
       ]
     },
     "error": {
@@ -4220,6 +4226,12 @@
       ],
       "Touch your security key.": [
         "Atingeți cheia de securitate."
+      ],
+      "Still waiting?": [
+        "Încă așteptați?"
+      ],
+      "Touch your security key to continue.": [
+        "Atingeți cheia de securitate pentru a continua."
       ]
     },
     "fido2: Label": {
@@ -6153,6 +6165,12 @@
       ],
       "Do you remember your password?": [
         "Vă amintiți parola?"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a evita pierderea accesului. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a vă păstra abonamentul. ${ learnMoreLink }"
       ]
     },
     "info": {

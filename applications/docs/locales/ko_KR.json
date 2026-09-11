@@ -959,6 +959,9 @@
       ],
       "OpenDocument Text (.odt) (Beta)": [
         "OpenDocument 텍스트 (.odt) (베타)"
+      ],
+      "Add a payment method": [
+        "결제 방법 추가하기"
       ]
     },
     "Actions message": {
@@ -3745,6 +3748,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 복호화할 수 없는 이름"
+      ],
+      "A contact with this email address already exists": [
+        "해당 이메일 주소와 중복된 연락처가 이미 존재합니다."
       ]
     },
     "error": {
@@ -4152,6 +4158,12 @@
       ],
       "Touch your security key.": [
         "보안 키를 터치해 주세요."
+      ],
+      "Still waiting?": [
+        "아직 대기 중인가요?"
+      ],
+      "Touch your security key to continue.": [
+        "계속하려면 보안 키를 터치하세요."
       ]
     },
     "fido2: Label": {
@@ -5993,6 +6005,12 @@
       ],
       "Do you remember your password?": [
         "비밀번호가 기억 나시나요?"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "무료 체험이 ${ timeRemaining }일 남았습니다. 접근 권한을 상실하지 않으려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "무료 체험이 ${ timeRemaining }일 남았습니다. 구독을 유지하려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
       ]
     },
     "info": {
