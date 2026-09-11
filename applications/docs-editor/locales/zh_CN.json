@@ -471,6 +471,9 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "无法转换 Word 文档。它是否受密码保护？如果受密码保护，请删除密码并重试。"
+      ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "由于未知错误，导入 OpenDocument 文件失败。"
       ]
     },
     "Error message": {
@@ -581,6 +584,12 @@
       ],
       "You cannot undo this action.": [
         "您无法撤销此操作。"
+      ],
+      "Remote image blocked": [
+        "远程图片已被阻止。"
+      ],
+      "This paste was blocked because the text contains invalid characters.": [
+        "此粘贴已被阻止，因为文本包含无效字符。"
       ]
     },
     "Label": {
@@ -2336,6 +2345,11 @@
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "不支持在代码块内提出建议"
+      ]
+    },
+    "sheets_2025:Sheet tab rename": {
+      "A sheet with this name already exists": [
+        "已存在同名的工作表"
       ]
     }
   }

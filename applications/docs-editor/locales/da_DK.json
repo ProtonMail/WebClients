@@ -471,6 +471,9 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Ikke muligt at konvertere Word-dokument. Er det adgangskodebeskyttet? Hvis ja, så fjern adgangskoden og prøv igen."
+      ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "Kunne ikke importere OpenDocument-filen på grund af en ukendt fejl."
       ]
     },
     "Error message": {
@@ -2347,6 +2350,11 @@
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "Det er ikke muligt at komme med forslag inde i kodeblokke"
+      ]
+    },
+    "sheets_2025:Sheet tab rename": {
+      "A sheet with this name already exists": [
+        "Et ark med dette navn eksisterer allerede."
       ]
     }
   }
