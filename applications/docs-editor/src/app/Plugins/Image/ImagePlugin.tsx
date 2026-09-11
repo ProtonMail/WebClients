@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { c } from 'ttag'
 
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { $wrapNodeInElement, mergeRegister } from '@lexical/utils'
@@ -12,6 +13,7 @@ import {
   $isRootOrShadowRoot,
   $setSelection,
   COMMAND_PRIORITY_EDITOR,
+  COMMAND_PRIORITY_CRITICAL,
   COMMAND_PRIORITY_HIGH,
   COMMAND_PRIORITY_LOW,
   DRAGOVER_COMMAND,
@@ -35,6 +37,7 @@ import { isImage, isSupportedImage } from '@proton/shared/lib/helpers/mimetype'
 import { $canDropImage, $getImageNodeInSelection, getDragImageData, getDragSelection } from './ImageUtils'
 import { INSERT_FILE_COMMAND } from '../../Commands/Events'
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants'
+import { hasBlockedImageInClipboard } from './hasBlockedImageInClipboard'
 
 type InsertImagePayload = File | Blob
 
@@ -46,7 +49,11 @@ function $isImageNodeWithBlobSrc(node: LexicalNode): node is ImageNode {
 
 const dragImage = new Image()
 
-export default function ImagesPlugin(): JSX.Element | null {
+export default function ImagesPlugin({
+  createWarningNotification,
+}: {
+  createWarningNotification: (message: string) => void
+}): JSX.Element | null {
   const [editor] = useLexicalComposerContext()
 
   useEffect(() => {
@@ -55,6 +62,25 @@ export default function ImagesPlugin(): JSX.Element | null {
     }
 
     return mergeRegister(
+      editor.registerCommand(
+        PASTE_COMMAND,
+        (event) => {
+          if (
+            editor.isEditable() &&
+            event &&
+            'clipboardData' in event &&
+            hasBlockedImageInClipboard(event.clipboardData, editor._config.namespace)
+          ) {
+            createWarningNotification(
+              c('Warning')
+                .t`Pasting remote images is not supported. Download the image and use "Insert image" instead.`,
+            )
+          }
+          // Let normal paste handling keep the supported content, including in suggestion mode.
+          return false
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
       editor.registerCommand(
         SET_IMAGE_SIZE_COMMAND,
         ({ nodeKey, width, height }) => {
@@ -269,7 +295,7 @@ export default function ImagesPlugin(): JSX.Element | null {
         COMMAND_PRIORITY_LOW,
       ),
     )
-  }, [editor])
+  }, [editor, createWarningNotification])
 
   return null
 }
