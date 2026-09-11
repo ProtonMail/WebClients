@@ -45,6 +45,7 @@ export function UnlimitedToDuoDiscountedLayout({ offer, currency, onSelectDeal, 
     };
 
     const planNameWithoutBrand = deal.dealName.replace(`${BRAND_NAME} `, '');
+    const planName = deal.dealName;
 
     return (
         <div>
@@ -52,12 +53,7 @@ export function UnlimitedToDuoDiscountedLayout({ offer, currency, onSelectDeal, 
                 <img src={offer.images?.modalImage} alt="" aria-hidden={true} className="duoDiscountKVImage" />
                 <div className="duoDiscountHeaderContent">
                     {offer.topButtonDiscount ? (
-                        <span className="duoDiscountBadge text-bold">
-                            {
-                                // translator: discount badge on the offer artwork, e.g. "-40%"
-                                c('tryduo2026: Info').t`-${offer.topButtonDiscount}%`
-                            }
-                        </span>
+                        <span className="duoDiscountBadge text-bold">{`-${offer.topButtonDiscount}%`}</span>
                     ) : null}
                     <div className="flex flex-column">
                         <span className="duoDiscountPlanLockup flex flex-row items-center gap-3">
@@ -94,7 +90,7 @@ export function UnlimitedToDuoDiscountedLayout({ offer, currency, onSelectDeal, 
                 <Button size="large" onClick={acceptDeal} color="norm" className="text-bold" fullWidth>
                     {
                         // translator: main call to action, e.g. "Get Proton Duo"
-                        c('tryduo2026: Action').t`Get ${deal.dealName}`
+                        c('tryduo2026: Action').t`Get ${planName}`
                     }
                 </Button>
 
