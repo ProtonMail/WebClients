@@ -959,6 +959,9 @@
       ],
       "Stop here": [
         "在此停止"
+      ],
+      "Add a payment method": [
+        "添加支付方式"
       ]
     },
     "Actions message": {
@@ -5993,6 +5996,12 @@
       ],
       "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
         "为了帮助排查问题，调试信息将上传至您的 Drive 并与 ${ BRAND_NAME } 支持团队安全共享，其中可能包含文件内容。您可以随时停止共享，审查完成后共享数据将被删除。"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "试用期剩余 ${ timeRemaining }。${ addPaymentMethodLink } 以避免失去访问权限。${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "试用期剩余 ${ timeRemaining }。${ addPaymentMethodLink } 以保留您的订阅。${ learnMoreLink }"
       ]
     },
     "info": {
@@ -8001,7 +8010,7 @@
         "移动 ${ n } 个项目"
       ],
       "Public link access updated": [
-        "公共链接访问已更新"
+        "公开链接访问已更新"
       ],
       "Public link update access failed ": [
         "公共链接更新访问失败 "
