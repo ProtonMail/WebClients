@@ -6,9 +6,9 @@ import {
     parseDefaultProtocolsStored,
     UNCHECKED_PROTOCOL,
 } from "@proton/shared/lib/desktop/DefaultProtocol";
-import Store from "electron-store";
 import { protocolLogger } from "../log";
 import { DESKTOP_FEATURES } from "../../ipc/ipcConstants";
+import { SafeStore } from "../../store/safeStore/safeStore";
 
 const DEFAULT_STORED_DEFAULT_PROTOCOL = {
     mailto: {
@@ -21,9 +21,7 @@ const DEFAULT_STORED_DEFAULT_PROTOCOL = {
     },
 } satisfies DefaultProtocolsStored;
 
-const store = new Store<{ defaultProtocols: DefaultProtocolsStored }>({
-    configFileMode: 0o600,
-});
+const store = new SafeStore<{ defaultProtocols: DefaultProtocolsStored }>("protocol");
 
 const notChecked = (stored: DefaultProtocolStored): DefaultProtocol => ({
     ...UNCHECKED_PROTOCOL,

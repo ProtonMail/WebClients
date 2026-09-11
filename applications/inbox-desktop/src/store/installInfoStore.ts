@@ -1,14 +1,12 @@
-import Store from "electron-store";
 import { mainLogger } from "../utils/log";
+import { SafeStore } from "./safeStore/safeStore";
 
-const store = new Store<{
+const store = new SafeStore<{
     installInfo?: {
         source: string | null;
         reported: boolean;
     };
-}>({
-    configFileMode: 0o600,
-});
+}>("installInfo");
 
 export function setInstallSource(installSource: string) {
     mainLogger.info("set install source", installSource);
