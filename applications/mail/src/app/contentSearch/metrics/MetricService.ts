@@ -1,7 +1,9 @@
-import type {
-    ContentSearchEventStatus,
-    ContentSearchSearchSource,
-    ContentSearchVersion,
+import {
+    type ContentSearchEventStatus,
+    type ContentSearchSearchSource,
+    type ContentSearchVersion,
+    SEARCH_RESULT_PRIMARY_MATCH_TYPE,
+    SEARCH_RESULT_SCROLLER_MODE,
 } from '@proton/encrypted-search/models';
 import { TelemetryContentSearchEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
@@ -50,6 +52,33 @@ export class MetricService {
                 resultCount: 0,
                 durationMs,
             },
+            delay: true,
+        });
+    }
+
+    sendResultOpenedReport({
+        isFirstOpen,
+        resultPosition,
+        messageAgeDays,
+    }: {
+        isFirstOpen: boolean;
+        resultPosition: number;
+        messageAgeDays: number;
+    }) {
+        this.logger.info('sending result opened report');
+
+        void sendTelemetryReport({
+            api: this.api,
+            measurementGroup: TelemetryMeasurementGroups.contentSearch,
+            event: TelemetryContentSearchEvents.result_opened,
+            dimensions: {
+                scrollerMode: SEARCH_RESULT_SCROLLER_MODE,
+                primaryMatchType: SEARCH_RESULT_PRIMARY_MATCH_TYPE,
+                isFirstOpen: isFirstOpen.toString(),
+                searchSource: SEARCH_SOURCE,
+                searchVersion: SEARCH_VERSION_V2,
+            },
+            values: { resultPosition, messageAgeDays },
             delay: true,
         });
     }
