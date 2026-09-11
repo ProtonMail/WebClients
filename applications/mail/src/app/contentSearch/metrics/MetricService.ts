@@ -1,3 +1,4 @@
+import type { ContentSearchActionSurface, ContentSearchResultAction } from '@proton/encrypted-search/models';
 import {
     type ContentSearchEventStatus,
     type ContentSearchSearchSource,
@@ -79,6 +80,35 @@ export class MetricService {
                 searchVersion: SEARCH_VERSION_V2,
             },
             values: { resultPosition, messageAgeDays },
+            delay: true,
+        });
+    }
+
+    sendResultActionReport({
+        action,
+        actionSurface,
+        resultPosition,
+    }: {
+        action: ContentSearchResultAction;
+        actionSurface: ContentSearchActionSurface;
+        resultPosition?: number;
+    }) {
+        this.logger.info('sending result action report');
+
+        void sendTelemetryReport({
+            api: this.api,
+            measurementGroup: TelemetryMeasurementGroups.contentSearch,
+            event: TelemetryContentSearchEvents.result_action,
+            dimensions: {
+                action,
+                actionSurface,
+                searchSource: SEARCH_SOURCE,
+                scrollerMode: SEARCH_RESULT_SCROLLER_MODE,
+                searchVersion: SEARCH_VERSION_V2,
+            },
+            values: {
+                resultPosition,
+            },
             delay: true,
         });
     }

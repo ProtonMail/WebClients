@@ -182,6 +182,11 @@ export class ESAdapter implements FunctionsV2 {
         this.metricService.sendResultOpenedReport(...args);
     }
 
+    /** Forwards a search-result action to the v2 metrics pipeline; see `EncryptedSearchProvider.reportResultAction`. */
+    reportResultAction(...args: Parameters<MetricService['sendResultActionReport']>) {
+        this.metricService.sendResultActionReport(...args);
+    }
+
     async encryptedSearch(setResultsList: ESSetResultsList<ESBaseMessage, ESMessageContent>) {
         // Nothing to search yet — reporting failure hands the query to the server, which is the only
         // fallback: an incomplete v2 index would silently return too few results.
