@@ -1350,6 +1350,9 @@
       ],
       "Preview logs": [
         "Previsualizar registros"
+      ],
+      "Add a payment method": [
+        "Añadir un método de pago"
       ]
     },
     "Action: Docs": {
@@ -4501,6 +4504,9 @@
       ],
       "Could not grant access to the organization key": [
         "No se pudo otorgar acceso a la clave de la organización"
+      ],
+      "A contact with this email address already exists": [
+        "Ya existe un contacto con esta dirección de correo"
       ]
     },
     "error": {
@@ -4931,6 +4937,12 @@
       ],
       "Touch your security key.": [
         "Toque su llave de seguridad."
+      ],
+      "Still waiting?": [
+        "¿Sigue esperando?"
+      ],
+      "Touch your security key to continue.": [
+        "Toque su llave de seguridad para continuar."
       ]
     },
     "fido2: Label": {
@@ -7912,6 +7924,19 @@
       ],
       "Do you remember your password?": [
         "¿Recuerda su contraseña?"
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } ha tomado ${ count } hasta ahora. ¿Continuar?"
+      ],
+      "${ steps } step": [
+        "${ steps } paso",
+        "${ steps } pasos"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } restante en su prueba. ${ addPaymentMethodLink } para evitar la pérdida de datos. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } restante en su prueba. ${ addPaymentMethodLink } para mantener la suscripción. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -10114,6 +10139,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está disfrutando de un precio promocional en el plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } que termina en ${ Last4 }"
       ]
     },
     "new_plans: Subtext": {
@@ -11591,6 +11619,15 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - tarjeta terminada en ${ paymentMethod.Details.Last4 }"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - tarjeta terminada en ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Transferencia bancaria - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - tarjeta terminada en ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -15423,6 +15460,11 @@
     "ngc_access_banner: info": {
       "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
         "Ahora tiene acceso al ${ CALENDAR_APP_NAME } nuevo. ${ link }"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Cambiar su dirección de facturación podría afectar los impuestos en facturas futuras."
       ]
     }
   }
