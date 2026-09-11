@@ -136,7 +136,7 @@ const MigrationFlow = ({ provider }: { provider: OlesProvider }) => {
                     <h2 className="text-2xl text-bold ml-4 my-0">{c('Title').t`Migrate from ${providerName}`}</h2>
                 </div>
                 <Href
-                    href={getKnowledgeBaseUrl('/easy-switch-for-business')}
+                    href={getKnowledgeBaseUrl(provider.knowledgeBaseSlug)}
                     className="inline-block text-no-decoration shrink-0"
                 >
                     {c('Link').t`Help & support`}
