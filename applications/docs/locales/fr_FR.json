@@ -958,6 +958,9 @@
       ],
       "OpenDocument Text (.odt) (Beta)": [
         "Texte OpenDocument (.odt) (Bêta)"
+      ],
+      "Add a payment method": [
+        "Ajouter une méthode de paiement"
       ]
     },
     "Actions message": {
@@ -3669,6 +3672,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nom indéchiffrable"
+      ],
+      "A contact with this email address already exists": [
+        "Un contact portant cette adresse e-mail existe déjà."
       ]
     },
     "error": {
@@ -5902,6 +5908,12 @@
       ],
       "Do you remember your password?": [
         "Vous souvenez-vous de votre mot de passe ?"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Il vous reste ${ timeRemaining } de votre période d'essai. ${ addPaymentMethodLink } pour ne pas perdre votre accès. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Il vous reste ${ timeRemaining } de votre période d'essai. ${ addPaymentMethodLink } pour conserver votre abonnement. ${ learnMoreLink }"
       ]
     },
     "info": {

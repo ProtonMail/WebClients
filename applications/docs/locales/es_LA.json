@@ -967,6 +967,9 @@
       ],
       "OpenDocument Text (.odt) (Beta)": [
         "Texto de OpenDocument (.odt) (Beta)"
+      ],
+      "Add a payment method": [
+        "Añadir un método de pago"
       ]
     },
     "Actions message": {
@@ -3780,6 +3783,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nombre indescifrable"
+      ],
+      "A contact with this email address already exists": [
+        "Ya existe un contacto con esta dirección de correo"
       ]
     },
     "error": {
@@ -4189,6 +4195,12 @@
       ],
       "Touch your security key.": [
         "Toque su llave de seguridad."
+      ],
+      "Still waiting?": [
+        "¿Sigue esperando?"
+      ],
+      "Touch your security key to continue.": [
+        "Toque su llave de seguridad para continuar."
       ]
     },
     "fido2: Label": {
@@ -6076,6 +6088,12 @@
       ],
       "Do you remember your password?": [
         "¿Recuerda su contraseña?"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } restante en su prueba. ${ addPaymentMethodLink } para evitar la pérdida de datos. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } restante en su prueba. ${ addPaymentMethodLink } para mantener la suscripción. ${ learnMoreLink }"
       ]
     },
     "info": {
