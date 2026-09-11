@@ -30,6 +30,7 @@ const fakeMetricService = () =>
     ({
         sendQueryCompletedReport: jest.fn(),
         sendResultOpenedReport: jest.fn(),
+        sendResultActionReport: jest.fn(),
     }) as unknown as MetricService;
 
 const setup = ({ withImport = true }: { withImport?: boolean } = {}) => {

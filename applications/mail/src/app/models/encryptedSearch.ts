@@ -1,4 +1,6 @@
 import type {
+    ContentSearchActionSurface,
+    ContentSearchResultAction,
     ESItem,
     ESStatus,
     EncryptedSearchFunctions,
@@ -80,6 +82,10 @@ export interface EncryptedSearchFunctionsMail extends Pick<
      * (see `SEARCH_RESULT_SCROLLER_MODE`/`SEARCH_RESULT_PRIMARY_MATCH_TYPE`), not derived per call.
      */
     reportResultOpened: (params: { isFirstOpen: boolean; resultPosition: number; messageAgeDays: number }) => void;
+    reportResultAction: (params: {
+        action: ContentSearchResultAction;
+        actionSurface: ContentSearchActionSurface;
+    }) => void;
 }
 
 export type ESMessage = ESItem<ESBaseMessage, ESMessageContent>;
