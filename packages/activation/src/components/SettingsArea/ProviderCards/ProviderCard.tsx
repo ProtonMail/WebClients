@@ -17,7 +17,7 @@ import clsx from '@proton/utils/clsx';
 import { type ProviderDisplay, providerMap } from '../../../constants';
 import { EASY_SWITCH_SEARCH_SOURCES, EASY_SWITCH_SOURCES, ImportProvider } from '../../../interface';
 import { getOrganizationMigrationFeatures } from '../../../oles/migrationFeatures';
-import { OLES_PROVIDERS } from '../../../oles/providers';
+import { OLES_PROVIDERS, getProviderRouteSlug } from '../../../oles/providers';
 import useOLESFeatureStatus from '../../../oles/useOLESFeatureStatus';
 import { ProductSelectionModal } from '../../Modals/ProductSelectionModal/ProductSelectionModal';
 import ConnectGmailButton from '../ConnectGmailButton';
@@ -100,7 +100,7 @@ const ProviderCard = ({
             // if the org is OLES-eligible (roughly translates to being on a B2B plan),
             // and if the feature is not soft (client FF) or fully (backend FF) disabled
             if (isProviderEnabled && olesFeatureStatus.allowedForUser) {
-                return goToSettings(`/easy-switch/migration-assistant?provider=${provider}`);
+                return goToSettings(`/easy-switch/migration-assistant?provider=${getProviderRouteSlug(provider)}`);
             }
         }
 
