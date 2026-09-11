@@ -22,7 +22,8 @@ import {
   createCommand,
 } from 'lexical'
 
-import { isAllowedImageSrc } from '../../Conversion/ImageSrcUtils'
+import { getRemoteImageUrl, isAllowedImageSrc } from '../../Conversion/ImageSrcUtils'
+import { useDocsDependencies } from '../../Containers/Docs/DocsDependenciesProvider'
 import { useCombinedRefs } from '@proton/hooks'
 import ImageResizer from './ImageResizer'
 import { getElementDimensionsWithoutPadding } from '../../Utils/getEditorWidthWithoutPadding'
@@ -53,19 +54,43 @@ function ensureImageLoaded(src: string) {
 function BlockedImagePlaceholder({
   imageRef,
   className,
+  src,
 }: {
+  src: string
   className: string | null
   imageRef: { current: null | HTMLImageElement }
 }): JSX.Element {
+  const { openLink } = useDocsDependencies()
+  const remoteUrl = getRemoteImageUrl(src)
   return (
     <span
       ref={imageRef}
       className={clsx(
-        'inline-block min-h-6 min-w-[120px] border border-dashed border-[--border-norm] px-2 py-1 text-[--text-weak]',
+        'inline-flex min-h-6 min-w-[120px] max-w-full flex-col gap-1 border border-dashed border-[--border-norm] px-2 py-1 text-[--text-weak]',
         className,
       )}
     >
       {c('Info').t`Remote image blocked`}
+      {remoteUrl && (
+        <>
+          <a
+            className="break-all text-sm underline"
+            href={remoteUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(event) => {
+              event.preventDefault()
+              event.stopPropagation()
+              openLink(remoteUrl)
+            }}
+          >
+            {remoteUrl}
+          </a>
+          <span className="text-sm">
+            {c('Info').t`Open the link to download the image, then use "Insert image" to add it to this document.`}
+          </span>
+        </>
+      )}
     </span>
   )
 }
@@ -154,7 +179,7 @@ function LazyImage({
   editor: LexicalEditor
 }): JSX.Element {
   if (!isAllowedImageSrc(src)) {
-    return <BlockedImagePlaceholder imageRef={imageRef} className={className} />
+    return <BlockedImagePlaceholder imageRef={imageRef} className={className} src={src} />
   }
 
   return (
