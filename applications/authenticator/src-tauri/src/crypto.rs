@@ -1,6 +1,6 @@
 use rand::{rngs::SysRng, TryRng};
 
-const KEY_LENGTH: usize = 32;
+pub(crate) const KEY_LENGTH: usize = 32;
 
 pub fn generate_encryption_key() -> Vec<u8> {
     random_bytes(KEY_LENGTH)
