@@ -1,10 +1,10 @@
 import { BrowserWindow, screen } from "electron";
-import Store from "electron-store";
 import { ensureWindowIsVisible } from "../utils/view/windowBounds";
 import { mainLogger } from "../utils/log";
 import { getZoom } from "../utils/view/viewManagement";
 import { DEFAULT_ZOOM_FACTOR, ZOOM_FACTOR_LIST, ZoomFactor } from "../constants/zoom";
 import { isWindowValid } from "../utils/view/windowUtils";
+import { SafeStore } from "./safeStore/safeStore";
 
 export interface WindowBounds {
     zoom: ZoomFactor;
@@ -32,9 +32,7 @@ const DEFAULT_WINDOW_BOUNDS = {
     y: -1,
 } satisfies WindowBounds;
 
-const store = new Store<{ windowBounds: WindowBounds }>({
-    configFileMode: 0o600,
-});
+const store = new SafeStore<{ windowBounds: WindowBounds }>("bounds");
 
 const isValidBounds = (bounds: WindowBounds): bounds is WindowBounds => {
     return (

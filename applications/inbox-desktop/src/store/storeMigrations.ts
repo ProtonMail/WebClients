@@ -1,4 +1,3 @@
-import Store from "electron-store";
 import { getSettings, updateSettings } from "./settingsStore";
 import { SERIALIZED_THEME_MODE } from "../utils/themes";
 import { electronAppTheme, getDarkThemes, ThemeSetting } from "@proton/shared/lib/themes/themes";
@@ -7,10 +6,9 @@ import { loadDefaultProtocol } from "../utils/protocol/store";
 import { mainLogger } from "../utils/log";
 import { DESKTOP_FEATURES } from "../ipc/ipcConstants";
 import { ThemeModeSetting, ThemeTypes } from "@proton/shared/lib/themes/constants";
+import { SafeStore } from "./safeStore/safeStore";
 
-const store = new Store({
-    configFileMode: 0o600,
-});
+const store = new SafeStore("storeMigrations");
 
 // Delete the old window store for a fresh start
 const deleteWindowStore = () => {

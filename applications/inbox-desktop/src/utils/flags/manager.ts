@@ -1,7 +1,7 @@
 import { getMailView } from "../view/viewManagement";
-import Store from "electron-store";
 import { FeatureFlag } from "./flags";
 import { flagManagerLogger } from "../log";
+import { SafeStore } from "../../store/safeStore/safeStore";
 
 const cacheFilename = "ff_cache";
 const cacheFieldName = "featureFlags";
@@ -21,13 +21,13 @@ class FeatureFlagManager {
     private flags: Map<FeatureFlag, boolean> = new Map();
     private checkInterval: NodeJS.Timeout | null = null;
     private checkIntervalDurationMS: number = 60 * 1000;
-    private store: Store<{ featureFlags: FeatureFlagCache }>;
+    private store: SafeStore<{ featureFlags: FeatureFlagCache }>;
 
-    constructor(checkIntervalDurationMS: number, storeMock?: Store<{ featureFlags: FeatureFlagCache }>) {
+    constructor(checkIntervalDurationMS: number, storeMock?: SafeStore<{ featureFlags: FeatureFlagCache }>) {
         this.checkIntervalDurationMS = checkIntervalDurationMS;
         this.store =
             storeMock ||
-            new Store<{ featureFlags: FeatureFlagCache }>({
+            new SafeStore<{ featureFlags: FeatureFlagCache }>("featureFlag", {
                 name: cacheFilename,
                 defaults: {
                     featureFlags: {
@@ -35,7 +35,6 @@ class FeatureFlagManager {
                         lastUpdated: 0,
                     },
                 },
-                configFileMode: 0o600,
             });
 
         this.loadFromCache();
