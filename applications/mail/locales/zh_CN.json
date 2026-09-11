@@ -1745,6 +1745,9 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Add a payment method": [
+        "添加支付方式"
       ]
     },
     "action": {
@@ -9641,6 +9644,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "只需几步即可拥有清爽收件箱"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "试用期剩余 ${ timeRemaining }。${ addPaymentMethodLink } 以避免失去访问权限。${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "试用期剩余 ${ timeRemaining }。${ addPaymentMethodLink } 以保留您的订阅。${ learnMoreLink }"
       ]
     },
     "info": {
@@ -10954,6 +10963,9 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Display name": [
+        "称呼"
       ]
     },
     "Label (begin date/advanced search)": {

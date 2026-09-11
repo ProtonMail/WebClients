@@ -1544,7 +1544,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Sleutels vertrouwen"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -6161,6 +6162,12 @@
       ],
       "Touch your security key.": [
         "Raak uw beveiligingssleutel aan."
+      ],
+      "Still waiting?": [
+        "Nog aan het wachten?"
+      ],
+      "Touch your security key to continue.": [
+        "Raak uw beveiligingssleutel aan om door te gaan."
       ]
     },
     "fido2: Label": {
@@ -9771,6 +9778,30 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "U bent slechts een paar klikken verwijderd van een overzichtelijke inbox"
+      ],
+      "Document in foundation-search index": [
+        "Document in basis zoekindex"
+      ],
+      "Document lookup failed": [
+        "Het opzoeken van documenten is mislukt"
+      ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Opzoeken van document ${ lookup.result.docId }"
+      ],
+      "Not found in the encrypted search index.": [
+        "Niet gevonden in de gecodeerde zoekindex."
+      ],
+      "Not found in the foundation-search index.": [
+        "Niet gevonden in de basis zoekindex."
+      ],
+      "Results came from the local search.": [
+        "Resultaten kwamen van de lokale zoekopdracht."
+      ],
+      "Results came from the server.": [
+        "De resultaten kwamen van de server."
+      ],
+      "Source document in encrypted search index": [
+        "Brondocument in gecodeerde zoekindex"
       ]
     },
     "info": {
@@ -11050,6 +11081,9 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Display name": [
+        "Weergavenaam"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17995,6 +18029,11 @@
       ],
       "Passcode:": [
         "Toegangscode:"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kaart eindigend op ${ Last4 }"
       ]
     }
   }

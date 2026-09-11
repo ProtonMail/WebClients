@@ -1555,7 +1555,10 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу"
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -1760,6 +1763,12 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Add a payment method": [
+        "Дадаць спосаб аплаты"
+      ],
+      "Add more details": [
+        "Дадаць падрабязнасці"
       ]
     },
     "action": {
@@ -5806,6 +5815,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш пошук вярнуў занадта шмат вынікаў. Абмяжуйце вобласць пошуку і паўтарыце спробу."
+      ],
+      "A contact with this email address already exists": [
+        "Кантакт з гэтым адрасам электроннай пошты ўжо існуе"
       ]
     },
     "error": {
@@ -8329,7 +8341,7 @@
         "Змяшчае ${ numAttachments } далучэнняў (${ numAttachmentsSize })"
       ],
       "Have some more time to decide without interruption.": [
-        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення ў працы сэрвісу."
+        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення працы сэрвісу."
       ],
       "here": [
         "тут"
@@ -10157,6 +10169,120 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } ужо выканаў ${ count }. Працягваць?"
+      ],
+      "${ steps } step": [
+        "${ steps } крок",
+        "${ steps } крокі",
+        "${ steps } крокаў",
+        "${ steps } крокаў"
+      ],
+      "Add ${ contact } to your contacts": [
+        "Дадаць ${ contact } у вашы кантакты"
+      ],
+      "Add a contact": [
+        "Дадаць кантакт"
+      ],
+      "Add contact": [
+        "Дадаць кантакт"
+      ],
+      "Change a display setting": [
+        "Змяніць налады дысплэя"
+      ],
+      "Change how your mail is grouped": [
+        "Змяніць спосаб групавання вашых лістоў"
+      ],
+      "Change your list density": [
+        "Змяніць шчыльнасць спіса"
+      ],
+      "Change your mailbox layout": [
+        "Змяніць макет вашай паштовай скрыні"
+      ],
+      "Change your theme": [
+        "Змяніце тэму"
+      ],
+      "Create a filter": [
+        "Стварыць фільтр"
+      ],
+      "Create a folder": [
+        "Стварыць папку"
+      ],
+      "Create a label": [
+        "Стварыць метку"
+      ],
+      "Document lookup failed": [
+        "Збой пошуку дакумента"
+      ],
+      "Label ${ emails }": [
+        "Метка ${ emails }"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "Метка ${ emails } як ${ names }"
+      ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Пошук дакумента ${ lookup.result.docId }"
+      ],
+      "Mark ${ emails } as read": [
+        "Пазначыць ${ emails } як прачытаны"
+      ],
+      "Mark ${ emails } as unread": [
+        "Пазначыць ${ emails } як непрачытаны"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "Пазначыць увесь ${ place } як прачытаны"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "Пазначць увесь ${ place } як непрачытаны"
+      ],
+      "Move ${ emails }": [
+        "Перамясціць ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Перамясціць ${ emails } у ${ destination }"
+      ],
+      "No emails selected": [
+        "Лісты не выбраны"
+      ],
+      "No location selected": [
+        "Месцазнаходжанне не выбрана"
+      ],
+      "Not found in the encrypted search index.": [
+        "Не знойдзены ў зашыфраваным пошукавым індэксе."
+      ],
+      "Remove the star from ${ emails }": [
+        "Выдаліць пазнаку зорачкі з ${ emails }"
+      ],
+      "Rename ${ folder } to…": [
+        "Перайменаваць ${ folder } на…"
+      ],
+      "Rename this folder": [
+        "Перайменаваць гэту папку"
+      ],
+      "Results came from the local search.": [
+        "Вынікі былі атрыманы з лакальнага пошуку."
+      ],
+      "Results came from the server.": [
+        "Вынікі былі атрыманы з сервера."
+      ],
+      "Set your signature": [
+        "Задайць подпіс"
+      ],
+      "Star ${ emails }": [
+        "Пазначыць ${ emails }"
+      ],
+      "Turn off your away message": [
+        "Адключыць паведамленне пра адсутнасць"
+      ],
+      "Turn on your away message": [
+        "Уключыце паведамленне пра адсутнасць"
+      ],
+      "Update the filter ${ filter }": [
+        "Абнавіць фільтр ${ filter }"
+      ],
+      "Update this filter": [
+        "Абнавіць гэты фільтр"
       ]
     },
     "info": {
@@ -11491,6 +11617,9 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Display name": [
+        "Бачнае імя"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15465,6 +15594,12 @@
         "${ count } лісты → ${ wakeTime }",
         "${ count } лістоў → ${ wakeTime }",
         "${ count } лістоў → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "Адкласці ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "Адкласці ${ emails } да ${ wakeTime }"
       ]
     },
     "Snooze message": {
