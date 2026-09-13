@@ -129,6 +129,7 @@ export enum IMPORT_ERROR {
     ACCOUNT_DOES_NOT_EXIST = 2011,
     TOO_SHORT = 2023,
     TOO_LARGE = 2024,
+    NOT_EXISTS = 2501,
 }
 
 export enum BYOE_ADDRESS_ERROR {
