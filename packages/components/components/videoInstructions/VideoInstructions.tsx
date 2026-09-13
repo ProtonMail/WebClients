@@ -12,7 +12,7 @@ export interface VideoSource {
     src: string;
 }
 
-const VideoInstructions = ({ children, ...rest }: React.ComponentPropsWithoutRef<'video'>) => {
+const VideoInstructions = ({ children, className, ...rest }: React.ComponentPropsWithoutRef<'video'>) => {
     const [videoEnded, setVideoEnded] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -26,7 +26,7 @@ const VideoInstructions = ({ children, ...rest }: React.ComponentPropsWithoutRef
     };
 
     return (
-        <div className="text-center mb-4 relative">
+        <div className={clsx('text-center mb-4 relative', className)}>
             <video
                 preload="auto"
                 playsInline
