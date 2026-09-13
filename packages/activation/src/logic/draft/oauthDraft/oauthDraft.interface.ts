@@ -1,14 +1,14 @@
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import type { MailImportFields } from '../../../components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
-import type { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '../../../interface';
+import type { EASY_SWITCH_SOURCES, IMPORT_ERROR, ImportProvider, ImportType } from '../../../interface';
 
 type ImporterContact = {
     error?: string;
 };
 
 type ImporterDrive = {
-    error?: string;
+    error?: { code: IMPORT_ERROR; message: string };
 };
 
 export type ImporterCalendar = {

@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { ImportProvider } from '../../../interface';
 import { displayConfirmLeaveModal, resetOauthDraft } from '../../../logic/draft/oauthDraft/oauthDraft.actions';
 import {
@@ -33,16 +35,32 @@ const OAuthModal = ({ oauthViews }: Props) => {
         dispatch(displayConfirmLeaveModal(false));
     };
 
+    /**
+     * All steps render into this single variable (instead of using one `{step === 'x' && ...}`
+     * line per step) so that a custom view override pointing two steps at the same component
+     * keeps that component mounted when moving between them. With separate JSX lines, each is
+     * a distinct slot in the tree, so switching steps would unmount and remount the component
+     * even though it's the same component.
+     */
+
+    let stepView: ReactNode = null;
+    if (step === 'products' && initialLoading) {
+        stepView = <LoadingImporter onClose={handleClose} />;
+    } else if (step === 'instructions' && provider === ImportProvider.GOOGLE) {
+        stepView = <Instructions triggerOAuth={triggerOAuth} />;
+    } else if (step === 'loading-importer') {
+        stepView = <LoadingImporter onClose={handleClose} />;
+    } else if (step === 'prepare-import') {
+        stepView = <Prepare />;
+    } else if (step === 'importing') {
+        stepView = <LoadingImporting />;
+    } else if (step === 'success') {
+        stepView = <Success />;
+    }
+
     return (
         <>
-            {step === 'products' && initialLoading && <LoadingImporter onClose={handleClose} />}
-            {step === 'instructions' && provider === ImportProvider.GOOGLE && (
-                <Instructions triggerOAuth={triggerOAuth} />
-            )}
-            {step === 'loading-importer' && <LoadingImporter onClose={handleClose} />}
-            {step === 'prepare-import' && <Prepare />}
-            {step === 'importing' && <LoadingImporting />}
-            {step === 'success' && <Success />}
+            {stepView}
             {confirmLeave && <ConfirmLeave handleClose={handleClose} handleContinue={handleContinue} />}
         </>
     );

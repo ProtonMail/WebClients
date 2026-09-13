@@ -54,6 +54,7 @@ interface ImportRawData {
     Folders?: ApiMailImporterFolder[];
     Calendars?: APICalendar[];
     error?: string;
+    errorCode?: IMPORT_ERROR;
 }
 
 interface APICalendar {
@@ -222,17 +223,20 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
                                 return {
                                     importType: product,
                                     error: c('Error').t`${BRAND_NAME} can't connect to your external account`,
+                                    errorCode: code,
                                 };
                             }
                             if (code === IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST) {
                                 return {
                                     importType: product,
                                     error: c('Error').t`No drive found to import`,
+                                    errorCode: code,
                                 };
                             }
                             return {
                                 importType: product,
                                 error: message || c('Error').t`Unexpected error, we can't import the files`,
+                                errorCode: code,
                             };
                         } else {
                             throw e;
@@ -283,7 +287,9 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
                 error: contactData?.error,
             },
             drive: {
-                error: driveData?.error,
+                error: driveData?.error
+                    ? { code: driveData.errorCode ?? IMPORT_ERROR.UNEXPECTED_ERROR, message: driveData.error }
+                    : undefined,
             },
         };
     }

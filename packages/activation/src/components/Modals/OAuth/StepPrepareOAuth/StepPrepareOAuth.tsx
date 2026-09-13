@@ -83,7 +83,7 @@ const StepPrepare = () => {
                             label={c('Label').t`Drive`}
                             value={driveChecked}
                             setValue={setDriveChecked}
-                            error={importerData?.drive?.error}
+                            error={importerData?.drive?.error?.message}
                         >
                             <StepPrepareDriveSummary isSelected={driveChecked} />
                         </StepProductsRowItem>
