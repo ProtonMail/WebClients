@@ -12,6 +12,7 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
 } from '@proton/components';
+import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 
 import type { DirectoryTreeItem } from '../../../components/DirectoryTree/DirectoryTree';
 import { DirectoryTreeRoot } from '../../../components/DirectoryTree/DirectoryTree';
@@ -68,7 +69,7 @@ export const CopyItemsModalView = ({
                     <ButtonWithTextAndIcon
                         onClick={onCreateFolder}
                         disabled={!copyTargetUid}
-                        iconName="folder-plus"
+                        icon={<IcFolderPlus />}
                         buttonText={c('Action').t`New folder`}
                     />
                     <Tooltip title={errorMessage}>
