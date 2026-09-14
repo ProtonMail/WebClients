@@ -3,13 +3,15 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import { getMessageBlocks } from '../../messageHelpers';
 import type { Attachment, CompactionStats, CompactionStrategyName, Message, MessageId } from '../../types';
 import { buildCompactionAudit, collectClearedToolNames, collectDroppedToolNames } from './audit';
+import { SUMMARY_TURN_PREFIX, collapseCompactedChain } from './collapse';
 import {
     CLEARED_TOOL_RESULT_PLACEHOLDER,
     COMPACTION_TARGET_TOKENS,
     KEEP_RECENT_TOOL_RESULTS,
     MAX_SUMMARY_INPUT_TOKENS,
+    MIN_COMPACTION_TOKENS_RECLAIMED,
 } from './constants';
-import { partitionChain } from './partition';
+import { NotEnoughToCompactError, partitionChain } from './partition';
 import { clearOldToolResults, dropToolPairs, stripContext } from './strategies';
 import { summarizeWithLlm } from './summarize';
 import {
@@ -50,6 +52,12 @@ export type CompactionEngineOptions = {
     attachments?: Attachment[];
     /** Per-message attachment exclusions, so excluded files are not counted as reclaimed. */
     contextFilters?: AttachmentExclusion[];
+    /**
+     * Messages of the whole conversation. Lets an edited fork see the boundary that
+     * summarized the shared history before the edit, so it condenses only what is left
+     * instead of re-summarizing history the sibling already folded away.
+     */
+    messageMap?: Record<MessageId, Message>;
 };
 
 export type CompactionResult = {
@@ -82,6 +90,20 @@ function countIntactToolResults(messages: Message[]): number {
         }
     }
     return count;
+}
+
+/** Introduces a carried-forward summary, both to the summarizer and in the stored text. */
+const PRIOR_SUMMARY_HEADING = 'Summary of earlier conversation:';
+
+/**
+ * Drops the display preamble a collapsed summary carries, so re-summarizing does not
+ * nest one preamble inside the next on every subsequent pass.
+ */
+function stripSummaryTurnPrefix(content: string | undefined): string {
+    if (!content) {
+        return '';
+    }
+    return content.startsWith(SUMMARY_TURN_PREFIX) ? content.slice(SUMMARY_TURN_PREFIX.length).trim() : content;
 }
 
 function truncateTranscriptForSummary(transcript: string): string {
@@ -119,9 +141,16 @@ export async function compactConversation(
     api?: Api,
     options: CompactionEngineOptions = {}
 ): Promise<CompactionResult> {
-    const { head, tail } = partitionChain(chain, {
+    // Only partition the post-compaction view. The display chain still contains
+    // messages already summarized by earlier boundaries; re-processing them would
+    // inflate the next summary and undo the space reclaimed.
+    const { summaryTurn: priorSummaryTurn, chain: chainToCompact } = collapseCompactedChain(chain, options.messageMap);
+
+    const { head, tail } = partitionChain(chainToCompact, {
         keepRecentTokenBudget: options.keepRecentTokenBudget,
         keepMinRecentMessages: options.keepMinRecentMessages,
+        attachments: options.attachments,
+        contextFilters: options.contextFilters,
     });
 
     const target = options.targetTokens ?? COMPACTION_TARGET_TOKENS;
@@ -134,13 +163,32 @@ export async function compactConversation(
     // every subsequent request, which is the dominant saving in file-heavy chats.
     const allAttachments = options.attachments ?? [];
     const exclusions = options.contextFilters ?? [];
+
+    // An earlier boundary's summary is the only surviving record of the history it
+    // replaced, and only the newest boundary's summary is ever sent to the model. So a
+    // repeat compaction must fold the prior summary into the new one, or that history
+    // vanishes from the model's view rather than being carried forward. It counts on
+    // both sides of the ledger below: it is part of what this pass consumes, and part
+    // of what it produces.
+    const priorSummary = stripSummaryTurnPrefix(priorSummaryTurn?.content);
+    const composeTranscript = (messages: Message[]): string => {
+        const body = buildTranscript(messages);
+        if (!priorSummary) {
+            return body;
+        }
+        const seeded = `${PRIOR_SUMMARY_HEADING}\n${priorSummary}`;
+        return body ? `${seeded}\n\n${body}` : seeded;
+    };
+
     const tokensBefore =
-        estimateChainContentTokens(head) + estimateChainAttachmentTokens(head, allAttachments, exclusions);
+        estimateTextTokens(priorSummary) +
+        estimateChainContentTokens(head) +
+        estimateChainAttachmentTokens(head, allAttachments, exclusions);
 
     const initialToolResults = countToolResults(head);
     const appliedStrategies: CompactionStrategyName[] = [];
     let working = head;
-    let transcript = buildTranscript(working);
+    let transcript = composeTranscript(working);
     const clearedTools: string[] = [];
     const droppedTools: string[] = [];
 
@@ -151,7 +199,7 @@ export async function compactConversation(
         const res = clearOldToolResults(working, KEEP_RECENT_TOOL_RESULTS);
         if (res.affected > 0) {
             working = res.messages;
-            transcript = buildTranscript(working);
+            transcript = composeTranscript(working);
             appliedStrategies.push('clear_tool_results');
             clearedTools.push(...collectClearedToolNames(before, working));
         }
@@ -162,7 +210,7 @@ export async function compactConversation(
         const res = dropToolPairs(working);
         if (res.affected > 0) {
             working = res.messages;
-            transcript = buildTranscript(working);
+            transcript = composeTranscript(working);
             appliedStrategies.push('drop_tool_pairs');
             droppedTools.push(...collectDroppedToolNames(before, working));
         }
@@ -172,7 +220,7 @@ export async function compactConversation(
         const res = stripContext(working);
         if (res.affected > 0) {
             working = res.messages;
-            transcript = buildTranscript(working);
+            transcript = composeTranscript(working);
             appliedStrategies.push('strip_context');
         }
     }
@@ -203,10 +251,19 @@ export async function compactConversation(
     const clearedToolResultCount = Math.max(0, initialToolResults - countIntactToolResults(working));
     const tokensAfter = estimateTextTokens(summary);
 
+    const tokensRemoved = Math.max(0, tokensBefore - tokensAfter);
+
+    // Refuse no-op compactions: they create duplicate boundary markers without
+    // freeing any context (common when a first pass already summarized the head
+    // and the request is still over limit because of the preserved tail/files).
+    if (tokensRemoved < MIN_COMPACTION_TOKENS_RECLAIMED && !options.forceLlmSummary) {
+        throw new NotEnoughToCompactError();
+    }
+
     const stats: CompactionStats = {
         tokensBefore,
         tokensAfter,
-        tokensRemoved: Math.max(0, tokensBefore - tokensAfter),
+        tokensRemoved,
         summarizedMessageCount: head.length,
         keptMessageCount: tail.length,
         clearedToolResultCount,

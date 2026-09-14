@@ -1,11 +1,16 @@
 import React from 'react';
 
+import { clsx } from 'clsx';
+import { c } from 'ttag';
+
 import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
 
 import { getMimeTypeFromExtension } from '../../util/filetypes';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
 import type { FileItem, FileMentionState } from './hooks/useFileMentionAutocomplete';
+
+import './FileMentionComponent.scss';
 
 interface FileMentionComponentProps {
     mentionState: FileMentionState;
@@ -70,6 +75,8 @@ export const FileMentionComponent: React.FC<FileMentionComponentProps> = ({
 
     return (
         <div
+            role="listbox"
+            aria-label={c('collider_2025: Info').t`Matching files`}
             className="file-mention-autocomplete fixed bg-norm border border-weak rounded-lg shadow-lifted z-[60] overflow-y-auto min-w-72 py-1"
             style={{
                 top: `${topPosition}px`,
@@ -95,9 +102,12 @@ export const FileMentionComponent: React.FC<FileMentionComponentProps> = ({
                     <button
                         key={`${file.source}-${file.id}`}
                         type="button"
-                        className={`w-full text-left px-4 py-3 hover:bg-weak transition-colors flex items-center gap-3 ${
-                            index === selectedIndex ? 'bg-weak' : ''
-                        }`}
+                        role="option"
+                        aria-selected={index === selectedIndex}
+                        className={clsx(
+                            'file-mention-option w-full text-left px-4 py-3 transition-colors flex items-center gap-3',
+                            index === selectedIndex && 'is-selected'
+                        )}
                         onClick={() => selectFile(file)}
                         onMouseEnter={() => setSelectedIndex(index)}
                     >

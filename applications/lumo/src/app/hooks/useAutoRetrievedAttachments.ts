@@ -1,8 +1,9 @@
 import { useMemo } from 'react';
 
 import { getSummarizedMessageIds } from '../llm/compaction';
-import { useLumoSelector } from '../redux/hooks';
-import { selectAttachments, selectContextFilters } from '../redux/selectors';
+import { useLumoMemoSelector, useLumoSelector } from '../redux/hooks';
+import { selectAttachments, selectContextFilters, selectMessagesByConversationId } from '../redux/selectors';
+import { getAttachmentDocumentKey } from '../util/resolveProjectFiles';
 import type { Attachment, Message } from '../types';
 
 export type AutoRetrievedAttachment = Attachment & { messageId: string };
@@ -18,7 +19,12 @@ export type AutoRetrievedAttachment = Attachment & { messageId: string };
 export const useAutoRetrievedAttachments = (messageChain: Message[]) => {
     const allAttachmentsState = useLumoSelector(selectAttachments);
     const contextFilters = useLumoSelector(selectContextFilters);
-    const summarizedMessageIds = useMemo(() => getSummarizedMessageIds(messageChain), [messageChain]);
+    const conversationId = messageChain[0]?.conversationId;
+    const messageMap = useLumoMemoSelector(selectMessagesByConversationId, [conversationId]);
+    const summarizedMessageIds = useMemo(
+        () => getSummarizedMessageIds(messageChain, messageMap),
+        [messageChain, messageMap]
+    );
 
     const autoRetrievedAttachments = useMemo<AutoRetrievedAttachment[]>(() => {
         const attachmentsByKey = new Map<string, AutoRetrievedAttachment>();
@@ -58,7 +64,7 @@ export const useAutoRetrievedAttachments = (messageChain: Message[]) => {
                 };
 
                 // Keep highest-relevance copy when the same document appears across multiple messages
-                const key = mergedAtt.driveNodeId || mergedAtt.filename;
+                const key = getAttachmentDocumentKey(mergedAtt);
                 const existing = attachmentsByKey.get(key);
                 if (!existing || (mergedAtt.relevanceScore ?? 0) > (existing.relevanceScore ?? 0)) {
                     attachmentsByKey.set(key, mergedAtt);
