@@ -47,10 +47,10 @@ function ThemeSubmenu() {
   // biome-ignore lint/correctness/noUnreachable: kept for the future
   return (
     <Ariakit.MenuProvider>
-      <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="palette" />}>{s('Theme')}</UI.SubMenuButton>
+      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.palette} />}>{s('Theme')}</UI.SubMenuButton>
       <UI.SubMenu>
         {/* TODO: implement */}
-        <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="clock" />}>Coming soon...</UI.MenuItem>
+        <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.clock} />}>Coming soon...</UI.MenuItem>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
   )
@@ -70,7 +70,7 @@ function TableFormattingSubmenu() {
       </UI.SubMenuButton>
       <UI.SubMenu>
         {/* TODO: waiting for SVG for implementation */}
-        <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="clock" />}>Coming soon...</UI.MenuItem>
+        <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.clock} />}>Coming soon...</UI.MenuItem>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
   )
@@ -87,7 +87,7 @@ function CellStylesSubmenu() {
       </UI.SubMenuButton>
       <UI.SubMenu>
         {/* TODO: implement */}
-        <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="clock" />}>Coming soon...</UI.MenuItem>
+        <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.clock} />}>Coming soon...</UI.MenuItem>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
   )
@@ -107,7 +107,7 @@ function TextSubmenu() {
   return (
     <Ariakit.MenuProvider>
       <UI.SubMenuButton
-        leadingIconSlot={<UI.Icon legacyName="text-bold" />}
+        leadingIconSlot={<UI.Icon data={Icons.textBold} />}
         disabled={useUI((ui) => ui.info.isReadonly)}
       >
         {s('Text')}
@@ -116,7 +116,7 @@ function TextSubmenu() {
         <UI.MenuItemCheckbox
           name="format"
           value="bold"
-          leadingIconSlot={<UI.Icon legacyName="text-bold" />}
+          leadingIconSlot={<UI.Icon data={Icons.textBold} />}
           hintSlot="⌘B"
           onClick={useUI.$.withFocusGrid(useUI.$.format.text.bold.toggle)}
           disabled={useUI((ui) => ui.info.isReadonly)}
@@ -126,7 +126,7 @@ function TextSubmenu() {
         <UI.MenuItemCheckbox
           name="format"
           value="italic"
-          leadingIconSlot={<UI.Icon legacyName="text-italic" />}
+          leadingIconSlot={<UI.Icon data={Icons.textItalic} />}
           hintSlot="⌘I"
           onClick={useUI.$.withFocusGrid(useUI.$.format.text.italic.toggle)}
           disabled={useUI((ui) => ui.info.isReadonly)}
@@ -136,7 +136,7 @@ function TextSubmenu() {
         <UI.MenuItemCheckbox
           name="format"
           value="underline"
-          leadingIconSlot={<UI.Icon legacyName="text-underline" />}
+          leadingIconSlot={<UI.Icon data={Icons.textUnderline} />}
           hintSlot="⌘U"
           onClick={useUI.$.withFocusGrid(useUI.$.format.text.underline.toggle)}
           disabled={useUI((ui) => ui.info.isReadonly)}
@@ -146,7 +146,7 @@ function TextSubmenu() {
         <UI.MenuItemCheckbox
           name="format"
           value="strikethrough"
-          leadingIconSlot={<UI.Icon legacyName="text-strikethrough" />}
+          leadingIconSlot={<UI.Icon data={Icons.textStrikethrough} />}
           hintSlot="⌘+Shift+X"
           onClick={useUI.$.withFocusGrid(useUI.$.format.text.strikethrough.toggle)}
           disabled={useUI((ui) => ui.info.isReadonly)}
@@ -164,14 +164,14 @@ function AlignmentSubmenu() {
   return (
     <Ariakit.MenuProvider>
       <UI.SubMenuButton
-        leadingIconSlot={<UI.Icon legacyName="text-align-left" />}
+        leadingIconSlot={<UI.Icon data={Icons.textAlignLeft} />}
         disabled={useUI((ui) => ui.info.isReadonly)}
       >
         {s('Alignment')}
       </UI.SubMenuButton>
       <UI.SubMenu>
         <UI.MenuItem
-          leadingIconSlot={<UI.Icon legacyName="text-align-left" />}
+          leadingIconSlot={<UI.Icon data={Icons.textAlignLeft} />}
           hintSlot="⌘+Shift+L"
           onClick={useUI.$.withFocusGrid(() => setHorizontalAlignment('left'))}
           disabled={useUI((ui) => ui.info.isReadonly)}
@@ -179,7 +179,7 @@ function AlignmentSubmenu() {
           {s('Left')}
         </UI.MenuItem>
         <UI.MenuItem
-          leadingIconSlot={<UI.Icon legacyName="text-align-center" />}
+          leadingIconSlot={<UI.Icon data={Icons.textAlignCenter} />}
           hintSlot="⌘+Shift+E"
           onClick={useUI.$.withFocusGrid(() => setHorizontalAlignment('center'))}
           disabled={useUI((ui) => ui.info.isReadonly)}
@@ -187,7 +187,7 @@ function AlignmentSubmenu() {
           {s('Center')}
         </UI.MenuItem>
         <UI.MenuItem
-          leadingIconSlot={<UI.Icon legacyName="text-align-right" />}
+          leadingIconSlot={<UI.Icon data={Icons.textAlignRight} />}
           hintSlot="⌘+Shift+R"
           onClick={useUI.$.withFocusGrid(() => setHorizontalAlignment('right'))}
           disabled={useUI((ui) => ui.info.isReadonly)}
@@ -264,7 +264,7 @@ function WrappingSubmenu() {
 //   const values = useMemo(() => ({ 'font-size': fontSize }), [fontSize])
 //   return (
 //     <Ariakit.MenuProvider values={values}>
-//       <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.fontSize} />}>{s('Font size')}</UI.SubMenuButton>
+//       <UI.SubMenuButton leadingIconSlot={<UI.Icon data={fontSizeIcon} />}>{s('Font size')}</UI.SubMenuButton>
 //       <UI.SubMenu>
 //         {FONT_SIZE_SUGGESTIONS.map((size) => (
 //           <UI.MenuItemRadio name="font-size" key={size} value={size}>
@@ -321,7 +321,7 @@ function MergeCellsSubmenu() {
 function ConditionalFormatting() {
   return (
     <UI.MenuItem
-      leadingIconSlot={<UI.Icon legacyName="broom" />}
+      leadingIconSlot={<UI.Icon data={Icons.broom} />}
       onClick={useUI.$.format.conditional.open}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
@@ -334,21 +334,21 @@ function ClearSubmenu() {
   return (
     <Ariakit.MenuProvider>
       <UI.SubMenuButton
-        leadingIconSlot={<UI.Icon legacyName="cross-big" />}
+        leadingIconSlot={<UI.Icon data={Icons.crossBig} />}
         disabled={useUI((ui) => ui.info.isReadonly)}
       >
         {s('Clear')}
       </UI.SubMenuButton>
       <UI.SubMenu>
         <UI.MenuItem
-          leadingIconSlot={<UI.Icon legacyName="eraser" />}
+          leadingIconSlot={<UI.Icon data={Icons.eraser} />}
           onClick={useUI.$.withFocusGrid(useUI.$.format.clear)}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
           {s('Clear formatting')}
         </UI.MenuItem>
         <UI.MenuItem
-          leadingIconSlot={<UI.Icon legacyName="cross-big" />}
+          leadingIconSlot={<UI.Icon data={Icons.crossBig} />}
           onClick={useUI.$.withFocusGrid(useUI.$.operation.delete)}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >

@@ -1,5 +1,6 @@
 /* eslint-disable no-nested-ternary */
 
+import * as Icons from '../icons'
 import * as Ariakit from '@ariakit/react'
 import { getInitialDataValidationValues, useDataValidationDialogState } from '@rowsncolumns/spreadsheet-state'
 import { uuid } from '@rowsncolumns/utils'
@@ -93,7 +94,7 @@ function DataValidationRule({ sheetId, rule, onDelete, onSelect }: DataValidatio
             onDelete()
           }}
         >
-          <Icon legacyName="trash" />
+          <Icon data={Icons.trash} />
         </Button>
       </div>
     </Button>
@@ -129,7 +130,7 @@ function DataValidationList({ rules, sheetId, onDeleteRule, onSelectRule, onNewR
           className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
           onClick={onNewRule}
         >
-          <Icon legacyName="plus" />
+          <Icon data={Icons.plus} />
           {rules.length > 0 ? s('Add another named range') : s('Add named range')}
         </Button>
       </div>
@@ -218,7 +219,7 @@ function DataValidationRuleEditor({ rule, sheetId, onDone, onSave, onNewRule }: 
                               )
                             }}
                           >
-                            <Icon legacyName="trash" />
+                            <Icon data={Icons.trash} />
                           </Button>
                         ) : null}
                       </div>
@@ -327,7 +328,7 @@ function DataValidationRuleEditor({ rule, sheetId, onDone, onSave, onNewRule }: 
                 type="submit"
                 className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
               >
-                <Icon legacyName="plus" />
+                <Icon data={Icons.plus} />
                 {s('Add another named range')}
               </Button>
             </div>

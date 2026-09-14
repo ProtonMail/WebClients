@@ -1,5 +1,5 @@
+import * as Icons from '../icons'
 import * as Ariakit from '@ariakit/react'
-import type { IconName } from '@proton/icons/types'
 import type { CellInterface } from '@rowsncolumns/grid'
 import type { CellTooltipProps } from '@rowsncolumns/spreadsheet'
 import { clsx } from 'clsx'
@@ -10,17 +10,17 @@ import { useSheetsDependencies } from '../../SheetsDependenciesProvider'
 import { createStringifier } from '../../stringifier'
 import { useUI } from '../../ui-store'
 import * as UI from '../ui'
-import { Icon } from '../ui'
+import { Icon, type IconData } from '../ui'
 import { createComponent } from '../utils'
 import { copyTextToClipboard } from './copyTextToClipboard'
 const { s } = createStringifier(strings)
 
 export interface ItemProps extends Ariakit.ButtonProps {
   ref?: Ref<HTMLButtonElement>
-  legacyIconName?: IconName
+  icon: IconData
   children?: string
 }
-const Button = createComponent<ItemProps>(function Item({ legacyIconName, children, ...props }: ItemProps) {
+const Button = createComponent<ItemProps>(function Item({ icon, children, ...props }: ItemProps) {
   const outputProps = {
     ...props,
     className: clsx(
@@ -40,7 +40,7 @@ const Button = createComponent<ItemProps>(function Item({ legacyIconName, childr
 
   const content = (
     <Ariakit.ToolbarItem aria-label={children} accessibleWhenDisabled>
-      {legacyIconName && <Icon className="shrink-0" legacyName={legacyIconName} />}
+      <Icon className="shrink-0" data={icon} />
     </Ariakit.ToolbarItem>
   )
 
@@ -125,7 +125,7 @@ export function CellTooltip({
               content ? 'grid-rows-[auto_1fr]' : 'grid-rows-[auto]',
             )}
           >
-            <Icon legacyName="info-circle" className="self-center text-[#DC3251]" />
+            <Icon data={Icons.infoCircle} className="self-center text-[#DC3251]" />
             <div className="text-xs font-semibold text-[#DC3251]">{contentTitle}</div>
             {content && <div className="text-xs [grid-column:2]">{content}</div>}
           </div>
@@ -135,7 +135,7 @@ export function CellTooltip({
         )}
         {(note || noteEditorCell) && (
           <div className="bg-norm grid grid-cols-[1rem_1fr] grid-rows-[auto_1fr] gap-x-1.5 gap-y-2.5 border-l-2 border-[#F27D00] p-2 pb-1 pr-1">
-            <Icon legacyName="note" className="self-center text-[#F27D00]" />
+            <Icon data={Icons.note} className="self-center text-[#F27D00]" />
             <div className="text-xs font-semibold text-[#F27D00]">{s('Note')}</div>
             <NoteEditor
               initialValue={note}
@@ -243,7 +243,7 @@ function LinkInfo({
 
   return (
     <div className="bg-norm grid grid-cols-[1rem_1fr] gap-1.5 border-l-2 border-[#239ECE] p-2.5 pl-2">
-      <Icon legacyName="globe" className="place-self-center text-[#239ECE]" />
+      <Icon data={Icons.globe} className="place-self-center text-[#239ECE]" />
       <div className="flex items-center justify-between gap-4 text-[#239ECE]">
         <a
           href={url}
@@ -256,13 +256,13 @@ function LinkInfo({
           {link}
         </a>
         <div className="flex items-center gap-1">
-          <Button legacyIconName="squares" onClick={copyLink} disabled={isReadonly}>
+          <Button icon={Icons.squares} onClick={copyLink} disabled={isReadonly}>
             {s('Copy link')}
           </Button>
-          <Button legacyIconName="pencil" onClick={editLink} disabled={isReadonly}>
+          <Button icon={Icons.pencil} onClick={editLink} disabled={isReadonly}>
             {s('Edit link')}
           </Button>
-          <Button legacyIconName="link-slash" onClick={useUI.$.withFocusGrid(removeLink)} disabled={isReadonly}>
+          <Button icon={Icons.linkSlash} onClick={useUI.$.withFocusGrid(removeLink)} disabled={isReadonly}>
             {s('Remove link')}
           </Button>
         </div>

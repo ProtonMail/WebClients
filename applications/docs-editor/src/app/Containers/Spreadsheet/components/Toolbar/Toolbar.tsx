@@ -21,8 +21,6 @@ import {
   TextWrapSelectorContent,
 } from '@rowsncolumns/spreadsheet'
 import * as Ariakit from '@ariakit/react'
-import type { IconData } from '../ui'
-import type { IconName } from '@proton/icons/types'
 import { InsertFormulaMenu } from '../shared/InsertFormulaMenu'
 import { MergeMenuItems } from '../shared/MergeMenuItems'
 import { EditingDisabledButton } from '../misc/EditingDisabledButton'
@@ -41,7 +39,7 @@ export const Toolbar = createComponent(function Toolbar({ ...props }: ToolbarPro
       <T.Container
         {...props}
         mainToolbarSlot={<ViewOnlyModeToolbarGroups />}
-        renderOverflowDisclosure={<T.Item legacyIconName="three-dots-vertical">{s('More')}</T.Item>}
+        renderOverflowDisclosure={<T.Item icon={Icons.threeDotsVertical}>{s('More')}</T.Item>}
         trailingSlot={<EditingDisabledButton />}
       />
     )
@@ -54,7 +52,7 @@ export const Toolbar = createComponent(function Toolbar({ ...props }: ToolbarPro
       overflowToolbarSlot={<ToolbarGroups />}
       // trailingSlot={<InsertChart />} // TODO: temporarily disabled
       formulaBarSlot={<FormulaBar />}
-      renderOverflowDisclosure={<T.Item legacyIconName="three-dots-vertical">{s('More')}</T.Item>}
+      renderOverflowDisclosure={<T.Item icon={Icons.threeDotsVertical}>{s('More')}</T.Item>}
     />
   )
 })
@@ -129,7 +127,7 @@ function ToolbarGroups() {
 function Undo() {
   return (
     <T.Item
-      legacyIconName="arrow-up-and-left"
+      icon={Icons.arrowUpAndLeft}
       onClick={useUI.$.history.undo}
       disabled={useUI((ui) => ui.history.undoDisabled || ui.info.isReadonly)}
       shortcut={
@@ -147,7 +145,7 @@ function Undo() {
 function Redo() {
   return (
     <T.Item
-      legacyIconName="arrow-up-and-left"
+      icon={Icons.arrowUpAndLeft}
       // Hack to flip the icon horizontally.
       className="[&_svg]:-scale-x-100"
       onClick={useUI.$.history.redo}
@@ -166,7 +164,7 @@ function Redo() {
 
 function Find() {
   return (
-    <T.Item legacyIconName="magnifier" onClick={useUI.$.search.open}>
+    <T.Item icon={Icons.magnifier} onClick={useUI.$.search.open}>
       {s('Find')}
     </T.Item>
   )
@@ -175,7 +173,7 @@ function Find() {
 // TODO: broken
 function ClearFormatting() {
   return (
-    <T.Item legacyIconName="eraser" onClick={useUI.$.format.clear} disabled={useUI((ui) => ui.info.isReadonly)}>
+    <T.Item icon={Icons.eraser} onClick={useUI.$.format.clear} disabled={useUI((ui) => ui.info.isReadonly)}>
       {s('Clear formatting')}
     </T.Item>
   )
@@ -184,7 +182,7 @@ function ClearFormatting() {
 function PaintFormat() {
   return (
     <T.Item
-      legacyIconName="paint-roller"
+      icon={Icons.paintRoller}
       pressed={useUI((ui) => ui.format.paintFormat.active)}
       onClick={useUI.$.format.paintFormat.save}
       disabled={useUI((ui) => ui.info.isReadonly)}
@@ -256,7 +254,7 @@ function IncreaseDecimalPlaces() {
 function Bold() {
   return (
     <T.Item
-      legacyIconName="text-bold"
+      icon={Icons.textBold}
       pressed={useUI((ui) => ui.format.text.bold.active)}
       onClick={useUI.$.format.text.bold.toggle}
       disabled={useUI((ui) => ui.info.isReadonly)}
@@ -269,7 +267,7 @@ function Bold() {
 function Italic() {
   return (
     <T.Item
-      legacyIconName="text-italic"
+      icon={Icons.textItalic}
       pressed={useUI((ui) => ui.format.text.italic.active)}
       onClick={useUI.$.format.text.italic.toggle}
       disabled={useUI((ui) => ui.info.isReadonly)}
@@ -282,7 +280,7 @@ function Italic() {
 function Underline() {
   return (
     <T.Item
-      legacyIconName="text-underline"
+      icon={Icons.textUnderline}
       pressed={useUI((ui) => ui.format.text.underline.active)}
       onClick={useUI.$.format.text.underline.toggle}
       disabled={useUI((ui) => ui.info.isReadonly)}
@@ -295,7 +293,7 @@ function Underline() {
 function Strikethrough() {
   return (
     <T.Item
-      legacyIconName="text-strikethrough"
+      icon={Icons.textStrikethrough}
       pressed={useUI((ui) => ui.format.text.strikethrough.active)}
       onClick={useUI.$.format.text.strikethrough.toggle}
       disabled={useUI((ui) => ui.info.isReadonly)}
@@ -419,7 +417,7 @@ function MergeCells() {
       <Ariakit.MenuProvider>
         <Ariakit.MenuButton
           render={
-            <T.Item legacyIconName="chevron-down-filled" className="w-[1rem] !px-0">
+            <T.Item icon={Icons.chevronDownFilled} className="w-[1rem] !px-0">
               {s('Select merge type')}
             </T.Item>
           }
@@ -439,17 +437,13 @@ function TextHorizontalAlign() {
   const value = useUI((ui) => ui.format.alignment.horizontal.value)
   const onChange = useUI.$.format.alignment.horizontal.set
 
-  let icon: IconName
+  let icon = Icons.textAlignLeft
   switch (value) {
     case 'center':
-      icon = 'text-align-center'
+      icon = Icons.textAlignCenter
       break
     case 'right':
-      icon = 'text-align-right'
-      break
-    case 'left':
-    default:
-      icon = 'text-align-left'
+      icon = Icons.textAlignRight
       break
   }
 
@@ -457,7 +451,7 @@ function TextHorizontalAlign() {
     <Ariakit.PopoverProvider store={popover}>
       <Ariakit.PopoverDisclosure
         render={
-          <T.Item legacyIconName={icon} dropdownIndicator disabled={useUI((ui) => ui.info.isReadonly)}>
+          <T.Item icon={icon} dropdownIndicator disabled={useUI((ui) => ui.info.isReadonly)}>
             {s('Horizontal align')}
           </T.Item>
         }
@@ -482,17 +476,13 @@ function TextVerticalAlign() {
   const value = useUI((ui) => ui.format.alignment.vertical.value)
   const onChange = useUI.$.format.alignment.vertical.set
 
-  let icon: IconData
+  let icon = Icons.alignBottom
   switch (value) {
     case 'top':
       icon = Icons.alignTop
       break
     case 'middle':
       icon = Icons.alignVerticalCenter
-      break
-    case 'bottom':
-    default:
-      icon = Icons.alignBottom
       break
   }
 
@@ -525,17 +515,13 @@ function TextWrap() {
   const value = useUI((ui) => ui.format.wrapping.value)
   const onChange = useUI.$.format.wrapping.set
 
-  let icon: IconData
+  let icon = Icons.textOverflow
   switch (value) {
-    case 'clip':
-      icon = Icons.textClip
-      break
     case 'wrap':
       icon = Icons.textWrap
       break
-    case 'overflow':
-    default:
-      icon = Icons.textOverflow
+    case 'clip':
+      icon = Icons.textClip
       break
   }
 
@@ -563,7 +549,7 @@ function TextWrap() {
 
 function InsertLink() {
   return (
-    <T.Item legacyIconName="link" onClick={useUI.$.insert.link} disabled={useUI((ui) => ui.info.isReadonly)}>
+    <T.Item icon={Icons.link} onClick={useUI.$.insert.link} disabled={useUI((ui) => ui.info.isReadonly)}>
       {s('Insert link')}
     </T.Item>
   )
@@ -597,7 +583,7 @@ function CreateFilter() {
 function InsertNote() {
   return (
     // TODO: icon needs to be note-with-text but we don't have it yet
-    <T.Item legacyIconName="note" onClick={useUI.$.insert.note} disabled={useUI((ui) => ui.info.isReadonly)}>
+    <T.Item icon={Icons.note} onClick={useUI.$.insert.note} disabled={useUI((ui) => ui.info.isReadonly)}>
       {s('Insert note')}
     </T.Item>
   )
