@@ -10,7 +10,8 @@ import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 import { useLocalStateSync } from '@proton/components/hooks/useLocalStateSync';
 import { getIndexKey, setESLogger } from '@proton/encrypted-search/esHelpers';
 import { contentIndexingProgress, hasESDB, wrappedGetOldestInfo } from '@proton/encrypted-search/esIDB';
-import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
+import type { ContentSearchEndReason, NormalizedSearchParams } from '@proton/encrypted-search/models';
+import { endSearchSession, startSearchSession } from '@proton/encrypted-search/searchSession';
 import { useContentSearchTelemetry } from '@proton/encrypted-search/useContentSearchTelemetry';
 import { useEncryptedSearch } from '@proton/encrypted-search/useEncryptedSearch';
 import { useIndexedDBSupport } from '@proton/encrypted-search/useIndexedDBSupport';
@@ -40,6 +41,7 @@ import type {
 import type { Event } from '../models/event';
 import { selectCategoryIDs } from '../store/elements/elementsSelectors';
 import { useMailSelector } from '../store/hooks';
+import { extendStore } from '../store/store';
 
 // Encrypted search has no logging implementation of its own (see esLogger.ts) - mail is the one
 // that knows about @proton/logger, so this is where that link is made explicit.
@@ -125,6 +127,29 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             sendResultActionReport(params);
         }
     };
+
+    const startSearchSessionRouted = () => {
+        if (isV2Active) {
+            esLibraryFunctionsV2.startSearchSession();
+        } else {
+            startSearchSession();
+        }
+    };
+
+    const endSearchSessionRouted = (endReason: ContentSearchEndReason) => {
+        if (isV2Active) {
+            esLibraryFunctionsV2.endSearchSession(endReason);
+        } else {
+            endSearchSession(api, endReason);
+        }
+    };
+
+    // `searchChangeListener.ts` starts/ends sessions from a Redux listener, outside React, so it can't
+    // read `isV2Active` or call the functions above directly — inject them into the thunk extra
+    // arguments instead, refreshed every render since they close over `isV2Active`/`esLibraryFunctionsV2`.
+    useEffect(() => {
+        extendStore({ startSearchSession: startSearchSessionRouted, endSearchSession: endSearchSessionRouted });
+    });
 
     const enableContentSearch = useContentSearchReadyNotification(
         esLibraryFunctions.esStatus,
@@ -341,6 +366,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         setTemporaryToggleOff,
         reportResultOpened,
         reportResultAction,
+        startSearchSession: startSearchSessionRouted,
+        endSearchSession: endSearchSessionRouted,
     };
 
     return <EncryptedSearchContext.Provider value={esFunctions}>{children}</EncryptedSearchContext.Provider>;

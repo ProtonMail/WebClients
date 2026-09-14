@@ -24,6 +24,8 @@ const mockExtra: MailThunkExtra['extra'] = {
     api: mockApi,
     calendarModelEventManager: {} as any,
     notificationManager: {} as any,
+    startSearchSession: jest.fn(),
+    endSearchSession: jest.fn(),
     eventManager: {} as any,
     history: {} as any,
     unleashClient: { isEnabled: jest.fn().mockReturnValue(false) } as any,
