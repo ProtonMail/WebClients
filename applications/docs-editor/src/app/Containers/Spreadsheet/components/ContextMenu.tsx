@@ -248,7 +248,7 @@ export function ContextMenu({
 
   return (
     <Ariakit.MenuProvider store={store}>
-      <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="squares" />} onClick={copy}>
+      <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.squares} />} onClick={copy}>
         {s('Copy')}
       </UI.MenuItem>
 
@@ -281,14 +281,14 @@ export function ContextMenu({
       </Ariakit.MenuProvider>
 
       <Ariakit.MenuProvider>
-        <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="cross-big" />} disabled={readonly}>
+        <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.crossBig} />} disabled={readonly}>
           {s('Clear')}
         </UI.SubMenuButton>
         <UI.SubMenu unmountOnHide>
-          <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="eraser" />} onClick={clearFormat} disabled={readonly}>
+          <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.eraser} />} onClick={clearFormat} disabled={readonly}>
             {s('Clear formatting')}
           </UI.MenuItem>
-          <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="cross-big" />} onClick={clearContent} disabled={readonly}>
+          <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.crossBig} />} onClick={clearContent} disabled={readonly}>
             {s('Clear content')}
           </UI.MenuItem>
         </UI.SubMenu>
@@ -313,14 +313,14 @@ export function ContextMenu({
             {s('Insert')} <b>{columnsString(selectedColumnHeadersIds.length)}</b> {s('right')}
           </UI.MenuItem>
           <UI.MenuItem
-            leadingIconSlot={<UI.Icon legacyName="trash" />}
+            leadingIconSlot={<UI.Icon data={Icons.trash} />}
             onClick={() => onDeleteColumn?.(sheetId, selectedColumnHeadersIds)}
             disabled={readonly}
           >
             {s('Delete column')} {multiColumnTitle}
           </UI.MenuItem>
           <UI.MenuItem
-            leadingIconSlot={<UI.Icon legacyName="eye-slash" />}
+            leadingIconSlot={<UI.Icon data={Icons.eyeSlash} />}
             onClick={() => onHideColumn?.(sheetId, selectedColumnHeadersIds)}
             disabled={readonly}
           >
@@ -333,7 +333,7 @@ export function ContextMenu({
             </UI.SubMenuButton>
             <UI.SubMenu unmountOnHide>
               <UI.MenuItem
-                leadingIconSlot={<UI.Icon legacyName="bolt" />}
+                leadingIconSlot={<UI.Icon data={Icons.bolt} />}
                 onClick={() => {
                   onAutoResize?.(sheetId, selectedColumnHeadersIds, 'y')
                 }}
@@ -372,7 +372,7 @@ export function ContextMenu({
           <UI.MenuSeparator />
 
           <UI.MenuItem
-            leadingIconSlot={<UI.Icon legacyName="sort-alphabetically" />}
+            leadingIconSlot={<UI.Icon data={Icons.sortAlphabetically} />}
             onClick={() => onSortColumn?.(sheetId, activeCell.columnIndex, 'ASCENDING')}
             disabled={readonly}
           >
@@ -380,7 +380,7 @@ export function ContextMenu({
           </UI.MenuItem>
 
           <UI.MenuItem
-            leadingIconSlot={<UI.Icon legacyName="sort-alphabetically" />}
+            leadingIconSlot={<UI.Icon data={Icons.sortAlphabetically} />}
             onClick={() => onSortColumn?.(sheetId, activeCell.columnIndex, 'DESCENDING')}
             disabled={readonly}
           >
@@ -408,14 +408,14 @@ export function ContextMenu({
             {s('Insert')} <b>{rowsString(selectedRowHeadersIds.length)}</b> {s('below')}
           </UI.MenuItem>
           <UI.MenuItem
-            leadingIconSlot={<UI.Icon legacyName="trash" />}
+            leadingIconSlot={<UI.Icon data={Icons.trash} />}
             onClick={() => onDeleteRow?.(sheetId, selectedRowHeadersIds)}
             disabled={readonly}
           >
             {s('Delete row')} {multiRowTitle}
           </UI.MenuItem>
           <UI.MenuItem
-            leadingIconSlot={<UI.Icon legacyName="eye-slash" />}
+            leadingIconSlot={<UI.Icon data={Icons.eyeSlash} />}
             onClick={() => onHideRow?.(sheetId, selectedRowHeadersIds)}
             disabled={readonly}
           >
@@ -428,7 +428,7 @@ export function ContextMenu({
             </UI.SubMenuButton>
             <UI.SubMenu unmountOnHide>
               <UI.MenuItem
-                leadingIconSlot={<UI.Icon legacyName="bolt" />}
+                leadingIconSlot={<UI.Icon data={Icons.bolt} />}
                 onClick={() => {
                   onAutoResize?.(sheetId, selectedRowHeadersIds, 'x')
                 }}
@@ -470,7 +470,7 @@ export function ContextMenu({
         <>
           <UI.MenuSeparator />
           <UI.MenuItem
-            leadingIconSlot={<UI.Icon legacyName="broom" />}
+            leadingIconSlot={<UI.Icon data={Icons.broom} />}
             onClick={openConditionalFormat}
             disabled={readonly}
           >
@@ -502,7 +502,7 @@ export function ContextMenu({
       {!isHeader ? (
         <>
           <Ariakit.MenuProvider>
-            <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="plus" />} disabled={readonly}>
+            <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.plus} />} disabled={readonly}>
               {s('Insert')}
             </UI.SubMenuButton>
             <UI.SubMenu unmountOnHide>
@@ -567,7 +567,7 @@ export function ContextMenu({
                   </UI.MenuItem>
 
                   <UI.MenuItem
-                    leadingIconSlot={<UI.Icon legacyName="plus" />}
+                    leadingIconSlot={<UI.Icon data={Icons.plus} />}
                     onClick={() => onInsertCellsShiftRight?.(sheetId, activeCell, selections)}
                     disabled={readonly}
                   >
@@ -575,7 +575,7 @@ export function ContextMenu({
                   </UI.MenuItem>
 
                   <UI.MenuItem
-                    leadingIconSlot={<UI.Icon legacyName="plus" />}
+                    leadingIconSlot={<UI.Icon data={Icons.plus} />}
                     onClick={() => onInsertCellsShiftDown?.(sheetId, activeCell, selections)}
                     disabled={readonly}
                   >
@@ -587,7 +587,7 @@ export function ContextMenu({
           </Ariakit.MenuProvider>
 
           <Ariakit.MenuProvider>
-            <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="trash" />} disabled={readonly}>
+            <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.trash} />} disabled={readonly}>
               {s('Delete')}
             </UI.SubMenuButton>
             <UI.SubMenu unmountOnHide>
@@ -641,7 +641,7 @@ export function ContextMenu({
           <UI.MenuSeparator />
 
           <Ariakit.MenuProvider>
-            <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="filter" />} disabled={readonly}>
+            <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.filter} />} disabled={readonly}>
               {s('Filter')}
             </UI.SubMenuButton>
             <UI.SubMenu unmountOnHide>
@@ -658,7 +658,7 @@ export function ContextMenu({
           </Ariakit.MenuProvider>
 
           <Ariakit.MenuProvider>
-            <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="sort-alphabetically" />} disabled={readonly}>
+            <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.sortAlphabetically} />} disabled={readonly}>
               {s('Sort')}
             </UI.SubMenuButton>
             <UI.SubMenu unmountOnHide>
@@ -740,7 +740,7 @@ export function ContextMenu({
 
           {/* {activeTable ? null : (
             <UI.MenuItem
-                leadingIconSlot={<UI.Icon legacyName="filter" />}
+                leadingIconSlot={<UI.Icon data={filter} />}
                 onClick={() => {
                   onCreateBasicFilter?.(sheetId, activeCell, selections)
                 }}
@@ -751,7 +751,7 @@ export function ContextMenu({
           )} */}
 
           <UI.MenuItem
-            leadingIconSlot={<UI.Icon legacyName="broom" />}
+            leadingIconSlot={<UI.Icon data={Icons.broom} />}
             onClick={openConditionalFormat}
             disabled={readonly}
           >
@@ -781,7 +781,7 @@ export function ContextMenu({
           <UI.MenuSeparator />
 
           <UI.MenuItem
-            leadingIconSlot={<UI.Icon legacyName="note" />}
+            leadingIconSlot={<UI.Icon data={Icons.note} />}
             onClick={() => {
               onInsertNote?.(sheetId, activeCell)
             }}
@@ -790,7 +790,7 @@ export function ContextMenu({
             {s('Insert note')}
           </UI.MenuItem>
 
-          <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="link" />} onClick={insertLink} disabled={readonly}>
+          <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.link} />} onClick={insertLink} disabled={readonly}>
             {s('Insert link')}
           </UI.MenuItem>
         </>
@@ -800,7 +800,7 @@ export function ContextMenu({
         <>
           <UI.MenuSeparator />
           <Ariakit.MenuProvider>
-            <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="three-dots-vertical" />} disabled={readonly}>
+            <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.threeDotsVertical} />} disabled={readonly}>
               {s('More cell actions')}
             </UI.SubMenuButton>
 

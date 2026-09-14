@@ -1,3 +1,4 @@
+import * as Icons from '../../icons'
 import * as Ariakit from '@ariakit/react'
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { useCallback, useEffect, useRef, useState, type ReactElement } from 'react'
@@ -131,7 +132,7 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
         {!isPublicMode ? <NewSpreadsheetOption triggerMenuAction={triggerMenuAction} /> : null}
         {!isPublicMode ? <NewDocumentOption triggerMenuAction={triggerMenuAction} /> : null}
         <UI.MenuItem
-          leadingIconSlot={<UI.Icon legacyName="file-arrow-in-up" />}
+          leadingIconSlot={<UI.Icon data={Icons.fileArrowInUp} />}
           onClick={() => {
             void triggerMenuAction({
               type: 'import',
@@ -145,7 +146,7 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
           <>
             <MakeACopyOption triggerMenuAction={triggerMenuAction} />
             <UI.MenuItem
-              leadingIconSlot={<UI.Icon legacyName="arrows-cross" />}
+              leadingIconSlot={<UI.Icon data={Icons.arrowsCross} />}
               onClick={() => {
                 void triggerMenuAction({
                   type: 'move-to-folder',
@@ -156,7 +157,7 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
             </UI.MenuItem>
             <UI.MenuSeparator />
             <UI.MenuItem
-              leadingIconSlot={<UI.Icon legacyName="clock-rotate-left" />}
+              leadingIconSlot={<UI.Icon data={Icons.clockRotateLeft} />}
               onClick={() => {
                 void triggerMenuAction({
                   type: 'see-version-history',
@@ -170,7 +171,7 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
         )}
         <UI.MenuSeparator />
         <UI.MenuItem
-          leadingIconSlot={<UI.Icon legacyName="printer" />}
+          leadingIconSlot={<UI.Icon data={Icons.printer} />}
           onClick={() => {
             void triggerMenuAction({
               type: 'print',
@@ -183,7 +184,7 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
         <UI.MenuSeparator />
         <SpreadsheetSettings />
         <UI.MenuItem
-          leadingIconSlot={<UI.Icon legacyName="info-circle" />}
+          leadingIconSlot={<UI.Icon data={Icons.infoCircle} />}
           onClick={() => {
             void triggerMenuAction({
               type: 'help',
@@ -202,7 +203,7 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
           <span>{s('Help')}</span>
         </UI.MenuItem>
         <UI.MenuItem
-          leadingIconSlot={<UI.Icon legacyName="brand-proton-sheets" />}
+          leadingIconSlot={<UI.Icon data={Icons.brandProtonSheets} />}
           onClick={() => {
             void triggerMenuAction({
               type: 'view-recent-spreadsheets',
@@ -212,7 +213,7 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
           {s('View recent spreadsheets')}
         </UI.MenuItem>
         <UI.MenuItem
-          leadingIconSlot={<UI.Icon legacyName="brand-proton-drive" />}
+          leadingIconSlot={<UI.Icon data={Icons.brandProtonDrive} />}
           onClick={() => {
             void triggerMenuAction({
               type: 'open-proton-drive',
@@ -224,7 +225,7 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
         {/* TODO: add download logs option */}
         {showDebugToggle && (
           <UI.MenuItem
-            leadingIconSlot={<UI.Icon legacyName="cog-wheel" />}
+            leadingIconSlot={<UI.Icon data={Icons.cogWheel} />}
             onClick={() => {
               void triggerMenuAction({
                 type: 'toggle-debug-mode',
@@ -243,7 +244,7 @@ function NewSpreadsheetOption({ triggerMenuAction }: { triggerMenuAction: (actio
   const [loading, withLoading] = useMenuActionLoading()
   return (
     <UI.MenuItem
-      leadingIconSlot={<UI.Icon legacyName="brand-proton-sheets" />}
+      leadingIconSlot={<UI.Icon data={Icons.brandProtonSheets} />}
       disabled={loading}
       onClick={(e) => {
         e.preventDefault()
@@ -265,7 +266,7 @@ function NewDocumentOption({ triggerMenuAction }: { triggerMenuAction: (action: 
   const [loading, withLoading] = useMenuActionLoading()
   return (
     <UI.MenuItem
-      leadingIconSlot={<UI.Icon legacyName="brand-proton-docs" />}
+      leadingIconSlot={<UI.Icon data={Icons.brandProtonDocs} />}
       disabled={loading}
       onClick={(e) => {
         e.preventDefault()
@@ -287,7 +288,7 @@ function MakeACopyOption({ triggerMenuAction }: { triggerMenuAction: (action: Fi
   const [loading, withLoading] = useMenuActionLoading()
   return (
     <UI.MenuItem
-      leadingIconSlot={<UI.Icon legacyName="squares" />}
+      leadingIconSlot={<UI.Icon data={Icons.squares} />}
       disabled={loading}
       onClick={(e) => {
         e.preventDefault()
@@ -309,7 +310,7 @@ function MoveToTrashOption({ triggerMenuAction }: { triggerMenuAction: (action: 
   const [loading, withLoading] = useMenuActionLoading()
   return (
     <UI.MenuItem
-      leadingIconSlot={<UI.Icon legacyName="trash" />}
+      leadingIconSlot={<UI.Icon data={Icons.trash} />}
       disabled={loading}
       onClick={(e) => {
         e.preventDefault()
@@ -332,9 +333,7 @@ function DownloadSubmenu({ triggerMenuAction }: { triggerMenuAction: (action: Fi
 
   return (
     <Ariakit.MenuProvider>
-      <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="arrow-down-to-square" />}>
-        {s('Download')}
-      </UI.SubMenuButton>
+      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.arrowDownToSquare} />}>{s('Download')}</UI.SubMenuButton>
       <UI.SubMenu unmountOnHide>
         <UI.MenuItem
           onClick={() => {
@@ -388,11 +387,7 @@ function SpreadsheetSettings() {
   const store = useUI((ui) => ui.view.spreadsheetSettingsDialog.store)
 
   return (
-    <UI.MenuItem
-      leadingIconSlot={<UI.Icon legacyName="cog-wheel" />}
-      disabled={isReadonly}
-      onClick={() => store.show()}
-    >
+    <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.cogWheel} />} disabled={isReadonly} onClick={() => store.show()}>
       {s('Settings')}
     </UI.MenuItem>
   )

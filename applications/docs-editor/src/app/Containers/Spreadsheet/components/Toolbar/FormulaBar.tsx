@@ -7,7 +7,7 @@ import {
   FormulaBarInput,
   selectionToRxC,
 } from '@rowsncolumns/spreadsheet'
-import { addressToCell, cellToAddress, convertCellToRange } from '@rowsncolumns/utils'
+import { addressToCell, cellToAddress, convertCellToRange, sortSheetsByIndex } from '@rowsncolumns/utils'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useUI } from '../../ui-store'
 import { FUNCTION_DESCRIPTIONS } from '../../constants'
@@ -16,7 +16,6 @@ import * as UI from '../ui'
 import * as Icons from '../icons'
 import { c } from 'ttag'
 import { createStringifier } from '../../stringifier'
-import { sortSheetsByIndex } from '@rowsncolumns/utils'
 
 const { s } = createStringifier(strings)
 
@@ -116,8 +115,8 @@ function RangeSelectorMenu(props: RangeSelectorMenuProps) {
   const mounted = Ariakit.useStoreState(menu, 'mounted')
   return (
     <Ariakit.MenuProvider store={menu} {...props}>
-      <Ariakit.MenuButton className="h-7 w-7 flex-shrink-0 rounded-[.5rem] hover:bg-[#C2C1C0]/20 focus-visible:bg-[#C2C1C0]/20 data-[focus-visible]:bg-[#C2C1C0]/20">
-        <UI.Icon legacyName="chevron-down-filled" />
+      <Ariakit.MenuButton className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-[.5rem] hover:bg-[#C2C1C0]/20 focus-visible:bg-[#C2C1C0]/20 data-[focus-visible]:bg-[#C2C1C0]/20">
+        <UI.Icon data={Icons.chevronDownFilled} />
       </Ariakit.MenuButton>
       {mounted && <RangeSelectorMenuPopover />}
     </Ariakit.MenuProvider>
@@ -148,7 +147,7 @@ function RangeSelectorMenuPopover() {
         ))}
         <UI.MenuItem
           onClick={defineNamedRange}
-          leadingIconSlot={<UI.Icon legacyName="plus" />}
+          leadingIconSlot={<UI.Icon data={Icons.plus} />}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
           {s('Add new')}
@@ -178,7 +177,7 @@ function RangeSelectorMenuPopover() {
         <UI.MenuGroupLabel>{s('Sheets')}</UI.MenuGroupLabel>
         {sortSheetsByIndex(sheets).map(({ title, sheetId }) => (
           <UI.MenuItem
-            leadingIconSlot={<UI.Icon legacyName="file" />}
+            leadingIconSlot={<UI.Icon data={Icons.file} />}
             key={sheetId}
             onClick={() => onChangeActiveSheet(sheetId)}
           >

@@ -14,7 +14,7 @@ import { type BorderLocation, ColorSelector, getStringifiedColor, type VerticalA
 import { getDefaultDateFormat, ssfFormat, ssfFormatColor, supplant } from '@rowsncolumns/utils'
 import { forwardRef, Fragment, useMemo, useState } from 'react'
 import * as Icons from '../icons'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import { type SubmitHandler, useForm } from 'react-hook-form'
 import {
   FormCheckbox,
@@ -545,7 +545,7 @@ function CellFormatEditor({
                             '!outline-none transition focus-visible:border-[#6D4AFF] focus-visible:ring-[3px] focus-visible:ring-[#6D4AFF33]',
                           )}
                         >
-                          <Icon className="shrink-0" legacyName="chevron-down-filled" />
+                          <Icon className="shrink-0" data={Icons.chevronDownFilled} />
                         </Ariakit.MenuButton>
                         <Menu>
                           <Ariakit.MenuGroup className="py-2">
@@ -626,7 +626,7 @@ function CellFormatEditor({
                         form.setValue('textFormat.bold', event.target.checked)
                       }}
                     >
-                      <Icon className="shrink-0" legacyName="text-bold" />
+                      <Icon className="shrink-0" data={Icons.textBold} />
                       {s('Bold')}
                     </ToggleButton>
                     <ToggleButton
@@ -635,7 +635,7 @@ function CellFormatEditor({
                         form.setValue('textFormat.italic', event.target.checked)
                       }}
                     >
-                      <Icon className="shrink-0" legacyName="text-italic" />
+                      <Icon className="shrink-0" data={Icons.textItalic} />
                       {s('Italic')}
                     </ToggleButton>
                     <ToggleButton
@@ -644,7 +644,7 @@ function CellFormatEditor({
                         form.setValue('textFormat.underline', event.target.checked)
                       }}
                     >
-                      <Icon className="shrink-0" legacyName="text-underline" />
+                      <Icon className="shrink-0" data={Icons.textUnderline} />
                       {s('Underline')}
                     </ToggleButton>
                     <ToggleButton
@@ -653,7 +653,7 @@ function CellFormatEditor({
                         form.setValue('textFormat.strikethrough', event.target.checked)
                       }}
                     >
-                      <Icon className="shrink-0" legacyName="text-strikethrough" />
+                      <Icon className="shrink-0" data={Icons.textStrikethrough} />
                       {s('Strikethrough')}
                     </ToggleButton>
                   </div>
@@ -664,7 +664,7 @@ function CellFormatEditor({
                   <div>
                     <Ariakit.PopoverProvider>
                       <Ariakit.PopoverDisclosure className="flex size-[36px] items-center justify-center rounded-lg border border-[#EAE7E4]">
-                        <Icon legacyName="text-style" />
+                        <Icon data={Icons.textStyle} />
                       </Ariakit.PopoverDisclosure>
 
                       <Atoms.DropdownPopover className="p-2" render={<Ariakit.Popover gutter={4} />}>
