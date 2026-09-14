@@ -5,8 +5,6 @@ import type {
 } from '@proton/encrypted-search/models';
 import {
     type ContentSearchEventStatus,
-    type ContentSearchSearchSource,
-    type ContentSearchVersion,
     SEARCH_RESULT_PRIMARY_MATCH_TYPE,
     SEARCH_RESULT_SCROLLER_MODE,
 } from '@proton/encrypted-search/models';
@@ -21,9 +19,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import type { Logger } from '../utils/logger';
-
-const SEARCH_VERSION_V2: ContentSearchVersion = 'v2';
-const SEARCH_SOURCE: ContentSearchSearchSource = 'local';
+import { SEARCH_SOURCE, SEARCH_VERSION_V2 } from './interface';
 
 export class MetricService {
     /** Set by `startMailboxIndexing`; `mailbox_index_completed`'s `durationMs` is measured from here. */
