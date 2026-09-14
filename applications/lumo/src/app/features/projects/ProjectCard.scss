@@ -1,3 +1,5 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
 .project-card {
 	display: flex;
 	flex-direction: column;
@@ -59,7 +61,7 @@
 }
 
 .project-card-date {
-	font-size: 13px;
+	font-size: rem(13);
 	color: var(--text-weak);
 }
 
@@ -117,7 +119,7 @@
 }
 
 .project-card-title {
-	font-size: 15px;
+	font-size: rem(15);
 	font-weight: 600;
 	margin: 0;
 	color: var(--text-norm);
@@ -128,7 +130,7 @@
 }
 
 .project-card-description {
-	font-size: 13px;
+	font-size: rem(13);
 	margin: 0;
 	line-height: 1.4;
 	line-clamp: 2;
@@ -147,6 +149,6 @@
 .project-card-stat {
 	display: flex;
 	align-items: center;
-	font-size: 13px;
+	font-size: rem(13);
 	color: var(--text-weak);
 }

@@ -3,6 +3,7 @@ import { useEffect, useMemo } from 'react';
 import { Area, Bar, CartesianGrid, ComposedChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { c } from 'ttag';
 
+import { useScaledChartFontSize } from '../../../../../../hooks/useScaledChartFontSize';
 import {
     type FinanceData,
     formatCurrency,
@@ -56,6 +57,8 @@ interface FinanceToolResultProps {
 }
 
 export const FinanceToolResult = ({ data, onReady }: FinanceToolResultProps) => {
+    const axisTick = useScaledChartFontSize(10);
+
     useEffect(() => {
         if (!onReady) return;
 
@@ -173,7 +176,7 @@ export const FinanceToolResult = ({ data, onReady }: FinanceToolResultProps) => 
                         <CartesianGrid strokeDasharray="3 3" stroke="var(--border-weak)" vertical={false} />
                         <XAxis
                             dataKey="dateLabel"
-                            tick={{ fontSize: 10, fill: 'var(--text-weak)' }}
+                            tick={axisTick}
                             tickLine={false}
                             axisLine={false}
                             interval="preserveStartEnd"
@@ -181,7 +184,7 @@ export const FinanceToolResult = ({ data, onReady }: FinanceToolResultProps) => 
                         <YAxis
                             yAxisId="price"
                             domain={priceYDomain}
-                            tick={{ fontSize: 10, fill: 'var(--text-weak)' }}
+                            tick={axisTick}
                             tickLine={false}
                             axisLine={false}
                             tickFormatter={(v: number) => `$${v.toFixed(0)}`}

@@ -1,3 +1,5 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
 .project-files-panel {
 	// Match files-panel structure: h-full w-1/3 pt-2 pr-4 pb-6
 	block-size: 100%;
@@ -115,7 +117,7 @@
 }
 
 .project-files-section-title {
-	font-size: 14px;
+	font-size: rem(14);
 	font-weight: 600;
 	margin: 0;
 	color: var(--text-norm);
@@ -193,7 +195,7 @@
 }
 
 .project-instructions-text {
-	font-size: 14px;
+	font-size: rem(14);
 	line-height: 1.5;
 	color: var(--text-weak);
 	margin: 0;
@@ -217,7 +219,7 @@
 	border: 1px solid var(--border-norm);
 	border-radius: 8px;
 	cursor: pointer;
-	font-size: 13px;
+	font-size: rem(13);
 	color: var(--text-weak);
 	transition: all 0.15s ease;
 
@@ -255,7 +257,7 @@
 }
 
 .project-files-empty-title {
-	font-size: 16px;
+	font-size: rem(16);
 	font-weight: 600;
 	margin-block: 0 8px;
 	margin-inline: 0;
@@ -269,7 +271,7 @@
 }
 
 .project-files-empty-subtitle {
-	font-size: 14px;
+	font-size: rem(14);
 	margin-block: 0 4px;
 	margin-inline: 0;
 
@@ -280,7 +282,7 @@
 }
 
 .project-files-empty-hint {
-	font-size: 13px;
+	font-size: rem(13);
 	margin-block: 0 20px;
 	margin-inline: 0;
 
@@ -329,7 +331,7 @@
 	background: transparent;
 	border: none;
 	border-radius: var(--border-radius-sm);
-	font-size: 13px;
+	font-size: rem(13);
 	color: var(--text-weak);
 	cursor: pointer;
 	transition: all 0.15s ease;
@@ -347,7 +349,7 @@
 
 .project-files-add-divider {
 	color: var(--border-norm);
-	font-size: 14px;
+	font-size: rem(14);
 }
 
 .project-files-options {
@@ -394,13 +396,13 @@
 }
 
 .project-files-option-text {
-	font-size: 14px;
+	font-size: rem(14);
 	font-weight: 500;
 	color: var(--text-norm);
 }
 
 .project-files-option-subtext {
-	font-size: 12px;
+	font-size: rem(12);
 	color: var(--text-weak);
 	line-height: 1.4;
 	text-align: center;
@@ -433,13 +435,13 @@
 }
 
 .project-files-add-text {
-	font-size: 14px;
+	font-size: rem(14);
 	font-weight: 500;
 	color: var(--text-norm);
 }
 
 .project-files-add-hint {
-	font-size: 12px;
+	font-size: rem(12);
 	color: var(--text-weak);
 	text-align: center;
 }
@@ -495,7 +497,7 @@
 }
 
 .project-file-name {
-	font-size: 13px;
+	font-size: rem(13);
 	font-weight: 500;
 	color: var(--text-norm);
 	white-space: nowrap;
@@ -504,7 +506,7 @@
 }
 
 .project-file-meta {
-	font-size: 12px;
+	font-size: rem(12);
 	color: var(--text-weak);
 }
 
@@ -514,7 +516,7 @@
 	padding-inline: 6px;
 	background-color: var(--background-strong);
 	border-radius: 4px;
-	font-size: 11px;
+	font-size: rem(11);
 	font-weight: 500;
 	color: var(--text-weak);
 	text-transform: uppercase;

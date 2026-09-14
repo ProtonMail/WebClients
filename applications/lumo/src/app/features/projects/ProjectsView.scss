@@ -1,3 +1,5 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
 
@@ -78,7 +80,7 @@ im.$media-expressions: $media-expressions;
 	justify-content: space-between;
 	padding-block: 8px;
 	padding-inline: 8px;
-	font-size: 12px;
+	font-size: rem(12);
 	color: var(--text-weak);
 	font-weight: 500;
 	letter-spacing: 0.05em;
@@ -160,7 +162,7 @@ im.$media-expressions: $media-expressions;
 }
 
 .projects-empty-title {
-	font-size: 20px;
+	font-size: rem(20);
 	font-weight: 600;
 	color: var(--text-norm);
 	margin-block: 0 12px;
@@ -168,7 +170,7 @@ im.$media-expressions: $media-expressions;
 }
 
 .projects-empty-description {
-	font-size: 14px;
+	font-size: rem(14);
 	color: var(--text-weak);
 	margin: 0;
 	max-inline-size: 400px;
@@ -187,7 +189,7 @@ im.$media-expressions: $media-expressions;
 }
 
 .projects-inspiration-title {
-	font-size: 16px;
+	font-size: rem(16);
 	font-weight: 600;
 	color: var(--text-norm);
 	margin-block: 0 12px;
