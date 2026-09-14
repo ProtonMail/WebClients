@@ -21,6 +21,7 @@ import { useMediaManagementContext } from '../../contexts/MediaManagementProvide
 import { useSortedParticipants } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { addSpecialCharactersForMessageDisplay } from '../../utils/addSpecialCharactersForMessageDisplay';
 import { useLatest } from '../useLatest';
+import { useMentionPlainText } from '../useMentionPlainText';
 import { useStableCallback } from '../useStableCallback';
 import { PiPSessionManager } from './PiPSessionManager';
 import type { TrackInfo } from './types';
@@ -72,6 +73,8 @@ export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolea
     // Use useLatest to avoid stale closures
     const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
     const participantDecryptedNameMapRef = useLatest(participantDecryptedNameMap);
+
+    const toMentionPlainTextRef = useLatest(useMentionPlainText());
 
     const notifications = useNotifications();
 
@@ -213,7 +216,7 @@ export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolea
             if (!lastMessage.isMissingRoot) {
                 addChatMessage(
                     participantDecryptedNameMapRef.current[lastMessage.identity],
-                    addSpecialCharactersForMessageDisplay(lastMessage.message)
+                    toMentionPlainTextRef.current(addSpecialCharactersForMessageDisplay(lastMessage.message))
                 );
             }
         }

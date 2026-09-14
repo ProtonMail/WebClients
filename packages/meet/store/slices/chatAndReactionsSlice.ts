@@ -213,6 +213,10 @@ export const selectEvents = (state: MeetState) => {
     return state.meetingChatAndReactions.events;
 };
 
+export const selectChatMessage = (state: MeetState, messageId: string): MeetChatMessage | undefined => {
+    return state.meetingChatAndReactions.chatMessages.find((m) => m.id === messageId);
+};
+
 export const selectChatThreadExpanded = (state: MeetState, messageId: string): boolean => {
     const root = state.meetingChatAndReactions.chatMessages.find((m) => m.id === messageId);
     return !root || isChatThreadExpanded(root);

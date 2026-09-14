@@ -4,10 +4,12 @@ import { startSharedListening } from '@proton/redux-shared-store/sharedListeners
 
 import { meetEventLoopListener } from './meetEventLoop/listener';
 import { getMeetPersistedState } from './persistReducer';
+import { meetingSnackbarsListener } from './slices/meetingSnackbarsListener';
 import type { MeetAppStartListening } from './store';
 
 export const start = ({ startListening, persist }: { startListening: MeetAppStartListening; persist?: boolean }) => {
     startSharedListening(startListening);
+    meetingSnackbarsListener(startListening);
     if (persist) {
         startAccountSessionsListener(startListening);
         startPersistListener(startListening, getMeetPersistedState);
