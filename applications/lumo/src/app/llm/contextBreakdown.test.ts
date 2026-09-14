@@ -1,3 +1,4 @@
+import { PROACTIVE_COMPACTION_THRESHOLD_TOKENS } from './compaction';
 import { buildContextBreakdown } from './contextBreakdown';
 
 const tokensOf = (b: ReturnType<typeof buildContextBreakdown>, id: string) =>
@@ -11,8 +12,9 @@ describe('buildContextBreakdown', () => {
         expect(b.usedTokens).toBe(40_000);
         expect(b.percentageUsed).toBe(31);
         // Default reserved buffer is max - proactive threshold (~10% of the window).
-        expect(tokensOf(b, 'buffer')).toBe(12_800);
-        expect(tokensOf(b, 'free')).toBe(128_000 - 40_000 - 12_800);
+        const expectedBuffer = 128_000 - PROACTIVE_COMPACTION_THRESHOLD_TOKENS;
+        expect(tokensOf(b, 'buffer')).toBe(expectedBuffer);
+        expect(tokensOf(b, 'free')).toBe(128_000 - 40_000 - expectedBuffer);
 
         const sum = b.segments.reduce((acc, s) => acc + s.percentage, 0);
         expect(Math.round(sum)).toBe(100);

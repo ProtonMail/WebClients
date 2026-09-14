@@ -1,8 +1,9 @@
 import { useMemo } from 'react';
 
 import type { ContextFilter } from '../llm';
-import { useLumoSelector } from '../redux/hooks';
-import { selectAttachments, selectAttachmentsBySpaceId, selectContextFilters } from '../redux/selectors';
+import { getSummarizedMessageIds } from '../llm/compaction';
+import { useLumoMemoSelector, useLumoSelector } from '../redux/hooks';
+import { selectAttachments, selectAttachmentsBySpaceId, selectContextFilters, selectMessagesByConversationId } from '../redux/selectors';
 import type { Attachment, Message, SpaceId } from '../types';
 import { measureExecution } from '../util/performance';
 
@@ -13,6 +14,12 @@ export const useConversationFiles = (
 ) => {
     const allAttachments = useLumoSelector(selectAttachments);
     const contextFilters = useLumoSelector(selectContextFilters);
+    const conversationId = messageChain[0]?.conversationId;
+    const messageMap = useLumoMemoSelector(selectMessagesByConversationId, [conversationId]);
+    const summarizedMessageIds = useMemo(
+        () => getSummarizedMessageIds(messageChain, messageMap),
+        [messageChain, messageMap]
+    );
     
     // Get space-level attachments (project files)
     // Exclude auto-retrieved attachments as they're conversation-specific
@@ -33,8 +40,11 @@ export const useConversationFiles = (
             }
         });
 
-        // Add all attachments from messages
+        // Add all attachments from messages (excluding compacted/summarized messages).
         messageChain.forEach((message) => {
+            if (summarizedMessageIds.has(message.id)) {
+                return;
+            }
             if (message.attachments) {
                 message.attachments.forEach((shallowAttachment) => {
                     const fullAttachment = allAttachments[shallowAttachment.id];
@@ -53,7 +63,7 @@ export const useConversationFiles = (
         });
 
         return files;
-    }, [spaceAttachmentsList, messageChain, allAttachments, currentAttachments]);
+    }, [spaceAttachmentsList, messageChain, allAttachments, currentAttachments, summarizedMessageIds]);
 
     // Apply context filters to determine which files would actually be used
     const activeFiles = useMemo(() => {
@@ -75,11 +85,15 @@ export const useConversationFiles = (
 
                 if (!messageId) return true; // Include provisional attachments
 
+                if (summarizedMessageIds.has(messageId)) {
+                    return false;
+                }
+
                 const filter = contextFilters.find((f: ContextFilter) => f.messageId === messageId);
                 return !filter || !filter.excludedFiles.includes(file.filename);
             });
         });
-    }, [allConversationFiles, contextFilters, messageChain, spaceAttachmentsList]);
+    }, [allConversationFiles, contextFilters, messageChain, spaceAttachmentsList, summarizedMessageIds]);
 
     return {
         allConversationFiles,

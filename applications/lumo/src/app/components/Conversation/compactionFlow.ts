@@ -15,6 +15,7 @@ import {
 } from '../../redux/slices/core/messages';
 import type { LumoDispatch } from '../../redux/store';
 import { isContextLengthExceededError } from '../../services/errors/contextLengthError';
+import { isAbortError, throwIfAborted } from '../../services/generation/abortGeneration';
 import {
     type Attachment,
     type CompactionMeta,
@@ -55,6 +56,8 @@ export type GenerationWithCompactionParams = {
     attachments?: Attachment[];
     /** Per-message attachment exclusions, so excluded files aren't counted as reclaimed. */
     contextFilters?: ContextFilter[];
+    /** Conversation-scoped messages, so an edited fork reuses the shared-history boundary. */
+    messageMap?: Record<MessageId, Message>;
     /** Options passed through to sendMessageWithRedux. */
     sendOptions: ForwardedSendOptions;
     /** Pins a sibling in the UI so the compacted branch is the one displayed. */
@@ -70,8 +73,11 @@ export type GenerationWithCompactionParams = {
     proactiveThresholdTokens?: number;
 };
 
-// Allows e.g. one proactive pass plus one reactive retry, while still bounding loops.
-const DEFAULT_MAX_COMPACTIONS = 2;
+// One boundary per send. A second pass on the same request only re-summarizes an
+// already-condensed head — it stacks another marker in the UI without freeing
+// meaningful space, because what remains over the limit is file content, which the
+// per-request file budget handles instead.
+const DEFAULT_MAX_COMPACTIONS = 1;
 
 /**
  * Run a generation, transparently recovering from `context_length_exceeded`.
@@ -95,6 +101,7 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
             buildTurns,
             attachments,
             contextFilters,
+            messageMap,
             sendOptions,
             preferSibling,
             maxCompactions = DEFAULT_MAX_COMPACTIONS,
@@ -118,6 +125,7 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
                     chain: currentChain,
                     attachments,
                     contextFilters,
+                    messageMap,
                     signal: sendOptions.signal,
                     preferSibling,
                 })
@@ -134,6 +142,7 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
         // re-sent attachments) while keeping the recent tail — including the
         // current question's attachments — intact.
         if (enableProactiveCompaction && compactions < maxCompactions) {
+            throwIfAborted(sendOptions.signal);
             let estimatedTokens = 0;
             try {
                 estimatedTokens = estimateTurnsTokens(buildTurns(currentChain));
@@ -144,6 +153,9 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
                 try {
                     await compactAndAdvance();
                 } catch (proactiveError) {
+                    if (isAbortError(proactiveError)) {
+                        throw proactiveError;
+                    }
                     // Nothing to compact, or compaction failed: fall through and
                     // attempt the send as-is (the reactive path can still catch overflow).
                     if (!(proactiveError instanceof NotEnoughToCompactError)) {
@@ -154,6 +166,7 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
         }
 
         while (true) {
+            throwIfAborted(sendOptions.signal);
             try {
                 const turns = buildTurns(currentChain);
                 await dispatch(
@@ -196,6 +209,7 @@ type CompactAndBranchParams = {
     chain: Message[];
     attachments?: Attachment[];
     contextFilters?: ContextFilter[];
+    messageMap?: Record<MessageId, Message>;
     signal?: AbortSignal;
     /** Pins a sibling so the in-progress boundary is shown while compaction runs. */
     preferSibling?: (message: Message) => void;
@@ -233,6 +247,7 @@ function compactAndBranch(params: CompactAndBranchParams) {
             chain,
             attachments,
             contextFilters,
+            messageMap,
             signal,
             preferSibling,
         } = params;
@@ -267,7 +282,7 @@ function compactAndBranch(params: CompactAndBranchParams) {
 
         let result;
         try {
-            result = await compactConversation(chain, api, { signal, attachments, contextFilters });
+            result = await compactConversation(chain, api, { signal, attachments, contextFilters, messageMap });
         } catch (error) {
             // Revert: drop the placeholder boundary and restore the original attempt.
             dispatch(deleteMessage(boundaryId));

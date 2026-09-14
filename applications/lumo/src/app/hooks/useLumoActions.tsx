@@ -24,6 +24,7 @@ import {
     selectAttachments,
     selectAttachmentsBySpaceId,
     selectContextFilters,
+    selectConversationById,
     selectMessageAttachmentIds,
 } from '../redux/selectors';
 import { clearProvisionalAttachments, upsertAttachment } from '../redux/slices/core/attachments';
@@ -31,6 +32,7 @@ import type { MessageMap } from '../redux/slices/core/messages';
 import { addMessage, createDate, newMessageId, pushMessageRequest } from '../redux/slices/core/messages';
 import type { ConversationError } from '../redux/slices/meta/errors';
 import { useActionErrorHandler } from '../services/errors/useActionErrorHandler';
+import { cancelConversationGeneration, isAbortError } from '../services/generation/abortGeneration';
 import { OPERATION_IN_PROGRESS_MESSAGE, generationRegistry } from '../services/generation/generationRegistry';
 import { SearchService } from '../services/search/searchService';
 import type {
@@ -41,7 +43,7 @@ import type {
     ImageGenerationOptions,
     RetryStrategy,
 } from '../types';
-import { type ConversationId, type Message, Role, type Space, type SpaceId, getSpaceDek } from '../types';
+import { type ConversationId, type Message, Role, type Space, type SpaceId, ConversationStatus, getSpaceDek } from '../types';
 import {
     fillAttachmentFromSearchIndex,
     refreshAttachmentFromSearchIndex,
@@ -122,6 +124,7 @@ export const useLumoActions = ({
         visualizationInstructions: ffVisualizationInstructions,
     } = useLumoFlags();
     const contextFilters = useLumoSelector(selectContextFilters);
+    const conversation = useLumoSelector(selectConversationById(conversationId));
     const allAttachments = useLumoSelector(selectAttachments);
     const messageAttachmentIds = useLumoSelector(selectMessageAttachmentIds);
     const lumoUserSettings = useLumoSelector((state) => state.lumoUserSettings);
@@ -455,6 +458,7 @@ export const useLumoActions = ({
                 },
                 uiContext: {
                     isEdit: true,
+                    editOriginalContent: originalMessage.content,
                     updateSibling: preferSibling,
                     enableExternalTools: isWebSearchButtonToggled && ffExternalTools,
                     enableImageTools: ffImageTools,
@@ -660,7 +664,13 @@ export const useLumoActions = ({
                 );
             }
         } catch (error: any) {
-            handleActionError(error, errorContext);
+            if (isAbortError(error)) {
+                dispatch((d, getState) =>
+                    cancelConversationGeneration(d, getState, finalConversationId, { skipSignalAbort: true })
+                );
+            } else {
+                handleActionError(error, errorContext);
+            }
         } finally {
             generationRegistry.finish(finalConversationId);
         }
@@ -788,11 +798,17 @@ export const useLumoActions = ({
     };
 
     const handleAbort = () => {
-        if (conversationId && isOperationInProgress()) {
-            // send telemetry for generation aborted
-            sendMessageGenerationAbortedEvent();
-            generationRegistry.abort(conversationId);
+        if (!conversationId) {
+            return;
         }
+
+        const isGenerating = conversation?.status === ConversationStatus.GENERATING;
+        if (!isGenerating && !isOperationInProgress()) {
+            return;
+        }
+
+        sendMessageGenerationAbortedEvent();
+        dispatch((d, getState) => cancelConversationGeneration(d, getState, conversationId));
     };
 
     // For retry actions initiated in ErrorCard component due to generation errors

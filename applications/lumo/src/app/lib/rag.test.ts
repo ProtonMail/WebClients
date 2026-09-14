@@ -3,6 +3,7 @@ import type { Attachment, Message } from '../types';
 import { Role } from '../types';
 import {
     collectContextAttachmentIds,
+    normalizeRagQuery,
     planRagAttachmentStorage,
     retrieveDocumentContextForProject,
 } from './rag';
@@ -194,7 +195,34 @@ describe('retrieveDocumentContextForProject', () => {
 
         const result = await retrieveDocumentContextForProject('query', 'space-1', 'user-1', true);
 
-        expect(result?.attachments.map((a) => a.filename)).toEqual(['high.txt']);
+        expect(result?.attachments.map((a) => a.filename)).toEqual(['high.txt', 'mid.txt']);
+    });
+
+    it('drops documents that match only a sliver of the query', async () => {
+        mockRetrieveForRAG.mockResolvedValue([
+            { id: 'doc-1', name: 'answers.txt', content: 'covers the question', score: 10, coverage: 0.8 },
+            { id: 'doc-2', name: 'passing-mention.txt', content: 'one word in common', score: 9, coverage: 0.1 },
+        ]);
+
+        const result = await retrieveDocumentContextForProject('query', 'space-1', 'user-1', true);
+
+        expect(result?.attachments.map((a) => a.filename)).toEqual(['answers.txt']);
+    });
+
+    it('caps how many documents a single turn can retrieve', async () => {
+        mockRetrieveForRAG.mockResolvedValue(
+            Array.from({ length: 40 }, (_, i) => ({
+                id: `doc-${i}`,
+                name: `doc-${i}.txt`,
+                content: 'equally relevant',
+                score: 10,
+                coverage: 0.9,
+            }))
+        );
+
+        const result = await retrieveDocumentContextForProject('query', 'space-1', 'user-1', true);
+
+        expect(result?.attachments).toHaveLength(10);
     });
 
     it('includes multiple documents when they share the top relevance tier', async () => {
@@ -234,5 +262,86 @@ describe('retrieveDocumentContextForProject', () => {
         });
 
         expect(result).toBeUndefined();
+    });
+
+    it('skips documents already retrieved from shallow attachments without Redux entries', async () => {
+        mockRetrieveForRAG.mockResolvedValue([
+            { id: 'upload-1', name: 'project.txt', content: 'chunk', score: 10 },
+        ]);
+
+        const messageChain: Message[] = [
+            testMessage({
+                id: 'msg-1',
+                role: Role.User,
+                content: 'first',
+                attachments: [
+                    {
+                        id: 'upload-1',
+                        filename: 'project.txt',
+                        uploadedAt: '',
+                        autoRetrieved: true,
+                    },
+                ],
+            }),
+        ];
+
+        const result = await retrieveDocumentContextForProject('query', 'space-1', 'user-1', true, messageChain, {});
+
+        expect(result).toBeUndefined();
+        expect(mockRetrieveForRAG).toHaveBeenCalled();
+    });
+
+    it('dedupes against auto-retrieved files on sibling forks in the same conversation', async () => {
+        mockRetrieveForRAG.mockResolvedValue([
+            { id: 'drive-node-1', name: 'seen.txt', content: 'already used', score: 10 },
+        ]);
+
+        const siblingMessage = testMessage({
+            id: 'msg-original',
+            role: Role.User,
+            content: 'original question?',
+            attachments: [
+                {
+                    id: 'att-prev',
+                    filename: 'seen.txt',
+                    uploadedAt: '',
+                    autoRetrieved: true,
+                    driveNodeId: 'drive-node-1',
+                },
+            ],
+        });
+        const editedMessage = testMessage({
+            id: 'msg-edited',
+            role: Role.User,
+            content: 'original question',
+        });
+
+        const result = await retrieveDocumentContextForProject(
+            'original question',
+            'space-1',
+            'user-1',
+            true,
+            [editedMessage],
+            {},
+            new Set(),
+            [siblingMessage, editedMessage]
+        );
+
+        expect(result).toBeUndefined();
+    });
+
+    it('normalizes queries before retrieval so trailing punctuation does not change ranking input', async () => {
+        mockRetrieveForRAG.mockResolvedValue([]);
+
+        await retrieveDocumentContextForProject('Does this make sense?', 'space-1', 'user-1', true);
+
+        expect(mockRetrieveForRAG.mock.calls[0]?.slice(0, 2)).toEqual(['Does this make sense', 'space-1']);
+    });
+});
+
+describe('normalizeRagQuery', () => {
+    it('trims whitespace and trailing punctuation', () => {
+        expect(normalizeRagQuery('  does this make sense?  ')).toBe('does this make sense');
+        expect(normalizeRagQuery('hello!!!')).toBe('hello');
     });
 });

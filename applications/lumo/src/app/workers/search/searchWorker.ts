@@ -110,6 +110,9 @@ async function getSearchEngine(userId: string, searchIndexKey: string): Promise<
         const databaseAdapter = new LumoDatabaseAdapter(userDbApi);
         searchEngine = new SearchEngine(userId, cryptoAdapter, databaseAdapter);
         currentSearchIndexKey = null; // Reset key when creating new engine
+
+        // Must run before the engine reads any blob, so it never sees an older format.
+        await searchEngine.ensureCompatibleBlobFormat();
     }
 
     // Update search index key if changed

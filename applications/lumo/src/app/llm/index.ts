@@ -51,6 +51,9 @@ import {
     separateAttachmentsByType,
 } from './attachments';
 import { collapseCompactedChain } from './compaction';
+import { resolveRequestContextFiles } from './requestContextFiles';
+import { countTokens } from './tokenizer';
+import { calculateMessageContentTokens, computeFileTokenBudget } from './utils';
 import type { ContextFilter } from './contextFilter';
 import { formatPersonalization } from './formatPersonalization';
 import { VISUALIZATION_INSTRUCTIONS } from './visualizationPrompt';
@@ -156,11 +159,26 @@ export function prepareTurns(
     // replaced by a single summary turn and dropped from the chain, so the model
     // only ever receives the compacted view going forward. The full chain remains
     // untouched for display.
-    const { summaryTurn, chain: effectiveChain } = collapseCompactedChain(linearChain);
+    const { summaryTurn, chain: effectiveChain } = collapseCompactedChain(linearChain, c?.messageMap);
 
     // Keep only the most recent images across the conversation; older images beyond
     // the limit are dropped from the request (but remain visible in the UI).
     const keptImageIds = computeKeptImageIds(effectiveChain, c?.contextFilters ?? []);
+
+    // Decide once which documents this request carries: deduplicated per document and
+    // capped to the space history leaves, so the request cannot overflow the window on
+    // file content alone. The context indicator resolves the same set.
+    const summaryTokens = summaryTurn ? countTokens(summaryTurn.content ?? '') : 0;
+    const attachmentLookup = Object.fromEntries(
+        (c?.allConversationAttachments ?? []).map((attachment) => [attachment.id, attachment])
+    );
+    const { sentDocumentIds } = resolveRequestContextFiles(
+        effectiveChain,
+        c?.contextFilters ?? [],
+        attachmentLookup,
+        [],
+        computeFileTokenBudget(calculateMessageContentTokens(effectiveChain) + summaryTokens)
+    );
 
     // Step 1: Transform messages to turns by iterating over blocks
     let turns: TurnInProgress[] = [];
@@ -168,14 +186,21 @@ export function prepareTurns(
     for (const message of effectiveChain) {
         const blocks = getMessageBlocks(message);
         const contextFilters = c?.contextFilters ?? [];
-        const filteredAttachments = filterMessageAttachments(message.attachments, message.id, contextFilters);
+        let filteredAttachments = filterMessageAttachments(message.attachments, message.id, contextFilters) ?? [];
+        // Images follow the separate MAX_IMAGES_PER_REQUEST path below, which also emits
+        // placeholders for the ones it omits, so leave them for that step.
+        filteredAttachments = filteredAttachments.filter(
+            (shallow) =>
+                isImageAttachment(attachmentLookup[shallow.id] ?? (shallow as Attachment)) ||
+                sentDocumentIds.has(shallow.id)
+        );
         const omittedImageCount = countOmittedImageAttachments(
             message.attachments,
             message.id,
             contextFilters,
             keptImageIds
         );
-        const hasAttachmentWork = (filteredAttachments?.length ?? 0) > 0 || omittedImageCount > 0;
+        const hasAttachmentWork = filteredAttachments.length > 0 || omittedImageCount > 0;
 
         // Convert each block to appropriate turn(s)
         for (const block of blocks) {
@@ -214,7 +239,7 @@ export function prepareTurns(
             const lastTurnIndex = turns.length - 1;
             const lastTurn = turns[lastTurnIndex];
             const attachmentTurns = expandAttachmentsIntoTurns(
-                { ...lastTurn, attachments: filteredAttachments ?? [] } as TurnInProgress,
+                { ...lastTurn, attachments: filteredAttachments } as TurnInProgress,
                 c.allConversationAttachments,
                 keptImageIds,
                 omittedImageCount
