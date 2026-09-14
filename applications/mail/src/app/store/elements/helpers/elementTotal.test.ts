@@ -75,7 +75,7 @@ describe('getTotal', () => {
         expect(res).toEqual(30);
     });
 
-    it('should return 0 when no matching count entry is found', () => {
+    it('should return undefined when no matching count entry is found', () => {
         const res = getTotal({
             counts: [],
             labelID: MAILBOX_LABEL_IDS.INBOX,
@@ -84,7 +84,7 @@ describe('getTotal', () => {
             bypassFilterCount: 0,
         });
 
-        expect(res).toEqual(0);
+        expect(res).toBeUndefined();
     });
 
     describe('Category view cases', () => {
@@ -103,7 +103,7 @@ describe('getTotal', () => {
             expect(res).toEqual(20);
         });
 
-        it('should return 0 when the category has no matching count entry', () => {
+        it('should return undefined when the category has no matching count entry', () => {
             const res = getTotal({
                 counts: [{ LabelID: MAILBOX_LABEL_IDS.INBOX, Total: 100, Unread: 50 }],
                 labelID: MAILBOX_LABEL_IDS.INBOX,
@@ -112,7 +112,7 @@ describe('getTotal', () => {
                 bypassFilterCount: 0,
             });
 
-            expect(res).toEqual(0);
+            expect(res).toBeUndefined();
         });
 
         it('should return the primary total only if count for disabled category is not present', () => {
