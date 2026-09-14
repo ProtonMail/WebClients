@@ -11474,6 +11474,7 @@ __metadata:
     "@proton/testing": "workspace:packages/testing"
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
+    "@proton/vitest-config": "workspace:^"
     "@protontech/crypto": "npm:*"
     "@reduxjs/toolkit": "npm:^2.12.0"
     "@sentry/browser": "npm:^7.120.4"
@@ -11522,7 +11523,7 @@ __metadata:
     "@proton/components": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@proton/testing": "workspace:^"
+    "@proton/vitest-config": "workspace:^"
     "@vitest/coverage-v8": "npm:^4.1.11"
     "@vitest/ui": "npm:^4.1.11"
     eslint: "npm:^10.9.0"
@@ -11924,6 +11925,7 @@ __metadata:
     "@proton/testing": "workspace:^"
     "@proton/types": "workspace:^"
     "@proton/utils": "workspace:^"
+    "@proton/vitest-config": "workspace:^"
     "@protontech/bip39": "npm:^1.1.0"
     "@protontech/crypto": "npm:*"
     "@protontech/mimemessage": "npm:~v1.1.4"
@@ -12119,6 +12121,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@proton/vitest-config@workspace:^, @proton/vitest-config@workspace:packages/vitest-config":
+  version: 0.0.0-use.local
+  resolution: "@proton/vitest-config@workspace:packages/vitest-config"
+  dependencies:
+    "@proton/eslint-config-proton": "workspace:^"
+    eslint: "npm:^10.9.0"
+    typescript: "npm:^6.0.3"
+    vitest: "npm:^4.1.11"
+  peerDependencies:
+    vitest: ^4.1.11
+  languageName: unknown
+  linkType: soft
+
 "@proton/vpn@workspace:^, @proton/vpn@workspace:packages/vpn":
   version: 0.0.0-use.local
   resolution: "@proton/vpn@workspace:packages/vpn"
@@ -12139,6 +12154,7 @@ __metadata:
     "@proton/testing": "workspace:^"
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
+    "@proton/vitest-config": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/user-event": "npm:^14.6.6"
@@ -12176,6 +12192,7 @@ __metadata:
     "@proton/testing": "workspace:^"
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
+    "@proton/vitest-config": "workspace:^"
     "@protontech/crypto": "npm:*"
     "@reduxjs/toolkit": "npm:^2.12.0"
     "@testing-library/jest-dom": "npm:^6.9.1"
@@ -41103,6 +41120,7 @@ __metadata:
     "@proton/testing": "workspace:packages/testing"
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
+    "@proton/vitest-config": "workspace:^"
     "@protontech/crypto": "npm:*"
     "@reduxjs/toolkit": "npm:^2.12.0"
     "@testing-library/jest-dom": "npm:^6.9.1"
@@ -41485,6 +41503,7 @@ __metadata:
     "@proton/testing": "workspace:packages/testing"
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
+    "@proton/vitest-config": "workspace:^"
     "@proton/wallet": "workspace:packages/wallet"
     "@protontech/crypto": "npm:*"
     "@ramp-network/ramp-instant-sdk": "npm:^4.0.8"
