@@ -1,7 +1,6 @@
 export {
     cleanBillingAddressVat,
     cleanVatNumber,
-    getValidVatPrefixes,
     getVatPrefix,
     isBareVatPrefix,
     vatNumberMissingPrefix,

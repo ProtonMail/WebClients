@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 
 import { hasAlikeCoupon } from '@proton/payments/core/coupon-config/helpers';
-import { isCouponConfigRequiredProps } from '@proton/payments/core/coupon-config/interface';
 import type { CouponConfigProps } from '@proton/payments/core/coupon-config/interface';
+import { isCouponConfigRequiredProps } from '@proton/payments/core/coupon-config/interface';
 import { matchCouponConfig } from '@proton/payments/core/coupon-config/match-coupon-config';
 
 import { defaultCouponConfigs } from './default-coupon-configs';
@@ -21,8 +21,6 @@ export type CouponConfigRendered = Omit<CouponConfig, 'amountDueMessage' | 'cycl
     renderShowMigrationDiscountLossWarning?: () => boolean;
     renderPayCTA?: () => string;
 };
-
-export { matchCouponConfig } from '@proton/payments/core/coupon-config/match-coupon-config';
 
 /**
  * Defines overrides for the UI of subscription view. If a certain coupon is present it might change the view.
