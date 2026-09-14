@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
+import { Card } from '@proton/atoms/Card/Card';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { InputFieldTwo, TextAreaTwo } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
@@ -11,6 +12,8 @@ import { IcMinus } from '@proton/icons/icons/IcMinus';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectPreviousMeetingLink } from '@proton/meet/store/slices/meetAppStateSlice';
+import { SECOND } from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { isValidMeetingLink, parseMeetingLink } from '@proton/shared/lib/meet/parseMeetingLink';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -22,16 +25,18 @@ import './FeedbackForm.scss';
 
 type Props = {
     onClose: () => void;
-    onSubmit: () => void;
 };
 
 // Used to determine if the rating is high or low and display the feedback form accordingly.
 const RATING_THRESHOLD = 4;
 
-export const FeedbackForm = ({ onClose, onSubmit }: Props) => {
+// How long the modal stays up after submitting.
+const SUBMIT_HOLD_MS = SECOND;
+
+export const FeedbackForm = ({ onClose }: Props) => {
     const meetFeedbackOnSkipEnabled = useFlag('MeetFeedbackOnSkip');
 
-    const [rating, SetRating] = useState<number | undefined>(undefined);
+    const [rating, setRating] = useState<number | undefined>(undefined);
     const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
     const [comment, setComment] = useState('');
     const [optionalDetails, setOptionalDetails] = useState(false);
@@ -53,12 +58,10 @@ export const FeedbackForm = ({ onClose, onSubmit }: Props) => {
         score,
         feedbackOptions,
         comment,
-        closeAfterSubmit = false,
     }: {
         score: number;
         feedbackOptions?: string[];
         comment?: string;
-        closeAfterSubmit?: boolean;
     }) => {
         const allFeedback: string[] = [];
 
@@ -89,25 +92,39 @@ export const FeedbackForm = ({ onClose, onSubmit }: Props) => {
 
         const { meetingId } = parseMeetingLink(previousMeetingLink);
 
-        await submitFeedback({
+        const submission = submitFeedback({
             meetingId,
             score,
             feedbackOptions: allFeedback,
-        })
+        });
+
+        void submission
             .then(() => {
-                if (closeAfterSubmit) {
-                    onClose();
-                } else {
-                    onSubmit();
-                }
+                notifications.createNotification({
+                    type: 'success',
+                    text: c('Notification').t`Thanks! Your feedback has been submitted.`,
+                });
             })
             .catch(() => {
-                onClose();
                 notifications.createNotification({
                     type: 'error',
                     text: c('Notification').t`Could not send feedback`,
                 });
             });
+
+        await wait(SUBMIT_HOLD_MS);
+
+        onClose();
+    };
+
+    const isLowRating = rating && rating < RATING_THRESHOLD;
+
+    const handleStarRatingChange = async (newRating: number) => {
+        setRating(newRating);
+
+        if (newRating >= RATING_THRESHOLD) {
+            await handleSubmit({ score: newRating });
+        }
     };
 
     const audioOptions = [
@@ -126,38 +143,30 @@ export const FeedbackForm = ({ onClose, onSubmit }: Props) => {
         c('Option').t`I couldn't present `,
     ];
 
-    const isHighRating = rating && rating >= RATING_THRESHOLD;
-    const isLowRating = rating && rating < RATING_THRESHOLD;
-
     return (
         <>
-            <div
-                className="flex flex-column md:flex-row items-center gap-2 mt-20 mb-5 w-full max-w-custom"
-                style={{ '--max-w-custom': '37rem' }}
+            <Card
+                background={false}
+                bordered={false}
+                className="feedback-form-card w-fit-content rounded-xxl pt-5 pb-5"
             >
-                <span id="feedback-form-rating-label" className="text-semibold text-left feedback-form-rating-label">{c(
-                    'Label'
-                ).t`How was the call quality?`}</span>
-                <StarRating
-                    value={rating}
-                    onChange={SetRating}
-                    className="md:flex-1 flex-nowrap"
-                    ariaDescribedBy="feedback-form-rating-label"
-                />
-                {isHighRating && (
-                    <Button
-                        className="secondary rounded-full py-3 px-10 text-semibold w-full md:w-auto"
-                        loading={isLoading}
-                        disabled={isLoading}
-                        onClick={async () => {
-                            await withLoading(handleSubmit({ score: rating }));
+                <div className="flex flex-column md:flex-row items-center gap-4 w-full pl-5 pr-5">
+                    <span
+                        id="feedback-form-rating-label"
+                        className="text-semibold text-left feedback-form-rating-label"
+                    >{c('Label').t`How was the call quality?`}</span>
+                    <StarRating
+                        value={rating}
+                        onChange={async (rating) => {
+                            await withLoading(handleStarRatingChange(rating));
                         }}
-                        size="medium"
-                    >
-                        {c('Action').t`Submit`}
-                    </Button>
-                )}
-            </div>
+                        disabled={isLoading}
+                        loading={isLoading}
+                        className="flex-nowrap"
+                        ariaDescribedBy="feedback-form-rating-label"
+                    />
+                </div>
+            </Card>
             {isLowRating && (
                 <>
                     <div className="cta-modal-title text-semibold color-norm pt-10 pb-10">{c('Title')
@@ -211,7 +220,6 @@ export const FeedbackForm = ({ onClose, onSubmit }: Props) => {
                                     await handleSubmit({
                                         score: rating,
                                         feedbackOptions: selectedOptions,
-                                        closeAfterSubmit: true,
                                     });
                                 }
                             }}
