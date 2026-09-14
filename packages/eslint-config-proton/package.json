@@ -27,11 +27,11 @@
         "./restrictedImports": "./restrictedImports.js"
     },
     "dependencies": {
-        "@eslint/compat": "^2.1.0",
-        "@eslint/json": "^2.0.1",
+        "@eslint/compat": "^2.1.1",
+        "@eslint/json": "^2.1.0",
         "@protontech/eslint-plugin-enforce-uint8array-arraybuffer": "^3.0.2",
         "@types/eslint-plugin-jsx-a11y": "^6.10.1",
-        "eslint": "^10.9.0",
+        "eslint": "^10.10.0",
         "eslint-import-resolver-typescript": "4.4.5",
         "eslint-plugin-compat": "^7.0.2",
         "eslint-plugin-custom-rules": "workspace:^",
@@ -44,7 +44,7 @@
         "eslint-plugin-react": "^7.37.5",
         "eslint-plugin-react-hooks": "^7.1.1",
         "eslint-plugin-testing-library": "^7.16.2",
-        "typescript-eslint": "^8.68.0"
+        "typescript-eslint": "^8.70.0"
     },
     "peerDependencies": {
         "prettier": "3.9.6",

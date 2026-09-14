@@ -84,6 +84,11 @@
             "groupName": "ignore ariakit",
             "matchPackageNames": ["@ariakit/*"],
             "enabled": false
+        },
+        {
+            "groupName": "ignore standardnotes",
+            "matchPackageNames": ["@standardnotes/*"],
+            "enabled": false
         }
     ]
 }

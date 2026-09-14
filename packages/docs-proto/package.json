@@ -8,11 +8,11 @@
     "sync": "./scripts/sync.sh ."
   },
   "dependencies": {
-    "@standardnotes/domain-core": "^1.41.3"
+    "@standardnotes/domain-core": "1.41.3"
   },
   "devDependencies": {
     "@types/google-protobuf": "^3.15.12",
-    "eslint": "^10.9.0",
+    "eslint": "^10.10.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.6",
     "google-protobuf": "^3.21.4",
