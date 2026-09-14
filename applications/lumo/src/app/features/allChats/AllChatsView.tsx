@@ -367,7 +367,7 @@ const ConversationRow = memo(
                                         setDeleteRequested(true);
                                     }}
                                 >
-                                    <LumoIcon name="Trash2" size={15} />
+                                    <LumoIcon name="Trash" size={15} />
                                 </Button>
                             </div>
                             <div className="all-chats-row-actions-mobile shrink-0">
@@ -442,12 +442,7 @@ const AllChatsHeader = ({
     const showSelectionActions = isSelectionMode;
     const showConversationCount = !isSelectionMode;
     const showFilterSort =
-        !isMobileLayout &&
-        !isSelectionMode &&
-        filter !== undefined &&
-        onFilterChange &&
-        sortField &&
-        onSortFieldChange;
+        !isMobileLayout && !isSelectionMode && filter !== undefined && onFilterChange && sortField && onSortFieldChange;
 
     return (
         <div
@@ -699,7 +694,7 @@ export const AllChatsView = () => {
                 removeIndexedFoldersBySpace,
                 removeSearchDocumentsBySpace: (spaceId) => {
                     if (searchService) {
-                        searchService.removeDocumentsBySpace(spaceId);
+                        void searchService.removeDocumentsBySpace(spaceId);
                     }
                 },
             });

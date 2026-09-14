@@ -94,7 +94,7 @@ export const ApiKeyCard = ({
                             disabled={isDeleting}
                             aria-label={c('Action').t`Delete ${token.Name}`}
                         >
-                            <LumoIcon name="Trash2" size={16} />
+                            <LumoIcon name="Trash" size={16} />
                         </Button>
                     </Tooltip>
                 </div>

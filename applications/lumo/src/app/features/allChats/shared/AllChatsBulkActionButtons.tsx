@@ -32,7 +32,7 @@ export const AllChatsBulkActionButtons = ({
                 disabled={disabled}
                 onClick={onBulkDelete}
             >
-                <LumoIcon name="Trash2" size={iconSize} className="shrink-0" />
+                <LumoIcon name="Trash" size={iconSize} className="shrink-0" />
                 <span>{c('collider_2025:Action').t`Delete`}</span>
             </Button>
             <Button

@@ -88,7 +88,7 @@ export const RecentFilesSection = ({ refreshKey, onOpenReport, onDeleteReport }:
                                     onDeleteReport(file.id);
                                 }}
                             >
-                                <LumoIcon name="Trash2" size={16} />
+                                <LumoIcon name="Trash" size={16} />
                             </button>
                         </li>
                     );
