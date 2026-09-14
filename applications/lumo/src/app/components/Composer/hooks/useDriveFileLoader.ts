@@ -28,7 +28,7 @@ export function useDriveFileLoader(
             if (!driveSDK) return [];
 
             try {
-                const children = await driveSDK.browseFolderChildren(folderId, true);
+                const children = await driveSDK.browseFolderChildren(folderId);
                 const allFiles: { id: string; name: string; path: string }[] = [];
 
                 for (const child of children) {
