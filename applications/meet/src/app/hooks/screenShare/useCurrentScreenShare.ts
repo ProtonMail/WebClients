@@ -13,7 +13,7 @@ import { showPermissionsModal } from '@proton/meet/store/slices/deviceManagement
 import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import { updateParticipantScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { isChrome, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { isElectronApp, isElectronOnWindows, isElectronRuntimeAtLeast } from '@proton/shared/lib/helpers/desktop';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { screenShareQuality } from '../../qualityConstants';
@@ -21,6 +21,12 @@ import { findScreenShare } from '../../utils/findScreenShare';
 import { useStableCallback } from '../useStableCallback';
 import { useScreenShareRoomEvents } from './useScreenShareRoomEvents';
 import { useScreenShareTrack } from './useScreenShareTrack';
+
+// Only the Windows desktop takes system audio from Electron's display-media handler, and Electron
+// rewrites that capture to exclude our own playback from 43.4.0 onwards. Older installed builds
+// capture the full system mix, republishing the meeting so everyone hears themselves.
+const ELECTRON_RESTRICT_OWN_AUDIO_VERSION = '43.4.0';
+const supportsRestrictOwnAudio = !isElectronOnWindows || isElectronRuntimeAtLeast(ELECTRON_RESTRICT_OWN_AUDIO_VERSION);
 
 export function useCurrentScreenShare({
     stopPiP,
@@ -31,7 +37,8 @@ export function useCurrentScreenShare({
     startPiP: () => void;
     preparePictureInPicture: () => void;
 }) {
-    const isMeetEnableScreenShareAudio = useFlag('MeetEnableScreenShareAudio') && !isElectronApp;
+    const isMeetEnableScreenShareAudio = useFlag('MeetEnableScreenShareAudio');
+    const shareScreenShareAudio = isMeetEnableScreenShareAudio && supportsRestrictOwnAudio;
 
     const dispatch = useMeetDispatch();
     const { reportMeetError } = useMeetErrorReporting();
@@ -77,12 +84,14 @@ export function useCurrentScreenShare({
             await room.localParticipant.setScreenShareEnabled(
                 true,
                 {
-                    audio: isMeetEnableScreenShareAudio
+                    // restrictOwnAudio keeps the call's own output out of the capture, otherwise everyone
+                    // hears themselves back.
+                    audio: shareScreenShareAudio
                         ? {
                               restrictOwnAudio: true,
                           }
                         : false,
-                    systemAudio: isMeetEnableScreenShareAudio ? 'include' : undefined,
+                    systemAudio: shareScreenShareAudio ? 'include' : 'exclude',
                     selfBrowserSurface: 'exclude',
                     contentHint: 'detail',
                     resolution: {

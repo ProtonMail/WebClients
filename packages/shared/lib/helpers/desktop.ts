@@ -1,5 +1,7 @@
 import UAParser from 'ua-parser-js';
 
+import { semver } from '@proton/utils/semver';
+
 import type { APP_NAMES } from '../constants';
 import { APPS } from '../constants';
 import { isLinux, isMac, isWindows } from './browser';
@@ -46,3 +48,13 @@ export const isElectronMeet = isElectronApp && /ProtonMeet/i.test(ua.ua);
 export const electronAppVersion = ua.ua.match(
     /((ProtonMail|ProtonPass|ProtonMeet)\/)(?<version>[0-9]\.[0-9]{1,2}\.[0-9]{1,2})/i
 )?.groups?.version;
+
+export const electronRuntimeVersion = ua.browser.name === 'Electron' ? ua.browser.version : undefined;
+
+/*
+ * Compares the running Electron runtime against a minimum dotted version. Returns `false` when the
+ * runtime version is unknown, so callers gating on a fix default to assuming it is absent. Only
+ * meaningful when `isElectronApp` is true.
+ */
+export const isElectronRuntimeAtLeast = (minimum: string): boolean =>
+    electronRuntimeVersion !== undefined && semver(electronRuntimeVersion) >= semver(minimum);
