@@ -5,8 +5,11 @@ import { IcBrandMac } from '@proton/icons/icons/IcBrandMac';
 import { IcBrandProtonCalendar } from '@proton/icons/icons/IcBrandProtonCalendar';
 import { IcBrandProtonMail } from '@proton/icons/icons/IcBrandProtonMail';
 import { IcBrandWindows } from '@proton/icons/icons/IcBrandWindows';
+import { CALENDAR_MOBILE_APP_LINKS } from '@proton/shared/lib/calendar/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { getAppStoreLink, getPlayStoreLink } from '@proton/shared/lib/helpers/mobileAppLinks';
+import { MAIL_MOBILE_APP_LINKS } from '@proton/shared/lib/mail/constants';
 import appleAppStoreImage from '@proton/styles/assets/img/vpn/download-section/apple-app-store.svg';
 import googlePlayStoreImage from '@proton/styles/assets/img/vpn/download-section/google-play-store.svg';
 
@@ -29,13 +32,13 @@ const downloadData = [
                     downloadButtons: [
                         {
                             title: () => c('Download').t`Download on the Apple App Store`,
-                            link: 'https://apps.apple.com/app/apple-store/id979659905?pt=106513916&ct=wa_set_btn&mt=8',
+                            link: getAppStoreLink(MAIL_MOBILE_APP_LINKS.appStore),
                             style: 'appstore' as const,
                             image: appleAppStoreImage,
                         },
                         {
                             title: () => c('Download').t`Get it on Google Play`,
-                            link: 'https://play.google.com/store/apps/details?id=ch.protonmail.android&referrer=utm_source\%3Dproton.me\%26utm_medium\%3Dweb\%26utm_campaign\%3Dwa_set_btn',
+                            link: getPlayStoreLink(MAIL_MOBILE_APP_LINKS.playStore),
                             style: 'appstore' as const,
                             image: googlePlayStoreImage,
                         },
@@ -50,13 +53,13 @@ const downloadData = [
                     downloadButtons: [
                         {
                             title: () => c('Download').t`Download on the Apple App Store`,
-                            link: 'https://apps.apple.com/app/apple-store/id1514709943?pt=106513916&ct=wa_set_btn&mt=8',
+                            link: getAppStoreLink(CALENDAR_MOBILE_APP_LINKS.appStore),
                             style: 'appstore' as const,
                             image: appleAppStoreImage,
                         },
                         {
                             title: () => c('Download').t`Get it on Google Play`,
-                            link: 'https://play.google.com/store/apps/details?id=me.proton.android.calendar&referrer=utm_source\%3Dproton.me\%26utm_medium\%3Dweb\%26utm_campaign\%3Dwa_set_btn',
+                            link: getPlayStoreLink(CALENDAR_MOBILE_APP_LINKS.playStore),
                             style: 'appstore' as const,
                             image: googlePlayStoreImage,
                         },

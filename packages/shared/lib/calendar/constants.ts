@@ -421,7 +421,7 @@ export const TMP_UID = 'tmp';
 export const TMP_UNIQUE_ID = 'tmp';
 
 export const CALENDAR_MOBILE_APP_LINKS = {
-    qrCode: 'https://proton.me/calapp',
+    qrCode: 'https://proton.me/calwebapp',
     appStore: 'https://apps.apple.com/app/apple-store/id1514709943',
     playStore: 'https://play.google.com/store/apps/details?id=me.proton.android.calendar',
 };
