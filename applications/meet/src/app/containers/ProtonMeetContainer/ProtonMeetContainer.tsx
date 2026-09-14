@@ -56,9 +56,9 @@ import { useConnectionHealthCheck } from '../../hooks/useConnectionHealthCheck';
 import { useDisplayName } from '../../hooks/useDisplayName';
 import { useKeyManagement } from '../../hooks/useKeyManagement';
 import { useLiveKitConnection } from '../../hooks/useLiveKitConnection';
+import { usePageVisibilityHandler } from '../../hooks/usePageVisibilityHandler';
 import { useParticipantNameMap } from '../../hooks/useParticipantNameMap';
 import { usePictureInPicture } from '../../hooks/usePictureInPicture/usePictureInPicture';
-import { useSafariWebsocketVisibilityHandler } from '../../hooks/useSafariWebsocketVisibilityHandler';
 import { useStableCallback } from '../../hooks/useStableCallback';
 import { useWakeLock } from '../../hooks/useWakeLock';
 import type { JoinLocationState } from '../../types';
@@ -219,8 +219,9 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         stopPiP,
     });
 
-    useSafariWebsocketVisibilityHandler({
+    usePageVisibilityHandler({
         joinedRoom,
+        isPipActive,
     });
 
     const assignHost = useAssignHost(accessTokenRef.current as string, token);
