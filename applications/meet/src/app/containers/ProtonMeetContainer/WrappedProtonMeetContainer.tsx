@@ -34,6 +34,8 @@ export const WrappedProtonMeetContainer = () => {
     const isMeetDynacast = useFlag('MeetDynacast');
     const isMeetSimulcast = useFlag('MeetSimulcast');
 
+    const isCpuOptimizations = useFlag('MeetCpuOptimizations');
+
     const { reportMeetError } = useMeetErrorReporting();
 
     const primaryCodec = isMeetH264 ? 'h264' : 'vp8';
@@ -94,7 +96,7 @@ export const WrappedProtonMeetContainer = () => {
                 screenShareEncoding: screenShareQuality.encoding,
                 screenShareSimulcastLayers: [],
                 videoCodec: isMeetVp9Allowed ? 'vp9' : primaryCodec,
-                dtx: false,
+                dtx: isCpuOptimizations,
             },
             disconnectOnPageLeave: false,
         });
