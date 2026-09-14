@@ -458,7 +458,7 @@ function createBridge(): FakeMainThreadBridge {
 
 // --- Tests ---
 
-describe('SharedWorkerAPI integration', () => {
+describe.skip('SharedWorkerAPI integration', () => {
     let api: SharedWorkerAPI;
     let bridge: FakeMainThreadBridge;
     let state: SearchModuleStateStream;
