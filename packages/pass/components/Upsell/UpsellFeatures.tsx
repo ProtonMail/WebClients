@@ -3,8 +3,14 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Card } from '@proton/atoms/Card/Card';
-import Icon from '@proton/components/components/icon/Icon';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcAlias } from '@proton/icons/icons/IcAlias';
+import { IcFile } from '@proton/icons/icons/IcFile';
+import { IcFolder } from '@proton/icons/icons/IcFolder';
+import { IcLink } from '@proton/icons/icons/IcLink';
+import { IcListBullets } from '@proton/icons/icons/IcListBullets';
+import { IcPassCircles } from '@proton/icons/icons/IcPassCircles';
+import { IcUsersPlus } from '@proton/icons/icons/IcUsersPlus';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -12,7 +18,7 @@ import { PASS_SENTINEL_LINK } from '../../constants';
 import type { UpsellType } from './UpsellingModal';
 
 type Props = { upsellType: UpsellType };
-type UpsellFeature = { key: UpsellFeatureName; className: string; icon: IconName; label: string | string[] };
+type UpsellFeature = { key: UpsellFeatureName; className: string; icon: IconComponent; label: string | string[] };
 
 type UpsellFeatureName = 'aliases' | '2FA' | 'logins' | 'sentinel' | 'secure-links' | 'file-attachments' | 'folders';
 
@@ -26,25 +32,25 @@ const getFeatures = (): UpsellFeature[] => [
     {
         key: 'aliases',
         className: 'ui-teal',
-        icon: 'alias',
+        icon: IcAlias,
         label: c('Info').t`Unlimited hide-my-email aliases and advanced alias management`,
     },
     {
         key: '2FA',
         className: 'ui-orange',
-        icon: 'pass-circles',
+        icon: IcPassCircles,
         label: c('Info').t`Built in 2FA authenticator`,
     },
     {
         key: 'logins',
         className: 'ui-red',
-        icon: 'users-plus',
+        icon: IcUsersPlus,
         label: c('Info').t`Share your logins and secure notes, with up to 10 people`,
     },
     {
         key: 'sentinel',
         className: 'ui-lime',
-        icon: 'list-bullets',
+        icon: IcListBullets,
         label:
             // translator: full sentence is Protected by Proton Sentinel, our advanced account protection program
             c('Info').jt`Protected by ${PROTON_SENTINEL_LINK}, our advanced account protection program`,
@@ -52,19 +58,19 @@ const getFeatures = (): UpsellFeature[] => [
     {
         key: 'secure-links',
         className: 'ui-violet',
-        icon: 'link',
+        icon: IcLink,
         label: c('Info').t`Secure links`,
     },
     {
         key: 'file-attachments',
         className: 'ui-gray',
-        icon: 'file',
+        icon: IcFile,
         label: c('Pass_file_attachments').t`File attachments`,
     },
     {
         key: 'folders',
         className: 'ui-orange',
-        icon: 'folder',
+        icon: IcFolder,
         label: c('Label').t`Folders`,
     },
 ];
@@ -82,7 +88,7 @@ export const UpsellFeatures: FC<Props> = ({ upsellType }) => {
             {/* We do not show aliases, and protected only for free-trial */}
             {features
                 .filter(({ key }) => !((key === 'aliases' || key === 'sentinel') && upsellType === 'free-trial'))
-                .map(({ className, icon, label, key }, idx) => (
+                .map(({ className, icon: Icon, label, key }, idx) => (
                     <div
                         className={clsx(
                             'flex justify-start items-center py-3 gap-3',
@@ -91,7 +97,7 @@ export const UpsellFeatures: FC<Props> = ({ upsellType }) => {
                         )}
                         key={key}
                     >
-                        <Icon color="var(--interaction-norm)" name={icon} size={4} className="shrink-0" />
+                        <Icon color="var(--interaction-norm)" size={4} className="shrink-0" />
                         <div className="text-left flex-1 text-sm">{label}</div>
                     </div>
                 ))}
