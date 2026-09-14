@@ -59,13 +59,19 @@ const useMailtoHash = ({ isSearch }: { isSearch: boolean }) => {
     const lastMailtoRef = useRef<string>();
 
     useEffect(() => {
-        if (isSearch || !hash) {
+        if (isSearch) {
+            return;
+        }
+
+        if (!hash) {
+            lastMailtoRef.current = undefined;
             return;
         }
 
         try {
             const mailtoString = getMailToString(hash);
             if (!mailtoString) {
+                lastMailtoRef.current = undefined;
                 return;
             }
 
