@@ -60,13 +60,15 @@ export const setRequestPermission = () => {
                     sources.find((source) => source.id.startsWith("screen")) ||
                     sources[0];
 
+                // "loopback" is the only way to capture system audio on Windows. Electron rewrites it to
+                // loopbackWithoutChrome because the renderer requests restrictOwnAudio, which excludes our
+                // own playback from the capture. That rewrite requires Electron >= 43.4.0; on older versions
+                // restrictOwnAudio is ignored and the capture contains the meeting itself, echoing
+                // everyone's voices back into the room.
+                // https://www.electronjs.org/docs/latest/api/session#sessetdisplaymediarequesthandlerhandler-opts
                 callback({
                     video: primaryScreen,
-                    // audio: String | WebFrameMain (optional) - If a string is specified, can be loopback or loopbackWithMute.
-                    // Specifying a loopback device will capture system audio, and is currently only supported on Windows.
-                    // If a WebFrameMain is specified, will capture audio from that frame.
-                    // https://www.electronjs.org/docs/latest/api/session#sessetdisplaymediarequesthandlerhandler-opts
-                    ...(isWindows ? { audio: "loopback" } : {}),
+                    audio: request.audioRequested && isWindows ? "loopback" : undefined,
                 });
             } catch (error) {
                 callback({});

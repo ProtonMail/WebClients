@@ -38,6 +38,7 @@ const setup = ({
     startAudio = vi.fn().mockResolvedValue(undefined),
     roomState = ConnectionState.Connected,
     activeAudioOutputId = '',
+    isPlaybackContext = true,
 } = {}) => {
     const audioContext = createFakeAudioContext(initialState);
     const setSinkId = vi.fn();
@@ -46,7 +47,11 @@ const setup = ({
         setSinkId,
         cleanup: vi.fn(),
     };
-    const room = { startAudio, state: roomState } as unknown as Room;
+    const room = {
+        startAudio,
+        state: roomState,
+        options: { webAudioMix: isPlaybackContext ? { audioContext } : false },
+    } as unknown as Room;
     const reportMeetError = vi.fn();
 
     storeMocks.useMeetSelector.mockReturnValue(activeAudioOutputId);
@@ -80,6 +85,13 @@ describe('useAudioContextOutput', () => {
 
     it('leaves the sink alone while no device is active yet', () => {
         const { setSinkId } = setup({ activeAudioOutputId: '' });
+
+        expect(setSinkId).not.toHaveBeenCalled();
+    });
+
+    // Pinning a sink on an idle context hands Chrome a silent echo cancellation reference
+    it('leaves the sink alone when the room does not render through this context', () => {
+        const { setSinkId } = setup({ activeAudioOutputId: 'jabra', isPlaybackContext: false });
 
         expect(setSinkId).not.toHaveBeenCalled();
     });

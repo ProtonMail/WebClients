@@ -36,10 +36,18 @@ export const createMeetAudioContext = ({
     // setSinkId is supported in Chrome 110+ but not yet in the TypeScript lib types.
     const ctx = audioContext as AudioContext & { setSinkId?: (sinkId: string) => Promise<void> };
 
+    // Set once this context is pinned to a device, which is also when Chrome starts using it as the
+    // echo cancellation reference. Until then the sink must be left alone.
+    let isPinnedToDevice = false;
+
     // When an output device is disconnected (e.g. a USB speaker unplugged), Chrome fires
     // an 'error' event on the AudioContext. Reset the sinkId to the system default so
     // audio re-routes to the fallback device without requiring a page refresh.
     const onAudioContextError = () => {
+        if (!isPinnedToDevice) {
+            return;
+        }
+
         ctx.setSinkId?.('').catch((error) => {
             reportMeetError('Error setting sink id after audio context error', error);
         });
@@ -47,6 +55,8 @@ export const createMeetAudioContext = ({
     audioContext.addEventListener('error', onAudioContextError);
 
     const setSinkId = (deviceId: string) => {
+        isPinnedToDevice = true;
+
         ctx.setSinkId?.(deviceId).catch((error) => {
             reportMeetError('Error setting sink id', { context: { error, deviceId } });
         });
