@@ -246,6 +246,62 @@ describe('memoryHelpers', () => {
         );
     });
 
+    it('does not infer a cutoff from optimized memories while chat prompts are still pending', () => {
+        const optimizationTime = Date.parse('2026-09-14T09:00:00.000Z');
+        const optimized: Memory[] = [
+            {
+                id: 'optimized',
+                content: 'Works primarily with TypeScript',
+                createdAt: optimizationTime,
+                source: 'generated',
+            },
+        ];
+
+        expect(getMemoryGenerationCutoff(undefined, optimized, 6)).toBeUndefined();
+    });
+
+    it('keeps pending pre-optimization chats eligible after optimize when prompts are waiting', () => {
+        const optimizationTime = Date.parse('2026-09-14T09:00:00.000Z');
+        const optimized: Memory[] = [
+            {
+                id: 'optimized',
+                content: 'Works primarily with TypeScript',
+                createdAt: optimizationTime,
+                source: 'generated',
+            },
+        ];
+        const spaces = { general: { id: 'general', isProject: false } as Space };
+        const conversations = {
+            general: {
+                id: 'general',
+                spaceId: 'general',
+                createdAt: '2026-09-01T00:00:00.000Z',
+                updatedAt: '2026-09-14T12:00:00.000Z',
+            } as Conversation,
+        };
+        const messages = {
+            pendingOne: makeMessage({
+                id: 'pending-one',
+                conversationId: 'general',
+                content: 'I have started maintaining a long-running Rust command line application',
+                createdAt: '2026-09-13T10:00:00.000Z',
+            }),
+            pendingTwo: makeMessage({
+                id: 'pending-two',
+                conversationId: 'general',
+                content: 'For that Rust application I consistently use the Tokio async runtime',
+                createdAt: '2026-09-13T11:00:00.000Z',
+            }),
+        };
+
+        const samples = sampleUserPromptsForMemoryGeneration(messages, conversations, spaces, {
+            hasLumoPlus: true,
+            after: getMemoryGenerationCutoff(undefined, optimized, 6),
+        });
+
+        expect(samples).toHaveLength(2);
+    });
+
     it('parses JSON string array from model response', () => {
         const raw = 'Here you go:\n["Likes bullet points", "Works in product design"]\n';
         expect(parseMemoryStringsResponse(raw)).toEqual(['Likes bullet points', 'Works in product design']);

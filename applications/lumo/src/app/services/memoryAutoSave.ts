@@ -63,7 +63,8 @@ export const maybeAutoSaveMemoriesFromChats = ({ api, dispatch, getState, hasLum
             const existingAtRequestTime = normalizeMemories(settings.memories);
             const after = getMemoryGenerationCutoff(
                 settings.memoryLastProcessedMessageAt,
-                existingAtRequestTime
+                existingAtRequestTime,
+                settings.memoryPromptsSinceAutoSave ?? 0
             );
             const samplingOptions = {
                 hasLumoPlus,

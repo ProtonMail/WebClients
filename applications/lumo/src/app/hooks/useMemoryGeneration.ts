@@ -31,14 +31,15 @@ export function useMemoryGeneration() {
     const spaces = useLumoSelector((state) => state.spaces);
     const memories = useLumoSelector((state) => state.lumoUserSettings.memories);
     const lastProcessedMessageAt = useLumoSelector((state) => state.lumoUserSettings.memoryLastProcessedMessageAt);
+    const pendingPromptCount = useLumoSelector((state) => state.lumoUserSettings.memoryPromptsSinceAutoSave ?? 0);
     const [isBootstrapping, setIsBootstrapping] = useState(false);
     const [isOptimizing, setIsOptimizing] = useState(false);
     const abortRef = useRef<AbortController | null>(null);
     const optimizeAbortRef = useRef<AbortController | null>(null);
 
     const memoryGenerationCutoff = useMemo(
-        () => getMemoryGenerationCutoff(lastProcessedMessageAt, memories ?? []),
-        [lastProcessedMessageAt, memories]
+        () => getMemoryGenerationCutoff(lastProcessedMessageAt, memories ?? [], pendingPromptCount),
+        [lastProcessedMessageAt, memories, pendingPromptCount]
     );
     const samplingOptions = useMemo(
         () => ({ hasLumoPlus, after: memoryGenerationCutoff }),
