@@ -18,6 +18,7 @@ export const FLAGS_WITH_VARIANT = [
     'VPNReferralWithoutTrial',
     'B2BAlwaysOnWindowsRelease',
     'CategoryViewVariant',
+    'MeetScreenShareAudioSupportedElectronVersion',
 ] satisfies FeatureFlag[];
 
 /**
@@ -36,6 +37,7 @@ export type ShowLiteAppCheckoutV2Variant = 'A' | 'B';
 export type OrganizationLevelEasySwitchVariant = 'Config';
 export type VPNReferralWithoutTrialVariant = 'A' | 'B';
 export type B2BAlwaysOnWindowsReleaseVariant = 'version';
+export type MeetScreenShareAudioSupportedElectronVersionVariant = 'version';
 export type EnableVpn2024AddonsExperimentVariant =
     'lumo-addon-only' | 'meet-addon-only' | 'pass-addon-only' | 'no-addon';
 /**
@@ -81,6 +83,7 @@ type FeatureFlagVariantMap = {
     VPNReferralWithoutTrial: VariantReturnType<VPNReferralWithoutTrialVariant>;
     B2BAlwaysOnWindowsRelease: VariantReturnType<B2BAlwaysOnWindowsReleaseVariant>;
     CategoryViewVariant: VariantReturnType<CategoryViewVariantVariant>;
+    MeetScreenShareAudioSupportedElectronVersion: VariantReturnType<MeetScreenShareAudioSupportedElectronVersionVariant>;
 };
 
 /**
