@@ -27,6 +27,7 @@ export const productParamToHeader: { [key in NonNullable<ProductParam>]: Allowed
     'proton-admin': '',
     'proton-authenticator': 'pass',
     'proton-calendar': 'calendar',
+    'proton-console': '',
     'proton-contacts': 'mail',
     'proton-docs': 'drive',
     'proton-docs-editor': 'drive',
