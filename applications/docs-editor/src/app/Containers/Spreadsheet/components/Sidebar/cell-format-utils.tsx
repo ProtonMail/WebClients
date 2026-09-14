@@ -132,9 +132,9 @@ export const timeFormats: NumberFormat[] = [
 
 export const horizontalAlignments: { name: string; value: HorizontalAlign | 'General'; icon?: JSX.Element }[] = [
   { name: 'General', value: 'General' },
-  { name: 'Left', value: 'left', icon: <UI.Icon className="shrink-0" legacyName="text-align-left" /> },
-  { name: 'Center', value: 'center', icon: <UI.Icon className="shrink-0" legacyName="text-align-center" /> },
-  { name: 'Right', value: 'right', icon: <UI.Icon className="shrink-0" legacyName="text-align-right" /> },
+  { name: 'Left', value: 'left', icon: <UI.Icon className="shrink-0" data={Icons.textAlignLeft} /> },
+  { name: 'Center', value: 'center', icon: <UI.Icon className="shrink-0" data={Icons.textAlignCenter} /> },
+  { name: 'Right', value: 'right', icon: <UI.Icon className="shrink-0" data={Icons.textAlignRight} /> },
 ]
 
 export const verticalAlignments: { name: string; value: VerticalAlign; icon?: JSX.Element }[] = [

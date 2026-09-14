@@ -2,6 +2,7 @@ import * as Ariakit from '@ariakit/react'
 import { clsx } from 'clsx'
 import { type ReactNode, forwardRef } from 'react'
 import { Icon } from './Icon'
+import * as Icons from './icons'
 
 // dropdown
 // --------
@@ -33,8 +34,6 @@ export const DROPDOWN_SUB_POPOVER_DEFAULTS = {
   shift: -9,
 }
 
-const DROPDOWN_ITEM_SELECTED_INDICATOR_ICON = 'checkmark'
-const DROPDOWN_ITEM_SUBMENU_INDICATOR_ICON = 'chevron-right-filled'
 export type DropdownItemOptions = {
   /**
    * Expected to be 16px wide.
@@ -84,15 +83,11 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(functi
 ) {
   leadingIconSlot =
     leadingIconSlot ??
-    (selectedIndicator ? (
-      <Icon legacyName={DROPDOWN_ITEM_SELECTED_INDICATOR_ICON} className="text-[--text-norm]" />
-    ) : undefined) ??
+    (selectedIndicator ? <Icon data={Icons.checkmark} className="text-[--text-norm]" /> : undefined) ??
     (leadingIndent ? <span className="w-4" /> : undefined)
 
   if (submenuIndicator) {
-    trailingIconSlot = trailingIconSlot ?? (
-      <Icon legacyName={DROPDOWN_ITEM_SUBMENU_INDICATOR_ICON} className="text-current" />
-    )
+    trailingIconSlot = trailingIconSlot ?? <Icon data={Icons.chevronRightFilled} className="text-current" />
   }
   return (
     <Ariakit.Role

@@ -1,4 +1,5 @@
-import clsx from 'clsx'
+import * as Icons from '../icons'
+import { clsx } from 'clsx'
 import type { PropsWithChildren } from 'react'
 import { useEffect, useState } from 'react'
 import * as Ariakit from '@ariakit/react'
@@ -94,7 +95,7 @@ export function SheetStatus() {
           render={<Button />}
           className={clsx('flex size-7 items-center justify-center rounded', 'border border-[#E9E9E9]')}
         >
-          <UI.Icon legacyName="chevron-down-filled" />
+          <UI.Icon data={Icons.chevronDownFilled} />
         </Ariakit.MenuButton>
 
         <Atoms.DropdownPopover {...Atoms.DROPDOWN_POPOVER_DEFAULTS} render={<Ariakit.Menu />}>

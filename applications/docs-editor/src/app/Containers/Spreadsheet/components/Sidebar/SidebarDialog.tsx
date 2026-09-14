@@ -1,3 +1,4 @@
+import * as Icons from '../icons'
 import type React from 'react'
 import { forwardRef, memo, useEffect, useId, useLayoutEffect, useMemo } from 'react'
 import * as Ariakit from '@ariakit/react'
@@ -35,7 +36,7 @@ export function SidebarDialogHeader({ title }: SidebarDialogHeaderProps) {
         aria-label={s('Close')}
         onClick={() => sidebarDialog.setOpen(false)}
       >
-        <Icon legacyName="cross-big" />
+        <Icon data={Icons.crossBig} />
       </Button>
     </div>
   )

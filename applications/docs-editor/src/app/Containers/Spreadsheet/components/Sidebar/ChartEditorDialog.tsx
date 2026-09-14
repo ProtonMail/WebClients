@@ -1,5 +1,6 @@
 /* eslint-disable no-nested-ternary */
 
+import * as Icons from '../icons'
 import {
   FormulaInput,
   type SheetRange,
@@ -273,7 +274,7 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                                     )
                                   }}
                                 >
-                                  <Icon legacyName="trash" />
+                                  <Icon data={Icons.trash} />
                                 </Button>
                               </div>
                               <Input

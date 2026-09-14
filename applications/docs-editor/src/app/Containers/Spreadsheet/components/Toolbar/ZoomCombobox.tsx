@@ -1,5 +1,6 @@
+import * as Icons from '../icons'
 import * as Ariakit from '@ariakit/react'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import type {} from 'react'
 import { type ComponentPropsWithoutRef, forwardRef, useEffect, useRef } from 'react'
 import { c } from 'ttag'
@@ -148,7 +149,7 @@ export const ZoomCombobox = forwardRef<HTMLDivElement, ZoomComboboxProps>(functi
         </Ariakit.TooltipProvider>
 
         <div className="pointer-events-none absolute end-0 top-0 flex h-full items-center pe-3 text-[#0C0C14]">
-          <UI.Icon legacyName="chevron-down-filled" />
+          <UI.Icon data={Icons.chevronDownFilled} />
         </div>
       </div>
       {mounted && <ComboboxPopover />}

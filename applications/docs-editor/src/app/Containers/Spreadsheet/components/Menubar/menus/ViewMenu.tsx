@@ -35,7 +35,7 @@ function HiddenSheetsSubmenu() {
   const showSheet = useUI.$.sheets.show
   return (
     <Ariakit.MenuProvider>
-      <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="eye-slash" />} disabled={hiddenSheets.length === 0}>
+      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.eyeSlash} />} disabled={hiddenSheets.length === 0}>
         {s('Hidden sheets')} {hiddenSheets.length > 0 ? `(${hiddenSheets.length})` : ''}
       </UI.SubMenuButton>
       <UI.SubMenu unmountOnHide>
@@ -66,7 +66,7 @@ function HiddenSheetsSubmenu() {
 //   }, [showFormulaBar, showGridlines])
 //   return (
 //     <Ariakit.MenuProvider values={values}>
-//       <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="eye" />}>{s('Show')}</UI.SubMenuButton>
+//       <UI.SubMenuButton leadingIconSlot={<UI.Icon data={eye} />}>{s('Show')}</UI.SubMenuButton>
 //       <UI.SubMenu unmountOnHide>
 //         <UI.MenuItemCheckbox name="view" value="formula-bar">
 //           {s('Formula bar')}
@@ -84,7 +84,7 @@ function ShowSubmenu() {
   const showGridlines = useUI((ui) => ui.view.gridLines.enabled)
   return (
     <Ariakit.MenuProvider>
-      <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="eye" />}>{s('Show')}</UI.SubMenuButton>
+      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.eye} />}>{s('Show')}</UI.SubMenuButton>
       <UI.SubMenu unmountOnHide>
         <UI.MenuItem
           leadingIndent
