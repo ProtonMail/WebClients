@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 
 import Icon from '@proton/components/components/icon/Icon';
 import SelectButton from '@proton/components/components/selectTwo/SelectButton';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import type { IconName } from '@proton/icons/types';
 
 import { TruncatedTextWithTooltip } from '../../atoms/TruncatedTextWithTooltip/TruncatedTextWithTooltip';
@@ -46,7 +47,7 @@ export const DeviceSelect = <T extends object>({
                     }
                     setIsOpen(!isOpen);
                 }}
-                caretIconName="chevron-down"
+                caretIcon={<IcChevronDown />}
                 caretClassName="color-weak mr-4 caret-icon"
                 ref={anchorRef}
                 disabled={disabled}

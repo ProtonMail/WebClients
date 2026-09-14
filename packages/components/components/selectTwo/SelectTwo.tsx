@@ -72,7 +72,7 @@ const SelectTwo = <V extends any>({
     getSearchableValue,
     renderSelected,
     noDropdownCaret,
-    caretIconName,
+    caretIcon,
     caretClassName,
     dropdownClassName,
     offset = 4,
@@ -208,7 +208,7 @@ const SelectTwo = <V extends any>({
                 onClick={handleAnchorClick}
                 onKeyDown={handleKeydown}
                 noCaret={noDropdownCaret}
-                caretIconName={caretIconName}
+                caretIcon={caretIcon}
                 caretClassName={caretClassName}
                 aria-label={ariaLabel}
                 ref={anchorRef}
