@@ -10,8 +10,7 @@ declare global {
  * here: `js.chargebee.com` does not send `Timing-Allow-Origin`, so a cross-origin resource reports
  * zero for every size and duration however the request actually went.
  */
-export type ResourceTimingLookup =
-    { status: 'found' } | { status: 'absent' } | { status: 'unavailable'; reason: string };
+type ResourceTimingLookup = { status: 'found' } | { status: 'absent' } | { status: 'unavailable'; reason: string };
 
 export type ScriptDiagnostics = {
     /** Whether the Chargebee script tag itself fired an error, identified by its id in index.html. */
