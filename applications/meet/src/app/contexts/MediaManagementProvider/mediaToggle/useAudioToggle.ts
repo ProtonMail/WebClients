@@ -24,6 +24,7 @@ import type { AudioTrackProcessor } from '../../../processors/noise-cancellation
 import { useNoiseCancellationModel } from '../../../processors/noise-cancellation/useNoiseCancellationModel';
 import { audioQuality } from '../../../qualityConstants';
 import type { AudioToggleParams, SwitchActiveDevice, ToggleAudioType } from '../../../types';
+import { outputlessAudioContextOptions } from '../../../utils/browser';
 import { getPersistedNoiseFilter, persistNoiseFilter } from '../../../utils/noiseFilterPersistence';
 
 const TOGGLE_TIMEOUT_MS = 8000;
@@ -82,8 +83,6 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
     const noiseFilterProcessor = useRef<AudioTrackProcessor | null>(null);
     /** Persistent AudioContext reused across device switches — only closed on unmount */
     const audioContext = useRef<AudioContext | null>(null);
-    /** Previous AudioContext awaiting close after a model change moved us to a different sample rate */
-    const staleAudioContext = useRef<AudioContext | null>(null);
     /** Track ID the processor is currently attached to, used to detect track replacement */
     const attachedTrackId = useRef<string | null>(null);
     /** Incremented on abandon to invalidate in-flight setProcessor calls */
@@ -129,59 +128,25 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         }
     };
 
-    /**
-     * Closes the context a model change left behind. Only safe once the replacement processor is
-     * publishing, since the old one is what feeds the published track until then.
-     */
-    const closeStaleAudioContext = () => {
-        const stale = staleAudioContext.current;
-        staleAudioContext.current = null;
-
-        if (stale && stale.state !== 'closed') {
-            stale.close().catch(() => {});
-            debugLog('noiseFilter:stale-audio-context-closed');
-        }
-    };
-
-    /**
-     * Returns the persistent AudioContext, creating one if needed (e.g. first attach or after unmount
-     * cleanup). The model can change mid-session (Krisp only becomes available once the room is
-     * connected), and each model pins its own rate, so a context at the previous model's rate is
-     * retired rather than reused — attachNoiseFilter would otherwise skip on the mismatch forever.
-     */
+    /** Returns the persistent AudioContext, creating one if needed (e.g. first attach or after unmount cleanup). */
     const getOrCreateAudioContext = () => {
-        const requiredSampleRate = noiseCancellationModel.audioContextSampleRate;
-        const existing = audioContext.current;
-
-        if (existing && existing.state !== 'closed') {
-            if (!requiredSampleRate || existing.sampleRate === requiredSampleRate) {
-                return existing;
-            }
-
-            closeStaleAudioContext();
-            staleAudioContext.current = existing;
-            audioContext.current = null;
-
-            debugLog('noiseFilter:audio-context-retired', {
-                sampleRate: existing.sampleRate,
-                requiredSampleRate,
-            });
+        if (audioContext.current && audioContext.current.state !== 'closed') {
+            return audioContext.current;
         }
-
         // Some browsers (older iOS Safari, some Android configs) silently ignore the requested rate,
         // hence the readback in attachNoiseFilter below.
         // @ts-ignore - webkitAudioContext is not available in all browsers
         const Ctor = (window.AudioContext || window.webkitAudioContext) as typeof AudioContext;
-        // This context only processes the mic, but it is left on an output device so an audio hardware
-        // clock drives it. The worklet feeds the published track and has a frame budget to hit, and a
-        // context with no output device has no hardware callback pacing it. Nothing is connected to
-        // its destination, so it stays silent.
-        const options = requiredSampleRate ? { sampleRate: requiredSampleRate } : {};
+        const requiredSampleRate = noiseCancellationModel.audioContextSampleRate;
+        // This context only processes the mic, it never plays anything. Chrome deprioritises the
+        // worklet thread of a context whose output device has been silent for ~30s (crbug 1248169).
+        const options = outputlessAudioContextOptions(requiredSampleRate ? { sampleRate: requiredSampleRate } : {});
         const ctx = new Ctor(options);
         audioContext.current = ctx;
         debugLog('noiseFilter:audio-context-created', {
             sampleRate: ctx.sampleRate,
             filter: noiseCancellationModel.id,
+            outputless: 'sinkId' in options,
         });
         return ctx;
     };
@@ -297,7 +262,6 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
     /** Full cleanup: abandons processor refs AND closes the AudioContext. Only used on unmount. */
     const destroyNoiseFilter = () => {
         abandonNoiseFilter();
-        closeStaleAudioContext();
 
         const ctx = audioContext.current;
         audioContext.current = null;
@@ -392,8 +356,6 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
 
             noiseFilterProcessor.current = processor;
             attachedTrackId.current = currentAudioTrack.id;
-
-            closeStaleAudioContext();
 
             debugLog('noiseFilter:attach-done', { trackId: currentAudioTrack.id });
         } catch (error) {
