@@ -188,9 +188,20 @@ export const setApplicationMenu = () => {
                 { role: "paste", label: c("App menu").t`Paste` },
                 {
                     role: "pasteAndMatchStyle",
-                    accelerator: "CmdOrCtrl+Shift+V",
+                    accelerator: isMac ? "Option+Shift+Cmd+V" : "Ctrl+Shift+V",
                     label: c("App menu").t`Paste and Match Style`,
                 },
+                ...(isMac
+                    ? [
+                          // INDA-755 - retain the old shortcut for macOS; users may be used to it
+                          {
+                              role: "pasteAndMatchStyle" as const,
+                              accelerator: "Cmd+Shift+V",
+                              visible: false,
+                              acceleratorWorksWhenHidden: true,
+                          } as MenuItemConstructorOptions,
+                      ]
+                    : []),
                 { role: "delete", label: c("App menu").t`Delete` },
                 { role: "selectAll", label: c("App menu").t`Select All` },
                 { type: "separator" },
