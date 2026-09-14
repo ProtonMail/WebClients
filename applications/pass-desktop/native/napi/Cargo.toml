@@ -15,12 +15,11 @@ napi-derive = "3.3"
 shared = { path = "../shared" }
 tokio = { version = "1.47", features = ["full"] }
 tokio-util = "0.7.17"
-russh-keys = "0.49.2"
+russh = "0.62"
 futures = "0.3.31"
-async-trait = "0.1.89"
 
 [target.'cfg(unix)'.dependencies]
-tokio-stream = "0.1"
+tokio-stream = { version = "0.1", features = ["net"] }
 
 [target.'cfg(windows)'.dependencies]
 windows = { version = "=0.54.0", features = [
