@@ -1,3 +1,13 @@
+import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
+import { IcClock } from '@proton/icons/icons/IcClock';
+import { IcEnvelopes } from '@proton/icons/icons/IcEnvelopes';
+import { IcFileLines } from '@proton/icons/icons/IcFileLines';
+import { IcFire } from '@proton/icons/icons/IcFire';
+import { IcInbox } from '@proton/icons/icons/IcInbox';
+import { IcPaperPlane } from '@proton/icons/icons/IcPaperPlane';
+import { IcStar } from '@proton/icons/icons/IcStar';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
+
 import type { ItemsGroup } from './useLocationFieldOptions';
 
 export const expectedAll = [
@@ -5,16 +15,16 @@ export const expectedAll = [
         value: '5',
         text: 'All mail',
         url: '/all-mail',
-        icon: 'envelopes',
+        icon: IcEnvelopes,
     },
     {
         value: '0',
         text: 'Inbox',
         url: '/inbox',
-        icon: 'inbox',
+        icon: IcInbox,
     },
     {
-        icon: 'clock',
+        icon: IcClock,
         text: 'Snooze',
         url: '/snoozed',
         value: '16',
@@ -23,37 +33,37 @@ export const expectedAll = [
         value: '8',
         text: 'Drafts',
         url: '/drafts',
-        icon: 'file-lines',
+        icon: IcFileLines,
     },
     {
         value: '7',
         text: 'Sent',
         url: '/sent',
-        icon: 'paper-plane',
+        icon: IcPaperPlane,
     },
     {
         value: '10',
         text: 'Starred',
         url: '/starred',
-        icon: 'star',
+        icon: IcStar,
     },
     {
         value: '6',
         text: 'Archive',
         url: '/archive',
-        icon: 'archive-box',
+        icon: IcArchiveBox,
     },
     {
         value: '4',
         text: 'Spam',
         url: '/spam',
-        icon: 'fire',
+        icon: IcFire,
     },
     {
         value: '3',
         text: 'Trash',
         url: '/trash',
-        icon: 'trash',
+        icon: IcTrash,
     },
     {
         text: 'news',
@@ -89,16 +99,16 @@ export const expectedGrouped: ItemsGroup = [
                 value: '5',
                 text: 'All mail',
                 url: '/all-mail',
-                icon: 'envelopes',
+                icon: IcEnvelopes,
             },
             {
                 value: '0',
                 text: 'Inbox',
                 url: '/inbox',
-                icon: 'inbox',
+                icon: IcInbox,
             },
             {
-                icon: 'clock',
+                icon: IcClock,
                 text: 'Snooze',
                 url: '/snoozed',
                 value: '16',
@@ -107,37 +117,37 @@ export const expectedGrouped: ItemsGroup = [
                 value: '8',
                 text: 'Drafts',
                 url: '/drafts',
-                icon: 'file-lines',
+                icon: IcFileLines,
             },
             {
                 value: '7',
                 text: 'Sent',
                 url: '/sent',
-                icon: 'paper-plane',
+                icon: IcPaperPlane,
             },
             {
                 value: '10',
                 text: 'Starred',
                 url: '/starred',
-                icon: 'star',
+                icon: IcStar,
             },
             {
                 value: '6',
                 text: 'Archive',
                 url: '/archive',
-                icon: 'archive-box',
+                icon: IcArchiveBox,
             },
             {
                 value: '4',
                 text: 'Spam',
                 url: '/spam',
-                icon: 'fire',
+                icon: IcFire,
             },
             {
                 value: '3',
                 text: 'Trash',
                 url: '/trash',
-                icon: 'trash',
+                icon: IcTrash,
             },
         ],
     },

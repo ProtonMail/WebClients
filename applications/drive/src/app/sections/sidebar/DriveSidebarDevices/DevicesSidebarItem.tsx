@@ -1,5 +1,6 @@
 import { splitNodeUid } from '@proton/drive';
 import type { TreeItemWithChildren } from '@proton/drive/modules/directoryTree';
+import { IcTv } from '@proton/icons/icons/IcTv';
 
 import DriveExpandButton from '../../../legacy/components/layout/sidebar/DriveSidebar/DriveSidebarFolders/DriveExpandButton';
 import DriveSidebarListItem from '../../../legacy/components/layout/sidebar/DriveSidebar/DriveSidebarListItem';
@@ -20,7 +21,7 @@ export const DevicesSidebarItem = ({ device, toggleExpand }: Props) => {
         <div>
             <DriveSidebarListItem
                 to={`/${shareId}/folder/${nodeId}`}
-                icon="tv"
+                icon={IcTv}
                 shareId={shareId}
                 style={generateSidebarItemStyle(1)}
                 collapsed={false} // we never show expended devices when collapsed

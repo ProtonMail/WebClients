@@ -1,5 +1,17 @@
 import { c } from 'ttag';
 
+import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
+import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
+import { IcClock } from '@proton/icons/icons/IcClock';
+import { IcEnvelopes } from '@proton/icons/icons/IcEnvelopes';
+import { IcFileLines } from '@proton/icons/icons/IcFileLines';
+import { IcFire } from '@proton/icons/icons/IcFire';
+import { IcInbox } from '@proton/icons/icons/IcInbox';
+import { IcPaperPlane } from '@proton/icons/icons/IcPaperPlane';
+import { IcPaperPlaneClock } from '@proton/icons/icons/IcPaperPlaneClock';
+import { IcStar } from '@proton/icons/icons/IcStar';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { IcTrashClock } from '@proton/icons/icons/IcTrashClock';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LINKED_LABEL_IDS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
@@ -171,7 +183,7 @@ const getDefaultSystemFolders = (
     {
         labelID: MAILBOX_LABEL_IDS.INBOX,
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX],
-        icon: 'inbox',
+        icon: IcInbox,
         text: c('Link').t`Inbox`,
         shortcutText: '[G] [I]',
         visible: true,
@@ -181,7 +193,7 @@ const getDefaultSystemFolders = (
     {
         labelID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_DRAFTS],
-        icon: 'file-lines',
+        icon: IcFileLines,
         text: c('Link').t`Drafts`,
         shortcutText: '[G] [D]',
         visible: !!(showMoved & SHOW_MOVED.DRAFTS),
@@ -191,7 +203,7 @@ const getDefaultSystemFolders = (
     {
         labelID: MAILBOX_LABEL_IDS.DRAFTS,
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.DRAFTS],
-        icon: 'file-lines',
+        icon: IcFileLines,
         text: c('Link').t`Drafts`,
         shortcutText: '[G] [D]',
         visible: !(showMoved & SHOW_MOVED.DRAFTS),
@@ -200,7 +212,7 @@ const getDefaultSystemFolders = (
     },
     {
         labelID: MAILBOX_LABEL_IDS.SCHEDULED,
-        icon: 'paper-plane-clock',
+        icon: IcPaperPlaneClock,
         text: c('Link').t`Scheduled`,
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SCHEDULED],
         visible: !!showScheduled,
@@ -209,7 +221,7 @@ const getDefaultSystemFolders = (
     },
     {
         labelID: MAILBOX_LABEL_IDS.SNOOZED,
-        icon: 'clock',
+        icon: IcClock,
         text: c('Link').t`Snoozed`,
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SNOOZED],
         visible: !!showSnoozed,
@@ -219,7 +231,7 @@ const getDefaultSystemFolders = (
     {
         labelID: MAILBOX_LABEL_IDS.ALL_SENT,
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_SENT],
-        icon: 'paper-plane',
+        icon: IcPaperPlane,
         text: c('Link').t`Sent`,
         shortcutText: '[G] [E]',
         visible: !!(showMoved & SHOW_MOVED.SENT),
@@ -229,7 +241,7 @@ const getDefaultSystemFolders = (
     {
         labelID: MAILBOX_LABEL_IDS.SENT,
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SENT],
-        icon: 'paper-plane',
+        icon: IcPaperPlane,
         text: c('Link').t`Sent`,
         shortcutText: '[G] [E]',
         visible: !(showMoved & SHOW_MOVED.SENT),
@@ -238,7 +250,7 @@ const getDefaultSystemFolders = (
     },
     {
         labelID: MAILBOX_LABEL_IDS.STARRED,
-        icon: 'star',
+        icon: IcStar,
         text: c('Link').t`Starred`,
         shortcutText: '[G] [*]',
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.STARRED],
@@ -248,7 +260,7 @@ const getDefaultSystemFolders = (
     },
     {
         labelID: MAILBOX_LABEL_IDS.ARCHIVE,
-        icon: 'archive-box',
+        icon: IcArchiveBox,
         text: c('Link').t`Archive`,
         shortcutText: '[G] [A]',
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ARCHIVE],
@@ -258,7 +270,7 @@ const getDefaultSystemFolders = (
     },
     {
         labelID: MAILBOX_LABEL_IDS.SPAM,
-        icon: 'fire',
+        icon: IcFire,
         text: c('Link').t`Spam`,
         shortcutText: '[G] [S]',
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SPAM],
@@ -268,7 +280,7 @@ const getDefaultSystemFolders = (
     },
     {
         labelID: MAILBOX_LABEL_IDS.TRASH,
-        icon: 'trash',
+        icon: IcTrash,
         text: c('Link').t`Trash`,
         shortcutText: '[G] [T]',
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.TRASH],
@@ -278,7 +290,7 @@ const getDefaultSystemFolders = (
     },
     {
         labelID: MAILBOX_LABEL_IDS.SOFT_DELETED,
-        icon: 'trash-clock',
+        icon: IcTrashClock,
         text: c('Link').t`Deleted`,
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SOFT_DELETED],
         visible: showSoftDeletedFolder,
@@ -287,7 +299,7 @@ const getDefaultSystemFolders = (
     },
     {
         labelID: MAILBOX_LABEL_IDS.ALL_MAIL,
-        icon: 'envelopes',
+        icon: IcEnvelopes,
         text: c('Link').t`All mail`,
         shortcutText: '[G] [M]',
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_MAIL],
@@ -298,7 +310,7 @@ const getDefaultSystemFolders = (
     {
         /** Added for mapping with API, we dont display outbox */
         labelID: MAILBOX_LABEL_IDS.OUTBOX,
-        icon: 'arrow-right',
+        icon: IcArrowRight,
         text: c('Link').t`Outbox`,
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.OUTBOX],
         order: 14,
@@ -307,7 +319,7 @@ const getDefaultSystemFolders = (
     },
     {
         labelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-        icon: 'envelopes',
+        icon: IcEnvelopes,
         text: c('Link').t`All mail`,
         shortcutText: '[G] [M]',
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
