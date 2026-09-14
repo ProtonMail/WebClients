@@ -12,7 +12,16 @@ import {
     chatAndReactionsReducer,
     selectChatMessages,
 } from '@proton/meet/store/slices/chatAndReactionsSlice';
+import {
+    mergeParticipantDecryptedNameMap,
+    participantsReducer,
+} from '@proton/meet/store/slices/participants/participantsSlice';
+import {
+    setSortedParticipantIdentities,
+    sortedParticipantsReducer,
+} from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
+import { getMentionToken } from '@proton/meet/utils/mentions/mentionToken';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -33,8 +42,10 @@ vi.mock('@proton/meet/hooks/useMeetErrorReporting', () => ({
     useMeetErrorReporting: vi.fn().mockReturnValue({ reportMeetError: vi.fn() }),
 }));
 
+const { createNotification } = vi.hoisted(() => ({ createNotification: vi.fn() }));
+
 vi.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: vi.fn().mockReturnValue({ createNotification: vi.fn() }),
+    useNotifications: vi.fn().mockReturnValue({ createNotification }),
 }));
 
 // Resolve retry delays immediately so retry attempts don't incur real waits.
@@ -42,7 +53,8 @@ vi.mock('@proton/shared/lib/helpers/promise', () => ({
     wait: vi.fn().mockResolvedValue(undefined),
 }));
 
-const LOCAL = 'local-participant';
+const LOCAL = 'aaaaaaaa-1111-2222-3333-444444444444';
+const ALICE = 'bbbbbbbb-1111-2222-3333-444444444444';
 
 const createMockRoom = () => ({
     localParticipant: {
@@ -60,7 +72,12 @@ const createMeetCoreClient = (overrides: Partial<MeetCoreClient> = {}): MeetCore
 
 const createStore = () =>
     configureStore({
-        reducer: { ...chatAndReactionsReducer, ...uiStateReducer },
+        reducer: {
+            ...chatAndReactionsReducer,
+            ...uiStateReducer,
+            ...participantsReducer,
+            ...sortedParticipantsReducer,
+        },
     });
 
 type TestStore = ReturnType<typeof createStore>;
@@ -130,6 +147,93 @@ describe('useChatMessage', () => {
                     status: 'sent',
                 }),
             ]);
+        });
+
+        it('should pass the mention tokens produced by the composer through unchanged', async () => {
+            const room = createMockRoom();
+            useRoomContextMock.mockReturnValue(room);
+
+            const store = createStore();
+            const composeChatMessage = vi.fn().mockResolvedValue(composeResult());
+            const client = createMeetCoreClient({ composeChatMessage });
+
+            const { result } = renderHook(() => useChatMessage(), { wrapper: createWrapper(store, client) });
+
+            await act(async () => {
+                await result.current.sendMessage(`${getMentionToken(ALICE)} confirm the date?`);
+            });
+
+            expect(composeChatMessage).toHaveBeenCalledWith(
+                `[participant_uuid:${ALICE}] confirm the date?`,
+                undefined,
+                undefined
+            );
+        });
+
+        it('should leave a typed name that was never picked from the suggestion list as plain text', async () => {
+            const room = createMockRoom();
+            useRoomContextMock.mockReturnValue(room);
+
+            const store = createStore();
+            store.dispatch(mergeParticipantDecryptedNameMap({ [ALICE]: 'Alice Nguyen' }));
+            store.dispatch(setSortedParticipantIdentities([ALICE]));
+
+            const composeChatMessage = vi.fn().mockResolvedValue(composeResult());
+            const client = createMeetCoreClient({ composeChatMessage });
+
+            const { result } = renderHook(() => useChatMessage(), { wrapper: createWrapper(store, client) });
+
+            await act(async () => {
+                await result.current.sendMessage('@Alice Nguyen confirm the date?');
+            });
+
+            expect(composeChatMessage).toHaveBeenCalledWith('@Alice Nguyen confirm the date?', undefined, undefined);
+        });
+
+        it('should apply the character limit to the stored tokens rather than the displayed names', async () => {
+            const room = createMockRoom();
+            useRoomContextMock.mockReturnValue(room);
+
+            const store = createStore();
+            const composeChatMessage = vi.fn().mockResolvedValue(composeResult());
+            const client = createMeetCoreClient({ composeChatMessage });
+
+            const { result } = renderHook(() => useChatMessage(), { wrapper: createWrapper(store, client) });
+
+            const token = getMentionToken(ALICE);
+            const content = `${token} ${'a'.repeat(CHAT_MESSAGE_MAX_LENGTH - token.length)}`;
+
+            let returnValue: boolean | undefined;
+            await act(async () => {
+                returnValue = await result.current.sendMessage(content);
+            });
+
+            expect(returnValue).toBe(false);
+            expect(composeChatMessage).not.toHaveBeenCalled();
+            expect(createNotification).toHaveBeenCalledWith(
+                expect.objectContaining({ key: 'chat-message-too-long', type: 'error' })
+            );
+        });
+
+        it('should send a message whose tokens bring it exactly to the limit', async () => {
+            const room = createMockRoom();
+            useRoomContextMock.mockReturnValue(room);
+
+            const store = createStore();
+            const composeChatMessage = vi.fn().mockResolvedValue(composeResult());
+            const client = createMeetCoreClient({ composeChatMessage });
+
+            const { result } = renderHook(() => useChatMessage(), { wrapper: createWrapper(store, client) });
+
+            const token = getMentionToken(ALICE);
+            const content = `${token} ${'a'.repeat(CHAT_MESSAGE_MAX_LENGTH - token.length - 1)}`;
+
+            let returnValue: boolean | undefined;
+            await act(async () => {
+                returnValue = await result.current.sendMessage(content);
+            });
+
+            expect(returnValue).toBe(true);
         });
 
         it('should retry publishing and mark the message as sent once publishing succeeds', async () => {
