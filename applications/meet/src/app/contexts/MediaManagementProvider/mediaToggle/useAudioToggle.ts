@@ -24,7 +24,6 @@ import type { AudioTrackProcessor } from '../../../processors/noise-cancellation
 import { useNoiseCancellationModel } from '../../../processors/noise-cancellation/useNoiseCancellationModel';
 import { audioQuality } from '../../../qualityConstants';
 import type { AudioToggleParams, SwitchActiveDevice, ToggleAudioType } from '../../../types';
-import { outputlessAudioContextOptions } from '../../../utils/browser';
 import { getPersistedNoiseFilter, persistNoiseFilter } from '../../../utils/noiseFilterPersistence';
 
 const TOGGLE_TIMEOUT_MS = 8000;
@@ -173,14 +172,16 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         // hence the readback in attachNoiseFilter below.
         // @ts-ignore - webkitAudioContext is not available in all browsers
         const Ctor = (window.AudioContext || window.webkitAudioContext) as typeof AudioContext;
-        // This context only processes the mic, it never plays anything.
-        const options = outputlessAudioContextOptions(requiredSampleRate ? { sampleRate: requiredSampleRate } : {});
+        // This context only processes the mic, but it is left on an output device so an audio hardware
+        // clock drives it. The worklet feeds the published track and has a frame budget to hit, and a
+        // context with no output device has no hardware callback pacing it. Nothing is connected to
+        // its destination, so it stays silent.
+        const options = requiredSampleRate ? { sampleRate: requiredSampleRate } : {};
         const ctx = new Ctor(options);
         audioContext.current = ctx;
         debugLog('noiseFilter:audio-context-created', {
             sampleRate: ctx.sampleRate,
             filter: noiseCancellationModel.id,
-            outputless: 'sinkId' in options,
         });
         return ctx;
     };
