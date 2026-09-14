@@ -354,6 +354,7 @@ enum MeetFeatureFlag {
     MeetUseCachedServerTime = 'MeetUseCachedServerTime',
     MeetBackgroundEffectsOnMobileBrowsers = 'MeetBackgroundEffectsOnMobileBrowsers',
     MeetParticipantsLayouts = 'MeetParticipantsLayouts',
+    MeetCpuOptimizations = 'MeetCpuOptimizations',
 }
 
 enum LumoFeatureFlag {
