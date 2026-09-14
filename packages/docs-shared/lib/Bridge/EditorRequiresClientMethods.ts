@@ -129,6 +129,6 @@ export interface EditorRequiresClientMethods {
   getDocumentUrl(): Promise<string>
   replaceDocumentUrl(url: string): Promise<void>
 
-  reportSheetsYjsDriftDetected(reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs'): void
+  reportSheetsYjsDriftDetected(reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs' | 'both'): void
   showYjsDriftDetectedErrorModal(driftLogDetails: Record<string, unknown>): void
 }

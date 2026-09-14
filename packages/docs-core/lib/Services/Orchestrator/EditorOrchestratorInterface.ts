@@ -62,6 +62,6 @@ export interface EditorOrchestratorInterface {
   storeSpreadsheetAction(type: SheetsActionType, content: unknown): Promise<void>
   hasBasePatches(): Promise<boolean>
 
-  reportSheetsYjsDriftDetected(reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs'): void
+  reportSheetsYjsDriftDetected(reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs' | 'both'): void
   showYjsDriftDetectedErrorModal(driftLogDetails: Record<string, unknown>): void
 }

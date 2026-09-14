@@ -298,7 +298,7 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     return this.editor.hasBasePatches()
   }
 
-  reportSheetsYjsDriftDetected(reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs'): void {
+  reportSheetsYjsDriftDetected(reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs' | 'both'): void {
     metrics.docs_sheets_yjs_drift_detected_total.increment({
       reason,
     })
