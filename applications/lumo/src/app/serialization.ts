@@ -13,7 +13,7 @@ import {
     decryptUint8Array,
     encryptString,
     encryptUint8Array,
-    unwrapAesKey,
+    unwrapAesKeyWithMasterKeys,
     wrapAesKey,
 } from './crypto';
 import type {AesGcmCryptoKey, AesKwCryptoKey} from './crypto/types';
@@ -137,6 +137,16 @@ function getUserSettingsAd(): AdString {
     return _adString;
 }
 
+export type MasterKeyContext = {
+    primary: AesKwCryptoKey;
+    legacy: AesKwCryptoKey[];
+};
+
+export type DeserializeSpaceResult = {
+    space: Space | null | undefined;
+    needsMasterKeyMigration: boolean;
+};
+
 export async function serializeSpace(space: Space, masterKey: AesKwCryptoKey): Promise<SerializedSpace> {
     const { spacePriv, spacePub, spaceKeyClear } = splitSpace(space);
 
@@ -162,12 +172,20 @@ export async function deserializeSpace(
     serializedSpace: SerializedSpace,
     masterKey: AesKwCryptoKey
 ): Promise<Space | null | undefined> {
+    const { space } = await deserializeSpaceWithMasterKeys(serializedSpace, { primary: masterKey, legacy: [] });
+    return space;
+}
+
+export async function deserializeSpaceWithMasterKeys(
+    serializedSpace: SerializedSpace,
+    masterKeys: MasterKeyContext
+): Promise<DeserializeSpaceResult> {
     try {
         const spacePub = getSpacePub(serializedSpace);
         const { encrypted, deleted } = serializedSpace;
 
         if (deleted === true) {
-            return null;
+            return { space: null, needsMasterKeyMigration: false };
         }
 
         const spaceKeyWrappedBase64 = serializedSpace.wrappedSpaceKey;
@@ -176,13 +194,18 @@ export async function deserializeSpace(
         }
 
         const spaceKeyWrappedBytes = Uint8Array.fromBase64(spaceKeyWrappedBase64);
-        const spaceKey = await unwrapAesKey(spaceKeyWrappedBytes, masterKey, true);
+        const { key: spaceKey, usedPrimaryMasterKey } = await unwrapAesKeyWithMasterKeys(
+            spaceKeyWrappedBytes,
+            masterKeys.primary,
+            masterKeys.legacy,
+            true
+        );
         const spaceKeyClear: SpaceKeyClear = { spaceKey: await cryptoKeyToBase64(spaceKey.encryptKey) };
 
         const ad = getSpaceAd(serializedSpace);
         const spaceDek = await getSpaceDek(spaceKeyClear);
         if (!spaceDek) {
-            return;
+            return { space: undefined, needsMasterKeyMigration: false };
         }
         let spacePriv = {};
         if (encrypted) {
@@ -193,13 +216,16 @@ export async function deserializeSpace(
             }
         }
         return {
-            ...spacePub,
-            ...spaceKeyClear,
-            ...spacePriv,
+            space: {
+                ...spacePub,
+                ...spaceKeyClear,
+                ...spacePriv,
+            },
+            needsMasterKeyMigration: !usedPrimaryMasterKey,
         };
     } catch (e) {
         safeLogger.warn(`Cannot deserialize space ${serializedSpace.id}: `, e);
-        return null;
+        return { space: null, needsMasterKeyMigration: false };
     }
 }
 
@@ -440,29 +466,49 @@ export async function serializeUserSettings(
     };
 }
 
+export type DeserializeUserSettingsResult = {
+    userSettings: LumoUserSettings | null;
+    needsMasterKeyMigration: boolean;
+};
+
 export async function deserializeUserSettings(
     serializedUserSettings: SerializedUserSettings,
     masterKey: AesKwCryptoKey
 ): Promise<LumoUserSettings | null> {
+    const { userSettings } = await deserializeUserSettingsWithMasterKeys(serializedUserSettings, {
+        primary: masterKey,
+        legacy: [],
+    });
+    return userSettings;
+}
+
+export async function deserializeUserSettingsWithMasterKeys(
+    serializedUserSettings: SerializedUserSettings,
+    masterKeys: MasterKeyContext
+): Promise<DeserializeUserSettingsResult> {
     try {
-        // Decode the combined data
         const combinedBytes = Uint8Array.fromBase64(serializedUserSettings.encrypted);
         const combined = msgpackDecode(combinedBytes) as {
             wrappedKey: string;
             encrypted: EncryptedData;
         };
 
-        // Unwrap the DEK
         const wrappedKeyBytes = Uint8Array.fromBase64(combined.wrappedKey);
-        const userSettingsDek = await unwrapAesKey(wrappedKeyBytes, masterKey);
+        const { key: userSettingsDek, usedPrimaryMasterKey } = await unwrapAesKeyWithMasterKeys(
+            wrappedKeyBytes,
+            masterKeys.primary,
+            masterKeys.legacy
+        );
 
-        // Decrypt the user settings data
         const ad = getUserSettingsAd();
         const userSettingsJson = await decryptString(combined.encrypted, userSettingsDek, ad);
 
-        return JSON.parse(userSettingsJson) as LumoUserSettings;
+        return {
+            userSettings: JSON.parse(userSettingsJson) as LumoUserSettings,
+            needsMasterKeyMigration: !usedPrimaryMasterKey,
+        };
     } catch (error) {
         safeLogger.warn('Failed to deserialize user settings:', error);
-        return null;
+        return { userSettings: null, needsMasterKeyMigration: false };
     }
 }

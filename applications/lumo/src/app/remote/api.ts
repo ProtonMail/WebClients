@@ -398,17 +398,22 @@ export class LumoApi {
     }
 
     // BE response dependent on FF
-    public async getMasterKey(): Promise<{ eligibility: number; key: Base64 | null }> {
+    public async getMasterKeys(): Promise<{ eligibility: number; keys: MasterKey[] }> {
         const data = await this.callListJson('masterkeys');
         const eligibility = data.Eligibility;
 
         if (eligibility !== LUMO_ELIGIBILITY.Eligible) {
-            return { eligibility, key: null };
+            return { eligibility, keys: [] };
         }
 
-        const keys = convertMasterKeysFromApi(data.MasterKeys);
+        return { eligibility, keys: convertMasterKeysFromApi(data.MasterKeys) };
+    }
 
-        if (keys.length === 0) {
+    /** @deprecated Prefer getMasterKeys — kept for callers that only need the latest envelope. */
+    public async getMasterKey(): Promise<{ eligibility: number; key: Base64 | null }> {
+        const { eligibility, keys } = await this.getMasterKeys();
+
+        if (eligibility !== LUMO_ELIGIBILITY.Eligible || keys.length === 0) {
             return { eligibility, key: null };
         }
 
@@ -416,9 +421,9 @@ export class LumoApi {
         return { eligibility, key: key.masterKey };
     }
 
-    private findBestKey(keys: []): undefined;
-    private findBestKey(keys: MasterKey[]): MasterKey;
-    private findBestKey(keys: MasterKey[]): MasterKey | undefined {
+    public findBestKey(keys: []): undefined;
+    public findBestKey(keys: MasterKey[]): MasterKey;
+    public findBestKey(keys: MasterKey[]): MasterKey | undefined {
         return keys.reduce((best: MasterKey | undefined, current: MasterKey) => {
             if (!best) return current;
             if (current.isLatest && !best.isLatest) {

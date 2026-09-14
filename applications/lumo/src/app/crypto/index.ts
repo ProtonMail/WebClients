@@ -207,6 +207,37 @@ export async function unwrapAesKey(
     }
 }
 
+export async function unwrapAesKeyWithMasterKeys(
+    encryptedKeyBytes: Uint8Array<ArrayBuffer>,
+    primaryMasterKey: AesKwCryptoKey,
+    legacyMasterKeys: AesKwCryptoKey[] = [],
+    extractable?: boolean
+): Promise<{ key: AesGcmCryptoKey; usedPrimaryMasterKey: boolean }> {
+    let primaryError: unknown;
+    try {
+        return {
+            key: await unwrapAesKey(encryptedKeyBytes, primaryMasterKey, extractable),
+            usedPrimaryMasterKey: true,
+        };
+    } catch (error) {
+        primaryError = error;
+        for (const legacyMasterKey of legacyMasterKeys) {
+            try {
+                return {
+                    key: await unwrapAesKey(encryptedKeyBytes, legacyMasterKey, extractable),
+                    usedPrimaryMasterKey: false,
+                };
+            } catch {
+                continue;
+            }
+        }
+    }
+
+    throw new Error('error while unwrapping aes key: no master key could unwrap this payload', {
+        cause: primaryError,
+    });
+}
+
 export async function computeSha256AsBase64(input: string, urlSafe: boolean = false): Promise<Base64> {
     const data = utf8StringToUint8Array(input);
     const hashBytes = await computeSHA256(data);

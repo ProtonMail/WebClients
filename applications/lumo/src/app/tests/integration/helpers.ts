@@ -267,7 +267,13 @@ export async function setupTestEnvironment({
 
     sagaMiddleware.run(rootSaga, { crashIfErrors: true });
 
-    dispatch(addMasterKey(masterKeyBase64));
+    dispatch(
+        addMasterKey({
+            primaryMasterKeyId: 'test',
+            primaryMasterKey: masterKeyBase64,
+            masterKeys: { test: masterKeyBase64 },
+        })
+    );
 
     const select = <T>(selector: LumoSelector<T>) => selector(store.getState());
 

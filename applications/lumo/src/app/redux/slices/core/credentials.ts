@@ -1,12 +1,12 @@
 import { createAction, createReducer } from '@reduxjs/toolkit';
 
-import type { Base64, Credentials } from '../../../types';
+import type { Credentials, MasterKeysBundle } from '../../../types';
 
 /**
- * Kept with its original name and payload on purpose: `takeEvery(addMasterKey, initAppSaga)`
+ * Kept with its original name on purpose: `takeEvery(addMasterKey, initAppSaga)`
  * (`redux/sagas/index.ts`) and `tests/integration/helpers.ts` both depend on this exact action.
  */
-export const addMasterKey = createAction<Base64>('lumo/credentials/addMasterKey');
+export const addMasterKey = createAction<MasterKeysBundle>('lumo/credentials/addMasterKey');
 
 /** The master key could not be fetched, decrypted, or minted. Terminal for this session. */
 export const masterKeyFailed = createAction<string>('lumo/credentials/masterKeyFailed');
@@ -29,7 +29,15 @@ const credentialsReducer = createReducer<Credentials>(initialState, (builder) =>
     builder
         .addCase(addMasterKey, (_state, action) => {
             console.log('Action triggered: addMasterKey');
-            return { masterKeyState: { status: 'ready', masterKey: action.payload } };
+            const { primaryMasterKeyId, primaryMasterKey, masterKeys } = action.payload;
+            return {
+                masterKeyState: {
+                    status: 'ready',
+                    primaryMasterKeyId,
+                    primaryMasterKey,
+                    masterKeys,
+                },
+            };
         })
         .addCase(masterKeyFailed, (_state, action) => {
             console.log('Action triggered: masterKeyFailed');
