@@ -2,11 +2,11 @@ import type { VisualCalendar } from './Calendar';
 
 export enum CALENDAR_SUBSCRIPTION_STATUS {
     OK = 0,
-    ERROR = 1,
+    // ERROR = 1,
     INVALID_ICS = 2,
-    CALENDAR_SOFT_DELETED = 3,
-    CALENDAR_NOT_FOUND = 4,
-    USER_NOT_EXIST = 5,
+    // CALENDAR_SOFT_DELETED = 3,
+    // CALENDAR_NOT_FOUND = 4,
+    // USER_NOT_EXIST = 5,
     ICS_SIZE_EXCEED_LIMIT = 6,
     SYNCHRONIZING = 7,
     CALENDAR_MISSING_PRIMARY_KEY = 8,

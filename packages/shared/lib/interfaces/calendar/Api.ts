@@ -28,7 +28,7 @@ export interface CalendarCreateArguments extends CalendarCreateData {
 
 export enum CALENDAR_ORDER_BY {
     ASCENDING = 0,
-    DESCENDING = 1,
+    // DESCENDING = 1,
 }
 
 export enum CALENDAR_RETURN_FLAGS {
