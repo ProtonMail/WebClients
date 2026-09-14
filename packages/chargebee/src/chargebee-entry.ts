@@ -75,7 +75,7 @@ export function toReportableError(error: any, stage?: string): any {
 
 const TIMEOUT_POLL_STEP = 500;
 
-export class ChargebeeStageTimeoutError extends Error {
+class ChargebeeStageTimeoutError extends Error {
     constructor(
         public readonly stage: string,
         public readonly elapsedMs: number

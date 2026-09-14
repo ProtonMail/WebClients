@@ -6,13 +6,6 @@ import type {
     CouponConfigMetadata,
 } from '@proton/payments/core/coupon-config/interface';
 
-export type {
-    CouponConfigMetadata,
-    CouponConfigProps,
-    CouponHideFlagsOnConfig,
-} from '@proton/payments/core/coupon-config/interface';
-export { isCouponConfigRequiredProps } from '@proton/payments/core/coupon-config/interface';
-
 type CouponConfigRequiredProps = CoreCouponConfigProps & {
     checkResult: NonNullable<CoreCouponConfigProps['checkResult']>;
 };

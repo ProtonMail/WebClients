@@ -89,11 +89,11 @@ export type ChargebeeSubmitEvent = {
     correlationId: string;
 } & ChargebeeSubmitEventPayload;
 
-export function isChargebeeSubmitEvent(event: any): event is ChargebeeSubmitEvent {
+function isChargebeeSubmitEvent(event: any): event is ChargebeeSubmitEvent {
     return event?.type === 'chargebee-submit';
 }
 
-export type OnSubmitHandler = (
+type OnSubmitHandler = (
     event: ChargebeeSubmitEvent,
     sendResponseToParent: SendResponseToParent<ChargebeeSubmitEventResponse>
 ) => void;
@@ -104,7 +104,7 @@ export type SetPaypalPaymentIntentEvent = {
     paypalButtonHeight?: number;
 } & ChargebeeSubmitEventPayload;
 
-export function isSetPaypalPaymentIntentEvent(event: any): event is SetPaypalPaymentIntentEvent {
+function isSetPaypalPaymentIntentEvent(event: any): event is SetPaypalPaymentIntentEvent {
     return event?.type === 'set-paypal-payment-intent';
 }
 
@@ -115,7 +115,7 @@ export type GetHeightEvent = {
     correlationId: string;
 };
 
-export function isGetHeightEvent(event: any): event is GetHeightEvent {
+function isGetHeightEvent(event: any): event is GetHeightEvent {
     return event?.type === 'get-height';
 }
 
@@ -131,7 +131,7 @@ export type GetBinEvent = {
     correlationId: string;
 };
 
-export function isGetBinEvent(event: any): event is GetBinEvent {
+function isGetBinEvent(event: any): event is GetBinEvent {
     return event?.type === 'get-bin';
 }
 
@@ -144,7 +144,7 @@ export type ValidateFormEvent = {
     correlationId: string;
 };
 
-export function isValidateFormEvent(event: any): event is ValidateFormEvent {
+function isValidateFormEvent(event: any): event is ValidateFormEvent {
     return event?.type === 'validate-form';
 }
 
@@ -162,7 +162,7 @@ export type VerifySavedCardEvent = {
     correlationId: string;
 } & ChargebeeVerifySavedCardEventPayload;
 
-export function isVerifySavedCardEvent(event: any): event is VerifySavedCardEvent {
+function isVerifySavedCardEvent(event: any): event is VerifySavedCardEvent {
     return event?.type === verifySavedCardMessageType;
 }
 
@@ -173,7 +173,7 @@ export type OnVerifySavedCardHandler = (
 
 // ChangeRenderModeEvent
 
-export const changeRenderModeMessageType = 'change-render-mode';
+const changeRenderModeMessageType = 'change-render-mode';
 
 export type ChangeRenderModeEvent = {
     type: typeof changeRenderModeMessageType;
@@ -181,7 +181,7 @@ export type ChangeRenderModeEvent = {
     renderMode: CardFormRenderMode;
 };
 
-export function isChangeRenderModeEvent(event: any): event is ChangeRenderModeEvent {
+function isChangeRenderModeEvent(event: any): event is ChangeRenderModeEvent {
     return event?.type === changeRenderModeMessageType;
 }
 
@@ -192,28 +192,28 @@ export type OnChangeRenderModeHandler = (
 
 // UpdateFieldsEvent
 
-export const updateFieldsMessageType = 'update-fields';
+const updateFieldsMessageType = 'update-fields';
 
-export type UpdateFieldsEvent = {
+type UpdateFieldsEvent = {
     type: typeof updateFieldsMessageType;
     correlationId: string;
 } & UpdateFieldsPayload;
 
-export function isUpdateFieldsEvent(event: any): event is UpdateFieldsEvent {
+function isUpdateFieldsEvent(event: any): event is UpdateFieldsEvent {
     return event?.type === updateFieldsMessageType;
 }
 
 export type OnUpdateFieldsHandler = (event: UpdateFieldsEvent, sendResponseToParent: SendResponseToParent<{}>) => void;
 
 // onDirectDebitSubmit handler
-export const directDebitSubmitMessageType = 'direct-debit-submit';
+const directDebitSubmitMessageType = 'direct-debit-submit';
 
 export type DirectDebitSubmitEvent = {
     type: typeof directDebitSubmitMessageType;
     correlationId: string;
 } & ChargebeeSubmitDirectDebitEventPayload;
 
-export function isDirectDebitSubmitEvent(event: any): event is DirectDebitSubmitEvent {
+function isDirectDebitSubmitEvent(event: any): event is DirectDebitSubmitEvent {
     return event?.type === directDebitSubmitMessageType;
 }
 
@@ -222,7 +222,7 @@ export type OnDirectDebitSubmitHandler = (
     sendResponseToParent: SendResponseToParent<{}>
 ) => void;
 
-export const setApplePayPaymentIntentMessageType = 'set-apple-pay-payment-intent';
+const setApplePayPaymentIntentMessageType = 'set-apple-pay-payment-intent';
 
 export type SetApplePayPaymentIntentEvent = {
     type: typeof setApplePayPaymentIntentMessageType;
@@ -230,7 +230,7 @@ export type SetApplePayPaymentIntentEvent = {
     applePayButtonHeight?: number;
 } & ChargebeeSubmitEventPayload;
 
-export function isSetApplePayPaymentIntentEvent(event: any): event is SetApplePayPaymentIntentEvent {
+function isSetApplePayPaymentIntentEvent(event: any): event is SetApplePayPaymentIntentEvent {
     return event?.type === setApplePayPaymentIntentMessageType;
 }
 
@@ -239,22 +239,22 @@ export type OnSetApplePayPaymentIntentHandler = (
     sendResponseToParent: SendResponseToParent<void>
 ) => void;
 
-export type GetCanMakePaymentsWithActiveCardEvent = {
+type GetCanMakePaymentsWithActiveCardEvent = {
     type: 'get-can-make-payments-with-active-card';
     correlationId: string;
     applePayCapabilitiesEnabled?: boolean;
 };
 
-export function isGetCanMakePaymentsWithActiveCardEvent(event: any): event is GetCanMakePaymentsWithActiveCardEvent {
+function isGetCanMakePaymentsWithActiveCardEvent(event: any): event is GetCanMakePaymentsWithActiveCardEvent {
     return event?.type === 'get-can-make-payments-with-active-card';
 }
 
-export type OnGetCanMakePaymentsWithActiveCardHandler = (
+type OnGetCanMakePaymentsWithActiveCardHandler = (
     event: GetCanMakePaymentsWithActiveCardEvent,
     sendResponseToParent: SendResponseToParent<ApplePayAvailability>
 ) => void;
 
-export const setGooglePayPaymentIntentMessageType = 'set-google-pay-payment-intent';
+const setGooglePayPaymentIntentMessageType = 'set-google-pay-payment-intent';
 
 export type SetGooglePayPaymentIntentEvent = {
     type: typeof setGooglePayPaymentIntentMessageType;
@@ -262,7 +262,7 @@ export type SetGooglePayPaymentIntentEvent = {
     googlePayButtonHeight?: number;
 } & ChargebeeSubmitEventPayload;
 
-export function isSetGooglePayPaymentIntentEvent(event: any): event is SetGooglePayPaymentIntentEvent {
+function isSetGooglePayPaymentIntentEvent(event: any): event is SetGooglePayPaymentIntentEvent {
     return event?.type === setGooglePayPaymentIntentMessageType;
 }
 
@@ -281,9 +281,9 @@ export type OnSetIdealPaymentIntentHandler = (
     sendResponseToParent: SendResponseToParent<void>
 ) => void;
 
-export const setIdealPaymentIntentMessageType = 'set-ideal-payment-intent';
+const setIdealPaymentIntentMessageType = 'set-ideal-payment-intent';
 
-export function isSetIdealPaymentIntentEvent(event: any): event is SetIdealPaymentIntentEvent {
+function isSetIdealPaymentIntentEvent(event: any): event is SetIdealPaymentIntentEvent {
     return event?.type === setIdealPaymentIntentMessageType;
 }
 
