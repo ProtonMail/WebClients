@@ -5,6 +5,9 @@ import { c } from 'ttag';
 import Collapsible from '@proton/components/components/collapsible/Collapsible';
 import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
 import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
+import { IcAlias } from '@proton/icons/icons/IcAlias';
+import { IcEarth } from '@proton/icons/icons/IcEarth';
+import { IcLocks } from '@proton/icons/icons/IcLocks';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
@@ -33,7 +36,7 @@ export const MonitorLearnMore: FC = () => {
     const learnMore: LearnMoreProps[] = useMemo(
         () => [
             {
-                icon: 'earth',
+                icon: IcEarth,
                 title: c('Title').t`What is the dark web?`,
                 description: c('Description')
                     .t`The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.`,
@@ -41,7 +44,7 @@ export const MonitorLearnMore: FC = () => {
                 ctaAction: () => onLink('https://proton.me/blog/what-is-dark-web'),
             },
             {
-                icon: 'alias',
+                icon: IcAlias,
                 iconClassName: SubTheme.TEAL,
                 title: c('Title').t`What is an alias?`,
                 description: c('Description')
@@ -50,7 +53,7 @@ export const MonitorLearnMore: FC = () => {
                 ctaAction: () => onLink('https://proton.me/pass/aliases'),
             },
             {
-                icon: 'locks',
+                icon: IcLocks,
                 iconClassName: SubTheme.VIOLET,
                 title: c('Title').t`Set up 2FA for better security`,
                 description: c('Description')
