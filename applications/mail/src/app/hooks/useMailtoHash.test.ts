@@ -176,4 +176,67 @@ describe('useMailtoHash', () => {
         renderHook(() => useMailtoHash({ isSearch: false }));
         expect(mockReturn).toHaveBeenCalledWith(decodedMailTo);
     });
+
+    it('Should reopen the composer when the hash is cleared and the same mailto returns', () => {
+        const mailto = 'mailto:hello@test.com';
+        mockHash(`#mailto=${mailto}`);
+
+        const { rerender } = renderHook(() => useMailtoHash({ isSearch: false }));
+        expect(mockReturn).toHaveBeenCalledTimes(1);
+
+        mockHash('');
+        rerender();
+
+        mockHash(`#mailto=${mailto}`);
+        rerender();
+
+        expect(mockReturn).toHaveBeenCalledTimes(2);
+        expect(mockReturn).toHaveBeenLastCalledWith(mailto);
+    });
+
+    it('Should reopen the composer when hash changes to a non-mailto hash and the same mailto returns', () => {
+        const mailto = 'mailto:hello@test.com';
+        mockHash(`#mailto=${mailto}`);
+
+        const { rerender } = renderHook(() => useMailtoHash({ isSearch: false }));
+        expect(mockReturn).toHaveBeenCalledTimes(1);
+
+        mockHash('#_refresh_1234567890');
+        rerender();
+
+        mockHash(`#mailto=${mailto}`);
+        rerender();
+
+        expect(mockReturn).toHaveBeenCalledTimes(2);
+        expect(mockReturn).toHaveBeenLastCalledWith(mailto);
+    });
+
+    it('Should not reopen the composer when the hash changes between two category variants of the same mailto', () => {
+        const mailto = 'mailto:hello@test.com';
+        mockHash(`#mailto=${mailto}`);
+
+        const { rerender } = renderHook(() => useMailtoHash({ isSearch: false }));
+        expect(mockReturn).toHaveBeenCalledTimes(1);
+
+        mockHash(`#category=primary&mailto=${mailto}`);
+        rerender();
+        expect(mockReturn).toHaveBeenCalledTimes(1);
+
+        mockHash(`#category=social&mailto=${mailto}`);
+        rerender();
+        expect(mockReturn).toHaveBeenCalledTimes(1);
+    });
+
+    it('Should not reopen the composer when the effect re-fires with the same mailto hash', () => {
+        const mailto = 'mailto:hello@test.com';
+        mockHash(`#mailto=${mailto}`);
+
+        const { rerender } = renderHook(() => useMailtoHash({ isSearch: false }));
+        expect(mockReturn).toHaveBeenCalledTimes(1);
+
+        useOnMailToMock.mockReturnValue(jest.fn());
+        rerender();
+
+        expect(mockReturn).toHaveBeenCalledTimes(1);
+    });
 });
