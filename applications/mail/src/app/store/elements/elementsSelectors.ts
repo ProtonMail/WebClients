@@ -416,9 +416,11 @@ export const placeholderCount = createSelector(
 );
 
 export const selectLoading = createSelector(
-    [beforeFirstLoad, pendingRequest, shouldLoadElements, invalidated],
-    (beforeFirstLoad, pendingRequest, shouldLoadElements, invalidated) =>
-        (beforeFirstLoad || pendingRequest || shouldLoadElements) && !invalidated
+    [beforeFirstLoad, pendingRequest, shouldLoadElements, invalidated, pageCached],
+    (beforeFirstLoad, pendingRequest, shouldLoadElements, invalidated, pageCached) =>
+        // `shouldLoadElements` stops requesting a retry once MAX_ELEMENT_LOAD_RETRIES is reached, but that shouldn't
+        // make us treat a page we never successfully fetched (e.g. because we're offline) as confirmed empty.
+        (beforeFirstLoad || pendingRequest || shouldLoadElements || !pageCached) && !invalidated
 );
 
 export const totalReturned = createSelector([contextTotal, dynamicTotal], (contextTotal, dynamicTotal) => {
