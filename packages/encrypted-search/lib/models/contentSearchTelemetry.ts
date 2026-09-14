@@ -39,6 +39,9 @@ export const SEARCH_RESULT_SCROLLER_MODE: ContentSearchScrollerMode = 'message';
 
 export type ContentSearchPrimaryMatchType = 'sender' | 'subject' | 'body' | 'unknown';
 
+/** No per-field match info is tracked for search results today, on either engine. */
+export const SEARCH_RESULT_PRIMARY_MATCH_TYPE: ContentSearchPrimaryMatchType = 'unknown';
+
 export type ContentSearchResultAction =
     'reply' | 'delete' | 'forward' | 'move' | 'label' | 'star' | 'unstar' | 'read' | 'unread' | 'other';
 
@@ -52,3 +55,5 @@ export type ContentSearchEndReason = 'newSearch' | 'clearField' | 'navigation';
  * values reported by `sendResultActionReport` (opening has its own `result_opened` event).
  */
 export type ContentSearchSessionActionType = ContentSearchResultAction | 'open';
+
+export type ContentSearchSearchSource = 'local' | 'remote' | 'hybrid';
