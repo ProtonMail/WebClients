@@ -252,3 +252,12 @@ export function referencedFileNamesWithContent(
 
     return names;
 }
+
+/**
+ * Skip broad project RAG when the user @mentioned specific files — auto-matched search
+ * results would add noise and burn context. Plain attachments don't suppress retrieval,
+ * since a user can attach a file while still asking a project-wide question.
+ */
+export function shouldSkipRagForExplicitFiles(content: string): boolean {
+    return parseFileReferences(content).length > 0;
+}

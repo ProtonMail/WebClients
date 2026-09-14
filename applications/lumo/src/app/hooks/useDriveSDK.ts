@@ -164,26 +164,30 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized
                     await clearCache();
                 }
 
-                let maybeRootFolderNode;
-                try {
-                    maybeRootFolderNode = await drive.getMyFilesRootFolder();
-                } catch (rootError) {
-                    if (isVolumeAlreadyActiveError(rootError)) {
-                        maybeRootFolderNode = await drive.getMyFilesRootFolder();
-                    } else {
-                        throw rootError;
-                    }
-                }
-                const { node: rootFolderNode } = getNodeEntity(maybeRootFolderNode);
-
                 const children: DriveNode[] = [];
+                let targetFolderUid = folderUid;
+
+                if (!targetFolderUid) {
+                    let maybeRootFolderNode;
+                    try {
+                        maybeRootFolderNode = await drive.getMyFilesRootFolder();
+                    } catch (rootError) {
+                        if (isVolumeAlreadyActiveError(rootError)) {
+                            maybeRootFolderNode = await drive.getMyFilesRootFolder();
+                        } else {
+                            throw rootError;
+                        }
+                    }
+                    const { node: rootFolderNode } = getNodeEntity(maybeRootFolderNode);
+                    targetFolderUid = rootFolderNode.uid;
+                }
 
                 // Create a new AbortController for each request
                 const abortController = new AbortController();
 
                 // Use the drive.iterateFolderChildren method
                 for await (const maybeNode of drive.iterateFolderChildren(
-                    folderUid || rootFolderNode.uid,
+                    targetFolderUid,
                     undefined,
                     abortController.signal
                 )) {
@@ -202,7 +206,7 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized
                 }
 
                 const currentFolder: DriveNode = {
-                    nodeUid: folderUid || rootFolderNode.uid,
+                    nodeUid: targetFolderUid,
                     name: folderUid ? c('Title').t`Folder` : c('Title').t`My Files`,
                     type: NodeType.Folder,
                     parentUid: undefined,
