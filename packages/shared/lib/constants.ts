@@ -90,6 +90,7 @@ export const APPS = {
     PROTONAUTHENTICATOR: 'proton-authenticator',
     PROTONMEET: 'proton-meet',
     PROTONSPACES: 'proton-spaces',
+    PROTONCONSOLE: 'proton-console',
 } as const;
 
 interface AppConfiguration {
@@ -350,6 +351,17 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         icon: 'brand-proton',
         settingsSlug: 'spaces',
         product: Product.Spaces,
+    },
+    [APPS.PROTONCONSOLE]: {
+        publicPath: '',
+        subdomain: 'console',
+        name: 'Proton Console',
+        bareName: 'Console',
+        // TODO: Use a dedicated client ID once the API knows a dedicated console client (web-console).
+        clientID: 'web-account',
+        icon: 'brand-proton',
+        settingsSlug: '',
+        product: Product.Console,
     },
 };
 

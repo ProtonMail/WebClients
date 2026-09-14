@@ -31,6 +31,7 @@ const {
     PROTONMEET,
     PROTONAUTHENTICATOR,
     PROTONSPACES,
+    PROTONCONSOLE,
 } = APPS;
 
 export type { LogoVariant };
@@ -45,7 +46,8 @@ const Logo = ({ appName, fallback = null, ...rest }: LogoProps) => {
         return <AccountLogo {...rest} />;
     }
 
-    if (appName === PROTONMAIL) {
+    // TODO: Remove PROTONCONSOLE once we have a proper logo for it
+    if (appName === PROTONMAIL || appName === PROTONCONSOLE) {
         return <MailLogo {...rest} />;
     }
 
