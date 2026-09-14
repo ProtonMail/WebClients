@@ -1,4 +1,5 @@
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { IcFolders } from '@proton/icons/icons/IcFolders';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -47,7 +48,7 @@ const ItemLocation = ({
             {
                 to: infos.map((info) => info.to).join(','),
                 name: infos.map((info) => info.name).join(', '),
-                icon: 'folders',
+                icon: IcFolders,
             },
         ];
     }
