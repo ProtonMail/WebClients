@@ -9,6 +9,28 @@ export function isPlanEnabled(plan: Plan): boolean {
 }
 
 /**
+ * Map a deprecated plan name onto the plan that replaced it. The old VPN Plus plan (`vpn2022`) is no
+ * longer returned by the plans API, so anything still carrying that name has to be translated to
+ * `vpn2024` before it is used to look up a plan.
+ *
+ * This is the reporting-free half of `fixPlanName` in @proton/payments, which wraps it with a Sentry
+ * capture for the cases where a deprecated name arriving is genuinely unexpected.
+ */
+export function correctDeprecatedPlanName(planName: PLANS): PLANS;
+export function correctDeprecatedPlanName(planName: string): string;
+export function correctDeprecatedPlanName(planName: PLANS | undefined): PLANS | undefined;
+export function correctDeprecatedPlanName(planName: string | undefined): string | undefined;
+export function correctDeprecatedPlanName(planName: string | null): string | null;
+export function correctDeprecatedPlanName(planName: string | null | undefined): string | null | undefined;
+export function correctDeprecatedPlanName(planName: string | null | undefined): string | null | undefined {
+    if (planName === PLANS.VPN) {
+        return PLANS.VPN2024;
+    }
+
+    return planName;
+}
+
+/**
  * Get the plan name from the planIDs object. Useful when you have object like { [PLANS.MAIL]: 1 }.
  *
  * Examples:

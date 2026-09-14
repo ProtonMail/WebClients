@@ -73,36 +73,13 @@ export function captureWrongPlanIDs(
 }
 
 /**
- * Correct outdated plan names to the relevant ones.
- *
- * @param planName - The plan name to correct.
- * @param source - The source of the plan name. In other words, in what context the plan name is used.
- * This is helpful for debugging.
- * @returns The corrected plan name.
- */
-export function fixPlanName(planName: PLANS, source: string): PLANS;
-export function fixPlanName(planName: string, source: string): string;
-export function fixPlanName(planName: PLANS | undefined, source: string): PLANS | undefined;
-export function fixPlanName(planName: string | undefined, source: string): string | undefined;
-export function fixPlanName(planName: string | null, source: string): string | null;
-export function fixPlanName(planName: string | null | undefined, source: string): string | null | undefined {
-    if (planName === PLANS.VPN) {
-        captureWrongPlanName(planName, { source });
-        return PLANS.VPN2024;
-    }
-
-    return planName;
-}
-
-/**
- * Correct outdated plan IDs to the relevant ones. A sister function to `fixPlanName`.
+ * Correct outdated plan IDs to the relevant ones. The plan IDs counterpart of
+ * `correctDeprecatedPlanName`.
  *
  * @param planIDs - The plan IDs to correct.
- * @param source - The source of the plan IDs. In other words, in what context the plan IDs are used.
- * This is helpful for debugging.
  * @returns The corrected plan IDs.
  */
-export function fixPlanIDs(planIDs: PlanIDs | undefined, source: string): PlanIDs | undefined {
+export function fixPlanIDs(planIDs: PlanIDs | undefined): PlanIDs | undefined {
     try {
         // if we don't have the deprecated VPN plan then we don't have anything to fix and can return early
         if (!planIDs || !planIDs[PLANS.VPN]) {
@@ -113,8 +90,6 @@ export function fixPlanIDs(planIDs: PlanIDs | undefined, source: string): PlanID
 
         delete planIDsCopy[PLANS.VPN];
         planIDsCopy[PLANS.VPN2024] = 1;
-
-        captureWrongPlanIDs(planIDsCopy, { source });
 
         return planIDsCopy;
     } catch {
