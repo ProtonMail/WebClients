@@ -57,12 +57,6 @@ export const updateAutoSaveContacts = (AutoSaveContacts: number) => ({
     data: { AutoSaveContacts },
 });
 
-export const updateTheme = (Theme: string | number) => ({
-    url: 'mail/v4/settings/theme',
-    method: 'put',
-    data: { Theme },
-});
-
 export const updatePMSignature = (PMSignature: number) => ({
     url: 'mail/v4/settings/pmsignature',
     method: 'put',
@@ -79,12 +73,6 @@ export const updateComposerMode = (ComposerMode: number) => ({
     url: 'mail/v4/settings/composermode',
     method: 'put',
     data: { ComposerMode },
-});
-
-export const updateMessageButtons = (MessageButtons: number) => ({
-    url: 'mail/v4/settings/messagebuttons',
-    method: 'put',
-    data: { MessageButtons },
 });
 
 export const updateViewMode = (ViewMode: number) => ({

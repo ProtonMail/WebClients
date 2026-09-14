@@ -82,24 +82,6 @@ export const getMessage = (messageID: string) => ({
     url: `mail/v4/messages/${messageID}`,
 });
 
-interface SendMessageData {
-    AutoSaveContacts: number;
-    DelaySeconds?: number;
-    DeliveryTime?: number;
-    ExpirationTime?: number;
-    ExpiresIn?: number;
-    Packages: PackageDirect[];
-}
-
-export const sendMessage = (
-    messageID: string,
-    { ExpirationTime, ExpiresIn, AutoSaveContacts, Packages, DelaySeconds = 0, DeliveryTime }: SendMessageData
-) => ({
-    method: 'post',
-    url: `mail/v4/messages/${messageID}`,
-    data: { ExpirationTime, ExpiresIn, AutoSaveContacts, Packages, DelaySeconds, DeliveryTime },
-});
-
 export const sendMessageForm = (messageID: string, data: any, sendingFrom?: string) => ({
     method: 'post',
     url: `mail/v4/messages/${messageID}`,
@@ -158,17 +140,6 @@ export const updateDraft = (messageID: string, { Message, AttachmentKeyPackets }
     data: { Message, AttachmentKeyPackets },
 });
 
-export const updateBody = (messageID: string, data: { Body: string }) => ({
-    method: 'post',
-    url: `mail/v4/messages/${messageID}/body`,
-    data,
-});
-
-export const markAsBroken = (messageID: string) => ({
-    method: 'put',
-    url: `mail/v4/messages/${messageID}/mark/broken`,
-});
-
 export const readReceipt = (messageID: string) => ({
     method: 'post',
     url: `mail/v4/messages/${messageID}/receipt`,
@@ -218,12 +189,6 @@ export const deleteMessages = (IDs: string[], CurrentLabelID?: string) => ({
     method: 'put',
     url: 'mail/v4/messages/delete',
     data: { IDs, CurrentLabelID },
-});
-
-export const undeleteMessages = (IDs: string[]) => ({
-    method: 'put',
-    url: 'mail/v4/messages/undelete',
-    data: { IDs },
 });
 
 export const labelMessages = ({
@@ -286,16 +251,4 @@ export const cancelSend = (messageID: string) => ({
 export const forceSend = (messageID: string) => ({
     method: 'post',
     url: `mail/v4/messages/${messageID}/force_send`,
-});
-
-export const unsubscribeMessages = (IDs: string[]) => ({
-    method: 'post',
-    url: 'mail/v4/messages/unsubscribe',
-    data: { IDs },
-});
-
-export const setExpiration = (IDs: string[], ExpirationTime: number | null) => ({
-    method: 'put',
-    url: 'mail/v4/messages/expire',
-    data: { IDs, ExpirationTime },
 });

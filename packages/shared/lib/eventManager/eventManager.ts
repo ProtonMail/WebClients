@@ -39,14 +39,15 @@ type EventManagerConfigBase<EventResult> = {
 
 type EventManagerConfig<EventResult> = EventManagerConfigBase<EventResult> &
     /** Initial event ID to begin from */
-    (| { eventID: string; getLatestEventID?: GetLatestEventID }
+    (
+        | { eventID: string; getLatestEventID?: GetLatestEventID }
         | {
               eventID?: string;
               getLatestEventID: GetLatestEventID;
           }
     );
 
-export type SubscribeFn<Arguments extends any[], R = void> = (listener: Listener<Arguments, R>) => () => void;
+type SubscribeFn<Arguments extends any[], R = void> = (listener: Listener<Arguments, R>) => () => void;
 
 export type EventManager<EventResult> = {
     setEventID: (eventID: string) => void;

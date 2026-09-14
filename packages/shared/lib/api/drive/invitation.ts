@@ -48,25 +48,6 @@ export const queryDeleteInvitation = (shareID: string, invitationID: string) => 
     url: `drive/v2/shares/${shareID}/invitations/${invitationID}`,
 });
 
-//TODO: Add pagination
-export const queryShareInvitationsListing = (volumeId: string, shareId: string) => ({
-    method: 'get',
-    url: `drive/v2/volumes/${volumeId}/shares/${shareId}/invitations`,
-});
-
-//TODO: Add pagination
-export const queryShareInvitationDetails = (
-    volumeId: string,
-    shareId: string,
-    { InvitationIDs }: { InvitationIDs: string[] }
-) => ({
-    method: 'post',
-    url: `drive/v2/volumes/${volumeId}/shares/${shareId}/invitations`,
-    data: {
-        InvitationIDs,
-    },
-});
-
 export const queryUpdateInvitationPermissions = (
     shareId: string,
     invitationId: string,

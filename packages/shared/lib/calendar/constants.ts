@@ -30,7 +30,7 @@ export enum CALENDAR_PERMISSIONS {
     AVAILABILITY = 64,
 }
 
-export enum ATTENDEE_PERMISSIONS {
+enum ATTENDEE_PERMISSIONS {
     SEE = 1,
     INVITE = 2,
     SEE_AND_INVITE = 3,
@@ -295,12 +295,10 @@ export const TITLE_INPUT_ID = 'event-title-input';
 export const FREQUENCY_INPUT_ID = 'event-frequency-input';
 export const LOCATION_INPUT_ID = 'event-location-input';
 export const NOTIFICATION_INPUT_ID = 'event-notification-input';
-export const VIDEO_CONFERENCE_INPUT_ID = 'event-video-conference-input';
 export const CALENDAR_INPUT_ID = 'event-calendar-input';
 export const DESCRIPTION_INPUT_ID = 'event-description-input';
 export const DATE_INPUT_ID = 'event-date-input';
 export const PARTICIPANTS_INPUT_ID = 'event-participants-input';
-export const MEMBERS_INPUT_ID = 'shared-members-input';
 
 export enum IMPORT_ERROR_TYPE {
     NO_FILE_SELECTED = 'NO_FILE_SELECTED',
@@ -343,10 +341,10 @@ export const CALENDAR_ENCRYPTED_FIELDS = ['uid', 'dtstamp', 'comment'] as const;
 export const USER_SIGNED_FIELDS = ['uid', 'dtstamp'] as const;
 export const USER_ENCRYPTED_FIELDS = [] as const;
 
-export const ATTENDEES_SIGNED_FIELDS = [] as const;
-export const ATTENDEES_ENCRYPTED_FIELDS = ['uid', 'attendee'] as const;
+const ATTENDEES_SIGNED_FIELDS = [] as const;
+const ATTENDEES_ENCRYPTED_FIELDS = ['uid', 'attendee'] as const;
 
-export const VIDEO_CONFERENCING_FIELDS = ['encryptedTitle'] as const;
+const VIDEO_CONFERENCING_FIELDS = ['encryptedTitle'] as const;
 
 export const REQUIRED_SET = new Set(['uid', 'dtstamp'] as const);
 

@@ -10,7 +10,7 @@ const { SEND_PM, SEND_EO, SEND_CLEAR, SEND_PGP_INLINE, SEND_PGP_MIME } = PACKAGE
  * Logic for determining the PGP scheme to be used when sending to an email address.
  * The API expects a package type.
  */
-export const getPGPScheme = (
+const getPGPScheme = (
     { encrypt, sign, scheme, isInternal }: Pick<EncryptionPreferences, 'encrypt' | 'sign' | 'scheme' | 'isInternal'>,
     message?: Partial<Message>
 ): PACKAGE_TYPE => {

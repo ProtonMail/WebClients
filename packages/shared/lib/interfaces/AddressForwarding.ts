@@ -17,7 +17,7 @@ export enum ForwardingState {
     Rejected = 4,
 }
 
-export interface AddressForwarding {
+interface AddressForwarding {
     ID: string;
     CreateTime: number;
     State: ForwardingState;

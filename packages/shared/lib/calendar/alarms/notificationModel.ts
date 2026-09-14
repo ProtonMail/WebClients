@@ -1,6 +1,7 @@
 import type { NotificationModel, VcalDurationValue } from '../../interfaces/calendar';
 import { normalizeRelativeTrigger, transformBeforeAt } from '../alarms/trigger';
-import { NOTIFICATION_TYPE_API, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../constants';
+import type { NOTIFICATION_TYPE_API } from '../constants';
+import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../constants';
 
 const getInt = (value: any) => parseInt(value, 10) || 0;
 
@@ -91,8 +92,4 @@ export const triggerToModel = ({
         return allDayTriggerToModel({ type, when, ...normalizedTrigger });
     }
     return partDayTriggerToModel({ type, when, ...normalizedTrigger });
-};
-
-export const getDeviceNotifications = (notifications: NotificationModel[]) => {
-    return notifications.filter(({ type }) => type === NOTIFICATION_TYPE_API.DEVICE);
 };

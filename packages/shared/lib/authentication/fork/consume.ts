@@ -105,7 +105,7 @@ export const requestFork = ({
     return replaceUrl(getAppHref(`${SSO_PATHS.AUTHORIZE}?${searchParams.toString()}`, APPS.PROTONACCOUNT));
 };
 
-export const maybeResumeForkedSession = async ({
+const maybeResumeForkedSession = async ({
     api,
     pullForkResponse,
 }: {

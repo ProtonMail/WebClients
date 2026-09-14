@@ -12,16 +12,16 @@ export enum Status {
 
 let notifications: Notification[] = [];
 
-export const hasNotificationSupport = (): boolean => 'Notification' in window;
+const hasNotificationSupport = (): boolean => 'Notification' in window;
 
-export const hasPermission = (): boolean => {
+const hasPermission = (): boolean => {
     if (hasNotificationSupport()) {
         return Notification.permission === Status.GRANTED;
     }
     return false;
 };
 
-export const hasDenied = (): boolean => {
+const hasDenied = (): boolean => {
     if (hasNotificationSupport()) {
         return Notification.permission === Status.DENIED;
     }
@@ -60,16 +60,11 @@ export const getStatus = (): Status => {
     return Status.DEFAULT;
 };
 
-export const isEnabled = (): boolean => {
+const isEnabled = (): boolean => {
     if (hasNotificationSupport()) {
         return hasPermission();
     }
     return false;
-};
-
-export const clear = () => {
-    notifications.forEach((notification) => notification.close());
-    notifications = [];
 };
 
 export const request = async (onGranted: () => void = noop, onDenied: () => void = noop) => {

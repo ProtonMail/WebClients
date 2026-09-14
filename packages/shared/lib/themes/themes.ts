@@ -47,7 +47,7 @@ import walletDarkTheme from '@proton/colors/themes/dist/wallet-dark.theme.css';
 // @ts-ignore
 import walletLightTheme from '@proton/colors/themes/dist/wallet-light.theme.css';
 
-export const DESKTOP_THEME_TYPES = {
+const DESKTOP_THEME_TYPES = {
     Carbon: ThemeTypes.Carbon,
     Snow: ThemeTypes.Snow,
 } as const;
@@ -304,10 +304,6 @@ export const getThemes = () => {
         ThemeTypes.ContrastDark,
         ThemeTypes.ContrastLight,
     ].map((id) => PROTON_THEMES_MAP[id]);
-};
-
-export const getPassThemes = () => {
-    return [ThemeTypes.PassDark, ThemeTypes.PassLight].map((id) => PROTON_THEMES_MAP[id]);
 };
 
 interface ThemeFontSizeSettingValue {

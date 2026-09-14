@@ -42,7 +42,7 @@ export const getAuthHeaders = (UID: string, AccessToken: string) => ({
     Authorization: `Bearer ${AccessToken}`,
 });
 
-export const getLocaleHeaders = (localeCode: string) => ({
+const getLocaleHeaders = (localeCode: string) => ({
     'x-pm-locale': localeCode,
 });
 

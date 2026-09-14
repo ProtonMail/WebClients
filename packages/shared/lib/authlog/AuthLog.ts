@@ -94,23 +94,6 @@ export interface B2BAuthLog extends AuthLog {
     };
 }
 
-export const getAuthLogProtectionI18N = (type: ProtectionType | null): string => {
-    switch (type) {
-        case ProtectionType.BLOCKED:
-            return c('Protection type').t`Blocked`;
-        case ProtectionType.CAPTCHA:
-            return c('Protection type').t`CAPTCHA`;
-        case ProtectionType.OWNERSHIP_VERIFICATION:
-            return c('Protection type').t`Ownership verification`;
-        case ProtectionType.DEVICE_VERIFICATION:
-            return c('Protection type').t`Device verification`;
-        case ProtectionType.OK:
-            return c('Protection type').t`Ok`;
-        default:
-            return c('Protection type').t`Unknown`;
-    }
-};
-
 export const getAuthLogEventsI18N = (type: AUTH_LOG_EVENTS): string => {
     switch (type) {
         case AUTH_LOG_EVENTS.LOGIN_FAILURE_PASSWORD:

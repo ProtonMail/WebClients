@@ -39,7 +39,7 @@ const findKeyIndex = (keys: number[], obj: { [key: number]: number }) => {
  * E.g.: [[1, 2, 3], [3, 5], [4, 6]] ->  [[1, 2, 3, 5], [4, 6]]
  * @param connections
  */
-export const linkConnections = (connections: number[][]): number[][] => {
+const linkConnections = (connections: number[][]): number[][] => {
     let didModify = false;
 
     const { newConnections } = connections.reduce<{
@@ -152,7 +152,7 @@ export const extractMergeable = (contacts: FormattedContact[] = []) => {
  * In the latter case, return the new value in the object
  * @dev  Normalize strings in all fields but EMAIL
  */
-export const extractNewValue = (
+const extractNewValue = (
     value: any,
     field: string,
     mergedValues: any[] = []

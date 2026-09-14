@@ -6,8 +6,4 @@ export const setMaxContactsImportConfig = (getter: () => number) => {
     getMaxContactsImportConfigImpl = getter;
 };
 
-export const resetMaxContactsImportConfig = () => {
-    getMaxContactsImportConfigImpl = () => DEFAULT_MAX_CONTACTS_IMPORT;
-};
-
 export const getMaxContactsImportConfig = () => getMaxContactsImportConfigImpl();

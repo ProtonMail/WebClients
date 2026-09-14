@@ -1,7 +1,7 @@
 import { getHasFIDO2Enabled, getHasTOTPEnabled } from '../authentication/twoFactor';
 import type { UserSettings } from '../interfaces';
 
-export const TOTP_CONFIG = {
+const TOTP_CONFIG = {
     PERIOD: 30,
     DIGITS: 6,
     ALGORITHM: 'SHA1',
@@ -24,7 +24,7 @@ interface GetUriArguments {
     period?: number;
 }
 
-export const getUri = ({
+const getUri = ({
     identifier,
     sharedSecret,
     issuer = 'ProtonMail',

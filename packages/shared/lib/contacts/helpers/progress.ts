@@ -5,7 +5,7 @@
  * @param failed       Number of tasks that failed
  * @param total        Total number of tasks
  */
-export const percentageProgress = (successful: number, failed: number, total: number) => {
+const percentageProgress = (successful: number, failed: number, total: number) => {
     if (+total === 0) {
         // assume the process has not started
         return 0;

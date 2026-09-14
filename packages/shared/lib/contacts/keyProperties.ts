@@ -29,7 +29,7 @@ export const getMimeTypeVcard = (mimeType: string): MimeTypeVcard | undefined =>
     return mimeType === MIME_TYPES.PLAINTEXT ? mimeType : undefined;
 };
 
-export const getKeyVCard = async (keyValue: string): Promise<PublicKeyReference | undefined> => {
+const getKeyVCard = async (keyValue: string): Promise<PublicKeyReference | undefined> => {
     const [, base64 = ''] = keyValue.split(',');
     const key = Uint8Array.fromBase64(base64);
 

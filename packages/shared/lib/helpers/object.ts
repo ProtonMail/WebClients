@@ -7,18 +7,6 @@ export const toBitMap = (o: { [key: string]: boolean } = {}): number =>
     Object.keys(o).reduce((acc, key, index) => acc + (Number(o[key]) << index), 0);
 
 /**
- * Define an Object from a bitmap value
- * @param value bitmap
- * @param keys ex: ['announcements', 'features', 'newsletter', 'beta']
- * @returns ex: { announcements: true, features: false, newsletter: false, beta: false }
- */
-export const fromBitmap = (value: number, keys: string[] = []) =>
-    keys.reduce<{ [key: string]: boolean }>((acc, key, index) => {
-        acc[key] = !!(value & (1 << index));
-        return acc;
-    }, {});
-
-/**
  * This method creates an object composed of the own and inherited enumerable property paths of object that are not omitted.
  * @param model The source object.
  * @param properties Properties to omit.

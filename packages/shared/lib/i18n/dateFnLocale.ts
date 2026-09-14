@@ -33,13 +33,13 @@ export const getDateFnLocaleWithLongFormat = (a: Locale, b: Locale): Locale => {
 
 export const getIsLocaleAMPM = (locale: Locale) => locale.formatLong?.time().includes('a');
 
-export const getDateFnLocaleWithDateFormat = (locale: Locale, dateFormat: SETTINGS_DATE_FORMAT): Locale => {
+const getDateFnLocaleWithDateFormat = (locale: Locale, dateFormat: SETTINGS_DATE_FORMAT): Locale => {
     const date = (
         dateFormat === SETTINGS_DATE_FORMAT.DDMMYYYY
             ? enGBLocale
             : dateFormat === SETTINGS_DATE_FORMAT.MMDDYYYY
-              ? enUSLocale
-              : faIRLocale
+                ? enUSLocale
+                : faIRLocale
     ).formatLong?.date;
 
     return {

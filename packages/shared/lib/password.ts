@@ -1,6 +1,6 @@
-export const alphabeticChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-export const digits = '0123456789';
-export const specialChars = '!#$%&()*+.:;<=>?@[]^';
+const alphabeticChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+const digits = '0123456789';
+const specialChars = '!#$%&()*+.:;<=>?@[]^';
 
 export const generatePassword = (options: { useSpecialChars: boolean; length: number }) => {
     const chars = Array.from(alphabeticChars + digits + (options.useSpecialChars ? specialChars : ''));

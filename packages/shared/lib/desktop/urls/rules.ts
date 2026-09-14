@@ -7,14 +7,14 @@ const CALENDAR_SUBDOMAIN = APPS_CONFIGURATION[APPS.PROTONCALENDAR].subdomain;
 // Matches `/bookings`, `/bookings/`, `/bookings/*` and `/u/{localID}/bookings`.
 const BOOKINGS_PATH_PATTERN = '(?:\\/bookings(?:\\/.*)?|\\/u\\/\\d+\\/bookings\\/?)';
 
-export const CALENDAR_URL_RULES: SerializedUrlRule[] = [
+const CALENDAR_URL_RULES: SerializedUrlRule[] = [
     // Booking URLs open in the browser to avoid blocking the user in an in-app window.
     urlRule('calendar-bookings').forSubdomain(CALENDAR_SUBDOMAIN).pathRegex(BOOKINGS_PATH_PATTERN).build(),
 ];
 
 const ACCOUNT_SUBDOMAIN = APPS_CONFIGURATION[APPS.PROTONACCOUNT].subdomain;
 
-export const ACCOUNT_URL_RULES: SerializedUrlRule[] = [
+const ACCOUNT_URL_RULES: SerializedUrlRule[] = [
     // Born-private onboarding opens in the browser.
     urlRule('account-born-private').forSubdomain(ACCOUNT_SUBDOMAIN).pathPrefix('/born-private').build(),
 

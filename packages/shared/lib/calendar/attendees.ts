@@ -1,8 +1,7 @@
 import { CryptoProxy, type SessionKey } from '@protontech/crypto';
 import { binaryStringToUint8Array } from '@protontech/crypto/utils';
+
 import groupWith from '@proton/utils/groupWith';
-import isTruthy from '@proton/utils/isTruthy';
-import unary from '@proton/utils/unary';
 
 import { CONTACT_NAME_MAX_LENGTH } from '../contacts/constants';
 import { buildMailTo, canonicalizeEmailByGuess, getEmailTo, validateEmailAddress } from '../helpers/email';
@@ -235,13 +234,6 @@ export const getSupportedAttendee = (attendee: VcalAttendeeProperty) => {
     }
 
     return supportedAttendee;
-};
-
-export const getCanonicalEmails = async (
-    attendees: VcalAttendeeProperty[] = [],
-    getCanonicalEmailsMap: GetCanonicalEmailsMap
-) => {
-    return Object.values(await getCanonicalEmailsMap(attendees.map(unary(getAttendeeEmail)))).filter(isTruthy);
 };
 
 export const withPmAttendees = async (

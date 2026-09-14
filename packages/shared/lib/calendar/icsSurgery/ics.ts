@@ -55,7 +55,7 @@ export const unfoldLines = (vcal = '', separator = '\r\n') => {
     }, '');
 };
 
-export const getLineSeparator = (vcal = '') => {
+const getLineSeparator = (vcal = '') => {
     return vcal.includes('\r\n') ? '\r\n' : '\n';
 };
 

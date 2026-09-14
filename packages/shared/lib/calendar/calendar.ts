@@ -38,12 +38,10 @@ export {
     getIsUnknownCalendar,
     getOwnedPersonalCalendars,
     getPersonalCalendars,
-    getSharedCalendars,
-    getSubscribedCalendars,
     groupCalendarsByTaxonomy,
 } from './calendarTaxonomy';
 
-export const getIsCalendarActive = ({ Flags } = { Flags: 0 }) => {
+const getIsCalendarActive = ({ Flags } = { Flags: 0 }) => {
     return hasBit(Flags, CALENDAR_FLAGS.ACTIVE);
 };
 
@@ -51,11 +49,11 @@ export const getIsCalendarDisabled = ({ Flags } = { Flags: 0 }) => {
     return hasBit(Flags, CALENDAR_FLAGS.SELF_DISABLED) || hasBit(Flags, CALENDAR_FLAGS.SUPER_OWNER_DISABLED);
 };
 
-export const getDoesCalendarNeedReset = ({ Flags } = { Flags: 0 }) => {
+const getDoesCalendarNeedReset = ({ Flags } = { Flags: 0 }) => {
     return hasBit(Flags, CALENDAR_FLAGS.RESET_NEEDED);
 };
 
-export const getDoesCalendarHaveInactiveKeys = ({ Flags } = { Flags: 0 }) => {
+const getDoesCalendarHaveInactiveKeys = ({ Flags } = { Flags: 0 }) => {
     return hasBit(Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE);
 };
 

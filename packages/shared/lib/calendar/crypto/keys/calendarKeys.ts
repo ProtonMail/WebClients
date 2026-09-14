@@ -22,7 +22,7 @@ export const generatePassphrase = () => {
 /**
  * The calendar key is generated with less user info to not confuse if the key is exported.
  */
-export const generateCalendarKey = async ({
+const generateCalendarKey = async ({
     passphrase,
     keyGenConfig,
 }: {
@@ -43,7 +43,7 @@ export const signPassphrase = ({ passphrase, privateKey }: { passphrase: string;
     return CryptoProxy.signMessage({ textData: passphrase, signingKeys: privateKey, detached: true });
 };
 
-export const encryptPassphrase = async ({
+const encryptPassphrase = async ({
     passphrase,
     privateKey,
     publicKey,

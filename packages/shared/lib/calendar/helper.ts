@@ -1,6 +1,5 @@
-import { c } from 'ttag';
-
 import { CryptoProxy } from '@protontech/crypto';
+import { c } from 'ttag';
 
 import { API_CODES } from '../constants';
 import type {
@@ -13,8 +12,8 @@ import { ACTION_VIEWS, MAXIMUM_DATE_UTC, MAX_CHARS_API, MINIMUM_DATE_UTC } from 
 import { propertyToUTCDate } from './vcalConverter';
 import { getIsPropertyAllDay } from './vcalHelper';
 
-export const HASH_UID_PREFIX = 'sha1-uid-';
-export const ORIGINAL_UID_PREFIX = 'original-uid-';
+const HASH_UID_PREFIX = 'sha1-uid-';
+const ORIGINAL_UID_PREFIX = 'original-uid-';
 
 export const getIsSuccessSyncApiResponse = (
     response: SyncMultipleApiResponses

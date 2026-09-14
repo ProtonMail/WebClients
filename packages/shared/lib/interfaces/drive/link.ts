@@ -1,4 +1,3 @@
-import type { SORT_DIRECTION } from '../../constants';
 import type { DriveFileRevisionPayload, PhotoTag } from './file';
 
 export enum LinkType {
@@ -21,7 +20,7 @@ export type LinkSharedUrlInfo = {
     NumAccesses?: number;
 };
 
-export type SharingDetails = {
+type SharingDetails = {
     ShareUrl: LinkSharedUrlInfo | null;
     ShareID: string;
 };
@@ -172,32 +171,7 @@ export interface RecoverPhotoLinks {
 
 export type TransferPhotoLinks = Omit<RecoverPhotoLinks, 'NewShareId'>;
 
-export type MoveLinks = RecoverPhotoLinks;
-
-export interface MultipleMoveResponse {
-    LinkID: string;
-    Responses: {
-        LinkID: string;
-        Response: {
-            Code: number;
-            Error: string;
-        };
-    }[];
-}
-
-export type DriveSectionSortKeys = keyof Pick<DriveLink, 'MIMEType' | 'ModifyTime' | 'Size' | 'Name'>;
-export type SharedLinksSectionSortKeys =
-    | keyof Pick<DriveLink, 'Name'>
-    | keyof Pick<LinkSharedUrlInfo, 'CreateTime' | 'ExpireTime'>;
-
-export type AllSortKeys = DriveSectionSortKeys | SharedLinksSectionSortKeys;
-
-export type SortParams<T extends AllSortKeys = AllSortKeys> = {
-    sortField: T;
-    sortOrder: SORT_DIRECTION;
-};
-
-export interface ShareMapLink {
+interface ShareMapLink {
     CreateTime: number;
     Hash: string;
     Index: number;

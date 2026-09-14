@@ -21,7 +21,7 @@ type AllowedProductHeaders =
     | 'business'
     | 'generic';
 
-export const productParamToHeader: { [key in NonNullable<ProductParam>]: AllowedProductHeaders } = {
+const productParamToHeader: { [key in NonNullable<ProductParam>]: AllowedProductHeaders } = {
     'proton-account': 'generic', // Account now has generic account settings and should get sent as generic
     'proton-account-lite': 'generic',
     'proton-admin': '',

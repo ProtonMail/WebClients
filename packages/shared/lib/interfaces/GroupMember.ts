@@ -28,7 +28,7 @@ export enum GROUP_MEMBERSHIP_STATUS {
     UNANSWERED = 'unanswered',
 }
 
-export interface GroupMemberAddressPendingKey {
+interface GroupMemberAddressPendingKey {
     PrivateKey: string; // armored key
     ActivationToken: string; // armored
 }
