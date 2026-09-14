@@ -150,7 +150,7 @@ export const CATEGORY_LABELS_TO_ROUTE_SET = new Set(CATEGORY_LABELS_TO_ROUTE_ARR
 export const LABELS_AUTO_READ = [MAILBOX_LABEL_IDS.TRASH];
 
 export const MAIL_MOBILE_APP_LINKS = {
-    qrCode: 'https://proton.me/mailapp',
+    qrCode: 'https://proton.me/mailwebapp',
     appStore: 'https://apps.apple.com/app/apple-store/id979659905',
     playStore: 'https://play.google.com/store/apps/details?id=ch.protonmail.android',
 };
