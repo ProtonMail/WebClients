@@ -9,6 +9,7 @@ import { resetConnection } from './slices/connectionSlice';
 import { resetCurrentMeeting, stopMeetingDurationTimer } from './slices/currentMeeting';
 import { resetLayout } from './slices/layoutSlice';
 import { resetMeetingInfoModel } from './slices/meetingInfoModel';
+import { clearMeetingSnackbars } from './slices/meetingSnackbarsSlice';
 import { resetAgentParticipants } from './slices/participants/agentParticipantsSlice';
 import { resetParticipants } from './slices/participants/participantsSlice';
 import { resetSortedParticipants } from './slices/participants/sortedParticipantsSlice';
@@ -26,6 +27,7 @@ export const resetMeetingState =
         dispatch(resetCurrentMeeting());
         dispatch(resetMeetingInfoModel());
         dispatch(resetChatAndReactions());
+        dispatch(clearMeetingSnackbars());
         dispatch(resetUiState());
         dispatch(resetLayout());
         dispatch(resetConnection());

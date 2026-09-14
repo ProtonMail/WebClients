@@ -1,10 +1,6 @@
-import type { MeetChatMessage } from '@proton/meet/types/types';
+import type { MeetChatMessage } from '../types/types';
 
-/**
- * A thread reply is only relevant to the local participant when it concerns them, i.e. they authored
- * the thread's root message or have taken part in the thread themselves. Root messages and non-thread
- * messages are always relevant.
- */
+/** Thread replies are relevant only when the local participant authored or joined the thread. */
 export const isRelevantThreadMessage = (
     message: MeetChatMessage,
     chatMessages: MeetChatMessage[],
