@@ -1,10 +1,10 @@
 use anyhow::{Error, Result};
 use napi::bindgen_prelude::Promise;
 use napi::threadsafe_function::ThreadsafeFunction;
-use russh_keys::agent::client::{AgentClient, AgentStream};
-use russh_keys::agent::server::MessageType;
-use russh_keys::agent::Constraint;
-use russh_keys::{agent, ssh_key, PrivateKey, PublicKeyBase64};
+use russh::keys::agent::client::{AgentClient, AgentStream};
+use russh::keys::agent::server::MessageType;
+use russh::keys::agent::Constraint;
+use russh::keys::{agent, decode_secret_key, PrivateKey, PublicKey, PublicKeyBase64};
 #[cfg(unix)]
 use std::os::unix::fs::{DirBuilderExt, PermissionsExt};
 use std::path::PathBuf;
@@ -33,7 +33,7 @@ pub struct AgentStatus {
 
 #[derive(Debug, Clone)]
 struct TrackedKey {
-    pub public_key: ssh_key::PublicKey,
+    pub public_key: PublicKey,
     // In the future more fields can be added here, e.g itemID
     // if we want to display key usage confirmation UI in Electron
 }
@@ -72,11 +72,10 @@ impl PassSshAgent {
     }
 }
 
-#[async_trait::async_trait]
 impl agent::server::Agent for PassSshAgent {
     fn confirm(
         self,
-        key: Arc<ssh_key::PrivateKey>,
+        key: Arc<PrivateKey>,
     ) -> Box<dyn futures::future::Future<Output = (Self, bool)> + Send + Unpin> {
         let fut = async move {
             let is_unlocked = self.check_unlocked(Some(key.public_key_base64())).await;
@@ -288,8 +287,7 @@ impl SshAgentActor {
         let mut removed = Vec::new();
 
         for key in &keys {
-            // client.remove_all_identities() fails with "Agent failure" error
-            // (with either russh-keys = "0.49.2" or russh = "0.54.6")
+            // client.remove_all_identities() fails with "Agent failure" error,
             // so we currently have to use client.remove_identity() instead
             if let Err(e) = client.remove_identity(&key.public_key).await {
                 eprintln!("Failed to remove a key: {}", e);
@@ -431,7 +429,7 @@ impl SshAgentManager {
 }
 
 fn parse_private_key(key_data: &str) -> Result<PrivateKey> {
-    russh_keys::decode_secret_key(key_data, None).map_err(|e| anyhow::anyhow!("Failed to parse private key: {}", e))
+    decode_secret_key(key_data, None).map_err(|e| anyhow::anyhow!("Failed to parse private key: {}", e))
 }
 
 fn get_socket_path() -> Result<PathBuf> {
