@@ -1,12 +1,13 @@
 import { type Message, Role } from '../../types';
-import { collapseCompactedChain } from './collapse';
+import type { Attachment } from '../../types';
+import { collectClearedToolNames, collectDroppedToolNames, collectRemovedFiles } from './audit';
+import { SUMMARY_TURN_PREFIX, collapseCompactedChain } from './collapse';
+import { CLEARED_TOOL_RESULT_PLACEHOLDER, IMAGE_TOKEN_ESTIMATE } from './constants';
 import { compactConversation } from './engine';
 import { NotEnoughToCompactError, partitionChain } from './partition';
 import { clearOldToolResults, dropToolPairs, stripContext } from './strategies';
-import { collectClearedToolNames, collectDroppedToolNames, collectRemovedFiles } from './audit';
-import { CLEARED_TOOL_RESULT_PLACEHOLDER, IMAGE_TOKEN_ESTIMATE } from './constants';
+import { getLatestCompactionBoundary } from './summarizedMessages';
 import { estimateChainAttachmentTokens, estimateTurnsTokens } from './tokens';
-import type { Attachment } from '../../types';
 
 let seq = 0;
 function textMsg(role: Role, content: string, overrides: Partial<Message> = {}): Message {
@@ -58,6 +59,56 @@ describe('partitionChain', () => {
         // The most recent message is always preserved.
         expect(tail[tail.length - 1].id).toBe(chain[chain.length - 1].id);
     });
+
+    it('includes attachment tokens when sizing the recent tail', () => {
+        const fullAttachment = (id: string, filename: string, tokens: number): Attachment =>
+            ({ id, filename, tokenCount: tokens, markdown: 'x', processing: false }) as unknown as Attachment;
+
+        const old1 = textMsg(Role.User, 'old 1');
+        const old2 = textMsg(Role.Assistant, 'old 2');
+        const heavy = textMsg(Role.User, 'latest with file', {
+            attachments: [{ id: 'a1', filename: 'big.pdf' }] as any,
+        });
+        const chain = [old1, old2, heavy];
+        const attachments = [fullAttachment('a1', 'big.pdf', 30_000)];
+
+        const withoutAttachments = partitionChain(chain, {
+            keepRecentTokenBudget: 10_000,
+            keepMinRecentMessages: 1,
+        });
+        const withAttachments = partitionChain(chain, {
+            keepRecentTokenBudget: 10_000,
+            keepMinRecentMessages: 1,
+            attachments,
+        });
+
+        expect(withoutAttachments.head).toHaveLength(1);
+        expect(withAttachments.head).toHaveLength(2);
+        expect(withAttachments.tail.map((m) => m.id)).toEqual([heavy.id]);
+    });
+
+    it('stops the tail before a file-heavy message pushes it over the budget', () => {
+        const fullAttachment = (id: string, filename: string, tokens: number): Attachment =>
+            ({ id, filename, tokenCount: tokens, markdown: 'x', processing: false }) as unknown as Attachment;
+
+        const oldest = textMsg(Role.User, 'oldest');
+        const heavy = textMsg(Role.User, 'heavy history', {
+            attachments: [{ id: 'a1', filename: 'big.pdf' }] as any,
+        });
+        const recentA = textMsg(Role.Assistant, 'recent answer');
+        const recentB = textMsg(Role.User, 'current question');
+
+        const { head, tail } = partitionChain([oldest, heavy, recentA, recentB], {
+            keepRecentTokenBudget: 10_000,
+            keepMinRecentMessages: 2,
+            attachments: [fullAttachment('a1', 'big.pdf', 80_000)],
+        });
+
+        // The 80K message belongs in the summarized head; keeping it would leave the
+        // tail eight times over budget and give compaction nothing worth reclaiming.
+        expect(head.map((m) => m.id)).toEqual([oldest.id, heavy.id]);
+        expect(tail.map((m) => m.id)).toEqual([recentA.id, recentB.id]);
+    });
 });
 
 describe('strategies', () => {
@@ -88,18 +139,14 @@ describe('strategies', () => {
 });
 
 describe('compactConversation', () => {
-    it('returns a condensed transcript without the LLM when already small', async () => {
-        const chain = [
-            textMsg(Role.User, 'hello'),
-            textMsg(Role.Assistant, 'hi'),
-            textMsg(Role.User, 'how are you'),
-        ];
+    it('throws when text-only compaction would reclaim no tokens', async () => {
+        const chain = [textMsg(Role.User, 'hello'), textMsg(Role.Assistant, 'hi'), textMsg(Role.User, 'how are you')];
         const summarize = jest.fn();
-        const result = await compactConversation(chain, undefined, { targetTokens: 1e9, summarize });
+
+        await expect(compactConversation(chain, undefined, { targetTokens: 1e9, summarize })).rejects.toThrow(
+            NotEnoughToCompactError
+        );
         expect(summarize).not.toHaveBeenCalled();
-        expect(result.stats.usedLlmSummary).toBe(false);
-        expect(result.stats.appliedStrategies).toHaveLength(0);
-        expect(result.summarizedMessageIds.length + result.keptMessageIds.length).toBe(chain.length);
     });
 
     it('falls back to the LLM summary when reduction is insufficient', async () => {
@@ -159,8 +206,8 @@ describe('compactConversation', () => {
             textMsg(Role.User, 'latest'),
         ];
         const attachments = [
-            { id: 'a1', filename: 'contract.pdf' },
-            { id: 'a2', filename: 'evidence.xlsx' },
+            { id: 'a1', filename: 'contract.pdf', tokenCount: 5000, markdown: 'x', processing: false },
+            { id: 'a2', filename: 'evidence.xlsx', tokenCount: 3000, markdown: 'x', processing: false },
         ] as Attachment[];
 
         const result = await compactConversation(chain, undefined, {
@@ -171,6 +218,134 @@ describe('compactConversation', () => {
         });
 
         expect(result.stats.audit?.removedFiles).toEqual(['contract.pdf', 'evidence.xlsx']);
+    });
+
+    it('does not re-summarize messages already collapsed by an earlier boundary', async () => {
+        const oldUser = textMsg(Role.User, 'OLD_USER_CONTENT');
+        const oldAssistant = textMsg(Role.Assistant, 'OLD_ASSISTANT_CONTENT');
+        const keptAfterFirst = textMsg(Role.User, 'KEPT'.repeat(8000));
+        const firstBoundary = textMsg(Role.Assistant, '', {
+            compaction: {
+                summary: 'FIRST SUMMARY',
+                summarizedMessageIds: [oldUser.id, oldAssistant.id],
+                keptMessageIds: [keptAfterFirst.id],
+                stats: {
+                    tokensBefore: 100,
+                    tokensAfter: 10,
+                    tokensRemoved: 90,
+                    summarizedMessageCount: 2,
+                    keptMessageCount: 1,
+                    clearedToolResultCount: 0,
+                    appliedStrategies: ['llm_summary'],
+                    usedLlmSummary: true,
+                },
+                createdAt: new Date().toISOString(),
+            },
+        });
+        const latestQuestion = textMsg(Role.User, 'latest question');
+        const chain = [oldUser, oldAssistant, keptAfterFirst, firstBoundary, latestQuestion];
+
+        const summarize = jest.fn().mockResolvedValue('SECOND SUMMARY');
+        const result = await compactConversation(chain, undefined, {
+            targetTokens: 10,
+            keepRecentTokenBudget: 10,
+            keepMinRecentMessages: 1,
+            summarize,
+        });
+
+        expect(summarize).toHaveBeenCalledTimes(1);
+        expect(summarize.mock.calls[0][0]).not.toContain('OLD_USER_CONTENT');
+        expect(summarize.mock.calls[0][0]).not.toContain('OLD_ASSISTANT_CONTENT');
+        expect(result.summarizedMessageIds).not.toContain(oldUser.id);
+        expect(result.summarizedMessageIds).not.toContain(oldAssistant.id);
+        expect(result.summarizedMessageIds).toContain(keptAfterFirst.id);
+    });
+
+    it('carries an earlier summary forward so its history is not lost', async () => {
+        const oldUser = textMsg(Role.User, 'OLD_USER_CONTENT');
+        const keptAfterFirst = textMsg(Role.User, 'KEPT'.repeat(8000));
+        const firstBoundary = textMsg(Role.Assistant, '', {
+            compaction: {
+                summary: 'FIRST SUMMARY',
+                summarizedMessageIds: [oldUser.id],
+                keptMessageIds: [keptAfterFirst.id],
+                stats: {
+                    tokensBefore: 100,
+                    tokensAfter: 10,
+                    tokensRemoved: 90,
+                    summarizedMessageCount: 1,
+                    keptMessageCount: 1,
+                    clearedToolResultCount: 0,
+                    appliedStrategies: ['llm_summary'],
+                    usedLlmSummary: true,
+                },
+                createdAt: new Date().toISOString(),
+            },
+        });
+        const chain = [oldUser, keptAfterFirst, firstBoundary, textMsg(Role.User, 'latest question')];
+
+        const summarize = jest.fn().mockResolvedValue('SECOND SUMMARY');
+        await compactConversation(chain, undefined, {
+            targetTokens: 10,
+            keepRecentTokenBudget: 10,
+            keepMinRecentMessages: 1,
+            summarize,
+        });
+
+        // Only the newest boundary's summary is ever sent, so the second pass has to
+        // subsume the first — otherwise the history behind 'FIRST SUMMARY' disappears.
+        expect(summarize.mock.calls[0][0]).toContain('FIRST SUMMARY');
+    });
+
+    it('keeps the carried summary readable instead of nesting display preambles', async () => {
+        const oldUser = textMsg(Role.User, 'OLD_USER_CONTENT');
+        const keptAfterFirst = textMsg(Role.User, 'KEPT'.repeat(8000));
+        const firstBoundary = textMsg(Role.Assistant, '', {
+            compaction: {
+                summary: 'FIRST SUMMARY',
+                summarizedMessageIds: [oldUser.id],
+                keptMessageIds: [keptAfterFirst.id],
+                stats: {
+                    tokensBefore: 100,
+                    tokensAfter: 10,
+                    tokensRemoved: 90,
+                    summarizedMessageCount: 1,
+                    keptMessageCount: 1,
+                    clearedToolResultCount: 0,
+                    appliedStrategies: ['llm_summary'],
+                    usedLlmSummary: true,
+                },
+                createdAt: new Date().toISOString(),
+            },
+        });
+        const chain = [oldUser, keptAfterFirst, firstBoundary, textMsg(Role.User, 'latest question')];
+
+        const summarize = jest.fn().mockResolvedValue('SECOND SUMMARY');
+        await compactConversation(chain, undefined, {
+            targetTokens: 10,
+            keepRecentTokenBudget: 10,
+            keepMinRecentMessages: 1,
+            summarize,
+        });
+
+        expect(summarize.mock.calls[0][0]).not.toContain(SUMMARY_TURN_PREFIX);
+    });
+
+    it('throws when compaction would reclaim no tokens', async () => {
+        const onlyContent = 'x'.repeat(400);
+        const chain = [
+            textMsg(Role.User, onlyContent),
+            textMsg(Role.Assistant, 'reply'),
+            textMsg(Role.User, 'latest question'),
+        ];
+
+        await expect(
+            compactConversation(chain, undefined, {
+                targetTokens: 1_000_000,
+                keepRecentTokenBudget: 10,
+                keepMinRecentMessages: 1,
+            })
+        ).rejects.toThrow(NotEnoughToCompactError);
     });
 });
 
@@ -224,9 +399,7 @@ describe('estimateChainAttachmentTokens', () => {
         const all = [fullAttachment('a1', 'keep.md', 100), fullAttachment('a2', 'drop.md', 900)];
 
         const noFilter = estimateChainAttachmentTokens([msg], all, []);
-        const withFilter = estimateChainAttachmentTokens([msg], all, [
-            { messageId: 'mA', excludedFiles: ['drop.md'] },
-        ]);
+        const withFilter = estimateChainAttachmentTokens([msg], all, [{ messageId: 'mA', excludedFiles: ['drop.md'] }]);
 
         expect(noFilter).toBe(1000);
         expect(withFilter).toBe(100);
@@ -270,5 +443,98 @@ describe('collapseCompactedChain', () => {
         expect(summaryTurn!.role).toBe(Role.System);
         expect(summaryTurn!.content).toContain('SUMMARY OF OLD STUFF');
         expect(out.map((m) => m.id)).toEqual([u2.id, u3.id]);
+    });
+
+    it('uses only the latest boundary summary when multiple boundaries exist', () => {
+        const u1 = textMsg(Role.User, 'old');
+        const boundary1 = textMsg(Role.Assistant, '', {
+            compaction: {
+                summary: 'FIRST SUMMARY',
+                summarizedMessageIds: [u1.id],
+                keptMessageIds: [],
+                stats: {
+                    tokensBefore: 10,
+                    tokensAfter: 2,
+                    tokensRemoved: 8,
+                    summarizedMessageCount: 1,
+                    keptMessageCount: 0,
+                    clearedToolResultCount: 0,
+                    appliedStrategies: ['llm_summary'],
+                    usedLlmSummary: true,
+                },
+                createdAt: new Date().toISOString(),
+            },
+        });
+        const u2 = textMsg(Role.User, 'recent');
+        const boundary2 = textMsg(Role.Assistant, '', {
+            compaction: {
+                summary: 'LATEST SUMMARY',
+                summarizedMessageIds: [u2.id],
+                keptMessageIds: [],
+                stats: {
+                    tokensBefore: 10,
+                    tokensAfter: 2,
+                    tokensRemoved: 8,
+                    summarizedMessageCount: 1,
+                    keptMessageCount: 0,
+                    clearedToolResultCount: 0,
+                    appliedStrategies: ['llm_summary'],
+                    usedLlmSummary: true,
+                },
+                createdAt: new Date().toISOString(),
+            },
+        });
+
+        const { summaryTurn } = collapseCompactedChain([u1, boundary1, u2, boundary2]);
+        expect(summaryTurn!.content).toContain('LATEST SUMMARY');
+        expect(summaryTurn!.content).not.toContain('FIRST SUMMARY');
+        expect(getLatestCompactionBoundary([u1, boundary1, u2, boundary2])?.id).toBe(boundary2.id);
+    });
+
+    it('uses the previous done boundary while a newer boundary is still compacting', () => {
+        const u1 = textMsg(Role.User, 'old');
+        const doneBoundary = textMsg(Role.Assistant, '', {
+            compaction: {
+                status: 'done',
+                summary: 'DONE SUMMARY',
+                summarizedMessageIds: [u1.id],
+                keptMessageIds: [],
+                stats: {
+                    tokensBefore: 10,
+                    tokensAfter: 2,
+                    tokensRemoved: 8,
+                    summarizedMessageCount: 1,
+                    keptMessageCount: 0,
+                    clearedToolResultCount: 0,
+                    appliedStrategies: ['llm_summary'],
+                    usedLlmSummary: true,
+                },
+                createdAt: new Date().toISOString(),
+            },
+        });
+        const compactingBoundary = textMsg(Role.Assistant, '', {
+            compaction: {
+                status: 'compacting',
+                summary: '',
+                summarizedMessageIds: [],
+                keptMessageIds: [],
+                stats: {
+                    tokensBefore: 0,
+                    tokensAfter: 0,
+                    tokensRemoved: 0,
+                    summarizedMessageCount: 0,
+                    keptMessageCount: 0,
+                    clearedToolResultCount: 0,
+                    appliedStrategies: [],
+                    usedLlmSummary: false,
+                },
+                createdAt: new Date().toISOString(),
+            },
+        });
+
+        const { summaryTurn, chain } = collapseCompactedChain([u1, doneBoundary, compactingBoundary]);
+        expect(getLatestCompactionBoundary([u1, doneBoundary, compactingBoundary])?.id).toBe(doneBoundary.id);
+        expect(summaryTurn?.content).toContain('DONE SUMMARY');
+        expect(chain.map((m) => m.id)).toEqual([]);
     });
 });

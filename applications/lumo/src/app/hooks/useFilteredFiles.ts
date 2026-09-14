@@ -3,8 +3,8 @@ import { useMemo } from 'react';
 import { isGeneratedImageAttachment } from '../lib/imageAttachment';
 import type { ContextFilter } from '../llm';
 import { getSummarizedMessageIds } from '../llm/compaction';
-import { useLumoSelector } from '../redux/hooks';
-import { selectAttachments, selectContextFilters } from '../redux/selectors';
+import { useLumoMemoSelector, useLumoSelector } from '../redux/hooks';
+import { selectAttachments, selectContextFilters, selectMessagesByConversationId } from '../redux/selectors';
 import { type Attachment, type Message, isAttachment } from '../types';
 import { dedupeAttachmentsByDocumentKey, getAttachmentDocumentKey } from '../util/resolveProjectFiles';
 
@@ -36,7 +36,12 @@ export const useFilteredFiles = (
 ) => {
     const allAttachments = useLumoSelector(selectAttachments);
     const contextFilters = useLumoSelector(selectContextFilters);
-    const summarizedMessageIds = useMemo(() => getSummarizedMessageIds(messageChain), [messageChain]);
+    const conversationId = messageChain[0]?.conversationId;
+    const messageMap = useLumoMemoSelector(selectMessagesByConversationId, [conversationId]);
+    const summarizedMessageIds = useMemo(
+        () => getSummarizedMessageIds(messageChain, messageMap),
+        [messageChain, messageMap]
+    );
 
     const shouldShowInFilesPanel = (attachment: Attachment) =>
         attachment.role !== 'assistant' || isGeneratedImageAttachment(attachment);
@@ -99,13 +104,9 @@ export const useFilteredFiles = (
                         .filter((f) => f != null && isLinkedAttachment(f)) || []
             );
 
-            // Deduplicate by ID
-            const seen = new Set<string>();
-            return messageFiles.filter((file) => {
-                if (seen.has(file.id)) return false;
-                seen.add(file.id);
-                return true;
-            });
+            // Deduplicate by document key so the same file attached manually and
+            // auto-retrieved only appears once (prefer the auto-retrieved copy).
+            return dedupeAttachmentsByDocumentKey(messageFiles, true);
         }
 
         // For assistant messages with contextFiles, show exactly the files that were used for that response
@@ -213,10 +214,25 @@ export const useFilteredFiles = (
         );
     }, [allFiles, filterMessage, contextFilters, summarizedMessageIds, autoRetrievedDocumentKeys]);
 
+    const compactedAutoRetrievedDocumentKeys = useMemo(
+        () =>
+            new Set(
+                allFiles
+                    .filter((file) => file.autoRetrieved && isFileFromSummarizedMessage(file))
+                    .map((file) => getAttachmentDocumentKey(file))
+            ),
+        [allFiles, summarizedMessageIds]
+    );
+
     const compactedHistoricalFiles = useMemo(() => {
         if (filterMessage) return [];
-        return allFiles.filter((file) => !file.autoRetrieved && isFileFromSummarizedMessage(file));
-    }, [allFiles, filterMessage, summarizedMessageIds]);
+        return allFiles.filter(
+            (file) =>
+                !file.autoRetrieved &&
+                isFileFromSummarizedMessage(file) &&
+                !compactedAutoRetrievedDocumentKeys.has(getAttachmentDocumentKey(file))
+        );
+    }, [allFiles, filterMessage, summarizedMessageIds, compactedAutoRetrievedDocumentKeys]);
 
     // Calculate context based on files that will be used for next question
     const nextQuestionFiles = useMemo(() => {

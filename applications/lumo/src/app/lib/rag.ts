@@ -1,8 +1,9 @@
 import type { ContextFilter } from '../llm';
+import { collapseCompactedChain, getSummarizedMessageIds } from '../llm/compaction';
 import { type AttachmentMap, newAttachmentId } from '../redux/slices/core/attachments';
 import { SearchService } from '../services/search/searchService';
-import { type Attachment, type AttachmentId, type Message, Role } from '../types';
-import { getMimeTypeFromName } from '../util/filetypes';
+import { type Attachment, type AttachmentId, type Message, type MessageId, Role, type ShallowAttachment } from '../types';
+import { getMimeTypeFromName, isFileTypeSupported } from '../util/filetypes';
 import { formatPercent } from '../util/formatting';
 
 /**
@@ -21,12 +22,18 @@ import { formatPercent } from '../util/formatting';
  */
 export function collectContextAttachmentIds(
     messageChain: Message[],
-    contextFilters: ContextFilter[] = []
+    contextFilters: ContextFilter[] = [],
+    messageMap?: Record<MessageId, Message>
 ): AttachmentId[] {
+    const { chain: effectiveChain } = collapseCompactedChain(messageChain, messageMap);
+    const summarizedIds = getSummarizedMessageIds(messageChain, messageMap);
     const contextFiles: AttachmentId[] = [];
     const seenIds = new Set<AttachmentId>();
 
-    for (const message of messageChain) {
+    for (const message of effectiveChain) {
+        if (summarizedIds.has(message.id)) {
+            continue;
+        }
         if (!message.attachments) continue;
 
         // Check if this message has any context filters
@@ -86,11 +93,12 @@ async function retrieveRelevantRagFiles(
     const retrievedDocs = await searchService.retrieveForRAG(query, spaceId);
     const candidateDocs = retrievedDocs
         .filter((doc) => doc.score > 0)
+        .filter((doc) => isFileTypeSupported(doc.name))
         .filter((doc) => !alreadyRetrievedDocIds.has(doc.id))
         .filter((doc) => !referencedFileNames.has(doc.name.toLowerCase()));
     console.log(
         `[RAG] retrieveForRAG returned ${candidateDocs.length} candidates:`,
-        candidateDocs.map((d) => ({ name: d.name, score: d.score }))
+        candidateDocs.map((d) => ({ name: d.name, score: d.score, coverage: d.coverage }))
     );
     return { nRetrieved: retrievedDocs.length, candidateDocs };
 }
@@ -100,12 +108,32 @@ type CandidateDoc = {
     name: string;
     content: string;
     score: number;
+    /** IDF-weighted share of the query this document matched (0–1). See `BM25Index`. */
+    coverage?: number;
     isChunk?: boolean;
     chunkTitle?: string;
     parentDocumentId?: string;
 };
-const RAG_MAX_DOCS = 50;
-const RAG_MIN_RELATIVE_SCORE = 0.4;
+
+/**
+ * Hard ceiling on auto-retrieved documents per turn. Files are the dominant cost in a
+ * request, and beyond a handful the extra documents are noise the model has to wade
+ * through rather than useful context.
+ */
+const RAG_MAX_DOCS = 10;
+
+/** Keep documents scoring within this fraction of the best hit. */
+const RAG_MIN_RELATIVE_SCORE = 0.5;
+
+/**
+ * Minimum share of the query a document must address. This is the precision lever:
+ * without it, a long file mentioning a single query word ranks alongside one that
+ * answers the whole question.
+ */
+const RAG_MIN_QUERY_COVERAGE = 0.3;
+
+/** A step down this steep between consecutive hits marks the end of the relevant run. */
+const RAG_SCORE_DROP_RATIO = 0.6;
 
 function computeNormalizedScore(topScore: number, doc: CandidateDoc) {
     return topScore > 0 ? doc.score / topScore : 0;
@@ -177,17 +205,35 @@ function ragDocsToAttachments(
     return relevantDocs.map((doc) => ragDocToAttachment(doc, topScore, spaceId, allAttachments));
 }
 
-function collectAlreadyRetrievedDocIds(messageChain: Message[], allAttachments: AttachmentMap): Set<string> {
+/** Normalize a user query so minor punctuation edits do not change RAG retrieval. */
+export function normalizeRagQuery(query: string): string {
+    return query.trim().replace(/\s+/g, ' ').replace(/[^\w\s]+$/g, '').trim();
+}
+
+function trackRetrievedDocumentId(
+    alreadyRetrievedDocIds: Set<string>,
+    shallowAtt: ShallowAttachment,
+    fullAtt?: Attachment
+): void {
+    alreadyRetrievedDocIds.add(shallowAtt.id);
+
+    const driveNodeId = fullAtt?.driveNodeId ?? shallowAtt.driveNodeId;
+    if (driveNodeId) {
+        alreadyRetrievedDocIds.add(driveNodeId);
+    }
+}
+
+function collectAlreadyRetrievedDocIds(
+    messageChain: Message[],
+    allAttachments: AttachmentMap,
+    allConversationMessages?: Message[]
+): Set<string> {
     const alreadyRetrievedDocIds = new Set<string>();
-    messageChain.forEach((msg) => {
+    const messages = allConversationMessages ?? messageChain;
+
+    messages.forEach((msg) => {
         msg.attachments?.forEach((shallowAtt) => {
-            const fullAtt = allAttachments[shallowAtt.id];
-            if (fullAtt) {
-                if (fullAtt.autoRetrieved && fullAtt.driveNodeId) {
-                    alreadyRetrievedDocIds.add(fullAtt.driveNodeId);
-                }
-                alreadyRetrievedDocIds.add(fullAtt.id);
-            }
+            trackRetrievedDocumentId(alreadyRetrievedDocIds, shallowAtt, allAttachments[shallowAtt.id]);
         });
     });
 
@@ -195,43 +241,46 @@ function collectAlreadyRetrievedDocIds(messageChain: Message[], allAttachments: 
     return alreadyRetrievedDocIds;
 }
 
+/**
+ * Narrow ranked candidates down to the documents worth sending.
+ *
+ * Thresholds are deliberately independent of how many candidates came back. An earlier
+ * percentile cutoff kept the top quarter of the pool, so a large project returned a
+ * large pile of weak matches — the more files indexed, the more noise was retrieved.
+ * These rules instead judge each document on its own: how much of the query it covers,
+ * how it compares to the best hit, and whether the ranking has already fallen off.
+ */
 function mostRelevantDocs(candidateDocs: CandidateDoc[]): CandidateDoc[] {
-    const topScore = candidateDocs[0]?.score || 0;
-    const scores = candidateDocs.map((d) => d.score);
+    const covering = candidateDocs.filter((doc) => (doc.coverage ?? 1) >= RAG_MIN_QUERY_COVERAGE);
 
-    const sortedScores = [...scores].sort((a, b) => b - a);
-    const percentile75Index = Math.floor(sortedScores.length * 0.25);
-    const percentile75Threshold = sortedScores[Math.min(percentile75Index, sortedScores.length - 1)] || 0;
+    if (covering.length < candidateDocs.length) {
+        console.log(
+            `[RAG] Dropped ${candidateDocs.length - covering.length} candidates below ${formatPercent(RAG_MIN_QUERY_COVERAGE)} query coverage`
+        );
+    }
 
-    const absoluteThreshold = topScore * RAG_MIN_RELATIVE_SCORE;
-    const effectiveThreshold = Math.max(percentile75Threshold, absoluteThreshold);
+    const topScore = covering[0]?.score || 0;
+    const scoreThreshold = topScore * RAG_MIN_RELATIVE_SCORE;
 
     console.log(
-        [
-            `[RAG] Thresholds:`,
-            `top=${topScore.toFixed(4)},`,
-            `p75=${percentile75Threshold.toFixed(4)},`,
-            `min40%=${absoluteThreshold.toFixed(4)},`,
-            `effective=${effectiveThreshold.toFixed(4)}`,
-        ].join(' ')
+        `[RAG] Thresholds: top=${topScore.toFixed(4)}, min=${scoreThreshold.toFixed(4)}, coverage>=${formatPercent(RAG_MIN_QUERY_COVERAGE)}`
     );
 
-    const relevantDocs: typeof candidateDocs = [];
+    const relevantDocs: CandidateDoc[] = [];
 
-    for (let i = 0; i < candidateDocs.length && relevantDocs.length < RAG_MAX_DOCS; i++) {
-        const doc = candidateDocs[i]!;
+    for (let i = 0; i < covering.length && relevantDocs.length < RAG_MAX_DOCS; i++) {
+        const doc = covering[i]!;
 
-        if (doc.score < effectiveThreshold) {
+        if (doc.score < scoreThreshold) {
             console.log(
-                `[RAG] Stopping at doc ${i}: score ${doc.score.toFixed(4)} below threshold ${effectiveThreshold.toFixed(4)}`
+                `[RAG] Stopping at doc ${i}: score ${doc.score.toFixed(4)} below threshold ${scoreThreshold.toFixed(4)}`
             );
             break;
         }
 
         if (i > 0) {
-            const prevScore = candidateDocs[i - 1]!.score;
-            const dropRatio = doc.score / prevScore;
-            if (dropRatio < 0.5) {
+            const dropRatio = doc.score / covering[i - 1]!.score;
+            if (dropRatio < RAG_SCORE_DROP_RATIO) {
                 console.log(`[RAG] Stopping at doc ${i}: score gap detected (${formatPercent(dropRatio)} of previous)`);
                 break;
             }
@@ -268,7 +317,8 @@ export async function retrieveDocumentContextForProject(
     isProject: boolean,
     messageChain: Message[] = [],
     allAttachments: AttachmentMap = {},
-    referencedFileNames: Set<string> = new Set()
+    referencedFileNames: Set<string> = new Set(),
+    allConversationMessages?: Message[]
 ): Promise<RAGRetrievalResult | undefined> {
     const userMessageCount = messageChain.filter((m) => m.role === Role.User).length;
     console.log(
@@ -285,12 +335,17 @@ export async function retrieveDocumentContextForProject(
         return undefined;
     }
     const searchService = SearchService.get(userId);
-    const alreadyRetrievedDocIds = collectAlreadyRetrievedDocIds(messageChain, allAttachments);
+    const normalizedQuery = normalizeRagQuery(query);
+    const alreadyRetrievedDocIds = collectAlreadyRetrievedDocIds(
+        messageChain,
+        allAttachments,
+        allConversationMessages
+    );
 
     try {
         const { nRetrieved, candidateDocs } = await retrieveRelevantRagFiles(
             searchService,
-            query,
+            normalizedQuery,
             spaceId,
             alreadyRetrievedDocIds,
             referencedFileNames
@@ -315,7 +370,7 @@ export async function retrieveDocumentContextForProject(
             [
                 `[RAG] Retrieved ${attachments.length} relevant documents for project ${spaceId}:`,
                 `  Retrieved: ${nRetrieved}, candidates: ${nCandidates}, relevant: ${nRelevant}`,
-                `  Top score: ${topScore.toFixed(4)}, Threshold: ${(topScore * RAG_MIN_RELATIVE_SCORE).toFixed(4)}`,
+                `  Top score: ${topScore.toFixed(4)}, threshold: ${(topScore * RAG_MIN_RELATIVE_SCORE).toFixed(4)}, max docs: ${RAG_MAX_DOCS}`,
                 `  Selected docs: \n${debugAttachmentsAsList(attachments)}`,
             ].join('\n')
         );

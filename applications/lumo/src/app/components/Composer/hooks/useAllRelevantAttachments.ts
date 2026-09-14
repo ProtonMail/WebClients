@@ -1,8 +1,9 @@
-import {useMemo} from 'react';
+import { useMemo } from 'react';
 
-import {useLumoSelector} from '../../../redux/hooks';
-import {selectAttachmentsBySpaceId} from '../../../redux/selectors';
-import type {Attachment, Message, SpaceId} from '../../../types';
+import { getSummarizedMessageIds } from '../../../llm/compaction';
+import { useLumoMemoSelector, useLumoSelector } from '../../../redux/hooks';
+import { selectAttachmentsBySpaceId, selectMessagesByConversationId } from '../../../redux/selectors';
+import type { Attachment, Message, SpaceId } from '../../../types';
 
 // Custom hook to get all attachments relevant for context calculations
 export const useAllRelevantAttachments = (
@@ -12,6 +13,8 @@ export const useAllRelevantAttachments = (
 ) => {
     // Get the full attachments state
     const allAttachments = useLumoSelector((state) => state.attachments);
+    const conversationId = messageChain[0]?.conversationId;
+    const messageMap = useLumoMemoSelector(selectMessagesByConversationId, [conversationId]);
 
     // Get space-level attachments (project files)
     // Exclude auto-retrieved attachments as they're conversation-specific
@@ -23,9 +26,18 @@ export const useAllRelevantAttachments = (
 
     // Get all attachment IDs from the message chain
     const messageAttachmentIds = useMemo(() => {
-        if (!messageChain || messageChain.length === 0) return [];
-        return messageChain.flatMap((message) => message.attachments?.map((attachment) => attachment.id) || []);
-    }, [messageChain]);
+        if (!messageChain || messageChain.length === 0) {
+            return [];
+        }
+
+        const summarizedMessageIds = getSummarizedMessageIds(messageChain, messageMap);
+        return messageChain.flatMap((message) => {
+            if (summarizedMessageIds.has(message.id)) {
+                return [];
+            }
+            return message.attachments?.map((attachment) => attachment.id) || [];
+        });
+    }, [messageChain, messageMap]);
 
     // Get full attachment data for all message attachments
     // Filter out role='assistant' attachments (inline images) from context

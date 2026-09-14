@@ -1,0 +1,26 @@
+@use '~@proton/styles/scss/lib' as *;
+
+.file-mention-option {
+	position: relative;
+	background-color: transparent;
+
+	// Keyboard selection needs to read at a glance, so it gets a primary tint plus an
+	// edge accent rather than the neutral grey used for hover. Hover is suppressed while
+	// selected, otherwise the two states look identical and the caret appears to vanish.
+	&.is-selected {
+		background-color: var(--interaction-norm-minor-2);
+
+		&::before {
+			position: absolute;
+			content: '';
+			inset-block: 0;
+			inset-inline-start: 0;
+			inline-size: rem(3);
+			background-color: var(--interaction-norm);
+		}
+	}
+
+	&:hover:not(.is-selected) {
+		background-color: var(--background-weak);
+	}
+}
