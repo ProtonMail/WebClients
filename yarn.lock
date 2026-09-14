@@ -9745,15 +9745,15 @@ __metadata:
   linkType: hard
 
 "@pdfme/pdf-lib@npm:*":
-  version: 1.18.3
-  resolution: "@pdfme/pdf-lib@npm:1.18.3"
+  version: 6.1.12
+  resolution: "@pdfme/pdf-lib@npm:6.1.12"
   dependencies:
     "@pdf-lib/standard-fonts": "npm:^1.0.0"
     "@pdf-lib/upng": "npm:^1.0.1"
-    color: "npm:^4.2.3"
-    node-html-better-parser: "npm:^1.4.0"
-    pako: "npm:^1.0.11"
-  checksum: 10/591c7b5e560810e64eb87d32b29fb2f51c43832fc175e9ee079abaf48392eb2b0b9d48cec19086f419fe56dfc984e4d69ea839b10b2df1ad02e5bfc9c87ad1f3
+    color: "npm:^5.0.3"
+    node-html-better-parser: "npm:^1.5.8"
+    pako: "npm:^2.1.0"
+  checksum: 10/484b0e602f9483d24655d65c8fe6e71e624c61d995d46cb9fe4652f104509f83a6d6c49b4efe7ec707af8613a13ba235d17a1baae79498336439548eace9f3ed
   languageName: node
   linkType: hard
 
@@ -14381,7 +14381,7 @@ __metadata:
     "@rowsncolumns/ui": "workspace:^"
     "@rowsncolumns/utils": "workspace:^"
     "@types/react-plotly.js": "npm:^2.6.3"
-    echarts: "npm:^5.6.0"
+    echarts: "npm:^6.1.0"
     echarts-gl: "npm:^2.1.0"
     formik: "npm:^2.4.6"
     immer: "npm:^10.1.1"
@@ -22593,6 +22593,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"color-convert@npm:^3.1.3":
+  version: 3.1.3
+  resolution: "color-convert@npm:3.1.3"
+  dependencies:
+    color-name: "npm:^2.0.0"
+  checksum: 10/36b9b99c138f90eb11a28d1ad911054a9facd6cffde4f00dc49a34ebde7cae28454b2285ede64f273b6a8df9c3228b80e4352f4471978fa8b5005fe91341a67b
+  languageName: node
+  linkType: hard
+
 "color-convert@npm:~0.5.0":
   version: 0.5.3
   resolution: "color-convert@npm:0.5.3"
@@ -22705,13 +22714,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"color-string@npm:^1.6.0, color-string@npm:^1.9.0":
+"color-string@npm:^1.6.0":
   version: 1.9.1
   resolution: "color-string@npm:1.9.1"
   dependencies:
     color-name: "npm:^1.0.0"
     simple-swizzle: "npm:^0.2.2"
   checksum: 10/72aa0b81ee71b3f4fb1ac9cd839cdbd7a011a7d318ef58e6cb13b3708dca75c7e45029697260488709f1b1c7ac4e35489a87e528156c1e365917d1c4ccb9b9cd
+  languageName: node
+  linkType: hard
+
+"color-string@npm:^2.1.3":
+  version: 2.1.4
+  resolution: "color-string@npm:2.1.4"
+  dependencies:
+    color-name: "npm:^2.0.0"
+  checksum: 10/689a8688ac3cd55247792c83a9db9bfe675343c7412fedba1eb748ac6a8867dd2bb3d406e309ebfe90336809ee5067c7f2cccfbd10133c5cc9ef1dba5aad58f2
   languageName: node
   linkType: hard
 
@@ -22725,20 +22743,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"color@npm:^4.2.3":
-  version: 4.2.3
-  resolution: "color@npm:4.2.3"
+"color@npm:^5.0.3":
+  version: 5.0.3
+  resolution: "color@npm:5.0.3"
   dependencies:
-    color-convert: "npm:^2.0.1"
-    color-string: "npm:^1.9.0"
-  checksum: 10/b23f5e500a79ea22428db43d1a70642d983405c0dd1f95ef59dbdb9ba66afbb4773b334fa0b75bb10b0552fd7534c6b28d4db0a8b528f91975976e70973c0152
+    color-convert: "npm:^3.1.3"
+    color-string: "npm:^2.1.3"
+  checksum: 10/88063ee058b995e5738092b5aa58888666275d1e967333f3814ff4fa334ce9a9e71de78a16fb1838f17c80793ea87f4878c20192037662809fe14eab2d474fd9
   languageName: node
   linkType: hard
 
 "colord@npm:^2.9.3":
-  version: 2.9.3
-  resolution: "colord@npm:2.9.3"
-  checksum: 10/907a4506d7307e2f580b471b581e992181ed75ab0c6925ece9ca46d88161d2fc50ed15891cd0556d0d9321237ca75afc9d462e4c050b939ef88428517f047f30
+  version: 2.10.0
+  resolution: "colord@npm:2.10.0"
+  checksum: 10/0983763f320b52e9026a59bd7f7633f1487130310d1f381901d14939b3a6e0aef3128c8bd8e5669ededbda0b69e6ba12c801c8905fce6de359284d1ff5d48431
   languageName: node
   linkType: hard
 
@@ -25542,13 +25560,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"echarts@npm:^5.6.0":
-  version: 5.6.0
-  resolution: "echarts@npm:5.6.0"
+"echarts@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "echarts@npm:6.1.0"
   dependencies:
     tslib: "npm:2.3.0"
-    zrender: "npm:5.6.1"
-  checksum: 10/e73344abb777fd8401c0b89a5d83b65c7a81a11540e2047d51f4aae9419baf4dc2524a5d9561f9ca0fe8d6b432c58b7a1d518f2a4338041046506db8257a1332
+    zrender: "npm:6.1.0"
+  checksum: 10/ae294b6050a2d7eb377609ae392f76a2db9463b322d12a861c017f5bbab192d59c2b7d618fa2b683cadafd3f37616bb65c5de8ed220421c648bbdb7b4b4c32ea
   languageName: node
   linkType: hard
 
@@ -36975,7 +36993,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-html-better-parser@npm:^1.4.0":
+"node-html-better-parser@npm:^1.5.8":
   version: 1.5.9
   resolution: "node-html-better-parser@npm:1.5.9"
   dependencies:
@@ -38393,10 +38411,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pako@npm:^1.0.10, pako@npm:^1.0.11, pako@npm:^1.0.6, pako@npm:~1.0.2":
+"pako@npm:^1.0.10, pako@npm:^1.0.6, pako@npm:~1.0.2":
   version: 1.0.11
   resolution: "pako@npm:1.0.11"
   checksum: 10/1ad07210e894472685564c4d39a08717e84c2a68a70d3c1d9e657d32394ef1670e22972a433cbfe48976cb98b154ba06855dcd3fcfba77f60f1777634bec48c0
+  languageName: node
+  linkType: hard
+
+"pako@npm:^2.1.0":
+  version: 2.2.0
+  resolution: "pako@npm:2.2.0"
+  checksum: 10/4311a3d5fa32d146d4fd926e8b0af43f9d4713034ac53fce78445065893f541da4435b1e77290a49fd80dd49f82163230fc6ccad39530c844d8c6caf3d21848d
   languageName: node
   linkType: hard
 
@@ -51031,16 +51056,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zrender@npm:5.6.1":
-  version: 5.6.1
-  resolution: "zrender@npm:5.6.1"
-  dependencies:
-    tslib: "npm:2.3.0"
-  checksum: 10/25dfd476be243f051614f131675855d184eb05e8b9a39dc41146a3a553a17aad5ceba77e166d525be9c4adc2bb237c56dfdfb3456667940bbeddb05eef3deac7
-  languageName: node
-  linkType: hard
-
-"zrender@npm:^5.1.1 || ^6.0.0":
+"zrender@npm:6.1.0, zrender@npm:^5.1.1 || ^6.0.0":
   version: 6.1.0
   resolution: "zrender@npm:6.1.0"
   dependencies:
