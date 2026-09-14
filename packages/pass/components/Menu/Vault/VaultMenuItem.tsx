@@ -6,7 +6,9 @@ import { c, msgid } from 'ttag';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import Icon from '@proton/components/components/icon/Icon';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -52,7 +54,7 @@ type Props = {
 
 type ShareButtonProps = {
     label: string;
-    icon: IconName;
+    icon: IconComponent;
     action: (evt: React.MouseEvent) => void;
 };
 
@@ -124,7 +126,7 @@ export const VaultMenuItem = memo(
                 return canManage ? c('Action').t`Manage access` : c('Action').t`See members`;
             })();
 
-            const icon = opensInvite ? 'user-plus' : 'users';
+            const icon = opensInvite ? IcUserPlus : IcUsers;
             const action = opensInvite ? onInviteClick : handleClickEvent(onManage);
 
             return { label, icon, action };
@@ -200,7 +202,7 @@ export const VaultMenuItem = memo(
                                         }}
                                     />
                                 )}
-                                <Icon name={shareButton.icon} />
+                                <shareButton.icon />
                                 {vault.targetMembers > 1 && <span className="text-sm ml-1">{vault.targetMembers}</span>}
                             </ButtonLike>
                         </>
