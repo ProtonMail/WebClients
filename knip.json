@@ -415,8 +415,7 @@
         },
         "packages/shared": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/sieve": {
             "entry": [],
