@@ -34,11 +34,18 @@ export const useAudioContextOutput = ({
     const hasBeenRunningRef = useRef(false);
     const isRecoveringRef = useRef(false);
 
+    // Without webAudioMix this context renders nothing and LiveKit routes playback through audio
+    // elements instead. Chrome makes the last setSinkId() context the echo cancellation reference, so
+    // pinning it here would point the reference at a device that is not the one playing.
+    const { webAudioMix } = room.options;
+    const isPlaybackContext =
+        typeof webAudioMix === 'object' && webAudioMix.audioContext === meetAudioContext.audioContext;
+
     useEffect(() => {
-        if (activeAudioOutputDeviceId) {
+        if (isPlaybackContext && activeAudioOutputDeviceId) {
             meetAudioContext.setSinkId(activeAudioOutputDeviceId);
         }
-    }, [activeAudioOutputDeviceId, meetAudioContext]);
+    }, [activeAudioOutputDeviceId, isPlaybackContext, meetAudioContext]);
 
     useEffect(() => {
         const { audioContext } = meetAudioContext;
