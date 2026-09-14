@@ -65,8 +65,10 @@ export const selectPageSize = (state: MailSettingState) => state.mailSettings.va
 const pages = (state: MailState) => state.elements.pages;
 const bypassFilter = (state: MailState) => state.elements.bypassFilter;
 const pendingRequest = (state: MailState) => state.elements.pendingRequest;
+export const selectPendingRequest = pendingRequest;
 export const pendingActions = (state: MailState) => state.elements.pendingActions;
 const retry = (state: MailState) => state.elements.retry;
+export const selectRetry = retry;
 const invalidated = (state: MailState) => state.elements.invalidated;
 const total = (state: MailState) => state.elements.total;
 export const taskRunning = (state: MailState) => state.elements.taskRunning;
