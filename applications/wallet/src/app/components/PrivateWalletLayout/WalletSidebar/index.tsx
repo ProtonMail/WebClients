@@ -10,6 +10,7 @@ import {
     UserDropdown,
     useActiveBreakpoint,
 } from '@proton/components';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { registerSessionRemovalListener } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { APPS, WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import protonWalletLogoDark from '@proton/styles/assets/img/illustrations/proton-wallet-logo-dark.svg';
@@ -92,7 +93,7 @@ const WalletSidebar = ({
                 {/* Sidebar already mounts UserDropdown when viewportWidth['<=small'] is true */}
                 {!viewportWidth['<=small'] && (
                     <div className="user-dropdown-override px-4 mt-2 mb-10 w-full shrink-0">
-                        <UserDropdown app={PROTONWALLET_APP} dropdownIcon="chevron-down" />
+                        <UserDropdown app={PROTONWALLET_APP} dropdownIcon={<IcChevronDown />} />
                     </div>
                 )}
 

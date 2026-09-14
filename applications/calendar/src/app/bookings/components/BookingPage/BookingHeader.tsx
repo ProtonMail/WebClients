@@ -95,7 +95,7 @@ export const BookingHeader = ({ gridSize, availabilityState }: Props) => {
                     onChange={setSelectedTimezone}
                     unstyledSelect
                     prefixIcon={<IconHeroWorldMap className="mr-2" />}
-                    caretIconName="chevron-down"
+                    caretIcon={<IcChevronDown />}
                     // telemetrySource="temporary_timezone"
                     // abbreviatedTimezone={breakpoint === 'small' ? 'offset' : undefined}
                 />
