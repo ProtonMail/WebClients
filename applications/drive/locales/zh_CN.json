@@ -4459,6 +4459,9 @@
       ],
       "Something went wrong, please try again later": [
         "发生错误，请稍后重试"
+      ],
+      "A contact with this email address already exists": [
+        "该邮箱地址的联系人已存在"
       ]
     },
     "error": {
@@ -4886,6 +4889,12 @@
       ],
       "Touch your security key.": [
         "请触碰您的安全密钥！"
+      ],
+      "Still waiting?": [
+        "仍在等待？"
+      ],
+      "Touch your security key to continue.": [
+        "触摸您的安全密钥以继续。"
       ]
     },
     "fido2: Label": {
@@ -7789,6 +7798,12 @@
       ],
       "Search data can't be read": [
         "无法读取搜索数据"
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } 目前已连续 ${ count } 次。是否继续？"
+      ],
+      "${ steps } step": [
+        "${ steps } 个步骤"
       ]
     },
     "info": {
