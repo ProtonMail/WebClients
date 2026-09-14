@@ -8,6 +8,7 @@ import { deviceManagementReducer } from './deviceManagementSlice';
 import { layoutReducer } from './layoutSlice';
 import { meetAppStateReducer } from './meetAppStateSlice';
 import { meetingInfoModelReducer } from './meetingInfoModel';
+import { meetingSnackbarsReducer } from './meetingSnackbarsSlice';
 import { meetingsReducer } from './meetings';
 import { agentParticipantsReducer } from './participants/agentParticipantsSlice';
 import { participantsReducer } from './participants/participantsSlice';
@@ -32,6 +33,7 @@ export const meetReducers = {
     ...currentMeetingReducer,
     ...customBackgroundsReducer,
     ...meetingInfoModelReducer,
+    ...meetingSnackbarsReducer,
     ...meetingsReducer,
     ...participantsReducer,
     ...agentParticipantsReducer,

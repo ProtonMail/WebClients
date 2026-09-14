@@ -53,6 +53,11 @@ export const announcementMessages = {
             ? c('Accessibility announcement').t`${name} says: ${message}`
             : c('Accessibility announcement').t`New chat message: ${message}`,
 
+    mentionedYou: (message: string, name?: string) =>
+        name
+            ? c('Accessibility announcement').t`${name} mentioned you: ${message}`
+            : c('Accessibility announcement').t`You were mentioned: ${message}`,
+
     chatMessageContent: (message: string, name?: string) =>
         name ? c('Accessibility announcement').t`${name}: ${message}` : message,
 

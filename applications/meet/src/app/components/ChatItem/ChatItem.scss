@@ -11,15 +11,6 @@
 		color: var(--interaction-norm) !important;
 	}
 
-	.participant-enter--ellipsis {
-		overflow: hidden;
-		-webkit-line-clamp: 3;
-		/* stylelint-disable-next-line */
-		display: -webkit-box;
-		/* stylelint-disable-next-line */
-		-webkit-box-orient: vertical;
-	}
-
 	.chat-item-reply-btn {
 		block-size: 1.875rem !important;
 	}

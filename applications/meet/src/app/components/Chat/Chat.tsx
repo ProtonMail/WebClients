@@ -7,8 +7,10 @@ import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { markChatMessagesAsSeen } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { selectRoomName } from '@proton/meet/store/slices/meetingInfo';
+import { selectLocalParticipantIdentity } from '@proton/meet/store/slices/participants/participantsSlice';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import type { MeetChatMessage } from '@proton/meet/types/types';
+import { isParticipantMentioned } from '@proton/meet/utils/mentions/mentionToken';
 import placeholder from '@proton/styles/assets/img/meet/chat-empty-state.png';
 import placeholderSearch from '@proton/styles/assets/img/meet/search-empty-state.png';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -18,6 +20,7 @@ import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useChatMessage } from '../../hooks/bridges/useChatMessage';
 import { useChatMessageListNavigation } from '../../hooks/useChatMessageListNavigation';
 import { useMeetingRoomUpdates } from '../../hooks/useMeetingRoomUpdates';
+import { useMentionPlainText } from '../../hooks/useMentionPlainText';
 import { ChatItem } from '../ChatItem/ChatItem';
 import { ChatThread } from '../ChatItem/ChatThread';
 import { ChatMessage } from '../ChatMessage/ChatMessage';
@@ -34,6 +37,7 @@ export const Chat = () => {
     const [isScrolled, setIsScrolled] = useState(false);
 
     const [newMessageCount, setNewMessageCount] = useState(0);
+    const [newMentionCount, setNewMentionCount] = useState(0);
 
     // Whether a thread root is pinned at the top; drives the opaque header (see below).
     const [hasStuckThread, setHasStuckThread] = useState(false);
@@ -41,12 +45,15 @@ export const Chat = () => {
     const roomName = useMeetSelector(selectRoomName);
 
     const isChatThreadsEnabled = useFlag('MeetChatThreads');
+    const isMentionsEnabled = useFlag('MeetChatMentions');
 
     const sideBarState = useMeetSelector(selectSideBarState);
 
     const isChatOpen = sideBarState[MeetingSideBars.Chat];
 
     const meetingRoomUpdates = useMeetingRoomUpdates();
+
+    const localIdentity = useMeetSelector(selectLocalParticipantIdentity);
 
     const { sendMessage } = useChatMessage();
 
@@ -56,6 +63,12 @@ export const Chat = () => {
     const wasAtBottomRef = useRef(true);
     const prevMessageCountRef = useRef(0);
     const prevMainChatCountRef = useRef(0);
+    const prevMainChatMentionCountRef = useRef(0);
+
+    const resetNewMessages = () => {
+        setNewMessageCount(0);
+        setNewMentionCount(0);
+    };
 
     const scrollToBottom = () => {
         const el = scrollRef.current;
@@ -64,7 +77,7 @@ export const Chat = () => {
         }
         el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' });
         wasAtBottomRef.current = true;
-        setNewMessageCount(0);
+        resetNewMessages();
     };
 
     // A root is pinned when it rests at the pin line (below the header) with its thread still below.
@@ -109,19 +122,27 @@ export const Chat = () => {
 
         // Scrolling back to the bottom clears the pill.
         if (isAtBottom) {
-            setNewMessageCount(0);
+            resetNewMessages();
         }
     };
 
     // Handle scroll to bottom when chat opens or receiving new updates
     useEffect(() => {
-        const mainChatMessageCount = meetingRoomUpdates.filter((item) => {
+        const mainChatMessages = meetingRoomUpdates.filter((item): item is MeetChatMessage => {
             if (item.type !== 'message') {
                 return false;
             }
             const message = item as MeetChatMessage;
             return !message.topicId || message.topicId === message.id;
-        }).length;
+        });
+
+        const mainChatMessageCount = mainChatMessages.length;
+        const mainChatMentionCount = isMentionsEnabled
+            ? mainChatMessages.filter(
+                  (message) =>
+                      message.identity !== localIdentity && isParticipantMentioned(message.message, localIdentity)
+              ).length
+            : 0;
 
         const el = scrollRef.current;
         if (!el) {
@@ -130,16 +151,22 @@ export const Chat = () => {
         const messageCount = meetingRoomUpdates.length;
         const prevCount = prevMessageCountRef.current;
         const mainChatDelta = mainChatMessageCount - prevMainChatCountRef.current;
+        const mentionDelta = mainChatMentionCount - prevMainChatMentionCountRef.current;
 
         if (messageCount > prevCount) {
             if (wasAtBottomRef.current) {
                 el.scrollTop = el.scrollHeight;
             } else if (mainChatDelta > 0) {
                 setNewMessageCount((count) => count + mainChatDelta);
+
+                if (mentionDelta > 0) {
+                    setNewMentionCount((count) => count + mentionDelta);
+                }
             }
         }
         prevMessageCountRef.current = messageCount;
         prevMainChatCountRef.current = mainChatMessageCount;
+        prevMainChatMentionCountRef.current = mainChatMentionCount;
         // Running this effect if the length of updates changes
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [meetingRoomUpdates.length]);
@@ -149,7 +176,7 @@ export const Chat = () => {
         if (isChatOpen && scrollRef.current) {
             scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
             wasAtBottomRef.current = true;
-            setNewMessageCount(0);
+            resetNewMessages();
         }
 
         if (isChatOpen) {
@@ -159,12 +186,16 @@ export const Chat = () => {
 
     const lowerCaseSearchExpression = searchExpression.toLowerCase();
 
+    const toMentionPlainText = useMentionPlainText();
+
     const filteredMeetingRoomUpdates =
         !isSearchOn || !searchExpression
             ? meetingRoomUpdates
-            : meetingRoomUpdates.filter((item) =>
-                  (item as MeetChatMessage)?.message?.toLowerCase().includes(lowerCaseSearchExpression)
-              );
+            : meetingRoomUpdates.filter((item) => {
+                  const message = (item as MeetChatMessage)?.message;
+
+                  return !!message && toMentionPlainText(message).toLowerCase().includes(lowerCaseSearchExpression);
+              });
 
     // Group thread replies under their root message. A reply carries the thread `topicId` (which
     // points at the root message id) and is therefore rendered inside the root's thread rather than
@@ -326,8 +357,9 @@ export const Chat = () => {
                     >
                         <NewMessagePill
                             newMessageCount={newMessageCount}
+                            newMentionCount={newMentionCount}
                             onScrollToBottom={scrollToBottom}
-                            onDismiss={() => setNewMessageCount(0)}
+                            onDismiss={resetNewMessages}
                         />
                     </div>
                 )}

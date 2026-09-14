@@ -4,10 +4,12 @@ import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { getHostname } from '@proton/components/helpers/url';
+import { splitMessageIntoMentionSegments } from '@proton/meet/utils/mentions/mentionToken';
 import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
 import { isSubDomain } from '@proton/shared/lib/helpers/url';
 
 import { addSpecialCharactersForMessageDisplay } from '../utils/addSpecialCharactersForMessageDisplay';
+import { Mention } from './Mention/Mention';
 import { OpenLinkModal } from './OpenLinkModal/OpenLinkModal';
 
 // Simple URL regex - matches http:// or https:// followed by non-whitespace characters
@@ -26,16 +28,15 @@ const validateUrl = (url: string) => {
         return { valid: false, url };
     }
 };
-interface ChatMessageContentProps {
-    message: string;
+
+interface LinkifiedTextProps {
+    text: string;
+    onLinkClick: (url: string) => void;
 }
 
-export const ChatMessageContent = ({ message }: ChatMessageContentProps) => {
-    const decodedMessage = addSpecialCharactersForMessageDisplay(message);
-    const parts = decodedMessage.split(URL_REGEX);
-    const matches = decodedMessage.match(URL_REGEX) || [];
-
-    const [currentLink, setCurrentLink] = useState<string | null>(null);
+const LinkifiedText = ({ text, onLinkClick }: LinkifiedTextProps) => {
+    const parts = text.split(URL_REGEX);
+    const matches = text.match(URL_REGEX) || [];
 
     return (
         <>
@@ -49,21 +50,20 @@ export const ChatMessageContent = ({ message }: ChatMessageContentProps) => {
 
                 if (!valid || !validatedUrl) {
                     return (
-                        <>
+                        <span key={`part-${i}`}>
                             {part}
                             {c('Info').t`-Removed dangerous URL-`}
-                        </>
+                        </span>
                     );
                 }
 
                 const isProtonUrl = PROTON_DOMAINS.some((domain) => isSubDomain(getHostname(validatedUrl), domain));
 
                 return (
-                    <>
+                    <span key={`part-${i}`}>
                         {part}
                         {isProtonUrl ? (
                             <a
-                                key={`link-${i}`}
                                 href={validatedUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -73,13 +73,37 @@ export const ChatMessageContent = ({ message }: ChatMessageContentProps) => {
                                 <span className="sr-only">{c('Accessibility').t`(opens in new tab)`}</span>
                             </a>
                         ) : (
-                            <InlineLinkButton key={`link-${i}`} onClick={() => setCurrentLink(validatedUrl)}>
+                            <InlineLinkButton onClick={() => onLinkClick(validatedUrl)}>
                                 {validatedUrl}
                             </InlineLinkButton>
                         )}
-                    </>
+                    </span>
                 );
             })}
+        </>
+    );
+};
+
+interface ChatMessageContentProps {
+    message: string;
+}
+
+export const ChatMessageContent = ({ message }: ChatMessageContentProps) => {
+    const decodedMessage = addSpecialCharactersForMessageDisplay(message);
+
+    const [currentLink, setCurrentLink] = useState<string | null>(null);
+
+    const segments = splitMessageIntoMentionSegments(decodedMessage);
+
+    return (
+        <>
+            {segments.map((segment, index) =>
+                segment.type === 'mention' ? (
+                    <Mention key={`mention-${index}`} id={segment.id} />
+                ) : (
+                    <LinkifiedText key={`text-${index}`} text={segment.text} onLinkClick={setCurrentLink} />
+                )
+            )}
             {!!currentLink && <OpenLinkModal link={currentLink} onClose={() => setCurrentLink(null)} />}
         </>
     );

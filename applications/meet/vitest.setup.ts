@@ -44,6 +44,9 @@ vi.mock('@proton/components/hooks/useEventManager.ts', () => {
 global.MutationObserver = class {
     disconnect() {}
     observe() {}
+    takeRecords() {
+        return [];
+    }
 };
 
 // Mock backdrop container because it's always rendered, and it's rendered in a portal which causes issues with the hook renderer

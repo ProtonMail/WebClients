@@ -1,0 +1,25 @@
+.mention-suggestions {
+	padding: 0.375rem;
+	background-color: var(--background-card);
+	box-shadow: 0 8px 24px 0 rgb(0 0 0 / 0.4);
+	scrollbar-width: thin;
+}
+
+// Row spacing comes from the virtualised slot height, not from a flex gap.
+// Scrolling and positioning are applied inline by `react-window`.
+.mention-suggestion-list {
+	scrollbar-width: thin;
+}
+
+.mention-suggestion {
+	transition: background-color 0.1s ease;
+
+	&:hover,
+	&--active {
+		background-color: var(--interaction-norm-minor-2);
+	}
+}
+
+.mention-suggestion-shortcut {
+	color: var(--interaction-norm-major-1);
+}
