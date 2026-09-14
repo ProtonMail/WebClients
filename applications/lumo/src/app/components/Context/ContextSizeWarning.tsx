@@ -6,8 +6,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import { useConversationFiles } from '../../hooks';
-import { CONTEXT_LIMITS, calculateAttachmentContextSize, calculateMessageContentTokens } from '../../llm/utils';
+import { useEffectiveContextUsage } from '../../hooks/useEffectiveContextUsage';
+import { CONTEXT_LIMITS } from '../../llm/utils';
 import type { Attachment, Message } from '../../types';
 
 interface ContextSizeWarningProps {
@@ -17,55 +17,27 @@ interface ContextSizeWarningProps {
 }
 
 export const ContextSizeWarning = ({ attachments, messageChain, onOpenFiles }: ContextSizeWarningProps) => {
-    const { activeFiles } = useConversationFiles(messageChain, attachments);
+    const { usedTokens, fileTokens } = useEffectiveContextUsage(messageChain, attachments);
 
-    const { tokenCount, warningLevel } = React.useMemo(() => {
-        const messageContentTokens = calculateMessageContentTokens(messageChain);
+    const warningLevel = usedTokens >= CONTEXT_LIMITS.MAX_CONTEXT ? 'critical' : 'none';
 
-        // Calculate tokens from currently active files (what would actually be sent to LLM)
-        const activeFilesTokens = calculateAttachmentContextSize(activeFiles);
-
-        const totalTokens = messageContentTokens + activeFilesTokens;
-
-        let level: 'none' | 'critical' = 'none';
-        if (totalTokens >= CONTEXT_LIMITS.MAX_CONTEXT) {
-            level = 'critical';
-        }
-
-        return {
-            tokenCount: activeFilesTokens,
-            warningLevel: level,
-        };
-    }, [messageChain, activeFiles]);
-
-    // Show warnings for warning level and above since we want to inform users early
-    if (warningLevel === 'none' || tokenCount === 0) {
+    if (warningLevel === 'none') {
         return null;
     }
 
-    const getWarningProps = () => {
-        switch (warningLevel) {
-            case 'critical':
-                return {
-                    icon: 'exclamation-triangle-filled' as const,
-                    colorClass: '',
-                    message: c('collider_2025:Info')
-                        .t`Your files are large. ${LUMO_SHORT_APP_NAME} may not be able to process all information.`,
-                };
-            default:
-                return null;
-        }
-    };
-
-    const warningProps = getWarningProps();
-    if (!warningProps) return null;
+    const message =
+        fileTokens > 0
+            ? c('collider_2025:Info')
+                  .t`Your files are large. ${LUMO_SHORT_APP_NAME} may summarize earlier messages to make room — your chat history will stay in this conversation.`
+            : c('collider_2025:Info')
+                  .t`This conversation is nearly full. ${LUMO_SHORT_APP_NAME} may summarize earlier messages to keep replying — nothing is removed from your chat history.`;
 
     return (
         <div className="flex flex-row flex-nowrap gap-2 mx-2 mb-2 p-2">
             <div className="flex-1">
-                <p className={clsx('text-sm m-0', warningProps.colorClass)}>{warningProps.message}</p>
+                <p className={clsx('text-sm m-0')}>{message}</p>
             </div>
-            {onOpenFiles && (
+            {onOpenFiles && fileTokens > 0 && (
                 <Button
                     size="small"
                     shape="underline"

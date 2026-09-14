@@ -16,6 +16,7 @@ import {
 
 import type { CryptoAdapter } from './adapters/CryptoAdapter';
 import type { DatabaseAdapter, SearchStatus } from './adapters/DatabaseAdapter';
+import { SEARCH_BLOB_VERSION_KEY, SEARCH_LIBRARY_BLOB_VERSION } from './config';
 
 // Search Engine class to encapsulate the core search logic
 export class SearchEngine {
@@ -40,6 +41,31 @@ export class SearchEngine {
         console.log(`getSearchBlobAd: "${blobName}" -> AD: "${ad}"`);
 
         return ad;
+    }
+
+    /**
+     * Rebuild the index when it was written by an engine with a different blob format.
+     *
+     * The engine cannot read a blob written by an older version — `send()` throws and
+     * there is no way back — so a version mismatch has to be caught before the first
+     * read. Wiping is safe: conversations are re-indexed from Redux on the next populate,
+     * and the blobs Lumo owns (project file search) are preserved.
+     */
+    async ensureCompatibleBlobFormat(): Promise<void> {
+        const storedVersion = await this.databaseAdapter.loadSearchBlob(SEARCH_BLOB_VERSION_KEY);
+
+        if (storedVersion === SEARCH_LIBRARY_BLOB_VERSION) {
+            return;
+        }
+
+        if (storedVersion !== null) {
+            console.log(
+                `[Search] Index blob format "${String(storedVersion)}" does not match "${SEARCH_LIBRARY_BLOB_VERSION}"; rebuilding index`
+            );
+        }
+
+        await this.databaseAdapter.clearEngineBlobs();
+        await this.databaseAdapter.saveSearchBlob(SEARCH_BLOB_VERSION_KEY, SEARCH_LIBRARY_BLOB_VERSION);
     }
 
     /**
@@ -372,14 +398,9 @@ export class SearchEngine {
 
         console.log(`Search completed: ${loadEventCount} loads, ${statEventCount} stats, ${found.length} found`);
 
-        // return most relevant entries first
-        const results = found.map<[number, string]>((entry) => {
-            entry = stats.updateScores(entry);
-            return [entry.score().value(), entry.identifier()];
-        });
-        results.sort();
-        results.reverse();
-        return results;
+        // BM25-harmonize the raw per-shard scores against the collection stats. `rank`
+        // also orders the entries most-relevant-first, breaking ties by identifier.
+        return stats.rank(found).map<[number, string]>((entry) => [entry.score().value(), entry.identifier()]);
     }
 
     // Index a single conversation

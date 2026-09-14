@@ -17,7 +17,7 @@ import { addContextFilter, removeContextFilter } from '../../../redux/slices/con
 import { locallyDeleteAttachmentFromLocalRequest } from '../../../redux/slices/core/attachments';
 import { type Attachment, type Message, getProjectInfo } from '../../../types';
 import { getMimeTypeFromExtension } from '../../../util/filetypes';
-import { getAttachmentDocumentKey } from '../../../util/resolveProjectFiles';
+import { dedupeAttachmentsByDocumentKey, getAttachmentDocumentKey } from '../../../util/resolveProjectFiles';
 import { useExcelSheetSelection } from '../../Composer/ExcelSheetSelectionModal';
 import { useFileHandling } from '../../Composer/hooks/useFileHandling';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
@@ -252,35 +252,28 @@ const CompactedFilesSection = ({
     compactedAutoRetrieved,
     onView,
 }: CompactedFilesSectionProps) => {
-    const totalCompacted = compactedHistoricalFiles.length + compactedAutoRetrieved.length;
-    if (totalCompacted === 0) return null;
+    const compactedFiles = React.useMemo(
+        () => dedupeAttachmentsByDocumentKey([...compactedHistoricalFiles, ...compactedAutoRetrieved], true),
+        [compactedHistoricalFiles, compactedAutoRetrieved]
+    );
+
+    if (compactedFiles.length === 0) return null;
 
     return (
         <div className="mb-4 w-full">
             <h3 className="text-sm text-bold mb-1">
                 {c('collider_2025: Info').t`Removed when chat was shortened`}{' '}
-                <span className="color-weak text-normal">{totalCompacted}</span>
+                <span className="color-weak text-normal">{compactedFiles.length}</span>
             </h3>
             <p className="text-xs color-weak mb-3">
                 {c('collider_2025: Info')
                     .t`These files belonged to summarized messages and are no longer sent to the model.`}
             </p>
 
-            {compactedHistoricalFiles.map((file) => (
+            {compactedFiles.map((file) => (
                 <KnowledgeBaseFileItem
-                    key={`compacted-${file.messageId}-${file.id}`}
+                    key={`compacted-${'messageId' in file ? file.messageId : 'auto'}-${file.id}`}
                     file={file}
-                    onView={onView}
-                    isActive={false}
-                    readonly
-                    showToggle={false}
-                />
-            ))}
-
-            {compactedAutoRetrieved.map((attachment) => (
-                <KnowledgeBaseFileItem
-                    key={`compacted-auto-${attachment.id}`}
-                    file={attachment}
                     onView={onView}
                     isActive={false}
                     readonly
@@ -648,7 +641,7 @@ export const KnowledgeBasePanel = ({
                             {showKnowledgeExplanation && (
                                 <p className="m-0 text-xs color-weak px-3 pb-2">
                                     {c('collider_2025: Info')
-                                        .t`${LUMO_SHORT_APP_NAME} can process a limited amount of information per conversation. This shows what's currently using that space; when it fills up, older messages are automatically summarized so you can keep chatting.`}
+                                        .t`${LUMO_SHORT_APP_NAME} can process a limited amount of information per conversation. This shows what's currently using that space. When it fills up, older messages are summarized — not deleted — so you can keep chatting. Your full chat history stays in the conversation.`}
                                 </p>
                             )}
 
