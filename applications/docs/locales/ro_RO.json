@@ -969,6 +969,9 @@
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }"
+      ],
+      "Add a payment method": [
+        "Adăugați o metodă de plată"
       ]
     },
     "Actions message": {
@@ -3809,6 +3812,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nume nedecriptabil."
+      ],
+      "A contact with this email address already exists": [
+        "Deja există un contact cu această adresă de e-mail."
       ]
     },
     "error": {
@@ -4217,6 +4223,12 @@
       ],
       "Touch your security key.": [
         "Atingeți cheia de securitate."
+      ],
+      "Still waiting?": [
+        "Încă așteptați?"
+      ],
+      "Touch your security key to continue.": [
+        "Atingeți cheia de securitate pentru a continua."
       ]
     },
     "fido2: Label": {
@@ -6150,6 +6162,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Veți putea totuși să vă vizualizați datele propriului cont, dar toate conturile de utilizator vor fi eliminate din organizație."
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a evita pierderea accesului. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a vă păstra abonamentul. ${ learnMoreLink }"
       ]
     },
     "info": {
