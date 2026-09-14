@@ -197,7 +197,17 @@ export const useChatMessage = () => {
         const sanitizedEscapedContent = sanitizeMessage(escapedContent);
         const sanitizedContent = unescape(sanitizedEscapedContent);
 
-        if (!room || !sanitizedContent || trimmedContent.length > CHAT_MESSAGE_MAX_LENGTH) {
+        if (!room || !sanitizedContent) {
+            return false;
+        }
+
+        if (trimmedContent.length > CHAT_MESSAGE_MAX_LENGTH) {
+            notifications.createNotification({
+                key: 'chat-message-too-long',
+                type: 'error',
+                text: c('Error').t`Message is too long to send`,
+            });
+
             return false;
         }
 

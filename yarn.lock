@@ -40599,6 +40599,9 @@ __metadata:
     "@dnd-kit/dom": "npm:^0.5.0"
     "@dnd-kit/react": "npm:^0.5.0"
     "@emoji-mart/data": "npm:^1.0.3"
+    "@lexical/react": "npm:0.31.2"
+    "@lexical/selection": "npm:0.31.2"
+    "@lexical/utils": "npm:0.31.2"
     "@livekit/components-core": "npm:0.12.15"
     "@livekit/components-react": "npm:^2.9.24"
     "@livekit/krisp-noise-filter": "npm:^0.4.4"
@@ -40655,6 +40658,7 @@ __metadata:
     history: "npm:^4.10.1"
     html-webpack-plugin: "npm:^5.6.8"
     idb: "npm:^8.0.3"
+    lexical: "npm:0.31.2"
     livekit-client: "npm:2.22.3"
     lodash: "npm:^4.18.1"
     mediabunny: "npm:^1.56.1"
@@ -40664,6 +40668,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-redux: "npm:^9.3.0"
     react-router-dom: "npm:^5.3.4"
+    react-window: "npm:^2.3.0"
     ttag: "npm:^1.8.12"
     typescript: "npm:^6.0.3"
     vite-plugin-wasm: "npm:^3.6.0"
@@ -41999,6 +42004,16 @@ __metadata:
     react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
     react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
   checksum: 10/bdbac2b664c5a799443b97a32b2f60a00cc13cc14ca8a8b1e81e2dc7dd00d8d54f05743113972fe1a641b57ada5d874b59c3cbe7e8a07a88c6713a0fb65d60f6
+  languageName: node
+  linkType: hard
+
+"react-window@npm:^2.3.0":
+  version: 2.3.1
+  resolution: "react-window@npm:2.3.1"
+  peerDependencies:
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
+  checksum: 10/1c76b54159910cc35ade8a7b7eda67d1ee86c49d798f3fa12f34904adeee4ee105c9e8ad22e4592710a197d4a3eeb0b2b142fc27c15847f1277fe01cf0b26f8c
   languageName: node
   linkType: hard
 

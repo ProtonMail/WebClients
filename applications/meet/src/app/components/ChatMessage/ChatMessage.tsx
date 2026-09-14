@@ -1,27 +1,16 @@
-import React, {
-    type ChangeEventHandler,
-    useCallback,
-    useEffect,
-    useId,
-    useLayoutEffect,
-    useMemo,
-    useRef,
-    useState,
-} from 'react';
+import React, { useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 
 import data from '@emoji-mart/data';
 import { Picker } from 'emoji-mart';
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Popper } from '@proton/atoms/Popper/Popper';
 import { usePopper } from '@proton/atoms/Popper/usePopper';
 import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { getCharacterCountText } from '@proton/components/helpers/getCharacterCountText';
-import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCross } from '@proton/icons/icons/IcCross';
@@ -42,9 +31,11 @@ import clsx from '@proton/utils/clsx';
 
 import { CHAT_MESSAGE_MAX_LENGTH } from '../../constants';
 import { useParticipantDisplayColors } from '../../hooks/useParticipantDisplayColors';
-import { clampChatMessageLength } from '../../utils/clampChatMessageLength';
+import { useStableCallback } from '../../hooks/useStableCallback';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
 import { trimMessage } from '../../utils/trim-message';
+import type { MentionInputHandle } from '../MentionInput/MentionInput';
+import { MentionInput } from '../MentionInput/MentionInput';
 
 import './ChatMessage.scss';
 import emojiPickerStyles from './EmojiPicker.raw.scss';
@@ -128,7 +119,7 @@ interface ChatMessageProps {
     onThreadClose?: () => void;
 }
 
-// Per-variant sizing of the textarea (in rem) and the action buttons.
+// Per-variant sizing of the composer (in rem) and the action buttons.
 const VARIANT_CONFIG: Record<ChatMessageVariant, { minHeight: number; maxHeight: number; buttonSize: string }> = {
     default: { minHeight: 2.25, maxHeight: 6, buttonSize: '2.25rem' },
     thread: { minHeight: 1.5, maxHeight: 5, buttonSize: '2.25rem' },
@@ -168,11 +159,14 @@ export const ChatMessage = ({
 
     const [chatMessageLoading, withChatMessageLoading] = useLoading();
 
-    const textareaRef = useRef<HTMLTextAreaElement>(null);
+    const composerRef = useRef<MentionInputHandle | null>(null);
     const emojiAnchorRef = useRef<HTMLButtonElement>(null);
     const emojiPopperRef = useRef<HTMLDivElement>(null);
 
+    const [composerRowEl, setComposerRowEl] = useState<HTMLDivElement | null>(null);
+
     const dispatch = useMeetDispatch();
+    const { createNotification } = useNotifications();
 
     const { floating, position } = usePopper({
         reference: {
@@ -201,33 +195,31 @@ export const ChatMessage = ({
     const threadDraftMessage = useMeetSelector((state) =>
         persistThreadDraft ? selectChatThreadReplyDraft(state, rootMessageId) : ''
     );
-    const [message, setMessage] = useState(() =>
-        clampChatMessageLength(isThread ? threadDraftMessage : defaultDraftMessage)
-    );
+    const [initialDraft] = useState(() => (isThread ? threadDraftMessage : defaultDraftMessage));
+
+    const [message, setMessage] = useState(initialDraft);
     const currentMessage = useRef(message);
 
-    const updateMessage = useCallback(
-        (value: string) => {
-            const clampedValue = clampChatMessageLength(value);
-            setMessage(clampedValue);
-            currentMessage.current = clampedValue;
-            if (persistThreadDraft) {
-                dispatch(setChatThreadReplyDraft({ messageId: rootMessageId, draft: clampedValue }));
-            }
-        },
-        [dispatch, persistThreadDraft, rootMessageId]
-    );
+    const trimmedMessageLength = trimMessage(message).length;
 
-    const handleMessageChange: ChangeEventHandler<HTMLTextAreaElement> = (event) => {
-        const { value } = event.target;
+    const handleComposerChange = useStableCallback((value: string) => {
+        setMessage(value);
+        currentMessage.current = value;
 
-        updateMessage(value);
-    };
+        if (persistThreadDraft) {
+            dispatch(setChatThreadReplyDraft({ messageId: rootMessageId, draft: value }));
+        }
+    });
+
+    const handleMentionTooLong = useStableCallback(() => {
+        createNotification({
+            key: 'chat-mention-too-long',
+            type: 'error',
+            text: c('Error').t`The mention could not be added because the message is at its character limit`,
+        });
+    });
 
     useLayoutEffect(() => {
-        // Moving textarea cursor to the end of the message on initial load
-        textareaRef.current?.setSelectionRange(currentMessage.current.length, currentMessage.current.length);
-
         if (isThread) {
             return;
         }
@@ -238,55 +230,38 @@ export const ChatMessage = ({
         };
     }, [dispatch, isThread]);
 
-    const textareaHeight = useMemo(() => {
-        if (textareaRef.current) {
-            const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
-            const minHeightPx = rootFontSize * minHeight;
-            const maxHeightPx = rootFontSize * maxHeight;
+    const handleChatMessageSubmit = useStableCallback(async () => {
+        const messageToSend = currentMessage.current;
 
-            const scrollHeight = textareaRef.current.scrollHeight;
-            const newHeight =
-                message.trim() === '' ? minHeightPx : Math.max(minHeightPx, Math.min(scrollHeight, maxHeightPx));
-            return `${newHeight / rootFontSize}rem`;
-        }
-        return `${minHeight}rem`;
-    }, [message, minHeight, maxHeight]);
-
-    const trimmedMessageLength = trimMessage(message).length;
-
-    const handleChatMessageSubmit = async () => {
-        const messageToSend = message;
-
-        updateMessage('');
+        // Flush the field before the send resolves so continued typing never joins the sent text.
+        composerRef.current?.setValue('');
 
         const result = await onMessageSend(messageToSend);
 
         if (!result && currentMessage.current === '') {
-            updateMessage(messageToSend);
+            composerRef.current?.setValue(messageToSend);
         }
 
         return result;
-    };
+    });
 
-    const handleEmojiSelect = useCallback(
-        (emoji: { native: string }) => {
-            const textarea = textareaRef.current;
-            if (textarea) {
-                const start = textarea.selectionStart ?? message.length;
-                const end = textarea.selectionEnd ?? message.length;
-                const newMessage = message.slice(0, start) + emoji.native + message.slice(end);
-                updateMessage(newMessage);
-                setTimeout(() => {
-                    textarea.setSelectionRange(start + emoji.native.length, start + emoji.native.length);
-                    textarea.focus();
-                }, 0);
-            } else {
-                updateMessage(message + emoji.native);
+    const handleSubmit = useStableCallback(() => {
+        if (chatMessageLoading || !trimMessage(currentMessage.current)) {
+            return;
+        }
+
+        void withChatMessageLoading(handleChatMessageSubmit).then((result) => {
+            if (result) {
+                composerRef.current?.focus();
             }
-            setEmojiPickerOpen(false);
-        },
-        [message, updateMessage]
-    );
+        });
+    });
+
+    const handleEmojiSelect = useStableCallback((emoji: { native: string }) => {
+        composerRef.current?.insertText(emoji.native);
+        setEmojiPickerOpen(false);
+        composerRef.current?.focus();
+    });
 
     useEffect(() => {
         if (!emojiPickerOpen) {
@@ -323,58 +298,24 @@ export const ChatMessage = ({
         };
     }, [emojiPickerOpen]);
 
-    useHotkeys(
-        textareaRef,
-        [
-            [
-                'Enter',
-                async (e) => {
-                    if (!e.shiftKey && message.trim() !== '') {
-                        e.preventDefault();
-
-                        if (chatMessageLoading) {
-                            return;
-                        }
-
-                        const result = await withChatMessageLoading(handleChatMessageSubmit);
-
-                        if (!result) {
-                            return;
-                        }
-
-                        textareaRef.current?.focus();
-                    }
-                },
-            ],
-        ],
-        {
-            keyEventType: 'keydown',
-        }
-    );
-
-    const textarea = (
-        <InputFieldTwo
-            ref={textareaRef}
-            value={message}
-            onChange={handleMessageChange}
+    const composer = (
+        <MentionInput
+            handleRef={composerRef}
+            initialValue={initialDraft}
+            onChange={handleComposerChange}
+            onSubmit={handleSubmit}
+            maxLength={CHAT_MESSAGE_MAX_LENGTH}
+            onMentionTooLong={handleMentionTooLong}
             placeholder={
                 placeholder ??
                 (isThread ? c('Placeholder').t`Reply...` : c('Placeholder').t`Type an encrypted message...`)
             }
-            aria-label={isThread ? c('Label').t`Reply` : c('Label').t`Message`}
-            unstyled={true}
-            className={clsx('border-none resize-none px-0 my-auto', 'hide-scrollbar wrap-placeholder')}
-            style={{
-                minHeight: `${minHeight}rem`,
-                maxHeight: `${maxHeight}rem`,
-                height: textareaHeight,
-                overflowY: message.trim() === '' ? 'hidden' : 'auto',
-            }}
-            as={TextAreaTwo}
-            assistContainerClassName="display-none"
-            rows={1}
+            ariaLabel={isThread ? c('Label').t`Reply` : c('Label').t`Message`}
+            className="my-auto flex-1 min-w-0"
+            minHeight={minHeight}
+            maxHeight={maxHeight}
             autoFocus={resolvedAutoFocus}
-            autoComplete="off"
+            suggestionAnchorEl={composerRowEl}
         />
     );
 
@@ -464,9 +405,12 @@ export const ChatMessage = ({
                     </Button>
                 )}
                 <div className="flex flex-column gap-1 flex-1 min-w-0">
-                    <div className="chat-message-thread-pill flex flex-nowrap items-center gap-2 min-w-0 rounded-full pl-2 pr-1">
+                    <div
+                        ref={setComposerRowEl}
+                        className="chat-message-thread-pill flex flex-nowrap items-center gap-2 min-w-0 rounded-full pl-2 pr-1"
+                    >
                         <LocalParticipantAvatar />
-                        {textarea}
+                        {composer}
                         <div className="flex flex-nowrap items-center gap-1 shrink-0">
                             {emojiButton}
                             {sendButton}
@@ -487,8 +431,8 @@ export const ChatMessage = ({
                 style={{ '--left-custom': '0', '--w-custom': 'calc(100% + 2rem)' }}
             />
             <div className="flex flex-column gap-1 w-full px-1 pt-4">
-                <div className="flex flex-nowrap items-start gap-4 w-full">
-                    {textarea}
+                <div ref={setComposerRowEl} className="flex flex-nowrap items-start gap-4 w-full">
+                    {composer}
                     <div className="flex flex-nowrap items-start gap-1 shrink-0 ml-1">
                         {emojiButton}
                         {sendButton}

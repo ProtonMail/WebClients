@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectChatMessages, selectEvents } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';
@@ -8,18 +10,20 @@ export const useMeetingRoomUpdates = (): (MeetChatMessage | ParticipantEventReco
     const chatMessages = useMeetSelector(selectChatMessages);
     const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
 
-    const combinedData = [
-        ...participantEvents.map((event) => ({
-            ...event,
-            type: 'event' as const,
-            name: participantDecryptedNameMap?.[event.identity],
-        })),
-        ...chatMessages.map((message) => ({
-            ...message,
-            type: 'message' as const,
-            name: participantDecryptedNameMap?.[message.identity],
-        })),
-    ].sort((a, b) => a.timestamp - b.timestamp);
-
-    return combinedData;
+    return useMemo(
+        () =>
+            [
+                ...participantEvents.map((event) => ({
+                    ...event,
+                    type: 'event' as const,
+                    name: participantDecryptedNameMap?.[event.identity],
+                })),
+                ...chatMessages.map((message) => ({
+                    ...message,
+                    type: 'message' as const,
+                    name: participantDecryptedNameMap?.[message.identity],
+                })),
+            ].sort((a, b) => a.timestamp - b.timestamp),
+        [participantEvents, chatMessages, participantDecryptedNameMap]
+    );
 };
