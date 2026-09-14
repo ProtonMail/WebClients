@@ -14,14 +14,14 @@
         "@pdfme/schemas": "^6.1.12",
         "@pdfme/ui": "^6.1.12",
         "@proton/recovery-kit": "workspace:^",
-        "eslint": "^10.9.0",
+        "eslint": "^10.10.0",
         "toastify-js": "^1.12.0"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
         "@types/toastify-js": "^1.12.4",
         "typescript": "^6.0.3",
-        "vite": "^8.2.2"
+        "vite": "^8.3.0"
     },
     "installConfig": {
         "hoistingLimits": "workspaces"
