@@ -448,15 +448,20 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
         () => sortMemoriesByDate(normalizeMemories(lumoUserSettings.memories)),
         [lumoUserSettings.memories]
     );
+    const newPromptsSinceLastUpdate = lumoUserSettings.memoryPromptsSinceAutoSave ?? 0;
     const memoryGenerationCutoff = useMemo(
-        () => getMemoryGenerationCutoff(lumoUserSettings.memoryLastProcessedMessageAt, memories),
-        [lumoUserSettings.memoryLastProcessedMessageAt, memories]
+        () =>
+            getMemoryGenerationCutoff(
+                lumoUserSettings.memoryLastProcessedMessageAt,
+                memories,
+                newPromptsSinceLastUpdate
+            ),
+        [lumoUserSettings.memoryLastProcessedMessageAt, memories, newPromptsSinceLastUpdate]
     );
     const { user: userMemories, generated: generatedMemories } = useMemo(() => partitionMemories(memories), [memories]);
 
     const isMemoryEnabled = lumoUserSettings.isMemoryEnabled === true;
     const isMemoryAutoSaveEnabled = lumoUserSettings.isMemoryAutoSaveEnabled ?? true;
-    const newPromptsSinceLastUpdate = lumoUserSettings.memoryPromptsSinceAutoSave ?? 0;
     const promptsUntilAutoSave = Math.max(0, MEMORY_AUTO_SAVE_PROMPT_THRESHOLD - newPromptsSinceLastUpdate);
     const hasMemories = memories.length > 0;
     const canOptimize = canOptimizeMemories(memories.length);
@@ -611,7 +616,21 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                 return;
             }
 
-            persistMemories(optimized);
+            const pendingPrompts = store.getState().lumoUserSettings.memoryPromptsSinceAutoSave ?? 0;
+            const preOptimizeCutoff = getMemoryGenerationCutoff(
+                store.getState().lumoUserSettings.memoryLastProcessedMessageAt,
+                latestMemories,
+                pendingPrompts
+            );
+            updateSettings({
+                memories: normalizeMemories(optimized),
+                ...(preOptimizeCutoff
+                    ? { memoryLastProcessedMessageAt: preOptimizeCutoff }
+                    : pendingPrompts === 0
+                      ? { memoryLastProcessedMessageAt: new Date().toISOString() }
+                      : {}),
+                _autoSave: true,
+            });
 
             const removed = beforeCount - optimized.length;
             if (removed > 0) {
