@@ -3,6 +3,7 @@ import { useEffect, useMemo } from 'react';
 import { CartesianGrid, Line, LineChart, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { c } from 'ttag';
 
+import { useScaledChartFontSize } from '../../../../../../hooks/useScaledChartFontSize';
 import {
     type FinanceComparisonItem,
     type FinanceData,
@@ -79,6 +80,8 @@ interface FinanceComparisonResultProps {
 }
 
 export const FinanceComparisonResult = ({ items, onReady }: FinanceComparisonResultProps) => {
+    const axisTick = useScaledChartFontSize(10);
+
     useEffect(() => {
         if (!onReady) return;
 
@@ -138,14 +141,14 @@ export const FinanceComparisonResult = ({ items, onReady }: FinanceComparisonRes
                         <ReferenceLine yAxisId="pct" y={0} stroke="var(--border-norm)" strokeWidth={1} />
                         <XAxis
                             dataKey="dateLabel"
-                            tick={{ fontSize: 10, fill: 'var(--text-weak)' }}
+                            tick={axisTick}
                             tickLine={false}
                             axisLine={false}
                             interval="preserveStartEnd"
                         />
                         <YAxis
                             yAxisId="pct"
-                            tick={{ fontSize: 10, fill: 'var(--text-weak)' }}
+                            tick={axisTick}
                             tickLine={false}
                             axisLine={false}
                             tickFormatter={(v: number) => `${v > 0 ? '+' : ''}${v.toFixed(1)}%`}

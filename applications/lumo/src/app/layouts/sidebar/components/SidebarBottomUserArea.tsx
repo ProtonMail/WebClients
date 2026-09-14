@@ -36,7 +36,7 @@ export const SidebarBottomUserArea = () => {
     }
 
     return (
-        <div className="desktop-sidebar-user-dropdown flex flex-row flex-nowrap items-center gap-2 justify-space-between">
+        <div className="desktop-sidebar-user-dropdown flex flex-row flex-nowrap items-center gap-2 justify-space-between w-full">
             <div className="sidebar-item-text w-full">{userDropdown}</div>
         </div>
     );
