@@ -1,7 +1,7 @@
 import { playwright } from '@vitest/browser-playwright';
 import { mergeConfig } from 'vitest/config';
 
-import { sharedVitestConfig } from '@proton/testing/configs/vitest.config';
+import { sharedVitestConfig } from '@proton/vitest-config/shared';
 
 export default mergeConfig(sharedVitestConfig, {
     define: {
