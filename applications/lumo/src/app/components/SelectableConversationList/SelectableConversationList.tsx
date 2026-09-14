@@ -183,7 +183,7 @@ export const SelectableConversationList = ({
                             disabled={isDeleting}
                             className="text-sm"
                         >
-                            <LumoIcon name="Trash2" width={12} height={12} className="mr-1" />
+                            <LumoIcon name="Trash" width={12} height={12} className="mr-1" />
                             {c('collider_2025:Action').t`Delete`} ({selectedCount})
                         </Button>
                     )}
