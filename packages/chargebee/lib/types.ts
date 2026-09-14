@@ -123,6 +123,14 @@ export type PaypalAuthorizedPayload = {
     paymentIntent: AuthorizedPaymentIntent;
 };
 
+export type PaypalAuthorizedMessage = {
+    type: typeof paypalAuthorizedMessageType;
+} & MessageBusResponseSuccess<PaypalAuthorizedPayload>;
+
+export function isPaypalAuthorizedMessage(obj: any): obj is PaypalAuthorizedMessage {
+    return obj && obj.type === paypalAuthorizedMessageType;
+}
+
 export type MessageBusResponseSuccess<T> = {
     status: 'success';
     data: T;
@@ -193,6 +201,11 @@ export function isThreeDsSuccessMessage(obj: any): obj is ThreeDsSuccessMessage 
 export type ChargebeeSavedCardAuthorizationSuccess = {
     authorized: true;
     authorizedPaymentIntent: AuthorizedPaymentIntent;
+};
+
+export type ChargebeeSavedCardAuthorizationFailure = {
+    authorized: false;
+    error: any;
 };
 
 export type ThreeDsRequiredForSavedCardMessage = MessageBusResponseSuccess<ThreeDsChallengePayload> & {
@@ -377,6 +390,14 @@ export const idealAuthorizedMessageType = 'ideal-authorized';
 export type IdealAuthorizedPayload = {
     paymentIntent: AuthorizedPaymentIntent;
 };
+
+export type IdealAuthorizedMessage = {
+    type: typeof idealAuthorizedMessageType;
+} & MessageBusResponseSuccess<IdealAuthorizedPayload>;
+
+export function isIdealAuthorizedMessage(obj: any): obj is IdealAuthorizedMessage {
+    return obj && obj.type === idealAuthorizedMessageType;
+}
 
 export const idealFailedMessageType = 'ideal-failed';
 export type IdealFailedMessage = MessageBusResponseFailure & {

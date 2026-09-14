@@ -215,7 +215,8 @@
         "packages/chargebee": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"],
-            "ignoreDependencies": ["@proton/styles"]
+            "ignoreDependencies": ["@proton/styles"],
+            "ignore": ["./lib/types.ts"]
         },
         "packages/colors": {
             "entry": [],
