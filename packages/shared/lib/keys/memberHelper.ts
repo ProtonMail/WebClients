@@ -11,7 +11,7 @@ import {
 } from '../interfaces';
 import { parseInvitationData } from './unprivatization';
 
-export const getHasMemberUnprivatization = (
+const getHasMemberUnprivatization = (
     member?: Member
 ): member is Member & { Unprivatization: NonNullable<Member['Unprivatization']> } => {
     return Boolean(member && member.Unprivatization);
@@ -54,7 +54,7 @@ export const getMemberUnprivatizationMode = (member?: Member) => {
         try {
             const InvitationData = member.Unprivatization.InvitationData;
             invitationData = InvitationData ? parseInvitationData(InvitationData) : null;
-        } catch {}
+        } catch { }
         return {
             makeAdmin: invitationData?.Admin === true,
             exists: true,

@@ -33,7 +33,7 @@ export const getHolidaysCalendarsFromCountryCode = (
  * Given a list of country codes, find the preferred one based on language preferences. Result can be undefined.
  * See `getSuggestedHolidaysCalendar` for more details on the logic.
  */
-export const findPreferredCountryCode = (codes: string[], languageTags: string[]) => {
+const findPreferredCountryCode = (codes: string[], languageTags: string[]) => {
     if (codes.length === 1) {
         return codes[0];
     }
@@ -50,7 +50,7 @@ export const findPreferredCountryCode = (codes: string[], languageTags: string[]
  * Given a list of holidays directory calendars, find the preferred one based on language preferences. Result can be undefined.
  * See `getSuggestedHolidaysCalendar` for more details on the logic.
  */
-export const findPreferredCalendarByLanguageTag = (calendars: HolidaysDirectoryCalendar[], languageTags: string[]) => {
+const findPreferredCalendarByLanguageTag = (calendars: HolidaysDirectoryCalendar[], languageTags: string[]) => {
     if (calendars.length === 1) {
         return calendars[0];
     }

@@ -18,7 +18,7 @@ import { getIsVcalErrorComponent } from './vcalHelper';
 import { fromIcalProperties, getInternalDurationValue, getInternalRecur } from './vcalParse';
 import { parseWithRecovery } from './vcalRecovery';
 
-export { fromIcalComponent, getInternalDateTimeValue, icalValueToInternalValue, parse } from './vcalParse';
+export { getInternalDateTimeValue, parse } from './vcalParse';
 
 const getIcalDateValue = (value: any, tzid: string | undefined, isDate: boolean) => {
     const icalTimezone = value.isUTC ? ICAL.Timezone.utcTimezone : ICAL.Timezone.localTimezone;
@@ -141,7 +141,7 @@ export const serialize = (component: any): string => {
     return fromInternalComponent(component).toString();
 };
 
-export const fromIcalComponentWithMaybeErrors = (
+const fromIcalComponentWithMaybeErrors = (
     component: any
 ): VcalCalendarComponentWithMaybeErrors | VcalErrorComponent => {
     const components = component.getAllSubcomponents().map((subcomponent: any) => {

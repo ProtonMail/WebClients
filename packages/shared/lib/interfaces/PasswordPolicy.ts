@@ -15,7 +15,7 @@ export enum PasswordPolicyState {
     OPTIONAL = 2,
 }
 
-export interface PasswordPolicy {
+interface PasswordPolicy {
     PolicyName: PasswordPolicyName;
     State: PasswordPolicyState;
     RequirementMessage: string;

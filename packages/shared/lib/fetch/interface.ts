@@ -1,7 +1,7 @@
 import type { FetchDataType } from './serialize';
 
-export type ResponseDataType = 'blob' | 'raw' | 'json' | 'text' | 'stream' | 'arrayBuffer';
-export type FetchConfigMethod = 'post' | 'put' | 'patch' | 'delete' | 'get';
+type ResponseDataType = 'blob' | 'raw' | 'json' | 'text' | 'stream' | 'arrayBuffer';
+type FetchConfigMethod = 'post' | 'put' | 'patch' | 'delete' | 'get';
 
 export interface FetchConfig extends Omit<RequestInit, 'mode' | 'credentials' | 'redirect'> {
     url: string;

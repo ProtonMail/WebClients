@@ -79,11 +79,11 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'clearAppData'; payload?: undefined }
     | { type: 'oauthPopupOpened'; payload: 'oauthPopupStarted' | 'oauthPopupFinished' } // Deprecated by `oauthPopupOpenedV2`; older desktop clients still rely on the message.
     | {
-          type: 'oauthPopupOpenedV2';
-          payload:
-              | { action: 'oauthPopupStarted'; authorizationUrl: string; sessionId: string }
-              | { action: 'oauthPopupFinished'; sessionId: string };
-      }
+        type: 'oauthPopupOpenedV2';
+        payload:
+        | { action: 'oauthPopupStarted'; authorizationUrl: string; sessionId: string }
+        | { action: 'oauthPopupFinished'; sessionId: string };
+    }
     | { type: 'subscriptionModalOpened'; payload: 'subscriptionModalStarted' | 'subscriptionModalFinished' }
     | { type: 'openExternal'; payload: string }
     | { type: 'changeView'; payload: CHANGE_VIEW_TARGET }
@@ -153,9 +153,9 @@ export const IPCInboxHostUpdateMessageSchema = z.discriminatedUnion('type', [
     }),
 ]);
 
-export type IPCInboxHostUpdateMessage = z.infer<typeof IPCInboxHostUpdateMessageSchema>;
+type IPCInboxHostUpdateMessage = z.infer<typeof IPCInboxHostUpdateMessageSchema>;
 export type IPCInboxHostUpdateMessageType = IPCInboxHostUpdateMessage['type'];
-export type IPCInboxHostUpdateMessagePayload = IPCInboxHostUpdateMessage['payload'];
+type IPCInboxHostUpdateMessagePayload = IPCInboxHostUpdateMessage['payload'];
 export type IPCInboxHostUpdateListener = (payload: IPCInboxHostUpdateMessagePayload) => void;
 export type IPCInboxHostUpdateListenerRemover = { removeListener: () => void };
 
@@ -164,7 +164,7 @@ export type IPCInboxHostUpdateListenerRemover = { removeListener: () => void };
 // generic T extends IPCInboxHostUpdateMessageType, but it makes it messy
 // because generic doesn't pick one value but also union of all possible types
 // and therefore payload and callback need to accpet all.
-export type IPCInboxHostUpdateListenerAdder = (
+type IPCInboxHostUpdateListenerAdder = (
     eventType: IPCInboxHostUpdateMessageType,
     callback: IPCInboxHostUpdateListener
 ) => IPCInboxHostUpdateListenerRemover;
@@ -204,7 +204,7 @@ export type PayloadOfHostUpdateType<T extends IPCInboxHostUpdateMessageType> = E
 >['payload'];
 
 export type IPCMeetClientUpdateMessage = { type: 'openExternal'; payload: string };
-export type IPCMeetClientUpdateMessageType = IPCMeetClientUpdateMessage['type'];
+type IPCMeetClientUpdateMessageType = IPCMeetClientUpdateMessage['type'];
 
 export type IPCMeetMessageBroker = {
     send?: <T extends IPCMeetClientUpdateMessageType>(
@@ -212,8 +212,6 @@ export type IPCMeetMessageBroker = {
         payload: Extract<IPCMeetClientUpdateMessage, { type: T }>['payload']
     ) => void;
 };
-
-export const END_OF_TRIAL_KEY = 'endOfTrial';
 
 export interface InboxDesktopFreeTrialDates {
     trialStartDate?: Date;

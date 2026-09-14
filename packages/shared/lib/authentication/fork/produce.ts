@@ -103,7 +103,7 @@ export const produceFork = async ({
     };
 };
 
-export const produceForkConsumption = (
+const produceForkConsumption = (
     {
         selector,
         state,

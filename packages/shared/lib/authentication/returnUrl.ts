@@ -1,8 +1,8 @@
 import { getParsedPathWithoutLocalIDBasename } from './pathnameHelper';
 
-export const returnUrlKey = 'returnUrl';
-export const returnUrlContextKey = 'returnUrlContext';
-export const returnUrlTargetKey = 'returnUrlTarget';
+const returnUrlKey = 'returnUrl';
+const returnUrlContextKey = 'returnUrlContext';
+const returnUrlTargetKey = 'returnUrlTarget';
 
 export const getReturnUrlParameter = (searchParams: URLSearchParams) => {
     try {
@@ -23,14 +23,14 @@ export const getReturnUrlParameter = (searchParams: URLSearchParams) => {
 
 export type ReturnUrlContext = 'private' | 'public';
 
-export const getReturnUrlContextParameter = (searchParams: URLSearchParams): ReturnUrlContext => {
+const getReturnUrlContextParameter = (searchParams: URLSearchParams): ReturnUrlContext => {
     const context = searchParams.get(returnUrlContextKey) || '';
     return context === 'public' ? context : 'private';
 };
 
 export type ReturnUrlTarget = 'account' | 'app';
 
-export const getReturnUrlTargetParameter = (searchParams: URLSearchParams): ReturnUrlTarget => {
+const getReturnUrlTargetParameter = (searchParams: URLSearchParams): ReturnUrlTarget => {
     const target = searchParams.get(returnUrlTargetKey) || '';
     return target === 'account' ? target : 'app';
 };

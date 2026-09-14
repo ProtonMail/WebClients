@@ -7,7 +7,7 @@ export interface Fido2Response {
 
 export type Fido2Data = AuthenticationCredentialsPayload;
 
-export interface TwoFaResponse {
+interface TwoFaResponse {
     Enabled: number;
     FIDO2: Fido2Response | null;
     TOTP: number;
@@ -97,11 +97,6 @@ export interface ModulusResponse {
 
 export interface LocalKeyResponse {
     ClientKey: string;
-}
-
-export interface MemberAuthResponse {
-    UID: string;
-    LocalID: number;
 }
 
 export interface ExtraSessionForkData {

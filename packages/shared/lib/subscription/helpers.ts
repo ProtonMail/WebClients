@@ -11,12 +11,6 @@ interface SubcriptionPlan {
 export const getSubscriptionPlans = <P extends SubcriptionPlan>({ Plans = [] }: { Plans: P[] }) =>
     Plans.filter(({ Type }) => Type === PLAN_TYPES.PLAN);
 
-export const getSubscriptionTitle = <P extends SubcriptionPlan>({ Plans = [] }: { Plans: P[] }) => {
-    return getSubscriptionPlans({ Plans })
-        .map(({ Title }) => Title)
-        .join(', ');
-};
-
 export const isSubscriptionRenewEnabled = (subscription: MaybeFreeSubscription): boolean => {
     if (subscription?.UpcomingSubscription) {
         return subscription?.UpcomingSubscription.Renew === Renew.Enabled;

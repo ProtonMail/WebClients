@@ -55,7 +55,7 @@ export const deserializeApiErrorData = ({
     return error;
 };
 
-export enum CUSTOM_FETCH_ERROR_STATUS_CODE {
+enum CUSTOM_FETCH_ERROR_STATUS_CODE {
     NO_NETWORK_CONNECTION = 0,
     TIMEOUT = -1,
 }

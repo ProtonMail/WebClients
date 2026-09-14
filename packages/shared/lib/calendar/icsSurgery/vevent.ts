@@ -122,7 +122,7 @@ export const withSupportedDtstamp = <T>(
     };
 };
 
-export const getSupportedDateOrDateTimeProperty = ({
+const getSupportedDateOrDateTimeProperty = ({
     property,
     componentIdentifiers,
     hasXWrTimezone,
@@ -254,7 +254,7 @@ export const getLinkedDateTimeProperty = ({
     return getDateTimeProperty(property.value, linkedTzid);
 };
 
-export const getSupportedSequenceValue = (sequence = 0) => {
+const getSupportedSequenceValue = (sequence = 0) => {
     /**
      * According to the RFC (https://datatracker.ietf.org/doc/html/rfc5545#section-3.8.7.4), the sequence property can
      * have INTEGER values, and the valid range for an integer is that of a 32-byte integer: -2147483648 to 2147483647,

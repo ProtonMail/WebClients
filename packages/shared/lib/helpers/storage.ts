@@ -34,16 +34,6 @@ export const removeItem = (key: string) => {
     }
 };
 
-export const hasStorage = (key = 'test') => {
-    try {
-        window.localStorage.setItem(key, key);
-        window.localStorage.removeItem(key);
-        return true;
-    } catch (e: any) {
-        return false;
-    }
-};
-
 export const getKeys = () => {
     try {
         return Object.keys(window.localStorage);

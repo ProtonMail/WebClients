@@ -33,11 +33,11 @@ import { reformatOrganizationKey } from './organizationKeys';
 import { createSignedKeyListForMigration } from './signedKeyList';
 import { USER_KEY_USERID } from './userKeys';
 
-export const getV2KeyToUpgrade = (Key: tsKey) => {
+const getV2KeyToUpgrade = (Key: tsKey) => {
     return Key.Version < 3;
 };
 
-export const getV2KeysToUpgrade = (Keys?: tsKey[]) => {
+const getV2KeysToUpgrade = (Keys?: tsKey[]) => {
     if (!Keys) {
         return [];
     }
@@ -134,7 +134,7 @@ interface UpgradeV2KeysLegacyArgs {
     }[];
 }
 
-export const upgradeV2KeysLegacy = async ({
+const upgradeV2KeysLegacy = async ({
     user,
     userKeys,
     addressesKeys,
@@ -183,7 +183,7 @@ interface UpgradeV2KeysArgs extends UpgradeV2KeysLegacyArgs {
     keyMigrationKTVerifier: KeyMigrationKTVerifier;
 }
 
-export const upgradeV2KeysV2 = async ({
+const upgradeV2KeysV2 = async ({
     user,
     userKeys,
     addressesKeys,

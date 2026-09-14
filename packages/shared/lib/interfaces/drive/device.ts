@@ -17,24 +17,3 @@ export interface DevicePayload {
 export type DevicesResult = {
     Devices: DevicePayload[];
 };
-
-export interface CreateDeviceVolume {
-    Device: {
-        SyncState: number;
-        Type: number;
-    };
-    Share: {
-        AddressID: string;
-        AddressKeyID: string;
-        Key: string;
-        Passphrase: string;
-        PassphraseSignature: string;
-    };
-    Link: {
-        NodeKey: string;
-        NodePassphrase: string;
-        NodePassphraseSignature: string;
-        NodeHashKey: string;
-        Name: string;
-    };
-}

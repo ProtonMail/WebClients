@@ -1,5 +1,4 @@
 import type { Nullable } from '../utils';
-import type { Calendar } from './Calendar';
 
 export enum ACCESS_LEVEL {
     LIMITED = 0,
@@ -27,19 +26,7 @@ export interface CalendarUrlsResponse {
     Code: number;
 }
 
-export interface CalendarMap {
-    [key: string]: Calendar;
-}
-
 export interface CalendarLink extends Omit<CalendarUrl, 'PassphraseID'> {
     purpose: Nullable<string>;
     link: string;
-}
-
-export interface CopyLinkParams {
-    calendarID: string;
-    urlID: string;
-    accessLevel: ACCESS_LEVEL;
-    encryptedPassphrase: Nullable<string>;
-    encryptedCacheKey: string;
 }

@@ -31,15 +31,6 @@ export interface CalendarEventData {
     Author: string;
 }
 
-export interface CalendarPersonalEventData extends CalendarEventData {
-    MemberID: string;
-}
-
-export interface PartstatData {
-    Status: ICAL_ATTENDEE_STATUS;
-    Comment?: string;
-}
-
 export interface AttendeeComment {
     /** either encrypted or cleartext comment, based on `Type` */
     Message: string;
@@ -54,7 +45,7 @@ export interface Attendee {
     Comment?: Nullable<AttendeeComment>;
 }
 
-export interface AttendeesInfo {
+interface AttendeesInfo {
     Attendees: Attendee[];
     MoreAttendees: ATTENDEE_MORE_ATTENDEES;
 }
@@ -70,8 +61,6 @@ export interface CalendarEventBlobData {
     AttendeesEvents: CalendarEventData[];
     AttendeesInfo: AttendeesInfo;
 }
-
-export type CalendarEventBlobDataWithNotifications = Required<CalendarEventBlobData>;
 
 export interface CalendarEventSharedData {
     ID: string;
@@ -158,7 +147,7 @@ export interface AttendeeModel {
     comment?: string;
 }
 
-export interface CalendarViewModel {
+interface CalendarViewModel {
     id: string;
     color: string;
     permissions: number;
@@ -168,7 +157,7 @@ export interface CalendarViewModel {
     isUnknown: boolean;
 }
 
-export interface CalendarsModel {
+interface CalendarsModel {
     text: string;
     value: string;
     color: string;

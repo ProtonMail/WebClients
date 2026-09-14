@@ -147,7 +147,7 @@ export const getMinimalPersistedSession = ({ localID, accessType }: PersistedSes
     };
 };
 
-export const getPersistedSessionBlob = (blob: string): PersistedSessionBlob | undefined => {
+const getPersistedSessionBlob = (blob: string): PersistedSessionBlob | undefined => {
     try {
         const parsedValue = JSON.parse(blob);
         const keyPassword = parsedValue.keyPassword ?? '';

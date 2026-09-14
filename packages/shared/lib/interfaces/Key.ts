@@ -31,7 +31,6 @@ export interface Key {
 }
 
 export type AddressKey = RequireSome<Key, 'Flags' | 'Signature' | 'AddressForwardingID'>;
-export type UserKey = RequireSome<Key, 'RecoverySecret' | 'RecoverySecretSignature'>;
 
 export interface KeyPair<PrivateKeyReferenceWithVersion extends PrivateKeyReference = PrivateKeyReference> {
     privateKey: PrivateKeyReferenceWithVersion;
@@ -43,13 +42,15 @@ export interface KeysPair {
     publicKeys: PublicKeyReference[];
 }
 
-export interface DecryptedKey<PrivateKeyReferenceWithVersion extends PrivateKeyReference = PrivateKeyReference>
-    extends KeyPair<PrivateKeyReferenceWithVersion> {
+export interface DecryptedKey<
+    PrivateKeyReferenceWithVersion extends PrivateKeyReference = PrivateKeyReference,
+> extends KeyPair<PrivateKeyReferenceWithVersion> {
     ID: string;
 }
 
-export interface DecryptedAddressKey<PrivateKeyReferenceWithVersion extends PrivateKeyReference = PrivateKeyReference>
-    extends KeyPair<PrivateKeyReferenceWithVersion> {
+export interface DecryptedAddressKey<
+    PrivateKeyReferenceWithVersion extends PrivateKeyReference = PrivateKeyReference,
+> extends KeyPair<PrivateKeyReferenceWithVersion> {
     ID: string;
     Flags: number;
     Primary: 1 | 0;

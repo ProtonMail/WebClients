@@ -5,32 +5,14 @@ export const getClientVPNInfo = () => ({
     url: 'vpn/v2',
 });
 
-export const queryVPNCountriesCount = () => ({
-    method: 'get',
-    url: 'vpn/v1/countries/count',
-});
-
 export const queryVPNLogicalServerInfo = () => ({
     method: 'get',
     url: 'vpn/v1/logicals?WithIpV6=1',
 });
 
-export const queryVPNLogicalServerInfoCount = () => ({
-    method: 'get',
-    url: 'vpn/v1/logicals/count',
-    params: {
-        GroupBy: 'Tier',
-    },
-});
-
 export const queryVPNLogicalServerLookup = (name: string) => ({
     method: 'get',
     url: `vpn/v1/logicals/lookup/${encodeURIComponent(name)}`,
-});
-
-export const queryVPNServersCount = () => ({
-    method: 'get',
-    url: 'vpn/v1/servers-count',
 });
 
 export const getLocation = () => ({

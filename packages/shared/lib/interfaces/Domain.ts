@@ -1,4 +1,4 @@
-export interface DKIMKey {
+interface DKIMKey {
     ID: string;
     Selector: string;
     PublicKey: string;
@@ -7,7 +7,7 @@ export interface DKIMKey {
     CreateTime: number;
 }
 
-export interface DKIMConfig {
+interface DKIMConfig {
     Hostname: string;
     CNAME: string;
     Key: DKIMKey | null;
