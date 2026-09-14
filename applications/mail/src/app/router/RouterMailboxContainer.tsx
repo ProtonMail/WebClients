@@ -135,13 +135,7 @@ export const RouterMailboxContainer = () => {
                         {redirectURL && <Redirect exact from="/" to={redirectURL} />}
                         <Route
                             path={CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].route}
-                            render={() => (
-                                <NewsletterSubscriptionView
-                                    elementsData={elementsData}
-                                    actions={actions}
-                                    navigation={navigation}
-                                />
-                            )}
+                            render={() => <NewsletterSubscriptionView elementsData={elementsData} actions={actions} />}
                         />
                         <Route
                             path={ROUTE_LABEL}
