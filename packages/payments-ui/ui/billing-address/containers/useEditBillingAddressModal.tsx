@@ -10,13 +10,6 @@ import type { TaxCountryHook } from '../hooks/useTaxCountry';
 import type { VatNumberHook } from '../hooks/useVatNumber';
 import { EditBillingAddressModal, type EditBillingAdressModalInputs } from './EditBillingAddress';
 
-export class FetchBillingAddressError extends Error {
-    constructor(message: string) {
-        super(message);
-        this.name = 'FetchBillingAddressError';
-    }
-}
-
 export const useEditBillingAddressModal = () => {
     const [editBillingAddressModal, showEditBillingAddressModal] = useModalTwoPromise<
         EditBillingAdressModalInputs,

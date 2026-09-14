@@ -215,7 +215,8 @@
         "packages/chargebee": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "ignoreDependencies": ["@proton/styles"],
+            "ignore": ["./lib/types.ts"]
         },
         "packages/colors": {
             "entry": [],
@@ -370,7 +371,7 @@
         "packages/payments-ui": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "ignore": ["./examples/utils.ts"]
         },
         "packages/polyfill": {
             "entry": [],

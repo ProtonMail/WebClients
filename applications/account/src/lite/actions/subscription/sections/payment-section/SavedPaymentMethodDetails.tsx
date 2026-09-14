@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { getCreditCardTypeByBrand } from '@proton/components/containers/payments/methods/PaymentMethodDetails';
 import { formattedShortSavedSepaDetails } from '@proton/components/payments/client-extensions';
 import { IcBank } from '@proton/icons/icons/IcBank';
-import { getBankSvg } from '@proton/payments-ui/ui/helpers/credit-card-icons';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type {
     PayPalDetails,
@@ -14,6 +13,7 @@ import type {
     SavedPaymentMethod,
     SepaDetails,
 } from '@proton/payments/core/interface';
+import { getBankSvg } from '@proton/payments/core/payment-methods/credit-card-icons';
 
 interface Props {
     method: SavedPaymentMethod;
