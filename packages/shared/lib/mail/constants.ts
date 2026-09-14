@@ -1,4 +1,4 @@
-import { CATEGORY_LABEL_IDS_SET, MAILBOX_LABEL_IDS } from '../constants';
+import { MAILBOX_LABEL_IDS } from '../constants';
 
 export const MESSAGE_FLAGS = {
     FLAG_RECEIVED: Math.pow(2, 0), // whether a message is received
@@ -139,12 +139,6 @@ export const SYSTEM_LABELS = [
     MAILBOX_LABEL_IDS.SCHEDULED,
     MAILBOX_LABEL_IDS.SNOOZED,
 ];
-
-export const CATEGORY_LABELS_TO_ROUTE_ARRAY = [...CATEGORY_LABEL_IDS_SET].map((id) => {
-    return `/${LABEL_IDS_TO_HUMAN[id]}`;
-});
-
-export const CATEGORY_LABELS_TO_ROUTE_SET = new Set(CATEGORY_LABELS_TO_ROUTE_ARRAY);
 
 // List of location where messages are marked automatically as read after moving by the API
 export const LABELS_AUTO_READ = [MAILBOX_LABEL_IDS.TRASH];

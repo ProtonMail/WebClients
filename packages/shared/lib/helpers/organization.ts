@@ -46,14 +46,6 @@ export const hasTwoFARequiredForAll = (organization: Partial<Organization> = {})
     return organization.TwoFactorRequired === ORGANIZATION_TWOFA_SETTING.REQUIRED_ALL;
 };
 
-export const hasFlag = (organization: Partial<Organization> = {}, mask: number) => {
-    return hasBit(Number(organization.Flags), Number(mask));
-};
-
-export const hasPermission = (organization: Partial<Organization> = {}, mask: number) => {
-    return hasBit(Number(organization.Permissions), Number(mask));
-};
-
 export const hasOrganizationSetup = (organization: Partial<Organization> = {}) => {
     return Boolean(!organization.RequiresKey && organization.Name);
 };

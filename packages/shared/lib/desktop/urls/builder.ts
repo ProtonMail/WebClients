@@ -9,7 +9,7 @@ import {
     prefixPathPattern,
 } from './regex';
 
-export type UrlRuleFlags =
+type UrlRuleFlags =
     | 'i' // case-insensitive
     | 'g' // global
     | 'm' // multiline

@@ -69,7 +69,7 @@ export const enum DRAWER_VISIBILITY {
     HIDE = 1,
 }
 
-export enum EDM_VALUE {
+enum EDM_VALUE {
     ENABLED = 0,
     DISABLED = 1,
 }

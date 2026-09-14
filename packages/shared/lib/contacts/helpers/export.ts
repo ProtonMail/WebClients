@@ -16,7 +16,7 @@ import { serialize } from '../vcard';
 
 const MAX_SINGLE_CONTACTS_EXPORT = 300;
 
-export const getFileName = (contact: VCardContact) => {
+const getFileName = (contact: VCardContact) => {
     // cover up for the case no FN is present in the contact (we can find such vcards in the DB)
     const contactName = contact.fn?.[0]?.value || '';
     const contactEmail = contact.email?.[0]?.value || '';
@@ -34,7 +34,7 @@ export const singleExport = (contact: VCardContact) => {
     downloadFile(blob, fileName);
 };
 
-export const exportContact = async (cards: ContactCard[], userKeys: DecryptedKey[]) => {
+const exportContact = async (cards: ContactCard[], userKeys: DecryptedKey[]) => {
     const { publicKeys, privateKeys } = splitKeys(userKeys);
 
     const { vCardContact, errors = [] } = await prepareVCardContact({ Cards: cards } as Contact, {

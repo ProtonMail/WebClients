@@ -109,31 +109,9 @@ export interface Message extends MessageMetadata {
     EORecipient?: Recipient;
 }
 
-export type DraftMessage = Pick<
-    Message,
-    'Subject' | 'Unread' | 'Sender' | 'ToList' | 'CCList' | 'BCCList' | 'ExternalID' | 'Flags' | 'Body' | 'MIMEType'
->;
-
-interface TaskRunning {
-    TargetType: string;
-    AddressID: string;
-}
-
 export interface GetMessageResponse {
     Code: number;
     Message?: Message;
     Error?: string;
     Details?: string[];
-}
-
-export interface QueryMessageMetadataResponse {
-    Code: number;
-    Total: number;
-    Messages: MessageMetadata[];
-    TasksRunning: TaskRunning[];
-}
-
-export interface MarkAsBrokenResponse {
-    Code: number;
-    Error?: string;
 }

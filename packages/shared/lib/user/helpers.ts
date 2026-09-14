@@ -13,10 +13,9 @@ export const hasPaidDrive = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.
 export const hasPaidWallet = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.WALLET);
 export const hasPaidVpn = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.VPN);
 export const hasPassLifetime = (user: User) => !!user.Flags?.['pass-lifetime'];
-export const hasPassViaSimpleLogin = (user: User) => !!user.Flags?.['pass-from-sl'];
+const hasPassViaSimpleLogin = (user: User) => !!user.Flags?.['pass-from-sl'];
 export const hasPaidPass = (user: User) =>
     hasBit(user.Subscribed, PRODUCT_BIT.PASS) || hasPassLifetime(user) || hasPassViaSimpleLogin(user);
-export const hasPassLifetimeOrViaSimpleLogin = (user: User) => hasPassLifetime(user) || hasPassViaSimpleLogin(user);
 export const hasPaidLumo = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.LUMO);
 export const hasPaidMeet = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.MEET);
 export const hasPaidSpaces = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.SPACES);
@@ -30,7 +29,7 @@ export const isSelf = (user: User) => !user.OrganizationPrivateKey && !user.Flag
 export const isDelinquent = (user: User) => !!user.Delinquent;
 export const canPay = (user: User) => [ADMIN_ROLE, FREE_ROLE].includes(user.Role);
 
-export const getInfo = (User: User): UserInfo => {
+const getInfo = (User: User): UserInfo => {
     return {
         isAdmin: isAdmin(User),
         isMember: isMember(User),
@@ -56,12 +55,6 @@ export const formatUser = (User: User) => {
         ...User,
         ...getInfo(User),
     };
-};
-
-export const getUserByte = (user: User) => {
-    const userID = user?.ID || '';
-    const byteCharacters = Uint8Array.fromBase64(userID, { alphabet: 'base64url' });
-    return byteCharacters[0];
 };
 
 export const getUserCreationDate = (user: User) => {

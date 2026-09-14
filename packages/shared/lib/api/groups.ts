@@ -1,4 +1,4 @@
-import type { Address, GroupFlags, GroupMemberType, GroupPermissions, ProxyInstances } from '../interfaces';
+import type { GroupFlags, GroupMemberType, GroupPermissions, ProxyInstances } from '../interfaces';
 
 interface GroupParameters {
     Name: string;
@@ -30,21 +30,6 @@ export const deleteGroup = (groupID: string) => ({
     url: `core/v4/groups/${groupID}`,
 });
 
-export interface GroupResult {
-    ID: string;
-    Name: string;
-    Description: string;
-    Address: Address;
-    CreateTime: number;
-    Permissions: GroupPermissions;
-    Flags: GroupFlags;
-}
-
-export const getGroups = () => ({
-    method: 'get',
-    url: 'core/v4/groups',
-});
-
 export const getGroup = (groupID: string) => ({
     method: 'get',
     url: `core/v4/groups/${groupID}`,
@@ -60,7 +45,7 @@ export const getGroupMember = (memberID: string) => ({
     url: `core/v4/groups/members/${memberID}`,
 });
 
-export interface AddGroupMemberParameters {
+interface AddGroupMemberParameters {
     GroupID: string;
     Email: string;
     AddressSignaturePacket: string;
@@ -151,11 +136,6 @@ export const resumeGroupMember = (groupMemberID: string) => ({
 export const reinviteGroupMember = (groupMemberID: string) => ({
     method: 'put',
     url: `core/v4/groups/${groupMemberID}/reinvite`,
-});
-
-export const resendGroupInvitation = (groupMemberID: string) => ({
-    method: 'put',
-    url: `core/v4/groups/members/${groupMemberID}/reinvite`,
 });
 
 export const getGroupMembership = () => ({

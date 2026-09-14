@@ -37,7 +37,7 @@ export const loadLocale = async (localeCode: string, locales: TtagLocaleMap) => 
 };
 
 // Pick these keys to ensure that the complete user settings object isn't stored.
-export const getPickedDateFormatOptions = (dateFormatOptions: DateFormatOptions | undefined) => {
+const getPickedDateFormatOptions = (dateFormatOptions: DateFormatOptions | undefined) => {
     if (!dateFormatOptions) {
         return;
     }

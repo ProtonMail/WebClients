@@ -1,12 +1,13 @@
 import { type AesGcmCryptoKey, deriveKey as deriveAesGcmKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { computeSHA256 } from '@protontech/crypto/subtle/hash.ts';
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
+
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { getParsedClientKey } from './clientKey';
 import type { AuthenticationStore } from './createAuthenticationStore';
 
-export type LoggerKey = AesGcmCryptoKey;
+type LoggerKey = AesGcmCryptoKey;
 const HKDF_INFO = utf8StringToUint8Array('web-logger-key'); // context identifier for domain separation
 
 export interface GeneratedLoggerKey {
@@ -38,7 +39,7 @@ export const generateLoggerKey = async (authentication: AuthenticationStore): Pr
         // We run a key derivation step (HKDF) to get a new AES-GCM key bound to the UID
         deriveAesGcmKey(clientKeyBytes, salt, HKDF_INFO),
         // Not using the CryptoProxy since the logger might be initialized earlier on.
-        computeSHA256(mergeUint8Arrays([HKDF_INFO, salt])).then(bytes => bytes.toBase64()),
+        computeSHA256(mergeUint8Arrays([HKDF_INFO, salt])).then((bytes) => bytes.toBase64()),
     ]);
 
     return {

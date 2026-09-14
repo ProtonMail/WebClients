@@ -1,8 +1,7 @@
 import unary from '@proton/utils/unary';
 
 import { ADDRESS_FLAGS, ADDRESS_TYPE, MEMBER_TYPE } from '../constants';
-import type { Address, Domain, Member, Recipient, UserModel } from '../interfaces';
-import type { ContactEmail } from '../interfaces/contacts';
+import type { Address, Domain, Member, UserModel } from '../interfaces';
 import { getIsDomainActive } from '../organization/domain';
 import { getIsAddressActive } from './addressStatus';
 import { hasBit } from './bitset';
@@ -14,24 +13,9 @@ export const getActiveAddresses = (addresses: Address[]): Address[] => {
     return addresses.filter(unary(getIsAddressActive));
 };
 
-export const hasAddresses = (addresses: Address[] | undefined): boolean => {
-    return Array.isArray(addresses) && addresses.length > 0;
-};
-
 export const getIsAddressExternal = ({ Type }: Address) => {
     return Type === ADDRESS_TYPE.TYPE_EXTERNAL;
 };
-
-export const getHasOnlyExternalAddresses = (addresses: Address[]) => {
-    return addresses.length >= 1 && addresses.every((address) => getIsAddressExternal(address));
-};
-
-export const contactToRecipient = (contact: Partial<ContactEmail> = {}, groupPath?: string): Partial<Recipient> => ({
-    Name: contact.Name,
-    Address: contact.Email,
-    ContactID: contact.ContactID,
-    Group: groupPath,
-});
 
 export const findUserAddress = (userEmail?: string, addresses: Address[] = []) => {
     if (!userEmail) {

@@ -4,7 +4,7 @@ export interface MemberPassphrase {
     Signature: string;
 }
 
-export interface Invitation {
+interface Invitation {
     CalendarID: string;
     PassphraseID: string;
     InvitationID: string;

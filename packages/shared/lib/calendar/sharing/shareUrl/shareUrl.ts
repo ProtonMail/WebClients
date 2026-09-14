@@ -1,35 +1,13 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
 
-import { AES256, EVENT_ACTIONS } from '../../../constants';
+import { AES256 } from '../../../constants';
 import { generateRandomBytes, getSHA256Base64String, xorEncryptDecrypt } from '../../../helpers/crypto';
 import type { Nullable } from '../../../interfaces';
 import type { CalendarLink, CalendarUrl } from '../../../interfaces/calendar';
 import { ACCESS_LEVEL } from '../../../interfaces/calendar';
-import type {
-    CalendarUrlEventManager,
-    CalendarUrlEventManagerCreate,
-    CalendarUrlEventManagerDelete,
-    CalendarUrlEventManagerUpdate,
-} from '../../../interfaces/calendar/EventManager';
 
-export const getIsCalendarUrlEventManagerDelete = (
-    event: CalendarUrlEventManager
-): event is CalendarUrlEventManagerDelete => {
-    return event.Action === EVENT_ACTIONS.DELETE;
-};
-export const getIsCalendarUrlEventManagerCreate = (
-    event: CalendarUrlEventManager
-): event is CalendarUrlEventManagerCreate => {
-    return event.Action === EVENT_ACTIONS.CREATE;
-};
-export const getIsCalendarUrlEventManagerUpdate = (
-    event: CalendarUrlEventManager
-): event is CalendarUrlEventManagerUpdate => {
-    return event.Action === EVENT_ACTIONS.UPDATE;
-};
-
-export const decryptPurpose = async ({
+const decryptPurpose = async ({
     encryptedPurpose,
     privateKeys,
 }: {
@@ -54,7 +32,7 @@ export const generateEncryptedPurpose = async ({
         await CryptoProxy.encryptMessage({ textData: purpose, stripTrailingSpaces: true, encryptionKeys: publicKey })
     ).message;
 };
-export const generateEncryptedPassphrase = ({
+const generateEncryptedPassphrase = ({
     passphraseKey,
     passphrase,
 }: {
@@ -62,14 +40,14 @@ export const generateEncryptedPassphrase = ({
     passphrase: string;
 }) => xorEncryptDecrypt({ key: passphraseKey, data: Uint8Array.fromBase64(passphrase) }).toBase64();
 
-export const generateCacheKey = () => generateRandomBytes(16).toBase64({ alphabet: 'base64url' });
+const generateCacheKey = () => generateRandomBytes(16).toBase64({ alphabet: 'base64url' });
 
-export const generateCacheKeySalt = () => generateRandomBytes(8).toBase64();
+const generateCacheKeySalt = () => generateRandomBytes(8).toBase64();
 
-export const getCacheKeyHash = ({ cacheKey, cacheKeySalt }: { cacheKey: string; cacheKeySalt: string }) =>
+const getCacheKeyHash = ({ cacheKey, cacheKeySalt }: { cacheKey: string; cacheKeySalt: string }) =>
     getSHA256Base64String(`${cacheKeySalt}${cacheKey}`);
 
-export const generateEncryptedCacheKey = async ({
+const generateEncryptedCacheKey = async ({
     cacheKey,
     publicKeys,
 }: {
@@ -83,7 +61,7 @@ export const generateEncryptedCacheKey = async ({
         })
     ).message;
 
-export const decryptCacheKey = async ({
+const decryptCacheKey = async ({
     encryptedCacheKey,
     privateKeys,
 }: {
@@ -97,7 +75,7 @@ export const decryptCacheKey = async ({
         })
     ).data;
 
-export const getPassphraseKey = ({
+const getPassphraseKey = ({
     encryptedPassphrase,
     calendarPassphrase,
 }: {
@@ -175,7 +153,7 @@ export const getCreatePublicLinkPayload = async ({
     };
 };
 
-export const transformLinkFromAPI = async ({
+const transformLinkFromAPI = async ({
     calendarUrl,
     privateKeys,
     calendarPassphrase,

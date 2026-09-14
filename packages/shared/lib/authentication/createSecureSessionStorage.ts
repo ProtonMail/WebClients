@@ -43,6 +43,4 @@ const createSecureSessionStorage = () => {
     return returnValue;
 };
 
-export type SecureSessionStorage = ReturnType<typeof createSecureSessionStorage>;
-
 export default createSecureSessionStorage;

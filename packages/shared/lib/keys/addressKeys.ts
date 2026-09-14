@@ -52,12 +52,12 @@ export const encryptAddressKeyToken = async ({
         }),
         organizationKey
             ? CryptoProxy.signMessage({
-                  textData, // stripTrailingSpaces: false,
-                  date,
-                  signingKeys: [organizationKey],
-                  detached: true,
-                  signatureContext,
-              })
+                textData, // stripTrailingSpaces: false,
+                date,
+                signingKeys: [organizationKey],
+                detached: true,
+                signatureContext,
+            })
             : undefined,
     ]);
 
@@ -89,7 +89,7 @@ interface EncryptAddressKeyUsingOrgKeyTokenArguments {
     signatureContext?: ContextSigningOptions;
 }
 
-export const encryptAddressKeyUsingOrgKeyToken = async ({
+const encryptAddressKeyUsingOrgKeyToken = async ({
     token,
     organizationKey,
     signatureContext,
@@ -214,7 +214,7 @@ export async function generateAddressKeyTokens(userKey: PrivateKeyReference, org
     return encryptAddressKeyToken({ token, organizationKey, userKey });
 }
 
-export async function generateAddressKeyTokensUsingOrgKey(organizationKey: PrivateKeyReference) {
+async function generateAddressKeyTokensUsingOrgKey(organizationKey: PrivateKeyReference) {
     const randomBytes = crypto.getRandomValues(new Uint8Array(32));
     const token = randomBytes.toHex();
     return encryptAddressKeyUsingOrgKeyToken({ token, organizationKey });
@@ -352,7 +352,7 @@ export const generateAddressKey = async <C extends KeyGenConfig | KeyGenConfigV6
     return { privateKey, privateKeyArmored };
 };
 
-export const getIsTokenEncryptedToKeys = async ({
+const getIsTokenEncryptedToKeys = async ({
     addressKey,
     decryptionKeys,
 }: {
@@ -471,7 +471,7 @@ export const getRenamedAddressKeys = async ({
     return result.filter(isTruthy);
 };
 
-export const getPreviousAddressKeyToken = async ({
+const getPreviousAddressKeyToken = async ({
     addressKey,
     privateKeys,
     publicKeys,

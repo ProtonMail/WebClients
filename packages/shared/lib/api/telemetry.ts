@@ -165,11 +165,6 @@ export enum TelemetryIcsSurgeryEvents {
     ics_parsing = 'ics_parsing',
 }
 
-export enum TelemetryAccountSignupBasicEvents {
-    flow_started = 'flow_started',
-    account_created = 'account_created',
-}
-
 export enum TelemetryAccountSignupEvents {
     pageLoad = 'fe.page_load',
     planSelect = 'user.plan_select',
@@ -366,7 +361,7 @@ export enum TelemetryInboxDestkopEvents {
     daily_stats_heartbeat = 'daily_stats_heartbeat',
 }
 
-export enum TelemetryChangelog {
+enum TelemetryChangelog {
     opened = 'opened',
 }
 
@@ -597,7 +592,6 @@ export type TelemetryEvents =
     | TelemetryMailTrial2024UpsellModal
     | TelemetryCalendarEvents
     | TelemetryIcsSurgeryEvents
-    | TelemetryAccountSignupBasicEvents
     | TelemetryAccountSignupEvents
     | TelemetryAccountCancellationEvents
     | TelemetryAccountDashboardEvents

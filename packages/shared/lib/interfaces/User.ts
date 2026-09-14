@@ -41,7 +41,7 @@ export enum SessionRecoveryState {
     EXPIRED = 4,
 }
 
-export enum SessionRecoveryReason {
+enum SessionRecoveryReason {
     NONE = 0,
     CANCELLED = 1,
     AUTHENTICATION = 2,
