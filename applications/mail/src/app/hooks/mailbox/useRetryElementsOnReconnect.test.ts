@@ -1,6 +1,7 @@
 import { renderHook } from '@testing-library/react';
 
 import useOnline from '@proton/components/hooks/useOnline';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { MAX_ELEMENT_LIST_LOAD_RETRIES } from '../../constants';
 import { retry } from '../../store/elements/elementsActions';
@@ -10,6 +11,9 @@ import { useRetryElementsOnReconnect } from './useRetryElementsOnReconnect';
 
 jest.mock('@proton/components/hooks/useOnline');
 const mockUseOnline = useOnline as jest.Mock;
+
+jest.mock('@proton/unleash/useFlag');
+const mockUseFlag = useFlag as jest.Mock;
 
 jest.mock('../../store/hooks', () => ({
     useMailDispatch: jest.fn(),
@@ -26,6 +30,7 @@ describe('useRetryElementsOnReconnect', () => {
     beforeEach(() => {
         dispatch = jest.fn();
         mockUseMailDispatch.mockReturnValue(dispatch);
+        mockUseFlag.mockReturnValue(false);
         pendingRequest = false;
         retryCount = MAX_ELEMENT_LIST_LOAD_RETRIES;
         mockUseMailSelector.mockImplementation((selector) => {
@@ -97,6 +102,16 @@ describe('useRetryElementsOnReconnect', () => {
 
     it('does not dispatch when the retry budget is not exhausted', () => {
         retryCount = MAX_ELEMENT_LIST_LOAD_RETRIES - 1;
+        mockUseOnline.mockReturnValue(true);
+        const { rerender } = renderHook(() => useRetryElementsOnReconnect());
+
+        goOfflineThenOnline(rerender);
+
+        expect(dispatch).not.toHaveBeenCalled();
+    });
+
+    it('does not dispatch when the killswitch is enabled', () => {
+        mockUseFlag.mockReturnValue(true);
         mockUseOnline.mockReturnValue(true);
         const { rerender } = renderHook(() => useRetryElementsOnReconnect());
 
