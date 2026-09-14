@@ -21,7 +21,13 @@ export const DTLN_AUDIO_CONTEXT_SAMPLE_RATE = 16000;
 const DTLN_FRAME_SAMPLES = 512;
 const DTLN_FRAME_BUDGET_MS = (DTLN_FRAME_SAMPLES / DTLN_AUDIO_CONTEXT_SAMPLE_RATE) * 1000; // 32 ms
 
-const DTLN_FIELD_SAMPLE_GAP_MS = 3000;
+// Reporting is throttled to DTLN_SENTRY_THROTTLE_MS, so sampling every few seconds spent that cost on Windows that
+// could never be reported. A value of 15_000 still gives ~20 windows per report.
+const DTLN_FIELD_SAMPLE_GAP_MS = 15_000;
+
+// p95 over fewer frames sits close enough to the max to be a noisy estimate,
+// and p95 is the field that shows intermittent stalls.
+const DTLN_FIELD_SAMPLE_ITERATIONS = 60;
 
 const delay = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));
 
@@ -39,12 +45,16 @@ const withTimeout = async <T>(promise: Promise<T>, ms: number): Promise<T> => {
 
 const DTLN_SENTRY_THROTTLE_MS = 5 * 60 * 1000;
 let dtlnLastSentryReportAt = 0;
+let dtlnWindowsSinceReport = 0;
 let dtlnOverBudgetWindowsSinceReport = 0;
 
 const reportDtlnOverBudgetToSentry = (
     summary: NoiseSuppressionAudioWorkletBenchmarkCompleteMessage['summary'],
     reportError: ReportMeetError
 ) => {
+    // Counted before the over-budget test so healthy windows land in the denominator too.
+    dtlnWindowsSinceReport += 1;
+
     if (summary.meanMs <= DTLN_FRAME_BUDGET_MS) {
         return;
     }
@@ -62,7 +72,8 @@ const reportDtlnOverBudgetToSentry = (
         minMs: Number(summary.minMs.toFixed(2)),
         frameBudgetMs: DTLN_FRAME_BUDGET_MS,
         framesSampled: summary.count,
-        overBudgetWindowsSinceLastReport: dtlnOverBudgetWindowsSinceReport,
+        overBudgetWindowFraction: Number((dtlnOverBudgetWindowsSinceReport / dtlnWindowsSinceReport).toFixed(3)),
+        windowsSinceLastReport: dtlnWindowsSinceReport,
         hardwareConcurrency: navigator.hardwareConcurrency,
     };
 
@@ -80,6 +91,7 @@ const reportDtlnOverBudgetToSentry = (
 
     dtlnLastSentryReportAt = now;
     dtlnOverBudgetWindowsSinceReport = 0;
+    dtlnWindowsSinceReport = 0;
 };
 
 export const DTLNFilter = ({
@@ -130,7 +142,7 @@ export const DTLNFilter = ({
                     const { summary } = await withTimeout(
                         runNoiseSuppressionAudioWorkletBenchmark(handle, {
                             warmupIterations: 0,
-                            benchmarkIterations: 60,
+                            benchmarkIterations: DTLN_FIELD_SAMPLE_ITERATIONS,
                         }),
                         6000
                     );
