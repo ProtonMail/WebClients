@@ -34,25 +34,25 @@
         "@types/react": "^18.3.31",
         "@types/react-dom": "^18.3.7",
         "@types/react-router-dom": "^5.3.3",
-        "eslint": "^10.9.0",
+        "eslint": "^10.10.0",
         "prettier": "^3.9.6",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-router-dom": "^5.3.4",
         "ttag": "^1.8.12",
         "typescript": "^6.0.3",
-        "webpack": "^5.109.2"
+        "webpack": "^5.110.3"
     },
     "devDependencies": {
         "@playwright/test": "^1.62.1",
-        "@storybook/addon-docs": "^10.5.10",
-        "@storybook/addon-links": "^10.5.10",
-        "@storybook/react-webpack5": "^10.5.10",
-        "eslint-plugin-storybook": "^10.5.10",
+        "@storybook/addon-docs": "^10.6.0",
+        "@storybook/addon-links": "^10.6.0",
+        "@storybook/react-webpack5": "^10.6.0",
+        "eslint-plugin-storybook": "^10.6.0",
         "http-server": "^14.1.1",
-        "netlify-cli": "27.4.3",
+        "netlify-cli": "27.5.2",
         "rimraf": "^6.1.3",
-        "storybook": "^10.5.10",
+        "storybook": "^10.6.0",
         "terser-webpack-plugin": "^5.6.1",
         "wait-on": "^9.1.0"
     }

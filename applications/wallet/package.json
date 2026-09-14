@@ -56,7 +56,7 @@
         "react-dom": "^18.3.1",
         "react-router-dom": "^5.3.4",
         "ttag": "^1.8.12",
-        "webpack": "^5.109.2"
+        "webpack": "^5.110.3"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
@@ -67,9 +67,9 @@
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
         "@testing-library/react-hooks": "^8.0.1",
-        "@vitejs/plugin-react": "^6.1.0",
-        "eslint": "^10.9.0",
-        "happy-dom": "^20.11.6",
+        "@vitejs/plugin-react": "^6.1.1",
+        "eslint": "^10.10.0",
+        "happy-dom": "^20.14.3",
         "html-webpack-plugin": "^5.6.8",
         "prettier": "^3.9.6",
         "typescript": "^6.0.3",
