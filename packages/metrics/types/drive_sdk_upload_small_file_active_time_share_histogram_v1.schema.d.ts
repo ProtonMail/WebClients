@@ -6,9 +6,9 @@
  */
 
 /**
- * Measures how often a file has no thumbnail handler at all
+ * Percentage of total upload time spent on the transfer when a file is uploaded via the small file path
  */
-export interface HttpsProtonMeDriveThumbnailNoHandlerTotalV1SchemaJson {
-  Labels: {};
+export interface HttpsProtonMeDriveSdkUploadSmallFileActiveTimeShareHistogramV1SchemaJson {
   Value: number;
+  Labels: {};
 }
