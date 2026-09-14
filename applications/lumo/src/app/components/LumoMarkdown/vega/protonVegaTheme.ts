@@ -1,5 +1,7 @@
 import type { Config } from 'vega-lite';
 
+import { scaleChartFontSize } from '../../../util/scaleChartFontSize';
+import { isArcChartSpec } from './normalizeVegaLiteSpec';
 import {
     PROTON_CATEGORY_COLORS,
     PROTON_DRIVE_RED,
@@ -17,7 +19,8 @@ import {
     PROTON_SEQUENTIAL_RAMP,
     PROTON_STATIC_COLOR_BAND_FIELD,
 } from './protonChartTokens';
-import { isArcChartSpec } from './normalizeVegaLiteSpec';
+
+const chartFontSize = (designPx: number) => scaleChartFontSize(designPx, true);
 
 export {
     PROTON_BAR_COLOR,
@@ -102,23 +105,23 @@ export function getProtonVegaConfig(themeRoot?: Element | null): Config {
         title: {
             font: PROTON_FONT_BODY,
             fontWeight: 600,
-            fontSize: 14,
-            lineHeight: 18,
+            fontSize: chartFontSize(14),
+            lineHeight: chartFontSize(18),
             color: tokens.ink,
             anchor: 'start',
             offset: 8,
             subtitleFont: PROTON_FONT_BODY,
-            subtitleFontSize: 11.5,
+            subtitleFontSize: chartFontSize(11.5),
             subtitleFontWeight: 400,
             subtitleColor: tokens.inkDim,
-            subtitleLineHeight: 16,
+            subtitleLineHeight: chartFontSize(16),
             subtitlePadding: 4,
         },
         axis: {
             labelFont: PROTON_FONT_BODY,
             titleFont: PROTON_FONT_BODY,
-            labelFontSize: 10,
-            titleFontSize: 10,
+            labelFontSize: chartFontSize(10),
+            titleFontSize: chartFontSize(10),
             labelFontWeight: 400,
             titleFontWeight: 500,
             labelColor: tokens.inkDim,
@@ -136,8 +139,8 @@ export function getProtonVegaConfig(themeRoot?: Element | null): Config {
         legend: {
             labelFont: PROTON_FONT_BODY,
             titleFont: PROTON_FONT_BODY,
-            labelFontSize: 10.5,
-            titleFontSize: 10.5,
+            labelFontSize: chartFontSize(10.5),
+            titleFontSize: chartFontSize(10.5),
             labelFontWeight: 400,
             titleFontWeight: 600,
             labelColor: tokens.inkDim,
@@ -189,7 +192,7 @@ export function getProtonVegaConfig(themeRoot?: Element | null): Config {
             ticks: { stroke: tokens.inkDim, strokeWidth: 1.5, size: 6 },
         },
         rule: { color: tokens.hairline, strokeWidth: 1 },
-        text: { color: tokens.inkDim, font: PROTON_FONT_BODY, fontSize: 10.5 },
+        text: { color: tokens.inkDim, font: PROTON_FONT_BODY, fontSize: chartFontSize(10.5) },
         view: { stroke: 'transparent', continuousWidth: 500, continuousHeight: 220 },
         concat: { spacing: 16 },
         facet: { spacing: 16 },
@@ -198,8 +201,8 @@ export function getProtonVegaConfig(themeRoot?: Element | null): Config {
             titleFont: PROTON_FONT_BODY,
             labelColor: tokens.inkDim,
             titleColor: tokens.ink,
-            labelFontSize: 10.5,
-            titleFontSize: 11,
+            labelFontSize: chartFontSize(10.5),
+            titleFontSize: chartFontSize(11),
             titleFontWeight: 600,
         },
     };
@@ -280,7 +283,11 @@ function isUncertaintyMark(node: Record<string, unknown>): boolean {
         return true;
     }
 
-    const blob = JSON.stringify({ title: node.title, encoding: node.encoding, transform: node.transform }).toLowerCase();
+    const blob = JSON.stringify({
+        title: node.title,
+        encoding: node.encoding,
+        transform: node.transform,
+    }).toLowerCase();
     return /(confidence|uncertainty|error.?band|\bci\b|stddev|variance|errorbar)/.test(blob);
 }
 
@@ -347,8 +354,7 @@ function applyColorFieldScale(
     const markType = getMarkType(node);
     const colorType = color.type;
     const useSequentialRamp =
-        colorType === 'quantitative' ||
-        (markType === 'rect' && colorType !== 'nominal' && colorType !== 'ordinal');
+        colorType === 'quantitative' || (markType === 'rect' && colorType !== 'nominal' && colorType !== 'ordinal');
 
     color.scale = {
         ...scale,
@@ -416,7 +422,12 @@ export function applyProtonMarkColors(spec: Record<string, unknown>): void {
         const encoding = node.encoding as Record<string, unknown> | undefined;
         const colorEncoding = encoding?.color;
 
-        if (colorEncoding && typeof colorEncoding === 'object' && !Array.isArray(colorEncoding) && 'field' in colorEncoding) {
+        if (
+            colorEncoding &&
+            typeof colorEncoding === 'object' &&
+            !Array.isArray(colorEncoding) &&
+            'field' in colorEncoding
+        ) {
             const color = colorEncoding as Record<string, unknown>;
             if (color.field !== PROTON_STATIC_COLOR_BAND_FIELD) {
                 applyColorFieldScale(color, node, spec);
@@ -512,14 +523,14 @@ function polishEncodingAxes(encoding: Record<string, unknown>): void {
     mergeAxisDefaults(encoding, 'x', {
         grid: false,
         domain: true,
-        labelFontSize: 10,
-        titleFontSize: 10,
+        labelFontSize: chartFontSize(10),
+        titleFontSize: chartFontSize(10),
     });
     mergeAxisDefaults(encoding, 'y', {
         grid: true,
         domain: false,
-        labelFontSize: 10,
-        titleFontSize: 10,
+        labelFontSize: chartFontSize(10),
+        titleFontSize: chartFontSize(10),
     });
 }
 
@@ -547,13 +558,13 @@ function polishChartTitle(node: Record<string, unknown>): void {
 
     titleObject.anchor ??= 'start';
     titleObject.offset ??= 8;
-    titleObject.fontSize ??= 14;
+    titleObject.fontSize ??= chartFontSize(14);
     titleObject.fontWeight ??= 600;
 
     if (typeof titleObject.subtitle === 'string' && titleObject.subtitle.trim()) {
-        titleObject.subtitleFontSize ??= 11.5;
+        titleObject.subtitleFontSize ??= chartFontSize(11.5);
         titleObject.subtitleFontWeight ??= 400;
-        titleObject.subtitleLineHeight ??= 16;
+        titleObject.subtitleLineHeight ??= chartFontSize(16);
         titleObject.subtitlePadding ??= 4;
     }
 

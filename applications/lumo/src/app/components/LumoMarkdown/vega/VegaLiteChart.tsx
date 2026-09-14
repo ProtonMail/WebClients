@@ -1,21 +1,23 @@
-import clsx from 'clsx';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
+import { clsx } from 'clsx';
 import type { VisualizationSpec } from 'vega-embed';
 import embed, { type Result } from 'vega-embed';
 import { expressionInterpreter } from 'vega-interpreter';
 
-import { LUMO_VEGA_CHART_SHELL_CLASS } from '../lumoMarkdownCardShell';
+import { useTheme } from '@proton/components';
+
 import { useLumoTheme } from '../../../providers';
-import { getRenderedSpecJson } from './chartSpecDisplay';
-import { getChartDownloadFilename } from './chartDownloadFilename';
-import { createSecureVegaLoader } from './secureVegaLoader';
+import { LUMO_VEGA_CHART_SHELL_CLASS } from '../lumoMarkdownCardShell';
 import { VegaChartDownloadButton } from './VegaChartDownloadButton';
-import { VegaChartSourceButton, VegaChartSpecPanel } from './VegaChartSpecInspector';
-import { getProtonVegaConfig, isDarkSurface } from './protonVegaTheme';
-import { shouldHoldVegaChartLoading } from './detectVegaSpec';
-import { sanitizeVegaSpec } from './sanitizeVegaSpec';
 import { VegaChartLoadingOverlay } from './VegaChartLoading';
+import { VegaChartSourceButton, VegaChartSpecPanel } from './VegaChartSpecInspector';
+import { getChartDownloadFilename } from './chartDownloadFilename';
+import { getRenderedSpecJson } from './chartSpecDisplay';
+import { shouldHoldVegaChartLoading } from './detectVegaSpec';
+import { getProtonVegaConfig, isDarkSurface } from './protonVegaTheme';
+import { sanitizeVegaSpec } from './sanitizeVegaSpec';
+import { createSecureVegaLoader } from './secureVegaLoader';
 
 import './VegaLiteChart.scss';
 
@@ -27,7 +29,6 @@ interface VegaLiteChartProps {
 }
 
 const FALLBACK_CHART_WIDTH = 480;
-
 
 async function waitForLayoutWidth(element: HTMLElement, timeoutMs = 3000): Promise<void> {
     if (element.clientWidth > 0) {
@@ -79,7 +80,10 @@ function chartHasVisibleMarks(container: HTMLElement): boolean {
         }
     }
 
-    return svg.querySelector('rect[class*="mark"], path[class*="mark"], line[class*="mark"], circle[class*="mark"]') !== null;
+    return (
+        svg.querySelector('rect[class*="mark"], path[class*="mark"], line[class*="mark"], circle[class*="mark"]') !==
+        null
+    );
 }
 
 async function mountChart(
@@ -109,7 +113,12 @@ function specUsesContainerWidth(spec: VisualizationSpec): boolean {
         }
 
         for (const child of children) {
-            if (child && typeof child === 'object' && !Array.isArray(child) && (child as Record<string, unknown>).width === 'container') {
+            if (
+                child &&
+                typeof child === 'object' &&
+                !Array.isArray(child) &&
+                (child as Record<string, unknown>).width === 'container'
+            ) {
                 return true;
             }
         }
@@ -143,10 +152,11 @@ async function embedChart(
  * - A custom loader rejects all network/file loads so only inline `data.values` work.
  * - Toolbar actions (export/source menu) are disabled; custom download/source controls are provided instead.
  */
-export const VegaLiteChart = ({ code, language, deferRender = false }: VegaLiteChartProps) => {
+export const VegaLiteChart = ({ code, deferRender = false }: VegaLiteChartProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const embedResultRef = useRef<Result | null>(null);
     const { isDarkLumoTheme } = useLumoTheme();
+    const { settings } = useTheme();
     const [renderError, setRenderError] = useState<string | null>(null);
     const [sanitizeError, setSanitizeError] = useState<string | null>(null);
     const [renderedSpecJson, setRenderedSpecJson] = useState<string | null>(null);
@@ -287,7 +297,7 @@ export const VegaLiteChart = ({ code, language, deferRender = false }: VegaLiteC
             embedResultRef.current?.view.finalize();
             embedResultRef.current = null;
         };
-    }, [code, deferRender, isDarkLumoTheme]);
+    }, [code, deferRender, isDarkLumoTheme, settings.FontSize]);
 
     const isPendingChart = shouldHoldVegaChartLoading(code, deferRender);
     const showActions = !isRendering && !isPendingChart;
@@ -296,17 +306,10 @@ export const VegaLiteChart = ({ code, language, deferRender = false }: VegaLiteC
     const showLoading = isRendering || isPendingChart;
 
     return (
-        <div
-            className={clsx(
-                LUMO_VEGA_CHART_SHELL_CLASS,
-                showFailedState && 'vega-lite-chart--failed'
-            )}
-        >
+        <div className={clsx(LUMO_VEGA_CHART_SHELL_CLASS, showFailedState && 'vega-lite-chart--failed')}>
             {showActions ? (
                 <div className="vega-lite-chart__actions lumo-no-copy absolute flex gap-1">
-                    {canDownload ? (
-                        <VegaChartDownloadButton getView={getView} filename={downloadFilename} />
-                    ) : null}
+                    {canDownload ? <VegaChartDownloadButton getView={getView} filename={downloadFilename} /> : null}
                     <VegaChartSourceButton
                         expanded={specSourceExpanded}
                         onToggle={() => setSpecSourceExpanded((value) => !value)}
