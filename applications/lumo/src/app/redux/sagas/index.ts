@@ -156,6 +156,7 @@ import {
     logPushSpaceFailure,
     logPushSpaceNoop,
     logPushSpaceSuccess,
+    migrateSpaceMasterKeyIfNeeded,
     processPullSpaceResult,
     processPullSpacesPage,
     pullSpace,
@@ -281,8 +282,9 @@ export function* loadReduxFromIdb(): SagaIterator {
                 spaceStats.deleted++;
                 continue;
             }
-            const space: Space = yield call(deserializeSpaceSaga, serializedSpace);
+            const { space, needsMasterKeyMigration } = yield call(deserializeSpaceSaga, serializedSpace);
             yield put(addSpace(space));
+            yield call(migrateSpaceMasterKeyIfNeeded, space, needsMasterKeyMigration);
             spaceStats.loaded++;
             if (space.isProject) {
                 spaceStats.projects++;

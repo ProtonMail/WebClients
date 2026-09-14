@@ -19,7 +19,7 @@ import type {
     RemoteSpace,
     ResourceType,
 } from '../../remote/types';
-import { deserializeSpace, serializeSpace } from '../../serialization';
+import { deserializeSpaceWithMasterKeys, serializeSpace } from '../../serialization';
 import { removeIndexedContentForSpace } from '../../services/removeIndexedContentForSpace';
 import {
     buildProjectKnowledgeSnapshot,
@@ -79,7 +79,7 @@ import {
 import { updateLumoUserSettingsWithAutoSave } from '../slices/lumoUserSettings';
 import { addResourceLimitError } from '../slices/meta/errors';
 import type { LumoState } from '../store';
-import { waitForMasterKey } from './masterKey';
+import { getMasterKeyContext, waitForMasterKey } from './masterKey';
 import { RETRY_PUSH_EVERY_MS, callWithRetry, isClientError, isLimitReachedError } from './sagaErrors';
 
 /*** helpers ***/
@@ -154,6 +154,15 @@ export function* softDeleteSpaceFromLocal({ payload: localId }: { payload: Space
     yield put(pushSpaceRequest({ id: localId, priority: 'urgent' }));
 }
 
+export function* migrateSpaceMasterKeyIfNeeded(space: Space, needsMasterKeyMigration: boolean): SagaIterator {
+    if (!needsMasterKeyMigration) {
+        return;
+    }
+
+    console.log(`Migrating space ${space.id} to the primary master key`);
+    yield put(pushSpaceRequest({ id: space.id, priority: 'background' }));
+}
+
 export function* serializeSpaceSaga(space: Space): SagaIterator<SerializedSpace> {
     const { id: localId } = space;
     const masterKeyBase64 = yield call(waitForMasterKey, `serializeSpaceSaga ${localId}`);
@@ -165,16 +174,21 @@ export function* serializeSpaceSaga(space: Space): SagaIterator<SerializedSpace>
     return cleanSerializedSpace(serializedSpace);
 }
 
-export function* deserializeSpaceSaga(serializedSpace: SerializedSpace): SagaIterator<Space> {
+export function* deserializeSpaceSaga(
+    serializedSpace: SerializedSpace
+): SagaIterator<{ space: Space; needsMasterKeyMigration: boolean }> {
     const { id: localId } = serializedSpace;
 
-    const masterKeyBase64 = yield call(waitForMasterKey, `deserializeSpaceSaga ${localId}`);
-    const masterKey: AesKwCryptoKey = yield call(base64ToMasterKey, masterKeyBase64);
-    const deserializedSpace: Space | null = yield call(deserializeSpace, serializedSpace, masterKey);
+    const masterKeys = yield call(getMasterKeyContext, `deserializeSpaceSaga ${localId}`);
+    const { space: deserializedSpace, needsMasterKeyMigration } = yield call(
+        deserializeSpaceWithMasterKeys,
+        serializedSpace,
+        masterKeys
+    );
     if (!deserializedSpace) {
         throw new Error(`deserializeRemoteSpace ${localId}: cannot deserialize space ${localId} from remote`);
     }
-    return cleanSpace(deserializedSpace);
+    return { space: cleanSpace(deserializedSpace), needsMasterKeyMigration };
 }
 
 export function* waitForSpace(localId: LocalId): SagaIterator<Space> {
@@ -558,12 +572,11 @@ export function* refreshSpaceFromRemote({
     const dbApi: DbApi = yield getContext('dbApi');
     const { id: localId, remoteId } = encryptedRemoteSpace;
 
-    const masterKeyBase64 = yield call(waitForMasterKey, `refreshSpaceFromRemote ${localId}`);
-    const masterKey: AesKwCryptoKey = yield call(base64ToMasterKey, masterKeyBase64);
-    const deserializedRemoteSpace: Space | null | undefined = yield call(
-        deserializeSpace,
+    const masterKeys = yield call(getMasterKeyContext, `refreshSpaceFromRemote ${localId}`);
+    const { space: deserializedRemoteSpace, needsMasterKeyMigration } = yield call(
+        deserializeSpaceWithMasterKeys,
         encryptedRemoteSpace,
-        masterKey
+        masterKeys
     );
     if (!deserializedRemoteSpace) {
         console.error(`refreshSpaceFromRemote ${localId}: cannot deserialize space`);
@@ -585,11 +598,16 @@ export function* refreshSpaceFromRemote({
         console.log(`refreshSpaceFromRemote ${localId}: Updating from remote`);
         yield put(addSpace(remoteSpace));
         yield call([dbApi, dbApi.updateSpace], encryptedRemoteSpace, { dirty: false });
+        yield call(migrateSpaceMasterKeyIfNeeded, remoteSpace, needsMasterKeyMigration);
         return;
     }
 
     if (encryptedIdbSpace) {
-        const idbSpace: Space | null | undefined = yield call(deserializeSpace, encryptedIdbSpace, masterKey);
+        const { space: idbSpace, needsMasterKeyMigration: idbNeedsMigration } = yield call(
+            deserializeSpaceWithMasterKeys,
+            encryptedIdbSpace,
+            masterKeys
+        );
         const isDirty = encryptedIdbSpace.dirty || false;
 
         if (isDirty && idbSpace) {
@@ -597,6 +615,7 @@ export function* refreshSpaceFromRemote({
             const cleanIdb = cleanSpace(idbSpace);
             yield put(addSpace(cleanIdb));
             yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: false }));
+            yield call(migrateSpaceMasterKeyIfNeeded, cleanIdb, idbNeedsMigration);
             return;
         }
 
@@ -604,6 +623,7 @@ export function* refreshSpaceFromRemote({
         yield put(addSpace(remoteSpace));
         yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: true }));
         yield call([dbApi, dbApi.updateSpace], encryptedRemoteSpace, { dirty: false });
+        yield call(migrateSpaceMasterKeyIfNeeded, remoteSpace, needsMasterKeyMigration);
         return;
     }
 
@@ -611,6 +631,7 @@ export function* refreshSpaceFromRemote({
     yield put(addSpace(remoteSpace));
     yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: true }));
     yield call([dbApi, dbApi.updateSpace], encryptedRemoteSpace, { dirty: false });
+    yield call(migrateSpaceMasterKeyIfNeeded, remoteSpace, needsMasterKeyMigration);
 }
 
 export function* reconcileProjectSearchIndex(): SagaIterator {
