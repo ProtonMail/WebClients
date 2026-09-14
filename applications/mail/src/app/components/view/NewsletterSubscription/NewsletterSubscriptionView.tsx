@@ -12,16 +12,11 @@ import { domIsBusy } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, type MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { useCategoriesView } from '../../categoryView/useCategoriesView';
-import { ResizableWrapper } from '../../list/ResizableWrapper';
-import { ResizeHandlePosition } from '../../list/ResizeHandle';
-import type { SOURCE_ACTION } from '../../list/list-telemetry/useListTelemetry';
-import MessageOnlyView from '../../message/MessageOnlyView';
 import { getInboxRedirectUrl } from '../../../helpers/mailboxUrl';
 import type { ElementsStructure } from '../../../hooks/mailbox/useElements';
 import { DEFAULT_MIN_WIDTH_OF_MAILBOX_LIST } from '../../../hooks/useResizableUtils';
 import { useMailboxLayoutProvider } from '../../../router/components/MailboxLayoutContext';
-import type { MailboxActions, RouterNavigation } from '../../../router/interface';
+import type { MailboxActions } from '../../../router/interface';
 import { setParams } from '../../../store/elements/elementsActions';
 import { selectNewsletterSubscriptionID } from '../../../store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from '../../../store/hooks';
@@ -34,8 +29,12 @@ import {
     selectedTabSubscriptionsCount,
 } from '../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 import { newsletterSubscriptionsActions } from '../../../store/newsletterSubscriptions/newsletterSubscriptionsSlice';
-
+import { useCategoriesView } from '../../categoryView/useCategoriesView';
 import MailboxList from '../../list/MailboxList';
+import { ResizableWrapper } from '../../list/ResizableWrapper';
+import { ResizeHandlePosition } from '../../list/ResizeHandle';
+import type { SOURCE_ACTION } from '../../list/list-telemetry/useListTelemetry';
+import MessageOnlyView from '../../message/MessageOnlyView';
 import ModalOnboarding from './SubscriptionsList/ModalOnboarding';
 import { NewsletterSubscriptionListLoader } from './SubscriptionsList/NewsletterSubscriptionCardSkeleton/NewsletterSubscriptionListLoader';
 import { NewsletterSubscriptionList } from './SubscriptionsList/NewsletterSubscriptionList';
@@ -51,7 +50,6 @@ import './NewsletterSubscriptionView.scss';
 interface NewsletterSubscriptionViewProps {
     elementsData: ElementsStructure;
     actions: MailboxActions;
-    navigation: RouterNavigation;
 }
 
 // This is used to avoid showing the list of items when no subscription is selected
@@ -64,7 +62,7 @@ const emptyElementsData: ElementsStructure = {
     labelID: CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].label,
 };
 
-export const NewsletterSubscriptionView = ({ elementsData, actions, navigation }: NewsletterSubscriptionViewProps) => {
+export const NewsletterSubscriptionView = ({ elementsData, actions }: NewsletterSubscriptionViewProps) => {
     const { feature } = useFeature(FeatureCode.NewsletterSubscriptionViewOnboarding);
     const newsletterSubscriptionID = useMailSelector(selectNewsletterSubscriptionID);
 
@@ -177,7 +175,6 @@ export const NewsletterSubscriptionView = ({ elementsData, actions, navigation }
                                     toolbar={
                                         overrideActions.selectedIDs.length > 0 ? (
                                             <NewsletterSubscriptionMailListToolbar
-                                                navigation={navigation}
                                                 elementsData={elementsData}
                                                 actions={overrideActions}
                                             />

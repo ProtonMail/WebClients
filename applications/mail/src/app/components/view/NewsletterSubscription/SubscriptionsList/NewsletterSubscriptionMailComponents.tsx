@@ -3,11 +3,10 @@ import { c, msgid } from 'ttag';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import type { SOURCE_ACTION } from '../../../list/list-telemetry/useListTelemetry';
 import type { ElementsStructure } from '../../../../hooks/mailbox/useElements';
-import { MailboxToolbar } from '../../../../router/components/MailboxToolbar';
-import type { MailboxActions, RouterNavigation } from '../../../../router/interface';
-
+import type { MailboxActions } from '../../../../router/interface';
+import type { SOURCE_ACTION } from '../../../list/list-telemetry/useListTelemetry';
+import { MailToolbar } from '../../../toolbar/MailToolbar';
 import type { PropsWithNewsletterSubscription } from '../interface';
 
 import './NewsletterSubscriptionListTitle.scss';
@@ -35,12 +34,11 @@ export const NewsletterSubscriptionMailListHeader = ({ subscription, numMessages
 };
 
 interface ToolbarProps {
-    navigation: RouterNavigation;
     elementsData: ElementsStructure;
     actions: MailboxActions;
 }
 
-export const NewsletterSubscriptionMailListToolbar = ({ navigation, elementsData, actions }: ToolbarProps) => {
+export const NewsletterSubscriptionMailListToolbar = ({ elementsData, actions }: ToolbarProps) => {
     const overrideActions = {
         ...actions,
         // We override the handleMarkAs to prevent from moving back to the inbox when marking an email as unread
@@ -50,13 +48,7 @@ export const NewsletterSubscriptionMailListToolbar = ({ navigation, elementsData
 
     return (
         <section className="newsletter-subscription-list-title py-3">
-            <MailboxToolbar
-                navigation={navigation}
-                elementsData={elementsData}
-                actions={overrideActions}
-                /* Force the columnLayout to be false to visually align with single line toolbar*/
-                overrideColumnMode={false}
-            />
+            <MailToolbar placement="list" elementsData={elementsData} actions={overrideActions} />
         </section>
     );
 };
