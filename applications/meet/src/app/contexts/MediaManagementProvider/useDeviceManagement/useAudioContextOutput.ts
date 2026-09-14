@@ -34,11 +34,16 @@ export const useAudioContextOutput = ({
     const hasBeenRunningRef = useRef(false);
     const isRecoveringRef = useRef(false);
 
+    // Chrome uses the last setSinkId() context as the echo cancellation reference, so never pin an idle one
+    const { webAudioMix } = room.options;
+    const isPlaybackContext =
+        typeof webAudioMix === 'object' && webAudioMix.audioContext === meetAudioContext.audioContext;
+
     useEffect(() => {
-        if (activeAudioOutputDeviceId) {
+        if (isPlaybackContext && activeAudioOutputDeviceId) {
             meetAudioContext.setSinkId(activeAudioOutputDeviceId);
         }
-    }, [activeAudioOutputDeviceId, meetAudioContext]);
+    }, [activeAudioOutputDeviceId, isPlaybackContext, meetAudioContext]);
 
     useEffect(() => {
         const { audioContext } = meetAudioContext;
