@@ -21,7 +21,14 @@ im.$media-expressions: $media-expressions;
 
 .feedback-form-rating-label {
 	font-size: 1.125em;
+
+	// Only once the row is horizontal — the label may still wrap in the stacked layout.
 	@include im.media('>medium') {
-		flex: 1.1;
+		white-space: nowrap;
 	}
+}
+
+.feedback-form-card {
+	background-color: rgb(255 255 255 / 0.08);
+	border: 1px solid rgb(255 255 255 / 0.16);
 }
