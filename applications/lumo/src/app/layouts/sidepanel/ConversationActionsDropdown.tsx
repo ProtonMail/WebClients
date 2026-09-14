@@ -51,7 +51,7 @@ const ConversationActionsDropdown = ({ conversation, anchorRef, isOpen, onClose 
                             onClose();
                         }}
                     >
-                        <LumoIcon name="Trash2" size={16} />
+                        <LumoIcon name="Trash" size={16} />
                         <span>{c('Option').t`Delete`}</span>
                     </DropdownMenuButton>
                 </DropdownMenu>

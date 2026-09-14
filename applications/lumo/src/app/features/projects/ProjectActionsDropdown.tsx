@@ -42,7 +42,7 @@ export const ProjectActionsDropdown = ({ project }: ProjectActionsDropdownProps)
         },
         {
             label: c('collider_2025:Action').t`Delete project`,
-            icon: <LumoIcon name="Trash2" size={16} />,
+            icon: <LumoIcon name="Trash" size={16} />,
             onClick: (e) => {
                 e?.stopPropagation();
                 deleteModal.openModal(true);

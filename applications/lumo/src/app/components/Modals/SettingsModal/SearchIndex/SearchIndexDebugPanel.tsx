@@ -257,7 +257,7 @@ export const SearchIndexDebugPanel = ({ enabled = true }: SearchIndexDebugPanelP
                             shape="solid"
                             size="small"
                         >
-                            <LumoIcon name="Trash2" width={14} height={14} className="mr-1" />
+                            <LumoIcon name="Trash" width={14} height={14} className="mr-1" />
                             {c('Action').t`Clean up orphaned documents`}
                         </Button>
                     </div>

@@ -186,7 +186,7 @@ export const ProjectKnowledgeSection: React.FC<ProjectKnowledgeSectionProps> = (
                                 className="project-files-remove-all-button"
                                 title={c('collider_2025:Action').t`Remove all files`}
                             >
-                                <LumoIcon name="Trash2" size={16} />
+                                <LumoIcon name="Trash" size={16} />
                             </Button>
                         </>
                     )}

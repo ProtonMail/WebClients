@@ -157,7 +157,7 @@ export const Toolbar = ({
                         title={c('Action').t`Clear canvas`}
                         aria-label={c('Action').t`Clear canvas`}
                     >
-                        <LumoIcon name="Trash2" size={16} />
+                        <LumoIcon name="Trash" size={16} />
                     </button>
                 </div>
             </div>

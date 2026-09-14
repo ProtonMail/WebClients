@@ -66,7 +66,7 @@ export const ConversationSidebarActions = ({
                 : []),
             {
                 label: c('Option').t`Delete`,
-                icon: <LumoIcon name="Trash2" size={16} />,
+                icon: <LumoIcon name="Trash" size={16} />,
                 onClick: (e) => {
                     e?.stopPropagation();
                     onOverlayActiveChange?.(true);
