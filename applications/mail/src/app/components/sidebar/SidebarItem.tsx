@@ -11,7 +11,8 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
 import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import { useLoading } from '@proton/hooks';
-import type { IconName, IconSize } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import type { IconSize } from '@proton/icons/types';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -22,15 +23,14 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { useCheckAllRef } from '../../containers/CheckAllRefProvider';
+import { shouldDisplayTotal } from '../../helpers/labels';
 import { categoryIDFromUrl, setCategoryInUrl } from '../../helpers/mailboxUrl';
 import type { MoveParams } from '../../hooks/actions/applyLocation/interface';
+import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
+import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { useSelectAll } from '../../hooks/useSelectAll';
 import { selectLabelID } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
-
-import { shouldDisplayTotal } from '../../helpers/labels';
-import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
-import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { useCategoriesView } from '../categoryView/useCategoriesView';
 import LocationAside from './LocationAside';
 
@@ -54,7 +54,7 @@ interface Props {
     isFolder: boolean;
     isLabel?: boolean;
     hideCountOnHover?: boolean;
-    icon?: IconName;
+    icon?: IconComponent;
     iconSize?: IconSize;
     text: string;
     shortcutText?: string;
@@ -77,7 +77,7 @@ interface Props {
 
 const SidebarItem = ({
     labelID,
-    icon,
+    icon: Icon,
     iconSize,
     text,
     shortcutText,
@@ -234,15 +234,15 @@ const SidebarItem = ({
                 <SidebarListItemContent
                     collapsed={collapsed}
                     left={
-                        icon ? (
+                        Icon ? (
                             <SidebarListItemContentIcon
+                                icon={Icon}
+                                color={color}
+                                size={iconSize}
                                 className={clsx([
                                     collapsed && 'flex mx-auto',
                                     isLabel && 'navigation-icon--fixAliasing',
                                 ])}
-                                name={icon}
-                                color={color}
-                                size={iconSize}
                             />
                         ) : undefined
                     }

@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { Loader } from '@proton/components';
 import type { TreeItemWithChildren } from '@proton/drive/modules/directoryTree';
+import { IcTv } from '@proton/icons/icons/IcTv';
 import clsx from '@proton/utils/clsx';
 
 import DriveExpandButton from '../../../legacy/components/layout/sidebar/DriveSidebar/DriveSidebarFolders/DriveExpandButton';
@@ -36,7 +37,7 @@ export const DevicesSidebar = ({ isCollapsed, deviceRoot, toggleExpand, isExpand
             <DriveSidebarListItem
                 key="devices-root"
                 to={'/devices'}
-                icon="tv"
+                icon={IcTv}
                 onDoubleClick={handleExpand}
                 collapsed={isCollapsed}
             >
