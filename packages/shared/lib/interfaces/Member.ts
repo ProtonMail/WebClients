@@ -35,7 +35,7 @@ export interface MemberInvitationData {
 }
 
 export enum MemberUnprivatizationState {
-    Declined,
+    // Declined,
     Pending,
     Ready,
 }
@@ -111,10 +111,10 @@ export type MemberUnprivatizationManualApproveState = {
 
 export enum MEMBER_FLAGS {
     /** The member still has to migrate to the passwordless organization key */
-    ToMigrateOrgKey = 1 << 0,
-    InactiveKey = 1 << 1,
+    // ToMigrateOrgKey = 1 << 0,
+    // InactiveKey = 1 << 1,
     /** The member belongs to a non-primary organization */
-    NonPrimary = 1 << 2,
+    // NonPrimary = 1 << 2,
     /**
      * The member was temporarily converted to private as part of the organization key reset flow
      * (privatize non-private members > rotate the organization key > unprivatize them back).

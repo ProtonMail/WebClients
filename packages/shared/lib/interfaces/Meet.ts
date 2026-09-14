@@ -2,7 +2,7 @@ import type { EventV6Response } from '../api/events';
 
 export enum CustomPasswordState {
     NO_PASSWORD = 0,
-    PASSWORD_SET = 1,
+    // PASSWORD_SET = 1,
 }
 
 export enum ProtonCalendarState {

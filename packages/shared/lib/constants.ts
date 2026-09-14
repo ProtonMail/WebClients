@@ -363,14 +363,14 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
 };
 
 export enum PRODUCT {
-    MAIL = 1,
-    VPN = 2,
-    CALENDAR = 3,
-    DRIVE = 4,
-    PASS = 5,
+    // MAIL = 1,
+    // VPN = 2,
+    // CALENDAR = 3,
+    // DRIVE = 4,
+    // PASS = 5,
     WALLET = 6,
-    LUMO = 9,
-    AUTHENTICATOR = 10,
+    // LUMO = 9,
+    // AUTHENTICATOR = 10,
 }
 
 // Should be synced with ProductGroup in API
@@ -508,7 +508,7 @@ export enum API_CODES {
     SINGLE_SUCCESS = 1000,
     NOT_ALLOWED_ERROR = 2011,
     INVALID_REQUIREMENT_ERROR = 2000,
-    INVALID_LINK_TYPE_ERROR = 2001,
+    // INVALID_LINK_TYPE_ERROR = 2001,
     ALREADY_EXISTS_ERROR = 2500,
     NOT_FOUND_ERROR = 2501,
     INVALID_ID_ERROR = 2061,
@@ -632,7 +632,7 @@ export enum MEMBER_SUBSCRIBER {
 export enum PACKAGE_SIGNATURES_MODE {
     SIGNATURES_NONE = 0,
     SIGNATURES_ATTACHMENTS = 1,
-    SIGNATURES_BODY = 2,
+    // SIGNATURES_BODY = 2,
 }
 
 export enum PGP_SCHEMES {
@@ -680,11 +680,6 @@ export enum SETTINGS_PROTON_SENTINEL_STATE {
 export enum ORGANIZATION_FLAGS {
     LOYAL = 1,
     COVID = 2,
-    /**
-     * @deprecated.
-     * Unless you know exactly what you are doing, don't use this flag. This flag is deprecated and will be removed in the future.
-     */
-    SMTP_SUBMISSION = 4,
     NO_CYCLE_SCHEDULED = 8,
     DISSIDENT = 64,
     PROTON = 128,
@@ -983,10 +978,10 @@ export enum SERVER_FEATURES {
     SECURE_CORE = 1,
     TOR = 2,
     P2P = 4,
-    XOR = 8,
+    // XOR = 8,
     IPV6 = 16,
-    RESTRICTED = 32,
-    PARTNER = 64,
+    // RESTRICTED = 32,
+    // PARTNER = 64,
     DOUBLE_RESTRICTION = 128,
 }
 
@@ -1120,8 +1115,8 @@ export enum METRICS_LOG {
 }
 
 export enum SIMPLE_LOGIN_EXTENSION_LINKS {
-    MAIN_PAGE = 'https://simplelogin.io',
-    DASHBOARD = 'https://app.simplelogin.io/dashboard/',
+    // MAIN_PAGE = 'https://simplelogin.io',
+    // DASHBOARD = 'https://app.simplelogin.io/dashboard/',
     ADMIN_DASHBOARD = 'https://app.simplelogin.io/admin/',
     ADMIN_DASHBOARD_DEV = 'https://app.sldev.ovh/admin/',
 }
