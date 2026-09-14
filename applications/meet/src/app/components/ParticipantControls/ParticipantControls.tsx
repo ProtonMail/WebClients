@@ -51,6 +51,7 @@ import { EmojiReactionButton } from '../EmojiReactionButton/EmojiReactionButton'
 import { InfoButton } from '../InfoButton/InfoButton';
 import { LeaveMeetingPopup } from '../LeaveMeetingPopup/LeaveMeetingPopup';
 import { MeetingName } from '../MeetingName/MeetingName';
+import { MeetingSnackbars } from '../MeetingSnackbars/MeetingSnackbars';
 import { MicrophoneWithVolumeWithMicrophoneState } from '../MicrophoneWithVolume';
 import { ParticipantsButton } from '../ParticipantsButton';
 import { LayoutSelector } from '../ParticipantsLayout/LayoutSelector/LayoutSelector';
@@ -142,6 +143,7 @@ export const ParticipantControls = () => {
     return (
         <div className="w-full flex flex-nowrap flex-column relative">
             <AudioPlaybackPrompt />
+            {!isLargerThanMd && <MeetingSnackbars />}
             {!isLargerThanMd && !isNarrowHeight && pageCount > 1 && !isSpotlightLayout && (
                 <div className="w-full flex justify-center">
                     <Pagination
