@@ -225,13 +225,21 @@ export const getMemoryGenerationScanBoundary = (
  * Uses the explicit cursor when available. For settings created before cursors were introduced,
  * the newest generated-memory timestamp is a safe migration baseline. Optimize rewrites generated
  * memories at optimization time, preventing old chats from being immediately reprocessed.
+ *
+ * When chat prompts are still waiting to be scanned (`pendingPromptCount > 0`), do not infer a
+ * cutoff from optimized memory timestamps — otherwise "Update from chats" would skip them.
  */
 export const getMemoryGenerationCutoff = (
     lastProcessedMessageAt: string | undefined,
-    existingMemories: Memory[]
+    existingMemories: Memory[],
+    pendingPromptCount = 0
 ): string | undefined => {
     if (lastProcessedMessageAt && Number.isFinite(Date.parse(lastProcessedMessageAt))) {
         return lastProcessedMessageAt;
+    }
+
+    if (pendingPromptCount > 0) {
+        return undefined;
     }
 
     const latestGeneratedAt = normalizeMemories(existingMemories)
