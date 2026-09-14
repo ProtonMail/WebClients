@@ -355,6 +355,7 @@ enum MeetFeatureFlag {
     MeetBackgroundEffectsOnMobileBrowsers = 'MeetBackgroundEffectsOnMobileBrowsers',
     MeetParticipantsLayouts = 'MeetParticipantsLayouts',
     MeetCpuOptimizations = 'MeetCpuOptimizations',
+    MeetScreenShareAudioSupportedElectronVersion = 'MeetScreenShareAudioSupportedElectronVersion',
 }
 
 enum LumoFeatureFlag {

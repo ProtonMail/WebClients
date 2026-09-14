@@ -15,6 +15,7 @@ import { updateParticipantScreenShare } from '@proton/meet/store/slices/screenSh
 import { isChrome, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp, isElectronOnWindows, isElectronRuntimeAtLeast } from '@proton/shared/lib/helpers/desktop';
 import { useFlag } from '@proton/unleash/useFlag';
+import { useVariant } from '@proton/unleash/useVariant';
 
 import { screenShareQuality } from '../../qualityConstants';
 import { findScreenShare } from '../../utils/findScreenShare';
@@ -22,11 +23,17 @@ import { useStableCallback } from '../useStableCallback';
 import { useScreenShareRoomEvents } from './useScreenShareRoomEvents';
 import { useScreenShareTrack } from './useScreenShareTrack';
 
-// Only the Windows desktop takes system audio from Electron's display-media handler, and Electron
-// rewrites that capture to exclude our own playback from 43.4.0 onwards. Older installed builds
-// capture the full system mix, republishing the meeting so everyone hears themselves.
-const ELECTRON_RESTRICT_OWN_AUDIO_VERSION = '43.4.0';
-const supportsRestrictOwnAudio = !isElectronOnWindows || isElectronRuntimeAtLeast(ELECTRON_RESTRICT_OWN_AUDIO_VERSION);
+const useSupportsRestrictOwnAudio = () => {
+    const variant = useVariant('MeetScreenShareAudioSupportedElectronVersion');
+
+    const minimumVersion = variant.name === 'version' ? variant.payload?.value?.trim() : undefined;
+
+    if (!minimumVersion) {
+        return false;
+    }
+
+    return !isElectronOnWindows || isElectronRuntimeAtLeast(minimumVersion);
+};
 
 export function useCurrentScreenShare({
     stopPiP,
@@ -38,6 +45,7 @@ export function useCurrentScreenShare({
     preparePictureInPicture: () => void;
 }) {
     const isMeetEnableScreenShareAudio = useFlag('MeetEnableScreenShareAudio');
+    const supportsRestrictOwnAudio = useSupportsRestrictOwnAudio();
     const shareScreenShareAudio = isMeetEnableScreenShareAudio && supportsRestrictOwnAudio;
 
     const dispatch = useMeetDispatch();
