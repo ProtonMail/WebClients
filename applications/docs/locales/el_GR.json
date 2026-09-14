@@ -964,6 +964,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφή",
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
+      ],
+      "Add a payment method": [
+        "Προσθέστε μία μέθοδο πληρωμής"
       ]
     },
     "Actions message": {
@@ -3777,6 +3780,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Μη αποκρυπτογραφήσιμο όνομα"
+      ],
+      "A contact with this email address already exists": [
+        "Υπάρχει ήδη επαφή με αυτή την ηλεκτρονική διεύθυνση."
       ]
     },
     "error": {
@@ -4183,6 +4189,12 @@
       ],
       "Touch your security key.": [
         "Αγγίξτε το κλειδί ασφαλείας σας."
+      ],
+      "Still waiting?": [
+        "Ακόμα περιμένετε;"
+      ],
+      "Touch your security key to continue.": [
+        "Πατήστε το κλειδί ασφαλείας σας για να συνεχίσετε."
       ]
     },
     "fido2: Label": {
@@ -6070,6 +6082,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Θα εξακολουθείτε να μπορείτε να βλέπετε τα δικά σας δεδομένα λογαριασμού, αλλά όλοι οι λογαριασμοί χρηστών θα καταργηθούν από τον οργανισμό σας."
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Απομένουν ${ timeRemaining } στη δοκιμαστική σας περίοδο. ${ addPaymentMethodLink } για να αποφύγετε την απώλεια πρόσβασης. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Απομένουν ${ timeRemaining } στη δοκιμαστική σας περίοδο. ${ addPaymentMethodLink } για να διατηρήσετε τη συνδρομή σας. ${ learnMoreLink }"
       ]
     },
     "info": {

@@ -959,6 +959,9 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能发送超过 ${ maxAttachments } 个联系人的 vCard 文件"
+      ],
+      "Add a payment method": [
+        "添加支付方式"
       ]
     },
     "Actions message": {
@@ -3745,6 +3748,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 无法解密的名称"
+      ],
+      "A contact with this email address already exists": [
+        "该邮箱地址的联系人已存在"
       ]
     },
     "error": {
@@ -4149,6 +4155,12 @@
       ],
       "Touch your security key.": [
         "请触碰您的安全密钥！"
+      ],
+      "Still waiting?": [
+        "仍在等待？"
+      ],
+      "Touch your security key to continue.": [
+        "触摸您的安全密钥以继续。"
       ]
     },
     "fido2: Label": {
@@ -5990,6 +6002,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍然可以查看您自己的账户数据，但所有用户账户将从您的组织中移除。"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "试用期剩余 ${ timeRemaining }。${ addPaymentMethodLink } 以避免失去访问权限。${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "试用期剩余 ${ timeRemaining }。${ addPaymentMethodLink } 以保留您的订阅。${ learnMoreLink }"
       ]
     },
     "info": {
@@ -8014,7 +8032,7 @@
         "移动 ${ n } 个项目"
       ],
       "Public link access updated": [
-        "公共链接访问已更新"
+        "公开链接访问已更新"
       ],
       "Public link update access failed ": [
         "公共链接更新访问失败 "

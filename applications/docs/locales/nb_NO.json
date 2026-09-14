@@ -940,6 +940,21 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakt.",
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakter."
+      ],
+      "Add a payment method": [
+        "Legg til betalingsmåte"
+      ],
+      "Ask me next time": [
+        "Spør meg neste gang"
+      ],
+      "Export this version (as odt) (Beta)": [
+        "Eksporter denne versjonen (som odt) (Beta)"
+      ],
+      "OpenDocument Text (.odt) (Beta)": [
+        "OpenDocument-tekst (.odt) (Beta)"
+      ],
+      "Save preferences": [
+        "Lagre preferanser"
       ]
     },
     "Actions message": {
@@ -3744,6 +3759,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn som ikke kan dekrypteres"
+      ],
+      "A contact with this email address already exists": [
+        "En kontakt med denne e-postadressen finnes allerede"
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Siden dette dokumentet lå i en delt mappe, er det bare mappeieren som kan gjenopprette det."
+      ],
+      "Could not grant access to the organization key": [
+        "Kunne ikke gi tilgang til organisasjonsnøkkelen"
+      ],
+      "Failed to fetch sharing information": [
+        "Kunne ikke hente informasjon om deling"
       ]
     },
     "error": {
@@ -4068,6 +4095,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Kontoen din bruker ${ usedSpace } med lagringsplass som overskrider de ${ inviteSpace } tildelt deg. Slett noen data, eller be planadministratoren om å øke lagringsplassen."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du er invitert til å koble ${ BRAND_NAME }-kontoen til denne familiegruppen og nyte alle premiumfunksjonene."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4147,6 +4177,9 @@
       ],
       "Touch your security key.": [
         "Berør sikkerhetsnøkkelen din."
+      ],
+      "Still waiting?": [
+        "Venter du fremdeles?"
       ]
     },
     "fido2: Label": {
@@ -5998,6 +6031,42 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil fortsatt kunne se dine egne kontodata, men alle brukerkontoer vil bli fjernet fra organisasjonen din."
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } igjen av prøveperioden. ${ addPaymentMethodLink } for å unngå å miste tilgang. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } igjen av prøveperioden. ${ addPaymentMethodLink } for å beholde abonnementet. ${ learnMoreLink }"
+      ],
+      "Converting document...": [
+        "Konverterer dokument..."
+      ],
+      "Creating new document...": [
+        "Oppretter nytt dokument..."
+      ],
+      "Error converting document: ${ errorMessage }": [
+        "Feil ved konvertering av dokument: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Feil ved lasting av dokument: ${ errorDetail }"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Få e-postoppdateringer for kommentarer og forslag som er lagt til i dokumentene dine."
+      ],
+      "Get Notified About Comments": [
+        "Bli varslet om kommentarer"
+      ],
+      "Making a copy...": [
+        "Lager en kopi…"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Ingen dokument oppgitt i nettadressen. Gå tilbake til ${ DRIVE_APP_NAME } og velg et dokument."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Nettadressen du skrev inn, ser ut til å være kopiert feil fra Slack. Når du kopierer lange koblinger fra Slack, høyreklikker du på koblingen og velger \"Kopier kobling\" i stedet for å kopiere den avkortede URL-teksten direkte."
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "For å hjelpe til med feilsøkingen lastes feilsøkingsinformasjon opp til Drive-kontoen og deles på en sikker måte med kundestøtteteamet til ${ BRAND_NAME }. Informasjonen kan inneholde filinnhold. Du kan når som helst stoppe delingen, og de delte dataene slettes når gjennomgangen er fullført."
       ]
     },
     "info": {
@@ -6531,6 +6600,18 @@
       ],
       "Your password (trusted contact)": [
         "Passordet ditt (betrodd kontakt)"
+      ],
+      "Enable email notifications": [
+        "Aktiver epostvarsler"
+      ],
+      "Include debug information": [
+        "Inkluder feilsøkingsinformasjon"
+      ],
+      "Include document name in notification": [
+        "Inkluder dokumentnavn i varsel"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Navn som ikke kan dekrypteres"
       ]
     },
     "Label for contact group color": {
@@ -7426,6 +7507,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med utvidet tilgang"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med begrenset tilgang"
       ]
     },
     "new_plans: feature highlight": {
@@ -8097,6 +8184,15 @@
       ],
       "Your settings have been changed successfully": [
         "Innstillingene dine ble endret"
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Siden dette dokumentet lå i en delt mappe, er det bare mappeieren som kan gjenopprette det."
+      ],
+      "Failed to submit report": [
+        "Kunne ikke sende inn rapporten"
+      ],
+      "Report submitted successfully": [
+        "Rapport ble sendt"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8786,6 +8882,21 @@
       ],
       "Advanced protection against cyber threats": [
         "Avansert beskyttelse mot cybertrusler"
+      ],
+      "/month": [
+        "/måned"
+      ],
+      "2 individual accounts": [
+        "2 individuelle kontoer"
+      ],
+      "3 TB of secure storage": [
+        "3 TB med sikker lagring"
+      ],
+      "6 individual accounts": [
+        "6 individuelle kontoer"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter er basert på standard månedspris. Abonnementet fornyes til standard årspris når faktureringssyklusen utløper."
       ]
     },
     "q3campaign2026: Info, Drive first": {
@@ -8812,6 +8923,9 @@
       ],
       "One plan, more power": [
         "Én plan, mer kraft"
+      ],
+      "One plan, max savings": [
+        "Én plan, maksimal besparelse"
       ]
     },
     "Recent documents table header": {
@@ -8923,6 +9037,9 @@
       ],
       "User Admin": [
         "Brukeradministrator"
+      ],
+      "Organization Admin": [
+        "Organisasjonsadministrator"
       ]
     },
     "Safety review": {
@@ -9244,6 +9361,9 @@
       ],
       "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
         "Ditt nåværende regneark, inkludert alle ark i det, vil bli erstattet med denne versjonen."
+      ],
+      "Creating new spreadsheet...": [
+        "Oppretter nytt regneark..."
       ]
     },
     "sheets_2025:Label": {
@@ -10603,6 +10723,9 @@
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"
+      ],
+      "Report issue": [
+        "Rapporter en feil"
       ]
     },
     "Title header for keys table": {
@@ -10720,6 +10843,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Vi har sendt dem en invitasjon til å få tilgang til elementet."
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Denne koblingen har utløpt. Forleng utløpsdatoen."
       ]
     },
     "tooltip": {
@@ -10946,6 +11072,29 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. Du blir ikke belastet hvis du avbryter før ${ textDate }. ${ action }"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Prøv nå"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Benytt deg av tilbudet"
+      ],
+      "Special Offer": [
+        "Spesialtilbud"
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
       ]
     }
   }
