@@ -1,3 +1,5 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
 im.$breakpoints: $breakpoints-product;
@@ -40,7 +42,7 @@ im.$media-expressions: $media-expressions;
 	border-radius: 24px;
 	background-color: var(--background-weak);
 	color: var(--text-norm);
-	font-size: 14px;
+	font-size: rem(14);
 	font-weight: 500;
 	text-decoration: none;
 	cursor: pointer;
@@ -64,7 +66,7 @@ im.$media-expressions: $media-expressions;
 	}
 
 	@include im.media('<=small') {
-		font-size: 13px;
+		font-size: rem(13);
 		padding-block: 8px;
 		padding-inline: 12px;
 		gap: 6px;

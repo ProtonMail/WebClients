@@ -38,6 +38,7 @@ import { SignInButton } from '../../Guest/SignInLink';
 import { type IconName, LumoIcon } from '../../LumoIcon/LumoIcon';
 import AboutPanel from './AboutPanel';
 import DeleteAllButton from './DeleteAllButton';
+import { FontSizeSettingRow } from './FontSizeSettingRow';
 import MemoryPanel from './MemoryPanel';
 import PersonalizationPanel from './PersonalizationPanel';
 import { SearchIndexManagement } from './SearchIndex/SearchIndexManagement';
@@ -140,6 +141,8 @@ const AppearanceSettingsPanel = () => {
                 />
                 <LumoThemeButton />
             </div>
+
+            <FontSizeSettingRow />
 
             <SettingsSectionItem
                 icon="Image"
