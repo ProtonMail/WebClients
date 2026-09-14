@@ -2,35 +2,45 @@ import { useEffect, useRef } from 'react';
 
 import { useMeetErrorReporting } from '@proton/meet';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useCameraTrackSubscriptionManager } from '../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionManagerProvider';
 import { useMeetCoreClient } from '../contexts/MeetCoreClientContext';
 
-interface UseSafariWebsocketVisibilityHandlerParams {
+interface UsePageVisibilityHandlerParams {
     joinedRoom: boolean;
+    isPipActive: boolean;
 }
 
 /**
  * Hook to handle Safari websocket ping/pong settings, media playback, and video subscriptions when page visibility changes.
- * When Safari is in background:
- *   - Sets websocket parameters to 60 seconds to prevent disconnection
+ * When in background:
+ *   - Safari only: sets websocket parameters to 60 seconds to prevent disconnection
  *   - Unsubscribes all video tracks to save bandwidth and resources (with debounce)
- * When Safari returns to foreground:
- *   - Resets websocket parameters to null (default)
- *   - Resumes paused audio and video elements that were created while in background
+ * When returning to foreground:
+ *   - Safari only: resets websocket parameters to null (default)
+ *   - Safari only: resumes paused audio and video elements that were created while in background
  *   - Resubscribes all video tracks (with debounce)
+ *
+ * The video pause runs everywhere: adaptiveStream's visibility signal is IntersectionObserver
+ * based and does not re-fire on a backgrounded tab. It stays in this handler so the setEnabled
+ * burst cannot reach the socket while Safari is still reconfiguring the websocket.
  */
-export const useSafariWebsocketVisibilityHandler = ({ joinedRoom }: UseSafariWebsocketVisibilityHandlerParams) => {
+export const usePageVisibilityHandler = ({ joinedRoom, isPipActive }: UsePageVisibilityHandlerParams) => {
     const meetCoreClient = useMeetCoreClient();
 
     const { reportMeetError } = useMeetErrorReporting();
     const { unsubscribeAllVideos, resubscribeAllVideos } = useCameraTrackSubscriptionManager();
     const debounceTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+    const isCpuOptimizations = useFlag('MeetCpuOptimizations');
+    // Safari already paused video here before the flag existed, so it keeps doing so regardless.
+    const handlesVideoSubscriptions = isSafari() || isCpuOptimizations;
+
     const DEBOUNCE_DELAY = 500; // 500ms debounce to avoid rapid toggle
 
     useEffect(() => {
-        if (!joinedRoom || !isSafari()) {
+        if (!joinedRoom || !handlesVideoSubscriptions) {
             return;
         }
 
@@ -51,6 +61,12 @@ export const useSafariWebsocketVisibilityHandler = ({ joinedRoom }: UseSafariWeb
                     await meetCoreClient.setWebsocketMaxPingFailures(3);
                 } catch (error) {
                     reportMeetError('Failed to set websocket parameters for background', error);
+                }
+
+                // Picture-in-Picture keeps rendering remote cameras from a hidden tab,
+                // so pausing freezes the thumbnails in a window the user is watching.
+                if (isPipActive || document.pictureInPictureElement) {
+                    return;
                 }
 
                 // Debounce video unsubscription to avoid rapid toggle
@@ -123,5 +139,13 @@ export const useSafariWebsocketVisibilityHandler = ({ joinedRoom }: UseSafariWeb
                 debounceTimeoutRef.current = null;
             }
         };
-    }, [meetCoreClient, joinedRoom, reportMeetError, unsubscribeAllVideos, resubscribeAllVideos]);
+    }, [
+        meetCoreClient,
+        joinedRoom,
+        reportMeetError,
+        unsubscribeAllVideos,
+        resubscribeAllVideos,
+        handlesVideoSubscriptions,
+        isPipActive,
+    ]);
 };
