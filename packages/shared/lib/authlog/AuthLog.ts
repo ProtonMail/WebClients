@@ -55,16 +55,16 @@ export enum AUTH_LOG_EVENTS {
 }
 
 export enum AuthLogStatus {
-    Success = 'success',
+    // Success = 'success',
     Attempt = 'attempt',
     Failure = 'failure',
 }
 
 export enum ProtectionType {
-    BLOCKED = 1,
-    CAPTCHA = 2,
-    OWNERSHIP_VERIFICATION = 3,
-    DEVICE_VERIFICATION = 4,
+    // BLOCKED = 1,
+    // CAPTCHA = 2,
+    // OWNERSHIP_VERIFICATION = 3,
+    // DEVICE_VERIFICATION = 4,
     /**
      * AuthLog action was protected by anti-abuse systems
      * and was evaluated as safe.

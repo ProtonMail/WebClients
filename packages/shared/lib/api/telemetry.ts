@@ -15,7 +15,6 @@ export enum TelemetryMeasurementGroups {
     accountUpgradePage = 'account.web.upgrade_page',
     referralDiscover = 'any.web.referral_discover',
     alwaysOnUpsell = 'any.web.always_on_upsell',
-    calendarEncryptedSearch = 'calendar.web.encrypted_search',
     calendarIcsSurgery = 'calendar.web.ics_surgery',
     calendarTimeZoneSelector = 'calendar.web.timezone_selector',
     calendarVideoConferencing = 'calendar.web.video_conferencing',
@@ -26,7 +25,6 @@ export enum TelemetryMeasurementGroups {
     calendarSettingsHeartBeat = 'any.web.calendar_settings_heart_beat',
     /** Not only calendar scope because party crasher on mail and drawer */
     calendarInvite = 'any.web.calendar_invite',
-    changelogOpened = 'any.changelog_opened',
     keyTransparency = 'any.web.key_transparency',
     subscriptionModal = 'any.web.subscription_modal',
     mailOnboarding = 'mail.web.onboarding',
@@ -63,7 +61,6 @@ export enum TelemetryMeasurementGroups {
     driveWebFeaturePerformance = 'drive.web.feature_performance_unauth',
     driveWebActions = 'drive.web.actions_unauth',
     drivePostSignupOneDollar = 'drive.web.post_signup_one_dollar',
-    driveUnlimitedOffer2025 = 'mail.web.unlimited_offer_2025',
     /** Shared */
     collapsibleLeftSidebar = 'any.web.collapsible_left_sidebar',
     smartBanner = 'any.web.smart_banner',

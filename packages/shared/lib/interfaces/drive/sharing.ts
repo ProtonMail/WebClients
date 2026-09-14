@@ -92,7 +92,7 @@ export interface SharedFileScan {
 export enum HandshakeInfoVendorType {
     ProtonDrive = 0,
     ProtonDoc = 1,
-    ProtonSheet = 2,
+    // ProtonSheet = 2,
 }
 
 /**
