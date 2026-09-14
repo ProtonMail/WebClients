@@ -1,20 +1,23 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
 .api-docs-code-block-lang-active {
-    background: var(--background-weak);
-    font-weight: 600;
+	background: var(--background-weak);
+	font-weight: 600;
 }
 
 .api-docs-code-block-pre {
-    margin: 0;
-    padding: 16px 20px;
-    overflow-x: auto;
-    font-size: 13px;
-    line-height: 1.65;
-    background: var(--background-invert);
-    color: var(--text-invert);
-    max-height: min(480px, 70vh);
+	margin: 0;
+	padding-block: 16px;
+	padding-inline: 20px;
+	overflow-x: auto;
+	font-size: rem(13);
+	line-height: 1.65;
+	background: var(--background-invert);
+	color: var(--text-invert);
+	max-block-size: min(480px, 70vh);
 }
 
 .api-docs-code-block-copy {
-    right: 4px;
-    top: 4px;
+	inset-inline-end: 4px;
+	inset-block-start: 4px;
 }

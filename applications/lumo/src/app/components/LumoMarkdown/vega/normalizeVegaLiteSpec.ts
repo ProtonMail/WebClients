@@ -1,3 +1,4 @@
+import { scaleChartFontSize } from '../../../util/scaleChartFontSize';
 import { PROTON_DRIVE_RED, PROTON_PURPLE, PROTON_STATIC_COLOR_BAND_FIELD } from './protonChartTokens';
 
 const VEGA_LITE_V6_SCHEMA = 'https://vega.github.io/schema/vega-lite/v6.json';
@@ -543,7 +544,11 @@ function buildSubchart(
         data,
         width: 'container',
         height: 130,
-        title: { text: getYFieldTitle(flattened) ?? `Series ${index + 1}`, fontSize: 12, anchor: 'start' },
+        title: {
+            text: getYFieldTitle(flattened) ?? `Series ${index + 1}`,
+            fontSize: scaleChartFontSize(12, true),
+            anchor: 'start',
+        },
         ...flattened,
     };
 }

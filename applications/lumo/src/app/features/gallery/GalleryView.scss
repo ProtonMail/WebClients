@@ -1,3 +1,5 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
 
@@ -37,7 +39,7 @@ im.$media-expressions: $media-expressions;
 	border-radius: 9999px;
 	border: none;
 	background: transparent;
-	font-size: 14px;
+	font-size: rem(14);
 	font-weight: 500;
 	color: var(--text-weak);
 	cursor: pointer;
@@ -311,7 +313,7 @@ im.$media-expressions: $media-expressions;
 }
 
 .gallery-card__date {
-	font-size: 11px;
+	font-size: rem(11);
 	color: rgb(255 255 255 / 0.9);
 	font-weight: 500;
 }
@@ -445,7 +447,7 @@ im.$media-expressions: $media-expressions;
 }
 
 .inspiration-discover__text {
-	font-size: 13px;
+	font-size: rem(13);
 	font-weight: 500;
 	color: var(--text-norm);
 	line-height: 1.4;
