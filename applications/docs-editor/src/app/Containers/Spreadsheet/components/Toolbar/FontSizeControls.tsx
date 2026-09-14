@@ -1,5 +1,6 @@
+import * as Icons from '../icons'
 import * as Ariakit from '@ariakit/react'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import type { ComponentPropsWithoutRef } from 'react'
 import { forwardRef, useEffect, useRef } from 'react'
 import { c } from 'ttag'
@@ -22,7 +23,7 @@ export const FontSizeControls = forwardRef<HTMLDivElement, FontSizeControlsProps
       <div ref={ref} {...props} className={clsx('flex shrink-0 items-center gap-2', props.className)}>
         <T.Item
           variant="icon-small"
-          legacyIconName="minus"
+          icon={Icons.minus}
           onClick={$.withFocusGrid(() => $.format.text.fontSize.set(realValue - 1))}
           disabled={useUI((ui) => ui.info.isReadonly)}
           shortcut={
@@ -38,7 +39,7 @@ export const FontSizeControls = forwardRef<HTMLDivElement, FontSizeControlsProps
         <FontSizeCombobox realValue={realValue} />
         <T.Item
           variant="icon-small"
-          legacyIconName="plus"
+          icon={Icons.plus}
           onClick={$.withFocusGrid(() => $.format.text.fontSize.set(realValue + 1))}
           disabled={useUI((ui) => ui.info.isReadonly)}
           shortcut={

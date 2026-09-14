@@ -1,3 +1,4 @@
+import * as Icons from '../icons'
 import type { MouseEvent, ComponentPropsWithoutRef, Ref } from 'react'
 import { memo, useCallback, useEffect, useRef, useState } from 'react'
 import { DragDropProvider, type DragEndEvent } from '@dnd-kit/react'
@@ -8,10 +9,9 @@ import { RestrictToElement } from '@dnd-kit/dom/modifiers'
 
 import { PointerSensor, PointerActivationConstraints } from '@dnd-kit/dom'
 
-import { Icon } from '../ui'
+import { Icon, type IconData } from '../ui'
 import * as Ariakit from '@ariakit/react'
 import * as UI from '../ui'
-import type { IconName } from '@proton/icons/types'
 import { clsx } from 'clsx'
 import { createStringifier } from '../../stringifier'
 import { c } from 'ttag'
@@ -29,10 +29,10 @@ const { s } = createStringifier(strings)
 
 interface IconButtonProps extends Ariakit.ButtonProps {
   ref?: Ref<HTMLButtonElement>
-  legacyIconName?: IconName
+  icon: IconData
   children?: string
 }
-const IconButton = createComponent(function Item({ legacyIconName, children, ...props }: IconButtonProps) {
+const IconButton = createComponent(function Item({ icon, children, ...props }: IconButtonProps) {
   const outputProps = {
     ...props,
     className: clsx(
@@ -51,7 +51,7 @@ const IconButton = createComponent(function Item({ legacyIconName, children, ...
 
   const content = (
     <Ariakit.Button aria-label={children} accessibleWhenDisabled>
-      {legacyIconName && <Icon className="shrink-0" legacyName={legacyIconName} />}
+      <Icon className="shrink-0" data={icon} />
     </Ariakit.Button>
   )
 
@@ -80,7 +80,7 @@ const SheetSwitcherMenu = memo(function SheetSwitcherMenu() {
             }
             setActiveId(sheet.id)
           }}
-          trailingIconSlot={sheet.hidden ? <Icon legacyName="eye-slash" /> : undefined}
+          trailingIconSlot={sheet.hidden ? <Icon data={Icons.eyeSlash} /> : undefined}
           className={sheet.hidden ? 'opacity-50' : undefined}
         >
           {sheet.name}
@@ -103,7 +103,7 @@ const SheetSwitcher = memo(function SheetSwitcher() {
   return (
     <div className="shrink-0 py-0.5">
       <Ariakit.MenuProvider store={menu}>
-        <Ariakit.MenuButton render={<IconButton legacyIconName="hamburger">{s('All sheets')}</IconButton>} />
+        <Ariakit.MenuButton render={<IconButton icon={Icons.hamburger}>{s('All sheets')}</IconButton>} />
         {mounted && <SheetSwitcherMenu />}
       </Ariakit.MenuProvider>
     </div>
@@ -130,7 +130,7 @@ function SheetOptions({ sheet, rename, index, ...props }: SheetOptionsProps) {
   return (
     <Ariakit.MenuProvider>
       <Ariakit.MenuButton {...props} onClick={(e: MouseEvent) => e.stopPropagation()}>
-        <Icon legacyName="chevron-down" />
+        <Icon data={Icons.chevronDown} />
       </Ariakit.MenuButton>
       <UI.Menu unmountOnHide>
         <UI.MenuItem onClick={() => openDeleteSheetDialog(sheet.id)}>{s('Delete')}</UI.MenuItem>
@@ -359,7 +359,7 @@ const NewSheetButton = memo(function NewSheetButton() {
     return null
   }
   return (
-    <IconButton legacyIconName="plus" onClick={useUI.$.insert.sheet} disabled={isReadonly}>
+    <IconButton icon={Icons.plus} onClick={useUI.$.insert.sheet} disabled={isReadonly}>
       {s('New sheet')}
     </IconButton>
   )

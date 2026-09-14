@@ -2,7 +2,7 @@ import * as Ariakit from '@ariakit/react'
 import { createComponent } from '../utils'
 import * as UI from '../ui'
 import * as Atoms from '../atoms'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import { BORDER_LINE_STYLES, BORDER_LOCATIONS, type BorderLocation } from '../Sidebar/borderData'
 import {
   getStringifiedColor,
@@ -54,7 +54,7 @@ const SubmenuButton = createComponent(function SubmenuButton(props: Ariakit.Butt
   return (
     <Button {...props} className={clsx('flex gap-0.5 rounded-lg px-1 py-1', props.className)}>
       {props.children}
-      <Icon className="shrink-0" legacyName="chevron-down-filled" />
+      <Icon className="shrink-0" data={Icons.chevronDownFilled} />
     </Button>
   )
 })
