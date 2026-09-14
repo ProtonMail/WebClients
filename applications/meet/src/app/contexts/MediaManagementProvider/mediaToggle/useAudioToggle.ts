@@ -138,7 +138,8 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         // @ts-ignore - webkitAudioContext is not available in all browsers
         const Ctor = (window.AudioContext || window.webkitAudioContext) as typeof AudioContext;
         const requiredSampleRate = noiseCancellationModel.audioContextSampleRate;
-        // This context only processes the mic, it never plays anything.
+        // This context only processes the mic, it never plays anything. Chrome deprioritises the
+        // worklet thread of a context whose output device has been silent for ~30s (crbug 1248169).
         const options = outputlessAudioContextOptions(requiredSampleRate ? { sampleRate: requiredSampleRate } : {});
         const ctx = new Ctor(options);
         audioContext.current = ctx;
