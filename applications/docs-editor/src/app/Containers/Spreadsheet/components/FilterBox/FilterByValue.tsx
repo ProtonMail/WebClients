@@ -1,3 +1,4 @@
+import * as Icons from '../icons'
 import { useMemo, useRef, useState } from 'react'
 import * as Ariakit from '@ariakit/react'
 import { Button, FormGroup, FormLabel, Input } from '../Sidebar/shared'
@@ -60,7 +61,7 @@ export function FilterByValue({ visibleValues, values = DEFAULT_ARRAY, onChangeV
 
       <div className="relative isolate flex flex-col">
         <span className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-          <UI.Icon legacyName="magnifier" />
+          <UI.Icon data={Icons.magnifier} />
         </span>
         <Input value={query} onChange={(e) => setQuery(e.target.value)} className="pl-8" />
       </div>
@@ -102,7 +103,7 @@ export function FilterByValue({ visibleValues, values = DEFAULT_ARRAY, onChangeV
                   }}
                 >
                   <span className="mt-0 shrink-0 opacity-0 group-aria-checked:opacity-100">
-                    <UI.Icon legacyName="checkmark" />
+                    <UI.Icon data={Icons.checkmark} />
                   </span>
                   <span className="line-clamp-3">{value}</span>
                 </Ariakit.Checkbox>

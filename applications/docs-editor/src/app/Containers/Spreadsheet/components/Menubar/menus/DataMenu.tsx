@@ -32,7 +32,7 @@ function SortSubmenu() {
     <Ariakit.MenuProvider>
       {/* TODO: icon needs to be list-alphabetically-arrow-down but it's not yet in the icon set */}
       <UI.SubMenuButton
-        leadingIconSlot={<UI.Icon legacyName="list-arrow-down" />}
+        leadingIconSlot={<UI.Icon data={Icons.listArrowDown} />}
         disabled={useUI((ui) => ui.info.isReadonly)}
       >
         {s('Sort sheet')}
@@ -79,7 +79,7 @@ function CreateFilter() {
 //   return (
 //     <UI.MenuItem
 //       // TODO: need a different icon for "unlock range"
-//       leadingIconSlot={<UI.Icon legacyName={useUI((ui) => ui.data.isProtectedRange) ? 'lock' : 'lock'} />}
+//       leadingIconSlot={<UI.Icon data={lock} />}
 //       onClick={useUI.$.withFocusGrid(useUI.$.data.toggleProtectRange)}
 //       disabled={useUI((ui) => ui.info.isReadonly)}
 //     >

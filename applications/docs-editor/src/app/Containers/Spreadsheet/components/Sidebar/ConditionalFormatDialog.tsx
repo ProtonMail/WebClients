@@ -196,7 +196,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                                 )
                               }}
                             >
-                              <Icon legacyName="trash" />
+                              <Icon data={Icons.trash} />
                             </button>
                           ) : null}
                         </div>
@@ -302,7 +302,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                         form.setValue('booleanRule.format.textFormat.bold', !booleanRule?.format?.textFormat?.bold)
                       }}
                     >
-                      <Icon legacyName="text-bold" />
+                      <Icon data={Icons.textBold} />
                     </FormatToggleButton>
 
                     <FormatToggleButton
@@ -311,7 +311,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                         form.setValue('booleanRule.format.textFormat.italic', !booleanRule?.format?.textFormat?.italic)
                       }}
                     >
-                      <Icon legacyName="text-italic" />
+                      <Icon data={Icons.textItalic} />
                     </FormatToggleButton>
 
                     <FormatToggleButton
@@ -323,7 +323,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                         )
                       }}
                     >
-                      <Icon legacyName="text-underline" />
+                      <Icon data={Icons.textUnderline} />
                     </FormatToggleButton>
 
                     <FormatToggleButton
@@ -335,7 +335,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                         )
                       }}
                     >
-                      <Icon legacyName="text-strikethrough" />
+                      <Icon data={Icons.textStrikethrough} />
                     </FormatToggleButton>
 
                     <Ariakit.PopoverProvider>
@@ -564,7 +564,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
               className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
               onClick={onAddRule}
             >
-              <Icon legacyName="plus" />
+              <Icon data={plus} />
               {s('Add another rule')}
             </Button>
           </div> */}
@@ -688,7 +688,7 @@ function Rule({ rule, sheetId, onDeleteRule, theme, onSelect }: RuleProps) {
           onDeleteRule(rule)
         }}
       >
-        <Icon legacyName="trash" />
+        <Icon data={Icons.trash} />
       </Button>
     </Button>
   )
@@ -724,7 +724,7 @@ function Rules({ conditionalFormats, sheetId, onDeleteRule, theme, onNewRule, on
           className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
           onClick={onNewRule}
         >
-          <Icon legacyName="plus" />
+          <Icon data={Icons.plus} />
           {conditionalFormats.length > 0 ? s('Add another rule') : s('Add rule')}
         </Button>
       </div>
