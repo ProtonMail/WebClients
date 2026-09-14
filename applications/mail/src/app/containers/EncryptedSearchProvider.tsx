@@ -145,11 +145,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     };
 
     // `searchChangeListener.ts` starts/ends sessions from a Redux listener, outside React, so it can't
-    // read `isV2Active` or call the functions above directly — inject them into the thunk extra
-    // arguments instead, refreshed every render since they close over `isV2Active`/`esLibraryFunctionsV2`.
-    useEffect(() => {
-        extendStore({ startSearchSession: startSearchSessionRouted, endSearchSession: endSearchSessionRouted });
-    });
+    // read `isV2Active` or call the functions above directly. We inject those into the thunk extra arguments instead.
+    extendStore({ startSearchSession: startSearchSessionRouted, endSearchSession: endSearchSessionRouted });
 
     const enableContentSearch = useContentSearchReadyNotification(
         esLibraryFunctions.esStatus,
