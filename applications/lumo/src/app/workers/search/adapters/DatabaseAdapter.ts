@@ -1,6 +1,7 @@
 // Database adapter interface for search operations
 // This allows the search engine to be independent of specific database implementations
 import type { DbApi } from '../../../indexedDb/db';
+import { NON_ENGINE_SEARCH_BLOB_KEYS } from '../config';
 
 export interface SearchStatus {
     tableExists: boolean;
@@ -25,6 +26,11 @@ export interface DatabaseAdapter {
     removeSearchBlob(name: string): Promise<void>;
 
     /**
+     * Drop every blob written by the WASM engine, keeping the ones Lumo owns.
+     */
+    clearEngineBlobs(): Promise<void>;
+
+    /**
      * Check the status of the search index
      */
     checkSearchStatus(): Promise<SearchStatus>;
@@ -45,6 +51,10 @@ export class LumoDatabaseAdapter implements DatabaseAdapter {
 
     async removeSearchBlob(name: string): Promise<void> {
         return this.dbApi.removeSearchBlob(name);
+    }
+
+    async clearEngineBlobs(): Promise<void> {
+        return this.dbApi.clearAllSearchBlobs(NON_ENGINE_SEARCH_BLOB_KEYS);
     }
 
     async checkSearchStatus(): Promise<SearchStatus> {

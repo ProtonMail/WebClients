@@ -563,6 +563,14 @@ export function getFileTypeDescription(fileName: string, mimeType?: string): str
     return 'File';
 }
 
+/** Extensions that must never be indexed, extracted, or attached to context. */
+export const BLOCKED_FILE_EXTENSIONS = new Set(['ai']);
+
+export function isBlockedFileExtension(fileName: string): boolean {
+    const ext = fileName.split('.').pop()?.toLowerCase();
+    return ext ? BLOCKED_FILE_EXTENSIONS.has(ext) : false;
+}
+
 export function getMimeTypeFromExtension(fileName: string): string {
     const ext = fileName.split('.').pop()?.toLowerCase();
     if (ext) {
@@ -573,6 +581,10 @@ export function getMimeTypeFromExtension(fileName: string): string {
 }
 
 export function isFileTypeSupported(fileName: string, mimeType?: string): boolean {
+    if (isBlockedFileExtension(fileName)) {
+        return false;
+    }
+
     const supportedMimeTypes = getAllSupportedMimeTypes();
 
     // Check MIME type first
@@ -729,6 +741,10 @@ export type ProcessingCategory = 'image' | 'text' | 'csv' | 'excel' | 'pdf' | 'd
  * This is used to route files to the appropriate processor
  */
 export function getProcessingCategory(mimeType: string, fileName?: string): ProcessingCategory {
+    if (fileName && isBlockedFileExtension(fileName)) {
+        return 'unsupported';
+    }
+
     const normalizedMime = mimeType.toLowerCase().trim();
 
     // Check against known MIME types in FILE_TYPE_CONFIGS

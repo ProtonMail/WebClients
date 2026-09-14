@@ -1,4 +1,10 @@
-import { buildAlreadyMentionedNames, buildAttachedNames, filterFiles, filterStaleDriveAttachments } from './fileMentionHelpers';
+import {
+    buildAlreadyMentionedNames,
+    buildAttachedNames,
+    filterFiles,
+    filterStaleDriveAttachments,
+    isMentionableFile,
+} from './fileMentionHelpers';
 import type { FileItem } from './fileMentionHelpers';
 
 // ─── helpers ─────────────────────────────────────────────────────────────────
@@ -128,16 +134,56 @@ describe('filterFiles', () => {
         const result = filterFiles(files, '.txt', 1);
         expect(result).toHaveLength(1);
     });
+
+    describe('ranking filenames above folder paths', () => {
+        const pathFiles = [
+            makeFile('chronoglyph/video/coming_soon.pdf'),
+            makeFile('chronoglyph/video/library.pdf'),
+            makeFile('chronoglyph/video/substitute.pdf'),
+            makeFile('chronoglyph/video/intro_slide.pdf'),
+            makeFile('chronoglyph/video/visually_query.pdf'),
+            makeFile('docs/chronoglyph.pdf'),
+        ];
+
+        it('puts the matching filename first even when a folder shares the query', () => {
+            const result = filterFiles(pathFiles, 'chronoglyph');
+            expect(result[0].name).toBe('docs/chronoglyph.pdf');
+        });
+
+        it('keeps the filename match when folder matches would fill the limit', () => {
+            const result = filterFiles(pathFiles, 'chronoglyph', 3);
+            expect(result.map((f) => f.name)).toContain('docs/chronoglyph.pdf');
+        });
+
+        it('matches the filename without needing the extension typed', () => {
+            const result = filterFiles(
+                [makeFile('a/b/chronoglyph.pdf'), makeFile('chronoglyph/other.pdf')],
+                'chronoglyph'
+            );
+            expect(result[0].name).toBe('a/b/chronoglyph.pdf');
+        });
+
+        it('ranks a filename prefix above a mid-filename match', () => {
+            const result = filterFiles([makeFile('annual_report.pdf'), makeFile('report_q1.pdf')], 'report');
+            expect(result.map((f) => f.name)).toEqual(['report_q1.pdf', 'annual_report.pdf']);
+        });
+
+        it('still matches a folder when nothing else does', () => {
+            const result = filterFiles([makeFile('chronoglyph/video/library.pdf')], 'video');
+            expect(result.map((f) => f.name)).toEqual(['chronoglyph/video/library.pdf']);
+        });
+
+        it('matches a full path segment query', () => {
+            const result = filterFiles(pathFiles, 'chronoglyph/video', 10);
+            expect(result).toHaveLength(5);
+        });
+    });
 });
 
 // ─── combined: already-mentioned files are excluded from dropdown ─────────────
 
 describe('already-mentioned files excluded from dropdown', () => {
-    const allFiles = [
-        makeFile('README.txt'),
-        makeFile('report.pdf'),
-        makeFile('notes.txt'),
-    ];
+    const allFiles = [makeFile('README.txt'), makeFile('report.pdf'), makeFile('notes.txt')];
 
     function getDropdownFiles(composerValue: string, query: string): FileItem[] {
         const alreadyMentioned = buildAlreadyMentionedNames(allFiles, composerValue);
@@ -213,5 +259,34 @@ describe('filterStaleDriveAttachments', () => {
         const result = filterStaleDriveAttachments(files, liveIds, true);
         expect(result).toHaveLength(1);
         expect(result[0]?.name).toBe('active.html');
+    });
+});
+
+// ─── isMentionableFile ───────────────────────────────────────────────────────
+
+describe('isMentionableFile', () => {
+    it('accepts ordinary documents at the root and in folders', () => {
+        expect(isMentionableFile('chronoglyph.pdf')).toBe(true);
+        expect(isMentionableFile('chronoglyph/video/library.pdf')).toBe(true);
+    });
+
+    it('rejects hidden files wherever they appear in the path', () => {
+        expect(isMentionableFile('.DS_Store')).toBe(false);
+        expect(isMentionableFile('chronoglyph/.DS_Store')).toBe(false);
+        expect(isMentionableFile('project/.env')).toBe(false);
+    });
+
+    it('rejects OS metadata files regardless of case', () => {
+        expect(isMentionableFile('Thumbs.db')).toBe(false);
+        expect(isMentionableFile('some/folder/desktop.ini')).toBe(false);
+    });
+
+    it('rejects extensions we refuse to read', () => {
+        expect(isMentionableFile('chronoglyph/SAX.ai')).toBe(false);
+        expect(isMentionableFile('SAX.AI')).toBe(false);
+    });
+
+    it('does not mistake a dotted folder for a hidden file', () => {
+        expect(isMentionableFile('.config/notes.md')).toBe(true);
     });
 });

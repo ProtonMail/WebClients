@@ -1,4 +1,4 @@
-import { getAcceptAttributeString } from './filetypes';
+import { getAcceptAttributeString, getProcessingCategory, isBlockedFileExtension, isFileTypeSupported } from './filetypes';
 
 describe('getAcceptAttributeString', () => {
     const accepted = () => getAcceptAttributeString().split(',');
@@ -17,5 +17,18 @@ describe('getAcceptAttributeString', () => {
 
     it('lists extensions dot-prefixed', () => {
         expect(accepted()).toEqual(expect.arrayContaining(['.jpg', '.heic', '.pdf', '.txt']));
+    });
+});
+
+describe('blocked file extensions', () => {
+    it('rejects Adobe Illustrator files even when MIME type is application/pdf', () => {
+        expect(isBlockedFileExtension('design.ai')).toBe(true);
+        expect(isFileTypeSupported('design.ai', 'application/pdf')).toBe(false);
+        expect(getProcessingCategory('application/pdf', 'design.ai')).toBe('unsupported');
+    });
+
+    it('does not block supported PDF files', () => {
+        expect(isFileTypeSupported('report.pdf', 'application/pdf')).toBe(true);
+        expect(getProcessingCategory('application/pdf', 'report.pdf')).toBe('pdf');
     });
 });
