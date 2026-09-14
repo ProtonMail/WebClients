@@ -1,4 +1,4 @@
-fail-on-severity: "critical"
+fail-on-severity: "high"
 ignore:
   # Statuses
   - fix-state: not-fixed
