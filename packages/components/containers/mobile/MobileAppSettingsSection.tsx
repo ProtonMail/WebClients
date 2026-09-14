@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms/Href/Href';
 import { CALENDAR_MOBILE_APP_LINKS } from '@proton/shared/lib/calendar/constants';
 import { CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { getAppStoreLink, getPlayStoreLink } from '@proton/shared/lib/helpers/mobileAppLinks';
 import { MAIL_MOBILE_APP_LINKS } from '@proton/shared/lib/mail/constants';
 import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';
@@ -35,7 +36,7 @@ const ProductDownloadCard = ({ app, qrCodeLink, appStoreLink, playStoreLink }: P
                 <h3 className="text-bold text-4xl">{appName}</h3>
             </div>
             <div className="flex gap-2">
-                <Href href={appStoreLink} target="_blank">
+                <Href href={getAppStoreLink(appStoreLink)} target="_blank">
                     <img
                         className="h-custom"
                         style={{ '--h-custom': '2.25rem' }}
@@ -44,7 +45,7 @@ const ProductDownloadCard = ({ app, qrCodeLink, appStoreLink, playStoreLink }: P
                         alt={c('Get started checklist instructions').t`${appName} on App Store`}
                     />
                 </Href>
-                <Href href={playStoreLink} target="_blank">
+                <Href href={getPlayStoreLink(playStoreLink)} target="_blank">
                     <img
                         className="h-custom"
                         style={{ '--h-custom': '2.25rem' }}
