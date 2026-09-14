@@ -9,6 +9,7 @@ import {
     hooksPackage,
     iconsPackage,
 } from '@proton/eslint-config-proton/barrel';
+import { iconRestrictedImports } from '@proton/eslint-config-proton/icon';
 import { createRestrictedImportRule } from '@proton/eslint-config-proton/restrictedImports';
 
 const barrelPaths = createBarrelPaths([accountPackage, atomsPackage, componentsPackage, hooksPackage, iconsPackage]);
@@ -19,6 +20,7 @@ export default defineConfig([
         name: 'barrel-import-rules',
         rules: {
             'no-restricted-imports': createRestrictedImportRule({ paths: barrelPaths }),
+            '@typescript-eslint/no-restricted-imports': ['error', { paths: iconRestrictedImports }],
         },
     },
     {
