@@ -1,4 +1,4 @@
-import { type ReactNode, useState } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -13,7 +13,6 @@ import upsellModalIcon from '@proton/styles/assets/img/meet/upsell-modal-icon.sv
 import { useLastRecordingDownload } from '../../../hooks/useMeetingRecorder/hooks/useLastRecordingDownload';
 import { CTAModalShell } from '../shared/CTAModalShell';
 import { FeedbackForm } from './FeedbackForm';
-import { FeedbackThankYou } from './FeedbackThankYou';
 
 type EndCallModalShellProps = {
     open: boolean;
@@ -36,14 +35,9 @@ export const EndCallModalShell = ({
 }: EndCallModalShellProps) => {
     const dispatch = useMeetDispatch();
 
-    const [isFinished, setIsFinished] = useState(false);
     const isExpired =
         upsellModalType === UpsellModalTypes.MeetingExpiredHostPaid ||
         upsellModalType === UpsellModalTypes.MeetingExpiredHostFree;
-
-    const handleSubmit = () => {
-        setIsFinished(true);
-    };
 
     const handleClose = () => {
         onClose();
@@ -58,10 +52,6 @@ export const EndCallModalShell = ({
             // Cancelled or failed, keep the modal open so the user can retry.
         }
     };
-
-    if (isFinished) {
-        return <FeedbackThankYou open={open} onClose={handleClose} />;
-    }
 
     return (
         <CTAModalShell
@@ -107,7 +97,7 @@ export const EndCallModalShell = ({
                     )}
                 </>
             }
-            footer={isExpired ? <></> : <FeedbackForm onClose={handleClose} onSubmit={handleSubmit} />}
+            footer={isExpired ? <></> : <FeedbackForm onClose={handleClose} />}
         />
     );
 };
