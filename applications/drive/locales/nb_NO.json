@@ -1268,7 +1268,7 @@
         "Legg til i \"${ name }\" (${ photoCount } bilder)"
       ],
       "Save photo to your gallery": [
-        "Lagre bildet til galleriet ditt"
+        "Lagre bildet til galleriet"
       ],
       "Download for macOS": [
         "Last ned for macOS"
@@ -4928,6 +4928,9 @@
       ],
       "Touch your security key.": [
         "Berør sikkerhetsnøkkelen din."
+      ],
+      "Still waiting?": [
+        "Venter du fremdeles?"
       ]
     },
     "fido2: Label": {
@@ -6392,7 +6395,7 @@
         "Skadelig programvare oppdaget"
       ],
       "Mar": [
-        "Mar"
+        "mar."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -6495,7 +6498,7 @@
         "Tall"
       ],
       "Oct": [
-        "Okt"
+        "okt."
       ],
       "of": [
         "av"
@@ -6649,7 +6652,7 @@
         "Forhåndsvisning av dokumenter støttes ikke enda."
       ],
       "Previous versions are kept for ${ retentionLabel }": [
-        "Tidligere versjoner beholdes for ${ retentionLabel }"
+        "Tidligere versjoner beholdes i ${ retentionLabel }"
       ],
       "Previous versions are not saved": [
         "Tidligere versjoner lagres ikke"
@@ -6763,7 +6766,7 @@
         "Velg hvilke kalendere du vil importere. En ny kalender opprettes for hver importerte kalender i henhold til antall kalendere som er tilgjengelige i planen din."
       ],
       "Sep": [
-        "Sep"
+        "sep."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-betalinger er ikke tilgjengelige for øyeblikket. Prøv igjen senere."
@@ -7140,7 +7143,7 @@
         "Oppgrader for å beholde ${ planTitle } fordelene dine."
       ],
       "upgrade your storage": [
-        "oppgrader lagringsplassen din"
+        "oppgrader lagringsplassen"
       ],
       "Upload Failed": [
         "Opplasting mislyktes"
@@ -7372,7 +7375,7 @@
         "Du må deaktivere og fjerne alle eventuelle ${ MAIL_APP_NAME }-brukere, adresser og egendefinerte domener før du kan nedgradere."
       ],
       "You need access": [
-        "Du må ha tilgang"
+        "Du trenger tilgang"
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Du vil miste tilgang til ${ planTitle }-funksjoner på denne datoen."
@@ -7604,7 +7607,7 @@
         "Indekserte ${ first }, ${ second }, ${ third } og ${ fourth }"
       ],
       "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
-        "${ DRIVE_APP_NAME } oppdaget at den lokale søkeindeksen er ødelagt og ikke lenger kan brukes. Gjenoppbygg indeksen for å gjenopprette søket."
+        "${ DRIVE_APP_NAME } oppdaget at den lokale søkeindeksen er ødelagt og ikke lenger kan brukes. Gjenoppbygg indeksen for å gjenopprette søk."
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } skjuler trafikken din. ${ PASS_SHORT_APP_NAME } skjule identiteten din\n— ubegrenset antall **hide-my-email-aliaser** og **varsler på det mørke nettet** hvis dataene dine noen gang lekker ut."
@@ -7904,6 +7907,9 @@
       ],
       "Search data can't be read": [
         "Søkedataene kan ikke leses"
+      ],
+      "Loading folder": [
+        "Laster inn mappe"
       ]
     },
     "info": {
@@ -8747,7 +8753,7 @@
         "Delt via offentlig kobling"
       ],
       "Shared on ${ sharedOn }": [
-        "Delt på ${ sharedOn }"
+        "Delt ${ sharedOn }"
       ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } tegn"
@@ -10562,7 +10568,7 @@
         "Album kunne ikke gis nytt navn"
       ],
       "Album renamed successfully": [
-        "Album har fått nytt navn"
+        "Albumet er omdøpt"
       ],
       "All items deleted permanently from trash": [
         "Alle elementer slettet permanent fra papirkurven"
@@ -11087,7 +11093,7 @@
         "Inviter medlemmer av teamet"
       ],
       "Keep the momentum going by uploading more files using the storage included with your plan.": [
-        "Hold fremdriften oppe ved å laste opp flere filer ved å bruke lagringsplassen som er inkludert i abonnementet ditt."
+        "Hold fremdriften oppe ved å laste opp flere filer ved å bruke lagringsplassen som er inkludert i abonnementet."
       ],
       "Manage access": [
         "Administrer tilgang"
@@ -13969,7 +13975,7 @@
         "Plassering"
       ],
       "Logger": [
-        "Logger"
+        "Loggbok"
       ],
       "Logs": [
         "Logger"
@@ -14504,7 +14510,7 @@
         "Du er godt i gang!"
       ],
       "You’ve got 5 GB of storage": [
-        "Du har fått 5 GB lagringsplass"
+        "Du har fått 5 GB med lagringsplass"
       ],
       "Change access to viewer?": [
         "Endre tilgang til kun visning?"
@@ -14734,6 +14740,9 @@
       ],
       "Users who have accessed their ${ BRAND_NAME } account": [
         "Brukere som har aktivert ${ BRAND_NAME }-kontoen"
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Denne koblingen har utløpt. Forleng utløpsdatoen."
       ]
     },
     "tooltip": {
@@ -15247,6 +15256,9 @@
       ],
       "User Admin": [
         "Brukeradministrator"
+      ],
+      "Organization Admin": [
+        "Organisasjonsadministrator"
       ]
     },
     "Role description": {

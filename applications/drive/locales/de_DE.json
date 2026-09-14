@@ -99,7 +99,7 @@
         "Zu Gruppe hinzufügen"
       ],
       "Album name": [
-        "Albumname"
+        "Name des Albums"
       ],
       "Apply": [
         "Übernehmen"
@@ -1271,7 +1271,7 @@
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
       ],
       "Rebuild index": [
-        "Index neu erstellen"
+        "Index neu aufbauen"
       ],
       "Search is unavailable": [
         "Suche ist nicht verfügbar"
@@ -1344,6 +1344,9 @@
       ],
       "Windows 11/10 (x64)": [
         "Windows 11/10 (x64)"
+      ],
+      "Add a payment method": [
+        "Zahlungsmethode hinzufügen"
       ]
     },
     "Action: Docs": {
@@ -4107,7 +4110,7 @@
         "Wir konnten einige Einträge nicht laden."
       ],
       "We were not able to load some items shared with you": [
-        "Wir konnten einige deiner mit dir geteilten Einträge nicht laden."
+        "Wir konnten einige mit dir geteilten Einträge nicht laden"
       ],
       "We were not able to load some of your bookmarks": [
         "Wir konnten einige deiner Lesezeichen nicht laden."
@@ -4495,6 +4498,9 @@
       ],
       "Could not grant access to the organization key": [
         "Der Zugriff auf den Organisationsschlüssel konnte nicht gewährt werden"
+      ],
+      "A contact with this email address already exists": [
+        "Ein Kontakt mit dieser E-Mail-Adresse besteht bereits"
       ]
     },
     "error": {
@@ -4843,6 +4849,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Dein Konto verwendet Speicher in Höhe von ${ usedSpace }, was den dir zugewiesenen Speicherplatz von ${ inviteSpace } übersteigt. Lösche einige Daten oder bitte den Abonnement-Administrator, deinen Speicher zu erhöhen."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit dieser Familiengruppe zu verknüpfen und alle Premium-Funktionen zu genießen."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4922,6 +4931,12 @@
       ],
       "Touch your security key.": [
         "Deinen Sicherheitsschlüssel berühren."
+      ],
+      "Still waiting?": [
+        "Wartest du immer noch?"
+      ],
+      "Touch your security key to continue.": [
+        "Berühre deinen Sicherheitsschlüssel, um fortzufahren."
       ]
     },
     "fido2: Label": {
@@ -5721,7 +5736,7 @@
         "anonymer Benutzer"
       ],
       "An issue occurred during the restore process.": [
-        "Beim Wiederherstellen der Fotos ist ein Fehler aufgetreten."
+        "Beim Wiederherstellen ist ein Fehler aufgetreten."
       ],
       "and": [
         "und"
@@ -5754,7 +5769,7 @@
         "Bist du sicher, dass die ausgewählten Elemente dauerhaft aus dem Papierkorb gelöscht werden sollen?"
       ],
       "Are you sure you want to proceed?": [
-        "Möchtest du dich wirklich fortfahren?"
+        "Möchtest du wirklich fortfahren?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Mindestens ${ BETTER_PASSWORD_LENGTH } Zeichen"
@@ -6299,7 +6314,7 @@
         "Einträge im Papierkorb verbleiben hier, bis sie dauerhaft gelöscht werden"
       ],
       "Items moved to the trash will stay here until deleted": [
-        "Objekte, die in den Papierkorb verschoben werden, verbleiben dort, bis sie gelöscht werden."
+        "In den Papierkorb verschobene Einträge bleiben hier, bis sie gelöscht werden"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Es ist am besten, immer ein VPN zu verwenden. Aber hier können die Bedrohungen für die Cybersicherheit am größten sein:"
@@ -6552,7 +6567,7 @@
         "PGP/MIME sendet die Nachricht automatisch unter Verwendung des aktuellen Verfassen-Modus."
       ],
       "Photo is not saved to your library": [
-        "Foto ist nicht in deiner Bibliothek gespeichert"
+        "Foto ist in deiner Bibliothek nicht gespeichert"
       ],
       "Photo is set as album cover": [
         "Foto ist als Album-Titelbild eingerichtet"
@@ -6649,7 +6664,7 @@
         "Frühere Versionen werden für ${ retentionLabel } aufbewahrt"
       ],
       "Previous versions are not saved": [
-        "Vorherige Versionen werden nicht gespeichert"
+        "Vorherige Versionen sind nicht gespeichert"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Der Preis beinhaltet alle anwendbaren zyklusbasierten Rabatte und nicht abgelaufenen Coupons, die auf deinem Konto gespeichert sind."
@@ -6984,7 +6999,7 @@
         "Das bricht alle verbleibenden Uploads ab. Abgebrochene Dateien werden nicht in ${ DRIVE_APP_NAME } gespeichert."
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
-        "Dadurch wird nur das Album gelöscht. Deine Fotos bleiben in Ihrer Zeitleiste. Diese Aktion kann nicht rückgängig gemacht werden."
+        "Dadurch wird nur das Album gelöscht. Deine Fotos bleiben in deiner Zeitleiste. Diese Aktion kann nicht rückgängig gemacht werden."
       ],
       "This will permanently delete the file you uploaded.": [
         "Dadurch wird die hochgeladene Datei endgültig gelöscht."
@@ -7128,7 +7143,7 @@
         "Aktualisierung erforderlich"
       ],
       "Updating drive search...": [
-        "Lokale Suche wird aktualisiert..."
+        "Drive Suche wird aktualisiert..."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
@@ -7494,7 +7509,7 @@
         "Dein bisheriges Passwort"
       ],
       "Your previous recovery phrase": [
-        "Deine bisherige Wiederherstellungsphrase"
+        "Deine vorherige Wiederherstellungsphrase"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Dein geplantes Abonnement beginnt am ${ renewalTime } und wird nach ${ cycle } Monat automatisch erneuert.",
@@ -7595,10 +7610,10 @@
         "Indiziert ${ first }"
       ],
       "Indexed ${ first } and ${ second }": [
-        "Indiziert: ${ first } und ${ second }"
+        "Indiziert ${ first } und ${ second }"
       ],
       "Indexed ${ first }, ${ second } and ${ third }": [
-        "Indiziert: ${ first }, ${ second } und ${ third }"
+        "Indiziert ${ first }, ${ second } und ${ third }"
       ],
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "Indiziert: ${ first }, ${ second }, ${ third } und ${ fourth }"
@@ -7900,6 +7915,16 @@
       ],
       "Link expired": [
         "Link abgelaufen"
+      ],
+      "${ steps } step": [
+        "${ steps } Schritt",
+        "${ steps } Schritte"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } verbleiben für deine Testversion. ${ addPaymentMethodLink }, um zu verhindern, dass du den Zugriff verlierst. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } verbleiben für deine Testversion. ${ addPaymentMethodLink }, um dein Abonnement fortzusetzen. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -7998,7 +8023,7 @@
     },
     "Label": {
       "# of downloads": [
-        "# Anzahl Downloads"
+        "Anzahl Downloads"
       ],
       "${ albumProgress.added } of ${ albumProgress.total }": [
         "${ albumProgress.added } von ${ albumProgress.total }"
@@ -10099,6 +10124,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } endet mit ${ Last4 }"
       ]
     },
     "new_plans: Subtext": {
@@ -11020,7 +11048,7 @@
         "Sichere deine Fotos und Erinnerungen"
       ],
       "Backup your photos and memories": [
-        "Sichere deine Fotos und Erinnerungen"
+        "Deine Fotos und Erinnerungen sichern"
       ],
       "Choose your favorite theme": [
         "Wähle dein Lieblingslayout"
@@ -11032,7 +11060,7 @@
         "Bevorzugst du ${ DRIVE_APP_NAME } im hellen oder dunklen Modus? Wähle die Farbe, die dich am meisten inspiriert."
       ],
       "Drag and drop your files here": [
-        "Ziehen und legen Sie Ihre Dateien hier ab"
+        "Zieh deine Dateien per Drag-and-drop hierhin"
       ],
       "Edit documents online": [
         "Dokumente online bearbeiten"
@@ -11059,7 +11087,7 @@
         "Gib Speicherplatz auf der Festplatte deines Computers frei"
       ],
       "Get the desktop app": [
-        "Desktop-App herunterladen"
+        "Hol dir die Desktop-App"
       ],
       "Get the mobile app": [
         "Mobile App herunterladen"
@@ -11089,13 +11117,13 @@
         "Zugriff verwalten"
       ],
       "Organize files right from your desktop": [
-        "Verwalte Dateien direkt von deinem Desktop aus"
+        "Dateien direkt von deinem Desktop verwalten"
       ],
       "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
         "Schütze deine Finanzdokumente, Ausweise, Projektdateien, Fotos und vieles mehr mit Ende-zu-Ende-Verschlüsselung."
       ],
       "Scan the QR code to install the mobile app": [
-        "Scanne den QR-Code, um die mobile Anwendung zu installieren"
+        "Den QR-Code scannen, um die mobile App zu installieren"
       ],
       "Secure your files": [
         "Schütze deine Dateien"
@@ -11104,7 +11132,7 @@
         "Dateien und Ordner sicher teilen"
       ],
       "Share files & folders": [
-        "Dateien & Ordner teilen"
+        "Dateien und Ordner teilen"
       ],
       "Sync and access your files from anywhere": [
         "Synchronisierung und Zugriff auf deine Dateien von überall aus"
@@ -11119,7 +11147,7 @@
         "Arbeite schneller und effizienter"
       ],
       "Work together": [
-        "Arbeite gemeinsam"
+        "Zusammenarbeiten"
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
         "Du hast dir gerade kostenlosen Speicherplatz gesichert und deine Dateien mit Ende-zu-Ende-Verschlüsselung geschützt – in Rekordzeit."
@@ -11576,6 +11604,15 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - Karte endet mit ${ paymentMethod.Details.Last4 }"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - Karte endet mit ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Banküberweisung - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - Karte endet mit ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -14473,7 +14510,7 @@
         "Du kannst jetzt unbegrenzt viele Ordner und Kategorien erstellen"
       ],
       "You have inaccessible files": [
-        "Auf einige Dateien kann nicht zugegriffen werden"
+        "Du hast Dateien, auf die du keinen Zugriff hast"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Deine kostenlose Testversion von ${ planName } endet am ${ textDate }."
@@ -15405,6 +15442,11 @@
     "ngc_access_banner: info": {
       "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
         "Du hast nun Zugriff auf die neue ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Eine Änderung deiner Rechnungsadresse kann sich auf die Steuern bei zukünftigen Rechnungen auswirken."
       ]
     }
   }
