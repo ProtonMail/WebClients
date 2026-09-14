@@ -4,6 +4,9 @@ import { useSelector } from 'react-redux';
 import { Form, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
+import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
+
 import { useInviteForm } from '../../../hooks/invite/useInviteForm';
 import { AccessTarget } from '../../../lib/access/types';
 import { selectShareOrThrow } from '../../../store/selectors';
@@ -37,7 +40,7 @@ export const VaultInviteCreate: FC<SelectedShare> = ({ shareId }) => {
             case 'members':
                 return {
                     closeAction: close,
-                    closeIcon: 'cross-big',
+                    closeIcon: IcCrossBig,
                     closeLabel: c('Action').t`Close`,
                     submitDisabled,
                     submitText: c('Action').t`Continue`,
@@ -46,7 +49,7 @@ export const VaultInviteCreate: FC<SelectedShare> = ({ shareId }) => {
             case 'permissions':
                 return {
                     closeAction: () => form.setFieldValue('step', 'members'),
-                    closeIcon: 'chevron-left',
+                    closeIcon: IcChevronLeft,
                     closeLabel: c('Action').t`Back`,
                     submitDisabled,
                     submitText: c('Action').t`Continue`,
@@ -55,7 +58,7 @@ export const VaultInviteCreate: FC<SelectedShare> = ({ shareId }) => {
             case 'review':
                 return {
                     closeAction: () => form.setFieldValue('step', 'permissions'),
-                    closeIcon: 'chevron-left',
+                    closeIcon: IcChevronLeft,
                     closeLabel: c('Action').t`Back`,
                     submitDisabled,
                     submitLoading: loading,
