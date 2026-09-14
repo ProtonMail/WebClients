@@ -35,7 +35,7 @@ export const ConversationDropdown = ({ onDelete }: ConversationDropdownProps) =>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} className="chat-dropdown-menu">
                 <DropdownMenu>
                     <DropdownMenuButton className="text-left color-danger" onClick={handleDelete}>
-                        <LumoIcon name="Trash2" className="mr-2" />
+                        <LumoIcon name="Trash" className="mr-2" />
                         {c('collider_2025:Action').t`Delete conversation`}
                     </DropdownMenuButton>
                 </DropdownMenu>

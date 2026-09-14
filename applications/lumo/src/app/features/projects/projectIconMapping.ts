@@ -77,7 +77,7 @@ export const LEGACY_PROJECT_ICON_TO_LUCIDE = {
     heart: 'Heart',
     globe: 'Globe',
     pencil: 'PenLine',
-    buildings: 'Building2',
+    buildings: 'BuildingComplex',
     briefcase: 'Briefcase',
     'paint-roller': 'Paintbrush',
     sliders: 'SlidersHorizontal',
