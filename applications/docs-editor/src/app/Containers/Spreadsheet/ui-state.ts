@@ -14,8 +14,9 @@ import {
   isProtectedRange as isProtectedRangeFn,
   getUserSelections,
   useFocusSheet,
+  useFormulaModeValue,
 } from '@rowsncolumns/spreadsheet'
-import { number2Alpha, ssfFormat, uuid } from '@rowsncolumns/utils'
+import { number2Alpha, ssfFormat, uuid, sortSheetsByIndex } from '@rowsncolumns/utils'
 import {
   DATE_PATTERN_EXAMPLE_VALUE,
   DURATION_PATTERN_EXAMPLE_VALUE,
@@ -24,7 +25,6 @@ import {
   PERCENT_PATTERN_EXAMPLE_VALUE,
 } from './constants'
 import type { ProtonSheetsState } from './state'
-import { sortSheetsByIndex } from '@rowsncolumns/utils'
 import { useEvent } from './components/utils'
 import { useMemo, useState } from 'react'
 import type { CellInterface } from '@rowsncolumns/grid'
@@ -275,6 +275,7 @@ export function useProtonSheetsUIState(
   )
   const visibleSheets = useMemo(() => sheetList.filter((sheet) => !sheet.hidden), [sheetList])
   const hiddenSheets = useMemo(() => state.sheets.filter((sheet) => sheet.hidden), [state.sheets])
+  const isFormulaMode = useFormulaModeValue()
   const sheets = {
     list: sheetList,
     listIncludingHidden: sheetListIncludingHidden,
@@ -282,8 +283,11 @@ export function useProtonSheetsUIState(
     hidden: hiddenSheets,
     activeId: state.activeSheetId,
     setActiveId: useEvent((sheetId: number) => {
-      // commit any in-progress cell edit before switching sheets
-      state.grid.commit?.()
+      // Commit in-progress plain-text edits before switching sheets.
+      // Skip during formula point mode so cross-sheet references can be picked.
+      if (!isFormulaMode) {
+        state.grid.commit?.()
+      }
       state.onChangeActiveSheet(sheetId)
     }),
     delete: useEvent((sheetId: number) => {
