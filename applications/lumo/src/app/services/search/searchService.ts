@@ -2,15 +2,14 @@ import { ENABLE_FOUNDATION_SEARCH } from '../../config/search';
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import { DbApi } from '../../indexedDb/db';
 import { applyRetentionPolicy } from '../../layouts/sidepanel/helpers';
-import { selectMasterKey } from '../../redux/selectors';
+import { selectMasterKeysBundle } from '../../redux/selectors';
 import type { SpaceMap } from '../../redux/slices/core/spaces';
 import { getStoreRef } from '../../redux/storeRef';
 import { Role } from '../../types';
 import type { DriveDocument } from '../../types/documents';
-import {
-    findStaleProjectDocumentIds,
-    type ProjectKnowledgeSnapshot,
-} from '../reconcileProjectSearchIndex';
+import { buildMasterKeyContext } from '../../util/masterKeys';
+import { safeLogger } from '../../util/safeLogger';
+import { type ProjectKnowledgeSnapshot, findStaleProjectDocumentIds } from '../reconcileProjectSearchIndex';
 import { BM25Index } from './bm25Index';
 import { chunkDocument } from './documentChunker';
 import type { SearchResult, SearchServiceStatus, SearchState } from './types';
@@ -70,13 +69,10 @@ export class SearchService {
     // AD string for BM25 index blob encryption
     private static readonly BM25_INDEX_AD = 'lumo.search.blob.constant.bm25_index';
 
-    /**
-     * Get the master key from the Redux store.
-     */
-    private getMasterKey(): string | null {
+    private getMasterKeysBundle() {
         const store = getStoreRef();
         if (!store) return null;
-        return selectMasterKey(store.getState()) ?? null;
+        return selectMasterKeysBundle(store.getState()) ?? null;
     }
 
     /**
@@ -88,43 +84,53 @@ export class SearchService {
             return this.searchIndexKey;
         }
 
-        const masterKey = this.getMasterKey();
-        if (!this.userId || !masterKey) {
+        const masterKeysBundle = this.getMasterKeysBundle();
+        if (!this.userId || !masterKeysBundle) {
             throw new Error('User ID and master key required to get search index key');
         }
 
         const dbApi = new DbApi(this.userId);
         await dbApi.initialize();
         const {
-            base64ToMasterKey,
-            unwrapAesKey,
             cryptoKeyToBase64,
             generateSearchIndexKeyBase64,
             bytesToAesGcmCryptoKey,
+            unwrapAesKeyWithMasterKeys,
             wrapAesKey,
         } = await import('../../crypto');
 
-        // Try to load existing wrapped key
         const wrappedKeyBlob = await dbApi.loadSearchBlob(SearchService.SEARCH_INDEX_KEY_BLOB);
-        const masterKeyObj = await base64ToMasterKey(masterKey);
+        const { primary: primaryMasterKeyObj, legacy: legacyMasterKeys } =
+            await buildMasterKeyContext(masterKeysBundle);
 
         if (wrappedKeyBlob && typeof wrappedKeyBlob === 'string') {
-            // Unwrap the existing key
             const wrappedKeyBytes = Uint8Array.fromBase64(wrappedKeyBlob);
-            const unwrappedKey = await unwrapAesKey(wrappedKeyBytes, masterKeyObj, true);
+            const { key: unwrappedKey, usedPrimaryMasterKey } = await unwrapAesKeyWithMasterKeys(
+                wrappedKeyBytes,
+                primaryMasterKeyObj,
+                legacyMasterKeys,
+                true
+            );
             this.searchIndexKey = await cryptoKeyToBase64(unwrappedKey.encryptKey);
+
+            if (!usedPrimaryMasterKey) {
+                try {
+                    const wrappedWithPrimary = await wrapAesKey(unwrappedKey, primaryMasterKeyObj);
+                    await dbApi.saveSearchBlob(SearchService.SEARCH_INDEX_KEY_BLOB, wrappedWithPrimary.toBase64());
+                } catch (error) {
+                    safeLogger.warn('Failed to re-wrap search index key with primary master key:', error);
+                }
+            }
+
             return this.searchIndexKey;
         }
 
-        // Generate a new search index key
         const newKeyBase64 = generateSearchIndexKeyBase64();
         const newKeyObj = await bytesToAesGcmCryptoKey(Uint8Array.fromBase64(newKeyBase64), true);
 
-        // Wrap it with the master key
-        const wrappedKeyBytes = await wrapAesKey(newKeyObj, masterKeyObj);
+        const wrappedKeyBytes = await wrapAesKey(newKeyObj, primaryMasterKeyObj);
         const wrappedKeyBase64 = wrappedKeyBytes.toBase64();
 
-        // Store the wrapped key
         await dbApi.saveSearchBlob(SearchService.SEARCH_INDEX_KEY_BLOB, wrappedKeyBase64);
 
         this.searchIndexKey = newKeyBase64;
@@ -754,9 +760,7 @@ export class SearchService {
         }
 
         const removed = this.removeDocumentsMatchingInternal(
-            (doc) =>
-                staleIds.has(doc.id) ||
-                (doc.parentDocumentId !== undefined && staleIds.has(doc.parentDocumentId))
+            (doc) => staleIds.has(doc.id) || (doc.parentDocumentId !== undefined && staleIds.has(doc.parentDocumentId))
         );
 
         if (removed > 0) {

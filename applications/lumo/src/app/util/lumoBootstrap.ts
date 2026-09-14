@@ -2,8 +2,8 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
-import { addressKeysThunk, addressesThunk, userKeysThunk } from '@proton/account';
-import type { Address, DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
+import { userKeysThunk } from '@proton/account';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 
 import { generateMasterKeyBytes } from '../crypto';
@@ -22,33 +22,27 @@ import '../remote/nativeAuthBridge';
 import '../remote/nativeComposerBridge';
 import '../remote/nativeFeatureFlagsBridge';
 import '../remote/paymentBridge';
-import type { Base64 } from '../types';
+import type { Base64, MasterKey, MasterKeysBundle } from '../types';
 import { LUMO_ELIGIBILITY } from '../types';
 import { sleep } from './date';
 
-export type UserAndAddressKeys = {
+export type UserKeysOnly = {
     primaryUserKey: DecryptedKey<PrivateKeyReference>;
     allUserKeys: DecryptedKey<PrivateKeyReference>[];
-    allAddressKeys: DecryptedAddressKey<PrivateKeyReference>[];
 };
 
 const AES_MASTER_KEY_OPENPGP_SIGNATURE_CONTEXT = 'lumo.aes.key';
 
 async function decryptAndVerifyMasterKey(
     encryptedMasterKeyB64: string,
-    { allUserKeys, allAddressKeys }: UserAndAddressKeys
+    userKeys: DecryptedKey<PrivateKeyReference>[]
 ): Promise<Base64 | null> {
-    const allKeys = [...allUserKeys, ...allAddressKeys];
-    const privateKeys = allKeys.map((key) => key.privateKey);
-    const publicKeys = allKeys.map((key) => key.publicKey);
+    const privateKeys = userKeys.map((key) => key.privateKey);
+    const publicKeys = userKeys.map((key) => key.publicKey);
 
-    console.log(
-        `Trying to decrypt master key with ${allUserKeys.length} user keys and ${allAddressKeys.length} address keys`
-    );
+    console.log(`Trying to decrypt master key with ${userKeys.length} user keys`);
 
     try {
-        // Wrapped inside the function rather than at the call sites, so the read-after-write
-        // verification inside createAndPushMasterKey shows up as a second span under this label.
         const decryptResult = await CryptoProxy.decryptMessage({
             binaryMessage: Uint8Array.fromBase64(encryptedMasterKeyB64),
             decryptionKeys: privateKeys,
@@ -72,7 +66,23 @@ async function decryptAndVerifyMasterKey(
     }
 }
 
-async function createAndPushMasterKey(lumoApi: LumoApi, uaKeys: UserAndAddressKeys): Promise<Base64> {
+async function encryptMasterKeyEnvelope(
+    aesMasterKeyBase64: Base64,
+    primaryUserKey: DecryptedKey<PrivateKeyReference>
+): Promise<Base64> {
+    const aesMasterKeyBytes = Uint8Array.fromBase64(aesMasterKeyBase64);
+    const { publicKey, privateKey } = primaryUserKey;
+    const encryptedMasterKeyBytes = await CryptoProxy.encryptMessage({
+        binaryData: aesMasterKeyBytes,
+        encryptionKeys: publicKey,
+        signingKeys: privateKey,
+        format: 'binary',
+        signatureContext: { critical: true, value: AES_MASTER_KEY_OPENPGP_SIGNATURE_CONTEXT },
+    });
+    return encryptedMasterKeyBytes.message.toBase64();
+}
+
+async function createAndPushMasterKeysBundle(lumoApi: LumoApi, userKeys: UserKeysOnly): Promise<MasterKeysBundle> {
     const BACKOFF_MIN = 1000;
     const BACKOFF_MAX = 4000;
     const MAX_ATTEMPTS = 5;
@@ -84,34 +94,22 @@ async function createAndPushMasterKey(lumoApi: LumoApi, uaKeys: UserAndAddressKe
 
     while (attempts < MAX_ATTEMPTS) {
         try {
-            // encrypt the masterkey
-            const { publicKey, privateKey } = uaKeys.primaryUserKey;
-            const encryptedMasterKeyBytes = await CryptoProxy.encryptMessage({
-                binaryData: newMasterKeyBytes,
-                encryptionKeys: publicKey,
-                signingKeys: privateKey,
-                format: 'binary',
-                signatureContext: { critical: true, value: AES_MASTER_KEY_OPENPGP_SIGNATURE_CONTEXT },
-            });
-            const encryptedMasterKeyBase64 = encryptedMasterKeyBytes.message.toBase64();
+            const encryptedMasterKeyBase64 = await encryptMasterKeyEnvelope(
+                newMasterKeyBytes.toBase64(),
+                userKeys.primaryUserKey
+            );
 
-            // post to API
-            const masterKeyToApi = convertMasterKeyToApi(encryptedMasterKeyBase64);
-            await lumoApi.postMasterKey(masterKeyToApi);
+            await lumoApi.postMasterKey(convertMasterKeyToApi(encryptedMasterKeyBase64));
 
-            // verify it was saved correctly
-            const { key: encryptedMasterKeyB64 } = await lumoApi.getMasterKey();
-            if (encryptedMasterKeyB64) {
-                const decryptedKey = await decryptAndVerifyMasterKey(encryptedMasterKeyB64, uaKeys);
-                if (decryptedKey) {
-                    return decryptedKey;
-                }
-                // If we can't decrypt what we just created, this indicates a fundamental error
-                // Don't retry as this would just create more corrupted keys
-                throw new Error('Failed to decrypt newly created master key');
+            const { keys: masterKeyEnvelopes } = await lumoApi.getMasterKeys();
+            const bundle = await decryptAllMasterKeys(masterKeyEnvelopes, userKeys.allUserKeys, (keys) =>
+                lumoApi.findBestKey(keys)
+            );
+            if (bundle) {
+                return bundle;
             }
 
-            throw new Error('Master key was not saved correctly');
+            throw new Error('Failed to decrypt newly created master key');
         } catch (error) {
             console.error('Error during Lumo master key setup', error);
             attempts += 1;
@@ -130,101 +128,84 @@ async function createAndPushMasterKey(lumoApi: LumoApi, uaKeys: UserAndAddressKe
  * Shape of the `masterkeys` read. Derived from the API method rather than restated, so the two
  * cannot drift apart.
  */
-export type MasterKeyEnvelope = Awaited<ReturnType<LumoApi['getMasterKey']>>;
+export type MasterKeyEnvelope = Awaited<ReturnType<LumoApi['getMasterKeys']>>;
 
-async function getOrCreateAndPushMasterKeyWithEligibility(
-    uid: string,
-    uaKeys: UserAndAddressKeys,
-    envelopePromise?: Promise<MasterKeyEnvelope>
-): Promise<{ eligibility: number; masterKeyBase64: Base64 | null }> {
-    const lumoApi = new LumoApi(uid);
-
-    // Reading the envelope needs only the session UID — no PGP keys, no crypto worker — so the
-    // caller can issue it before the keys are ready and hand the promise in. Awaiting it here then
-    // usually costs nothing.
-    // Boot issues this read before the keys are ready and hands the promise in; retry passes
-    // nothing and issues it here. Picked first, awaited second: `await a ?? b` would parse as
-    // `(await a) ?? b` and yield an unawaited Promise on the retry path.
-    const pendingEnvelope = envelopePromise ?? lumoApi.getMasterKey();
-    const { eligibility, key: encryptedMasterKey } = await pendingEnvelope;
-
-    // If not eligible, return early since non-eligible users will not need masterkey
-    if (eligibility !== LUMO_ELIGIBILITY.Eligible) {
-        return { eligibility, masterKeyBase64: null };
-    }
-
-    // If we have a key already, try to decrypt and verify it
-    if (encryptedMasterKey) {
-        const decryptedKey = await decryptAndVerifyMasterKey(encryptedMasterKey, uaKeys);
-        if (decryptedKey) {
-            return { eligibility, masterKeyBase64: decryptedKey };
+async function decryptAllMasterKeys(
+    envelopes: MasterKey[],
+    userKeys: DecryptedKey<PrivateKeyReference>[],
+    findBestKey: (keys: MasterKey[]) => MasterKey | undefined
+): Promise<MasterKeysBundle | null> {
+    const decryptedKeys = await Promise.all(
+        envelopes.map(async (envelope) => ({
+            id: envelope.id,
+            key: await decryptAndVerifyMasterKey(envelope.masterKey, userKeys),
+        }))
+    );
+    const masterKeys = decryptedKeys.reduce<Record<string, Base64>>((result, { id, key }) => {
+        if (key) {
+            result[id] = key;
         }
-        console.log('Existing master key could not be decrypted, creating a new one');
+        return result;
+    }, {});
+
+    if (Object.keys(masterKeys).length === 0) {
+        return null;
     }
 
-    // Need to create a new key (either because there was none, or decryption failed)
-    const newMasterKey = await createAndPushMasterKey(lumoApi, uaKeys);
-    return { eligibility, masterKeyBase64: newMasterKey };
+    const decryptedEnvelopes = envelopes.filter((envelope) => masterKeys[envelope.id]);
+    const primaryEnvelope = findBestKey(decryptedEnvelopes);
+    if (!primaryEnvelope) {
+        return null;
+    }
+
+    return {
+        primaryMasterKeyId: primaryEnvelope.id,
+        primaryMasterKey: masterKeys[primaryEnvelope.id],
+        masterKeys,
+    };
 }
 
 /**
- * Collect the PGP keys the master key envelope is encrypted to.
- *
- * Boot passes in the promises it already launched, so the addresses round trip and the user-key
- * unlocks overlap instead of running back to back. Retry passes nothing and relies on the model
- * thunks' caches, which are warm by then — so a retry costs one `masterkeys` round trip, not a
- * second pass over the whole key hierarchy.
+ * Master key envelope resolution with user keys only. Older address-key-wrapped envelopes are
+ * ignored — they only mattered for pre-release internal chats.
  */
-export const loadUserAndAddressKeys = (
-    addressesPromise?: Promise<Address[]>,
-    userKeysPromise?: Promise<DecryptedKey<PrivateKeyReference>[]>
-) => {
-    return async (dispatch: LumoDispatch): Promise<UserAndAddressKeys> => {
-        const pendingAddresses = addressesPromise ?? dispatch(addressesThunk());
-        const allAddresses = await pendingAddresses;
-        if (!allAddresses[0]) {
-            throw new Error('Missing primary address');
-        }
+async function resolveMasterKeysBundle(
+    lumoApi: LumoApi,
+    userKeys: UserKeysOnly,
+    envelopes: MasterKey[]
+): Promise<MasterKeysBundle | null> {
+    const findBestKey = (keys: MasterKey[]) => lumoApi.findBestKey(keys);
 
-        const pendingUserKeys = userKeysPromise ?? dispatch(userKeysThunk());
-        const allUserKeys = await pendingUserKeys;
-        const primaryUserKey = getPrimaryKey(allUserKeys);
-        if (!primaryUserKey) {
-            throw new Error('Missing primary user key');
-        }
+    const bundle = await decryptAllMasterKeys(envelopes, userKeys.allUserKeys, findBestKey);
 
-        // Address keys need the user keys first: an address key's passphrase is its `Token`, and
-        // the Token is a PGP message encrypted to the user keys. This is the one ordering in the
-        // whole boot that is genuinely forced by the key hierarchy rather than by how it's written.
-        const allAddressKeysArrays = await Promise.all(
-            allAddresses.map((address) => dispatch(addressKeysThunk({ addressID: address.ID })))
+    if (!bundle) {
+        console.log(
+            `None of the ${envelopes.length} existing master key envelope(s) could be decrypted with user keys; creating a new master key`
         );
+        return null;
+    }
 
-        return { primaryUserKey, allUserKeys, allAddressKeys: allAddressKeysArrays.flat() };
-    };
-};
+    const undecryptedCount = envelopes.length - Object.keys(bundle.masterKeys).length;
+    if (undecryptedCount > 0) {
+        console.log(
+            `Decrypted ${Object.keys(bundle.masterKeys).length}/${envelopes.length} master key envelope(s) with user keys; ignoring ${undecryptedCount} undecryptable legacy envelope(s)`
+        );
+    }
 
-/**
- * Resolve the master key and publish it.
- *
- * Nothing awaits this any more — it runs after the render gate has opened — so it must never
- * throw. Every failure becomes `masterKeyFailed`, which both releases the sagas parked in
- * `waitForMasterKey` and drives the in-app banner. Before this change the throw propagated to
- * `AuthApp` and painted `StandardLoadErrorPage`, which is no longer appropriate once the user may
- * already be mid-conversation.
- */
+    return bundle;
+}
+
 export const initializeLumoCritical = (
-    uaKeys: UserAndAddressKeys,
+    userKeys: UserKeysOnly,
     uid: string,
     envelopePromise?: Promise<MasterKeyEnvelope>
 ) => {
     return async (dispatch: LumoDispatch) => {
         try {
-            const { eligibility, masterKeyBase64 } = await getOrCreateAndPushMasterKeyWithEligibility(
-                uid,
-                uaKeys,
-                envelopePromise
-            );
+            const lumoApi = new LumoApi(uid);
+
+            const pendingEnvelope = envelopePromise ?? lumoApi.getMasterKeys();
+            const { eligibility, keys: masterKeyEnvelopes } = await pendingEnvelope;
 
             dispatch(updateEligibilityStatus(eligibility));
 
@@ -233,14 +214,15 @@ export const initializeLumoCritical = (
                 return null;
             }
 
-            if (!masterKeyBase64) {
-                throw new Error('Master key is null despite eligible status');
-            }
+            const existingBundle =
+                masterKeyEnvelopes.length > 0
+                    ? await resolveMasterKeysBundle(lumoApi, userKeys, masterKeyEnvelopes)
+                    : null;
+            const masterKeysBundle = existingBundle ?? (await createAndPushMasterKeysBundle(lumoApi, userKeys));
 
-            // Publishes the key AND starts the data layer, via takeEvery(addMasterKey, initAppSaga).
-            dispatch(addMasterKey(masterKeyBase64));
+            dispatch(addMasterKey(masterKeysBundle));
 
-            return { eligibility, masterKeyBase64 };
+            return { eligibility, masterKeysBundle };
         } catch (error) {
             const message = error instanceof Error ? error.message : String(error);
             console.error('Lumo master key initialization failed', error);
@@ -250,27 +232,31 @@ export const initializeLumoCritical = (
     };
 };
 
-/**
- * The whole off-gate key lane: unlock the PGP keys, then resolve the master key. Used by boot with
- * its already-launched promises, and by the retry button with none.
- */
+export const loadUserKeys = (userKeysPromise?: Promise<DecryptedKey<PrivateKeyReference>[]>) => {
+    return async (dispatch: LumoDispatch): Promise<UserKeysOnly> => {
+        const pendingUserKeys = userKeysPromise ?? dispatch(userKeysThunk());
+        const allUserKeys = await pendingUserKeys;
+        const primaryUserKey = getPrimaryKey(allUserKeys);
+        if (!primaryUserKey) {
+            throw new Error('Missing primary user key');
+        }
+
+        return { primaryUserKey, allUserKeys };
+    };
+};
+
 export const loadKeysAndMasterKey = (
     uid: string,
     promises?: {
-        addressesPromise?: Promise<Address[]>;
         userKeysPromise?: Promise<DecryptedKey<PrivateKeyReference>[]>;
         envelopePromise?: Promise<MasterKeyEnvelope>;
     }
 ) => {
     return async (dispatch: LumoDispatch) => {
         try {
-            const uaKeys = await dispatch(
-                loadUserAndAddressKeys(promises?.addressesPromise, promises?.userKeysPromise)
-            );
-            return await dispatch(initializeLumoCritical(uaKeys, uid, promises?.envelopePromise));
+            const userKeys = await dispatch(loadUserKeys(promises?.userKeysPromise));
+            return await dispatch(initializeLumoCritical(userKeys, uid, promises?.envelopePromise));
         } catch (error) {
-            // Unlocking the keys failed, so initializeLumoCritical never ran and nobody has
-            // reported this yet. Same contract: report through state, never throw.
             const message = error instanceof Error ? error.message : String(error);
             console.error('Lumo key loading failed', error);
             dispatch(masterKeyFailed(message));
@@ -279,14 +265,6 @@ export const loadKeysAndMasterKey = (
     };
 };
 
-/**
- * Re-run the key load after a failure, from the UI.
- *
- * Takes no promises: boot's are one-shot and have already settled by the time anyone can click
- * retry. The model thunks' caches are warm, so this normally costs one `masterkeys` round trip
- * rather than a second pass over the key hierarchy. Resetting to `loading` first is what releases
- * the UI from the failed state and re-arms `waitForMasterKey` for anything queued afterwards.
- */
 export const retryLumoCritical = () => {
     return async (dispatch: LumoDispatch, _getState: () => unknown, extra: LumoThunkArguments) => {
         dispatch(masterKeyRetrying());
@@ -294,7 +272,6 @@ export const retryLumoCritical = () => {
     };
 };
 
-// TODO: need to handle failures and possibly add retry mechanism
 export const initializeLumoBackground = (uid: string) => {
     return async (_dispatch: LumoDispatch) => {
         (window as any).paymentApiInstance.setUid(uid);
