@@ -9,6 +9,7 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
+import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 
 import type { CustomDomainOutput } from '../../../../types';
 import { DropdownMenuButton } from '../../../Layout/Dropdown/DropdownMenuButton';
@@ -65,7 +66,7 @@ export const CustomDomainsTable: FC = () => {
                                     <TableCell>
                                         <div className="flex justify-end">
                                             <QuickActionsDropdown
-                                                icon="three-dots-horizontal"
+                                                icon={IcThreeDotsHorizontal}
                                                 color="weak"
                                                 shape="solid"
                                                 size="small"

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { IcExclamationFilled } from '@proton/icons/icons/IcExclamationFilled';
 import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 
 import shieldDanger from '../../../../assets/monitor/shield-bolt-danger.svg';
@@ -36,7 +37,7 @@ export const BreachSummaryCard: FC<Props> = ({ className, onClick }) => {
 
             if (error) {
                 return {
-                    icon: 'exclamation-filled',
+                    icon: IcExclamationFilled,
                     type: 'danger',
                     subtitle: (
                         <span>

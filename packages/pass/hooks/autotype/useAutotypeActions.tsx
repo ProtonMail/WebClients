@@ -4,6 +4,10 @@ import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcPassPasskey } from '@proton/icons/icons/IcPassPasskey';
+import { IcUser } from '@proton/icons/icons/IcUser';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { AutotypeKeyboardShortcut } from '../../components/Item/Autotype/AutotypeKeyboardShortcut';
@@ -38,7 +42,7 @@ export const useAutotypeActions = (data: Item<'login'>) =>
                                   {usernameKey} {tabKey} {passwordKey} {enterKey}
                               </div>
                           ),
-                          icon: 'pass-passkey',
+                          icon: IcPassPasskey,
                       } as const,
                       {
                           key: AutotypeKey.USERNAME_TAB_PASSWORD,
@@ -50,7 +54,7 @@ export const useAutotypeActions = (data: Item<'login'>) =>
                                   {usernameKey} {tabKey} {passwordKey}
                               </div>
                           ),
-                          icon: 'pass-passkey',
+                          icon: IcPassPasskey,
                       } as const,
                   ]
                 : []),
@@ -67,7 +71,7 @@ export const useAutotypeActions = (data: Item<'login'>) =>
                                   {emailKey} {tabKey} {passwordKey} {enterKey}
                               </div>
                           ),
-                          icon: 'pass-passkey',
+                          icon: IcPassPasskey,
                       } as const,
                       {
                           key: AutotypeKey.EMAIL_TAB_PASSWORD,
@@ -79,7 +83,7 @@ export const useAutotypeActions = (data: Item<'login'>) =>
                                   {emailKey} {tabKey} {passwordKey}
                               </div>
                           ),
-                          icon: 'pass-passkey',
+                          icon: IcPassPasskey,
                       } as const,
                   ]
                 : []),
@@ -96,7 +100,7 @@ export const useAutotypeActions = (data: Item<'login'>) =>
                                   {usernameKey} {enterKey}
                               </div>
                           ),
-                          icon: 'user',
+                          icon: IcUser,
                       } as const,
                   ]
                 : []),
@@ -113,7 +117,7 @@ export const useAutotypeActions = (data: Item<'login'>) =>
                                   {emailKey} {enterKey}
                               </div>
                           ),
-                          icon: 'envelope',
+                          icon: IcEnvelope,
                       } as const,
                   ]
                 : []),
@@ -130,7 +134,7 @@ export const useAutotypeActions = (data: Item<'login'>) =>
                                   {passwordKey} {enterKey}
                               </div>
                           ),
-                          icon: 'key',
+                          icon: IcKey,
                       } as const,
                   ]
                 : []),

@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import Alert from '@proton/components/components/alert/Alert';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import { IcLink } from '@proton/icons/icons/IcLink';
 import clsx from '@proton/utils/clsx';
 
@@ -81,7 +82,11 @@ export const SecureLinkCard: FC<Props> = ({
                                 }}
                                 className="flex items-center gap-1 color-danger hover:color-danger"
                             >
-                                <DropdownMenuButtonLabel label={c('Label').t`Remove link`} icon="cross-circle" danger />
+                                <DropdownMenuButtonLabel
+                                    label={c('Label').t`Remove link`}
+                                    icon={IcCrossCircle}
+                                    danger
+                                />
                             </DropdownMenuButton>
                         </QuickActionsDropdown>
                     </div>

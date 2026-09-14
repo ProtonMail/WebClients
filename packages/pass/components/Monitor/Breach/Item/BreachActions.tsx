@@ -5,6 +5,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Alert from '@proton/components/components/alert/Alert';
+import { IcEye } from '@proton/icons/icons/IcEye';
+import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 import { useConfirm } from '../../../../hooks/useConfirm';
 import { useRequest } from '../../../../hooks/useRequest';
@@ -52,21 +56,21 @@ export const BreachActions: FC<Props> = ({ resolved, disabled, ...address }) => 
                 className="shrink-0"
                 color="weak"
                 disabled={disabled}
-                icon="three-dots-vertical"
+                icon={IcThreeDotsVertical}
                 originalPlacement="bottom-end"
                 pill
                 shape="solid"
             >
                 <DropdownMenuButton
                     disabled={!groupMonitored}
-                    icon={monitored ? 'eye-slash' : 'eye'}
+                    icon={monitored ? IcEyeSlash : IcEye}
                     label={monitored ? c('Action').t`Pause monitoring` : c('Action').t`Resume monitoring`}
                     loading={toggle.loading}
                     onClick={confirmToggle.prompt}
                 />
                 {address.type === AddressType.CUSTOM && (
                     <DropdownMenuButton
-                        icon="trash"
+                        icon={IcTrash}
                         label={c('Action').t`Remove`}
                         loading={deleting}
                         onClick={confirmDelete.prompt}

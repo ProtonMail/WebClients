@@ -2,6 +2,12 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
+import { IcBrandProtonPass } from '@proton/icons/icons/IcBrandProtonPass';
+import { IcCalendarToday } from '@proton/icons/icons/IcCalendarToday';
+import { IcEarth } from '@proton/icons/icons/IcEarth';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcUser } from '@proton/icons/icons/IcUser';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { SanitizedPasskey } from '../../../lib/passkeys/types';
@@ -13,12 +19,12 @@ type Props = { passkey: SanitizedPasskey };
 
 export const PasskeyContent: FC<Props> = ({ passkey }) => (
     <FieldsetCluster mode="read" as="div">
-        <ValueControl clickToCopy icon="user" label={c('Label').t`Username`} value={passkey.userName} />
-        <ValueControl clickToCopy icon="earth" label={c('Label').t`Domain`} value={passkey.domain} />
-        <ValueControl clickToCopy icon="key" label={c('Label').t`Key`} value={passkey.keyId} />
+        <ValueControl clickToCopy icon={IcUser} label={c('Label').t`Username`} value={passkey.userName} />
+        <ValueControl clickToCopy icon={IcEarth} label={c('Label').t`Domain`} value={passkey.domain} />
+        <ValueControl clickToCopy icon={IcKey} label={c('Label').t`Key`} value={passkey.keyId} />
         <ValueControl
             clickToCopy
-            icon="calendar-today"
+            icon={IcCalendarToday}
             label={c('Label').t`Created at`}
             value={epochToDateTime(passkey.createTime)}
         />
@@ -31,13 +37,13 @@ export const PasskeyContent: FC<Props> = ({ passkey }) => (
             return (
                 <>
                     <ValueControl
-                        icon="info-circle"
+                        icon={IcInfoCircle}
                         label={c('Label').t`Device`}
                         ellipsis={false}
                         value={`${osName} ${osVersion}`}
                     />
                     <ValueControl
-                        icon="brand-proton-pass"
+                        icon={IcBrandProtonPass}
                         label={c('Label').t`${PASS_SHORT_APP_NAME} version`}
                         value={appVersion}
                     />

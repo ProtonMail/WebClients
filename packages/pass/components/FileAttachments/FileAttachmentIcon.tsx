@@ -1,7 +1,13 @@
 import { type FC, useEffect, useState } from 'react';
 
-import Icon from '@proton/components/components/icon/Icon';
-import type { IconName, IconSize } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcFile } from '@proton/icons/icons/IcFile';
+import { IcFileImage } from '@proton/icons/icons/IcFileImage';
+import { IcFileLines } from '@proton/icons/icons/IcFileLines';
+import { IcFilePdf } from '@proton/icons/icons/IcFilePdf';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
+import type { IconSize } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -9,39 +15,43 @@ import PassUI from '../../lib/core/ui.proxy';
 
 type Props = { mimeType: string; className?: string; size?: IconSize };
 
-const getIconFromMimeType = async (mimeType: string): Promise<IconName> => {
+const getIconFromMimeType = async (mimeType: string): Promise<IconComponent> => {
     try {
         switch (await PassUI.file_group_from_mime_type(mimeType)) {
             case 'Image':
             case 'Photo':
             case 'VectorImage':
-                return 'file-image';
+                return IcFileImage;
             case 'Key':
-                return 'key';
+                return IcKey;
             case 'Pdf':
-                return 'file-pdf';
+                return IcFilePdf;
             case 'Text':
             case 'Document':
             case 'Excel':
             case 'PowerPoint':
             case 'Word':
-                return 'file-lines';
+                return IcFileLines;
             case 'Video':
-                return 'video-camera';
+                return IcVideoCamera;
             default:
-                return 'file';
+                return IcFile;
         }
     } catch {
-        return 'file';
+        return IcFile;
     }
 };
 
 export const FileAttachmentIcon: FC<Props> = ({ mimeType, className, size }) => {
-    const [icon, setIcon] = useState<IconName>('file');
+    /* The lazy initialiser and the `() => icon` setter matter: a component is a
+     * function, so passing it directly would be read as a state updater. */
+    const [Icon, setIcon] = useState<IconComponent>(() => IcFile);
 
     useEffect(() => {
-        getIconFromMimeType(mimeType).then(setIcon).catch(noop);
+        getIconFromMimeType(mimeType)
+            .then((icon) => setIcon(() => icon))
+            .catch(noop);
     }, [mimeType]);
 
-    return <Icon name={icon} className={clsx('m-auto', className)} size={size} />;
+    return <Icon className={clsx('m-auto', className)} size={size} />;
 };

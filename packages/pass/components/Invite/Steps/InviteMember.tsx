@@ -4,6 +4,8 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcCircleSlash } from '@proton/icons/icons/IcCircleSlash';
 import generateUID from '@proton/utils/generateUID';
 
 import type { AccessTarget } from '../../../lib/access/types';
@@ -59,19 +61,19 @@ export const InviteMember: FC<InviteMemberProps> = ({ target, value, onRemove, o
                 <QuickActionsDropdown color="weak" shape="ghost">
                     <DropdownMenuButton
                         label={c('Action').t`Make viewer`}
-                        icon={role === ShareRole.READ ? 'checkmark' : undefined}
+                        icon={role === ShareRole.READ ? IcCheckmark : undefined}
                         onClick={() => onRoleChange(ShareRole.READ)}
                         className={role !== ShareRole.READ ? 'pl-10' : ''}
                     />
                     <DropdownMenuButton
                         label={c('Action').t`Make editor`}
-                        icon={role === ShareRole.WRITE ? 'checkmark' : undefined}
+                        icon={role === ShareRole.WRITE ? IcCheckmark : undefined}
                         onClick={() => onRoleChange(ShareRole.WRITE)}
                         className={role !== ShareRole.WRITE ? 'pl-10' : ''}
                     />
                     <DropdownMenuButton
                         label={labels.singleAction}
-                        icon={role === ShareRole.MANAGER ? 'checkmark' : undefined}
+                        icon={role === ShareRole.MANAGER ? IcCheckmark : undefined}
                         onClick={() => onRoleChange(ShareRole.MANAGER)}
                         className={role !== ShareRole.MANAGER ? 'pl-10' : ''}
                     />
@@ -79,7 +81,7 @@ export const InviteMember: FC<InviteMemberProps> = ({ target, value, onRemove, o
                     {onRemove && (
                         <DropdownMenuButton
                             label={c('Action').t`Remove member`}
-                            icon="circle-slash"
+                            icon={IcCircleSlash}
                             danger
                             onClick={onRemove}
                         />

@@ -5,7 +5,11 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import Option from '@proton/components/components/option/Option';
+import { IcAlias } from '@proton/icons/icons/IcAlias';
+import { IcArrowUpAndRightBig } from '@proton/icons/icons/IcArrowUpAndRightBig';
+import { IcCardIdentity } from '@proton/icons/icons/IcCardIdentity';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
+import { IcNote } from '@proton/icons/icons/IcNote';
 
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../constants';
 import { useAliasDetails } from '../../../hooks/useAliasDetails';
@@ -173,7 +177,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
                         </FieldsetCluster>
 
                         <FieldsetCluster mode="read" as="div">
-                            <ValueControl icon="alias" label={c('Label').t`Alias address`}>
+                            <ValueControl icon={IcAlias} label={c('Label').t`Alias address`}>
                                 {aliasEmail}
                             </ValueControl>
 
@@ -183,7 +187,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
                                     label={c('Label').t`Forwards to`}
                                     placeholder={c('Label').t`Select an email address`}
                                     component={SelectField}
-                                    icon="arrow-up-and-right-big"
+                                    icon={IcArrowUpAndRightBig}
                                     multiple
                                     disabled={disabledMailboxes}
                                     loading={loading}
@@ -196,7 +200,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
                                 </Field>
                             ) : (
                                 <ValueControl
-                                    icon="arrow-up-and-right-big"
+                                    icon={IcArrowUpAndRightBig}
                                     label={c('Label').t`Forwards to`}
                                     loading={loading}
                                 >
@@ -217,7 +221,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
                                 label={c('Label').t`Note`}
                                 placeholder={c('Placeholder').t`Enter a note...`}
                                 component={TextAreaField}
-                                icon="note"
+                                icon={IcNote}
                                 maxLength={MAX_ITEM_NOTE_LENGTH}
                             />
                         </FieldsetCluster>
@@ -241,7 +245,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
                                             label={<AliasSLNoteLabel />}
                                             placeholder={c('Placeholder').t`Note from SimpleLogin`}
                                             component={TextAreaField}
-                                            icon="note"
+                                            icon={IcNote}
                                             maxLength={MAX_ITEM_NOTE_LENGTH}
                                         />
                                     </FieldsetCluster>
@@ -253,7 +257,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
                                         label={c('Label').t`Display name`}
                                         placeholder={c('Placeholder').t`Name displayed in emails`}
                                         component={TextField}
-                                        icon="card-identity"
+                                        icon={IcCardIdentity}
                                         maxLength={MAX_ITEM_NAME_LENGTH}
                                     />
                                 </FieldsetCluster>
