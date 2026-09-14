@@ -15,7 +15,7 @@ export function isVatReverseChargeApplicable(checkResult: SubscriptionEstimation
     return checkResult.TaxMode === TaxMode.REVERSE_CHARGE;
 }
 
-export function getVatReverseChargeText() {
+function getVatReverseChargeText() {
     return c('Payments').t`VAT reverse charge mechanism applies.`;
 }
 
