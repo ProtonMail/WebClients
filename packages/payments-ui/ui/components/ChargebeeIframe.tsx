@@ -84,14 +84,9 @@ import type { GooglePayProcessorHook } from '../../payment-processors/useGoogleP
  * iframe re-uses the same correlationId in the response message.
  * It might be helpful in case of concurrency problems.
  */
-export const { correlation, reset: resetCorrelation } = (() => {
+const correlation = (() => {
     let id = 0;
-    const reset = () => (id = 0);
-
-    return {
-        correlation: () => ++id,
-        reset,
-    };
+    return () => ++id;
 })();
 
 const correlationMapper: Record<string, string> = {};
@@ -102,7 +97,7 @@ function setLatestCorrelationIndexByType(type: string, id: string) {
     correlationMapper[type] = id;
 }
 
-export const parseEvent = (data: any) => {
+const parseEvent = (data: any) => {
     let props;
     try {
         props = JSON.parse(data);
