@@ -6,12 +6,11 @@
  */
 
 /**
- * Measures the number of successful resync events
+ * Per-file upload throughput in kibibytes/s for files smaller than 128KB
  */
-export interface HttpsProtonMeDriveSyncResyncSuccessTotalV1SchemaJson {
-  Labels: {
-    status: "completed" | "cancelled" | "failed";
-    retry: "true" | "false";
-  };
+export interface HttpsProtonMeDriveSdkUploadSmallFileThroughputHistogramV1SchemaJson {
   Value: number;
+  Labels: {
+    uploadRoute: "small" | "block";
+  };
 }
