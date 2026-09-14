@@ -5,6 +5,9 @@ import { useHistory } from 'react-router-dom';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcNote } from '@proton/icons/icons/IcNote';
+
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '../../../constants';
 import { useInitialValues } from '../../../hooks/items/useInitialValues';
 import { useAliasForLogin } from '../../../hooks/useAliasForLogin';
@@ -218,7 +221,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, folderId, url
                                     /* only allow adding a new TOTP code if user
                                      * has not reached his plan's TOTP limit */
                                     needsUpgrade ? (
-                                        <ValueControl icon="lock" label={c('Label').t`2FA secret key (TOTP)`}>
+                                        <ValueControl icon={IcLock} label={c('Label').t`2FA secret key (TOTP)`}>
                                             <UpgradeButton inline upsellRef={UpsellRef.LIMIT_2FA} />
                                         </ValueControl>
                                     ) : (
@@ -228,7 +231,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, folderId, url
                                             label={c('Label').t`2FA secret key (TOTP)`}
                                             placeholder={c('Placeholder').t`Add 2FA secret key`}
                                             component={TextField}
-                                            icon="lock"
+                                            icon={IcLock}
                                         />
                                     )
                                 }
@@ -244,7 +247,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, folderId, url
                                     label={c('Label').t`Note`}
                                     placeholder={c('Placeholder').t`Add note`}
                                     component={TextAreaField}
-                                    icon="note"
+                                    icon={IcNote}
                                     maxLength={MAX_ITEM_NOTE_LENGTH}
                                 />
                             </FieldsetCluster>

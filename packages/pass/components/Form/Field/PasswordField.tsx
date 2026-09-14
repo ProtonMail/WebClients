@@ -4,7 +4,7 @@ import clsx from '@proton/utils/clsx';
 
 import { usePasswordStrength } from '../../../hooks/monitor/usePasswordStrength';
 import { PasswordGeneratorButton } from '../../Password/PasswordGeneratorButton';
-import { strenghtIconNames, strengthClassNames, translateStrengths } from '../../Password/PasswordStrength';
+import { strengthClassNames, strengthIcons, translateStrengths } from '../../Password/PasswordStrength';
 import { TextField, type TextFieldProps } from './TextField';
 
 import './PasswordField.scss';
@@ -42,7 +42,7 @@ export const PasswordField: FC<Props> = (props) => {
     return (
         <TextField
             className={passwordStrength ? clsx(className, strengthClassNames[passwordStrength]) : className}
-            icon={passwordStrength ? strenghtIconNames[passwordStrength] : icon}
+            icon={passwordStrength ? strengthIcons[passwordStrength] : icon}
             label={passwordStrength ? `${label} · ${translateStrengths()[passwordStrength]}` : label}
             hidden
             field={field}

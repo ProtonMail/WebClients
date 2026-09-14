@@ -3,6 +3,13 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { IcCalendarToday } from '@proton/icons/icons/IcCalendarToday';
+import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
+import { IcGrid3 } from '@proton/icons/icons/IcGrid3';
+import { IcNote } from '@proton/icons/icons/IcNote';
+import { IcShield } from '@proton/icons/icons/IcShield';
+import { IcUser } from '@proton/icons/icons/IcUser';
+
 import { UpsellRef } from '../../../constants';
 import { usePartialDeobfuscatedItem } from '../../../hooks/useDeobfuscatedItem';
 import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
@@ -37,11 +44,11 @@ export const CreditCardContent: FC<ItemContentProps<'creditCard'>> = ({ secureLi
     return (
         <>
             <FieldsetCluster mode="read" as="div">
-                <ValueControl clickToCopy icon="user" label={c('Label').t`Name on card`} value={cardholderName} />
+                <ValueControl clickToCopy icon={IcUser} label={c('Label').t`Name on card`} value={cardholderName} />
 
                 {upsell ? (
                     <UpgradeControl
-                        icon="credit-card"
+                        icon={IcCreditCard}
                         label={c('Label').t`Card number`}
                         upsellRef={UpsellRef.LIMIT_CC}
                     />
@@ -50,7 +57,7 @@ export const CreditCardContent: FC<ItemContentProps<'creditCard'>> = ({ secureLi
                         clickToCopy
                         hidden
                         hiddenValue={cardNumberHiddenValue}
-                        icon="credit-card"
+                        icon={IcCreditCard}
                         label={c('Label').t`Card number`}
                         mask={cardNumberMask}
                         value={number}
@@ -60,7 +67,7 @@ export const CreditCardContent: FC<ItemContentProps<'creditCard'>> = ({ secureLi
 
                 <MaskedValueControl
                     clickToCopy
-                    icon="calendar-today"
+                    icon={IcCalendarToday}
                     label={c('Label').t`Expiration date`}
                     mask={expDateMask}
                     value={formatExpirationDateMMYY(expirationDate)}
@@ -70,7 +77,7 @@ export const CreditCardContent: FC<ItemContentProps<'creditCard'>> = ({ secureLi
                     clickToCopy
                     hidden
                     hiddenValue="••••"
-                    icon="shield"
+                    icon={IcShield}
                     label={c('Label').t`Security code`}
                     value={verificationNumber}
                     deobfuscate={deobfuscateCCField}
@@ -79,7 +86,7 @@ export const CreditCardContent: FC<ItemContentProps<'creditCard'>> = ({ secureLi
                 <ObfuscatedValueControl
                     hidden
                     hiddenValue="••••"
-                    icon="grid-3"
+                    icon={IcGrid3}
                     label={c('Label').t`PIN`}
                     value={pin}
                     deobfuscate={deobfuscateCCField}
@@ -91,7 +98,7 @@ export const CreditCardContent: FC<ItemContentProps<'creditCard'>> = ({ secureLi
                     <ValueControl
                         clickToCopy
                         as={TextAreaReadonly}
-                        icon="note"
+                        icon={IcNote}
                         label={c('Label').t`Note`}
                         value={note}
                     />

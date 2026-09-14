@@ -8,6 +8,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
+import { IcPassPasskey } from '@proton/icons/icons/IcPassPasskey';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { Field } from '@proton/pass/components/Form/Field/Field';
@@ -109,7 +110,7 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username
                                 className="rounded-none"
                                 title={name}
                                 subTitle={userIdentifier}
-                                icon={{ type: 'icon', url, icon: 'pass-passkey' }}
+                                icon={{ type: 'icon', url, icon: IcPassPasskey }}
                                 onClick={() => handleUpdate({ itemId, shareId, name })}
                                 disabled={loading}
                                 action={
@@ -172,7 +173,7 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username
                             icon={
                                 <ItemIcon
                                     url={domain}
-                                    icon="pass-passkey"
+                                    icon={IcPassPasskey}
                                     size={5}
                                     alt=""
                                     className="shrink-0"

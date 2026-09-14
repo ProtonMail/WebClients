@@ -5,7 +5,15 @@ import { c } from 'ttag';
 
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Href } from '@proton/atoms/Href/Href';
+import { IcAlias } from '@proton/icons/icons/IcAlias';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcEarth } from '@proton/icons/icons/IcEarth';
+import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcNote } from '@proton/icons/icons/IcNote';
+import { IcPassPasskey } from '@proton/icons/icons/IcPassPasskey';
+import { IcUser } from '@proton/icons/icons/IcUser';
 
 import { UpsellRef } from '../../../constants';
 import { usePasswordStrength } from '../../../hooks/monitor/usePasswordStrength';
@@ -65,7 +73,7 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
                 (passkeys ?? []).map((passkey) => (
                     <FieldsetCluster mode="read" key={passkey.keyId}>
                         <ValueControl
-                            icon={'pass-passkey'}
+                            icon={IcPassPasskey}
                             label={`${c('Label').t`Passkey`} • ${passkey.domain}`}
                             value={passkey.userName}
                             onClick={() => setPasskey(passkey)}
@@ -79,13 +87,13 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
 
             <FieldsetCluster mode="read" as="div">
                 {showEmptyEmailOrUsername && (
-                    <ValueControl clickToCopy icon="user" label={c('Label').t`Email or username`} />
+                    <ValueControl clickToCopy icon={IcUser} label={c('Label').t`Email or username`} />
                 )}
 
                 {itemEmail && (
                     <ValueControl
                         clickToCopy
-                        icon={relatedAlias ? 'alias' : 'envelope'}
+                        icon={relatedAlias ? IcAlias : IcEnvelope}
                         label={relatedAlias ? c('Label').t`Email (alias)` : c('Label').t`Email`}
                         value={itemEmail}
                         onCopy={() => sendClipboardTelemetry?.(TelemetryFieldType.email)}
@@ -95,7 +103,7 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
                 {itemUsername && (
                     <ValueControl
                         clickToCopy
-                        icon="user"
+                        icon={IcUser}
                         label={c('Label').t`Username`}
                         value={itemUsername}
                         onCopy={() => sendClipboardTelemetry?.(TelemetryFieldType.username)}
@@ -105,7 +113,7 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
                 <ValueControl
                     clickToCopy
                     hidden
-                    icon="key"
+                    icon={IcKey}
                     label={c('Label').t`Password`}
                     value={password}
                     ellipsis={false}
@@ -123,14 +131,14 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
 
                 {totpUri && totpAllowed && (
                     <OTPValueControl
-                        icon="lock"
+                        icon={IcLock}
                         payload={{ totpUri, type: 'uri' }}
                         onCopy={() => sendClipboardTelemetry?.(TelemetryFieldType.totp)}
                     />
                 )}
 
                 {totpUri && !totpAllowed && (
-                    <ValueControl icon="lock" label={c('Label').t`2FA secret key (TOTP)`}>
+                    <ValueControl icon={IcLock} label={c('Label').t`2FA secret key (TOTP)`}>
                         <UpgradeButton inline upsellRef={UpsellRef.LIMIT_2FA} />
                     </ValueControl>
                 )}
@@ -142,7 +150,7 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
                         as="ul"
                         ellipsis={false}
                         valueClassName="flex flex-column gap-1 pt-2"
-                        icon="earth"
+                        icon={IcEarth}
                         label={c('Label').t`Websites`}
                     >
                         {showOnlyNeverWarning && (
@@ -187,7 +195,7 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
                     <ValueControl
                         clickToCopy
                         as={TextAreaReadonly}
-                        icon="note"
+                        icon={IcNote}
                         label={c('Label').t`Note`}
                         value={note}
                         onCopy={() => sendClipboardTelemetry?.(TelemetryFieldType.note)}

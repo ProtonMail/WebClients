@@ -4,9 +4,13 @@ import { useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
-import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import type { IconComponent } from '@proton/icons/component';
+import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import { IcFolderArrowIn } from '@proton/icons/icons/IcFolderArrowIn';
+import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
+import { IcPen } from '@proton/icons/icons/IcPen';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import clsx from '@proton/utils/clsx';
@@ -171,7 +175,7 @@ export const VaultMenuItem = memo(
                                         )}
                                         style={{ color: 'var(--text-weak)' }}
                                     >
-                                        <Icon name="folder-plus" />
+                                        <IcFolderPlus />
                                     </ButtonLike>
                                 </MaybeTooltip>
                             )}
@@ -231,7 +235,7 @@ export const VaultMenuItem = memo(
                                       <DropdownMenuButton
                                           key="vault-edit"
                                           label={c('Action').t`Edit vault`}
-                                          icon="pen"
+                                          icon={IcPen}
                                           onClick={handleClickEvent(onEdit)}
                                       />
                                   ),
@@ -242,7 +246,7 @@ export const VaultMenuItem = memo(
                                           disabled={!isWritableVault(vault) || folderCreate.limitReached}
                                           title={folderCreate.limitReason ?? undefined}
                                           label={c('Action').t`Create folder`}
-                                          icon="folder-plus"
+                                          icon={IcFolderPlus}
                                           onClick={handleClickEvent(onCreateFolder)}
                                       />
                                   ),
@@ -251,7 +255,7 @@ export const VaultMenuItem = memo(
                                       <DropdownMenuButton
                                           key="vault-manage"
                                           className="flex items-center py-2 px-4"
-                                          icon="users"
+                                          icon={IcUsers}
                                           label={canManage ? c('Action').t`Manage access` : c('Action').t`See members`}
                                           onClick={handleClickEvent(onManage)}
                                       />
@@ -262,7 +266,7 @@ export const VaultMenuItem = memo(
                                           key="vault-share"
                                           className="flex items-center py-2 px-4"
                                           disabled={!isWritableVault(vault)}
-                                          icon="user-plus"
+                                          icon={IcUserPlus}
                                           label={c('Action').t`Share`}
                                           onClick={onInviteClick}
                                       />
@@ -273,7 +277,7 @@ export const VaultMenuItem = memo(
                                           key="vault-move"
                                           onClick={handleClickEvent(onMove)}
                                           label={c('Action').t`Move all items`}
-                                          icon="folder-arrow-in"
+                                          icon={IcFolderArrowIn}
                                       />
                                   ),
 
@@ -282,7 +286,7 @@ export const VaultMenuItem = memo(
                                           key="vault-leave"
                                           className="flex items-center py-2 px-4"
                                           onClick={handleClickEvent(onLeave)}
-                                          icon="cross-circle"
+                                          icon={IcCrossCircle}
                                           label={c('Action').t`Leave vault`}
                                           danger
                                       />
@@ -294,7 +298,7 @@ export const VaultMenuItem = memo(
                                           disabled={!onDelete}
                                           onClick={handleClickEvent(onDelete)}
                                           label={c('Action').t`Delete vault`}
-                                          icon="trash"
+                                          icon={IcTrash}
                                           danger
                                       />
                                   ),

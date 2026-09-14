@@ -3,6 +3,7 @@ import { type FC, useMemo, useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { IcUser } from '@proton/icons/icons/IcUser';
 import { OTPDonut } from '@proton/pass/components/Otp/OTPDonut';
 import { OTPValue } from '@proton/pass/components/Otp/OTPValue';
 import type { IOtpRenderer } from '@proton/pass/components/Otp/types';
@@ -51,7 +52,7 @@ export const AutofillOTP: FC<Props> = ({ item }) => {
                     key={getItemKey(item)}
                     title={item.name}
                     subTitle={item.userIdentifier}
-                    icon={{ type: 'icon', icon: 'user', url: item.url }}
+                    icon={{ type: 'icon', icon: IcUser, url: item.url }}
                     fakeButton
                 />
 

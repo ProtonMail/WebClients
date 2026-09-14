@@ -4,6 +4,12 @@ import { useSelector } from 'react-redux';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { IcCalendarToday } from '@proton/icons/icons/IcCalendarToday';
+import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
+import { IcGrid3 } from '@proton/icons/icons/IcGrid3';
+import { IcNote } from '@proton/icons/icons/IcNote';
+import { IcUser } from '@proton/icons/icons/IcUser';
+
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '../../../constants';
 import { useInitialValues } from '../../../hooks/items/useInitialValues';
 import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
@@ -131,7 +137,7 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, fol
                             <Field
                                 name="cardholderName"
                                 component={TextField}
-                                icon="user"
+                                icon={IcUser}
                                 label={c('Label').t`Name on card`}
                                 placeholder={c('Placeholder').t`Full Name`}
                             />
@@ -140,7 +146,7 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, fol
                                 name="number"
                                 component={MaskedTextField}
                                 hiddenValue={cardNumberHiddenValue(form.values.number)}
-                                icon="credit-card"
+                                icon={IcCreditCard}
                                 label={c('Label').t`Card number`}
                                 mask={cardNumberMask(form.values.number)}
                                 placeholder="1234 1234 1234 1234"
@@ -148,7 +154,7 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, fol
                             <Field
                                 name="expirationDate"
                                 component={MaskedTextField}
-                                icon="calendar-today"
+                                icon={IcCalendarToday}
                                 label={c('Label').t`Expiration date`}
                                 mask={expDateMask}
                                 placeholder={c('Placeholder').t`MM/YY`}
@@ -158,7 +164,7 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, fol
                                 name="verificationNumber"
                                 component={MaskedTextField}
                                 hiddenValue="••••"
-                                icon="credit-card"
+                                icon={IcCreditCard}
                                 label={c('Label').t`Security code`}
                                 mask={{ mask: '0000' }}
                                 placeholder="123"
@@ -168,7 +174,7 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, fol
                                 name="pin"
                                 component={MaskedTextField}
                                 hiddenValue="••••"
-                                icon="grid-3"
+                                icon={IcGrid3}
                                 label={c('Label').t`PIN`}
                                 mask={{ mask: '000000000000' }}
                                 placeholder="1234"
@@ -181,7 +187,7 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, fol
                                 label={c('Label').t`Note`}
                                 placeholder={c('Placeholder').t`Add note`}
                                 component={TextAreaField}
-                                icon="note"
+                                icon={IcNote}
                                 maxLength={MAX_ITEM_NOTE_LENGTH}
                             />
                         </FieldsetCluster>

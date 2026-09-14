@@ -1,5 +1,7 @@
 import { useMemo } from 'react';
 
+import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
+
 import { UpsellRef } from '../../../constants';
 import { useMatchUser } from '../../../hooks/useMatchUser';
 import { useMemoSelector } from '../../../hooks/useMemoSelector';
@@ -25,7 +27,7 @@ export const UpsellButton = () => {
             {showUpgrade && (
                 <UpgradeButton
                     upsellRef={UpsellRef.NAVBAR_UPGRADE}
-                    iconName="upgrade"
+                    iconName={IcUpgrade}
                     iconSize={3.5}
                     iconGradient
                     gradient

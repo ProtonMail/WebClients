@@ -10,8 +10,7 @@ import {
     isValidElement,
 } from 'react';
 
-import Icon from '@proton/components/components/icon/Icon';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 import clsx from '@proton/utils/clsx';
 
 import type { MaybeArray } from '../../../../types';
@@ -23,7 +22,7 @@ export type FieldBoxProps = {
     actionsContainerClassName?: string;
     children?: ReactNode | undefined;
     className?: string;
-    icon?: IconName | ReactElement;
+    icon?: IconComponent | ReactElement;
     unstyled?: boolean;
     onClick?: MouseEventHandler;
     onMouseDown?: MouseEventHandler;
@@ -51,8 +50,13 @@ const stopOnClickPropagation = (nodes: MaybeArray<ReactElement>): MaybeArray<Rea
 
 const FieldBoxRender: ForwardRefRenderFunction<HTMLDivElement, FieldBoxProps> = (props, ref) => {
     const { className, actions, actionsContainerClassName, children, icon } = props;
-    const isCoreIcon = typeof icon == 'string';
-    const iconEl = isCoreIcon ? <Icon name={icon} size={4} /> : icon;
+    /* A function is the icon component; an element is already rendered. */
+    const isCoreIcon = typeof icon === 'function';
+    const iconEl = ((): ReactNode => {
+        if (typeof icon !== 'function') return icon;
+        const CoreIcon = icon;
+        return <CoreIcon size={4} />;
+    })();
 
     return (
         <div

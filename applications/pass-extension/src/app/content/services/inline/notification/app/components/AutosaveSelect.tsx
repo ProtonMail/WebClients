@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { IcUser } from '@proton/icons/icons/IcUser';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import type { AutosaveFormValues, AutosaveUpdatePayload } from '@proton/pass/types/worker/autosave';
 import { AutosaveMode } from '@proton/pass/types/worker/autosave';
@@ -41,7 +42,7 @@ export const AutosaveSelect: FC<Props> = ({ data, busy, form }) => {
                         title={candidate.name}
                         subTitle={candidate.userIdentifier}
                         onClick={() => onSelect(candidate)}
-                        icon={{ type: 'icon', icon: 'user', url: candidate.url }}
+                        icon={{ type: 'icon', icon: IcUser, url: candidate.url }}
                         action={
                             data?.candidates.length > 1 && (
                                 <ButtonLike

@@ -9,8 +9,8 @@ import type { Input } from '@proton/atoms/Input/Input';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useCombinedRefs from '@proton/hooks/useCombinedRefs';
+import type { IconComponent } from '@proton/icons/component';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
-import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import { useStatefulRef } from '../../../hooks/useStatefulRef';
@@ -30,7 +30,7 @@ type ListFieldProps<Values, FieldKey extends ListFieldKeys<Values>, T = ListFiel
     Omit<InputFieldProps<typeof Input>, 'onValue' | 'onBlur'> & {
         fieldKey: FieldKey;
         fieldRef?: Ref<HTMLInputElement>;
-        icon?: IconName;
+        icon?: IconComponent;
         label?: string;
         placeholder?: string;
         fieldValue: (entry: T) => ReactNode;

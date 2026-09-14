@@ -4,6 +4,8 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Marks from '@proton/components/components/text/Marks';
+import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
+import { IcUser } from '@proton/icons/icons/IcUser';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
@@ -119,7 +121,7 @@ export const AutofillLogin: FC<Props> = ({ startsWith, action, ...payload }) => 
                       state.needsUpgrade && (
                           <ListItem
                               key="upgrade-autofill"
-                              icon={{ type: 'icon', icon: 'arrow-within-square' }}
+                              icon={{ type: 'icon', icon: IcArrowWithinSquare }}
                               title={c('Info').t`Upgrade ${PASS_APP_NAME}`}
                               subTitle={c('Warning')
                                   .t`Your plan only allows you to autofill from your first two vaults`}
@@ -141,7 +143,7 @@ export const AutofillLogin: FC<Props> = ({ startsWith, action, ...payload }) => 
                                   subTitle={<Marks chunks={userChunks}>{userIdentifier}</Marks>}
                                   icon={{
                                       type: 'icon',
-                                      icon: 'user',
+                                      icon: IcUser,
                                       url: settings.loadDomainImages ? url : undefined,
                                   }}
                                   onClick={() => handleAutofill({ shareId, itemId })}

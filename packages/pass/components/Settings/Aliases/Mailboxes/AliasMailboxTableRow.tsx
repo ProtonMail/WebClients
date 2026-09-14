@@ -7,6 +7,7 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Badge from '@proton/components/components/badge/Badge';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
+import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -70,7 +71,7 @@ export const AliasMailboxTableRow: FC<Props> = ({ canDelete, mailbox }) => {
                     <TableCell className="pass-mailboxes-table--actions">
                         <div className="flex justify-end">
                             <QuickActionsDropdown
-                                icon="three-dots-horizontal"
+                                icon={IcThreeDotsHorizontal}
                                 color="weak"
                                 shape="solid"
                                 size="small"
