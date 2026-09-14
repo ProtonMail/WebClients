@@ -13,6 +13,7 @@ import {
 } from '../billing-address/billing-address';
 import { PLANS } from '../constants';
 import { isCountryWithRequiredPostalCode, isCountryWithStates } from '../countries';
+import { captureWrongPlanIDs } from '../helpers';
 import type {
     AmountAndCurrency,
     Currency,
@@ -276,6 +277,7 @@ export const createPaymentSubscription = async (
     const createSubscriptionQueryConfig = createSubscriptionQuery(data, product);
 
     reportWrongBillingAddress(data);
+    captureWrongPlanIDs(data.Plans, { source: 'subscribe', cycle: data.Cycle, currency: data.Currency });
 
     try {
         const createSubscriptionResponse = await api<{ Subscription: Subscription }>(createSubscriptionQueryConfig);

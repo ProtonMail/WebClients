@@ -1,10 +1,10 @@
 import { forceAddonsMinMaxConstraints } from '@proton/components/containers/payments/planCustomizer';
 import { getAddonLimit } from '@proton/payments/core/addon/addons';
 import { type ADDON_NAMES, ADDON_PREFIXES, CURRENCIES, PLANS } from '@proton/payments/core/constants';
-import { fixPlanName } from '@proton/payments/core/helpers';
 import type { Currency } from '@proton/payments/core/interface';
 import { getSupportedAddons, isAddonType } from '@proton/payments/core/plan/addons';
 import { getPlanMaxIPs } from '@proton/payments/core/plan/feature-limits';
+import { correctDeprecatedPlanName } from '@proton/payments/core/plan/helpers';
 import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getValidCycle } from '@proton/payments/core/subscription/helpers';
@@ -159,8 +159,8 @@ export const getSignupSearchParams = (
         currency,
         cycle: cycle || defaults?.cycle,
         minimumCycle,
-        preSelectedPlan: fixPlanName(maybePreSelectedPlan || defaults?.plan, 'GetSignupSearchParams'),
-        defaultPlan: fixPlanName(maybeDefaultPlan || defaults?.plan, 'GetSignupSearchParams'),
+        preSelectedPlan: correctDeprecatedPlanName(maybePreSelectedPlan || defaults?.plan),
+        defaultPlan: correctDeprecatedPlanName(maybeDefaultPlan || defaults?.plan),
         product,
         users,
         noPromo: noPromo !== null && noPromo !== 'false' && noPromo !== '0',
