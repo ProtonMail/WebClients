@@ -21,6 +21,7 @@ export enum EntitlementName {
     CustomOrganizationName = 'custom-organization-name',
     /** Determines whether the plan is eligible for the data retention policy. */
     DataRetentionPolicy = 'data-retention-policy',
+    ExternalInvitedMembers = 'external-invited-members',
     /** Indicates whether external managed members are supported for this plan. */
     ExternalManagedMembers = 'external-managed-members',
     FamilyMemberTrial = 'family-member-trial',
