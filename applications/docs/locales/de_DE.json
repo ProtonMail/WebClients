@@ -952,6 +952,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten.",
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten."
+      ],
+      "Add a payment method": [
+        "Zahlungsmethode hinzufügen"
+      ],
+      "Export this version (as odt) (Beta)": [
+        "Diese Version exportieren (als odt) (Beta)"
+      ],
+      "OpenDocument Text (.odt) (Beta)": [
+        "OpenDocument Text (.odt) (Beta)"
       ]
     },
     "Actions message": {
@@ -3765,6 +3774,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nicht entschlüsselbarer Name"
+      ],
+      "A contact with this email address already exists": [
+        "Ein Kontakt mit dieser E-Mail-Adresse besteht bereits"
       ]
     },
     "error": {
@@ -4089,6 +4101,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Dein Konto verwendet Speicher in Höhe von ${ usedSpace }, was den dir zugewiesenen Speicherplatz von ${ inviteSpace } übersteigt. Lösche einige Daten oder bitte den Abonnement-Administrator, deinen Speicher zu erhöhen."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit dieser Familiengruppe zu verknüpfen und alle Premium-Funktionen zu genießen."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4168,6 +4183,12 @@
       ],
       "Touch your security key.": [
         "Deinen Sicherheitsschlüssel berühren."
+      ],
+      "Still waiting?": [
+        "Wartest du immer noch?"
+      ],
+      "Touch your security key to continue.": [
+        "Berühre deinen Sicherheitsschlüssel, um fortzufahren."
       ]
     },
     "fido2: Label": {
@@ -6052,6 +6073,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kannst weiterhin deine eigenen Kontodaten ansehen, aber alle Benutzerkonten werden aus deiner Organisation entfernt."
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } verbleiben für deine Testversion. ${ addPaymentMethodLink }, um zu verhindern, dass du den Zugriff verlierst. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } verbleiben für deine Testversion. ${ addPaymentMethodLink }, um dein Abonnement fortzusetzen. ${ learnMoreLink }"
       ]
     },
     "info": {

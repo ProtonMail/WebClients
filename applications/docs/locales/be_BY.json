@@ -965,6 +965,15 @@
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам"
+      ],
+      "Add a payment method": [
+        "Дадаць спосаб аплаты"
+      ],
+      "Ask me next time": [
+        "Спытаць мяне наступны раз"
+      ],
+      "Save preferences": [
+        "Захаваць параметры"
       ]
     },
     "Actions message": {
@@ -1229,7 +1238,7 @@
         "Воблачны рэдактар дакументаў"
       ],
       "Password health alerts": [
-        "Папярэджанні якасці пароля"
+        "Абвесткі якасці пароля"
       ],
       "Recover previous file versions": [
         "Аднаўленне папярэдніх версій файла"
@@ -3826,6 +3835,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Назва не паддаецца расшыфроўцы"
+      ],
+      "A contact with this email address already exists": [
+        "Кантакт з гэтым адрасам электроннай пошты ўжо існуе"
       ]
     },
     "error": {
@@ -5281,7 +5293,7 @@
         "Урады і пастаўшчыкі паслуг інтэрнэту могуць сачыць за тым, якія сайты вы наведваеце. Ваш прагляд вэб-старонак у інтэрнэце становіцца прыватным дзякуючы хаванню вашага рэальнага IP-адраса і шыфраванню."
       ],
       "Have some more time to decide without interruption.": [
-        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення ў працы сэрвісу."
+        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення працы сэрвісу."
       ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Дапамажыце нам палепшыць гэты сэрвіс, паведаміўшы пра праблему. Далучыце прыведзеную ніжэй адладачную інфармацыю да вашага паведамлення, калі электронная табліца не змяшчае канфідэнцыяльных даных."
@@ -6182,6 +6194,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "Converting document...": [
+        "Пераўтварэнне дакумента..."
+      ],
+      "Creating new document...": [
+        "Стварэнне новага дакумента..."
+      ],
+      "Making a copy...": [
+        "Стварэнне копіі..."
       ]
     },
     "info": {
@@ -6719,6 +6740,9 @@
       ],
       "Your password (trusted contact)": [
         "Ваш пароль (давераны кантакт)"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Назва не паддаецца расшыфроўцы"
       ]
     },
     "Label for contact group color": {
@@ -8402,6 +8426,9 @@
       ],
       "Your settings have been changed successfully": [
         "Вашы налады былі паспяхова зменены"
+      ],
+      "Failed to submit report": [
+        "Не ўдалося адправіць справаздачу"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9916,6 +9943,9 @@
       ],
       "To edit this document, create a copy that you can modify.": [
         "Стварыце копію для рэдагавання гэтага дакумента."
+      ],
+      "Editor permissions": [
+        "Дазволы рэдактара"
       ]
     },
     "sso": {
@@ -10126,7 +10156,7 @@
         "Аўтаперасылка электроннай пошты ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
+        "Абвесткі ўцечкі даных ${ strongArgument }"
       ],
       "Desktop app": [
         "Праграма для камп'ютара"
