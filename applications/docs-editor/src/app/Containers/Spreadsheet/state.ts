@@ -27,8 +27,8 @@ import type {
 import { defaultSpreadsheetTheme, useSpreadsheet } from '@rowsncolumns/spreadsheet'
 import { useCharts } from '@rowsncolumns/charts'
 import { useYSpreadsheetV2 } from '@rowsncolumns/y-spreadsheet'
-import type { DocStateInterface } from '@proton/docs-shared'
-import { DocProvider } from '@proton/docs-shared'
+import { SheetsDocProvider } from './contract/SheetsDocProvider'
+import type { SheetsDocumentAdapter } from './contract/SheetsDocumentAdapter'
 import { create } from 'zustand'
 import { useEvent } from './components/utils'
 import { c } from 'ttag'
@@ -227,7 +227,7 @@ const useKeyValueState = create<KeyValueState>()((set) => ({
 type YjsStateDependencies = {
   localState: LocalState
   spreadsheetState: SpreadsheetState
-  docState: DocStateInterface
+  docState: SheetsDocumentAdapter
   // Fires (via the y-spreadsheet onAfterBroadcastPatch hook) inside the broadcast
   // transaction once local patches are applied to the doc; used to detect drift.
   onAfterBroadcastPatch?: (patches: unknown, doc: YDoc) => void
@@ -245,7 +245,7 @@ function useYjsState({
 }: YjsStateDependencies) {
   const { receivedEverythingFromRTS, userName } = useSheetsDependencies()
   const provider = useMemo(() => {
-    const provider = new DocProvider(docState)
+    const provider = new SheetsDocProvider(docState.awareness)
     // useYSpreadsheet checks for either a "synced" event from the provider
     // or for a true `synced` property before it starts listening to changes
     // to the doc

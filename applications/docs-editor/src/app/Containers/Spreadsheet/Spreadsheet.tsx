@@ -1,6 +1,5 @@
 import type {
   DataTypesThatDocumentCanBeExportedAs,
-  DocStateInterface,
   EditorInitializationConfig,
   SheetImportData,
 } from '@proton/docs-shared'
@@ -32,6 +31,7 @@ import type { SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-au
 import { useFeatureFlag } from './feature-flags'
 import { useSheetsDependencies } from './SheetsDependenciesProvider'
 import { getSheetNameFromFilename } from './sheet-import-name'
+import type { SheetsDocumentAdapter } from './contract/SheetsDocumentAdapter'
 
 export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
@@ -42,7 +42,7 @@ export type SpreadsheetRef = {
 }
 
 export type SpreadsheetProps = {
-  docState: DocStateInterface
+  docState: SheetsDocumentAdapter
   hidden: boolean
   onEditorLoadResult: (result: TranslatedResult<void>) => void
   editorInitializationConfig: EditorInitializationConfig | undefined

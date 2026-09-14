@@ -5,17 +5,17 @@ import { isDevOrBlack } from '@proton/shared/lib/env'
 import type { PropsWithChildren } from 'react'
 import { useMemo } from 'react'
 
-import { useSyncedState } from '../../../Hooks/useSyncedState'
-import { reportErrorToSentry } from '../../../Utils/errorMessage'
-import { useApplication } from '../../ApplicationProvider'
-import { useEditorTheme } from '../../../Theme/EditorThemeProvider'
+import { useSyncedState } from '../../Hooks/useSyncedState'
+import { reportErrorToSentry } from '../../Utils/errorMessage'
+import { useApplication } from '../ApplicationProvider'
+import { useEditorTheme } from '../../Theme/EditorThemeProvider'
 import {
   SheetsDependenciesProvider,
   type SheetsDependencies,
   type SheetsEditorToShellActions,
   type SheetsSession,
   type SheetsShellToEditorActions,
-} from '../SheetsDependenciesProvider'
+} from '../Spreadsheet/public'
 import { useResolvedAppPlatform } from './useResolvedAppPlatform'
 
 type SheetsAdapterProps = PropsWithChildren<{
@@ -23,8 +23,7 @@ type SheetsAdapterProps = PropsWithChildren<{
 }>
 
 /**
- * The glue layer that collects all the SheetsDependencies required by the sheets editor and
- * provides them to the standalone sheets editor.
+ * Docs host glue that collects SheetsDependencies and provides them to the sheets editor.
  */
 export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
   const { createNotification } = useNotifications()
