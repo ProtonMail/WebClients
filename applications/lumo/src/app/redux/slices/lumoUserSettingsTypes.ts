@@ -10,6 +10,8 @@ export interface IndexedDriveFolder {
     indexedAt: number;
     documentCount: number;
     isActive: boolean;
+    /** True while a folder walk is in flight, or after one was cancelled/failed part-way through. */
+    incomplete?: boolean;
     treeEventScopeId?: string;
 }
 
