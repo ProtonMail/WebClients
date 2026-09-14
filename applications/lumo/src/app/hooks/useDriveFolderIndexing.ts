@@ -1,7 +1,6 @@
 import { useCallback } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
-import { NodeType } from '@proton/drive';
 
 import { useDriveIndexing } from '../providers/DriveIndexingProvider';
 import {
@@ -14,18 +13,15 @@ import { removeIndexedContentForSpace } from '../services/removeIndexedContentFo
 import { SearchService } from '../services/search/searchService';
 import type { SpaceId } from '../types';
 import type { DriveDocument, FolderIndexingStatus } from '../types/documents';
+import { collectDriveFolderFiles, type DriveFileWithPath } from '../util/collectDriveFolderFiles';
 import { getMimeTypeFromExtension, isFileTypeSupported } from '../util/filetypes';
-import { type DriveNode, useDriveSDK } from './useDriveSDK';
+import { useDriveSDK } from './useDriveSDK';
 import { useFileProcessing } from './useFileProcessing';
 import { useLumoUserSettings } from './useLumoUserSettings';
 import { useLumoStore } from '../redux/hooks';
 
 interface IndexFolderOptions {
     spaceId?: string;
-}
-
-interface FileWithPath extends DriveNode {
-    relativePath: string;
 }
 
 const PARALLEL_DOWNLOAD_LIMIT = 5;
@@ -62,7 +58,13 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
     const store = useLumoStore();
     const { browseFolderChildren, downloadFile } = useDriveSDK();
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
-    const { setIndexingFile, setIndexingProgress, resetIndexingStatus, eventIndexingStatus } = useDriveIndexing();
+    const {
+        setIndexingFile,
+        setIndexingProgress,
+        resetIndexingStatus,
+        eventIndexingStatus,
+        bumpDriveIndexRevision,
+    } = useDriveIndexing();
     const fileProcessingService = useFileProcessing();
 
     // Derive indexingStatus from the shared context eventIndexingStatus
@@ -123,36 +125,6 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
         [resetIndexingStatus, user?.ID]
     );
 
-    // Recursively collect all files from a folder and its subfolders
-    const collectAllFiles = useCallback(
-        async (folderUid: string, basePath: string): Promise<FileWithPath[]> => {
-            const allFiles: FileWithPath[] = [];
-
-            try {
-                const children = await browseFolderChildren(folderUid);
-
-                for (const child of children) {
-                    if (child.type === NodeType.File) {
-                        allFiles.push({
-                            ...child,
-                            relativePath: basePath ? `${basePath}/${child.name}` : child.name,
-                        });
-                    } else if (child.type === NodeType.Folder) {
-                        // Recursively get files from subfolder
-                        const subfolderPath = basePath ? `${basePath}/${child.name}` : child.name;
-                        const subfolderFiles = await collectAllFiles(child.nodeUid, subfolderPath);
-                        allFiles.push(...subfolderFiles);
-                    }
-                }
-            } catch (error) {
-                console.error(`[DriveIndexing] Failed to collect files from folder ${folderUid}:`, error);
-            }
-
-            return allFiles;
-        },
-        [browseFolderChildren]
-    );
-
     const indexFolder = useCallback(
         async (
             folderUid: string,
@@ -171,35 +143,56 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
             }
 
             const { spaceId } = options || {};
+            const searchService = SearchService.get(user.ID);
 
             clearFolderIndexingCancellation(folderUid);
-            setIndexingFile(folderName); // Signal to context that indexing started
+            setIndexingFile(folderName);
             setIndexingProgress(0, 0, 'Preparing...');
 
-            try {
-                // Recursively collect all files from the folder and its subfolders
-                console.log('[DriveIndexing] Collecting files recursively from folder:', folderName);
-                const allFiles = await collectAllFiles(folderUid, '');
+            const persistFolderMetadata = (
+                documentCount: number,
+                treeEventScopeId?: string,
+                {
+                    incomplete = false,
+                    indexedAt = Date.now(),
+                }: { incomplete?: boolean; indexedAt?: number } = {}
+            ): void => {
+                const latestFolders = store.getState().lumoUserSettings.indexedDriveFolders || [];
+                const existing = latestFolders.find((f) => f.nodeUid === folderUid);
 
-                // Get treeEventScopeId from folder children or first indexed file
-                let treeEventScopeId: string | undefined;
-                try {
-                    const topLevelChildren = await browseFolderChildren(folderUid);
-                    treeEventScopeId = topLevelChildren.find((child) => child.treeEventScopeId)?.treeEventScopeId;
-                } catch (error) {
-                    console.warn('[DriveIndexing] Failed to read treeEventScopeId from folder children:', error);
-                }
-                if (!treeEventScopeId) {
-                    const firstFile = allFiles[0];
-                    if (firstFile?.treeEventScopeId) {
-                        treeEventScopeId = firstFile.treeEventScopeId;
-                    }
-                }
+                const indexedFolder: IndexedDriveFolder = {
+                    id: folderUid,
+                    nodeUid: folderUid,
+                    name: folderName,
+                    path: folderPath,
+                    spaceId,
+                    indexedAt,
+                    documentCount,
+                    isActive: true,
+                    incomplete,
+                    treeEventScopeId: treeEventScopeId || existing?.treeEventScopeId,
+                };
+
+                const updatedFolders = latestFolders.filter((f) => f.nodeUid !== folderUid);
+                updatedFolders.push(indexedFolder);
+
+                updateSettings({
+                    indexedDriveFolders: updatedFolders,
+                    _autoSave: true,
+                });
+            };
+
+            try {
+                console.log('[DriveIndexing] Collecting files recursively from folder:', folderName);
+                const { files: allFiles, treeEventScopeId } = await collectDriveFolderFiles(
+                    folderUid,
+                    browseFolderChildren
+                );
+
                 if (treeEventScopeId) {
                     console.log('[DriveIndexing] Captured treeEventScopeId:', treeEventScopeId);
                 }
 
-                // Filter to only indexable files (exclude images, unsupported formats, etc.)
                 const indexableFiles = allFiles.filter((file) => {
                     const mimeType = file.mediaType || getMimeTypeFromExtension(file.name);
                     return isFileTypeSupported(file.name, mimeType);
@@ -224,13 +217,26 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                     );
                 }
 
+                // Register the folder immediately so subscriptions and UI can react while indexing
+                // runs. Re-indexing keeps the previous counts so a run that never finishes doesn't
+                // leave the folder looking freshly indexed with zero documents.
+                const previousFolder = (store.getState().lumoUserSettings.indexedDriveFolders || []).find(
+                    (f) => f.nodeUid === folderUid
+                );
+                const previousDocumentCount = previousFolder?.documentCount || 0;
+
+                persistFolderMetadata(previousDocumentCount, treeEventScopeId, {
+                    incomplete: true,
+                    indexedAt: previousFolder?.indexedAt,
+                });
+                bumpDriveIndexRevision();
+
                 setIndexingProgress(0, filesToProcess.length);
 
-                const documents: DriveDocument[] = [];
+                let indexedFilesCount = 0;
                 let processedCount = 0;
 
-                // Process files in parallel batches
-                const processFile = async (file: FileWithPath): Promise<DriveDocument | null> => {
+                const processFile = async (file: DriveFileWithPath): Promise<DriveDocument | null> => {
                     try {
                         console.log(`[DriveIndexing] Downloading: ${file.relativePath}`);
                         const fileContent = await downloadFile(file.nodeUid);
@@ -269,14 +275,21 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                     }
                 };
 
-                // Process in batches of PARALLEL_DOWNLOAD_LIMIT
                 for (let i = 0; i < filesToProcess.length; i += PARALLEL_DOWNLOAD_LIMIT) {
                     if (isFolderIndexingCancelled(folderUid)) {
                         console.log('[DriveIndexing] Indexing cancelled for folder:', folderName);
+                        // Previously indexed documents are still in the search index, so keep the
+                        // higher count and flag the folder so it can be resumed later.
+                        persistFolderMetadata(
+                            Math.max(indexedFilesCount, previousDocumentCount),
+                            treeEventScopeId,
+                            { incomplete: true }
+                        );
+                        bumpDriveIndexRevision();
                         return {
                             success: false,
                             totalFiles: totalIndexableFiles,
-                            indexedFiles: 0,
+                            indexedFiles: indexedFilesCount,
                             skippedFiles,
                             limitExceeded,
                         };
@@ -289,90 +302,55 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
 
                     console.log(`[DriveIndexing] Processing batch ${batchNum}/${totalBatches} (${batch.length} files)`);
 
-                    // Show progress as "processing files X to Y"
                     setIndexingProgress(
-                        i,
+                        processedCount,
                         filesToProcess.length,
                         `Downloading files ${i + 1}-${batchEndIndex} of ${filesToProcess.length}`
                     );
 
-                    // Yield to allow UI to update
                     await new Promise((resolve) => setTimeout(resolve, 0));
 
-                    // Download and process batch in parallel
                     const batchResults = await Promise.all(batch.map(processFile));
+                    const batchDocuments = batchResults.filter(
+                        (doc): doc is DriveDocument => doc !== null && !!doc.content && doc.content.length > 0
+                    );
 
-                    // Collect successful results
-                    for (const doc of batchResults) {
-                        if (doc) {
-                            documents.push(doc);
+                    if (batchDocuments.length > 0) {
+                        const result = await searchService.indexDocuments(batchDocuments);
+                        if (!result.success) {
+                            throw new Error(result.error || 'Indexing failed');
                         }
-                        processedCount++;
+                        indexedFilesCount += batchDocuments.length;
+                        persistFolderMetadata(
+                            Math.max(indexedFilesCount, previousDocumentCount),
+                            treeEventScopeId,
+                            { incomplete: true }
+                        );
+                        bumpDriveIndexRevision();
                     }
+
+                    processedCount += batch.length;
 
                     setIndexingProgress(
                         processedCount,
                         filesToProcess.length,
-                        `Processed ${processedCount}/${filesToProcess.length} files`
+                        `Indexed ${indexedFilesCount}/${filesToProcess.length} files`
                     );
                 }
 
-                const documentsWithContent = documents.filter((d) => d.content && d.content.length > 0);
-                if (documentsWithContent.length > 0) {
-                    const searchService = SearchService.get(user.ID);
-                    const result = await searchService.indexDocuments(documentsWithContent);
-                    if (!result.success) {
-                        throw new Error(result.error || 'Indexing failed');
-                    }
-                }
+                persistFolderMetadata(indexedFilesCount, treeEventScopeId);
 
-                if (isFolderIndexingCancelled(folderUid)) {
-                    console.log('[DriveIndexing] Indexing cancelled before persisting folder metadata:', folderName);
-                    if (documentsWithContent.length > 0 && user.ID) {
-                        SearchService.get(user.ID).removeDocumentsByFolder(folderUid);
-                    }
-                    return {
-                        success: false,
-                        totalFiles: totalIndexableFiles,
-                        indexedFiles: 0,
-                        skippedFiles,
-                        limitExceeded,
-                    };
-                }
-
-                const indexedFolder: IndexedDriveFolder = {
-                    id: folderUid,
-                    nodeUid: folderUid,
-                    name: folderName,
-                    path: folderPath,
-                    spaceId,
-                    indexedAt: Date.now(),
-                    documentCount: documentsWithContent.length,
-                    isActive: true,
-                    treeEventScopeId,
-                };
-
-                const latestFolders = store.getState().lumoUserSettings.indexedDriveFolders || [];
-                const updatedFolders = latestFolders.filter((f) => f.nodeUid !== folderUid);
-                updatedFolders.push(indexedFolder);
-
-                updateSettings({
-                    indexedDriveFolders: updatedFolders,
-                    _autoSave: true,
-                });
-
-                console.log('[DriveIndexing] Indexing complete:', documentsWithContent.length, 'documents indexed');
+                console.log('[DriveIndexing] Indexing complete:', indexedFilesCount, 'documents indexed');
 
                 return {
                     success: true,
                     totalFiles: totalIndexableFiles,
-                    indexedFiles: documentsWithContent.length,
+                    indexedFiles: indexedFilesCount,
                     skippedFiles,
                     limitExceeded,
                 };
             } catch (error) {
                 const message = error instanceof Error ? error.message : String(error);
-                // If folder is missing/forbidden, clean it up
                 if (message.toLowerCase().includes('not found') || message.toLowerCase().includes('404')) {
                     await removeIndexedFolder(folderUid);
                 }
@@ -387,20 +365,21 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                 };
             } finally {
                 clearFolderIndexingCancellation(folderUid);
-                // Always reset the indexing status to idle state
                 resetIndexingStatus();
             }
         },
         [
             user?.ID,
-            collectAllFiles,
+            browseFolderChildren,
             downloadFile,
+            fileProcessingService,
             store,
             updateSettings,
             removeIndexedFolder,
             setIndexingFile,
             setIndexingProgress,
             resetIndexingStatus,
+            bumpDriveIndexRevision,
         ]
     );
 
@@ -408,7 +387,6 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
         async (validSpaceIds?: Set<SpaceId>): Promise<number> => {
             let folders = (lumoUserSettings.indexedDriveFolders || []).filter((f) => f.isActive !== false);
 
-            // If validSpaceIds is provided, filter out folders linked to deleted spaces
             if (validSpaceIds) {
                 const before = folders.length;
                 folders = folders.filter((f) => !f.spaceId || validSpaceIds.has(f.spaceId as SpaceId));
@@ -448,9 +426,6 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
         },
         [lumoUserSettings.indexedDriveFolders, indexFolder]
     );
-
-    // Note: Drive event subscription is handled by DriveIndexingProvider at the app level
-    // to ensure events are received even when this hook is not mounted
 
     return {
         indexedFolders,
