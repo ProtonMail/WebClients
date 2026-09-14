@@ -38,7 +38,7 @@
         "@proton/styles": "workspace:^",
         "@proton/utils": "workspace:^",
         "@protontech/crypto": "*",
-        "browserslist": "^4.28.8",
+        "browserslist": "^4.28.9",
         "electron-log": "^5.4.4",
         "electron-store": "^8.2.0",
         "history": "^4.10.1",
@@ -75,16 +75,16 @@
         "cross-env": "^10.1.0",
         "electron": "39.8.10",
         "electron-builder": "26.15.3",
-        "eslint": "^10.9.0",
+        "eslint": "^10.10.0",
         "fs-extra": "^11.4.0",
-        "jest": "^30.4.2",
+        "jest": "^30.5.1",
         "mini-css-extract-plugin": "^2.10.2",
         "node-loader": "^2.1.0",
         "prettier": "^3.9.6",
         "ts-loader": "^9.6.2",
         "ts-node": "^10.9.2",
         "typescript": "npm:@typescript/typescript6@^6.0.2",
-        "webpack": "^5.109.2"
+        "webpack": "^5.110.3"
     },
     "productName": "Proton Pass"
 }

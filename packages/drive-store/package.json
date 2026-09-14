@@ -45,7 +45,7 @@
         "comlink": "^4.4.2",
         "core-js": "^3.50.0",
         "date-fns": "^2.30.0",
-        "exifreader": "^4.44.0",
+        "exifreader": "^4.45.0",
         "heic-to": "^1.5.2",
         "idb-keyval": "^6.3.0",
         "mime-types": "^2.1.35",
@@ -73,15 +73,15 @@
         "@types/react-dom": "^18.3.7",
         "@types/react-router-dom": "^5.3.3",
         "cross-env": "^10.1.0",
-        "eslint": "^10.9.0",
-        "jest": "^30.4.2",
+        "eslint": "^10.10.0",
+        "jest": "^30.5.1",
         "jest-junit": "^16.0.0",
         "jest-when": "3.7.0",
         "path-browserify": "^1.0.1",
         "prettier": "^3.9.6",
-        "pretty-format": "^30.4.1",
+        "pretty-format": "^30.5.1",
         "typescript": "^6.0.3",
-        "webpack": "^5.109.2"
+        "webpack": "^5.110.3"
     },
     "peerDependencies": {
         "@openpgp/web-stream-tools": "^0.3.1"
