@@ -1,9 +1,15 @@
 import type { Saga } from 'redux-saga';
 import { runSaga, stdChannel } from 'redux-saga';
 
-import type { Credentials, MasterKeyState } from '../../types';
+import type { Credentials, MasterKeyState, MasterKeysBundle } from '../../types';
 import { addMasterKey, masterKeyFailed } from '../slices/core/credentials';
 import { waitForMasterKey } from './masterKey';
+
+const TEST_BUNDLE: MasterKeysBundle = {
+    primaryMasterKeyId: 'test',
+    primaryMasterKey: 'KEY',
+    masterKeys: { test: 'KEY' },
+};
 
 /**
  * Drives `waitForMasterKey` against a real saga runtime rather than asserting on yielded effects,
@@ -18,9 +24,15 @@ const run = (initial: MasterKeyState) => {
         {
             channel,
             dispatch: (action: any) => {
-                // Mirror the reducer closely enough for the re-read after the race to see the key.
                 if (addMasterKey.match(action)) {
-                    credentials = { masterKeyState: { status: 'ready', masterKey: action.payload } };
+                    credentials = {
+                        masterKeyState: {
+                            status: 'ready',
+                            primaryMasterKeyId: action.payload.primaryMasterKeyId,
+                            primaryMasterKey: action.payload.primaryMasterKey,
+                            masterKeys: action.payload.masterKeys,
+                        },
+                    };
                 }
                 if (masterKeyFailed.match(action)) {
                     credentials = { masterKeyState: { status: 'failed', message: action.payload } };
@@ -29,7 +41,6 @@ const run = (initial: MasterKeyState) => {
                 return action;
             },
             getState: () => ({ credentials }) as any,
-            // The rejection cases are expected; keep redux-saga's own logger out of the output.
             onError: () => {},
         },
         waitForMasterKey as Saga,
@@ -47,7 +58,12 @@ const run = (initial: MasterKeyState) => {
 
 describe('waitForMasterKey', () => {
     it('returns immediately when the key is already there', async () => {
-        const { task } = run({ status: 'ready', masterKey: 'KEY' });
+        const { task } = run({
+            status: 'ready',
+            primaryMasterKeyId: 'test',
+            primaryMasterKey: 'KEY',
+            masterKeys: { test: 'KEY' },
+        });
         await expect(task.toPromise()).resolves.toBe('KEY');
     });
 
@@ -61,8 +77,13 @@ describe('waitForMasterKey', () => {
         await Promise.resolve();
         expect(settled).toBe(false);
 
-        setState({ status: 'ready', masterKey: 'KEY' });
-        dispatch(addMasterKey('KEY'));
+        setState({
+            status: 'ready',
+            primaryMasterKeyId: 'test',
+            primaryMasterKey: 'KEY',
+            masterKeys: { test: 'KEY' },
+        });
+        dispatch(addMasterKey(TEST_BUNDLE));
 
         await expect(task.toPromise()).resolves.toBe('KEY');
     });
@@ -79,8 +100,15 @@ describe('waitForMasterKey', () => {
 
         const tasks = [1, 2, 3].map((i) => runSaga(options, waitForMasterKey as Saga, `task-${i}`));
 
-        credentials = { masterKeyState: { status: 'ready', masterKey: 'KEY' } };
-        channel.put(addMasterKey('KEY'));
+        credentials = {
+            masterKeyState: {
+                status: 'ready',
+                primaryMasterKeyId: 'test',
+                primaryMasterKey: 'KEY',
+                masterKeys: { test: 'KEY' },
+            },
+        };
+        channel.put(addMasterKey(TEST_BUNDLE));
 
         await expect(Promise.all(tasks.map((t) => t.toPromise()))).resolves.toEqual(['KEY', 'KEY', 'KEY']);
     });

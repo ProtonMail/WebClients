@@ -9,7 +9,7 @@ import type { ConversationDateGroupKey } from '../layouts/sidepanel/helpers';
 import { getConversationDateGroupKey } from '../layouts/sidepanel/helpers';
 import { isGeneratedImageAttachment } from '../lib/imageAttachment';
 import type { LocalId, RemoteId, ResourceType } from '../remote/types';
-import type { Attachment, AttachmentId, Base64, Conversation, Message, Space } from '../types';
+import type { Attachment, AttachmentId, Base64, Conversation, MasterKeysBundle, Message, Space } from '../types';
 import { type ConversationId, type MessageId, Role, type SpaceId } from '../types';
 import { listify, mapIds, setify } from '../util/collections';
 import { sortByDate } from '../util/date';
@@ -57,8 +57,22 @@ export const selectMasterKeyState = (state: RootState) => state.credentials.mast
  */
 export const selectMasterKey = (state: RootState): Base64 | undefined => {
     const masterKeyState = state.credentials.masterKeyState;
-    return masterKeyState.status === 'ready' ? masterKeyState.masterKey : undefined;
+    return masterKeyState.status === 'ready' ? masterKeyState.primaryMasterKey : undefined;
 };
+
+export const selectMasterKeysBundle = createSelector(
+    [selectMasterKeyState],
+    (masterKeyState): MasterKeysBundle | undefined => {
+        if (masterKeyState.status !== 'ready') {
+            return undefined;
+        }
+        return {
+            primaryMasterKeyId: masterKeyState.primaryMasterKeyId,
+            primaryMasterKey: masterKeyState.primaryMasterKey,
+            masterKeys: masterKeyState.masterKeys,
+        };
+    }
+);
 export const selectConversations = (state: RootState) => state.conversations;
 export const selectAttachments = (state: RootState) => state.attachments;
 
