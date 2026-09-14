@@ -54,4 +54,21 @@ export default defineConfig([
       'class-methods-use-this': 'off',
     },
   },
+  {
+    files: ['src/app/Containers/Spreadsheet/**/*.{ts,tsx}'],
+    rules: {
+      '@typescript-eslint/no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['@proton/icons', '@proton/icons/**', '@proton/components/components/icon/Icon'],
+              message:
+                'Use icons from Spreadsheet/components/icons. This is to facilitate standalone Sheets editor that is not dependant on @proton/icons.',
+            },
+          ],
+        },
+      ],
+    },
+  },
 ])

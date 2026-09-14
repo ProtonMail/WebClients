@@ -1,3 +1,4 @@
+import * as Icons from '../icons'
 import * as Ariakit from '@ariakit/react'
 import { c } from 'ttag'
 import { useUI } from '../../ui-store'
@@ -30,7 +31,7 @@ export function SheetSearch() {
       className="absolute right-4 top-4 flex w-[400px] items-center gap-2 rounded-b-[8px] border border-[#D1CFCD] bg-[white] px-2.5 py-2.5 shadow-[0px_12px_24px_-4px_rgba(0,0,0,0.16)] outline-none"
     >
       <label className="flex h-[34px] min-w-0 grow cursor-text items-center gap-1.5 rounded-[8px] border border-[#D1CFCD] pl-3 pr-4 transition focus-within:border-[#6D4AFF] focus-within:ring-[3px] focus-within:ring-[#6D4AFF]/20">
-        <Icon legacyName="magnifier" />
+        <Icon data={Icons.magnifier} />
         <input
           className="grow truncate text-[14px] !outline-none"
           placeholder={c('sheets_2025:Spreadsheet editor').t`Find in sheet`}
@@ -60,7 +61,7 @@ export function SheetSearch() {
           disabled={navigationDisabled}
           aria-label={s('Go to previous')}
         >
-          <Icon legacyName="chevron-up" />
+          <Icon data={Icons.chevronUp} />
         </button>
 
         <button
@@ -69,13 +70,13 @@ export function SheetSearch() {
           disabled={navigationDisabled}
           aria-label={s('Go to next')}
         >
-          <Icon legacyName="chevron-down" />
+          <Icon data={Icons.chevronDown} />
         </button>
 
         <div className="mx-2 h-[28px] w-px shrink-0 bg-[#D1CFCD]" />
 
         <button className="flex size-[36px] items-center justify-center" onClick={handleReset} aria-label={s('Close')}>
-          <Icon legacyName="cross" />
+          <Icon data={Icons.cross} />
         </button>
       </div>
     </Ariakit.Dialog>

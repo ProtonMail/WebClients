@@ -159,12 +159,12 @@ function Chart() {
 // function ImageSubmenu() {
 //   return (
 //     <Ariakit.MenuProvider>
-//       <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="image" />} disabled={useUI((ui) => ui.info.isReadonly)}>
+//       <UI.SubMenuButton leadingIconSlot={<UI.Icon data={image} />} disabled={useUI((ui) => ui.info.isReadonly)}>
 //         {s('Image')}
 //       </UI.SubMenuButton>
 //       <UI.SubMenu>
 //         {/* TODO: waiting for design */}
-//         <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="clock" />}>Coming soon...</UI.MenuItem>
+//         <UI.MenuItem leadingIconSlot={<UI.Icon data={clock} />}>Coming soon...</UI.MenuItem>
 //       </UI.SubMenu>
 //     </Ariakit.MenuProvider>
 //   )
@@ -183,7 +183,7 @@ function FunctionSubmenu() {
 function Link() {
   return (
     <UI.MenuItem
-      leadingIconSlot={<UI.Icon legacyName="link" />}
+      leadingIconSlot={<UI.Icon data={Icons.link} />}
       onClick={useUI.$.insert.link}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
@@ -207,7 +207,7 @@ function Dropdown() {
 function Checkbox() {
   return (
     <UI.MenuItem
-      leadingIconSlot={<UI.Icon legacyName="checkmark-circle" />}
+      leadingIconSlot={<UI.Icon data={Icons.checkmarkCircle} />}
       onClick={useUI.$.withFocusGrid(useUI.$.insert.checkbox)}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
@@ -220,7 +220,7 @@ function Note() {
   return (
     // TODO: icon needs to be note-with-text but we don't have it yet
     <UI.MenuItem
-      leadingIconSlot={<UI.Icon legacyName="note" />}
+      leadingIconSlot={<UI.Icon data={Icons.note} />}
       onClick={useUI.$.insert.note}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >

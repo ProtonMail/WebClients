@@ -145,7 +145,7 @@ function FilterBoxContent({
             </FilterBoxButton>
 
             <FilterBoxButton
-              leadingIconSlot={<UI.Icon legacyName="trash" />}
+              leadingIconSlot={<UI.Icon data={Icons.trash} />}
               onClick={() => {
                 onDeleteTableColumn?.(filter, dimensionIndex)
               }}
@@ -157,7 +157,7 @@ function FilterBoxContent({
         ) : null}
 
         <FilterBoxButton
-          leadingIconSlot={<UI.Icon legacyName="sort-alphabetically" />}
+          leadingIconSlot={<UI.Icon data={Icons.sortAlphabetically} />}
           onClick={() => {
             onSort?.(sheetId, filter, dimensionIndex, 'ASCENDING')
           }}

@@ -1,3 +1,4 @@
+import * as Icons from '../icons'
 import * as Ariakit from '@ariakit/react'
 import { clsx } from 'clsx'
 import { type ComponentProps, useMemo } from 'react'
@@ -49,7 +50,7 @@ export const Select = createComponent(function ({ children, ...props }: Ariakit.
     >
       {children ?? <SelectFallbackLabel />}
       <span className="pointer-events-none ml-auto flex shrink-0 items-center pr-2">
-        <Icon className="shrink-0" legacyName="chevron-down-filled" />
+        <Icon className="shrink-0" data={Icons.chevronDownFilled} />
       </span>
     </Ariakit.Select>
   )
