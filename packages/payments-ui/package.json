@@ -34,24 +34,20 @@
         "date-fns": "^2.30.0",
         "lodash": "^4.18.1",
         "react": "^18.3.1",
+        "react-dom": "^18.3.1",
         "react-redux": "^9.3.0",
-        "ttag": "^1.8.12",
-        "vat-validation": "^3.0.0"
+        "ttag": "^1.8.12"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-env": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
         "@proton/testing": "workspace:^",
-        "@swc/jest": "^0.2.39",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
         "@testing-library/react-hooks": "^8.0.1",
         "eslint": "^10.10.0",
         "jest": "^30.5.1",
-        "jest-environment-jsdom": "^30.5.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
         "typescript": "^6.0.3"
     }
 }

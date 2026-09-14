@@ -93,7 +93,7 @@ type CheckoutLineItems = {
  * Minimal coupon config - only the `hidden` flag is used by the headless
  * checkout. Avoids a dependency on @proton/components' full CouponConfig.
  */
-export interface HeadlessCheckoutCouponConfig {
+interface HeadlessCheckoutCouponConfig {
     /**
      * When true, the coupon discount is hidden from display and the total
      * billing amount uses withDiscountPerCycle instead of checkResult.Amount.
