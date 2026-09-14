@@ -25,8 +25,8 @@ import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { loadInitialBillingAddress } from '@proton/payments-ui/ui/helpers/load-initial-billing-address';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { CURRENCIES, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
-import { fixPlanName } from '@proton/payments/core/helpers';
 import type { Currency, PaymentStatus } from '@proton/payments/core/interface';
+import { correctDeprecatedPlanName } from '@proton/payments/core/plan/helpers';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
     getAvailableSubscriptionActions,
@@ -195,7 +195,7 @@ const SubscribeAccount = ({
     const parsedCurrency =
         currencyParam && CURRENCIES.includes(currencyParam as any) ? (currencyParam as Currency) : undefined;
 
-    const maybePlanName = fixPlanName(searchParams.get('plan'), 'LiteApp') || '';
+    const maybePlanName = correctDeprecatedPlanName(searchParams.get('plan')) || '';
     const plan =
         maybeType === 'upgrade'
             ? getUpgradedPlan(subscription, app)
