@@ -24,7 +24,7 @@ windows = { version = "=0.54.0", features = [
   "Win32_Security_Credentials",
   "Win32_System_WinRT",
 ] }
-robius-authentication = "0.1"
+robius-authentication = "0.3"
 native_messaging = { version = "0.2", features = ["windows-registry"] }
 
 [target.'cfg(target_os = "macos")'.dependencies]
@@ -32,4 +32,4 @@ core-foundation = "=0.9.4"
 security-framework = "=2.9.2"
 security-framework-sys = "=2.9.1"
 objc2-local-authentication = { version = "0.3", features = ["block2"] }
-robius-authentication = "0.1"
+robius-authentication = "0.3"

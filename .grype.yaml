@@ -159,3 +159,21 @@ ignore:
       name: maplibre-gl
       type: npm
       version: 4.7.1
+
+  ## Rust
+
+  ## glib@0.18.5 (via tauri 2.11 -> gtk-rs 0.18 stack in applications/authenticator)
+  # Accepted risk: patched only in glib >=0.20.0. glib reaches the lockfile through the GTK3
+  # bindings that Tauri needs on Linux (gtk, gdk, gio, pango, cairo-rs, webkit2gtk, soup3),
+  # pulled by tauri-runtime-wry, muda and libappindicator. The gtk crate's latest release is
+  # 0.19.0, which still builds on glib 0.19, so no GTK3 binding exists on a patched glib and
+  # `cargo update -p glib` resolves no newer version.
+  - vulnerability: GHSA-wrw7-89jp-8q8g
+    reason: >-
+      Accepted: Linux GTK3 dependency chain pulled in by Tauri; the flaw is unsoundness in the
+      glib::VariantStrIter iterator impls, which the app never constructs. Patched only in glib
+      >=0.20.0, for which no GTK3 binding crate exists; tracked against a future Tauri/GTK4 move.
+    package:
+      name: glib
+      type: rust-crate
+      version: 0.18.5
