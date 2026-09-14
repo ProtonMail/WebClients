@@ -370,7 +370,7 @@
         "packages/payments-ui": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "ignore": ["./examples/utils.ts"]
         },
         "packages/polyfill": {
             "entry": [],
