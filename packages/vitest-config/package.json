@@ -1,0 +1,22 @@
+{
+    "name": "@proton/vitest-config",
+    "description": "Shared vitest configuration for workspace packages",
+    "type": "module",
+    "exports": {
+        "./shared": "./src/shared.ts"
+    },
+    "scripts": {
+        "check-types": "tsc",
+        "lint": "eslint --quiet",
+        "lint:fix": "yarn run lint --fix"
+    },
+    "devDependencies": {
+        "@proton/eslint-config-proton": "workspace:^",
+        "eslint": "^10.9.0",
+        "typescript": "^6.0.3",
+        "vitest": "^4.1.11"
+    },
+    "peerDependencies": {
+        "vitest": "^4.1.11"
+    }
+}
