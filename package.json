@@ -46,6 +46,7 @@
         "cross-spawn@npm:^6.0.5": "7.0.6",
         "electron-windows-msix": "Swiip/electron-windows-msix#f1c1f4f46439c7d94569afdedd9561d09d4a1c54",
         "electron-winstaller": "^5.4.4",
+        "electron/extract-zip": "npm:2.0.1",
         "extract-zip@npm:^2.0.0": "npm:@electron-internal/extract-zip@1.0.5",
         "extract-zip@npm:^2.0.1": "npm:@electron-internal/extract-zip@1.0.5",
         "fast-uri@npm:^2.0.0": "2.4.6",
@@ -89,6 +90,7 @@
         "picomatch@npm:^2.2.1": "2.3.2",
         "picomatch@npm:^2.2.2": "2.3.2",
         "picomatch@npm:^2.3.1": "2.3.2",
+        "plist": "^3.1.1",
         "protobufjs@npm:^7.2.4": "7.6.5",
         "protocol-buffers-schema@npm:^3.3.1": "3.6.1",
         "qs@npm:6.15.3": "6.16.0",
@@ -121,8 +123,7 @@
         "ws@npm:^5.2.0": "5.2.7",
         "ws@npm:^7.4.6": "7.5.13",
         "xlsx@npm:0.18.5": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
-        "xlsx@npm:^0.18.5": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
-        "plist": "^3.1.1"
+        "xlsx@npm:^0.18.5": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
     },
     "dependencies": {
         "@proton/eslint-config-proton": "workspace:^",
