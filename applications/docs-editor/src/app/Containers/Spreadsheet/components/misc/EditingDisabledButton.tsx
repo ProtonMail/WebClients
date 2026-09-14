@@ -1,3 +1,4 @@
+import * as Icons from '../icons'
 import { c } from 'ttag'
 import { createStringifier } from '../../stringifier'
 import { Icon } from '../ui'
@@ -27,7 +28,7 @@ export function EditingDisabledButton() {
       }}
       className="flex h-8 items-center justify-center gap-1.5 rounded-lg bg-[#EAE7E4] pl-3 pr-4 text-sm text-[#5C5958]"
     >
-      <Icon legacyName="pencil" />
+      <Icon data={Icons.pencil} />
       Edit
     </button>
   )

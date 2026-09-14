@@ -1,3 +1,4 @@
+import * as Icons from '../icons'
 import { type ComponentPropsWithRef, createContext, forwardRef, useContext } from 'react'
 import * as Ariakit from '@ariakit/react'
 import { Icon } from '../ui'
@@ -52,7 +53,7 @@ export const NativeSelect = forwardRef<HTMLSelectElement, ComponentPropsWithRef<
     <div className="border-weak relative isolate h-[36px] rounded-lg border">
       <select className="absolute inset-0 appearance-none px-3 text-[13px]" {...props} ref={ref} />
       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
-        <Icon className="shrink-0" legacyName="chevron-down-filled" />
+        <Icon className="shrink-0" data={Icons.chevronDownFilled} />
       </div>
     </div>
   )
@@ -87,7 +88,7 @@ export function FormCheckmarkIcon() {
       )}
     >
       <span className="mt-[-2px] hidden group-has-[[aria-checked='true']]:block aria-checked:block group-aria-checked:block">
-        <Icon legacyName="checkmark" stroke="white" />
+        <Icon data={Icons.checkmark} stroke="white" />
       </span>
     </span>
   )
@@ -169,7 +170,7 @@ export const Select = createComponent(function Select({ children, ...props }: Ar
     >
       {children ?? <SelectFallbackLabel />}
       <span className="pointer-events-none ml-auto flex shrink-0 items-center pr-2">
-        <Icon className="shrink-0" legacyName="chevron-down-filled" />
+        <Icon className="shrink-0" data={Icons.chevronDownFilled} />
       </span>
     </Ariakit.Select>
   )

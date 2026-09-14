@@ -35,7 +35,7 @@ export function EditMenu({ renderMenuButton, ...props }: EditMenuProps) {
 function Undo() {
   return (
     <UI.MenuItem
-      leadingIconSlot={<UI.Icon legacyName="arrow-up-and-left" />}
+      leadingIconSlot={<UI.Icon data={Icons.arrowUpAndLeft} />}
       onClick={useUI.$.withFocusGrid(useUI.$.history.undo)}
       disabled={useUI((ui) => ui.history.undoDisabled || ui.info.isReadonly)}
     >
@@ -47,7 +47,7 @@ function Undo() {
 function Redo() {
   return (
     <UI.MenuItem
-      leadingIconSlot={<UI.Icon legacyName="arrow-up-and-left" className="scale-x-[-1]" />}
+      leadingIconSlot={<UI.Icon data={Icons.arrowUpAndLeft} className="scale-x-[-1]" />}
       onClick={useUI.$.withFocusGrid(useUI.$.history.redo)}
       disabled={useUI((ui) => ui.history.redoDisabled || ui.info.isReadonly)}
     >
@@ -71,7 +71,7 @@ function Cut() {
 
 function Copy() {
   return (
-    <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="squares" />} onClick={useUI.$.operation.copy}>
+    <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.squares} />} onClick={useUI.$.operation.copy}>
       {s('Copy')}
     </UI.MenuItem>
   )
@@ -131,7 +131,7 @@ function PasteSpecialSubmenu() {
 
 function Find() {
   return (
-    <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="magnifier" />} onClick={useUI.$.search.open}>
+    <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.magnifier} />} onClick={useUI.$.search.open}>
       {s('Find')}
     </UI.MenuItem>
   )
