@@ -35,20 +35,21 @@ const readInboundRtp = async (publication: RemoteTrackPublication): Promise<Inbo
  * the recovery manager and the debug logger.
  */
 export const collectReceiverStats = async (room: Room): Promise<ReceiverStatsTick[]> => {
-    const ticks: ReceiverStatsTick[] = [];
+    const pending: Promise<ReceiverStatsTick>[] = [];
 
     for (const participant of room.remoteParticipants.values()) {
         for (const publication of participant.trackPublications.values()) {
-            const stats = await readInboundRtp(publication);
-
-            ticks.push({
-                participant,
-                publication,
-                kind: stats?.kind ?? (publication.kind === 'video' ? 'video' : 'audio'),
-                stats,
-            });
+            // Issued together rather than awaited one at a time
+            pending.push(
+                readInboundRtp(publication).then((stats) => ({
+                    participant,
+                    publication,
+                    kind: stats?.kind ?? (publication.kind === 'video' ? 'video' : 'audio'),
+                    stats,
+                }))
+            );
         }
     }
 
-    return ticks;
+    return Promise.all(pending);
 };

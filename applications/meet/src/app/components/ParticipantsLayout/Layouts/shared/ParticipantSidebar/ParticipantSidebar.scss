@@ -23,7 +23,6 @@
 			color-mix(in srgb, var(--background-norm) 90%, transparent) 60%,
 			color-mix(in srgb, var(--background-norm) 20%, transparent)
 		);
-		backdrop-filter: blur(1px);
 		box-shadow: 0 0 10px 4px color-mix(in srgb, var(--background-norm) 30%, transparent);
 		z-index: 10;
 		transition: opacity 0.2s ease-in-out;
