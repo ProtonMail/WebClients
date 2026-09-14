@@ -1,23 +1,21 @@
 import { highlightJSX, insertMarks } from '@proton/encrypted-search/esHelpers';
-import {
-    type ContentSearchEndReason,
-    type ESCallbacks,
-    type ESEvent,
-    type ESIndexingState,
-    type ESInitializeOptions,
-    type ESSetResultsList,
-    type ESSettledState,
-    type ESStatus,
-    type ESTimepoint,
-    type NormalizedSearchParams,
-    SEARCH_RESULT_SCROLLER_MODE,
+import type {
+    ContentSearchEndReason,
+    ESCallbacks,
+    ESEvent,
+    ESIndexingState,
+    ESInitializeOptions,
+    ESSetResultsList,
+    ESSettledState,
+    ESStatus,
+    ESTimepoint,
+    NormalizedSearchParams,
 } from '@proton/encrypted-search/models';
 import noop from '@proton/utils/noop';
 
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
 import type { IndexService } from '../indexation/IndexService';
 import type { MetricService } from '../metrics/MetricService';
-import type { SearchSession } from '../metrics/SearchSession';
 import type { Search, SearchOutcome } from '../search/Search';
 import type { SearchService } from '../search/SearchService';
 import { IndexingJob, type JobMode } from './IndexingJob';
@@ -97,8 +95,6 @@ export class ESAdapter implements FunctionsV2 {
     private readonly indexService: IndexService;
     /** Public so `useContentSearch` can refresh `metricService.addresses` directly — see there. */
     public readonly metricService: MetricService;
-    /** v2 counterpart of `@proton/encrypted-search`'s module-level session — see `startSearchSession`/`endSearchSession`. */
-    private readonly searchSession: SearchSession;
     /** Per-render dependency, refreshed by `useContentSearch` — provides getSearchParams/getKeywords. */
     public esCallbacks: ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent>;
     /** Per-render dependency, refreshed by `useContentSearch` — the legacy `useEncryptedSearch` instance. */
@@ -126,7 +122,6 @@ export class ESAdapter implements FunctionsV2 {
         searchService,
         indexService,
         metricService,
-        searchSession,
         esCallbacks,
         esLibraryFunctionsV1,
         updateESStatus,
@@ -135,7 +130,6 @@ export class ESAdapter implements FunctionsV2 {
         searchService: SearchService;
         indexService: IndexService;
         metricService: MetricService;
-        searchSession: SearchSession;
         /** Per-render dependency, refreshed by `useContentSearch` — provides getSearchParams/getKeywords. */
         esCallbacks: ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent>;
         /** Per-render dependency, refreshed by `useContentSearch` — the legacy `useEncryptedSearch` instance. */
@@ -146,7 +140,6 @@ export class ESAdapter implements FunctionsV2 {
         this.searchService = searchService;
         this.indexService = indexService;
         this.metricService = metricService;
-        this.searchSession = searchSession;
         this.esCallbacks = esCallbacks;
         this.esLibraryFunctionsV1 = esLibraryFunctionsV1;
         this.updateESStatus = updateESStatus;
@@ -189,23 +182,21 @@ export class ESAdapter implements FunctionsV2 {
     /** Forwards a search-result open to the v2 metrics pipeline; see `EncryptedSearchProvider.reportResultOpened`. */
     reportResultOpened(...args: Parameters<MetricService['sendResultOpenedReport']>) {
         this.metricService.sendResultOpenedReport(...args);
-        this.searchSession.recordSearchResultOpened(args[0].resultPosition);
     }
 
     /** Forwards a search-result action to the v2 metrics pipeline; see `EncryptedSearchProvider.reportResultAction`. */
     reportResultAction(...args: Parameters<MetricService['sendResultActionReport']>) {
         this.metricService.sendResultActionReport(...args);
-        this.searchSession.recordSearchResultAction(args[0].action);
     }
 
     /** v2 counterpart of `startSearchSession`; see `EncryptedSearchProvider.startSearchSession`. */
     startSearchSession() {
-        this.searchSession.startSearchSession();
+        this.metricService.startSearchSession();
     }
 
     /** v2 counterpart of `endSearchSession`; see `EncryptedSearchProvider.endSearchSession`. */
     endSearchSession(endReason: ContentSearchEndReason) {
-        this.searchSession.endSearchSession(endReason);
+        this.metricService.endSearchSession(endReason);
     }
 
     async encryptedSearch(setResultsList: ESSetResultsList<ESBaseMessage, ESMessageContent>) {
@@ -252,15 +243,12 @@ export class ESAdapter implements FunctionsV2 {
             }
             if (outcome === 'completed') {
                 const resultCount = this.lastSearch.results?.length ?? 0;
-                const hasResults = resultCount > 0;
                 this.metricService.sendQueryCompletedReport({
-                    hasResults,
+                    hasResults: resultCount > 0,
                     status: 'success',
                     resultCount,
                     durationMs: Date.now() - searchStartedAt,
                 });
-                this.searchSession.setSearchSessionResults(hasResults);
-                this.searchSession.setSearchSessionScrollerMode(SEARCH_RESULT_SCROLLER_MODE);
             }
         }
         return true;

@@ -2,7 +2,6 @@ import type { ESCallbacks, NormalizedSearchParams } from '@proton/encrypted-sear
 
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
 import type { MetricService } from '../metrics/MetricService';
-import type { SearchSession } from '../metrics/SearchSession';
 import type { SearchService } from '../search/SearchService';
 import { ESAdapter } from './ESAdapter';
 import { fakeImportHandle, fakeIndexService, fakeV1Functions, flushPromises } from './testFakes';
@@ -34,17 +33,9 @@ const fakeMetricService = () =>
         sendResultActionReport: jest.fn(),
         startMailboxIndexing: jest.fn(),
         sendMailboxIndexCompletedReport: jest.fn(),
-    }) as unknown as MetricService;
-
-const fakeSearchSession = () =>
-    ({
         startSearchSession: jest.fn(),
         endSearchSession: jest.fn(),
-        setSearchSessionResults: jest.fn(),
-        setSearchSessionScrollerMode: jest.fn(),
-        recordSearchResultOpened: jest.fn(),
-        recordSearchResultAction: jest.fn(),
-    }) as unknown as SearchSession;
+    }) as unknown as MetricService;
 
 const setup = ({ withImport = true }: { withImport?: boolean } = {}) => {
     const v1 = fakeV1Functions();
@@ -53,7 +44,6 @@ const setup = ({ withImport = true }: { withImport?: boolean } = {}) => {
         searchService: fakeSearchService(),
         indexService: fakeIndexService(withImport ? importRun.handle : undefined),
         metricService: fakeMetricService(),
-        searchSession: fakeSearchSession(),
         esCallbacks,
         esLibraryFunctionsV1: v1.functions,
         updateESStatus: jest.fn(),

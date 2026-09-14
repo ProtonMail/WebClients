@@ -20,7 +20,6 @@ import { esSearching, selectSearch } from '../../store/elements/elementsSelector
 import { useMailSelector } from '../../store/hooks';
 import { getSharedIndexService } from '../indexation/IndexService';
 import { MetricService } from '../metrics/MetricService';
-import { SearchSession } from '../metrics/SearchSession';
 import { SearchService } from '../search/SearchService';
 import { logger } from '../utils/logger';
 import { ESAdapter, type ESStatusConcrete } from './ESAdapter';
@@ -121,13 +120,11 @@ export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1, isActive }
         const indexService = getSharedIndexService(user.ID, getUserKeys, logger);
         const searchService = new SearchService(user.ID, getUserKeys, indexService.dbLock, logger);
         const metricService = new MetricService(api, logger);
-        const searchSession = new SearchSession(api, logger);
 
         adapterRef.current = new ESAdapter({
             searchService,
             indexService,
             metricService,
-            searchSession,
             esCallbacks,
             esLibraryFunctionsV1,
             updateESStatus: setESStatus,
