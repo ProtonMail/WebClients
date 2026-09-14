@@ -11,6 +11,7 @@ import { useLocalStateSync } from '@proton/components/hooks/useLocalStateSync';
 import { getIndexKey, setESLogger } from '@proton/encrypted-search/esHelpers';
 import { contentIndexingProgress, hasESDB, wrappedGetOldestInfo } from '@proton/encrypted-search/esIDB';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
+import { useContentSearchTelemetry } from '@proton/encrypted-search/useContentSearchTelemetry';
 import { useEncryptedSearch } from '@proton/encrypted-search/useEncryptedSearch';
 import { useIndexedDBSupport } from '@proton/encrypted-search/useIndexedDBSupport';
 import { logger } from '@proton/logger';
@@ -107,6 +108,23 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     });
 
     const esLibraryFunctions = isV2Active ? esLibraryFunctionsV2 : esLibraryFunctionsV1;
+
+    const { sendResultOpenedReport, sendResultActionReport } = useContentSearchTelemetry();
+    const reportResultOpened: typeof sendResultOpenedReport = (params) => {
+        if (isV2Active) {
+            esLibraryFunctionsV2.reportResultOpened(params);
+        } else {
+            sendResultOpenedReport(params);
+        }
+    };
+
+    const reportResultAction: typeof sendResultActionReport = (params) => {
+        if (isV2Active) {
+            esLibraryFunctionsV2.reportResultAction(params);
+        } else {
+            sendResultActionReport(params);
+        }
+    };
 
     const enableContentSearch = useContentSearchReadyNotification(
         esLibraryFunctions.esStatus,
@@ -321,6 +339,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         openDropdown,
         closeDropdown,
         setTemporaryToggleOff,
+        reportResultOpened,
+        reportResultAction,
     };
 
     return <EncryptedSearchContext.Provider value={esFunctions}>{children}</EncryptedSearchContext.Provider>;

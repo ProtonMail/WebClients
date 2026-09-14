@@ -128,6 +128,11 @@ export class IndexingJob {
         return true;
     }
 
+    /** Messages imported by the v2 phase so far — the whole mailbox once `ended` resolves `completed`. */
+    get totalMessagesIndexed(): number {
+        return this.handle?.completed ?? 0;
+    }
+
     /** Counterpart of {@link pauseImport}: restart the import, which resumes where it left off. */
     resumeImport(): boolean {
         if (this.abandoned || this.phase !== 'import-paused') {

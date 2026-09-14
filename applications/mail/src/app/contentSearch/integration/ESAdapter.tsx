@@ -14,6 +14,7 @@ import noop from '@proton/utils/noop';
 
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
 import type { IndexService } from '../indexation/IndexService';
+import type { MetricService } from '../metrics/MetricService';
 import type { Search, SearchOutcome } from '../search/Search';
 import type { SearchService } from '../search/SearchService';
 import { IndexingJob, type JobMode } from './IndexingJob';
@@ -91,6 +92,8 @@ function errorBeforeFirstResults(search: Search): Promise<SearchOutcome | undefi
 export class ESAdapter implements FunctionsV2 {
     private readonly searchService: SearchService;
     private readonly indexService: IndexService;
+    /** Public so `useContentSearch` can refresh `metricService.addresses` directly — see there. */
+    public readonly metricService: MetricService;
     /** Per-render dependency, refreshed by `useContentSearch` — provides getSearchParams/getKeywords. */
     public esCallbacks: ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent>;
     /** Per-render dependency, refreshed by `useContentSearch` — the legacy `useEncryptedSearch` instance. */
@@ -117,6 +120,7 @@ export class ESAdapter implements FunctionsV2 {
     constructor({
         searchService,
         indexService,
+        metricService,
         esCallbacks,
         esLibraryFunctionsV1,
         updateESStatus,
@@ -124,6 +128,7 @@ export class ESAdapter implements FunctionsV2 {
     }: {
         searchService: SearchService;
         indexService: IndexService;
+        metricService: MetricService;
         /** Per-render dependency, refreshed by `useContentSearch` — provides getSearchParams/getKeywords. */
         esCallbacks: ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent>;
         /** Per-render dependency, refreshed by `useContentSearch` — the legacy `useEncryptedSearch` instance. */
@@ -133,6 +138,7 @@ export class ESAdapter implements FunctionsV2 {
     }) {
         this.searchService = searchService;
         this.indexService = indexService;
+        this.metricService = metricService;
         this.esCallbacks = esCallbacks;
         this.esLibraryFunctionsV1 = esLibraryFunctionsV1;
         this.updateESStatus = updateESStatus;
@@ -172,6 +178,16 @@ export class ESAdapter implements FunctionsV2 {
         await this.searchService.warmUp();
     }
 
+    /** Forwards a search-result open to the v2 metrics pipeline; see `EncryptedSearchProvider.reportResultOpened`. */
+    reportResultOpened(...args: Parameters<MetricService['sendResultOpenedReport']>) {
+        this.metricService.sendResultOpenedReport(...args);
+    }
+
+    /** Forwards a search-result action to the v2 metrics pipeline; see `EncryptedSearchProvider.reportResultAction`. */
+    reportResultAction(...args: Parameters<MetricService['sendResultActionReport']>) {
+        this.metricService.sendResultActionReport(...args);
+    }
+
     async encryptedSearch(setResultsList: ESSetResultsList<ESBaseMessage, ESMessageContent>) {
         // Nothing to search yet — reporting failure hands the query to the server, which is the only
         // fallback: an incomplete v2 index would silently return too few results.
@@ -193,6 +209,7 @@ export class ESAdapter implements FunctionsV2 {
         } else {
             this.lastSearch?.dispose();
             this.coalescedResults?.cancel();
+            const searchStartedAt = Date.now();
             this.lastSearch = this.searchService.search(esSearchParams);
             // Content search streams a full snapshot per bucket; coalesce those to one dispatch per
             // frame so a large query doesn't flood the store with hundreds of synchronous updates.
@@ -213,6 +230,15 @@ export class ESAdapter implements FunctionsV2 {
                 this.coalescedResults?.cancel();
                 return false;
             }
+            if (outcome === 'completed') {
+                const resultCount = this.lastSearch.results?.length ?? 0;
+                this.metricService.sendQueryCompletedReport({
+                    hasResults: resultCount > 0,
+                    status: 'success',
+                    resultCount,
+                    durationMs: Date.now() - searchStartedAt,
+                });
+            }
         }
         return true;
     }
@@ -226,6 +252,7 @@ export class ESAdapter implements FunctionsV2 {
             // A fresh index is a new attempt at a complete v2 index, so a previous failure no longer
             // describes it — its own outcome will.
             this.isV2IndexIncomplete = false;
+            this.metricService.startMailboxIndexing();
         }
         const job = new IndexingJob(
             {
@@ -250,6 +277,14 @@ export class ESAdapter implements FunctionsV2 {
             // event touched, and the next event retries.
             if (mode === 'index' && outcome === 'failed') {
                 this.isV2IndexIncomplete = true;
+            }
+            // Mirrors v1's `mailbox_index_completed`: only the first full historic pass, spanning both
+            // v1's own indexing and the v2 import that follows it — never a refresh or limit extension.
+            if (mode === 'index' && outcome === 'completed') {
+                this.metricService.sendMailboxIndexCompletedReport({
+                    status: 'success',
+                    totalMessagesIndexed: job.totalMessagesIndexed,
+                });
             }
         });
         return job;
