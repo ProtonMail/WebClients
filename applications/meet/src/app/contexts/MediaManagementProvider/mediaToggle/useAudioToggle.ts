@@ -83,6 +83,8 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
     const noiseFilterProcessor = useRef<AudioTrackProcessor | null>(null);
     /** Persistent AudioContext reused across device switches — only closed on unmount */
     const audioContext = useRef<AudioContext | null>(null);
+    /** Previous AudioContext awaiting close after a model change moved us to a different sample rate */
+    const staleAudioContext = useRef<AudioContext | null>(null);
     /** Track ID the processor is currently attached to, used to detect track replacement */
     const attachedTrackId = useRef<string | null>(null);
     /** Incremented on abandon to invalidate in-flight setProcessor calls */
@@ -128,16 +130,49 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         }
     };
 
-    /** Returns the persistent AudioContext, creating one if needed (e.g. first attach or after unmount cleanup). */
-    const getOrCreateAudioContext = () => {
-        if (audioContext.current && audioContext.current.state !== 'closed') {
-            return audioContext.current;
+    /**
+     * Closes the context a model change left behind. Only safe once the replacement processor is
+     * publishing, since the old one is what feeds the published track until then.
+     */
+    const closeStaleAudioContext = () => {
+        const stale = staleAudioContext.current;
+        staleAudioContext.current = null;
+
+        if (stale && stale.state !== 'closed') {
+            stale.close().catch(() => {});
+            debugLog('noiseFilter:stale-audio-context-closed');
         }
+    };
+
+    /**
+     * Returns the persistent AudioContext, creating one if needed (e.g. first attach or after unmount
+     * cleanup). The model can change mid-session (Krisp only becomes available once the room is
+     * connected), and each model pins its own rate, so a context at the previous model's rate is
+     * retired rather than reused — attachNoiseFilter would otherwise skip on the mismatch forever.
+     */
+    const getOrCreateAudioContext = () => {
+        const requiredSampleRate = noiseCancellationModel.audioContextSampleRate;
+        const existing = audioContext.current;
+
+        if (existing && existing.state !== 'closed') {
+            if (!requiredSampleRate || existing.sampleRate === requiredSampleRate) {
+                return existing;
+            }
+
+            closeStaleAudioContext();
+            staleAudioContext.current = existing;
+            audioContext.current = null;
+
+            debugLog('noiseFilter:audio-context-retired', {
+                sampleRate: existing.sampleRate,
+                requiredSampleRate,
+            });
+        }
+
         // Some browsers (older iOS Safari, some Android configs) silently ignore the requested rate,
         // hence the readback in attachNoiseFilter below.
         // @ts-ignore - webkitAudioContext is not available in all browsers
         const Ctor = (window.AudioContext || window.webkitAudioContext) as typeof AudioContext;
-        const requiredSampleRate = noiseCancellationModel.audioContextSampleRate;
         // This context only processes the mic, it never plays anything.
         const options = outputlessAudioContextOptions(requiredSampleRate ? { sampleRate: requiredSampleRate } : {});
         const ctx = new Ctor(options);
@@ -261,6 +296,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
     /** Full cleanup: abandons processor refs AND closes the AudioContext. Only used on unmount. */
     const destroyNoiseFilter = () => {
         abandonNoiseFilter();
+        closeStaleAudioContext();
 
         const ctx = audioContext.current;
         audioContext.current = null;
@@ -355,6 +391,8 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
 
             noiseFilterProcessor.current = processor;
             attachedTrackId.current = currentAudioTrack.id;
+
+            closeStaleAudioContext();
 
             debugLog('noiseFilter:attach-done', { trackId: currentAudioTrack.id });
         } catch (error) {
