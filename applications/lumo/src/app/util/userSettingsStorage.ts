@@ -1,6 +1,8 @@
 import { base64ToMasterKey } from '../crypto';
 import type { LumoUserSettings } from '../redux/slices/lumoUserSettings';
-import { deserializeUserSettings, serializeUserSettings } from '../serialization';
+import { deserializeUserSettingsWithMasterKeys, serializeUserSettings } from '../serialization';
+import type { MasterKeysBundle } from '../types';
+import { buildMasterKeyContext } from './masterKeys';
 import { safeLogger } from './safeLogger';
 
 const STORAGE_KEY_PREFIX = 'lumo-user-settings-encrypted';
@@ -55,18 +57,18 @@ export async function saveUserSettingsToStorage(
 /**
  * Load user settings from localStorage using master key decryption
  */
-export async function loadUserSettingsFromStorage(masterKeyBase64: string): Promise<LumoUserSettings | null> {
+export async function loadUserSettingsFromStorage(
+    masterKeysBundle: MasterKeysBundle
+): Promise<{ userSettings: LumoUserSettings | null; needsMasterKeyMigration: boolean }> {
     try {
         const storageKey = getUserSettingsStorageKey();
         const encryptedData = localStorage.getItem(storageKey);
         if (!encryptedData) {
-            return null;
+            return { userSettings: null, needsMasterKeyMigration: false };
         }
 
-        // Convert master key to crypto key
-        const masterKey = await base64ToMasterKey(masterKeyBase64);
+        const masterKeys = await buildMasterKeyContext(masterKeysBundle);
 
-        // Create a serialized user settings object
         const serializedUserSettings = {
             userSettingsTag: 'user-settings-v1',
             encrypted: encryptedData,
@@ -74,17 +76,19 @@ export async function loadUserSettingsFromStorage(masterKeyBase64: string): Prom
             updateTime: new Date().toISOString(),
         };
 
-        // Deserialize using the existing system
-        const userSettings = await deserializeUserSettings(serializedUserSettings, masterKey);
+        const { userSettings, needsMasterKeyMigration } = await deserializeUserSettingsWithMasterKeys(
+            serializedUserSettings,
+            masterKeys
+        );
 
         if (userSettings) {
             console.log('User settings loaded from encrypted localStorage');
         }
 
-        return userSettings;
+        return { userSettings, needsMasterKeyMigration };
     } catch (error) {
         safeLogger.warn('Failed to load user settings from storage:', error);
-        return null;
+        return { userSettings: null, needsMasterKeyMigration: false };
     }
 }
 

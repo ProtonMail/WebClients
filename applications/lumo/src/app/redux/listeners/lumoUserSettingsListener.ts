@@ -1,7 +1,7 @@
 import { matchDarkTheme, setLumoSettings, userSettingsToLocalSettings } from '../../providers';
 import { safeLogger } from '../../util/safeLogger';
 import { loadUserSettingsFromStorage, saveUserSettingsToStorage } from '../../util/userSettingsStorage';
-import { selectMasterKey } from '../selectors';
+import { selectMasterKey, selectMasterKeysBundle } from '../selectors';
 import { addMasterKey } from '../slices/core/credentials';
 import { updateFeatureFlags } from '../slices/featureFlags';
 import {
@@ -86,7 +86,12 @@ export function startLumoUserSettingsListeners(startListening: AppStartListening
     startListening({
         actionCreator: addMasterKey,
         effect: async (action, listenerApi) => {
-            const masterKey = action.payload;
+            const masterKeysBundle = selectMasterKeysBundle(listenerApi.getState());
+
+            if (!masterKeysBundle) {
+                listenerApi.dispatch(setLumoUserSettingsBootstrapped());
+                return;
+            }
 
             try {
                 // First try to load from remote API (this should take precedence)
@@ -102,7 +107,8 @@ export function startLumoUserSettingsListeners(startListening: AppStartListening
 
                 // If remote API failed, fallback to localStorage
                 if (!remoteLoadSuccess) {
-                    const storedUserSettings = await loadUserSettingsFromStorage(masterKey);
+                    const { userSettings: storedUserSettings, needsMasterKeyMigration } =
+                        await loadUserSettingsFromStorage(masterKeysBundle);
                     console.log('LumoUserSettingsListener: Loaded from localStorage:', storedUserSettings);
 
                     if (storedUserSettings) {
@@ -138,6 +144,18 @@ export function startLumoUserSettingsListeners(startListening: AppStartListening
                         if (!hasExistingData) {
                             console.log('LumoUserSettingsListener: Setting Lumo user settings from localStorage');
                             listenerApi.dispatch(setLumoUserSettings(storedUserSettings));
+                        }
+
+                        if (needsMasterKeyMigration) {
+                            try {
+                                console.log(
+                                    'LumoUserSettingsListener: Re-wrapping local user settings with primary master key'
+                                );
+                                await listenerApi.dispatch(saveLumoUserSettingsToRemote(storedUserSettings)).unwrap();
+                                await saveUserSettingsToStorage(storedUserSettings, masterKeysBundle.primaryMasterKey);
+                            } catch (error) {
+                                safeLogger.warn('Failed to re-wrap local user settings with primary master key:', error);
+                            }
                         }
                     }
                 }
