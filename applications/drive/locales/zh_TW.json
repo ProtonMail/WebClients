@@ -1316,6 +1316,9 @@
       ],
       "Migrate": [
         "遷移"
+      ],
+      "Keep going": [
+        "繼續"
       ]
     },
     "Action: Sheets": {
@@ -4257,6 +4260,21 @@
       ],
       "Invitation not found": [
         "未找到邀請"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "解密內容金鑰失敗: ${ message }"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "未發現成員的位址。請聯繫客戶支援服務以協助解決問題。"
+      ],
+      "Photo is already in the target album": [
+        "照片已存在於目標相簿中"
+      ],
+      "Photo not found": [
+        "找不到照片"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "失敗替 ${ signatureType } 簽名驗證"
       ]
     },
     "error": {
@@ -7445,6 +7463,12 @@
       ],
       "Do you remember your password?": [
         "您記得您的密碼嗎?"
+      ],
+      "${ steps } step": [
+        "${ steps } 步驟"
+      ],
+      "Have some more time to decide without interruption.": [
+        "在未被干擾下有更充分的時間決定。"
       ]
     },
     "info": {
@@ -9531,6 +9555,9 @@
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "為無限量的使用者提供基本保護與安全協作。"
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } 後四碼 ${ Last4 }"
       ]
     },
     "new_plans: Subtext": {
@@ -10854,6 +10881,9 @@
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "您的貨幣以變更至歐元 (€) 因為 ${ IDEAL_WERO_BRAND_NAME } 僅支援歐元付款。"
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "透過 ${ IDEAL_WERO_BRAND_NAME } 付款"
       ]
     },
     "Payments.Error": {
@@ -10920,6 +10950,9 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - 卡片於 ${ paymentMethod.Details.Last4 } 結束"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - 卡片於 ${ Last4 } 結束"
       ]
     },
     "Payments.Sepa": {
@@ -12662,6 +12695,9 @@
       ],
       "Migration status": [
         "遷移狀態"
+      ],
+      "Estimated size": [
+        "預估大小"
       ]
     },
     "TableHeader": {
@@ -14592,11 +14628,19 @@
       ],
       "One plan, more power": [
         "單一方案，更多能量"
+      ],
+      "One plan, full power": [
+        "單一方案，完整能量"
       ]
     },
     "q3campaign2026: Action": {
       "Get the deal": [
         "取得優惠"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "全部的頂級質子版 ${ DRIVE_SHORT_APP_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME }"
       ]
     }
   }
