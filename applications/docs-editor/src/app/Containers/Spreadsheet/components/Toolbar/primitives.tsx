@@ -1,3 +1,4 @@
+import * as Icons from '../icons'
 import * as Ariakit from '@ariakit/react'
 import * as Atoms from '../atoms'
 import { useCompositeOverflowStore } from '@ariakit/react-components/composite/composite-overflow-store'
@@ -6,7 +7,6 @@ import {
   CompositeOverflowDisclosure,
   type CompositeOverflowDisclosureProps,
 } from '@ariakit/react-components/composite/composite-overflow-disclosure'
-import type { IconName } from '@proton/icons/types'
 import { clsx } from 'clsx'
 import {
   type ComponentPropsWithRef,
@@ -116,8 +116,6 @@ export interface ItemProps extends Ariakit.ToolbarItemProps {
   /** @default 'icon' */
   variant?: 'icon' | 'icon-small' | 'label'
   icon?: IconData
-  /** @deprecated Use `icon` instead */
-  legacyIconName?: IconName
   pressed?: boolean
   dropdownIndicator?: boolean
   children?: string
@@ -129,7 +127,6 @@ export interface ItemProps extends Ariakit.ToolbarItemProps {
 export const Item = createComponent<ItemProps>(function Item({
   variant = 'icon',
   icon,
-  legacyIconName,
   pressed,
   dropdownIndicator,
   children,
@@ -170,9 +167,9 @@ export const Item = createComponent<ItemProps>(function Item({
       aria-pressed={pressedValue}
       accessibleWhenDisabled
     >
-      {(icon || legacyIconName) && <Icon className="shrink-0" data={icon} legacyName={legacyIconName} />}
+      {icon && <Icon className="shrink-0" data={icon} />}
       {displayLabel && <span className="grow truncate text-start text-[.875rem]">{children}</span>}
-      {dropdownIndicator && <Icon className="shrink-0" legacyName="chevron-down-filled" />}
+      {dropdownIndicator && <Icon className="shrink-0" data={Icons.chevronDownFilled} />}
     </Ariakit.ToolbarItem>
   )
 

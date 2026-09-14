@@ -1,3 +1,4 @@
+import * as Icons from '../icons'
 import {
   useEditingNamedRange,
   useEditNamedRangeDialogState,
@@ -53,7 +54,7 @@ function NamedRangeListItem({ namedRange, sheetId, onDeleteNamedRange, onSelect 
             onDeleteNamedRange(namedRange.namedRangeId)
           }}
         >
-          <Icon legacyName="trash" />
+          <Icon data={Icons.trash} />
         </Button>
       </div>
     </Button>
@@ -95,7 +96,7 @@ function NamedRangesList({
           className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
           onClick={onNewNamedRange}
         >
-          <Icon legacyName="plus" />
+          <Icon data={Icons.plus} />
           {namedRanges.length > 0 ? s('Add another named range') : s('Add named range')}
         </Button>
       </div>
@@ -239,7 +240,7 @@ function NamedRangeEditor({
                 type="submit"
                 className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
               >
-                <Icon legacyName="plus" />
+                <Icon data={Icons.plus} />
                 {s('Add another named range')}
               </Button>
             </div>

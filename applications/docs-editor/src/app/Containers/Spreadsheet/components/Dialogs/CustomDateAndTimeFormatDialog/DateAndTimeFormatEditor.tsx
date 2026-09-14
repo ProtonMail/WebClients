@@ -3,7 +3,7 @@ import { PlainTextPlugin } from '@lexical/react/LexicalPlainTextPlugin'
 import { ContentEditable } from '@lexical/react/LexicalContentEditable'
 import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { useLexicalNodeSelection } from '@lexical/react/useLexicalNodeSelection'
 import {
@@ -500,7 +500,7 @@ function TokenMenu() {
           'border border-[#E9E9E9] bg-[white]',
         )}
       >
-        <Icon legacyName="plus" />
+        <Icon data={Icons.plus} />
       </Ariakit.PopoverDisclosure>
       <Atoms.DropdownPopover {...Atoms.DROPDOWN_POPOVER_DEFAULTS} render={<Ariakit.Popover />}>
         <Ariakit.CompositeProvider store={compositeStore}>
