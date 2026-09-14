@@ -2,7 +2,7 @@
 
 .star-rating {
 	&-button {
-		padding: 0.5rem;
+		padding: 0.4rem;
 		border: none;
 		background: transparent;
 		cursor: pointer;
@@ -20,16 +20,34 @@
 			outline-offset: 2px;
 		}
 
-		svg {
+		/* The spinner is excluded: `fill` would paint over its stroke and the gradient
+		   reference does not resolve against it. */
+		svg:not(.star-rating-loader) {
 			color: rgb(255 255 255 / 0.24);
 			fill: currentcolor;
 		}
 
 		&--filled {
-			svg {
+			svg:not(.star-rating-loader) {
 				color: #f6b828;
 				fill: url(#starGradient);
 			}
+		}
+
+		&:disabled {
+			cursor: default;
+
+			&:hover {
+				transform: none;
+			}
+		}
+
+		/* Nested so it outranks CircleLoader's own single-class sizing. Matches
+		   IcStarFilled's box so swapping in the spinner does not resize the row. */
+		.star-rating-loader {
+			inline-size: rem(32);
+			block-size: rem(32);
+			color: #f6b828;
 		}
 	}
 }
