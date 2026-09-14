@@ -1084,7 +1084,7 @@ export class SearchService {
         spaceId: string,
         topK: number = 50,
         minScore: number = 0
-    ): Promise<{ id: string; name: string; content: string; score: number }[]> {
+    ): Promise<{ id: string; name: string; content: string; score: number; coverage: number }[]> {
         if (this.userId && !this.manifestReady) {
             this.manifestReady = this.loadManifest();
         }
@@ -1111,14 +1111,14 @@ export class SearchService {
 
         const rankedResults = this.bm25Index.rankDocuments(query, candidates, effectiveTopK, minScore);
 
-        const docBestChunk = new Map<string, { doc: DriveDocument; score: number }>();
+        const docBestChunk = new Map<string, { doc: DriveDocument; score: number; coverage: number }>();
 
-        for (const { document: candidate, score } of rankedResults) {
+        for (const { document: candidate, score, coverage } of rankedResults) {
             const doc = candidate.doc;
             const parentId = doc.parentDocumentId || doc.id;
             const existing = docBestChunk.get(parentId);
             if (!existing || score > existing.score) {
-                docBestChunk.set(parentId, { doc, score });
+                docBestChunk.set(parentId, { doc, score, coverage });
             }
         }
 
@@ -1126,11 +1126,12 @@ export class SearchService {
             .sort((a, b) => b.score - a.score)
             .slice(0, topK);
 
-        return mergedResults.map(({ doc, score }) => ({
+        return mergedResults.map(({ doc, score, coverage }) => ({
             id: doc.parentDocumentId || doc.id,
             name: doc.name,
             content: doc.content,
             score,
+            coverage,
             ...(doc.isChunk && {
                 isChunk: true,
                 chunkIndex: doc.chunkIndex,

@@ -1,16 +1,11 @@
 import React from 'react';
 
 import { clsx } from 'clsx';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
+import { useEffectiveContextUsageWithFilters } from '../../../hooks/useEffectiveContextUsage';
 import type { ContextFilter } from '../../../llm';
-import { getSummarizedMessageIds } from '../../../llm/compaction';
-import { buildContextBreakdown, type ContextSegmentId } from '../../../llm/contextBreakdown';
-import { countTokens } from '../../../llm/tokenizer';
-import { calculateAttachmentContextSize, calculateMessageContentTokens } from '../../../llm/utils';
-import { getAttachmentDocumentKey } from '../../../util/resolveProjectFiles';
-import { useLumoSelector } from '../../../redux/hooks';
-import { selectAttachments } from '../../../redux/selectors';
+import { type ContextSegmentId, buildContextBreakdown } from '../../../llm/contextBreakdown';
 import type { Attachment, Message } from '../../../types';
 
 import './ContextUsageBreakdown.scss';
@@ -56,58 +51,11 @@ export const ContextUsageBreakdown: React.FC<ContextUsageBreakdownProps> = ({
     currentAttachments = [],
     showDetails = false,
 }) => {
-    const allAttachments = useLumoSelector(selectAttachments);
-
-    const { conversationTokens, fileTokens, hasCompaction } = React.useMemo(() => {
-        const summarizedIds = getSummarizedMessageIds(messageChain);
-        let summaryTokens = 0;
-        for (const message of messageChain) {
-            if (message.compaction) {
-                summaryTokens += countTokens(message.compaction.summary);
-            }
-        }
-
-        const effectiveMessages = messageChain.filter((m) => !summarizedIds.has(m.id));
-        const conversationTokens = calculateMessageContentTokens(effectiveMessages) + summaryTokens;
-
-        const activeFiles: Attachment[] = [];
-        for (const message of messageChain) {
-            if (summarizedIds.has(message.id) || !message.attachments) {
-                continue;
-            }
-            const filter = contextFilters.find((f) => f.messageId === message.id);
-            for (const shallow of message.attachments) {
-                if (filter?.excludedFiles.includes(shallow.filename)) {
-                    continue;
-                }
-                const full = allAttachments[shallow.id];
-                if (full) {
-                    const documentKey = getAttachmentDocumentKey(full);
-                    const alreadyCounted = activeFiles.some(
-                        (f) => f.id === full.id || getAttachmentDocumentKey(f) === documentKey
-                    );
-                    if (!alreadyCounted) {
-                        activeFiles.push(full);
-                    }
-                }
-            }
-        }
-        for (const attachment of currentAttachments) {
-            const documentKey = getAttachmentDocumentKey(attachment);
-            const alreadyCounted = activeFiles.some(
-                (f) => f.id === attachment.id || getAttachmentDocumentKey(f) === documentKey
-            );
-            if (!alreadyCounted) {
-                activeFiles.push(attachment);
-            }
-        }
-
-        return {
-            conversationTokens,
-            fileTokens: calculateAttachmentContextSize(activeFiles),
-            hasCompaction: summarizedIds.size > 0,
-        };
-    }, [messageChain, contextFilters, currentAttachments, allAttachments]);
+    const { conversationTokens, fileTokens, hasCompaction, droppedForBudget } = useEffectiveContextUsageWithFilters(
+        messageChain,
+        contextFilters,
+        currentAttachments
+    );
 
     const breakdown = React.useMemo(
         () => buildContextBreakdown({ conversationTokens, fileTokens }),
@@ -157,7 +105,17 @@ export const ContextUsageBreakdown: React.FC<ContextUsageBreakdownProps> = ({
             {showDetails && hasCompaction && (
                 <p className="context-usage-note m-0 mt-2 text-xs color-weak">
                     {c('collider_2025: Info')
-                        .t`Earlier messages were summarized to make room, so they no longer take up space here.`}
+                        .t`Earlier messages were summarized to free space. They are still in your chat above — only the summary counts toward usage here.`}
+                </p>
+            )}
+
+            {droppedForBudget.length > 0 && (
+                <p className="context-usage-note m-0 mt-2 text-xs color-weak">
+                    {c('collider_2025: Info').ngettext(
+                        msgid`${droppedForBudget.length} least relevant file was left out of this reply so the rest fits.`,
+                        `${droppedForBudget.length} least relevant files were left out of this reply so the rest fits.`,
+                        droppedForBudget.length
+                    )}
                 </p>
             )}
         </div>
