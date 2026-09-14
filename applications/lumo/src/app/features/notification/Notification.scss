@@ -1,3 +1,5 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
 
@@ -84,13 +86,13 @@ im.$media-expressions: $media-expressions;
 }
 
 .notification-panel-title {
-	font-size: 13px;
+	font-size: rem(13);
 	font-weight: 500;
 	color: var(--text-norm);
 }
 
 .notification-panel-title-new {
-	font-size: 11px;
+	font-size: rem(11);
 	font-weight: 500;
 	background: var(--optional-promotion-background-start);
 	color: var(--primary);
@@ -100,7 +102,7 @@ im.$media-expressions: $media-expressions;
 }
 
 .notif-action {
-	font-size: 13px;
+	font-size: rem(13);
 	padding-block: 5px;
 	padding-inline: 14px;
 	background: var(--primary);
@@ -120,7 +122,7 @@ im.$media-expressions: $media-expressions;
 }
 
 .notif-dismiss {
-	font-size: 13px;
+	font-size: rem(13);
 	padding-block: 5px;
 	padding-inline: 14px;
 	background: transparent;
@@ -137,7 +139,7 @@ im.$media-expressions: $media-expressions;
 }
 
 .notification-panel-text {
-	font-size: 13px;
+	font-size: rem(13);
 	color: var(--text-weak);
 	margin-block: 0 12px;
 	margin-inline: 0;
@@ -152,7 +154,7 @@ im.$media-expressions: $media-expressions;
 	border: none;
 	cursor: pointer;
 	color: var(--text-weak);
-	font-size: 16px;
+	font-size: rem(16);
 	line-height: 1;
 	padding-block: 2px;
 	padding-inline: 4px;
