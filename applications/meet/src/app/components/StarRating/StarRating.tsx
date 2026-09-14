@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { IcStarFilled } from '@proton/icons/icons/IcStarFilled';
 import clsx from '@proton/utils/clsx';
 import range from '@proton/utils/range';
@@ -13,9 +14,12 @@ export interface StarRatingProps {
     onChange: (value: number) => void;
     className?: string;
     ariaDescribedBy?: string;
+    disabled?: boolean;
+    /** Swaps the chosen star for a spinner while the rating is being submitted. */
+    loading?: boolean;
 }
 
-export const StarRating = ({ value, onChange, className, ariaDescribedBy }: StarRatingProps) => {
+export const StarRating = ({ value, onChange, className, ariaDescribedBy, disabled, loading }: StarRatingProps) => {
     const [hoveredStar, setHoveredStar] = useState<number | undefined>(undefined);
 
     const handleChange = (numberOfStars: number) => {
@@ -45,6 +49,7 @@ export const StarRating = ({ value, onChange, className, ariaDescribedBy }: Star
                 const isFilled = value !== undefined && numberOfStars <= value;
                 const isHovered = hoveredStar !== undefined && numberOfStars <= hoveredStar;
                 const shouldShowGold = isFilled || isHovered;
+                const isSubmitting = !!loading && numberOfStars === value;
 
                 return (
                     <button
@@ -62,8 +67,14 @@ export const StarRating = ({ value, onChange, className, ariaDescribedBy }: Star
                         )}
                         aria-pressed={isFilled}
                         aria-describedby={ariaDescribedBy}
+                        aria-busy={isSubmitting}
+                        disabled={disabled}
                     >
-                        <IcStarFilled size={5} />
+                        {isSubmitting ? (
+                            <CircleLoader className="star-rating-loader" aria-hidden="true" />
+                        ) : (
+                            <IcStarFilled size={8} />
+                        )}
                     </button>
                 );
             })}
