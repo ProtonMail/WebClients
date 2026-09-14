@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { defaultESIndexingState, defaultESStatus } from '@proton/encrypted-search/constants';
 import type { IndexingMetrics } from '@proton/encrypted-search/esHelpers';
 import type {
@@ -17,6 +19,7 @@ import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSear
 import { esSearching, selectSearch } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
 import { getSharedIndexService } from '../indexation/IndexService';
+import { MetricService } from '../metrics/MetricService';
 import { SearchService } from '../search/SearchService';
 import { logger } from '../utils/logger';
 import { ESAdapter, type ESStatusConcrete } from './ESAdapter';
@@ -24,7 +27,13 @@ import { ESAdapter, type ESStatusConcrete } from './ESAdapter';
 export type FunctionsV1 = EncryptedSearchFunctions<ESBaseMessage, NormalizedSearchParams, ESMessageContent>;
 // The reactive surface (esStatus/esIndexingProgressState/progressRecorderRef) is owned by the hook,
 // not the adapter, so the hook can rebuild the functions object when it changes — mirroring V1.
-export type FunctionsV2 = Omit<FunctionsV1, 'esStatus' | 'esIndexingProgressState' | 'progressRecorderRef'>;
+export type FunctionsV2 = Omit<FunctionsV1, 'esStatus' | 'esIndexingProgressState' | 'progressRecorderRef'> & {
+    /** v2-only: not part of the generic `EncryptedSearchFunctions` surface v1 also implements. */
+    reportResultOpened: ESAdapter['reportResultOpened'];
+    reportResultAction: ESAdapter['reportResultAction'];
+};
+/** `useContentSearch`'s return type: the generic v1 surface plus the v2-only additions above. */
+export type ContentSearchFunctions = FunctionsV1 & Pick<FunctionsV2, 'reportResultOpened' | 'reportResultAction'>;
 
 interface Props {
     refreshMask: number;
@@ -68,6 +77,8 @@ const toBoundFunctions = (adapter: ESAdapter): FunctionsV2 => ({
     toggleEncryptedSearch: adapter.toggleEncryptedSearch.bind(adapter),
     getCache: adapter.getCache.bind(adapter),
     resetCache: adapter.resetCache.bind(adapter),
+    reportResultOpened: adapter.reportResultOpened.bind(adapter),
+    reportResultAction: adapter.reportResultAction.bind(adapter),
 });
 
 /**
@@ -78,9 +89,11 @@ const toBoundFunctions = (adapter: ESAdapter): FunctionsV2 => ({
  * adapter drives these through the setters passed at construction, and the hook rebuilds the returned
  * functions object whenever they change so consumers re-render — exactly like `useEncryptedSearch`.
  */
-export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1, isActive }: Props): FunctionsV1 => {
+export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1, isActive }: Props): ContentSearchFunctions => {
+    const api = useApi();
     const [user] = useUser();
     const getUserKeys = useGetUserKeys();
+    const [addresses] = useAddresses();
 
     // The reactive surface, owned by the hook. The adapter pushes updates into these via the setters
     // passed at construction (see below). progressRecorderRef stays a ref like in V1 — it's the raw
@@ -101,9 +114,12 @@ export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1, isActive }
     if (!adapterRef.current) {
         const indexService = getSharedIndexService(user.ID, getUserKeys, logger);
         const searchService = new SearchService(user.ID, getUserKeys, indexService.dbLock, logger);
+        const metricService = new MetricService(api, logger);
+
         adapterRef.current = new ESAdapter({
             searchService,
             indexService,
+            metricService,
             esCallbacks,
             esLibraryFunctionsV1,
             updateESStatus: setESStatus,
@@ -119,6 +135,7 @@ export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1, isActive }
     // stale values — esLibraryFunctionsV1's identity changes when V1's esStatus does.
     adapter.esCallbacks = esCallbacks;
     adapter.esLibraryFunctionsV1 = esLibraryFunctionsV1;
+    adapter.metricService.addresses = addresses;
     adapter.isActive = isActive;
 
     // Observe V1's status and progress and forward them into the adapter, which decides what to push
@@ -152,7 +169,7 @@ export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1, isActive }
     // Rebuild the functions object whenever the reactive surface changes — the same mechanism V1 uses
     // (its `useMemo` keyed on esStatus/esIndexingProgressState). The bound method surface is stable, so
     // a new object identity here is what propagates fresh status/progress to consumers.
-    return useMemo<FunctionsV1>(
+    return useMemo<ContentSearchFunctions>(
         () => ({
             ...toBoundFunctions(adapter),
             esStatus: {
