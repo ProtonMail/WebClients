@@ -27,7 +27,7 @@ export const CloseButton = ({ onClose, className, style, tabIndex }: CloseButton
             onClick={onClose}
             tabIndex={tabIndex}
         >
-            <IcCross size={4} alt={c('Action').t`Close`} />
+            <IcCross size={6} alt={c('Action').t`Close`} />
         </Button>
     );
 };
