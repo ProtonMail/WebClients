@@ -14,5 +14,6 @@ export enum Product {
     Pass = 'Pass',
     Meet = 'Meet',
     Spaces = 'Spaces',
+    Console = 'Console',
     Other = 'Other',
 }

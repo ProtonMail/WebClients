@@ -35,7 +35,8 @@ import type { LoginResult } from './interface';
 
 // A set of products for which availability (access control) should be ignored and instead always allowed.
 // This may be for apps which will never have a web app but for which forking should still be allowed and access control ignored.
-const allowSet = new Set<Product>([Product.Authenticator]);
+// TODO: Remove Product.Console once it's ready for the product access control.
+const allowSet = new Set<Product>([Product.Authenticator, Product.Console]);
 
 /**
  * Checks if the app is available to this user. It only does it based on the user's access control. Not based on the organization's access control

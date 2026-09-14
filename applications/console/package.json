@@ -1,0 +1,45 @@
+{
+    "name": "proton-console",
+    "description": "Proton Console B2B Application",
+    "keywords": [],
+    "license": "GPL-3.0",
+    "author": "",
+    "scripts": {
+        "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso",
+        "check-types": "tsc",
+        "lint": "eslint --quiet",
+        "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
+        "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --api=https://account.proton.black"
+    },
+    "dependencies": {
+        "@proton/account": "workspace:^",
+        "@proton/components": "workspace:^",
+        "@proton/hooks": "workspace:^",
+        "@proton/icons": "workspace:^",
+        "@proton/pack": "workspace:^",
+        "@proton/polyfill": "workspace:^",
+        "@proton/redux-shared-store": "workspace:^",
+        "@proton/redux-shared-store-types": "workspace:^",
+        "@proton/shared": "workspace:^",
+        "@proton/styles": "workspace:^",
+        "@proton/unleash": "workspace:^",
+        "@proton/utils": "workspace:^",
+        "@reduxjs/toolkit": "^2.12.0",
+        "@types/react": "^18.3.31",
+        "@types/react-dom": "^18.3.7",
+        "@types/react-router-dom": "^5.3.3",
+        "cross-env": "^10.1.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-redux": "^9.3.0",
+        "react-router-dom": "^5.3.4",
+        "redux": "^5.0.1"
+    },
+    "devDependencies": {
+        "@proton/eslint-config-proton": "workspace:^",
+        "eslint": "^10.9.0",
+        "prettier": "^3.9.6",
+        "typescript": "^6.0.3",
+        "webpack": "^5.109.2"
+    }
+}
