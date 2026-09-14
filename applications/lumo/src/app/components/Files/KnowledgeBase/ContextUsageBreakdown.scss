@@ -50,8 +50,14 @@
 
         &.context-usage-seg--buffer {
             opacity: 1;
-            background-color: var(--text-hint, #8a8a8a);
-            background-image: none;
+            background-color: var(--background-weak);
+            background-image: repeating-linear-gradient(
+                45deg,
+                $buffer 0,
+                $buffer 1px,
+                transparent 1px,
+                transparent 5px
+            );
         }
 
         &.context-usage-seg--free {

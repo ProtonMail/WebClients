@@ -26,10 +26,12 @@ import { selectAttachmentsBySpaceId, selectSpaceById } from '../../redux/selecto
 import { locallyDeleteAttachmentFromLocalRequest } from '../../redux/slices/core/attachments';
 import { handleSpaceAttachmentFileAsync } from '../../services/files';
 import type { Attachment, ProjectSpace } from '../../types';
-import { ProjectKnowledgeSection } from './ProjectKnowledgeSection';
+import { getAcceptAttributeString } from '../../util/filetypes';
+import { isSupportedFile } from '../../util/fileTypeHelpers';
 import { ConfirmRemoveAllFilesModal } from './modals/ConfirmRemoveAllFilesModal';
 import { CreateFolderModal } from './modals/CreateFolderModal';
 import { LinkDriveFolderModal } from './modals/LinkDriveFolderModal';
+import { ProjectKnowledgeSection } from './ProjectKnowledgeSection';
 
 import './ProjectFilesPanel.scss';
 
@@ -89,6 +91,14 @@ export const ProjectFilesPanel = ({
 
         for (const file of selectedFiles) {
             try {
+                if (!isSupportedFile(file)) {
+                    createNotification({
+                        text: c('collider_2025:Error (validation)').t`File format not supported: ${file.name}`,
+                        type: 'error',
+                    });
+                    continue;
+                }
+
                 if (file.size > MAX_ASSET_SIZE) {
                     const maxSizeFormatted = humanSize({ bytes: MAX_ASSET_SIZE, unit: 'MB', fraction: 0 });
                     const fileSizeFormatted = humanSize({ bytes: file.size, unit: 'MB', fraction: 1 });
@@ -268,7 +278,7 @@ export const ProjectFilesPanel = ({
                     multiple
                     onChange={handleFileChange}
                     style={{ display: 'none' }}
-                    accept="*/*"
+                    accept={getAcceptAttributeString()}
                 />
 
                 {fileToView && (

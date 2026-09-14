@@ -93,10 +93,31 @@ export const calculateAttachmentContextSize = (attachments: Attachment[]): numbe
 
 // Context window limits (approximate)
 export const CONTEXT_LIMITS = {
-    WARNING_THRESHOLD: 100000,
-    DANGER_THRESHOLD: 116000,
-    MAX_CONTEXT: 128000,
+    WARNING_THRESHOLD: 110000,
+    DANGER_THRESHOLD: 120000,
+    MAX_CONTEXT: 130000,
 } as const;
+
+/** Input tokens we allow a single request to occupy, leaving the rest of the window for the reply. */
+export const REQUEST_INPUT_TOKEN_BUDGET = Math.round(CONTEXT_LIMITS.MAX_CONTEXT * 0.78);
+
+/** Allowance for turns the chain does not account for: system prompt, personalization, memories, instructions. */
+export const REQUEST_OVERHEAD_TOKEN_ALLOWANCE = 4_000;
+
+/** Never starve the current question of file content, even when history is large. */
+export const MIN_FILE_TOKEN_BUDGET = 8_000;
+
+/**
+ * Token allowance for expanded file content on the next request.
+ *
+ * Compaction can only shrink message text; a file-heavy tail (e.g. many auto-retrieved
+ * PDFs on the current question) can still exceed the window on its own. Budgeting files
+ * against the space history leaves is what keeps a request inside the model limit.
+ */
+export const computeFileTokenBudget = (conversationTokens: number): number => {
+    const remaining = REQUEST_INPUT_TOKEN_BUDGET - REQUEST_OVERHEAD_TOKEN_ALLOWANCE - Math.max(0, conversationTokens);
+    return Math.max(MIN_FILE_TOKEN_BUDGET, remaining);
+};
 
 export const getContextSizeWarning = (tokenCount: number): 'none' | 'warning' | 'danger' | 'critical' => {
     if (tokenCount >= CONTEXT_LIMITS.MAX_CONTEXT) {
