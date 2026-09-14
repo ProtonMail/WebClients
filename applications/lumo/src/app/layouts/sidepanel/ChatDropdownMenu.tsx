@@ -41,7 +41,7 @@ const ChatDropdownMenu = ({ conversation, onOpenChange, additionalOptions = [] }
             icon: <LumoIcon name="Star" size={16} />,
             onClick: handleStarToggle,
         },
-        { label: c('Option').t`Delete`, icon: <LumoIcon name="Trash2" size={16} />, onClick: openConfirmationModal },
+        { label: c('Option').t`Delete`, icon: <LumoIcon name="Trash" size={16} />, onClick: openConfirmationModal },
     ];
 
     const options = [...additionalOptions, ...defaultOptions];
