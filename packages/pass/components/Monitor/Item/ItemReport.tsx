@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import { IcExclamationFilled } from '@proton/icons/icons/IcExclamationFilled';
 
 import { useMemoSelector } from '../../../hooks/useMemoSelector';
 import { itemEq } from '../../../lib/items/item.predicates';
@@ -52,7 +53,7 @@ const DuplicatePasswordReport: FC<SelectedItem> = (item) => {
     return total > 0 ? (
         <Card className="mb-2" type="warning">
             <CardContent
-                icon={() => <CardIcon icon="exclamation-filled" className="self-start mt-0.5" />}
+                icon={<CardIcon icon={IcExclamationFilled} className="self-start mt-0.5" />}
                 titleClassname="color-interaction-norm-major-2 text-lg text-semibold"
                 subtitleClassname="color-interaction-norm-major-2"
                 title={c('Description').ngettext(
@@ -119,7 +120,7 @@ const WeakPasswordReport: FC<SelectedItem> = (item) => {
         isWeak && (
             <Card className="mb-2" type="warning">
                 <CardContent
-                    icon={() => <CardIcon icon="exclamation-filled" className="self-start mt-0.5" />}
+                    icon={<CardIcon icon={IcExclamationFilled} className="self-start mt-0.5" />}
                     titleClassname="color-interaction-norm-major-2 text-lg text-semibold"
                     subtitleClassname="color-interaction-norm-major-2"
                     title={c('Title').t`Weak password`}
@@ -139,7 +140,7 @@ const CompromisedPasswordReport: FC<SelectedItem> = (item) => {
         isCompromised && (
             <Card className="mb-2" type="danger">
                 <CardContent
-                    icon={() => <CardIcon icon="exclamation-filled" className="self-start mt-0.5" />}
+                    icon={<CardIcon icon={IcExclamationFilled} className="self-start mt-0.5" />}
                     titleClassname="color-interaction-norm-major-2 text-lg text-semibold"
                     subtitleClassname="color-interaction-norm-major-2"
                     title={c('Title').t`Compromised password`}
@@ -159,7 +160,7 @@ const Missing2FAReport: FC<SelectedItem> = (item) => {
         isMissing2FA && (
             <Card className="mb-2" type="primary">
                 <CardContent
-                    icon={() => <CardIcon icon="exclamation-filled" className="self-start mt-0.5" />}
+                    icon={<CardIcon icon={IcExclamationFilled} className="self-start mt-0.5" />}
                     titleClassname="text-lg text-semibold"
                     title={c('Title').t`Set up 2FA for more security`}
                     subtitle={c('Description').t`This service offers 2FA. Enable it for added account security.`}
