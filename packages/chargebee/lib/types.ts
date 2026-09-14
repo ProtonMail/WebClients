@@ -1,20 +1,5 @@
 import type { ChargebeeCssVariables } from './css-variables';
 
-export interface CountryEntry {
-    label: string;
-    value: string;
-    disabled: boolean;
-}
-
-export interface CountryListSeparator {
-    label: string;
-    value: string;
-    disabled: true;
-    type: 'separator';
-}
-
-export type Country = CountryEntry | CountryListSeparator;
-
 export interface ChargebeeInstanceConfiguration {
     publishableKey: string;
     site: string;
@@ -23,7 +8,7 @@ export interface ChargebeeInstanceConfiguration {
 
 export type CardFormRenderMode = 'one-line' | 'two-line';
 
-export const translationKeys = [
+const translationKeys = [
     'cardNumberPlaceholder',
     'cardExpiryPlaceholder',
     'cardCvcPlaceholder',
@@ -124,16 +109,6 @@ export interface BinData {
     last4: string;
 }
 
-export function isBinData(obj: any): obj is BinData {
-    return (
-        obj &&
-        typeof obj.bin === 'string' &&
-        obj.bin.length === 6 &&
-        typeof obj.last4 === 'string' &&
-        obj.last4.length === 4
-    );
-}
-
 export type ChargebeeSubmitEventResponse = {
     authorized: true;
     authorizedPaymentIntent: AuthorizedPaymentIntent;
@@ -147,13 +122,6 @@ export const paypalAuthorizedMessageType = 'paypal-authorized';
 export type PaypalAuthorizedPayload = {
     paymentIntent: AuthorizedPaymentIntent;
 };
-export type PaypalAuthorizedMessage = {
-    type: typeof paypalAuthorizedMessageType;
-} & MessageBusResponseSuccess<PaypalAuthorizedPayload>;
-
-export function isPaypalAuthorizedMessage(obj: any): obj is PaypalAuthorizedMessage {
-    return obj && obj.type === paypalAuthorizedMessageType;
-}
 
 export type MessageBusResponseSuccess<T> = {
     status: 'success';
@@ -193,7 +161,7 @@ export function isThreeDsChallengeMessage(obj: any): obj is ThreeDsChallengeMess
     return obj && obj.type === threeDsChallengeMessageType;
 }
 
-export type FormValidationError = {
+type FormValidationError = {
     message: string;
     error: string;
 };
@@ -204,7 +172,7 @@ export interface ChargebeeVerifySavedCardEventPayload {
     paymentIntent: PaymentIntent;
 }
 
-export const threeDsMessageType = 'chargebee-submit-response';
+const threeDsMessageType = 'chargebee-submit-response';
 
 export type ThreeDsFailedMessage = MessageBusResponseFailure & {
     type: typeof threeDsMessageType;
@@ -225,11 +193,6 @@ export function isThreeDsSuccessMessage(obj: any): obj is ThreeDsSuccessMessage 
 export type ChargebeeSavedCardAuthorizationSuccess = {
     authorized: true;
     authorizedPaymentIntent: AuthorizedPaymentIntent;
-};
-
-export type ChargebeeSavedCardAuthorizationFailure = {
-    authorized: false;
-    error: any;
 };
 
 export type ThreeDsRequiredForSavedCardMessage = MessageBusResponseSuccess<ThreeDsChallengePayload> & {
@@ -414,13 +377,6 @@ export const idealAuthorizedMessageType = 'ideal-authorized';
 export type IdealAuthorizedPayload = {
     paymentIntent: AuthorizedPaymentIntent;
 };
-export type IdealAuthorizedMessage = {
-    type: typeof idealAuthorizedMessageType;
-} & MessageBusResponseSuccess<IdealAuthorizedPayload>;
-
-export function isIdealAuthorizedMessage(obj: any): obj is IdealAuthorizedMessage {
-    return obj && obj.type === idealAuthorizedMessageType;
-}
 
 export const idealFailedMessageType = 'ideal-failed';
 export type IdealFailedMessage = MessageBusResponseFailure & {
