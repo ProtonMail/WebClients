@@ -22,6 +22,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import { ParticipantAvatar } from '../../atoms/ParticipantAvatar/ParticipantAvatar';
 import { useChatMessage } from '../../hooks/bridges/useChatMessage';
 import { useChatMessageReaction } from '../../hooks/bridges/useChatMessageReaction';
+import { useMentionPlainText } from '../../hooks/useMentionPlainText';
 import { useToolbarRovingFocus } from '../../hooks/useToolbarRovingFocus';
 import { getAgentDisplayInfo } from '../../utils/getAgentDisplayInfo';
 import { ChatMessageContent } from '../ChatMessageContent';
@@ -38,8 +39,6 @@ interface ChatItemProps {
     roomName?: string;
     item: MeetingRoomUpdate;
     displayDate?: boolean;
-    shouldGrow?: boolean;
-    ellipsisOverflow?: boolean;
     /**
      * 'default' renders the item as a top-level chat entry.
      * 'thread' renders a more compact entry meant to be nested inside a thread.
@@ -57,15 +56,7 @@ const isParticipantEventRecord = (item: MeetingRoomUpdate): item is ParticipantE
     return item.type === 'event';
 };
 
-export const ChatItem = ({
-    roomName,
-    item,
-    displayDate = true,
-    shouldGrow = false,
-    ellipsisOverflow = false,
-    variant = 'default',
-    onReply,
-}: ChatItemProps) => {
+export const ChatItem = ({ roomName, item, displayDate = true, variant = 'default', onReply }: ChatItemProps) => {
     const { type, identity, timestamp } = item;
 
     const isThreadItem = variant === 'thread';
@@ -87,7 +78,7 @@ export const ChatItem = ({
     const isPending = isMeetChatMessage(item) && item.status === 'pending';
     const isFailed = isMeetChatMessage(item) && item.status === 'failed';
 
-    const showReactionControls = isMeetChatMessage(item) && !ellipsisOverflow && !isPending && !isFailed;
+    const showReactionControls = isMeetChatMessage(item) && !isPending && !isFailed;
     const messageA11yDescriptionId = isMeetChatMessage(item) ? `chat-message-a11y-${item.id}` : undefined;
 
     // The quick-reaction emoji buttons form a single tab stop; Arrow Left/Right rove
@@ -105,6 +96,7 @@ export const ChatItem = ({
     const isMessage = isMeetChatMessage(item);
 
     const announce = useAnnounce();
+    const toMentionPlainText = useMentionPlainText();
 
     const rowRef = useRef<HTMLDivElement>(null);
 
@@ -131,7 +123,7 @@ export const ChatItem = ({
             return;
         }
 
-        announce(announcementMessages.chatMessageContent(item.message, participantName), {
+        announce(announcementMessages.chatMessageContent(toMentionPlainText(item.message), participantName), {
             dedupeKey: `chat-focus-${item.id}`,
         });
     };
@@ -151,7 +143,6 @@ export const ChatItem = ({
             key={`${type}-${identity}-${timestamp}`}
             className={clsx(
                 'chat-item flex gap-2 height-custom flex-nowrap shrink-0 mr-2 py-2 px-1',
-                (shouldGrow || ellipsisOverflow) && 'flex-1',
                 showReactionControls && 'chat-item--with-reactions',
                 areActionsVisible && 'chat-item--actions-visible',
                 isThreadItem && 'chat-item--thread'
@@ -161,7 +152,7 @@ export const ChatItem = ({
             aria-label={showReactionControls ? c('Info').t`Message from ${participantName}` : undefined}
             // The message itself is the first tab stop for the entry and the landing point for
             // Up/Down arrow navigation between messages; its actions follow it in the tab order.
-            tabIndex={isMessage && !ellipsisOverflow ? 0 : undefined}
+            tabIndex={isMessage ? 0 : undefined}
             data-chat-message-row={isMessage ? '' : undefined}
             onFocus={handleRowFocus}
             onClick={handleRowClick}
@@ -177,15 +168,15 @@ export const ChatItem = ({
             </div>
 
             <div className="flex flex-column flex-nowrap justify-start flex-1 min-w-0">
-                <div className="flex items-start text-semibold flex-nowrap">
-                    <span className="text-ellipsis" title={displayName}>
+                <div className="flex items-start flex-nowrap">
+                    <span className="text-semibold color-norm text-ellipsis" title={displayName}>
                         <bdi>{displayName}</bdi>
                         {isLocalParticipant && <span className="color-weak ml-1">{c('Info').t`(You)`}</span>}
                     </span>
                     {displayDate && (
                         <time
                             dateTime={new Date(timestamp).toISOString()}
-                            className="ml-2 color-weak text-nowrap shrink-0"
+                            className="ml-2 color-disabled text-nowrap shrink-0"
                         >
                             {new Date(timestamp).toLocaleTimeString([], {
                                 hour: 'numeric',
@@ -200,9 +191,8 @@ export const ChatItem = ({
                         <div
                             id={messageA11yDescriptionId}
                             className={clsx(
-                                'text-semibold chat-message text-break',
-                                isPending || isFailed ? 'color-disabled' : 'color-norm',
-                                ellipsisOverflow && 'text-ellipsis-four-lines'
+                                'chat-message text-break',
+                                isPending || isFailed ? 'color-disabled' : 'color-weak'
                             )}
                         >
                             <ChatMessageContent message={item.message} />
@@ -282,12 +272,7 @@ export const ChatItem = ({
                     </div>
                 )}
                 {isParticipantEventRecord(item) && (
-                    <div
-                        className={clsx(
-                            'block text-semibold color-weak text-break',
-                            ellipsisOverflow && 'participant-enter--ellipsis'
-                        )}
-                    >
+                    <div className="block color-weak text-break">
                         {
                             // translator: full sentence is "Joined <room name>" or "Left <room name>" (please keep the style, do NOT translate by saying "You joined...", as it might be misleading)
                             item.eventType === ParticipantEvent.Join

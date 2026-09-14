@@ -155,7 +155,7 @@ describe('ChatItem', () => {
             </Wrapper>
         );
 
-        expect(screen.getByText(mockChatMessage.message)).toHaveClass('color-norm');
+        expect(screen.getByText(mockChatMessage.message)).toHaveClass('color-weak');
     });
 
     it('should render retry/discard actions and an error message for a failed message', async () => {

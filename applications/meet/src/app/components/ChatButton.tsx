@@ -7,7 +7,7 @@ import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton
 
 import { CircleButton } from '../atoms/CircleButton/CircleButton';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
-import { ChatPreview } from './ChatPreview';
+import { MeetingSnackbars } from './MeetingSnackbars/MeetingSnackbars';
 
 export const ChatButton = () => {
     const dispatch = useMeetDispatch();
@@ -20,23 +20,20 @@ export const ChatButton = () => {
     const isLargerThanMd = useIsLargerThanMd();
 
     return (
-        <>
-            <div className="relative">
-                {isLargerThanMd && <ChatPreview />}
-                <CircleButton
-                    IconComponent={IcMeetChat}
-                    variant={sideBarState[MeetingSideBars.Chat] ? 'active' : 'default'}
-                    onClick={() => {
-                        dispatch(toggleSideBarState(MeetingSideBars.Chat));
-                    }}
-                    indicatorContent={unreadMessages > 0 ? unreadMessages.toString() : undefined}
-                    indicatorStatus="success"
-                    ariaLabel={c('Alt').t`Toggle chat`}
-                    ariaPressed={sideBarState[MeetingSideBars.Chat]}
-                    tooltipTitle={c('Info').t`Chat with everyone`}
-                />
-            </div>
-            {!isLargerThanMd && <ChatPreview />}
-        </>
+        <div className="relative">
+            {isLargerThanMd && <MeetingSnackbars />}
+            <CircleButton
+                IconComponent={IcMeetChat}
+                variant={sideBarState[MeetingSideBars.Chat] ? 'active' : 'default'}
+                onClick={() => {
+                    dispatch(toggleSideBarState(MeetingSideBars.Chat));
+                }}
+                indicatorContent={unreadMessages > 0 ? unreadMessages.toString() : undefined}
+                indicatorStatus="success"
+                ariaLabel={c('Alt').t`Toggle chat`}
+                ariaPressed={sideBarState[MeetingSideBars.Chat]}
+                tooltipTitle={c('Info').t`Chat with everyone`}
+            />
+        </div>
     );
 };
