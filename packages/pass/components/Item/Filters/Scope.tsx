@@ -1,16 +1,15 @@
 import { memo } from 'react';
 
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
-import Icon from '@proton/components/components/icon/Icon';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 
 type Props = {
-    icon: IconName;
+    icon: IconComponent;
     label: string;
     count: number;
 };
 
-export const ScopeFilter = memo(({ label, count, icon }: Props) => {
+export const ScopeFilter = memo(({ label, count, icon: Icon }: Props) => {
     return (
         <DropdownButton
             color="weak"
@@ -18,7 +17,7 @@ export const ScopeFilter = memo(({ label, count, icon }: Props) => {
             size="small"
             className="flex flex-nowrap gap-2 grow-0 text-sm text-semibold pointer-events-none"
         >
-            <Icon name={icon} className="shrink-0" />
+            <Icon className="shrink-0" />
             <span className="text-ellipsis hidden sm:block">
                 {label} ({count})
             </span>

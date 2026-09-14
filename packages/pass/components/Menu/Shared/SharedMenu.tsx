@@ -4,6 +4,10 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
+import { IcLink } from '@proton/icons/icons/IcLink';
+import { IcUserArrowLeft } from '@proton/icons/icons/IcUserArrowLeft';
+import { IcUserArrowRight } from '@proton/icons/icons/IcUserArrowRight';
+
 import { UpsellRef } from '../../../constants';
 import {
     selectActiveSecureLinksCount,
@@ -44,7 +48,7 @@ export const SharedMenuContent: FC<Props> = ({ heading, onAction }) => {
                 count={sharedWithMeCount}
                 selected={scope === 'shared-with-me'}
                 to="shared-with-me"
-                icon="user-arrow-left"
+                icon={IcUserArrowLeft}
                 onAction={onAction}
             />
         ),
@@ -56,7 +60,7 @@ export const SharedMenuContent: FC<Props> = ({ heading, onAction }) => {
                 count={sharedByMeCount}
                 selected={scope === 'shared-by-me'}
                 to="shared-by-me"
-                icon="user-arrow-right"
+                icon={IcUserArrowRight}
                 onAction={onAction}
             />
         ),
@@ -72,7 +76,7 @@ export const SharedMenuContent: FC<Props> = ({ heading, onAction }) => {
                     secureLinksCount
                 )}
                 to="secure-links"
-                icon="link"
+                icon={IcLink}
                 onAction={onAction}
             />
         ),

@@ -1,6 +1,11 @@
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcLink } from '@proton/icons/icons/IcLink';
+import { IcPassAllVaults } from '@proton/icons/icons/IcPassAllVaults';
+import { IcPassTrash } from '@proton/icons/icons/IcPassTrash';
+import { IcUserArrowLeft } from '@proton/icons/icons/IcUserArrowLeft';
+import { IcUserArrowRight } from '@proton/icons/icons/IcUserArrowRight';
 
 import type { VaultShareItem } from '../../../store/reducers';
 import type { MaybeNull } from '../../../types';
@@ -11,7 +16,7 @@ export type VaultMenuOption = {
     id: MaybeNull<string>;
     label: string;
     color: VaultColorEnum;
-    icon: IconName;
+    icon: IconComponent;
 };
 
 export const getVaultOptionInfo = (
@@ -23,34 +28,34 @@ export const getVaultOptionInfo = (
                 id: null,
                 label: c('Label').t`All items`,
                 color: VaultColorEnum.COLOR_CUSTOM,
-                icon: 'pass-all-vaults',
+                icon: IcPassAllVaults,
             };
         case 'trash':
             return {
                 id: null,
                 label: c('Label').t`Trash`,
-                icon: 'pass-trash',
+                icon: IcPassTrash,
                 color: VaultColorEnum.COLOR_UNSPECIFIED,
             };
         case 'secure-links':
             return {
                 id: null,
                 label: c('Label').t`Secure links`,
-                icon: 'link',
+                icon: IcLink,
                 color: VaultColorEnum.COLOR_CUSTOM,
             };
         case 'shared-by-me':
             return {
                 id: null,
                 label: c('Label').t`Shared by me`,
-                icon: 'user-arrow-right',
+                icon: IcUserArrowRight,
                 color: VaultColorEnum.COLOR_CUSTOM,
             };
         case 'shared-with-me':
             return {
                 id: null,
                 label: c('Label').t`Shared with me`,
-                icon: 'user-arrow-left',
+                icon: IcUserArrowLeft,
                 color: VaultColorEnum.COLOR_CUSTOM,
             };
         default:
