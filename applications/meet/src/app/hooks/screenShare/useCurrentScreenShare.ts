@@ -11,7 +11,7 @@ import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { showPermissionsModal } from '@proton/meet/store/slices/deviceManagementSlice';
 import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import { setParticipantScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
-import { isChrome, isMobile, isSafari, isWindows } from '@proton/shared/lib/helpers/browser';
+import { isChrome, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -30,7 +30,7 @@ export function useCurrentScreenShare({
     startPiP: () => void;
     preparePictureInPicture: () => void;
 }) {
-    const isMeetEnableScreenShareAudio = useFlag('MeetEnableScreenShareAudio');
+    const isMeetEnableScreenShareAudio = useFlag('MeetEnableScreenShareAudio') && !isElectronApp;
 
     const dispatch = useMeetDispatch();
     const { reportMeetError } = useMeetErrorReporting();
@@ -74,14 +74,12 @@ export function useCurrentScreenShare({
             await room.localParticipant.setScreenShareEnabled(
                 true,
                 {
-                    audio:
-                        isMeetEnableScreenShareAudio && !(isElectronApp && isWindows())
-                            ? {
-                                  restrictOwnAudio: true,
-                              }
-                            : false,
-                    systemAudio:
-                        isMeetEnableScreenShareAudio && !(isElectronApp && isWindows()) ? 'include' : undefined,
+                    audio: isMeetEnableScreenShareAudio
+                        ? {
+                              restrictOwnAudio: true,
+                          }
+                        : false,
+                    systemAudio: isMeetEnableScreenShareAudio ? 'include' : 'exclude',
                     selfBrowserSurface: 'exclude',
                     contentHint: 'detail',
                     resolution: {
