@@ -3,8 +3,8 @@ import type { FC, ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import clsx from '@proton/utils/clsx';
 
 import './SpotlightGradient.scss';
@@ -19,7 +19,7 @@ type Props = {
     title: ReactNode;
     backgroundImage?: string;
     closeButtonProps?: {
-        icon?: IconName;
+        icon?: IconComponent;
         dark?: boolean;
     };
     withArrow?: boolean;
@@ -36,6 +36,8 @@ export const SpotlightGradient: FC<Props> = ({
     withArrow,
     onClose,
 }) => {
+    const CloseIcon = closeButtonProps?.icon ?? IcCross;
+
     return (
         <div
             className={clsx(
@@ -63,8 +65,7 @@ export const SpotlightGradient: FC<Props> = ({
                         size="small"
                         onClick={onClose}
                     >
-                        <Icon
-                            name={closeButtonProps?.icon ?? 'cross'}
+                        <CloseIcon
                             className={clsx(
                                 'pass-spotlight-gradient--close-icon',
                                 closeButtonProps?.dark && 'pass-spotlight-gradient--close-icon-dark'

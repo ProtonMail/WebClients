@@ -4,6 +4,8 @@ import { useCallback, useEffect, useMemo } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
+import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
 import { getCreditCardIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { UpsellRef } from '@proton/pass/constants';
@@ -67,7 +69,7 @@ export const AutofillCC: FC<Props> = (payload) => {
                 state?.needsUpgrade && (
                     <ListItem
                         key="upgrade-autofill"
-                        icon={{ type: 'icon', icon: 'arrow-within-square' }}
+                        icon={{ type: 'icon', icon: IcArrowWithinSquare }}
                         title={c('Info').t`Upgrade ${PASS_APP_NAME}`}
                         subTitle={c('Warning').t`Your plan only allows you to autofill from your first two vaults`}
                         onClick={navigateToUpgrade}
@@ -89,7 +91,7 @@ export const AutofillCC: FC<Props> = (payload) => {
                         subTitle={expirationDate.split('-').reverse().join('/')}
                         icon={{
                             type: 'icon',
-                            icon: 'credit-card',
+                            icon: IcCreditCard,
                             customIcon: getCreditCardIcon(cardType),
                         }}
                         onClick={() => {

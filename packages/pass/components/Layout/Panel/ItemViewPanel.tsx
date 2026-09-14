@@ -5,7 +5,22 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import { IcArrowOutFromRectangle } from '@proton/icons/icons/IcArrowOutFromRectangle';
+import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
+import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
+import { IcEye } from '@proton/icons/icons/IcEye';
+import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
+import { IcFolderArrowIn } from '@proton/icons/icons/IcFolderArrowIn';
+import { IcLink } from '@proton/icons/icons/IcLink';
 import { IcPencil } from '@proton/icons/icons/IcPencil';
+import { IcPinAngled } from '@proton/icons/icons/IcPinAngled';
+import { IcPinAngledSlash } from '@proton/icons/icons/IcPinAngledSlash';
+import { IcSquaresPlus } from '@proton/icons/icons/IcSquaresPlus';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { IcTrashCross } from '@proton/icons/icons/IcTrashCross';
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
+import { IcUsersPlus } from '@proton/icons/icons/IcUsersPlus';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { UpsellRef } from '../../../constants';
@@ -94,7 +109,7 @@ export const ItemViewPanel: FC<Props> = ({
         <DropdownMenuButton
             disabled={actionsDisabled}
             onClick={itemActions.onToggleFlags}
-            icon={itemState.isMonitored ? 'eye-slash' : 'eye'}
+            icon={itemState.isMonitored ? IcEyeSlash : IcEye}
             label={
                 itemState.isMonitored ? c('Action').t`Exclude from monitoring` : c('Action').t`Include in monitoring`
             }
@@ -156,14 +171,14 @@ export const ItemViewPanel: FC<Props> = ({
                                     <DropdownMenuButton
                                         onClick={itemActions.onRestore}
                                         label={c('Action').t`Restore item`}
-                                        icon="arrows-rotate"
+                                        icon={IcArrowsRotate}
                                         disabled={itemState.isReadOnly}
                                     />
 
                                     <DropdownMenuButton
                                         onClick={itemActions.onDelete}
                                         label={c('Action').t`Delete permanently`}
-                                        icon="trash-cross"
+                                        icon={IcTrashCross}
                                         disabled={itemState.isReadOnly}
                                     />
 
@@ -171,7 +186,7 @@ export const ItemViewPanel: FC<Props> = ({
                                         <DropdownMenuButton
                                             onClick={itemActions.onLeave}
                                             label={c('Action').t`Leave`}
-                                            icon="arrow-out-from-rectangle"
+                                            icon={IcArrowOutFromRectangle}
                                         />
                                     )}
 
@@ -202,7 +217,7 @@ export const ItemViewPanel: FC<Props> = ({
                                     color="weak"
                                     shape="solid"
                                     pill
-                                    icon="users-plus"
+                                    icon={IcUsersPlus}
                                     menuClassName="flex flex-column"
                                     dropdownHeader={c('Label').t`Share`}
                                     disabled={!online || actionsDisabled}
@@ -223,7 +238,7 @@ export const ItemViewPanel: FC<Props> = ({
                                                     subtitle={c('Label').t`Useful for permanent sharing`}
                                                 />
                                             }
-                                            icon="user-plus"
+                                            icon={IcUserPlus}
                                             extra={itemState.isFree && <PassPlusPromotionButton className="ml-2" />}
                                         />
                                     )}
@@ -237,7 +252,7 @@ export const ItemViewPanel: FC<Props> = ({
                                                     subtitle={c('Label').t`For a one-off sharing`}
                                                 />
                                             }
-                                            icon="link"
+                                            icon={IcLink}
                                             extra={itemState.isFree && <PassPlusPromotionButton className="ml-2" />}
                                         />
                                     )}
@@ -246,7 +261,7 @@ export const ItemViewPanel: FC<Props> = ({
                                         <DropdownMenuButton
                                             onClick={onManageItem}
                                             title={c('Action').t`See members`}
-                                            icon="users"
+                                            icon={IcUsers}
                                             label={
                                                 <DropdownMenuLabel
                                                     title={c('Action').t`Manage access`}
@@ -269,7 +284,7 @@ export const ItemViewPanel: FC<Props> = ({
                                     <DropdownMenuButton
                                         onClick={itemActions.onMove}
                                         label={c('Action').t`Move to`}
-                                        icon="folder-arrow-in"
+                                        icon={IcFolderArrowIn}
                                     />
                                 )}
 
@@ -277,7 +292,7 @@ export const ItemViewPanel: FC<Props> = ({
                                     <DropdownMenuButton
                                         onClick={itemActions.onClone}
                                         label={c('Action').t`Duplicate`}
-                                        icon="squares-plus"
+                                        icon={IcSquaresPlus}
                                         disabled={itemState.isReadOnly}
                                     />
                                 )}
@@ -287,7 +302,7 @@ export const ItemViewPanel: FC<Props> = ({
                                 <DropdownMenuButton
                                     onClick={itemActions.onPin}
                                     label={itemState.isPinned ? c('Action').t`Unpin item` : c('Action').t`Pin item`}
-                                    icon={itemState.isPinned ? 'pin-angled-slash' : 'pin-angled'}
+                                    icon={itemState.isPinned ? IcPinAngledSlash : IcPinAngled}
                                     disabled={!itemState.canTogglePinned}
                                     loading={!itemState.canTogglePinned}
                                 />
@@ -296,14 +311,14 @@ export const ItemViewPanel: FC<Props> = ({
                                     <DropdownMenuButton
                                         onClick={itemActions.onHistory}
                                         label={c('Action').t`View history`}
-                                        icon={'clock-rotate-left'}
+                                        icon={IcClockRotateLeft}
                                     />
                                 )}
 
                                 <DropdownMenuButton
                                     onClick={itemActions.onTrash}
                                     label={c('Action').t`Move to Trash`}
-                                    icon="trash"
+                                    icon={IcTrash}
                                     disabled={itemState.isReadOnly}
                                 />
 
@@ -313,7 +328,7 @@ export const ItemViewPanel: FC<Props> = ({
                                     <DropdownMenuButton
                                         onClick={itemActions.onLeave}
                                         label={c('Action').t`Leave`}
-                                        icon="arrow-out-from-rectangle"
+                                        icon={IcArrowOutFromRectangle}
                                     />
                                 )}
                             </QuickActionsDropdown>,

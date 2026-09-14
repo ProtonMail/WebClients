@@ -5,6 +5,7 @@ import type { FieldArrayRenderProps } from 'formik';
 import { FieldArray, type FormikContextType } from 'formik';
 import { c } from 'ttag';
 
+import { IcCardIdentity } from '@proton/icons/icons/IcCardIdentity';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 
 import { UpsellRef } from '../../../constants';
@@ -66,7 +67,7 @@ export const IdentitySection: FC<IdentityCollapsibleSectionProps> = ({
         const newFieldOptions = (optionalFields ?? []).map<DropdownMenuOption>((field) => ({
             value: field.name,
             label: field.label,
-            icon: 'card-identity',
+            icon: IcCardIdentity,
             onClick: () => {
                 onAddOptionalField(field.name);
                 autofocusInput(field.name);

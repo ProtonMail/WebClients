@@ -4,8 +4,14 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import Icon from '@proton/components/components/icon/Icon';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcBrandBrave } from '@proton/icons/icons/IcBrandBrave';
+import { IcBrandChrome } from '@proton/icons/icons/IcBrandChrome';
+import { IcBrandEdge } from '@proton/icons/icons/IcBrandEdge';
+import { IcBrandFirefox } from '@proton/icons/icons/IcBrandFirefox';
+import { IcBrandProtonPass } from '@proton/icons/icons/IcBrandProtonPass';
+import { IcBrandSafari } from '@proton/icons/icons/IcBrandSafari';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -13,21 +19,21 @@ import { getBrowser } from '@proton/shared/lib/helpers/browser';
 
 import { reloadManager } from '../../utils/reload';
 
-const getBrowserIcon = (): IconName => {
+const getBrowserIcon = (): IconComponent => {
     switch (getBrowser().name) {
         case 'Brave':
-            return 'brand-brave';
+            return IcBrandBrave;
         case 'Chrome':
-            return 'brand-chrome';
+            return IcBrandChrome;
         case 'Firefox':
-            return 'brand-firefox';
+            return IcBrandFirefox;
         case 'Edge':
-            return 'brand-edge';
+            return IcBrandEdge;
         case 'Safari':
         case 'Mobile Safari':
-            return 'brand-safari';
+            return IcBrandSafari;
         default:
-            return 'brand-proton-pass';
+            return IcBrandProtonPass;
     }
 };
 
@@ -47,6 +53,8 @@ export const PromptForReload: FC<Props> = ({ autoReload, browserError, message }
         if (autoReload) reloadManager.runtimeReload().catch(() => showReloadCTA(true));
     }, [autoReload]);
 
+    const BrowserIcon = getBrowserIcon();
+
     return reloadCTA ? (
         <div
             key="prompt-for-reload"
@@ -54,13 +62,12 @@ export const PromptForReload: FC<Props> = ({ autoReload, browserError, message }
         >
             {browserError && (
                 <div className="relative">
-                    <Icon
-                        name="exclamation-circle-filled"
+                    <IcExclamationCircleFilled
                         size={4.5}
                         color="var(--signal-danger)"
                         className="absolute bg-strong rounded-xl"
                     />
-                    <Icon name={getBrowserIcon()} size={14} />
+                    <BrowserIcon size={14} />
                 </div>
             )}
 

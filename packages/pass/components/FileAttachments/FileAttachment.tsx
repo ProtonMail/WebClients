@@ -6,7 +6,10 @@ import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';
+import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
 import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcPencil } from '@proton/icons/icons/IcPencil';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
@@ -165,28 +168,28 @@ export const FileAttachment: FC<Props> = ({
                                 <DropdownMenuButton
                                     onClick={enableRenaming}
                                     label={c('Pass_file_attachments').t`Rename`}
-                                    icon="pencil"
+                                    icon={IcPencil}
                                 />
                             )}
                             {onDownload && (
                                 <DropdownMenuButton
                                     onClick={onDownload}
                                     label={c('Pass_file_attachments').t`Download`}
-                                    icon="arrow-down"
+                                    icon={IcArrowDown}
                                 />
                             )}
                             {onRestore && (
                                 <DropdownMenuButton
                                     onClick={onRestore}
                                     label={c('Pass_file_attachments').t`Restore`}
-                                    icon="clock-rotate-left"
+                                    icon={IcClockRotateLeft}
                                 />
                             )}
                             {onDelete && !fileAttachmentsDisabled && (
                                 <DropdownMenuButton
                                     onClick={onDelete}
                                     label={c('Action').t`Delete`}
-                                    icon="trash"
+                                    icon={IcTrash}
                                     danger
                                 />
                             )}

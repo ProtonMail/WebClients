@@ -4,9 +4,9 @@ import { type ReactNode, useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import type { IconComponent } from '@proton/icons/component';
 import { IcEye } from '@proton/icons/icons/IcEye';
 import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
-import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import { FieldBox, type FieldBoxProps } from '../Layout/FieldBox';
@@ -29,7 +29,7 @@ export type ValueControlProps<E extends ElementType> = Omit<FieldBoxProps, 'icon
     extra?: ReactNode;
     hidden?: boolean;
     hiddenValue?: string;
-    icon?: IconName | ReactElement;
+    icon?: IconComponent | ReactElement;
     label: ReactNode;
     loading?: boolean;
     value?: string;

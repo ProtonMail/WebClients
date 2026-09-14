@@ -3,6 +3,9 @@ import { type FC, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { IcAlias } from '@proton/icons/icons/IcAlias';
+import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
+import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
 import { AliasPreview } from '@proton/pass/components/Alias/legacy/Alias.preview';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
@@ -150,7 +153,7 @@ export const AutosuggestEmail: FC<Props> = ({ action, aliasCreationDisabled, pre
                             </span>
                         )
                     }
-                    icon={{ type: 'icon', icon: 'envelope' }}
+                    icon={{ type: 'icon', icon: IcEnvelope }}
                     onClick={() => autofillEmail(userEmail)}
                 />
             )}
@@ -200,7 +203,7 @@ export const AutosuggestEmail: FC<Props> = ({ action, aliasCreationDisabled, pre
                             );
                         }
                     })()}
-                    icon={{ type: 'icon', icon: needsUpgrade ? 'arrow-within-square' : 'alias' }}
+                    icon={{ type: 'icon', icon: needsUpgrade ? IcArrowWithinSquare : IcAlias }}
                     subTheme={SubTheme.TEAL}
                     disabled={loadingText !== null}
                     onClick={(() => {

@@ -3,6 +3,8 @@ import type { ReactNode, ReactPortal } from 'react';
 import { Form, type FormikContextType, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
+import { IcNote } from '@proton/icons/icons/IcNote';
+
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../constants';
 import type { CustomItemFormValues, ItemRevision, ItemType, MaybeNull } from '../../../types';
 import { FileAttachmentsField } from '../../FileAttachments/FileAttachmentsField';
@@ -61,7 +63,7 @@ export const CustomForm = <T extends ItemType>({
                         label={c('Label').t`Note`}
                         placeholder={c('Placeholder').t`Add note`}
                         component={TextAreaField}
-                        icon="note"
+                        icon={IcNote}
                         maxLength={MAX_ITEM_NOTE_LENGTH}
                     />
                 </FieldsetCluster>

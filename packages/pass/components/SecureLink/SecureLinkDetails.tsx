@@ -5,7 +5,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcClock } from '@proton/icons/icons/IcClock';
+import { IcEye } from '@proton/icons/icons/IcEye';
 import clsx from '@proton/utils/clsx';
 
 import { getOccurrenceString } from '../../lib/i18n/helpers';
@@ -15,7 +17,7 @@ import { Card } from '../Layout/Card/Card';
 import { CardContent } from '../Layout/Card/CardContent';
 import { useCopyToClipboard } from '../Settings/Clipboard/ClipboardProvider';
 
-type SecureLinkCard = { title: string; subtitle: string; icon: IconName; className?: string };
+type SecureLinkCard = { title: string; subtitle: string; icon: IconComponent; className?: string };
 
 export const SecureLinkDetails: FC<SecureLink> = ({ active, secureLink, readCount, maxReadCount, expirationDate }) => {
     const copyToClipboard = useCopyToClipboard();
@@ -33,7 +35,7 @@ export const SecureLinkDetails: FC<SecureLink> = ({ active, secureLink, readCoun
             {
                 title: c('Info').t`Expires in`,
                 subtitle: epochToRemainingDuration(expirationDate),
-                icon: 'clock',
+                icon: IcClock,
             },
         ];
 
@@ -41,7 +43,7 @@ export const SecureLinkDetails: FC<SecureLink> = ({ active, secureLink, readCoun
             cards.push({
                 title: c('Info').t`Can be viewed`,
                 subtitle: getOccurrenceString(maxReadCount),
-                icon: 'eye',
+                icon: IcEye,
             });
         }
 

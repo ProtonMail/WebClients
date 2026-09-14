@@ -6,6 +6,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcEnvelopeOpen } from '@proton/icons/icons/IcEnvelopeOpen';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 import { MAX_CUSTOM_ADDRESSES } from '../../../../constants';
 import type { MonitorTableRow } from '../../../../hooks/monitor/useBreachesTable';
@@ -59,7 +62,7 @@ export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
         if (!row.verified) {
             return (
                 <QuickActionsDropdown
-                    icon="three-dots-vertical"
+                    icon={IcThreeDotsVertical}
                     size="small"
                     shape="ghost"
                     className="shrink-0"
@@ -69,12 +72,12 @@ export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
                     <DropdownMenuButton
                         onClick={() => verifyAddress(row)}
                         label={c('Action').t`Verify`}
-                        icon="envelope-open"
+                        icon={IcEnvelopeOpen}
                     />
                     <DropdownMenuButton
                         onClick={() => deleteAddress(row.addressId)}
                         label={c('Action').t`Remove`}
-                        icon="trash"
+                        icon={IcTrash}
                         loading={deleting}
                     />
                 </QuickActionsDropdown>

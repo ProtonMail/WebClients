@@ -4,6 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
+import { IcBolt } from '@proton/icons/icons/IcBolt';
+import { IcMobile } from '@proton/icons/icons/IcMobile';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 
 import { useVaultCreationPolicy } from '../../../hooks/organization/useVaultCreationPolicy';
@@ -79,14 +81,14 @@ export const MenuSidebar: FC<Props> = ({ onLock, onLogout, userPanel }) => {
                 <AuthActions onLock={onLock} />
 
                 <Submenu
-                    icon="bolt"
+                    icon={IcBolt}
                     label={c('Action').t`Advanced`}
                     items={menu.advanced}
                     headerClassname="mx-3 pr-2 py-1"
                     contentClassname="mx-3"
                 />
                 <Submenu
-                    icon="mobile"
+                    icon={IcMobile}
                     label={
                         DESKTOP_BUILD
                             ? c('Action').t`Get mobile apps`

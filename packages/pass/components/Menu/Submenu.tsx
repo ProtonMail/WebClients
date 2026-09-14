@@ -6,8 +6,8 @@ import CollapsibleContent from '@proton/components/components/collapsible/Collap
 import CollapsibleContext from '@proton/components/components/collapsible/CollapsibleContext';
 import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
 import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
+import type { IconComponent } from '@proton/icons/component';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
-import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import type { MenuItem } from '../../hooks/useMenuItems';
@@ -47,7 +47,7 @@ SubmenuItems.displayName = 'SubmenuItemsMemo';
 type SubMenuProps = {
     contentClassname?: string;
     headerClassname?: string;
-    icon: IconName;
+    icon: IconComponent;
     items: MenuItem[];
     label: string;
 };

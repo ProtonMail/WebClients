@@ -11,8 +11,9 @@ import { Badge } from '@proton/components/components/badge/Badge';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import type { DropdownSize } from '@proton/components/components/dropdown/utils';
-import Icon from '@proton/components/components/icon/Icon';
-import type { IconName, IconSize } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
+import type { IconSize } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import './QuickActionsDropdown.scss';
@@ -26,7 +27,7 @@ export type QuickActionsDropdownProps = {
     dropdownClassname?: string;
     dropdownHeader?: string;
     dropdownSize?: DropdownSize;
-    icon?: IconName;
+    icon?: IconComponent;
     iconSize?: IconSize;
     menuClassName?: string;
     offset?: number;
@@ -47,7 +48,7 @@ export const QuickActionsDropdown: FC<QuickActionsDropdownProps> = ({
     dropdownClassname,
     dropdownHeader,
     dropdownSize,
-    icon = 'three-dots-vertical',
+    icon: Icon = IcThreeDotsVertical,
     iconSize = 5,
     menuClassName,
     offset,
@@ -78,7 +79,7 @@ export const QuickActionsDropdown: FC<QuickActionsDropdownProps> = ({
                 style={style}
                 title={dropdownHeader ?? c('Action').t`More options`}
             >
-                <Icon name={icon} size={iconSize} />
+                <Icon size={iconSize} />
                 {signaled && <NotificationDot className="absolute top-0 right-0 w-2 h-2" />}
                 {badge && <Badge className="pass-quickactions--badge bg-primary color-invert text-bold">{badge}</Badge>}
             </Button>

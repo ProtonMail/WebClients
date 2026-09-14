@@ -2,7 +2,7 @@ import { type FC, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 
 import { useOTPCode } from '../../../../hooks/useOTPCode';
 import type { MaybeNull, OtpRequest } from '../../../../types';
@@ -11,7 +11,7 @@ import { OTPValue } from '../../../Otp/OTPValue';
 import type { IOtpRenderer } from '../../../Otp/types';
 import { ValueControl } from './ValueControl';
 
-type Props = { label?: string; payload: OtpRequest; onCopy?: () => void; icon?: IconName };
+type Props = { label?: string; payload: OtpRequest; onCopy?: () => void; icon?: IconComponent };
 
 export const OTPValueControl: FC<Props> = ({ label, icon, payload, onCopy }) => {
     const otpRenderer = useRef<MaybeNull<IOtpRenderer>>(null);

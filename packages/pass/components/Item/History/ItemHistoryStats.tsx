@@ -4,6 +4,9 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { IcBolt } from '@proton/icons/icons/IcBolt';
+import { IcMagicWand } from '@proton/icons/icons/IcMagicWand';
+import { IcPencil } from '@proton/icons/icons/IcPencil';
 
 import { isPaidPlan } from '../../../lib/user/user.predicates';
 import { selectPassPlan } from '../../../store/selectors';
@@ -25,7 +28,7 @@ export const ItemHistoryStats: FC<Props> = ({ createTime, lastUseTime, modifyTim
         <div className="flex flex-column border border-weak rounded-xl px-4 py-3 gap-3">
             {lastUseTime !== undefined && (
                 <CardContent
-                    icon="magic-wand"
+                    icon={IcMagicWand}
                     iconProps={{ size: 4 }}
                     ellipsis
                     title={c('Title').t`Last autofill`}
@@ -37,7 +40,7 @@ export const ItemHistoryStats: FC<Props> = ({ createTime, lastUseTime, modifyTim
             )}
 
             <CardContent
-                icon="pencil"
+                icon={IcPencil}
                 iconProps={{ size: 4 }}
                 title={c('Title').t`Last modified`}
                 subtitle={epochToRelativeDaysAgo(modifyTime)}
@@ -45,7 +48,7 @@ export const ItemHistoryStats: FC<Props> = ({ createTime, lastUseTime, modifyTim
             />
 
             <CardContent
-                icon="bolt"
+                icon={IcBolt}
                 iconProps={{ size: 4 }}
                 title={c('Title').t`Created`}
                 subtitle={epochToRelativeDaysAgo(createTime)}

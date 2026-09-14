@@ -8,7 +8,6 @@ import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import Icon from '@proton/components/components/icon/Icon';
 import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcPassLock } from '@proton/icons/icons/IcPassLock';
@@ -28,7 +27,7 @@ import { useFolderCreate } from '../../Folders/useFolderCreate';
 import { useFolderCreateTarget } from '../../Folders/useFolderCreateTarget';
 import { PillBadge } from '../../Layout/Badge/PillBadge';
 import { DropdownMenuButtonLabel } from '../../Layout/Dropdown/DropdownMenuButton';
-import { itemTypeToIconName } from '../../Layout/Icon/ItemIcon';
+import { itemTypeToIcon } from '../../Layout/Icon/ItemIcon';
 import { SubTheme, itemTypeToSubThemeClassName } from '../../Layout/Theme/types';
 import { MaybeTooltip } from '../../Layout/Tooltip/MaybeTooltip';
 import { useNavigate } from '../../Navigation/NavigationActions';
@@ -141,50 +140,53 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
                 originalPlacement="bottom-start"
             >
                 <DropdownMenu listRef={listRef}>
-                    {quickActions.map(({ type, label, locked }) => (
-                        <DropdownMenuButton
-                            key={`item-type-dropdown-button-${type}`}
-                            className={itemTypeToSubThemeClassName[type]}
-                            onClick={withClose(() => onCreate(type))}
-                            disabled={locked}
-                        >
-                            <DropdownMenuButtonLabel
-                                label={label}
-                                labelClassname="text-left"
-                                extra={(() => {
-                                    if (type === 'alias' && aliasLimited) {
-                                        return (
-                                            <PillBadge
-                                                label={`${aliasTotalCount}/${aliasLimit}`}
-                                                {...(needsUpgrade
-                                                    ? {
-                                                          color: 'var(--signal-danger-contrast)',
-                                                          backgroundColor: 'var(--signal-danger)',
-                                                      }
-                                                    : {})}
-                                            />
-                                        );
-                                    }
+                    {quickActions.map(({ type, label, locked }) => {
+                        const ItemTypeIcon = itemTypeToIcon[type];
 
-                                    if (locked) {
-                                        return <IcPassLock size={3.5} className="mr-1.5" />;
+                        return (
+                            <DropdownMenuButton
+                                key={`item-type-dropdown-button-${type}`}
+                                className={itemTypeToSubThemeClassName[type]}
+                                onClick={withClose(() => onCreate(type))}
+                                disabled={locked}
+                            >
+                                <DropdownMenuButtonLabel
+                                    label={label}
+                                    labelClassname="text-left"
+                                    extra={(() => {
+                                        if (type === 'alias' && aliasLimited) {
+                                            return (
+                                                <PillBadge
+                                                    label={`${aliasTotalCount}/${aliasLimit}`}
+                                                    {...(needsUpgrade
+                                                        ? {
+                                                              color: 'var(--signal-danger-contrast)',
+                                                              backgroundColor: 'var(--signal-danger)',
+                                                          }
+                                                        : {})}
+                                                />
+                                            );
+                                        }
+
+                                        if (locked) {
+                                            return <IcPassLock size={3.5} className="mr-1.5" />;
+                                        }
+                                    })()}
+                                    icon={
+                                        <span
+                                            className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon shrink-0"
+                                            style={{ '--w-custom': `2em`, '--h-custom': `2em` }}
+                                        >
+                                            <ItemTypeIcon
+                                                className="absolute inset-center"
+                                                color="var(--interaction-norm)"
+                                            />
+                                        </span>
                                     }
-                                })()}
-                                icon={
-                                    <span
-                                        className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon shrink-0"
-                                        style={{ '--w-custom': `2em`, '--h-custom': `2em` }}
-                                    >
-                                        <Icon
-                                            name={itemTypeToIconName[type]}
-                                            className="absolute inset-center"
-                                            color="var(--interaction-norm)"
-                                        />
-                                    </span>
-                                }
-                            />
-                        </DropdownMenuButton>
-                    ))}
+                                />
+                            </DropdownMenuButton>
+                        );
+                    })}
 
                     <DropdownMenuButton className="ui-red" onClick={withClose(handleNewPasswordClick)}>
                         <DropdownMenuButtonLabel

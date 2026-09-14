@@ -6,9 +6,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import FileNameDisplay from '@proton/components/components/fileNameDisplay/FileNameDisplay';
-import Icon from '@proton/components/components/icon/Icon';
 import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
 import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
+import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -125,7 +125,7 @@ export const PassSidebarFolder: FC<Props> = ({ folderId, shareId, name, level = 
                                                 folderCreate.onCreate();
                                             }}
                                         >
-                                            <Icon name="folder-plus" alt={c('Action').t`Create new folder`} />
+                                            <IcFolderPlus alt={c('Action').t`Create new folder`} />
                                         </Button>
                                     </MaybeTooltip>
                                 )}
