@@ -1,4 +1,6 @@
 import type {
+    ContentSearchActionSurface,
+    ContentSearchResultAction,
     ESItem,
     ESStatus,
     EncryptedSearchFunctions,
@@ -74,6 +76,16 @@ export interface EncryptedSearchFunctionsMail extends Pick<
     closeDropdown: () => void;
     setTemporaryToggleOff: () => void;
     esStatus: ESDBStatusMail & ESStatus<ESBaseMessage, ESMessageContent, NormalizedSearchParams>;
+    /**
+     * Routes to v1's or v2's telemetry depending on which engine answered the search. `scrollerMode`
+     * and `primaryMatchType` aren't exposed here: both are hardcoded inside the two implementations
+     * (see `SEARCH_RESULT_SCROLLER_MODE`/`SEARCH_RESULT_PRIMARY_MATCH_TYPE`), not derived per call.
+     */
+    reportResultOpened: (params: { isFirstOpen: boolean; resultPosition: number; messageAgeDays: number }) => void;
+    reportResultAction: (params: {
+        action: ContentSearchResultAction;
+        actionSurface: ContentSearchActionSurface;
+    }) => void;
 }
 
 export type ESMessage = ESItem<ESBaseMessage, ESMessageContent>;
