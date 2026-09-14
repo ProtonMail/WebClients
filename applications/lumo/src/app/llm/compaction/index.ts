@@ -14,4 +14,10 @@ export {
     CLEARED_TOOL_RESULT_PLACEHOLDER,
     PROACTIVE_COMPACTION_THRESHOLD_TOKENS,
 } from './constants';
-export { getSummarizedMessageIds, isSummarizedMessage } from './summarizedMessages';
+export {
+    getCompactionBoundaries,
+    getLatestCompactionBoundary,
+    getSharedHistoryCompactionBoundary,
+    getSummarizedMessageIds,
+    isSummarizedMessage,
+} from './summarizedMessages';

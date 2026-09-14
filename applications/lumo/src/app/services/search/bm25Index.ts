@@ -71,6 +71,16 @@ export interface BM25Document {
 export interface ScoredDocument<T extends BM25Document = BM25Document> {
     document: T;
     score: number;
+    /**
+     * Share of the query's meaning this document actually matched, as matched IDF over
+     * total query IDF (0–1).
+     *
+     * BM25 alone is unbounded and rewards repetition, so a long document that mentions
+     * one query word many times can outrank a short one that addresses the whole
+     * question. Coverage separates those cases. Query terms absent from the corpus have
+     * zero IDF, so they drop out of both sides rather than penalising every document.
+     */
+    coverage: number;
 }
 
 export class BM25Index {
@@ -171,7 +181,11 @@ export class BM25Index {
             .map(([term]) => term);
     }
 
-    private computeBM25Score(docId: string, docText: string, queryTermFreqs: Map<string, number>): number {
+    private computeBM25Score(
+        docId: string,
+        docText: string,
+        queryTermFreqs: Map<string, number>
+    ): { score: number; matchedIdf: number } {
         const docTokens = tokenize(docText).filter((t) => !STOPWORDS.has(t));
         const docLength = this.idfIndex.docLengths.get(docId) || docTokens.length;
 
@@ -181,6 +195,7 @@ export class BM25Index {
         });
 
         let score = 0;
+        let matchedIdf = 0;
 
         queryTermFreqs.forEach((_, queryTerm) => {
             const tf = docTermFreqs.get(queryTerm) || 0;
@@ -191,9 +206,10 @@ export class BM25Index {
             const denominator = tf + this.k1 * (1 - this.b + this.b * (docLength / this.idfIndex.avgDocLength));
 
             score += idf * (numerator / denominator);
+            matchedIdf += idf;
         });
 
-        return score;
+        return { score, matchedIdf };
     }
 
     rankDocuments<T extends BM25Document>(
@@ -213,11 +229,20 @@ export class BM25Index {
             queryTermFreqs.set(token, (queryTermFreqs.get(token) || 0) + 1);
         });
 
+        let totalQueryIdf = 0;
+        queryTermFreqs.forEach((_, term) => {
+            totalQueryIdf += this.computeIDF(term);
+        });
+
         const scored: ScoredDocument<T>[] = candidates
-            .map((doc) => ({
-                document: doc,
-                score: this.computeBM25Score(doc.id, doc.text, queryTermFreqs),
-            }))
+            .map((doc) => {
+                const { score, matchedIdf } = this.computeBM25Score(doc.id, doc.text, queryTermFreqs);
+                return {
+                    document: doc,
+                    score,
+                    coverage: totalQueryIdf > 0 ? matchedIdf / totalQueryIdf : 0,
+                };
+            })
             .filter((result) => result.score > minScore);
 
         scored.sort((a, b) => b.score - a.score);

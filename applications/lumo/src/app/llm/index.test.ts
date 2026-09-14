@@ -179,6 +179,50 @@ describe('prepareTurns — attachment content blocks', () => {
         const joined = turns.map((t) => t.content).join('\n');
         expect(joined).toContain('[Contents not available');
     });
+
+    it('expands each document at most once when the same file is attached on multiple messages', () => {
+        const manualMessage = {
+            id: 'msg-1',
+            role: Role.User,
+            content: 'first question about the paper',
+            conversationId: 'conv-1',
+            attachments: [{ id: 'manual-id', filename: 'paper.pdf', mimeType: 'application/pdf' }],
+        } as unknown as Message;
+        const autoMessage = {
+            id: 'msg-2',
+            role: Role.User,
+            content: 'follow up',
+            conversationId: 'conv-1',
+            attachments: [{ id: 'auto-id', filename: 'paper.pdf', mimeType: 'application/pdf', autoRetrieved: true }],
+        } as unknown as Message;
+        const attachments = [
+            {
+                id: 'manual-id',
+                filename: 'paper.pdf',
+                mimeType: 'application/pdf',
+                markdown: 'Manual copy content',
+            },
+            {
+                id: 'auto-id',
+                filename: 'paper.pdf',
+                mimeType: 'application/pdf',
+                markdown: 'Auto-retrieved copy content',
+                autoRetrieved: true,
+            },
+        ] as unknown as Attachment[];
+
+        const turns = prepareTurns(
+            [manualMessage, autoMessage],
+            personalization,
+            undefined,
+            makeContext(attachments)
+        );
+
+        const joined = turns.map((t) => t.content).join('\n');
+        expect(joined.match(/----- BEGIN FILE CONTENTS -----/g)).toHaveLength(1);
+        expect(joined).toContain('Manual copy content');
+        expect(joined).not.toContain('Auto-retrieved copy content');
+    });
 });
 
 describe('prepareTurns — image attachments', () => {

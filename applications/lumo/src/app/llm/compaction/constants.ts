@@ -39,3 +39,6 @@ export const IMAGE_TOKEN_ESTIMATE = 2_000;
  * model window so we compact before hitting the wall.
  */
 export const PROACTIVE_COMPACTION_THRESHOLD_TOKENS = Math.round(CONTEXT_LIMITS.MAX_CONTEXT * 0.9); // ~115K
+
+/** Refuse compaction that reclaims fewer than this many tokens — avoids duplicate boundary markers. */
+export const MIN_COMPACTION_TOKENS_RECLAIMED = 1_000;

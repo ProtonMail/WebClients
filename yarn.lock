@@ -11782,13 +11782,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@proton/proton-foundation-search@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "@proton/proton-foundation-search@npm:1.1.2"
-  checksum: 10/b2b517e0dd5fd26bda01296a0ddfd1e40cfe1bb57020506c34c3168c2c184ade19724121780fc2ffac559ad6cb486eb6ba2ae78fba0d73cecb25589c164f6d02
-  languageName: node
-  linkType: hard
-
 "@proton/raw-images@workspace:^, @proton/raw-images@workspace:packages/raw-images":
   version: 0.0.0-use.local
   resolution: "@proton/raw-images@workspace:packages/raw-images"
@@ -40841,7 +40834,7 @@ __metadata:
     "@proton/pack": "workspace:^"
     "@proton/payments": "workspace:^"
     "@proton/polyfill": "workspace:^"
-    "@proton/proton-foundation-search": "npm:^1.1.2"
+    "@proton/proton-foundation-search": "npm:2.0.0"
     "@proton/react-redux-store": "workspace:^"
     "@proton/redux-shared-store": "workspace:^"
     "@proton/redux-utilities": "workspace:^"

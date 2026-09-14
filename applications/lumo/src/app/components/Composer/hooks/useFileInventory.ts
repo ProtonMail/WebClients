@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 import { useLumoSelector } from '../../../redux/hooks';
 import { selectAttachments, selectAttachmentsBySpaceId, selectProvisionalAttachments } from '../../../redux/selectors';
 import type { Attachment, SpaceId } from '../../../types';
-import { filterStaleDriveAttachments } from './fileMentionHelpers';
+import { filterStaleDriveAttachments, isMentionableFile } from './fileMentionHelpers';
 import type { FileItem } from './useFileMentionAutocomplete';
 
 export const EMPTY_FILES: FileItem[] = [];
@@ -52,6 +52,9 @@ function computeFileList(
 
     const seen = new Set<string>();
     return allFilesCombined.filter((file) => {
+        if (!isMentionableFile(file.name)) {
+            return false;
+        }
         const key = file.name.toLowerCase();
         if (seen.has(key)) {
             return false;

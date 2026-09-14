@@ -20,15 +20,15 @@ const SUMMARY_MAX_HEIGHT = '22rem';
 function strategyLabel(strategy: CompactionStrategyName): string {
     switch (strategy) {
         case 'clear_tool_results':
-            return c('collider_2025: Compaction').t`cleared old tool results`;
+            return c('collider_2025: Compaction').t`trimmed old tool output`;
         case 'drop_tool_pairs':
-            return c('collider_2025: Compaction').t`removed tool calls`;
+            return c('collider_2025: Compaction').t`trimmed old tool calls`;
         case 'strip_context':
-            return c('collider_2025: Compaction').t`removed file context`;
+            return c('collider_2025: Compaction').t`trimmed file context`;
         case 'drop_old_rounds':
-            return c('collider_2025: Compaction').t`dropped old messages`;
+            return c('collider_2025: Compaction').t`summarized older messages`;
         case 'llm_summary':
-            return c('collider_2025: Compaction').t`summarized the conversation`;
+            return c('collider_2025: Compaction').t`wrote a conversation summary`;
         default:
             return strategy;
     }
@@ -91,10 +91,10 @@ const CompactionAuditDetails = memo(({ audit }: CompactionAuditDetailsProps) => 
         return null;
     }
 
-    const filesLabel = c('collider_2025: Compaction').t`Files from summarized messages`;
-    const clearedToolsLabel = c('collider_2025: Compaction').t`Tool output cleared`;
-    const droppedToolsLabel = c('collider_2025: Compaction').t`Tool calls removed`;
-    const auditHeading = c('collider_2025: Compaction').t`No longer sent to the model`;
+    const filesLabel = c('collider_2025: Compaction').t`Files not included in new replies`;
+    const clearedToolsLabel = c('collider_2025: Compaction').t`Tool output trimmed`;
+    const droppedToolsLabel = c('collider_2025: Compaction').t`Tool calls trimmed`;
+    const auditHeading = c('collider_2025: Compaction').t`Excluded from new replies only`;
 
     return (
         <div className="compaction-marker-audit px-3 py-2 border-bottom border-weak bg-norm">
@@ -158,13 +158,17 @@ const CompactionMarkerComponent = ({ message }: CompactionMarkerProps) => {
                 data-compaction-status="compacting"
             >
                 <div className="compaction-marker-card border border-weak rounded overflow-hidden bg-norm">
-                    <span className="compaction-marker-bar w-full flex flex-nowrap items-center gap-2 bg-weak color-norm py-2 px-3 text-sm">
-                        <CircleLoader size="small" className="shrink-0" />
-                        <span className="flex-1 text-semibold">
+                    <div className="compaction-marker-bar w-full flex flex-column gap-1 bg-weak color-norm py-2 px-3 text-sm">
+                        <span className="flex flex-nowrap items-center gap-2 text-semibold">
+                            <CircleLoader size="small" className="shrink-0" />
                             {c('collider_2025: Compaction')
-                                .t`This chat got long — summarizing earlier messages so we can keep going…`}
+                                .t`Making room to keep going — summarizing earlier messages for the next reply…`}
                         </span>
-                    </span>
+                        <span className="text-xs color-weak">
+                            {c('collider_2025: Compaction')
+                                .t`Nothing is removed from your chat. Scroll up anytime to read the full history.`}
+                        </span>
+                    </div>
                 </div>
             </div>
         );
@@ -175,14 +179,17 @@ const CompactionMarkerComponent = ({ message }: CompactionMarkerProps) => {
     const sections = parseSummarySections(summary);
     const strategySummary = stats.appliedStrategies.map(strategyLabel).join(' · ');
 
-    const headline = c('collider_2025: Compaction').t`Chat shortened to keep going`;
+    const headline = c('collider_2025: Compaction').t`Earlier messages summarized to make room`;
     const reclaimed = c('collider_2025: Compaction').t`${removed} freed`;
     const condensed = c('collider_2025: Compaction').ngettext(
-        msgid`${stats.summarizedMessageCount} earlier message condensed`,
-        `${stats.summarizedMessageCount} earlier messages condensed`,
+        msgid`${stats.summarizedMessageCount} earlier message summarized for new replies`,
+        `${stats.summarizedMessageCount} earlier messages summarized for new replies`,
         stats.summarizedMessageCount
     );
-    const summaryHeading = c('collider_2025: Compaction').t`What ${LUMO_SHORT_APP_NAME} still remembers`;
+    const reassurance = c('collider_2025: Compaction')
+        .t`Your chat history above is unchanged. ${LUMO_SHORT_APP_NAME} uses the summary below when replying — scroll up anytime to read the original messages.`;
+    const summaryHeading = c('collider_2025: Compaction')
+        .t`Summary ${LUMO_SHORT_APP_NAME} uses for new replies`;
 
     return (
         <div className="compaction-marker flex-1 w-full min-w-0 my-4" data-testid="compaction-marker">
@@ -207,6 +214,10 @@ const CompactionMarkerComponent = ({ message }: CompactionMarkerProps) => {
                         <LumoIcon name="ChevronDown" className="shrink-0 color-weak" />
                     )}
                 </button>
+
+                <p className="compaction-marker-reassurance m-0 px-3 py-2 text-xs color-weak border-top border-weak">
+                    {reassurance}
+                </p>
 
                 {expanded && (
                     <div className="compaction-marker-details border-top border-weak">
