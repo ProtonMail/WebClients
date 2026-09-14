@@ -1,8 +1,10 @@
 import type { SagaIterator } from 'redux-saga';
-import { delay, race, select, take } from 'redux-saga/effects';
+import { call, delay, race, select, take } from 'redux-saga/effects';
 
-import type { Base64, MasterKeyState } from '../../types';
-import { selectMasterKey, selectMasterKeyState } from '../selectors';
+import type { MasterKeyContext } from '../../serialization';
+import type { Base64, MasterKeyState, MasterKeysBundle } from '../../types';
+import { buildMasterKeyContext } from '../../util/masterKeys';
+import { selectMasterKeyState, selectMasterKeysBundle } from '../selectors';
 import { addMasterKey, masterKeyFailed } from '../slices/core/credentials';
 
 /**
@@ -29,11 +31,20 @@ const MASTER_KEY_WAIT_TIMEOUT_MS = 120_000;
  * key already landed would block forever.
  */
 export function* waitForMasterKey(context: string): SagaIterator<Base64> {
+    const bundle: MasterKeysBundle = yield call(waitForMasterKeysBundle, context);
+    return bundle.primaryMasterKey;
+}
+
+export function* waitForMasterKeysBundle(context: string): SagaIterator<MasterKeysBundle> {
     const masterKeyState: MasterKeyState = yield select(selectMasterKeyState);
 
     switch (masterKeyState.status) {
         case 'ready':
-            return masterKeyState.masterKey;
+            return {
+                primaryMasterKeyId: masterKeyState.primaryMasterKeyId,
+                primaryMasterKey: masterKeyState.primaryMasterKey,
+                masterKeys: masterKeyState.masterKeys,
+            };
         case 'ineligible':
             throw new Error(`${context}: user is not eligible for Lumo, so there is no master key`);
         case 'failed':
@@ -57,11 +68,14 @@ export function* waitForMasterKey(context: string): SagaIterator<Base64> {
         throw new Error(`${context}: timed out after ${MASTER_KEY_WAIT_TIMEOUT_MS}ms waiting for the master key`);
     }
 
-    // Re-read from the store rather than trusting `ready.payload`: by the time this task is
-    // rescheduled the state is authoritative, and this keeps the two paths returning the same thing.
-    const masterKey: Base64 | undefined = yield select(selectMasterKey);
-    if (!masterKey) {
+    const bundle: MasterKeysBundle | undefined = yield select(selectMasterKeysBundle);
+    if (!bundle) {
         throw new Error(`${context}: master key vanished between the action and the store read`);
     }
-    return masterKey;
+    return bundle;
+}
+
+export function* getMasterKeyContext(context: string): SagaIterator<MasterKeyContext> {
+    const bundle: MasterKeysBundle = yield call(waitForMasterKeysBundle, context);
+    return yield call(buildMasterKeyContext, bundle);
 }

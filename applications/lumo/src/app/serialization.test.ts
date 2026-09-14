@@ -4,6 +4,7 @@ import {
     deserializeConversation,
     deserializeMessage,
     deserializeSpace,
+    deserializeSpaceWithMasterKeys,
     serializeConversation,
     serializeMessage,
     serializeSpace,
@@ -29,6 +30,20 @@ describe('serialization', () => {
         const deserialized = await deserializeSpace(serialized!, masterKey);
 
         expect(deserialized).toEqual(mockSpace);
+    });
+
+    it('space decrypts with a legacy master key and flags migration', async () => {
+        const legacyMasterKey = await base64ToMasterKey('BBBBBAQQQQQEEEEEBBBBBAQQQQQEEEEEBBBBBAQQQQQ=');
+        const primaryMasterKey = await base64ToMasterKey('CCCCCAQQQQQFFFFECCCCCAQQQQQFFFFECCCCCAQQQQQ=');
+
+        const serialized = await serializeSpace(mockSpace, legacyMasterKey);
+        const { space, needsMasterKeyMigration } = await deserializeSpaceWithMasterKeys(serialized, {
+            primary: primaryMasterKey,
+            legacy: [legacyMasterKey],
+        });
+
+        expect(space).toEqual(mockSpace);
+        expect(needsMasterKeyMigration).toBe(true);
     });
 
     it('conversation', async () => {

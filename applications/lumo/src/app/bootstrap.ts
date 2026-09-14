@@ -1,7 +1,6 @@
 import createSagaMiddleware from 'redux-saga';
 
 import {
-    addressesThunk,
     initEvent,
     serverEvent,
     userKeysThunk,
@@ -302,19 +301,9 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
 
         // ── Launched, never awaited before the render gate ──────────────────────────────────
         //
-        // These three are mutually independent: addresses is a round trip, the user-key unlocks are
-        // worker CPU behind `cryptoPromise`, and the masterkeys envelope needs only the session UID
-        // (no PGP keys at all). Issuing them here lets all three overlap.
-        //
-        // `.then` rather than `await cryptoPromise` on purpose: an await would park this frame and
-        // delay the two statements below it.
-        const addressesPromise = dispatch(addressesThunk());
+        // User-key unlocks and the masterkeys envelope are mutually independent and can overlap.
         const userKeysPromise = cryptoPromise.then(() => dispatch(userKeysThunk()));
-        const envelopePromise = new LumoApi(uid).getMasterKey();
-        // Nothing awaits these until `loadKeysAndMasterKey` picks them up, and that now happens
-        // after the render gate. An unobserved rejection in the meantime is an unhandled rejection,
-        // so register a handler; the real `await`s downstream still see the actual failure.
-        addressesPromise.catch(noop);
+        const envelopePromise = new LumoApi(uid).getMasterKeys();
         userKeysPromise.catch(noop);
         envelopePromise.catch(noop);
 
@@ -366,7 +355,7 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
         // `loadKeysAndMasterKey` reports failure as `masterKeyFailed` rather than throwing, so
         // there is no rejection to handle and no error screen: the shell is already painted, and
         // the UI surfaces the failure from `selectMasterKeyState`.
-        void dispatch(loadKeysAndMasterKey(uid, { addressesPromise, userKeysPromise, envelopePromise }))
+        void dispatch(loadKeysAndMasterKey(uid, { userKeysPromise, envelopePromise }))
             .then((result) => {
                 if (result?.eligibility === LUMO_ELIGIBILITY.Eligible) {
                     return dispatch(initializeLumoBackground(uid));

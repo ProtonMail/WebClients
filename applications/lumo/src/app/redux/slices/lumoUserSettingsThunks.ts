@@ -1,10 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { base64ToMasterKey } from '../../crypto';
-import { deserializeUserSettings, serializeUserSettings } from '../../serialization';
+import { deserializeUserSettingsWithMasterKeys, serializeUserSettings } from '../../serialization';
+import { buildMasterKeyContext } from '../../util/masterKeys';
 import { mergeAppendedGeneratedMemories, normalizeMemories } from '../../util/memoryHelpers';
 import { safeLogger } from '../../util/safeLogger';
-import { selectMasterKey } from '../selectors';
+import { saveUserSettingsToStorage } from '../../util/userSettingsStorage';
+import { selectMasterKey, selectMasterKeysBundle } from '../selectors';
 import type { LumoDispatch, LumoState } from '../store';
 import type { LumoThunkArguments } from '../thunk';
 import { updateLumoUserSettingsWithAutoSave } from './lumoUserSettingsActions';
@@ -89,9 +91,9 @@ export const loadLumoUserSettingsFromRemote = createAsyncThunk<
 >('lumoUserSettings/loadFromRemote', async (_, { extra, getState }) => {
     const { lumoApi } = extra;
     const state = getState() as LumoState;
-    const masterKey = selectMasterKey(state);
+    const masterKeysBundle = selectMasterKeysBundle(state);
 
-    if (!masterKey) {
+    if (!masterKeysBundle) {
         throw new Error('Master key not available');
     }
 
@@ -99,10 +101,12 @@ export const loadLumoUserSettingsFromRemote = createAsyncThunk<
         const serializedUserSettings = await lumoApi.getUserSettings();
         console.log('LumoUserSettingsThunks: Raw encrypted payload received from API:', serializedUserSettings);
         if (serializedUserSettings) {
-            // Convert base64 master key to CryptoKey
-            const masterKeyCrypto = await base64ToMasterKey(masterKey);
+            const { primary: primaryMasterKey, legacy } = await buildMasterKeyContext(masterKeysBundle);
 
-            const userSettings = await deserializeUserSettings(serializedUserSettings, masterKeyCrypto);
+            const { userSettings, needsMasterKeyMigration } = await deserializeUserSettingsWithMasterKeys(
+                serializedUserSettings,
+                { primary: primaryMasterKey, legacy }
+            );
 
             if (userSettings) {
                 const isCoreProtonSettings = 'Email' in userSettings && 'Phone' in userSettings;
@@ -112,6 +116,16 @@ export const loadLumoUserSettingsFromRemote = createAsyncThunk<
                     return null;
                 } else if (isLumoSettings) {
                     console.log('LumoUserSettingsThunks: Got correct Lumo settings, returning as-is');
+                    if (needsMasterKeyMigration) {
+                        try {
+                            console.log('LumoUserSettingsThunks: Re-wrapping user settings with primary master key');
+                            const userSettingsToApi = await serializeUserSettings(userSettings, primaryMasterKey);
+                            await lumoApi.putUserSettings(userSettingsToApi);
+                            await saveUserSettingsToStorage(userSettings, masterKeysBundle.primaryMasterKey);
+                        } catch (error) {
+                            safeLogger.warn('Failed to re-wrap user settings with primary master key:', error);
+                        }
+                    }
                     return userSettings;
                 } else {
                     console.log('LumoUserSettingsThunks: Unknown settings format, returning null');

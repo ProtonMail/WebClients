@@ -1149,9 +1149,18 @@ export type PopulateInitialStateAction = {
  * `loading` is the initial state and is the only one that is worth waiting on; see
  * `redux/sagas/masterKey.ts`.
  */
+/** Decrypted AES master keys keyed by their server-side master key ID. */
+export type MasterKeysById = Record<string, Base64>;
+
+export type MasterKeysBundle = {
+    primaryMasterKeyId: string;
+    primaryMasterKey: Base64;
+    masterKeys: MasterKeysById;
+};
+
 export type MasterKeyState =
     | { status: 'loading' }
-    | { status: 'ready'; masterKey: Base64 } // CryptoKey (Wrap), base64-encoded
+    | { status: 'ready'; primaryMasterKeyId: string; primaryMasterKey: Base64; masterKeys: MasterKeysById }
     | { status: 'ineligible' }
     | { status: 'failed'; message: string };
 
