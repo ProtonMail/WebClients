@@ -1,5 +1,7 @@
 import { renderHook } from '@testing-library/react';
 
+import { IcInbox } from '@proton/icons/icons/IcInbox';
+
 import { mockActiveCategoriesData, mockCategoriesStore } from './testUtils/helpers';
 import { useCategoriesShortcuts } from './useCategoriesShortcuts';
 import { useCategoriesView } from './useCategoriesView';
@@ -32,7 +34,7 @@ describe('useCategoriesShortcuts', () => {
             const { result } = renderHook(() => useCategoriesShortcuts());
             expect(result.current.moveToCategoriesOption).toEqual([
                 {
-                    icon: 'inbox',
+                    icon: IcInbox,
                     label: 'Go to Inbox',
                     value: 'inbox',
                     action: expect.anything(),
@@ -56,7 +58,7 @@ describe('useCategoriesShortcuts', () => {
             const { result } = renderHook(() => useCategoriesShortcuts());
             expect(result.current.moveToCategoriesOption).toEqual([
                 {
-                    icon: 'inbox',
+                    icon: IcInbox,
                     label: 'Go to Inbox',
                     value: 'inbox',
                     action: expect.anything(),

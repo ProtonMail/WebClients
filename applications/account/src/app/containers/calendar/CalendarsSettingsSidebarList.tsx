@@ -18,6 +18,7 @@ import {
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { getVisualCalendars, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getIsCalendarSubpage } from '@proton/shared/lib/calendar/settingsRoutes';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -104,7 +105,7 @@ const CalendarsSettingsSidebarList = ({ prefix, calendarsSection }: Props) => {
                             onClick={() => setShowAll(true)}
                             className="navigation-link-child color-weak"
                         >
-                            <SidebarListItemContent left={<SidebarListItemContentIcon name="plus" />}>
+                            <SidebarListItemContent left={<SidebarListItemContentIcon icon={IcPlus} />}>
                                 {
                                     // translator: The variable remainingItems is the number of calendars that can be brought to view by clicking on the button, which expands the list of calendars in the sidebar. E.g. 'Show 8 more'
                                     c('Calendar settings sidebar').ngettext(

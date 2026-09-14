@@ -1,6 +1,18 @@
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
+import { IcClock } from '@proton/icons/icons/IcClock';
+import { IcEnvelopes } from '@proton/icons/icons/IcEnvelopes';
+import { IcFileLines } from '@proton/icons/icons/IcFileLines';
+import { IcFire } from '@proton/icons/icons/IcFire';
+import { IcFolder } from '@proton/icons/icons/IcFolder';
+import { IcInbox } from '@proton/icons/icons/IcInbox';
+import { IcPaperPlane } from '@proton/icons/icons/IcPaperPlane';
+import { IcPaperPlaneClock } from '@proton/icons/icons/IcPaperPlaneClock';
+import { IcStar } from '@proton/icons/icons/IcStar';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { IcTrashClock } from '@proton/icons/icons/IcTrashClock';
 import { labelIncludes } from '@proton/mail/helpers/location';
 import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
@@ -21,11 +33,13 @@ import { getLabelIDs } from './elements';
 export type LabelChanges = { [labelID: string]: boolean };
 
 export interface FolderInfo {
-    icon: IconName;
+    icon: IconComponent;
     name: string;
     to: string;
     color?: string;
     parentID?: string | number;
+    // Custom folders take the folder's own color rather than `icon`.
+    isCustomFolder?: boolean;
 }
 
 interface FolderMap {
@@ -34,72 +48,72 @@ interface FolderMap {
 
 export const getStandardFolders = (): FolderMap => ({
     [MAILBOX_LABEL_IDS.INBOX]: {
-        icon: 'inbox',
+        icon: IcInbox,
         name: c('Link').t`Inbox`,
         to: '/inbox',
     },
     [MAILBOX_LABEL_IDS.TRASH]: {
-        icon: 'trash',
+        icon: IcTrash,
         name: c('Link').t`Trash`,
         to: '/trash',
     },
     [MAILBOX_LABEL_IDS.SPAM]: {
-        icon: 'fire',
+        icon: IcFire,
         name: c('Link').t`Spam`,
         to: '/spam',
     },
     [MAILBOX_LABEL_IDS.ARCHIVE]: {
-        icon: 'archive-box',
+        icon: IcArchiveBox,
         name: c('Link').t`Archive`,
         to: '/archive',
     },
     [MAILBOX_LABEL_IDS.SENT]: {
-        icon: 'paper-plane',
+        icon: IcPaperPlane,
         name: c('Link').t`Sent`,
         to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SENT]}`,
     },
     [MAILBOX_LABEL_IDS.ALL_SENT]: {
-        icon: 'paper-plane',
+        icon: IcPaperPlane,
         name: c('Link').t`Sent`,
         to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_SENT]}`,
     },
     [MAILBOX_LABEL_IDS.DRAFTS]: {
-        icon: 'file-lines',
+        icon: IcFileLines,
         name: c('Link').t`Drafts`,
         to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.DRAFTS]}`,
     },
     [MAILBOX_LABEL_IDS.ALL_DRAFTS]: {
-        icon: 'file-lines',
+        icon: IcFileLines,
         name: c('Link').t`Drafts`,
         to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_DRAFTS]}`,
     },
     [MAILBOX_LABEL_IDS.SCHEDULED]: {
-        icon: 'paper-plane-clock',
+        icon: IcPaperPlaneClock,
         name: c('Link').t`Scheduled`,
         to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SCHEDULED]}`,
     },
     [MAILBOX_LABEL_IDS.STARRED]: {
-        icon: 'star',
+        icon: IcStar,
         name: c('Link').t`Starred`,
         to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.STARRED]}`,
     },
     [MAILBOX_LABEL_IDS.SNOOZED]: {
-        icon: 'clock',
+        icon: IcClock,
         name: c('Link').t`Snooze`,
         to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SNOOZED]}`,
     },
     [MAILBOX_LABEL_IDS.ALL_MAIL]: {
-        icon: 'envelopes',
+        icon: IcEnvelopes,
         name: c('Link').t`All mail`,
         to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_MAIL]}`,
     },
     [MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL]: {
-        icon: 'envelopes',
+        icon: IcEnvelopes,
         name: c('Link').t`All mail`,
         to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL]}`,
     },
     [MAILBOX_LABEL_IDS.SOFT_DELETED]: {
-        icon: 'trash-clock',
+        icon: IcTrashClock,
         name: c('Link').t`Deleted`,
         to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SOFT_DELETED]}`,
     },
@@ -154,7 +168,8 @@ export const getCurrentFolders = (
             }
             const folder = customFolders[labelID];
             return {
-                icon: 'folder',
+                icon: IcFolder,
+                isCustomFolder: true,
                 name: folder?.Name,
                 to: `/${folder?.ID}`,
                 color: folder?.Color,

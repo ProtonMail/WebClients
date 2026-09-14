@@ -2,12 +2,12 @@ import { memo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 
 import type { MoveParams } from '../../hooks/actions/applyLocation/interface';
-import { useMailboxCounter } from '../../hooks/mailboxCounter/useMailboxCounter';
-
 import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
+import { useMailboxCounter } from '../../hooks/mailboxCounter/useMailboxCounter';
 import SidebarItem from './SidebarItem';
 import SidebarLabelActions from './SidebarLabelActions';
 
@@ -26,7 +26,7 @@ const SidebarLabel = ({ label, unreadCount, updateFocusItem, moveToFolder, apply
         <SidebarItem
             labelID={label.ID}
             isOptionDropdownOpened={isOptionDropdownOpened}
-            icon="circle-filled"
+            icon={IcCircleFilled}
             iconSize={4}
             text={label.Name}
             color={label.Color}

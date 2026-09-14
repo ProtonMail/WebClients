@@ -7,6 +7,7 @@ import { getModelState } from '@proton/account/tests';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import type { IconComponent } from '@proton/icons/component';
+import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';
 import { IcFolder } from '@proton/icons/icons/IcFolder';
 import { IcFolders } from '@proton/icons/icons/IcFolders';
 import { conversationCountsActions } from '@proton/mail/store/counts/conversationCountsSlice';
@@ -315,7 +316,7 @@ describe('MailSidebar', () => {
         const labelIcon = labelElement.querySelector('svg');
 
         expect(labelElement.textContent).toContain(label.Name);
-        expect((labelIcon?.firstChild as Element).getAttribute('xlink:href')).toBe('#ic-circle-filled');
+        expect(labelIcon?.innerHTML).toBe(getIconMarkup(IcCircleFilled));
     });
 
     it('should show unread counters', async () => {

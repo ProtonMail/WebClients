@@ -1,3 +1,9 @@
+import { IcClock } from '@proton/icons/icons/IcClock';
+import { IcEnvelopes } from '@proton/icons/icons/IcEnvelopes';
+import { IcFileLines } from '@proton/icons/icons/IcFileLines';
+import { IcInbox } from '@proton/icons/icons/IcInbox';
+import { IcPaperPlane } from '@proton/icons/icons/IcPaperPlane';
+
 import * as useLocationFieldOptionsModule from './useLocationFieldOptions';
 
 jest.mock('./useLocationFieldOptions', () => ({
@@ -11,31 +17,31 @@ const defaultFolders: useLocationFieldOptionsModule.ItemDefaultFolder[] = [
         value: '5',
         text: 'All mail',
         url: '/all-mail',
-        icon: 'envelopes',
+        icon: IcEnvelopes,
     },
     {
         value: '0',
         text: 'Inbox',
         url: '/inbox',
-        icon: 'inbox',
+        icon: IcInbox,
     },
     {
         value: '8',
         text: 'Drafts',
         url: '/drafts',
-        icon: 'file-lines',
+        icon: IcFileLines,
     },
     {
         value: '12',
         text: 'Scheduled',
         url: '/scheduled',
-        icon: 'clock',
+        icon: IcClock,
     },
     {
         value: '7',
         text: 'Sent',
         url: '/sent',
-        icon: 'paper-plane',
+        icon: IcPaperPlane,
     },
 ];
 
