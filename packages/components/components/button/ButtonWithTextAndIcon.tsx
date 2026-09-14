@@ -1,9 +1,9 @@
+import type { ReactElement } from 'react';
+
 import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonLikeShape, ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
 import type { ThemeColorUnion } from '@proton/colors/types';
-import type { IconName } from '@proton/icons/types';
 
-import Icon from '../icon/Icon';
 import type { MimeName } from '../icon/MimeIcon';
 import MimeIcon from '../icon/MimeIcon';
 
@@ -11,7 +11,7 @@ export function ButtonWithTextAndIcon({
     shape,
     color,
     size,
-    iconName,
+    icon,
     mimeIconName,
     buttonText,
     onClick,
@@ -21,7 +21,7 @@ export function ButtonWithTextAndIcon({
     shape?: ButtonLikeShape;
     color?: ThemeColorUnion;
     size?: ButtonLikeSize;
-    iconName?: IconName;
+    icon?: ReactElement;
     mimeIconName?: MimeName;
     buttonText: string;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
@@ -38,7 +38,7 @@ export function ButtonWithTextAndIcon({
             disabled={disabled}
             data-testid={dataTestId}
         >
-            {iconName && <Icon name={iconName} />}
+            {icon}
             {mimeIconName && <MimeIcon name={mimeIconName} />}
             {buttonText}
         </Button>

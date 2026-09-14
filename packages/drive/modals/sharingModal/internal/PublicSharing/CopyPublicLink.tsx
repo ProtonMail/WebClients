@@ -5,6 +5,9 @@ import { c } from 'ttag';
 import { Input } from '@proton/atoms/Input/Input';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { ButtonWithTextAndIcon } from '@proton/components/components/button/ButtonWithTextAndIcon';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcLink } from '@proton/icons/icons/IcLink';
+import { IcPassShieldFillSuccess } from '@proton/icons/icons/IcPassShieldFillSuccess';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
@@ -51,7 +54,7 @@ export function CopyPublicLink({
                             shape="outline"
                             disabled
                             buttonText={c('Info').t`Link expired`}
-                            iconName="info-circle"
+                            icon={<IcInfoCircle />}
                             dataTestId="share-anyone-expired-copyUrlButton"
                         />
                     </div>
@@ -63,7 +66,7 @@ export function CopyPublicLink({
                     onClick={handleClick}
                     disabled={disabled}
                     buttonText={recentlyCopied ? c('Info').t`Link copied` : c('Action').t`Copy link`}
-                    iconName={recentlyCopied ? 'pass-shield-fill-success' : 'link'}
+                    icon={recentlyCopied ? <IcPassShieldFillSuccess /> : <IcLink />}
                     dataTestId="share-anyone-copyUrlButton"
                 />
             )}

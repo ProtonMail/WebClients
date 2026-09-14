@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { SHEETS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -38,7 +39,7 @@ export function ExcelPreview({ onOpenInDocs, onDownload }: { onOpenInDocs?: () =
                     )}
                     {onDownload && (
                         <ButtonWithTextAndIcon
-                            iconName="arrow-down-line"
+                            icon={<IcArrowDownLine />}
                             buttonText={c('Action').t`Download`}
                             onClick={onDownload}
                         />
