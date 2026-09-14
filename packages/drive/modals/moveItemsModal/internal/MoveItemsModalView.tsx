@@ -14,6 +14,7 @@ import {
     ModalTwoHeader,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 
 import type { DirectoryTreeItem } from '../../../components/DirectoryTree/DirectoryTree';
 import { DirectoryTreeRoot } from '../../../components/DirectoryTree/DirectoryTree';
@@ -99,7 +100,7 @@ const MoveItemsModalContent = ({
                         <ButtonWithTextAndIcon
                             onClick={createFolder}
                             disabled={loading || !moveTargetUid}
-                            iconName="folder-plus"
+                            icon={<IcFolderPlus />}
                             buttonText={c('Action').t`New folder`}
                         />
                         <div className="flex justify-space-between flex-nowrap">

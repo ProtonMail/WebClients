@@ -7,6 +7,8 @@ import { ButtonWithTextAndIcon, useActiveBreakpoint } from '@proton/components';
 import { VintageClock } from '@proton/components/components/vintageClock/VintageClock';
 import { generateNodeUid } from '@proton/drive';
 import { uploadManager } from '@proton/drive/modules/upload';
+import { IcFileArrowInUp } from '@proton/icons/icons/IcFileArrowInUp';
+import { IcFolderArrowUp } from '@proton/icons/icons/IcFolderArrowUp';
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { toMinutesAndSeconds } from '@proton/shared/lib/helpers/time';
@@ -50,7 +52,10 @@ export function DriveEmptyViewFreeUpload() {
     return (
         <MobileWrapper>
             <div
-                className={clsx(viewportWidth['>=large'] && 'h-full', 'border border-3 border-weak border-dashed rounded m-10')}
+                className={clsx(
+                    viewportWidth['>=large'] && 'h-full',
+                    'border border-3 border-weak border-dashed rounded m-10'
+                )}
             >
                 <input multiple type="file" ref={fileInput} className="hidden" onChange={fileChange} />
                 <input type="file" ref={folderInput} className="hidden" onChange={folderChange} />
@@ -76,14 +81,14 @@ export function DriveEmptyViewFreeUpload() {
                             color="norm"
                             size="large"
                             buttonText="Upload file"
-                            iconName="file-arrow-in-up"
+                            icon={<IcFileArrowInUp />}
                             onClick={fileClick}
                         />
                         <ButtonWithTextAndIcon
                             color="weak"
                             size="large"
                             buttonText="Upload folder"
-                            iconName="folder-arrow-up"
+                            icon={<IcFolderArrowUp />}
                             onClick={folderClick}
                         />
                     </div>
