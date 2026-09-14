@@ -56,8 +56,3 @@ export const deleteOrgIncomingDefaults = (IDs: string[]) => ({
     url: 'mail/v4/orgincomingdefaults/delete',
     data: { IDs },
 });
-
-export const clearOrgIncomingDefaults = () => ({
-    method: 'delete',
-    url: 'mail/v4/orgincomingdefaults',
-});

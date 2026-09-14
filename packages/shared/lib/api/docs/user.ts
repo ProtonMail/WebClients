@@ -15,11 +15,3 @@ export const queryUpdateUserSettings = (data: Partial<UserSettings>) => {
         data,
     };
 };
-
-/* User active ping */
-export const queryUserActivePing = () => {
-    return {
-        method: 'get',
-        url: `drive/me/active`,
-    };
-};

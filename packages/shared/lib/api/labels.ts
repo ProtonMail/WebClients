@@ -2,7 +2,7 @@ import { LABEL_TYPE } from '../constants';
 
 const { MESSAGE_LABEL, MESSAGE_FOLDER, CONTACT_GROUP, SYSTEM_FOLDER } = LABEL_TYPE;
 
-export const get = (Type: number) => ({
+const get = (Type: number) => ({
     url: 'core/v4/labels',
     method: 'get',
     params: { Type },
@@ -23,7 +23,7 @@ interface LabelOrderArgument extends PartialLabelOrderArgument {
     Type: number;
 }
 
-export const order = ({ LabelIDs, ParentID, Type }: LabelOrderArgument) => ({
+const order = ({ LabelIDs, ParentID, Type }: LabelOrderArgument) => ({
     method: 'put',
     url: 'core/v4/labels/order',
     data: { LabelIDs, ParentID, Type },
@@ -104,9 +104,6 @@ export const orderFolders = (opt: PartialLabelOrderArgument) => order({ ...opt, 
 export const orderLabels = (opt: PartialLabelOrderArgument) => order({ ...opt, Type: MESSAGE_LABEL });
 export const orderSystemFolders = (opt: Pick<PartialLabelOrderArgument, 'LabelIDs'>) =>
     order({ ...opt, ParentID: undefined, Type: SYSTEM_FOLDER });
-export const orderContactGroup = (opt: PartialLabelOrderArgument) => order({ ...opt, Type: CONTACT_GROUP });
-
-export const createLabel = (opt: PartialCreateLabelArgument) => create({ ...opt, Type: MESSAGE_LABEL });
 export const createContactGroup = (opt: PartialCreateLabelArgument) => create({ ...opt, Type: CONTACT_GROUP });
 
 export const updateSystemFolders = (labelId: string, opt: Pick<UpdateLabelArguments, 'Color' | 'Name' | 'Display'>) =>

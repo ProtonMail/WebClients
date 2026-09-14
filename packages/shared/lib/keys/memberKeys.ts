@@ -57,7 +57,7 @@ interface SetupMemberKeySharedArguments {
     skipSrp?: boolean;
 }
 
-export const setupMemberKeyV2 = async ({
+const setupMemberKeyV2 = async ({
     api,
     member,
     memberAddresses,
@@ -135,10 +135,10 @@ export const setupMemberKeyV2 = async ({
     const { Member } = skipSrp
         ? await api<{ Member: tsMember }>(setupMemberKeyConfig)
         : await srpVerify<{ Member: tsMember }>({
-              api,
-              credentials: { password },
-              config: setupMemberKeyConfig,
-          });
+            api,
+            credentials: { password },
+            config: setupMemberKeyConfig,
+        });
 
     await Promise.all(
         AddressKeysWithOnSKLPublish.map(({ onSKLPublishSuccess }) =>

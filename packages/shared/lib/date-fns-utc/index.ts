@@ -6,7 +6,6 @@ export { default as startOfDay } from './startOfDay';
 export { default as endOfDay } from './endOfDay';
 export { default as startOfWeek } from './startOfWeek';
 export { default as endOfWeek } from './endOfWeek';
-export { default as getWeekNumber } from './getWeekNumber';
 export { default as differenceInCalendarDays } from './differenceInCalendarDays';
 export { default as differenceInCalendarWeeks } from './differenceInCalendarWeeks';
 export { default as differenceInCalendarYears } from './differenceInCalendarYears';
@@ -90,13 +89,6 @@ export const isSameDay = (dateLeft: Date, dateRight: Date) => {
         return false;
     }
     return dateLeft.getUTCDate() === dateRight.getUTCDate();
-};
-
-export const isSameHour = (dateLeft: Date, dateRight: Date) => {
-    if (!isSameDay(dateLeft, dateRight)) {
-        return false;
-    }
-    return dateLeft.getUTCHours() === dateRight.getUTCHours();
 };
 
 /**

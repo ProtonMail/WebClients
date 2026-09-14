@@ -237,16 +237,6 @@ export const downSize = async (
 };
 
 /**
- * Returns true if the URL is an inline embedded image.
- */
-export const isInlineEmbedded = (src = '') => src.startsWith('data:');
-
-/**
- * Returns true if the URL is an embedded image.
- */
-export const isEmbedded = (src = '') => src.startsWith('cid:');
-
-/**
  * Resize image file
  */
 export const resize = async (fileImage: File, maxSize: number) => {

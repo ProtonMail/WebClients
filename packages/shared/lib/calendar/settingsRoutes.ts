@@ -24,10 +24,6 @@ const getPathWithOptions = (relativePath: string, options?: GetPathOptions) => {
     return path;
 };
 
-export const getGeneralSettingsPath = (options?: GetPathOptions) => {
-    return getPathWithOptions(CALENDAR_SETTINGS_ROUTE.GENERAL, options);
-};
-
 export const getCalendarsSettingsPath = (options?: GetPathOptions) => {
     return getPathWithOptions(CALENDAR_SETTINGS_ROUTE.CALENDARS, options);
 };

@@ -66,37 +66,6 @@ export const queryDeleteShare = (
     },
     silence,
 });
-export const queryShareMembers = (shareID: string) => ({
-    url: `drive/shares/${shareID}/members`,
-    method: 'get',
-});
-
-export const queryRemoveShareMember = (shareID: string, memberID: string) => ({
-    method: 'delete',
-    url: `drive/shares/${shareID}/members/${memberID}`,
-});
-
-export const queryAcceptShareInvite = (
-    shareID: string,
-    memberID: string,
-    {
-        AddressID,
-        AddressKeyID,
-        SessionKeySignature,
-    }: {
-        AddressID: string;
-        AddressKeyID: string;
-        SessionKeySignature: string;
-    }
-) => ({
-    method: 'post',
-    url: `drive/shares/${shareID}/members/invitations/${memberID}`,
-    data: {
-        AddressID,
-        AddressKeyID,
-        SessionKeySignature,
-    },
-});
 
 /* Shares migration */
 export const queryUnmigratedShares = () => ({

@@ -23,7 +23,7 @@ export type UpdateEventItemUpdate<UpdateModel, PayloadKey extends string> = {
     Action: typeof EVENT_ACTIONS.UPDATE;
 } & { [Key in PayloadKey]: Partial<UpdateModel> };
 
-export type DeleteEventItemUpdate = {
+type DeleteEventItemUpdate = {
     ID: string;
     Action: typeof EVENT_ACTIONS.DELETE;
 };

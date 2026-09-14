@@ -50,7 +50,7 @@ interface ReactivateUserKeysArguments {
     keyTransparencyVerify: KeyTransparencyVerify;
 }
 
-export const reactivateUserKeys = async ({
+const reactivateUserKeys = async ({
     addressRecordsInV2Format,
     api,
     addresses,

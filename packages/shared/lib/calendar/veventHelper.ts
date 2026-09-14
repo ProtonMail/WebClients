@@ -68,7 +68,7 @@ export const getSequence = (event: VcalVeventComponent) => {
     return Math.max(sequence, 0);
 };
 
-export const getReadableCard = (cards: CalendarEventData[]) => {
+const getReadableCard = (cards: CalendarEventData[]) => {
     return cards.find(({ Type }) => [CLEAR_TEXT, SIGNED].includes(Type));
 };
 
@@ -85,7 +85,7 @@ export const getIsEventCancelled = <T extends { CalendarEvents: CalendarEventDat
     return getIsVeventCancelled(vevent);
 };
 
-export const withUid = <T>(properties: VcalVeventComponent & T): VcalVeventComponent & T => {
+const withUid = <T>(properties: VcalVeventComponent & T): VcalVeventComponent & T => {
     if (properties.uid) {
         return properties;
     }
@@ -179,28 +179,28 @@ export const withRequiredProperties = <T>(properties: VcalVeventComponent & T): 
     return withDtstamp(withUid(properties));
 };
 
-export const getSharedPart = (properties: VcalVeventComponent) => {
+const getSharedPart = (properties: VcalVeventComponent) => {
     return {
         [SIGNED]: pick(properties, SHARED_SIGNED_FIELDS),
         [ENCRYPTED_AND_SIGNED]: pick(properties, SHARED_ENCRYPTED_FIELDS),
     };
 };
 
-export const getCalendarPart = (properties: VcalVeventComponent) => {
+const getCalendarPart = (properties: VcalVeventComponent) => {
     return {
         [SIGNED]: pick(properties, CALENDAR_SIGNED_FIELDS),
         [ENCRYPTED_AND_SIGNED]: pick(properties, CALENDAR_ENCRYPTED_FIELDS),
     };
 };
 
-export const getUserPart = (veventProperties: VcalVeventComponent) => {
+const getUserPart = (veventProperties: VcalVeventComponent) => {
     return {
         [SIGNED]: pick(veventProperties, USER_SIGNED_FIELDS),
         [ENCRYPTED_AND_SIGNED]: pick(veventProperties, USER_ENCRYPTED_FIELDS),
     };
 };
 
-export const getAttendeesPart = (
+const getAttendeesPart = (
     veventProperties: VcalVeventComponent
 ): {
     [CLEAR_TEXT]: AttendeeClearPartResult[];

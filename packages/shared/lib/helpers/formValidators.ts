@@ -23,10 +23,10 @@ const defaultUsernameLength = 40;
 export const usernameLengthValidator = (value: string, n = defaultUsernameLength) =>
     value.length > defaultUsernameLength
         ? c('Validation').ngettext(
-              msgid`Try a shorter username (${n} character max)`,
-              `Try a shorter username (${n} characters max)`,
-              n
-          )
+            msgid`Try a shorter username (${n} character max)`,
+            `Try a shorter username (${n} characters max)`,
+            n
+        )
         : '';
 
 export const minLengthValidator = (value: string, minimumLength: number) =>
@@ -43,7 +43,6 @@ export const confirmPasswordValidator = (a: string, b: string) => (a !== b ? c('
 
 export const confirmEmailValidator = (a: string, b: string) =>
     a !== b ? c('Error').t`The email addresses do not match` : '';
-export const usernameValidator = (a: string, b: string) => (a !== b ? c('Error').t`Incorrect username` : '');
 
 export const getMinPasswordLengthMessage = () =>
     c('Validation').ngettext(

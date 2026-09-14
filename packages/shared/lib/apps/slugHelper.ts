@@ -5,7 +5,7 @@ import { stripLeadingAndTrailingSlash, stripLeadingSlash } from '../helpers/stri
 
 export const DEFAULT_APP = APPS.PROTONMAIL;
 
-export const ALLOWED_APPS = [
+const ALLOWED_APPS = [
     APPS.PROTONMAIL,
     APPS.PROTONCALENDAR,
     APPS.PROTONCONTACTS,
@@ -45,9 +45,7 @@ export const getAppFromPathnameSafe = (pathname: string) => {
     return getAppFromPathname(trimmedPathname);
 };
 
-export const ALLOWED_SLUGS = ALLOWED_APPS.map((app) => APPS_CONFIGURATION[app].settingsSlug);
-
-export type AppSlug = (typeof ALLOWED_SLUGS)[number];
+const ALLOWED_SLUGS = ALLOWED_APPS.map((app) => APPS_CONFIGURATION[app].settingsSlug);
 
 export const stripSlugFromPathname = (pathname: string) => {
     return pathname.replace(new RegExp(`/(${ALLOWED_SLUGS.join('|')})`), '');

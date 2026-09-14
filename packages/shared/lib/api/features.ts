@@ -1,8 +1,3 @@
-export const getFeature = (featureCode: string) => ({
-    url: `core/v4/features/${featureCode}`,
-    method: 'get',
-});
-
 /**
  * Get all feature flags of featureCodes
  * API route is a lot more powerfull with sorts, filters

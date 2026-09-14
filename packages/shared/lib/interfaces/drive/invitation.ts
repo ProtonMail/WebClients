@@ -39,7 +39,7 @@ export interface ShareInvitationPayload {
     State: SHARE_MEMBER_STATE;
 }
 
-export interface ShareInvitationSharePayload {
+interface ShareInvitationSharePayload {
     ShareID: string;
     VolumeID: string;
     Passphrase: string;
@@ -47,7 +47,7 @@ export interface ShareInvitationSharePayload {
     CreatorEmail: string;
 }
 
-export interface ShareInvitationLinkPayload {
+interface ShareInvitationLinkPayload {
     Type: LinkType;
     LinkID: string;
     Name: string;
@@ -58,12 +58,6 @@ export interface ShareInvitationDetailsPayload {
     Invitation: ShareInvitationPayload;
     Share: ShareInvitationSharePayload;
     Link: ShareInvitationLinkPayload;
-}
-
-export interface ShareInvitationListingPayload {
-    InvitationIDs: string[];
-    More: boolean;
-    LastAnchorID: string;
 }
 
 export interface ShareExternalInvitationPayload {

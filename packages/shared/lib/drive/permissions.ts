@@ -1,6 +1,6 @@
 import { hasBit } from '../helpers/bitset';
 
-export enum DRIVE_PERMISSIONS {
+enum DRIVE_PERMISSIONS {
     READ = 4,
     WRITE = 2,
     ADMIN = 16,

@@ -80,7 +80,7 @@ const getSupportedFreq = (freq: VcalRruleFreqValue): freq is 'DAILY' | 'WEEKLY' 
     return freq ? supportedFreqs.includes(freq) : false;
 };
 
-export const getSupportedRruleProperties = (rrule: VcalRrulePropertyValue, isInvitation = false) => {
+const getSupportedRruleProperties = (rrule: VcalRrulePropertyValue, isInvitation = false) => {
     const { freq } = rrule;
 
     if (isInvitation) {
@@ -142,7 +142,7 @@ export const getSupportedRruleProperties = (rrule: VcalRrulePropertyValue, isInv
 };
 const ALLOWED_BYSETPOS = [-1, 1, 2, 3, 4];
 
-export const getIsSupportedSetpos = (setpos: number) => {
+const getIsSupportedSetpos = (setpos: number) => {
     return ALLOWED_BYSETPOS.includes(setpos);
 };
 

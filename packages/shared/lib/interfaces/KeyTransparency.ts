@@ -11,12 +11,6 @@ import type { DecryptedAddressKey, DecryptedKey, KeyPair } from './Key';
 import type { FetchedSignedKeyList, SignedKeyList } from './SignedKeyList';
 import type { User } from './User';
 
-export enum IGNORE_KT {
-    NORMAL,
-    EXTERNAL,
-    CATCHALL,
-}
-
 export interface KTLocalStorageAPI {
     getBlobs: () => Promise<string[]>;
     removeItem: (key: string) => Promise<void | undefined>;
@@ -137,5 +131,3 @@ export interface ResignSKLWithPrimaryKeyArguments {
     formerPrimaryKeys: PrimaryAddressKeysForSigning;
     userKeys: DecryptedKey[];
 }
-
-export type ResignSKLWithPrimaryKey = (args: ResignSKLWithPrimaryKeyArguments) => Promise<void>;

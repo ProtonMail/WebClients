@@ -33,7 +33,7 @@ export interface VisualCalendar extends CalendarWithOwnMembers {
     Priority: number;
 }
 
-export interface AutoAddVideoConferenceLinkOutput {
+interface AutoAddVideoConferenceLinkOutput {
     Provider: AutoAddVideoConferenceLinkProvider | null;
     DisplayNotification: number;
 }
@@ -73,7 +73,7 @@ export interface CalendarBootstrap {
     CalendarSettings: CalendarSettings;
 }
 
-export interface CalendarAddressOptions {
+interface CalendarAddressOptions {
     value: string;
     text: string;
 }

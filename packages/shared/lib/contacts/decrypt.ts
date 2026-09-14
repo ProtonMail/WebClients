@@ -26,7 +26,7 @@ interface ProcessedContactData {
     error?: Error;
 }
 
-export const decrypt = async ({ Data }: ContactCard, { privateKeys }: Pick<KeysPair, 'privateKeys'>) => {
+const decrypt = async ({ Data }: ContactCard, { privateKeys }: Pick<KeysPair, 'privateKeys'>) => {
     try {
         const { data } = await CryptoProxy.decryptMessage({ armoredMessage: Data, decryptionKeys: privateKeys });
 
@@ -73,7 +73,7 @@ export const readSigned = async (
     }
 };
 
-export const decryptSigned = async ({ Data, Signature }: ContactCard, { publicKeys, privateKeys }: KeysPair) => {
+const decryptSigned = async ({ Data, Signature }: ContactCard, { publicKeys, privateKeys }: KeysPair) => {
     try {
         const { data, verificationStatus } = await CryptoProxy.decryptMessage({
             armoredMessage: Data,
@@ -105,7 +105,7 @@ const ACTIONS: { [index: number]: (...params: any) => Promise<ProcessedContactDa
     [CLEAR_TEXT]: clearText,
 };
 
-export const decryptContact = async (
+const decryptContact = async (
     contact: Contact,
     { publicKeys, privateKeys }: KeysPair
 ): Promise<{ vcards: string[]; errors: (CryptoProcessingError | Error)[]; isVerified: boolean }> => {

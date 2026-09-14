@@ -95,22 +95,17 @@ export const lockSensitiveSettings = (): FetchConfig => ({
     method: 'put',
 });
 
-export const getHumanVerificationMethods = (): FetchConfig => ({
-    url: 'core/v4/users/human',
-    method: 'get',
-});
-
 export const queryVerificationCode = (
     Type: 'email' | 'sms',
     Destination:
         | {
-              Address: string;
-              Phone?: never;
-          }
+            Address: string;
+            Phone?: never;
+        }
         | {
-              Address?: never;
-              Phone: string;
-          }
+            Address?: never;
+            Phone: string;
+        }
 ) => ({
     url: 'core/v4/users/code',
     method: 'post',
@@ -127,14 +122,6 @@ export const queryCheckEmailAvailability = (Name: string) => ({
     url: 'core/v4/users/availableExternal',
     method: 'get',
     params: { Name },
-});
-
-export const queryDirectSignupStatus = (
-    Type: CLIENT_TYPES // 1 = mail, 2 = VPN
-): FetchConfig => ({
-    url: 'core/v4/users/direct',
-    method: 'get',
-    params: { Type },
 });
 
 export const queryCheckVerificationCode = (

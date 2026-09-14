@@ -3,13 +3,6 @@ import type { Filter } from '@proton/sieve/filterModel';
 import type { Nullable } from '../interfaces';
 import type { MailSearchContext } from './messages';
 
-type AddSieveFilterParams = Required<Pick<Filter, 'Name' | 'Sieve' | 'Version'>>;
-export const addSieveFilter = ({ Name, Sieve, Version }: AddSieveFilterParams) => ({
-    method: 'post',
-    url: 'mail/v4/filters',
-    data: { Name, Sieve, Version },
-});
-
 export const addTreeFilter = (
     {
         ID,
@@ -36,11 +29,6 @@ export const queryFilters = () => ({
 export const queryFilter = (id: string) => ({
     method: 'get',
     url: `mail/v4/filters/${id}`,
-});
-
-export const clearFilters = () => ({
-    method: 'delete',
-    url: 'mail/v4/filters',
 });
 
 export const updateFilter = (
@@ -74,12 +62,12 @@ export const checkSieveFilter = (
     data: { Sieve, Version },
 });
 
-export const enableFilter = (filterID: string) => ({
+const enableFilter = (filterID: string) => ({
     method: 'put',
     url: `mail/v4/filters/${filterID}/enable`,
 });
 
-export const disableFilter = (filterID: string) => ({
+const disableFilter = (filterID: string) => ({
     method: 'put',
     url: `mail/v4/filters/${filterID}/disable`,
 });
