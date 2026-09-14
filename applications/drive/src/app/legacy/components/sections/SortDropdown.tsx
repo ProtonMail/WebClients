@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Dropdown, DropdownCaret, DropdownMenu, DropdownMenuButton } from '@proton/components';
+import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import generateUID from '@proton/utils/generateUID';
 
@@ -49,7 +50,11 @@ export default function SortDropdown<T extends string>({
                 size="small"
                 icon
             >
-                <DropdownCaret isOpen={isOpen} className="expand-caret toolbar-icon my-auto" size={4} />
+                <DropdownCaret
+                    isOpen={isOpen}
+                    className="expand-caret toolbar-icon my-auto"
+                    icon={<IcChevronDownFilled size={4} />}
+                />
             </Button>
             <Dropdown
                 id={uid}
