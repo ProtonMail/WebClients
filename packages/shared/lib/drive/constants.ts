@@ -77,7 +77,7 @@ export enum EVENT_TYPES {
 export enum RESPONSE_CODE {
     SUCCESS = 1000,
     NOT_ALLOWED = 2011,
-    INVALID_REQUIREMENT = 2000,
+    // INVALID_REQUIREMENT = 2000,
     INVALID_LINK_TYPE = 2001,
     ALREADY_EXISTS = 2500,
     NOT_FOUND = 2501,
@@ -256,12 +256,12 @@ export enum DriveDocsPublicShareMessageType {
 
 export type DriveDocsPublicShareMessage =
     | {
-        type: DriveDocsPublicShareMessageType.CUSTOM_PASSWORD;
-        customPassword: string;
-    }
+          type: DriveDocsPublicShareMessageType.CUSTOM_PASSWORD;
+          customPassword: string;
+      }
     | {
-        type: DriveDocsPublicShareMessageType.READY_TO_RECEIVE_CUSTOM_PASSWORD;
-    };
+          type: DriveDocsPublicShareMessageType.READY_TO_RECEIVE_CUSTOM_PASSWORD;
+      };
 
 export const DRIVE_IOS_URL = 'https://apps.apple.com/us/app/proton-drive-cloud-storage/id1509667851';
 export const DRIVE_ANDROID_URL = 'https://play.google.com/store/apps/details?id=me.proton.android.drive';

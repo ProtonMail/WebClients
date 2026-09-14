@@ -10,7 +10,7 @@ export enum CALENDAR_STATUS_TYPE {
     DEFAULT,
     ACTIVE,
     DISABLED,
-    SYNCING,
+    // SYNCING,
     NOT_SYNCED,
 }
 
