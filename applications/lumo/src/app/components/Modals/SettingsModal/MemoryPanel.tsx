@@ -420,7 +420,7 @@ const MemoryRow = ({ memory, isEditing, onStartEdit, onCancelEdit, onSaveEdit, o
                                 onClick={onDelete}
                                 aria-label={c('collider_2025: Action').t`Delete memory`}
                             >
-                                <LumoIcon name="Trash2" size={16} />
+                                <LumoIcon name="Trash" size={16} />
                             </Button>
                         </Tooltip>
                     </>
