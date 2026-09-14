@@ -6,6 +6,7 @@ import {
     referencedFileNamesWithContent,
     refreshAttachmentFromSearchIndex,
     resolveReferencedFilesForSend,
+    shouldSkipRagForExplicitFiles,
 } from './resolveProjectFiles';
 
 jest.mock('../services/search/searchService');
@@ -304,6 +305,20 @@ describe('resolveProjectFiles', () => {
             );
 
             expect(names.has('corporate api documentation_.pdf')).toBe(true);
+        });
+    });
+
+    describe('shouldSkipRagForExplicitFiles', () => {
+        it('skips RAG when the message @mentions a file', () => {
+            expect(shouldSkipRagForExplicitFiles('what is @ChronoGlyph.pdf?')).toBe(true);
+        });
+
+        it('runs RAG for open-ended project questions without @mentions', () => {
+            expect(shouldSkipRagForExplicitFiles('summarize the security papers in this project')).toBe(false);
+        });
+
+        it('runs RAG when a filename is only named in prose, not @mentioned', () => {
+            expect(shouldSkipRagForExplicitFiles('what is ChronoGlyph.pdf?')).toBe(false);
         });
     });
 

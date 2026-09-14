@@ -56,6 +56,7 @@ import {
     referencedFileNamesWithContent,
     refreshAttachmentFromSearchIndex,
     resolveReferencedFilesForSend,
+    shouldSkipRagForExplicitFiles,
 } from '../../util/resolveProjectFiles';
 import { buildArtifactRegistry } from './artifact/artifactRegistry';
 import { runGenerationWithCompaction } from './compactionFlow';
@@ -449,15 +450,17 @@ export function sendMessage({
             const userQuery = lastUserMessage?.content || '';
 
             // Retrieve relevant documents from the project search index (RAG)
-            const ragResult = await retrieveDocumentContextForProject(
-                userQuery,
-                spaceId,
-                userId,
-                isProject,
-                linearChain,
-                allAttachments || {},
-                referencedFileNames
-            );
+            const ragResult = shouldSkipRagForExplicitFiles(m.content)
+                ? undefined
+                : await retrieveDocumentContextForProject(
+                      userQuery,
+                      spaceId,
+                      userId,
+                      isProject,
+                      linearChain,
+                      allAttachments || {},
+                      referencedFileNames
+                  );
 
             // If we have RAG attachments, store them and add to the user message
             let updatedLinearChain = linearChain;
@@ -644,14 +647,16 @@ export function regenerateMessage({
             const allAttachments = state.attachments;
             const lastUserMessage = messagesWithContext.filter((m) => m.role === Role.User).pop();
             const userQuery = lastUserMessage?.content || '';
-            const ragResult = await retrieveDocumentContextForProject(
-                userQuery,
-                c.spaceId,
-                userId,
-                isProject,
-                messagesWithContext,
-                allAttachments
-            );
+            const ragResult = shouldSkipRagForExplicitFiles(userQuery)
+                ? undefined
+                : await retrieveDocumentContextForProject(
+                      userQuery,
+                      c.spaceId,
+                      userId,
+                      isProject,
+                      messagesWithContext,
+                      allAttachments
+                  );
 
             // If we have RAG attachments, store them and add to the user message
             let updatedMessagesWithContext = messagesWithContext;
@@ -847,15 +852,17 @@ export function retrySendMessage({
         const userQuery = lastUserMessage?.content || '';
 
         // Retrieve relevant documents from the project search index (RAG)
-        const ragResult = await retrieveDocumentContextForProject(
-            userQuery,
-            c.spaceId,
-            a.userId,
-            p.isProject,
-            linearChain,
-            p.allAttachments || {},
-            referencedFileNames
-        );
+        const ragResult = shouldSkipRagForExplicitFiles(r.lastUserMessage.content || '')
+            ? undefined
+            : await retrieveDocumentContextForProject(
+                  userQuery,
+                  c.spaceId,
+                  a.userId,
+                  p.isProject,
+                  linearChain,
+                  p.allAttachments || {},
+                  referencedFileNames
+              );
 
         // If we have RAG attachments, store them and add to the user message
         let updatedLinearChain = linearChain;
