@@ -10,11 +10,12 @@ import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector'
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { SafeLabelCount } from '@proton/shared/lib/interfaces';
+import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 
 import { useCategoriesView } from '../../components/categoryView/useCategoriesView';
 import { selectCategoryIDs, selectLabelID } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
-
+import { selectedSubscriptionSelector } from '../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 import type { LocationCountMap, MailboxCounterReturn } from './interface';
 import { getCounterMap } from './useMailboxCounter.helpers';
 
@@ -35,6 +36,7 @@ export const useMailboxCounter = (): MailboxCounterReturn => {
     const disabledCategoryIDs = useMailSelector(selectDisabledCategoriesIDs);
     const currentLabelID = useMailSelector(selectLabelID);
     const categoryIDs = useMailSelector(selectCategoryIDs);
+    const selectedSubscription = useMailSelector(selectedSubscriptionSelector);
 
     const loading =
         labelsLoading || foldersLoading || systemFoldersLoading || conversationCountsLoading || messageCountsLoading;
@@ -73,6 +75,13 @@ export const useMailboxCounter = (): MailboxCounterReturn => {
     const getCurrentLocationCount = (): SafeLabelCount => {
         if (currentLabelID === MAILBOX_LABEL_IDS.INBOX && isCategoryViewEnabled && categoryIDs.length > 0) {
             return counterMap[categoryIDs[0]] ?? EMPTY_LOCATION_COUNT;
+        }
+        if (currentLabelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS) {
+            return {
+                LabelID: currentLabelID,
+                Total: selectedSubscription?.ReceivedMessageCount ?? 0,
+                Unread: selectedSubscription?.UnreadMessageCount ?? 0,
+            };
         }
         return getLocationCount(currentLabelID);
     };
