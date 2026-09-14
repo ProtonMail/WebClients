@@ -3,6 +3,7 @@ import { app, session, desktopCapturer } from "electron";
 import { isHostAllowed } from "./urls/urlTests";
 import { ALLOWED_PERMISSIONS } from "../constants";
 import { mainLogger } from "./log";
+import { isWindows } from "./helpers";
 
 export const appSession = () => {
     return session.fromPartition("persist:app", { cache: false });
@@ -67,7 +68,7 @@ export const setRequestPermission = () => {
                 // https://www.electronjs.org/docs/latest/api/session#sessetdisplaymediarequesthandlerhandler-opts
                 callback({
                     video: primaryScreen,
-                    audio: request.audioRequested && process.platform === "win32" ? "loopback" : undefined,
+                    audio: request.audioRequested && isWindows ? "loopback" : undefined,
                 });
             } catch (error) {
                 callback({});
