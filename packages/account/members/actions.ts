@@ -884,10 +884,17 @@ export const deleteMember = ({
 }: {
     member: Member;
     api: Api;
-}): ThunkAction<Promise<void>, MembersState & OrganizationState, ProtonThunkArguments, UnknownAction> => {
+}): ThunkAction<
+    Promise<void>,
+    MembersState & OrganizationState & OrganizationKeyState & OrganizationRolesState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
     return async (dispatch) => {
         if (member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
-            await api(updateRoleConfig(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
+            await dispatch(
+                setRole({ member, role: MEMBER_ROLE.ORGANIZATION_MEMBER, payload: null, api, syncOwner: true })
+            );
         }
         await api(deleteMemberConfig(member.ID));
         dispatch(upsertMember({ member, type: 'delete' }));
