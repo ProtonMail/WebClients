@@ -2,7 +2,7 @@ import type { EventV6Response } from '../api/events';
 
 export enum CustomPasswordState {
     NO_PASSWORD = 0,
-    PASSWORD_SET = 1,
+    // PASSWORD_SET = 1,
 }
 
 export enum ProtonCalendarState {
@@ -15,7 +15,7 @@ enum EnumLockedState {
     LOCKED = 1,
 }
 
-export enum PersonalMeetingState {
+enum PersonalMeetingState {
     NOT_YOUR_PERSONAL = 0,
     YOUR_PERSONAL = 1,
 }
@@ -44,7 +44,7 @@ export interface AccessTokenResponse {
     Code: 1000;
 }
 
-export enum MeetingState {
+enum MeetingState {
     DELETED = 0,
     ACTIVE = 1,
 }
@@ -104,19 +104,12 @@ export interface CreateMeetingResponse {
     Code: 1000;
 }
 
-export interface MeetingInfo {
-    Salt: string;
-    SessionKey: string;
-    MeetingName: string;
-    MeetingLinkName: string;
-}
-
 export interface RotatePersonalMeetingResponse {
     Meeting: Meeting;
     Code: 1000;
 }
 
-export enum ParticipantCapabilityPermission {
+enum ParticipantCapabilityPermission {
     NotAllowed = 0,
     Allowed = 1,
 }

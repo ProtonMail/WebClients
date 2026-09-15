@@ -68,12 +68,6 @@ export const labelContacts = ({ LabelID, ContactIDs }: { LabelID: string; Contac
     data: { LabelID, ContactIDs },
 });
 
-export const unLabelContacts = ({ LabelID, ContactIDs }: { LabelID: string; ContactIDs: string[] }) => ({
-    url: 'contacts/v4/contacts/unlabel',
-    method: 'put',
-    data: { LabelID, ContactIDs },
-});
-
 export const deleteContacts = (IDs: string[]) => ({
     url: 'contacts/v4/contacts/delete',
     method: 'put',

@@ -84,7 +84,7 @@ export class AuthDeviceInvalidError extends Error {
     }
 }
 
-export class AuthDeviceNonExistingError extends Error {}
+export class AuthDeviceNonExistingError extends Error { }
 
 type DevicePlatform = 'Web' | 'Windows' | 'macOS' | 'Linux' | 'Android' | 'AndroidTV' | 'iOS' | 'AppleTV';
 
@@ -107,16 +107,16 @@ export interface MemberAuthDeviceOutput extends AuthDeviceOutput {
     MemberID: string;
 }
 
-export interface AuthDevicesOutput {
+interface AuthDevicesOutput {
     AuthDevices: AuthDeviceOutput[];
 }
 
-export interface AssociateAuthDeviceOutput {
+interface AssociateAuthDeviceOutput {
     ID: string;
     EncryptedSecret: string;
 }
 
-export const deserializeAuthDeviceSecret = (value: string) => {
+const deserializeAuthDeviceSecret = (value: string) => {
     return Uint8Array.fromBase64(value);
 };
 
@@ -124,15 +124,12 @@ const serializeAuthDeviceSecret = (value: Uint8Array<ArrayBuffer>) => {
     return value.toBase64();
 };
 
-export const getAuthDeviceSecretConfirmationCode = async (data: string) => {
+const getAuthDeviceSecretConfirmationCode = async (data: string) => {
     const sha256DeviceSecret = await getSHA256String(data);
     return base32crockford.encode(utf8StringToUint8Array(sha256DeviceSecret)).slice(0, 4);
 };
 
-export const deserializeAuthDeviceSecretData = async (
-    deviceID: string,
-    serializedData: string
-): Promise<DeviceSecretData> => {
+const deserializeAuthDeviceSecretData = async (deviceID: string, serializedData: string): Promise<DeviceSecretData> => {
     try {
         const data = deserializeAuthDeviceSecret(serializedData);
         const key = await importKey(data);
@@ -147,7 +144,7 @@ export const deserializeAuthDeviceSecretData = async (
     }
 };
 
-export const generateAuthDeviceSecretData = async (): Promise<DeviceSecretData> => {
+const generateAuthDeviceSecretData = async (): Promise<DeviceSecretData> => {
     const data = crypto.getRandomValues(new Uint8Array(32));
     const serializedData = serializeAuthDeviceSecret(data);
     const key = await importKey(data);
@@ -253,7 +250,7 @@ export const encryptAuthDeviceSecret = async ({
     return encryptedSecret.toBase64();
 };
 
-export const getDecryptedAuthDeviceSecret = async ({
+const getDecryptedAuthDeviceSecret = async ({
     encryptedSecret,
     deviceDataSerialized,
 }: {
@@ -307,7 +304,7 @@ const deserializeAuthDeviceData = (data: string | null | undefined): SerializedA
                 persistedAt: Number(parsedJson.persistedAt),
             };
         }
-    } catch {}
+    } catch { }
 };
 
 const getEncryptedAuthDeviceSecret = async ({
@@ -349,7 +346,7 @@ const getEncryptedAuthDeviceSecret = async ({
 export const getPersistedAuthDeviceDataByUser = ({ user }: { user: User }) => {
     try {
         return deserializeAuthDeviceData(getItem(getStorageKey(user.ID)));
-    } catch {}
+    } catch { }
 };
 
 export const setPersistedAuthDeviceDataByUser = async ({
@@ -362,7 +359,7 @@ export const setPersistedAuthDeviceDataByUser = async ({
     setItem(getStorageKey(user.ID), serializeAuthDeviceData(deviceData));
 };
 
-export const removePersistedAuthDeviceDataByUser = ({ user, deviceID }: { user: User; deviceID: string }) => {
+const removePersistedAuthDeviceDataByUser = ({ user, deviceID }: { user: User; deviceID: string }) => {
     const persistedAuthDevice = getPersistedAuthDeviceDataByUser({ user });
     // We're only storing one device per user, and to avoid race conditions we need to verify that the persisted device id
     // is the same one (or missing) that we want to remove.
@@ -371,7 +368,7 @@ export const removePersistedAuthDeviceDataByUser = ({ user, deviceID }: { user: 
     }
 };
 
-export const getDeserializedDeviceSecretData = async (
+const getDeserializedDeviceSecretData = async (
     serializedDeviceData: SerializedAuthDeviceData
 ): Promise<DeviceDataSerialized> => {
     const deviceSecretData = await deserializeAuthDeviceSecretData(

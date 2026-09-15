@@ -47,7 +47,7 @@ export interface MemberLastConnection {
     Gateway: string;
 }
 
-export interface MemberUsage {
+interface MemberUsage {
     LastActivity: number | null; // unix seconds
     LastConnection: MemberLastConnection | null;
 }
@@ -90,7 +90,7 @@ export const getAllUserOrganizations = (api: Api) => {
     }).then(({ Organizations }) => Organizations);
 };
 
-export const queryAddresses = (memberID: string, params?: PaginationParams) => ({
+const queryAddresses = (memberID: string, params?: PaginationParams) => ({
     method: 'get',
     url: `core/v4/members/${memberID}/addresses`,
     params,

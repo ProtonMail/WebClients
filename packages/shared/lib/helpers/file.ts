@@ -76,24 +76,6 @@ export const blobURLtoBlob = (url: string) => {
 };
 
 /**
- * Read the base64 portion of a data url.
- */
-export const readDataUrl = (url = '') => {
-    const error = 'The given url is not a data url.';
-
-    if (url.substring(0, 5) !== 'data:') {
-        throw new Error(error);
-    }
-
-    const [, base64] = url.split(',');
-    if (!base64) {
-        throw new Error(error);
-    }
-
-    return Uint8Array.fromBase64(base64);
-};
-
-/**
  * Split a filename into [name, extension]
  */
 export const splitExtension = (filename = '') => {

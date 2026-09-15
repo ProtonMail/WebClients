@@ -42,7 +42,7 @@ import { fromRruleString } from '../vcal';
 import { getDateProperty } from '../vcalConverter';
 import { withMandatoryPublishFields } from '../veventHelper';
 
-export const getHasCalendarEventMatchingSigningKeys = async (event: CalendarEvent, keys: Key[]) => {
+const getHasCalendarEventMatchingSigningKeys = async (event: CalendarEvent, keys: Key[]) => {
     const allEventSignatures = [...event.SharedEvents, ...event.CalendarEvents, ...event.AttendeesEvents].flatMap(
         (event) => (event.Signature ? [event.Signature] : [])
     );
@@ -63,14 +63,14 @@ export const getHasCalendarEventMatchingSigningKeys = async (event: CalendarEven
     return false;
 };
 
-export interface GetErrorProps {
+interface GetErrorProps {
     event: CalendarEvent;
     errorType: EXPORT_EVENT_ERROR_TYPES;
     weekStartsOn: WeekStartsOn;
     defaultTzid: string;
 }
 
-export const getError = ({ event, errorType, weekStartsOn, defaultTzid }: GetErrorProps): ExportError => {
+const getError = ({ event, errorType, weekStartsOn, defaultTzid }: GetErrorProps): ExportError => {
     const { StartTime, RRule, FullDay } = event;
     const startDate = new Date(StartTime * SECOND);
     const fakeUTCStartDate = fromUTCDateToLocalFakeUTCDate(startDate, !!FullDay, defaultTzid);

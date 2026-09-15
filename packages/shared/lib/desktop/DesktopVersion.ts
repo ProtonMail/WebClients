@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 import { type APP_NAMES, RELEASE_CATEGORIES } from '../constants';
 
-export const DesktopVersionSchema = z.object({
+const DesktopVersionSchema = z.object({
     CategoryName: z.enum(Object.values(RELEASE_CATEGORIES) as [string, ...string[]]),
     Version: z.string(),
     ReleaseDate: z.string(),

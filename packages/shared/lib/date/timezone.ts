@@ -54,7 +54,7 @@ export const fromUTCDate = (date: Date) => {
 };
 
 // The list of all IANA time zones that we support is fetched from the BE at app load
-export let ALLOWED_TIMEZONES_LIST: string[] = [...FALLBACK_ALLOWED_SUPPORTED_TIMEZONES_LIST];
+let ALLOWED_TIMEZONES_LIST: string[] = [...FALLBACK_ALLOWED_SUPPORTED_TIMEZONES_LIST];
 
 let timezonesLoaded = false;
 /**

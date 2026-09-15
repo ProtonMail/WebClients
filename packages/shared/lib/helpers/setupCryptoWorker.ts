@@ -30,10 +30,10 @@ const init = async (options: CryptoWorkerOptions = {}) => {
         await CryptoWorkerPool.init({
             awaitOnFirstUseErrorCallback: options?.awaitOnFirstUse
                 ? (err: unknown) =>
-                      captureMessage('CryptoWorkerPool init error', {
-                          level: 'error',
-                          extra: { message: err instanceof Error ? err.message : 'Unknown error' },
-                      })
+                    captureMessage('CryptoWorkerPool init error', {
+                        level: 'error',
+                        extra: { message: err instanceof Error ? err.message : 'Unknown error' },
+                    })
                 : undefined,
             ...options,
             sentryLogger: captureMessage,
@@ -54,13 +54,4 @@ export const loadCryptoWorker = (options?: CryptoWorkerOptions) => {
         promise = init(options);
     }
     return promise;
-};
-
-/**
- * Release crypto worker as `CryptoProxy` endpoint, then clear the key store and terminate the worker.
- */
-export const destroyCryptoWorker = () => {
-    promise = undefined;
-
-    return CryptoProxy.releaseEndpoint();
 };

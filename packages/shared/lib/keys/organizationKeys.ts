@@ -50,7 +50,7 @@ export const getBackupKeyData = async ({
     };
 };
 
-export const ORGANIZATION_USERID = 'not_for_email_use@domain.tld';
+const ORGANIZATION_USERID = 'not_for_email_use@domain.tld';
 
 interface GenerateOrganizationKeysArguments {
     keyPassword: string;
@@ -346,7 +346,7 @@ export const reencryptOrganizationToken = async ({
     });
 };
 
-export const verifyOrganizationTokenSignature = async ({
+const verifyOrganizationTokenSignature = async ({
     armoredSignature,
     binaryData,
     verificationKeys,

@@ -62,7 +62,7 @@ export enum ActionEventV6 {
     Update = 2,
 }
 
-export type EventV6Item = {
+type EventV6Item = {
     ID: string;
     Action: ActionEventV6;
 };

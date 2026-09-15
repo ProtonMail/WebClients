@@ -35,7 +35,7 @@ export interface ImportKeysProcessV2Arguments {
     keyTransparencyVerify: KeyTransparencyVerify;
 }
 
-export type ImportKeysResult = ReactivateKeysResult;
+type ImportKeysResult = ReactivateKeysResult;
 
 const importKeysProcessV2 = async ({
     api,

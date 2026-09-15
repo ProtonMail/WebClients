@@ -66,11 +66,3 @@ export const groupCalendarsByTaxonomy = (calendars: VisualCalendar[] = []) => {
 export const getOwnedPersonalCalendars = (calendars: VisualCalendar[] = []) => {
     return groupCalendarsByTaxonomy(calendars).ownedPersonalCalendars;
 };
-
-export const getSharedCalendars = (calendars: VisualCalendar[] = []) => {
-    return groupCalendarsByTaxonomy(calendars).sharedCalendars;
-};
-
-export const getSubscribedCalendars = (calendars: VisualCalendar[] = []) => {
-    return groupCalendarsByTaxonomy(calendars).subscribedCalendars;
-};

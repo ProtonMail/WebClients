@@ -10,7 +10,7 @@ import type {
 } from '../interfaces/calendar';
 import { UNIQUE_PROPERTIES } from './vcalDefinition';
 
-export const getInternalDateValue = (value: any): VcalDateValue => {
+const getInternalDateValue = (value: any): VcalDateValue => {
     return {
         year: value.year,
         month: value.month,
@@ -39,7 +39,7 @@ export const getInternalDurationValue = (value: any): VcalDurationValue => {
     };
 };
 
-export const getInternalUntil = (value?: any): VcalDateOrDateTimeValue | undefined => {
+const getInternalUntil = (value?: any): VcalDateOrDateTimeValue | undefined => {
     if (!value) {
         return;
     }
@@ -67,7 +67,7 @@ export const getInternalRecur = (value?: any): VcalRrulePropertyValue | undefine
 /**
  * Convert from ical.js format to an internal format
  */
-export const icalValueToInternalValue = (type: string, value: any) => {
+const icalValueToInternalValue = (type: string, value: any) => {
     if (Array.isArray(value)) {
         return value;
     }
@@ -170,7 +170,7 @@ export const fromIcalProperties = (properties = []) => {
     }, {});
 };
 
-export const fromIcalComponent = (component: any) => {
+const fromIcalComponent = (component: any) => {
     const components = component.getAllSubcomponents().map(fromIcalComponent);
     return {
         component: component.name,

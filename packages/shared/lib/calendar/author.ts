@@ -13,7 +13,7 @@ import { CALENDAR_CARD_TYPE } from './constants';
 
 const { SIGNED, ENCRYPTED_AND_SIGNED } = CALENDAR_CARD_TYPE;
 
-export const withNormalizedAuthor = (x: CalendarEventData) => ({
+const withNormalizedAuthor = (x: CalendarEventData) => ({
     ...x,
     Author: canonicalizeInternalEmail(x.Author),
 });

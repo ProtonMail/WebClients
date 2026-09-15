@@ -5,7 +5,7 @@ import { validateEmailAddress } from '../helpers/email';
 import type { Recipient } from '../interfaces';
 import type { ContactEmail } from '../interfaces/contacts';
 
-export const REGEX_RECIPIENT = /(.*?)\s*<([^>]*)>/;
+const REGEX_RECIPIENT = /(.*?)\s*<([^>]*)>/;
 
 const SEPARATOR_REGEX = /[,;]/;
 

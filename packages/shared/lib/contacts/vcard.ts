@@ -22,7 +22,6 @@ import { isDateTextValue, isMultiValue, isValidDateValue } from './vcardProperti
 
 export {
     EXACTLY_ONE_MAY_BE_PRESENT,
-    EXACTLY_ONE_MUST_BE_PRESENT,
     ONE_OR_MORE_MAY_BE_PRESENT,
     ONE_OR_MORE_MUST_BE_PRESENT,
     PROPERTIES,
@@ -31,7 +30,7 @@ export {
     isValidDateValue,
 } from './vcardProperties';
 
-export const isDateType = (type = '') => {
+const isDateType = (type = '') => {
     return (
         type === 'date' ||
         type === 'time' ||
@@ -122,7 +121,7 @@ export const icalValueToInternalAddress = (adr: string | string[]): VCardAddress
 /**
  * Convert from ical.js format to an internal format
  */
-export const icalValueToInternalValue = (name: string, type: string, property: any) => {
+const icalValueToInternalValue = (name: string, type: string, property: any) => {
     const value = getValue(property, name) as string | string[];
 
     if (name === 'n') {
@@ -241,7 +240,7 @@ export const parseToVCard = (vcard: string): VCardContact => {
     return vCardContact;
 };
 
-export const internalValueToIcalValue = (name: string, value: any) => {
+const internalValueToIcalValue = (name: string, value: any) => {
     if (name === 'n') {
         const {
             familyNames = [''],

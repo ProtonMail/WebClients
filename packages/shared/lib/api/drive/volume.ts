@@ -1,11 +1,6 @@
 import { FOLDER_PAGE_SIZE } from '../../drive/constants';
-import type { MoveLinks, RecoverPhotoLinks, TransferPhotoLinks } from '../../interfaces/drive/link';
-import type {
-    CopyNodeToVolume,
-    CreateDrivePhotosWithAlbumsVolume,
-    CreateDriveVolume,
-    RestoreDriveVolume,
-} from '../../interfaces/drive/volume';
+import type { RecoverPhotoLinks, TransferPhotoLinks } from '../../interfaces/drive/link';
+import type { CopyNodeToVolume, CreateDriveVolume, RestoreDriveVolume } from '../../interfaces/drive/volume';
 
 export const queryCopyNodeToVolume = (volumeId: string, linkId: string, data: CopyNodeToVolume) => ({
     method: 'POST',
@@ -26,12 +21,6 @@ export const queryGetDriveVolume = (volumeId: string) => ({
 export const queryCreateDriveVolume = (data: CreateDriveVolume) => ({
     method: 'post',
     url: 'drive/volumes',
-    data,
-});
-
-export const queryCreatePhotosWithAlbumsVolume = (data: CreateDrivePhotosWithAlbumsVolume) => ({
-    method: 'post',
-    url: `drive/photos/volumes`,
     data,
 });
 
@@ -97,12 +86,5 @@ export const queryTransferPhotoLinks = (volumeID: string, data: TransferPhotoLin
 export const queryRecoverPhotoLinks = (volumeID: string, data: RecoverPhotoLinks) => ({
     method: 'put',
     url: `drive/photos/volumes/${volumeID}/recover-multiple`,
-    data,
-});
-
-// TODO: Migrate single moves to batch move for My Files
-export const queryMoveLinks = (volumeID: string, data: MoveLinks) => ({
-    method: 'put',
-    url: `drive/volumes/${volumeID}/links/move-multiple`,
     data,
 });

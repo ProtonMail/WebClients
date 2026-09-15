@@ -85,7 +85,7 @@ export const decryptUnsigned = async ({ armoredMessage, privateKey }: UnsignedDe
     return decryptedMessage;
 };
 
-export const generateDriveKey = async (rawPassphrase: string) => {
+const generateDriveKey = async (rawPassphrase: string) => {
     const keyGenConfigs = KEYGEN_CONFIGS[KEYGEN_TYPES.CURVE25519];
     const privateKey = await CryptoProxy.generateKey({
         userIDs: [{ name: 'Drive key' }],
@@ -201,37 +201,5 @@ export const generateDriveBootstrap = async (addressPrivateKey: PrivateKeyRefere
         },
         sharePrivateKey,
         folderPrivateKey,
-    };
-};
-
-export const generateAlbumsBootstrap = async (addressPrivateKey: PrivateKeyReference) => {
-    const {
-        NodeKey: ShareKey,
-        NodePassphrase: SharePassphrase,
-        privateKey: sharePrivateKey,
-        NodePassphraseSignature: SharePassphraseSignature,
-    } = await generateNodeKeys(addressPrivateKey);
-
-    const {
-        NodeKey: AlbumKey,
-        NodePassphrase: FolderPassphrase,
-        privateKey: albumPrivateKey,
-        NodePassphraseSignature: FolderPassphraseSignature,
-    } = await generateNodeKeys(sharePrivateKey, addressPrivateKey);
-
-    const AlbumName = await encryptName('PhotosRoot', sharePrivateKey, addressPrivateKey);
-
-    return {
-        bootstrap: {
-            SharePassphrase,
-            SharePassphraseSignature,
-            FolderPassphrase,
-            FolderPassphraseSignature,
-            ShareKey,
-            AlbumKey,
-            AlbumName,
-        },
-        sharePrivateKey,
-        albumPrivateKey,
     };
 };

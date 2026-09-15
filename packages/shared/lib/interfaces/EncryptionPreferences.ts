@@ -39,11 +39,6 @@ export interface GetAllPublicKeysResponse {
     Warnings: string[];
 }
 
-export interface PublicKeyWithPref {
-    publicKey: PublicKeyReference;
-    pref?: number;
-}
-
 export interface SelfSend {
     address: Address;
     publicKey?: PublicKeyReference;

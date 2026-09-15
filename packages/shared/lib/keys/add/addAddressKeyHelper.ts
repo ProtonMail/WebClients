@@ -29,7 +29,7 @@ interface CreateAddressKeyLegacyArguments {
     addressForwardingID?: string;
 }
 
-export const removePrimary = <T extends ActiveKey>(activeKey: T): T => {
+const removePrimary = <T extends ActiveKey>(activeKey: T): T => {
     if (activeKey.primary) {
         return {
             ...activeKey,

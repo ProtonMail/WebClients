@@ -7,31 +7,22 @@ import type { ExtensionForkPayload } from '../authentication/fork/extension';
 import { APPS, BRAND_NAME, EXTENSIONS } from '../constants';
 import { browserAPI, isChromiumBased, isSafari } from '../helpers/browser';
 
-export type ExtensionForkMessage = { type: 'fork'; payload: ExtensionForkPayload };
-export type ExtensionAuthenticatedMessage = { type: 'auth-ext' };
+type ExtensionForkMessage = { type: 'fork'; payload: ExtensionForkPayload };
+type ExtensionAuthenticatedMessage = { type: 'auth-ext' };
 export type PassInstalledMessage = { type: 'pass-installed' };
-export type PassOnboardingMessage = { type: 'pass-onboarding' };
+type PassOnboardingMessage = { type: 'pass-onboarding' };
 
 export type ExtensionMessage =
-    | ExtensionForkMessage
-    | ExtensionAuthenticatedMessage
-    | PassInstalledMessage
-    | PassOnboardingMessage;
+    ExtensionForkMessage | ExtensionAuthenticatedMessage | PassInstalledMessage | PassOnboardingMessage;
 
 export type ExtensionApp = keyof typeof EXTENSIONS;
 
 /* extension communicating with account should
  * conform to this message response type */
 export type ExtensionMessageResponse<P = any> =
-    | { type: 'success'; payload: P }
-    | { type: 'error'; payload?: P; error?: string };
+    { type: 'success'; payload: P } | { type: 'error'; payload?: P; error?: string };
 
-export type ExtensionMessageFallbackResponse<P = any> = ExtensionMessageResponse<P> & {
-    token: string;
-};
-
-export const sendMessageSupported = () =>
-    (isChromiumBased() || isSafari()) && browserAPI?.runtime?.sendMessage !== undefined;
+const sendMessageSupported = () => (isChromiumBased() || isSafari()) && browserAPI?.runtime?.sendMessage !== undefined;
 
 const isValidExtensionResponse = <R = any>(response: any): response is ExtensionMessageResponse<R> =>
     response?.type === 'success' || response?.type === 'error';

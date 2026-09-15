@@ -10,7 +10,7 @@ export enum CALENDAR_STATUS_TYPE {
     DEFAULT,
     ACTIVE,
     DISABLED,
-    SYNCING,
+    // SYNCING,
     NOT_SYNCED,
 }
 
@@ -22,13 +22,13 @@ export interface CalendarStatusBadge {
     className?: string;
 }
 
-export const getDefaultCalendarBadge = (): CalendarStatusBadge => ({
+const getDefaultCalendarBadge = (): CalendarStatusBadge => ({
     statusType: CALENDAR_STATUS_TYPE.DEFAULT,
     badgeType: 'primary',
     text: c('Calendar status').t`Default`,
 });
 
-export const getActiveCalendarBadge = (): CalendarStatusBadge => ({
+const getActiveCalendarBadge = (): CalendarStatusBadge => ({
     statusType: CALENDAR_STATUS_TYPE.ACTIVE,
     badgeType: 'success',
     text: c('Calendar status').t`Active`,
@@ -40,7 +40,7 @@ export const getDisabledCalendarBadge = (): CalendarStatusBadge => ({
     text: c('Calendar status').t`Disabled`,
 });
 
-export const getNotSyncedCalendarBadge = ({
+const getNotSyncedCalendarBadge = ({
     text,
     tooltipText,
 }: {

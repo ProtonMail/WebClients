@@ -20,7 +20,7 @@ import { decryptPassphrase, decryptPassphraseSessionKey, signPassphrase } from '
 import { getCanWrite } from '../../permissions';
 import { ShareCalendarSignatureVerificationError } from './ShareCalendarSignatureVerificationError';
 
-export const getIsInvitationExpired = ({ ExpirationTime }: CalendarMemberInvitation) => {
+const getIsInvitationExpired = ({ ExpirationTime }: CalendarMemberInvitation) => {
     if (!ExpirationTime) {
         return false;
     }

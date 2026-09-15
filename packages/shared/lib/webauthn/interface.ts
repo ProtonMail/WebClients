@@ -1,8 +1,8 @@
-export interface PublicKeyCredentialUserEntitySerialized extends Omit<PublicKeyCredentialUserEntity, 'id'> {
+interface PublicKeyCredentialUserEntitySerialized extends Omit<PublicKeyCredentialUserEntity, 'id'> {
     id: number[];
 }
 
-export interface PublicKeyCredentialDescriptorSerialized extends Omit<PublicKeyCredentialDescriptor, 'id'> {
+interface PublicKeyCredentialDescriptorSerialized extends Omit<PublicKeyCredentialDescriptor, 'id'> {
     id: number[];
 }
 
@@ -31,7 +31,7 @@ export interface AuthenticationOptions {
     publicKey: PublicKeyCredentialRequestOptionsSerialized;
 }
 
-export enum AttestationFormat {
+enum AttestationFormat {
     None = 'none',
     AndroidKey = 'android-key',
     AndroidSafetyNet = 'android-safetynet',

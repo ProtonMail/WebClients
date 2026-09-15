@@ -12,7 +12,7 @@ import type { ApiRateLimiter } from './apiRateLimiter';
 import { getApiError, getApiErrorMessage, getIsOfflineError, getIsUnreachableError } from './helpers/apiErrorHelper';
 import { withApiHandlers } from './helpers/withApiHandlers';
 
-export const defaultApiStatus = {
+const defaultApiStatus = {
     offline: false,
     apiUnreachable: '',
     appVersionBad: false,
@@ -34,18 +34,18 @@ const applyServerTimeUpdate = (latestServerTime: Date, requestTime: Date) => ({
     serverTimeUpdatedAt: requestTime,
 });
 
-export type ServerTimeEvent = {
+type ServerTimeEvent = {
     type: 'server-time';
     payload: {
         value: { serverTime: Date; serverTimeUpdatedAt: Date };
         extra: { standardDateHeader: string | undefined; customDateHeader: string | undefined };
     };
 };
-export type ApiStatusEvent = {
+type ApiStatusEvent = {
     type: 'status';
     payload: Partial<typeof defaultApiStatus>;
 };
-export type ApiNotificationEvent = {
+type ApiNotificationEvent = {
     type: 'notification';
     payload: {
         type: 'error';
@@ -54,7 +54,7 @@ export type ApiNotificationEvent = {
         expiration?: number;
     };
 };
-export type ApiLogoutEvent = {
+type ApiLogoutEvent = {
     type: 'logout';
     payload: {
         error: any;
@@ -93,7 +93,7 @@ export type ApiUserRestrictedEvent = {
     };
 };
 
-export type ApiErrorEvent = {
+type ApiErrorEvent = {
     type: 'api-error';
     payload: {
         errorCode: number | undefined;

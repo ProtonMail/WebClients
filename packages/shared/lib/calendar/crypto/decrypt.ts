@@ -8,7 +8,7 @@ import type { CalendarEventData } from '../../interfaces/calendar';
 import type { SimpleMap } from '../../interfaces/utils';
 import { CALENDAR_CARD_TYPE, EVENT_VERIFICATION_STATUS } from '../constants';
 
-export const getEventVerificationStatus = (status: VERIFICATION_STATUS | undefined, hasPublicKeys: boolean) => {
+const getEventVerificationStatus = (status: VERIFICATION_STATUS | undefined, hasPublicKeys: boolean) => {
     if (!hasPublicKeys || status === undefined) {
         return EVENT_VERIFICATION_STATUS.NOT_VERIFIED;
     }

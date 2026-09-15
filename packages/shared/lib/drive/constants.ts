@@ -3,7 +3,7 @@ import { isMobile } from '../helpers/browser';
 import type { UserSettings } from '../interfaces/drive/userSettings';
 import { LayoutSetting, SortSetting } from '../interfaces/drive/userSettings';
 
-export const MB = 1024 * 1024;
+const MB = 1024 * 1024;
 export const FOLDER_PAGE_SIZE = 150;
 export const BATCH_REQUEST_SIZE = 50;
 export const FILE_CHUNK_SIZE = 4 * MB;
@@ -24,7 +24,7 @@ export const HARDWARE_CONCURRENCY = (typeof window !== 'undefined' && window.nav
 // of one file but for all downloads to not kill user's device. Ideally, we
 // want to make download of one file as fast as possible, but limit it to the
 // same speed with more ongoing downloads or uploads.
-export const MAX_THREADS_PER_DOWNLOAD = HARDWARE_CONCURRENCY;
+export const MAX_THREADS_PER_DOWNLOAD = HARDWARE_CONCURRENCY * 1;
 export const MAX_THREADS_PER_REQUEST = 5;
 export const DEFAULT_SORT_FIELD = 'ModifyTime';
 export const DEFAULT_SORT_ORDER: SORT_DIRECTION = SORT_DIRECTION.DESC;
@@ -46,9 +46,6 @@ export const MAX_SHARED_URL_PASSWORD_LENGTH = 50;
 export const SHARE_GENERATED_PASSWORD_LENGTH = 12;
 
 export const DEFAULT_SHARE_MAX_ACCESSES = 0; // Zero means unlimited.
-
-export const MAX_SAFE_UPLOADING_FILE_COUNT = 500;
-export const MAX_SAFE_UPLOADING_FILE_SIZE = 5 * 1024 * 1024 * 1024; // GB
 
 export const CUSTOM_DATA_FORMAT = 'pd-custom';
 
@@ -74,22 +71,13 @@ export enum EVENT_TYPES {
     UPDATE_METADATA = 3,
 }
 
-export enum EXPIRATION_DAYS {
-    NEVER = 'never',
-    ONE = '1',
-    FIFTEEN = '15',
-    THIRTY = '30',
-    SIXTY = '60',
-    NINETY = '90',
-}
-
 /**
  * @deprecated common to different products, should be removed and use `API_CODES` from _/lib/constants.ts_ instead
  */
 export enum RESPONSE_CODE {
     SUCCESS = 1000,
     NOT_ALLOWED = 2011,
-    INVALID_REQUIREMENT = 2000,
+    // INVALID_REQUIREMENT = 2000,
     INVALID_LINK_TYPE = 2001,
     ALREADY_EXISTS = 2500,
     NOT_FOUND = 2501,
@@ -242,8 +230,6 @@ export enum SHARE_EXTERNAL_INVITATION_STATE {
 }
 
 export const DS_STORE = '.DS_Store';
-
-export const PHOTOS_PAGE_SIZE = 500;
 
 // Accepted files for photos. This value must be used in input `accept` attribute
 export const PHOTOS_ACCEPTED_INPUT = 'image/*,video/*';
