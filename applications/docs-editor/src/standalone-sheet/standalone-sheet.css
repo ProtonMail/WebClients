@@ -1,0 +1,32 @@
+html,
+body,
+.app-root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+.app-root {
+  display: flex;
+  flex-direction: column;
+}
+.standalone-sheet-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 10px 18px;
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--border-weak);
+  background: var(--background-norm);
+  color: var(--text-norm);
+  font:
+    14px system-ui,
+    sans-serif;
+}
+.standalone-sheet-header output {
+  color: var(--text-weak);
+}
+.standalone-sheet-editor {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+}

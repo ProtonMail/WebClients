@@ -55,16 +55,22 @@ export default defineConfig([
     },
   },
   {
-    files: ['src/app/Containers/Spreadsheet/**/*.{ts,tsx}'],
+    files: ['src/app/Containers/Spreadsheet/**/*.{ts,tsx}', 'src/standalone-sheet/**/*.{ts,tsx}'],
     rules: {
       '@typescript-eslint/no-restricted-imports': [
         'error',
         {
           patterns: [
             {
-              group: ['@proton/icons', '@proton/icons/**', '@proton/components/components/icon/Icon'],
+              group: [
+                '@proton/icons',
+                '@proton/icons/**',
+                '@proton/components/components/icon/Icon',
+                '@rowsncolumns/icons',
+                '@rowsncolumns/icons/**',
+              ],
               message:
-                'Use icons from Spreadsheet/components/icons. This is to facilitate standalone Sheets editor that is not dependant on @proton/icons.',
+                'Use icons from Spreadsheet/components/icons so standalone Sheets does not depend on an external icon registry or package.',
             },
           ],
         },
