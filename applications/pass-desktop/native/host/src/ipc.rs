@@ -44,7 +44,7 @@ pub type Ipc = BufReader<Stream>;
 pub async fn connect_to_ipc() -> Result<Ipc> {
     let ipc_path = get_ipc_path()?;
 
-    info!("Connecting to IPC {:#?}", &ipc_path);
+    info!("Connecting to IPC {:#?}", ipc_path);
 
     let conn = Stream::connect(ipc_path).await?;
 
