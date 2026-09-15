@@ -1,12 +1,13 @@
-import Icon from '@proton/components/components/icon/Icon'
 import { Button } from '@proton/atoms/Button/Button'
 import { Slider, SliderSizeEnum } from '@proton/atoms/Slider/Slider'
-import { IcCross } from '@proton/icons/icons/IcCross'
 import type { EditorControllerInterface } from '@proton/docs-core/lib/EditorController/EditorController'
 import { getBufferHash } from '@proton/docs-core/lib/utils/hash'
+import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle'
+import { IcCross } from '@proton/icons/icons/IcCross'
+import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle'
 import { useEffect, useRef, useState } from 'react'
-import { createStore, useStore } from 'zustand'
 import { mergeUpdates } from 'yjs'
+import { createStore, useStore } from 'zustand'
 
 const createUpdateReplayToolStore = (editorController: EditorControllerInterface) => {
   return createStore<{
@@ -54,7 +55,11 @@ const createUpdateReplayToolStore = (editorController: EditorControllerInterface
     loadUpdatesFile: async (file: File, broadcastToWS = false) => {
       const hash = await getBufferHash(await file.arrayBuffer())
       const updates: Uint8Array<ArrayBuffer>[] = []
-      if (file.type === 'application/zip' || file.type === 'application/x-zip-compressed' || file.name.endsWith('.zip')) {
+      if (
+        file.type === 'application/zip' ||
+        file.type === 'application/x-zip-compressed' ||
+        file.name.endsWith('.zip')
+      ) {
         const JSZip = (await import('jszip')).default
         const zip = new JSZip()
         const content = await zip.loadAsync(file)
@@ -297,7 +302,7 @@ export default function UpdateReplayTool({
       </div>
       <div className="flex flex-col gap-2 p-2">
         <div className="flex items-center gap-2">
-          <Icon name={isConnected ? 'checkmark-circle' : 'cross-circle'} className="h-3.5 w-3.5" />
+          {isConnected ? <IcCheckmarkCircle className="h-3.5 w-3.5" /> : <IcCrossCircle className="h-3.5 w-3.5" />}
           {isConnected ? 'Connected' : 'Disconnected'}
           {!isConnected && (
             <Button
