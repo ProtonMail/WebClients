@@ -13,8 +13,4 @@ export const setSharedUnleashClient = (client: SharedUnleashClient) => {
     sharedUnleashClient = client;
 };
 
-export const resetSharedUnleashClient = () => {
-    sharedUnleashClient = undefined;
-};
-
 export const getSharedUnleashClient = () => sharedUnleashClient;

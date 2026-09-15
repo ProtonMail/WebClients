@@ -105,26 +105,18 @@ export const getOS = () => {
     return { name, version };
 };
 
-export const isIos11 = () => {
-    const { name, version } = getOS();
-    return name.toLowerCase() === 'ios' && parseInt(version, 10) === 11;
-};
-
 export const isAndroid = () => {
     const { name } = getOS();
     return name.toLowerCase().includes('android');
 };
 
-export const isStandaloneApp = () => window.matchMedia('(display-mode: standalone)').matches;
 
 export const isDuckDuckGo = () => ua.browser.name === 'DuckDuckGo';
 export const isSafari = () => ua.browser.name === 'Safari' || ua.browser.name === 'Mobile Safari';
-export const isSafari11 = () => isSafari() && ua.browser.major === '11';
 
 export const isMinimumSafariVersion = (version: number) =>
     isSafari() && ua.browser.version && new Version(ua.browser.version).isGreaterThanOrEqual(version.toString());
 
-export const isSafariMobile = () => ua.browser.name === 'Mobile Safari';
 export const isEdgeChromium = () => ua.browser.name === 'Edge' && ua.engine.name === 'Blink';
 export const isBrave = () => ua.browser.name === 'Brave';
 export const isFirefox = () => ua.browser.name === 'Firefox';
@@ -140,14 +132,12 @@ export const isMaybeTorLessThan11 = () => {
 };
 export const isChrome = () => ua.browser.name === 'Chrome';
 export const isChromiumBased = () => 'chrome' in window;
-export const isJSDom = () => navigator.userAgent.includes('jsdom');
 export const isMac = () => ua.os.name === 'Mac OS';
 export const isWindows = () => ua.os.name === 'Windows';
 export const isArm = () => ua.cpu.architecture === 'arm64';
 export const isLinux = () => ua.ua.match(/(L|l)inux/);
 export const isDebianBased = () => !!ua.os.name && ['Ubuntu', 'Debian'].includes(ua.os.name);
 export const isFedoraOrRedHatBased = () => !!ua.os.name && ['Fedora', 'Red Hat'].includes(ua.os.name);
-export const hasTouch = typeof document === 'undefined' ? false : 'ontouchstart' in document.documentElement;
 export const getOs = () => ua.os;
 export const getBrowser = () => ua.browser;
 export const getDevice = () => ua.device;
@@ -165,7 +155,7 @@ export const metaKey = isMac() ? '⌘' : 'Ctrl';
 export const altKey = isMac() ? 'Option' : 'Alt';
 export const shiftKey = 'Shift';
 
-export const getActiveXObject = (name: string) => {
+const getActiveXObject = (name: string) => {
     try {
         // @ts-ignore
         return new ActiveXObject(name);
@@ -185,7 +175,7 @@ export const isIos = () =>
     // iPad on iOS 13 detection
     (navigator.userAgent.includes('Mac') && 'ontouchend' in document);
 export const isIpad = () => isSafari() && navigator.maxTouchPoints && navigator.maxTouchPoints > 2;
-export const hasAcrobatInstalled = () => !!(getActiveXObject('AcroPDF.PDF') || getActiveXObject('PDF.PdfCtrl'));
+const hasAcrobatInstalled = () => !!(getActiveXObject('AcroPDF.PDF') || getActiveXObject('PDF.PdfCtrl'));
 export const hasPDFSupport = () => {
     // mimeTypes is deprecated in favor of pdfViewerEnabled.
     return (
@@ -198,13 +188,6 @@ export const hasPDFSupport = () => {
     );
 };
 export const replaceUrl = (url = '') => document.location.replace(url);
-export const redirectTo = (url = '') => replaceUrl(`${document.location.origin}${url}`);
-
-/**
- * Detect browser requiring direct action
- * Like opening a new tab
- */
-export const requireDirectAction = () => isSafari() || isFirefox() || isEdgeChromium();
 
 /**
  * Open an URL inside a new tab/window and remove the referrer

@@ -1,9 +1,6 @@
 import { normalize } from '../helpers/string';
 import type {
     VcalAttendeeProperty,
-    VcalAttendeePropertyWithCn,
-    VcalAttendeePropertyWithPartstat,
-    VcalAttendeePropertyWithRole,
     VcalAttendeePropertyWithToken,
     VcalCalendarComponent,
     VcalCalendarComponentWithMaybeErrors,
@@ -21,11 +18,9 @@ import type {
     VcalVjournalComponentWithMaybeErrors,
     VcalVtimezoneComponent,
     VcalVtodoComponentWithMaybeErrors,
-    VcalXOrIanaComponent,
 } from '../interfaces/calendar';
 import {
     ICAL_ATTENDEE_ROLE,
-    ICAL_ATTENDEE_RSVP,
     ICAL_ATTENDEE_STATUS,
     ICAL_EVENT_STATUS,
     ICAL_METHOD,
@@ -99,17 +94,6 @@ export const getIsAlarmComponent = (vcalComponent: VcalCalendarComponent): vcalC
     return vcalComponent?.component?.toLowerCase() === 'valarm';
 };
 
-export const getIsXOrIanaComponent = (vcalComponent: VcalCalendarComponent): vcalComponent is VcalXOrIanaComponent => {
-    const name = vcalComponent?.component?.toLowerCase();
-    return !['vcalendar', 'vevent', 'vtodo', 'vjournal', 'vfreebusy', 'vtimezone'].includes(name);
-};
-
-export const getHasUid = (
-    vevent: VcalVeventComponent
-): vevent is VcalVeventComponent & Required<Pick<VcalVeventComponent, 'uid'>> => {
-    return !!vevent.uid?.value;
-};
-
 export const getHasDtStart = (
     vevent: VcalVeventComponent
 ): vevent is VcalVeventComponent & Required<Pick<VcalVeventComponent, 'dtstart'>> => {
@@ -140,16 +124,6 @@ export const getHasAttendees = (
     return !!vevent.attendee?.length;
 };
 
-export const getAttendeeHasCn = (attendee: VcalAttendeeProperty): attendee is VcalAttendeePropertyWithCn => {
-    return !!attendee.parameters?.cn;
-};
-
-export const getAttendeesHaveCn = (
-    vcalAttendee: VcalAttendeeProperty[]
-): vcalAttendee is VcalAttendeePropertyWithCn[] => {
-    return !vcalAttendee.some((vcalAttendee) => !getAttendeeHasCn(vcalAttendee));
-};
-
 export const getAttendeeHasToken = (attendee: VcalAttendeeProperty): attendee is VcalAttendeePropertyWithToken => {
     return !!attendee.parameters?.['x-pm-token'];
 };
@@ -158,16 +132,6 @@ export const getAttendeesHaveToken = (
     vcalAttendee: VcalAttendeeProperty[]
 ): vcalAttendee is VcalAttendeePropertyWithToken[] => {
     return !vcalAttendee.some((vcalAttendee) => !getAttendeeHasToken(vcalAttendee));
-};
-
-export const getAttendeeHasPartStat = (
-    attendee: VcalAttendeeProperty
-): attendee is VcalAttendeePropertyWithPartstat => {
-    return !!attendee.parameters?.partstat;
-};
-
-export const getAttendeeHasRole = (attendee: VcalAttendeeProperty): attendee is VcalAttendeePropertyWithRole => {
-    return !!attendee.parameters?.role;
 };
 
 export const getIcalMethod = (method?: VcalStringProperty) => {
@@ -249,12 +213,4 @@ export const getPmSharedEventID = (veventComponent: VcalVeventComponent) => {
 
 export const getPmSharedSessionKey = (veventComponent: VcalVeventComponent) => {
     return veventComponent['x-pm-session-key']?.value;
-};
-
-export const getRSVPStatus = (attendee: Partial<VcalAttendeeProperty> = {}) => {
-    const rsvp = attendee.parameters?.rsvp;
-    if (Object.values(ICAL_ATTENDEE_RSVP).some((icalRsvp) => icalRsvp === rsvp)) {
-        return rsvp as ICAL_ATTENDEE_RSVP;
-    }
-    return ICAL_ATTENDEE_RSVP.TRUE;
 };

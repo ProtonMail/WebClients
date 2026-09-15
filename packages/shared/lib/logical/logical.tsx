@@ -6,7 +6,7 @@ const getIsNonEnding = (src: string) => {
     return url.origin === targetOrigin && url.pathname.endsWith('.css') && !url.pathname.endsWith(ending);
 };
 
-export const queryLocalLinkElements = () => {
+const queryLocalLinkElements = () => {
     return [...document.querySelectorAll<HTMLLinkElement>('link[rel=stylesheet]')].filter((node) => {
         return getIsNonEnding(node.href);
     });

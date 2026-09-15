@@ -1,7 +1,7 @@
 import type { OrganizationRole } from './OrganizationRole';
 
 // These permissions have not added yet on the BE, it will be gradually added and moved to PERMISSIONS array
-export const FE_PERMISSION_ONLY = [
+const FE_PERMISSION_ONLY = [
     'account.dashboard.read',
     'account.organization_identity.read',
     'account.access_control.read',

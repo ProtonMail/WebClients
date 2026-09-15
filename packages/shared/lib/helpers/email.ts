@@ -19,7 +19,7 @@ export enum CANONICALIZE_SCHEME {
 
 export const PROTONMAIL_DOMAINS = ['protonmail.com', 'protonmail.ch', 'pm.me', 'proton.me'];
 
-export const validateLocalPart = (localPart: string) => {
+const validateLocalPart = (localPart: string) => {
     // remove comments first
     const match = localPart.match(/(^\(.+?\))?([^()]*)(\(.+?\)$)?/);
     if (!match) {

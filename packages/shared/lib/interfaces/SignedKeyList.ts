@@ -29,15 +29,15 @@ export interface ActiveSignedKeyList extends SignedKeyList, SKLEpochs {
     Signature: string;
 }
 
-export interface ObsolescentSignedKeyList extends SKLEpochs {
+interface ObsolescentSignedKeyList extends SKLEpochs {
     ObsolescenceToken: string;
 }
 
-export interface ActiveSignedKeyListWithRevision extends ActiveSignedKeyList {
+interface ActiveSignedKeyListWithRevision extends ActiveSignedKeyList {
     Revision: number;
 }
 
-export interface ObsolescentSignedKeyListWithRevision extends ObsolescentSignedKeyList {
+interface ObsolescentSignedKeyListWithRevision extends ObsolescentSignedKeyList {
     Revision: number;
 }
 

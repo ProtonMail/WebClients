@@ -84,22 +84,6 @@ export const queryUserLinkAccess = ({
     },
 });
 
-/** Public **/
-export const queryPublicCheckAvailableHashes = (
-    token: string,
-    linkId: string,
-    data: { Hashes: string[] },
-    suppressErrors = false
-) => {
-    return {
-        method: 'post',
-        timeout: EXPENSIVE_REQUEST_TIMEOUT,
-        url: `drive/urls/${token}/files/${linkId}/checkAvailableHashes`,
-        suppress: suppressErrors,
-        data,
-    };
-};
-
 export const queryPublicDeleteChildrenLinks = (
     token: string,
     parentLinkId: string,

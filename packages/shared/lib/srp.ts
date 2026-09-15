@@ -4,15 +4,13 @@ import { getInfo, getModulus } from './api/auth';
 import type { Fido2Data, InfoResponse, ModulusResponse } from './authentication/interface';
 import type { Api } from './interfaces';
 
-export interface AuthCredentials {
+interface AuthCredentials {
     username?: string;
     password: string;
 }
 
 export type Credentials =
-    | AuthCredentials
-    | (AuthCredentials & { totp: string })
-    | (AuthCredentials & { fido2: Fido2Data });
+    AuthCredentials | (AuthCredentials & { totp: string }) | (AuthCredentials & { fido2: Fido2Data });
 
 interface SrpAuthData {
     ClientProof: string;

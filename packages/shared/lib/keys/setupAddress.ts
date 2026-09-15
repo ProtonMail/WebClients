@@ -31,8 +31,6 @@ export {
     getIsGlobalSSOAccount,
     getIsSSOAccount,
     getIsSSOVPNOnlyAccount,
-    getIsVPNOnlyAccount,
-    getRequiresMailKeySetup,
     getRequiresPasswordSetup,
 } from './accountType';
 
@@ -84,16 +82,16 @@ export const getClaimableAddress = async ({
 
 export type AddressGenerationSetup =
     | {
-          mode: 'ask';
-      }
+        mode: 'ask';
+    }
     | {
-          mode: 'setup';
-          loginPassword: string;
-      }
+        mode: 'setup';
+        loginPassword: string;
+    }
     | {
-          mode: 'create';
-          keyPassword: string;
-      };
+        mode: 'create';
+        keyPassword: string;
+    };
 
 export interface AddressGenerationPayload {
     username: string;
@@ -102,7 +100,7 @@ export interface AddressGenerationPayload {
     preAuthKTVerify: PreAuthKTVerify;
 }
 
-export const getAddressSetupMode = ({
+const getAddressSetupMode = ({
     user,
     keyPassword,
     loginPassword,

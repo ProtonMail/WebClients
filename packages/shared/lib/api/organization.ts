@@ -65,24 +65,6 @@ export const getOrganizationSettings = () => ({
     method: 'get',
 });
 
-export const updateOrganizationEmail = (Email: string) => ({
-    url: 'core/v4/organizations/email',
-    method: 'put',
-    data: { Email },
-});
-
-export const updateOrganizationTheme = (Theme: string) => ({
-    url: 'core/v4/organizations/theme',
-    method: 'put',
-    data: { Theme },
-});
-
-export const updateTwoFactor = (GracePeriod: number) => ({
-    url: 'core/v4/organizations/2fa',
-    method: 'put',
-    data: { GracePeriod },
-});
-
 export interface GroupAddressKeyToken {
     ID: string;
     Token: string;

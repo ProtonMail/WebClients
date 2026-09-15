@@ -13,32 +13,32 @@ describe('app version headers', () => {
             {
                 app: APPS.PROTONMAIL,
                 version: '4.999.999',
-                expectation: 'web-mail@4.999.999',
+                expectation: 'web-mail@4.999.999-dev',
             },
             {
                 app: APPS.PROTONMAIL,
                 version: '4.14.6',
-                expectation: 'web-mail@4.14.6',
+                expectation: 'web-mail@4.14.6-dev',
             },
             {
                 app: APPS.PROTONCALENDAR,
                 version: '4.0.1',
-                expectation: 'web-calendar@4.0.1',
+                expectation: 'web-calendar@4.0.1-dev',
             },
             {
                 app: APPS.PROTONVPN_SETTINGS,
                 version: '4.999.999',
-                expectation: 'web-vpn-settings@4.999.999',
+                expectation: 'web-vpn-settings@4.999.999-dev',
             },
             {
                 app: APPS.PROTONVERIFICATION,
                 version: '4.1.0',
-                expectation: 'web-verify@4.1.0',
+                expectation: 'web-verify@4.1.0-dev',
             },
             {
                 app: APPS.PROTONADMIN,
                 version: '4.12.12',
-                expectation: 'web-admin@4.12.12',
+                expectation: 'web-admin@4.12.12-dev',
             },
         ]) {
             test(app, version, expectation);

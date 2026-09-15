@@ -1,7 +1,6 @@
 import type { enums } from '@protontech/crypto';
 
 import { Product } from './ProductEnum';
-import { sizeUnits } from './helpers/size';
 import type { KeyGenConfig, KeyGenConfigV6 } from './interfaces';
 
 export const DEFAULT_TIMEOUT = 30000; // default fetch timeout
@@ -20,7 +19,6 @@ export const MINUTE_IN_SECONDS = 60;
 export const HOUR_IN_SECONDS = 60 * MINUTE_IN_SECONDS;
 export const DAY_IN_SECONDS = 24 * HOUR_IN_SECONDS;
 
-export const DOMAIN_PLACEHOLDER = 'example.com';
 export const EMAIL_PLACEHOLDER = 'john.doe@example.com';
 export const USERNAME_PLACEHOLDER = 'john.doe';
 export const NAME_PLACEHOLDER = 'Thomas A. Anderson';
@@ -40,32 +38,32 @@ export const VPN_SHORT_APP_NAME = 'VPN';
 export const VPN_APP_NAME = `${BRAND_NAME} ${VPN_SHORT_APP_NAME}`;
 export const DOCS_SHORT_APP_NAME = 'Docs';
 export const DOCS_APP_NAME = `${BRAND_NAME} ${DOCS_SHORT_APP_NAME}`;
-export const DOCS_EDITOR_SHORT_APP_NAME = `${DOCS_SHORT_APP_NAME} Editor`;
-export const DOCS_EDITOR_APP_NAME = `${BRAND_NAME} ${DOCS_EDITOR_SHORT_APP_NAME}`;
+const DOCS_EDITOR_SHORT_APP_NAME = `${DOCS_SHORT_APP_NAME} Editor`;
+const DOCS_EDITOR_APP_NAME = `${BRAND_NAME} ${DOCS_EDITOR_SHORT_APP_NAME}`;
 export const SHEETS_SHORT_APP_NAME = 'Sheets';
 export const SHEETS_APP_NAME = `${BRAND_NAME} ${SHEETS_SHORT_APP_NAME}`;
-export const SHEETS_EDITOR_SHORT_APP_NAME = `${SHEETS_SHORT_APP_NAME} Editor`;
-export const SHEETS_EDITOR_APP_NAME = `${BRAND_NAME} ${SHEETS_EDITOR_SHORT_APP_NAME}`;
-export const VERIFY_APP_NAME = 'Proton Verify';
+const SHEETS_EDITOR_SHORT_APP_NAME = `${SHEETS_SHORT_APP_NAME} Editor`;
+const SHEETS_EDITOR_APP_NAME = `${BRAND_NAME} ${SHEETS_EDITOR_SHORT_APP_NAME}`;
+const VERIFY_APP_NAME = 'Proton Verify';
 export const WALLET_SHORT_APP_NAME = 'Wallet';
 export const WALLET_APP_NAME = `${BRAND_NAME} ${WALLET_SHORT_APP_NAME}`;
 export const LUMO_SHORT_APP_NAME = 'Lumo';
-export const LUMO_APP_NAME = LUMO_SHORT_APP_NAME;
-export const PROTON_SENTINEL_SHORT_NAME = 'Sentinel';
+// Avoid knip warning of duplicated LUMO_SHORT_APP_NAME value
+export const LUMO_APP_NAME = `${LUMO_SHORT_APP_NAME}`;
 export const PROTON_SENTINEL_NAME = 'Proton Sentinel';
 export const DARK_WEB_MONITORING_NAME = 'Dark Web Monitoring';
 export const AUTHENTICATOR_SHORT_APP_NAME = 'Authenticator';
 export const AUTHENTICATOR_APP_NAME = `${BRAND_NAME} ${AUTHENTICATOR_SHORT_APP_NAME}`;
 export const MEET_SHORT_APP_NAME = 'Meet';
 export const MEET_APP_NAME = `${BRAND_NAME} ${MEET_SHORT_APP_NAME}`;
-export const ACCOUNT_SHORT_APP_NAME = 'Account';
+const ACCOUNT_SHORT_APP_NAME = 'Account';
 export const ACCOUNT_APP_NAME = `${BRAND_NAME} ${ACCOUNT_SHORT_APP_NAME}`;
-export const SPACES_SHORT_APP_NAME = 'Spaces';
+const SPACES_SHORT_APP_NAME = 'Spaces';
 export const SPACES_APP_NAME = `${BRAND_NAME} ${SPACES_SHORT_APP_NAME}`;
 
 // Third-party payment method brand name.
-export const IDEAL_BRAND_NAME = 'iDEAL';
-export const WERO_BRAND_NAME = 'Wero';
+const IDEAL_BRAND_NAME = 'iDEAL';
+const WERO_BRAND_NAME = 'Wero';
 export const IDEAL_WERO_BRAND_NAME = `${IDEAL_BRAND_NAME} | ${WERO_BRAND_NAME}`;
 export const APPS = {
     PROTONACCOUNT: 'proton-account',
@@ -366,14 +364,14 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
 };
 
 export enum PRODUCT {
-    MAIL = 1,
-    VPN = 2,
-    CALENDAR = 3,
-    DRIVE = 4,
-    PASS = 5,
+    // MAIL = 1,
+    // VPN = 2,
+    // CALENDAR = 3,
+    // DRIVE = 4,
+    // PASS = 5,
     WALLET = 6,
-    LUMO = 9,
-    AUTHENTICATOR = 10,
+    // LUMO = 9,
+    // AUTHENTICATOR = 10,
 }
 
 // Should be synced with ProductGroup in API
@@ -388,7 +386,7 @@ export enum PRODUCT_BIT {
     MEET = 256,
 }
 
-export type APP_KEYS = keyof typeof APPS;
+type APP_KEYS = keyof typeof APPS;
 export type APP_NAMES = (typeof APPS)[APP_KEYS];
 
 export const VPN_TV_CLIENT_IDS = {
@@ -511,7 +509,7 @@ export enum API_CODES {
     SINGLE_SUCCESS = 1000,
     NOT_ALLOWED_ERROR = 2011,
     INVALID_REQUIREMENT_ERROR = 2000,
-    INVALID_LINK_TYPE_ERROR = 2001,
+    // INVALID_LINK_TYPE_ERROR = 2001,
     ALREADY_EXISTS_ERROR = 2500,
     NOT_FOUND_ERROR = 2501,
     INVALID_ID_ERROR = 2061,
@@ -635,7 +633,7 @@ export enum MEMBER_SUBSCRIBER {
 export enum PACKAGE_SIGNATURES_MODE {
     SIGNATURES_NONE = 0,
     SIGNATURES_ATTACHMENTS = 1,
-    SIGNATURES_BODY = 2,
+    // SIGNATURES_BODY = 2,
 }
 
 export enum PGP_SCHEMES {
@@ -669,24 +667,10 @@ export enum RECIPIENT_TYPES {
     TYPE_EXTERNAL = 2,
 }
 
-/**
- * Returned by legacy GET /keys endpoint
- */
-export enum IGNORE_KT {
-    VALID = 0,
-    EXTERNAL_ADDRESS = 1,
-    CATCH_ALL = 2,
-}
-
 export enum API_KEY_SOURCE {
     PROTON = 0,
     WKD = 1,
     KOO = 2,
-}
-
-export enum DRAFT_TYPE {
-    NORMAL = 'text/html',
-    PLAIN_TEXT = 'text/plain',
 }
 
 export enum SETTINGS_PROTON_SENTINEL_STATE {
@@ -697,11 +681,6 @@ export enum SETTINGS_PROTON_SENTINEL_STATE {
 export enum ORGANIZATION_FLAGS {
     LOYAL = 1,
     COVID = 2,
-    /**
-     * @deprecated.
-     * Unless you know exactly what you are doing, don't use this flag. This flag is deprecated and will be removed in the future.
-     */
-    SMTP_SUBMISSION = 4,
     NO_CYCLE_SCHEDULED = 8,
     DISSIDENT = 64,
     PROTON = 128,
@@ -902,35 +881,15 @@ export enum DASHBOARD_UPSELL_PATHS {
 export type UPSELL_FEATURE =
     `${MAIL_UPSELL_PATHS | MAIL_UPSELL_BANNER_LINK_ID_REF_PATH | CALENDAR_UPSELL_PATHS | DRIVE_UPSELL_PATHS | SHARED_UPSELL_PATHS | DASHBOARD_UPSELL_PATHS | LUMO_UPSELL_PATHS}`;
 
-export const LOYAL_BONUS_STORAGE = 5 * sizeUnits.GB;
-export const LOYAL_BONUS_CONNECTION = 2;
-
-export const COVID_PLUS_BONUS_STORAGE = 5 * sizeUnits.GB;
-export const COVID_PROFESSIONAL_BONUS_STORAGE = 5 * sizeUnits.GB;
-export const COVID_VISIONARY_BONUS_STORAGE = 10 * sizeUnits.GB;
-
 export const FREE_VPN_CONNECTIONS = 1;
 export const VPN_CONNECTIONS = 10;
 
-export const PRODUCT_PAYER = {
-    START: new Date(Date.UTC(2020, 9, 28, 6)),
-    END: new Date(Date.UTC(2020, 11, 15, 6)),
-};
-
 export const CONTACT_EMAILS_LIMIT = 1000;
 export const CONTACTS_LIMIT = 1000;
-export const EXPORT_CONTACTS_LIMIT = 50; // Maximum page size for export is 50 from API
 export const CONTACTS_REQUESTS_PER_SECOND = 10;
 export const ALL_MEMBERS_ID = -100;
 
-export enum LABEL_EXCLUSIVE {
-    FOLDER = 1,
-    LABEL = 0,
-}
-
 export const REGEX_IMAGE_EXTENSION = /\.(gif|jpe?g|tiff|png)$/i;
-
-export const DARK_MODE_CLASS = 'isDarkMode';
 
 export const VISIONARY_MAX_USERS = 6;
 export const FAMILY_MAX_USERS = 6;
@@ -981,10 +940,6 @@ export enum USER_STATUS {
     SUPER_ADMIN = 5,
 }
 
-/* eslint  no-useless-escape: "off" */
-export const REGEX_EMAIL =
-    /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i;
-
 export enum FILTER_STATUS {
     ENABLED = 1,
     DISABLED = 0,
@@ -993,8 +948,6 @@ export enum FILTER_STATUS {
 export const FREE_USER_ACTIVE_FILTERS_LIMIT = 1;
 export const FREE_USER_FOLDERS_LIMIT = 3;
 export const FREE_USER_LABELS_LIMIT = 3;
-
-export const VCARD_VERSION = '4.0';
 
 export enum CONTACT_CARD_TYPE {
     ENCRYPTED_AND_SIGNED = 3,
@@ -1026,10 +979,10 @@ export enum SERVER_FEATURES {
     SECURE_CORE = 1,
     TOR = 2,
     P2P = 4,
-    XOR = 8,
+    // XOR = 8,
     IPV6 = 16,
-    RESTRICTED = 32,
-    PARTNER = 64,
+    // RESTRICTED = 32,
+    // PARTNER = 64,
     DOUBLE_RESTRICTION = 128,
 }
 
@@ -1043,14 +996,6 @@ export enum CLIENT_TYPES {
     LUMO = 9,
     AUTHENTICATOR = 10,
     MEET = 11,
-}
-
-export enum TOKEN_TYPES {
-    EMAIL = 'email',
-    SMS = 'sms',
-    INVITE = 'invite',
-    COUPON = 'coupon',
-    CAPTCHA = 'captcha',
 }
 
 export enum MAILBOX_LABEL_IDS {
@@ -1113,39 +1058,12 @@ export enum AutoReplyDuration {
     PERMANENT = 4,
 }
 
-export const DKIM_RSA_1024 = 0;
-export const DKIM_RSA_2048 = 1;
-
-export enum DKIM_KEY_STATUS {
-    ACTIVE = 0,
-    PENDING = 1,
-    RETIRED = 2,
-    DECEASED = 3,
-}
-
-export enum DKIM_KEY_DNS_STATUS {
-    NOT_SET = 0,
-    GOOD = 1,
-    INVALID = 2,
-}
-
 export enum DENSITY {
     COMFORTABLE = 0,
     COMPACT = 1,
 }
 
-export enum SPAM_SCORE {
-    PM_SPOOFED = 100,
-    DMARC_FAILED = 101,
-    PHISHING = 102,
-}
-
-export const COLLAPSE_MENU_KEY = 'collapse-menu';
 export const ROOT_FOLDER = 0;
-
-export const USER_SCOPES = {
-    DRIVE: 68719476736,
-};
 
 export const DOH_DOMAINS = ['.compute.amazonaws.com'];
 
@@ -1167,31 +1085,6 @@ export enum LINK_TYPES {
     PHONE = 'phone',
 }
 
-interface OpenPGPFile {
-    filepath: string;
-    integrity?: string;
-}
-
-const DUMMY_FILE = {
-    filepath: '/',
-};
-
-declare const WEBPACK_OPENPGP: {
-    main: OpenPGPFile;
-    compat: OpenPGPFile;
-    elliptic: OpenPGPFile;
-    worker: OpenPGPFile;
-};
-export const OPENPGP =
-    typeof WEBPACK_OPENPGP === 'undefined'
-        ? {
-              main: DUMMY_FILE,
-              compat: DUMMY_FILE,
-              elliptic: DUMMY_FILE,
-              worker: DUMMY_FILE,
-          }
-        : WEBPACK_OPENPGP;
-
 const PROTONPASS_EXTENSION_IDS = [
     'ghmbeldphafepmbegfdlkpapadhbakde' /* chromium production */,
     'hlaiofkbmjenhgeinjlmkafaipackfjh' /* chromium beta channel */,
@@ -1206,8 +1099,6 @@ export const EXTENSIONS = {
 } as const;
 
 export const AES256 = 'aes256';
-
-export const REFERRAL_PROGRAM_MAX_AMOUNT = 9000;
 
 export const FIBONACCI_LIST = [1, 1, 2, 3, 5, 8, 13];
 
@@ -1224,16 +1115,9 @@ export enum METRICS_LOG {
     DARK_STYLES = 'dark_styles',
 }
 
-/** SimpleLogin constants **/
-// SimpleLogin tags used to communicate with the web extension
-export enum SIMPLE_LOGIN_TAGS {
-    EXTENSION_INSTALLED_QUERY = 'EXTENSION_INSTALLED_QUERY',
-    EXTENSION_INSTALLED_RESPONSE = 'EXTENSION_INSTALLED_RESPONSE',
-}
-
 export enum SIMPLE_LOGIN_EXTENSION_LINKS {
-    MAIN_PAGE = 'https://simplelogin.io',
-    DASHBOARD = 'https://app.simplelogin.io/dashboard/',
+    // MAIN_PAGE = 'https://simplelogin.io',
+    // DASHBOARD = 'https://app.simplelogin.io/dashboard/',
     ADMIN_DASHBOARD = 'https://app.simplelogin.io/admin/',
     ADMIN_DASHBOARD_DEV = 'https://app.sldev.ovh/admin/',
 }
@@ -1276,7 +1160,6 @@ export const COMPOSER_TOOLBAR_ICON_SIZE = 3.5;
  * Messages list pagination
  */
 export const DEFAULT_MAIL_PAGE_SIZE = 50;
-export const MAX_MESSAGES_FETCH_CHUNK_SIZE = 50;
 
 export const MIN_PASSWORD_LENGTH = 8;
 

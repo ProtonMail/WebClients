@@ -1,9 +1,8 @@
-import type { ADDRESS_PERMISSIONS } from '../constants';
 import type { Address, Api, SignedKeyList } from '../interfaces';
 import queryPages from './helpers/queryPages';
 import type { PaginationParams } from './interface';
 
-export const queryAddresses = (params?: PaginationParams) => ({
+const queryAddresses = (params?: PaginationParams) => ({
     url: 'core/v4/addresses',
     method: 'get',
     params,
@@ -122,18 +121,6 @@ export const addressType = (addressID: string, data: { Type: number; SignedKeyLi
     url: `core/v4/addresses/${addressID}/type`,
     method: 'put',
     data,
-});
-
-export const switchAddressesOrganizationPermissions = ({
-    Ids,
-    Permissions,
-}: {
-    Ids: string[];
-    Permissions: ADDRESS_PERMISSIONS[];
-}) => ({
-    url: `core/v4/members/addresses/permissions/organization/switch`,
-    method: 'put',
-    data: { Ids, Permissions },
 });
 
 export const getAllowAddressDeletion = () => ({

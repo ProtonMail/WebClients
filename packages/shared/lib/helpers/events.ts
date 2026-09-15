@@ -5,7 +5,7 @@ export const isKeyboardEvent = (event: Event): event is KeyboardEvent => {
     return false;
 };
 
-export const isDragEvent = (event: Event): event is DragEvent => {
+const isDragEvent = (event: Event): event is DragEvent => {
     if ('dataTransfer' in event) {
         return true;
     }

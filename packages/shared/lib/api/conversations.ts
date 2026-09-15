@@ -104,12 +104,6 @@ export const unlabelConversations = ({ LabelID, IDs }: LabelConversationsProps) 
     data: { LabelID, IDs },
 });
 
-export const setExpiration = (IDs: string[], ExpirationTime: number | null) => ({
-    method: 'put',
-    url: 'mail/v4/conversations/expire',
-    data: { IDs, ExpirationTime },
-});
-
 export const snoozeConversations = (IDs: string[], SnoozeTime: number) => ({
     method: 'put',
     url: 'mail/v4/conversations/snooze',

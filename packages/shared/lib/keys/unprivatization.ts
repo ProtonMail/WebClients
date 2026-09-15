@@ -40,7 +40,7 @@ import {
 } from './organizationKeys';
 import type { ResetAddressKeysPayload } from './resetKeys';
 
-export const MEMBER_SIGNATURE_CONTEXT = {
+const MEMBER_SIGNATURE_CONTEXT = {
     INVITATION_DATA_SIGNATURE_CONTEXT: 'account.unprivatization-invitation-data',
     KEY_TOKEN_SIGNATURE_CONTEXT: 'account.key-token.user-unprivatization',
 };
@@ -49,7 +49,7 @@ export const parseInvitationData = (data: string): MemberInvitationData => {
     return JSON.parse(data);
 };
 
-export const serializeInvitationData = (data: MemberInvitationData) => {
+const serializeInvitationData = (data: MemberInvitationData) => {
     return JSON.stringify(data);
 };
 
@@ -69,7 +69,7 @@ export const getInvitationData = async ({
         const result = await fetchSignedKeyLists(api, 0, address);
         const last = result[result.length - 1];
         revision = last.Revision + (expectRevisionChange ? 1 : 0);
-    } catch {}
+    } catch { }
     return serializeInvitationData({
         Address: address,
         Revision: revision,
@@ -109,12 +109,12 @@ const getDecryptedOrganizationActivationToken = async ({
         // No verification in Global SSO case
         ...(verificationKeys
             ? {
-                  verificationKeys,
-                  signatureContext: {
-                      value: MEMBER_SIGNATURE_CONTEXT.KEY_TOKEN_SIGNATURE_CONTEXT,
-                      required: true,
-                  },
-              }
+                verificationKeys,
+                signatureContext: {
+                    value: MEMBER_SIGNATURE_CONTEXT.KEY_TOKEN_SIGNATURE_CONTEXT,
+                    required: true,
+                },
+            }
             : {}),
     });
 
@@ -145,7 +145,7 @@ const getEncryptedOrganizationActivationToken = async ({
     return message;
 };
 
-export const validateInvitationData = async ({
+const validateInvitationData = async ({
     textData,
     armoredSignature,
     verificationKeys,
@@ -199,22 +199,22 @@ export const parseUnprivatizationData = async ({
 }): Promise<
     | { type: 'private'; payload: { unprivatizationData: PrivateMemberUnprivatizationOutput } }
     | {
-          type: 'public';
-          payload: {
-              orgPublicKey: PublicKeyReference;
-              invitationData: MemberInvitationData;
-              unprivatizationData: PublicMemberUnprivatizationOutput;
-              invitationAddress: Address;
-          };
-      }
+        type: 'public';
+        payload: {
+            orgPublicKey: PublicKeyReference;
+            invitationData: MemberInvitationData;
+            unprivatizationData: PublicMemberUnprivatizationOutput;
+            invitationAddress: Address;
+        };
+    }
     | {
-          type: 'gsso';
-          payload: {
-              orgPublicKey: PublicKeyReference;
-              unprivatizationData: PublicMemberUnprivatizationOutput;
-              invitationAddress: Address;
-          };
-      }
+        type: 'gsso';
+        payload: {
+            orgPublicKey: PublicKeyReference;
+            unprivatizationData: PublicMemberUnprivatizationOutput;
+            invitationAddress: Address;
+        };
+    }
 > => {
     if (unprivatizationData.PrivateIntent) {
         return {
@@ -427,7 +427,7 @@ export const setupKeysWithUnprivatization = async ({
     }
 };
 
-export const reencryptAddressKeyToken = async ({
+const reencryptAddressKeyToken = async ({
     Token,
     decryptionKeys,
     encryptionKey,
@@ -464,7 +464,7 @@ export interface UnprivatizeMemberPayload {
     OrganizationKeyActivation?: OrganizationKeyActivation;
 }
 
-export const getIsMemberUnprivatizationInAutomaticApproveState = (
+const getIsMemberUnprivatizationInAutomaticApproveState = (
     unprivatizationData: MemberUnprivatization | null
 ): unprivatizationData is MemberUnprivatizationAutomaticApproveState => {
     return Boolean(
@@ -477,7 +477,7 @@ export const getIsMemberUnprivatizationInAutomaticApproveState = (
     );
 };
 
-export const getIsMemberUnprivatizationInManualApproveState = (
+const getIsMemberUnprivatizationInManualApproveState = (
     unprivatizationData: MemberUnprivatization | null
 ): unprivatizationData is MemberUnprivatizationManualApproveState => {
     return Boolean(
@@ -490,7 +490,7 @@ export const getIsMemberUnprivatizationInManualApproveState = (
     );
 };
 
-export const getIsMemberUnprivatizationInManualAcceptState = (
+const getIsMemberUnprivatizationInManualAcceptState = (
     unprivatizationData: MemberUnprivatization | null
 ): unprivatizationData is MemberUnprivatizationAcceptState => {
     return Boolean(
@@ -614,7 +614,7 @@ export const unprivatizeMemberHelper = async ({
     };
 };
 
-export class UnprivatizationRevisionError extends Error {}
+export class UnprivatizationRevisionError extends Error { }
 
 export const getUnprivatizeMemberPayload = async ({
     api,

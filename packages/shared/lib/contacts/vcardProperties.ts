@@ -2,7 +2,7 @@ import { isValidDate } from '../date/date';
 import type { VCardDateOrText } from '../interfaces/contacts/VCard';
 
 export const ONE_OR_MORE_MUST_BE_PRESENT = '1*';
-export const EXACTLY_ONE_MUST_BE_PRESENT = '1';
+const EXACTLY_ONE_MUST_BE_PRESENT = '1';
 export const EXACTLY_ONE_MAY_BE_PRESENT = '*1';
 export const ONE_OR_MORE_MAY_BE_PRESENT = '*';
 

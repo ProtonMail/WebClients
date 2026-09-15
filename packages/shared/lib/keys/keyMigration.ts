@@ -74,7 +74,7 @@ interface AddressesKeys {
     keys: DecryptedAddressKey[];
 }
 
-export function getAddressKeysMigration(data: {
+function getAddressKeysMigration(data: {
     api: Api;
     addressesKeys: AddressesKeys[];
     userKey: PrivateKeyReference;
@@ -82,7 +82,7 @@ export function getAddressKeysMigration(data: {
     keyMigrationKTVerifier: KeyMigrationKTVerifier;
     organizationKey: PrivateKeyReference;
 }): Promise<AddressKeyMigrationValue<MigrateMemberAddressKeyPayload>[]>;
-export function getAddressKeysMigration(data: {
+function getAddressKeysMigration(data: {
     api: Api;
     addressesKeys: AddressesKeys[];
     userKey: PrivateKeyReference;
@@ -91,7 +91,7 @@ export function getAddressKeysMigration(data: {
     organizationKey?: PrivateKeyReference;
 }): Promise<AddressKeyMigrationValue<MigrateAddressKeyPayload>[]>;
 
-export function getAddressKeysMigration({
+function getAddressKeysMigration({
     api,
     addressesKeys,
     userKey,

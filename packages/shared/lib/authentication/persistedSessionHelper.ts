@@ -63,7 +63,7 @@ export type ResumedSessionResult = {
     persistedSession: PersistedSession;
 };
 
-export const logRemoval = (e: any = {}, UID: string, context: string) => {
+const logRemoval = (e: any = {}, UID: string, context: string) => {
     if (e.status === 401) {
         return;
     }
@@ -297,7 +297,7 @@ export const getMissingPersistedSessionsFromActiveSessions = (
     });
 };
 
-export const getActiveSessionsMissingFromRemoteResponse = async ({
+const getActiveSessionsMissingFromRemoteResponse = async ({
     api,
     persistedSessions,
     activeSessions,
@@ -458,7 +458,7 @@ const sessionComparator = (
     return 0;
 };
 
-export const maybePickSessionByEmail = async ({
+const maybePickSessionByEmail = async ({
     api,
     localID,
     email,
@@ -506,7 +506,7 @@ export const maybePickSessionByEmail = async ({
     return result;
 };
 
-export const getActiveSessionsResult = async ({
+const getActiveSessionsResult = async ({
     api,
     session,
     localID,
@@ -634,7 +634,7 @@ export const maybeResumeSessionByUser = async ({
     }
 };
 
-export const cleanupInactivePersistedSession = async ({
+const cleanupInactivePersistedSession = async ({
     api,
     persistedSession,
 }: {
