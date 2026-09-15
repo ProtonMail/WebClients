@@ -373,6 +373,9 @@
       "Full size": [
         "Tamaño completo"
       ],
+      "Gallery": [
+        "Galería"
+      ],
       "Generate a new meeting link.": [
         "Generar un enlace de reunión."
       ],
@@ -720,6 +723,9 @@
       "Use camera": [
         "Usar cámara"
       ],
+      "Use it": [
+        "Usarlo"
+      ],
       "Use microphone": [
         "Usar micrófono"
       ],
@@ -793,6 +799,9 @@
       ],
       "Incoming video": [
         "Video entrante"
+      ],
+      "Layout: ${ selectedLabel }": [
+        "Diseño: ${ selectedLabel }"
       ],
       "Leave Meeting": [
         "Salir de la reunión"
@@ -905,6 +914,9 @@
       ],
       "Device settings": [
         "Ajustes del dispositivo"
+      ],
+      "Layouts": [
+        "Diseños"
       ],
       "Meeting details": [
         "Detalles de la reunión"
@@ -2438,6 +2450,12 @@
       ],
       "Security key": [
         "Clave de seguridad"
+      ],
+      "Still waiting?": [
+        "¿Sigue esperando?"
+      ],
+      "Touch your security key to continue.": [
+        "Toque su llave de seguridad para continuar."
       ]
     },
     "fido2: Label": {
@@ -2568,6 +2586,9 @@
     "Info": {
       " and ": [
         " y "
+      ],
+      "${ deviceLabel } is available again": [
+        "${ deviceLabel } está disponible de nuevo"
       ],
       "${ maxParticipants } participant limit reached": [
         "Se alcanzó el límite de ${ maxParticipants } participantes"
@@ -3385,14 +3406,38 @@
       "Your browser or device isn’t supported": [
         "Su navegador o dispositivo no está soportado"
       ],
+      "Your camera was disconnected. Now using ${ deviceLabel }.": [
+        "Su cámara fue desconectada. Ahora usando ${ deviceLabel }."
+      ],
+      "Your device was disconnected. Now using ${ deviceLabel }.": [
+        "Su dispositivo fue desconectado. Ahora usando ${ deviceLabel }."
+      ],
       "Your email will only be used for this one-time verification.": [
         "El correo electrónico sólo se usará para esta verificación única."
       ],
       "Your meeting is ready": [
         "Su reunión ya está lista"
       ],
+      "Your microphone and camera were disconnected. Now using other devices.": [
+        "Su micrófono y cámara fueron desconectados. Ahora usando otros dispositivos."
+      ],
+      "Your microphone and speaker were disconnected. Now using other devices.": [
+        "Su micrófono y altavoz fueron desconectados. Ahora usando otros dispositivos."
+      ],
+      "Your microphone was disconnected. Now using ${ deviceLabel }.": [
+        "Su micrófono fue desconectado. Ahora usando ${ deviceLabel }."
+      ],
+      "Your microphone, speaker and camera were disconnected. Now using other devices.": [
+        "Su micrófono, altavoz y cámara fueron desconectados. Ahora usando otros dispositivos."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "El número de teléfono sólo se usará para esta verificación única."
+      ],
+      "Your speaker and camera were disconnected. Now using other devices.": [
+        "Su altavoz y cámara fueron desconectados. Ahora usando otros dispositivos."
+      ],
+      "Your speaker was disconnected. Now using ${ deviceLabel }.": [
+        "Su altavoz fue desconectado. Ahora usando ${ deviceLabel }."
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Está por abrir un enlace en una pestaña nueva. Asegúrese de que el sitio web sea de confianza antes de continuar."
@@ -3624,9 +3669,6 @@
       ],
       "Reply": [
         "Responder"
-      ],
-      "Return to dashboard": [
-        "Volver al panel"
       ],
       "Reveal password": [
         "Mostrar contraseña"
@@ -4268,9 +4310,6 @@
       "Talk confidentially": [
         "Hable con confidencialidad"
       ],
-      "Thank you!": [
-        "¡Gracias!"
-      ],
       "The host didn't admit you": [
         "El anfitrión no le admitió"
       ],
@@ -4297,9 +4336,6 @@
       ],
       "What went wrong?": [
         "¿Qué salió mal?"
-      ],
-      "Your feedback has been submitted": [
-        "Sus comentarios han sido enviados"
       ],
       "Your recording is ready": [
         "Su grabación está lista"

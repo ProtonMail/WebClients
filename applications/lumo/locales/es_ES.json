@@ -1253,46 +1253,6 @@
     "collider_2025: Compaction": {
       "${ removed } freed": [
         "Se ha liberado ${ removed }"
-      ],
-      "${ stats.summarizedMessageCount } earlier message condensed": [
-        "Se ha condensado ${ stats.summarizedMessageCount } mensaje anterior",
-        "Se han condensado ${ stats.summarizedMessageCount } mensajes anteriores"
-      ],
-      "Chat shortened to keep going": [
-        "Chat acortado para poder continuar"
-      ],
-      "cleared old tool results": [
-        "Se han borrado los resultados antiguos de las herramientas"
-      ],
-      "dropped old messages": [
-        "Se han descartado los mensajes antiguos"
-      ],
-      "Files from summarized messages": [
-        "Archivos de los mensajes resumidos"
-      ],
-      "No longer sent to the model": [
-        "Ya no se envía al modelo"
-      ],
-      "removed file context": [
-        "Se ha eliminado el contexto del archivo"
-      ],
-      "removed tool calls": [
-        "Se han eliminado las llamadas a herramientas"
-      ],
-      "summarized the conversation": [
-        "Se ha resumido la conversación"
-      ],
-      "This chat got long — summarizing earlier messages so we can keep going…": [
-        "Este chat se ha alargado — resumiendo los mensajes anteriores para poder continuar…"
-      ],
-      "Tool calls removed": [
-        "Se han eliminado las llamadas a herramientas"
-      ],
-      "Tool output cleared": [
-        "Se ha borrado la salida de la herramienta"
-      ],
-      "What ${ LUMO_SHORT_APP_NAME } still remembers": [
-        "Lo que ${ LUMO_SHORT_APP_NAME } aún recuerda"
       ]
     },
     "collider_2025: Context": {
@@ -1741,9 +1701,6 @@
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } es una IA centrada en la privacidad que te ayuda a hacer más, mientras mantiene tus datos seguros. Desbloquea todo su potencial y disfruta de acceso anticipado a nuevas funciones a medida que se introducen."
       ],
-      "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space; when it fills up, older messages are automatically summarized so you can keep chatting.": [
-        "${ LUMO_SHORT_APP_NAME } puede procesar una cantidad limitada de información por conversación. Aquí se muestra lo que está usando ese espacio actualmente; cuando se llena, los mensajes anteriores se resumen automáticamente para que puedas seguir chateando."
-      ],
       "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
         "${ LUMO_SHORT_APP_NAME }+: el acceso y las claves de la API se incluyen con una suscripción a ${ LUMO_SHORT_APP_NAME }+ (inicia sesión para mejorar el plan o gestionar las claves)"
       ],
@@ -1861,9 +1818,6 @@
       ],
       "Drag and drop your files here to add them to the chat.": [
         "Arrastra y suelta tus archivos aquí para añadirlos al chat."
-      ],
-      "Earlier messages were summarized to make room, so they no longer take up space here.": [
-        "Se han resumido los mensajes anteriores para ganar espacio, por lo que ya no ocupan sitio aquí."
       ],
       "Error processing attachment": [
         "Error al procesar el archivo adjunto"
@@ -3582,9 +3536,6 @@
       ],
       "You're using private browsing": [
         "Estás usando la navegación privada"
-      ],
-      "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
-        "Tus archivos son grandes. ${ LUMO_SHORT_APP_NAME } quizás no pueda procesar toda la información."
       ],
       "Your information is zero-access encrypted": [
         "Tu información está cifrada con acceso cero"
@@ -6478,6 +6429,9 @@
       ],
       "Folder name": [
         "Nombre de la carpeta"
+      ],
+      "Font size": [
+        "Tamaño de fuente"
       ],
       "Get the deal": [
         "Aprovecha la oferta"

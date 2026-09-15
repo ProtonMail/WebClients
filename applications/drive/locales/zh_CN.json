@@ -3392,6 +3392,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } 是您的用户名。要创建 ${ emailAddress }，请进入设置 > 身份和地址 > 短域 (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "该邮箱地址的联系人已存在"
+      ],
       "A group with this name already exists": [
         "已存在同名群组"
       ],
@@ -3400,9 +3403,6 @@
       ],
       "A problem occurred, please try again.": [
         "出现了问题，请重试。"
-      ],
-      "Account does not exist": [
-        "账户不存在"
       ],
       "Address could not be added.": [
         "无法添加地址！"
@@ -3610,9 +3610,6 @@
       ],
       "Expiration date cannot be in the past": [
         "过期日期不能是过去的时间"
-      ],
-      "External accounts are not supported yet": [
-        "尚不支持外部账户"
       ],
       "External invitations are temporarily disabled.": [
         "外部邀请暂时被禁用。"
@@ -4712,6 +4709,12 @@
       ],
       "Security key": [
         "安全密钥"
+      ],
+      "Still waiting?": [
+        "仍在等待？"
+      ],
+      "Touch your security key to continue.": [
+        "触摸您的安全密钥以继续。"
       ]
     },
     "fido2: Label": {
@@ -5302,6 +5305,9 @@
       "${ LUMO_APP_NAME } includes the writing assistant": [
         "${ LUMO_APP_NAME } 内置写作助手"
       ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } 目前已连续 ${ count } 次。是否继续？"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 写作助手"
       ],
@@ -5361,6 +5367,9 @@
       ],
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } 条目"
+      ],
+      "${ steps } step": [
+        "${ steps } 个步骤"
       ],
       "${ storage } storage": [
         "${ storage } 存储空间"

@@ -51,6 +51,9 @@
       "Add": [
         "Hinzufügen"
       ],
+      "Add a payment method": [
+        "Zahlungsmethode hinzufügen"
+      ],
       "Add account": [
         "Konto hinzufügen"
       ],
@@ -375,6 +378,9 @@
       "Export this version (as docx)": [
         "Diese Version exportieren (als docx)"
       ],
+      "Export this version (as odt) (Beta)": [
+        "Diese Version exportieren (als odt) (Beta)"
+      ],
       "Export this version (as xlsx)": [
         "Diese Version exportieren (als xlsx)"
       ],
@@ -590,6 +596,9 @@
       ],
       "Open navigation": [
         "Navigation öffnen"
+      ],
+      "OpenDocument Text (.odt) (Beta)": [
+        "OpenDocument Text (.odt) (Beta)"
       ],
       "PDF (.pdf)": [
         "PDF (.pdf)"
@@ -2950,6 +2959,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } ist dein Benutzername. Um ${ emailAddress } zu erstellen, gehe bitte zu Einstellungen > Identität und E-Mail-Adressen > Kurzdomain (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Ein Kontakt mit dieser E-Mail-Adresse besteht bereits"
+      ],
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
@@ -4069,6 +4081,9 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Du hast unbezahlte Rechnungen. Bitte bezahle diese, bevor du einem Familienabonnement beitrittst."
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit dieser Familiengruppe zu verknüpfen und alle Premium-Funktionen zu genießen."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Dein Konto hat mehr E-Mail-Adressen, als dir in diesem Abonnement zur Verfügung stehen. ${ addressSettingsLink }"
       ],
@@ -4150,6 +4165,12 @@
       ],
       "Security key": [
         "Sicherheitsschlüssel"
+      ],
+      "Still waiting?": [
+        "Wartest du immer noch?"
+      ],
+      "Touch your security key to continue.": [
+        "Berühre deinen Sicherheitsschlüssel, um fortzufahren."
       ]
     },
     "fido2: Label": {
@@ -4724,6 +4745,12 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } Kategorie ausgewählt",
         "${ selectedFoldersCountLocalized } Kategorien ausgewählt"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } verbleiben für deine Testversion. ${ addPaymentMethodLink }, um zu verhindern, dass du den Zugriff verlierst. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } verbleiben für deine Testversion. ${ addPaymentMethodLink }, um dein Abonnement fortzusetzen. ${ learnMoreLink }"
       ],
       "${ total } user found": [
         "${ total } Benutzer gefunden",

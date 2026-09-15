@@ -3005,6 +3005,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } je vaše používateľské meno. Pre vytvorenie ${ emailAddress } prejdite do Nastavenia > Identita a adresy > Krátka doména (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Kontakt s touto emailovou adresou už existuje"
+      ],
       "A group with this name already exists": [
         "Skupina s týmto názvom už existuje"
       ],
@@ -4233,6 +4236,9 @@
       ],
       "Still waiting?": [
         "Stále čakáte?"
+      ],
+      "Touch your security key to continue.": [
+        "Dotknite sa svojho bezpečnostného kľúča, aby ste pokračovali."
       ]
     },
     "fido2: Label": {
@@ -4865,6 +4871,12 @@
         "${ selectedFoldersCountLocalized } vybraté štítky",
         "${ selectedFoldersCountLocalized } vybratých štítkov",
         "${ selectedFoldersCountLocalized } vybratých štítkov"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Zostáva vám ešte ${ timeRemaining } v rámci skúšobnej doby. Kliknite na ${ addPaymentMethodLink }, aby ste neprišli o prístup. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Zostáva vám ${ timeRemaining } skúšobnej doby. Kliknite na ${ addPaymentMethodLink }, ak si chcete predplatné zachovať. ${ learnMoreLink }"
       ],
       "${ total } user found": [
         "${ total } nájdený používateľ",

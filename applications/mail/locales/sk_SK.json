@@ -90,6 +90,9 @@
       "Add group": [
         "Pridať skupinu"
       ],
+      "Add more details": [
+        "Pridať ďalšie podrobnosti"
+      ],
       "Add new group": [
         "Pridať novú skupinu"
       ],
@@ -1558,7 +1561,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -4838,6 +4844,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } je vaše používateľské meno. Pre vytvorenie ${ emailAddress } prejdite do Nastavenia > Identita a adresy > Krátka doména (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Kontakt s touto emailovou adresou už existuje"
+      ],
       "A group with this name already exists": [
         "Skupina s týmto názvom už existuje"
       ],
@@ -6278,6 +6287,9 @@
       ],
       "Still waiting?": [
         "Stále čakáte?"
+      ],
+      "Touch your security key to continue.": [
+        "Dotknite sa svojho bezpečnostného kľúča, aby ste pokračovali."
       ]
     },
     "fido2: Label": {
@@ -7332,6 +7344,9 @@
       "${ LUMO_APP_NAME } includes the writing assistant": [
         "${ LUMO_APP_NAME } obsahuje asistenta písania"
       ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } doteraz urobilo ${ count }. Chcete pokračovať?"
+      ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
         "${ LUMO_SHORT_APP_NAME } vám pomáha rýchlo a jednoducho vytvárať lepšie emaily."
       ],
@@ -7464,6 +7479,12 @@
         "${ selectedFoldersCountLocalized } vybratých štítkov",
         "${ selectedFoldersCountLocalized } vybratých štítkov"
       ],
+      "${ steps } step": [
+        "${ steps } krok",
+        "${ steps } kroky",
+        "${ steps } krokov",
+        "${ steps } krokov"
+      ],
       "${ storage } storage": [
         "${ storage } úložisko"
       ],
@@ -7472,6 +7493,12 @@
         "${ subscription.UnreadMessageCount } neprečítané",
         "${ subscription.UnreadMessageCount } neprečítaných",
         "${ subscription.UnreadMessageCount } neprečítaných"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Zostáva vám ešte ${ timeRemaining } v rámci skúšobnej doby. Kliknite na ${ addPaymentMethodLink }, aby ste neprišli o prístup. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Zostáva vám ${ timeRemaining } skúšobnej doby. Kliknite na ${ addPaymentMethodLink }, ak si chcete predplatné zachovať. ${ learnMoreLink }"
       ],
       "${ total } conversation": [
         "${ total } konverzácia",
@@ -7620,8 +7647,17 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Pridať ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add ${ contact } to your contacts": [
+        "Pridať ${ contact } do vašich kontaktov"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Pridať ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Add a contact": [
+        "Pridať kontakt"
+      ],
+      "Add contact": [
+        "Pridať kontakt"
       ],
       "Add image URL": [
         "Pridať URL adresu obrázka"
@@ -7854,11 +7890,26 @@
       "Center": [
         "Vycentrovať"
       ],
+      "Change a display setting": [
+        "Zmeniť nastavenie zobrazenia"
+      ],
       "Change display setting": [
         "Zmeniť nastavenie displeja"
       ],
+      "Change how your mail is grouped": [
+        "Zmeňte spôsob zoskupovania vašich emailov"
+      ],
+      "Change your list density": [
+        "Zmeniť hustotu zoznamu"
+      ],
+      "Change your mailbox layout": [
+        "Zmeniť rozloženie poštovej schránky"
+      ],
       "Change your password": [
         "Zmeňte si heslo"
+      ],
+      "Change your theme": [
+        "Zmeniť motív"
       ],
       "Checked Proton support": [
         "Overená podpora pre Proton"
@@ -7935,8 +7986,17 @@
         "Vytvoriť ${ calendarsToBeCreatedCount } nových kalendárov",
         "Vytvoriť ${ calendarsToBeCreatedCount } nových kalendárov"
       ],
+      "Create a filter": [
+        "Vytvoriť filter"
+      ],
+      "Create a folder": [
+        "Vytvoriť priečinok"
+      ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "Vytvorte si priečinok, napríklad \"${ suggestedFolderName }\", v ktorom budete mať všetky online účtenky na jednom mieste."
+      ],
+      "Create a label": [
+        "Vytvoriť štítok"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Vytvorte štítok pre importované správy, časový rozsah pre tento import a priečinky, ktoré chcete importovať."
@@ -8045,6 +8105,12 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Chcete znova podpísať údaje kontaktu?"
+      ],
+      "Document in foundation-search index": [
+        "Dokument v základnom vyhľadávacom indexe"
+      ],
+      "Document lookup failed": [
+        "Vyhľadávanie dokumentu zlyhalo"
       ],
       "Don't forget to share the password with the recipient": [
         "Nezabudnite príjemcovi oznámiť heslo"
@@ -8446,10 +8512,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -8492,6 +8555,12 @@
       ],
       "Key fingerprint": [
         "Identifikátor kľúča"
+      ],
+      "Label ${ emails }": [
+        "Štítok na ${ emails }"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "Označte ${ emails } ako ${ names }"
       ],
       "Label all imported messages as": [
         "Označiť všetky importované správy ako"
@@ -8541,6 +8610,9 @@
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
         "Záznamy nám pomáhajú pochopiť, čo sa udialo pred vznikom problému. Obsahujú akcie aplikácie a chybové hlásenia, nie však obsah správ."
       ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Vyhľadanie dokumentu ${ lookup.result.docId }"
+      ],
       "Low Priority": [
         "Nízka priorita"
       ],
@@ -8553,6 +8625,12 @@
       "Manage your labels": [
         "Spravovať štítky"
       ],
+      "Mark ${ emails } as read": [
+        "Označiť ${ emails } ako prečítané"
+      ],
+      "Mark ${ emails } as unread": [
+        "Označiť ${ emails } ako neprečítané"
+      ],
       "Mark all as read": [
         "Označiť všetko ako prečítané"
       ],
@@ -8564,6 +8642,12 @@
       ],
       "Mark as unread": [
         "Označiť ako neprečítané"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "Označiť celý obsah ${ place } ako prečítaný"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "Označiť celý obsah ${ place } ako neprečítaný"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -8637,6 +8721,12 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Väčšina verejných WiFi sietí je bezpečná, ale niektoré nie sú dostatočne zabezpečené, čo vás vystavuje kybernetickým hrozbám. VPN šifruje vašu prevádzku, čím vás chráni."
       ],
+      "Move ${ emails }": [
+        "Presunúť ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Presunúť ${ emails } do ${ destination }"
+      ],
       "Move emails": [
         "Presunúť emaily"
       ],
@@ -8676,6 +8766,9 @@
       "No email open": [
         "Nebol otvorený žiadny email"
       ],
+      "No emails selected": [
+        "Neboli vybrané žiadne emaily"
+      ],
       "No folder found": [
         "Nebol nájdený žiadny priečinok"
       ],
@@ -8693,6 +8786,9 @@
       ],
       "No links cleaned": [
         "Neboli vyčistené žiadne odkazy"
+      ],
+      "No location selected": [
+        "Nebolo vybraté umiestnenie"
       ],
       "No messages to show": [
         "Žiadne správy na zobrazenie"
@@ -8726,6 +8822,12 @@
       ],
       "Not connected": [
         "Nepripojené"
+      ],
+      "Not found in the encrypted search index.": [
+        "Nenašlo sa v šifrovanom vyhľadávacom indexe."
+      ],
+      "Not found in the foundation-search index.": [
+        "Nenašlo sa v základnom vyhľadávacom indexe."
       ],
       "Not supported by this browser": [
         "Tento prehliadač túto funkciu nepodporuje"
@@ -8973,8 +9075,14 @@
         "Prečítajte ${ count } svojich štítkov",
         "Prečítajte ${ count } svojich štítkov"
       ],
+      "Read your auto-reply": [
+        "Prečítajte si svoju automatickú odpoveď"
+      ],
       "Read your display settings": [
         "Načítať vaše nastavenie displeja"
+      ],
+      "Read your signature": [
+        "Prečítajte si svoj podpis"
       ],
       "Recipient: ": [
         "Príjemca: "
@@ -8997,11 +9105,20 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Nezabudnite ho aktualizovať v správcovi hesiel alebo kdekoľvek, kde máte uložené údaje o svojom účte a prihlasovacie údaje."
       ],
+      "Remove the star from ${ emails }": [
+        "Odstrániť hviezdičku z ${ emails }"
+      ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Odstráni všetky dáta spojené s touto aplikáciou (vrátane stiahnutých správ, …)"
       ],
+      "Rename ${ folder } to…": [
+        "Premenovať ${ folder } na…"
+      ],
       "Rename folder": [
         "Premenovať priečinok"
+      ],
+      "Rename this folder": [
+        "Premenovať tento priečinok"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Nahlásenie tejto správy ako pokusu o phishing odošle túto správu Nám, aby sme ju mohli analyzovať a zlepšiť tým Naše filtre. To znamená, že uvidíme kompletne celý obsah tejto správy."
@@ -9011,6 +9128,12 @@
       ],
       "Restore": [
         "Obnoviť"
+      ],
+      "Results came from the local search.": [
+        "Výsledky pochádzajú z lokálneho vyhľadávania."
+      ],
+      "Results came from the server.": [
+        "Výsledky pochádzajú zo servera."
       ],
       "Right to Left": [
         "Sprava doľava"
@@ -9129,11 +9252,17 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Nastavte ${ MAIL_APP_NAME } ako vašu predvolenú emailovú aplikáciu. ${ MAIL_APP_NAME } sa otvorí automaticky po kliknutí na emailový odkaz."
       ],
+      "Set auto-reply": [
+        "Nastaviť automatickú odpoveď"
+      ],
       "Set signature": [
         "Nastaviť podpis"
       ],
       "Set up your organization": [
         "Nastavte svoju organizáciu"
+      ],
+      "Set your signature": [
+        "Nastavte svoj podpis"
       ],
       "Setting up ${ feature }…": [
         "Nastavovanie ${ feature }…"
@@ -9182,6 +9311,12 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Je nám ľúto, táto správa neexistuje, alebo jej už vypršala platnosť."
+      ],
+      "Source document in encrypted search index": [
+        "Zdrojový dokument v šifrovanom vyhľadávacom indexe"
+      ],
+      "Star ${ emails }": [
+        "Hviezdičku na ${ emails }"
       ],
       "Star emails": [
         "Označiť emaily hviezdičkou"
@@ -9579,8 +9714,14 @@
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "Vypnite vyhľadávanie len podľa dátumu, mena, emailovej adresy alebo predmetu. Ak chcete vypnúť vyhľadávanie obsahu správ (a vymazať správy prevzaté na zapnutie tejto funkcie), prejdite do časti Nastavenia."
       ],
+      "Turn off your away message": [
+        "Vypnúť správu o neprítomnosti"
+      ],
       "Turn on to search the content of your messages": [
         "Zapnite, ak chcete vyhľadávať v obsahu vašich správ"
+      ],
+      "Turn on your away message": [
+        "Zapnite si správu o neprítomnosti"
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "V tomto prehliadači nie je možné získať prístup k možnostiam ukladania, tento prístup potrebujeme na umožnenie vyhľadávania v obsahu správ."
@@ -9608,6 +9749,12 @@
       ],
       "Update filter": [
         "Aktualizovať filter"
+      ],
+      "Update the filter ${ filter }": [
+        "Aktualizovať filter ${ filter }"
+      ],
+      "Update this filter": [
+        "Aktualizovať tento filter"
       ],
       "Updating message content search...": [
         "Aktualizujem vyhľadávanie v správach..."
@@ -10904,6 +11051,12 @@
       "From": [
         "Od"
       ],
+      "From date": [
+        "Od"
+      ],
+      "From time": [
+        "Od"
+      ],
       "From:": [
         "Od:"
       ],
@@ -11399,6 +11552,12 @@
       "Unsubscribed from ${ truncatedName }.": [
         "Odber z ${ truncatedName } bol odhlásený."
       ],
+      "Until date": [
+        "Dátum ukončenia"
+      ],
+      "Until time": [
+        "Až do času"
+      ],
       "Updates": [
         "Aktualizácie"
       ],
@@ -11604,6 +11763,12 @@
     "Link": {
       "Add a gift code": [
         "Vložiť darčekový kód"
+      ],
+      "Add formatting, links or images": [
+        "Pridať formátovanie, odkazy alebo obrázky"
+      ],
+      "Advanced auto-reply options": [
+        "Rozšírené možnosti automatických odpovedí"
       ],
       "All mail": [
         "Všetky správy"
@@ -15464,6 +15629,12 @@
         "${ count } emaily → ${ wakeTime }",
         "${ count } emailov → ${ wakeTime }",
         "${ count } emailov → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "Odložiť ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "Odložiť ${ emails } do ${ wakeTime }"
       ]
     },
     "Snooze message": {

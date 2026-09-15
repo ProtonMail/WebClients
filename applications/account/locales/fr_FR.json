@@ -1778,6 +1778,9 @@
       "Sign in with ${ BRAND_NAME }": [
         "Se connecter avec ${ BRAND_NAME }"
       ],
+      "Sign in with Google": [
+        "Se connecter avec Google"
+      ],
       "Sign in with password": [
         "Se connecter avec le mot de passe"
       ],
@@ -10406,6 +10409,9 @@
       "An SMS with a verification code was just sent to ${ phoneNumber }.": [
         "Un SMS contenant un code de vérification vient d'être envoyé à ${ phoneNumber }."
       ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Une erreur inattendue s’est produite lors de l’importation de vos données. Veuillez réessayer plus tard."
+      ],
       "and": [
         "et"
       ],
@@ -10714,6 +10720,9 @@
       ],
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "Connectez et gérez vos messageries externes dans ${ MAIL_APP_NAME }"
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "Connexion à Google Drive en cours pour configurer votre importation sécurisée vers ${ DRIVE_APP_NAME }."
       ],
       "Connection data will be available in around 1 hour.": [
         "Les données de connexion seront disponibles dans environ 1 heure."
@@ -11057,6 +11066,9 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hébergement de messagerie n'est disponible que pour les noms de domaines que vous possédez déjà. L'enregistrement de nom de domaine par l'intermédiaire de ${ BRAND_NAME } n'est pas disponible pour le moment. Vous pouvez héberger des messageries pour des noms de domaines enregistrés sur n'importe quel registraire de domaine."
       ],
+      "Email you once import is finished": [
+        "Vous envoyer un e-mail une fois l'importation terminée"
+      ],
       "Emailing preference saved": [
         "Votre sélection est enregistrée."
       ],
@@ -11290,6 +11302,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Pour seulement ${ bundlePlanPriceInline }"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "Pour que l'importation fonctionne, vous devez sélectionner tous les éléments demandés, comme indiqué dans le GIF ci-dessus."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pour les utilisateurs qui passent d'un autre service de messagerie à ${ MAIL_APP_NAME }, sélectionnez l'onglet ${ boldAddresses } et ajoutez toutes les adresses de messagerie actives avant de modifier l'enregistrement MX pour assurer une transition fluide."
@@ -11927,6 +11942,9 @@
       "Next billing date": [
         "Prochaine date de facturation"
       ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Ensuite, vous devrez vous connecter à votre compte Google et autoriser ${ BRAND_NAME } à accéder à vos données."
+      ],
       "No account keys exist": [
         "Il n'existe aucune clé de compte."
       ],
@@ -12222,6 +12240,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Nous vous invitons à réessayer en utilisant un autre moyen de paiement, ou bien à contacter votre banque."
       ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Veuillez changer d'abonnement afin de garantir la réussite de l'importation."
+      ],
       "Please use another browser or download the file.": [
         "Nous vous invitons à utiliser un autre navigateur ou à télécharger le fichier."
       ],
@@ -12296,6 +12317,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contactez-nous pour toute aide concernant ${ BRAND_NAME }."
+      ],
+      "Read once and encrypted on arrival": [
+        "Lecture unique et chiffrement à la réception"
       ],
       "Receive notifications for ${ categoryLabel }": [
         "Recevoir des notifications pour ${ categoryLabel }"
@@ -12549,6 +12573,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
+      ],
+      "Sit back and we will let you know.": [
+        "Détendez-vous, nous vous tiendrons au courant."
       ],
       "Smart Routed through a different country.": [
         "Routé via Smart Routing à travers un autre pays."
@@ -13204,6 +13231,9 @@
       "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
         "Utilisez votre solution MDM pour supprimer le fichier, ou exécutez ${ removeScriptLink } à l’aide de la fonctionnalité d’exécution de scripts de votre solution MDM. Toute solution MDM prenant en charge le déploiement de fichiers ou l’exécution de scripts est compatible."
       ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Sert uniquement à les copier dans ${ DRIVE_APP_NAME }."
+      ],
       "User activated": [
         "L'utilisateur a été activé."
       ],
@@ -13321,6 +13351,9 @@
       "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
         "Nous avons détecté que vous êtes déjà connecté à une application web ${ BRAND_NAME } sur un **autre navigateur**. Vous pourrez peut-être réinitialiser votre mot de passe depuis votre session active."
       ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "Nous ne prenons pas en charge l’importation de photos, de documents Google Docs, de feuilles de calcul Google Sheets et de présentations Google Slides. Veuillez vous assurer que votre Google Drive n’est pas vide."
+      ],
       "We generated a strong password for you": [
         "Nous vous avons généré un mot de passe fort."
       ],
@@ -13351,8 +13384,14 @@
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Nous recommandons fortement que tout le monde active la récupération par phrase de récupération."
       ],
+      "We support most files": [
+        "La plupart des fichiers sont pris en charge"
+      ],
       "We use 3-D Secure to protect your payments": [
         "Nous utilisons 3-D Secure pour protéger vos paiements."
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Nous vous enverrons un e-mail dès que l’importation sera terminée. Une fois l’opération terminée, vous trouverez vos fichiers importés dans un dossier."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Nous vous redirigerons vers ${ IDEAL_WERO_BRAND_NAME } dans un nouvel onglet du navigateur pour compléter cette transaction. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
@@ -13476,6 +13515,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sans activation, vous ne pourrez pas créer de nouveaux utilisateurs, ajouter des adresses aux utilisateurs existants ou accéder aux comptes d'utilisateurs non privés."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "Impossible d’importer des photos, des documents Google Docs et des feuilles de calcul Google Sheets"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voulez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
@@ -24627,6 +24669,9 @@
       ],
       "View VPN session details for your organization.": [
         "Affichez les informations de la session VPN pour votre organisation."
+      ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Nous lisons vos fichiers une seule fois pour les copier, puis nous les chiffrons individuellement à l’aide de vos clés ${ BRAND_NAME }."
       ]
     },
     "Success": {
@@ -25659,6 +25704,9 @@
       "Connect your custom domain": [
         "Connectez votre domaine personnalisé"
       ],
+      "Connect your Google account": [
+        "Connectez-vous à votre compte Google"
+      ],
       "Connected emails": [
         "E-mails connectés"
       ],
@@ -26305,6 +26353,9 @@
       "Import key": [
         "Importer une clé"
       ],
+      "Import started, but your storage won't be enough for this import": [
+        "L'importation a commencé, mais votre espace de stockage ne sera pas suffisant pour cette importation"
+      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importer avec ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -26833,6 +26884,9 @@
       "Set your password": [
         "Définissez votre mot de passe"
       ],
+      "Setting up your import": [
+        "Configuration de votre importation"
+      ],
       "Settings": [
         "Paramètres"
       ],
@@ -26859,6 +26913,9 @@
       ],
       "Sign in on TV?": [
         "Se connecter sur une TV ?"
+      ],
+      "Sign in to Google": [
+        "Se connecter avec Google"
       ],
       "Sign in to join the Beta program": [
         "Connectez-vous pour rejoindre le programme bêta"
@@ -27149,6 +27206,9 @@
       "Warning: suspected fake website": [
         "Attention : site internet suspect/frauduleux"
       ],
+      "We could not find anything to import": [
+        "Nous n’avons rien trouvé à importer."
+      ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "Nous vous avons envoyé un code à votre adresse e-mail afin de s'assurer qu'il s'agit bien de vous. Ce code est valide pendant 10 minutes. Veuillez le saisir ci-dessous."
       ],
@@ -27226,6 +27286,9 @@
       ],
       "Your exposed information": [
         "Vos informations exposées"
+      ],
+      "Your import is starting": [
+        "Votre importation commence."
       ],
       "Your plan": [
         "Votre abonnement"
@@ -27488,6 +27551,9 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail catégorise automatiquement certains messages comme « Réseau sociaux » ou « Promotions ». Vous pouvez sélectionner où importer ces messages."
       ],
+      "Grant access to your ${ providerName } account to start a migration": [
+        "Autorisez l'accès à votre compte ${ providerName } pour lancer une migration"
+      ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Grouper les messages d'une même conversation dans votre boite de réception ou les afficher séparément."
       ],
@@ -27505,6 +27571,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Inclut un e-mail professionnel en @votre-entreprise.fr, de l'espace de stockage distant permettant l'édition collaborative de documents, la planification et les vidéoconférences, la gestion des mots de passe, un ${ VPN_SHORT_APP_NAME } sécurisé, et bien plus."
+      ],
+      "Install the migration app in your ${ providerName } account to start a migration": [
+        "Installez l'application de migration dans votre compte ${ providerName } pour lancer une migration"
       ],
       "Instant AI assistance, human expert on hand!": [
         "Une assistance IA immédiate, avec un expert à votre disposition !"
