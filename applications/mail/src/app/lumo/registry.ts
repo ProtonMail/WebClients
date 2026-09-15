@@ -7,6 +7,7 @@ import { createLoadGuideDefinition } from '@proton/llm/lib/lumoAgent/engine/load
 import type { CardRenderers, LumoAgentConfig } from '@proton/llm/lib/lumoAgent/ui/types';
 
 import { MAIL_RULES } from './rules';
+import { createDraftModule } from './skills/compose/createDraft';
 import { createFilterModule } from './skills/filters/createFilter';
 import { updateFilterModule } from './skills/filters/updateFilter';
 import { addContactModule } from './skills/organise/addContact';
@@ -75,6 +76,8 @@ const MODULES: MailToolModule[] = [
     changeSettingsModule,
     setAutoReplyModule,
     changeSignatureModule,
+    // Compose
+    createDraftModule,
     // Support
     openSupportTicketModule,
 ];
