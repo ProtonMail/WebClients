@@ -12,7 +12,6 @@ import {
     DropdownButton,
     DropdownMenu,
     DropdownMenuButton,
-    Icon,
     type ModalStateReturnObj,
     Toolbar,
     ToolbarButton,
@@ -21,14 +20,15 @@ import {
 import { MemberRole, getDriveForPhotos } from '@proton/drive/index';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import useLoading from '@proton/hooks/useLoading';
+import { IcAlbumFolder } from '@proton/icons/icons/IcAlbumFolder';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
+import { IcImage } from '@proton/icons/icons/IcImage';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
-import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import { ShareButton } from '../../../sections/commonButtons/ShareButton';
@@ -61,7 +61,7 @@ interface TabOption {
     id: 'gallery' | 'albums';
     label: string;
     onClick: () => void;
-    icon: IconName;
+    icon: ReactNode;
 }
 
 interface AlbumGalleryDropdownButtonProps {
@@ -150,13 +150,13 @@ export const ToolbarLeftActionsGallery = ({
             id: 'gallery',
             label: c('Link').t`Photos`,
             onClick: onGalleryClick,
-            icon: 'image',
+            icon: <IcImage size={5} />,
         },
         {
             id: 'albums',
             label: c('Link').t`Albums`,
             onClick: onAlbumsClick,
-            icon: 'album-folder',
+            icon: <IcAlbumFolder size={5} />,
         },
     ];
 
@@ -175,7 +175,7 @@ export const ToolbarLeftActionsGallery = ({
                     onClick={() => tab.onClick()}
                     data-testid={`toolbar-${tab.label.toLowerCase()}-tab`}
                 >
-                    <Icon name={tab.icon} size={5} /> <span>{tab.label}</span>
+                    {tab.icon} <span>{tab.label}</span>
                 </InlineLinkButton>
             ))}
         </nav>
