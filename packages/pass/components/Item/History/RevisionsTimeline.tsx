@@ -99,7 +99,7 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
                     <>
                         {current.data.type === 'login' && (
                             <CardContent
-                                icon={IcMagicWand}
+                                icon={<IcMagicWand size={5} />}
                                 className="mb-3"
                                 title={c('Title').t`Last autofill`}
                                 ellipsis
@@ -114,7 +114,7 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
 
                         <Timeline>
                             <RevisionItem
-                                icon={IcClock}
+                                icon={<IcClock size={5} />}
                                 title={c('Title').t`Current version`}
                                 subtitle={epochToRelativeDaysAgo(current.revisionTime)}
                                 ellipsis
@@ -124,7 +124,7 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
                                 <RevisionItem
                                     key={item.revision}
                                     onClick={() => navigate(`${location.pathname}/${item.revision}`)}
-                                    icon={item.revision === 1 ? IcBolt : IcPencil}
+                                    icon={item.revision === 1 ? <IcBolt size={5} /> : <IcPencil size={5} />}
                                     title={item.revision === 1 ? c('Title').t`Created` : c('Title').t`Modified`}
                                     subtitle={epochToRelativeDaysAgo(item.revisionTime)}
                                     ellipsis

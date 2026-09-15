@@ -28,8 +28,7 @@ export const ItemHistoryStats: FC<Props> = ({ createTime, lastUseTime, modifyTim
         <div className="flex flex-column border border-weak rounded-xl px-4 py-3 gap-3">
             {lastUseTime !== undefined && (
                 <CardContent
-                    icon={IcMagicWand}
-                    iconProps={{ size: 4 }}
+                    icon={<IcMagicWand size={4} />}
                     ellipsis
                     title={c('Title').t`Last autofill`}
                     subtitle={
@@ -40,16 +39,14 @@ export const ItemHistoryStats: FC<Props> = ({ createTime, lastUseTime, modifyTim
             )}
 
             <CardContent
-                icon={IcPencil}
-                iconProps={{ size: 4 }}
+                icon={<IcPencil size={4} />}
                 title={c('Title').t`Last modified`}
                 subtitle={epochToRelativeDaysAgo(modifyTime)}
                 ellipsis
             />
 
             <CardContent
-                icon={IcBolt}
-                iconProps={{ size: 4 }}
+                icon={<IcBolt size={4} />}
                 title={c('Title').t`Created`}
                 subtitle={epochToRelativeDaysAgo(createTime)}
                 ellipsis

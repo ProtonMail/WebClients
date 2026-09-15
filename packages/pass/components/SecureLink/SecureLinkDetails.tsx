@@ -54,7 +54,7 @@ export const SecureLinkDetails: FC<SecureLink> = ({ active, secureLink, readCoun
         <>
             <ModalTwoContent>
                 <section className="flex flex-nowrap align-center gap-3 mb-5">
-                    {optionCards.map(({ title, subtitle, icon }) => (
+                    {optionCards.map(({ title, subtitle, icon: Icon }) => (
                         <Card type="primary" className="flex justify-center flex-1" key={title}>
                             <CardContent
                                 className="text-rg"
@@ -62,8 +62,7 @@ export const SecureLinkDetails: FC<SecureLink> = ({ active, secureLink, readCoun
                                 titleClassname="color-weak text-sm"
                                 subtitle={subtitle}
                                 subtitleClassname={clsx('text-bold mt-1', !active && 'color-weak')}
-                                icon={icon}
-                                iconProps={{ size: 6, className: 'color-primary' }}
+                                icon={<Icon size={6} className="color-primary" />}
                                 ellipsis
                             />
                         </Card>

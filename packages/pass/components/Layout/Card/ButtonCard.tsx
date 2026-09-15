@@ -5,7 +5,6 @@ import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import clsx from '@proton/utils/clsx';
 
 import { CardContent, type CardContentProps } from './CardContent';
-import { CardIcon } from './CardIcon';
 import { type CardType, getCardTheme } from './utils';
 
 import './ButtonCard.scss';
@@ -41,7 +40,7 @@ export const ButtonCard: FC<ButtonCardProps> = ({ actions, disabled, title, subt
                 icon={
                     icon ? (
                         <div className="w-custom shrink-0" style={{ '--w-custom': '1.5em' }}>
-                            {typeof icon === 'function' ? <CardIcon icon={icon} /> : icon}
+                            {icon}
                         </div>
                     ) : undefined
                 }
