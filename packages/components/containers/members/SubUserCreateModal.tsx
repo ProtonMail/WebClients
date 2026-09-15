@@ -365,6 +365,12 @@ const SubUserCreateModal = ({
         </span>
     );
 
+    const pendingInvitation = model.mode !== CreateMemberMode.Password;
+    const showUpgradeForAdminRoles = adminRolesUIState === AdminRolesUIState.Disabled && !loadingAdminRolesUI;
+    // When the roles tab displays its own pending invitation banner, we don't want to show a second one here
+    const showsRolesTabInvitationBanner =
+        adminRolesUIState !== AdminRolesUIState.Hidden && pendingInvitation && !showUpgradeForAdminRoles;
+
     const generalTabContent = (
         <>
             <InputFieldTwo
@@ -573,7 +579,7 @@ const SubUserCreateModal = ({
                     />
                 )}
 
-                {model.mode !== CreateMemberMode.Password && (
+                {pendingInvitation && !showsRolesTabInvitationBanner && (
                     <SubUserCreateHint>
                         {c('Info')
                             .t`You will be able to promote the user to administrator once they've accepted the invitation.`}
@@ -635,10 +641,8 @@ const SubUserCreateModal = ({
                                               adminRolesUIState !== AdminRolesUIState.Enabled
                                           }
                                           banner={getRolesTabBanner({
-                                              showUpgrade:
-                                                  adminRolesUIState === AdminRolesUIState.Disabled &&
-                                                  !loadingAdminRolesUI,
-                                              pendingInvitation: model.mode !== CreateMemberMode.Password,
+                                              showUpgrade: showUpgradeForAdminRoles,
+                                              pendingInvitation,
                                           })}
                                       />
                                   ),
