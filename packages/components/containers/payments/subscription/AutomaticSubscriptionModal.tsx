@@ -9,8 +9,8 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { ADDON_PREFIXES, CURRENCIES, DEFAULT_CYCLE, type PLANS } from '@proton/payments/core/constants';
-import { fixPlanName } from '@proton/payments/core/helpers';
 import type { Currency, FreeSubscription, PaymentStatus } from '@proton/payments/core/interface';
+import { correctDeprecatedPlanName } from '@proton/payments/core/plan/helpers';
 import type { Plan } from '@proton/payments/core/plan/interface';
 import { getPlanName, getValidCycle } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
@@ -60,7 +60,7 @@ export const getParameters = (
 ) => {
     const params = new URLSearchParams(search);
 
-    const planName = fixPlanName(params.get('plan'), 'AutomaticSubscriptionModal') || '';
+    const planName = correctDeprecatedPlanName(params.get('plan')) || '';
     const coupon = params.get('coupon') || undefined;
     const cycleParam = parseInt(params.get('cycle') as any, 10);
     const minimumCycleParam = parseInt(params.get('minimumCycle') as any, 10);
