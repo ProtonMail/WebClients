@@ -4727,6 +4727,9 @@
       "Failed to decrypt bookmark password: ${ message }": [
         "解密書籤密碼失敗: ${ message }"
       ],
+      "Failed to decrypt content key: ${ message }": [
+        "解密內容金鑰失敗: ${ message }"
+      ],
       "Failed to load OAuth modal.": [
         "載入OAuth 模組"
       ],
@@ -4844,6 +4847,9 @@
       "Maximum ${ displayMaxValue } allowed": [
         "最多允許 ${ displayMaxValue }"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "未發現成員的位址。請聯繫客戶支援服務以協助解決問題。"
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "請至少將 ${ calendarsToFixCount } 個行事曆與現存的 ${ BRAND_NAME } calendar 合併"
       ],
@@ -4939,6 +4945,12 @@
       ],
       "Permissions request failed.": [
         "權限請求失敗。"
+      ],
+      "Photo is already in the target album": [
+        "照片已存在於目標相簿中"
+      ],
+      "Photo not found": [
+        "找不到照片"
       ],
       "Please add a payment method before reactivating your subscription": [
         "在重新啟用您的訂閱之前，請新增付款方式"
@@ -5047,6 +5059,9 @@
       ],
       "Signature verification failed": [
         "簽名驗證失敗"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "失敗替 ${ signatureType } 簽名驗證"
       ],
       "Some file data failed to upload. Please try again.": [
         "部分檔案上載失敗。請稍後再試。"
@@ -7774,6 +7789,9 @@
       ],
       "Groups": [
         "群組"
+      ],
+      "Have some more time to decide without interruption.": [
+        "在未被干擾下有更充分的時間決定。"
       ],
       "here": [
         "這裡"
@@ -12112,6 +12130,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } 後四碼 ${ Last4 }"
+      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } 可讓您為創建電郵位址給子使用者並具備管理帳號權限。非常適合家庭親人和機構組織。"
       ],
@@ -13379,6 +13400,9 @@
       "More plans are available in other currencies": [
         "其他貨幣有更多的方案"
       ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "透過 ${ IDEAL_WERO_BRAND_NAME } 付款"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "為了讓訂閱在試用期結束後啟用，需要付款方式。"
       ],
@@ -13559,6 +13583,11 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "續訂價格取決於計費區域和 VAT 號碼。"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - 卡片於 ${ Last4 } 結束"
       ]
     },
     "Payments.Sepa": {
@@ -14016,9 +14045,17 @@
         "全部的頂級質子版 ${ DRIVE_SHORT_APP_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 和 ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "全部的頂級質子版 ${ DRIVE_SHORT_APP_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
     "q3campaign2026: Title": {
       "for 12 months": [
         "12 個月"
+      ],
+      "One plan, full power": [
+        "單一方案，完整能量"
       ],
       "One plan, more power": [
         "單一方案，更多能量"
@@ -16977,6 +17014,9 @@
     "Table header": {
       "Activated": [
         "已啟用"
+      ],
+      "Estimated size": [
+        "預估大小"
       ],
       "Migration status": [
         "遷移狀態"

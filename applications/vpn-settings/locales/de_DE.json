@@ -304,6 +304,9 @@
       "Add ${ BRAND_NAME } address": [
         "${ BRAND_NAME }-E-Mail-Adresse hinzufügen"
       ],
+      "Add a payment method": [
+        "Zahlungsmethode hinzufügen"
+      ],
       "Add account": [
         "Konto hinzufügen"
       ],
@@ -1940,6 +1943,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "Active until ${ formattedPeriodEndDate }": [
+        "Aktiv bis zum ${ formattedPeriodEndDate }"
+      ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Nachdem deine Testversion am ${ formattedDate1 } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich alle ${ renewCycle } Monate automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate2 } kündigst."
       ],
@@ -1960,6 +1966,9 @@
       ],
       "Try ${ selected } ${ freeForNDays }": [
         "Teste ${ selected } ${ freeForNDays }"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period.": [
+        "Wenn du kündigst, wird deine kostenlose Testversion nicht in ein kostenpflichtiges Abonnement umgewandelt, aber du kannst die Vorteile des Abonnements noch bis zum Ende des Testzeitraums nutzen."
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wenn du kündigst, wird deine kostenlose Testversion nicht in ein kostenpflichtiges Abonnement umgewandelt, aber du kannst die Vorteile des Abonnements noch bis zum Ende des Testzeitraums nutzen. Danach wirst du auf das ${ BRAND_NAME } Free-Abonnement zurückgestuft."
@@ -6178,6 +6187,9 @@
       "You need to configure a custom domain before creating a new user.": [
         "Du musst eine eigene Domain konfigurieren, bevor du einen neuen Benutzer erstellst."
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit dieser Familiengruppe zu verknüpfen und alle Premium-Funktionen zu genießen."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Dein Konto hat mehr E-Mail-Adressen, als dir in diesem Abonnement zur Verfügung stehen. ${ addressSettingsLink }"
       ],
@@ -6527,8 +6539,14 @@
       "Security key updated": [
         "Sicherheitsschlüssel aktualisiert"
       ],
+      "Still waiting?": [
+        "Wartest du immer noch?"
+      ],
       "This will delete all security keys linked to your account.": [
         "Hierdurch werden alle Sicherheitsschlüssel gelöscht, die mit deinem Account verbunden sind."
+      ],
+      "Touch your security key to continue.": [
+        "Berühre deinen Sicherheitsschlüssel, um fortzufahren."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bestätige deine Identität mit einem physischen U2F oder FIDO2 Sicherheitsschlüssel"
@@ -7503,6 +7521,12 @@
       ],
       "${ storage } storage": [
         "${ storage } Speicherplatz"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } verbleiben für deine Testversion. ${ addPaymentMethodLink }, um zu verhindern, dass du den Zugriff verlierst. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } verbleiben für deine Testversion. ${ addPaymentMethodLink }, um dein Abonnement fortzusetzen. ${ learnMoreLink }"
       ],
       "${ total } user found": [
         "${ total } Benutzer gefunden",
@@ -8941,6 +8965,9 @@
       ],
       "On": [
         "Ein"
+      ],
+      "On ${ formattedPeriodEndDate }, your free trial ends and your paid plan starts.": [
+        "Am ${ formattedPeriodEndDate } endet deine kostenlose Testversion und dein kostenpflichtiges Abonnement beginnt."
       ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Sobald der Zugriff auf dein Konto gewährt wurde, können sie auf deine **Wiederherstellungs**-Einstellungen zugreifen und dein ${ ACCOUNT_APP_NAME }-Passwort für dich **ändern**."
@@ -13065,6 +13092,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } endet mit ${ Last4 }"
+      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "Mit ${ BRAND_NAME } kannst du E-Mail-Adressen erstellen und Konten für Unterbenutzer verwalten – das ist ideal für Familien und Organisationen."
       ],
@@ -14622,6 +14652,11 @@
         "Das Guthaben wird dir gutgeschrieben."
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Eine Änderung deiner Rechnungsadresse kann sich auf die Steuern bei zukünftigen Rechnungen auswirken."
+      ]
+    },
     "Payments.Lifetime Subscription": {
       "Lifetime accounts can be transferred or sold": [
         "Lifetime-Konten können übertragen oder verkauft werden"
@@ -14669,6 +14704,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Der Verlängerungspreis ist abhängig von der Rechnungsregion und der Umsatzsteuernummer."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - Karte endet mit ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Banküberweisung - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - Karte endet mit ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
