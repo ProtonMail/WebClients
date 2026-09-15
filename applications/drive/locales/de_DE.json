@@ -52,6 +52,9 @@
         "${ photoCount } Fotos zu einem neuen Album hinzufügen",
         "${ photoCount } Fotos zu einem neuen Album hinzufügen"
       ],
+      "Add a payment method": [
+        "Zahlungsmethode hinzufügen"
+      ],
       "Add account": [
         "Konto hinzufügen"
       ],
@@ -99,6 +102,9 @@
       ],
       "Add to group": [
         "Zu Gruppe hinzufügen"
+      ],
+      "Album name": [
+        "Name des Albums"
       ],
       "Apply": [
         "Übernehmen"
@@ -296,6 +302,9 @@
       "Create and copy alias": [
         "Erstellen und Alias kopieren"
       ],
+      "Create business account": [
+        "Geschäftskonto erstellen"
+      ],
       "Create folder": [
         "Ordner erstellen"
       ],
@@ -447,6 +456,9 @@
       ],
       "enable desktop notifications": [
         "Desktop-Benachrichtigungen zu aktivieren"
+      ],
+      "Enable drive search": [
+        "Drive durchsuchen aktivieren"
       ],
       "Encrypted": [
         "Verschlüsselt"
@@ -772,8 +784,14 @@
       "Quit": [
         "Beenden"
       ],
+      "Re-indexing in progress": [
+        "Neuindizierung läuft"
+      ],
       "Re-sign": [
         "Neu signieren"
+      ],
+      "Rebuild index": [
+        "Index neu aufbauen"
       ],
       "Reconnect": [
         "Erneut verbinden"
@@ -903,6 +921,9 @@
       ],
       "Save photo to your gallery": [
         "Foto in deiner Galerie speichern"
+      ],
+      "Save photos and remove": [
+        "Fotos speichern und entfernen"
       ],
       "Scan & Download": [
         "Scannen & herunterladen"
@@ -3377,6 +3398,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } ist dein Benutzername. Um ${ emailAddress } zu erstellen, gehe bitte zu Einstellungen > Identität und E-Mail-Adressen > Kurzdomain (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Ein Kontakt mit dieser E-Mail-Adresse besteht bereits"
+      ],
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
@@ -3385,9 +3409,6 @@
       ],
       "A problem occurred, please try again.": [
         "Es ist ein Problem aufgetreten, bitte versuche es erneut."
-      ],
-      "Account does not exist": [
-        "Konto existiert nicht"
       ],
       "Address could not be added.": [
         "E-Mail-Adresse konnte nicht hinzugefügt werden."
@@ -3589,11 +3610,11 @@
       "Error reading file": [
         "Fehler beim Lesen der Datei"
       ],
+      "Expected structure attached": [
+        "Erwartete Struktur angehängt"
+      ],
       "Expiration date cannot be in the past": [
         "Ablaufdatum darf nicht in der Vergangenheit liegen"
-      ],
-      "External accounts are not supported yet": [
-        "Externe Konten werden noch nicht unterstützt"
       ],
       "External invitations are temporarily disabled.": [
         "Externe Einladungen sind vorübergehend deaktiviert."
@@ -4033,6 +4054,9 @@
       "Something went wrong while fetching available domains": [
         "Etwas ist schiefgegangen beim Abrufen der verfügbaren Domains"
       ],
+      "Something went wrong with search: Not enough storage space.": [
+        "Bei der Suche ist ein Fehler aufgetreten: Nicht genügend Speicherplatz."
+      ],
       "Something went wrong, please try again later": [
         "Ein Fehler ist aufgetreten. Bitte versuche es später erneut."
       ],
@@ -4198,11 +4222,17 @@
       "We were not able to load some items": [
         "Wir konnten einige Einträge nicht laden."
       ],
+      "We were not able to load some items shared with you": [
+        "Wir konnten einige mit dir geteilten Einträge nicht laden"
+      ],
       "We were not able to load some of your saved shared links": [
         "Wir konnten einige deiner gespeicherten geteilten Links nicht laden."
       ],
       "We were not able to load some search results": [
         "Einige Suchergebnisse konnten nicht geladen werden."
+      ],
+      "We were not able to load the file history": [
+        "Der Dateiversionsverlauf konnte nicht geladen werden"
       ],
       "We were not able to load the folder contents": [
         "Der Ordnerinhalt konnte nicht geladen werden"
@@ -4592,6 +4622,9 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Du hast unbezahlte Rechnungen. Bitte bezahle diese, bevor du einem Familienabonnement beitrittst."
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit dieser Familiengruppe zu verknüpfen und alle Premium-Funktionen zu genießen."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Dein Konto hat mehr E-Mail-Adressen, als dir in diesem Abonnement zur Verfügung stehen. ${ addressSettingsLink }"
       ],
@@ -4673,6 +4706,12 @@
       ],
       "Security key": [
         "Sicherheitsschlüssel"
+      ],
+      "Still waiting?": [
+        "Wartest du immer noch?"
+      ],
+      "Touch your security key to continue.": [
+        "Berühre deinen Sicherheitsschlüssel, um fortzufahren."
       ]
     },
     "fido2: Label": {
@@ -5187,6 +5226,9 @@
         "${ addressCount } E-Mail-Adresse",
         "${ addressCount } E-Mail-Adressen"
       ],
+      "${ albumName } has been successfully deleted": [
+        "${ albumName } wurde erfolgreich gelöscht"
+      ],
       "${ albums } album": [
         "${ albums } Album",
         "${ albums } Alben"
@@ -5241,6 +5283,9 @@
       ],
       "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
         "${ DRIVE_APP_NAME } konnte den lokalen Suchindex nicht entschlüsseln. Erstelle den Index neu, um die Suchfunktion wiederherzustellen."
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } hat festgestellt, dass der lokale Suchindex beschädigt ist und nicht mehr verwendet werden kann. Erstelle den Index neu, um die Suchfunktion wiederherzustellen."
       ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } im App Store"
@@ -5352,8 +5397,18 @@
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } Einträge"
       ],
+      "${ steps } step": [
+        "${ steps } Schritt",
+        "${ steps } Schritte"
+      ],
       "${ storage } storage": [
         "${ storage } Speicherplatz"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } verbleiben für deine Testversion. ${ addPaymentMethodLink }, um zu verhindern, dass du den Zugriff verlierst. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } verbleiben für deine Testversion. ${ addPaymentMethodLink }, um dein Abonnement fortzusetzen. ${ learnMoreLink }"
       ],
       "${ total } user found": [
         "${ total } Benutzer gefunden",
@@ -5403,6 +5458,9 @@
       ],
       "30-day money-back guarantee.": [
         "30 Tage Geld-zurück-Garantie."
+      ],
+      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
+        "Eine neue Version von ${ DRIVE_APP_NAME } ist verfügbar. Bitte lade neu, um die Suche weiter nutzen zu können."
       ],
       "A number will be added to the filename": [
         "Dem Dateinamen wird eine Zahl hinzugefügt"
@@ -5494,6 +5552,9 @@
       "An active recovery file": [
         "Eine aktive Wiederherstellungsdatei"
       ],
+      "An issue occurred during the restore process.": [
+        "Beim Wiederherstellen ist ein Fehler aufgetreten."
+      ],
       "and": [
         "und"
       ],
@@ -5517,6 +5578,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Bist du sicher, dass die ausgewählten Elemente dauerhaft aus dem Papierkorb gelöscht werden sollen?"
+      ],
+      "Are you sure you want to proceed?": [
+        "Möchtest du wirklich fortfahren?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Mindestens ${ BETTER_PASSWORD_LENGTH } Zeichen"
@@ -5664,6 +5728,9 @@
       "Create in": [
         "Erstellen in"
       ],
+      "Create links and share your files with others.": [
+        "Links erstellen und deine Dateien mit anderen teilen."
+      ],
       "Credit for the unused portion of your previous plan subscription": [
         "Gutschrift für den ungenutzten Teil deines vorherigen Abonnements"
       ],
@@ -5789,6 +5856,9 @@
       "Enabling auto-deletion…": [
         "Automatisches Löschen wird aktiviert…"
       ],
+      "Enabling drive search": [
+        "Suche in Drive wird aktiviert"
+      ],
       "Encrypted search is here": [
         "Die verschlüsselte Suche ist da"
       ],
@@ -5841,6 +5911,9 @@
       "Expired": [
         "Abgelaufen"
       ],
+      "Export diagnostic logs for technical support and troubleshooting": [
+        "Exportiere Diagnoseprotokolle für den technischen Support und die Fehlerbehebung"
+      ],
       "Fastest VPN speeds of up to 10Gbps": [
         "Die schnellsten VPN-Geschwindigkeiten von bis zu 10 Gbit/s"
       ],
@@ -5892,8 +5965,14 @@
       "Geoblocking": [
         "Geoblockierung"
       ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "Protokolle und andere Informationen für den technischen Support und die Fehlerbehebung abrufen"
+      ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Hol dir die App, um Fotos von deinem Telefon zu sichern, oder lade sie hier hoch."
+      ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
+        "Lerne ${ DRIVE_APP_NAME } kennen und sichere dir deinen 3 GB-Speicherplatzbonus! Fange noch heute an."
       ],
       "Google Pay mark": [
         "Google Pay markieren"
@@ -5910,11 +5989,17 @@
       "High Priority": [
         "Hohe Priorität"
       ],
+      "How does encrypted search work?": [
+        "Wie funktioniert die verschlüsselte Suche?"
+      ],
       "I have not finished this one yet.": [
         "Das habe ich noch nicht fertiggestellt."
       ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Hiermit bestätige ich nach bestem Wissen und Gewissen, dass die im Bericht enthaltenen Angaben und Aussagen richtig und vollständig sind."
+      ],
+      "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
+        "Wenn diese Dateien nicht vollständig lokal auf ${ deviceName } heruntergeladen sind, verlierst du den Zugang dazu."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
@@ -5980,6 +6065,21 @@
       "Included": [
         "Enthalten"
       ],
+      "Indexed ${ first }": [
+        "Indiziert ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Indiziert ${ first } und ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indiziert ${ first }, ${ second } und ${ third }"
+      ],
+      "Indexing in progress": [
+        "Indizierung läuft"
+      ],
+      "Indexing search results…": [
+        "Suchresultate werden indexiert…"
+      ],
       "Inherited from parent folder": [
         "Von übergeordnetem Ordner übernommen"
       ],
@@ -6012,6 +6112,9 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Einträge im Papierkorb verbleiben hier, bis sie dauerhaft gelöscht werden"
+      ],
+      "Items moved to the trash will stay here until deleted": [
+        "In den Papierkorb verschobene Einträge bleiben hier, bis sie gelöscht werden"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Es ist am besten, immer ein VPN zu verwenden. Aber hier können die Bedrohungen für die Cybersicherheit am größten sein:"
@@ -6278,6 +6381,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME sendet die Nachricht automatisch unter Verwendung des aktuellen Verfassen-Modus."
       ],
+      "Photo is not saved to your library": [
+        "Foto ist in deiner Bibliothek nicht gespeichert"
+      ],
       "Photo is set as album cover": [
         "Foto ist als Album-Titelbild eingerichtet"
       ],
@@ -6373,6 +6479,9 @@
       "Previous versions are kept for ${ retentionLabel }": [
         "Frühere Versionen werden für ${ retentionLabel } aufbewahrt"
       ],
+      "Previous versions are not saved": [
+        "Vorherige Versionen sind nicht gespeichert"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Der Preis beinhaltet alle anwendbaren zyklusbasierten Rabatte und nicht abgelaufenen Coupons, die auf deinem Konto gespeichert sind."
       ],
@@ -6381,6 +6490,9 @@
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Der Modus „Privates Surfen“ (oder „Inkognito“-Modus) ist nur nützlich, um deine Aktivitäten auf deinem Gerät verborgen zu halten. Er verhindert, dass dein Browser den Verlauf und die Cookies speichert, aber er macht dich nicht unsichtbar. Dein Internetdienstanbieter, dein Netzwerkadministrator und die von dir besuchten Websites können immer noch sehen, was du online tust."
+      ],
+      "Private search enabled. You may now close this dialogue and search for files and folders.": [
+        "Die private Suche ist aktiviert. Du kannst nun diesen Dialog schließen und nach Dateien und Ordnern suchen."
       ],
       "Public link": [
         "Öffentlicher Link"
@@ -6393,6 +6505,9 @@
       ],
       "Read this file": [
         "Diese Datei lesen"
+      ],
+      "Ready to add some photos?": [
+        "Bereit ein paar Fotos hinzuzufügen?"
       ],
       "RECOMMENDED": [
         "EMPFOHLEN"
@@ -6448,17 +6563,29 @@
       "Search data is corrupted": [
         "Suchdaten sind beschädigt"
       ],
+      "Search Enabled": [
+        "Suche aktiviert"
+      ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Suche aktiviert. Du kannst diesen Dialog jetzt schließen und nach Dateien und Ordnern suchen."
       ],
+      "Search engine error": [
+        "Fehler bei der Suchmaschine"
+      ],
       "Search error": [
         "Fehler beim Suchen"
+      ],
+      "Search is in an invalid state": [
+        "Suche befindet sich in einem ungültigen Zustand"
       ],
       "Search module is not available.": [
         "Suchmodul ist nicht verfügbar."
       ],
       "Select a destination folder": [
         "Zielordner auswählen"
+      ],
+      "Select a folder to make the copy in": [
+        "Einen Ordner für die Kopie auswählen"
       ],
       "Select a folder to move to.": [
         "Wähle ein Zielverzeichnis für das Verschieben aus."
@@ -6581,6 +6708,9 @@
       "that": [
         "Das"
       ],
+      "The albums you create are shown here.": [
+        "Die von dir erstellten Alben werden hier angezeigt."
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Die Anzahl der Downloads umfasst sowohl die tatsächlichen Downloads als auch die Fälle, in denen Dateien in der Vorschau angezeigt werden."
       ],
@@ -6593,11 +6723,17 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Der Inhaber dieser E-Mail-Adresse hat die Ende-zu-Ende-Verschlüsselung deaktiviert. Um verschlüsselte E-Mails an diese Adresse senden zu können, muss der Besitzer die Ende-zu-Ende-Verschlüsselung wieder aktivieren."
       ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "Bei der Suche ist ein interner Fehler aufgetreten. Erstelle den Index neu, um das Problem zu beheben."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Der Verifikationsvorgang wird einen neuen Browser-Tab öffnen. Bitte deaktiviere jegliche Pop-up-Blocker."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Es gibt noch Dateien, die übertragen werden müssen. Wenn du den Übertragungsmanager schließt, werden alle Vorgänge beendet."
+      ],
+      "There is nothing to see here": [
+        "Hier gibt es nichts zu sehen"
       ],
       "Thinking about this": [
         "Darüber nachdenken"
@@ -6659,6 +6795,9 @@
       ],
       "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
         "Das bricht alle verbleibenden Uploads ab. Abgebrochene Dateien werden nicht in ${ DRIVE_APP_NAME } gespeichert."
+      ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "Dadurch wird nur das Album gelöscht. Deine Fotos bleiben in deiner Zeitleiste. Diese Aktion kann nicht rückgängig gemacht werden."
       ],
       "This will permanently delete the file you uploaded.": [
         "Dadurch wird die hochgeladene Datei endgültig gelöscht."
@@ -6762,6 +6901,9 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Teste neue Funktionen, Updates und Produkte von ${ BRAND_NAME }, bevor sie für die Öffentlichkeit freigegeben werden. Dadurch wird die Seite neu geladen."
       ],
+      "Try searching by file name, date, or type.": [
+        "Versuche, nach Dateiname, Datum oder Typ zu suchen."
+      ],
       "Unexpected download error": [
         "Unerwarteter Download-Fehler"
       ],
@@ -6785,6 +6927,9 @@
       ],
       "Update required": [
         "Aktualisierung erforderlich"
+      ],
+      "Updating drive search...": [
+        "Drive Suche wird aktualisiert..."
       ],
       "Upgrade anytime to bring over the rest": [
         "Jederzeit upgraden, um den Rest zu übertragen"
@@ -6852,6 +6997,9 @@
       "Waiting": [
         "Warte"
       ],
+      "Want to sync files faster?": [
+        "Möchtest du Dateien schneller synchronisieren?"
+      ],
       "Warning": [
         "Warnung"
       ],
@@ -6895,6 +7043,9 @@
       "Week": [
         "Woche"
       ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "Willkommen bei ${ DRIVE_APP_NAME }. In den ersten 10 Minuten zählen die von dir hochgeladenen Dateien nicht zu deinem Speicherplatzkontingent."
+      ],
       "What do you want to do?": [
         "Was möchtest du tun?"
       ],
@@ -6906,6 +7057,9 @@
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Wenn du eine Verbindung zu VPN herstellst, wird deine IP-Adresse (ein eindeutiger Code, der deinem Gerät zugewiesen ist) mithilfe von Verschlüsselungstechnologie verborgen."
+      ],
+      "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
+        "Wenn du ${ deviceName } als synchronisiertes Gerät entfernst, werden alle Ordner, die zu „Meine Computer“ von diesem Gerät hinzugefügt wurden, dauerhaft aus ${ DRIVE_APP_NAME } gelöscht."
       ],
       "who": [
         "Wer"
@@ -6924,6 +7078,9 @@
       ],
       "Would you like to save it before removing?": [
         "Möchtest du ihn vor dem Entfernen speichern?",
+        "Möchtest du sie vor dem Entfernen speichern?"
+      ],
+      "Would you like to save them before removing?": [
         "Möchtest du sie vor dem Entfernen speichern?"
       ],
       "Writing assistant": [
@@ -6990,6 +7147,9 @@
       ],
       "You cannot undo this action.": [
         "Diese Aktion kann nicht widerrufen werden."
+      ],
+      "You don't have permission to copy files to this folder.": [
+        "Du hast keine Berechtigung, Dateien in diesen Ordner zu kopieren."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du wirst benachrichtigt, wenn dein Passwort oder andere Daten vom Dienst eines Drittanbieters preisgegeben wurden."
@@ -7125,6 +7285,9 @@
       "Your previous password": [
         "Dein bisheriges Passwort"
       ],
+      "Your previous recovery phrase": [
+        "Deine vorherige Wiederherstellungsphrase"
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Dein geplantes Abonnement beginnt am ${ renewalTime } und wird nach ${ cycle } Monat automatisch erneuert.",
         "Dein geplantes Abonnement beginnt am ${ renewalTime } und wird alle ${ cycle } Monate automatisch erneuert."
@@ -7217,6 +7380,9 @@
       ]
     },
     "Label": {
+      "# of downloads": [
+        "Anzahl Downloads"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-Benutzername"
       ],
@@ -7602,6 +7768,9 @@
       "Include message and file name in invite email": [
         "Nachricht und Dateiname in die Einladungs-E-Mail einfügen"
       ],
+      "Index kinds": [
+        "Indexarten"
+      ],
       "Indexing": [
         "Indizierung"
       ],
@@ -7886,6 +8055,9 @@
       ],
       "Theme": [
         "Farbschema"
+      ],
+      "This will permanently delete all files in your locked drive.": [
+        "Dadurch werden alle Dateien auf dem gesperrten Laufwerk dauerhaft gelöscht."
       ],
       "Thomas": [
         "Max"
@@ -9207,6 +9379,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } endet mit ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB Cloud-Speicher, mit dem sich Dateien einfach speichern, synchronisieren und teilen lassen. Gesichert durch eine Ende-zu-Ende-Verschlüsselung."
       ],
@@ -9611,14 +9786,23 @@
       "\"${ ellipsedName }\" created successfully": [
         "„${ ellipsedName }“ erfolgreich erstellt"
       ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "„${ ellipsedName }“ dauerhaft aus dem Papierkorb gelöscht"
+      ],
       "\"${ ellipsedName }\" failed to be created": [
         "\"${ ellipsedName }\" konnte nicht erstellt werden"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\" konnte nicht dauerhaft aus dem Papierkorb gelöscht werden"
       ],
       "\"${ ellipsedName }\" failed to be moved": [
         "„${ ellipsedName }“ konnte nicht verschoben werden"
       ],
       "\"${ ellipsedName }\" moved": [
         "\"${ ellipsedName }\" verschoben"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "„${ ellipsedName }“ aus dem Papierkorb wiederhergestellt"
       ],
       "\"${ ellipsedName }\" successfully moved": [
         "„${ ellipsedName }“ erfolgreich verschoben"
@@ -9732,6 +9916,9 @@
       "Album renamed successfully": [
         "Album erfolgreich umbenannt"
       ],
+      "All items deleted permanently from trash": [
+        "Alle Einträge dauerhaft aus dem Papierkorb gelöscht."
+      ],
       "Cannot load link": [
         "Link kann nicht geladen werden"
       ],
@@ -9758,6 +9945,9 @@
       ],
       "Device renamed": [
         "Gerät umbenannt"
+      ],
+      "Encrypted search activated": [
+        "Verschlüsselte Suche aktiviert"
       ],
       "Error while listing devices": [
         "Fehler beim Auflisten der Geräte"
@@ -10056,11 +10246,17 @@
       "Access your files on the go": [
         "Zugriff auf deine Dateien von unterwegs aus"
       ],
+      "Backup your photos and memories": [
+        "Deine Fotos und Erinnerungen sichern"
+      ],
       "Collaborate on documents": [
         "Gemeinsam an Dokumenten arbeiten"
       ],
       "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
         "Bevorzugst du ${ DRIVE_APP_NAME } im hellen oder dunklen Modus? Wähle die Farbe, die dich am meisten inspiriert."
+      ],
+      "Drag and drop your files here": [
+        "Zieh deine Dateien per Drag-and-drop hierhin"
       ],
       "Edit documents online": [
         "Dokumente online bearbeiten"
@@ -10071,14 +10267,23 @@
       "Files uploaded during this time won’t count towards your storage limit.": [
         "In dieser Zeit hochgeladene Dateien zählen nicht auf dein Speicherlimit."
       ],
+      "Files uploaded now will not count towards your storage limit": [
+        "Jetzt hochgeladene Dateien zählen nicht auf dein Speicherlimit"
+      ],
       "Final approval pending": [
         "Endgültige Genehmigung steht noch aus"
       ],
       "Free up hard drive space on your computer": [
         "Gib Speicherplatz auf der Festplatte deines Computers frei"
       ],
+      "Get the desktop app": [
+        "Hol dir die Desktop-App"
+      ],
       "Get the mobile app": [
         "Mobile App herunterladen"
+      ],
+      "Got an Android? We've got you covered.": [
+        "Du hast ein Android? Wir haben das passende für dich."
       ],
       "Got an iPhone? We've got you covered.": [
         "Du hast ein iPhone? Wir haben das passende für dich."
@@ -10092,17 +10297,29 @@
       "Invite team members": [
         "Teammitglieder einladen"
       ],
+      "Keep the momentum going by uploading more files using the storage included with your plan.": [
+        "Bleib dran, indem du weitere Dateien hochlädst und so den in deinem Abonnement enthaltenen Speicher nutzt."
+      ],
       "Manage access": [
         "Zugriff verwalten"
       ],
+      "Organize files right from your desktop": [
+        "Dateien direkt von deinem Desktop verwalten"
+      ],
       "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
         "Schütze deine Finanzdokumente, Ausweise, Projektdateien, Fotos und vieles mehr mit Ende-zu-Ende-Verschlüsselung."
+      ],
+      "Scan the QR code to install the mobile app": [
+        "Den QR-Code scannen, um die mobile App zu installieren"
       ],
       "Secure your files": [
         "Schütze deine Dateien"
       ],
       "Securely share files and folders": [
         "Dateien und Ordner sicher teilen"
+      ],
+      "Share files & folders": [
+        "Dateien und Ordner teilen"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Der Besitzer muss den geteilten Zugang bestätigen. Sobald dies erledigt wurde, wirst du eine E-Mail erhalten."
@@ -10112,6 +10329,9 @@
       ],
       "Work faster, smarter": [
         "Arbeite schneller und effizienter"
+      ],
+      "Work together": [
+        "Zusammenarbeiten"
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
         "Du hast dir gerade kostenlosen Speicherplatz gesichert und deine Dateien mit Ende-zu-Ende-Verschlüsselung geschützt – in Rekordzeit."
@@ -10185,6 +10405,9 @@
       ],
       "Only current location": [
         "Nur aktueller Standort"
+      ],
+      "Only current location: ${ name }": [
+        "Nur aktueller Standort: ${ name }"
       ],
       "Select JSON file": [
         "JSON-Datei auswählen"
@@ -10516,6 +10739,11 @@
         "Das Guthaben wird dir gutgeschrieben."
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Eine Änderung deiner Rechnungsadresse kann sich auf die Steuern bei zukünftigen Rechnungen auswirken."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Möchtest du wirklich fortfahren?"
@@ -10550,6 +10778,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Der Verlängerungspreis ist abhängig von der Rechnungsregion und der Umsatzsteuernummer."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - Karte endet mit ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Banküberweisung - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - Karte endet mit ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -11664,6 +11903,12 @@
       ],
       "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
         "Bearbeiter können nun die Freigabe verwalten und andere einladen. Du kannst diese Funktion jederzeit in den Freigabeeinstellungen ausschalten."
+      ],
+      "Encrypted search is here": [
+        "Die verschlüsselte Suche ist da"
+      ],
+      "Now you can easily search Drive files while keeping your data secure.": [
+        "Jetzt kannst du Drive-Dateien ganz einfach durchsuchen und gleichzeitig deine Daten schützen."
       ]
     },
     "sso": {
@@ -12205,6 +12450,9 @@
       "Albums shared with you will appear here": [
         "Mit dir geteilte Alben werden hier angezeigt"
       ],
+      "Albums you've shared will appear here": [
+        "Alben, die du geteilt hast, werden hier angezeigt"
+      ],
       "Shared by ${ sharedBy }": [
         "Geteilt von ${ sharedBy }"
       ],
@@ -12231,6 +12479,12 @@
       ],
       "Your selfies photos will appear here": [
         "Deine Selfies werden hier angezeigt"
+      ],
+      "Your tagged photos will appear here": [
+        "Deine markierten Fotos werden hier angezeigt"
+      ],
+      "Your videos will appear here": [
+        "Deine Videos werden hier angezeigt"
       ]
     },
     "Success": {
@@ -12444,6 +12698,9 @@
       ]
     },
     "Tag": {
+      "Bursts": [
+        "Serienbilder"
+      ],
       "Favorites": [
         "Favoriten"
       ],
@@ -12891,11 +13148,17 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Erhalte vollen Zugang zu ${ CALENDAR_APP_NAME }"
       ],
+      "Get mobile and desktop apps": [
+        "Mobile und Desktop-Apps herunterladen"
+      ],
       "Get more from your VPN": [
         "Hole mehr aus deinem VPN heraus"
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Mehr Speicherplatz mit ${ MAIL_APP_NAME } Plus erhalten"
+      ],
+      "Get started with 10 minutes of free uploads, on the house.": [
+        "Starte mit 10 Minuten kostenlosem Hochladen, das geht auf uns."
       ],
       "Get the apps": [
         "Apps herunterladen"
@@ -13026,6 +13289,9 @@
       ],
       "Night theme": [
         "Dunkles Design"
+      ],
+      "No albums shared with me": [
+        "Keine Alben mit mir geteilt"
       ],
       "No breaches detected": [
         "Keine Datenlecks entdeckt"
@@ -13448,6 +13714,9 @@
       "We'd love to hear from you!": [
         "Wir würden uns freuen, von dir zu hören."
       ],
+      "Welcome offer": [
+        "Willkommensangebot"
+      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Willkommen bei ${ BRAND_NAME } for Business"
       ],
@@ -13468,6 +13737,9 @@
       ],
       "You can now create unlimited folders and labels": [
         "Du kannst jetzt unbegrenzt viele Ordner und Kategorien erstellen"
+      ],
+      "You have inaccessible files": [
+        "Du hast Dateien, auf die du keinen Zugriff hast"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Deine kostenlose Testversion von ${ planName } endet am ${ textDate }."
@@ -13495,6 +13767,9 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "Your welcome actions": [
+        "Deine Begrüßungsaktionen"
       ],
       "You’ve got 5 GB of storage": [
         "Du hast 5 GB Speicherplatz"

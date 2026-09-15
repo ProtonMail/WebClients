@@ -1336,45 +1336,51 @@
       "${ removed } freed": [
         "${ removed } boşaltıldı"
       ],
-      "${ stats.summarizedMessageCount } earlier message condensed": [
-        "${ stats.summarizedMessageCount } önceki ileti özetlendi",
-        "${ stats.summarizedMessageCount } önceki ileti özetlendi"
+      "${ stats.summarizedMessageCount } earlier message summarized for new replies": [
+        "${ stats.summarizedMessageCount } önceki ileti yeni yanıtlar için özetlendi",
+        "${ stats.summarizedMessageCount } önceki ileti yeni yanıtlar için özetlendi"
       ],
-      "Chat shortened to keep going": [
-        "Yazışmayı sürdürebilmek için kısaltıldı"
+      "Earlier messages summarized to make room": [
+        "Yer açmak için önceki iletiler özetlendi"
       ],
-      "cleared old tool results": [
-        "eski araç sonuçları temizlendi"
+      "Excluded from new replies only": [
+        "Yalnızca yeni yanıtlara katılmaz"
       ],
-      "dropped old messages": [
-        "eski iletiler silindi"
+      "Files not included in new replies": [
+        "Yeni yanıtlara katılmayan dosyalar"
       ],
-      "Files from summarized messages": [
-        "Özetlenmiş iletilerdeki dosyalar"
+      "Making room to keep going — summarizing earlier messages for the next reply…": [
+        "İlerlemek için yer açılıyor. Bir sonraki yanıt için önceki iletiler özetleniyor…"
       ],
-      "No longer sent to the model": [
-        "Artık modele gönderilmiyor"
+      "Nothing is removed from your chat. Scroll up anytime to read the full history.": [
+        "Sohbetinizden hiçbir şey silinmez. İstediğiniz zaman yukarı kaydırarak tüm geçmişi okuyabilirsiniz."
       ],
-      "removed file context": [
-        "dosya bağlamı kaldırıldı"
+      "summarized older messages": [
+        "eski iletilerin özeti"
       ],
-      "removed tool calls": [
-        "araç çağrısı kaldırıldı"
+      "Summary ${ LUMO_SHORT_APP_NAME } uses for new replies": [
+        "Yeni yanıtlar için ${ LUMO_SHORT_APP_NAME } tarafından kullanılan özet"
       ],
-      "summarized the conversation": [
-        "yazışmayı özetledi"
+      "Tool calls trimmed": [
+        "Araç çağrıları kırpıldı"
       ],
-      "This chat got long — summarizing earlier messages so we can keep going…": [
-        "Bu sohbet uzadı — İlerleyebilmemiz için önceki iletileri özetliyorum…"
+      "Tool output trimmed": [
+        "Araç çıktısı kırpıldı"
       ],
-      "Tool calls removed": [
-        "Araç çağrıları kaldırıldı"
+      "trimmed file context": [
+        "kırpılmış dosya bağlamı"
       ],
-      "Tool output cleared": [
-        "Araç çıktısı temizlendi"
+      "trimmed old tool calls": [
+        "kırpılmış eski araç çağrıları"
       ],
-      "What ${ LUMO_SHORT_APP_NAME } still remembers": [
-        "${ LUMO_SHORT_APP_NAME } tarafından hatırlanan şeyler"
+      "trimmed old tool output": [
+        "kırpılmış eski araç çıktısı"
+      ],
+      "wrote a conversation summary": [
+        "bir yazışma özeti yazdı"
+      ],
+      "Your chat history above is unchanged. ${ LUMO_SHORT_APP_NAME } uses the summary below when replying — scroll up anytime to read the original messages.": [
+        "Yukarıdaki sohbet geçmişinizde herhangi bir değişiklik yapılmamıştır. ${ LUMO_SHORT_APP_NAME } yanıt verirken aşağıdaki özeti kullanır. Özgün iletileri okumak istediğiniz zaman yukarı kaydırın."
       ]
     },
     "collider_2025: Context": {
@@ -1450,6 +1456,9 @@
       ],
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Kendi belleklerinizi ekleyin. Otomatik olarak oluşturulan herhangi bir kaydı düzenleyin veya istediğiniz zaman her şeyi temizleyin. Düzenlediğiniz oluşturulmuş bellekler size ait belleklere dönüştürülür."
+      ],
+      "Adjust the size of text across the app": [
+        "Uygulama geneli yazı boyutunu ayarla"
       ],
       "After you continue, Apertus will appear as the selected model in the model menu. You can use that menu to switch to another model at any time.": [
         "İlerlediğinizde, model menüsünde seçilmiş model olarak Apertus görüntülenir. Bu menüden istediğiniz zaman başka bir modele geçebilirsiniz."
@@ -1865,6 +1874,10 @@
       "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
         "${ DRIVE_SHORT_APP_NAME } depolama alanı henüz ayarlanmamış"
       ],
+      "${ droppedForBudget.length } least relevant file was left out of this reply so the rest fits.": [
+        "Bu yanıtın kalanının sığması için en az ilgili ${ droppedForBudget.length } dosya katılmadı.",
+        "Bu yanıtın kalanının sığması için en az ilgili ${ droppedForBudget.length } dosya katılmadı."
+      ],
       "${ expiringInOneDay } chat will expire in 1 day": [
         "${ expiringInOneDay } sohbetin geçerlilik süresi 1 gün içinde sona erecek",
         "${ expiringInOneDay } sohbetin geçerlilik süresi 1 gün içinde sona erecek"
@@ -1880,8 +1893,8 @@
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } verilerinizin güvenliğini sağlarken, daha fazla iş yapmanıza yardımcı olan gizliliğe öncelik veren bir yapay zekadır. Tam potansiyelini açığa çıkarın ve yeni özellikler tanıtıldıkça erken erişimin keyfini çıkarın."
       ],
-      "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space; when it fills up, older messages are automatically summarized so you can keep chatting.": [
-        "${ LUMO_SHORT_APP_NAME } her yazışmada sınırlı miktarda bilgi işleyebilir. Burada bu alanın şu anda ne kadarının kullanıldığını görebilirsiniz. Alan dolduğunda yazışmayı sürdürebilmek için eski iletiler otomatik olarak özetlenir."
+      "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space. When it fills up, older messages are summarized — not deleted — so you can keep chatting. Your full chat history stays in the conversation.": [
+        "${ LUMO_SHORT_APP_NAME } her sohbet için sınırlı miktarda bilgiyi işleyebilir. Burada bu alanın şu anda ne tarafından kullanıldığı görüntülenir. Alan dolduğunda sohbetinizi sürdürebilmeniz için eski iletiler silinmez, yalnızca özetlenir. Sohbet geçmişinizin tümü sohbetin içinde kalır."
       ],
       "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
         "${ LUMO_SHORT_APP_NAME }+ — API erişimi ve anahtarları ${ LUMO_SHORT_APP_NAME }+ tarifesinde bulunur (yükseltmek veya anahtarları yönetmek için oturum açın)"
@@ -2004,8 +2017,8 @@
       "Drag and drop your files here to add them to the chat.": [
         "Dosyalarınızı sohbete eklemek için sürükleyip buraya bırakın."
       ],
-      "Earlier messages were summarized to make room, so they no longer take up space here.": [
-        "Yer açmak için önceki iletiler özetlendi. Artık burada yer kaplamıyorlar."
+      "Earlier messages were summarized to free space. They are still in your chat above — only the summary counts toward usage here.": [
+        "Yer açmak için önceki iletiler özetlendi. Bu iletiler yukarıdaki sohbetinizde bulunmayı sürdürüyor. Burada kullanım sınırına yalnızca özetler katılıyor."
       ],
       "Enabled": [
         "Açık"
@@ -2042,6 +2055,9 @@
       ],
       "Files": [
         "Dosyalar"
+      ],
+      "Files account for most of this usage.": [
+        "Bu kullanımın büyük bölümünü dosyalar oluşturuyor."
       ],
       "files are not supported for content extraction.": [
         "dosyalarda şu anda içeriklerin ayıklanması desteklenmiyor."
@@ -2117,6 +2133,9 @@
       ],
       "Manage keys after you sign in": [
         "Oturum açtıktan sonra anahtarları yönetin"
+      ],
+      "Matching files": [
+        "Eşleşen dosyalar"
       ],
       "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
         "API anahtarlarını asla istemci tarafındaki paketlere eklemeyin. Üretim ortamında ortam değişkenlerini ve sunucu tarafındaki bir vekil sunucunu kullanın."
@@ -3271,6 +3290,9 @@
       "Back": [
         "Geri"
       ],
+      "Back to chat": [
+        "Sohbete dön"
+      ],
       "Cancel": [
         "İptal"
       ],
@@ -3722,6 +3744,11 @@
         "Proje bulunamadı"
       ]
     },
+    "collider_2025:Error (validation)": {
+      "File format not supported: ${ file.name }": [
+        "Dosya biçimi desteklenmiyor: ${ file.name }"
+      ]
+    },
     "collider_2025:Feature": {
       "Advanced AI models": [
         "Gelişmiş yapay zeka modelleri"
@@ -4065,6 +4092,9 @@
       "These are the most sensitive categories Big Tech AI could infer about you from your chats — even when you never typed them out explicitly.": [
         "Bunlar, siz bunları açıkça yazmamış olsanız bile, Big Tech şirketlerinin yapay zeka hizmetlerinin sohbetlerinizden çıkarabileceği en önemli sınıflardır."
       ],
+      "This conversation is nearly full. ${ LUMO_SHORT_APP_NAME } may summarize earlier messages to keep replying — nothing is removed from your chat history.": [
+        "Bu sohbet neredeyse dolmak üzere. ${ LUMO_SHORT_APP_NAME } yanıt vermeyi sürdürebilmek için önceki iletileri özetleyebilir. Sohbet geçmişinizden bir şey silinmez."
+      ],
       "This is why it matters: once inferred, these details can power targeting, profiling, and decisions about you — often without transparency or consent.": [
         "İşte bu yüzden bu konu önemlidir: Bu bilgiler bir kez elde edildiğinde – genellikle şeffaflık veya rıza olmaksızın – sizinle ilgili hedef belirleme, profil oluşturma ve karar alma süreçlerini yönlendirebilir."
       ],
@@ -4125,8 +4155,8 @@
       "Your export is encrypted in transit and processed without being stored on ${ LUMO_SHORT_APP_NAME }'s servers.": [
         "Dışa aktarma verileriniz aktarım sırasında şifrelenir ve ${ LUMO_SHORT_APP_NAME } sunucularına kaydedilmeden işlenir."
       ],
-      "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
-        "Dosyalarınız büyük. ${ LUMO_SHORT_APP_NAME } tüm bilgileri işleyemeyebilir."
+      "Your files are large. ${ LUMO_SHORT_APP_NAME } may summarize earlier messages to make room — your chat history will stay in this conversation.": [
+        "Dosyalarınız oldukça büyük. ${ LUMO_SHORT_APP_NAME } yer açmak için önceki iletileri özetleyebilir. Bu yazışmadaki sohbet geçmişiniz kalacak."
       ],
       "Your information is zero-access encrypted": [
         "Bilgileriniz sıfır erişim şifrelemesi ile korunur"
@@ -4230,6 +4260,9 @@
       ],
       "AI platform": [
         "AI platformu"
+      ],
+      "Artifact view": [
+        "Yapıt görünümü"
       ],
       "Card theme": [
         "Kart teması"
@@ -7659,6 +7692,9 @@
       ],
       "Folder name": [
         "Klasör adı"
+      ],
+      "Font size": [
+        "Yazı boyutu"
       ],
       "Get the deal": [
         "Tekliften yararlanın"

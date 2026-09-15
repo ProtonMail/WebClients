@@ -304,6 +304,9 @@
       "Add ${ BRAND_NAME } address": [
         "Añadir dirección de ${ BRAND_NAME }"
       ],
+      "Add a payment method": [
+        "Añadir un método de pago"
+      ],
       "Add account": [
         "Agregar una cuenta"
       ],
@@ -6539,8 +6542,14 @@
       "Security key updated": [
         "Llave de seguridad actualizada"
       ],
+      "Still waiting?": [
+        "¿Sigue esperando?"
+      ],
       "This will delete all security keys linked to your account.": [
         "Esto eliminará todas las llaves de seguridad vinculadas a la cuenta."
+      ],
+      "Touch your security key to continue.": [
+        "Toque su llave de seguridad para continuar."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifique su identidad con una llave de seguridad U2F o FIDO2"
@@ -7515,6 +7524,12 @@
       ],
       "${ storage } storage": [
         "${ storage } de almacenamiento"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } restante en su prueba. ${ addPaymentMethodLink } para evitar la pérdida de datos. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } restante en su prueba. ${ addPaymentMethodLink } para mantener la suscripción. ${ learnMoreLink }"
       ],
       "${ total } user found": [
         "${ total } usuario encontrado",
@@ -8953,6 +8968,9 @@
       ],
       "On": [
         "Activado"
+      ],
+      "On ${ formattedPeriodEndDate }, your free trial ends and your paid plan starts.": [
+        "El ${ formattedPeriodEndDate } termina su prueba gratuita y comienza su plan de pago."
       ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Una vez que se haya concedido el acceso a su cuenta, podrán acceder a sus ajustes de **Recuperación** y **cambiar la contraseña de ${ ACCOUNT_APP_NAME }** por usted."
@@ -13081,6 +13099,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } que termina en ${ Last4 }"
+      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } le permite crear direcciones de correo y gestionar cuentas de usuarios secundarios. Es ideal para familias y empresas."
       ],
@@ -14638,6 +14659,11 @@
         "Se añadirán los créditos a su balance"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Cambiar su dirección de facturación podría afectar los impuestos en facturas futuras."
+      ]
+    },
     "Payments.Lifetime Subscription": {
       "Lifetime accounts can be transferred or sold": [
         "Las cuentas vitalicias pueden transferirse o venderse"
@@ -14685,6 +14711,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "El precio de renovación depende de la región de facturación y del número de IVA."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - tarjeta terminada en ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Transferencia bancaria - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - tarjeta terminada en ${ Last4 }"
       ]
     },
     "Payments.Sepa": {

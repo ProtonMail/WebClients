@@ -54,6 +54,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
       ],
+      "Add a payment method": [
+        "Zahlungsmethode hinzufügen"
+      ],
       "Add account": [
         "Konto hinzufügen"
       ],
@@ -86,6 +89,9 @@
       ],
       "Add group": [
         "Gruppe hinzufügen"
+      ],
+      "Add more details": [
+        "Weitere Details hinzufügen"
       ],
       "Add new group": [
         "Neue Gruppe hinzufügen"
@@ -1541,7 +1547,8 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen"
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -4751,6 +4758,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } ist dein Benutzername. Um ${ emailAddress } zu erstellen, gehe bitte zu Einstellungen > Identität und E-Mail-Adressen > Kurzdomain (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Ein Kontakt mit dieser E-Mail-Adresse besteht bereits"
+      ],
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
@@ -6060,6 +6070,9 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Du hast unbezahlte Rechnungen. Bitte bezahle diese, bevor du einem Familienabonnement beitrittst."
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit dieser Familiengruppe zu verknüpfen und alle Premium-Funktionen zu genießen."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Dein Konto hat mehr E-Mail-Adressen, als dir in diesem Abonnement zur Verfügung stehen. ${ addressSettingsLink }"
       ],
@@ -6155,6 +6168,12 @@
       ],
       "Security key": [
         "Sicherheitsschlüssel"
+      ],
+      "Still waiting?": [
+        "Wartest du immer noch?"
+      ],
+      "Touch your security key to continue.": [
+        "Berühre deinen Sicherheitsschlüssel, um fortzufahren."
       ]
     },
     "fido2: Label": {
@@ -7229,12 +7248,22 @@
         "${ selectedFoldersCountLocalized } Kategorie ausgewählt",
         "${ selectedFoldersCountLocalized } Kategorien ausgewählt"
       ],
+      "${ steps } step": [
+        "${ steps } Schritt",
+        "${ steps } Schritte"
+      ],
       "${ storage } storage": [
         "${ storage } Speicherplatz"
       ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } ungelesen",
         "${ subscription.UnreadMessageCount } ungelesen"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } verbleiben für deine Testversion. ${ addPaymentMethodLink }, um zu verhindern, dass du den Zugriff verlierst. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } verbleiben für deine Testversion. ${ addPaymentMethodLink }, um dein Abonnement fortzusetzen. ${ learnMoreLink }"
       ],
       "${ total } conversation": [
         "${ total } Unterhaltung",
@@ -7361,8 +7390,17 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
       ],
+      "Add ${ contact } to your contacts": [
+        "${ contact } zu deinen Kontakten hinzufügen"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } hinzufügen"
+      ],
+      "Add a contact": [
+        "Ein Kontakt hinzufügen"
+      ],
+      "Add contact": [
+        "Kontakt hinzufügen"
       ],
       "Add image URL": [
         "Bild-URL hinzufügen"
@@ -7583,11 +7621,26 @@
       "Center": [
         "Zentriert"
       ],
+      "Change a display setting": [
+        "Anzeigeeinstellung ändern"
+      ],
       "Change display setting": [
         "Anzeigeeinstellung ändern"
       ],
+      "Change how your mail is grouped": [
+        "Die Gruppierung deiner E-Mails ändern"
+      ],
+      "Change your list density": [
+        "Deine Listendichte ändern"
+      ],
+      "Change your mailbox layout": [
+        "Dein Postfach-Layout ändern"
+      ],
       "Change your password": [
         "Passwort ändern"
+      ],
+      "Change your theme": [
+        "Dein Design ändern"
       ],
       "Checked Proton support": [
         "Proton Support geprüft"
@@ -7662,8 +7715,17 @@
         "${ calendarsToBeCreatedCount } neuen Kalender erstellen",
         "${ calendarsToBeCreatedCount } neue Kalender erstellen"
       ],
+      "Create a filter": [
+        "Filter erstellen"
+      ],
+      "Create a folder": [
+        "Ordner erstellen"
+      ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "Erstelle einen Ordner wie „${ suggestedFolderName }“, um alle deine Online-Quittungen an einem Ort zu speichern."
+      ],
+      "Create a label": [
+        "Kategorie erstellen"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Erstelle eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Ordner, die du importieren möchtest."
@@ -7677,6 +7739,9 @@
       "Create a secure cloud for ${ memberCount } member": [
         "Erstelle eine sichere Cloud für ${ memberCount } Mitglied",
         "Erstelle eine sichere Cloud für ${ memberCount } Mitglieder"
+      ],
+      "Create filter": [
+        "Filter erstellen"
       ],
       "Create folder": [
         "Ordner erstellen"
@@ -7765,6 +7830,12 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Möchtest du die Kontaktdaten neu signieren?"
+      ],
+      "Document in foundation-search index": [
+        "Dokument im Foundation-Suchindex"
+      ],
+      "Document lookup failed": [
+        "Nachschlagen des Dokuments ist fehlgeschlagen"
       ],
       "Don't forget to share the password with the recipient": [
         "Vergiss nicht, dem Empfänger das Passwort mitzuteilen"
@@ -8146,8 +8217,7 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen",
-        "Bilder einfügen"
+        "Bild einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -8190,6 +8260,12 @@
       ],
       "Key fingerprint": [
         "Schlüssel-Fingerabdruck"
+      ],
+      "Label ${ emails }": [
+        "${ emails } kategorisieren"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "${ emails } als ${ names } kategorisieren"
       ],
       "Label all imported messages as": [
         "Alle importierten Nachrichten kennzeichnen als"
@@ -8239,6 +8315,9 @@
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
         "Protokolle helfen uns dabei, zu verstehen, was vor dem Auftreten des Problems geschehen ist. Sie enthalten App-Aktionen und Fehlermeldungen, jedoch keine Nachrichteninhalte."
       ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Dokument ${ lookup.result.docId } nachschlagen"
+      ],
       "Low Priority": [
         "Niedrige Priorität"
       ],
@@ -8251,6 +8330,12 @@
       "Manage your labels": [
         "Kategorien verwalten"
       ],
+      "Mark ${ emails } as read": [
+        "${ emails } als gelesen markieren"
+      ],
+      "Mark ${ emails } as unread": [
+        "${ emails } als ungelesen markieren"
+      ],
       "Mark all as read": [
         "Alle als gelesen markieren"
       ],
@@ -8262,6 +8347,12 @@
       ],
       "Mark as unread": [
         "Als ungelesen markieren"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "Den gesamten Bereich ${ place } als gelesen markieren"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "Den gesamten Bereich ${ place } als ungelesen markieren"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode Logo"
@@ -8335,6 +8426,12 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Die meisten öffentlichen WLAN-Netzwerke sind sicher, aber einige sind nicht sicher genug, sodass du Cyber-Bedrohungen ausgesetzt bist. Ein VPN verschlüsselt deinen Datenverkehr, damit du geschützt bist."
       ],
+      "Move ${ emails }": [
+        "${ emails } verschieben"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "${ emails } nach ${ destination } verschieben"
+      ],
       "Move emails": [
         "E-Mails verschieben"
       ],
@@ -8374,6 +8471,9 @@
       "No email open": [
         "Keine geöffnete E-Mail"
       ],
+      "No emails selected": [
+        "Keine E-Mails ausgewählt"
+      ],
       "No folder found": [
         "Keine Ordner gefunden"
       ],
@@ -8391,6 +8491,9 @@
       ],
       "No links cleaned": [
         "Keine Links bereinigt"
+      ],
+      "No location selected": [
+        "Keinen Standort ausgewählt"
       ],
       "No messages to show": [
         "Keine Nachrichten zum Anzeigen"
@@ -8424,6 +8527,12 @@
       ],
       "Not connected": [
         "Nicht verbunden"
+      ],
+      "Not found in the encrypted search index.": [
+        "Im verschlüsselten Suchindex nicht gefunden."
+      ],
+      "Not found in the foundation-search index.": [
+        "Nicht im Foundation-Suchindex gefunden"
       ],
       "Not supported by this browser": [
         "Von diesem Browser nicht unterstützt"
@@ -8657,8 +8766,14 @@
         "Lies ${ count } Kategorie",
         "Lies deine ${ count } Kategorien"
       ],
+      "Read your auto-reply": [
+        "Deine automatische Antwort lesen"
+      ],
       "Read your display settings": [
         "Deine Anzeigeeinstellungen anzeigen"
+      ],
+      "Read your signature": [
+        "Deine Signatur lesen"
       ],
       "Recipient: ": [
         "Empfänger: "
@@ -8681,8 +8796,20 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Denk daran, dies in deinem Passwort-Manager oder wo auch immer du deine Konto- und Anmeldeinformationen aufbewahrst, zu aktualisieren."
       ],
+      "Remove the star from ${ emails }": [
+        "Markierung aus ${ emails } entfernen"
+      ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Entfernt alle Daten, die mit dieser App verbunden sind (einschließlich heruntergeladener Nachrichten, …)"
+      ],
+      "Rename ${ folder } to…": [
+        "${ folder } umbenennen in…"
+      ],
+      "Rename folder": [
+        "Ordner umbenennen"
+      ],
+      "Rename this folder": [
+        "Diesen Ordner umbenennen"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Das Melden einer Nachricht als Phishing-Versuch wird die Nachricht an uns senden, damit wir diese analysieren und unsere Filter verbessern können. Das bedeutet, dass wir den Inhalt der Nachricht vollständig einsehen können."
@@ -8692,6 +8819,12 @@
       ],
       "Restore": [
         "Wiederherstellen"
+      ],
+      "Results came from the local search.": [
+        "Ergebnisse stammen aus der lokalen Suche."
+      ],
+      "Results came from the server.": [
+        "Ergebnisse stammen vom Server."
       ],
       "Right to Left": [
         "Von rechts nach links"
@@ -8808,8 +8941,17 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Lege ${ MAIL_APP_NAME } als deine Standard-E-Mail-Anwendung fest. ${ MAIL_APP_NAME } wird automatisch geöffnet, wenn du auf einen E-Mail-Link klickst."
       ],
+      "Set auto-reply": [
+        "Automatisches Antworten einschalten"
+      ],
+      "Set signature": [
+        "Signatur festlegen"
+      ],
       "Set up your organization": [
         "Organisation einrichten"
+      ],
+      "Set your signature": [
+        "Deine Signatur festlegen"
       ],
       "Setting up ${ feature }…": [
         "${ feature } wird eingerichtet…"
@@ -8858,6 +9000,12 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Entschuldigung, diese Nachricht existiert nicht oder ist bereits abgelaufen."
+      ],
+      "Source document in encrypted search index": [
+        "Quelldokument im verschlüsselten Suchindex"
+      ],
+      "Star ${ emails }": [
+        "${ emails } markieren"
       ],
       "Star emails": [
         "E-Mails markieren"
@@ -9241,11 +9389,20 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Teste neue Funktionen, Updates und Produkte von ${ BRAND_NAME }, bevor sie für die Öffentlichkeit freigegeben werden. Dadurch wird die Seite neu geladen."
       ],
+      "Turn off auto-reply": [
+        "Automatisches Antworten ausschalten"
+      ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "Schalte diese Funktion aus, um nur nach Datum, Name, E-Mail-Adresse oder Betreffzeile zu suchen. Um die Suche nach Nachrichteninhalten zu deaktivieren (und heruntergeladene Nachrichten zu löschen, um diese Funktion zu aktivieren), gehe zu Einstellungen."
       ],
+      "Turn off your away message": [
+        "Deine Abwesenheitsmeldung ausschalten"
+      ],
       "Turn on to search the content of your messages": [
         "Aktivieren, um den Inhalt deiner Nachrichten durchsuchen zu können"
+      ],
+      "Turn on your away message": [
+        "Deine Abwesenheitsmeldung einschalten"
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "Wir können in diesem Browser nicht auf Speicherfunktionen zugreifen, benötigen diesen Zugriff aber, um die Suche nach Nachrichteninhalten zu ermöglichen."
@@ -9273,6 +9430,12 @@
       ],
       "Update filter": [
         "Filter aktualisieren"
+      ],
+      "Update the filter ${ filter }": [
+        "Filter ${ filter } aktualisieren"
+      ],
+      "Update this filter": [
+        "Diesen Filter aktualisieren"
       ],
       "Updating message content search...": [
         "Suche nach Nachrichteninhalten wird aktualisiert..."
@@ -10203,6 +10366,9 @@
       "Automated confirmations and alerts": [
         "Automatische Bestätigungen und Benachrichtigungen"
       ],
+      "Away message": [
+        "Abwesenheitsnachricht"
+      ],
       "BCC": [
         "BCC"
       ],
@@ -10506,6 +10672,12 @@
       "From": [
         "Von"
       ],
+      "From date": [
+        "Ab Datum"
+      ],
+      "From time": [
+        "Anfangszeit"
+      ],
       "From:": [
         "Von:"
       ],
@@ -10694,6 +10866,9 @@
       ],
       "Never fill on this exact URL": [
         "Niemals auf dieser genauen URL ausfüllen"
+      ],
+      "New name": [
+        "Neuer Name"
       ],
       "New password": [
         "Neues Passwort"
@@ -10998,6 +11173,12 @@
       "Unsubscribed from ${ truncatedName }.": [
         "Von ${ truncatedName } abgemeldet"
       ],
+      "Until date": [
+        "Enddatum"
+      ],
+      "Until time": [
+        "Bis dahin"
+      ],
       "Updates": [
         "Aktualisierungen"
       ],
@@ -11203,6 +11384,12 @@
     "Link": {
       "Add a gift code": [
         "Gutscheincode hinzufügen"
+      ],
+      "Add formatting, links or images": [
+        "Formatierungen, Links oder Bilder hinzufügen"
+      ],
+      "Advanced auto-reply options": [
+        "Erweiterte Optionen für das automatische Antworten"
       ],
       "All mail": [
         "Alle E-Mails"
@@ -12436,6 +12623,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } endet mit ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB Cloud-Speicher, mit dem sich Dateien einfach speichern, synchronisieren und teilen lassen. Gesichert durch eine Ende-zu-Ende-Verschlüsselung."
       ],
@@ -13715,6 +13905,11 @@
         "Das Guthaben wird dir gutgeschrieben."
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Eine Änderung deiner Rechnungsadresse kann sich auf die Steuern bei zukünftigen Rechnungen auswirken."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Möchtest du wirklich fortfahren?"
@@ -13749,6 +13944,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Der Verlängerungspreis ist abhängig von der Rechnungsregion und der Umsatzsteuernummer."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - Karte endet mit ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Banküberweisung - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - Karte endet mit ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -14890,6 +15096,12 @@
       "${ count } email → ${ wakeTime }": [
         "${ count } E-Mail → ${ wakeTime }",
         "${ count } E-Mails → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "${ emails } zurückstellen"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "${ emails } bis ${ wakeTime } zurückstellen"
       ]
     },
     "Snooze message": {

@@ -34,6 +34,9 @@
       "${ name } lowered their hand": [
         "${ name } elini indirdi"
       ],
+      "${ name } mentioned you: ${ message }": [
+        "${ name } sizi andı: ${ message }"
+      ],
       "${ name } raised their hand": [
         "${ name } elini kaldırdı"
       ],
@@ -45,6 +48,10 @@
       ],
       "${ name }: ${ message }": [
         "${ name }: ${ message }"
+      ],
+      "${ suggestionCount } mention suggestion available": [
+        "${ suggestionCount } anma önerisi var",
+        "${ suggestionCount } anma önerisi var"
       ],
       "A participant joined the meeting": [
         "Bir katılımcı görüşmeye katıldı"
@@ -157,6 +164,9 @@
       "You have been muted by the host": [
         "Sesiniz görüşme sahibi tarafından kapatıldı"
       ],
+      "You were mentioned: ${ message }": [
+        "Anıldınız: ${ message }"
+      ],
       "Your camera has been turned off by the host": [
         "Kameranız görüşme sahibi tarafından kapatıldı"
       ],
@@ -167,6 +177,10 @@
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
+      ],
+      "${ newMentionCount } new mention": [
+        "${ newMentionCount } yeni anma",
+        "${ newMentionCount } yeni anma"
       ],
       "${ newMessageCount } new": [
         "${ newMessageCount } yeni",
@@ -312,6 +326,9 @@
       ],
       "Dismiss": [
         "Yok say"
+      ],
+      "Dismiss new mentions": [
+        "Yeni anmalar yok sayılsın"
       ],
       "Dismiss new messages": [
         "Yeni iletiler yok sayılsın"
@@ -2175,6 +2192,9 @@
       "Live captions have stopped.": [
         "Canlı alt yazı durdu."
       ],
+      "Message is too long to send": [
+        "İleti gönderilemeyecek kadar uzun"
+      ],
       "Microphone access is blocked. Allow it in your browser settings.": [
         "Mikrofona erişim engellendi. Tarayıcı ayarlarınızdan erişme izni verin."
       ],
@@ -2295,6 +2315,12 @@
       ],
       "The meeting password is invalid": [
         "Görüşme parolası geçersiz"
+      ],
+      "The mention could not be added because the message is at its character limit": [
+        "İleti karakter sınırına ulaşıldığından bu anma eklenemedi"
+      ],
+      "The message field is unavailable. Please reload the page.": [
+        "İleti alanı kullanılamıyor. Lütfen sayfayı yeniden yükleyin."
       ],
       "The selected microphone is no longer available.": [
         "Seçilmiş mikrofon artık yok."
@@ -2627,6 +2653,9 @@
         "${ replyCount } yanıt",
         "${ replyCount } yanıt"
       ],
+      "${ senderNameNode } mentioned you": [
+        "${ senderNameNode } sizi andı"
+      ],
       "${ spotlightParticipantName } is the active speaker": [
         "${ spotlightParticipantName } etkin konuşmacı"
       ],
@@ -2818,6 +2847,9 @@
       "End-to-end encryption is active for this chat.": [
         "Bu sohbet uçtan uca şifreleniyor."
       ],
+      "enter": [
+        "giriş"
+      ],
       "Enter code": [
         "Kodu yazın"
       ],
@@ -2992,6 +3024,9 @@
       "Member": [
         "Üye"
       ],
+      "Mention from ${ senderName }": [
+        "${ senderName } tarafından anma"
+      ],
       "Message actions": [
         "İleti işlemleri"
       ],
@@ -3060,6 +3095,9 @@
       ],
       "Not sent, check your connection.": [
         "Gönderilmedi, bağlantınızı denetleyin."
+      ],
+      "notify everyone here": [
+        "buradaki herkese bildir"
       ],
       "Only meetings you created appear here": [
         "Burada yalnızca sizin oluşturduğunuz görüşmeler görüntülenir"
@@ -3574,6 +3612,9 @@
       "Every year": [
         "Her yıl"
       ],
+      "everyone": [
+        "herkes"
+      ],
       "Google Calendar": [
         "Google Takvim"
       ],
@@ -3615,6 +3656,9 @@
       ],
       "Meeting link": [
         "Görüşme bağlantısı"
+      ],
+      "Mention a participant": [
+        "Bir katılımcıyı an"
       ],
       "Message": [
         "İleti"
@@ -3670,9 +3714,6 @@
       "Reply": [
         "Yanıtla"
       ],
-      "Return to dashboard": [
-        "Panoya dön"
-      ],
       "Reveal password": [
         "Parolayı görüntüle"
       ],
@@ -3705,6 +3746,9 @@
       ],
       "Track SID": [
         "SID izlensin"
+      ],
+      "unknown": [
+        "bilinmiyor"
       ],
       "Uploaded image": [
         "Yüklenen görsel"
@@ -3812,6 +3856,9 @@
       ],
       "Successfully rotated your personal meeting": [
         "Kişisel görüşme bağlantınız değiştirildi"
+      ],
+      "Thanks! Your feedback has been submitted.": [
+        "Teşekkürler! Geri bildiriminiz gönderildi."
       ],
       "You can't send a feedback for a meeting you haven't been to": [
         "Katılmadığınız bir toplantı için geri bildirim gönderemezsiniz"
@@ -4313,9 +4360,6 @@
       "Talk confidentially": [
         "Gizliliğinizi koruyarak konuşun"
       ],
-      "Thank you!": [
-        "Teşekkürler!"
-      ],
       "The host didn't admit you": [
         "Görüşme sahibi sizi kabul etmedi"
       ],
@@ -4342,9 +4386,6 @@
       ],
       "What went wrong?": [
         "Sorun neydi?"
-      ],
-      "Your feedback has been submitted": [
-        "Geri bildiriminiz gönderildi"
       ],
       "Your recording is ready": [
         "Kaydınız hazır"

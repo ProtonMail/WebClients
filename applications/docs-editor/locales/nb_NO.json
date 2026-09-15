@@ -451,6 +451,9 @@
       "Failed to import Markdown due to unknown error.": [
         "Kunne ikke importere Markdown på grunn av ukjent feil."
       ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "Kunne ikke importere OpenDocument-fil på grunn av en ukjent feil."
+      ],
       "Failed to import Word document due to unknown error.": [
         "Kunne ikke importere Word-dokument på grunn av ukjent feil."
       ],
@@ -562,6 +565,12 @@
       "No title": [
         "Ingen tittel"
       ],
+      "Open the link to download the image, then use \"Insert image\" to add it to this document.": [
+        "Åpne koblingen for å laste ned bildet, og bruk deretter \"Sett inn bilde\" for å legge det til i dette dokumentet."
+      ],
+      "Remote image blocked": [
+        "Eksternt bilde blokkert"
+      ],
       "Something went wrong:": [
         "Noe gikk galt:"
       ],
@@ -576,6 +585,9 @@
       ],
       "The language you're using isn’t currently supported in suggestion mode. Please switch to edit mode or change the language.": [
         "Språket du bruker, støttes for øyeblikket ikke i forslagsmodus. Bytt til redigeringsmodus eller endre språket."
+      ],
+      "This paste was blocked because the text contains invalid characters.": [
+        "Innlimingen ble blokkert fordi teksten inneholder ugyldige tegn."
       ],
       "Viewing": [
         "Ser"
@@ -775,6 +787,11 @@
       ],
       "Rename": [
         "Gi nytt navn"
+      ]
+    },
+    "sheets_2025:Sheet tab rename": {
+      "A sheet with this name already exists": [
+        "Et ark med dette navnet finnes allerede"
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {
@@ -2341,6 +2358,9 @@
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "Å komme med forslag i kodeblokker støttes ikke"
+      ],
+      "Pasting remote images is not supported. Download the image and use \"Insert image\" instead.": [
+        "Det støttes ikke å lime inn eksterne bilder. Last ned bildet og bruk \"Sett inn bilde\" i stedet."
       ]
     }
   }
