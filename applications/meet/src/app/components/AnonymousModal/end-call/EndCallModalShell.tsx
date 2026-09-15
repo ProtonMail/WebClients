@@ -9,6 +9,7 @@ import { clearRecording } from '@proton/meet/store/slices/recordingsSlice';
 import { UpsellModalTypes } from '@proton/meet/types/types';
 import upsellExpiredMeetingModalIcon from '@proton/styles/assets/img/meet/upsell-expired-meeting-modal-icon.svg';
 import upsellModalIcon from '@proton/styles/assets/img/meet/upsell-modal-icon.svg';
+import clsx from '@proton/utils/clsx';
 
 import { useLastRecordingDownload } from '../../../hooks/useMeetingRecorder/hooks/useLastRecordingDownload';
 import { CTAModalShell } from '../shared/CTAModalShell';
@@ -71,7 +72,7 @@ export const EndCallModalShell = ({
             titleClassName="text-semibold"
             actions={
                 <>
-                    <div className="flex flex-column md:flex-row gap-2 items-center w-full">
+                    <div className={clsx('flex flex-column md:flex-row gap-2 items-center w-full', !rejoin && 'pb-10')}>
                         {hasRecordingToDownload && (
                             <Button
                                 className="create-account-low-pressure-button rounded-full px-10 py-4 text-semibold w-full"
