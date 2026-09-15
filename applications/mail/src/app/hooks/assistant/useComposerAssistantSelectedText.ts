@@ -74,7 +74,7 @@ const useComposerAssistantSelectedText = ({
             if (mouseDownRef.current) {
                 mouseDownRef.current = false;
                 // Do not reset the selection if user clicks in the input container
-                if (inputContainerElement.current?.contains(e.target)) {
+                if (inputContainerElement?.current?.contains(e.target)) {
                     return;
                 }
                 handleSelectionChange();
