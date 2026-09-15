@@ -40,6 +40,7 @@ import AboutPanel from './AboutPanel';
 import DeleteAllButton from './DeleteAllButton';
 import { FontSizeSettingRow } from './FontSizeSettingRow';
 import MemoryPanel from './MemoryPanel';
+import MobileManageSubscriptionButton from './MobileManageSubscriptionButton';
 import PersonalizationPanel from './PersonalizationPanel';
 import { SearchIndexManagement } from './SearchIndex/SearchIndexManagement';
 import { SettingsSectionItem } from './SettingsSectionItem';
@@ -410,6 +411,9 @@ const AccountSettingsPanel = () => {
                 </div>
                 <LumoIcon name="ChevronRight" className="color-weak shrink-0 mt-2" size={16} />
             </ButtonLike>
+
+            <MobileManageSubscriptionButton />
+
             <LumoSettingsUpsellSection />
         </div>
     );
