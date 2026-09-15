@@ -1284,48 +1284,6 @@
     "collider_2025: Compaction": {
       "${ removed } freed": [
         "Zwolniono ${ removed }"
-      ],
-      "${ stats.summarizedMessageCount } earlier message condensed": [
-        "${ stats.summarizedMessageCount } wcześniejsza wiadomość została skondensowana",
-        "${ stats.summarizedMessageCount } wcześniejsze wiadomości zostały skondensowane",
-        "${ stats.summarizedMessageCount } wcześniejszych wiadomości zostało skondensowanych",
-        "${ stats.summarizedMessageCount } wcześniejszych wiadomości zostało skondensowanych"
-      ],
-      "Chat shortened to keep going": [
-        "Czat został skrócony, aby móc kontynuować"
-      ],
-      "cleared old tool results": [
-        "wyczyszczono stare wyniki narzędzi"
-      ],
-      "dropped old messages": [
-        "pominięto stare wiadomości"
-      ],
-      "Files from summarized messages": [
-        "Pliki z podsumowanych wiadomości"
-      ],
-      "No longer sent to the model": [
-        "Nie są już wysyłane do modelu"
-      ],
-      "removed file context": [
-        "usunięto kontekst pliku"
-      ],
-      "removed tool calls": [
-        "usunięto wywołania narzędzi"
-      ],
-      "summarized the conversation": [
-        "podsumowano wątek"
-      ],
-      "This chat got long — summarizing earlier messages so we can keep going…": [
-        "Ten czat zrobił się długi — podsumowuję wcześniejsze wiadomości, żebyśmy mogli kontynuować…"
-      ],
-      "Tool calls removed": [
-        "Usunięto wywołania narzędzi"
-      ],
-      "Tool output cleared": [
-        "Wyczyszczono wyniki narzędzia"
-      ],
-      "What ${ LUMO_SHORT_APP_NAME } still remembers": [
-        "Co ${ LUMO_SHORT_APP_NAME } nadal pamięta"
       ]
     },
     "collider_2025: Context": {
@@ -1777,9 +1735,6 @@
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } to sztuczna inteligencja stawiająca na prywatność, która pomaga Ci osiągać więcej, dbając jednocześnie o bezpieczeństwo Twoich danych. Odblokuj jej pełny potencjał i ciesz się wczesnym dostępem do nowych funkcji, gdy tylko zostaną wprowadzone."
       ],
-      "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space; when it fills up, older messages are automatically summarized so you can keep chatting.": [
-        "${ LUMO_SHORT_APP_NAME } może przetwarzać ograniczoną ilość informacji w każdym wątku. To pokazuje, co obecnie zajmuje to miejsce. Gdy się zapełni, starsze wiadomości są automatycznie podsumowywane, aby można było pisać dalej."
-      ],
       "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
         "${ LUMO_SHORT_APP_NAME }+ — dostęp do interfejsu API i klucze są dołączone do subskrypcji ${ LUMO_SHORT_APP_NAME }+ (zaloguj się, aby ulepszyć subskrypcję lub zarządzać kluczami)"
       ],
@@ -1899,9 +1854,6 @@
       ],
       "Drag and drop your files here to add them to the chat.": [
         "Przeciągnij i upuść swoje pliki tutaj, aby dodać je do czatu."
-      ],
-      "Earlier messages were summarized to make room, so they no longer take up space here.": [
-        "Wcześniejsze wiadomości zostały podsumowane, aby zwolnić miejsce, więc nie zajmują już tutaj miejsca."
       ],
       "Error processing attachment": [
         "Błąd przetwarzania załącznika"
@@ -3607,9 +3559,6 @@
       ],
       "You're using private browsing": [
         "Korzystasz z trybu prywatnego"
-      ],
-      "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
-        "Twoje pliki są duże. ${ LUMO_SHORT_APP_NAME } może nie być w stanie przetworzyć wszystkich informacji."
       ],
       "Your information is zero-access encrypted": [
         "Twoje informacje są zaszyfrowane metodą zero-access"
@@ -6522,6 +6471,9 @@
       ],
       "Folder name": [
         "Nazwa folderu"
+      ],
+      "Font size": [
+        "Rozmiar czcionki"
       ],
       "Get the deal": [
         "Skorzystaj z oferty"
