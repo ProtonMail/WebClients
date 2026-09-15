@@ -12,7 +12,6 @@ import {
   type ColorSelector,
   type SpreadsheetTheme,
 } from '@rowsncolumns/spreadsheet'
-import { MdLineStyle } from '@rowsncolumns/icons'
 import { useCallback, useState, type ComponentProps } from 'react'
 import chunk from 'lodash/chunk'
 import { Button } from '../Sidebar/shared'
@@ -190,7 +189,7 @@ export function BorderSelectorContent({
 
         <Ariakit.SelectProvider value={style} setValue={(value) => setStyle(value as BorderStyle)}>
           <Ariakit.Select render={<SubmenuButton />}>
-            <MdLineStyle />
+            <Icon data={Icons.lineStyle} />
           </Ariakit.Select>
 
           <UI.SelectPopover className="py-2">
