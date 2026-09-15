@@ -1,5 +1,6 @@
+import { type ApplePayFlow, getOfferedApplePayFlow } from '../core/apple-pay-support';
 import type { BillingAddress } from '../core/billing-address/billing-address';
-import type { PLANS } from '../core/constants';
+import { PAYMENT_METHOD_TYPES, type PLANS } from '../core/constants';
 import type {
     Currency,
     Cycle,
@@ -162,6 +163,61 @@ export function getTelemetryPaymentMethod({
     }
 
     return plainTelemetryPaymentMethod;
+}
+
+/**
+ * Which presentation of the reported `method` the user got, when one method has more than one.
+ */
+type TelemetryMethodVariant = 'apple_pay_native' | 'apple_pay_qr';
+
+const APPLE_PAY_VARIANTS: Record<ApplePayFlow, TelemetryMethodVariant> = {
+    native: 'apple_pay_native',
+    qr: 'apple_pay_qr',
+};
+
+/**
+ * The variant of the payment method being reported, or null where the method has none.
+ *
+ * Apple Pay is the only method with variants today. Safari browsers will usually report the native flow, while all
+ * other browsers should have QR flow.
+ *
+ * A saved Apple Pay method has no variant: it's largely handled like a previously saved card, and it doesn't require
+ * apple-specific SCA.
+ */
+export function getTelemetryMethodVariant({
+    paymentMethodType,
+    paymentMethodValue,
+}: {
+    paymentMethodType: PlainPaymentMethodType | undefined;
+    paymentMethodValue: PaymentMethodType | undefined;
+}): TelemetryMethodVariant | null {
+    if (paymentMethodType !== PAYMENT_METHOD_TYPES.APPLE_PAY || !paymentMethodValue) {
+        return null;
+    }
+
+    if (isSavedPaymentMethod(paymentMethodValue)) {
+        return null;
+    }
+
+    const offeredFlow = getOfferedApplePayFlow();
+
+    return offeredFlow ? APPLE_PAY_VARIANTS[offeredFlow] : null;
+}
+
+export function getTelemetryPaymentMethodInfo({
+    paymentMethodType,
+    paymentMethodValue,
+}: {
+    paymentMethodType: PlainPaymentMethodType | undefined;
+    paymentMethodValue: PaymentMethodType | undefined;
+}): {
+    method: TelemetryPaymentMethod | null;
+    methodVariant: TelemetryMethodVariant | null;
+} {
+    return {
+        method: getTelemetryPaymentMethod({ paymentMethodType, paymentMethodValue }),
+        methodVariant: getTelemetryMethodVariant({ paymentMethodType, paymentMethodValue }),
+    };
 }
 
 /**
