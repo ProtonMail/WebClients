@@ -1281,48 +1281,6 @@
     "collider_2025: Compaction": {
       "${ removed } freed": [
         "освобождено ${ removed }"
-      ],
-      "${ stats.summarizedMessageCount } earlier message condensed": [
-        "${ stats.summarizedMessageCount } более раннее сообщение обобщено",
-        "${ stats.summarizedMessageCount } более ранних сообщения обобщены",
-        "${ stats.summarizedMessageCount } более ранних сообщений обобщены",
-        "${ stats.summarizedMessageCount } более ранних сообщений обобщены"
-      ],
-      "Chat shortened to keep going": [
-        "Чат сокращен, чтобы продолжить"
-      ],
-      "cleared old tool results": [
-        "очищены результаты старых инструментов"
-      ],
-      "dropped old messages": [
-        "отброшены старые сообщения"
-      ],
-      "Files from summarized messages": [
-        "Файлы из обобщенных сообщений"
-      ],
-      "No longer sent to the model": [
-        "Больше не отправляется в модель"
-      ],
-      "removed file context": [
-        "удален контекст файла"
-      ],
-      "removed tool calls": [
-        "удалены вызовы инструментов"
-      ],
-      "summarized the conversation": [
-        "обобщена цепочка писем"
-      ],
-      "This chat got long — summarizing earlier messages so we can keep going…": [
-        "Этот чат стал слишком длинным — обобщаем предыдущие сообщения, чтобы продолжить…"
-      ],
-      "Tool calls removed": [
-        "Вызовы инструментов удалены"
-      ],
-      "Tool output cleared": [
-        "Результаты работы инструментов очищены"
-      ],
-      "What ${ LUMO_SHORT_APP_NAME } still remembers": [
-        "Что ${ LUMO_SHORT_APP_NAME } все еще помнит"
       ]
     },
     "collider_2025: Context": {
@@ -1774,9 +1732,6 @@
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } — это искусственный интеллект, ориентированный на конфиденциальность, который помогает вам выполнять больше задач, сохраняя ваши данные в безопасности. Раскройте его полный потенциал и наслаждайтесь ранним доступом к новым функциям по мере их появления."
       ],
-      "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space; when it fills up, older messages are automatically summarized so you can keep chatting.": [
-        "${ LUMO_SHORT_APP_NAME } может обрабатывать ограниченный объем информации в одной цепочке писем. Здесь показано, что именно сейчас занимает это место. Когда лимит будет исчерпан, старые сообщения будут автоматически обобщены, чтобы вы могли продолжить общение."
-      ],
       "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
         "${ LUMO_SHORT_APP_NAME }+ — доступ к API и ключи включены в подписку ${ LUMO_SHORT_APP_NAME }+ (войдите, чтобы улучшить подписку или управлять ключами)"
       ],
@@ -1896,9 +1851,6 @@
       ],
       "Drag and drop your files here to add them to the chat.": [
         "Перетащите файлы сюда, чтобы добавить их в чат."
-      ],
-      "Earlier messages were summarized to make room, so they no longer take up space here.": [
-        "Предыдущие сообщения были обобщены, чтобы освободить место, поэтому они больше не занимают здесь место."
       ],
       "Error processing attachment": [
         "Ошибка обработки вложения"
@@ -3604,9 +3556,6 @@
       ],
       "You're using private browsing": [
         "Вы используете режим инкогнито"
-      ],
-      "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
-        "Ваши файлы слишком большие. ${ LUMO_SHORT_APP_NAME }, возможно, не сможет обработать всю информацию."
       ],
       "Your information is zero-access encrypted": [
         "Ваша информация зашифрована с нулевым доступом"
@@ -6519,6 +6468,9 @@
       ],
       "Folder name": [
         "Имя папки"
+      ],
+      "Font size": [
+        "Размер шрифта"
       ],
       "Get the deal": [
         "Получить со скидкой"
