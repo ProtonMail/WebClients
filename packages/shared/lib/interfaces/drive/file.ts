@@ -1,9 +1,3 @@
-export enum FileRevisionState {
-    Draft = 0,
-    Active = 1,
-    Inactive = 2,
-}
-
 export interface CreateDriveFile {
     Name: string;
     Hash: string;
@@ -16,14 +10,6 @@ export interface CreateDriveFile {
     ContentKeyPacket: string;
     ContentKeyPacketSignature: string;
     ClientUID?: string;
-}
-
-export interface RevisionManifest {
-    PreviousRootHash: string;
-    BlockHashes: {
-        Hash: string;
-        Index: number;
-    }[];
 }
 
 export enum PhotoTag {
@@ -68,7 +54,7 @@ export interface CreateFileRevisionResult {
     };
 }
 
-export interface UploadLink {
+interface UploadLink {
     Token: string;
     BareURL: string;
 }
@@ -88,12 +74,7 @@ export interface DriveFileBlock {
 
 export type Thumbnail = { ThumbnailID: string; Size: number; Type: number; Hash: string };
 
-export interface ThumbnailURLInfo {
-    BareURL: string;
-    Token: string;
-}
-
-export interface DriveFileRevisionPhotoPayload {
+interface DriveFileRevisionPhotoPayload {
     LinkID: string;
     CaptureTime: number;
     MainPhotoLinkID: string | null;
@@ -127,10 +108,6 @@ export interface DriveFileRestoreRevisionResult {
     Code: 1000 | 1002; // 1000: restore sync, 1002: restore async
 }
 
-export interface DriveFileRevisionsResult {
-    Revisions: DriveFileRevisionPayload[];
-}
-
 export interface DriveFileRevisionResult {
     Revision: DriveFileRevisionPayload;
 }
@@ -150,19 +127,4 @@ export interface ScanResultItem {
     Hash: string;
     Error?: string;
     Safe: boolean;
-}
-
-/** Public **/
-export interface PublicCreateDriveFile {
-    Name: string;
-    Hash: string;
-    ParentLinkID: string;
-    NodePassphrase: string;
-    NodePassphraseSignature: string;
-    SignatureEmail?: string;
-    NodeKey: string;
-    MIMEType: string;
-    ContentKeyPacket: string;
-    ContentKeyPacketSignature?: string;
-    ClientUID?: string;
 }

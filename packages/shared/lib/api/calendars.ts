@@ -30,7 +30,7 @@ import type { Nullable, RequireOnly } from '../interfaces/utils';
 import type { PaginationParams } from './interface';
 
 export const CALENDAR_V1 = 'calendar/v1';
-export const CALENDAR_V2 = 'calendar/v2';
+const CALENDAR_V2 = 'calendar/v2';
 
 export const queryLatestModelEventID = (calendarID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}/modelevents/latest`,
@@ -70,11 +70,6 @@ export const getFullCalendar = (calendarID: string) => ({
     method: 'get',
 });
 
-export const getCalendarKeys = (calendarID: string) => ({
-    url: `${CALENDAR_V1}/${calendarID}/keys`,
-    method: 'get',
-});
-
 export const getAllCalendarKeys = (calendarID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}/keys/all`,
     method: 'get',
@@ -85,20 +80,10 @@ export const getPassphrases = (calendarID: string) => ({
     method: 'get',
 });
 
-export const getPassphrase = (calendarID: string) => ({
-    url: `${CALENDAR_V1}/${calendarID}/passphrase`,
-    method: 'get',
-});
-
 export const reactivateCalendarKey = (calendarID: string, keyID: string, data: { PrivateKey: string }) => ({
     url: `${CALENDAR_V1}/${calendarID}/keys/${keyID}`,
     method: 'put',
     data,
-});
-
-export const getCalendarGroupReset = () => ({
-    url: `${CALENDAR_V1}/keys/reset`,
-    method: 'get',
 });
 
 export const resetCalendars = (data: { CalendarKeys: CalendarKeysResetData }) => ({
@@ -230,11 +215,6 @@ export const getEventByUID = (params: GetEventByUIDArguments) => ({
     params,
 });
 
-export const deleteEvent = (calendarID: string, eventID: string) => ({
-    url: `${CALENDAR_V1}/${calendarID}/events/${eventID}`,
-    method: 'delete',
-});
-
 export const updatePersonalEventPart = (calendarID: string, eventID: string, data: CreateSinglePersonalEventData) => ({
     url: `${CALENDAR_V1}/${calendarID}/events/${eventID}/personal`,
     method: 'put',
@@ -278,17 +258,6 @@ export const upgradeP2PInvite = (
     data,
 });
 
-export const acceptInvite = (uid: string, data: { Signature: string }) => ({
-    url: `${CALENDAR_V1}/events/${uid}/accept`,
-    method: 'put',
-    data,
-});
-
-export const getCalendarSettings = (calendarID: string) => ({
-    url: `${CALENDAR_V1}/${calendarID}/settings`,
-    method: 'get',
-});
-
 export const updateCalendarSettings = (calendarID: string, data: Partial<CalendarSettings>) => ({
     url: `${CALENDAR_V1}/${calendarID}/settings`,
     method: 'put',
@@ -322,11 +291,6 @@ export const queryCalendarAlarms = (calendarID: string, params: QueryCalendarAla
     url: `${CALENDAR_V1}/${calendarID}/alarms`,
     method: 'get',
     params,
-});
-
-export const getCalendarAlarm = (calendarID: string, alarmID: string) => ({
-    url: `${CALENDAR_V1}/${calendarID}/alarms/${alarmID}`,
-    method: 'get',
 });
 
 export const syncMultipleEvents = (calendarID: string, data: SyncMultipleEventsData) => ({

@@ -6,7 +6,7 @@ import type { ChecklistId } from './Checklist';
 export enum SETTINGS_STATUS {
     UNVERIFIED = 0,
     VERIFIED = 1,
-    INVALID = 2,
+    // INVALID = 2,
 }
 
 export enum SETTINGS_PASSWORD_MODE {
@@ -21,17 +21,17 @@ export enum SETTINGS_LOG_AUTH_STATE {
 }
 
 export enum DARK_WEB_MONITORING_STATE {
-    DISABLED = 0,
+    // DISABLED = 0,
     ENABLED = 1,
 }
 
 export enum DARK_WEB_MONITORING_EMAILS_STATE {
-    DISABLED = 0,
+    // DISABLED = 0,
     ENABLED = 1,
 }
 
 export enum DARK_WEB_MONITORING_ELIGIBILITY_STATE {
-    NONPAID = 0,
+    // NONPAID = 0,
     PAID = 1,
 }
 
@@ -69,7 +69,7 @@ export const enum DRAWER_VISIBILITY {
     HIDE = 1,
 }
 
-export enum EDM_VALUE {
+enum EDM_VALUE {
     ENABLED = 0,
     DISABLED = 1,
 }

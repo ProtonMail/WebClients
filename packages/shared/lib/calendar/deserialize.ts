@@ -29,10 +29,7 @@ import { unwrap } from './helper';
 import { getAttendeePartstat, getIsEventComponent } from './vcalHelper';
 import { parseWithFoldingRecovery } from './vcalRecovery';
 
-export const readSessionKey = (
-    KeyPacket?: Nullable<string>,
-    privateKeys?: PrivateKeyReference | PrivateKeyReference[]
-) => {
+const readSessionKey = (KeyPacket?: Nullable<string>, privateKeys?: PrivateKeyReference | PrivateKeyReference[]) => {
     if (!KeyPacket || !privateKeys) {
         return;
     }

@@ -29,7 +29,7 @@ export const getIsCalendarUrlEventManagerUpdate = (
     return event.Action === EVENT_ACTIONS.UPDATE;
 };
 
-export const decryptPurpose = async ({
+const decryptPurpose = async ({
     encryptedPurpose,
     privateKeys,
 }: {
@@ -54,7 +54,7 @@ export const generateEncryptedPurpose = async ({
         await CryptoProxy.encryptMessage({ textData: purpose, stripTrailingSpaces: true, encryptionKeys: publicKey })
     ).message;
 };
-export const generateEncryptedPassphrase = ({
+const generateEncryptedPassphrase = ({
     passphraseKey,
     passphrase,
 }: {
@@ -62,14 +62,14 @@ export const generateEncryptedPassphrase = ({
     passphrase: string;
 }) => xorEncryptDecrypt({ key: passphraseKey, data: Uint8Array.fromBase64(passphrase) }).toBase64();
 
-export const generateCacheKey = () => generateRandomBytes(16).toBase64({ alphabet: 'base64url' });
+const generateCacheKey = () => generateRandomBytes(16).toBase64({ alphabet: 'base64url' });
 
-export const generateCacheKeySalt = () => generateRandomBytes(8).toBase64();
+const generateCacheKeySalt = () => generateRandomBytes(8).toBase64();
 
-export const getCacheKeyHash = ({ cacheKey, cacheKeySalt }: { cacheKey: string; cacheKeySalt: string }) =>
+const getCacheKeyHash = ({ cacheKey, cacheKeySalt }: { cacheKey: string; cacheKeySalt: string }) =>
     getSHA256Base64String(`${cacheKeySalt}${cacheKey}`);
 
-export const generateEncryptedCacheKey = async ({
+const generateEncryptedCacheKey = async ({
     cacheKey,
     publicKeys,
 }: {
@@ -83,7 +83,7 @@ export const generateEncryptedCacheKey = async ({
         })
     ).message;
 
-export const decryptCacheKey = async ({
+const decryptCacheKey = async ({
     encryptedCacheKey,
     privateKeys,
 }: {
@@ -97,7 +97,7 @@ export const decryptCacheKey = async ({
         })
     ).data;
 
-export const getPassphraseKey = ({
+const getPassphraseKey = ({
     encryptedPassphrase,
     calendarPassphrase,
 }: {

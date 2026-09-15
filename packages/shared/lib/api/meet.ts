@@ -1,9 +1,5 @@
 import type { MeetingPayload, ParticipantPermissions, UserSettings, WaitingRoomState } from '../interfaces/Meet';
 
-export enum AgentType {
-    ClosedCaptions = 1,
-}
-
 export const queryParticipants = (meetingLinkName: string) => {
     return {
         method: 'get',

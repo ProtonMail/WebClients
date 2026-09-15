@@ -29,7 +29,7 @@ interface LastRefreshDate {
     value: Date;
 }
 
-export const getLastRefreshDates = (): LastRefreshDate[] => {
+const getLastRefreshDates = (): LastRefreshDate[] => {
     return Object.entries(localStorage).reduce<LastRefreshDate[]>((acc, [key, value]) => {
         try {
             const parsedValue = getParsedValue(value);

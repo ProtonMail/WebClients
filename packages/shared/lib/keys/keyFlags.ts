@@ -8,12 +8,6 @@ export const clearKeyFlagsToEnableEmailE2EE = (flags: number) => {
     return flags;
 };
 
-export const setKeyFlagsToDisableEmailE2EE = (flags: number) => {
-    flags = setBit(flags, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
-    flags = setBit(flags, KEY_FLAG.FLAG_EMAIL_NO_SIGN);
-    return flags;
-};
-
 export const getDefaultKeyFlags = (address: Address | undefined) => {
     let flags = KEY_FLAG.FLAG_NOT_OBSOLETE + KEY_FLAG.FLAG_NOT_COMPROMISED;
     if (hasBit(address?.Flags, ADDRESS_FLAGS.FLAG_DISABLE_E2EE)) {

@@ -4,14 +4,14 @@ import type { RoleAssignment } from './OrganizationRole';
 export enum GroupPermissions {
     NobodyCanSend = 0,
     GroupMembersCanSend = 1,
-    OrgMembersCanSend = 2,
+    // OrgMembersCanSend = 2,
     EveryoneCanSend = 3,
 }
 
 export enum GroupFlags {
     None = 0,
     System = 1 << 0,
-    Drive = 1 << 1,
+    // Drive = 1 << 1,
     Scim = 1 << 2,
 }
 

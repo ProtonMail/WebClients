@@ -9,24 +9,22 @@ import type {
     CalendarWithOwnMembers,
 } from './index';
 
-export interface CalendarAlarmEventManagerDelete {
+interface CalendarAlarmEventManagerDelete {
     ID: string;
     Action: EVENT_ACTIONS.DELETE;
 }
-export interface CalendarAlarmEventManagerUpdate {
+interface CalendarAlarmEventManagerUpdate {
     ID: string;
     Action: EVENT_ACTIONS.UPDATE;
     Alarm: CalendarAlarm;
 }
-export interface CalendarAlarmEventManagerCreate {
+interface CalendarAlarmEventManagerCreate {
     ID: string;
     Action: EVENT_ACTIONS.CREATE;
     Alarm: CalendarAlarm;
 }
 export type CalendarAlarmEventManager =
-    | CalendarAlarmEventManagerDelete
-    | CalendarAlarmEventManagerUpdate
-    | CalendarAlarmEventManagerCreate;
+    CalendarAlarmEventManagerDelete | CalendarAlarmEventManagerUpdate | CalendarAlarmEventManagerCreate;
 
 export interface CalendarUrlEventManagerDelete {
     ID: string;
@@ -43,11 +41,9 @@ export interface CalendarUrlEventManagerCreate {
     CalendarUrl: CalendarUrl;
 }
 export type CalendarUrlEventManager =
-    | CalendarUrlEventManagerDelete
-    | CalendarUrlEventManagerUpdate
-    | CalendarUrlEventManagerCreate;
+    CalendarUrlEventManagerDelete | CalendarUrlEventManagerUpdate | CalendarUrlEventManagerCreate;
 
-export interface CalendarSubscriptionEventManagerDelete {
+interface CalendarSubscriptionEventManagerDelete {
     ID: string;
     Action: EVENT_ACTIONS.DELETE;
 }
@@ -56,7 +52,7 @@ export interface CalendarSubscriptionEventManagerUpdate {
     Action: EVENT_ACTIONS.UPDATE;
     CalendarSubscription: CalendarSubscription;
 }
-export interface CalendarSubscriptionEventManagerCreate {
+interface CalendarSubscriptionEventManagerCreate {
     ID: string;
     Action: EVENT_ACTIONS.CREATE;
     CalendarSubscription: CalendarSubscription;
@@ -82,9 +78,7 @@ export interface CalendarMemberEventManagerCreate {
 }
 
 export type CalendarMemberEventManager =
-    | CalendarMemberEventManagerDelete
-    | CalendarMemberEventManagerUpdate
-    | CalendarMemberEventManagerCreate;
+    CalendarMemberEventManagerDelete | CalendarMemberEventManagerUpdate | CalendarMemberEventManagerCreate;
 
 export interface CalendarEventManagerDelete {
     ID: string;
@@ -101,23 +95,21 @@ export interface CalendarEventManagerCreate {
     Calendar: CalendarWithOwnMembers;
 }
 
-export interface CalendarEventsEventManagerDelete {
+interface CalendarEventsEventManagerDelete {
     ID: string;
     Action: EVENT_ACTIONS.DELETE;
 }
-export interface CalendarEventsEventManagerUpdate {
+interface CalendarEventsEventManagerUpdate {
     ID: string;
     Action: EVENT_ACTIONS.UPDATE;
     Event: CalendarEventWithoutBlob;
 }
-export interface CalendarEventsEventManagerCreate {
+interface CalendarEventsEventManagerCreate {
     ID: string;
     Action: EVENT_ACTIONS.CREATE;
     Event: CalendarEventWithoutBlob;
 }
 export type CalendarEventsEventManager =
-    | CalendarEventsEventManagerDelete
-    | CalendarEventsEventManagerUpdate
-    | CalendarEventsEventManagerCreate;
+    CalendarEventsEventManagerDelete | CalendarEventsEventManagerUpdate | CalendarEventsEventManagerCreate;
 
 export type CalendarEventManager = CalendarEventManagerCreate | CalendarEventManagerUpdate | CalendarEventManagerDelete;

@@ -1,9 +1,8 @@
 import type { SessionKey } from '@protontech/crypto';
 
 import type { AuthVersion } from '../../authentication/interface';
-import type { SHARE_MEMBER_STATE } from '../../drive/constants';
-import type { SHARE_MEMBER_PERMISSIONS, SHARE_URL_PERMISSIONS } from '../../drive/permissions';
-import type { DriveFileBlock, ScanResultItem, Thumbnail } from './file';
+import type { SHARE_URL_PERMISSIONS } from '../../drive/permissions';
+import type { ScanResultItem } from './file';
 import type { LinkType } from './link';
 
 type WithSRPPayload<T extends any> = T & {
@@ -82,21 +81,6 @@ export interface SharedURLInfoPayload {
 }
 
 /**
- * drive/urls/{token}/files/{linkId} response payload
- */
-export interface SharedURLRevision {
-    Blocks: DriveFileBlock[];
-    CreateTime: number;
-    ID: string;
-    ManifestSignature: string;
-    SignatureAddress: string;
-    Size: number;
-    State: number;
-    Thumbnails: Thumbnail[];
-    XAttr: string;
-}
-
-/**
  * drive/urls/${token}/security response payload
  */
 export interface SharedFileScan {
@@ -108,7 +92,7 @@ export interface SharedFileScan {
 export enum HandshakeInfoVendorType {
     ProtonDrive = 0,
     ProtonDoc = 1,
-    ProtonSheet = 2,
+    // ProtonSheet = 2,
 }
 
 /**
@@ -168,30 +152,6 @@ export interface AbuseReportPayload {
     ReporterEmail?: string;
     ReporterMessage?: string;
     ResourcePassphrase: string;
-}
-
-export interface ShareMemberPayloadLEGACY {
-    MemberID: string;
-    ShareID: string;
-    AddressID: string;
-    AddressKeyID: string;
-    Inviter: string;
-    CreateTime: number;
-    ModifyTime: number;
-    Permissions: SHARE_MEMBER_PERMISSIONS;
-    KeyPacket: string;
-    KeyPacketSignature: string | null;
-    SessionKeySignature: string | null;
-    State: SHARE_MEMBER_STATE;
-    Unlockable: boolean;
-}
-
-export interface InviteShareMemberPayload {
-    Email: string;
-    Inviter: string;
-    Permissions: SHARE_MEMBER_PERMISSIONS;
-    KeyPacket: string;
-    KeyPacketSignature: string;
 }
 
 export interface ListDriveSharedWithMeLinksPayload {

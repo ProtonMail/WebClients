@@ -62,7 +62,7 @@ export interface Participant {
     attendeeID?: string;
 }
 
-export interface SavedImportData {
+interface SavedImportData {
     savedEvent: CalendarEvent;
     savedVevent: VcalVeventComponent;
 }

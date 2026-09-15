@@ -6,8 +6,6 @@ export const normalize = (value = '', removeDiacritics = false) => {
     return normalized;
 };
 
-export const replaceLineBreak = (content = '') => content.replace(/(?:\r\n|\r|\n)/g, '<br />');
-
 export const toCRLF = (str: string) => str.replace(/\n/g, '\r\n');
 
 export const addPlus = ([first = '', ...rest] = []) => {
@@ -102,10 +100,6 @@ export const getInitials = (fullName = '') => {
     }
 
     return (words[0].charAt(0) + words[words.length - 1].charAt(0)).toUpperCase();
-};
-
-export const hasProtonDomain = (email = '') => {
-    return /@(protonmail\.(com|ch)|proton\.(me|ch)|pm\.me|)$/i.test(email);
 };
 
 const getMatchingCharacters = (string: string, substring: string) => {

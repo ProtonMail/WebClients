@@ -1,4 +1,4 @@
-import type { BrowserOptions, SeverityLevel, Span } from '@sentry/browser';
+import type { BrowserOptions, SeverityLevel } from '@sentry/browser';
 import {
     Integrations as SentryIntegrations,
     addBreadcrumb,
@@ -7,7 +7,6 @@ import {
     init,
     makeFetchTransport,
     captureMessage as sentryCaptureMessage,
-    startInactiveSpan as sentryStartInactiveSpan,
 } from '@sentry/browser';
 import type { BrowserTransportOptions } from '@sentry/browser/types/transports/types';
 import type { Breadcrumb } from '@sentry/types/types/breadcrumb';
@@ -21,9 +20,6 @@ import { ApiError } from '../fetch/ApiError';
 import { getUIDHeaders } from '../fetch/headers';
 import type { ProtonConfig } from '../interfaces';
 import { isElectronApp } from './desktop';
-
-export type { SeverityLevel, Span } from '@sentry/browser';
-export { spanToJSON } from '@sentry/core';
 
 type SentryContext = {
     authHeaders: { [key: string]: string };
@@ -64,7 +60,7 @@ export const setSentryEnabled = (enabled: boolean) => {
 };
 
 type FirstFetchParameter = Parameters<typeof fetch>[0];
-export const getContentTypeHeaders = (input: FirstFetchParameter): HeadersInit => {
+const getContentTypeHeaders = (input: FirstFetchParameter): HeadersInit => {
     const url = input.toString();
     /**
      * The sentry library does not append the content-type header to requests. The documentation states
@@ -383,10 +379,6 @@ export enum SentryMailInitiatives {
     LOGGER = 'mail-logger',
 }
 
-export enum SentryMailPerformanceInitiatives {
-    APPLY_LOCATION_PERFORMANCE = 'apply-location-performance',
-}
-
 export enum SentryCommonInitiatives {
     POST_SUBSCRIPTION = 'post-subscription',
     ENCRYPTED_SEARCH = 'encrypted-search',
@@ -406,8 +398,7 @@ export type SentryInitiative =
     | `${SentryMailInitiatives}`
     | `${SentryCommonInitiatives}`
     | `${SentryCalendarInitiatives}`
-    | `${SentryRealtimeInitiatives}`
-    | `${SentryMailPerformanceInitiatives}`;
+    | `${SentryRealtimeInitiatives}`;
 
 type CaptureExceptionArgs = Parameters<typeof captureException>;
 
@@ -451,18 +442,6 @@ export const captureInitiativeMessage = (
             ...context?.tags,
             initiative,
         },
-    });
-};
-
-export const startInactiveSpan = (
-    name: string,
-    initiative: SentryInitiative,
-    tags?: Record<string, string>
-): Span | undefined => {
-    return sentryStartInactiveSpan({
-        name,
-        op: initiative,
-        tags,
     });
 };
 

@@ -1,7 +1,3 @@
-export type CountryTimezone = typeof singleCountryTimezoneDatabase;
-export type CountryTimezoneShortFormat =
-    (typeof singleCountryTimezoneDatabase)[keyof typeof singleCountryTimezoneDatabase];
-
 export const singleCountryTimezoneDatabase = {
     'Africa/Abidjan': 'CI',
     'Africa/Accra': 'GH',

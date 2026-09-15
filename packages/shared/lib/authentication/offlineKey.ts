@@ -7,7 +7,7 @@ export interface OfflineKey {
     salt: string;
 }
 
-export const getOfflineKey = (password: string, salt: Uint8Array<ArrayBuffer>) => {
+const getOfflineKey = (password: string, salt: Uint8Array<ArrayBuffer>) => {
     return CryptoProxy.computeArgon2({
         params: ARGON2_PARAMS.RECOMMENDED,
         password,

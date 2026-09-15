@@ -3,7 +3,7 @@ import type { MspSubsidiary } from '../interfaces/Msp';
 import queryPages from './helpers/queryPages';
 import type { PaginationParams } from './interface';
 
-export const getMspSubsidiaries = (params?: PaginationParams) => ({
+const getMspSubsidiaries = (params?: PaginationParams) => ({
     method: 'get',
     url: 'core/v4/organizations/subsidiaries',
     params,
@@ -99,7 +99,7 @@ export interface MspDelegatedManager {
     PublicKey: string;
 }
 
-export const getMspSubsidiaryManagers = (id: string) => ({
+const getMspSubsidiaryManagers = (id: string) => ({
     method: 'get',
     url: `organizations/subsidiaries/${id}/members`,
 });

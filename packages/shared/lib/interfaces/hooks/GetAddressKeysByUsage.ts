@@ -25,4 +25,4 @@ export interface AddressKeysByUsage {
 }
 
 export type GetAddressKeysByUsage = (options: GetAddressKeysByUsageOptions) => Promise<AddressKeysByUsage>;
-export type UseGetAddressKeysByUsage = () => GetAddressKeysByUsage;
+// export type UseGetAddressKeysByUsage = () => GetAddressKeysByUsage;

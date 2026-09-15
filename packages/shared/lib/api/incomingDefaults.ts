@@ -56,8 +56,3 @@ export const deleteIncomingDefaults = (IDs: string[]) => ({
     url: 'mail/v4/incomingdefaults/delete',
     data: { IDs },
 });
-
-export const clearIncomingDefaults = () => ({
-    method: 'delete',
-    url: 'mail/v4/incomingdefaults',
-});

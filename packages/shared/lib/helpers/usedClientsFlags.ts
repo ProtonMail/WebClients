@@ -66,9 +66,9 @@ const isDesktopVPNUser = (usedClientFlags: bigint) =>
     hasBitBigInt(usedClientFlags, MACOS_VPN);
 
 export const isCalendarMobileAppUser = (usedClientFlags: bigint) => {
-  return (
-      isAndroidCalendarUser(usedClientFlags) || isIOSCalendarUser(usedClientFlags)
-  );
+    return (
+        isAndroidCalendarUser(usedClientFlags) || isIOSCalendarUser(usedClientFlags)
+    );
 };
 
 export const isDesktopInboxUser = (usedClientFlags: bigint) => {
@@ -88,16 +88,10 @@ export const isDriveUser = (usedClientFlags: bigint) => {
     );
 };
 
-export const isDriveMobileAppUser = (usedClientFlags: bigint) => {
-  return (
-      isAndroidDriveUser(usedClientFlags) || isIOSDriveUser(usedClientFlags)
-  );
-};
-
 export const isMailMobileAppUser = (usedClientFlags: bigint) => {
-  return (
-      isAndroidMailUser(usedClientFlags) || isIOSMailUser(usedClientFlags)
-  );
+    return (
+        isAndroidMailUser(usedClientFlags) || isIOSMailUser(usedClientFlags)
+    );
 };
 
 export const isPassUser = (usedClientFlags: bigint) => {

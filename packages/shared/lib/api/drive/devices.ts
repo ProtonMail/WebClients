@@ -1,5 +1,3 @@
-import type { CreateDeviceVolume } from '../../interfaces/drive/device';
-
 export const queryDevices = () => ({
     method: 'get',
     url: 'drive/devices',
@@ -26,10 +24,4 @@ export const queryDeviceRename = (
             Name: data.Name, // TODO: deprecated and should be removed
         },
     },
-});
-
-export const queryCreateDriveDevice = (data: CreateDeviceVolume) => ({
-    method: 'post',
-    url: 'drive/devices',
-    data,
 });

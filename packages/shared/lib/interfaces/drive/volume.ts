@@ -16,10 +16,6 @@ export enum VolumeRestoreStatus {
     Failed = -1,
 }
 
-export interface UserVolumesResult {
-    Volumes: DriveVolume[];
-}
-
 export interface CopyRelatedPhotos {
     LinkID: string;
     Name: string;
@@ -120,21 +116,4 @@ export interface ListDriveVolumeSharedLinksPayload {
         ShareURLs: ShareURL[];
         LinkIDs: string[];
     }[];
-}
-
-export interface CreateDrivePhotosWithAlbumsVolume {
-    Share: {
-        AddressID: string;
-        AddressKeyID: string;
-        Key: string;
-        Passphrase: string;
-        PassphraseSignature: string;
-    };
-    Link: {
-        Name: string;
-        NodeKey: string;
-        NodePassphrase: string;
-        NodePassphraseSignature: string;
-        NodeHashKey: string;
-    };
 }

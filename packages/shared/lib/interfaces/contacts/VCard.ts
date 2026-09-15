@@ -23,18 +23,8 @@ export type VCardKey =
     | 'note'
     | 'url';
 
-export type ParamKey =
-    | 'language'
-    | 'value'
-    | 'pref'
-    | 'altid'
-    | 'pid'
-    | 'type'
-    | 'mediatype'
-    | 'calscale'
-    | 'sort-as'
-    | 'geo'
-    | 'tz';
+type ParamKey =
+    'language' | 'value' | 'pref' | 'altid' | 'pid' | 'type' | 'mediatype' | 'calscale' | 'sort-as' | 'geo' | 'tz';
 
 export interface VCardProperty<T = any> {
     value: T;
@@ -55,7 +45,7 @@ export interface VcardNValue {
     honorificSuffixes: string[];
 }
 
-export enum VCardGender {
+enum VCardGender {
     Male = 'M',
     Female = 'F',
     Other = 'O',

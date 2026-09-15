@@ -15,7 +15,6 @@
         "test:watch": "yarn test --watch"
     },
     "dependencies": {
-        "@mattiasbuelens/web-streams-adapter": "0.1.0",
         "@proton/colors": "workspace:^",
         "@proton/logger": "workspace:^",
         "@proton/redux-utilities": "workspace:^",
@@ -32,7 +31,6 @@
         "@protontech/timezone-support": "^2.1.0",
         "@scure/base": "^2.4.0",
         "@sentry/browser": "^7.120.4",
-        "@sentry/core": "^7.120.4",
         "@types/node": "^24.13.4",
         "@types/papaparse": "^5.5.2",
         "@types/ua-parser-js": "^0.7.39",
@@ -42,8 +40,6 @@
         "electron-log": "^5.4.4",
         "file-saver": "^2.0.5",
         "ical.js": "^1.5.0",
-        "idb": "^8.0.3",
-        "is-valid-domain": "0.1.6",
         "linkify-it": "^5.0.2",
         "lodash": "^4.18.1",
         "minimist": "^1.2.8",
@@ -52,7 +48,6 @@
         "tinycolor2": "^1.6.0",
         "ttag": "^1.8.12",
         "ua-parser-js": "^1.0.41",
-        "web-streams-polyfill": "^3.3.3",
         "web-vitals": "^4.2.4",
         "zod": "^3.25.76"
     },
@@ -76,16 +71,5 @@
         "@proton/key-transparency": "workspace:^",
         "@proton/metrics": "workspace:^",
         "electron": "*"
-    },
-    "peerDependenciesMeta": {
-        "@proton/key-transparency": {
-            "optional": true
-        },
-        "@proton/metrics": {
-            "optional": true
-        },
-        "electron": {
-            "optional": true
-        }
     }
 }

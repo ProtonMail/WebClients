@@ -72,7 +72,7 @@ export const createMemberKeyRoute = ({ MemberID, ...data }: CreateMemberKeyPaylo
     data,
 });
 
-export interface MigrateMemberAddressKeyPayload {
+interface MigrateMemberAddressKeyPayload {
     ID: string;
     Token: string;
     Signature: string;

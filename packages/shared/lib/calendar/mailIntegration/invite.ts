@@ -233,7 +233,7 @@ interface CreateInviteVeventParams {
     keepDtstamp?: boolean;
 }
 
-export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }: CreateInviteVeventParams) => {
+const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }: CreateInviteVeventParams) => {
     if ([ICAL_METHOD.REPLY, ICAL_METHOD.CANCEL].includes(method) && attendeesTo?.length) {
         const propertiesToKeepForCancel: (keyof VcalVeventComponent)[] = ['x-pm-shared-event-id'];
         const propertiesToKeepForReply: (keyof VcalVeventComponent)[] = ['x-pm-proton-reply', 'exdate'];
@@ -679,7 +679,7 @@ ${detailsWithComment}`
 /**
  * Checks if a comment has been updated, added, or removed between two versions of an event
  */
-export const isCommentUpdated = (vevent?: VcalVeventComponent, oldVevent?: VcalVeventComponent): boolean => {
+const isCommentUpdated = (vevent?: VcalVeventComponent, oldVevent?: VcalVeventComponent): boolean => {
     const newComment = vevent?.comment;
     const oldComment = oldVevent?.comment;
 

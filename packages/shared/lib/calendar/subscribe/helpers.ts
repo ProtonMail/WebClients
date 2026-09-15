@@ -5,8 +5,6 @@ import type { Calendar, SubscribedCalendar } from '../../interfaces/calendar';
 import { CALENDAR_SUBSCRIPTION_STATUS } from '../../interfaces/calendar';
 import type {
     CalendarSubscriptionEventManager,
-    CalendarSubscriptionEventManagerCreate,
-    CalendarSubscriptionEventManagerDelete,
     CalendarSubscriptionEventManagerUpdate,
 } from '../../interfaces/calendar/EventManager';
 
@@ -26,16 +24,6 @@ const {
     INTERNAL_CALENDAR_UNDECRYPTABLE,
 } = CALENDAR_SUBSCRIPTION_STATUS;
 
-export const getIsCalendarSubscriptionEventManagerDelete = (
-    event: CalendarSubscriptionEventManager
-): event is CalendarSubscriptionEventManagerDelete => {
-    return event.Action === EVENT_ACTIONS.DELETE;
-};
-export const getIsCalendarSubscriptionEventManagerCreate = (
-    event: CalendarSubscriptionEventManager
-): event is CalendarSubscriptionEventManagerCreate => {
-    return event.Action === EVENT_ACTIONS.CREATE;
-};
 export const getIsCalendarSubscriptionEventManagerUpdate = (
     event: CalendarSubscriptionEventManager
 ): event is CalendarSubscriptionEventManagerUpdate => {

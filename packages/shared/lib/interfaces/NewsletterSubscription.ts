@@ -35,7 +35,7 @@ export interface POSTSubscriptionAPIResponse {
     NewsletterSubscription: NewsletterSubscription;
 }
 
-export interface GetNewsletterSubscriptionsNextPage {
+interface GetNewsletterSubscriptionsNextPage {
     QueryString: string | null;
 }
 

@@ -36,16 +36,6 @@ const ALL_REGEXP_SOURCES = (Object.keys(TYPE_TO_PREFIX) as LINK_TYPES[])
 const ALL_REGEXP = new RegExp(ALL_REGEXP_SOURCES);
 
 /**
- * Extract host
- * @param url
- * @returns host
- */
-export const getHost = (url = '') => {
-    const { host = '' } = new URL(url);
-    return host;
-};
-
-/**
  * Extract hostname
  * @param url
  * @returns hostname
@@ -155,18 +145,6 @@ export const linkToType = (link = '') => {
 };
 
 /**
- * Strip the link prefix from a url.
- * Leave the prefix if it's http to let the user be able to set http or https.
- */
-export const stripLinkPrefix = (input = '') => {
-    const prefix = getLinkPrefix(input);
-    if (!prefix || prefix.indexOf('http') !== -1) {
-        return input;
-    }
-    return input.replace(prefix, '');
-};
-
-/**
  * Try to add link prefix if missing
  */
 export const addLinkPrefix = (input = '', type: LINK_TYPES) => {
@@ -197,7 +175,7 @@ export const getRelativeApiHostname = (hostname: string) => {
     return `${first}-api.${second}`;
 };
 
-export const getIsDohDomain = (origin: string) => {
+const getIsDohDomain = (origin: string) => {
     return DOH_DOMAINS.some((dohDomain) => origin.endsWith(dohDomain));
 };
 
@@ -304,10 +282,6 @@ export const getBridgeURL = () => {
     return getStaticURL('/mail/bridge');
 };
 
-export const getEasySwitchURL = () => {
-    return getStaticURL('/easyswitch');
-};
-
 export const getImportExportAppUrl = () => {
     return getStaticURL('/support/proton-mail-export-tool');
 };
@@ -369,13 +343,6 @@ export const getTermsURL = (app: APP_NAMES | undefined, locale?: string) => {
     }
     const link = locale && locale !== 'en' ? `/${locale}/legal/terms` : '/legal/terms';
     return getStaticURL(link);
-};
-
-export const getBlackFriday2023URL = (app?: APP_NAMES) => {
-    if (app === APPS.PROTONVPN_SETTINGS) {
-        return 'https://protonvpn.com/support/black-friday-2023';
-    }
-    return getKnowledgeBaseUrl('/black-friday-2023');
 };
 
 export const getAbuseURL = () => {

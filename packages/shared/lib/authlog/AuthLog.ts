@@ -55,16 +55,16 @@ export enum AUTH_LOG_EVENTS {
 }
 
 export enum AuthLogStatus {
-    Success = 'success',
+    // Success = 'success',
     Attempt = 'attempt',
     Failure = 'failure',
 }
 
 export enum ProtectionType {
-    BLOCKED = 1,
-    CAPTCHA = 2,
-    OWNERSHIP_VERIFICATION = 3,
-    DEVICE_VERIFICATION = 4,
+    // BLOCKED = 1,
+    // CAPTCHA = 2,
+    // OWNERSHIP_VERIFICATION = 3,
+    // DEVICE_VERIFICATION = 4,
     /**
      * AuthLog action was protected by anti-abuse systems
      * and was evaluated as safe.
@@ -93,23 +93,6 @@ export interface B2BAuthLog extends AuthLog {
         Name?: string;
     };
 }
-
-export const getAuthLogProtectionI18N = (type: ProtectionType | null): string => {
-    switch (type) {
-        case ProtectionType.BLOCKED:
-            return c('Protection type').t`Blocked`;
-        case ProtectionType.CAPTCHA:
-            return c('Protection type').t`CAPTCHA`;
-        case ProtectionType.OWNERSHIP_VERIFICATION:
-            return c('Protection type').t`Ownership verification`;
-        case ProtectionType.DEVICE_VERIFICATION:
-            return c('Protection type').t`Device verification`;
-        case ProtectionType.OK:
-            return c('Protection type').t`Ok`;
-        default:
-            return c('Protection type').t`Unknown`;
-    }
-};
 
 export const getAuthLogEventsI18N = (type: AUTH_LOG_EVENTS): string => {
     switch (type) {

@@ -1,6 +1,6 @@
 import type { RetentionRuleAction, RetentionRuleProduct, RetentionRuleScopeType } from '../interfaces/RetentionRule';
 
-export interface RetentionRuleScopePayload {
+interface RetentionRuleScopePayload {
     ID: string | null;
     EntityType: RetentionRuleScopeType;
     EntityID: string;

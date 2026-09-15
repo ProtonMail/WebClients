@@ -38,10 +38,10 @@ export enum SessionRecoveryState {
     GRACE_PERIOD = 1,
     CANCELLED = 2,
     INSECURE = 3,
-    EXPIRED = 4,
+    // EXPIRED = 4,
 }
 
-export enum SessionRecoveryReason {
+enum SessionRecoveryReason {
     NONE = 0,
     CANCELLED = 1,
     AUTHENTICATION = 2,

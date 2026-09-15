@@ -36,12 +36,12 @@ export interface MspBillingPeriodsResponse {
     Total: number;
 }
 
-export interface MspLicenseAmount {
+interface MspLicenseAmount {
     LicenseType: string;
     Amount: number;
 }
 
-export interface MspDailyLicenseUsage {
+interface MspDailyLicenseUsage {
     UsageDate: string;
     Total: number;
     Licenses: MspLicenseAmount[];

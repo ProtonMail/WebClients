@@ -1,14 +1,14 @@
 import metrics from '@proton/metrics/index';
 
-export type EventLoopType = 'core' | 'mail' | 'calendar' | 'contact';
+type EventLoopType = 'core' | 'mail' | 'calendar' | 'contact';
 
-export interface EventLoopV5TimingData {
+interface EventLoopV5TimingData {
     processingTimeMs: number;
     hasMore: boolean;
     intervalSinceLastMs: number;
 }
 
-export interface EventLoopV6TimingData extends EventLoopV5TimingData {
+interface EventLoopV6TimingData extends EventLoopV5TimingData {
     apiCallsCount: number;
     apiFailuresCount: number;
     loopType: EventLoopType;
