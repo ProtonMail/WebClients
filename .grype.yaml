@@ -11,6 +11,8 @@ ignore:
   #  - check in the CI that is failing
   #  - patch/update the target dependency accordingly
   #  - the CI should be green and that's it
+  #
+  # Keep npm accepted-risk GHSAs in sync with .proton/reviewbot/config.yaml (ignoreRules).
 
   ## Go
   # Safe to ignore: Go is not used in production. The only Go code in this repo is a
@@ -55,57 +57,41 @@ ignore:
       type: npm
       version: 6.30.6
 
-  ## webpack-dev-server@4.15.2 (via @electron-forge/plugin-webpack on desktop apps)
-  # Accepted risk: dev-only build tool, not shipped runtime. Electron Forge 7.x still pins
-  # webpack-dev-server ^4.0.0; no stable Forge release with webpack-dev-server >=5.2.6 yet.
-  - vulnerability: GHSA-4v9v-hfq4-rm2v
+  ## extract-zip@2.0.1 (via electron@39.8.10 in pass-desktop, @electron/packager on desktop apps)
+  # TODO(Pass team): upgrade proton-pass-desktop from electron 39.8.10 to >=43.7.0.
+  # Electron 43+ depends on @electron-internal/extract-zip; no patched npm release for extract-zip 2.0.1.
+  # Build-time only — electron/electron-packager download pre-built Electron binaries at dev/package time.
+  - vulnerability: GHSA-jmr9-qjv8-65gv
     reason: >-
-      Accepted: dev-server build-time only via Electron Forge; bound to localhost; not
-      exposed to untrusted networks in normal dev workflow.
+      Accepted: build-time tooling via electron@39.8.10 (pass-desktop) and @electron/packager;
+      not shipped in production bundles. TODO(Pass team): upgrade pass-desktop to electron >=43.7.0.
     package:
-      name: webpack-dev-server
+      name: extract-zip
       type: npm
-      version: 4.15.2
-  - vulnerability: GHSA-m28w-2pqf-7qgj
+      version: 2.0.1
+  - vulnerability: GHSA-7pqw-9j4j-h8q3
     reason: >-
-      Accepted: dev-server build-time only via Electron Forge; bound to localhost; not
-      exposed to untrusted networks in normal dev workflow.
+      Accepted: build-time tooling via electron@39.8.10 (pass-desktop) and @electron/packager;
+      not shipped in production bundles. TODO(Pass team): upgrade pass-desktop to electron >=43.7.0.
     package:
-      name: webpack-dev-server
+      name: extract-zip
       type: npm
-      version: 4.15.2
-  - vulnerability: GHSA-f5vj-f2hx-8m93
+      version: 2.0.1
+
+  ## maplibre-gl@4.7.1 (via plotly.js in vendor/rowsncolumns/charts)
+  # Accepted risk: plotly.js 3.x pins maplibre-gl ^4.7.1; patch is only in >=6.4.1 which breaks
+  # plotly's mapbox traces (maplibre 5/6 dropped/renamed public APIs and @mapbox/* deps).
+  # plotly.js is a dev/peer dep of vendored @rowsncolumns/charts; reachable only through the
+  # unused ./plotly/basic-chart export subpath — no application imports it, never bundled.
+  - vulnerability: GHSA-jrc7-96c5-q579
     reason: >-
-      Accepted: dev-server build-time only via Electron Forge; bound to localhost; not
-      exposed to untrusted networks in normal dev workflow.
+      Accepted: transitive via plotly.js dev/peer dep of @rowsncolumns/charts; unused
+      ./plotly/basic-chart export, never bundled. Patched only in maplibre-gl >=6.4.1, which
+      is incompatible with plotly.js 3.x mapbox trace APIs.
     package:
-      name: webpack-dev-server
+      name: maplibre-gl
       type: npm
-      version: 4.15.2
-  - vulnerability: GHSA-9jgg-88mc-972h
-    reason: >-
-      Accepted: dev-server build-time only via Electron Forge; bound to localhost; not
-      exposed to untrusted networks in normal dev workflow.
-    package:
-      name: webpack-dev-server
-      type: npm
-      version: 4.15.2
-  - vulnerability: GHSA-79cf-xcqc-c78w
-    reason: >-
-      Accepted: dev-server build-time only via Electron Forge; bound to localhost; not
-      exposed to untrusted networks in normal dev workflow.
-    package:
-      name: webpack-dev-server
-      type: npm
-      version: 4.15.2
-  - vulnerability: GHSA-mx8g-39q3-5c79
-    reason: >-
-      Accepted: dev-server build-time only via Electron Forge; bound to localhost; not
-      exposed to untrusted networks in normal dev workflow.
-    package:
-      name: webpack-dev-server
-      type: npm
-      version: 4.15.2
+      version: 4.7.1
 
   ## @protontech/fathom legacy chain (pass-extension build tooling via jsdom@11)
   # Accepted risk: internal pinned package (0.0.38040317) with no newer registry release.
@@ -126,39 +112,6 @@ ignore:
       name: tough-cookie
       type: npm
       version: 2.5.0
-  - vulnerability: GHSA-6rw7-vpxm-498p
-    reason: >-
-      Accepted: transitive via @protontech/fathom → jsdom@11 → request; pass-extension
-      build/test tooling only; not used in production bundles.
-    package:
-      name: qs
-      type: npm
-      version: 6.5.5
-  - vulnerability: GHSA-4mjr-xmp4-gh2g
-    reason: >-
-      Accepted: transitive via @protontech/fathom → jsdom@11 → request; pass-extension
-      build/test tooling only; not used in production bundles.
-    package:
-      name: qs
-      type: npm
-      version: 6.5.5
-
-  ## maplibre-gl@4.7.1 (via plotly.js in vendor/rowsncolumns/charts)
-  # Accepted risk: not bundled into any shipped app. plotly.js is only a devDependency and
-  # peerDependency of the vendored @rowsncolumns/charts, and the sole importer is its
-  # ./plotly/basic-chart export subpath, which no application imports — docs-editor is the
-  # only consumer and uses the barrel, which never reaches that folder.
-  # No upstream fix: the patch lands in maplibre-gl 6.4.1, but plotly.js 3.x pins
-  # maplibre-gl ^4.7.1 and the latest plotly.js 4.1.0 only reaches ^5.24.0.
-  - vulnerability: GHSA-jrc7-96c5-q579
-    reason: >-
-      Accepted: transitive via plotly.js, a dev/peer dependency of the vendored
-      @rowsncolumns/charts; reachable only through the unused ./plotly/basic-chart export,
-      so it is never bundled. No plotly.js release depends on a patched maplibre-gl >=6.4.1.
-    package:
-      name: maplibre-gl
-      type: npm
-      version: 4.7.1
 
   ## Rust
 
