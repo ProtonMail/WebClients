@@ -49,7 +49,7 @@ const GroupMemberList = ({
     return (
         <div className="flex flex-column gap-2">
             {!edit && (
-                <p className="color-weak text-sm p-0 m-0">
+                <p className="color-weak text-sm p-0 m-0" data-testid="group-members-count">
                     {c('Group member count').ngettext(
                         msgid`${memberCount} member`,
                         `${memberCount} members`,
