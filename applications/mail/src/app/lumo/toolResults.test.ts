@@ -19,6 +19,7 @@ import { listFiltersDefinition } from './skills/reads/listFilters';
 import { listFoldersDefinition } from './skills/reads/listFolders';
 import { listLabelsDefinition } from './skills/reads/listLabels';
 import { openFolderDefinition } from './skills/reads/openFolder';
+import { DraftKind, readComposerDefinition } from './skills/reads/readComposer';
 import { readEmailDefinition } from './skills/reads/readEmail';
 import { readOpenEmailDefinition } from './skills/reads/readOpenEmail';
 import { readThreadDefinition } from './skills/reads/readThread';
@@ -108,6 +109,35 @@ const TOOL_PAYLOADS = [
         { found: false, messages: [], total: 0 },
         { found: true, messages: [], total: 0 },
         { found: true, subject: 'Booking', messages: [{ from: 'Alice', date: '2026-07-01', body: 'Body' }], total: 1 },
+    ]),
+    payloads(readComposerDefinition, [
+        { drafts: [] },
+        { drafts: [{ reference: 'composer-x7b2q1', subject: '', kind: DraftKind.NEW, isLoaded: true, body: '' }] },
+        {
+            drafts: [
+                { reference: 'composer-x7b2q1', subject: 'Lunch', kind: DraftKind.NEW, isLoaded: false, body: '' },
+            ],
+        },
+        {
+            drafts: [
+                {
+                    reference: 'composer-x7b2q1',
+                    subject: 'Re: Booking',
+                    kind: DraftKind.REPLY,
+                    isLoaded: true,
+                    body: 'Tuesday works.',
+                    answers: 'email-a1b2c3',
+                },
+                {
+                    reference: 'composer-m4n5p6',
+                    subject: 'Invoice',
+                    kind: DraftKind.FORWARD,
+                    isLoaded: true,
+                    body: 'Attached.',
+                    answers: 'email-d4e5f6',
+                },
+            ],
+        },
     ]),
     payloads(listFoldersDefinition, [
         { folders: [] },
