@@ -2328,6 +2328,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } es su nombre de usuario. Para crear ${ emailAddress }, vaya a Ajustes > Identidad y direcciones > Dominio corto (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Ya existe un contacto con esta dirección de correo"
+      ],
       "Amount above the maximum.": [
         "Cantidad superior al máximo."
       ],
@@ -2625,6 +2628,12 @@
       ],
       "Security key": [
         "Clave de seguridad"
+      ],
+      "Still waiting?": [
+        "¿Sigue esperando?"
+      ],
+      "Touch your security key to continue.": [
+        "Toque su llave de seguridad para continuar."
       ]
     },
     "fido2: Label": {
@@ -4307,6 +4316,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } que termina en ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB de almacenamiento en la nube que le permite almacenar, sincronizar y compartir archivos de forma fácil. Asegurado por cifrado de extremo a extremo."
       ],
@@ -5010,6 +5022,11 @@
         "Se añadirán los créditos a su balance"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Cambiar su dirección de facturación podría afectar los impuestos en facturas futuras."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "¿En verdad desea continuar?"
@@ -5044,6 +5061,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "El precio de renovación depende de la región de facturación y del número de IVA."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - tarjeta terminada en ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Transferencia bancaria - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - tarjeta terminada en ${ Last4 }"
       ]
     },
     "Payments.Sepa": {

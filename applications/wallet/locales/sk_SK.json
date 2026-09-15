@@ -2362,6 +2362,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } je vaše používateľské meno. Pre vytvorenie ${ emailAddress } prejdite do Nastavenia > Identita a adresy > Krátka doména (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Kontakt s touto emailovou adresou už existuje"
+      ],
       "Amount above the maximum.": [
         "Hodnota je vyšša než maximálna čiastka."
       ],
@@ -2662,6 +2665,9 @@
       ],
       "Still waiting?": [
         "Stále čakáte?"
+      ],
+      "Touch your security key to continue.": [
+        "Dotknite sa svojho bezpečnostného kľúča, aby ste pokračovali."
       ]
     },
     "fido2: Label": {
