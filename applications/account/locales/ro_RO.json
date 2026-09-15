@@ -203,7 +203,7 @@
         "Importare istoric"
       ],
       "Inbox layout": [
-        "Aspect cont"
+        "Aranjare mesaje"
       ],
       "Inbox tabs": [
         "File mesaje primite"
@@ -1972,6 +1972,9 @@
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Conectare cu ${ BRAND_NAME }"
+      ],
+      "Sign in with Google": [
+        "Conectare cu Google"
       ],
       "Sign in with password": [
         "Autentificare cu parolă"
@@ -10925,6 +10928,9 @@
       "An SMS with a verification code was just sent to ${ phoneNumber }.": [
         "Un SMS cu un cod de verificare tocmai a fost trimis la ${ phoneNumber }."
       ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "A apărut o eroare neașteptată în timpul importării datelor. Reîncercați mai târziu."
+      ],
       "and": [
         "și"
       ],
@@ -11244,6 +11250,9 @@
       ],
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "Conectați-vă și gestionați-vă conturile externe de e-mail în ${ MAIL_APP_NAME }."
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "Se conectează la Google Drive pentru configurarea importării securizate în ${ DRIVE_APP_NAME }."
       ],
       "Connection data will be available in around 1 hour.": [
         "Datele de conectare vor fi disponibile peste aproximativ o oră."
@@ -11608,6 +11617,9 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Găzduirea pentru e-mail este disponibilă numai pentru domeniile pe care le dețineți deja. Înregistrarea domeniului nu este disponibilă în prezent prin ${ BRAND_NAME }. Puteți găzdui e-mail pentru domenii înregistrate cu orice înregistrator de domenii."
       ],
+      "Email you once import is finished": [
+        "Veți primi un mesaj la finalizarea importării."
+      ],
       "Emailing preference saved": [
         "Preferințe e-mail salvate"
       ],
@@ -11847,6 +11859,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Pentru doar ${ bundlePlanPriceInline }"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "Pentru ca importarea să funcționeze, trebuie să selectați toate articolele solicitate așa cum e arătat în imaginea GIF de deasupra."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pentru utilizatorii care trec la ${ MAIL_APP_NAME } de la un alt serviciu de e-mail, selectați fila ${ boldAddresses } și adăugați toate adresele de e-mail active înainte de a schimba înregistrarea MX pentru a asigura o tranziție ușoară."
@@ -12499,6 +12514,9 @@
       "Next billing date": [
         "Data facturii următoare"
       ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "În continuare, va trebui să vă conectați la contul Google și să permiteți ca ${ BRAND_NAME } să vă acceseze datele."
+      ],
       "No account keys exist": [
         "Nu există chei pentru cont."
       ],
@@ -12804,6 +12822,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Reîncercați folosind o metodă de plată diferită sau contactați-vă banca."
       ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Modificați tipul planului pentru a vă asigura ca importarea se poate finaliza."
+      ],
       "Please use another browser or download the file.": [
         "Folosiți alt tip de navigator web sau descărcați fișierul."
       ],
@@ -12878,6 +12899,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contactați-ne pentru ajutor despre orice din ${ BRAND_NAME }."
+      ],
+      "Read once and encrypted on arrival": [
+        "Citire o singură dată și criptare la sosire"
       ],
       "Receive notifications for ${ categoryLabel }": [
         "Primire notificări pentru ${ categoryLabel }"
@@ -13138,6 +13162,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
+      ],
+      "Sit back and we will let you know.": [
+        "Așteptați până vă vom anunța."
       ],
       "Smart Routed through a different country.": [
         "Direcționare inteligentă printr-o altă țară."
@@ -13818,6 +13845,9 @@
       "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
         "Folosiți propriul MDM pentru a șterge fișierul sau rulați ${ removeScriptLink } prin execuția scriptului MDM. Va funcționa orice MDM care acceptă implementarea fișierelor sau rularea scripturilor."
       ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Folosit doar pentru a le copia în ${ DRIVE_APP_NAME }."
+      ],
       "User activated": [
         "Utilizator activat"
       ],
@@ -13938,6 +13968,9 @@
       "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
         "Am detectat că deja v-ați conectat la o aplicație web ${ BRAND_NAME } într-un **alt navigator web**. Este posibil să puteți reseta parola din sesiunea activă."
       ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "Nu este suportată importarea fotografiilor, documentelor,și foilor de calcul și prezentărilor Google. Asigurați-vă că Google Drive nu este gol."
+      ],
       "We generated a strong password for you": [
         "Vi s-a generat o parolă puternică"
       ],
@@ -13968,8 +14001,14 @@
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Recomandăm insistent ca toți să-și activeze recuperarea prin fraza de recuperare."
       ],
+      "We support most files": [
+        "Sunt suportate majoritatea fișierelor"
+      ],
       "We use 3-D Secure to protect your payments": [
         "Folosim 3-D Secure pentru a proteja plățile"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Veți primi un mesaj pe e-mail la finalizarea importării. După finalizare, veți găsi datele importate într-un folder."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pentru finalizarea tranzacției prin ${ IDEAL_WERO_BRAND_NAME } se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
@@ -14096,6 +14135,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Fără activare nu veți putea crea noi utilizatori, adăuga adrese la utilizatorii existenți sau accesa conturile utilizatorilor non-privați."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "Nu se importă fotografii, documente și foi de calcul Google"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
@@ -25613,6 +25655,9 @@
       ],
       "View VPN session details for your organization.": [
         "Vizualizați detaliile sesiunii VPN pentru organizație."
+      ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Fișierele sunt citite o singură dată pentru a le copia, apoi sunt criptate fiecare în parte folosind cheile ${ BRAND_NAME } pe care le dețineți."
       ]
     },
     "Success": {
@@ -26668,6 +26713,9 @@
       "Connect your custom domain": [
         "Conectați-vă domeniul personal"
       ],
+      "Connect your Google account": [
+        "Conectați-vă contul Google"
+      ],
       "Connected emails": [
         "Adrese conectate"
       ],
@@ -27324,6 +27372,9 @@
       "Import key": [
         "Importare cheie"
       ],
+      "Import started, but your storage won't be enough for this import": [
+        "Importarea a început, dar spațiul de stocare nu va fi suficient"
+      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Import cu ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -27382,7 +27433,7 @@
         "Ultima actualizare"
       ],
       "Layout": [
-        "Aspect"
+        "Aranjare"
       ],
       "Leave ${ organization.Name }?": [
         "Părăsiți ${ organization.Name }?"
@@ -27885,6 +27936,9 @@
       "Set your password": [
         "Setare parolă"
       ],
+      "Setting up your import": [
+        "Vi se setează importarea"
+      ],
       "Settings": [
         "Setări"
       ],
@@ -27911,6 +27965,9 @@
       ],
       "Sign in on TV?": [
         "Conectare pe TV?"
+      ],
+      "Sign in to Google": [
+        "Conectare în Google"
       ],
       "Sign in to join the Beta program": [
         "Autentificați-vă pentru a vă alătura programului beta"
@@ -28217,6 +28274,9 @@
       "Warning: suspected fake website": [
         "Avertisment: suspectare site fals"
       ],
+      "We could not find anything to import": [
+        "Nu s-au găsit date de importat"
+      ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "Vi s-a trimis un cod la adresa de e-mail pentru a ne asigura că dețineți contul. Acest cod este valabil 10 minute. Trebuie să îl introduceți mai jos."
       ],
@@ -28297,6 +28357,9 @@
       ],
       "Your exposed information": [
         "Informații expuse"
+      ],
+      "Your import is starting": [
+        "Începe importarea"
       ],
       "Your plan": [
         "Plan actual"
@@ -28562,6 +28625,9 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizează automat unele mesaje ca „Rețele sociale” sau „Oferte”. Puteți selecta unde să fie importate acestea."
       ],
+      "Grant access to your ${ providerName } account to start a migration": [
+        "Permiteți accesul contului ${ providerName } pentru a începe migrarea."
+      ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Grupare mesaje primite din aceeași conversație sau afișarea lor separată."
       ],
@@ -28579,6 +28645,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Include e-mail profesional la @domeniulmeu.com, stocare în cloud cu editare colaborativă a documentelor, planificare și videoconferințe, gestionarea parolelor, o aplicație securizată ${ VPN_SHORT_APP_NAME } și multe altele."
+      ],
+      "Install the migration app in your ${ providerName } account to start a migration": [
+        "Instalați aplicația de migrare în contul ${ providerName } pentru a începe o migrare."
       ],
       "Instant AI assistance, human expert on hand!": [
         "Asistență instantanee prin IA, expert uman la îndemână!"

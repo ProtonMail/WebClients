@@ -1973,6 +1973,9 @@
       "Sign in with ${ BRAND_NAME }": [
         "Σύνδεση με ${ BRAND_NAME }"
       ],
+      "Sign in with Google": [
+        "Σύνδεση μέσω Google"
+      ],
       "Sign in with password": [
         "Σύνδεση με κωδικό"
       ],
@@ -10805,6 +10808,9 @@
       "An SMS with a verification code was just sent to ${ phoneNumber }.": [
         "Μόλις στάλθηκε ένα SMS με κωδικό επαλήθευσης στο ${ phoneNumber }."
       ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Προέκυψε ένα απρόσμενο σφάλμα κατά την εισαγωγή των δεδομένων σας. Παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
       "and": [
         "και"
       ],
@@ -11123,6 +11129,9 @@
       ],
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "Συνδέστε και διαχειριστείτε τα εξωτερικά σας γραμματοκιβώτια στο ${ MAIL_APP_NAME }."
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "Σύνδεση στο Google Drive για τη ρύθμιση της ασφαλούς εισαγωγής στο ${ DRIVE_APP_NAME }."
       ],
       "Connection data will be available in around 1 hour.": [
         "Τα δεδομένα σύνδεσης θα είναι διαθέσιμα σε περίπου 1 ώρα."
@@ -11481,6 +11490,9 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Η φιλοξενία email είναι διαθέσιμη μόνο για τους υπάρχοντες τομείς που κατέχετε. Η εγγραφή τομέων δεν είναι προσωρινά διαθέσιμη μέσω ${ BRAND_NAME }. Μπορείτε να φιλοξενήσετε email για τομείς εγγεγραμμένους σε οιουδήποτε ληξίαρχο τομέων."
       ],
+      "Email you once import is finished": [
+        "Θα σας στείλουμε ηλεκτρονικό μήνυμα μόλις ολοκληρωθεί η εισαγωγή."
+      ],
       "Emailing preference saved": [
         "Η προτίμηση email αποθηκεύτηκε"
       ],
@@ -11720,6 +11732,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Μόνο για ${ bundlePlanPriceInline }"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "Για να λειτουργήσει η εισαγωγή, πρέπει να επιλέξετε όλα τα ζητούμενα στοιχεία, όπως φαίνεται στο παραπάνω GIF."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Για χρήστες που μεταβαίνουν σε ${ MAIL_APP_NAME } από άλλη υπηρεσία ηλεκτρονικού ταχυδρομείου, επιλέξτε την καρτέλα ${ boldAddresses } και προσθέστε όλες τις ενεργές διευθύνσεις ηλεκτρονικού ταχυδρομείου πριν αλλάξετε την εγγραφή MX για να διασφαλίσετε την ομαλή μετάβαση."
@@ -12369,6 +12384,9 @@
       "Next billing date": [
         "Επόμενη ημερομηνία χρέωσης"
       ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Στη συνέχεια, θα πρέπει να συνδεθείτε στον λογαριασμό σας Google και να παραχωρήσετε στο ${ BRAND_NAME } πρόσβαση στα δεδομένα σας."
+      ],
       "No account keys exist": [
         "Δεν υπάρχουν κλειδιά λογαριασμού"
       ],
@@ -12670,6 +12688,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Δοκιμάστε ξανά χρησιμοποιώντας διαφορετικό τρόπο πληρωμής ή επικοινωνήστε με την τράπεζά σας."
       ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Παρακαλούμε κάντε αναβάθμιση για να διασφαλίσετε ότι η εισαγωγή θα ολοκληρωθεί με επιτυχία."
+      ],
       "Please use another browser or download the file.": [
         "Χρησιμοποιήστε άλλο πρόγραμμα περιήγησης ή κατεβάστε το αρχείο."
       ],
@@ -12744,6 +12765,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Επικοινωνήστε μαζί μας για βοήθεια σε οτιδήποτε ${ BRAND_NAME }."
+      ],
+      "Read once and encrypted on arrival": [
+        "Ανάγνωση μίας φοράς και κρυπτογράφηση κατά την άφιξη"
       ],
       "Receive notifications for ${ categoryLabel }": [
         "Λάβετε ειδοποιήσεις για ${ categoryLabel }"
@@ -13003,6 +13027,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
+      ],
+      "Sit back and we will let you know.": [
+        "Καθίστε αναπαυτικά και θα σας ενημερώσουμε."
       ],
       "Smart Routed through a different country.": [
         "Έξυπνη δρομολόγηση μέσω διαφορετικής χώρας."
@@ -13682,6 +13709,9 @@
       "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
         "Χρησιμοποιήστε το MDM σας για να διαγράψετε το αρχείο ή εκτελέστε την εντολή ${ removeScriptLink } μέσω της εκτέλεσης σεναρίου του MDM σας. Οποιοδήποτε MDM που υποστηρίζει την ανάπτυξη αρχείων ή την εκτέλεση σεναρίων θα λειτουργήσει."
       ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Χρησιμοποιείται μόνο για την αντιγραφή τους στο ${ DRIVE_APP_NAME }."
+      ],
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
       ],
@@ -13802,6 +13832,9 @@
       "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
         "Εντοπίσαμε ότι έχετε ήδη συνδεθεί σε μια εφαρμογή ιστού ${ BRAND_NAME } σε **άλλο πρόγραμμα περιήγησης**. Ενδέχεται να μπορείτε να πραγματοποιήσετε επαναφορά κωδικού πρόσβασης από την ενεργή σας περίοδο λειτουργίας."
       ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "Δεν υποστηρίζουμε την εισαγωγή φωτογραφιών, καθώς και αρχείων Google Docs, Sheets και Slides. Βεβαιωθείτε ότι το Google Drive σας δεν είναι άδειο."
+      ],
       "We generated a strong password for you": [
         "Δημιουργήσαμε έναν ισχυρό κωδικό πρόσβασης για εσάς"
       ],
@@ -13832,8 +13865,14 @@
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Συστήνουμε έντονα σε όλους να ενεργοποιήσουν την επαναφορά μέσω φράσης ανάκτησης."
       ],
+      "We support most files": [
+        "Υποστηρίζουμε τα περισσότερα αρχεία."
+      ],
       "We use 3-D Secure to protect your payments": [
         "Χρησιμοποιούμε ασφάλεια 3-D για να προστατεύσουμε τις πληρωμές σας"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Θα σας στείλουμε ηλεκτρονικό μήνυμα όταν ολοκληρωθεί η εισαγωγή. Μόλις ολοκληρωθεί, θα βρείτε τα δεδομένα της εισαγωγής σε έναν φάκελο."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Θα σας ανακατευθύνουμε στο ${ IDEAL_WERO_BRAND_NAME }, σε μια νέα καρτέλα προγράμματος περιήγησης, για να ολοκληρώσετε αυτήν τη συναλλαγή. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
@@ -13960,6 +13999,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Χωρίς ενεργοποίηση, δεν θα μπορείτε να δημιουργήσετε νέους χρήστες, να προσθέσετε διευθύνσεις σε υπάρχοντες χρήστες ή να αποκτήσετε πρόσβαση σε μη ιδιωτικούς λογαριασμούς χρηστών."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "Δεν γίνεται εισαγωγή φωτογραφιών, Google Docs και Sheets"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
@@ -25303,6 +25345,9 @@
       ],
       "View VPN session details for your organization.": [
         "Δείτε τις λεπτομέρειες της περιόδου λειτουργίας VPN για τον οργανισμό σας."
+      ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Διαβάζουμε τα αρχεία σας μία φορά για να τα αντιγράψουμε και, στη συνέχεια, κρυπτογραφούμε το καθένα με τα κλειδιά σας για το ${ BRAND_NAME }."
       ]
     },
     "Success": {
@@ -26344,6 +26389,9 @@
       "Connect your custom domain": [
         "Συνδέστε τον προσαρμοσμένο τομέα σας"
       ],
+      "Connect your Google account": [
+        "Συνδέστε τον Google λογαριασμό σας"
+      ],
       "Connected emails": [
         "Συνδεδεμένα email"
       ],
@@ -26996,6 +27044,9 @@
       "Import key": [
         "Εισαγωγή κλειδιού"
       ],
+      "Import started, but your storage won't be enough for this import": [
+        "Η εισαγωγή ξεκίνησε, αλλά ο αποθηκευτικός σας χώρος δεν θα επαρκεί για αυτή την εισαγωγή."
+      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Εισαγωγή μέσω ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -27557,6 +27608,9 @@
       "Set your password": [
         "Ορίστε τον κωδικό πρόσβασης"
       ],
+      "Setting up your import": [
+        "Ρύθμιση της εισαγωγής σας"
+      ],
       "Settings": [
         "Ρυθμίσεις"
       ],
@@ -27583,6 +27637,9 @@
       ],
       "Sign in on TV?": [
         "Σύνδεση στην τηλεόραση;"
+      ],
+      "Sign in to Google": [
+        "Σύνδεση στο Google"
       ],
       "Sign in to join the Beta program": [
         "Συνδεθείτε για να συμμετάσχετε στο πρόγραμμα Beta"
@@ -27888,6 +27945,9 @@
       "Warning: suspected fake website": [
         "Προειδοποίηση: υποψία ψεύτικης ιστοσελίδας"
       ],
+      "We could not find anything to import": [
+        "Δεν μπορέσαμε να βρούμε τίποτα για εισαγωγή."
+      ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "Σας στείλαμε έναν κωδικό στην ηλεκτρονική διεύθυνση σας για να βεβαιωθούμε ότι είστε εσείς. Ο κωδικός αυτός ισχύει για 10 λεπτά. Παρακαλούμε εισάγετέ τον παρακάτω."
       ],
@@ -27968,6 +28028,9 @@
       ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
+      ],
+      "Your import is starting": [
+        "Η εισαγωγή σας εκκινεί"
       ],
       "Your plan": [
         "Το πακέτο σας"
@@ -28233,6 +28296,9 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Το Gmail κατηγοριοποιεί αυτόματα ορισμένα μηνύματα ηλεκτρονικού ταχυδρομείου, όπως Κοινωνικά δίκτυα ή Προσφορές. Μπορείτε να επιλέξετε πού θα εισαγάγετε αυτά τα μηνύματα ηλεκτρονικού ταχυδρομείου."
       ],
+      "Grant access to your ${ providerName } account to start a migration": [
+        "Παραχωρήστε πρόσβαση στον λογαριασμό σας στο ${ providerName } για να ξεκινήσετε μια διαδικασία μεταφοράς."
+      ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Ομαδοποιήστε τα μηνύματα της ίδιας συνομιλίας στα Εισερχόμενά σας ή εμφανίστε τα ξεχωριστά."
       ],
@@ -28250,6 +28316,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Περιλαμβάνει επαγγελματικό ηλεκτρονικό ταχυδρομείο στο @yourdomain.com, αποθήκευση στο cloud με συνεργατική επεξεργασία εγγράφων, προγραμματισμό και βιντεοδιάσκεψη, διαχείριση κωδικών πρόσβασης, ένα ασφαλές ${ VPN_SHORT_APP_NAME } και πολλά άλλα."
+      ],
+      "Install the migration app in your ${ providerName } account to start a migration": [
+        "Εγκαταστήστε την εφαρμογή μετεγκατάστασης στον λογαριασμό σας στο ${ providerName } για να ξεκινήσετε μια μετεγκατάσταση."
       ],
       "Instant AI assistance, human expert on hand!": [
         "Άμεση βοήθεια με Τεχνητή Νοημοσύνη, ανθρώπινος εμπειρογνώμονας διαθέσιμος!"

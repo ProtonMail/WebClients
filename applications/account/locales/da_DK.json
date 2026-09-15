@@ -1973,6 +1973,9 @@
       "Sign in with ${ BRAND_NAME }": [
         "Log ind på ${ BRAND_NAME }"
       ],
+      "Sign in with Google": [
+        "Log ind med Google"
+      ],
       "Sign in with password": [
         "Log ind med en adgangskode"
       ],
@@ -10808,6 +10811,9 @@
       "An SMS with a verification code was just sent to ${ phoneNumber }.": [
         "En SMS med en bekræftelseskode blev netop sendt til ${ phoneNumber }."
       ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Der opstod en uventet fejl med at importere din data. Prøv igen senere."
+      ],
       "and": [
         "og"
       ],
@@ -11126,6 +11132,9 @@
       ],
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "Forbind og administrer dine eksterne e-mails i ${ MAIL_APP_NAME }."
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "Tilslutter til Google Drive for at konfigurere din sikre import til ${ DRIVE_APP_NAME }."
       ],
       "Connection data will be available in around 1 hour.": [
         "Forbindelsesdata vil være tilgængelige inden for cirka 1 time."
@@ -11484,6 +11493,9 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailhosting er kun tilgængelig for domæner, du allerede ejer. Domæneregistrering er ikke tilgængelig i øjeblikket via ${ BRAND_NAME }. Du kan hoste e-mail for domæner, der er registreret hos en hvilken som helst domæneregistrator."
       ],
+      "Email you once import is finished": [
+        "Sender dig en e-mail når importen er færdig"
+      ],
       "Emailing preference saved": [
         "E-mail-afsendelsespræference gemt"
       ],
@@ -11723,6 +11735,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "For kun ${ bundlePlanPriceInline }"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "For at importen kan fungere, skal du vælge alle de ønskede elementer som vist i GIF-illustrationen ovenfor."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "For brugere, som skifter til ${ MAIL_APP_NAME } fra en anden e-mailtjeneste, skal du vælge fanen ${ boldAddresses } og tilføje alle aktive e-mailadresser, før du ændrer MX-posten for at sikre en problemfri overgang."
@@ -12372,6 +12387,9 @@
       "Next billing date": [
         "Næste faktureringsdato"
       ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Derefter skal du logge ind på din Google-konto og give ${ BRAND_NAME } adgang til dine data."
+      ],
       "No account keys exist": [
         "Der findes ingen kontonøgler"
       ],
@@ -12673,6 +12691,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Prøv igen med en anden betalingsmetode, eller kontakt din bank."
       ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Opgrader for at sikre at importen lykkedes."
+      ],
       "Please use another browser or download the file.": [
         "Brug en anden browser eller download filen."
       ],
@@ -12747,6 +12768,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Kontakt os for at få hjælp til hvad som helst ${ BRAND_NAME }."
+      ],
+      "Read once and encrypted on arrival": [
+        "Læst én gang og krypteret så snart den modtages"
       ],
       "Receive notifications for ${ categoryLabel }": [
         "Modtag notifikationer for ${ categoryLabel }"
@@ -13006,6 +13030,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
+      ],
+      "Sit back and we will let you know.": [
+        "Læn dig tilbage – vi giver dig besked."
       ],
       "Smart Routed through a different country.": [
         "Smart Routet gennem et andet land."
@@ -13685,6 +13712,9 @@
       "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
         "Brug din MDM til at slette filen, eller kør ${ removeScriptLink } via din MDM's scriptkørsel. Enhver MDM, der understøtter udrulning af filer eller at køre scripts, fungerer."
       ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Kun brugt til at kopiere dem til ${ DRIVE_APP_NAME }."
+      ],
       "User activated": [
         "Bruger aktiveret"
       ],
@@ -13805,6 +13835,9 @@
       "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
         "Vi har registreret at du allerede er logget ind på en ${ BRAND_NAME } web-app i en **anden browser**. Du kan muligvis nulstille adgangskoden fra din aktive session."
       ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "Vi understøtter ikke importer af billeder, Google Docs, Sheets og Slides. Sørg for at din Google Drive ikke er tom."
+      ],
       "We generated a strong password for you": [
         "Vi har genereret en stærk adgangskode til dig"
       ],
@@ -13835,8 +13868,14 @@
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Vi anbefaler kraftigt at alle aktiverer gendannelse med en gendannelsessætning."
       ],
+      "We support most files": [
+        "Vi understøtter de fleste filer"
+      ],
       "We use 3-D Secure to protect your payments": [
         "Vi bruger 3-D Secure til at sikre dine betalinger"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Vi sender dig en e-mail når importen er færdig. Du kan finde din import i en mappe når den er færdig."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til ${ IDEAL_WERO_BRAND_NAME } i en ny browserfane for at gennemføre transaktionen. Benytter du evt. pop-up blockere, så deaktiver disse for at fortsætte."
@@ -13963,6 +14002,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Uden aktivering kan du ikke oprette nye brugere, føje adresser til eksisterende brugere eller få adgang til ikke-private brugerkonti."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "Importerer ikke fotos, Google Docs og Sheets"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
@@ -25306,6 +25348,9 @@
       ],
       "View VPN session details for your organization.": [
         "Se VPN-sessionsdetaljer for din organisation."
+      ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Vi læser dine filer én gang for at kopiere dem, og krypterer dem derefter med dine ${ BRAND_NAME }-nøgler."
       ]
     },
     "Success": {
@@ -26347,6 +26392,9 @@
       "Connect your custom domain": [
         "Forbind dit brugerdefinerede domæne"
       ],
+      "Connect your Google account": [
+        "Forbind din Google-konto"
+      ],
       "Connected emails": [
         "Forbundne e-mails"
       ],
@@ -26999,6 +27047,9 @@
       "Import key": [
         "Importér nøgle"
       ],
+      "Import started, but your storage won't be enough for this import": [
+        "Importen er startet, men du har ikke nok lagerplads til hele importen"
+      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importer via ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -27560,6 +27611,9 @@
       "Set your password": [
         "Indstil din adgangskode"
       ],
+      "Setting up your import": [
+        "Konfigurerer din import"
+      ],
       "Settings": [
         "Indstillinger"
       ],
@@ -27586,6 +27640,9 @@
       ],
       "Sign in on TV?": [
         "Log ind på TV?"
+      ],
+      "Sign in to Google": [
+        "Log in på Google"
       ],
       "Sign in to join the Beta program": [
         "Log ind for tilmelding til Beta programmet"
@@ -27891,6 +27948,9 @@
       "Warning: suspected fake website": [
         "Advarsel: mistanke om falsk websted"
       ],
+      "We could not find anything to import": [
+        "Vi kunne ikke finde noget at importere."
+      ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "Vi har sendt dig en kode til din e-mail for at sikre os at det er dig. Koden er gyldig i 10 minutter. Indtast den nedenfor."
       ],
@@ -27971,6 +28031,9 @@
       ],
       "Your exposed information": [
         "Dine blotlagte oplysninger"
+      ],
+      "Your import is starting": [
+        "Din import startes"
       ],
       "Your plan": [
         "Dit abonnement"
@@ -28236,6 +28299,9 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserer automatisk nogle e-mails som f.eks. Sociale netværk eller Promoveringer. Du kan vælge, hvor du vil importere disse e-mails til."
       ],
+      "Grant access to your ${ providerName } account to start a migration": [
+        "Giv adgang på din ${ providerName }-konto for at starte en migration"
+      ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Gruppér e-mails i den samme samtale i din indbakke, eller vis dem separat."
       ],
@@ -28253,6 +28319,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Inkluderer professionelle e-mails med @ditdomæne.com, lagerplads i skyen med dokumenter der kan samarbejdes om, planlægning og afholdelse af videomøder, adgangskodehåndtering, en sikker ${ VPN_SHORT_APP_NAME }, og mere."
+      ],
+      "Install the migration app in your ${ providerName } account to start a migration": [
+        "Installer appen til migration på din ${ providerName }-konto for at starte en migration"
       ],
       "Instant AI assistance, human expert on hand!": [
         "Lynhurtig AI-assistance med en menneskelig ekspert, der sidder klar!"
