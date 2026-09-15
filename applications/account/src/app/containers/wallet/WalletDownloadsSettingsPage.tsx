@@ -1,6 +1,7 @@
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
-import { DownloadClientCard, SettingsSectionWide } from '@proton/components';
+import DownloadClientCard from '@proton/components/components/downloadClientCard/DownloadClientCard';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
 import { mapTelemetryOsVersionWithStore } from '@proton/components/helpers/mapTelemetryOsVersionWithStore';
 import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { useModalState } from '@proton/components/index';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { CYCLE } from '@proton/payments/core/constants';
 import { getAppHref } from '@proton/shared/lib/apps/helper';

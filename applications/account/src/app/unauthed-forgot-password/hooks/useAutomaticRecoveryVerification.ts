@@ -1,5 +1,5 @@
-import { useSearchParamsEffect } from '@proton/components';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useSearchParamsEffect from '@proton/components/hooks/useSearchParamsEffect';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useLoading from '@proton/hooks/useLoading';
 import { type ValidateResetTokenResponse, validateResetToken } from '@proton/shared/lib/api/reset';

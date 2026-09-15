@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { SpamFiltersSection } from '@proton/components';
+import SpamFiltersSection from '@proton/components/containers/filters/SpamFiltersSection';
 
 import MobileSection from '../components/MobileSection';
 

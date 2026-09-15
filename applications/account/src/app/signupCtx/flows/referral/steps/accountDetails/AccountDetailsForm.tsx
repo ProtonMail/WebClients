@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { SkeletonLoader } from '@proton/components';
+import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import { IcShield2CheckFilled } from '@proton/icons/icons/IcShield2CheckFilled';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';

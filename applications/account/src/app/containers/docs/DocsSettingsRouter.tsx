@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
-import { CommentEmailSection, PrivateMainSettingsArea } from '@proton/components';
+import { CommentEmailSection } from '@proton/components/containers/docs/settings/CommentEmailSection';
+import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
 
 import type { getDocsAppRoutes } from './routes';

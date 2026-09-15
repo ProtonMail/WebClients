@@ -1,7 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature, getStorageFeature } from '@proton/components/containers/payments/features/drive';
 import { getUsersFeature } from '@proton/components/containers/payments/features/highlights';

@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import type { SidebarConfig } from '@proton/components';
 import { getMailRouteTitles } from '@proton/components/containers/account/constants/settingsRouteTitles';
+import type { SidebarConfig } from '@proton/components/containers/layout/interface';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowUpFromSquare } from '@proton/icons/icons/IcArrowUpFromSquare';
 import { IcCardIdentity } from '@proton/icons/icons/IcCardIdentity';

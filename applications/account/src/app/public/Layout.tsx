@@ -4,7 +4,11 @@ import { c } from 'ttag';
 
 import { useConfig } from '@proton/app-context/useConfig';
 import { Href } from '@proton/atoms/Href/Href';
-import { Logo, ProtonLogo, PublicTopBanners, getAppVersion, useTheme } from '@proton/components';
+import Logo from '@proton/components/components/logo/Logo';
+import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import PublicTopBanners from '@proton/components/containers/topBanners/PublicTopBanners';
+import { getAppVersion } from '@proton/components/helpers/appVersion';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';

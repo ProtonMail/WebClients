@@ -7,25 +7,23 @@ import { VideoConferenceToggle } from '@proton/calendar-video-conferencing/zoomI
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
-import {
-    CalendarExportSection,
-    CalendarImportSection,
-    CalendarInvitationsSection,
-    CalendarLayoutSection,
-    CalendarOtherPreferencesSection,
-    CalendarSubpage,
-    CalendarTimeSection,
-    CalendarsSettingsSection,
-    InboxDesktopSettingsSection,
-    MobileAppSettingsSection,
-    PrivateMainAreaLoading,
-    PrivateMainSettingsArea,
-    useCalendarsInfoListener,
-    useIsInboxElectronApp,
-    useSubscribedCalendars,
-} from '@proton/components';
+import CalendarExportSection from '@proton/components/containers/calendar/settings/CalendarExportSection';
+import CalendarImportSection from '@proton/components/containers/calendar/settings/CalendarImportSection';
+import CalendarInvitationsSection from '@proton/components/containers/calendar/settings/CalendarInvitationsSection';
+import CalendarLayoutSection from '@proton/components/containers/calendar/settings/CalendarLayoutSection';
+import CalendarOtherPreferencesSection from '@proton/components/containers/calendar/settings/CalendarOtherPreferencesSection';
+import CalendarSubpage from '@proton/components/containers/calendar/settings/CalendarSubpage';
+import CalendarTimeSection from '@proton/components/containers/calendar/settings/CalendarTimeSection';
+import CalendarsSettingsSection from '@proton/components/containers/calendar/settings/CalendarsSettingsSection';
+import { InboxDesktopSettingsSection } from '@proton/components/containers/desktop/InboxDesktopSettingsSection';
+import { useCalendarsInfoListener } from '@proton/components/containers/eventManager/calendar/useCalendarsInfoListener';
+import PrivateMainAreaLoading from '@proton/components/containers/layout/PrivateMainAreaLoading';
+import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
+import MobileAppSettingsSection from '@proton/components/containers/mobile/MobileAppSettingsSection';
+import useIsInboxElectronApp from '@proton/components/hooks/useIsInboxElectronApp';
 import { useLoadAllowedTimeZones } from '@proton/components/hooks/useLoadAllowedTimeZones';
+import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,

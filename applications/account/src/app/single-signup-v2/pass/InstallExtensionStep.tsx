@@ -284,7 +284,7 @@ const InstallExtensionStep = ({ measure }: Props) => {
             return;
         }
         onceRef.current = true;
-        measure({
+        void measure({
             event: TelemetryAccountSignupEvents.interactDownload,
             dimensions: { click: `download_${type}` },
         }).then(() => {
@@ -293,7 +293,7 @@ const InstallExtensionStep = ({ measure }: Props) => {
     });
 
     useEffect(() => {
-        measure({ event: TelemetryAccountSignupEvents.onboardShown, dimensions: { action_shown: `get_${type}` } });
+        void measure({ event: TelemetryAccountSignupEvents.onboardShown, dimensions: { action_shown: `get_${type}` } });
     }, []);
 
     return (

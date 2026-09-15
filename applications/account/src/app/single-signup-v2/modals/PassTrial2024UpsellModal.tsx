@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { ModalProps } from '@proton/components';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { getTryPassPlus2024Features } from '@proton/components/containers/offers/helpers/offerCopies';
 import { PLANS } from '@proton/payments/core/constants';
 

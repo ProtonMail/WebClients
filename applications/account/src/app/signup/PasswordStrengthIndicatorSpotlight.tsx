@@ -1,9 +1,10 @@
 import { type MutableRefObject, type ReactNode, useState } from 'react';
 
-import { Spotlight, useActiveBreakpoint } from '@proton/components';
 import PasswordStrengthIndicator, {
     useLoadPasswordStrengthIndicatorWasm,
 } from '@proton/components/components/passwordStrengthIndicator/PasswordStrengthIndicator';
+import Spotlight from '@proton/components/components/spotlight/Spotlight';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 
 export const usePasswordStrengthIndicatorSpotlight = () => {
     const passwordStrengthIndicator = useLoadPasswordStrengthIndicatorWasm();

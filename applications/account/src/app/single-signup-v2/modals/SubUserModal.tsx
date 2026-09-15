@@ -1,10 +1,12 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components';
-import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import PlusUnlimitedComparison from '@proton/components/containers/payments/subscription/PlusUnlimitedComparison';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import type { Plan, PlansMap, SubscriptionPlan } from '@proton/payments/core/plan/interface';
 import { getFreeTitle } from '@proton/payments/core/subscription/freePlans';
 

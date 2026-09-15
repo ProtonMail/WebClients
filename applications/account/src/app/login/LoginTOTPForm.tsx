@@ -3,9 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useFormErrors } from '@proton/components';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { TotpInputField } from '@proton/components/containers/account/totp/TotpInputs';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 

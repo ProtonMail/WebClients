@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import PasswordReminderModal from '@proton/account/passwordReminder/PasswordReminderModal';
 import { usePasswordReminder } from '@proton/account/passwordReminder/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { useModalState } from '@proton/components/index';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import lock from './lockwithcheck.svg';

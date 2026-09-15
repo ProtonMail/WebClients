@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import { MailLogo, QRCode } from '@proton/components/index';
+import QRCode from '@proton/components/components/image/QRCode';
+import MailLogo from '@proton/components/components/logo/MailLogo';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import generateUID from '@proton/utils/generateUID';
 
