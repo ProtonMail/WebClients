@@ -111,8 +111,26 @@ export interface MailToolDeps {
         referenceMessage: PartialMessageState;
         bodyBeforeQuote?: string;
     }) => Promise<void>;
+    /**
+     * What a composer will accept right now, asked BEFORE anything is changed: a call that revises both
+     * the body and the recipients must refuse outright rather than commit one and fail the other.
+     */
+    getDraftChangeability: (composerID: string) => DraftChangeability;
+    /** Replaces the body of an OPEN composer, keeping its signature and quoted conversation. */
+    writeDraftBody: (composerID: string, body: string) => boolean;
     /** Retargets an OPEN composer, replacing the recipient lists it names and leaving the others alone. */
     setDraftRecipients: (composerID: string, recipients: Partial<Record<RecipientType, Recipient[]>>) => void;
+}
+
+/** Each answer is for right now: a composer that is still opening becomes changeable a moment later. */
+export interface DraftChangeability {
+    isOpen: boolean;
+    /** The editor has finished initializing and a body writer is registered. */
+    isEditorReady: boolean;
+    /** The body writer can replace the text without losing the quoted conversation. */
+    canReplaceBody: boolean;
+    /** Its recipient lists have loaded, so new ones have something to replace. */
+    canReaddress: boolean;
 }
 
 /**

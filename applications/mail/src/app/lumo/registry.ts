@@ -8,6 +8,7 @@ import type { CardRenderers, LumoAgentConfig } from '@proton/llm/lib/lumoAgent/u
 
 import { MAIL_RULES } from './rules';
 import { createDraftModule } from './skills/compose/createDraft';
+import { reviseDraftModule } from './skills/compose/reviseDraft';
 import { createFilterModule } from './skills/filters/createFilter';
 import { updateFilterModule } from './skills/filters/updateFilter';
 import { addContactModule } from './skills/organise/addContact';
@@ -78,6 +79,7 @@ const MODULES: MailToolModule[] = [
     changeSignatureModule,
     // Compose
     createDraftModule,
+    reviseDraftModule,
     // Support
     openSupportTicketModule,
 ];
