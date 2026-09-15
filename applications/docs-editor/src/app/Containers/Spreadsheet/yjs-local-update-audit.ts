@@ -26,7 +26,7 @@ export type SpreadsheetLocalYjsUpdateAuditState = {
   sharedStrings: SharedStrings
 }
 
-export const SPREADSHEET_LOCAL_YJS_AUDIT_KEYS = [
+const SPREADSHEET_LOCAL_YJS_AUDIT_KEYS = [
   'sheets',
   'sheetData',
   'tables',
@@ -42,7 +42,7 @@ export const SPREADSHEET_LOCAL_YJS_AUDIT_KEYS = [
 
 export type SpreadsheetLocalYjsAuditKey = (typeof SPREADSHEET_LOCAL_YJS_AUDIT_KEYS)[number]
 
-export type SpreadsheetLocalYjsUpdateAuditDifference = {
+type SpreadsheetLocalYjsUpdateAuditDifference = {
   key: SpreadsheetLocalYjsAuditKey
   reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs'
   localValue: unknown

@@ -23,7 +23,7 @@ const ACCENT_COLORS = [
   '#807304',
 ]
 
-export const ACCENT_COLORS_IN_HSL = ACCENT_COLORS.map((color) => tinycolor(color).toHslString())
+const ACCENT_COLORS_IN_HSL = ACCENT_COLORS.map((color) => tinycolor(color).toHslString())
 
 export function getAccentColorForUsername(name: string) {
   const factor = name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)

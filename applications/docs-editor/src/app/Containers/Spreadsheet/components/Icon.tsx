@@ -9,7 +9,7 @@ import { type ComponentPropsWithoutRef, forwardRef, isValidElement } from 'react
  */
 export type IconData = string | ReactElement
 /** `Icon` options. */
-export type IconOptions = {
+type IconOptions = {
   /**
    * The icon's data, which can be one of the following:
    * - A string representing the SVG path data.

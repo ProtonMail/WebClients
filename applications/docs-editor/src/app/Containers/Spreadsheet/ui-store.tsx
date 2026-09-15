@@ -15,7 +15,7 @@ import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
 
 export type ProtonSheetsUIStore = UseBoundStore<StoreApi<ProtonSheetsUIState>>
 export type ProtonSheetsUIStoreSetters = FunctionsOnly<ProtonSheetsUIState>
-export type ProtonSheetsUIStoreContextValue = { useUI: ProtonSheetsUIStore; setters: ProtonSheetsUIStoreSetters }
+type ProtonSheetsUIStoreContextValue = { useUI: ProtonSheetsUIStore; setters: ProtonSheetsUIStoreSetters }
 
 const ProtonSheetsUIStoreContext = createContext<ProtonSheetsUIStoreContextValue | undefined>(undefined)
 

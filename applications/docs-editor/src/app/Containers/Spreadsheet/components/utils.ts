@@ -49,7 +49,7 @@ export function createComponent<P>(render: (props: P) => React.ReactElement | nu
   return MemoizedComponent as any
 }
 
-export function scaleToZoom(scale: number) {
+function scaleToZoom(scale: number) {
   return scale * 100
 }
 
