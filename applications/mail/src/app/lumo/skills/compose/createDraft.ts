@@ -215,8 +215,9 @@ export const createCreateDraftHandler =
             ? await quotedMessage(mail, { kind, answers, to, cc, subject }, references)
             : newMessage(mail, { answers, to, cc, subject }, references);
 
-        const forwardRecipients: Partial<Record<'ToList' | 'CCList', Recipient[]>> = {};
+        let forwardRecipients: Partial<Record<'ToList' | 'CCList', Recipient[]>> | undefined;
         if (kind === DraftKind.FORWARD) {
+            forwardRecipients = {};
             const toList = toRecipients(mail, to, references);
             const ccList = toRecipients(mail, cc, references);
             if (toList.length) {
@@ -227,11 +228,12 @@ export const createCreateDraftHandler =
             }
         }
 
+
         const composerID = await composerOpenedBy(mail, () =>
             mail.composeDraft({ action: MESSAGE_ACTION_FOR[kind], referenceMessage, bodyBeforeQuote: body })
         );
 
-        if (Object.keys(forwardRecipients).length) {
+        if (forwardRecipients && Object.keys(forwardRecipients).length) {
             mail.setDraftRecipients(composerID, forwardRecipients);
         }
 
