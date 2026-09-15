@@ -1350,6 +1350,9 @@
       ],
       "Stop here": [
         "Stopp her"
+      ],
+      "Preview logs": [
+        "Forhåndsvis logger"
       ]
     },
     "Action: Docs": {
@@ -4931,6 +4934,9 @@
       ],
       "Still waiting?": [
         "Venter du fremdeles?"
+      ],
+      "Touch your security key to continue.": [
+        "Berør sikkerhetsnøkkelen for å fortsette."
       ]
     },
     "fido2: Label": {
@@ -7652,7 +7658,7 @@
         "Søk er i en ugyldig tilstand"
       ],
       "Search is ready. Your files have been indexed.": [
-        "Søket er klart. Filene dine er indeksert."
+        "Søk er klart. Filene dine er indeksert."
       ],
       "The search engine encountered an internal error. Rebuild the index to recover.": [
         "Søket opplevde en intern feil. Bygg indeksen opp på nytt for å gjenopprette."
@@ -7857,7 +7863,7 @@
         "Husker du passordet ditt?"
       ],
       "${ IDEAL_WERO_BRAND_NAME } mark": [
-        "${ IDEAL_WERO_BRAND_NAME } merket"
+        "${ IDEAL_WERO_BRAND_NAME }-logo"
       ],
       "Debug transcript copied": [
         "Feilsøkingstranskripsjon kopiert"
@@ -7910,6 +7916,9 @@
       ],
       "Loading folder": [
         "Laster inn mappe"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Logger hjelper oss å forstå hva som skjedde før problemet oppstod. De inkluderer apphandlinger og feilmeldinger, men ikke noe meldingsinnhold."
       ]
     },
     "info": {
@@ -8744,7 +8753,7 @@
         "Utløper aldri"
       ],
       "Pending invitation": [
-        "Venter på invitasjon"
+        "Ubesvart invitasjon"
       ],
       "Shared by ${ sharedBy }": [
         "Delt av ${ sharedBy }"
@@ -8759,7 +8768,7 @@
         "${ value.length }/${ maxLength } tegn"
       ],
       "Asset": [
-        "Ressurs"
+        "Element"
       ],
       "Non-consensual intimate imagery": [
         "Intime bilder uten samtykke"
@@ -8817,6 +8826,9 @@
       ],
       "Account holder name": [
         "Kontoinnehaverens navn"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tegn"
       ]
     },
     "Label for contact group color": {
@@ -11063,7 +11075,7 @@
         "Endelig godkjenning pågår"
       ],
       "Final approval pending": [
-        "Endelig godkjenning venter"
+        "Venter på endelig godkjenning"
       ],
       "Free up hard drive space on your computer": [
         "Frigjør plass på harddisken på datamaskinen"
@@ -13537,7 +13549,7 @@
         "Albumdetaljer"
       ],
       "Albums": [
-        "Albumer"
+        "Album"
       ],
       "All": [
         "Alle"
@@ -13874,8 +13886,8 @@
         "Mappedetaljer"
       ],
       "Found ${ resultCount } result": [
-        "Fant ${ resultCount } resultat",
-        "Fant ${ resultCount } resultater"
+        "Fant ${ resultCount } treff",
+        "Fant ${ resultCount } treff"
       ],
       "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
         "Få ${ DRIVE_SHORT_APP_NAME } på telefonen"
@@ -15362,7 +15374,7 @@
     },
     "q3campaign2026: Info, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "q3campaign2026: Title": {
