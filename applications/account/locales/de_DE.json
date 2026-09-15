@@ -407,6 +407,9 @@
       "Add ${ BRAND_NAME } address": [
         "${ BRAND_NAME }-E-Mail-Adresse hinzufügen"
       ],
+      "Add a payment method": [
+        "Zahlungsmethode hinzufügen"
+      ],
       "Add account": [
         "Konto hinzufügen"
       ],
@@ -1271,6 +1274,9 @@
       "Got it": [
         "Verstanden"
       ],
+      "Grant access": [
+        "Zugriff gewähren"
+      ],
       "Group owner": [
         "Gruppenbesitzer"
       ],
@@ -1964,6 +1970,9 @@
       "Sign in with ${ BRAND_NAME }": [
         "Mit ${ BRAND_NAME } anmelden"
       ],
+      "Sign in with Google": [
+        "Mit Google Konto anmelden"
+      ],
       "Sign in with password": [
         "Mit Passwort anmelden"
       ],
@@ -1978,6 +1987,9 @@
       ],
       "Sign out of all accounts": [
         "Von allen Konten abmelden"
+      ],
+      "Sign out on all devices": [
+        "Auf allen Geräten abmelden"
       ],
       "sign up for free": [
         "kostenlos registrieren"
@@ -2125,6 +2137,9 @@
       ],
       "Upgrade now": [
         "Jetzt upgraden"
+      ],
+      "Upgrade to 2 devices or more": [
+        "Auf 2 oder mehr Geräte upgraden"
       ],
       "Upgrade to Business": [
         "Auf Business upgraden"
@@ -2725,6 +2740,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "Active until ${ formattedPeriodEndDate }": [
+        "Aktiv bis zum ${ formattedPeriodEndDate }"
+      ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Nachdem deine Testversion am ${ formattedDate1 } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich alle ${ renewCycle } Monate automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate2 } kündigst."
       ],
@@ -2748,6 +2766,9 @@
       ],
       "Try it free for ${ TRIAL_DURATION_DAYS } days": [
         "Teste es ${ TRIAL_DURATION_DAYS } Tage kostenlos"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period.": [
+        "Wenn du kündigst, wird deine kostenlose Testversion nicht in ein kostenpflichtiges Abonnement umgewandelt, aber du kannst die Vorteile des Abonnements noch bis zum Ende des Testzeitraums nutzen."
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wenn du kündigst, wird deine kostenlose Testversion nicht in ein kostenpflichtiges Abonnement umgewandelt, aber du kannst die Vorteile des Abonnements noch bis zum Ende des Testzeitraums nutzen. Danach wirst du auf das ${ BRAND_NAME } Free-Abonnement zurückgestuft."
@@ -5520,6 +5541,9 @@
       "Still need help? Our support team is here for you.": [
         "Brauchst du noch Hilfe? Unser Support-Team ist für dich da."
       ],
+      "The link to sign out on all your devices has expired. Try signing in again to receive a new one.": [
+        "Der Link zum Abmelden auf all deinen Geräten ist abgelaufen. Versuche dich bitte erneut anzumelden, um einen neuen zu erhalten."
+      ],
       "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
         "Auf diese Weise erhältst du wieder Zugriff auf dein ${ BRAND_NAME }-Konto, deine verschlüsselten Daten werden jedoch nicht wiederhergestellt."
       ],
@@ -5548,11 +5572,20 @@
       "To start, give your organization a name.": [
         "Gib deiner Organisation zunächst einen Namen."
       ],
+      "To stay signed in everywhere, upgrade your plan instead.": [
+        "Um überall angemeldet zu bleiben, solltest du stattdessen dein Abonnement upgraden."
+      ],
+      "Too many devices are connected to your account. To use ${ BRAND_NAME } on a new device or browser, end all existing sessions. You'll be signed out on every device.": [
+        "Mit deinem Konto sind zu viele Geräte verbunden. Um ${ BRAND_NAME } auf einem neuen Gerät oder in einem neuen Browser nutzen zu können, beende alle laufenden Sitzungen. Du wirst dann auf allen Geräten abgemeldet."
+      ],
       "Track the status and activity of your referrals": [
         "Verfolge den Status und die Aktivität deiner Empfehlungen"
       ],
       "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
         "15 GB Speicherplatz für nur ${ config.offerPrice } freischalten."
+      ],
+      "Upgrade anytime to stay signed in on multiple devices.": [
+        "Jederzeit upgraden, um auf mehreren Geräten angemeldet zu bleiben."
       ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Upgrade auf ${ planName }, um bis zu ${ MAX_SYNC_PAID_USER } Konten zu verbinden"
@@ -5627,6 +5660,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Dein kostenloses ${ MAIL_APP_NAME }-Konto enthält begrenzten Speicherplatz, darum können wir nur deine aktuellsten Gmail-Nachrichten importieren."
+      ],
+      "Your other sessions have been ended. You can now sign in on this device.": [
+        "Deine anderen Sitzungen wurden beendet. Du kannst dich nun auf diesem Gerät anmelden."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Dein Abonnement unterstützt ${ MAX_SYNC_FREE_USER } Gmail-Adresse.",
@@ -7862,6 +7898,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ein Problem ist aufgetreten. Bitte ${ refresh }, um fortzufahren. Wenn dir diese Fehlermeldung weiterhin angezeigt wird, wende dich bitte an unser ${ supportTeam }."
       ],
+      "Something went wrong, please try again": [
+        "Etwas ist schiefgelaufen, bitte versuche es erneut"
+      ],
       "Something went wrong. Please try again.": [
         "Etwas ist schief gelaufen. Bitte versuche es später erneut."
       ],
@@ -8643,6 +8682,9 @@
       "You're invited to join ${ invite.OrganizationName }": [
         "Du wurdest eingeladen, ${ invite.OrganizationName } beizutreten"
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit dieser Familiengruppe zu verknüpfen und alle Premium-Funktionen zu genießen."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Dein Konto hat mehr E-Mail-Adressen, als dir in diesem Abonnement zur Verfügung stehen. ${ addressSettingsLink }"
       ],
@@ -8995,8 +9037,14 @@
       "Security key updated": [
         "Sicherheitsschlüssel aktualisiert"
       ],
+      "Still waiting?": [
+        "Wartest du immer noch?"
+      ],
       "This will delete all security keys linked to your account.": [
         "Hierdurch werden alle Sicherheitsschlüssel gelöscht, die mit deinem Account verbunden sind."
+      ],
+      "Touch your security key to continue.": [
+        "Berühre deinen Sicherheitsschlüssel, um fortzufahren."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bestätige deine Identität mit einem physischen U2F oder FIDO2 Sicherheitsschlüssel"
@@ -10395,6 +10443,12 @@
       "${ storeName } app to copy data to ${ BRAND_NAME }": [
         "${ storeName }-App um Daten nach ${ BRAND_NAME } zu kopieren"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } verbleiben für deine Testversion. ${ addPaymentMethodLink }, um zu verhindern, dass du den Zugriff verlierst. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } verbleiben für deine Testversion. ${ addPaymentMethodLink }, um dein Abonnement fortzusetzen. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } Benutzer gefunden",
         "${ total } Benutzer gefunden"
@@ -10751,6 +10805,9 @@
       "An SMS with a verification code was just sent to ${ phoneNumber }.": [
         "Eine SMS mit einem Bestätigungscode wurde gerade an ${ phoneNumber } gesendet."
       ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Beim Importieren deiner Daten ist ein unerwarteter Fehler aufgetreten. Bitte versuche es später erneut."
+      ],
       "and": [
         "und"
       ],
@@ -11069,6 +11126,9 @@
       ],
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "Deine externen Postfächer mit ${ MAIL_APP_NAME } verbinden und verwalten"
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "Verbindung zu Google Drive herstellen, um den sicheren Import nach ${ DRIVE_APP_NAME } einzurichten."
       ],
       "Connection data will be available in around 1 hour.": [
         "Die Verbindungsdaten werden in etwa 1 Stunde verfügbar sein."
@@ -11427,6 +11487,9 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-Mail-Hosting ist nur für Domains verfügbar, die du bereits besitzt. Die Registrierung von Domains ist derzeit nicht über ${ BRAND_NAME } möglich. Du kannst E-Mails für Domains hosten, die bei einem beliebigen Domain-Registrar registriert sind."
       ],
+      "Email you once import is finished": [
+        "Wir senden dir eine E-Mail, sobald der Import abgeschlossen ist."
+      ],
       "Emailing preference saved": [
         "E-Mail-Einstellungen gespeichert"
       ],
@@ -11667,6 +11730,9 @@
       "For just ${ bundlePlanPriceInline }": [
         "Für nur ${ bundlePlanPriceInline }"
       ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "Damit der Import funktioniert, musst du alle gewünschten Einträge auswählen, wie im obigen GIF gezeigt."
+      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Für Benutzer, die von einem anderen E-Mail-Anbieter zu ${ MAIL_APP_NAME } wechseln, wähle den Tab ${ boldAddresses } aus und füge alle aktiven E-Mail-Adressen hinzu, bevor du den MX-Eintrag änderst, damit ein reibungsloser Übergang gewährleistet ist."
       ],
@@ -11735,6 +11801,9 @@
       ],
       "Get VPN Plus": [
         "VPN Plus holen"
+      ],
+      "Give ${ BRAND_NAME } permissions to import your ${ providerName } data.": [
+        "Erteile ${ BRAND_NAME } die Erlaubnis, deine ${ providerName }-Daten zu importieren."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Gib dem Token einen beschreibenden Namen, z. B. den Dienst, für den du es verwenden möchtest und wähle eine deiner aktiven eigenen Domain-Adressen. Nur diese Adresse ist in der Lage, E-Mails mit diesem Token zu senden."
@@ -12312,6 +12381,9 @@
       "Next billing date": [
         "Nächstes Abrechnungsdatum"
       ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Als Nächstes musst du dich bei deinem Google-Konto anmelden und ${ BRAND_NAME } Zugriff auf deine Daten gewähren."
+      ],
       "No account keys exist": [
         "Es sind keine Kontoschlüssel vorhanden"
       ],
@@ -12398,6 +12470,9 @@
       ],
       "On": [
         "Ein"
+      ],
+      "On ${ formattedPeriodEndDate }, your free trial ends and your paid plan starts.": [
+        "Am ${ formattedPeriodEndDate } endet deine kostenlose Testversion und dein kostenpflichtiges Abonnement beginnt."
       ],
       "On Ubuntu?": [
         "Auf Ubuntu?"
@@ -12610,6 +12685,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Bitte versuche es mit einer anderen Zahlungsmethode erneut oder kontaktiere deine Bank."
       ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Bitte upgraden, um sicherzustellen, dass der Import erfolgreich abgeschlossen wird."
+      ],
       "Please use another browser or download the file.": [
         "Bitte verwende einen anderen Browser oder lade die Datei herunter."
       ],
@@ -12684,6 +12762,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Wende dich an uns, wenn du Hilfe zu ${ BRAND_NAME } benötigst."
+      ],
+      "Read once and encrypted on arrival": [
+        "Einmal gelesen und bei Erhalt verschlüsselt"
       ],
       "Receive notifications for ${ categoryLabel }": [
         "Benachrichtigungen für ${ categoryLabel } erhalten"
@@ -12943,6 +13024,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
+      ],
+      "Sit back and we will let you know.": [
+        "Lehne dich zurück, wir halten dich auf dem Laufenden."
       ],
       "Smart Routed through a different country.": [
         "Verbindung über Smart Routing durch ein anderes Land umgeleitet."
@@ -13618,6 +13702,9 @@
       "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
         "Löschen die Datei über dein MDM oder führe ${ removeScriptLink } über die Skript-Ausführung deines MDM aus. Jedes MDM, das die Bereitstellung von Dateien oder die Ausführung von Skripten unterstützt, ist dafür geeignet."
       ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Wird ausschließlich dazu verwendet, sie nach ${ DRIVE_APP_NAME } zu kopieren."
+      ],
       "User activated": [
         "Benutzer aktiviert"
       ],
@@ -13738,6 +13825,9 @@
       "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
         "Wir haben erkannt, dass du in einer ${ BRAND_NAME }-Web-App in einem **anderen Browser** angemeldet bist. Möglicherweise kannst du ein Zurücksetzen des Passworts von deiner aktiven Sitzung aus durchführen."
       ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "Wir unterstützen das Importieren von Fotos, Google Docs, Sheets und Slides nicht. Bitte stell sicher, dass dein Google Drive nicht leer ist."
+      ],
       "We generated a strong password for you": [
         "Wir haben ein sicheres Passwort für dich generiert"
       ],
@@ -13768,8 +13858,14 @@
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Wir empfehlen dringend, dass jeder die Wiederherstellung per Wiederherstellungsphrase aktiviert."
       ],
+      "We support most files": [
+        "Wir unterstützen die meisten Dateiformate"
+      ],
       "We use 3-D Secure to protect your payments": [
         "Wir verwenden 3-D Secure zum Schutz deiner Zahlungen"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Wir benachrichtigen dich per E-Mail, sobald der Import abgeschlossen ist. Nach Abschluss des Vorgangs findest du deinen Import in einem Ordner."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Wir werden dich in einem neuen Browser-Tab zu ${ IDEAL_WERO_BRAND_NAME } umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
@@ -13896,6 +13992,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Ohne Aktivierung ist es dir nicht möglich, neue Benutzer anzulegen, E-Mail-Adressen zu bestehenden Benutzern hinzuzufügen oder auf nicht-private Benutzerkonten zuzugreifen."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "Fotos, Google Docs und Sheets lassen sich nicht importieren"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Möchtest du einen neuen Verifizierungscode anfordern oder eine alternative Verifizierungsmethode verwenden?"
@@ -15022,6 +15121,9 @@
       ],
       "Account holder name": [
         "Name des Kontoinhabers"
+      ],
+      "Account holder: ${ details.AccountName }": [
+        "Konteninhaber: ${ details.AccountName }"
       ],
       "Account storage": [
         "Kontenspeicher"
@@ -18667,6 +18769,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } endet mit ${ Last4 }"
+      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "Mit ${ BRAND_NAME } kannst du E-Mail-Adressen erstellen und Konten für Unterbenutzer verwalten – das ist ideal für Familien und Organisationen."
       ],
@@ -20884,6 +20989,11 @@
         "Das Guthaben wird dir gutgeschrieben."
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Eine Änderung deiner Rechnungsadresse kann sich auf die Steuern bei zukünftigen Rechnungen auswirken."
+      ]
+    },
     "Payments.Lifetime Subscription": {
       "Lifetime accounts can be transferred or sold": [
         "Lifetime-Konten können übertragen oder verkauft werden"
@@ -20931,6 +21041,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Der Verlängerungspreis ist abhängig von der Rechnungsregion und der Umsatzsteuernummer."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - Karte endet mit ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Banküberweisung - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - Karte endet mit ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -24454,6 +24575,9 @@
       "Final step": [
         "Letzter Schritt"
       ],
+      "Grant access": [
+        "Zugriff gewähren"
+      ],
       "Install migration app": [
         "Übernahme-App installieren"
       ],
@@ -25214,6 +25338,9 @@
       ],
       "View VPN session details for your organization.": [
         "Zeig die Details der VPN-Sitzung für deine Organisation an."
+      ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Wir lesen deine Dateien einmal, um sie zu kopieren, und verschlüsseln sie anschließend jeweils mit deinen ${ BRAND_NAME }-Schlüsseln."
       ]
     },
     "Success": {
@@ -26255,6 +26382,9 @@
       "Connect your custom domain": [
         "Verbinde deine eigene Domain"
       ],
+      "Connect your Google account": [
+        "Dein Google-Konto verbinden"
+      ],
       "Connected emails": [
         "Verbundene E-Mail-Adressen"
       ],
@@ -26831,6 +26961,9 @@
       "Going private": [
         "Wird privat"
       ],
+      "Grant access": [
+        "Zugriff gewähren"
+      ],
       "Group": [
         "Gruppe"
       ],
@@ -26903,6 +27036,9 @@
       ],
       "Import key": [
         "Schlüssel importieren"
+      ],
+      "Import started, but your storage won't be enough for this import": [
+        "Der Import wurde gestartet, aber dein Speicherplatz reicht für diesen Import nicht aus."
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importieren mit ${ PRODUCT_NAMES.EASY_SWITCH }"
@@ -27137,6 +27273,9 @@
       ],
       "Other calendars": [
         "Weitere Kalender"
+      ],
+      "Other devices signed out": [
+        "Andere Geräte abgemeldet"
       ],
       "Other features included in your plan": [
         "Weitere Funktionen, die in deinem Abonnement enthalten sind"
@@ -27462,6 +27601,9 @@
       "Set your password": [
         "Passwort festlegen"
       ],
+      "Setting up your import": [
+        "Dein Import wird eingerichtet"
+      ],
       "Settings": [
         "Einstellungen"
       ],
@@ -27489,11 +27631,17 @@
       "Sign in on TV?": [
         "Auf dem TV anmelden?"
       ],
+      "Sign in to Google": [
+        "Bei Google anmelden"
+      ],
       "Sign in to join the Beta program": [
         "Melde dich an, um am Beta-Programm teilzunehmen."
       ],
       "Sign out": [
         "Abmelden"
+      ],
+      "Sign out on all devices?": [
+        "Auf allen Geräten abmelden?"
       ],
       "Signed in successfully!": [
         "Erfolgreich angemeldet!"
@@ -27790,6 +27938,9 @@
       "Warning: suspected fake website": [
         "Warnung: Verdacht auf gefälschte Website"
       ],
+      "We could not find anything to import": [
+        "Wir konnten nichts zum Importieren finden"
+      ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "Wir haben dir einen Code per E-Mail geschickt, um sicherzustellen, dass du es wirklich bist. Dieser Code ist 10 Minuten lang gültig. Bitte gib ihn unten ein."
       ],
@@ -27870,6 +28021,9 @@
       ],
       "Your exposed information": [
         "Deine exponierten Informationen"
+      ],
+      "Your import is starting": [
+        "Dein Datenimport wird gestartet"
       ],
       "Your plan": [
         "Dein Abonnement"
@@ -28135,6 +28289,9 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategorisiert automatisch einige E-Mails als Soziale Netzwerke oder Werbeaktionen. Du kannst auswählen, wohin diese E-Mails importiert werden sollen."
       ],
+      "Grant access to your ${ providerName } account to start a migration": [
+        "Gewähre Zugriff auf dein ${ providerName }-Konto, um die Übernahme zu starten"
+      ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Gruppiere E-Mails in derselben Konversation in deinem Posteingang oder zeige diese getrennt an."
       ],
@@ -28152,6 +28309,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Beinhaltet professionelle E-Mail-Adressen unter @yourdomain.com, Cloud-Speicher mit Funktionen zur gemeinsamen Dokumentbearbeitung, Terminplanung und Videokonferenzen, Passwortverwaltung, ein sicheres ${ VPN_SHORT_APP_NAME } und vieles mehr."
+      ],
+      "Install the migration app in your ${ providerName } account to start a migration": [
+        "Installiere die Migrations-App in deinem ${ providerName }-Konto, um eine Übernahme zu starten"
       ],
       "Instant AI assistance, human expert on hand!": [
         "Sofortige KI-Unterstützung, menschliche Experten stehen bereit."
@@ -29225,6 +29385,9 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Es wurde ein Problem mit deiner DNS-Konfiguration festgestellt. Bitte stelle sicher, dass deine Einträge mit den untenstehenden Anweisungen übereinstimmen. Wenn das Problem weiterhin besteht, wird die DKIM-Signatur abgeschaltet."
+      ],
+      "We were unable to verify access, please check that you have granted access in your ${ providerName } account and try again.": [
+        "Wir konnten den Zugriff nicht überprüfen. Bitte stelle sicher, dass du den Zugriff in deinem ${ providerName }-Konto gewährt hast, und versuche es erneut."
       ],
       "We were unable to verify the installation, please check that you have installed it in your ${ providerName } account and try again.": [
         "Wir konnten die Installation nicht überprüfen. Bitte stelle sicher, dass du sie in deinem ${ providerName }-Konto installiert hast, und versuche es erneut."

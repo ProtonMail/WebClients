@@ -1305,46 +1305,6 @@
     "collider_2025: Compaction": {
       "${ removed } freed": [
         "${ removed } vrijgemaakt"
-      ],
-      "${ stats.summarizedMessageCount } earlier message condensed": [
-        "${ stats.summarizedMessageCount } eerder bericht samengevat",
-        "${ stats.summarizedMessageCount } eerdere berichten samengevat"
-      ],
-      "Chat shortened to keep going": [
-        "Chat ingekort om door te kunnen gaan"
-      ],
-      "cleared old tool results": [
-        "heeft oude toolresultaten gewist"
-      ],
-      "dropped old messages": [
-        "heeft oude berichten verwijderd"
-      ],
-      "Files from summarized messages": [
-        "Bestanden uit samengevatte berichten"
-      ],
-      "No longer sent to the model": [
-        "Niet langer naar het model verzonden"
-      ],
-      "removed file context": [
-        "heeft bestandscontext verwijderd"
-      ],
-      "removed tool calls": [
-        "heeft tool-aanroepen verwijderd"
-      ],
-      "summarized the conversation": [
-        "heeft het gesprek samengevat"
-      ],
-      "This chat got long — summarizing earlier messages so we can keep going…": [
-        "Deze chat is lang geworden. Eerdere berichten worden samengevat zodat we door kunnen gaan…"
-      ],
-      "Tool calls removed": [
-        "Tool-aanroepen verwijderd"
-      ],
-      "Tool output cleared": [
-        "Tooluitvoer gewist"
-      ],
-      "What ${ LUMO_SHORT_APP_NAME } still remembers": [
-        "Wat ${ LUMO_SHORT_APP_NAME } zich nog herinnert"
       ]
     },
     "collider_2025: Context": {
@@ -1799,9 +1759,6 @@
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } is een privacygerichte AI die u helpt meer gedaan te krijgen, terwijl uw gegevens veilig blijven. Ontgrendel het volledige potentieel en geniet van vroege toegang tot nieuwe functies zodra ze worden geïntroduceerd."
       ],
-      "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space; when it fills up, older messages are automatically summarized so you can keep chatting.": [
-        "${ LUMO_SHORT_APP_NAME } kan een beperkte hoeveelheid informatie per gesprek verwerken. Dit toont wat momenteel die ruimte in beslag neemt; wanneer deze vol is, worden oudere berichten automatisch samengevat, zodat u kunt blijven chatten."
-      ],
       "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
         "${ LUMO_SHORT_APP_NAME }+ — API-toegang en sleutels zijn inbegrepen bij een ${ LUMO_SHORT_APP_NAME }+ abonnement (log in om sleutels te upgraden of te beheren)"
       ],
@@ -1922,9 +1879,6 @@
       ],
       "Drag and drop your files here to add them to the chat.": [
         "Sleep uw bestanden hierheen om ze aan het gesprek toe te voegen."
-      ],
-      "Earlier messages were summarized to make room, so they no longer take up space here.": [
-        "Eerdere berichten zijn samengevat om ruimte te maken, waardoor ze hier geen ruimte meer innemen."
       ],
       "Enabled": [
         "Ingeschakeld"
@@ -3962,9 +3916,6 @@
       ],
       "Your export is encrypted in transit and processed without being stored on ${ LUMO_SHORT_APP_NAME }'s servers.": [
         "Uw export wordt onderweg gecodeerd en verwerkt zonder te worden opgeslagen op de servers van ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
-        "Uw bestanden zijn groot. ${ LUMO_SHORT_APP_NAME } kan mogelijk niet alle informatie verwerken."
       ],
       "Your information is zero-access encrypted": [
         "Uw informatie is versleuteld met zero-access encryptie"
@@ -7384,6 +7335,9 @@
       ],
       "Folder name": [
         "Mapnaam"
+      ],
+      "Font size": [
+        "Lettertypegrootte"
       ],
       "Get the deal": [
         "Pak deze deal"

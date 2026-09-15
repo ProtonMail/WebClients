@@ -1973,6 +1973,9 @@
       "Sign in with ${ BRAND_NAME }": [
         "Inicia sessió amb ${ BRAND_NAME }"
       ],
+      "Sign in with Google": [
+        "Iniciar sessió amb Google"
+      ],
       "Sign in with password": [
         "Inicieu la sessió amb una contrasenya"
       ],
@@ -10805,6 +10808,9 @@
       "An SMS with a verification code was just sent to ${ phoneNumber }.": [
         "Acabem d'enviar un SMS amb un codi de verificació a ${ phoneNumber }."
       ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "S'ha produït un error inesperat en importar les vostres dades. Torneu-ho a provar més tard."
+      ],
       "and": [
         "i"
       ],
@@ -11120,6 +11126,9 @@
       ],
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "Connecteu i gestioneu les vostres bústies de correu externes a ${ MAIL_APP_NAME }."
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "S'està connectant amb Google Drive per configurar la vostra importació segura a ${ DRIVE_APP_NAME }."
       ],
       "Connection data will be available in around 1 hour.": [
         "Les dades de connexió estaran disponibles en aproximadament 1 hora."
@@ -11478,6 +11487,9 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'allotjament de correu electrònic només està disponible per als dominis que ja teniu. El registre de domini no està disponible actualment a través de ${ BRAND_NAME }. Podeu allotjar correu electrònic per a dominis registrats a qualsevol registrador de dominis."
       ],
+      "Email you once import is finished": [
+        "Us enviarem un correu electrònic quan hagi acabat la importació"
+      ],
       "Emailing preference saved": [
         "Preferència de correu desada"
       ],
@@ -11717,6 +11729,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Per només ${ bundlePlanPriceInline }"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "Perquè la importació funcioni, heu de seleccionar tots els elements sol·licitats tal com es mostra al GIF anterior."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Per als usuaris que canviïn a ${ MAIL_APP_NAME } des d'un altre servei de correu electrònic, seleccioneu la pestanya ${ boldAddresses } i afegiu totes les adreces de correu electrònic actives abans de canviar el registre MX per assegurar una transició sense problemes."
@@ -12366,6 +12381,9 @@
       "Next billing date": [
         "Pròxima data de facturació"
       ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "A continuació haureu d'iniciar sessió al vostre compte de Google i autoritzar ${ BRAND_NAME } per accedir a les vostres dades."
+      ],
       "No account keys exist": [
         "No hi ha claus de compte"
       ],
@@ -12667,6 +12685,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Torneu-ho a provar amb un mètode de pagament diferent o poseu-vos en contacte amb el vostre banc."
       ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Milloreu de pla per assegurar-vos que la importació finalitzi correctament."
+      ],
       "Please use another browser or download the file.": [
         "Utilitzeu un altre navegador o descarregueu el fitxer."
       ],
@@ -12741,6 +12762,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Poseu-vos en contacte amb nosaltres per a qualsevol ajuda relacionada amb ${ BRAND_NAME }."
+      ],
+      "Read once and encrypted on arrival": [
+        "Lectura única i xifratge a l'arribada"
       ],
       "Receive notifications for ${ categoryLabel }": [
         "Rebeu notificacions de ${ categoryLabel }"
@@ -13000,6 +13024,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
+      ],
+      "Sit back and we will let you know.": [
+        "Relaxeu-vos i us ho farem saber."
       ],
       "Smart Routed through a different country.": [
         "Encaminament intel·ligentment a través d'un país diferent."
@@ -13679,6 +13706,9 @@
       "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
         "Utilitzeu el vostre MDM per suprimir el fitxer, o executeu ${ removeScriptLink } mitjançant l'execució de scripts del MDM. Qualsevol MDM que admeti el desplegament de fitxers o l'execució de scripts funcionarà."
       ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Només s'utilitza per copiar-los a ${ DRIVE_APP_NAME }."
+      ],
       "User activated": [
         "S'ha activat l'usuari."
       ],
@@ -13799,6 +13829,9 @@
       "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
         "Hem detectat que ja heu iniciat sessió en una aplicació web de ${ BRAND_NAME } en un **altre navegador**. És possible que pugueu realitzar un restabliment de contrasenya des de la vostra sessió activa."
       ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "No admetem la importació de fotos, Google Docs, Sheets ni Slides. Assegureu-vos que el vostre Google Drive no estigui buit."
+      ],
       "We generated a strong password for you": [
         "Us hem generat una contrasenya forta"
       ],
@@ -13829,8 +13862,14 @@
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Recomanem encaridament que tothom activi la recuperació mitjançant frase de recuperació."
       ],
+      "We support most files": [
+        "Admetem la majoria de fitxers"
+      ],
       "We use 3-D Secure to protect your payments": [
         "Utilitzem 3-D Secure per protegir els vostres pagaments."
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Us enviarem un correu electrònic quan s'hagi fet la importació. Un cop hagi acabat la trobareu en una carpeta."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Us redirigirem a ${ IDEAL_WERO_BRAND_NAME } en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu algun bloquejador de finestres emergents, desactiveu-lo per continuar."
@@ -13957,6 +13996,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sense activació no podreu crear nous usuaris, afegir adreces a usuaris existents o accedir a comptes d'usuaris no privats."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "No s'importaran fotos, ni Google Docs i Sheets"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
@@ -25303,6 +25345,9 @@
       ],
       "View VPN session details for your organization.": [
         "Veieu els detalls de la sessió VPN de la vostra organització."
+      ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Llegim els vostres fitxers una vegada per copiar-los i, després, en xifrem cadascun amb les vostres claus de ${ BRAND_NAME }."
       ]
     },
     "Success": {
@@ -26344,6 +26389,9 @@
       "Connect your custom domain": [
         "Connecteu el vostre domini personalitzat"
       ],
+      "Connect your Google account": [
+        "Connecteu el vostre compte de Google"
+      ],
       "Connected emails": [
         "Correus electrònics connectats"
       ],
@@ -26996,6 +27044,9 @@
       "Import key": [
         "Importeu la clau"
       ],
+      "Import started, but your storage won't be enough for this import": [
+        "S'ha iniciat la importació, però el vostre emmagatzematge no serà suficient per aquesta importació"
+      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importa via ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -27557,6 +27608,9 @@
       "Set your password": [
         "Establiu la vostra contrasenya"
       ],
+      "Setting up your import": [
+        "S'està configurant la vostra importació"
+      ],
       "Settings": [
         "Preferències"
       ],
@@ -27583,6 +27637,9 @@
       ],
       "Sign in on TV?": [
         "Voleu iniciar sessió al televisor?"
+      ],
+      "Sign in to Google": [
+        "Inicieu sessió a Google"
       ],
       "Sign in to join the Beta program": [
         "Inicieu la sessió per unir-vos al programa Beta"
@@ -27888,6 +27945,9 @@
       "Warning: suspected fake website": [
         "Avís: presumpte lloc web fals"
       ],
+      "We could not find anything to import": [
+        "No s'ha trobat res per importar"
+      ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "Us hem enviat un codi al correu electrònic per assegurar-nos que sou vós. Aquest codi és vàlid durant 10 minuts. Introduïu-lo a continuació."
       ],
@@ -27968,6 +28028,9 @@
       ],
       "Your exposed information": [
         "La vostra informació exposada"
+      ],
+      "Your import is starting": [
+        "La importació s'està iniciant"
       ],
       "Your plan": [
         "El vostre pla"
@@ -28233,6 +28296,9 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail classifica automàticament alguns correus electrònics com ara Social o Promocions. Podeu seleccionar on importar aquests correus electrònics."
       ],
+      "Grant access to your ${ providerName } account to start a migration": [
+        "Concediu accés al vostre compte de ${ providerName } per iniciar una migració"
+      ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Agrupeu els correus electrònics de la mateixa conversa a la safata d'entrada o mostreu-los separadament."
       ],
@@ -28250,6 +28316,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Inclou correu electrònic professional a @elvostredomini.com, emmagatzematge al núvol amb edició col·laborativa de documents, calendaris i videoconferències, gestió de contrasenyes, una ${ VPN_SHORT_APP_NAME } segura i molt més."
+      ],
+      "Install the migration app in your ${ providerName } account to start a migration": [
+        "Instal·leu l'aplicació de migració al vostre compte de ${ providerName } per iniciar una migració"
       ],
       "Instant AI assistance, human expert on hand!": [
         "Assistència immediata de la IA, amb una persona experta a la vostra disposició!"

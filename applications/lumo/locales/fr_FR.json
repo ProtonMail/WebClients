@@ -1318,45 +1318,24 @@
       "${ removed } freed": [
         "${ removed } libérés"
       ],
-      "${ stats.summarizedMessageCount } earlier message condensed": [
-        "${ stats.summarizedMessageCount } message précédent a été condensé.",
-        "${ stats.summarizedMessageCount } messages précédents ont été condensés."
+      "${ stats.summarizedMessageCount } earlier message summarized for new replies": [
+        "${ stats.summarizedMessageCount } message antérieur résumé pour les nouvelles réponses",
+        "${ stats.summarizedMessageCount } message antérieurs résumés pour les nouvelles réponses"
       ],
-      "Chat shortened to keep going": [
-        "Chat raccourci pour pouvoir continuer"
+      "Excluded from new replies only": [
+        "Exclu uniquement des nouvelles réponses"
       ],
-      "cleared old tool results": [
-        "les anciens résultats d'outils ont été effacés"
+      "Nothing is removed from your chat. Scroll up anytime to read the full history.": [
+        "Aucun message n'est supprimé de votre chat. Faites défiler vers le haut à tout moment pour consulter l'historique complet."
       ],
-      "dropped old messages": [
-        "anciens messages abandonnés"
+      "summarized older messages": [
+        "résumé des messages antérieurs"
       ],
-      "Files from summarized messages": [
-        "Fichiers issus des messages résumés"
+      "trimmed file context": [
+        "contexte de fichier tronqué"
       ],
-      "No longer sent to the model": [
-        "N'est plus envoyé au modèle"
-      ],
-      "removed file context": [
-        "contexte de fichier retiré"
-      ],
-      "removed tool calls": [
-        "appels d'outil retirés"
-      ],
-      "summarized the conversation": [
-        "la conversation a été résumée"
-      ],
-      "This chat got long — summarizing earlier messages so we can keep going…": [
-        "Cette discussion est longue, je résume les messages précédents pour qu'on puisse continuer…"
-      ],
-      "Tool calls removed": [
-        "Les appels d'outil ont été retirés."
-      ],
-      "Tool output cleared": [
-        "La sortie de l'outil a été effacée."
-      ],
-      "What ${ LUMO_SHORT_APP_NAME } still remembers": [
-        "Ce dont ${ LUMO_SHORT_APP_NAME } se souvient encore"
+      "Your chat history above is unchanged. ${ LUMO_SHORT_APP_NAME } uses the summary below when replying — scroll up anytime to read the original messages.": [
+        "L'historique de votre conversation ci-dessus reste inchangé. ${ LUMO_SHORT_APP_NAME } utilise le résumé ci-dessous pour répondre, vous pouvez à tout moment remonter pour lire les messages d'origine."
       ]
     },
     "collider_2025: Context": {
@@ -1429,6 +1408,9 @@
       ],
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Ajoutez vos propres souvenirs, modifiez les entrées générées automatiquement ou effacer tout à n'importe quel moment. Si vous modifiez un souvenir généré, il deviendra le vôtre."
+      ],
+      "Adjust the size of text across the app": [
+        "Régler la taille du texte dans l'ensemble de l'application"
       ],
       "Always enable web search for new conversations": [
         "Toujours activer la recherche web pour les nouvelles conversations"
@@ -1817,6 +1799,10 @@
       "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
         "L'espace de stockage pour ${ DRIVE_SHORT_APP_NAME } n'est pas encore configuré."
       ],
+      "${ droppedForBudget.length } least relevant file was left out of this reply so the rest fits.": [
+        "${ droppedForBudget.length } fichier moins pertinent a été exclu de cette réponse afin que le reste tienne dans l'espace disponible.",
+        "${ droppedForBudget.length } fichiers les moins pertinents ont été exclus de cette réponse afin que le reste tienne dans l'espace disponible."
+      ],
       "${ expiringInOneDay } chat will expire in 1 day": [
         "${ expiringInOneDay } conversation expirera dans 1 jours",
         "${ expiringInOneDay } conversations expireront dans 1 jours"
@@ -1831,9 +1817,6 @@
       ],
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } est une IA axée sur la confidentialité qui vous aide à accomplir davantage tout en garantissant la sécurité de vos données. Libérez tout son potentiel et profitez d'un accès anticipé aux nouvelles fonctionnalités dès leur introduction."
-      ],
-      "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space; when it fills up, older messages are automatically summarized so you can keep chatting.": [
-        "${ LUMO_SHORT_APP_NAME } ne peut traiter qu'un volume limité d'informations par conversation. Vous pouvez voir ici ce qui occupe actuellement cet espace. Lorsque celui-ci est plein, les messages les plus anciens sont automatiquement résumés afin que vous puissiez continuer à discuter."
       ],
       "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
         "${ LUMO_SHORT_APP_NAME }+ , L’accès à l’API et les clés sont inclus dans un abonnement ${ LUMO_SHORT_APP_NAME }+ (connectez-vous pour changer d'abonnement ou gérer les clés)"
@@ -1956,9 +1939,6 @@
       "Drag and drop your files here to add them to the chat.": [
         "Faites glisser et déposez vos fichiers ici pour les ajouter au chat."
       ],
-      "Earlier messages were summarized to make room, so they no longer take up space here.": [
-        "Les messages précédents ont été résumés pour gagner de la place. Ils n'occupent donc plus d'espace ici."
-      ],
       "Enabled": [
         "Activé"
       ],
@@ -1994,6 +1974,9 @@
       ],
       "Files": [
         "Fichiers"
+      ],
+      "Files account for most of this usage.": [
+        "Les fichiers représentent la majeure partie de cette utilisation."
       ],
       "files are not supported for content extraction.": [
         "fichiers ne sont pas pris en charge pour l'extraction de contenu."
@@ -2069,6 +2052,9 @@
       ],
       "Manage keys after you sign in": [
         "Gérer les clés après vous être connecté"
+      ],
+      "Matching files": [
+        "Fichiers correspondants"
       ],
       "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
         "N'intégrez jamais de clés API dans des paquets côté client. En production, utilisez des variables d'environnement et un proxy côté serveur."
@@ -3193,6 +3179,9 @@
       "Back": [
         "Précédent"
       ],
+      "Back to chat": [
+        "Retour au chat"
+      ],
       "Cancel": [
         "Annuler"
       ],
@@ -3871,9 +3860,6 @@
       "You're using private browsing": [
         "Vous êtes en navigation privée."
       ],
-      "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
-        "Vos fichiers sont volumineux. ${ LUMO_SHORT_APP_NAME } ne pourra peut-être pas traiter toutes les informations."
-      ],
       "Your information is zero-access encrypted": [
         "Vos informations sont chiffrées par un chiffrement zéro accès."
       ],
@@ -3964,6 +3950,9 @@
       ],
       "9:16": [
         "9:16"
+      ],
+      "Artifact view": [
+        "Vu artefact"
       ],
       "Card theme": [
         "Thème de la carte"
@@ -7163,6 +7152,9 @@
       ],
       "Folder name": [
         "Nom du dossier"
+      ],
+      "Font size": [
+        "Taille de police"
       ],
       "Get the deal": [
         "Profitez de l'offre"

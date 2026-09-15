@@ -90,6 +90,9 @@
       "Add group": [
         "그룹 추가"
       ],
+      "Add more details": [
+        "자세한 내용 추가"
+      ],
       "Add new group": [
         "새 그룹 추가"
       ],
@@ -4721,6 +4724,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name }이(가) 회원님의 사용자 이름입니다. ${ emailAddress }를 생성하려면, 설정 > 신원 및 주소 > 짧은 도메인 (pm.me)로 이동하세요."
       ],
+      "A contact with this email address already exists": [
+        "해당 이메일 주소와 중복된 연락처가 이미 존재합니다."
+      ],
       "A group with this name already exists": [
         "이 이름을 가진 그룹이 이미 있습니다"
       ],
@@ -6113,6 +6119,12 @@
       ],
       "Security key": [
         "보안 키"
+      ],
+      "Still waiting?": [
+        "아직 대기 중인가요?"
+      ],
+      "Touch your security key to continue.": [
+        "계속하려면 보안 키를 터치하세요."
       ]
     },
     "fido2: Label": {
@@ -7041,6 +7053,9 @@
       "${ LUMO_APP_NAME } includes the writing assistant": [
         "${ LUMO_APP_NAME }에 글쓰기 도우미가 포함됩니다."
       ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME }가 ${ count }단계 더 앞서나갔어요. 계속할까요?"
+      ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
         "${ LUMO_SHORT_APP_NAME }은(는) 더 나은 이메일을 신속하고 수월하게 작성할 수 있도록 도와줍니다."
       ],
@@ -7130,6 +7145,9 @@
       ],
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized }개 라벨 선택함"
+      ],
+      "${ steps } step": [
+        "${ steps }단계"
       ],
       "${ storage } storage": [
         "저장공간 ${ storage }"
@@ -7257,8 +7275,17 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } 추가"
       ],
+      "Add ${ contact } to your contacts": [
+        "연락처에 ${ contact } 추가"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } 추가"
+      ],
+      "Add a contact": [
+        "연락처 추가"
+      ],
+      "Add contact": [
+        "연락처 추가"
       ],
       "Add image URL": [
         "이미지 URL 추가"
@@ -7473,11 +7500,26 @@
       "Center": [
         "가운데 정렬"
       ],
+      "Change a display setting": [
+        "디스플레이 설정 변경"
+      ],
       "Change display setting": [
         "디스플레이 설정 변경"
       ],
+      "Change how your mail is grouped": [
+        "메일 그룹화 방식 변경"
+      ],
+      "Change your list density": [
+        "목록 밀도 변경"
+      ],
+      "Change your mailbox layout": [
+        "메일함 레이아웃 변경"
+      ],
       "Change your password": [
         "비밀번호를 변경하십시오"
+      ],
+      "Change your theme": [
+        "테마 변경"
       ],
       "Checked Proton support": [
         "Proton 지원 확인됨"
@@ -7551,8 +7593,17 @@
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount }개의 새 달력 만들기"
       ],
+      "Create a filter": [
+        "필터 생성"
+      ],
+      "Create a folder": [
+        "폴더 생성"
+      ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "모든 온라인 영수증을 한 곳에 보관하려면 \"${ suggestedFolderName }\"와(과) 같은 폴더를 만들어 보세요."
+      ],
+      "Create a label": [
+        "라벨 생성"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "가져온 메시지에 대한 라벨, 가져오기의 시간 범위 및 가져오려는 폴더를 만드세요."
@@ -7655,6 +7706,12 @@
       ],
       "Do you want to re-sign the contact details?": [
         "연락처 상세정보에 다시 서명 하시겠습니까?"
+      ],
+      "Document in foundation-search index": [
+        "파운데이션 검색 색인 내의 문서"
+      ],
+      "Document lookup failed": [
+        "문서 미리보기 실패"
       ],
       "Don't forget to share the password with the recipient": [
         "받는 사람에게 비밀번호를 공유하는 것을 잊지 마세요"
@@ -8070,6 +8127,12 @@
       "Key fingerprint": [
         "지문 키"
       ],
+      "Label ${ emails }": [
+        "${ emails } 라벨 표시"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "${ emails }을(를) ${ names }(으)로 라벨 추가"
+      ],
       "Label all imported messages as": [
         "가져온 모든 메시지에 라벨 지정:"
       ],
@@ -8118,6 +8181,9 @@
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
         "로그는 개발자가 문제가 발생하기 전에 앱에 어떤 문제가 발생했는지 이해할 수 있는데 도움을 줍니다. 로그에는 앱 동작 및 오류 메시지가 포함되오나, 메시지 내용은 포함되지 않습니다."
       ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "문서 ${ lookup.result.docId } 미리보기"
+      ],
       "Low Priority": [
         "중요도 낮음"
       ],
@@ -8130,6 +8196,12 @@
       "Manage your labels": [
         "라벨 관리"
       ],
+      "Mark ${ emails } as read": [
+        "${ emails }을(를) 읽음으로 표시"
+      ],
+      "Mark ${ emails } as unread": [
+        "${ emails }을(를) 읽지 않음으로 표시"
+      ],
       "Mark all as read": [
         "모두 읽은 상태로 표시"
       ],
@@ -8141,6 +8213,12 @@
       ],
       "Mark as unread": [
         "읽지 않은 상태로 표시"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "전체 ${ place }을(를) 읽음으로 표시"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "전체 ${ place }을(를) 읽지 않음으로 표시"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 로고"
@@ -8214,6 +8292,12 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "대다수의 공용 WiFi 네트워크는 안전하지만 일부 네트워크는 보안이 취약하여 사이버 위협에 노출됩니다. VPN이 트래픽을 암호화하여 사용자를 보호합니다."
       ],
+      "Move ${ emails }": [
+        "${ emails } 이동"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "${ destination }(으)로 ${ emails } 이동"
+      ],
       "Move emails": [
         "이메일 이동"
       ],
@@ -8253,6 +8337,9 @@
       "No email open": [
         "열린 이메일이 없음"
       ],
+      "No emails selected": [
+        "선택된 이메일이 없습니다"
+      ],
       "No folder found": [
         "폴더 발견되지 않음"
       ],
@@ -8270,6 +8357,9 @@
       ],
       "No links cleaned": [
         "정리된 링크가 없음"
+      ],
+      "No location selected": [
+        "선택한 위치가 없습니다"
       ],
       "No messages to show": [
         "표시할 매시지 없음"
@@ -8303,6 +8393,12 @@
       ],
       "Not connected": [
         "연결되지 않음"
+      ],
+      "Not found in the encrypted search index.": [
+        "검색 색인에서 찾은 결과가 없습니다."
+      ],
+      "Not found in the foundation-search index.": [
+        "파운데이션 검색 색인에서 찾은 결과가 없습니다."
       ],
       "Not supported by this browser": [
         "이 브라우저에서 사용할 수 없음"
@@ -8559,11 +8655,20 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "계정 및 로그인 정보를 보관하는 곳 또는 비밀번호 관리자에서 이 사항을 업데이트하십시오."
       ],
+      "Remove the star from ${ emails }": [
+        "${ emails }(에)서 별표 표시 해제"
+      ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "이 앱과 연관된 모든 데이터 삭제 (다운로드된 메시지 포함)"
       ],
+      "Rename ${ folder } to…": [
+        "${ folder }을(를) 다음으로 이름 변경하기..."
+      ],
       "Rename folder": [
         "폴더 이름 변경"
+      ],
+      "Rename this folder": [
+        "이 폴더 이름 변경"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "피싱 시도로 메시지를 보고하면 메시지를 분석하여 필터를 개선할 수 있습니다. 다만, 분석을 위해 Proton에서 메시지의 내용을 전반적으로 확인할 수 있습니다."
@@ -8573,6 +8678,12 @@
       ],
       "Restore": [
         "복원"
+      ],
+      "Results came from the local search.": [
+        "로컬 검색를 통한 검색 결과입니다."
+      ],
+      "Results came from the server.": [
+        "서버를 통한 검색 결과입니다."
       ],
       "Right to Left": [
         "오른쪽에서 왼쪽으로"
@@ -8697,6 +8808,9 @@
       "Set up your organization": [
         "내 조직 설정하기"
       ],
+      "Set your signature": [
+        "서명 설정"
+      ],
       "Setting up ${ feature }…": [
         "${ feature } 설정 중…"
       ],
@@ -8744,6 +8858,12 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "죄송합니다. 이 메시지가 존재하지 않거나 이미 만료되었습니다."
+      ],
+      "Source document in encrypted search index": [
+        "암호화된 검색 색인 내의 출처 문서"
+      ],
+      "Star ${ emails }": [
+        "${ emails } 별표 표시"
       ],
       "Star emails": [
         "이메일 별표 표시"
@@ -9159,6 +9279,12 @@
       "Update filter": [
         "필터 업데이트"
       ],
+      "Update the filter ${ filter }": [
+        "필터 ${ filter } 업데이트"
+      ],
+      "Update this filter": [
+        "해당 필터 업데이트"
+      ],
       "Updating message content search...": [
         "메시지 컨텐츠 검색 업데이트..."
       ],
@@ -9523,7 +9649,7 @@
         "\"${ attachmentsFoundKeyword }\" 으로 작성하였지만, 추가된 첨부 파일이 없습니다. 이 메시지를 그대로 전송하시겠습니까?"
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
-        "친구가 연간 플랜을 구독하고 1개월 후, 월간 요금제에 구독하고 2개월 후에 크레딧 보상을 받게 됩니다."
+        "친구가 연간 플랜을 구독하고 1개월 후, 월간 플랜 구독 2개월 후에 크레딧 보상을 받게 됩니다."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "매 ${ renewCycle }개월마다 ${ renewAmountStr }(으)로 청구됩니다. 언제든지 취소할 수 있습니다."
@@ -12253,7 +12379,7 @@
         "1개 커스텀 이메일 도메인"
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain2 } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
+        "쇼핑 계정의 경우 honggildong@${ domain }, 뉴스 구독의 경우 honggildong@${ domain2 } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, 그리고 ${ DRIVE_APP_NAME } 에 스토리지 공간이 공유됩니다."
@@ -12433,7 +12559,7 @@
         "최대 ${ n }개 캘린더를 생성하거나 친구, 가족, 동료 및 조직에서 생성하세요."
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "가족 구성원에게 할당할 수 있는 이메일 주소/별칭을 ${ n }개까지 생성할 수 있습니다. 온라인 신원으로 사용할 수 있고, 쇼핑 계정으로 홍쇼핑@${ domain }을(를) 사용하는 것을 예로 들 수 있습니다."
+        "가족 구성원에게 할당할 수 있는 이메일 주소/별칭을 ${ n }개까지 생성할 수 있습니다. 온라인 신원으로 사용할 수 있고, 쇼핑 계정으로 HongShopper@${ domain }을(를) 사용하는 것을 예로 들 수 있습니다."
       ],
       "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
         "별칭을 위한 커스텀 도메인, 추가 메일함, 별칭으로부터의 이메일 전송 기능 등"
@@ -14705,6 +14831,12 @@
     "Snooze info": {
       "${ count } email → ${ wakeTime }": [
         "${ count }개 이메일 → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "${ emails } 방해금지"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "${ wakeTime }까지 ${ emails } 방해금지"
       ]
     },
     "Snooze message": {

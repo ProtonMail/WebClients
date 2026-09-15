@@ -93,6 +93,9 @@
       "Apply": [
         "Anvend"
       ],
+      "Ask me next time": [
+        "Spør meg neste gang"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "På det meste ${ maxContacts } kontakt er tillatt per kontaktgruppe.",
         "På det meste ${ maxContacts } kontakter er tillatt per kontaktgruppe."
@@ -375,6 +378,9 @@
       "Export this version (as docx)": [
         "Eksporter denne versjonen (som docx)"
       ],
+      "Export this version (as odt) (Beta)": [
+        "Eksporter denne versjonen (som odt) (Beta)"
+      ],
       "Export this version (as xlsx)": [
         "Eksporter denne versjonen (som xlsx)"
       ],
@@ -591,6 +597,9 @@
       "Open navigation": [
         "Åpne navigasjonsmeny"
       ],
+      "OpenDocument Text (.odt) (Beta)": [
+        "OpenDocument-tekst (.odt) (Beta)"
+      ],
       "PDF (.pdf)": [
         "PDF (.pdf)"
       ],
@@ -599,6 +608,9 @@
       ],
       "Preview contact": [
         "Forhåndsvis kontakt"
+      ],
+      "Preview logs": [
+        "Forhåndsvis logger"
       ],
       "Previous month": [
         "Forrige måned"
@@ -704,6 +716,9 @@
       ],
       "Save changes": [
         "Lagre endringer"
+      ],
+      "Save preferences": [
+        "Lagre preferanser"
       ],
       "Search": [
         "Søk"
@@ -2944,6 +2959,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } er ditt brukernavn. For å opprette ${ emailAddress }, gå til Innstillinger > Identitet og adresser > Kort domene (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "En kontakt med denne e-postadressen finnes allerede"
+      ],
       "A group with this name already exists": [
         "En gruppe med dette navnet eksisterer allerede."
       ],
@@ -3009,6 +3027,9 @@
       ],
       "Authentication error.": [
         "Autentiseringsfeil"
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Siden dette dokumentet lå i en delt mappe, er det bare mappeieren som kan gjenopprette det."
       ],
       "Bookmark password is not available": [
         "Bokmerkepassordet er ikke tilgjengelig"
@@ -3179,6 +3200,9 @@
       ],
       "Failed to fetch sharing info": [
         "Kunne ikke hente delingsinfo"
+      ],
+      "Failed to fetch sharing information": [
+        "Kunne ikke hente informasjon om deling"
       ],
       "Failed to get inviter keys": [
         "Kunne ikke hente invitasjonsnøkler"
@@ -4141,6 +4165,12 @@
       ],
       "Security key": [
         "Sikkerhetsnøkkel"
+      ],
+      "Still waiting?": [
+        "Venter du fremdeles?"
+      ],
+      "Touch your security key to continue.": [
+        "Berør sikkerhetsnøkkelen for å fortsette."
       ]
     },
     "fido2: Label": {
@@ -4906,6 +4936,9 @@
       "Continue": [
         "Fortsett"
       ],
+      "Converting document...": [
+        "Konverterer dokument..."
+      ],
       "Copied to clipboard": [
         "Kopiert til utklippstavlen"
       ],
@@ -4958,6 +4991,9 @@
       ],
       "Creating link to folder": [
         "Oppretter kobling til mappe"
+      ],
+      "Creating new document...": [
+        "Oppretter nytt dokument..."
       ],
       "Current plan": [
         "Gjeldende plan"
@@ -5055,6 +5091,12 @@
       "Enter your own password (as trusted contact).": [
         "Skriv inn ditt eget passord (som betrodd kontakt)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Feil ved konvertering av dokument: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Feil ved lasting av dokument: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Feil ved synkronisering"
       ],
@@ -5108,6 +5150,12 @@
       ],
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
         "Skaff deg en profesjonell e-post med @din-bedrift.com-adresse, 1 TB sikker lagringsplass per bruker, lengre videosamtaler og mer med ${ BRAND_NAME } Workspace."
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Få e-postoppdateringer for kommentarer og forslag som er lagt til i dokumentene dine."
+      ],
+      "Get Notified About Comments": [
+        "Bli varslet om kommentarer"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Myndigheter og Internett-leverandører kan overvåke nettaktiviteten din. Ved å skjule din virkelige IP og kryptere aktiviteten din blir surfingen privat."
@@ -5266,11 +5314,17 @@
       "Loading...": [
         "Laster..."
       ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Logger hjelper oss å forstå hva som skjedde før problemet oppstod. De inkluderer apphandlinger og feilmeldinger, men ikke noe meldingsinnhold."
+      ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Det ser ut som du er frakoblet. Dokumentet kan ikke redigeres mens du er frakoblet. Kontroller enhetens tilkobling."
       ],
       "Low Priority": [
         "Lav prioritet"
+      ],
+      "Making a copy...": [
+        "Lager en kopi…"
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maksimum ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn",
@@ -5302,6 +5356,9 @@
       ],
       "No contacts added yet": [
         "Ingen kontakter er lagt til enda"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Ingen dokument oppgitt i nettadressen. Gå tilbake til ${ DRIVE_APP_NAME } og velg et dokument."
       ],
       "No email address": [
         "Ingen e-postadresse"
@@ -5596,6 +5653,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Eieren av denne adressen har deaktivert ende-til-ende-kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Nettadressen du skrev inn, ser ut til å være kopiert feil fra Slack. Når du kopierer lange koblinger fra Slack, høyreklikker du på koblingen og velger \"Kopier kobling\" i stedet for å kopiere den avkortede URL-teksten direkte."
+      ],
       "There are no documents in the trash.": [
         "Det er ingen dokumenter i papirkurven."
       ],
@@ -5658,6 +5718,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For å bekjempe søppelpost og misbruk må du bekrefte at du er et menneske."
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "For å hjelpe til med feilsøkingen lastes feilsøkingsinformasjon opp til Drive-kontoen og deles på en sikker måte med kundestøtteteamet til ${ BRAND_NAME }. Informasjonen kan inneholde filinnhold. Du kan når som helst stoppe delingen, og de delte dataene slettes når gjennomgangen er fullført."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "For å hjelpe deg med å huske passordet ditt, ber vi deg om å skrive det inn med jevne mellomrom. Vi ber deg færre ganger over tid."
@@ -6055,6 +6118,9 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-brukernavn"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tegn"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidig utilgjengelig. Kom tilbake senere)."
       ],
@@ -6232,6 +6298,9 @@
       "Emails (last month)": [
         "E-poster (siste måned)"
       ],
+      "Enable email notifications": [
+        "Aktiver epostvarsler"
+      ],
       "Encrypt emails": [
         "Krypter e-poster"
       ],
@@ -6288,6 +6357,12 @@
       ],
       "Include application logs in bug report": [
         "Inkluder applikasjonslogger i feilrapport"
+      ],
+      "Include debug information": [
+        "Inkluder feilsøkingsinformasjon"
+      ],
+      "Include document name in notification": [
+        "Inkluder dokumentnavn i varsel"
       ],
       "Include message and file name in invite email": [
         "Inkluder melding og filnavn i invitasjons-e-post"
@@ -6525,6 +6600,9 @@
       ],
       "Your password (trusted contact)": [
         "Passordet ditt (betrodd kontakt)"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Navn som ikke kan dekrypteres"
       ]
     },
     "Label for contact group color": {
@@ -7961,6 +8039,9 @@
       "All items will soon be permanently deleted from trash": [
         "Alle elementer vil snart bli slettet permanent fra papirkurven."
       ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Siden dette dokumentet lå i en delt mappe, er det bare mappeieren som kan gjenopprette det."
+      ],
       "Cannot load link": [
         "Kan ikke laste kobling"
       ],
@@ -8024,6 +8105,9 @@
       "Failed to restore document": [
         "Kunne ikke gjenopprette dokumentet"
       ],
+      "Failed to submit report": [
+        "Kunne ikke sende inn rapporten"
+      ],
       "Failed to trash document": [
         "Kunne ikke legge dokumentet i papirkurven"
       ],
@@ -8060,6 +8144,9 @@
       ],
       "Recent documents updated": [
         "Nylige dokumenter oppdatert"
+      ],
+      "Report submitted successfully": [
+        "Rapport ble sendt"
       ],
       "Root folder failed to be loaded": [
         "Rotmappen kunne ikke lastes inn"
@@ -8820,7 +8907,7 @@
     },
     "q3campaign2026: Info, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "q3campaign2026: Info, Family, Drive first": {
@@ -8956,6 +9043,9 @@
       ]
     },
     "Role": {
+      "Organization Admin": [
+        "Organisasjonsadministrator"
+      ],
       "Security Admin": [
         "Sikkerhetsadministrator"
       ],
@@ -9262,6 +9352,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Oppretter nytt regneark..."
+      ],
       "Detect automatically": [
         "Oppdag automatisk"
       ],
@@ -10462,6 +10555,9 @@
       "Report a problem": [
         "Rapporter et problem"
       ],
+      "Report issue": [
+        "Rapporter en feil"
+      ],
       "Request new code": [
         "Be om en ny kode"
       ],
@@ -10743,6 +10839,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Importen starter med de nyeste meldingene."
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Denne koblingen har utløpt. Forleng utløpsdatoen."
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Med mindre de blir dechiffrert, forblir krypterte passord sikre selv om de blir eksponert."
