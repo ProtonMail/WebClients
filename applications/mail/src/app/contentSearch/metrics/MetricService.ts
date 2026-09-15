@@ -77,6 +77,13 @@ export class MetricService {
         });
     }
 
+    private updateSession(mutate: (session: SearchSession) => void) {
+        if (!this.session) {
+            return;
+        }
+        mutate(this.session);
+    }
+
     /** Call once, when the v1+v2 indexing pipeline begins — see `ESAdapter.startIndexingJob`. */
     startIndexing() {
         this.indexingStartedAt = Date.now();
@@ -116,10 +123,10 @@ export class MetricService {
         const durationMs = this.searchStartedAt !== undefined ? Date.now() - this.searchStartedAt : 0;
         this.searchStartedAt = undefined;
 
-        if (this.session) {
-            this.session.hasResults = hasResults;
-            this.session.scrollerMode = SEARCH_RESULT_SCROLLER_MODE;
-        }
+        this.updateSession((session) => {
+            session.hasResults = hasResults;
+            session.scrollerMode = SEARCH_RESULT_SCROLLER_MODE;
+        });
 
         this.reportTelemetry({
             measurementGroup: TelemetryMeasurementGroups.contentSearch,
@@ -149,15 +156,14 @@ export class MetricService {
         messageAgeDays: number;
     }) {
         this.logger.info('Result opened');
-
-        if (this.session) {
-            this.session.resultsOpened += 1;
-            this.session.actionsPerformed += 1;
-            if (this.session.firstOpenedPosition === undefined) {
-                this.session.firstOpenedPosition = resultPosition;
+        this.updateSession((session) => {
+            session.resultsOpened += 1;
+            session.actionsPerformed += 1;
+            if (session.firstOpenedPosition === undefined) {
+                session.firstOpenedPosition = resultPosition;
             }
             this.recordFirstAction('open');
-        }
+        });
 
         this.reportTelemetry({
             measurementGroup: TelemetryMeasurementGroups.contentSearch,
@@ -183,11 +189,10 @@ export class MetricService {
         resultPosition?: number;
     }) {
         this.logger.info('Result action performed');
-
-        if (this.session) {
-            this.session.actionsPerformed += 1;
+        this.updateSession((session) => {
+            session.actionsPerformed += 1;
             this.recordFirstAction(action);
-        }
+        });
 
         this.reportTelemetry({
             measurementGroup: TelemetryMeasurementGroups.contentSearch,
