@@ -2,7 +2,9 @@ import type { ToolDefinition } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { LOAD_GUIDE_TOOL_NAME } from '@proton/llm/lib/lumoAgent/engine/loadGuide';
 import { AutoReplyDuration } from '@proton/shared/lib/constants';
 
+import { DraftKind } from './helpers/draftKind';
 import { buildLumoMailConfig } from './registry';
+import { createDraftDefinition } from './skills/compose/createDraft';
 import { createFilterDefinition } from './skills/filters/createFilter';
 import { updateFilterDefinition } from './skills/filters/updateFilter';
 import { addContactDefinition } from './skills/organise/addContact';
@@ -19,7 +21,7 @@ import { listFiltersDefinition } from './skills/reads/listFilters';
 import { listFoldersDefinition } from './skills/reads/listFolders';
 import { listLabelsDefinition } from './skills/reads/listLabels';
 import { openFolderDefinition } from './skills/reads/openFolder';
-import { DraftKind, readComposerDefinition } from './skills/reads/readComposer';
+import { readComposerDefinition } from './skills/reads/readComposer';
 import { readEmailDefinition } from './skills/reads/readEmail';
 import { readOpenEmailDefinition } from './skills/reads/readOpenEmail';
 import { readThreadDefinition } from './skills/reads/readThread';
@@ -231,6 +233,10 @@ const TOOL_PAYLOADS = [
         { signature: 'Bob Smith\nAcme Ltd', isSetWithoutText: false },
     ]),
     payloads(changeSignatureDefinition, [undefined]),
+    payloads(createDraftDefinition, [
+        { kind: DraftKind.NEW, reference: 'composer-x7b2q1' },
+        { kind: DraftKind.REPLY_ALL, reference: 'composer-x7b2q1' },
+    ]),
 ];
 
 const DIRECTIVES = [

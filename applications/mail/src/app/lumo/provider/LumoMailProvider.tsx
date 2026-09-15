@@ -27,13 +27,17 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { checkSieveFilter } from '@proton/shared/lib/api/filters';
 import { updateAutoresponder, updateViewLayout, updateViewMode } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';
-import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings, Recipient, UserSettings } from '@proton/shared/lib/interfaces';
 
+import { useOnCompose } from '../../containers/ComposeProvider';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLocation';
 import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
 import useSnooze from '../../hooks/actions/useSnooze';
+import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
+import type { RecipientType } from '../../models/address';
+import { composerActions } from '../../store/composers/composersSlice';
 import { load as loadConversationAction } from '../../store/conversations/conversationsActions';
 import { backendActionStarted, markAll as markAllAction } from '../../store/elements/elementsActions';
 import { useMailDispatch, useMailStore } from '../../store/hooks';
@@ -91,6 +95,7 @@ const LumoMailProvider = ({ children }: Props) => {
     const [user] = useUser();
     const [addresses = []] = useAddresses();
     const esStatus = useRef<ESStatusBooleans>(defaultESStatus);
+    const onCompose = useOnCompose();
 
     // Latest values, refreshed every render, so the once-built handlers always read the current
     // snapshot (mirrors the POC's ref pattern; keeps the config referentially stable).
@@ -117,6 +122,7 @@ const LumoMailProvider = ({ children }: Props) => {
         userSettings,
         user,
         addresses,
+        onCompose,
     };
     const latest = useRef(current);
     latest.current = current;
@@ -191,6 +197,14 @@ const LumoMailProvider = ({ children }: Props) => {
             loadConversation: (conversationID) =>
                 latest.current.dispatch(loadConversationAction({ conversationID, messageID: undefined })).unwrap(),
             initializeMessage: (messageID, labelID) => latest.current.initializeMessage(messageID, labelID),
+            composeDraft: ({ action, referenceMessage, bodyBeforeQuote }) =>
+                latest.current.onCompose({ type: ComposeTypes.newMessage, action, referenceMessage, bodyBeforeQuote }),
+            setDraftRecipients: (composerID, recipients) => {
+                const named = Object.entries(recipients) as [RecipientType, Recipient[]][];
+                named.forEach(([type, list]) =>
+                    latest.current.dispatch(composerActions.setRecipients({ ID: composerID, type, recipients: list }))
+                );
+            },
         };
         return buildLumoMailConfig(deps);
     }, []);
