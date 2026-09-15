@@ -6,10 +6,13 @@ import { c } from 'ttag';
 import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import type { ModalStateProps } from '@proton/components';
-import { GenericError, Prompt, useErrorHandler, useModalState } from '@proton/components';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import GenericError from '@proton/components/containers/error/GenericError';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import {
     acceptExternalGroupMembership,
     declineExternalGroupMembership,
@@ -18,6 +21,7 @@ import {
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
+import noop from '@proton/utils/noop';
 
 import PublicFooter from '../components/PublicFooter';
 import PublicLayout from '../components/PublicLayout';
@@ -280,7 +284,11 @@ const GroupMembershipsContainer = () => {
                             return;
                         }
 
-                        handleSetState(leaveGroupDetails.leaveGroupMemberID, leaveGroupDetails.leaveGroupID, false);
+                        handleSetState(
+                            leaveGroupDetails.leaveGroupMemberID,
+                            leaveGroupDetails.leaveGroupID,
+                            false
+                        ).catch(noop);
                         setLeaveGroupDetails(null);
                     }}
                 />
@@ -289,8 +297,10 @@ const GroupMembershipsContainer = () => {
     );
 };
 
-export default () => (
+const GroupMembershipsPage = () => (
     <main className="main-area h-full">
         <GroupMembershipsContainer />
     </main>
 );
+
+export default GroupMembershipsPage;

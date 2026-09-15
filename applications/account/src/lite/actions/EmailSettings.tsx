@@ -3,15 +3,13 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import {
-    AlmostAllMailToggle,
-    AutoDeleteSpamAndTrashDaysToggle,
-    DelaySendSecondsSelect,
-    NextMessageOnMoveToggle,
-    ShowMovedToggle,
-    SwipeActionSelect,
-} from '@proton/components';
 import ViewModeToggle from '@proton/components/containers/layouts/ViewModeToggle';
+import AlmostAllMailToggle from '@proton/components/containers/messages/AlmostAllMailToggle';
+import AutoDeleteSpamAndTrashDaysToggle from '@proton/components/containers/messages/AutoDeleteSpamAndTrashDaysToggle';
+import DelaySendSecondsSelect from '@proton/components/containers/messages/DelaySendSecondsSelect';
+import NextMessageOnMoveToggle from '@proton/components/containers/messages/NextMessageOnMoveToggle';
+import ShowMovedToggle from '@proton/components/containers/messages/ShowMovedToggle';
+import SwipeActionSelect from '@proton/components/containers/messages/SwipeActionSelect';
 import useLoading from '@proton/hooks/useLoading';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';

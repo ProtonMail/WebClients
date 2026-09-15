@@ -1,6 +1,6 @@
 import { type ActorRefFrom, assign, setup } from 'xstate';
 
-import type { VerificationDataResult } from '@proton/components/index';
+import type { VerificationDataResult } from '@proton/components/containers/api/humanVerification/interface';
 
 type Result = '2fa-disabled' | 'skipped';
 

@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { PassLogo, Toggle } from '@proton/components';
+import PassLogo from '@proton/components/components/logo/PassLogo';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import type { ToggleProps } from '@proton/components/components/toggle/Toggle';
 import { type CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';

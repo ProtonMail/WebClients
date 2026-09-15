@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useModalState } from '@proton/components/index';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import { getCategoryTabFromLabel } from '@proton/mail/features/categoriesView/categoriesHelpers';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';

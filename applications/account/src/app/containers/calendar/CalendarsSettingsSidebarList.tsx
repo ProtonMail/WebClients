@@ -5,18 +5,17 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
-import type { SectionConfig } from '@proton/components';
-import {
-    SettingsListItem,
-    SidebarListItem,
-    SidebarListItemButton,
-    SidebarListItemContent,
-    SidebarListItemContentIcon,
-    SidebarListItemLink,
-    navigationIconClassName,
-} from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
+import SettingsListItem from '@proton/components/components/sidebar/SettingsListItem';
+import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
+import SidebarListItemButton from '@proton/components/components/sidebar/SidebarListItemButton';
+import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
+import SidebarListItemContentIcon, {
+    navigationIconClassName,
+} from '@proton/components/components/sidebar/SidebarListItemContentIcon';
+import SidebarListItemLink from '@proton/components/components/sidebar/SidebarListItemLink';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
+import type { SectionConfig } from '@proton/components/containers/layout/interface';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { getVisualCalendars, sortCalendars } from '@proton/shared/lib/calendar/calendar';

@@ -3,9 +3,9 @@ import { useState } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { ThemeColorUnion } from '@proton/colors/types';
-import { useFormErrors } from '@proton/components';
 import { usePasswordPolicyValidation } from '@proton/components/components/passwordPolicy';
 import PasswordWithPolicyInputs from '@proton/components/components/passwordPolicy/PasswordWithPolicyInputs';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useLoading from '@proton/hooks/useLoading';
 import type { PasswordPolicies } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';

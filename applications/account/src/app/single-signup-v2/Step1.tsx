@@ -10,20 +10,18 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Vr } from '@proton/atoms/Vr/Vr';
-import {
-    CurrencySelector,
-    CycleSelector,
-    SkeletonLoader,
-    useActiveBreakpoint,
-    useErrorHandler,
-    useHandler,
-    useModalState,
-} from '@proton/components';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import CurrencySelector from '@proton/components/containers/payments/CurrencySelector';
+import CycleSelector from '@proton/components/containers/payments/CycleSelector';
 import { forceAddonsMinMaxConstraints } from '@proton/components/containers/payments/planCustomizer';
 import { getShortBillingText } from '@proton/components/containers/payments/subscription/helpers';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import { useHandler } from '@proton/components/hooks/useHandler';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import metrics from '@proton/metrics';
 import { useCouponConfig } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';

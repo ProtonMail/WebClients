@@ -1,4 +1,4 @@
-import type { OnLoginCallbackArguments } from '@proton/components';
+import type { OnLoginCallbackArguments } from '@proton/components/containers/app/interface';
 import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 
 export const addSession = (previousSessions: ActiveSession[] | undefined, session: OnLoginCallbackArguments) => {

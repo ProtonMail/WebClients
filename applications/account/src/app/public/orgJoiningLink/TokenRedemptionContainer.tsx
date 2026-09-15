@@ -8,17 +8,15 @@ import { c } from 'ttag';
 import { parseJoiningLinkConfig } from '@proton/account/orgJoiningLink/helpers';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import {
-    InputFieldTwo,
-    PasswordInputTwo,
-    Progress,
-    TotpInput,
-    useErrorHandler,
-    useFormErrors,
-} from '@proton/components';
 import { PasswordPolicySpotlight, usePasswordPolicyValidation } from '@proton/components/components/passwordPolicy';
 import PasswordStrengthIndicator from '@proton/components/components/passwordStrengthIndicator/PasswordStrengthIndicator';
+import Progress from '@proton/components/components/progress/Progress';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
+import TotpInput from '@proton/components/components/v2/input/TotpInput';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { redeemToken, verifyCode } from '@proton/shared/lib/api/authLoginLink';

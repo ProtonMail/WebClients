@@ -5,9 +5,10 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { GenericError, useErrorHandler } from '@proton/components';
+import GenericError from '@proton/components/containers/error/GenericError';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import type { ExternalForwardingResult } from '@proton/shared/lib/api/forwardings';
 import {
     acceptExternalForwarding,

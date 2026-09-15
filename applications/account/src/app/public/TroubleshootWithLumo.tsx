@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useTheme } from '@proton/components';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -66,6 +66,7 @@ const TroubleshootWithLumo = () => {
     return (
         <div className="relative inline-block text-left">
             {src && (
+                // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                 <div
                     role="dialog"
                     aria-label={title}

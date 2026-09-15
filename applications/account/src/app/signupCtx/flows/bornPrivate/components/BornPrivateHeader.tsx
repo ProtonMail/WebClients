@@ -1,4 +1,4 @@
-import { Logo } from '@proton/components/index';
+import Logo from '@proton/components/components/logo/Logo';
 import { APPS } from '@proton/shared/lib/constants';
 import { locales } from '@proton/shared/lib/i18n/locales';
 

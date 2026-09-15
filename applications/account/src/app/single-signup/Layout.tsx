@@ -4,13 +4,11 @@ import { c } from 'ttag';
 
 import { useConfig } from '@proton/app-context/useConfig';
 import { Href } from '@proton/atoms/Href/Href';
-import {
-    ProtonForBusinessLogo,
-    PublicTopBanners,
-    VpnForBusinessLogo,
-    VpnLogo,
-    useActiveBreakpoint,
-} from '@proton/components';
+import ProtonForBusinessLogo from '@proton/components/components/logo/ProtonForBusinessLogo';
+import VpnForBusinessLogo from '@proton/components/components/logo/VpnForBusinessLogo';
+import VpnLogo from '@proton/components/components/logo/VpnLogo';
+import PublicTopBanners from '@proton/components/containers/topBanners/PublicTopBanners';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';

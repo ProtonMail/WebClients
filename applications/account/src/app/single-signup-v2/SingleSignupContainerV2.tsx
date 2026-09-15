@@ -9,16 +9,14 @@ import { generateDeferredMnemonicData } from '@proton/account/recovery/recoveryK
 import { usePrefetchGenerateRecoveryKit } from '@proton/account/recovery/recoveryKit/usePrefetchGenerateRecoveryKit';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
-import type { OnLoginCallback } from '@proton/components';
-import {
-    StandardLoadErrorPage,
-    UnAuthenticated,
-    useActiveBreakpoint,
-    useErrorHandler,
-    useModalState,
-} from '@proton/components';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
+import type { OnLoginCallback } from '@proton/components/containers/app/interface';
+import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated';
 import type { AuthSession } from '@proton/components/containers/login/interface';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';

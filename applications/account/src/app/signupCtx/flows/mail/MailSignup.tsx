@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { usePrefetchGenerateRecoveryKit } from '@proton/account/recovery/recoveryKit/usePrefetchGenerateRecoveryKit';
-import { LoaderPage } from '@proton/components';
+import LoaderPage from '@proton/components/containers/app/LoaderPage';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { CYCLE } from '@proton/payments/core/constants';
 import { APPS } from '@proton/shared/lib/constants';

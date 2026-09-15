@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { AppsLogos } from '@proton/components';
+import AppsLogos from '@proton/components/components/appsLogos/AppsLogos';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 
 const BornPrivateFooter = () => {

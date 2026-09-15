@@ -4,8 +4,12 @@ import { c } from 'ttag';
 
 import { updateAddressThunk } from '@proton/account/addresses/updateAddress';
 import { Button } from '@proton/atoms/Button/Button';
-import { Editor, type EditorActions, Form, InputFieldTwo, useErrorHandler } from '@proton/components';
+import Editor from '@proton/components/components/editor/Editor';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
+import type { EditorActions } from '@proton/components/components/editor/interface';
+import Form from '@proton/components/components/form/Form';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import type { WithLoading } from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Address } from '@proton/shared/lib/interfaces';

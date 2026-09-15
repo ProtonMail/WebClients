@@ -4,8 +4,8 @@ import { useSelector } from '@xstate/react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { TotpRecoveryCodeInputField } from '@proton/components/containers/account/totp/TotpInputs';
-import { useFormErrors } from '@proton/components/index';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { useTotpBackupCodesActorRef } from '../../UnauthedLost2FAContext';

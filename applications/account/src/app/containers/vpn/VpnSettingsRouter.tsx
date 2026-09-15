@@ -1,13 +1,11 @@
 import type { ReactNode } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
-import {
-    OpenVPNConfigurationSection,
-    OpenVPNCredentialsSection,
-    PrivateMainSettingsArea,
-    WireGuardConfigurationSection,
-} from '@proton/components';
+import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
+import OpenVPNConfigurationSection from '@proton/components/containers/vpn/OpenVPNConfigurationSection/OpenVPNConfigurationSection';
+import OpenVPNCredentialsSection from '@proton/components/containers/vpn/OpenVPNCredentialsSection';
+import WireGuardConfigurationSection from '@proton/components/containers/vpn/WireGuardConfigurationSection/WireGuardConfigurationSection';
 import { VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { VPNClientsSection } from '@proton/vpn/components/VPNClientsSection';
 import { TVContainer } from '@proton/vpn/components/tv';

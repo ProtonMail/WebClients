@@ -15,7 +15,7 @@ import { LastChanged } from '@proton/components/containers/recovery/LastChanged'
 import SignInWithAnotherDeviceModal from '@proton/components/containers/recovery/SignInWithAnotherDeviceModal';
 import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import { useLoading } from '@proton/hooks/index';
+import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

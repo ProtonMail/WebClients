@@ -4,9 +4,13 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
-import type { PromptProps } from '@proton/components';
-import { InputFieldTwo, PhoneInput, Prompt, useFormErrors, useModalState } from '@proton/components';
-import { useLoading } from '@proton/hooks';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import type { PromptProps } from '@proton/components/components/prompt/Prompt';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import PhoneInput from '@proton/components/components/v2/phone/LazyPhoneInput';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import useLoading from '@proton/hooks/useLoading';
 import { validateEmail, validatePhone } from '@proton/shared/lib/api/core/validate';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';

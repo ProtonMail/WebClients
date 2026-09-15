@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import type { ThemeColor } from '@proton/colors';
-import type { SectionConfig, SubrouteGroup } from '@proton/components';
 import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
+import type { SectionConfig, SubrouteGroup } from '@proton/components/containers/layout/interface';
 import { IcArrowDownToSquare } from '@proton/icons/icons/IcArrowDownToSquare';
 import { IcArrowUpBigLine } from '@proton/icons/icons/IcArrowUpBigLine';
 import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';

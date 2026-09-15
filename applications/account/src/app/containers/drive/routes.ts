@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { SectionConfig } from '@proton/components';
+import type { SectionConfig } from '@proton/components/containers/layout/interface';
 import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 

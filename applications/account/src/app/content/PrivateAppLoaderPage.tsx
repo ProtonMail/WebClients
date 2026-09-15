@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { ProtonLoader } from '@proton/atoms/ProtonLoader/ProtonLoader';
-import { TextLoader } from '@proton/components';
+import TextLoader from '@proton/components/components/loader/TextLoader';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';

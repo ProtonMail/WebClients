@@ -9,7 +9,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { getStatus } from '@proton/components/containers/addresses/helper';
-import { useLoading } from '@proton/hooks/index';
+import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { getIsNonDefault, sortAddresses } from '@proton/shared/lib/mail/addresses';

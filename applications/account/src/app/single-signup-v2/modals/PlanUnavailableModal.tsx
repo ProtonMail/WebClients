@@ -1,9 +1,11 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components';
-import { useLoading } from '@proton/hooks';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import useLoading from '@proton/hooks/useLoading';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, DRIVE_APP_NAME, MAIL_APP_NAME, PASS_APP_NAME, WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import type { User } from '@proton/shared/lib/interfaces';
