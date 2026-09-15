@@ -1,0 +1,47 @@
+import { getClientID } from '../../lib/apps/helper';
+import type { APP_NAMES } from '../../lib/constants';
+import { APPS } from '../../lib/constants';
+import { getAppVersionHeaders } from '../../lib/fetch/headers';
+
+describe('app version headers', () => {
+    it('should return new app headers', () => {
+        const test = (app: APP_NAMES, version: string, expectation: string) => {
+            expect(getAppVersionHeaders(getClientID(app), version)).toEqual({ 'x-pm-appversion': expectation });
+        };
+
+        for (const { app, version, expectation } of [
+            {
+                app: APPS.PROTONMAIL,
+                version: '4.999.999',
+                expectation: 'web-mail@4.999.999-dev',
+            },
+            {
+                app: APPS.PROTONMAIL,
+                version: '4.14.6',
+                expectation: 'web-mail@4.14.6-dev',
+            },
+            {
+                app: APPS.PROTONCALENDAR,
+                version: '4.0.1',
+                expectation: 'web-calendar@4.0.1-dev',
+            },
+            {
+                app: APPS.PROTONVPN_SETTINGS,
+                version: '4.999.999',
+                expectation: 'web-vpn-settings@4.999.999-dev',
+            },
+            {
+                app: APPS.PROTONVERIFICATION,
+                version: '4.1.0',
+                expectation: 'web-verify@4.1.0-dev',
+            },
+            {
+                app: APPS.PROTONADMIN,
+                version: '4.12.12',
+                expectation: 'web-admin@4.12.12-dev',
+            },
+        ]) {
+            test(app, version, expectation);
+        }
+    });
+});
