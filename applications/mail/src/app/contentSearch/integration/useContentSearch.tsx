@@ -117,6 +117,8 @@ export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1, isActive }
     if (!adapterRef.current) {
         const indexService = getSharedIndexService(user.ID, getUserKeys, logger);
         const metricService = new MetricService(api, logger);
+        // A settable field, not a constructor dependency — see `IndexService.metricService`.
+        indexService.metricService = metricService;
         const searchService = new SearchService(user.ID, getUserKeys, indexService.dbLock, logger, metricService);
 
         adapterRef.current = new ESAdapter({

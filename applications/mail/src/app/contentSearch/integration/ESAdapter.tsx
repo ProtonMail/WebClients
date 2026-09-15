@@ -252,7 +252,6 @@ export class ESAdapter implements FunctionsV2 {
         const job = new IndexingJob(
             {
                 indexService: this.indexService,
-                metricService: this.metricService,
                 initialV1Status: this.lastV1Status!,
                 updateESStatus: this.updateESStatus,
                 updateESProgress: this.updateESProgress,
