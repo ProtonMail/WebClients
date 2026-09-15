@@ -222,6 +222,7 @@ export enum EASY_SWITCH_SOURCES {
     MAIL_WEB_CHECKLIST = 'mail-web-checklist',
     MAIL_WEB_CHECKLIST_BYOE = 'mail-web-checklist-byoe',
     CALENDAR_WEB_CREATE_EVENT = 'calendar-web-create-event',
+    DRIVE_WEB_SIDEBAR = 'drive-web-sidebar',
     // Used as fallback when source could be undefined, will allow ot indicate missing source in log tool
     UNKNOWN = 'unknown',
 }
