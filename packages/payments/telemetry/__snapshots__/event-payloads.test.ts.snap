@@ -1,0 +1,279 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`event payloads sent to Proton Analytics add_lumo 1`] = `
+{
+  "event": "subscription_modification_add_lumo",
+  "payload": undefined,
+}
+`;
+
+exports[`event payloads sent to Proton Analytics add_meet 1`] = `
+{
+  "event": "subscription_modification_add_meet",
+  "payload": undefined,
+}
+`;
+
+exports[`event payloads sent to Proton Analytics add_pass 1`] = `
+{
+  "event": "subscription_modification_add_pass",
+  "payload": undefined,
+}
+`;
+
+exports[`event payloads sent to Proton Analytics billing_address_edit 1`] = `
+{
+  "event": "billing_address_edit",
+  "payload": {
+    "addressChanged": false,
+    "cityChanged": true,
+    "companyChanged": false,
+    "firstNameChanged": false,
+    "lastNameChanged": false,
+    "nextCountry": "FR",
+    "nextState": null,
+    "previousCountry": "DE",
+    "previousState": null,
+    "source": "invoices",
+    "stage": "save_success",
+    "vatIdChanged": true,
+    "zipCodeChanged": true,
+  },
+}
+`;
+
+exports[`event payloads sent to Proton Analytics change_audience 1`] = `
+{
+  "event": "subscription_modification_change_audience",
+  "payload": {
+    "audience": "family",
+    "build": "proton-account",
+    "product": "proton-mail",
+  },
+}
+`;
+
+exports[`event payloads sent to Proton Analytics change_billing_country 1`] = `
+{
+  "event": "subscription_modification_change_billing_country",
+  "payload": {
+    "action": "change_state",
+    "currentCountry": "US",
+    "currentState": "CA",
+    "selectedCountry": "US",
+    "selectedState": "NY",
+  },
+}
+`;
+
+exports[`event payloads sent to Proton Analytics change_step 1`] = `
+{
+  "event": "subscription_modification_change_step",
+  "payload": {
+    "build": "proton-account",
+    "product": "proton-mail",
+    "step": "checkout",
+  },
+}
+`;
+
+exports[`event payloads sent to Proton Analytics closed_by_user 1`] = `
+{
+  "event": "subscription_modification_closed_by_user",
+  "payload": {
+    "build": "proton-account",
+    "product": "proton-mail",
+  },
+}
+`;
+
+exports[`event payloads sent to Proton Analytics estimation_change 1`] = `
+{
+  "event": "subscription_modification_estimation_change",
+  "payload": {
+    "action": "cycle_changed",
+    "build": "proton-account",
+    "currentCoupon": "CURRENT_COUPON",
+    "currentCurrency": "EUR",
+    "currentCycle": 12,
+    "currentPlanIDs": {
+      "mail2022": 1,
+    },
+    "currentPlanName": "mail2022",
+    "isTrial": false,
+    "method": "saved_card",
+    "methodVariant": null,
+    "product": "proton-mail",
+    "selectedCoupon": "SELECTED_COUPON",
+    "selectedCurrency": "EUR",
+    "selectedCycle": 24,
+    "selectedPlanIDs": {
+      "1member-bundlepro2024": 5,
+      "bundlepro2024": 1,
+    },
+    "selectedPlanName": "bundlepro2024",
+  },
+}
+`;
+
+exports[`event payloads sent to Proton Analytics init 1`] = `
+{
+  "event": "subscription_modification_init",
+  "payload": {
+    "build": "proton-account",
+    "currentCoupon": "CURRENT_COUPON",
+    "currentCurrency": "EUR",
+    "currentCycle": 12,
+    "currentPlanIDs": {
+      "mail2022": 1,
+    },
+    "currentPlanName": "mail2022",
+    "initialCountry": "DE",
+    "initialHasZipCode": true,
+    "initialState": null,
+    "isTrial": false,
+    "product": "proton-mail",
+    "selectedCoupon": "SELECTED_COUPON",
+    "selectedCurrency": "EUR",
+    "selectedCycle": 24,
+    "selectedPlanIDs": {
+      "1member-bundlepro2024": 5,
+      "bundlepro2024": 1,
+    },
+    "selectedPlanName": "bundlepro2024",
+    "selectedStep": "checkout",
+  },
+}
+`;
+
+exports[`event payloads sent to Proton Analytics open_modal 1`] = `
+{
+  "event": "account_home_open_modal",
+  "payload": {
+    "build": "proton-account",
+    "currentCoupon": "CURRENT_COUPON",
+    "currentCurrency": "EUR",
+    "currentCycle": 12,
+    "currentPlanIDs": {
+      "mail2022": 1,
+    },
+    "currentPlanName": "mail2022",
+    "product": "proton-mail",
+    "selectedPlanIDs": {
+      "bundle2022": 1,
+    },
+    "selectedPlanName": "bundle2022",
+  },
+}
+`;
+
+exports[`event payloads sent to Proton Analytics payment 1`] = `
+{
+  "event": "subscription_modification_payment",
+  "payload": {
+    "amount": 23976,
+    "build": "proton-account",
+    "currentCoupon": "CURRENT_COUPON",
+    "currentCurrency": "EUR",
+    "currentCycle": 12,
+    "currentPlanIDs": {
+      "mail2022": 1,
+    },
+    "currentPlanName": "mail2022",
+    "isTrial": false,
+    "method": "saved_card",
+    "methodVariant": null,
+    "product": "proton-mail",
+    "selectedCoupon": "SELECTED_COUPON",
+    "selectedCurrency": "EUR",
+    "selectedCycle": 24,
+    "selectedPlanIDs": {
+      "1member-bundlepro2024": 5,
+      "bundlepro2024": 1,
+    },
+    "selectedPlanName": "bundlepro2024",
+    "stage": "payment_success",
+  },
+}
+`;
+
+exports[`event payloads sent to Proton Analytics payment, with the Apple Pay flow that was offered 1`] = `
+{
+  "event": "subscription_modification_payment",
+  "payload": {
+    "amount": 23976,
+    "build": "proton-account",
+    "currentCoupon": "CURRENT_COUPON",
+    "currentCurrency": "EUR",
+    "currentCycle": 12,
+    "currentPlanIDs": {
+      "mail2022": 1,
+    },
+    "currentPlanName": "mail2022",
+    "isTrial": false,
+    "method": "apple_pay",
+    "methodVariant": "apple_pay_qr",
+    "product": "proton-mail",
+    "selectedCoupon": "SELECTED_COUPON",
+    "selectedCurrency": "EUR",
+    "selectedCycle": 24,
+    "selectedPlanIDs": {
+      "1member-bundlepro2024": 5,
+      "bundlepro2024": 1,
+    },
+    "selectedPlanName": "bundlepro2024",
+    "stage": "attempt",
+  },
+}
+`;
+
+exports[`event payloads sent to Proton Analytics payment, with the extra properties of a rejected billing address 1`] = `
+{
+  "event": "subscription_modification_payment",
+  "payload": {
+    "CountryCode": "US",
+    "State": "CA",
+    "amount": 23976,
+    "build": "proton-account",
+    "currentCoupon": "CURRENT_COUPON",
+    "currentCurrency": "EUR",
+    "currentCycle": 12,
+    "currentPlanIDs": {
+      "mail2022": 1,
+    },
+    "currentPlanName": "mail2022",
+    "hasZipCode": false,
+    "isTrial": false,
+    "method": "saved_card",
+    "methodVariant": null,
+    "product": "proton-mail",
+    "selectedCoupon": "SELECTED_COUPON",
+    "selectedCurrency": "EUR",
+    "selectedCycle": 24,
+    "selectedPlanIDs": {
+      "1member-bundlepro2024": 5,
+      "bundlepro2024": 1,
+    },
+    "selectedPlanName": "bundlepro2024",
+    "stage": "billing_address_failure",
+  },
+}
+`;
+
+exports[`event payloads sent to Proton Analytics plan_description 1`] = `
+{
+  "event": "subscription_modification_plan_description",
+  "payload": {
+    "action": "expand",
+  },
+}
+`;
+
+exports[`event payloads sent to Proton Analytics vpn2024_addons_experiment_seen 1`] = `
+{
+  "event": "subscription_modification_vpn2024_addons_experiment_seen",
+  "payload": {
+    "variant": "pass-addon-only",
+  },
+}
+`;
