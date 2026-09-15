@@ -45,7 +45,7 @@ export class SearchService {
                 return;
             }
             const resultCount = search.results?.length ?? 0;
-            this.metricService.sendQueryCompletedReport({
+            this.metricService.searchCompleted({
                 hasResults: resultCount > 0,
                 status: 'success',
                 resultCount,
@@ -59,11 +59,11 @@ export class SearchService {
         this.metricService.endSearchSession(reason);
     }
 
-    reportResultOpened(...args: Parameters<MetricService['sendResultOpenedReport']>) {
-        this.metricService.sendResultOpenedReport(...args);
+    reportResultOpened(...args: Parameters<MetricService['resultOpened']>) {
+        this.metricService.resultOpened(...args);
     }
-    reportResultAction(...args: Parameters<MetricService['sendResultActionReport']>) {
-        this.metricService.sendResultActionReport(...args);
+    reportResultAction(...args: Parameters<MetricService['resultActionPerformed']>) {
+        this.metricService.resultActionPerformed(...args);
     }
 
     private getWorker(): Promise<Comlink.Remote<SearchWorker> | undefined> {
