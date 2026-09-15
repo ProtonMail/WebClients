@@ -3,7 +3,7 @@ import { combineReducers, configureStore, createListenerMiddleware } from '@redu
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { sharedReducers } from '@proton/redux-shared-store/sharedReducers';
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
-import { apiMock } from '@proton/testing/lib/api';
+import { apiMock } from '@proton/test-api/api';
 
 // Mirror the real store, which always carries an `api` in its thunk arguments. Without it, any model
 // that isn't preloaded throws `extraArgument.api is not a function` the moment it auto-fetches. Unregistered
