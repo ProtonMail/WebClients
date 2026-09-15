@@ -1567,7 +1567,7 @@
         "Воблачны рэдактар дакументаў"
       ],
       "Password health alerts": [
-        "Папярэджанні якасці пароля"
+        "Абвесткі якасці пароля"
       ],
       "Recover previous file versions": [
         "Аднаўленне папярэдніх версій файла"
@@ -3488,9 +3488,6 @@
       "A problem occurred, please try again.": [
         "Узнікла праблема. Паўтарыце спробу."
       ],
-      "Account does not exist": [
-        "Уліковы запіс не існуе"
-      ],
       "Address could not be added.": [
         "Немагчыма дадаць адрас."
       ],
@@ -3703,9 +3700,6 @@
       ],
       "Expiration date cannot be in the past": [
         "Дата завяршэння не можа быць у мінулым"
-      ],
-      "External accounts are not supported yet": [
-        "Знешнія ўліковыя запісы пакуль не падтрымліваюцца"
       ],
       "External invitations are temporarily disabled.": [
         "Знешнія запрашэнні часова адключаны."
@@ -5630,7 +5624,7 @@
         "${ VPN_APP_NAME } маскіруе ваш IP-адрас і вэб-сайты не могуць вызначыць вас."
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
-        "${ VPN_SHORT_APP_NAME } хавае ваш трафік. ${ PASS_SHORT_APP_NAME } хавае вашу ідэнтычнасць\nз дапамогай неабмежаванай колькасці псеўданімаў **hide-my-email** і **папярэджанняў цёмнай сеткі**, калі раптам адбудзецца ўцечка вашых даных."
+        "${ VPN_SHORT_APP_NAME } хавае ваш трафік. ${ PASS_SHORT_APP_NAME } хавае вашу ідэнтычнасць\nз дапамогай неабмежаванай колькасці псеўданімаў **hide-my-email** і **абвестак цёмнай сеткі**, калі раптам адбудзецца ўцечка вашых даных."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } удзельнік)",
@@ -12510,6 +12504,9 @@
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "Спасылка на гэты элемент захавана ў вашым дыску. Вы зможаце атрымаць доступ да яе ў раздзеле \"Абагуленыя са мной\"."
       ],
+      "Editor permissions": [
+        "Дазволы рэдактара"
+      ],
       "Encrypted search is here": [
         "Зашыфраваны пошук тут"
       ],
@@ -13019,7 +13016,7 @@
         "Аўтаперасылка электроннай пошты ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
+        "Абвесткі ўцечкі даных ${ strongArgument }"
       ],
       "Desktop app": [
         "Праграма для камп'ютара"

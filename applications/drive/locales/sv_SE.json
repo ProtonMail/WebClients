@@ -3413,9 +3413,6 @@
       "A problem occurred, please try again.": [
         "Ett problem uppstod, försök igen."
       ],
-      "Account does not exist": [
-        "Konto finns inte"
-      ],
       "Address could not be added.": [
         "Adress kunde inte läggas till."
       ],
@@ -3615,9 +3612,6 @@
       ],
       "Expiration date cannot be in the past": [
         "Utgångsdatum kan inte vara i det förflutna"
-      ],
-      "External accounts are not supported yet": [
-        "Externa konton stöds inte ännu"
       ],
       "External invitations are temporarily disabled.": [
         "Externa inbjudningar är tillfälligt inaktiverade."
@@ -5378,6 +5372,10 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etikett vald",
         "${ selectedFoldersCountLocalized } etiketter valda"
+      ],
+      "${ steps } step": [
+        "${ steps } steg",
+        "${ steps } steg"
       ],
       "${ storage } storage": [
         "${ storage } lagringsutrymme"
