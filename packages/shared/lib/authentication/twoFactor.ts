@@ -56,7 +56,7 @@ const assertTwoFactorSupport = ({
     }
 };
 
-export const getHasAnyTwoFactorEnabled = (Enabled?: number) => {
+const getHasAnyTwoFactorEnabled = (Enabled?: number) => {
     return (Enabled || 0) > 0;
 };
 

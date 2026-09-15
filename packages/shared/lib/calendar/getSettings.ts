@@ -17,11 +17,6 @@ export const getDisplayWeekNumbers = (calendarUserSettings: CalendarUserSettings
     return !!calendarUserSettings.DisplayWeekNumber;
 };
 
-export const getDefaultCalendarID = (calendarUserSettings: CalendarUserSettings) => {
-    // DefaultCalendarID is either null or a string
-    return calendarUserSettings.DefaultCalendarID || undefined;
-};
-
 export const getInviteLocale = (calendarUserSettings: CalendarUserSettings) => {
     // InviteLocale is either null or a string
     return calendarUserSettings.InviteLocale || undefined;

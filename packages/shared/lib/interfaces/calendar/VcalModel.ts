@@ -98,7 +98,7 @@ export interface VcalDurationValue {
     isNegative: boolean;
 }
 
-export interface VcalTriggerRelativeProperty {
+interface VcalTriggerRelativeProperty {
     value: VcalDurationValue;
     parameters?: {
         type?: 'duration';
@@ -108,7 +108,7 @@ export interface VcalTriggerRelativeProperty {
 
 export type VcalTriggerProperty = VcalTriggerRelativeProperty | VcalDateTimeProperty;
 
-export interface VcalUidProperty {
+interface VcalUidProperty {
     value: string;
 }
 
@@ -116,7 +116,7 @@ export interface VcalStringProperty {
     value: string;
 }
 
-export interface VcalStringProperyWithParams {
+interface VcalStringProperyWithParams {
     value: string;
     parameters: { [key: string]: string };
 }
@@ -125,16 +125,16 @@ export interface VcalNumberProperty {
     value: number;
 }
 
-export interface VcalBooleanProperty {
+interface VcalBooleanProperty {
     value: 'true' | 'false';
     parameters: { type: 'boolean' };
 }
 
-export interface VcalStringArrayProperty {
+interface VcalStringArrayProperty {
     value: string[];
 }
 
-export interface VcalNumberArrayProperty {
+interface VcalNumberArrayProperty {
     value: number[];
 }
 
@@ -171,14 +171,12 @@ export interface VcalValarmComponent<T = VcalTriggerProperty> {
 
 export type VcalValarmRelativeComponent = VcalValarmComponent<VcalTriggerRelativeProperty>;
 
-export type VcalValarmAbsoluteComponent = VcalValarmComponent<VcalDateTimeProperty>;
-
-export interface VcalStringWithParamsProperty {
+interface VcalStringWithParamsProperty {
     value: string;
     params?: { [key: string]: string };
 }
 
-export interface VcalOrganizerPropertyParameters {
+interface VcalOrganizerPropertyParameters {
     cn?: string;
     dir?: string;
     language?: string;
@@ -191,16 +189,16 @@ export interface VcalOrganizerProperty {
     parameters?: VcalOrganizerPropertyParameters;
 }
 
-export interface VcalStatusProperty {
+interface VcalStatusProperty {
     value: ICAL_EVENT_STATUS | string;
 }
 
-export interface VcalDescriptionPropertyParameters {
+interface VcalDescriptionPropertyParameters {
     language?: string;
     altrep?: string;
 }
 
-export interface VcalDescriptionProperty {
+interface VcalDescriptionProperty {
     value: string;
     parameters?: VcalDescriptionPropertyParameters;
 }
@@ -232,25 +230,11 @@ export interface VcalAttendeeProperty {
     parameters?: VcalAttendeePropertyParameters;
 }
 
-export interface VcalAttendeePropertyWithCn extends VcalAttendeeProperty {
-    parameters: VcalAttendeePropertyParameters & Required<Pick<VcalAttendeePropertyParameters, 'cn'>>;
-}
-
-export interface VcalAttendeePropertyWithPartstat extends VcalAttendeeProperty {
-    parameters: VcalAttendeePropertyParameters & Required<Pick<VcalAttendeePropertyParameters, 'partstat'>>;
-}
-
-export interface VcalAttendeePropertyWithRole extends VcalAttendeeProperty {
-    parameters: VcalAttendeePropertyParameters & Required<Pick<VcalAttendeePropertyParameters, 'role'>>;
-}
-
 export interface VcalAttendeePropertyWithToken extends VcalAttendeeProperty {
     parameters: VcalAttendeePropertyParameters & Required<Pick<VcalAttendeePropertyParameters, 'x-pm-token'>>;
 }
 
-export type VcalPmAttendee = VcalAttendeePropertyWithCn & VcalAttendeePropertyWithToken;
-
-export interface VcalCategoryProperty {
+interface VcalCategoryProperty {
     value: string[];
 }
 
@@ -305,35 +289,35 @@ export interface VcalPmVeventComponent extends Omit<VcalVeventComponent, 'attend
     attendee?: VcalAttendeePropertyWithToken[];
 }
 
-export interface VcalVtodoComponent {
+interface VcalVtodoComponent {
     component: 'vtodo';
     components?: VcalValarmComponent[]; // Not complete. Can be other components.
     uid: VcalUidProperty;
 }
 
-export interface VcalVjournalComponent {
+interface VcalVjournalComponent {
     component: 'vjournal';
     components?: VcalValarmComponent[]; // Not complete. Can be other components.
     uid: VcalUidProperty;
 }
 
-export interface VcalFreeBusyStartEndValue {
+interface VcalFreeBusyStartEndValue {
     start: VcalDateTimeValue;
     end: VcalDateTimeValue;
 }
 
-export interface VcalFreeBusyStartDurationValue {
+interface VcalFreeBusyStartDurationValue {
     start: VcalDateTimeValue;
     duration: VcalDurationValue;
 }
 
 type VcalFreeBusyValue = VcalFreeBusyStartEndValue | VcalFreeBusyStartDurationValue;
 
-export interface VcalFreeBusyProperty {
+interface VcalFreeBusyProperty {
     value: VcalFreeBusyValue[];
 }
 
-export interface VcalVfreebusyComponent {
+interface VcalVfreebusyComponent {
     component: 'vfreebusy';
     components?: VcalValarmComponent[]; // Not complete. Can be other components.
     uid: VcalUidProperty;

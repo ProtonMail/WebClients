@@ -70,8 +70,6 @@ export const getAppHrefBundle = (to: string, toApp: APP_NAMES) => {
     return `/${path}`;
 };
 
-export const getAccountSettingsApp = () => APPS.PROTONACCOUNT;
-
 const getApp = (appName: APP_NAMES) => {
     if (isElectronMail) {
         return APPS.PROTONMAIL;
@@ -109,10 +107,6 @@ export const getClientID = (appName: APP_NAMES): string => {
 
 export const isExtension = (appName: APP_NAMES): appName is ExtensionApp => {
     return EXTENSIONS[appName as keyof typeof EXTENSIONS] !== undefined;
-};
-
-export const getExtension = (appName: APP_NAMES) => {
-    return EXTENSIONS[appName as keyof typeof EXTENSIONS];
 };
 
 export const getAppName = (appName: APP_NAMES) => {

@@ -80,7 +80,7 @@ const getSpaceDetailsType = (danger: boolean, warning: boolean) => {
     return SpaceState.Good;
 };
 
-export const getSpaceDetails = (usedSpace: number, maxSpace: number) => {
+const getSpaceDetails = (usedSpace: number, maxSpace: number) => {
     const data = getData(usedSpace, maxSpace);
     const danger = data.percentage >= 100;
     const warning = data.percentage >= 80 && data.percentage < 100;

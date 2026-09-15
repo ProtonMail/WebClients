@@ -48,7 +48,7 @@ export const getArmoredPrivateUserKeys = async (keys: DecryptedKey[], keyPasswor
     return result;
 };
 
-export const getArmoredPrivateAddressKeys = async (keys: DecryptedKey[], address: tsAddress, keyPassword: string) => {
+const getArmoredPrivateAddressKeys = async (keys: DecryptedKey[], address: tsAddress, keyPassword: string) => {
     const armoredKeys = await Promise.all(
         keys.map(async ({ ID, privateKey }) => {
             const PrivateKey = await getEncryptedArmoredAddressKey(privateKey, address.Email, keyPassword).catch(noop);
@@ -78,7 +78,7 @@ interface AddressesKeys {
     keys: DecryptedKey[];
 }
 
-export const getArmoredPrivateAddressesKeys = async (addressesWithKeysList: AddressesKeys[], keyPassword: string) => {
+const getArmoredPrivateAddressesKeys = async (addressesWithKeysList: AddressesKeys[], keyPassword: string) => {
     const result = await Promise.all(
         addressesWithKeysList.map(({ address, keys }) => {
             if (!keys.length) {
@@ -117,13 +117,13 @@ export const getUpdateKeysPayload = async ({
 
     return hasMigratedAddressKeys
         ? {
-              UserKeys: armoredUserKeys,
-              KeySalt: keySalt,
-              OrganizationKey: armoredOrganizationKey,
-          }
+            UserKeys: armoredUserKeys,
+            KeySalt: keySalt,
+            OrganizationKey: armoredOrganizationKey,
+        }
         : {
-              Keys: [...armoredUserKeys, ...armoredAddressesKeys],
-              KeySalt: keySalt,
-              OrganizationKey: armoredOrganizationKey,
-          };
+            Keys: [...armoredUserKeys, ...armoredAddressesKeys],
+            KeySalt: keySalt,
+            OrganizationKey: armoredOrganizationKey,
+        };
 };

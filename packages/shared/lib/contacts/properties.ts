@@ -78,7 +78,7 @@ export const getContactEmails = (contact: VCardContact) => {
 
 export const createContactPropertyUid = () => generateUID(UID_PREFIX);
 
-export const getContactPropertyUid = (uid: string) => Number(uid.replace(`${UID_PREFIX}-`, ''));
+const getContactPropertyUid = (uid: string) => Number(uid.replace(`${UID_PREFIX}-`, ''));
 
 // TODO: Deprecate this function. See VcardProperty interface
 export const getVCardProperties = (vCardContact: VCardContact): VCardProperty[] => {

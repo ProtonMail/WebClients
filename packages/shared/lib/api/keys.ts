@@ -2,18 +2,6 @@ import type { ProductParam } from '../apps/product';
 import { getProductHeaders } from '../apps/product';
 import type { AddressKeyPayload, AddressKeyPayloadV2, SignedKeyList } from '../interfaces';
 
-interface GetPublicKeysForInboxParams {
-    Email: string;
-    Fingerprint?: string;
-}
-
-/** @deprecated in favor of `getAllPublicKeys` */
-export const getPublicKeys = (params: GetPublicKeysForInboxParams) => ({
-    url: 'core/v4/keys',
-    method: 'get',
-    params,
-});
-
 interface GetAllPublicKeysParams {
     Email: string;
     InternalOnly?: 0 | 1;
@@ -173,21 +161,6 @@ export const reactiveLegacyAddressKeyRouteV2 = ({ ID, ...data }: ActivateKeyPayl
     data,
 });
 
-interface ReactivateKeyPayload {
-    ID: string;
-    PrivateKey: string;
-    SignedKeyList?: SignedKeyList;
-}
-
-export const reactivateKeyRoute = ({ ID, PrivateKey, SignedKeyList }: ReactivateKeyPayload) => ({
-    url: `core/v4/keys/${ID}`,
-    method: 'put',
-    data: {
-        PrivateKey,
-        SignedKeyList,
-    },
-});
-
 interface ReactivateUserKeyPayloadV2 {
     ID: string;
     PrivateKey: string;
@@ -324,7 +297,7 @@ export const upgradeKeysRoute = (data: UpgradeKeysPayload | UpgradeKeysPayloadV2
     data,
 });
 
-export interface MigrateAddressKeyPayload {
+interface MigrateAddressKeyPayload {
     ID: string;
     Token: string;
     Signature: string;

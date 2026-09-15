@@ -1,7 +1,6 @@
-import { c } from 'ttag';
-
 import type { PublicKeyReference } from '@protontech/crypto';
 import { CryptoProxy, serverTime } from '@protontech/crypto';
+import { c } from 'ttag';
 
 import { KEY_FLAG, MIME_TYPES_MORE, PGP_SCHEMES_MORE, RECIPIENT_TYPES } from '../constants';
 import { hasBit } from '../helpers/bitset';
@@ -15,12 +14,12 @@ const { TYPE_INTERNAL } = RECIPIENT_TYPES;
 /**
  * Check if some API key data belongs to an internal user
  */
-export const getIsInternalUser = ({ RecipientType }: ApiKeysConfig): boolean => RecipientType === TYPE_INTERNAL;
+const getIsInternalUser = ({ RecipientType }: ApiKeysConfig): boolean => RecipientType === TYPE_INTERNAL;
 
 /**
  * Test if no key is enabled
  */
-export const isDisabledUser = (config: ApiKeysConfig): boolean =>
+const isDisabledUser = (config: ApiKeysConfig): boolean =>
     getIsInternalUser(config) && config.publicKeys.every(({ flags }) => !getKeyHasFlagsToEncrypt(flags));
 
 export const getEmailMismatchWarning = (

@@ -44,27 +44,6 @@ export const getAllFields = () => [
     { text: c('Contact field label').t`Member`, value: 'member' },
 ];
 
-export const getEditableFields = () => [
-    { text: c('Contact field label').t`Name`, value: 'fn' },
-    { text: c('Contact field label').t`Email`, value: 'email' },
-    { text: c('Contact field label').t`Phone`, value: 'tel' },
-    { text: c('Contact field label').t`Address`, value: 'adr' },
-    { text: c('Contact field label').t`Photo`, value: 'photo' },
-    { text: c('Contact field label').t`Organization`, value: 'org' },
-    // translator: this field is used to specify the birth date of the contact
-    { text: c('Contact field label').t`Birthday`, value: 'bday' },
-    // translator: this field is used to specify the anniversary date of the contact (e.g. marriage, or equivalent)
-    { text: c('Contact field label').t`Anniversary`, value: 'anniversary' },
-    { text: c('Contact field label').t`Title`, value: 'title' },
-    { text: c('Contact field label').t`Role`, value: 'role' },
-    { text: c('Contact field label').t`Member`, value: 'member' },
-    { text: c('Contact field label').t`Note`, value: 'note' },
-    { text: c('Contact field label').t`URL`, value: 'url' },
-    { text: c('Contact field label').t`Gender`, value: 'gender' },
-    { text: c('Contact field label').t`Language`, value: 'lang' },
-    { text: c('Contact field label').t`Time zone`, value: 'tz' },
-    { text: c('Contact field label').t`Logo`, value: 'logo' },
-];
 export const getOtherInformationFields = () => [
     { text: c('Contact field label').t`Photo`, value: 'photo' },
     { text: c('Contact field label').t`Organization`, value: 'org' },
@@ -104,19 +83,6 @@ export const getAllFieldLabels = () => ({
     tz: c('Contact field label').t`Time zone`,
     logo: c('Contact field label').t`Logo`,
     member: c('Contact field label').t`Member`,
-});
-
-export const getTypeLabels = () => ({
-    work: c('Contact type label').t`Work`,
-    home: c('Contact type label').t`Personal`,
-    cell: c('Contact type label').t`Mobile`,
-    main: c('Contact type label').t`Main`,
-    // translator: Yomi name is a field for entering the phonetic equivalent for Japanese names
-    yomi: c('Contact type label').t`Yomi`,
-    other: c('Contact type label').t`Other`,
-    fax: c('Contact type label').t`Fax`,
-    // translator: https://en.wikipedia.org/wiki/Pager
-    pager: c('Contact type label').t`Pager`,
 });
 
 export const getAllTypes: () => { [key: string]: { text: string; value: string }[] } = () => ({

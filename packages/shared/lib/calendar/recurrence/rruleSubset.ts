@@ -7,7 +7,7 @@ import type { RecurringResult } from './recurring';
 import { getOccurrences, getOccurrencesBetween } from './recurring';
 import { getIsRruleEqual } from './rruleEqual';
 
-export const getAreOccurrencesSubset = (
+const getAreOccurrencesSubset = (
     newOccurrences: (RecurringResult | Pick<RecurringResult, 'localStart'>)[],
     oldVevent: VcalVeventComponent
 ) => {

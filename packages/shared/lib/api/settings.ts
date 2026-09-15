@@ -9,7 +9,6 @@ import type {
     SETTINGS_TIME_FORMAT,
     SETTINGS_WEEK_START,
 } from '../interfaces';
-import type { ThemeTypes } from '../themes/constants';
 import type { ThemeSetting } from '../themes/themes';
 import type { RegistrationOptions } from '../webauthn/interface';
 
@@ -41,11 +40,6 @@ export const updateLocale = (Locale: string) => ({
     url: 'core/v4/settings/locale',
     method: 'put',
     data: { Locale },
-});
-
-export const getNews = () => ({
-    url: 'core/v4/settings/news',
-    method: 'get',
 });
 
 export const patchNews = (data: NewsletterSubscriptionUpdateData) => ({
@@ -113,34 +107,16 @@ export const updateEmail = (data: { Email: string; PersistPasswordScope?: boolea
     data,
 });
 
-export const updateNotifyEmail = (Notify: number) => ({
-    url: 'core/v4/settings/email/notify',
-    method: 'put',
-    data: { Notify },
-});
-
 export const updateResetEmail = (data: { Reset: number; PersistPasswordScope?: boolean }) => ({
     url: 'core/v4/settings/email/reset',
     method: 'put',
     data,
 });
 
-export const verifyEmail = (Token: string) => ({
-    url: 'core/v4/settings/email/verify',
-    method: 'post',
-    data: { Token },
-});
-
 export const updatePhone = (data: { Phone: string; PersistPasswordScope?: boolean }) => ({
     url: 'core/v4/settings/phone',
     method: 'put',
     data,
-});
-
-export const updateNotifyPhone = (Notify: string) => ({
-    url: 'core/v4/settings/phone/notify',
-    method: 'put',
-    data: { Notify },
 });
 
 export const updateResetPhone = (data: { Reset: number; PersistPasswordScope?: boolean }) => ({
@@ -215,12 +191,6 @@ export const updateTheme = (data: ThemeSetting) => ({
     data,
 });
 
-export const updateThemeType = (ThemeType: ThemeTypes) => ({
-    url: 'core/v4/settings/themetype',
-    method: 'put',
-    data: { ThemeType },
-});
-
 export const updateWeekStart = (WeekStart: SETTINGS_WEEK_START) => ({
     url: 'core/v4/settings/weekstart',
     method: 'put',
@@ -266,16 +236,6 @@ export const updateCrashReports = (data: { CrashReports: number }) => ({
     url: 'core/v4/settings/crashreports',
     method: 'put',
     data,
-});
-
-export const getBreaches = () => ({
-    url: 'account/v4/breaches',
-    method: 'get',
-});
-
-export const getRecentBreaches = () => ({
-    url: 'account/v4/breaches?Recent=true',
-    method: 'get',
 });
 
 export const enableBreachAlert = () => ({

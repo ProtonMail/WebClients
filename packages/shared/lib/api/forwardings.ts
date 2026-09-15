@@ -22,7 +22,7 @@ interface QueryProps {
     PageSize?: number;
 }
 
-export const queryOutgoingForwardings = ({ AddressID, Page, PageSize }: QueryProps) => ({
+const queryOutgoingForwardings = ({ AddressID, Page, PageSize }: QueryProps) => ({
     method: 'get',
     url: 'mail/v4/forwardings/outgoing',
     params: { Page, PageSize, AddressID },
@@ -46,7 +46,7 @@ export const queryAllOutgoingForwardings = (api: Api) => {
     });
 };
 
-export const queryIncomingForwardings = ({ AddressID, Page, PageSize }: QueryProps) => ({
+const queryIncomingForwardings = ({ AddressID, Page, PageSize }: QueryProps) => ({
     method: 'get',
     url: 'mail/v4/forwardings/incoming',
     params: { Page, PageSize, AddressID },

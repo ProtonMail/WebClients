@@ -147,11 +147,11 @@ export const getDisplayContactsInDrawer = (app: APP_NAMES) => {
     return app === APPS.PROTONMAIL || app === APPS.PROTONCALENDAR || app === APPS.PROTONDRIVE;
 };
 
-export const getDisplaySettingsInDrawer = (app: APP_NAMES) => {
+const getDisplaySettingsInDrawer = (app: APP_NAMES) => {
     return app === APPS.PROTONMAIL || app === APPS.PROTONCALENDAR || app === APPS.PROTONDRIVE;
 };
 
-export const getDisplaySecurityCenterInDrawer = (app: APP_NAMES) => {
+const getDisplaySecurityCenterInDrawer = (app: APP_NAMES) => {
     return app === APPS.PROTONMAIL;
 };
 

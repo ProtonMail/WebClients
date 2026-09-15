@@ -28,7 +28,7 @@ export interface CalendarCreateArguments extends CalendarCreateData {
 
 export enum CALENDAR_ORDER_BY {
     ASCENDING = 0,
-    DESCENDING = 1,
+    // DESCENDING = 1,
 }
 
 export enum CALENDAR_RETURN_FLAGS {
@@ -145,15 +145,16 @@ interface CalendarCreateOrUpdateEventMetaData {
 }
 
 export interface CreateOrUpdateCalendarEventData
-    extends CalendarCreateOrUpdateEventBlobData,
-        CalendarCreateOrUpdateEventMetaData {}
+    extends CalendarCreateOrUpdateEventBlobData, CalendarCreateOrUpdateEventMetaData {}
 export interface CreateSinglePersonalEventData {
     Notifications: Nullable<CalendarNotificationSettings[]>;
     Color: Nullable<string>;
 }
 
-export interface CreateLinkedCalendarEventData
-    extends RequireSome<Partial<CreateOrUpdateCalendarEventData>, 'SharedKeyPacket'> {
+interface CreateLinkedCalendarEventData extends RequireSome<
+    Partial<CreateOrUpdateCalendarEventData>,
+    'SharedKeyPacket'
+> {
     UID: string;
     SharedEventID: string;
     SourceCalendarID?: string;
@@ -231,7 +232,7 @@ interface GetCanonicalAddressesSingleApiResponse extends ApiResponse {
     CanonicalEmail: string;
 }
 
-export interface GetCanonicalAddressesApiResponses {
+interface GetCanonicalAddressesApiResponses {
     Email: string;
     Response: GetCanonicalAddressesSingleApiResponse;
 }
