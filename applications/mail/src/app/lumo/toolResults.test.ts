@@ -5,6 +5,7 @@ import { AutoReplyDuration } from '@proton/shared/lib/constants';
 import { DraftKind } from './helpers/draftKind';
 import { buildLumoMailConfig } from './registry';
 import { createDraftDefinition } from './skills/compose/createDraft';
+import { ReviseOutcome, reviseDraftDefinition } from './skills/compose/reviseDraft';
 import { createFilterDefinition } from './skills/filters/createFilter';
 import { updateFilterDefinition } from './skills/filters/updateFilter';
 import { addContactDefinition } from './skills/organise/addContact';
@@ -236,6 +237,11 @@ const TOOL_PAYLOADS = [
     payloads(createDraftDefinition, [
         { kind: DraftKind.NEW, reference: 'composer-x7b2q1' },
         { kind: DraftKind.REPLY_ALL, reference: 'composer-x7b2q1' },
+    ]),
+    payloads(reviseDraftDefinition, [
+        { outcome: ReviseOutcome.REPLACED },
+        { outcome: ReviseOutcome.RETARGETED },
+        { outcome: ReviseOutcome.RETARGETED_AND_REPLACED },
     ]),
 ];
 

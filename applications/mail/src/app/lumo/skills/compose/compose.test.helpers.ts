@@ -6,7 +6,17 @@ import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import type { RecipientType } from '../../../models/address';
-import type { MailToolDeps } from '../../toolModule';
+import type { DraftChangeability, MailToolDeps } from '../../toolModule';
+
+/** An open composer that will take both a rewrite and a readdress. */
+export const CHANGEABLE: DraftChangeability = {
+    isOpen: true,
+    isEditorReady: true,
+    canReplaceBody: true,
+    canReaddress: true,
+};
+
+const CLOSED: DraftChangeability = { isOpen: false, isEditorReady: false, canReplaceBody: false, canReaddress: false };
 
 export const ADA: ContactEmail = { ID: 'CONTACT_1', Name: 'Ada Lovelace', Email: 'ada@example.com' } as ContactEmail;
 
@@ -19,6 +29,8 @@ export const decryptedParent = (id: string): MessageState =>
 
 interface HarnessOptions {
     messages?: Record<string, MessageState>;
+    /** What each composer answers when asked what it will take; one not named here reads as closed. */
+    changeability?: Record<string, DraftChangeability>;
     onInitializeMessage?: (id: string) => void;
     /** The composer id `composeDraft` adds to the store, as `onCompose` does; null for a refused compose. */
     opensComposer?: string | null;
@@ -27,13 +39,14 @@ interface HarnessOptions {
 /** `composer-0` starts open, so a test that expects a newly opened composer fails if it names that one. */
 export const composeHarness = ({
     messages = {},
+    changeability = {},
     onInitializeMessage,
     opensComposer = 'composer-1',
 }: HarnessOptions = {}) => {
     const composed: { action: MESSAGE_ACTIONS; referenceMessage: PartialMessageState; bodyBeforeQuote?: string }[] = [];
-    const composers: Record<string, { ID: string }> = { 'composer-0': { ID: 'composer-0' } };
-
+    const written: { composerID: string; body: string }[] = [];
     const readdressed: { composerID: string; recipients: Partial<Record<RecipientType, Recipient[]>> }[] = [];
+    const composers: Record<string, { ID: string }> = { 'composer-0': { ID: 'composer-0' } };
 
     const deps = {
         store: {
@@ -42,9 +55,6 @@ export const composeHarness = ({
                 messages,
                 elements: { elements: {}, params: { labelID: MAILBOX_LABEL_IDS.INBOX } },
             }),
-        },
-        setDraftRecipients: (composerID: string, recipients: Partial<Record<RecipientType, Recipient[]>>) => {
-            readdressed.push({ composerID, recipients });
         },
         getContactEmails: () => [ADA],
         initializeMessage: async (id: string) => {
@@ -56,7 +66,15 @@ export const composeHarness = ({
                 composers[opensComposer] = { ID: opensComposer };
             }
         },
+        getDraftChangeability: (composerID: string) => changeability[composerID] ?? CLOSED,
+        writeDraftBody: (composerID: string, body: string) => {
+            written.push({ composerID, body });
+            return true;
+        },
+        setDraftRecipients: (composerID: string, recipients: Partial<Record<RecipientType, Recipient[]>>) => {
+            readdressed.push({ composerID, recipients });
+        },
     } as unknown as MailToolDeps;
 
-    return { deps, references: createReferenceRegistry(), composed, readdressed };
+    return { deps, references: createReferenceRegistry(), composed, written, readdressed };
 };
