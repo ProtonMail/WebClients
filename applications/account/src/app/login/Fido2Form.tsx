@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { useFido2Action } from '@proton/account/fido/useFido2Action';
 import { Button } from '@proton/atoms/Button/Button';
-import { AuthSecurityKeyContent } from '@proton/components';
-import { useLoading } from '@proton/hooks';
+import AuthSecurityKeyContent from '@proton/components/containers/account/fido/AuthSecurityKeyContent';
+import useLoading from '@proton/hooks/useLoading';
 import type { Fido2Data, Fido2Response } from '@proton/shared/lib/authentication/interface';
 import { getAuthentication } from '@proton/shared/lib/webauthn/get';
 import noop from '@proton/utils/noop';

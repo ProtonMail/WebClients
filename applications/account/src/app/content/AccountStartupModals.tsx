@@ -3,14 +3,14 @@ import { Suspense, lazy } from 'react';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import StartupModals from '@proton/components/components/startupModals/StartupModals';
 import {
-    type StartupModal,
-    StartupModals,
     useLightLabellingFeatureModal,
-    useModalState,
     useScimGroupsOnboardingModal,
     useTrialEndedModal,
-} from '@proton/components';
+} from '@proton/components/components/startupModals/startupModalHooks';
+import type { StartupModal } from '@proton/components/components/startupModals/types';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import { useTrialInfo } from '@proton/payments-ui/ui/hooks/useTrialInfo';
 import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';

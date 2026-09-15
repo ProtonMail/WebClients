@@ -1,4 +1,5 @@
-import { ModalTwo, ModalTwoContent } from '@proton/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { getShortPlan } from '@proton/components/containers/payments/features/plan';

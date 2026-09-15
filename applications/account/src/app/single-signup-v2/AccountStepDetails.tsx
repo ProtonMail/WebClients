@@ -5,8 +5,13 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { Challenge, DropdownSizeUnit, Info, InputFieldTwo, Option, PasswordInputTwo } from '@proton/components';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import Info from '@proton/components/components/link/Info';
+import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
+import Challenge from '@proton/components/containers/challenge/Challenge';
 import useRightToLeft from '@proton/hooks/useRightToLeft';
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { PLANS } from '@proton/payments/core/constants';

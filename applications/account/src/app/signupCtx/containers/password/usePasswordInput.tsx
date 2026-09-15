@@ -2,8 +2,9 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { InputFieldTwo, PasswordInputTwo } from '@proton/components';
 import PasswordStrengthIndicator from '@proton/components/components/passwordStrengthIndicator/PasswordStrengthIndicator';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import { getMinPasswordLengthMessage } from '@proton/shared/lib/helpers/formValidators';
 import clsx from '@proton/utils/clsx';
 

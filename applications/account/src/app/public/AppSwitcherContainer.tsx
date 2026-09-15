@@ -3,15 +3,12 @@ import type { ReactElement } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import {
-    DropdownMenu,
-    DropdownMenuButton,
-    type OnLoginCallback,
-    type OnLoginCallbackArguments,
-    SimpleDropdown,
-} from '@proton/components';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import Logo from '@proton/components/components/logo/Logo';
 import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
+import type { OnLoginCallback, OnLoginCallbackArguments } from '@proton/components/containers/app/interface';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';

@@ -4,13 +4,21 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Input } from '@proton/atoms/Input/Input';
-import type { IconComponent, SectionConfig, SubSectionConfig, SubrouteConfig } from '@proton/components';
-import { AutocompleteList, Marks, Option, useAutocomplete, useAutocompleteFilter } from '@proton/components';
+import AutocompleteList from '@proton/components/components/autocomplete/AutocompleteList';
+import { useAutocomplete, useAutocompleteFilter } from '@proton/components/components/autocomplete/useAutocomplete';
+import Option from '@proton/components/components/option/Option';
+import Marks from '@proton/components/components/text/Marks';
 import {
     getIsSectionAvailable,
     getIsSubrouteAvailable,
     getIsSubsectionAvailable,
 } from '@proton/components/containers/layout/helper';
+import type {
+    IconComponent,
+    SectionConfig,
+    SubSectionConfig,
+    SubrouteConfig,
+} from '@proton/components/containers/layout/interface';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

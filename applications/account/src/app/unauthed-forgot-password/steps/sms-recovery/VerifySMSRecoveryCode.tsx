@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import { InputFieldTwo } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ValidateResetTokenResponse } from '@proton/shared/lib/api/reset';

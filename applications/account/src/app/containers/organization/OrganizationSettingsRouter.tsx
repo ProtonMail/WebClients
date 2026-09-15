@@ -1,30 +1,29 @@
 import { type ReactNode, useRef, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import {
-    ActivityMonitorDashboard,
-    CatchAllSection,
-    DomainsSection,
-    MultiUserCreationSection,
-    OrganizationGroupsManagementSection,
-    OrganizationPasswordPoliciesSection,
-    OrganizationPasswordRemindersSection,
-    OrganizationPasswordSection,
-    OrganizationRetentionPoliciesSection,
-    OrganizationScheduleCallSection,
-    OrganizationSection,
-    OrganizationSpamFiltersSection,
-    OrganizationTwoFAEnforcementSection,
-    OrganizationTwoFARemindersSection,
-    PrivateMainSettingsArea,
+import ActivityMonitorDashboard from '@proton/components/containers/b2bDashboard/ActivityMonitor/ActivityMonitorDashboard';
+import CatchAllSection from '@proton/components/containers/domains/CatchAllSection';
+import DomainsSection from '@proton/components/containers/domains/DomainsSection';
+import PrivateMainSettingsArea, {
     PrivateMainSettingsAreaBase,
-    SentinelSection,
-    SsoPage,
-    UsersAndAddressesSection,
-} from '@proton/components';
+} from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import UsersAndAddressesSection from '@proton/components/containers/members/UsersAndAddressesSection/UsersAndAddressesSection';
+import MultiUserCreationSection from '@proton/components/containers/members/multipleUserCreation/MultiUserCreationSection';
+import OrganizationPasswordPoliciesSection from '@proton/components/containers/organization/OrganizationPasswordPoliciesSection';
+import OrganizationPasswordRemindersSection from '@proton/components/containers/organization/OrganizationPasswordRemindersSection';
+import OrganizationPasswordSection from '@proton/components/containers/organization/OrganizationPasswordSection';
+import OrganizationScheduleCallSection from '@proton/components/containers/organization/OrganizationScheduleCallSection';
+import OrganizationSection from '@proton/components/containers/organization/OrganizationSection';
+import OrganizationSpamFiltersSection from '@proton/components/containers/organization/OrganizationSpamFiltersSection';
+import OrganizationTwoFAEnforcementSection from '@proton/components/containers/organization/OrganizationTwoFAEnforcementSection';
+import OrganizationTwoFARemindersSection from '@proton/components/containers/organization/OrganizationTwoFARemindersSection';
 import { SetupOrganizationSection } from '@proton/components/containers/organization/SetupOrganizationSection';
 import AccessControlSettingsSection from '@proton/components/containers/organization/accessControl/AccessControlSettingsSection';
+import OrganizationGroupsManagementSection from '@proton/components/containers/organization/groups/OrganizationGroupsManagementSection';
+import OrganizationRetentionPoliciesSection from '@proton/components/containers/organization/retentionPolicy/OrganizationRetentionPoliciesSection';
+import SsoPage from '@proton/components/containers/organization/sso/SsoPage';
+import { SentinelSection } from '@proton/components/containers/sentinel/SentinelSection';
 import type { EntitlementChecks } from '@proton/payments/core/entitlements/resolver';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';

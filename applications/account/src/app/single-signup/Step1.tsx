@@ -9,23 +9,21 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Vr } from '@proton/atoms/Vr/Vr';
-import {
-    Alert3ds,
-    type Breakpoints,
-    CurrencySelector,
-    Price,
-    SkeletonLoader,
-    Toggle,
-    useHandler,
-    useModalState,
-} from '@proton/components';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Price from '@proton/components/components/price/Price';
+import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import Toggle from '@proton/components/components/toggle/Toggle';
+import Alert3ds from '@proton/components/containers/payments/Alert3ds';
+import CurrencySelector from '@proton/components/containers/payments/CurrencySelector';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { useVpn2024SignupExperiment } from '@proton/components/containers/payments/subscription/helpers/useVpn2024SignupExperiment';
+import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
+import { useHandler } from '@proton/components/hooks/useHandler';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { IcCode } from '@proton/icons/icons/IcCode';
 import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
 import { IcServers } from '@proton/icons/icons/IcServers';

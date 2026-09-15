@@ -3,8 +3,8 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { SkeletonLoader } from '@proton/components/index';
 import type { IconComponent } from '@proton/icons/component';
 import { IcBagPercent } from '@proton/icons/icons/IcBagPercent';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';

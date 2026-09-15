@@ -3,40 +3,38 @@ import { useRef } from 'react';
 import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import {
-    AddressKeysSection,
-    AddressVerificationSection,
-    AddressesSection,
-    AliasPromotionSection,
-    AutoReplySection,
-    CatchAllSection,
-    DomainsSection,
-    EmailPrivacySection,
-    ExternalPGPSettingsSection,
-    FiltersSection,
-    FoldersSection,
-    IdentitySection,
-    ImportExportAppSection,
-    InboxDesktopSettingsSection,
-    LabelsSection,
-    LayoutsSection,
-    MessagesGeneralSection,
-    MessagesOtherSection,
-    MessagesSection,
-    MobileAppSettingsSection,
-    OtherMailPreferencesSection,
-    PmMeSection,
-    PostQuantumKeysOptInSection,
-    PrivateMainAreaLoading,
-    PrivateMainSettingsArea,
-    ProtonMailBridgeSection,
-    SMTPSubmissionSection,
-    SpamFiltersSection,
-    UserKeysSection,
-    useIsInboxElectronApp,
-} from '@proton/components';
+import AddressesSection from '@proton/components/containers/addresses/AddressesSection';
+import AliasPromotionSection from '@proton/components/containers/addresses/AliasPromotionSection';
+import IdentitySection from '@proton/components/containers/addresses/IdentitySection';
+import { AutoReplySection } from '@proton/components/containers/autoReply/AutoReplySection';
+import { ProtonMailBridgeSection } from '@proton/components/containers/bridge/ProtonMailBridgeSection';
+import { InboxDesktopSettingsSection } from '@proton/components/containers/desktop/InboxDesktopSettingsSection';
+import CatchAllSection from '@proton/components/containers/domains/CatchAllSection';
+import DomainsSection from '@proton/components/containers/domains/DomainsSection';
+import EmailPrivacySection from '@proton/components/containers/emailPrivacy/EmailPrivacySection';
+import FiltersSection from '@proton/components/containers/filters/FiltersSection';
+import SpamFiltersSection from '@proton/components/containers/filters/SpamFiltersSection';
 import ForwardSection from '@proton/components/containers/forward/ForwardSection';
+import PmMeSection from '@proton/components/containers/general/PmMeSection';
+import ImportExportAppSection from '@proton/components/containers/importExportApp/ImportExportAppSection';
+import AddressKeysSection from '@proton/components/containers/keys/AddressKeysSection';
+import PostQuantumKeysOptInSection from '@proton/components/containers/keys/PostQuantumKeysOptInSection/PostQuantumKeysOptInSection';
+import UserKeysSection from '@proton/components/containers/keys/UserKeysSection';
+import FoldersSection from '@proton/components/containers/labels/FoldersSection';
+import LabelsSection from '@proton/components/containers/labels/LabelsSection';
+import PrivateMainAreaLoading from '@proton/components/containers/layout/PrivateMainAreaLoading';
+import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import LayoutsSection from '@proton/components/containers/layouts/LayoutsSection';
+import MessagesOtherSection from '@proton/components/containers/layouts/MessagesOtherSection';
+import MessagesGeneralSection from '@proton/components/containers/messages/MessagesGeneralSection';
+import MessagesSection from '@proton/components/containers/messages/MessagesSection';
+import MobileAppSettingsSection from '@proton/components/containers/mobile/MobileAppSettingsSection';
+import { OtherMailPreferencesSection } from '@proton/components/containers/otherMailPreferences/OtherMailPreferencesSection';
+import { AddressVerificationSection } from '@proton/components/containers/security/AddressVerificationSection';
+import { ExternalPGPSettingsSection } from '@proton/components/containers/security/ExternalPGPSettingsSection';
+import SMTPSubmissionSection from '@proton/components/containers/smtp/SMTPSubmissionSection';
+import useIsInboxElectronApp from '@proton/components/hooks/useIsInboxElectronApp';
 import { useLoadAllowedTimeZones } from '@proton/components/hooks/useLoadAllowedTimeZones';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

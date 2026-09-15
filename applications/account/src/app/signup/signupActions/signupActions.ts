@@ -1,4 +1,4 @@
-import { MAX_CHARS_API } from '@proton/account';
+import { MAX_CHARS_API } from '@proton/account/organization';
 import {
     type DeferredMnemonicData,
     generateDeferredMnemonicData,

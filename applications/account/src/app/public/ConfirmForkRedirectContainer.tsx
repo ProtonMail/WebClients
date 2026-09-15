@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { type APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 
 import Content from './Content';

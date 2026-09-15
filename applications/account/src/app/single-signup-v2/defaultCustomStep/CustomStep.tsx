@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useErrorHandler, useMyCountry } from '@proton/components';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useMyCountry from '@proton/components/hooks/useMyCountry';
 import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { getAppHref } from '@proton/shared/lib/apps/helper';

@@ -5,9 +5,9 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
-import type { OnLoginCallback } from '@proton/components';
-import { AbuseModal, useErrorHandler, useIsInboxElectronApp } from '@proton/components';
 import ElectronBlockedContainer from '@proton/components/containers/app/ElectronBlockedContainer';
+import type { OnLoginCallback } from '@proton/components/containers/app/interface';
+import AbuseModal from '@proton/components/containers/login/AbuseModal';
 import type {
     AuthActionResponse,
     AuthCacheResult,
@@ -22,6 +22,8 @@ import {
     handleTotp,
     handleUnlock,
 } from '@proton/components/containers/login/loginActions';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useIsInboxElectronApp from '@proton/components/hooks/useIsInboxElectronApp';
 import { IcUser } from '@proton/icons/icons/IcUser';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';

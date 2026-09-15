@@ -3,9 +3,12 @@ import type { HTMLProps, ReactNode } from 'react';
 import { addDays, getUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Info, Price, Time, getDealDurationText } from '@proton/components';
+import Info from '@proton/components/components/link/Info';
+import Price from '@proton/components/components/price/Price';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import Time from '@proton/components/components/time/Time';
+import { getDealDurationText } from '@proton/components/containers/offers/helpers/offerCopies';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import { ADDON_PREFIXES, TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';

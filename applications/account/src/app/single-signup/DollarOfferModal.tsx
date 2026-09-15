@@ -5,8 +5,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
-import type { ModalProps } from '@proton/components';
-import { ModalTwo, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import noop from '@proton/utils/noop';

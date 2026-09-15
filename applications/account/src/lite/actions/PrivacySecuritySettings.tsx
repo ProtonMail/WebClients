@@ -2,10 +2,12 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { RemoveImageMetadataToggle, RequestLinkConfirmationToggle, SenderImagesToggle } from '@proton/components';
 import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/PreventTrackingToggle';
 import RemoteToggle from '@proton/components/containers/emailPrivacy/RemoteToggle';
 import EmbeddedToggle from '@proton/components/containers/messages/EmbeddedToggle';
+import RemoveImageMetadataToggle from '@proton/components/containers/messages/RemoveImageMetadataToggle';
+import RequestLinkConfirmationToggle from '@proton/components/containers/messages/RequestLinkConfirmationToggle';
+import SenderImagesToggle from '@proton/components/containers/messages/SenderImagesToggle';
 import useLoading from '@proton/hooks/useLoading';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

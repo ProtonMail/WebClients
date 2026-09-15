@@ -3,10 +3,10 @@ import type { ReactNode } from 'react';
 import { addDays, getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { Time } from '@proton/components';
 import Price from '@proton/components/components/price/Price';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import Time from '@proton/components/components/time/Time';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import { useCouponConfig } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';

@@ -1,7 +1,7 @@
+import DeleteSection from '@proton/components/containers/account/DeleteSection';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import type { SectionConfig } from '@proton/components/containers/layout/interface';
-import { DeleteSection } from '@proton/components/index';
 
 import DataCollectionSection from './DataCollectionSection';
 import { ThirdPartySection } from './ThirdPartySection';

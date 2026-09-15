@@ -1,4 +1,4 @@
-import type { HumanVerificationResult } from '@proton/components';
+import type { HumanVerificationResult } from '@proton/components/containers/api/humanVerification/interface';
 import { queryCreateUser, queryCreateUserExternal } from '@proton/shared/lib/api/user';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { CLIENT_TYPES } from '@proton/shared/lib/constants';
@@ -6,7 +6,11 @@ import { mergeHeaders, withVerificationHeaders } from '@proton/shared/lib/fetch/
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import { srpVerify } from '@proton/shared/lib/srp';
 
-import { getHVHeadersBasedOnSignupMode, getPaymentTokenForExternalUsers, getTokenPayment } from '../../../signup/helper';
+import {
+    getHVHeadersBasedOnSignupMode,
+    getPaymentTokenForExternalUsers,
+    getTokenPayment,
+} from '../../../signup/helper';
 import type {
     AccountData,
     InviteData,

@@ -5,9 +5,9 @@ import { c } from 'ttag';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { InputFieldTwo } from '@proton/components';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { requestLoginResetToken } from '@proton/shared/lib/api/reset';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
