@@ -5,6 +5,8 @@ import { Navigate, Route, Routes, useLocation } from 'react-router-dom-v5-compat
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
+import { driveOAuthViewsOverride } from '@proton/activation/src/components/Modals/OAuth/Drive/driveOAuthViews';
+import EasySwitchProvider from '@proton/activation/src/logic/StoreProvider';
 import { useApi } from '@proton/app-context/useApi';
 import {
     GlobalLoader,
@@ -296,18 +298,20 @@ const MainContainer: FunctionComponent = () => {
         return <LoaderPage />;
     }
     return (
-        <GlobalLoaderProvider>
-            <GlobalLoader />
-            <LocationErrorBoundary location={location}>
-                <DriveProvider>
-                    <SubscriptionModalProvider app={config.APP_NAME}>
-                        <QuickSettingsRemindersProvider>
-                            <InitContainer />
-                        </QuickSettingsRemindersProvider>
-                    </SubscriptionModalProvider>
-                </DriveProvider>
-            </LocationErrorBoundary>
-        </GlobalLoaderProvider>
+        <EasySwitchProvider drive={getDrive()} oauthViews={driveOAuthViewsOverride}>
+            <GlobalLoaderProvider>
+                <GlobalLoader />
+                <LocationErrorBoundary location={location}>
+                    <DriveProvider>
+                        <SubscriptionModalProvider app={config.APP_NAME}>
+                            <QuickSettingsRemindersProvider>
+                                <InitContainer />
+                            </QuickSettingsRemindersProvider>
+                        </SubscriptionModalProvider>
+                    </DriveProvider>
+                </LocationErrorBoundary>
+            </GlobalLoaderProvider>
+        </EasySwitchProvider>
     );
 };
 
