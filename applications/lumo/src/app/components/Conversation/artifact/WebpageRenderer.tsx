@@ -63,7 +63,10 @@ export const WebpageRenderer = ({ artifact }: ArtifactRendererProps) => {
     }
 
     return (
-        <div ref={containerRef} className="artifact-webpage-content relative flex-1 w-full h-full overflow-hidden">
+        <div
+            ref={containerRef}
+            className="artifact-webpage-content relative flex-1 min-h-0 min-w-0 w-full h-full overflow-hidden"
+        >
             {!ready && (
                 <div className="absolute inset-center">
                     <CircleLoader size="medium" />
