@@ -248,11 +248,11 @@ export class ESAdapter implements FunctionsV2 {
             // A fresh index is a new attempt at a complete v2 index, so a previous failure no longer
             // describes it — its own outcome will.
             this.isV2IndexIncomplete = false;
-            this.metricService.startMailboxIndexing();
         }
         const job = new IndexingJob(
             {
                 indexService: this.indexService,
+                metricService: this.metricService,
                 initialV1Status: this.lastV1Status!,
                 updateESStatus: this.updateESStatus,
                 updateESProgress: this.updateESProgress,
@@ -273,14 +273,6 @@ export class ESAdapter implements FunctionsV2 {
             // event touched, and the next event retries.
             if (mode === 'index' && outcome === 'failed') {
                 this.isV2IndexIncomplete = true;
-            }
-            // Mirrors v1's `mailbox_index_completed`: only the first full historic pass, spanning both
-            // v1's own indexing and the v2 import that follows it — never a refresh or limit extension.
-            if (mode === 'index' && outcome === 'completed') {
-                this.metricService.sendMailboxIndexCompletedReport({
-                    status: 'success',
-                    totalMessagesIndexed: job.totalMessagesIndexed,
-                });
             }
         });
         return job;
