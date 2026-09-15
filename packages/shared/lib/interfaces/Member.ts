@@ -35,15 +35,15 @@ export interface MemberInvitationData {
 }
 
 export enum MemberUnprivatizationState {
-    // Declined,
-    Pending,
-    Ready,
+    // Declined = 0,
+    Pending = 1,
+    Ready = 2,
 }
 
 export enum CreateMemberMode {
-    Password,
-    Invitation,
-    LoginLink,
+    Password = 0,
+    Invitation = 1,
+    LoginLink = 2,
 }
 
 export interface PublicMemberUnprivatizationOutput {
