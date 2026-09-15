@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useMembers } from '@proton/account/members/hooks';
 import { addCompanyThunk, setCompanyStatusThunk, updateCompanyThunk } from '@proton/account/mspSubsidiaries/actions';
 import { useMspSubsidiaries } from '@proton/account/mspSubsidiaries/hooks';
 import { manageCompanyAndOpenTabThunk } from '@proton/account/mspSubsidiaries/manageCompanyAction';
@@ -49,6 +50,7 @@ import clsx from '@proton/utils/clsx';
 
 import { UNAUTHENTICATED_ROUTES } from '../../../content/helper';
 import type { CompanyFormData, MspCompany } from '../types';
+import { useAdminPublicKeys } from '../useAdminPublicKeys';
 import CompanyModal from './CompanyModal';
 import DisableCompanyModal from './DisableCompanyModal';
 import ManageManagersModal from './ManageManagersModal';
@@ -82,11 +84,7 @@ const toManagedCompany = (org: UserOrganization): MspCompany => ({
 });
 
 const ManagersCell = ({ managers, onManage }: { managers: MspDelegatedManager[]; onManage: () => void }) => {
-    const names = managers.map((manager) => manager.Name);
-
-    if (names.length === 0) {
-        return <InlineLinkButton onClick={onManage}>{c('Action').t`Assign manager(s)`}</InlineLinkButton>;
-    }
+    const names = [...managers.map((manager) => manager.Name), c('Info').t`All admins`];
 
     if (names.length <= MANAGERS_COLLAPSE_THRESHOLD) {
         return <InlineLinkButton onClick={onManage}>{names.join(', ')}</InlineLinkButton>;
@@ -135,6 +133,12 @@ const MspCompaniesSection = () => {
               .map(toManagedCompany);
     const loading = userPermissionsLoading || (isAdmin ? subsidiariesLoading : userOrganizationsLoading);
     const { viewportWidth } = useActiveBreakpoint();
+
+    // Org admins already have implicit access via the "All admins" entry, so exclude them here to
+    // avoid showing them a second time as an explicit delegated manager (they can end up as one as
+    // a side effect of forking into the subsidiary via the "Manage" button).
+    const [members = []] = useMembers();
+    const adminPublicKeys = useAdminPublicKeys(members);
 
     const [search, setSearch] = useState('');
     const [modal, setModal] = useState<ModalState>(null);
@@ -350,7 +354,9 @@ const MspCompaniesSection = () => {
                                         {isAdmin && (
                                             <TableCell label={c('Column header').t`Managers`}>
                                                 <ManagersCell
-                                                    managers={company.managers}
+                                                    managers={company.managers.filter(
+                                                        (manager) => !adminPublicKeys.has(manager.PublicKey)
+                                                    )}
                                                     onManage={() => setManageManagersCompany(company)}
                                                 />
                                             </TableCell>

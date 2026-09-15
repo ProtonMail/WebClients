@@ -21,6 +21,7 @@ import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { Member } from '@proton/shared/lib/interfaces';
 
 import type { MspCompany } from '../types';
+import { useAdminPublicKeys } from '../useAdminPublicKeys';
 
 const getMemberLabel = (member: Member) => `${member.Name} ${member.Addresses?.[0]?.Email ?? ''}`;
 
@@ -28,7 +29,7 @@ interface ManagerRowProps {
     name: string;
     email?: string;
     loading?: boolean;
-    onRemove: () => void;
+    onRemove?: () => void;
 }
 
 const ManagerRow = ({ name, email, loading, onRemove }: ManagerRowProps) => (
@@ -46,17 +47,19 @@ const ManagerRow = ({ name, email, loading, onRemove }: ManagerRowProps) => (
                 </span>
             )}
         </div>
-        <Button
-            shape="ghost"
-            size="small"
-            icon
-            loading={loading}
-            disabled={loading}
-            onClick={onRemove}
-            title={c('Action').t`Remove manager`}
-        >
-            <IcCross size={4} alt={c('Action').t`Remove manager`} />
-        </Button>
+        {onRemove && (
+            <Button
+                shape="ghost"
+                size="small"
+                icon
+                loading={loading}
+                disabled={loading}
+                onClick={onRemove}
+                title={c('Action').t`Remove manager`}
+            >
+                <IcCross size={4} alt={c('Action').t`Remove manager`} />
+            </Button>
+        )}
     </div>
 );
 
@@ -110,26 +113,34 @@ const ManageManagersModal = ({ company, onClose }: Props) => {
     // the same underlying user's key regardless of which org the member row belongs to.
     const managerPublicKeys = useMemo(() => new Set(managers.map((manager) => manager.PublicKey)), [managers]);
 
+    // Org admins already have implicit access via the "All admins" entry, so exclude them here to
+    // avoid showing them a second time as an explicit delegated manager (they can end up as one as
+    // a side effect of forking into the subsidiary via the "Manage" button).
+    const adminPublicKeys = useAdminPublicKeys(members);
+
     const candidates = useMemo(
         () =>
             members.filter((member) => {
                 // The caller is always the org owner in this modal, who already has full access to
                 // every subsidiary regardless of delegated-manager records — excluding them avoids
-                // offering a redundant, no-op assignment.
-                if (member.Self || managerPublicKeys.has(member.PublicKey)) {
+                // offering a redundant, no-op assignment. Other org admins are excluded for the same
+                // reason (implicit access via "All admins"), and adding one would just be silently
+                // filtered back out of the visible list, looking like a no-op.
+                if (member.Self || managerPublicKeys.has(member.PublicKey) || adminPublicKeys.has(member.PublicKey)) {
                     return false;
                 }
                 // Assigning a manager re-encrypts the org key to the member's own keys, so
                 // candidates need to be non-private and have already set up their keys.
                 return member.Private === MEMBER_PRIVATE.READABLE && !!member.Keys?.length;
             }),
-        [members, managerPublicKeys]
+        [members, managerPublicKeys, adminPublicKeys]
     );
 
     const emailByPublicKey = useMemo(
         () => new Map(members.map((member) => [member.PublicKey, member.Addresses?.[0]?.Email])),
         [members]
     );
+    const visibleManagers = managers.filter((manager) => !adminPublicKeys.has(manager.PublicKey));
 
     const handleSelect = async (member: Member) => {
         setQuery('');
@@ -163,7 +174,8 @@ const ManageManagersModal = ({ company, onClose }: Props) => {
                         />
                     </div>
                     <div className="flex flex-column">
-                        {managers.map((manager) => (
+                        <ManagerRow name={c('Info').t`All admins`} />
+                        {visibleManagers.map((manager) => (
                             <ManagerRow
                                 key={manager.ID}
                                 name={manager.Name}
