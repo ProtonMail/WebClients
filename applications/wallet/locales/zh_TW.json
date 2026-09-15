@@ -2938,6 +2938,9 @@
       "Google Pay mark": [
         "Google Pay 標記"
       ],
+      "Have some more time to decide without interruption.": [
+        "在未被干擾下有更充分的時間決定。"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
       ],
@@ -4197,6 +4200,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } 後四碼 ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB 的雲端儲存空間，讓您可以輕鬆儲存、同步及共享檔案。受端對端加密保護。"
       ],
@@ -4754,6 +4760,9 @@
       "More plans are available in other currencies": [
         "其他貨幣有更多的方案"
       ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "透過 ${ IDEAL_WERO_BRAND_NAME } 付款"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "為了讓訂閱在試用期結束後啟用，需要付款方式。"
       ],
@@ -4909,6 +4918,11 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "續訂價格取決於計費區域和 VAT 號碼。"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - 卡片於 ${ Last4 } 結束"
       ]
     },
     "Payments.Sepa": {
