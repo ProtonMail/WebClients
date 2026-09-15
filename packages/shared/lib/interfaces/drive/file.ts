@@ -104,6 +104,10 @@ export interface DriveFileRevisionPayload {
     XAttr: string;
 }
 
+export interface DriveFileRestoreRevisionResult {
+    Code: 1000 | 1002; // 1000: restore sync, 1002: restore async
+}
+
 export interface DriveFileRevisionResult {
     Revision: DriveFileRevisionPayload;
 }

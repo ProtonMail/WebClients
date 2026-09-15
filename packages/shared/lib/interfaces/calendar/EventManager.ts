@@ -26,16 +26,16 @@ interface CalendarAlarmEventManagerCreate {
 export type CalendarAlarmEventManager =
     CalendarAlarmEventManagerDelete | CalendarAlarmEventManagerUpdate | CalendarAlarmEventManagerCreate;
 
-interface CalendarUrlEventManagerDelete {
+export interface CalendarUrlEventManagerDelete {
     ID: string;
     Action: EVENT_ACTIONS.DELETE;
 }
-interface CalendarUrlEventManagerUpdate {
+export interface CalendarUrlEventManagerUpdate {
     ID: string;
     Action: EVENT_ACTIONS.UPDATE;
     CalendarUrl: CalendarUrl;
 }
-interface CalendarUrlEventManagerCreate {
+export interface CalendarUrlEventManagerCreate {
     ID: string;
     Action: EVENT_ACTIONS.CREATE;
     CalendarUrl: CalendarUrl;
