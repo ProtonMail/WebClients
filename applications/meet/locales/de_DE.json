@@ -34,6 +34,9 @@
       "${ name } lowered their hand": [
         "${ name } hat die Hand gesenkt"
       ],
+      "${ name } mentioned you: ${ message }": [
+        "${ name } erwähnte dich: ${ message }"
+      ],
       "${ name } raised their hand": [
         "${ name } hat die Hand erhoben"
       ],
@@ -45,6 +48,10 @@
       ],
       "${ name }: ${ message }": [
         "${ name }: ${ message }"
+      ],
+      "${ suggestionCount } mention suggestion available": [
+        "${ suggestionCount } Vorschlag zur Erwähnung verfügbar",
+        "${ suggestionCount } Vorschläge zur Erwähnung verfügbar"
       ],
       "A participant joined the meeting": [
         "Ein Teilnehmer ist dem Meeting beigetreten"
@@ -157,6 +164,9 @@
       "You have been muted by the host": [
         "Der Organisator hat dich stummgeschaltet"
       ],
+      "You were mentioned: ${ message }": [
+        "Du wurdest erwähnt: ${ message }"
+      ],
       "Your camera has been turned off by the host": [
         "Deine Kamera wurde vom Organisator ausgeschaltet"
       ],
@@ -167,6 +177,10 @@
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
+      ],
+      "${ newMentionCount } new mention": [
+        "${ newMentionCount } neue Erwähnung",
+        "${ newMentionCount } neue Erwähnungen"
       ],
       "${ newMessageCount } new": [
         "${ newMessageCount } neu",
@@ -225,6 +239,9 @@
       ],
       "Cancel": [
         "Abbrechen"
+      ],
+      "Change layout": [
+        "Layout ändern"
       ],
       "Change password": [
         "Passwort ändern"
@@ -310,6 +327,9 @@
       "Dismiss": [
         "Verwerfen"
       ],
+      "Dismiss new mentions": [
+        "Neue Erwähnungen verwerfen"
+      ],
       "Dismiss new messages": [
         "Neue Nachrichten verwerfen"
       ],
@@ -369,6 +389,9 @@
       ],
       "Full size": [
         "Vollbild"
+      ],
+      "Gallery": [
+        "Galerie"
       ],
       "Generate a new meeting link.": [
         "Neuen Meeting-Link generieren."
@@ -582,6 +605,9 @@
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "In ${ CALENDAR_APP_NAME } planen"
       ],
+      "Screen share": [
+        "Bildschirmfreigabe"
+      ],
       "Search countries": [
         "Länder durchsuchen"
       ],
@@ -623,6 +649,9 @@
       ],
       "Skip to main content": [
         "Zum Hauptinhalt springen"
+      ],
+      "Speaker": [
+        "Sprecher"
       ],
       "Start an instant meeting": [
         "Sofortiges Meeting beginnen"
@@ -711,6 +740,9 @@
       "Use camera": [
         "Kamera verwenden"
       ],
+      "Use it": [
+        "Einsetzen"
+      ],
       "Use microphone": [
         "Mikrofon benutzen"
       ],
@@ -784,6 +816,9 @@
       ],
       "Incoming video": [
         "Eingehender Videoanruf"
+      ],
+      "Layout: ${ selectedLabel }": [
+        "Layout: ${ selectedLabel }"
       ],
       "Leave Meeting": [
         "Meeting verlassen"
@@ -896,6 +931,9 @@
       ],
       "Device settings": [
         "Geräteeinstellungen"
+      ],
+      "Layouts": [
+        "Layouts"
       ],
       "Meeting details": [
         "Meetingdetails"
@@ -2154,6 +2192,9 @@
       "Live captions have stopped.": [
         "Die Live-Untertitel wurden gestoppt."
       ],
+      "Message is too long to send": [
+        "Nachricht zu lange zum Senden"
+      ],
       "Microphone access is blocked. Allow it in your browser settings.": [
         "Der Zugriff auf das Mikrofon ist gesperrt. Bitte aktiviere ihn in deinen Browsereinstellungen."
       ],
@@ -2233,6 +2274,9 @@
       "Screen share is not supported on mobile browsers": [
         "Bildschirmteilen wird auf mobilen Browsern nicht unterstützt."
       ],
+      "Screen share is not supported on your device": [
+        "Bildschirmteilen wird auf deinem Gerät nicht unterstützt"
+      ],
       "Signature is missing": [
         "Signatur fehlt"
       ],
@@ -2271,6 +2315,12 @@
       ],
       "The meeting password is invalid": [
         "Das Meeting-Passwort ist ungültig"
+      ],
+      "The mention could not be added because the message is at its character limit": [
+        "Die Erwähnung konnte nicht hinzugefügt werden, da die Zeichenbegrenzung der Nachricht erreicht ist"
+      ],
+      "The message field is unavailable. Please reload the page.": [
+        "Das Nachrichtenfeld ist nicht verfügbar. Bitte lade die Seite neu."
       ],
       "The selected microphone is no longer available.": [
         "Ausgewähltes Mikrofon nicht mehr verfügbar."
@@ -2426,6 +2476,12 @@
       ],
       "Security key": [
         "Sicherheitsschlüssel"
+      ],
+      "Still waiting?": [
+        "Wartest du immer noch?"
+      ],
+      "Touch your security key to continue.": [
+        "Berühre deinen Sicherheitsschlüssel, um fortzufahren."
       ]
     },
     "fido2: Label": {
@@ -2557,6 +2613,9 @@
       " and ": [
         " und "
       ],
+      "${ deviceLabel } is available again": [
+        "${ deviceLabel } ist wieder verfügbar"
+      ],
       "${ maxParticipants } participant limit reached": [
         "${ maxParticipants } Teilnehmerlimit erreicht"
       ],
@@ -2594,6 +2653,12 @@
         "${ replyCount } Antwort",
         "${ replyCount } Antworten"
       ],
+      "${ senderNameNode } mentioned you": [
+        "${ senderNameNode } erwähnte dich"
+      ],
+      "${ spotlightParticipantName } is the active speaker": [
+        "${ spotlightParticipantName } ist der aktive Sprecher"
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } von bis zu ${ maxParticipants } Teilnehmern"
       ],
@@ -2625,6 +2690,9 @@
       ],
       "Admitting": [
         "Wird zugelassen"
+      ],
+      "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Erweiterter Modus: Passe jede Unschärfekonstante an und wähle dann „Anwenden\", um die Vorschau neu zu erstellen. Überschreibungen haben Vorrang vor Datei- und Unleash-Werten."
       ],
       "Allow camera access to preview your background": [
         "Der Kamera den Zugriff erlauben, um eine Vorschau deines Hintergrunds anzuzeigen"
@@ -2779,6 +2847,9 @@
       "End-to-end encryption is active for this chat.": [
         "Ende-zu-Ende-Verschlüsselung ist für diesen Chat aktiv."
       ],
+      "enter": [
+        "Eingeben"
+      ],
       "Enter code": [
         "Code eingeben"
       ],
@@ -2908,6 +2979,9 @@
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
         "Protokolle helfen uns dabei, zu verstehen, was vor dem Auftreten des Problems geschehen ist. Sie enthalten App-Aktionen und Fehlermeldungen, jedoch keine Nachrichteninhalte."
       ],
+      "Loop an uploaded video or your live camera through background blur.": [
+        "Lass ein hochgeladenes Video oder dein Live-Kamerabild mit Hintergrundunschärfe in einer Schleife ablaufen."
+      ],
       "Lower participant's hand": [
         "Hand des Teilnehmers senken"
       ],
@@ -2949,6 +3023,9 @@
       ],
       "Member": [
         "Mitglied"
+      ],
+      "Mention from ${ senderName }": [
+        "Erwähnung von ${ senderName }"
       ],
       "Message actions": [
         "Nachrichtenaktionen"
@@ -3018,6 +3095,9 @@
       ],
       "Not sent, check your connection.": [
         "Nicht gesendet, überprüfe deine Verbindung."
+      ],
+      "notify everyone here": [
+        "Alle hier benachrichtigen"
       ],
       "Only meetings you created appear here": [
         "Nur Meetings, die du erstellt hast, werden hier angezeigt"
@@ -3117,6 +3197,9 @@
       ],
       "Rejecting": [
         "Wird abgelehnt"
+      ],
+      "Run your live camera through the custom background processor. Upload an image to use as the background.": [
+        "Leite das Live-Kamerabild durch den Prozessor für benutzerdefinierte Hintergründe. Lade ein Bild hoch, das als Hintergrund verwendet werden soll."
       ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Plane dein nächstes Meeting. Erstelle ein Konto, um Meetings mit deinem Kalender zu planen."
@@ -3361,14 +3444,38 @@
       "Your browser or device isn’t supported": [
         "Dein Browser oder Gerät wird nicht unterstützt"
       ],
+      "Your camera was disconnected. Now using ${ deviceLabel }.": [
+        "Deine Kamera wurde getrennt. Es wird nun ${ deviceLabel } verwendet."
+      ],
+      "Your device was disconnected. Now using ${ deviceLabel }.": [
+        "Dein Gerät wurde getrennt. Es wird nun ${ deviceLabel } verwendet."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
       "Your meeting is ready": [
         "Dein Meeting ist bereit"
       ],
+      "Your microphone and camera were disconnected. Now using other devices.": [
+        "Dein Mikrofon und deine Kamera wurden getrennt. Es werden nun andere Geräte verwendet."
+      ],
+      "Your microphone and speaker were disconnected. Now using other devices.": [
+        "Dein Mikrofon und dein Lautsprecher wurden getrennt. Es werden nun andere Geräte verwendet."
+      ],
+      "Your microphone was disconnected. Now using ${ deviceLabel }.": [
+        "Dein Mikrofon wurde getrennt. Es wird nun ${ deviceLabel } verwendet."
+      ],
+      "Your microphone, speaker and camera were disconnected. Now using other devices.": [
+        "Dein Mikrofon, dein Lautsprecher und deine Kamera wurden getrennt. Es werden nun andere Geräte verwendet."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Deine Telefonnummer wird nur für diese einmalige Überprüfung verwendet."
+      ],
+      "Your speaker and camera were disconnected. Now using other devices.": [
+        "Dein Lautsprecher und deine Kamera wurden getrennt. Es werden nun andere Geräte verwendet."
+      ],
+      "Your speaker was disconnected. Now using ${ deviceLabel }.": [
+        "Dein Lautsprecher wurde getrennt. Es wird nun ${ deviceLabel } verwendet."
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Du bist dabei, einen Link in einem neuen Tab zu öffnen. Stelle sicher, dass du der Website vertraust, bevor du fortfährst."
@@ -3505,6 +3612,9 @@
       "Every year": [
         "Jedes Jahr"
       ],
+      "everyone": [
+        "Jeder"
+      ],
       "Google Calendar": [
         "Google-Kalender"
       ],
@@ -3547,6 +3657,9 @@
       "Meeting link": [
         "Meeting-Link"
       ],
+      "Mention a participant": [
+        "Einen Teilnehmer erwähnen"
+      ],
       "Message": [
         "Nachricht"
       ],
@@ -3586,6 +3699,9 @@
       "Phone number": [
         "Telefonnummer"
       ],
+      "Preview": [
+        "Vorschau"
+      ],
       "Raw": [
         "Roh"
       ],
@@ -3597,9 +3713,6 @@
       ],
       "Reply": [
         "Antworten"
-      ],
-      "Return to dashboard": [
-        "Zurück zum Dashboard"
       ],
       "Reveal password": [
         "Passwort anzeigen"
@@ -3633,6 +3746,9 @@
       ],
       "Track SID": [
         "SID nachverfolgen"
+      ],
+      "unknown": [
+        "Unbekannt"
       ],
       "Uploaded image": [
         "Hochgeladenes Bild"
@@ -3740,6 +3856,9 @@
       ],
       "Successfully rotated your personal meeting": [
         "Dein persönliches Meeting wurde erfolgreich rotiert"
+      ],
+      "Thanks! Your feedback has been submitted.": [
+        "Danke, dein Feedback wurde übermittelt."
       ],
       "You can't send a feedback for a meeting you haven't been to": [
         "Du kannst kein Feedback für ein Meeting senden, an dem du nicht teilgenommen hast."
@@ -4045,6 +4164,9 @@
       "Background": [
         "Hintergrund"
       ],
+      "Background blur preview": [
+        "Vorschau der Hintergrundunschärfe"
+      ],
       "Backgrounds": [
         "Hintergründe"
       ],
@@ -4238,9 +4360,6 @@
       "Talk confidentially": [
         "Vertraulich sprechen"
       ],
-      "Thank you!": [
-        "Vielen Dank."
-      ],
       "The host didn't admit you": [
         "Der Organisator hat dich nicht zugelassen"
       ],
@@ -4267,9 +4386,6 @@
       ],
       "What went wrong?": [
         "Was ist schiefgelaufen?"
-      ],
-      "Your feedback has been submitted": [
-        "Dein Feedback wurde übermittelt"
       ],
       "Your recording is ready": [
         "Deine Aufnahme ist fertig"
