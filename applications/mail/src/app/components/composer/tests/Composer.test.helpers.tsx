@@ -1,3 +1,5 @@
+import type { MutableRefObject } from 'react';
+
 import type { RenderResult } from '@testing-library/react';
 import { fireEvent } from '@testing-library/react';
 
@@ -6,6 +8,8 @@ import { pick } from '@proton/shared/lib/helpers/object';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
+import type { DraftBodyWriterManager } from '../../../containers/DraftBodyWriterProvider';
+import { DraftBodyWriterProvider, useDraftBodyWriters } from '../../../containers/DraftBodyWriterProvider';
 import { mergeMessages } from '../../../helpers/message/messages';
 import { addApiMock, parseFormData } from '../../../helpers/tests/api';
 import { addApiKeys, apiKeys } from '../../../helpers/tests/crypto';
@@ -85,25 +89,38 @@ export const prepareMessage = (store: MailStore, messageProp: PartialMessageStat
     );
 };
 
+/** Hands the enclosing provider's manager back to the test, as `ComposerContainer` does to the app. */
+const CaptureDraftBodyWriters = ({ into }: { into: MutableRefObject<DraftBodyWriterManager | undefined> }) => {
+    into.current = useDraftBodyWriters();
+    return null;
+};
+
 export const renderComposer = async (
     renderOptions: Parameters<typeof mailTestRender>[1] & {
         message: PartialMessageState;
     }
 ) => {
     const composerID = 'composer-test-id';
+    const writersRef: MutableRefObject<DraftBodyWriterManager | undefined> = { current: undefined };
 
-    const renderResult = await mailTestRender(<Composer {...props} composerID={composerID} />, {
-        ...renderOptions,
-        onStore: (store) => {
-            prepareMessage(store, renderOptions.message, composerID);
-            renderOptions.onStore?.(store);
-        },
-    });
+    const renderResult = await mailTestRender(
+        <DraftBodyWriterProvider>
+            <CaptureDraftBodyWriters into={writersRef} />
+            <Composer {...props} composerID={composerID} />
+        </DraftBodyWriterProvider>,
+        {
+            ...renderOptions,
+            onStore: (store) => {
+                prepareMessage(store, renderOptions.message, composerID);
+                renderOptions.onStore?.(store);
+            },
+        }
+    );
 
     // onClose will most likely unmount the component, it has to continue working
     props.onClose.mockImplementation(renderResult.unmount);
 
-    return renderResult;
+    return { ...renderResult, composerID, writers: writersRef.current! };
 };
 
 export const clickSend = async (renderResult: RenderResult) => {

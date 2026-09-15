@@ -8,15 +8,15 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 
 import { ComposerAssistantProvider } from '../components/assistant/provider/ComposerAssistantProvider';
-import { useMailDispatch, useMailSelector } from '../store/hooks';
-
 import ComposerFrame from '../components/composer/ComposerFrame';
 import { MAX_ACTIVE_COMPOSER_LARGE_SCREEN, MAX_ACTIVE_COMPOSER_SMALL_SCREEN } from '../helpers/composerPositioning';
 import { useCompose } from '../hooks/composer/useCompose';
 import { useClickMailContent } from '../hooks/useClickMailContent';
 import { selectOpenedComposersIds } from '../store/composers/composerSelectors';
 import { composerActions } from '../store/composers/composersSlice';
+import { useMailDispatch, useMailSelector } from '../store/hooks';
 import { ComposeProvider } from './ComposeProvider';
+import { DraftBodyWriterProvider } from './DraftBodyWriterProvider';
 
 import '../components/composer/composer.scss';
 
@@ -80,23 +80,25 @@ const ComposerContainer = ({ children }: Props) => {
 
     return (
         <ComposeProvider onCompose={handleCompose}>
-            {children}
-            <ComposerAssistantProvider>
-                <div>
-                    {composerIDs.map((composerID, i) => (
-                        <ComposerFrame
-                            key={composerID}
-                            index={i}
-                            composerID={composerID}
-                            count={composerIDs.length}
-                            focus={composerID === focusedComposerID}
-                            onFocus={handleFocus(composerID)}
-                            onClose={handleClose(composerID)}
-                            drawerOffset={drawerOffset}
-                        />
-                    ))}
-                </div>
-            </ComposerAssistantProvider>
+            <DraftBodyWriterProvider>
+                {children}
+                <ComposerAssistantProvider>
+                    <div>
+                        {composerIDs.map((composerID, i) => (
+                            <ComposerFrame
+                                key={composerID}
+                                index={i}
+                                composerID={composerID}
+                                count={composerIDs.length}
+                                focus={composerID === focusedComposerID}
+                                onFocus={handleFocus(composerID)}
+                                onClose={handleClose(composerID)}
+                                drawerOffset={drawerOffset}
+                            />
+                        ))}
+                    </div>
+                </ComposerAssistantProvider>
+            </DraftBodyWriterProvider>
             {sendingFromDefaultAddressModal}
             {sendingOriginalMessageModal}
             {storageCapacityModal}
