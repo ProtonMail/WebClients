@@ -8,7 +8,11 @@ import { Button } from '@proton/atoms/Button/Button';
 import { getCanMakePaymentsWithActiveCard } from '@proton/chargebee/lib/getCanMakePaymentsWithActiveCard';
 import type { ApplePayModalHandles } from '@proton/payments-ui/payment-processors/useApplePay';
 import type { GooglePayModalHandles } from '@proton/payments-ui/payment-processors/useGooglePay';
-import { isApplePayQRFlowSupported } from '@proton/payments/core/apple-pay-support';
+import {
+    type ApplePayFlow,
+    isApplePayQRFlowSupported,
+    setOfferedApplePayFlow,
+} from '@proton/payments/core/apple-pay-support';
 import { getChargebeeErrorMessage } from '@proton/payments/core/chargebee-errors';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentVerificatorV5, PaymentVerificatorV5Params } from '@proton/payments/core/createPaymentToken';
@@ -338,9 +342,6 @@ export const useApplePayDependencies = (
     const { createNotification } = useNotifications();
     const applePayCapabilitiesEnabled = useFlag('ApplePayCapabilities');
 
-    /** Outside Safari, Apple Pay is the cross-device QR flow, which Stripe only offers on desktop */
-    const isSupportedContext = () => isSafari() || isApplePayQRFlowSupported();
-
     /** Iframe-only: the check needs Apple's SDK, which the app's `script-src 'self'` forbids */
     const isAvailableInIframe = async (): Promise<boolean> => {
         const { applePayCapabilities, canMakePaymentsWithActiveCard } = await chargebeeHandles.getApplePayCapabilities({
@@ -361,24 +362,33 @@ export const useApplePayDependencies = (
         return currentDomain && chargebeeIframe.canMakePaymentsWithActiveCard;
     };
 
-    const checkApplePay = async (): Promise<boolean> => {
+    const checkApplePay = async (): Promise<ApplePayFlow | null> => {
         try {
-            if (!isSupportedContext()) {
-                return false;
+            if (isSafari()) {
+                const isNativeAvailable = applePayCapabilitiesEnabled
+                    ? await isAvailableInIframe()
+                    : await wasAvailableInBothOrigins();
+
+                return isNativeAvailable ? 'native' : null;
             }
 
-            return applePayCapabilitiesEnabled ? await isAvailableInIframe() : await wasAvailableInBothOrigins();
+            if (!applePayCapabilitiesEnabled || !isApplePayQRFlowSupported()) {
+                return null;
+            }
+
+            return (await isAvailableInIframe()) ? 'qr' : null;
         } catch {
-            return false;
+            return null;
         }
     };
 
     useEffect(() => {
         const flagChanged = new AbortController();
 
-        void checkApplePay().then((result) => {
+        void checkApplePay().then((flow) => {
             if (!flagChanged.signal.aborted) {
-                setIsApplePayAvailable(result);
+                setOfferedApplePayFlow(flow);
+                setIsApplePayAvailable(flow !== null);
             }
         });
 
@@ -400,6 +410,7 @@ export const useApplePayDependencies = (
             onVerificationCancelled();
         },
         onMountFailure: () => {
+            setOfferedApplePayFlow(null);
             setHasApplePayFailedToMount(true);
         },
     };
