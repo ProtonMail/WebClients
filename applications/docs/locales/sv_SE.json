@@ -51,6 +51,9 @@
       "Add": [
         "Lägg till"
       ],
+      "Add a payment method": [
+        "Lägg till en betalningsmetod"
+      ],
       "Add account": [
         "Lägg till konto"
       ],
@@ -144,9 +147,6 @@
       ],
       "Claim your free ${ BRAND_NAME } address": [
         "Gör anspråk på din gratis ${ BRAND_NAME }-adress"
-      ],
-      "Clear conversation": [
-        "Rensa konversation"
       ],
       "Clear data": [
         "Rensa data"
@@ -471,9 +471,6 @@
       "Import from Outlook": [
         "Importera från Outlook"
       ],
-      "Keep going": [
-        "Fortsätt"
-      ],
       "Keep my subscription": [
         "Behåll min prenumeration"
       ],
@@ -639,9 +636,6 @@
       "Refresh the page": [
         "Uppdatera sidan"
       ],
-      "Reject": [
-        "Avvisa"
-      ],
       "Reload": [
         "Ladda om"
       ],
@@ -750,9 +744,6 @@
       "Select all": [
         "Markera alla"
       ],
-      "Send": [
-        "Skicka"
-      ],
       "Set password or expiration date": [
         "Ställ in lösenord eller utgångsdatum"
       ],
@@ -818,12 +809,6 @@
       ],
       "Stay": [
         "Stanna"
-      ],
-      "Stop": [
-        "Stoppa"
-      ],
-      "Stop here": [
-        "Stoppa här"
       ],
       "Stop sharing": [
         "Sluta dela"
@@ -4050,6 +4035,9 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Du har obetalda fakturor. Betala dem innan du går med i ett familjepaket."
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du är inbjuden att länka ditt ${ BRAND_NAME }-konto till denna familjegrupp och njuta av alla dess premiumfunktioner."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ditt konto har fler e-postadresser än vad som är tillgängligt för dig i detta paket. ${ addressSettingsLink }"
       ],
@@ -4131,9 +4119,6 @@
       ],
       "Security key": [
         "Säkerhetsnyckel"
-      ],
-      "Touch your security key.": [
-        "Tryck din säkerhetsnyckel."
       ]
     },
     "fido2: Label": {
@@ -4708,6 +4693,9 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etikett vald",
         "${ selectedFoldersCountLocalized } etiketter valda"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att undvika att förlora åtkomst. ${ learnMoreLink }"
       ],
       "${ total } user found": [
         "${ total } användare hittades",
@@ -5609,9 +5597,6 @@
       ],
       "There are no documents in the trash.": [
         "Det finns inga dokument i papperskorgen."
-      ],
-      "Thinking about this": [
-        "Tänker på detta"
       ],
       "This action will delete the link and revoke access for all users.": [
         "Denna åtgärd kommer ta bort länken och återkalla åtkomst för alla användare."
@@ -8534,9 +8519,6 @@
       ],
       "Anything you'd like us to know": [
         "Något du vill att vi ska veta"
-      ],
-      "Ask anything…": [
-        "Fråga vad som helst …"
       ],
       "Choose password": [
         "Välj lösenord"

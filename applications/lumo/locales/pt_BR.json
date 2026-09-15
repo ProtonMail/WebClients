@@ -957,8 +957,14 @@
         "${ users } usuário",
         "${ users } usuários"
       ],
+      "Amount due": [
+        "Valor a pagar"
+      ],
       "Amount due after trial": [
         "Valor devido após o período de avaliação"
+      ],
+      "Amount due now": [
+        "Valor devido agora"
       ],
       "Subtotal": [
         "Subtotal"
@@ -1104,6 +1110,9 @@
       "New chat": [
         "Novo bate-papo"
       ],
+      "Not now": [
+        "Agora não"
+      ],
       "Open ${ DRIVE_APP_NAME }": [
         "Abrir no ${ DRIVE_APP_NAME }"
       ],
@@ -1158,6 +1167,9 @@
       "Try again": [
         "Tentar novamente"
       ],
+      "Try Apertus": [
+        "Testar Apertus"
+      ],
       "Turn off and delete": [
         "Desativar e excluir"
       ],
@@ -1182,6 +1194,9 @@
       ],
       "Upload from device": [
         "Enviar do dispositivo"
+      ],
+      "Use Apertus": [
+        "Usar Apertus"
       ],
       "Web search": [
         "Pesquisa na web"
@@ -1415,6 +1430,9 @@
       ]
     },
     "collider_2025: Description": {
+      "${ apertusArticleLink } is a fully open, Swiss-made AI model developed with leading Swiss universities. It is best suited to lighter everyday tasks.": [
+        "${ apertusArticleLink } é um modelo de IA totalmente aberto, desenvolvido na Suíça em parceria com as principais universidades suíças. É mais adequado para tarefas cotidianas mais simples."
+      ],
       "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
         "O ${ LUMO_SHORT_APP_NAME } faz referência às suas memórias salvas para personalizar as respostas — estilo de comunicação, especialidade, ferramentas recorrentes e projetos de longa duração."
       ],
@@ -1432,6 +1450,9 @@
       ],
       "Encrypted search index for chats and Drive files.": [
         "Índice de pesquisa criptografado para bate-papos e arquivos do Drive."
+      ],
+      "Fully open, Swiss-made model for lighter tasks": [
+        "Modelo totalmente aberto, fabricado na Suíça, para tarefas mais leves"
       ],
       "High-performance model for complex tasks": [
         "Modelo de alto desempenho para tarefas complexas"
@@ -1495,6 +1516,9 @@
       ],
       "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
         "Desativar a memória excluirá permanentemente todas as ${ memories.length } memórias salvas. Você poderá ativar a memória mais tarde, mas as memórias excluídas não poderão ser recuperadas."
+      ],
+      "You can learn more on the ${ protonBlogLink }.": [
+        "Você pode saber mais em ${ protonBlogLink }."
       ],
       "Your experience shapes ${ LUMO_SHORT_APP_NAME }. Tell us what you think.": [
         "Sua experiência molda o ${ LUMO_SHORT_APP_NAME }. Conte-nos o que você acha."
@@ -1669,8 +1693,11 @@
       "Something went wrong": [
         "Algo deu errado."
       ],
-      "You've reached your weekly chat limit": [
-        "Você atingiu seu limite semanal de bate-papo"
+      "You've reached your ${ LUMO_SHORT_APP_NAME } 2.0 Lite limit": [
+        "Você atingiu o limite do ${ LUMO_SHORT_APP_NAME } 2.0 Lite"
+      ],
+      "You've reached your ${ LUMO_SHORT_APP_NAME } 2.0 Max limit": [
+        "Você atingiu o limite do ${ LUMO_SHORT_APP_NAME } 2.0 Max"
       ]
     },
     "collider_2025: Failure": {
@@ -1744,6 +1771,9 @@
     "collider_2025: Header": {
       "Choose sheets to add": [
         "Escolha as planilhas a serem adicionadas"
+      ],
+      "Help us improve": [
+        "Ajude-nos a melhorar"
       ],
       "Tell us more": [
         "Forneça mais informações"
@@ -2199,6 +2229,9 @@
       "This folder is empty": [
         "Esta pasta está vazia"
       ],
+      "This shares your general sentiment and response metadata with ${ BRAND_NAME }. Your prompt and the response are not included.": [
+        "Isso compartilha seus metadados gerais de sentimento e resposta com a ${ BRAND_NAME }. Sua solicitação e a resposta não são incluídas."
+      ],
       "To get started, please open ${ DRIVE_APP_NAME } to set up your secure storage.": [
         "Para começar, abra ${ DRIVE_APP_NAME } para configurar o armazenamento seguro."
       ],
@@ -2447,11 +2480,17 @@
       ]
     },
     "collider_2025: Link": {
+      "${ BRAND_NAME } blog": [
+        "Blog da ${ BRAND_NAME }"
+      ],
       "add ${ LUMO_SHORT_APP_NAME } Plus": [
         "adicionar o ${ LUMO_SHORT_APP_NAME } Plus"
       ],
       "Already have an account? ${ linkSignup }": [
         "Já tem uma conta? ${ linkSignup }"
+      ],
+      "Apertus Charter": [
+        "Carta da Apertus"
       ],
       "Create a free account": [
         "Criar uma conta gratuita"
@@ -2772,11 +2811,17 @@
       "Help and support": [
         "Ajuda e suporte"
       ],
+      "Help improve open-source AI": [
+        "Ajude a melhorar a IA de código aberto"
+      ],
       "Invalid Link": [
         "Link inválido"
       ],
       "Manage keys": [
         "Gerenciar chaves"
+      ],
+      "Meet Apertus 1.5": [
+        "Conheça Apertus 1.5"
       ],
       "Models": [
         "Modelos"
@@ -3036,6 +3081,9 @@
       ],
       "Upgrade": [
         "Fazer upgrade"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Fazer upgrade para o ${ LUMO_SHORT_APP_NAME } Plus"
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Pro": [
         "Fazer upgrade para o ${ LUMO_SHORT_APP_NAME } Pro"
@@ -3619,6 +3667,9 @@
       "${ LUMO_SHORT_APP_NAME } is a private AI. Your conversations are encrypted and never used to train AI models.": [
         "O ${ LUMO_SHORT_APP_NAME } é uma IA privada. Suas conversas são criptografadas e nunca são usadas para treinar modelos de IA."
       ],
+      "${ LUMO_SHORT_APP_NAME } is end-to-end encrypted and never used for training, profiling, or advertising.": [
+        "${ LUMO_SHORT_APP_NAME } é criptografada de ponta a ponta e nunca é usada para treinamento, criação de perfis ou publicidade."
+      ],
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to keep your conversations on this device, but it isn't available here.": [
         "O ${ LUMO_SHORT_APP_NAME } precisa de armazenamento de banco de dados local (IndexedDB) para manter suas conversas neste dispositivo, mas ele não está disponível aqui."
       ],
@@ -3911,6 +3962,9 @@
       ],
       "A dreamy close-up of flowers swept into soft radial trails by rotating camera motion, where the center blooms in crisp detail while petals dissolve outward into creamy bokeh under gentle natural light.": [
         "Um primeiro plano encantador de flores, transformadas em suaves traços radiais pelo movimento giratório da câmera, em que o centro das flores se destaca com detalhes nítidos, enquanto as pétalas se dissolvem para fora, formando um bokeh cremoso sob uma luz natural suave."
+      ],
+      "A striking monochromatic study in yellow — just a fragment of contemporary architecture emerging from its equally golden surroundings, with tonal shifts alone carving out the geometric surfaces and lending the scene its quiet sense of depth and form.": [
+        "Um impressionante estudo monocromático em amarelo — apenas um fragmento da arquitetura contemporânea emergindo de um entorno igualmente dourado, em que as variações tonais, por si só, definem as superfícies geométricas e conferem à cena uma sensação serena de profundidade e forma."
       ],
       "A warm and cozy Japandi-style living room, minimalist aesthetic, cream sectional sofa, neutral and mustard throw pillows, woven pouf, large textured area rug with fringe, minimalist botanical wall art, large indoor palm plant, soft ambient golden lighting, candles, serene and peaceful atmosphere, photorealistic, interior design photography.": [
         "Uma sala de estar estilo Japandi acolhedora e aconchegante, estética minimalista, sofá de canto em tom creme, almofadas em tons neutros e mostarda, pufe de trama natural, grande tapete texturizado com franjas, arte de parede botânica minimalista, palmeira de interior de grande porte, iluminação ambiente suave em tons dourados, velas, atmosfera serena e tranquila, imagem fotorrealista, fotografia de design de interiores."
@@ -4465,6 +4519,9 @@
       "Reading a web page": [
         "Lendo uma página da web"
       ],
+      "Reasoning": [
+        "Racionamento"
+      ],
       "Revenue TTM": [
         "Receita TTM"
       ],
@@ -4776,6 +4833,9 @@
       ],
       "Sign in to build your gallery": [
         "Inicie sessão para criar a sua galeria"
+      ],
+      "Sign in to create projects": [
+        "Inicie a sessão para criar projetos"
       ],
       "Sort by": [
         "Ordenar por"
@@ -6409,9 +6469,6 @@
       ],
       "Security key": [
         "Chave de segurança"
-      ],
-      "Touch your security key.": [
-        "Toque na sua chave de segurança."
       ]
     },
     "fido2: Label": {
@@ -7627,6 +7684,12 @@
       ],
       "Notifications": [
         "Notificações"
+      ],
+      "off": [
+        "desativado"
+      ],
+      "on": [
+        "ativado"
       ],
       "Open a conversation to enable generation error testing.": [
         "Abra uma conversa para ativar o teste de erro de geração."
@@ -9173,6 +9236,17 @@
         "O preço de renovação depende da região de faturamento e do número de IVA."
       ]
     },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - cartão terminado em ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Transferência bancária - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - cartão terminado em ${ Last4 }"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Ao confirmar este pagamento, você autoriza a ${ BRAND_NAME } e Stripe, nosso provedor de serviços de pagamento, a instruir seu banco a debitar sua conta de acordo. Você pode obter um reembolso no prazo de 8 semanas a partir da data do débito, de acordo com as condições do seu contrato com o banco."
@@ -9965,6 +10039,9 @@
     "Subtitle": {
       "per month, billed annually": [
         "por mês, com cobrança anual"
+      ],
+      "per user/month, billed annually": [
+        "por usuário/mês, com cobrança anual"
       ]
     },
     "Success": {

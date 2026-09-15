@@ -208,6 +208,9 @@
       "Cancel": [
         "Avbryt"
       ],
+      "Change layout": [
+        "Ändra layout"
+      ],
       "Change password": [
         "Ändra lösenord"
       ],
@@ -349,6 +352,9 @@
       "Full size": [
         "Full storlek"
       ],
+      "Gallery": [
+        "Galleri"
+      ],
       "Generate a new meeting link.": [
         "Generera en ny möteslänk."
       ],
@@ -360,9 +366,6 @@
       ],
       "Getting ready...": [
         "Förbereder …"
-      ],
-      "Grid": [
-        "Rutnät"
       ],
       "Help and feedback": [
         "Hjälp och feedback"
@@ -755,6 +758,9 @@
       "Incoming video": [
         "Inkommande video"
       ],
+      "Layout: ${ selectedLabel }": [
+        "Layout: ${ selectedLabel }"
+      ],
       "Leave Meeting": [
         "Lämna möte"
       ],
@@ -857,6 +863,9 @@
       ],
       "Device settings": [
         "Enhetsinställningar"
+      ],
+      "Layouts": [
+        "Layouter"
       ],
       "Meeting details": [
         "Mötesdetaljer"
@@ -2321,9 +2330,6 @@
       ],
       "Security key": [
         "Säkerhetsnyckel"
-      ],
-      "Touch your security key.": [
-        "Tryck din säkerhetsnyckel."
       ]
     },
     "fido2: Label": {
@@ -2454,6 +2460,9 @@
     "Info": {
       " and ": [
         " och "
+      ],
+      "${ deviceLabel } is available again": [
+        "${ deviceLabel } är tillgänglig igen"
       ],
       "${ maxParticipants } participant limit reached": [
         "Gränsen på ${ maxParticipants } deltagare har uppnåtts"

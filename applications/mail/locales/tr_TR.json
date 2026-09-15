@@ -54,6 +54,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } ekle"
       ],
+      "Add a payment method": [
+        "Bir ödeme yöntemi ekleyin"
+      ],
       "Add account": [
         "Hesap ekle"
       ],
@@ -86,6 +89,9 @@
       ],
       "Add group": [
         "Grup ekle"
+      ],
+      "Add more details": [
+        "Daha fazla ayrıntı ekle"
       ],
       "Add new group": [
         "Yeni grup ekle"
@@ -4757,6 +4763,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Kullanıcı adınız: ${ user.Name }. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa etki alanı (pm.me) bölümüne gidin."
       ],
+      "A contact with this email address already exists": [
+        "Bu e-posta adresiyle bir kişi kaydı zaten var"
+      ],
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
@@ -6165,8 +6174,11 @@
       "Security key": [
         "Güvenlik anahtarı"
       ],
-      "Touch your security key.": [
-        "Güvenlik anahtarınıza dokunun."
+      "Still waiting?": [
+        "Hâlâ bekliyor musunuz?"
+      ],
+      "Touch your security key to continue.": [
+        "İlerlemek için güvenlik anahtarınıza dokunun."
       ]
     },
     "fido2: Label": {
@@ -7137,6 +7149,9 @@
       "${ LUMO_APP_NAME } includes the writing assistant": [
         "${ LUMO_APP_NAME } içinde yazma yardımcısı bulunur"
       ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } şu ana kadar ${ count } ilerledi. Sürdürmek istiyor musunuz?"
+      ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
         "${ LUMO_SHORT_APP_NAME }, hızlı ve kolayca daha iyi e-postalar oluşturmanızı sağlar."
       ],
@@ -7241,12 +7256,22 @@
         "${ selectedFoldersCountLocalized } etiket seçildi",
         "${ selectedFoldersCountLocalized } etiket seçildi"
       ],
+      "${ steps } step": [
+        "${ steps } adım",
+        "${ steps } adım"
+      ],
       "${ storage } storage": [
         "${ storage } depolama alanı"
       ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } okunmamış",
         "${ subscription.UnreadMessageCount } okunmamış"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Erişiminizi kaybetmemek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Aboneliğinizi sürdürmek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
       ],
       "${ total } conversation": [
         "${ total } yazışma",
@@ -7373,8 +7398,17 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } ekle"
       ],
+      "Add ${ contact } to your contacts": [
+        "${ contact } kullanıcısını kişilerinize ekleyin"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } ekle"
+      ],
+      "Add a contact": [
+        "Bir kişi ekle"
+      ],
+      "Add contact": [
+        "Kişi ekle"
       ],
       "Add image URL": [
         "Görsel adresi ekleyin"
@@ -7595,11 +7629,26 @@
       "Center": [
         "Ortaya"
       ],
+      "Change a display setting": [
+        "Bir ekran ayarını değiştir"
+      ],
       "Change display setting": [
         "Görüntü ayarını değiştir"
       ],
+      "Change how your mail is grouped": [
+        "E-postalarınızın nasıl gruplanacağını değiştirin"
+      ],
+      "Change your list density": [
+        "Listenizin yoğunluğunu değiştirin"
+      ],
+      "Change your mailbox layout": [
+        "E-posta kutunuzun yerleşimini değiştirin"
+      ],
       "Change your password": [
         "Parolanızı değiştirin"
+      ],
+      "Change your theme": [
+        "Temanızı değiştirin"
       ],
       "Checked Proton support": [
         "Proton desteği denetlendi"
@@ -7674,8 +7723,17 @@
         "${ calendarsToBeCreatedCount } yeni takvim ekle",
         "${ calendarsToBeCreatedCount } yeni takvim ekle"
       ],
+      "Create a filter": [
+        "Bir süzgeç oluştur"
+      ],
+      "Create a folder": [
+        "Klasör oluştur"
+      ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "“${ suggestedFolderName }” gibi bir klasör oluşturarak tüm çevrim içi alındılarınızı tek bir yerde tutabilirsiniz."
+      ],
+      "Create a label": [
+        "Bir etiket oluştur"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "İçe aktarılan iletiler için bir etiket, bu içe aktarma için bir zaman aralığı ve içe aktarmak istediğiniz klasörler oluşturun."
@@ -7780,6 +7838,12 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Kişi bilgilerini yeniden imzalamak istiyor musunuz?"
+      ],
+      "Document in foundation-search index": [
+        "Belge temel arama dizininde var"
+      ],
+      "Document lookup failed": [
+        "Belge aranamadı"
       ],
       "Don't forget to share the password with the recipient": [
         "Parolayı alıcı ile paylaşmayı unutmayın"
@@ -8161,7 +8225,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -8204,6 +8269,12 @@
       ],
       "Key fingerprint": [
         "Anahtar parmak izi"
+      ],
+      "Label ${ emails }": [
+        "${ emails }yı etiketle"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "${ emails }yı ${ names } olarak etiketle"
       ],
       "Label all imported messages as": [
         "İçe aktarılan iletiler şu şekilde etiketlensin"
@@ -8253,6 +8324,9 @@
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
         "Günlük kayıtları sorunun ortaya çıkmasından önce neler olduğunu anlamamıza yardımcı olur. Bu günlük kayıtlarında uygulama işlemleri ve hata iletileri bulunur. Ancak iletilerin içeriği bulunmaz."
       ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "${ lookup.result.docId } belgesini ara"
+      ],
       "Low Priority": [
         "Düşük Öncelik"
       ],
@@ -8265,6 +8339,12 @@
       "Manage your labels": [
         "Etiketlerinizi yönetin"
       ],
+      "Mark ${ emails } as read": [
+        "${ emails }yı okunmuş olarak işaretle"
+      ],
+      "Mark ${ emails } as unread": [
+        "${ emails }yı okunmamış olarak işaretle"
+      ],
       "Mark all as read": [
         "Tümünü okunmuş olarak işaretle"
       ],
@@ -8276,6 +8356,12 @@
       ],
       "Mark as unread": [
         "Okunmamış olarak işaretle"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "${ place } içindekilerin tümünü okunmuş olarak işaretle"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "${ place } içindekilerin tümünü okunmamış olarak işaretle"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logosu"
@@ -8349,6 +8435,12 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Çoğu herkese açık Wi-Fi ağı güvenlidir. Ancak bazılarında güvenlik açıkları vardır ve sizi siber tehditlerle karşı karşıya bırakır. Bir VPN, trafiğinizi şifreleyerek sizi korur."
       ],
+      "Move ${ emails }": [
+        "${ emails }yı taşı"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "${ emails }yı ${ destination } konumuna taşı"
+      ],
       "Move emails": [
         "E-postaları taşı"
       ],
@@ -8388,6 +8480,9 @@
       "No email open": [
         "Açık bir e-posta yok"
       ],
+      "No emails selected": [
+        "Herhangi bir e-posta seçilmemiş"
+      ],
       "No folder found": [
         "Herhangi bir klasör bulunamadı"
       ],
@@ -8405,6 +8500,9 @@
       ],
       "No links cleaned": [
         "Herhangi bir bağlantı temizlenmedi"
+      ],
+      "No location selected": [
+        "Bir konum seçilmemiş"
       ],
       "No messages to show": [
         "Görüntülenecek bir ileti yok."
@@ -8438,6 +8536,12 @@
       ],
       "Not connected": [
         "Bağlı değil"
+      ],
+      "Not found in the encrypted search index.": [
+        "Şifrelenmiş arama dizininde bulunamadı."
+      ],
+      "Not found in the foundation-search index.": [
+        "Temel arama dizininde bulunamadı."
       ],
       "Not supported by this browser": [
         "Bu tarayıcı tarafından desteklenmiyor"
@@ -8701,11 +8805,20 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Bunu parola yöneticinizde veya hesabınızı ve oturum açma bilgilerinizi tuttuğunuz yerde güncellemeyi unutmayın."
       ],
+      "Remove the star from ${ emails }": [
+        "${ emails }dan yıldızı kaldır"
+      ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Bu uygulama ile ilgili tüm verileri (ve indirilmiş iletileri, …) siler"
       ],
+      "Rename ${ folder } to…": [
+        "${ folder } adını değiştir…"
+      ],
       "Rename folder": [
         "Klasörü yeniden adlandır"
+      ],
+      "Rename this folder": [
+        "Bu klasörü yeniden adlandır"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Bir iletiyi kimlik avı girişimi olarak bildirdiğinizde, ileti bize gönderilir. Böylece onu inceleyebilir ve süzgeçlerimizi geliştirebiliriz. Bu durum iletinin tüm içeriğini görebileceğimiz anlamına gelir."
@@ -8715,6 +8828,12 @@
       ],
       "Restore": [
         "Geri yükle"
+      ],
+      "Results came from the local search.": [
+        "Sonuçlar yerel aramadan geliyor."
+      ],
+      "Results came from the server.": [
+        "Sonuçlar sunucudan geliyor."
       ],
       "Right to Left": [
         "Sağdan sola"
@@ -8840,6 +8959,9 @@
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
       ],
+      "Set your signature": [
+        "İmzanızı ayarlayın"
+      ],
       "Setting up ${ feature }…": [
         "${ feature } ayarlanıyor…"
       ],
@@ -8887,6 +9009,12 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Ne yazık ki, bu ileti bulunamadı ya da geçerlilik süresi dolmuş."
+      ],
+      "Source document in encrypted search index": [
+        "Şifrelenmiş arama dizinindeki kaynak belge"
+      ],
+      "Star ${ emails }": [
+        " ${ emails } e-postaya yıldız koy"
       ],
       "Star emails": [
         "E-postalara yıldız koy"
@@ -9073,9 +9201,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Artık yeni iletileri göndermek için ${ defaultEmailAddress } budur."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Bu işlem için birçok adım atılıyor. İlerlensin mi?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir siteye gidiyor olabilir."
@@ -9279,8 +9404,14 @@
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "Yalnızca tarihe, ada, e-posta adresine veya konu satırına göre aramayı kapatın. İleti içeriğini aramayı kapatmak (ve bu özelliği açmak için indirilen iletileri silmek) için Ayarlar bölümüne gidin."
       ],
+      "Turn off your away message": [
+        "Uzakta iletinizi kapatın"
+      ],
       "Turn on to search the content of your messages": [
         "İletilerinizin içeriklerini arayabilmek için açın"
+      ],
+      "Turn on your away message": [
+        "Uzakta iletinizi açın"
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "Bu tarayıcının depolama alanı özelliği olup olmadığı denetlenemedi. İletilerin içeriklerinde arama yapabilmek için bu özellik desteklenmelidir."
@@ -9308,6 +9439,12 @@
       ],
       "Update filter": [
         "Süzgeci güncelle"
+      ],
+      "Update the filter ${ filter }": [
+        "${ filter } süzgecini güncelle"
+      ],
+      "Update this filter": [
+        "Bu süzgeci güncelle"
       ],
       "Updating message content search...": [
         "İleti içerikleri araması güncelleniyor..."
@@ -10408,6 +10545,9 @@
       ],
       "Did not follow instructions": [
         "Yönergeleri izlemedi"
+      ],
+      "Display name": [
+        "Görüntülenecek ad"
       ],
       "Document ID": [
         "Belge kimliği"
@@ -14965,6 +15105,12 @@
       "${ count } email → ${ wakeTime }": [
         "${ count } e-posta → ${ wakeTime }",
         "${ count } e-posta → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "${ emails }yı ertele"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "${ emails }yı ${ wakeTime } zamanına ertele"
       ]
     },
     "Snooze message": {
@@ -16446,9 +16592,6 @@
       "Apply gift code": [
         "Hediye kodunu uygula"
       ],
-      "Apply labels": [
-        "Etiketleri uygula"
-      ],
       "Archive all messages?": [
         "Tüm iletiler arşivlensin mi?"
       ],
@@ -16505,9 +16648,6 @@
       ],
       "CC": [
         "Kopya"
-      ],
-      "Change display setting": [
-        "Görüntü ayarını değiştir"
       ],
       "Change my answer": [
         "Yanıtımı değiştir"
@@ -16581,17 +16721,8 @@
       "Create contact": [
         "Kişi ekle"
       ],
-      "Create filter": [
-        "Süzgeç oluştur"
-      ],
-      "Create folder": [
-        "Klasör oluştur"
-      ],
       "Create folder \"${ search }\"": [
         "\"${ search }\" klasörü ekle"
-      ],
-      "Create label": [
-        "Etiket oluştur"
       ],
       "Create label \"${ search }\"": [
         "\"${ search }\" etiketi ekle"
@@ -16903,12 +17034,6 @@
       "Make your inbox your own": [
         "Gelen kutunuzu kendinize göre düzenleyin"
       ],
-      "Mark all as read": [
-        "Tümünü okunmuş olarak işaretle"
-      ],
-      "Mark all as unread": [
-        "Tümünü okunmamış olarak işaretle"
-      ],
       "Mark all messages as read": [
         "Tüm iletileri okunmuş olarak işaretle"
       ],
@@ -16980,9 +17105,6 @@
       ],
       "Move all messages to trash": [
         "Tüm iletileri çöpe at"
-      ],
-      "Move emails": [
-        "E-postaları taşı"
       ],
       "Move to": [
         "Taşı"
@@ -17167,9 +17289,6 @@
       "Remove from list?": [
         "Listeden kaldırılsın mı?"
       ],
-      "Rename folder": [
-        "Klasörü yeniden adlandır"
-      ],
       "Reply": [
         "Yanıtla"
       ],
@@ -17254,17 +17373,11 @@
       "September Sale": [
         "Eylül indirimi"
       ],
-      "Set auto-reply": [
-        "Otomatik yanıtı ayarla"
-      ],
       "Set recovery methods": [
         "Kurtarma yöntemlerini ayarlayın"
       ],
       "Set recovery phrase": [
         "Kurtarma ifadesini ayarla"
-      ],
-      "Set signature": [
-        "İmza ayarla"
       ],
       "Set up ${ protonDuoPlanName }": [
         "${ protonDuoPlanName } ayarlarını yapın"
@@ -17302,17 +17415,11 @@
       "Snooze": [
         "Ertele"
       ],
-      "Snooze emails": [
-        "E-postaları ertele"
-      ],
       "Snooze message": [
         "İletiyi ertele"
       ],
       "Snooze:": [
         "Ertele:"
-      ],
-      "Star emails": [
-        "E-postalara yıldız koy"
       ],
       "Start a new import": [
         "Yeni bir içe aktarma başlatın"
@@ -17322,9 +17429,6 @@
       ],
       "Stay for 50% off your next month": [
         "Sonraki ay %50 indirimden yararlanın"
-      ],
-      "Still working on it": [
-        "Üzerinde çalışılıyor"
       ],
       "Storage capacity warning": [
         "Depolama alanı uyarısı"
@@ -17366,17 +17470,11 @@
       "Trust public key?": [
         "Herkese açık anahtara güvenilsin mi?"
       ],
-      "Turn off auto-reply": [
-        "Otomatik yanıtı kapat"
-      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"
       ],
       "Two-factor authentication": [
         "İki adımlı doğrulama"
-      ],
-      "Unstar emails": [
-        "E-postalardan yıldızı kaldır"
       ],
       "Unsubscribe": [
         "Aboneliği sonlandır"
@@ -17389,9 +17487,6 @@
       ],
       "Unsubscribe request sent": [
         "Aboneliği sonlandırma isteği gönder"
-      ],
-      "Update filter": [
-        "Süzgeci güncelle"
       ],
       "Upgrade complete!": [
         "Yükseltme tamamlandı!"

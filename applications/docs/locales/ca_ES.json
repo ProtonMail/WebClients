@@ -51,6 +51,9 @@
       "Add": [
         "Afegeix"
       ],
+      "Add a payment method": [
+        "Afegiu un mètode de pagament"
+      ],
       "Add account": [
         "Afegeix un compte"
       ],
@@ -145,9 +148,6 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Aconseguiu la vostra adreça gratuïta de ${ BRAND_NAME }"
       ],
-      "Clear conversation": [
-        "Netejar la conversa"
-      ],
       "Clear data": [
         "Neteja les dades"
       ],
@@ -222,9 +222,6 @@
       ],
       "Copy as markdown": [
         "Copiar com a markdown"
-      ],
-      "Copy debug transcript": [
-        "Copia la transcripció de depuració"
       ],
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
@@ -477,9 +474,6 @@
       "Import from Outlook": [
         "Importa des de l'Outlook"
       ],
-      "Keep going": [
-        "Continua"
-      ],
       "Keep my subscription": [
         "Mantén la subscripció"
       ],
@@ -651,9 +645,6 @@
       "Refresh the page": [
         "Refresca la pàgina"
       ],
-      "Reject": [
-        "Rebutja"
-      ],
       "Reload": [
         "Recarrega"
       ],
@@ -762,9 +753,6 @@
       "Select all": [
         "Seleccionar-ho tot"
       ],
-      "Send": [
-        "Enviar"
-      ],
       "Set password or expiration date": [
         "Establiu una contrasenya o una data de caducitat"
       ],
@@ -830,12 +818,6 @@
       ],
       "Stay": [
         "Mantenir"
-      ],
-      "Stop": [
-        "Atura"
-      ],
-      "Stop here": [
-        "Parar aquí"
       ],
       "Stop sharing": [
         "Deixa de compartir"
@@ -2980,6 +2962,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } és el vostre nom d'usuari. Per a crear ${ emailAddress }, aneu a Preferències > Identitat i adreces > Domini curt (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Ja existeix un contacte amb aquesta adreça de correu electrònic"
+      ],
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
@@ -4184,8 +4169,11 @@
       "Security key": [
         "Clau de seguretat"
       ],
-      "Touch your security key.": [
-        "Toqueu la vostra clau de seguretat."
+      "Still waiting?": [
+        "Encara esteu esperant?"
+      ],
+      "Touch your security key to continue.": [
+        "Toqueu la clau de seguretat per continuar."
       ]
     },
     "fido2: Label": {
@@ -4761,6 +4749,12 @@
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetes seleccionades"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Us queda ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per no perdre'n l'accés. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Us queden ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per a mantenir la vostra subscripció. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "S'ha trobat ${ total } usuari",
         "S'han trobat ${ total } usuaris"
@@ -5012,9 +5006,6 @@
       ],
       "Custom email domains": [
         "Dominis de correu personalitzats"
-      ],
-      "Debug transcript copied": [
-        "S'ha copiat la transcripció de depuració"
       ],
       "Decrypting your document": [
         "S'està desxifrant el document"
@@ -5671,9 +5662,6 @@
       "There are no documents in the trash.": [
         "No hi ha documents a la paperera."
       ],
-      "Thinking about this": [
-        "Hi estem pensant"
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Aquesta acció eliminarà l'enllaç i revocarà l'accés per a tots els usuaris."
       ],
@@ -5700,9 +5688,6 @@
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Aquest és un nom o un sobrenom per a la vostra organització que els usuaris veuran. Podeu canviar-lo en qualsevol moment."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Això està prenent molts passos. Hauria de continuar?"
       ],
       "This item already exists in your library": [
         "Aquest element ja existeix a la biblioteca"
@@ -8614,9 +8599,6 @@
       "Anything you'd like us to know": [
         "Qualsevol cosa que vulgueu que sapiguem"
       ],
-      "Ask anything…": [
-        "Pregunteu qualsevol cosa…"
-      ],
       "Choose password": [
         "Tria una contrasenya"
       ],
@@ -10662,9 +10644,6 @@
       ],
       "Stay for 50% off your next month": [
         "Quedeu-vos i gaudiu d'un 50% de descompte el mes vinent."
-      ],
-      "Still working on it": [
-        "Encara hi estem treballant"
       ],
       "Stop sharing": [
         "Deixa de compartir"

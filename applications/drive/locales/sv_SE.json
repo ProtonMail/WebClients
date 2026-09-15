@@ -52,6 +52,9 @@
         "Lägg till ${ photoCount } foto till ett nytt album",
         "Lägg till ${ photoCount } foton till ett nytt album"
       ],
+      "Add a payment method": [
+        "Lägg till en betalningsmetod"
+      ],
       "Add account": [
         "Lägg till konto"
       ],
@@ -4619,6 +4622,9 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Du har obetalda fakturor. Betala dem innan du går med i ett familjepaket."
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du är inbjuden att länka ditt ${ BRAND_NAME }-konto till denna familjegrupp och njuta av alla dess premiumfunktioner."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ditt konto har fler e-postadresser än vad som är tillgängligt för dig i detta paket. ${ addressSettingsLink }"
       ],
@@ -4700,9 +4706,6 @@
       ],
       "Security key": [
         "Säkerhetsnyckel"
-      ],
-      "Touch your security key.": [
-        "Tryck din säkerhetsnyckel."
       ]
     },
     "fido2: Label": {
@@ -5378,6 +5381,9 @@
       ],
       "${ storage } storage": [
         "${ storage } lagringsutrymme"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att undvika att förlora åtkomst. ${ learnMoreLink }"
       ],
       "${ total } user found": [
         "${ total } användare hittades",
@@ -9395,6 +9401,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } slutar med ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB molnlagring som låter dig enkelt lagra, synkronisera och dela filer. Säkrat med end-to-end-kryptering."
       ],
@@ -10801,6 +10810,14 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Förnyelsepriset är beroende av faktureringsregion och momsregistreringsnummer."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - kort slutar på ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Banköverföring - ${ iban }"
       ]
     },
     "Payments.Sepa": {

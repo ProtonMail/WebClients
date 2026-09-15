@@ -156,9 +156,6 @@
       "Clear browser data": [
         "Limpar dados do navegador"
       ],
-      "Clear conversation": [
-        "Limpar conversa"
-      ],
       "Clear data": [
         "Limpar dados"
       ],
@@ -548,9 +545,6 @@
       "Keep current time zone": [
         "Manter fuso horário atual"
       ],
-      "Keep going": [
-        "Continue"
-      ],
       "Keep my subscription": [
         "Manter minha assinatura"
       ],
@@ -731,9 +725,6 @@
       "Refresh the page": [
         "Atualizar a página"
       ],
-      "Reject": [
-        "Rejeitar"
-      ],
       "Remove": [
         "Remover"
       ],
@@ -904,12 +895,6 @@
       ],
       "Stay": [
         "Permanecer"
-      ],
-      "Stop": [
-        "Parar"
-      ],
-      "Stop here": [
-        "Parar aqui"
       ],
       "Submit": [
         "Enviar"
@@ -1885,8 +1870,14 @@
         "${ users } usuário",
         "${ users } usuários"
       ],
+      "Amount due": [
+        "Valor a pagar"
+      ],
       "Amount due after trial": [
         "Valor devido após o período de avaliação"
+      ],
+      "Amount due now": [
+        "Valor devido agora"
       ],
       "Subtotal": [
         "Subtotal"
@@ -4868,9 +4859,6 @@
       ],
       "Security key": [
         "Chave de segurança"
-      ],
-      "Touch your security key.": [
-        "Toque na sua chave de segurança."
       ]
     },
     "fido2: Label": {
@@ -6538,9 +6526,6 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "O processo de verificação abrirá uma nova guia do navegador. Desative todos os bloqueadores de pop-up ativos."
-      ],
-      "Thinking about this": [
-        "Pensando nisso"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário deve primeiro ativar o endereço."
@@ -9376,6 +9361,11 @@
         "Suporte para ${ n } domínios de e-mail personalizados"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Experimente agora"
+      ]
+    },
     "ngc_access_banner: info": {
       "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
         "Você agora tem acesso ao novo ${ CALENDAR_APP_NAME }. ${ link }"
@@ -10210,6 +10200,17 @@
         "O preço de renovação depende da região de faturamento e do número de IVA."
       ]
     },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - cartão terminado em ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Transferência bancária - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - cartão terminado em ${ Last4 }"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Ao confirmar este pagamento, você autoriza a ${ BRAND_NAME } e Stripe, nosso provedor de serviços de pagamento, a instruir seu banco a debitar sua conta de acordo. Você pode obter um reembolso no prazo de 8 semanas a partir da data do débito, de acordo com as condições do seu contrato com o banco."
@@ -10313,9 +10314,6 @@
       ],
       "Anytown": [
         "Nova Esperança"
-      ],
-      "Ask anything…": [
-        "Pergunte qualquer coisa…"
       ],
       "Company name": [
         "Nome da empresa"
@@ -12974,9 +12972,6 @@
       ],
       "Stay for 50% off your next month": [
         "Fique por mais um mês com 50% de desconto"
-      ],
-      "Still working on it": [
-        "Ainda estou trabalhando nisso"
       ],
       "Subscription canceled": [
         "Assinatura cancelada"

@@ -56,6 +56,9 @@
       "Add a date": [
         "Afegiu una data"
       ],
+      "Add a payment method": [
+        "Afegiu un mètode de pagament"
+      ],
       "Add account": [
         "Afegeix un compte"
       ],
@@ -156,9 +159,6 @@
       "Clear browser data": [
         "Neteja les dades del navegador"
       ],
-      "Clear conversation": [
-        "Netejar la conversa"
-      ],
       "Clear data": [
         "Neteja les dades"
       ],
@@ -239,9 +239,6 @@
       ],
       "Copy booking page link": [
         "Copieu l'enllaç de la pàgina de reserves"
-      ],
-      "Copy debug transcript": [
-        "Copia la transcripció de depuració"
       ],
       "Copy email address": [
         "Copia l'adreça de correu electrònic"
@@ -551,9 +548,6 @@
       "Keep current time zone": [
         "Mantén la zona horària actual"
       ],
-      "Keep going": [
-        "Continua"
-      ],
       "Keep my subscription": [
         "Mantén la subscripció"
       ],
@@ -734,9 +728,6 @@
       "Refresh the page": [
         "Refresca la pàgina"
       ],
-      "Reject": [
-        "Rebutja"
-      ],
       "Remove": [
         "Esborra"
       ],
@@ -907,12 +898,6 @@
       ],
       "Stay": [
         "Mantenir"
-      ],
-      "Stop": [
-        "Atura"
-      ],
-      "Stop here": [
-        "Parar aquí"
       ],
       "Submit": [
         "Envia"
@@ -3625,6 +3610,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } és el vostre nom d'usuari. Per a crear ${ emailAddress }, aneu a Preferències > Identitat i adreces > Domini curt (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Ja existeix un contacte amb aquesta adreça de correu electrònic"
+      ],
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
@@ -4959,8 +4947,11 @@
       "Security key": [
         "Clau de seguretat"
       ],
-      "Touch your security key.": [
-        "Toqueu la vostra clau de seguretat."
+      "Still waiting?": [
+        "Encara esteu esperant?"
+      ],
+      "Touch your security key to continue.": [
+        "Toqueu la clau de seguretat per continuar."
       ]
     },
     "fido2: Label": {
@@ -5597,6 +5588,12 @@
       "${ storage } storage": [
         "${ storage } d'emmagatzematge"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Us queda ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per no perdre'n l'accés. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Us queden ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per a mantenir la vostra subscripció. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "S'ha trobat ${ total } usuari",
         "S'han trobat ${ total } usuaris"
@@ -5917,9 +5914,6 @@
       ],
       "Daily": [
         "Cada dia"
-      ],
-      "Debug transcript copied": [
-        "S'ha copiat la transcripció de depuració"
       ],
       "Dedicated servers": [
         "Servidors dedicats"
@@ -6635,9 +6629,6 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El procés de verificació obrirà una pestanya nova del navegador. Desactiveu els bloquejadors de finestres emergents actius."
       ],
-      "Thinking about this": [
-        "Hi estem pensant"
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Aquesta adreça està inactivada. Per tal de poder enviar-hi, el propietari l'ha d'activar en primer lloc."
       ],
@@ -6664,9 +6655,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Aquesta és ara la vostra ${ defaultEmailAddress } per enviar missatges nous."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Això està prenent molts passos. Hauria de continuar?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Aquest enllaç porta a un lloc web que us podria estar intentant robar la informació, com ara contrasenyes i detalls de targetes de crèdit."
@@ -10457,9 +10445,6 @@
       "Anytown": [
         "Castellvent"
       ],
-      "Ask anything…": [
-        "Pregunteu qualsevol cosa…"
-      ],
       "Company name": [
         "Nom de l'empresa"
       ],
@@ -13117,9 +13102,6 @@
       ],
       "Stay for 50% off your next month": [
         "Quedeu-vos i gaudiu d'un 50% de descompte el mes vinent."
-      ],
-      "Still working on it": [
-        "Encara hi estem treballant"
       ],
       "Subscription canceled": [
         "S'ha cancel·lat la subscripció"

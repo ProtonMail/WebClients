@@ -1686,9 +1686,6 @@
       ],
       "Something went wrong": [
         "Etwas ist schiefgelaufen"
-      ],
-      "You've reached your weekly chat limit": [
-        "Du hast dein wöchentliches Chat-Limit erreicht"
       ]
     },
     "collider_2025: Failure": {
@@ -6577,9 +6574,6 @@
       ],
       "Security key": [
         "Sicherheitsschlüssel"
-      ],
-      "Touch your security key.": [
-        "Deinen Sicherheitsschlüssel berühren."
       ]
     },
     "fido2: Label": {
@@ -7744,9 +7738,6 @@
       ],
       "Forces either unavailable state, without burning a real quota or waiting for a flag rollout. \"unavailable_limit_reached\" pins the Max pool to 0 remaining, exactly as the backend would after the weekly cap; \"unavailable_high_load\" switches off the availability flag. Both disable the Max row in the picker, fall the selection back to Lite, and push maxModelAvailability to native. Persists across reloads until switched off.": [
         "Erzwingt entweder einen Nicht verfügbar-Status, ohne echtes Kontingent zu verbrauchen oder auf ein Flag-Rollout zu warten. „unavailable_limit_reached“ setzt den Max-Pool auf 0 verbleibende Einheiten fest, genau wie das Backend nach Erreichen des wöchentlichen Limits; „unavailable_high_load“ schaltet das Verfügbarkeits-Flag aus. Beide deaktivieren die Maximal-Zeile im Picker, fallen auf „Lite“ zurück und übergeben maxModelAvailability an Native. Diese Einstellungen bleiben auch beim Neuladen bestehen, bis sie ausgeschaltet werden."
-      ],
-      "Forces Lite and Max pools to zero and lets UsageLimitsTierSync dispatch the tier error, so you can preview the weekly limit UpsellCard above the composer. Hidden for Plus accounts. Persists across reloads until switched off.": [
-        "Setzt die Werte für „Forces Lite“ und „Max pools“ auf Null und lässt „UsageLimitsTierSync“ den Tier-Fehler auslösen, sodass du oben im Verfassen-Fenster eine Vorschau der wöchentlichen Obergrenze („UpsellCard“) anzeigen kannst. Bei Plus-Konten ausgeblendet. Bleibt auch nach dem Neuladen erhalten, bis die Funktion ausgeschaltet wird."
       ],
       "Forces the inline composer banner into \"approaching\" or \"at limit\" state so you can preview it in any context.": [
         "Zwingt das Inline-Verfassen-Fenster-Banner in den Status „fast erreicht“ oder „erreicht“, damit du in jedem Kontext eine Vorschau davon anzeigen kannst."

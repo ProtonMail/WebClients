@@ -274,6 +274,9 @@
       "Add ${ BRAND_NAME } address": [
         "Lägg till ${ BRAND_NAME }-adress"
       ],
+      "Add a payment method": [
+        "Lägg till en betalningsmetod"
+      ],
       "Add account": [
         "Lägg till konto"
       ],
@@ -408,9 +411,6 @@
       ],
       "Claim your free ${ BRAND_NAME } address": [
         "Gör anspråk på din gratis ${ BRAND_NAME }-adress"
-      ],
-      "Clear conversation": [
-        "Rensa konversation"
       ],
       "Close": [
         "Stäng"
@@ -898,9 +898,6 @@
       "Keep editing": [
         "Fortsätt redigera"
       ],
-      "Keep going": [
-        "Fortsätt"
-      ],
       "Keep logo": [
         "Behåll logga"
       ],
@@ -1240,9 +1237,6 @@
       "select file": [
         "välj fil"
       ],
-      "Send": [
-        "Skicka"
-      ],
       "Send code": [
         "Skicka kod"
       ],
@@ -1362,12 +1356,6 @@
       ],
       "Stay": [
         "Stanna"
-      ],
-      "Stop": [
-        "Stoppa"
-      ],
-      "Stop here": [
-        "Stoppa här"
       ],
       "Stop using single sign-on": [
         "Sluta använda enkel inloggning"
@@ -6123,6 +6111,9 @@
       "You need to configure a custom domain before creating a new user.": [
         "Du måste konfigurera en anpassad domän innan du skapar en ny användare."
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du är inbjuden att länka ditt ${ BRAND_NAME }-konto till denna familjegrupp och njuta av alla dess premiumfunktioner."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Ditt konto har fler e-postadresser än vad som är tillgängligt för dig i detta paket. ${ addressSettingsLink }"
       ],
@@ -6474,9 +6465,6 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Detta kommer ta bort alla säkerhetsnycklar länkade till ditt konto."
-      ],
-      "Touch your security key.": [
-        "Tryck din säkerhetsnyckel."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bekräfta din identitet med en fysisk U2F eller FIDO2 säkerhetsnyckel"
@@ -7426,6 +7414,9 @@
       ],
       "${ storage } storage": [
         "${ storage } lagringsutrymme"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att undvika att förlora åtkomst. ${ learnMoreLink }"
       ],
       "${ total } user found": [
         "${ total } användare hittades",
@@ -8406,9 +8397,6 @@
       ],
       "How your emergency contact can change your password for you:": [
         "Hur din nödkontakt ändra ditt lösenord åt dig:"
-      ],
-      "I have not finished this one yet.": [
-        "Jag har inte slutförd denna än."
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Identitetsleverantörens offentliga nyckel för signering av autentiseringspåståenden. Det borde finnas en plats att ladda ner eller kopiera certifikathashet från identitetsleverantören. Klistra in certifikathashet i textrutan."
@@ -9404,9 +9392,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Dessa inloggningsuppgifter kan inte användas för att logga in på våra officiella ${ VPN_APP_NAME }-appar. ${ learnMore }"
-      ],
-      "Thinking about this": [
-        "Tänker på detta"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Detta konto har stängts av på grund av en potentiell policyöverträdelse."
@@ -12898,6 +12883,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } slutar med ${ Last4 }"
+      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } låter dig skapa e-postadresser och hantera konton för underanvändare. Idealiskt för familjer och organisationer."
       ],
@@ -14438,6 +14426,14 @@
         "Förnyelsepriset är beroende av faktureringsregion och momsregistreringsnummer."
       ]
     },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - kort slutar på ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Banköverföring - ${ iban }"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Genom att bekräfta denna betalning auktoriserar du ${ BRAND_NAME } och Stripe, vår betaltjänstleverantör, att instruera din bank att debitera ditt konto i enlighet med detta. Du kan få en återbetalning inom 8 veckor från debiteringsdagen, enligt villkoren i ditt avtal med din bank."
@@ -14507,9 +14503,6 @@
       ],
       "Anytown": [
         "Alingsås"
-      ],
-      "Ask anything…": [
-        "Fråga vad som helst …"
       ],
       "billing@company.com": [
         "billing@company.com"

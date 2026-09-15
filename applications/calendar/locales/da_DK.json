@@ -56,6 +56,9 @@
       "Add a date": [
         "Tilføj en dato"
       ],
+      "Add a payment method": [
+        "Tilføj en betalingsmetode"
+      ],
       "Add account": [
         "Tilføj konto"
       ],
@@ -156,9 +159,6 @@
       "Clear browser data": [
         "Ryd browserdata"
       ],
-      "Clear conversation": [
-        "Ryd samtale"
-      ],
       "Clear data": [
         "Ryd data"
       ],
@@ -239,9 +239,6 @@
       ],
       "Copy booking page link": [
         "Kopier link til reservationsside"
-      ],
-      "Copy debug transcript": [
-        "Kopiér fejlfindingstranskibering"
       ],
       "Copy email address": [
         "Kopiér e-mailadresse"
@@ -551,9 +548,6 @@
       "Keep current time zone": [
         "Bevar den nuværende tidszone"
       ],
-      "Keep going": [
-        "Fortsæt"
-      ],
       "Keep my subscription": [
         "Bevar mit abonnement"
       ],
@@ -734,9 +728,6 @@
       "Refresh the page": [
         "Opdater siden"
       ],
-      "Reject": [
-        "Afvis"
-      ],
       "Remove": [
         "Fjern"
       ],
@@ -907,12 +898,6 @@
       ],
       "Stay": [
         "Bliv her"
-      ],
-      "Stop": [
-        "Stop"
-      ],
-      "Stop here": [
-        "Stop her"
       ],
       "Submit": [
         "Indsend"
@@ -3625,6 +3610,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } er dit brugernavn. For at oprette ${ emailAddress } skal du gå til Indstillinger > Identitet og adresser > Kort domæne (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "En kontakt med denne e-mailadresse eksisterer allerede"
+      ],
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
@@ -4959,8 +4947,11 @@
       "Security key": [
         "Sikkerhedsnøgle"
       ],
-      "Touch your security key.": [
-        "Tryk på din sikkerhedsnøgle."
+      "Still waiting?": [
+        "Venter du stadig?"
+      ],
+      "Touch your security key to continue.": [
+        "Tryk på din sikkerhedsnøgle for at fortsætte."
       ]
     },
     "fido2: Label": {
@@ -5597,6 +5588,12 @@
       "${ storage } storage": [
         "${ storage } lagerplads"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Der er ${ timeRemaining } tilbage tilbage i prøveversionen. ${ addPaymentMethodLink } for at undgå at miste adgang. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Der er ${ timeRemaining } tilbage tilbage i prøveversionen. ${ addPaymentMethodLink } for at beholde dit abonnement. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } bruger fundet",
         "${ total } brugere fundet"
@@ -5917,9 +5914,6 @@
       ],
       "Daily": [
         "Daglig"
-      ],
-      "Debug transcript copied": [
-        "Fejlfindingstranskibering kopieret"
       ],
       "Dedicated servers": [
         "Dedikerede servere"
@@ -6635,9 +6629,6 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Bekræftelsesprocessen åbner en ny browserfane. Deaktivér venligst alle aktive pop-up-blokkere."
       ],
-      "Thinking about this": [
-        "Overvejer..."
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adresse er deaktiveret. Vil du kunne sende til denne adreses, skal ejeren først aktivere den."
       ],
@@ -6664,9 +6655,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dette er nu din ${ defaultEmailAddress } til afsendelse af nye beskeder."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Det her kræver meget... Skal det fortsætte?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og betalingskortoplysninger."
@@ -10457,9 +10445,6 @@
       "Anytown": [
         "Skovhavn"
       ],
-      "Ask anything…": [
-        "Spørg om hvad som helst..."
-      ],
       "Company name": [
         "Firmanavn"
       ],
@@ -13117,9 +13102,6 @@
       ],
       "Stay for 50% off your next month": [
         "Bliv hængende for 50% rabat i den næste måned"
-      ],
-      "Still working on it": [
-        "Arbejder stadig på det"
       ],
       "Subscription canceled": [
         "Abonnement annulleret"

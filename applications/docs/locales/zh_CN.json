@@ -51,6 +51,9 @@
       "Add": [
         "添加"
       ],
+      "Add a payment method": [
+        "添加支付方式"
+      ],
       "Add account": [
         "添加账户"
       ],
@@ -144,9 +147,6 @@
       "Claim your free ${ BRAND_NAME } address": [
         "认领您的免费 ${ BRAND_NAME } 地址"
       ],
-      "Clear conversation": [
-        "清除会话"
-      ],
       "Clear data": [
         "清除数据"
       ],
@@ -221,9 +221,6 @@
       ],
       "Copy as markdown": [
         "以 markdown 格式复制"
-      ],
-      "Copy debug transcript": [
-        "复制调试副本"
       ],
       "Copy email to clipboard": [
         "复制邮箱地址"
@@ -474,9 +471,6 @@
       "Import from Outlook": [
         "从 Outlook 导入"
       ],
-      "Keep going": [
-        "继续执行"
-      ],
       "Keep my subscription": [
         "保留订阅"
       ],
@@ -645,9 +639,6 @@
       "Refresh the page": [
         "刷新页面"
       ],
-      "Reject": [
-        "拒绝"
-      ],
       "Reload": [
         "刷新"
       ],
@@ -756,9 +747,6 @@
       "Select all": [
         "全选"
       ],
-      "Send": [
-        "发送​​"
-      ],
       "Set password or expiration date": [
         "设置密码或过期日期"
       ],
@@ -824,12 +812,6 @@
       ],
       "Stay": [
         "留在此页"
-      ],
-      "Stop": [
-        "停止"
-      ],
-      "Stop here": [
-        "在此停止"
       ],
       "Stop sharing": [
         "停止分享"
@@ -4146,9 +4128,6 @@
       ],
       "Security key": [
         "安全密钥"
-      ],
-      "Touch your security key.": [
-        "请触碰您的安全密钥！"
       ]
     },
     "fido2: Label": {
@@ -4695,6 +4674,12 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "已选择 ${ selectedFoldersCountLocalized } 个标签"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "试用期剩余 ${ timeRemaining }。${ addPaymentMethodLink } 以避免失去访问权限。${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "试用期剩余 ${ timeRemaining }。${ addPaymentMethodLink } 以保留您的订阅。${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "已找到 ${ total } 位用户"
       ],
@@ -4937,9 +4922,6 @@
       ],
       "Custom email domains": [
         "自有域名"
-      ],
-      "Debug transcript copied": [
-        "调试副本已复制"
       ],
       "Decrypting your document": [
         "正在解密您的文档"
@@ -5592,9 +5574,6 @@
       "There are no documents in the trash.": [
         "回收站中没有文档。"
       ],
-      "Thinking about this": [
-        "正在深度思考"
-      ],
       "This action will delete the link and revoke access for all users.": [
         "此操作将删除此链接并撤销所有用户的访问权限。"
       ],
@@ -5621,9 +5600,6 @@
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "这是用户将看到的组织名称或昵称，您可以随时更改。"
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "此操作步骤较多，是否继续？"
       ],
       "This item already exists in your library": [
         "该项目已存在于您的库中"
@@ -8014,7 +7990,7 @@
         "移动 ${ n } 个项目"
       ],
       "Public link access updated": [
-        "公共链接访问已更新"
+        "公开链接访问已更新"
       ],
       "Public link update access failed ": [
         "公共链接更新访问失败 "
@@ -8465,9 +8441,6 @@
       ],
       "Anything you'd like us to know": [
         "您有任何想要告诉我们的吗？"
-      ],
-      "Ask anything…": [
-        "提问…"
       ],
       "Choose password": [
         "输入密码"
@@ -10465,9 +10438,6 @@
       ],
       "Stay for 50% off your next month": [
         "下月继续享受 5 折优惠"
-      ],
-      "Still working on it": [
-        "正在处理"
       ],
       "Stop sharing": [
         "停止分享"

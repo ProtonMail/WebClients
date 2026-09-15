@@ -2345,6 +2345,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Numele de utilizator este ${ user.Name }. Pentru a crea adresa ${ emailAddress }, accesați Setări > Identitate și adrese > Domeniu scurt (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Deja există un contact cu această adresă de e-mail."
+      ],
       "Amount above the maximum.": [
         "Sumă peste cea maximă acceptată."
       ],
@@ -2643,8 +2646,11 @@
       "Security key": [
         "Cheie de securitate"
       ],
-      "Touch your security key.": [
-        "Atingeți cheia de securitate."
+      "Still waiting?": [
+        "Încă așteptați?"
+      ],
+      "Touch your security key to continue.": [
+        "Atingeți cheia de securitate pentru a continua."
       ]
     },
     "fido2: Label": {

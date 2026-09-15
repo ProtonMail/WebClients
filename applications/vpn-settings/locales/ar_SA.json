@@ -62,6 +62,9 @@
       "Add ${ BRAND_NAME } address": [
         "إضافة عنوان ${ BRAND_NAME }"
       ],
+      "Add a payment method": [
+        "إضافة طريقة دفع"
+      ],
       "Add account": [
         "إضافة حساب"
       ],
@@ -197,9 +200,6 @@
       "Claim your free ${ BRAND_NAME } address": [
         "اطلب بعنوانك المجاني من ${ BRAND_NAME }"
       ],
-      "Clear conversation": [
-        "مسح المحادثة"
-      ],
       "Close": [
         "أغلق"
       ],
@@ -277,9 +277,6 @@
       ],
       "Copy address": [
         "انسخ العنوان"
-      ],
-      "Copy debug transcript": [
-        "نسخ سجل تصحيح الأخطاء"
       ],
       "Copy key to the clipboard": [
         "نسخ المفتاح إلى الحافظة"
@@ -1007,9 +1004,6 @@
       "select file": [
         "حدد الملف"
       ],
-      "Send": [
-        "أرسل"
-      ],
       "Send code": [
         "إرسال الرمز"
       ],
@@ -1126,9 +1120,6 @@
       ],
       "Stay": [
         "البقاء"
-      ],
-      "Stop": [
-        "توقف"
       ],
       "Stop using single sign-on": [
         "إيقاف استخدام تسجيل الدخول الفردي (SSO)"
@@ -6145,9 +6136,6 @@
       "This will delete all security keys linked to your account.": [
         "سيؤدي هذا إلى حذف جميع مفاتيح الأمان المرتبطة بحسابك."
       ],
-      "Touch your security key.": [
-        "المس مفتاح أمانك."
-      ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "تحقق من هويتك باستخدام مفتاح أمان مادي U2F أو FIDO2"
       ],
@@ -7238,6 +7226,12 @@
       "${ storage } storage": [
         "تخزين ${ storage }"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "تبقّى ${ timeRemaining } من فترتك التجريبية. ${ addPaymentMethodLink } لتجنب فقدان إمكانية الوصول. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "تبقّى ${ timeRemaining } من فترتك التجريبية. ${ addPaymentMethodLink } للاحتفاظ باشتراكك. ${ learnMoreLink }"
+      ],
       "${ total } users found": [
         "لم يتم العثور على أي مستخدم ${ total }",
         "تم العثور على مستخدم واحد (${ total })",
@@ -7819,9 +7813,6 @@
       ],
       "Data recovery requires a password reset option (email or SMS)": [
         "يتطلب استرداد البيانات خيار إعادة تعيين كلمة المرور (البريد الإلكتروني أو الرسائل النصية القصيرة)"
-      ],
-      "Debug transcript copied": [
-        "تم نسخ سجل تصحيح الأخطاء"
       ],
       "dedicated servers": [
         "خوادم مخصصة"
@@ -9219,9 +9210,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "لا يمكن استخدام بيانات الاعتماد هذه لتسجيل الدخول إلى تطبيقات ${ VPN_APP_NAME } الرسمية. ${ learnMore }"
-      ],
-      "Thinking about this": [
-        "جارٍ التفكير في هذا..."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "تم إيقاف هذا الحساب بسبب انتهاك محتمل لسياسات."
@@ -14452,9 +14440,6 @@
       ],
       "Anytown": [
         "Anytown"
-      ],
-      "Ask anything…": [
-        "اسأل أي شيء..."
       ],
       "Choose a name": [
         "اختر اسمًا"

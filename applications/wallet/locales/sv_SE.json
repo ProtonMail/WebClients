@@ -2622,9 +2622,6 @@
       ],
       "Security key": [
         "Säkerhetsnyckel"
-      ],
-      "Touch your security key.": [
-        "Tryck din säkerhetsnyckel."
       ]
     },
     "fido2: Label": {
@@ -4295,6 +4292,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } slutar med ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB molnlagring som låter dig enkelt lagra, synkronisera och dela filer. Säkrat med end-to-end-kryptering."
       ],
@@ -5033,6 +5033,14 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Förnyelsepriset är beroende av faktureringsregion och momsregistreringsnummer."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - kort slutar på ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Banköverföring - ${ iban }"
       ]
     },
     "Payments.Sepa": {

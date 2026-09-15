@@ -301,6 +301,9 @@
       "Add ${ BRAND_NAME } address": [
         "${ BRAND_NAME } 주소 추가"
       ],
+      "Add a payment method": [
+        "결제 방법 추가하기"
+      ],
       "Add account": [
         "계정 추가"
       ],
@@ -436,9 +439,6 @@
       "Claim your free ${ BRAND_NAME } address": [
         "무료 ${ BRAND_NAME } 주소를 받으세요"
       ],
-      "Clear conversation": [
-        "대화 삭제"
-      ],
       "Close": [
         "닫기"
       ],
@@ -519,9 +519,6 @@
       ],
       "Copy address": [
         "주소 복사하기"
-      ],
-      "Copy debug transcript": [
-        "디버그 기록 복사"
       ],
       "Copy key to the clipboard": [
         "클립보드에 키 복사"
@@ -928,9 +925,6 @@
       "Keep editing": [
         "계속 수정하기"
       ],
-      "Keep going": [
-        "계속하기"
-      ],
       "Keep logo": [
         "로고 유지"
       ],
@@ -1270,9 +1264,6 @@
       "select file": [
         "파일 선택"
       ],
-      "Send": [
-        "보내기"
-      ],
       "Send code": [
         "코드 보내기"
       ],
@@ -1392,12 +1383,6 @@
       ],
       "Stay": [
         "기다리기"
-      ],
-      "Stop": [
-        "중지"
-      ],
-      "Stop here": [
-        "여기서 중단"
       ],
       "Stop using single sign-on": [
         "싱글 사인온 (SSO) 중지"
@@ -1940,6 +1925,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "Active until ${ formattedPeriodEndDate }": [
+        "${ formattedPeriodEndDate }까지 활성화"
+      ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "${ formattedDate1 }에 무료 체험이 종료된 후, 유료 구독으로 전환되어 매 ${ renewCycle }개월마다 자동 갱신됩니다. ${ formattedDate2 } 이전에 취소 시 요금 청구가 되지 않습니다."
       ],
@@ -6493,9 +6481,6 @@
       "This will delete all security keys linked to your account.": [
         "이 작업은 사용자의 계정에 연결된 모든 보안 키를 삭제합니다."
       ],
-      "Touch your security key.": [
-        "보안 키를 터치해 주세요."
-      ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "물리적 U2F 또는 FIDO2 보안 키로 신원을 확인하세요"
       ],
@@ -7428,6 +7413,12 @@
       "${ storage } storage": [
         "저장공간 ${ storage }"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "무료 체험이 ${ timeRemaining }일 남았습니다. 접근 권한을 상실하지 않으려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "무료 체험이 ${ timeRemaining }일 남았습니다. 구독을 유지하려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total }명 사용자 찾음"
       ],
@@ -7980,9 +7971,6 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "데이터 복구 방법을 설정하려면 비밀번호 재설정 방법 (이메일 또는 SMS)이 필요합니다."
       ],
-      "Debug transcript copied": [
-        "디버그 기록 복사됨"
-      ],
       "dedicated servers": [
         "전용 서버"
       ],
@@ -8405,9 +8393,6 @@
       ],
       "How your emergency contact can change your password for you:": [
         "비상 연락처가 나를 대신하여 비밀번호를 변경하는 방법:"
-      ],
-      "I have not finished this one yet.": [
-        "아직 마무리하지 않았어요."
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "인증 주장에 서명하기 위한 신원 제공자의 공개 키입니다. 인증 제공자로부터 인증서 해시값을 다운로드하거나 복사할 수 있는 장소가 있어야 합니다. 텍스트 영역 입력란에 인증서 해시를 붙여넣기만 하면 됩니다."
@@ -8852,6 +8837,9 @@
       ],
       "On": [
         "켬"
+      ],
+      "On ${ formattedPeriodEndDate }, your free trial ends and your paid plan starts.": [
+        "${ formattedPeriodEndDate }에, 무료 체험이 종료되며 유료 플랜으로 자동 전환될 예정입니다."
       ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "회원님의 계정에 대한 접근 권한이 부여되면, 해당 사용자들이 회원님의 **복구** 설정에 접근하여 대신 **${ ACCOUNT_APP_NAME } 비밀번호를 변경**할 수 있습니다."
@@ -9426,9 +9414,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "이 자격증명을 공식 ${ VPN_APP_NAME } 앱에 로그인 할 때 사용하지 못할 수 있습니다. ${ learnMore }"
       ],
-      "Thinking about this": [
-        "이것에 대해 생각해 보기"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "이 계정은 규정 위반이 의심되어 정지되었습니다."
       ],
@@ -9467,9 +9452,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "이제 ${ defaultEmailAddress }가 메시지를 보내는 주소입니다."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "정말 많은 단계를 거쳐야될 수 있어요. 정말 계속하시겠어요?"
       ],
       "This is the password you used before the password reset.": [
         "비밀번호를 재설정하기 전에 사용한 비밀번호입니다."
@@ -12913,6 +12895,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Last4 }(으)로 끝나는 ${ Brand }"
+      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } 일부 플랜에서는 하위 사용자를 위한 이메일 주소를 생성하거나 계정을 관리할 수 있습니다. 가족과 조직에 이상적인 기능입니다."
       ],
@@ -14447,6 +14432,11 @@
         "크레딧이 잔액에 추가됩니다."
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "청구 주소 변경은 추후 청구서의 세율에 영향을 줄 수 있습니다."
+      ]
+    },
     "Payments.Lifetime Subscription": {
       "Lifetime accounts can be transferred or sold": [
         "평생 플랜 계정은 이전하거나 판매할 수 있습니다"
@@ -14494,6 +14484,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "갱신 가격은 청구 지역 및 VAT 번호에 따라 변동될 수 있습니다."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "번호가 ${ Last4 }(으)로 끝나는 Apple Pay 카드"
+      ],
+      "Bank transfer - ${ iban }": [
+        "은행 송금 - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - 번호가 ${ Last4 }(으)로 끝나는 카드"
       ]
     },
     "Payments.Sepa": {
@@ -14565,9 +14566,6 @@
       ],
       "Anytown": [
         "서울특별시 낙원구"
-      ],
-      "Ask anything…": [
-        "무엇이든 물어보세요..."
       ],
       "billing@company.com": [
         "billing@company.co.kr"
@@ -19332,9 +19330,6 @@
       ],
       "Stay secure and connected anywhere": [
         "언제 어디서나 안전하게 연결하세요"
-      ],
-      "Still working on it": [
-        "아직 작업 중"
       ],
       "Subscription": [
         "구독"

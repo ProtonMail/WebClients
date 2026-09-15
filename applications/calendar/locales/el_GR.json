@@ -56,6 +56,9 @@
       "Add a date": [
         "Προσθέστε μια ημερομηνία"
       ],
+      "Add a payment method": [
+        "Προσθέστε μία μέθοδο πληρωμής"
+      ],
       "Add account": [
         "Προσθήκη λογαριασμού"
       ],
@@ -156,9 +159,6 @@
       "Clear browser data": [
         "Εκκαθάριση δεδομένων περιηγητή"
       ],
-      "Clear conversation": [
-        "Εκκαθάριση συνομιλίας"
-      ],
       "Clear data": [
         "Εκκαθάριση δεδομένων"
       ],
@@ -239,9 +239,6 @@
       ],
       "Copy booking page link": [
         "Αντιγραφή συνδέσμου σελίδας κράτησης"
-      ],
-      "Copy debug transcript": [
-        "Αντιγραφή μεταγραφής εντοπισμού σφαλμάτων"
       ],
       "Copy email address": [
         "Αντιγραφή διεύθυνσης ηλεκτρονικού ταχυδρομείου"
@@ -551,9 +548,6 @@
       "Keep current time zone": [
         "Διατήρηση τρέχουσας ζώνης ώρας"
       ],
-      "Keep going": [
-        "Συνεχίστε"
-      ],
       "Keep my subscription": [
         "Διατηρήστε την συνδρομή μου"
       ],
@@ -734,9 +728,6 @@
       "Refresh the page": [
         "Ανανέωση της σελίδας"
       ],
-      "Reject": [
-        "Απόρριψη"
-      ],
       "Remove": [
         "Αφαίρεση"
       ],
@@ -907,12 +898,6 @@
       ],
       "Stay": [
         "Παραμονή"
-      ],
-      "Stop": [
-        "Σταμάτα"
-      ],
-      "Stop here": [
-        "Σταμάτησε εδώ"
       ],
       "Submit": [
         "Υποβολή"
@@ -3625,6 +3610,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } είναι το όνομα χρήστη σας. Για να δημιουργήσετε το ${ emailAddress }, παρακαλούμε μεταβείτε στις Ρυθμίσεις > Ταυτότητα και διευθύνσεις > Σύντομος τομέας (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Υπάρχει ήδη επαφή με αυτή την ηλεκτρονική διεύθυνση."
+      ],
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
       ],
@@ -4959,8 +4947,11 @@
       "Security key": [
         "Κλειδί ασφαλείας"
       ],
-      "Touch your security key.": [
-        "Αγγίξτε το κλειδί ασφαλείας σας."
+      "Still waiting?": [
+        "Ακόμα περιμένετε;"
+      ],
+      "Touch your security key to continue.": [
+        "Πατήστε το κλειδί ασφαλείας σας για να συνεχίσετε."
       ]
     },
     "fido2: Label": {
@@ -5597,6 +5588,12 @@
       "${ storage } storage": [
         "${ storage } αποθηκευτικού χώρου"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Απομένουν ${ timeRemaining } στη δοκιμαστική σας περίοδο. ${ addPaymentMethodLink } για να αποφύγετε την απώλεια πρόσβασης. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Απομένουν ${ timeRemaining } στη δοκιμαστική σας περίοδο. ${ addPaymentMethodLink } για να διατηρήσετε τη συνδρομή σας. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } χρήστης βρέθηκε",
         "${ total } χρήστες βρέθηκαν"
@@ -5917,9 +5914,6 @@
       ],
       "Daily": [
         "Καθημερινά"
-      ],
-      "Debug transcript copied": [
-        "Η μεταγραφή εντοπισμού σφαλμάτων αντιγράφηκε"
       ],
       "Dedicated servers": [
         "Αποκλειστικοί διακομιστές"
@@ -6635,9 +6629,6 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Η διαδικασία επαλήθευσης θα ανοίξει μια νέα καρτέλα του προγράμματος περιήγησης. Απενεργοποιήστε τυχόν ενεργά προγράμματα αποκλεισμού αναδυόμενων παραθύρων."
       ],
-      "Thinking about this": [
-        "Το σκέφτομαι αυτό"
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Αυτή η διεύθυνση είναι απενεργοποιημένη. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει πρώτα να ενεργοποιήσει τη διεύθυνση."
       ],
@@ -6664,9 +6655,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Αυτή είναι τώρα η ${ defaultEmailAddress } για την αποστολή νέων μηνυμάτων."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Αυτό απαιτεί πολλά βήματα. Να συνεχίσω;"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Αυτός ο σύνδεσμος οδηγεί σε μια ιστοσελίδα που ενδέχεται να επιχειρήσει να υποκλέψει πληροφορίες σας, όπως κωδικούς πρόσβασης και στοιχεία πιστωτικών καρτών."
@@ -9100,6 +9088,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } που λήγει σε ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB αποθηκευτικού χώρου στο cloud που σας επιτρέπει να αποθηκεύετε, συγχρονίζετε και μοιράζεστε αρχεία εύκολα. Προστατεύεται από διατερματική κρυπτογράφηση."
       ],
@@ -10298,6 +10289,11 @@
         "Οι πιστώσεις θα προστεθούν στο υπόλοιπό σας"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Η αλλαγή της διεύθυνσης χρέωσής σας ενδέχεται να επηρεάσει τους φόρους σε μελλοντικά τιμολόγια."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Είστε βέβαιοι ότι θέλετε να συνεχίσετε;"
@@ -10332,6 +10328,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και τον αριθμό ΦΠΑ."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - κάρτα που λήγει σε ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Τραπεζική μεταφορά - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - κάρτα που λήγει σε ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -10437,9 +10444,6 @@
       ],
       "Anytown": [
         "Αθήνα"
-      ],
-      "Ask anything…": [
-        "Ρωτήστε οτιδήποτε…"
       ],
       "Company name": [
         "Όνομα εταιρείας"
@@ -13098,9 +13102,6 @@
       ],
       "Stay for 50% off your next month": [
         "Μείνετε με έκπτωση 50% τον επόμενο μήνα"
-      ],
-      "Still working on it": [
-        "Ακόμα δουλεύω πάνω σε αυτό"
       ],
       "Subscription canceled": [
         "Η συνδρομή ακυρώθηκε"

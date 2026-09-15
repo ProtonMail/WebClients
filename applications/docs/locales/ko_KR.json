@@ -51,6 +51,9 @@
       "Add": [
         "추가"
       ],
+      "Add a payment method": [
+        "결제 방법 추가하기"
+      ],
       "Add account": [
         "계정 추가"
       ],
@@ -144,9 +147,6 @@
       "Claim your free ${ BRAND_NAME } address": [
         "무료 ${ BRAND_NAME } 주소를 받으세요"
       ],
-      "Clear conversation": [
-        "대화 삭제"
-      ],
       "Clear data": [
         "데이터 지우기"
       ],
@@ -221,9 +221,6 @@
       ],
       "Copy as markdown": [
         "마크다운으로 복사"
-      ],
-      "Copy debug transcript": [
-        "디버그 기록 복사"
       ],
       "Copy email to clipboard": [
         "클립보드에 이메일 복사"
@@ -474,9 +471,6 @@
       "Import from Outlook": [
         "Outlook에서 가져오기"
       ],
-      "Keep going": [
-        "계속하기"
-      ],
       "Keep my subscription": [
         "내 구독 유지하기"
       ],
@@ -645,9 +639,6 @@
       "Refresh the page": [
         "페이지 새로 고침"
       ],
-      "Reject": [
-        "거절"
-      ],
       "Reload": [
         "새로고침"
       ],
@@ -756,9 +747,6 @@
       "Select all": [
         "전체 선택"
       ],
-      "Send": [
-        "보내기"
-      ],
       "Set password or expiration date": [
         "비밀번호 또는 만료 시간 설정"
       ],
@@ -824,12 +812,6 @@
       ],
       "Stay": [
         "기다리기"
-      ],
-      "Stop": [
-        "중지"
-      ],
-      "Stop here": [
-        "여기서 중단"
       ],
       "Stop sharing": [
         "공유 중지"
@@ -4146,9 +4128,6 @@
       ],
       "Security key": [
         "보안 키"
-      ],
-      "Touch your security key.": [
-        "보안 키를 터치해 주세요."
       ]
     },
     "fido2: Label": {
@@ -4695,6 +4674,12 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized }개 라벨 선택함"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "무료 체험이 ${ timeRemaining }일 남았습니다. 접근 권한을 상실하지 않으려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "무료 체험이 ${ timeRemaining }일 남았습니다. 구독을 유지하려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total }명 사용자 찾음"
       ],
@@ -4937,9 +4922,6 @@
       ],
       "Custom email domains": [
         "사용자 지정 이메일 도메인"
-      ],
-      "Debug transcript copied": [
-        "디버그 기록 복사됨"
       ],
       "Decrypting your document": [
         "문서를 복호화하는 중"
@@ -5592,9 +5574,6 @@
       "There are no documents in the trash.": [
         "휴지통 내에 문서가 존재하지 않습니다."
       ],
-      "Thinking about this": [
-        "이것에 대해 생각해 보기"
-      ],
       "This action will delete the link and revoke access for all users.": [
         "이 작업은 링크를 삭제하고 모든 사용자의 접근을 취소합니다."
       ],
@@ -5621,9 +5600,6 @@
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "사용자가 볼 수 있는 조직의 이름 또는 닉네임입니다. 언제든지 변경할 수 있습니다."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "정말 많은 단계를 거쳐야될 수 있어요. 정말 계속하시겠어요?"
       ],
       "This item already exists in your library": [
         "이 항목은 이미 라이브러리에 존재합니다."
@@ -8466,9 +8442,6 @@
       "Anything you'd like us to know": [
         "알려주셨으면 하는 사항이 있으신가요?"
       ],
-      "Ask anything…": [
-        "무엇이든 물어보세요..."
-      ],
       "Choose password": [
         "비밀번호 선택"
       ],
@@ -10465,9 +10438,6 @@
       ],
       "Stay for 50% off your next month": [
         "첫 달은 50% 할인으로 누리기"
-      ],
-      "Still working on it": [
-        "아직 작업 중"
       ],
       "Stop sharing": [
         "공유 중지"
