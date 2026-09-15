@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 type Strings<K extends string = string> = Record<K, string>
 type GetStrings<K extends string = string> = () => Strings<K>
 
@@ -42,14 +40,4 @@ export function createStringifier<K extends string>(getStrings: GetStrings<K>) {
     return getOrCreateStrings(getStrings)[s]
   }
   return { s }
-}
-
-/**
- * @deprecated Use `createStringifier` instead.
- */
-export function useStringifier<K extends string>(getStrings: () => Record<K, string>) {
-  // We lazily initialize the getter function into a state so that it happens only once
-  // in the component's lifecycle.
-  const [get] = useState(() => (s: K) => getStrings()[s])
-  return get
 }

@@ -70,11 +70,11 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>(function Con
   )
 })
 
-export interface OverflowProps extends CompositeOverflowDisclosureProps {
+interface OverflowProps extends CompositeOverflowDisclosureProps {
   renderOverflowDisclosure: ReactElement
 }
 
-export function Overflow({ store, children, renderOverflowDisclosure, ...props }: OverflowProps) {
+function Overflow({ store, children, renderOverflowDisclosure, ...props }: OverflowProps) {
   const hasOverflow = useHasOverflow()
   if (!hasOverflow) {
     return null
@@ -185,9 +185,9 @@ export const Item = createComponent<ItemProps>(function Item({
   )
 })
 
-export interface SeparatorProps extends Ariakit.ToolbarSeparatorProps {}
+interface SeparatorProps extends Ariakit.ToolbarSeparatorProps {}
 
-export const Separator = forwardRef<HTMLHRElement, SeparatorProps>(function Separator(props, ref) {
+const Separator = forwardRef<HTMLHRElement, SeparatorProps>(function Separator(props, ref) {
   return (
     <Ariakit.ToolbarSeparator
       ref={ref}

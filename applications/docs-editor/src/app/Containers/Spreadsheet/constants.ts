@@ -3,12 +3,10 @@ import FormulaParser from '@rowsncolumns/fast-formula-parser'
 import type { CanvasGridProps, CellFormat } from '@rowsncolumns/spreadsheet'
 import { getDefaultDateFormat, getLongDateFormat } from '@rowsncolumns/utils'
 
-export const CURRENCY_DEFAULT = 'USD'
-export const LOCALE_DEFAULT = 'en-US'
+const CURRENCY_DEFAULT = 'USD'
 
 // TODO: both of these should be dynamic
 export const CURRENCY = CURRENCY_DEFAULT
-export const LOCALE = LOCALE_DEFAULT
 
 export const ZOOM_SUGGESTIONS = [0.5, 0.75, 0.9, 1, 1.25, 1.5, 2] // scale
 export const ZOOM_DEFAULT = 1 // scale
@@ -87,7 +85,7 @@ export function getCurrencySymbol(locale: string | undefined, currency: string) 
   }
 }
 
-export type PatternSpec = { type: NonNullable<CellFormat['numberFormat']>['type']; pattern: string }
+type PatternSpec = { type: NonNullable<CellFormat['numberFormat']>['type']; pattern: string }
 type CurrencySymbolOptions = { locale: string; currency: string }
 export function CURRENCY_SYMBOL({ locale, currency }: CurrencySymbolOptions) {
   return getCurrencySymbol(locale, currency) ?? CURRENCY_DEFAULT
@@ -113,7 +111,7 @@ export function CURRENCY_PATTERN({ locale, currency }: CurrencyPatternOptions) {
   return `"${symbol}"#,##0.00`
 }
 
-export function CURRENCY_ROUNDED_PATTERN({ locale, currency }: CurrencyPatternOptions) {
+function CURRENCY_ROUNDED_PATTERN({ locale, currency }: CurrencyPatternOptions) {
   const symbol = CURRENCY_SYMBOL({ locale, currency })
   if (isCurrencySuffix(locale, currency)) {
     return `#,##0 "${symbol}"` // Suffix pattern rounded
@@ -121,7 +119,7 @@ export function CURRENCY_ROUNDED_PATTERN({ locale, currency }: CurrencyPatternOp
   return `"${symbol}"#,##0`
 }
 
-export function ACCOUNTING_PATTERN({ locale, currency }: CurrencyPatternOptions) {
+function ACCOUNTING_PATTERN({ locale, currency }: CurrencyPatternOptions) {
   const symbol = CURRENCY_SYMBOL({ locale, currency })
 
   if (isCurrencySuffix(locale, currency)) {
