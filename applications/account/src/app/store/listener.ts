@@ -1,19 +1,17 @@
-import {
-    authenticationListener,
-    convertAddressesListener,
-    membersListener,
-    organizationKeysManagementListener,
-    resetOrganizationKeyListener,
-    startAccountSessionsListener,
-    startListeningToPlanNameChange,
-    startPersistListener,
-    unprivatizeMembersListener,
-} from '@proton/account';
 import { startHostAccountSessionsListener } from '@proton/account/accountSessions/hostListener';
+import { startAccountSessionsListener } from '@proton/account/accountSessions/listener';
+import { authenticationListener } from '@proton/account/authenticationService/authenticationListener';
 import { groupOwnerInvitesListener } from '@proton/account/groupOwnerInvites/groupOwnerInvitesListener';
 import { groupKeysListener } from '@proton/account/groups/groupKeysListener';
+import { membersListener } from '@proton/account/members/membersListener';
+import { unprivatizeMembersListener } from '@proton/account/members/unprivatizeMembersListener';
+import { convertAddressesListener } from '@proton/account/organizationKey/convertAddressesListener';
+import { organizationKeysManagementListener } from '@proton/account/organizationKey/listener';
+import { resetOrganizationKeyListener } from '@proton/account/organizationKey/resetOrganizationKeyListener';
+import { startPersistListener } from '@proton/account/persist/listener';
 import { deviceRecoveryListener } from '@proton/account/recovery/deviceRecovery';
 import { safetyReviewTelemetryListener } from '@proton/account/safetyReview/telemetry/safetyReviewTelemetryListener';
+import { startListeningToPlanNameChange } from '@proton/account/subscription/startListeningToPlanNameChange';
 import { startCalendarEventListener } from '@proton/calendar/calendars/listener';
 import { startHolidaysDirectoryListener } from '@proton/calendar/holidaysDirectory/listener';
 import { startCalendarEventLoopV6Listening } from '@proton/redux-shared-store/eventLoop/calendarEventLoopV6';

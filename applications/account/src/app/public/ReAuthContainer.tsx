@@ -5,20 +5,17 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
-import {
-    DropdownMenu,
-    DropdownMenuButton,
-    InputFieldTwo,
-    type OnLoginCallback,
-    type OnLoginCallbackArguments,
-    PasswordInputTwo,
-    SimpleDropdown,
-    useErrorHandler,
-    useFormErrors,
-    useModalTwoPromise,
-} from '@proton/components';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
+import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import type { OnLoginCallback, OnLoginCallbackArguments } from '@proton/components/containers/app/interface';
 import { handleReAuthKeyPassword } from '@proton/components/containers/login/loginActions';
 import SSOAuthModal from '@proton/components/containers/password/SSOAuthModal';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcPlus } from '@proton/icons/icons/IcPlus';

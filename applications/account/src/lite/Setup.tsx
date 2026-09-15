@@ -2,18 +2,18 @@ import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
 
-import { type EventLoop, serverEvent, userThunk } from '@proton/account';
 import { unleashReady } from '@proton/account/bootstrap';
+import { serverEvent } from '@proton/account/eventLoop';
+import type { EventLoop } from '@proton/account/eventLoop';
+import { userThunk } from '@proton/account/user';
 import { useConfig } from '@proton/app-context/useConfig';
-import {
-    ApiProvider,
-    EventManagerProvider,
-    ModalsChildren,
-    NotificationsChildren,
-    StandardLoadErrorPage,
-    useErrorHandler,
-    useThemeQueryParameter,
-} from '@proton/components';
+import ApiProvider from '@proton/components/containers/api/ApiProvider';
+import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
+import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
+import ModalsChildren from '@proton/components/containers/modals/Children';
+import NotificationsChildren from '@proton/components/containers/notifications/Children';
+import useThemeQueryParameter from '@proton/components/containers/themes/useThemeQueryParameter';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import metrics from '@proton/metrics';
 import { authJwt, pullForkSession, setCookies, setRefreshCookies } from '@proton/shared/lib/api/auth';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';

@@ -1,8 +1,12 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, StripedItem, StripedList } from '@proton/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import StripedItem from '@proton/components/components/stripedList/StripedItem';
+import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 

@@ -5,7 +5,7 @@ import { useEligibleTrials } from '@proton/account/eligibleTrials/hooks';
 import { usePrefetchGenerateRecoveryKit } from '@proton/account/recovery/recoveryKit/usePrefetchGenerateRecoveryKit';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { LoaderPage } from '@proton/components';
+import LoaderPage from '@proton/components/containers/app/LoaderPage';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { SSO_PATHS } from '@proton/shared/lib/constants';

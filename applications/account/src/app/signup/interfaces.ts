@@ -1,5 +1,6 @@
 import type { DeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
-import type { ChallengeResult, VerificationModel } from '@proton/components';
+import type { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
+import type { ChallengeResult } from '@proton/components/containers/challenge/interface';
 import type { AddressGeneration, AppIntent, AuthSession } from '@proton/components/containers/login/interface';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';

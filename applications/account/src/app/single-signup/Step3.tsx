@@ -6,19 +6,17 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components';
-import {
-    Copy,
-    InputFieldTwo,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    PasswordInputTwo,
-    useFormErrors,
-    useModalState,
-} from '@proton/components';
-import { useLoading } from '@proton/hooks';
+import Copy from '@proton/components/components/button/Copy';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import useLoading from '@proton/hooks/useLoading';
 import metrics from '@proton/metrics';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

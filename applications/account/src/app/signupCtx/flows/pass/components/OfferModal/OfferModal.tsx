@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { PassLogo } from '@proton/components';
+import PassLogo from '@proton/components/components/logo/PassLogo';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcCross } from '@proton/icons/icons/IcCross';

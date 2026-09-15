@@ -1,7 +1,11 @@
-import { useUserSettings, userSettingsActions } from '@proton/account';
+import { userSettingsActions } from '@proton/account/userSettings';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
-import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight, SettingsSection } from '@proton/components';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
+import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
+import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { getEnableString } from '@proton/components/containers/credentialLeak/helpers';
 import useLoading from '@proton/hooks/useLoading';
 import { setProductDisabled } from '@proton/shared/lib/api/settings';

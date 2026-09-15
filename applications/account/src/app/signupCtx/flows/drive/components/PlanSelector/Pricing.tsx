@@ -1,8 +1,9 @@
 import merge from 'lodash/merge';
 import { c } from 'ttag';
 
-import { Price, SkeletonLoader } from '@proton/components';
+import Price from '@proton/components/components/price/Price';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { PLANS } from '@proton/payments/core/constants';
 
