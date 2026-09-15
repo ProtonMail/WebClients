@@ -10,7 +10,8 @@ import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 import { useLocalStateSync } from '@proton/components/hooks/useLocalStateSync';
 import { getIndexKey, setESLogger } from '@proton/encrypted-search/esHelpers';
 import { contentIndexingProgress, hasESDB, wrappedGetOldestInfo } from '@proton/encrypted-search/esIDB';
-import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
+import type { ContentSearchEndReason, NormalizedSearchParams } from '@proton/encrypted-search/models';
+import { endSearchSession, startSearchSession } from '@proton/encrypted-search/searchSession';
 import { useContentSearchTelemetry } from '@proton/encrypted-search/useContentSearchTelemetry';
 import { useEncryptedSearch } from '@proton/encrypted-search/useEncryptedSearch';
 import { useIndexedDBSupport } from '@proton/encrypted-search/useIndexedDBSupport';
@@ -40,6 +41,7 @@ import type {
 import type { Event } from '../models/event';
 import { selectCategoryIDs } from '../store/elements/elementsSelectors';
 import { useMailSelector } from '../store/hooks';
+import { extendStore } from '../store/store';
 
 // Encrypted search has no logging implementation of its own (see esLogger.ts) - mail is the one
 // that knows about @proton/logger, so this is where that link is made explicit.
@@ -91,12 +93,22 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     // when it changes (see `ContentSearchVersionToggle`), so this is settled for the session.
     const isV2Active = isContentSearchEnabled && searchVersion === 'v2';
 
+    const {
+        sendResultOpenedReport,
+        sendResultActionReport,
+        sendQueryCompletedReport,
+        sendMailboxIndexCompletedReport,
+    } = useContentSearchTelemetry();
+
     // No `contentIndexingSuccessMessage`: the library would announce content search when its own
     // indexing ends, which is too early for the v2 path. `useContentSearchReadyNotification` below
     // announces it from the status instead, which is correct for both.
     const esLibraryFunctionsV1 = useEncryptedSearch<ESBaseMessage, NormalizedSearchParams, ESMessageContent>({
         refreshMask: EVENT_ERRORS.MAIL,
         esCallbacks,
+        // `MetricService` already reports these for v2 — only report v1's own numbers when it's the active engine.
+        onSearchCompleted: isV2Active ? undefined : sendQueryCompletedReport,
+        onIndexCompleted: isV2Active ? undefined : sendMailboxIndexCompletedReport,
     });
 
     const esLibraryFunctionsV2 = useContentSearch({
@@ -109,7 +121,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
     const esLibraryFunctions = isV2Active ? esLibraryFunctionsV2 : esLibraryFunctionsV1;
 
-    const { sendResultOpenedReport, sendResultActionReport } = useContentSearchTelemetry();
     const reportResultOpened: typeof sendResultOpenedReport = (params) => {
         if (isV2Active) {
             esLibraryFunctionsV2.reportResultOpened(params);
@@ -125,6 +136,29 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             sendResultActionReport(params);
         }
     };
+
+    const startSearchSessionRouted = () => {
+        if (!isV2Active) {
+            startSearchSession();
+        }
+    };
+
+    const endSearchSessionRouted = (endReason: ContentSearchEndReason) => {
+        if (!isV2Active) {
+            endSearchSession(api, endReason);
+            return;
+        }
+
+        // `SearchService.search()` already closes the previous session as `'newSearch'` right
+        if (endReason !== 'newSearch') {
+            esLibraryFunctionsV2.endSearchSession(endReason);
+            return;
+        }
+    };
+
+    // `searchChangeListener.ts` starts/ends sessions from a Redux listener, outside React, so it can't
+    // read `isV2Active` or call the functions above directly. We inject those into the thunk extra arguments instead.
+    extendStore({ startSearchSession: startSearchSessionRouted, endSearchSession: endSearchSessionRouted });
 
     const enableContentSearch = useContentSearchReadyNotification(
         esLibraryFunctions.esStatus,
@@ -341,6 +375,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         setTemporaryToggleOff,
         reportResultOpened,
         reportResultAction,
+        startSearchSession: startSearchSessionRouted,
+        endSearchSession: endSearchSessionRouted,
     };
 
     return <EncryptedSearchContext.Provider value={esFunctions}>{children}</EncryptedSearchContext.Provider>;

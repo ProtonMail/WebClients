@@ -1,12 +1,13 @@
 import type {
     ContentSearchActionSurface,
+    ContentSearchEndReason,
     ContentSearchIndexErrorKind,
     ContentSearchResultAction,
+    ContentSearchSessionActionType,
+    SearchSession,
 } from '@proton/encrypted-search/models';
 import {
     type ContentSearchEventStatus,
-    type ContentSearchSearchSource,
-    type ContentSearchVersion,
     SEARCH_RESULT_PRIMARY_MATCH_TYPE,
     SEARCH_RESULT_SCROLLER_MODE,
 } from '@proton/encrypted-search/models';
@@ -21,16 +22,27 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import type { Logger } from '../utils/logger';
+import { SEARCH_SOURCE, SEARCH_VERSION_V2 } from './interface';
 
-const SEARCH_VERSION_V2: ContentSearchVersion = 'v2';
-const SEARCH_SOURCE: ContentSearchSearchSource = 'local';
-
+/**
+ * Single entry point for content-search-v2 telemetry: per-event reports (query/result/index) and the
+ * search-session rollup (`search_session_completed`) they feed, kept together because a session is
+ * only ever updated as a side effect of the same events this class already reports on individually.
+ * Consumers (`ESAdapter`) call the report methods and `startSearchSession`/`endSearchSession` only —
+ * session bookkeeping is this class's own business, not something callers drive separately.
+ */
 export class MetricService {
     /** Set by `startMailboxIndexing`; `mailbox_index_completed`'s `durationMs` is measured from here. */
     private indexingStartedAt?: number;
 
+    /** Set by `startSearchSession`; `query_completed`'s `durationMs` is measured from here. */
+    private searchStartedAt?: number;
+
     /** Refreshed per render by `useContentSearch` — for `mailbox_index_completed`'s `mailboxAddressType`. */
     public addresses: Address[] | undefined;
+
+    /** The in-progress search session, if one was started — see `startSearchSession`/`endSearchSession`. */
+    private session: SearchSession | undefined;
 
     constructor(
         private readonly api: Api,
@@ -42,21 +54,54 @@ export class MetricService {
         this.indexingStartedAt = Date.now();
     }
 
+    /**
+     * Call once when a search UI session begins — see `SearchService.search`. Closes any session
+     * already in progress as `'newSearch'` first, so a caller starting one session after another can
+     * never silently drop the previous one's telemetry.
+     */
+    startSearchSession() {
+        this.endSearchSession('newSearch');
+        this.logger.info('Search session started');
+        this.searchStartedAt = Date.now();
+        this.session = {
+            startedAt: Date.now(),
+            hasResults: false,
+            resultsOpened: 0,
+            actionsPerformed: 0,
+        };
+    }
+
+    private recordFirstAction(type: ContentSearchSessionActionType) {
+        if (!this.session || this.session.firstActionType !== undefined) {
+            return;
+        }
+
+        this.logger.info('First action recorded');
+        this.session.firstActionAt = Date.now();
+        this.session.firstActionType = type;
+    }
+
     sendQueryCompletedReport({
         hasResults,
         status,
         errorKind,
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         resultCount,
-        durationMs,
     }: {
         hasResults: boolean;
         status: ContentSearchEventStatus;
         errorKind?: string;
         resultCount: number;
-        durationMs: number;
     }) {
-        this.logger.info('sending query completed report');
+        this.logger.info('Query completed report sent');
+
+        const durationMs = this.searchStartedAt !== undefined ? Date.now() - this.searchStartedAt : 0;
+        this.searchStartedAt = undefined;
+
+        if (this.session) {
+            this.session.hasResults = hasResults;
+            this.session.scrollerMode = SEARCH_RESULT_SCROLLER_MODE;
+        }
 
         void sendTelemetryReport({
             api: this.api,
@@ -87,7 +132,16 @@ export class MetricService {
         resultPosition: number;
         messageAgeDays: number;
     }) {
-        this.logger.info('sending result opened report');
+        this.logger.info('Result opened report sent');
+
+        if (this.session) {
+            this.session.resultsOpened += 1;
+            this.session.actionsPerformed += 1;
+            if (this.session.firstOpenedPosition === undefined) {
+                this.session.firstOpenedPosition = resultPosition;
+            }
+            this.recordFirstAction('open');
+        }
 
         void sendTelemetryReport({
             api: this.api,
@@ -114,7 +168,12 @@ export class MetricService {
         actionSurface: ContentSearchActionSurface;
         resultPosition?: number;
     }) {
-        this.logger.info('sending result action report');
+        this.logger.info('Result action report sent');
+
+        if (this.session) {
+            this.session.actionsPerformed += 1;
+            this.recordFirstAction(action);
+        }
 
         void sendTelemetryReport({
             api: this.api,
@@ -145,6 +204,8 @@ export class MetricService {
         totalMessagesIndexed: number;
         mailboxMessagesTotal?: number;
     }) {
+        this.logger.info('Mailbox index completed report sent');
+
         const durationMs = this.indexingStartedAt !== undefined ? Date.now() - this.indexingStartedAt : 0;
         this.indexingStartedAt = undefined;
 
@@ -162,6 +223,48 @@ export class MetricService {
                 totalMessagesIndexed,
                 durationMs,
                 mailboxMessagesTotal,
+            },
+            delay: true,
+        });
+    }
+
+    /** Call once when the search UI session ends — see `EncryptedSearchProvider.endSearchSession`. */
+    endSearchSession(endReason: ContentSearchEndReason) {
+        if (!this.session) {
+            return;
+        }
+        this.logger.info('Search session ended');
+
+        const {
+            startedAt,
+            firstActionAt,
+            hasResults,
+            scrollerMode,
+            resultsOpened,
+            actionsPerformed,
+            firstActionType,
+            firstOpenedPosition,
+        } = this.session;
+        this.session = undefined;
+
+        void sendTelemetryReport({
+            api: this.api,
+            measurementGroup: TelemetryMeasurementGroups.contentSearch,
+            event: TelemetryContentSearchEvents.search_session_completed,
+            dimensions: {
+                endReason,
+                scrollerMode,
+                firstActionType,
+                hasResults: hasResults.toString(),
+                searchSource: SEARCH_SOURCE,
+                searchVersion: SEARCH_VERSION_V2,
+            },
+            values: {
+                resultsOpened,
+                actionsPerformed,
+                firstOpenedPosition,
+                timeToFirstActionMs: firstActionAt !== undefined ? firstActionAt - startedAt : undefined,
+                sessionDurationMs: Date.now() - startedAt,
             },
             delay: true,
         });

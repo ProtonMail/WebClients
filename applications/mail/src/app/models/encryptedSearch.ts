@@ -1,5 +1,6 @@
 import type {
     ContentSearchActionSurface,
+    ContentSearchEndReason,
     ContentSearchResultAction,
     ESItem,
     ESStatus,
@@ -86,6 +87,8 @@ export interface EncryptedSearchFunctionsMail extends Pick<
         action: ContentSearchResultAction;
         actionSurface: ContentSearchActionSurface;
     }) => void;
+    startSearchSession: () => void;
+    endSearchSession: (endReason: ContentSearchEndReason) => void;
 }
 
 export type ESMessage = ESItem<ESBaseMessage, ESMessageContent>;
