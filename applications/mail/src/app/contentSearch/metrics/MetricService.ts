@@ -35,6 +35,9 @@ export class MetricService {
     /** Set by `startMailboxIndexing`; `mailbox_index_completed`'s `durationMs` is measured from here. */
     private indexingStartedAt?: number;
 
+    /** Set by `startSearchSession`; `query_completed`'s `durationMs` is measured from here. */
+    private searchStartedAt?: number;
+
     /** Refreshed per render by `useContentSearch` — for `mailbox_index_completed`'s `mailboxAddressType`. */
     public addresses: Address[] | undefined;
 
@@ -51,9 +54,15 @@ export class MetricService {
         this.indexingStartedAt = Date.now();
     }
 
-    /** Call once when a search UI session begins — see `EncryptedSearchProvider.startSearchSession`. */
+    /**
+     * Call once when a search UI session begins — see `SearchService.search`. Closes any session
+     * already in progress as `'newSearch'` first, so a caller starting one session after another can
+     * never silently drop the previous one's telemetry.
+     */
     startSearchSession() {
+        this.endSearchSession('newSearch');
         this.logger.info('Search session started');
+        this.searchStartedAt = Date.now();
         this.session = {
             startedAt: Date.now(),
             hasResults: false,
@@ -78,15 +87,16 @@ export class MetricService {
         errorKind,
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         resultCount,
-        durationMs,
     }: {
         hasResults: boolean;
         status: ContentSearchEventStatus;
         errorKind?: string;
         resultCount: number;
-        durationMs: number;
     }) {
         this.logger.info('Query completed report sent');
+
+        const durationMs = this.searchStartedAt !== undefined ? Date.now() - this.searchStartedAt : 0;
+        this.searchStartedAt = undefined;
 
         if (this.session) {
             this.session.hasResults = hasResults;

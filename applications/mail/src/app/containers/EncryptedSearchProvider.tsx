@@ -138,18 +138,21 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     };
 
     const startSearchSessionRouted = () => {
-        if (isV2Active) {
-            esLibraryFunctionsV2.startSearchSession();
-        } else {
+        if (!isV2Active) {
             startSearchSession();
         }
     };
 
     const endSearchSessionRouted = (endReason: ContentSearchEndReason) => {
-        if (isV2Active) {
-            esLibraryFunctionsV2.endSearchSession(endReason);
-        } else {
+        if (!isV2Active) {
             endSearchSession(api, endReason);
+            return;
+        }
+
+        // `SearchService.search()` already closes the previous session as `'newSearch'` right
+        if (endReason !== 'newSearch') {
+            esLibraryFunctionsV2.endSearchSession(endReason);
+            return;
         }
     };
 
