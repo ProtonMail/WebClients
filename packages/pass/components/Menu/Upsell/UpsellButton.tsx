@@ -27,7 +27,7 @@ export const UpsellButton = () => {
             {showUpgrade && (
                 <UpgradeButton
                     upsellRef={UpsellRef.NAVBAR_UPGRADE}
-                    iconName={IcUpgrade}
+                    iconComponent={IcUpgrade}
                     iconSize={3.5}
                     iconGradient
                     gradient
