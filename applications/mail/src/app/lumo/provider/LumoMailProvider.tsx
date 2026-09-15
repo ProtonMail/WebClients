@@ -30,6 +30,7 @@ import { updateDensity } from '@proton/shared/lib/api/settings';
 import type { MailSettings, Recipient, UserSettings } from '@proton/shared/lib/interfaces';
 
 import { useOnCompose } from '../../containers/ComposeProvider';
+import { useDraftBodyWriters } from '../../containers/DraftBodyWriterProvider';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLocation';
 import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
@@ -96,6 +97,7 @@ const LumoMailProvider = ({ children }: Props) => {
     const [addresses = []] = useAddresses();
     const esStatus = useRef<ESStatusBooleans>(defaultESStatus);
     const onCompose = useOnCompose();
+    const draftBodyWriters = useDraftBodyWriters();
 
     // Latest values, refreshed every render, so the once-built handlers always read the current
     // snapshot (mirrors the POC's ref pattern; keeps the config referentially stable).
@@ -123,6 +125,7 @@ const LumoMailProvider = ({ children }: Props) => {
         user,
         addresses,
         onCompose,
+        draftBodyWriters,
     };
     const latest = useRef(current);
     latest.current = current;
@@ -199,6 +202,18 @@ const LumoMailProvider = ({ children }: Props) => {
             initializeMessage: (messageID, labelID) => latest.current.initializeMessage(messageID, labelID),
             composeDraft: ({ action, referenceMessage, bodyBeforeQuote }) =>
                 latest.current.onCompose({ type: ComposeTypes.newMessage, action, referenceMessage, bodyBeforeQuote }),
+            getDraftChangeability: (composerID) => {
+                const composer = latest.current.store.getState().composers.composers[composerID];
+                const writer = latest.current.draftBodyWriters.get(composerID);
+
+                return {
+                    isOpen: !!composer,
+                    isEditorReady: !!writer,
+                    canReplaceBody: !!writer?.preservesQuote(),
+                    canReaddress: !!composer?.senderEmailAddress,
+                };
+            },
+            writeDraftBody: (composerID, body) => latest.current.draftBodyWriters.get(composerID)?.write(body) ?? false,
             setDraftRecipients: (composerID, recipients) => {
                 const named = Object.entries(recipients) as [RecipientType, Recipient[]][];
                 named.forEach(([type, list]) =>
