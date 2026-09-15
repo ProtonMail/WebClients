@@ -12,7 +12,7 @@ import debounce from 'lodash/debounce'
 
 const RESIZE_DEBOUNCE_WAIT = 50
 
-export type GroupsValue = {
+type GroupsValue = {
   overflowingGroupIds: Set<string>
   lastGroupId?: string
 }
