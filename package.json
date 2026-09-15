@@ -29,7 +29,6 @@
     "resolutions": {
         "@babel/runtime-corejs3@npm:^7.24.4": "7.29.7",
         "@electron-internal/extract-zip@npm:^1.0.1": "1.0.5",
-        "@electron/packager/extract-zip": "npm:2.0.1",
         "@humanfs/node@npm:^0.16.6": "0.16.8",
         "@pdf-lib/standard-fonts@^1.0.0": "patch:@pdf-lib/standard-fonts@npm%3A1.0.0#./.yarn/patches/@pdf-lib-standard-fonts-npm-1.0.0-963255903e.patch",
         "@protontech/crypto": "^2.1.3",
@@ -48,8 +47,6 @@
         "electron-windows-msix": "Swiip/electron-windows-msix#f1c1f4f46439c7d94569afdedd9561d09d4a1c54",
         "electron-winstaller": "^5.4.4",
         "electron/extract-zip": "npm:2.0.1",
-        "extract-zip@npm:^2.0.0": "npm:@electron-internal/extract-zip@1.0.5",
-        "extract-zip@npm:^2.0.1": "npm:@electron-internal/extract-zip@1.0.5",
         "fast-uri@npm:^2.0.0": "2.4.6",
         "fast-uri@npm:^2.1.0": "2.4.6",
         "fast-uri@npm:^3.0.1": "3.1.7",
@@ -101,6 +98,7 @@
         "qs@npm:^6.4.0": "6.16.0",
         "qs@npm:^6.7.0": "6.16.0",
         "qs@npm:~6.15.1": "6.16.0",
+        "qs@npm:~6.5.2": "6.16.0",
         "rfc2047@^2.0.1": "patch:rfc2047@npm%3A2.0.1#./.yarn/patches/rfc2047-npm-2.0.1-60a2a07c99.patch",
         "safe-buffer": "^5.2.1",
         "sharp@npm:^0.32.6": "0.35.4",
@@ -117,6 +115,7 @@
         "toml@npm:3.0.0": "4.2.0",
         "toml@npm:^3.0.0": "4.2.0",
         "undici@npm:6.21.1": "6.28.0",
+        "webpack-dev-server@npm:^4.0.0": "5.2.6",
         "websocket-driver@npm:>=0.5.1": "0.7.5",
         "websocket-driver@npm:^0.7.4": "0.7.5",
         "whatwg-url": "^14.2.0",
@@ -124,7 +123,8 @@
         "ws@npm:^5.2.0": "5.2.7",
         "ws@npm:^7.4.6": "7.5.13",
         "xlsx@npm:0.18.5": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
-        "xlsx@npm:^0.18.5": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+        "xlsx@npm:^0.18.5": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
+        "yaml@npm:^1.7.2": "1.10.3"
     },
     "dependencies": {
         "@proton/eslint-config-proton": "workspace:^",
