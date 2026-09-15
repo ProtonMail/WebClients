@@ -1,32 +1,10 @@
 import type { APP_CLIENT_IDS, APP_NAMES } from '../../constants';
-import { APPS, APPS_CONFIGURATION } from '../../constants';
 import { validateEmailAddress } from '../../helpers/email';
 import type { ForkPayloadVersion } from './constants';
 import { ExtraSessionForkSearchParameters, ForkSearchParameters, ForkType, ForkableApps } from './constants';
 
 export const getValidatedApp = (app = ''): APP_NAMES | undefined => {
     if (ForkableApps.has(app as any)) {
-        return app as APP_NAMES;
-    }
-    if (
-        app.startsWith('proton-') &&
-        app.match(/-/g)?.length === 1 &&
-        /^[a-z-]+$/.test(app) &&
-        app.length >= 10 &&
-        app.length < 16
-    ) {
-        const protonAppName = app as APP_NAMES;
-        if (APPS_CONFIGURATION[protonAppName]) {
-            return;
-        }
-        const safeAppName = app.replace('proton-', '');
-        APPS_CONFIGURATION[protonAppName] = Object.entries(APPS_CONFIGURATION[APPS.PROTONMAIL]).reduce(
-            (acc, [key, value]) => {
-                acc[key as keyof typeof acc] = value.replace('mail', safeAppName).replace('Mail', 'Account (internal)');
-                return acc;
-            },
-            { ...APPS_CONFIGURATION[APPS.PROTONMAIL] }
-        );
         return app as APP_NAMES;
     }
 };
