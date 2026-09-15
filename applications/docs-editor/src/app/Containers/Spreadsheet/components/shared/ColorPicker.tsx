@@ -1,4 +1,4 @@
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import type { ComponentPropsWithoutRef, ForwardedRef } from 'react'
 import { forwardRef } from 'react'
 import type { Color, ColorIndex } from '@rowsncolumns/spreadsheet'
@@ -19,11 +19,11 @@ import { Button } from './Button'
 
 const { s } = createStringifier(strings)
 
-export interface ColorSwatchProps extends Ariakit.ButtonProps {
+interface ColorSwatchProps extends Ariakit.ButtonProps {
   color: string
   isSelected: boolean
 }
-export const ColorSwatch = forwardRef(function ColorSwatch(
+const ColorSwatch = forwardRef(function ColorSwatch(
   { color, isSelected, ...props }: ColorSwatchProps,
   ref: ForwardedRef<HTMLButtonElement>,
 ) {

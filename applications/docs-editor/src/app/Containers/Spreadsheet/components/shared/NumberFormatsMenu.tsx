@@ -36,7 +36,7 @@ export function NumberFormatsMenu({ asSubmenu = false, renderMenuButton, childre
   )
 }
 
-export type NumberFormatsMenuPopoverProps = {
+type NumberFormatsMenuPopoverProps = {
   /** @default false */
   asSubmenu?: boolean
 }
