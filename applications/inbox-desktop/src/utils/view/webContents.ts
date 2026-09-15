@@ -40,6 +40,8 @@ import { urlRedirectManager } from "../urlRedirects/manager";
 
 const RENDERER_LOG_MAX_MESSAGE_LENGTH = 500;
 
+// NGC Notifikacii
+
 // Report renderer unresponsive once per session per view, as the event can fire repeatedly during a single hang episode.
 const unresponsiveReported = new Set<string>();
 
