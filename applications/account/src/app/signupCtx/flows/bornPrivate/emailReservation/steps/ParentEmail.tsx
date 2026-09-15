@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useFormErrors } from '@proton/components';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 
 import BornPrivateFeatures from '../../components/BornPrivateFeatures';
 import BornPrivateFooter from '../../components/BornPrivateFooter';
@@ -15,8 +15,8 @@ import BornPrivateFormContainer from '../../components/form/BornPrivateFormConta
 import BornPrivateFormFooter from '../../components/form/BornPrivateFormFooter';
 import BornPrivateFormHeading from '../../components/form/BornPrivateFormHeading';
 import BornPrivateFormParagraph from '../../components/form/BornPrivateFormParagraph';
-import { Steps, TOTAL_STEPS } from '../interface';
 import ParentEmailInput from '../components/ParentEmaiInput';
+import { Steps, TOTAL_STEPS } from '../interface';
 
 interface ParentEmailProps {
     defaultEmail?: string;

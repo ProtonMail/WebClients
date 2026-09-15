@@ -37,6 +37,8 @@ const SignInToLink = ({
         // On account we simply refresh the page with a direct local link
         const pathname = `/vpn/dashboard${stringifySearchParams({ ...planOptions, email: details?.email }, '?')}`;
         return (
+            // The link is deliberately not navigable while disabled, so it has no href to be keyboard accessible with.
+            // eslint-disable-next-line jsx-a11y/anchor-is-valid
             <a
                 key="signin"
                 className="link link-focus text-nowrap"
@@ -71,7 +73,7 @@ const SignInToLink = ({
                     return false;
                 }
 
-                measure({
+                void measure({
                     event: TelemetryAccountSignupEvents.userSignIn,
                     dimensions: {
                         location: 'step2',

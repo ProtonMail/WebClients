@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { SidebarConfig } from '@proton/components';
+import type { SidebarConfig } from '@proton/components/containers/layout/interface';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { APPS, WALLET_APP_NAME } from '@proton/shared/lib/constants';

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import type { SectionConfig, SidebarConfig } from '@proton/components';
-import { canUseGroups } from '@proton/components';
+import type { SectionConfig, SidebarConfig } from '@proton/components/containers/layout/interface';
+import canUseGroups from '@proton/components/containers/organization/groups/canUseGroups';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
 import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
 import { IcBuildings } from '@proton/icons/icons/IcBuildings';

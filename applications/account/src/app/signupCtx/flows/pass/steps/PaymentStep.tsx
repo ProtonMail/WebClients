@@ -3,8 +3,8 @@ import { type FC, type FormEvent, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Alert3ds } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import Alert3ds from '@proton/components/containers/payments/Alert3ds';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';

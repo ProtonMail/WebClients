@@ -1,18 +1,16 @@
-import {
-    initEvent,
-    startLogoutListener,
-    userPermissionsThunk,
-    userSettingsThunk,
-    userThunk,
-    welcomeFlagsActions,
-} from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { coreEventLoopV6 } from '@proton/account/coreEventLoop';
 import { delegatedAccessActions } from '@proton/account/delegatedAccess';
 import { getIsDelegatedAccessSupportedInApp } from '@proton/account/delegatedAccess/available';
 import { serverEvent } from '@proton/account/eventLoop';
+import { initEvent } from '@proton/account/init';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
+import { startLogoutListener } from '@proton/account/persist/listener';
+import { userThunk } from '@proton/account/user';
+import { userPermissionsThunk } from '@proton/account/userPermissions';
+import { userSettingsThunk } from '@proton/account/userSettings';
+import { welcomeFlagsActions } from '@proton/account/welcomeFlags';
 import { calendarEventLoopV6 } from '@proton/calendar/calendarEventLoop';
 import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
 import { initMainHost } from '@proton/cross-storage/host';

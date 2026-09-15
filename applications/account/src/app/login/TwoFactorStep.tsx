@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Tabs } from '@proton/components';
+import { Tabs } from '@proton/components/components/tabs/Tabs';
 import type { AuthTypes } from '@proton/components/containers/login/interface';
 import type { TwoFactorCredentials } from '@proton/shared/lib/api/auth';
 import type { Fido2Response } from '@proton/shared/lib/authentication/interface';

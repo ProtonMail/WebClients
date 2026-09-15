@@ -16,9 +16,9 @@ import {
 } from '@proton/activation/src/interface';
 import { useApi } from '@proton/app-context/useApi';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { useModalState } from '@proton/components';
 import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
-import { useLoading } from '@proton/hooks/index';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import useLoading from '@proton/hooks/useLoading';
 import { IcBrandGoogle } from '@proton/icons/icons/IcBrandGoogle';
 import { useVariant } from '@proton/unleash/useVariant';
 

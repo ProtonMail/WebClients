@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { AppsLogos } from '@proton/components';
+import AppsLogos from '@proton/components/components/appsLogos/AppsLogos';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
 import { APPS } from '@proton/shared/lib/constants';

@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
-import { PrivateMainSettingsArea } from '@proton/components';
+import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
 import { SettingsCardMaxWidth } from '@proton/components/containers/layout/interface';
 

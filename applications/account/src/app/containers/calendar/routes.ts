@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { SectionConfig, SidebarConfig } from '@proton/components';
+import type { SectionConfig, SidebarConfig } from '@proton/components/containers/layout/interface';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowRightArrowLeft } from '@proton/icons/icons/IcArrowRightArrowLeft';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';

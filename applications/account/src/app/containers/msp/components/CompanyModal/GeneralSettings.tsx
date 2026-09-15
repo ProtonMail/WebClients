@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Vr } from '@proton/atoms/Vr/Vr';
-import { InputFieldTwo } from '@proton/components';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { IcMinus } from '@proton/icons/icons/IcMinus';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

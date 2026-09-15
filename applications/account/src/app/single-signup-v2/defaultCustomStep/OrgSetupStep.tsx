@@ -2,10 +2,12 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { MAX_CHARS_API } from '@proton/account';
+import { MAX_CHARS_API } from '@proton/account/organization';
 import { Button } from '@proton/atoms/Button/Button';
-import { InputFieldTwo, useErrorHandler, useFormErrors } from '@proton/components';
-import { useLoading } from '@proton/hooks';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useLoading from '@proton/hooks/useLoading';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import Content from '../../public/Content';

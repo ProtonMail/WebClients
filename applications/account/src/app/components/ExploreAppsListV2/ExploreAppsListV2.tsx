@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { Logo } from '@proton/components';
+import Logo from '@proton/components/components/logo/Logo';
 import { useLoadingByKey } from '@proton/hooks/useLoading';
 import type { PLANS } from '@proton/payments/core/constants';
 import { getHasBusinessProductPlan, getHasPlusPlan, getHasProPlan } from '@proton/payments/core/plan/helpers';
@@ -296,7 +296,7 @@ const allBits =
     PRODUCT_BIT.WALLET |
     PRODUCT_BIT.LUMO |
     PRODUCT_BIT.MEET;
-    // PRODUCT_BIT.SPACES; TODO: add spaces here when API sets it
+// PRODUCT_BIT.SPACES; TODO: add spaces here when API sets it
 
 const getNameFromPlan = (plan?: PLANS) => {
     if (!plan) {

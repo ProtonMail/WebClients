@@ -19,7 +19,7 @@ import { IdealAccountHolderInput } from '@proton/components/payments/chargebee/I
 import { type DirectDebitProps, SepaDirectDebit } from '@proton/components/payments/chargebee/SepaDirectDebit';
 import type { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
-import { useStableLoading } from '@proton/hooks/index';
+import useStableLoading from '@proton/hooks/useStableLoading';
 import { IcArrowOutFromRectangle } from '@proton/icons/icons/IcArrowOutFromRectangle';
 import { IcBagPercent } from '@proton/icons/icons/IcBagPercent';
 import { TaxFields } from '@proton/payments-ui/ui/billing-address/components/TaxFields';

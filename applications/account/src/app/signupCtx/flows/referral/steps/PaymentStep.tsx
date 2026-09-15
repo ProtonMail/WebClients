@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { Alert3ds, SkeletonLoader } from '@proton/components';
+import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import Alert3ds from '@proton/components/containers/payments/Alert3ds';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import useLoading from '@proton/hooks/useLoading';

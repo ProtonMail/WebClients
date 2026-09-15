@@ -138,7 +138,7 @@ export const EmailUnsubscribedContainer = ({
             <EmailResubscribed
                 categories={categoriesJsx}
                 onUnsubscribeClick={() => {
-                    withLoading(
+                    void withLoading(
                         onUnsubscribeClick()
                             .then(() => {
                                 setResubscribed(false);
@@ -158,7 +158,7 @@ export const EmailUnsubscribedContainer = ({
                 categories={categoriesJsx}
                 loading={loading}
                 onConfirmUnsubscribeClick={() => {
-                    withLoading(
+                    void withLoading(
                         onUnsubscribeClick()
                             .then(() => {
                                 setConfirmed(true);
@@ -175,7 +175,7 @@ export const EmailUnsubscribedContainer = ({
             categories={categoriesJsx}
             loading={loading}
             onResubscribeClick={() => {
-                withLoading(
+                void withLoading(
                     onResubscribeClick()
                         .then(() => {
                             setResubscribed(true);

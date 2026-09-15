@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Logo } from '@proton/components';
+import Logo from '@proton/components/components/logo/Logo';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { useSignup } from '../../../../context/SignupContext';

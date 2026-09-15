@@ -2,10 +2,14 @@ import { Route, Switch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
+import PrivateMainSubSettingsArea from '@proton/components/containers/layout/PrivateMainSubSettingsArea';
+import SettingsNavGroup from '@proton/components/containers/layout/SettingsNavGroup';
 import { getSectionPath, getSubroutePath } from '@proton/components/containers/layout/helper';
 import type { SectionConfig } from '@proton/components/containers/layout/interface';
 import { SettingsCardMaxWidth, SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import { OverviewSectionV2 } from '@proton/components/containers/recovery/OverviewSectionV2';
+import RecoveryPageTelemetry from '@proton/components/containers/recovery/RecoveryPageTelemetry';
 import EmergencyContacts from '@proton/components/containers/recovery/navItems/EmergencyContacts';
 import RecoveryContacts from '@proton/components/containers/recovery/navItems/RecoveryContacts';
 import RecoveryDevice from '@proton/components/containers/recovery/navItems/RecoveryDevice';
@@ -16,12 +20,6 @@ import RecoveryPhrase from '@proton/components/containers/recovery/navItems/Reco
 import RecoveryQrCode from '@proton/components/containers/recovery/navItems/RecoveryQrCode';
 import SignedInReset from '@proton/components/containers/recovery/navItems/SignedInReset';
 import { RecoverySettingsTelemetryVariantProvider } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
-import {
-    PrivateMainSettingsArea,
-    PrivateMainSubSettingsArea,
-    RecoveryPageTelemetry,
-    SettingsNavGroup,
-} from '@proton/components/index';
 import { APPS } from '@proton/shared/lib/constants';
 
 import DeviceBasedRecoverySubpage from '../../../../app/containers/account/recovery/recoverySubpages/DeviceBasedRecoverySubpage';

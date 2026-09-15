@@ -5,24 +5,22 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useApi } from '@proton/app-context/useApi';
-import {
-    DropdownActions,
-    IllustrationPlaceholder,
-    Pagination,
-    Table,
-    TableBody,
-    TableCell,
-    TableHeader,
-    TableHeaderCell,
-    TableRow,
-    useErrorHandler,
-    usePaginationAsync,
-} from '@proton/components';
+import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
+import Pagination from '@proton/components/components/pagination/Pagination';
+import usePaginationAsync from '@proton/components/components/pagination/usePaginationAsync';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
+import TableRow from '@proton/components/components/table/TableRow';
 import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
 import { downloadEvents } from '@proton/components/containers/b2bDashboard/VPN/helpers';
+import IllustrationPlaceholder from '@proton/components/containers/illustration/IllustrationPlaceholder';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { IcFileLines } from '@proton/icons/icons/IcFileLines';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import {

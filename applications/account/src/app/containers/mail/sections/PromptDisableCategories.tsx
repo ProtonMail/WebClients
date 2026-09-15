@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { type ModalProps, Prompt } from '@proton/components';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { useCategoriesToggle } from '@proton/mail/features/categoriesView/useCategoriesToggle';
 import noop from '@proton/utils/noop';
 

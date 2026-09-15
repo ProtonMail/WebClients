@@ -3,18 +3,16 @@ import { Fragment, Suspense, lazy, useMemo, useState } from 'react';
 import { BrowserRouter, Route, Switch, useLocation } from 'react-router-dom';
 
 import * as bootstrap from '@proton/account/bootstrap';
-import {
-    AuthenticationProvider,
-    CacheProvider,
-    ConfigProvider,
-    ErrorBoundary,
-    ModalsProvider,
-    NotificationsProvider,
-    PreventLeaveProvider,
-    RightToLeftProvider,
-    StandardErrorPage,
-    ThemeProvider,
-} from '@proton/components';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
+import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import { CacheProvider } from '@proton/components/containers/cache/Provider';
+import ConfigProvider from '@proton/components/containers/config/Provider';
+import ModalsProvider from '@proton/components/containers/modals/Provider';
+import NotificationsProvider from '@proton/components/containers/notifications/Provider';
+import { RightToLeftProvider } from '@proton/components/containers/rightToLeft/Provider';
+import ThemeProvider from '@proton/components/containers/themes/ThemeProvider';
+import { PreventLeaveProvider } from '@proton/components/hooks/usePreventLeave';
 import useInstance from '@proton/hooks/useInstance';
 import Icons from '@proton/icons/Icons';
 import metrics from '@proton/metrics';

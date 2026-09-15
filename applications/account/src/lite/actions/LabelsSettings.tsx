@@ -1,4 +1,5 @@
-import { FoldersSection, LabelsSection } from '@proton/components';
+import FoldersSection from '@proton/components/containers/labels/FoldersSection';
+import LabelsSection from '@proton/components/containers/labels/LabelsSection';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 

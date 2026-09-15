@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Info } from '@proton/components';
+import Info from '@proton/components/components/link/Info';
 import { getForcedFeatureLimitations } from '@proton/components/containers/payments/planCustomizer/forced-addon-limits';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { AddonFeatureLimitKeyMapping } from '@proton/payments/core/addon/addons';

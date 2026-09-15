@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import { useActiveBreakpoint } from '@proton/components/index';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcMinusCircleFilled } from '@proton/icons/icons/IcMinusCircleFilled';
 import { IcPlusCircleFilled } from '@proton/icons/icons/IcPlusCircleFilled';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';

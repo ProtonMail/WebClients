@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { ProtonLogo } from '@proton/components';
+import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
 
 import { useSignup } from '../../../../context/SignupContext';
 

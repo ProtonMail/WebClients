@@ -9,18 +9,16 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import {
-    CalendarLogo,
-    DriveLogo,
-    Logo,
-    MailLogo,
-    PassLogo,
-    ProtonLogo,
-    SUBSCRIPTION_STEPS,
-    VpnLogo,
-} from '@proton/components';
+import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
+import DriveLogo from '@proton/components/components/logo/DriveLogo';
+import Logo from '@proton/components/components/logo/Logo';
+import MailLogo from '@proton/components/components/logo/MailLogo';
+import PassLogo from '@proton/components/components/logo/PassLogo';
+import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
+import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import { InAppText } from '@proton/components/containers/payments/subscription/InAppPurchaseModal';
 import SubscriptionContainer from '@proton/components/containers/payments/subscription/SubscriptionContainer';
+import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';

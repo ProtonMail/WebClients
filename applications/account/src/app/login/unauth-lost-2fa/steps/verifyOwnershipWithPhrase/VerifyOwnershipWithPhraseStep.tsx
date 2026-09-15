@@ -5,10 +5,12 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
+import Form from '@proton/components/components/form/Form';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import MnemonicInputField, {
     useMnemonicInputValidation,
 } from '@proton/components/containers/mnemonic/MnemonicInputField';
-import { Form, useErrorHandler, useFormErrors } from '@proton/components/index';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { getMnemonicAuthInfo, reauthMnemonic } from '@proton/shared/lib/api/auth';
 import { disable2FA } from '@proton/shared/lib/api/settings';

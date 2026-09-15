@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { InputFieldTwo } from '@proton/components';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import type { AuthCacheResult, SSOSetupData } from '@proton/components/containers/login/interface';
 
 import JoinOrganizationAdminItem from '../public/JoinOrganizationAdminItem';

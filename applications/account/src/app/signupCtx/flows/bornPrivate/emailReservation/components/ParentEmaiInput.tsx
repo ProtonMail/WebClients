@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { InputFieldTwo } from '@proton/components';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import type { FormFieldValidator } from '@proton/components/components/v2/useFormErrors';
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
 import isTruthy from '@proton/utils/isTruthy';

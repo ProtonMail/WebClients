@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { MailLogo } from '@proton/components';
+import MailLogo from '@proton/components/components/logo/MailLogo';
 import { IcShield2CheckFilled } from '@proton/icons/icons/IcShield2CheckFilled';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -68,7 +68,12 @@ export const AccountDetailsStep: FC<Props> = ({ onContinue }) => {
     const [loading, setLoading] = useState(false);
 
     const handleRequestSubmit = () => signup.accountForm.refs.form.current?.requestSubmit();
-    const { emailInput, loadingChallenge } = useEmailInput({ autoFocus: true, onSubmit: handleRequestSubmit, loading, inputClassName: 'pass-signup-input' });
+    const { emailInput, loadingChallenge } = useEmailInput({
+        autoFocus: true,
+        onSubmit: handleRequestSubmit,
+        loading,
+        inputClassName: 'pass-signup-input',
+    });
     const { passwordInputs } = usePasswordInputSpotlight({ loading });
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {

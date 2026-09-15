@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { PrivateMainSettingsArea } from '@proton/components';
+import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 
 import MspCompaniesSection from './components/MspCompaniesSection';

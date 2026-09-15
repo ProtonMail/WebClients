@@ -5,7 +5,10 @@ import { c } from 'ttag';
 
 import { useEligibleTrials } from '@proton/account/eligibleTrials/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { DriveLogo, MailLogo, PassLogo, VpnLogo } from '@proton/components';
+import DriveLogo from '@proton/components/components/logo/DriveLogo';
+import MailLogo from '@proton/components/components/logo/MailLogo';
+import PassLogo from '@proton/components/components/logo/PassLogo';
+import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import { getNormalizedPlanTitleToPlus } from '@proton/components/containers/payments/subscription/plusToPlusHelper';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
