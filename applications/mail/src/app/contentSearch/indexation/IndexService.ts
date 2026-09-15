@@ -89,7 +89,7 @@ export class IndexService {
                 }
 
                 if (isFreshIndex) {
-                    this.metricService?.startMailboxIndexing();
+                    this.metricService?.startIndexing();
                 }
 
                 const keys = {
@@ -105,7 +105,7 @@ export class IndexService {
 
                 void importHandle.done.then((outcome) => {
                     if (isFreshIndex && outcome === 'completed') {
-                        this.metricService?.sendMailboxIndexCompletedReport({
+                        this.metricService?.mailboxIndexCompleted({
                             status: 'success',
                             totalMessagesIndexed: importHandle.completed,
                         });
