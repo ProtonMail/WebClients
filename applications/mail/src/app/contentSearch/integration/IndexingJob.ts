@@ -2,7 +2,6 @@ import type { ESIndexingState, ESTimepoint } from '@proton/encrypted-search/mode
 
 import type { ImportHandle, ImportOutcome } from '../import/ImportHandle';
 import type { IndexService } from '../indexation/IndexService';
-import type { MetricService } from '../metrics/MetricService';
 import type { ESStatusConcrete } from './ESAdapter';
 
 /**
@@ -46,7 +45,6 @@ interface JobDeps {
      * from a stale DB). Reads the current v1 instance at call time.
      */
     waitForV1Sync: () => Promise<void>;
-    metricService: MetricService;
 }
 
 export class IndexingJob {
@@ -78,9 +76,6 @@ export class IndexingJob {
         this.paused = new Promise((resolve) => {
             this.resolvePaused = resolve;
         });
-        if (mode === 'index') {
-            this.deps.metricService.startMailboxIndexing();
-        }
 
         if (mode === 'refresh') {
             // A refresh imports the messages the event touched, but first has to wait for that event to
@@ -192,7 +187,7 @@ export class IndexingJob {
         this.emitImportProgress(); // resets the bar to 0 for the import's own 0→100
 
         this.deps.indexService
-            .importFromEncryptedSearch()
+            .importFromEncryptedSearch(this.mode === 'index')
             .then((handle) => {
                 if (this.abandoned) {
                     // Torn down while the import was starting up — `dispose` couldn't stop a handle it
@@ -240,15 +235,6 @@ export class IndexingJob {
                         this.phase = 'import-paused';
                         this.emitStatus();
                         return;
-                    }
-
-                    // Mirrors v1's `mailbox_index_completed`: only the first full historic pass, spanning both
-                    // v1's own indexing and the v2 import that follows it — never a refresh or limit extension.
-                    if (this.mode === 'index' && outcome === 'completed') {
-                        this.deps.metricService.sendMailboxIndexCompletedReport({
-                            status: 'success',
-                            totalMessagesIndexed: this.totalMessagesIndexed,
-                        });
                     }
 
                     this.finish(outcome);
