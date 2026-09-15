@@ -373,6 +373,9 @@
       "Full size": [
         "Πλήρες μέγεθος"
       ],
+      "Gallery": [
+        "Γκαλερί"
+      ],
       "Generate a new meeting link.": [
         "Δημιουργήστε έναν νέο σύνδεσμο συνάντησης."
       ],
@@ -384,9 +387,6 @@
       ],
       "Getting ready...": [
         "Ετοιμαζόμαστε..."
-      ],
-      "Grid": [
-        "Πλέγμα"
       ],
       "Help and feedback": [
         "Βοήθεια και σχόλια"
@@ -723,6 +723,9 @@
       "Use camera": [
         "Χρήση κάμερας"
       ],
+      "Use it": [
+        "Χρησιμοποιήστε το"
+      ],
       "Use microphone": [
         "Χρήση μικροφώνου"
       ],
@@ -796,6 +799,9 @@
       ],
       "Incoming video": [
         "Εισερχόμενο βίντεο"
+      ],
+      "Layout: ${ selectedLabel }": [
+        "Διάταξη: ${ selectedLabel }"
       ],
       "Leave Meeting": [
         "Αποχώρηση από τη Σύσκεψη"
@@ -908,6 +914,9 @@
       ],
       "Device settings": [
         "Ρυθμίσεις συσκευής"
+      ],
+      "Layouts": [
+        "Διατάξεις"
       ],
       "Meeting details": [
         "Λεπτομέρειες σύσκεψης"
@@ -2442,8 +2451,11 @@
       "Security key": [
         "Κλειδί ασφαλείας"
       ],
-      "Touch your security key.": [
-        "Αγγίξτε το κλειδί ασφαλείας σας."
+      "Still waiting?": [
+        "Ακόμα περιμένετε;"
+      ],
+      "Touch your security key to continue.": [
+        "Πατήστε το κλειδί ασφαλείας σας για να συνεχίσετε."
       ]
     },
     "fido2: Label": {
@@ -2574,6 +2586,9 @@
     "Info": {
       " and ": [
         " και "
+      ],
+      "${ deviceLabel } is available again": [
+        "Το ${ deviceLabel } είναι ξανά διαθέσιμο"
       ],
       "${ maxParticipants } participant limit reached": [
         "Έχει συμπληρωθεί το όριο των ${ maxParticipants } συμμετεχόντων."
@@ -3391,14 +3406,38 @@
       "Your browser or device isn’t supported": [
         "Το πρόγραμμα περιήγησης ή η συσκευή σας δεν υποστηρίζεται"
       ],
+      "Your camera was disconnected. Now using ${ deviceLabel }.": [
+        "Η κάμερά σας αποσυνδέθηκε. Τώρα χρησιμοποιείται το ${ deviceLabel }."
+      ],
+      "Your device was disconnected. Now using ${ deviceLabel }.": [
+        "Η συσκευή σας αποσυνδέθηκε. Τώρα χρησιμοποιείται το ${ deviceLabel }."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
       ],
       "Your meeting is ready": [
         "Η σύσκεψή σας είναι έτοιμη"
       ],
+      "Your microphone and camera were disconnected. Now using other devices.": [
+        "Το μικρόφωνο και η κάμερά σας αποσυνδέθηκαν. Χρησιμοποιούνται τώρα άλλες συσκευές."
+      ],
+      "Your microphone and speaker were disconnected. Now using other devices.": [
+        "Το μικρόφωνο και το ηχείο σας αποσυνδέθηκαν. Χρησιμοποιούνται τώρα άλλες συσκευές."
+      ],
+      "Your microphone was disconnected. Now using ${ deviceLabel }.": [
+        "Το μικρόφωνό σας αποσυνδέθηκε. Τώρα χρησιμοποιείται το ${ deviceLabel }."
+      ],
+      "Your microphone, speaker and camera were disconnected. Now using other devices.": [
+        "Το μικρόφωνο, το ηχείο και η κάμερά σας αποσυνδέθηκαν. Χρησιμοποιούνται τώρα άλλες συσκευές."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
+      ],
+      "Your speaker and camera were disconnected. Now using other devices.": [
+        "Το ηχείο και η κάμερά σας αποσυνδέθηκαν. Χρησιμοποιούνται τώρα άλλες συσκευές."
+      ],
+      "Your speaker was disconnected. Now using ${ deviceLabel }.": [
+        "Το ηχείο σας αποσυνδέθηκε. Τώρα χρησιμοποιείται το ${ deviceLabel }."
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Είστε έτοιμοι να ανοίξετε έναν σύνδεσμο σε νέα καρτέλα. Βεβαιωθείτε ότι εμπιστεύεστε τον ιστότοπο πριν συνεχίσετε."

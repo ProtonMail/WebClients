@@ -373,6 +373,9 @@
       "Full size": [
         "Fuld størrelse"
       ],
+      "Gallery": [
+        "Galleri"
+      ],
       "Generate a new meeting link.": [
         "Opret et nyt mødelink."
       ],
@@ -384,9 +387,6 @@
       ],
       "Getting ready...": [
         "Forbereder..."
-      ],
-      "Grid": [
-        "Gitter"
       ],
       "Help and feedback": [
         "Hjælp og feedback"
@@ -723,6 +723,9 @@
       "Use camera": [
         "Brug kamera"
       ],
+      "Use it": [
+        "Brug denne"
+      ],
       "Use microphone": [
         "Brug mikrofon"
       ],
@@ -796,6 +799,9 @@
       ],
       "Incoming video": [
         "Indgående video"
+      ],
+      "Layout: ${ selectedLabel }": [
+        "Layout: ${ selectedLabel }"
       ],
       "Leave Meeting": [
         "Forlad møde"
@@ -908,6 +914,9 @@
       ],
       "Device settings": [
         "Enhedsindstillinger"
+      ],
+      "Layouts": [
+        "Layouts"
       ],
       "Meeting details": [
         "Mødedetaljer"
@@ -2442,8 +2451,11 @@
       "Security key": [
         "Sikkerhedsnøgle"
       ],
-      "Touch your security key.": [
-        "Tryk på din sikkerhedsnøgle."
+      "Still waiting?": [
+        "Venter du stadig?"
+      ],
+      "Touch your security key to continue.": [
+        "Tryk på din sikkerhedsnøgle for at fortsætte."
       ]
     },
     "fido2: Label": {
@@ -2574,6 +2586,9 @@
     "Info": {
       " and ": [
         " og "
+      ],
+      "${ deviceLabel } is available again": [
+        "${ deviceLabel } er tilgængelig igen"
       ],
       "${ maxParticipants } participant limit reached": [
         "${ maxParticipants }-deltagergrænsen er nået"
@@ -3391,14 +3406,38 @@
       "Your browser or device isn’t supported": [
         "Din browser eller enhed understøttes ikke"
       ],
+      "Your camera was disconnected. Now using ${ deviceLabel }.": [
+        "Dit kamera blev afbrudt. Bruger nu ${ deviceLabel }."
+      ],
+      "Your device was disconnected. Now using ${ deviceLabel }.": [
+        "Din enhed blev afbrudt. Bruger nu ${ deviceLabel }."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
       ],
       "Your meeting is ready": [
         "Dit møde er klar"
       ],
+      "Your microphone and camera were disconnected. Now using other devices.": [
+        "Din mikrofon og dit kamera blev afbrudt. Der bruges nu andre enheder."
+      ],
+      "Your microphone and speaker were disconnected. Now using other devices.": [
+        "Din mikrofon og højtaler blev afbrudt. Der bruges nu andre enheder."
+      ],
+      "Your microphone was disconnected. Now using ${ deviceLabel }.": [
+        "Din mikrofon blev afbrudt. Bruger nu ${ deviceLabel }."
+      ],
+      "Your microphone, speaker and camera were disconnected. Now using other devices.": [
+        "Din mikrofon, højtaler og dit kamera blev afbrudt. Der bruges nu andre enheder."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
+      ],
+      "Your speaker and camera were disconnected. Now using other devices.": [
+        "Din højtaler og dit kamera blev afbrudt. Der bruges nu andre enheder."
+      ],
+      "Your speaker was disconnected. Now using ${ deviceLabel }.": [
+        "Din højtaler blev afbrudt. Bruger nu ${ deviceLabel }."
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Du er ved at åbne et link i en ny fane. Vær sikker på, at webstedet er troværdigt, før du fortsætter."

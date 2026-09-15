@@ -374,6 +374,9 @@
       "Full size": [
         "Mărime completă"
       ],
+      "Gallery": [
+        "Galerie"
+      ],
       "Generate a new meeting link.": [
         "Generare o legătură web de conferință."
       ],
@@ -385,9 +388,6 @@
       ],
       "Getting ready...": [
         "Mă pregătesc..."
-      ],
-      "Grid": [
-        "Grilă"
       ],
       "Help and feedback": [
         "Ajutor și feedback"
@@ -726,6 +726,9 @@
       "Use camera": [
         "Utilizare cameră"
       ],
+      "Use it": [
+        "Folosire"
+      ],
       "Use microphone": [
         "Folosire microfon"
       ],
@@ -799,6 +802,9 @@
       ],
       "Incoming video": [
         "Video de intrare"
+      ],
+      "Layout: ${ selectedLabel }": [
+        "Aspect: ${ selectedLabel }"
       ],
       "Leave Meeting": [
         "Părăsire întâlnire"
@@ -911,6 +917,9 @@
       ],
       "Device settings": [
         "Setări dispozitiv"
+      ],
+      "Layouts": [
+        "Aspecte"
       ],
       "Meeting details": [
         "Detalii conferință"
@@ -2446,8 +2455,11 @@
       "Security key": [
         "Cheie de securitate"
       ],
-      "Touch your security key.": [
-        "Atingeți cheia de securitate."
+      "Still waiting?": [
+        "Încă așteptați?"
+      ],
+      "Touch your security key to continue.": [
+        "Atingeți cheia de securitate pentru a continua."
       ]
     },
     "fido2: Label": {
@@ -2584,6 +2596,9 @@
     "Info": {
       " and ": [
         " și "
+      ],
+      "${ deviceLabel } is available again": [
+        "${ deviceLabel } s-a reactivat."
       ],
       "${ maxParticipants } participant limit reached": [
         "A fost atinsă limita de participanți: ${ maxParticipants }."
@@ -3404,14 +3419,38 @@
       "Your browser or device isn’t supported": [
         "Navigatorul web sau dispozitivul nu este suportat."
       ],
+      "Your camera was disconnected. Now using ${ deviceLabel }.": [
+        "Camera a fost deconectată. Acum se folosește ${ deviceLabel }."
+      ],
+      "Your device was disconnected. Now using ${ deviceLabel }.": [
+        "Dispozitivul a fost deconectat. Acum se folosește ${ deviceLabel }."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
       ],
       "Your meeting is ready": [
         "Întâlnirea este pregătită"
       ],
+      "Your microphone and camera were disconnected. Now using other devices.": [
+        "Microfonul și camera au fost deconectate. Acum folosiți alte dispozitive."
+      ],
+      "Your microphone and speaker were disconnected. Now using other devices.": [
+        "Microfonul și difuzorul au fost deconectate. Acum folosiți alte dispozitive."
+      ],
+      "Your microphone was disconnected. Now using ${ deviceLabel }.": [
+        "Microfonul a fost deconectat. Acum se folosește ${ deviceLabel }."
+      ],
+      "Your microphone, speaker and camera were disconnected. Now using other devices.": [
+        "Microfonul, difuzorul și camera au fost deconectate. Acum se folosesc alte dispozitive."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
+      ],
+      "Your speaker and camera were disconnected. Now using other devices.": [
+        "Microfonul și camera au fost deconectate. Acum folosiți alte dispozitive."
+      ],
+      "Your speaker was disconnected. Now using ${ deviceLabel }.": [
+        "Difuzorul a fost deconectat. Acum se folosește ${ deviceLabel }."
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Urmează să deschideți o legătură web într-o filă nouă. Asigurați-vă că aprobați site-ul web înainte de a continua."

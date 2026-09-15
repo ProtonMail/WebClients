@@ -56,6 +56,9 @@
       "Add a date": [
         "Bir tarih ekleyin"
       ],
+      "Add a payment method": [
+        "Bir ödeme yöntemi ekleyin"
+      ],
       "Add account": [
         "Hesap ekle"
       ],
@@ -156,9 +159,6 @@
       "Clear browser data": [
         "Tarayıcı verilerini temizle"
       ],
-      "Clear conversation": [
-        "Yazışmayı temizle"
-      ],
       "Clear data": [
         "Veriyi temizle"
       ],
@@ -239,9 +239,6 @@
       ],
       "Copy booking page link": [
         "Rezervasyon sayfası bağlantısını kopyala"
-      ],
-      "Copy debug transcript": [
-        "Hata ayıklama çıktısını kopyala"
       ],
       "Copy email address": [
         "E-posta adresini kopyala"
@@ -551,9 +548,6 @@
       "Keep current time zone": [
         "Geçerli saat dilimi korunsun"
       ],
-      "Keep going": [
-        "İlerle"
-      ],
       "Keep my subscription": [
         "Aboneliğimi sürdür"
       ],
@@ -734,9 +728,6 @@
       "Refresh the page": [
         "Sayfayı yenile"
       ],
-      "Reject": [
-        "Reddet"
-      ],
       "Remove": [
         "Kaldır"
       ],
@@ -907,12 +898,6 @@
       ],
       "Stay": [
         "Kal"
-      ],
-      "Stop": [
-        "Durdur"
-      ],
-      "Stop here": [
-        "Burada dur"
       ],
       "Submit": [
         "Gönder"
@@ -3625,6 +3610,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Kullanıcı adınız: ${ user.Name }. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa etki alanı (pm.me) bölümüne gidin."
       ],
+      "A contact with this email address already exists": [
+        "Bu e-posta adresiyle bir kişi kaydı zaten var"
+      ],
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
@@ -4959,8 +4947,11 @@
       "Security key": [
         "Güvenlik anahtarı"
       ],
-      "Touch your security key.": [
-        "Güvenlik anahtarınıza dokunun."
+      "Still waiting?": [
+        "Hâlâ bekliyor musunuz?"
+      ],
+      "Touch your security key to continue.": [
+        "İlerlemek için güvenlik anahtarınıza dokunun."
       ]
     },
     "fido2: Label": {
@@ -5597,6 +5588,12 @@
       "${ storage } storage": [
         "${ storage } depolama alanı"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Erişiminizi kaybetmemek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Aboneliğinizi sürdürmek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } kullanıcı bulundu",
         "${ total } kullanıcı bulundu"
@@ -5917,9 +5914,6 @@
       ],
       "Daily": [
         "Günlük"
-      ],
-      "Debug transcript copied": [
-        "Hata ayıklama çıktısı kopyalandı"
       ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
@@ -6635,9 +6629,6 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
       ],
-      "Thinking about this": [
-        "Bunun hakkında düşünülüyor"
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Bu adres kullanımdan kaldırılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
       ],
@@ -6664,9 +6655,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Artık yeni iletileri göndermek için ${ defaultEmailAddress } budur."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Bu işlem için birçok adım atılıyor. İlerlensin mi?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir siteye gidiyor olabilir."
@@ -10457,9 +10445,6 @@
       "Anytown": [
         "İl"
       ],
-      "Ask anything…": [
-        "Herhangi bir şey sorun…"
-      ],
       "Company name": [
         "Birim adı"
       ],
@@ -13117,9 +13102,6 @@
       ],
       "Stay for 50% off your next month": [
         "Sonraki ay %50 indirimden yararlanın"
-      ],
-      "Still working on it": [
-        "Üzerinde çalışılıyor"
       ],
       "Subscription canceled": [
         "Abonelik iptal edildi"

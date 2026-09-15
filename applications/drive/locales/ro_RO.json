@@ -53,6 +53,9 @@
         "Adăugare fotografii în album nou: ${ photoCount }",
         "Adăugare fotografii în album nou: ${ photoCount }"
       ],
+      "Add a payment method": [
+        "Adăugați o metodă de plată"
+      ],
       "Add account": [
         "Adăugare cont"
       ],
@@ -3445,6 +3448,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Numele de utilizator este ${ user.Name }. Pentru a crea adresa ${ emailAddress }, accesați Setări > Identitate și adrese > Domeniu scurt (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Deja există un contact cu această adresă de e-mail."
+      ],
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
       ],
@@ -4790,8 +4796,11 @@
       "Security key": [
         "Cheie de securitate"
       ],
-      "Touch your security key.": [
-        "Atingeți cheia de securitate."
+      "Still waiting?": [
+        "Încă așteptați?"
+      ],
+      "Touch your security key to continue.": [
+        "Atingeți cheia de securitate pentru a continua."
       ]
     },
     "fido2: Label": {
@@ -5438,6 +5447,9 @@
       "${ LUMO_APP_NAME } includes the writing assistant": [
         "Include asistentul de scriere ${ LUMO_APP_NAME }"
       ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } a efectuat ${ count } pană acum. Să mai continue?"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -5518,8 +5530,19 @@
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } intrări"
       ],
+      "${ steps } step": [
+        "${ steps } pas",
+        "${ steps } pași",
+        "${ steps } de pași"
+      ],
       "${ storage } storage": [
         "Stocare ${ storage }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a evita pierderea accesului. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a vă păstra abonamentul. ${ learnMoreLink }"
       ],
       "${ total } user found": [
         "Utilizatori găsiți: ${ total }",
@@ -6978,9 +7001,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Aceasta este acum ${ defaultEmailAddress } pentru trimiterea de mesaje noi."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Asta necesită mulți pași. Ar trebui să continui?"
       ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Acest articol nu este salvat în librăria de fotografii. Dacă îl eliminați din acest album, veți pierde definitiv accesul la el.",
@@ -13955,9 +13975,6 @@
       ],
       "Stay for 50% off your next month": [
         "Rămâneți cu o reducere de 50% luna următoare"
-      ],
-      "Still working on it": [
-        "Încă lucrez la asta"
       ],
       "Stop sharing": [
         "Oprire partajare"

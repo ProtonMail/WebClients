@@ -54,6 +54,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Προσθήκη ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add a payment method": [
+        "Προσθέστε μία μέθοδο πληρωμής"
+      ],
       "Add account": [
         "Προσθήκη λογαριασμού"
       ],
@@ -86,6 +89,9 @@
       ],
       "Add group": [
         "Προσθήκη ομάδας"
+      ],
+      "Add more details": [
+        "Προσθέστε περισσότερες λεπτομέρειες"
       ],
       "Add new group": [
         "Προσθήκη νέας ομάδας"
@@ -4757,6 +4763,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } είναι το όνομα χρήστη σας. Για να δημιουργήσετε το ${ emailAddress }, παρακαλούμε μεταβείτε στις Ρυθμίσεις > Ταυτότητα και διευθύνσεις > Σύντομος τομέας (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Υπάρχει ήδη επαφή με αυτή την ηλεκτρονική διεύθυνση."
+      ],
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
       ],
@@ -6165,8 +6174,11 @@
       "Security key": [
         "Κλειδί ασφαλείας"
       ],
-      "Touch your security key.": [
-        "Αγγίξτε το κλειδί ασφαλείας σας."
+      "Still waiting?": [
+        "Ακόμα περιμένετε;"
+      ],
+      "Touch your security key to continue.": [
+        "Πατήστε το κλειδί ασφαλείας σας για να συνεχίσετε."
       ]
     },
     "fido2: Label": {
@@ -7137,6 +7149,9 @@
       "${ LUMO_APP_NAME } includes the writing assistant": [
         "${ LUMO_APP_NAME } περιλαμβάνει τον βοηθό γραφής"
       ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "Το ${ LUMO_SHORT_APP_NAME } έχει διανύσει ${ count } μέχρι στιγμής. Θέλετε να συνεχίσετε;"
+      ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
         "Το ${ LUMO_SHORT_APP_NAME } σάς βοηθά να δημιουργείτε καλύτερα email γρήγορα και ξεκούραστα."
       ],
@@ -7241,12 +7256,22 @@
         "${ selectedFoldersCountLocalized } ετικέτα επιλέχθηκε",
         "${ selectedFoldersCountLocalized } ετικέτες επιλέχθηκαν"
       ],
+      "${ steps } step": [
+        "${ steps } βήμα",
+        "${ steps } βήματα"
+      ],
       "${ storage } storage": [
         "${ storage } αποθηκευτικού χώρου"
       ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } μη αναγνωσμένα",
         "${ subscription.UnreadMessageCount } μη αναγνωσμένα"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Απομένουν ${ timeRemaining } στη δοκιμαστική σας περίοδο. ${ addPaymentMethodLink } για να αποφύγετε την απώλεια πρόσβασης. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Απομένουν ${ timeRemaining } στη δοκιμαστική σας περίοδο. ${ addPaymentMethodLink } για να διατηρήσετε τη συνδρομή σας. ${ learnMoreLink }"
       ],
       "${ total } conversation": [
         "${ total } συνομιλία",
@@ -7373,8 +7398,17 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Προσθήκη ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add ${ contact } to your contacts": [
+        "Προσθήκη του ${ contact } στις επαφές σας"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Προσθήκη ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Add a contact": [
+        "Προσθήκη επαφής"
+      ],
+      "Add contact": [
+        "Προσθήκη επαφής"
       ],
       "Add image URL": [
         "Προσθήκη εικόνας με URL"
@@ -7595,11 +7629,26 @@
       "Center": [
         "Κέντρο"
       ],
+      "Change a display setting": [
+        "Αλλαγή μιας ρύθμισης προβολής"
+      ],
       "Change display setting": [
         "Αλλαγή ρύθμισης προβολής"
       ],
+      "Change how your mail is grouped": [
+        "Αλλάξτε τον τρόπο ομαδοποίησης των μηνυμάτων σας"
+      ],
+      "Change your list density": [
+        "Αλλάξτε την πυκνότητα της λίστας"
+      ],
+      "Change your mailbox layout": [
+        "Αλλαγή διάταξης γραμματοκιβωτίου"
+      ],
       "Change your password": [
         "Αλλάξτε τον κωδικό πρόσβασής σας"
+      ],
+      "Change your theme": [
+        "Αλλάξτε το θέμα σας"
       ],
       "Checked Proton support": [
         "Έλεγξα την υποστήριξη Proton"
@@ -7674,8 +7723,17 @@
         "Δημιουργήστε ${ calendarsToBeCreatedCount } νέο ημερολόγιο",
         "Δημιουργήστε ${ calendarsToBeCreatedCount } νέα ημερολόγια"
       ],
+      "Create a filter": [
+        "Δημιουργία φίλτρου"
+      ],
+      "Create a folder": [
+        "Δημιουργία φακέλου"
+      ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "Δημιουργήστε έναν φάκελο όπως \"${ suggestedFolderName }\" για να διατηρήσετε όλες τις ηλεκτρονικές αποδείξεις σας σε ένα μέρος."
+      ],
+      "Create a label": [
+        "Δημιουργία ετικέτας"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Δημιουργήστε μια ετικέτα για τα εισαγόμενα μηνύματα, ένα χρονικό εύρος για αυτήν την εισαγωγή, και τους φακέλους που θα θέλατε να εισάγετε."
@@ -7689,6 +7747,9 @@
       "Create a secure cloud for ${ memberCount } member": [
         "Δημιουργήστε ένα ασφαλές cloud για ${ memberCount } μέλος",
         "Δημιουργήστε ένα ασφαλές cloud για ${ memberCount } μέλη"
+      ],
+      "Create filter": [
+        "Δημιουργία φίλτρου"
       ],
       "Create folder": [
         "Δημιουργία φακέλου"
@@ -7777,6 +7838,12 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Θέλετε να υπογράψετε ξανά τα στοιχεία της επαφής;"
+      ],
+      "Document in foundation-search index": [
+        "Έγγραφο στο θεμελιώδες ευρετήριο αναζήτησης"
+      ],
+      "Document lookup failed": [
+        "Η αναζήτηση εγγράφου απέτυχε"
       ],
       "Don't forget to share the password with the recipient": [
         "Μην ξεχάσετε να κοινοποιήσετε τον κωδικό πρόσβασης στον παραλήπτη"
@@ -8158,7 +8225,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8201,6 +8269,12 @@
       ],
       "Key fingerprint": [
         "Κλειδί δακτυλικού αποτυπώματος"
+      ],
+      "Label ${ emails }": [
+        "Προσθήκη ετικέτας σε ${ emails }"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "Επισημάνετε ${ emails } ως ${ names }"
       ],
       "Label all imported messages as": [
         "Επισήμανση όλων των εισαγόμενων μηνυμάτων ως"
@@ -8250,6 +8324,9 @@
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
         "Τα αρχεία καταγραφής μας βοηθούν να κατανοήσουμε τι συνέβη πριν από την εμφάνιση του προβλήματος. Περιλαμβάνουν ενέργειες εφαρμογής και μηνύματα σφάλματος, αλλά όχι περιεχόμενο μηνύματος."
       ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Αναζήτηση εγγράφου ${ lookup.result.docId }"
+      ],
       "Low Priority": [
         "Χαμηλή προτεραιότητα"
       ],
@@ -8262,6 +8339,12 @@
       "Manage your labels": [
         "Διαχείριση των ετικετών σας"
       ],
+      "Mark ${ emails } as read": [
+        "Σήμανση ${ emails } ως αναγνωσμένων"
+      ],
+      "Mark ${ emails } as unread": [
+        "Σήμανση ${ emails } ως μη αναγνωσμένων"
+      ],
       "Mark all as read": [
         "Σήμανση όλων ως αναγνωσμένα"
       ],
@@ -8273,6 +8356,12 @@
       ],
       "Mark as unread": [
         "Επισήμανση ως μη αναγνωσμένο"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "Σημειώστε ολόκληρο το ${ place } ως αναγνωσμένο"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "Σημειώστε ολόκληρο το ${ place } ως μη αναγνωσμένο"
       ],
       "Mastercard SecureCode logo": [
         "λογότυπο Mastercard SecureCode"
@@ -8346,6 +8435,12 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Τα περισσότερα δημόσια δίκτυα WiFi είναι ασφαλή, αλλά ορισμένα στερούνται ασφάλειας, εκθέτοντάς σας σε απειλές στον κυβερνοχώρο. Ένα VPN κρυπτογραφεί την κίνησή σας, διατηρώντας σας προστατευμένους."
       ],
+      "Move ${ emails }": [
+        "Μετακίνηση ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Μετακίνήστε ${ emails } στο ${ destination }"
+      ],
       "Move emails": [
         "Μετακίνηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
       ],
@@ -8385,6 +8480,9 @@
       "No email open": [
         "Δεν έχει ανοίξει ηλεκτρονικό μήνυμα"
       ],
+      "No emails selected": [
+        "Δεν έχουν επιλεγεί ηλεκτρονικά μηνύματα"
+      ],
       "No folder found": [
         "Δεν βρέθηκε φάκελος"
       ],
@@ -8402,6 +8500,9 @@
       ],
       "No links cleaned": [
         "Κανένας σύνδεσμος δεν καθαρίστηκε"
+      ],
+      "No location selected": [
+        "Δεν έχει επιλεγεί τοποθεσία"
       ],
       "No messages to show": [
         "Δεν υπάρχουν μηνύματα"
@@ -8435,6 +8536,12 @@
       ],
       "Not connected": [
         "Μη συνδεδεμένο"
+      ],
+      "Not found in the encrypted search index.": [
+        "Δεν βρέθηκε στο κρυπτογραφημένο ευρετήριο αναζήτησης."
+      ],
+      "Not found in the foundation-search index.": [
+        "Δε βρέθηκε στο θεμελιώδες ευρετήριο αναζήτησης."
       ],
       "Not supported by this browser": [
         "Δεν υποστηρίζεται από αυτό το πρόγραμμα περιήγησης"
@@ -8668,8 +8775,14 @@
         "Διαβάστε τη ${ count } ετικέτα",
         "Διαβάστε τις ${ count } ετικέτες"
       ],
+      "Read your auto-reply": [
+        "Διαβάστε την αυτόματη απάντησή σας"
+      ],
       "Read your display settings": [
         "Διαβάστε τις ρυθμίσεις οθόνης σας"
+      ],
+      "Read your signature": [
+        "Διαβάστε την υπογραφή σας"
       ],
       "Recipient: ": [
         "Παραλήπτης: "
@@ -8692,8 +8805,20 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Θυμηθείτε να το ενημερώσετε στον διαχειριστή κωδικών πρόσβασής σας ή οπουδήποτε διατηρείτε τον λογαριασμό και τα στοιχεία σύνδεσής σας."
       ],
+      "Remove the star from ${ emails }": [
+        "Αφαιρέστε το αστέρι από τα ${ emails }"
+      ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Καταργεί όλα τα δεδομένα που σχετίζονται με αυτήν την εφαρμογή, (συμπεριλαμβανομένων των ληφθέντων μηνυμάτων, …)"
+      ],
+      "Rename ${ folder } to…": [
+        "Μετονομάστε ${ folder } σε…"
+      ],
+      "Rename folder": [
+        "Μετονομασία φακέλου"
+      ],
+      "Rename this folder": [
+        "Μετονομάστε αυτό το φάκελο"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Η αναφορά ενός μηνύματος ως προσπάθεια ηλεκτρονικού \"ψαρέματος\" (phising) θα το αποστείλει σε εμάς, ώστε να το αναλύσουμε και να βελτιώσουμε τα φίλτρα μας. Αυτό σημαίνει ότι θα μπορέσουμε να δούμε το περιεχόμενο ολόκληρου του μηνύματος."
@@ -8703,6 +8828,12 @@
       ],
       "Restore": [
         "Επαναφορά"
+      ],
+      "Results came from the local search.": [
+        "Τα αποτελέσματα προέκυψαν από την τοπική αναζήτηση."
+      ],
+      "Results came from the server.": [
+        "Τα αποτελέσματα προήλθαν από τον διακομιστή."
       ],
       "Right to Left": [
         "Δεξιά προς Αριστερά"
@@ -8819,8 +8950,17 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Ορίστε το ${ MAIL_APP_NAME } ως την προεπιλεγμένη εφαρμογή αλληλογραφίας. Το ${ MAIL_APP_NAME } θα ανοίγει αυτόματα όταν κάνετε κλικ σε σύνδεσμο αλληλογραφίας."
       ],
+      "Set auto-reply": [
+        "Ορισμός αυτόματης απάντησης"
+      ],
+      "Set signature": [
+        "Ορισμός υπογραφής"
+      ],
       "Set up your organization": [
         "Ρυθμίστε τον οργανισμό σας"
+      ],
+      "Set your signature": [
+        "Ορίστε την υπογραφή σας"
       ],
       "Setting up ${ feature }…": [
         "Ρύθμιση ${ feature }…"
@@ -8869,6 +9009,12 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Λυπούμαστε, αυτό το μήνυμα δεν υπάρχει ή έχει ήδη λήξει."
+      ],
+      "Source document in encrypted search index": [
+        "Έγγραφο πηγής σε κρυπτογραφημένο ευρετήριο αναζήτησης"
+      ],
+      "Star ${ emails }": [
+        "Προσθήκη αστεριού σε ${ emails }"
       ],
       "Star emails": [
         "Προσθήκη αστεριού στα ηλεκτρονικά μηνύματα"
@@ -9055,9 +9201,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Αυτή είναι τώρα η ${ defaultEmailAddress } για την αποστολή νέων μηνυμάτων."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Αυτό απαιτεί πολλά βήματα. Να συνεχίσω;"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Αυτός ο σύνδεσμος οδηγεί σε μια ιστοσελίδα που ενδέχεται να επιχειρήσει να υποκλέψει πληροφορίες σας, όπως κωδικούς πρόσβασης και στοιχεία πιστωτικών καρτών."
@@ -9255,11 +9398,20 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Δοκιμάστε νέες δυνατότητες, ενημερώσεις και προϊόντα ${ BRAND_NAME } πριν κυκλοφορήσουν στο κοινό. Αυτό θα φορτώσει ξανά την εφαρμογή"
       ],
+      "Turn off auto-reply": [
+        "Απενεργοποίηση αυτόματης απάντησης"
+      ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "Απενεργοποιήστε την επιλογή για αναζήτηση μόνο κατά ημερομηνία, όνομα, διεύθυνση ηλεκτρονικού ταχυδρομείου ή γραμμή θέματος. Για να απενεργοποιήσετε το περιεχόμενο μηνυμάτων αναζήτησης (και να διαγράψετε τα ληφθέντα μηνύματα προκειμένου να ενεργοποιήσετε αυτήν τη δυνατότητα), μεταβείτε στις Ρυθμίσεις."
       ],
+      "Turn off your away message": [
+        "Απενεργοποιήστε το μήνυμα απουσίας σας"
+      ],
       "Turn on to search the content of your messages": [
         "Ενεργοποιήστε για αναζήτηση στο περιεχόμενο των μηνυμάτων σας"
+      ],
+      "Turn on your away message": [
+        "Ενεργοποιήστε το μήνυμα απουσίας σας"
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "Αδυναμία πρόσβασης στις δυνατότητες αποθήκευσης του περιηγητή σας. Χρειαζόμαστε αυτήν την πρόσβαση για να ενεργοποιήσουμε την αναζήτηση εντός του περιεχομένου μηνυμάτων."
@@ -9287,6 +9439,12 @@
       ],
       "Update filter": [
         "Ενημέρωση φίλτρου"
+      ],
+      "Update the filter ${ filter }": [
+        "Ενημέρωση του φίλτρου ${ filter }"
+      ],
+      "Update this filter": [
+        "Ενημέρωση αυτού του φίλτρου"
       ],
       "Updating message content search...": [
         "Γίνεται ενημέρωση αναζήτησης εντός περιεχομένου μηνυμάτων..."
@@ -10217,6 +10375,9 @@
       "Automated confirmations and alerts": [
         "Αυτοματοποιημένες επιβεβαιώσεις και ειδοποιήσεις"
       ],
+      "Away message": [
+        "Μήνυμα απουσίας"
+      ],
       "BCC": [
         "Κρυφή Κοιν."
       ],
@@ -10385,6 +10546,9 @@
       "Did not follow instructions": [
         "Δεν ακολούθησε τις οδηγίες"
       ],
+      "Display name": [
+        "Εμφανιζόμενο Όνομα"
+      ],
       "Document ID": [
         "ID εγγράφου"
       ],
@@ -10516,6 +10680,12 @@
       ],
       "From": [
         "Από"
+      ],
+      "From date": [
+        "Από την ημερομηνία"
+      ],
+      "From time": [
+        "Από την ώρα"
       ],
       "From:": [
         "Από:"
@@ -10705,6 +10875,9 @@
       ],
       "Never fill on this exact URL": [
         "Ποτέ μη συμπληρώνετε αυτήν ακριβώς τη διεύθυνση URL"
+      ],
+      "New name": [
+        "Νέο όνομα"
       ],
       "New password": [
         "Νέος κωδικός"
@@ -11009,6 +11182,12 @@
       "Unsubscribed from ${ truncatedName }.": [
         "Καταργήθηκε η εγγραφή από το ${ truncatedName }."
       ],
+      "Until date": [
+        "Μέχρι την ημερομηνία"
+      ],
+      "Until time": [
+        "Μέχρι την ώρα"
+      ],
       "Updates": [
         "Ενημερώσεις"
       ],
@@ -11214,6 +11393,12 @@
     "Link": {
       "Add a gift code": [
         "Προσθήκη κωδικού δώρου"
+      ],
+      "Add formatting, links or images": [
+        "Προσθήκη μορφοποίησης, συνδέσμων ή εικόνων"
+      ],
+      "Advanced auto-reply options": [
+        "Προηγμένες επιλογές αυτόματης απάντησης"
       ],
       "All mail": [
         "Όλα τα μηνύματα"
@@ -12447,6 +12632,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } που λήγει σε ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB αποθηκευτικού χώρου στο cloud που σας επιτρέπει να αποθηκεύετε, συγχρονίζετε και μοιράζεστε αρχεία εύκολα. Προστατεύεται από διατερματική κρυπτογράφηση."
       ],
@@ -13726,6 +13914,11 @@
         "Οι πιστώσεις θα προστεθούν στο υπόλοιπό σας"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Η αλλαγή της διεύθυνσης χρέωσής σας ενδέχεται να επηρεάσει τους φόρους σε μελλοντικά τιμολόγια."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Είστε βέβαιοι ότι θέλετε να συνεχίσετε;"
@@ -13760,6 +13953,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και τον αριθμό ΦΠΑ."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - κάρτα που λήγει σε ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Τραπεζική μεταφορά - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - κάρτα που λήγει σε ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -14901,6 +15105,12 @@
       "${ count } email → ${ wakeTime }": [
         "${ count } email → ${ wakeTime }",
         "${ count } emails → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "Αναβολή ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "Αναβολή ${ emails } έως ${ wakeTime }"
       ]
     },
     "Snooze message": {
@@ -16382,9 +16592,6 @@
       "Apply gift code": [
         "Εφαρμογή κωδικού δώρου"
       ],
-      "Apply labels": [
-        "Εφαρμογή ετικετών"
-      ],
       "Archive all messages?": [
         "Αρχειοθέτηση όλων των μηνυμάτων;"
       ],
@@ -16441,9 +16648,6 @@
       ],
       "CC": [
         "Κοιν."
-      ],
-      "Change display setting": [
-        "Αλλαγή ρύθμισης προβολής"
       ],
       "Change my answer": [
         "Αλλάξτε την απάντησή μου"
@@ -16517,14 +16721,8 @@
       "Create contact": [
         "Δημιουργία επαφής"
       ],
-      "Create folder": [
-        "Δημιουργία φακέλου"
-      ],
       "Create folder \"${ search }\"": [
         "Δημιουργία φακέλου \"${ search }\""
-      ],
-      "Create label": [
-        "Δημιουργία ετικέτας"
       ],
       "Create label \"${ search }\"": [
         "Δημιουργία ετικέτας \"${ search }\""
@@ -16836,12 +17034,6 @@
       "Make your inbox your own": [
         "Κάντε τα εισερχόμενά σας δικά σας"
       ],
-      "Mark all as read": [
-        "Σήμανση όλων ως αναγνωσμένα"
-      ],
-      "Mark all as unread": [
-        "Επισήμανση όλων ως μη αναγνωσμένα"
-      ],
       "Mark all messages as read": [
         "Επισήμανση όλων των μηνυμάτων ως αναγνωσμένα"
       ],
@@ -16913,9 +17105,6 @@
       ],
       "Move all messages to trash": [
         "Μετακίνηση όλων των μηνυμάτων στα Διαγραμμένα"
-      ],
-      "Move emails": [
-        "Μετακίνηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
       ],
       "Move to": [
         "Μετακίνηση σε"
@@ -17226,17 +17415,11 @@
       "Snooze": [
         "Αναβολή"
       ],
-      "Snooze emails": [
-        "Αναβολή μηνυμάτων ηλεκτρονικού ταχυδρομείου"
-      ],
       "Snooze message": [
         "Αναβολή μηνύματος"
       ],
       "Snooze:": [
         "Αναβολή:"
-      ],
-      "Star emails": [
-        "Προσθήκη αστεριού στα ηλεκτρονικά μηνύματα"
       ],
       "Start a new import": [
         "Ξεκινήστε μια νέα εισαγωγή"
@@ -17246,9 +17429,6 @@
       ],
       "Stay for 50% off your next month": [
         "Μείνετε με έκπτωση 50% τον επόμενο μήνα"
-      ],
-      "Still working on it": [
-        "Ακόμα δουλεύω πάνω σε αυτό"
       ],
       "Storage capacity warning": [
         "Προειδοποίηση χωρητικότητας αποθήκευσης"
@@ -17296,9 +17476,6 @@
       "Two-factor authentication": [
         "Έλεγχος ταυτότητας δύο παραγόντων"
       ],
-      "Unstar emails": [
-        "Αφαίρεση αστεριού από τα ηλεκτρονικά μηνύματα"
-      ],
       "Unsubscribe": [
         "Απεγγραφή"
       ],
@@ -17310,9 +17487,6 @@
       ],
       "Unsubscribe request sent": [
         "Απεστάλη το αίτημα κατάργησης εγγραφής"
-      ],
-      "Update filter": [
-        "Ενημέρωση φίλτρου"
       ],
       "Upgrade complete!": [
         "Η αναβάθμιση ολοκληρώθηκε!"

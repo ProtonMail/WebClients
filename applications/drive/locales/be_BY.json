@@ -54,6 +54,9 @@
         "Дадаць ${ photoCount } фатаграфій у новы альбом",
         "Дадаць ${ photoCount } фатаграфій у новы альбом"
       ],
+      "Add a payment method": [
+        "Дадаць спосаб аплаты"
+      ],
       "Add account": [
         "Дадаць уліковы запіс"
       ],
@@ -3473,6 +3476,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } з'яўляецца вашым імем карыстальніка. Перайдзіце ў Налады -> Ідэнтычнасць і адрасы -> Кароткі дамен (pm.me), каб стварыць ${ emailAddress }."
       ],
+      "A contact with this email address already exists": [
+        "Кантакт з гэтым адрасам электроннай пошты ўжо існуе"
+      ],
       "A group with this name already exists": [
         "Група з такой назвай ужо існуе"
       ],
@@ -4829,9 +4835,6 @@
       ],
       "Security key": [
         "Ключ бяспекі"
-      ],
-      "Touch your security key.": [
-        "Дакраніцеся да свайго ключа бяспекі."
       ]
     },
     "fido2: Label": {
@@ -5506,6 +5509,9 @@
       "${ LUMO_APP_NAME } includes the writing assistant": [
         "${ LUMO_APP_NAME } уключае памочніка ў напісанні"
       ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } ужо выканаў ${ count }. Працягваць?"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -5595,6 +5601,12 @@
       ],
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } запісаў"
+      ],
+      "${ steps } step": [
+        "${ steps } крок",
+        "${ steps } крокі",
+        "${ steps } крокаў",
+        "${ steps } крокаў"
       ],
       "${ storage } storage": [
         "${ storage } сховішча"
@@ -6215,7 +6227,7 @@
         "Урады і пастаўшчыкі паслуг інтэрнэту могуць сачыць за тым, якія сайты вы наведваеце. Ваш прагляд вэб-старонак у інтэрнэце становіцца прыватным дзякуючы хаванню вашага рэальнага IP-адраса і шыфраванню."
       ],
       "Have some more time to decide without interruption.": [
-        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення ў працы сэрвісу."
+        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення працы сэрвісу."
       ],
       "here": [
         "тут"
@@ -7074,9 +7086,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Цяпер гэта ваш ${ defaultEmailAddress } для адпраўкі новых паведамленняў."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "На гэта спатрэбіцца шмат крокаў. Працягваць?"
       ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Гэты элемент не захаваны ў вашай бібліятэцы фатаграфій. Вы незваротна згубіце доступ да яго, калі выдаліце з гэтага альбома.",
@@ -14228,9 +14237,6 @@
       ],
       "Stay for 50% off your next month": [
         "У наступным месяцы скарыстайцеся скідкай у памеры 50%"
-      ],
-      "Still working on it": [
-        "Усё яшчэ працуем над гэтым"
       ],
       "Stop sharing": [
         "Спыніць абагульванне"

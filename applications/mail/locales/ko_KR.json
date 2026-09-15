@@ -54,6 +54,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } 추가"
       ],
+      "Add a payment method": [
+        "결제 방법 추가하기"
+      ],
       "Add account": [
         "계정 추가"
       ],
@@ -6110,9 +6113,6 @@
       ],
       "Security key": [
         "보안 키"
-      ],
-      "Touch your security key.": [
-        "보안 키를 터치해 주세요."
       ]
     },
     "fido2: Label": {
@@ -7137,6 +7137,12 @@
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount }개 읽지 않음"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "무료 체험이 ${ timeRemaining }일 남았습니다. 접근 권한을 상실하지 않으려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "무료 체험이 ${ timeRemaining }일 남았습니다. 구독을 유지하려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
       "${ total } conversation": [
         "${ total }개의 대화"
       ],
@@ -7559,6 +7565,9 @@
       ],
       "Create a secure cloud for ${ memberCount } member": [
         "${ memberCount }명의 구성원을 위한 보안 클라우드 만들기"
+      ],
+      "Create filter": [
+        "필터 생성"
       ],
       "Create folder": [
         "폴더 생성"
@@ -8520,8 +8529,14 @@
       "Read your ${ count } label": [
         "${ count }개 라벨 읽기"
       ],
+      "Read your auto-reply": [
+        "자동 회신 읽기"
+      ],
       "Read your display settings": [
         "디스플레이 설정 읽기"
+      ],
+      "Read your signature": [
+        "서명 읽기"
       ],
       "Recipient: ": [
         "입금처: "
@@ -8546,6 +8561,9 @@
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "이 앱과 연관된 모든 데이터 삭제 (다운로드된 메시지 포함)"
+      ],
+      "Rename folder": [
+        "폴더 이름 변경"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "피싱 시도로 메시지를 보고하면 메시지를 분석하여 필터를 개선할 수 있습니다. 다만, 분석을 위해 Proton에서 메시지의 내용을 전반적으로 확인할 수 있습니다."
@@ -8669,6 +8687,12 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "${ MAIL_APP_NAME }을 기본 이메일 어플리케이션으로 설정하세요. 이메일 링크를 클릭하면 ${ MAIL_APP_NAME }이 자동으로 열립니다."
+      ],
+      "Set auto-reply": [
+        "자동 회신 설정"
+      ],
+      "Set signature": [
+        "서명 설정"
       ],
       "Set up your organization": [
         "내 조직 설정하기"
@@ -8904,9 +8928,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "이제 ${ defaultEmailAddress }가 메시지를 보내는 주소입니다."
       ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "정말 많은 단계를 거쳐야될 수 있어요. 정말 계속하시겠어요?"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "이 링크는 암호 및 신용 카드 등 세부 정보와 같은 정보를 도용하려는 웹사이트로 연결되요."
       ],
@@ -9101,6 +9122,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요. 설정시 애플리케이션이 새로고침됩니다"
+      ],
+      "Turn off auto-reply": [
+        "자동 회신 비활성화"
       ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "날짜, 이름, 이메일 주소, 제목으로만 검색하려면 설정을 해제하세요. 메시지 콘텐츠 검색을 비활성화(와 이 기능을 활성화하기 위해 다운로드한 메시지를 삭제)하기 위해 설정으로 이동하세요."
@@ -10034,6 +10058,9 @@
       "Automated confirmations and alerts": [
         "자동화된 확인 및 알림"
       ],
+      "Away message": [
+        "부재중 메시지"
+      ],
       "BCC": [
         "숨은참조"
       ],
@@ -10202,6 +10229,9 @@
       "Did not follow instructions": [
         "지시사항을 따르지 않습니다"
       ],
+      "Display name": [
+        "표시되는 이름"
+      ],
       "Document ID": [
         "문서 ID"
       ],
@@ -10333,6 +10363,12 @@
       ],
       "From": [
         "보낸 사람"
+      ],
+      "From date": [
+        "시작일"
+      ],
+      "From time": [
+        "시작일"
       ],
       "From:": [
         "보낸 이:"
@@ -10522,6 +10558,9 @@
       ],
       "Never fill on this exact URL": [
         "이 정확한 URL에서 자동완성 사용 안 함"
+      ],
+      "New name": [
+        "새 이름"
       ],
       "New password": [
         "새 비밀번호"
@@ -10823,6 +10862,9 @@
       "Unsubscribed from ${ truncatedName }.": [
         "${ truncatedName }(으)로부터 구독 취소되었습니다."
       ],
+      "Until date": [
+        "종료일"
+      ],
       "Updates": [
         "업데이트"
       ],
@@ -11028,6 +11070,12 @@
     "Link": {
       "Add a gift code": [
         "기프트 코드 추가"
+      ],
+      "Add formatting, links or images": [
+        "형식, 링크 및 이미지 추가"
+      ],
+      "Advanced auto-reply options": [
+        "고급 자동 회신 옵션"
       ],
       "All mail": [
         "전체 메일함"
@@ -12220,6 +12268,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Last4 }(으)로 끝나는 ${ Brand }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "파일을 간편하게 저장, 동기화 및 공유하기 위한 종단간 암호화로 보호되는 1 TB의 클라우드 저장공간."
       ],
@@ -13488,6 +13539,11 @@
         "크레딧이 잔액에 추가됩니다."
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "청구 주소 변경은 추후 청구서의 세율에 영향을 줄 수 있습니다."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "계속 진행하겠습니까?"
@@ -13522,6 +13578,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "갱신 가격은 청구 지역 및 VAT 번호에 따라 변동될 수 있습니다."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "번호가 ${ Last4 }(으)로 끝나는 Apple Pay 카드"
+      ],
+      "Bank transfer - ${ iban }": [
+        "은행 송금 - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - 번호가 ${ Last4 }(으)로 끝나는 카드"
       ]
     },
     "Payments.Sepa": {
@@ -16058,9 +16125,6 @@
       "Apply gift code": [
         "기프트 코드 적용"
       ],
-      "Apply labels": [
-        "라벨 적용"
-      ],
       "Archive all messages?": [
         "모든 메시지를 보관하시겠어요?"
       ],
@@ -16117,9 +16181,6 @@
       ],
       "CC": [
         "참조"
-      ],
-      "Change display setting": [
-        "디스플레이 설정 변경"
       ],
       "Change my answer": [
         "내 대답 변경"
@@ -16193,14 +16254,8 @@
       "Create contact": [
         "연락처 추가"
       ],
-      "Create folder": [
-        "폴더 생성"
-      ],
       "Create folder \"${ search }\"": [
         "\"${ search }\" 폴더 생성"
-      ],
-      "Create label": [
-        "라벨 생성"
       ],
       "Create label \"${ search }\"": [
         "\"${ search }\" 라벨 생성"
@@ -16505,12 +16560,6 @@
       "Make your inbox your own": [
         "나만의 받은 편지함 만들기"
       ],
-      "Mark all as read": [
-        "모두 읽은 상태로 표시"
-      ],
-      "Mark all as unread": [
-        "모두 읽지 않은 상태로 표시"
-      ],
       "Mark all messages as read": [
         "모든 메시지를 읽음으로 표시"
       ],
@@ -16582,9 +16631,6 @@
       ],
       "Move all messages to trash": [
         "모든 메시지를 휴지통으로 이동"
-      ],
-      "Move emails": [
-        "이메일 이동"
       ],
       "Move to": [
         "다음으로 이동"
@@ -16895,17 +16941,11 @@
       "Snooze": [
         "방해금지"
       ],
-      "Snooze emails": [
-        "이메일 방해금지"
-      ],
       "Snooze message": [
         "방해 금지 메시지"
       ],
       "Snooze:": [
         "방해금지:"
-      ],
-      "Star emails": [
-        "이메일 별표 표시"
       ],
       "Start a new import": [
         "신규 불러오기 시작"
@@ -16915,9 +16955,6 @@
       ],
       "Stay for 50% off your next month": [
         "첫 달은 50% 할인으로 누리기"
-      ],
-      "Still working on it": [
-        "아직 작업 중"
       ],
       "Storage capacity warning": [
         "저장 용량 경고"
@@ -16964,9 +17001,6 @@
       "Two-factor authentication": [
         "2단계 인증"
       ],
-      "Unstar emails": [
-        "이메일 별표 표시 해제"
-      ],
       "Unsubscribe": [
         "구독 취소"
       ],
@@ -16978,9 +17012,6 @@
       ],
       "Unsubscribe request sent": [
         "수신 거부 요청이 전송됨"
-      ],
-      "Update filter": [
-        "필터 업데이트"
       ],
       "Upgrade complete!": [
         "업그레이드 완료!"

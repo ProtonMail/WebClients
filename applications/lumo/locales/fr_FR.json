@@ -1152,6 +1152,9 @@
       "Submit": [
         "Envoyer"
       ],
+      "Switch to Max": [
+        "Passer au mode Max"
+      ],
       "System": [
         "Système"
       ],
@@ -1684,8 +1687,14 @@
       "Something went wrong": [
         "Une erreur s'est produite."
       ],
-      "You've reached your weekly chat limit": [
-        "Votre limite de chats hebdomadaires est atteinte."
+      "You've reached a model limit": [
+        "Vous avez atteint la limite du modèle"
+      ],
+      "You've reached your ${ LUMO_SHORT_APP_NAME } 2.0 Lite limit": [
+        "Vous avez atteint la limite de ${ LUMO_SHORT_APP_NAME } 2.0 Lite"
+      ],
+      "You've reached your ${ LUMO_SHORT_APP_NAME } 2.0 Max limit": [
+        "Vous avez atteint la limite de ${ LUMO_SHORT_APP_NAME } 2.0 Max"
       ]
     },
     "collider_2025: Failure": {
@@ -3205,8 +3214,17 @@
       "Close": [
         "Fermer"
       ],
+      "Close panel": [
+        "Fermer le panneau"
+      ],
+      "Code": [
+        "Code"
+      ],
       "Continue": [
         "Continuer"
+      ],
+      "Copy content": [
+        "Copier le contenu"
       ],
       "Copy link & caption": [
         "Copier le lien et la légende"
@@ -3247,6 +3265,9 @@
       "Download image": [
         "Télécharger l'image"
       ],
+      "Edit": [
+        "Modifier"
+      ],
       "Edit agent": [
         "Modifier l'agent"
       ],
@@ -3262,6 +3283,9 @@
       "Expand": [
         "Développer"
       ],
+      "Explain": [
+        "Expliquer"
+      ],
       "Generate my report": [
         "Générer mon rapport"
       ],
@@ -3273,6 +3297,9 @@
       ],
       "Hide knowledge panel": [
         "Masquer le panneau de connaissances"
+      ],
+      "Improve": [
+        "Améliorer"
       ],
       "Light": [
         "Clair"
@@ -3301,11 +3328,23 @@
       "Next message": [
         "Message suivant"
       ],
+      "Next version": [
+        "Version suivante"
+      ],
+      "Open": [
+        "Ouvrir"
+      ],
       "Open conversation": [
         "Ouvrir la conversation"
       ],
+      "Preview": [
+        "Aperçu"
+      ],
       "Previous message": [
         "Message précédent"
+      ],
+      "Previous version": [
+        "Version précédente"
       ],
       "Regenerate": [
         "Générer à nouveau"
@@ -3343,11 +3382,20 @@
       "Reveal my profile": [
         "Révéler mon profil"
       ],
+      "Save": [
+        "Enregistrer"
+      ],
+      "Save to Drive": [
+        "Enregistrer dans Drive"
+      ],
       "Select all": [
         "Tout sélectionner"
       ],
       "Select conversation": [
         "Sélectionner la conversation"
+      ],
+      "Send": [
+        "Envoyer"
       ],
       "Share": [
         "Partager"
@@ -3491,6 +3539,9 @@
       "Save": [
         "Enregistrer"
       ],
+      "Save here": [
+        "Enregistrer ici"
+      ],
       "Search": [
         "Recherche"
       ],
@@ -3543,6 +3594,9 @@
       ],
       "Failed to process file: ${ file.name }": [
         "Le fichier ${ file.name } n'a pas pu être traité."
+      ],
+      "Failed to save file": [
+        "Impossible d’enregistrer le fichier"
       ],
       "Failed to unlink Drive folder": [
         "Le dossier Drive n'a pas pu être dissocié."
@@ -3679,6 +3733,9 @@
       "Cookies or website data are blocked in your browser settings": [
         "Les cookies ou les données du site web sont bloqués dans les paramètres de votre navigateur"
       ],
+      "Copied": [
+        "Copié"
+      ],
       "Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.": [
         "Créez des images, appliquez des styles et esquissez des idées. Connectez-vous ou créez un compte gratuit pour enregistrer vos créations."
       ],
@@ -3738,6 +3795,9 @@
       ],
       "Lockdown Mode is enabled on your device": [
         "Le mode verrouillage est activé sur votre appareil."
+      ],
+      "No content generated": [
+        "Aucun contenu généré"
       ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "Cette carte ne contient aucune information personnelle, seulement votre score d'exposition par zone géographique. Plus le score est bas, moins vous avez exposé de personnes."
@@ -6212,9 +6272,6 @@
       ],
       "Security key": [
         "Clé de sécurité"
-      ],
-      "Touch your security key.": [
-        "Touchez votre clé de sécurité."
       ]
     },
     "fido2: Label": {

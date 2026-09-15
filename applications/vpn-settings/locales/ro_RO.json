@@ -304,6 +304,9 @@
       "Add ${ BRAND_NAME } address": [
         "Adăugare adresă ${ BRAND_NAME }"
       ],
+      "Add a payment method": [
+        "Adăugați o metodă de plată"
+      ],
       "Add account": [
         "Adăugare cont"
       ],
@@ -439,9 +442,6 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Revendicați adresa gratuită ${ BRAND_NAME }"
       ],
-      "Clear conversation": [
-        "Golire conversație"
-      ],
       "Close": [
         "Închidere"
       ],
@@ -522,9 +522,6 @@
       ],
       "Copy address": [
         "Copiere adresă"
-      ],
-      "Copy debug transcript": [
-        "Copiere transcriere depanare"
       ],
       "Copy key to the clipboard": [
         "Copiere cheie în memorie"
@@ -931,9 +928,6 @@
       "Keep editing": [
         "Continuare editare"
       ],
-      "Keep going": [
-        "Continuă"
-      ],
       "Keep logo": [
         "Păstrare logo"
       ],
@@ -1273,9 +1267,6 @@
       "select file": [
         "selectați fișierul"
       ],
-      "Send": [
-        "Trimitere"
-      ],
       "Send code": [
         "Trimitere cod"
       ],
@@ -1395,12 +1386,6 @@
       ],
       "Stay": [
         "Nu închide"
-      ],
-      "Stop": [
-        "Stop\n"
-      ],
-      "Stop here": [
-        "Oprește aici"
       ],
       "Stop using single sign-on": [
         "Oprire utilizare conectare unică"
@@ -6609,11 +6594,14 @@
       "Security key updated": [
         "Cheia de securitate a fost actualizată."
       ],
+      "Still waiting?": [
+        "Încă așteptați?"
+      ],
       "This will delete all security keys linked to your account.": [
         "Se vor șterge toate cheile de securitate asociate contului."
       ],
-      "Touch your security key.": [
-        "Atingeți cheia de securitate."
+      "Touch your security key to continue.": [
+        "Atingeți cheia de securitate pentru a continua."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Vă verificați identitatea cu o cheie fizică U2F sau FIDO2."
@@ -7631,6 +7619,12 @@
       "${ storage } storage": [
         "Stocare ${ storage }"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a evita pierderea accesului. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a vă păstra abonamentul. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "Utilizatori găsiți: ${ total }",
         "Utilizatori găsiți: ${ total }",
@@ -8213,9 +8207,6 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "Recuperarea datelor necesită o opțiune de resetare a parolei (e-mail sau SMS)."
       ],
-      "Debug transcript copied": [
-        "Transcrierea depanării a fost copiată."
-      ],
       "dedicated servers": [
         "servere dedicate"
       ],
@@ -8642,9 +8633,6 @@
       ],
       "How your emergency contact can change your password for you:": [
         "Cum vă poate reseta parola contactul de urgență:"
-      ],
-      "I have not finished this one yet.": [
-        "Pe acesta încă nu l-am terminat încă."
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Cheia publică a furnizorului de identitate pentru a semna afirmațiile de autentificare. Ar trebui să existe un loc pentru a descărca sau copia hash-ul certificatului de la furnizorul de identitate. Doar lipiți hash-ul certificatului în câmpul de text."
@@ -9685,9 +9673,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Aceste acreditări nu pot fi utilizate pentru autentificarea în aplicațiile ${ VPN_APP_NAME } oficiale. ${ learnMore }"
       ],
-      "Thinking about this": [
-        "Mă gândesc la asta"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Acest cont a fost suspendat din cauza unei posibile încălcări a politicii."
       ],
@@ -9726,9 +9711,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Aceasta este acum ${ defaultEmailAddress } pentru trimiterea de mesaje noi."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Asta necesită mulți pași. Ar trebui să continui?"
       ],
       "This is the password you used before the password reset.": [
         "Aceasta este parola pe care ați utilizat-o înainte de resetarea parolei."
@@ -15010,9 +14992,6 @@
       "Anytown": [
         "București"
       ],
-      "Ask anything…": [
-        "Întreabă-mă orice…"
-      ],
       "billing@company.com": [
         "facturi@companie.com"
       ],
@@ -19932,9 +19911,6 @@
       ],
       "Stay secure and connected anywhere": [
         "Rămâneți în siguranță și vă conectați oriunde"
-      ],
-      "Still working on it": [
-        "Încă lucrez la asta"
       ],
       "Subscription": [
         "Abonament"
