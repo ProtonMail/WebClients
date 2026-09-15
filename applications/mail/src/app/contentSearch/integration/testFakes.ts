@@ -2,6 +2,7 @@ import type { ESSettledState } from '@proton/encrypted-search/models';
 
 import type { ImportHandle, ImportOutcome } from '../import/ImportHandle';
 import type { IndexService } from '../indexation/IndexService';
+import type { MetricService } from '../metrics/MetricService';
 import type { ESStatusConcrete } from './ESAdapter';
 import type { FunctionsV1 } from './useContentSearch';
 
@@ -36,6 +37,17 @@ export const fakeImportHandle = () => {
     };
     return { handle: handle as unknown as ImportHandle, end: done.resolve };
 };
+
+export const fakeMetricService = () =>
+    ({
+        sendQueryCompletedReport: jest.fn(),
+        sendResultOpenedReport: jest.fn(),
+        sendResultActionReport: jest.fn(),
+        startMailboxIndexing: jest.fn(),
+        sendMailboxIndexCompletedReport: jest.fn(),
+        startSearchSession: jest.fn(),
+        endSearchSession: jest.fn(),
+    }) as unknown as MetricService;
 
 /** An {@link IndexService} that hands out one controllable import. */
 export const fakeIndexService = (importHandle?: ImportHandle) =>
