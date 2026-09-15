@@ -52,6 +52,9 @@
         "Añadir ${ photoCount } foto a un álbum nuevo",
         "Añadir ${ photoCount } fotos a un álbum nuevo"
       ],
+      "Add a payment method": [
+        "Añadir un método de pago"
+      ],
       "Add account": [
         "Agregar una cuenta"
       ],
@@ -3417,6 +3420,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } es su nombre de usuario. Para crear ${ emailAddress }, vaya a Ajustes > Identidad y direcciones > Dominio corto (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Ya existe un contacto con esta dirección de correo"
+      ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
       ],
@@ -3425,9 +3431,6 @@
       ],
       "A problem occurred, please try again.": [
         "Ocurrió un problema, intente de nuevo."
-      ],
-      "Account does not exist": [
-        "La cuenta no existe"
       ],
       "Address could not be added.": [
         "No se pudo agregar la dirección."
@@ -3637,9 +3640,6 @@
       ],
       "Expiration date cannot be in the past": [
         "La fecha de expiración no puede ser pasada"
-      ],
-      "External accounts are not supported yet": [
-        "Las cuentas externas aún no son admitidas."
       ],
       "External invitations are temporarily disabled.": [
         "Las invitaciones externas están desactivadas temporalmente."
@@ -4749,6 +4749,12 @@
       ],
       "Security key": [
         "Clave de seguridad"
+      ],
+      "Still waiting?": [
+        "¿Sigue esperando?"
+      ],
+      "Touch your security key to continue.": [
+        "Toque su llave de seguridad para continuar."
       ]
     },
     "fido2: Label": {
@@ -5367,6 +5373,9 @@
       "${ LUMO_APP_NAME } includes the writing assistant": [
         "${ LUMO_APP_NAME } incluye el asistente de escritura"
       ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } ha tomado ${ count } hasta ahora. ¿Continuar?"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -5437,8 +5446,18 @@
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } entradas"
       ],
+      "${ steps } step": [
+        "${ steps } paso",
+        "${ steps } pasos"
+      ],
       "${ storage } storage": [
         "${ storage } de almacenamiento"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } restante en su prueba. ${ addPaymentMethodLink } para evitar la pérdida de datos. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } restante en su prueba. ${ addPaymentMethodLink } para mantener la suscripción. ${ learnMoreLink }"
       ],
       "${ total } user found": [
         "${ total } usuario encontrado",
@@ -9541,6 +9560,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } que termina en ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB de almacenamiento en la nube que le permite almacenar, sincronizar y compartir archivos de forma fácil. Asegurado por cifrado de extremo a extremo."
       ],
@@ -10934,6 +10956,11 @@
         "Se añadirán los créditos a su balance"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Cambiar su dirección de facturación podría afectar los impuestos en facturas futuras."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "¿En verdad desea continuar?"
@@ -10968,6 +10995,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "El precio de renovación depende de la región de facturación y del número de IVA."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - tarjeta terminada en ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Transferencia bancaria - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - tarjeta terminada en ${ Last4 }"
       ]
     },
     "Payments.Sepa": {

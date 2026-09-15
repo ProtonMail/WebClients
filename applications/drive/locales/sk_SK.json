@@ -3476,6 +3476,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } je vaše používateľské meno. Pre vytvorenie ${ emailAddress } prejdite do Nastavenia > Identita a adresy > Krátka doména (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Kontakt s touto emailovou adresou už existuje"
+      ],
       "A group with this name already exists": [
         "Skupina s týmto názvom už existuje"
       ],
@@ -3484,9 +3487,6 @@
       ],
       "A problem occurred, please try again.": [
         "Vyskytol sa problém, skúste to znova."
-      ],
-      "Account does not exist": [
-        "Účet neexistuje"
       ],
       "Address could not be added.": [
         "Adresu nebolo možné pridať."
@@ -3700,9 +3700,6 @@
       ],
       "Expiration date cannot be in the past": [
         "Dátum ukončenia platnosti nemôže byť v minulosti"
-      ],
-      "External accounts are not supported yet": [
-        "Externé účty zatiaľ nie sú podporované"
       ],
       "External invitations are temporarily disabled.": [
         "Externé pozvánky sú dočasne zablokované."
@@ -4835,6 +4832,9 @@
       ],
       "Still waiting?": [
         "Stále čakáte?"
+      ],
+      "Touch your security key to continue.": [
+        "Dotknite sa svojho bezpečnostného kľúča, aby ste pokračovali."
       ]
     },
     "fido2: Label": {
@@ -5509,6 +5509,9 @@
       "${ LUMO_APP_NAME } includes the writing assistant": [
         "${ LUMO_APP_NAME } obsahuje asistenta písania"
       ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } doteraz urobilo ${ count }. Chcete pokračovať?"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistent písania ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -5599,8 +5602,20 @@
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } záznamov"
       ],
+      "${ steps } step": [
+        "${ steps } krok",
+        "${ steps } kroky",
+        "${ steps } krokov",
+        "${ steps } krokov"
+      ],
       "${ storage } storage": [
         "${ storage } úložisko"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Zostáva vám ešte ${ timeRemaining } v rámci skúšobnej doby. Kliknite na ${ addPaymentMethodLink }, aby ste neprišli o prístup. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Zostáva vám ${ timeRemaining } skúšobnej doby. Kliknite na ${ addPaymentMethodLink }, ak si chcete predplatné zachovať. ${ learnMoreLink }"
       ],
       "${ total } user found": [
         "${ total } nájdený používateľ",
