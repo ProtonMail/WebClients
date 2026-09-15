@@ -8,11 +8,8 @@ import AssistantIncompatibleHardwareModal from '@proton/components/containers/pa
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { INCOMPATIBILITY_TYPE } from '@proton/shared/lib/assistant';
 
-interface Manager<TElement> {
-    get: (composerID: string) => RefObject<TElement>;
-    set: (composerID: string, ref: RefObject<TElement>) => void;
-    delete: (composerID: string) => void;
-}
+import type { ComposerKeyedManager } from '../../../helpers/composer/composerKeyedManager';
+import { createComposerKeyedManager } from '../../../helpers/composer/composerKeyedManager';
 
 interface ComposerAssistantContextType {
     /**
@@ -25,7 +22,7 @@ interface ComposerAssistantContextType {
     displayAssistantModalPromise: (modalType: 'incompatibleHardware' | 'incompatibleBrowser') => Promise<void>;
     /** Manage different kind of Assistant needed refs */
     assistantRefManager: {
-        container: Manager<HTMLDivElement>;
+        container: ComposerKeyedManager<RefObject<HTMLDivElement>>;
     };
 }
 
@@ -70,24 +67,12 @@ export const ComposerAssistantProvider = ({ children }: { children: ReactNode })
         }
     };
 
-    const assistantRefManager = useMemo(() => {
-        const assistantContainers: Record<string, RefObject<HTMLDivElement>> = {};
-        const managerFactory = <TElement extends unknown>(
-            store: Record<string, RefObject<TElement>>
-        ): Manager<TElement> => ({
-            get: (composerID: string) => store[composerID],
-            set: (composerID: string, ref: RefObject<TElement>) => {
-                store[composerID] = ref;
-            },
-            delete: (composerID: string) => {
-                delete store[composerID];
-            },
-        });
-
-        return {
-            container: managerFactory(assistantContainers),
-        };
-    }, []);
+    const assistantRefManager = useMemo(
+        () => ({
+            container: createComposerKeyedManager<RefObject<HTMLDivElement>>(),
+        }),
+        []
+    );
 
     return (
         <ComposerAssistantContext.Provider
