@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 
-import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { IcArrowDownToSquare } from '@proton/icons/icons/IcArrowDownToSquare';
 import { IcBrandProtonDriveFilled } from '@proton/icons/icons/IcBrandProtonDriveFilled';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
@@ -19,10 +20,12 @@ import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useConversationActions } from '../../../providers/ConversationActionsProvider';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
+import { LumoIcon } from '../../LumoIcon/LumoIcon';
 import DropdownMenu from '../../DropdownMenu';
 import { ArtifactContent } from './ArtifactContent';
 import type { WebpageViewMode } from './ArtifactContent';
 import { useArtifactContext } from './ArtifactContext';
+import { ArtifactViewModeToggle } from './ArtifactViewModeToggle';
 import { ArtifactInlineEdit } from './ArtifactInlineEdit';
 import SaveArtifactToDriveModal from './SaveArtifactToDriveModal';
 import type { ArtifactRegistry } from './artifactRegistry';
@@ -70,12 +73,32 @@ interface PanelHeaderProps {
     // Save-to-Drive — document artifacts only (see `canSaveToDrive` in ArtifactPanel).
     canSaveToDrive?: boolean;
     onSaveToDrive?: () => void;
-    isMobileView?: boolean;
+    layout: ArtifactPanelLayout;
     onBack?: () => void;
+    onEnterFullscreen?: () => void;
+    onExitFullscreen?: () => void;
 }
+
+export type ArtifactPanelLayout = 'docked' | 'mobile' | 'fullscreen';
 
 const getVersionLabel = (versionNumber: number, totalVersions: number) => {
     return c('collider_2025:Info').t`v${versionNumber} of ${totalVersions}`;
+};
+
+const getArtifactHeaderTypeLabel = (type?: ArtifactType, language?: string): string | undefined => {
+    if (!type) {
+        return undefined;
+    }
+    if (type === 'webpage') {
+        return 'HTML';
+    }
+    if (type === 'code') {
+        return language ?? 'code';
+    }
+    if (type === 'presentation') {
+        return c('collider_2025:Info').t`Slides`;
+    }
+    return ARTIFACT_TYPE_CONFIG[type].badgeLabel;
 };
 
 const PanelHeader = ({
@@ -103,137 +126,136 @@ const PanelHeader = ({
     onCancelManualEdit,
     canSaveToDrive,
     onSaveToDrive,
-    isMobileView,
+    layout,
     onBack,
-}: PanelHeaderProps) => (
-    <div className="artifact-panel-header flex flex-row items-center gap-2 px-3 py-2 border-bottom border-weak shrink-0 w-full">
-        {isMobileView && onBack && (
-            <Button
-                icon
-                shape="ghost"
-                size="small"
-                onClick={onBack}
-                className="artifact-btn shrink-0"
-                title={c('collider_2025:Action').t`Back to chat`}
-                aria-label={c('collider_2025:Action').t`Back to chat`}
-            >
-                <IcChevronLeft size={4} className="color-hint" />
-            </Button>
-        )}
-        {type ? (
-            <span className="artifact-type-badge flex flex-row items-center gap-1 shrink-0 bg-strong">
-                {(() => {
-                    const { icon: Icon, badgeLabel } = ARTIFACT_TYPE_CONFIG[type];
-                    return (
-                        <>
-                            <Icon size={3} />
-                            <span className="text-xs font-bold">{badgeLabel}</span>
-                        </>
-                    );
-                })()}
-            </span>
-        ) : (
-            // Type not yet known (partial open tag)
-            <span className="artifact-type-badge shrink-0">
-                <div
-                    className="rectangle-skeleton keep-motion rounded"
-                    style={{ width: '2.5rem', height: '0.75rem' }}
-                />
-            </span>
-        )}
-        {type === 'code' && language && <span className="text-xs color-hint shrink-0">{language}</span>}
-        {type === 'webpage' && webpageViewMode === 'code' && <span className="text-xs color-hint shrink-0">html</span>}
-        <span className="flex-1 text-sm font-medium text-ellipsis overflow-hidden whitespace-nowrap color-norm">
-            {title ?? (
-                <span
-                    className="rectangle-skeleton keep-motion rounded inline-block"
-                    style={{ width: '8rem', height: '0.875rem' }}
-                />
-            )}
-        </span>
-        {!isStreaming &&
-            !manualEditActive &&
-            versionCount !== undefined &&
-            versionCount > 1 &&
-            versionIndex !== undefined && (
-                <div className="flex flex-row items-center gap-1 shrink-0">
+    onEnterFullscreen,
+    onExitFullscreen,
+}: PanelHeaderProps) => {
+    const isMobileView = layout === 'mobile';
+    const isFullscreen = layout === 'fullscreen';
+    const typeLabel = getArtifactHeaderTypeLabel(type, language);
+    const showWebpageViewToggle =
+        !manualEditActive && type === 'webpage' && webpageViewMode && onWebpageViewModeChange;
+
+    return (
+        <div className="shrink-0 flex flex-row flex-nowrap items-center gap-3 py-2 px-3 border-bottom border-weak bg-norm w-full min-w-0 overflow-hidden">
+            <div className="flex flex-row items-center gap-2 min-w-0 flex-1 overflow-hidden">
+                {isFullscreen && (
+                    <div className="artifact-fullscreen-brand shrink-0">
+                        <img
+                            src={lumoCatIcon}
+                            alt={LUMO_SHORT_APP_NAME}
+                            className="artifact-fullscreen-avatar"
+                        />
+                    </div>
+                )}
+                {isMobileView && onBack && (
                     <Button
                         icon
                         shape="ghost"
                         size="small"
-                        onClick={onPrevVersion}
-                        disabled={versionIndex === 0}
-                        className="artifact-btn"
-                        title={c('collider_2025:Action').t`Previous version`}
+                        onClick={onBack}
+                        className="artifact-btn shrink-0"
+                        title={c('collider_2025:Action').t`Back to chat`}
+                        aria-label={c('collider_2025:Action').t`Back to chat`}
                     >
                         <IcChevronLeft size={4} className="color-hint" />
                     </Button>
-                    <span className="text-xs color-hint shrink-0 text-nowrap">
-                        {getVersionLabel(versionIndex + 1, versionCount)}
+                )}
+                {showWebpageViewToggle && (
+                    <ArtifactViewModeToggle mode={webpageViewMode} onChange={onWebpageViewModeChange} />
+                )}
+                {type && type !== 'webpage' ? (
+                    <span className="inline-flex items-center gap-1 shrink-0 bg-strong color-weak text-xs text-semibold rounded-sm px-1.5 py-0.5 text-nowrap">
+                        {(() => {
+                            const { icon: Icon, badgeLabel } = ARTIFACT_TYPE_CONFIG[type];
+                            return (
+                                <>
+                                    <Icon size={3} />
+                                    <span>{badgeLabel}</span>
+                                </>
+                            );
+                        })()}
                     </span>
-                    <Button
-                        icon
-                        shape="ghost"
-                        size="small"
-                        onClick={onNextVersion}
-                        disabled={versionIndex === versionCount - 1}
-                        className="artifact-btn"
-                        title={c('collider_2025:Action').t`Next version`}
-                    >
-                        <IcChevronRight size={4} className="color-hint" />
-                    </Button>
-                </div>
-            )}
-        <div className="flex flex-row items-center gap-1 shrink-0">
-            {!isStreaming && !manualEditActive && switcherEntries && switcherEntries.length > 1 && onSelectArtifact && (
-                <DropdownMenu
-                    onToggle={() => {}}
-                    visibleOnHover={false}
-                    options={switcherEntries.map((entry) => ({
-                        label: entry.title,
-                        value: entry.id,
-                        icon: (
-                            <span className="relative flex">
-                                {(() => {
-                                    const EntryIcon = ARTIFACT_TYPE_CONFIG[entry.type].icon;
-                                    return <EntryIcon size={4} />;
-                                })()}
-                                {entry.hasUnseenRevision && (
-                                    <span className="artifact-unseen-dot absolute rounded-full bg-danger" />
-                                )}
+                ) : !type ? (
+                    <span className="inline-flex shrink-0 bg-strong rounded-sm px-1.5 py-0.5">
+                        <div
+                            className="rectangle-skeleton keep-motion rounded"
+                            style={{ width: '2.5rem', height: '0.75rem' }}
+                        />
+                    </span>
+                ) : null}
+                <span className="text-sm text-semibold text-ellipsis overflow-hidden whitespace-nowrap min-w-0 flex-1 color-norm">
+                    {title ?? (
+                        <span
+                            className="rectangle-skeleton keep-motion rounded inline-block"
+                            style={{ width: '8rem', height: '0.875rem' }}
+                        />
+                    )}
+                    {title && typeLabel && (
+                        <span className="color-hint font-normal">{` · ${typeLabel}`}</span>
+                    )}
+                </span>
+            </div>
+            <div className="flex flex-row items-center gap-1 shrink-0">
+                {!isStreaming &&
+                    !manualEditActive &&
+                    versionCount !== undefined &&
+                    versionCount > 1 &&
+                    versionIndex !== undefined && (
+                        <div className="flex flex-row items-center gap-1 shrink-0">
+                            <Button
+                                icon
+                                shape="ghost"
+                                size="small"
+                                onClick={onPrevVersion}
+                                disabled={versionIndex === 0}
+                                className="artifact-btn"
+                                title={c('collider_2025:Action').t`Previous version`}
+                            >
+                                <IcChevronLeft size={4} className="color-hint" />
+                            </Button>
+                            <span className="text-xs color-hint shrink-0 text-nowrap">
+                                {getVersionLabel(versionIndex + 1, versionCount)}
                             </span>
-                        ),
-                        onClick: () => {
-                            onSelectArtifact(entry.id);
-                        },
-                    }))}
-                />
-            )}
-            {!isStreaming && !manualEditActive && type === 'webpage' && webpageViewMode && onWebpageViewModeChange && (
-                <div className="artifact-view-toggle flex flex-row items-center rounded-full bg-weak p-0.5 shrink-0">
-                    <Button
-                        shape={webpageViewMode === 'code' ? 'solid' : 'ghost'}
-                        color={webpageViewMode === 'code' ? 'norm' : 'weak'}
-                        size="small"
-                        pill
-                        className="artifact-view-toggle-btn"
-                        onClick={() => onWebpageViewModeChange('code')}
-                    >
-                        {c('collider_2025:Action').t`Code`}
-                    </Button>
-                    <Button
-                        shape={webpageViewMode === 'preview' ? 'solid' : 'ghost'}
-                        color={webpageViewMode === 'preview' ? 'norm' : 'weak'}
-                        size="small"
-                        pill
-                        className="artifact-view-toggle-btn"
-                        onClick={() => onWebpageViewModeChange('preview')}
-                    >
-                        {c('collider_2025:Action').t`Preview`}
-                    </Button>
-                </div>
-            )}
-            {!isStreaming && !manualEditActive && (
+                            <Button
+                                icon
+                                shape="ghost"
+                                size="small"
+                                onClick={onNextVersion}
+                                disabled={versionIndex === versionCount - 1}
+                                className="artifact-btn"
+                                title={c('collider_2025:Action').t`Next version`}
+                            >
+                                <IcChevronRight size={4} className="color-hint" />
+                            </Button>
+                        </div>
+                    )}
+                {!isStreaming && !manualEditActive && switcherEntries && switcherEntries.length > 1 && onSelectArtifact && (
+                    <DropdownMenu
+                        onToggle={() => {}}
+                        visibleOnHover={false}
+                        options={switcherEntries.map((entry) => ({
+                            label: entry.title,
+                            value: entry.id,
+                            icon: (
+                                <span className="relative flex">
+                                    {(() => {
+                                        const EntryIcon = ARTIFACT_TYPE_CONFIG[entry.type].icon;
+                                        return <EntryIcon size={4} />;
+                                    })()}
+                                    {entry.hasUnseenRevision && (
+                                        <span className="artifact-unseen-dot absolute rounded-full bg-danger" />
+                                    )}
+                                </span>
+                            ),
+                            onClick: () => {
+                                onSelectArtifact(entry.id);
+                            },
+                        }))}
+                    />
+                )}
+                {!isStreaming && !manualEditActive && (
                 <>
                     <Button
                         icon
@@ -302,21 +324,48 @@ const PanelHeader = ({
                     </Button>
                 </>
             )}
-            {!isMobileView && (
-                <Button
-                    icon
-                    shape="ghost"
-                    size="small"
-                    onClick={onClose}
-                    className="artifact-btn"
-                    title={c('collider_2025:Action').t`Close panel`}
-                >
-                    <IcCross size={4} className="color-hint" />
-                </Button>
-            )}
+                {!isMobileView && !isFullscreen && onEnterFullscreen && (
+                    <Button
+                        icon
+                        shape="ghost"
+                        size="small"
+                        onClick={onEnterFullscreen}
+                        className="artifact-btn"
+                        title={c('collider_2025:Action').t`Full screen`}
+                        aria-label={c('collider_2025:Action').t`Full screen`}
+                    >
+                        <LumoIcon name="Maximize2" size={16} className="color-hint" />
+                    </Button>
+                )}
+                {isFullscreen && onExitFullscreen && (
+                    <Button
+                        icon
+                        shape="ghost"
+                        size="small"
+                        onClick={onExitFullscreen}
+                        className="artifact-btn"
+                        title={c('collider_2025:Action').t`Exit full screen`}
+                        aria-label={c('collider_2025:Action').t`Exit full screen`}
+                    >
+                        <LumoIcon name="Minimize2" size={16} className="color-hint" />
+                    </Button>
+                )}
+                {!isMobileView && (
+                    <Button
+                        icon
+                        shape="ghost"
+                        size="small"
+                        onClick={onClose}
+                        className="artifact-btn"
+                        title={c('collider_2025:Action').t`Close panel`}
+                    >
+                        <IcCross size={4} className="color-hint" />
+                    </Button>
+                )}
+            </div>
         </div>
-    </div>
-);
+    );
+};
 
 // ---------------------------------------------------------------------------
 // Panel root
@@ -342,11 +391,13 @@ function buildSwitcherEntries(
 
 interface ArtifactPanelProps {
     isGenerating?: boolean;
-    isMobileView?: boolean;
+    layout?: ArtifactPanelLayout;
 }
 
-const ArtifactPanel = ({ isGenerating = false, isMobileView = false }: ArtifactPanelProps) => {
-    useNativeComposerVisibilityApi({ hideComposer: isMobileView });
+const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPanelProps) => {
+    const isMobileView = layout === 'mobile';
+    const isFullscreen = layout === 'fullscreen';
+    useNativeComposerVisibilityApi({ hideComposer: isMobileView || isFullscreen });
     const {
         registry,
         selectedArtifact,
@@ -356,6 +407,8 @@ const ArtifactPanel = ({ isGenerating = false, isMobileView = false }: ArtifactP
         goToVersion,
         hasUnseenRevision,
         closePanel,
+        enterFullscreen,
+        exitFullscreen,
         isSelectedVersionProvisional,
     } = useArtifactContext();
     const [copySuccess, setCopySuccess] = useState(false);
@@ -446,12 +499,7 @@ const ArtifactPanel = ({ isGenerating = false, isMobileView = false }: ArtifactP
     };
 
     return (
-        <div
-            className={clsx(
-                'artifact-panel flex flex-column h-full overflow-hidden w-full',
-                !isMobileView && 'rounded-xl mb-6'
-            )}
-        >
+        <div className="flex flex-column h-full min-h-0 min-w-0 overflow-hidden w-full bg-norm">
             <PanelHeader
                 type={artifact.type}
                 language={artifact.language}
@@ -461,8 +509,10 @@ const ArtifactPanel = ({ isGenerating = false, isMobileView = false }: ArtifactP
                 copySuccess={copySuccess}
                 onDownload={handleDownload}
                 onClose={closePanel}
-                isMobileView={isMobileView}
+                layout={layout}
                 onBack={isMobileView ? closePanel : undefined}
+                onEnterFullscreen={layout === 'docked' ? enterFullscreen : undefined}
+                onExitFullscreen={isFullscreen ? exitFullscreen : undefined}
                 versionIndex={selectedVersionIndex}
                 versionCount={versionCount}
                 onPrevVersion={() => {
@@ -486,7 +536,7 @@ const ArtifactPanel = ({ isGenerating = false, isMobileView = false }: ArtifactP
             />
             <div
                 ref={contentRef}
-                className="artifact-content-area relative flex flex-column flex-1 overflow-hidden w-full"
+                className="artifact-content-area relative flex flex-column flex-1 min-h-0 min-w-0 overflow-hidden w-full"
             >
                 {manualEditActive ? (
                     <TextareaAutosize
@@ -494,11 +544,11 @@ const ArtifactPanel = ({ isGenerating = false, isMobileView = false }: ArtifactP
                         onChange={(e) => {
                             setDraftContent(e.target.value);
                         }}
-                        className="artifact-manual-edit-textarea flex-1 text-sm color-norm bg-norm border-none outline-none--at-all resize-none p-4"
+                        className="artifact-manual-edit-textarea flex-1 min-h-0 text-sm color-norm bg-norm border-none outline-none--at-all resize-none p-4 overflow-auto"
                         autoFocus
                     />
                 ) : (
-                    <>
+                    <div className="relative flex flex-column flex-1 min-h-0 min-w-0 overflow-hidden w-full">
                         <ArtifactContent
                             artifact={artifact}
                             showLineNumbers={false}
@@ -514,7 +564,7 @@ const ArtifactPanel = ({ isGenerating = false, isMobileView = false }: ArtifactP
                                 isGenerating={isGenerating || isSelectedVersionProvisional}
                             />
                         )}
-                    </>
+                    </div>
                 )}
             </div>
             {canSaveToDrive && renderSaveToDriveModal && (

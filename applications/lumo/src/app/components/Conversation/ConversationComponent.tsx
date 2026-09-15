@@ -22,6 +22,7 @@ import { ConversationSurvey } from '../Survey/ConversationSurvey';
 import { ImageLimitNotice } from './ImageLimitNotice';
 import { ArtifactProvider, useArtifactContext } from './artifact/ArtifactContext';
 import ArtifactPanel from './artifact/ArtifactPanel';
+import { ArtifactPanelFullscreenOverlay } from './artifact/ArtifactPanelFullscreenOverlay';
 import { ArtifactPanelMobileOverlay } from './artifact/ArtifactPanelMobileOverlay';
 import { ConversationHeader } from './messageChain/ConversationHeader';
 import { MessageChainComponent } from './messageChain/MessageChainComponent';
@@ -63,6 +64,7 @@ const ConversationLayout = ({
     const inputContainerRef = useRef<HTMLDivElement>(null);
     const composerContainerRef = useRef<HTMLDivElement>(null);
     const chatContainerRef = useRef<HTMLDivElement>(null);
+    const splitRowRef = useRef<HTMLDivElement>(null);
 
     const { isWebSearchButtonToggled } = useWebSearch();
 
@@ -92,35 +94,59 @@ const ConversationLayout = ({
     );
 
     // Artifact panel split state
-    const { isPanelOpen } = useArtifactContext();
+    const { isPanelOpen, isFullscreen, exitFullscreen } = useArtifactContext();
     const { isSmallScreen: isArtifactMobileLayout } = useIsLumoSmallScreen();
     const [panelWidthPct, setPanelWidthPct] = useState(55);
+    const panelWidthPctRef = useRef(panelWidthPct);
+    panelWidthPctRef.current = panelWidthPct;
 
-    const handleDividerMouseDown = useCallback(
-        (e: React.MouseEvent) => {
-            e.preventDefault();
-            const startX = e.clientX;
-            const startPct = panelWidthPct;
+    const handleArtifactResizePointerDown = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
+        e.preventDefault();
+        const handle = e.currentTarget;
+        const pointerId = e.pointerId;
+        handle.setPointerCapture(pointerId);
 
-            const handleMouseMove = (ev: MouseEvent) => {
-                const containerWidth = chatContainerRef.current?.clientWidth ?? window.innerWidth;
-                const dx = ev.clientX - startX;
-                // Moving divider right shrinks the panel; left expands it
-                const deltaPct = (dx / containerWidth) * 100;
-                const newPct = Math.max(25, Math.min(75, startPct - deltaPct));
-                setPanelWidthPct(newPct);
-            };
+        const startX = e.clientX;
+        const startPct = panelWidthPctRef.current;
 
-            const handleMouseUp = () => {
-                document.removeEventListener('mousemove', handleMouseMove);
-                document.removeEventListener('mouseup', handleMouseUp);
-            };
+        document.body.style.cursor = 'col-resize';
+        document.body.style.userSelect = 'none';
 
-            document.addEventListener('mousemove', handleMouseMove);
-            document.addEventListener('mouseup', handleMouseUp);
-        },
-        [panelWidthPct]
-    );
+        const handlePointerMove = (ev: PointerEvent) => {
+            if (ev.pointerId !== pointerId) {
+                return;
+            }
+            const containerWidth = splitRowRef.current?.clientWidth ?? window.innerWidth;
+            const dx = ev.clientX - startX;
+            const deltaPct = (dx / containerWidth) * 100;
+            const newPct = Math.max(25, Math.min(75, startPct - deltaPct));
+            setPanelWidthPct(newPct);
+        };
+
+        const cleanup = () => {
+            try {
+                handle.releasePointerCapture(pointerId);
+            } catch {
+                // Handle may already be unmounted.
+            }
+            handle.removeEventListener('pointermove', handlePointerMove);
+            handle.removeEventListener('pointerup', handlePointerUp);
+            handle.removeEventListener('pointercancel', handlePointerUp);
+            document.body.style.cursor = '';
+            document.body.style.userSelect = '';
+        };
+
+        const handlePointerUp = (ev: PointerEvent) => {
+            if (ev.pointerId !== pointerId) {
+                return;
+            }
+            cleanup();
+        };
+
+        handle.addEventListener('pointermove', handlePointerMove);
+        handle.addEventListener('pointerup', handlePointerUp);
+        handle.addEventListener('pointercancel', handlePointerUp);
+    }, []);
 
     return (
         <>
@@ -166,16 +192,12 @@ const ConversationLayout = ({
                 }}
             >
                 <div
-                    className="w-full h-full flex flex-row"
-                    style={
-                        isPanelOpen && !isArtifactMobileLayout
-                            ? { flex: `1 0 calc(${100 - panelWidthPct}% - 4px)` }
-                            : { flex: '1 1 auto' }
-                    }
+                    ref={splitRowRef}
+                    className="conversation-split-row flex-1 min-h-0 w-full flex flex-row flex-nowrap overflow-hidden min-w-0"
                 >
                     <div
                         ref={chatContainerRef}
-                        className="lumo-chat-container flex flex-row flex-nowrap flex-1 relative reset4print overflow-hidden gap-2"
+                        className="lumo-chat-container flex flex-row flex-nowrap flex-1 relative reset4print overflow-hidden min-w-0"
                     >
                         {/* Chat panel */}
                         <div className="outer conversation-page-component flex flex-column flex-nowrap reset4print overflow-hidden rounded-xl w-full">
@@ -232,34 +254,38 @@ const ConversationLayout = ({
                         {/* Artifact split panel (desktop only) */}
                     </div>
 
-                    {/* Floating Retry Panel */}
-                    {retryPanelState.show && retryPanelState.buttonRef && (
-                        <FloatingRetryPanel
-                            buttonRef={retryPanelState.buttonRef}
-                            onRetry={handleRetry}
-                            onClose={handleRetryPanelClose}
-                        />
-                    )}
-
-                    {isPanelOpen && !isArtifactMobileLayout && (
-                        <>
+                    {isPanelOpen && !isArtifactMobileLayout && !isFullscreen && (
+                        <div
+                            className="artifact-panel-container hidden md:flex flex-column min-w-0"
+                            style={{ flex: `0 0 ${panelWidthPct}%` }}
+                        >
                             {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
                             <div
-                                className="artifact-divider-handle hidden md:flex"
-                                onMouseDown={handleDividerMouseDown}
+                                className="artifact-panel-resize-handle"
+                                onPointerDown={handleArtifactResizePointerDown}
+                                aria-hidden
                             />
-                            <div
-                                className="artifact-panel-container hidden md:flex flex-column overflow-hidden rounded-xl px-4 py-0"
-                                style={{ flex: `0 0 ${panelWidthPct}%` }}
-                            >
+                            <div className="artifact-panel-content flex flex-column flex-1 min-h-0 min-w-0 overflow-hidden">
                                 <ArtifactPanel isGenerating={isGenerating} />
                             </div>
-                        </>
+                        </div>
                     )}
                 </div>
+                {retryPanelState.show && retryPanelState.buttonRef && (
+                    <FloatingRetryPanel
+                        buttonRef={retryPanelState.buttonRef}
+                        onRetry={handleRetry}
+                        onClose={handleRetryPanelClose}
+                    />
+                )}
                 <ArtifactPanelMobileOverlay
                     isOpen={isPanelOpen && isArtifactMobileLayout}
                     isGenerating={isGenerating}
+                />
+                <ArtifactPanelFullscreenOverlay
+                    isOpen={isPanelOpen && isFullscreen && !isArtifactMobileLayout}
+                    isGenerating={isGenerating}
+                    onExitFullscreen={exitFullscreen}
                 />
             </LumoLayoutWithDrawer>
         </>
