@@ -26,7 +26,7 @@ import {
     type SubscriptionModificationStepTelemetry,
     formatPaymentTelemetryPayload,
     getInitialBillingAddressProperties,
-    getTelemetryPaymentMethod,
+    getTelemetryPaymentMethodInfo,
 } from './helpers';
 
 /**
@@ -242,12 +242,13 @@ export function reportPayment({
     selectedPlanIDs,
     ...rest
 }: PaymentTelemetryPayload) {
-    const method = getTelemetryPaymentMethod({ paymentMethodType, paymentMethodValue });
+    const { method, methodVariant } = getTelemetryPaymentMethodInfo({ paymentMethodType, paymentMethodValue });
 
     const eventName = PAYMENT_CONTEXT_MAPPING[context] ?? 'unknown_context_payment';
     telemetry.sendCustomEvent(eventName, {
         selectedCoupon: selectedCoupon ? selectedCoupon : null,
         method,
+        methodVariant,
         ...formatPaymentTelemetryPayload(userCurrency, subscription, selectedPlanIDs),
         ...rest,
     });
@@ -399,10 +400,12 @@ export function reportSubscriptionEstimationChange({
     selectedPlanIDs,
     ...rest
 }: EstimationChangePayload) {
-    const method = getTelemetryPaymentMethod({ paymentMethodType, paymentMethodValue });
+    const { method, methodVariant } = getTelemetryPaymentMethodInfo({ paymentMethodType, paymentMethodValue });
+
     const eventName = ESTIMATION_CHANGE_CONTEXT_MAPPING[context] ?? 'unknown_context_estimation_change';
     const payload = {
         method,
+        methodVariant,
         selectedCoupon: selectedCoupon ? selectedCoupon : null,
         ...formatPaymentTelemetryPayload(userCurrency, subscription, selectedPlanIDs),
         ...rest,
