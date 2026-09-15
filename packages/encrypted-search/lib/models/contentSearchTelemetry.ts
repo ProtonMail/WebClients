@@ -57,3 +57,20 @@ export type ContentSearchEndReason = 'newSearch' | 'clearField' | 'navigation';
 export type ContentSearchSessionActionType = ContentSearchResultAction | 'open';
 
 export type ContentSearchSearchSource = 'local' | 'remote' | 'hybrid';
+
+/**
+ * One search session covers exactly one search: pagination, sort, and filter changes re-run the
+ * search but don't close it. It has to survive outside React (started/stopped from a Redux listener
+ * on route/search-state changes) and be reachable from React (list items reporting opens/actions),
+ * hence a module-level singleton instead of a context.
+ */
+export interface SearchSession {
+    startedAt: number;
+    hasResults: boolean;
+    scrollerMode?: ContentSearchScrollerMode;
+    resultsOpened: number;
+    actionsPerformed: number;
+    firstActionType?: ContentSearchSessionActionType;
+    firstOpenedPosition?: number;
+    firstActionAt?: number;
+}

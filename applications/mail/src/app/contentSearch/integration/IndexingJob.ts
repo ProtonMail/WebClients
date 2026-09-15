@@ -76,6 +76,7 @@ export class IndexingJob {
         this.paused = new Promise((resolve) => {
             this.resolvePaused = resolve;
         });
+
         if (mode === 'refresh') {
             // A refresh imports the messages the event touched, but first has to wait for that event to
             // land in the v1 ES DB (the import's source). That wait is its own phase so that `import`
@@ -186,7 +187,7 @@ export class IndexingJob {
         this.emitImportProgress(); // resets the bar to 0 for the import's own 0→100
 
         this.deps.indexService
-            .importFromEncryptedSearch()
+            .importFromEncryptedSearch(this.mode === 'index')
             .then((handle) => {
                 if (this.abandoned) {
                     // Torn down while the import was starting up — `dispose` couldn't stop a handle it
@@ -235,6 +236,7 @@ export class IndexingJob {
                         this.emitStatus();
                         return;
                     }
+
                     this.finish(outcome);
                 });
             })
