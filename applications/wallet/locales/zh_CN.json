@@ -2311,6 +2311,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } 是您的用户名。要创建 ${ emailAddress }，请进入设置 > 身份和地址 > 短域 (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "该邮箱地址的联系人已存在"
+      ],
       "Amount above the maximum.": [
         "金额太大。"
       ],
@@ -2608,6 +2611,12 @@
       ],
       "Security key": [
         "安全密钥"
+      ],
+      "Still waiting?": [
+        "仍在等待？"
+      ],
+      "Touch your security key to continue.": [
+        "触摸您的安全密钥以继续。"
       ]
     },
     "fido2: Label": {
