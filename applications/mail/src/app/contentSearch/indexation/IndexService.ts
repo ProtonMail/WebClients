@@ -14,12 +14,19 @@ import { DatabaseLock } from '../db/DatabaseLock';
 import { deleteContentSearchDB } from '../db/delete';
 import { openContentSearchDB } from '../db/open';
 import { ImportHandle } from '../import/ImportHandle';
+import type { MetricService } from '../metrics/MetricService';
 import { AsyncInit } from '../utils/AsyncInit';
 import type { Logger } from '../utils/logger';
 
 export class IndexService {
     private importHandle?: AsyncInit<ImportHandle | undefined>;
     public readonly dbLock = new DatabaseLock();
+    /**
+     * The Metric service is intialized once in the `useContentSearch` hook.
+     * But the `getSharedIndexService` singleton could be called at different times by different callers.
+     * A public setter allows callers to update it after construction.
+     */
+    public metricService: MetricService | undefined;
 
     constructor(
         public readonly userId: string,
@@ -56,7 +63,12 @@ export class IndexService {
         return true;
     }
 
-    async importFromEncryptedSearch(): Promise<ImportHandle | undefined> {
+    /**
+     * @param isFreshIndex Reports `mailbox_index_completed` when set and `metricService` is available
+     * — only appropriate for the first full historic pass, never a refresh, limit extension, or a
+     * debug-triggered manual reindex (see `useImporter`, which always leaves this `false`).
+     */
+    async importFromEncryptedSearch(isFreshIndex = false): Promise<ImportHandle | undefined> {
         if (!this.importHandle || this.importHandle.failed) {
             this.importHandle = new AsyncInit(async () => {
                 // The v1 ES DB is the import source. Bail out before touching any v1 read helper
@@ -75,14 +87,29 @@ export class IndexService {
                     this.importHandle = undefined;
                     return;
                 }
+
+                if (isFreshIndex) {
+                    this.metricService?.startMailboxIndexing();
+                }
+
                 const keys = {
                     indexV1Key: oldIndexKey,
                     indexV2Key: newIndexKey,
                 };
                 const importHandle = new ImportHandle(this.userId, keys, this.dbLock, this.logger);
+
                 // errors are handled inside start
                 void importHandle.start().finally(() => {
                     this.importHandle = undefined;
+                });
+
+                void importHandle.done.then((outcome) => {
+                    if (isFreshIndex && outcome === 'completed') {
+                        this.metricService?.sendMailboxIndexCompletedReport({
+                            status: 'success',
+                            totalMessagesIndexed: importHandle.completed,
+                        });
+                    }
                 });
                 return importHandle;
             });
