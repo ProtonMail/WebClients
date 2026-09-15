@@ -1,8 +1,7 @@
 import { z } from 'zod';
 
-import type { HttpsProtonMeDesktopInboxHeartbeatTotalV1SchemaJson } from '@proton/metrics/types/desktop_inbox_heartbeat_total_v1.schema';
-
 import type { Environment } from '../interfaces';
+import type { DesktopInboxHeartbeatMetricPayload } from '../metrics/desktopInboxHeartbeat';
 import type { ColorScheme } from '../themes/constants';
 import type { ThemeSetting } from '../themes/themes';
 import { type DailyStatsStored, zDailyStatsReport } from './DailyStats';
@@ -79,11 +78,11 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'clearAppData'; payload?: undefined }
     | { type: 'oauthPopupOpened'; payload: 'oauthPopupStarted' | 'oauthPopupFinished' } // Deprecated by `oauthPopupOpenedV2`; older desktop clients still rely on the message.
     | {
-        type: 'oauthPopupOpenedV2';
-        payload:
-        | { action: 'oauthPopupStarted'; authorizationUrl: string; sessionId: string }
-        | { action: 'oauthPopupFinished'; sessionId: string };
-    }
+          type: 'oauthPopupOpenedV2';
+          payload:
+              | { action: 'oauthPopupStarted'; authorizationUrl: string; sessionId: string }
+              | { action: 'oauthPopupFinished'; sessionId: string };
+      }
     | { type: 'subscriptionModalOpened'; payload: 'subscriptionModalStarted' | 'subscriptionModalFinished' }
     | { type: 'openExternal'; payload: string }
     | { type: 'changeView'; payload: CHANGE_VIEW_TARGET }
@@ -133,7 +132,7 @@ export const IPCInboxHostUpdateMessageSchema = z.discriminatedUnion('type', [
     }),
     z.object({
         type: z.literal('sentHeartbeatMetrics'),
-        payload: z.custom<HttpsProtonMeDesktopInboxHeartbeatTotalV1SchemaJson>(),
+        payload: z.custom<DesktopInboxHeartbeatMetricPayload>(),
     }),
     z.object({
         type: z.literal('refreshEventLoop'),

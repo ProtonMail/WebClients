@@ -1,18 +1,21 @@
 import type { Mock } from 'vitest';
 
-import metrics from '@proton/metrics/index';
-
 import { eventLoopTimingTracker } from '../../lib/metrics/eventLoopMetrics';
+import { resetSharedMetricsClient, setSharedMetricsClient } from '../../lib/metrics/sharedMetricsClient';
 
 describe('EventLoopTimingTracker', () => {
     let mockHistogramObserve: Mock;
     let mockTime = 0;
 
     beforeEach(() => {
-        // Mock the histogram observe method
         mockHistogramObserve = vi.fn();
-        metrics.core_event_loop_five_processing_time_histogram.observe = mockHistogramObserve as any;
-        metrics.core_event_loop_six_processing_time_histogram.observe = mockHistogramObserve as any;
+        setSharedMetricsClient({
+            setAuthHeaders: vi.fn(),
+            core_event_loop_five_processing_time_histogram: { observe: mockHistogramObserve },
+            core_event_loop_six_processing_time_histogram: { observe: mockHistogramObserve },
+            core_webvitals_total: { increment: vi.fn() },
+            docs_public_sharing_custom_password_success_rate_total: { increment: vi.fn() },
+        });
 
         eventLoopTimingTracker.reset();
         mockTime = 0;
@@ -23,6 +26,7 @@ describe('EventLoopTimingTracker', () => {
     });
 
     afterEach(() => {
+        resetSharedMetricsClient();
         // Reset time provider to default
         (eventLoopTimingTracker as any).setTimeProvider(() => Date.now());
     });
