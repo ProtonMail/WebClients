@@ -319,7 +319,7 @@
             "project": ["**/*.{ts,tsx}"]
         },
         "packages/lumo-api-client": {
-            "entry": [],
+            "entry": ["e2e/desktop-bridge-harness.ts"],
             "project": ["**/*.{ts,tsx}"]
         },
         "packages/lumo-ui": {
