@@ -83,6 +83,8 @@ export const defaultESContextMail: EncryptedSearchFunctionsMail = {
     esStatus: { ...defaultESContext.esStatus, ...defaultESMailStatus },
     reportResultOpened: () => {},
     reportResultAction: () => {},
+    startSearchSession: () => {},
+    endSearchSession: () => {},
 };
 export const MAIL_EVENTLOOP_NAME = 'core';
 
