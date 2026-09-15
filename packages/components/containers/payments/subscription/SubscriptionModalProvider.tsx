@@ -13,8 +13,9 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { loadInitialBillingAddress } from '@proton/payments/core/billing-address/load-initial-billing-address';
-import { fixPlanIDs, fixPlanName } from '@proton/payments/core/helpers';
+import { fixPlanIDs } from '@proton/payments/core/helpers';
 import type { FreeSubscription, PaymentStatus } from '@proton/payments/core/interface';
+import { correctDeprecatedPlanName } from '@proton/payments/core/plan/helpers';
 import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
@@ -136,8 +137,8 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
             return;
         }
 
-        const fixedPlanName = fixPlanName(subscriptionModalProps.plan, 'OpenSubscriptionModal');
-        const fixedPlanIDs = fixPlanIDs(subscriptionModalProps.planIDs, 'OpenSubscriptionModal');
+        const fixedPlanName = correctDeprecatedPlanName(subscriptionModalProps.plan);
+        const fixedPlanIDs = fixPlanIDs(subscriptionModalProps.planIDs);
 
         subscriptionPropsRef.current = {
             ...subscriptionModalProps,

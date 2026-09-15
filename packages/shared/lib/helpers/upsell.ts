@@ -2,6 +2,7 @@ import type { APP_NAMES, UPSELL_COMPONENT, UPSELL_FEATURE } from '../constants';
 import { APPS, APP_UPSELL_REF_PATH } from '../constants';
 import type { Audience, UserModel } from '../interfaces';
 import { type COUPON_CODES, type CYCLE, PLANS } from '../payments/constants';
+import { correctDeprecatedPlanName } from '../payments/plan/helpers';
 import { getPlan } from '../payments/subscription/helpers/plan-info';
 import type { MaybeFreeSubscription } from '../payments/subscription/interface';
 
@@ -74,7 +75,7 @@ export const getUpgradePath = ({
     const currentPlan = getPlan(subscription);
     // A plan is needed to open the subscription modal
     if (!params.has('plan')) {
-        params.set('plan', currentPlan?.Name ?? PLANS.BUNDLE);
+        params.set('plan', correctDeprecatedPlanName(currentPlan?.Name) ?? PLANS.BUNDLE);
     }
     params.set('target', target ?? 'compare');
     return `/dashboard?${params}`;

@@ -1,23 +1,24 @@
 import { ADDON_NAMES, PLANS } from './constants';
-import { fixPlanIDs, fixPlanName } from './helpers';
+import { fixPlanIDs } from './helpers';
+import { correctDeprecatedPlanName } from './plan/helpers';
 
 describe('helpers', () => {
-    describe('fixPlanName', () => {
+    describe('correctDeprecatedPlanName', () => {
         it('should convert VPN to VPN2024', () => {
-            expect(fixPlanName(PLANS.VPN, 'test')).toBe(PLANS.VPN2024);
+            expect(correctDeprecatedPlanName(PLANS.VPN)).toBe(PLANS.VPN2024);
         });
 
         it('should return same plan name for non-VPN plans', () => {
-            expect(fixPlanName(PLANS.MAIL, 'test')).toBe(PLANS.MAIL);
-            expect(fixPlanName(PLANS.VPN2024, 'test')).toBe(PLANS.VPN2024);
+            expect(correctDeprecatedPlanName(PLANS.MAIL)).toBe(PLANS.MAIL);
+            expect(correctDeprecatedPlanName(PLANS.VPN2024)).toBe(PLANS.VPN2024);
         });
 
         it('should handle undefined input', () => {
-            expect(fixPlanName(undefined, 'test')).toBe(undefined);
+            expect(correctDeprecatedPlanName(undefined)).toBe(undefined);
         });
 
         it('should handle null input', () => {
-            expect(fixPlanName(null, 'test')).toBe(null);
+            expect(correctDeprecatedPlanName(null)).toBe(null);
         });
     });
 
@@ -29,22 +30,22 @@ describe('helpers', () => {
             const expected = {
                 [PLANS.VPN2024]: 1,
             };
-            expect(fixPlanIDs(input, 'test')).toEqual(expected);
+            expect(fixPlanIDs(input)).toEqual(expected);
         });
 
         it('should return undefined if input is undefined', () => {
-            expect(fixPlanIDs(undefined, 'test')).toBe(undefined);
+            expect(fixPlanIDs(undefined)).toBe(undefined);
         });
 
         it('should return the same object if input does not contain VPN plan', () => {
             const input = {
                 [PLANS.MAIL]: 1,
             };
-            expect(fixPlanIDs(input, 'test')).toBe(input);
+            expect(fixPlanIDs(input)).toBe(input);
         });
 
         it('should handle empty plan IDs object', () => {
-            expect(fixPlanIDs({}, 'test')).toEqual({});
+            expect(fixPlanIDs({})).toEqual({});
         });
 
         it('should preserve other plan IDs', () => {
@@ -56,7 +57,7 @@ describe('helpers', () => {
                 [PLANS.MAIL_PRO]: 1,
                 [ADDON_NAMES.MEMBER_MAIL_PRO]: 2,
             };
-            expect(fixPlanIDs(input, 'test')).toEqual(expected);
+            expect(fixPlanIDs(input)).toEqual(expected);
         });
 
         it('should handle errors gracefully', () => {
@@ -67,7 +68,7 @@ describe('helpers', () => {
                     throw new Error('Test error');
                 },
             });
-            expect(fixPlanIDs(malformedInput as any, 'test')).toBe(malformedInput);
+            expect(fixPlanIDs(malformedInput as any)).toBe(malformedInput);
         });
     });
 });
