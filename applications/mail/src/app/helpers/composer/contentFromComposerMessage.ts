@@ -31,7 +31,7 @@ export const getAddressPlainTextSignature = ({
     const signature = addresses.find((address) => address.Email === senderAddress)?.Signature || '';
 
     return exportPlainTextSignature(
-        insertSignature('', signature, action || MESSAGE_ACTIONS.NEW, mailSettings, userSettings, undefined)
+        insertSignature('', signature, action ?? MESSAGE_ACTIONS.NEW, mailSettings, userSettings, undefined)
     );
 };
 
