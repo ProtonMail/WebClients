@@ -5,8 +5,9 @@ import type { Address, MailSettings, UserSettings } from '@proton/shared/lib/int
 
 import { getAddressPlainTextSignature } from '../../../helpers/composer/contentFromComposerMessage';
 import { CLASSNAME_SIGNATURE_CONTAINER } from '../../../helpers/message/messageSignature';
+import { DraftKind } from '../../helpers/draftKind';
 import type { MailToolDeps } from '../../toolModule';
-import { DraftKind, createReadComposerHandler, readComposerDefinition } from './readComposer';
+import { createReadComposerHandler, readComposerDefinition } from './readComposer';
 
 const SENDER = 'alice@proton.me';
 
