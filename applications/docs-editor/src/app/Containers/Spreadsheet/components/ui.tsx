@@ -1,7 +1,7 @@
 import * as Ariakit from '@ariakit/react'
 import { forwardRef } from 'react'
 import * as Atoms from './atoms'
-export type { IconData, IconOptions, IconProps } from './Icon'
+export type { IconData } from './Icon'
 export { Icon } from './Icon'
 
 // menu
@@ -39,7 +39,7 @@ export const SubMenu = forwardRef<HTMLDivElement, SubMenuProps>(function SubMenu
 })
 
 /** `MenuItem` options. Extends `Atoms.DropdownItemOptions`. */
-export interface MenuItemOptions extends Atoms.DropdownItemOptions {}
+interface MenuItemOptions extends Atoms.DropdownItemOptions {}
 /** `MenuItem` props. Extends `Ariakit.MenuItemProps`. */
 export interface MenuItemProps extends Ariakit.MenuItemProps, MenuItemOptions {}
 /** Extends `Atoms.DropdownItem` and `Ariakit.MenuItem`. */
@@ -67,7 +67,7 @@ export const MenuSeparator = forwardRef<HTMLHRElement, MenuSeparatorProps>(funct
 })
 
 /** `MenuItemCheckbox` options. Extends `Atoms.DropdownItemOptions`. */
-export interface MenuItemCheckboxOptions extends Atoms.DropdownItemOptions {}
+interface MenuItemCheckboxOptions extends Atoms.DropdownItemOptions {}
 /** `MenuItemCheckbox` props. Extends `Ariakit.MenuItemCheckboxProps`. */
 export interface MenuItemCheckboxProps extends Ariakit.MenuItemCheckboxProps, MenuItemCheckboxOptions {}
 /** Extends `Atoms.DropdownItem` and `Ariakit.MenuItemCheckbox`. */
@@ -93,7 +93,7 @@ export const MenuItemCheckbox = forwardRef<HTMLDivElement, MenuItemCheckboxProps
 )
 
 /** `MenuItemRadio` options. Extends `Atoms.DropdownItemOptions`. */
-export interface MenuItemRadioOptions extends Atoms.DropdownItemOptions {}
+interface MenuItemRadioOptions extends Atoms.DropdownItemOptions {}
 /** `MenuItemRadio` props. Extends `Ariakit.MenuItemRadioProps`. */
 export interface MenuItemRadioProps extends Ariakit.MenuItemRadioProps, MenuItemRadioOptions {}
 /** Extends `Atoms.DropdownItem` and `Ariakit.MenuItemRadio`. */
@@ -113,7 +113,7 @@ export const MenuItemRadio = forwardRef<HTMLDivElement, MenuItemRadioProps>(func
 })
 
 /** `MenuGroup` options. Extends `Atoms.DropdownGroupOptions`. */
-export interface MenuGroupOptions extends Atoms.DropdownGroupOptions {}
+interface MenuGroupOptions extends Atoms.DropdownGroupOptions {}
 /** `MenuGroup` props. Extends `Ariakit.MenuGroupProps`. */
 export interface MenuGroupProps extends Ariakit.MenuGroupProps, MenuGroupOptions {}
 /** Extends `Atoms.DropdownGroup` and `Ariakit.MenuGroup`. */
@@ -121,8 +121,6 @@ export const MenuGroup = forwardRef<HTMLDivElement, MenuGroupProps>(function Men
   return <Atoms.DropdownGroup ref={ref} {...props} render={<Ariakit.MenuGroup render={props.render} />} />
 })
 
-/** `MenuGroupLabel` options. Extends `Ariakit.MenuGroupLabelOptions`. */
-export interface MenuGroupLabelOptions extends Ariakit.MenuGroupLabelOptions {}
 /** `MenuGroupLabel` props. Extends `Ariakit.MenuGroupLabelProps`. */
 export interface MenuGroupLabelProps extends Ariakit.MenuGroupLabelProps {}
 /** Extends `Ariakit.MenuGroupLabel`. */
@@ -153,7 +151,7 @@ export const SelectPopover = forwardRef<HTMLDivElement, SelectPopoverProps>(func
 })
 
 /** `SelectItem` options. Extends `Atoms.DropdownItemOptions`. */
-export interface SelectItemOptions extends Atoms.DropdownItemOptions {}
+interface SelectItemOptions extends Atoms.DropdownItemOptions {}
 /** `SelectItem` props. Extends `Ariakit.SelectItemProps`. */
 export interface SelectItemProps extends Ariakit.SelectItemProps, SelectItemOptions {}
 /** Extends `Atoms.DropdownItem` and `Ariakit.SelectItem`. */
@@ -172,7 +170,7 @@ export const SelectItem = forwardRef<HTMLDivElement, SelectItemProps>(function S
 })
 
 /** `SelectGroup` options. Extends `Atoms.DropdownGroupOptions`. */
-export interface SelectGroupOptions extends Atoms.DropdownGroupOptions {}
+interface SelectGroupOptions extends Atoms.DropdownGroupOptions {}
 /** `SelectGroup` props. Extends `Ariakit.SelectGroupProps`. */
 export interface SelectGroupProps extends Ariakit.SelectGroupProps, SelectGroupOptions {}
 /** Extends `Atoms.DropdownGroup` and `Ariakit.SelectGroup`. */
@@ -201,7 +199,7 @@ export const ComboboxPopover = forwardRef<HTMLDivElement, ComboboxPopoverProps>(
 })
 
 /** `ComboboxItem` options. Extends `Atoms.DropdownItemOptions`. */
-export interface ComboboxItemOptions extends Atoms.DropdownItemOptions {}
+interface ComboboxItemOptions extends Atoms.DropdownItemOptions {}
 /** `ComboboxItem` props. Extends `Ariakit.ComboboxItemProps`. */
 export interface ComboboxItemProps extends Ariakit.ComboboxItemProps, ComboboxItemOptions {}
 /** Extends `Atoms.DropdownItem` and `Ariakit.ComboboxItem`. */
@@ -213,7 +211,7 @@ export const ComboboxItem = forwardRef<HTMLDivElement, ComboboxItemProps>(functi
 // -------
 
 /** `Tooltip` options. Extends `Atoms.TooltipOptions`. */
-export interface TooltipOptions extends Atoms.TooltipOptions {}
+interface TooltipOptions extends Atoms.TooltipOptions {}
 /** `Tooltip` props. Extends `Ariakit.TooltipProps`. */
 export interface TooltipProps extends Ariakit.TooltipProps, TooltipOptions {}
 /** Extends `Atoms.Tooltip` and `Ariakit.Tooltip`. */

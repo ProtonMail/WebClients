@@ -15,7 +15,7 @@ import { createComponent } from '../utils'
 import { copyTextToClipboard } from './copyTextToClipboard'
 const { s } = createStringifier(strings)
 
-export interface ItemProps extends Ariakit.ButtonProps {
+interface ItemProps extends Ariakit.ButtonProps {
   ref?: Ref<HTMLButtonElement>
   icon: IconData
   children?: string

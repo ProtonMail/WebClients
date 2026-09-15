@@ -1,11 +1,6 @@
 import { isNil } from '@rowsncolumns/utils'
 
-export const pattern_number = '#'
-export const pattern_number_thousands = '#,##0'
-
 // Pre-compile regular expressions
-const DECIMAL_CLEANUP_REGEX = /[^0-9.,]/g
-const DECIMAL_SPLIT_REGEX = /[.]/
 const THOUSAND_REGEX = /(\,[#,0]{3})/gi
 const PATTERN_SEPARATOR = ';'
 const THOUSAND_PATTERN = ',##0'
@@ -27,30 +22,6 @@ const createZeros = (len: number) => {
   return Array.from({ length: len })
     .map(() => `0`)
     .join('')
-}
-
-/**
- * Get the number of decimal places in a string
- * @param value The string value to check
- * @returns The number of decimal places
- */
-export const getDecimalPlaces = (value: string): number => {
-  // Remove any non-digit characters except decimal separators
-  const cleanedValue = value.replace(DECIMAL_CLEANUP_REGEX, '')
-
-  // Split the cleaned value by decimal separators
-  const parts = cleanedValue.split(DECIMAL_SPLIT_REGEX)
-
-  // If there are no decimal separators, return 0
-  if (parts.length === 1) {
-    return 0
-  }
-
-  // Get the last part after the decimal separator
-  const decimalPart = parts[parts.length - 1]
-
-  // Return the length of the decimal part
-  return decimalPart.length
 }
 
 export const changeDecimals = (pattern: string | undefined = '', changeBy: number = 1, delta = true) => {
@@ -85,34 +56,6 @@ export const changeDecimals = (pattern: string | undefined = '', changeBy: numbe
       return p
     })
     .join(PATTERN_SEPARATOR)
-}
-
-export const detectDecimalPattern = (
-  value: string | number | boolean | Date | undefined,
-  defaultPattern = pattern_number,
-) => {
-  if (value === '0' || value === 0) {
-    return 'General'
-  }
-  const str = String(value)
-  const hasThousands = str.indexOf(',') !== -1
-  const decimalsLen = getDecimalPlaces(str)
-
-  // Use "0" pattern for numbers less than 1 to ensure leading zero
-  const numValue = Number(str.replace(/[^0-9.-]/g, ''))
-  const needsLeadingZero = Math.abs(numValue) < 1 && numValue !== 0
-
-  let prefix = hasThousands ? pattern_number_thousands : defaultPattern
-
-  if (decimalsLen !== 0) {
-    // For decimal numbers less than 1, use "0" pattern to show leading zero
-    if (needsLeadingZero && prefix === pattern_number) {
-      prefix = '0'
-    }
-    return changeDecimals(prefix, decimalsLen, true)
-  }
-
-  return prefix
 }
 
 export const getCurrentDecimalCountInPattern = (pattern: string | undefined = '') => {

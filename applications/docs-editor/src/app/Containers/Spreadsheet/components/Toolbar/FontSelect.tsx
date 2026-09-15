@@ -13,7 +13,7 @@ function renderDefaultLabel() {
   return c('sheets_2025:Spreadsheet editor toolbar').t`Default (${defaultFont})`
 }
 
-export type FontSelectValue = FontValue | typeof DEFAULT_VALUE
+type FontSelectValue = FontValue | typeof DEFAULT_VALUE
 export interface FontSelectProps extends Ariakit.SelectProviderProps<FontSelectValue> {
   renderSelect: ReactElement
 }
