@@ -195,7 +195,6 @@ enum DocsFeatureFlag {
     DocsAppSwitcher = 'DocsAppSwitcher',
     DocsPublicEditing = 'DocsPublicEditing',
     DriveWebTextFileEdit = 'DriveWebTextFileEdit',
-    DocsTableOfContents = 'DocsTableOfContents',
     DocsOpenTracer = 'DocsOpenTracer',
     DocsGatePrivateInviteAccess = 'DocsGatePrivateInviteAccess',
     DocsDarkTheme = 'DocsDarkTheme',

@@ -70,7 +70,6 @@ import {
   useIsDownloadLogsAllowed,
   useMoveModalDriveSdkEnabled,
   useRenameWithSDK,
-  useIsTableOfContentsEnabled,
   useTrashWithSDK,
   useIsODTEnabled,
 } from '~/utils/flags'
@@ -120,7 +119,6 @@ export function DocumentTitleDropdown({
   const renameWithSDK = useRenameWithSDK()
   const trashWithSDK = useTrashWithSDK()
   const isSheetsEnabled = useIsSheetsEnabled()
-  const isTableOfContentsFeatureEnabled = useIsTableOfContentsEnabled()
   const isODTEnabled = useIsODTEnabled()
 
   const [pdfModal, openPdfModal] = useExportToPDFModal()
@@ -128,7 +126,7 @@ export function DocumentTitleDropdown({
   const [sheetImportModal, showSheetImportModal] = useSheetImportModal()
   const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal()
 
-  const [tableOfContentsVisible, setTableOfContentsVisible] = useState(isTableOfContentsFeatureEnabled)
+  const [tableOfContentsVisible, setTableOfContentsVisible] = useState(true)
   const [title, setTitle] = useState<string | undefined>(documentState.getProperty('documentName'))
   const [isDuplicating, setIsDuplicating] = useState<boolean>(false)
   const [trashState, setTrashState] = useState<DocTrashState | undefined>(
@@ -768,7 +766,7 @@ export function DocumentTitleDropdown({
             </SimpleDropdown>
           )}
 
-          {!isSpreadsheet && isTableOfContentsFeatureEnabled && (
+          {!isSpreadsheet && (
             <DropdownMenuButton className="flex items-center text-left" onClick={handleTableOfContentsToggle}>
               <IcListBullets className="color-weak mr-2" />
               {tableOfContentsVisible ? c('Info').t`Hide table of contents` : c('Info').t`Show table of contents`}
