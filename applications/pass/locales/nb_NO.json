@@ -115,6 +115,9 @@
       "Bulk restore items from trash": [
         "Massegjenopprett elementer fra papirkurven"
       ],
+      "Bulk select items": [
+        "Velg flere elementer"
+      ],
       "Cancel": [
         "Avbryt"
       ],
@@ -490,6 +493,9 @@
       "Move to Trash": [
         "Flytt til papirkurven"
       ],
+      "Multiple select": [
+        "Velg flere"
+      ],
       "New token": [
         "Nytt token"
       ],
@@ -847,8 +853,17 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Et e-postalias fungerer som en e-postadresse, men reduserer søppelpost og holder den faktiske e-postadressen og identiteten din skjult."
       ],
+      "Change these passwords immediately": [
+        "Endre disse passordene umiddelbart."
+      ],
       "Change your passwords": [
         "Endre passordene dine"
+      ],
+      "Check if your passwords have been exposed": [
+        "Sjekk om passordene dine har blitt eksponert"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Sjekker ${ compromised.progress.completed } av ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Opprett unike passord"
@@ -903,6 +918,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Denne kontoen er sårbar, besøk tjenesten og endre passordet ditt."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Dette innloggingspassordet har blitt eksponert i et datainnbrudd. Gå til tjenesten og bytt passord."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Denne tjenesten tilbyr 2FA. Aktiver den for ekstra kontosikkerhet."
@@ -1333,6 +1351,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Det oppstod en feil under fjerning av den sikre koblingen. Prøv igjen om noen minutter."
       ],
+      "This invite is no longer available": [
+        "Denne invitasjonen er ikke lenger tilgjengelig."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "For mange mislykkede forsøk. Logg på igjen."
       ],
@@ -1746,6 +1767,9 @@
       "Change your password": [
         "Endre passordet ditt"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Sjekker ${ compromised.progress.completed } av ${ compromised.progress.total } passord"
+      ],
       "Confirm your extra password to proceed with its removal.": [
         "Bekreft det ekstra passordet ditt for å fortsette med fjerningen."
       ],
@@ -2105,7 +2129,8 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene."
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2145,6 +2170,9 @@
       ],
       "None": [
         "Ingen"
+      ],
+      "None of your saved passwords have appeared in a known data breach.": [
+        "Ingen av de lagrede passordene dine har dukket opp i et kjent datainnbrudd."
       ],
       "None selected": [
         "Ingen valgt"
@@ -2655,6 +2683,9 @@
       ],
       "Verification code sent.": [
         "Verifiseringskode sendt."
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Se ${ PASS_SHORT_APP_NAME }-elementene dine uten nett. Krever passord for å aktiveres."
       ],
       "Viewer": [
         "Leser"
@@ -4378,11 +4409,20 @@
       ]
     },
     "Result": {
+      "Enter a URL to check if it matches the current rule": [
+        "Angi en nettadresse for å sjekke om den samsvarer med gjeldende regel"
+      ],
       "This URL will be blocked from autofill": [
         "Denne nettadressen vil bli blokkert fra autofyll"
       ],
       "This URL will NOT be blocked from autofill": [
         "Denne nettadressen vil IKKE bli blokkert fra autofyll"
+      ],
+      "URL doesn't match the rule": [
+        "Nettadresse samsvarer ikke med regelen"
+      ],
+      "URL matches the rule": [
+        "Nettadresse samsvarer med regelen"
       ]
     },
     "Security Center - Info": {
@@ -4634,6 +4674,12 @@
       "Clear clipboard": [
         "Tøm utklippstavlen"
       ],
+      "Compromised password": [
+        "Kompromittert passord"
+      ],
+      "Compromised passwords": [
+        "Kompromitterte passord"
+      ],
       "Confirm extra password": [
         "Bekreft ekstra passord"
       ],
@@ -4721,6 +4767,9 @@
       ],
       "Domain ownership verification": [
         "Bekreftelse av domeneeierskap"
+      ],
+      "Enable offline mode": [
+        "Aktiverer frakoblet modus"
       ],
       "Encrypted import": [
         "Kryptert import"
@@ -4849,6 +4898,9 @@
       ],
       "No access tokens yet": [
         "Ingen tilgangstokener ennå"
+      ],
+      "No compromised passwords": [
+        "Ingen kompromitterte passord"
       ],
       "No excluded items": [
         "Ingen ekskluderte elementer"
@@ -5028,6 +5080,9 @@
       ],
       "Update available": [
         "Oppdatering tilgjengelig"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Oppgrader for å sjekke etter kompromitterte passord"
       ],
       "URL matching": [
         "URL-samsvar"
