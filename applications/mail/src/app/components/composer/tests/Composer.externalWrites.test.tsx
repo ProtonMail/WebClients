@@ -1,6 +1,7 @@
 import { act } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/tests';
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 
@@ -59,6 +60,7 @@ describe('Composer writes reachable from outside it', () => {
             message: {
                 localID: ID,
                 data: { ID: undefined, MIMEType: MIME_TYPES.DEFAULT, Sender: { Name: '', Address: fromAddress } },
+                draftFlags: { action: MESSAGE_ACTIONS.NEW },
                 messageDocument: {
                     document: parseDOMStringToBodyElement(`<div>What I typed</div>${SIGNATURE}${QUOTE}`),
                 },
