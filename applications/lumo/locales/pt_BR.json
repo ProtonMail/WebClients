@@ -1056,6 +1056,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Create artifact": [
+        "Criar artefato"
+      ],
       "Create folder": [
         "Criar pasta"
       ],
@@ -1161,6 +1164,9 @@
       "Submit": [
         "Enviar"
       ],
+      "Switch to Max": [
+        "Alternar para Max"
+      ],
       "System": [
         "Sistema"
       ],
@@ -1230,6 +1236,9 @@
       ],
       "Continue": [
         "Continuar"
+      ],
+      "Create artifact": [
+        "Criar artefato"
       ],
       "Create image": [
         "Criar imagem"
@@ -1326,46 +1335,6 @@
     "collider_2025: Compaction": {
       "${ removed } freed": [
         "${ removed } liberados"
-      ],
-      "${ stats.summarizedMessageCount } earlier message condensed": [
-        "${ stats.summarizedMessageCount } mensagem anterior resumida",
-        "${ stats.summarizedMessageCount } mensagens anteriores resumidas"
-      ],
-      "Chat shortened to keep going": [
-        "Bate-papo encurtado para continuar"
-      ],
-      "cleared old tool results": [
-        "resultados de ferramentas antigos limpos"
-      ],
-      "dropped old messages": [
-        "mensagens antigas descartadas"
-      ],
-      "Files from summarized messages": [
-        "Arquivos de mensagens resumidas"
-      ],
-      "No longer sent to the model": [
-        "Não é mais enviado para o modelo"
-      ],
-      "removed file context": [
-        "contexto do arquivo removido"
-      ],
-      "removed tool calls": [
-        "chamadas de ferramentas removidas"
-      ],
-      "summarized the conversation": [
-        "resumiu a conversa"
-      ],
-      "This chat got long — summarizing earlier messages so we can keep going…": [
-        "Essa bate-papo já está ficando longa — vou resumir as mensagens anteriores para podermos continuar…"
-      ],
-      "Tool calls removed": [
-        "Chamadas de ferramentas removidas"
-      ],
-      "Tool output cleared": [
-        "Saída da ferramenta limpa"
-      ],
-      "What ${ LUMO_SHORT_APP_NAME } still remembers": [
-        "O que o ${ LUMO_SHORT_APP_NAME } ainda lembra"
       ]
     },
     "collider_2025: Context": {
@@ -1693,6 +1662,9 @@
       "Something went wrong": [
         "Algo deu errado."
       ],
+      "Too many requests": [
+        "Muitas solicitações"
+      ],
       "You've reached your ${ LUMO_SHORT_APP_NAME } 2.0 Lite limit": [
         "Você atingiu o limite do ${ LUMO_SHORT_APP_NAME } 2.0 Lite"
       ],
@@ -1835,9 +1807,6 @@
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } é uma IA que prioriza a privacidade e ajuda você a fazer mais, mantendo seus dados seguros. Desbloqueie todo o potencial e tenha acesso antecipado a novas funcionalidades conforme forem lançadas."
       ],
-      "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space; when it fills up, older messages are automatically summarized so you can keep chatting.": [
-        "O ${ LUMO_SHORT_APP_NAME } pode processar uma quantidade limitada de informações por conversa. Aqui você vê o que está ocupando esse espaço no momento; quando ele ficar cheio, as mensagens mais antigas serão automaticamente resumidas para que você possa continuar conversando."
-      ],
       "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
         "${ LUMO_SHORT_APP_NAME }+ — O acesso e as chaves da API estão incluídos em uma assinatura do ${ LUMO_SHORT_APP_NAME }+ (inicie a sessão para fazer upgrade ou gerenciar as chaves)"
       ],
@@ -1958,9 +1927,6 @@
       ],
       "Drag and drop your files here to add them to the chat.": [
         "Arraste e solte seus arquivos aqui para adicioná-los ao bate-papo."
-      ],
-      "Earlier messages were summarized to make room, so they no longer take up space here.": [
-        "As mensagens anteriores foram resumidas para liberar espaço, de modo que não ocupam mais espaço aqui."
       ],
       "Enabled": [
         "Ativado"
@@ -3205,6 +3171,9 @@
       "Back": [
         "Voltar"
       ],
+      "Back to chat": [
+        "Voltar ao bate-papo"
+      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -3229,8 +3198,17 @@
       "Close": [
         "Fechar"
       ],
+      "Close panel": [
+        "Fechar painel"
+      ],
+      "Code": [
+        "Código"
+      ],
       "Continue": [
         "Continuar"
+      ],
+      "Copy content": [
+        "Copiar conteúdo"
       ],
       "Copy link & caption": [
         "Copiar link e legenda"
@@ -3277,6 +3255,9 @@
       "Download image": [
         "Baixar imagem"
       ],
+      "Edit": [
+        "Editar"
+      ],
       "Edit agent": [
         "Editar agente"
       ],
@@ -3292,6 +3273,9 @@
       "Expand": [
         "Expandir"
       ],
+      "Explain": [
+        "Explicar"
+      ],
       "Favorite": [
         "Favorito"
       ],
@@ -3306,6 +3290,9 @@
       ],
       "Hide knowledge panel": [
         "Ocultar painel de conhecimento"
+      ],
+      "Improve": [
+        "Melhorar"
       ],
       "Light": [
         "Claro"
@@ -3334,11 +3321,23 @@
       "Next message": [
         "Próxima mensagem"
       ],
+      "Next version": [
+        "Próxima versão"
+      ],
+      "Open": [
+        "Abrir"
+      ],
       "Open conversation": [
         "Abrir conversa"
       ],
+      "Preview": [
+        "Pré-visualização"
+      ],
       "Previous message": [
         "Mensagem anterior"
+      ],
+      "Previous version": [
+        "Versão anterior"
       ],
       "Regenerate": [
         "Gerar novamente"
@@ -3376,6 +3375,12 @@
       "Reveal my profile": [
         "Revelar meu perfil"
       ],
+      "Save": [
+        "Salvar"
+      ],
+      "Save to Drive": [
+        "Salvar no Drive"
+      ],
       "Select all": [
         "Selecionar tudo"
       ],
@@ -3384,6 +3389,9 @@
       ],
       "Select conversation": [
         "Selecionar conversa"
+      ],
+      "Send": [
+        "Enviar"
       ],
       "Share": [
         "Compartilhar"
@@ -3432,6 +3440,9 @@
       ],
       "Upload your AI export": [
         "Envie sua exportação de IA"
+      ],
+      "View v${ versionNumber }": [
+        "Ver v${ versionNumber }"
       ],
       "What needs changed?": [
         "O que precisa ser alterado?"
@@ -3542,6 +3553,9 @@
       "Save": [
         "Salvar"
       ],
+      "Save here": [
+        "Salvar aqui"
+      ],
       "Search": [
         "Pesquisar"
       ],
@@ -3594,6 +3608,9 @@
       ],
       "Failed to process file: ${ file.name }": [
         "Falha ao processar arquivo: ${ file.name }"
+      ],
+      "Failed to save file": [
+        "Falha ao salvar o arquivo"
       ],
       "Failed to unlink Drive folder": [
         "Falha ao desvincular a pasta do Drive"
@@ -3664,6 +3681,10 @@
       "\"${ file.name }\" is still being indexed. Content will be loaded when you send.": [
         "\"${ file.name }\" ainda está sendo indexado. O conteúdo será carregado quando você enviar."
       ],
+      "${ lineCount } line": [
+        "${ lineCount } linha",
+        "${ lineCount } linhas"
+      ],
       "${ LUMO_SHORT_APP_NAME } is a private AI. Your conversations are encrypted and never used to train AI models.": [
         "O ${ LUMO_SHORT_APP_NAME } é uma IA privada. Suas conversas são criptografadas e nunca são usadas para treinar modelos de IA."
       ],
@@ -3690,6 +3711,10 @@
       ],
       "${ report.sensitiveCategories.length } sensitive categories": [
         "${ report.sensitiveCategories.length } categorias sensíveis"
+      ],
+      "${ wordCount } word": [
+        "${ wordCount } palavra",
+        "${ wordCount } palavras"
       ],
       "ad value": [
         "valor publicitário"
@@ -3759,6 +3784,9 @@
       ],
       "Cookies or website data are blocked in your browser settings": [
         "Os cookies ou dados do site estão bloqueados nas configurações do seu navegador"
+      ],
+      "Copied": [
+        "Copiado"
       ],
       "Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.": [
         "Crie imagens, aplique estilos e esboce ideias. Inicie sessão ou crie uma conta gratuita para salvar suas criações."
@@ -3856,6 +3884,9 @@
       "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
         "No iPhone ou iPad, abra Ajustes → Apps → Safari e certifique-se de que a opção \"Bloquear Todos os Cookies\" esteja desativada e, em seguida, recarregue a página."
       ],
+      "Open in panel • v${ versionNumber }": [
+        "Abrir no painel • v${ versionNumber }"
+      ],
       "PASTED": [
         "COLADO"
       ],
@@ -3934,14 +3965,20 @@
       "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
         "Usar o ${ DRIVE_APP_NAME } permite que o ${ LUMO_SHORT_APP_NAME } funcione com arquivos maiores."
       ],
+      "v${ versionNumber }": [
+        "v${ versionNumber }"
+      ],
+      "v${ versionNumber } of ${ totalVersions }": [
+        "v${ versionNumber } de ${ totalVersions }"
+      ],
       "We'll save your card so you can attach it to the post — social sites can't add the image for you.": [
         "Salvaremos seu cartão para que você possa anexá-lo à publicação — as redes sociais não podem adicionar a imagem para você."
       ],
+      "You edited ${ meta.artifactTitle }": [
+        "Você editou ${ meta.artifactTitle }"
+      ],
       "You're using private browsing": [
         "Você está navegando no modo de navegação privada"
-      ],
-      "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
-        "Seus arquivos são grandes. ${ LUMO_SHORT_APP_NAME } talvez não consiga processar todas as informações."
       ],
       "Your information is zero-access encrypted": [
         "Sua informação é criptografada com acesso zero"
@@ -4789,6 +4826,9 @@
       "No favorites yet": [
         "Nenhum favorito"
       ],
+      "No matching chats": [
+        "Nenhum bate-papo correspondente"
+      ],
       "No project chats yet": [
         "Ainda não há chats de projeto"
       ],
@@ -4818,6 +4858,9 @@
       ],
       "Review privacy settings": [
         "Revise as configurações de privacidade"
+      ],
+      "Save to ${ DRIVE_SHORT_APP_NAME }": [
+        "Salvar no ${ DRIVE_SHORT_APP_NAME }"
       ],
       "See what Big Tech AI already knows about you": [
         "Veja o que a IA das grandes empresas de tecnologia já sabe sobre você"
@@ -4914,6 +4957,9 @@
     "collider_2025:Warning": {
       "Cannot Link Drive Folder": [
         "Não é possível vincular pasta do Drive"
+      ],
+      "Preview unavailable": [
+        "Pré-visualização indisponível"
       ],
       "This folder contains ${ result.totalFiles } indexable files. Only the first ${ MAX_INDEXABLE_FILES } files were indexed. ${ result.skippedFiles } files were skipped.": [
         "Esta pasta contém ${ result.totalFiles } arquivos indexáveis. Apenas os primeiros ${ MAX_INDEXABLE_FILES } arquivos foram indexados. ${ result.skippedFiles } arquivos foram pulados."
@@ -6981,6 +7027,9 @@
       "Rendered spec": [
         "Especificações renderizada"
       ],
+      "Run ${ tool } with ${ connector }": [
+        "Executar ${ tool } com ${ connector }"
+      ],
       "Searchable chunks": [
         "Blocos pesquisáveis"
       ],
@@ -7357,6 +7406,9 @@
       ],
       "Folder name": [
         "Nome da pasta"
+      ],
+      "Font size": [
+        "Tamanho da fonte"
       ],
       "Get the deal": [
         "Obtenha a oferta"
