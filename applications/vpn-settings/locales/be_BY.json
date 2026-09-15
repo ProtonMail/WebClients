@@ -39,14 +39,26 @@
       "Account events": [
         "Падзеі ўліковага запісу"
       ],
+      "Active sessions": [
+        "Актыўныя сеансы"
+      ],
       "Advanced account protection": [
         "Пашыраная абарона ўліковага запісу"
       ],
       "AI assistant": [
         "Памочнік ШІ"
       ],
+      "Allow list": [
+        "Спіс дазволеных"
+      ],
+      "Audit log": [
+        "Журнал аўдыту"
+      ],
       "Authentication logs": [
         "Журнал аўтарызацыі"
+      ],
+      "Automatic renewal": [
+        "Аўтаматычнае падаўжэнне"
       ],
       "Block sender for the organization": [
         "Блакіраваць адпраўніка для арганізацыі"
@@ -66,14 +78,32 @@
       "Compare plans": [
         "Параўнанне тарыфных планаў"
       ],
+      "Connected addresses": [
+        "Падключаныя адрасы"
+      ],
+      "Connection events": [
+        "Падзеі падключэння"
+      ],
+      "Create organization": [
+        "Стварыць арганізацыю"
+      ],
       "Custom domain": [
         "Карыстальніцкі дамен"
       ],
       "Customer support": [
         "Служба падтрымкі"
       ],
+      "Dark mode": [
+        "Цёмная тэма"
+      ],
+      "Data breach alerts": [
+        "Абвесткі аб уцечцы даных"
+      ],
       "Desktop and mobile apps": [
         "Праграмы для камп'ютараў і мабільных прылад"
+      ],
+      "Downgrade plan": [
+        "Панізіць тарыфны план"
       ],
       "Downgrade to Free": [
         "Панізіць да Free"
@@ -81,11 +111,23 @@
       "Download apps": [
         "Спампоўка праграм"
       ],
+      "Download recovery file": [
+        "Спампаваць файл аднаўлення"
+      ],
+      "Encryption backup file": [
+        "Зашыфраваная рэзервовая копія файла"
+      ],
       "Encryption backup in this browser": [
         "Зашыфраваная рэзервовая копія ў гэтым браўзеры"
       ],
+      "External mailbox": [
+        "Знешняя паштовая скрыня"
+      ],
       "Gateway logs": [
         "Журналы шлюза"
+      ],
+      "Group invitations": [
+        "Групавыя запрашэнні"
       ],
       "Group members": [
         "Удзельнікі групы"
@@ -111,17 +153,35 @@
       "Leave organization": [
         "Выйсці з арганізацыі"
       ],
+      "Light mode": [
+        "Светлы рэжым"
+      ],
       "Mnemonic": [
         "Мнемоніка"
       ],
       "One-time code": [
         "Аднаразовы код"
       ],
+      "Password reminder": [
+        "Напамін пароля"
+      ],
       "Password reminders": [
         "Напамін пароля"
       ],
       "Password reset request": [
         "Запыт скідання пароля"
+      ],
+      "Permanently delete data": [
+        "Незваротна выдаліць даныя"
+      ],
+      "Privacy guides": [
+        "Дапаможнікі па прыватнасці"
+      ],
+      "Privacy services": [
+        "Сэрвісы прыватнасці"
+      ],
+      "Protection from cyber attacks": [
+        "Абарона ад кібератак"
       ],
       "Receive misaddressed emails": [
         "Атрымліваць лісты з памылковых адрасоў"
@@ -135,14 +195,32 @@
       "Recovery score": [
         "Ацэнка аднаўлення"
       ],
+      "Referral credits": [
+        "Рэферальныя крэдыты"
+      ],
       "Referral link": [
         "Рэферальная спасылка"
+      ],
+      "Referral rewards": [
+        "Рэферальныя ўзнагароды"
       ],
       "Restrict app access": [
         "Абмежаваць доступ да праграм"
       ],
       "Scan QR code": [
         "Сканіраваць QR-код"
+      ],
+      "Server access policy": [
+        "Палітыка доступу да сервера"
+      ],
+      "Sign out other devices": [
+        "Выйсці на іншых прыладах"
+      ],
+      "Sign-in history": [
+        "Гісторыя ўваходаў"
+      ],
+      "Stop subscription renewal": [
+        "Спыніць абнаўленне падпіскі"
       ],
       "Storage space": [
         "Аб'ём сховішча"
@@ -152,6 +230,9 @@
       ],
       "Subscription end date": [
         "Дата заканчэння падпіскі"
+      ],
+      "Subscription status": [
+        "Статус падпіскі"
       ],
       "Telemetry": [
         "Тэлеметрыя"
@@ -164,6 +245,18 @@
       ],
       "Verify domain": [
         "Спраўдзіць дамен"
+      ],
+      "Verify password": [
+        "Спраўдзіць пароль"
+      ],
+      "Video conferencing": [
+        "Відэаканферэнцыя"
+      ],
+      "VPN session details": [
+        "Падрабязнасці сеанса VPN"
+      ],
+      "Writing assistant": [
+        "Памочнік у напісанні"
       ]
     },
     "Accounts": {
@@ -1180,6 +1273,9 @@
       "Set catch-all": [
         "Задаць адрас для ўсёй пошты дамена"
       ],
+      "Set invoice email": [
+        "Задаць электронную пошту для рахунка"
+      ],
       "Set new password": [
         "Задаць новы пароль"
       ],
@@ -1362,6 +1458,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Палепшыце свой тарыфны план, каб уключыць ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to Professional": [
+        "Палепшыць да Professional"
       ],
       "Upgrade to view all": [
         "Палепшыць, каб паглядзець усё"
@@ -1847,6 +1946,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "Active until ${ formattedPeriodEndDate }": [
+        "Актыўна да ${ formattedPeriodEndDate }"
+      ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожныя ${ renewCycle } месяцаў пасля завяршэння пробнага перыяду ${ formattedDate1 }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate2 }."
       ],
@@ -2015,7 +2117,7 @@
         "Воблачны рэдактар дакументаў"
       ],
       "Password health alerts": [
-        "Папярэджанні якасці пароля"
+        "Абвесткі якасці пароля"
       ],
       "Recover previous file versions": [
         "Аднаўленне папярэдніх версій файла"
@@ -4854,6 +4956,9 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Вы можаце выдаліць іх доступ у любы час, каб аднавіць эксклюзіўны кантроль над сваім уліковым запісам."
       ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Вас пакуль яшчэ ніхто не прызначыў у якасці кантакту для аднаўлення."
+      ],
       "You have not been designated as an emergency contact for anyone yet.": [
         "Вас пакуль яшчэ ніхто не прызначаў у якасці экстраннага кантакту."
       ],
@@ -6701,6 +6806,9 @@
       "Advanced security controls": [
         "Пашыраныя функцыі бяспекі"
       ],
+      "Dedicated server - ${ serverPrice }": [
+        "Вылучаны сервер - ${ serverPrice }"
+      ],
       "In addition to connection monitoring, private gateways let you grant access by user or group - all running on dedicated servers with static IPs.": [
         "Акрамя маніторынгу падключэнняў, прыватныя шлюзы дазваляюць даваць доступ карыстальнікам або групам — усе яны працуюць на вылучаных серверах са статычнымі IP-адрасамі."
       ],
@@ -7392,6 +7500,9 @@
         "${ hasTwoFAMembersLength } удзельнікаў з ${ canHaveTwoFAMembersLength }, якія не належаць да SSO выкарыстоўваюць двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю.",
         "${ hasTwoFAMembersLength } удзельнікаў з ${ canHaveTwoFAMembersLength }, якія не належаць да SSO выкарыстоўваюць двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю."
       ],
+      "${ helpTranslateLink } by joining our localization community.": [
+        "${ helpTranslateLink } далучыўшыся да нашай супольнасці, якая дапамагае з лакалізацыяй."
+      ],
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "Пазначана ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -7576,7 +7687,7 @@
         "${ vaultLink } абноўлена"
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
-        "${ VPN_SHORT_APP_NAME } хавае ваш трафік. ${ PASS_SHORT_APP_NAME } хавае вашу ідэнтычнасць\nз дапамогай неабмежаванай колькасці псеўданімаў **hide-my-email** і **папярэджанняў цёмнай сеткі**, калі раптам адбудзецца ўцечка вашых даных."
+        "${ VPN_SHORT_APP_NAME } хавае ваш трафік. ${ PASS_SHORT_APP_NAME } хавае вашу ідэнтычнасць\nз дапамогай неабмежаванай колькасці псеўданімаў **hide-my-email** і **абвестак цёмнай сеткі**, калі раптам адбудзецца ўцечка вашых даных."
       ],
       "${ vpnPlus } required for Country level connection.": [
         "Для выбару падключэння на ўзроўні краіны патрабуецца тарыфны план ${ vpnPlus }."
@@ -7910,6 +8021,12 @@
       ],
       "Awaiting transaction": [
         "Чаканне трансакцыі"
+      ],
+      "Backup password disabled": [
+        "Рэзервовы пароль адключаны"
+      ],
+      "Backup password enabled": [
+        "Рэзервовы пароль уключаны"
       ],
       "Balance from your previous subscription": [
         "Баланс з вашай папярэдняй падпіскі"
@@ -8306,6 +8423,9 @@
       ],
       "Email address copied to clipboard": [
         "Адрас электроннай пошты скапіяваны ў буфер абмену"
+      ],
+      "Email addresses copied to clipboard": [
+        "Адрасы электроннай пошты скапіяваны ў буфер абмену"
       ],
       "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
         "Электронная пошта і каляндар, якія інтэграваныя з ${ CONTACTS_APP_NAME }"
@@ -8826,6 +8946,9 @@
       "Learn more about Gateways": [
         "Даведацца больш аб шлюзах"
       ],
+      "Learn more about groups": [
+        "Даведацца больш аб групах"
+      ],
       "Learn more about single sign-on": [
         "Даведацца больш аб адзіным уваходзе"
       ],
@@ -8879,6 +9002,9 @@
       ],
       "Manage groups in your identity provider": [
         "Кіраванне групамі ў вашым пастаўшчыку пасведчанняў"
+      ],
+      "Manage how users can access your ${ BRAND_NAME } organization with single sign-on.": [
+        "Кіраваць тым, як карыстальнікі могуць атрымліваць доступ да вашай арганізацыі ${ BRAND_NAME } з аднаразовым уваходам."
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Кіруйце, да якіх праграм ${ BRAND_NAME } могуць атрымліваць доступ удзельнікі вашай арганізацыі. Калі выключана, то толькі адміністратары будуць мець доступ да іх."
@@ -9317,6 +9443,9 @@
       ],
       "SCIM token active": [
         "Токен SCIM актыўны"
+      ],
+      "Secure and end-to-end encrypted": [
+        "Бяспека і шыфраванне скразным метадам"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Абараніце свой уліковы запіс ${ BRAND_NAME }"
@@ -9876,6 +10005,9 @@
       "Upgrade or clear space anytime to bring over the rest": [
         "Палепшыце свой тарыфны план або вызваліце месца ў сховішчы, каб перанесці астатняе"
       ],
+      "Upgrade required": [
+        "Патрабуецца паляпшэнне"
+      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Палепшыць тарыфны план, каб захаваць перавагі ${ planTitle }."
       ],
@@ -9920,6 +10052,9 @@
       ],
       "User activated": [
         "Карыстальнік актываваны"
+      ],
+      "User roles assigned": [
+        "Ролі карыстальника прызначаны"
       ],
       "Username": [
         "Імя карыстальніка"
@@ -10397,6 +10532,9 @@
       ],
       "your encrypted data will be locked": [
         "вашы зашыфраваныя даныя будуць заблакіраваны"
+      ],
+      "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
+        "Ваш файл уключае пароль для кожнага карыстальніка, таму гэтыя ўліковы запісы будуць створаны з паролем замест запрашальнай спасылкі."
       ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
@@ -11480,6 +11618,9 @@
       "Send crash reports": [
         "Адпраўляць справаздачы аб збоях"
       ],
+      "Send invoices by email": [
+        "Адправіць рахункі па электроннай пошце"
+      ],
       "Sequences": [
         "Паслядоўнасці"
       ],
@@ -12375,6 +12516,9 @@
       "Resend invite link": [
         "Паўторна адправіць запрашальную спасылку"
       ],
+      "Resume role assignment": [
+        "Узнавіць прызначэнне ролі"
+      ],
       "Revoke sessions": [
         "Адклікаць сеансы"
       ],
@@ -12383,6 +12527,9 @@
       ]
     },
     "Members table usage": {
+      "Gateway Monitor is off": [
+        "Назіранне за шлюзом выключана"
+      ],
       "Setup your own private gateways to monitor VPN connection activity within your organization.": [
         "Наладзьце свае прыватныя шлюзы, каб назіраць за актыўнасцю падключэння па VPN у вашай арганізацыі."
       ],
@@ -14189,6 +14336,9 @@
       ]
     },
     "organization key reset": {
+      "Because your organization key has changed, you lost some of your admin rights: You can no longer create non-private users and access their accounts.": [
+        "Вы згубілі некаторыя правы адміністратара, бо ключ вашай арганізацыі быў зменены: у вас больш няма магчымасці ствараць непрыватных карыстальнікаў і атрымліваць доступ да іх уліковых запісаў."
+      ],
       "Could not send the unprivatization request to ${ n } user. It will be retried automatically.": [
         "Немагчыма адправіць неправатызаваны запыт ${ n } карыстальніку. Паўторная спроба будзе зроблена аўтаматычна.",
         "Немагчыма адправіць неправатызаваны запыт ${ n } карыстальнікам. Паўторная спроба будзе зроблена аўтаматычна.",
@@ -14203,6 +14353,15 @@
       ],
       "Non-private users": [
         "Непрыватныя карыстальнікі"
+      ],
+      "Organization key reset": [
+        "Ключ арганізацыі скінуты"
+      ],
+      "Reset key": [
+        "Скінуць ключ"
+      ],
+      "Reset organization key?": [
+        "Скінуць ключ арганізацыі?"
       ],
       "Resetting organization key": [
         "Скінуць ключ арганізацыі"
@@ -16372,6 +16531,9 @@
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Для паўторнага ўключэння сінхранізацыі з вашым пастаўшчыком пасведчанняў, вам неабходна прайсці інтэграцыю SCIM яшчэ раз."
+      ],
+      "When you disable SCIM:": [
+        "Калі вы адключаеце SCIM:"
       ]
     },
     "scim: Label": {
@@ -17215,6 +17377,9 @@
       "Backup password": [
         "Рэзервовы пароль"
       ],
+      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
+        "З прычыны таго, што ваша арганізацыя перамясціла вас у раздзел з аднаразовым уваходам (SSO), **ваш стары пароль захаваны ў якасці рэзервовага пароля**. Вы можаце выкарыстоўваць яго для аўтарызацыі SSO на новых прыладах."
+      ],
       "Cancel": [
         "Скасаваць"
       ],
@@ -17271,6 +17436,9 @@
       ],
       "Enter your backup password": [
         "Увядзіце свой рэзервовы пароль"
+      ],
+      "For your security, you have been signed out of all your other active devices.": [
+        "У мэтах вашай бяспекі вы выйшлі з усіх іншых актыўных прылад."
       ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "У мэтах бяспекі вы выйшлі з сістэмы на ўсіх вашых іншых актыўных прыладах. Вам неабходна будзе ўвесці новы рэзервовы пароль перад тым, як вы атрымаеце доступ да свайго ўліковага запісу."
@@ -18099,7 +18267,7 @@
         "Аўтаперасылка электроннай пошты ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
+        "Абвесткі ўцечкі даных ${ strongArgument }"
       ],
       "Desktop app": [
         "Праграма для камп'ютара"
@@ -18290,6 +18458,9 @@
       ],
       "Invoice customized": [
         "Рахунак дапасаваны"
+      ],
+      "Invoice email updated": [
+        "Адрас электроннай пошты для рахункаў абноўлены"
       ],
       "Invoice paid": [
         "Рахунак аплачаны"
@@ -18821,6 +18992,9 @@
       ],
       "Add users to \"${ policyName }\"": [
         "Дадаць карыстальнікаў у \"${ policyName }\""
+      ],
+      "Advanced configuration": [
+        "Пашыраная канфігурацыя"
       ],
       "Advanced recovery options": [
         "Пашыраныя параметры аднаўлення"
@@ -19563,6 +19737,9 @@
       "Password": [
         "Пароль"
       ],
+      "Password check-ins": [
+        "Уваход з паролем"
+      ],
       "Password reset options": [
         "Параметры скідання пароля"
       ],
@@ -19670,6 +19847,9 @@
       ],
       "Remove via MDM": [
         "Выдаліце праз MDM"
+      ],
+      "Remove via PowerShell": [
+        "Выдаліць праз PowerShell"
       ],
       "Rename the gateway": [
         "Перайменаваць шлюз"
@@ -20007,6 +20187,9 @@
       "Verify your password": [
         "Спраўджанне вашага пароля"
       ],
+      "Verify your phrase": [
+        "Спраўдзіць сваю фразу"
+      ],
       "Verifying your card...": [
         "Спраўджанне вашай карткі..."
       ],
@@ -20062,10 +20245,10 @@
         "Цяпер вы можаце ствараць неабмежаваную колькасць папак і метак"
       ],
       "You have no open alerts": [
-        "У вас няма адкрытых папярэджанняў"
+        "У вас няма адкрытых абвестак"
       ],
       "You have no resolved alerts": [
-        "У вас няма вырашаных папярэджанняў"
+        "У вас няма вырашаных абвестак"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваш бясплатны пробны перыяд для тарыфнага плана ${ planName } завершыцца ${ textDate }"
@@ -20303,7 +20486,7 @@
         "Захавайце зашыфраваную рэзервовую копію файла ў гэтым браўзеры, каб аднавіць свае даныя пасля скідання пароля"
       ],
       "Save an encryption backup file to recover your data after a password reset": [
-        "Захавайце рэзервовую копію шыфравання, каб аднавіць свае даныя пасля скідання пароля"
+        "Захавайце зашыфраваную рэзервовую копію файла, каб аднавіць свае даныя пасля скідання пароля"
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "Задае наступны ніжні калонтытул у лістах, якія вы адпраўляеце: ${ signature } Спасылка звязана з вашай рэферальнай праграмай. Ніжні калонтытул будзе з'яўляцца ніжэй вашага подпісу. Вы можаце персаналізаваць свой подпіс у любы час у наладах."
@@ -20388,6 +20571,9 @@
       "Group membership paused": [
         "Праналежнасць да групы прыпынена"
       ],
+      "Pending user activation": [
+        "Чаканне актывацыі карыстальніка"
+      ],
       "Resuming role assignment": [
         "Узнаўленне прызначэння ролі"
       ],
@@ -20411,6 +20597,11 @@
       ],
       "Waiting for user to accept the invitation": [
         "Чаканне прыняцця запрашэння карыстальнікам"
+      ]
+    },
+    "Tooltip for members table": {
+      "Last time this user connected to one of your organization's Gateways.": [
+        "Апошні раз гэты карыстальнік падключаўся да аднаго са шлюзаў у вашай арганізацыі."
       ]
     },
     "Tor out of date": {
