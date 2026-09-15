@@ -89,12 +89,11 @@ const setupMessage = (Subject = '', ToList: Recipient[] = [], scheduledAt?: numb
 };
 
 const helper = async (message: MessageStateWithData, preloadedState: Partial<MailState>) => {
-    const composerID = 'composer-test-id';
     const { store, ...rest } = await renderComposer({
         preloadedState,
         message,
     });
-    return { store, composerID, ...rest };
+    return { store, ...rest };
 };
 
 describe('Composer scheduled messages', () => {

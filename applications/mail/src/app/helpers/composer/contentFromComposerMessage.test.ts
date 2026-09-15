@@ -9,7 +9,11 @@ import { buildAddress } from '@proton/testing/builders/address';
 import { locateBlockquote } from '../message/messageBlockquote';
 import { createNewDraft } from '../message/messageDraft';
 import { CLASSNAME_SIGNATURE_CONTAINER } from '../message/messageSignature';
-import { getMessageContentBeforeBlockquote, insertBodyIntoNewDraft } from './contentFromComposerMessage';
+import {
+    getMessageContentBeforeBlockquote,
+    insertBodyIntoNewDraft,
+    setMessageContentBeforeBlockquote,
+} from './contentFromComposerMessage';
 
 describe('getMessageContentBeforeBlockquote', () => {
     it('should return empty string if editorContent is empty', () => {
@@ -60,6 +64,25 @@ describe('getMessageContentBeforeBlockquote', () => {
         //             '<div>Hello this is content</div><div class="protonmail_signature_block">Signature</div>',
         //     })
         // ).toBe('Hello this is content');
+    });
+});
+
+describe('setMessageContentBeforeBlockquote', () => {
+    const QUOTE = '<blockquote class="protonmail_quote">The original message</blockquote>';
+
+    it('replaces the text above the signature and keeps the signature and quote below it', () => {
+        const written = setMessageContentBeforeBlockquote({
+            editorType: 'html',
+            editorContent: `<div>What I typed</div><div class="${CLASSNAME_SIGNATURE_CONTAINER}">Signature</div>${QUOTE}`,
+            content: 'Rewritten',
+            wrapperDivStyles: 'font-family: Arial;',
+            messageID: 'localID',
+        });
+
+        expect(written).toContain('Rewritten');
+        expect(written).not.toContain('What I typed');
+        expect(written).toContain('Signature');
+        expect(written).toContain('The original message');
     });
 });
 
