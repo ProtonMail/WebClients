@@ -54,6 +54,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Agregar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add a payment method": [
+        "Añadir un método de pago"
+      ],
       "Add account": [
         "Agregar una cuenta"
       ],
@@ -86,6 +89,9 @@
       ],
       "Add group": [
         "Agregar grupo"
+      ],
+      "Add more details": [
+        "Añadir más detalles"
       ],
       "Add new group": [
         "Agregar grupo nuevo"
@@ -1547,7 +1553,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -4757,6 +4764,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } es su nombre de usuario. Para crear ${ emailAddress }, vaya a Ajustes > Identidad y direcciones > Dominio corto (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Ya existe un contacto con esta dirección de correo"
+      ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
       ],
@@ -6164,6 +6174,12 @@
       ],
       "Security key": [
         "Clave de seguridad"
+      ],
+      "Still waiting?": [
+        "¿Sigue esperando?"
+      ],
+      "Touch your security key to continue.": [
+        "Toque su llave de seguridad para continuar."
       ]
     },
     "fido2: Label": {
@@ -7134,6 +7150,9 @@
       "${ LUMO_APP_NAME } includes the writing assistant": [
         "${ LUMO_APP_NAME } incluye el asistente de escritura"
       ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } ha tomado ${ count } hasta ahora. ¿Continuar?"
+      ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
         "${ LUMO_SHORT_APP_NAME } le ayuda a usted a redactar mejores correos electrónicos de forma rápida y sin esfuerzo."
       ],
@@ -7238,12 +7257,22 @@
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
       ],
+      "${ steps } step": [
+        "${ steps } paso",
+        "${ steps } pasos"
+      ],
       "${ storage } storage": [
         "${ storage } de almacenamiento"
       ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } no leídos",
         "${ subscription.UnreadMessageCount } no leídos"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } restante en su prueba. ${ addPaymentMethodLink } para evitar la pérdida de datos. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } restante en su prueba. ${ addPaymentMethodLink } para mantener la suscripción. ${ learnMoreLink }"
       ],
       "${ total } conversation": [
         "${ total } conversación",
@@ -7370,8 +7399,17 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Agregar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add ${ contact } to your contacts": [
+        "Añadir ${ contact } a sus contactos"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Agregar ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Add a contact": [
+        "Añadir un contacto"
+      ],
+      "Add contact": [
+        "Añadir contacto"
       ],
       "Add image URL": [
         "Agregar URL de imagen"
@@ -7592,11 +7630,26 @@
       "Center": [
         "Centrar"
       ],
+      "Change a display setting": [
+        "Cambiar un ajuste de pantalla"
+      ],
       "Change display setting": [
         "Cambiar ajuste de pantalla"
       ],
+      "Change how your mail is grouped": [
+        "Cambie cómo se agrupa su correo"
+      ],
+      "Change your list density": [
+        "Cambie la densidad de su lista"
+      ],
+      "Change your mailbox layout": [
+        "Cambie el diseño de su buzón"
+      ],
       "Change your password": [
         "Cambie la contraseña"
+      ],
+      "Change your theme": [
+        "Cambie su tema"
       ],
       "Checked Proton support": [
         "Comprobé el soporte de Proton"
@@ -7671,8 +7724,17 @@
         "Crear ${ calendarsToBeCreatedCount } calendario nuevo",
         "Crear ${ calendarsToBeCreatedCount } calendarios nuevos"
       ],
+      "Create a filter": [
+        "Crear un filtro"
+      ],
+      "Create a folder": [
+        "Crear una carpeta"
+      ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "Cree una carpeta como «${ suggestedFolderName }» o mantenga sus facturas en un solo lugar."
+      ],
+      "Create a label": [
+        "Crear una etiqueta"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Cree una etiqueta para los mensajes importados, un intervalo de tiempo para esta importación y las carpetas que le gustaría importar."
@@ -7686,6 +7748,9 @@
       "Create a secure cloud for ${ memberCount } member": [
         "Crear una nube segura para ${ memberCount } miembro",
         "Crear una nube segura para ${ memberCount } miembros"
+      ],
+      "Create filter": [
+        "Crear filtro"
       ],
       "Create folder": [
         "Crear carpeta"
@@ -7774,6 +7839,12 @@
       ],
       "Do you want to re-sign the contact details?": [
         "¿Desea volver a firmar los datos del contacto?"
+      ],
+      "Document in foundation-search index": [
+        "Documento en el índice de búsqueda de la fundación"
+      ],
+      "Document lookup failed": [
+        "Error en la búsqueda del documento"
       ],
       "Don't forget to share the password with the recipient": [
         "No olvide compartir la contraseña con el destinatario"
@@ -8155,8 +8226,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8199,6 +8269,12 @@
       ],
       "Key fingerprint": [
         "Huella digital de la clave"
+      ],
+      "Label ${ emails }": [
+        "Etiquetar ${ emails }"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "Etiquetar ${ emails } como ${ names }"
       ],
       "Label all imported messages as": [
         "Etiquetar todos los mensajes importados como"
@@ -8248,6 +8324,9 @@
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
         "Los registros nos ayudan a comprender qué sucedió antes de que ocurriera el problema. Incluyen las acciones de la aplicación y los mensajes de error, pero no el contenido de los mensajes."
       ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Búsqueda del documento ${ lookup.result.docId }"
+      ],
       "Low Priority": [
         "Prioridad baja"
       ],
@@ -8260,6 +8339,12 @@
       "Manage your labels": [
         "Administre las etiquetas"
       ],
+      "Mark ${ emails } as read": [
+        "Marcar ${ emails } como leído(s)"
+      ],
+      "Mark ${ emails } as unread": [
+        "Marcar ${ emails } como no leído(s)"
+      ],
       "Mark all as read": [
         "Marcar todos como leídos"
       ],
@@ -8271,6 +8356,12 @@
       ],
       "Mark as unread": [
         "Marcar como no leído"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "Marcar todo en ${ place } como leído"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "Marcar todo en ${ place } como no leído"
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
@@ -8344,6 +8435,12 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "La mayoría de las redes Wi-Fi públicas son seguras, pero algunas carecen de seguridad, exponiéndole a amenazas cibernéticas. Una VPN cifra su tráfico brindándole protección."
       ],
+      "Move ${ emails }": [
+        "Mover ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Mover ${ emails } a ${ destination }"
+      ],
       "Move emails": [
         "Mover correos"
       ],
@@ -8383,6 +8480,9 @@
       "No email open": [
         "No hay un correo abierto"
       ],
+      "No emails selected": [
+        "Ningún correo seleccionado"
+      ],
       "No folder found": [
         "Ninguna carpeta encontrada"
       ],
@@ -8400,6 +8500,9 @@
       ],
       "No links cleaned": [
         "Ningún enlace limpiado"
+      ],
+      "No location selected": [
+        "Ninguna ubicación seleccionada"
       ],
       "No messages to show": [
         "No hay mensajes para mostrar"
@@ -8433,6 +8536,12 @@
       ],
       "Not connected": [
         "No conectado"
+      ],
+      "Not found in the encrypted search index.": [
+        "No se encontró en el índice de búsqueda cifrado."
+      ],
+      "Not found in the foundation-search index.": [
+        "No se encontró en el índice de búsqueda de la fundación."
       ],
       "Not supported by this browser": [
         "No soportado por este navegador"
@@ -8666,8 +8775,14 @@
         "Leer ${ count } etiqueta",
         "Leer ${ count } etiquetas"
       ],
+      "Read your auto-reply": [
+        "Lea su respuesta automática"
+      ],
       "Read your display settings": [
         "Lea sus ajustes de pantalla"
+      ],
+      "Read your signature": [
+        "Lea su firma"
       ],
       "Recipient: ": [
         "Destinatario: "
@@ -8690,8 +8805,20 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Recuerde actualizarlo en su gestor de contraseñas o donde guarde su información de inicio de sesión."
       ],
+      "Remove the star from ${ emails }": [
+        "Eliminar destacado de ${ emails }"
+      ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Elimine todos los datos asociados con esta aplicación (incluyendo los mensajes descargados, etc…)"
+      ],
+      "Rename ${ folder } to…": [
+        "Renombrar ${ folder } a…"
+      ],
+      "Rename folder": [
+        "Renombrar carpeta"
+      ],
+      "Rename this folder": [
+        "Renombrar esta carpeta"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Al reportar un mensaje como suplantación de identidad, enviará una alerta a nosotros para analizarlo y mejorar nuestros filtros. Significa que podremos ver todo el contenido del mensaje."
@@ -8701,6 +8828,12 @@
       ],
       "Restore": [
         "Restaurar"
+      ],
+      "Results came from the local search.": [
+        "Los resultados vinieron de la búsqueda local."
+      ],
+      "Results came from the server.": [
+        "Los resultados vinieron del servidor."
       ],
       "Right to Left": [
         "Derecha a izquierda"
@@ -8817,8 +8950,17 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Configure ${ MAIL_APP_NAME } como su aplicación de correo por defecto. ${ MAIL_APP_NAME } se abrirá automáticamente al hacer clic en un enlace de correo electrónico."
       ],
+      "Set auto-reply": [
+        "Configurar respuesta automática"
+      ],
+      "Set signature": [
+        "Configurar una firma"
+      ],
       "Set up your organization": [
         "Configure la organización"
+      ],
+      "Set your signature": [
+        "Configure su firma"
       ],
       "Setting up ${ feature }…": [
         "Configurando ${ feature }"
@@ -8867,6 +9009,12 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Lo sentimos, este mensaje no existe o ya expiró."
+      ],
+      "Source document in encrypted search index": [
+        "Documento fuente en índice de búsqueda cifrado"
+      ],
+      "Star ${ emails }": [
+        "Destacar ${ emails }"
       ],
       "Star emails": [
         "Destacar correos"
@@ -9250,11 +9398,20 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Pruebe las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
       ],
+      "Turn off auto-reply": [
+        "Desactivar respuesta automática"
+      ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "Desactívela para buscar solo por fecha, nombre, dirección de correo o asunto. Para desactivar la búsqueda en el contenido del mensaje (y eliminar los mensajes descargados para activar esta función), vaya a los ajustes."
       ],
+      "Turn off your away message": [
+        "Desactive su mensaje de ausencia"
+      ],
       "Turn on to search the content of your messages": [
         "Actívelo para buscar el contenido de los mensajes"
+      ],
+      "Turn on your away message": [
+        "Active su mensaje de ausencia"
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "No se puede acceder a las capacidades de almacenamiento de este navegador. Necesitamos este acceso para activar la búsqueda de contenido en los mensajes."
@@ -9282,6 +9439,12 @@
       ],
       "Update filter": [
         "Actualizar filtro"
+      ],
+      "Update the filter ${ filter }": [
+        "Actualizar este filtro ${ filter }"
+      ],
+      "Update this filter": [
+        "Actualizar este filtro"
       ],
       "Updating message content search...": [
         "Actualizando búsqueda de contenido de mensaje..."
@@ -10212,6 +10375,9 @@
       "Automated confirmations and alerts": [
         "Confirmaciones y alertas automatizadas"
       ],
+      "Away message": [
+        "Mensaje de ausencia"
+      ],
       "BCC": [
         "CCO"
       ],
@@ -10515,6 +10681,12 @@
       "From": [
         "De"
       ],
+      "From date": [
+        "De la fecha"
+      ],
+      "From time": [
+        "De la hora"
+      ],
       "From:": [
         "Desde:"
       ],
@@ -10703,6 +10875,9 @@
       ],
       "Never fill on this exact URL": [
         "Nunca completar esta URL exacta"
+      ],
+      "New name": [
+        "Nombre nuevo"
       ],
       "New password": [
         "Contraseña nueva"
@@ -11007,6 +11182,12 @@
       "Unsubscribed from ${ truncatedName }.": [
         "Se canceló la suscripción de ${ truncatedName }."
       ],
+      "Until date": [
+        "Hasta la fecha"
+      ],
+      "Until time": [
+        "Hasta la hora"
+      ],
       "Updates": [
         "Actualizaciones"
       ],
@@ -11212,6 +11393,12 @@
     "Link": {
       "Add a gift code": [
         "Agregar código de regalo"
+      ],
+      "Add formatting, links or images": [
+        "Añadir formato, enlaces o imágenes"
+      ],
+      "Advanced auto-reply options": [
+        "Opciones de respuesta automática avanzadas"
       ],
       "All mail": [
         "Todos"
@@ -12445,6 +12632,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } que termina en ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB de almacenamiento en la nube que le permite almacenar, sincronizar y compartir archivos de forma fácil. Asegurado por cifrado de extremo a extremo."
       ],
@@ -13724,6 +13914,11 @@
         "Se añadirán los créditos a su balance"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Cambiar su dirección de facturación podría afectar los impuestos en facturas futuras."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "¿En verdad desea continuar?"
@@ -13758,6 +13953,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "El precio de renovación depende de la región de facturación y del número de IVA."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - tarjeta terminada en ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Transferencia bancaria - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - tarjeta terminada en ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -14899,6 +15105,12 @@
       "${ count } email → ${ wakeTime }": [
         "${ count } correo → ${ wakeTime }",
         "${ count } correos → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "Pausar ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "Pausar ${ emails } hasta el ${ wakeTime }"
       ]
     },
     "Snooze message": {
