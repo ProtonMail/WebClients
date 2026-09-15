@@ -171,7 +171,7 @@ export interface RecoverPhotoLinks {
 
 export type TransferPhotoLinks = Omit<RecoverPhotoLinks, 'NewShareId'>;
 
-interface ShareMapLink {
+export interface ShareMapLink {
     CreateTime: number;
     Hash: string;
     Index: number;
