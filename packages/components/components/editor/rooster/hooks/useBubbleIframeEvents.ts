@@ -10,6 +10,9 @@ import { IFRAME_EVENTS_LIST, ROOSTER_EDITOR_WRAPPER_ID } from '../../constants';
 
 const PAGE_EVENTS = [KeyboardKey.PageUp, KeyboardKey.PageDown];
 
+const isIMEKeyboardEvent = (event: Event) =>
+    isKeyboardEvent(event) && (event.isComposing || event.keyCode === 229);
+
 /**
  * Calls event.preventDefault on matched events
  * Because events occuring inside an iframe can show prompts in browsers (ex : pressing crtl+s)
@@ -48,6 +51,10 @@ const canDispatchEvent = (event: Event): boolean => {
  */
 const useBubbleIframeEvents = (iframeRef: RefObject<HTMLIFrameElement>) => {
     const handleBubble = useCallback((event: Event) => {
+        if (isIMEKeyboardEvent(event)) {
+            return;
+        }
+
         const canDispatch = canDispatchEvent(event);
         preventKeyboardEvents(event);
 
