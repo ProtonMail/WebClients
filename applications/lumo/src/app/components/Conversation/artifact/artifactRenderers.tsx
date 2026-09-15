@@ -31,7 +31,7 @@ export const CodeRenderer = ({ artifact, showLineNumbers }: ArtifactRendererProp
     }
 
     return (
-        <div className="artifact-code-content overflow-auto flex-1 w-full">
+        <div className="artifact-code-content overflow-auto flex-1 min-h-0 min-w-0 w-full h-full">
             <Suspense
                 fallback={
                     <pre className="text-monospace text-sm m-0 p-4 overflow-auto color-norm">{artifact.content}</pre>
@@ -55,7 +55,7 @@ export const DocumentRenderer = ({ artifact }: ArtifactRendererProps) => {
     }
 
     return (
-        <div className="artifact-document-content overflow-auto flex-1 p-4">
+        <div className="artifact-document-content overflow-auto flex-1 min-h-0 min-w-0 w-full h-full p-4">
             <Suspense
                 fallback={
                     <pre className="text-monospace text-sm m-0 overflow-auto color-norm whitespace-pre-wrap">

@@ -3,10 +3,61 @@
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
+.conversation-split-row {
+	flex-wrap: nowrap;
+	min-block-size: 0;
+	overflow: hidden;
+	padding-block: 0.75rem;
+	padding-inline-end: 0.75rem;
+}
+
 .lumo-chat-container {
 	.lumo-chat-item {
 		@include im.media('>small') {
 			transition: inline-size 0.3s ease-in-out;
 		}
+	}
+}
+
+.artifact-panel-container {
+	position: relative;
+	flex-shrink: 0;
+	min-block-size: 0;
+	min-inline-size: 0;
+	overflow: hidden;
+	background: var(--background-norm);
+	border: 1px solid var(--border-weak);
+	border-radius: var(--border-radius-xl, 1rem);
+}
+
+.artifact-panel-content {
+	border-radius: inherit;
+}
+
+.artifact-panel-resize-handle {
+	position: absolute;
+	inset-block: 0;
+	inset-inline-start: 0;
+	inline-size: 12px;
+	transform: translateX(-50%);
+	cursor: col-resize;
+	z-index: 2;
+	touch-action: none;
+	user-select: none;
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset-block: 0;
+		inset-inline-start: 50%;
+		inline-size: 1px;
+		transform: translateX(-50%);
+		background: transparent;
+		transition: background 150ms ease;
+	}
+
+	&:hover::after,
+	&:active::after {
+		background: var(--border-norm);
 	}
 }

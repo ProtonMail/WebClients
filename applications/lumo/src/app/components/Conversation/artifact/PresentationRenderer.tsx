@@ -102,7 +102,10 @@ function PresentationIframeContent({ artifact, revealJs, revealCss, themeCss }: 
     }
 
     return (
-        <div ref={containerRef} className="artifact-presentation-content relative flex-1 w-full h-full overflow-hidden">
+        <div
+            ref={containerRef}
+            className="artifact-presentation-content relative flex-1 min-h-0 min-w-0 w-full h-full overflow-hidden"
+        >
             {!ready && (
                 <div className="absolute inset-center">
                     <CircleLoader size="medium" />
