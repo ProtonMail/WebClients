@@ -8,6 +8,7 @@ import {
     hasSignatureContainer,
 } from '../../helpers/composer/contentFromComposerMessage';
 import { exportPlainText, getPlainTextContent } from '../../helpers/message/messageContentPlainText';
+import { CLASSNAME_BLOCKQUOTE } from '../../helpers/message/messageDraftConstants';
 
 interface DraftBodyOptions {
     message: MessageState;
@@ -18,7 +19,7 @@ interface DraftBodyOptions {
 
 const stripHtmlBlockquote = (html: string): string => {
     const doc = new DOMParser().parseFromString(html, 'text/html');
-    doc.querySelectorAll('blockquote.protonmail_quote').forEach((el) => el.remove());
+    doc.querySelectorAll(`blockquote.${CLASSNAME_BLOCKQUOTE}`).forEach((el) => el.remove());
     return doc.body.innerHTML;
 };
 

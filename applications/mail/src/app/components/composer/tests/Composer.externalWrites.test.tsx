@@ -20,7 +20,6 @@ import { AddressID, ID, fromAddress, renderComposer, toAddress } from './Compose
 
 jest.setTimeout(20000);
 
-const SIGNATURE = '<div class="protonmail_signature_block">Alice</div>';
 const QUOTE = '<blockquote class="protonmail_quote">The original message</blockquote>';
 
 /** Past `updateDraftContent`'s 300ms debounce, after which the store holds the write. */
@@ -61,9 +60,7 @@ describe('Composer writes reachable from outside it', () => {
                 localID: ID,
                 data: { ID: undefined, MIMEType: MIME_TYPES.DEFAULT, Sender: { Name: '', Address: fromAddress } },
                 draftFlags: { action: MESSAGE_ACTIONS.NEW },
-                messageDocument: {
-                    document: parseDOMStringToBodyElement(`<div>What I typed</div>${SIGNATURE}${QUOTE}`),
-                },
+                messageDocument: { document: parseDOMStringToBodyElement(`<div>What I typed</div>${QUOTE}`) },
             },
         });
 
