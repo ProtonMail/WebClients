@@ -1,5 +1,6 @@
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 
 import {
@@ -7,9 +8,38 @@ import {
     insertTextBeforeContent,
     prepareContentToInsert,
 } from '../message/messageContent';
-import { CLASSNAME_SIGNATURE_CONTAINER } from '../message/messageSignature';
+import { CLASSNAME_SIGNATURE_CONTAINER, exportPlainTextSignature, insertSignature } from '../message/messageSignature';
 
 export type ComposerReturnType = 'html' | 'plaintext';
+
+interface AddressSignatureOptions {
+    senderAddress: string | undefined;
+    action: MESSAGE_ACTIONS | undefined;
+    addresses: Address[];
+    mailSettings: MailSettings;
+    userSettings: Partial<UserSettings>;
+}
+
+/** The sender's signature as it appears in a plain text draft — the marker the content before it is cut at. */
+export const getAddressPlainTextSignature = ({
+    senderAddress,
+    action,
+    addresses,
+    mailSettings,
+    userSettings,
+}: AddressSignatureOptions) => {
+    const signature = addresses.find((address) => address.Email === senderAddress)?.Signature || '';
+
+    return exportPlainTextSignature(
+        insertSignature('', signature, action || MESSAGE_ACTIONS.NEW, mailSettings, userSettings, undefined)
+    );
+};
+
+/** Without the signature element, setMessageContentBeforeBlockquote's walk deletes every top-level child including the quote. */
+export const hasSignatureContainer = (editorContent: string): boolean =>
+    Array.from(new DOMParser().parseFromString(editorContent, 'text/html').body.children).some((child) =>
+        child.classList.contains(CLASSNAME_SIGNATURE_CONTAINER)
+    );
 
 type GetContentBeforeBlockquoteOptions = (
     | {
