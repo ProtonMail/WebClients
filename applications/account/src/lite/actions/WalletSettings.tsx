@@ -4,14 +4,12 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import {
-    CredentialLeakSection,
-    LogsSection,
-    PrivacySection,
-    SentinelSection,
-    SessionsSection,
-    SubscriptionModalProvider,
-} from '@proton/components';
+import CredentialLeakSection from '@proton/components/containers/credentialLeak/CredentialLeakSection';
+import LogsSection from '@proton/components/containers/logs/LogsSection';
+import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import PrivacySection from '@proton/components/containers/privacy/PrivacySection';
+import { SentinelSection } from '@proton/components/containers/sentinel/SentinelSection';
+import SessionsSection from '@proton/components/containers/sessions/SessionsSection';
 import { APPS, DARK_WEB_MONITORING_NAME, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 
 import MobileSection from '../components/MobileSection';

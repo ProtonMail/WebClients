@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { PassLogo } from '@proton/components';
+import PassLogo from '@proton/components/components/logo/PassLogo';
 
 export const Header: FC = () => (
     <header

@@ -2,15 +2,13 @@ import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import {
-    PrivateMainSettingsArea,
-    PrivateMainSubSettingsArea,
-    RecoveryPageTelemetry,
-    SettingsNavGroup,
-} from '@proton/components';
+import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
+import PrivateMainSubSettingsArea from '@proton/components/containers/layout/PrivateMainSubSettingsArea';
+import SettingsNavGroup from '@proton/components/containers/layout/SettingsNavGroup';
 import { getSectionPath, getSubroutePath } from '@proton/components/containers/layout/helper';
 import { SettingsCardMaxWidth, SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import { OverviewSectionV2 } from '@proton/components/containers/recovery/OverviewSectionV2';
+import RecoveryPageTelemetry from '@proton/components/containers/recovery/RecoveryPageTelemetry';
 import EmergencyContacts from '@proton/components/containers/recovery/navItems/EmergencyContacts';
 import RecoveryContacts from '@proton/components/containers/recovery/navItems/RecoveryContacts';
 import RecoveryDevice from '@proton/components/containers/recovery/navItems/RecoveryDevice';

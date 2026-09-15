@@ -15,26 +15,24 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import {
-    DropdownActions,
-    IllustrationPlaceholder,
-    Loader,
-    NotificationButton,
-    Pagination,
-    SearchInput,
-    Table,
-    TableBody,
-    TableCell,
-    TableHeader,
-    TableHeaderCell,
-    TableRow,
-    useActiveBreakpoint,
-    useErrorHandler,
-    usePagination,
-} from '@proton/components';
+import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
+import SearchInput from '@proton/components/components/input/SearchInput';
+import Loader from '@proton/components/components/loader/Loader';
+import Pagination from '@proton/components/components/pagination/Pagination';
+import usePagination from '@proton/components/components/pagination/usePagination';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
+import TableRow from '@proton/components/components/table/TableRow';
 import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
+import IllustrationPlaceholder from '@proton/components/containers/illustration/IllustrationPlaceholder';
+import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';

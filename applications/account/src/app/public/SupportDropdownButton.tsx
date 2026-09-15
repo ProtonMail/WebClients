@@ -2,7 +2,7 @@ import type { Ref } from 'react';
 
 import { c } from 'ttag';
 
-import { DropdownCaret } from '@proton/components';
+import DropdownCaret from '@proton/components/components/dropdown/DropdownCaret';
 import { IcLifeRing } from '@proton/icons/icons/IcLifeRing';
 import clsx from '@proton/utils/clsx';
 

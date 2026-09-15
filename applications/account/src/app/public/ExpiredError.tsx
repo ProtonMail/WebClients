@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { BugModal, useModalState } from '@proton/components';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import BugModal from '@proton/components/containers/support/BugModal';
 import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 
 import expired from './expired-link.svg';

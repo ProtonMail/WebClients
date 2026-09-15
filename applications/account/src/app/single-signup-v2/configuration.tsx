@@ -1,6 +1,10 @@
 import type { ReactNode } from 'react';
 
-import { DriveLogo, Logo, MailLogo, PassLogo, VpnLogo } from '@proton/components';
+import DriveLogo from '@proton/components/components/logo/DriveLogo';
+import Logo from '@proton/components/components/logo/Logo';
+import MailLogo from '@proton/components/components/logo/MailLogo';
+import PassLogo from '@proton/components/components/logo/PassLogo';
+import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature, getStorageFeature } from '@proton/components/containers/payments/features/drive';
 import { getUsersFeature } from '@proton/components/containers/payments/features/highlights';

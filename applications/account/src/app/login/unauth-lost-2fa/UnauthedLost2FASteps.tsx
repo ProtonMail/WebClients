@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { LoaderPage } from '@proton/components/index';
+import LoaderPage from '@proton/components/containers/app/LoaderPage';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { UserNameWithIcon } from '../../components/username/UserNameWithIcon';

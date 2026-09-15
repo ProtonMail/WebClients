@@ -7,9 +7,11 @@ import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
-import type { OnLoginCallback } from '@proton/components';
-import { SkeletonLoader, useErrorHandler, useModalState } from '@proton/components';
-import { useLoading } from '@proton/hooks';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import type { OnLoginCallback } from '@proton/components/containers/app/interface';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useLoading from '@proton/hooks/useLoading';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { revoke } from '@proton/shared/lib/api/auth';
 // eslint-disable-next-line no-restricted-imports

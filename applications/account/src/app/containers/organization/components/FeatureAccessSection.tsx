@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { SettingsParagraph, SettingsSection } from '@proton/components';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
 
 import { AccessToggleCategoryView } from './FeatureAccess/AccessToggleCategoryView';
 import { AccessToggleScribe } from './FeatureAccess/AccessToggleScribe';

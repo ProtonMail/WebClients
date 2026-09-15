@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { StandardErrorPage } from '@proton/components';
+import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import AccountSettings from './actions/AccountSettings';

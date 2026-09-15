@@ -1,4 +1,4 @@
-import { Price } from '@proton/components';
+import Price from '@proton/components/components/price/Price';
 import { formatTax } from '@proton/payments-ui/ui/headless-checkout/tax-helpers';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 

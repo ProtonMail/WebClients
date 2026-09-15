@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { ProtonLogo } from '@proton/components/index';
+import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import LayoutLogosV2 from '../../../app/public/LayoutLogosV2';

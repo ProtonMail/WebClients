@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Logo } from '@proton/components';
+import Logo from '@proton/components/components/logo/Logo';
 import { Branch } from '@proton/components/components/sidebar/nav/Branch';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';

@@ -26,32 +26,26 @@ import { useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { EMPTY_ORG_PERMISSIONS } from '@proton/account/userPermissions';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import {
-    AppLink,
-    CancellationReminderSection,
-    ContactEmailsProvider,
-    CustomLogo,
-    Logo,
-    PassForBusinessLogo,
-    PrivateAppContainer,
-    PrivateHeader,
-    PrivateMainAreaLoading,
-    SubscriptionModalProvider,
-    TopBanners,
-    TopNavbarUpsell,
-    UserDropdown,
-    useActiveBreakpoint,
-    useDrivePlan,
-    useOrganizationTheme,
-    useRecoveryNotification,
-    useShowThemeSelection,
-} from '@proton/components';
 import FeatureTour from '@proton/components/components/featureTour/FeatureTour';
+import AppLink from '@proton/components/components/link/AppLink';
+import CustomLogo from '@proton/components/components/logo/CustomLogo';
+import Logo from '@proton/components/components/logo/Logo';
+import PassForBusinessLogo from '@proton/components/components/logo/PassForBusinessLogo';
+import TopNavbarUpsell from '@proton/components/components/topnavbar/TopNavbarUpsell';
 import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
+import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
+import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
+import PrivateHeader from '@proton/components/containers/heading/PrivateHeader';
+import UserDropdown from '@proton/components/containers/heading/UserDropdown';
+import PrivateMainAreaLoading from '@proton/components/containers/layout/PrivateMainAreaLoading';
 import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';
 import UnprivatizationRequestTopBanner from '@proton/components/containers/members/Unprivatization/UnprivatizationRequestTopBanner';
+import { useOrganizationTheme } from '@proton/components/containers/organization/logoUpload/useOrganizationTheme';
+import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { CancellationReminderSection } from '@proton/components/containers/payments/subscription/cancellationFlow/CancellationReminderSection';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import { useReferralUserEligible } from '@proton/components/containers/referral/hooks/useReferralUserEligible';
+import TopBanners from '@proton/components/containers/topBanners/TopBanners';
 import LiveChatZendesk from '@proton/components/containers/zendesk/LiveChatZendesk';
 import { getZendeskTags } from '@proton/components/containers/zendesk/helper';
 import { useZendeskChat } from '@proton/components/containers/zendesk/useZendeskChat';
@@ -60,7 +54,11 @@ import useShowDashboard, {
     useShowGenericDashboard,
 } from '@proton/components/hooks/accounts/useShowDashboard';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
+import { useDrivePlan } from '@proton/components/hooks/drive/useDrivePlan';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
+import useRecoveryNotification from '@proton/components/hooks/useRecoveryNotification';
+import useShowThemeSelection from '@proton/components/hooks/useShowThemeSelection';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import useToggle from '@proton/hooks/useToggle';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';

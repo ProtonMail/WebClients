@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { WalletLogo } from '@proton/components';
+import WalletLogo from '@proton/components/components/logo/WalletLogo';
 import { getNUsersText } from '@proton/components/containers/payments/features/highlights';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { getNDomainsFeatureText } from '@proton/components/containers/payments/features/mail';

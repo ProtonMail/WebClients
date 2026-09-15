@@ -2,8 +2,8 @@ import type { ReactNode } from 'react';
 import { lazy } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
+import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
 import { getIsSectionAvailable } from '@proton/components/containers/layout/helper';
-import { StandardErrorPage } from '@proton/components/index';
 
 import { useAccountSettingRoutes } from './actions/account-settings/useAccountSettingRoutes';
 

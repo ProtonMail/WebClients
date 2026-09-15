@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { LoadingTextStepper } from '@proton/components';
+import LoadingTextStepper from '@proton/components/components/loader/LoadingTextStepper';
 import useInterval from '@proton/hooks/useInterval';
 
 export const FakeLoadingTextStepper = ({ steps }: { steps: string[] }) => {
