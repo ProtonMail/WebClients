@@ -1,7 +1,2 @@
-const scheduler = setTimeout;
-
-export function flushPromises() {
-    return new Promise(function (resolve) {
-        scheduler(resolve, 0);
-    });
-}
+/** @deprecated Import from '@proton/test-api/flush-promises' */
+export * from '@proton/test-api/flush-promises';

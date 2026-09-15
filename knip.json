@@ -433,6 +433,10 @@
             "ignore": ["scss/**"],
             "ignoreDependencies": ["inter-ui"]
         },
+        "packages/test-api": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"]
+        },
         "packages/testing": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"]
