@@ -118,6 +118,9 @@
       "Bulk restore items from trash": [
         "Massegjenopprett elementer fra papirkurven"
       ],
+      "Bulk select items": [
+        "Velg flere elementer"
+      ],
       "Cancel": [
         "Avbryt"
       ],
@@ -502,6 +505,9 @@
       "Move to Trash": [
         "Flytt til papirkurven"
       ],
+      "Multiple select": [
+        "Velg flere"
+      ],
       "New token": [
         "Nytt token"
       ],
@@ -871,8 +877,17 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Et e-postalias fungerer som en e-postadresse, men reduserer søppelpost og holder den faktiske e-postadressen og identiteten din skjult."
       ],
+      "Change these passwords immediately": [
+        "Endre disse passordene umiddelbart."
+      ],
       "Change your passwords": [
         "Endre passordene dine"
+      ],
+      "Check if your passwords have been exposed": [
+        "Sjekk om passordene dine har blitt eksponert"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Sjekker ${ compromised.progress.completed } av ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Opprett unike passord"
@@ -930,6 +945,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Denne kontoen er sårbar, besøk tjenesten og endre passordet ditt."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Dette innloggingspassordet har blitt eksponert i et datainnbrudd. Gå til tjenesten og bytt passord."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Denne tjenesten tilbyr 2FA. Aktiver den for ekstra kontosikkerhet."
@@ -1380,6 +1398,9 @@
       ],
       "This domain is already managed by your organization": [
         "Dette domenet administreres allerede av organisasjonen din"
+      ],
+      "This invite is no longer available": [
+        "Denne invitasjonen er ikke lenger tilgjengelig."
       ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Dette kan oppstå etter en stund hvis du ikke bruker ${ PASS_SHORT_APP_NAME } eller tømmer historikken i Safari."
@@ -1843,6 +1864,9 @@
       "Change your password": [
         "Endre passordet ditt"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Sjekker ${ compromised.progress.completed } av ${ compromised.progress.total } passord"
+      ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Velg en lagret tilgangsnøkkel for å logge på ${ domain }"
       ],
@@ -2273,6 +2297,9 @@
       ],
       "None": [
         "Ingen"
+      ],
+      "None of your saved passwords have appeared in a known data breach.": [
+        "Ingen av de lagrede passordene dine har dukket opp i et kjent datainnbrudd."
       ],
       "None selected": [
         "Ingen valgt"
@@ -2840,6 +2867,9 @@
       ],
       "Verification code sent.": [
         "Verifiseringskode sendt."
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Se ${ PASS_SHORT_APP_NAME }-elementene dine uten nett. Krever passord for å aktiveres."
       ],
       "Viewer": [
         "Leser"
@@ -4330,6 +4360,9 @@
       "Download": [
         "Last ned"
       ],
+      "Download \"${ filename }\"": [
+        "Last ned \"${ filename }\""
+      ],
       "Download file": [
         "Last ned fil"
       ],
@@ -4407,6 +4440,9 @@
       ],
       "You can attach files to items for a better organization": [
         "Du kan legge ved filer til elementer for en bedre organisering"
+      ],
+      "You may close this window after saving the file.": [
+        "Du kan lukke dette vinduet etter at du har lagret filen."
       ]
     },
     "Permission": {
@@ -4534,11 +4570,20 @@
       ]
     },
     "Result": {
+      "Enter a URL to check if it matches the current rule": [
+        "Angi en nettadresse for å sjekke om den samsvarer med gjeldende regel"
+      ],
       "This URL will be blocked from autofill": [
         "Denne nettadressen vil bli blokkert fra autofyll"
       ],
       "This URL will NOT be blocked from autofill": [
         "Denne nettadressen vil IKKE bli blokkert fra autofyll"
+      ],
+      "URL doesn't match the rule": [
+        "Nettadresse samsvarer ikke med regelen"
+      ],
+      "URL matches the rule": [
+        "Nettadresse samsvarer med regelen"
       ]
     },
     "Security Center - Info": {
@@ -4715,6 +4760,9 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME }-adresser"
       ],
+      "${ PASS_APP_NAME } Logs": [
+        "${ PASS_APP_NAME }-logger"
+      ],
       "${ PASS_APP_NAME } Settings": [
         "Innstillinger for ${ PASS_APP_NAME }"
       ],
@@ -4789,6 +4837,12 @@
       ],
       "Clear clipboard": [
         "Tøm utklippstavlen"
+      ],
+      "Compromised password": [
+        "Kompromittert passord"
+      ],
+      "Compromised passwords": [
+        "Kompromitterte passord"
       ],
       "Confirm extra password": [
         "Bekreft ekstra passord"
@@ -4877,6 +4931,9 @@
       ],
       "Email": [
         "E-post"
+      ],
+      "Enable offline mode": [
+        "Aktiverer frakoblet modus"
       ],
       "Encrypted import": [
         "Kryptert import"
@@ -5020,6 +5077,9 @@
       ],
       "No access tokens yet": [
         "Ingen tilgangstokener ennå"
+      ],
+      "No compromised passwords": [
+        "Ingen kompromitterte passord"
       ],
       "No excluded items": [
         "Ingen ekskluderte elementer"
@@ -5199,6 +5259,9 @@
       ],
       "Update available": [
         "Oppdatering tilgjengelig"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Oppgrader for å sjekke etter kompromitterte passord"
       ],
       "URL matching": [
         "URL-samsvar"
