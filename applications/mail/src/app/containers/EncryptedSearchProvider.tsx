@@ -93,12 +93,22 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     // when it changes (see `ContentSearchVersionToggle`), so this is settled for the session.
     const isV2Active = isContentSearchEnabled && searchVersion === 'v2';
 
+    const {
+        sendResultOpenedReport,
+        sendResultActionReport,
+        sendQueryCompletedReport,
+        sendMailboxIndexCompletedReport,
+    } = useContentSearchTelemetry();
+
     // No `contentIndexingSuccessMessage`: the library would announce content search when its own
     // indexing ends, which is too early for the v2 path. `useContentSearchReadyNotification` below
     // announces it from the status instead, which is correct for both.
     const esLibraryFunctionsV1 = useEncryptedSearch<ESBaseMessage, NormalizedSearchParams, ESMessageContent>({
         refreshMask: EVENT_ERRORS.MAIL,
         esCallbacks,
+        // `MetricService` already reports these for v2 — only report v1's own numbers when it's the active engine.
+        onSearchCompleted: isV2Active ? undefined : sendQueryCompletedReport,
+        onIndexCompleted: isV2Active ? undefined : sendMailboxIndexCompletedReport,
     });
 
     const esLibraryFunctionsV2 = useContentSearch({
@@ -111,7 +121,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
     const esLibraryFunctions = isV2Active ? esLibraryFunctionsV2 : esLibraryFunctionsV1;
 
-    const { sendResultOpenedReport, sendResultActionReport } = useContentSearchTelemetry();
     const reportResultOpened: typeof sendResultOpenedReport = (params) => {
         if (isV2Active) {
             esLibraryFunctionsV2.reportResultOpened(params);
