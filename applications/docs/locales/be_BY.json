@@ -93,6 +93,9 @@
       "Apply": [
         "Прымяніць"
       ],
+      "Ask me next time": [
+        "Спытаць мяне наступны раз"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "У групе кантактаў можа быць не больш за ${ maxContacts } кантакт",
         "У групе кантактаў можа быць не больш за ${ maxContacts } кантакты",
@@ -717,6 +720,9 @@
       "Save changes": [
         "Захаваць змены"
       ],
+      "Save preferences": [
+        "Захаваць параметры"
+      ],
       "Search": [
         "Пошук"
       ],
@@ -1211,7 +1217,7 @@
         "Воблачны рэдактар дакументаў"
       ],
       "Password health alerts": [
-        "Папярэджанні якасці пароля"
+        "Абвесткі якасці пароля"
       ],
       "Recover previous file versions": [
         "Аднаўленне папярэдніх версій файла"
@@ -5049,6 +5055,9 @@
       "Continue": [
         "Працягнуць"
       ],
+      "Converting document...": [
+        "Пераўтварэнне дакумента..."
+      ],
       "Copied to clipboard": [
         "Скапіявана ў буфер абмену"
       ],
@@ -5105,6 +5114,9 @@
       ],
       "Creating link to folder": [
         "Стварэнне спасылкі на папку"
+      ],
+      "Creating new document...": [
+        "Стварэнне новага дакумента..."
       ],
       "Current plan": [
         "Бягучы тарыфны план"
@@ -5420,6 +5432,9 @@
       ],
       "Low Priority": [
         "Нізкі прыярытэт"
+      ],
+      "Making a copy...": [
+        "Стварэнне копіі..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Максімум ${ MAX_SHARED_URL_PASSWORD_LENGTH } сімвал",
@@ -6692,6 +6707,9 @@
       ],
       "Your password (trusted contact)": [
         "Ваш пароль (давераны кантакт)"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Назва не паддаецца расшыфроўцы"
       ]
     },
     "Label for contact group color": {
@@ -8289,6 +8307,9 @@
       "Failed to restore document": [
         "Не ўдалося аднавіць дакумент"
       ],
+      "Failed to submit report": [
+        "Не ўдалося адправіць справаздачу"
+      ],
       "Failed to trash document": [
         "Не ўдалося перамясціць дакумент у сметніцу"
       ],
@@ -9884,6 +9905,9 @@
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "Спасылка на гэты элемент захавана ў вашым дыску. Вы зможаце атрымаць доступ да яе ў раздзеле \"Абагуленыя са мной\"."
       ],
+      "Editor permissions": [
+        "Дазволы рэдактара"
+      ],
       "To edit this document, create a copy that you can modify.": [
         "Стварыце копію для рэдагавання гэтага дакумента."
       ]
@@ -10096,7 +10120,7 @@
         "Аўтаперасылка электроннай пошты ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
+        "Абвесткі ўцечкі даных ${ strongArgument }"
       ],
       "Desktop app": [
         "Праграма для камп'ютара"
