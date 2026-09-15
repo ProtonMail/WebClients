@@ -23,6 +23,7 @@ import { listFiltersModule } from './skills/reads/listFilters';
 import { listFoldersModule } from './skills/reads/listFolders';
 import { listLabelsModule } from './skills/reads/listLabels';
 import { openFolderModule } from './skills/reads/openFolder';
+import { readComposerModule } from './skills/reads/readComposer';
 import { readEmailModule } from './skills/reads/readEmail';
 import { readOpenEmailModule } from './skills/reads/readOpenEmail';
 import { readThreadModule } from './skills/reads/readThread';
@@ -48,6 +49,7 @@ const MODULES: MailToolModule[] = [
     readEmailModule,
     readOpenEmailModule,
     readThreadModule,
+    readComposerModule,
     listFoldersModule,
     listLabelsModule,
     listFiltersModule,
