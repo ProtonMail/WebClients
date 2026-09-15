@@ -1,11 +1,12 @@
 import { IndexingJob } from './IndexingJob';
-import { fakeImportHandle, fakeIndexService, fakeV1Status, flushPromises } from './testFakes';
+import { fakeImportHandle, fakeIndexService, fakeMetricService, fakeV1Status, flushPromises } from './testFakes';
 
 const setup = (mode: 'index' | 'refresh') => {
     const importRun = fakeImportHandle();
     const job = new IndexingJob(
         {
             indexService: fakeIndexService(importRun.handle),
+            metricService: fakeMetricService(),
             initialV1Status: fakeV1Status(),
             updateESStatus: jest.fn(),
             updateESProgress: jest.fn(),
