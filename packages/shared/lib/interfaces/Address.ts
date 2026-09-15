@@ -11,8 +11,8 @@ import type { ActiveSignedKeyList, SignedKeyList } from './SignedKeyList';
 
 export enum AddressConfirmationState {
     CONFIRMATION_NOT_CONFIRMED = 0,
-    CONFIRMATION_CONFIRMED,
-    CONFIRMATION_INVALID,
+    CONFIRMATION_CONFIRMED = 1,
+    CONFIRMATION_INVALID = 2,
 }
 
 export interface Address {
