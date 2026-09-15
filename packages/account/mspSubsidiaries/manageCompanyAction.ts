@@ -55,10 +55,10 @@ export const assignMemberToCompanyThunk = ({
         let memberKeyPayload: MemberKeyPayload | null = null;
 
         if (!subsidiary.ParentOrgToken) {
-            throw new Error('Missing subsidiary organization Key');
+            throw new Error('Missing subsidiary organization key');
         }
         if (!organizationKey.privateKey) {
-            throw new Error('Missing organization Key');
+            throw new Error('Missing organization key');
         }
         const organizationKeyTokenData = await getDecryptedOrganizationKeyTokenData({
             armoredMessage: subsidiary.ParentOrgToken,
@@ -94,10 +94,10 @@ export const assignMemberToCompanyThunk = ({
                 api,
             });
         } else {
-            throw new Error('Member must be non-private');
+            throw new Error('User not available');
         }
         if (memberKeyPayload.type !== 'public') {
-            throw new Error('Member must be non-private');
+            throw new Error('User not available');
         }
         const activation = await generatePublicMemberActivation({
             data: organizationKeyTokenData,
