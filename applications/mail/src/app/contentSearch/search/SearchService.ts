@@ -1,12 +1,13 @@
 import * as Comlink from 'comlink';
 
-import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
+import type { ContentSearchEndReason, NormalizedSearchParams } from '@proton/encrypted-search/models';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { getIndexKey } from '../crypto/indexKey';
 import type { DatabaseLock } from '../db/DatabaseLock';
 import { openContentSearchDB } from '../db/open';
 import { EncryptedSearchReader } from '../import/EncryptedSearchReader';
+import type { MetricService } from '../metrics/MetricService';
 import type { Logger } from '../utils/logger';
 import { Search } from './Search';
 import type SearchWorker from './SearchWorker';
@@ -19,7 +20,8 @@ export class SearchService {
         private readonly userId: string,
         private readonly getUserKeys: () => Promise<DecryptedKey[]>,
         private readonly dbLock: DatabaseLock,
-        private readonly logger: Logger
+        private readonly logger: Logger,
+        private readonly metricService: MetricService
     ) {}
 
     /**
@@ -36,7 +38,32 @@ export class SearchService {
             EncryptedSearchReader.open(this.userId, await this.getUserKeys())
         );
         search.start();
+        this.metricService.startSearchSession();
+
+        void search.done.then((outcome) => {
+            if (outcome !== 'completed') {
+                return;
+            }
+            const resultCount = search.results?.length ?? 0;
+            this.metricService.sendQueryCompletedReport({
+                hasResults: resultCount > 0,
+                status: 'success',
+                resultCount,
+            });
+        });
         return search;
+    }
+
+    /** Ends the current session for a reason that isn't a new query — see `search()` for `'newSearch'`. */
+    endSession(reason: ContentSearchEndReason) {
+        this.metricService.endSearchSession(reason);
+    }
+
+    reportResultOpened(...args: Parameters<MetricService['sendResultOpenedReport']>) {
+        this.metricService.sendResultOpenedReport(...args);
+    }
+    reportResultAction(...args: Parameters<MetricService['sendResultActionReport']>) {
+        this.metricService.sendResultActionReport(...args);
     }
 
     private getWorker(): Promise<Comlink.Remote<SearchWorker> | undefined> {

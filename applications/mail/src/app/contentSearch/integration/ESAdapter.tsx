@@ -181,22 +181,17 @@ export class ESAdapter implements FunctionsV2 {
 
     /** Forwards a search-result open to the v2 metrics pipeline; see `EncryptedSearchProvider.reportResultOpened`. */
     reportResultOpened(...args: Parameters<MetricService['sendResultOpenedReport']>) {
-        this.metricService.sendResultOpenedReport(...args);
+        this.searchService.reportResultOpened(...args);
     }
 
     /** Forwards a search-result action to the v2 metrics pipeline; see `EncryptedSearchProvider.reportResultAction`. */
     reportResultAction(...args: Parameters<MetricService['sendResultActionReport']>) {
-        this.metricService.sendResultActionReport(...args);
-    }
-
-    /** v2 counterpart of `startSearchSession`; see `EncryptedSearchProvider.startSearchSession`. */
-    startSearchSession() {
-        this.metricService.startSearchSession();
+        this.searchService.reportResultAction(...args);
     }
 
     /** v2 counterpart of `endSearchSession`; see `EncryptedSearchProvider.endSearchSession`. */
     endSearchSession(endReason: ContentSearchEndReason) {
-        this.metricService.endSearchSession(endReason);
+        this.searchService.endSession(endReason);
     }
 
     async encryptedSearch(setResultsList: ESSetResultsList<ESBaseMessage, ESMessageContent>) {
@@ -220,7 +215,6 @@ export class ESAdapter implements FunctionsV2 {
         } else {
             this.lastSearch?.dispose();
             this.coalescedResults?.cancel();
-            const searchStartedAt = Date.now();
             this.lastSearch = this.searchService.search(esSearchParams);
             // Content search streams a full snapshot per bucket; coalesce those to one dispatch per
             // frame so a large query doesn't flood the store with hundreds of synchronous updates.
@@ -240,15 +234,6 @@ export class ESAdapter implements FunctionsV2 {
                 this.lastSearch = undefined;
                 this.coalescedResults?.cancel();
                 return false;
-            }
-            if (outcome === 'completed') {
-                const resultCount = this.lastSearch.results?.length ?? 0;
-                this.metricService.sendQueryCompletedReport({
-                    hasResults: resultCount > 0,
-                    status: 'success',
-                    resultCount,
-                    durationMs: Date.now() - searchStartedAt,
-                });
             }
         }
         return true;

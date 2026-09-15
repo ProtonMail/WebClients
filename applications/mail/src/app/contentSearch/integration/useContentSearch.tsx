@@ -31,12 +31,11 @@ export type FunctionsV2 = Omit<FunctionsV1, 'esStatus' | 'esIndexingProgressStat
     /** v2-only: not part of the generic `EncryptedSearchFunctions` surface v1 also implements. */
     reportResultOpened: ESAdapter['reportResultOpened'];
     reportResultAction: ESAdapter['reportResultAction'];
-    startSearchSession: ESAdapter['startSearchSession'];
     endSearchSession: ESAdapter['endSearchSession'];
 };
 /** `useContentSearch`'s return type: the generic v1 surface plus the v2-only additions above. */
 export type ContentSearchFunctions = FunctionsV1 &
-    Pick<FunctionsV2, 'reportResultOpened' | 'reportResultAction' | 'startSearchSession' | 'endSearchSession'>;
+    Pick<FunctionsV2, 'reportResultOpened' | 'reportResultAction' | 'endSearchSession'>;
 
 interface Props {
     refreshMask: number;
@@ -82,7 +81,6 @@ const toBoundFunctions = (adapter: ESAdapter): FunctionsV2 => ({
     resetCache: adapter.resetCache.bind(adapter),
     reportResultOpened: adapter.reportResultOpened.bind(adapter),
     reportResultAction: adapter.reportResultAction.bind(adapter),
-    startSearchSession: adapter.startSearchSession.bind(adapter),
     endSearchSession: adapter.endSearchSession.bind(adapter),
 });
 
@@ -118,8 +116,8 @@ export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1, isActive }
     const adapterRef = useRef<ESAdapter>();
     if (!adapterRef.current) {
         const indexService = getSharedIndexService(user.ID, getUserKeys, logger);
-        const searchService = new SearchService(user.ID, getUserKeys, indexService.dbLock, logger);
         const metricService = new MetricService(api, logger);
+        const searchService = new SearchService(user.ID, getUserKeys, indexService.dbLock, logger, metricService);
 
         adapterRef.current = new ESAdapter({
             searchService,
