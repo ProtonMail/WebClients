@@ -1,4 +1,4 @@
-import { addApiMock, addApiResolver } from '@proton/testing/lib/api';
+import { addApiMock, addApiResolver } from '@proton/test-api/api';
 import lastItem from '@proton/utils/lastItem';
 
 import { createToken } from '../core/api/api';
