@@ -6,7 +6,7 @@ import { getOrganizationDenomination } from '@proton/shared/lib/organization/hel
  * Which segment a user belongs to for password check-in purposes.
  *
  * This is the single source of truth for the segmentation: it decides both which
- * feature gate applies (see `getIsPasswordReminderAvailable`) and which segment
+ * eligibility rule applies (see `getIsPasswordReminderAvailable`) and which segment
  * the telemetry events are attributed to, so the two can never disagree.
  */
 export type PasswordReminderAccountType = 'individual' | 'organization' | 'family';
