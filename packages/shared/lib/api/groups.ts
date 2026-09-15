@@ -30,6 +30,11 @@ export const deleteGroup = (groupID: string) => ({
     url: `core/v4/groups/${groupID}`,
 });
 
+export const getGroups = () => ({
+    method: 'get',
+    url: 'core/v4/groups',
+});
+
 export const getGroup = (groupID: string) => ({
     method: 'get',
     url: `core/v4/groups/${groupID}`,

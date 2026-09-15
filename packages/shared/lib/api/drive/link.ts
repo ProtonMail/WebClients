@@ -83,3 +83,16 @@ export const queryUserLinkAccess = ({
         LinkID: linkId,
     },
 });
+
+export const queryPublicDeleteChildrenLinks = (
+    token: string,
+    parentLinkId: string,
+    links: {
+        LinkID: string;
+        AuthorizationToken?: string;
+    }[]
+) => ({
+    method: 'post',
+    url: `drive/urls/${token}/folders/${parentLinkId}/delete_multiple`,
+    data: { Links: links },
+});

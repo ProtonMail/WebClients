@@ -80,6 +80,14 @@ function getAddressKeysMigration(data: {
     userKey: PrivateKeyReference;
     keyTransparencyVerify: KeyTransparencyVerify;
     keyMigrationKTVerifier: KeyMigrationKTVerifier;
+    organizationKey: PrivateKeyReference;
+}): Promise<AddressKeyMigrationValue<MigrateMemberAddressKeyPayload>[]>;
+function getAddressKeysMigration(data: {
+    api: Api;
+    addressesKeys: AddressesKeys[];
+    userKey: PrivateKeyReference;
+    keyTransparencyVerify: KeyTransparencyVerify;
+    keyMigrationKTVerifier: KeyMigrationKTVerifier;
     organizationKey?: PrivateKeyReference;
 }): Promise<AddressKeyMigrationValue<MigrateAddressKeyPayload>[]>;
 

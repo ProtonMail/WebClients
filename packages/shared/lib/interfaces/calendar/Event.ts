@@ -31,6 +31,11 @@ export interface CalendarEventData {
     Author: string;
 }
 
+export interface PartstatData {
+    Status: ICAL_ATTENDEE_STATUS;
+    Comment?: string;
+}
+
 export interface AttendeeComment {
     /** either encrypted or cleartext comment, based on `Type` */
     Message: string;

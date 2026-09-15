@@ -4,7 +4,7 @@ import type { ApiResponse } from '..';
 import type { CALENDAR_FLAGS } from '../../calendar/constants';
 
 export enum CalendarKeyFlags {
-    // INACTIVE = 0,
+    INACTIVE = 0,
     ACTIVE = 1,
     PRIMARY = 2,
 }
