@@ -90,6 +90,9 @@
       "Add group": [
         "Legg til gruppe"
       ],
+      "Add more details": [
+        "Legg til flere detaljer"
+      ],
       "Add new group": [
         "Legg til ny gruppe"
       ],
@@ -1096,6 +1099,9 @@
       "Preview contact": [
         "Forhåndsvis kontakt"
       ],
+      "Preview logs": [
+        "Forhåndsvis logger"
+      ],
       "Previous": [
         "Forrige"
       ],
@@ -1547,7 +1553,8 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarer nøkkel"
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -4757,6 +4764,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } er ditt brukernavn. For å opprette ${ emailAddress }, gå til Innstillinger > Identitet og adresser > Kort domene (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "En kontakt med denne e-postadressen finnes allerede"
+      ],
       "A group with this name already exists": [
         "En gruppe med dette navnet eksisterer allerede."
       ],
@@ -6164,6 +6174,12 @@
       ],
       "Security key": [
         "Sikkerhetsnøkkel"
+      ],
+      "Still waiting?": [
+        "Venter du fremdeles?"
+      ],
+      "Touch your security key to continue.": [
+        "Berør sikkerhetsnøkkelen for å fortsette."
       ]
     },
     "fido2: Label": {
@@ -7122,7 +7138,7 @@
         "${ groupCounts } grupper funnet"
       ],
       "${ IDEAL_WERO_BRAND_NAME } mark": [
-        "${ IDEAL_WERO_BRAND_NAME } merket"
+        "${ IDEAL_WERO_BRAND_NAME }-logo"
       ],
       "${ issues.length } issue during import:": [
         "${ issues.length } problem under importen:",
@@ -7133,6 +7149,9 @@
       ],
       "${ LUMO_APP_NAME } includes the writing assistant": [
         "${ LUMO_APP_NAME } inkluderer Scribe-skriveassistenten."
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } har tatt ${ count } så langt. Fortsette?"
       ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
         "${ LUMO_SHORT_APP_NAME } hjelper deg med å lage bedre e-poster raskt og enkelt."
@@ -7237,6 +7256,10 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etikett valgt",
         "${ selectedFoldersCountLocalized } etiketter valgt"
+      ],
+      "${ steps } step": [
+        "${ steps } trinn",
+        "${ steps } trinn"
       ],
       "${ storage } storage": [
         "${ storage } lagringsplass"
@@ -7376,8 +7399,17 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
       ],
+      "Add ${ contact } to your contacts": [
+        "Legg til ${ contact } i kontaktene dine"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Legg til ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Add a contact": [
+        "Legg til en kontakt"
+      ],
+      "Add contact": [
+        "Legg til kontakt"
       ],
       "Add image URL": [
         "Legg til bildenettadresse"
@@ -7598,11 +7630,26 @@
       "Center": [
         "Midtstill"
       ],
+      "Change a display setting": [
+        "Endre en visningsinnstilling"
+      ],
       "Change display setting": [
         "Endre visningsinnstilling"
       ],
+      "Change how your mail is grouped": [
+        "Endre hvordan e-posten din grupperes"
+      ],
+      "Change your list density": [
+        "Endre listetettheten"
+      ],
+      "Change your mailbox layout": [
+        "Endre postkasseoppsettet"
+      ],
       "Change your password": [
         "Endre passordet ditt"
+      ],
+      "Change your theme": [
+        "Endre temaet"
       ],
       "Checked Proton support": [
         "Sjekket brukerstøtten til Proton"
@@ -7677,8 +7724,17 @@
         "Opprett ${ calendarsToBeCreatedCount } ny kalender",
         "Opprett ${ calendarsToBeCreatedCount } nye kalendere"
       ],
+      "Create a filter": [
+        "Opprett et filter"
+      ],
+      "Create a folder": [
+        "Opprett en mappe"
+      ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "Opprett en mappe som \"${ suggestedFolderName }\" for å holde alle dine nettkvitteringer på ett sted."
+      ],
+      "Create a label": [
+        "Opprett en etikett"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Opprett en etikett for de importerte meldingene, et tidsintervall for denne importen og mappene du vil importere."
@@ -7783,6 +7839,12 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Vil du signere kontaktinformasjonen på nytt?"
+      ],
+      "Document in foundation-search index": [
+        "Dokument i Foundation-søkeindeksen"
+      ],
+      "Document lookup failed": [
+        "Dokumentoppslag mislyktes"
       ],
       "Don't forget to share the password with the recipient": [
         "Ikke glem å dele passordet med mottakeren."
@@ -8164,8 +8226,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8208,6 +8269,12 @@
       ],
       "Key fingerprint": [
         "Nøkkelfingeravtrykk"
+      ],
+      "Label ${ emails }": [
+        "Merk ${ emails }"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "Merk ${ emails } som ${ names }"
       ],
       "Label all imported messages as": [
         "Merk alle importerte meldinger som"
@@ -8254,6 +8321,12 @@
       "Loading...": [
         "Laster..."
       ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Logger hjelper oss å forstå hva som skjedde før problemet oppstod. De inkluderer apphandlinger og feilmeldinger, men ikke noe meldingsinnhold."
+      ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Oppslag av dokument ${ lookup.result.docId }"
+      ],
       "Low Priority": [
         "Lav prioritet"
       ],
@@ -8266,6 +8339,12 @@
       "Manage your labels": [
         "Administrer etikettene dine"
       ],
+      "Mark ${ emails } as read": [
+        "Merk ${ emails } som lest"
+      ],
+      "Mark ${ emails } as unread": [
+        "Merk ${ emails } som ulest"
+      ],
       "Mark all as read": [
         "Merk alle som lest"
       ],
@@ -8277,6 +8356,12 @@
       ],
       "Mark as unread": [
         "Merk som ulest"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "Merk hele ${ place } som lest"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "Merk hele ${ place } som ulest"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -8350,6 +8435,12 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De fleste offentlige WiFi-nettverk er trygge, men noen mangler sikkerhet, noe som utsetter deg for cybertrusler. Et VPN krypterer trafikken din og holder deg beskyttet."
       ],
+      "Move ${ emails }": [
+        "Flytt ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Flytt ${ emails } til ${ destination }"
+      ],
       "Move emails": [
         "Flytt e-poster"
       ],
@@ -8389,6 +8480,9 @@
       "No email open": [
         "Ingen e-post er åpen"
       ],
+      "No emails selected": [
+        "Ingen e-poster er valgt"
+      ],
       "No folder found": [
         "Ingen mappe funnet"
       ],
@@ -8406,6 +8500,9 @@
       ],
       "No links cleaned": [
         "Ingen koblinger renset"
+      ],
+      "No location selected": [
+        "Sted ikke valgt"
       ],
       "No messages to show": [
         "Ingen meldinger å vise"
@@ -8444,7 +8541,7 @@
         "Finnes ikke i den krypterte søkeindeksen."
       ],
       "Not found in the foundation-search index.": [
-        "Ikke funnet i stiftelsesøkindeksen."
+        "Ikke funnet i foundation-search-indeksen."
       ],
       "Not supported by this browser": [
         "Ikke støttet i denne nettleseren"
@@ -8652,40 +8749,40 @@
         "Ta kontakt med oss for å få hjelp med hva som helst ${ BRAND_NAME }."
       ],
       "Read ${ count } email": [
-        "Merk ${ count } e-post som lest",
-        "Merk ${ count } e-poster som lest"
+        "Lese ${ count } e-post",
+        "Lese ${ count } e-poster"
       ],
       "Read ${ count } email on screen": [
         "Les ${ count } e-post på skjermen",
         "Les ${ count } e-poster på skjermen"
       ],
       "Read ${ count } message in this thread": [
-        "Merk ${ count } melding som lest i denne tråden",
-        "Merk ${ count } meldinger som lest i denne tråden"
+        "Lese ${ count } meldig in denne tråden",
+        "Lese ${ count } meldiger in denne tråden"
       ],
       "Read open email “${ subject }”": [
         "Les åpen e-post \"${ subject }\""
       ],
       "Read your ${ count } filter": [
-        "Merk ${ count } filter som lest",
-        "Merk ${ count } filtre som lest"
+        "Lese ${ count } filter",
+        "Lese ${ count } filtre"
       ],
       "Read your ${ count } folder": [
-        "Merk ${ count } mappe som lest",
-        "Merk ${ count } mapper som lest"
+        "Lese ${ count } mappe",
+        "Lese ${ count } mapper"
       ],
       "Read your ${ count } label": [
-        "Merk ${ count } etikett som lest",
-        "Merk ${ count } etiketter som lest"
+        "Lese ${ count } etikett",
+        "Lese ${ count } etiketter"
       ],
       "Read your auto-reply": [
-        "Les det automatiske svaret"
+        "Lese det automatiske svaret"
       ],
       "Read your display settings": [
-        "Leste visningsinnstillingene"
+        "Lese visningsinnstillingene"
       ],
       "Read your signature": [
-        "Leste signaturen din"
+        "Lese signaturen"
       ],
       "Recipient: ": [
         "Mottaker: "
@@ -8708,11 +8805,20 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Husk å oppdatere dette i passordbehandleren eller der du oppbevarer konto- og påloggingsinformasjonen din."
       ],
+      "Remove the star from ${ emails }": [
+        "Fjerne stjernemerking fra ${ emails }"
+      ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Fjerner alle data knyttet til denne appen (inkludert nedlastede meldinger, …)"
       ],
+      "Rename ${ folder } to…": [
+        "Endre navnet på mappen ${ folder } til..."
+      ],
       "Rename folder": [
         "Endre mappenavn"
+      ],
+      "Rename this folder": [
+        "Gi nytt navn til denne mappen"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Hvis du rapporterer en melding som et forsøk på nettfisking, sendes meldingen til oss, slik at vi kan analysere den og forbedre filtrene våre. Dette betyr at vi vil kunne se innholdet i meldingen i sin helhet."
@@ -8724,10 +8830,10 @@
         "Gjenopprett"
       ],
       "Results came from the local search.": [
-        "Resultatene kom fra det lokale søket."
+        "Treffene kom fra det lokale søket."
       ],
       "Results came from the server.": [
-        "Resultatene kom fra serveren."
+        "Treffene kom fra serveren."
       ],
       "Right to Left": [
         "Høyre til venstre"
@@ -8784,7 +8890,7 @@
         "Søkte på nettet"
       ],
       "Searched your mail": [
-        "Søkte i e-posten din"
+        "Søke i e-posten"
       ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "Sikre filene dine med gratis kryptert skylagring i dag."
@@ -8853,6 +8959,9 @@
       "Set up your organization": [
         "Konfigurer organisasjonen din"
       ],
+      "Set your signature": [
+        "Angi signaturen"
+      ],
       "Setting up ${ feature }…": [
         "Konfigurerer ${ feature }…"
       ],
@@ -8903,6 +9012,9 @@
       ],
       "Source document in encrypted search index": [
         "Kildedokument i kryptert søkeindeks"
+      ],
+      "Star ${ emails }": [
+        "Stjernemerk ${ emails }"
       ],
       "Star emails": [
         "Stjernemerk e-poster"
@@ -9292,8 +9404,14 @@
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "Slå av for å søke bare etter dato, navn, e-postadresse eller emnelinje. For å deaktivere søkemeldingsinnhold (og slette meldinger som er lastet ned for å aktivere denne funksjonen), gå til innstillinger."
       ],
+      "Turn off your away message": [
+        "Slå av fraværsmeldingen"
+      ],
       "Turn on to search the content of your messages": [
         "Slå på for å søke etter innhold i meldingene dine"
+      ],
+      "Turn on your away message": [
+        "Slå på fraværsmelding"
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "Kan ikke få tilgang til lagringsfunksjoner i denne nettleseren, vi trenger denne tilgangen for å aktivere søk etter meldingsinnhold."
@@ -9321,6 +9439,12 @@
       ],
       "Update filter": [
         "Oppdater filter"
+      ],
+      "Update the filter ${ filter }": [
+        "Oppdatere filteret ${ filter }"
+      ],
+      "Update this filter": [
+        "Oppdatere dette filteret"
       ],
       "Updating message content search...": [
         "Oppdaterer meldingsinnholdssøk..."
@@ -10144,6 +10268,9 @@
       "${ count } unread message": [
         "${ count } ulest melding",
         "${ count } uleste meldinger"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tegn"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
@@ -11268,7 +11395,7 @@
         "Legg til gavekode"
       ],
       "Add formatting, links or images": [
-        "Legg til formatering, koblinger eller bilder"
+        "Legge til formatering, koblinger eller bilder"
       ],
       "Advanced auto-reply options": [
         "Avanserte alternativer for automatisk svar"
@@ -14358,7 +14485,7 @@
     },
     "q3campaign2026: Info, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "q3campaign2026: Info, Family, Drive first": {
@@ -14520,6 +14647,9 @@
       ]
     },
     "Role": {
+      "Organization Admin": [
+        "Organisasjonsadministrator"
+      ],
       "Security Admin": [
         "Sikkerhetsadministrator"
       ],
@@ -14975,6 +15105,12 @@
       "${ count } email → ${ wakeTime }": [
         "${ count } e-post → ${ wakeTime }",
         "${ count } e-poster → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "Utsett ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "Utsett ${ emails } til ${ wakeTime }"
       ]
     },
     "Snooze message": {

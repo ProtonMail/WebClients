@@ -2936,6 +2936,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name }이(가) 회원님의 사용자 이름입니다. ${ emailAddress }를 생성하려면, 설정 > 신원 및 주소 > 짧은 도메인 (pm.me)로 이동하세요."
       ],
+      "A contact with this email address already exists": [
+        "해당 이메일 주소와 중복된 연락처가 이미 존재합니다."
+      ],
       "A group with this name already exists": [
         "이 이름을 가진 그룹이 이미 있습니다"
       ],
@@ -4128,6 +4131,12 @@
       ],
       "Security key": [
         "보안 키"
+      ],
+      "Still waiting?": [
+        "아직 대기 중인가요?"
+      ],
+      "Touch your security key to continue.": [
+        "계속하려면 보안 키를 터치하세요."
       ]
     },
     "fido2: Label": {
@@ -5749,7 +5758,7 @@
         "주"
       ],
       "What do you want to do?": [
-        "무엇을 시도하시겠습니까?"
+        "어떤 작업을 수행하시겠습니까?"
       ],
       "When the dialog opens, change the \"Destination\" to \"Save as PDF\", then press Save.": [
         "대화창이 열리면, \"경로\" 를 \"PDF로 저장\"으로 변경하신 후 저장을 누르세요."
@@ -5854,7 +5863,7 @@
         "뷰어에 대한 접근 권한을 변경한 후에는 \"${ fileName }\"(을)를 공유할 수 없습니다. 소유자 또는 공유 권한이 있는 편집자는 나의 편집 권한을 복원할 수 있습니다. 이 변경을 직접 되돌릴 수 없습니다."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
-        "친구가 연간 플랜을 구독하고 1개월 후, 월간 요금제에 구독하고 2개월 후에 크레딧 보상을 받게 됩니다."
+        "친구가 연간 플랜을 구독하고 1개월 후, 월간 플랜 구독 2개월 후에 크레딧 보상을 받게 됩니다."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "매 ${ renewCycle }개월마다 ${ renewAmountStr }(으)로 청구됩니다. 언제든지 취소할 수 있습니다."
@@ -7393,7 +7402,7 @@
         "1개 커스텀 이메일 도메인"
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain2 } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
+        "쇼핑 계정의 경우 honggildong@${ domain }, 뉴스 구독의 경우 honggildong@${ domain2 } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, 그리고 ${ DRIVE_APP_NAME } 에 스토리지 공간이 공유됩니다."
@@ -7559,7 +7568,7 @@
         "최대 ${ n }개 캘린더를 생성하거나 친구, 가족, 동료 및 조직에서 생성하세요."
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "가족 구성원에게 할당할 수 있는 이메일 주소/별칭을 ${ n }개까지 생성할 수 있습니다. 온라인 신원으로 사용할 수 있고, 쇼핑 계정으로 홍쇼핑@${ domain }을(를) 사용하는 것을 예로 들 수 있습니다."
+        "가족 구성원에게 할당할 수 있는 이메일 주소/별칭을 ${ n }개까지 생성할 수 있습니다. 온라인 신원으로 사용할 수 있고, 쇼핑 계정으로 HongShopper@${ domain }을(를) 사용하는 것을 예로 들 수 있습니다."
       ],
       "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
         "별칭을 위한 커스텀 도메인, 추가 메일함, 별칭으로부터의 이메일 전송 기능 등"

@@ -90,6 +90,9 @@
       "Add group": [
         "Lägg till grupp"
       ],
+      "Add more details": [
+        "Lägg till fler detaljer"
+      ],
       "Add new group": [
         "Lägg till ny grupp"
       ],
@@ -1544,7 +1547,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -7192,6 +7196,10 @@
         "${ selectedFoldersCountLocalized } etikett vald",
         "${ selectedFoldersCountLocalized } etiketter valda"
       ],
+      "${ steps } step": [
+        "${ steps } steg",
+        "${ steps } steg"
+      ],
       "${ storage } storage": [
         "${ storage } lagringsutrymme"
       ],
@@ -7329,6 +7337,12 @@
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Lägg till ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Add a contact": [
+        "Lägg till en kontakt"
+      ],
+      "Add contact": [
+        "Lägg till kontakt"
       ],
       "Add image URL": [
         "Lägga till bild-URL"
@@ -7555,6 +7569,9 @@
       "Change your password": [
         "Ändra ditt lösenord"
       ],
+      "Change your theme": [
+        "Ändra ditt tema"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kontrollerar kontakt ${ progress } av ${ max }..."
       ],
@@ -7625,8 +7642,17 @@
         "Skapa ${ calendarsToBeCreatedCount } ny kalender",
         "Skapa ${ calendarsToBeCreatedCount } nya kalendrar"
       ],
+      "Create a filter": [
+        "Skapa ett filter"
+      ],
+      "Create a folder": [
+        "Skapa en mapp"
+      ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "Skapa en mapp som t.ex. “${ suggestedFolderName }“ för att hålla alla dina onlinekvitton på ett ställe."
+      ],
+      "Create a label": [
+        "Skapa en etikett"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Skapa en etikett för de importerade meddelandena, ett tidsintervall för denna import och de mappar du vill importera."
@@ -8106,8 +8132,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8150,6 +8175,9 @@
       ],
       "Key fingerprint": [
         "Nyckelfingeravtryck"
+      ],
+      "Label ${ emails }": [
+        "Etikett ${ emails }"
       ],
       "Label all imported messages as": [
         "Märk alla importerade meddelanden som"
@@ -8295,6 +8323,9 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De flesta offentliga WiFi-nätverk är säkra, men vissa saknar säkerhet, vilket gör att du utsätts för cyberhot. Ett VPN krypterar din trafik och håller dig skyddad."
       ],
+      "Move ${ emails }": [
+        "Flytta ${ emails }"
+      ],
       "Move emails": [
         "Flytta e-post"
       ],
@@ -8351,6 +8382,9 @@
       ],
       "No links cleaned": [
         "Inga länkar rensade"
+      ],
+      "No location selected": [
+        "Ingen plats vald"
       ],
       "No messages to show": [
         "Inga meddelanden att visa"
@@ -8644,6 +8678,9 @@
       "Rename folder": [
         "Byt namn på mapp"
       ],
+      "Rename this folder": [
+        "Byt namn på denna mapp"
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Att rapportera ett meddelande som ett nätfiskeförsök kommer skicka meddelandet till oss så att vi kan analysera det och förbättra våra filter. Detta innebär att vi kommer kunna se innehållet i meddelandet i sin helhet."
       ],
@@ -8770,6 +8807,9 @@
       ],
       "Set up your organization": [
         "Ställ in din organisation"
+      ],
+      "Set your signature": [
+        "Ställ in din signatur"
       ],
       "Setting up ${ feature }…": [
         "Ställer in ${ feature }…"
@@ -9227,6 +9267,12 @@
       ],
       "Update filter": [
         "Uppdatera filter"
+      ],
+      "Update the filter ${ filter }": [
+        "Uppdatera filtret ${ filter }"
+      ],
+      "Update this filter": [
+        "Uppdatera detta filter"
       ],
       "Updating message content search...": [
         "Uppdaterar sökning av meddelandeinnehåll …"
@@ -14823,6 +14869,11 @@
       ],
       "Private, fast, and organized": [
         "Privat, snabbt och organiserat"
+      ]
+    },
+    "Snooze info": {
+      "Snooze ${ emails }": [
+        "Snooza ${ emails }"
       ]
     },
     "Snooze message": {

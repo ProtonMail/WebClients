@@ -8973,8 +8973,14 @@
       "Security key updated": [
         "安全密钥信息已更新"
       ],
+      "Still waiting?": [
+        "仍在等待？"
+      ],
       "This will delete all security keys linked to your account.": [
         "此操作将删除您的账户关联的所有安全密钥。"
+      ],
+      "Touch your security key to continue.": [
+        "触摸您的安全密钥以继续。"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "使用 U2F 或 FIDO2 物理安全密钥验证身份"
@@ -27893,6 +27899,9 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail会自动对某些电子邮件（如社交或促销）进行分类。 您可以选择这些电子邮件导入的位置。"
       ],
+      "Grant access to your ${ providerName } account to start a migration": [
+        "授予对您的 ${ providerName } 账户的访问权限以开始迁移"
+      ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "将收件箱中同一主题的往来邮件合并显示。"
       ],
@@ -27910,6 +27919,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "包含 @yourdomain.com 的专业邮箱、带有协作文档编辑功能的云存储、日程安排和视频会议、密码管理、安全的 ${ VPN_SHORT_APP_NAME } 等。"
+      ],
+      "Install the migration app in your ${ providerName } account to start a migration": [
+        "在您的 ${ providerName } 账户中安装迁移应用以开始迁移"
       ],
       "Instant AI assistance, human expert on hand!": [
         "获取 AI 和人工专家的即时协助！"

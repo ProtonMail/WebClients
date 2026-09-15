@@ -54,6 +54,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } जोड़ें"
       ],
+      "Add a payment method": [
+        "भुगतान तरीका जोड़ें"
+      ],
       "Add account": [
         "खाता जोड़ें"
       ],
@@ -86,6 +89,9 @@
       ],
       "Add group": [
         "ग्रुप जोड़ें"
+      ],
+      "Add more details": [
+        "और जानकारी जोड़ें"
       ],
       "Add new group": [
         "नया ग्रुप जोड़ें"
@@ -232,6 +238,9 @@
       "Clear browser data": [
         "ब्राउज़र डेटा साफ़ करें"
       ],
+      "Clear conversation": [
+        "बातचीत हटाएं"
+      ],
       "Clear data": [
         "डाटा साफ करें"
       ],
@@ -336,6 +345,9 @@
       ],
       "Copy alias “${ name }”": [
         "नकली-नाम “${ name }” कॉपी करें"
+      ],
+      "Copy debug transcript": [
+        "डीबग ट्रांसक्रिप्ट कॉपी करें"
       ],
       "Copy email to clipboard": [
         "ईमेल क्लिपबोर्ड पे कॉपी करें"
@@ -624,6 +636,9 @@
       "Get in touch": [
         "हमसे संपर्क करें"
       ],
+      "Get index size on disk": [
+        "डिस्क पे इंडेक्स साइज़ लें"
+      ],
       "Get started": [
         "शुरू करें"
       ],
@@ -784,6 +799,9 @@
       "Join with ${ MEET_APP_NAME }": [
         "${ MEET_APP_NAME } के साथ शामिल हों"
       ],
+      "Keep going": [
+        "जारी रखें"
+      ],
       "Keep inbox as before": [
         "इंबॉक्स को पहले जैसा ही रखें"
       ],
@@ -828,6 +846,9 @@
       ],
       "Loading${ ellipsis }": [
         "${ ellipsis } लोड हो रहा है"
+      ],
+      "Lookup document": [
+        "दस्तावेज़ खोजें"
       ],
       "Make ${ MAIL_APP_NAME } your default email application": [
         "${ MAIL_APP_NAME } को अपना डिफॉल्ट ईमेल एप्लीकेशन बनाएं"
@@ -897,6 +918,9 @@
       ],
       "Messages to this recipient": [
         "इस प्राप्तकर्ता को संदेश"
+      ],
+      "Migrate": [
+        "माइग्रेट करें"
       ],
       "Minimize composer": [
         "कंपोजर को छोटा करें"
@@ -1039,6 +1063,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } सेटिंग खोलें"
       ],
+      "Open debug menu": [
+        "डीबग मेनू खोलें"
+      ],
       "Open navigation": [
         "नेविगेशन खोलें"
       ],
@@ -1071,6 +1098,9 @@
       ],
       "Preview contact": [
         "संपर्क प्रिव्यू करें"
+      ],
+      "Preview logs": [
+        "लॉग का प्रीव्यू देखें"
       ],
       "Previous": [
         "पिछला"
@@ -1227,6 +1257,9 @@
       ],
       "Run on ${ BRAND_NAME } servers": [
         "${ BRAND_NAME } सर्वरों पर चलाएँ"
+      ],
+      "Run realistic session": [
+        "रियलिस्टिक सत्र चलाएं"
       ],
       "Save": [
         "सेव करें"
@@ -1441,11 +1474,17 @@
       "Stay": [
         "रुकें"
       ],
+      "Stop": [
+        "रोकें"
+      ],
       "Stop downloading assistant": [
         "असिस्टेंट को डाउनलोड करना बंद करें"
       ],
       "Stop generating result": [
         "परिणाम जेनरेट करना बंद करें"
+      ],
+      "Stop here": [
+        "यहीं रोकें"
       ],
       "Stop marking as read": [
         "पढ़े गए के रूप में मार्क करना बंद करें"
@@ -1483,6 +1522,9 @@
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "आपके ईमेल को सुरक्षित रूप से खोजने के लिए, हमें आपके ईमेल की एक कॉपी आपके ब्राउज़र पर डाउनलोड करनी होगी। आरंभिक डाउनलोड में कुछ समय लग सकता है।"
       ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } टॉगल करें"
+      ],
       "Toggle Calendar app": [
         "कैलेंडर ऐप बदलें"
       ],
@@ -1509,6 +1551,10 @@
       ],
       "Trust": [
         "भरोसा करें"
+      ],
+      "Trust key": [
+        "ट्रस्ट की",
+        "ट्रस्ट कीज़"
       ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
@@ -1645,6 +1691,9 @@
       "View contact details": [
         "संपर्क विवरण देखें"
       ],
+      "View guide": [
+        "गाइड देखें"
+      ],
       "View headers": [
         "हैडर देखें"
       ],
@@ -1672,6 +1721,9 @@
       "Why not?": [
         "क्यों नहीं?"
       ],
+      "Write ${ count } logs": [
+        "${ count } लॉग राइट करें"
+      ],
       "Write for me": [
         "मेरे लिए लिखें"
       ],
@@ -1680,6 +1732,9 @@
       ],
       "Yes, I'll attend": [
         "हां, हम भाग लेंगे"
+      ],
+      "Yes, organize it": [
+        "हां, इसे व्यवस्थित करें"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "आप ${ maxAttachments } से अधिक संपर्क की vCard फ़ाइलें नहीं भेज सकते",
@@ -1789,6 +1844,10 @@
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } सीटें"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "${ LUMO_SHORT_APP_NAME } लेखन सहायक (${ quantity } उपयोगकर्ता के लिए)",
+        "${ LUMO_SHORT_APP_NAME } लेखन सहायक (${ quantity } उपयोगकर्ताओं के लिए)"
       ],
       "${ price } per dedicated server": [
         "${ price } प्रति समर्पित सर्वर"
@@ -1943,6 +2002,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "ईमेल उत्पादकता को नई ऊंचाइयों पर ले जाएं। अपने ईमेल लिखने, जवाब देने और प्रूफरीड करने में ${ BRAND_NAME } Scribe की मदद लें।"
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "ईमेल प्रोडक्टिविटी को नए स्तर तक ले जाएं। ${ LUMO_SHORT_APP_NAME } से अपने ईमेल लिखने, उन्हें जवाब देने और प्रूफरीड करने में मदद लें।"
       ]
     },
     "Attached ics file error": {
@@ -1991,6 +2053,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "आप ट्रायल अवधि के दौरान ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } सीटें रख सकते हैं।"
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "ट्रायल अवधि के दौरान आपके पास ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } लेखन सहायक सीट तक हो सकती हैं।"
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "आप ट्रायल अवधि के दौरान ${ TRIAL_MAX_SCRIBE_SEATS } Scribe सीटें प्राप्त कर सकते हैं।"
@@ -2102,12 +2167,19 @@
         "अपने ईमेल और शेड्यूल को शुरू-से-अंत तक एन्क्रिप्शन के साथ सुरक्षित करें। इसमें ${ addresses } ईमेल पता, कस्टम ईमेल डोमेन के लिए सहायता, ${ BRAND_NAME } Scribe राइटिंग असिस्टेंट, असीमित hide-my-email उपनाम और बहुत कुछ शामिल है।",
         "अपने ईमेल और शेड्यूल को शुरू-से-अंत तक एन्क्रिप्शन के साथ सुरक्षित करें। इसमें ${ addresses } ईमेल पते, कस्टम ईमेल डोमेन के लिए सहायता, ${ BRAND_NAME } Scribe राइटिंग असिस्टेंट, असीमित hide-my-email उपनाम और बहुत कुछ शामिल है।"
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "अपने ईमेल और शेड्यूल को शुरु-से-अंत तक एन्क्रिप्शन के साथ सुरक्षित करें। इसमें ${ addresses } ईमेल पता, कस्टम ईमेल डोमेन के लिए सहायता, ${ LUMO_SHORT_APP_NAME } राइटिंग असिस्टेंट, असीमित hide-my-email नकली-नाम और बहुत कुछ शामिल है।",
+        "अपने ईमेल और शेड्यूल को शुरु-से-अंत तक एन्क्रिप्शन के साथ सुरक्षित करें। इसमें ${ addresses } ईमेल पते, कस्टम ईमेल डोमेन के लिए सहायता, ${ LUMO_SHORT_APP_NAME } राइटिंग असिस्टेंट, असीमित hide-my-email नकली-नाम और बहुत कुछ शामिल है।"
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "अपने ईमेल और शेड्यूल को शुरू-से-अंत तक एन्क्रिप्शन के साथ सुरक्षित करें। इसमें ${ addresses } ईमेल पता, कस्टम ईमेल डोमेन के लिए सहायता, असीमित hide-my-email नकली-नाम और बहुत कुछ शामिल है।",
         "अपने ईमेल और शेड्यूल को शुरू-से-अंत तक एन्क्रिप्शन के साथ सुरक्षित करें। इसमें ${ addresses } ईमेल पते, कस्टम ईमेल डोमेन के लिए सहायता, असीमित hide-my-email नकली-नाम और बहुत कुछ शामिल है।"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "अपने ईमेल और शेड्यूल को शुरू-से-अंत तक एन्क्रिप्शन के साथ सुरक्षित करें। इसमें 15 ईमेल पते, कस्टम ईमेल डोमेन के लिए सहायता, ${ BRAND_NAME } Scribe राइटिंग असिस्टेंट, असीमित hide-my-email उपनाम और बहुत कुछ शामिल है।"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "अपने ईमेल और शेड्यूल को शुरु-से-अंत तक एन्क्रिप्शन के साथ सुरक्षित करें। इसमें 15 ईमेल पते, कस्टम ईमेल डोमेन के लिए सहायता, ${ LUMO_SHORT_APP_NAME } राइटिंग असिस्टेंट, असीमित hide-my-email नकली-नाम और बहुत कुछ शामिल है।"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "अपने ईमेल और शेड्यूल को शुरू-से-अंत तक एन्क्रिप्शन के साथ सुरक्षित करें। इसमें 15 ईमेल पते, कस्टम ईमेल डोमेन के लिए सहायता, असीमित hide-my-email नकली-नाम और बहुत कुछ शामिल है।"
@@ -2315,6 +2387,9 @@
       "Discover and set up features": [
         "विशेषताएँ खोजें और सेटअप करें"
       ],
+      "Get 50% offer": [
+        "50% ऑफर पाएं"
+      ],
       "Got it": [
         "समझ गया"
       ],
@@ -2350,6 +2425,9 @@
       ]
     },
     "Calendar invite info": {
+      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } ने एक न्योता स्वीकार किया और इस कार्यक्रम की एक घटना के लिए नया समय प्रस्तावित किया।"
+      ],
       "${ participantName } accepted an invitation and proposed a new time for this event.": [
         "${ participantName } ने एक आमंत्रण स्वीकार किया और इस कार्यक्रम के लिए एक नया समय प्रस्तावित किया।"
       ],
@@ -2674,6 +2752,15 @@
         "${ users } यूज़र",
         "${ users } यूज़र"
       ],
+      "Amount due": [
+        "देय राशि"
+      ],
+      "Amount due after trial": [
+        "ट्रायल के बाद देय राशि"
+      ],
+      "Amount due now": [
+        "अभी देय राशि"
+      ],
       "Subtotal": [
         "उपयोग"
       ],
@@ -2683,6 +2770,10 @@
       ],
       "Total": [
         "कुल"
+      ],
+      "Total for ${ cycle } month": [
+        "${ cycle } महीने के लिए कुल",
+        "${ cycle } महीनों के लिए कुल"
       ]
     },
     "Collapsible tooltip": {
@@ -4197,6 +4288,9 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "${ senderEmailAddress } से आए नए ईमेल डिलिवर नही होंगे और हमेशा के लिए मिटा दिए जाएंगे।"
       ],
+      "No ads. No trackers": [
+        "कोई विज्ञापन नहीं। कोई ट्रैकर नहीं"
+      ],
       "No folders": [
         "कोई फोल्डर नहीं"
       ],
@@ -4380,6 +4474,15 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "हमने आपके द्वारा अपलोड की गई CSV फ़ाइल में निम्न फ़ील्ड का पता लगाया है। उन लोगों की जाँच करें जिन्हें आप आयात करना चाहते हैं।"
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } नया संदेश",
+        "${ messageCount } नए संदेश"
+      ],
+      "From: ${ sender } - ${ message.Subject }": [
+        "प्रेषक: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -4661,8 +4764,14 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } आपका यूज़रनेम है। ${ emailAddress } बनाने के लिए, कृपया सेटिंग > पहचान और पता > छोटा डोमेन (pm.me) पर जाएं"
       ],
+      "A contact with this email address already exists": [
+        "इस ईमेल पते का एक संपर्क पहले से है"
+      ],
       "A group with this name already exists": [
         "इस नाम का एक समूह पहले से मौजूद है"
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "कॉपीराइट उल्लंघन या चुराए गए डाटा की रिपोर्ट करते समय संदेश देना ज़रूरी है"
       ],
       "A problem occurred, please try again.": [
         "कोई गड़बड़ हुई, कृपया फिर से कोशिश करें।"
@@ -4678,6 +4787,9 @@
       ],
       "Address is already added to your account": [
         "पता आपके खाते में पहले से ही जोड़ा गया है"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "पता पहले से आपके संगठन से बाहर से एक यूज़र इस्तेमाल करते है। सुलझाने के लिए ग्राहक सहायता से संपर्क करें।"
       ],
       "Address primary private key not found": [
         "पता प्राथमिक निजी कुंजी नहीं मिली"
@@ -4718,14 +4830,35 @@
       "Authentication error.": [
         "प्रमाणीकरण त्रुटि"
       ],
+      "Bookmark password is not available": [
+        "बुकमार्क का पासवर्ड उपलब्ध नहीं है"
+      ],
       "Calendar limit reached": [
         "कैलेंडर की सीमा पूरी हो गई"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "मान्य नाम के बिना फोटो एल्बम में नहीं जोड़ सके"
+      ],
+      "Cannot download a folder": [
+        "फोल्डर डाउनलोड नहीं किया जा सकता"
       ],
       "Cannot export this contact": [
         "यह संपर्क निर्यात नहीं किया जा सकता"
       ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "मान्य नाम के बिना आइटम नहीं ले जा सके, कृपया पहले आइटम का नाम बदलें"
+      ],
       "Cannot set expiration longer than retention policy allows.": [
         "रिटेंशन नीति द्वारा अनुमत अवधि से अधिक लंबी समाप्ति अवधि निर्धारित नहीं की जा सकती।"
+      ],
+      "Cannot share root folder": [
+        "रूट फोल्डर शेयर नहीं कर सके"
+      ],
+      "Cannot verify the author of this file": [
+        "इस फ़ाइल के लेखक की पुष्टि नहीं हो सकती"
+      ],
+      "Cannot verify who uploaded this file": [
+        "ये फ़ाइल किसने अपलोड की, ये सत्यापित नहीं किया जा सकता"
       ],
       "Checkout expired, please try again": [
         "चेकआउट की समय सीमा समाप्त हो गई है, कृपया पुनः प्रयास करें।"
@@ -4755,6 +4888,9 @@
       "Contact signature not verified": [
         "संपर्क हस्ताक्षर सत्यापित नहीं"
       ],
+      "Contact your administrator to start a migration.": [
+        "माइग्रेशन शुरू करने के लिए अपने एडमिन से संपर्क करें।"
+      ],
       "Contact your organization’s administrator to resolve this": [
         "इसे हल करने के लिए अपने संगठन के व्यवस्थापक से संपर्क करें"
       ],
@@ -4764,11 +4900,47 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "कंटेंट खोज सक्षम नहीं की जा सकती। कृपया एप्लीकेशन को वापिस शुरु करें या डेटा हटाएं।"
       ],
+      "Copy operation aborted": [
+        "कॉपी कार्रवाई निरस्त की गई"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "आइटम को गैर-फोल्डर में कॉपी करने की अनुमति नहीं है"
+      ],
+      "Could not find an available name": [
+        "कोई उपलब्ध नाम नहीं मिला"
+      ],
+      "Could not grant access to the organization key": [
+        "संगठन की चाबी का एक्सेस नहीं दिया जा सका"
+      ],
+      "Could not load sharing details": [
+        "शेयरिंग की जानकारी लोड नहीं हो सकी"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "इमेज प्रीव्यू लोड नहीं हो सका: ${ message }"
+      ],
       "Could not open created vault": [
         "बनाए गए तिजोरी को खोल नहीं पा रहे"
       ],
       "Could not open updated vault": [
         "अपडेट किए गए तिजोरी को खोल नहीं पा रहे"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "इस फ़ाइल का हिस्सा पढ़ा नहीं जा सका: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "मुख्य फोल्डर अनलॉक नहीं हो सका"
+      ],
+      "Could not unlock this item": [
+        "ये आइटम अनलॉक नहीं हो सका"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "गैर-फोल्डर में डॉक्यूमेंट बनाने की अनुमति नहीं है"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "गैर-फोल्डर में फ़ाइलें बनाने की अनुमति नहीं"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "गैर-फोल्डर में फोल्डर बनाने की अनुमति नहीं है"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "डिक्रिप्शन त्रुटि: इस संदेश की एन्क्रिप्टेड सामग्री का डिक्रिप्शन विफल रहा।"
@@ -4780,6 +4952,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "कम-से-कम ${ calendarsToFixCount } कैलेंडर को हटाएं या",
         "कम-से-कम ${ calendarsToFixCount } कैलेंडर को हटाएं या"
+      ],
+      "Device not found": [
+        "डिवाइस नहीं मिला"
       ],
       "Domain not available, try again later": [
         "डोमेन मौजूद नहीं, बाद में वापिस कोशिश करें"
@@ -4829,11 +5004,38 @@
       "Error while uploading attachments. Message is not sent.": [
         "अटैचमेंट अपलोड करते समय त्रुटि। संदेश नहीं भेजा गया |"
       ],
+      "Expiration date cannot be in the past": [
+        "समय खत्म होने की तारीख अतीत में नहीं हो सकती"
+      ],
       "Failed loading group members": [
         "ग्रुप के सदस्यों को लोड करने में विफल"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "बुकमार्क कुंजी डीक्रिप्ट करने में असफल: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "बुकमार्क का नाम डीक्रिप्ट करने में असफल: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "बुकमार्क पासवर्ड डीक्रिप्ट करने में असफल: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "कंटेंट कुंजी डीक्रिप्ट करने में असफल: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "आइटम का नाम डीक्रिप्ट करने में असफल: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "नोड कुंजी डीक्रिप्ट करने में असफल: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "रिवीज़न मेटाडाटा डीक्रिप्ट करने में असफल"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "अनुलग्नक एन्क्रिप्ट करने में विफल। कृपया पुन: प्रयास करें।"
+      ],
+      "Failed to get inviter keys": [
+        "न्योता भेजने वाले की कुंजियां लेने में असफल"
       ],
       "Failed to load subscription data. Please try again later.": [
         "सदस्यता डेटा लोड करने में विफल। कृपया बाद में पुनः प्रयास करें।"
@@ -4843,6 +5045,15 @@
       ],
       "Failed to open to contact": [
         "संपर्क खोलने में विफल"
+      ],
+      "Failed to verify invitation": [
+        "न्योता सत्यापित करने में असफल"
+      ],
+      "File download failed due to empty response": [
+        "खाली रिस्पॉन्स की वजह से फ़ाइल डाउनलोड असफल हुआ"
+      ],
+      "File has no revision": [
+        "फ़ाइल का कोई रिवीजन नहीं है"
       ],
       "Filter with this name already exists": [
         "इस नाम से फ़िल्टर पहले से मौजूद है"
@@ -4855,6 +5066,9 @@
       ],
       "Forward address is required": [
         "फॉरवर्ड पता आवश्यक है"
+      ],
+      "Image preview not found": [
+        "इमेज प्रीव्यू नहीं मिला"
       ],
       "Image upload failed": [
         "चित्र अपलोड विफल रहा"
@@ -4898,8 +5112,14 @@
       "Invalid verification code": [
         "अवैध सत्यापन कोड"
       ],
+      "Invitation not found": [
+        "न्योता नहीं मिला"
+      ],
       "Item content cannot exceed 40KB": [
         "आइटम का कंटेंट 40 केबी से ज़्यादा बड़ा नहीं हो सकता"
+      ],
+      "Item not found": [
+        "आइटम नहीं मिला"
       ],
       "Label name cannot be empty.": [
         "लेबल का नाम खाली नहीं हो सकता |"
@@ -4907,11 +5127,17 @@
       "Last name is too long": [
         "अंतिम नाम बहुत लंबा है"
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "पुराना पब्लिक लिंक अपडेट नहीं हो सकता। कृपया नया पब्लिक लिंक दोबारा बनाएं।"
+      ],
       "Maximum expiration time reached.": [
         "अधिकतम समय सीमा समाप्त हो गई है।"
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "${ attachmentsCountLimit } अटैचमेंट की सीमा पार हो गई"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "सदस्य का पता नहीं मिला। इसे सुलझाने के लिए कृपया ग्राहक सहायता से संपर्क करें"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "मौजूदा ${ BRAND_NAME } कैलेंडर के साथ कम-से-कम ${ calendarsToFixCount } कैलेंडर जोड़ें",
@@ -4923,14 +5149,42 @@
       "Message processing error.": [
         "संदेश संसाधन त्रुटि।"
       ],
+      "Missing inviter email": [
+        "इनवाइट करने वाले का ईमेल मौजूद नहीं है"
+      ],
       "Missing key packet": [
         "लुप्त कुञ्जी खण्ड"
+      ],
+      "Missing organization private key": [
+        "संगठन की निजी चाबी मौजूद नहीं"
+      ],
+      "Missing organization public key": [
+        "संगठन की सार्वजनिक चाबी मौजूद नहीं"
       ],
       "Missing signature": [
         "लापता हस्ताक्षर"
       ],
+      "Missing signature for ${ signatureType }": [
+        "${ signatureType } के लिए हस्ताक्षर मौजूद नहीं"
+      ],
+      "Move operation aborted": [
+        "स्थानांतरण कार्य निरस्त किया गया"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "आइटम को गैर-फोल्डर पे ले जाने की अनुमति नहीं है"
+      ],
+      "Moving root item is not allowed": [
+        "रूट आइटम को ले जाने की अनुमति नहीं है"
+      ],
       "Name is required": [
         "नाम आवश्यक है"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "नाम ज़्यादा-से-ज़्यादा ${ MAX_NODE_NAME_LENGTH } वर्ण लंबा हो सकता है",
+        "नाम ज़्यादा-से-ज़्यादा ${ MAX_NODE_NAME_LENGTH } वर्ण लंबा हो सकता है"
+      ],
+      "Name must not be empty": [
+        "नाम खाली नहीं होना चाहिए"
       ],
       "Network error": [
         "नेटवर्क एरर"
@@ -4959,6 +5213,9 @@
       "No external key retrieved for user is valid for sending": [
         "उपयोगकर्ता के लिए प्राप्त कोई भी बाहरी की भेजने के लिए मान्य नहीं है"
       ],
+      "No file data was received. Please try again.": [
+        "कोई फ़ाइल डाटा प्राप्त नहीं हुआ। कृपया दोबारा कोशिश करें।"
+      ],
       "No valid address found": [
         "कोई मान्य पता नहीं मिला"
       ],
@@ -4973,6 +5230,21 @@
         "समूह में से एक का कोई संपर्क नहीं है: ${ noContactGroupList }",
         "किसी एक समूह का कोई संपर्क नहीं है: ${ noContactGroupList } "
       ],
+      "Only admins can convert external invitations": [
+        "सिर्फ एडमिन बाहरी न्योतों को रूपांतरित कर सकते हैं"
+      ],
+      "Operation aborted": [
+        "ऑपरेशन रद्द कर दिया गया"
+      ],
+      "Operation failed, try again later": [
+        "कार्रवाई असफल हुई, बाद में वापिस कोशिश करें"
+      ],
+      "Organization does not have enough seats available": [
+        "संगठन के पास जो सीटें हैं वो नाकाफी हैं"
+      ],
+      "Organization does not have enough storage available": [
+        "संगठन के पास जो स्टोरेज है वो नाकाफी है"
+      ],
       "Organization key is not decrypted": [
         "संगठन कुंजी को डिक्रिप्ट नहीं किया गया है"
       ],
@@ -4981,6 +5253,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "संगठन कुंजी को सक्रिय करना आवश्यक है ताकि गैर-निजी उपयोगकर्ता बनाए जा सकें"
+      ],
+      "Part of the file appears to be corrupted": [
+        "फ़ाइल का कुछ हिस्सा दूषित लग रहा है"
       ],
       "Password is required": [
         "पासवर्ड चाहिए"
@@ -5002,6 +5277,12 @@
       ],
       "Permissions request failed.": [
         "अनुमतियों का अनुरोध विफल रहा।"
+      ],
+      "Photo is already in the target album": [
+        "फोटो पहले से टारगेट एल्बम में है"
+      ],
+      "Photo not found": [
+        "फोटो नहीं मिली"
       ],
       "Please activate your search again": [
         "कृपया अपना खोज वापिस सक्षम करें"
@@ -5107,6 +5388,12 @@
         "डुप्लिकेट प्राप्तकर्ताओं को निकाला गया: ${ recipents }",
         "डुप्लिकेट प्राप्तकर्ताओं को निकाला गया: ${ recipents }"
       ],
+      "Renaming root item is not allowed": [
+        "रूट आइटम का नाम बदलने की अनुमति नहीं है"
+      ],
+      "Request aborted": [
+        "अनुरोध निरस्त किया गया"
+      ],
       "Request timed out": [
         "अनुरोध का समय समाप्त हुआ"
       ],
@@ -5119,6 +5406,9 @@
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
         "जब तक आप अपने प्लैन की सीमाओं को पार कर रहे हैं या जब तक आप अपना प्लैन अपग्रेड नहीं करते, तब तक अटैचमेंट भेजना प्रतिबंधित है।"
       ],
+      "Signature is missing": [
+        "हस्ताक्षर मौजूद नहीं है"
+      ],
       "Signature not verified": [
         "संपर्क हस्ताक्षर सत्यापित नहीं"
       ],
@@ -5128,11 +5418,29 @@
       "Signature verification failed": [
         "हस्ताक्षर सत्यापन असफल"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "हस्ताक्षर सत्यापन विफल: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "${ signatureType } का हस्ताक्षर सत्यापन विफल"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "${ signatureType } का हस्ताक्षर सत्यापन विफल: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "कुछ संपर्क हटाए नहीं जा सके"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "कुछ फ़ाइल डाटा अपलोड नहीं हुआ। कृपया वापिस कोशिश करें।"
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "फ़ाइल के कुछ हिस्से अपलोड नहीं हुए। कृपया वापिस कोशिश करें।"
+      ],
       "Some groups could not be deleted": [
         "कुछ समूहों को हटाया नहीं जा सका"
+      ],
+      "Some items could not be loaded": [
+        "कुछ आइटम लोड नहीं हुए"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "आपके कुछ फ़ोल्डर नाम अनुपलब्ध हैं। कृपया इन नामों को संपादित करने के लिए आयात को अनुकूलित करें।"
@@ -5160,6 +5468,9 @@
       ],
       "Something went wrong while fetching available domains": [
         "उपलब्ध डोमेन लाते समय कुछ गलत हो गया"
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "कुछ गड़बड़ हो गई है, मोडल बंद करें और वापिस कोशिश करें।"
       ],
       "Something went wrong. Please try again.": [
         "कुछ गलती हो गई। कृपया वापिस कोशिश करें।"
@@ -5222,6 +5533,9 @@
       "The system is busy at the moment. Please try again in a few minutes.": [
         "सिस्टम अभी व्यस्त है। कृपया कुछ मिनटों में पुनः प्रयास करें।"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "अपलोड की गई फ़ाइल मूल फ़ाइल से मेल नहीं खाती। कृपया दोबारा कोशिश करें।"
+      ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "राइटिंग असिस्टेंट आपके अनुरोध को पूरा नहीं कर सकता। कृपया कोई दूसरा संकेत आज़माएं।"
       ],
@@ -5252,8 +5566,26 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "इस फ़ील्ड के लिए कम से कम ${ minimumLength } वर्णों की आवश्यकता है।"
       ],
+      "This file has missing crypto material": [
+        "इस फ़ाइल में क्रिप्टो मटीरियल मौजूद नहीं है"
+      ],
+      "This file has no version available to download": [
+        "इस फ़ाइल का डाउनलोड करने के लिए कोई वर्जन उपलब्ध नहीं है"
+      ],
+      "This file version could not be uploaded": [
+        "ये फ़ाइल संस्करण अपलोड नहीं हो सका"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "यह फ़ोल्डर नाम उपलब्ध नहीं है। कृपया कोई दूसरा नाम चुनें |"
+      ],
+      "This item has no image preview": [
+        "इस आइटम का कोई इमेज प्रीव्यू नहीं है"
+      ],
+      "This item is no longer shared": [
+        "ये आइटम अब शेयर नहीं है"
+      ],
+      "This item is not shared": [
+        "ये आइटम शेयर नहीं है"
       ],
       "This label name is not available. Please choose a different name.": [
         "यह लेबल नाम उपलब्ध नहीं है। कृपया कोई दूसरा नाम चुनें |"
@@ -5266,6 +5598,12 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "इस संदेश में कुछ लिंक URL हो सकते हैं जिन्हें आपके वर्तमान ब्राउज़र द्वारा ठीक से नहीं खोला जा सकता है।"
+      ],
+      "Too many server errors, please try again later": [
+        "कई सारे सर्वर एरर, कृपया बाद में वापिस कोशिश करें"
+      ],
+      "Too many server requests, please try again later": [
+        "कई सारे सर्वर अनुरोध, कृपया बाद में वापिस कोशिश करें"
       ],
       "Trusted keys are not valid for sending": [
         "विश्वसनीय कुंजियाँ भेजने के लिए मान्य नहीं हैं"
@@ -5300,6 +5638,12 @@
       "VAT number must start with ${ prefixes }": [
         "VAT नंबर ${ prefixes } से शुरू होना चाहिए"
       ],
+      "Verification keys are not available": [
+        "वेरिफिकेशन कुंजियां उपलब्ध नहीं हैं"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "${ signatureType } के सत्यापन कुंजियां उपलब्ध नहीं हैं"
+      ],
       "We couldn’t send a verification code using this method.": [
         "हम इस पद्धति का उपयोग करके सत्यापन कोड नहीं भेज सके।"
       ],
@@ -5308,6 +5652,18 @@
       ],
       "Wrong password": [
         "गलत पासवर्ड"
+      ],
+      "You can create public links for your own files only": [
+        "आप सिर्फ अपनी फ़ाइलों के पब्लिक लिंक बना सकते हैं"
+      ],
+      "You can only leave items that are shared with you": [
+        "आप सिर्फ उन आइटम को छोड़ सकते हैं जो आपके साथ शेयर किए गए हैं"
+      ],
+      "You can only upload a new version to a file": [
+        "आप सिर्फ किसी फ़ाइल में नया संस्करण अपलोड कर सकते हैं"
+      ],
+      "You can update a public link for your own files only": [
+        "आप सिर्फ अपनी फ़ाइलों का पब्लिक लिंक अपडेट कर सकते हैं"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "आप ${ maxContacts } से अधिक प्राप्तकर्ता को मेल नहीं भेज सकते",
@@ -5319,6 +5675,12 @@
       ],
       "You did not provide a file.": [
         "आपने कोई फ़ाइल प्रदान नहीं की है।"
+      ],
+      "You do not have access to this item": [
+        "आपके पास इस आइटम का एक्सेस नहीं है"
+      ],
+      "You do not have access to this shared item": [
+        "आपको इस शेयर किए गए आइटम का एक्सेस नहीं है"
       ],
       "You have reached the maximum number of calendars.": [
         "आप कैलेंडर के नंबर के लिमिट पे पहुंच चुके है।"
@@ -5714,6 +6076,9 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "आपके पास बिना भुगतान वाले चालान हैं। कृपया Family plan में शामिल होने से पहले उनका भुगतान करें।"
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "आपको अपने ${ BRAND_NAME } खाते को इस फैमिली ग्रुप से लिंक करने और उसकी सभी प्रीमियम खासियतों का आनंद लेने के लिए आमंत्रित किया जाता है।"
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "आपके खाते में इस प्लैन में उपलब्ध ईमेल पतों से ज़्यादा ईमेल पते हैं। ${ addressSettingsLink }"
       ],
@@ -5809,6 +6174,12 @@
       ],
       "Security key": [
         "सुरक्षा चाबी"
+      ],
+      "Still waiting?": [
+        "अब भी इंतज़ार कर रहे हैं?"
+      ],
+      "Touch your security key to continue.": [
+        "जारी रखने के लिए अपनी सिक्योरिटी की टच करें।"
       ]
     },
     "fido2: Label": {
@@ -5857,6 +6228,15 @@
       ]
     },
     "Filter": {
+      "Activated": [
+        "सक्रिय"
+      ],
+      "All": [
+        "सब"
+      ],
+      "Errors": [
+        "एरर"
+      ],
       "Filter": [
         "फिल्टर"
       ],
@@ -5868,6 +6248,18 @@
       ],
       "Has attachments": [
         "संलग्नक हैं"
+      ],
+      "In progress": [
+        "चल रहा"
+      ],
+      "Migrated": [
+        "माइग्रेट हुआ"
+      ],
+      "Not activated": [
+        "सक्रिय नहीं"
+      ],
+      "Pending": [
+        "अपूर्ण"
       ],
       "Read": [
         "पढ़ा हुआ"
@@ -6575,11 +6967,17 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "एरर हैं"
+      ],
       "In progress": [
         "प्रगति पर है"
       ],
       "Migrated": [
         "माइग्रेट किया गया"
+      ],
+      "Pending": [
+        "अपूर्ण"
       ]
     },
     "Import warning": {
@@ -6666,9 +7064,24 @@
         "${ contactsLength } संपर्क",
         "${ contactsLength } संपर्क"
       ],
+      "${ count } email": [
+        "${ count } ईमेल",
+        "${ count } ईमेल"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } ईमेल · ${ names }",
+        "${ count } ईमेल · ${ names }"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } ईमेल → ${ dest }",
+        "${ count } ईमेल → ${ dest }"
+      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ totalProgress } में से ${ currentProgress }",
         "${ totalProgress } में से ${ currentProgress }"
+      ],
+      "${ dateString } at ${ formattedTime }": [
+        "${ dateString } को ${ formattedTime } बजे"
       ],
       "${ elementsCount } conversation will be labelled as:": [
         "${ elementsCount } बातचीत को इस रूप में लेबल किया जाएगा:",
@@ -6724,14 +7137,30 @@
         "${ groupCounts } समूह मिला",
         "${ groupCounts } समूह मिले"
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } मार्क"
+      ],
+      "${ issues.length } issue during import:": [
+        "आयात के दौरान ${ issues.length } समस्या:",
+        "आयात के दौरान ${ issues.length } समस्याएं:"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } में ${ BRAND_NAME } Scribe राइटिंग असिस्टेंट शामिल है"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } में लेखन सहायक शामिल है"
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } ने अब तक ${ count } स्टेप लिए हैं। जारी रखें?"
       ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
         "${ LUMO_SHORT_APP_NAME } आपको जल्दी और आसानी से बेहतर ईमेल लिखने में मदद करता है।"
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
         "${ LUMO_SHORT_APP_NAME } पैनल"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } लेखन सहायक"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } आपके बिज़नेस को भी सुरक्षित रख सकता है।"
@@ -6748,6 +7177,9 @@
       "${ n } unread conversation": [
         "${ n } अपठित वार्तालाप",
         "${ n } अपठित वार्तालाप"
+      ],
+      "${ name } in ${ parentName }": [
+        "${ parentName } में ${ name }"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } लिंक साफ किया गया",
@@ -6806,6 +7238,9 @@
         "पिछले महीने ${ receivedMessagesCount } ईमेल",
         "पिछले महीने ${ receivedMessagesCount } ईमेल"
       ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } मिनट शेष…"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर",
         "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर"
@@ -6822,12 +7257,22 @@
         "${ selectedFoldersCountLocalized } लेबल चयनित",
         "${ selectedFoldersCountLocalized } लेबल चयनित"
       ],
+      "${ steps } step": [
+        "${ steps } स्टेप",
+        "${ steps } स्टेप"
+      ],
       "${ storage } storage": [
         "${ storage } स्टोरेज"
       ],
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } अपठित",
         "${ subscription.UnreadMessageCount } अपठित"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "आपके ट्रायल में ${ timeRemaining } बाकी हैं। एक्सेस खोने से बचने के लिए ${ addPaymentMethodLink }। ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "आपके ट्रायल में ${ timeRemaining } बचा है। अपनी सदस्यता बनाए रखने के लिए ${ addPaymentMethodLink }। ${ learnMoreLink }"
       ],
       "${ total } conversation": [
         "${ total } बातचीत",
@@ -6936,6 +7381,9 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "अपने ब्राउज़िंग डेटा को सुरक्षित रखने के लिए 10 डिवाइस तक पर 6,500+ हाई-स्पीड सर्वर एक्सेस करें। यह ${ ios }, ${ android }, ${ appleTV }, और ${ desktop } पर उपलब्ध है।"
       ],
+      "Access to 20,000+ servers in 145 countries": [
+        "145 देशों में 20,000+ सर्वर एक्सेस करें"
+      ],
       "Account successfully updated": [
         "खाता आधुनिकीकरण सफल हो गया है"
       ],
@@ -6951,8 +7399,17 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } जोड़ें"
       ],
+      "Add ${ contact } to your contacts": [
+        "${ contact } को अपने संपर्कों में जोड़ें"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } जोड़ें"
+      ],
+      "Add a contact": [
+        "संपर्क जोड़ें"
+      ],
+      "Add contact": [
+        "संपर्क जोड़ें"
       ],
       "Add image URL": [
         "छवि URL जोड़ें"
@@ -7035,6 +7492,9 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "कोई भी सबफ़ोल्डर भी मिटा दिया जाएगा। हालांकि, ${ nameDeleted } फोल्डर में स्टोर किया हुआ ईमेल मिटाया नहीं जाएगा और सारे मेल फोल्डर में पाया जा सकता है।"
       ],
+      "Apply labels": [
+        "लेबल लगाओ"
+      ],
       "Apply to future messages": [
         "भविष्य के संदेशों पर लागू करें"
       ],
@@ -7104,6 +7564,9 @@
       "Attention required": [
         "ध्यान देने की आवश्यकता है"
       ],
+      "Author is not provided on public link": [
+        "पब्लिक लिंक पे लेखक की जानकारी नहीं दी गई है"
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "30 से अधिक दिन पहले कचरा और स्पैम में भेजे गए ईमेल को स्वचालित रूप से हटाएं।"
       ],
@@ -7167,8 +7630,29 @@
       "Center": [
         "केंद्र"
       ],
+      "Change a display setting": [
+        "कोई डिस्प्ले सेटिंग बदलें"
+      ],
+      "Change display setting": [
+        "डिस्प्ले सेटिंग बदलें"
+      ],
+      "Change how your mail is grouped": [
+        "अपने मेल की ग्रुपिंग बदलें"
+      ],
+      "Change your list density": [
+        "अपनी लिस्ट डेंसिटी बदलें"
+      ],
+      "Change your mailbox layout": [
+        "अपने मेलबॉक्स का खाका बदलें"
+      ],
       "Change your password": [
         "अपना पासवर्ड बदलें"
+      ],
+      "Change your theme": [
+        "अपनी थीम बदलें"
+      ],
+      "Checked Proton support": [
+        "Proton सहायता देखी"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "${ max } के संपर्क ${ progress } की जाँच की जा रही है..."
@@ -7240,8 +7724,17 @@
         "${ calendarsToBeCreatedCount } नया कैलेंडर बनाएं",
         "${ calendarsToBeCreatedCount } नए कैलेंडर बनाएं"
       ],
+      "Create a filter": [
+        "फ़िल्टर बनाएं"
+      ],
+      "Create a folder": [
+        "फ़ोल्डर बनाएं"
+      ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "अपनी सभी ऑनलाइन रसीदों को एक ही स्थान पर रखने के लिए “${ suggestedFolderName }“ जैसा एक फोल्डर बनाएं।"
+      ],
+      "Create a label": [
+        "लेबल बनाएं"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "आयातित संदेशों के लिए एक लेबल बनाएं, इस आयात के लिए एक समय सीमा और आपके द्वारा आयात किए जाने वाले फ़ोल्डर।"
@@ -7256,8 +7749,17 @@
         "${ memberCount } सदस्य के लिए एक सुरक्षित क्लाउड बनाएं",
         "${ memberCount } सदस्यों के लिए एक सुरक्षित क्लाउड बनाएं"
       ],
+      "Create filter": [
+        "फिल्टर बनाएं"
+      ],
+      "Create folder": [
+        "फोल्डर बनाएं"
+      ],
       "Create in": [
         "में बनाएँ"
+      ],
+      "Create label": [
+        "लेबल बनाएं"
       ],
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "एक से अधिक मुफ़्त खाता बनाना हमारे ${ termsLink } द्वारा स्वीकृत नहीं है।"
@@ -7292,6 +7794,9 @@
       "Daily": [
         "रोज़"
       ],
+      "Debug transcript copied": [
+        "डीबग ट्रांसक्रिप्ट कॉपी हो गया"
+      ],
       "Dedicated servers": [
         "विशेष सर्वर"
       ],
@@ -7322,6 +7827,9 @@
       "Discover ProtectBuy logo": [
         "ProtectBuy लोगो देखें"
       ],
+      "Do you remember your password?": [
+        "क्या आपको अपना पासवर्ड याद है?"
+      ],
       "Do you want to download this attachment anyway?": [
         "क्या आप इस अटैचमेंट को वैसे भी डाउनलोड करना चाहते हैं?",
         "क्या आप इन अनुलग्नकों को वैसे भी डाउनलोड करना चाहते हैं?"
@@ -7331,6 +7839,12 @@
       ],
       "Do you want to re-sign the contact details?": [
         "क्या आप संपर्क विवरणों पर फिर से हस्ताक्षर करना चाहते हैं?"
+      ],
+      "Document in foundation-search index": [
+        "foundation-search इंडेक्स में दस्तावेज़"
+      ],
+      "Document lookup failed": [
+        "दस्तावेज़ देखना असफल रहा"
       ],
       "Don't forget to share the password with the recipient": [
         "प्राप्तकर्ता के साथ पासवर्ड साझा करना न भूलें"
@@ -7490,6 +8004,9 @@
       "Everything in ${ planOrAppName }, plus:": [
         "${ planOrAppName } में सब कुछ, साथ ही:"
       ],
+      "Expand logs": [
+        "लॉग बढ़ा करें"
+      ],
       "Expand selection": [
         "चयन बढ़ाएं"
       ],
@@ -7513,6 +8030,9 @@
         "${ hoursDiff } घंटे से कम से में एक्सपायर होगा",
         "${ hoursDiff } घंटे से कम से में एक्सपायर होगा"
       ],
+      "Fastest VPN speeds of up to 10Gbps": [
+        "10Gbps तक की सबसे तेज़ VPN स्पीड"
+      ],
       "file attached": [
         "संचिका संलग्न है",
         "फाइल्स अनुलग्न"
@@ -7525,6 +8045,9 @@
       ],
       "finance": [
         "वित्त"
+      ],
+      "Find out what can be migrated.": [
+        "जानें कि क्या-क्या माइग्रेट किया जा सकता है।"
       ],
       "Folder": [
         "फोल्डर"
@@ -7549,6 +8072,14 @@
       ],
       "Forgot password?": [
         "पासवर्ड भूल गए?"
+      ],
+      "Found ${ count } contact": [
+        "${ count } संपर्क मिला",
+        "${ count } संपर्क मिले"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "मौजूदा एन्क्रिप्ट किए गए खोज इंडेक्स में ${ oldIndexSize } संदेश मिला।",
+        "मौजूदा एन्क्रिप्ट किए गए खोज इंडेक्स में ${ oldIndexSize } संदेश मिले।"
       ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "${ ASSISTANT_TRIAL_TIME_DAYS } दिन के लिए मुफ़्त ट्रायल",
@@ -7582,6 +8113,9 @@
         "${ numAttachments } अटैचमेंट है (${ numAttachmentsSize })",
         "${ numAttachments } अटैचमेंट है (${ numAttachmentsSize })"
       ],
+      "Have some more time to decide without interruption.": [
+        "बिना किसी रुकावट के फैसला लेने के लिए थोड़ा और समय पाएं।"
+      ],
       "here": [
         "यहां"
       ],
@@ -7594,6 +8128,9 @@
       "How hide-my-email aliases works": [
         "hide-my-email उर्फ़ कैसे काम करते हैं"
       ],
+      "I have not finished this one yet.": [
+        "मैंने अभी ये पूरा नहीं किया है।"
+      ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "मैं यह संदेश एक गैर-${ MAIL_APP_NAME } उपयोगकर्ता को भेज रहा हूँ।"
       ],
@@ -7603,6 +8140,9 @@
       "If you believe we made a mistake, please ${ contactLink }.": [
         "यदि आपको लगता है कि हमसे कोई गलती हुई है, तो कृपया ${ contactLink }।"
       ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "अगर आप अभी रद्द करते हैं, तो आप ${ expiryDate } को ${ BRAND_NAME } ${ planTitle } का एक्सेस खो देंगे, जिनमें ये खासियतें शामिल हैं:"
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "यदि आप रद्द करते हैं, तो आपकी ${ planTitle } सदस्यता ${ expiryDate } को समाप्त होने पर नवीनीकृत नहीं की जाएगी।"
       ],
@@ -7611,6 +8151,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "यदि आप अपने इनबॉक्स में ईमेल नहीं पाते हैं, तो कृपया अपने स्पैम फ़ोल्डर की जाँच करें।"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "अगर आपके ऑथेंटिकेटर ऐप का एक्सेस खो गया है, तो आप दो-फैक्टर सत्यापन सेटअप करते समय दिए गए 16 बैकअप रिकवर कोड में से 1 इस्तेमाल कर सकते हैं। ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "यदि आप डाउनग्रेड के साथ आगे बढ़ते हैं, तो आप ${ MAIL_APP_NAME } और ${ VPN_APP_NAME } सशुल्क सुविधाओं तक पहुंच खो देंगे।"
@@ -7646,6 +8189,9 @@
       "Import in progress": [
         "आयात चल रहा है"
       ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "आयात चल रहा है, इसके चलते रहने के दौरान आप ये डायलॉग बंद कर सकते हैं और बाद में वापिस आ सकते हैं। हालांकि, टैब बंद न करें।"
+      ],
       "Import mailbox": [
         "मेलबॉक्स आयात करें"
       ],
@@ -7678,6 +8224,9 @@
       ],
       "Initializing…": [
         "शुरू हो रहा है…"
+      ],
+      "Insert image": [
+        "तस्वीर डालें"
       ],
       "Insert link": [
         "लिंक डालें"
@@ -7720,6 +8269,12 @@
       ],
       "Key fingerprint": [
         "कुंजी फ़िंगरप्रिंट"
+      ],
+      "Label ${ emails }": [
+        "${ emails } को लेबल करें"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "${ emails } को ${ names } लेबल दें"
       ],
       "Label all imported messages as": [
         "सभी आयातित संदेशों को लेबल करें"
@@ -7766,8 +8321,17 @@
       "Loading...": [
         "लोड हो रहा..."
       ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "लॉग से हमें ये समझने में मदद मिलती है कि समस्या आने से पहले क्या हुआ था। इनमें ऐप की कार्रवाइयां और एरर संदेश शामिल हैं, लेकिन संदेश का कॉन्टेंट नहीं।"
+      ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "${ lookup.result.docId } दस्तावेज़ को देखना"
+      ],
       "Low Priority": [
         "निम्न प्राथमिकता"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "${ MAIL_APP_NAME } को अपना डिफॉल्ट ईमेल एप्लिकेशन बनाएं।"
       ],
       "Manage your folders": [
         "अपने फ़ोल्डर प्रबंधित करें"
@@ -7775,8 +8339,29 @@
       "Manage your labels": [
         "अपने लेबल प्रबंधित करें"
       ],
+      "Mark ${ emails } as read": [
+        "${ emails } को पढ़ा हुआ मार्क करें"
+      ],
+      "Mark ${ emails } as unread": [
+        "${ emails } को अपठित मार्क करें"
+      ],
       "Mark all as read": [
         "सभी को पढ़े गए के रूप में मार्क करें"
+      ],
+      "Mark all as unread": [
+        "सभी को अपठित के रूप में मार्क करें"
+      ],
+      "Mark as read": [
+        "पढ़ा गया के रूप में मार्क करें"
+      ],
+      "Mark as unread": [
+        "अपठित के रूप में मार्क करें"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "${ place } के सभी ईमेल पढ़ा हुआ मार्क करें"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "${ place } के सभी ईमेल अपठित मार्क करें"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode लोगो"
@@ -7850,6 +8435,21 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "अधिकांश सार्वजनिक वाई-फाई नेटवर्क सुरक्षित होते हैं, लेकिन कुछ में सुरक्षा की कमी होती है, जिससे आप साइबर खतरों के प्रति संवेदनशील हो जाते हैं। एक VPN आपके ट्रैफिक को एन्क्रिप्ट करता है, जिससे आप सुरक्षित रहते हैं।"
       ],
+      "Move ${ emails }": [
+        "${ emails } को ले जाएं"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "${ emails } को ${ destination } पे ले जाएं"
+      ],
+      "Move emails": [
+        "ईमेल ले जाएं"
+      ],
+      "Move here": [
+        "यहां ले जाएं"
+      ],
+      "Move to Primary": [
+        "मुख्य में ले जाएं"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "अपने नए फ़ोल्डर को नाम दें और उस मूल फ़ोल्डर का चयन करें जिसे आप इसे रखना चाहते हैं। यदि आप किसी मूल फ़ोल्डर का चयन नहीं करते हैं, तो यह नया फ़ोल्डर एक शीर्ष स्तर फ़ोल्डर के रूप में बनाया जाएगा।"
       ],
@@ -7868,8 +8468,20 @@
       "No contacts added yet": [
         "अभी तक कोई संपर्क नहीं जोड़ा गया है"
       ],
+      "No contacts found": [
+        "कोई संपर्क नहीं मिला"
+      ],
+      "No conversation to read": [
+        "पढ़ने के लिए कोई बातचीत नहीं"
+      ],
       "No email address": [
         "कोई ईमेल पता नहीं"
+      ],
+      "No email open": [
+        "कोई ईमेल खुला नहीं"
+      ],
+      "No emails selected": [
+        "कोई ईमेल नहीं चुना गया है"
       ],
       "No folder found": [
         "कोई फ़ोल्डर नहीं मिला"
@@ -7889,6 +8501,9 @@
       "No links cleaned": [
         "कोई लिंक साफ़ नहीं किया गया"
       ],
+      "No location selected": [
+        "कोई स्थान नहीं चुना गया है"
+      ],
       "No messages to show": [
         "दिखाने के लिए कोई संदेश नहीं"
       ],
@@ -7904,6 +8519,9 @@
       "No trackers found": [
         "कोई ट्रैकर नहीं मिला"
       ],
+      "No users to display": [
+        "प्रदर्शित करने के लिए कोई उपयोगकर्ता नहीं"
+      ],
       "non-${ MAIL_APP_NAME }": [
         "गैर-${ MAIL_APP_NAME }"
       ],
@@ -7918,6 +8536,15 @@
       ],
       "Not connected": [
         "कनेक्ट नहीं है"
+      ],
+      "Not found in the encrypted search index.": [
+        "एन्क्रिप्ट किए गए खोज इंडेक्स में नहीं मिला।"
+      ],
+      "Not found in the foundation-search index.": [
+        "foundation-search इंडेक्स में नहीं मिला।"
+      ],
+      "Not supported by this browser": [
+        "इस ब्राउज़र में समर्थित नहीं है"
       ],
       "Number of dedicated servers in the organization": [
         "संगठन में विशेष सर्वरों की संख्या"
@@ -7942,6 +8569,12 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "अनुशंसित कार्रवाइयों और सहायक लिंक के लिए मार्गदर्शिका खोलें।"
+      ],
+      "Opened ${ location }": [
+        "${ location } खोला गया"
+      ],
+      "Opened a problem report": [
+        "समस्या रिपोर्ट खोली गई"
       ],
       "Optional": [
         "वैकल्पिक"
@@ -8067,6 +8700,9 @@
       "Preferences updated": [
         "पसंद अपडेट की गईं"
       ],
+      "Premium privacy protection across all your devices": [
+        "आपके सभी डिवाइस पे प्रीमियम निजता सुरक्षा"
+      ],
       "Preview failed to be loaded": [
         "प्रिव्यू लोड करने में असफल"
       ],
@@ -8112,6 +8748,42 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "${ BRAND_NAME } से संबंधित किसी भी चीज़ पर सहायता के लिए हमसे संपर्क करें।"
       ],
+      "Read ${ count } email": [
+        "${ count } ईमेल पढ़ें",
+        "${ count } ईमेल पढ़ें"
+      ],
+      "Read ${ count } email on screen": [
+        "${ count } ईमेल स्क्रीन पे पढ़ें",
+        "${ count } ईमेल स्क्रीन पे पढ़ें"
+      ],
+      "Read ${ count } message in this thread": [
+        "इस थ्रेड में ${ count } संदेश पढ़ें",
+        "इस थ्रेड में ${ count } संदेश पढ़ें"
+      ],
+      "Read open email “${ subject }”": [
+        "खुले ईमेल “${ subject }” पढ़ें"
+      ],
+      "Read your ${ count } filter": [
+        "आपके ${ count } फिल्टर पढ़ें",
+        "आपके ${ count } फिल्टर पढ़ें"
+      ],
+      "Read your ${ count } folder": [
+        "आपके ${ count } फोल्डर पढ़ें",
+        "आपके ${ count } फोल्डर पढ़ें"
+      ],
+      "Read your ${ count } label": [
+        "आपके ${ count } लेबल पढ़ें",
+        "आपके ${ count } लेबल पढ़ें"
+      ],
+      "Read your auto-reply": [
+        "आपका ऑटोमैटिक-जवाब पढ़ें"
+      ],
+      "Read your display settings": [
+        "आपकी डिस्प्ले सेटिंग पढ़ें"
+      ],
+      "Read your signature": [
+        "आपका हस्ताक्षर पढ़ें"
+      ],
       "Recipient: ": [
         "लेनेवाले: "
       ],
@@ -8133,8 +8805,20 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "इसे अपने पासवर्ड मैनेजर में या जहां भी आप अपना खाता और लॉगइन जानकारी रखते हैं, वहां अपडेट करना याद रखें।"
       ],
+      "Remove the star from ${ emails }": [
+        "${ emails } से तारा हटाएं"
+      ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "इस ऐप से जुड़े सभी डेटा को हटाता है (डाउनलोड किए गए संदेशों सहित, …)"
+      ],
+      "Rename ${ folder } to…": [
+        "${ folder } का नाम बदलकर रखें…"
+      ],
+      "Rename folder": [
+        "फोल्डर का नाम बदलें"
+      ],
+      "Rename this folder": [
+        "इस फोल्डर का नाम बदलें"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "संदेश को फ़िशिंग प्रयास के रूप में रिपोर्ट करने से हमें संदेश भेजा जाएगा, इसलिए हम इसका विश्लेषण कर सकते हैं और अपने फ़िल्टर सुधार सकते हैं। इसका अर्थ है कि हम संदेश की सामग्री को पूर्ण रूप से देख पाएंगे।"
@@ -8144,6 +8828,12 @@
       ],
       "Restore": [
         "पहले जैसा करें"
+      ],
+      "Results came from the local search.": [
+        "नतीजे लोकल खोज से आए हैं।"
+      ],
+      "Results came from the server.": [
+        "नतीजे सर्वर से आए हैं।"
       ],
       "Right to Left": [
         "दाएं से बाएं"
@@ -8184,6 +8874,24 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "खोज में बहुत अधिक समय लग रहा है? इस खोज सत्र से ${ dropdownButton } या ${ toggleOffButton }।"
       ],
+      "Searched ${ targetName }": [
+        "${ targetName } में खोजा"
+      ],
+      "Searched for mail from ${ sender }": [
+        "${ sender } की ओर से आए मेल में खोजा"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "${ recipient } को भेजे गए मेल में खोजा"
+      ],
+      "Searched for “${ keyword }”": [
+        "“${ keyword }” के लिए खोजा"
+      ],
+      "Searched the web": [
+        "वेब पर खोजा"
+      ],
+      "Searched your mail": [
+        "आपके मेल में खोजा"
+      ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "आज एन्क्रिप्ट किए क्लाउड स्टोरेज से अपने फाइल सुरक्षित करें मुफ्त में।"
       ],
@@ -8193,6 +8901,9 @@
       "Select all ${ elementsCount } in ${ location }": [
         "${ location } में सभी ${ elementsCount } चुनें",
         "${ location } में सभी ${ elementsCount } चुनें"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "चुनें कि आप ठीक-ठीक क्या माइग्रेट करना चाहते हैं। ये सभी संगठन के उपयोगकर्ताओं पे लागू होगा।"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "इस ईमेल पते पर ईमेल भेजते समय आप जिस ईमेल प्रारूप का उपयोग करना चाहते हैं उसे डिफ़ॉल्ट रूप से चुनें।"
@@ -8239,8 +8950,17 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "${ MAIL_APP_NAME } को अपने डिफॉल्ट ईमेल एप्लीकेशन के रूप में सेट करें। जब आप किसी ईमेल लिंक पर क्लिक करेंगे तो ${ MAIL_APP_NAME } अपने आप खुल जाएगा।"
       ],
+      "Set auto-reply": [
+        "ऑटोमैटिक-जवाब सेट करें"
+      ],
+      "Set signature": [
+        "हस्ताक्षर सेट करें"
+      ],
       "Set up your organization": [
         "अपना संगठन स्थापित करें"
+      ],
+      "Set your signature": [
+        "अपना हस्ताक्षर सेट करें"
       ],
       "Setting up ${ feature }…": [
         "${ feature } सेटअप किया जा रहा है…"
@@ -8262,6 +8982,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "चूंकि आप एक वफादार उपयोगकर्ता हैं, इसलिए आपके खाते में अतिरिक्त सुविधाएं सक्षम हैं।"
+      ],
+      "Snooze emails": [
+        "ईमेल सूचना बंद करें"
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "संदेशों की सूचना बंद करें ताकि वे आपकी इच्छानुसार आपके इंबॉक्स के शीर्ष पर रहें"
@@ -8287,6 +9010,15 @@
       "Sorry, this message does not exist or has already expired.": [
         "क्षमा करें, यह संदेश मौजूद नहीं है या पहले ही समाप्त हो चुका है |"
       ],
+      "Source document in encrypted search index": [
+        "एन्क्रिप्ट किए गए खोज इंडेक्स में स्रोत दस्तावेज़"
+      ],
+      "Star ${ emails }": [
+        "${ emails } पर तारा लगाएं"
+      ],
+      "Star emails": [
+        "ईमेल तारांकित करें"
+      ],
       "Start sharing it with contacts and use it for online services.": [
         "इसे संपर्कों के साथ साझा करना शुरू करें और इसे ऑनलाइन सेवाओं के लिए उपयोग करें।"
       ],
@@ -8295,6 +9027,9 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "निम्नलिखित VPN सेटिंग्स को सक्षम करके आसानी से कनेक्टेड रहें:"
+      ],
+      "Stay on your plan and get 50% off your next month": [
+        "अपने प्लैन पे बने रहें और अगले महीने 50% छूट पाएं"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "इस ब्राउज़र में स्टोरेज क्षमताएं समर्थित नहीं हैं, हमें संदेश कंटेंट खोज सक्षम करने के लिए इस सहायता की आवश्यकता है।"
@@ -8421,6 +9156,9 @@
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "वो आपको स्पैम नही कर सकते अगर उनको आपका ईमेल पता नहीं पता। Hide-my-email से अपना इनबॉक्स सुरक्षित करें।"
       ],
+      "Thinking about this": [
+        "इसके बारे में सोचा जा रहा है"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "यह पता अक्षम है। इस पते पर भेजने में सक्षम होने के लिए, मालिक को पहले पते को सक्षम करना होगा।"
       ],
@@ -8448,6 +9186,9 @@
       ],
       "This file is too large to preview": [
         "यह फ़ाइल प्रीव्यू करने के लिए बहुत बड़ी है"
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "ये Gmail पता किसी दूसरे ${ BRAND_NAME } खाते (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI और अन्य) के साथ रजिस्टर्ड है। हम इस कनेक्शन को सहज बनाने पे काम कर रहे हैं, लेकिन फिलहाल आपको कुछ कदम उठाने होंगे।"
       ],
       "This invitation is saved in a disabled calendar.": [
         "यह निमंत्रण अक्षम कैलेंडर में सहेजा गया है।"
@@ -8552,6 +9293,12 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "इस विशिष्ट कोड का उपयोग वेबसाइटों और ISPs (इंटरनेट सेवा प्रदाताओं) द्वारा आपके स्थान और ब्राउज़िंग इतिहास को आपके डिवाइस से लिंक करने के लिए किया जा सकता है"
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "ये उपयोगकर्ता माइग्रेट नहीं किया जा सकता, क्योंकि उनका ईमेल पता ${ BRAND_NAME } पे उपलब्ध नहीं है।"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "प्लैटफॉर्म असंगति की वजह से ये उपयोगकर्ता माइग्रेट नहीं किया जा सकता।"
+      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "यह आपको इसलिए दिखाया गया क्योंकि आपके ईमेल के विषय में पासवर्ड रीसेट करने के कीवर्ड शामिल हैं।"
       ],
@@ -8578,6 +9325,27 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "इवेंट आयात करने के लिए, पहले ${ CALENDAR_APP_NAME } में एक कैलेंडर बनाएं। आयात के बाद इवेंट इधर दिखाएं जाएंगे।"
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "इस उपयोगकर्ता को माइग्रेट करने के लिए, ${ domainNamesLink } के तहत ईमेल डोमेन जोड़ें और वेरिफाई करें"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "इस उपयोगकर्ता को माइग्रेट करने के लिए, अपने ${ provider.adminConsoleName } में उनका खाता सक्षम करें."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "इस उपयोगकर्ता को माइग्रेट करने के लिए, ${ usersAddressesLink } के तहत उनका खाता सक्षम करें।"
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "इस उपयोगकर्ता को माइग्रेट करने के लिए, ${ usersAddressesLink } के तहत उनका पता सक्षम करें।"
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "इस उपयोगकर्ता को माइग्रेट करने के लिए, उन्हें ${ BRAND_NAME } में शामिल होने का न्योता स्वीकार करना होगा।"
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "इस उपयोगकर्ता को माइग्रेट करने के लिए, अपने ${ provider.adminConsoleName } में उन्हें आर्काइव से बाहर निकालें."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "इस उपयोगकर्ता को माइग्रेट करने के लिए, अपने ${ provider.adminConsoleName } में उनका सस्पेंशन हटाएं."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "अपने संपर्कों को फिर से हस्ताक्षर करने के लिए, हमें आपके खाते में उपलब्ध एन्क्रिप्शन कुंजी की सूची के विरुद्ध प्रत्येक संपर्क की जांच करने की आवश्यकता है। यदि कोई मिलान नहीं मिलता है, तो आपके संपर्क को प्राथमिक एन्क्रिप्शन कुंजी के साथ फिर से हस्ताक्षरित किया जाएगा।"
@@ -8630,11 +9398,20 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "नई ${ BRAND_NAME } सुविधाओं, अपडेट्स और उत्पादों को जनता के लिए जारी होने से पहले आज़माएँ। इससे एप्लिकेशन फिर से लोड हो जाएगा।"
       ],
+      "Turn off auto-reply": [
+        "ऑटोमैटिक-जवाब बंद करें"
+      ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "केवल तिथि, नाम, ईमेल पता, या विषय रेखा द्वारा खोजने के लिए इसे बंद करें। संदेश सामग्री की खोज को अक्षम करने (और इस खासियत को सक्षम करने के लिए डाउनलोड किए गए संदेशों को मिटाने) के लिए, सेटिंग पर जाएं।"
       ],
+      "Turn off your away message": [
+        "अपना अवे संदेश बंद करें"
+      ],
       "Turn on to search the content of your messages": [
         "अपने संदेशों की सामग्री खोजने के लिए चालू करें"
+      ],
+      "Turn on your away message": [
+        "अपना अवे संदेश चालू करें"
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "इस ब्राउज़र में स्टोरेज क्षमताओं को एक्सेस करने में असमर्थ, हमें संदेश कंटेंट खोज सक्षम करने के लिए इस एक्सेस की आवश्यकता है।"
@@ -8651,11 +9428,23 @@
       "Unsaved changes": [
         "सेव नहीं बदलाव"
       ],
+      "Unstar emails": [
+        "ईमेल से तारांकन हटाएं"
+      ],
       "Unsubscribe": [
         "सदस्यता रद्द"
       ],
       "Unsupported file": [
         "असमर्थित फ़ाइल"
+      ],
+      "Update filter": [
+        "फिल्टर अपडेट करें"
+      ],
+      "Update the filter ${ filter }": [
+        "${ filter } नाम का फ़िल्टर अपडेट करें"
+      ],
+      "Update this filter": [
+        "ये फ़िल्टर अपडेट करें"
       ],
       "Updating message content search...": [
         "संदेश सामग्री खोज अपडेट की जा रही है..."
@@ -8789,6 +9578,9 @@
       "We use 3-D Secure to protect your payments": [
         "आपके भुगतान की सुरक्षा के लिए हम 3-D सिक्योर का उपयोग करते हैं"
       ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "हम इस लेनदेन को पूरा करने के लिए आपको एक नए ब्राउज़र टैब में ${ IDEAL_WERO_BRAND_NAME } पर पुनर्निर्देशित करेंगे। यदि आप किसी पॉप-अप ब्लॉकर्स का इस्तेमाल करते हैं, तो कृपया जारी रखने के लिए उन्हें अक्षम करें।"
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "हम इस लेनदेन को पूरा करने के लिए आपको एक नए ब्राउज़र टैब में PayPal पर पुनर्निर्देशित करेंगे। यदि आप किसी पॉप-अप ब्लॉकर्स का उपयोग करते हैं, तो कृपया उन्हें जारी रखने के लिए अक्षम करें।"
       ],
@@ -8843,6 +9635,12 @@
       "Would you like to receive a new verification code?": [
         "क्या आप एक नया सत्यापन कोड प्राप्त करना चाहेंगे?"
       ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "एक साथ लिखने की बजाय, ${ REALISTIC_ENTRIES } रियलिस्टिक लॉग लाइनें एक मिनट में धीरे-धीरे लिखता है, जैसे किसी असली सत्र में होता है। चलने में करीब एक मिनट लगता है। इस टैब पे फोकस रखें: बैकग्राउंड में फ्रेम मेज़रमेंट ठहर जाते हैं।"
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "रियलिस्टिक लॉग लाइनें लगातार एक के पीछे एक लिखता है, फिर उन सबको वापस पढ़ता है। इससे पता चलता है कि स्टोर की गई एंट्री की संख्या के साथ राइट और पढ़ने/निर्यात करने की लागत कैसे बढ़ती है।"
+      ],
       "Writing assistant": [
         "लेखन सहायक"
       ],
@@ -8851,6 +9649,9 @@
       ],
       "Yearly": [
         "सालाना"
+      ],
+      "You": [
+        "आप"
       ],
       "You already have a free account": [
         "आपके पास पहले से एक निःशुल्क खाता है"
@@ -8893,6 +9694,9 @@
       ],
       "You can either update your search query or clear it": [
         "आप अपनी खोज क्वेरी को अपडेट कर सकते हैं या उसे साफ़ कर सकते हैं"
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "डेवलपमेंट के लिए आप इसे नए foundation-search इंडेक्स के रूप में आयात कर सकते हैं।"
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किया है को हटाए।",
@@ -9465,6 +10269,9 @@
         "${ count } अपठित संदेश",
         "${ count } अपठित संदेश"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } अक्षर"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } लेखन सहायक"
       ],
@@ -9483,6 +10290,9 @@
       ],
       "Account holder": [
         "खाता धारक"
+      ],
+      "Account holder name": [
+        "खाताधारक का नाम"
       ],
       "Actions": [
         "एक्शन"
@@ -9550,6 +10360,12 @@
       "Apply to future messages": [
         "भविष्य के संदेशों पर लागू करें"
       ],
+      "Archive": [
+        "संग्रह"
+      ],
+      "At": [
+        "पे"
+      ],
       "Attach screenshot(s)": [
         "स्क्रीनशॉट(स) संलग्न करें"
       ],
@@ -9558,6 +10374,9 @@
       ],
       "Automated confirmations and alerts": [
         "स्वचालित पुष्टिकरण और अलर्ट"
+      ],
+      "Away message": [
+        "दूर रहने का संदेश"
       ],
       "BCC": [
         "बीसीसी"
@@ -9585,6 +10404,9 @@
       ],
       "BTC amount": [
         "बीटीसी राशि"
+      ],
+      "Burst write": [
+        "बर्स्ट राइट"
       ],
       "Calendar": [
         "कैलेंडर"
@@ -9625,14 +10447,29 @@
       "Clear logs": [
         "लॉग हटाएं"
       ],
+      "Client": [
+        "क्लाइंट"
+      ],
+      "Client version": [
+        "क्लाइंट संस्करण"
+      ],
       "Code is 6 digits without spaces": [
         "कोड बिना रिक्त स्थान के 6 अंक हैं"
       ],
       "Colors": [
         "रंग"
       ],
+      "Column": [
+        "स्तंभ"
+      ],
+      "Comfortable": [
+        "आरामदायक"
+      ],
       "Command line interface (CLI)": [
         "कमांड लाइन इंटरफ़ेस (CLI)"
+      ],
+      "Compact": [
+        "कॉम्पैक्ट"
       ],
       "Company": [
         "कंपनी"
@@ -9651,6 +10488,9 @@
       ],
       "Contacts": [
         "संपर्क"
+      ],
+      "Content search version to use": [
+        "इस्तेमाल करने के लिए कंटेंट खोज वर्ज़न"
       ],
       "Context page": [
         "संदर्भ पृष्ठ"
@@ -9691,6 +10531,9 @@
       "Date:": [
         "तिथि"
       ],
+      "Deals, offers, and marketing emails": [
+        "डील, ऑफ़र और मार्केटिंग ईमेल"
+      ],
       "Delete": [
         "मिटाएं"
       ],
@@ -9705,6 +10548,9 @@
       ],
       "Display name": [
         "डिस्प्ले नाम"
+      ],
+      "Document ID": [
+        "दस्तावेज़ ID"
       ],
       "Don't ask again": [
         "फिर से ना पूछें"
@@ -9726,6 +10572,9 @@
       ],
       "Drive": [
         "ड्राइव"
+      ],
+      "Dropped frames": [
+        "ड्रॉप हुए फ्रेम"
       ],
       "Duration": [
         "अवधि"
@@ -9772,8 +10621,14 @@
       "Enable filter": [
         "फ़िल्टर सक्षम करें"
       ],
+      "Encrypt": [
+        "एन्क्रिप्ट करें"
+      ],
       "Encrypt emails": [
         "ईमेल एन्क्रिप्ट करें"
+      ],
+      "Entries": [
+        "एंट्रीज़"
       ],
       "Exact host matching": [
         "सटीक होस्ट मिलान"
@@ -9783,6 +10638,9 @@
       ],
       "Expires": [
         "समय खत्म"
+      ],
+      "Export size": [
+        "निर्यात साइज़"
       ],
       "Extended address": [
         "विस्तारित पता"
@@ -9795,6 +10653,9 @@
       ],
       "Filter": [
         "फिल्टर"
+      ],
+      "Filter name": [
+        "फिल्टर का नाम"
       ],
       "Filter Name": [
         "नाम फिल्टर करें"
@@ -9819,6 +10680,12 @@
       ],
       "From": [
         "से"
+      ],
+      "From date": [
+        "प्रारंभ तारीख़"
+      ],
+      "From time": [
+        "प्रारंभ समय"
       ],
       "From:": [
         "से:"
@@ -9846,6 +10713,9 @@
       ],
       "Go to Updates": [
         "अपडेट पर जाएं"
+      ],
+      "Grouped conversations": [
+        "ग्रुप की गई बातचीत"
       ],
       "Has attachments": [
         "अटैचमेंट हैं"
@@ -9883,6 +10753,9 @@
       "Include application logs in bug report": [
         "बग रिपोर्ट में एप्लीकेशन लॉग शामिल करें"
       ],
+      "IndexedDB store": [
+        "IndexedDB स्टोर"
+      ],
       "Information": [
         "जानकारी"
       ],
@@ -9907,6 +10780,9 @@
       "Label messages as": [
         "संदेशों को लेबल करें"
       ],
+      "Label name": [
+        "लेबल नाम"
+      ],
       "Last 12 months only": [
         "पिछले 12 महीने ही"
       ],
@@ -9927,6 +10803,12 @@
       ],
       "Location": [
         "स्थान"
+      ],
+      "Log performance": [
+        "लॉग प्रदर्शन"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "लंबे टास्क (≥ 50 ms)"
       ],
       "Mail debugging information": [
         "मेल डिबगिंग जानकारी"
@@ -9994,6 +10876,9 @@
       "Never fill on this exact URL": [
         "इस सटीक URL पर कभी न भरें"
       ],
+      "New name": [
+        "नया नाम"
+      ],
       "New password": [
         "नया पासवर्ड"
       ],
@@ -10008,6 +10893,12 @@
       ],
       "No label found": [
         "कोई लेबल नहीं मिला"
+      ],
+      "No unread conversations": [
+        "कोई अपठित बातचीत नहीं"
+      ],
+      "No unread messages": [
+        "कोई अपठित संदेश नहीं"
       ],
       "Non-promotional content and news": [
         "गैर-प्रचार सामग्री और समाचार"
@@ -10111,6 +11002,12 @@
       "Read": [
         "पढ़ा हुआ"
       ],
+      "Read / export": [
+        "पढ़ें / निर्यात करें"
+      ],
+      "Realistic session": [
+        "रियलिस्टिक सत्र"
+      ],
       "Recipient": [
         "लेनेवाले"
       ],
@@ -10135,11 +11032,17 @@
       "Remove Zoom video conference": [
         "Zoom वीडियो कॉन्फ्रेंस हटाएं"
       ],
+      "Return on": [
+        "वापसी की तारीख"
+      ],
       "Reveal password": [
         "पासवर्ड प्रकट"
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "रूट डे ला गलाइस 32, 1228 प्लान-लेस-ओएट्स, जिनेवा"
+      ],
+      "Row": [
+        "पंक्ति"
       ],
       "Search in": [
         "की खोज में"
@@ -10156,11 +11059,17 @@
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "${ CALENDAR_APP_NAME } में बुकिंग पेजों के साथ अपनी उपलब्धता शेयर करें, और ${ MEET_APP_NAME } के साथ सुरक्षित बैठकें आयोजित करें।"
       ],
+      "Sieve script": [
+        "Sieve स्क्रिप्ट"
+      ],
       "Sign emails": [
         "ईमेल पे हस्ताक्षर करें"
       ],
       "Signature": [
         "हस्ताक्षर"
+      ],
+      "Single messages": [
+        "अलग संदेश"
       ],
       "Size:": [
         "साइज़:"
@@ -10216,6 +11125,9 @@
       "Subscription options": [
         "सदस्यता विकल्प"
       ],
+      "Sum of write() calls": [
+        "write() कॉल का योग"
+      ],
       "Sync with system": [
         "सिस्टम के साथ तालमेल बिठाएं"
       ],
@@ -10270,6 +11182,12 @@
       "Unsubscribed from ${ truncatedName }.": [
         "${ truncatedName } से सदस्यता रद्द कर दी गई।"
       ],
+      "Until date": [
+        "समाप्ति तारीख़"
+      ],
+      "Until time": [
+        "समाप्ति समय"
+      ],
       "Updates": [
         "अपडेट"
       ],
@@ -10287,6 +11205,12 @@
       ],
       "Username": [
         "उपयोगकर्ता का नाम"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ],
       "Verification code": [
         "पुष्टि संख्या"
@@ -10317,6 +11241,15 @@
       ],
       "Without attachment": [
         "संलग्नक के बिना"
+      ],
+      "Write": [
+        "राइट"
+      ],
+      "Write (whole session)": [
+        "राइट (पूरा सत्र)"
+      ],
+      "Write-chain drain after last line": [
+        "आख़िरी लाइन के बाद राइट-चेन ड्रेन"
       ],
       "Writing assistant": [
         "लेखन सहायक"
@@ -10460,6 +11393,12 @@
     "Link": {
       "Add a gift code": [
         "एक उपहार कोड जोड़ें"
+      ],
+      "Add formatting, links or images": [
+        "फॉर्मैटिंग, लिंक या इमेज जोड़ें"
+      ],
+      "Advanced auto-reply options": [
+        "ऑटोमैटिक-जवाब के ऐडवांस विकल्प"
       ],
       "All mail": [
         "सारे मेल"
@@ -10783,8 +11722,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe लेखन सहायक"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } लेखन सहायक"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe लेखन सहायक जोड़ें"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } लेखन सहायक जोड़ें"
       ],
       "Add-on with free trial": [
         "मुफ्त ट्रायल के साथ ऐड-ऑन"
@@ -10817,6 +11762,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } सीटें"
+      ],
+      "${ price } per seat": [
+        "${ price } प्रति सीट"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } सीट",
@@ -11176,6 +12124,15 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } और ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } लेखन सहायक"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "विस्तारित एक्सेस के साथ ${ LUMO_SHORT_APP_NAME } राइटिंग असिस्टेंट"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "सीमित एक्सेस के साथ ${ LUMO_SHORT_APP_NAME } राइटिंग असिस्टेंट"
       ],
       "${ n } calendar": [
         "${ n } कैलेंडर",
@@ -11675,6 +12632,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } खत्म होता है ${ Last4 } से"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 टीबी क्लाउड स्टोरेज जो आपको फ़ाइलें आसानी से स्टोर, सिंक और शेयर करने देता है। शुरु-से-अंत तक एन्क्रिप्शन द्वारा सुरक्षित।"
       ],
@@ -12060,6 +13020,16 @@
       "Support for ${ n } custom email domain": [
         "${ n } कस्टम ईमेल डोमेन के लिए सपोर्ट",
         "${ n } कस्टम ईमेल डोमेन के लिए सपोर्ट"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "अभी आज़माएं"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "अब आप नए ${ CALENDAR_APP_NAME } को एक्सेस कर सकते हैं। ${ link }"
       ]
     },
     "Notification": {
@@ -12597,6 +13567,9 @@
       "Permanent": [
         "स्थायी"
       ],
+      "Remind me later": [
+        "मुझे बाद में याद दिलाएं"
+      ],
       "Repeat daily": [
         "प्रतिदिन दोहराएं"
       ],
@@ -12605,6 +13578,9 @@
       ],
       "Repeat weekly": [
         "साप्ताहिक दोहराएं"
+      ],
+      "Yes, don't show again": [
+        "हां, फिर से न दिखाएं"
       ]
     },
     "Option group": {
@@ -12797,6 +13773,9 @@
       "More plans are available in other currencies": [
         "अन्य मुद्राओं में और अधिक प्लैन उपलब्ध हैं"
       ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "${ IDEAL_WERO_BRAND_NAME } से पेमेंट करें"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "ट्रायल समाप्त होने के बाद सदस्यता को सक्रिय करने के लिए भुगतान तरीका आवश्यक है।"
       ],
@@ -12878,6 +13857,9 @@
       "You will soon be redirected to verify your payment.": [
         "आपके भुगतान को सत्यापित करने के लिए आपको जल्द ही रीडायरेक्ट कर दिया जाएगा।"
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "आपकी मुद्रा यूरो (€) में बदल दी गई है, क्योंकि ${ IDEAL_WERO_BRAND_NAME } सिर्फ़ यूरो में पेमेंट सपोर्ट करता है।"
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "आपकी मुद्रा को यूरो (€) में बदल दिया गया है क्योंकि SEPA बैंक ट्रांसफर केवल यूरो में भुगतान का ही सहायता करते हैं।"
       ],
@@ -12889,6 +13871,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "${ IDEAL_WERO_BRAND_NAME } को शुरू करने में असफल। कृपया बाद में दोबारा कोशिश करें।"
+      ],
       "Invalid card number": [
         "अमान्य कार्ड नंबर"
       ],
@@ -12897,6 +13882,9 @@
       ],
       "Invalid security code": [
         "अमान्य सुरक्षा कोड"
+      ],
+      "Please enter the account holder name": [
+        "कृपया खाताधारक का नाम दर्ज करें"
       ],
       "Something went wrong. Please try again later.": [
         "कुछ गलत हो गया है। कृपया दोबारा कोशिश करें।"
@@ -12913,12 +13901,22 @@
         "कुछ गलत हो गया। Google Pay सत्यापन विफल रहा।"
       ]
     },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "पुष्टि करने के बाद, आप ${ BRAND_NAME } और Stripe, हमारे पेमेंट सर्विस प्रोवाइडर, को आपकी सदस्यता के लिए भविष्य के पेमेंट SEPA Direct Debit के ज़रिए इस बैंक खाते से लेने की, और अपने बैंक को वो पेमेंट काटने की अनुमति देते हैं। आपका पहला पेमेंट अभी ${ IDEAL_WERO_BRAND_NAME } के ज़रिए होगा। आपका प्लैन ऑटो-रीन्यू होता रहेगा, जब तक आप रद्द न करें; हर कलेक्शन से पहले हम आपको सूचित करेंगे। डायरेक्ट डेबिट कलेक्शन के लिए आप अपने बैंक से किए गए समझौते की शर्तों के तहत, डेबिट की तारीख़ से 8 हफ़्तों के भीतर रिफ़ंड मांग सकते हैं। ये उस ${ IDEAL_WERO_BRAND_NAME } पेमेंट पर लागू नहीं होता, जो आप अभी कर रहे हैं।"
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "आपके पिछले प्लान की सदस्यता के अप्रयुक्त हिस्से के लिए क्रेडिट"
       ],
       "Credits will be added to your balance": [
         "क्रेडिट आपके बैलेंस में जोड़ दिए जाएंगे"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "अपना बिलिंग पता बदलने से भविष्य के इनवॉइस पर टैक्स प्रभावित हो सकते हैं।"
       ]
     },
     "Payments.ModificationWarning": {
@@ -12955,6 +13953,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "नवीनीकरण मूल्य बिलिंग क्षेत्र और वैट नंबर पर निर्भर करता है।"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - कार्ड ${ Last4 } से खत्म होता है"
+      ],
+      "Bank transfer - ${ iban }": [
+        "बैंक ट्रांसफ़र - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - कार्ड ${ Last4 } से खत्म होता है"
       ]
     },
     "Payments.Sepa": {
@@ -13042,6 +14051,9 @@
       ],
       "Anytown": [
         "कोई भी शहर"
+      ],
+      "Ask anything…": [
+        "कुछ भी पूछें…"
       ],
       "Company name": [
         "कंपनी का नाम"
@@ -13280,6 +14292,26 @@
         "प्रगति: ${ combinedProgress }%"
       ]
     },
+    "Property": {
+      "attributes": [
+        "विशेषताएं"
+      ],
+      "content key": [
+        "कंटेंट चाबी"
+      ],
+      "hash key": [
+        "हैश चाबी"
+      ],
+      "key": [
+        "कुंजी"
+      ],
+      "membership": [
+        "सदस्यता"
+      ],
+      "name": [
+        "नाम"
+      ]
+    },
     "Property type": {
       "Address": [
         "पता"
@@ -13412,6 +14444,79 @@
         "समर सेल"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "सौदा पाएं"
+      ],
+      "Special Offer": [
+        "विशेष ऑफर"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/महीना"
+      ],
+      "2 individual accounts": [
+        "2 व्यक्तिगत खाते"
+      ],
+      "2 TB of secure storage": [
+        "2 टीबी सुरक्षित स्टोरेज"
+      ],
+      "3 TB of secure storage": [
+        "3 टीबी सुरक्षित स्टोरेज"
+      ],
+      "500 GB of secure storage": [
+        "500 जीबी सुरक्षित स्टोरेज"
+      ],
+      "6 individual accounts": [
+        "6 व्यक्तिगत खाते"
+      ],
+      "Advanced protection against cyber threats": [
+        "साइबर खतरों के खिलाफ उन्नत सुरक्षा"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "छूट स्टैंडर्ड मासिक कीमत के आधार पे हैं। बिल साइकिल खत्म होने पे आपकी सदस्यता स्टैंडर्ड सालाना दर से रिन्यू हो जाएगी।"
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "प्रीमियम ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, और ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "प्रीमियम ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, और ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "प्रीमियम ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "प्रीमियम ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "प्रीमियम ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, और ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "12 महीने के लिए"
+      ],
+      "One plan, full power": [
+        "एक प्लैन, पूरी पावर"
+      ],
+      "One plan, max savings": [
+        "एक प्लैन, अधिकतम बचत"
+      ],
+      "One plan, more power": [
+        "एक प्लैन, ज़्यादा पावर"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "शुरु-से-अंत तक एन्क्रिप्ट और हस्ताक्षर किया संदेश"
@@ -13542,6 +14647,9 @@
       ]
     },
     "Role": {
+      "Organization Admin": [
+        "संगठन एडमिन"
+      ],
       "Security Admin": [
         "सुरक्षा एडमिन"
       ],
@@ -13991,6 +15099,18 @@
       ],
       "Private, fast, and organized": [
         "निजी, तेज़ और व्यवस्थित"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } ईमेल → ${ wakeTime }",
+        "${ count } ईमेल → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "${ emails } को सूचना बंद रखें"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "${ emails } को ${ wakeTime } तक सूचना बंद रखें"
       ]
     },
     "Snooze message": {
@@ -15226,17 +16346,26 @@
       "Actions": [
         "कार्रवाई"
       ],
+      "Activated": [
+        "सक्रिय"
+      ],
       "Address": [
         "पता"
       ],
       "Created": [
         "रचनातिथी"
       ],
+      "Estimated size": [
+        "अनुमानित साइज़"
+      ],
       "Expires": [
         "समय-सीमा समाप्त"
       ],
       "Fingerprint": [
         "फिंगरप्रिंट"
+      ],
+      "Migration status": [
+        "माइग्रेशन की स्थिति"
       ],
       "Name": [
         "नाम"
@@ -15249,6 +16378,9 @@
       ],
       "Type": [
         "टाइप"
+      ],
+      "User": [
+        "यूज़र"
       ]
     },
     "TableHeader": {
@@ -15535,6 +16667,9 @@
       "Collaborate on documents": [
         "दस्तावेजों पर सहयोग करें"
       ],
+      "Configure migration": [
+        "माइग्रेशन कॉन्फ़िगर करें"
+      ],
       "Confirm downgrade": [
         "अधोगति की पुष्टि करें"
       ],
@@ -15795,6 +16930,9 @@
       "Groups": [
         "ग्रुप"
       ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "ध्यान दें: ये Gmail किसी दूसरे ${ BRAND_NAME } खाते से लिंक है"
+      ],
       "Help and feedback": [
         "सहायता और सुझाव"
       ],
@@ -15862,6 +17000,9 @@
       "Invalid verification code": [
         "अवैध सत्यापन कोड"
       ],
+      "Keep this banner hidden?": [
+        "इस बैनर को छिपा रखें?"
+      ],
       "Label as": [
         "के रूप में लेबल"
       ],
@@ -15889,6 +17030,9 @@
       ],
       "Make a secure connection your default": [
         "एक सुरक्षित कनेक्शन को अपना डिफ़ॉल्ट बनाएं"
+      ],
+      "Make your inbox your own": [
+        "अपने इंबॉक्स को अपने हिसाब से बनाएं"
       ],
       "Mark all messages as read": [
         "सभी संदेशों को पढ़े गए के रूप में मार्क करें"
@@ -16190,6 +17334,9 @@
       "Select data to import": [
         "आयात करने के लिए डेटा चुनें"
       ],
+      "Select users to migrate": [
+        "माइग्रेट करने के लिए उपयोगकर्ता चुनें"
+      ],
       "Self-destruct message": [
         "अपनेआप-खत्म संदेश"
       ],
@@ -16222,6 +17369,9 @@
       ],
       "Sending original message": [
         "मूल संदेश भेजा जा रहा है"
+      ],
+      "September Sale": [
+        "सितंबर सेल"
       ],
       "Set recovery methods": [
         "रिकवरी तरीके सेट करें"
@@ -16276,6 +17426,9 @@
       ],
       "Start import process": [
         "आयात प्रक्रिया शुरू करें"
+      ],
+      "Stay for 50% off your next month": [
+        "बने रहें और अगले महीने 50% छूट पाएं"
       ],
       "Storage capacity warning": [
         "भंडारण क्षमता चेतावनी"
@@ -16402,6 +17555,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Business के लिए ${ BRAND_NAME } में आपका स्वागत है"
       ],
+      "What are you migrating?": [
+        "आप क्या माइग्रेट कर रहे हैं?"
+      ],
       "What can a VPN protect you from?": [
         "VPN आपको किस चीज़ से बचा सकता है?"
       ],
@@ -16489,6 +17645,9 @@
       "Customize import to reduce the number of labels": [
         "लेबल की संख्या कम करने के लिए आयात को अनुकूलित करें"
       ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "${ providerName } से ${ BRAND_NAME } तक डाटा माइग्रेशन की स्थिति"
+      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "ईमेल पर डिजिटल रूप से हस्ताक्षर करने से यह प्रमाणित करने में मदद मिलती है कि संदेश आपके द्वारा भेजे गए हैं"
       ],
@@ -16567,6 +17726,9 @@
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "इस ईमेल पर एंड-टू-एंड एन्क्रिप्टेड ईमेल भेजने को सक्षम करने के लिए एक सार्वजनिक कुंजी अपलोड करें"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "जिन उपयोगकर्ताओं ने अपने ${ BRAND_NAME } खाते को एक्सेस किया है"
+      ],
       "Version 6 OpenPGP key": [
         "संस्करण 6 OpenPGP कुंजी"
       ]
@@ -16621,6 +17783,9 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "एडमिन भूमिकाओं का इस्तेमाल करने के लिए समर्थित प्लैन पर अपग्रेड करें।"
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "उपयोगकर्ता द्वारा आमंत्रण स्वीकार करने के बाद आप भूमिकाएं सौंप सकेंगे।"
       ]
@@ -16849,6 +18014,10 @@
       "Every ${ interval } week on Thursday": [
         "प्रत्येक ${ interval } सप्ताह गुरुवार को",
         "प्रत्येक ${ interval } सप्ताह गुरुवार को"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "प्रत्येक ${ interval } सप्ताह के मंगलवार को",
+        "प्रत्येक ${ interval } सप्ताह के मंगलवार को"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
         "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ timesString }",

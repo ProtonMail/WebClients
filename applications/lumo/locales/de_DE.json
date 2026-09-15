@@ -1056,6 +1056,9 @@
       "Continue": [
         "Fortfahren"
       ],
+      "Create artifact": [
+        "Artefakt erstellen"
+      ],
       "Create folder": [
         "Ordner erstellen"
       ],
@@ -1110,6 +1113,9 @@
       "New chat": [
         "Neuer Chat"
       ],
+      "Not now": [
+        "Nicht jetzt"
+      ],
       "Open ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } öffnen"
       ],
@@ -1158,11 +1164,17 @@
       "Submit": [
         "Absenden"
       ],
+      "Switch to Max": [
+        "Zu Max wechseln"
+      ],
       "System": [
         "System"
       ],
       "Try again": [
         "Erneut versuchen"
+      ],
+      "Try Apertus": [
+        "Apertus ausprobieren"
       ],
       "Turn off and delete": [
         "Ausschalten und löschen"
@@ -1188,6 +1200,9 @@
       ],
       "Upload from device": [
         "Vom Gerät hochladen"
+      ],
+      "Use Apertus": [
+        "Apertus verwenden"
       ],
       "Web search": [
         "Websuche"
@@ -1221,6 +1236,9 @@
       ],
       "Continue": [
         "Fortfahren"
+      ],
+      "Create artifact": [
+        "Artefakt erstellen"
       ],
       "Create image": [
         "Bild erstellen"
@@ -1318,45 +1336,51 @@
       "${ removed } freed": [
         "${ removed } freigegeben"
       ],
-      "${ stats.summarizedMessageCount } earlier message condensed": [
-        "${ stats.summarizedMessageCount } frühere Nachricht zusammengefasst",
-        "${ stats.summarizedMessageCount } frühere Nachrichten zusammengefasst"
+      "${ stats.summarizedMessageCount } earlier message summarized for new replies": [
+        "${ stats.summarizedMessageCount } frühere Nachricht, die für neue Antworten zusammengefasst wurde",
+        "${ stats.summarizedMessageCount } frühere Nachrichten, die für neue Antworten zusammengefasst wurden"
       ],
-      "Chat shortened to keep going": [
-        "Chat gekürzt, um weiterzumachen"
+      "Earlier messages summarized to make room": [
+        "Frühere Nachrichten zusammengefasst, um Platz zu schaffen"
       ],
-      "cleared old tool results": [
-        "Alte Tool-Ergebnisse entfernt"
+      "Excluded from new replies only": [
+        "Nur von neuen Antworten ausgeschlossen"
       ],
-      "dropped old messages": [
-        "Alte Nachrichten fallen gelassen"
+      "Files not included in new replies": [
+        "Dateien in neuen Antworten nicht enthalten"
       ],
-      "Files from summarized messages": [
-        "Dateien aus zusammengefassten Nachrichten"
+      "Making room to keep going — summarizing earlier messages for the next reply…": [
+        "Platz wird geschaffen, um weiterzumachen – früherer Nachrichten werden für die nächste Antwort zusammengefasst…"
       ],
-      "No longer sent to the model": [
-        "Wird nicht mehr an das Modell gesendet"
+      "Nothing is removed from your chat. Scroll up anytime to read the full history.": [
+        "Aus deinem Chat wird nichts gelöscht. Scrolle jederzeit nach oben, um den gesamten Verlauf zu lesen."
       ],
-      "removed file context": [
-        "Dateikontext entfernt"
+      "summarized older messages": [
+        "Zusammenfassung älterer Nachrichten"
       ],
-      "removed tool calls": [
-        "Tool-Aufrufe entfernt"
+      "Summary ${ LUMO_SHORT_APP_NAME } uses for new replies": [
+        "Zusammenfassung, die ${ LUMO_SHORT_APP_NAME } für neue Antworten verwendet"
       ],
-      "summarized the conversation": [
-        "Unterhaltung zusammengefasst"
+      "Tool calls trimmed": [
+        "Tool-Aufrufe gekürzt"
       ],
-      "This chat got long — summarizing earlier messages so we can keep going…": [
-        "Dieser Chat ist ziemlich lang geworden – frühere Nachrichten werden zusammengefasst, damit wir weitermachen können…"
+      "Tool output trimmed": [
+        "Tool-Ausgabe gekürzt"
       ],
-      "Tool calls removed": [
-        "Tool-Aufrufe entfernt"
+      "trimmed file context": [
+        "Gekürzter Dateikontext"
       ],
-      "Tool output cleared": [
-        "Tool-Ausgabe entfernt"
+      "trimmed old tool calls": [
+        "Ältere Tool-Aufrufe gekürzt"
       ],
-      "What ${ LUMO_SHORT_APP_NAME } still remembers": [
-        "Was sich ${ LUMO_SHORT_APP_NAME } noch merkt"
+      "trimmed old tool output": [
+        "Ältere Tool-Ausgaben gekürzt"
+      ],
+      "wrote a conversation summary": [
+        "Zusammenfassung der Unterhaltung verfasst"
+      ],
+      "Your chat history above is unchanged. ${ LUMO_SHORT_APP_NAME } uses the summary below when replying — scroll up anytime to read the original messages.": [
+        "Dein Chatverlauf oben bleibt unverändert. ${ LUMO_SHORT_APP_NAME } verwendet bei der Beantwortung die untenstehende Zusammenfassung – scrolle jederzeit nach oben, um die ursprünglichen Nachrichten zu lesen."
       ]
     },
     "collider_2025: Context": {
@@ -1421,6 +1445,9 @@
       ]
     },
     "collider_2025: Description": {
+      "${ apertusArticleLink } is a fully open, Swiss-made AI model developed with leading Swiss universities. It is best suited to lighter everyday tasks.": [
+        "${ apertusArticleLink } ist ein vollständig offenes, in der Schweiz entwickeltes KI-Modell, das in Zusammenarbeit mit führenden Schweizer Universitäten entstanden ist. Es eignet sich am besten für einfachere Alltagsaufgaben."
+      ],
       "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
         "${ LUMO_SHORT_APP_NAME } greift auf deine gespeicherten Erinnerungen zurück, um die Antworten individuell anzupassen – Kommunikationsstil, Fachwissen, häufig verwendete Tools und laufende Projekte."
       ],
@@ -1429,6 +1456,12 @@
       ],
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Deine eigenen Erinnerungen hinzufügen, beliebige automatisch generierte Einträge bearbeiten oder jederzeit alles entfernen. Bearbeitete, automatisch generierte Erinnerungen werden zu deinen eigenen."
+      ],
+      "Adjust the size of text across the app": [
+        "Textgrösse in der gesamten App anpassen"
+      ],
+      "After you continue, Apertus will appear as the selected model in the model menu. You can use that menu to switch to another model at any time.": [
+        "Sobald du fortfährst, wird Apertus im Modellmenü als ausgewähltes Modell angezeigt. Über dieses Menü kannst du jederzeit zu einem anderen Modell wechseln."
       ],
       "Always enable web search for new conversations": [
         "Immer Websuche für neue Unterhaltungen aktivieren"
@@ -1448,8 +1481,14 @@
       "High-performance model for complex tasks": [
         "Leistungsstarkes Modell für komplexe Aufgaben"
       ],
+      "If Apertus gives you a poor response, use the thumbs down button to send feedback. The related prompt and response will be shared with university research teams at ETH Zurich and EPFL to help improve the model. This feedback loop is especially valuable for fully open models, helping them improve faster and remain competitive.": [
+        "Sollte Apertus eine unbefriedigende Antwort liefern, nutze die Daumen-runter-Schaltfläche, um Feedback zu senden. Die entsprechende Eingabe und Antwort werden an Forschungsteams der ETH Zürich und der EPFL weitergeleitet, um das Modells zu verbessern. Dieser Feedback-Kreislauf ist besonders wertvoll für vollständig offene Modelle, da er dazu beiträgt, dass sie sich schneller verbessern und wettbewerbsfähig bleiben."
+      ],
       "Include project conversations in the main chat history": [
         "Projektunterhaltungen im Haupt-Chatverlauf einschließen"
+      ],
+      "Its model weights, training data, values, and development details are open for inspection. The ${ apertusCharterLink } provides strong ethical guardrails for privacy, responsible data use, transparency, and human agency.": [
+        "Die Modellgewichte, Trainingsdaten, Werte und Entwicklungsdetails können eingesehen werden. Die ${ apertusCharterLink } bietet strenge ethische Leitlinien in Bezug auf Datenschutz, verantwortungsvolle Datennutzung, Transparenz und menschliche Entscheidungsfreiheit."
       ],
       "Keep it safe — it won't be shown again": [
         "Bewahre es sicher auf – es wird nicht erneut angezeigt"
@@ -1505,8 +1544,14 @@
       "This will permanently remove all saved memories. ${ LUMO_SHORT_APP_NAME } will no longer use them in future chats.": [
         "Dadurch werden alle gespeicherten Erinnerungen dauerhaft entfernt. ${ LUMO_SHORT_APP_NAME } wird sie in zukünftigen Chats nicht mehr verwenden."
       ],
+      "Try the new fully open, Swiss-made AI model developed with leading Swiss research institutions.": [
+        "Probiere das neue, vollständig offene, in der Schweiz entwickelte KI-Modell aus, das in Zusammenarbeit mit führenden Schweizer Forschungseinrichtungen entstanden ist."
+      ],
       "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
         "Wenn du die Speicherfunktion ausschaltest, werden alle ${ memories.length } gespeicherten Erinnerungen endgültig gelöscht. Du kannst die Speicherfunktion später wieder einschalten, die gelöschten Erinnerungen lassen sich jedoch nicht wiederherstellen."
+      ],
+      "You can learn more on the ${ protonBlogLink }.": [
+        "Du kannst auf ${ protonBlogLink } mehr erfahren"
       ],
       "Your experience shapes ${ LUMO_SHORT_APP_NAME }. Tell us what you think.": [
         "Deine Erfahrungen prägen ${ LUMO_SHORT_APP_NAME }. Sag uns deine Meinung."
@@ -1664,6 +1709,12 @@
       "We're experiencing unusually high demand. If retrying doesn't work, check back in a few minutes or upgrade for priority access to ${ LUMO_SHORT_APP_NAME }.": [
         "Die Nachfrage ist ungewöhnlich hoch. Wenn ein erneuter Versuch nicht funktioniert, schau in ein paar Minuten wieder vorbei oder upgrade für priorisierten Zugang zu ${ LUMO_SHORT_APP_NAME }."
       ],
+      "We've switched you to ${ selectedModelLabel }, which is still available. ${ fallbackUpsellMessage }": [
+        "Wir haben dich auf ${ selectedModelLabel } gewechselt, das weiterhin erhältlich ist. ${ fallbackUpsellMessage }"
+      ],
+      "You've sent too many requests in a short time. Wait a moment and try again.": [
+        "Du hast innerhalb kurzer Zeit zu viele Anfragen gesendet. Warte einen Moment und versuche es erneut."
+      ],
       "Your request didn't go through or couldn't be completed. Try sending it again.": [
         "Deine Anfrage konnte nicht verarbeitet oder abgeschlossen werden. Versuche, sie erneut zu senden."
       ],
@@ -1686,6 +1737,21 @@
       ],
       "Something went wrong": [
         "Etwas ist schiefgelaufen"
+      ],
+      "Too many requests": [
+        "Zu viele Anfragen"
+      ],
+      "You've reached a model limit": [
+        "Du hast einen Grenzwert des Modells erreicht"
+      ],
+      "You've reached your ${ LUMO_SHORT_APP_NAME } 2.0 Lite limit": [
+        "Du hast dein Limit für ${ LUMO_SHORT_APP_NAME } 2.0 Lite erreicht"
+      ],
+      "You've reached your ${ LUMO_SHORT_APP_NAME } 2.0 Max limit": [
+        "Du hast dein Limit für ${ LUMO_SHORT_APP_NAME } 2.0 Max erreicht"
+      ],
+      "You've reached your Apertus 1.5 limit": [
+        "Du hast dein Limit für Apertus 1.5 erreicht"
       ]
     },
     "collider_2025: Failure": {
@@ -1760,6 +1826,9 @@
       "Choose sheets to add": [
         "Tabellenblätter zum Hinzufügen auswählen"
       ],
+      "Help us improve": [
+        "Hilf uns, besser zu werden"
+      ],
       "Tell us more": [
         "Erzähl uns mehr"
       ]
@@ -1805,6 +1874,10 @@
       "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
         "${ DRIVE_SHORT_APP_NAME } Speicher noch nicht eingerichtet"
       ],
+      "${ droppedForBudget.length } least relevant file was left out of this reply so the rest fits.": [
+        "${ droppedForBudget.length } am wenigsten relevante Datei wurde in dieser Antwort weggelassen, damit der Rest hineinpasst.",
+        "${ droppedForBudget.length } am wenigsten relevanten Dateien wurden aus dieser Antwort weggelassen, damit der Rest hineinpasst."
+      ],
       "${ expiringInOneDay } chat will expire in 1 day": [
         "${ expiringInOneDay } Chat läuft in 1 Tag ab",
         "${ expiringInOneDay } Chats laufen in 1 Tag ab"
@@ -1820,8 +1893,8 @@
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } ist eine datenschutzorientierte KI, die dir hilft, mehr zu erledigen und gleichzeitig dafür sorgt, dass deine Daten sicher bleiben. Entfalte ihr volles Potenzial und genieße den Vorabzugriff auf neue Funktionen, sobald sie eingeführt werden."
       ],
-      "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space; when it fills up, older messages are automatically summarized so you can keep chatting.": [
-        "${ LUMO_SHORT_APP_NAME } kann pro Unterhaltung nur eine begrenzte Menge an Informationen verarbeiten. Hier siehst du, was diesen Speicherplatz derzeit belegt; wenn er voll ist, werden ältere Nachrichten automatisch zusammengefasst, damit du weiterchatten kannst."
+      "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space. When it fills up, older messages are summarized — not deleted — so you can keep chatting. Your full chat history stays in the conversation.": [
+        "${ LUMO_SHORT_APP_NAME } kann pro Unterhaltung nur eine begrenzte Menge an Informationen verarbeiten. Hier siehst du, was diesen Speicherplatz derzeit belegt. Wenn er voll ist, werden ältere Nachrichten zusammengefasst – nicht gelöscht –, damit du weiter chatten kannst. Dein vollständiger Chatverlauf bleibt in der Unterhaltung erhalten."
       ],
       "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
         "${ LUMO_SHORT_APP_NAME }+ — API-Zugriff und Schlüssel sind mit einem ${ LUMO_SHORT_APP_NAME }+ Abonnement enthalten (zum Upgraden oder Verwalten von Schlüsseln anmelden)"
@@ -1944,8 +2017,8 @@
       "Drag and drop your files here to add them to the chat.": [
         "Ziehe deine Dateien hierher, um sie dem Chat hinzuzufügen."
       ],
-      "Earlier messages were summarized to make room, so they no longer take up space here.": [
-        "Frühere Nachrichten wurden zusammengefasst, um Platz zu schaffen, sodass sie hier keinen Platz mehr beanspruchen."
+      "Earlier messages were summarized to free space. They are still in your chat above — only the summary counts toward usage here.": [
+        "Frühere Nachrichten wurden zusammengefasst, um Speicherplatz freizugeben. Sie befinden sich weiterhin oben in deinem Chat – hier wird nur die Zusammenfassung auf das Datenvolumen angerechnet."
       ],
       "Enabled": [
         "Aktiviert"
@@ -1982,6 +2055,9 @@
       ],
       "Files": [
         "Dateien"
+      ],
+      "Files account for most of this usage.": [
+        "Der Großteil dieses Verbrauchs entfällt auf Dateien."
       ],
       "files are not supported for content extraction.": [
         "Dateien werden für die Inhaltsextraktion nicht unterstützt."
@@ -2057,6 +2133,9 @@
       ],
       "Manage keys after you sign in": [
         "Schlüssel verwalten, nachdem du dich angemeldet hast"
+      ],
+      "Matching files": [
+        "Passende Dateien"
       ],
       "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
         "Bette API-Schlüssel niemals in clientseitige Pakete ein. Verwende Umgebungsvariablen und einen serverseitigen Proxy in der Produktion."
@@ -2223,6 +2302,9 @@
       "This folder is empty": [
         "Dieser Ordner ist leer."
       ],
+      "This shares your general sentiment and response metadata with ${ BRAND_NAME }. Your prompt and the response are not included.": [
+        "Dadurch werden deine allgemeine Empfindung und die Metadaten der Antwort mit ${ BRAND_NAME } geteilt. Deine Eingabe und die Antwort werden dabei nicht übermittelt."
+      ],
       "To get started, please open ${ DRIVE_APP_NAME } to set up your secure storage.": [
         "Um loszulegen, öffne bitte ${ DRIVE_APP_NAME }, um deinen sicheren Speicher einzurichten."
       ],
@@ -2262,6 +2344,9 @@
       "We can help you get started with using the ${ LUMO_SHORT_APP_NAME } API. Describe what you want to automate. ${ LUMO_SHORT_APP_NAME } returns a workflow graph and sample code that calls the ${ LUMO_SHORT_APP_NAME } API.": [
         "Wir können dir helfen, mit der ${ LUMO_SHORT_APP_NAME }-API loszulegen. Beschreibe, was du automatisieren möchtest. ${ LUMO_SHORT_APP_NAME } gibt eine Workflow-Grafik und Beispielcode zurück, der die ${ LUMO_SHORT_APP_NAME }-API aufruft."
       ],
+      "When you submit feedback, your prompt and this response are sent to ${ BRAND_NAME } for analysis and improvement. Feedback about Apertus may also be shared with the Apertus team.": [
+        "Wenn du Feedback abgibst, werden deine Eingabe und diese Antwort zur Analyse und Verbesserung an ${ BRAND_NAME } gesendet. Feedback zu Apertus kann außerdem mit dem Apertus-Team geteilt werden."
+      ],
       "You are about to visit an external website:": [
         "Du bist dabei, eine externe Webseite zu besuchen:"
       ],
@@ -2279,6 +2364,9 @@
       ],
       "Your memories are already well organized.": [
         "Deine Erinnerungen sind bereits gut geordnet."
+      ],
+      "Your prompt and this response will be sent to ${ BRAND_NAME } for analysis and improvement. Images and other attachments are not included.": [
+        "Deine Eingabe und diese Antwort werden zur Analyse und Verbesserung an ${ BRAND_NAME } gesendet. Bilder und andere Anhänge sind nicht enthalten."
       ]
     },
     "collider_2025: Job": {
@@ -2474,11 +2562,17 @@
       ]
     },
     "collider_2025: Link": {
+      "${ BRAND_NAME } blog": [
+        "${ BRAND_NAME }-Blog"
+      ],
       "add ${ LUMO_SHORT_APP_NAME } Plus": [
         "${ LUMO_SHORT_APP_NAME } Plus hinzufügen"
       ],
       "Already have an account? ${ linkSignup }": [
         "Du hast bereits ein Konto? ${ linkSignup }"
+      ],
+      "Apertus Charter": [
+        "Apertus-Charta"
       ],
       "Create a free account": [
         "Kostenloses Konto erstellen"
@@ -2528,6 +2622,9 @@
       ],
       "Create an account or sign in to save your chats and increase limits.": [
         "Erstelle ein Konto oder melde dich an, um deine Chats zu speichern und die Limits zu erhöhen."
+      ],
+      "You're on ${ selectedModelLabel }. Switch to Max for more capable answers.": [
+        "Du befindest dich bei ${ selectedModelLabel }. Wechsle zu Max, um aussagekräftigere Antworten zu erhalten."
       ]
     },
     "collider_2025: Option": {
@@ -2799,11 +2896,17 @@
       "Help and support": [
         "Hilfe und Support"
       ],
+      "Help improve open-source AI": [
+        "Hilf mit, Open-Source-KI zu verbessern"
+      ],
       "Invalid Link": [
         "Ungültiger Link"
       ],
       "Manage keys": [
         "Schlüssel verwalten"
+      ],
+      "Meet Apertus 1.5": [
+        "Apertus 1.5 kennenlernen"
       ],
       "Models": [
         "Modelle"
@@ -3187,6 +3290,9 @@
       "Back": [
         "Zurück"
       ],
+      "Back to chat": [
+        "Zurück zum Chat"
+      ],
       "Cancel": [
         "Abbrechen"
       ],
@@ -3211,8 +3317,17 @@
       "Close": [
         "Schließen"
       ],
+      "Close panel": [
+        "Seitenleiste schließen"
+      ],
+      "Code": [
+        "Code"
+      ],
       "Continue": [
         "Fortfahren"
+      ],
+      "Copy content": [
+        "Inhalt kopieren"
       ],
       "Copy link & caption": [
         "Link & Bildunterschrift kopieren"
@@ -3259,6 +3374,9 @@
       "Download image": [
         "Bild herunterladen"
       ],
+      "Edit": [
+        "Bearbeiten"
+      ],
       "Edit agent": [
         "Agent bearbeiten"
       ],
@@ -3274,6 +3392,9 @@
       "Expand": [
         "Vergrößern"
       ],
+      "Explain": [
+        "Erklären"
+      ],
       "Favorite": [
         "Favorit"
       ],
@@ -3288,6 +3409,9 @@
       ],
       "Hide knowledge panel": [
         "Wissenspanel ausblenden"
+      ],
+      "Improve": [
+        "Verbessern"
       ],
       "Light": [
         "Hell"
@@ -3316,11 +3440,23 @@
       "Next message": [
         "Nächste Nachricht"
       ],
+      "Next version": [
+        "Nächste Version"
+      ],
+      "Open": [
+        "Öffnen"
+      ],
       "Open conversation": [
         "Unterhaltung öffnen"
       ],
+      "Preview": [
+        "Vorschau"
+      ],
       "Previous message": [
         "Vorherige Nachricht"
+      ],
+      "Previous version": [
+        "Vorherige Version"
       ],
       "Regenerate": [
         "Neu generieren"
@@ -3358,6 +3494,12 @@
       "Reveal my profile": [
         "Mein Profil enthüllen"
       ],
+      "Save": [
+        "Speichern"
+      ],
+      "Save to Drive": [
+        "In Drive speichern"
+      ],
       "Select all": [
         "Alles auswählen"
       ],
@@ -3366,6 +3508,9 @@
       ],
       "Select conversation": [
         "Unterhaltung auswählen"
+      ],
+      "Send": [
+        "Senden"
       ],
       "Share": [
         "Teilen"
@@ -3414,6 +3559,9 @@
       ],
       "Upload your AI export": [
         "Lade deinen KI-Export hoch"
+      ],
+      "View v${ versionNumber }": [
+        "V${ versionNumber } anzeigen"
       ],
       "What needs changed?": [
         "Was muss geändert werden?"
@@ -3524,6 +3672,9 @@
       "Save": [
         "Speichern"
       ],
+      "Save here": [
+        "Hier speichern"
+      ],
       "Search": [
         "Suche"
       ],
@@ -3577,6 +3728,9 @@
       "Failed to process file: ${ file.name }": [
         "Fehler beim Verarbeiten der Datei: ${ file.name }"
       ],
+      "Failed to save file": [
+        "Speichern der Datei fehlgeschlagen"
+      ],
       "Failed to unlink Drive folder": [
         "Drive-Ordner konnte nicht getrennt werden"
       ],
@@ -3588,6 +3742,11 @@
       ],
       "Project not found": [
         "Projekt nicht gefunden"
+      ]
+    },
+    "collider_2025:Error (validation)": {
+      "File format not supported: ${ file.name }": [
+        "Dateiformat nicht unterstützt: ${ file.name }"
       ]
     },
     "collider_2025:Feature": {
@@ -3646,6 +3805,10 @@
       "\"${ file.name }\" is still being indexed. Content will be loaded when you send.": [
         "„${ file.name }“ wird noch indiziert. Der Inhalt wird beim Absenden geladen."
       ],
+      "${ lineCount } line": [
+        "${ lineCount } Zeile",
+        "${ lineCount } Zeilen"
+      ],
       "${ LUMO_SHORT_APP_NAME } is a private AI. Your conversations are encrypted and never used to train AI models.": [
         "${ LUMO_SHORT_APP_NAME } ist eine private KI. Deine Unterhaltungen sind verschlüsselt und werden niemals zum Trainieren von KI-Modellen verwendet."
       ],
@@ -3672,6 +3835,10 @@
       ],
       "${ report.sensitiveCategories.length } sensitive categories": [
         "${ report.sensitiveCategories.length } sensible Kategorien"
+      ],
+      "${ wordCount } word": [
+        "${ wordCount } Wort",
+        "${ wordCount } Wörter"
       ],
       "ad value": [
         "Werbewert"
@@ -3715,6 +3882,9 @@
       "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
         "Navigiere zu dem ${ DRIVE_SHORT_APP_NAME }-Ordner, den du mit diesem Projekt verknüpfen möchtest, und klicke dann auf \"Diesen Ordner verknüpfen\"."
       ],
+      "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to save this document to, then click \"Save here\".": [
+        "Navigiere zum Ordner ${ DRIVE_SHORT_APP_NAME }, in dem du dieses Dokument speichern möchtest, und klicke dann auf «Hier speichern»."
+      ],
       "Built by ${ BRAND_NAME }, the privacy brand trusted by over 100 million people and the team behind ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }.": [
         "Von ${ BRAND_NAME } entwickelt, der Datenschutzmarke, der über 100 Millionen Menschen vertrauen, und dem Team hinter ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME } und ${ PASS_APP_NAME }."
       ],
@@ -3747,6 +3917,9 @@
       ],
       "Cookies or website data are blocked in your browser settings": [
         "In deinen Browsereinstellungen sind Cookies oder Website-Daten blockiert"
+      ],
+      "Copied": [
+        "Kopiert"
       ],
       "Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.": [
         "Erstelle Bilder, wende Stile an und skizziere Ideen. Melde dich an oder erstelle ein kostenloses Konto, um deine Kreationen zu speichern."
@@ -3847,6 +4020,9 @@
       "Look for Export data, then click Export": [
         "Suche nach „Daten exportieren“ und klicke dann auf „Exportieren“."
       ],
+      "No content generated": [
+        "Kein Inhalt erzeugt"
+      ],
       "No favorites yet. Star a chat to find it here quickly.": [
         "Noch keine Favoriten. Setze ein Sternchen auf einen Chat, um ihn hier schnell wiederzufinden."
       ],
@@ -3858,6 +4034,9 @@
       ],
       "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
         "Öffne auf dem iPhone oder iPad „Einstellungen“ → „Apps“ → „Safari“ und stelle sicher, dass „Alle Cookies blockieren“ deaktiviert ist. Lade die Seite anschließend neu."
+      ],
+      "Open in panel • v${ versionNumber }": [
+        "In der Seitenleiste öffnen • V${ versionNumber }"
       ],
       "PASTED": [
         "Eingefügt"
@@ -3913,6 +4092,9 @@
       "These are the most sensitive categories Big Tech AI could infer about you from your chats — even when you never typed them out explicitly.": [
         "Dies sind die sensibelsten Kategorien, die die KI der großen Tech-Konzerne aus deinen Chats ableiten könnte – selbst wenn du diese nie ausdrücklich eingetippt hast."
       ],
+      "This conversation is nearly full. ${ LUMO_SHORT_APP_NAME } may summarize earlier messages to keep replying — nothing is removed from your chat history.": [
+        "Dieser Unterhaltung ist fast voll. ${ LUMO_SHORT_APP_NAME } fasst möglicherweise frühere Nachrichten zusammen, um weiterhin antworten zu können – aus deinem Chatverlauf wird nichts gelöscht."
+      ],
       "This is why it matters: once inferred, these details can power targeting, profiling, and decisions about you — often without transparency or consent.": [
         "Deshalb ist das von Bedeutung: Sobald diese Details abgeleitet wurden, können sie für Targeting, Profiling und Entscheidungen über dich herangezogen werden – oft ohne Transparenz oder Einwilligung."
       ],
@@ -3955,8 +4137,17 @@
       "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
         "Die Verwendung von ${ DRIVE_APP_NAME } ermöglicht ${ LUMO_SHORT_APP_NAME }, mit größeren Dateien zu arbeiten."
       ],
+      "v${ versionNumber }": [
+        "V${ versionNumber }"
+      ],
+      "v${ versionNumber } of ${ totalVersions }": [
+        "V${ versionNumber } von ${ totalVersions }"
+      ],
       "We'll save your card so you can attach it to the post — social sites can't add the image for you.": [
         "Wir speichern deine Karte, damit du sie an den Post anhängen kannst – soziale Netzwerke können das Bild nicht für dich hinzufügen."
+      ],
+      "You edited ${ meta.artifactTitle }": [
+        "Du hast ${ meta.artifactTitle } bearbeitet"
       ],
       "You're using private browsing": [
         "Du benutzt privates Surfen"
@@ -3964,8 +4155,8 @@
       "Your export is encrypted in transit and processed without being stored on ${ LUMO_SHORT_APP_NAME }'s servers.": [
         "Dein Export wird während der Übertragung verschlüsselt und verarbeitet, ohne auf den Servern von ${ LUMO_SHORT_APP_NAME } gespeichert zu werden."
       ],
-      "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
-        "Deine Dateien sind groß. ${ LUMO_SHORT_APP_NAME } kann möglicherweise nicht alle Informationen verarbeiten."
+      "Your files are large. ${ LUMO_SHORT_APP_NAME } may summarize earlier messages to make room — your chat history will stay in this conversation.": [
+        "Deine Dateien sind groß. ${ LUMO_SHORT_APP_NAME } fasst möglicherweise frühere Nachrichten zusammen, um Platz zu schaffen – dein Chatverlauf bleibt in dieser Unterhaltung erhalten."
       ],
       "Your information is zero-access encrypted": [
         "Deine Daten sind durch Zero-Access-Verschlüsselung geschützt"
@@ -4069,6 +4260,9 @@
       ],
       "AI platform": [
         "KI-Plattform"
+      ],
+      "Artifact view": [
+        "Artefaktansicht"
       ],
       "Card theme": [
         "Karten-Farbschema"
@@ -4238,6 +4432,9 @@
       "Describe the role, scope, and behavior you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
         "Beschreibe die Rolle, den Umfang und das Verhalten, die ${ LUMO_SHORT_APP_NAME } annehmen soll."
       ],
+      "Describe what you would like to update...": [
+        "Beschreibe, was du aktualisieren möchtest..."
+      ],
       "Describe your image...": [
         "Dein Bild beschreiben..."
       ],
@@ -4273,8 +4470,17 @@
       ]
     },
     "collider_2025:Prefill": {
+      "Edit the \"${ artifactTitle }\" artifact (id: ${ artifactId }). Replace this part:\n\n\"${ selection }\"\n\nwith: ${ instruction }": [
+        "Bearbeite das Artefakt «${ artifactTitle }» (ID: ${ artifactId }). Ersetze diesen Teil:\n\n«${ selection }»\n\ndurch: ${ instruction }"
+      ],
       "Edit this image:": [
         "Dieses Bild bearbeiten:"
+      ],
+      "Explain this selected part of the \"${ artifactTitle }\" code artifact (id: ${ artifactId }):\n\n\"${ selection }\"": [
+        "Erläutere diesen ausgewählten Teil des Code-Artefakts «${ artifactTitle }» (ID: ${ artifactId }):\n\n«${ selection }»"
+      ],
+      "Improve this selected part of the \"${ artifactTitle }\" code artifact (id: ${ artifactId }). Update the artifact, replacing:\n\n\"${ selection }\"\n\nwith improved code.": [
+        "Verbessere diesen ausgewählten Teil des Code-Artefakts «${ artifactTitle }» (ID: ${ artifactId }). Aktualisiere das Artefakt, indem du Folgendes ersetzt:\n\n«${ selection }»\n\ndurch den verbesserten Code."
       ]
     },
     "collider_2025:Project": {
@@ -4650,6 +4856,9 @@
       ],
       "Folder created successfully": [
         "Ordner erfolgreich erstellt"
+      ],
+      "Saved to ${ DRIVE_SHORT_APP_NAME }": [
+        "In ${ DRIVE_SHORT_APP_NAME } gespeichert"
       ]
     },
     "collider_2025:Tab": {
@@ -4852,6 +5061,9 @@
       "Review privacy settings": [
         "Datenschutzeinstellungen überprüfen"
       ],
+      "Save to ${ DRIVE_SHORT_APP_NAME }": [
+        "In ${ DRIVE_SHORT_APP_NAME } speichern"
+      ],
       "See what Big Tech AI already knows about you": [
         "Finden heraus, was die KI der großen Tech-Konzerne bereits über dich weiß"
       ],
@@ -4947,6 +5159,9 @@
     "collider_2025:Warning": {
       "Cannot Link Drive Folder": [
         "Drive-Ordner kann nicht verknüpft werden"
+      ],
+      "Preview unavailable": [
+        "Vorschau nicht verfügbar"
       ],
       "This folder contains ${ result.totalFiles } indexable files. Only the first ${ MAX_INDEXABLE_FILES } files were indexed. ${ result.skippedFiles } files were skipped.": [
         "Dieser Ordner beinhaltet ${ result.totalFiles } indizierbare Dateien. Nur die ersten ${ MAX_INDEXABLE_FILES } Dateien wurden indiziert. ${ result.skippedFiles } Dateien wurden übersprungen."
@@ -6574,6 +6789,12 @@
       ],
       "Security key": [
         "Sicherheitsschlüssel"
+      ],
+      "Still waiting?": [
+        "Wartest du immer noch?"
+      ],
+      "Touch your security key to continue.": [
+        "Berühre deinen Sicherheitsschlüssel, um fortzufahren."
       ]
     },
     "fido2: Label": {
@@ -7086,6 +7307,9 @@
       "Rendered spec": [
         "Bereitgestellte Spezifikation"
       ],
+      "Run ${ tool } with ${ connector }": [
+        "${ tool } mit ${ connector } ausführen"
+      ],
       "Searchable chunks": [
         "Durchsuchbare Datenblöcke"
       ],
@@ -7466,6 +7690,9 @@
       "Folder name": [
         "Ordnername"
       ],
+      "Font size": [
+        "Schriftgröße"
+      ],
       "Get the deal": [
         "Zugreifen"
       ],
@@ -7738,6 +7965,9 @@
       ],
       "Forces either unavailable state, without burning a real quota or waiting for a flag rollout. \"unavailable_limit_reached\" pins the Max pool to 0 remaining, exactly as the backend would after the weekly cap; \"unavailable_high_load\" switches off the availability flag. Both disable the Max row in the picker, fall the selection back to Lite, and push maxModelAvailability to native. Persists across reloads until switched off.": [
         "Erzwingt entweder einen Nicht verfügbar-Status, ohne echtes Kontingent zu verbrauchen oder auf ein Flag-Rollout zu warten. „unavailable_limit_reached“ setzt den Max-Pool auf 0 verbleibende Einheiten fest, genau wie das Backend nach Erreichen des wöchentlichen Limits; „unavailable_high_load“ schaltet das Verfügbarkeits-Flag aus. Beide deaktivieren die Maximal-Zeile im Picker, fallen auf „Lite“ zurück und übergeben maxModelAvailability an Native. Diese Einstellungen bleiben auch beim Neuladen bestehen, bis sie ausgeschaltet werden."
+      ],
+      "Forces Lite and Max pools to zero so you can preview the model-limit UpsellCard above the composer. Hidden for Plus accounts. Persists across reloads until switched off.": [
+        "Setzt die Werte für «Lite» und «Max» auf null, sodass du die modellbegrenzte UpsellCard oberhalb des Verfassen-Fensters in der Vorschau anzeigen kannst. Bei Plus-Konten ausgeblendet. Bleibt auch nach dem Neuladen erhalten, bis die Funktion ausgeschaltet wird."
       ],
       "Forces the inline composer banner into \"approaching\" or \"at limit\" state so you can preview it in any context.": [
         "Zwingt das Inline-Verfassen-Fenster-Banner in den Status „fast erreicht“ oder „erreicht“, damit du in jedem Kontext eine Vorschau davon anzeigen kannst."
@@ -8587,6 +8817,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } endet mit ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB Cloud-Speicher, mit dem sich Dateien einfach speichern, synchronisieren und teilen lassen. Gesichert durch eine Ende-zu-Ende-Verschlüsselung."
       ],
@@ -9328,6 +9561,11 @@
         "Das Guthaben wird dir gutgeschrieben."
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Eine Änderung deiner Rechnungsadresse kann sich auf die Steuern bei zukünftigen Rechnungen auswirken."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Möchtest du wirklich fortfahren?"
@@ -9362,6 +9600,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Der Verlängerungspreis ist abhängig von der Rechnungsregion und der Umsatzsteuernummer."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - Karte endet mit ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Banküberweisung - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - Karte endet mit ${ Last4 }"
       ]
     },
     "Payments.Sepa": {

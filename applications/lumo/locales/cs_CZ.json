@@ -1281,48 +1281,6 @@
     "collider_2025: Compaction": {
       "${ removed } freed": [
         "${ removed } uvolněno"
-      ],
-      "${ stats.summarizedMessageCount } earlier message condensed": [
-        "${ stats.summarizedMessageCount } dřívější zpráva zkrácena",
-        "${ stats.summarizedMessageCount } dřívější zprávy zkráceny",
-        "${ stats.summarizedMessageCount } dřívějších zpráv zkráceno",
-        "${ stats.summarizedMessageCount } dřívějších zpráv zkráceno"
-      ],
-      "Chat shortened to keep going": [
-        "Chat byl zkrácen, aby bylo možné pokračovat"
-      ],
-      "cleared old tool results": [
-        "odstraněny staré výsledky nástrojů"
-      ],
-      "dropped old messages": [
-        "vyřazeny staré zprávy"
-      ],
-      "Files from summarized messages": [
-        "Soubory ze shrnutých zpráv"
-      ],
-      "No longer sent to the model": [
-        "Již se neodesílá modelu"
-      ],
-      "removed file context": [
-        "odebrán kontext souboru"
-      ],
-      "removed tool calls": [
-        "odebrána volání nástrojů"
-      ],
-      "summarized the conversation": [
-        "shrnula konverzaci"
-      ],
-      "This chat got long — summarizing earlier messages so we can keep going…": [
-        "Tento chat je dlouhý – probíhá sumarizace dřívějších zpráv, abychom mohli pokračovat…"
-      ],
-      "Tool calls removed": [
-        "Volání nástrojů byla odebrána"
-      ],
-      "Tool output cleared": [
-        "Výstup nástroje byl smazán"
-      ],
-      "What ${ LUMO_SHORT_APP_NAME } still remembers": [
-        "Co si ${ LUMO_SHORT_APP_NAME } stále pamatuje"
       ]
     },
     "collider_2025: Context": {
@@ -1774,9 +1732,6 @@
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } je umělá inteligence s prioritou ochrany soukromí, která vám pomáhá zvládnout více a zároveň chrání vaše data. Využijte její plný potenciál a získejte přístup k novým funkcím ihned po jejich představení."
       ],
-      "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space; when it fills up, older messages are automatically summarized so you can keep chatting.": [
-        "${ LUMO_SHORT_APP_NAME } dokáže v rámci jedné konverzace zpracovat pouze omezené množství informací. Zde vidíte, co tento prostor aktuálně využívá. Jakmile se zaplní, starší zprávy se automaticky shrnou, abyste mohli v konverzaci pokračovat."
-      ],
       "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
         "${ LUMO_SHORT_APP_NAME }+ - Přístup k API a klíče jsou součástí předplatného ${ LUMO_SHORT_APP_NAME }+ (pro navýšení nebo správu klíčů se přihlaste)"
       ],
@@ -1896,9 +1851,6 @@
       ],
       "Drag and drop your files here to add them to the chat.": [
         "Přetáhněte soubory sem a přidejte je do konverzace."
-      ],
-      "Earlier messages were summarized to make room, so they no longer take up space here.": [
-        "Dřívější zprávy byly shrnuty, aby se uvolnilo místo, takže zde již nezabírají prostor."
       ],
       "Error processing attachment": [
         "Chyba při zpracování přílohy"
@@ -3604,9 +3556,6 @@
       ],
       "You're using private browsing": [
         "Používáte soukromé procházení"
-      ],
-      "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
-        "Vaše soubory jsou velké. ${ LUMO_SHORT_APP_NAME } nemusí zpracovat všechny informace."
       ],
       "Your information is zero-access encrypted": [
         "Vaše informace jsou šifrovány s nulovým přístupem"
@@ -6501,6 +6450,9 @@
       ],
       "Folder name": [
         "Název složky"
+      ],
+      "Font size": [
+        "Velikost písma"
       ],
       "Get the deal": [
         "Využít nabídku"

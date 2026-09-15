@@ -268,6 +268,9 @@
       "Pay ${ price } now": [
         "Betal ${ price } nå"
       ],
+      "Preview logs": [
+        "Forhåndsvis logger"
+      ],
       "Previous": [
         "Forrige"
       ],
@@ -2325,6 +2328,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } er ditt brukernavn. For å opprette ${ emailAddress }, gå til Innstillinger > Identitet og adresser > Kort domene (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "En kontakt med denne e-postadressen finnes allerede"
+      ],
       "Amount above the maximum.": [
         "Beløp over maksimum."
       ],
@@ -2622,6 +2628,12 @@
       ],
       "Security key": [
         "Sikkerhetsnøkkel"
+      ],
+      "Still waiting?": [
+        "Venter du fremdeles?"
+      ],
+      "Touch your security key to continue.": [
+        "Berør sikkerhetsnøkkelen for å fortsette."
       ]
     },
     "fido2: Label": {
@@ -2767,7 +2779,7 @@
         "${ BRAND_NAME } Scribe skriveassistent"
       ],
       "${ IDEAL_WERO_BRAND_NAME } mark": [
-        "${ IDEAL_WERO_BRAND_NAME } merket"
+        "${ IDEAL_WERO_BRAND_NAME }-logo"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe-skriveassistenten."
@@ -3032,6 +3044,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Laster inn kalender, vent litt. Du vil bli omdirigert til vår planleggingsplattform Calendly i en ny fane."
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Logger hjelper oss å forstå hva som skjedde før problemet oppstod. De inkluderer apphandlinger og feilmeldinger, men ikke noe meldingsinnhold."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -3324,6 +3339,9 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-brukernavn"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tegn"
       ],
       "${ n } month": [
         "${ n } måned",
@@ -5260,6 +5278,9 @@
       ]
     },
     "Role": {
+      "Organization Admin": [
+        "Organisasjonsadministrator"
+      ],
       "Security Admin": [
         "Sikkerhetsadministrator"
       ],
