@@ -1,25 +1,12 @@
 import { c, msgid } from 'ttag';
 
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 
 import { messageByID } from '../../../store/messages/messagesSelectors';
 import { writtenDraftBody } from '../../helpers/draftBody';
+import { DRAFT_KIND_FOR, DraftKind } from '../../helpers/draftKind';
 import { truncateBody } from '../../helpers/messages';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
-
-export enum DraftKind {
-    NEW = 'new',
-    REPLY = 'reply',
-    FORWARD = 'forward',
-}
-
-const DRAFT_KINDS: Record<MESSAGE_ACTIONS, DraftKind> = {
-    [MESSAGE_ACTIONS.NEW]: DraftKind.NEW,
-    [MESSAGE_ACTIONS.REPLY]: DraftKind.REPLY,
-    [MESSAGE_ACTIONS.REPLY_ALL]: DraftKind.REPLY,
-    [MESSAGE_ACTIONS.FORWARD]: DraftKind.FORWARD,
-};
 
 interface OpenDraft {
     /** Names this composer for revise_draft, so a write can target one of several open drafts. */
@@ -58,7 +45,7 @@ export const readComposerDefinition: ToolDefinition<Record<string, never>, ReadC
     name: 'read_composer',
     kind: 'read',
     toolDescription:
-        'Read what the user is currently WRITING — the draft(s) open in the composer — so you can review, correct or continue their own words. This is the right tool whenever the user refers to "what I\'m writing" / "my draft" / "this reply" / "does this sound right?" / "check my email before I send it". It returns nothing if no composer is open, which also tells you the user is not drafting anything right now. Every open composer is returned, each with its own composer-… reference; pick by subject rather than assuming there is only one. The body is the text the user has typed, WITHOUT their signature or the quoted conversation underneath. For a reply or a forward it also reports the email being answered — pass that reference to read_thread if you need the conversation the draft belongs to. This tool only reads: it cannot change the draft, and it never sends.',
+        'Read what the user is currently WRITING — the draft(s) open in the composer — so you can review, correct or continue their own words. This is the right tool whenever the user refers to "what I\'m writing" / "my draft" / "this reply" / "does this sound right?" / "check my email before I send it". It returns nothing if no composer is open, which also tells you the user is not drafting anything right now. Every open composer is returned, each with its own composer-… reference — pass that reference to revise_draft to change that draft, and pick by subject rather than assuming there is only one. The body is the text the user has typed, WITHOUT their signature or the quoted conversation underneath. For a reply or a forward it also reports the email being answered — pass that reference to read_thread if you need the conversation the draft belongs to. This tool only reads: it cannot change the draft, and it never sends.',
     paramsSchema: { type: 'object', additionalProperties: false, required: [], properties: {} },
     serializeForLumo: (result) => {
         if (!result.drafts.length) {
@@ -95,7 +82,7 @@ export const createReadComposerHandler =
             }
 
             const action = message.draftFlags?.action;
-            const kind = action === undefined ? DraftKind.NEW : DRAFT_KINDS[action];
+            const kind = action === undefined ? DraftKind.NEW : DRAFT_KIND_FOR[action];
             const subject = message.data?.Subject || '';
             // Absent on a saved draft reopened in a later session: the parent is only ever recorded in
             // draftFlags, so there is nothing to point read_thread at.
