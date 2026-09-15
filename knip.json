@@ -6,6 +6,16 @@
         "unresolved": "off",
         "binaries": "off"
     },
+    "ignoreIssues": {
+        "packages/shared/lib/interfaces/Hotkeys.ts": ["enumMembers"],
+        "packages/shared/lib/helpers/sentry.ts": ["enumMembers"],
+        "packages/shared/lib/interfaces/calendar/CalendarKey.ts": ["enumMembers"],
+        "packages/shared/lib/interfaces/Address.ts": ["enumMembers"],
+        "packages/shared/lib/interfaces/drive/file.ts": ["types"],
+        "packages/shared/lib/api/drive/link.ts": ["exports"],
+        "packages/shared/lib/calendar/sharing/shareUrl/shareUrl.ts": ["exports"],
+        "packages/shared/lib/mnemonic/helpers.ts": ["types"]
+    },
     "ignore": ["**/*.d.ts", "**/vendor/**"],
     "ignoreWorkspaces": ["packages/wasm/andromeda"],
     "workspaces": {

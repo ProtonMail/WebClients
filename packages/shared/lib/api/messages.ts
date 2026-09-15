@@ -252,3 +252,9 @@ export const forceSend = (messageID: string) => ({
     method: 'post',
     url: `mail/v4/messages/${messageID}/force_send`,
 });
+
+export const setExpiration = (IDs: string[], ExpirationTime: number | null) => ({
+    method: 'put',
+    url: 'mail/v4/messages/expire',
+    data: { IDs, ExpirationTime },
+});

@@ -1,9 +1,5 @@
 import { UPLOAD_TIMEOUT } from '../../drive/constants';
-import type {
-    CreateDriveFile,
-    Thumbnail,
-    UpdateFileRevision,
-} from '../../interfaces/drive/file';
+import type { CreateDriveFile, Thumbnail, UpdateFileRevision } from '../../interfaces/drive/file';
 
 export const queryCreateFile = (shareId: string, data: CreateDriveFile) => {
     return {
@@ -85,6 +81,24 @@ export const queryRequestUpload = (data: {
         method: 'post',
         url: 'drive/blocks',
         data,
+    };
+};
+
+export const queryCreateFileRevision = (
+    shareId: string,
+    linkId: string,
+    currentRevisionId: string,
+    clientUID?: string
+) => {
+    return {
+        method: 'post',
+        timeout: UPLOAD_TIMEOUT,
+        url: `drive/shares/${shareId}/files/${linkId}/revisions`,
+        silence: true,
+        data: {
+            CurrentRevisionID: currentRevisionId,
+            ClientUID: clientUID,
+        },
     };
 };
 

@@ -10,9 +10,9 @@ import type { AddressKey } from './Key';
 import type { ActiveSignedKeyList, SignedKeyList } from './SignedKeyList';
 
 export enum AddressConfirmationState {
-    // CONFIRMATION_NOT_CONFIRMED = 0,
+    CONFIRMATION_NOT_CONFIRMED = 0,
     CONFIRMATION_CONFIRMED,
-    // CONFIRMATION_INVALID,
+    CONFIRMATION_INVALID,
 }
 
 export interface Address {

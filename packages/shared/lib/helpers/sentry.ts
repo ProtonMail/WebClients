@@ -361,10 +361,13 @@ export const getSentryError = (error: any): any => {
 };
 
 export enum SentryMailInitiatives {
+    ASSISTANT = 'assistant',
     ATTACHMENT_ENCRYPTION_ERROR = 'attachment-encryption-error',
     ATTACHMENT_UPLOAD_ERROR = 'attachment-upload-error',
     COMPOSER = 'composer',
+    DRAWER_SECURITY_CENTER = 'drawer-security-center',
     DRAWER_VPN = 'drawer-vpn',
+    LIST_ACTIONS_TELEMETRY = 'list-actions-telemetry',
     MAIL_ONBOARDING = 'mail-onboarding',
     MAIL_REDUX_ERRORS = 'mail-redux-errors',
     MIGRATION_TOOL = 'migration-tool',
@@ -377,6 +380,7 @@ export enum SentryMailInitiatives {
 }
 
 export enum SentryCommonInitiatives {
+    POST_SUBSCRIPTION = 'post-subscription',
     ENCRYPTED_SEARCH = 'encrypted-search',
     CONTACT_IMPORT = 'contact-import',
 }

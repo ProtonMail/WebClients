@@ -1,11 +1,33 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
 
-import { AES256 } from '../../../constants';
+import { AES256, EVENT_ACTIONS } from '../../../constants';
 import { generateRandomBytes, getSHA256Base64String, xorEncryptDecrypt } from '../../../helpers/crypto';
 import type { Nullable } from '../../../interfaces';
 import type { CalendarLink, CalendarUrl } from '../../../interfaces/calendar';
 import { ACCESS_LEVEL } from '../../../interfaces/calendar';
+import type {
+    CalendarUrlEventManager,
+    CalendarUrlEventManagerCreate,
+    CalendarUrlEventManagerDelete,
+    CalendarUrlEventManagerUpdate,
+} from '../../../interfaces/calendar/EventManager';
+
+export const getIsCalendarUrlEventManagerDelete = (
+    event: CalendarUrlEventManager
+): event is CalendarUrlEventManagerDelete => {
+    return event.Action === EVENT_ACTIONS.DELETE;
+};
+export const getIsCalendarUrlEventManagerCreate = (
+    event: CalendarUrlEventManager
+): event is CalendarUrlEventManagerCreate => {
+    return event.Action === EVENT_ACTIONS.CREATE;
+};
+export const getIsCalendarUrlEventManagerUpdate = (
+    event: CalendarUrlEventManager
+): event is CalendarUrlEventManagerUpdate => {
+    return event.Action === EVENT_ACTIONS.UPDATE;
+};
 
 const decryptPurpose = async ({
     encryptedPurpose,
@@ -153,7 +175,7 @@ export const getCreatePublicLinkPayload = async ({
     };
 };
 
-const transformLinkFromAPI = async ({
+export const transformLinkFromAPI = async ({
     calendarUrl,
     privateKeys,
     calendarPassphrase,
