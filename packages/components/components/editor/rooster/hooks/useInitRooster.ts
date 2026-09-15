@@ -138,7 +138,11 @@ const useInitRooster = ({
         }
 
         const onEditorClick = () => {
-            editorRef.current?.focus();
+            const editor = editorRef.current;
+
+            if (editor && !editor.hasFocus()) {
+                editor.focus();
+            }
             onFocus?.();
         };
 
