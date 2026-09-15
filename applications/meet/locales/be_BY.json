@@ -150,6 +150,9 @@
       "Add another account": [
         "Дадаць іншы ўліковы запіс"
       ],
+      "Add your own background": [
+        "Дадаць свой уласны фон"
+      ],
       "Admit ${ participantName }": [
         "Прыняць ${ participantName }"
       ],
@@ -158,6 +161,9 @@
       ],
       "Allow access": [
         "Дазволіць доступ"
+      ],
+      "Allow live captions": [
+        "Дазволіць дынамічныя субцітры"
       ],
       "Anyone with the link can join immediately": [
         "Любы карыстальнік з гэтай спасылкай зможа неадкладна далучыцца да сустрэчы"
@@ -183,11 +189,17 @@
       "Back": [
         "Назад"
       ],
+      "Backgrounds and effects": [
+        "Фоны і эфекты"
+      ],
       "Blur background": [
         "Размыццё фону"
       ],
       "Cancel": [
         "Скасаваць"
+      ],
+      "Change layout": [
+        "Змяніць макет"
       ],
       "Change password": [
         "Змяніць пароль"
@@ -330,6 +342,9 @@
       "Full size": [
         "Поўны памер"
       ],
+      "Gallery": [
+        "Галерэя"
+      ],
       "Generate a new meeting link.": [
         "Згенерыраваць новую спасылку для сустрэчы."
       ],
@@ -338,6 +353,9 @@
       ],
       "Get verification code": [
         "Атрымаць код спраўджання"
+      ],
+      "Getting ready...": [
+        "Падрыхтоўка..."
       ],
       "Help and feedback": [
         "Даведка і зваротная сувязь"
@@ -384,6 +402,9 @@
       "Lower hand": [
         "Апусціць руку"
       ],
+      "Meeting timer": [
+        "Таймер сустрэчы"
+      ],
       "Minimize preview": [
         "Згарнуць папярэдні прагляд"
       ],
@@ -401,6 +422,9 @@
       ],
       "Next page": [
         "Наступная старонка"
+      ],
+      "No effect": [
+        "Без эфектаў"
       ],
       "Noise cancellation": [
         "Падаўленне шуму"
@@ -422,6 +446,9 @@
       ],
       "Playing back...": [
         "Узнаўленне..."
+      ],
+      "Playing sound...": [
+        "Прайграванне гуку..."
       ],
       "Preview logs": [
         "Папярэдні прагляд журналаў"
@@ -464,6 +491,9 @@
       ],
       "Rejoin meeting": [
         "Паўторна далучыцца да сустрэчы"
+      ],
+      "Remove ${ name }": [
+        "Выдаліць ${ name }"
       ],
       "Remove reaction ${ emoji }, ${ identities.length } reaction": [
         "Выдаліць рэакцыю ${ emoji }, ${ identities.length } рэакцыя",
@@ -524,6 +554,9 @@
       ],
       "Search countries": [
         "Пошук краін"
+      ],
+      "Self view": [
+        "Уласны выгляд"
       ],
       "Send an encrypted message": [
         "Адправіць зашыфраванае паведамленне"
@@ -615,6 +648,9 @@
       "Test microphone": [
         "Тэсціраваць мікрафон"
       ],
+      "Test speakers": [
+        "Праверка дынамікаў"
+      ],
       "The current link will stop working.": [
         "Бягучая спасылка перастане працаваць."
       ],
@@ -644,6 +680,9 @@
       ],
       "Use camera": [
         "Выкарыстоўваць камеру"
+      ],
+      "Use it": [
+        "Выкарыстаць яго"
       ],
       "Use microphone": [
         "Выкарыстоўваць мікрафон"
@@ -698,6 +737,9 @@
       "Copy meeting link": [
         "Скапіяваць спасылку на сустрэчу"
       ],
+      "Debug devices": [
+        "Адладка прылад"
+      ],
       "Debug overlay": [
         "Адладка накладання"
       ],
@@ -709,6 +751,9 @@
       ],
       "Leave Meeting": [
         "Выйсці з сустрэчы"
+      ],
+      "Live captions": [
+        "Дынамічныя субцітры"
       ],
       "Lock meeting": [
         "Заблакіраваць сустрэчу"
@@ -748,6 +793,9 @@
       ],
       "Screen share": [
         "Абагулены экран"
+      ],
+      "Self view": [
+        "Уласны выгляд"
       ],
       "Settings": [
         "Налады"
@@ -795,6 +843,9 @@
       "Backgrounds": [
         "Фоны"
       ],
+      "Blur and personal": [
+        "Размыццё і асабістыя налады"
+      ],
       "Chat": [
         "Чат"
       ],
@@ -804,11 +855,17 @@
       "Device settings": [
         "Налады прылады"
       ],
+      "Layouts": [
+        "Макеты"
+      ],
       "Meeting details": [
         "Падрабязнасці сустрэчы"
       ],
       "Meeting rooms": [
         "Пакоі чакання"
+      ],
+      "Microphone input level": [
+        "Узровень уваходнага сігналу мікрафона"
       ],
       "Participants": [
         "Удзельнікі"
@@ -1878,6 +1935,9 @@
       "Expiration date cannot be in the past": [
         "Дата завяршэння не можа быць у мінулым"
       ],
+      "Failed to admit the participant. Please try again.": [
+        "Не ўдалося прыняць удзельніка. Паўтарыце спробу."
+      ],
       "Failed to assign host": [
         "Не ўдалося прызначыць арганізатара"
       ],
@@ -1920,8 +1980,14 @@
       "Failed to delete room": [
         "Не ўдалося выдаліць пакой"
       ],
+      "Failed to deny the participant. Please try again.": [
+        "Не ўдалося забараніць удзельніка. Паўтарыце спробу."
+      ],
       "Failed to download recording": [
         "Не ўдалося спампаваць запіс."
+      ],
+      "Failed to edit meeting": [
+        "Не ўдалося рэдагаваць сустрэчу"
       ],
       "Failed to edit room name": [
         "Не ўдалося адрэдагаваць назву пакоя"
@@ -1961,6 +2027,9 @@
       ],
       "Failed to unlock meeting": [
         "Не ўдалося разблакіраваць сустрэчу"
+      ],
+      "Failed to update live captions availability": [
+        "Не ўдалося абнавіць даступнасць дынамічных субцітраў"
       ],
       "Failed to verify invitation": [
         "Не ўдалося спраўдзіць запрашэнне"
@@ -2439,8 +2508,14 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Нумар тэлефона можа быць выкарыстаны для спраўджання аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
+      "Adding ${ name }": [
+        "Дадаванне ${ name }"
+      ],
       "Admit": [
         "Прыняць"
+      ],
+      "Admitting": [
+        "Прыняцце"
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Ананімны ${ particle } ${ participantNumber }"
@@ -2571,6 +2646,9 @@
       "End-to-end encryption is active for this chat.": [
         "Скразное шыфраванне актыўна для гэтага чата."
       ],
+      "enter": [
+        "увод"
+      ],
       "Enter code": [
         "Увядзіце код"
       ],
@@ -2699,6 +2777,9 @@
       ],
       "Meeting is decrypting...": [
         "Сустрэча расшыфроўваецца..."
+      ],
+      "Meeting is full": [
+        "Сустрэча запоўнена"
       ],
       "Meeting link": [
         "Спасылка на сустрэчу"
@@ -2876,6 +2957,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Абнаўленне старонкі або ${ link } аўтаматычна вырашыць большасць праблем."
+      ],
+      "Rejecting": [
+        "Адхіленыя"
       ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Заплануйце сваю наступную сустрэчу. Стварыце ўліковы запіс, каб планаваць сустрэчы з дапамогай свайго календара."
@@ -3134,6 +3218,9 @@
       "Authenticator app": [
         "Праграма аўтэнтыфікацыі"
       ],
+      "Auto-detect": [
+        "Аўтаматычнае вызначэнне"
+      ],
       "Blurred (next)": [
         "Размыта (далей)"
       ],
@@ -3217,6 +3304,9 @@
       ],
       "Every year": [
         "Кожны год"
+      ],
+      "everyone": [
+        "кожныя"
       ],
       "Google Calendar": [
         "Каляндар Google"
@@ -3302,9 +3392,6 @@
       "Reply": [
         "Адказ"
       ],
-      "Return to dashboard": [
-        "Вярнуцца ў панэль кіравання"
-      ],
       "Reveal password": [
         "Паказаць пароль"
       ],
@@ -3334,6 +3421,9 @@
       ],
       "Track SID": [
         "Адсочваць SID"
+      ],
+      "unknown": [
+        "невядомыя"
       ],
       "Use live camera feed": [
         "Выкарыстоўваць жывую трансляцыю з камеры"
@@ -3728,8 +3818,17 @@
       "Available Speakers": [
         "Даступныя дынамікі"
       ],
+      "Background": [
+        "Фон"
+      ],
+      "Background blur preview": [
+        "Папярэдні прагляд размыцця фону"
+      ],
       "Backgrounds": [
         "Фоны"
+      ],
+      "Blur and personal": [
+        "Размыццё і асабістыя налады"
       ],
       "Camera and microphone are blocked": [
         "Камера і мікрафон заблакіраваны"
@@ -3911,8 +4010,8 @@
       "Talk confidentially": [
         "Размаўляйце канфідэнцыяльна"
       ],
-      "Thank you!": [
-        "Дзякуй!"
+      "The host didn't admit you": [
+        "Арганізатар не прыняў вас"
       ],
       "Time": [
         "Час"
@@ -3923,14 +4022,14 @@
       "Two-factor authentication": [
         "Двухфактарная аўтэнтыфікацыя"
       ],
+      "Waiting for the host": [
+        "Чаканне арганізатара"
+      ],
       "Waiting room": [
         "Пакой чакання"
       ],
       "What went wrong?": [
         "Што пайшло не так?"
-      ],
-      "Your feedback has been submitted": [
-        "Ваш водгук быў адпраўлены"
       ],
       "Your recording is ready": [
         "Ваш запіс гатовы"

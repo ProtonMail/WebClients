@@ -729,6 +729,9 @@
       "Use camera": [
         "Použiť kameru"
       ],
+      "Use it": [
+        "Použiť"
+      ],
       "Use microphone": [
         "Použiť mikrofón"
       ],
@@ -2458,6 +2461,9 @@
       ],
       "Still waiting?": [
         "Stále čakáte?"
+      ],
+      "Touch your security key to continue.": [
+        "Dotknite sa svojho bezpečnostného kľúča, aby ste pokračovali."
       ]
     },
     "fido2: Label": {
@@ -2600,6 +2606,9 @@
     "Info": {
       " and ": [
         " a "
+      ],
+      "${ deviceLabel } is available again": [
+        "${ deviceLabel } je opäť k dispozícii"
       ],
       "${ maxParticipants } participant limit reached": [
         "Bol dosiahnutý limit ${ maxParticipants } účastníkov"
@@ -3423,14 +3432,38 @@
       "Your browser or device isn’t supported": [
         "Váš prehliadač alebo zariadenie nie je podporované."
       ],
+      "Your camera was disconnected. Now using ${ deviceLabel }.": [
+        "Vaša kamera bola.odpojená Teraz sa používa ${ deviceLabel }."
+      ],
+      "Your device was disconnected. Now using ${ deviceLabel }.": [
+        "Vaše zariadenie bolo odpojené. Teraz sa používa ${ deviceLabel }."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Váš email bude použitý iba pre toto jednorazové overenie."
       ],
       "Your meeting is ready": [
         "Vaša schôdza je pripravená."
       ],
+      "Your microphone and camera were disconnected. Now using other devices.": [
+        "Váš mikrofón a kamera boli odpojené. Teraz sa používajú iné zariadenia."
+      ],
+      "Your microphone and speaker were disconnected. Now using other devices.": [
+        "Váš mikrofón a reproduktor boli odpojené. Teraz sa používajú iné zariadenia."
+      ],
+      "Your microphone was disconnected. Now using ${ deviceLabel }.": [
+        "Váš mikrofón bol odpojený. Teraz sa používa ${ deviceLabel }."
+      ],
+      "Your microphone, speaker and camera were disconnected. Now using other devices.": [
+        "Váš mikrofón, reproduktor a kamera boli odpojené. Teraz sa používajú iné zariadenia."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefónne číslo bude použité iba pre toto jednorazové overenie."
+      ],
+      "Your speaker and camera were disconnected. Now using other devices.": [
+        "Váš reproduktor a kamera boli odpojené. Teraz sa používajú iné zariadenia."
+      ],
+      "Your speaker was disconnected. Now using ${ deviceLabel }.": [
+        "Váš reproduktor bol odpojený. Teraz sa používa ${ deviceLabel }."
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Chystáte sa otvoriť odkaz v novej karte. Pred pokračovaním sa uistite, že danej webovej stránke dôverujete."
@@ -3665,9 +3698,6 @@
       "Reply": [
         "Odpovedať"
       ],
-      "Return to dashboard": [
-        "Návrat na nástenku"
-      ],
       "Reveal password": [
         "Odkryť heslo"
       ],
@@ -3807,6 +3837,9 @@
       ],
       "Successfully rotated your personal meeting": [
         "Úspešne ste rotovali svoje osobné stretnutie"
+      ],
+      "Thanks! Your feedback has been submitted.": [
+        "Ďakujeme! Vaša spätná väzba bola odoslaná."
       ],
       "You can't send a feedback for a meeting you haven't been to": [
         "Nemôžete poslať spätnú väzbu k schôdzke, na ktorej ste neboli."
@@ -4312,9 +4345,6 @@
       "Talk confidentially": [
         "Diskutujte dôverne"
       ],
-      "Thank you!": [
-        "Ďakujeme vám!"
-      ],
       "The host didn't admit you": [
         "Hostiteľ vás neschválil"
       ],
@@ -4341,9 +4371,6 @@
       ],
       "What went wrong?": [
         "Čo sa pokazilo?"
-      ],
-      "Your feedback has been submitted": [
-        "Vaša spätná väzba bola odoslaná"
       ],
       "Your recording is ready": [
         "Vaša nahrávka je pripravená."

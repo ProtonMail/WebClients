@@ -1824,6 +1824,9 @@
       "Failed to decrypt bookmark password: ${ message }": [
         "解密書籤密碼失敗: ${ message }"
       ],
+      "Failed to decrypt content key: ${ message }": [
+        "解密內容金鑰失敗: ${ message }"
+      ],
       "Failed to decrypt session key": [
         "解密工作階段金鑰失敗"
       ],
@@ -1926,6 +1929,12 @@
       "Passwords do not match": [
         "密碼不一致"
       ],
+      "Photo is already in the target album": [
+        "照片已存在於目標相簿中"
+      ],
+      "Photo not found": [
+        "找不到照片"
+      ],
       "Please allow screen sharing in your system permissions, then try again": [
         "請在系統權限中允許螢幕共享，然後再試一次"
       ],
@@ -1943,6 +1952,9 @@
       ],
       "Signature verification failed": [
         "簽名驗證失敗"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "失敗替 ${ signatureType } 簽名驗證"
       ],
       "Some file data failed to upload. Please try again.": [
         "部分檔案上載失敗。請稍後再試。"
@@ -3089,9 +3101,6 @@
       "Reply": [
         "回覆"
       ],
-      "Return to dashboard": [
-        "返回儀表板"
-      ],
       "Reveal password": [
         "顯示密碼"
       ],
@@ -3680,9 +3689,6 @@
       "Talk confidentially": [
         "秘密交談"
       ],
-      "Thank you!": [
-        "謝謝您！"
-      ],
       "Time": [
         "時間"
       ],
@@ -3697,9 +3703,6 @@
       ],
       "What went wrong?": [
         "發生了什麼問題？"
-      ],
-      "Your feedback has been submitted": [
-        "您的意見回饋已提交"
       ],
       "Your recording is ready": [
         "您的錄影已就緒"
