@@ -8,6 +8,7 @@ import { calculateUpdateDistribution } from './lib/updater/helpers';
 import type { WindowConfigStoreProperties } from './lib/window-management';
 
 type RootStore = {
+    contentProtection?: boolean;
     installInfo?: StoreInstallProperties;
     update?: UpdateStore;
     theme?: DesktopTheme;
