@@ -2328,6 +2328,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } είναι το όνομα χρήστη σας. Για να δημιουργήσετε το ${ emailAddress }, παρακαλούμε μεταβείτε στις Ρυθμίσεις > Ταυτότητα και διευθύνσεις > Σύντομος τομέας (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Υπάρχει ήδη επαφή με αυτή την ηλεκτρονική διεύθυνση."
+      ],
       "Amount above the maximum.": [
         "Ποσό μεγαλύτερο από το μέγιστο επιτρεπόμενο."
       ],
@@ -2626,8 +2629,11 @@
       "Security key": [
         "Κλειδί ασφαλείας"
       ],
-      "Touch your security key.": [
-        "Αγγίξτε το κλειδί ασφαλείας σας."
+      "Still waiting?": [
+        "Ακόμα περιμένετε;"
+      ],
+      "Touch your security key to continue.": [
+        "Πατήστε το κλειδί ασφαλείας σας για να συνεχίσετε."
       ]
     },
     "fido2: Label": {
@@ -4310,6 +4316,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } που λήγει σε ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB αποθηκευτικού χώρου στο cloud που σας επιτρέπει να αποθηκεύετε, συγχρονίζετε και μοιράζεστε αρχεία εύκολα. Προστατεύεται από διατερματική κρυπτογράφηση."
       ],
@@ -5013,6 +5022,11 @@
         "Οι πιστώσεις θα προστεθούν στο υπόλοιπό σας"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Η αλλαγή της διεύθυνσης χρέωσής σας ενδέχεται να επηρεάσει τους φόρους σε μελλοντικά τιμολόγια."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Είστε βέβαιοι ότι θέλετε να συνεχίσετε;"
@@ -5047,6 +5061,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και τον αριθμό ΦΠΑ."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - κάρτα που λήγει σε ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Τραπεζική μεταφορά - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - κάρτα που λήγει σε ${ Last4 }"
       ]
     },
     "Payments.Sepa": {

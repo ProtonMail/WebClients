@@ -51,6 +51,9 @@
       "Add ${ photoCount } photo to a new album": [
         "새로운 앨범으로 ${ photoCount }개 사진 추가"
       ],
+      "Add a payment method": [
+        "결제 방법 추가하기"
+      ],
       "Add account": [
         "계정 추가"
       ],
@@ -4709,9 +4712,6 @@
       ],
       "Security key": [
         "보안 키"
-      ],
-      "Touch your security key.": [
-        "보안 키를 터치해 주세요."
       ]
     },
     "fido2: Label": {
@@ -5364,6 +5364,12 @@
       ],
       "${ storage } storage": [
         "저장공간 ${ storage }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "무료 체험이 ${ timeRemaining }일 남았습니다. 접근 권한을 상실하지 않으려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "무료 체험이 ${ timeRemaining }일 남았습니다. 구독을 유지하려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
       ],
       "${ total } user found": [
         "${ total }명 사용자 찾음"
@@ -6780,9 +6786,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "이제 ${ defaultEmailAddress }가 메시지를 보내는 주소입니다."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "정말 많은 단계를 거쳐야될 수 있어요. 정말 계속하시겠어요?"
       ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "일부 항목이 사진 라이브러리에 저장되지 않았습니다. 앨범에서 삭제하면 해당 항목에 영구적으로 접근할 수 없게 됩니다."
@@ -9331,6 +9334,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Last4 }(으)로 끝나는 ${ Brand }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "파일을 간편하게 저장, 동기화 및 공유하기 위한 종단간 암호화로 보호되는 1 TB의 클라우드 저장공간."
       ],
@@ -10689,6 +10695,11 @@
         "크레딧이 잔액에 추가됩니다."
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "청구 주소 변경은 추후 청구서의 세율에 영향을 줄 수 있습니다."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "계속 진행하겠습니까?"
@@ -10723,6 +10734,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "갱신 가격은 청구 지역 및 VAT 번호에 따라 변동될 수 있습니다."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "번호가 ${ Last4 }(으)로 끝나는 Apple Pay 카드"
+      ],
+      "Bank transfer - ${ iban }": [
+        "은행 송금 - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - 번호가 ${ Last4 }(으)로 끝나는 카드"
       ]
     },
     "Payments.Sepa": {
@@ -13449,9 +13471,6 @@
       ],
       "Stay for 50% off your next month": [
         "첫 달은 50% 할인으로 누리기"
-      ],
-      "Still working on it": [
-        "아직 작업 중"
       ],
       "Stop sharing": [
         "공유 중지"

@@ -48,6 +48,10 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Lisää ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add ${ photoCount } photo to a new album": [
+        "Lisää ${ photoCount } kuva albumiin",
+        "Lisää ${ photoCount } kuvaa albumiin"
+      ],
       "Add account": [
         "Lisää tili"
       ],
@@ -4164,9 +4168,6 @@
       ],
       "Security key": [
         "Suojausavain"
-      ],
-      "Touch your security key.": [
-        "Koskettakaa suoja-avaintanne."
       ]
     },
     "fido2: Label": {
@@ -4287,6 +4288,12 @@
       ],
       "Username": [
         "Käyttäjätunnus"
+      ]
+    },
+    "Heading": {
+      "Share ${ photoCount } photo via": [
+        "Jaa ${ photoCount } kuva sovelluksessa",
+        "Jaa ${ photoCount } kuvaa sovelluksessa"
       ]
     },
     "Hint": {
@@ -4632,6 +4639,10 @@
         "${ addressCount } sähköpostiosoite",
         "${ addressCount } sähköpostiosoitetta"
       ],
+      "${ albums } album": [
+        "${ albums } albumi",
+        "${ albums } albumia"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
       ],
@@ -4686,9 +4697,17 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: matalatarkkuuksinen esikatselu"
       ],
+      "${ folders } folder": [
+        "${ folders } kansio",
+        "${ folders } kansiota"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } ryhmä löytyi",
         "${ groupCounts } ryhmää löytyi"
+      ],
+      "${ invitationsCount } pending invitation": [
+        "${ invitationsCount } odottava kutsu",
+        "${ invitationsCount } odottavaa kutsua"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } sisältää ${ BRAND_NAME } Scribe -kirjoitusavustajan"
@@ -4707,6 +4726,14 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Elinikäisellä ${ PASS_SHORT_APP_NAME }-sopimuksella ei ole uudistushintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta. ${ planTitle }-tilauksesi uudistushinta ja -päivä pysyvät ennallaan."
+      ],
+      "${ photoCount } item": [
+        "${ photoCount } kuva",
+        "${ photoCount } kuvaa"
+      ],
+      "${ photos } photo": [
+        "${ photos } kuva",
+        "${ photos } kuvaa"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vaatii ainakin yhden oman palvelimen ${ serverPricePerMonth }"
@@ -5395,6 +5422,10 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Useimmat julkiset Wi-Fi-verkot ovat turvallisia, mutta joskus puutteellisesti suojattuja, jolloin voit altistua kyberuhkille. VPN salaa tietoliikenteesi ja pitää sinut suojattuna."
       ],
+      "Move ${ dragCount } item": [
+        "Siirrä ${ dragCount } kohde",
+        "Siirrä ${ dragCount } kohdetta"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nimeä uusi kansio ja valitse mihin kansioon haluat sijoittaa sen. Jos et valitse yläkansiota, luodaan uusi kansio juuritason kansiona."
       ],
@@ -5754,9 +5785,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Tämä on nyt ${ defaultEmailAddress } uusien viestien lähettämistä varten."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Tämä vaatii paljon ajattelua. Jatketaanko?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tämä linkki johtaa sivustolle, joka voi pyrkiä varastamaan salasanojesi ja maksukorttiesi tietojen kaltaisia tietoja."
@@ -8461,6 +8489,10 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" nimettiin uudelleen"
       ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } valokuva on lisätty albumiin \"${ albumName }\"",
+        "${ addedUids.length } valokuvaa on lisätty albumiin \"${ albumName }\""
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } kohteen salauksen purku epäonnistui",
         "${ count } kohteen salauksen purku epäonnistui"
@@ -8468,6 +8500,10 @@
       "${ errors.length } item failed to be deleted": [
         "${ errors.length } kohteen poisto epäonnistui",
         "${ errors.length } kohteen poisto epäonnistui"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } kohde kopioitu",
+        "${ numberOfItems } kohdetta kopioitu"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } kohde poistettu",
@@ -8577,6 +8613,10 @@
       ],
       "Public link access updated": [
         "Julkisen linkin käyttöoikeus päivitetty"
+      ],
+      "Selected item was not removed from your list": [
+        "Tätä kohdetta ei poistettu listaltasi",
+        "Valittuja kohteita ei voitu poistaa listaltasi"
       ],
       "Setting updated. Editors can change permissions and share.": [
         "Asetus päivitetty. Muokkaajat voivat muuttaa käyttöoikeuksia ja jakaa sisältöä"
@@ -11064,6 +11104,10 @@
       "Are you sure you want to close the preview?": [
         "Haluatko varmasti sulkea esikatselun?"
       ],
+      "Are you sure you want to remove this item from your list?": [
+        "Haluatko varmasti poistaa tämän kohteen?",
+        "Haluatko varmasti poistaa nämä kohteet listaltasi?"
+      ],
       "Are you sure?": [
         "Oletko varma?"
       ],
@@ -11345,6 +11389,10 @@
       ],
       "Folder details": [
         "Kansion tiedot"
+      ],
+      "Found ${ resultCount } result": [
+        "Haullasi löytyi ${ resultCount } tulos",
+        "Haullasi öytyi ${ resultCount } tulosta"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Ansaitset **${ referralInfo.uiData.refereeRewardAmount }** krediitteinä ${ planTitle } -tilauksella"
@@ -11673,9 +11721,6 @@
       ],
       "Start import process": [
         "Aloita tuonti"
-      ],
-      "Still working on it": [
-        "Jatketaan ajattelemista"
       ],
       "Stop sharing": [
         "Lopeta jakaminen"

@@ -6159,8 +6159,11 @@
       "Security key": [
         "Beveiligingssleutel"
       ],
-      "Touch your security key.": [
-        "Raak uw beveiligingssleutel aan."
+      "Still waiting?": [
+        "Nog aan het wachten?"
+      ],
+      "Touch your security key to continue.": [
+        "Raak uw beveiligingssleutel aan om door te gaan."
       ]
     },
     "fido2: Label": {
@@ -7769,6 +7772,12 @@
       "Do you want to re-sign the contact details?": [
         "Wilt u de contactgegevens opnieuw ondertekenen?"
       ],
+      "Document in foundation-search index": [
+        "Document in basis zoekindex"
+      ],
+      "Document lookup failed": [
+        "Het opzoeken van documenten is mislukt"
+      ],
       "Don't forget to share the password with the recipient": [
         "Vergeet het wachtwoord niet te delen met de ontvanger"
       ],
@@ -8149,7 +8158,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -8237,6 +8247,9 @@
       ],
       "Loading...": [
         "Laden..."
+      ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Opzoeken van document ${ lookup.result.docId }"
       ],
       "Low Priority": [
         "Lage Prioriteit"
@@ -8420,6 +8433,12 @@
       ],
       "Not connected": [
         "Niet verbonden"
+      ],
+      "Not found in the encrypted search index.": [
+        "Niet gevonden in de gecodeerde zoekindex."
+      ],
+      "Not found in the foundation-search index.": [
+        "Niet gevonden in de basis zoekindex."
       ],
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
@@ -8683,6 +8702,12 @@
       "Restore": [
         "Herstel"
       ],
+      "Results came from the local search.": [
+        "Resultaten kwamen van de lokale zoekopdracht."
+      ],
+      "Results came from the server.": [
+        "De resultaten kwamen van de server."
+      ],
       "Right to Left": [
         "Rechts naar links"
       ],
@@ -8848,6 +8873,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Sorry, dit bericht bestaat niet of is al verlopen."
+      ],
+      "Source document in encrypted search index": [
+        "Brondocument in gecodeerde zoekindex"
       ],
       "Star emails": [
         "E-mail favoriet maken"
@@ -9034,9 +9062,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dit is nu uw ${ defaultEmailAddress } voor het verzenden van nieuwe berichten."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Dit vergt veel stappen. Moet het doorgaan?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Deze koppeling leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
@@ -10354,6 +10379,9 @@
       ],
       "Did not follow instructions": [
         "Heeft de instructies niet gevolgd"
+      ],
+      "Display name": [
+        "Weergavenaam"
       ],
       "Document ID": [
         "Document-id"
@@ -13706,6 +13734,11 @@
         "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT-nummer."
       ]
     },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kaart eindigend op ${ Last4 }"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Door deze betaling te bevestigen, machtigt u ${ BRAND_NAME } en Stripe, onze betalingsserviceprovider, om uw bank opdracht te geven om uw factuur naar behoren in rekening te brengen. U kunt een restitutie ontvangen binnen 8 weken van de betaaldatum, onder de voorwaarden van uw overeenkomst met uw bank."
@@ -16323,9 +16356,6 @@
       "Apply gift code": [
         "Geschenkcode toepassen"
       ],
-      "Apply labels": [
-        "Labels toepassen"
-      ],
       "Archive all messages?": [
         "Alle berichten archiveren?"
       ],
@@ -16382,9 +16412,6 @@
       ],
       "CC": [
         "CC"
-      ],
-      "Change display setting": [
-        "Wijzig de weergave-instelling"
       ],
       "Change my answer": [
         "Mijn antwoord wijzigen"
@@ -16458,14 +16485,8 @@
       "Create contact": [
         "Contact aanmaken"
       ],
-      "Create folder": [
-        "Map maken"
-      ],
       "Create folder \"${ search }\"": [
         "Map \"${ search }\" aanmaken"
-      ],
-      "Create label": [
-        "Label aanmaken"
       ],
       "Create label \"${ search }\"": [
         "Label \"${ search }\" aanmaken"
@@ -16777,9 +16798,6 @@
       "Make your inbox your own": [
         "Maak uw inbox uw eigen"
       ],
-      "Mark all as unread": [
-        "Alles markeren als ongelezen"
-      ],
       "Mark all messages as read": [
         "Markeer alle berichten als gelezen"
       ],
@@ -16851,9 +16869,6 @@
       ],
       "Move all messages to trash": [
         "Alle berichten naar prullenbak verplaatsen"
-      ],
-      "Move emails": [
-        "Verplaats e-mails"
       ],
       "Move to": [
         "Verplaatsen naar"
@@ -17164,17 +17179,11 @@
       "Snooze": [
         "Snooze"
       ],
-      "Snooze emails": [
-        "E-mails snoozen"
-      ],
       "Snooze message": [
         "Bericht snoozen"
       ],
       "Snooze:": [
         "Snooze:"
-      ],
-      "Star emails": [
-        "E-mail favoriet maken"
       ],
       "Start a new import": [
         "Start een nieuwe import"
@@ -17184,9 +17193,6 @@
       ],
       "Stay for 50% off your next month": [
         "Blijf en ontvang 50% korting op uw volgende maand"
-      ],
-      "Still working on it": [
-        "Er wordt nog steeds aan gewerkt"
       ],
       "Storage capacity warning": [
         "Waarschuwing voor opslagruimte"
@@ -17233,9 +17239,6 @@
       ],
       "Two-factor authentication": [
         "Tweestapsverificatie"
-      ],
-      "Unstar emails": [
-        "E-mails uit favorieten verwijderen"
       ],
       "Unsubscribe": [
         "Afmelden"

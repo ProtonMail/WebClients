@@ -410,6 +410,9 @@
       "Add ${ BRAND_NAME } address": [
         "${ BRAND_NAME } adresini ekle"
       ],
+      "Add a payment method": [
+        "Bir ödeme yöntemi ekleyin"
+      ],
       "Add account": [
         "Hesap ekle"
       ],
@@ -608,9 +611,6 @@
       "Clear all formatting": [
         "Tüm biçimlendirmeyi temizle"
       ],
-      "Clear conversation": [
-        "Yazışmayı temizle"
-      ],
       "Close": [
         "Kapat"
       ],
@@ -727,9 +727,6 @@
       ],
       "Copy address": [
         "Adresi kopyala"
-      ],
-      "Copy debug transcript": [
-        "Hata ayıklama çıktısını kopyala"
       ],
       "Copy key to the clipboard": [
         "Anahtarı panoya kopyala"
@@ -1391,9 +1388,6 @@
       "Keep editing": [
         "Düzenlemeyi sürdür"
       ],
-      "Keep going": [
-        "İlerle"
-      ],
       "Keep logo": [
         "Logoyu tut"
       ],
@@ -1871,9 +1865,6 @@
       "Select time zone": [
         "Saat dilimini seçin"
       ],
-      "Send": [
-        "Gönder"
-      ],
       "send auto-reply email": [
         "otomatik yanıt e-postası gönder"
       ],
@@ -1997,6 +1988,9 @@
       "Sign out of all accounts": [
         "Tüm hesapların oturumunu kapat"
       ],
+      "Sign out on all devices": [
+        "Tüm aygıtlardaki oturumları kapat"
+      ],
       "sign up for free": [
         "ücretsiz hesap açın"
       ],
@@ -2035,12 +2029,6 @@
       ],
       "Stay": [
         "Kal"
-      ],
-      "Stop": [
-        "Durdur"
-      ],
-      "Stop here": [
-        "Burada dur"
       ],
       "Stop using single sign-on": [
         "Tek oturum açma kullanmayı bırak"
@@ -2149,6 +2137,9 @@
       ],
       "Upgrade now": [
         "Şimdi yükselt"
+      ],
+      "Upgrade to 2 devices or more": [
+        "2 ya da daha fazla aygıta yükseltin"
       ],
       "Upgrade to Business": [
         "Business tarifesine yükselt"
@@ -5550,6 +5541,9 @@
       "Still need help? Our support team is here for you.": [
         "Hâlâ yardım gerekiyor mu? Destek ekibimiz size yardımcı olmaya hazır."
       ],
+      "The link to sign out on all your devices has expired. Try signing in again to receive a new one.": [
+        "Tüm aygıtlarınızdaki oturumları kapatma bağlantısının geçerlilik süresi dolmuş. Yeni bir bağlantı almak için yeniden oturum açmayı deneyin."
+      ],
       "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
         "Bu işlem ${ BRAND_NAME } hesabınıza yeniden erişmenizi sağlar ancak şifrelenmiş verilerinizi kurtarmaz."
       ],
@@ -5578,11 +5572,20 @@
       "To start, give your organization a name.": [
         "Başlamak için, kuruluşunuzun adını yazın."
       ],
+      "To stay signed in everywhere, upgrade your plan instead.": [
+        "Her yerdeki oturumlarınızın açık kalması için tarifenizi yükseltin."
+      ],
+      "Too many devices are connected to your account. To use ${ BRAND_NAME } on a new device or browser, end all existing sessions. You'll be signed out on every device.": [
+        "Hesabınıza çok fazla aygıt bağlı. Yeni bir aygıtta veya tarayıcıda ${ BRAND_NAME } kullanmak için var olan tüm oturumları kapatın. Her aygıttaki oturumunuz kapatılacak."
+      ],
       "Track the status and activity of your referrals": [
         "Önerilerinizin etkinliklerini ve durumunu izleyin"
       ],
       "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
         "Yalnızca ${ config.offerPrice } ile 15 GB depolama alanı edinin."
+      ],
+      "Upgrade anytime to stay signed in on multiple devices.": [
+        "Birden fazla aygıt üzerinde oturum açmak gerektiğinde tarifenizi yükseltin."
       ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "${ planName } tarifesine geçerek ${ MAX_SYNC_PAID_USER } taneye kadar hesap bağlayın"
@@ -5657,6 +5660,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Ücretsiz ${ MAIL_APP_NAME } hesabınız sınırlı depolama alanıyla sunulduğu için yalnızca son Gmail e-postalarınız içe aktarılacak."
+      ],
+      "Your other sessions have been ended. You can now sign in on this device.": [
+        "Diğer oturumlarınız kapatıldı. Artık bu aygıt üzerinde oturum açabilirsiniz."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Tarifenizde ${ MAX_SYNC_FREE_USER } Gmail adresi destekleniyor.",
@@ -7892,6 +7898,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
       ],
+      "Something went wrong, please try again": [
+        "Bir sorun çıktı. Lütfen yeniden deneyin"
+      ],
       "Something went wrong. Please try again.": [
         "Bir sorun çıktı. Lütfen yeniden deneyin."
       ],
@@ -9028,11 +9037,14 @@
       "Security key updated": [
         "Güvenlik anahtarı güncellendi"
       ],
+      "Still waiting?": [
+        "Hâlâ bekliyor musunuz?"
+      ],
       "This will delete all security keys linked to your account.": [
         "Bu işlem, hesabınızla bağlantılı tüm güvenlik anahtarlarını siler."
       ],
-      "Touch your security key.": [
-        "Güvenlik anahtarınıza dokunun."
+      "Touch your security key to continue.": [
+        "İlerlemek için güvenlik anahtarınıza dokunun."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Kimliğinizi fiziksel bir U2F ya da FIDO2 güvenlik anahtarıyla doğrulayın"
@@ -10431,6 +10443,12 @@
       "${ storeName } app to copy data to ${ BRAND_NAME }": [
         "${ BRAND_NAME } üzerinden veri kopyalamak için ${ storeName } uygulaması"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Erişiminizi kaybetmemek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Aboneliğinizi sürdürmek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } kullanıcı bulundu",
         "${ total } kullanıcı bulundu"
@@ -11248,9 +11266,6 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "Veri kurtarma işlemi için bir parola sıfırlama seçeneği (e-posta veya SMS) gereklidir"
       ],
-      "Debug transcript copied": [
-        "Hata ayıklama çıktısı kopyalandı"
-      ],
       "dedicated servers": [
         "size ayrılmış sunucular"
       ],
@@ -11834,9 +11849,6 @@
       ],
       "How your emergency contact can change your password for you:": [
         "Acil durum kişiniz sizin adınıza parolanızı nasıl değiştirebilir:"
-      ],
-      "I have not finished this one yet.": [
-        "Bunu henüz bitirmedim."
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -13247,9 +13259,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Bu kimlik doğrulama bilgileri resmi ${ VPN_APP_NAME } uygulamalarımızda oturum açmak için kullanılamaz. ${ learnMore }"
       ],
-      "Thinking about this": [
-        "Bunun hakkında düşünülüyor"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, ilkeye aykırı kullanım olasılığı nedeniyle askıya alınmış."
       ],
@@ -13300,9 +13309,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Artık yeni iletileri göndermek için ${ defaultEmailAddress } budur."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Bu işlem için birçok adım atılıyor. İlerlensin mi?"
       ],
       "This is the password you used before the password reset.": [
         "Bu parola, sıfırlama öncesinde kullandığınız paroladır."
@@ -21102,9 +21108,6 @@
       "Anytown": [
         "İl"
       ],
-      "Ask anything…": [
-        "Herhangi bir şey sorun…"
-      ],
       "billing@company.com": [
         "fatura@ornek.com"
       ],
@@ -27227,6 +27230,9 @@
       "Other calendars": [
         "Diğer takvimler"
       ],
+      "Other devices signed out": [
+        "Diğer aygıtlardaki oturumlar kapatıldı"
+      ],
       "Other features included in your plan": [
         "Tarifenizdeki diğer özellikler"
       ],
@@ -27584,6 +27590,9 @@
       "Sign out": [
         "Oturumu kapat"
       ],
+      "Sign out on all devices?": [
+        "Tüm aygıtlardaki oturumlar kapatılsın mı?"
+      ],
       "Signed in successfully!": [
         "Oturum açıldı!"
       ],
@@ -27658,9 +27667,6 @@
       ],
       "Stay secure and connected anywhere": [
         "Her yerde güvende ve bağlı kalın"
-      ],
-      "Still working on it": [
-        "Üzerinde çalışılıyor"
       ],
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "${ passPlusPlanName } ile tüm aygıtlarınızda güvenliğinizi artırın. ${ upgradeButton }"

@@ -51,6 +51,9 @@
       "Add": [
         "Дадаць"
       ],
+      "Add a payment method": [
+        "Дадаць спосаб аплаты"
+      ],
       "Add account": [
         "Дадаць уліковы запіс"
       ],
@@ -144,9 +147,6 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Атрымайце свой бясплатны адрас ${ BRAND_NAME }"
       ],
-      "Clear conversation": [
-        "Ачысціць размову"
-      ],
       "Clear data": [
         "Ачысціць даныя"
       ],
@@ -221,9 +221,6 @@
       ],
       "Copy as markdown": [
         "Капіяваць як markdown"
-      ],
-      "Copy debug transcript": [
-        "Скапіяваць расшыфроўку адладкі"
       ],
       "Copy email to clipboard": [
         "Скапіяваць ліст у буфер абмену"
@@ -477,9 +474,6 @@
       "Import from Outlook": [
         "Імпартаваць з Outlook"
       ],
-      "Keep going": [
-        "Працягваць"
-      ],
       "Keep my subscription": [
         "Пакінуць падпіску"
       ],
@@ -648,9 +642,6 @@
       "Refresh the page": [
         "Абнавіць старонку"
       ],
-      "Reject": [
-        "Адхіліць"
-      ],
       "Reload": [
         "Перазагрузіць"
       ],
@@ -756,9 +747,6 @@
       "Select all": [
         "Выбраць усе"
       ],
-      "Send": [
-        "Адправіць"
-      ],
       "Set password or expiration date": [
         "Задаць пароль або тэрмін дзеяння"
       ],
@@ -824,12 +812,6 @@
       ],
       "Stay": [
         "Застацца"
-      ],
-      "Stop": [
-        "Спыніць"
-      ],
-      "Stop here": [
-        "Спыніцца тут"
       ],
       "Stop sharing": [
         "Спыніць абагульванне"
@@ -3014,6 +2996,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } з'яўляецца вашым імем карыстальніка. Перайдзіце ў Налады -> Ідэнтычнасць і адрасы -> Кароткі дамен (pm.me), каб стварыць ${ emailAddress }."
       ],
+      "A contact with this email address already exists": [
+        "Кантакт з гэтым адрасам электроннай пошты ўжо існуе"
+      ],
       "A group with this name already exists": [
         "Група з такой назвай ужо існуе"
       ],
@@ -4233,9 +4218,6 @@
       ],
       "Security key": [
         "Ключ бяспекі"
-      ],
-      "Touch your security key.": [
-        "Дакраніцеся да свайго ключа бяспекі."
       ]
     },
     "fido2: Label": {
@@ -5133,9 +5115,6 @@
       "Custom email domains": [
         "Карыстальніцкія дамены электроннай пошты"
       ],
-      "Debug transcript copied": [
-        "Расшыфроўка адладкі скапіявана"
-      ],
       "Decrypting your document": [
         "Расшыфроўка ваша дакумента"
       ],
@@ -5281,7 +5260,7 @@
         "Урады і пастаўшчыкі паслуг інтэрнэту могуць сачыць за тым, якія сайты вы наведваеце. Ваш прагляд вэб-старонак у інтэрнэце становіцца прыватным дзякуючы хаванню вашага рэальнага IP-адраса і шыфраванню."
       ],
       "Have some more time to decide without interruption.": [
-        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення ў працы сэрвісу."
+        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення працы сэрвісу."
       ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Дапамажыце нам палепшыць гэты сэрвіс, паведаміўшы пра праблему. Далучыце прыведзеную ніжэй адладачную інфармацыю да вашага паведамлення, калі электронная табліца не змяшчае канфідэнцыяльных даных."
@@ -5775,9 +5754,6 @@
       "There are no documents in the trash.": [
         "Дакументы ў сметніцы адсутнічаюць."
       ],
-      "Thinking about this": [
-        "Падумайце аб гэтым"
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Гэта дзеянне выдаліць спасылку і адклікае доступ для ўсіх карыстальнікаў."
       ],
@@ -5804,9 +5780,6 @@
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Гэта імя або псеўданім для вашай арганізацыі, якое будзе бачнае вашым карыстальнікам. Яго можна змяніць у любы час."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "На гэта спатрэбіцца шмат крокаў. Працягваць?"
       ],
       "This item already exists in your library": [
         "Гэты элемент ужо існуе ў вашай бібліятэцы"
@@ -8823,9 +8796,6 @@
       "Anything you'd like us to know": [
         "Магчыма, што вы б хацелі нам яшчэ нешта паведаміць"
       ],
-      "Ask anything…": [
-        "Спытайце што-небудзь…"
-      ],
       "Choose password": [
         "Выберыце пароль"
       ],
@@ -10957,9 +10927,6 @@
       ],
       "Stay for 50% off your next month": [
         "У наступным месяцы скарыстайцеся скідкай у памеры 50%"
-      ],
-      "Still working on it": [
-        "Усё яшчэ працуем над гэтым"
       ],
       "Stop sharing": [
         "Спыніць абагульванне"

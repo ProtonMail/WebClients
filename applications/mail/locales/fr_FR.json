@@ -54,6 +54,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Ajouter ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add a payment method": [
+        "Ajouter une méthode de paiement"
+      ],
       "Add account": [
         "Ajouter un compte"
       ],
@@ -86,6 +89,9 @@
       ],
       "Add group": [
         "Ajouter un groupe"
+      ],
+      "Add more details": [
+        "Ajouter plus d'informations"
       ],
       "Add new group": [
         "Ajouter un nouveau groupe"
@@ -4748,6 +4754,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } est votre nom d'utilisateur. Pour créer ${ emailAddress }, dirigez-vous vers Paramètres > Identités et adresses > Domaine court (pm.me)."
       ],
+      "A contact with this email address already exists": [
+        "Un contact portant cette adresse e-mail existe déjà."
+      ],
       "A group with this name already exists": [
         "Un groupe avec ce nom existe déjà."
       ],
@@ -6053,9 +6062,6 @@
       ],
       "Security key": [
         "Clé de sécurité"
-      ],
-      "Touch your security key.": [
-        "Touchez votre clé de sécurité."
       ]
     },
     "fido2: Label": {
@@ -7125,6 +7131,12 @@
         "${ subscription.UnreadMessageCount } non lu",
         "${ subscription.UnreadMessageCount } non lus"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Il vous reste ${ timeRemaining } de votre période d'essai. ${ addPaymentMethodLink } pour ne pas perdre votre accès. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Il vous reste ${ timeRemaining } de votre période d'essai. ${ addPaymentMethodLink } pour conserver votre abonnement. ${ learnMoreLink }"
+      ],
       "${ total } conversation": [
         "${ total } conversation",
         "${ total } conversations"
@@ -7250,8 +7262,17 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Ajouter ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add ${ contact } to your contacts": [
+        "Ajouter ${ contact } à vos contacts"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Ajouter ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Add a contact": [
+        "Ajouter un contact"
+      ],
+      "Add contact": [
+        "Ajouter un contact"
       ],
       "Add image URL": [
         "Ajouter l'URL de l'image"
@@ -7475,6 +7496,9 @@
       "Change your password": [
         "Modifier votre mot de passe"
       ],
+      "Change your theme": [
+        "Changer votre thème"
+      ],
       "Checked Proton support": [
         "J'ai consulté le support de Proton"
       ],
@@ -7548,8 +7572,17 @@
         "Créer ${ calendarsToBeCreatedCount } nouveau calendrier",
         "Créer ${ calendarsToBeCreatedCount } nouveaux calendriers"
       ],
+      "Create a filter": [
+        "Créer un filtre"
+      ],
+      "Create a folder": [
+        "Créer un dossier"
+      ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "Créez un dossier, par exemple « ${ suggestedFolderName } », pour conserver tous vos accusés de réception à un seul endroit."
+      ],
+      "Create a label": [
+        "Créer un label"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Choisissez un label pour les messages importés, une plage de temps pour cette importation et les dossiers que vous voulez importer."
@@ -8035,7 +8068,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8136,6 +8170,9 @@
       "Manage your labels": [
         "Gérer vos labels"
       ],
+      "Mark ${ emails } as unread": [
+        "Marquer ${ emails } comme non lus"
+      ],
       "Mark all as read": [
         "Marquer tout comme lu"
       ],
@@ -8220,6 +8257,9 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "La plupart des réseaux wifi publics sont sûrs, mais certains manquent de sécurité, vous exposant ainsi aux cybermenaces. Un VPN chiffre votre trafic pour vous protéger."
       ],
+      "Move ${ emails }": [
+        "Déplacer ${ emails }"
+      ],
       "Move emails": [
         "Déplacer les e-mails"
       ],
@@ -8253,6 +8293,9 @@
       "No email address": [
         "Aucune adresse e-mail"
       ],
+      "No emails selected": [
+        "Aucun e-mail sélectionné"
+      ],
       "No folder found": [
         "Aucun dossier n'a été trouvé."
       ],
@@ -8270,6 +8313,9 @@
       ],
       "No links cleaned": [
         "Aucun lien n'a été nettoyé."
+      ],
+      "No location selected": [
+        "Aucun emplacement sélectionné"
       ],
       "No messages to show": [
         "Aucun message à afficher"
@@ -8540,6 +8586,9 @@
       "Rename folder": [
         "Renommer un dossier"
       ],
+      "Rename this folder": [
+        "Renommez ce dossier"
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Signaler un message comme une tentative de phishing/hameçonnage nous enverra le message afin que nous puissions l'analyser et améliorer nos filtres. Cela signifie que nous serons en mesure de voir le contenu du message dans son intégralité."
       ],
@@ -8672,6 +8721,9 @@
       ],
       "Set up your organization": [
         "Configurez votre organisation"
+      ],
+      "Set your signature": [
+        "Définir votre signature"
       ],
       "Setting up ${ feature }…": [
         "Configuration de ${ feature }…"
@@ -8904,9 +8956,6 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Ceci est désormais votre ${ defaultEmailAddress } pour envoyer de nouveaux messages."
       ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Cela demande beaucoup d'étapes. Faut-il continuer ?"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme des mots de passe et des informations de carte de paiement."
       ],
@@ -9094,8 +9143,14 @@
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "Désactivez cette option pour faire des recherches uniquement par date, nom, adresse e-mail ou objet du message. Pour désactiver la recherche dans le contenu des messages (et supprimer les messages qui ont été téléchargés pour permettre cette fonctionnalité), accédez aux paramètres."
       ],
+      "Turn off your away message": [
+        "Désactivez votre message d'absence"
+      ],
       "Turn on to search the content of your messages": [
         "Activer pour rechercher dans le contenu de vos messages"
+      ],
+      "Turn on your away message": [
+        "Activez votre message d'absence"
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "L'accès aux capacités de stockage dans ce navigateur n'est pas possible. Nous avons besoin de cet accès pour activer la recherche de contenu dans les messages."
@@ -9123,6 +9178,9 @@
       ],
       "Update filter": [
         "Mettre à jour le filtre"
+      ],
+      "Update this filter": [
+        "Mettre à jour ce filtre"
       ],
       "Updating message content search...": [
         "Mise à jour de la recherche dans le contenu des messages en cours"
@@ -10205,6 +10263,9 @@
       ],
       "Did not follow instructions": [
         "Les instructions n'ont pas été suivies."
+      ],
+      "Display name": [
+        "Nom d'affichage"
       ],
       "Document ID": [
         "ID du document"
@@ -16192,9 +16253,6 @@
       "Apply gift code": [
         "Appliquer un code-cadeau"
       ],
-      "Apply labels": [
-        "Appliquer les labels"
-      ],
       "Archive all messages?": [
         "Archiver tous les messages ?"
       ],
@@ -16321,17 +16379,8 @@
       "Create contact": [
         "Créer un contact"
       ],
-      "Create filter": [
-        "Crée un filtre"
-      ],
-      "Create folder": [
-        "Créer un dossier"
-      ],
       "Create folder \"${ search }\"": [
         "Créer un dossier « ${ search } »"
-      ],
-      "Create label": [
-        "Créer un label"
       ],
       "Create label \"${ search }\"": [
         "Créer un label « ${ search } »"
@@ -16643,12 +16692,6 @@
       "Make your inbox your own": [
         "Personnalisez votre boîte de réception selon vos envies"
       ],
-      "Mark all as read": [
-        "Marquer tout comme lu"
-      ],
-      "Mark all as unread": [
-        "Marquer tout comme non lu"
-      ],
       "Mark all messages as read": [
         "Marquer tous les messages comme lus"
       ],
@@ -16720,9 +16763,6 @@
       ],
       "Move all messages to trash": [
         "Déplacer tous les messages vers la corbeille"
-      ],
-      "Move emails": [
-        "Déplacer les e-mails"
       ],
       "Move to": [
         "Déplacer vers"
@@ -16907,9 +16947,6 @@
       "Remove from list?": [
         "Retirer de la liste ?"
       ],
-      "Rename folder": [
-        "Renommer un dossier"
-      ],
       "Reply": [
         "Répondre"
       ],
@@ -16991,17 +17028,11 @@
       "September Sale": [
         "Soldes de septembre"
       ],
-      "Set auto-reply": [
-        "Définir une réponse automatique"
-      ],
       "Set recovery methods": [
         "Définir les méthodes de récupération"
       ],
       "Set recovery phrase": [
         "Définir une phrase de récupération"
-      ],
-      "Set signature": [
-        "Définir une signature"
       ],
       "Set up ${ protonDuoPlanName }": [
         "Configurez ${ protonDuoPlanName }"
@@ -17039,17 +17070,11 @@
       "Snooze": [
         "Mise en attente"
       ],
-      "Snooze emails": [
-        "Mettre en attente les e-mails"
-      ],
       "Snooze message": [
         "Mise en attente d'un message"
       ],
       "Snooze:": [
         "Mise en attente :"
-      ],
-      "Star emails": [
-        "Mettre les e-mails en favoris"
       ],
       "Start a new import": [
         "Démarrer une nouvelle importation"
@@ -17059,9 +17084,6 @@
       ],
       "Stay for 50% off your next month": [
         "Restez et bénéficiez de 50 % de réduction sur votre prochain mois"
-      ],
-      "Still working on it": [
-        "Je suis encore en train d'y travailler"
       ],
       "Storage capacity warning": [
         "Avertissement de capacité de stockage"
@@ -17103,17 +17125,11 @@
       "Trust public key?": [
         "Approuver la clé publique ?"
       ],
-      "Turn off auto-reply": [
-        "Désactiver la réponse automatique"
-      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activer ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Two-factor authentication": [
         "Authentification à deux facteurs"
-      ],
-      "Unstar emails": [
-        "Retirer les e-mails des favoris"
       ],
       "Unsubscribe": [
         "Se désabonner"
@@ -17126,9 +17142,6 @@
       ],
       "Unsubscribe request sent": [
         "La demande de désabonnement a été envoyée."
-      ],
-      "Update filter": [
-        "Mettre à jour le filtre"
       ],
       "Upgrade complete!": [
         "L'abonnement a été mis à jour."

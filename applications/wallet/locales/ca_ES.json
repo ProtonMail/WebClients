@@ -2328,6 +2328,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } és el vostre nom d'usuari. Per a crear ${ emailAddress }, aneu a Preferències > Identitat i adreces > Domini curt (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Ja existeix un contacte amb aquesta adreça de correu electrònic"
+      ],
       "Amount above the maximum.": [
         "Quantitat per sobre del màxim."
       ],
@@ -2626,8 +2629,11 @@
       "Security key": [
         "Clau de seguretat"
       ],
-      "Touch your security key.": [
-        "Toqueu la vostra clau de seguretat."
+      "Still waiting?": [
+        "Encara esteu esperant?"
+      ],
+      "Touch your security key to continue.": [
+        "Toqueu la clau de seguretat per continuar."
       ]
     },
     "fido2: Label": {

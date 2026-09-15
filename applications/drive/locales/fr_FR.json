@@ -48,6 +48,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Ajouter ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add a payment method": [
+        "Ajouter une méthode de paiement"
+      ],
       "Add account": [
         "Ajouter un compte"
       ],
@@ -3205,6 +3208,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } est votre nom d'utilisateur. Pour créer ${ emailAddress }, dirigez-vous vers Paramètres > Identités et adresses > Domaine court (pm.me)."
       ],
+      "A contact with this email address already exists": [
+        "Un contact portant cette adresse e-mail existe déjà."
+      ],
       "A group with this name already exists": [
         "Un groupe avec ce nom existe déjà."
       ],
@@ -4339,9 +4345,6 @@
       ],
       "Security key": [
         "Clé de sécurité"
-      ],
-      "Touch your security key.": [
-        "Touchez votre clé de sécurité."
       ]
     },
     "fido2: Label": {
@@ -4947,6 +4950,12 @@
       ],
       "${ storage } storage": [
         "${ storage } d'espace de stockage"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Il vous reste ${ timeRemaining } de votre période d'essai. ${ addPaymentMethodLink } pour ne pas perdre votre accès. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Il vous reste ${ timeRemaining } de votre période d'essai. ${ addPaymentMethodLink } pour conserver votre abonnement. ${ learnMoreLink }"
       ],
       "${ total } user found": [
         "${ total } utilisateur trouvé",
@@ -6010,9 +6019,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Ceci est désormais votre ${ defaultEmailAddress } pour envoyer de nouveaux messages."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Cela demande beaucoup d'étapes. Faut-il continuer ?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme des mots de passe et des informations de carte de paiement."
@@ -12108,9 +12114,6 @@
       ],
       "Stay for 50% off your next month": [
         "Restez et bénéficiez de 50 % de réduction sur votre prochain mois"
-      ],
-      "Still working on it": [
-        "Je suis encore en train d'y travailler"
       ],
       "Stop sharing": [
         "Arrêter le partage"
