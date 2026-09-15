@@ -10,6 +10,7 @@ import { IcImage } from '@proton/icons/icons/IcImage';
 import { IcInbox } from '@proton/icons/icons/IcInbox';
 import { IcLink } from '@proton/icons/icons/IcLink';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useDriveSharingFlags } from '../../legacy/store';
@@ -17,6 +18,7 @@ import { DevicesSidebar } from './DriveSidebarDevices/DevicesSidebar';
 import { DriveSidebarFolders } from './DriveSidebarFolders/DriveSidebarFolders';
 import { DriveSidebarListItem } from './DriveSidebarListItem';
 import { DriveSidebarSharedWithMe } from './DriveSidebarSharedWithMe/DriveSidebarSharedWithMe';
+import { EasySwitchSidebarSection } from './EasySwitchSidebarSection';
 import { useSidebarStore } from './hooks/useSidebar.store';
 
 type DriveSidebarListProps = {
@@ -63,6 +65,8 @@ export const DriveSidebarList = ({ shareId, store }: DriveSidebarListProps) => {
 
     const { isDirectSharingDisabled } = useDriveSharingFlags();
     const showSharedWithMeSection = !isDirectSharingDisabled;
+    const isDriveEasySwitchEnabled = useFlag('EasySwitchB2CForDriveWeb');
+    const isEasySwitchNewUIEnabled = useFlag('EasySwitchB2CForDriveWebNewUI') && isDriveEasySwitchEnabled;
 
     return (
         <SidebarList style={{ width: sidebarWidth, maxWidth: sidebarWidth }}>
@@ -106,6 +110,8 @@ export const DriveSidebarList = ({ shareId, store }: DriveSidebarListProps) => {
                 <span className={clsx('text-ellipsis', isCollapsed && 'sr-only')} title={c('Link').t`Trash`}>{c('Link')
                     .t`Trash`}</span>
             </DriveSidebarListItem>
+
+            {isEasySwitchNewUIEnabled && <EasySwitchSidebarSection collapsed={isCollapsed} />}
         </SidebarList>
     );
 };
