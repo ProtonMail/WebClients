@@ -1973,6 +1973,9 @@
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME } ile oturum aç"
       ],
+      "Sign in with Google": [
+        "Google oturumu açın"
+      ],
       "Sign in with password": [
         "Parola ile oturum açın"
       ],
@@ -10805,6 +10808,9 @@
       "An SMS with a verification code was just sent to ${ phoneNumber }.": [
         "${ phoneNumber } numaralı telefona doğrulama kodunun bulunduğu bir SMS gönderildi."
       ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Verileriniz içe aktarılırken beklenmeyen bir sorun çıktı. Lütfen bir süre sonra yeniden deneyin."
+      ],
       "and": [
         "ve"
       ],
@@ -11123,6 +11129,9 @@
       ],
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "Dış e-posta adreslerinizi ${ MAIL_APP_NAME } üzerine bağlayın ve yönetin."
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "${ DRIVE_APP_NAME } güvenli içe aktarma işlemini kurmak için Google Drive bağlantısı kuruluyor."
       ],
       "Connection data will be available in around 1 hour.": [
         "Bağlantı verileri yaklaşık 1 saat içinde hazır olacak."
@@ -11481,6 +11490,9 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. ${ BRAND_NAME } etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini barındırabilirsiniz."
       ],
+      "Email you once import is finished": [
+        "İçe aktarma işlemi tamamlandığında size e-posta gönderilecek"
+      ],
       "Emailing preference saved": [
         "E-posta ayarı kaydedildi"
       ],
@@ -11720,6 +11732,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Yalnızca ${ bundlePlanPriceInline }"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "İçe aktarma işleminin tamamlanması için yukarıdaki GIF görselinde belirtilen tüm ögeleri seçmelisiniz."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Başka bir e-posta hizmetinden ${ MAIL_APP_NAME } uygulamasına geçiş yapan kullanıcılar için, sorunsuz bir geçiş sağlamak üzere MX kaydını değiştirmeden önce ${ boldAddresses } sekmesini seçin ve tüm etkin e-posta adreslerini ekleyin."
@@ -12369,6 +12384,9 @@
       "Next billing date": [
         "Sonraki fatura tarihi"
       ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Ardından Google hesabınızda oturum açmanız ve ${ BRAND_NAME } verilerinize erişme izni vermeniz gerekecek."
+      ],
       "No account keys exist": [
         "Herhangi bir hesap anahtarı yok"
       ],
@@ -12670,6 +12688,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Lütfen farklı bir ödeme yöntemi kullanarak yeniden deneyin ya da bankanızla görüşün."
       ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "İçe aktarma işlemini tamamlamak için lütfen tarifenizi yükseltin."
+      ],
       "Please use another browser or download the file.": [
         "Lütfen başka bir tarayıcı kullanın ya da dosyayı indirin."
       ],
@@ -12744,6 +12765,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "${ BRAND_NAME } ile ilgili her konuda yardım almak için bizimle görüşün."
+      ],
+      "Read once and encrypted on arrival": [
+        "Bir kez okunur ve vardığında şifrelenir"
       ],
       "Receive notifications for ${ categoryLabel }": [
         "${ categoryLabel } bildirimlerini al"
@@ -13003,6 +13027,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
+      ],
+      "Sit back and we will let you know.": [
+        "Arkanıza yaslanın, size bilgi vereceğiz."
       ],
       "Smart Routed through a different country.": [
         "Başka bir ülke üzerinden akıllı yönlendirme yapıldı."
@@ -13682,6 +13709,9 @@
       "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
         "MDM uygulamanızda dosyayı silin ya da MDM uygulamanızın betik yürütme bölümünden ${ removeScriptLink } komutunu çalıştırın. Bu işlem için, dosya dağıtımını veya betik çalıştırmayı destekleyen herhangi bir MDM uygulaması kullanılabilir."
       ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Yalnızca bunları ${ DRIVE_APP_NAME } içine kopyalamak için kullanılır."
+      ],
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
@@ -13802,6 +13832,9 @@
       "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
         "**Başka bir tarayıcıda** ${ BRAND_NAME } internet uygulamasında oturumunuz zaten açık. Etkin oturumunuzdan parolanızı sıfırlayabilirsiniz."
       ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "Fotoğrafların, Google Dokümanlarının, E-Tablolarının ve Slaytlarının içe aktarılmasını desteklemiyoruz. Lütfen Google Drive depolama alanınızın boş olmadığından emin olun."
+      ],
       "We generated a strong password for you": [
         "Sizin için güçlü bir parola oluşturduk"
       ],
@@ -13832,8 +13865,14 @@
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Herkesin kurtarma ifadesiyle kurtarmayı açmasını önemle öneriyoruz."
       ],
+      "We support most files": [
+        "Çoğu dosya türünü destekliyoruz"
+      ],
       "We use 3-D Secure to protect your payments": [
         "Ödemelerinizi korumak için 3-D Secure kullanıyoruz"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "İçe aktarma işlemi tamamlandığında size e-posta göndereceğiz. İşlem bittiğinde içe aktarılan dosyaları bir klasörde bulabilirsiniz."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi ${ IDEAL_WERO_BRAND_NAME } sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
@@ -13960,6 +13999,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Kullanıma almadan yeni kullanıcılar eklenemez. Var olan kullanıcılara adres ekleyemez veya korunmayan kullanıcı hesaplarına erişemezsiniz."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "Fotoğraflar, Google Dokümanlar ve E-tablolar içe aktarılmayacak"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -25303,6 +25345,9 @@
       ],
       "View VPN session details for your organization.": [
         "Kuruluşunuzun VPN oturumu ayrıntılarını görüntüleyin."
+      ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Dosyalarınızı kopyalamak için bir kez okuyoruz ve ardından her birini ${ BRAND_NAME } anahtarlarınızla şifreliyoruz."
       ]
     },
     "Success": {
@@ -26344,6 +26389,9 @@
       "Connect your custom domain": [
         "Özel etki alanınızı bağlayın"
       ],
+      "Connect your Google account": [
+        "Google hesabınızı bağlayın"
+      ],
       "Connected emails": [
         "Bağlı e-posta adresleri"
       ],
@@ -26996,6 +27044,9 @@
       "Import key": [
         "Anahtarı içe aktar"
       ],
+      "Import started, but your storage won't be enough for this import": [
+        "İçe aktarma işlemi başladı ancak depolama alanınız bu içe aktarma işlemi için yeterli olmayacak"
+      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "${ PRODUCT_NAMES.EASY_SWITCH } ile içe aktarma"
       ],
@@ -27557,6 +27608,9 @@
       "Set your password": [
         "Parolanızı ayarlayın"
       ],
+      "Setting up your import": [
+        "İçe aktarma işleminiz ayarlanıyor"
+      ],
       "Settings": [
         "Ayarlar"
       ],
@@ -27583,6 +27637,9 @@
       ],
       "Sign in on TV?": [
         "TV üzerinde oturum açılsın mı?"
+      ],
+      "Sign in to Google": [
+        "Google oturumu açın"
       ],
       "Sign in to join the Beta program": [
         "Beta programına katılmak için oturum açın"
@@ -27888,6 +27945,9 @@
       "Warning: suspected fake website": [
         "Uyarı: Sahte olma olasılığı bulunan şüpheli site"
       ],
+      "We could not find anything to import": [
+        "İçe aktarılacak bir şey bulunamadı"
+      ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "Kimliğinizi doğrulamak için e-postanıza bir kod gönderdik. Bu kod 10 dakika boyunca geçerli olacak. Lütfen kodu aşağıya yazın."
       ],
@@ -27968,6 +28028,9 @@
       ],
       "Your exposed information": [
         "Sızdırılmış bilgileriniz"
+      ],
+      "Your import is starting": [
+        "İçe aktarma işleminiz başlıyor"
       ],
       "Your plan": [
         "Tarifeniz"
@@ -28233,6 +28296,9 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail bazı e-postaları Sosyal ya da Tanıtım gibi kategorilere ayırır. Bu e-postaların nereye içe aktarılacağını seçebilirsiniz."
       ],
+      "Grant access to your ${ providerName } account to start a migration": [
+        "Aktarımı başlatmak için ${ providerName } hesabınza erişme izni verin"
+      ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Gelen kutunuzda aynı yazışmanın e-postalarının gruplanmış ya da ayrı ayrı görüntülenmesini ayarlayın."
       ],
@@ -28250,6 +28316,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "@etkialaniniz.com adresinden profesyonel e-posta, iş birlikli belge düzenleme, zamanlama ve görüntülü görüşme ile bulut depolama alanı, parola yönetimi, güvenli bir ${ VPN_SHORT_APP_NAME } ve diğer şeyleri sağlar."
+      ],
+      "Install the migration app in your ${ providerName } account to start a migration": [
+        "${ providerName } hesabınızın aktarımını başlatmak için aktarma uygulamasını kurun"
       ],
       "Instant AI assistance, human expert on hand!": [
         "Anında yapay zeka desteği ve uzmanlar her zaman yanınızda!"

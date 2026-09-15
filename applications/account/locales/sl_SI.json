@@ -982,6 +982,9 @@
       "Get a new encrypted email address": [
         "Pridobite nov šifriran e-poštni naslov"
       ],
+      "Get help from ${ LUMO_SHORT_APP_NAME }": [
+        "Poiščite pomoč pri ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Get in touch": [
         "Oglasite se nam!"
       ],
@@ -7933,6 +7936,9 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: predogled nizke ločljivosti"
       ],
+      "${ helpTranslateLink } by joining our localization community.": [
+        "${ helpTranslateLink }, tako da se pridružite naši skupnosti za lokalizacijo."
+      ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } želi deliti podatke z vami v ${ PASS_APP_NAME }"
       ],
@@ -8451,6 +8457,9 @@
       ],
       "Change your password": [
         "Spremenite vaše geslo"
+      ],
+      "Changes to your default language and time are reflected on the web. To change the default for mobile apps, go to the settings on your device.": [
+        "Spremembe nastavitve vašega privzetega jezika in časa veljajo v spletni obliki storitev. Spremembe privzetih nastavitev v mobilnih aplikacijah uredite v nastavitve na vaši napravi."
       ],
       "Check if your recovery phrase can be used to fully recover your account.": [
         "Preverite, ali je mogoče z vašo obnovitveno frazo v celoti obnoviti vaš račun."
@@ -10689,6 +10698,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaši podatki so pripravljeni na uvoz iz računa ${ importedEmailAddressStrong } v račun ${ BRAND_NAME }."
+      ],
+      "Your default language and time for ${ BRAND_NAME } services.": [
+        "Vaš privzeti jezik in čas za storitve ${ BRAND_NAME }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Vaš e-poštni naslov bo uporabljen le za to enkratno preverjanje."
@@ -14555,6 +14567,9 @@
       "${ app } product updates": [
         "Novice o izdelku ${ app }"
       ],
+      "${ BRAND_NAME } for Business communications": [
+        "Komunikacije ${ BRAND_NAME } for Business"
+      ],
       "${ BRAND_NAME } important announcements": [
         "Pomembne najave ${ BRAND_NAME }"
       ],
@@ -14585,11 +14600,17 @@
       "1-2 emails per month": [
         "1 do 2 sporočili na mesec"
       ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "1 do 4 sporočila na leto. Opomniki za posodobitev vaših načinov obnovitve računa."
+      ],
       "2-4 emails per year": [
         "2 do 4 sporočila na leto"
       ],
       "4-6 emails per year": [
         "4 do 6 sporočil na leto"
+      ],
+      "Account email updates": [
+        "Novice o vašem računu"
       ],
       "Application notifications": [
         "Obvestila aplikacije"
@@ -14600,11 +14621,23 @@
       "Daily email notifications": [
         "Dnevna obvestila o e-pošti"
       ],
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Če to onemogočite, potem ne boste prejemali obvestil znotraj aplikacije o novih funkcijah, akcijah in novih storitvah ${ BRAND_NAME } ter o opomnikih."
+      ],
+      "Email communications": [
+        "E-poštna komunikacija"
+      ],
       "In-app notifications": [
         "Obvestila znotraj aplikacije"
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Sodelujte v anketah za izboljšanje storitev ${ BRAND_NAME }"
+      ],
+      "Product email updates": [
+        "Novice o izdelkih"
+      ],
+      "Recovery checklist": [
+        "Kontrolni seznam za obnovitev računa"
       ]
     },
     "Notification": {
@@ -16570,6 +16603,9 @@
     "safety_review": {
       "Later": [
         "Kasneje"
+      ],
+      "Your recovery checklist": [
+        "Vaš kontrolni seznam za obnovitev računa"
       ]
     },
     "saml: Action": {

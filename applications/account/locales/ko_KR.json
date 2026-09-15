@@ -1377,7 +1377,7 @@
         "카테고리 유지"
       ],
       "Keep current plan": [
-        "현재 요금제 유지"
+        "현재 플랜 유지"
       ],
       "Keep Editing": [
         "계속 편집하기"
@@ -1969,6 +1969,9 @@
       ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME }에 로그인"
+      ],
+      "Sign in with Google": [
+        "Google 계정으로 로그인"
       ],
       "Sign in with password": [
         "비밀번호로 로그인"
@@ -4121,7 +4124,7 @@
         "무료 플랜 제한을 초과하면, 다음이 제한됩니다:"
       ],
       "Keep current plan": [
-        "현재 요금제 유지"
+        "현재 플랜 유지"
       ],
       "Manage your calendar": [
         "캘린더 관리"
@@ -5544,6 +5547,9 @@
       ],
       "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
         "단 ${ config.offerPrice }의 비용으로 15 GB 저장공간을 이용해 보세요."
+      ],
+      "Upgrade anytime to stay signed in on multiple devices.": [
+        "여러대의 기기에서 로그인 상태를 유지하려면 업그레이드하세요."
       ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "최대 ${ MAX_SYNC_PAID_USER }개 계정을 연결하려면 ${ planName }(으)로 업그레이드하세요"
@@ -8964,8 +8970,14 @@
       "Security key updated": [
         "보안 키 업데이트됨"
       ],
+      "Still waiting?": [
+        "아직 대기 중인가요?"
+      ],
       "This will delete all security keys linked to your account.": [
         "이 작업은 사용자의 계정에 연결된 모든 보안 키를 삭제합니다."
+      ],
+      "Touch your security key to continue.": [
+        "계속하려면 보안 키를 터치하세요."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "물리적 U2F 또는 FIDO2 보안 키로 신원을 확인하세요"
@@ -10536,7 +10548,7 @@
         "이름 또는 이메일로 사용자를 이 그룹에 추가하세요."
       ],
       "Add video conferencing links to calendar invitations": [
-        "캘린더 초대에 화상회의를 추가하세요"
+        "캘린더 초대에 화상회의를 추가합니다."
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "더 개인화된 경험을 위해 사용자의 조직에 맞는 이름 및 로고를 추가하세요."
@@ -10669,6 +10681,9 @@
       ],
       "An SMS with a verification code was just sent to ${ phoneNumber }.": [
         "인증 코드가 포함된 SMS 메시지가 ${ phoneNumber }(으)로 전송되었습니다."
+      ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "데이터를 불러오는 도중에 문제가 발생했습니다. 다시 시도하세요."
       ],
       "and": [
         "그리고"
@@ -10987,6 +11002,9 @@
       ],
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }에 연결된 외부 메일함을 연결하고 관리하세요."
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "${ DRIVE_APP_NAME }에 안전하게 데이터를 볼러오기 위해 Google Drive와 연결 중입니다."
       ],
       "Connection data will be available in around 1 hour.": [
         "연결 데이터가 한 시간 내에 사용 가능합니다."
@@ -11339,6 +11357,9 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "이메일 호스팅은 이미 개인이 소유한 도메인만 가능합니다. 도메인 등록은 현재 ${ BRAND_NAME }에서 사용하실 수 없습니다. 도메인 호스팅 업체에 등록된 도메인에 대한 이메일을 호스트할 수 있습니다."
       ],
+      "Email you once import is finished": [
+        "불러오기가 완료되면 이메일 알림 보내기"
+      ],
       "Emailing preference saved": [
         "이메일 환경 설정이 저장됨"
       ],
@@ -11578,6 +11599,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "${ bundlePlanPriceInline }에 이용 가능"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "가져오기가 작동하려면, GIF에 표시된 대로 상기 요청된 모든 항목을 선택해야 합니다."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "${ MAIL_APP_NAME }에서 타 이메일 서비스로 전환하는 사용자라면, 매끄러운 전환을 위해 ${ boldAddresses } 탭을 선택한 뒤 활성화된 모든 이메일 주소를 추가하세요."
@@ -12224,6 +12248,9 @@
       "Next billing date": [
         "다음 청구일"
       ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "다음으로, Google 계정에 로그인한 다음 ${ BRAND_NAME }에 회원님의 데이터에 접근할 수 있는 권한을 부여해야 합니다."
+      ],
       "No account keys exist": [
         "계정 키가 존재하지 않음"
       ],
@@ -12520,6 +12547,9 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "다른 결제 수단을 사용하거나, 은행에 연락하세요."
+      ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "불러오기를 성공적으로 완료하려면 저장공간을 업그레이드해야합니다."
       ],
       "Please use another browser or download the file.": [
         "파일을 다운로드 하거나 다른 브라우저를 사용하세요."
@@ -12853,6 +12883,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
+      ],
+      "Sit back and we will let you know.": [
+        "잠시 기다려주세요. 완료되면 알려드릴게요."
       ],
       "Smart Routed through a different country.": [
         "다른 국가를 통해 자동 경유됨."
@@ -13523,6 +13556,9 @@
       "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
         "MDM 스크립트 구성을 통해 ${ removeScriptLink }을(를) 실행하거나 MDM을 통해 파일을 지우십시오. 파일 배포나 스크립트 실행을 지원하는 MDM 환경에서만 지원합니다."
       ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "${ DRIVE_APP_NAME }로 복사할 때만 쓰입니다."
+      ],
       "User activated": [
         "사용자 활성화됨"
       ],
@@ -13643,6 +13679,9 @@
       "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
         "이미 **다른 브라우저**로 ${ BRAND_NAME } 웹 앱을 로그인한 것이 감지되었습니다.\n현재 활성 세션에서 비밀번호 재설정을 진행할 수 없습니다."
       ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "사진, Google Docs, 시트 및 슬라이드는 불러올 수 없습니다. Google Drive 공간이 비어있는지 여부를 확인해 주세요."
+      ],
       "We generated a strong password for you": [
         "강력한 비밀번호를 생성했습니다."
       ],
@@ -13673,8 +13712,14 @@
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "복구 키로 복구를 활성화하는 것을 강력하게 권장합니다."
       ],
+      "We support most files": [
+        "대부분의 파일 지원"
+      ],
       "We use 3-D Secure to protect your payments": [
         "결제 정보를 보호하기 위해 3D 보안을 이용합니다"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "불러오기가 완료되면 알림 이메일을 보내드립니다. 폴더에서 불러온 파일을 찾으실 수 있습니다."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "이 거래를 완료하기 위해 새 브라우저 탭의 ${ IDEAL_WERO_BRAND_NAME }에 리디렉션됩니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
@@ -13801,6 +13846,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "활성화하지 않으면 새 사용자를 만들거나 기존 사용자에게 주소를 추가하거나 개인이 아닌 사용자 계정에 액세스할 수 없습니다."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "사진, Google Docs 및 시트를 불러올 수 없습니다"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "새 인증 코드를 받거나 다른 인증 방법을 사용하시겠습니까?"
@@ -14052,7 +14100,7 @@
         "다운로드한 복구 파일을 사용하여 잠긴 데이터를 복구할 수 없게 됩니다. 또한 장치 기반 복구도 비활성화됩니다."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
-        "친구가 연간 플랜을 구독하고 1개월 후, 월간 요금제에 구독하고 2개월 후에 크레딧 보상을 받게 됩니다."
+        "친구가 연간 플랜을 구독하고 1개월 후, 월간 플랜 구독 2개월 후에 크레딧 보상을 받게 됩니다."
       ],
       "You'll receive the credit reward 1 month after your friend's trial ended.": [
         "친구의 무료 체험이 끝난 1개월 뒤에 크레딧 보상을 받게 됩니다."
@@ -14094,7 +14142,7 @@
         "${ plan } 구독이 ${ PASS_SHORT_APP_NAME } 평생 플랜으로 대체됩니다. 구독의 잔여분이 사용자의 계정에 추가됩니다. ${ PASS_SHORT_APP_NAME } 평생 혜택은 갱신가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }에 평생 접근할 수 있는 일회성 결제입니다."
       ],
       "Your ${ planDisplayName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
-        "${ planDisplayName } 요금제는 단순히 비즈니스 데이터와 커뮤니케이션을 안전하게 지켜주는 데 그치지 않고 규정 준수 목표를 지원하며, 비즈니스를 돋보이게 하고, 팀을 서로 연결된 상태로 유지해 줍니다."
+        "${ planDisplayName } 플랜은 단순히 비즈니스 데이터와 커뮤니케이션을 안전하게 지켜주는 데 그치지 않고 규정 준수 목표를 지원하며, 비즈니스를 돋보이게 하고, 팀을 서로 연결된 상태로 유지해 줍니다."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "${ VPN_APP_NAME }과 ${ MAIL_APP_NAME } 계정이 연결되어 있습니다. 둘 다 삭제하기 위해 ${ loginLink }에서 로그인하여 계정을 삭제해 주세요."
@@ -14178,7 +14226,7 @@
         "회원님의 전화번호는 이번 인증에만 사용됩니다."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
-        "사용자의 요금제가 최대 7일의 10개 버전 제한이 있습니다"
+        "현재 플랜은 최대 7일간 10개 버전으로 제한됩니다."
       ],
       "Your profile and changes to it will be visible to other ${ BRAND_NAME } users.": [
         "사용자의 프로필 및 변경 사항이 다른 ${ BRAND_NAME } 사용자에게 보여집니다."
@@ -17642,7 +17690,7 @@
         "최신 뉴스 살펴보기"
       ],
       "Keep current plan": [
-        "현재 요금제 유지"
+        "현재 플랜 유지"
       ],
       "Make your voice heard": [
         "회원님의 목소리를 들려주세요."
@@ -18494,7 +18542,7 @@
         "1개 커스텀 이메일 도메인"
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain2 } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
+        "쇼핑 계정의 경우 honggildong@${ domain }, 뉴스 구독의 경우 honggildong@${ domain2 } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, 그리고 ${ DRIVE_APP_NAME } 에 스토리지 공간이 공유됩니다."
@@ -18730,7 +18778,7 @@
         "최대 ${ n }개 캘린더를 생성하거나 친구, 가족, 동료 및 조직에서 생성하세요."
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "가족 구성원에게 할당할 수 있는 이메일 주소/별칭을 ${ n }개까지 생성할 수 있습니다. 온라인 신원으로 사용할 수 있고, 쇼핑 계정으로 홍쇼핑@${ domain }을(를) 사용하는 것을 예로 들 수 있습니다."
+        "가족 구성원에게 할당할 수 있는 이메일 주소/별칭을 ${ n }개까지 생성할 수 있습니다. 온라인 신원으로 사용할 수 있고, 쇼핑 계정으로 HongShopper@${ domain }을(를) 사용하는 것을 예로 들 수 있습니다."
       ],
       "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
         "별칭을 위한 커스텀 도메인, 추가 메일함, 별칭으로부터의 이메일 전송 기능 등"
@@ -19962,7 +20010,7 @@
     },
     "Paragraph": {
       "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
-        "${ BRAND_NAME }은 독립적으로 자금을 조달하며 광고 없이 운영됩니다. 아래는 이러한 독립성이 실제로 어떻게 실현되었는지 보여주는 예시입니다"
+        "${ BRAND_NAME }은 완전히 독립된 자금 지원으로 광고 없이 서비스를 운영합니다. 아래에서 자사의 독립성이 실제로 어떻게 활용되었는지에 대한 예시를 살펴보세요."
       ]
     },
     "Participant name": {
@@ -24933,7 +24981,7 @@
         "${ planTitle }은 받은 편지함, 이메일 신원 등을 생산적으로 관리하고 정리하는 데 기본적인 수준 그 이상의 도움을 줍니다"
       ],
       "${ planTitle } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
-        "${ planTitle }가 회원님의 가족 구성원 각각과 그들의 데이터가 온라인에 있을 때 언제나 보호되도록 도와드립니다."
+        "${ planTitle }는 회원님과 회원님 가족 개개인의 데이터가 온라인에 있을 때 언제나 보호되도록 도와드립니다."
       ],
       "Compare the key differences that matter for your business.": [
         "당신의 비즈니스에 중요한 핵심 차이점을 비교해 보세요."
@@ -24958,6 +25006,9 @@
       ],
       "View VPN session details for your organization.": [
         "내 조직의 VPN 세션 상세 사항을 확인하세요."
+      ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "파일을 복사하기 위해 Proton Drive가 파일을 읽은 다음 회원님의 개인 ${ BRAND_NAME } 키로 암호화 작업을 수행합니다."
       ]
     },
     "Success": {
@@ -25462,7 +25513,7 @@
         "계속 취소하기"
       ],
       "Keep current plan": [
-        "현재 요금제 유지"
+        "현재 플랜 유지"
       ]
     },
     "Theme": {
@@ -25985,6 +26036,9 @@
       "Connect your custom domain": [
         "커스텀 도메인 연결하기"
       ],
+      "Connect your Google account": [
+        "Google 계정 연결"
+      ],
       "Connected emails": [
         "연결된 이메일"
       ],
@@ -26472,7 +26526,7 @@
         "무료"
       ],
       "Free plan": [
-        "Free 요금제"
+        "Free 플랜"
       ],
       "Gateway": [
         "게이트웨이"
@@ -26632,6 +26686,9 @@
       ],
       "Import key": [
         "키 가져오기"
+      ],
+      "Import started, but your storage won't be enough for this import": [
+        "불러오기가 시작되었습니다. 저장공간이 부족하여 모든 파일을 불러올 수 없습니다."
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "${ PRODUCT_NAMES.EASY_SWITCH }로 불러오기"
@@ -27194,6 +27251,9 @@
       "Set your password": [
         "비밀번호를 설정하세요"
       ],
+      "Setting up your import": [
+        "불러오기를 설정하는 중"
+      ],
       "Settings": [
         "설정"
       ],
@@ -27220,6 +27280,9 @@
       ],
       "Sign in on TV?": [
         "TV에서 로그인하시나요?"
+      ],
+      "Sign in to Google": [
+        "Google 계정에 로그인"
       ],
       "Sign in to join the Beta program": [
         "베타 프로그램에 참여하려면 로그인"
@@ -27524,6 +27587,9 @@
       "Warning: suspected fake website": [
         "경고: 가짜 웹 사이트일 수 있음"
       ],
+      "We could not find anything to import": [
+        "불러올 파일이 없습니다"
+      ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "본인 확인을 위해 이메일로 코드를 발송했습니다. 이 코드는 10분 동안 유효합니다. 아래에 입력해 주세요."
       ],
@@ -27543,7 +27609,7 @@
         "무엇을 이전하시나요?"
       ],
       "What changes if you switch to the Free plan": [
-        "Free 요금제로 전환하는 경우 변경되는 사항"
+        "Free 플랜으로 전환하는 경우 변경되는 사항"
       ],
       "What is an alias?": [
         "별칭이란?"
@@ -27604,6 +27670,9 @@
       ],
       "Your exposed information": [
         "사용자의 노출된 정보"
+      ],
+      "Your import is starting": [
+        "불러오기 작업이 시작되었어요"
       ],
       "Your plan": [
         "내 플랜"
@@ -27869,6 +27938,9 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail은 자동으로 일부 이메일을 소셜 및 프로모션 등으로 카테코리화 합니다. 이 이메일을 어디에 불러올지 선택하실 수 있습니다."
       ],
+      "Grant access to your ${ providerName } account to start a migration": [
+        "이전을 시작하려면 ${ providerName } 계정에 접근을 부여 하십시오"
+      ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "받은 편지함에서 동일한 대화에 속한 이메일을 함께 그룹화하거나 별도로 표시합니다."
       ],
@@ -27886,6 +27958,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "@yourdomain.com을 사용한 업무용 이메일, 협업 문서 편집이 가능한 클라우드 저장공간, 일정 예약 및 화상 회의, 비밀번호 관리, 안전한 ${ VPN_SHORT_APP_NAME } 등이 포함되어 있습니다."
+      ],
+      "Install the migration app in your ${ providerName } account to start a migration": [
+        "이전을 시작하려면 ${ providerName } 계정에 마이그레이션 앱을 설치하십시오"
       ],
       "Instant AI assistance, human expert on hand!": [
         "즉각적인 AI 지원, 상시 대기 중인 전문가!"
