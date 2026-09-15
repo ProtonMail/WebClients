@@ -12,13 +12,14 @@ import {
     SEARCH_RESULT_SCROLLER_MODE,
 } from '@proton/encrypted-search/models';
 import { getMailboxAddressType } from '@proton/encrypted-search/useContentSearchTelemetry';
+import type { TelemetryEvents } from '@proton/shared/lib/api/telemetry';
 import {
     TelemetryContentSearchEvents,
     TelemetryContentSearchIndexEvents,
     TelemetryMeasurementGroups,
 } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api, SimpleMap } from '@proton/shared/lib/interfaces';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import type { Logger } from '../utils/logger';
@@ -53,6 +54,27 @@ export class MetricService {
         this.logger.info('First action recorded');
         this.session.firstActionAt = Date.now();
         this.session.firstActionType = type;
+    }
+
+    private reportTelemetry({
+        measurementGroup,
+        event,
+        dimensions,
+        values,
+    }: {
+        measurementGroup: TelemetryMeasurementGroups;
+        event: TelemetryEvents;
+        dimensions?: SimpleMap<string>;
+        values?: SimpleMap<number>;
+    }) {
+        void sendTelemetryReport({
+            api: this.api,
+            measurementGroup,
+            event,
+            dimensions,
+            values,
+            delay: true,
+        });
     }
 
     /** Call once, when the v1+v2 indexing pipeline begins — see `ESAdapter.startIndexingJob`. */
@@ -99,8 +121,7 @@ export class MetricService {
             this.session.scrollerMode = SEARCH_RESULT_SCROLLER_MODE;
         }
 
-        void sendTelemetryReport({
-            api: this.api,
+        this.reportTelemetry({
             measurementGroup: TelemetryMeasurementGroups.contentSearch,
             event: TelemetryContentSearchEvents.query_completed,
             dimensions: {
@@ -115,7 +136,6 @@ export class MetricService {
                 resultCount: 0,
                 durationMs,
             },
-            delay: true,
         });
     }
 
@@ -139,8 +159,7 @@ export class MetricService {
             this.recordFirstAction('open');
         }
 
-        void sendTelemetryReport({
-            api: this.api,
+        this.reportTelemetry({
             measurementGroup: TelemetryMeasurementGroups.contentSearch,
             event: TelemetryContentSearchEvents.result_opened,
             dimensions: {
@@ -151,7 +170,6 @@ export class MetricService {
                 searchVersion: SEARCH_VERSION_V2,
             },
             values: { resultPosition, messageAgeDays },
-            delay: true,
         });
     }
 
@@ -171,8 +189,7 @@ export class MetricService {
             this.recordFirstAction(action);
         }
 
-        void sendTelemetryReport({
-            api: this.api,
+        this.reportTelemetry({
             measurementGroup: TelemetryMeasurementGroups.contentSearch,
             event: TelemetryContentSearchEvents.result_action,
             dimensions: {
@@ -185,7 +202,6 @@ export class MetricService {
             values: {
                 resultPosition,
             },
-            delay: true,
         });
     }
 
@@ -205,8 +221,7 @@ export class MetricService {
         const durationMs = this.indexingStartedAt !== undefined ? Date.now() - this.indexingStartedAt : 0;
         this.indexingStartedAt = undefined;
 
-        void sendTelemetryReport({
-            api: this.api,
+        this.reportTelemetry({
             measurementGroup: TelemetryMeasurementGroups.contentSearchIndex,
             event: TelemetryContentSearchIndexEvents.mailbox_index_completed,
             dimensions: {
@@ -220,7 +235,6 @@ export class MetricService {
                 durationMs,
                 mailboxMessagesTotal,
             },
-            delay: true,
         });
     }
 
@@ -243,8 +257,7 @@ export class MetricService {
         } = this.session;
         this.session = undefined;
 
-        void sendTelemetryReport({
-            api: this.api,
+        this.reportTelemetry({
             measurementGroup: TelemetryMeasurementGroups.contentSearch,
             event: TelemetryContentSearchEvents.search_session_completed,
             dimensions: {
@@ -262,7 +275,6 @@ export class MetricService {
                 timeToFirstActionMs: firstActionAt !== undefined ? firstActionAt - startedAt : undefined,
                 sessionDurationMs: Date.now() - startedAt,
             },
-            delay: true,
         });
     }
 }
