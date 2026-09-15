@@ -410,6 +410,9 @@
       "Add ${ BRAND_NAME } address": [
         "Añadir dirección de ${ BRAND_NAME }"
       ],
+      "Add a payment method": [
+        "Añadir un método de pago"
+      ],
       "Add account": [
         "Agregar una cuenta"
       ],
@@ -1985,6 +1988,9 @@
       "Sign out of all accounts": [
         "Cerrar la sesión de todas las cuentas"
       ],
+      "Sign out on all devices": [
+        "Cerrar sesión en todos los dispositivos"
+      ],
       "sign up for free": [
         "regístrese gratis"
       ],
@@ -2131,6 +2137,9 @@
       ],
       "Upgrade now": [
         "Actualizar ahora"
+      ],
+      "Upgrade to 2 devices or more": [
+        "Actualice para 2 dispositivos o más"
       ],
       "Upgrade to Business": [
         "Mejorar a Business"
@@ -5532,6 +5541,9 @@
       "Still need help? Our support team is here for you.": [
         "¿Aún necesita ayuda? Nuestro equipo de soporte está aquí para ayudarle."
       ],
+      "The link to sign out on all your devices has expired. Try signing in again to receive a new one.": [
+        "El enlace para cerrar la sesión en todos sus dispositivos expiró. Intente iniciar sesión de nuevo para recibir uno nuevo."
+      ],
       "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
         "Esto le permite recuperar el acceso a su cuenta de ${ BRAND_NAME } pero no recuperar sus datos ecriptados."
       ],
@@ -5560,11 +5572,20 @@
       "To start, give your organization a name.": [
         "Para comenzar, asigne un nombre a su organización."
       ],
+      "To stay signed in everywhere, upgrade your plan instead.": [
+        "Para mantener la sesión iniciada en todo lado, actualice el plan en su lugar."
+      ],
+      "Too many devices are connected to your account. To use ${ BRAND_NAME } on a new device or browser, end all existing sessions. You'll be signed out on every device.": [
+        "Demasiados dispositivos conectados en su cuenta. Para usar ${ BRAND_NAME } en otro dispositivo o navegador, finalice las sesiones existentes. Cerrará la sesión en cada dispositivo."
+      ],
       "Track the status and activity of your referrals": [
         "Rastree el estado y actividad de sus referidos"
       ],
       "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
         "Desbloquee 15 GB de almacenamiento por solo ${ config.offerPrice }."
+      ],
+      "Upgrade anytime to stay signed in on multiple devices.": [
+        "Actualice en cualquier momento para mantener la sesión iniciada en varios dispositivos."
       ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Actualice a ${ planName } para conectar hasta ${ MAX_SYNC_PAID_USER } cuentas"
@@ -5639,6 +5660,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Su cuenta gratuita de ${ MAIL_APP_NAME } incluye almacenamiento limitado, así que solo importaremos sus correos electrónicos de Gmail más recientes."
+      ],
+      "Your other sessions have been ended. You can now sign in on this device.": [
+        "Finalizaron sus demás sesiones. Ahora puede iniciar sesión en este dispositivo."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Su plan admite ${ MAX_SYNC_FREE_USER } dirección de Gmail.",
@@ -7874,6 +7898,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Hubo un problema. ${ refresh } para continuar. Si aún ve este mensaje de error, contacte a nuestro ${ supportTeam }."
       ],
+      "Something went wrong, please try again": [
+        "Algo salió mal, intente de nuevo"
+      ],
       "Something went wrong. Please try again.": [
         "Hubo un problema. Intente de nuevo."
       ],
@@ -9013,8 +9040,14 @@
       "Security key updated": [
         "Llave de seguridad actualizada"
       ],
+      "Still waiting?": [
+        "¿Sigue esperando?"
+      ],
       "This will delete all security keys linked to your account.": [
         "Esto eliminará todas las llaves de seguridad vinculadas a la cuenta."
+      ],
+      "Touch your security key to continue.": [
+        "Toque su llave de seguridad para continuar."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifique su identidad con una llave de seguridad U2F o FIDO2"
@@ -10412,6 +10445,12 @@
       ],
       "${ storeName } app to copy data to ${ BRAND_NAME }": [
         "Aplicación de ${ storeName } para copiar datos en ${ BRAND_NAME }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } restante en su prueba. ${ addPaymentMethodLink } para evitar la pérdida de datos. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } restante en su prueba. ${ addPaymentMethodLink } para mantener la suscripción. ${ learnMoreLink }"
       ],
       "${ total } user found": [
         "${ total } usuario encontrado",
@@ -12419,6 +12458,9 @@
       ],
       "On": [
         "Activado"
+      ],
+      "On ${ formattedPeriodEndDate }, your free trial ends and your paid plan starts.": [
+        "El ${ formattedPeriodEndDate } termina su prueba gratuita y comienza su plan de pago."
       ],
       "On Ubuntu?": [
         "¿En Ubuntu?"
@@ -15047,6 +15089,9 @@
       ],
       "Account holder name": [
         "Nombre del titular de la cuenta"
+      ],
+      "Account holder: ${ details.AccountName }": [
+        "Titular de la cuenta: ${ details.AccountName }"
       ],
       "Account storage": [
         "Almacenamiento de la cuenta"
@@ -18692,6 +18737,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } que termina en ${ Last4 }"
+      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } le permite crear direcciones de correo y gestionar cuentas de usuarios secundarios. Es ideal para familias y empresas."
       ],
@@ -20909,6 +20957,11 @@
         "Se añadirán los créditos a su balance"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Cambiar su dirección de facturación podría afectar los impuestos en facturas futuras."
+      ]
+    },
     "Payments.Lifetime Subscription": {
       "Lifetime accounts can be transferred or sold": [
         "Las cuentas vitalicias pueden transferirse o venderse"
@@ -20956,6 +21009,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "El precio de renovación depende de la región de facturación y del número de IVA."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - tarjeta terminada en ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Transferencia bancaria - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - tarjeta terminada en ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -27169,6 +27233,9 @@
       "Other calendars": [
         "Otros calendarios"
       ],
+      "Other devices signed out": [
+        "Sesión cerrada de otros dispositivos"
+      ],
       "Other features included in your plan": [
         "Otras funciones incluidas en su plan"
       ],
@@ -27525,6 +27592,9 @@
       ],
       "Sign out": [
         "Cerrar sesión"
+      ],
+      "Sign out on all devices?": [
+        "¿Cerrar sesión en todos los dispositivos?"
       ],
       "Signed in successfully!": [
         "Sesión iniciada"
@@ -28166,6 +28236,9 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail asigna categorías automáticamente a algunos correos como redes sociales o promociones. Puede seleccionar adónde importar estos correos."
       ],
+      "Grant access to your ${ providerName } account to start a migration": [
+        "Otorgue acceso a su cuenta de ${ providerName } para iniciar una migración"
+      ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Agrupe los correos electrónicos en la misma conversación en su bandeja de entrada o muéstrelos por separado."
       ],
@@ -28183,6 +28256,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Incluye correo electrónico profesional en @sudominio.com, almacenamiento en la nube con edición colaborativa de documentos, programación y videoconferencias, gestión de contraseñas, una VPN segura de ${ VPN_SHORT_APP_NAME } y más."
+      ],
+      "Install the migration app in your ${ providerName } account to start a migration": [
+        "Instale la aplicación de migración en su cuenta de ${ providerName } para iniciar una migración"
       ],
       "Instant AI assistance, human expert on hand!": [
         "¡Asistencia IA inmediata, experto humano a su disposición!"
