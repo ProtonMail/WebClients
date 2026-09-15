@@ -13,7 +13,6 @@ import { useHandler } from '@proton/components/hooks/useHandler';
 import { getHasAssistantStatus } from '@proton/llm/lib';
 import type { OpenedAssistant } from '@proton/llm/lib/types';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { sanitizeComposerReply } from '@proton/sanitize/purify';
@@ -30,6 +29,7 @@ import type { ExternalEditorActions } from '../../components/composer/editor/Edi
 import { updateKeyPackets } from '../../helpers/attachment/attachment';
 import type { ComposerReturnType } from '../../helpers/composer/contentFromComposerMessage';
 import {
+    getAddressPlainTextSignature,
     getMessageContentBeforeBlockquote,
     setMessageContentBeforeBlockquote,
 } from '../../helpers/composer/contentFromComposerMessage';
@@ -37,7 +37,6 @@ import { getDate } from '../../helpers/elements';
 import { getComposerDefaultFontStyles, getContent, setContent } from '../../helpers/message/messageContent';
 import { isNewDraft } from '../../helpers/message/messageDraft';
 import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
-import { exportPlainTextSignature, insertSignature } from '../../helpers/message/messageSignature';
 import { mergeMessages } from '../../helpers/message/messages';
 import { selectComposer } from '../../store/composers/composerSelectors';
 import type { ComposerID } from '../../store/composers/composerTypes';
@@ -57,6 +56,7 @@ import { useAutoSave } from './useAutoSave';
 import { useCloseHandler } from './useCloseHandler';
 import { useComposerHotkeys } from './useComposerHotkeys';
 import { useComposerInnerModals } from './useComposerInnerModals';
+import { useDraftBodyWriterRegistration } from './useDraftBodyWriterRegistration';
 import { useDraftSenderVerification } from './useDraftSenderVerification';
 import { useHandleMessageAlreadySent } from './useHandleMessageAlreadySent';
 import useReduxRefac from './useReduxRefac';
@@ -399,17 +399,13 @@ export const useComposerContent = (args: EditorArgs) => {
         }
     );
 
-    const addressSignature = useMemo(() => {
-        const content = insertSignature(
-            '',
-            addresses.find((address) => address.Email === modelMessage.data?.Sender?.Address)?.Signature || '',
-            modelMessage.draftFlags?.action || MESSAGE_ACTIONS.NEW,
-            mailSettings,
-            userSettings,
-            undefined
-        );
-        return exportPlainTextSignature(content);
-    }, [modelMessage.data?.Sender?.Address, modelMessage.draftFlags?.action, mailSettings, userSettings, addresses]);
+    const senderAddress = modelMessage.data?.Sender?.Address;
+    const draftAction = modelMessage.draftFlags?.action;
+    const addressSignature = useMemo(
+        () =>
+            getAddressPlainTextSignature({ senderAddress, action: draftAction, addresses, mailSettings, userSettings }),
+        [senderAddress, draftAction, mailSettings, userSettings, addresses]
+    );
 
     /**
      * Returns plain text content before the blockquote and signature in the editor
@@ -441,6 +437,16 @@ export const useComposerContent = (args: EditorArgs) => {
 
         return handleChangeContent(nextContent, true);
     };
+
+    useDraftBodyWriterRegistration({
+        composerID: args.composerID,
+        editorReady: args.editorReady,
+        isPlainText,
+        addressSignature,
+        action: draftAction,
+        getEditorContent: () => args.editorRef.current?.getContent() || '',
+        write: setContentBeforeBlockquote,
+    });
 
     /**
      * In some rare situations, Squire can miss an input event.
