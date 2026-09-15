@@ -180,12 +180,12 @@ export class ESAdapter implements FunctionsV2 {
     }
 
     /** Forwards a search-result open to the v2 metrics pipeline; see `EncryptedSearchProvider.reportResultOpened`. */
-    reportResultOpened(...args: Parameters<MetricService['sendResultOpenedReport']>) {
+    reportResultOpened(...args: Parameters<MetricService['resultOpened']>) {
         this.searchService.reportResultOpened(...args);
     }
 
     /** Forwards a search-result action to the v2 metrics pipeline; see `EncryptedSearchProvider.reportResultAction`. */
-    reportResultAction(...args: Parameters<MetricService['sendResultActionReport']>) {
+    reportResultAction(...args: Parameters<MetricService['resultActionPerformed']>) {
         this.searchService.reportResultAction(...args);
     }
 

@@ -1,7 +1,7 @@
-import { TelemetryContentSearchEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { Api } from '@proton/shared/lib/interfaces';
 
+import { buildSearchSessionStartedPayload } from './contentSearchTelemetryBuilder';
 import type {
     ContentSearchEndReason,
     ContentSearchScrollerMode,
@@ -76,38 +76,17 @@ export const endSearchSession = (api: Api, endReason: ContentSearchEndReason) =>
         return;
     }
 
-    const {
-        startedAt,
-        firstActionAt,
-        hasResults,
-        scrollerMode,
-        resultsOpened,
-        actionsPerformed,
-        firstActionType,
-        firstOpenedPosition,
-    } = session;
+    const payload = buildSearchSessionStartedPayload({
+        session,
+        endReason,
+        searchVersion: SEARCH_VERSION_V1,
+    });
 
     session = undefined;
 
     void sendTelemetryReport({
         api,
-        measurementGroup: TelemetryMeasurementGroups.contentSearch,
-        event: TelemetryContentSearchEvents.search_session_completed,
-        values: {
-            resultsOpened,
-            actionsPerformed,
-            firstOpenedPosition,
-            timeToFirstActionMs: firstActionAt !== undefined ? firstActionAt - startedAt : undefined,
-            sessionDurationMs: Date.now() - startedAt,
-        },
-        dimensions: {
-            endReason,
-            scrollerMode,
-            firstActionType,
-            hasResults: hasResults.toString(),
-            searchSource: 'local',
-            searchVersion: SEARCH_VERSION_V1,
-        },
+        ...payload,
         delay: true,
     });
 };
