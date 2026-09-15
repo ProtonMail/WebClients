@@ -1973,6 +1973,9 @@
       "Sign in with ${ BRAND_NAME }": [
         "Prihlásiť sa pomocou ${ BRAND_NAME }"
       ],
+      "Sign in with Google": [
+        "Zaregistrovať sa cez Google"
+      ],
       "Sign in with password": [
         "Prihláste sa pomocou hesla"
       ],
@@ -1987,6 +1990,9 @@
       ],
       "Sign out of all accounts": [
         "Odhlásiť zo všetkých účtov"
+      ],
+      "Sign out on all devices": [
+        "Odhlásiť sa zo všetkých zariadení"
       ],
       "sign up for free": [
         "zaregistrujte sa zadarmo"
@@ -2134,6 +2140,9 @@
       ],
       "Upgrade now": [
         "Aktualizovať teraz"
+      ],
+      "Upgrade to 2 devices or more": [
+        "Navýšte úroveň pre 2 a viac zariadení"
       ],
       "Upgrade to Business": [
         "Aktualizovať na Biznis predplatné"
@@ -5599,6 +5608,9 @@
       "Still need help? Our support team is here for you.": [
         "Stále potrebujete pomoc? Náš tím podpory je vám k dispozícii."
       ],
+      "The link to sign out on all your devices has expired. Try signing in again to receive a new one.": [
+        "Platnosť odkazu na odhlásenie zo všetkých vašich zariadení vypršala. Skúste sa znovu prihlásiť, aby ste dostali nový odkaz."
+      ],
       "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
         "Týmto spôsobom znovu získate prístup k svojmu ${ BRAND_NAME } účtu, avšak vaše šifrované údaje sa tým neobnovia."
       ],
@@ -5629,11 +5641,20 @@
       "To start, give your organization a name.": [
         "Začnite tým, že zadáte názov svojej organizácie."
       ],
+      "To stay signed in everywhere, upgrade your plan instead.": [
+        "Ak chcete všetky prihlásenia zachovať, radšej si navýšte úroveň predplatného."
+      ],
+      "Too many devices are connected to your account. To use ${ BRAND_NAME } on a new device or browser, end all existing sessions. You'll be signed out on every device.": [
+        "K vášmu účtu je prihlásených príliš veľa zariadení. Ak chcete používať ${ BRAND_NAME } na novom zariadení alebo v novom prehliadači, ukončite všetky aktuálne relácie. Dôjde k odhláseniu zo všetkých zariadení."
+      ],
       "Track the status and activity of your referrals": [
         "Sledujte stav a aktivitu svojich odporúčaní"
       ],
       "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
         "Získajte 15 GB úložného priestoru len za ${ config.offerPrice }."
+      ],
+      "Upgrade anytime to stay signed in on multiple devices.": [
+        "Kedykoľvek si môžete zvýšiť úroveň vášho účtu, aby ste zostali prihlásení na viacerých zariadeniach."
       ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Navýšte úroveň na ${ planName } pre pripojenie až ${ MAX_SYNC_PAID_USER } účtov"
@@ -5712,6 +5733,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Váš bezplatný ${ MAIL_APP_NAME } účet má obmedzenú kapacitu úložiska, preto naimportujeme len vašich najnovších emailov z Gmailu."
+      ],
+      "Your other sessions have been ended. You can now sign in on this device.": [
+        "Vaše ostatné relácie boli ukončené. Teraz sa môžete prihlásiť na tomto zariadení."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Váš plán podporuje ${ MAX_SYNC_FREE_USER } Gmailovú adresu.",
@@ -7985,6 +8009,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Došlo k chybe, vykonajte ${ refresh } stránky. Ak stále vidíte túto chybu, kontaktujte náš ${ supportTeam }."
       ],
+      "Something went wrong, please try again": [
+        "Niečo sa pokazilo, skúste to znova, prosím"
+      ],
       "Something went wrong. Please try again.": [
         "Niečo sa pokazilo. Skúste to znova, prosím."
       ],
@@ -9146,6 +9173,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Týmto odstránite všetky bezpečnostné kľúče prepojené s vaším účtom."
+      ],
+      "Touch your security key to continue.": [
+        "Dotknite sa svojho bezpečnostného kľúča, aby ste pokračovali."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Overte svoju identitu fyzickým bezpečnostným kľúčom U2F alebo FIDO2"
@@ -10634,6 +10664,12 @@
       "${ storeName } app to copy data to ${ BRAND_NAME }": [
         "Aplikácia ${ storeName } skopíruje dáta do ${ BRAND_NAME }"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Zostáva vám ešte ${ timeRemaining } v rámci skúšobnej doby. Kliknite na ${ addPaymentMethodLink }, aby ste neprišli o prístup. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Zostáva vám ${ timeRemaining } skúšobnej doby. Kliknite na ${ addPaymentMethodLink }, ak si chcete predplatné zachovať. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } nájdený používateľ",
         "${ total } nájdení používatelia",
@@ -11012,6 +11048,9 @@
       "An SMS with a verification code was just sent to ${ phoneNumber }.": [
         "Na číslo ${ phoneNumber } bola práve odoslaná SMS s overovacím kódom."
       ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Pri importe vašich údajov došlo k neočakávanej chybe. Skúste to neskôr, prosím."
+      ],
       "and": [
         "a"
       ],
@@ -11332,6 +11371,9 @@
       ],
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "Pripojte a spravujte svoje externé poštové schránky v aplikácii ${ MAIL_APP_NAME }."
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "Pripájanie ku Google Drive na nastavenie bezpečného importu do aplikácie ${ DRIVE_APP_NAME }."
       ],
       "Connection data will be available in around 1 hour.": [
         "Údaje o pripojení budú k dispozícii približne o 1 hodinu."
@@ -11702,6 +11744,9 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Emailový hosting je dostupný len pre domény, ktoré už vlastníte. Registrácia domény nie je momentálne dostupná prostredníctvom ${ BRAND_NAME }. Môžete hostiť email pre domény registrované u ktoréhokoľvek registrátora domén."
       ],
+      "Email you once import is finished": [
+        "Po dokončení importu vám pošleme email"
+      ],
       "Emailing preference saved": [
         "Nastavenie emailu uložené"
       ],
@@ -11941,6 +11986,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Len za ${ bundlePlanPriceInline }"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "Aby import fungoval, musíte vybrať všetky požadované položky, ako je znázornené na GIF obrázku vyššie."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pre používateľov, ktorí prechádzajú na ${ MAIL_APP_NAME } z inej emailovej služby, vyberte kartu ${ boldAddresses } a pred zmenou MX záznamu pridajte všetky aktívne emailové adresy, aby bol zaistený plynulý prechod."
@@ -12596,6 +12644,9 @@
       "Next billing date": [
         "Dátum ďalšej fakturácie"
       ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Ďalej sa potrebujete prihlásiť k svojmu účtu Google a udeliť ${ BRAND_NAME } prístup k vašim dátam."
+      ],
       "No account keys exist": [
         "Neexistujú žiadne kľúče k účtu"
       ],
@@ -12905,6 +12956,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Skúste to znova pomocou iného spôsobu platby, alebo kontaktujte svoju banku."
       ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Pre úspešné dokončenie importu zvýšte úroveň svojho plánu, prosím."
+      ],
       "Please use another browser or download the file.": [
         "Použite iný prehliadač alebo si súbor stiahnite, prosím."
       ],
@@ -12979,6 +13033,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Obráťte sa na nás, ak potrebujete pomoc s čímkoľvek od ${ BRAND_NAME }."
+      ],
+      "Read once and encrypted on arrival": [
+        "Prečíta sa raz a pri doručení sa zašifruje"
       ],
       "Receive notifications for ${ categoryLabel }": [
         "Prijímať upozornenia pre kategóriu ${ categoryLabel }"
@@ -13240,6 +13297,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhľadom k tomu, že ste verný používateľ, má váš účet povolené ďalšie funkcie."
+      ],
+      "Sit back and we will let you know.": [
+        "Len si pohodlne sadnite a my vám dáme vedieť."
       ],
       "Smart Routed through a different country.": [
         "Inteligentné smerovanie cez inú krajinu."
@@ -13931,6 +13991,9 @@
       "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
         "Na odstránenie súboru použite svoj MDM alebo spustite príkaz ${ removeScriptLink } prostredníctvom funkcie na spúšťanie skriptov vo vašom MDM. Vhodný je akýkoľvek MDM, ktorý podporuje nasadzovanie súborov alebo spúšťanie skriptov."
       ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Používa sa výlučne na ich skopírovanie do ${ DRIVE_APP_NAME }."
+      ],
       "User activated": [
         "Používateľ aktivovaný"
       ],
@@ -14051,6 +14114,9 @@
       "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
         "Detekovali sme, že ste už prihlásený do webovej aplikácie ${ BRAND_NAME } v **inom prehliadači**. Reset hesla môžete vykonať zo svojej aktívnej relácie."
       ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "Nepodporujeme import fotografií, Google Docs, Sheets a Slides. Uistite sa, prosím, že váš Google Drive nie je prázdny."
+      ],
       "We generated a strong password for you": [
         "Vygenerovali sme pre vás silné heslo"
       ],
@@ -14081,8 +14147,14 @@
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Dôrazne odporúčame, aby si každý aktivoval obnovenie pomocou obnovovacej frázy."
       ],
+      "We support most files": [
+        "Podporujeme väčšinu súborov"
+      ],
       "We use 3-D Secure to protect your payments": [
         "Na ochranu vašich platieb používame 3-D Secure"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Akonáhle bude import dokončený, pošleme vám email. Po dokončení nájdete svoj import v priečinku."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Na dokončenie tejto transakcie vás presmerujeme do ${ IDEAL_WERO_BRAND_NAME } v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
@@ -14209,6 +14281,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Bez aktivácie nebudete môcť vytvárať nových používateľov, pridávať adresy existujúcim používateľom, alebo pristupovať k verejným používateľským účtom."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "Neimportujú sa fotografie, dokumenty z Google Docs a Sheets"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získať nový overovací kód alebo použiť alternatívnu metódu overovania?"
@@ -25900,6 +25975,9 @@
       ],
       "View VPN session details for your organization.": [
         "Zobraziť podrobnosti o VPN relácii pre vašu organizáciu."
+      ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Vaše súbory najprv prečítame, aby sme ich skopírovali, a potom každý z nich zašifrujeme pomocou vašich kľúčov ${ BRAND_NAME }."
       ]
     },
     "Success": {
@@ -26969,6 +27047,9 @@
       "Connect your custom domain": [
         "Pripojte si vlastnú doménu"
       ],
+      "Connect your Google account": [
+        "Pripojte váš Google účet"
+      ],
       "Connected emails": [
         "Prepojené emaily"
       ],
@@ -27629,6 +27710,9 @@
       "Import key": [
         "Importovať kľúč"
       ],
+      "Import started, but your storage won't be enough for this import": [
+        "Import sa začal, ale váš úložný priestor na tento import nebude stačiť"
+      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Import cez ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -27862,6 +27946,9 @@
       ],
       "Other calendars": [
         "Iné kalendáre"
+      ],
+      "Other devices signed out": [
+        "Ostatné zariadenia boli odhlásené"
       ],
       "Other features included in your plan": [
         "Ďalšie funkcie zahrnuté vo vašom pláne"
@@ -28187,6 +28274,9 @@
       "Set your password": [
         "Nastavte si heslo"
       ],
+      "Setting up your import": [
+        "Nastavujeme váš import"
+      ],
       "Settings": [
         "Nastavenia"
       ],
@@ -28214,11 +28304,17 @@
       "Sign in on TV?": [
         "Prihlásiť sa na TV?"
       ],
+      "Sign in to Google": [
+        "Prihlásiť sa do Google"
+      ],
       "Sign in to join the Beta program": [
         "Prihláste sa a pripojte k beta programu"
       ],
       "Sign out": [
         "Odhlásiť sa"
+      ],
+      "Sign out on all devices?": [
+        "Odhlásiť sa zo všetkých zariadení?"
       ],
       "Signed in successfully!": [
         "Úspešne prihlásené!"
@@ -28517,6 +28613,9 @@
       "Warning: suspected fake website": [
         "Varovanie: podozrenie na falošnú webovú stránku"
       ],
+      "We could not find anything to import": [
+        "Nenašli sme nič, čo by sa dalo importovať"
+      ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "Na vašu emailovú adresu sme vám zaslali overovací kód, aby sme sa uistili, že ste to naozaj vy. Tento kód je platný 10 minút. Zadajte ho nižšie, prosím."
       ],
@@ -28597,6 +28696,9 @@
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
+      ],
+      "Your import is starting": [
+        "Váš import sa začal"
       ],
       "Your plan": [
         "Váš plán"
@@ -28862,6 +28964,9 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticky triedi niektoré emaily do kategórií ako Siete alebo Reklamy. Môžete si vybrať, kam chcete importovať tieto emaily."
       ],
+      "Grant access to your ${ providerName } account to start a migration": [
+        "Povoľte prístup k vášmu ${ providerName } účtu, aby ste mohli začať s migráciou"
+      ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Emaily v rovnakej konverzácii môžete v priečinku Doručená pošta zoskupiť alebo zobraziť samostatne."
       ],
@@ -28879,6 +28984,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Zahŕňa profesionálnu emailovú adresu v tvare @vasadomena.sk, cloudové úložisko s možnosťou spoločnej úpravy dokumentov, plánovanie a videokonferencie, správu hesiel, bezpečnú službu ${ VPN_SHORT_APP_NAME } a ďalšie funkcie."
+      ],
+      "Install the migration app in your ${ providerName } account to start a migration": [
+        "Nainštalujte migračnú aplikáciu do vášho ${ providerName } účtu a spustite migráciu"
       ],
       "Instant AI assistance, human expert on hand!": [
         "Okamžitá pomoc AI, k dispozícii je aj ľudský odborník!"
