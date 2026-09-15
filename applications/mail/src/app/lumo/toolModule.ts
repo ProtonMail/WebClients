@@ -5,14 +5,24 @@ import type { ThemeContextInterface } from '@proton/components/containers/themes
 import type { ESStatusBooleans } from '@proton/encrypted-search/models';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
+import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import type {
     createLabel as createLabelAction,
     updateLabel as updateLabelAction,
 } from '@proton/mail/store/labels/actions';
+import type { PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
 import type { DENSITY } from '@proton/shared/lib/constants';
-import type { Address, Folder, Label, MailSettings, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
+import type {
+    Address,
+    Folder,
+    Label,
+    MailSettings,
+    Recipient,
+    UserModel,
+    UserSettings,
+} from '@proton/shared/lib/interfaces';
 import type { ContactEmail, ContactMetadata } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import type { VIEW_LAYOUT, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
@@ -28,6 +38,7 @@ import type {
 } from '../hooks/actions/applyLocation/interface';
 import type { MarkAsParams } from '../hooks/actions/markAs/useMarkAs';
 import type { SnoozeProps } from '../hooks/actions/useSnooze';
+import type { RecipientType } from '../models/address';
 import type { markAll as markAllAction } from '../store/elements/elementsActions';
 import type { MailStore } from '../store/store';
 
@@ -94,6 +105,14 @@ export interface MailToolDeps {
     getESStatus: () => ESStatusBooleans;
     loadConversation: (conversationID: string) => Promise<unknown>;
     initializeMessage: (messageID: string, labelID: string) => Promise<void>;
+    /** Opens a composer with its body already written — never sends; the user always does that. */
+    composeDraft: (params: {
+        action: MESSAGE_ACTIONS;
+        referenceMessage: PartialMessageState;
+        bodyBeforeQuote?: string;
+    }) => Promise<void>;
+    /** Retargets an OPEN composer, replacing the recipient lists it names and leaving the others alone. */
+    setDraftRecipients: (composerID: string, recipients: Partial<Record<RecipientType, Recipient[]>>) => void;
 }
 
 /**
