@@ -21,6 +21,9 @@ interface ArtifactContextValue {
     // True when any artifact is present (controls panel visibility)
     isPanelOpen: boolean;
     closePanel: () => void;
+    isFullscreen: boolean;
+    enterFullscreen: () => void;
+    exitFullscreen: () => void;
     // Set when the user explicitly closes the panel; suppresses auto-open for the current generation.
     panelUserClosed: boolean;
     resetPanelUserClosed: () => void;
@@ -40,6 +43,7 @@ export const ArtifactProvider = ({ children, conversationId, linearChain }: Arti
     const [selectedId, setSelectedId] = useState<string | null>(null);
     const [selectedVersionIndex, setSelectedVersionIndex] = useState(0);
     const [panelUserClosed, setPanelUserClosed] = useState(false);
+    const [isFullscreen, setIsFullscreen] = useState(false);
     const [seenVersionKeys, setSeenVersionKeys] = useState<Set<string>>(new Set());
     const prevVersionCountsRef = useRef<Record<string, number>>({});
     const selectedVersionIndexRef = useRef(selectedVersionIndex);
@@ -61,6 +65,15 @@ export const ArtifactProvider = ({ children, conversationId, linearChain }: Arti
         setSelectedId(null);
         setSelectedVersionIndex(0);
         setPanelUserClosed(true);
+        setIsFullscreen(false);
+    }, []);
+
+    const enterFullscreen = useCallback(() => {
+        setIsFullscreen(true);
+    }, []);
+
+    const exitFullscreen = useCallback(() => {
+        setIsFullscreen(false);
     }, []);
 
     const resetPanelUserClosed = useCallback(() => {
@@ -72,6 +85,7 @@ export const ArtifactProvider = ({ children, conversationId, linearChain }: Arti
         setSelectedId(null);
         setSelectedVersionIndex(0);
         setPanelUserClosed(false);
+        setIsFullscreen(false);
         setSeenVersionKeys(new Set());
         prevVersionCountsRef.current = {};
     }, [conversationId]);
@@ -175,6 +189,9 @@ export const ArtifactProvider = ({ children, conversationId, linearChain }: Arti
             hasUnseenRevision,
             isPanelOpen: selectedArtifact !== null,
             closePanel,
+            isFullscreen,
+            enterFullscreen,
+            exitFullscreen,
             panelUserClosed,
             resetPanelUserClosed,
             isSelectedVersionProvisional,
@@ -188,6 +205,9 @@ export const ArtifactProvider = ({ children, conversationId, linearChain }: Arti
             goToVersion,
             hasUnseenRevision,
             closePanel,
+            isFullscreen,
+            enterFullscreen,
+            exitFullscreen,
             panelUserClosed,
             resetPanelUserClosed,
             isSelectedVersionProvisional,

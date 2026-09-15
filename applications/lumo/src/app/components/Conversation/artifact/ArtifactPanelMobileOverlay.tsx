@@ -31,12 +31,12 @@ export const ArtifactPanelMobileOverlay = ({ isOpen, isGenerating = false }: Art
     return createPortal(
         // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
         <div
-            className="artifact-panel-mobile-overlay flex flex-column bg-norm"
+            className="fixed inset-0 z-floating-action-buttons flex flex-column bg-norm"
             role="dialog"
             aria-modal="true"
             aria-label={c('collider_2025:Label').t`Artifact view`}
         >
-            <ArtifactPanel isGenerating={isGenerating} isMobileView />
+            <ArtifactPanel isGenerating={isGenerating} layout="mobile" />
         </div>,
         document.body
     );
