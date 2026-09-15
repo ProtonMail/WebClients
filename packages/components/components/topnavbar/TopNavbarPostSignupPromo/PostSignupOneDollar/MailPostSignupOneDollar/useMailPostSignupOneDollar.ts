@@ -33,6 +33,12 @@ export const useMailPostSignupOneDollar = (): OfferHookReturnValue => {
     const { feature: driveOfferState, loading: driveOfferStateLoading } =
         useFeature<PostSubscriptionOneDollarOfferState>(FeatureCode.DrivePostSignupOneDollarState);
 
+    // Opting out of the temporary 0.99 promo also opts the user out of this offer, so the two
+    // do not run back to back. Remove this along with the 0.99 promo.
+    const { feature: hideZeroNinetyNineOffer, loading: hideZeroNinetyNineOfferLoading } = useFeature<boolean>(
+        FeatureCode.HideMailPostSignupZeroNinetyNineOffer
+    );
+
     const isDomBusy = domIsBusy();
 
     return {
@@ -43,8 +49,15 @@ export const useMailPostSignupOneDollar = (): OfferHookReturnValue => {
             mailPostSignupOneDollarPromoDisabled,
             hasHadSubscription,
             driveOfferStartDateTimestamp: driveOfferState?.Value,
+            hasHiddenZeroNinetyNineOffer: !!hideZeroNinetyNineOffer?.Value,
         }),
-        isLoading: !!(userLoading || mailOfferStateLoading || driveOfferStateLoading || loadingPreviousSubscription),
+        isLoading: !!(
+            userLoading ||
+            mailOfferStateLoading ||
+            driveOfferStateLoading ||
+            hideZeroNinetyNineOfferLoading ||
+            loadingPreviousSubscription
+        ),
         openSpotlight: isNotInFolder && shouldOpenPostSignupOffer(mailOfferState?.Value) && !isDomBusy,
     };
 };
