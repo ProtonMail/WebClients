@@ -48,10 +48,6 @@ export function useDriveCompatSDK() {
 
 // Other flags
 
-export function useIsTableOfContentsEnabled() {
-  return useFlag('DocsTableOfContents')
-}
-
 export function useIsOpenTracerEnabled() {
   return useFlag('DocsOpenTracer')
 }
