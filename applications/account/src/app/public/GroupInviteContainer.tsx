@@ -5,8 +5,9 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { GenericError, useErrorHandler } from '@proton/components';
-import { useLoading } from '@proton/hooks';
+import GenericError from '@proton/components/containers/error/GenericError';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useLoading from '@proton/hooks/useLoading';
 // import type { ExternalForwardingResult } from '@proton/shared/lib/api/forwardings';
 import { acceptExternalGroupMembership, declineExternalGroupMembership } from '@proton/shared/lib/api/groups';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';

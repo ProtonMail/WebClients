@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import noop from '@proton/utils/noop';
 
 import { getResendSMSVerificationCodeText } from '../../content/helper';

@@ -2,7 +2,7 @@ import type { CSSProperties, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { PublicTopBanners } from '@proton/components';
+import PublicTopBanners from '@proton/components/containers/topBanners/PublicTopBanners';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 

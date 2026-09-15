@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Info, useModalState } from '@proton/components';
+import Info from '@proton/components/components/link/Info';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { getCategoryTabFromLabel } from '@proton/mail/features/categoriesView/categoriesHelpers';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';

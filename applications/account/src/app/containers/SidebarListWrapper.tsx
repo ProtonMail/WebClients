@@ -1,8 +1,10 @@
 import { useRef } from 'react';
 
-import type { SidebarConfig } from '@proton/components';
-import { SettingsListItem, SidebarList, SidebarListItem } from '@proton/components';
+import SettingsListItem from '@proton/components/components/sidebar/SettingsListItem';
+import SidebarList from '@proton/components/components/sidebar/SidebarList';
+import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import type { SidebarConfig } from '@proton/components/containers/layout/interface';
 import { SettingsReferralSpotlight } from '@proton/components/containers/referral/components/SettingsReferralSpotlight';
 
 interface Props extends SidebarConfig {

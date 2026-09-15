@@ -39,4 +39,6 @@ const UserItem = forwardRef<HTMLButtonElement, UserItemProps>(({ User, ...rest }
     );
 });
 
+UserItem.displayName = 'UserItem';
+
 export default UserItem;

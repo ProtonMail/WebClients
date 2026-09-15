@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { SectionConfig, SidebarConfig } from '@proton/components';
+import type { SectionConfig, SidebarConfig } from '@proton/components/containers/layout/interface';
 import { IcBuildings } from '@proton/icons/icons/IcBuildings';
 import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';

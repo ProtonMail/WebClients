@@ -8,21 +8,19 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import type { ChallengeRef, ChallengeResult } from '@proton/components';
-import {
-    Challenge,
-    Checkbox,
-    InputFieldTwo,
-    Label,
-    PasswordInputTwo,
-    useErrorHandler,
-    useFormErrors,
-    useLocalState,
-} from '@proton/components';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Label from '@proton/components/components/label/Label';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import Challenge from '@proton/components/containers/challenge/Challenge';
+import type { ChallengeRef, ChallengeResult } from '@proton/components/containers/challenge/interface';
 import { AuthType, type AuthTypeData, ExternalSSOFlow } from '@proton/components/containers/login/interface';
 import { handleLogin } from '@proton/components/containers/login/loginActions';
 import { ExternalSSOError, handleExternalSSOLogin } from '@proton/components/containers/login/ssoExternalLogin';
-import { useLoading } from '@proton/hooks';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useLocalState from '@proton/components/hooks/useLocalState';
+import useLoading from '@proton/hooks/useLoading';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { IcKey } from '@proton/icons/icons/IcKey';

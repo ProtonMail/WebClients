@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
-import { AppsLogos } from '@proton/components';
+import AppsLogos from '@proton/components/components/appsLogos/AppsLogos';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';

@@ -2,7 +2,9 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { DriveLogo, Price, SkeletonLoader } from '@proton/components';
+import DriveLogo from '@proton/components/components/logo/DriveLogo';
+import Price from '@proton/components/components/price/Price';
+import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import { IcBagPercentFilled } from '@proton/icons/icons/IcBagPercentFilled';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { type CheckoutView, createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';

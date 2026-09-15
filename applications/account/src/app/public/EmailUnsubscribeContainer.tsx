@@ -5,9 +5,10 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { GenericError, useErrorHandler } from '@proton/components';
 import { getUpdateNotification } from '@proton/components/containers/account/constants/email-subscriptions';
 import { getEmailSubscriptionCategories } from '@proton/components/containers/account/getEmailSubscriptionCategories';
+import GenericError from '@proton/components/containers/error/GenericError';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { authJwt } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';

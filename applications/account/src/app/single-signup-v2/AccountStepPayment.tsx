@@ -3,7 +3,7 @@ import { useEffect, useImperativeHandle, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Alert3ds } from '@proton/components';
+import Alert3ds from '@proton/components/containers/payments/Alert3ds';
 import { changeDefaultPaymentMethodBeforePayment } from '@proton/components/containers/payments/DefaultPaymentMethodMessage';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';

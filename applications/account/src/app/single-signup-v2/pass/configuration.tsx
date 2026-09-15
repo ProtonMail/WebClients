@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { AppsLogos, PassLogo } from '@proton/components';
+import AppsLogos from '@proton/components/components/appsLogos/AppsLogos';
+import PassLogo from '@proton/components/components/logo/PassLogo';
 import {
     getPassDarkWebMonitoring,
     getPassKeys,
