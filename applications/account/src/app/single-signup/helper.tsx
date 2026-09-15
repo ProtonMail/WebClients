@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { VpnLogo } from '@proton/components';
+import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import { getVPNPassProPlan, getVPNPlan } from '@proton/components/containers/payments/features/plan';
 import { getAllPlatforms, getFreeFeatures, getRefundable } from '@proton/components/containers/payments/features/vpn';
 import { getCheckoutUi } from '@proton/payments/core/checkout';

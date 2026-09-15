@@ -6,16 +6,14 @@ import { c } from 'ttag';
 import { setupExternalUserForProton } from '@proton/account/addresses/actions';
 import { useGetUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
-import {
-    AuthenticatedBugModal,
-    DropdownMenuButton,
-    StandardLoadErrorPage,
-    useAuthentication,
-    useErrorHandler,
-    useEventManager,
-    useModalState,
-} from '@proton/components';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
 import type { AddressGeneration } from '@proton/components/containers/login/interface';
+import AuthenticatedBugModal from '@proton/components/containers/support/AuthenticatedBugModal';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { IcBug } from '@proton/icons/icons/IcBug';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getAppHref } from '@proton/shared/lib/apps/helper';

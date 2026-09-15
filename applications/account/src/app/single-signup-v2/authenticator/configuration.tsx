@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { AppsLogos, Logo } from '@proton/components';
+import AppsLogos from '@proton/components/components/appsLogos/AppsLogos';
+import Logo from '@proton/components/components/logo/Logo';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import {

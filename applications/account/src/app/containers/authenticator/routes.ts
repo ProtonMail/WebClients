@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { SectionConfig } from '@proton/components';
+import type { SectionConfig } from '@proton/components/containers/layout/interface';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { AUTHENTICATOR_APP_NAME } from '@proton/shared/lib/constants';
 

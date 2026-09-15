@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { AppsLogos, MailLogo } from '@proton/components';
+import AppsLogos from '@proton/components/components/appsLogos/AppsLogos';
+import MailLogo from '@proton/components/components/logo/MailLogo';
 import { getManageUserPermissionsAndAccessFeature } from '@proton/components/containers/payments/features/b2b';
 import {
     getCalendarAppFeature,

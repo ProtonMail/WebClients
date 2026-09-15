@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { SectionConfig } from '@proton/components';
+import type { SectionConfig } from '@proton/components/containers/layout/interface';
 import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
 import { APPS, DOCS_APP_NAME } from '@proton/shared/lib/constants';
 

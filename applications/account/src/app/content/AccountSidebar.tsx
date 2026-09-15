@@ -3,18 +3,16 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import {
-    AppVersion,
-    AppsDropdown,
-    Loader,
-    Sidebar,
-    SidebarBackButton,
-    SidebarList,
-    SidebarNav,
-    StartUsingPassSpotlight,
-    useAccountSpotlights,
-} from '@proton/components';
+import Loader from '@proton/components/components/loader/Loader';
+import Sidebar from '@proton/components/components/sidebar/Sidebar';
+import SidebarBackButton from '@proton/components/components/sidebar/SidebarBackButton';
+import SidebarList from '@proton/components/components/sidebar/SidebarList';
+import SidebarNav from '@proton/components/components/sidebar/SidebarNav';
 import { Tree } from '@proton/components/components/sidebar/nav/Tree';
+import AppVersion from '@proton/components/components/version/AppVersion';
+import { useAccountSpotlights } from '@proton/components/containers/account/spotlights/AccountSpotlightsProvider';
+import { StartUsingPassSpotlight } from '@proton/components/containers/account/spotlights/passB2bOnboardingSpotlights/PassB2bOnboardingSpotlights';
+import AppsDropdown from '@proton/components/containers/app/AppsDropdown';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, MEET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { useB2BAdminNavigation } from '@proton/vpn/contexts/navigation';

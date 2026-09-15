@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { SectionConfig } from '@proton/components';
+import type { SectionConfig } from '@proton/components/containers/layout/interface';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcBrandWireguard } from '@proton/icons/icons/IcBrandWireguard';
 import { IcKey } from '@proton/icons/icons/IcKey';

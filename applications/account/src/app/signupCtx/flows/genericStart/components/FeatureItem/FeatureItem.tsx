@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { SkeletonLoader } from '@proton/components';
+import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import clsx from '@proton/utils/clsx';
 

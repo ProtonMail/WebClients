@@ -10,8 +10,10 @@ import { assignMemberToCompanyThunk } from '@proton/account/mspSubsidiaries/mana
 import { useMspDispatch } from '@proton/account/mspSubsidiaries/useMspDispatch';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
-import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 import Autocomplete from '@proton/components/components/autocomplete/Autocomplete';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useErrorWrapper } from '@proton/components/hooks/useErrorHandler';
 import { useLoadingByKey } from '@proton/hooks/useLoading';

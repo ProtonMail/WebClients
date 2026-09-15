@@ -3,8 +3,10 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
-import { AuthModal, useErrorHandler, useModalState } from '@proton/components';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import type { AddressGeneration } from '@proton/components/containers/login/interface';
+import AuthModal from '@proton/components/containers/password/AuthModal';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { TelemetryBringYourOwnEmailEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { queryCheckUsernameAvailability, queryUnlock } from '@proton/shared/lib/api/user';
 import { APPS, APPS_CONFIGURATION, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';

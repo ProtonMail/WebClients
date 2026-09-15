@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { AppsLogos, DriveLogo } from '@proton/components';
+import AppsLogos from '@proton/components/components/appsLogos/AppsLogos';
+import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import {
     getDocumentEditor,
     getFreeDriveStorageFeature,

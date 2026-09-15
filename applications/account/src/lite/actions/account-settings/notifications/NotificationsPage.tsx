@@ -1,6 +1,6 @@
+import EmailSubscriptionSection from '@proton/components/containers/account/EmailSubscriptionSection';
 import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import type { SectionConfig } from '@proton/components/containers/layout/interface';
-import { EmailSubscriptionSection } from '@proton/components/index';
 
 import '../AccountSettings.scss';
 
