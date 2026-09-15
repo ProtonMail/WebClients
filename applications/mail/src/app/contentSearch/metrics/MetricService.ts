@@ -6,24 +6,22 @@ import type {
     ContentSearchSessionActionType,
     SearchSession,
 } from '@proton/encrypted-search/models';
+import { type ContentSearchEventStatus, SEARCH_RESULT_SCROLLER_MODE } from '@proton/encrypted-search/models';
 import {
-    type ContentSearchEventStatus,
-    SEARCH_RESULT_PRIMARY_MATCH_TYPE,
-    SEARCH_RESULT_SCROLLER_MODE,
-} from '@proton/encrypted-search/models';
+    buildIndexCompletedPayload,
+    buildQueryCompletedPayload,
+    buildResultActionPayload,
+    buildResultOpenedPayload,
+    buildSearchSessionStartedPayload,
+} from '@proton/encrypted-search/telemetryBuilder';
 import { getMailboxAddressType } from '@proton/encrypted-search/useContentSearchTelemetry';
-import type { TelemetryEvents } from '@proton/shared/lib/api/telemetry';
-import {
-    TelemetryContentSearchEvents,
-    TelemetryContentSearchIndexEvents,
-    TelemetryMeasurementGroups,
-} from '@proton/shared/lib/api/telemetry';
+import type { TelemetryReport } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import type { Api, SimpleMap } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import type { Logger } from '../utils/logger';
-import { SEARCH_SOURCE, SEARCH_VERSION_V2 } from './interface';
+import { SEARCH_VERSION_V2 } from './interface';
 
 /**
  * Single entry point for content-search metrics
@@ -56,23 +54,10 @@ export class MetricService {
         this.session.firstActionType = type;
     }
 
-    private reportTelemetry({
-        measurementGroup,
-        event,
-        dimensions,
-        values,
-    }: {
-        measurementGroup: TelemetryMeasurementGroups;
-        event: TelemetryEvents;
-        dimensions?: SimpleMap<string>;
-        values?: SimpleMap<number>;
-    }) {
+    private reportTelemetry(payload: TelemetryReport) {
         void sendTelemetryReport({
+            ...payload,
             api: this.api,
-            measurementGroup,
-            event,
-            dimensions,
-            values,
             delay: true,
         });
     }
@@ -110,7 +95,6 @@ export class MetricService {
         hasResults,
         status,
         errorKind,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         resultCount,
     }: {
         hasResults: boolean;
@@ -120,7 +104,9 @@ export class MetricService {
     }) {
         this.logger.info('Search completed');
 
-        const durationMs = this.searchStartedAt !== undefined ? Date.now() - this.searchStartedAt : 0;
+        const endTime = Date.now();
+        const startTime = this.searchStartedAt ?? 0;
+
         this.searchStartedAt = undefined;
 
         this.updateSession((session) => {
@@ -128,22 +114,18 @@ export class MetricService {
             session.scrollerMode = SEARCH_RESULT_SCROLLER_MODE;
         });
 
-        this.reportTelemetry({
-            measurementGroup: TelemetryMeasurementGroups.contentSearch,
-            event: TelemetryContentSearchEvents.query_completed,
-            dimensions: {
+        this.reportTelemetry(
+            buildQueryCompletedPayload({
+                hasResults,
                 status,
                 errorKind,
-                hasResults: hasResults.toString(),
-                searchSource: SEARCH_SOURCE,
+                resultCount,
+                durationMs: endTime - startTime,
+                startTime,
+                endTime,
                 searchVersion: SEARCH_VERSION_V2,
-            },
-            values: {
-                // TODO this can be changed once INWEB-1184 is fixed
-                resultCount: 0,
-                durationMs,
-            },
-        });
+            })
+        );
     }
 
     resultOpened({
@@ -165,18 +147,14 @@ export class MetricService {
             this.recordFirstAction('open');
         });
 
-        this.reportTelemetry({
-            measurementGroup: TelemetryMeasurementGroups.contentSearch,
-            event: TelemetryContentSearchEvents.result_opened,
-            dimensions: {
-                scrollerMode: SEARCH_RESULT_SCROLLER_MODE,
-                primaryMatchType: SEARCH_RESULT_PRIMARY_MATCH_TYPE,
-                isFirstOpen: isFirstOpen.toString(),
-                searchSource: SEARCH_SOURCE,
+        this.reportTelemetry(
+            buildResultOpenedPayload({
+                isFirstOpen,
+                resultPosition,
+                messageAgeDays,
                 searchVersion: SEARCH_VERSION_V2,
-            },
-            values: { resultPosition, messageAgeDays },
-        });
+            })
+        );
     }
 
     resultActionPerformed({
@@ -194,20 +172,14 @@ export class MetricService {
             this.recordFirstAction(action);
         });
 
-        this.reportTelemetry({
-            measurementGroup: TelemetryMeasurementGroups.contentSearch,
-            event: TelemetryContentSearchEvents.result_action,
-            dimensions: {
+        this.reportTelemetry(
+            buildResultActionPayload({
                 action,
                 actionSurface,
-                searchSource: SEARCH_SOURCE,
-                scrollerMode: SEARCH_RESULT_SCROLLER_MODE,
                 searchVersion: SEARCH_VERSION_V2,
-            },
-            values: {
                 resultPosition,
-            },
-        });
+            })
+        );
     }
 
     mailboxIndexCompleted({
@@ -226,21 +198,17 @@ export class MetricService {
         const durationMs = this.indexingStartedAt !== undefined ? Date.now() - this.indexingStartedAt : 0;
         this.indexingStartedAt = undefined;
 
-        this.reportTelemetry({
-            measurementGroup: TelemetryMeasurementGroups.contentSearchIndex,
-            event: TelemetryContentSearchIndexEvents.mailbox_index_completed,
-            dimensions: {
+        this.reportTelemetry(
+            buildIndexCompletedPayload({
                 status,
                 errorKind,
-                mailboxAddressType: getMailboxAddressType(this.addresses),
-                searchVersion: SEARCH_VERSION_V2,
-            },
-            values: {
                 totalMessagesIndexed,
                 durationMs,
                 mailboxMessagesTotal,
-            },
-        });
+                mailboxAddressType: getMailboxAddressType(this.addresses),
+                searchVersion: SEARCH_VERSION_V2,
+            })
+        );
     }
 
     /** Call once when the search UI session ends — see `EncryptedSearchProvider.endSearchSession`. */
@@ -250,36 +218,14 @@ export class MetricService {
         }
         this.logger.info('Search session ended');
 
-        const {
-            startedAt,
-            firstActionAt,
-            hasResults,
-            scrollerMode,
-            resultsOpened,
-            actionsPerformed,
-            firstActionType,
-            firstOpenedPosition,
-        } = this.session;
+        const payload = buildSearchSessionStartedPayload({
+            session: this.session,
+            endReason,
+            searchVersion: SEARCH_VERSION_V2,
+        });
+
         this.session = undefined;
 
-        this.reportTelemetry({
-            measurementGroup: TelemetryMeasurementGroups.contentSearch,
-            event: TelemetryContentSearchEvents.search_session_completed,
-            dimensions: {
-                endReason,
-                scrollerMode,
-                firstActionType,
-                hasResults: hasResults.toString(),
-                searchSource: SEARCH_SOURCE,
-                searchVersion: SEARCH_VERSION_V2,
-            },
-            values: {
-                resultsOpened,
-                actionsPerformed,
-                firstOpenedPosition,
-                timeToFirstActionMs: firstActionAt !== undefined ? firstActionAt - startedAt : undefined,
-                sessionDurationMs: Date.now() - startedAt,
-            },
-        });
+        this.reportTelemetry(payload);
     }
 }
