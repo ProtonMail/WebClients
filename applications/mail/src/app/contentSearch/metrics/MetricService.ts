@@ -25,11 +25,7 @@ import type { Logger } from '../utils/logger';
 import { SEARCH_SOURCE, SEARCH_VERSION_V2 } from './interface';
 
 /**
- * Single entry point for content-search-v2 telemetry: per-event reports (query/result/index) and the
- * search-session rollup (`search_session_completed`) they feed, kept together because a session is
- * only ever updated as a side effect of the same events this class already reports on individually.
- * Consumers (`ESAdapter`) call the report methods and `startSearchSession`/`endSearchSession` only —
- * session bookkeeping is this class's own business, not something callers drive separately.
+ * Single entry point for content-search metrics
  */
 export class MetricService {
     /** Set by `startMailboxIndexing`; `mailbox_index_completed`'s `durationMs` is measured from here. */
@@ -49,8 +45,18 @@ export class MetricService {
         private readonly logger: Logger
     ) {}
 
+    private recordFirstAction(type: ContentSearchSessionActionType) {
+        if (!this.session || this.session.firstActionType !== undefined) {
+            return;
+        }
+
+        this.logger.info('First action recorded');
+        this.session.firstActionAt = Date.now();
+        this.session.firstActionType = type;
+    }
+
     /** Call once, when the v1+v2 indexing pipeline begins — see `ESAdapter.startIndexingJob`. */
-    startMailboxIndexing() {
+    startIndexing() {
         this.indexingStartedAt = Date.now();
     }
 
@@ -71,17 +77,7 @@ export class MetricService {
         };
     }
 
-    private recordFirstAction(type: ContentSearchSessionActionType) {
-        if (!this.session || this.session.firstActionType !== undefined) {
-            return;
-        }
-
-        this.logger.info('First action recorded');
-        this.session.firstActionAt = Date.now();
-        this.session.firstActionType = type;
-    }
-
-    sendQueryCompletedReport({
+    searchCompleted({
         hasResults,
         status,
         errorKind,
@@ -93,7 +89,7 @@ export class MetricService {
         errorKind?: string;
         resultCount: number;
     }) {
-        this.logger.info('Query completed report sent');
+        this.logger.info('Search completed');
 
         const durationMs = this.searchStartedAt !== undefined ? Date.now() - this.searchStartedAt : 0;
         this.searchStartedAt = undefined;
@@ -123,7 +119,7 @@ export class MetricService {
         });
     }
 
-    sendResultOpenedReport({
+    resultOpened({
         isFirstOpen,
         resultPosition,
         messageAgeDays,
@@ -132,7 +128,7 @@ export class MetricService {
         resultPosition: number;
         messageAgeDays: number;
     }) {
-        this.logger.info('Result opened report sent');
+        this.logger.info('Result opened');
 
         if (this.session) {
             this.session.resultsOpened += 1;
@@ -159,7 +155,7 @@ export class MetricService {
         });
     }
 
-    sendResultActionReport({
+    resultActionPerformed({
         action,
         actionSurface,
         resultPosition,
@@ -168,7 +164,7 @@ export class MetricService {
         actionSurface: ContentSearchActionSurface;
         resultPosition?: number;
     }) {
-        this.logger.info('Result action report sent');
+        this.logger.info('Result action performed');
 
         if (this.session) {
             this.session.actionsPerformed += 1;
@@ -193,7 +189,7 @@ export class MetricService {
         });
     }
 
-    sendMailboxIndexCompletedReport({
+    mailboxIndexCompleted({
         status,
         errorKind,
         totalMessagesIndexed,
@@ -204,7 +200,7 @@ export class MetricService {
         totalMessagesIndexed: number;
         mailboxMessagesTotal?: number;
     }) {
-        this.logger.info('Mailbox index completed report sent');
+        this.logger.info('Mailbox index completed');
 
         const durationMs = this.indexingStartedAt !== undefined ? Date.now() - this.indexingStartedAt : 0;
         this.indexingStartedAt = undefined;
