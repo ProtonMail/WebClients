@@ -1,4 +1,3 @@
-import type { ContentSearchSearchSource, ContentSearchVersion } from '@proton/encrypted-search/models';
+import type { ContentSearchVersion } from '@proton/encrypted-search/models';
 
 export const SEARCH_VERSION_V2: ContentSearchVersion = 'v2';
-export const SEARCH_SOURCE: ContentSearchSearchSource = 'local';
