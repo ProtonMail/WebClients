@@ -87,16 +87,26 @@ import type {
     HighlightString,
     InternalESCallbacks,
 } from './models';
-import { getMailboxAddressType, useContentSearchTelemetry } from './useContentSearchTelemetry';
+import type { useContentSearchTelemetry } from './useContentSearchTelemetry';
+import { getMailboxAddressType } from './useContentSearchTelemetry';
 import { useEncryptedSearchIndexingProgress } from './useEncryptedSearchIndexingProgress';
 import { useEncryptedSearchStatus } from './useEncryptedSearchStatus';
 import { SEARCH_TYPE, useSearchTelemetry } from './useSearchTelemetry';
+
+type QueryCompletedParams = Parameters<ReturnType<typeof useContentSearchTelemetry>['sendQueryCompletedReport']>[0];
+type MailboxIndexCompletedParams = Parameters<
+    ReturnType<typeof useContentSearchTelemetry>['sendMailboxIndexCompletedReport']
+>[0];
 
 interface Props<ESItemMetadata, ESSearchParameters, ESItemContent = void> {
     refreshMask: number;
     esCallbacks: ESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>;
     contentIndexingSuccessMessage?: string;
     onMetadataIndexed?: (metrics: IndexingMetrics) => void;
+    /** Called when a search completes — routing to v1 or v2 telemetry is the caller's call, not this library's. */
+    onSearchCompleted?: (params: QueryCompletedParams) => void;
+    /** Called when a first full mailbox indexing pass completes — see `onSearchCompleted`. */
+    onIndexCompleted?: (params: MailboxIndexCompletedParams) => void;
 }
 
 /**
@@ -113,6 +123,8 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
     esCallbacks: inputESCallbacks,
     contentIndexingSuccessMessage,
     onMetadataIndexed,
+    onSearchCompleted,
+    onIndexCompleted,
 }: Props<ESItemMetadata, ESSearchParameters, ESItemContent>) => {
     const getUserKeys = useGetUserKeys();
     const [user] = useUser();
@@ -134,7 +146,6 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         sendPerformSearchReport,
         sendESSearchCompleteReport,
     } = useSearchTelemetry();
-    const { sendQueryCompletedReport, sendMailboxIndexCompletedReport } = useContentSearchTelemetry();
 
     // Keep a reference to cached items, such that they can be queried at any time
     const esCacheRef = useRef<ESCache<ESItemMetadata, ESItemContent>>(defaultESCache);
@@ -798,7 +809,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         // Mirrors mobile's `mailbox_index_completed`: only fired for the first full historic indexing
         // pass, not on re-index or limit extension runs
         if (!isRefreshed) {
-            sendMailboxIndexCompletedReport({
+            onIndexCompleted?.({
                 status: 'success',
                 totalMessagesIndexed: totalItems,
                 durationMs: indexTime,
@@ -1035,7 +1046,8 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
             uncachedItemsFound,
         });
 
-        sendQueryCompletedReport({
+        // If V2 (content search) is active don't report the end of the search
+        onSearchCompleted?.({
             hasResults: !!itemsFound,
             status: 'success',
             resultCount: itemsFound,
