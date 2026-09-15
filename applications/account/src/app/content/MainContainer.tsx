@@ -222,7 +222,6 @@ const MainContainer = () => {
     const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
-    const isPasswordRemindersOrgEnabled = useFlag('PasswordRemindersOrg');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isSpacesAvailable = useFlag('SpacesAvailable');
 
@@ -315,7 +314,6 @@ const MainContainer = () => {
         isCryptoPostQuantumOptInEnabled,
         isSsoForPbsEnabled,
         isRetentionPoliciesEnabled,
-        isPasswordRemindersOrgEnabled,
         isAuthenticatorAvailable,
         isCategoryViewEnabled: canUseCategoryView,
         isReferralProgramEnabled,

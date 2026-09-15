@@ -26,7 +26,7 @@ export const passwordReminderListener = (startListening: SharedStartListening<Re
             const currentUserSettings = selectUserSettings(currentState);
 
             // The organization decides whether an admin counts as belonging to an organization,
-            // and so which feature gate applies. It's fetched lazily, so wait for it: computing
+            // and so which eligibility rule applies. It's fetched lazily, so wait for it: computing
             // while it's missing evaluates an org user as an individual, which shows them the
             // reminders until it lands and they're hidden again. Nothing here triggers the fetch,
             // UserDropdown -> useUserDropdownInfo -> useOrganization does, in every app.
@@ -46,7 +46,7 @@ export const passwordReminderListener = (startListening: SharedStartListening<Re
             );
         },
         effect: async (action, listenerApi) => {
-            const { getState, dispatch, extra } = listenerApi;
+            const { getState, dispatch } = listenerApi;
 
             const { user, userSettings, organization } = getState();
             if (!user.value || !userSettings.value) {
@@ -55,7 +55,6 @@ export const passwordReminderListener = (startListening: SharedStartListening<Re
             }
 
             const isAvailable = getIsPasswordReminderAvailable({
-                unleashClient: extra.unleashClient,
                 user: user.value,
                 organization: organization.value,
             });
@@ -71,7 +70,6 @@ export const passwordReminderListener = (startListening: SharedStartListening<Re
             const messageCadenceHasExpired = getMessageCadenceHasExpired({ userSettings: userSettings.value });
 
             const showReminders = getShowPasswordReminders({
-                unleashClient: extra.unleashClient,
                 user: user.value,
                 userSettings: userSettings.value,
                 organization: organization.value,
