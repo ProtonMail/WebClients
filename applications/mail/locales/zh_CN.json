@@ -90,6 +90,9 @@
       "Add group": [
         "添加群组"
       ],
+      "Add more details": [
+        "添加更多详情"
+      ],
       "Add new group": [
         "添加新群组"
       ],
@@ -4721,6 +4724,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } 是您的用户名。要创建 ${ emailAddress }，请进入设置 > 身份和地址 > 短域 (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "该邮箱地址的联系人已存在"
+      ],
       "A group with this name already exists": [
         "已存在同名群组"
       ],
@@ -6113,6 +6119,12 @@
       ],
       "Security key": [
         "安全密钥"
+      ],
+      "Still waiting?": [
+        "仍在等待？"
+      ],
+      "Touch your security key to continue.": [
+        "触摸您的安全密钥以继续。"
       ]
     },
     "fido2: Label": {
@@ -7041,6 +7053,9 @@
       "${ LUMO_APP_NAME } includes the writing assistant": [
         "${ LUMO_APP_NAME } 内置写作助手"
       ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } 目前已连续 ${ count } 次。是否继续？"
+      ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
         "${ LUMO_SHORT_APP_NAME } 帮助您快速轻松地撰写更优质的邮件。"
       ],
@@ -7130,6 +7145,9 @@
       ],
       "${ selectedFoldersCountLocalized } label selected": [
         "已选择 ${ selectedFoldersCountLocalized } 个标签"
+      ],
+      "${ steps } step": [
+        "${ steps } 个步骤"
       ],
       "${ storage } storage": [
         "${ storage } 存储空间"
@@ -7257,8 +7275,17 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add ${ contact } to your contacts": [
+        "将 ${ contact } 添加到您的联系人"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "添加 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Add a contact": [
+        "添加联系人"
+      ],
+      "Add contact": [
+        "添加联系人"
       ],
       "Add image URL": [
         "添加图像网址"
@@ -7473,11 +7500,26 @@
       "Center": [
         "居中"
       ],
+      "Change a display setting": [
+        "更改显示设置"
+      ],
       "Change display setting": [
         "更改显示设置"
       ],
+      "Change how your mail is grouped": [
+        "更改邮件的分组方式"
+      ],
+      "Change your list density": [
+        "更改您的列表密度"
+      ],
+      "Change your mailbox layout": [
+        "更改您的邮箱布局"
+      ],
       "Change your password": [
         "更改密码"
+      ],
+      "Change your theme": [
+        "更改您的主题"
       ],
       "Checked Proton support": [
         "已检查 Proton 支持"
@@ -7551,8 +7593,17 @@
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "创建 ${ calendarsToBeCreatedCount } 份新日历"
       ],
+      "Create a filter": [
+        "创建筛选"
+      ],
+      "Create a folder": [
+        "新建文件夹"
+      ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "创建诸如“${ suggestedFolderName }”之类的文件夹，将您所有的在线收据集中存放。"
+      ],
+      "Create a label": [
+        "新建标签"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "给导入的邮件加标签，指定导入的时间范围，并选择要导入的文件夹。"
@@ -7655,6 +7706,12 @@
       ],
       "Do you want to re-sign the contact details?": [
         "确定要重新对联系人详细信息签名吗？"
+      ],
+      "Document in foundation-search index": [
+        "基础搜索索引中的文档"
+      ],
+      "Document lookup failed": [
+        "文档查找失败"
       ],
       "Don't forget to share the password with the recipient": [
         "别忘了与收件人分享密码"
@@ -8070,6 +8127,12 @@
       "Key fingerprint": [
         "指纹码"
       ],
+      "Label ${ emails }": [
+        "为 ${ emails } 添加标签"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "将 ${ emails } 标为 ${ names }"
+      ],
       "Label all imported messages as": [
         "给导入的所有邮件加标签"
       ],
@@ -8118,6 +8181,9 @@
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
         "日志帮助我们了解问题发生前的情况，包含应用操作和错误信息，但不包含消息内容。"
       ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "查找文档 ${ lookup.result.docId }"
+      ],
       "Low Priority": [
         "较低优先顺序"
       ],
@@ -8130,6 +8196,12 @@
       "Manage your labels": [
         "管理标签"
       ],
+      "Mark ${ emails } as read": [
+        "将 ${ emails } 标为已读"
+      ],
+      "Mark ${ emails } as unread": [
+        "将 ${ emails } 标为未读"
+      ],
       "Mark all as read": [
         "全部标为已读"
       ],
@@ -8141,6 +8213,12 @@
       ],
       "Mark as unread": [
         "标为未读"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "将 ${ place } 的全部邮件标为已读"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "将 ${ place } 的全部邮件标为未读"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 图标"
@@ -8214,6 +8292,12 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "大多数公共 WiFi 网络都是安全的，但部分网络缺乏防护措施，使您面临网络威胁。通过 VPN 加密技术，您的网络活动将获得全程保护。"
       ],
+      "Move ${ emails }": [
+        "移动 ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "将 ${ emails } 移至 ${ destination }"
+      ],
       "Move emails": [
         "移动邮件"
       ],
@@ -8253,6 +8337,9 @@
       "No email open": [
         "没有已打开的邮件"
       ],
+      "No emails selected": [
+        "未选择邮件"
+      ],
       "No folder found": [
         "未找到文件夹"
       ],
@@ -8270,6 +8357,9 @@
       ],
       "No links cleaned": [
         "无需清理链接"
+      ],
+      "No location selected": [
+        "未选择位置"
       ],
       "No messages to show": [
         "没有邮件需要查看"
@@ -8303,6 +8393,12 @@
       ],
       "Not connected": [
         "未连接"
+      ],
+      "Not found in the encrypted search index.": [
+        "在加密搜索索引中未找到！"
+      ],
+      "Not found in the foundation-search index.": [
+        "在基础搜索索引中未找到！"
       ],
       "Not supported by this browser": [
         "此浏览器不支持"
@@ -8559,10 +8655,19 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "请记得在密码管理器或保存账户与登录信息的地方更新这些内容！"
       ],
+      "Remove the star from ${ emails }": [
+        "移除 ${ emails } 的星标"
+      ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "删除与此应用关联的所有数据 (包括已下载的邮件等)"
       ],
+      "Rename ${ folder } to…": [
+        "将 ${ folder } 重命名为…"
+      ],
       "Rename folder": [
+        "重命名文件夹"
+      ],
+      "Rename this folder": [
         "重命名文件夹"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
@@ -8573,6 +8678,12 @@
       ],
       "Restore": [
         "还原"
+      ],
+      "Results came from the local search.": [
+        "结果来自本地搜索"
+      ],
+      "Results came from the server.": [
+        "结果来自服务器"
       ],
       "Right to Left": [
         "从右到左"
@@ -8697,6 +8808,9 @@
       "Set up your organization": [
         "设置您的组织"
       ],
+      "Set your signature": [
+        "设置您的签名"
+      ],
       "Setting up ${ feature }…": [
         "正在设置 ${ feature }…"
       ],
@@ -8744,6 +8858,12 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "对不起，邮件不存在或已过期。"
+      ],
+      "Source document in encrypted search index": [
+        "加密搜索索引中的源文档"
+      ],
+      "Star ${ emails }": [
+        "为 ${ emails } 加星标"
       ],
       "Star emails": [
         "星标邮件"
@@ -9129,8 +9249,14 @@
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "关闭后仅按日期、姓名、邮箱地址或主题行搜索。要禁用邮件内容搜索（并删除为启用此功能而下载的邮件），请前往设置。"
       ],
+      "Turn off your away message": [
+        "关闭您的暂离邮件"
+      ],
       "Turn on to search the content of your messages": [
         "开启以搜索您的邮件内容"
+      ],
+      "Turn on your away message": [
+        "开启您的暂离邮件"
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "无法访问浏览器的储存功能，我们需要此权限才能启用邮件内容搜索。"
@@ -9157,6 +9283,12 @@
         "不支持文件"
       ],
       "Update filter": [
+        "更新筛选"
+      ],
+      "Update the filter ${ filter }": [
+        "更新筛选 ${ filter }"
+      ],
+      "Update this filter": [
         "更新筛选"
       ],
       "Updating message content search...": [
@@ -14711,6 +14843,12 @@
     "Snooze info": {
       "${ count } email → ${ wakeTime }": [
         "${ count } 封邮件 → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "推迟 ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "将 ${ emails } 推迟至 ${ wakeTime }"
       ]
     },
     "Snooze message": {

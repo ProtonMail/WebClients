@@ -780,6 +780,9 @@
       "Join with ${ MEET_APP_NAME }": [
         "透過 ${ MEET_APP_NAME } 加入"
       ],
+      "Keep going": [
+        "繼續"
+      ],
       "Keep inbox as before": [
         "保持收件匣不變"
       ],
@@ -4883,6 +4886,9 @@
       "Failed to decrypt bookmark password: ${ message }": [
         "解密書籤密碼失敗: ${ message }"
       ],
+      "Failed to decrypt content key: ${ message }": [
+        "解密內容金鑰失敗: ${ message }"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "加密附件失敗。請再試一次。"
       ],
@@ -4972,6 +4978,9 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "可容許的附件數量 (${ attachmentsCountLimit }) 已達上限"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "未發現成員的位址。請聯繫客戶支援服務以協助解決問題。"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "請至少將 ${ calendarsToFixCount } 個行事曆與現存的 ${ BRAND_NAME } calendar 合併"
@@ -5083,6 +5092,12 @@
       ],
       "Permissions request failed.": [
         "權限請求失敗。"
+      ],
+      "Photo is already in the target album": [
+        "照片已存在於目標相簿中"
+      ],
+      "Photo not found": [
+        "找不到照片"
       ],
       "Please activate your search again": [
         "請再次啟用搜尋"
@@ -5209,6 +5224,9 @@
       ],
       "Signature verification failed": [
         "簽名驗證失敗"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "失敗替 ${ signatureType } 簽名驗證"
       ],
       "Some contacts could not be deleted": [
         "某些聯絡名片無法刪除"
@@ -6930,6 +6948,9 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "已選取 ${ selectedFoldersCountLocalized } 種標籤"
       ],
+      "${ steps } step": [
+        "${ steps } 步驟"
+      ],
       "${ storage } storage": [
         "${ storage } 儲存空間"
       ],
@@ -7050,8 +7071,17 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add ${ contact } to your contacts": [
+        "添加 ${ contact } 至您的聯絡人"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "新增 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Add a contact": [
+        "新增連絡人"
+      ],
+      "Add contact": [
+        "添加聯絡人"
       ],
       "Add image URL": [
         "加入圖像路徑"
@@ -7269,6 +7299,9 @@
       "Change your password": [
         "變更您的密碼"
       ],
+      "Checked Proton support": [
+        "查詢 Proton 支援"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "正在檢查聯絡人 ${ progress } / ${ max }..."
       ],
@@ -7341,6 +7374,9 @@
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "創建資料夾像是${ suggestedFolderName }以保持回條於一地。"
       ],
+      "Create a label": [
+        "新增標籤"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "為匯入的郵件創建標籤、設定這次匯入的時間範圍以及要匯入的資料夾。"
       ],
@@ -7352,6 +7388,9 @@
       ],
       "Create a secure cloud for ${ memberCount } member": [
         "替成員創建一個安全 ${ memberCount } 雲端"
+      ],
+      "Create filter": [
+        "建立過濾器"
       ],
       "Create folder": [
         "新建資料夾"
@@ -7686,6 +7725,9 @@
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "計有 ${ numAttachments } 個附件，檔案大小為 (${ numAttachmentsSize })"
       ],
+      "Have some more time to decide without interruption.": [
+        "在未被干擾下有更充分的時間決定。"
+      ],
       "here": [
         "這裡"
       ],
@@ -7786,7 +7828,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -7884,6 +7926,12 @@
       "Manage your labels": [
         "管理您的標籤"
       ],
+      "Mark ${ emails } as read": [
+        "標記 ${ emails } 為未讀"
+      ],
+      "Mark ${ emails } as unread": [
+        "標記 ${ emails } 為未讀"
+      ],
       "Mark all as read": [
         "全部標記為已讀"
       ],
@@ -7965,6 +8013,9 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "大多數公共 WiFi 網路是安全的，但有些缺乏安全性，讓您暴露於網路威脅之下。VPN 會加密您的流量，保護您的安全。"
       ],
+      "Move ${ emails } to ${ destination }": [
+        "移動 ${ emails } 至 ${ destination }"
+      ],
       "Move emails": [
         "將電郵移動到"
       ],
@@ -7991,6 +8042,9 @@
       ],
       "No contacts added yet": [
         "仍未加入任何通訊錄"
+      ],
+      "No contacts found": [
+        "找不到聯絡人"
       ],
       "No conversation to read": [
         "無對話內容為未讀"
@@ -8051,6 +8105,9 @@
       ],
       "Not connected": [
         "未連線"
+      ],
+      "Not found in the encrypted search index.": [
+        "未於加密檢索搜尋發現。"
       ],
       "Number of dedicated servers in the organization": [
         "團隊專用的伺服器數量"
@@ -8253,6 +8310,12 @@
       "Read ${ count } email": [
         "已讀 ${ count } 封電子郵件"
       ],
+      "Read your display settings": [
+        "已讀您的顯示設定"
+      ],
+      "Read your signature": [
+        "閱讀您的簽名"
+      ],
       "Recipient: ": [
         "收件人 : "
       ],
@@ -8276,6 +8339,15 @@
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "刪除與此應用程式相關的所有資料（包括已下載的訊息等）"
+      ],
+      "Rename ${ folder } to…": [
+        "重新命名 ${ folder } 至…"
+      ],
+      "Rename folder": [
+        "重新命名此資料夾"
+      ],
+      "Rename this folder": [
+        "重新命名此資料夾"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "檢舉一封郵件帶有網路釣魚的企圖，將會把郵件傳送給我們，讓我們可以分析郵件並改進我們的篩選。這意味我們將能夠完全飽覽郵件的內容。"
@@ -8324,6 +8396,9 @@
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "搜索耗時過長? 請嘗試 ${ dropdownButton } 或 ${ toggleOffButton } 搜索結果。"
+      ],
+      "Searched ${ targetName }": [
+        "搜尋 ${ targetName } 名稱"
       ],
       "Searched the web": [
         "搜尋此網頁"
@@ -8385,8 +8460,14 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "將 ${ MAIL_APP_NAME } 設為您預設郵件應用程式。當您點擊電郵位址連結時，${ MAIL_APP_NAME } 將會自動開啟。"
       ],
+      "Set signature": [
+        "設定簽名"
+      ],
       "Set up your organization": [
         "設定您的組織"
+      ],
+      "Set your signature": [
+        "設定您的簽名"
       ],
       "Setting up ${ feature }…": [
         "設定${ feature }…"
@@ -8408,6 +8489,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "為答謝您的長期支援，您的帳號已啟用額外的功能。"
+      ],
+      "Snooze emails": [
+        "延後電子郵件"
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "延後訊息使它們如您希望於收件匣的上方"
@@ -8813,6 +8897,12 @@
       ],
       "Unsupported file": [
         "不支援的檔案"
+      ],
+      "Update filter": [
+        "更新過濾器"
+      ],
+      "Update this filter": [
+        "更新此過濾器"
       ],
       "Updating message content search...": [
         "正在更新郵件內容搜尋..."
@@ -10154,6 +10244,9 @@
       "Never fill on this exact URL": [
         "絕不在此精確的 URL 填入"
       ],
+      "New name": [
+        "新的名稱"
+      ],
       "New password": [
         "新密碼"
       ],
@@ -10168,6 +10261,9 @@
       ],
       "No label found": [
         "找不到標籤"
+      ],
+      "No unread messages": [
+        "無未讀訊息"
       ],
       "Non-promotional content and news": [
         "非促銷內容與新聞"
@@ -11827,6 +11923,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } 後四碼 ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB 的雲端儲存空間，讓您可以輕鬆儲存、同步及共享檔案。受端對端加密保護。"
       ],
@@ -12955,6 +13054,9 @@
       "More plans are available in other currencies": [
         "其他貨幣有更多的方案"
       ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "透過 ${ IDEAL_WERO_BRAND_NAME } 付款"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "為了讓訂閱在試用期結束後啟用，需要付款方式。"
       ],
@@ -13110,6 +13212,11 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "續訂價格取決於計費區域和 VAT 號碼。"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - 卡片於 ${ Last4 } 結束"
       ]
     },
     "Payments.Sepa": {
@@ -13610,9 +13717,17 @@
         "全部的頂級質子版 ${ DRIVE_SHORT_APP_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 和 ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "全部的頂級質子版 ${ DRIVE_SHORT_APP_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
     "q3campaign2026: Title": {
       "for 12 months": [
         "12 個月"
+      ],
+      "One plan, full power": [
+        "單一方案，完整能量"
       ],
       "One plan, more power": [
         "單一方案，更多能量"
@@ -14182,6 +14297,9 @@
     "Snooze info": {
       "${ count } email → ${ wakeTime }": [
         "${ count } 則電子郵件 → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "延後 ${ emails }"
       ]
     },
     "Snooze message": {
@@ -15378,6 +15496,9 @@
       ],
       "Created": [
         "創建日期"
+      ],
+      "Estimated size": [
+        "預估大小"
       ],
       "Expires": [
         "有效期限"
