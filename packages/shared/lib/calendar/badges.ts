@@ -7,11 +7,11 @@ import { getIsCalendarDisabled, getIsCalendarProbablyActive, getIsSubscribedCale
 import { getCalendarHasSubscriptionParameters, getCalendarIsNotSyncedInfo } from './subscribe/helpers';
 
 export enum CALENDAR_STATUS_TYPE {
-    DEFAULT,
-    ACTIVE,
-    DISABLED,
-    // SYNCING,
-    NOT_SYNCED,
+    DEFAULT = 0,
+    ACTIVE = 1,
+    DISABLED = 2,
+    //SYNCING = 3,
+    NOT_SYNCED = 4,
 }
 
 export interface CalendarStatusBadge {
