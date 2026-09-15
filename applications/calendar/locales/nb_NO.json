@@ -56,6 +56,9 @@
       "Add a date": [
         "Legg til en dato"
       ],
+      "Add a payment method": [
+        "Legg til betalingsmåte"
+      ],
       "Add account": [
         "Legg til konto"
       ],
@@ -155,9 +158,6 @@
       ],
       "Clear browser data": [
         "Tøm nettleserdata"
-      ],
-      "Clear conversation": [
-        "Rensk samtalen"
       ],
       "Clear data": [
         "Tøm data"
@@ -725,9 +725,6 @@
       "Refresh the page": [
         "Oppdater siden"
       ],
-      "Reject": [
-        "Avvis"
-      ],
       "Remove": [
         "Fjern"
       ],
@@ -898,9 +895,6 @@
       ],
       "Stay": [
         "Bli"
-      ],
-      "Stop": [
-        "Stopp"
       ],
       "Submit": [
         "Send inn"
@@ -1875,6 +1869,9 @@
       "${ users } user": [
         "${ users } bruker",
         "${ users } brukere"
+      ],
+      "Amount due": [
+        "Beløp å betale"
       ],
       "Amount due after trial": [
         "Beløp som forfaller etter prøvetiden"
@@ -3736,6 +3733,9 @@
       "Could not find an available name": [
         "Finner ikke et tilgjengelig navn"
       ],
+      "Could not grant access to the organization key": [
+        "Kunne ikke gi tilgang til organisasjonsnøkkelen"
+      ],
       "Could not load sharing details": [
         "Kunne ikke laste inn delingsdetaljene"
       ],
@@ -4845,6 +4845,9 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Du har ubetalte fakturaer. Betal dem før du blir med i en familieplan."
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Du er invitert til å koble ${ BRAND_NAME }-kontoen til denne familiegruppen og nyte alle premiumfunksjonene."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Kontoen din har flere e-postadresser enn det som er tilgjengelig for deg i denne planen. ${ addressSettingsLink }"
       ],
@@ -4937,9 +4940,6 @@
       ],
       "Security key": [
         "Sikkerhetsnøkkel"
-      ],
-      "Touch your security key.": [
-        "Berør sikkerhetsnøkkelen din."
       ]
     },
     "fido2: Label": {
@@ -5576,6 +5576,12 @@
       "${ storage } storage": [
         "${ storage } lagringsplass"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "${ timeRemaining } igjen av prøveperioden. ${ addPaymentMethodLink } for å unngå å miste tilgang. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } igjen av prøveperioden. ${ addPaymentMethodLink } for å beholde abonnementet. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } bruker funnet",
         "${ total } brukere funnet"
@@ -5896,9 +5902,6 @@
       ],
       "Daily": [
         "Daglig"
-      ],
-      "Debug transcript copied": [
-        "Feilsøkingstranskripsjon kopiert"
       ],
       "Dedicated servers": [
         "Dedikerte servere"
@@ -6611,9 +6614,6 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifiseringsprosessen vil åpne en ny nettleserfane. Deaktiver alle aktive blokkeringer av sprettoppvinduer."
       ],
-      "Thinking about this": [
-        "Tenker på dette"
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adressen er deaktivert. For å kunne sende til denne adressen, må eieren først aktivere adressen."
       ],
@@ -6787,6 +6787,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi bruker 3-D Secure for å beskytte dine betalinger"
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Vi vil sende deg til ${ IDEAL_WERO_BRAND_NAME } i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vi vil sende deg til PayPal i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
@@ -7290,6 +7293,9 @@
       ],
       "Account holder": [
         "Kontoinnehaver"
+      ],
+      "Account holder name": [
+        "Kontoinnehaverens navn"
       ],
       "Add ${ MEET_APP_NAME } conferencing": [
         "Legg til ${ MEET_APP_NAME }-konferanse"
@@ -8560,6 +8566,12 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med utvidet tilgang"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME }-skriveassistent med begrenset tilgang"
+      ],
       "${ n } calendar": [
         "${ n } kalender",
         "${ n } kalendere"
@@ -9058,6 +9070,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } slutter på ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB med skylagring som lett lar deg lagre, synkronisere og dele filer. Sikret med ende-til-ende-kryptering."
       ],
@@ -9443,6 +9458,11 @@
       "Support for ${ n } custom email domain": [
         "Støtte for ${ n } egendefinert e-postdomene",
         "Støtte for ${ n } egendefinerte e-postdomener"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Prøv nå"
       ]
     },
     "ngc_access_banner: info": {
@@ -10220,6 +10240,9 @@
       "Invalid security code": [
         "Ugyldig sikkerhetskode"
       ],
+      "Please enter the account holder name": [
+        "Skriv inn kontoinnehaverens navn"
+      ],
       "Something went wrong. Please try again later.": [
         "Noe gikk galt. Prøv på nytt senere."
       ],
@@ -10246,6 +10269,11 @@
       ],
       "Credits will be added to your balance": [
         "Kreditter vil bli lagt til saldoen din"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Endring av faktureringsadresse kan påvirke skatter på fremtidige fakturaer."
       ]
     },
     "Payments.ModificationWarning": {
@@ -10285,6 +10313,12 @@
       ]
     },
     "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - kort som slutter på ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Bankoverføring - ${ iban }"
+      ],
       "Google Pay - card ending in ${ Last4 }": [
         "Google Pay - kort som slutter på ${ Last4 }"
       ]
@@ -10392,9 +10426,6 @@
       ],
       "Anytown": [
         "By"
-      ],
-      "Ask anything…": [
-        "Spør om hva som helst…"
       ],
       "Company name": [
         "Foretaksnavn"
@@ -10733,15 +10764,43 @@
         "SOMMERSALG"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Benytt deg av tilbudet"
+      ],
+      "Special Offer": [
+        "Spesialtilbud"
+      ]
+    },
     "q3campaign2026: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "2 individual accounts": [
+        "2 individuelle kontoer"
+      ],
       "2 TB of secure storage": [
         "2 TB med sikker lagring"
+      ],
+      "3 TB of secure storage": [
+        "3 TB med sikker lagring"
       ],
       "500 GB of secure storage": [
         "500 GB med sikker lagring"
       ],
+      "6 individual accounts": [
+        "6 individuelle kontoer"
+      ],
       "Advanced protection against cyber threats": [
         "Avansert beskyttelse mot cybertrusler"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter er basert på standard månedspris. Abonnementet fornyes til standard årspris når faktureringssyklusen utløper."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "q3campaign2026: Info, Drive first": {
@@ -10752,6 +10811,11 @@
     "q3campaign2026: Info, Family, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
         "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "q3campaign2026: Info, Mail first": {
@@ -10765,6 +10829,9 @@
       ],
       "One plan, full power": [
         "Én plan, mer kraft"
+      ],
+      "One plan, max savings": [
+        "Én plan, maksimal besparelse"
       ],
       "One plan, more power": [
         "Én plan, mer kraft"
@@ -12966,6 +13033,9 @@
       ],
       "Send invitation": [
         "Send invitasjon"
+      ],
+      "September Sale": [
+        "Septembersalg"
       ],
       "Set recovery methods": [
         "Angi gjenopprettingsmetoder"

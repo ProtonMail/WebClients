@@ -410,6 +410,9 @@
       "Add ${ BRAND_NAME } address": [
         "Προσθήκη διεύθυνσης ${ BRAND_NAME }"
       ],
+      "Add a payment method": [
+        "Προσθέστε μία μέθοδο πληρωμής"
+      ],
       "Add account": [
         "Προσθήκη λογαριασμού"
       ],
@@ -608,9 +611,6 @@
       "Clear all formatting": [
         "Απαλοιφή μορφοποιήσεων"
       ],
-      "Clear conversation": [
-        "Εκκαθάριση συνομιλίας"
-      ],
       "Close": [
         "Κλείσιμο"
       ],
@@ -727,9 +727,6 @@
       ],
       "Copy address": [
         "Αντιγραφή διεύθυνσης"
-      ],
-      "Copy debug transcript": [
-        "Αντιγραφή μεταγραφής εντοπισμού σφαλμάτων"
       ],
       "Copy key to the clipboard": [
         "Αντιγραφή του κλειδιού στο πρόχειρο"
@@ -1391,9 +1388,6 @@
       "Keep editing": [
         "Συνέχιση επεξεργασίας"
       ],
-      "Keep going": [
-        "Συνεχίστε"
-      ],
       "Keep logo": [
         "Διατηρήστε το λογότυπο"
       ],
@@ -1871,9 +1865,6 @@
       "Select time zone": [
         "Επιλογή ζώνης ώρας"
       ],
-      "Send": [
-        "Αποστολή"
-      ],
       "send auto-reply email": [
         "αποστολή μηνύματος αυτόματης απάντησης"
       ],
@@ -1997,6 +1988,9 @@
       "Sign out of all accounts": [
         "Έξοδος από όλους τους λογαριασμούς"
       ],
+      "Sign out on all devices": [
+        "Αποσύνδεση από όλες τις συσκευές"
+      ],
       "sign up for free": [
         "εγγραφείτε δωρεάν"
       ],
@@ -2035,12 +2029,6 @@
       ],
       "Stay": [
         "Παραμονή"
-      ],
-      "Stop": [
-        "Σταμάτα"
-      ],
-      "Stop here": [
-        "Σταμάτησε εδώ"
       ],
       "Stop using single sign-on": [
         "Διακοπή χρήσης καθολικής σύνδεσης"
@@ -2149,6 +2137,9 @@
       ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
+      ],
+      "Upgrade to 2 devices or more": [
+        "Αναβάθμιση σε 2 ή περισσότερες συσκευές"
       ],
       "Upgrade to Business": [
         "Αναβαθμίστε στο Business"
@@ -2749,6 +2740,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "Active until ${ formattedPeriodEndDate }": [
+        "Ενεργό μέχρι ${ formattedPeriodEndDate }"
+      ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate1 }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate2 }."
       ],
@@ -5547,6 +5541,9 @@
       "Still need help? Our support team is here for you.": [
         "Χρειάζεστε ακόμα βοήθεια; Η ομάδα υποστήριξής μας είναι εδώ για εσάς."
       ],
+      "The link to sign out on all your devices has expired. Try signing in again to receive a new one.": [
+        "Ο σύνδεσμος για αποσύνδεση σε όλες τις συσκευές σας έχει λήξει. Δοκιμάστε να συνδεθείτε ξανά για να λάβετε έναν νέο."
+      ],
       "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
         "Αυτό σας επιτρέπει να επανακτήσετε την πρόσβαση στον λογαριασμό σας ${ BRAND_NAME }, αλλά δεν ανακτά τα κρυπτογραφημένα δεδομένα σας."
       ],
@@ -5575,11 +5572,20 @@
       "To start, give your organization a name.": [
         "Για να ξεκινήσετε, δώστε ένα όνομα στον οργανισμό σας."
       ],
+      "To stay signed in everywhere, upgrade your plan instead.": [
+        "Για να παραμένετε συνδεδεμένοι παντού, αναβαθμίστε το πλάνο σας."
+      ],
+      "Too many devices are connected to your account. To use ${ BRAND_NAME } on a new device or browser, end all existing sessions. You'll be signed out on every device.": [
+        "Πάρα πολλές συσκευές είναι συνδεδεμένες στον λογαριασμό σας. Για να χρησιμοποιήσετε το ${ BRAND_NAME } σε μια νέα συσκευή ή πρόγραμμα περιήγησης, τερματίστε όλες τις υπάρχουσες συνεδρίες. Θα αποσυνδεθείτε σε κάθε συσκευή."
+      ],
       "Track the status and activity of your referrals": [
         "Παρακολουθήστε την κατάσταση και τη δραστηριότητα των παραπομπών σας"
       ],
       "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
         "Ξεκλειδώστε 15 GB αποθηκευτικού χώρου μόνο με ${ config.offerPrice }."
+      ],
+      "Upgrade anytime to stay signed in on multiple devices.": [
+        "Κάντε αναβάθμιση οποιαδήποτε στιγμή για να παραμείνετε συνδεδεμένοι σε πολλές συσκευές."
       ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Αναβαθμίστε στο ${ planName } για να συνδέσετε έως και ${ MAX_SYNC_PAID_USER } λογαριασμούς"
@@ -5654,6 +5660,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Ο δωρεάν λογαριασμός σας ${ MAIL_APP_NAME } διαθέτει περιορισμένο αποθηκευτικό χώρο, επομένως θα εισάγουμε μόνο τα πιο πρόσφατα email σας στο Gmail."
+      ],
+      "Your other sessions have been ended. You can now sign in on this device.": [
+        "Οι άλλες συνεδρίες σας έχουν ολοκληρωθεί. Μπορείτε πλέον να συνδεθείτε σε αυτήν τη συσκευή."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Το πλάνο σας υποστηρίζει ${ MAX_SYNC_FREE_USER } διεύθυνση Gmail.",
@@ -7889,6 +7898,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
       ],
+      "Something went wrong, please try again": [
+        "Κάτι πήγε στραβά, παρακαλούμε δοκιμάστε ξανά"
+      ],
       "Something went wrong. Please try again.": [
         "Κάτι πήγε στραβά. Παρακαλούμε δοκιμάστε ξανά."
       ],
@@ -9025,11 +9037,14 @@
       "Security key updated": [
         "Το κλειδί ασφαλείας ενημερώθηκε"
       ],
+      "Still waiting?": [
+        "Ακόμα περιμένετε;"
+      ],
       "This will delete all security keys linked to your account.": [
         "Αυτό θα διαγράψει όλα τα κλειδιά ασφαλείας που είναι συνδεδεμένα με τον λογαριασμό σας."
       ],
-      "Touch your security key.": [
-        "Αγγίξτε το κλειδί ασφαλείας σας."
+      "Touch your security key to continue.": [
+        "Πατήστε το κλειδί ασφαλείας σας για να συνεχίσετε."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Επαληθεύστε την ταυτότητά σας με ένα φυσικό κλειδί ασφαλείας U2F ή FIDO2"
@@ -10428,6 +10443,12 @@
       "${ storeName } app to copy data to ${ BRAND_NAME }": [
         "Εφαρμογή ${ storeName } για αντιγραφή δεδομένων στο ${ BRAND_NAME }"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Απομένουν ${ timeRemaining } στη δοκιμαστική σας περίοδο. ${ addPaymentMethodLink } για να αποφύγετε την απώλεια πρόσβασης. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Απομένουν ${ timeRemaining } στη δοκιμαστική σας περίοδο. ${ addPaymentMethodLink } για να διατηρήσετε τη συνδρομή σας. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } χρήστης βρέθηκε",
         "${ total } χρήστες βρέθηκαν"
@@ -11245,9 +11266,6 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "Η ανάκτηση δεδομένων απαιτεί επιλογή επαναφοράς κωδικού (ηλεκτρονικό ταχυδρομείο ή SMS)"
       ],
-      "Debug transcript copied": [
-        "Η μεταγραφή εντοπισμού σφαλμάτων αντιγράφηκε"
-      ],
       "dedicated servers": [
         "αφοσιωμένοι διακομιστές"
       ],
@@ -11831,9 +11849,6 @@
       ],
       "How your emergency contact can change your password for you:": [
         "Πώς μπορεί η επαφή έκτακτης ανάγκης να αλλάξει τον κωδικό πρόσβασής σας:"
-      ],
-      "I have not finished this one yet.": [
-        "Δεν το έχω τελειώσει ακόμα αυτό."
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -12440,6 +12455,9 @@
       ],
       "On": [
         "Ενεργό"
+      ],
+      "On ${ formattedPeriodEndDate }, your free trial ends and your paid plan starts.": [
+        "Στις ${ formattedPeriodEndDate }, η δωρεάν δοκιμαστική σας περίοδος λήγει και ξεκινά το πρόγραμμα επί πληρωμή."
       ],
       "On Ubuntu?": [
         "Σε Ubuntu;"
@@ -13241,9 +13259,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Αυτά τα διαπιστευτήρια δεν μπορούν να χρησιμοποιηθούν για σύνδεση στις επίσημες ${ VPN_APP_NAME } εφαρμογές μας. ${ learnMore }"
       ],
-      "Thinking about this": [
-        "Το σκέφτομαι αυτό"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
       ],
@@ -13294,9 +13309,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Αυτή είναι τώρα η ${ defaultEmailAddress } για την αποστολή νέων μηνυμάτων."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Αυτό απαιτεί πολλά βήματα. Να συνεχίσω;"
       ],
       "This is the password you used before the password reset.": [
         "Αυτός είναι ο κωδικός που χρησιμοποιούσατε πριν την επαναφορά κωδικού πρόσβασης."
@@ -15074,6 +15086,9 @@
       ],
       "Account holder name": [
         "Όνομα κατόχου λογαριασμού"
+      ],
+      "Account holder: ${ details.AccountName }": [
+        "Κάτοχος λογαριασμού: ${ details.AccountName }"
       ],
       "Account storage": [
         "Χωρητικότητα λογαριασμού"
@@ -18719,6 +18734,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } που λήγει σε ${ Last4 }"
+      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "Το ${ BRAND_NAME } σας επιτρέπει τη δημιουργία διευθύνσεων και τη διαχείριση λογαριασμών για άλλους χρήστες. Ιδανικό για οικογένειες και οργανισμούς."
       ],
@@ -20936,6 +20954,11 @@
         "Οι πιστώσεις θα προστεθούν στο υπόλοιπό σας"
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Η αλλαγή της διεύθυνσης χρέωσής σας ενδέχεται να επηρεάσει τους φόρους σε μελλοντικά τιμολόγια."
+      ]
+    },
     "Payments.Lifetime Subscription": {
       "Lifetime accounts can be transferred or sold": [
         "Οι λογαριασμοί εφ' όρου ζωής μπορούν να μεταφερθούν ή να πωληθούν"
@@ -20983,6 +21006,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Η τιμή ανανέωσης εξαρτάται από την περιοχή χρέωσης και τον αριθμό ΦΠΑ."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - κάρτα που λήγει σε ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Τραπεζική μεταφορά - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - κάρτα που λήγει σε ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -21073,9 +21107,6 @@
       ],
       "Anytown": [
         "Αθήνα"
-      ],
-      "Ask anything…": [
-        "Ρωτήστε οτιδήποτε…"
       ],
       "billing@company.com": [
         "billing@company.com"
@@ -27199,6 +27230,9 @@
       "Other calendars": [
         "Άλλα ημερολόγια"
       ],
+      "Other devices signed out": [
+        "Άλλες συσκευές αποσυνδέθηκαν"
+      ],
       "Other features included in your plan": [
         "Άλλες δυνατότητες που περιλαμβάνονται στο πλάνο σας"
       ],
@@ -27556,6 +27590,9 @@
       "Sign out": [
         "Αποσύνδεση"
       ],
+      "Sign out on all devices?": [
+        "Αποσύνδεση από όλες τις συσκευές;"
+      ],
       "Signed in successfully!": [
         "Επιτυχής σύνδεση!"
       ],
@@ -27630,9 +27667,6 @@
       ],
       "Stay secure and connected anywhere": [
         "Παραμείνετε ασφαλείς και συνδεδεμένοι οπουδήποτε"
-      ],
-      "Still working on it": [
-        "Ακόμα δουλεύω πάνω σε αυτό"
       ],
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "Ενισχύστε την ασφάλεια σε όλες τις συσκευές σας με το ${ passPlusPlanName }. ${ upgradeButton }"

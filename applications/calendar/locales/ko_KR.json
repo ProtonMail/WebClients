@@ -56,6 +56,9 @@
       "Add a date": [
         "날짜 추가"
       ],
+      "Add a payment method": [
+        "결제 방법 추가하기"
+      ],
       "Add account": [
         "계정 추가"
       ],
@@ -155,9 +158,6 @@
       "Clear browser data": [
         "브라우저 데이터 제거"
       ],
-      "Clear conversation": [
-        "대화 삭제"
-      ],
       "Clear data": [
         "데이터 지우기"
       ],
@@ -238,9 +238,6 @@
       ],
       "Copy booking page link": [
         "예약 페이지 링크 복사"
-      ],
-      "Copy debug transcript": [
-        "디버그 기록 복사"
       ],
       "Copy email address": [
         "이메일 주소 복사"
@@ -548,9 +545,6 @@
       "Keep current time zone": [
         "현재 시간대 유지하기"
       ],
-      "Keep going": [
-        "계속하기"
-      ],
       "Keep my subscription": [
         "내 구독 유지하기"
       ],
@@ -731,9 +725,6 @@
       "Refresh the page": [
         "페이지 새로 고침"
       ],
-      "Reject": [
-        "거절"
-      ],
       "Remove": [
         "삭제"
       ],
@@ -904,12 +895,6 @@
       ],
       "Stay": [
         "기다리기"
-      ],
-      "Stop": [
-        "중지"
-      ],
-      "Stop here": [
-        "여기서 중단"
       ],
       "Submit": [
         "제출"
@@ -4908,9 +4893,6 @@
       ],
       "Security key": [
         "보안 키"
-      ],
-      "Touch your security key.": [
-        "보안 키를 터치해 주세요."
       ]
     },
     "fido2: Label": {
@@ -5518,6 +5500,12 @@
       "${ storage } storage": [
         "저장공간 ${ storage }"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "무료 체험이 ${ timeRemaining }일 남았습니다. 접근 권한을 상실하지 않으려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "무료 체험이 ${ timeRemaining }일 남았습니다. 구독을 유지하려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total }명 사용자 찾음"
       ],
@@ -5829,9 +5817,6 @@
       ],
       "Daily": [
         "일간"
-      ],
-      "Debug transcript copied": [
-        "디버그 기록 복사됨"
       ],
       "Dedicated servers": [
         "전용 서버"
@@ -6541,9 +6526,6 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "인증 절차가 새 탭에서 열릴 것입니다. 활성화된 팝업 차단기를 비활성화 해주세요."
       ],
-      "Thinking about this": [
-        "이것에 대해 생각해 보기"
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "이 주소는 사용할 수 없습니다. 이 주소로 보내려면 소유자가 먼저 주소를 사용 가능으로 설정해야 합니다."
       ],
@@ -6570,9 +6552,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "이제 ${ defaultEmailAddress }가 메시지를 보내는 주소입니다."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "정말 많은 단계를 거쳐야될 수 있어요. 정말 계속하시겠어요?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "이 링크는 암호 및 신용 카드 등 세부 정보와 같은 정보를 도용하려는 웹사이트로 연결되요."
@@ -8955,6 +8934,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Last4 }(으)로 끝나는 ${ Brand }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "파일을 간편하게 저장, 동기화 및 공유하기 위한 종단간 암호화로 보호되는 1 TB의 클라우드 저장공간."
       ],
@@ -10117,6 +10099,11 @@
         "크레딧이 잔액에 추가됩니다."
       ]
     },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "청구 주소 변경은 추후 청구서의 세율에 영향을 줄 수 있습니다."
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "계속 진행하겠습니까?"
@@ -10151,6 +10138,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "갱신 가격은 청구 지역 및 VAT 번호에 따라 변동될 수 있습니다."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "번호가 ${ Last4 }(으)로 끝나는 Apple Pay 카드"
+      ],
+      "Bank transfer - ${ iban }": [
+        "은행 송금 - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - 번호가 ${ Last4 }(으)로 끝나는 카드"
       ]
     },
     "Payments.Sepa": {
@@ -10256,9 +10254,6 @@
       ],
       "Anytown": [
         "서울특별시 낙원구"
-      ],
-      "Ask anything…": [
-        "무엇이든 물어보세요..."
       ],
       "Company name": [
         "법인 이름"
@@ -12861,9 +12856,6 @@
       ],
       "Stay for 50% off your next month": [
         "첫 달은 50% 할인으로 누리기"
-      ],
-      "Still working on it": [
-        "아직 작업 중"
       ],
       "Subscription canceled": [
         "구독이 취소되었습니다"

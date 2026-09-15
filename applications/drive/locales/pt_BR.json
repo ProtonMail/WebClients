@@ -1862,8 +1862,14 @@
         "${ users } usuário",
         "${ users } usuários"
       ],
+      "Amount due": [
+        "Valor a pagar"
+      ],
       "Amount due after trial": [
         "Valor devido após o período de avaliação"
+      ],
+      "Amount due now": [
+        "Valor devido agora"
       ],
       "Subtotal": [
         "Subtotal"
@@ -4659,9 +4665,6 @@
       ],
       "Security key": [
         "Chave de segurança"
-      ],
-      "Touch your security key.": [
-        "Toque na sua chave de segurança."
       ]
     },
     "fido2: Label": {
@@ -9780,6 +9783,11 @@
         "Suporte para ${ n } domínios de e-mail personalizados"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Experimente agora"
+      ]
+    },
     "ngc_access_banner: info": {
       "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
         "Você agora tem acesso ao novo ${ CALENDAR_APP_NAME }. ${ link }"
@@ -10804,6 +10812,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "O preço de renovação depende da região de faturamento e do número de IVA."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - cartão terminado em ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Transferência bancária - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - cartão terminado em ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -13584,9 +13603,6 @@
       ],
       "Stay for 50% off your next month": [
         "Fique por mais um mês com 50% de desconto"
-      ],
-      "Still working on it": [
-        "Ainda estou trabalhando nisso"
       ],
       "Stop sharing": [
         "Parar compartilhamento"

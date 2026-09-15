@@ -56,6 +56,9 @@
       "Add a date": [
         "Дадаць дату"
       ],
+      "Add a payment method": [
+        "Дадаць спосаб аплаты"
+      ],
       "Add account": [
         "Дадаць уліковы запіс"
       ],
@@ -158,9 +161,6 @@
       "Clear browser data": [
         "Ачысціць даныя браўзера"
       ],
-      "Clear conversation": [
-        "Ачысціць размову"
-      ],
       "Clear data": [
         "Ачысціць даныя"
       ],
@@ -241,9 +241,6 @@
       ],
       "Copy booking page link": [
         "Скапіяваць спасылку на старонку браніравання"
-      ],
-      "Copy debug transcript": [
-        "Скапіяваць расшыфроўку адладкі"
       ],
       "Copy email address": [
         "Скапіяваць адрас электроннай пошты"
@@ -557,9 +554,6 @@
       "Keep current time zone": [
         "Пакінуць бягучы часавы пояс"
       ],
-      "Keep going": [
-        "Працягваць"
-      ],
       "Keep my subscription": [
         "Пакінуць падпіску"
       ],
@@ -740,9 +734,6 @@
       "Refresh the page": [
         "Абнавіць старонку"
       ],
-      "Reject": [
-        "Адхіліць"
-      ],
       "Remove": [
         "Выдаліць"
       ],
@@ -913,12 +904,6 @@
       ],
       "Stay": [
         "Застацца"
-      ],
-      "Stop": [
-        "Спыніць"
-      ],
-      "Stop here": [
-        "Спыніцца тут"
       ],
       "Submit": [
         "Адправіць"
@@ -3699,6 +3684,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } з'яўляецца вашым імем карыстальніка. Перайдзіце ў Налады -> Ідэнтычнасць і адрасы -> Кароткі дамен (pm.me), каб стварыць ${ emailAddress }."
       ],
+      "A contact with this email address already exists": [
+        "Кантакт з гэтым адрасам электроннай пошты ўжо існуе"
+      ],
       "A group with this name already exists": [
         "Група з такой назвай ужо існуе"
       ],
@@ -5058,9 +5046,6 @@
       ],
       "Security key": [
         "Ключ бяспекі"
-      ],
-      "Touch your security key.": [
-        "Дакраніцеся да свайго ключа бяспекі."
       ]
     },
     "fido2: Label": {
@@ -6094,9 +6079,6 @@
       "Daily": [
         "Штодзень"
       ],
-      "Debug transcript copied": [
-        "Расшыфроўка адладкі скапіявана"
-      ],
       "Dedicated servers": [
         "Вылучаныя серверы"
       ],
@@ -6269,7 +6251,7 @@
         "Урады і пастаўшчыкі паслуг інтэрнэту могуць сачыць за тым, якія сайты вы наведваеце. Ваш прагляд вэб-старонак у інтэрнэце становіцца прыватным дзякуючы хаванню вашага рэальнага IP-адраса і шыфраванню."
       ],
       "Have some more time to decide without interruption.": [
-        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення ў працы сэрвісу."
+        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення працы сэрвісу."
       ],
       "here": [
         "тут"
@@ -6820,9 +6802,6 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Працэс праверкі адкрые новую ўкладку браўзера. Адключыце ўсе блакіроўшчыкі ўсплывальных вокнаў."
       ],
-      "Thinking about this": [
-        "Падумайце аб гэтым"
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Гэты адрас адключаны. Каб мець магчымасць адпраўляць лісты на гэты адрас, спачатку ён павінен быць уключаны ўладальнікам."
       ],
@@ -6849,9 +6828,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Цяпер гэта ваш ${ defaultEmailAddress } для адпраўкі новых паведамленняў."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "На гэта спатрэбіцца шмат крокаў. Працягваць?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Гэта спасылка вядзе на вэб-сайт, на якім могуць паспрабаваць скрасці вашы даныя: паролі або інфармацыю аб крэдытных картках."
@@ -10808,9 +10784,6 @@
       "Anytown": [
         "Полацк"
       ],
-      "Ask anything…": [
-        "Спытайце што-небудзь…"
-      ],
       "Company name": [
         "Назва кампаніі"
       ],
@@ -13577,9 +13550,6 @@
       ],
       "Stay for 50% off your next month": [
         "У наступным месяцы скарыстайцеся скідкай у памеры 50%"
-      ],
-      "Still working on it": [
-        "Усё яшчэ працуем над гэтым"
       ],
       "Subscription canceled": [
         "Падпіска скасавана"

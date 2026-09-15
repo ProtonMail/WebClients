@@ -6155,9 +6155,6 @@
       ],
       "Security key": [
         "Sicherheitsschlüssel"
-      ],
-      "Touch your security key.": [
-        "Deinen Sicherheitsschlüssel berühren."
       ]
     },
     "fido2: Label": {
@@ -8149,7 +8146,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -10372,6 +10370,9 @@
       ],
       "Did not follow instructions": [
         "Hat die Anweisungen nicht befolgt"
+      ],
+      "Display name": [
+        "Anzeigename"
       ],
       "Document ID": [
         "Dokument-ID"
@@ -16370,9 +16371,6 @@
       "Apply gift code": [
         "Geschenkcode anwenden"
       ],
-      "Apply labels": [
-        "Kategorie übernehmen"
-      ],
       "Archive all messages?": [
         "Alle Nachrichten archivieren?"
       ],
@@ -16429,9 +16427,6 @@
       ],
       "CC": [
         "CC"
-      ],
-      "Change display setting": [
-        "Anzeigeeinstellung ändern"
       ],
       "Change my answer": [
         "Meine Antwort ändern"
@@ -16505,14 +16500,8 @@
       "Create contact": [
         "Kontakt erstellen"
       ],
-      "Create folder": [
-        "Ordner erstellen"
-      ],
       "Create folder \"${ search }\"": [
         "Ordner „${ search }“ erstellen"
-      ],
-      "Create label": [
-        "Kategorie erstellen"
       ],
       "Create label \"${ search }\"": [
         "Kategorie „${ search }“ erstellen"
@@ -16824,12 +16813,6 @@
       "Make your inbox your own": [
         "Deinen Posteingang nach deinen Wünschen gestalten"
       ],
-      "Mark all as read": [
-        "Alle als gelesen markieren"
-      ],
-      "Mark all as unread": [
-        "Alle als ungelesen markieren"
-      ],
       "Mark all messages as read": [
         "Alle Nachrichten als gelesen markieren"
       ],
@@ -16901,9 +16884,6 @@
       ],
       "Move all messages to trash": [
         "Alle Nachrichten in den Papierkorb verschieben"
-      ],
-      "Move emails": [
-        "E-Mails verschieben"
       ],
       "Move to": [
         "Verschieben nach"
@@ -17214,17 +17194,11 @@
       "Snooze": [
         "Zurückstellen"
       ],
-      "Snooze emails": [
-        "E-Mails zurückstellen"
-      ],
       "Snooze message": [
         "Nachricht zurückstellen"
       ],
       "Snooze:": [
         "Aufgeschoben:"
-      ],
-      "Star emails": [
-        "E-Mails markieren"
       ],
       "Start a new import": [
         "Neuer Importvorgang"
@@ -17281,9 +17255,6 @@
       "Two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung"
       ],
-      "Unstar emails": [
-        "E-Mail-Markierung aufheben"
-      ],
       "Unsubscribe": [
         "Abbestellen"
       ],
@@ -17295,9 +17266,6 @@
       ],
       "Unsubscribe request sent": [
         "Abmeldeanfrage gesendet"
-      ],
-      "Update filter": [
-        "Filter aktualisieren"
       ],
       "Upgrade complete!": [
         "Upgrade abgeschlossen!"

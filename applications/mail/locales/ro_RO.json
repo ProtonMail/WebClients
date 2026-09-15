@@ -54,6 +54,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Adăugați ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add a payment method": [
+        "Adăugați o metodă de plată"
+      ],
       "Add account": [
         "Adăugare cont"
       ],
@@ -86,6 +89,9 @@
       ],
       "Add group": [
         "Adăugare grup"
+      ],
+      "Add more details": [
+        "Adaugă mai multe detalii"
       ],
       "Add new group": [
         "Adăugare grup"
@@ -4796,6 +4802,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Numele de utilizator este ${ user.Name }. Pentru a crea adresa ${ emailAddress }, accesați Setări > Identitate și adrese > Domeniu scurt (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Deja există un contact cu această adresă de e-mail."
+      ],
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
       ],
@@ -6219,8 +6228,11 @@
       "Security key": [
         "Cheie de securitate"
       ],
-      "Touch your security key.": [
-        "Atingeți cheia de securitate."
+      "Still waiting?": [
+        "Încă așteptați?"
+      ],
+      "Touch your security key to continue.": [
+        "Atingeți cheia de securitate pentru a continua."
       ]
     },
     "fido2: Label": {
@@ -7233,6 +7245,9 @@
       "${ LUMO_APP_NAME } includes the writing assistant": [
         "Include asistentul de scriere ${ LUMO_APP_NAME }"
       ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } a efectuat ${ count } pană acum. Să mai continue?"
+      ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
         "${ LUMO_SHORT_APP_NAME } Scribe vă ajută să redactați mesaje mai bine, rapid și fără efort."
       ],
@@ -7351,6 +7366,11 @@
         "Etichete selectate: ${ selectedFoldersCountLocalized }",
         "Etichete selectate: ${ selectedFoldersCountLocalized }"
       ],
+      "${ steps } step": [
+        "${ steps } pas",
+        "${ steps } pași",
+        "${ steps } de pași"
+      ],
       "${ storage } storage": [
         "Stocare ${ storage }"
       ],
@@ -7358,6 +7378,12 @@
         "Necitite: ${ subscription.UnreadMessageCount }",
         "Necitite: ${ subscription.UnreadMessageCount }",
         "Necitite: ${ subscription.UnreadMessageCount }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a evita pierderea accesului. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a vă păstra abonamentul. ${ learnMoreLink }"
       ],
       "${ total } conversation": [
         "${ total } conversație",
@@ -7495,8 +7521,17 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Adăugați ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add ${ contact } to your contacts": [
+        "Adaugă ${ contact } în lista de contacte"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Adăugare ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Add a contact": [
+        "Adaugă un contact"
+      ],
+      "Add contact": [
+        "Adăugare contact"
       ],
       "Add image URL": [
         "Adăugare URL imagine"
@@ -7723,11 +7758,26 @@
       "Center": [
         "Centrare"
       ],
+      "Change a display setting": [
+        "Modifică o setare de afișare"
+      ],
       "Change display setting": [
         "Modificare setări afișare"
       ],
+      "Change how your mail is grouped": [
+        "Modifică felul în care sunt grupate mesajele"
+      ],
+      "Change your list density": [
+        "Modifică densitatea listei de mesaje"
+      ],
+      "Change your mailbox layout": [
+        "Modificați-vă aspectul interfeței"
+      ],
       "Change your password": [
         "Modificare parolă"
+      ],
+      "Change your theme": [
+        "Modificare temă"
       ],
       "Checked Proton support": [
         "Am verificat asistența de la Proton"
@@ -7803,8 +7853,17 @@
         "Creare ${ calendarsToBeCreatedCount } calendare",
         "Creare ${ calendarsToBeCreatedCount } de calendare"
       ],
+      "Create a filter": [
+        "Creare filtru"
+      ],
+      "Create a folder": [
+        "Creare folder"
+      ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "Creați un folder precum „${ suggestedFolderName }“ pentru a vă păstra toate chitanțele online într-un singur loc."
+      ],
+      "Create a label": [
+        "Creează o etichetă"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Creați o etichetă pentru mesajele importate, intervalul de timp de importat și folderele care trebuie importate."
@@ -7819,6 +7878,9 @@
         "Creați un cont în cloud securizat pentru ${ memberCount } membru",
         "Creați un cont cloud securizat pentru ${ memberCount } membri",
         "Creați un cont cloud securizat pentru ${ memberCount } de membri"
+      ],
+      "Create filter": [
+        "Creare filtru"
       ],
       "Create folder": [
         "Creare folder"
@@ -7908,6 +7970,12 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Doriți să reînregistrați datele contactului?"
+      ],
+      "Document in foundation-search index": [
+        "Document în indexul de căutare al fundației."
+      ],
+      "Document lookup failed": [
+        "Căutarea documentului a eșuat."
       ],
       "Don't forget to share the password with the recipient": [
         "Nu uitați să partajați parola cu destinatarul."
@@ -8299,7 +8367,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8342,6 +8412,12 @@
       ],
       "Key fingerprint": [
         "Amprentă cheie"
+      ],
+      "Label ${ emails }": [
+        "Etichetează ${ emails }"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "Etichetează ${ emails } cu ${ names }"
       ],
       "Label all imported messages as": [
         "Etichetare toate mesajele importate cu"
@@ -8391,6 +8467,9 @@
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
         "Jurnalele ne ajută să înțelegem ce s-a întâmplat înainte de apariția problemei. Acestea includ acțiuni ale aplicației și mesaje de eroare, dar nu și conținutul mesajelor."
       ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Căutare document ${ lookup.result.docId }"
+      ],
       "Low Priority": [
         "Prioritate scăzută"
       ],
@@ -8403,6 +8482,12 @@
       "Manage your labels": [
         "Gestionare etichete"
       ],
+      "Mark ${ emails } as read": [
+        "Marchează ca și citit: ${ emails }"
+      ],
+      "Mark ${ emails } as unread": [
+        "Marcare - necitit: ${ emails }"
+      ],
       "Mark all as read": [
         "Marcare toate - citite"
       ],
@@ -8414,6 +8499,12 @@
       ],
       "Mark as unread": [
         "Marcare: necitit"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "Marchează toate mesajele din ${ place } ca și citite"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "Marchează toate mesajele din ${ place } ca și necitite"
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -8487,6 +8578,12 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Majoritatea rețelelor Wi-Fi publice sunt sigure, dar unele nu au securitate, expunându-vă la amenințări cibernetice. Un VPN vă criptează traficul, păstrându-vă protecția."
       ],
+      "Move ${ emails }": [
+        "Mută ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Mută în ${ destination }: ${ emails }"
+      ],
       "Move emails": [
         "Mutare mesaje"
       ],
@@ -8526,6 +8623,9 @@
       "No email open": [
         "Niciun e-mail deschis"
       ],
+      "No emails selected": [
+        "Niciun mesaj neselectat"
+      ],
       "No folder found": [
         "Nu există foldere"
       ],
@@ -8543,6 +8643,9 @@
       ],
       "No links cleaned": [
         "Nu au fost curățate legături web"
+      ],
+      "No location selected": [
+        "Niciun loc selectat"
       ],
       "No messages to show": [
         "Nu sunt mesaje de afișat"
@@ -8576,6 +8679,12 @@
       ],
       "Not connected": [
         "Neconectat"
+      ],
+      "Not found in the encrypted search index.": [
+        "Nu a fost găsit în indexul de căutare criptat."
+      ],
+      "Not found in the foundation-search index.": [
+        "Nu a fost găsit în indexul de căutare al fundației."
       ],
       "Not supported by this browser": [
         "Nesuportat de acest navigator web"
@@ -8816,8 +8925,14 @@
         "Citire ${ count } etichete",
         "Citire ${ count } de etichete"
       ],
+      "Read your auto-reply": [
+        "Citire mesaj de răspuns automat"
+      ],
       "Read your display settings": [
         "Citiți setările de afișare"
+      ],
+      "Read your signature": [
+        "Citește semnătura"
       ],
       "Recipient: ": [
         "Destinatar: "
@@ -8840,8 +8955,20 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Nu uitați să vă actualizați aceste date în managerul de parole sau oriunde vă păstrați datele contului și de autentificare."
       ],
+      "Remove the star from ${ emails }": [
+        "Elimină steaua de pe ${ emails }"
+      ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Elimină toate datele asociate cu această aplicație (inclusiv mesajele descărcate etc.)"
+      ],
+      "Rename ${ folder } to…": [
+        "Redenumește ${ folder } cu…"
+      ],
+      "Rename folder": [
+        "Redenumire folder"
+      ],
+      "Rename this folder": [
+        "Redenumește acest folder"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Raportarea unui mesaj ca fiind o încercare de înșelăciune ne va trimite și nouă mesajul pentru a-l analiza și a îmbunătăți filtrele noastre. Aceasta înseamnă că vom putea vedea conținutul complet al mesajului."
@@ -8851,6 +8978,12 @@
       ],
       "Restore": [
         "Restaurare"
+      ],
+      "Results came from the local search.": [
+        "Rezultatele au provenit din căutarea locală."
+      ],
+      "Results came from the server.": [
+        "Rezultatele au venit de la server."
       ],
       "Right to Left": [
         "De la dreapta la stânga"
@@ -8968,8 +9101,17 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Setați ${ MAIL_APP_NAME } ca aplicație implicită de e-mail. ${ MAIL_APP_NAME } se va deschide automat atunci când faceți clic pe o legătură web de e-mail."
       ],
+      "Set auto-reply": [
+        "Setare răspuns automat"
+      ],
+      "Set signature": [
+        "Setare semnătură"
+      ],
       "Set up your organization": [
         "Setați organizația"
+      ],
+      "Set your signature": [
+        "Setați-vă semnătura"
       ],
       "Setting up ${ feature }…": [
         "Se setează ${ feature }…"
@@ -9018,6 +9160,12 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Ne pare rău, acest mesaj nu există sau a expirat deja."
+      ],
+      "Source document in encrypted search index": [
+        "Document sursă în indexul de căutare criptat."
+      ],
+      "Star ${ emails }": [
+        "Aplică stea la ${ emails }"
       ],
       "Star emails": [
         "Aplicare stea la mesaje"
@@ -9207,9 +9355,6 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Aceasta este acum ${ defaultEmailAddress } pentru trimiterea de mesaje noi."
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Asta necesită mulți pași. Ar trebui să continui?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Această legătură web duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
@@ -9408,11 +9553,20 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Încercați noile funcții, actualizări și produse ${ BRAND_NAME } înainte ca acestea să fie lansate publicului. Aceasta va reporni aplicația."
       ],
+      "Turn off auto-reply": [
+        "Dezactivare răspuns automat"
+      ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "Dezactivați pentru a căuta numai după dată, nume, adresă de e-mail sau conținut subiect. Pentru a dezactiva căutarea în conținutul mesajelor (și a șterge mesajele descărcate pentru a activa această funcție), accesați rubrica Setări."
       ],
+      "Turn off your away message": [
+        "Dezactivare mesaj de indisponibilitate"
+      ],
       "Turn on to search the content of your messages": [
         "Activați-l pentru a căuta în conținutul mesajelor."
+      ],
+      "Turn on your away message": [
+        "Activare mesaj de indisponibilitate"
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "Nu se poate accesa capacitatea de stocare în acest navigator web. Este nevoie de această funcție pentru a activa căutarea în conținutul mesajelor."
@@ -9440,6 +9594,12 @@
       ],
       "Update filter": [
         "Actualizare filtru"
+      ],
+      "Update the filter ${ filter }": [
+        "Actualizează filtrul ${ filter }"
+      ],
+      "Update this filter": [
+        "Actualizează acest filtru"
       ],
       "Updating message content search...": [
         "Se actualizează căutarea în conținutul mesajelor..."
@@ -10400,6 +10560,9 @@
       "Automated confirmations and alerts": [
         "Confirmări și alerte automate"
       ],
+      "Away message": [
+        "Mesaj de indisponibilitate"
+      ],
       "BCC": [
         "Ca"
       ],
@@ -10568,6 +10731,9 @@
       "Did not follow instructions": [
         "Nu a urmat instrucțiunile"
       ],
+      "Display name": [
+        "Nume afișat"
+      ],
       "Document ID": [
         "ID document"
       ],
@@ -10699,6 +10865,12 @@
       ],
       "From": [
         "De la"
+      ],
+      "From date": [
+        "De la data"
+      ],
+      "From time": [
+        "De la ora"
       ],
       "From:": [
         "De la:"
@@ -10888,6 +11060,9 @@
       ],
       "Never fill on this exact URL": [
         "La exact acest URL nu se completează"
+      ],
+      "New name": [
+        "Nume nou"
       ],
       "New password": [
         "Parola nouă"
@@ -11192,6 +11367,12 @@
       "Unsubscribed from ${ truncatedName }.": [
         "Dezabonat de la ${ truncatedName }."
       ],
+      "Until date": [
+        "Până la data"
+      ],
+      "Until time": [
+        "Până la ora"
+      ],
       "Updates": [
         "Actualizări"
       ],
@@ -11397,6 +11578,12 @@
     "Link": {
       "Add a gift code": [
         "Adăugare cod cadou"
+      ],
+      "Add formatting, links or images": [
+        "Adăugare formatare, legături web sau imagini"
+      ],
+      "Advanced auto-reply options": [
+        "Opțiuni avansate de răspuns automat"
       ],
       "All mail": [
         "Toate mesajele"
@@ -15180,6 +15367,12 @@
         "${ count } e-mail → ${ wakeTime }",
         "${ count } e-mailuri → ${ wakeTime }",
         "${ count } de e-mailuri → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "Amână ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "Amânare ${ emails } până ${ wakeTime }"
       ]
     },
     "Snooze message": {
@@ -16722,9 +16915,6 @@
       "Apply gift code": [
         "Aplicare cod cadou"
       ],
-      "Apply labels": [
-        "Aplicare etichete"
-      ],
       "Archive all messages?": [
         "Arhivați toate mesajele?"
       ],
@@ -16781,9 +16971,6 @@
       ],
       "CC": [
         "C"
-      ],
-      "Change display setting": [
-        "Modificare setări afișare"
       ],
       "Change my answer": [
         "Schimbare răspuns"
@@ -16857,14 +17044,8 @@
       "Create contact": [
         "Creare contact"
       ],
-      "Create folder": [
-        "Creare folder"
-      ],
       "Create folder \"${ search }\"": [
         "Creare folder „${ search }”"
-      ],
-      "Create label": [
-        "Creare etichetă"
       ],
       "Create label \"${ search }\"": [
         "Creare eticheta „${ search }”"
@@ -17183,12 +17364,6 @@
       "Make your inbox your own": [
         "Personalizați-vă contul"
       ],
-      "Mark all as read": [
-        "Marcare toate ca și citite"
-      ],
-      "Mark all as unread": [
-        "Marcare toate ca și necitite"
-      ],
       "Mark all messages as read": [
         "Marcare toate mesajele ca fiind citite"
       ],
@@ -17260,9 +17435,6 @@
       ],
       "Move all messages to trash": [
         "Mutare toate mesajele în „Gunoi”"
-      ],
-      "Move emails": [
-        "Mutare mesaje"
       ],
       "Move to": [
         "Mutare în"
@@ -17573,17 +17745,11 @@
       "Snooze": [
         "Amânare"
       ],
-      "Snooze emails": [
-        "Amânare mesaje"
-      ],
       "Snooze message": [
         "Amânare mesaj"
       ],
       "Snooze:": [
         "Amânare:"
-      ],
-      "Star emails": [
-        "Marcare mesaje cu stea"
       ],
       "Start a new import": [
         "Începere importare nouă"
@@ -17593,9 +17759,6 @@
       ],
       "Stay for 50% off your next month": [
         "Rămâneți cu o reducere de 50% luna următoare"
-      ],
-      "Still working on it": [
-        "Încă lucrez la asta"
       ],
       "Storage capacity warning": [
         "Avertizare spațiu de stocare"
@@ -17644,9 +17807,6 @@
       "Two-factor authentication": [
         "Autentificare cu doi factori"
       ],
-      "Unstar emails": [
-        "Anulare stea de la mesaje"
-      ],
       "Unsubscribe": [
         "Dezabonare"
       ],
@@ -17658,9 +17818,6 @@
       ],
       "Unsubscribe request sent": [
         "Solicitare de dezabonare trimisă"
-      ],
-      "Update filter": [
-        "Actualizare filtru"
       ],
       "Upgrade complete!": [
         "Modificare finalizată!"
