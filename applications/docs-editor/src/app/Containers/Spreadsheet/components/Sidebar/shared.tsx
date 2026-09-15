@@ -70,7 +70,7 @@ export const FormLabel = createComponent(function FormLabel({ className, ...prop
   return <Ariakit.Role.label className={clsx('text-sm font-semibold', className)} {...props} />
 })
 
-export function FormRadioIcon() {
+function FormRadioIcon() {
   return (
     <span className="flex size-5 items-center justify-center rounded-full border-[1px] border-[#ADABA8]">
       <span className="hidden size-2 rounded-full bg-[#6D4AFF] group-has-[[aria-checked='true']]:block aria-checked:block group-aria-checked:block" />
@@ -78,7 +78,7 @@ export function FormRadioIcon() {
   )
 }
 
-export function FormCheckmarkIcon() {
+function FormCheckmarkIcon() {
   return (
     <span
       className={clsx(

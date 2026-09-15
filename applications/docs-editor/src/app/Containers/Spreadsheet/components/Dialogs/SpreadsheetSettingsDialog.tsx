@@ -38,7 +38,7 @@ const FormDescription = createComponent(function (props: ComponentProps<'p'>) {
   return <p {...props} className={clsx('text-sm text-[--text-hint]', props.className)} />
 })
 
-export const Select = createComponent(function ({ children, ...props }: Ariakit.SelectProps) {
+const Select = createComponent(function ({ children, ...props }: Ariakit.SelectProps) {
   return (
     <Ariakit.Select
       {...props}
@@ -56,7 +56,7 @@ export const Select = createComponent(function ({ children, ...props }: Ariakit.
   )
 })
 
-export const SelectItem = createComponent(function SelectItem(props: Ariakit.SelectItemProps) {
+const SelectItem = createComponent(function SelectItem(props: Ariakit.SelectItemProps) {
   return (
     <Ariakit.SelectItem
       {...props}
