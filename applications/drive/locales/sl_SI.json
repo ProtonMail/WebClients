@@ -261,6 +261,9 @@
       "Copy address": [
         "Kopiraj naslov"
       ],
+      "Copy alias “${ name }”": [
+        "Kopiraj vzdevek \"${ name }\""
+      ],
       "Copy email to clipboard": [
         "Kopiraj e-poštni naslov v odložišče"
       ],
@@ -3221,9 +3224,6 @@
       "A problem occurred, please try again.": [
         "Prišlo je do težave, poskusite znova."
       ],
-      "Account does not exist": [
-        "Račun ne obstaja"
-      ],
       "Address could not be added.": [
         "Naslova ni bilo mogoče dodati."
       ],
@@ -3412,9 +3412,6 @@
       ],
       "Expiration date cannot be in the past": [
         "Datum poteka ne more biti v preteklosti"
-      ],
-      "External accounts are not supported yet": [
-        "Zunanji računi še niso podprti."
       ],
       "External invitations are temporarily disabled.": [
         "Zunanja povabila so začasno onemogočena."
