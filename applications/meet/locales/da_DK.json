@@ -34,6 +34,9 @@
       "${ name } lowered their hand": [
         "${ name } sænkede hånden"
       ],
+      "${ name } mentioned you: ${ message }": [
+        "${ name } nævnte dig: ${ message }"
+      ],
       "${ name } raised their hand": [
         "${ name } rakte hånden op"
       ],
@@ -45,6 +48,10 @@
       ],
       "${ name }: ${ message }": [
         "${ name }: ${ message }"
+      ],
+      "${ suggestionCount } mention suggestion available": [
+        "${ suggestionCount } anbefaling til omtale er tilgængelig",
+        "${ suggestionCount } anbefalinger til omtale er tilgængelig"
       ],
       "A participant joined the meeting": [
         "En deltager tilsluttede sig mødet"
@@ -157,6 +164,9 @@
       "You have been muted by the host": [
         "Værten har slået din lyd fra"
       ],
+      "You were mentioned: ${ message }": [
+        "Du blev nævnt: ${ message }"
+      ],
       "Your camera has been turned off by the host": [
         "Værten har slået dit kamera fra"
       ],
@@ -167,6 +177,10 @@
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
+      ],
+      "${ newMentionCount } new mention": [
+        "${ newMentionCount } ny omtale",
+        "${ newMentionCount } nye omtaler"
       ],
       "${ newMessageCount } new": [
         "${ newMessageCount } ny",
@@ -312,6 +326,9 @@
       ],
       "Dismiss": [
         "Afvis"
+      ],
+      "Dismiss new mentions": [
+        "Skjul nye omtaler"
       ],
       "Dismiss new messages": [
         "Skjul nye beskeder"
@@ -2175,6 +2192,9 @@
       "Live captions have stopped.": [
         "Live undertekster stoppede."
       ],
+      "Message is too long to send": [
+        "Beskeden er for stor til at sende"
+      ],
       "Microphone access is blocked. Allow it in your browser settings.": [
         "Adgang til mikrofonen er blokeret. Tillad den i dine browserindstillinger."
       ],
@@ -2295,6 +2315,12 @@
       ],
       "The meeting password is invalid": [
         "Mødeadgangskoden er ugyldig"
+      ],
+      "The mention could not be added because the message is at its character limit": [
+        "Denne omtale kunne ikke tilføjes fordi beskeden har nået dens maksimale antal tegn"
+      ],
+      "The message field is unavailable. Please reload the page.": [
+        "Beskedfeltet er ikke tilgængeligt. Opdater siden."
       ],
       "The selected microphone is no longer available.": [
         "Det valgte mikrofon er ikke længere tilgængeligt."
@@ -2627,6 +2653,9 @@
         "${ replyCount } svar",
         "${ replyCount } svar"
       ],
+      "${ senderNameNode } mentioned you": [
+        "${ senderNameNode } nævnte dig"
+      ],
       "${ spotlightParticipantName } is the active speaker": [
         "${ spotlightParticipantName } er den aktive taler"
       ],
@@ -2818,6 +2847,9 @@
       "End-to-end encryption is active for this chat.": [
         "End-to-end kryptering er aktiv for denne chat."
       ],
+      "enter": [
+        "indtast"
+      ],
       "Enter code": [
         "Indtast kode"
       ],
@@ -2992,6 +3024,9 @@
       "Member": [
         "Medlem"
       ],
+      "Mention from ${ senderName }": [
+        "Omtale fra ${ senderName }"
+      ],
       "Message actions": [
         "Beskedhandlinger"
       ],
@@ -3060,6 +3095,9 @@
       ],
       "Not sent, check your connection.": [
         "Ikke sendt, tjek din forbindelse."
+      ],
+      "notify everyone here": [
+        "giv besked til alle"
       ],
       "Only meetings you created appear here": [
         "Kun møder oprettet af dig vises her"
@@ -3574,6 +3612,9 @@
       "Every year": [
         "Hvert år"
       ],
+      "everyone": [
+        "alle"
+      ],
       "Google Calendar": [
         "Google Kalender"
       ],
@@ -3615,6 +3656,9 @@
       ],
       "Meeting link": [
         "Mødelink"
+      ],
+      "Mention a participant": [
+        "Nævn en deltager"
       ],
       "Message": [
         "Besked"
@@ -3670,9 +3714,6 @@
       "Reply": [
         "Besvar"
       ],
-      "Return to dashboard": [
-        "Tilbage til kontrolpanel"
-      ],
       "Reveal password": [
         "Vis adgangskode"
       ],
@@ -3705,6 +3746,9 @@
       ],
       "Track SID": [
         "Spor SID"
+      ],
+      "unknown": [
+        "ukendt"
       ],
       "Uploaded image": [
         "Uploadet billede"
@@ -3812,6 +3856,9 @@
       ],
       "Successfully rotated your personal meeting": [
         "Dit personlige møde blev fornyet."
+      ],
+      "Thanks! Your feedback has been submitted.": [
+        "Tak. Din feedback er nu indsendt."
       ],
       "You can't send a feedback for a meeting you haven't been to": [
         "Du kan ikke give feedback for et møde, du ikke har deltaget i"
@@ -4313,9 +4360,6 @@
       "Talk confidentially": [
         "Tal fortroligt"
       ],
-      "Thank you!": [
-        "Tak!"
-      ],
       "The host didn't admit you": [
         "Værten gav dig ikke adgang"
       ],
@@ -4342,9 +4386,6 @@
       ],
       "What went wrong?": [
         "Hvad gik galt?"
-      ],
-      "Your feedback has been submitted": [
-        "Din feedback er blevet indsendt"
       ],
       "Your recording is ready": [
         "Din optagelse er klar"

@@ -34,6 +34,9 @@
       "${ name } lowered their hand": [
         "${ name } ha baixat la mà"
       ],
+      "${ name } mentioned you: ${ message }": [
+        "${ name } us ha anomenat: ${ message }"
+      ],
       "${ name } raised their hand": [
         "${ name } ha aixecat la mà"
       ],
@@ -45,6 +48,10 @@
       ],
       "${ name }: ${ message }": [
         "${ name }: ${ message }"
+      ],
+      "${ suggestionCount } mention suggestion available": [
+        "Hi ha ${ suggestionCount } suggeriment disponible",
+        "Hi ha ${ suggestionCount } suggeriments disponibles"
       ],
       "A participant joined the meeting": [
         "Un assistent s'ha afegit a la reunió"
@@ -157,6 +164,9 @@
       "You have been muted by the host": [
         "El moderador us ha silenciat"
       ],
+      "You were mentioned: ${ message }": [
+        "Us han anomenat: ${ message }"
+      ],
       "Your camera has been turned off by the host": [
         "El moderador us ha desconnectat la càmera"
       ],
@@ -167,6 +177,10 @@
     "Action": {
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
+      ],
+      "${ newMentionCount } new mention": [
+        "Hi ha ${ newMentionCount } nova menció",
+        "Hi ha ${ newMentionCount } noves mencions"
       ],
       "${ newMessageCount } new": [
         "${ newMessageCount } nou",
@@ -312,6 +326,9 @@
       ],
       "Dismiss": [
         "Descarta"
+      ],
+      "Dismiss new mentions": [
+        "Ignorar noves mencions"
       ],
       "Dismiss new messages": [
         "Descarteu els missatges nous"
@@ -2175,6 +2192,9 @@
       "Live captions have stopped.": [
         "S'han aturat els subtítols en directe."
       ],
+      "Message is too long to send": [
+        "El missatge és massa gran per ser enviat"
+      ],
       "Microphone access is blocked. Allow it in your browser settings.": [
         "L'accés al micròfon està bloquejat. Permeteu-ho a les preferències del navegador."
       ],
@@ -2295,6 +2315,12 @@
       ],
       "The meeting password is invalid": [
         "La contrasenya de la reunió no és vàlida"
+      ],
+      "The mention could not be added because the message is at its character limit": [
+        "La menció no s'ha pogut afegir perquè el missatge ha arribat al límit de caràcters."
+      ],
+      "The message field is unavailable. Please reload the page.": [
+        "El camp de missatge no està disponible. Torneu a carregar la pàgina."
       ],
       "The selected microphone is no longer available.": [
         "El micròfon seleccionat ja no està disponible."
@@ -2627,6 +2653,9 @@
         "${ replyCount } resposta",
         "${ replyCount } respostes"
       ],
+      "${ senderNameNode } mentioned you": [
+        "${ senderNameNode } us ha anomenat"
+      ],
       "${ spotlightParticipantName } is the active speaker": [
         "${ spotlightParticipantName } és qui parla"
       ],
@@ -2818,6 +2847,9 @@
       "End-to-end encryption is active for this chat.": [
         "El xifratge d'extrem a extrem està actiu per a aquest xat."
       ],
+      "enter": [
+        "entrar"
+      ],
       "Enter code": [
         "Introduir el codi"
       ],
@@ -2992,6 +3024,9 @@
       "Member": [
         "Membre"
       ],
+      "Mention from ${ senderName }": [
+        "Hi ha una menció de ${ senderName }"
+      ],
       "Message actions": [
         "Accions del missatge"
       ],
@@ -3060,6 +3095,9 @@
       ],
       "Not sent, check your connection.": [
         "No s'ha enviat, comproveu la vostra connexió."
+      ],
+      "notify everyone here": [
+        "notificar-ho a tothom aquí"
       ],
       "Only meetings you created appear here": [
         "Només les reunions que hàgiu creat apareixen aquí"
@@ -3574,6 +3612,9 @@
       "Every year": [
         "Cada any"
       ],
+      "everyone": [
+        "tothom"
+      ],
       "Google Calendar": [
         "Calendari de Google"
       ],
@@ -3615,6 +3656,9 @@
       ],
       "Meeting link": [
         "Enllaç de la reunió"
+      ],
+      "Mention a participant": [
+        "Esmentar un participant"
       ],
       "Message": [
         "Missatge"
@@ -3670,9 +3714,6 @@
       "Reply": [
         "Respondre"
       ],
-      "Return to dashboard": [
-        "Tornar al tauler de control"
-      ],
       "Reveal password": [
         "Mostra la contrasenya"
       ],
@@ -3705,6 +3746,9 @@
       ],
       "Track SID": [
         "Track SID"
+      ],
+      "unknown": [
+        "desconegut"
       ],
       "Uploaded image": [
         "Imatge carregada"
@@ -3812,6 +3856,9 @@
       ],
       "Successfully rotated your personal meeting": [
         "S'ha rotat correctament la vostra reunió personal"
+      ],
+      "Thanks! Your feedback has been submitted.": [
+        "Gràcies. S'han enviat els vostres comentaris."
       ],
       "You can't send a feedback for a meeting you haven't been to": [
         "No podeu enviar comentaris d'una reunió a la qual no heu assistit"
@@ -4313,9 +4360,6 @@
       "Talk confidentially": [
         "Parleu amb confidencialitat"
       ],
-      "Thank you!": [
-        "Gràcies!"
-      ],
       "The host didn't admit you": [
         "L'amfitrió no us ha admès"
       ],
@@ -4342,9 +4386,6 @@
       ],
       "What went wrong?": [
         "Què ha anat malament?"
-      ],
-      "Your feedback has been submitted": [
-        "Els vostres comentaris s'han enviat"
       ],
       "Your recording is ready": [
         "El vostre enregistrament està a punt"

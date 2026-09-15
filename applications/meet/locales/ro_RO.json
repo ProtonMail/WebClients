@@ -34,6 +34,9 @@
       "${ name } lowered their hand": [
         "${ name } a coborât mâna"
       ],
+      "${ name } mentioned you: ${ message }": [
+        "${ name } v-a menționat: ${ message }"
+      ],
       "${ name } raised their hand": [
         "${ name } a ridicat mâna"
       ],
@@ -45,6 +48,11 @@
       ],
       "${ name }: ${ message }": [
         "${ name }: ${ message }"
+      ],
+      "${ suggestionCount } mention suggestion available": [
+        "Mențiuni de sugestii disponibile: ${ suggestionCount }",
+        "Mențiuni de sugestii disponibile: ${ suggestionCount }",
+        "Mențiuni de sugestii disponibile: ${ suggestionCount }"
       ],
       "A participant joined the meeting": [
         "Un participant s-a alăturat conferinței"
@@ -157,6 +165,9 @@
       "You have been muted by the host": [
         "Gazda v-a oprit microfonul"
       ],
+      "You were mentioned: ${ message }": [
+        "Cineva v-a menționat: ${ message }"
+      ],
       "Your camera has been turned off by the host": [
         "Gazda v-a oprit camera"
       ],
@@ -167,6 +178,11 @@
     "Action": {
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
+      ],
+      "${ newMentionCount } new mention": [
+        "Mențiuni noi: ${ newMentionCount }",
+        "Mențiuni noi: ${ newMentionCount }",
+        "Mențiuni noi: ${ newMentionCount }"
       ],
       "${ newMessageCount } new": [
         "Mesaje noi: ${ newMessageCount }",
@@ -228,7 +244,7 @@
         "Anulare"
       ],
       "Change layout": [
-        "Modificare aspect"
+        "Modificare aranjare"
       ],
       "Change password": [
         "Modificare parolă"
@@ -313,6 +329,9 @@
       ],
       "Dismiss": [
         "Renunțare"
+      ],
+      "Dismiss new mentions": [
+        "Ignorare mențiuni noi"
       ],
       "Dismiss new messages": [
         "Închidere mesaje noi"
@@ -804,7 +823,7 @@
         "Video de intrare"
       ],
       "Layout: ${ selectedLabel }": [
-        "Aspect: ${ selectedLabel }"
+        "Aranjare: ${ selectedLabel }"
       ],
       "Leave Meeting": [
         "Părăsire întâlnire"
@@ -919,7 +938,7 @@
         "Setări dispozitiv"
       ],
       "Layouts": [
-        "Aspecte"
+        "Aranjări"
       ],
       "Meeting details": [
         "Detalii conferință"
@@ -2178,6 +2197,9 @@
       "Live captions have stopped.": [
         "Subtitrările live s-au oprit."
       ],
+      "Message is too long to send": [
+        "Mesajul este prea lung pentru trimitere."
+      ],
       "Microphone access is blocked. Allow it in your browser settings.": [
         "Accesul la microfon este blocat. Permiteți-l în setările navigatorului web."
       ],
@@ -2299,6 +2321,12 @@
       ],
       "The meeting password is invalid": [
         "Parola conferinței nu este validă."
+      ],
+      "The mention could not be added because the message is at its character limit": [
+        "Mențiunea nu a putut fi adăugată deoarece mesajul a atins limita de caractere."
+      ],
+      "The message field is unavailable. Please reload the page.": [
+        "Câmpul mesajului nu este disponibil. Reîncărcați pagina."
       ],
       "The selected microphone is no longer available.": [
         "Microfonul selectat nu mai este disponibil."
@@ -2638,6 +2666,9 @@
         "Răspunsuri: ${ replyCount }",
         "Răspunsuri: ${ replyCount }"
       ],
+      "${ senderNameNode } mentioned you": [
+        "${ senderNameNode } v-a menționat"
+      ],
       "${ spotlightParticipantName } is the active speaker": [
         "${ spotlightParticipantName } este difuzorul activ"
       ],
@@ -2831,6 +2862,9 @@
       "End-to-end encryption is active for this chat.": [
         "Criptarea bilaterală este activă pentru această discuție."
       ],
+      "enter": [
+        "introduceți"
+      ],
       "Enter code": [
         "Introduceți codul"
       ],
@@ -3005,6 +3039,9 @@
       "Member": [
         "Membru"
       ],
+      "Mention from ${ senderName }": [
+        "Mențiune de la ${ senderName }"
+      ],
       "Message actions": [
         "Acțiuni mesaj"
       ],
@@ -3073,6 +3110,9 @@
       ],
       "Not sent, check your connection.": [
         "Netrimis. Verificați conexiunea."
+      ],
+      "notify everyone here": [
+        "notificare toți de aici"
       ],
       "Only meetings you created appear here": [
         "Aici apar doar conferințele pe care le-ați creat."
@@ -3588,6 +3628,9 @@
       "Every year": [
         "Anual"
       ],
+      "everyone": [
+        "toți"
+      ],
       "Google Calendar": [
         "Calendar Google"
       ],
@@ -3629,6 +3672,9 @@
       ],
       "Meeting link": [
         "Legătură web conferință"
+      ],
+      "Mention a participant": [
+        "Menționare participant"
       ],
       "Message": [
         "Mesaj"
@@ -3684,9 +3730,6 @@
       "Reply": [
         "Răspuns"
       ],
-      "Return to dashboard": [
-        "Înapoi la panoul de control"
-      ],
       "Reveal password": [
         "Afișare parolă"
       ],
@@ -3719,6 +3762,9 @@
       ],
       "Track SID": [
         "Urmărire SID"
+      ],
+      "unknown": [
+        "necunoscut"
       ],
       "Uploaded image": [
         "Imagine încărcată"
@@ -3826,6 +3872,9 @@
       ],
       "Successfully rotated your personal meeting": [
         "V-ați rotit cu succes întâlnirea personală."
+      ],
+      "Thanks! Your feedback has been submitted.": [
+        "Vă mulțumim! Feedback-ul a fost trimis."
       ],
       "You can't send a feedback for a meeting you haven't been to": [
         "Nu puteți trimite un feedback pentru o conferință la care nu ați participat."
@@ -4329,9 +4378,6 @@
       "Talk confidentially": [
         "Discuție confidențială"
       ],
-      "Thank you!": [
-        "Vă mulțumim!"
-      ],
       "The host didn't admit you": [
         "Gazda nu v-a admis"
       ],
@@ -4358,9 +4404,6 @@
       ],
       "What went wrong?": [
         "Ce nu a funcționat?"
-      ],
-      "Your feedback has been submitted": [
-        "Mesajul a fost trimis."
       ],
       "Your recording is ready": [
         "Înregistrarea este pregătită"
