@@ -1,16 +1,29 @@
 import { DefinePlugin, type Configuration } from 'webpack'
 import { config as dotenvConfig } from 'dotenv'
 import path from 'node:path'
-dotenvConfig({ path: path.join(__dirname, '.env') })
 
 import { type WebpackEnvArguments, getWebpackOptions } from '@proton/pack/lib/config'
 import { addDevEntry, getConfig } from '@proton/pack/webpack.config'
 
 import appConfig from './appConfig'
 
+const isStandaloneSheet = process.env.STANDALONE_SHEET === 'true'
+if (!isStandaloneSheet) {
+  dotenvConfig({ path: path.join(__dirname, '.env') })
+}
+
 const result = (opts: WebpackEnvArguments): Configuration => {
   const webpackOptions = getWebpackOptions(opts, { appConfig })
   const config = getConfig(webpackOptions)
+
+  if (isStandaloneSheet) {
+    config.entry = { index: [path.resolve(__dirname, 'src/standalone-sheet/index.tsx')] }
+    if (config.devServer) {
+      config.devServer.host = '127.0.0.1'
+      config.devServer.allowedHosts = ['localhost', '127.0.0.1']
+      config.devServer.proxy = undefined
+    }
+  }
 
   config.watchOptions = {
     ...config.watchOptions,
@@ -20,10 +33,10 @@ const result = (opts: WebpackEnvArguments): Configuration => {
   }
   config.plugins?.push(
     new DefinePlugin({
-      'process.env.DOCS_SHEETS_KEY': JSON.stringify(process.env.DOCS_SHEETS_KEY),
+      'process.env.DOCS_SHEETS_KEY': JSON.stringify(isStandaloneSheet ? undefined : process.env.DOCS_SHEETS_KEY),
     }),
   )
-  if (webpackOptions.appMode === 'standalone') {
+  if (webpackOptions.appMode === 'standalone' && !isStandaloneSheet) {
     addDevEntry(config)
   }
   // @ts-ignore
