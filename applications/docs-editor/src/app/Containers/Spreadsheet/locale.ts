@@ -4,10 +4,10 @@ import { useEffect, useMemo, useState } from 'react'
 import { CURRENCY_PATTERN, getCurrencySymbol } from './constants'
 import { ssfFormat } from '@rowsncolumns/utils'
 
-export const CURRENCY_FALLBACK = 'USD'
-export const LOCALE_FALLBACK = 'en-us'
+const CURRENCY_FALLBACK = 'USD'
+const LOCALE_FALLBACK = 'en-us'
 
-export const LOCALE_TO_CURRENCY_MAP: Record<string, string> = {
+const LOCALE_TO_CURRENCY_MAP: Record<string, string> = {
   'ar-eg': 'EGP',
   'az-az': 'AZN',
   'be-by': 'BYN',

@@ -4,14 +4,14 @@ import { c } from 'ttag'
 
 import './CircleLoader.css'
 
-export enum CircleLoaderSizeEnum {
+enum CircleLoaderSizeEnum {
   Large = 'large',
   Medium = 'medium',
   Small = 'small',
   Tiny = 'tiny',
 }
 
-export type CircleLoaderSize = `${CircleLoaderSizeEnum}`
+type CircleLoaderSize = `${CircleLoaderSizeEnum}`
 
 export interface CircleLoaderProps extends ComponentPropsWithoutRef<'svg'> {
   size?: CircleLoaderSize

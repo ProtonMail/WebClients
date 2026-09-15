@@ -3,7 +3,7 @@ import { useMemo, useRef, useState } from 'react'
 import { ssfFormat } from '@rowsncolumns/utils'
 import { createStringifier } from '../../../stringifier'
 import { useUI } from '../../../ui-store'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import * as Ariakit from '@ariakit/react'
 import { Button, FormGroup, FormLabel } from '../../Sidebar/shared'
 import { DateAndTimeFormatEditor, type DateAndTimeFormatEditorRef } from './DateAndTimeFormatEditor'
@@ -38,7 +38,7 @@ const PATTERN_PRESETS: string[] = [
 
 const SAMPLE_DATE = new Date(1930, 7, 5, 13, 25, 59)
 
-export function CustomDateAndTimeFormatDialogContent() {
+function CustomDateAndTimeFormatDialogContent() {
   const store = useUI((ui) => ui.view.customDateAndTimeFormatDialog.store)
   const sheetId = useUI((ui) => ui.legacy.activeSheetId)
   const selections = useUI((ui) => ui.legacy.selections)
