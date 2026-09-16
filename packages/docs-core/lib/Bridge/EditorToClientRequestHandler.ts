@@ -222,7 +222,7 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
     window.history.replaceState(null, '', url)
   }
 
-  reportSheetsYjsDriftDetected(reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs'): void {
+  reportSheetsYjsDriftDetected(reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs' | 'both'): void {
     this.docOrchestrator.reportSheetsYjsDriftDetected(reason)
   }
 
