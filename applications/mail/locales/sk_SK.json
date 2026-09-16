@@ -1555,10 +1555,7 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče"
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -1766,6 +1763,9 @@
       ],
       "Add a payment method": [
         "Pridať spôsob platby"
+      ],
+      "Add more details": [
+        "Pridať ďalšie podrobnosti"
       ]
     },
     "action": {
@@ -5812,6 +5812,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhľadávanie našlo príliš veľa výsledkov. Upresnite hľadanie a skúste to prosím znova."
+      ],
+      "A contact with this email address already exists": [
+        "Kontakt s touto emailovou adresou už existuje"
       ]
     },
     "error": {
@@ -6284,6 +6287,9 @@
       ],
       "Still waiting?": [
         "Stále čakáte?"
+      ],
+      "Touch your security key to continue.": [
+        "Dotknite sa svojho bezpečnostného kľúča, aby ste pokračovali."
       ]
     },
     "fido2: Label": {
@@ -8449,7 +8455,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -10166,6 +10175,171 @@
       ],
       "Turn off auto-reply": [
         "Vypnúť automatickú odpoveď"
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } doteraz urobilo ${ count }. Chcete pokračovať?"
+      ],
+      "${ steps } step": [
+        "${ steps } krok",
+        "${ steps } kroky",
+        "${ steps } krokov",
+        "${ steps } krokov"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Zostáva vám ešte ${ timeRemaining } v rámci skúšobnej doby. Kliknite na ${ addPaymentMethodLink }, aby ste neprišli o prístup. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Zostáva vám ${ timeRemaining } skúšobnej doby. Kliknite na ${ addPaymentMethodLink }, ak si chcete predplatné zachovať. ${ learnMoreLink }"
+      ],
+      "Add ${ contact } to your contacts": [
+        "Pridať ${ contact } do vašich kontaktov"
+      ],
+      "Add a contact": [
+        "Pridať kontakt"
+      ],
+      "Add contact": [
+        "Pridať kontakt"
+      ],
+      "Change a display setting": [
+        "Zmeniť nastavenie zobrazenia"
+      ],
+      "Change how your mail is grouped": [
+        "Zmeňte spôsob zoskupovania vašich emailov"
+      ],
+      "Change your list density": [
+        "Zmeniť hustotu zoznamu"
+      ],
+      "Change your mailbox layout": [
+        "Zmeniť rozloženie poštovej schránky"
+      ],
+      "Change your theme": [
+        "Zmeniť motív"
+      ],
+      "Create a filter": [
+        "Vytvoriť filter"
+      ],
+      "Create a folder": [
+        "Vytvoriť priečinok"
+      ],
+      "Create a label": [
+        "Vytvoriť štítok"
+      ],
+      "Document in foundation-search index": [
+        "Dokument v základnom vyhľadávacom indexe"
+      ],
+      "Document lookup failed": [
+        "Vyhľadávanie dokumentu zlyhalo"
+      ],
+      "Label ${ emails }": [
+        "Štítok na ${ emails }"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "Označte ${ emails } ako ${ names }"
+      ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Vyhľadanie dokumentu ${ lookup.result.docId }"
+      ],
+      "Mark ${ emails } as read": [
+        "Označiť ${ emails } ako prečítané"
+      ],
+      "Mark ${ emails } as unread": [
+        "Označiť ${ emails } ako neprečítané"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "Označiť celý obsah ${ place } ako prečítaný"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "Označiť celý obsah ${ place } ako neprečítaný"
+      ],
+      "Move ${ emails }": [
+        "Presunúť ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Presunúť ${ emails } do ${ destination }"
+      ],
+      "No draft open": [
+        "Žiadny otvorený koncept"
+      ],
+      "No emails selected": [
+        "Neboli vybrané žiadne emaily"
+      ],
+      "No location selected": [
+        "Nebolo vybraté umiestnenie"
+      ],
+      "Not found in the encrypted search index.": [
+        "Nenašlo sa v šifrovanom vyhľadávacom indexe."
+      ],
+      "Not found in the foundation-search index.": [
+        "Nenašlo sa v základnom vyhľadávacom indexe."
+      ],
+      "Opened a draft": [
+        "Otvoril som koncept"
+      ],
+      "Read ${ count } open draft": [
+        "Prečítať ${ count } otvorený koncept",
+        "Prečítať ${ count } otvorené koncepty",
+        "Prečítať ${ count } otvorených konceptov",
+        "Prečítať ${ count } otvorených konceptov"
+      ],
+      "Read draft \"${ subject }\"": [
+        "Prečítať koncept \"${ subject }\""
+      ],
+      "Read the open draft": [
+        "Prečítať otvorený koncept"
+      ],
+      "Read your auto-reply": [
+        "Prečítajte si svoju automatickú odpoveď"
+      ],
+      "Read your signature": [
+        "Prečítajte si svoj podpis"
+      ],
+      "Readdressed the draft": [
+        "Koncept bol prepracovaný"
+      ],
+      "Remove the star from ${ emails }": [
+        "Odstrániť hviezdičku z ${ emails }"
+      ],
+      "Rename ${ folder } to…": [
+        "Premenovať ${ folder } na…"
+      ],
+      "Rename this folder": [
+        "Premenovať tento priečinok"
+      ],
+      "Results came from the local search.": [
+        "Výsledky pochádzajú z lokálneho vyhľadávania."
+      ],
+      "Results came from the server.": [
+        "Výsledky pochádzajú zo servera."
+      ],
+      "Rewrote and readdressed the draft": [
+        "Koncept bol prepísaný a prepracovaný"
+      ],
+      "Rewrote the draft": [
+        "Prepísať koncept"
+      ],
+      "Set auto-reply": [
+        "Nastaviť automatickú odpoveď"
+      ],
+      "Set your signature": [
+        "Nastavte svoj podpis"
+      ],
+      "Source document in encrypted search index": [
+        "Zdrojový dokument v šifrovanom vyhľadávacom indexe"
+      ],
+      "Star ${ emails }": [
+        "Hviezdičku na ${ emails }"
+      ],
+      "Turn off your away message": [
+        "Vypnúť správu o neprítomnosti"
+      ],
+      "Turn on your away message": [
+        "Zapnite si správu o neprítomnosti"
+      ],
+      "Update the filter ${ filter }": [
+        "Aktualizovať filter ${ filter }"
+      ],
+      "Update this filter": [
+        "Aktualizovať tento filter"
       ]
     },
     "info": {
@@ -11494,6 +11668,18 @@
       ],
       "New name": [
         "Nový názov"
+      ],
+      "From date": [
+        "Od"
+      ],
+      "From time": [
+        "Od"
+      ],
+      "Until date": [
+        "Dátum ukončenia"
+      ],
+      "Until time": [
+        "Až do času"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11841,6 +12027,12 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Pre zobrazenie upravenej pozvánky musíte znovu aktivovať svoje kľúče"
+      ],
+      "Add formatting, links or images": [
+        "Pridať formátovanie, odkazy alebo obrázky"
+      ],
+      "Advanced auto-reply options": [
+        "Rozšírené možnosti automatických odpovedí"
       ]
     },
     "Link to calendar event": {
@@ -15470,6 +15662,12 @@
         "${ count } emaily → ${ wakeTime }",
         "${ count } emailov → ${ wakeTime }",
         "${ count } emailov → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "Odložiť ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "Odložiť ${ emails } do ${ wakeTime }"
       ]
     },
     "Snooze message": {

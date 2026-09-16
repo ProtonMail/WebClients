@@ -1748,6 +1748,9 @@
       ],
       "Add a payment method": [
         "添加支付方式"
+      ],
+      "Add more details": [
+        "添加更多详情"
       ]
     },
     "action": {
@@ -5656,6 +5659,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜索结果过多，请缩小搜索范围后再试。"
+      ],
+      "A contact with this email address already exists": [
+        "该邮箱地址的联系人已存在"
       ]
     },
     "error": {
@@ -6116,6 +6122,12 @@
       ],
       "Touch your security key.": [
         "请触碰您的安全密钥！"
+      ],
+      "Still waiting?": [
+        "仍在等待？"
+      ],
+      "Touch your security key to continue.": [
+        "触摸您的安全密钥以继续。"
       ]
     },
     "fido2: Label": {
@@ -9650,6 +9662,126 @@
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "试用期剩余 ${ timeRemaining }。${ addPaymentMethodLink } 以保留您的订阅。${ learnMoreLink }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } 目前已连续 ${ count } 次。是否继续？"
+      ],
+      "${ steps } step": [
+        "${ steps } 个步骤"
+      ],
+      "Add ${ contact } to your contacts": [
+        "将 ${ contact } 添加到您的联系人"
+      ],
+      "Add a contact": [
+        "添加联系人"
+      ],
+      "Add contact": [
+        "添加联系人"
+      ],
+      "Change a display setting": [
+        "更改显示设置"
+      ],
+      "Change how your mail is grouped": [
+        "更改邮件的分组方式"
+      ],
+      "Change your list density": [
+        "更改您的列表密度"
+      ],
+      "Change your mailbox layout": [
+        "更改您的邮箱布局"
+      ],
+      "Change your theme": [
+        "更改您的主题"
+      ],
+      "Create a filter": [
+        "创建筛选"
+      ],
+      "Create a folder": [
+        "新建文件夹"
+      ],
+      "Create a label": [
+        "新建标签"
+      ],
+      "Document in foundation-search index": [
+        "基础搜索索引中的文档"
+      ],
+      "Document lookup failed": [
+        "文档查找失败"
+      ],
+      "Label ${ emails }": [
+        "为 ${ emails } 添加标签"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "将 ${ emails } 标为 ${ names }"
+      ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "查找文档 ${ lookup.result.docId }"
+      ],
+      "Mark ${ emails } as read": [
+        "将 ${ emails } 标为已读"
+      ],
+      "Mark ${ emails } as unread": [
+        "将 ${ emails } 标为未读"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "将 ${ place } 的全部邮件标为已读"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "将 ${ place } 的全部邮件标为未读"
+      ],
+      "Move ${ emails }": [
+        "移动 ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "将 ${ emails } 移至 ${ destination }"
+      ],
+      "No emails selected": [
+        "未选择邮件"
+      ],
+      "No location selected": [
+        "未选择位置"
+      ],
+      "Not found in the encrypted search index.": [
+        "在加密搜索索引中未找到！"
+      ],
+      "Not found in the foundation-search index.": [
+        "在基础搜索索引中未找到！"
+      ],
+      "Remove the star from ${ emails }": [
+        "移除 ${ emails } 的星标"
+      ],
+      "Rename ${ folder } to…": [
+        "将 ${ folder } 重命名为…"
+      ],
+      "Rename this folder": [
+        "重命名文件夹"
+      ],
+      "Results came from the local search.": [
+        "结果来自本地搜索"
+      ],
+      "Results came from the server.": [
+        "结果来自服务器"
+      ],
+      "Set your signature": [
+        "设置您的签名"
+      ],
+      "Source document in encrypted search index": [
+        "加密搜索索引中的源文档"
+      ],
+      "Star ${ emails }": [
+        "为 ${ emails } 加星标"
+      ],
+      "Turn off your away message": [
+        "关闭您的暂离邮件"
+      ],
+      "Turn on your away message": [
+        "开启您的暂离邮件"
+      ],
+      "Update the filter ${ filter }": [
+        "更新筛选 ${ filter }"
+      ],
+      "Update this filter": [
+        "更新筛选"
       ]
     },
     "info": {
@@ -14717,6 +14849,12 @@
     "Snooze info": {
       "${ count } email → ${ wakeTime }": [
         "${ count } 封邮件 → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "推迟 ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "将 ${ emails } 推迟至 ${ wakeTime }"
       ]
     },
     "Snooze message": {

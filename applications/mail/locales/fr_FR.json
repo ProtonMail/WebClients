@@ -1541,8 +1541,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Faire confiance à cette clé",
-        "Faire confiance à ces clés"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -8045,7 +8044,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -9689,6 +9689,31 @@
       ],
       "Update this filter": [
         "Mettre à jour ce filtre"
+      ],
+      "No draft open": [
+        "Pas de brouillon ouvert."
+      ],
+      "Opened a draft": [
+        "J’ai ouvert un brouillon"
+      ],
+      "Read ${ count } open draft": [
+        "Lire ${ count } brouillon ouvert",
+        "Lire ${ count } brouillons ouverts"
+      ],
+      "Read draft \"${ subject }\"": [
+        "Lire le brouillon « ${ subject } »"
+      ],
+      "Read the open draft": [
+        "Lire le brouillon ouvert"
+      ],
+      "Readdressed the draft": [
+        "Réécriture du brouillon"
+      ],
+      "Rewrote and readdressed the draft": [
+        "Réécriture et réorientation du brouillon"
+      ],
+      "Rewrote the draft": [
+        "Réécriture du brouillon"
       ]
     },
     "info": {
