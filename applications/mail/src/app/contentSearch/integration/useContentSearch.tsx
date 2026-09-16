@@ -3,7 +3,6 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
-import { useApi } from '@proton/app-context/useApi';
 import { defaultESIndexingState, defaultESStatus } from '@proton/encrypted-search/constants';
 import type { IndexingMetrics } from '@proton/encrypted-search/esHelpers';
 import type {
@@ -19,7 +18,7 @@ import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSear
 import { esSearching, selectSearch } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
 import { getSharedIndexService } from '../indexation/IndexService';
-import { MetricService } from '../metrics/MetricService';
+import type { MetricService } from '../metrics/MetricService';
 import { SearchService } from '../search/SearchService';
 import { logger } from '../utils/logger';
 import { ESAdapter, type ESStatusConcrete } from './ESAdapter';
@@ -32,10 +31,11 @@ export type FunctionsV2 = Omit<FunctionsV1, 'esStatus' | 'esIndexingProgressStat
     reportResultOpened: ESAdapter['reportResultOpened'];
     reportResultAction: ESAdapter['reportResultAction'];
     endSearchSession: ESAdapter['endSearchSession'];
+    startSearchSession: ESAdapter['startSearchSession'];
 };
 /** `useContentSearch`'s return type: the generic v1 surface plus the v2-only additions above. */
 export type ContentSearchFunctions = FunctionsV1 &
-    Pick<FunctionsV2, 'reportResultOpened' | 'reportResultAction' | 'endSearchSession'>;
+    Pick<FunctionsV2, 'reportResultOpened' | 'reportResultAction' | 'endSearchSession' | 'startSearchSession'>;
 
 interface Props {
     refreshMask: number;
@@ -53,6 +53,7 @@ interface Props {
      * reports goes nowhere. `handleEvent` stays live regardless — see `ESAdapter.handleEvent`.
      */
     isActive: boolean;
+    metricService: MetricService;
 }
 
 /**
@@ -82,6 +83,7 @@ const toBoundFunctions = (adapter: ESAdapter): FunctionsV2 => ({
     reportResultOpened: adapter.reportResultOpened.bind(adapter),
     reportResultAction: adapter.reportResultAction.bind(adapter),
     endSearchSession: adapter.endSearchSession.bind(adapter),
+    startSearchSession: adapter.startSearchSession.bind(adapter),
 });
 
 /**
@@ -92,8 +94,12 @@ const toBoundFunctions = (adapter: ESAdapter): FunctionsV2 => ({
  * adapter drives these through the setters passed at construction, and the hook rebuilds the returned
  * functions object whenever they change so consumers re-render — exactly like `useEncryptedSearch`.
  */
-export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1, isActive }: Props): ContentSearchFunctions => {
-    const api = useApi();
+export const useContentSearch = ({
+    esCallbacks,
+    esLibraryFunctionsV1,
+    isActive,
+    metricService,
+}: Props): ContentSearchFunctions => {
     const [user] = useUser();
     const getUserKeys = useGetUserKeys();
     const [addresses] = useAddresses();
@@ -116,7 +122,6 @@ export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1, isActive }
     const adapterRef = useRef<ESAdapter>();
     if (!adapterRef.current) {
         const indexService = getSharedIndexService(user.ID, getUserKeys, logger);
-        const metricService = new MetricService(api, logger);
         // A settable field, not a constructor dependency — see `IndexService.metricService`.
         indexService.metricService = metricService;
         const searchService = new SearchService(user.ID, getUserKeys, indexService.dbLock, logger, metricService);

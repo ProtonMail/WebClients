@@ -5,7 +5,6 @@ import type { IDBPDatabase } from 'idb';
 import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
-import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -68,6 +67,8 @@ import {
     writeAllEvents,
 } from './esIDB';
 import type {
+    ContentSearchEventStatus,
+    ContentSearchIndexErrorKind,
     ESCache,
     ESCallbacks,
     ESEvent,
@@ -87,16 +88,9 @@ import type {
     HighlightString,
     InternalESCallbacks,
 } from './models';
-import type { useContentSearchTelemetry } from './useContentSearchTelemetry';
-import { getMailboxAddressType } from './useContentSearchTelemetry';
 import { useEncryptedSearchIndexingProgress } from './useEncryptedSearchIndexingProgress';
 import { useEncryptedSearchStatus } from './useEncryptedSearchStatus';
 import { SEARCH_TYPE, useSearchTelemetry } from './useSearchTelemetry';
-
-type QueryCompletedParams = Parameters<ReturnType<typeof useContentSearchTelemetry>['sendQueryCompletedReport']>[0];
-type MailboxIndexCompletedParams = Parameters<
-    ReturnType<typeof useContentSearchTelemetry>['sendMailboxIndexCompletedReport']
->[0];
 
 interface Props<ESItemMetadata, ESSearchParameters, ESItemContent = void> {
     refreshMask: number;
@@ -104,9 +98,21 @@ interface Props<ESItemMetadata, ESSearchParameters, ESItemContent = void> {
     contentIndexingSuccessMessage?: string;
     onMetadataIndexed?: (metrics: IndexingMetrics) => void;
     /** Called when a search completes — routing to v1 or v2 telemetry is the caller's call, not this library's. */
-    onSearchCompleted?: (params: QueryCompletedParams) => void;
+    onSearchCompleted?: (params: {
+        hasResults: boolean;
+        status: ContentSearchEventStatus;
+        errorKind?: string;
+        resultCount: number;
+    }) => void;
     /** Called when a first full mailbox indexing pass completes — see `onSearchCompleted`. */
-    onIndexCompleted?: (params: MailboxIndexCompletedParams) => void;
+    onIndexCompleted?: (params: {
+        status: ContentSearchEventStatus;
+        errorKind?: ContentSearchIndexErrorKind;
+        totalMessagesIndexed: number;
+        mailboxMessagesTotal?: number;
+    }) => void;
+    /** Called when a first full mailbox indexing pass begins — pairs with `onIndexCompleted`, which measures `durationMs` from here. */
+    onIndexingStarted?: () => void;
 }
 
 /**
@@ -125,11 +131,11 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
     onMetadataIndexed,
     onSearchCompleted,
     onIndexCompleted,
+    onIndexingStarted,
 }: Props<ESItemMetadata, ESSearchParameters, ESItemContent>) => {
     const getUserKeys = useGetUserKeys();
     const [user] = useUser();
     const { ID: userID } = user;
-    const [addresses] = useAddresses();
     const { createNotification } = useNotifications();
     const esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent> = {
         ...defaultESCallbacks,
@@ -812,8 +818,6 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
             onIndexCompleted?.({
                 status: 'success',
                 totalMessagesIndexed: totalItems,
-                durationMs: indexTime,
-                mailboxAddressType: getMailboxAddressType(addresses),
             });
         }
     };
@@ -886,6 +890,12 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         let totalItems = 0;
         let recoveryPoint: ESTimepoint | undefined;
         if (!previousProgress) {
+            // Mirrors `mailbox_index_completed`'s gate below (`!isRefreshed`, read back from this
+            // same flag once persisted): only the first full historic pass measures a duration.
+            if (!isRefreshed) {
+                onIndexingStarted?.();
+            }
+
             // Save the event before starting building IndexedDB. The number of items
             // before indexing aims to show progress, as new items will be synced only
             // after indexing has completed
@@ -1029,11 +1039,6 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         uncachedItemsFound?: number;
     }) => {
         const indexSize = (await readSize(userID)) || 0;
-        // performance.now() timings aren't Unix time; derive the wall-clock bounds from `searchTime`
-        // (already the duration in ms) so `query_completed` can report the timestamps mobile sends.
-        const endTime = Date.now();
-        const startTime = endTime - searchTime;
-
         sendESSearchCompleteReport({
             searchTime,
             isFirstSearch,
@@ -1051,9 +1056,6 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
             hasResults: !!itemsFound,
             status: 'success',
             resultCount: itemsFound,
-            durationMs: searchTime,
-            startTime,
-            endTime,
         });
     };
 

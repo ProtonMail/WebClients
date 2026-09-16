@@ -1,5 +1,4 @@
 import { useApi } from '@proton/app-context/useApi';
-import type { ContentSearchResultAction } from '@proton/encrypted-search/models';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { TelemetryMailListEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
@@ -7,6 +6,7 @@ import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
+import type { ContentSearchResultAction } from '../../../contentSearch/metrics/interface';
 import { selectIsSearching } from '../../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../../store/hooks';
 import { folderLocation } from './listTelemetryHelper';

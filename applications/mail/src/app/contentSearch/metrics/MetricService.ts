@@ -1,35 +1,44 @@
-import type {
-    ContentSearchActionSurface,
-    ContentSearchEndReason,
-    ContentSearchIndexErrorKind,
-    ContentSearchResultAction,
-    ContentSearchSessionActionType,
-    SearchSession,
-} from '@proton/encrypted-search/models';
-import {
-    type ContentSearchEventStatus,
-    SEARCH_RESULT_PRIMARY_MATCH_TYPE,
-    SEARCH_RESULT_SCROLLER_MODE,
-} from '@proton/encrypted-search/models';
-import { getMailboxAddressType } from '@proton/encrypted-search/useContentSearchTelemetry';
-import {
-    TelemetryContentSearchEvents,
-    TelemetryContentSearchIndexEvents,
-    TelemetryMeasurementGroups,
-} from '@proton/shared/lib/api/telemetry';
+import type { ContentSearchEventStatus, ContentSearchIndexErrorKind } from '@proton/encrypted-search/models';
+import type { TelemetryReport } from '@proton/shared/lib/api/telemetry';
+import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { Api } from '@proton/shared/lib/interfaces';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import type { Logger } from '../utils/logger';
-import { SEARCH_SOURCE, SEARCH_VERSION_V2 } from './interface';
+import type {
+    ContentSearchEndReason,
+    ContentSearchMailboxAddressType,
+    ContentSearchResultAction,
+    ContentSearchSessionActionType,
+    ContentSearchVersion,
+    SearchSession,
+} from './interface';
+import { type ContentSearchActionSurface, SEARCH_RESULT_SCROLLER_MODE } from './interface';
+import {
+    buildIndexCompletedPayload,
+    buildQueryCompletedPayload,
+    buildResultActionPayload,
+    buildResultOpenedPayload,
+    buildSearchSessionStartedPayload,
+} from './telemetryEventBuilder';
+
+const getMailboxAddressType = (addresses: Address[] | undefined): ContentSearchMailboxAddressType => {
+    if (!addresses || !addresses.length) {
+        return 'proton';
+    }
+
+    const byoeCount = addresses.filter(getIsBYOEAddress).length;
+
+    if (byoeCount === 0) {
+        return 'proton';
+    }
+
+    return byoeCount === addresses.length ? 'byoe' : 'mixed';
+};
 
 /**
- * Single entry point for content-search-v2 telemetry: per-event reports (query/result/index) and the
- * search-session rollup (`search_session_completed`) they feed, kept together because a session is
- * only ever updated as a side effect of the same events this class already reports on individually.
- * Consumers (`ESAdapter`) call the report methods and `startSearchSession`/`endSearchSession` only —
- * session bookkeeping is this class's own business, not something callers drive separately.
+ * Single entry point for content-search metrics
  */
 export class MetricService {
     /** Set by `startMailboxIndexing`; `mailbox_index_completed`'s `durationMs` is measured from here. */
@@ -46,11 +55,37 @@ export class MetricService {
 
     constructor(
         private readonly api: Api,
-        private readonly logger: Logger
+        private readonly logger: Logger,
+        private readonly searchVersion: ContentSearchVersion
     ) {}
 
+    private recordFirstAction(type: ContentSearchSessionActionType) {
+        if (!this.session || this.session.firstActionType !== undefined) {
+            return;
+        }
+
+        this.logger.info('First action recorded');
+        this.session.firstActionAt = Date.now();
+        this.session.firstActionType = type;
+    }
+
+    private reportTelemetry(payload: TelemetryReport) {
+        void sendTelemetryReport({
+            ...payload,
+            api: this.api,
+            delay: true,
+        });
+    }
+
+    private updateSession(mutate: (session: SearchSession) => void) {
+        if (!this.session) {
+            return;
+        }
+        mutate(this.session);
+    }
+
     /** Call once, when the v1+v2 indexing pipeline begins — see `ESAdapter.startIndexingJob`. */
-    startMailboxIndexing() {
+    startIndexing() {
         this.indexingStartedAt = Date.now();
     }
 
@@ -71,21 +106,10 @@ export class MetricService {
         };
     }
 
-    private recordFirstAction(type: ContentSearchSessionActionType) {
-        if (!this.session || this.session.firstActionType !== undefined) {
-            return;
-        }
-
-        this.logger.info('First action recorded');
-        this.session.firstActionAt = Date.now();
-        this.session.firstActionType = type;
-    }
-
-    sendQueryCompletedReport({
+    searchCompleted({
         hasResults,
         status,
         errorKind,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         resultCount,
     }: {
         hasResults: boolean;
@@ -93,37 +117,33 @@ export class MetricService {
         errorKind?: string;
         resultCount: number;
     }) {
-        this.logger.info('Query completed report sent');
+        this.logger.info('Search completed');
 
-        const durationMs = this.searchStartedAt !== undefined ? Date.now() - this.searchStartedAt : 0;
+        const endTime = Date.now();
+        const startTime = this.searchStartedAt ?? 0;
+
         this.searchStartedAt = undefined;
 
-        if (this.session) {
-            this.session.hasResults = hasResults;
-            this.session.scrollerMode = SEARCH_RESULT_SCROLLER_MODE;
-        }
+        this.updateSession((session) => {
+            session.hasResults = hasResults;
+            session.scrollerMode = SEARCH_RESULT_SCROLLER_MODE;
+        });
 
-        void sendTelemetryReport({
-            api: this.api,
-            measurementGroup: TelemetryMeasurementGroups.contentSearch,
-            event: TelemetryContentSearchEvents.query_completed,
-            dimensions: {
+        this.reportTelemetry(
+            buildQueryCompletedPayload({
+                hasResults,
                 status,
                 errorKind,
-                hasResults: hasResults.toString(),
-                searchSource: SEARCH_SOURCE,
-                searchVersion: SEARCH_VERSION_V2,
-            },
-            values: {
-                // TODO this can be changed once INWEB-1184 is fixed
-                resultCount: 0,
-                durationMs,
-            },
-            delay: true,
-        });
+                resultCount,
+                durationMs: endTime - startTime,
+                startTime,
+                endTime,
+                searchVersion: this.searchVersion,
+            })
+        );
     }
 
-    sendResultOpenedReport({
+    resultOpened({
         isFirstOpen,
         resultPosition,
         messageAgeDays,
@@ -132,34 +152,27 @@ export class MetricService {
         resultPosition: number;
         messageAgeDays: number;
     }) {
-        this.logger.info('Result opened report sent');
-
-        if (this.session) {
-            this.session.resultsOpened += 1;
-            this.session.actionsPerformed += 1;
-            if (this.session.firstOpenedPosition === undefined) {
-                this.session.firstOpenedPosition = resultPosition;
+        this.logger.info('Result opened');
+        this.updateSession((session) => {
+            session.resultsOpened += 1;
+            session.actionsPerformed += 1;
+            if (session.firstOpenedPosition === undefined) {
+                session.firstOpenedPosition = resultPosition;
             }
             this.recordFirstAction('open');
-        }
-
-        void sendTelemetryReport({
-            api: this.api,
-            measurementGroup: TelemetryMeasurementGroups.contentSearch,
-            event: TelemetryContentSearchEvents.result_opened,
-            dimensions: {
-                scrollerMode: SEARCH_RESULT_SCROLLER_MODE,
-                primaryMatchType: SEARCH_RESULT_PRIMARY_MATCH_TYPE,
-                isFirstOpen: isFirstOpen.toString(),
-                searchSource: SEARCH_SOURCE,
-                searchVersion: SEARCH_VERSION_V2,
-            },
-            values: { resultPosition, messageAgeDays },
-            delay: true,
         });
+
+        this.reportTelemetry(
+            buildResultOpenedPayload({
+                isFirstOpen,
+                resultPosition,
+                messageAgeDays,
+                searchVersion: this.searchVersion,
+            })
+        );
     }
 
-    sendResultActionReport({
+    resultActionPerformed({
         action,
         actionSurface,
         resultPosition,
@@ -168,32 +181,23 @@ export class MetricService {
         actionSurface: ContentSearchActionSurface;
         resultPosition?: number;
     }) {
-        this.logger.info('Result action report sent');
-
-        if (this.session) {
-            this.session.actionsPerformed += 1;
+        this.logger.info('Result action performed');
+        this.updateSession((session) => {
+            session.actionsPerformed += 1;
             this.recordFirstAction(action);
-        }
+        });
 
-        void sendTelemetryReport({
-            api: this.api,
-            measurementGroup: TelemetryMeasurementGroups.contentSearch,
-            event: TelemetryContentSearchEvents.result_action,
-            dimensions: {
+        this.reportTelemetry(
+            buildResultActionPayload({
                 action,
                 actionSurface,
-                searchSource: SEARCH_SOURCE,
-                scrollerMode: SEARCH_RESULT_SCROLLER_MODE,
-                searchVersion: SEARCH_VERSION_V2,
-            },
-            values: {
+                searchVersion: this.searchVersion,
                 resultPosition,
-            },
-            delay: true,
-        });
+            })
+        );
     }
 
-    sendMailboxIndexCompletedReport({
+    mailboxIndexCompleted({
         status,
         errorKind,
         totalMessagesIndexed,
@@ -204,28 +208,22 @@ export class MetricService {
         totalMessagesIndexed: number;
         mailboxMessagesTotal?: number;
     }) {
-        this.logger.info('Mailbox index completed report sent');
+        this.logger.info('Mailbox index completed');
 
         const durationMs = this.indexingStartedAt !== undefined ? Date.now() - this.indexingStartedAt : 0;
         this.indexingStartedAt = undefined;
 
-        void sendTelemetryReport({
-            api: this.api,
-            measurementGroup: TelemetryMeasurementGroups.contentSearchIndex,
-            event: TelemetryContentSearchIndexEvents.mailbox_index_completed,
-            dimensions: {
+        this.reportTelemetry(
+            buildIndexCompletedPayload({
                 status,
                 errorKind,
-                mailboxAddressType: getMailboxAddressType(this.addresses),
-                searchVersion: SEARCH_VERSION_V2,
-            },
-            values: {
                 totalMessagesIndexed,
                 durationMs,
                 mailboxMessagesTotal,
-            },
-            delay: true,
-        });
+                mailboxAddressType: getMailboxAddressType(this.addresses),
+                searchVersion: this.searchVersion,
+            })
+        );
     }
 
     /** Call once when the search UI session ends — see `EncryptedSearchProvider.endSearchSession`. */
@@ -235,38 +233,14 @@ export class MetricService {
         }
         this.logger.info('Search session ended');
 
-        const {
-            startedAt,
-            firstActionAt,
-            hasResults,
-            scrollerMode,
-            resultsOpened,
-            actionsPerformed,
-            firstActionType,
-            firstOpenedPosition,
-        } = this.session;
+        const payload = buildSearchSessionStartedPayload({
+            session: this.session,
+            endReason,
+            searchVersion: this.searchVersion,
+        });
+
         this.session = undefined;
 
-        void sendTelemetryReport({
-            api: this.api,
-            measurementGroup: TelemetryMeasurementGroups.contentSearch,
-            event: TelemetryContentSearchEvents.search_session_completed,
-            dimensions: {
-                endReason,
-                scrollerMode,
-                firstActionType,
-                hasResults: hasResults.toString(),
-                searchSource: SEARCH_SOURCE,
-                searchVersion: SEARCH_VERSION_V2,
-            },
-            values: {
-                resultsOpened,
-                actionsPerformed,
-                firstOpenedPosition,
-                timeToFirstActionMs: firstActionAt !== undefined ? firstActionAt - startedAt : undefined,
-                sessionDurationMs: Date.now() - startedAt,
-            },
-            delay: true,
-        });
+        this.reportTelemetry(payload);
     }
 }
