@@ -1,4 +1,3 @@
-import metrics from '@proton/metrics';
 import getRandomString from '@proton/utils/getRandomString';
 import noop from '@proton/utils/noop';
 
@@ -24,6 +23,7 @@ import { createPromise, wait } from '../helpers/promise';
 import { setUID } from '../helpers/sentry';
 import { getItem, removeItem, setItem } from '../helpers/sessionStorage';
 import type { Api } from '../interfaces';
+import { getSharedMetricsClient } from '../metrics/sharedMetricsClient';
 import { telemetry } from '../telemetry';
 
 const setupComplete = Symbol('setup complete');
@@ -60,7 +60,7 @@ export const createUnauthenticatedApi = (api: Api) => {
         setItem(unAuthStorageKey, UID);
 
         setUID(UID);
-        metrics.setAuthHeaders(UID);
+        getSharedMetricsClient().setAuthHeaders(UID);
         telemetry.setAuthHeaders(UID || '');
 
         context.UID = UID;
