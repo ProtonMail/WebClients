@@ -55,16 +55,6 @@ jest.mock('./useSearchTelemetry', () => ({
     }),
 }));
 
-jest.mock('./useContentSearchTelemetry', () => ({
-    useContentSearchTelemetry: jest.fn().mockReturnValue({
-        sendQueryCompletedReport: jest.fn(),
-        sendResultOpenedReport: jest.fn(),
-        sendResultActionReport: jest.fn(),
-        sendMailboxIndexCompletedReport: jest.fn(),
-    }),
-    getMailboxAddressType: jest.fn().mockReturnValue('proton'),
-}));
-
 jest.mock('./useEncryptedSearchStatus', () => ({
     useEncryptedSearchStatus: jest.fn().mockReturnValue([{}, jest.fn()]),
 }));

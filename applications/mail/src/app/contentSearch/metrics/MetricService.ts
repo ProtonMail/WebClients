@@ -2,26 +2,41 @@ import type {
     ContentSearchActionSurface,
     ContentSearchEndReason,
     ContentSearchIndexErrorKind,
+    ContentSearchMailboxAddressType,
     ContentSearchResultAction,
     ContentSearchSessionActionType,
+    ContentSearchVersion,
     SearchSession,
 } from '@proton/encrypted-search/models';
 import { type ContentSearchEventStatus, SEARCH_RESULT_SCROLLER_MODE } from '@proton/encrypted-search/models';
+import type { TelemetryReport } from '@proton/shared/lib/api/telemetry';
+import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
+import type { Api } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+
+import type { Logger } from '../utils/logger';
 import {
     buildIndexCompletedPayload,
     buildQueryCompletedPayload,
     buildResultActionPayload,
     buildResultOpenedPayload,
     buildSearchSessionStartedPayload,
-} from '@proton/encrypted-search/telemetryBuilder';
-import { getMailboxAddressType } from '@proton/encrypted-search/useContentSearchTelemetry';
-import type { TelemetryReport } from '@proton/shared/lib/api/telemetry';
-import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import type { Api } from '@proton/shared/lib/interfaces';
-import type { Address } from '@proton/shared/lib/interfaces/Address';
+} from './telemetryEventBuilder';
 
-import type { Logger } from '../utils/logger';
-import { SEARCH_VERSION_V2 } from './interface';
+export const getMailboxAddressType = (addresses: Address[] | undefined): ContentSearchMailboxAddressType => {
+    if (!addresses || !addresses.length) {
+        return 'proton';
+    }
+
+    const byoeCount = addresses.filter(getIsBYOEAddress).length;
+
+    if (byoeCount === 0) {
+        return 'proton';
+    }
+
+    return byoeCount === addresses.length ? 'byoe' : 'mixed';
+};
 
 /**
  * Single entry point for content-search metrics
@@ -41,7 +56,8 @@ export class MetricService {
 
     constructor(
         private readonly api: Api,
-        private readonly logger: Logger
+        private readonly logger: Logger,
+        private readonly searchVersion: ContentSearchVersion
     ) {}
 
     private recordFirstAction(type: ContentSearchSessionActionType) {
@@ -123,7 +139,7 @@ export class MetricService {
                 durationMs: endTime - startTime,
                 startTime,
                 endTime,
-                searchVersion: SEARCH_VERSION_V2,
+                searchVersion: this.searchVersion,
             })
         );
     }
@@ -152,7 +168,7 @@ export class MetricService {
                 isFirstOpen,
                 resultPosition,
                 messageAgeDays,
-                searchVersion: SEARCH_VERSION_V2,
+                searchVersion: this.searchVersion,
             })
         );
     }
@@ -176,7 +192,7 @@ export class MetricService {
             buildResultActionPayload({
                 action,
                 actionSurface,
-                searchVersion: SEARCH_VERSION_V2,
+                searchVersion: this.searchVersion,
                 resultPosition,
             })
         );
@@ -206,7 +222,7 @@ export class MetricService {
                 durationMs,
                 mailboxMessagesTotal,
                 mailboxAddressType: getMailboxAddressType(this.addresses),
-                searchVersion: SEARCH_VERSION_V2,
+                searchVersion: this.searchVersion,
             })
         );
     }
@@ -221,7 +237,7 @@ export class MetricService {
         const payload = buildSearchSessionStartedPayload({
             session: this.session,
             endReason,
-            searchVersion: SEARCH_VERSION_V2,
+            searchVersion: this.searchVersion,
         });
 
         this.session = undefined;
