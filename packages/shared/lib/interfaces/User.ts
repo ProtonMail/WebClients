@@ -1,5 +1,5 @@
 import type { Product } from '../ProductEnum';
-import type { AccessType } from '../authentication/accessType';
+import type { SessionAccessTypeMask } from '../authentication/sessionAccessType';
 import type { USER_ROLES } from '../constants';
 import type { Currency } from '../payments/interface';
 import type { Key } from './Key';
@@ -162,7 +162,7 @@ export interface UserInfo {
     hasPaidMeet: boolean;
     hasPassLifetime: boolean;
     canPay: boolean;
-    accessType: AccessType;
+    accessTypeMask: SessionAccessTypeMask;
 }
 
 export interface UserModel extends User, UserInfo {}

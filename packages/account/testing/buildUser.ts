@@ -1,4 +1,4 @@
-import { AccessType } from '@proton/shared/lib/authentication/accessType';
+import { selfAccessTypeMask } from '@proton/shared/lib/authentication/sessionAccessType';
 import type { Key, UserModel } from '@proton/shared/lib/interfaces';
 
 import { privateKeyA } from './data/keys';
@@ -81,7 +81,7 @@ export const buildUser = (value?: Partial<UserModel>): UserModel => {
         hasPaidMeet: false,
         hasPassLifetime: false,
         canPay: true,
-        accessType: AccessType.Self,
+        accessTypeMask: selfAccessTypeMask,
         AccountRecovery: null,
         HasMultipleSubscriptions: false,
         ForbiddenProducts: [],

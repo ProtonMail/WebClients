@@ -8,14 +8,13 @@ import { getIs401Error } from '../api/helpers/apiErrorHelper';
 import { getUIDApi } from '../api/helpers/customConfig';
 import { InactiveSessionError } from '../api/helpers/errors';
 import { getUser } from '../api/user';
-import type { AccessType } from '../authentication/accessType';
-import { getAccessType } from '../authentication/getAccessType';
 import { withUIDHeaders } from '../fetch/headers';
 import { wait } from '../helpers/promise';
 import { captureMessage } from '../helpers/sentry';
 import type { Api, User as tsUser } from '../interfaces';
 import { appMode } from '../webpack.constants';
 import { type PersistedSession, type PersistedSessionLite, SessionSource } from './SessionInterface';
+import type { AccessType } from './accessType';
 import { generateClientKey, getClientKey } from './clientKey';
 import { InvalidPersistentSessionError } from './error';
 import type { LocalKeyResponse, LocalSessionResponse } from './interface';
@@ -29,6 +28,7 @@ import {
     removePersistedSessionByLocalIDAndUID,
     setPersistedSession,
 } from './persistedSessionStorage';
+import { getAccessTypeFromMask, getSessionAccessTypeMask } from './sessionAccessType';
 
 export const compareSessions = (a: ActiveSessionLite, b: ActiveSessionLite) => {
     if (a.remote.DisplayName && b.remote.DisplayName) {
@@ -230,7 +230,7 @@ export const persistSession = async ({
         UID,
         UserID: User.ID,
         keyPassword,
-        accessType: getAccessType(User),
+        accessTypeMask: getSessionAccessTypeMask(User),
         persistent,
         trusted,
         offlineKey,
@@ -260,7 +260,61 @@ export const extendPersistedSessionOfflineBypass = async (localID: number) => {
     }
 };
 
-export const findPersistedSession = ({
+const isMatchingSource = (persistedSession: PersistedSession, source: SessionSource[] | null) => {
+    return source === null ? true : source.some((value) => value === persistedSession.source);
+};
+
+/**
+ * A local id identifies a session on this device outright, so the user id is only here to assert
+ * that the slot still holds the session the caller meant.
+ */
+export const findPersistedSessionByLocalID = ({
+    persistedSessions,
+    localID,
+    UserID,
+    source,
+}: {
+    persistedSessions: PersistedSession[];
+    localID: number;
+    UserID: string;
+    source: SessionSource[] | null;
+}) => {
+    return persistedSessions.find((persistedSession) => {
+        return (
+            persistedSession.localID === localID &&
+            persistedSession.UserID === UserID &&
+            isMatchingSource(persistedSession, source)
+        );
+    });
+};
+
+/**
+ * The first session for a user, whichever kind of access it is. A user can have several on a device
+ * - their own, plus an admin or emergency access into the same account - so the caller has to
+ * establish for itself that this is the one it wanted.
+ */
+export const findPersistedSessionByUserID = ({
+    persistedSessions,
+    UserID,
+    source,
+}: {
+    persistedSessions: PersistedSession[];
+    UserID: string;
+    source: SessionSource[] | null;
+}) => {
+    return persistedSessions.find((persistedSession) => {
+        return persistedSession.UserID === UserID && isMatchingSource(persistedSession, source);
+    });
+};
+
+/**
+ * Only reachable from a logout URL sent by a client that carries no local id, where a single
+ * `AccessType` was all there was to tell apart the several sessions a user can have on a device.
+ * The stored mask is collapsed to meet it, so both sides are compared at the precision the URL
+ * actually has - comparing the mask itself would miss a session holding more than one flag.
+ * Prefer {@link findPersistedSessionByLocalID}.
+ */
+export const findPersistedSessionByAccessType = ({
     persistedSessions,
     UserID,
     accessType,
@@ -272,10 +326,11 @@ export const findPersistedSession = ({
     source: SessionSource[] | null;
 }) => {
     return persistedSessions.find((persistedSession) => {
-        const isSameUserID = persistedSession.UserID === UserID;
-        const isSameAccessType = persistedSession.accessType === accessType;
-        const isSameSource = source === null ? true : source.some((value) => value === persistedSession.source);
-        return isSameUserID && isSameAccessType && isSameSource;
+        return (
+            persistedSession.UserID === UserID &&
+            getAccessTypeFromMask(persistedSession.accessTypeMask) === accessType &&
+            isMatchingSource(persistedSession, source)
+        );
     });
 };
 
@@ -332,6 +387,7 @@ const getActiveSessionsMissingFromRemoteResponse = async ({
                 PrimaryEmail: User.Email,
                 UserID: User.ID,
                 LocalID: localID,
+                AccessType: getSessionAccessTypeMask(User),
             };
             return {
                 remote: remoteSession,
@@ -616,17 +672,21 @@ export const maybeResumeSessionByUser = async ({
     User: tsUser;
     options: SessionOptions;
 }) => {
-    const maybePersistedSession = findPersistedSession({
+    const maybePersistedSession = findPersistedSessionByUserID({
         persistedSessions: getPersistedSessions(),
         UserID: User.ID,
-        accessType: getAccessType(User),
         source: options.source ?? defaultSessionOptions.source,
     });
     if (!maybePersistedSession) {
         return;
     }
     try {
-        return await resumeSession({ api, localID: maybePersistedSession.localID, options });
+        const resumedSession = await resumeSession({ api, localID: maybePersistedSession.localID, options });
+        // Ensure the access types of the resumed and new user are the same.
+        if (getSessionAccessTypeMask(resumedSession.User) !== getSessionAccessTypeMask(User)) {
+            return;
+        }
+        return resumedSession;
     } catch (e: any) {
         if (!(e instanceof InvalidPersistentSessionError)) {
             throw e;
