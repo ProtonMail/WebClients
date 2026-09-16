@@ -1748,6 +1748,9 @@
       ],
       "Add a payment method": [
         "결제 방법 추가하기"
+      ],
+      "Add more details": [
+        "자세한 내용 추가"
       ]
     },
     "action": {
@@ -5656,6 +5659,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "검색 결과가 너무 많습니다. 검색을 제한하고 다시 시도해주세요."
+      ],
+      "A contact with this email address already exists": [
+        "해당 이메일 주소와 중복된 연락처가 이미 존재합니다."
       ]
     },
     "error": {
@@ -6116,6 +6122,12 @@
       ],
       "Touch your security key.": [
         "보안 키를 터치해 주세요."
+      ],
+      "Still waiting?": [
+        "아직 대기 중인가요?"
+      ],
+      "Touch your security key to continue.": [
+        "계속하려면 보안 키를 터치하세요."
       ]
     },
     "fido2: Label": {
@@ -9502,7 +9514,7 @@
         "\"${ attachmentsFoundKeyword }\" 으로 작성하였지만, 추가된 첨부 파일이 없습니다. 이 메시지를 그대로 전송하시겠습니까?"
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
-        "친구가 연간 플랜을 구독하고 1개월 후, 월간 요금제에 구독하고 2개월 후에 크레딧 보상을 받게 됩니다."
+        "친구가 연간 플랜을 구독하고 1개월 후, 월간 플랜 구독 2개월 후에 크레딧 보상을 받게 됩니다."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "매 ${ renewCycle }개월마다 ${ renewAmountStr }(으)로 청구됩니다. 언제든지 취소할 수 있습니다."
@@ -9650,6 +9662,138 @@
       ],
       "Turn off auto-reply": [
         "자동 회신 비활성화"
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME }가 ${ count }단계 더 앞서나갔어요. 계속할까요?"
+      ],
+      "${ steps } step": [
+        "${ steps }단계"
+      ],
+      "Add ${ contact } to your contacts": [
+        "연락처에 ${ contact } 추가"
+      ],
+      "Add a contact": [
+        "연락처 추가"
+      ],
+      "Add contact": [
+        "연락처 추가"
+      ],
+      "Change a display setting": [
+        "디스플레이 설정 변경"
+      ],
+      "Change how your mail is grouped": [
+        "메일 그룹화 방식 변경"
+      ],
+      "Change your list density": [
+        "목록 밀도 변경"
+      ],
+      "Change your mailbox layout": [
+        "메일함 레이아웃 변경"
+      ],
+      "Change your theme": [
+        "테마 변경"
+      ],
+      "Create a filter": [
+        "필터 생성"
+      ],
+      "Create a folder": [
+        "폴더 생성"
+      ],
+      "Create a label": [
+        "라벨 생성"
+      ],
+      "Document in foundation-search index": [
+        "파운데이션 검색 색인 내의 문서"
+      ],
+      "Document lookup failed": [
+        "문서 미리보기 실패"
+      ],
+      "Label ${ emails }": [
+        "${ emails } 라벨 표시"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "${ emails }을(를) ${ names }(으)로 라벨 추가"
+      ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "문서 ${ lookup.result.docId } 미리보기"
+      ],
+      "Mark ${ emails } as read": [
+        "${ emails }을(를) 읽음으로 표시"
+      ],
+      "Mark ${ emails } as unread": [
+        "${ emails }을(를) 읽지 않음으로 표시"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "전체 ${ place }을(를) 읽음으로 표시"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "전체 ${ place }을(를) 읽지 않음으로 표시"
+      ],
+      "Move ${ emails }": [
+        "${ emails } 이동"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "${ destination }(으)로 ${ emails } 이동"
+      ],
+      "No draft open": [
+        "열린 초안이 없어요"
+      ],
+      "No emails selected": [
+        "선택된 이메일이 없습니다"
+      ],
+      "No location selected": [
+        "선택한 위치가 없습니다"
+      ],
+      "Not found in the encrypted search index.": [
+        "검색 색인에서 찾은 결과가 없습니다."
+      ],
+      "Not found in the foundation-search index.": [
+        "파운데이션 검색 색인에서 찾은 결과가 없습니다."
+      ],
+      "Opened a draft": [
+        "초안 열림"
+      ],
+      "Read ${ count } open draft": [
+        "초안 ${ count }개 열기"
+      ],
+      "Read draft \"${ subject }\"": [
+        "초안 \"${ subject }\" 읽기"
+      ],
+      "Read the open draft": [
+        "열린 초안 읽기"
+      ],
+      "Remove the star from ${ emails }": [
+        "${ emails }(에)서 별표 표시 해제"
+      ],
+      "Rename ${ folder } to…": [
+        "${ folder }을(를) 다음으로 이름 변경하기..."
+      ],
+      "Rename this folder": [
+        "이 폴더 이름 변경"
+      ],
+      "Results came from the local search.": [
+        "로컬 검색를 통한 검색 결과입니다."
+      ],
+      "Results came from the server.": [
+        "서버를 통한 검색 결과입니다."
+      ],
+      "Rewrote the draft": [
+        "초안 재작성"
+      ],
+      "Set your signature": [
+        "서명 설정"
+      ],
+      "Source document in encrypted search index": [
+        "암호화된 검색 색인 내의 출처 문서"
+      ],
+      "Star ${ emails }": [
+        "${ emails } 별표 표시"
+      ],
+      "Update the filter ${ filter }": [
+        "필터 ${ filter } 업데이트"
+      ],
+      "Update this filter": [
+        "해당 필터 업데이트"
       ]
     },
     "info": {
@@ -10960,6 +11104,9 @@
       ],
       "Until date": [
         "종료일"
+      ],
+      "Until time": [
+        "유지 시간"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11482,7 +11629,7 @@
         "회의 녹화"
       ],
       "One active meeting at a time": [
-        "동싀 활성 회의 1개"
+        "동시 활성 회의 1개"
       ],
       "Screen-sharing": [
         "화면 공유"
@@ -12259,7 +12406,7 @@
         "1개 커스텀 이메일 도메인"
       ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain2 } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
+        "쇼핑 계정의 경우 honggildong@${ domain }, 뉴스 구독의 경우 honggildong@${ domain2 } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, 그리고 ${ DRIVE_APP_NAME } 에 스토리지 공간이 공유됩니다."
@@ -12439,7 +12586,7 @@
         "최대 ${ n }개 캘린더를 생성하거나 친구, 가족, 동료 및 조직에서 생성하세요."
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "가족 구성원에게 할당할 수 있는 이메일 주소/별칭을 ${ n }개까지 생성할 수 있습니다. 온라인 신원으로 사용할 수 있고, 쇼핑 계정으로 홍쇼핑@${ domain }을(를) 사용하는 것을 예로 들 수 있습니다."
+        "가족 구성원에게 할당할 수 있는 이메일 주소/별칭을 ${ n }개까지 생성할 수 있습니다. 온라인 신원으로 사용할 수 있고, 쇼핑 계정으로 HongShopper@${ domain }을(를) 사용하는 것을 예로 들 수 있습니다."
       ],
       "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
         "별칭을 위한 커스텀 도메인, 추가 메일함, 별칭으로부터의 이메일 전송 기능 등"
@@ -13459,7 +13606,7 @@
         "그 후 ${ renewalLength }개월 간 ${ renewPriceStr }(으)로 자동 갱신됩니다. 언제든 취소하실 수 있습니다."
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
-        "이 작업은 기존 구독을 확장합니다. 새로운 추가 기능과 현재 결제일의 남은 기간에 대해서만 청구됩니다. 회워님의 구독 비용 연장 날짜는 변경되지 않습니다."
+        "이 작업은 기존 구독을 확장합니다. 새로운 추가 기능과 현재 결제일의 남은 기간에 대해서만 청구됩니다. 사용자의 구독 비용 연장 날짜는 변경되지 않습니다."
       ],
       "This offer is not available with your current plan.": [
         "현재 플랜에서 이 제안이 제공되지 않습니다."
@@ -14695,6 +14842,12 @@
     "Snooze info": {
       "${ count } email → ${ wakeTime }": [
         "${ count }개 이메일 → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "${ emails } 방해금지"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "${ wakeTime }까지 ${ emails } 방해금지"
       ]
     },
     "Snooze message": {

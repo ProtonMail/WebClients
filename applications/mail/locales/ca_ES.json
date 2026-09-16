@@ -308,7 +308,7 @@
         "Continuar importació"
       ],
       "Continue to ${ planOrAppName }": [
-        "Continuar amb ${ planOrAppName }"
+        "Continua amb ${ planOrAppName }"
       ],
       "Continue with Free": [
         "Continuar amb el pla gratuït"
@@ -1547,8 +1547,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Marca com a clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -4246,7 +4245,7 @@
         "Xifrar i importar contactes... És possible que passi uns quants minuts. Quan el procés s'hagi completat, podeu tancar aquesta modalitat."
       ],
       "Enough room for years of emails, attachments and more.": [
-        "Espai suficient per anys de correus electrònics, fitxers adjunts i més."
+        "Espai suficient per a anys de correus electrònics, fitxers adjunts i més."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Assegureu un accés segur a les dades de l'organització, fins i tot si el vostre equip està remot o utilitza una WiFi pública."
@@ -4264,7 +4263,7 @@
         "Per obtenir accés il·limitat a l'assistent d'escriptura i més, milloreu a ${ BRAND_NAME } Duo."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ LUMO_SHORT_APP_NAME }.": [
-        "Per un accés il·limitat a l'assistent d'escriptura i més, milloreu a ${ LUMO_SHORT_APP_NAME }."
+        "Per a un accés il·limitat a l'assistent d'escriptura i més, milloreu el pla a ${ LUMO_SHORT_APP_NAME }."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Rebeu una notificació si la vostra contrasenya o altres dades s'han filtrat d'un servei de tercers."
@@ -4910,7 +4909,7 @@
         "No s'ha pogut concedir accés a la clau de l'organització"
       ],
       "Could not load sharing details": [
-        "No s'han pogut carregar els detalls de l'acció de compartir."
+        "No s'han pogut carregar els detalls de compartició"
       ],
       "Could not load the image preview: ${ message }": [
         "No s'ha pogut carregar la vista prèvia de la imatge: ${ message }"
@@ -5014,7 +5013,7 @@
         "No s'ha pogut desxifrar el nom del marcador de pàgina: ${ message }"
       ],
       "Failed to decrypt bookmark password: ${ message }": [
-        "No s'ha pogut desxifrar la contrasenya de la marca de pàgina: ${ message }"
+        "No s'ha pogut desxifrar la contrasenya de l'adreça d'interès: ${ message }"
       ],
       "Failed to decrypt content key: ${ message }": [
         "No s'ha pogut desxifrar la clau de contingut: ${ message }"
@@ -5125,7 +5124,7 @@
         "El cognom és massa llarg."
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
-        "L'enllaç públic heretat no es pot actualitzar. Creeu-ne un de nou."
+        "L'enllaç públic antic no es pot actualitzar. Torneu-ne a crear un de nou."
       ],
       "Maximum expiration time reached.": [
         "S'ha assolit el temps màxim de caducitat."
@@ -5615,7 +5614,7 @@
         "S'ha produït un error inesperat. No es poden importar els contactes"
       ],
       "Unexpected error, we can't import the files": [
-        "S'ha produït un error inesperat, no podem importar els fitxers"
+        "S'ha produït un error inesperat. No podem importar els fitxers."
       ],
       "Unknown error": [
         "Error desconegut"
@@ -7390,7 +7389,7 @@
         "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
-        "Afegiu ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+        "Afig ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Add image URL": [
         "Afegeix l'URL de la imatge"
@@ -8141,7 +8140,7 @@
         "Importació en curs"
       ],
       "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
-        "La importació és en curs, podeu tancar aquest diàleg mentre s'executa i tornar-hi més tard, però no tanqueu la pestanya."
+        "La importació està en curs. Podeu tancar aquest diàleg mentre s'executa i tornar-hi més tard, però no tanqueu la pestanya."
       ],
       "Import mailbox": [
         "Importar bústia de correu"
@@ -8177,7 +8176,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -8366,7 +8366,7 @@
         "La majoria de les xarxes wifi públiques són segures, però algunes no tenen seguretat, la qual cosa us exposa a amenaces cibernètiques. Una VPN xifra el vostre trànsit, mantenint-vos protegit."
       ],
       "Move emails": [
-        "Moure els correus electrònics"
+        "Mou els correus electrònics"
       ],
       "Move here": [
         "Moure aquí"
@@ -9290,7 +9290,7 @@
         "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Es tornarà a carregar l'aplicació."
       ],
       "Turn off auto-reply": [
-        "Desactivar la resposta automàtica"
+        "Desactiva la resposta automàtica"
       ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "Desactiveu-ho per cercar només per data, nom, adreça de correu electrònic o assumpte. Per a desactivar la cerca en el contingut dels missatges (i suprimir els missatges descarregats per a activar aquesta funció), aneu a Preferències."
@@ -9707,7 +9707,7 @@
         "Heu escrit \"${ attachmentsFoundKeyword }\", però no s'ha afegit cap adjunt. Voleu enviar el missatge de totes maneres?"
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
-        "Rebreu la recompensa en crèdit un mes després que el vostre amic se subscrigui a un pla anual, i dos mesos després que ho faci a un pla mensual."
+        "Rebreu la recompensa en crèdit un mes després que el vostre amic se subscrigui a un pla anual i dos mesos després que ho faci a un pla mensual."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment.",
@@ -9922,7 +9922,7 @@
         "No s'ha trobat a l'índex de cerca xifrat."
       ],
       "Not found in the foundation-search index.": [
-        "No s'ha trobat a l'índex base de la cerca."
+        "No s'ha trobat a l'índex de cerca de base."
       ],
       "Remove the star from ${ emails }": [
         "Esborra l'estrella de ${ emails }"
@@ -9931,7 +9931,7 @@
         "Canviar el nom de ${ folder } per..."
       ],
       "Rename this folder": [
-        "Canviar el nom de la carpeta"
+        "Canvia el nom de la carpeta"
       ],
       "Results came from the local search.": [
         "Els resultats provenen de la cerca local."
@@ -9952,13 +9952,38 @@
         "Desactiveu el missatge d'absència"
       ],
       "Turn on your away message": [
-        "Activar el missatge d'absència"
+        "Activeu el missatge d'absència"
       ],
       "Update the filter ${ filter }": [
         "Actualitza el filtre ${ filter }"
       ],
       "Update this filter": [
         "Actualitzar aquest filtre"
+      ],
+      "No draft open": [
+        "No hi ha cap esborrany obert"
+      ],
+      "Opened a draft": [
+        "S'ha obert un esborrany"
+      ],
+      "Read ${ count } open draft": [
+        "Llegir ${ count } esborrany obert",
+        "Llegir ${ count } esborranys oberts"
+      ],
+      "Read draft \"${ subject }\"": [
+        "Llegir l'esborrany \"${ subject }\""
+      ],
+      "Read the open draft": [
+        "Llegir l'esborrany obert"
+      ],
+      "Readdressed the draft": [
+        "S'ha canviat el destinatari de l'esborrany"
+      ],
+      "Rewrote and readdressed the draft": [
+        "S'ha reescrit i canviat el destinatari de l'esborrany"
+      ],
+      "Rewrote the draft": [
+        "S'ha reescrit l'esborrany"
       ]
     },
     "info": {
@@ -10367,7 +10392,7 @@
         "S'aplicarà als missatges futurs"
       ],
       "Archive": [
-        "Arxivar"
+        "Arxiva"
       ],
       "At": [
         "A les"
@@ -13955,7 +13980,7 @@
         "El preu de renovació depèn de la regió de facturació i del número d'empresa."
       ],
       "Renewal price is dependent on the billing region and EIN.": [
-        "El preu de renovació depèn de la regió de facturació i de l'EIN."
+        "El preu de renovació depèn de la regió de facturació i del NIF."
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "El preu de renovació depèn de la regió de facturació i del número d'IVA."
@@ -15505,7 +15530,7 @@
         "Emmagatzematge utilitzat"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Per a continuar carregant i sincronitzant fitxers, allibereu espai o milloreu per a obtenir més emmagatzematge."
+        "Per a continuar carregant i sincronitzant fitxers, allibereu espai o milloreu el pla per a obtenir més emmagatzematge."
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Per continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ upgrade }."
@@ -16755,7 +16780,7 @@
         "Moneda"
       ],
       "Custom": [
-        "Personalitzar"
+        "Personalitzat"
       ],
       "Custom domains:": [
         "Dominis personalitzats:"
@@ -16826,7 +16851,7 @@
         "Escriptori"
       ],
       "Disconnected from Gmail": [
-        "Esteu desconnectat de Gmail"
+        "S'ha desconnectat de Gmail"
       ],
       "Discover your subscription benefits": [
         "Descobriu els avantatges de la vostra subscripció"
@@ -17311,7 +17336,7 @@
         "Referència"
       ],
       "Refine your Categories": [
-        "Poliu les vostres categories"
+        "Refineu les categories"
       ],
       "Remove forwarding address": [
         "Esborreu l'adreça de reenviament"
