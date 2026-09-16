@@ -15,8 +15,19 @@ import noop from '@proton/utils/noop';
 import { bootstrapEvent } from '../bootstrap/action';
 import { getAccountSessions } from './accountSessions';
 import { accountSessionsEvent } from './events';
+import { cleanupOrphanedDuplicateSessions } from './orphanedSessions';
 import { type AccountSessionsState, accountSessionsSlice, selectAccountSessions } from './slice';
 import { updateAccountSessions } from './storage';
+
+// Deferred so that it never competes with rendering.
+const runWhenIdle = (run: () => void) => {
+    const timeout = 1_000;
+    if (globalThis.requestIdleCallback) {
+        globalThis.requestIdleCallback(run, { timeout });
+    } else {
+        setTimeout(run, timeout);
+    }
+};
 
 export const startAccountSessionsListener = (startListening: SharedStartListening<AccountSessionsState>) => {
     startListening({
@@ -57,7 +68,7 @@ export const startAccountSessionsListener = (startListening: SharedStartListenin
                 try {
                     listenerApi.dispatch(accountSessionsSlice.actions.loading(true));
 
-                    const sessions = await result.promise;
+                    const { sessions, remoteSessions } = await result.promise;
 
                     listenerApi.dispatch(
                         accountSessionsSlice.actions.success({
@@ -66,6 +77,17 @@ export const startAccountSessionsListener = (startListening: SharedStartListenin
                             support: result.support,
                         })
                     );
+
+                    // Only cleanup orphaned duplicate sessions on account because it is aware of the entire list of sessions
+                    if (listenerApi.extra.config.APP_NAME === APPS.PROTONACCOUNT && isDocumentVisible()) {
+                        runWhenIdle(() => {
+                            cleanupOrphanedDuplicateSessions({
+                                api: listenerApi.extra.api,
+                                remoteSessions,
+                                persistedSessions: getPersistedSessions(),
+                            }).catch(noop);
+                        });
+                    }
                 } finally {
                     listenerApi.dispatch(accountSessionsSlice.actions.loading(false));
                 }
@@ -102,12 +124,7 @@ export const startAccountSessionsListener = (startListening: SharedStartListenin
                 }).catch(noop);
             };
 
-            const timeout = 1_000;
-            if (globalThis.requestIdleCallback) {
-                globalThis.requestIdleCallback(run, { timeout });
-            } else {
-                setTimeout(run, timeout);
-            }
+            runWhenIdle(run);
         },
     });
 
@@ -128,12 +145,7 @@ export const startAccountSessionsListener = (startListening: SharedStartListenin
                 updateAccountSessions();
             };
 
-            const timeout = 1_000;
-            if (globalThis.requestIdleCallback) {
-                globalThis.requestIdleCallback(run, { timeout });
-            } else {
-                setTimeout(run, timeout);
-            }
+            runWhenIdle(run);
         },
     });
 };
