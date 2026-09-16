@@ -10,9 +10,7 @@ import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 import { useLocalStateSync } from '@proton/components/hooks/useLocalStateSync';
 import { getIndexKey, setESLogger } from '@proton/encrypted-search/esHelpers';
 import { contentIndexingProgress, hasESDB, wrappedGetOldestInfo } from '@proton/encrypted-search/esIDB';
-import type { ContentSearchEndReason, NormalizedSearchParams } from '@proton/encrypted-search/models';
-import { endSearchSession, startSearchSession } from '@proton/encrypted-search/searchSession';
-import { useContentSearchTelemetry } from '@proton/encrypted-search/useContentSearchTelemetry';
+import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
 import { useEncryptedSearch } from '@proton/encrypted-search/useEncryptedSearch';
 import { useIndexedDBSupport } from '@proton/encrypted-search/useIndexedDBSupport';
 import { logger } from '@proton/logger';
@@ -27,6 +25,9 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { defaultESContextMail, defaultESMailStatus } from '../constants';
 import { useContentSearch } from '../contentSearch/integration/useContentSearch';
+import { MetricService } from '../contentSearch/metrics/MetricService';
+import type { ContentSearchEndReason } from '../contentSearch/metrics/interface';
+import { SEARCH_VERSION_V1, SEARCH_VERSION_V2 } from '../contentSearch/metrics/interface';
 import { convertEventType, getESCallbacks, getESFreeBlobKey, parseSearchParams } from '../helpers/encryptedSearch';
 import ESDeletedConversationsCache from '../helpers/encryptedSearch/ESDeletedConversationsCache';
 import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
@@ -93,12 +94,10 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     // when it changes (see `ContentSearchVersionToggle`), so this is settled for the session.
     const isV2Active = isContentSearchEnabled && searchVersion === 'v2';
 
-    const {
-        sendResultOpenedReport,
-        sendResultActionReport,
-        sendQueryCompletedReport,
-        sendMailboxIndexCompletedReport,
-    } = useContentSearchTelemetry();
+    const metricService = useRef<MetricService>();
+    if (!metricService.current) {
+        metricService.current = new MetricService(api, logger, isV2Active ? SEARCH_VERSION_V2 : SEARCH_VERSION_V1);
+    }
 
     // No `contentIndexingSuccessMessage`: the library would announce content search when its own
     // indexing ends, which is too early for the v2 path. `useContentSearchReadyNotification` below
@@ -107,8 +106,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         refreshMask: EVENT_ERRORS.MAIL,
         esCallbacks,
         // `MetricService` already reports these for v2 — only report v1's own numbers when it's the active engine.
-        onSearchCompleted: isV2Active ? undefined : sendQueryCompletedReport,
-        onIndexCompleted: isV2Active ? undefined : sendMailboxIndexCompletedReport,
+        onSearchCompleted: isV2Active ? undefined : (params) => metricService.current?.searchCompleted(params),
+        onIndexCompleted: isV2Active ? undefined : (params) => metricService.current?.mailboxIndexCompleted(params),
+        onIndexingStarted: isV2Active ? undefined : () => metricService.current?.startIndexing(),
     });
 
     const esLibraryFunctionsV2 = useContentSearch({
@@ -117,35 +117,28 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         // Keep the legacy ES index in sync while v2 is active by forwarding events to its handler
         esLibraryFunctionsV1,
         isActive: isV2Active,
+        metricService: metricService.current,
     });
 
     const esLibraryFunctions = isV2Active ? esLibraryFunctionsV2 : esLibraryFunctionsV1;
 
-    const reportResultOpened: typeof sendResultOpenedReport = (params) => {
-        if (isV2Active) {
-            esLibraryFunctionsV2.reportResultOpened(params);
-        } else {
-            sendResultOpenedReport(params);
-        }
+    const reportResultOpened: typeof esLibraryFunctionsV2.reportResultOpened = (params) => {
+        esLibraryFunctionsV2.reportResultOpened(params);
     };
 
-    const reportResultAction: typeof sendResultActionReport = (params) => {
-        if (isV2Active) {
-            esLibraryFunctionsV2.reportResultAction(params);
-        } else {
-            sendResultActionReport(params);
-        }
+    const reportResultAction: typeof esLibraryFunctionsV2.reportResultAction = (params) => {
+        esLibraryFunctionsV2.reportResultAction(params);
     };
 
     const startSearchSessionRouted = () => {
         if (!isV2Active) {
-            startSearchSession();
+            esLibraryFunctionsV2.startSearchSession();
         }
     };
 
     const endSearchSessionRouted = (endReason: ContentSearchEndReason) => {
         if (!isV2Active) {
-            endSearchSession(api, endReason);
+            esLibraryFunctionsV2.endSearchSession(endReason);
             return;
         }
 

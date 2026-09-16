@@ -1,15 +1,8 @@
 /**
- * Shared with mobile's Content Search telemetry schema (measurement_group `mail.any.search` /
- * `mail.any.search_index`). Exposed here so v1 (this package) and v2 (mail's class-based contentSearch
- * module) emit the exact same dimension values instead of drifting apart.
+ * `useEncryptedSearch` (v1, this package) and `MetricService` (v2, mail's `contentSearch` module) share
+ * these two types so both report the same dimension values. Once v1 is retired, move them into mail's
+ * `contentSearch/metrics/interface.ts` alongside the rest of the content-search telemetry types.
  */
-
-export type ContentSearchVersion = 'v1' | 'v2';
-
-/**
- * Composition of the account's addresses: all Proton-domain, all BYOE, or a mix of both.
- */
-export type ContentSearchMailboxAddressType = 'proton' | 'byoe' | 'mixed';
 
 export type ContentSearchEventStatus = 'success' | 'error';
 
@@ -26,51 +19,3 @@ export type ContentSearchIndexErrorKind =
     | 'storage_error'
     | 'index_write_error'
     | 'other';
-
-export type ContentSearchScrollerMode = 'message' | 'conversation';
-
-/**
- * `isConversationMode()` (mail's `helpers/mailSettings.ts`) forces message view whenever a search
- * is active, regardless of the user's `ViewMode` setting, so search results are never grouped as
- * conversations today. Every search-related event hardcodes this instead of reading conversation
- * mode from state; kept as a dimension for schema parity with mobile, where it may actually vary.
- */
-export const SEARCH_RESULT_SCROLLER_MODE: ContentSearchScrollerMode = 'message';
-
-export type ContentSearchPrimaryMatchType = 'sender' | 'subject' | 'body' | 'unknown';
-
-/** No per-field match info is tracked for search results today, on either engine. */
-export const SEARCH_RESULT_PRIMARY_MATCH_TYPE: ContentSearchPrimaryMatchType = 'unknown';
-
-export type ContentSearchResultAction =
-    'reply' | 'delete' | 'forward' | 'move' | 'label' | 'star' | 'unstar' | 'read' | 'unread' | 'other';
-
-export type ContentSearchActionSurface = 'result_list' | 'opened_message';
-
-// TODO how do we integrate the appSwitch and tabClose?
-export type ContentSearchEndReason = 'newSearch' | 'clearField' | 'navigation';
-
-/**
- * `firstActionType` on a session can be a result open, which isn't one of the `ContentSearchResultAction`
- * values reported by `sendResultActionReport` (opening has its own `result_opened` event).
- */
-export type ContentSearchSessionActionType = ContentSearchResultAction | 'open';
-
-export type ContentSearchSearchSource = 'local' | 'remote' | 'hybrid';
-
-/**
- * One search session covers exactly one search: pagination, sort, and filter changes re-run the
- * search but don't close it. It has to survive outside React (started/stopped from a Redux listener
- * on route/search-state changes) and be reachable from React (list items reporting opens/actions),
- * hence a module-level singleton instead of a context.
- */
-export interface SearchSession {
-    startedAt: number;
-    hasResults: boolean;
-    scrollerMode?: ContentSearchScrollerMode;
-    resultsOpened: number;
-    actionsPerformed: number;
-    firstActionType?: ContentSearchSessionActionType;
-    firstOpenedPosition?: number;
-    firstActionAt?: number;
-}

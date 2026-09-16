@@ -1,7 +1,4 @@
 import type {
-    ContentSearchActionSurface,
-    ContentSearchEndReason,
-    ContentSearchResultAction,
     ESItem,
     ESStatus,
     EncryptedSearchFunctions,
@@ -9,6 +6,12 @@ import type {
 } from '@proton/encrypted-search/models';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
+
+import type {
+    ContentSearchActionSurface,
+    ContentSearchEndReason,
+    ContentSearchResultAction,
+} from '../contentSearch/metrics/interface';
 
 export type ESBaseMessage = Pick<
     MessageMetadata,

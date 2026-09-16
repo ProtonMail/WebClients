@@ -1,6 +1,5 @@
 import { highlightJSX, insertMarks } from '@proton/encrypted-search/esHelpers';
 import type {
-    ContentSearchEndReason,
     ESCallbacks,
     ESEvent,
     ESIndexingState,
@@ -16,6 +15,7 @@ import noop from '@proton/utils/noop';
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
 import type { IndexService } from '../indexation/IndexService';
 import type { MetricService } from '../metrics/MetricService';
+import type { ContentSearchEndReason } from '../metrics/interface';
 import type { Search, SearchOutcome } from '../search/Search';
 import type { SearchService } from '../search/SearchService';
 import { IndexingJob, type JobMode } from './IndexingJob';
@@ -180,13 +180,17 @@ export class ESAdapter implements FunctionsV2 {
     }
 
     /** Forwards a search-result open to the v2 metrics pipeline; see `EncryptedSearchProvider.reportResultOpened`. */
-    reportResultOpened(...args: Parameters<MetricService['sendResultOpenedReport']>) {
+    reportResultOpened(...args: Parameters<MetricService['resultOpened']>) {
         this.searchService.reportResultOpened(...args);
     }
 
     /** Forwards a search-result action to the v2 metrics pipeline; see `EncryptedSearchProvider.reportResultAction`. */
-    reportResultAction(...args: Parameters<MetricService['sendResultActionReport']>) {
+    reportResultAction(...args: Parameters<MetricService['resultActionPerformed']>) {
         this.searchService.reportResultAction(...args);
+    }
+
+    startSearchSession() {
+        this.metricService.startSearchSession();
     }
 
     /** v2 counterpart of `endSearchSession`; see `EncryptedSearchProvider.endSearchSession`. */
