@@ -95,8 +95,8 @@ const PasswordForm = ({
 };
 
 enum Step {
-    Password,
-    TWO_FA,
+    Password = 0,
+    TWO_FA = 1,
 }
 
 export interface SrpAuthModalProps

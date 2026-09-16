@@ -49,8 +49,8 @@ interface Props extends Omit<ModalProps<'form'>, 'as'> {
 }
 
 enum STEP {
-    REASON_SELECTION,
-    CONFIRM_ACCOUNT_DELETION,
+    REASON_SELECTION = 0,
+    CONFIRM_ACCOUNT_DELETION = 1,
 }
 
 const DeleteAccountModal = (props: Props) => {

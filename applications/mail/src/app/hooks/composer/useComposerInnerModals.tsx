@@ -3,17 +3,17 @@ import { useEffect, useState } from 'react';
 import { usePromise } from '../usePromise';
 
 export enum ComposerInnerModalStates {
-    None,
-    Password,
-    Expiration,
-    ScheduleSend,
-    InsertImage,
-    DeleteDraft,
-    NoRecipients,
-    NoSubjects,
-    NoAttachments,
-    AssistantSettings,
-    NoReplyEmail,
+    None = 0,
+    Password = 1,
+    Expiration = 2,
+    ScheduleSend = 3,
+    InsertImage = 4,
+    DeleteDraft = 5,
+    NoRecipients = 6,
+    NoSubjects = 7,
+    NoAttachments = 8,
+    AssistantSettings = 9,
+    NoReplyEmail = 10,
 }
 
 interface UseComposerInnerModals {

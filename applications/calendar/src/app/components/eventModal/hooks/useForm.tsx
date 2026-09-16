@@ -33,8 +33,8 @@ const handleValidation = (errors: EventModelErrors, containerEl: HTMLElement | n
 };
 
 export enum ACTION {
-    SUBMIT,
-    DELETE,
+    SUBMIT = 0,
+    DELETE = 1,
 }
 
 interface Arguments {

@@ -25,10 +25,10 @@ import MnemonicRecoveryStep from '../defaultCustomStep/recovery/MnemonicRecovery
 import type { SignupCustomStepProps } from '../interface';
 
 enum Step {
-    Recovery,
-    DisplayName,
-    OrgSetup,
-    RedirectUser,
+    Recovery = 0,
+    DisplayName = 1,
+    OrgSetup = 2,
+    RedirectUser = 3,
 }
 
 const CustomStepB2B = ({ measure, productAppName, logo, model, signupParameters }: SignupCustomStepProps) => {

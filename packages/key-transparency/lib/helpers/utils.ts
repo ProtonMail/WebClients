@@ -1,6 +1,6 @@
+import { serverTime } from '@protontech/crypto';
 import { sub } from 'date-fns';
 
-import { serverTime } from '@protontech/crypto';
 import metrics from '@proton/metrics';
 import { TelemetryKeyTransparencyErrorEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
@@ -90,9 +90,9 @@ const sanitizeErrorMessage = (errorMessage: string) => {
 
 export enum KT_ERROR_TYPE {
     /** Error may indicate global KT issue (e.g. invalid epoch detected) */
-    SYSTEM,
+    SYSTEM = 0,
     /** Error limited to KT state of the user (e.g. SKL does not verify) */
-    LOCAL,
+    LOCAL = 1,
 }
 
 /**

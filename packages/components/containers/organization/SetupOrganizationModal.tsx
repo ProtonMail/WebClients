@@ -39,9 +39,9 @@ import { disableStorageSelection } from '../members/helper';
 import AdministratorList from './AdministratorList';
 
 enum STEPS {
-    NAME,
-    KEY,
-    STORAGE,
+    NAME = 0,
+    KEY = 1,
+    STORAGE = 2,
 }
 
 const storageSizeUnit = sizeUnits.GB;

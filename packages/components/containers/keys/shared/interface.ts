@@ -24,8 +24,8 @@ export interface KeyActions {
 }
 
 export enum KeyType {
-    User,
-    Address,
+    User = 0,
+    Address = 1,
 }
 
 export interface KeyStatus {
@@ -41,8 +41,10 @@ export interface KeyStatus {
     isForwarding: boolean;
 }
 
-export interface KeyDisplay
-    extends Pick<KeyMetadata<Key>, 'invalidKeyError' | 'creationDate' | 'fingerprint' | 'version' | 'algorithmInfos'> {
+export interface KeyDisplay extends Pick<
+    KeyMetadata<Key>,
+    'invalidKeyError' | 'creationDate' | 'fingerprint' | 'version' | 'algorithmInfos'
+> {
     type: KeyType;
     ID: string;
     flags: number;

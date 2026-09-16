@@ -22,8 +22,8 @@ export enum KT_DOMAINS {
 }
 
 export enum KT_CERTIFICATE_ISSUER {
-    LETSENCRYPT,
-    ZEROSSL,
+    LETSENCRYPT = 0,
+    ZEROSSL = 1,
 }
 
 // Number of independent CT operators from which

@@ -117,29 +117,29 @@ export const KeyUsages: KeyUsage[] = ['encrypt', `decrypt`];
  * ENUMS
  */
 export enum INDEXING_STATUS {
-    INACTIVE,
-    INDEXING,
-    PAUSED,
-    ACTIVE,
+    INACTIVE = 0,
+    INDEXING = 1,
+    PAUSED = 2,
+    ACTIVE = 3,
 }
 
 export enum TIMESTAMP_TYPE {
-    STOP,
-    START,
-    STEP,
+    STOP = 0,
+    START = 1,
+    STEP = 2,
 }
 
 export enum ES_SYNC_ACTIONS {
-    DELETE,
-    CREATE,
-    UPDATE_CONTENT,
-    UPDATE_METADATA,
+    DELETE = 0,
+    CREATE = 1,
+    UPDATE_CONTENT = 2,
+    UPDATE_METADATA = 3,
 }
 
 export enum STORING_OUTCOME {
-    FAILURE,
-    SUCCESS,
-    QUOTA,
+    FAILURE = 0,
+    SUCCESS = 1,
+    QUOTA = 2,
 }
 
 /**

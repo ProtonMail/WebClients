@@ -311,9 +311,9 @@ export const performPasswordChangeViaMnemonic = async ({
 };
 
 export enum DeviceRecoveryLevel {
-    FULL,
-    PARTIAL,
-    NONE,
+    FULL = 0,
+    PARTIAL = 1,
+    NONE = 2,
 }
 
 export const getDeviceRecoveryLevel = async (resetResponse: ValidateResetTokenResponse) => {

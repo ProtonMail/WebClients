@@ -5,11 +5,11 @@ import type { FilterStatement } from '@proton/sieve/filterModel';
 import type { Condition } from '../filters/interfaces';
 
 export enum ForwardModalStep {
-    Setup,
-    UserConfirmation,
-    FixupPrimaryKeys,
-    FinalizeForwardingSetup,
-    SuccessNotification,
+    Setup = 0,
+    UserConfirmation = 1,
+    FixupPrimaryKeys = 2,
+    FinalizeForwardingSetup = 3,
+    SuccessNotification = 4,
 }
 
 export interface ForwardModalState {

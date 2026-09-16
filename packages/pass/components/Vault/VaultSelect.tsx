@@ -30,7 +30,7 @@ import { VaultIcon } from './VaultIcon';
 
 export enum VaultSelectMode {
     Writable = 1,
-    Shared,
+    Shared = 2,
 }
 
 export type VaultSelectProps = Omit<ModalProps, 'onSubmit'> & {

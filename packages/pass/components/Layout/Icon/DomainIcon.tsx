@@ -10,9 +10,9 @@ import type { Maybe } from '../../../types';
 import { usePassCore } from '../../Core/PassCoreProvider';
 
 export enum ImageStatus {
-    LOADING,
-    READY,
-    ERROR,
+    LOADING = 0,
+    READY = 1,
+    ERROR = 2,
 }
 
 type Props = {

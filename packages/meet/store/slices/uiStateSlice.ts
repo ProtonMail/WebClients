@@ -28,8 +28,8 @@ export enum PermissionPromptStatus {
 }
 
 enum ParticipantListTabs {
-    WaitingRoom,
-    AllParticipants,
+    WaitingRoom = 0,
+    AllParticipants = 1,
 }
 
 interface UIState {

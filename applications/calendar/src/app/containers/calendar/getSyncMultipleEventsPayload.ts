@@ -1,6 +1,7 @@
+import type { PublicKeyReference, SessionKey } from '@protontech/crypto';
+
 import type { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import type { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
-import type { PublicKeyReference, SessionKey } from '@protontech/crypto';
 import { syncMultipleEvents as syncMultipleEventsRoute } from '@proton/shared/lib/api/calendars';
 import { getHasSharedEventContent, getHasSharedKeyPacket } from '@proton/shared/lib/calendar/apiModels';
 import { DEFAULT_ATTENDEE_PERMISSIONS } from '@proton/shared/lib/calendar/constants';
@@ -20,9 +21,9 @@ import { DELETION_REASON } from '@proton/shared/lib/interfaces/calendar/Api';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 export enum SyncOperationTypes {
-    DELETE,
-    UPDATE,
-    CREATE,
+    DELETE = 0,
+    UPDATE = 1,
+    CREATE = 2,
 }
 
 export interface DeleteEventActionOperation {
@@ -63,9 +64,7 @@ export interface UpdateEventActionOperation {
 }
 
 export type SyncEventActionOperation =
-    | CreateEventActionOperation
-    | UpdateEventActionOperation
-    | DeleteEventActionOperation;
+    CreateEventActionOperation | UpdateEventActionOperation | DeleteEventActionOperation;
 
 export interface SyncEventActionOperations {
     calendarID: string;
@@ -90,9 +89,8 @@ export const getIsDeleteSyncOperation = (
 export const getIsUpdateSyncOperation = (
     operation: SyncEventActionOperation
 ): operation is UpdateEventActionOperation => operation.type === SyncOperationTypes.UPDATE;
-const getIsCreateSyncOperation = (
-    operation: SyncEventActionOperation
-): operation is CreateEventActionOperation => operation.type === SyncOperationTypes.CREATE;
+const getIsCreateSyncOperation = (operation: SyncEventActionOperation): operation is CreateEventActionOperation =>
+    operation.type === SyncOperationTypes.CREATE;
 
 export const getCreateSyncOperation = (data: {
     veventComponent: VcalVeventComponent;

@@ -1,4 +1,5 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
+
 import type { Api, KTLocalStorageAPI } from '@proton/shared/lib/interfaces';
 import { ParsedSignedKeyList } from '@proton/shared/lib/keys';
 
@@ -17,15 +18,15 @@ import { encryptKTtoLS, getAllKTBlobValuesWithInfo, removeKTFromLS } from '../..
 import { verifyProofOfExistenceOrObsolescence } from './../verifyProofs';
 
 enum LocalStorageAuditStatus {
-    Success,
-    Failure,
-    RetryLater,
+    Success = 0,
+    Failure = 1,
+    RetryLater = 2,
 }
 
 const fetchSKLWithRevision = async (api: Api, email: string, revision: number, data: string) => {
     const includedSKL = await fetchSignedKeyList(api, revision, email);
     if (!includedSKL) {
-        return throwKTError('Could not find new SKL with same revision',KT_ERROR_TYPE.LOCAL, { email, revision });
+        return throwKTError('Could not find new SKL with same revision', KT_ERROR_TYPE.LOCAL, { email, revision });
     }
 
     if (includedSKL.Data != data && includedSKL.ObsolescenceToken != data) {
@@ -73,10 +74,14 @@ const verifyKTBlobContent = async (
                 return LocalStorageAuditStatus.Success;
             } else {
                 if (isTimestampTooOld(creationTimestamp)) {
-                    return throwKTError('SKL revision was ignored after more than max allowed interval', KT_ERROR_TYPE.LOCAL, {
-                        email,
-                        revision,
-                    });
+                    return throwKTError(
+                        'SKL revision was ignored after more than max allowed interval',
+                        KT_ERROR_TYPE.LOCAL,
+                        {
+                            email,
+                            revision,
+                        }
+                    );
                 } else {
                     return LocalStorageAuditStatus.RetryLater;
                 }
