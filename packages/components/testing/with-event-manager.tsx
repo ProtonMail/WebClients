@@ -1,8 +1,7 @@
 import type { ComponentType } from 'react';
 
-import { mockEventManager } from '@proton/testing/lib/event-manager';
-
 import EventManagerContext from '../containers/eventManager/context';
+import { mockEventManager } from './event-manager';
 
 export const withEventManager =
     (eventManager = mockEventManager) =>
