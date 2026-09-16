@@ -33,7 +33,7 @@ export type SheetsEditorToShellActions = {
     },
   ) => void
   reportError: (error: unknown, extra?: Record<string, unknown>) => void
-  reportSheetsYjsDriftDetected: (reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs') => void
+  reportSheetsYjsDriftDetected: (reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs' | 'both') => void
   showYjsDriftDetectedErrorModal: (driftLogDetails: Record<string, unknown>) => void
 }
 

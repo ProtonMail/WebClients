@@ -231,7 +231,7 @@ export class ClientInvoker implements EditorRequiresClientMethods {
   }
 
   async reportSheetsYjsDriftDetected(
-    reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs',
+    reason: 'local-differs-from-yjs' | 'local-change-not-observed-by-yjs' | 'both',
   ): Promise<void> {
     return this.invokeClientMethod('reportSheetsYjsDriftDetected', [reason])
   }
