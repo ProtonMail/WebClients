@@ -32,10 +32,10 @@ interface Props extends ModalProps<'form'> {
 }
 
 export enum StatusEnum {
-    QUEUED,
-    DONE,
-    FAILURE,
-    LOADING,
+    QUEUED = 0,
+    DONE = 1,
+    FAILURE = 2,
+    LOADING = 3,
 }
 
 const getStatus = (text: 'ok' | 'loading' | 'error') => {

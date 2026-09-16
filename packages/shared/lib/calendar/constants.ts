@@ -225,15 +225,15 @@ export const DEFAULT_CALENDAR = {
 
 export enum VIEWS {
     DAY = 1,
-    WEEK,
-    MONTH,
-    YEAR,
-    AGENDA,
-    CUSTOM,
-    MAIL,
-    DRIVE,
+    WEEK = 2,
+    MONTH = 3,
+    YEAR = 4,
+    AGENDA = 5,
+    CUSTOM = 6,
+    MAIL = 7,
+    DRIVE = 8,
 
-    SEARCH,
+    SEARCH = 9,
 }
 
 export enum ACTION_VIEWS {
@@ -268,18 +268,18 @@ export const COLORS = {
 
 export enum SAVE_CONFIRMATION_TYPES {
     SINGLE = 1,
-    RECURRING,
+    RECURRING = 2,
 }
 
 export enum DELETE_CONFIRMATION_TYPES {
     SINGLE = 1,
-    RECURRING,
+    RECURRING = 2,
 }
 
 export enum RECURRING_TYPES {
     ALL = 1,
-    FUTURE,
-    SINGLE,
+    FUTURE = 2,
+    SINGLE = 3,
 }
 
 export const MAX_IMPORT_EVENTS = 15000;

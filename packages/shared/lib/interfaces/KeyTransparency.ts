@@ -89,17 +89,17 @@ export type KeyMigrationKTVerifier = (options: {
 }) => Promise<void>;
 
 export enum KeyTransparencyActivation {
-    DISABLED,
-    LOG_ONLY,
-    SHOW_UI,
+    DISABLED = 0,
+    LOG_ONLY = 1,
+    SHOW_UI = 2,
 }
 
 export type GetLatestEpoch = ({ api, forceRefresh }: { api: Api; forceRefresh?: boolean }) => Promise<Epoch>;
 
 export enum KT_VERIFICATION_STATUS {
-    VERIFIED_KEYS,
-    UNVERIFIED_KEYS,
-    VERIFICATION_FAILED,
+    VERIFIED_KEYS = 0,
+    UNVERIFIED_KEYS = 1,
+    VERIFICATION_FAILED = 2,
 }
 
 export interface KeyTransparencyVerificationResult {

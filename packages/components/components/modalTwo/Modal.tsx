@@ -91,9 +91,9 @@ export interface ModalOwnProps {
 }
 
 enum ExitState {
-    idle,
-    exiting,
-    exited,
+    idle = 0,
+    exiting = 1,
+    exited = 2,
 }
 
 const defaultElement = 'div';

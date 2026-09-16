@@ -26,8 +26,8 @@ import SessionRecoveryResetConfirmedPrompt from './SessionRecoveryResetConfirmed
 import sessionRecoveryIllustration from './session-recovery-illustration.svg';
 
 enum STEP {
-    PROMPT,
-    RESET_CONFIRMED,
+    PROMPT = 0,
+    RESET_CONFIRMED = 1,
 }
 
 interface Props extends ModalProps {

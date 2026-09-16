@@ -419,8 +419,8 @@ export const getActiveSessionsData = async <T extends PersistedSessionLite>({
 };
 
 export enum GetActiveSessionType {
-    Switch,
-    AutoPick,
+    Switch = 0,
+    AutoPick = 1,
 }
 
 export type GetActiveSessionsResult =

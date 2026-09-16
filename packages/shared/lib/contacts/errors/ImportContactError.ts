@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 export enum IMPORT_CONTACT_ERROR_TYPE {
-    UNSUPPORTED_VCARD_VERSION,
-    MISSING_FN,
-    ENCRYPTION_ERROR,
-    EXTERNAL_ERROR,
+    UNSUPPORTED_VCARD_VERSION = 0,
+    MISSING_FN = 1,
+    ENCRYPTION_ERROR = 2,
+    EXTERNAL_ERROR = 3,
 }
 
 const getErrorMessage = (errorType: IMPORT_CONTACT_ERROR_TYPE, externalError?: Error) => {

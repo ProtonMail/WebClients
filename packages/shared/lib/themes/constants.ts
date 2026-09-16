@@ -19,40 +19,40 @@ export enum ThemeTypes {
 }
 
 export enum ThemeModeSetting {
-    Auto,
-    Dark,
-    Light,
+    Auto = 0,
+    Dark = 1,
+    Light = 2,
 }
 
 export enum ColorScheme {
-    Dark,
-    Light,
+    Dark = 0,
+    Light = 1,
 }
 
 export enum MotionModeSetting {
-    No_preference,
-    Reduce,
+    No_preference = 0,
+    Reduce = 1,
 }
 
 export enum ThemeFontSizeSetting {
     DEFAULT = 0,
-    X_SMALL,
-    SMALL,
-    LARGE,
-    X_LARGE,
+    X_SMALL = 1,
+    SMALL = 2,
+    LARGE = 3,
+    X_LARGE = 4,
 }
 
 export enum ThemeFontFaceSetting {
-    DEFAULT,
-    SYSTEM,
-    ARIAL,
-    TIMES,
-    DYSLEXIC,
-    ATKINSON,
+    DEFAULT = 0,
+    SYSTEM = 1,
+    ARIAL = 2,
+    TIMES = 3,
+    DYSLEXIC = 4,
+    ATKINSON = 5,
 }
 
 export enum ThemeFeatureSetting {
-    DEFAULT,
-    SCROLLBARS_OFF,
-    ANIMATIONS_OFF,
+    DEFAULT = 0,
+    SCROLLBARS_OFF = 1,
+    ANIMATIONS_OFF = 2,
 }

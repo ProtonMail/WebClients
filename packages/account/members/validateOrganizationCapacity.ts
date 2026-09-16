@@ -6,10 +6,10 @@ import type { Organization } from '@proton/shared/lib/interfaces';
 import type { UserTemplate } from './importUsers';
 
 export enum ORGANIZATION_CAPACITY_ERROR_TYPE {
-    MEMBER,
-    SPACE,
-    ADDRESSES,
-    VPNS,
+    MEMBER = 0,
+    SPACE = 1,
+    ADDRESSES = 2,
+    VPNS = 3,
 }
 
 export class OrganizationCapacityError extends Error {

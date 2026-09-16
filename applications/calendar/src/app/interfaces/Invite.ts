@@ -13,14 +13,14 @@ import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto'
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 export enum INVITE_ACTION_TYPES {
-    NONE,
-    CHANGE_PARTSTAT, // attendee changed RSVP response and/or RSVP comment
-    DECLINE_INVITATION,
-    DECLINE_DISABLED,
-    SEND_INVITATION, // organizer creates new invitation, or just adds/removes attendees
-    SEND_UPDATE, // organizer updates event details and/or attendees
-    CANCEL_INVITATION, // organizer deletes invitation
-    CANCEL_DISABLED, // organizer deletes invitation but can't notify attendees
+    NONE = 0,
+    CHANGE_PARTSTAT = 1, // attendee changed RSVP response and/or RSVP comment
+    DECLINE_INVITATION = 2,
+    DECLINE_DISABLED = 3,
+    SEND_INVITATION = 4, // organizer creates new invitation, or just adds/removes attendees
+    SEND_UPDATE = 5, // organizer updates event details and/or attendees
+    CANCEL_INVITATION = 6, // organizer deletes invitation
+    CANCEL_DISABLED = 7, // organizer deletes invitation but can't notify attendees
 }
 
 export interface InviteActions {

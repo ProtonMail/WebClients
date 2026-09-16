@@ -38,9 +38,9 @@ import { useGetLocalID, useGetMessage } from '../message/useMessage';
 import { useDraft } from '../useDraft';
 
 export enum ComposeTypes {
-    existingDraft,
-    newMessage,
-    fromMessage,
+    existingDraft = 0,
+    newMessage = 1,
+    fromMessage = 2,
 }
 
 interface ComposeExisting {

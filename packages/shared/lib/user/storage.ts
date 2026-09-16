@@ -65,9 +65,9 @@ const getData = (used: number, max: number) => {
 };
 
 export enum SpaceState {
-    Good,
-    Warning,
-    Danger,
+    Good = 0,
+    Warning = 1,
+    Danger = 2,
 }
 
 const getSpaceDetailsType = (danger: boolean, warning: boolean) => {

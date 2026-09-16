@@ -20,8 +20,8 @@ import type { CsvConfig } from './multipleUserCreation/csv';
 import type { UserTemplate } from './multipleUserCreation/types';
 
 enum Step {
-    INSTRUCTION,
-    SELECT_USER,
+    INSTRUCTION = 0,
+    SELECT_USER = 1,
 }
 
 interface IntroModalProps extends ModalProps {
