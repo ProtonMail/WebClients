@@ -27,7 +27,7 @@ export interface DefaultPersistedSession {
     accessTypeMask: SessionAccessTypeMask;
     persistent: boolean;
     trusted: boolean;
-    payloadVersion: 2 | 1;
+    payloadVersion: 3 | 2 | 1;
     payloadType: 'default';
     persistedAt: number;
     source: SessionSource;
