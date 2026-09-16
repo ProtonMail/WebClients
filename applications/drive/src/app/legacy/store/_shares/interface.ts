@@ -24,11 +24,11 @@ export enum ShareType {
 
 export enum ShareState {
     active = 1,
-    deleted = 2,
+    // deleted = 2,
     restored = 3,
-    migrating = 4,
-    migrated = 5,
-    locked = 6,
+    // migrating = 4,
+    // migrated = 5,
+    // locked = 6,
 }
 
 export interface Share {
