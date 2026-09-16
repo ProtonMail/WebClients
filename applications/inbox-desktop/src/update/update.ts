@@ -1,23 +1,23 @@
-import { autoUpdater, app, dialog } from "electron";
+import { DESKTOP_PLATFORMS, MAIL_APP_NAME, RELEASE_CATEGORIES } from "@proton/shared/lib/constants";
+import { DesktopVersion, VersionFile, VersionFileSchema } from "@proton/shared/lib/desktop/DesktopVersion";
+import { app, autoUpdater, dialog } from "electron";
+import { c } from "ttag";
 import { updateElectronApp, UpdateSourceType } from "update-electron-app";
 import pkg from "../../package.json";
-import { getOSVersion, getPlatform, isMacMockable, isSnap } from "../utils/helpers";
 import { getSettings } from "../store/settingsStore";
+import { semver } from "../utils/external/packages/pass/utils/string/semver";
+import { FeatureFlag } from "../utils/flags/flags";
+import { getFeatureFlagManager } from "../utils/flags/manager";
+import { getOSVersion, getPlatform, isMacMockable, isSnap } from "../utils/helpers";
 import { verifyDownloadCertificate } from "../utils/keyPinning";
 import { updateLogger } from "../utils/log";
-import { RELEASE_CATEGORIES, DESKTOP_PLATFORMS, MAIL_APP_NAME } from "@proton/shared/lib/constants";
-import { DesktopVersion, VersionFile, VersionFileSchema } from "@proton/shared/lib/desktop/DesktopVersion";
-import { semver } from "../utils/external/packages/pass/utils/string/semver";
-import { updateSession } from "../utils/session";
-import { c } from "ttag";
-import { getFeatureFlagManager } from "../utils/flags/manager";
-import { FeatureFlag } from "../utils/flags/flags";
 import { quitTracker } from "../utils/log/quitTracker";
-import { sentryReport } from "../utils/sentryReport";
 import { isNetworkError } from "../utils/netErrors";
+import { sentryReport } from "../utils/sentryReport";
+import { updateSession } from "../utils/session";
 import * as updateUtils from "./utils";
 
-export type LocalDesktopVersion = {
+type LocalDesktopVersion = {
     Version: DesktopVersion["Version"];
     RolloutProportion: DesktopVersion["RolloutProportion"];
     CategoryName: DesktopVersion["CategoryName"];

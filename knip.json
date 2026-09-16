@@ -85,8 +85,7 @@
                 "webpack.renderer.config.ts",
                 "webpack.rules.ts"
             ],
-            "project": ["src/**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["src/**/*.{ts,tsx}"]
         },
         "applications/lumo": {
             "entry": [

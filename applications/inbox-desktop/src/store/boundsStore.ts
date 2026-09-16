@@ -1,8 +1,8 @@
 import { BrowserWindow, screen } from "electron";
-import { ensureWindowIsVisible } from "../utils/view/windowBounds";
+import { DEFAULT_ZOOM_FACTOR, ZOOM_FACTOR_LIST, ZoomFactor } from "../constants/zoom";
 import { mainLogger } from "../utils/log";
 import { getZoom } from "../utils/view/viewManagement";
-import { DEFAULT_ZOOM_FACTOR, ZOOM_FACTOR_LIST, ZoomFactor } from "../constants/zoom";
+import { ensureWindowIsVisible } from "../utils/view/windowBounds";
 import { isWindowValid } from "../utils/view/windowUtils";
 import { SafeStore } from "./safeStore/safeStore";
 
@@ -15,8 +15,8 @@ export interface WindowBounds {
     y: number;
 }
 
-export const DEFAULT_WIDTH = 1200;
-export const DEFAULT_HEIGHT = 900;
+const DEFAULT_WIDTH = 1200;
+const DEFAULT_HEIGHT = 900;
 
 // This minimum width avoids triggering mobile design in calendar view,
 // which is around 870 pixels
