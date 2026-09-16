@@ -15,12 +15,15 @@ import { FeatureFlag } from "../utils/flags/flags";
 import { quitTracker } from "../utils/log/quitTracker";
 import { sentryReport } from "../utils/sentryReport";
 import { isNetworkError } from "../utils/netErrors";
+import * as updateUtils from "./utils";
 
 export type LocalDesktopVersion = {
     Version: DesktopVersion["Version"];
     RolloutProportion: DesktopVersion["RolloutProportion"];
     CategoryName: DesktopVersion["CategoryName"];
 };
+
+let stopElectronUpdaterPolling: (() => void) | undefined;
 
 export let updateDownloaded = false;
 export let cachedLatestVersion: DesktopVersion | null = null;
@@ -68,6 +71,7 @@ export function initializeUpdateChecks() {
     autoUpdater.on("update-downloaded", async () => {
         nonNetworkAutoUpdaterErrors = 0;
         updateDownloaded = true;
+        stopElectronUpdaterPolling?.();
         updateLogger.info("Update downloaded, showing prompt.");
 
         // Replaces update-electron-app dialog message with a custom one
@@ -103,7 +107,7 @@ export function initializeUpdateChecks() {
     updateSession().setCertificateVerifyProc(verifyDownloadCertificate);
 
     checkForValidUpdates();
-    setInterval(checkForValidUpdates, pkg.config.updateInterval);
+    scheduleNextCheck();
 }
 
 const validUpdate = {} as DesktopVersion;
@@ -146,15 +150,16 @@ async function checkForValidUpdates() {
     validUpdate.CategoryName = newUpdate.CategoryName;
     validUpdate.RolloutProportion = newUpdate.RolloutProportion;
 
-    updateElectronApp({
+    const { stopUpdates } = updateElectronApp({
         updateSource: {
             type: UpdateSourceType.StaticStorage,
             baseUrl: `https://proton.me/download/mail/${platform}/${newUpdate.Version}/`,
         },
-        updateInterval: "5 min", // minimal
+        updateInterval: updateUtils.getElectronUpdaterFetchInterval(),
         logger: updateLogger,
         notifyUser: false,
     });
+    stopElectronUpdaterPolling = stopUpdates;
 }
 
 function getNewUpdate(
@@ -169,59 +174,43 @@ function getNewUpdate(
     };
 
     return ((): DesktopVersion | undefined =>
-        availableVersions.Releases.find((r: DesktopVersion) => {
-            if (local.CategoryName === RELEASE_CATEGORIES.STABLE && r.CategoryName !== RELEASE_CATEGORIES.STABLE) {
+        availableVersions.Releases.find((candidate: DesktopVersion) => {
+            if (!isANewerThanB(candidate.Version, local.Version)) {
+                logUpdateCase(local, candidate, "Skipping update candidate: not a newer version");
                 return false;
             }
 
-            if (
-                local.CategoryName === RELEASE_CATEGORIES.EARLY_ACCESS &&
-                r.CategoryName !== RELEASE_CATEGORIES.STABLE &&
-                r.CategoryName !== RELEASE_CATEGORIES.EARLY_ACCESS
-            ) {
-                return false;
-            }
-
-            if (
-                local.CategoryName === RELEASE_CATEGORIES.ALPHA &&
-                r.CategoryName !== RELEASE_CATEGORIES.STABLE &&
-                r.CategoryName !== RELEASE_CATEGORIES.EARLY_ACCESS &&
-                r.CategoryName !== RELEASE_CATEGORIES.ALPHA
-            ) {
-                return false;
-            }
-
-            if (!isANewerThanB(r.Version, local.Version)) {
-                logUpdateCase(local, r, "Skipping update: no newer version available.");
+            if (!updateUtils.isReleaseCategorySatisfied(local.CategoryName, candidate.CategoryName)) {
+                logUpdateCase(local, candidate, "Skipping update candidate: Release category not eligible");
                 return false;
             }
 
             if (!electronAndOSVersionConstraintsDisabled) {
-                if (r.MinimumAppVersion && !isANewerOrEqualToB(local.Version, r.MinimumAppVersion)) {
+                if (candidate.MinimumAppVersion && !isANewerOrEqualToB(local.Version, candidate.MinimumAppVersion)) {
                     logUpdateCase(
                         local,
-                        r,
+                        candidate,
                         "Skipping update: current version does not satisfy minimum version requirements.",
                     );
                     return false;
                 }
 
                 // OS constraints are only enabled on macOS.
-                if (r.MinimumOsVersion && isMacMockable()) {
+                if (candidate.MinimumOsVersion && isMacMockable()) {
                     const osVersion = getOSVersion();
                     if (!osVersion) {
                         logUpdateCase(
                             local,
-                            r,
+                            candidate,
                             `Skipping update: minimum OS version is specified but could not determine host OS version ${osVersion}`,
                         );
                         return false;
                     }
 
-                    if (!isANewerOrEqualToB(osVersion, r.MinimumOsVersion)) {
+                    if (!isANewerOrEqualToB(osVersion, candidate.MinimumOsVersion)) {
                         logUpdateCase(
                             local,
-                            r,
+                            candidate,
                             "Skipping update: current OS version does not satisfy minimum OS version requirements.",
                         );
                         return false;
@@ -229,10 +218,10 @@ function getNewUpdate(
                 }
             }
 
-            if (local.RolloutProportion > r.RolloutProportion) {
+            if (local.RolloutProportion > candidate.RolloutProportion) {
                 updateLogger.info(
                     "Skipping update: a newer version is available",
-                    JSON.stringify(r),
+                    JSON.stringify(candidate),
                     `but rollout is low, local:${local.RolloutProportion * 100}%`,
                 );
                 return false;
@@ -240,6 +229,18 @@ function getNewUpdate(
 
             return true;
         }))();
+}
+
+function scheduleNextCheck() {
+    const delay = pkg.config.updateInterval + updateUtils.getVersionManifestFetchJitterMs();
+    setTimeout(async () => {
+        try {
+            await checkForValidUpdates();
+        } catch (error) {
+            updateLogger.error("Version check failed:", error);
+        }
+        scheduleNextCheck();
+    }, delay);
 }
 
 function getVersionURL(platform: DESKTOP_PLATFORMS) {
