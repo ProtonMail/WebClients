@@ -4268,6 +4268,21 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "您 Zoom 連接階段已逾期，請重新連接以繼續。"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "解密內容金鑰失敗: ${ message }"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "未發現成員的位址。請聯繫客戶支援服務以協助解決問題。"
+      ],
+      "Photo is already in the target album": [
+        "照片已存在於目標相簿中"
+      ],
+      "Photo not found": [
+        "找不到照片"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "失敗替 ${ signatureType } 簽名驗證"
       ]
     },
     "error": {
@@ -6798,6 +6813,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "您已達到預約時段限制 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Have some more time to decide without interruption.": [
+        "在未被干擾下有更充分的時間決定。"
       ]
     },
     "info": {
@@ -8804,6 +8822,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } 後四碼 ${ Last4 }"
       ]
     },
     "new_plans: label": {
@@ -9832,6 +9853,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "您的訂閱已套用現有折扣。若轉換至新的促銷方案，現有折扣將不再套用。"
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "透過 ${ IDEAL_WERO_BRAND_NAME } 付款"
       ]
     },
     "Payments.Error": {
@@ -10373,6 +10397,9 @@
       ],
       "One plan, more power": [
         "單一方案，更多能量"
+      ],
+      "One plan, full power": [
+        "單一方案，完整能量"
       ]
     },
     "Referral": {
@@ -11831,6 +11858,9 @@
       ],
       "User": [
         "使用者"
+      ],
+      "Estimated size": [
+        "預估大小"
       ]
     },
     "TableHeader": {
@@ -13277,6 +13307,16 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - 卡片於 ${ Last4 } 結束"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "全部的頂級質子版 ${ DRIVE_SHORT_APP_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME }"
       ]
     }
   }
