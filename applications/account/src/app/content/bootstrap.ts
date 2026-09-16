@@ -15,18 +15,26 @@ import { calendarEventLoopV6 } from '@proton/calendar/calendarEventLoop';
 import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
 import { initMainHost } from '@proton/cross-storage/host';
 import { FeatureCode, fetchFeatures } from '@proton/features';
+import { logger } from '@proton/logger';
+import { ALL_CONSOLE_LEVELS } from '@proton/logger/constants';
+import type { LogLevel } from '@proton/logger/types';
 import { contactEventLoopV6 } from '@proton/mail/store/contactEventLoop';
 import { mailEventLoopV6 } from '@proton/mail/store/mailEventLoop';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { getOAuthSettingsUrl } from '@proton/shared/lib/authentication/fork/oauth2SettingsUrl';
-import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
+import { generateLoggerKey } from '@proton/shared/lib/authentication/loggerKey';
+import {
+    getPersistedSession,
+    registerSessionRemovalListener,
+} from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { listenFreeTrialSessionExpiration } from '@proton/shared/lib/desktop/endOfTrialHelpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
+import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import noop from '@proton/utils/noop';
@@ -116,6 +124,42 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
             bootstrap.loadCrypto({ appName, unleashClient }),
             unleashPromise,
         ]);
+
+        // Initialize logger if the feature flag is enabled
+        if (unleashClient.isEnabled('CollectLogs')) {
+            void generateLoggerKey(authentication).then(({ key: loggerKey, ID: loggerID }) => {
+                const consoleLevels: LogLevel[] | undefined = isProduction(window.location.host)
+                    ? undefined
+                    : ALL_CONSOLE_LEVELS;
+                void logger.initialize({
+                    encryptionKey: loggerKey,
+                    appName,
+                    loggerID,
+                    loggerName: 'account',
+                    consoleLevels,
+                });
+            });
+
+            api.addEventListener((event) => {
+                if (event.type === 'api-error') {
+                    // Ping event can be noisy as they are triggered every 5000ms while offline
+                    const isPing = event.payload.apiInfo.url === 'tests/ping';
+                    if (!isPing) {
+                        logger.error(event.payload.apiInfo.url || 'unknown URL', event.payload);
+                    }
+                }
+
+                // Passive observer for all events, return false so we never claim to handle any of them.
+                return false;
+            });
+
+            // The encryption key is session bound, so the logs are unreadable after a logout anyway.
+            registerSessionRemovalListener(async () => {
+                if (logger.isInitialized()) {
+                    await logger.clearLogs();
+                }
+            });
+        }
 
         if (!!userData.userSettings.Telemetry) {
             telemetry.init({
