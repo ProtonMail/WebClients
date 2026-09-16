@@ -41,8 +41,6 @@ export const fakeImportHandle = () => {
 export const fakeMetricService = () =>
     ({
         sendQueryCompletedReport: jest.fn(),
-        sendResultOpenedReport: jest.fn(),
-        sendResultActionReport: jest.fn(),
         startMailboxIndexing: jest.fn(),
         sendMailboxIndexCompletedReport: jest.fn(),
         startSearchSession: jest.fn(),

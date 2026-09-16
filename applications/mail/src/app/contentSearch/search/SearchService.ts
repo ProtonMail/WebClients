@@ -38,7 +38,7 @@ export class SearchService {
             EncryptedSearchReader.open(this.userId, await this.getUserKeys())
         );
         search.start();
-        this.metricService.startSearchSession();
+        this.startSearchSession();
 
         void search.done.then((outcome) => {
             if (outcome !== 'completed') {
@@ -52,6 +52,10 @@ export class SearchService {
             });
         });
         return search;
+    }
+
+    startSearchSession() {
+        this.metricService.startSearchSession();
     }
 
     /** Ends the current session for a reason that isn't a new query — see `search()` for `'newSearch'`. */
