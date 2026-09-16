@@ -15,13 +15,11 @@ import { CurrencyOverrideBannerText } from '@proton/components/containers/paymen
 import PaymentMethodDetails from '@proton/components/containers/payments/methods/PaymentMethodDetails';
 import { NoPaymentRequiredNote } from '@proton/components/containers/payments/subscription/modal-components/NoPaymentRequiredNote';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
-import { IdealAccountHolderInput } from '@proton/components/payments/chargebee/IdealAccountHolderInput';
-import { type DirectDebitProps, SepaDirectDebit } from '@proton/components/payments/chargebee/SepaDirectDebit';
-import type { usePaymentFacade } from '@proton/components/payments/client-extensions';
-import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
 import useStableLoading from '@proton/hooks/useStableLoading';
 import { IcArrowOutFromRectangle } from '@proton/icons/icons/IcArrowOutFromRectangle';
 import { IcBagPercent } from '@proton/icons/icons/IcBagPercent';
+import { BilledUserInlineMessage } from '@proton/payments-ui/client-extensions/billed-user/index';
+import type { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import { TaxFields } from '@proton/payments-ui/ui/billing-address/components/TaxFields';
 import type { useTaxCountry } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
 import type { useVatNumber } from '@proton/payments-ui/ui/billing-address/hooks/useVatNumber';
@@ -31,6 +29,8 @@ import {
     ChargebeeCreditCardWrapper,
     ChargebeeSavedCardWrapper,
 } from '@proton/payments-ui/ui/components/ChargebeeWrapper';
+import { IdealAccountHolderInput } from '@proton/payments-ui/ui/components/IdealAccountHolderInput';
+import { type DirectDebitProps, SepaDirectDebit } from '@proton/payments-ui/ui/components/SepaDirectDebit';
 import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import { savedMethodRequires3DS } from '@proton/payments/core/createPaymentToken';

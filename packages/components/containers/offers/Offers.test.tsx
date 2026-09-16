@@ -47,7 +47,7 @@ jest.mock('./hooks/useOfferFlags', function () {
     };
 });
 
-jest.mock('../../payments/client-extensions/index', () => ({
+jest.mock('@proton/payments-ui/client-extensions/useAutomaticCurrency', () => ({
     __esModule: true,
     useAutomaticCurrency: jest.fn().mockReturnValue(['EUR', false]),
 }));

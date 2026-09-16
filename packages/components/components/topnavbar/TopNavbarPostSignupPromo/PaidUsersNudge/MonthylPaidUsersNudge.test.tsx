@@ -68,7 +68,7 @@ jest.mock('@proton/features/useFeature', () => ({
     default: jest.fn(() => ({ update: jest.fn() })),
 }));
 
-jest.mock('../../../../payments/client-extensions/index', () => ({
+jest.mock('@proton/payments-ui/client-extensions/useAutomaticCurrency', () => ({
     __esModule: true,
     useAutomaticCurrency: jest.fn().mockReturnValue(['CHF', false]),
 }));

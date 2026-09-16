@@ -1,9 +1,6 @@
 import { useMemo, useRef } from 'react';
 
 import { useConfig } from '@proton/app-context/useConfig';
-import { useCurrencyOverride } from '@proton/payments-ui/payment-methods/useCurrencyOverride';
-import { type ApplePayModalHandles, useApplePay } from '@proton/payments-ui/payment-processors/useApplePay';
-import { type GooglePayModalHandles, useGooglePay } from '@proton/payments-ui/payment-processors/useGooglePay';
 import { type PaymentsVersion, buyCredit, payInvoice, setPaymentMethodV5 } from '@proton/payments/core/api/api';
 import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
@@ -35,6 +32,9 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 
+import { useCurrencyOverride } from '../payment-methods/useCurrencyOverride';
+import { type ApplePayModalHandles, useApplePay } from '../payment-processors/useApplePay';
+import { type GooglePayModalHandles, useGooglePay } from '../payment-processors/useGooglePay';
 import useBitcoin from './useBitcoin';
 import { useChargebeeCard } from './useChargebeeCard';
 import { type ChargebeeIdealModalHandles, useChargebeeIdeal } from './useChargebeeIdeal';

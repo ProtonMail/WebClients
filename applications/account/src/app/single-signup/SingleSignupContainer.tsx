@@ -11,10 +11,10 @@ import UnAuthenticated from '@proton/components/containers/authentication/UnAuth
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions';
-import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import metrics, { observeApiError } from '@proton/metrics';
+import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrencies';
+import { usePaymentsTelemetry } from '@proton/payments-ui/client-extensions/usePaymentsTelemetry';
+import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';

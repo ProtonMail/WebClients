@@ -2,8 +2,6 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { PaymentFacade } from '@proton/components/payments/client-extensions';
-import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import {
     type BillingAddress,
     type BillingAddressExtended,
@@ -24,6 +22,8 @@ import { isPostalCodeValid } from '@proton/payments/postal-codes/postal-codes-va
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 
+import type { PaymentFacade } from '../../../client-extensions/usePaymentFacade';
+import { usePaymentsApi } from '../../../react-extensions/usePaymentsApi';
 import { type CountryItem, getFullList } from '../../helpers/countries-sorted';
 
 export type OnBillingAddressChange = (billingAddress: BillingAddress) => void;

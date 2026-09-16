@@ -46,7 +46,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { usePreferredPlansMap } from '../../hooks/usePreferredPlansMap';
+import { usePreferredPlansMap } from '../ui/hooks/usePreferredPlansMap';
 
 const checkSubscriptionQuery = (data: CheckSubscriptionData) => {
     const normalizedData: CheckSubscriptionData = {
@@ -151,7 +151,7 @@ function billingAddressFallback(fullBillingAddress: FullBillingAddress): FullBil
     return fullBillingAddress;
 }
 
-export const getFullBillingAddress = async (
+const getFullBillingAddress = async (
     api: Api,
     { withFallback }: GetFullBillingAddressOptions
 ): Promise<FullBillingAddress> => {

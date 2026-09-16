@@ -6,8 +6,13 @@ import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { getCanMakePaymentsWithActiveCard } from '@proton/chargebee/lib/getCanMakePaymentsWithActiveCard';
-import type { ApplePayModalHandles } from '@proton/payments-ui/payment-processors/useApplePay';
-import type { GooglePayModalHandles } from '@proton/payments-ui/payment-processors/useGooglePay';
+import Loader from '@proton/components/components/loader/Loader';
+import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useModals from '@proton/components/hooks/useModals';
 import {
     type ApplePayFlow,
     isApplePayQRFlowSupported,
@@ -30,13 +35,9 @@ import type { Api, User } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
-import useModals from '../../..//hooks/useModals';
-import Loader from '../../../components/loader/Loader';
-import ModalTwo, { type ModalOwnProps } from '../../../components/modalTwo/Modal';
-import ModalTwoContent from '../../../components/modalTwo/ModalContent';
-import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
-import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
-import { defaultTranslations } from '../ensureTokenChargeable';
+import type { ApplePayModalHandles } from '../../payment-processors/useApplePay';
+import type { GooglePayModalHandles } from '../../payment-processors/useGooglePay';
+import { getDefaultTranslations } from '../ensureTokenChargeable';
 import { abortSignalAny } from './AbortSignalAny';
 import PaymentVerificationModal from './PaymentVerificationModal';
 
@@ -101,7 +102,7 @@ export const useChargebeeCardVerifyPayment = (
                     events,
                     api,
                     signal: cancelledByAnything,
-                    translations: defaultTranslations,
+                    translations: getDefaultTranslations(),
                     onCancelled,
                     onError,
                 });
