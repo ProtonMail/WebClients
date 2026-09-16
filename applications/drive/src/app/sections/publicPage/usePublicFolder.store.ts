@@ -9,7 +9,7 @@ import { nodeTypeComparator, stringComparator } from '../../modules/sorting/comp
 import { type SortConfig, SortField } from '../../modules/sorting/types';
 import { getPublicFolderSortValue } from './publicFolder.sorting';
 
-export type PublicFolderViewData = {
+type PublicFolderViewData = {
     uid: string;
     name: string;
     parentUid: string | undefined;

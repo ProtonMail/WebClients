@@ -7,7 +7,7 @@ import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 
 import type { DriveFolder } from '../../../../../legacy/hooks/drive/useActiveShare';
 
-export interface CreateNewFolderButtonProps {
+interface CreateNewFolderButtonProps {
     activeFolder: DriveFolder;
 }
 

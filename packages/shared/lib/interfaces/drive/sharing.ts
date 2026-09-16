@@ -136,7 +136,7 @@ export enum SharedURLFlags {
     GeneratedPasswordWithCustom = 3,
 }
 
-export enum ShareTargetType {
+enum ShareTargetType {
     Root = 0,
     Folder = 1,
     File = 2,

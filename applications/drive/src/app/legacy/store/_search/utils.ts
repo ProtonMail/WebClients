@@ -9,11 +9,6 @@ export const createItemId = (shareId: string, linkId: string) => {
     return `${shareId}:${linkId}`;
 };
 
-export const parseItemId = (esItemId: string) => {
-    const [shareId, linkId] = esItemId.split(':');
-    return { shareId, linkId };
-};
-
 /**
  * Generate a deterministic numeric value based on the input
  */
@@ -48,7 +43,7 @@ export const getDefaultSessionValue = () => ({
  * Transforms url hash into an object
  * @param urlHash Example: `#q=query&sort=acs`
  */
-export const parseHashParams = (urlHash: string) => {
+const parseHashParams = (urlHash: string) => {
     const result: Record<string, string> = {};
 
     return urlHash

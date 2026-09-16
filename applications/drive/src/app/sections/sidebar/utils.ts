@@ -7,7 +7,7 @@ export const generateSidebarItemStyle = (nestingLevel: number = 0) => {
 };
 
 /** Returns a new array so callers can safely sort arrays they do not own. */
-export const sortTreeItemsByName = (items: TreeItemWithChildren[]): TreeItemWithChildren[] =>
+const sortTreeItemsByName = (items: TreeItemWithChildren[]): TreeItemWithChildren[] =>
     [...items].sort((a, b) => stringComparator(a.name, b.name));
 
 export const sortChildrenByName = (children: TreeItemWithChildren['children']): TreeItemWithChildren[] =>

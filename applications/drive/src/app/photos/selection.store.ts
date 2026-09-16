@@ -3,7 +3,7 @@ import { create } from 'zustand';
 import type { PhotoGroup } from './usePhotos.store';
 import { isPhotoGroup } from './utils/isPhotoGroup';
 
-export interface HandleSelectionArgs {
+interface HandleSelectionArgs {
     isSelected: boolean;
     isMultiSelect: boolean;
 }
@@ -13,7 +13,7 @@ type SelectionGroup = PhotoGroup;
 
 const getItemId = (item: SelectionItem): string => item.nodeUid;
 
-export const getGroupNodeUids = <T extends SelectionItem>(data: (T | SelectionGroup)[], groupIndex: number) => {
+const getGroupNodeUids = <T extends SelectionItem>(data: (T | SelectionGroup)[], groupIndex: number) => {
     if (!isPhotoGroup(data[groupIndex])) {
         return [];
     }

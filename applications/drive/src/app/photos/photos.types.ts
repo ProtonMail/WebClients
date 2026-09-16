@@ -2,7 +2,7 @@ import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
 export type PhotoGroup = string;
 
-export interface PhotoAdditionalInfo {
+interface PhotoAdditionalInfo {
     name: string;
     mediaType: string | undefined;
     duration: number | undefined;
@@ -22,14 +22,12 @@ export interface PhotoItem {
     additionalInfo?: PhotoAdditionalInfo;
 }
 
-export type PhotoGridItem = PhotoItem | PhotoGroup;
-
 /**
  * The slice of the photos store needed by modules that the store itself depends on.
  * Those modules take a getter for it instead of importing `usePhotos.store`, which
  * would close a dependency cycle back through the store.
  */
-export type PhotosStoreState = {
+type PhotosStoreState = {
     setPhotoItem: (photo: PhotoItem) => void;
     getPhotoItem: (uid: string) => PhotoItem | undefined;
     removePhotoItem: (uid: string) => void;

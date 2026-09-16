@@ -210,9 +210,9 @@ export const useSearchModule = (): UseSearchModuleReturn => {
     return returnValue;
 };
 
-export const EMPTY_INDEXING_PROGRESS: IndexingProgress = { files: 0, folders: 0, albums: 0, photos: 0 };
+const EMPTY_INDEXING_PROGRESS: IndexingProgress = { files: 0, folders: 0, albums: 0, photos: 0 };
 
-export function aggregateIndexingProgress(statuses: IndexPopulatorStatus[]): IndexingProgress {
+function aggregateIndexingProgress(statuses: IndexPopulatorStatus[]): IndexingProgress {
     return statuses.reduce<IndexingProgress>(
         (acc, p) => ({
             files: acc.files + p.progress.files,

@@ -12,7 +12,7 @@ const textEncoder = new TextEncoder();
  * Binds the ciphertext to a specific index kind and blob name so that
  * encrypted blobs cannot be swapped or replayed across indexes.
  */
-export function blobAdditionalData(indexKind: IndexKind, blobName: string): Uint8Array<ArrayBuffer> {
+function blobAdditionalData(indexKind: IndexKind, blobName: string): Uint8Array<ArrayBuffer> {
     return textEncoder.encode(`drive.search.blob.${indexKind}.${blobName}`);
 }
 

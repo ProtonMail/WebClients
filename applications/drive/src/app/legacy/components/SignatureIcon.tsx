@@ -62,5 +62,3 @@ export function DeprecatedSignatureIcon({
         </Tooltip>
     );
 }
-
-export default DeprecatedSignatureIcon;

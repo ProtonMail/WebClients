@@ -20,7 +20,7 @@ export type DocumentType = 'doc' | 'sheet';
  *
  * DRIVE-DEVS: Do not remove export. Used by drive-store.
  */
-export enum RedirectAction {
+enum RedirectAction {
     Bookmark = 'bookmark',
     MakeCopy = 'make-copy',
 }
@@ -85,7 +85,7 @@ type DocumentUrlParams = {
       }
 );
 
-export const buildDocumentUrl = (params: DocumentUrlParams): URL => {
+const buildDocumentUrl = (params: DocumentUrlParams): URL => {
     const { type: originalType, mode } = params;
     const type = tmpConvertNewDocTypeToOld(originalType);
 

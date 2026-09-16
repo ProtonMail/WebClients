@@ -8,7 +8,7 @@ export interface UserSortParams {
     sortOrder: SORT_DIRECTION;
 }
 
-export const settingsToSortParams: { [key in SortSetting]: UserSortParams } = {
+const settingsToSortParams: { [key in SortSetting]: UserSortParams } = {
     [SortSetting.ModifiedAsc]: { sortField: SortField.fileModifyTime, sortOrder: SORT_DIRECTION.ASC },
     [SortSetting.ModifiedDesc]: { sortField: SortField.fileModifyTime, sortOrder: SORT_DIRECTION.DESC },
     [SortSetting.NameAsc]: { sortField: SortField.name, sortOrder: SORT_DIRECTION.ASC },

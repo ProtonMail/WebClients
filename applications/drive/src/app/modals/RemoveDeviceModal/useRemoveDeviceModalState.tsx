@@ -14,10 +14,10 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { getDeviceByUid } from '../../utils/sdk/getDeviceByUid';
 
-export const deviceNameValidator = (value: string, deviceName: string) =>
+const deviceNameValidator = (value: string, deviceName: string) =>
     value !== deviceName ? c('Error').t`Device name does not match` : '';
 
-export type UseRemoveDeviceInnerProps = {
+type UseRemoveDeviceInnerProps = {
     deviceUid: string;
     drive?: ProtonDriveClient;
     onClose?: () => void;

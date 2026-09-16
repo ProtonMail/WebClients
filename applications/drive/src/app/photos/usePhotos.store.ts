@@ -5,7 +5,7 @@ import { getBusDriver } from '@proton/drive/modules/busDriver';
 import type { PhotoItem } from './photos.types';
 import { subscribeToPhotosEvents } from './subscribeToPhotosEvents';
 
-export type { PhotoAdditionalInfo, PhotoGridItem, PhotoGroup, PhotoItem } from './photos.types';
+export type { PhotoGroup, PhotoItem } from './photos.types';
 
 interface PhotosStore {
     photoTimelineUids: Set<string>;

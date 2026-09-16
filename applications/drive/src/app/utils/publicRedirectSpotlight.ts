@@ -7,7 +7,7 @@ import * as storage from '@proton/shared/lib/helpers/storage';
 // - "pending": Waiting for the spotlight to be showed
 // - "shown": Spotlight has been shown for this user
 
-export const PUBLIC_SHARE_REDIRECT_SPOTLIGHT_KEY = 'public-share-redirect-spotlight';
+const PUBLIC_SHARE_REDIRECT_SPOTLIGHT_KEY = 'public-share-redirect-spotlight';
 enum PublicShareRedirectSpotlightStatus {
     Pending = 'pending',
     Shown = 'shown',
@@ -16,11 +16,5 @@ enum PublicShareRedirectSpotlightStatus {
 export const setPublicRedirectSpotlightToPending = () =>
     storage.setItem(PUBLIC_SHARE_REDIRECT_SPOTLIGHT_KEY, PublicShareRedirectSpotlightStatus.Pending);
 
-export const setPublicRedirectSpotlightToShown = () =>
-    storage.setItem(PUBLIC_SHARE_REDIRECT_SPOTLIGHT_KEY, PublicShareRedirectSpotlightStatus.Shown);
-
 export const needPublicRedirectSpotlight = () =>
     storage.getItem(PUBLIC_SHARE_REDIRECT_SPOTLIGHT_KEY, 'false') === PublicShareRedirectSpotlightStatus.Pending;
-
-export const publicRedirectSpotlightWasShown = () =>
-    storage.getItem(PUBLIC_SHARE_REDIRECT_SPOTLIGHT_KEY, 'false') === PublicShareRedirectSpotlightStatus.Shown;

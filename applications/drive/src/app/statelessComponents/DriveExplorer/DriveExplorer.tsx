@@ -47,7 +47,7 @@ const defaultA11y: DriveExplorerA11y = {
  * />
  * ```
  */
-export interface DriveExplorerProps {
+interface DriveExplorerProps {
     /**
      * Array of unique item identifiers to display.
      * Order determines display order in the list/grid.

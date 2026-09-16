@@ -8,7 +8,6 @@ import { generateNodeUid } from '@proton/drive';
 import { type MoveNodesItemMap, useMoveNodes } from '@proton/drive/modules/moveNodes';
 import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/utils/isTruthy';
-import noop from '@proton/utils/noop';
 
 import { useSelection } from '../../../legacy/components/FileBrowser';
 import type { DragMoveControls } from '../../../legacy/components/FileBrowser/interface';
@@ -120,9 +119,4 @@ export default function useDriveDragMove(shareId: string, contents: DragAndDropI
     };
 
     return { getDragMoveControls, getHandleItemDrop };
-}
-
-export function useDriveDragMoveTarget(shareId: string) {
-    const { getHandleItemDrop } = useDriveDragMove(shareId, [], noop);
-    return { getHandleItemDrop };
 }

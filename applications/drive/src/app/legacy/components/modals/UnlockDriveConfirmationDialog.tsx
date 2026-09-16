@@ -58,8 +58,6 @@ const UnlockDriveConfirmationDialog = ({ onClose = noop, onSubmit = noop, ...mod
     );
 };
 
-export default UnlockDriveConfirmationDialog;
-
 export const useUnlockDriveConfirmationDialog = () => {
     return useModalTwoStatic(UnlockDriveConfirmationDialog);
 };
