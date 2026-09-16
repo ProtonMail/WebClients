@@ -3,10 +3,9 @@ import type { JSXElementConstructor, PropsWithChildren, ReactNode } from 'react'
 import type { RenderHookOptions, queries } from '@testing-library/react';
 import { renderHook as originalRenderHook } from '@testing-library/react';
 
-import { withApi } from '@proton/testing/lib/context/hocs/with-api';
-import { withMemoryRouter } from '@proton/testing/lib/context/hocs/with-memory-router';
-
 import { applyHOCs } from './hocs/helpers';
+import { withApi } from './hocs/with-api';
+import { withMemoryRouter } from './hocs/with-memory-router';
 import { setupStore } from './store';
 import { withAuthentication } from './with-authentication';
 import { withCache } from './with-cache';
