@@ -4,10 +4,14 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useStaticExperiment } from '@proton/account/staticExperiments/useStaticExperiment';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import ChallengeV5 from '@proton/challenge/Challenge';
+import { CHALLENGE_PATHNAME, getChallengeSrc } from '@proton/challenge/getChallengeSrc';
+import type { ChallengeRef as ChallengeV5Ref } from '@proton/challenge/interface';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
@@ -42,7 +46,7 @@ import { APPS, BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/consta
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { getApiSubdomainUrl, getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Api, Unwrap } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
@@ -150,6 +154,8 @@ const LoginForm = ({
 
     const usernameRef = useRef<HTMLInputElement>(null);
     const challengeRefLogin = useRef<ChallengeRef>();
+    const challengeRefLoginV5 = useRef<ChallengeV5Ref>();
+    const challengeV5 = useStaticExperiment('ChallengeV5') === 'v5';
     const [externalSSOState, setExternalSSOState] = useState<
         | {
               challengeResult: ChallengeResult;
@@ -161,6 +167,12 @@ const LoginForm = ({
     const onceRef = useRef(false);
 
     const { validator, onFormSubmit, reset } = useFormErrors();
+
+    /** Only one of the two frames is mounted, so ask whichever it is. */
+    const getChallengePayload = () => {
+        const ref = challengeV5 ? challengeRefLoginV5 : challengeRefLogin;
+        return ref.current?.getChallenge().catch(noop);
+    };
 
     useImperativeHandle(loginFormRef, () => ({
         getIsLoading: () => {
@@ -238,7 +250,7 @@ const LoginForm = ({
             }
         }
 
-        const challengeResult = await challengeRefLogin.current?.getChallenge().catch(noop);
+        const challengeResult = await getChallengePayload();
 
         const abortController = new AbortController();
         setExternalSSOState({ challengeResult, abortController, ssoInfoResponse });
@@ -310,7 +322,7 @@ const LoginForm = ({
     };
 
     const handleSubmitSrp = async () => {
-        const payload = await challengeRefLogin.current?.getChallenge().catch(noop);
+        const payload = await getChallengePayload();
 
         let result: Unwrap<ReturnType<typeof handleLogin>>;
 
@@ -393,6 +405,24 @@ const LoginForm = ({
     };
 
     const lumoSignInHelperEnabled = useFlag('LumoSignInHelp');
+
+    const challengeEl = challengeV5 ? (
+        <ChallengeV5
+            challengeRef={challengeRefLoginV5}
+            observeRef={usernameRef}
+            getSrc={(retry) =>
+                getChallengeSrc(getApiSubdomainUrl(CHALLENGE_PATHNAME, window.location.origin), {
+                    type: 0,
+                    name: 'login',
+                    lang: document.documentElement.lang,
+                    retry,
+                })
+            }
+        />
+    ) : (
+        <Challenge empty tabIndex={-1} challengeRef={challengeRefLogin} type={0} name="login" />
+    );
+
     const urlParams = new URLSearchParams();
 
     if (username) {
@@ -503,7 +533,7 @@ const LoginForm = ({
                 }}
                 method="post"
             >
-                <Challenge empty tabIndex={-1} challengeRef={challengeRefLogin} type={0} name="login" />
+                {challengeEl}
                 {(() => {
                     if (authTypeData.type === AuthType.Auto) {
                         return (
@@ -610,7 +640,7 @@ const LoginForm = ({
                 }}
                 method="post"
             >
-                <Challenge empty tabIndex={-1} challengeRef={challengeRefLogin} type={0} name="login" />
+                {challengeEl}
                 {usernameEl()}
                 {authTypeData.type === AuthType.ExternalSSO ? null : passwordEl()}
                 {errorEl}
