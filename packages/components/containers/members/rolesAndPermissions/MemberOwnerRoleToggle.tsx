@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { getPrivateAdminError, setMemberOwnerRole } from '@proton/account';
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { canManageOwnerRole, hasUserSourcedOwnerRole } from '@proton/account/organizationRoles/helpers';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
@@ -30,6 +31,7 @@ interface Props {
 const MemberOwnerRoleToggle = ({ member, onChangeSelectedRoles, hasToggledPrivate }: Props) => {
     const dispatch = useDispatch();
     const silentApi = useSilentApi();
+    const [organization] = useOrganization();
     const [organizationKey] = useOrganizationKey();
     const [userPermissions] = useUserPermissions();
     const { createNotification } = useNotifications();
@@ -94,7 +96,7 @@ const MemberOwnerRoleToggle = ({ member, onChangeSelectedRoles, hasToggledPrivat
                 }
                 assistiveText={
                     <div>
-                        {adminTooltipText()}{' '}
+                        {adminTooltipText(organization?.IsSubsidiary)}{' '}
                         {passwordlessMode &&
                             hasToggledPrivate &&
                             isChecked &&
