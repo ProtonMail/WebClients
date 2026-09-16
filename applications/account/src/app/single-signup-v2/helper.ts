@@ -1,6 +1,6 @@
 import isDeepEqual from 'lodash/isEqual';
 
-import { canBuyPassLifetime } from '@proton/components/containers/payments/subscription/subscriptionEligbility';
+import { canBuyPassLifetime } from '@proton/payments-ui/ui/subscriptions/eligibility';
 import { getPaymentMethods, getSubscription } from '@proton/payments/core/api/api';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
