@@ -48,6 +48,7 @@ interface UIState {
     permissionPromptStatus: PermissionPromptStatus;
     noDeviceDetected: PermissionPromptStatus;
     participantListTab: ParticipantListTabs;
+    chatFocusedMessageId: string | null;
 }
 
 const initialState: UIState = {
@@ -73,6 +74,7 @@ const initialState: UIState = {
     permissionPromptStatus: PermissionPromptStatus.CLOSED,
     noDeviceDetected: PermissionPromptStatus.CLOSED,
     participantListTab: ParticipantListTabs.AllParticipants,
+    chatFocusedMessageId: null,
 };
 
 const slice = createSlice({
@@ -97,6 +99,18 @@ const slice = createSlice({
             });
 
             state.sideBarState[sidebar] = !wasOpen;
+            state.chatFocusedMessageId = null;
+        },
+        openChatAtMessage: (state, action: PayloadAction<string>) => {
+            Object.keys(state.sideBarState).forEach((key) => {
+                state.sideBarState[key as MeetingSideBars] = false;
+            });
+
+            state.sideBarState[MeetingSideBars.Chat] = true;
+            state.chatFocusedMessageId = action.payload;
+        },
+        clearChatFocusedMessage: (state) => {
+            state.chatFocusedMessageId = null;
         },
         closeSideBar: (state, action: PayloadAction<MeetingSideBars>) => {
             state.sideBarState[action.payload] = false;
@@ -150,6 +164,7 @@ const slice = createSlice({
             state.permissionPromptStatus = initialState.permissionPromptStatus;
             state.noDeviceDetected = initialState.noDeviceDetected;
             state.participantListTab = initialState.participantListTab;
+            state.chatFocusedMessageId = initialState.chatFocusedMessageId;
         },
     },
 });
@@ -159,6 +174,8 @@ export const {
     setEmojiReactionPopupOpen,
     toggleShowDuration,
     toggleSideBarState,
+    openChatAtMessage,
+    clearChatFocusedMessage,
     setParticipantListTab,
     openWaitingRoomSideBar,
     togglePopupState,
@@ -177,6 +194,7 @@ export const selectPermissionPromptStatus = (state: MeetState) => state.uiState.
 export const selectNoDeviceDetected = (state: MeetState) => state.uiState.noDeviceDetected;
 export const selectShowDuration = (state: MeetState) => state.uiState.showDuration;
 export const selectParticipantListTab = (state: MeetState) => state.uiState.participantListTab;
+export const selectChatFocusedMessageId = (state: MeetState) => state.uiState.chatFocusedMessageId;
 export const selectIsSideBarOpen = (state: MeetState) =>
     Object.values(state.uiState.sideBarState).some((value) => value);
 
