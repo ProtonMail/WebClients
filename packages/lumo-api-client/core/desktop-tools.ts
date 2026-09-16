@@ -38,7 +38,6 @@ export type DesktopConnector = {
     display_name: string;
     icon?: string;
     enabled: boolean;
-    connected: boolean;
     tools?: { name: string; title?: string; description?: string }[];
 };
 
