@@ -371,7 +371,7 @@ const SubUserEditModal = ({
                         }
                         assistiveText={
                             <div>
-                                {adminTooltipText()}{' '}
+                                {adminTooltipText(organization?.IsSubsidiary)}{' '}
                                 {passwordlessMode &&
                                     hasToggledPrivate &&
                                     hasToggledAdmin &&
