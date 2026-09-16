@@ -1,6 +1,5 @@
 import { highlightJSX, insertMarks } from '@proton/encrypted-search/esHelpers';
 import type {
-    ContentSearchEndReason,
     ESCallbacks,
     ESEvent,
     ESIndexingState,
@@ -16,6 +15,7 @@ import noop from '@proton/utils/noop';
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
 import type { IndexService } from '../indexation/IndexService';
 import type { MetricService } from '../metrics/MetricService';
+import type { ContentSearchEndReason } from '../metrics/interface';
 import type { Search, SearchOutcome } from '../search/Search';
 import type { SearchService } from '../search/SearchService';
 import { IndexingJob, type JobMode } from './IndexingJob';

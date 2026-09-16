@@ -1,6 +1,6 @@
 import * as Comlink from 'comlink';
 
-import type { ContentSearchEndReason, NormalizedSearchParams } from '@proton/encrypted-search/models';
+import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { getIndexKey } from '../crypto/indexKey';
@@ -8,6 +8,7 @@ import type { DatabaseLock } from '../db/DatabaseLock';
 import { openContentSearchDB } from '../db/open';
 import { EncryptedSearchReader } from '../import/EncryptedSearchReader';
 import type { MetricService } from '../metrics/MetricService';
+import type { ContentSearchEndReason } from '../metrics/interface';
 import type { Logger } from '../utils/logger';
 import { Search } from './Search';
 import type SearchWorker from './SearchWorker';

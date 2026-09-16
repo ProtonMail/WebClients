@@ -1,7 +1,8 @@
 import type { NotificationsManager } from '@proton/app-context/notifications/manager';
 import type { CalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
-import type { ContentSearchEndReason } from '@proton/encrypted-search/models';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+
+import type { ContentSearchEndReason } from '../contentSearch/metrics/interface';
 
 export interface MailThunkArguments extends ProtonThunkArguments {
     calendarModelEventManager: CalendarModelEventManager;

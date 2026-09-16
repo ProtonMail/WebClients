@@ -1,14 +1,4 @@
-import type {
-    ContentSearchActionSurface,
-    ContentSearchEndReason,
-    ContentSearchIndexErrorKind,
-    ContentSearchMailboxAddressType,
-    ContentSearchResultAction,
-    ContentSearchSessionActionType,
-    ContentSearchVersion,
-    SearchSession,
-} from '@proton/encrypted-search/models';
-import { type ContentSearchEventStatus, SEARCH_RESULT_SCROLLER_MODE } from '@proton/encrypted-search/models';
+import type { ContentSearchEventStatus, ContentSearchIndexErrorKind } from '@proton/encrypted-search/models';
 import type { TelemetryReport } from '@proton/shared/lib/api/telemetry';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
@@ -16,6 +6,15 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import type { Logger } from '../utils/logger';
+import type {
+    ContentSearchEndReason,
+    ContentSearchMailboxAddressType,
+    ContentSearchResultAction,
+    ContentSearchSessionActionType,
+    ContentSearchVersion,
+    SearchSession,
+} from './interface';
+import { type ContentSearchActionSurface, SEARCH_RESULT_SCROLLER_MODE } from './interface';
 import {
     buildIndexCompletedPayload,
     buildQueryCompletedPayload,
@@ -24,7 +23,7 @@ import {
     buildSearchSessionStartedPayload,
 } from './telemetryEventBuilder';
 
-export const getMailboxAddressType = (addresses: Address[] | undefined): ContentSearchMailboxAddressType => {
+const getMailboxAddressType = (addresses: Address[] | undefined): ContentSearchMailboxAddressType => {
     if (!addresses || !addresses.length) {
         return 'proton';
     }
