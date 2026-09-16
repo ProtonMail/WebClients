@@ -1,8 +1,7 @@
 import type { ComponentType } from 'react';
 
-import { mockCache } from '@proton/testing/lib/cache';
-
 import { CacheProvider } from '../containers/cache/Provider';
+import { mockCache } from './cache';
 
 export const withCache =
     (cache = mockCache) =>
