@@ -33,7 +33,7 @@ import { searchModule } from './skills/reads/search';
 import { viewEmailsModule } from './skills/reads/viewEmails';
 import { readAutoReplyModule, setAutoReplyModule } from './skills/settings/autoReply';
 import { changeSettingsModule, readSettingsModule } from './skills/settings/cosmetic';
-import { changeSignatureModule, readSignatureModule } from './skills/settings/signature';
+import { changeSignatureModule, readSignatureModule, removeSignatureModule } from './skills/settings/signature';
 import { openSupportTicketModule } from './skills/support/openSupportTicket';
 import type { MailToolDeps, MailToolModule } from './toolModule';
 
@@ -77,6 +77,7 @@ const MODULES: MailToolModule[] = [
     changeSettingsModule,
     setAutoReplyModule,
     changeSignatureModule,
+    removeSignatureModule,
     // Compose
     createDraftModule,
     reviseDraftModule,
