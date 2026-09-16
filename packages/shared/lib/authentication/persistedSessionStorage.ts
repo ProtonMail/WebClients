@@ -27,7 +27,7 @@ import {
     getMaskFromAccessType,
     selfAccessTypeMask,
 } from './sessionAccessType';
-import { getDecryptedBlob, getEncryptedBlob } from './sessionBlobCryptoHelper';
+import { getDecryptedBlob, getDecryptedBlobV3, getEncryptedBlob, getEncryptedBlobV3 } from './sessionBlobCryptoHelper';
 
 // We have business logic relying on this constant, please change with caution!
 export const STORAGE_PREFIX = 'ps-';
@@ -184,16 +184,34 @@ const getPersistedSessionBlob = (blob: string): PersistedSessionBlob | undefined
     }
 };
 
+const getEncryptedPersistedSessionBlobData = (
+    key: CryptoKey,
+    data: string,
+    payloadVersion: PersistedSession['payloadVersion']
+) => {
+    if (payloadVersion === 3) {
+        return getEncryptedBlobV3(key, data, utf8StringToUint8Array('session'));
+    }
+    return getEncryptedBlob(key, data, payloadVersion === 2 ? utf8StringToUint8Array('session') : undefined);
+};
+
+const getDecryptedPersistedSessionBlobData = (
+    key: CryptoKey,
+    blob: string,
+    payloadVersion: PersistedSession['payloadVersion']
+) => {
+    if (payloadVersion === 3) {
+        return getDecryptedBlobV3(key, blob, utf8StringToUint8Array('session'));
+    }
+    return getDecryptedBlob(key, blob, payloadVersion === 2 ? utf8StringToUint8Array('session') : undefined);
+};
+
 export const getDecryptedPersistedSessionBlob = async (
     key: CryptoKey,
     blob: string,
     payloadVersion: PersistedSession['payloadVersion']
 ): Promise<PersistedSessionBlob> => {
-    const decryptedBlob = await getDecryptedBlob(
-        key,
-        blob,
-        payloadVersion === 2 ? utf8StringToUint8Array('session') : undefined
-    ).catch(() => {
+    const decryptedBlob = await getDecryptedPersistedSessionBlobData(key, blob, payloadVersion).catch(() => {
         throw new InvalidPersistentSessionError('Failed to decrypt persisted blob');
     });
     const parsedBlob = getPersistedSessionBlob(decryptedBlob);
@@ -217,8 +235,9 @@ export const getPersistedSessionData = async (
         source: PersistedSession['source'];
     }
 ): Promise<PersistedSession> => {
-    /* TODO: We can now make this update 2026-09-16. */
-    const payloadVersion = 1 as PersistedSession['payloadVersion'];
+    /* Versions 2 and 3 can be read, but only version 1 is written (safe for rollback). */
+    /* TODO: Make this change after 2026-10-16. */
+    const payloadVersion: PersistedSession['payloadVersion'] = 1;
 
     const { clearTextPayloadData, encryptedPayloadData } = ((): {
         clearTextPayloadData:
@@ -259,11 +278,7 @@ export const getPersistedSessionData = async (
         source: data.source,
         payloadVersion,
         ...clearTextPayloadData,
-        blob: await getEncryptedBlob(
-            key,
-            JSON.stringify(encryptedPayloadData),
-            payloadVersion === 2 ? utf8StringToUint8Array('session') : undefined
-        ),
+        blob: await getEncryptedPersistedSessionBlobData(key, JSON.stringify(encryptedPayloadData), payloadVersion),
         persistedAt: data.persistedAt,
     };
 };
