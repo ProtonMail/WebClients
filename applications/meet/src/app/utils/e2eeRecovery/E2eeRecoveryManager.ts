@@ -8,8 +8,8 @@ import { collectReceiverStats } from './inboundRtpStats';
 import { E2EE_RECOVERY_TUNING_DEFAULT, type E2eeRecoveryTuning } from './recoveryTuning';
 import type { ReceiverStatsTick, RecoveryReason, ReportError } from './types';
 
-export type { E2eeRecoveryProfile, E2eeRecoveryTuning } from './recoveryTuning';
-export { E2EE_RECOVERY_TUNING_AGGRESSIVE, E2EE_RECOVERY_TUNING_DEFAULT, getE2eeRecoveryTuning } from './recoveryTuning';
+export type { E2eeRecoveryTuning } from './recoveryTuning';
+export { getE2eeRecoveryTuning } from './recoveryTuning';
 
 /**
  * Minimal contract the recovery manager needs from the audio subscription

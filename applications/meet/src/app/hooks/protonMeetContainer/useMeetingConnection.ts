@@ -33,7 +33,7 @@ export interface MeetingAccessDetails {
     websocketUrl: string;
 }
 
-export interface ConnectWithMlsParams {
+interface ConnectWithMlsParams {
     meetingToken: string;
     meetingPassword: string;
     displayName: string;

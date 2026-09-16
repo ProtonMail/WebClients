@@ -103,8 +103,7 @@
         },
         "applications/meet": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
-            "project": ["src/**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["src/**/*.{ts,tsx}"]
         },
         "applications/meet-desktop": {
             "entry": [

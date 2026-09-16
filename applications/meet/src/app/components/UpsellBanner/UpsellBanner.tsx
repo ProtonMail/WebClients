@@ -16,8 +16,8 @@ import { canShowBanner } from '../../utils/canShowBanner';
 
 import './UpsellColor.scss';
 
-export const STORAGE_KEY = 'upsell_banner_dismissed_until';
-export const DISMISS_DAYS = 30;
+const STORAGE_KEY = 'upsell_banner_dismissed_until';
+const DISMISS_DAYS = 30;
 
 export const UpsellBanner = () => {
     const meetUpsellEnabled = useFlag('MeetUpsell');

@@ -152,7 +152,7 @@ const backgroundKey = (mode: BackgroundMode): string | null =>
  * between them per frame. {@link setMode} therefore swaps the look without
  * restarting the segmenter or the track.
  */
-export class BackgroundProcessorTransformer extends VideoTransformer<BackgroundOptions> {
+class BackgroundProcessorTransformer extends VideoTransformer<BackgroundOptions> {
     static get isSupported() {
         const canvas = document.createElement('canvas');
         const gl = canvas.getContext('webgl2');

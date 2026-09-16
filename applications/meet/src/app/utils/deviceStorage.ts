@@ -1,4 +1,4 @@
-export const STORAGE_KEYS = {
+const STORAGE_KEYS = {
     AUDIO_DEVICE_ID: 'proton-meet-audio-device-id',
     VIDEO_DEVICE_ID: 'proton-meet-video-device-id',
     AUDIO_OUTPUT_DEVICE_ID: 'proton-meet-audio-output-device-id',

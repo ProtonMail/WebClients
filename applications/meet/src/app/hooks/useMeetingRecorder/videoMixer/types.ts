@@ -31,7 +31,7 @@ export type ParticipantInfo = {
     hasActiveAudio: boolean;
 };
 
-export type GridLayout = { cols: number; rows: number };
+type GridLayout = { cols: number; rows: number };
 
 export type SceneState = {
     participants: ParticipantInfo[];
@@ -40,7 +40,7 @@ export type SceneState = {
     gridLayout: GridLayout;
 };
 
-export type SingleFrameData = {
+type SingleFrameData = {
     participantIdentity: string;
     frame: VideoFrame | ImageBitmap;
 };
