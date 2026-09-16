@@ -405,16 +405,17 @@ export const getActiveSessionsData = async <T extends PersistedSessionLite>({
 }: {
     api: Api;
     persistedSessions: T[];
-}): Promise<ActiveSessionBase<T>[]> => {
+}): Promise<{ sessions: ActiveSessionBase<T>[]; remoteSessions: LocalSessionResponse[] }> => {
     const map = Object.fromEntries(persistedSessions.map((value) => [value.localID, value]));
     const { Sessions = [] } = await api<{ Sessions: LocalSessionResponse[] }>(getLocalSessions());
-    return Sessions.reduce<ActiveSessionBase<T>[]>((acc, remote) => {
+    const sessions = Sessions.reduce<ActiveSessionBase<T>[]>((acc, remote) => {
         const persisted = map[remote.LocalID];
         if (persisted) {
             acc.push({ persisted, remote });
         }
         return acc;
     }, []);
+    return { sessions, remoteSessions: Sessions };
 };
 
 export enum GetActiveSessionType {
@@ -579,7 +580,7 @@ const getActiveSessionsResult = async ({
     const persistedSessions = getPersistedSessions().sort((a, b) => {
         return sessionComparator(a, b, session.localID);
     });
-    const activeSessions = await getActiveSessionsData({
+    const { sessions: activeSessions } = await getActiveSessionsData({
         api: getUIDApi(session.UID, api),
         persistedSessions,
     });
