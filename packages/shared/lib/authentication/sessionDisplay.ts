@@ -1,9 +1,9 @@
 import { getInitials } from '../helpers/string';
 import type { ActiveSessionLite } from './persistedSessionHelper';
+import { getAccessTypeFromMask } from './sessionAccessType';
 
 export const getSessionDisplayData = ({
-    remote: { LocalID, DisplayName, Username, PrimaryEmail },
-    persisted: { accessType },
+    remote: { LocalID, DisplayName, Username, PrimaryEmail, AccessType },
 }: ActiveSessionLite) => {
     const nameToDisplay = DisplayName || Username || PrimaryEmail || '';
     const initials = getInitials(nameToDisplay);
@@ -19,6 +19,6 @@ export const getSessionDisplayData = ({
         email: PrimaryEmail,
         maybeEmailInBrackets,
         path,
-        accessType,
+        accessType: getAccessTypeFromMask(AccessType),
     };
 };

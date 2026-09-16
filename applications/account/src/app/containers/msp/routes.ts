@@ -3,8 +3,9 @@ import { c } from 'ttag';
 import type { SectionConfig, SidebarConfig } from '@proton/components/containers/layout/interface';
 import { IcBuildings } from '@proton/icons/icons/IcBuildings';
 import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
-import { AccessType } from '@proton/shared/lib/authentication/accessType';
+import { SessionAccessTypeFlag } from '@proton/shared/lib/authentication/sessionAccessType';
 import { APPS } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 
 import type { GeneralRouterParams } from '../../content/router-params';
 
@@ -22,7 +23,8 @@ export const getMspAppRoutes = ({ app, flags, entitlements, user }: GeneralRoute
     // @todo: implement this when new MSP permissions are implemented
     const canViewMonthlyCosts = user.isAdmin;
     return {
-        available: isMspEnabled && isAllowedApp && isEligible && user.accessType !== AccessType.Msp,
+        available:
+            isMspEnabled && isAllowedApp && isEligible && !hasBit(user.accessTypeMask, SessionAccessTypeFlag.OrgAccess),
         header: c('Settings section title').t`Managed Companies`,
         routes: {
             companies: {
