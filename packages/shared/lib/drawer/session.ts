@@ -1,6 +1,6 @@
 import { type PersistedSession, SessionSource } from '../authentication/SessionInterface';
-import { AccessType } from '../authentication/accessType';
 import type { ResumedSessionResult } from '../authentication/persistedSessionHelper';
+import { selfAccessTypeMask } from '../authentication/sessionAccessType';
 import type { APP_NAMES } from '../constants';
 import { SECOND } from '../constants';
 import { createTimeoutError } from '../fetch/ApiError';
@@ -51,7 +51,7 @@ export const resumeSessionDrawerApp = ({
                     payloadVersion: 1,
                     localID,
                     UserID: User.ID,
-                    accessType: AccessType.Self,
+                    accessTypeMask: selfAccessTypeMask,
                     source: SessionSource.Proton,
                     persistent,
                     persistedAt: Date.now(),

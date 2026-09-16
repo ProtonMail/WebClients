@@ -1,5 +1,5 @@
-import type { AccessType } from './accessType';
 import type { OfflineKey } from './offlineKey';
+import type { SessionAccessTypeMask } from './sessionAccessType';
 
 export enum SessionSource {
     Proton,
@@ -24,7 +24,7 @@ export interface DefaultPersistedSession {
     UserID: string;
     UID: string;
     blob?: string;
-    accessType: AccessType;
+    accessTypeMask: SessionAccessTypeMask;
     persistent: boolean;
     trusted: boolean;
     payloadVersion: 2 | 1;
@@ -40,5 +40,16 @@ export interface OfflinePersistedSession extends Omit<DefaultPersistedSession, '
 
 export type PersistedSession = OfflinePersistedSession | DefaultPersistedSession;
 
-// The minimal amount of data needed to render the session list
-export type PersistedSessionLite = Pick<PersistedSession, 'localID' | 'accessType'>;
+/**
+ * The minimal amount of data needed to match a session listed by `auth/v4/sessions/local` to one
+ * this client persisted. Everything else about such a session, the access type included, comes from
+ * the API response.
+ */
+export type PersistedSessionLite = Pick<PersistedSession, 'localID'>;
+
+/**
+ * What the `iaas` cookie still carries per session. The access type is written only for clients
+ * that read it from the cookie rather than from `auth/v4/sessions/local`; once those are gone this
+ * collapses into {@link PersistedSessionLite}.
+ */
+export type PersistedSessionCookieData = Pick<PersistedSession, 'localID' | 'accessTypeMask'>;

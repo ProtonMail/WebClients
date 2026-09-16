@@ -11,7 +11,7 @@ import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';
 import { IcFolder } from '@proton/icons/icons/IcFolder';
 import { IcFolders } from '@proton/icons/icons/IcFolders';
 import { conversationCountsActions } from '@proton/mail/store/counts/conversationCountsSlice';
-import { AccessType } from '@proton/shared/lib/authentication/accessType';
+import { SessionAccessTypeFlag } from '@proton/shared/lib/authentication/sessionAccessType';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey, type Label } from '@proton/shared/lib/interfaces';
@@ -219,7 +219,9 @@ describe('MailSidebar', () => {
         setupTest();
         await mailTestRender(<MailSidebar />, {
             preloadedState: {
-                user: getModelState(buildUser({ ID: undefined, isAdmin: false, accessType: AccessType.AdminAccess })),
+                user: getModelState(
+                    buildUser({ ID: undefined, isAdmin: false, accessTypeMask: SessionAccessTypeFlag.AdminAccess })
+                ),
                 categories: getModelState(systemFolders),
             },
         });

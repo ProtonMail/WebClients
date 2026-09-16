@@ -6,7 +6,7 @@ import type { Api } from '../interfaces';
 import { removeDeviceRecovery } from '../recoveryFile/storage';
 import { type PersistedSession, SessionSource } from './SessionInterface';
 import { parseLogoutURL } from './logoutUrl';
-import { findPersistedSession } from './persistedSessionHelper';
+import { findPersistedSessionByAccessType, findPersistedSessionByLocalID } from './persistedSessionHelper';
 import { getPersistedSessions, removePersistedSession } from './persistedSessionStorage';
 
 export const clearSession = ({
@@ -48,15 +48,25 @@ export const handleLogoutFromURL = ({ api }: { api: Api }) => {
 
     const silentApi = getSilentApi(api);
     const persistedSessions = getPersistedSessions();
-    params.sessions.forEach(({ id, accessType }) => {
-        const session = findPersistedSession({
-            persistedSessions,
-            UserID: id,
-            accessType,
-            // Ignore oauth sessions, they are only used in BEX.
-            // This is to avoid signing out the oauth session if the same user has signed out with srp.
-            source: [SessionSource.Proton, SessionSource.Saml],
-        });
+    params.sessions.forEach((user) => {
+        // Ignore oauth sessions, they are only used in BEX.
+        // This is to avoid signing out the oauth session if the same user has signed out with srp.
+        const source = [SessionSource.Proton, SessionSource.Saml];
+        const session =
+            user.localID !== undefined
+                ? findPersistedSessionByLocalID({
+                      persistedSessions,
+                      localID: user.localID,
+                      UserID: user.id,
+                      source,
+                  })
+                : // TODO: Drop once all apps are deployed to only send local id
+                  findPersistedSessionByAccessType({
+                      persistedSessions,
+                      UserID: user.id,
+                      accessType: user.accessType,
+                      source,
+                  });
         if (session) {
             clearSession({ session, api: silentApi, revokeSession });
         }

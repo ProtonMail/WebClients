@@ -9,15 +9,23 @@ export interface LegacySerializedSignoutUserData {
 }
 
 export interface SerializedSignoutUserData {
+    // The session's local id
+    l: number;
     id: string;
-    // isSubUser: legacy passed value
-    a: number;
+    // (legacy) The session's access type. Only present on a URL serialized before the local id was sent.
+    a?: number;
 }
 
+// What a signout built here carries: which session it means, by local id
 export interface SignoutUserData {
     id: string;
-    accessType: AccessType;
+    localID: number;
 }
+
+// What a signout URL can be read as, a local id or the access type a client predating it sent
+export type ParsedSignoutUserData = { id: string } & (
+    { localID: number; accessType?: never } | { localID?: never; accessType: AccessType }
+);
 
 export interface SignoutSessions {
     type: 'all' | 'self';

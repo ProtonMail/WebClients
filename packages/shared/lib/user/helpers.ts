@@ -1,7 +1,6 @@
 import { differenceInDays, fromUnixTime } from 'date-fns';
 
-import { AccessType } from '../authentication/accessType';
-import { getAccessType } from '../authentication/getAccessType';
+import { SessionAccessTypeFlag, getSessionAccessTypeMask } from '../authentication/sessionAccessType';
 import { PRODUCT_BIT, USER_ROLES } from '../constants';
 import { hasBit } from '../helpers/bitset';
 import type { User, UserInfo, UserModel } from '../interfaces';
@@ -23,7 +22,8 @@ export const isPaid = (user: User) => !!user.Subscribed;
 export const isPrivate = (user: User) => user.Private === 1;
 export const isFree = (user: User) => !isPaid(user);
 export const isAdmin = (user: User) => user.Role === ADMIN_ROLE;
-export const isAdminOrLoginAsAdmin = (user: UserModel) => user.isAdmin || user.accessType === AccessType.AdminAccess;
+export const isAdminOrLoginAsAdmin = (user: UserModel) =>
+    user.isAdmin || hasBit(user.accessTypeMask, SessionAccessTypeFlag.AdminAccess);
 export const isMember = (user: User) => user.Role === MEMBER_ROLE;
 export const isSelf = (user: User) => !user.OrganizationPrivateKey && !user.Flags?.['delegated-access'];
 export const isDelinquent = (user: User) => !!user.Delinquent;
@@ -45,7 +45,7 @@ const getInfo = (User: User): UserInfo => {
         hasPaidLumo: hasPaidLumo(User),
         hasPaidMeet: hasPaidMeet(User),
         hasPassLifetime: hasPassLifetime(User),
-        accessType: getAccessType(User),
+        accessTypeMask: getSessionAccessTypeMask(User),
         canPay: canPay(User),
     };
 };

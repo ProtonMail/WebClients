@@ -1,6 +1,6 @@
-import { AccessType } from '../authentication/accessType';
-import { getAccessType } from '../authentication/getAccessType';
+import { SessionAccessTypeFlag, getSessionAccessTypeMask } from '../authentication/sessionAccessType';
 import { APPS, type APP_NAMES, USER_ROLES } from '../constants';
+import { hasBit } from '../helpers/bitset';
 import { isElectronMail } from '../helpers/desktop';
 import type { OrganizationExtended, User } from '../interfaces';
 import { getIsExternalUserWithoutProtonAddressCreation, getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '../keys';
@@ -63,7 +63,7 @@ const getAvailableAppsByOrganization = ({ user, organization }: GetOrganizationA
 
 const getAvailableAppsByUser = (options: GetAvailableAppsByUserTypeArguments): AppSet => {
     // Disallow MSP sessions to access any apps. It's only allowed for organization admin management.
-    if (options.user && getAccessType(options.user) === AccessType.Msp) {
+    if (options.user && hasBit(getSessionAccessTypeMask(options.user), SessionAccessTypeFlag.OrgAccess)) {
         return new Set([]);
     }
 
