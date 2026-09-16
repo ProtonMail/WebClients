@@ -10,10 +10,7 @@
         "./models": "./lib/models/index.d.ts",
         "./useEncryptedSearch": "./lib/useEncryptedSearch.tsx",
         "./useSearchTelemetry": "./lib/useSearchTelemetry.ts",
-        "./useContentSearchTelemetry": "./lib/useContentSearchTelemetry.ts",
-        "./searchSession": "./lib/searchSession.ts",
-        "./useIndexedDBSupport": "./lib/hooks/useIndexedDBSupport.ts",
-        "./telemetryBuilder": "./lib/contentSearchTelemetryBuilder.ts"
+        "./useIndexedDBSupport": "./lib/hooks/useIndexedDBSupport.ts"
     },
     "scripts": {
         "check-types": "tsc",
