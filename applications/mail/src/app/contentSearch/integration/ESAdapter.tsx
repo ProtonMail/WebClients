@@ -189,6 +189,10 @@ export class ESAdapter implements FunctionsV2 {
         this.searchService.reportResultAction(...args);
     }
 
+    startSearchSession() {
+        this.metricService.startSearchSession();
+    }
+
     /** v2 counterpart of `endSearchSession`; see `EncryptedSearchProvider.endSearchSession`. */
     endSearchSession(endReason: ContentSearchEndReason) {
         this.searchService.endSession(endReason);

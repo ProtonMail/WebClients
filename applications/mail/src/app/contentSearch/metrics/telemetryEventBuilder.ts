@@ -1,24 +1,20 @@
+import type {
+    ContentSearchActionSurface,
+    ContentSearchEndReason,
+    ContentSearchEventStatus,
+    ContentSearchIndexErrorKind,
+    ContentSearchMailboxAddressType,
+    ContentSearchResultAction,
+    ContentSearchVersion,
+    SearchSession,
+} from '@proton/encrypted-search/models';
+import { SEARCH_RESULT_PRIMARY_MATCH_TYPE, SEARCH_RESULT_SCROLLER_MODE } from '@proton/encrypted-search/models';
 import type { TelemetryReport } from '@proton/shared/lib/api/telemetry';
 import {
     TelemetryContentSearchEvents,
     TelemetryContentSearchIndexEvents,
     TelemetryMeasurementGroups,
 } from '@proton/shared/lib/api/telemetry';
-
-import type {
-    ContentSearchEndReason,
-    ContentSearchEventStatus,
-    ContentSearchIndexErrorKind,
-    ContentSearchMailboxAddressType,
-    ContentSearchVersion,
-    SearchSession,
-} from './models/contentSearchTelemetry';
-import {
-    type ContentSearchActionSurface,
-    type ContentSearchResultAction,
-    SEARCH_RESULT_PRIMARY_MATCH_TYPE,
-    SEARCH_RESULT_SCROLLER_MODE,
-} from './models/contentSearchTelemetry';
 
 export const buildResultActionPayload = ({
     action,
