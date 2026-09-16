@@ -25,7 +25,7 @@ import {
     isCancellableOnlyViaSupport,
     isManagedExternally,
 } from '@proton/payments/core/subscription/helpers';
-import { AccessType } from '@proton/shared/lib/authentication/accessType';
+import { SessionAccessTypeFlag } from '@proton/shared/lib/authentication/sessionAccessType';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -34,6 +34,7 @@ import {
     PRODUCT_NAMES,
     PROTON_SENTINEL_NAME,
 } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { hasNoOrgPermissions } from '@proton/shared/lib/helpers/orgPermissions';
 import { UserType } from '@proton/shared/lib/interfaces';
 import {
@@ -533,7 +534,7 @@ export const getAccountAppRoutes = ({
     const isVPNDashboardEnabled = app === APPS.PROTONVPN_SETTINGS && showVPNDashboard;
 
     return <const>{
-        available: user.accessType !== AccessType.Msp,
+        available: !hasBit(user.accessTypeMask, SessionAccessTypeFlag.OrgAccess),
         header: c('Settings section title').t`Account`,
         routes: {
             vpnDashboardV2: {

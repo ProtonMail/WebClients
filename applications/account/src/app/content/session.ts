@@ -1,5 +1,6 @@
 import type { OnLoginCallbackArguments } from '@proton/components/containers/app/interface';
 import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { getSessionAccessTypeMask } from '@proton/shared/lib/authentication/sessionAccessType';
 
 export const addSession = (previousSessions: ActiveSession[] | undefined, session: OnLoginCallbackArguments) => {
     if (!previousSessions) {
@@ -20,6 +21,7 @@ export const addSession = (previousSessions: ActiveSession[] | undefined, sessio
             Username: User.Name,
             UserID: User.ID,
             PrimaryEmail: User.Email,
+            AccessType: getSessionAccessTypeMask(User),
         },
         persisted: persistedSession,
     };
