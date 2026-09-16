@@ -188,7 +188,7 @@
         "Invitasjon til gruppeplan"
       ],
       "Hide my email": [
-        "Skjul e-postadressen min"
+        "Hide-my-email"
       ],
       "High-security mode": [
         "Høysikkerhetsmodus"
@@ -10557,7 +10557,7 @@
         "**Gjenopprettingstelefonen din alene lar deg ikke gjenopprette krypterte data** etter at du har tilbakestilt passordet ditt."
       ],
       "**Your recovery phrase and recovery file will be invalidated:** you can generate new recovery data later on.": [
-        "**Gjenopprettingsfrasen og gjenopprettingsfilen din vil bli ugyldige:** Du kan generere nye gjenopprettingsdata senere."
+        "**Gjenopprettingsfrasen og gjenopprettingsfilen vil bli ugyldige:** Du kan generere nye gjenopprettingsdata senere."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } til",
@@ -11176,7 +11176,7 @@
         "Kopier og lim inn denne URL-adressen i enhets-ID-feltet for identitetsleverandøren."
       ],
       "Copy the below code and paste it in the DNS section of your domain host.": [
-        "Kopier koden nedenfor og lim den inn i DNS-delen av domeneverten din."
+        "Kopier koden nedenfor og lim den inn i DNS-seksjonen til domeneverten."
       ],
       "Copy the link to clipboard": [
         "Kopier koblingen til utklippstavlen"
@@ -13896,7 +13896,7 @@
         "Vi vil sende en ny verifiseringskode til ${ strong }"
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "Vi har lagt merke til at noen brukere ikke har gjort krav på ${ BRAND_NAME }-kontoene sine."
+        "Vi har lagt merke til at noen brukere ikke har gjort krav på ${ BRAND_NAME }-kontoene."
       ],
       "Web sessions detected:": [
         "Nettøkter oppdaget:"
@@ -13932,7 +13932,7 @@
         "Når deaktivert, forhindrer dette eksterne bilder fra å lastes inn uten din viten."
       ],
       "When enabled, members cannot opt out of password check-ins in their own settings.": [
-        "Når dette er aktivert, kan ikke medlemmer velge bort passordinnsjekkinger i sine egne innstillinger."
+        "Når dette er aktivert, kan ikke medlemmer velge bort sjekking av passord i sine egne innstillinger."
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
         "Når aktivert, vil vi sjekke om ${ MAIL_APP_NAME } er standard e-postapplikasjon og varsle deg hvis den ikke er det."
@@ -20165,7 +20165,7 @@
         "Brukere (${ n })"
       ],
       "You can reset your organization key to restore your administrator privileges. Then, you'll be able to create non-private users and access their accounts.": [
-        "Du kan tilbakestille organisasjonsnøkkelen for å gjenopprette administratorrettighetene dine. Deretter vil du kunne opprette ikke-private brukere og få tilgang til kontoene deres."
+        "Du kan tilbakestille organisasjonsnøkkelen for å gjenopprette administratorrettighetene. Deretter vil du kunne opprette ikke-private brukere og få tilgang til kontoene deres."
       ],
       "Your administrator privileges have been restored. You can now manage non-private users.": [
         "Administratorrettighetene dine er gjenopprettet. Du kan nå administrere ikke-private brukere."
@@ -26225,7 +26225,7 @@
         "Be nødkontaktene dine om hjelp"
       ],
       "Authenticate your ${ providerName } account": [
-        "Autentiser ${ providerName }-kontoen din"
+        "Autentiser ${ providerName }-kontoen"
       ],
       "Auto-deletion is active": [
         "Auto-sletting er aktiv"
