@@ -45,7 +45,7 @@ fn cleanup_old_logs(log_path: &Path) -> Result<()> {
 async fn handle_message(request: String, send: Sender, ipc: Arc<Mutex<Option<Ipc>>>) -> Result<()> {
     let msg = NativeMessage::try_from(request.as_str())?;
 
-    info!("Request received {:?}", &msg);
+    info!("Request received {:?}", msg);
 
     let response = match intercept_unlock(&msg).await {
         Ok(Interception::Intercepted(message)) => message,
