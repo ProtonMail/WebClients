@@ -18,8 +18,8 @@ import useErrorHandler from '../../../hooks/useErrorHandler';
 import ExportPrivateKeyModal from '../exportKey/ExportPrivateKeyModal';
 
 enum STEPS {
-    EXPORT_KEY,
-    DELETE_KEY,
+    EXPORT_KEY = 0,
+    DELETE_KEY = 1,
 }
 
 interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {

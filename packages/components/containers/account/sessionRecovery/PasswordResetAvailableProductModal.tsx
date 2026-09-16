@@ -17,8 +17,8 @@ import ConfirmSessionRecoveryCancellationModal from './ConfirmSessionRecoveryCan
 import passwordResetIllustration from './password-reset-illustration.svg';
 
 enum STEP {
-    INFO,
-    CONFIRM_CANCELLATION,
+    INFO = 0,
+    CONFIRM_CANCELLATION = 1,
 }
 
 const PasswordResetAvailableProductModal = ({ ...rest }: ModalProps) => {

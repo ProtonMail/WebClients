@@ -10,6 +10,6 @@ export interface WalletClient {
 }
 
 export enum WalletClientKeys {
-    iOS,
-    Android,
+    iOS = 0,
+    Android = 1,
 }

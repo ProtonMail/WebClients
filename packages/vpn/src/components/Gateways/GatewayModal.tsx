@@ -48,9 +48,9 @@ interface Props extends ModalProps<typeof Form> {
 }
 
 enum STEP {
-    NAME,
-    COUNTRIES,
-    MEMBERS,
+    NAME = 0,
+    COUNTRIES = 1,
+    MEMBERS = 2,
 }
 
 export const GatewayModal = ({

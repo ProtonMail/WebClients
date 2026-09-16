@@ -3,9 +3,9 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { BrowserItemId } from '../interface';
 
 export enum SelectionState {
-    NONE,
-    ALL,
-    SOME,
+    NONE = 0,
+    ALL = 1,
+    SOME = 2,
 }
 export function useSelectionControls({ itemIds }: { itemIds: BrowserItemId[] }) {
     const [selectedItemIds, setSelectedItems] = useState<BrowserItemId[]>([]);

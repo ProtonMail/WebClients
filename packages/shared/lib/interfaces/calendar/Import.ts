@@ -8,12 +8,12 @@ import type { SyncMultipleApiSuccessResponses } from './Event';
 import type { VcalVeventComponent } from './VcalModel';
 
 export enum IMPORT_STEPS {
-    ATTACHING,
-    ATTACHED,
-    WARNING_IMPORT_INVITATION,
-    WARNING_PARTIAL_IMPORT,
-    IMPORTING,
-    FINISHED,
+    ATTACHING = 0,
+    ATTACHED = 1,
+    WARNING_IMPORT_INVITATION = 2,
+    WARNING_PARTIAL_IMPORT = 3,
+    IMPORTING = 4,
+    FINISHED = 5,
 }
 
 export interface ImportCalendarModel {

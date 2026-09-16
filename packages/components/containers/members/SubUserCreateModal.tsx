@@ -75,8 +75,8 @@ import ModalHeaderWithTabs from './rolesAndPermissions/ModalHeaderWithTabs';
 import RolesAndPermissionsTab from './rolesAndPermissions/RolesAndPermissionsTab';
 
 enum Step {
-    SINGLE,
-    BULK,
+    SINGLE = 0,
+    BULK = 1,
 }
 
 interface Props extends ModalProps {

@@ -27,8 +27,8 @@ import { type UserPermissionsState, userPermissionsFulfilled, userPermissionsThu
 const name = 'domains' as const;
 
 enum ValueType {
-    dummy,
-    complete,
+    dummy = 0,
+    complete = 1,
 }
 
 export interface DomainsState extends UserPermissionsState {

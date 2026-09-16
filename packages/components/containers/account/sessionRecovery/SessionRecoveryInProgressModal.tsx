@@ -20,8 +20,8 @@ import ConfirmSessionRecoveryCancellationModal from './ConfirmSessionRecoveryCan
 import SessionRecoveryInProgressModalIllustration from './SessionRecoveryInProgressModalIllustration';
 
 enum STEP {
-    INFO,
-    CONFIRM_CANCELLATION,
+    INFO = 0,
+    CONFIRM_CANCELLATION = 1,
 }
 
 const SessionRecoveryInProgressModal = ({ onClose, ...rest }: ModalProps) => {

@@ -27,9 +27,9 @@ export enum ShareEventType {
 }
 
 export enum EventActions {
-    DELETE,
-    CREATE,
-    UPDATE,
+    DELETE = 0,
+    CREATE = 1,
+    UPDATE = 2,
 }
 
 export type CoreEvent = {

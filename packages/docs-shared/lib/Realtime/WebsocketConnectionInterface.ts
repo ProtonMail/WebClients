@@ -2,8 +2,8 @@ import type { BroadcastSource } from '../Bridge/BroadcastSource'
 import type { WebsocketCallbacks } from './WebsocketCallbacks'
 
 export enum ConnectionType {
-  Normal,
-  RetryDueToNotReceivingReadyMessage,
+  Normal = 0,
+  RetryDueToNotReceivingReadyMessage = 1,
 }
 
 export interface WebsocketConnectionInterface {

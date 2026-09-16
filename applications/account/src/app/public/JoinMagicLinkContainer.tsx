@@ -60,9 +60,9 @@ const getTerms = (app: APP_NAMES) => {
 };
 
 enum ErrorType {
-    Expired,
-    Used,
-    API,
+    Expired = 0,
+    Used = 1,
+    API = 2,
 }
 
 interface Props {

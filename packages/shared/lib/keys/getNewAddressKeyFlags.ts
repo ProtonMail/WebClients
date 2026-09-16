@@ -2,14 +2,14 @@ import { KEY_FLAG } from '../constants';
 import { clearBit, setBit } from '../helpers/bitset';
 
 export enum FlagAction {
-    MARK_OBSOLETE,
-    MARK_NOT_OBSOLETE,
-    MARK_COMPROMISED,
-    MARK_NOT_COMPROMISED,
-    DISABLE_ENCRYPTION,
-    ENABLE_ENCRYPTION,
-    DISABLE_EXPECT_SIGNED,
-    ENABLE_EXPECT_SIGNED,
+    MARK_OBSOLETE = 0,
+    MARK_NOT_OBSOLETE = 1,
+    MARK_COMPROMISED = 2,
+    MARK_NOT_COMPROMISED = 3,
+    DISABLE_ENCRYPTION = 4,
+    ENABLE_ENCRYPTION = 5,
+    DISABLE_EXPECT_SIGNED = 6,
+    ENABLE_EXPECT_SIGNED = 7,
 }
 
 export const getNewAddressKeyFlags = (Flags = 0, action: FlagAction) => {

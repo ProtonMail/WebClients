@@ -43,9 +43,9 @@ interface Props extends ModalProps {
 }
 
 enum Step {
-    CONFIRMATION,
-    SUCCESS,
-    ERROR,
+    CONFIRMATION = 0,
+    SUCCESS = 1,
+    ERROR = 2,
 }
 interface Model {
     step: Step;

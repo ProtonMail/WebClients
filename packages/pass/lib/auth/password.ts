@@ -12,9 +12,9 @@ import { decryptData, importSymmetricKey } from '../crypto/utils/crypto-helpers'
 import type { AuthStore } from './store';
 
 export enum PasswordVerification {
-    LOCAL,
-    EXTRA_PASSWORD,
-    SRP,
+    LOCAL = 0,
+    EXTRA_PASSWORD = 1,
+    SRP = 2,
 }
 
 export type UnsafePasswordCredentials = { password: string };

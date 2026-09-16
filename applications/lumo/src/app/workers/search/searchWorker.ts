@@ -7,10 +7,10 @@ import { LumoCryptoAdapter } from './adapters/CryptoAdapter';
 import { LumoDatabaseAdapter } from './adapters/DatabaseAdapter';
 
 export enum MessageType {
-    Search,
-    Populate,
-    IndexConversation,
-    Status,
+    Search = 0,
+    Populate = 1,
+    IndexConversation = 2,
+    Status = 3,
 }
 
 export interface SearchRequest {

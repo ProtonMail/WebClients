@@ -29,8 +29,8 @@ import ExpiredError from './ExpiredError';
 import groupsIllustration from './user-groups.svg';
 
 enum ErrorType {
-    Expired,
-    API,
+    Expired = 0,
+    API = 1,
 }
 
 interface GroupMembershipsReturn {

@@ -47,10 +47,10 @@ export interface OwnershipCache {
 }
 
 export enum HumanVerificationSteps {
-    ENTER_DESTINATION,
-    VERIFY_CODE,
-    INVALID_CODE,
-    SUCCESSFUL_CODE,
+    ENTER_DESTINATION = 0,
+    VERIFY_CODE = 1,
+    INVALID_CODE = 2,
+    SUCCESSFUL_CODE = 3,
 }
 
 export type CaptchaTheme = 'light' | 'dark';

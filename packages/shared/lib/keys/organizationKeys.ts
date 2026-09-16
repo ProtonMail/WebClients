@@ -558,9 +558,9 @@ export const validateOrganizationKeySignature = async ({
 };
 
 export enum OrganizationSignatureState {
-    publicKeys,
-    valid,
-    error,
+    publicKeys = 0,
+    valid = 1,
+    error = 2,
 }
 
 export const validateOrganizationSignatureHelper = async ({

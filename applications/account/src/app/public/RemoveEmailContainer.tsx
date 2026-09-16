@@ -21,8 +21,8 @@ import accountIllustration from './account-illustration.svg';
 import { stripQueryParams } from './jwt';
 
 enum ErrorType {
-    Expired,
-    API,
+    Expired = 0,
+    API = 1,
 }
 
 const RemoveEmailContainer = () => {

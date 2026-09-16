@@ -23,10 +23,10 @@ import { forkSession } from '../utils/forkSession';
 import { getChildClientId } from '../utils/getChildClientId';
 
 enum ForkSessionStep {
-    CONFIRMATION,
-    FETCHING_CODE,
-    DEVICE_CONNECTED,
-    DEVICE_CONNECTION_ERROR,
+    CONFIRMATION = 0,
+    FETCHING_CODE = 1,
+    DEVICE_CONNECTED = 2,
+    DEVICE_CONNECTION_ERROR = 3,
 }
 
 const childClientId = getChildClientId();

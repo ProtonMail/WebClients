@@ -5,11 +5,11 @@ import type { Tagged } from '../utils';
 export enum DeobfuscateMode {
     /** When `AUTO`, deobfuscation should be automatic
      * without requiring user interaction */
-    AUTO,
+    AUTO = 0,
     /** When `MANUAL`, deobfuscation should only happen
      * after user interaction. This protects against
      * mem-dumps when sensitive fields should be hidden */
-    MANUAL,
+    MANUAL = 1,
 }
 
 export type ObfuscatedItemProperty<Mode extends DeobfuscateMode = DeobfuscateMode> = Tagged<XorObfuscation, Mode>;

@@ -31,8 +31,8 @@ import { getMember } from './getMember';
 const name = 'members' as const;
 
 enum ValueType {
-    dummy,
-    complete,
+    dummy = 0,
+    complete = 1,
 }
 
 export type UnprivatizationMemberSuccess = {

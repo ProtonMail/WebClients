@@ -7,13 +7,13 @@ import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import type { Recipient, SimpleMap } from '@proton/shared/lib/interfaces';
 
 export enum InvalidRecipientErrorCode {
-    NoAddressSetOnBitcoinAddress,
-    NoSignatureSetOnBitcoinAddress,
-    BitcoinAddressSignatureCouldNotBeVerified,
-    CouldNotFindBitcoinAddressLinkedToEmail,
-    InvalidAddress,
-    CouldNotFindProtonWallet,
-    NoBitcoinAddressAvailable,
+    NoAddressSetOnBitcoinAddress = 0,
+    NoSignatureSetOnBitcoinAddress = 1,
+    BitcoinAddressSignatureCouldNotBeVerified = 2,
+    CouldNotFindBitcoinAddressLinkedToEmail = 3,
+    InvalidAddress = 4,
+    CouldNotFindProtonWallet = 5,
+    NoBitcoinAddressAvailable = 6,
 }
 
 export type BtcAddressOrError = { value?: string; error?: InvalidRecipientErrorCode };

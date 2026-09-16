@@ -32,8 +32,8 @@ import { useMarkAs } from '../actions/markAs/useMarkAs';
 import { ComposeTypes } from '../composer/useCompose';
 
 enum ARROW_SCROLL_DIRECTIONS {
-    UP,
-    DOWN,
+    UP = 0,
+    DOWN = 1,
 }
 
 interface MessageHotkeysContext {

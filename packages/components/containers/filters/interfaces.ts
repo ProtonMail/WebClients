@@ -3,10 +3,10 @@ import type { Annotation } from 'codemirror/addon/lint/lint';
 import type { ConditionComparator, ConditionType, FilterStatement } from '@proton/sieve/filterModel';
 
 export enum Step {
-    NAME,
-    CONDITIONS,
-    ACTIONS,
-    PREVIEW,
+    NAME = 0,
+    CONDITIONS = 1,
+    ACTIONS = 2,
+    PREVIEW = 3,
 }
 
 export interface Errors {

@@ -26,11 +26,11 @@ import RecoveryStep from './RecoveryStep';
 import MnemonicRecoveryStep from './recovery/MnemonicRecoveryStep';
 
 enum Step {
-    MnemonicRecovery,
-    Congratulations,
-    SaveRecovery,
-    OrgSetup,
-    RedirectAdmin,
+    MnemonicRecovery = 0,
+    Congratulations = 1,
+    SaveRecovery = 2,
+    OrgSetup = 3,
+    RedirectAdmin = 4,
 }
 
 function getLocalIdAndPathInfo(model: SignupModelV2) {

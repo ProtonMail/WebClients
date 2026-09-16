@@ -1,20 +1,20 @@
 export enum ACTIONS {
     CREATE_DOWN = 1,
-    CREATE_MOVE,
-    CREATE_MOVE_UP,
-    CREATE_UP,
-    EVENT_DOWN,
-    EVENT_MOVE,
-    EVENT_MOVE_UP,
-    EVENT_UP,
-    MORE_DOWN,
-    MORE_UP,
+    CREATE_MOVE = 2,
+    CREATE_MOVE_UP = 3,
+    CREATE_UP = 4,
+    EVENT_DOWN = 5,
+    EVENT_MOVE = 6,
+    EVENT_MOVE_UP = 7,
+    EVENT_UP = 8,
+    MORE_DOWN = 9,
+    MORE_UP = 10,
 }
 
 export enum TYPE {
-    DAYGRID,
-    TIMEGRID,
-    MORE,
+    DAYGRID = 0,
+    TIMEGRID = 1,
+    MORE = 2,
 }
 
 export const ADVANCED_SEARCH_OVERLAY_OPEN_EVENT = 'advancedsearchopen';

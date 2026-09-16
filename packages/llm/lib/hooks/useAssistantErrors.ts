@@ -6,8 +6,8 @@ import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssista
 import { ASSISTANT_TYPE, ERROR_TYPE } from '@proton/shared/lib/assistant';
 
 export enum AssistantErrorTypes {
-    globalError,
-    specificError,
+    globalError = 0,
+    specificError = 1,
 }
 
 interface AssistantGlobalError {

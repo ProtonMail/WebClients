@@ -1,5 +1,3 @@
-/* eslint-disable max-classes-per-file */
-
 export enum TransferState {
     Initializing = 'initializing',
     Pending = 'pending',
@@ -109,10 +107,10 @@ export enum TransferType {
 }
 
 export enum TransferGroup {
-    ACTIVE,
-    DONE,
-    QUEUED,
-    FAILURE,
+    ACTIVE = 0,
+    DONE = 1,
+    QUEUED = 2,
+    FAILURE = 3,
 }
 
 export const STATE_TO_GROUP_MAP = {
