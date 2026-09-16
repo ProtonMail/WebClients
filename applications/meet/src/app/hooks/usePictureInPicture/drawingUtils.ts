@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { drawChatMessage, drawErrorMessage, drawInfoMessage } from './messageDrawers';
 import type { PiPOverlayMessage } from './types';
 
@@ -9,6 +11,7 @@ interface DrawVideoWithAspectRatioParams {
     width: number;
     height: number;
     mirror?: boolean;
+    isIncomingVideoDisabled?: boolean;
 }
 
 interface DrawMessageOverlayParams {
@@ -30,8 +33,11 @@ export const drawVideoWithAspectRatio = ({
     width,
     height,
     mirror = false,
+    isIncomingVideoDisabled = false,
 }: DrawVideoWithAspectRatioParams) => {
-    if (videoElement.readyState >= 1 && videoElement.videoWidth > 0 && videoElement.videoHeight > 0) {
+    const hasFrame = videoElement.readyState >= 1 && videoElement.videoWidth > 0 && videoElement.videoHeight > 0;
+
+    if (hasFrame && !isIncomingVideoDisabled) {
         try {
             const videoAspectRatio = videoElement.videoWidth / videoElement.videoHeight;
             const containerAspectRatio = width / height;
@@ -80,7 +86,9 @@ export const drawVideoWithAspectRatio = ({
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         let statusText = 'Loading...';
-        if (videoElement.paused || videoElement.readyState < 1) {
+        if (isIncomingVideoDisabled) {
+            statusText = c('Info').t`Incoming video off`;
+        } else if (videoElement.paused || videoElement.readyState < 1) {
             statusText = 'Loading...';
         } else if (videoElement.videoWidth === 0 || videoElement.videoHeight === 0) {
             statusText = 'No video data';
