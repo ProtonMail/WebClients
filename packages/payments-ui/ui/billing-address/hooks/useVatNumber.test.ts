@@ -18,7 +18,7 @@ const mockDefaultPaymentsApi = {
     getFullBillingAddress: mockGetFullBillingAddress,
 } as unknown as PaymentsApi;
 
-jest.mock('@proton/components/payments/react-extensions/usePaymentsApi', () => ({
+jest.mock('../../../react-extensions/usePaymentsApi', () => ({
     usePaymentsApi: () => ({ paymentsApi: mockDefaultPaymentsApi }),
 }));
 

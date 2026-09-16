@@ -1,18 +1,18 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
 import type { FullBillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { Invoice } from '@proton/payments/core/interface';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 
-import { usePaymentsApi } from '../../../payments/react-extensions/usePaymentsApi';
 import { EditInvoiceModal } from './EditInvoiceModal';
 
 jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: jest.fn(),
 }));
 
-jest.mock('../../../payments/react-extensions/usePaymentsApi', () => ({
+jest.mock('@proton/payments-ui/react-extensions/usePaymentsApi', () => ({
     usePaymentsApi: jest.fn(),
 }));
 

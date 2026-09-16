@@ -1,8 +1,8 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 
-import type { ChargebeeIdealProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeIdeal';
 import { DEFAULT_DELAY } from '@proton/hooks/useStableLoading';
 
+import type { ChargebeeIdealProcessorHook } from '../../react-extensions/useChargebeeIdeal';
 import { ChargebeeIdealButton } from './ChargebeeIdealButton';
 
 jest.mock('./ChargebeeIframe', () => ({

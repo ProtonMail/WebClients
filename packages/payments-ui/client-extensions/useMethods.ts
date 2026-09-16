@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { useApi } from '@proton/app-context/useApi';
 import type { IconComponent } from '@proton/icons/component';
 import { IcBank } from '@proton/icons/icons/IcBank';
 import { IcBrandAmex } from '@proton/icons/icons/IcBrandAmex';
@@ -27,9 +26,7 @@ import { IDEAL_WERO_BRAND_NAME } from '@proton/shared/lib/constants';
 import { isAndroid, isIos } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/utils/isTruthy';
 
-import useAuthentication from '../../hooks/useAuthentication';
-import type { MethodsHook, Props } from '../react-extensions/useMethods';
-import { useMethods as _useMethods } from '../react-extensions/useMethods';
+import type { MethodsHook } from '../react-extensions/useMethods';
 
 export interface ViewPaymentMethod extends AvailablePaymentMethod {
     readonly icon?: IconComponent | undefined;
@@ -182,20 +179,6 @@ export const wrapMethods = (methodsHook: MethodsHook, flow: PaymentMethodFlow): 
         allMethods: allMethods.map((method) => convertMethod(method, getSavedMethodByID, flow)),
         lastUsedMethod: lastUsedMethod && convertMethod(lastUsedMethod, getSavedMethodByID, flow),
     };
-};
-
-/**
- * A preconfigured version of the useMethods hook from the react-extensions package.
- * Returns view models of methods that can be used in the UI.
- */
-export const useMethods = (props: Props): ClientMethodsHook => {
-    const api = useApi();
-    const { UID } = useAuthentication();
-    const isAuthenticated = !!UID;
-
-    const internalResult = _useMethods(props, { api, isAuthenticated });
-
-    return wrapMethods(internalResult, props.flow);
 };
 
 export const sortMethodsBasedOnDevice = (availablePaymentMethods: AvailablePaymentMethod[]) => {

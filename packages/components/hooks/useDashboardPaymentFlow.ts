@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
+import type { TelemetryPaymentFlow } from '@proton/payments-ui/client-extensions/usePaymentsTelemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
-import type { TelemetryPaymentFlow } from '../payments/client-extensions/usePaymentsTelemetry';
 import useShowDashboard, { useShowDriveDashboard } from './accounts/useShowDashboard';
 import useShowVPNDashboard from './useShowVPNDashboard';
 

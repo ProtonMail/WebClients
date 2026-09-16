@@ -5,11 +5,11 @@ import { c } from 'ttag';
 import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { InfoBanner } from '@proton/components/containers/payments/subscription/confirm-button/InfoBanner';
-import type { ChargebeeIdealProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeIdeal';
 import { useStableLoading } from '@proton/hooks';
 import { IDEAL_WERO_BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import type { ChargebeeIdealProcessorHook } from '../../react-extensions/useChargebeeIdeal';
 import { ChargebeeIframe } from './ChargebeeIframe';
 import type { ChargebeeWrapperProps } from './ChargebeeWrapper';
 import type { PayButtonOnClickPayload } from './PayButton';

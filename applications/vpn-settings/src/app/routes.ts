@@ -28,7 +28,7 @@ import {
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PROTON_SENTINEL_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { getIsExternalAccount, getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
-import { isSubscriptionRenewEnabled } from '@proton/shared/lib/subscription/helpers';
+import { isSubscriptionRenewEnabled } from '@proton/shared/lib/payments/subscription/helpers/renew';
 import type { VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 
 interface Arguments {

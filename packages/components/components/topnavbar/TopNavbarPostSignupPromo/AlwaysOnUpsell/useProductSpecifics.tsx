@@ -4,13 +4,13 @@ import { c } from 'ttag';
 
 import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useAutomaticCurrency } from '@proton/payments-ui/client-extensions/useAutomaticCurrency';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
 import { getPlanByName } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 
 import { getNormalizedPlanTitleToPlus } from '../../../../containers/payments/subscription/plusToPlusHelper';
-import { useAutomaticCurrency } from '../../../../payments/client-extensions/index';
 import Price from '../../../price/Price';
 import SkeletonLoader from '../../../skeletonLoader/SkeletonLoader';
 import { PostSignupOneDollarCheck } from '../PostSignupOneDollar/components/PostSignupOneDollarCheck';

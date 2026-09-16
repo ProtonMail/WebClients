@@ -20,8 +20,8 @@ import { InAppText } from '@proton/components/containers/payments/subscription/I
 import SubscriptionContainer from '@proton/components/containers/payments/subscription/SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
+import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
 import { loadInitialBillingAddress } from '@proton/payments-ui/ui/helpers/load-initial-billing-address';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { CURRENCIES, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';

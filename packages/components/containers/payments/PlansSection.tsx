@@ -13,6 +13,8 @@ import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
+import { useAutomaticCurrency } from '@proton/payments-ui/client-extensions/useAutomaticCurrency';
+import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { DEFAULT_CYCLE, FREE_SUBSCRIPTION } from '@proton/payments/core/constants';
 import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
@@ -31,8 +33,6 @@ import { Audience } from '@proton/shared/lib/interfaces';
 
 import Loader from '../../components/loader/Loader';
 import useLoad from '../../hooks/useLoad';
-import { useAutomaticCurrency } from '../../payments/client-extensions/index';
-import { usePaymentsApi } from '../../payments/react-extensions/usePaymentsApi';
 import { openLinkInBrowser, upgradeButtonClick } from '../desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '../desktop/useHasInboxDesktopInAppPayments';
 import { usePlansSectionTelemetry } from './plansSectionTelemetry';

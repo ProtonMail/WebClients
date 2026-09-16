@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { formattedSavedSepaDetails } from '@proton/payments-ui/client-extensions/useMethods';
 import type { SavedPaymentMethod } from '@proton/payments/core/interface';
 import {
     isPaypalDetails,
@@ -14,7 +15,6 @@ import Table from '../../../components/table/Table';
 import TableBody from '../../../components/table/TableBody';
 import TableHeader from '../../../components/table/TableHeader';
 import TableRow from '../../../components/table/TableRow';
-import { formattedSavedSepaDetails } from '../../../payments/client-extensions/useMethods';
 import PaymentMethodActions from './PaymentMethodActions';
 import PaymentMethodState from './PaymentMethodState';
 

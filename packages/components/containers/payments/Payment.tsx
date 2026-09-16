@@ -5,7 +5,15 @@ import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { useStableLoading } from '@proton/hooks';
+import { BilledUserInlineMessage } from '@proton/payments-ui/client-extensions/billed-user/BilledUserInlineMessage';
+import type { ThemeCode } from '@proton/payments-ui/client-extensions/helpers';
+import type { ViewPaymentMethod } from '@proton/payments-ui/client-extensions/useMethods';
 import type { useCurrencyOverride } from '@proton/payments-ui/payment-methods/useCurrencyOverride';
+import type { BitcoinHook } from '@proton/payments-ui/react-extensions/useBitcoin';
+import type { ChargebeeCardProcessorHook } from '@proton/payments-ui/react-extensions/useChargebeeCard';
+import type { ChargebeeIdealProcessorHook } from '@proton/payments-ui/react-extensions/useChargebeeIdeal';
+import type { ChargebeePaypalProcessorHook } from '@proton/payments-ui/react-extensions/useChargebeePaypal';
+import type { ChargebeeDirectDebitProcessorHook } from '@proton/payments-ui/react-extensions/useSepaDirectDebit';
 import { TaxFields } from '@proton/payments-ui/ui/billing-address/components/TaxFields';
 import type { TaxCountryHook } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
 import type { VatNumberHook } from '@proton/payments-ui/ui/billing-address/hooks/useVatNumber';
@@ -16,6 +24,9 @@ import {
     ChargebeeCreditCardWrapper,
     ChargebeeSavedCardWrapper,
 } from '@proton/payments-ui/ui/components/ChargebeeWrapper';
+import { IdealAccountHolderInput } from '@proton/payments-ui/ui/components/IdealAccountHolderInput';
+import { IdealAuthorizationText } from '@proton/payments-ui/ui/components/IdealAuthorizationText';
+import { type DirectDebitProps, SepaDirectDebit } from '@proton/payments-ui/ui/components/SepaDirectDebit';
 import { getMinCreditAmount, getMinDonationAmount } from '@proton/payments/core/amount-limits';
 import type { BillingAddressStatus } from '@proton/payments/core/billing-address/billing-address';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
@@ -37,16 +48,6 @@ import clsx from '@proton/utils/clsx';
 
 import Loader from '../../components/loader/Loader';
 import Price from '../../components/price/Price';
-import { IdealAccountHolderInput } from '../../payments/chargebee/IdealAccountHolderInput';
-import { IdealAuthorizationText } from '../../payments/chargebee/IdealAuthorizationText';
-import { type DirectDebitProps, SepaDirectDebit } from '../../payments/chargebee/SepaDirectDebit';
-import { BilledUserInlineMessage } from '../../payments/client-extensions/billed-user/index';
-import type { ThemeCode, ViewPaymentMethod } from '../../payments/client-extensions/index';
-import type { BitcoinHook } from '../../payments/react-extensions/useBitcoin';
-import type { ChargebeeCardProcessorHook } from '../../payments/react-extensions/useChargebeeCard';
-import type { ChargebeeIdealProcessorHook } from '../../payments/react-extensions/useChargebeeIdeal';
-import type { ChargebeePaypalProcessorHook } from '../../payments/react-extensions/useChargebeePaypal';
-import type { ChargebeeDirectDebitProcessorHook } from '../../payments/react-extensions/useSepaDirectDebit';
 import Alert3DS from './Alert3ds';
 import { ApplePayView } from './ApplePayView';
 import Cash from './Cash';

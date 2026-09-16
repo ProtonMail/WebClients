@@ -2,8 +2,8 @@ import { useEffect, useRef } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useLoading from '@proton/hooks/useLoading';
-import { useCbIframe } from '@proton/payments-ui/ui/components/ChargebeeIframe';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { type ADDON_NAMES, PAYMENT_METHOD_TYPES, type PLANS } from '@proton/payments/core/constants';
 import type {
@@ -29,9 +29,9 @@ import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 
-import useAuthentication from '../../hooks/useAuthentication';
 import type { OnMethodChangedHandler, Operations, OperationsData } from '../react-extensions';
 import { usePaymentFacade as useInnerPaymentFacade } from '../react-extensions';
+import { useCbIframe } from '../ui/components/ChargebeeIframe';
 import type { ThemeCode, ThemeLike } from './helpers';
 import { getThemeCode } from './helpers';
 import { wrapMethods } from './useMethods';

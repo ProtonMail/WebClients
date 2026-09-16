@@ -3,15 +3,15 @@ import { type ReactNode, useEffect } from 'react';
 import { render, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
+import {
+    PaymentsContextOptimisticProvider,
+    usePaymentOptimistic,
+} from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { PLANS } from '@proton/payments/core/constants';
 import type { PaymentsApi } from '@proton/payments/core/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { getLongTestPlans } from '@proton/payments/testing/data-plans';
-import {
-    PaymentsContextOptimisticProvider,
-    usePaymentOptimistic,
-} from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import { addApiMock, clearApiMocks } from '@proton/testing/lib/api';
 import { getStoreWrapper } from '@proton/testing/lib/context/renderWithProviders';
@@ -21,7 +21,7 @@ import { SignupContextProvider } from './SignupContext';
 
 const checkSubscription = jest.fn();
 
-jest.mock('@proton/components/payments/react-extensions/usePaymentsApi', () => {
+jest.mock('@proton/payments-ui/react-extensions/usePaymentsApi', () => {
     const paymentsApi = {
         checkSubscription: (...args: any[]) => checkSubscription(...args),
         cacheMultiCheck: jest.fn(),

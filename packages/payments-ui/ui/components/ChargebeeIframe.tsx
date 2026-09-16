@@ -51,11 +51,6 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import type { ThemeCode } from '@proton/components/payments/client-extensions';
-import type { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
-import type { ChargebeeIdealProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeIdeal';
-import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
-import type { ChargebeeDirectDebitProcessorHook } from '@proton/components/payments/react-extensions/useSepaDirectDebit';
 import { type GetChargebeeConfigurationResponse, getChargebeeConfiguration } from '@proton/payments/core/api/api';
 import {
     getChargebeeErrorCode,
@@ -74,8 +69,13 @@ import { IDEAL_WERO_BRAND_NAME } from '@proton/shared/lib/constants';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { ColorScheme } from '@proton/shared/lib/themes/constants';
 
+import type { ThemeCode } from '../../client-extensions/helpers';
 import type { ApplePayProcessorHook } from '../../payment-processors/useApplePay';
 import type { GooglePayProcessorHook } from '../../payment-processors/useGooglePay';
+import type { ChargebeeCardProcessorHook } from '../../react-extensions/useChargebeeCard';
+import type { ChargebeeIdealProcessorHook } from '../../react-extensions/useChargebeeIdeal';
+import type { ChargebeePaypalProcessorHook } from '../../react-extensions/useChargebeePaypal';
+import type { ChargebeeDirectDebitProcessorHook } from '../../react-extensions/useSepaDirectDebit';
 
 /**
  * Small helper to identify the messages sent to iframe.
