@@ -24,6 +24,7 @@ import { MeetingSnackbarContent } from './MeetingSnackbarContent';
 interface Props {
     update: MeetingRoomUpdate;
     onClose: () => void;
+    onOpen?: () => void;
 }
 
 const isChatMessage = (update: MeetingRoomUpdate): update is MeetChatMessage => update.type === 'message';
@@ -31,7 +32,7 @@ const isChatMessage = (update: MeetingRoomUpdate): update is MeetChatMessage => 
 const isParticipantEventRecord = (update: MeetingRoomUpdate): update is ParticipantEventRecord =>
     update.type === 'event';
 
-export const MeetingUpdateSnackbar = ({ update, onClose }: Props) => {
+export const MeetingUpdateSnackbar = ({ update, onClose, onOpen }: Props) => {
     const roomName = useMeetSelector(selectRoomName);
     const participantName = useMeetSelector((state) => selectParticipantName(state, update.identity));
     const localParticipantIdentity = useMeetSelector(selectLocalParticipantIdentity);
@@ -68,7 +69,7 @@ export const MeetingUpdateSnackbar = ({ update, onClose }: Props) => {
     };
 
     return (
-        <MeetingSnackbarCard aria-hidden="true">
+        <MeetingSnackbarCard aria-hidden="true" onOpen={onOpen} isOpenTargetFocusable={false}>
             <MeetingSnackbarContent
                 identity={update.identity}
                 participantName={displayName}
