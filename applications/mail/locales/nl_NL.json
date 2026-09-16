@@ -1544,8 +1544,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Sleutels vertrouwen"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -6165,6 +6164,12 @@
       ],
       "Touch your security key.": [
         "Raak uw beveiligingssleutel aan."
+      ],
+      "Still waiting?": [
+        "Nog aan het wachten?"
+      ],
+      "Touch your security key to continue.": [
+        "Raak uw beveiligingssleutel aan om door te gaan."
       ]
     },
     "fido2: Label": {
@@ -8144,7 +8149,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -9775,6 +9781,30 @@
       ],
       "Update filter": [
         "Update filter"
+      ],
+      "Document in foundation-search index": [
+        "Document in basis zoekindex"
+      ],
+      "Document lookup failed": [
+        "Het opzoeken van documenten is mislukt"
+      ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Opzoeken van document ${ lookup.result.docId }"
+      ],
+      "Not found in the encrypted search index.": [
+        "Niet gevonden in de gecodeerde zoekindex."
+      ],
+      "Not found in the foundation-search index.": [
+        "Niet gevonden in de basis zoekindex."
+      ],
+      "Results came from the local search.": [
+        "Resultaten kwamen van de lokale zoekopdracht."
+      ],
+      "Results came from the server.": [
+        "De resultaten kwamen van de server."
+      ],
+      "Source document in encrypted search index": [
+        "Brondocument in gecodeerde zoekindex"
       ]
     },
     "info": {
@@ -11054,6 +11084,9 @@
       ],
       "Signature": [
         "Handtekening"
+      ],
+      "Display name": [
+        "Weergavenaam"
       ]
     },
     "Label (begin date/advanced search)": {

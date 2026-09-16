@@ -1552,10 +1552,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -1763,6 +1760,12 @@
       ],
       "Preview logs": [
         "Папярэдні прагляд журналаў"
+      ],
+      "Add a payment method": [
+        "Дадаць спосаб аплаты"
+      ],
+      "Add more details": [
+        "Дадаць падрабязнасці"
       ]
     },
     "action": {
@@ -2163,7 +2166,7 @@
         "Воблачны рэдактар дакументаў"
       ],
       "Password health alerts": [
-        "Папярэджанні якасці пароля"
+        "Абвесткі якасці пароля"
       ],
       "Recover previous file versions": [
         "Аднаўленне папярэдніх версій файла"
@@ -5809,6 +5812,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш пошук вярнуў занадта шмат вынікаў. Абмяжуйце вобласць пошуку і паўтарыце спробу."
+      ],
+      "A contact with this email address already exists": [
+        "Кантакт з гэтым адрасам электроннай пошты ўжо існуе"
       ]
     },
     "error": {
@@ -6281,6 +6287,9 @@
       ],
       "Touch your security key.": [
         "Дакраніцеся да свайго ключа бяспекі."
+      ],
+      "Still waiting?": [
+        "Усё яшчэ чакаеце?"
       ]
     },
     "fido2: Label": {
@@ -7528,7 +7537,7 @@
         "${ VPN_APP_NAME } маскіруе ваш IP-адрас і вэб-сайты не могуць вызначыць вас."
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
-        "${ VPN_SHORT_APP_NAME } хавае ваш трафік. ${ PASS_SHORT_APP_NAME } хавае вашу ідэнтычнасць\nз дапамогай неабмежаванай колькасці псеўданімаў **hide-my-email** і **папярэджанняў цёмнай сеткі**, калі раптам адбудзецца ўцечка вашых даных."
+        "${ VPN_SHORT_APP_NAME } хавае ваш трафік. ${ PASS_SHORT_APP_NAME } хавае вашу ідэнтычнасць\nз дапамогай неабмежаванай колькасці псеўданімаў **hide-my-email** і **абвестак цёмнай сеткі**, калі раптам адбудзецца ўцечка вашых даных."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } удзельнік)",
@@ -8443,7 +8452,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -10163,6 +10175,129 @@
       ],
       "Turn off auto-reply": [
         "Выключыць аўтаматычны адказ"
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } ужо выканаў ${ count }. Працягваць?"
+      ],
+      "${ steps } step": [
+        "${ steps } крок",
+        "${ steps } крокі",
+        "${ steps } крокаў",
+        "${ steps } крокаў"
+      ],
+      "Add ${ contact } to your contacts": [
+        "Дадаць ${ contact } у вашы кантакты"
+      ],
+      "Add a contact": [
+        "Дадаць кантакт"
+      ],
+      "Add contact": [
+        "Дадаць кантакт"
+      ],
+      "Change a display setting": [
+        "Змяніць налады дысплэя"
+      ],
+      "Change how your mail is grouped": [
+        "Змяніць спосаб групавання вашых лістоў"
+      ],
+      "Change your list density": [
+        "Змяніць шчыльнасць спіса"
+      ],
+      "Change your mailbox layout": [
+        "Змяніць макет вашай паштовай скрыні"
+      ],
+      "Change your theme": [
+        "Змяніце тэму"
+      ],
+      "Create a filter": [
+        "Стварыць фільтр"
+      ],
+      "Create a folder": [
+        "Стварыць папку"
+      ],
+      "Create a label": [
+        "Стварыць метку"
+      ],
+      "Document lookup failed": [
+        "Збой пошуку дакумента"
+      ],
+      "Label ${ emails }": [
+        "Метка ${ emails }"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "Метка ${ emails } як ${ names }"
+      ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Пошук дакумента ${ lookup.result.docId }"
+      ],
+      "Mark ${ emails } as read": [
+        "Пазначыць ${ emails } як прачытаны"
+      ],
+      "Mark ${ emails } as unread": [
+        "Пазначыць ${ emails } як непрачытаны"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "Пазначыць увесь ${ place } як прачытаны"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "Пазначць увесь ${ place } як непрачытаны"
+      ],
+      "Move ${ emails }": [
+        "Перамясціць ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Перамясціць ${ emails } у ${ destination }"
+      ],
+      "No draft open": [
+        "Няма адкрытых чарнавікоў"
+      ],
+      "No emails selected": [
+        "Лісты не выбраны"
+      ],
+      "No location selected": [
+        "Месцазнаходжанне не выбрана"
+      ],
+      "Not found in the encrypted search index.": [
+        "Не знойдзены ў зашыфраваным пошукавым індэксе."
+      ],
+      "Opened a draft": [
+        "Адкрытыя чарнавікі"
+      ],
+      "Remove the star from ${ emails }": [
+        "Выдаліць пазнаку зорачкі з ${ emails }"
+      ],
+      "Rename ${ folder } to…": [
+        "Перайменаваць ${ folder } на…"
+      ],
+      "Rename this folder": [
+        "Перайменаваць гэту папку"
+      ],
+      "Results came from the local search.": [
+        "Вынікі былі атрыманы з лакальнага пошуку."
+      ],
+      "Results came from the server.": [
+        "Вынікі былі атрыманы з сервера."
+      ],
+      "Rewrote the draft": [
+        "Перапісаць чарнавік"
+      ],
+      "Set your signature": [
+        "Задайць подпіс"
+      ],
+      "Star ${ emails }": [
+        "Пазначыць ${ emails }"
+      ],
+      "Turn off your away message": [
+        "Адключыць паведамленне пра адсутнасць"
+      ],
+      "Turn on your away message": [
+        "Уключыце паведамленне пра адсутнасць"
+      ],
+      "Update the filter ${ filter }": [
+        "Абнавіць фільтр ${ filter }"
+      ],
+      "Update this filter": [
+        "Абнавіць гэты фільтр"
       ]
     },
     "info": {
@@ -11391,7 +11526,7 @@
         "Абнаўленні"
       ],
       "Updates - Automated confirmations, alerts, and account updates": [
-        "Абнаўленні: аўтаматычныя пацвярджэнні, апавяшчэнні і абнаўленні ўліковага запісу"
+        "Абнаўленні: аўтаматычныя пацвярджэнні, абвесткі і абнаўленні ўліковага запісу"
       ],
       "Upload picture": [
         "Запампаваць малюнак"
@@ -11497,6 +11632,9 @@
       ],
       "Until time": [
         "Да часу"
+      ],
+      "Display name": [
+        "Бачнае імя"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15478,6 +15616,12 @@
         "${ count } лісты → ${ wakeTime }",
         "${ count } лістоў → ${ wakeTime }",
         "${ count } лістоў → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "Адкласці ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "Адкласці ${ emails } да ${ wakeTime }"
       ]
     },
     "Snooze message": {
@@ -16304,7 +16448,7 @@
         "Аўтаперасылка электроннай пошты ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
+        "Абвесткі ўцечкі даных ${ strongArgument }"
       ],
       "Desktop app": [
         "Праграма для камп'ютара"

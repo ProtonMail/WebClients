@@ -1547,8 +1547,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Εμπιστοσύνη στο κλειδί"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -1754,6 +1753,9 @@
       ],
       "Add a payment method": [
         "Προσθέστε μία μέθοδο πληρωμής"
+      ],
+      "Add more details": [
+        "Προσθέστε περισσότερες λεπτομέρειες"
       ]
     },
     "action": {
@@ -5708,6 +5710,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Η αναζήτησή σας ταίριαξε με υπερβολικό αριθμό αποτελεσμάτων. Παρακαλούμε περιορίστε την αναζήτησή σας και δοκιμάστε ξανά."
+      ],
+      "A contact with this email address already exists": [
+        "Υπάρχει ήδη επαφή με αυτή την ηλεκτρονική διεύθυνση."
       ]
     },
     "error": {
@@ -6174,6 +6179,12 @@
       ],
       "Touch your security key.": [
         "Αγγίξτε το κλειδί ασφαλείας σας."
+      ],
+      "Still waiting?": [
+        "Ακόμα περιμένετε;"
+      ],
+      "Touch your security key to continue.": [
+        "Πατήστε το κλειδί ασφαλείας σας για να συνεχίσετε."
       ]
     },
     "fido2: Label": {
@@ -8162,7 +8173,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -9829,6 +9841,152 @@
       ],
       "Turn off auto-reply": [
         "Απενεργοποίηση αυτόματης απάντησης"
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "Το ${ LUMO_SHORT_APP_NAME } έχει διανύσει ${ count } μέχρι στιγμής. Θέλετε να συνεχίσετε;"
+      ],
+      "${ steps } step": [
+        "${ steps } βήμα",
+        "${ steps } βήματα"
+      ],
+      "Add ${ contact } to your contacts": [
+        "Προσθήκη του ${ contact } στις επαφές σας"
+      ],
+      "Add a contact": [
+        "Προσθήκη επαφής"
+      ],
+      "Add contact": [
+        "Προσθήκη επαφής"
+      ],
+      "Change a display setting": [
+        "Αλλαγή μιας ρύθμισης προβολής"
+      ],
+      "Change how your mail is grouped": [
+        "Αλλάξτε τον τρόπο ομαδοποίησης των μηνυμάτων σας"
+      ],
+      "Change your list density": [
+        "Αλλάξτε την πυκνότητα της λίστας"
+      ],
+      "Change your mailbox layout": [
+        "Αλλαγή διάταξης γραμματοκιβωτίου"
+      ],
+      "Change your theme": [
+        "Αλλάξτε το θέμα σας"
+      ],
+      "Create a filter": [
+        "Δημιουργία φίλτρου"
+      ],
+      "Create a folder": [
+        "Δημιουργία φακέλου"
+      ],
+      "Create a label": [
+        "Δημιουργία ετικέτας"
+      ],
+      "Document in foundation-search index": [
+        "Έγγραφο στο θεμελιώδες ευρετήριο αναζήτησης"
+      ],
+      "Document lookup failed": [
+        "Η αναζήτηση εγγράφου απέτυχε"
+      ],
+      "Label ${ emails }": [
+        "Προσθήκη ετικέτας σε ${ emails }"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "Επισημάνετε ${ emails } ως ${ names }"
+      ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Αναζήτηση εγγράφου ${ lookup.result.docId }"
+      ],
+      "Mark ${ emails } as read": [
+        "Σήμανση ${ emails } ως αναγνωσμένων"
+      ],
+      "Mark ${ emails } as unread": [
+        "Σήμανση ${ emails } ως μη αναγνωσμένων"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "Σημειώστε ολόκληρο το ${ place } ως αναγνωσμένο"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "Σημειώστε ολόκληρο το ${ place } ως μη αναγνωσμένο"
+      ],
+      "Move ${ emails }": [
+        "Μετακίνηση ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Μετακίνήστε ${ emails } στο ${ destination }"
+      ],
+      "No draft open": [
+        "Δεν υπάρχει ανοιχτό προσχέδιο"
+      ],
+      "No emails selected": [
+        "Δεν έχουν επιλεγεί ηλεκτρονικά μηνύματα"
+      ],
+      "No location selected": [
+        "Δεν έχει επιλεγεί τοποθεσία"
+      ],
+      "Not found in the encrypted search index.": [
+        "Δεν βρέθηκε στο κρυπτογραφημένο ευρετήριο αναζήτησης."
+      ],
+      "Not found in the foundation-search index.": [
+        "Δε βρέθηκε στο θεμελιώδες ευρετήριο αναζήτησης."
+      ],
+      "Opened a draft": [
+        "Άνοιξα ένα προσχέδιο"
+      ],
+      "Read ${ count } open draft": [
+        "Ανάγνωση ${ count } ανοιχτού προσχεδίου",
+        "Ανάγνωση ${ count } ανοιχτών προσχεδίων"
+      ],
+      "Read draft \"${ subject }\"": [
+        "Ανάγνωση προσχεδίου \"${ subject }\""
+      ],
+      "Read the open draft": [
+        "Ανάγνωση του ανοιχτού προσχεδίου"
+      ],
+      "Readdressed the draft": [
+        "Αναδιαμόρφωσα το προσχέδιο"
+      ],
+      "Remove the star from ${ emails }": [
+        "Αφαιρέστε το αστέρι από τα ${ emails }"
+      ],
+      "Rename ${ folder } to…": [
+        "Μετονομάστε ${ folder } σε…"
+      ],
+      "Rename this folder": [
+        "Μετονομάστε αυτό το φάκελο"
+      ],
+      "Results came from the local search.": [
+        "Τα αποτελέσματα προέκυψαν από την τοπική αναζήτηση."
+      ],
+      "Results came from the server.": [
+        "Τα αποτελέσματα προήλθαν από τον διακομιστή."
+      ],
+      "Rewrote and readdressed the draft": [
+        "Ξαναέγραψα και αναδιαμόρφωσα το προσχέδιο."
+      ],
+      "Rewrote the draft": [
+        "Ξαναέγραψα το προσχέδιο"
+      ],
+      "Set your signature": [
+        "Ορίστε την υπογραφή σας"
+      ],
+      "Source document in encrypted search index": [
+        "Έγγραφο πηγής σε κρυπτογραφημένο ευρετήριο αναζήτησης"
+      ],
+      "Star ${ emails }": [
+        "Προσθήκη αστεριού σε ${ emails }"
+      ],
+      "Turn off your away message": [
+        "Απενεργοποιήστε το μήνυμα απουσίας σας"
+      ],
+      "Turn on your away message": [
+        "Ενεργοποιήστε το μήνυμα απουσίας σας"
+      ],
+      "Update the filter ${ filter }": [
+        "Ενημέρωση του φίλτρου ${ filter }"
+      ],
+      "Update this filter": [
+        "Ενημέρωση αυτού του φίλτρου"
       ]
     },
     "info": {
@@ -11150,6 +11308,9 @@
       ],
       "Until time": [
         "Μέχρι την ώρα"
+      ],
+      "Display name": [
+        "Εμφανιζόμενο Όνομα"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14985,6 +15146,12 @@
       "${ count } email → ${ wakeTime }": [
         "${ count } email → ${ wakeTime }",
         "${ count } emails → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "Αναβολή ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "Αναβολή ${ emails } έως ${ wakeTime }"
       ]
     },
     "Snooze message": {

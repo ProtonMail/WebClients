@@ -1541,8 +1541,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1745,6 +1744,9 @@
       ],
       "Add a payment method": [
         "Lägg till en betalningsmetod"
+      ],
+      "Add more details": [
+        "Lägg till fler detaljer"
       ]
     },
     "action": {
@@ -8101,7 +8103,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9732,6 +9735,49 @@
       ],
       "Turn off auto-reply": [
         "Stäng av automatiskt svar"
+      ],
+      "${ steps } step": [
+        "${ steps } steg",
+        "${ steps } steg"
+      ],
+      "Add a contact": [
+        "Lägg till en kontakt"
+      ],
+      "Add contact": [
+        "Lägg till kontakt"
+      ],
+      "Change your theme": [
+        "Ändra ditt tema"
+      ],
+      "Create a filter": [
+        "Skapa ett filter"
+      ],
+      "Create a folder": [
+        "Skapa en mapp"
+      ],
+      "Create a label": [
+        "Skapa en etikett"
+      ],
+      "Label ${ emails }": [
+        "Etikett ${ emails }"
+      ],
+      "Move ${ emails }": [
+        "Flytta ${ emails }"
+      ],
+      "No location selected": [
+        "Ingen plats vald"
+      ],
+      "Rename this folder": [
+        "Byt namn på denna mapp"
+      ],
+      "Set your signature": [
+        "Ställ in din signatur"
+      ],
+      "Update the filter ${ filter }": [
+        "Uppdatera filtret ${ filter }"
+      ],
+      "Update this filter": [
+        "Uppdatera detta filter"
       ]
     },
     "info": {
@@ -11023,6 +11069,9 @@
       ],
       "Signature": [
         "Signatur"
+      ],
+      "Display name": [
+        "Visningsnamn"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -18006,6 +18055,11 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "Snooze info": {
+      "Snooze ${ emails }": [
+        "Snooza ${ emails }"
       ]
     }
   }

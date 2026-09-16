@@ -1507,10 +1507,7 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Ključ zaupanja",
-        "Ključa zaupanja",
-        "Ključi zaupanja",
-        "Ključev zaupanja"
+        "Zaupaj ključu"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -1703,6 +1700,9 @@
       ],
       "Zoom out": [
         "Pomanjšaj"
+      ],
+      "Copy alias “${ name }”": [
+        "Kopiraj vzdevek \"${ name }\""
       ]
     },
     "action": {
@@ -7921,7 +7921,10 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko"
+        "Vstavi sliko",
+        "Vstavi sliki",
+        "Vstavi slike",
+        "Vstavi slik"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -9461,6 +9464,21 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Do urejenega poštnega predala vas loči le nekaj klikov."
+      ],
+      "No draft open": [
+        "Ni odprtih osnutkov"
+      ],
+      "Read ${ count } open draft": [
+        "Preberi ${ count } odprt osnutek",
+        "Preberi ${ count } odprta osnutka",
+        "Preberi ${ count } odprte osnutke",
+        "Preberi ${ count } odprtih osnutkov"
+      ],
+      "Read draft \"${ subject }\"": [
+        "Preberi osnutek \"${ subject }\""
+      ],
+      "Read the open draft": [
+        "Preberi odprt osnutek"
       ]
     },
     "info": {
@@ -10630,6 +10648,9 @@
       ],
       "Signature": [
         "Podpis"
+      ],
+      "Display name": [
+        "Prikazno ime"
       ]
     },
     "Label (begin date/advanced search)": {
