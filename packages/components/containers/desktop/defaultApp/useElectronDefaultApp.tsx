@@ -12,8 +12,10 @@ import {
     invokeInboxDesktopIPC,
 } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isMac, isWindows } from '@proton/shared/lib/helpers/browser';
+import { electronAppVersion } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { useFlag } from '@proton/unleash/useFlag';
+import { semver } from '@proton/utils/semver';
 
 import type { ModalProps } from '../../../components/modalTwo/Modal';
 import useModalState from '../../../components/modalTwo/useModalState';
@@ -47,11 +49,15 @@ function DefaultAppPrompt({ setDefault, onClose, ...props }: DefaultAppPromptPro
 }
 
 export function useElectronDefaultApp() {
-    const defaultAppEnabled = useFlag('InboxDesktopDefaultEmailSetupHelper');
-    const defaultAppDisabled = useFlag('InboxDesktopDefaultEmailSetupHelperDisabled');
+    const defaultAppDisabledV1 = useFlag('InboxDesktopDefaultEmailSetupHelperDisabled'); // Used on versions <= 1.14
+    const defaultAppDisabledV2 = useFlag('InboxDesktopDefaultEmailSetupHelperDisabledV2');
 
-    const enabled =
-        defaultAppEnabled && !defaultAppDisabled && (isWindows() || isMac()) && hasInboxDesktopFeature('MailtoUpdate');
+    let defaultAppDisabled = defaultAppDisabledV1;
+    if (electronAppVersion !== undefined && semver(electronAppVersion) > semver('1.14.0')) {
+        defaultAppDisabled = defaultAppDisabledV2;
+    }
+
+    const enabled = !defaultAppDisabled && (isWindows() || isMac()) && hasInboxDesktopFeature('MailtoUpdate');
 
     const [isDefault, setIsDefault] = useState(false);
     const [shouldCheck, setShouldCheck] = useState(false);
