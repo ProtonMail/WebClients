@@ -211,7 +211,7 @@ export enum ADDON_NAMES {
 }
 
 // Max quantity for all addons
-export const MAX_MEMBER_ADDON = 5000;
+export const MAX_MEMBER_ADDON = 10000;
 export const MAX_DOMAIN_PRO_ADDON = 200;
 export const MAX_LUMO_ADDON = 1;
 export const MAX_MEMBER_LUMO_ADDON = 5000;
