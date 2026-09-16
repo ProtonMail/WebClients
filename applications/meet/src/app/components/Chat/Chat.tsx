@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,7 +8,12 @@ import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { markChatMessagesAsSeen } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { selectRoomName } from '@proton/meet/store/slices/meetingInfo';
 import { selectLocalParticipantIdentity } from '@proton/meet/store/slices/participants/participantsSlice';
-import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
+import {
+    MeetingSideBars,
+    selectChatFocusedMessageId,
+    selectSideBarState,
+    toggleSideBarState,
+} from '@proton/meet/store/slices/uiStateSlice';
 import type { MeetChatMessage } from '@proton/meet/types/types';
 import { isParticipantMentioned } from '@proton/meet/utils/mentions/mentionToken';
 import placeholder from '@proton/styles/assets/img/meet/chat-empty-state.png';
@@ -21,6 +26,7 @@ import { useChatMessage } from '../../hooks/bridges/useChatMessage';
 import { useChatMessageListNavigation } from '../../hooks/useChatMessageListNavigation';
 import { useMeetingRoomUpdates } from '../../hooks/useMeetingRoomUpdates';
 import { useMentionPlainText } from '../../hooks/useMentionPlainText';
+import { useScrollChatToMessage } from '../../hooks/useScrollChatToMessage';
 import { ChatItem } from '../ChatItem/ChatItem';
 import { ChatThread } from '../ChatItem/ChatThread';
 import { ChatMessage } from '../ChatMessage/ChatMessage';
@@ -50,6 +56,8 @@ export const Chat = () => {
     const sideBarState = useMeetSelector(selectSideBarState);
 
     const isChatOpen = sideBarState[MeetingSideBars.Chat];
+
+    const focusedMessageId = useMeetSelector(selectChatFocusedMessageId);
 
     const meetingRoomUpdates = useMeetingRoomUpdates();
 
@@ -128,8 +136,9 @@ export const Chat = () => {
 
     // Handle scroll to bottom when chat opens or receiving new updates
     useEffect(() => {
+        // Your own messages are never new to you, so they stay out of the pill counts.
         const mainChatMessages = meetingRoomUpdates.filter((item): item is MeetChatMessage => {
-            if (item.type !== 'message') {
+            if (item.type !== 'message' || item.identity === localIdentity) {
                 return false;
             }
             const message = item as MeetChatMessage;
@@ -138,10 +147,7 @@ export const Chat = () => {
 
         const mainChatMessageCount = mainChatMessages.length;
         const mainChatMentionCount = isMentionsEnabled
-            ? mainChatMessages.filter(
-                  (message) =>
-                      message.identity !== localIdentity && isParticipantMentioned(message.message, localIdentity)
-              ).length
+            ? mainChatMessages.filter((message) => isParticipantMentioned(message.message, localIdentity)).length
             : 0;
 
         const el = scrollRef.current;
@@ -174,14 +180,19 @@ export const Chat = () => {
     // Handle marking messages as seen
     useEffect(() => {
         if (isChatOpen && scrollRef.current) {
-            scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
-            wasAtBottomRef.current = true;
+            // Opening at a focused message scrolls to it instead, and useScrollChatToMessage records
+            // whether that landed at the bottom.
+            if (!focusedMessageId) {
+                scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+                wasAtBottomRef.current = true;
+            }
             resetNewMessages();
         }
 
         if (isChatOpen) {
             dispatch(markChatMessagesAsSeen());
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isChatOpen, dispatch]);
 
     const lowerCaseSearchExpression = searchExpression.toLowerCase();
@@ -231,6 +242,15 @@ export const Chat = () => {
                 return { root: item, replies: [] as MeetChatMessage[], isRootMissing: false };
             });
     }, [filteredMeetingRoomUpdates]);
+
+    useLayoutEffect(() => {
+        if (focusedMessageId) {
+            setIsSearchOn(false);
+            setSearchExpression('');
+        }
+    }, [focusedMessageId]);
+
+    useScrollChatToMessage(scrollRef, { wasAtBottomRef, contentKey: threadView });
 
     // Recompute after layout changes and resize (no scroll event fires for those).
     useEffect(() => {

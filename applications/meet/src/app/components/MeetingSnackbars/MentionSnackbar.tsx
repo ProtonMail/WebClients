@@ -15,9 +15,10 @@ import { MeetingSnackbarContent } from './MeetingSnackbarContent';
 interface Props {
     message: MeetChatMessage;
     onClose: () => void;
+    onOpen?: () => void;
 }
 
-export const MentionSnackbar = ({ message, onClose }: Props) => {
+export const MentionSnackbar = ({ message, onClose, onOpen }: Props) => {
     const senderName = useMeetSelector((state) => selectParticipantName(state, message.identity));
 
     const {
@@ -34,7 +35,12 @@ export const MentionSnackbar = ({ message, onClose }: Props) => {
 
     return (
         // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
-        <MeetingSnackbarCard role="group" aria-label={c('Info').t`Mention from ${senderName}`}>
+        <MeetingSnackbarCard
+            role="group"
+            aria-label={c('Info').t`Mention from ${senderName}`}
+            onOpen={onOpen}
+            openLabel={c('Action').t`Open mention from ${senderName} in chat`}
+        >
             <MeetingSnackbarContent
                 identity={message.identity}
                 participantName={senderName}
