@@ -51,7 +51,6 @@ import GiftCodeSection from '@proton/components/containers/payments/GiftCodeSect
 import PlansSection from '@proton/components/containers/payments/PlansSection';
 import SubscriptionsSection from '@proton/components/containers/payments/SubscriptionsSection';
 import PaymentMethodsSection from '@proton/components/containers/payments/methods/PaymentMethodsSection';
-import AutomaticSubscriptionModal from '@proton/components/containers/payments/subscription/AutomaticSubscriptionModal';
 import DashboardTelemetry from '@proton/components/containers/payments/subscription/DashboardTelemetry';
 import DowngradeSubscriptionSection from '@proton/components/containers/payments/subscription/DowngradeSubscriptionSection';
 import SubscriptionModalProvider, {
@@ -89,6 +88,7 @@ import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import useToggle from '@proton/hooks/useToggle';
 import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
+import { AutomaticSubscriptionModal } from '@proton/payments-ui/ui/subscriptions/AutomaticSubscriptionModal';
 import { APPS, SECURITY_CHECKUP_PATHS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import { localeCode } from '@proton/shared/lib/i18n';

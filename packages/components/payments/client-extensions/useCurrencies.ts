@@ -18,6 +18,13 @@ const getIsNewBatchCurrenciesEnabled = (getFlag: ReturnType<typeof useGetFlag>) 
     return NEW_BATCH_CURRENCIES_FEATURE_FLAG ? getFlag(NEW_BATCH_CURRENCIES_FEATURE_FLAG) : true;
 };
 
+/**
+ * @deprecated use '@proton/payments-ui/ui/hooks/useCurrencies instead'
+ *
+ * ````
+ * import { useCurrencies} from '@proton/payments-ui/ui/hooks/useCurrencies'
+ * ````
+ */
 export const useCurrencies = () => {
     const getFlag = useGetFlag();
 
