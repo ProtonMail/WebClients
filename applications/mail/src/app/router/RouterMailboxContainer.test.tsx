@@ -1,5 +1,5 @@
 import { getModelState } from '@proton/account/tests';
-import { AccessType } from '@proton/shared/lib/authentication/accessType';
+import { SessionAccessTypeFlag } from '@proton/shared/lib/authentication/sessionAccessType';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { RetentionRule } from '@proton/shared/lib/interfaces/RetentionRule';
 import { buildUser } from '@proton/testing/builders/user';
@@ -46,7 +46,7 @@ describe('RouterMailboxContainer - Deleted folder redirect', () => {
         const { history } = await mailTestRender(<RouterMailboxContainer />, {
             initialPath: '/deleted',
             preloadedState: {
-                user: getModelState(buildUser({ isAdmin: false, accessType: AccessType.AdminAccess })),
+                user: getModelState(buildUser({ isAdmin: false, accessTypeMask: SessionAccessTypeFlag.AdminAccess })),
                 elements: newElementsState({
                     params: {
                         labelID: MAILBOX_LABEL_IDS.SOFT_DELETED,

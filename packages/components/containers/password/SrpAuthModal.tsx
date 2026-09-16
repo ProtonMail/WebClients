@@ -13,6 +13,7 @@ import { PASSWORD_WRONG_ERROR, type TwoFactorCredentials, getInfo } from '@proto
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import type { InfoAuthedResponse } from '@proton/shared/lib/authentication/interface';
+import { getAccessTypeFromMask } from '@proton/shared/lib/authentication/sessionAccessType';
 import type { TwoFactorAuthTypes } from '@proton/shared/lib/authentication/twoFactor';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Unwrap } from '@proton/shared/lib/interfaces';
@@ -278,7 +279,7 @@ const SrpAuthModal = ({
                     <>
                         <PasswordForm
                             key={`${rerender}`}
-                            accessType={user?.accessType}
+                            accessType={user ? getAccessTypeFromMask(user.accessTypeMask) : undefined}
                             defaultPassword={password}
                             onSubmit={(password) => {
                                 withSubmitting(handleSubmit({ step, password, twoFaCredentials: null })).catch(noop);

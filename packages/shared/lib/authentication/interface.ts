@@ -1,4 +1,5 @@
 import type { AuthenticationCredentialsPayload, AuthenticationOptions, RegisteredKey } from '../webauthn/interface';
+import type { SessionAccessTypeMask } from './sessionAccessType';
 
 export interface Fido2Response {
     AuthenticationOptions: AuthenticationOptions;
@@ -66,6 +67,7 @@ export interface LocalSessionResponse {
     LocalID: number;
     UserID: string;
     PrimaryEmail?: string;
+    AccessType: SessionAccessTypeMask;
 }
 
 export type AuthVersion = 0 | 1 | 2 | 3 | 4;

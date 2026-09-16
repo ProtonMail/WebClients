@@ -3,11 +3,22 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Href } from '@proton/atoms/Href/Href';
-import { AccessType } from '@proton/shared/lib/authentication/accessType';
+import { SessionAccessTypeFlag, selfAccessTypeMask } from '@proton/shared/lib/authentication/sessionAccessType';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import isTruthy from '@proton/utils/isTruthy';
 
 import TopBanner from './TopBanner';
+
+const SignedInAsTopBanner = ({ username, href }: { username: string; href: string }) => {
+    return (
+        <TopBanner className="bg-info">
+            {c('Info').t`You are currently signed in as ${username}.`}
+            {` `}
+            <Href href={href}>{c('Link').t`Learn more`}</Href>
+        </TopBanner>
+    );
+};
 
 const MspAccessTopBanner = ({ username }: { username: string }) => {
     const [organization] = useOrganization();
@@ -21,8 +32,9 @@ const MspAccessTopBanner = ({ username }: { username: string }) => {
 
 const AccessTypeTopBanner = () => {
     const [user] = useUser();
+    const { accessTypeMask } = user;
 
-    if (user.accessType === AccessType.Self) {
+    if (accessTypeMask === selfAccessTypeMask) {
         return null;
     }
 
@@ -31,28 +43,21 @@ const AccessTypeTopBanner = () => {
     const maybeEmail = email !== displayName ? `(${email})` : null;
     const username = [displayName, maybeEmail].filter(isTruthy).join(' ');
 
-    if (user.accessType === AccessType.Msp) {
-        return <MspAccessTopBanner username={username} />;
-    }
-
+    // A session can hold several of these at once, so each flag gets its own banner rather than
+    // only the one a collapsed access type would have kept
     return (
-        <TopBanner className="bg-info">
-            {c('Info').t`You are currently signed in as ${username}.`}
-            {` `}
-            {(() => {
-                if (user.accessType === AccessType.EmergencyAccess) {
-                    return (
-                        <Href href={getKnowledgeBaseUrl('/emergency-access-settings')}>{c('Link').t`Learn more`}</Href>
-                    );
-                }
-                if (user.accessType === AccessType.AdminAccess) {
-                    return (
-                        <Href href={getKnowledgeBaseUrl('/manage-public-users-organization')}>{c('Link')
-                            .t`Learn more`}</Href>
-                    );
-                }
-            })()}
-        </TopBanner>
+        <>
+            {hasBit(accessTypeMask, SessionAccessTypeFlag.AdminAccess) && (
+                <SignedInAsTopBanner
+                    username={username}
+                    href={getKnowledgeBaseUrl('/manage-public-users-organization')}
+                />
+            )}
+            {hasBit(accessTypeMask, SessionAccessTypeFlag.DelegatedAccess) && (
+                <SignedInAsTopBanner username={username} href={getKnowledgeBaseUrl('/emergency-access-settings')} />
+            )}
+            {hasBit(accessTypeMask, SessionAccessTypeFlag.OrgAccess) && <MspAccessTopBanner username={username} />}
+        </>
     );
 };
 
