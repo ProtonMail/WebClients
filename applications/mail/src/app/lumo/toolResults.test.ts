@@ -38,7 +38,11 @@ import {
     changeSettingsDefinition,
     readSettingsDefinition,
 } from './skills/settings/cosmetic';
-import { changeSignatureDefinition, readSignatureDefinition } from './skills/settings/signature';
+import {
+    changeSignatureDefinition,
+    readSignatureDefinition,
+    removeSignatureDefinition,
+} from './skills/settings/signature';
 import { openSupportTicketDefinition } from './skills/support/openSupportTicket';
 import type { MailToolDeps } from './toolModule';
 
@@ -234,6 +238,7 @@ const TOOL_PAYLOADS = [
         { signature: 'Bob Smith\nAcme Ltd', isSetWithoutText: false },
     ]),
     payloads(changeSignatureDefinition, [undefined]),
+    payloads(removeSignatureDefinition, [undefined]),
     payloads(createDraftDefinition, [
         { kind: DraftKind.NEW, reference: 'composer-x7b2q1' },
         { kind: DraftKind.REPLY_ALL, reference: 'composer-x7b2q1' },
