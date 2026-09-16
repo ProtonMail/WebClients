@@ -9,6 +9,7 @@ import {
     changeSignatureCardRenderer,
     changeSignatureModule,
     readSignatureModule,
+    removeSignatureModule,
 } from './signature';
 
 const primaryAddress = (Signature: string): Address =>
@@ -32,6 +33,7 @@ const setUp = (addresses: Address[]) => {
         updateAddress,
         read: () => readSignatureModule.createHandler(deps)({}, {} as any),
         change: (text: string) => changeSignatureModule.createHandler(deps)({ text }, {} as any),
+        remove: () => removeSignatureModule.createHandler(deps)({}, {} as any),
     };
 };
 
@@ -111,20 +113,10 @@ describe('changeSignatureModule', () => {
         expect(updateAddress).not.toHaveBeenCalled();
     });
 
-    // A signature of only images flattens to no text, so a plain-text comparison would read it as already
-    // empty and leave the user unable to remove it.
-    it('removes a signature that holds no text, rather than reading it as already removed', async () => {
-        const { updateAddress, change } = setUp([primaryAddress(IMAGE_ONLY_SIGNATURE)]);
+    it('rejects empty text with a self-correcting error naming remove_signature', async () => {
+        const { updateAddress, change } = setUp([primaryAddress('Bob')]);
 
-        await change('');
-
-        expect(updateAddress).toHaveBeenCalledWith(expect.objectContaining({ signature: '' }));
-    });
-
-    it('refuses a removal when there is no signature to remove', async () => {
-        const { updateAddress, change } = setUp([primaryAddress('')]);
-
-        await expect(change('')).rejects.toThrow(ToolInputError);
+        await expect(change('')).rejects.toThrow(/remove_signature/);
         expect(updateAddress).not.toHaveBeenCalled();
     });
 
@@ -132,6 +124,38 @@ describe('changeSignatureModule', () => {
         const { updateAddress, change } = setUp([disabledAddress()]);
 
         await expect(change('Bob Smith')).rejects.toThrow(ToolInputError);
+        expect(updateAddress).not.toHaveBeenCalled();
+    });
+});
+
+describe('removeSignatureModule', () => {
+    it('clears the stored signature', async () => {
+        const { updateAddress, remove } = setUp([primaryAddress('Bob Smith')]);
+
+        await remove();
+
+        expect(updateAddress).toHaveBeenCalledWith(expect.objectContaining({ signature: '' }));
+    });
+
+    it('removes a signature that holds no text, rather than reading it as already removed', async () => {
+        const { updateAddress, remove } = setUp([primaryAddress(IMAGE_ONLY_SIGNATURE)]);
+
+        await remove();
+
+        expect(updateAddress).toHaveBeenCalledWith(expect.objectContaining({ signature: '' }));
+    });
+
+    it('refuses when there is no signature to remove', async () => {
+        const { updateAddress, remove } = setUp([primaryAddress('')]);
+
+        await expect(remove()).rejects.toThrow(ToolInputError);
+        expect(updateAddress).not.toHaveBeenCalled();
+    });
+
+    it('rejects the call when no address is active', async () => {
+        const { updateAddress, remove } = setUp([disabledAddress()]);
+
+        await expect(remove()).rejects.toThrow(ToolInputError);
         expect(updateAddress).not.toHaveBeenCalled();
     });
 });
