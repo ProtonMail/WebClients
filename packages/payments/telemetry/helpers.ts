@@ -253,8 +253,6 @@ export type PaymentTelemetryContext =
     | 'ctx-signup-pass'
     /** Context-based generic signup */
     | 'ctx-signup-generic'
-    /** Context-based Greenland signup */
-    | 'ctx-signup-greenland'
     /** Context-based Meet signup */
     | 'ctx-signup-meet'
     /** Context-based Meet B2C plan signup */
