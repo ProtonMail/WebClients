@@ -6,6 +6,8 @@ import { previousSubscriptionThunk } from '@proton/account/previousSubscription'
 import { subscriptionThunk } from '@proton/account/subscription';
 import { userThunk } from '@proton/account/user';
 import { useConfig } from '@proton/app-context/useConfig';
+import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrencies';
+import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
@@ -15,8 +17,6 @@ import noop from '@proton/utils/noop';
 
 import { useOptionalSubscriptionModalRaw } from '../../../../containers/payments/subscription/SubscriptionModalProvider';
 import type { SUBSCRIPTION_STEPS } from '../../../../containers/payments/subscription/constants';
-import { useCurrencies } from '../../../../payments/client-extensions/index';
-import { usePaymentsApi } from '../../../../payments/react-extensions/usePaymentsApi';
 import { getUpsellConfig } from '../../config/getUpsellConfig';
 import { getMailUpsellConfig } from '../config/getUpsellModalConfig';
 import type { UpsellModalConfig } from '../interface';

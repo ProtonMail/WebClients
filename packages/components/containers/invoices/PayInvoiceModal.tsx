@@ -5,6 +5,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
+import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import { ChargebeeIdealButton } from '@proton/payments-ui/ui/components/ChargebeeIdealButton';
 import { ChargebeePaypalButton } from '@proton/payments-ui/ui/components/ChargebeePaypalButton';
 import { checkInvoice } from '@proton/payments/core/api/api';
@@ -28,7 +29,6 @@ import Price from '../../components/price/Price';
 import { getSimplePriceString } from '../../components/price/helper';
 import useApiResult from '../../hooks/useApiResult';
 import useEventManager from '../../hooks/useEventManager';
-import { usePaymentFacade } from '../../payments/client-extensions/index';
 import PaymentWrapper from '../payments/PaymentWrapper';
 import { getInvoicePaymentsVersion } from './helpers';
 

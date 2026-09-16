@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
+import { formattedSavedSepaDetails } from '@proton/payments-ui/client-extensions/useMethods';
 import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type {
     PayPalDetails,
@@ -11,7 +12,6 @@ import { APPS } from '@proton/shared/lib/constants';
 
 import TableBody from '../../../components/table/TableBody';
 import TableRow from '../../../components/table/TableRow';
-import { formattedSavedSepaDetails } from '../../../payments/client-extensions/useMethods';
 import PaymentMethodsTable from './PaymentMethodsTable';
 
 jest.mock('../../../components/table/TableRow', () => jest.fn());

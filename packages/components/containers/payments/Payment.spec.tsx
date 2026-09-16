@@ -4,6 +4,7 @@ import { IcBrandPaypal } from '@proton/icons/icons/IcBrandPaypal';
 import { IcBrandVisa } from '@proton/icons/icons/IcBrandVisa';
 import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
 import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
+import type { ViewPaymentMethod } from '@proton/payments-ui/client-extensions/useMethods';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { SavedPaymentMethod } from '@proton/payments/core/interface';
 import { applyHOCs } from '@proton/testing/lib/context/hocs/helpers';
@@ -13,7 +14,6 @@ import { withConfig } from '@proton/testing/lib/context/hocs/with-config';
 import { withNotifications } from '@proton/testing/lib/context/hocs/with-notifications';
 import { withReduxStore } from '@proton/testing/lib/context/hocs/with-redux-store';
 
-import type { ViewPaymentMethod } from '../../payments/client-extensions/index';
 import { PaymentsNoApi } from './Payment';
 
 const apiMock = jest.fn();
@@ -32,8 +32,8 @@ jest.mock('@proton/payments-ui/ui/components/ChargebeeWrapper', () => ({
 }));
 
 // Same for the SEPA form: it renders a third-party iframe and reads the full directDebit hook.
-jest.mock('../../payments/chargebee/SepaDirectDebit', () => ({
-    ...jest.requireActual('../../payments/chargebee/SepaDirectDebit'),
+jest.mock('@proton/payments-ui/ui/components/SepaDirectDebit', () => ({
+    ...jest.requireActual('@proton/payments-ui/ui/components/SepaDirectDebit'),
     SepaDirectDebit: () => <div data-testid="sepa-direct-debit" />,
 }));
 

@@ -3,8 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { selectUser } from '@proton/account/user';
-import type { PaymentFacade } from '@proton/components/payments/client-extensions';
-import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import useLoading from '@proton/hooks/useLoading';
 import type {
     BillingAddressExtended,
@@ -23,6 +21,8 @@ import { pick } from '@proton/shared/lib/helpers/object';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import type { PaymentFacade } from '../../../client-extensions/usePaymentFacade';
+import { usePaymentsApi } from '../../../react-extensions/usePaymentsApi';
 import type { TaxCountryHook } from './useTaxCountry';
 import { cleanVatNumber, getVatPrefix } from './vatPrefixHelper';
 

@@ -3,6 +3,7 @@ import { useCallback } from 'react';
 import { plansThunk } from '@proton/account/plans';
 import { subscriptionThunk } from '@proton/account/subscription';
 import { userThunk } from '@proton/account/user';
+import { useAutomaticCurrency } from '@proton/payments-ui/client-extensions/useAutomaticCurrency';
 import { isPaymentsPreloaded, usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
 import { getCanSubscriptionAccessDuoPlan } from '@proton/payments/core/subscription/helpers';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
@@ -11,7 +12,6 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
 import noop from '@proton/utils/noop';
 
-import { useAutomaticCurrency } from '../../../../payments/client-extensions';
 import { useSubscriptionModalRaw } from '../SubscriptionModalProvider';
 import { isUpsellWithPlan, resolveUpsellsToDisplay } from './dashboard-upsells';
 

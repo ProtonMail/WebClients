@@ -12,10 +12,6 @@ import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useHandler } from '@proton/components/hooks/useHandler';
-import { getPreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
-import type { OnChargeable } from '@proton/components/payments/client-extensions';
-import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import {
     type BillingAddressExtended,
     DEFAULT_TAX_BILLING_ADDRESS,
@@ -56,9 +52,13 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import { useCurrencies } from '../../client-extensions/useCurrencies';
+import type { OnChargeable } from '../../client-extensions/usePaymentFacade';
+import { usePaymentsApi } from '../../react-extensions/usePaymentsApi';
 import { getStaticCouponConfig } from '../coupon-config/get-static-coupon-config';
 import { type CouponConfigRendered, useCouponConfig } from '../coupon-config/useCouponConfig';
 import { loadInitialBillingAddress } from '../helpers/load-initial-billing-address';
+import { getPreferredPlansMap } from '../hooks/usePreferredPlansMap';
 import { checkMultiplePlans, getPlanToCheck, getSubscriptionDataFromPlanToCheck } from './helpers';
 import { type MultiCheckGroupsResult, useMultiCheckGroups } from './useMultiCheckGroups';
 

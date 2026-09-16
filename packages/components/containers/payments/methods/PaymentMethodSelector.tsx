@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import type { IconComponent } from '@proton/icons/component';
+import type { ViewPaymentMethod } from '@proton/payments-ui/client-extensions/useMethods';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { AvailablePaymentMethod, PaymentMethodType } from '@proton/payments/core/interface';
 import { IDEAL_WERO_BRAND_NAME } from '@proton/shared/lib/constants';
@@ -18,7 +19,6 @@ import { DropdownSizeUnit } from '../../../components/dropdown/utils';
 import Radio from '../../../components/input/Radio';
 import Option from '../../../components/option/Option';
 import SelectTwo from '../../../components/selectTwo/SelectTwo';
-import type { ViewPaymentMethod } from '../../../payments/client-extensions/index';
 
 interface Props {
     options: ViewPaymentMethod[];

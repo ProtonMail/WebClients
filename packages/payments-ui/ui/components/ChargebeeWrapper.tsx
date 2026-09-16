@@ -6,11 +6,11 @@ import { c } from 'ttag';
 import Label from '@proton/components/components/label/Label';
 import SkeletonPaymentsForm from '@proton/components/containers/payments/SkeletonPaymentsForm';
 import useElementBreakpoints from '@proton/components/hooks/useElementBreakpoints';
-import type { ThemeCode } from '@proton/components/payments/client-extensions';
-import type { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 
+import type { ThemeCode } from '../../client-extensions/helpers';
+import type { ChargebeeCardProcessorHook } from '../../react-extensions/useChargebeeCard';
 import { CountriesDropdown } from '../billing-address/components/CountriesDropdown';
 import type { CbIframeHandles } from './ChargebeeIframe';
 import { ChargebeeIframe } from './ChargebeeIframe';

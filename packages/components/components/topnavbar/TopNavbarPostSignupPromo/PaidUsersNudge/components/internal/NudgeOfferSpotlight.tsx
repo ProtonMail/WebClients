@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import { useAutomaticCurrency } from '@proton/payments-ui/client-extensions/useAutomaticCurrency';
 
-import { useAutomaticCurrency } from '../../../../../../payments/client-extensions/index';
 import Price from '../../../../../price/Price';
 import type { PriceData } from '../../helpers/interface';
 

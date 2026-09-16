@@ -2,6 +2,8 @@ import { type ReactNode, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { formattedShortSavedSepaDetails } from '@proton/payments-ui/client-extensions/useMethods';
+import { SepaAuthorizationText } from '@proton/payments-ui/ui/components/SepaAuthorizationText';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type {
     PayPalDetails,
@@ -14,8 +16,6 @@ import { isPaypalDetails, isSavedCardDetails, isSepaDetails } from '@proton/paym
 
 import Bordered from '../../../components/container/Bordered';
 import useSvgGraphicsBbox from '../../../hooks/useSvgGraphicsBbox';
-import { SepaAuthorizationText } from '../../../payments/chargebee/SepaAuthorizationText';
-import { formattedShortSavedSepaDetails } from '../../../payments/client-extensions/index';
 
 import './PaymentMethodDetails.scss';
 
