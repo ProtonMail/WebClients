@@ -1538,8 +1538,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -5615,6 +5614,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa correspondeu a muitos resultados. Limite sua busca e tente novamente."
+      ],
+      "Organization does not have enough seats available": [
+        "A organização não tem licenças suficientes disponíveis"
       ]
     },
     "error": {
@@ -6075,6 +6077,9 @@
       ],
       "Touch your security key.": [
         "Toque na sua chave de segurança."
+      ],
+      "Still waiting?": [
+        "Ainda esperando?"
       ]
     },
     "fido2: Label": {
@@ -8057,7 +8062,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -9715,6 +9721,18 @@
       ],
       "Update this filter": [
         "Atualizar este filtro"
+      ],
+      "Label ${ emails }": [
+        "Marcar ${ emails }"
+      ],
+      "No emails selected": [
+        "Nenhum e-mail selecionado"
+      ],
+      "Read your signature": [
+        "Leia sua assinatura"
+      ],
+      "Star ${ emails }": [
+        "Favoritar ${ emails }"
       ]
     },
     "info": {
@@ -11003,6 +11021,15 @@
       ],
       "Return on": [
         "Retorne em"
+      ],
+      "From time": [
+        "Da hora"
+      ],
+      "Until date": [
+        "Até a data"
+      ],
+      "Until time": [
+        "Até a data"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12438,6 +12465,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } com final ${ Last4 }"
       ]
     },
     "new_plans: label": {

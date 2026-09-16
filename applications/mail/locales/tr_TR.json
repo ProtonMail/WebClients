@@ -1547,8 +1547,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven",
-        "Anahtarlara güven"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -2687,10 +2686,10 @@
     },
     "Cancellation reminder": {
       "Reactivate by ${ formattedEndDate } to keep these features:": [
-        "Bu özellikleri korumak için ${ formattedEndDate } tarihine kadar yeniden etkinleştirin:"
+        "Bu özellikleri korumak için ${ formattedEndDate } tarihine kadar yeniden kullanıma alın:"
       ],
       "Reactivate subscription": [
-        "Aboneliği yeniden etkinleştir"
+        "Aboneliği yeniden kullanıma al"
       ],
       "Your subscription is ending soon": [
         "Aboneliğiniz yakında sona erecek"
@@ -5246,7 +5245,7 @@
         "Kuruluş anahtarının şifresi çözülmedi"
       ],
       "Organization key must be activated to create invited users": [
-        "Davet edilen kullanıcılar oluşturmak için kuruluş anahtarı etkinleştirilmelidir"
+        "Davet edilen kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
       ],
       "Organization key must be activated to create non-private users": [
         "Korunmayan kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
@@ -6232,7 +6231,7 @@
     },
     "Filter": {
       "Activated": [
-        "Etkinleştirildi"
+        "Kullanıma alındı"
       ],
       "All": [
         "Tümü"
@@ -6259,7 +6258,7 @@
         "Aktarıldı"
       ],
       "Not activated": [
-        "Etkinleştirilmemiş"
+        "Kullanıma alınmamış"
       ],
       "Pending": [
         "Bekliyor"
@@ -6837,10 +6836,10 @@
         "Kısa sürede çok fazla istek yapıldı. Lütfen birkaç dakika sonra yeniden deneyin."
       ],
       "Two-factor authentication is enabled in your external account.": [
-        "Dış hesabınızda iki adımlı doğrulama kullanıma alınmış."
+        "Dış hesabınızda iki adımlı doğrulama açık."
       ],
       "Two-factor authentication is enabled in your external email account.": [
-        "Dış e-posta hesabınızda iki adımlı doğrulama kullanıma alınmış."
+        "Dış e-posta hesabınızda iki adımlı doğrulama açık."
       ],
       "Use your app password if:": [
         "Aşağıdaki durumlarda uygulama parolanızı kullanın:"
@@ -7378,7 +7377,7 @@
         "Hesap güncellendi"
       ],
       "Activation in progress": [
-        "Etkinleştiriliyor"
+        "Kullanıma alınıyor"
       ],
       "Active": [
         "Etkin"
@@ -7567,7 +7566,7 @@
         "Önceki aboneliğinizden kalan tutar"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Temel gezinme ve işlemler, ayarlardaki klavye kısayollarının etkin olup olmadığından bağımsız olarak kullanılabilir kalır."
+        "Temel gezinme ve işlemler, ayarlardaki klavye kısayollarının kullanımda olup olmadığından bağımsız olarak kullanılabilir kalır."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
@@ -8177,7 +8176,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -8607,7 +8607,7 @@
         "Lütfen birincil şifreleme anahtarıyla yeniden imzalanabilecek kişiler aranırken bekleyin."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Lütfen etkin olmayan anahtarla şifrelenmiş verileri olan kişiler aranırken bekleyin."
+        "Lütfen kullanıma alınmamış anahtarla şifrelenmiş verileri olan kişiler aranırken bekleyin."
       ],
       "Preferences updated": [
         "Ayarlar güncellendi"
@@ -8945,7 +8945,7 @@
         "Abonelik her ay otomatik olarak yenilenir."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
-        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yeniden etkinleştirin. ${ reactivateLink }"
+        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yeniden kullanıma alın. ${ reactivateLink }"
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
         "Abonelik sona eriyor: ${ planName } avantajlarınızı korumak için, aboneliğinizi Apple App Store üzerinden ${ byDate } tarihine kadar yeniden başlatın. ${ reactivateLink }"
@@ -9221,13 +9221,13 @@
         "Bu kullanıcıyı aktarabilmek için ${ domainNamesLink } altındaki e-posta etki alanını ekleyin ve doğrulayın."
       ],
       "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Bu kullanıcıyı aktarabilmek için ${ provider.adminConsoleName } üzerinden hesabını etkinleştirin."
+        "Bu kullanıcıyı aktarabilmek için ${ provider.adminConsoleName } üzerinden hesabını kullanıma alın."
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından hesabını etkinleştirin."
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından hesabını kullanıma alın."
       ],
       "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından adresini etkinleştirin."
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından adresini kullanıma alın."
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "Bu kullanıcıyı aktarmak için kullanıcının ${ BRAND_NAME } üzerine katılma davetini kabul etmesi gerekir."
@@ -9242,7 +9242,7 @@
         "Kişilerinizi yeniden imzalamak için, her kişiyi hesabınızda bulunan şifreleme anahtarı listesiyle karşılaştırarak denetlememiz gerekir. Herhangi bir eşleşme bulunamazsa, kişiniz birincil şifreleme anahtarıyla yeniden imzalanır."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Verilerinizi kurtarmak için, verilerin oluşturulduğu sırada kullanılan hesap anahtarını yeniden etkinleştirmelisiniz. Bunun için anahtar oluşturulurken kullanılan parolayı bilmeniz gerekir."
+        "Verilerinizi kurtarmak için, verilerin oluşturulduğu sırada kullanılan hesap anahtarını yeniden kullanıma almalısınız. Bunun için anahtar oluşturulurken kullanılan parolayı bilmeniz gerekir."
       ],
       "To remove restrictions, you can upgrade to a paid plan.": [
         "Kısıtlamaları kaldırmak için ücretli bir tarifeye geçebilirsiniz."
@@ -9959,6 +9959,31 @@
       ],
       "Update this filter": [
         "Bu süzgeci güncelle"
+      ],
+      "No draft open": [
+        "Açık bir taslak yok"
+      ],
+      "Opened a draft": [
+        "Bir taslak açıldı"
+      ],
+      "Read ${ count } open draft": [
+        "${ count } açık taslak okundu",
+        "${ count } açık taslak okundu"
+      ],
+      "Read draft \"${ subject }\"": [
+        "\"${ subject }\" taslağı okundu"
+      ],
+      "Read the open draft": [
+        "Açık taslak okundu"
+      ],
+      "Readdressed the draft": [
+        "Taslak yeniden ele alındı"
+      ],
+      "Rewrote and readdressed the draft": [
+        "Taslak yeniden yazıldı ve yeniden ele alındı"
+      ],
+      "Rewrote the draft": [
+        "Taslak yeniden yazıldı"
       ]
     },
     "info": {
@@ -10304,7 +10329,7 @@
         "İşlemler"
       ],
       "Active filter:": [
-        "Etkin süzgeç:"
+        "Kullanılan süzgeç:"
       ],
       "Add email address": [
         "E-posta adresi ekle"
@@ -11554,10 +11579,10 @@
         "Davetinizi güncellemek için bu takvime bağlı adresi yeniden kullanıma alın."
       ],
       "Reactivate now": [
-        "Yeniden etkinleştir"
+        "Yeniden kullanıma al"
       ],
       "Reactivate subscription": [
-        "Aboneliği yeniden etkinleştir"
+        "Aboneliği yeniden kullanıma al"
       ],
       "Request an invite": [
         "Davet iste"
@@ -11614,10 +11639,10 @@
         "Bu nedir?"
       ],
       "You need to activate your calendar keys to add this event": [
-        "Bu etkinliği eklemek için takvim anahtarlarınızı etkinleştirmelisiniz"
+        "Bu etkinliği eklemek için takvim anahtarlarınızı kullanıma almalısınız"
       ],
       "You need to activate your calendar keys to answer this invitation": [
-        "Bu daveti yanıtlamak için takvim anahtarlarınızı etkinleştirmelisiniz"
+        "Bu daveti yanıtlamak için takvim anahtarlarınızı kullanıma almalısınız"
       ],
       "You need to activate your calendar keys to manage this invitation": [
         "Bu daveti yönetmek için takvim anahtarlarınızı kullanıma almalısınız"
@@ -11626,13 +11651,13 @@
         "Güncellenen etkinliği görmek için takvim anahtarlarınızı kullanıma almalısınız"
       ],
       "You need to activate your calendar keys to see the updated invitation": [
-        "Güncellenen daveti görmek için takvim anahtarlarınızı etkinleştirmelisiniz"
+        "Güncellenen daveti görmek için takvim anahtarlarınızı kullanıma almalısınız"
       ],
       "You need to reactivate your keys to manage this invitation": [
-        "Bu daveti yönetmek için anahtarlarınızı yeniden etkinleştirmelisiniz"
+        "Bu daveti yönetmek için anahtarlarınızı yeniden kullanıma almalısınız"
       ],
       "You need to reactivate your keys to see the updated event": [
-        "Güncellenen etkinliği görmek için anahtarlarınızı yeniden etkinleştirmelisiniz"
+        "Güncellenen etkinliği görmek için anahtarlarınızı yeniden kullanıma almalısınız"
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Güncellenen daveti görmek için anahtarlarınızı yeniden kullanıma almalısınız"
@@ -13783,10 +13808,10 @@
         "${ IDEAL_WERO_BRAND_NAME } ile öde"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
-        "Deneme süresi sona erdikten sonra aboneliğin etkinleştirilmesi için bir ödeme yöntemi gereklidir."
+        "Deneme süresi sona erdikten sonra aboneliğin kullanıma alınması için bir ödeme yöntemi gereklidir."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
+        "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden kullanıma alın."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Yenileme fiyatları ${ termsAndConditionsLink } içeriğine göre değişebilir."
@@ -14575,7 +14600,7 @@
         "**Bu tarihten önce abone olursanız,** **${ referrerRewardAmount }** kredi kazanırsınız."
       ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
-        "Bu tarihten sonra, hesabınız **${ BRAND_NAME } Free** tarifesine düşürülecek. Fikrinizi değiştirirseniz, ücretli özelliklere erişmeyi sürdürmek için **aboneliğinizi yeniden etkinleştirebilirsiniz**."
+        "Bu tarihten sonra, hesabınız **${ BRAND_NAME } Free** tarifesine düşürülecek. Fikrinizi değiştirirseniz, ücretli özelliklere erişmeyi sürdürmek için **aboneliğinizi yeniden kullanıma alabilirsiniz**."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "${ maxRewardAmount } tutarına kadar kredi kazanın. Davet ettiğiniz kişi bir ${ BRAND_NAME } tarifesine abone olduğunda ${ referrerRewardAmount } alacaksınız."
@@ -16353,7 +16378,7 @@
         "İşlemler"
       ],
       "Activated": [
-        "Etkinleştirildi"
+        "Kullanıma alındı"
       ],
       "Address": [
         "Adres"
@@ -17819,10 +17844,10 @@
         "Yöneticiler gizli kullanıcıların verilerine erişemez ve parolalarını sıfırlayamaz."
       ],
       "Member activation incomplete": [
-        "Üye etkinleştirilmemiş"
+        "Üye kullanıma alınmamış"
       ],
       "Organization key must be activated to request data access": [
-        "Verilere erişme isteğinde bulunmak için kuruluş anahtarı etkinleştirilmelidir"
+        "Verilere erişme isteğinde bulunmak için kuruluş anahtarı kullanıma alınmalıdır"
       ],
       "The user must have an address to request data access": [
         "Veri isteğinde bulunabilmek için kullanıcının bir e-posta adresi olmalıdır"
@@ -17972,7 +17997,7 @@
         "Kişiler birleştirilemedi"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Parolanızı anımsamıyorsanız, anahtarınız yeniden etkinleştirilemez. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."
+        "Parolanızı anımsamıyorsanız, anahtarınız yeniden kullanıma alınamaz. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."

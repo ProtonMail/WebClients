@@ -1532,8 +1532,7 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
+        "Klarer nøkkel"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -1754,6 +1753,9 @@
       ],
       "Write ${ count } logs": [
         "Skriv ${ count } logger"
+      ],
+      "Preview logs": [
+        "Forhåndsvis logger"
       ]
     },
     "action": {
@@ -6174,6 +6176,12 @@
       ],
       "Touch your security key.": [
         "Berør sikkerhetsnøkkelen din."
+      ],
+      "Still waiting?": [
+        "Venter du fremdeles?"
+      ],
+      "Touch your security key to continue.": [
+        "Berør sikkerhetsnøkkelen for å fortsette."
       ]
     },
     "fido2: Label": {
@@ -7132,7 +7140,7 @@
         "${ groupCounts } grupper funnet"
       ],
       "${ IDEAL_WERO_BRAND_NAME } mark": [
-        "${ IDEAL_WERO_BRAND_NAME } merket"
+        "${ IDEAL_WERO_BRAND_NAME }-logo"
       ],
       "${ issues.length } issue during import:": [
         "${ issues.length } problem under importen:",
@@ -8147,7 +8155,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8616,37 +8625,37 @@
         "Ta kontakt med oss for å få hjelp med hva som helst ${ BRAND_NAME }."
       ],
       "Read ${ count } email": [
-        "Merk ${ count } e-post som lest",
-        "Merk ${ count } e-poster som lest"
+        "Lese ${ count } e-post",
+        "Lese ${ count } e-poster"
       ],
       "Read ${ count } email on screen": [
         "Les ${ count } e-post på skjermen",
         "Les ${ count } e-poster på skjermen"
       ],
       "Read ${ count } message in this thread": [
-        "Merk ${ count } melding som lest i denne tråden",
-        "Merk ${ count } meldinger som lest i denne tråden"
+        "Lese ${ count } meldig in denne tråden",
+        "Lese ${ count } meldiger in denne tråden"
       ],
       "Read open email “${ subject }”": [
         "Les åpen e-post \"${ subject }\""
       ],
       "Read your ${ count } filter": [
-        "Merk ${ count } filter som lest",
-        "Merk ${ count } filtre som lest"
+        "Lese ${ count } filter",
+        "Lese ${ count } filtre"
       ],
       "Read your ${ count } folder": [
-        "Merk ${ count } mappe som lest",
-        "Merk ${ count } mapper som lest"
+        "Lese ${ count } mappe",
+        "Lese ${ count } mapper"
       ],
       "Read your ${ count } label": [
-        "Merk ${ count } etikett som lest",
-        "Merk ${ count } etiketter som lest"
+        "Lese ${ count } etikett",
+        "Lese ${ count } etiketter"
       ],
       "Read your auto-reply": [
-        "Les det automatiske svaret"
+        "Lese det automatiske svaret"
       ],
       "Read your display settings": [
-        "Leste visningsinnstillingene"
+        "Lese visningsinnstillingene"
       ],
       "Recipient: ": [
         "Mottaker: "
@@ -9784,13 +9793,13 @@
         "Endre hvordan e-posten din grupperes"
       ],
       "Change your list density": [
-        "Endre listetettheten din"
+        "Endre listetettheten"
       ],
       "Change your mailbox layout": [
-        "Endre postkasseoppsettet ditt"
+        "Endre postkasseoppsettet"
       ],
       "Change your theme": [
-        "Endre temaet ditt"
+        "Endre temaet"
       ],
       "Checked Proton support": [
         "Sjekket brukerstøtten til Proton"
@@ -9865,7 +9874,7 @@
         "Finnes ikke i den krypterte søkeindeksen."
       ],
       "Not found in the foundation-search index.": [
-        "Ikke funnet i stiftelsesøkindeksen."
+        "Ikke funnet i foundation-search-indeksen."
       ],
       "Not supported by this browser": [
         "Ikke støttet i denne nettleseren"
@@ -9874,22 +9883,22 @@
         "Åpnet en problemrapport"
       ],
       "Read your signature": [
-        "Leste signaturen din"
+        "Lese signaturen"
       ],
       "Remove the star from ${ emails }": [
         "Fjerne stjernemerking fra ${ emails }"
       ],
       "Rename ${ folder } to…": [
-        "Gi nytt navn til ${ folder } til…"
+        "Endre navnet på mappen ${ folder } til..."
       ],
       "Rename this folder": [
         "Gi nytt navn til denne mappen"
       ],
       "Results came from the local search.": [
-        "Resultatene kom fra det lokale søket."
+        "Treffene kom fra det lokale søket."
       ],
       "Results came from the server.": [
-        "Resultatene kom fra serveren."
+        "Treffene kom fra serveren."
       ],
       "Searched ${ targetName }": [
         "Søkte ${ targetName }"
@@ -9901,13 +9910,13 @@
         "Søkte etter \"${ keyword }\""
       ],
       "Searched your mail": [
-        "Søkte i e-posten din"
+        "Søke i e-posten"
       ],
       "Set auto-reply": [
         "Angi automatisk svar"
       ],
       "Set your signature": [
-        "Angi signaturen din"
+        "Angi signaturen"
       ],
       "Snooze emails": [
         "Utsett e-poster"
@@ -9919,7 +9928,7 @@
         "Stjernemerk ${ emails }"
       ],
       "Turn off your away message": [
-        "Slå av fraværsmelding"
+        "Slå av fraværsmeldingen"
       ],
       "Turn on your away message": [
         "Slå på fraværsmelding"
@@ -9934,7 +9943,7 @@
         "Oppdatere filteret ${ filter }"
       ],
       "Update this filter": [
-        "Oppdater dette filteret"
+        "Oppdatere dette filteret"
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vi vil sende deg til ${ IDEAL_WERO_BRAND_NAME } i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
@@ -9944,6 +9953,9 @@
       ],
       "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
         "Skriver realistiske logglinjer etter hverandre, og leser dem deretter alle tilbake. Viser hvordan skrive- og lese-/eksportkostnader skaleres med antall lagrede oppføringer."
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Logger hjelper oss å forstå hva som skjedde før problemet oppstod. De inkluderer apphandlinger og feilmeldinger, men ikke noe meldingsinnhold."
       ]
     },
     "info": {
@@ -11265,6 +11277,9 @@
       ],
       "Write-chain drain after last line": [
         "Skrivekjededrenering etter siste linje"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tegn"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11614,7 +11629,7 @@
         "Du må aktivere nøklene på nytt for å se den oppdaterte invitasjonen"
       ],
       "Add formatting, links or images": [
-        "Legg til formatering, koblinger eller bilder"
+        "Legge til formatering, koblinger eller bilder"
       ],
       "Advanced auto-reply options": [
         "Avanserte alternativer for automatisk svar"
@@ -14450,7 +14465,7 @@
     },
     "q3campaign2026: Info, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "q3campaign2026: Info, Family, Drive first": {
@@ -14612,6 +14627,9 @@
       ],
       "User Admin": [
         "Brukeradministrator"
+      ],
+      "Organization Admin": [
+        "Organisasjonsadministrator"
       ]
     },
     "Safety review": {
