@@ -3,7 +3,7 @@ export type SearchParamString<T extends Record<string, any>> = {
 }[keyof T];
 
 type MultipleValueParamFormat = 'repeat' | 'comma-separated' | 'json-array';
-type SearchParamStringOptions = {
+export type SearchParamStringOptions = {
     multiple?: MultipleValueParamFormat;
 };
 

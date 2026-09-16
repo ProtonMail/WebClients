@@ -1,9 +1,1 @@
-export enum SUBSCRIPTION_STEPS {
-    NETWORK_ERROR,
-    PLAN_SELECTION,
-    CHECKOUT,
-    UPGRADE,
-    THANKS,
-}
-
-export const subscriptionModalClassName = 'subscription-modal' as const;
+export { SUBSCRIPTION_STEPS, subscriptionModalClassName } from '@proton/payments-ui/ui/subscriptions/constants';
