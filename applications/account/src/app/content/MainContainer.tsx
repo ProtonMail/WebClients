@@ -222,7 +222,6 @@ const MainContainer = () => {
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
     const isPasswordRemindersOrgEnabled = useFlag('PasswordRemindersOrg');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
-    const isMspEnabled = useFlag('MspEnabled');
     const isSpacesAvailable = useFlag('SpacesAvailable');
 
     const { canUseCategoryView } = useCategoriesData();
@@ -317,7 +316,6 @@ const MainContainer = () => {
         isPasswordRemindersOrgEnabled,
         isAuthenticatorAvailable,
         isCategoryViewEnabled: canUseCategoryView,
-        isMspEnabled,
         isReferralProgramEnabled,
     };
 
