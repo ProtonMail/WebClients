@@ -4571,6 +4571,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Vaše pripojenie k Zoom vypršalo. Pripojte sa znova pre pokračovanie, prosím."
+      ],
+      "A contact with this email address already exists": [
+        "Kontakt s touto emailovou adresou už existuje"
       ]
     },
     "error": {
@@ -5067,6 +5070,9 @@
       ],
       "Still waiting?": [
         "Stále čakáte?"
+      ],
+      "Touch your security key to continue.": [
+        "Dotknite sa svojho bezpečnostného kľúča, aby ste pokračovali."
       ]
     },
     "fido2: Label": {
@@ -7317,6 +7323,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Dosiahli ste limit rezervačných slotov (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Zostáva vám ešte ${ timeRemaining } v rámci skúšobnej doby. Kliknite na ${ addPaymentMethodLink }, aby ste neprišli o prístup. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Zostáva vám ${ timeRemaining } skúšobnej doby. Kliknite na ${ addPaymentMethodLink }, ak si chcete predplatné zachovať. ${ learnMoreLink }"
       ]
     },
     "info": {
