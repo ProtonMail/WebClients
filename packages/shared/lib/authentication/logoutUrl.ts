@@ -11,6 +11,7 @@ import { ForkSearchParameters } from './fork';
 import type { ExtraSessionForkData } from './interface';
 import type {
     LegacySerializedSignoutUserData,
+    ParsedSignoutUserData,
     SerializedSignoutUserData,
     SignoutActionOptions,
     SignoutUserData,
@@ -19,14 +20,25 @@ import { stripLocalBasenameFromPathname } from './pathnameHelper';
 
 const clearRecoveryParam = 'clear-recovery';
 
-const getAccessType = (session: SerializedSignoutUserData | LegacySerializedSignoutUserData) => {
-    // Legacy value
-    if ('s' in session) {
+/** Everything that has ever been serialized into this URL, since any of it can still arrive. */
+type AnySerializedSignoutUserData = Partial<SerializedSignoutUserData> &
+    Partial<LegacySerializedSignoutUserData> & { id: string };
+
+/**
+ * Only reached for a URL from a client that predates the local id, where the access type was the
+ * only way to say which session was meant.
+ * TODO: Drop with the `a` written into the `iaas` cookie in `accountSessions/storage.ts` once every
+ * app is deployed with the local id. `findPersistedSessionByAccessType`,
+ * `LegacySerializedSignoutUserData` and `SerializedSignoutUserData['a']` all go with it.
+ */
+const getAccessType = (session: AnySerializedSignoutUserData): AccessType => {
+    // (legacy) self access type value
+    if (session.s !== undefined) {
         return session.s ? AccessType.Self : AccessType.AdminAccess;
-    } else if ('a' in session) {
-        if (isEnumValue(session.a, AccessType)) {
-            return session.a;
-        }
+    }
+    // (legacy) access type value
+    if (session.a !== undefined && isEnumValue(session.a, AccessType)) {
+        return session.a;
     }
     return AccessType.Self;
 };
@@ -41,14 +53,12 @@ const parseSessions = (sessions: string | null) => {
             if (result.length > 50) {
                 return [];
             }
-            return result.map(
-                (session: SerializedSignoutUserData | LegacySerializedSignoutUserData): SignoutUserData => {
-                    return {
-                        id: session.id,
-                        accessType: getAccessType(session),
-                    };
+            return result.map((session: AnySerializedSignoutUserData): ParsedSignoutUserData => {
+                if (Number.isInteger(session.l)) {
+                    return { id: session.id, localID: session.l as number };
                 }
-            );
+                return { id: session.id, accessType: getAccessType(session) };
+            });
         }
         return [];
     } catch (e) {
@@ -58,12 +68,7 @@ const parseSessions = (sessions: string | null) => {
 
 const serializeSessions = (sessions: SignoutUserData[]): string => {
     return utf8StringToUint8Array(
-        JSON.stringify(
-            sessions.map((session): Omit<SerializedSignoutUserData, 's'> => ({
-                id: session.id,
-                a: session.accessType,
-            }))
-        )
+        JSON.stringify(sessions.map((session): SerializedSignoutUserData => ({ l: session.localID, id: session.id })))
     ).toBase64({ alphabet: 'base64url', omitPadding: true });
 };
 

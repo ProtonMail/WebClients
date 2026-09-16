@@ -13,13 +13,20 @@ import {
     type OfflinePersistedSession,
     type PersistedSession,
     type PersistedSessionBlob,
-    type PersistedSessionLite,
+    type PersistedSessionCookieData,
     SessionSource,
 } from './SessionInterface';
 import { AccessType } from './accessType';
 import { InvalidPersistentSessionError } from './error';
 import { getValidatedLocalID } from './fork/validation';
 import type { OfflineKey } from './offlineKey';
+import {
+    SessionAccessTypeFlag,
+    type SessionAccessTypeMask,
+    getAccessTypeFromMask,
+    getMaskFromAccessType,
+    selfAccessTypeMask,
+} from './sessionAccessType';
 import { getDecryptedBlob, getEncryptedBlob } from './sessionBlobCryptoHelper';
 
 // We have business logic relying on this constant, please change with caution!
@@ -44,18 +51,22 @@ export const getPersistedSession = (localID: number): PersistedSession | undefin
     }
     try {
         const parsedValue = JSON.parse(itemValue);
-        const accessType = (() => {
+        const accessTypeMask = ((): SessionAccessTypeMask => {
+            if (typeof parsedValue.accessTypeMask === 'number') {
+                return parsedValue.accessTypeMask;
+            }
             /* Legacy persisted value. The meaning has been inverted into `self`, so it compares to false. */
             if (parsedValue.isSubUser !== undefined) {
-                return parsedValue.isSubUser === false ? AccessType.Self : AccessType.AdminAccess;
+                return parsedValue.isSubUser === false ? selfAccessTypeMask : SessionAccessTypeFlag.AdminAccess;
             }
             if (parsedValue.isSelf !== undefined) {
-                return parsedValue.isSelf === true ? AccessType.Self : AccessType.AdminAccess;
+                return parsedValue.isSelf === true ? selfAccessTypeMask : SessionAccessTypeFlag.AdminAccess;
             }
+            /* Widened rather than read as a mask, since `AccessType.Msp` and `OrgAccess` differ */
             if (parsedValue.accessType !== undefined && isEnumValue(parsedValue.accessType, AccessType)) {
-                return parsedValue.accessType as AccessType;
+                return getMaskFromAccessType(parsedValue.accessType);
             }
-            return AccessType.Self;
+            return selfAccessTypeMask;
         })();
         return {
             localID,
@@ -63,7 +74,7 @@ export const getPersistedSession = (localID: number): PersistedSession | undefin
             UID: parsedValue.UID || '',
             blob: parsedValue.blob || '',
             source: parsedValue.source ?? SessionSource.Proton, // Default to Proton since we can't determine it properly
-            accessType,
+            accessTypeMask,
             persistent: typeof parsedValue.persistent === 'boolean' ? parsedValue.persistent : true, // Default to true (old behavior)
             trusted: parsedValue.trusted || false,
             payloadVersion: parsedValue.payloadVersion || 1,
@@ -140,10 +151,13 @@ export const getPersistedSessionByUID = (UID: string) => {
     return persistedSessions.find((session) => session.UID === UID);
 };
 
-export const getMinimalPersistedSession = ({ localID, accessType }: PersistedSession): PersistedSessionLite => {
+export const getMinimalPersistedSession = ({
+    localID,
+    accessTypeMask,
+}: PersistedSession): PersistedSessionCookieData => {
     return {
         localID,
-        accessType,
+        accessTypeMask,
     };
 };
 
@@ -196,15 +210,15 @@ export const getPersistedSessionData = async (
         UID: string;
         keyPassword: string;
         offlineKey: OfflineKey | undefined;
-        accessType: AccessType;
+        accessTypeMask: SessionAccessTypeMask;
         persistent: boolean;
         trusted: boolean;
         persistedAt: number;
         source: PersistedSession['source'];
     }
 ): Promise<PersistedSession> => {
-    const payloadVersion =
-        1 as PersistedSession['payloadVersion']; /* Update to 2 when all clients understand it (safe for rollback) */
+    /* TODO: We can now make this update 2026-09-16. */
+    const payloadVersion = 1 as PersistedSession['payloadVersion'];
 
     const { clearTextPayloadData, encryptedPayloadData } = ((): {
         clearTextPayloadData:
@@ -239,7 +253,7 @@ export const getPersistedSessionData = async (
         localID,
         UserID: data.UserID,
         UID: data.UID,
-        accessType: data.accessType,
+        accessTypeMask: data.accessTypeMask,
         persistent: data.persistent,
         trusted: data.trusted,
         source: data.source,
@@ -255,7 +269,14 @@ export const getPersistedSessionData = async (
 };
 
 export const setPersistedSession = async (persistedSession: PersistedSession) => {
-    setItem(getKey(persistedSession.localID), JSON.stringify(omit(persistedSession, ['localID'])));
+    setItem(
+        getKey(persistedSession.localID),
+        JSON.stringify({
+            ...omit(persistedSession, ['localID']),
+            // Only a rollback reads this. TODO: Drop once rolling back past 2026-09-16 is out of scope.
+            accessType: getAccessTypeFromMask(persistedSession.accessTypeMask),
+        })
+    );
 
     if (sessionCreateListeners.length()) {
         await Promise.all(sessionCreateListeners.notify(persistedSession)).catch(noop);

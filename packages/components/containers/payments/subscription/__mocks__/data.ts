@@ -22,7 +22,7 @@ import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { IcVault } from '@proton/icons/icons/IcVault';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
-import { AccessType } from '@proton/shared/lib/authentication/accessType';
+import { selfAccessTypeMask } from '@proton/shared/lib/authentication/sessionAccessType';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import type { OrganizationExtended, PendingInvitation, User, UserSettings } from '@proton/shared/lib/interfaces';
 
@@ -536,7 +536,7 @@ export const user = {
     hasPaidMail: true,
     hasPaidVpn: true,
     canPay: true,
-    accessType: AccessType.Self,
+    accessTypeMask: selfAccessTypeMask,
 } as unknown as User;
 
 export const userSettings = {

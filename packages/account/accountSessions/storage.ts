@@ -1,16 +1,28 @@
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 
-import { type PersistedSessionLite, SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
+import {
+    type PersistedSessionCookieData,
+    type PersistedSessionLite,
+    SessionSource,
+} from '@proton/shared/lib/authentication/SessionInterface';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import {
     getMinimalPersistedSession,
     getPersistedSessions,
 } from '@proton/shared/lib/authentication/persistedSessionStorage';
+import { getAccessTypeFromMask } from '@proton/shared/lib/authentication/sessionAccessType';
 import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
-import isEnumValue from '@proton/utils/isEnumValue';
 import isTruthy from '@proton/utils/isTruthy';
 
+/**
+ * Sessions belong to the device, so `auth/v4/sessions/local` answers for the whole device and can
+ * name sessions this client no longer has. For example non-persistent sessions cookies go when the
+ * browser closes, but the API keeps reporting it. The response may therefore contain false positives.
+ *
+ * Only account knows the complete list of sessions so it publishes the local ids it currently knows
+ * on the second level domain where every subdomain can read them.
+ */
 const cookieName = 'iaas';
 
 const syncToCookie = (cookieValue: string) => {
@@ -26,44 +38,40 @@ const syncToCookie = (cookieValue: string) => {
 type SerializedItem =
     | {
           l: number;
-          s: 0 | 1; // Legacy value, not used anymore. TODO: Remove after all web clients are deployed and understand it.
           a: AccessType;
       }
     | number;
 
-const toItem = (value: PersistedSessionLite): SerializedItem => {
-    if (value.accessType === AccessType.Self) {
+/**
+ * Written for clients that read the access type from this cookie rather than from
+ * `auth/v4/sessions/local`.
+ * TODO: Drop with the legacy read in `logoutUrl.ts` once every app is deployed with the mask - that
+ * one is the read old writers need, this is the write old readers need, and both end together.
+ */
+const toItem = (value: PersistedSessionCookieData): SerializedItem => {
+    const accessType = getAccessTypeFromMask(value.accessTypeMask);
+    if (accessType === AccessType.Self) {
         return value.localID;
     }
     return {
         l: value.localID,
-        a: value.accessType,
-        s: 0 /* Legacy clients only understand non-self admin-access (0). . TODO: Remove after all web clients are deployed and understand it */,
+        a: accessType,
     };
 };
 
+/**
+ * Only the local id is read back. The access type is read from `auth/v4/sessions/local`.
+ */
 const fromItem = (value: any): PersistedSessionLite | undefined => {
     if (Number.isInteger(value)) {
-        return { localID: value, accessType: AccessType.Self };
+        return { localID: value };
     }
-    if ('l' in value) {
-        if ('a' in value) {
-            return {
-                localID: Number(value.l),
-                accessType: isEnumValue(value.a, AccessType) ? value.a : AccessType.Self,
-            };
-        }
-        /* Legacy value. TODO: Remove after all web clients are deployed and understand it. */
-        if ('s' in value) {
-            return {
-                localID: Number(value.l),
-                accessType: Boolean(value.s) ? AccessType.Self : AccessType.AdminAccess,
-            };
-        }
+    if (Number.isInteger(value?.l)) {
+        return { localID: value.l };
     }
 };
 
-const to = (value: PersistedSessionLite[]) => {
+const to = (value: PersistedSessionCookieData[]) => {
     return utf8StringToUint8Array(JSON.stringify(value.map(toItem))).toBase64({
         alphabet: 'base64url',
         omitPadding: true,
