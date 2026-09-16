@@ -504,7 +504,7 @@ const SubUserCreateModal = ({
                             }
                             assistiveText={
                                 <>
-                                    {adminTooltipText()}{' '}
+                                    {adminTooltipText(organization?.IsSubsidiary)}{' '}
                                     {passwordlessMode && model.private && model.admin && (
                                         <Tooltip title={getPrivateAdminError()} openDelay={0}>
                                             <IcInfoCircleFilled className="color-danger ml-2" />

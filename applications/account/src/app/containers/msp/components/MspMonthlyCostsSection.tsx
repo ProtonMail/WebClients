@@ -6,6 +6,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
+import Info from '@proton/components/components/link/Info';
 import Pagination from '@proton/components/components/pagination/Pagination';
 import usePaginationAsync from '@proton/components/components/pagination/usePaginationAsync';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
@@ -31,6 +32,7 @@ import {
     getMspDailyUsage,
 } from '@proton/shared/lib/api/msp';
 import { getFormattedMonths } from '@proton/shared/lib/date/date';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type {
     MspBillingPeriod,
     MspBillingPeriodsResponse,
@@ -231,8 +233,12 @@ const MspMonthlyCostsSection = () => {
                                             .t`Managed companies`}</TableHeaderCell>
                                         <TableHeaderCell className="text-right">{c('Column header')
                                             .t`Billable licenses`}</TableHeaderCell>
-                                        <TableHeaderCell className="text-right">{c('Column header')
-                                            .t`Total cost`}</TableHeaderCell>
+                                        <TableHeaderCell className="text-right">
+                                            <span className="flex items-center justify-end gap-2">
+                                                {c('Column header').t`Total cost`}
+                                                <Info url={getKnowledgeBaseUrl('/pass-billing-invoicing-msps')} />
+                                            </span>
+                                        </TableHeaderCell>
                                         <TableHeaderCell className="w-1/10" />
                                     </TableRow>
                                 </TableHeader>

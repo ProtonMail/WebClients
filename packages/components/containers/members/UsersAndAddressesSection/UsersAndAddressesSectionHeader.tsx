@@ -2,6 +2,7 @@ import type { CSSProperties, JSX } from 'react';
 
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import { FeatureCode, useFeature } from '@proton/features';
 import type { MemberUsageColumnDisplay } from '@proton/shared/lib/api/members';
@@ -32,6 +33,7 @@ interface Props {
 }
 
 const UsersAndAddressesSectionHeader = ({ useEmail, showFeaturesColumn, showUsage, columnDisplay }: Props) => {
+    const [organization] = useOrganization();
     const [adminRolesUIState] = useAdminRolesUI();
     const { feature: adminRolesModalFeature, loading: adminRolesModalLoading } = useFeature(
         FeatureCode.AdminRolesOnboardingModal
@@ -98,7 +100,10 @@ const UsersAndAddressesSectionHeader = ({ useEmail, showFeaturesColumn, showUsag
                 <div className="inline-flex gap-2 items-center">
                     <span>{c('Title header for members table').t`Role`}</span>
                     <span className="hidden md:inline-flex items-center">
-                        <Info title={adminTooltipText()} url={getKnowledgeBaseUrl('/user-roles')} />
+                        <Info
+                            title={adminTooltipText(organization?.IsSubsidiary)}
+                            url={getKnowledgeBaseUrl('/user-roles')}
+                        />
                     </span>
                 </div>
             ),
