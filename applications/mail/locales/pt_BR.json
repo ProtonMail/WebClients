@@ -1538,8 +1538,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1739,6 +1738,9 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Add more details": [
+        "Adicionar mais detalhes"
       ]
     },
     "action": {
@@ -5612,6 +5614,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa correspondeu a muitos resultados. Limite sua busca e tente novamente."
+      ],
+      "Organization does not have enough seats available": [
+        "A organização não tem licenças suficientes disponíveis"
       ]
     },
     "error": {
@@ -6075,6 +6080,9 @@
       ],
       "Touch your security key.": [
         "Toque na sua chave de segurança."
+      ],
+      "Still waiting?": [
+        "Ainda esperando?"
       ]
     },
     "fido2: Label": {
@@ -8048,7 +8056,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -9667,6 +9676,66 @@
       ],
       "Turn off auto-reply": [
         "Desativa resposta automática"
+      ],
+      "Add ${ contact } to your contacts": [
+        "Adicionar ${ contact } para seus contatos"
+      ],
+      "Add a contact": [
+        "Adicionar um contato"
+      ],
+      "Add contact": [
+        "Adicionar contato"
+      ],
+      "Change your theme": [
+        "Alterar o seu tema"
+      ],
+      "Create a filter": [
+        "Criar um filtro"
+      ],
+      "Create a folder": [
+        "Criar uma pasta"
+      ],
+      "Create a label": [
+        "Criar um marcador"
+      ],
+      "Label ${ emails }": [
+        "Marcar ${ emails }"
+      ],
+      "Mark ${ emails } as unread": [
+        "Marca ${ emails } como lido"
+      ],
+      "Move ${ emails }": [
+        "Mover ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Mover ${ emails } para ${ destination }"
+      ],
+      "No emails selected": [
+        "Nenhum e-mail selecionado"
+      ],
+      "No location selected": [
+        "Nenhuma localização selecionada"
+      ],
+      "Read your signature": [
+        "Leia sua assinatura"
+      ],
+      "Rename ${ folder } to…": [
+        "Renomear ${ folder } para…"
+      ],
+      "Rename this folder": [
+        "Renomear esta pasta"
+      ],
+      "Set your signature": [
+        "Definir sua assinatura"
+      ],
+      "Star ${ emails }": [
+        "Favoritar ${ emails }"
+      ],
+      "Update the filter ${ filter }": [
+        "Atualizar filtro ${ filter }"
+      ],
+      "Update this filter": [
+        "Atualizar este filtro"
       ]
     },
     "info": {
@@ -10952,6 +11021,18 @@
       ],
       "Signature": [
         "Assinatura"
+      ],
+      "Display name": [
+        "Nome de exibição"
+      ],
+      "From time": [
+        "Da hora"
+      ],
+      "Until date": [
+        "Até a data"
+      ],
+      "Until time": [
+        "Até a data"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12390,6 +12471,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } com final ${ Last4 }"
       ]
     },
     "new_plans: label": {
@@ -14771,6 +14855,12 @@
       "${ count } email → ${ wakeTime }": [
         "${ count } e-mail → ${ wakeTime }",
         "${ count } e-mails → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "Adiar ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "Adiar ${ emails } até ${ wakeTime }"
       ]
     },
     "Snooze message": {

@@ -1529,8 +1529,7 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
+        "Klarer nøkkel"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -1751,6 +1750,12 @@
       ],
       "Write ${ count } logs": [
         "Skriv ${ count } logger"
+      ],
+      "Add more details": [
+        "Legg til flere detaljer"
+      ],
+      "Preview logs": [
+        "Forhåndsvis logger"
       ]
     },
     "action": {
@@ -5705,6 +5710,9 @@
       ],
       "Could not grant access to the organization key": [
         "Kunne ikke gi tilgang til organisasjonsnøkkelen"
+      ],
+      "A contact with this email address already exists": [
+        "En kontakt med denne e-postadressen finnes allerede"
       ]
     },
     "error": {
@@ -6171,6 +6179,12 @@
       ],
       "Touch your security key.": [
         "Berør sikkerhetsnøkkelen din."
+      ],
+      "Still waiting?": [
+        "Venter du fremdeles?"
+      ],
+      "Touch your security key to continue.": [
+        "Berør sikkerhetsnøkkelen for å fortsette."
       ]
     },
     "fido2: Label": {
@@ -8111,7 +8125,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8571,31 +8586,31 @@
         "Ta kontakt med oss for å få hjelp med hva som helst ${ BRAND_NAME }."
       ],
       "Read ${ count } email": [
-        "Merk ${ count } e-post som lest",
-        "Merk ${ count } e-poster som lest"
+        "Lese ${ count } e-post",
+        "Lese ${ count } e-poster"
       ],
       "Read ${ count } email on screen": [
         "Les ${ count } e-post på skjermen",
         "Les ${ count } e-poster på skjermen"
       ],
       "Read ${ count } message in this thread": [
-        "Merk ${ count } melding som lest i denne tråden",
-        "Merk ${ count } meldinger som lest i denne tråden"
+        "Lese ${ count } meldig in denne tråden",
+        "Lese ${ count } meldiger in denne tråden"
       ],
       "Read open email “${ subject }”": [
         "Les åpen e-post \"${ subject }\""
       ],
       "Read your ${ count } filter": [
-        "Merk ${ count } filter som lest",
-        "Merk ${ count } filtre som lest"
+        "Lese ${ count } filter",
+        "Lese ${ count } filtre"
       ],
       "Read your ${ count } folder": [
-        "Merk ${ count } mappe som lest",
-        "Merk ${ count } mapper som lest"
+        "Lese ${ count } mappe",
+        "Lese ${ count } mapper"
       ],
       "Read your ${ count } label": [
-        "Merk ${ count } etikett som lest",
-        "Merk ${ count } etiketter som lest"
+        "Lese ${ count } etikett",
+        "Lese ${ count } etiketter"
       ],
       "Recipient: ": [
         "Mottaker: "
@@ -9695,7 +9710,7 @@
         "${ dateString } kl. ${ formattedTime }"
       ],
       "${ IDEAL_WERO_BRAND_NAME } mark": [
-        "${ IDEAL_WERO_BRAND_NAME } merket"
+        "${ IDEAL_WERO_BRAND_NAME }-logo"
       ],
       "${ name } in ${ parentName }": [
         "${ name } i ${ parentName }"
@@ -9765,13 +9780,13 @@
         "Åpnet en problemrapport"
       ],
       "Read your auto-reply": [
-        "Les det automatiske svaret"
+        "Lese det automatiske svaret"
       ],
       "Read your display settings": [
-        "Leste visningsinnstillingene"
+        "Lese visningsinnstillingene"
       ],
       "Read your signature": [
-        "Leste signaturen din"
+        "Lese signaturen"
       ],
       "Rename folder": [
         "Endre mappenavn"
@@ -9792,7 +9807,7 @@
         "Søkte på nettet"
       ],
       "Searched your mail": [
-        "Søkte i e-posten din"
+        "Søke i e-posten"
       ],
       "Set auto-reply": [
         "Angi automatisk svar"
@@ -9823,6 +9838,130 @@
       ],
       "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
         "Skriver realistiske logglinjer etter hverandre, og leser dem deretter alle tilbake. Viser hvordan skrive- og lese-/eksportkostnader skaleres med antall lagrede oppføringer."
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } har tatt ${ count } så langt. Fortsette?"
+      ],
+      "${ steps } step": [
+        "${ steps } trinn",
+        "${ steps } trinn"
+      ],
+      "Add ${ contact } to your contacts": [
+        "Legg til ${ contact } i kontaktene dine"
+      ],
+      "Add a contact": [
+        "Legg til en kontakt"
+      ],
+      "Add contact": [
+        "Legg til kontakt"
+      ],
+      "Change a display setting": [
+        "Endre en visningsinnstilling"
+      ],
+      "Change how your mail is grouped": [
+        "Endre hvordan e-posten din grupperes"
+      ],
+      "Change your list density": [
+        "Endre listetettheten"
+      ],
+      "Change your mailbox layout": [
+        "Endre postkasseoppsettet"
+      ],
+      "Change your theme": [
+        "Endre temaet"
+      ],
+      "Create a filter": [
+        "Opprett et filter"
+      ],
+      "Create a folder": [
+        "Opprett en mappe"
+      ],
+      "Create a label": [
+        "Opprett en etikett"
+      ],
+      "Document in foundation-search index": [
+        "Dokument i Foundation-søkeindeksen"
+      ],
+      "Document lookup failed": [
+        "Dokumentoppslag mislyktes"
+      ],
+      "Label ${ emails }": [
+        "Merk ${ emails }"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "Merk ${ emails } som ${ names }"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Logger hjelper oss å forstå hva som skjedde før problemet oppstod. De inkluderer apphandlinger og feilmeldinger, men ikke noe meldingsinnhold."
+      ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Oppslag av dokument ${ lookup.result.docId }"
+      ],
+      "Mark ${ emails } as read": [
+        "Merk ${ emails } som lest"
+      ],
+      "Mark ${ emails } as unread": [
+        "Merk ${ emails } som ulest"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "Merk hele ${ place } som lest"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "Merk hele ${ place } som ulest"
+      ],
+      "Move ${ emails }": [
+        "Flytt ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Flytt ${ emails } til ${ destination }"
+      ],
+      "No emails selected": [
+        "Ingen e-poster er valgt"
+      ],
+      "No location selected": [
+        "Sted ikke valgt"
+      ],
+      "Not found in the encrypted search index.": [
+        "Finnes ikke i den krypterte søkeindeksen."
+      ],
+      "Not found in the foundation-search index.": [
+        "Ikke funnet i foundation-search-indeksen."
+      ],
+      "Remove the star from ${ emails }": [
+        "Fjerne stjernemerking fra ${ emails }"
+      ],
+      "Rename ${ folder } to…": [
+        "Endre navnet på mappen ${ folder } til..."
+      ],
+      "Rename this folder": [
+        "Gi nytt navn til denne mappen"
+      ],
+      "Results came from the local search.": [
+        "Treffene kom fra det lokale søket."
+      ],
+      "Results came from the server.": [
+        "Treffene kom fra serveren."
+      ],
+      "Set your signature": [
+        "Angi signaturen"
+      ],
+      "Source document in encrypted search index": [
+        "Kildedokument i kryptert søkeindeks"
+      ],
+      "Star ${ emails }": [
+        "Stjernemerk ${ emails }"
+      ],
+      "Turn off your away message": [
+        "Slå av fraværsmeldingen"
+      ],
+      "Turn on your away message": [
+        "Slå på fraværsmelding"
+      ],
+      "Update the filter ${ filter }": [
+        "Oppdatere filteret ${ filter }"
+      ],
+      "Update this filter": [
+        "Oppdatere dette filteret"
       ]
     },
     "info": {
@@ -11141,6 +11280,12 @@
       ],
       "Write-chain drain after last line": [
         "Skrivekjededrenering etter siste linje"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tegn"
+      ],
+      "Display name": [
+        "Visningsnavn"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11490,7 +11635,7 @@
         "Du må aktivere nøklene på nytt for å se den oppdaterte invitasjonen"
       ],
       "Add formatting, links or images": [
-        "Legg til formatering, koblinger eller bilder"
+        "Legge til formatering, koblinger eller bilder"
       ],
       "Advanced auto-reply options": [
         "Avanserte alternativer for automatisk svar"
@@ -14435,6 +14580,9 @@
       ],
       "User Admin": [
         "Brukeradministrator"
+      ],
+      "Organization Admin": [
+        "Organisasjonsadministrator"
       ]
     },
     "Safety review": {
@@ -18116,7 +18264,7 @@
     },
     "q3campaign2026: Info, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "q3campaign2026: Info, Family, Drive first": {
@@ -18152,6 +18300,12 @@
       "${ count } email → ${ wakeTime }": [
         "${ count } e-post → ${ wakeTime }",
         "${ count } e-poster → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "Utsett ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "Utsett ${ emails } til ${ wakeTime }"
       ]
     }
   }
