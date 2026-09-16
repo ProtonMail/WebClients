@@ -205,7 +205,7 @@ const eventManagerSetup = ({
     });
 };
 
-export const initAppDependencies = async (
+const initAppDependencies = async (
     config: ProtonConfig,
     authentication: MeetExtraThunkArguments['authentication']
 ): Promise<
@@ -305,7 +305,7 @@ interface BootstrapParameters {
     notificationsManager: NotificationsManager;
 }
 
-export const executeBootstrapSteps = async ({
+const executeBootstrapSteps = async ({
     config,
     signal,
     notificationsManager,

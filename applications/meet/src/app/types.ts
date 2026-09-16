@@ -1,20 +1,10 @@
-export type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
-export { MeetingSideBars, PopUpControls, PermissionPromptStatus } from '@proton/meet/store/slices/uiStateSlice';
+export { MeetingSideBars } from '@proton/meet/store/slices/uiStateSlice';
 
 export enum QualityScenarios {
-    ScreenShare = 'ScreenShare',
+    // ScreenShare = 'ScreenShare',
     PortraitView = 'PortraitView',
     MediumView = 'MediumView',
     SmallView = 'SmallView',
-}
-
-export interface MeetingDetails {
-    meetingId: string;
-    meetingName: string;
-    date: string;
-    time: string;
-    meetingLink: string;
-    duration: string;
 }
 
 export type SwitchActiveDevice = (params: {
@@ -24,8 +14,6 @@ export type SwitchActiveDevice = (params: {
     preserveDefaultDevice?: boolean;
     throwOnError?: boolean;
 }) => Promise<void>;
-
-export type { SliceDeviceState as DeviceState } from '@proton/meet/store/slices/deviceManagementSlice/types';
 
 export enum RecordingStatus {
     Started = 'started',

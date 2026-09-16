@@ -1,9 +1,5 @@
 import { RoomEvent } from 'livekit-client';
 
-export const JOIN_TITLE_TIMEOUT = 2000;
-
-export const NOTIFICATION_PARTICIPANT_LIMIT = 10;
-
 export const MEETING_LOCKED_ERROR_CODE = 2502;
 export const PROVIDER_FAILED_ERROR_CODE = 2902;
 
@@ -27,7 +23,7 @@ export const PARTICIPANT_SET_EVENTS = [
 // How long the driver keeps trying to summon the agent. Shared with the give-up timeout, so the
 // attempts and the local preference stop at the same time.
 export const CAPTIONS_AGENT_WAIT_MS = 30_000;
-export const CAPTIONS_AGENT_RETRY_BACKOFF_MS = 3_000;
+const CAPTIONS_AGENT_RETRY_BACKOFF_MS = 3_000;
 export const CAPTIONS_AGENT_DISABLE_GRACE_MS = 10_000;
 
 // Delays before each attempt when summoning or admitting the agent, spanning the wait window.

@@ -2,7 +2,7 @@ export const GRID_GAP = 11; // 0.6875rem in px
 export const TILE_ASPECT_RATIO = 16 / 9;
 export const MIN_TILE_WIDTH = 200;
 // Classic ceiling of 3 rows: large groups spread across columns (e.g. 15 → 5×3) instead of stacking a 4th row.
-export const MAX_GRID_ROWS = 3;
+const MAX_GRID_ROWS = 3;
 
 interface GridLayoutParams {
     width: number;

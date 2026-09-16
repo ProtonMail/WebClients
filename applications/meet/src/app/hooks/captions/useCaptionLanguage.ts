@@ -7,7 +7,7 @@ import { DEFAULT_CAPTION_LANGUAGE } from '../../utils/captionLanguages';
 import { useLocalParticipantAttribute } from '../useLocalParticipantAttribute';
 import { useStableCallback } from '../useStableCallback';
 
-export const CAPTION_LANGUAGE_ATTR = 'caption_language';
+const CAPTION_LANGUAGE_ATTR = 'caption_language';
 
 /** The agent auto-detects when the attribute is unset. */
 const toAttributeValue = (language: string) => (language === DEFAULT_CAPTION_LANGUAGE ? '' : language);

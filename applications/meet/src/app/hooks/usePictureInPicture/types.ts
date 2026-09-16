@@ -10,11 +10,6 @@ export interface PiPOverlayMessage {
     sender?: string; // Only for chat messages
 }
 
-export interface PiPMessageOverlay {
-    messages: PiPOverlayMessage[];
-    maxMessages?: number;
-}
-
 export interface MessageState {
     messages: PiPOverlayMessage[];
     maxMessages: number;

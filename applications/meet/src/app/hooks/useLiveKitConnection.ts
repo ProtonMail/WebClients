@@ -29,7 +29,7 @@ const isPeerConnectionError = (error: any): boolean => {
 const isRecoverableConnectionError = (error: any): boolean =>
     isConnectionError(error) || isConnectionTimeoutError(error) || isPeerConnectionError(error);
 
-export type ConnectionInfo = { stunFailed: boolean; connectionAttempts: number };
+type ConnectionInfo = { stunFailed: boolean; connectionAttempts: number };
 
 interface UseLiveKitConnectionParams {
     reportMeetError: (msg: string, options?: unknown) => void;
