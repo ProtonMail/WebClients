@@ -81,7 +81,7 @@ const renameFolderCardRenderer: CardRenderer = {
         const folder = sentenceValue(named);
 
         // translator: the folder being renamed; the new name is the field below, e.g. "Rename Travel to…"
-        return c('Info').jt`Rename ${folder} to…`;
+        return c('Action: rename folder').jt`Rename ${folder} to…`;
     },
     renderBody: ({ params, onChange }: CardBodyProps) => (
         <TextFieldBody
