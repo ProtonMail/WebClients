@@ -31,8 +31,8 @@ import EduGainAutocomplete from './EduGainAutocomplete';
 import { EdugainAffiliationLabels } from './constants';
 
 enum STEP {
-    ORGANIZATION,
-    AFFILIATIONS,
+    ORGANIZATION = 0,
+    AFFILIATIONS = 1,
 }
 
 interface EduGainInfo {

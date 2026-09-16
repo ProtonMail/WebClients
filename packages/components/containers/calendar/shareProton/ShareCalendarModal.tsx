@@ -50,11 +50,11 @@ import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
 import { useKeyTransparencyContext } from '../../keyTransparency/useKeyTransparencyContext';
 
 export enum VALIDATION_ERROR_TYPES {
-    INVALID_EMAIL,
-    NOT_PROTON_ACCOUNT,
-    SHARING_UNSUPPORTED,
-    DOES_NOT_EXIST,
-    EXISTING_MEMBER,
+    INVALID_EMAIL = 0,
+    NOT_PROTON_ACCOUNT = 1,
+    SHARING_UNSUPPORTED = 2,
+    DOES_NOT_EXIST = 3,
+    EXISTING_MEMBER = 4,
 }
 
 const { INVALID_EMAIL, NOT_PROTON_ACCOUNT, SHARING_UNSUPPORTED, DOES_NOT_EXIST, EXISTING_MEMBER } =

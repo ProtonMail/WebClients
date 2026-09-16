@@ -14,9 +14,9 @@ export interface OptimisticMatchers {
 }
 
 export enum HistoryFlag {
-    OPTIMISTIC,
-    OPTIMISTIC_EFFECT,
-    DETERMINISTIC,
+    OPTIMISTIC = 0,
+    OPTIMISTIC_EFFECT = 1,
+    DETERMINISTIC = 2,
 }
 
 export type OptimisticActionId = string;

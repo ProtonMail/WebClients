@@ -2,8 +2,8 @@ export type ListType = 'open' | 'resolved';
 
 export enum BREACH_STATE {
     UNREAD = 1,
-    READ,
-    RESOLVED,
+    READ = 2,
+    RESOLVED = 3,
 }
 
 export interface ExposedData {

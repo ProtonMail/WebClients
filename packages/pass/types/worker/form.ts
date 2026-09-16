@@ -6,8 +6,8 @@ import type { WithAutosavePrompt } from './autosave';
 import type { FrameId, TabId } from './runtime';
 
 export enum FormEntryStatus {
-    STAGING,
-    COMMITTED,
+    STAGING = 0,
+    COMMITTED = 1,
 }
 
 export type FormStatusPayload = { formId: string; status: 'loading' | 'submitted' | 'error' };

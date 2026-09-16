@@ -11,10 +11,10 @@
 import isTruthy from '@proton/utils/isTruthy';
 
 export enum CANONICALIZE_SCHEME {
-    DEFAULT,
-    PLUS,
-    GMAIL,
-    PROTON,
+    DEFAULT = 0,
+    PLUS = 1,
+    GMAIL = 2,
+    PROTON = 3,
 }
 
 export const PROTONMAIL_DOMAINS = ['protonmail.com', 'protonmail.ch', 'pm.me', 'proton.me'];

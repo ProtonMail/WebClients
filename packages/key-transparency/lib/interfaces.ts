@@ -4,9 +4,9 @@ import type { KT_CERTIFICATE_ISSUER, KT_DOMAINS } from './constants/constants';
 import type { KeyTransparencyError } from './helpers/utils';
 
 export enum KTPROOF_TYPE {
-    ABSENCE,
-    EXISTENCE,
-    OBSOLESCENCE,
+    ABSENCE = 0,
+    EXISTENCE = 1,
+    OBSOLESCENCE = 2,
 }
 
 export interface Proof {
@@ -43,9 +43,9 @@ export interface AuditData {
 }
 
 export enum KT_STATUS {
-    KT_FAILED,
-    KT_PASSED,
-    KT_MINEPOCHID_NULL,
+    KT_FAILED = 0,
+    KT_PASSED = 1,
+    KT_MINEPOCHID_NULL = 2,
 }
 
 export interface Epoch {
@@ -61,14 +61,14 @@ export interface Epoch {
 }
 
 export enum AddressAuditStatus {
-    Success,
-    Failure,
-    Warning,
+    Success = 0,
+    Failure = 1,
+    Warning = 2,
 }
 
 export enum AddressAuditWarningReason {
-    UnverifiableHistory,
-    AddressWithNoKeys,
+    UnverifiableHistory = 0,
+    AddressWithNoKeys = 1,
 }
 
 export interface AddressAuditWarningDetails {

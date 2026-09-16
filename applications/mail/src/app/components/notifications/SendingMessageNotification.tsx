@@ -30,9 +30,9 @@ interface SendingMessageNotificationProps {
 }
 
 enum SendingStep {
-    sending,
-    sent,
-    sentWithUndo,
+    sending = 0,
+    sent = 1,
+    sentWithUndo = 2,
 }
 
 const SendingMessageNotification = ({ manager, scheduledAt }: SendingMessageNotificationProps) => {

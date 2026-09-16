@@ -19,8 +19,8 @@ import ExpiredError from './ExpiredError';
 import accountIllustration from './account-illustration.svg';
 
 enum ErrorType {
-    Expired,
-    API,
+    Expired = 0,
+    API = 1,
 }
 
 export enum GroupInviteRequest {

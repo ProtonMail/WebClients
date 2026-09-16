@@ -80,10 +80,10 @@ export interface OptimisticOptions {
 }
 
 export const enum Steps {
-    Account,
-    Loading,
-    Custom,
-    SetupOrg,
+    Account = 0,
+    Loading = 1,
+    Custom = 2,
+    SetupOrg = 3,
 }
 
 type SubscriptionDataCycleMappingByCurrency = {
@@ -123,8 +123,8 @@ export interface SignupModelV2 {
 }
 
 export enum UpsellTypes {
-    PLANS,
-    UPSELL,
+    PLANS = 0,
+    UPSELL = 1,
 }
 
 export interface Options {

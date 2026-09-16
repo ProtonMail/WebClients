@@ -26,8 +26,8 @@ import TXTSection from './TXTSection';
 import type { SsoAppInfo } from './ssoAppInfo';
 
 enum STEP {
-    DOMAIN_INPUT,
-    TXT_RECORD,
+    DOMAIN_INPUT = 0,
+    TXT_RECORD = 1,
 }
 
 interface Props extends ModalProps {

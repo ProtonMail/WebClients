@@ -6,13 +6,13 @@ import { MAX_FILENAME_CHARS_DISPLAY, MAX_IMPORT_FILE_SIZE_STRING } from '../cons
 import { getMaxContactsImportConfig } from '../maxContactsImportConfig';
 
 export enum IMPORT_ERROR_TYPE {
-    NO_FILE_SELECTED,
-    NO_CSV_OR_VCF_FILE,
-    FILE_EMPTY,
-    FILE_TOO_BIG,
-    FILE_CORRUPTED,
-    NO_CONTACTS,
-    TOO_MANY_CONTACTS,
+    NO_FILE_SELECTED = 0,
+    NO_CSV_OR_VCF_FILE = 1,
+    FILE_EMPTY = 2,
+    FILE_TOO_BIG = 3,
+    FILE_CORRUPTED = 4,
+    NO_CONTACTS = 5,
+    TOO_MANY_CONTACTS = 6,
 }
 
 const getErrorMessage = (errorType: IMPORT_ERROR_TYPE, filename = '') => {

@@ -9,8 +9,8 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import clsx from '@proton/utils/clsx';
 
 export enum PREFERENCE_CHANGE_TYPE {
-    E2EE_DISABLED,
-    CONTACT_DELETED,
+    E2EE_DISABLED = 0,
+    CONTACT_DELETED = 1,
 }
 
 interface Props {

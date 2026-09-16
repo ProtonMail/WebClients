@@ -6,8 +6,8 @@ import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type useContactList from '../hooks/useContactList';
 
 export enum CONTACT_WIDGET_TABS {
-    CONTACTS,
-    GROUPS,
+    CONTACTS = 0,
+    GROUPS = 1,
 }
 
 export interface CustomActionRenderProps {

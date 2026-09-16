@@ -28,8 +28,8 @@ const getOfflineVerifier = () => localStorage.getItem(OFFLINE_VERIFIER_KEY);
 const setOfflineVerifier = (value: string) => localStorage.setItem(OFFLINE_VERIFIER_KEY, value);
 
 enum PasswordError {
-    INVALID,
-    CORRUPTED,
+    INVALID = 0,
+    CORRUPTED = 1,
 }
 
 const getPasswordError = (code: PasswordError): string => {

@@ -17,10 +17,10 @@ import type { SignupCustomStepProps } from '../interface';
 import InstallExtensionStep from './InstallExtensionStep';
 
 enum Step {
-    Recovery,
-    Install,
-    Loading,
-    Redirect,
+    Recovery = 0,
+    Install = 1,
+    Loading = 2,
+    Redirect = 3,
 }
 
 const CustomStepB2C = ({ measure, setupImg, productAppName, fork, onSetup, logo, model }: SignupCustomStepProps) => {

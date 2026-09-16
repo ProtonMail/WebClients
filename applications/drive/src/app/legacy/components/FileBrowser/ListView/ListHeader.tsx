@@ -24,8 +24,8 @@ interface Props<T> {
 }
 
 enum HeaderCellsPresets {
-    Checkbox,
-    Placeholder,
+    Checkbox = 0,
+    Placeholder = 1,
 }
 
 const HeaderCell = <T,>({

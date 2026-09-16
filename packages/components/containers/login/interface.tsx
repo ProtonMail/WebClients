@@ -26,13 +26,13 @@ export interface AddressGeneration {
 }
 
 export enum AuthStep {
-    LOGIN,
-    TWO_FA,
-    LOST_TWO_FA,
-    UNLOCK,
-    NEW_PASSWORD,
-    SSO,
-    DONE,
+    LOGIN = 0,
+    TWO_FA = 1,
+    LOST_TWO_FA = 2,
+    UNLOCK = 3,
+    NEW_PASSWORD = 4,
+    SSO = 5,
+    DONE = 6,
 }
 
 export interface AuthTypes {
@@ -41,14 +41,14 @@ export interface AuthTypes {
 }
 
 export enum SSOLoginCapabilites {
-    SETUP_BACKUP_PASSWORD,
-    SETUP_WITHOUT_BACKUP_PASSWORD,
-    FIRST_LOGIN_AFTER_CONVERSION,
-    ASK_ADMIN,
-    ENTER_BACKUP_PASSWORD,
-    NEW_BACKUP_PASSWORD,
-    NEW_BACKUP_PASSWORD_DISABLED,
-    OTHER_DEVICES,
+    SETUP_BACKUP_PASSWORD = 0,
+    SETUP_WITHOUT_BACKUP_PASSWORD = 1,
+    FIRST_LOGIN_AFTER_CONVERSION = 2,
+    ASK_ADMIN = 3,
+    ENTER_BACKUP_PASSWORD = 4,
+    NEW_BACKUP_PASSWORD = 5,
+    NEW_BACKUP_PASSWORD_DISABLED = 6,
+    OTHER_DEVICES = 7,
 }
 
 export interface SSOSetupData {
@@ -170,19 +170,19 @@ export type AuthActionResponse =
       };
 
 export enum AuthType {
-    Auto,
+    Auto = 0,
     // AutoSrp references step 2 of the auto login with srp authentication.
     // This is an intermediate phase, when we rollout auto login style
     // everywhere, it can be replaced with the `Srp` type
-    AutoSrp,
-    Srp,
-    ExternalSSO,
+    AutoSrp = 1,
+    Srp = 2,
+    ExternalSSO = 3,
 }
 
 export enum ExternalSSOFlow {
-    Sp,
-    Idp,
-    Redirect,
+    Sp = 0,
+    Idp = 1,
+    Redirect = 2,
 }
 
 export type AuthTypeData =

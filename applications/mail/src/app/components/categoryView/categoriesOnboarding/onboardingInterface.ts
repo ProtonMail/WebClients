@@ -1,8 +1,8 @@
 export enum OnboardingFlow {
-    NONE,
-    B2B,
-    B2C,
-    FREE_PROMPT,
+    NONE = 0,
+    B2B = 1,
+    B2C = 2,
+    FREE_PROMPT = 3,
 }
 
 export interface OnboardingInfo {
@@ -12,13 +12,13 @@ export interface OnboardingInfo {
 }
 
 export enum OnboardingStep {
-    NONE,
-    INITIAL_MODAL,
-    MESSAGE,
-    CATEGORIZE,
-    CUSTOMIZE,
-    FREE_USERS_SPOTLIGHT,
-    DONE,
+    NONE = 0,
+    INITIAL_MODAL = 1,
+    MESSAGE = 2,
+    CATEGORIZE = 3,
+    CUSTOMIZE = 4,
+    FREE_USERS_SPOTLIGHT = 5,
+    DONE = 6,
 }
 
 // We highlight the second item in the list during the onboarding

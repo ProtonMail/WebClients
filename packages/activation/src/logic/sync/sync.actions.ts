@@ -16,8 +16,8 @@ import type { LoadingState, Sync } from './sync.interface';
 type SubmitError = { Code: number; Error: string };
 
 export enum SyncTokenStrategy {
-    create,
-    useExisting,
+    create = 0,
+    useExisting = 1,
 }
 
 export const changeCreateLoadingState = createAction<LoadingState>('sync/changeCreateLoadingState');

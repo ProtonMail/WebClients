@@ -297,10 +297,10 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<Consumed
 };
 
 export enum AccountForkResponse {
-    CONFLICT,
-    SUCCESS,
-    ERROR,
-    REAUTH,
+    CONFLICT = 0,
+    SUCCESS = 1,
+    ERROR = 2,
+    REAUTH = 3,
 }
 
 export const getAccountForkResponsePayload = (type: AccountForkResponse, error?: any) => {

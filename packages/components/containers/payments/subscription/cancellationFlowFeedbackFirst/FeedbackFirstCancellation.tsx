@@ -26,15 +26,15 @@ import { useCancellationOffer } from './hooks/useCancellationOffer';
 import { useFeedbackFirstTelemetry } from './hooks/useFeedbackFirstTelemetry';
 
 enum CANCELLATION_STEPS {
-    FEEDBACK,
-    MISSING_FEATURE,
-    GET_HELP,
-    OFFER,
-    TEMPORARY_NEED,
-    CONFIRM,
-    DIFFERENT_ACCOUNT,
-    DIFFERENT_PROVIDER,
-    MANAGED_EXTERNALLY,
+    FEEDBACK = 0,
+    MISSING_FEATURE = 1,
+    GET_HELP = 2,
+    OFFER = 3,
+    TEMPORARY_NEED = 4,
+    CONFIRM = 5,
+    DIFFERENT_ACCOUNT = 6,
+    DIFFERENT_PROVIDER = 7,
+    MANAGED_EXTERNALLY = 8,
 }
 
 interface Props extends ModalProps {

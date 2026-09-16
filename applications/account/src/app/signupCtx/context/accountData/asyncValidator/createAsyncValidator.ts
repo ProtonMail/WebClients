@@ -3,11 +3,11 @@ import debounce from 'lodash/debounce';
 import noop from '@proton/utils/noop';
 
 export enum AsyncValidationStateValue {
-    Idle,
-    Loading,
-    Success,
-    Error,
-    Fatal,
+    Idle = 0,
+    Loading = 1,
+    Success = 2,
+    Error = 3,
+    Fatal = 4,
 }
 
 export interface AsyncValidationState {
