@@ -237,5 +237,3 @@ export function useDefaultShare() {
         isShareAvailable,
     };
 }
-
-export default useDefaultShare;

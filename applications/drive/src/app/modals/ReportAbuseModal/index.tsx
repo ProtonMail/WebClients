@@ -8,7 +8,7 @@ import { type UseReportAbuseModalProps, useReportAbuseModalState } from './useRe
 export { AbuseCategory } from '@proton/drive';
 export type { AbuseReportPrefill };
 
-export const ReportAbuseModal = withHoc<UseReportAbuseModalProps, ReportAbuseModalViewProps>(
+const ReportAbuseModal = withHoc<UseReportAbuseModalProps, ReportAbuseModalViewProps>(
     useReportAbuseModalState,
     ReportAbuseModalView
 );

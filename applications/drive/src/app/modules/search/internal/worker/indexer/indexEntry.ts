@@ -7,10 +7,10 @@ import { SEARCH_ENGINE_MAX_SEARCHABLE_FILENAME_LENGTH } from '../../shared/confi
 import type { TreeEventScopeId } from '../../shared/types';
 
 // Attribute value variants that the search library WASM understands.
-export type TagAttribute = { kind: 'tag'; value: string };
-export type TextAttribute = { kind: 'text'; value: string };
-export type BooleanAttribute = { kind: 'boolean'; value: boolean };
-export type IntegerAttribute = { kind: 'integer'; value: bigint };
+type TagAttribute = { kind: 'tag'; value: string };
+type TextAttribute = { kind: 'text'; value: string };
+type BooleanAttribute = { kind: 'boolean'; value: boolean };
+type IntegerAttribute = { kind: 'integer'; value: bigint };
 export type AttributeValue = TagAttribute | TextAttribute | BooleanAttribute | IntegerAttribute;
 
 /**

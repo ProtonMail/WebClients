@@ -119,8 +119,6 @@ const KeyReactivationModal = ({
         </ModalTwo>
     );
 };
-export default KeyReactivationModal;
-
 export const useKeyReactivationModal = () => {
     return useModalTwoStatic(KeyReactivationModal);
 };

@@ -1,13 +1,10 @@
 import { getDrive } from '@proton/drive/index';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
-import { logging } from '@proton/drive/modules/logging';
 
 import { mapNodeToFolderViewItem } from './mapNodeToFolderViewItem';
 import type { FolderStore, FolderViewData } from './useFolder.store';
 import { useFolderStore } from './useFolder.store';
-
-export const folderLogger = logging.getLogger('folder');
 
 const getFolderViewItemFromUid = async (uid: string, folder: FolderViewData) => {
     try {

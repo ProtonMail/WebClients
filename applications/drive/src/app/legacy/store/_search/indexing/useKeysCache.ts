@@ -9,8 +9,6 @@ import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
 type DecryptAndCacheLink = (linkMeta: ShareMapLink, parentPrivateKey: PrivateKeyReference) => Promise<{ name: string }>;
 type GetCachedParentPrivateKey = (linkId: string | null) => PrivateKeyReference | undefined;
 
-export const LINK_KEYS_NOT_FOUND_MESSAGE = "ES Indexing: parent link key wasn't not found.";
-
 export interface KeyCache {
     getCachedPrivateKey: GetCachedParentPrivateKey;
     decryptAndCacheLink: DecryptAndCacheLink;

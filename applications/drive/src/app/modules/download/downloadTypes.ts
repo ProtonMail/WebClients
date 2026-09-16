@@ -2,11 +2,6 @@ import type { NodeEntity } from '@proton/drive';
 
 import type { DownloadController } from './DownloadManager';
 
-export type ArchiveStreamGeneratorResult = {
-    generator: AsyncGenerator<ArchiveItem>;
-    controller: DownloadController;
-};
-
 export type ArchiveTracker = {
     readonly lastError?: unknown;
     recordError(error: unknown): void;

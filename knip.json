@@ -70,8 +70,7 @@
         },
         "applications/drive": {
             "entry": ["src/app/index.{ts,tsx}", "src/app/urls.tsx"],
-            "project": ["src/**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["src/**/*.{ts,tsx}"]
         },
         "applications/inbox-desktop": {
             "entry": [

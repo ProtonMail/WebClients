@@ -25,8 +25,6 @@ import { usePublicLink } from './usePublicLink';
 
 import './PublicPage.scss';
 
-export const PUBLIC_SHARE_SIGNUP_MODAL_KEY = 'public-share-signup-modal';
-
 const PublicPageContent = () => {
     const { drive, init } = useDrive();
     const { setTheme } = useTheme();

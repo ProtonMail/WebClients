@@ -4,9 +4,7 @@ import { useShallow } from 'zustand/react/shallow';
 import { Button } from '@proton/atoms/Button/Button';
 import clsx from '@proton/utils/clsx';
 
-import type { CellDefinition } from '../../../statelessComponents/DriveExplorer/types';
 import { ItemType, useSharedWithMeStore } from '../useSharedWithMe.store';
-import { defaultSharedOnCellConfig } from './SharedOnCell';
 
 export interface AcceptRejectCellProps {
     uid: string;
@@ -68,6 +66,3 @@ export const AcceptRejectCell = ({
         </div>
     );
 };
-
-// For now the Accept/Decline is in the same cell
-export const defaultAcceptRejectCellConfig: Omit<CellDefinition, 'render'> = defaultSharedOnCellConfig;

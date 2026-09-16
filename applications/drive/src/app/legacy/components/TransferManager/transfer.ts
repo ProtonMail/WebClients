@@ -14,11 +14,7 @@ export enum TransferState {
     Paused = 'paused',
 }
 
-export interface TransferProgresses {
-    [id: string]: number;
-}
-
-export interface TransferMeta {
+interface TransferMeta {
     linkId?: string;
     filename: string;
     mimeType: string;
@@ -30,37 +26,7 @@ export interface TransferSummary {
     progress: number;
 }
 
-export class TransferCancel extends Error {
-    constructor(options: { id: string } | { message: string }) {
-        super('id' in options ? `Transfer ${options.id} canceled` : options.message);
-        this.name = 'TransferCancel';
-    }
-}
-export class TransferSkipped extends Error {
-    duplicateLinkId?: string;
-
-    file?: File;
-
-    constructor(
-        options:
-            | { id: string; duplicateLinkId?: string; file?: File }
-            | { message: string; duplicateLinkId?: string; file?: File }
-    ) {
-        super('id' in options ? `Transfer ${options.id} skipped` : options.message);
-        this.name = 'TransferSkipped';
-        this.duplicateLinkId = options.duplicateLinkId;
-        this.file = options.file;
-    }
-}
-
-export class TransferConflict extends Error {
-    constructor(options: { id: string } | { message: string }) {
-        super('id' in options ? `Transfer ${options.id} is conflicting` : options.message);
-        this.name = 'TransferConflict';
-    }
-}
-
-export interface Upload {
+interface Upload {
     id: string;
     meta: TransferMeta;
     state: TransferState;
@@ -71,7 +37,7 @@ export interface Upload {
     folders?: Upload[];
 }
 
-export interface Download {
+interface Download {
     id: string;
     meta: TransferMeta;
     state: TransferState;
@@ -81,18 +47,7 @@ export interface Download {
 
 export type Transfer = Upload | Download;
 
-export interface TransferHistoryStats {
-    active: boolean;
-    progress: number;
-    speed: number;
-}
-
-export interface TransfersHistoryStats {
-    timestamp: Date;
-    stats: { [id: string]: TransferHistoryStats };
-}
-
-export interface TransferStats {
+interface TransferStats {
     progress: number;
     averageSpeed: number;
 }
@@ -100,31 +55,3 @@ export interface TransferStats {
 export interface TransfersStats {
     [id: string]: TransferStats;
 }
-
-export enum TransferType {
-    Download = 'download',
-    Upload = 'upload',
-}
-
-export enum TransferGroup {
-    ACTIVE = 0,
-    DONE = 1,
-    QUEUED = 2,
-    FAILURE = 3,
-}
-
-export const STATE_TO_GROUP_MAP = {
-    [TransferState.Progress]: TransferGroup.ACTIVE,
-    [TransferState.Finalizing]: TransferGroup.ACTIVE,
-    [TransferState.Paused]: TransferGroup.ACTIVE,
-    [TransferState.SignatureIssue]: TransferGroup.ACTIVE,
-    [TransferState.ScanIssue]: TransferGroup.ACTIVE,
-    [TransferState.Skipped]: TransferGroup.FAILURE,
-    [TransferState.Canceled]: TransferGroup.FAILURE,
-    [TransferState.NetworkError]: TransferGroup.FAILURE,
-    [TransferState.Done]: TransferGroup.DONE,
-    [TransferState.Error]: TransferGroup.FAILURE,
-    [TransferState.Initializing]: TransferGroup.QUEUED,
-    [TransferState.Conflict]: TransferGroup.QUEUED,
-    [TransferState.Pending]: TransferGroup.QUEUED,
-};

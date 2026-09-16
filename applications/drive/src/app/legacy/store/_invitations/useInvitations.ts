@@ -48,7 +48,7 @@ import {
 } from '../_shares';
 import { useInvitationsState } from './useInvitationsState';
 
-export enum EXTERNAL_INVITATIONS_ERROR_NAMES {
+enum EXTERNAL_INVITATIONS_ERROR_NAMES {
     NOT_FOUND = 'ExternalInvitationsNotFound',
     DISABLED = 'ExternalInvitationsDisabled',
 }
