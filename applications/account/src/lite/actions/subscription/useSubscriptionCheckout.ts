@@ -11,13 +11,10 @@ import { useCancelSubscriptionFlow } from '@proton/components/containers/payment
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { useAvailableCurrenciesForPlan } from '@proton/components/containers/payments/subscription/modal-components/SubscriptionCheckout';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { sortMethodsBasedOnDevice } from '@proton/components/payments/client-extensions';
-import { usePaymentFacade } from '@proton/components/payments/client-extensions/usePaymentFacade';
-import type {
-    Operations,
-    OperationsSubscriptionData,
-} from '@proton/components/payments/react-extensions/usePaymentFacade';
 import useLoading from '@proton/hooks/useLoading';
+import { sortMethodsBasedOnDevice } from '@proton/payments-ui/client-extensions/useMethods';
+import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
+import type { Operations, OperationsSubscriptionData } from '@proton/payments-ui/react-extensions/usePaymentFacade';
 import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
 import { usePaymentPollers } from '@proton/payments-ui/ui/hooks/usePaymentPollers';
 import { ProrationMode } from '@proton/payments/core/api/api';

@@ -15,7 +15,6 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import RenewToggle, { useRenewToggle } from '@proton/components/containers/payments/RenewToggle';
-import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useLoading } from '@proton/hooks';
 import { setPaymentMethodV5, updatePaymentMethod } from '@proton/payments/core/api/api';
 import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
@@ -26,6 +25,7 @@ import { CacheType } from '@proton/redux-utilities/interface';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import noop from '@proton/utils/noop';
 
+import { usePaymentFacade } from '../../client-extensions/usePaymentFacade';
 import { ChargebeeCreditCardWrapper } from '../components/ChargebeeWrapper';
 import { usePaymentPollers } from '../hooks/usePaymentPollers';
 

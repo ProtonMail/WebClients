@@ -7,6 +7,7 @@ import { useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
+import { usePreferredPlansMap } from '@proton/payments-ui/ui/hooks/usePreferredPlansMap';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
     getCanSubscriptionAccessDuoPlan,
@@ -25,7 +26,6 @@ import clsx from '@proton/utils/clsx';
 import Loader from '../../../components/loader/Loader';
 import useDashboardPaymentFlow from '../../../hooks/useDashboardPaymentFlow';
 import useLoad from '../../../hooks/useLoad';
-import { usePreferredPlansMap } from '../../../hooks/usePreferredPlansMap';
 import { useTrialOnlyPaymentMethods } from '../../../hooks/useTrialOnlyPaymentMethods';
 import SettingsSectionExtraWide from '../../account/SettingsSectionExtraWide';
 import SettingsSectionWide from '../../account/SettingsSectionWide';

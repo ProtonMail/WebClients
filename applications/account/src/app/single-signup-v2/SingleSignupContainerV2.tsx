@@ -17,10 +17,10 @@ import UnAuthenticated from '@proton/components/containers/authentication/UnAuth
 import type { AuthSession } from '@proton/components/containers/login/interface';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions';
-import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import metrics, { observeApiError } from '@proton/metrics';
+import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrencies';
+import { usePaymentsTelemetry } from '@proton/payments-ui/client-extensions/usePaymentsTelemetry';
+import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
 import { VatReverseChargeErrorModal } from '@proton/payments-ui/ui/billing-address/containers/VatReverseChargeErrorModal';
 import { loadInitialBillingAddress } from '@proton/payments-ui/ui/helpers/load-initial-billing-address';
 import { DEFAULT_CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';

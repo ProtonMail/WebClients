@@ -3,8 +3,8 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { getCreditCardTypeByBrand } from '@proton/components/containers/payments/methods/PaymentMethodDetails';
-import { formattedShortSavedSepaDetails } from '@proton/components/payments/client-extensions';
 import { IcBank } from '@proton/icons/icons/IcBank';
+import { formattedShortSavedSepaDetails } from '@proton/payments-ui/client-extensions/useMethods';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type {
     PayPalDetails,

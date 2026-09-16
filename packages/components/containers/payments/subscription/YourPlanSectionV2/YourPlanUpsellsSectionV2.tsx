@@ -7,11 +7,14 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import useLoading from '@proton/hooks/useLoading';
+import { useAutomaticCurrency } from '@proton/payments-ui/client-extensions/useAutomaticCurrency';
+import type { TelemetryPaymentFlow } from '@proton/payments-ui/client-extensions/usePaymentsTelemetry';
 import {
     PaymentsContextProvider,
     isPaymentsPreloaded,
     usePayments,
 } from '@proton/payments-ui/ui/context/PaymentContext';
+import { usePreferredPlansMap } from '@proton/payments-ui/ui/hooks/usePreferredPlansMap';
 import { CYCLE, DEFAULT_CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription } from '@proton/payments/core/interface';
 import type { FreePlanDefault } from '@proton/payments/core/plan/interface';
@@ -50,9 +53,6 @@ import noop from '@proton/utils/noop';
 
 import Loader from '../../../../components/loader/Loader';
 import useLoad from '../../../../hooks/useLoad';
-import { usePreferredPlansMap } from '../../../../hooks/usePreferredPlansMap';
-import { useAutomaticCurrency } from '../../../../payments/client-extensions/index';
-import type { TelemetryPaymentFlow } from '../../../../payments/client-extensions/usePaymentsTelemetry';
 import { type Upsell, isUpsellWithPlan } from '../helpers';
 import CurrentPlanInfoWithUpsellSection from './Upsells/CurrentPlanInfoSection';
 import DuoBanner from './Upsells/DuoBanner';

@@ -1,10 +1,10 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
-import { ChargebeeIframe } from '@proton/payments-ui/ui/components/ChargebeeIframe';
 import { PLANS } from '@proton/payments/core/constants';
 import { apiMock } from '@proton/testing/lib/api';
 
-import { useSepaDirectDebit } from '../react-extensions/useSepaDirectDebit';
+import { useSepaDirectDebit } from '../../react-extensions/useSepaDirectDebit';
+import { ChargebeeIframe } from './ChargebeeIframe';
 import { SepaDirectDebit } from './SepaDirectDebit';
 
 // Mock ChargebeeIframe component

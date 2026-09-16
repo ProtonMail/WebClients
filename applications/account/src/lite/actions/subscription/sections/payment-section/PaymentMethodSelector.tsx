@@ -6,9 +6,9 @@ import { Button } from '@proton/atoms/Button/Button';
 import Radio from '@proton/components/components/input/Radio';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
-import type { ClientMethodsHook, ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import { IcChevronRightFilled } from '@proton/icons/icons/IcChevronRightFilled';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
+import type { ClientMethodsHook, ViewPaymentMethod } from '@proton/payments-ui/client-extensions/useMethods';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentMethodType, SavedPaymentMethod } from '@proton/payments/core/interface';
 

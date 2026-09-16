@@ -8,7 +8,6 @@ import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button, type ButtonProps } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { InfoBanner } from '@proton/components/containers/payments/subscription/confirm-button/InfoBanner';
-import type { PaymentFacade } from '@proton/components/payments/client-extensions';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PlainPaymentMethodType } from '@proton/payments/core/interface';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
@@ -19,6 +18,7 @@ import clsx from '@proton/utils/clsx';
 import isFunction from '@proton/utils/isFunction';
 import noop from '@proton/utils/noop';
 
+import type { PaymentFacade } from '../../client-extensions/usePaymentFacade';
 import { useEditBillingAddressModal } from '../billing-address/containers/useEditBillingAddressModal';
 import type { TaxCountryHook } from '../billing-address/hooks/useTaxCountry';
 import type { VatNumberHook } from '../billing-address/hooks/useVatNumber';

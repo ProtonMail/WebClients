@@ -24,7 +24,7 @@ jest.mock('../../b2bDashboard/VPN/TogglingMonitoringModal', () => ({
 
 // The upsell modal reads add-on prices from the plans catalogue; give it yearly totals whose
 // monthly-equivalent is €9.99 / €39.99 so we don't need the redux store the real hook depends on.
-jest.mock('../../../hooks/usePreferredPlansMap', () => ({
+jest.mock('@proton/payments-ui/ui/hooks/usePreferredPlansMap', () => ({
     usePreferredPlansMap: () => ({
         plansMapLoading: false,
         preferredCurrency: 'EUR',

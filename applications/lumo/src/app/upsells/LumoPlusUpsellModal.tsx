@@ -4,7 +4,7 @@ import { usePlans } from '@proton/account/plans/hooks';
 import type { ModalStateProps } from '@proton/components';
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components';
 import Loader from '@proton/components/components/loader/Loader';
-import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
+import { usePreferredPlansMap } from '@proton/payments-ui/ui/hooks/usePreferredPlansMap';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { getPlanByName } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';

@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcAppSwitch } from '@proton/icons/icons/IcAppSwitch';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
+import { usePreferredPlansMap } from '@proton/payments-ui/ui/hooks/usePreferredPlansMap';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { getCurrencyFormattingConfig } from '@proton/payments/core/currencies';
 import type { AmountAndCurrency, Currency } from '@proton/payments/core/interface';
@@ -15,7 +16,6 @@ import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 import percentage from '@proton/utils/percentage';
 
 import Price from '../../../../components/price/Price';
-import { usePreferredPlansMap } from '../../../../hooks/usePreferredPlansMap';
 import OfferDisableButton from '../../components/shared/OfferDisableButton';
 import OfferLoader from '../../components/shared/OfferLoader';
 import hasOffer from '../../helpers/hasOffer';

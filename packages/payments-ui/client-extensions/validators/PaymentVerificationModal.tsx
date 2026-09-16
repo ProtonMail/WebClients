@@ -3,14 +3,13 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import Form from '@proton/components/components/form/Form';
+import Loader from '@proton/components/components/loader/Loader';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import errorSvg from '@proton/styles/assets/img/errors/error-generic.svg';
-
-import Form from '../../../components/form/Form';
-import Loader from '../../../components/loader/Loader';
-import ModalTwo from '../../../components/modalTwo/Modal';
-import ModalTwoContent from '../../../components/modalTwo/ModalContent';
-import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
-import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 
 const STEPS = {
     REDIRECT: 'redirect',
