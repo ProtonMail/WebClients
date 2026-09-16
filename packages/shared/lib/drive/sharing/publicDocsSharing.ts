@@ -1,8 +1,7 @@
-import metrics from '@proton/metrics';
-
 import { getAppHref } from '../../apps/helper';
 import { APPS } from '../../constants';
 import { getCurrentTab, getNewWindow } from '../../helpers/window';
+import { getSharedMetricsClient } from '../../metrics/sharedMetricsClient';
 import type { DriveDocsPublicShareMessage } from '../constants';
 import { DriveDocsPublicShareMessageType } from '../constants';
 
@@ -81,14 +80,14 @@ export const receiveCustomPasswordFromDriveWindow = ({
             } catch (e) {
                 onFail();
 
-                metrics.docs_public_sharing_custom_password_success_rate_total.increment({
+                getSharedMetricsClient().docs_public_sharing_custom_password_success_rate_total.increment({
                     status: 'received_not_working',
                 });
 
                 return;
             }
 
-            metrics.docs_public_sharing_custom_password_success_rate_total.increment({
+            getSharedMetricsClient().docs_public_sharing_custom_password_success_rate_total.increment({
                 status: 'success',
             });
         }
@@ -106,7 +105,7 @@ export const receiveCustomPasswordFromDriveWindow = ({
         onFail();
         window.removeEventListener('message', onMessage);
 
-        metrics.docs_public_sharing_custom_password_success_rate_total.increment({
+        getSharedMetricsClient().docs_public_sharing_custom_password_success_rate_total.increment({
             status: 'did_not_receive',
         });
     }, DRIVE_DOCS_CUSTOM_PASSWORD_TIMEOUT);

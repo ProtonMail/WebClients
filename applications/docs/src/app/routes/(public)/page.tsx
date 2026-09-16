@@ -14,8 +14,12 @@ import { CompatRouter } from 'react-router-dom-v5-compat'
 import { FlagProvider } from '@proton/unleash/proxy'
 
 import useEffectOnce from '@proton/hooks/useEffectOnce'
+import metrics from '@proton/metrics'
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider'
+import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper'
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error'
+import type { SharedMetricsClient } from '@proton/shared/lib/metrics/sharedMetricsClient'
+import { setSharedMetricsClient } from '@proton/shared/lib/metrics/sharedMetricsClient'
 import noop from '@proton/utils/noop'
 
 import config from '~/config'
@@ -23,8 +27,12 @@ import type { DocsStore } from '~/redux-store/store'
 import { extraThunkArguments } from '~/redux-store/thunk'
 import { bootstrapPublicApp } from './__utils/bootstrap'
 import { PublicAppRootContainer } from './__components/PublicAppRootContainer'
-import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper'
 import { useSheetsFavicon } from '../../hooks/useSheetsFavicon'
+
+// Shared metrics (e.g. publicDocsSharing counters) go through getSharedMetricsClient(), which
+// noops until @proton/metrics is registered. Use a value reference so webpack cannot drop the
+// import in production (@proton/metrics declares sideEffects: false).
+setSharedMetricsClient(metrics as unknown as SharedMetricsClient)
 
 const defaultState: {
   store?: DocsStore
