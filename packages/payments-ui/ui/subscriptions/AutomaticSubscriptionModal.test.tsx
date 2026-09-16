@@ -2,7 +2,9 @@ import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/tests';
 import {
+    ADDON_GENERIC_NAMES,
     ADDON_PREFIXES,
+    COUPON_CODES,
     CURRENCIES,
     CYCLE,
     DEFAULT_CYCLE,
@@ -17,14 +19,16 @@ import { getPlanName } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans } from '@proton/payments/testing/data-plans';
+import { getUserMock } from '@proton/payments/testing/data-user';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 import { getPaymentStatusState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
-import { userDefault } from '../../../hooks/helpers/tests';
-import type { useCurrencies } from '../../../payments/client-extensions/useCurrencies';
-import AutomaticSubscriptionModal, { getGenericNameFromPrefix, getParameters } from './AutomaticSubscriptionModal';
+import type { useCurrencies } from '../hooks/useCurrencies';
+import { AutomaticSubscriptionModal, getParameters } from './AutomaticSubscriptionModal';
 import { SUBSCRIPTION_STEPS } from './constants';
-import { getEligibility } from './subscriptionEligbility';
+import { getEligibility } from './eligibility';
+
+const userDefault = getUserMock({ Currency: 'CHF' });
 
 const plans = getLongTestPlans();
 const paymentStatus: PaymentStatus = {
@@ -59,16 +63,22 @@ describe('getParameters', () => {
             expect(plan).toBeUndefined();
         });
 
-        it('falls back to the subscription plan when addon=lumo and no plan param', () => {
+        it('falls back to the subscription plan when deprecated addon=lumo is set and no plan param', () => {
             const subscription = buildSubscription({ planName: PLANS.BUNDLE, currency: 'CHF', cycle: CYCLE.YEARLY });
             const { plan } = callGetParameters('?addon=lumo', { subscription });
             expect(plan?.Name).toBe(getPlanName(subscription));
         });
 
-        it('falls back to the subscription plan when addon=meet and no plan param', () => {
+        it('falls back to the subscription plan when deprecated addon=meet is set and no plan param', () => {
             const subscription = buildSubscription({ planName: PLANS.BUNDLE, currency: 'CHF', cycle: CYCLE.YEARLY });
             const { plan } = callGetParameters('?addon=meet', { subscription });
             expect(plan?.Name).toBe(getPlanName(subscription));
+        });
+
+        it('does not fall back when totalLumo is set without plan', () => {
+            const subscription = buildSubscription({ planName: PLANS.BUNDLE, currency: 'CHF', cycle: CYCLE.YEARLY });
+            const { plan } = callGetParameters('?totalLumo=1', { subscription });
+            expect(plan).toBeUndefined();
         });
     });
 
@@ -135,9 +145,22 @@ describe('getParameters', () => {
         });
     });
 
+    describe('upsellRef', () => {
+        it('passes upsellRef through', () => {
+            expect(callGetParameters('?plan=mail2022&upsellRef=onboarding_banner').upsellRef).toBe('onboarding_banner');
+        });
+
+        it('is undefined when absent or empty', () => {
+            expect(callGetParameters('?plan=mail2022').upsellRef).toBeUndefined();
+            expect(callGetParameters('?plan=mail2022&upsellRef=').upsellRef).toBeUndefined();
+        });
+    });
+
     describe('coupon', () => {
         it('passes the coupon through', () => {
-            expect(callGetParameters('?plan=mail2022&coupon=BF2026').coupon).toBe('BF2026');
+            expect(callGetParameters(`?plan=mail2022&coupon=${COUPON_CODES.BLACK_FRIDAY_2025}`).coupon).toBe(
+                COUPON_CODES.BLACK_FRIDAY_2025
+            );
         });
 
         it('is undefined when absent', () => {
@@ -147,12 +170,25 @@ describe('getParameters', () => {
 
     describe('disablePlanSelection', () => {
         it.each([
-            ['type=offer', '?plan=mail2022&type=offer'],
-            ['edit=disable', '?plan=mail2022&edit=disable'],
-            ['addon=lumo', '?addon=lumo'],
-            ['addon=meet', '?addon=meet'],
+            ['fixedPlan', '?plan=mail2022&fixedPlan=true'],
+            ['type=offer (deprecated)', '?plan=mail2022&type=offer'],
+            ['edit=disable (deprecated)', '?plan=mail2022&edit=disable'],
         ])('is true for %s', (_label, search) => {
             expect(callGetParameters(search).disablePlanSelection).toBe(true);
+        });
+
+        it.each([
+            ['deprecated addon=lumo', '?addon=lumo'],
+            ['deprecated addon=meet', '?addon=meet'],
+        ])('is true for %s', (_label, search) => {
+            expect(callGetParameters(search).disablePlanSelection).toBe(true);
+        });
+
+        it.each([
+            ['totalLumo without plan', '?totalLumo=1'],
+            ['totalMeet without plan', '?totalMeet=1'],
+        ])('is false for %s', (_label, search) => {
+            expect(callGetParameters(search).disablePlanSelection).toBe(false);
         });
 
         it('is false by default', () => {
@@ -162,15 +198,32 @@ describe('getParameters', () => {
 
     describe('disableCycleSelector', () => {
         it.each([
-            ['type=offer', '?plan=mail2022&type=offer'],
-            ['offer present', '?plan=mail2022&offer=anything'],
-            ['addon=lumo', '?addon=lumo'],
-            ['addon=meet', '?addon=meet'],
+            ['fixedCycle', '?plan=mail2022&fixedCycle=true'],
+            ['type=offer (deprecated)', '?plan=mail2022&type=offer'],
+            ['offer present (deprecated)', '?plan=mail2022&offer=anything'],
         ])('is true for %s', (_label, search) => {
             expect(callGetParameters(search).disableCycleSelector).toBe(true);
         });
 
-        it('edit=enable forces it false even when type=offer', () => {
+        it.each([
+            ['deprecated addon=lumo', '?addon=lumo'],
+            ['deprecated addon=meet', '?addon=meet'],
+        ])('is true for %s', (_label, search) => {
+            expect(callGetParameters(search).disableCycleSelector).toBe(true);
+        });
+
+        it.each([
+            ['totalLumo without plan', '?totalLumo=1'],
+            ['totalMeet without plan', '?totalMeet=1'],
+        ])('is false for %s', (_label, search) => {
+            expect(callGetParameters(search).disableCycleSelector).toBe(false);
+        });
+
+        it('fixedPlan without fixedCycle leaves the cycle selector enabled', () => {
+            expect(callGetParameters('?plan=mail2022&fixedPlan=true').disableCycleSelector).toBe(false);
+        });
+
+        it('edit=enable keeps cycle selector enabled with type=offer (deprecated)', () => {
             expect(callGetParameters('?plan=mail2022&type=offer&edit=enable').disableCycleSelector).toBe(false);
         });
 
@@ -183,20 +236,29 @@ describe('getParameters', () => {
         it.each(Object.entries(ADDON_PREFIXES))(
             'total%s is ignored when missing plan',
             (_, addonPrefix: ADDON_PREFIXES) => {
-                const addon = getGenericNameFromPrefix(addonPrefix);
+                const addon = ADDON_GENERIC_NAMES[addonPrefix];
                 const result = callGetParameters(`?total${addon}=1`);
 
-                expect(result.totals).not.toHaveProperty(addonPrefix);
+                expect(result.totals).not.toHaveProperty(`total${addon}`);
             }
         );
+
+        it.each([
+            ['totalLumo', 'Lumo'],
+            ['totalMeet', 'Meet'],
+        ])('ignores %s without a value even when plan is defined', (param) => {
+            const result = callGetParameters(`?plan=mail2022&${param}`);
+
+            expect(result.totals).not.toHaveProperty(param);
+        });
 
         it.each(Object.entries(ADDON_PREFIXES))(
             'total%s is present when plan defined',
             (_, addonPrefix: ADDON_PREFIXES) => {
-                const addon = getGenericNameFromPrefix(addonPrefix);
+                const addon = ADDON_GENERIC_NAMES[addonPrefix];
                 const result = callGetParameters(`?plan=mail2022&total${addon}=1`);
 
-                expect(result.totals).toHaveProperty(addonPrefix);
+                expect(result.totals).toHaveProperty(`total${addon}`);
             }
         );
 
@@ -221,28 +283,28 @@ describe('getParameters', () => {
                     '?plan=mail2022&totalMember=5&totalIp=abc&totalDomain=0&totalScribe=-2&totalLumo=3'
                 );
                 expect(result.totals).toEqual({
-                    [ADDON_PREFIXES.MEMBER]: 5,
-                    [ADDON_PREFIXES.LUMO]: 3,
+                    totalMember: 5,
+                    totalLumo: 3,
                 });
             });
 
             it('threat floating number values as integer correctly', () => {
                 const result = callGetParameters('?plan=mail2022&totalMember=5.5&totalIp=3.7');
                 expect(result.totals).toEqual({
-                    [ADDON_PREFIXES.MEMBER]: 5,
-                    [ADDON_PREFIXES.IP]: 3,
+                    totalMember: 5,
+                    totalIp: 3,
                 });
             });
         });
     });
 });
 
-jest.mock('../../../hooks/useModals');
+jest.mock('@proton/components/hooks/useModals');
 jest.mock('@proton/atoms/Portal/Portal');
-jest.mock('./subscriptionEligbility');
+jest.mock('@proton/payments-ui/ui/subscriptions/eligibility');
 
 const mockOpenSubscriptionModal = jest.fn();
-jest.mock('./SubscriptionModalProvider', () => ({
+jest.mock('@proton/components/containers/payments/subscription/subscriptionModalContext', () => ({
     useSubscriptionModal: () => [mockOpenSubscriptionModal, false],
 }));
 
@@ -271,7 +333,7 @@ describe('<AutomaticSubscriptionModal />', () => {
     });
 
     it('opens the subscription modal with the mapped props on pass-through', async () => {
-        renderModal('?plan=mail2022&cycle=24&coupon=BF&currency=eur&target=checkout');
+        renderModal(`?plan=mail2022&cycle=24&coupon=${COUPON_CODES.BLACK_FRIDAY_2025}&currency=eur&target=checkout`);
 
         await waitFor(() => expect(mockOpenSubscriptionModal).toHaveBeenCalledTimes(1));
 
@@ -279,7 +341,7 @@ describe('<AutomaticSubscriptionModal />', () => {
             expect.objectContaining({
                 plan: PLANS.MAIL,
                 cycle: CYCLE.TWO_YEARS,
-                coupon: 'BF',
+                coupon: COUPON_CODES.BLACK_FRIDAY_2025,
                 currency: 'EUR',
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: false,
@@ -326,7 +388,16 @@ describe('<AutomaticSubscriptionModal />', () => {
         );
     });
 
-    it('sets lumo addon planIDs and clears plan on pass-through', async () => {
+    it('passes upsellRef to the subscription modal', async () => {
+        renderModal('?plan=mail2022&upsellRef=onboarding_banner');
+
+        await waitFor(() => expect(mockOpenSubscriptionModal).toHaveBeenCalledTimes(1));
+        expect(mockOpenSubscriptionModal).toHaveBeenCalledWith(
+            expect.objectContaining({ upsellRef: 'onboarding_banner' })
+        );
+    });
+
+    it('supports deprecated addon=lumo until callers are migrated', async () => {
         renderModal('?addon=lumo');
 
         await waitFor(() => expect(mockOpenSubscriptionModal).toHaveBeenCalledTimes(1));
