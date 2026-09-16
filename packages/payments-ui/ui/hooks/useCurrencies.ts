@@ -19,16 +19,24 @@ const getIsNewBatchCurrenciesEnabled = (getFlag: ReturnType<typeof useGetFlag>) 
 };
 
 /**
- * @deprecated use '@proton/payments-ui/ui/hooks/useCurrencies instead'
+ * Wraps `getPreferredCurrency` and `getAvailableCurrencies` from `@proton/payments/core/currencies`
+ * with `enableNewBatchCurrencies` resolved from the Unleash flag.
  *
- * ````
- * import { useCurrencies} from '@proton/payments-ui/ui/hooks/useCurrencies'
- * ````
+ * @example
+ * const { getPreferredCurrency, getAvailableCurrencies } = useCurrencies();
+ * const currency = getPreferredCurrency({ plans, subscription, user, paymentStatus });
+ * const currencies = getAvailableCurrencies({ plans, paymentStatus, paramCurrency });
  */
 export const useCurrencies = () => {
     const getFlag = useGetFlag();
 
     return {
+        /**
+         * Resolves the billing currency.
+         *
+         * @param params - See {@link GetPreferredCurrencyParamsHook}.
+         * @returns The preferred currency, e.g. `'USD'`.
+         */
         getPreferredCurrency: useCallback(
             (params: GetPreferredCurrencyParamsHook) =>
                 getPreferredCurrency({
@@ -38,6 +46,12 @@ export const useCurrencies = () => {
             []
         ),
 
+        /**
+         * Resolves the selectable currencies for the checkout.
+         *
+         * @param params - See {@link GetAvailableCurrenciesParamsHook}.
+         * @returns Main currencies (USD/EUR/CHF) plus supported regional currencies.
+         */
         getAvailableCurrencies: useCallback(
             (params: GetAvailableCurrenciesParamsHook) =>
                 getAvailableCurrencies({
