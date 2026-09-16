@@ -86,7 +86,7 @@ export type DownloadItem = {
     isRetried?: boolean;
 };
 
-export type DownloadItemInput = Omit<DownloadItem, 'downloadId' | 'lastStatusUpdateTime'>;
+type DownloadItemInput = Omit<DownloadItem, 'downloadId' | 'lastStatusUpdateTime'>;
 
 type DownloadManagerStore = {
     queue: Map<string, DownloadItem>;

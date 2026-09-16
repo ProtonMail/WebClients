@@ -11,7 +11,7 @@ type InvitationsState = {
 /**
  * useShareStateProvider provides a storage to cache shares.
  */
-export function useInvitationsStateProvider() {
+function useInvitationsStateProvider() {
     const [state, setState] = useState<InvitationsState>({});
 
     const setInvitations = useCallback((invitations: ExtendedInvitationDetails[]) => {

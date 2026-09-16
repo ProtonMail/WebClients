@@ -41,7 +41,7 @@ interface AlbumDropdownButtonprops {
     onDelete: () => void;
 }
 
-export const AlbumDropdownButton = ({ onShare, onRename, onDelete }: AlbumDropdownButtonprops) => {
+const AlbumDropdownButton = ({ onShare, onRename, onDelete }: AlbumDropdownButtonprops) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     return (

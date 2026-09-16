@@ -15,7 +15,7 @@ interface NavigationEvenListener {
 
 let listeners: NavigationEvenListener[] = [];
 
-export type DriveClient = {
+type DriveClient = {
     getNode: (uid: string) => Promise<NodeEntity>;
 };
 

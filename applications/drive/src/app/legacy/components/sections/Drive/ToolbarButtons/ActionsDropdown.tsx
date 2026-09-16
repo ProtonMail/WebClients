@@ -28,7 +28,7 @@ interface Props {
     renameLink: ReturnType<typeof useActions>['renameLink'];
 }
 
-export const toNodeUidsHelper = <T extends { volumeId: string; linkId: string }>(items: T[]): string[] =>
+const toNodeUidsHelper = <T extends { volumeId: string; linkId: string }>(items: T[]): string[] =>
     items.map((item) => generateNodeUid(item.volumeId, item.linkId));
 
 const ActionsDropdown = ({ volumeId, selectedLinks, permissions, trashLinks, renameLink }: Props) => {

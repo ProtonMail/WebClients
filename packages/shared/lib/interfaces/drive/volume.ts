@@ -49,7 +49,7 @@ export interface CreateDriveVolume {
     FolderHashKey: string;
 }
 
-export interface DriveVolume {
+interface DriveVolume {
     ID: string;
     VolumeID: string;
     CreateTime: number | null;

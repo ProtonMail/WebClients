@@ -2,17 +2,17 @@ import { c } from 'ttag';
 
 import { HeaderCellsPresets } from '../../FileBrowser/interface';
 
-export const checkbox = {
+const checkbox = {
     type: HeaderCellsPresets.Checkbox,
 };
 
-export const name = {
+const name = {
     type: 'name',
     getText: () => c('Label').t`Name`,
     sorting: true,
 };
 
-export const location = {
+const location = {
     type: 'location',
     getText: () => c('Label').t`Location`,
     props: {
@@ -20,7 +20,7 @@ export const location = {
     },
 };
 
-export const trashed = {
+const trashed = {
     type: 'trashed',
     getText: () => c('Label').t`Deleted`,
     props: {
@@ -29,7 +29,7 @@ export const trashed = {
     sorting: true,
 };
 
-export const size = {
+const size = {
     type: 'size',
     getText: () => c('Label').t`Size`,
     props: {
@@ -38,7 +38,7 @@ export const size = {
     sorting: true,
 };
 
-export const modificationDate = {
+const modificationDate = {
     type: 'fileModifyTime',
     getText: () => c('Label').t`Modified`,
     props: {
@@ -47,7 +47,7 @@ export const modificationDate = {
     sorting: true,
 };
 
-export const creationDate = {
+const creationDate = {
     type: 'linkCreateTime',
     getText: () => c('Label').t`Created`,
     props: {
@@ -56,7 +56,7 @@ export const creationDate = {
     sorting: true,
 };
 
-export const sharedOnDate = {
+const sharedOnDate = {
     type: 'sharedOn',
     getText: () => c('Label').t`Shared on`,
     props: {
@@ -65,7 +65,7 @@ export const sharedOnDate = {
     sorting: true,
 };
 
-export const sharedBy = {
+const sharedBy = {
     type: 'sharedBy',
     getText: () => c('Label').t`Shared by`,
     props: {
@@ -74,7 +74,7 @@ export const sharedBy = {
     sorting: true,
 };
 
-export const uploadedBy = {
+const uploadedBy = {
     type: 'uploadedBy',
     getText: () => c('Label').t`Uploaded by`,
     props: {
@@ -83,7 +83,7 @@ export const uploadedBy = {
     sorting: true,
 };
 
-export const accessCount = {
+const accessCount = {
     type: 'numAccesses',
     getText: () => c('Label').t`# of downloads`,
     props: {
@@ -92,7 +92,7 @@ export const accessCount = {
     sorting: true,
 };
 
-export const expirationDate = {
+const expirationDate = {
     type: 'linkExpireTime',
     getText: () => c('Label').t`Expires`,
     props: {
@@ -101,7 +101,7 @@ export const expirationDate = {
     sorting: true,
 };
 
-export const placeholder = {
+const placeholder = {
     type: HeaderCellsPresets.Placeholder,
     props: {
         className: 'file-browser-list--context-menu-column',

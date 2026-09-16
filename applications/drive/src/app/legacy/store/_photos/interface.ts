@@ -1,45 +1,9 @@
 import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
-import type { DecryptedLink } from '../_links/interface';
-import type { DriveFileRevisionPhoto } from '../_revisions';
-
-interface PhotoBase {
-    nodeUid: string;
-    captureTime: Date;
-    hash?: string;
-    contentHash?: string;
-}
-
-export interface Photo extends PhotoBase {
-    tags: PhotoTag[];
-    relatedPhotos: PhotoBase[];
-}
-
 /**
  * @deprecated
  * Legacy type
  */
-
-export interface LegacyPhoto {
-    linkId: string;
-    captureTime: number;
-    hash?: string;
-    tags: PhotoTag[];
-    relatedPhotos: { linkId: string; captureTime: number; hash?: string; contentHash?: string }[];
-    contentHash?: string;
-}
-
-export interface AlbumPhoto {
-    linkId: string;
-    captureTime: number;
-    hash?: string;
-    tags: PhotoTag[];
-    relatedPhotos: { linkId: string; captureTime: number; hash?: string; contentHash?: string }[];
-    contentHash?: string;
-    parentLinkId: string; // the album link id
-    rootShareId: string; // the album share id
-    volumeId: string; // the album volume id
-}
 
 // These are not coming from the BE but can't be equal to the PhotoTag
 export enum AlbumTag {
@@ -50,19 +14,3 @@ export enum AlbumTag {
 }
 
 export type Tag = PhotoTag | AlbumTag;
-
-export type PhotoLink =
-    | DecryptedLink
-    | {
-          // These properties are always present, even on incomplete links
-          linkId: string;
-          rootShareId: string;
-          parentLinkId: string;
-          isFile: boolean;
-          volumeId: string;
-          activeRevision: {
-              photo: DriveFileRevisionPhoto;
-              signatureEmail?: string;
-          };
-          photoProperties?: DecryptedLink['photoProperties'];
-      };

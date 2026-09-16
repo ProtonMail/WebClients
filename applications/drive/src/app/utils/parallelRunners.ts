@@ -1,6 +1,6 @@
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 
-export const DEFAULT_PARALLEL_CALL_LIMIT = 5;
+const DEFAULT_PARALLEL_CALL_LIMIT = 5;
 
 export function createAsyncQueue<T>(parallelCallLimit: number = DEFAULT_PARALLEL_CALL_LIMIT) {
     const queue: (() => Promise<T>)[] = [];

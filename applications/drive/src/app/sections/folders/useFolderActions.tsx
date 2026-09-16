@@ -32,7 +32,7 @@ type Props = {
     selectedItems: FolderViewItem[];
 };
 
-export const toNodeUidsHelper = <T extends { volumeId: string; linkId: string }>(items: T[]): string[] =>
+const toNodeUidsHelper = <T extends { volumeId: string; linkId: string }>(items: T[]): string[] =>
     items.map((item) => generateNodeUid(item.volumeId, item.linkId));
 
 export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkId, volumeId }: Props) => {

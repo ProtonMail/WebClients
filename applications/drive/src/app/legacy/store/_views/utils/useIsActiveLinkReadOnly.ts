@@ -8,7 +8,7 @@ import useLink from '../../_links/useLink';
 import { ShareType } from '../../_shares/interface';
 import { useShareType } from './useShareType';
 
-export const isLinkRoot = (link: DecryptedLink) => {
+const isLinkRoot = (link: DecryptedLink) => {
     return !link.parentLinkId;
 };
 

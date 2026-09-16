@@ -26,19 +26,6 @@ type DriveSidebarListProps = {
     store: ReturnType<ReturnType<typeof directoryTreeFactory>>;
 };
 
-export type TreeNodeItem = {
-    uid: string;
-    name: string;
-    isExpanded: boolean;
-    children: string[];
-    isLoading: boolean;
-};
-
-export type SimpleNode = {
-    uid: string;
-    name: string;
-};
-
 export const DriveSidebarList = ({ shareId, store }: DriveSidebarListProps) => {
     const { treeRoots, initializeTree, toggleExpand, expandedTreeIds } = store;
     const { isCollapsed, sidebarLevel } = useSidebarStore(

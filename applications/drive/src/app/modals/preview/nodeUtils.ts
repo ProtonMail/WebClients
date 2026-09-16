@@ -1,14 +1,9 @@
 import type { NodeEntity } from '@proton/drive';
-import { NodeType } from '@proton/drive';
 import { parseAdditionalMetadata } from '@proton/drive/modules/extendedAttributes';
 
 export { getNodeName } from '@proton/drive/modules/nodes';
 
 // TODO: create node module with high-level helpers and unify usage across the app
-
-export function isNodeFile(node: NodeEntity): boolean {
-    return node.type === NodeType.File;
-}
 
 export function getNodeMimeType(node?: NodeEntity): string | undefined {
     if (!node) {
@@ -50,12 +45,4 @@ export function getNodeMediaDuration(node?: NodeEntity): number | undefined {
         return undefined;
     }
     return parseAdditionalMetadata(node.activeRevision.claimedAdditionalMetadata).media?.duration;
-}
-
-export function getNodeStorageSize(node: NodeEntity): number | undefined {
-    if (node.activeRevision) {
-        return node.activeRevision.storageSize;
-    }
-
-    return node.totalStorageSize ?? 0;
 }
