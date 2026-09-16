@@ -1,4 +1,4 @@
-import type { Participant, Track } from 'livekit-client';
+import type { Participant, Track, TrackPublication } from 'livekit-client';
 
 export type PiPOverlayMessageType = 'chatMessage' | 'systemErrorMessage' | 'systemInfoMessage';
 
@@ -28,5 +28,6 @@ export type MessageAction =
 export interface TrackInfo {
     track: Track;
     participant: Participant;
+    publication: TrackPublication;
     isScreenShare: boolean;
 }

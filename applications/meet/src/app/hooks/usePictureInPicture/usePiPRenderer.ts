@@ -156,6 +156,10 @@ export function usePiPRenderer() {
                 const isLocalParticipant = trackInfo.participant?.isLocal || false;
                 const shouldMirror = isLocalParticipant && !trackInfo.isScreenShare;
 
+                // The subscription manager disables remote camera publications when incoming video is turned off,
+                // so no frames will ever arrive for them
+                const isIncomingVideoDisabled = !isLocalParticipant && trackInfo.publication?.isEnabled === false;
+
                 // Draw each track in its own section
                 drawVideoWithAspectRatio({
                     ctx,
@@ -165,6 +169,7 @@ export function usePiPRenderer() {
                     width: canvas.width,
                     height: videoHeight,
                     mirror: shouldMirror,
+                    isIncomingVideoDisabled,
                 });
 
                 // Draw participant name below the video
