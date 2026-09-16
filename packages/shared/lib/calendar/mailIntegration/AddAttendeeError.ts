@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 import { MAX_ATTENDEES } from '../constants';
 
 export enum ADD_EVENT_ERROR_TYPE {
-    TOO_MANY_PARTICIPANTS,
+    TOO_MANY_PARTICIPANTS = 0,
 }
 
 const getErrorMessage = (errorType: ADD_EVENT_ERROR_TYPE, maxAttendees = MAX_ATTENDEES) => {

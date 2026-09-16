@@ -49,8 +49,8 @@ export interface FileBrowserBaseItem {
 }
 
 export enum HeaderCellsPresets {
-    Checkbox,
-    Placeholder,
+    Checkbox = 0,
+    Placeholder = 1,
 }
 
 export interface ListViewHeaderItem {

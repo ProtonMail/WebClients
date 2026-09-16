@@ -5,8 +5,8 @@ import type { ProduceForkParametersFull } from '@proton/shared/lib/authenticatio
 import type { ProduceDesktopForkParameters } from './desktopForkInterface';
 
 export enum SSOType {
-    OAuth,
-    Proton,
+    OAuth = 0,
+    Proton = 1,
 }
 
 export type OAuthData = OAuthProduceForkParameters & {

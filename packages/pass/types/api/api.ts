@@ -7,8 +7,8 @@ import type { ApiResponse } from './pass';
 export type ApiCallFn = (options: ApiOptions) => Promise<Response>;
 
 export enum AuthMode {
-    TOKEN,
-    COOKIE,
+    TOKEN = 0,
+    COOKIE = 1,
 }
 
 export type ApiAuth =

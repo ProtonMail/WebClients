@@ -167,15 +167,15 @@ export const PROTON_UNLIMITED_PRICE = 999; // €9.99
 /** Pass client platforms. Kept here rather than next to `clients` so that
  * modules needing only the platform do not pull in the icon components. */
 export enum Clients {
-    Windows,
-    macOS,
-    Linux,
-    Android,
-    iOS,
-    Chrome,
-    Brave,
-    Firefox,
-    Edge,
-    Safari,
-    CLI,
+    Windows = 0,
+    macOS = 1,
+    Linux = 2,
+    Android = 3,
+    iOS = 4,
+    Chrome = 5,
+    Brave = 6,
+    Firefox = 7,
+    Edge = 8,
+    Safari = 9,
+    CLI = 10,
 }

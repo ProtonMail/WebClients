@@ -24,8 +24,8 @@ interface Props extends ModalProps {
 }
 
 enum STEP {
-    PROMPT,
-    RECOVERY_MODAL,
+    PROMPT = 0,
+    RECOVERY_MODAL = 1,
 }
 
 const LostTwoFAModal = ({ availableRecoveryMethods, onClose, ...rest }: Props) => {

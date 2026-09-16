@@ -42,10 +42,10 @@ export const getIsMemberInvited = (
 };
 
 export enum MemberUnprivatizationMode {
-    None,
-    MagicLinkInvite,
-    GSSO,
-    AdminAccess,
+    None = 0,
+    MagicLinkInvite = 1,
+    GSSO = 2,
+    AdminAccess = 3,
 }
 
 export const getMemberUnprivatizationMode = (member?: Member) => {
@@ -54,7 +54,7 @@ export const getMemberUnprivatizationMode = (member?: Member) => {
         try {
             const InvitationData = member.Unprivatization.InvitationData;
             invitationData = InvitationData ? parseInvitationData(InvitationData) : null;
-        } catch { }
+        } catch {}
         return {
             makeAdmin: invitationData?.Admin === true,
             exists: true,

@@ -9,11 +9,11 @@ export enum StorageKeyError {
 
 export enum StorageKeySource {
     /** storage key stored in OS keyring */
-    KEYRING,
+    KEYRING = 0,
     /** storage key derived from local password */
-    PASSWORD,
+    PASSWORD = 1,
     /** storage key  */
-    FALLBACK,
+    FALLBACK = 2,
 }
 
 /** Storage key reference */

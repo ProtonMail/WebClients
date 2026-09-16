@@ -40,8 +40,8 @@ export const getLocalPart = (email: string) => {
 };
 
 export enum ClaimableAddressType {
-    Fixed,
-    Any,
+    Fixed = 0,
+    Any = 1,
 }
 
 export interface ClaimableAddress {
@@ -82,16 +82,16 @@ export const getClaimableAddress = async ({
 
 export type AddressGenerationSetup =
     | {
-        mode: 'ask';
-    }
+          mode: 'ask';
+      }
     | {
-        mode: 'setup';
-        loginPassword: string;
-    }
+          mode: 'setup';
+          loginPassword: string;
+      }
     | {
-        mode: 'create';
-        keyPassword: string;
-    };
+          mode: 'create';
+          keyPassword: string;
+      };
 
 export interface AddressGenerationPayload {
     username: string;

@@ -7,8 +7,8 @@ import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import clsx from '@proton/utils/clsx';
 
 export enum PlanCardBorderVariant {
-    Plain,
-    Upsell,
+    Plain = 0,
+    Upsell = 1,
 }
 
 const PlanCard = ({

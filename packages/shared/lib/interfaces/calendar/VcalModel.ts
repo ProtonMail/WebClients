@@ -6,13 +6,13 @@ import type {
 } from '../../calendar/constants';
 
 export enum VcalDays {
-    SU,
-    MO,
-    TU,
-    WE,
-    TH,
-    FR,
-    SA,
+    SU = 0,
+    MO = 1,
+    TU = 2,
+    WE = 3,
+    TH = 4,
+    FR = 5,
+    SA = 6,
 }
 
 export type VcalDaysKeys = keyof typeof VcalDays;

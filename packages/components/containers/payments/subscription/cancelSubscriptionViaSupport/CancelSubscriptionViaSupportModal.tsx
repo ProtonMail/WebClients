@@ -27,15 +27,15 @@ import { getClientName } from '../../../../helpers/report';
 import useErrorHandler from '../../../../hooks/useErrorHandler';
 
 enum STEP {
-    FORM,
-    COMPLETED,
+    FORM = 0,
+    COMPLETED = 1,
 }
 
 enum REASON {
-    TOO_EXPENSIVE,
-    MISSING_FEATURE,
-    ANOTHER_SERVICE,
-    OTHER,
+    TOO_EXPENSIVE = 0,
+    MISSING_FEATURE = 1,
+    ANOTHER_SERVICE = 2,
+    OTHER = 3,
 }
 
 const reasons: { [key in REASON]: { tag: string; label: string } } = {

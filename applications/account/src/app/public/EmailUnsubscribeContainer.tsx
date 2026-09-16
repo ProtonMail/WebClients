@@ -39,13 +39,13 @@ interface UserSettingsNewsResponse {
 }
 
 enum PAGE {
-    UNSUBSCRIBE,
-    MANAGE,
+    UNSUBSCRIBE = 0,
+    MANAGE = 1,
 }
 
 enum ErrorType {
-    Expired,
-    API,
+    Expired = 0,
+    API = 1,
 }
 
 const getDiff = (subscriptionBits: NEWSLETTER_SUBSCRIPTIONS_BITS[], isEnabled = false) => {

@@ -4,10 +4,10 @@ import { PLANS_MAP, getLongTestPlans } from './data-plans';
 export const mockPlans = getLongTestPlans('CHF');
 
 const enum Steps {
-    Account,
-    Loading,
-    Custom,
-    SetupOrg,
+    Account = 0,
+    Loading = 1,
+    Custom = 2,
+    SetupOrg = 3,
 }
 
 enum SignupMode {

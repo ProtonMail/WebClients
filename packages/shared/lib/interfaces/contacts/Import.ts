@@ -5,19 +5,19 @@ import type { ContactCard, ContactGroup, ContactValue } from './Contact';
 import type { VCardContact, VCardKey } from './VCard';
 
 export enum IMPORT_STEPS {
-    ATTACHING,
-    ATTACHED,
-    IMPORT_CSV,
-    WARNING,
-    IMPORTING,
-    SUMMARY,
-    IMPORT_GROUPS,
+    ATTACHING = 0,
+    ATTACHED = 1,
+    IMPORT_CSV = 2,
+    WARNING = 3,
+    IMPORTING = 4,
+    SUMMARY = 5,
+    IMPORT_GROUPS = 6,
 }
 
 export enum IMPORT_GROUPS_ACTION {
-    MERGE,
-    CREATE,
-    IGNORE,
+    MERGE = 0,
+    CREATE = 1,
+    IGNORE = 2,
 }
 
 export enum EXTENSION {

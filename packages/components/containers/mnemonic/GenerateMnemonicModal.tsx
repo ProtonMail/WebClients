@@ -28,9 +28,9 @@ import AuthModal from '../password/AuthModal';
 import { MnemonicPhraseStepButtons, MnemonicPhraseStepContent } from './MnemonicPhraseStep';
 
 enum STEPS {
-    CONFIRM,
-    AUTH,
-    MNEMONIC_PHRASE,
+    CONFIRM = 0,
+    AUTH = 1,
+    MNEMONIC_PHRASE = 2,
 }
 
 interface Props {

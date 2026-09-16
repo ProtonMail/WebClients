@@ -15,9 +15,9 @@ import IllustrationPlaceholder from '../../illustration/IllustrationPlaceholder'
 import { useTheme } from '../../themes/ThemeProvider';
 
 export enum EmptyType {
-    All,
-    Search,
-    AllGroups,
+    All = 0,
+    Search = 1,
+    AllGroups = 2,
 }
 
 interface Props {

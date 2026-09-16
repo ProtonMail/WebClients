@@ -28,8 +28,8 @@ import { type UserState, userFulfilled, userThunk } from '../user';
 const name = 'subscription' as const;
 
 enum ValueType {
-    dummy,
-    complete,
+    dummy = 0,
+    complete = 1,
 }
 
 export interface SubscriptionState extends UserState {

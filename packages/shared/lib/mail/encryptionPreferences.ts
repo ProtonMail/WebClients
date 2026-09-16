@@ -1,6 +1,5 @@
-import { c } from 'ttag';
-
 import type { PublicKeyReference } from '@protontech/crypto';
+import { c } from 'ttag';
 
 import { extractDraftMIMEType, extractScheme, extractSign } from '../api/helpers/mailSettings';
 import type { CONTACT_MIME_TYPES, PGP_SCHEMES } from '../constants';
@@ -15,14 +14,14 @@ import type {
 import { getEmailMismatchWarning, getIsValidForSending } from '../keys/publicKeys';
 
 export enum ENCRYPTION_PREFERENCES_ERROR_TYPES {
-    EMAIL_ADDRESS_ERROR,
-    INTERNAL_USER_DISABLED,
-    INTERNAL_USER_NO_API_KEY,
-    PRIMARY_CANNOT_SEND,
-    PRIMARY_NOT_PINNED,
-    EXTERNAL_USER_NO_VALID_EXTERNALLY_FETCHED_KEY,
-    EXTERNAL_USER_NO_VALID_PINNED_KEY,
-    CONTACT_SIGNATURE_NOT_VERIFIED,
+    EMAIL_ADDRESS_ERROR = 0,
+    INTERNAL_USER_DISABLED = 1,
+    INTERNAL_USER_NO_API_KEY = 2,
+    PRIMARY_CANNOT_SEND = 3,
+    PRIMARY_NOT_PINNED = 4,
+    EXTERNAL_USER_NO_VALID_EXTERNALLY_FETCHED_KEY = 5,
+    EXTERNAL_USER_NO_VALID_PINNED_KEY = 6,
+    CONTACT_SIGNATURE_NOT_VERIFIED = 7,
 }
 
 export class EncryptionPreferencesError extends Error {

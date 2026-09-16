@@ -41,13 +41,13 @@ interface Props extends ModalProps {
 }
 
 enum Step {
-    CONFIRMATION,
-    AUTH,
-    IN_PROGRESS_OPTIN,
-    IN_PROGRESS_ACCOUNT_KEY,
-    IN_PROGRESS_ADDRESS_KEYS,
-    SUCCESS,
-    ERROR,
+    CONFIRMATION = 0,
+    AUTH = 1,
+    IN_PROGRESS_OPTIN = 2,
+    IN_PROGRESS_ACCOUNT_KEY = 3,
+    IN_PROGRESS_ADDRESS_KEYS = 4,
+    SUCCESS = 5,
+    ERROR = 6,
 }
 
 export { Step as PostQuantumSetupStep };

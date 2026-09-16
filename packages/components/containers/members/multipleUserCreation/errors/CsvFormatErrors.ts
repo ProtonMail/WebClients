@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import { MAX_NUMBER_OF_USER_ROWS } from '../constants';
 
 export enum CSV_FORMAT_ERROR_TYPE {
-    MISSING_REQUIRED_FIELD,
-    PARSED_CSV_ERRORS,
+    MISSING_REQUIRED_FIELD = 0,
+    PARSED_CSV_ERRORS = 1,
 }
 
 const getCsvFormatErrorMessage = (options: CsvFormatErrorOptions) => {

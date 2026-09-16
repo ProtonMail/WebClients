@@ -18,10 +18,10 @@ import ModalTwoFooter from '../../modalTwo/ModalFooter';
 import ModalTwoHeader from '../../modalTwo/ModalHeader';
 
 enum ImageState {
-    Initial,
-    Loading,
-    Error,
-    Ok,
+    Initial = 0,
+    Loading = 1,
+    Error = 2,
+    Ok = 3,
 }
 
 interface Props {

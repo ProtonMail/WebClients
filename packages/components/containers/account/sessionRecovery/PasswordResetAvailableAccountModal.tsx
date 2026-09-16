@@ -31,9 +31,9 @@ import ConfirmSessionRecoveryCancellationModal from './ConfirmSessionRecoveryCan
 import passwordResetIllustration from './password-reset-illustration.svg';
 
 enum STEP {
-    INFO,
-    PASSWORD,
-    CONFIRM_CANCELLATION,
+    INFO = 0,
+    PASSWORD = 1,
+    CONFIRM_CANCELLATION = 2,
 }
 
 interface Props extends ModalProps {

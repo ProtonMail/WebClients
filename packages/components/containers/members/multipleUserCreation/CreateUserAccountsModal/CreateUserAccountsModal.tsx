@@ -43,10 +43,10 @@ import type { UserTemplate } from '../types';
 import OrganizationCapacityErrorModal from './OrganizationCapacityErrorModal';
 
 enum STEPS {
-    SELECT_USERS,
-    IMPORT_USERS,
-    ORGANIZATION_VALIDATION_ERROR,
-    DONE_WITH_ERRORS,
+    SELECT_USERS = 0,
+    IMPORT_USERS = 1,
+    ORGANIZATION_VALIDATION_ERROR = 2,
+    DONE_WITH_ERRORS = 3,
 }
 
 const getCreatedText = (n: number) => {

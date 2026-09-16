@@ -4,12 +4,12 @@ import type { AddressKey, KeyPair, KeysPair } from '@proton/shared/lib/interface
 import { getAddressKeyPassword, getDecryptedAddressKey } from '@proton/shared/lib/keys';
 
 enum InvalidKeyErrorEnum {
-    AddressKeySuccessError,
-    AddressKeyError,
-    AddressKeyTokenEmptyError,
-    AddressKeyTokenError,
-    AddressKeyTokenSignatureVerificationError,
-    AddressKeyInactiveDecrypted,
+    AddressKeySuccessError = 0,
+    AddressKeyError = 1,
+    AddressKeyTokenEmptyError = 2,
+    AddressKeyTokenError = 3,
+    AddressKeyTokenSignatureVerificationError = 4,
+    AddressKeyInactiveDecrypted = 5,
 }
 
 export interface InvalidKeyError {

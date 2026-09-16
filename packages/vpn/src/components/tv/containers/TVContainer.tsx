@@ -18,8 +18,8 @@ import { getChildClientId } from '../utils/getChildClientId';
 import './TvContainer.scss';
 
 enum STEP {
-    ENTER_CODE,
-    DEVICE_CONNECTED,
+    ENTER_CODE = 0,
+    DEVICE_CONNECTED = 1,
 }
 
 const childClientId = getChildClientId();

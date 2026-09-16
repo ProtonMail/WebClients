@@ -13,9 +13,9 @@ import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar
 import type { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 
 export enum UpdateAllPossibilities {
-    KEEP_SINGLE_MODIFICATIONS,
-    KEEP_ORIGINAL_START_DATE_BUT_USE_TIME,
-    USE_NEW_START_DATE,
+    KEEP_SINGLE_MODIFICATIONS = 0,
+    KEEP_ORIGINAL_START_DATE_BUT_USE_TIME = 1,
+    USE_NEW_START_DATE = 2,
 }
 
 const getRecurringUpdateAllPossibilities = ({

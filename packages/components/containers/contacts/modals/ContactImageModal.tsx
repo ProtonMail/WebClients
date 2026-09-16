@@ -29,9 +29,9 @@ export interface ContactImageProps extends Omit<ModalProps<typeof Form>, 'onSubm
 }
 
 enum ImageState {
-    Initial,
-    Error,
-    Ok,
+    Initial = 0,
+    Error = 1,
+    Ok = 2,
 }
 
 const ContactImageModal = ({ url: initialUrl = '', onSubmit, ...rest }: ContactImageProps) => {
