@@ -82,7 +82,7 @@ const PromptInput = ({ value, onChange, onSubmit, onStop, isGenerating, disabled
                         disabled={disabled}
                         onClick={submit}
                     >
-                        <img src={lumoArrow} alt={c('Action').t`Send`} />
+                        <img src={lumoArrow} alt={c('Action').t`Send`} className="rotateZ-270" />
                     </Button>
                 )
             )}
