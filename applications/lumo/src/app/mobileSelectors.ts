@@ -7,4 +7,6 @@
 export const MobileSelectors = {
     /** Theme selection button in appearance settings. Used by iOS/Android to detect theme changes. */
     themeButton: 'lumo-theme-card-button',
+    manageSubscriptionTrigger: 'manage-plan',
+    manageSubscriptionPath: '/dashboard',
 } as const;
