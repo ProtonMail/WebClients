@@ -52,7 +52,13 @@ const config: ForgeConfig = {
         appCategoryType: 'public.app-category.productivity',
         osxSign: process.env.CI ? {} : undefined,
         osxNotarize,
-        osxUniversal: { x64ArchFiles: 'Contents/Resources/assets/proton_pass_nm_host' },
+        // @electron/universal refuses identical Mach-O files across the x64/arm64 slices unless whitelisted.
+        // The native messaging host is compiled once for both arches, and the webpack plugin maps the same
+        // node_modules `.node` files into both bundles (the universal variant is preferred at runtime anyway).
+        osxUniversal: {
+            x64ArchFiles:
+                '{Contents/Resources/assets/proton_pass_nm_host,Contents/Resources/app.asar.unpacked/.webpack/main/native_modules/*.node}',
+        },
     },
     rebuildConfig: {},
     makers: [
