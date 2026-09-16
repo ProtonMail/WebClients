@@ -36,7 +36,6 @@ import GiftCodeSection from '@proton/components/containers/payments/GiftCodeSect
 import PlansSection from '@proton/components/containers/payments/PlansSection';
 import SubscriptionsSection from '@proton/components/containers/payments/SubscriptionsSection';
 import PaymentMethodsSection from '@proton/components/containers/payments/methods/PaymentMethodsSection';
-import AutomaticSubscriptionModal from '@proton/components/containers/payments/subscription/AutomaticSubscriptionModal';
 import DashboardTelemetry from '@proton/components/containers/payments/subscription/DashboardTelemetry';
 import DowngradeSubscriptionSection from '@proton/components/containers/payments/subscription/DowngradeSubscriptionSection';
 import { UpsellModalTelemetryProvider } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
@@ -60,6 +59,7 @@ import ThemesSection from '@proton/components/containers/themes/ThemesSection';
 import { VpnAlsoInYourPlanSection } from '@proton/components/containers/vpn/VpnAlsoInYourPlanSection/VpnAlsoInYourPlanSection';
 import { VpnBlogSection } from '@proton/components/containers/vpn/VpnBlogSection/VpnBlogSection';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
+import { AutomaticSubscriptionModal } from '@proton/payments-ui/ui/subscriptions/AutomaticSubscriptionModal';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { VPNDownloadAndInfoSection } from '@proton/vpn/components/VPNDownloadSection';
 

@@ -1,3 +1,4 @@
+import type { OfferConfig } from '@proton/components/containers/offers/interface';
 import { type ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription } from '@proton/payments/core/interface';
 import { isPlanEnabled } from '@proton/payments/core/plan/helpers';
@@ -5,15 +6,27 @@ import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import {
     getHas2025OfferCoupon,
     getIsB2BAudienceFromSubscription,
-    getPlan,
     isForbiddenModification,
 } from '@proton/payments/core/subscription/helpers';
+import { getPlan } from '@proton/payments/core/subscription/helpers/plan-info';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
-import type { User, UserModel } from '@proton/shared/lib/interfaces';
+import type { User, UserModel } from '@proton/shared/lib/interfaces/User';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 
-import type { OfferConfig } from '../../offers/interface';
+interface Combination {
+    latest: {
+        plan: (PLANS | ADDON_NAMES)[];
+        cycles: CYCLE[];
+    };
+    target:
+        | true
+        | {
+              plan: (PLANS | ADDON_NAMES)[];
+              cycles: CYCLE[];
+          };
+    result: () => Eligibility;
+}
 
 export interface PlanCombination {
     plan: Plan;
@@ -71,20 +84,6 @@ const getUpsellOffer = ({
         },
     };
 };
-
-interface Combination {
-    latest: {
-        plan: (PLANS | ADDON_NAMES)[];
-        cycles: CYCLE[];
-    };
-    target:
-        | true
-        | {
-              plan: (PLANS | ADDON_NAMES)[];
-              cycles: CYCLE[];
-          };
-    result: () => Eligibility;
-}
 
 export const canBuyPassLifetime = (
     user: User | undefined,
@@ -245,9 +244,9 @@ export const getEligibility = ({
     }
 
     if (offer.plan.Name === PLANS.PASS_LIFETIME) {
-        const isEligibilePlan = canBuyPassLifetime(user, subscription);
+        const isEligiblePlan = canBuyPassLifetime(user, subscription);
 
-        if (isEligibilePlan) {
+        if (isEligiblePlan) {
             return okResult();
         }
 

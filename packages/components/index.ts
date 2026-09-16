@@ -365,7 +365,6 @@ export { default as GiftCodeSection } from './containers/payments/GiftCodeSectio
 export { default as PaymentMethodsSection } from './containers/payments/methods/PaymentMethodsSection';
 export { default as PlansSection } from './containers/payments/PlansSection';
 export { default as AssistantToggle } from './containers/payments/subscription/assistant/AssistantToggle';
-export { default as AutomaticSubscriptionModal } from './containers/payments/subscription/AutomaticSubscriptionModal';
 export { CancellationReminderSection } from './containers/payments/subscription/cancellationFlow/CancellationReminderSection';
 export { CancelSubscriptionSection } from './containers/payments/subscription/cancelSubscription';
 export { default as CancelSubscriptionViaSupportSection } from './containers/payments/subscription/cancelSubscriptionViaSupport/CancelSubscriptionViaSupportSection';
