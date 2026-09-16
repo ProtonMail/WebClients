@@ -11,6 +11,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { loadInitialBillingAddress } from '@proton/payments/core/billing-address/load-initial-billing-address';
 import { fixPlanIDs } from '@proton/payments/core/helpers';
@@ -25,7 +26,6 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
 import useModalState from '../../../components/modalTwo/useModalState';
-import { usePaymentsApi } from '../../../payments/react-extensions/usePaymentsApi';
 import { useRedirectToAccountApp } from '../../desktop/useRedirectToAccountApp';
 import SubscriptionModal from './SubscriptionModal';
 import {

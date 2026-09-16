@@ -41,9 +41,10 @@ export const getStoreWrapper = ({ preloadedState, initialUrl }: StoreWrapperOpti
         withMemoryRouter(initialUrl ? [initialUrl] : undefined)
     );
 
+    const ChildrenWithProviders = applyProviders(({ children }: PropsWithChildren<{}>) => <>{children}</>);
+
     function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
-        const ChildrenWithProviders = applyProviders(() => children);
-        return <ChildrenWithProviders />;
+        return <ChildrenWithProviders>{children}</ChildrenWithProviders>;
     }
 
     return { Wrapper, store };

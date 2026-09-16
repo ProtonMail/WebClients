@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
+import type { PaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { ProrationMode } from '@proton/payments/core/api/api';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
@@ -27,7 +28,6 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { PaymentFacade } from '../../../payments/client-extensions/index';
 import { forceAddonsMinMaxConstraints } from '../planCustomizer/helpers';
 import type { Model } from './SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from './constants';

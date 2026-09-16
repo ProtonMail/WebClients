@@ -7,8 +7,8 @@ import StandardErrorPage from '@proton/components/containers/app/StandardErrorPa
 import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import { shouldTraceError, useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import type { OnChargeable } from '@proton/components/payments/client-extensions';
 import metrics, { observeError } from '@proton/metrics/index';
+import type { OnChargeable } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import {
     type PaymentsContextOptimisticType,
     usePaymentOptimistic,

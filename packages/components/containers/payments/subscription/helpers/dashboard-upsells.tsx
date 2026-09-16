@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import useLoading from '@proton/hooks/useLoading';
+import type { TelemetryPaymentFlow } from '@proton/payments-ui/client-extensions/usePaymentsTelemetry';
 import {
     type PreloadedPaymentsContextType,
     isPaymentsPreloaded,
@@ -63,7 +64,6 @@ import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import type { TelemetryPaymentFlow } from '../../../../payments/client-extensions/usePaymentsTelemetry';
 import { getPhoneSupport } from '../../features/b2b';
 import { getNCalendarsFeature, getNCalendarsPerUserFeature } from '../../features/calendar';
 import {

@@ -1,9 +1,9 @@
 import { render, screen, waitFor } from '@testing-library/react';
 
+import { getSepaAuthorizationText } from '@proton/payments-ui/ui/components/SepaAuthorizationText';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PayPalDetails, SavedCardDetails, SepaDetails } from '@proton/payments/core/interface';
 
-import { getSepaAuthorizationText } from '../../../payments/chargebee/SepaAuthorizationText';
 import PaymentMethodDetails from './PaymentMethodDetails';
 
 describe('PaymentMethodDetails', () => {

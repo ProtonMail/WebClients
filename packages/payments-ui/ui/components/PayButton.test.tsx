@@ -9,7 +9,7 @@ import type { PaymentsApi } from '@proton/payments/core/interface';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS } from '@proton/shared/lib/constants';
-import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
+import { renderWithProviders } from '../../testing/renderWithProviders';
 
 import { useEditBillingAddressModal } from '../billing-address/containers/useEditBillingAddressModal';
 import type { TaxCountryHook } from '../billing-address/hooks/useTaxCountry';

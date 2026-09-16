@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
-import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoadingByKey } from '@proton/hooks/useLoading';
 import type { FullBillingAddress } from '@proton/payments/core/billing-address/billing-address';
 
+import { usePaymentsApi } from '../../../react-extensions/usePaymentsApi';
 import type { TaxCountryHook } from '../hooks/useTaxCountry';
 import type { VatNumberHook } from '../hooks/useVatNumber';
 import { EditBillingAddressModal, type EditBillingAdressModalInputs } from './EditBillingAddress';

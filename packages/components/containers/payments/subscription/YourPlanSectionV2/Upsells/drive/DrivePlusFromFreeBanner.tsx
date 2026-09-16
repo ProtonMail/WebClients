@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { usePreferredPlansMap } from '@proton/payments-ui/ui/hooks/usePreferredPlansMap';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
-import { usePreferredPlansMap } from '../../../../../../hooks/usePreferredPlansMap';
 import { useSubscriptionModal } from '../../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../../constants';
 import { PlanIcon } from '../../PlanIcon';

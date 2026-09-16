@@ -6,6 +6,7 @@ import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrencies';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
 import type { Plan } from '@proton/payments/core/plan/interface';
@@ -17,7 +18,6 @@ import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { SUBSCRIPTION_STEPS } from '../../../containers/payments/subscription/constants';
-import { useCurrencies } from '../../../payments/client-extensions/index';
 import ModalTwo, { type ModalProps } from '../../modalTwo/Modal';
 import ModalTwoContent from '../../modalTwo/ModalContent';
 import ModalTwoHeader from '../../modalTwo/ModalHeader';

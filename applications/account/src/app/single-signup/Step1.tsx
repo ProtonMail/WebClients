@@ -20,15 +20,15 @@ import { useVpn2024SignupExperiment } from '@proton/components/containers/paymen
 import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
 import { useHandler } from '@proton/components/hooks/useHandler';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import { usePaymentFacade } from '@proton/components/payments/client-extensions';
-import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCode } from '@proton/icons/icons/IcCode';
 import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
 import { IcServers } from '@proton/icons/icons/IcServers';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
+import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrencies';
+import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
+import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
 import { useBillingAddress } from '@proton/payments-ui/ui/billing-address/hooks/useBillingAddress';
 import { PayButton } from '@proton/payments-ui/ui/components/PayButton';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments-ui/ui/components/RenewalNotice';

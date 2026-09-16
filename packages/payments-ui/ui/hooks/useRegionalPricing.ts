@@ -4,7 +4,7 @@ import { isMainCurrency } from '@proton/payments/core/currencies';
 import type { CheckSubscriptionRequestOptions, Currency } from '@proton/payments/core/interface';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 
-import { usePaymentsApi } from '../payments/react-extensions/usePaymentsApi';
+import { usePaymentsApi } from '../../react-extensions/usePaymentsApi';
 import { usePreferredPlansMap } from './usePreferredPlansMap';
 
 export const useRegionalPricing = () => {
