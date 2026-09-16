@@ -1,6 +1,6 @@
+import { GOOGLE_OAUTH_PATH } from "@proton/shared/lib/api/activation";
 import { getAppURL } from "../../store/urlStore";
 import { mainLogger } from "../log";
-import { GOOGLE_OAUTH_PATH } from "@proton/shared/lib/api/activation";
 
 const sessionRegex = /(?!:\/u\/)(\d+)(?!:\/)/g;
 export const getLocalID = (url?: string): string | null => {
@@ -187,36 +187,12 @@ export const isCloseTicketURL = (urlString: string) => {
     }
 };
 
-export const isAccoutLite = (host: string) => {
-    try {
-        const hostURl = new URL(host);
-        return hostURl.pathname.includes("/lite");
-    } catch (error) {
-        mainLogger.error("isAccoutLite", error);
-        return false;
-    }
-};
-
 export const isUpgradeURL = (host: string) => {
     try {
         const hostURL = new URL(host);
         return hostURL.pathname.includes("/upgrade") && hostURL.searchParams.size > 0;
     } catch (error) {
         mainLogger.error("isUpgradeURL", error);
-        return false;
-    }
-};
-
-export const isUpsellURL = (host: string) => {
-    try {
-        const hostURl = new URL(host);
-        const plan = hostURl.searchParams.get("plan");
-        const billing = hostURl.searchParams.get("billing");
-        const currency = hostURl.searchParams.get("currency");
-        const coupon = hostURl.searchParams.get("coupon");
-        return hostURl.pathname.includes("/signup") && (plan || billing || currency || coupon);
-    } catch (error) {
-        mainLogger.error("isUpsellURL", error);
         return false;
     }
 };

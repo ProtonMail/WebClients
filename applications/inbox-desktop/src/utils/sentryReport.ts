@@ -1,12 +1,12 @@
 import { captureException as sentryCaptureException, SeverityLevel, withScope } from "@sentry/electron/main";
+import { getWindowBounds } from "../store/boundsStore";
 import { getAppIDSync } from "../store/idStore";
 import { getSettings } from "../store/settingsStore";
-import { getWindowBounds } from "../store/boundsStore";
 import { getAppURL } from "../store/urlStore";
-import { getAccountView, getCalendarView, getCurrentViewID, getMailView, getMainWindow } from "./view/viewManagement";
 import { getOSInfo } from "./log/getOSInfo";
+import { getAccountView, getCalendarView, getCurrentViewID, getMailView, getMainWindow } from "./view/viewManagement";
 
-export interface ReportOptions {
+interface ReportOptions {
     level?: SeverityLevel;
     /** Short, filterable key-value pairs (max 32 char key, 200 char value). Searchable in Sentry. */
     tags?: Record<string, string>;
@@ -14,7 +14,7 @@ export interface ReportOptions {
     extras?: Record<string, unknown>;
 }
 
-export interface ReportMessageOptions extends ReportOptions {
+interface ReportMessageOptions extends ReportOptions {
     error?: Error;
 }
 
