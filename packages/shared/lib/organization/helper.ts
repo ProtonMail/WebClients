@@ -21,6 +21,9 @@ export const getMemberHasAccessToOrgKey = (member: Member) =>
 
 export const getMemberHasMissingOrgKey = (member: Member) => member.AccessToOrgKey === MEMBER_ORG_KEY_STATE.Missing;
 
+export const getHasIncompleteOrgKeyGrant = (member: EnhancedMember) =>
+    !!member.requiresOrgKeyPromotion && !getMemberHasAccessToOrgKey(member);
+
 /**
  * @param requiresOrgKeyPromotion Defaults to the member's flag (use this when passing member from the store).
  * The paginated MembersRemote list renders local copies with a placeholder role and passes the value explicitly.
@@ -34,7 +37,11 @@ export const getHasPausedRoleAssignment = ({
     requiresOrgKeyPromotion?: boolean;
 }) => {
     // A member who was invited to the org key is legitimately awaiting activation rather than stuck.
-    return !!requiresOrgKeyPromotion && !getMemberHasAccessToOrgKey(member);
+    return (
+        !!requiresOrgKeyPromotion &&
+        !getMemberHasAccessToOrgKey(member) &&
+        member.Role !== MEMBER_ROLE.ORGANIZATION_ADMIN
+    );
 };
 
 export const isOrganizationOneOf = (organization: Organization | undefined, plans: PLANS[]) =>

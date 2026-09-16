@@ -51,7 +51,7 @@ import {
     setupMemberKeys,
 } from '@proton/shared/lib/keys';
 import { getIsMemberSetup, getMemberUnprivatizationMode } from '@proton/shared/lib/keys/memberHelper';
-import { getHasPausedRoleAssignment, getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
+import { getHasIncompleteOrgKeyGrant, getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
@@ -308,7 +308,7 @@ export const resumeMemberRoleAssignment = ({
         // Refresh the roles to clear pending flag
         await dispatch(getMemberRoles({ member, cache: CacheType.None }));
         const refreshed = (await dispatch(membersThunk())).find(({ ID }) => ID === memberID);
-        if (refreshed && getHasPausedRoleAssignment({ member: refreshed })) {
+        if (refreshed && getHasIncompleteOrgKeyGrant(refreshed)) {
             // TODO: provideOrgKeyAccessToMember no-ops for a member who is already an admin but lost access to
             // the org key. To fix that, we need to change `classifyRoleChange` to allow admin -> admin.
             throw new Error(c('Error').t`Could not grant access to the organization key`);
