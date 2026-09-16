@@ -95,8 +95,19 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
 
   const handleYjsDriftDetected = useCallback(
     (result: SpreadsheetLocalYjsUpdateAuditResult, driftLogDetails: Record<string, unknown>) => {
+      const counts: Record<(typeof result.differences)[number]['reason'], number> = {
+        'local-differs-from-yjs': 0,
+        'local-change-not-observed-by-yjs': 0,
+      }
       for (const difference of result.differences) {
-        reportSheetsYjsDriftDetected(difference.reason)
+        counts[difference.reason]++
+      }
+      if (counts['local-differs-from-yjs'] > 0 && counts['local-change-not-observed-by-yjs'] > 0) {
+        reportSheetsYjsDriftDetected('both')
+      } else if (counts['local-differs-from-yjs'] > 0) {
+        reportSheetsYjsDriftDetected('local-differs-from-yjs')
+      } else if (counts['local-change-not-observed-by-yjs'] > 0) {
+        reportSheetsYjsDriftDetected('local-change-not-observed-by-yjs')
       }
       reportError(
         new Error(
