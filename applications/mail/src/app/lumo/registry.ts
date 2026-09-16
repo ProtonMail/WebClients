@@ -16,6 +16,7 @@ import { applyLabelsModule } from './skills/organise/applyLabels';
 import { createFolderModule, createLabelModule } from './skills/organise/createEntity';
 import { moveEmailsModule } from './skills/organise/moveEmails';
 import { renameFolderModule } from './skills/organise/renameFolder';
+import { renameLabelModule } from './skills/organise/renameLabel';
 import { setLocationReadModule } from './skills/organise/setLocationRead';
 import { setReadModule } from './skills/organise/setRead';
 import { setStarredModule } from './skills/organise/setStarred';
@@ -69,6 +70,7 @@ const MODULES: MailToolModule[] = [
     createLabelModule,
     snoozeEmailsModule,
     renameFolderModule,
+    renameLabelModule,
     addContactModule,
     // Filters
     createFilterModule,

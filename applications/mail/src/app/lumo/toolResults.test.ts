@@ -13,6 +13,7 @@ import { applyLabelsDefinition } from './skills/organise/applyLabels';
 import { createFolderDefinition, createLabelDefinition } from './skills/organise/createEntity';
 import { moveEmailsDefinition } from './skills/organise/moveEmails';
 import { renameFolderDefinition } from './skills/organise/renameFolder';
+import { renameLabelDefinition } from './skills/organise/renameLabel';
 import { setLocationReadDefinition } from './skills/organise/setLocationRead';
 import { setReadDefinition } from './skills/organise/setRead';
 import { setStarredDefinition } from './skills/organise/setStarred';
@@ -184,6 +185,7 @@ const TOOL_PAYLOADS = [
     payloads(createLabelDefinition, [{ reference: 'label-m3n4p5', name: 'Receipts' }]),
     payloads(snoozeEmailsDefinition, [undefined]),
     payloads(renameFolderDefinition, [undefined]),
+    payloads(renameLabelDefinition, [undefined]),
     payloads(addContactDefinition, [
         { reference: 'contact-k9d2s1', name: 'Ada Lovelace', email: 'ada@example.com' },
         { name: 'Ada Lovelace' },
