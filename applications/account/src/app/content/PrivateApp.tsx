@@ -12,6 +12,7 @@ import EventManagerProvider from '@proton/components/containers/eventManager/Eve
 import { EventManagerV6Provider } from '@proton/components/containers/eventManager/EventManagerV6Provider';
 import CalendarModelEventManagerProvider from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
+import { logger } from '@proton/logger';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';
@@ -86,7 +87,11 @@ const PrivateApp = () => {
                                                 }
                                             >
                                                 <ApiProvider api={extraThunkArguments.api}>
-                                                    <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                    <ErrorBoundary
+                                                        big
+                                                        component={<StandardErrorPage big />}
+                                                        logger={logger}
+                                                    >
                                                         <PassScopeApiModal api={extraThunkArguments.api} />
                                                         <Suspense fallback={loader}>
                                                             <LazyMainContainer />
