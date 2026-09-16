@@ -1,0 +1,39 @@
+{
+    "name": "@proton/challenge",
+    "description": "Challenge frame (v5): the component that embeds the sandboxed iframe and forwards interactions to it.",
+    "license": "GPL-3.0",
+    "sideEffects": false,
+    "type": "module",
+    "exports": {
+        "./Challenge": "./src/Challenge.tsx",
+        "./getChallengeSrc": "./src/getChallengeSrc.ts",
+        "./interface": "./src/interface.ts"
+    },
+    "scripts": {
+        "check-types": "tsc",
+        "lint": "eslint --quiet",
+        "test": "jest",
+        "test:ci": "jest --coverage --runInBand --ci",
+        "test:watch": "jest --watch"
+    },
+    "dependencies": {
+        "@proton/utils": "workspace:^"
+    },
+    "devDependencies": {
+        "@proton/eslint-config-proton": "workspace:^",
+        "@proton/jest-env": "workspace:^",
+        "@proton/jest-swc-preset": "workspace:^",
+        "@testing-library/react": "^15.0.7",
+        "@types/jest": "^30.0.0",
+        "@types/react": "^18.3.31",
+        "eslint": "^10.9.0",
+        "jest": "^30.4.2",
+        "jest-junit": "^16.0.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "typescript": "^6.0.3"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1"
+    }
+}
