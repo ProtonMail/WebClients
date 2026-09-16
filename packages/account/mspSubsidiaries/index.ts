@@ -30,10 +30,6 @@ export const selectMspSubsidiaries = (state: MspSubsidiariesState) => state[name
 
 const modelThunk = createAsyncModelThunk<Model, MspSubsidiariesState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument, dispatch }) => {
-        const flag = extraArgument.unleashClient?.isEnabled('MspEnabled') ?? false;
-        if (!flag) {
-            return [];
-        }
         // The subsidiaries routes are MSP-owner only, IT Managers (non-owner members of the MSP
         // org) get an empty list here and are shown their managed organizations instead.
         const isAdminRoleMVPEnabled = extraArgument.unleashClient?.isEnabled('AdminRoleMVP') ?? false;
