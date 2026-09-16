@@ -93,6 +93,7 @@ export const mailSettingsHeartbeatListener = (startListening: AppStartListening)
                     removeImageMetadata: formatBooleanForHeartbeat(mailSettings.RemoveImageMetadata),
                     pmSignatureReferral: formatBooleanForHeartbeat(mailSettings.PMSignatureReferralLink),
                     inheritParentFolderColor: formatBooleanForHeartbeat(mailSettings.InheritParentFolderColor),
+                    includeSubfolderUnreadCount: formatBooleanForHeartbeat(mailSettings.IncludeSubfolderUnreadCount),
                     categoryView: formatBooleanForHeartbeat(mailSettings.MailCategoryView),
                     showMoved: formatShowMoved(mailSettings.ShowMoved),
                     labelsCount: getArrayLengthRange(labels),
