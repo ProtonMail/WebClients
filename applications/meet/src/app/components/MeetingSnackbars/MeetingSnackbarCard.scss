@@ -1,0 +1,18 @@
+.meeting-snackbar-card {
+	&--clickable:hover {
+		background-color: var(--background-weak);
+	}
+
+	// The open overlay is painted behind the content, so the content has to let clicks
+	// reach it while its own interactive elements keep receiving them.
+	&--clickable &__content {
+		pointer-events: none;
+
+		button,
+		a,
+		input,
+		[role='button'] {
+			pointer-events: auto;
+		}
+	}
+}

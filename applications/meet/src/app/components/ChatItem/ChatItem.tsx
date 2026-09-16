@@ -154,6 +154,7 @@ export const ChatItem = ({ roomName, item, displayDate = true, variant = 'defaul
             // Up/Down arrow navigation between messages; its actions follow it in the tab order.
             tabIndex={isMessage ? 0 : undefined}
             data-chat-message-row={isMessage ? '' : undefined}
+            data-chat-message-id={isMessage ? item.id : undefined}
             onFocus={handleRowFocus}
             onClick={handleRowClick}
         >
