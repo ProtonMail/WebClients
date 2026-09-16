@@ -58,7 +58,6 @@ export type Flags = {
     isPasswordRemindersOrgEnabled: boolean;
     isAuthenticatorAvailable: boolean;
     isCategoryViewEnabled: boolean;
-    isMspEnabled: boolean;
     isReferralProgramEnabled: boolean;
 };
 

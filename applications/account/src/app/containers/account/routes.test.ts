@@ -35,7 +35,6 @@ const accountRecoveryRouterFlags: AccountRecoveryRouterFlags = {
 
 const defaultFlags: Flags = {
     isAlwaysOnVpnEnabled: false,
-    isMspEnabled: false,
     isReferralProgramEnabled: false,
     canDisplayNonPrivateEmailPhone: false,
     isUserGroupsFeatureEnabled: false,
