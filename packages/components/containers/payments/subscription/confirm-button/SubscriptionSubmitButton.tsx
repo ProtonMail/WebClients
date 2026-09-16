@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
+import type { PaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import type { TaxCountryHook } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
 import type { VatNumberHook } from '@proton/payments-ui/ui/billing-address/hooks/useVatNumber';
 import { PayButton } from '@proton/payments-ui/ui/components/PayButton';
@@ -19,7 +20,6 @@ import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import { getSimplePriceString } from '../../../../components/price/helper';
-import type { PaymentFacade } from '../../../../payments/client-extensions/index';
 import { getSubscriptionManagerName } from '../InAppPurchaseModal';
 import { getVisionaryDowngradeWarningTextElement } from '../VisionaryDowngradeWarningModal';
 import { InfoBanner } from './InfoBanner';

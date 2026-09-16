@@ -4,6 +4,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
+import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import { ChargebeePaypalButton } from '@proton/payments-ui/ui/components/ChargebeePaypalButton';
 import { usePaymentPollers } from '@proton/payments-ui/ui/hooks/usePaymentPollers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -12,7 +13,6 @@ import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../components/modalTwo/Modal';
 import Prompt from '../../components/prompt/Prompt';
-import { usePaymentFacade } from '../../payments/client-extensions/index';
 
 const PAYMENT_AUTHORIZATION_AMOUNT = 100;
 const PAYMENT_AUTHORIZATION_CURRENCY = 'CHF';

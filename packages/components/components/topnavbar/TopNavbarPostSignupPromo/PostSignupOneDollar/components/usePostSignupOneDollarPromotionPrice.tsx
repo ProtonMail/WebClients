@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 
+import { useAutomaticCurrency } from '@proton/payments-ui/client-extensions/useAutomaticCurrency';
+import { useRegionalPricing } from '@proton/payments-ui/ui/hooks/useRegionalPricing';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { isMainCurrency } from '@proton/payments/core/currencies';
 import type { Currency } from '@proton/payments/core/interface';
 import clsx from '@proton/utils/clsx';
 
 import { getNormalizedPlanTitleToPlus } from '../../../../../containers/payments/subscription/plusToPlusHelper';
-import { useRegionalPricing } from '../../../../../hooks/useRegionalPricing';
-import { useAutomaticCurrency } from '../../../../../payments/client-extensions/index';
 import Price from '../../../../price/Price';
 import SkeletonLoader from '../../../../skeletonLoader/SkeletonLoader';
 import type { SUPPORTED_PRODUCTS } from '../interface';

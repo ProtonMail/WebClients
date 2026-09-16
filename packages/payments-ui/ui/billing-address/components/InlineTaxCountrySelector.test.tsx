@@ -1,13 +1,13 @@
 import { fireEvent, screen } from '@testing-library/react';
 
 import { useConfig } from '@proton/app-context/useConfig';
-import type { PaymentFacade } from '@proton/components/payments/client-extensions';
 import { WrongBillingAddressError } from '@proton/payments/core/errors';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { APPS } from '@proton/shared/lib/constants';
-import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
+import { renderWithProviders } from '../../../testing/renderWithProviders';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import type { PaymentFacade } from '../../../client-extensions/usePaymentFacade';
 import { type OnBillingAddressChange, useTaxCountry } from '../hooks/useTaxCountry';
 import { InlineTaxCountrySelector } from './InlineTaxCountrySelector';
 

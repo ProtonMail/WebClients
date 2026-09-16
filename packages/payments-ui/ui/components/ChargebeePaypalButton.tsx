@@ -1,10 +1,10 @@
 import { type ReactNode, useMemo } from 'react';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import paypalSvg from '@proton/styles/assets/img/bank-icons/paypal-color.svg';
 import clsx from '@proton/utils/clsx';
 
+import type { ChargebeePaypalProcessorHook } from '../../react-extensions/useChargebeePaypal';
 import { ChargebeeIframe, getPaypalButtonWidth } from './ChargebeeIframe';
 import type { ChargebeeWrapperProps } from './ChargebeeWrapper';
 import type { PayButtonOnClickPayload } from './PayButton';

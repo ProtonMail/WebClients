@@ -8,6 +8,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
+import { useAutomaticCurrency } from '@proton/payments-ui/client-extensions/useAutomaticCurrency';
 import type { PLANS } from '@proton/payments/core/constants';
 import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
@@ -24,7 +25,6 @@ import StripedItem from '../../../components/stripedList/StripedItem';
 import { StripedList } from '../../../components/stripedList/StripedList';
 import Time from '../../../components/time/Time';
 import { useSilentApi } from '../../../hooks/useSilentApi';
-import { useAutomaticCurrency } from '../../../payments/client-extensions/index';
 import { getShortPlan } from '../features/plan';
 
 const FeatureList = () => {

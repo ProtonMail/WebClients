@@ -1,5 +1,4 @@
 import type { Api, User } from '@proton/shared/lib/interfaces';
-import formatSubscription from '@proton/shared/lib/subscription/format';
 import { isAdmin, isPaid } from '@proton/shared/lib/user/helpers';
 
 import type { BillingAddressExtended } from '../billing-address/billing-address';
@@ -514,6 +513,18 @@ const addSubscriptionPlan = (subscription: Subscription): Subscription => {
     return {
         ...subscription,
         Plans: [subscriptionPlan],
+    };
+};
+
+export const formatSubscription = (
+    subscription: Subscription,
+    UpcomingSubscription: Subscription | undefined | null,
+    SecondarySubscriptions: Subscription[] | undefined | null
+): Subscription => {
+    return {
+        ...subscription,
+        UpcomingSubscription: UpcomingSubscription || undefined,
+        SecondarySubscriptions: SecondarySubscriptions || undefined,
     };
 };
 

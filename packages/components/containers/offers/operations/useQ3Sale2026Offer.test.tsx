@@ -5,13 +5,13 @@ import { createMemoryHistory } from 'history';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useAutomaticCurrency } from '@proton/payments-ui/client-extensions/useAutomaticCurrency';
 import { CYCLE, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useAutomaticCurrency } from '../../../payments/client-extensions/index';
 import ConfigProvider from '../../config/Provider';
 import useOfferFlags from '../hooks/useOfferFlags';
 import { configuration as duoToFamilyConfig } from './q3Sale2026DuoToFamily/configuration';
@@ -31,7 +31,7 @@ const mockUseUser = useUser as jest.Mock;
 jest.mock('@proton/account/subscription/hooks');
 const mockUseSubscription = useSubscription as jest.Mock;
 
-jest.mock('../../../payments/client-extensions/index', () => ({
+jest.mock('@proton/payments-ui/client-extensions/useAutomaticCurrency', () => ({
     __esModule: true,
     useAutomaticCurrency: jest.fn(),
 }));

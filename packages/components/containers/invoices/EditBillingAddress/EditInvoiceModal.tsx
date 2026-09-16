@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
+import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
 import { useVatPrefixSync } from '@proton/payments-ui/ui/billing-address/hooks/useVatPrefixSync';
 import type { FullBillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { zipCodeValidator } from '@proton/payments/core/billing-address/billing-address';
@@ -24,7 +25,6 @@ import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import type { ModalTwoPromiseHandlers } from '../../../components/modalTwo/useModalTwo';
 import InputFieldTwo from '../../../components/v2/field/InputField';
 import useFormErrors from '../../../components/v2/useFormErrors';
-import { usePaymentsApi } from '../../../payments/react-extensions/usePaymentsApi';
 
 export type EditInvoiceModalInputs = {
     initialFullBillingAddress: FullBillingAddress;

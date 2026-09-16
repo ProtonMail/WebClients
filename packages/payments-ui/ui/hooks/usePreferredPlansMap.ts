@@ -8,7 +8,7 @@ import type { FullPlansMap, Subscription } from '@proton/payments/core/subscript
 import { getPlansMap as getPlansMapInner } from '@proton/payments/core/subscription/plans-map-wrapper';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
-import { type GetPreferredCurrencyParamsHook, useCurrencies } from '../payments/client-extensions/useCurrencies';
+import { type GetPreferredCurrencyParamsHook, useCurrencies } from '../../client-extensions/useCurrencies';
 
 type PreferredPlansMapHook = {
     plansMapLoading: boolean;

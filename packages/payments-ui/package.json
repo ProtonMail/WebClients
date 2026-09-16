@@ -32,6 +32,7 @@
         "@proton/utils": "workspace:^",
         "@reduxjs/toolkit": "^2.12.0",
         "date-fns": "^2.30.0",
+        "ibantools": "4.5.4",
         "lodash": "^4.18.1",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
@@ -43,12 +44,16 @@
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-env": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
+        "@proton/test-api": "workspace:^",
         "@proton/testing": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
         "@testing-library/react-hooks": "^8.0.1",
+        "@testing-library/user-event": "^14.6.7",
         "eslint": "^10.10.0",
+        "history": "^4.10.1",
         "jest": "^30.5.1",
+        "react-router": "^5.3.4",
         "typescript": "^6.0.3"
     }
 }

@@ -15,7 +15,6 @@ import type { ModalTwoPromiseHandlers } from '@proton/components/components/moda
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { InfoBanner } from '@proton/components/containers/payments/subscription/confirm-button/InfoBanner';
-import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { type FullBillingAddress, zipCodeValidator } from '@proton/payments/core/billing-address/billing-address';
 import { getVatFormErrors } from '@proton/payments/core/billing-address/vat-helpers';
@@ -28,6 +27,7 @@ import type { BillingAddressEditSource } from '@proton/payments/telemetry/billin
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
+import { usePaymentsApi } from '../../../react-extensions/usePaymentsApi';
 import { CountryStateSelector } from '../components/CountryStateSelector';
 import { type CountriesWithCustomVatName, getVatNumberName } from '../components/VatNumberInput';
 import { useVatPrefixSync } from '../hooks/useVatPrefixSync';

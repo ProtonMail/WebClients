@@ -19,10 +19,10 @@ import { getShortBillingText } from '@proton/components/containers/payments/subs
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useHandler } from '@proton/components/hooks/useHandler';
-import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import useLoading from '@proton/hooks/useLoading';
 import metrics from '@proton/metrics';
+import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrencies';
+import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
 import { useCouponConfig } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
