@@ -1541,8 +1541,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Faire confiance à cette clé",
-        "Faire confiance à ces clés"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1745,6 +1744,9 @@
       ],
       "Add a payment method": [
         "Ajouter une méthode de paiement"
+      ],
+      "Add more details": [
+        "Ajouter plus d'informations"
       ]
     },
     "action": {
@@ -5597,6 +5599,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Votre recherche a donné trop de résultats. Nous vous invitons à limiter votre recherche et à réessayer."
+      ],
+      "A contact with this email address already exists": [
+        "Un contact portant cette adresse e-mail existe déjà."
       ]
     },
     "error": {
@@ -8036,7 +8041,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -9638,6 +9644,79 @@
       ],
       "Turn off auto-reply": [
         "Désactiver la réponse automatique"
+      ],
+      "Add ${ contact } to your contacts": [
+        "Ajouter ${ contact } à vos contacts"
+      ],
+      "Add a contact": [
+        "Ajouter un contact"
+      ],
+      "Add contact": [
+        "Ajouter un contact"
+      ],
+      "Change your theme": [
+        "Changer votre thème"
+      ],
+      "Create a filter": [
+        "Créer un filtre"
+      ],
+      "Create a folder": [
+        "Créer un dossier"
+      ],
+      "Create a label": [
+        "Créer un label"
+      ],
+      "Mark ${ emails } as unread": [
+        "Marquer ${ emails } comme non lus"
+      ],
+      "Move ${ emails }": [
+        "Déplacer ${ emails }"
+      ],
+      "No draft open": [
+        "Pas de brouillon ouvert."
+      ],
+      "No emails selected": [
+        "Aucun e-mail sélectionné"
+      ],
+      "No location selected": [
+        "Aucun emplacement sélectionné"
+      ],
+      "Opened a draft": [
+        "J’ai ouvert un brouillon"
+      ],
+      "Read ${ count } open draft": [
+        "Lire ${ count } brouillon ouvert",
+        "Lire ${ count } brouillons ouverts"
+      ],
+      "Read draft \"${ subject }\"": [
+        "Lire le brouillon « ${ subject } »"
+      ],
+      "Read the open draft": [
+        "Lire le brouillon ouvert"
+      ],
+      "Readdressed the draft": [
+        "Réécriture du brouillon"
+      ],
+      "Rename this folder": [
+        "Renommez ce dossier"
+      ],
+      "Rewrote and readdressed the draft": [
+        "Réécriture et réorientation du brouillon"
+      ],
+      "Rewrote the draft": [
+        "Réécriture du brouillon"
+      ],
+      "Set your signature": [
+        "Définir votre signature"
+      ],
+      "Turn off your away message": [
+        "Désactivez votre message d'absence"
+      ],
+      "Turn on your away message": [
+        "Activez votre message d'absence"
+      ],
+      "Update this filter": [
+        "Mettre à jour ce filtre"
       ]
     },
     "info": {
@@ -10902,6 +10981,9 @@
       ],
       "Until time": [
         "Jusqu'au temps"
+      ],
+      "Display name": [
+        "Nom d'affichage"
       ]
     },
     "Label (begin date/advanced search)": {
