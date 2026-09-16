@@ -9,8 +9,7 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 
 import type { GeneralRouterParams } from '../../content/router-params';
 
-export const getMspAppRoutes = ({ app, flags, entitlements, user }: GeneralRouterParams): SidebarConfig => {
-    const { isMspEnabled = false } = flags;
+export const getMspAppRoutes = ({ app, entitlements, user }: GeneralRouterParams): SidebarConfig => {
     // MSP is exclusively available for Pass for now
     const isAllowedApp = app === APPS.PROTONPASS || app === APPS.PROTONACCOUNT;
     // MSP is exclusively available for passbiz2024 customers that have subsidiaries and members subsidiaries entitlements,
@@ -23,8 +22,7 @@ export const getMspAppRoutes = ({ app, flags, entitlements, user }: GeneralRoute
     // @todo: implement this when new MSP permissions are implemented
     const canViewMonthlyCosts = user.isAdmin;
     return {
-        available:
-            isMspEnabled && isAllowedApp && isEligible && !hasBit(user.accessTypeMask, SessionAccessTypeFlag.OrgAccess),
+        available: isAllowedApp && isEligible && !hasBit(user.accessTypeMask, SessionAccessTypeFlag.OrgAccess),
         header: c('Settings section title').t`Managed Companies`,
         routes: {
             companies: {
