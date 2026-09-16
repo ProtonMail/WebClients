@@ -12,8 +12,8 @@ export type AccessDTO = AccessKeys & { target: AccessTarget };
  * we fetch the underlying share state, for item targets we
  * should fetch the item's updated sharing state */
 export enum AccessTarget {
-    Vault,
-    Item,
+    Vault = 0,
+    Item = 1,
 }
 
 export type AccessItem = {

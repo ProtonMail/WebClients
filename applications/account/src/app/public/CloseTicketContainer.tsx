@@ -17,9 +17,9 @@ import PublicLayout from '../components/PublicLayout';
 import accountIllustration from './account-illustration.svg';
 
 enum ErrorType {
-    Expired,
-    API,
-    MissingParameters,
+    Expired = 0,
+    API = 1,
+    MissingParameters = 2,
 }
 
 const CloseTicketContainer = () => {

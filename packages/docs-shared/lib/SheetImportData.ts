@@ -1,12 +1,12 @@
 export enum SheetImportDestination {
-  InsertAsNewSheet,
-  ReplaceAtSelectedCell,
-  ReplaceCurrentSheet,
-  ReplaceSpreadsheet,
+  InsertAsNewSheet = 0,
+  ReplaceAtSelectedCell = 1,
+  ReplaceCurrentSheet = 2,
+  ReplaceSpreadsheet = 3,
 }
 
 export enum SheetImportSeparatorType {
-  DetectAutomatically,
+  DetectAutomatically = 0,
 }
 
 export type SheetImportData = {

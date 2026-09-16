@@ -97,16 +97,16 @@ export const isOrganization = (organization?: Organization) =>
     isOrganizationVisionary(organization);
 
 export enum OrganizationKeyState {
-    NoKey,
-    Setup,
-    Activate,
-    Inactive,
-    Active,
+    NoKey = 0,
+    Setup = 1,
+    Activate = 2,
+    Inactive = 3,
+    Active = 4,
 }
 
 export enum OrganizationKeyMode {
-    Legacy,
-    Passwordless,
+    Legacy = 0,
+    Passwordless = 1,
 }
 
 export const getOrganizationKeyInfo = (

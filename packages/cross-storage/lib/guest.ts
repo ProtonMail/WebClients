@@ -3,9 +3,9 @@ import type { CrossStorageMessage } from './interface';
 import { getIsSupported } from './support';
 
 enum States {
-    INIT,
-    SUCCESS,
-    ERROR,
+    INIT = 0,
+    SUCCESS = 1,
+    ERROR = 2,
 }
 
 export const createGuest = (urlTarget: string) => {

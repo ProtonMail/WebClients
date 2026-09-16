@@ -17,9 +17,9 @@ import type { MaybeNull, OrganizationUpdatePasswordPolicyInput } from '../types'
 import { merge } from '../utils/object/merge';
 
 export enum CharType {
-    Alphabetic,
-    Digit,
-    Special,
+    Alphabetic = 0,
+    Digit = 1,
+    Special = 2,
 }
 
 /* Designers mixed the colors of different ui-${type}

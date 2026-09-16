@@ -25,8 +25,8 @@ import { canFetchOrganization } from './helper';
 const name = 'organization' as const;
 
 enum ValueType {
-    dummy,
-    complete,
+    dummy = 0,
+    complete = 1,
 }
 
 export interface OrganizationState extends UserState {

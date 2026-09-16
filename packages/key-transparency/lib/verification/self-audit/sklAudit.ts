@@ -1,4 +1,5 @@
 import type { PublicKeyReference } from '@protontech/crypto';
+
 import type { FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
 
 import type { Epoch, Proof } from '../../interfaces';
@@ -6,10 +7,10 @@ import { verifySKLSignature } from '../verifyKeys';
 import { verifyProofOfAbsenceForRevision, verifyProofOfExistenceOrObsolescence } from '../verifyProofs';
 
 export enum SKLAuditStatus {
-    Deleted,
-    Obsolete,
-    ExistentUnverified,
-    ExistentVerified,
+    Deleted = 0,
+    Obsolete = 1,
+    ExistentUnverified = 2,
+    ExistentVerified = 3,
 }
 
 export interface SKLAuditResult {

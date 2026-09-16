@@ -1,7 +1,7 @@
 export enum SelectionState {
-    NONE,
-    ALL,
-    SOME,
+    NONE = 0,
+    ALL = 1,
+    SOME = 2,
 }
 
 export interface SelectionStore {

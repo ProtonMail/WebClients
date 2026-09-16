@@ -11,8 +11,8 @@ let visibleTimeout = 0;
 let globalId = 0;
 
 enum State {
-    Opened,
-    Closing,
+    Opened = 0,
+    Closing = 1,
 }
 
 type CloseCb = (immediate?: boolean) => void;

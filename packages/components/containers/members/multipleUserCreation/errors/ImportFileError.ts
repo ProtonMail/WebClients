@@ -5,10 +5,10 @@ import truncate from '@proton/utils/truncate';
 import { MAX_FILENAME_CHARS_DISPLAY, MAX_IMPORT_FILE_SIZE_STRING } from '../constants';
 
 export enum IMPORT_ERROR_TYPE {
-    NO_FILE_SELECTED,
-    FILE_EMPTY,
-    FILE_TOO_BIG,
-    FILE_CORRUPTED,
+    NO_FILE_SELECTED = 0,
+    FILE_EMPTY = 1,
+    FILE_TOO_BIG = 2,
+    FILE_CORRUPTED = 3,
 }
 
 const getImportFileErrorMessage = (errorType: IMPORT_ERROR_TYPE, filename = '') => {

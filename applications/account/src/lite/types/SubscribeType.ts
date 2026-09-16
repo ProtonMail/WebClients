@@ -1,4 +1,4 @@
 export enum SubscribeType {
-    Subscribed,
-    Closed,
+    Subscribed = 0,
+    Closed = 1,
 }

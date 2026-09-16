@@ -2,10 +2,10 @@ import type { OfflineKey } from './offlineKey';
 import type { SessionAccessTypeMask } from './sessionAccessType';
 
 export enum SessionSource {
-    Proton,
-    Saml,
-    Oauth,
-    Msp,
+    Proton = 0,
+    Saml = 1,
+    Oauth = 2,
+    Msp = 3,
 }
 
 export type PersistedSessionBlob =

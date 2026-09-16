@@ -83,9 +83,9 @@ import { hasIcalExtension } from '../attachment/attachment';
 import type { FetchAllEventsByUID } from './inviteApi';
 
 export enum EVENT_TIME_STATUS {
-    PAST,
-    HAPPENING,
-    FUTURE,
+    PAST = 0,
+    HAPPENING = 1,
+    FUTURE = 2,
 }
 
 export interface EventInvitation {
@@ -108,11 +108,11 @@ export interface EventInvitation {
 }
 
 export enum UPDATE_ACTION {
-    NONE,
-    KEEP_PARTSTAT,
-    RESET_PARTSTAT,
-    UPDATE_PARTSTAT,
-    CANCEL,
+    NONE = 0,
+    KEEP_PARTSTAT = 1,
+    RESET_PARTSTAT = 2,
+    UPDATE_PARTSTAT = 3,
+    CANCEL = 4,
 }
 
 export interface InvitationModel {

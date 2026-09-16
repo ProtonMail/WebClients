@@ -1,4 +1,5 @@
 import { serverTime } from '@protontech/crypto';
+
 import { HOUR } from '@proton/shared/lib/constants';
 
 import { KT_DOMAINS } from '../constants/constants';
@@ -11,9 +12,9 @@ const importCertificates = () =>
     );
 
 export enum KtFeatureEnum {
-    DISABLE,
-    ENABLE_CORE,
-    ENABLE_UI,
+    DISABLE = 0,
+    ENABLE_CORE = 1,
+    ENABLE_UI = 2,
 }
 
 export type KT_FF = KtFeatureEnum | undefined;

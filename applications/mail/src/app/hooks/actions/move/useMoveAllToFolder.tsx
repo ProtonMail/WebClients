@@ -36,8 +36,8 @@ import { useMailDispatch } from '../../../store/hooks';
 import { layoutActions } from '../../../store/layout/layoutSlice';
 
 export enum MoveAllType {
-    moveAll,
-    selectAll,
+    moveAll = 0,
+    selectAll = 1,
 }
 
 interface MoveAllParams {

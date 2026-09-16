@@ -26,8 +26,8 @@ interface Props {
 }
 
 enum ErrorType {
-    Expired,
-    API,
+    Expired = 0,
+    API = 1,
 }
 
 const VerifyEmailContainer = ({ onSubscribe }: Props) => {

@@ -5,8 +5,8 @@ import clsx from '@proton/utils/clsx';
 import './StepLabel.scss';
 
 enum StepLabelSize {
-    small,
-    large,
+    small = 0,
+    large = 1,
 }
 
 const getStep = (step: number) => {

@@ -32,9 +32,9 @@ import TrustPublicKeyModal from '../../modals/TrustPublicKeyModal';
 
 enum PROMPT_KEY_PINNING_TYPE {
     AUTOPROMPT = 1,
-    PIN_UNSEEN,
-    PIN_ATTACHED_SIGNING,
-    PIN_ATTACHED,
+    PIN_UNSEEN = 2,
+    PIN_ATTACHED_SIGNING = 3,
+    PIN_ATTACHED = 4,
 }
 
 interface Params {

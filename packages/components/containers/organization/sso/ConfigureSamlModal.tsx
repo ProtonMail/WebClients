@@ -34,14 +34,14 @@ import UploadedXmlFile from './UploadedXmlFile';
 import type { SsoAppInfo } from './ssoAppInfo';
 
 enum STEP {
-    IDP_VALUES,
-    SAML_METADATA,
+    IDP_VALUES = 0,
+    SAML_METADATA = 1,
 }
 
 enum METADATA_METHOD {
-    URL,
-    XML,
-    TEXT,
+    URL = 0,
+    XML = 1,
+    TEXT = 2,
 }
 
 interface MetadataState {

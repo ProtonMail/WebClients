@@ -11,9 +11,9 @@ export type ReducerValue<Returned> = {
 };
 
 export enum CacheType {
-    None,
-    Stale,
-    StaleRefetch,
+    None = 0,
+    Stale = 1,
+    StaleRefetch = 2,
 }
 
 export type ThunkOptions<T> = {

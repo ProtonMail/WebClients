@@ -34,9 +34,9 @@ import RegisterSecurityKeyContent from './RegisterSecurityKeyContent';
 import { maxSecurityKeyNameLength } from './constants';
 
 enum Steps {
-    Tutorial,
-    Name,
-    Ok,
+    Tutorial = 0,
+    Name = 1,
+    Ok = 2,
 }
 
 const RegisteredContent = () => {

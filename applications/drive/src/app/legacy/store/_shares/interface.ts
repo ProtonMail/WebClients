@@ -1,4 +1,5 @@
 import type { PublicKeyReference, SessionKey } from '@protontech/crypto';
+
 import type { SHARE_EXTERNAL_INVITATION_STATE, SHARE_MEMBER_STATE } from '@proton/shared/lib/drive/constants';
 import type { SHARE_MEMBER_PERMISSIONS, SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import type { LinkType } from '@proton/shared/lib/interfaces/drive/link';
@@ -17,18 +18,18 @@ export type ShareTypeStringWithPublic = ShareTypeString | 'shared_public';
 
 export enum ShareType {
     default = 1,
-    standard,
-    device,
-    photos,
+    standard = 2,
+    device = 3,
+    photos = 4,
 }
 
 export enum ShareState {
     active = 1,
-    deleted,
-    restored,
-    migrating,
-    migrated,
-    locked,
+    deleted = 2,
+    restored = 3,
+    migrating = 4,
+    migrated = 5,
+    locked = 6,
 }
 
 export interface Share {

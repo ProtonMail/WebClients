@@ -25,8 +25,8 @@ const Footer = () => {
 };
 
 enum ErrorType {
-    Expired,
-    API,
+    Expired = 0,
+    API = 1,
 }
 
 const DisableAccount = () => {
@@ -108,8 +108,8 @@ const DisableAccount = () => {
 };
 
 enum Step {
-    CONFIRM,
-    DISABLE_ACCOUNT,
+    CONFIRM = 0,
+    DISABLE_ACCOUNT = 1,
 }
 
 const DisableAccountContainer = () => {

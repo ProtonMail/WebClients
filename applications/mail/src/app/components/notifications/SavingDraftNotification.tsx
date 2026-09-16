@@ -7,8 +7,8 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 
 enum SavingStep {
-    saving,
-    sent,
+    saving = 0,
+    sent = 1,
 }
 
 interface Props {
