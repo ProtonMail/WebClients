@@ -6,7 +6,7 @@ import noop from '@proton/utils/noop';
 
 import { BackgroundTile } from './BackgroundTile';
 
-export interface BackgroundOptionRemoval {
+interface BackgroundOptionRemoval {
     label: string;
     /** Rejects while the background is still there, which is what keeps focus on it. */
     onRemove: () => Promise<void>;

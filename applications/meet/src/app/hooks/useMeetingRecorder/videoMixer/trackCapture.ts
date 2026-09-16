@@ -8,12 +8,12 @@ export interface TrackCapture {
     stop: () => void;
 }
 
-export const participantKeyFor = (trackInfo: RecordingTrackInfo): string => {
+const participantKeyFor = (trackInfo: RecordingTrackInfo): string => {
     const identity = trackInfo.participant?.identity || '';
     return trackInfo.isScreenShare ? screenShareKeyFor(identity) : identity;
 };
 
-export const startTrackCaptureWithProcessor = ({
+const startTrackCaptureWithProcessor = ({
     worker,
     mediaTrack,
     trackId,

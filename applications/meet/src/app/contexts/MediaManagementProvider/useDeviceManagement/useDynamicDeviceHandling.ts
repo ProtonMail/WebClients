@@ -34,7 +34,7 @@ export type DeviceDecision =
     | { type: 'switch'; deviceId: string; cause: DeviceSwitchCause }
     | { type: 'preferred-available'; deviceId: string };
 
-export const resolveDeviceDecision = ({
+const resolveDeviceDecision = ({
     kind,
     deviceList,
     activeDeviceId,

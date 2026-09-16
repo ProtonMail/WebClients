@@ -9,7 +9,7 @@ import './BackgroundTile.scss';
 export const BACKGROUND_TILE_CLASS =
     'background-tile relative overflow-hidden flex items-center justify-center w-full ratio-square border border-2 color-norm transition-all';
 
-export interface BackgroundRemoval {
+interface BackgroundRemoval {
     onRemove: () => void;
     label: string;
 }
