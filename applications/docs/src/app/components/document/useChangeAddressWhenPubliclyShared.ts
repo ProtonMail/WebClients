@@ -1,15 +1,15 @@
 import useAuthentication from '@proton/components/hooks/useAuthentication'
 import type { DocumentState, PublicDocumentState } from '@proton/docs-core'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
-import { generateNodeUid, getDrive } from '@proton/drive'
-import type { ShareResult } from '@proton/drive'
-import { isPrivateNodeMeta } from '@proton/drive-store/lib/NodeMeta'
 import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared'
+import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
+import type { ShareResult } from '@proton/drive'
+import { generateNodeUid, getDrive } from '@proton/drive'
+import { isPrivateNodeMeta } from '@proton/drive-store/lib/NodeMeta'
+import { addSentryBreadcrumb, SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
 import { useEffect, useRef } from 'react'
 import { useApplication } from '~/utils/application-context'
 import { useSharingModalDriveSdkEnabled } from '~/utils/flags'
-import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
-import { addSentryBreadcrumb, SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
 
 export function useChangeAddressWhenPubliclyShared(
   nodeMeta: NodeMeta | PublicNodeMeta,
@@ -119,7 +119,7 @@ export function reportChangeAddressError(error: any, breadcrumb: Record<string, 
 }
 
 // We are transitioning from toggle OFF to ON
-export function getPublicURL(publicLinkUrl: string) {
+function getPublicURL(publicLinkUrl: string) {
   // Example: /doc?mode=open&volumeId=ZXC&linkId=BAR
   const currentLocation = new URL(window.location.href)
   const locationParameters = new URLSearchParams(currentLocation.search)
@@ -139,7 +139,7 @@ export function getPublicURL(publicLinkUrl: string) {
   return result
 }
 
-export function getToken(pathname: string) {
+function getToken(pathname: string) {
   const token = pathname.split('/').pop()
   if (!token) {
     throw new Error('Failed to extract token from current URL')
@@ -148,7 +148,7 @@ export function getToken(pathname: string) {
 }
 
 // We are transitioning from toggle ON to OFF
-export function getPrivateURL(volumeId: string, linkId: string) {
+function getPrivateURL(volumeId: string, linkId: string) {
   const currentLocation = new URL(window.location.href)
   // Output should be /doc?mode=open&volumeId=ZXC&linkId=BAR
   const result = new URL(currentLocation.origin)

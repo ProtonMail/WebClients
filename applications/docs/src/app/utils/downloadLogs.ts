@@ -68,7 +68,7 @@ const downloadIndividualFiles = async (logsData: LogsData, documentType: Documen
 /**
  * Downloads the provided logs data as a ZIP file using dynamically imported JSZip
  */
-export const downloadLogsAsZip = async (logsData: LogsData, documentType: DocumentType) => {
+const downloadLogsAsZip = async (logsData: LogsData, documentType: DocumentType) => {
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
   const typeLabel = documentType === 'sheet' ? 'sheet' : 'document'
 

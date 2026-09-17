@@ -1,11 +1,11 @@
 import { useNotifications } from '@proton/app-context/useNotifications'
+import { Button } from '@proton/atoms/Button/Button'
+import BasicModal from '@proton/components/components/modalTwo/BasicModal'
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState'
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo'
-import BasicModal from '@proton/components/components/modalTwo/BasicModal'
+import type { DocumentType } from '@proton/docs-shared'
 import { useState } from 'react'
 import { c } from 'ttag'
-import { Button } from '@proton/atoms/Button/Button'
-import type { DocumentType } from '@proton/docs-shared'
 import { useQuickReportModal } from '~/components/QuickReportModal'
 
 interface DriftDetectionErrorModalProps extends ModalStateProps {
@@ -13,7 +13,7 @@ interface DriftDetectionErrorModalProps extends ModalStateProps {
   documentType: DocumentType
 }
 
-export function DriftDetectionErrorModal({
+function DriftDetectionErrorModal({
   open,
   onClose,
   getDebugInfoFile,

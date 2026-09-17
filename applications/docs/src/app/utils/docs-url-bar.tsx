@@ -1,15 +1,15 @@
 import useAuthentication from '@proton/components/hooks/useAuthentication'
-import { createContext, useCallback, useContext, useMemo, useState, useEffect } from 'react'
-import { APPS } from '@proton/shared/lib/constants'
+import type { DocumentAction, DocumentType } from '@proton/docs-shared'
+import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
+import type { RedirectAction } from '@proton/drive-store/store/_documents'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
-import type { DocumentAction, DocumentType } from '@proton/docs-shared'
-import type { RedirectAction } from '@proton/drive-store/store/_documents'
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
+import { APPS } from '@proton/shared/lib/constants'
+import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { useLocation } from 'react-router-dom-v5-compat'
 import { useIsSheetsEnabled } from './flags'
-import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
-import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 
 const DocsUrlContext = createContext<{
   searchParams: URLSearchParams
@@ -176,7 +176,7 @@ export function useDocsUrlBar() {
   return value
 }
 
-export const SHEET_EDITOR_PATH = '/sheet'
+const SHEET_EDITOR_PATH = '/sheet'
 export const DOCUMENT_EDITOR_PATH = '/doc'
 export const DOCUMENT_NEW_PATH = '/new'
 export const DOCUMENT_CREATION_PATHS = [DOCUMENT_EDITOR_PATH, SHEET_EDITOR_PATH, DOCUMENT_NEW_PATH]
