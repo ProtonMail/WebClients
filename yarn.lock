@@ -10303,6 +10303,7 @@ __metadata:
     react: "npm:^18.3.1"
     react-test-renderer: "npm:^18.3.1"
     typescript: "npm:^6.0.3"
+    vitest: "npm:^4.1.11"
   languageName: unknown
   linkType: soft
 
@@ -10390,6 +10391,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/calendar@workspace:packages/calendar"
   dependencies:
+    "@jackfranklin/test-data-bot": "npm:^2.1.0"
     "@proton/account": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/jest-env": "workspace:^"
@@ -11881,7 +11883,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/testing@workspace:packages/testing"
   dependencies:
-    "@jackfranklin/test-data-bot": "npm:^2.1.0"
     "@proton/sieve": "workspace:^"
     "@proton/test-api": "workspace:^"
     eslint: "npm:^10.10.0"
