@@ -1,10 +1,10 @@
 import { renderHook } from '@testing-library/react-hooks';
 
+import { mockUseUser } from '@proton/account/testing/mockUseUser';
+import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
 import { MAILBOX_LABEL_IDS as IDS } from '@proton/shared/lib/constants';
 import { LABEL_IDS_TO_HUMAN as TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { mockUseFeature } from '@proton/testing/lib/mockUseFeature';
-import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
-import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
 import useAutoDeleteBanner from './useAutodeleteBanner';
 

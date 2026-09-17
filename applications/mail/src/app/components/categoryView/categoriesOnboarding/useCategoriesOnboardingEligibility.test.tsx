@@ -1,5 +1,7 @@
 import { renderHook } from '@testing-library/react';
 
+import { mockUseOrganization } from '@proton/account/testing/mockUseOrganization';
+import { mockUseUser } from '@proton/account/testing/mockUseUser';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
@@ -8,12 +10,10 @@ import {
     CategoriesOnboardingFlags,
     FeatureValueDefault,
 } from '@proton/mail/features/categoriesView/categoriesOnboarding';
+import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
 import { PLANS } from '@proton/payments/core/constants';
 import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
-import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
-import { mockUseOrganization } from '@proton/testing/lib/mockUseOrganization';
-import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
 import { useGetStartedChecklist } from '../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { useMailboxCounter } from '../../../hooks/mailboxCounter/useMailboxCounter';
