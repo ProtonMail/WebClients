@@ -77,6 +77,7 @@ export const FilePreviewAssistant = ({ config, onClose }: Props) => {
                     serverToolMeta={config.serverToolMeta}
                     onSend={send}
                     onStop={stop}
+                    onClose={onClose}
                     onConfirm={confirm}
                     onCancel={cancel}
                     onResume={resume}

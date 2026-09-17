@@ -9,6 +9,8 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKeyboardShortcutsWithAppName } from '@proton/shared/lib/shortcuts/i18n';
 import { getShortcuts } from '@proton/shared/lib/shortcuts/mail';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import Field from '../../components/container/Field';
@@ -28,6 +30,7 @@ import './MailShortcutsModal.scss';
 const MailShortCutsModal = (props: ModalProps) => {
     const title = getKeyboardShortcutsWithAppName(MAIL_APP_NAME);
     const [mailSettings] = useMailSettings();
+    const isLumoInMailEnabled = useFlag(MailFeatureFlag.LumoInMail);
 
     const { activeCategoriesTabs } = useCategoriesData();
     const categoriesShortcuts = activeCategoriesTabs.map((tab) => {
@@ -37,7 +40,7 @@ const MailShortCutsModal = (props: ModalProps) => {
         };
     });
 
-    const mailShortcuts = getShortcuts(categoriesShortcuts);
+    const mailShortcuts = getShortcuts(categoriesShortcuts, { lumoEnabled: isLumoInMailEnabled });
     const alwaysOnSections = mailShortcuts.filter((section) => section.alwaysActive);
     const shortcutEnabledSections = mailShortcuts.filter((section) => !section.alwaysActive);
 
