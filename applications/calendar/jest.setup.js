@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom';
 
-import '@proton/testing/lib/mockFlagSvg';
-import '@proton/testing/lib/mockMatchMedia';
-import '@proton/testing/lib/mockUnleash';
+import '@proton/components/testing/mockFlagSvg';
+import '@proton/components/testing/mockMatchMedia';
+import '@proton/unleash/testing/mockUnleash';
 
 const { getComputedStyle } = window;
 
