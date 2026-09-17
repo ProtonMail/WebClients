@@ -2811,32 +2811,6 @@
         "Nettadresse"
       ]
     },
-    "Contact type label": {
-      "Fax": [
-        "Faks"
-      ],
-      "Main": [
-        "Hoved"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Other": [
-        "Annet"
-      ],
-      "Pager": [
-        "Personsøker"
-      ],
-      "Personal": [
-        "Personlig"
-      ],
-      "Work": [
-        "Arbeid"
-      ],
-      "Yomi": [
-        "Yomi"
-      ]
-    },
     "CountriesStep:Info": {
       "${ selectedCitiesCount } cities selected": [
         "${ selectedCitiesCount } by valgt",
@@ -5215,9 +5189,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Feil andre passord. Prøv på nytt."
-      ],
-      "Incorrect username": [
-        "Uriktig brukernavn"
       ],
       "Invalid code": [
         "Ugyldig kode"
@@ -10045,7 +10016,7 @@
         "Vi sender en tilbakestillingskode til ${ boldValue }."
       ],
       "When enabled, members cannot opt out of password check-ins in their own settings.": [
-        "Når dette er aktivert, kan ikke medlemmer velge bort passordinnsjekkinger i sine egne innstillinger."
+        "Når dette er aktivert, kan ikke medlemmer velge bort sjekking av passord i sine egne innstillinger."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Når du aktiverer SAML for ${ appName } i identitetsleverandøren, kan du bli bedt om å bruke URL-adressen for tilbakeringing (ACS) og utsteder-ID. Bare kopier og lim inn dataene nedenfor i identitetsleverandørfeltene dine."
@@ -14096,7 +14067,7 @@
         "Tilbakestilling av organisasjonsnøkkel"
       ],
       "Ready to reset your organization key?": [
-        "Er du klar til å tilbakestille organisasjonsnøkkelen din?"
+        "Er du klar til å tilbakestille organisasjonsnøkkelen?"
       ],
       "Reset key": [
         "Nullstill nøkkel"
@@ -14158,7 +14129,7 @@
         "Brukere (${ n })"
       ],
       "You can reset your organization key to restore your administrator privileges. Then, you'll be able to create non-private users and access their accounts.": [
-        "Du kan tilbakestille organisasjonsnøkkelen for å gjenopprette administratorrettighetene dine. Deretter vil du kunne opprette ikke-private brukere og få tilgang til kontoene deres."
+        "Du kan tilbakestille organisasjonsnøkkelen for å gjenopprette administratorrettighetene. Deretter vil du kunne opprette ikke-private brukere og få tilgang til kontoene deres."
       ],
       "Your administrator privileges have been restored. You can now manage non-private users.": [
         "Administratorrettighetene dine er gjenopprettet. Du kan nå administrere ikke-private brukere."
@@ -15043,26 +15014,6 @@
       ],
       "Work": [
         "Arbeid"
-      ]
-    },
-    "Protection type": {
-      "Blocked": [
-        "Blokkert"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Device verification": [
-        "Enhetsverifisering"
-      ],
-      "Ok": [
-        "OK"
-      ],
-      "Ownership verification": [
-        "Bekreftelse av eierskap"
-      ],
-      "Unknown": [
-        "Ukjent"
       ]
     },
     "Provider option": {
@@ -19964,6 +19915,9 @@
       ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "Lagt til i planen din: ${ mergedAddonTitles }"
+      ],
+      "Admins can manage user accounts and give admin privileges to other users.": [
+        "Administratorer kan administrere brukerkontoer og tildele administratorrettigheter til andre brukere."
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorer kan administrere brukerkontoer og gi administratorrettigheter til andre brukere. Bare den primære administratoren kan redigere planen for organisasjonen."
