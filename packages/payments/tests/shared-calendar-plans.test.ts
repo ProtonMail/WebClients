@@ -1,7 +1,7 @@
+import { buildUser } from '@proton/account/testing/buildUser';
 import { CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import { getShouldCalendarPreventSubscripitionChange, planHasPaidMail } from '@proton/shared/lib/calendar/plans';
 import { PLANS } from '@proton/shared/lib/payments/constants';
-import { buildUser } from '@proton/testing/builders/user';
 import noop from '@proton/utils/noop';
 
 import { getLongTestPlans } from '../testing/data-plans';

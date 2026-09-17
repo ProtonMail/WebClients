@@ -19,6 +19,7 @@ import {
     messageBuilder,
     veventBuilder,
 } from '@proton/calendar/testing/builders';
+import { getHandlers } from '@proton/calendar/testing/handlers';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
@@ -34,7 +35,6 @@ import type { Nullable, UserSettings } from '@proton/shared/lib/interfaces';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { mockApiWithServer } from '@proton/test-api/mockApiWithServer';
-import { getHandlers } from '@proton/testing/lib/handlers';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { authentication, getStoreWrapper, tick } from '../../../../../helpers/tests/render';

@@ -75,7 +75,8 @@
         "./testing/mockUseLabels": "./testing/mockUseLabels.ts",
         "./testing/mockUseCategoriesData": "./testing/mockUseCategoriesData.ts",
         "./testing/buildFolder": "./testing/buildFolder.ts",
-        "./testing/buildLabel": "./testing/buildLabel.ts"
+        "./testing/buildLabel": "./testing/buildLabel.ts",
+        "./testing/buildFilter": "./testing/buildFilter.ts"
     },
     "scripts": {
         "check-types": "tsc",

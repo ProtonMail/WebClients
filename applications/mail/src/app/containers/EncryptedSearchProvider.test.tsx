@@ -2,7 +2,7 @@ import { screen, waitFor } from '@testing-library/react';
 
 import * as esIDB from '@proton/encrypted-search/esIDB';
 import { useIndexedDBSupport } from '@proton/encrypted-search/useIndexedDBSupport';
-import { mockUseFlag } from '@proton/testing/lib/mockUseFlag';
+import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
 
 import { deferred } from '../contentSearch/integration/testFakes';
 import { mailTestRender } from '../helpers/tests/render';

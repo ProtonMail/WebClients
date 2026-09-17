@@ -1,9 +1,9 @@
 import { fireEvent, render } from '@testing-library/react';
 
+import { mockUseApi } from '@proton/app-context/testing/mockUseApi';
 import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
 import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
 import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
-import { mockUseApi } from '@proton/testing/lib/mockUseApi';
 
 import { applyHOCs } from '../../testing/hocs/helpers';
 import { withApi } from '../../testing/hocs/with-api';
