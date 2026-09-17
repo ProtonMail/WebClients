@@ -3,11 +3,13 @@ import { createSelector } from '@reduxjs/toolkit';
 import orderBy from '@proton/utils/orderBy';
 
 import { ApiImporterError, ApiImporterState } from '../../api/api.interface';
+import { ImportType } from '../../interface';
 import type { EasySwitchState } from '../store';
 import type { ActiveImportID, ActiveImporter, ActiveImportersMap, ImportersMap } from './importers.interface';
 
 const selectImportersMap = (state: EasySwitchState): ImportersMap => state.importers.importers;
 const selectActiveImportersMap = (state: EasySwitchState): ActiveImportersMap => state.importers.activeImporters;
+const selectImportersLoading = (state: EasySwitchState) => state.importers.loading;
 
 const selectActiveImporters = createSelector(selectActiveImportersMap, (activeImportersMap): ActiveImporter[] =>
     Object.values(activeImportersMap)
@@ -70,4 +72,34 @@ export const selectActiveImportersErrors = createSelector(
 
         return { importErrors, delayedImportAccounts };
     }
+);
+
+// TODO: ApiImporterState.PAUSED is not yet implemented by BE for Drive.
+// TODO: Check if we need to implement something for ApiImporterState.CANCELED
+const DRIVE_IMPORT_RUNNING_STATES = [ApiImporterState.QUEUED, ApiImporterState.RUNNING, ApiImporterState.DELAYED];
+
+const selectHasDriveImporter = createSelector(selectImportersMap, (importersMap): boolean =>
+    Object.values(importersMap).some((importer) => importer.products.includes(ImportType.DRIVE))
+);
+
+const selectIsDriveImportRunning = createSelector(selectActiveImporters, (activeImporters): boolean =>
+    activeImporters.some(
+        ({ product, importState }) => product === ImportType.DRIVE && DRIVE_IMPORT_RUNNING_STATES.includes(importState)
+    )
+);
+
+export interface DriveImportStatus {
+    /** False until loadImporters resolved once, so callers can tell "not known yet" apart from "nothing imported". */
+    isLoaded: boolean;
+    isImporting: boolean;
+    hasCompletedImport: boolean;
+}
+
+export const selectDriveImportStatus = createSelector(
+    [selectHasDriveImporter, selectIsDriveImportRunning, selectImportersLoading],
+    (hasDriveImporter, isImporting, loading): DriveImportStatus => ({
+        isLoaded: loading === 'success' || loading === 'failed',
+        isImporting,
+        hasCompletedImport: hasDriveImporter && !isImporting,
+    })
 );
