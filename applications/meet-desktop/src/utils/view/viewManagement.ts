@@ -1,6 +1,15 @@
-import { BrowserWindow, Event, Rectangle, WebContents, WebContentsView, app, nativeTheme } from "electron";
+import { APPS, APPS_CONFIGURATION } from "@proton/shared/lib/constants";
+import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
+import { ThemeTypes } from "@proton/shared/lib/themes/constants";
+import { PROTON_THEMES_MAP } from "@proton/shared/lib/themes/themes";
+import { app, BrowserWindow, Event, nativeTheme, Rectangle, WebContents, WebContentsView } from "electron";
 import { debounce } from "lodash";
+import { join } from "node:path";
+import { c } from "ttag";
+import { DEFAULT_ZOOM_FACTOR, ZOOM_FACTOR_LIST, ZoomFactor } from "../../constants/zoom";
+import { getAppURL, URLConfig } from "../../store/urlStore";
 import { updateDownloaded } from "../../update";
+import { confirmQuitWithActiveDownloads } from "../downloads";
 import { isLinux, isMac, isWindows } from "../helpers";
 import { checkKeys } from "../keyPinning";
 import { mainLogger, sanitizeUrlForLogging, viewLogger } from "../log";
@@ -15,19 +24,10 @@ import {
     trimLocalID,
 } from "../urls/urlTests";
 import { getWindowConfig } from "../view/windowHelpers";
-import { confirmQuitWithActiveDownloads } from "../downloads";
 import { handleBeforeHandle } from "./dialogs";
+import { MenuBarMonitor } from "./MenuBarMonitor";
 import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
 import { handleBeforeInput } from "./windowShortcuts";
-import { getAppURL, URLConfig } from "../../store/urlStore";
-import { join } from "node:path";
-import { c } from "ttag";
-import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
-import { APPS, APPS_CONFIGURATION } from "@proton/shared/lib/constants";
-import { MenuBarMonitor } from "./MenuBarMonitor";
-import { PROTON_THEMES_MAP } from "@proton/shared/lib/themes/themes";
-import { ThemeTypes } from "@proton/shared/lib/themes/constants";
-import { DEFAULT_ZOOM_FACTOR, ZOOM_FACTOR_LIST, ZoomFactor } from "../../constants/zoom";
 
 type ViewID = keyof URLConfig;
 
@@ -281,7 +281,7 @@ export async function showView(viewID: ViewID, url: string = "") {
     }
 }
 
-export async function loadURL(viewID: ViewID, url: string, { force } = { force: false }) {
+async function loadURL(viewID: ViewID, url: string, { force } = { force: false }) {
     if (!url) {
         viewLogger(viewID).warn("trying to load empty URL, skipping");
         return;
@@ -482,7 +482,7 @@ export function getZoom() {
     return DEFAULT_ZOOM_FACTOR;
 }
 
-export function setZoom(zoomFactor: ZoomFactor) {
+function setZoom(zoomFactor: ZoomFactor) {
     for (const view of Object.values(viewMap)) {
         view?.webContents.setZoomFactor(zoomFactor);
     }
