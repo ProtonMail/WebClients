@@ -18,6 +18,7 @@ import { setLocationReadDefinition } from './skills/organise/setLocationRead';
 import { setReadDefinition } from './skills/organise/setRead';
 import { setStarredDefinition } from './skills/organise/setStarred';
 import { snoozeEmailsDefinition } from './skills/organise/snoozeEmails';
+import { updateContactDefinition } from './skills/organise/updateContact';
 import { findContactsDefinition } from './skills/reads/findContacts';
 import { listFiltersDefinition } from './skills/reads/listFilters';
 import { listFoldersDefinition } from './skills/reads/listFolders';
@@ -189,6 +190,10 @@ const TOOL_PAYLOADS = [
     payloads(addContactDefinition, [
         { reference: 'contact-k9d2s1', name: 'Ada Lovelace', email: 'ada@example.com' },
         { name: 'Ada Lovelace' },
+    ]),
+    payloads(updateContactDefinition, [
+        { reference: 'contact-k9d2s1', name: 'Ada Lovelace', email: 'ada@newdomain.com' },
+        { name: 'Augusta Ada King' },
     ]),
     payloads(createFilterDefinition, [{ reference: 'filter-q1w2e3', name: 'Travel' }]),
     payloads(updateFilterDefinition, [undefined]),
