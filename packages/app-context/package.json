@@ -15,7 +15,9 @@
         "./useApi": "./useApi.ts",
         "./useCache": "./useCache.ts",
         "./useConfig": "./useConfig.ts",
-        "./useNotifications": "./useNotifications.ts"
+        "./useNotifications": "./useNotifications.ts",
+        "./testing/mockUseNotifications": "./testing/mockUseNotifications.ts",
+        "./testing/vitest/mockUseNotifications": "./testing/vitest/mockUseNotifications.ts"
     },
     "scripts": {
         "check-types": "tsc",
@@ -40,6 +42,7 @@
         "jest": "^30.5.1",
         "jest-environment-jsdom": "^30.5.1",
         "react-test-renderer": "^18.3.1",
-        "typescript": "^6.0.3"
+        "typescript": "^6.0.3",
+        "vitest": "^4.1.11"
     }
 }
