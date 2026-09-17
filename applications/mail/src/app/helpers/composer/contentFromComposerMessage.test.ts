@@ -1,10 +1,10 @@
+import { buildAddress } from '@proton/account/testing/buildAddress';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { DRAFT_MIME_TYPES } from '@proton/shared/lib/mail/mailSettings';
-import { buildAddress } from '@proton/testing/builders/address';
 
 import { locateBlockquote } from '../message/messageBlockquote';
 import { createNewDraft } from '../message/messageDraft';

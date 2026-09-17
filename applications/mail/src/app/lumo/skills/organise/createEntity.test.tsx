@@ -1,11 +1,11 @@
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ActionRequest, ReferenceRegistry } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
+import { buildFolder } from '@proton/mail/testing/buildFolder';
+import { buildLabel } from '@proton/mail/testing/buildLabel';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
-import { buildFolder } from '@proton/testing/builders/folder';
-import { buildLabel } from '@proton/testing/builders/label';
 
 import type { MailToolDeps } from '../../toolModule';
 import type { CreatedEntityResult } from './createEntity';

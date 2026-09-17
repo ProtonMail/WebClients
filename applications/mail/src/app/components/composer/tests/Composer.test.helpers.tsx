@@ -3,10 +3,10 @@ import type { MutableRefObject } from 'react';
 import type { RenderResult } from '@testing-library/react';
 import { fireEvent } from '@testing-library/react';
 
+import { mockDefaultBreakpoints } from '@proton/components/testing/mockUseActiveBreakpoint';
 import type { MessageStateWithData, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
 import type { DraftBodyWriterManager } from '../../../containers/DraftBodyWriterProvider';
 import { DraftBodyWriterProvider, useDraftBodyWriters } from '../../../containers/DraftBodyWriterProvider';
