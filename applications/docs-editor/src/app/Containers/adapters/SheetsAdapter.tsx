@@ -13,6 +13,7 @@ import {
   SheetsDependenciesProvider,
   type SheetsDependencies,
   type SheetsEditorToShellActions,
+  type SheetsLogger,
   type SheetsSession,
   type SheetsShellToEditorActions,
 } from '../Spreadsheet/public'
@@ -35,6 +36,7 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
   const role = application.getRole()
   const canEdit = role.canEdit()
   const canTrash = role.canTrash()
+  const logger: SheetsLogger = application.logger
 
   const shellToEditorActions = useMemo<SheetsShellToEditorActions>(
     () => ({
@@ -93,7 +95,7 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
         environment: application.environment,
         version: application.appVersion,
       },
-      logger: application.logger,
+      logger,
       appPlatform,
       theme,
     }),
@@ -101,9 +103,9 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
       appPlatform,
       application.appVersion,
       application.environment,
-      application.logger,
       canEdit,
       canTrash,
+      logger,
       theme,
       receivedEverythingFromRTS,
       userName,
