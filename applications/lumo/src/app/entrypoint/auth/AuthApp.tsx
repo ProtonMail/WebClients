@@ -13,7 +13,7 @@ import {
     StandardPrivateApp,
 } from '@proton/components';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
-import metrics from '@proton/metrics/index';
+import metrics from '@proton/metrics';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { newVersionUpdater } from '@proton/shared/lib/busy';

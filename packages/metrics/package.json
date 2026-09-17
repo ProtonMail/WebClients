@@ -2,6 +2,11 @@
     "name": "@proton/metrics",
     "description": "Metrics library",
     "sideEffects": false,
+    "exports": {
+        ".": "./index.ts",
+        "./observeApiError": "./lib/observeApiError.ts",
+        "./types/*": "./types/*.d.ts"
+    },
     "scripts": {
         "check-types": "tsc",
         "generate-metrics": "ts-node -P scripts/tsconfig.metrics-scripts.json ./scripts/generate-metrics.ts",
