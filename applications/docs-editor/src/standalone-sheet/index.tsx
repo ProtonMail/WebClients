@@ -10,7 +10,7 @@ import {
 } from '../app/Containers/Spreadsheet/public'
 import { ThemeStyles } from '../app/Theme'
 import { EditorThemeProvider, useEditorTheme } from '../app/Theme/EditorThemeProvider'
-import { createStandaloneSession, standaloneLogger } from './session'
+import { createStandaloneSession } from './session'
 
 document.title = 'Standalone Sheet'
 
@@ -50,7 +50,11 @@ function StandaloneSheet() {
       canTrash: false,
       isDevOrBlack: () => true,
       versionInfo: { environment: undefined, version: 'standalone' },
-      logger: standaloneLogger,
+      logger: {
+        info: console.info.bind(console),
+        warn: console.warn.bind(console),
+        error: console.error.bind(console),
+      },
       appPlatform: null,
       theme,
       subscribeToSheetImport: () => () => {},
@@ -94,7 +98,7 @@ function StandaloneSheet() {
     [session, publishError],
   )
   const updateLocalStateToLog = useCallback((state: unknown) => {
-    standaloneLogger.debug('Workbook state', state as object)
+    console.info('Workbook state', state)
   }, [])
   return (
     <>
