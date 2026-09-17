@@ -1,7 +1,7 @@
 import { Suspense, lazy, useState } from 'react';
 
 import * as bootstrap from '@proton/account/bootstrap';
-import { createAuthentication, createUnleash, init } from '@proton/account/bootstrap';
+import { createAuthentication, createUnauthenticatedApi, createUnleash, init } from '@proton/account/bootstrap';
 import {
     ApiProvider,
     AuthenticationProvider,
@@ -21,7 +21,6 @@ import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
 import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
 import { locales as sharedLocales } from '@proton/shared/lib/i18n/locales';
 import { telemetry } from '@proton/shared/lib/telemetry';
-import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import { FlagProvider } from '@proton/unleash/proxy';
 import noop from '@proton/utils/noop';
 

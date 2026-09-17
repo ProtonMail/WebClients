@@ -2,6 +2,7 @@ import { readAccountSessions } from '@proton/account/accountSessions/storage';
 import {
     createAuthentication,
     createHistory,
+    createUnauthenticatedApi,
     createUnleash,
     init,
     loadCrypto,
@@ -13,7 +14,6 @@ import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafa
 import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
 import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
 import { locales as sharedLocales } from '@proton/shared/lib/i18n/locales';
-import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import noop from '@proton/utils/noop';
 
 import config from '../../../config';
