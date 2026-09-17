@@ -1347,6 +1347,15 @@
       ],
       "Add a payment method": [
         "Zahlungsmethode hinzufügen"
+      ],
+      "Connect": [
+        "Verbinden"
+      ],
+      "Ignore": [
+        "Ignorieren"
+      ],
+      "Sign in with Google": [
+        "Mit Google Konto anmelden"
       ]
     },
     "Action: Docs": {
@@ -7925,6 +7934,45 @@
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "${ timeRemaining } verbleiben für deine Testversion. ${ addPaymentMethodLink }, um dein Abonnement fortzusetzen. ${ learnMoreLink }"
+      ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Beim Importieren deiner Daten ist ein unerwarteter Fehler aufgetreten. Bitte versuche es später erneut."
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "Verbindung zu Google Drive herstellen, um den sicheren Import nach ${ DRIVE_APP_NAME } einzurichten."
+      ],
+      "Email you once import is finished": [
+        "Wir senden dir eine E-Mail, sobald der Import abgeschlossen ist."
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "Damit der Import funktioniert, musst du alle gewünschten Einträge auswählen, wie im obigen GIF gezeigt."
+      ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Als Nächstes musst du dich bei deinem Google-Konto anmelden und ${ BRAND_NAME } Zugriff auf deine Daten gewähren."
+      ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Bitte upgraden, um sicherzustellen, dass der Import erfolgreich abgeschlossen wird."
+      ],
+      "Read once and encrypted on arrival": [
+        "Einmal gelesen und bei Erhalt verschlüsselt"
+      ],
+      "Sit back and we will let you know.": [
+        "Lehne dich zurück, wir halten dich auf dem Laufenden."
+      ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Wird ausschließlich dazu verwendet, sie nach ${ DRIVE_APP_NAME } zu kopieren."
+      ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "Wir unterstützen das Importieren von Fotos, Google Docs, Sheets und Slides nicht. Bitte stell sicher, dass dein Google Drive nicht leer ist."
+      ],
+      "We support most files": [
+        "Wir unterstützen die meisten Dateiformate"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Wir benachrichtigen dich per E-Mail, sobald der Import abgeschlossen ist. Nach Abschluss des Vorgangs findest du deinen Import in einem Ordner."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "Fotos, Google Docs und Sheets lassen sich nicht importieren"
       ]
     },
     "info": {
@@ -13229,6 +13277,9 @@
       ],
       "Your videos will appear here": [
         "Deine Videos werden hier angezeigt"
+      ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Wir lesen deine Dateien einmal, um sie zu kopieren, und verschlüsseln sie anschließend jeweils mit deinen ${ BRAND_NAME }-Schlüsseln."
       ]
     },
     "Success": {
@@ -14652,6 +14703,30 @@
       ],
       "September Sale": [
         "September-Sonderverkauf"
+      ],
+      "Connect your Google account": [
+        "Dein Google-Konto verbinden"
+      ],
+      "Easy switch": [
+        "Easy Switch"
+      ],
+      "Import started, but your storage won't be enough for this import": [
+        "Der Import wurde gestartet, aber dein Speicherplatz reicht für diesen Import nicht aus."
+      ],
+      "Setting up your import": [
+        "Dein Import wird eingerichtet"
+      ],
+      "Sign in to Google": [
+        "Bei Google anmelden"
+      ],
+      "Something went wrong": [
+        "Etwas ist schiefgelaufen"
+      ],
+      "We could not find anything to import": [
+        "Wir konnten nichts zum Importieren finden"
+      ],
+      "Your import is starting": [
+        "Dein Datenimport wird gestartet"
       ]
     },
     "Today icon tooltip in mini calendar": {

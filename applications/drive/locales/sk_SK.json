@@ -1367,6 +1367,15 @@
       ],
       "Add a payment method": [
         "Pridať spôsob platby"
+      ],
+      "Connect": [
+        "Pripojiť"
+      ],
+      "Ignore": [
+        "Ignorovať"
+      ],
+      "Sign in with Google": [
+        "Zaregistrovať sa cez Google"
       ]
     },
     "Action: Docs": {
@@ -8179,6 +8188,45 @@
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "Zostáva vám ${ timeRemaining } skúšobnej doby. Kliknite na ${ addPaymentMethodLink }, ak si chcete predplatné zachovať. ${ learnMoreLink }"
+      ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Pri importe vašich údajov došlo k neočakávanej chybe. Skúste to neskôr, prosím."
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "Pripájanie ku Google Drive na nastavenie bezpečného importu do aplikácie ${ DRIVE_APP_NAME }."
+      ],
+      "Email you once import is finished": [
+        "Po dokončení importu vám pošleme email"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "Aby import fungoval, musíte vybrať všetky požadované položky, ako je znázornené na GIF obrázku vyššie."
+      ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Ďalej sa potrebujete prihlásiť k svojmu účtu Google a udeliť ${ BRAND_NAME } prístup k vašim dátam."
+      ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Pre úspešné dokončenie importu zvýšte úroveň svojho plánu, prosím."
+      ],
+      "Read once and encrypted on arrival": [
+        "Prečíta sa raz a pri doručení sa zašifruje"
+      ],
+      "Sit back and we will let you know.": [
+        "Len si pohodlne sadnite a my vám dáme vedieť."
+      ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Používa sa výlučne na ich skopírovanie do ${ DRIVE_APP_NAME }."
+      ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "Nepodporujeme import fotografií, Google Docs, Sheets a Slides. Uistite sa, prosím, že váš Google Drive nie je prázdny."
+      ],
+      "We support most files": [
+        "Podporujeme väčšinu súborov"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Akonáhle bude import dokončený, pošleme vám email. Po dokončení nájdete svoj import v priečinku."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "Neimportujú sa fotografie, dokumenty z Google Docs a Sheets"
       ]
     },
     "info": {
@@ -13574,6 +13622,9 @@
       ],
       "Your videos will appear here": [
         "Tu sa zobrazia vaše videá"
+      ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Vaše súbory najprv prečítame, aby sme ich skopírovali, a potom každý z nich zašifrujeme pomocou vašich kľúčov ${ BRAND_NAME }."
       ]
     },
     "Success": {
@@ -15040,6 +15091,30 @@
       ],
       "September Sale": [
         "Septembrová zľava"
+      ],
+      "Connect your Google account": [
+        "Pripojte váš Google účet"
+      ],
+      "Easy switch": [
+        "Easy switch"
+      ],
+      "Import started, but your storage won't be enough for this import": [
+        "Import sa začal, ale váš úložný priestor na tento import nebude stačiť"
+      ],
+      "Setting up your import": [
+        "Nastavujeme váš import"
+      ],
+      "Sign in to Google": [
+        "Prihlásiť sa do Google"
+      ],
+      "Something went wrong": [
+        "Niečo sa pokazilo"
+      ],
+      "We could not find anything to import": [
+        "Nenašli sme nič, čo by sa dalo importovať"
+      ],
+      "Your import is starting": [
+        "Váš import sa začal"
       ]
     },
     "Today icon tooltip in mini calendar": {
