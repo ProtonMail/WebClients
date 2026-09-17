@@ -1,11 +1,11 @@
-import { app, dialog } from "electron";
-import { flush as sentryFlush } from "@sentry/electron/main";
-import { c } from "ttag";
-import { mainLogger } from "./index";
 import { MAIL_APP_NAME } from "@proton/shared/lib/constants";
-import { quitTracker } from "./quitTracker";
-import { sentryReport } from "../sentryReport";
+import { flush as sentryFlush } from "@sentry/electron/main";
+import { app, dialog } from "electron";
+import { c } from "ttag";
 import { shouldReportAssetIssue } from "../../constants/resources";
+import { sentryReport } from "../sentryReport";
+import { mainLogger } from "./index";
+import { quitTracker } from "./quitTracker";
 
 let isExiting = false;
 
@@ -19,7 +19,7 @@ let unhandledRejectionReportsSent = 0;
 // Shape of rejections from webContents loadURL/loadFile.
 export type ChromiumLoadError = Error & { errno: number; code: string; url: string };
 
-export function isChromiumLoadError(reason: unknown): reason is ChromiumLoadError {
+function isChromiumLoadError(reason: unknown): reason is ChromiumLoadError {
     return (
         reason instanceof Error &&
         typeof (reason as Partial<ChromiumLoadError>).code === "string" &&
@@ -32,7 +32,7 @@ export function isChromiumLoadError(reason: unknown): reason is ChromiumLoadErro
 // title Sentry will open a new issue for each unique path.
 export type NodeSyscallError = Error & { code: string; syscall: string; errno: number; path?: string };
 
-export function isNodeSyscallError(reason: unknown): reason is NodeSyscallError {
+function isNodeSyscallError(reason: unknown): reason is NodeSyscallError {
     return (
         reason instanceof Error &&
         typeof (reason as Partial<NodeSyscallError>).code === "string" &&

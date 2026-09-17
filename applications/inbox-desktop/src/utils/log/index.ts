@@ -1,22 +1,22 @@
+import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { app, WebContents } from "electron";
 import Logger, { Hook, LogMessage, Transport } from "electron-log";
-import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
-import { isAbsolute } from "node:path";
 import { createHash } from "node:crypto";
-import metrics from "../metrics";
-import { webRequestRouter } from "../electronSession/webRequestRouter";
+import { isAbsolute } from "node:path";
 import { getTrackedUID, setViewName } from "../electronSession/uidTracker";
+import { webRequestRouter } from "../electronSession/webRequestRouter";
+import metrics from "../metrics";
 
 if (process.env.NODE_ENV === "test") {
     Logger.transports.console.level = "error";
     Logger.transports.file.level = false;
 }
 
-export const NET_LOGGER_VIEW_PREFIX = "net/";
+const NET_LOGGER_VIEW_PREFIX = "net/";
 
 export const mainLogger = Logger.scope("main");
 export const ipcLogger = Logger.scope("ipc");
-export const netLogger = (viewID: CHANGE_VIEW_TARGET | null) =>
+const netLogger = (viewID: CHANGE_VIEW_TARGET | null) =>
     viewID ? Logger.scope(`${NET_LOGGER_VIEW_PREFIX}${viewID}`) : Logger.scope("net");
 export const settingsLogger = Logger.scope("settings");
 export const updateLogger = Logger.scope("update");
@@ -27,7 +27,6 @@ export const sentryLogger = Logger.scope("sentry");
 export const notificationLogger = Logger.scope("notification");
 export const flagManagerLogger = Logger.scope("flag-manager");
 export const networkLogger = Logger.scope("network");
-export const printLogger = Logger.scope("print");
 export const ioStreamLogger = Logger.scope("io-stream");
 export const profilerLogger = Logger.scope("profiler");
 export const webRequestRouterLogger = Logger.scope("web-request-router");

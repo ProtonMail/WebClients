@@ -86,7 +86,19 @@
                 "webpack.rules.ts"
             ],
             "project": ["src/**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "ignoreDependencies": [
+                "@electron-forge/maker-deb",
+                "@electron-forge/maker-dmg",
+                "@electron-forge/maker-rpm",
+                "@electron-forge/maker-squirrel",
+                "@electron-forge/maker-zip",
+                "@electron-forge/publisher-github",
+                "@vercel/webpack-asset-relocator-loader",
+                "css-loader",
+                "node-loader",
+                "style-loader",
+                "ts-loader"
+            ]
         },
         "applications/lumo": {
             "entry": [

@@ -1,6 +1,6 @@
 import { createHash, randomUUID } from "node:crypto";
-import { mainLogger } from "../utils/log";
 import { z } from "zod";
+import { mainLogger } from "../utils/log";
 import { SafeStore } from "./safeStore/safeStore";
 
 const store = new SafeStore<{ appID: AppID }>("id");
@@ -21,7 +21,7 @@ export const saveAppID = async () => {
     }
 };
 
-export const generateAppID = async () => {
+const generateAppID = async () => {
     const id = randomUUID();
     const hash = createHash("sha256").update(id).digest("hex");
     const distribution = parseInt(hash, 16) / Math.pow(2, 256);
