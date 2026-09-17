@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 
-export type DeviceType = 'microphone' | 'speaker' | 'camera';
+type DeviceType = 'microphone' | 'speaker' | 'camera';
 
 interface DeviceLoadingState {
     microphone: string | null;

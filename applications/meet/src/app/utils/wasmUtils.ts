@@ -11,10 +11,6 @@ import {
     emitWaitingRoomJoinRequest,
 } from '../wasm/waitingRoomCallbacks';
 
-export const loadWasmModule = async () => {
-    return import('@proton-meet/proton-meet-core');
-};
-
 declare global {
     interface Window {
         newGroupKeyEvent: {

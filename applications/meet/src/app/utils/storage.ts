@@ -10,11 +10,3 @@ export const getDisplayNameStorageKey = (guestMode: boolean, userId?: string): s
     }
     return getUserDisplayNameStorageKey(userId);
 };
-
-export const clearDisplayNameStorage = (guestMode: boolean, userId?: string) => {
-    if (guestMode || !userId) {
-        localStorage.removeItem(GUEST_DISPLAY_NAME_STORAGE_KEY);
-    } else {
-        localStorage.removeItem(getUserDisplayNameStorageKey(userId));
-    }
-};

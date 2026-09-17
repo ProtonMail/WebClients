@@ -20,7 +20,7 @@ const MEET_BACKGROUND_COLORS = [
     '#523a2e', // orange-minor-3
 ];
 
-export function roundRect(ctx: CanvasContext, x: number, y: number, width: number, height: number, radius: number) {
+function roundRect(ctx: CanvasContext, x: number, y: number, width: number, height: number, radius: number) {
     ctx.beginPath();
     ctx.moveTo(x + radius, y);
     ctx.lineTo(x + width - radius, y);

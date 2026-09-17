@@ -18,7 +18,7 @@ interface MicrophoneWithVolumeProps {
 
 const clipPathYValues = [3.5, 4.5, 5.5, 7, 8, 10];
 
-export const MicrophoneWithVolume = ({ size, volume }: MicrophoneWithVolumeProps) => {
+const MicrophoneWithVolume = ({ size, volume }: MicrophoneWithVolumeProps) => {
     const updatedVolume = volume < NORMAL_SPEAKING_MIN_THRESHOLD ? 0 : volume;
 
     const volumeIndicatorTop = updatedVolume / NORMAL_SPEAKING_THRESHOLD;

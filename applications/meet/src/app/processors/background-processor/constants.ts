@@ -138,8 +138,6 @@ export const buildFragmentShaderSource = (maxRadius: number): string => `#versio
     }
 `;
 
-export const FRAGMENT_SHADER_SOURCE = buildFragmentShaderSource(MASK_CLOSING_MAX_RADIUS);
-
 export const VERTICES = [
     -1,
     -1,

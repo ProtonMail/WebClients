@@ -1,4 +1,4 @@
-export interface ChunkStatsSnapshot {
+interface ChunkStatsSnapshot {
     chunkCount: number;
     emptyChunkCount: number;
     firstChunkAt: number | null;
