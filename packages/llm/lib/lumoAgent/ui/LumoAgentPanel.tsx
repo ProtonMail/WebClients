@@ -16,6 +16,8 @@ import {
     renderReplyMarkdown,
     sentenceValue,
 } from '@proton/lumo-ui';
+import type { WelcomeSuggestionCard } from '@proton/lumo-ui/WelcomeSuggestions';
+import WelcomeSuggestions from '@proton/lumo-ui/WelcomeSuggestions';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import ResultTile from './ResultTile';
@@ -30,6 +32,8 @@ interface Props {
     toolLimit: ToolLimit | null;
     cardRenderers?: CardRenderers;
     serverToolMeta?: Partial<Record<ServerToolName, ServerToolMeta>>;
+    /** Empty-state cards. Absent for a product that wants none (e.g. Drive's file preview). */
+    suggestions?: WelcomeSuggestionCard[];
     thinkingLabel?: string;
     placeholder?: string;
     onSend: (text: string) => void;
@@ -59,6 +63,7 @@ const LumoAgentPanel = ({
     toolLimit,
     cardRenderers,
     serverToolMeta,
+    suggestions,
     thinkingLabel,
     placeholder,
     onSend,
@@ -73,6 +78,10 @@ const LumoAgentPanel = ({
     const scrollRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        // The empty state can overflow, so following the bottom would open the drawer past the first card.
+        if (items.length === 0) {
+            return;
+        }
         scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight });
     }, [items, isBusy]);
 
@@ -147,6 +156,7 @@ const LumoAgentPanel = ({
     return (
         <div className="lumo-agent-panel">
             <div ref={scrollRef} className="lumo-agent-transcript">
+                {suggestions && items.length === 0 && <WelcomeSuggestions cards={suggestions} onPick={onSend} />}
                 {items.map(renderItem)}
                 {isGenerating && <LumoThinking label={thinkingLabel} />}
                 {/* Idle Lumo mark beneath the latest turn, once a conversation exists (like lumo.proton.me). */}

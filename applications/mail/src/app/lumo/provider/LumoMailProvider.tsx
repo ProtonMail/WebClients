@@ -247,7 +247,12 @@ const LumoMailProvider = ({ children }: Props) => {
 
     return (
         <LumoAgentDrawerContext.Provider
-            value={{ ...conversation, cardRenderers: config.cardRenderers, serverToolMeta: config.serverToolMeta }}
+            value={{
+                ...conversation,
+                cardRenderers: config.cardRenderers,
+                serverToolMeta: config.serverToolMeta,
+                suggestions: config.suggestions,
+            }}
         >
             <EncryptedSearchStatusMirror into={esStatus} />
             {children}

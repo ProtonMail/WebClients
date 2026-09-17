@@ -350,6 +350,49 @@ $lumo-row-height: $lumo-row-line * 2 + $lumo-row-padding * 2;
 	color: var(--lumo-text-weak, var(--text-weak));
 }
 
+// The empty-state suggestion cards. The drawer is narrow, so they stack full-width in one column, each
+// re-proportioning the button atom from a centred single line into a glyph tile beside wrapping text.
+// The fill comes from the atom's own background variables rather than a `background` of our own, so the
+// hover and active states it already owns keep working.
+.button.lumo-welcome-card {
+	--button-default-background-color: var(--lumo-surface-soft, var(--background-weak));
+	--button-hover-background-color: var(--interaction-weak);
+
+	display: flex;
+
+	// The glyph tile centres on the card rather than topping out with the title: the cards are two and
+	// three lines tall, so a top-aligned tile reads as hanging off the corner of the taller ones.
+	align-items: center;
+	gap: rem(10);
+	padding: var(--space-3);
+	border-radius: var(--lumo-radius-card, var(--border-radius-lg));
+	text-align: start;
+	white-space: normal;
+
+	&__glyph {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		inline-size: rem(32);
+		block-size: rem(32);
+		border-radius: var(--border-radius-md);
+		background-color: var(--lumo-accent-tint, var(--interaction-norm-minor-2));
+		color: var(--lumo-accent, var(--interaction-norm));
+	}
+
+	// Without this the flex child refuses to shrink and a long description widens the whole card.
+	&__text {
+		min-inline-size: 0;
+	}
+
+	// Tighter than body text: the description is three lines on the longest card and reads as a block,
+	// set off the title by a hair so the two do not run together.
+	&__description {
+		margin-block-start: rem(2);
+		line-height: 1.35;
+	}
+}
+
 // Every animation must have a reduced-motion fallback that disables it.
 @media (prefers-reduced-motion: reduce) {
 	.lumo-thinking__text,
