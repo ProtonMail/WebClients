@@ -10,4 +10,5 @@ export default {
         'sort-package-json',
     ],
     'yarn.lock': 'yarn dedupe --strategy=highest',
+    'ci/bin/drive-release/drive-release': 'ci/bin/drive-release/check-binary-platform.sh',
 };
