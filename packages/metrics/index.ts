@@ -7,9 +7,6 @@ import { METRICS_BATCH_SIZE, METRICS_REQUEST_FREQUENCY_SECONDS } from './constan
 import MetricsApi from './lib/MetricsApi';
 import MetricsRequestService from './lib/MetricsRequestService';
 
-export * from './lib/observeApiError';
-export { default as observeApiError } from './lib/observeApiError';
-
 const metricsApi = new MetricsApi();
 const metricsRequestService = new MetricsRequestService(metricsApi, {
     reportMetrics: true,
