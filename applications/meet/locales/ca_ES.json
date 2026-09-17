@@ -489,6 +489,9 @@
       "Open link": [
         "Obriu l'enllaç"
       ],
+      "Open mention from ${ senderName } in chat": [
+        "Obriu la menció de ${ senderName } al xat"
+      ],
       "Participants join after you approve them": [
         "Els participants s'hi podran unir un cop els aproveu"
       ],
@@ -1980,7 +1983,7 @@
         "No s'ha pogut trobar cap nom disponible"
       ],
       "Could not load sharing details": [
-        "No s'han pogut carregar els detalls de l'acció de compartir."
+        "No s'han pogut carregar els detalls de compartició"
       ],
       "Could not load the image preview: ${ message }": [
         "No s'ha pogut carregar la vista prèvia de la imatge: ${ message }"
@@ -2061,7 +2064,7 @@
         "No s'ha pogut desxifrar el nom del marcador de pàgina: ${ message }"
       ],
       "Failed to decrypt bookmark password: ${ message }": [
-        "No s'ha pogut desxifrar la contrasenya de la marca de pàgina: ${ message }"
+        "No s'ha pogut desxifrar la contrasenya de l'adreça d'interès: ${ message }"
       ],
       "Failed to decrypt content key: ${ message }": [
         "No s'ha pogut desxifrar la clau de contingut: ${ message }"
@@ -2162,9 +2165,6 @@
       "Image preview not found": [
         "No s’ha trobat la vista prèvia de la imatge"
       ],
-      "Incorrect username": [
-        "Nom d'usuari incorrecte"
-      ],
       "Invalid meeting link": [
         "L'enllaç de la reunió no és vàlid"
       ],
@@ -2181,7 +2181,7 @@
         "No s'ha trobat l'element"
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
-        "L'enllaç públic heretat no es pot actualitzar. Creeu-ne un de nou."
+        "L'enllaç públic antic no es pot actualitzar. Torneu-ne a crear un de nou."
       ],
       "Live captions aren't working. Try turning them off and on again.": [
         "Els subtítols en directe no funcionen. Proveu de desactivar-los i tornar-los a activar."
@@ -2924,6 +2924,9 @@
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Si utilitzeu Firefox, assegureu-vos que PeerConnection estigui habilitada."
+      ],
+      "Incoming video off": [
+        "S'ha desactivat el vídeo entrant"
       ],
       "Internet connection lost": [
         "S'ha perdut la connexió a Internet"

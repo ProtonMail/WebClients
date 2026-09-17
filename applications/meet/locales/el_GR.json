@@ -34,6 +34,9 @@
       "${ name } lowered their hand": [
         "Ο χρήστης ${ name } κατέβασε το χέρι του"
       ],
+      "${ name } mentioned you: ${ message }": [
+        "${ name } σας ανέφερε: ${ message }"
+      ],
       "${ name } raised their hand": [
         "Ο χρήστης ${ name } σήκωσε το χέρι του"
       ],
@@ -45,6 +48,10 @@
       ],
       "${ name }: ${ message }": [
         "${ name }: ${ message }"
+      ],
+      "${ suggestionCount } mention suggestion available": [
+        "${ suggestionCount } διαθέσιμη πρόταση αναφοράς",
+        "${ suggestionCount } διαθέσιμες προτάσεις αναφοράς"
       ],
       "A participant joined the meeting": [
         "Ένας συμμετέχων συμμετείχε στη σύσκεψη"
@@ -157,6 +164,9 @@
       "You have been muted by the host": [
         "Έχετε τεθεί σε σίγαση από τον οικοδεσπότη"
       ],
+      "You were mentioned: ${ message }": [
+        "Αναφερθήκατε: ${ message }"
+      ],
       "Your camera has been turned off by the host": [
         "Η κάμερά σας έχει απενεργοποιηθεί από τον οικοδεσπότη"
       ],
@@ -167,6 +177,10 @@
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
+      ],
+      "${ newMentionCount } new mention": [
+        "${ newMentionCount } νέα αναφορά",
+        "${ newMentionCount } νέες αναφορές"
       ],
       "${ newMessageCount } new": [
         "${ newMessageCount } νέο",
@@ -312,6 +326,9 @@
       ],
       "Dismiss": [
         "Παράβλεψη"
+      ],
+      "Dismiss new mentions": [
+        "Απόρριψη νέων αναφορών"
       ],
       "Dismiss new messages": [
         "Απόρριψη νέων μηνυμάτων"
@@ -471,6 +488,9 @@
       ],
       "Open link": [
         "Άνοιγμα συνδέσμου"
+      ],
+      "Open mention from ${ senderName } in chat": [
+        "Ανοιχτή αναφορά από ${ senderName } στη συνομιλία"
       ],
       "Participants join after you approve them": [
         "Οι συμμετέχοντες συμμετέχουν αφού τους εγκρίνετε"
@@ -2145,9 +2165,6 @@
       "Image preview not found": [
         "Δεν βρέθηκε προεπισκόπηση εικόνας"
       ],
-      "Incorrect username": [
-        "Εσφαλμένο όνομα χρήστη"
-      ],
       "Invalid meeting link": [
         "Μη έγκυρος σύνδεσμος σύσκεψης"
       ],
@@ -2174,6 +2191,9 @@
       ],
       "Live captions have stopped.": [
         "Οι ζωντανοί υπότιτλοι έχουν σταματήσει."
+      ],
+      "Message is too long to send": [
+        "Το μήνυμα είναι υπερβολικά μεγάλο για αποστολή"
       ],
       "Microphone access is blocked. Allow it in your browser settings.": [
         "Η πρόσβαση στο μικρόφωνο είναι αποκλεισμένη. Επιτρέψτε την στις ρυθμίσεις του προγράμματος περιήγησής σας."
@@ -2295,6 +2315,12 @@
       ],
       "The meeting password is invalid": [
         "Ο κωδικός πρόσβασης της σύσκεψης δεν είναι έγκυρος"
+      ],
+      "The mention could not be added because the message is at its character limit": [
+        "Η αναφορά δεν μπόρεσε να προστεθεί επειδή το μήνυμα έχει φτάσει στο όριο χαρακτήρων του."
+      ],
+      "The message field is unavailable. Please reload the page.": [
+        "Το πεδίο μηνύματος δεν είναι διαθέσιμο. Παρακαλούμε ανανεώστε τη σελίδα."
       ],
       "The selected microphone is no longer available.": [
         "Το επιλεγμένο μικρόφωνο δεν είναι πλέον διαθέσιμο."
@@ -2627,6 +2653,9 @@
         "${ replyCount } απάντηση",
         "${ replyCount } απαντήσεις"
       ],
+      "${ senderNameNode } mentioned you": [
+        "${ senderNameNode } σας ανέφερε"
+      ],
       "${ spotlightParticipantName } is the active speaker": [
         "Ο ${ spotlightParticipantName } είναι ο ενεργός ομιλητής"
       ],
@@ -2818,6 +2847,9 @@
       "End-to-end encryption is active for this chat.": [
         "Η κρυπτογράφηση από άκρο σε άκρο είναι ενεργή για αυτήν τη συνομιλία."
       ],
+      "enter": [
+        "εισαγωγή"
+      ],
       "Enter code": [
         "Εισαγάγετε κωδικό"
       ],
@@ -2892,6 +2924,9 @@
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Εάν χρησιμοποιείτε τον Firefox, βεβαιωθείτε ότι η λειτουργία PeerConnection είναι ενεργοποιημένη."
+      ],
+      "Incoming video off": [
+        "Απενεργοποίηση εισερχόμενου βίντεο"
       ],
       "Internet connection lost": [
         "Απώλεια σύνδεσης στο διαδίκτυο"
@@ -2992,6 +3027,9 @@
       "Member": [
         "Μέλος"
       ],
+      "Mention from ${ senderName }": [
+        "Αναφορά από ${ senderName }"
+      ],
       "Message actions": [
         "Ενέργειες μηνύματος"
       ],
@@ -3060,6 +3098,9 @@
       ],
       "Not sent, check your connection.": [
         "Δεν στάλθηκε, ελέγξτε τη σύνδεσή σας."
+      ],
+      "notify everyone here": [
+        "ενημέρωσε όλους εδώ."
       ],
       "Only meetings you created appear here": [
         "Εδώ εμφανίζονται μόνο οι συσκέψεις που έχετε δημιουργήσει εσείς"
@@ -3574,6 +3615,9 @@
       "Every year": [
         "Κάθε χρόνο"
       ],
+      "everyone": [
+        "όλοι"
+      ],
       "Google Calendar": [
         "Ημερολόγιο Google"
       ],
@@ -3615,6 +3659,9 @@
       ],
       "Meeting link": [
         "Σύνδεσμος σύσκεψης"
+      ],
+      "Mention a participant": [
+        "Αναφέρετε έναν συμμετέχοντα"
       ],
       "Message": [
         "Μήνυμα"
@@ -3702,6 +3749,9 @@
       ],
       "Track SID": [
         "SID Παρακολούθησης"
+      ],
+      "unknown": [
+        "άγνωστο"
       ],
       "Uploaded image": [
         "Μεταφορτωμένη εικόνα"
