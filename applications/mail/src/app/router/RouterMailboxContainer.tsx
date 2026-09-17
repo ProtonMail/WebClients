@@ -26,6 +26,7 @@ import { MailboxContainerContextProvider } from '../containers/mailbox/MailboxCo
 import { getInboxRedirectUrl } from '../helpers/mailboxUrl';
 import useMailDrawer from '../hooks/drawer/useMailDrawer';
 import { useElements } from '../hooks/mailbox/useElements';
+import { useRetryElementsOnReconnect } from '../hooks/mailbox/useRetryElementsOnReconnect';
 import { selectElementID, selectIsSearching, selectLabelID } from '../store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from '../store/hooks';
 import { layoutActions } from '../store/layout/layoutSlice';
@@ -53,6 +54,7 @@ export const RouterMailboxContainer = () => {
     const [retentionRules] = useRetentionPolicies();
     const { isColumnModeActive, messageContainerRef, mainAreaRef } = useMailboxLayoutProvider();
     useScrollListToTopOnViewChange();
+    useRetryElementsOnReconnect();
 
     const { drawerSidebarButtons, showDrawerSidebar } = useMailDrawer();
     const isLumoInMailEnabled = useLumoInMail();

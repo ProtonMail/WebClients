@@ -12,13 +12,17 @@ interface GetTotalArgs {
 }
 
 const aggregateCategoryCounts = (counts: LabelCount[], categoryIDs: CategoryLabelID[]) => {
-    return counts.reduce(
-        (acc, entry) => {
-            // Skip entries that are not category labels or not in the categoryIDs list
-            if (!entry.LabelID || !isCategoryLabel(entry.LabelID) || !categoryIDs.includes(entry.LabelID)) {
-                return acc;
-            }
+    const matchingEntries = counts.filter(
+        (entry) => entry.LabelID && isCategoryLabel(entry.LabelID) && categoryIDs.includes(entry.LabelID)
+    );
 
+    // No entry means we don't have counts for these categories yet (e.g. still loading), as opposed to a confirmed empty count
+    if (matchingEntries.length === 0) {
+        return undefined;
+    }
+
+    return matchingEntries.reduce(
+        (acc, entry) => {
             const total = acc.total + (entry.Total ?? 0);
             const unread = acc.unread + (entry.Unread ?? 0);
 
@@ -55,7 +59,13 @@ const findLabelCount = (counts: LabelCount[], labelID: string, categoryIDs: Cate
  *
  * `bypassFilterCount` compensates elements that remains visible in the list when a filter is applied.
  */
-export const getTotal = ({ counts, labelID, categoryIDs, filter, bypassFilterCount }: GetTotalArgs) => {
+export const getTotal = ({
+    counts,
+    labelID,
+    categoryIDs,
+    filter,
+    bypassFilterCount,
+}: GetTotalArgs): number | undefined => {
     const isInboxWithCategories = labelID === MAILBOX_LABEL_IDS.INBOX && categoryIDs.length > 0;
     const isDefaultCategory = isInboxWithCategories && categoryIDs.includes(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
 
@@ -63,8 +73,9 @@ export const getTotal = ({ counts, labelID, categoryIDs, filter, bypassFilterCou
         ? aggregateCategoryCounts(counts, categoryIDs)
         : findLabelCount(counts, labelID, categoryIDs);
 
+    // No matching count entry means we don't know the total yet (e.g. still loading), as opposed to a confirmed empty count
     if (!count) {
-        return 0;
+        return undefined;
     }
 
     const unreadFilter = filter.Unread as number | undefined;
