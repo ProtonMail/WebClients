@@ -10,7 +10,6 @@ describe('EventLoopTimingTracker', () => {
     beforeEach(() => {
         mockHistogramObserve = vi.fn();
         setSharedMetricsClient({
-            setAuthHeaders: vi.fn(),
             core_event_loop_five_processing_time_histogram: { observe: mockHistogramObserve },
             core_event_loop_six_processing_time_histogram: { observe: mockHistogramObserve },
             core_webvitals_total: { increment: vi.fn() },

@@ -3,6 +3,7 @@ import {
     InvalidSessionError,
     createAuthentication,
     createHistory,
+    createUnauthenticatedApi,
     createUnleash,
     init,
     loadCrypto,
@@ -19,7 +20,6 @@ import createApi from '@proton/shared/lib/api/createApi';
 import { requestFork } from '@proton/shared/lib/authentication/fork';
 import { APPS } from '@proton/shared/lib/constants';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
-import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import noop from '@proton/utils/noop';
 
 import config from '../../../config';

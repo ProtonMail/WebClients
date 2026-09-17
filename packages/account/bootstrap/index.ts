@@ -70,6 +70,7 @@ import type { LumoEventResponse } from '@proton/shared/lib/interfaces/Lumo';
 import type { MeetEventResponse } from '@proton/shared/lib/interfaces/Meet';
 import initLogicalProperties from '@proton/shared/lib/logical/logical';
 import { telemetry } from '@proton/shared/lib/telemetry';
+import { createUnauthenticatedApi as createSharedUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import { UnleashClient } from '@proton/unleash/UnleashClient';
 import { createCustomFetch, getUnleashConfig } from '@proton/unleash/UnleashFlagProvider';
 import { EVENTS } from '@proton/unleash/proxy';
@@ -334,6 +335,18 @@ export const createHistory = ({
     }
 
     return history;
+};
+
+/**
+ * Creates an unauthenticated api that forwards its session UID to metrics and telemetry.
+ */
+export const createUnauthenticatedApi = (api: Api) => {
+    return createSharedUnauthenticatedApi(api, {
+        onUID: (UID) => {
+            metrics.setAuthHeaders(UID);
+            telemetry.setAuthHeaders(UID || '');
+        },
+    });
 };
 
 export const createUnleash = ({ api }: { api: Api }) => {
