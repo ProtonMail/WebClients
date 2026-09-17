@@ -2,9 +2,9 @@ import '@testing-library/jest-dom';
 import { cleanup } from '@testing-library/react';
 import { vi } from 'vitest';
 
+import '@proton/components/testing/vitest/mockMatchMedia';
 import '@proton/polyfill';
-import '@proton/testing/lib/vitest/mockMatchMedia';
-import '@proton/testing/lib/vitest/mockUnleash';
+import '@proton/unleash/testing/vitest/mockUnleash';
 
 // for typed-array base64 and hex native functions
 

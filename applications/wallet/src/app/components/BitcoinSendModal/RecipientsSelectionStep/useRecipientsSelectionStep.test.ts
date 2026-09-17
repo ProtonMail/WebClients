@@ -4,9 +4,9 @@ import type { PublicKeyReference } from '@protontech/crypto';
 import { renderHook } from '@testing-library/react';
 
 import { WasmTxBuilder } from '@proton/andromeda';
+import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
 import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import type { Recipient } from '@proton/shared/lib/interfaces';
-import { mockUseNotifications } from '@proton/testing/lib/vitest/mockUseNotifications';
 import { mockUseBitcoinNetwork, mockUseWalletApiClients } from '@proton/wallet/tests/mocks';
 import { getAddressKey } from '@proton/wallet/tests/utils';
 

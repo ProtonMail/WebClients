@@ -1,10 +1,10 @@
 import { renderHook } from '@testing-library/react';
 import { act } from '@testing-library/react-hooks';
 
+import { mockUseUserKeys } from '@proton/account/testing/vitest/mockUseUserKeys';
+import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
 import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
-import { mockUseNotifications } from '@proton/testing/lib/vitest/mockUseNotifications';
-import { mockUseUserKeys } from '@proton/testing/lib/vitest/mockUseUserKeys';
 import {
     mockUseApiWalletTransactionData,
     mockUseContactEmails,
