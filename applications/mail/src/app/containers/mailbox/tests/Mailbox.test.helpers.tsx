@@ -5,6 +5,7 @@ import loudRejection from 'loud-rejection';
 
 import { serverEvent } from '@proton/account';
 import { getModelState } from '@proton/account/tests';
+import { mockDefaultBreakpoints } from '@proton/components/testing/mockUseActiveBreakpoint';
 import { getHumanLabelID } from '@proton/mail/helpers/location';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
 import { DEFAULT_PAYMENT_VENDOR_STATES } from '@proton/payments/core/constants';
@@ -17,7 +18,6 @@ import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import { DEFAULT_MAIL_SETTINGS, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
-import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import range from '@proton/utils/range';
 
 import { filterToString, keywordToString, sortToString } from '../../../helpers/mailboxUrl';

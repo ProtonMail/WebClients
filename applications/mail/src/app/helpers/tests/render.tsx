@@ -8,6 +8,7 @@ import { act as actHook, renderHook as originalRenderHook } from '@testing-libra
 import type { History } from 'history';
 import { createMemoryHistory } from 'history';
 
+import { getOrganizationState } from '@proton/account/testing/redux-state';
 import { getModelState } from '@proton/account/tests';
 import { ApiContext } from '@proton/app-context/apiContext';
 import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
@@ -21,6 +22,7 @@ import ModalsChildren from '@proton/components/containers/modals/Children';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import type { MessagesState } from '@proton/mail/store/messages/messagesTypes';
+import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -35,7 +37,6 @@ import type {
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 import { DEFAULT_MAIL_SETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
-import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
 import { ComposerAssistantProvider } from '../../components/assistant/provider/ComposerAssistantProvider';
 import { LabelActionsContextProvider } from '../../components/sidebar/EditLabelContext';

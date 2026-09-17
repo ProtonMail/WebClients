@@ -1,8 +1,8 @@
+import { mockNotifications } from '@proton/components/testing/mockNotifications';
 import type { ApiRateLimiter } from '@proton/shared/lib/api/apiRateLimiter';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
-import { mockNotifications } from '@proton/testing/lib/mockNotifications';
 
 import type { MailState } from '../rootReducer';
 import type { MailThunkExtra } from '../store';

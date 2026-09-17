@@ -1,9 +1,9 @@
 import { fireEvent, screen } from '@testing-library/react';
 
 import useEventManager from '@proton/components/hooks/useEventManager';
+import { mockUseCategoriesData } from '@proton/mail/testing/mockUseCategoriesData';
+import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { mockUseCategoriesData } from '@proton/testing/lib/mockUseCategoriesData';
-import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 
 import { minimalCache } from '../../helpers/tests/cache';
 import { clearAll } from '../../helpers/tests/helper';

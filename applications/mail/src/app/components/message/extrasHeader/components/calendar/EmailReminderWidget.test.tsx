@@ -11,10 +11,20 @@ import { getModelState } from '@proton/account/tests';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import {
+    addressBuilder,
+    calendarBuilder,
+    calendarEventBuilder,
+    calendarUserSettingsBuilder,
+    messageBuilder,
+    veventBuilder,
+} from '@proton/calendar/testing/builders';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
+import { mockNotifications } from '@proton/components/testing/mockNotifications';
+import { mockDefaultBreakpoints } from '@proton/components/testing/mockUseActiveBreakpoint';
 import { EVENT_VERIFICATION_STATUS } from '@proton/shared/lib/calendar/constants';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
@@ -23,18 +33,8 @@ import createCache from '@proton/shared/lib/helpers/cache';
 import type { Nullable, UserSettings } from '@proton/shared/lib/interfaces';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import {
-    addressBuilder,
-    calendarBuilder,
-    calendarEventBuilder,
-    calendarUserSettingsBuilder,
-    messageBuilder,
-    veventBuilder,
-} from '@proton/testing/lib/builders';
+import { mockApiWithServer } from '@proton/test-api/mockApiWithServer';
 import { getHandlers } from '@proton/testing/lib/handlers';
-import { mockApiWithServer } from '@proton/testing/lib/mockApiWithServer';
-import { mockNotifications } from '@proton/testing/lib/mockNotifications';
-import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { authentication, getStoreWrapper, tick } from '../../../../../helpers/tests/render';
