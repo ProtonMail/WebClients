@@ -105,7 +105,6 @@ async function checkForValidUpdates() {
     }
 
     const newUpdate = getNewUpdate(local, availableVersions);
-    cachedLatestVersion = newUpdate ?? null;
 
     if (!newUpdate) {
         return;

@@ -127,7 +127,21 @@
                 "webpack.renderer.config.ts",
                 "webpack.rules.ts"
             ],
-            "project": ["src/**/*.{ts,tsx}"]
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignoreDependencies": [
+                "@electron-forge/maker-deb",
+                "@electron-forge/maker-dmg",
+                "@electron-forge/maker-rpm",
+                "@electron-forge/maker-squirrel",
+                "@electron-forge/maker-zip",
+                "@electron-forge/publisher-github",
+                "@vercel/webpack-asset-relocator-loader",
+                "css-loader",
+                "node-loader",
+                "style-loader",
+                "ts-loader",
+                "ts-node"
+            ]
         },
         "applications/pass": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
