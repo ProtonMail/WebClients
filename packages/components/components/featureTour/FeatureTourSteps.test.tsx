@@ -2,8 +2,8 @@ import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import * as featureTourActions from '@proton/account/featuresTour/actions';
-import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 
+import { renderWithProviders } from '../../testing/renderWithProviders';
 import FeatureTourSteps from './FeatureTourSteps';
 import { FEATURE_TOUR_STEPS_MAP } from './constants';
 import type { FeatureTourStepId } from './interface';
@@ -15,7 +15,9 @@ jest.mock('./constants', () => ({
             component: ({ onNext, bullets }: any) => (
                 <div data-testid="step-short-domain">
                     Step 1 {bullets}
-                    <button onClick={onNext}>Next</button>
+                    <button type="button" onClick={onNext}>
+                        Next
+                    </button>
                 </div>
             ),
             shouldDisplay: jest
@@ -26,7 +28,9 @@ jest.mock('./constants', () => ({
             component: ({ onNext, bullets }: any) => (
                 <div data-testid="step-auto-delete">
                     Step 2 {bullets}
-                    <button onClick={onNext}>Next</button>
+                    <button type="button" onClick={onNext}>
+                        Next
+                    </button>
                 </div>
             ),
             shouldDisplay: jest

@@ -1,8 +1,8 @@
+import { CryptoProxy } from '@protontech/crypto';
 import { fireEvent } from '@testing-library/react';
 
-import { CryptoProxy } from '@protontech/crypto';
 import { API_CODES } from '@proton/shared/lib/constants';
-import { addApiMock } from '@proton/testing/lib/api';
+import { addApiMock } from '@proton/test-api/api';
 import range from '@proton/utils/range';
 
 import { clearAll, getCard, mockedCryptoApi, renderWithProviders } from '../tests/render';

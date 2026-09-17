@@ -1,16 +1,16 @@
 import { fireEvent, render } from '@testing-library/react';
 
+import { mockUseOrganization } from '@proton/account/testing/mockUseOrganization';
 import { useUser } from '@proton/account/user/hooks';
 import { APPS, INVOICE_EMAIL_STATE } from '@proton/shared/lib/constants';
 import type { InvoiceEmailSettings, OrganizationSettings, UserModel } from '@proton/shared/lib/interfaces';
-import { applyHOCs } from '@proton/testing/lib/context/hocs/helpers';
-import { withConfig } from '@proton/testing/lib/context/hocs/with-config';
-import { withNotifications } from '@proton/testing/lib/context/hocs/with-notifications';
-import { withReduxStore } from '@proton/testing/lib/context/hocs/with-redux-store';
-import { mockUseOrganization } from '@proton/testing/lib/mockUseOrganization';
 
 import useApiResult from '../../hooks/useApiResult';
 import useEventManager from '../../hooks/useEventManager';
+import { applyHOCs } from '../../testing/hocs/helpers';
+import { withConfig } from '../../testing/with-config';
+import { withNotifications } from '../../testing/with-notifications';
+import { withReduxStore } from '../../testing/with-redux-store';
 import InvoicesSection from './InvoicesSection';
 
 jest.mock('../../hooks/useHandler', () => {

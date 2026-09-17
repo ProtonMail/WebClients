@@ -2,7 +2,7 @@ import { formatSubscription } from '@proton/payments/core/api/api';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
-import { addApiMock } from '@proton/testing/lib/api';
+import { addApiMock } from '@proton/test-api/api';
 
 export const subscriptionDefaultResponse: {
     Code: Number;
