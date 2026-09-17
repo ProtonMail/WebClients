@@ -60,9 +60,8 @@
             "ignoreDependencies": ["@proton/styles"]
         },
         "applications/docs": {
-            "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
-            "project": ["src/**/*.{ts,tsx,scss,sass,css}"],
-            "ignore": ["**"]
+            "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}", "src/app/routes/**/*.{ts,tsx}"],
+            "project": ["src/**/*.{ts,tsx,scss,sass,css}"]
         },
         "applications/docs-editor": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],

@@ -1,7 +1,7 @@
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState'
 import ModalTwo from '@proton/components/components/modalTwo/Modal'
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent'
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter'
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState'
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo'
 import { c } from 'ttag'
 
@@ -15,7 +15,7 @@ import { useState } from 'react'
 import { useDocsContext } from '../context'
 import { usePublicDocumentCopying } from './utils'
 
-export interface WelcomeSplashModalProps extends ModalStateProps {
+interface WelcomeSplashModalProps extends ModalStateProps {
   editorController: EditorControllerInterface
   documentState: PublicDocumentState
   documentType: DocumentType | ProtonDocumentType
@@ -24,7 +24,7 @@ export interface WelcomeSplashModalProps extends ModalStateProps {
 /**
  * A modal displayed to users when they try to interact with a public document, such as clicking the toolbar
  */
-export function WelcomeSplashModal({
+function WelcomeSplashModal({
   onClose,
   open,
   editorController,
