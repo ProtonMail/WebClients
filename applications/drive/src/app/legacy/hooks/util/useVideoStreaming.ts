@@ -3,7 +3,7 @@ import { type SyntheticEvent, useCallback, useEffect, useMemo, useRef, useState 
 import { v4 as uuidv4 } from 'uuid';
 
 import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
-import metrics from '@proton/metrics/index';
+import metrics from '@proton/metrics';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 
 import { initDownloadSW } from '../../../modules/fileSaver/download';

@@ -1,6 +1,6 @@
 import { ApiResult } from '@proton/docs-shared'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
-import metrics from '@proton/metrics/index'
+import metrics from '@proton/metrics'
 import { FetchRealtimeToken } from './FetchRealtimeToken'
 import type { NodeMeta } from '@proton/docs-shared'
 

@@ -17,8 +17,8 @@ import SkeletonLoader from '@proton/components/components/skeletonLoader/Skeleto
 import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import metrics from '@proton/metrics/index';
-import observeApiError from '@proton/metrics/lib/observeApiError';
+import metrics from '@proton/metrics';
+import observeApiError from '@proton/metrics/observeApiError';
 // eslint-disable-next-line no-restricted-imports
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
