@@ -5,10 +5,9 @@ import { getModelState } from '@proton/account/tests';
 import { formatSubscription } from '@proton/payments/core/api/api';
 import { PLANS } from '@proton/payments/core/constants';
 import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
+import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
-import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
-import { getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
 import {
     mockOrganizationApi,
@@ -18,6 +17,7 @@ import {
     subscriptionDefaultResponse,
     userDefault,
 } from '../../../hooks/helpers/tests';
+import { renderWithProviders } from '../../../testing/renderWithProviders';
 import SubscriptionContainer from './SubscriptionContainer';
 import type { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import SubscriptionModalProvider, { useSubscriptionModal } from './SubscriptionModalProvider';

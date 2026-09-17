@@ -1,11 +1,11 @@
 import { render } from '@testing-library/react';
 
 import { apiStatusActions } from '@proton/account/apiStatus';
+import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import type { ApiListenerCallback, ApiWithListener } from '@proton/shared/lib/api/createApi';
-import { extendStore, setupStore } from '@proton/testing/lib/context/store';
-import { mockUseNotifications } from '@proton/testing/lib/mockUseNotifications';
 
+import { extendStore, setupStore } from '../../testing/store';
 import ApiProvider from './ApiProvider';
 
 const dispatchMock = jest.fn();

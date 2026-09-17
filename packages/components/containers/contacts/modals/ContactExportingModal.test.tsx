@@ -4,7 +4,7 @@ import { fireEvent } from '@testing-library/react';
 import { getModelState } from '@proton/account/tests';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { Contact } from '@proton/shared/lib/interfaces/contacts';
-import { addApiMock } from '@proton/testing/lib/api';
+import { addApiMock } from '@proton/test-api/api';
 
 import { clearAll, minimalCache, mockedCryptoApi, prepareContact, renderWithProviders } from '../tests/render';
 import type { ContactExportingProps } from './ContactExportingModal';

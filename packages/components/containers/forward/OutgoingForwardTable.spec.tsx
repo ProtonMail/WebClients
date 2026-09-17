@@ -1,16 +1,16 @@
 import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { mockUseUser } from '@proton/account/testing/mockUseUser';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
-import { applyHOCs } from '@proton/testing/lib/context/hocs/helpers';
-import { withApi } from '@proton/testing/lib/context/hocs/with-api';
-import { withAuthentication } from '@proton/testing/lib/context/hocs/with-authentication';
-import { withCache } from '@proton/testing/lib/context/hocs/with-cache';
-import { withConfig } from '@proton/testing/lib/context/hocs/with-config';
-import { withEventManager } from '@proton/testing/lib/context/hocs/with-event-manager';
-import { withNotifications } from '@proton/testing/lib/context/hocs/with-notifications';
-import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
+import { applyHOCs } from '../../testing/hocs/helpers';
+import { withApi } from '../../testing/hocs/with-api';
+import { withAuthentication } from '../../testing/with-authentication';
+import { withCache } from '../../testing/with-cache';
+import { withConfig } from '../../testing/with-config';
+import { withEventManager } from '../../testing/with-event-manager';
+import { withNotifications } from '../../testing/with-notifications';
 import { renderWithProviders } from '../contacts/tests/render';
 import OutgoingForwardTable from './OutgoingForwardTable';
 

@@ -4,9 +4,9 @@ import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { IcTag } from '@proton/icons/icons/IcTag';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
 import useActiveBreakpoint from '../../../../hooks/useActiveBreakpoint';
+import { mockDefaultBreakpoints } from '../../../../testing/mockUseActiveBreakpoint';
 import type { UpsellPanelProps } from './UpsellPanel';
 import UpsellPanel from './UpsellPanel';
 
