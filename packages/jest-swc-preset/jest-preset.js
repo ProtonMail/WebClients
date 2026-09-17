@@ -1,4 +1,4 @@
-const { JEST_MAX_WORKERS, JEST_WORKER_IDLE_MEMORY_LIMIT } = process.env;
+const { JEST_MAX_WORKERS, JEST_WORKER_IDLE_MEMORY_LIMIT, JEST_CACHE_DIRECTORY } = process.env;
 
 module.exports = {
     ...(JEST_MAX_WORKERS ? { maxWorkers: JEST_MAX_WORKERS } : {}),
@@ -6,6 +6,7 @@ module.exports = {
     // from running tests in the main process, so an unconditional default would cost every
     // small package a worker spawn.
     ...(JEST_WORKER_IDLE_MEMORY_LIMIT ? { workerIdleMemoryLimit: JEST_WORKER_IDLE_MEMORY_LIMIT } : {}),
+    ...(JEST_CACHE_DIRECTORY ? { cacheDirectory: JEST_CACHE_DIRECTORY } : {}),
     transform: {
         '^.+\\.(ts|js|mjs)x?$': [
             require.resolve('@swc/jest'),

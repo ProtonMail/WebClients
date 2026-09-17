@@ -1,6 +1,9 @@
-import type { Config } from 'jest';
+import type { Config } from 'jest'
+
+const { JEST_CACHE_DIRECTORY } = process.env
 
 const jestConfig: Config = {
+  ...(JEST_CACHE_DIRECTORY ? { cacheDirectory: JEST_CACHE_DIRECTORY } : {}),
   setupFilesAfterEnv: ['./jest.setup.js'],
   moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
   collectCoverage: true,
@@ -20,6 +23,6 @@ const jestConfig: Config = {
   },
   coverageReporters: ['text-summary', 'json'],
   reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
-};
+}
 
-export default jestConfig;
+export default jestConfig
