@@ -274,6 +274,7 @@ enum MailKillSwitchFlag {
     CategoryViewConversationPrefetchDisabled = 'CategoryViewConversationPrefetchDisabled',
     ComposerInlineImageReuploadDisabled = 'ComposerInlineImageReuploadDisabled',
     DisplayCategoriesInSidebarAgain = 'DisplayCategoriesInSidebarAgain',
+    RetryElementsOnReconnectDisabled = 'RetryElementsOnReconnectDisabled',
 }
 
 enum AdminFeatureFlag {

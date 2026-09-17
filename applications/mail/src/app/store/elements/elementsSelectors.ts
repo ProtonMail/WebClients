@@ -65,8 +65,10 @@ export const selectPageSize = (state: MailSettingState) => state.mailSettings.va
 const pages = (state: MailState) => state.elements.pages;
 const bypassFilter = (state: MailState) => state.elements.bypassFilter;
 const pendingRequest = (state: MailState) => state.elements.pendingRequest;
+export const selectPendingRequest = pendingRequest;
 export const pendingActions = (state: MailState) => state.elements.pendingActions;
 const retry = (state: MailState) => state.elements.retry;
+export const selectRetry = retry;
 const invalidated = (state: MailState) => state.elements.invalidated;
 const total = (state: MailState) => state.elements.total;
 export const taskRunning = (state: MailState) => state.elements.taskRunning;
@@ -416,9 +418,10 @@ export const placeholderCount = createSelector(
 );
 
 export const selectLoading = createSelector(
-    [beforeFirstLoad, pendingRequest, shouldLoadElements, invalidated],
-    (beforeFirstLoad, pendingRequest, shouldLoadElements, invalidated) =>
-        (beforeFirstLoad || pendingRequest || shouldLoadElements) && !invalidated
+    [beforeFirstLoad, pendingRequest, shouldLoadElements, invalidated, pageCached],
+    (beforeFirstLoad, pendingRequest, shouldLoadElements, invalidated, pageCached) =>
+        // A page that was never cached has an unknown content: keep loading rather than claiming it's empty.
+        (beforeFirstLoad || pendingRequest || shouldLoadElements || !pageCached) && !invalidated
 );
 
 export const totalReturned = createSelector([contextTotal, dynamicTotal], (contextTotal, dynamicTotal) => {
