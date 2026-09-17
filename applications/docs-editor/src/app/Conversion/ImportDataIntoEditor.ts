@@ -1,17 +1,17 @@
-import type { LexicalEditor, LexicalNode } from 'lexical'
 import { $generateNodesFromDOM } from '@lexical/html'
-import { $createParagraphNode, $getRoot, $insertNodes } from 'lexical'
-import { $importNodesFromDocx } from './Docx/DocxToLexical/ImportNodesFromDocx'
 import { $convertFromMarkdownString } from '@lexical/markdown'
-import { MarkdownTransformers } from '../Tools/MarkdownTransformers'
 import type { ConvertibleDataType } from '@proton/docs-shared'
 import { TranslatedResult } from '@proton/docs-shared'
 import { uint8ArrayToUtf8String } from '@protontech/crypto/utils'
-import { reportErrorToSentry } from '../Utils/errorMessage'
-import { c } from 'ttag'
+import type { LexicalEditor, LexicalNode } from 'lexical'
+import { $createParagraphNode, $getRoot, $insertNodes } from 'lexical'
 import { odtToHtml } from 'odf-kit/odt/to-html'
+import { c } from 'ttag'
+import { MarkdownTransformers } from '../Tools/MarkdownTransformers'
+import { reportErrorToSentry } from '../Utils/errorMessage'
+import { $importNodesFromDocx } from './Docx/DocxToLexical/ImportNodesFromDocx'
 
-export function isValidSuperString(editor: LexicalEditor, superString: string): boolean {
+function isValidSuperString(editor: LexicalEditor, superString: string): boolean {
   try {
     editor.parseEditorState(superString)
     return true
