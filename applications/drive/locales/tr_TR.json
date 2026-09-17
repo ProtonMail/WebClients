@@ -237,6 +237,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "${ linkToShow } bağlantısını açmayı onaylayın"
       ],
+      "Connect": [
+        "Bağlan"
+      ],
       "Connect apps and devices": [
         "Uygulamaları ve aygıtları bağlayın"
       ],
@@ -577,6 +580,9 @@
       ],
       "Hide more benefits": [
         "Diğer faydaları gizle"
+      ],
+      "Ignore": [
+        "Yok say"
       ],
       "Image could not be loaded with tracker protection.": [
         "Görsel, etkinlik izleyici koruması tarafından yüklenmedi."
@@ -1063,6 +1069,9 @@
       ],
       "Show side panel": [
         "Yan panoyu görüntüle"
+      ],
+      "Sign in with Google": [
+        "Google oturumu açın"
       ],
       "Sign out": [
         "Oturumu kapat"
@@ -1803,10 +1812,10 @@
     },
     "Cancellation reminder": {
       "Reactivate by ${ formattedEndDate } to keep these features:": [
-        "Bu özellikleri korumak için ${ formattedEndDate } tarihine kadar yeniden etkinleştirin:"
+        "Bu özellikleri korumak için ${ formattedEndDate } tarihine kadar yeniden kullanıma alın:"
       ],
       "Reactivate subscription": [
-        "Aboneliği yeniden etkinleştir"
+        "Aboneliği yeniden kullanıma al"
       ],
       "Your subscription is ending soon": [
         "Aboneliğiniz yakında sona erecek"
@@ -2105,32 +2114,6 @@
     "Contact image": {
       "Contact image": [
         "Kişi görseli"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Faks"
-      ],
-      "Main": [
-        "Ana"
-      ],
-      "Mobile": [
-        "Cep telefonu"
-      ],
-      "Other": [
-        "Diğer"
-      ],
-      "Pager": [
-        "Çağrı cihazı"
-      ],
-      "Personal": [
-        "Kişisel"
-      ],
-      "Work": [
-        "İş"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -3755,9 +3738,6 @@
       "Incorrect password. Please try again.": [
         "Parola yanlış. Lütfen yeniden deneyin."
       ],
-      "Incorrect username": [
-        "Kullanıcı adı yanlış"
-      ],
       "Invalid code": [
         "Kod geçersiz"
       ],
@@ -3907,7 +3887,7 @@
         "Kuruluş anahtarının şifresi çözülmedi"
       ],
       "Organization key must be activated to create invited users": [
-        "Davet edilen kullanıcılar oluşturmak için kuruluş anahtarı etkinleştirilmelidir"
+        "Davet edilen kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
       ],
       "Organization key must be activated to create non-private users": [
         "Korunmayan kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
@@ -4804,7 +4784,7 @@
     },
     "Filter": {
       "Activated": [
-        "Etkinleştirildi"
+        "Kullanıma alındı"
       ],
       "All": [
         "Tümü"
@@ -4819,7 +4799,7 @@
         "Aktarıldı"
       ],
       "Not activated": [
-        "Etkinleştirilmemiş"
+        "Kullanıma alınmamış"
       ],
       "Pending": [
         "Bekliyor"
@@ -5116,10 +5096,10 @@
         "Kısa sürede çok fazla istek yapıldı. Lütfen birkaç dakika sonra yeniden deneyin."
       ],
       "Two-factor authentication is enabled in your external account.": [
-        "Dış hesabınızda iki adımlı doğrulama kullanıma alınmış."
+        "Dış hesabınızda iki adımlı doğrulama açık."
       ],
       "Two-factor authentication is enabled in your external email account.": [
-        "Dış e-posta hesabınızda iki adımlı doğrulama kullanıma alınmış."
+        "Dış e-posta hesabınızda iki adımlı doğrulama açık."
       ],
       "Use your app password if:": [
         "Aşağıdaki durumlarda uygulama parolanızı kullanın:"
@@ -5604,6 +5584,9 @@
       "An issue occurred during the restore process.": [
         "Geri yükleme sırasında bir sorun çıktı."
       ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Verileriniz içe aktarılırken beklenmeyen bir sorun çıktı. Lütfen bir süre sonra yeniden deneyin."
+      ],
       "and": [
         "ve"
       ],
@@ -5747,6 +5730,9 @@
       ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Gizliliğinizi koruyarak gezinmek için ${ VPN_APP_NAME } bağlantısı kurun"
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "${ DRIVE_APP_NAME } güvenli içe aktarma işlemini kurmak için Google Drive bağlantısı kuruluyor."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kişi ${ contactGroupName } grubuna eklendi"
@@ -5911,6 +5897,9 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. ${ BRAND_NAME } etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini barındırabilirsiniz."
       ],
+      "Email you once import is finished": [
+        "İçe aktarma işlemi tamamlandığında size e-posta gönderilecek"
+      ],
       "Emails are automatically signed": [
         "E-postalar otomatik olarak imzalanıyor"
       ],
@@ -6019,6 +6008,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Yalnızca ${ bundlePlanPriceInline }"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "İçe aktarma işleminin tamamlanması için yukarıdaki GIF görselinde belirtilen tüm ögeleri seçmelisiniz."
       ],
       "Forgot password?": [
         "Parolamı unuttum"
@@ -6352,6 +6344,9 @@
       "New": [
         "Yeni"
       ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Ardından Google hesabınızda oturum açmanız ve ${ BRAND_NAME } verilerinize erişme izni vermeniz gerekecek."
+      ],
       "No": [
         "Hayır"
       ],
@@ -6543,6 +6538,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Lütfen farklı bir ödeme yöntemi kullanarak yeniden deneyin ya da bankanızla görüşün."
       ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "İçe aktarma işlemini tamamlamak için lütfen tarifenizi yükseltin."
+      ],
       "Please use another browser or download the file.": [
         "Lütfen başka bir tarayıcı kullanın ya da dosyayı indirin."
       ],
@@ -6553,7 +6551,7 @@
         "Lütfen birincil şifreleme anahtarıyla yeniden imzalanabilecek kişiler aranırken bekleyin."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Lütfen etkin olmayan anahtarla şifrelenmiş verileri olan kişiler aranırken bekleyin."
+        "Lütfen kullanıma alınmamış anahtarla şifrelenmiş verileri olan kişiler aranırken bekleyin."
       ],
       "Premium privacy protection across all your devices": [
         "Tüm aygıtlarınızda birinci sınıf gizlilik koruması"
@@ -6608,6 +6606,9 @@
       ],
       "Read folder context": [
         "Klasör bağlamını oku"
+      ],
+      "Read once and encrypted on arrival": [
+        "Bir kez okunur ve vardığında şifrelenir"
       ],
       "Read this file": [
         "Bu dosyayı oku"
@@ -6774,6 +6775,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
       ],
+      "Sit back and we will let you know.": [
+        "Arkanıza yaslanın, size bilgi vereceğiz."
+      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Bazı devletler belirli sitelere erişimi engeller veya kısıtlar. VPN, etkinliğinizi ve kimliğinizi güvenli tutarken engellemeyi aşmanıza yardımcı olur."
       ],
@@ -6809,7 +6813,7 @@
         "Abonelik her ay otomatik olarak yenilenir."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
-        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yeniden etkinleştirin. ${ reactivateLink }"
+        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yeniden kullanıma alın. ${ reactivateLink }"
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
         "Abonelik sona eriyor: ${ planName } avantajlarınızı korumak için, aboneliğinizi Apple App Store üzerinden ${ byDate } tarihine kadar yeniden başlatın. ${ reactivateLink }"
@@ -6985,13 +6989,13 @@
         "Bu kullanıcıyı aktarabilmek için ${ domainNamesLink } altındaki e-posta etki alanını ekleyin ve doğrulayın."
       ],
       "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Bu kullanıcıyı aktarabilmek için ${ provider.adminConsoleName } üzerinden hesabını etkinleştirin."
+        "Bu kullanıcıyı aktarabilmek için ${ provider.adminConsoleName } üzerinden hesabını kullanıma alın."
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından hesabını etkinleştirin."
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından hesabını kullanıma alın."
       ],
       "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından adresini etkinleştirin."
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından adresini kullanıma alın."
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "Bu kullanıcıyı aktarmak için kullanıcının ${ BRAND_NAME } üzerine katılma davetini kabul etmesi gerekir."
@@ -7006,7 +7010,7 @@
         "Kişilerinizi yeniden imzalamak için, her kişiyi hesabınızda bulunan şifreleme anahtarı listesiyle karşılaştırarak denetlememiz gerekir. Herhangi bir eşleşme bulunamazsa, kişiniz birincil şifreleme anahtarıyla yeniden imzalanır."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Verilerinizi kurtarmak için, verilerin oluşturulduğu sırada kullanılan hesap anahtarını yeniden etkinleştirmelisiniz. Bunun için anahtar oluşturulurken kullanılan parolayı bilmeniz gerekir."
+        "Verilerinizi kurtarmak için, verilerin oluşturulduğu sırada kullanılan hesap anahtarını yeniden kullanıma almalısınız. Bunun için anahtar oluşturulurken kullanılan parolayı bilmeniz gerekir."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Adres doğrulamasını kullanabilmek için, gönderirken kullanmak istediğinizle birlikte bir veya daha fazla kullanılabilecek herkese açık anahtara güvenmeniz gerekir. Güvenme işlemi, şifreleme anahtarlarının sahte olmasını önler."
@@ -7107,6 +7111,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Bu formu kullanarak bize uygunsuz, yasadışı\nya da başka türlü kötü amaçla paylaşılmış dosyaları bildirin. Şunu şikayet ediyorsunuz:"
       ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Yalnızca bunları ${ DRIVE_APP_NAME } içine kopyalamak için kullanılır."
+      ],
       "username": [
         "kullanıcı adı"
       ],
@@ -7156,11 +7163,17 @@
       "We couldn’t process your payment.": [
         "Ödemenizi işleyemedik."
       ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "Fotoğrafların, Google Dokümanlarının, E-Tablolarının ve Slaytlarının içe aktarılmasını desteklemiyoruz. Lütfen Google Drive depolama alanınızın boş olmadığından emin olun."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Ödeme yönteminizi bankanızla doğrulamamız gerekiyor."
       ],
       "We need to authenticate your payment with your bank.": [
         "Ödemenizi bankanızla doğrulamamız gerekiyor."
+      ],
+      "We support most files": [
+        "Çoğu dosya türünü destekliyoruz"
       ],
       "We use 3-D Secure to protect your payments": [
         "Ödemelerinizi korumak için 3-D Secure kullanıyoruz"
@@ -7168,6 +7181,9 @@
       "We were not able to add this photo to your album": [
         "Bu fotoğraf albümünüze eklenemedi",
         "Bazı fotoğraflar albümünüze eklenemedi"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "İçe aktarma işlemi tamamlandığında size e-posta göndereceğiz. İşlem bittiğinde içe aktarılan dosyaları bir klasörde bulabilirsiniz."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi ${ IDEAL_WERO_BRAND_NAME } sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
@@ -7216,6 +7232,9 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "${ formattedRevisionDate } sürümünden geri yüklenecek. Diğer tüm sürümler bulunmayı sürdürecek."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "Fotoğraflar, Google Dokümanlar ve E-tablolar içe aktarılmayacak"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -7586,7 +7605,7 @@
         "Hesap sahibinin adı"
       ],
       "Active": [
-        "Etkin"
+        "Kullanıma alınmış"
       ],
       "Add email address": [
         "E-posta adresi ekle"
@@ -8037,7 +8056,7 @@
         "Rızası olmayan kişinin samimi görüntüleri"
       ],
       "Not active": [
-        "Etkin değil"
+        "Kullanımdan kaldırılmış"
       ],
       "Not selected": [
         "Seçilmemiş"
@@ -8463,10 +8482,10 @@
         "Fotoğraflar"
       ],
       "Reactivate now": [
-        "Yeniden etkinleştir"
+        "Yeniden kullanıma al"
       ],
       "Reactivate subscription": [
-        "Aboneliği yeniden etkinleştir"
+        "Aboneliği yeniden kullanıma al"
       ],
       "Request an invite": [
         "Davet iste"
@@ -10759,10 +10778,10 @@
         "${ IDEAL_WERO_BRAND_NAME } ile öde"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
-        "Deneme süresi sona erdikten sonra aboneliğin etkinleştirilmesi için bir ödeme yöntemi gereklidir."
+        "Deneme süresi sona erdikten sonra aboneliğin kullanıma alınması için bir ödeme yöntemi gereklidir."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
+        "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden kullanıma alın."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Yenileme fiyatları ${ termsAndConditionsLink } içeriğine göre değişebilir."
@@ -11459,7 +11478,7 @@
         "**Bu tarihten önce abone olursanız,** **${ referrerRewardAmount }** kredi kazanırsınız."
       ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
-        "Bu tarihten sonra, hesabınız **${ BRAND_NAME } Free** tarifesine düşürülecek. Fikrinizi değiştirirseniz, ücretli özelliklere erişmeyi sürdürmek için **aboneliğinizi yeniden etkinleştirebilirsiniz**."
+        "Bu tarihten sonra, hesabınız **${ BRAND_NAME } Free** tarifesine düşürülecek. Fikrinizi değiştirirseniz, ücretli özelliklere erişmeyi sürdürmek için **aboneliğinizi yeniden kullanıma alabilirsiniz**."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "${ maxRewardAmount } tutarına kadar kredi kazanın. Davet ettiğiniz kişi bir ${ BRAND_NAME } tarifesine abone olduğunda ${ referrerRewardAmount } alacaksınız."
@@ -12613,6 +12632,9 @@
       "Shared by ${ sharedBy }": [
         "${ sharedBy } tarafından paylaşıldı"
       ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Dosyalarınızı kopyalamak için bir kez okuyoruz ve ardından her birini ${ BRAND_NAME } anahtarlarınızla şifreliyoruz."
+      ],
       "Your favorited photos will appear here": [
         "Beğendiğiniz fotoğraflar burada görünecek"
       ],
@@ -12789,7 +12811,7 @@
         "İşlemler"
       ],
       "Activated": [
-        "Etkinleştirildi"
+        "Kullanıma alındı"
       ],
       "Address": [
         "Adres"
@@ -13070,6 +13092,9 @@
       "Connect your custom domain": [
         "Özel etki alanınızı bağlayın"
       ],
+      "Connect your Google account": [
+        "Google hesabınızı bağlayın"
+      ],
       "Contact Details": [
         "Kişi bilgileri"
       ],
@@ -13232,6 +13257,9 @@
       "Drop to upload": [
         "Yüklemek için bırakın"
       ],
+      "Easy switch": [
+        "Easy switch"
+      ],
       "Edit billing address": [
         "Fatura adresini düzenle"
       ],
@@ -13368,6 +13396,9 @@
       ],
       "Import groups": [
         "Grupları içe aktar"
+      ],
+      "Import started, but your storage won't be enough for this import": [
+        "İçe aktarma işlemi başladı ancak depolama alanınız bu içe aktarma işlemi için yeterli olmayacak"
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Verilerinizi ${ BRAND_NAME } içine aktarın"
@@ -13670,6 +13701,9 @@
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
       ],
+      "Setting up your import": [
+        "İçe aktarma işleminiz ayarlanıyor"
+      ],
       "Settings": [
         "Ayarlar"
       ],
@@ -13700,6 +13734,9 @@
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
       ],
+      "Sign in to Google": [
+        "Google oturumu açın"
+      ],
       "Sign out": [
         "Oturumu kapat"
       ],
@@ -13714,6 +13751,9 @@
       ],
       "Size in bytes": [
         "Bayt olarak boyut"
+      ],
+      "Something went wrong": [
+        "Bir sorun çıktı"
       ],
       "Sort files/folders": [
         "Dosyaları/klasörleri sırala"
@@ -13844,6 +13884,9 @@
       "Warning: suspected fake website": [
         "Uyarı: Sahte olma olasılığı bulunan şüpheli site"
       ],
+      "We could not find anything to import": [
+        "İçe aktarılacak bir şey bulunamadı"
+      ],
       "We couldn’t verify that ${ author } created this file.": [
         "Bu dosyanın ${ author } tarafından oluşturduğu doğrulanamadı."
       ],
@@ -13927,6 +13970,9 @@
       ],
       "Your exposed information": [
         "Sızdırılmış bilgileriniz"
+      ],
+      "Your import is starting": [
+        "İçe aktarma işleminiz başlıyor"
       ],
       "Your plan": [
         "Tarifeniz"
@@ -14102,10 +14148,10 @@
         "Yöneticiler gizli kullanıcıların verilerine erişemez ve parolalarını sıfırlayamaz."
       ],
       "Member activation incomplete": [
-        "Üye etkinleştirilmemiş"
+        "Üye kullanıma alınmamış"
       ],
       "Organization key must be activated to request data access": [
-        "Verilere erişme isteğinde bulunmak için kuruluş anahtarı etkinleştirilmelidir"
+        "Verilere erişme isteğinde bulunmak için kuruluş anahtarı kullanıma alınmalıdır"
       ],
       "The user must have an address to request data access": [
         "Veri isteğinde bulunabilmek için kullanıcının bir e-posta adresi olmalıdır"
@@ -14261,7 +14307,7 @@
         "Kişiler birleştirilemedi"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Parolanızı anımsamıyorsanız, anahtarınız yeniden etkinleştirilemez. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."
+        "Parolanızı anımsamıyorsanız, anahtarınız yeniden kullanıma alınamaz. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."

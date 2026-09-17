@@ -233,6 +233,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Öffnen des Links ${ linkToShow } bestätigen"
       ],
+      "Connect": [
+        "Verbinden"
+      ],
       "Connect apps and devices": [
         "Apps und Geräte verbinden"
       ],
@@ -567,6 +570,9 @@
       ],
       "Hide more benefits": [
         "Mehr Vorteile ausblenden"
+      ],
+      "Ignore": [
+        "Ignorieren"
       ],
       "Image could not be loaded with tracker protection.": [
         "Das Bild konnte aufgrund des Tracking-Schutzes nicht geladen werden."
@@ -1047,6 +1053,9 @@
       ],
       "Show side panel": [
         "Seitenleiste anzeigen"
+      ],
+      "Sign in with Google": [
+        "Mit Google Konto anmelden"
       ],
       "Sign out": [
         "Abmelden"
@@ -2086,32 +2095,6 @@
     "Contact image": {
       "Contact image": [
         "Bild des Kontakts"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "Primär"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Other": [
-        "Weitere"
-      ],
-      "Pager": [
-        "Pager"
-      ],
-      "Personal": [
-        "Privat"
-      ],
-      "Work": [
-        "Arbeit"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -3729,9 +3712,6 @@
       ],
       "Incorrect password. Please try again.": [
         "Ungültiges Passwort. Bitte versuche es erneut."
-      ],
-      "Incorrect username": [
-        "Falscher Benutzername"
       ],
       "Invalid code": [
         "Ungültiger Code"
@@ -5555,6 +5535,9 @@
       "An issue occurred during the restore process.": [
         "Beim Wiederherstellen ist ein Fehler aufgetreten."
       ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Beim Importieren deiner Daten ist ein unerwarteter Fehler aufgetreten. Bitte versuche es später erneut."
+      ],
       "and": [
         "und"
       ],
@@ -5686,6 +5669,9 @@
       ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Verbinde dich mit ${ VPN_APP_NAME } um privat zu surfen"
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "Verbindung zu Google Drive herstellen, um den sicheren Import nach ${ DRIVE_APP_NAME } einzurichten."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt der Gruppe ${ contactGroupName } zugewiesen."
@@ -5847,6 +5833,9 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-Mail-Hosting ist nur für Domains verfügbar, die du bereits besitzt. Die Registrierung von Domains ist derzeit nicht über ${ BRAND_NAME } möglich. Du kannst E-Mails für Domains hosten, die bei einem beliebigen Domain-Registrar registriert sind."
       ],
+      "Email you once import is finished": [
+        "Wir senden dir eine E-Mail, sobald der Import abgeschlossen ist."
+      ],
       "Emails are automatically signed": [
         "E-Mails werden automatisch signiert."
       ],
@@ -5952,6 +5941,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Für nur ${ bundlePlanPriceInline }"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "Damit der Import funktioniert, musst du alle gewünschten Einträge auswählen, wie im obigen GIF gezeigt."
       ],
       "Forgot password?": [
         "Passwort vergessen?"
@@ -6267,6 +6259,9 @@
       "New": [
         "Neu"
       ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Als Nächstes musst du dich bei deinem Google-Konto anmelden und ${ BRAND_NAME } Zugriff auf deine Daten gewähren."
+      ],
       "No": [
         "Nein"
       ],
@@ -6440,6 +6435,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Bitte versuche es mit einer anderen Zahlungsmethode erneut oder kontaktiere deine Bank."
       ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Bitte upgraden, um sicherzustellen, dass der Import erfolgreich abgeschlossen wird."
+      ],
       "Please use another browser or download the file.": [
         "Bitte verwende einen anderen Browser oder lade die Datei herunter."
       ],
@@ -6502,6 +6500,9 @@
       ],
       "Read folder context": [
         "Ordnerkontext lesen"
+      ],
+      "Read once and encrypted on arrival": [
+        "Einmal gelesen und bei Erhalt verschlüsselt"
       ],
       "Read this file": [
         "Diese Datei lesen"
@@ -6652,6 +6653,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
+      ],
+      "Sit back and we will let you know.": [
+        "Lehne dich zurück, wir halten dich auf dem Laufenden."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Einige Regierungen blockieren oder beschränken den Zugang zu bestimmten Websites. Ein VPN hilft, die Zensur zu umgehen und gleichzeitig deine Aktivitäten und deine Identität geheim zu halten."
@@ -6967,6 +6971,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Benutze dieses Formular, um uns unangebrachte, illegale, oder anderweitig schädliche geteilte Dateien zu melden. Du bist dabei, Folgendes zu melden:"
       ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Wird ausschließlich dazu verwendet, sie nach ${ DRIVE_APP_NAME } zu kopieren."
+      ],
       "username": [
         "Benutzername"
       ],
@@ -7013,14 +7020,23 @@
       "We couldn’t process your payment.": [
         "Wir konnten deine Zahlung nicht abschließen."
       ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "Wir unterstützen das Importieren von Fotos, Google Docs, Sheets und Slides nicht. Bitte stell sicher, dass dein Google Drive nicht leer ist."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Wir müssen deine Zahlungsmethode bei deiner Bank authentifizieren."
       ],
       "We need to authenticate your payment with your bank.": [
         "Wir müssen deine Zahlung bei deiner Bank authentifizieren."
       ],
+      "We support most files": [
+        "Wir unterstützen die meisten Dateiformate"
+      ],
       "We use 3-D Secure to protect your payments": [
         "Wir verwenden 3-D Secure zum Schutz deiner Zahlungen"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Wir benachrichtigen dich per E-Mail, sobald der Import abgeschlossen ist. Nach Abschluss des Vorgangs findest du deinen Import in einem Ordner."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Wir werden dich in einem neuen Browser-Tab zu ${ IDEAL_WERO_BRAND_NAME } umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
@@ -7066,6 +7082,9 @@
       ],
       "Who has access": [
         "Wer hat Zugriff"
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "Fotos, Google Docs und Sheets lassen sich nicht importieren"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Möchtest du einen neuen Verifizierungscode anfordern oder eine alternative Verifizierungsmethode verwenden?"
@@ -12456,6 +12475,9 @@
       "Shared by ${ sharedBy }": [
         "Geteilt von ${ sharedBy }"
       ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Wir lesen deine Dateien einmal, um sie zu kopieren, und verschlüsseln sie anschließend jeweils mit deinen ${ BRAND_NAME }-Schlüsseln."
+      ],
       "Your favorited photos will appear here": [
         "Deine Favoriten werden hier angezeigt"
       ],
@@ -12913,6 +12935,9 @@
       "Connect your custom domain": [
         "Verbinde deine eigene Domain"
       ],
+      "Connect your Google account": [
+        "Dein Google-Konto verbinden"
+      ],
       "Contact Details": [
         "Kontaktinformationen"
       ],
@@ -13075,6 +13100,9 @@
       "Drop to upload": [
         "Datei zum Hochladen in dieses Feld ziehen"
       ],
+      "Easy switch": [
+        "Easy Switch"
+      ],
       "Edit billing address": [
         "Rechnungsadresse bearbeiten"
       ],
@@ -13211,6 +13239,9 @@
       ],
       "Import groups": [
         "Gruppen importieren"
+      ],
+      "Import started, but your storage won't be enough for this import": [
+        "Der Import wurde gestartet, aber dein Speicherplatz reicht für diesen Import nicht aus."
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Deine Daten nach ${ BRAND_NAME } importieren"
@@ -13504,6 +13535,9 @@
       "Set up your organization": [
         "Organisation einrichten"
       ],
+      "Setting up your import": [
+        "Dein Import wird eingerichtet"
+      ],
       "Settings": [
         "Einstellungen"
       ],
@@ -13534,6 +13568,9 @@
       "Sign in and grant access": [
         "Anmelden und Zugang gewähren"
       ],
+      "Sign in to Google": [
+        "Bei Google anmelden"
+      ],
       "Sign out": [
         "Abmelden"
       ],
@@ -13548,6 +13585,9 @@
       ],
       "Size in bytes": [
         "Größe in Bytes"
+      ],
+      "Something went wrong": [
+        "Etwas ist schiefgelaufen"
       ],
       "Sort files/folders": [
         "Dateien/Ordner sortieren"
@@ -13678,6 +13718,9 @@
       "Warning: suspected fake website": [
         "Warnung: Verdacht auf gefälschte Website"
       ],
+      "We could not find anything to import": [
+        "Wir konnten nichts zum Importieren finden"
+      ],
       "We couldn’t verify that ${ author } created this file.": [
         "Wir konnten nicht verifizieren, dass ${ author } diese Datei erstellt hat."
       ],
@@ -13761,6 +13804,9 @@
       ],
       "Your exposed information": [
         "Deine exponierten Informationen"
+      ],
+      "Your import is starting": [
+        "Dein Datenimport wird gestartet"
       ],
       "Your plan": [
         "Dein Abonnement"

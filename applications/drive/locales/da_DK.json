@@ -237,6 +237,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Bekræft åbning af link ${ linkToShow }"
       ],
+      "Connect": [
+        "Forbind"
+      ],
       "Connect apps and devices": [
         "Forbind apps og enheder"
       ],
@@ -577,6 +580,9 @@
       ],
       "Hide more benefits": [
         "Skjul flere fordele"
+      ],
+      "Ignore": [
+        "Ignorer"
       ],
       "Image could not be loaded with tracker protection.": [
         "Billede kunne ikke indlæses med sporingsbeskyttelse."
@@ -1063,6 +1069,9 @@
       ],
       "Show side panel": [
         "Vis sidepanel"
+      ],
+      "Sign in with Google": [
+        "Log ind med Google"
       ],
       "Sign out": [
         "Log ud"
@@ -2105,32 +2114,6 @@
     "Contact image": {
       "Contact image": [
         "Kontaktbillede"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "Primær"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Other": [
-        "Andre"
-      ],
-      "Pager": [
-        "Personsøger"
-      ],
-      "Personal": [
-        "Privat"
-      ],
-      "Work": [
-        "Arbejde"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -3754,9 +3737,6 @@
       ],
       "Incorrect password. Please try again.": [
         "Forkert adgangskode. Prøv venligst igen."
-      ],
-      "Incorrect username": [
-        "Forkert brugernavn"
       ],
       "Invalid code": [
         "Ugyldig kode"
@@ -5604,6 +5584,9 @@
       "An issue occurred during the restore process.": [
         "Et problem opstod under gendannelsesprocessen."
       ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Der opstod en uventet fejl med at importere din data. Prøv igen senere."
+      ],
       "and": [
         "og"
       ],
@@ -5747,6 +5730,9 @@
       ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Forbind til ${ VPN_APP_NAME } for at browse privat"
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "Tilslutter til Google Drive for at konfigurere din sikre import til ${ DRIVE_APP_NAME }."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilføjet til gruppen ${ contactGroupName }"
@@ -5911,6 +5897,9 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailhosting er kun tilgængelig for domæner, du allerede ejer. Domæneregistrering er ikke tilgængelig i øjeblikket via ${ BRAND_NAME }. Du kan hoste e-mail for domæner, der er registreret hos en hvilken som helst domæneregistrator."
       ],
+      "Email you once import is finished": [
+        "Sender dig en e-mail når importen er færdig"
+      ],
       "Emails are automatically signed": [
         "E-mails er automatisk signeret"
       ],
@@ -6019,6 +6008,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "For kun ${ bundlePlanPriceInline }"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "For at importen kan fungere, skal du vælge alle de ønskede elementer som vist i GIF-illustrationen ovenfor."
       ],
       "Forgot password?": [
         "Glemt din adgangskode?"
@@ -6352,6 +6344,9 @@
       "New": [
         "Ny"
       ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Derefter skal du logge ind på din Google-konto og give ${ BRAND_NAME } adgang til dine data."
+      ],
       "No": [
         "Nej"
       ],
@@ -6543,6 +6538,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Prøv igen med en anden betalingsmetode, eller kontakt din bank."
       ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Opgrader for at sikre at importen lykkedes."
+      ],
       "Please use another browser or download the file.": [
         "Brug en anden browser eller download filen."
       ],
@@ -6608,6 +6606,9 @@
       ],
       "Read folder context": [
         "Læste mappekontekst"
+      ],
+      "Read once and encrypted on arrival": [
+        "Læst én gang og krypteret så snart den modtages"
       ],
       "Read this file": [
         "Læste denne fil"
@@ -6773,6 +6774,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
+      ],
+      "Sit back and we will let you know.": [
+        "Læn dig tilbage – vi giver dig besked."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Nogle regeringer blokerer eller begrænser adgangen til visse websteder. En VPN hjælper med at omgå censur, samtidig med at din aktivitet og identitet holdes privat."
@@ -7107,6 +7111,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Brug denne formular til at give os besked om upassende, ulovlige,\neller på anden måde skadelige delte filer. Du er ved at anmelde:"
       ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Kun brugt til at kopiere dem til ${ DRIVE_APP_NAME }."
+      ],
       "username": [
         "brugernavn"
       ],
@@ -7156,11 +7163,17 @@
       "We couldn’t process your payment.": [
         "Vi kunne ikke gennemføre din betaling."
       ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "Vi understøtter ikke importer af billeder, Google Docs, Sheets og Slides. Sørg for at din Google Drive ikke er tom."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Vi skal have bekræftet din betalingsmetode hos din bank."
       ],
       "We need to authenticate your payment with your bank.": [
         "Vi skal have bekræftet din betaling hos din bank."
+      ],
+      "We support most files": [
+        "Vi understøtter de fleste filer"
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi bruger 3-D Secure til at sikre dine betalinger"
@@ -7168,6 +7181,9 @@
       "We were not able to add this photo to your album": [
         "Vi kunne ikke tilføje dette foto til dit album",
         "Vi kunne ikke tilføje nogle billeder til dit album"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Vi sender dig en e-mail når importen er færdig. Du kan finde din import i en mappe når den er færdig."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til ${ IDEAL_WERO_BRAND_NAME } i en ny browserfane for at gennemføre transaktionen. Benytter du evt. pop-up blockere, så deaktiver disse for at fortsætte."
@@ -7216,6 +7232,9 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "vil blive gendannet til versionen fra ${ formattedRevisionDate }. Alle andre versioner vil stadig blive gemt."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "Importerer ikke fotos, Google Docs og Sheets"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
@@ -12613,6 +12632,9 @@
       "Shared by ${ sharedBy }": [
         "Delt af ${ sharedBy }"
       ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Vi læser dine filer én gang for at kopiere dem, og krypterer dem derefter med dine ${ BRAND_NAME }-nøgler."
+      ],
       "Your favorited photos will appear here": [
         "Dine favoritfotos vises her"
       ],
@@ -13070,6 +13092,9 @@
       "Connect your custom domain": [
         "Forbind dit brugerdefinerede domæne"
       ],
+      "Connect your Google account": [
+        "Forbind din Google-konto"
+      ],
       "Contact Details": [
         "Kundeoplysninger"
       ],
@@ -13232,6 +13257,9 @@
       "Drop to upload": [
         "Slip for at uploade"
       ],
+      "Easy switch": [
+        "Easy switch"
+      ],
       "Edit billing address": [
         "Rediger faktureringsadresse"
       ],
@@ -13368,6 +13396,9 @@
       ],
       "Import groups": [
         "Importer grupper"
+      ],
+      "Import started, but your storage won't be enough for this import": [
+        "Importen er startet, men du har ikke nok lagerplads til hele importen"
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Importér dine data til ${ BRAND_NAME }"
@@ -13670,6 +13701,9 @@
       "Set up your organization": [
         "Konfigurer din organisation"
       ],
+      "Setting up your import": [
+        "Konfigurerer din import"
+      ],
       "Settings": [
         "Indstillinger"
       ],
@@ -13700,6 +13734,9 @@
       "Sign in and grant access": [
         "Log ind og giv adgang"
       ],
+      "Sign in to Google": [
+        "Log in på Google"
+      ],
       "Sign out": [
         "Log ud"
       ],
@@ -13714,6 +13751,9 @@
       ],
       "Size in bytes": [
         "Størrelse i bytes"
+      ],
+      "Something went wrong": [
+        "Et eller andet gik galt"
       ],
       "Sort files/folders": [
         "Sorter filer/mapper"
@@ -13844,6 +13884,9 @@
       "Warning: suspected fake website": [
         "Advarsel: mistanke om falsk websted"
       ],
+      "We could not find anything to import": [
+        "Vi kunne ikke finde noget at importere."
+      ],
       "We couldn’t verify that ${ author } created this file.": [
         "Vi kunne ikke bekræfte, at ${ author } har oprettet denne fil."
       ],
@@ -13927,6 +13970,9 @@
       ],
       "Your exposed information": [
         "Dine blotlagte oplysninger"
+      ],
+      "Your import is starting": [
+        "Din import startes"
       ],
       "Your plan": [
         "Dit abonnement"
