@@ -240,6 +240,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Confirmați deschiderea legăturii web ${ linkToShow }"
       ],
+      "Connect": [
+        "Conectare"
+      ],
       "Connect apps and devices": [
         "Conectați aplicații și dispozitive"
       ],
@@ -582,6 +585,9 @@
       ],
       "Hide more benefits": [
         "Ascundere mai multe beneficii"
+      ],
+      "Ignore": [
+        "Ignorare"
       ],
       "Image could not be loaded with tracker protection.": [
         "Imaginea nu a putut fi încărcată cu protecția împotriva urmăririi activată."
@@ -1068,6 +1074,9 @@
       ],
       "Show side panel": [
         "Afișare panou lateral"
+      ],
+      "Sign in with Google": [
+        "Conectare cu Google"
       ],
       "Sign out": [
         "Deconectare"
@@ -2132,32 +2141,6 @@
     "Contact image": {
       "Contact image": [
         "Imagine contact"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "Principal"
-      ],
-      "Mobile": [
-        "Dispozitive mobile"
-      ],
-      "Other": [
-        "Altele"
-      ],
-      "Pager": [
-        "Pager"
-      ],
-      "Personal": [
-        "Personal"
-      ],
-      "Work": [
-        "Serviciu"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -3784,9 +3767,6 @@
       ],
       "Incorrect password. Please try again.": [
         "Parolă incorectă. Reîncercați."
-      ],
-      "Incorrect username": [
-        "Nume de utilizator incorect."
       ],
       "Invalid code": [
         "Cod nevalid"
@@ -5690,6 +5670,9 @@
       "An issue occurred during the restore process.": [
         "A apărut o problemă în timpul procesului de restaurare."
       ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "A apărut o eroare neașteptată în timpul importării datelor. Reîncercați mai târziu."
+      ],
       "and": [
         "și"
       ],
@@ -5833,6 +5816,9 @@
       ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Conectați-vă la ${ VPN_APP_NAME } pentru a naviga privat"
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "Se conectează la Google Drive pentru configurarea importării securizate în ${ DRIVE_APP_NAME }."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Contactul a fost adăugat la grupul ${ contactGroupName }."
@@ -6001,6 +5987,9 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Găzduirea pentru e-mail este disponibilă numai pentru domeniile pe care le dețineți deja. Înregistrarea domeniului nu este disponibilă în prezent prin ${ BRAND_NAME }. Puteți găzdui e-mail pentru domenii înregistrate cu orice înregistrator de domenii."
       ],
+      "Email you once import is finished": [
+        "Veți primi un mesaj la finalizarea importării."
+      ],
       "Emails are automatically signed": [
         "Mesajele sunt semnate automat"
       ],
@@ -6110,6 +6099,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Pentru doar ${ bundlePlanPriceInline }"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "Pentru ca importarea să funcționeze, trebuie să selectați toate articolele solicitate așa cum e arătat în imaginea GIF de deasupra."
       ],
       "Forgot password?": [
         "Ați uitat parola?"
@@ -6448,6 +6440,9 @@
       "New": [
         "Nou"
       ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "În continuare, va trebui să vă conectați la contul Google și să permiteți ca ${ BRAND_NAME } să vă acceseze datele."
+      ],
       "No": [
         "Nu"
       ],
@@ -6641,6 +6636,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Reîncercați folosind o metodă de plată diferită sau contactați-vă banca."
       ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Modificați tipul planului pentru a vă asigura ca importarea se poate finaliza."
+      ],
       "Please use another browser or download the file.": [
         "Folosiți alt tip de navigator web sau descărcați fișierul."
       ],
@@ -6706,6 +6704,9 @@
       ],
       "Read folder context": [
         "Citire context folder"
+      ],
+      "Read once and encrypted on arrival": [
+        "Citire o singură dată și criptare la sosire"
       ],
       "Read this file": [
         "Am citit acest fișier"
@@ -6871,6 +6872,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
+      ],
+      "Sit back and we will let you know.": [
+        "Așteptați până vă vom anunța."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Unele guverne blochează sau restricționează accesul la anumite site-uri web. Un VPN vă ajută să ocoliți cenzura, păstrându-vă în același timp activitatea și identitatea privată."
@@ -7208,6 +7212,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Folosiți acest formular pentru a ne anunța despre fișierele partajate nepotrivite, ilegale sau în vreun fel malițioase. Urmează să raportați:"
       ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Folosit doar pentru a le copia în ${ DRIVE_APP_NAME }."
+      ],
       "username": [
         "nume de utilizator"
       ],
@@ -7258,11 +7265,17 @@
       "We couldn’t process your payment.": [
         "Nu vi s-a putut procesa plata."
       ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "Nu este suportată importarea fotografiilor, documentelor,și foilor de calcul și prezentărilor Google. Asigurați-vă că Google Drive nu este gol."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Trebuie să autentificăm metoda de plată cu banca dvs."
       ],
       "We need to authenticate your payment with your bank.": [
         "Trebuie să autentificăm plata cu banca dvs."
+      ],
+      "We support most files": [
+        "Sunt suportate majoritatea fișierelor"
       ],
       "We use 3-D Secure to protect your payments": [
         "Folosim 3-D Secure pentru a proteja plățile"
@@ -7271,6 +7284,9 @@
         "Această fotografie nu a putut fi adăugată în album.",
         "Câteva fotografii nu au putut fi adăugate în album.",
         "Câteva fotografii nu au putut fi adăugate în album."
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Veți primi un mesaj pe e-mail la finalizarea importării. După finalizare, veți găsi datele importate într-un folder."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pentru finalizarea tranzacției prin ${ IDEAL_WERO_BRAND_NAME } se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
@@ -7319,6 +7335,9 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "va fi restaurat de la versiunea din ${ formattedRevisionDate }. Toate celelalte versiuni vor fi salvate în continuare."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "Nu se importă fotografii, documente și foi de calcul Google"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
@@ -12839,6 +12858,9 @@
       "Shared by ${ sharedBy }": [
         "Partajat de ${ sharedBy }"
       ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Fișierele sunt citite o singură dată pentru a le copia, apoi sunt criptate fiecare în parte folosind cheile ${ BRAND_NAME } pe care le dețineți."
+      ],
       "Your favorited photos will appear here": [
         "Fotografiile favorite vor apărea aici"
       ],
@@ -13307,6 +13329,9 @@
       "Connect your custom domain": [
         "Conectați-vă domeniul personal"
       ],
+      "Connect your Google account": [
+        "Conectați-vă contul Google"
+      ],
       "Contact Details": [
         "Detalii contact"
       ],
@@ -13472,6 +13497,9 @@
       "Drop to upload": [
         "Plasați aici pentru încărcare"
       ],
+      "Easy switch": [
+        "Easy switch"
+      ],
       "Edit billing address": [
         "Editare adresă de facturare"
       ],
@@ -13610,6 +13638,9 @@
       ],
       "Import groups": [
         "Importare grupuri"
+      ],
+      "Import started, but your storage won't be enough for this import": [
+        "Importarea a început, dar spațiul de stocare nu va fi suficient"
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Importați-vă datele în ${ BRAND_NAME }"
@@ -13913,6 +13944,9 @@
       "Set up your organization": [
         "Setați organizația"
       ],
+      "Setting up your import": [
+        "Vi se setează importarea"
+      ],
       "Settings": [
         "Setări"
       ],
@@ -13943,6 +13977,9 @@
       "Sign in and grant access": [
         "Conectați-vă și acordați acces"
       ],
+      "Sign in to Google": [
+        "Conectare în Google"
+      ],
       "Sign out": [
         "Deconectare"
       ],
@@ -13957,6 +13994,9 @@
       ],
       "Size in bytes": [
         "Mărime în baiți"
+      ],
+      "Something went wrong": [
+        "Ceva nu a mers bine."
       ],
       "Sort files/folders": [
         "Sortare fișiere/foldere"
@@ -14087,6 +14127,9 @@
       "Warning: suspected fake website": [
         "Avertisment: suspectare site fals"
       ],
+      "We could not find anything to import": [
+        "Nu s-au găsit date de importat"
+      ],
       "We couldn’t verify that ${ author } created this file.": [
         "Nu s-a putut verifica dacă ${ author } a creat acest fișier."
       ],
@@ -14170,6 +14213,9 @@
       ],
       "Your exposed information": [
         "Informații expuse"
+      ],
+      "Your import is starting": [
+        "Începe importarea"
       ],
       "Your plan": [
         "Plan actual"
