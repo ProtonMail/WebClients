@@ -11,7 +11,7 @@ import AccountSingleSignupContainer from 'proton-account/src/app/single-signup/S
 import { ResetPasswordPage } from 'proton-account/src/app/unauthed-forgot-password/ResetPasswordPage';
 import useLocationWithoutLocale, { getLocalePathPrefix } from 'proton-account/src/app/useLocationWithoutLocale';
 
-import { createUnleash, loadCrypto } from '@proton/account/bootstrap';
+import { createUnauthenticatedApi, createUnleash, loadCrypto } from '@proton/account/bootstrap';
 import UnauthenticatedApiProvider from '@proton/components/containers/api/UnauthenticatedApiProvider';
 import type {
     OnLoginCallbackArguments,
@@ -31,7 +31,6 @@ import { getItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
 import { localeCode } from '@proton/shared/lib/i18n';
 import type { Api } from '@proton/shared/lib/interfaces';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import { isMember } from '@proton/shared/lib/user/helpers';
 import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';
 import noop from '@proton/utils/noop';

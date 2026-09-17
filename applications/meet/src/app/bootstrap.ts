@@ -32,7 +32,6 @@ import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
 import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
 import type { ProtonConfig, Unwrap } from '@proton/shared/lib/interfaces';
 import { telemetry } from '@proton/shared/lib/telemetry';
-import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
 
@@ -411,7 +410,7 @@ export const bootstrapGuestApp = async (
     const authentication = bootstrap.createAuthentication({ initialAuth: false });
     bootstrap.init({ config, authentication, locales });
 
-    const unauthenticatedApi = createUnauthenticatedApi(api);
+    const unauthenticatedApi = bootstrap.createUnauthenticatedApi(api);
     const unleashClient = bootstrap.createUnleash({ api: unauthenticatedApi.apiCallback });
     const appVersion = getAppVersionStr(getClientID(config.APP_NAME), config.APP_VERSION);
 

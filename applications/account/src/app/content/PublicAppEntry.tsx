@@ -2,7 +2,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { registerSessionListener } from '@proton/account/accountSessions/registerSessionListener';
 import { writeAccountSessions } from '@proton/account/accountSessions/storage';
-import { createAuthentication, createUnleash, init } from '@proton/account/bootstrap';
+import { createAuthentication, createUnauthenticatedApi, createUnleash, init } from '@proton/account/bootstrap';
 import { staticExperimentsConfig } from '@proton/account/staticExperiments/config';
 import { resolveStaticExperiments } from '@proton/account/staticExperiments/resolve';
 import { staticExperimentsActions } from '@proton/account/staticExperiments/slice';
@@ -23,7 +23,6 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { telemetry } from '@proton/shared/lib/telemetry';
-import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 
 import config from '../config';
 import locales from '../locales';
