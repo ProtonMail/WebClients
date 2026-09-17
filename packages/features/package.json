@@ -1,6 +1,10 @@
 {
     "name": "@proton/features",
     "description": "Feature toggles",
+    "exports": {
+        ".": "./index.ts",
+        "./*": "./*"
+    },
     "scripts": {
         "check-types": "tsc",
         "lint": "eslint --quiet",
@@ -19,6 +23,7 @@
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-env": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
+        "@proton/test-api": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
         "eslint": "^10.10.0",
         "jest": "^30.5.1",

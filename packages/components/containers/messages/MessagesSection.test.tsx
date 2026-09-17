@@ -2,12 +2,12 @@ import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { mockUseUser } from '@proton/account/testing/mockUseUser';
+import { mockUseApi } from '@proton/app-context/testing/mockUseApi';
 import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
 import { FeatureCode } from '@proton/features';
+import { mockUseFeatureBarrel } from '@proton/features/testing/mockUseFeatureBarrel';
 import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
 import { ALMOST_ALL_MAIL, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
-import { mockUseApi } from '@proton/testing/lib/mockUseApi';
-import { mockUseFeatureBarrel } from '@proton/testing/lib/mockUseFeatureBarrel';
 
 import { renderWithProviders } from '../../testing/renderWithProviders';
 import MessagesSection from './MessagesSection';

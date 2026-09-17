@@ -2,8 +2,8 @@ import * as matchers from '@testing-library/jest-dom/matchers';
 import { webcrypto } from 'crypto';
 import { expect } from 'vitest';
 
-import '@proton/testing/lib/vitest/mockMatchMedia';
-import '@proton/testing/lib/vitest/mockUnleash';
+import '@proton/components/testing/vitest/mockMatchMedia';
+import '@proton/unleash/testing/vitest/mockUnleash';
 
 expect.extend(matchers);
 

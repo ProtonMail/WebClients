@@ -12,8 +12,8 @@ import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import ConfigProvider from '@proton/components/containers/config/Provider';
 import ModalsChildren from '@proton/components/containers/modals/Children';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
+import { registerFeatureFlagsApiMock } from '@proton/features/testing/features';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
-import { registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
 
 import { EO_REDIRECT_PATH } from '../../../constants';
 import { init } from '../../../store/eo/eoActions';

@@ -2,7 +2,7 @@ import {
     generateOwnedPersonalCalendars,
     generateSharedCalendars,
     generateSubscribedCalendars,
-} from '@proton/testing/lib/builders';
+} from '@proton/calendar/testing/builders';
 
 import { getHasUserReachedCalendarsLimit, willUserReachCalendarsLimit } from '../../lib/calendar/calendarLimits';
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '../../lib/calendar/constants';
