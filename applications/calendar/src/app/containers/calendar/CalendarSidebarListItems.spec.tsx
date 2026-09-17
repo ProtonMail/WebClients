@@ -4,6 +4,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { createMemoryHistory } from 'history';
 
+import { mockUseAuthentication } from '@proton/components/testing/mockUseAuthentication';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_FLAGS, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
@@ -13,7 +14,6 @@ import {
 } from '@proton/shared/lib/calendar/subscribe/helpers';
 import type { Address } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { mockUseAuthentication } from '@proton/testing/lib/mockUseAuthentication';
 
 import type { CalendarSidebarListItemsProps } from './CalendarSidebarListItems';
 import CalendarSidebarListItems from './CalendarSidebarListItems';

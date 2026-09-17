@@ -1,12 +1,12 @@
 import { render } from '@testing-library/react';
 
+import { veventBuilder } from '@proton/calendar/testing/builders';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import {
     ENCRYPTION_PREFERENCES_ERROR_TYPES,
     EncryptionPreferencesError,
 } from '@proton/shared/lib/mail/encryptionPreferences';
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
-import { veventBuilder } from '@proton/testing/lib/builders';
 import noop from '@proton/utils/noop';
 
 import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
