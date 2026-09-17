@@ -1561,10 +1561,7 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče"
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -3255,32 +3252,6 @@
     "Contact image": {
       "Contact image": [
         "Obrázok kontaktu"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "Hlavné"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Other": [
-        "Iné"
-      ],
-      "Pager": [
-        "Pager"
-      ],
-      "Personal": [
-        "Osobné"
-      ],
-      "Work": [
-        "Práca"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -5161,9 +5132,6 @@
       ],
       "IMAP server is required": [
         "IMAP server je požadovaný"
-      ],
-      "Incorrect username": [
-        "Nesprávne používateľské meno"
       ],
       "Invalid code": [
         "Neplatný kód"
@@ -8512,7 +8480,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -8760,6 +8731,9 @@
       "No conversation to read": [
         "Nie je tu žiadna konverzácia na prečítanie"
       ],
+      "No draft open": [
+        "Žiadny otvorený koncept"
+      ],
       "No email address": [
         "Žiadna emailová adresa"
       ],
@@ -8858,6 +8832,9 @@
       ],
       "Opened ${ location }": [
         "Otvorené ${ location }"
+      ],
+      "Opened a draft": [
+        "Otvoril som koncept"
       ],
       "Opened a problem report": [
         "Bolo vytvorené hlásenie o probléme"
@@ -9054,8 +9031,20 @@
         "Prečiťať ${ count } správ v tomto vlákne",
         "Prečiťať ${ count } správ v tomto vlákne"
       ],
+      "Read ${ count } open draft": [
+        "Prečítať ${ count } otvorený koncept",
+        "Prečítať ${ count } otvorené koncepty",
+        "Prečítať ${ count } otvorených konceptov",
+        "Prečítať ${ count } otvorených konceptov"
+      ],
+      "Read draft \"${ subject }\"": [
+        "Prečítať koncept \"${ subject }\""
+      ],
       "Read open email “${ subject }”": [
         "Prečítať otvorený email „${ subject }“"
+      ],
+      "Read the open draft": [
+        "Prečítať otvorený koncept"
       ],
       "Read your ${ count } filter": [
         "Prečítajte ${ count } svoj filter",
@@ -9084,6 +9073,9 @@
       "Read your signature": [
         "Prečítajte si svoj podpis"
       ],
+      "Readdressed the draft": [
+        "Koncept bol prepracovaný"
+      ],
       "Recipient: ": [
         "Príjemca: "
       ],
@@ -9111,9 +9103,6 @@
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Odstráni všetky dáta spojené s touto aplikáciou (vrátane stiahnutých správ, …)"
       ],
-      "Rename ${ folder } to…": [
-        "Premenovať ${ folder } na…"
-      ],
       "Rename folder": [
         "Premenovať priečinok"
       ],
@@ -9134,6 +9123,12 @@
       ],
       "Results came from the server.": [
         "Výsledky pochádzajú zo servera."
+      ],
+      "Rewrote and readdressed the draft": [
+        "Koncept bol prepísaný a prepracovaný"
+      ],
+      "Rewrote the draft": [
+        "Prepísať koncept"
       ],
       "Right to Left": [
         "Sprava doľava"

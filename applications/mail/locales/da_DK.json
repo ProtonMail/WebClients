@@ -1553,8 +1553,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -1762,6 +1761,16 @@
     "action": {
       "Search messages": [
         "Søg i beskeder"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "Omdøb ${ folder } til..."
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "Omdøb ${ label } til..."
       ]
     },
     "Action: Sheets": {
@@ -3201,32 +3210,6 @@
     "Contact image": {
       "Contact image": [
         "Kontaktbillede"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "Primær"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Other": [
-        "Andre"
-      ],
-      "Pager": [
-        "Personsøger"
-      ],
-      "Personal": [
-        "Privat"
-      ],
-      "Work": [
-        "Arbejde"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -5075,9 +5058,6 @@
       ],
       "IMAP server is required": [
         "IMAP-server er påkrævet."
-      ],
-      "Incorrect username": [
-        "Forkert brugernavn"
       ],
       "Invalid code": [
         "Ugyldig kode"
@@ -8226,7 +8206,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8474,6 +8455,9 @@
       "No conversation to read": [
         "Ingen samtale at læse"
       ],
+      "No draft open": [
+        "Intet åbent udkast"
+      ],
       "No email address": [
         "Ingen e-mailadresse"
       ],
@@ -8572,6 +8556,9 @@
       ],
       "Opened ${ location }": [
         "Åbnede ${ location }"
+      ],
+      "Opened a draft": [
+        "Åbnede et udkast"
       ],
       "Opened a problem report": [
         "Rapportede et problem"
@@ -8760,8 +8747,18 @@
         "Læs ${ count } besked i tråden",
         "Læs ${ count } beskeder i tråden"
       ],
+      "Read ${ count } open draft": [
+        "Læste ${ count } åbent udkast",
+        "Læste ${ count } åbne udkast"
+      ],
+      "Read draft \"${ subject }\"": [
+        "Læste udkast \"${ subject }\""
+      ],
       "Read open email “${ subject }”": [
         "Læste den åbne e-mail \"${ subject }\""
+      ],
+      "Read the open draft": [
+        "Læs det åbne udkast"
       ],
       "Read your ${ count } filter": [
         "Læs ${ count } filter",
@@ -8784,6 +8781,9 @@
       "Read your signature": [
         "Læs din signatur"
       ],
+      "Readdressed the draft": [
+        "Rettede adressen på udkastet"
+      ],
       "Recipient: ": [
         "Modtager: "
       ],
@@ -8805,20 +8805,26 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Husk at opdatere dette i din adgangskodeadministrator, eller hvor du opbevarer dine konto- og loginoplysninger."
       ],
+      "Remove signature": [
+        "Fjern signatur"
+      ],
       "Remove the star from ${ emails }": [
         "Fjern stjernemarkeringen fra ${ emails }"
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Fjerner alle tilknyttede data med denne app (inklusive hentede beskeder, ...)"
       ],
-      "Rename ${ folder } to…": [
-        "Omdøb ${ folder } til..."
-      ],
       "Rename folder": [
         "Omdøb mappe"
       ],
+      "Rename label": [
+        "Omdøb etiket"
+      ],
       "Rename this folder": [
         "Omdøb denne mappe"
+      ],
+      "Rename this label": [
+        "Omdøb denne etiket"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Rapporteres en besked som et phishing-forsøg videresendes beskeden til os, så vi kan analysere den og forbedre vores filtre. Det betyder, at vi vil kunne se hele beskedindholdet."
@@ -8834,6 +8840,12 @@
       ],
       "Results came from the server.": [
         "Resultaterne kom fra serveren."
+      ],
+      "Rewrote and readdressed the draft": [
+        "Omskrev og rettede adressen på udkastet"
+      ],
+      "Rewrote the draft": [
+        "Omskrev udkastet"
       ],
       "Right to Left": [
         "Højre mod venstre"

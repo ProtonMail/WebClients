@@ -509,7 +509,7 @@
         "Continuar importació"
       ],
       "Continue to ${ planOrAppName }": [
-        "Continuar amb ${ planOrAppName }"
+        "Continua amb ${ planOrAppName }"
       ],
       "Continue to sign in": [
         "Continueu iniciant sessió"
@@ -2811,32 +2811,6 @@
         "URL"
       ]
     },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "Principal"
-      ],
-      "Mobile": [
-        "Mòbil"
-      ],
-      "Other": [
-        "Altres"
-      ],
-      "Pager": [
-        "Cercapersones"
-      ],
-      "Personal": [
-        "Personal"
-      ],
-      "Work": [
-        "Feina"
-      ],
-      "Yomi": [
-        "Yomi"
-      ]
-    },
     "CountriesStep:Info": {
       "${ selectedCitiesCount } cities selected": [
         "${ selectedCitiesCount } ciutat seleccionada",
@@ -3875,7 +3849,7 @@
         "Xifrar i importar contactes... És possible que passi uns quants minuts. Quan el procés s'hagi completat, podeu tancar aquesta modalitat."
       ],
       "Enough room for years of emails, attachments and more.": [
-        "Espai suficient per anys de correus electrònics, fitxers adjunts i més."
+        "Espai suficient per a anys de correus electrònics, fitxers adjunts i més."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Assegureu un accés segur a les dades de l'organització, fins i tot si el vostre equip està remot o utilitza una WiFi pública."
@@ -5044,7 +5018,7 @@
         "No s'ha pogut concedir accés a la clau de l'organització"
       ],
       "Could not load sharing details": [
-        "No s'han pogut carregar els detalls de l'acció de compartir."
+        "No s'han pogut carregar els detalls de compartició"
       ],
       "Could not load the image preview: ${ message }": [
         "No s'ha pogut carregar la vista prèvia de la imatge: ${ message }"
@@ -5127,7 +5101,7 @@
         "No s'ha pogut desxifrar el nom del marcador de pàgina: ${ message }"
       ],
       "Failed to decrypt bookmark password: ${ message }": [
-        "No s'ha pogut desxifrar la contrasenya de la marca de pàgina: ${ message }"
+        "No s'ha pogut desxifrar la contrasenya de l'adreça d'interès: ${ message }"
       ],
       "Failed to decrypt content key: ${ message }": [
         "No s'ha pogut desxifrar la clau de contingut: ${ message }"
@@ -5216,9 +5190,6 @@
       "Incorrect second password. Please try again.": [
         "La segona contrasenya no és correcta. Torneu-ho a intentar."
       ],
-      "Incorrect username": [
-        "Nom d'usuari incorrecte"
-      ],
       "Invalid code": [
         "Codi invàlid"
       ],
@@ -5268,7 +5239,7 @@
         "El nom de l'etiqueta no pot estar buit."
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
-        "L'enllaç públic heretat no es pot actualitzar. Creeu-ne un de nou."
+        "L'enllaç públic antic no es pot actualitzar. Torneu-ne a crear un de nou."
       ],
       "Maximum ${ displayMaxValue } allowed": [
         "El màxim permès és ${ displayMaxValue }"
@@ -5700,7 +5671,7 @@
         "S'ha produït un error inesperat. No es poden importar els contactes"
       ],
       "Unexpected error, we can't import the files": [
-        "S'ha produït un error inesperat, no podem importar els fitxers"
+        "S'ha produït un error inesperat. No podem importar els fitxers."
       ],
       "Unknown error": [
         "Error desconegut"
@@ -7665,7 +7636,7 @@
         "Afegiu-hi ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } per només ${ bundlePlanPriceInline }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
-        "Afegiu ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+        "Afig ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Add 1 to 5 people who you trust and can contact easily. They will be able to reset your password for you by signing in to your account. They must already have a ${ BRAND_NAME } Account.": [
         "Afegiu d'1 a 5 persones en qui confieu i amb qui pugueu contactar fàcilment. Podran restablir-vos la contrasenya iniciant sessió al vostre compte. Han de tenir ja un compte de ${ BRAND_NAME }."
@@ -10282,7 +10253,7 @@
         "No podreu recuperar dades bloquejades utilitzant els fitxers de recuperació descarregats. També es desactivarà la recuperació basada en dispositiu."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
-        "Rebreu la recompensa en crèdit un mes després que el vostre amic se subscrigui a un pla anual, i dos mesos després que ho faci a un pla mensual."
+        "Rebreu la recompensa en crèdit un mes després que el vostre amic se subscrigui a un pla anual i dos mesos després que ho faci a un pla mensual."
       ],
       "You'll receive the credit reward 1 month after your friend's trial ended.": [
         "Rebreu la recompensa en crèdit un mes després de finalitzar la prova del vostre amic."
@@ -14701,7 +14672,7 @@
         "El preu de renovació depèn de la regió de facturació i del número d'empresa."
       ],
       "Renewal price is dependent on the billing region and EIN.": [
-        "El preu de renovació depèn de la regió de facturació i de l'EIN."
+        "El preu de renovació depèn de la regió de facturació i del NIF."
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "El preu de renovació depèn de la regió de facturació i del número d'IVA."
@@ -15040,26 +15011,6 @@
       ],
       "Work": [
         "Feina"
-      ]
-    },
-    "Protection type": {
-      "Blocked": [
-        "Bloquejat"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Device verification": [
-        "Verificació del dispositiu"
-      ],
-      "Ok": [
-        "D'acord"
-      ],
-      "Ownership verification": [
-        "Verificació de la propietat"
-      ],
-      "Unknown": [
-        "Desconegut"
       ]
     },
     "Provider option": {
@@ -18848,7 +18799,7 @@
         "Moneda"
       ],
       "Custom": [
-        "Personalitzar"
+        "Personalitzat"
       ],
       "Custom selection of users": [
         "Selecció personalitzada d'usuaris"
@@ -18969,7 +18920,7 @@
         "Voleu descartar els canvis?"
       ],
       "Disconnected from Gmail": [
-        "Esteu desconnectat de Gmail"
+        "S'ha desconnectat de Gmail"
       ],
       "Domain names": [
         "Noms de domini"
@@ -19964,6 +19915,9 @@
       ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "S'ha afegit al vostre pla: ${ mergedAddonTitles }"
+      ],
+      "Admins can manage user accounts and give admin privileges to other users.": [
+        "Els administradors poden gestionar comptes d'usuari i atorgar privilegis d'administrador a altres usuaris."
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Els administradors poden gestionar els comptes d'usuari i donar privilegis d'administrador a altres usuaris. Només l'administrador principal pot editar el pla de l'organització."

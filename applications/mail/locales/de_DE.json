@@ -1547,8 +1547,7 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -1756,6 +1755,16 @@
     "action": {
       "Search messages": [
         "Nachrichten durchsuchen"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "${ folder } umbenennen in…"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "${ label } umbenennen in…"
       ]
     },
     "Action: Sheets": {
@@ -3195,32 +3204,6 @@
     "Contact image": {
       "Contact image": [
         "Bild des Kontakts"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "Primär"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Other": [
-        "Weitere"
-      ],
-      "Pager": [
-        "Pager"
-      ],
-      "Personal": [
-        "Privat"
-      ],
-      "Work": [
-        "Arbeit"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -5069,9 +5052,6 @@
       ],
       "IMAP server is required": [
         "IMAP-Server ist erforderlich"
-      ],
-      "Incorrect username": [
-        "Falscher Benutzername"
       ],
       "Invalid code": [
         "Ungültiger Code"
@@ -8217,7 +8197,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -8465,6 +8446,9 @@
       "No conversation to read": [
         "Keine Unterhaltung zum Lesen"
       ],
+      "No draft open": [
+        "Kein Entwurf offen"
+      ],
       "No email address": [
         "Keine E-Mail-Adresse"
       ],
@@ -8563,6 +8547,9 @@
       ],
       "Opened ${ location }": [
         "${ location } geöffnet"
+      ],
+      "Opened a draft": [
+        "Einen Entwurf geöffnet"
       ],
       "Opened a problem report": [
         "Ein Problembericht wurde erstellt"
@@ -8751,8 +8738,18 @@
         "${ count } gelesene Nachricht in diesem Thread",
         "${ count } gelesene E-Mails in diesem Thread"
       ],
+      "Read ${ count } open draft": [
+        "${ count } offenen Entwurf lesen",
+        "${ count } offene Entwürfe lesen"
+      ],
+      "Read draft \"${ subject }\"": [
+        "Entwurf \"${ subject }\" lesen"
+      ],
       "Read open email “${ subject }”": [
         "Geöffnete E-Mail \"${ subject }\" lesen"
+      ],
+      "Read the open draft": [
+        "Den offenen Entwurf lesen"
       ],
       "Read your ${ count } filter": [
         "Lies ${ count } Filter",
@@ -8775,6 +8772,9 @@
       "Read your signature": [
         "Deine Signatur lesen"
       ],
+      "Readdressed the draft": [
+        "Den Entwurf neu adressiert"
+      ],
       "Recipient: ": [
         "Empfänger: "
       ],
@@ -8796,20 +8796,26 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Denk daran, dies in deinem Passwort-Manager oder wo auch immer du deine Konto- und Anmeldeinformationen aufbewahrst, zu aktualisieren."
       ],
+      "Remove signature": [
+        "Signatur entfernen"
+      ],
       "Remove the star from ${ emails }": [
         "Markierung aus ${ emails } entfernen"
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Entfernt alle Daten, die mit dieser App verbunden sind (einschließlich heruntergeladener Nachrichten, …)"
       ],
-      "Rename ${ folder } to…": [
-        "${ folder } umbenennen in…"
-      ],
       "Rename folder": [
         "Ordner umbenennen"
       ],
+      "Rename label": [
+        "Kategorie umbenennen"
+      ],
       "Rename this folder": [
         "Diesen Ordner umbenennen"
+      ],
+      "Rename this label": [
+        "Diese Kategorie umbenennen"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Das Melden einer Nachricht als Phishing-Versuch wird die Nachricht an uns senden, damit wir diese analysieren und unsere Filter verbessern können. Das bedeutet, dass wir den Inhalt der Nachricht vollständig einsehen können."
@@ -8825,6 +8831,12 @@
       ],
       "Results came from the server.": [
         "Ergebnisse stammen vom Server."
+      ],
+      "Rewrote and readdressed the draft": [
+        "Den Entwurf überarbeitet und neu adressiert"
+      ],
+      "Rewrote the draft": [
+        "Den Entwurf überarbeitet"
       ],
       "Right to Left": [
         "Von rechts nach links"

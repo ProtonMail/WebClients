@@ -336,7 +336,7 @@
         "Desseleccionar-ho tot"
       ],
       "Disable auto-add ${ MEET_APP_NAME } links feature": [
-        "Desactiva la característica d'afegir automàticament enllaços de ${ MEET_APP_NAME }"
+        "Desactiva l'addició automàtica d'enllaços de ${ MEET_APP_NAME }"
       ],
       "Discard": [
         "Descarta"
@@ -405,7 +405,7 @@
         "Amplia el giny de videoconferència"
       ],
       "Explore ${ MEET_SHORT_APP_NAME }": [
-        "Explorar ${ MEET_SHORT_APP_NAME }"
+        "Explora ${ MEET_SHORT_APP_NAME }"
       ],
       "Explore other plans": [
         "Explora altres plans"
@@ -933,7 +933,7 @@
         "Proveu amb un altre mètode"
       ],
       "Turn off auto-add": [
-        "Desactiveu l'addició automàtica"
+        "Desactiva l'addició automàtica"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Habilita ${ DARK_WEB_MONITORING_NAME }"
@@ -2141,32 +2141,6 @@
     "Contact image": {
       "Contact image": [
         "Imatge del contacte"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "Principal"
-      ],
-      "Mobile": [
-        "Mòbil"
-      ],
-      "Other": [
-        "Altres"
-      ],
-      "Pager": [
-        "Cercapersones"
-      ],
-      "Personal": [
-        "Personal"
-      ],
-      "Work": [
-        "Feina"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -3743,7 +3717,7 @@
         "No s'ha pogut concedir accés a la clau de l'organització"
       ],
       "Could not load sharing details": [
-        "No s'han pogut carregar els detalls de l'acció de compartir."
+        "No s'han pogut carregar els detalls de compartició"
       ],
       "Could not load the image preview: ${ message }": [
         "No s'ha pogut carregar la vista prèvia de la imatge: ${ message }"
@@ -3847,7 +3821,7 @@
         "No s'ha pogut desxifrar el nom del marcador de pàgina: ${ message }"
       ],
       "Failed to decrypt bookmark password: ${ message }": [
-        "No s'ha pogut desxifrar la contrasenya de la marca de pàgina: ${ message }"
+        "No s'ha pogut desxifrar la contrasenya de l'adreça d'interès: ${ message }"
       ],
       "Failed to decrypt content key: ${ message }": [
         "No s'ha pogut desxifrar la clau de contingut: ${ message }"
@@ -3883,7 +3857,7 @@
         "No s'ha pogut obrir el contacte"
       ],
       "Failed to update settings": [
-        "No s'ha pogut actualitzar les preferències"
+        "No s'han pogut actualitzar les preferències"
       ],
       "Failed to verify invitation": [
         "No s'ha pogut verificar la invitació"
@@ -3911,9 +3885,6 @@
       ],
       "IMAP server is required": [
         "Es requereix un servidor IMAP."
-      ],
-      "Incorrect username": [
-        "Nom d'usuari incorrecte"
       ],
       "Intended recipient does not support calendar sharing": [
         "El destinatari escollit no admet la compartició de calendari."
@@ -3979,7 +3950,7 @@
         "El cognom és massa llarg."
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
-        "L'enllaç públic heretat no es pot actualitzar. Creeu-ne un de nou."
+        "L'enllaç públic antic no es pot actualitzar. Torneu-ne a crear un de nou."
       ],
       "Location is required": [
         "La ubicació és obligatòria"
@@ -4381,7 +4352,7 @@
         "S'ha produït un error inesperat. No es poden importar els contactes"
       ],
       "Unexpected error, we can't import the files": [
-        "S'ha produït un error inesperat, no podem importar els fitxers"
+        "S'ha produït un error inesperat. No podem importar els fitxers."
       ],
       "Unknown error": [
         "Error desconegut"
@@ -7325,7 +7296,7 @@
         "Afegeix l'URL de la imatge"
       ],
       "Add notice period": [
-        "Afegiu un període de preavís"
+        "Afegeix un període de preavís"
       ],
       "Add to group": [
         "Afegeix al grup"
@@ -7400,7 +7371,7 @@
         "Categoria"
       ],
       "Check additional calendars for availability": [
-        "Comproveu la disponibilitat de calendaris addicionals"
+        "Comprova la disponibilitat de calendaris addicionals"
       ],
       "City": [
         "Ciutat"

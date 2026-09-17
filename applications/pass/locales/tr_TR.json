@@ -542,7 +542,7 @@
         "Yeniden doğrula"
       ],
       "Reactivate now": [
-        "Yeniden etkinleştir"
+        "Yeniden kullanıma al"
       ],
       "Read More": [
         "Devamını oku"
@@ -1247,7 +1247,7 @@
         "Ögeler içe aktarılamadı"
       ],
       "Inactive secure links could not be removed.": [
-        "Etkin olmayan güvenli bağlantılar kaldırılamadı."
+        "Kullanılmayan güvenli bağlantılar kaldırılamadı."
       ],
       "Invalid password manager": [
         "Parola yöneticisi geçersiz"
@@ -1678,7 +1678,7 @@
         "Tüm veri sızıntıları çözümlenmiş olarak işaretlenecek. Gelecekte olabilecek veri sızıntıları size bildirilecek."
       ],
       "All inactive secure links were removed": [
-        "Etkin olmayan tüm güvenli bağlantılar kaldırıldı"
+        "Kullanılmayan tüm güvenli bağlantılar kaldırıldı"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşındı"
@@ -2129,8 +2129,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Bir ögeyi başka bir kasaya taşımak ögenin güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2386,7 +2385,7 @@
         "PIN ile kilitleme kaydedilemedi"
       ],
       "Removing all inactive secure links...": [
-        "Etkin olmayan tüm güvenli bağlantılar kaldırılıyor..."
+        "Kullanılmayan tüm güvenli bağlantılar kaldırılıyor..."
       ],
       "Removing extra password...": [
         "Ek parola kaldırılıyor..."
@@ -2802,7 +2801,7 @@
         "${ PASS_APP_NAME } uygulamasındaki paylaşım, iki adımlı doğrulama, kredi kartı ve diğer gelişmiş özelliklere artık erişemeyeceksiniz"
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
-        "Belirli bir süre etkinlik yapılmayan ${ PASS_APP_NAME } otomatik olarak kilitlendiğinde, kilidi bu PIN kodu ile açabileceksiniz."
+        "Belirli bir süre etkileşim olmayan ${ PASS_APP_NAME } otomatik olarak kilitlendiğinde, kilidi bu PIN kodu ile açabileceksiniz."
       ],
       "You're invited to a vault.": [
         "Bir kasaya davet edildiniz."
@@ -4479,16 +4478,16 @@
     },
     "sso: auth device state": {
       "Active": [
-        "Etkin"
+        "Kullanıma alınmış"
       ],
       "Inactive": [
-        "Etkin değil"
+        "Kullanımdan kaldırılmış"
       ],
       "Pending activation": [
-        "Etkinleştirilmesi bekleniyor"
+        "Kullanıma alınması bekleniyor"
       ],
       "Pending admin activation": [
-        "Yönetici tarafından etkinleştirilmesi gerekiyor"
+        "Yönetici tarafından kullanıma alınması gerekiyor"
       ],
       "Rejected": [
         "İzin verilmedi"
@@ -4502,7 +4501,7 @@
     },
     "Status": {
       "Active": [
-        "Etkin"
+        "Kullanıma alınmış"
       ],
       "Agent": [
         "Aracı"
@@ -4823,7 +4822,7 @@
         "Verileriniz içe aktarılıyor"
       ],
       "Inactive 2FA": [
-        "İki adımlı doğrulama etkin olmayan"
+        "İki adımlı doğrulama kapalı olan"
       ],
       "Information exposed in breach": [
         "Veri sızıntısında açığa çıkan bilgiler"
@@ -4906,7 +4905,7 @@
         "Katılmayan bir öge yok"
       ],
       "No inactive 2FAs": [
-        "Etkin olmayan iki adımlı doğrulama yok"
+        "İki adımlı doğrulama kapalı olan yok"
       ],
       "No insecure passwords": [
         "Güvenli olmayan bir parola yok"

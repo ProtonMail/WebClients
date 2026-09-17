@@ -1553,8 +1553,7 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
+        "Klarer nøkkel"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -1762,6 +1761,16 @@
     "action": {
       "Search messages": [
         "Søk i meldinger"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "Endre navnet på mappen ${ folder } til..."
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "Endre navnet på etiketten ${ label } til..."
       ]
     },
     "Action: Sheets": {
@@ -3201,32 +3210,6 @@
     "Contact image": {
       "Contact image": [
         "Bilde av kontakt"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Faks"
-      ],
-      "Main": [
-        "Hoved"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Other": [
-        "Annet"
-      ],
-      "Pager": [
-        "Personsøker"
-      ],
-      "Personal": [
-        "Personlig"
-      ],
-      "Work": [
-        "Arbeid"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -5075,9 +5058,6 @@
       ],
       "IMAP server is required": [
         "IMAP-server kreves"
-      ],
-      "Incorrect username": [
-        "Uriktig brukernavn"
       ],
       "Invalid code": [
         "Ugyldig kode"
@@ -8226,7 +8206,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8474,6 +8455,9 @@
       "No conversation to read": [
         "Ingen samtaler å lese"
       ],
+      "No draft open": [
+        "Ingen utkast åpne"
+      ],
       "No email address": [
         "Ingen e-postadresse"
       ],
@@ -8572,6 +8556,9 @@
       ],
       "Opened ${ location }": [
         "Åpnet ${ location }"
+      ],
+      "Opened a draft": [
+        "Åpnet et utkast"
       ],
       "Opened a problem report": [
         "Åpnet en problemrapport"
@@ -8760,8 +8747,18 @@
         "Lese ${ count } meldig in denne tråden",
         "Lese ${ count } meldiger in denne tråden"
       ],
+      "Read ${ count } open draft": [
+        "Leste ${ count } åpent utkast",
+        "Leste ${ count } åpne utkast"
+      ],
+      "Read draft \"${ subject }\"": [
+        "Leste utkast \"${ subject }\""
+      ],
       "Read open email “${ subject }”": [
         "Les åpen e-post \"${ subject }\""
+      ],
+      "Read the open draft": [
+        "Lese det åpne utkastet"
       ],
       "Read your ${ count } filter": [
         "Lese ${ count } filter",
@@ -8784,6 +8781,9 @@
       "Read your signature": [
         "Lese signaturen"
       ],
+      "Readdressed the draft": [
+        "Endret tilnærmingen på utkastet"
+      ],
       "Recipient: ": [
         "Mottaker: "
       ],
@@ -8805,20 +8805,26 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Husk å oppdatere dette i passordbehandleren eller der du oppbevarer konto- og påloggingsinformasjonen din."
       ],
+      "Remove signature": [
+        "Fjerne signatur"
+      ],
       "Remove the star from ${ emails }": [
         "Fjerne stjernemerking fra ${ emails }"
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Fjerner alle data knyttet til denne appen (inkludert nedlastede meldinger, …)"
       ],
-      "Rename ${ folder } to…": [
-        "Endre navnet på mappen ${ folder } til..."
-      ],
       "Rename folder": [
         "Endre mappenavn"
       ],
+      "Rename label": [
+        "Endre etikettnavn"
+      ],
       "Rename this folder": [
         "Gi nytt navn til denne mappen"
+      ],
+      "Rename this label": [
+        "Endre navnet på denne etiketten"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Hvis du rapporterer en melding som et forsøk på nettfisking, sendes meldingen til oss, slik at vi kan analysere den og forbedre filtrene våre. Dette betyr at vi vil kunne se innholdet i meldingen i sin helhet."
@@ -8834,6 +8840,12 @@
       ],
       "Results came from the server.": [
         "Treffene kom fra serveren."
+      ],
+      "Rewrote and readdressed the draft": [
+        "Skrev om utkastet og endret tilnærmingen"
+      ],
+      "Rewrote the draft": [
+        "Skrev om utkastet"
       ],
       "Right to Left": [
         "Høyre til venstre"

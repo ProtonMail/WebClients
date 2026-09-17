@@ -1913,6 +1913,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "Active until ${ formattedPeriodEndDate }": [
+        "Aktiv till ${ formattedPeriodEndDate }"
+      ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Efter provperioden slutar den ${ formattedDate1 } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate2 }."
       ],
@@ -2766,32 +2769,6 @@
       ],
       "URL": [
         "URL"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "Huvud"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Other": [
-        "Annat"
-      ],
-      "Pager": [
-        "Personsökare"
-      ],
-      "Personal": [
-        "Privat"
-      ],
-      "Work": [
-        "Arbete"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "CountriesStep:Info": {
@@ -5148,9 +5125,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Felaktigt andra lösenord. Försök igen."
-      ],
-      "Incorrect username": [
-        "Felaktigt användarnamn"
       ],
       "Invalid code": [
         "Ogiltig kod"
@@ -14753,26 +14727,6 @@
       ],
       "Work": [
         "Arbete"
-      ]
-    },
-    "Protection type": {
-      "Blocked": [
-        "Blockerad"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Device verification": [
-        "Enhetsverifiering"
-      ],
-      "Ok": [
-        "Ok"
-      ],
-      "Ownership verification": [
-        "Ägarskapsverifiering"
-      ],
-      "Unknown": [
-        "Okänd"
       ]
     },
     "Provider option": {

@@ -515,9 +515,6 @@
       "Approve": [
         "Genehmigen"
       ],
-      "Assign manager(s)": [
-        "Manager zuweisen"
-      ],
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
       ],
@@ -4263,32 +4260,6 @@
         "URL"
       ]
     },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "Primär"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Other": [
-        "Weitere"
-      ],
-      "Pager": [
-        "Pager"
-      ],
-      "Personal": [
-        "Privat"
-      ],
-      "Work": [
-        "Arbeit"
-      ],
-      "Yomi": [
-        "Yomi"
-      ]
-    },
     "CountriesStep:Info": {
       "${ selectedCitiesCount } cities selected": [
         "${ selectedCitiesCount } Stadt ausgewählt",
@@ -7485,9 +7456,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Falsches zusätzliches Passwort. Bitte versuche es erneut."
-      ],
-      "Incorrect username": [
-        "Falscher Benutzername"
       ],
       "Intended recipient does not support calendar sharing": [
         "Der vorgesehene Empfänger unterstützt freigegebene Kalendern nicht."
@@ -10713,6 +10681,9 @@
       "All (${ totalFoldersCount } label)": [
         "Alle (${ totalFoldersCount } Kategorie)",
         "Alle (${ totalFoldersCount } Kategorien)"
+      ],
+      "All admins": [
+        "Alle Administratoren"
       ],
       "All data and settings are preserved": [
         "Alle Daten und Einstellungen bleiben erhalten"
@@ -21544,26 +21515,6 @@
         "Arbeit"
       ]
     },
-    "Protection type": {
-      "Blocked": [
-        "Gesperrt"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Device verification": [
-        "Geräteüberprüfung"
-      ],
-      "Ok": [
-        "OK"
-      ],
-      "Ownership verification": [
-        "Überprüfung der Eigentümerschaft"
-      ],
-      "Unknown": [
-        "Unbekannt"
-      ]
-    },
     "Provider option": {
       "Gmail": [
         "Gmail"
@@ -28180,6 +28131,9 @@
       ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "Zu deinem Abonnement hinzugefügt: ${ mergedAddonTitles }"
+      ],
+      "Admins can manage user accounts and give admin privileges to other users.": [
+        "Administratoren können Benutzerkonten verwalten und anderen Benutzern Administratorrechte zuweisen."
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Admins können Benutzerkonten verwalten und anderen Benutzern Administratorrechte erteilen. Nur der Hauptadministrator kann das Abonnement der Organisation bearbeiten."

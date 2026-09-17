@@ -489,6 +489,9 @@
       "Open link": [
         "Åbn link"
       ],
+      "Open mention from ${ senderName } in chat": [
+        "Åbn omtale fra ${ senderName } i chatten"
+      ],
       "Participants join after you approve them": [
         "Deltagere tilslutter sig efter du har godkendt dem"
       ],
@@ -2162,9 +2165,6 @@
       "Image preview not found": [
         "Forhåndsvisning ikke fundet"
       ],
-      "Incorrect username": [
-        "Forkert brugernavn"
-      ],
       "Invalid meeting link": [
         "Ugyldigt mødelink"
       ],
@@ -2924,6 +2924,9 @@
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Hvis du bruger Firefox, sørg da for, at PeerConnection er aktiv."
+      ],
+      "Incoming video off": [
+        "Indgående video slået fra"
       ],
       "Internet connection lost": [
         "Internetforbindelse mistet"

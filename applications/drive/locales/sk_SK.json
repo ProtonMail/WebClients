@@ -243,6 +243,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Potvrďte otvorenie odkazu ${ linkToShow }"
       ],
+      "Connect": [
+        "Pripojiť"
+      ],
       "Connect apps and devices": [
         "Pripojenie aplikácií a zariadení"
       ],
@@ -587,6 +590,9 @@
       ],
       "Hide more benefits": [
         "Skryť viac výhod"
+      ],
+      "Ignore": [
+        "Ignorovať"
       ],
       "Image could not be loaded with tracker protection.": [
         "Obrázok sa nepodarilo načítať s ochranou sledovania."
@@ -1073,6 +1079,9 @@
       ],
       "Show side panel": [
         "Zobraziť bočný panel"
+      ],
+      "Sign in with Google": [
+        "Zaregistrovať sa cez Google"
       ],
       "Sign out": [
         "Odhlásiť sa"
@@ -2159,32 +2168,6 @@
     "Contact image": {
       "Contact image": [
         "Obrázok kontaktu"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "Hlavné"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Other": [
-        "Iné"
-      ],
-      "Pager": [
-        "Pager"
-      ],
-      "Personal": [
-        "Osobné"
-      ],
-      "Work": [
-        "Práca"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -3814,9 +3797,6 @@
       ],
       "Incorrect password. Please try again.": [
         "Nesprávne heslo. Skúste to prosím, znovu."
-      ],
-      "Incorrect username": [
-        "Nesprávne používateľské meno"
       ],
       "Invalid code": [
         "Neplatný kód"
@@ -5776,6 +5756,9 @@
       "An issue occurred during the restore process.": [
         "Počas procesu obnovy došlo k chybe."
       ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Pri importe vašich údajov došlo k neočakávanej chybe. Skúste to neskôr, prosím."
+      ],
       "and": [
         "a"
       ],
@@ -5919,6 +5902,9 @@
       ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Pripojte sa k ${ VPN_APP_NAME } a surfujte v súkromí"
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "Pripájanie ku Google Drive na nastavenie bezpečného importu do aplikácie ${ DRIVE_APP_NAME }."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt priradený k skupine ${ contactGroupName }"
@@ -6091,6 +6077,9 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Emailový hosting je dostupný len pre domény, ktoré už vlastníte. Registrácia domény nie je momentálne dostupná prostredníctvom ${ BRAND_NAME }. Môžete hostiť email pre domény registrované u ktoréhokoľvek registrátora domén."
       ],
+      "Email you once import is finished": [
+        "Po dokončení importu vám pošleme email"
+      ],
       "Emails are automatically signed": [
         "Emaily sú automaticky podpísané"
       ],
@@ -6201,6 +6190,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Len za ${ bundlePlanPriceInline }"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "Aby import fungoval, musíte vybrať všetky požadované položky, ako je znázornené na GIF obrázku vyššie."
       ],
       "Forgot password?": [
         "Zabudli ste heslo?"
@@ -6544,6 +6536,9 @@
       "New": [
         "Nový"
       ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Ďalej sa potrebujete prihlásiť k svojmu účtu Google a udeliť ${ BRAND_NAME } prístup k vašim dátam."
+      ],
       "No": [
         "Nie"
       ],
@@ -6739,6 +6734,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Skúste to znova pomocou iného spôsobu platby, alebo kontaktujte svoju banku."
       ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Pre úspešné dokončenie importu zvýšte úroveň svojho plánu, prosím."
+      ],
       "Please use another browser or download the file.": [
         "Použite iný prehliadač alebo si súbor stiahnite, prosím."
       ],
@@ -6804,6 +6802,9 @@
       ],
       "Read folder context": [
         "Načítať kontext z priečinka"
+      ],
+      "Read once and encrypted on arrival": [
+        "Prečíta sa raz a pri doručení sa zašifruje"
       ],
       "Read this file": [
         "Prečítať tento súbor"
@@ -6969,6 +6970,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhľadom k tomu, že ste verný používateľ, má váš účet povolené ďalšie funkcie."
+      ],
+      "Sit back and we will let you know.": [
+        "Len si pohodlne sadnite a my vám dáme vedieť."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Niektoré vlády blokujú alebo obmedzujú prístup na určité webové stránky. VPN pomáha obísť cenzúru a zároveň zachováva súkromie vašich aktivít a identity."
@@ -7309,6 +7313,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Použite tento formulár, aby ste nás informovali o nevhodných, nelegálnych\nalebo inak škodlivých zdieľaných súboroch. Chystáte sa nahlásiť:"
       ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Používa sa výlučne na ich skopírovanie do ${ DRIVE_APP_NAME }."
+      ],
       "username": [
         "používateľské meno"
       ],
@@ -7360,11 +7367,17 @@
       "We couldn’t process your payment.": [
         "Vašu platbu sa nám nepodarilo spracovať."
       ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "Nepodporujeme import fotografií, Google Docs, Sheets a Slides. Uistite sa, prosím, že váš Google Drive nie je prázdny."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Potrebujeme overiť spôsob platby vo vašej banke."
       ],
       "We need to authenticate your payment with your bank.": [
         "Potrebujeme overiť platbu vo vašej banke."
+      ],
+      "We support most files": [
+        "Podporujeme väčšinu súborov"
       ],
       "We use 3-D Secure to protect your payments": [
         "Na ochranu vašich platieb používame 3-D Secure"
@@ -7374,6 +7387,9 @@
         "Tieto fotografie sme nemohli uložiť do vášho albumu",
         "Tieto fotografie sme nemohli uložiť do vášho albumu",
         "Tieto fotografie sme nemohli uložiť do vášho albumu"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Akonáhle bude import dokončený, pošleme vám email. Po dokončení nájdete svoj import v priečinku."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Na dokončenie tejto transakcie vás presmerujeme do ${ IDEAL_WERO_BRAND_NAME } v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
@@ -7422,6 +7438,9 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "bude obnovený na verziu z ${ formattedRevisionDate }. Všetky ostatné verzie budú uložené."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "Neimportujú sa fotografie, dokumenty z Google Docs a Sheets"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získať nový overovací kód alebo použiť alternatívnu metódu overovania?"
@@ -13065,6 +13084,9 @@
       "Shared by ${ sharedBy }": [
         "Zdieľané vlastníkom ${ sharedBy }"
       ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Vaše súbory najprv prečítame, aby sme ich skopírovali, a potom každý z nich zašifrujeme pomocou vašich kľúčov ${ BRAND_NAME }."
+      ],
       "Your favorited photos will appear here": [
         "Tu sa zobrazia vaše obľúbené fotografie"
       ],
@@ -13544,6 +13566,9 @@
       "Connect your custom domain": [
         "Pripojte si vlastnú doménu"
       ],
+      "Connect your Google account": [
+        "Pripojte váš Google účet"
+      ],
       "Contact Details": [
         "Kontaktné údaje"
       ],
@@ -13712,6 +13737,9 @@
       "Drop to upload": [
         "Pretiahnuť a nahrať"
       ],
+      "Easy switch": [
+        "Easy switch"
+      ],
       "Edit billing address": [
         "Upraviť fakturačnú adresu"
       ],
@@ -13852,6 +13880,9 @@
       ],
       "Import groups": [
         "Importovať skupiny"
+      ],
+      "Import started, but your storage won't be enough for this import": [
+        "Import sa začal, ale váš úložný priestor na tento import nebude stačiť"
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Importujte svoje dáta do ${ BRAND_NAME }"
@@ -14156,6 +14187,9 @@
       "Set up your organization": [
         "Nastaviť svoju organizáciu"
       ],
+      "Setting up your import": [
+        "Nastavujeme váš import"
+      ],
       "Settings": [
         "Nastavenia"
       ],
@@ -14186,6 +14220,9 @@
       "Sign in and grant access": [
         "Prihláste sa a povoľte prístup"
       ],
+      "Sign in to Google": [
+        "Prihlásiť sa do Google"
+      ],
       "Sign out": [
         "Odhlásiť sa"
       ],
@@ -14200,6 +14237,9 @@
       ],
       "Size in bytes": [
         "Veľkosť v bajtoch"
+      ],
+      "Something went wrong": [
+        "Niečo sa pokazilo"
       ],
       "Sort files/folders": [
         "Zoradiť súbory/priečinky"
@@ -14330,6 +14370,9 @@
       "Warning: suspected fake website": [
         "Varovanie: podozrenie na falošnú webovú stránku"
       ],
+      "We could not find anything to import": [
+        "Nenašli sme nič, čo by sa dalo importovať"
+      ],
       "We couldn’t verify that ${ author } created this file.": [
         "Nemohli sme overiť, že tento súbor vytvoril používateľ ${ author }."
       ],
@@ -14413,6 +14456,9 @@
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
+      ],
+      "Your import is starting": [
+        "Váš import sa začal"
       ],
       "Your plan": [
         "Váš plán"

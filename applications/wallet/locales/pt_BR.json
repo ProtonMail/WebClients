@@ -2367,9 +2367,6 @@
       "Failed to load subscription data. Please try again later.": [
         "Falha ao carregar os dados da assinatura. Tente novamente mais tarde."
       ],
-      "Incorrect username": [
-        "Nome de usuário incorreto"
-      ],
       "Input isn't a valid email or bitcoin address": [
         "A entrada não é um endereço de bitcoin ou e-mail válido"
       ],
@@ -2622,6 +2619,9 @@
       ],
       "Security key": [
         "Chave de segurança"
+      ],
+      "Still waiting?": [
+        "Ainda esperando?"
       ]
     },
     "fido2: Label": {
@@ -4298,6 +4298,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } com final ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB de armazenamento em nuvem que permite armazenar, sincronizar e compartilhar arquivos com facilidade. Protegido por criptografia de ponta a ponta."
       ],

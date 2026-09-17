@@ -518,9 +518,6 @@
       "Approve": [
         "Godkend"
       ],
-      "Assign manager(s)": [
-        "Tildel manager(s)"
-      ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
@@ -4266,32 +4263,6 @@
         "URL"
       ]
     },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "Primær"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Other": [
-        "Andre"
-      ],
-      "Pager": [
-        "Personsøger"
-      ],
-      "Personal": [
-        "Privat"
-      ],
-      "Work": [
-        "Arbejde"
-      ],
-      "Yomi": [
-        "Yomi"
-      ]
-    },
     "CountriesStep:Info": {
       "${ selectedCitiesCount } cities selected": [
         "${ selectedCitiesCount } by valgt",
@@ -7488,9 +7459,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Forkert anden adgangskode. Prøv igen."
-      ],
-      "Incorrect username": [
-        "Forkert brugernavn"
       ],
       "Intended recipient does not support calendar sharing": [
         "Den tiltænkte modtager understøtter ikke kalenderdeling"
@@ -10719,6 +10687,9 @@
       "All (${ totalFoldersCount } label)": [
         "Alle (${ totalFoldersCount } etiket)",
         "Alle (${ totalFoldersCount } etiketter)"
+      ],
+      "All admins": [
+        "Alle administratorer"
       ],
       "All data and settings are preserved": [
         "Alt data og alle indstillinger forbliver som de er"
@@ -21554,26 +21525,6 @@
         "Arbejde"
       ]
     },
-    "Protection type": {
-      "Blocked": [
-        "Blokeret"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Device verification": [
-        "Enhedsbekræftelse"
-      ],
-      "Ok": [
-        "OK"
-      ],
-      "Ownership verification": [
-        "Verifikation af ejerskab"
-      ],
-      "Unknown": [
-        "Ukendt"
-      ]
-    },
     "Provider option": {
       "Gmail": [
         "Gmail"
@@ -28190,6 +28141,9 @@
       ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "Føjet til dit abonnement: ${ mergedAddonTitles }"
+      ],
+      "Admins can manage user accounts and give admin privileges to other users.": [
+        "Administratorer kan administrere brugerkonti, og give administratorrettigheder til andre brugere."
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorer kan administrere brugerkonti og give administratorrettigheder til andre brugere. Kun den primære administrator kan redigere abonnementet for organisationen."

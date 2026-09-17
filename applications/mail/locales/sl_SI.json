@@ -1510,10 +1510,7 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Ključ zaupanja",
-        "Ključa zaupanja",
-        "Ključi zaupanja",
-        "Ključev zaupanja"
+        "Zaupaj ključu"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -1711,6 +1708,16 @@
     "action": {
       "Search messages": [
         "Išči sporočila"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "Preimenuj ${ folder } v …"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "Preimenuj ${ label } v …"
       ]
     },
     "Action: Sheets": {
@@ -3097,32 +3104,6 @@
     "Contact image": {
       "Contact image": [
         "Slika kontakta"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Faks"
-      ],
-      "Main": [
-        "Glavno"
-      ],
-      "Mobile": [
-        "Mobilno"
-      ],
-      "Other": [
-        "Ostalo"
-      ],
-      "Pager": [
-        "Pozivnik"
-      ],
-      "Personal": [
-        "Osebno"
-      ],
-      "Work": [
-        "Službeno"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -4879,9 +4860,6 @@
       ],
       "IMAP server is required": [
         "Zahtevan je strežnik IMAP"
-      ],
-      "Incorrect username": [
-        "Nepravilno uporabniško ime"
       ],
       "Invalid code": [
         "Neveljavna koda"
@@ -7921,7 +7899,10 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko"
+        "Vstavi sliko",
+        "Vstavi sliki",
+        "Vstavi slike",
+        "Vstavi slik"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -8117,6 +8098,9 @@
       ],
       "No contacts added yet": [
         "Ni stikov"
+      ],
+      "No draft open": [
+        "Ni odprtih osnutkov"
       ],
       "No email address": [
         "Ni e-poštnih naslovov"
@@ -8361,6 +8345,18 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Za pomoč pri vsem, kar je povezano z ${ BRAND_NAME }, se obrnite na nas."
       ],
+      "Read ${ count } open draft": [
+        "Preberi ${ count } odprt osnutek",
+        "Preberi ${ count } odprta osnutka",
+        "Preberi ${ count } odprte osnutke",
+        "Preberi ${ count } odprtih osnutkov"
+      ],
+      "Read draft \"${ subject }\"": [
+        "Preberi osnutek \"${ subject }\""
+      ],
+      "Read the open draft": [
+        "Preberi odprt osnutek"
+      ],
       "Recipient: ": [
         "Prejemnik: "
       ],
@@ -8382,8 +8378,17 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Ne pozabite tega posodobiti v svojem upravitelju gesel ali kjer hranite podatke o svojem računu in prijavi."
       ],
+      "Remove signature": [
+        "Odstrani podpis"
+      ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Odstrani vse podatke, povezane z aplikacijo (vključno s prenesenimi sporočili)"
+      ],
+      "Rename label": [
+        "Preimenuj oznako"
+      ],
+      "Rename this label": [
+        "Preimenuj to oznako"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "S prijavo lažnega predstavljanja nam boste poslali sporočilo v analizo, s katero bomo izboljšali svoje filtre. To pomeni, da nam bo vsebina sporočila v celoti vidna."
@@ -10197,7 +10202,7 @@
         "Bližnjica na tipkovnici: ${ shortcut }"
       ],
       "Keyboard shortcuts": [
-        "Bližnjice s tipkovnico"
+        "Bližnjice na tipkovnici"
       ],
       "Keyword": [
         "Ključna beseda"

@@ -489,6 +489,9 @@
       "Open link": [
         "Link öffnen"
       ],
+      "Open mention from ${ senderName } in chat": [
+        "Offene Erwähnung von ${ senderName } im Chat"
+      ],
       "Participants join after you approve them": [
         "Teilnehmer werden zugelassen, nachdem du sie genehmigt hast"
       ],
@@ -2162,9 +2165,6 @@
       "Image preview not found": [
         "Bildvorschau nicht gefunden"
       ],
-      "Incorrect username": [
-        "Falscher Benutzername"
-      ],
       "Invalid meeting link": [
         "Ungültiger Meeting-Link"
       ],
@@ -2924,6 +2924,9 @@
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Wenn du Firefox verwendest, stelle sicher, dass PeerConnection aktiviert ist."
+      ],
+      "Incoming video off": [
+        "Eingehendes Video aus"
       ],
       "Internet connection lost": [
         "Internetverbindung unterbrochen"
