@@ -1249,7 +1249,7 @@
         "Allunyar"
       ],
       "Continue to ${ planOrAppName }": [
-        "Continuar amb ${ planOrAppName }"
+        "Continua amb ${ planOrAppName }"
       ],
       "Refetch index": [
         "Tornar a carregar l'índex"
@@ -1353,6 +1353,15 @@
       ],
       "Add a payment method": [
         "Afegiu un mètode de pagament"
+      ],
+      "Connect": [
+        "Conecta"
+      ],
+      "Ignore": [
+        "Ignoreu-ho"
+      ],
+      "Sign in with Google": [
+        "Iniciar sessió amb Google"
       ]
     },
     "Action: Docs": {
@@ -3235,7 +3244,7 @@
         "Els correus enviats a ${ connectedAddressText } apareixeran ara a ${ MAIL_APP_NAME }."
       ],
       "Enough room for years of emails, attachments and more.": [
-        "Espai suficient per anys de correus electrònics, fitxers adjunts i més."
+        "Espai suficient per a anys de correus electrònics, fitxers adjunts i més."
       ],
       "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
         "Desbloquegeu 15 GB d'emmagatzematge per només ${ config.offerPrice }."
@@ -4241,7 +4250,7 @@
         "No hi ha prou espai d'emmagatzematge al vostre ${ DRIVE_APP_NAME }"
       ],
       "Unexpected error, we can't import the files": [
-        "S'ha produït un error inesperat, no podem importar els fitxers"
+        "S'ha produït un error inesperat. No podem importar els fitxers."
       ],
       "We couldn’t send a verification code using this method.": [
         "No hem pogut enviar cap codi de verificació mitjançant aquest mètode."
@@ -4280,7 +4289,7 @@
         "No s'ha pogut trobar cap nom disponible"
       ],
       "Could not load sharing details": [
-        "No s'han pogut carregar els detalls de l'acció de compartir."
+        "No s'han pogut carregar els detalls de compartició"
       ],
       "Could not load the image preview: ${ message }": [
         "No s'ha pogut carregar la vista prèvia de la imatge: ${ message }"
@@ -4316,7 +4325,7 @@
         "No s'ha pogut desxifrar el nom del marcador de pàgina: ${ message }"
       ],
       "Failed to decrypt bookmark password: ${ message }": [
-        "No s'ha pogut desxifrar la contrasenya de la marca de pàgina: ${ message }"
+        "No s'ha pogut desxifrar la contrasenya de l'adreça d'interès: ${ message }"
       ],
       "Failed to decrypt content key: ${ message }": [
         "No s'ha pogut desxifrar la clau de contingut: ${ message }"
@@ -4355,7 +4364,7 @@
         "No s'ha trobat l'element"
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
-        "L'enllaç públic heretat no es pot actualitzar. Creeu-ne un de nou."
+        "L'enllaç públic antic no es pot actualitzar. Torneu-ne a crear un de nou."
       ],
       "Missing inviter email": [
         "Falta l'adreça electrònica de qui convida"
@@ -7412,7 +7421,7 @@
         "No podreu compartir \"${ fileName }\" un cop canvieu l'accés a visualitzador. Només el propietari podrà tornar a canviar el vostre accés."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
-        "Rebreu la recompensa en crèdit un mes després que el vostre amic se subscrigui a un pla anual, i dos mesos després que ho faci a un pla mensual."
+        "Rebreu la recompensa en crèdit un mes després que el vostre amic se subscrigui a un pla anual i dos mesos després que ho faci a un pla mensual."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment.",
@@ -7558,7 +7567,7 @@
         "Tot el que inclou ${ planOrAppName }, i a més:"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
-        "Afegiu ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+        "Afig ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } entrades"
@@ -7949,6 +7958,45 @@
       "${ steps } step": [
         "${ steps } pas",
         "${ steps } passos"
+      ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "S'ha produït un error inesperat en importar les vostres dades. Torneu-ho a provar més tard."
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "S'està connectant amb Google Drive per configurar la vostra importació segura a ${ DRIVE_APP_NAME }."
+      ],
+      "Email you once import is finished": [
+        "Us enviarem un correu electrònic quan hagi acabat la importació"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "Perquè la importació funcioni, heu de seleccionar tots els elements sol·licitats tal com es mostra al GIF anterior."
+      ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "A continuació haureu d'iniciar sessió al vostre compte de Google i autoritzar ${ BRAND_NAME } per accedir a les vostres dades."
+      ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Milloreu de pla per assegurar-vos que la importació finalitzi correctament."
+      ],
+      "Read once and encrypted on arrival": [
+        "Lectura única i xifratge a l'arribada"
+      ],
+      "Sit back and we will let you know.": [
+        "Relaxeu-vos i us ho farem saber."
+      ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Només s'utilitza per copiar-los a ${ DRIVE_APP_NAME }."
+      ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "No admetem la importació de fotos, Google Docs, Sheets ni Slides. Assegureu-vos que el vostre Google Drive no estigui buit."
+      ],
+      "We support most files": [
+        "Admetem la majoria de fitxers"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Us enviarem un correu electrònic quan s'hagi fet la importació. Un cop hagi acabat la trobareu en una carpeta."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "No s'importaran fotos, ni Google Docs i Sheets"
       ]
     },
     "info": {
@@ -11616,7 +11664,7 @@
         "El preu de renovació depèn de la regió de facturació i del número d'empresa."
       ],
       "Renewal price is dependent on the billing region and EIN.": [
-        "El preu de renovació depèn de la regió de facturació i de l'EIN."
+        "El preu de renovació depèn de la regió de facturació i del NIF."
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "El preu de renovació depèn de la regió de facturació i del número d'IVA."
@@ -12654,7 +12702,7 @@
         "Emmagatzematge utilitzat"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Per a continuar carregant i sincronitzant fitxers, allibereu espai o milloreu per a obtenir més emmagatzematge."
+        "Per a continuar carregant i sincronitzant fitxers, allibereu espai o milloreu el pla per a obtenir més emmagatzematge."
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Per continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ upgrade }."
@@ -13160,6 +13208,9 @@
       ],
       "Your videos will appear here": [
         "Els vostres vídeos apareixeran aquí."
+      ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Llegim els vostres fitxers una vegada per copiar-los i, després, en xifrem cadascun amb les vostres claus de ${ BRAND_NAME }."
       ]
     },
     "Success": {
@@ -13643,7 +13694,7 @@
         "Moneda"
       ],
       "Custom": [
-        "Personalitzar"
+        "Personalitzat"
       ],
       "Customize and confirm": [
         "Personalitzeu i confirmeu"
@@ -14489,7 +14540,7 @@
         "Cerca"
       ],
       "Disconnected from Gmail": [
-        "Esteu desconnectat de Gmail"
+        "S'ha desconnectat de Gmail"
       ],
       "Index populators": [
         "Emplenadors de l'índex"
@@ -14586,6 +14637,30 @@
       ],
       "September Sale": [
         "Oferta de setembre"
+      ],
+      "Connect your Google account": [
+        "Connecteu el vostre compte de Google"
+      ],
+      "Easy switch": [
+        "Canvi fàcil"
+      ],
+      "Import started, but your storage won't be enough for this import": [
+        "S'ha iniciat la importació, però el vostre emmagatzematge no serà suficient per aquesta importació"
+      ],
+      "Setting up your import": [
+        "S'està configurant la vostra importació"
+      ],
+      "Sign in to Google": [
+        "Inicieu sessió a Google"
+      ],
+      "Something went wrong": [
+        "S'ha produït un error."
+      ],
+      "We could not find anything to import": [
+        "No s'ha trobat res per importar"
+      ],
+      "Your import is starting": [
+        "La importació s'està iniciant"
       ]
     },
     "Today icon tooltip in mini calendar": {

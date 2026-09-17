@@ -1343,6 +1343,15 @@
       ],
       "Add a payment method": [
         "결제 방법 추가하기"
+      ],
+      "Connect": [
+        "연결"
+      ],
+      "Ignore": [
+        "무시"
+      ],
+      "Sign in with Google": [
+        "Google 계정으로 로그인"
       ]
     },
     "Action: Docs": {
@@ -7804,6 +7813,42 @@
       ],
       "${ steps } step": [
         "${ steps }단계"
+      ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "데이터를 불러오는 도중에 문제가 발생했습니다. 다시 시도하세요."
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "${ DRIVE_APP_NAME }에 안전하게 데이터를 볼러오기 위해 Google Drive와 연결 중입니다."
+      ],
+      "Email you once import is finished": [
+        "불러오기가 완료되면 이메일 알림 보내기"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "가져오기가 작동하려면, GIF에 표시된 대로 상기 요청된 모든 항목을 선택해야 합니다."
+      ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "다음으로, Google 계정에 로그인한 다음 ${ BRAND_NAME }에 회원님의 데이터에 접근할 수 있는 권한을 부여해야 합니다."
+      ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "불러오기를 성공적으로 완료하려면 저장공간을 업그레이드해야합니다."
+      ],
+      "Sit back and we will let you know.": [
+        "잠시 기다려주세요. 완료되면 알려드릴게요."
+      ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "${ DRIVE_APP_NAME }로 복사할 때만 쓰입니다."
+      ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "사진, Google Docs, 시트 및 슬라이드는 불러올 수 없습니다. Google Drive 공간이 비어있는지 여부를 확인해 주세요."
+      ],
+      "We support most files": [
+        "대부분의 파일 지원"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "불러오기가 완료되면 알림 이메일을 보내드립니다. 폴더에서 불러온 파일을 찾으실 수 있습니다."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "사진, Google Docs 및 시트를 불러올 수 없습니다"
       ]
     },
     "info": {
@@ -9006,7 +9051,7 @@
         "회의 녹화"
       ],
       "One active meeting at a time": [
-        "동싀 활성 회의 1개"
+        "동시 활성 회의 1개"
       ],
       "Screen-sharing": [
         "화면 공유"
@@ -11200,7 +11245,7 @@
         "그 후 ${ renewalLength }개월 간 ${ renewPriceStr }(으)로 자동 갱신됩니다. 언제든 취소하실 수 있습니다."
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
-        "이 작업은 기존 구독을 확장합니다. 새로운 추가 기능과 현재 결제일의 남은 기간에 대해서만 청구됩니다. 회워님의 구독 비용 연장 날짜는 변경되지 않습니다."
+        "이 작업은 기존 구독을 확장합니다. 새로운 추가 기능과 현재 결제일의 남은 기간에 대해서만 청구됩니다. 사용자의 구독 비용 연장 날짜는 변경되지 않습니다."
       ],
       "This offer is not available with your current plan.": [
         "현재 플랜에서 이 제안이 제공되지 않습니다."
@@ -12929,6 +12974,9 @@
       ],
       "Your videos will appear here": [
         "동영상이 여기에 표시됩니다"
+      ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "파일을 복사하기 위해 Proton Drive가 파일을 읽은 다음 회원님의 개인 ${ BRAND_NAME } 키로 암호화 작업을 수행합니다."
       ]
     },
     "Success": {
@@ -14335,6 +14383,30 @@
       ],
       "September Sale": [
         "9월 할인"
+      ],
+      "Connect your Google account": [
+        "Google 계정 연결"
+      ],
+      "Easy switch": [
+        "Easy switch"
+      ],
+      "Import started, but your storage won't be enough for this import": [
+        "불러오기가 시작되었습니다. 저장공간이 부족하여 모든 파일을 불러올 수 없습니다."
+      ],
+      "Setting up your import": [
+        "불러오기를 설정하는 중"
+      ],
+      "Sign in to Google": [
+        "Google 계정에 로그인"
+      ],
+      "Something went wrong": [
+        "문제가 발생했습니다"
+      ],
+      "We could not find anything to import": [
+        "불러올 파일이 없습니다"
+      ],
+      "Your import is starting": [
+        "불러오기 작업이 시작되었어요"
       ]
     },
     "Today icon tooltip in mini calendar": {
