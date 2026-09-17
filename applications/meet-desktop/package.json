@@ -37,13 +37,10 @@
     },
     "dependencies": {
         "@proton/shared": "workspace:^",
-        "@types/minimist": "^1.2.5",
         "electron-log": "^5.4.4",
-        "electron-squirrel-startup": "^1.0.1",
         "electron-store": "^8.2.0",
         "execa": "^8.0.1",
         "lodash": "^4.18.1",
-        "minimist": "^1.2.8",
         "ttag": "^1.8.12",
         "ttag-cli": "^1.12.0",
         "update-electron-app": "^3.3.0",
