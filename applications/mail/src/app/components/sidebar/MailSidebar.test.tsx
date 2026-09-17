@@ -3,6 +3,7 @@ import { addDays, subDays } from 'date-fns';
 import loudRejection from 'loud-rejection';
 
 import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
+import { buildUser } from '@proton/account/testing/buildUser';
 import { getModelState } from '@proton/account/tests';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useEventManager from '@proton/components/hooks/useEventManager';
@@ -16,7 +17,6 @@ import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey, type Label } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
-import { buildUser } from '@proton/testing/builders/user';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 import range from '@proton/utils/range';

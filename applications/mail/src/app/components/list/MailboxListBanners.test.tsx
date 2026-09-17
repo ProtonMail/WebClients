@@ -1,11 +1,11 @@
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { mockUseUser } from '@proton/account/testing/mockUseUser';
 import { DENSITY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { mockUseApi } from '@proton/testing/lib/mockUseApi';
 import { mockUseHistory } from '@proton/testing/lib/mockUseHistory';
-import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
 import { mockUseEncryptedSearchContext } from '../../helpers/tests/mockUseEncryptedSearchContext';
 import { mailTestRender } from '../../helpers/tests/render';

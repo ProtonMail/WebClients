@@ -1,5 +1,5 @@
+import { buildContactEmail } from '@proton/account/testing/buildContactEmail';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
-import { buildContactEmail } from '@proton/testing/builders/contactEmail';
 
 import type { MailToolDeps } from '../../toolModule';
 import { createFindContactsHandler, findContactsDefinition, matchContacts } from './findContacts';

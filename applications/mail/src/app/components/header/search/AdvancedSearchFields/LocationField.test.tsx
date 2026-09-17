@@ -3,10 +3,10 @@ import userEvent from '@testing-library/user-event';
 
 import { getModelState } from '@proton/account/tests';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
+import { mockUseFolders } from '@proton/mail/testing/mockUseFolders';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
-import { mockUseFolders } from '@proton/testing/lib/mockUseFolders';
 
 import LocationField from './LocationField';
 import { mockUseLocationFieldOptions } from './LocationField.test.utils';
