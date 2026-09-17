@@ -34,6 +34,9 @@
       "${ name } lowered their hand": [
         "${ name } abaixou a mão"
       ],
+      "${ name } mentioned you: ${ message }": [
+        "${ name } mencionou você: ${ message }"
+      ],
       "${ name } raised their hand": [
         "${ name } levantaram a mão"
       ],
@@ -67,8 +70,14 @@
       "Background removed": [
         "Plano de fundo removido"
       ],
+      "Beach landscape background applied": [
+        "Plano de fundo com paisagem de praia aplicado"
+      ],
       "Blurred background applied": [
         "Plano de fundo desfocado aplicado"
+      ],
+      "Blurred office background applied": [
+        "Plano de fundo do escritório desfocado aplicado"
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Conectado via modo de retransmissão TURN devido às restrições da rede. Isso pode aumentar a latência e afetar a qualidade da chamada."
@@ -84,6 +93,9 @@
       ],
       "Light ${ BRAND_NAME } background applied": [
         "Plano de fundo claro da ${ BRAND_NAME } aplicado"
+      ],
+      "Mountain landscape background applied": [
+        "Plano de fundo com paisagem montanhosa aplicado"
       ],
       "New chat message: ${ message }": [
         "Nova mensagem no bate-papo: ${ message }"
@@ -148,6 +160,9 @@
       "You have been muted by the host": [
         "Você foi silenciado pelo organizador"
       ],
+      "You were mentioned: ${ message }": [
+        "Você foi mencionado: ${ message }"
+      ],
       "Your camera has been turned off by the host": [
         "Sua câmera foi desligada pelo organizador"
       ]
@@ -155,6 +170,10 @@
     "Action": {
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
+      ],
+      "${ newMentionCount } new mention": [
+        "${ newMentionCount } nova menção",
+        "${ newMentionCount } novas menções"
       ],
       "${ newMessageCount } new": [
         "${ newMessageCount } novo",
@@ -1917,14 +1936,23 @@
       "Copying item to a non-folder is not allowed": [
         "Não é permitido copiar o item para um local que não seja uma pasta"
       ],
+      "Could not add this background. Please try again.": [
+        "Não foi possível adicionar este plano de fundo. Tente novamente."
+      ],
       "Could not load sharing details": [
         "Não foi possível carregar os detalhes do compartilhamento"
+      ],
+      "Could not remove this background. Please try again.": [
+        "Não foi possível remover este plano de fundo. Tente novamente."
       ],
       "Could not unlock the parent folder": [
         "Não foi possível desbloquear a pasta pai"
       ],
       "Could not unlock this item": [
         "Não foi possível desbloquear este item"
+      ],
+      "Couldn’t play the recording on this speaker.": [
+        "Não consegui reproduzir a gravação neste alto-falante."
       ],
       "Creating documents in non-folders is not allowed": [
         "Não é permitido criar documentos dentro de itens que não sejam pastas"
@@ -2043,6 +2071,9 @@
       "Failed to unlock meeting": [
         "Falha ao desbloquear reunião"
       ],
+      "Failed to update live captions availability": [
+        "Erro ao atualizar a disponibilidade das legendas ao vivo"
+      ],
       "Failed to update waiting room setting. Please try again.": [
         "Falha ao atualizar a configuração da sala de espera. Tente novamente."
       ],
@@ -2054,9 +2085,6 @@
       ],
       "Image preview not found": [
         "Pré-visualização da imagem não encontrada"
-      ],
-      "Incorrect username": [
-        "Nome de usuário incorreto"
       ],
       "Invalid meeting link": [
         "Link da reunião inválido"
@@ -2075,6 +2103,9 @@
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "O link público antigo não pode ser atualizado. Crie um novo link público."
+      ],
+      "Live captions couldn't be started.": [
+        "Não foi possível iniciar as legendas ao vivo"
       ],
       "Live captions have stopped.": [
         "As legendas ao vivo pararam."
@@ -2121,6 +2152,9 @@
       ],
       "Photo not found": [
         "Foto não encontrada"
+      ],
+      "Pick a JPEG, PNG or WebP image.": [
+        "Escolha uma imagem no formato JPEG, PNG ou WebP."
       ],
       "Please allow screen sharing in your system permissions, then try again": [
         "Habilite o compartilhamento de tela nas permissões do sistema e tente novamente"
@@ -2244,6 +2278,9 @@
       ],
       "Your device's clock appears to be out of sync. Please check your system time and try again.": [
         "O seu relógio parece estar dessincronizado. Verifique a hora do sistema e tente novamente."
+      ],
+      "Your microphone is busy. Close other apps or tabs using it, then try again.": [
+        "Seu microfone está ocupado. Feche outros aplicativos ou abas que estejam usando o microfone e tente novamente."
       ]
     },
     "Error message": {
@@ -2288,6 +2325,9 @@
       ],
       "Security key": [
         "Chave de segurança"
+      ],
+      "Still waiting?": [
+        "Ainda esperando?"
       ]
     },
     "fido2: Label": {
@@ -2419,6 +2459,9 @@
       " and ": [
         " e "
       ],
+      "${ deviceLabel } is available again": [
+        "${ deviceLabel } está disponível de novo"
+      ],
       "${ maxParticipants } participant limit reached": [
         "Limite de ${ maxParticipants } participantes atingido"
       ],
@@ -2456,6 +2499,12 @@
         "${ replyCount } resposta",
         "${ replyCount } respostas"
       ],
+      "${ senderNameNode } mentioned you": [
+        "${ senderNameNode } mencionou você"
+      ],
+      "${ spotlightParticipantName } is the active speaker": [
+        "${ spotlightParticipantName } é um falante ativo"
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } de até ${ maxParticipants } participantes"
       ],
@@ -2488,6 +2537,9 @@
       "Admitting": [
         "Admitindo"
       ],
+      "Allow camera access to preview your background": [
+        "Permitir que a câmera acesse o seu plano de fundo para pré-visualizá-lo"
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anônimo ${ particle } ${ participantNumber }"
       ],
@@ -2514,6 +2566,9 @@
       ],
       "Background blur initializing": [
         "Inicializando o desfoque de fundo"
+      ],
+      "Background effects are not supported on your browser": [
+        "Os efeitos de plano de fundo não são compatíveis com o seu navegador"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
@@ -2634,6 +2689,9 @@
       ],
       "End-to-end encryption is active for this chat.": [
         "A criptografia de ponta a ponta está ativa para este bate-papo."
+      ],
+      "enter": [
+        "entrar"
       ],
       "Enter code": [
         "Inserir código"
@@ -2803,6 +2861,9 @@
       "Member": [
         "Membro"
       ],
+      "Mention from ${ senderName }": [
+        "Menção de ${ senderName }"
+      ],
       "Message actions": [
         "Ações de mensagem"
       ],
@@ -2889,6 +2950,9 @@
       ],
       "Participant": [
         "Participante"
+      ],
+      "Participants can’t use live captions": [
+        "Os participantes não podem usar legendas ao vivo"
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Cole seu link do ${ MEET_APP_NAME } para entrar em uma reunião segura"
@@ -3199,14 +3263,32 @@
       "Your browser or device isn’t supported": [
         "Seu navegador ou dispositivo não é suportado"
       ],
+      "Your camera was disconnected. Now using ${ deviceLabel }.": [
+        "Sua câmera foi desconectada. Agora está sendo usado o ${ deviceLabel }."
+      ],
+      "Your device was disconnected. Now using ${ deviceLabel }.": [
+        "Seu dispositivo foi desconectado. Agora está sendo usado o ${ deviceLabel }."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será usado para essa verificação única."
       ],
       "Your meeting is ready": [
         "Sua reunião está pronta"
       ],
+      "Your microphone and speaker were disconnected. Now using other devices.": [
+        "Seu microfone e alto-falante foram desconectados. Agora, outros dispositivos estão sendo usados."
+      ],
+      "Your microphone was disconnected. Now using ${ deviceLabel }.": [
+        "Seu microfone foi desconectado. Agora está sendo usado o ${ deviceLabel }."
+      ],
+      "Your microphone, speaker and camera were disconnected. Now using other devices.": [
+        "Seu microfone, alto-falante e câmera foram desconectados. Agora, outros dispositivos estão sendo usados."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Seu número de telefone somente será usado nessa verificação única."
+      ],
+      "Your speaker was disconnected. Now using ${ deviceLabel }.": [
+        "Seu alto-falante foi desconectado. Agora está sendo usado o ${ deviceLabel }."
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Você está prestes a abrir um link em uma nova guia. Certifique-se de que o site seja confiável antes de continuar."
@@ -3249,6 +3331,9 @@
       ],
       "Auto-detect": [
         "Detectar automaticamente"
+      ],
+      "Beach landscape background": [
+        "Plano de fundo com paisagem de praia"
       ],
       "Blurred (next)": [
         "Desfocado (próximo)"
@@ -3340,6 +3425,9 @@
       "Every year": [
         "Anualmente"
       ],
+      "everyone": [
+        "todos"
+      ],
       "Google Calendar": [
         "Google Agenda"
       ],
@@ -3381,6 +3469,9 @@
       ],
       "Meeting link": [
         "Link da reunião"
+      ],
+      "Mention a participant": [
+        "Mencionar um participante"
       ],
       "Message": [
         "Mensagem"
@@ -3468,6 +3559,9 @@
       ],
       "Track SID": [
         "Rastrear SID"
+      ],
+      "unknown": [
+        "desconhecido"
       ],
       "Uploaded image": [
         "Imagem enviada"
@@ -3575,6 +3669,9 @@
       ],
       "Successfully rotated your personal meeting": [
         "Sua reunião pessoal foi atualizada com sucesso."
+      ],
+      "Thanks! Your feedback has been submitted.": [
+        "Obrigado! Seu feedback foi enviado."
       ],
       "You can't send a feedback for a meeting you haven't been to": [
         "Você não pode enviar feedback sobre uma reunião da qual não participou"
@@ -3875,6 +3972,9 @@
       "Background": [
         "Plano de fundo"
       ],
+      "Background blur preview": [
+        "Pré-visualização do desfoque de plano de fundo"
+      ],
       "Backgrounds": [
         "Planos de fundo"
       ],
@@ -4107,6 +4207,9 @@
     "Tooltip": {
       "Background blur is not supported on your browser": [
         "O desfoque de fundo não é compatível com seu navegador"
+      ],
+      "Background effects are not supported on your browser": [
+        "Os efeitos de plano de fundo não são compatíveis com o seu navegador"
       ],
       "Generate a new meeting link. The current link will stop working.": [
         "Gere um novo link de reunião. O link atual deixará de funcionar."
