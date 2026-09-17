@@ -1541,8 +1541,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -3186,32 +3185,6 @@
     "Contact image": {
       "Contact image": [
         "Imagem do contato"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "Principal"
-      ],
-      "Mobile": [
-        "Celular"
-      ],
-      "Other": [
-        "Outro"
-      ],
-      "Pager": [
-        "Pager"
-      ],
-      "Personal": [
-        "Pessoal"
-      ],
-      "Work": [
-        "Trabalho"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -5019,9 +4992,6 @@
       "IMAP server is required": [
         "O servidor IMAP é obrigatório"
       ],
-      "Incorrect username": [
-        "Nome de usuário incorreto"
-      ],
       "Invalid code": [
         "O código não é válido."
       ],
@@ -5169,6 +5139,9 @@
       ],
       "Operation failed, try again later": [
         "Erro na operação, tente novamente mais tarde"
+      ],
+      "Organization does not have enough seats available": [
+        "A organização não tem licenças suficientes disponíveis"
       ],
       "Organization does not have enough storage available": [
         "A organização não tem armazenamento suficientes disponíveis"
@@ -6072,6 +6045,9 @@
       ],
       "Security key": [
         "Chave de segurança"
+      ],
+      "Still waiting?": [
+        "Ainda esperando?"
       ]
     },
     "fido2: Label": {
@@ -8078,7 +8054,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -8121,6 +8098,9 @@
       ],
       "Key fingerprint": [
         "Chave de impressão digital"
+      ],
+      "Label ${ emails }": [
+        "Marcar ${ emails }"
       ],
       "Label all imported messages as": [
         "Marcar todas as mensagens importadas como"
@@ -8310,6 +8290,9 @@
       ],
       "No email open": [
         "Nenhum e-mail aberto"
+      ],
+      "No emails selected": [
+        "Nenhum e-mail selecionado"
       ],
       "No folder found": [
         "Nenhuma pasta encontrada"
@@ -8591,6 +8574,9 @@
         "Ler e-mails de ${ count } marcador",
         "Ler e-mails de ${ count } marcadores"
       ],
+      "Read your signature": [
+        "Leia sua assinatura"
+      ],
       "Recipient: ": [
         "Destinatário: "
       ],
@@ -8614,9 +8600,6 @@
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Remove todos os dados associados com esse aplicativo (incluindo mensagens baixadas, …)"
-      ],
-      "Rename ${ folder } to…": [
-        "Renomear ${ folder } para…"
       ],
       "Rename folder": [
         "Renomear pasta"
@@ -8804,6 +8787,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Desculpe, esta mensagem não existe ou já expirou."
+      ],
+      "Star ${ emails }": [
+        "Favoritar ${ emails }"
       ],
       "Star emails": [
         "E-mails favoritos"
@@ -10434,6 +10420,9 @@
       "From": [
         "De"
       ],
+      "From time": [
+        "Da hora"
+      ],
       "From:": [
         "De:"
       ],
@@ -10916,6 +10905,12 @@
       ],
       "Unsubscribed from ${ truncatedName }.": [
         "A assinatura de ${ truncatedName } foi cancelada."
+      ],
+      "Until date": [
+        "Até a data"
+      ],
+      "Until time": [
+        "Até a data"
       ],
       "Updates": [
         "Atualizações"
@@ -12355,6 +12350,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } com final ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB de armazenamento em nuvem que permite armazenar, sincronizar e compartilhar arquivos com facilidade. Protegido por criptografia de ponta a ponta."
       ],
