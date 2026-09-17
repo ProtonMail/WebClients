@@ -358,6 +358,7 @@ enum MeetFeatureFlag {
     MeetScreenShareAudioSupportedElectronVersion = 'MeetScreenShareAudioSupportedElectronVersion',
     MeetChatMentions = 'MeetChatMentions',
     MeetOpenMessageFromPreview = 'MeetOpenMessageFromPreview',
+    MeetForceDisableNoiseCancellationOnEdge = 'MeetForceDisableNoiseCancellationOnEdge',
 }
 
 enum LumoFeatureFlag {
