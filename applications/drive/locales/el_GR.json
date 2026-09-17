@@ -237,6 +237,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Επιβεβαίωση ανοίγματος συνδέσμου ${ linkToShow }"
       ],
+      "Connect": [
+        "Σύνδεση"
+      ],
       "Connect apps and devices": [
         "Σύνδεση εφαρμογών και συσκευών"
       ],
@@ -577,6 +580,9 @@
       ],
       "Hide more benefits": [
         "Απόκρυψη περισσότερων οφελών"
+      ],
+      "Ignore": [
+        "Αγνόηση"
       ],
       "Image could not be loaded with tracker protection.": [
         "Η εικόνα απέτυψε να φορτωθεί με προστασία παρακολούθησης."
@@ -1063,6 +1069,9 @@
       ],
       "Show side panel": [
         "Εμφάνιση πλαϊνού πλαισίου"
+      ],
+      "Sign in with Google": [
+        "Σύνδεση μέσω Google"
       ],
       "Sign out": [
         "Αποσύνδεση"
@@ -2105,32 +2114,6 @@
     "Contact image": {
       "Contact image": [
         "Εικόνα επαφής"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Φαξ"
-      ],
-      "Main": [
-        "Κύριο"
-      ],
-      "Mobile": [
-        "Κινητό"
-      ],
-      "Other": [
-        "Άλλο"
-      ],
-      "Pager": [
-        "Βομβητής"
-      ],
-      "Personal": [
-        "Προσωπικό"
-      ],
-      "Work": [
-        "Εργασία"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -3754,9 +3737,6 @@
       ],
       "Incorrect password. Please try again.": [
         "Λανθασμένος κωδικός. Παρακαλούμε δοκιμάστε ξανά."
-      ],
-      "Incorrect username": [
-        "Εσφαλμένο όνομα χρήστη"
       ],
       "Invalid code": [
         "Μη έγκυρος κωδικός"
@@ -5604,6 +5584,9 @@
       "An issue occurred during the restore process.": [
         "Παρουσιάστηκε ένα πρόβλημα κατά τη διαδικασία επαναφοράς."
       ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Προέκυψε ένα απρόσμενο σφάλμα κατά την εισαγωγή των δεδομένων σας. Παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
       "and": [
         "και"
       ],
@@ -5747,6 +5730,9 @@
       ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Συνδεθείτε στο ${ VPN_APP_NAME } για ιδιωτική περιήγηση"
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "Σύνδεση στο Google Drive για τη ρύθμιση της ασφαλούς εισαγωγής στο ${ DRIVE_APP_NAME }."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Η επαφή προστέθηκε στην ομάδα ${ contactGroupName }"
@@ -5911,6 +5897,9 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Η φιλοξενία email είναι διαθέσιμη μόνο για τους υπάρχοντες τομείς που κατέχετε. Η εγγραφή τομέων δεν είναι προσωρινά διαθέσιμη μέσω ${ BRAND_NAME }. Μπορείτε να φιλοξενήσετε email για τομείς εγγεγραμμένους σε οιουδήποτε ληξίαρχο τομέων."
       ],
+      "Email you once import is finished": [
+        "Θα σας στείλουμε ηλεκτρονικό μήνυμα μόλις ολοκληρωθεί η εισαγωγή."
+      ],
       "Emails are automatically signed": [
         "Τα μηνύματα υπογράφονται αυτόματα"
       ],
@@ -6019,6 +6008,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Μόνο για ${ bundlePlanPriceInline }"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "Για να λειτουργήσει η εισαγωγή, πρέπει να επιλέξετε όλα τα ζητούμενα στοιχεία, όπως φαίνεται στο παραπάνω GIF."
       ],
       "Forgot password?": [
         "Ξεχάσατε τον κωδικό πρόσβασης;"
@@ -6352,6 +6344,9 @@
       "New": [
         "Νέο"
       ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Στη συνέχεια, θα πρέπει να συνδεθείτε στον λογαριασμό σας Google και να παραχωρήσετε στο ${ BRAND_NAME } πρόσβαση στα δεδομένα σας."
+      ],
       "No": [
         "Όχι"
       ],
@@ -6543,6 +6538,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Δοκιμάστε ξανά χρησιμοποιώντας διαφορετικό τρόπο πληρωμής ή επικοινωνήστε με την τράπεζά σας."
       ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Παρακαλούμε κάντε αναβάθμιση για να διασφαλίσετε ότι η εισαγωγή θα ολοκληρωθεί με επιτυχία."
+      ],
       "Please use another browser or download the file.": [
         "Χρησιμοποιήστε άλλο πρόγραμμα περιήγησης ή κατεβάστε το αρχείο."
       ],
@@ -6608,6 +6606,9 @@
       ],
       "Read folder context": [
         "Ανάγνωση περιβάλλοντος φακέλου"
+      ],
+      "Read once and encrypted on arrival": [
+        "Ανάγνωση μίας φοράς και κρυπτογράφηση κατά την άφιξη"
       ],
       "Read this file": [
         "Διάβασα αυτό το αρχείο"
@@ -6773,6 +6774,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
+      ],
+      "Sit back and we will let you know.": [
+        "Καθίστε αναπαυτικά και θα σας ενημερώσουμε."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Ορισμένες κυβερνήσεις αποκλείουν ή περιορίζουν την πρόσβαση σε ορισμένους ιστότοπους. Ένα VPN βοηθά στην παράκαμψη της λογοκρισίας, διατηρώντας παράλληλα τη δραστηριότητα και την ταυτότητά σας ιδιωτικές."
@@ -7107,6 +7111,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Χρησιμοποιήστε αυτή τη φόρμα για να μας ενημερώσετε για ακατάλληλες, παράνομες,\nή άλλως κακόβουλα κοινόχρηστα αρχεία. Πρόκειται να αναφέρετε:"
       ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Χρησιμοποιείται μόνο για την αντιγραφή τους στο ${ DRIVE_APP_NAME }."
+      ],
       "username": [
         "όνομα χρήστη"
       ],
@@ -7156,11 +7163,17 @@
       "We couldn’t process your payment.": [
         "Δεν ήταν δυνατή η επεξεργασία της πληρωμής σας."
       ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "Δεν υποστηρίζουμε την εισαγωγή φωτογραφιών, καθώς και αρχείων Google Docs, Sheets και Slides. Βεβαιωθείτε ότι το Google Drive σας δεν είναι άδειο."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Πρέπει να επαληθεύσουμε τον τρόπο πληρωμής σας με την τράπεζά σας."
       ],
       "We need to authenticate your payment with your bank.": [
         "Πρέπει να επαληθεύσουμε την πληρωμή σας με την τράπεζά σας."
+      ],
+      "We support most files": [
+        "Υποστηρίζουμε τα περισσότερα αρχεία."
       ],
       "We use 3-D Secure to protect your payments": [
         "Χρησιμοποιούμε ασφάλεια 3-D για να προστατεύσουμε τις πληρωμές σας"
@@ -7168,6 +7181,9 @@
       "We were not able to add this photo to your album": [
         "Δεν καταφέραμε να προσθέσουμε αυτή τη φωτογραφία στο άλμπουμ σας",
         "Δεν καταφέραμε να προσθέσουμε αυτές τις φωτογραφίες στο άλμπουμ σας"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Θα σας στείλουμε ηλεκτρονικό μήνυμα όταν ολοκληρωθεί η εισαγωγή. Μόλις ολοκληρωθεί, θα βρείτε τα δεδομένα της εισαγωγής σε έναν φάκελο."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Θα σας ανακατευθύνουμε στο ${ IDEAL_WERO_BRAND_NAME }, σε μια νέα καρτέλα προγράμματος περιήγησης, για να ολοκληρώσετε αυτήν τη συναλλαγή. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
@@ -7216,6 +7232,9 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "θα γίνει επαναφορά στην έκδοση από ${ formattedRevisionDate }. Όλες οι άλλες εκδόσεις θα εξακολουθούν να αποθηκεύονται."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "Δεν γίνεται εισαγωγή φωτογραφιών, Google Docs και Sheets"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
@@ -12613,6 +12632,9 @@
       "Shared by ${ sharedBy }": [
         "Κοινοποιήθηκε από τον/την ${ sharedBy }"
       ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Διαβάζουμε τα αρχεία σας μία φορά για να τα αντιγράψουμε και, στη συνέχεια, κρυπτογραφούμε το καθένα με τα κλειδιά σας για το ${ BRAND_NAME }."
+      ],
       "Your favorited photos will appear here": [
         "Οι αγαπημένες σας φωτογραφίες θα εμφανίζονται εδώ"
       ],
@@ -13070,6 +13092,9 @@
       "Connect your custom domain": [
         "Συνδέστε τον προσαρμοσμένο τομέα σας"
       ],
+      "Connect your Google account": [
+        "Συνδέστε τον Google λογαριασμό σας"
+      ],
       "Contact Details": [
         "Στοιχεία Επαφής"
       ],
@@ -13232,6 +13257,9 @@
       "Drop to upload": [
         "Αποθέστε εδώ για ανέβασμα"
       ],
+      "Easy switch": [
+        "Easy switch"
+      ],
       "Edit billing address": [
         "Επεξεργασία διεύθυνσης χρέωσης"
       ],
@@ -13368,6 +13396,9 @@
       ],
       "Import groups": [
         "Εισαγωγή ομάδων"
+      ],
+      "Import started, but your storage won't be enough for this import": [
+        "Η εισαγωγή ξεκίνησε, αλλά ο αποθηκευτικός σας χώρος δεν θα επαρκεί για αυτή την εισαγωγή."
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Εισάγετε τα δεδομένα σας στο ${ BRAND_NAME }"
@@ -13670,6 +13701,9 @@
       "Set up your organization": [
         "Ρυθμίστε τον οργανισμό σας"
       ],
+      "Setting up your import": [
+        "Ρύθμιση της εισαγωγής σας"
+      ],
       "Settings": [
         "Ρυθμίσεις"
       ],
@@ -13700,6 +13734,9 @@
       "Sign in and grant access": [
         "Εισέλθετε και παραχωρήστε πρόσβαση"
       ],
+      "Sign in to Google": [
+        "Σύνδεση στο Google"
+      ],
       "Sign out": [
         "Αποσύνδεση"
       ],
@@ -13714,6 +13751,9 @@
       ],
       "Size in bytes": [
         "Μέγεθος σε bytes"
+      ],
+      "Something went wrong": [
+        "Κάτι πήγε στραβά"
       ],
       "Sort files/folders": [
         "Ταξινόμηση αρχείων/φάκελων"
@@ -13844,6 +13884,9 @@
       "Warning: suspected fake website": [
         "Προειδοποίηση: υποψία ψεύτικης ιστοσελίδας"
       ],
+      "We could not find anything to import": [
+        "Δεν μπορέσαμε να βρούμε τίποτα για εισαγωγή."
+      ],
       "We couldn’t verify that ${ author } created this file.": [
         "Δεν μπορέσαμε να επαληθεύσουμε ότι ο χρήστης ${ author } δημιούργησε αυτό το αρχείο."
       ],
@@ -13927,6 +13970,9 @@
       ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
+      ],
+      "Your import is starting": [
+        "Η εισαγωγή σας εκκινεί"
       ],
       "Your plan": [
         "Το πακέτο σας"

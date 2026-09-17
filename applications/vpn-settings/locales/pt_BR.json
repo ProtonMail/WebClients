@@ -2787,32 +2787,6 @@
         "URL"
       ]
     },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "Principal"
-      ],
-      "Mobile": [
-        "Celular"
-      ],
-      "Other": [
-        "Outro"
-      ],
-      "Pager": [
-        "Pager"
-      ],
-      "Personal": [
-        "Pessoal"
-      ],
-      "Work": [
-        "Trabalho"
-      ],
-      "Yomi": [
-        "Yomi"
-      ]
-    },
     "CountriesStep:Info": {
       "${ selectedCitiesCount } cities selected": [
         "${ selectedCitiesCount } cidade selecionada",
@@ -5150,9 +5124,6 @@
       "Incorrect second password. Please try again.": [
         "Segunda senha incorreta. Tente novamente."
       ],
-      "Incorrect username": [
-        "Nome de usuário incorreto"
-      ],
       "Invalid code": [
         "O código não é válido."
       ],
@@ -5277,6 +5248,9 @@
       ],
       "Operation failed, try again later": [
         "Erro na operação, tente novamente mais tarde"
+      ],
+      "Organization does not have enough seats available": [
+        "A organização não tem licenças suficientes disponíveis"
       ],
       "Organization does not have enough storage available": [
         "A organização não tem armazenamento suficientes disponíveis"
@@ -6424,6 +6398,9 @@
       ],
       "Security key updated": [
         "Chave de segurança atualizada"
+      ],
+      "Still waiting?": [
+        "Ainda esperando?"
       ],
       "This will delete all security keys linked to your account.": [
         "Isso excluirá todas as chaves de seguranças vinculadas a sua conta."
@@ -12874,6 +12851,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } com final ${ Last4 }"
+      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "A ${ BRAND_NAME } permite que você crie endereços de e-mail e gerencie contas para subusuários. Ideal para famílias e organizações."
       ],
@@ -14735,26 +14715,6 @@
       ],
       "Work": [
         "Trabalho"
-      ]
-    },
-    "Protection type": {
-      "Blocked": [
-        "Bloqueado"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Device verification": [
-        "Verificação de dispositivo"
-      ],
-      "Ok": [
-        "Ok"
-      ],
-      "Ownership verification": [
-        "Verificação de propriedade"
-      ],
-      "Unknown": [
-        "Desconhecido"
       ]
     },
     "Provider option": {

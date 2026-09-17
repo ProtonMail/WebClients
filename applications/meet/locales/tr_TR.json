@@ -489,6 +489,9 @@
       "Open link": [
         "Bağlantıyı aç"
       ],
+      "Open mention from ${ senderName } in chat": [
+        "${ senderName } kullanıcısının anmasını sohbette aç"
+      ],
       "Participants join after you approve them": [
         "Katılımcıların katılması için onay vermeniz gerekir"
       ],
@@ -2162,9 +2165,6 @@
       "Image preview not found": [
         "Görsel ön izlemesi bulunamadı"
       ],
-      "Incorrect username": [
-        "Kullanıcı adı yanlış"
-      ],
       "Invalid meeting link": [
         "Görüşme bağlantısı geçersiz"
       ],
@@ -2924,6 +2924,9 @@
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Firefox kullanıyorsanız, PeerConnection özelliğinin açık olduğundan emin olun."
+      ],
+      "Incoming video off": [
+        "Gelen görüntü kapalı"
       ],
       "Internet connection lost": [
         "İnternet bağlantısı kesildi"

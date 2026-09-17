@@ -2782,32 +2782,6 @@
         "URL"
       ]
     },
-    "Contact type label": {
-      "Fax": [
-        "팩스"
-      ],
-      "Main": [
-        "메인"
-      ],
-      "Mobile": [
-        "모바일"
-      ],
-      "Other": [
-        "기타"
-      ],
-      "Pager": [
-        "호출기"
-      ],
-      "Personal": [
-        "개인"
-      ],
-      "Work": [
-        "직장"
-      ],
-      "Yomi": [
-        "Yomi"
-      ]
-    },
     "CountriesStep:Info": {
       "${ selectedCitiesCount } cities selected": [
         "${ selectedCitiesCount }개 도시 선택됨"
@@ -5169,9 +5143,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "2차 비밀번호가 틀렸습니다. 다시 시도해 주세요."
-      ],
-      "Incorrect username": [
-        "잘못된 사용자 이름"
       ],
       "Invalid code": [
         "잘못된 코드입니다."
@@ -9400,7 +9371,7 @@
         "${ pausedCount }개 ${ roleAssignmentSource }에 대한 작업이 중단되었습니다. 규칙 할당을 다시 시작하려면 클릭하여 계속합니다."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
-        "추천 크레딧은 친구가 요금제를 구독한 경우에 한해, 친구의 체험판 종료 후 최대 2개월까지 지급될 수 있습니다."
+        "추천 크레딧은 친구가 플랜을 구독한 경우에 한해, 친구의 무료 체험 종료 후 최대 2개월까지 지급될 수 있습니다."
       ],
       "The securest way to browse, stream, and be online.": [
         "검색, 스트리밍 및 온라인 상태를 유지하는 가장 안전한 방법이에요."
@@ -12034,7 +12005,7 @@
         "회의 녹화"
       ],
       "One active meeting at a time": [
-        "동싀 활성 회의 1개"
+        "동시 활성 회의 1개"
       ],
       "Password manager with team vaults": [
         "팀 보관함을 지원하는 비밀번호 관리자"
@@ -14349,7 +14320,7 @@
         "그 후 ${ renewalLength }개월 간 ${ renewPriceStr }(으)로 자동 갱신됩니다. 언제든 취소하실 수 있습니다."
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
-        "이 작업은 기존 구독을 확장합니다. 새로운 추가 기능과 현재 결제일의 남은 기간에 대해서만 청구됩니다. 회워님의 구독 비용 연장 날짜는 변경되지 않습니다."
+        "이 작업은 기존 구독을 확장합니다. 새로운 추가 기능과 현재 결제일의 남은 기간에 대해서만 청구됩니다. 사용자의 구독 비용 연장 날짜는 변경되지 않습니다."
       ],
       "This offer is not available with your current plan.": [
         "현재 플랜에서 이 제안이 제공되지 않습니다."
@@ -14373,7 +14344,7 @@
         "이미 이 플랜을 구독하고 있습니다. 구독은 ${ subscriptionPlatform }에서 변경할 수 있습니다."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
-        "선택된 결제 수단에서 ${ amountToCharge }이 청구됩니다."
+        "선택된 결제 수단에서 ${ amountToCharge }이(가) 청구됩니다."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "결제를 인증하기 위해 곧 PayPal로 이동됩니다."
@@ -14823,26 +14794,6 @@
       ],
       "Work": [
         "직장"
-      ]
-    },
-    "Protection type": {
-      "Blocked": [
-        "차단됨"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Device verification": [
-        "기기 인증"
-      ],
-      "Ok": [
-        "확인"
-      ],
-      "Ownership verification": [
-        "소유권 인증"
-      ],
-      "Unknown": [
-        "알 수 없음"
       ]
     },
     "Provider option": {

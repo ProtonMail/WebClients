@@ -2857,32 +2857,6 @@
         "Odkaz"
       ]
     },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "Hlavné"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Other": [
-        "Iné"
-      ],
-      "Pager": [
-        "Pager"
-      ],
-      "Personal": [
-        "Osobné"
-      ],
-      "Work": [
-        "Práca"
-      ],
-      "Yomi": [
-        "Yomi"
-      ]
-    },
     "CountriesStep:Info": {
       "${ selectedCitiesCount } cities selected": [
         "${ selectedCitiesCount } vybrané mesto",
@@ -5295,9 +5269,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Nesprávne druhé heslo. Skúste to znova, prosím."
-      ],
-      "Incorrect username": [
-        "Nesprávne používateľské meno"
       ],
       "Invalid code": [
         "Neplatný kód"
@@ -15461,26 +15432,6 @@
         "Práca"
       ]
     },
-    "Protection type": {
-      "Blocked": [
-        "Blokované"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Device verification": [
-        "Overenie zariadenia"
-      ],
-      "Ok": [
-        "OK"
-      ],
-      "Ownership verification": [
-        "Overenie vlastníctva"
-      ],
-      "Unknown": [
-        "Neznáme"
-      ]
-    },
     "Provider option": {
       "Gmail": [
         "Gmail"
@@ -20534,6 +20485,9 @@
       ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "Pridané do vášho plánu: ${ mergedAddonTitles }"
+      ],
+      "Admins can manage user accounts and give admin privileges to other users.": [
+        "Správcovia môžu spravovať používateľské účty a udeľovať správcovské oprávnenia iným používateľom."
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Správcovia môžu spravovať používateľské účty a udeľovať oprávnenia správcu iným používateľom. Plán organizácie môže upravovať iba primárny správca."

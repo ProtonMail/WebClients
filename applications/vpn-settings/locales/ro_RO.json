@@ -2834,32 +2834,6 @@
         "Adresa URL"
       ]
     },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "Principal"
-      ],
-      "Mobile": [
-        "Dispozitive mobile"
-      ],
-      "Other": [
-        "Altele"
-      ],
-      "Pager": [
-        "Pager"
-      ],
-      "Personal": [
-        "Personal"
-      ],
-      "Work": [
-        "Serviciu"
-      ],
-      "Yomi": [
-        "Yomi"
-      ]
-    },
     "CountriesStep:Info": {
       "${ selectedCitiesCount } cities selected": [
         "Orașe selectate: ${ selectedCitiesCount }",
@@ -5255,9 +5229,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Parolă secundară incorectă. Încercați din nou."
-      ],
-      "Incorrect username": [
-        "Nume de utilizator incorect."
       ],
       "Invalid code": [
         "Cod nevalid"
@@ -15248,26 +15219,6 @@
         "Serviciu"
       ]
     },
-    "Protection type": {
-      "Blocked": [
-        "Blocat"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Device verification": [
-        "Verificare dispozitiv"
-      ],
-      "Ok": [
-        "OK"
-      ],
-      "Ownership verification": [
-        "Verificare proprietar"
-      ],
-      "Unknown": [
-        "Necunoscută."
-      ]
-    },
     "Provider option": {
       "Gmail": [
         "Gmail"
@@ -20244,6 +20195,9 @@
       ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "Adăugat la planul actual: ${ mergedAddonTitles }"
+      ],
+      "Admins can manage user accounts and give admin privileges to other users.": [
+        "Administratorii pot gestiona conturile utilizatorilor și pot acorda privilegii de administrator altor utilizatori."
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorii pot gestiona conturile de utilizatori și să acorde drepturi de administrare altor utilizatori. Doar administratorul principal poate modifica planul organizației."

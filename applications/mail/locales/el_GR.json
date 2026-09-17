@@ -1553,8 +1553,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Εμπιστοσύνη στο κλειδί"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -1762,6 +1761,16 @@
     "action": {
       "Search messages": [
         "Αναζήτηση μηνυμάτων"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "Μετονομάστε ${ folder } σε…"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "Μετονομάστε ${ label } σε…"
       ]
     },
     "Action: Sheets": {
@@ -3201,32 +3210,6 @@
     "Contact image": {
       "Contact image": [
         "Εικόνα επαφής"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Φαξ"
-      ],
-      "Main": [
-        "Κύριο"
-      ],
-      "Mobile": [
-        "Κινητό"
-      ],
-      "Other": [
-        "Άλλο"
-      ],
-      "Pager": [
-        "Βομβητής"
-      ],
-      "Personal": [
-        "Προσωπικό"
-      ],
-      "Work": [
-        "Εργασία"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -5075,9 +5058,6 @@
       ],
       "IMAP server is required": [
         "Απαιτείται διακομιστής IMAP"
-      ],
-      "Incorrect username": [
-        "Εσφαλμένο όνομα χρήστη"
       ],
       "Invalid code": [
         "Μη έγκυρος κωδικός"
@@ -8226,7 +8206,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8474,6 +8455,9 @@
       "No conversation to read": [
         "Δεν υπάρχει συζήτηση για ανάγνωση"
       ],
+      "No draft open": [
+        "Δεν υπάρχει ανοιχτό προσχέδιο"
+      ],
       "No email address": [
         "Δεν υπάρχει διεύθυνση E-mail"
       ],
@@ -8572,6 +8556,9 @@
       ],
       "Opened ${ location }": [
         "Άνοιξε ${ location }"
+      ],
+      "Opened a draft": [
+        "Άνοιξα ένα προσχέδιο"
       ],
       "Opened a problem report": [
         "Άνοιξε μια αναφορά προβλήματος"
@@ -8760,8 +8747,18 @@
         "Διαβάστε ${ count } μήνυμα σε αυτό το νήμα",
         "Διαβάστε ${ count } μηνύματα σε αυτό το νήμα"
       ],
+      "Read ${ count } open draft": [
+        "Ανάγνωση ${ count } ανοιχτού προσχεδίου",
+        "Ανάγνωση ${ count } ανοιχτών προσχεδίων"
+      ],
+      "Read draft \"${ subject }\"": [
+        "Ανάγνωση προσχεδίου \"${ subject }\""
+      ],
       "Read open email “${ subject }”": [
         "Διαβάστηκε το ανοιχτό μήνυμα ηλεκτρονικού ταχυδρομείου“${ subject }”"
+      ],
+      "Read the open draft": [
+        "Ανάγνωση του ανοιχτού προσχεδίου"
       ],
       "Read your ${ count } filter": [
         "Διαβάστε το ${ count } φίλτρο",
@@ -8784,6 +8781,9 @@
       "Read your signature": [
         "Διαβάστε την υπογραφή σας"
       ],
+      "Readdressed the draft": [
+        "Αναδιαμόρφωσα το προσχέδιο"
+      ],
       "Recipient: ": [
         "Παραλήπτης: "
       ],
@@ -8805,20 +8805,26 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Θυμηθείτε να το ενημερώσετε στον διαχειριστή κωδικών πρόσβασής σας ή οπουδήποτε διατηρείτε τον λογαριασμό και τα στοιχεία σύνδεσής σας."
       ],
+      "Remove signature": [
+        "Αφαίρεση υπογραφής"
+      ],
       "Remove the star from ${ emails }": [
         "Αφαιρέστε το αστέρι από τα ${ emails }"
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Καταργεί όλα τα δεδομένα που σχετίζονται με αυτήν την εφαρμογή, (συμπεριλαμβανομένων των ληφθέντων μηνυμάτων, …)"
       ],
-      "Rename ${ folder } to…": [
-        "Μετονομάστε ${ folder } σε…"
-      ],
       "Rename folder": [
         "Μετονομασία φακέλου"
       ],
+      "Rename label": [
+        "Μετονομασία ετικέτας"
+      ],
       "Rename this folder": [
         "Μετονομάστε αυτό το φάκελο"
+      ],
+      "Rename this label": [
+        "Μετονομασία αυτής της ετικέτας"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Η αναφορά ενός μηνύματος ως προσπάθεια ηλεκτρονικού \"ψαρέματος\" (phising) θα το αποστείλει σε εμάς, ώστε να το αναλύσουμε και να βελτιώσουμε τα φίλτρα μας. Αυτό σημαίνει ότι θα μπορέσουμε να δούμε το περιεχόμενο ολόκληρου του μηνύματος."
@@ -8834,6 +8840,12 @@
       ],
       "Results came from the server.": [
         "Τα αποτελέσματα προήλθαν από τον διακομιστή."
+      ],
+      "Rewrote and readdressed the draft": [
+        "Ξαναέγραψα και αναδιαμόρφωσα το προσχέδιο."
+      ],
+      "Rewrote the draft": [
+        "Ξαναέγραψα το προσχέδιο"
       ],
       "Right to Left": [
         "Δεξιά προς Αριστερά"

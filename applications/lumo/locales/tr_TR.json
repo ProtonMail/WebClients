@@ -1107,6 +1107,9 @@
       "Manage files": [
         "Dosya yönetimi"
       ],
+      "Manage Subscription": [
+        "Abonelik yönetimi"
+      ],
       "More options": [
         "Diğer seçenekler"
       ],
@@ -2747,7 +2750,7 @@
     },
     "collider_2025: Status": {
       "Active": [
-        "Etkin"
+        "Kullanıma alınmış"
       ],
       "Copied!": [
         "Kopyalandı!"
@@ -3389,6 +3392,9 @@
       "Edit project": [
         "Projeyi düzenle"
       ],
+      "Exit full screen": [
+        "Tam ekrandan çık"
+      ],
       "Expand": [
         "Genişlet"
       ],
@@ -3397,6 +3403,9 @@
       ],
       "Favorite": [
         "Sık kullanılanlara ekle"
+      ],
+      "Full screen": [
+        "Tam ekran"
       ],
       "Generate my report": [
         "Raporumu oluştur"
@@ -3559,6 +3568,9 @@
       ],
       "Upload your AI export": [
         "Yapay zeka dışa aktarma dosyanızı yükleyin"
+      ],
+      "View mode": [
+        "Görünüm kipi"
       ],
       "View v${ versionNumber }": [
         "${ versionNumber } sürümünü görüntüle"
@@ -4068,6 +4080,9 @@
       "Sign in to your Claude account at claude.ai": [
         "claude.ai adresinden Claude hesabınızda oturum açın"
       ],
+      "Slides": [
+        "Slaytlar"
+      ],
       "Some of what you pasted may cross workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.": [
         "Yapıştırdığınız içeriklerin bazıları iş yeri, yasal veya veri koruma sınırlarını aşıyor olabilir. Bu bilgi, sizi yargılamak için değil, bunu fark etmenize yardımcı olmak için verilmiştir."
       ],
@@ -4260,6 +4275,9 @@
       ],
       "AI platform": [
         "AI platformu"
+      ],
+      "Artifact full screen view": [
+        "Yapıtın tam ekran görünümü"
       ],
       "Artifact view": [
         "Yapıt görünümü"
@@ -6392,9 +6410,6 @@
       "Image preview not found": [
         "Görsel ön izlemesi bulunamadı"
       ],
-      "Incorrect username": [
-        "Kullanıcı adı yanlış"
-      ],
       "Invalid code": [
         "Kod geçersiz"
       ],
@@ -6469,7 +6484,7 @@
         "Kuruluş anahtarının şifresi çözülmedi"
       ],
       "Organization key must be activated to create invited users": [
-        "Davet edilen kullanıcılar oluşturmak için kuruluş anahtarı etkinleştirilmelidir"
+        "Davet edilen kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
       ],
       "Organization key must be activated to create non-private users": [
         "Korunmayan kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
@@ -9427,10 +9442,10 @@
         "${ IDEAL_WERO_BRAND_NAME } ile öde"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
-        "Deneme süresi sona erdikten sonra aboneliğin etkinleştirilmesi için bir ödeme yöntemi gereklidir."
+        "Deneme süresi sona erdikten sonra aboneliğin kullanıma alınması için bir ödeme yöntemi gereklidir."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
+        "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden kullanıma alın."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Yenileme fiyatları ${ termsAndConditionsLink } içeriğine göre değişebilir."
@@ -10775,10 +10790,10 @@
         "Yöneticiler gizli kullanıcıların verilerine erişemez ve parolalarını sıfırlayamaz."
       ],
       "Member activation incomplete": [
-        "Üye etkinleştirilmemiş"
+        "Üye kullanıma alınmamış"
       ],
       "Organization key must be activated to request data access": [
-        "Verilere erişme isteğinde bulunmak için kuruluş anahtarı etkinleştirilmelidir"
+        "Verilere erişme isteğinde bulunmak için kuruluş anahtarı kullanıma alınmalıdır"
       ],
       "The user must have an address to request data access": [
         "Veri isteğinde bulunabilmek için kullanıcının bir e-posta adresi olmalıdır"
