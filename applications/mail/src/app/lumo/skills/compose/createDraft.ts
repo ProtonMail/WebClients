@@ -10,6 +10,7 @@ import { DraftKind, MESSAGE_ACTION_FOR } from '../../helpers/draftKind';
 import { withStepTimeout } from '../../helpers/messages';
 import { resolveTypedId } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
+import { createDraftCardRenderer } from './createDraftCard';
 import type { References } from './recipients';
 import { toRecipients } from './recipients';
 
@@ -228,7 +229,6 @@ export const createCreateDraftHandler =
             }
         }
 
-
         const composerID = await composerOpenedBy(mail, () =>
             mail.composeDraft({ action: MESSAGE_ACTION_FOR[kind], referenceMessage, bodyBeforeQuote: body })
         );
@@ -248,4 +248,5 @@ export const createCreateDraftHandler =
 export const createDraftModule: MailToolModule = {
     definition: createDraftDefinition,
     createHandler: createCreateDraftHandler,
+    cardRenderer: createDraftCardRenderer,
 };

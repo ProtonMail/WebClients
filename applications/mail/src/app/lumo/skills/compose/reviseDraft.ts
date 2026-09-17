@@ -8,6 +8,7 @@ import type { RecipientType } from '../../../models/address';
 import { resolveTypedId } from '../../helpers/references';
 import type { DraftChangeability, MailToolDeps, MailToolModule } from '../../toolModule';
 import { toRecipients } from './recipients';
+import { reviseDraftCardRenderer } from './reviseDraftCard';
 
 /** Named once, so the schema and the free-text list cannot drift apart on a rename. */
 enum ReviseDraftField {
@@ -173,4 +174,5 @@ export const createReviseDraftHandler =
 export const reviseDraftModule: MailToolModule = {
     definition: reviseDraftDefinition,
     createHandler: createReviseDraftHandler,
+    cardRenderer: reviseDraftCardRenderer,
 };
