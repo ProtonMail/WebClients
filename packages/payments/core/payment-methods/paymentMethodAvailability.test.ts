@@ -1,6 +1,6 @@
+import { buildUser } from '@proton/account/testing/buildUser';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { UNPAID_STATE } from '@proton/shared/lib/interfaces';
-import { buildUser } from '@proton/testing/builders/user';
 
 import {
     getMinApplePayAmount,

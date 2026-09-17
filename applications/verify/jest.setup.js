@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 
-import '@proton/testing/lib/mockMatchMedia';
+import '@proton/components/testing/mockMatchMedia';
 
 // Silence warnings on expect to throw https://github.com/testing-library/react-testing-library/issues/157
 // console.error = () => {};
@@ -26,6 +26,6 @@ jest.mock('@proton/components/hooks/useEventManager.ts', () => {
 });
 
 global.MutationObserver = class {
-    disconnect() {} // eslint-disable-line
-    observe() {} // eslint-disable-line
+    disconnect() {}
+    observe() {}
 };

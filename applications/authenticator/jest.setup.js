@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom';
 import { TextDecoder, TextEncoder } from 'util';
 
-import '@proton/testing/lib/mockMatchMedia';
-import '@proton/testing/lib/mockUnleash';
+import '@proton/components/testing/mockMatchMedia';
+import '@proton/unleash/testing/mockUnleash';
 
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;

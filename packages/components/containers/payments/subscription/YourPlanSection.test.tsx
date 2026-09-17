@@ -15,7 +15,7 @@ import { EntitlementType } from '@proton/payments/core/entitlements/interface';
 import { buildPreloadedState } from '@proton/payments/testing/buildPreloadedState';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
-import { mockUseFlag } from '@proton/testing/lib/mockUseFlag';
+import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
 
 import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
 import { renderWithProviders } from '../../../testing/renderWithProviders';

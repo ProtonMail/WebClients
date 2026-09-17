@@ -1,10 +1,10 @@
 import { fireEvent, render } from '@testing-library/react';
 
+import { mockUseApi } from '@proton/app-context/testing/mockUseApi';
 import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
 import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
 import { updateKT } from '@proton/shared/lib/api/mailSettings';
 import { KEY_TRANSPARENCY_SETTING } from '@proton/shared/lib/mail/mailSettings';
-import { mockUseApi } from '@proton/testing/lib/mockUseApi';
 
 import { applyHOCs } from '../../testing/hocs/helpers';
 import { withApi } from '../../testing/hocs/with-api';

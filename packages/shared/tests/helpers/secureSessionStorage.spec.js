@@ -1,4 +1,4 @@
-import { disableRandomMock, initRandomMock } from '@proton/testing/lib/mockRandomValues';
+import { disableRandomMock, initRandomMock } from '@proton/test-api/mockRandomValues';
 
 import { load, mergeParts, save, separateParts } from '../../lib/helpers/secureSessionStorage';
 
