@@ -2,6 +2,7 @@ import type { ComponentType, ReactNode } from 'react';
 
 import type { ToolName as ServerToolName } from '@proton/lumo-api-client';
 import type { ServerToolSource } from '@proton/lumo-ui';
+import type { WelcomeSuggestionCard } from '@proton/lumo-ui/WelcomeSuggestions';
 import type { IconComponent } from '@proton/lumo-ui/types';
 
 import type { ActionRequest, ReferenceLabels, ToolDefinition, ToolHandlers, ToolName } from '../contracts/types';
@@ -87,4 +88,6 @@ export interface LumoAgentConfig {
     productRules?: () => string;
     serverTools?: ServerToolName[];
     serverToolMeta?: Partial<Record<ServerToolName, ServerToolMeta>>;
+    /** Empty-state cards. Omitted by a product that wants no empty state of its own. */
+    suggestions?: WelcomeSuggestionCard[];
 }
