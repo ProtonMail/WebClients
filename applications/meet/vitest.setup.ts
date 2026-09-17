@@ -1,10 +1,10 @@
 import '@testing-library/jest-dom';
 import { vi } from 'vitest';
 
+import '@proton/components/testing/vitest/mockFlagSvg';
+import '@proton/components/testing/vitest/mockMatchMedia';
 import '@proton/polyfill';
-import '@proton/testing/lib/vitest/mockFlagSvg';
-import '@proton/testing/lib/vitest/mockMatchMedia';
-import '@proton/testing/lib/vitest/mockUnleash';
+import '@proton/unleash/testing/vitest/mockUnleash';
 
 // @ts-ignore
 global.IS_REACT_ACT_ENVIRONMENT = true;

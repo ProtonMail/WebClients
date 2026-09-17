@@ -37,11 +37,12 @@
         "vat-validation": "^3.0.0"
     },
     "devDependencies": {
+        "@proton/account": "workspace:^",
+        "@proton/app-context": "workspace:^",
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-env": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
         "@proton/test-api": "workspace:^",
-        "@proton/testing": "workspace:^",
         "eslint": "^10.10.0",
         "jest": "^30.5.1",
         "typescript": "^6.0.3"

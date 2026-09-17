@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { vi } from 'vitest';
 
-import '@proton/testing/lib/vitest/mockFlagSvg';
+import '@proton/components/testing/vitest/mockFlagSvg';
 
 global.AnimationEvent = class AnimationEvent extends Event implements AnimationEvent {
     private _animationName: string;

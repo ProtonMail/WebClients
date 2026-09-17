@@ -1,11 +1,11 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { mockUseConfig } from '@proton/app-context/testing/mockUseConfig';
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import { mockUseConfig } from '@proton/testing/lib/mockUseConfig';
-import { mockUseLocation } from '@proton/testing/lib/mockUseLocation';
 
 import { mockUseAuthentication } from '../../testing/mockUseAuthentication';
+import { mockUseLocation } from '../../testing/mockUseLocation';
 import CalendarLimitReachedModal from './CalendarLimitReachedModal';
 
 describe('CalendarLimitReachedModal', () => {
