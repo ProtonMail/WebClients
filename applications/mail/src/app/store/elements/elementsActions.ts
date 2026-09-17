@@ -71,7 +71,6 @@ export const updatePage = createAction<number>('elements/updatePage');
 export const setParams = createAction<Partial<ElementsStateParams> & { total?: number }>('elements/setParams');
 
 export const retry = createAction<{
-    queryParameters: unknown;
     error: Error | undefined;
 }>('elements/retry');
 
@@ -128,16 +127,7 @@ export const load = createAsyncThunk<
         ).catch((error: any | undefined) => {
             // Wait a couple of seconds before retrying
             setTimeout(() => {
-                dispatch(
-                    retry({
-                        queryParameters: {
-                            page,
-                            pageSize,
-                            params,
-                        },
-                        error,
-                    })
-                );
+                dispatch(retry({ error }));
             }, 2 * SECOND);
 
             throw error;
