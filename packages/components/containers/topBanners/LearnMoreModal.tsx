@@ -1,9 +1,10 @@
 import type { ReactNode } from 'react';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useGetPaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
@@ -11,6 +12,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { getPlanTitle } from '@proton/payments/core/subscription/helpers';
 import chronometerSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-chronometer.svg';
 import hourglassSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-hourglass.svg';
+import paymentMethodSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-payment-method.svg';
 import clsx from '@proton/utils/clsx';
 
 import ModalTwo from '../../components/modalTwo/Modal';
@@ -20,35 +22,59 @@ import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '../../components/modalTwo/useModalState';
 import Time from '../../components/time/Time';
 import TimeRemaining from '../../components/timeRemaining/TimeRemaining';
+import getBoldFormattedText from '../../helpers/getBoldFormattedText';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import { useCancelSubscriptionFlow } from '../payments/subscription/cancelSubscription/useCancelSubscriptionFlow';
 
-const getTrialInfo = (planTitle: string | undefined) => {
+interface TrialElement {
+    id: string;
+    description: ReactNode;
+    img: string;
+}
+
+const getTrialInfo = (planTitle: string | undefined, hasPaymentMethod: boolean): TrialElement[] => {
     if (!planTitle) {
         return [];
     }
 
-    const cancelAnytimeTitle = <b>{c('Onboarding Trial').t`Cancel anytime before then.`}</b>;
-    const cancelAnytimeDescription = c('Onboarding Trial')
-        .jt`You’ll be able to use ${planTitle} until the trial ends, free of charge.`;
-    const cancelAnytimeArray = [cancelAnytimeTitle, ' ', cancelAnytimeDescription];
+    // translator: text between ** ** is displayed in bold
+    const cancelAnytime = getBoldFormattedText(
+        c('Onboarding Trial')
+            .t`**Cancel anytime before then.** You’ll be able to use ${planTitle} until the trial ends, free of charge.`
+    );
 
-    // translator: full sentence is: Once your full subscription starts... You can still cancel within 30 days and get a pro-rata refund.
-    const refundTitle = <b>{c('Onboarding Trial').jt`Once your full subscription starts...`}</b>;
+    // translator: text between ** ** is displayed in bold
+    const addPaymentMethod = getBoldFormattedText(
+        c('Onboarding Trial').t`**Add a payment method** to keep using all of the features after your trial ends.`
+    );
 
-    // translator: full sentence is: Once your full subscription starts... You can still cancel within 30 days and get a prorated refund.
-    const refundDescription = c('Onboarding Trial').t`You can still cancel within 30 days and get a prorated refund.`;
-    const refundArray = [refundTitle, ' ', refundDescription];
+    // translator: text between ** ** is displayed in bold
+    const refund = getBoldFormattedText(
+        c('Onboarding Trial')
+            .t`**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.`
+    );
+
+    // translator: text between ** ** is displayed in bold
+    const continueAfterTrial = getBoldFormattedText(
+        c('Onboarding Trial')
+            .t`**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.`
+    );
 
     return [
-        {
-            id: 'cancelAnytime',
-            description: cancelAnytimeArray,
-            img: hourglassSvg,
-        },
+        hasPaymentMethod
+            ? {
+                  id: 'cancelAnytime',
+                  description: cancelAnytime,
+                  img: hourglassSvg,
+              }
+            : {
+                  id: 'addPaymentMethod',
+                  description: addPaymentMethod,
+                  img: paymentMethodSvg,
+              },
         {
             id: 'refund',
-            description: refundArray,
+            description: hasPaymentMethod ? refund : continueAfterTrial,
             img: chronometerSvg,
         },
     ];
@@ -79,6 +105,8 @@ const LearnMoreModal = (props: ModalStateProps) => {
     const [subscription] = useSubscription();
     const [organization] = useOrganization();
     const [user] = useUser();
+    const getPaymentMethods = useGetPaymentMethods();
+    const [hasPaymentMethod, setHasPaymentMethod] = useState<boolean>();
     const [showModal, setShowModal] = useState(open);
     useEffect(() => {
         setShowModal(true);
@@ -86,10 +114,23 @@ const LearnMoreModal = (props: ModalStateProps) => {
 
     const trialEndsOn = subscription?.PeriodEnd;
     const planTitle = getPlanTitle(subscription);
+    const loading = !subscription || !organization || !user || !trialEndsOn;
+    const loadingPaymentMethods = hasPaymentMethod === undefined;
 
-    const trialInfo = useMemo(() => getTrialInfo(planTitle), [planTitle]);
+    useEffect(() => {
+        if (loading) {
+            return;
+        }
 
-    if (!subscription || !organization || !user || !trialEndsOn) {
+        void getPaymentMethods()
+            .then((paymentMethods) => setHasPaymentMethod(paymentMethods.length > 0))
+            // Close the modal so its state is reset and a retry is possible
+            .catch(() => onClose());
+    }, [loading, getPaymentMethods, onClose]);
+
+    const trialInfo = getTrialInfo(planTitle, !!hasPaymentMethod);
+
+    if (loading || loadingPaymentMethods || trialEndsOn === undefined) {
         return null;
     }
 
@@ -111,7 +152,9 @@ const LearnMoreModal = (props: ModalStateProps) => {
             <ModalTwo {...props} rootClassName={clsx(!showModal && 'modal-two--out')}>
                 <ModalTwoHeader title={title} />
                 <ModalTwoContent>
-                    <p>{c('Onboarding Trial').jt`Your full ${planTitle} subscription starts on ${boldEndDate}.`}</p>
+                    {hasPaymentMethod && (
+                        <p>{c('Onboarding Trial').jt`Your full ${planTitle} subscription starts on ${boldEndDate}.`}</p>
+                    )}
                     <div className="flex flex-column gap-y-4 mt-12">
                         {trialInfo.map(({ id, description, img }) => (
                             <TrialFeature key={id} description={description} imgSrc={img} />
