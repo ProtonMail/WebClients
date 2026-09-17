@@ -13,7 +13,7 @@ export interface WaitingRoomContextValues {
     retryWaitingRoom: () => void;
 }
 
-export const defaultValues: WaitingRoomContextValues = {
+const defaultValues: WaitingRoomContextValues = {
     isWaitingRoomHost: false,
     admitRequest: async () => {},
     rejectRequest: async () => {},
@@ -24,7 +24,7 @@ export const defaultValues: WaitingRoomContextValues = {
     retryWaitingRoom: () => {},
 };
 
-export const WaitingRoomContext = createContext<WaitingRoomContextValues>(defaultValues);
+const WaitingRoomContext = createContext<WaitingRoomContextValues>(defaultValues);
 
 interface WaitingRoomProviderProps extends WaitingRoomContextValues {
     children: React.ReactNode;

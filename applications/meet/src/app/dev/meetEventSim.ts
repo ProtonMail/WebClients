@@ -10,7 +10,7 @@ import { mergeParticipantDecryptedNameMap } from '@proton/meet/store/slices/part
 import { addParticipantRecording, removeParticipantRecording } from '@proton/meet/store/slices/recordingStatusSlice';
 import { ParticipantEvent } from '@proton/meet/types/types';
 
-export interface MeetEventSim {
+interface MeetEventSim {
     participantJoined(name?: string): void;
     participantLeft(name?: string): void;
     raiseHand(name?: string): void;

@@ -6,7 +6,6 @@ import type {
     ChatProtocolInfo,
     ConnectionStateInfo,
     JoinTypeInfo,
-    RejoinReasonInfo,
 } from '@proton-meet/proton-meet-core';
 
 export interface GroupKeyInfoData {
@@ -144,4 +143,3 @@ export interface MeetCoreClient {
     updateWaitingRoomSetting(meetLinkName: string, enable: boolean, sessionKeyBase64: string): Promise<void>;
 }
 
-export type MeetCoreRejoinReason = RejoinReasonInfo;

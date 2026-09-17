@@ -6,7 +6,7 @@ export interface AnalyserSource {
     dataArray: Uint8Array<ArrayBuffer> | null;
 }
 
-export const calculateRms = (data: Uint8Array<ArrayBuffer>): number => {
+const calculateRms = (data: Uint8Array<ArrayBuffer>): number => {
     let sum = 0;
     for (let i = 0; i < data.length; i++) {
         const normalized = (data[i] - 128) / 128;
