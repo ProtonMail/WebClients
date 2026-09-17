@@ -5,7 +5,7 @@ export const BACKGROUNDS_FOLDER_PATH = ['Proton Meet', 'Backgrounds'];
 
 export const MAX_BACKGROUND_SIZE_BYTES = 10 * 1024 * 1024;
 
-export const ALLOWED_BACKGROUND_MEDIA_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
+const ALLOWED_BACKGROUND_MEDIA_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
 
 export const isAllowedBackgroundMediaType = (mediaType: string | undefined): mediaType is string =>
     !!mediaType && ALLOWED_BACKGROUND_MEDIA_TYPES.includes(mediaType);

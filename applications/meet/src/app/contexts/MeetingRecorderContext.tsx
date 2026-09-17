@@ -2,7 +2,7 @@ import { type ReactNode, createContext, useContext, useMemo } from 'react';
 
 import { useMeetingRecorder } from '../hooks/useMeetingRecorder';
 
-export interface MeetingRecorderContextType {
+interface MeetingRecorderContextType {
     startRecording: () => Promise<void>;
     finishRecording: () => Promise<void>;
 }
@@ -12,7 +12,7 @@ const defaultValues: MeetingRecorderContextType = {
     finishRecording: () => Promise.resolve(),
 };
 
-export const MeetingRecorderContext = createContext<MeetingRecorderContextType>(defaultValues);
+const MeetingRecorderContext = createContext<MeetingRecorderContextType>(defaultValues);
 
 export const useMeetingRecorderContext = () => {
     const context = useContext(MeetingRecorderContext);

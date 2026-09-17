@@ -97,12 +97,12 @@ export interface MeetCoreInitSuccessResponseMessage {
     ok: true;
 }
 
-export interface MeetCoreWorkerErrorEnumPayload {
+interface MeetCoreWorkerErrorEnumPayload {
     kind: 'meet-core-error-enum';
     value: MeetCoreErrorEnum;
 }
 
-export interface MeetCoreWorkerGenericErrorPayload {
+interface MeetCoreWorkerGenericErrorPayload {
     kind: 'error';
     message: string;
     stack?: string;

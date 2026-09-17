@@ -64,7 +64,7 @@ export const getSegmentationResizeQuality = (tier: DeviceTier): ResizeQuality =>
 
 export type TunableConstantsOverrides = Partial<TunableConstants>;
 
-export const WORKER_CONSTANT_KEYS = [
+const WORKER_CONSTANT_KEYS = [
     'personConfidenceBoost',
     'multiclassPersonConfidenceBoost',
     'maskTemporalAppearRate',

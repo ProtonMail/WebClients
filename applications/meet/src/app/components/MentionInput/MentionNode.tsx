@@ -3,7 +3,7 @@ import { $applyNodeReplacement, TextNode } from 'lexical';
 
 import clsx from '@proton/utils/clsx';
 
-export const MENTION_ID_ATTRIBUTE = 'data-mention-id';
+const MENTION_ID_ATTRIBUTE = 'data-mention-id';
 
 export type SerializedMentionNode = Spread<{ mentionId: string; mentionClassName: string }, SerializedTextNode>;
 

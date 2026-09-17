@@ -7,7 +7,7 @@ import { WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
 
 import type { FormValues } from './types';
 
-export const timeZoneOptions = getTimeZoneOptions();
+const timeZoneOptions = getTimeZoneOptions();
 
 export const combineDateAndTime = (date: Date, time: string, timezone: string) => {
     const [hours, minutes] = time.split(':').map(Number);
@@ -15,17 +15,17 @@ export const combineDateAndTime = (date: Date, time: string, timezone: string) =
     return zonedTimeToUtc(localDate, timezone);
 };
 
-export const validateTimeZone = (timeZone: string | undefined | null) => {
+const validateTimeZone = (timeZone: string | undefined | null) => {
     return timeZone && !!timeZoneOptions.find((item) => item.value === timeZone);
 };
 
-export const validateDate = (date?: any): date is Date => {
+const validateDate = (date?: any): date is Date => {
     const isDateInstance = date instanceof Date;
 
     return !!date && isDateInstance;
 };
 
-export const checkIfCorrectMinuteOrSeconds = (text: string) => {
+const checkIfCorrectMinuteOrSeconds = (text: string) => {
     const integerValue = parseInt(text);
 
     if (isNaN(integerValue)) {
@@ -35,7 +35,7 @@ export const checkIfCorrectMinuteOrSeconds = (text: string) => {
     return integerValue >= 0 && integerValue < 60;
 };
 
-export const validateTime = (time?: string) => {
+const validateTime = (time?: string) => {
     if (!time) {
         return false;
     }
