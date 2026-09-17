@@ -1,6 +1,6 @@
+import { eventLoopTimingTracker } from '@proton/metrics/eventLoopMetrics';
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { eventLoopTimingTracker } from '@proton/shared/lib/metrics/eventLoopMetrics';
 
 import { addressesLoop } from '../addresses/eventLoopV6';
 import type { CoreEventLoopV6Callback, CoreEventLoopV6RequiredState } from '../coreEventLoop/interface';
