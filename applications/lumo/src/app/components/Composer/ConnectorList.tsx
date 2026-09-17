@@ -40,7 +40,6 @@ const useDesktopConnectors = (active: boolean) => {
 export const ConnectorList = ({ onBack }: { onBack: () => void }) => {
     const { connectors, toggle } = useDesktopConnectors(true);
     const { createNotification } = useNotifications();
-    const available = connectors.filter((c) => c.connected);
 
     const handleManage = async () => {
         try {
@@ -61,11 +60,11 @@ export const ConnectorList = ({ onBack }: { onBack: () => void }) => {
                     <span className="text-sm font-medium">{c('collider_2025: Action').t`Connectors`}</span>
                 </div>
             </DropdownMenuButton>
-            {available.length === 0 && (
+            {connectors.length === 0 && (
                 <div className="px-4 py-2 text-xs color-hint">{c('collider_2025: Info')
                     .t`No connected connectors`}</div>
             )}
-            {available.map((connector) => (
+            {connectors.map((connector) => (
                 <DropdownMenuButton key={connector.id} className="justify-start" onClick={() => toggle(connector)}>
                     <div
                         className="flex flex-nowrap items-center gap-3 w-full"
