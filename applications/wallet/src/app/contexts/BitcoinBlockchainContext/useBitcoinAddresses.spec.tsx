@@ -3,11 +3,11 @@ import type { PropsWithChildren } from 'react';
 import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
+import { mockUseGetAddressKeys } from '@proton/account/testing/vitest/mockUseAddressKeys';
 import { type WasmApiWalletBitcoinAddress, WasmNetwork } from '@proton/andromeda';
 import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
-import { mockUseGetAddressKeys } from '@proton/testing/lib/vitest/mockUseAddressKeys';
 import { extendStore, setupStore } from '@proton/wallet/store/store';
 import { apiWalletsData } from '@proton/wallet/tests/fixtures';
 import {
