@@ -98,7 +98,7 @@
         "Continua"
       ],
       "Continue to ${ planOrAppName }": [
-        "Continuar amb ${ planOrAppName }"
+        "Continua amb ${ planOrAppName }"
       ],
       "Copy address": [
         "Copia l'adreça"
@@ -2373,9 +2373,6 @@
       "Failed to load subscription data. Please try again later.": [
         "No s'han pogut carregar les dades de la subscripció. Torneu-ho a provar més tard."
       ],
-      "Incorrect username": [
-        "Nom d'usuari incorrecte"
-      ],
       "Input isn't a valid email or bitcoin address": [
         "L'entrada no és un correu electrònic o una adreça de Bitcoin vàlida."
       ],
@@ -2847,7 +2844,7 @@
         "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
-        "Afegiu ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+        "Afig ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Address copied to clipboard": [
         "S'ha copiat l'adreça al porta-retalls."
@@ -5057,7 +5054,7 @@
         "El preu de renovació depèn de la regió de facturació i del número d'empresa."
       ],
       "Renewal price is dependent on the billing region and EIN.": [
-        "El preu de renovació depèn de la regió de facturació i de l'EIN."
+        "El preu de renovació depèn de la regió de facturació i del NIF."
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "El preu de renovació depèn de la regió de facturació i del número d'IVA."
@@ -6221,7 +6218,7 @@
         "Descobriu"
       ],
       "Secure your wallet": [
-        "Assegureu la vostra cartera"
+        "Assegureu la cartera"
       ],
       "Set up 2FA to secure your account": [
         "Configureu l'autenticador de doble factor (2FA) per assegurar el vostre compte"
