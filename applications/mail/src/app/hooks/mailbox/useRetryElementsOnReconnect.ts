@@ -34,7 +34,7 @@ export const useRetryElementsOnReconnect = () => {
         // Only retry the query when we have no pending request and try more than `MAX_ELEMENT_LIST_LOAD_RETRIES`
         // Prevent concurrent retries while a request is still in flight
         if (isOnline && wasOffline && !pendingRequest && retryState.count >= MAX_ELEMENT_LIST_LOAD_RETRIES) {
-            dispatch(retry({ queryParameters: undefined, error: undefined }));
+            dispatch(retry({ error: undefined }));
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- only react to the online/offline transition itself
     }, [isOnline]);

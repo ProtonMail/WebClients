@@ -89,10 +89,7 @@ export const updatePage = (state: Draft<ElementsState>, action: PayloadAction<nu
     state.page = action.payload;
 };
 
-export const retry = (
-    state: Draft<ElementsState>,
-    action: PayloadAction<{ queryParameters: unknown; error: Error | undefined }>
-) => {
+export const retry = (state: Draft<ElementsState>, action: PayloadAction<{ error: Error | undefined }>) => {
     state.beforeFirstLoad = false;
     state.invalidated = false;
     state.pendingRequest = false;
