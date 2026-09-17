@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
-import { isSVG } from '@proton/shared/lib/helpers/mimetype';
+import { couldPotentiallyBeRenderedAsSVG } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
@@ -208,7 +208,7 @@ const ImagePreview = ({
 
         let data;
         try {
-            data = isSVG(mimeType) ? sanitizeSVG(contents) : contents;
+            data = couldPotentiallyBeRenderedAsSVG(mimeType) ? sanitizeSVG(contents) : contents;
         } catch {
             setError(true);
             return;
