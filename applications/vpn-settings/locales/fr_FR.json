@@ -2688,32 +2688,6 @@
         "URL"
       ]
     },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "Principal"
-      ],
-      "Mobile": [
-        "Mobile"
-      ],
-      "Other": [
-        "Autre"
-      ],
-      "Pager": [
-        "Bipeur"
-      ],
-      "Personal": [
-        "Personnel"
-      ],
-      "Work": [
-        "Professionnel"
-      ],
-      "Yomi": [
-        "Yomi"
-      ]
-    },
     "CountriesStep:Info": {
       "${ selectedCitiesCount } cities selected": [
         "${ selectedCitiesCount } ville sélectionnée",
@@ -5038,9 +5012,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Le second mot de passe n'est pas correct. Veuillez réessayer."
-      ],
-      "Incorrect username": [
-        "Le nom d'utilisateur n'est pas correct."
       ],
       "Invalid code": [
         "Le code n'est pas valide."
@@ -14642,26 +14613,6 @@
         "Bureau"
       ]
     },
-    "Protection type": {
-      "Blocked": [
-        "Bloqué"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Device verification": [
-        "Vérification de l'appareil"
-      ],
-      "Ok": [
-        "OK"
-      ],
-      "Ownership verification": [
-        "Vérification de la propriété"
-      ],
-      "Unknown": [
-        "Inconnu"
-      ]
-    },
     "Provider option": {
       "Gmail": [
         "Gmail"
@@ -19525,6 +19476,9 @@
       ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "Ajouté(s) à votre abonnement : ${ mergedAddonTitles }"
+      ],
+      "Admins can manage user accounts and give admin privileges to other users.": [
+        "Les administrateurs peuvent gérer les comptes utilisateurs et attribuer des droits d'administrateur à d'autres utilisateurs."
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Un administrateur peut gérer les comptes utilisateur ou accorder des droits administrateur aux autres utilisateurs. Seul l'administrateur principal peut modifier l'abonnement de l'organisation."

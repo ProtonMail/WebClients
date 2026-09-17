@@ -898,6 +898,9 @@
       "Invite user": [
         "Запрасіць карыстальніка"
       ],
+      "Invoice options": [
+        "Параметры рахунку"
+      ],
       "Keep": [
         "Пакінуць"
       ],
@@ -2834,32 +2837,6 @@
       ],
       "URL": [
         "URL-адрас"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Факс"
-      ],
-      "Main": [
-        "Галоўны"
-      ],
-      "Mobile": [
-        "Мабільны"
-      ],
-      "Other": [
-        "Іншы"
-      ],
-      "Pager": [
-        "Пэйджар"
-      ],
-      "Personal": [
-        "Асабісты"
-      ],
-      "Work": [
-        "Працоўны"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "CountriesStep:Info": {
@@ -5275,9 +5252,6 @@
       "Incorrect second password. Please try again.": [
         "Няправільны другі пароль. Паўтарыце спробу."
       ],
-      "Incorrect username": [
-        "Няправільнае імя карыстальніка"
-      ],
       "Invalid code": [
         "Памылковы код"
       ],
@@ -6619,6 +6593,9 @@
       "Security key updated": [
         "Ключ бяспекі абноўлены"
       ],
+      "Still waiting?": [
+        "Усё яшчэ чакаеце?"
+      ],
       "This will delete all security keys linked to your account.": [
         "Гэта выдаліць усе ключы, якія звязаны з вашым уліковым запісам."
       ],
@@ -7027,6 +7004,9 @@
       ],
       "Enjoying ${ planName }?": [
         "Падабаецца ${ planName }?"
+      ],
+      "Invited friends": [
+        "Запрошаныя сябры"
       ],
       "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
         "Разблакіруйце 4 прэміяльныя сэрвісы прыватнасці ўсяго за **${ priceString }** дадатковай платы ў месяц"
@@ -14339,6 +14319,9 @@
       "Because your organization key has changed, you lost some of your admin rights: You can no longer create non-private users and access their accounts.": [
         "Вы згубілі некаторыя правы адміністратара, бо ключ вашай арганізацыі быў зменены: у вас больш няма магчымасці ствараць непрыватных карыстальнікаў і атрымліваць доступ да іх уліковых запісаў."
       ],
+      "Copy email list": [
+        "Капіяваць спіс рассылкі"
+      ],
       "Could not send the unprivatization request to ${ n } user. It will be retried automatically.": [
         "Немагчыма адправіць неправатызаваны запыт ${ n } карыстальніку. Паўторная спроба будзе зроблена аўтаматычна.",
         "Немагчыма адправіць неправатызаваны запыт ${ n } карыстальнікам. Паўторная спроба будзе зроблена аўтаматычна.",
@@ -15304,26 +15287,6 @@
       ],
       "Work": [
         "Працоўны"
-      ]
-    },
-    "Protection type": {
-      "Blocked": [
-        "Заблакіраваныя"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Device verification": [
-        "Праверка прылады"
-      ],
-      "Ok": [
-        "OK"
-      ],
-      "Ownership verification": [
-        "Спраўджанне ўладальніка"
-      ],
-      "Unknown": [
-        "Невядома"
       ]
     },
     "Provider option": {
@@ -20334,6 +20297,9 @@
       ],
       "Last app activity": [
         "Апошняя актыўнасць праграмы"
+      ],
+      "Last connection": [
+        "Апошняе падключэнне"
       ],
       "Name": [
         "Імя"
