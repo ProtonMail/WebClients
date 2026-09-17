@@ -70,6 +70,7 @@ export interface MailToolDeps {
     getActiveCategoryTabs: () => CategoryTab[];
     getMailSettings: () => MailSettings;
     getContactEmails: () => ContactEmail[];
+    getFullContact: (contactID: string) => Promise<VCardContact>;
     /** Resolves with the saved contact, whose `ContactEmails` carry the id a contact reference is minted from. */
     saveVCardContact: (
         contactID: string | undefined,
