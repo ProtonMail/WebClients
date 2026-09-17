@@ -1,5 +1,5 @@
-import { getMeetView } from "../view/viewManagement";
 import Store from "electron-store";
+import { getMeetView } from "../view/viewManagement";
 import { FeatureFlag } from "./flags";
 import { isValidFlagString } from "./isValidFlagString";
 
@@ -165,7 +165,7 @@ class FeatureFlagManager {
     }
 }
 
-export const initializeFeatureFlagManager = () => {
+const initializeFeatureFlagManager = () => {
     if (featureFlagManager) return;
     featureFlagManager = new FeatureFlagManager(pollIntervalMS);
 };

@@ -1,7 +1,6 @@
+import { RELEASE_CATEGORIES } from "@proton/shared/lib/constants";
 import Store from "electron-store";
 import { settingsLogger } from "../utils/log";
-import { RELEASE_CATEGORIES } from "@proton/shared/lib/constants";
-import { Environment } from "@proton/shared/lib/interfaces/Environment";
 
 const store = new Store<{ settings: SettingsStore }>({
     configFileMode: 0o600,
@@ -59,19 +58,3 @@ export const getSettings = (): SettingsStore => {
     store.set("settings", defaultSettings);
     return defaultSettings;
 };
-
-export function setReleaseCategory(targetEnv: Environment | undefined) {
-    settingsLogger.info("Updating release category", targetEnv);
-    let releaseCategory: RELEASE_CATEGORIES;
-    switch (targetEnv) {
-        case "alpha":
-            releaseCategory = RELEASE_CATEGORIES.ALPHA;
-            break;
-        case "beta":
-            releaseCategory = RELEASE_CATEGORIES.EARLY_ACCESS;
-            break;
-        default:
-            releaseCategory = RELEASE_CATEGORIES.STABLE;
-    }
-    updateSettings({ releaseCategory });
-}

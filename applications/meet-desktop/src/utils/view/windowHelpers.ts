@@ -1,19 +1,19 @@
+import { MEET_APP_NAME } from "@proton/shared/lib/constants";
 import { BrowserWindowConstructorOptions, app, screen } from "electron";
 import { join } from "path";
-import { isLinux, isMac, isWindows } from "../helpers";
-import { appSession } from "../session";
-import { MEET_APP_NAME } from "@proton/shared/lib/constants";
-import { isProdEnv } from "../isProdEnv";
-import { getFeatureFlagManager } from "../flags/manager";
 import { FeatureFlag } from "../flags/flags";
+import { getFeatureFlagManager } from "../flags/manager";
+import { isLinux, isMac, isWindows } from "../helpers";
+import { isProdEnv } from "../isProdEnv";
+import { appSession } from "../session";
 
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 
-export const MINIMUM_WIDTH = 530;
-export const MINIMUM_HEIGHT = 490;
+const MINIMUM_WIDTH = 530;
+const MINIMUM_HEIGHT = 490;
 
-export const DEFAULT_WIDTH = 1080;
-export const DEFAULT_HEIGHT = 608; // 16:9 aspect ratio (1080 * 9/16 = 607.5, rounded to 608)
+const DEFAULT_WIDTH = 1080;
+const DEFAULT_HEIGHT = 608; // 16:9 aspect ratio (1080 * 9/16 = 607.5, rounded to 608)
 
 const getOSSpecificConfig = (): BrowserWindowConstructorOptions => {
     if (isMac) {
