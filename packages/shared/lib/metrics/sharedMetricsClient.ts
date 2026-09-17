@@ -1,5 +1,4 @@
 export interface SharedMetricsClient {
-    setAuthHeaders: (uid: string, accessToken?: string) => void;
     core_event_loop_five_processing_time_histogram: {
         observe: (args: { Value: number; Labels: Record<string, string> }) => void;
     };
@@ -22,7 +21,6 @@ const noopHistogram = { observe: () => {} };
 const noopCounter = { increment: () => {} };
 
 const noopClient: SharedMetricsClient = {
-    setAuthHeaders: () => {},
     core_event_loop_five_processing_time_histogram: noopHistogram,
     core_event_loop_six_processing_time_histogram: noopHistogram,
     core_webvitals_total: noopCounter,

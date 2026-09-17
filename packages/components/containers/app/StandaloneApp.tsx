@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { configureStore } from '@reduxjs/toolkit';
 
 import { apiStatusReducer } from '@proton/account';
-import { createAuthentication, createUnleash } from '@proton/account/bootstrap';
+import { createAuthentication, createUnauthenticatedApi, createUnleash } from '@proton/account/bootstrap';
 import { initStandaloneSession } from '@proton/account/bootstrap/standaloneSession';
 import useInstance from '@proton/hooks/useInstance';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
@@ -13,7 +13,6 @@ import createApi from '@proton/shared/lib/api/createApi';
 import { APPS } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
-import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import { FlagProvider } from '@proton/unleash/proxy';
 import noop from '@proton/utils/noop';
 
