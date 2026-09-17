@@ -237,6 +237,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Confirmeu l'obertura de l'enllaç ${ linkToShow }"
       ],
+      "Connect": [
+        "Conecta"
+      ],
       "Connect apps and devices": [
         "Connecta aplicacions i dispositius"
       ],
@@ -256,7 +259,7 @@
         "Continuar importació"
       ],
       "Continue to ${ planOrAppName }": [
-        "Continuar amb ${ planOrAppName }"
+        "Continua amb ${ planOrAppName }"
       ],
       "Continue transfers": [
         "Continua les transferències"
@@ -577,6 +580,9 @@
       ],
       "Hide more benefits": [
         "Amaga més avantatges"
+      ],
+      "Ignore": [
+        "Ignoreu-ho"
       ],
       "Image could not be loaded with tracker protection.": [
         "La imatge no s'ha pogut carregar amb la protecció contra el rastreig."
@@ -1063,6 +1069,9 @@
       ],
       "Show side panel": [
         "Mostra el panell lateral"
+      ],
+      "Sign in with Google": [
+        "Iniciar sessió amb Google"
       ],
       "Sign out": [
         "Tanca la sessió"
@@ -2107,32 +2116,6 @@
         "Imatge del contacte"
       ]
     },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "Principal"
-      ],
-      "Mobile": [
-        "Mòbil"
-      ],
-      "Other": [
-        "Altres"
-      ],
-      "Pager": [
-        "Cercapersones"
-      ],
-      "Personal": [
-        "Personal"
-      ],
-      "Work": [
-        "Feina"
-      ],
-      "Yomi": [
-        "Yomi"
-      ]
-    },
     "Country name": {
       "Abkhazia": [
         "Abkhàzia"
@@ -3053,7 +3036,7 @@
         "Xifrar i importar contactes... És possible que passi uns quants minuts. Quan el procés s'hagi completat, podeu tancar aquesta modalitat."
       ],
       "Enough room for years of emails, attachments and more.": [
-        "Espai suficient per anys de correus electrònics, fitxers adjunts i més."
+        "Espai suficient per a anys de correus electrònics, fitxers adjunts i més."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Assegureu un accés segur a les dades de l'organització, fins i tot si el vostre equip està remot o utilitza una WiFi pública."
@@ -3553,7 +3536,7 @@
         "No s'ha pogut concedir accés a la clau de l'organització"
       ],
       "Could not load sharing details": [
-        "No s'han pogut carregar els detalls de l'acció de compartir."
+        "No s'han pogut carregar els detalls de compartició"
       ],
       "Could not load the image preview: ${ message }": [
         "No s'ha pogut carregar la vista prèvia de la imatge: ${ message }"
@@ -3669,7 +3652,7 @@
         "No s'ha pogut desxifrar el nom del marcador de pàgina: ${ message }"
       ],
       "Failed to decrypt bookmark password: ${ message }": [
-        "No s'ha pogut desxifrar la contrasenya de la marca de pàgina: ${ message }"
+        "No s'ha pogut desxifrar la contrasenya de l'adreça d'interès: ${ message }"
       ],
       "Failed to decrypt content key: ${ message }": [
         "No s'ha pogut desxifrar la clau de contingut: ${ message }"
@@ -3755,9 +3738,6 @@
       "Incorrect password. Please try again.": [
         "Contrasenya incorrecta, torneu-ho a intentar."
       ],
-      "Incorrect username": [
-        "Nom d'usuari incorrecte"
-      ],
       "Invalid code": [
         "Codi invàlid"
       ],
@@ -3807,7 +3787,7 @@
         "El cognom és massa llarg."
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
-        "L'enllaç públic heretat no es pot actualitzar. Creeu-ne un de nou."
+        "L'enllaç públic antic no es pot actualitzar. Torneu-ne a crear un de nou."
       ],
       "Member address not found. Please contact customer support to resolve this": [
         "No s'ha trobat l'adreça del membre. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
@@ -4203,7 +4183,7 @@
         "S'ha produït un error inesperat. No es poden importar els contactes"
       ],
       "Unexpected error, we can't import the files": [
-        "S'ha produït un error inesperat, no podem importar els fitxers"
+        "S'ha produït un error inesperat. No podem importar els fitxers."
       ],
       "Unknown conflict strategy: ${ strategy }": [
         "Estratègia de conflicte desconeguda: ${ strategy }"
@@ -5548,7 +5528,7 @@
         "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
-        "Afegiu ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+        "Afig ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Address copied to clipboard": [
         "S'ha copiat l'adreça al porta-retalls."
@@ -5603,6 +5583,9 @@
       ],
       "An issue occurred during the restore process.": [
         "S'ha produït un error durant el procés de restauració."
+      ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "S'ha produït un error inesperat en importar les vostres dades. Torneu-ho a provar més tard."
       ],
       "and": [
         "i"
@@ -5747,6 +5730,9 @@
       ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Connecteu-vos a ${ VPN_APP_NAME } per navegar en privat."
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "S'està connectant amb Google Drive per configurar la vostra importació segura a ${ DRIVE_APP_NAME }."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "S'ha assignat el contacte al grup ${ contactGroupName }."
@@ -5911,6 +5897,9 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'allotjament de correu electrònic només està disponible per als dominis que ja teniu. El registre de domini no està disponible actualment a través de ${ BRAND_NAME }. Podeu allotjar correu electrònic per a dominis registrats a qualsevol registrador de dominis."
       ],
+      "Email you once import is finished": [
+        "Us enviarem un correu electrònic quan hagi acabat la importació"
+      ],
       "Emails are automatically signed": [
         "Els correus se signen automàticament"
       ],
@@ -6019,6 +6008,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Per només ${ bundlePlanPriceInline }"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "Perquè la importació funcioni, heu de seleccionar tots els elements sol·licitats tal com es mostra al GIF anterior."
       ],
       "Forgot password?": [
         "Heu oblidat la contrasenya?"
@@ -6352,6 +6344,9 @@
       "New": [
         "Nova"
       ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "A continuació haureu d'iniciar sessió al vostre compte de Google i autoritzar ${ BRAND_NAME } per accedir a les vostres dades."
+      ],
       "No": [
         "No"
       ],
@@ -6543,6 +6538,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Torneu-ho a provar amb un mètode de pagament diferent o poseu-vos en contacte amb el vostre banc."
       ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Milloreu de pla per assegurar-vos que la importació finalitzi correctament."
+      ],
       "Please use another browser or download the file.": [
         "Utilitzeu un altre navegador o descarregueu el fitxer."
       ],
@@ -6608,6 +6606,9 @@
       ],
       "Read folder context": [
         "Llegir el context de la carpeta"
+      ],
+      "Read once and encrypted on arrival": [
+        "Lectura única i xifratge a l'arribada"
       ],
       "Read this file": [
         "Llegir aquest fitxer"
@@ -6773,6 +6774,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
+      ],
+      "Sit back and we will let you know.": [
+        "Relaxeu-vos i us ho farem saber."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Alguns governs bloquegen o restringeixen l'accés a determinats llocs web. Una VPN ajuda a evitar la censura mentre manté la vostra activitat i identitat privades."
@@ -7107,6 +7111,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Utilitzeu aquest formulari per a notificar-nos de fitxers compartits inapropiats, il·legals o maliciosos. Esteu a punt d'informar:"
       ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Només s'utilitza per copiar-los a ${ DRIVE_APP_NAME }."
+      ],
       "username": [
         "nom d'usuari"
       ],
@@ -7156,11 +7163,17 @@
       "We couldn’t process your payment.": [
         "No hem pogut processar el vostre pagament."
       ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "No admetem la importació de fotos, Google Docs, Sheets ni Slides. Assegureu-vos que el vostre Google Drive no estigui buit."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Hem d'autenticar el vostre mètode de pagament amb el banc."
       ],
       "We need to authenticate your payment with your bank.": [
         "Hem d'autenticar el vostre pagament amb el banc."
+      ],
+      "We support most files": [
+        "Admetem la majoria de fitxers"
       ],
       "We use 3-D Secure to protect your payments": [
         "Utilitzem 3-D Secure per protegir els vostres pagaments."
@@ -7168,6 +7181,9 @@
       "We were not able to add this photo to your album": [
         "No s'ha pogut afegir aquesta foto a l'àlbum",
         "No s'han pogut afegir algunes fotos a l'àlbum"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Us enviarem un correu electrònic quan s'hagi fet la importació. Un cop hagi acabat la trobareu en una carpeta."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Us redirigirem a ${ IDEAL_WERO_BRAND_NAME } en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu algun bloquejador de finestres emergents, desactiveu-lo per continuar."
@@ -7216,6 +7232,9 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "es restaurarà a la versió de ${ formattedRevisionDate }. Les altres versions seguiran desades."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "No s'importaran fotos, ni Google Docs i Sheets"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
@@ -7340,7 +7359,7 @@
         "No podreu compartir \"${ fileName }\" després de canviar l'accés al visualitzador. El propietari o un editor amb accés de compartició us podrà restablir l'accés d'edició. No podreu desfer aquest canvi vós mateix."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
-        "Rebreu la recompensa en crèdit un mes després que el vostre amic se subscrigui a un pla anual, i dos mesos després que ho faci a un pla mensual."
+        "Rebreu la recompensa en crèdit un mes després que el vostre amic se subscrigui a un pla anual i dos mesos després que ho faci a un pla mensual."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment.",
@@ -10991,7 +11010,7 @@
         "El preu de renovació depèn de la regió de facturació i del número d'empresa."
       ],
       "Renewal price is dependent on the billing region and EIN.": [
-        "El preu de renovació depèn de la regió de facturació i de l'EIN."
+        "El preu de renovació depèn de la regió de facturació i del NIF."
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "El preu de renovació depèn de la regió de facturació i del número d'IVA."
@@ -12202,7 +12221,7 @@
         "Emmagatzematge utilitzat"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Per a continuar carregant i sincronitzant fitxers, allibereu espai o milloreu per a obtenir més emmagatzematge."
+        "Per a continuar carregant i sincronitzant fitxers, allibereu espai o milloreu el pla per a obtenir més emmagatzematge."
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Per continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ upgrade }."
@@ -12673,6 +12692,9 @@
       "Shared by ${ sharedBy }": [
         "Compartit per ${ sharedBy }"
       ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Llegim els vostres fitxers una vegada per copiar-los i, després, en xifrem cadascun amb les vostres claus de ${ BRAND_NAME }."
+      ],
       "Your favorited photos will appear here": [
         "Les vostres fotos preferides apareixeran aquí"
       ],
@@ -13130,6 +13152,9 @@
       "Connect your custom domain": [
         "Connecteu el vostre domini personalitzat"
       ],
+      "Connect your Google account": [
+        "Connecteu el vostre compte de Google"
+      ],
       "Contact Details": [
         "Detalls del contacte"
       ],
@@ -13167,7 +13192,7 @@
         "Moneda"
       ],
       "Custom": [
-        "Personalitzar"
+        "Personalitzat"
       ],
       "Customize and confirm": [
         "Personalitzeu i confirmeu"
@@ -13260,7 +13285,7 @@
         "Voleu descartar els canvis?"
       ],
       "Disconnected from Gmail": [
-        "Esteu desconnectat de Gmail"
+        "S'ha desconnectat de Gmail"
       ],
       "Domain names": [
         "Noms de domini"
@@ -13291,6 +13316,9 @@
       ],
       "Drop to upload": [
         "Arrossegueu per a carregar"
+      ],
+      "Easy switch": [
+        "Canvi fàcil"
       ],
       "Edit billing address": [
         "Edita l'adreça de la factura"
@@ -13428,6 +13456,9 @@
       ],
       "Import groups": [
         "Importa grups"
+      ],
+      "Import started, but your storage won't be enough for this import": [
+        "S'ha iniciat la importació, però el vostre emmagatzematge no serà suficient per aquesta importació"
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Importeu les dades a ${ BRAND_NAME }"
@@ -13730,6 +13761,9 @@
       "Set up your organization": [
         "Configuració de la vostra organització"
       ],
+      "Setting up your import": [
+        "S'està configurant la vostra importació"
+      ],
       "Settings": [
         "Preferències"
       ],
@@ -13760,6 +13794,9 @@
       "Sign in and grant access": [
         "Iniciar sessió i concedir accés"
       ],
+      "Sign in to Google": [
+        "Inicieu sessió a Google"
+      ],
       "Sign out": [
         "Tanca la sessió"
       ],
@@ -13774,6 +13811,9 @@
       ],
       "Size in bytes": [
         "Mida en bytes"
+      ],
+      "Something went wrong": [
+        "S'ha produït un error."
       ],
       "Sort files/folders": [
         "Ordenar fitxers/carpetes"
@@ -13904,6 +13944,9 @@
       "Warning: suspected fake website": [
         "Avís: presumpte lloc web fals"
       ],
+      "We could not find anything to import": [
+        "No s'ha trobat res per importar"
+      ],
       "We couldn’t verify that ${ author } created this file.": [
         "No hem pogut verificar que ${ author } hagi creat aquest fitxer."
       ],
@@ -13987,6 +14030,9 @@
       ],
       "Your exposed information": [
         "La vostra informació exposada"
+      ],
+      "Your import is starting": [
+        "La importació s'està iniciant"
       ],
       "Your plan": [
         "El vostre pla"

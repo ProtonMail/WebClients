@@ -217,6 +217,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Confirmer l'ouverture du lien ${ linkToShow }"
       ],
+      "Connect": [
+        "Se connecter"
+      ],
       "Connect apps and devices": [
         "Connecter les applications et les appareils"
       ],
@@ -494,6 +497,9 @@
       ],
       "Hide more benefits": [
         "Masquer plus d'avantages"
+      ],
+      "Ignore": [
+        "Ignorer"
       ],
       "Image could not be loaded with tracker protection.": [
         "L'image n'a pas pu être chargée en raison de la protection contre les traqueurs."
@@ -896,6 +902,9 @@
       ],
       "Show side panel": [
         "Afficher le panneau latéral"
+      ],
+      "Sign in with Google": [
+        "Se connecter avec Google"
       ],
       "Sign out": [
         "Se déconnecter"
@@ -1901,32 +1910,6 @@
     "Contact image": {
       "Contact image": [
         "Image du contact"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "Principal"
-      ],
-      "Mobile": [
-        "Mobile"
-      ],
-      "Other": [
-        "Autre"
-      ],
-      "Pager": [
-        "Bipeur"
-      ],
-      "Personal": [
-        "Personnel"
-      ],
-      "Work": [
-        "Professionnel"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -3458,9 +3441,6 @@
       ],
       "Incorrect password. Please try again.": [
         "Le mot de passe n'est pas correct. Réessayez."
-      ],
-      "Incorrect username": [
-        "Le nom d'utilisateur n'est pas correct."
       ],
       "Invalid code": [
         "Le code n'est pas valide."
@@ -5084,6 +5064,9 @@
       "Amount below minimum (${ amount }).": [
         "Montant inférieur au minimum de (${ amount })."
       ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Une erreur inattendue s’est produite lors de l’importation de vos données. Veuillez réessayer plus tard."
+      ],
       "and": [
         "et"
       ],
@@ -5191,6 +5174,9 @@
       ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Connectez-vous à ${ VPN_APP_NAME } pour surfer en privé."
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "Connexion à Google Drive en cours pour configurer votre importation sécurisée vers ${ DRIVE_APP_NAME }."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Le contact a été ajouté au groupe ${ contactGroupName }."
@@ -5336,6 +5322,9 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hébergement de messagerie n'est disponible que pour les noms de domaines que vous possédez déjà. L'enregistrement de nom de domaine par l'intermédiaire de ${ BRAND_NAME } n'est pas disponible pour le moment. Vous pouvez héberger des messageries pour des noms de domaines enregistrés sur n'importe quel registraire de domaine."
       ],
+      "Email you once import is finished": [
+        "Vous envoyer un e-mail une fois l'importation terminée"
+      ],
       "Emails are automatically signed": [
         "Les messages sont automatiquement signés."
       ],
@@ -5423,6 +5412,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Pour seulement ${ bundlePlanPriceInline }"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "Pour que l'importation fonctionne, vous devez sélectionner tous les éléments demandés, comme indiqué dans le GIF ci-dessus."
       ],
       "Forgot password?": [
         "Mot de passe oublié ?"
@@ -5636,6 +5628,9 @@
       "New": [
         "Nouveau"
       ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Ensuite, vous devrez vous connecter à votre compte Google et autoriser ${ BRAND_NAME } à accéder à vos données."
+      ],
       "No": [
         "Non"
       ],
@@ -5775,6 +5770,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Nous vous invitons à réessayer en utilisant un autre moyen de paiement, ou bien à contacter votre banque."
       ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Veuillez changer d'abonnement afin de garantir la réussite de l'importation."
+      ],
       "Please use another browser or download the file.": [
         "Nous vous invitons à utiliser un autre navigateur ou à télécharger le fichier."
       ],
@@ -5825,6 +5823,9 @@
       ],
       "Read folder context": [
         "Lire le contexte du dossier"
+      ],
+      "Read once and encrypted on arrival": [
+        "Lecture unique et chiffrement à la réception"
       ],
       "Read this file": [
         "Lire ce fichier"
@@ -5909,6 +5910,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
+      ],
+      "Sit back and we will let you know.": [
+        "Détendez-vous, nous vous tiendrons au courant."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Certains gouvernements bloquent ou restreignent l'accès à certains sites internet. Un VPN permet de contourner la censure tout en préservant la confidentialité de vos activités et de votre identité."
@@ -6164,6 +6168,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Utilisez ce formulaire pour nous signaler des fichiers partagés inappropriés, illégaux\nou tout autre fichier partagé malveillant. Vous êtes sur le point de signaler :"
       ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Sert uniquement à les copier dans ${ DRIVE_APP_NAME }."
+      ],
       "username": [
         "nom d'utilisateur"
       ],
@@ -6197,14 +6204,23 @@
       "We couldn’t process your payment.": [
         "Nous n'avons pas pu traiter votre paiement."
       ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "Nous ne prenons pas en charge l’importation de photos, de documents Google Docs, de feuilles de calcul Google Sheets et de présentations Google Slides. Veuillez vous assurer que votre Google Drive n’est pas vide."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Nous devons authentifier votre moyen de paiement auprès de votre banque."
       ],
       "We need to authenticate your payment with your bank.": [
         "Nous devons authentifier votre paiement auprès de votre banque."
       ],
+      "We support most files": [
+        "La plupart des fichiers sont pris en charge"
+      ],
       "We use 3-D Secure to protect your payments": [
         "Nous utilisons 3-D Secure pour protéger vos paiements."
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Nous vous enverrons un e-mail dès que l’importation sera terminée. Une fois l’opération terminée, vous trouverez vos fichiers importés dans un dossier."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Nous vous redirigerons vers ${ IDEAL_WERO_BRAND_NAME } dans un nouvel onglet du navigateur pour compléter cette transaction. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
@@ -6241,6 +6257,9 @@
       ],
       "Who has access": [
         "Qui a accès"
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "Impossible d’importer des photos, des documents Google Docs et des feuilles de calcul Google Sheets"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voulez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
@@ -11198,6 +11217,9 @@
     "Subtitle": {
       "Shared by ${ sharedBy }": [
         "Partagé par ${ sharedBy }"
+      ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Nous lisons vos fichiers une seule fois pour les copier, puis nous les chiffrons individuellement à l’aide de vos clés ${ BRAND_NAME }."
       ]
     },
     "Success": {
@@ -11568,6 +11590,9 @@
       "Connect your custom domain": [
         "Connectez votre domaine personnalisé"
       ],
+      "Connect your Google account": [
+        "Connectez-vous à votre compte Google"
+      ],
       "Contact Details": [
         "Informations du contact"
       ],
@@ -11721,6 +11746,9 @@
       "Drop to upload": [
         "Déposer pour charger"
       ],
+      "Easy switch": [
+        "Basculement facile"
+      ],
       "Edit billing address": [
         "Modifier l'adresse de facturation"
       ],
@@ -11835,6 +11863,9 @@
       ],
       "Import groups": [
         "Importer des groupes"
+      ],
+      "Import started, but your storage won't be enough for this import": [
+        "L'importation a commencé, mais votre espace de stockage ne sera pas suffisant pour cette importation"
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Importer vos données vers ${ BRAND_NAME }"
@@ -12055,6 +12086,9 @@
       "Set up your organization": [
         "Configurez votre organisation"
       ],
+      "Setting up your import": [
+        "Configuration de votre importation"
+      ],
       "Settings": [
         "Paramètres"
       ],
@@ -12082,6 +12116,9 @@
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
       ],
+      "Sign in to Google": [
+        "Se connecter avec Google"
+      ],
       "Sign out": [
         "Se déconnecter"
       ],
@@ -12096,6 +12133,9 @@
       ],
       "Size in bytes": [
         "Taille en octets"
+      ],
+      "Something went wrong": [
+        "Une erreur s'est produite."
       ],
       "Sort files/folders": [
         "Trier les fichiers/dossiers"
@@ -12220,6 +12260,9 @@
       "Warning: suspected fake website": [
         "Attention : site internet suspect/frauduleux"
       ],
+      "We could not find anything to import": [
+        "Nous n’avons rien trouvé à importer."
+      ],
       "We couldn’t verify that ${ author } created this file.": [
         "Nous n'avons pas pu vérifier que ${ author } a créé ce fichier."
       ],
@@ -12291,6 +12334,9 @@
       ],
       "Your exposed information": [
         "Vos informations exposées"
+      ],
+      "Your import is starting": [
+        "Votre importation commence."
       ],
       "Your plan": [
         "Votre abonnement"

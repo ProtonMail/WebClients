@@ -237,6 +237,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Bekreft åpning av kobling ${ linkToShow }"
       ],
+      "Connect": [
+        "Koble til"
+      ],
       "Connect apps and devices": [
         "Koble til apper og enheter"
       ],
@@ -471,7 +474,7 @@
         "Kryptert"
       ],
       "Expand folder": [
-        "Utvid mappe"
+        "Vis mappe"
       ],
       "Explore more": [
         "Utforsk mer"
@@ -577,6 +580,9 @@
       ],
       "Hide more benefits": [
         "Skjul flere fordeler"
+      ],
+      "Ignore": [
+        "Ignorer"
       ],
       "Image could not be loaded with tracker protection.": [
         "Bilde kunne ikke lastes med sporingsbeskyttelse."
@@ -1063,6 +1069,9 @@
       ],
       "Show side panel": [
         "Vis sidepanel"
+      ],
+      "Sign in with Google": [
+        "Logg på med Google"
       ],
       "Sign out": [
         "Logg av"
@@ -2105,32 +2114,6 @@
     "Contact image": {
       "Contact image": [
         "Bilde av kontakt"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Faks"
-      ],
-      "Main": [
-        "Hoved"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Other": [
-        "Annet"
-      ],
-      "Pager": [
-        "Personsøker"
-      ],
-      "Personal": [
-        "Personlig"
-      ],
-      "Work": [
-        "Arbeid"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -3755,9 +3738,6 @@
       "Incorrect password. Please try again.": [
         "Feil passord. Prøv igjen."
       ],
-      "Incorrect username": [
-        "Uriktig brukernavn"
-      ],
       "Invalid code": [
         "Ugyldig kode"
       ],
@@ -5328,7 +5308,7 @@
         "${ DOCS_APP_NAME } og ${ SHEETS_APP_NAME }-filer kan ikke lastes ned direkte og vil ikke bli inkludert i denne nedlastingen. Du kan laste ned de andre filene ved å klikke på 'Fortsett å laste ned'."
       ],
       "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
-        "${ DRIVE_APP_NAME } kunne ikke dekryptere den lokale søkeindeksen. Gjenopprett indeksen for å gjenopprette søket."
+        "${ DRIVE_APP_NAME } kunne ikke dekryptere den lokale søkeindeksen. Gjenopprett indeksen for å gjenopprette søk."
       ],
       "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
         "${ DRIVE_APP_NAME } oppdaget at den lokale søkeindeksen er ødelagt og ikke lenger kan brukes. Gjenoppbygg indeksen for å gjenopprette søk."
@@ -5604,6 +5584,9 @@
       "An issue occurred during the restore process.": [
         "Det oppstod et problem under gjenopprettingsprosessen."
       ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Det oppstod en uventet feil under import av dataene. Prøv igjen senere."
+      ],
       "and": [
         "og"
       ],
@@ -5747,6 +5730,9 @@
       ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Koble til ${ VPN_APP_NAME } for å surfe privat"
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "Kobler til Google Drive for å konfigurere sikker import til ${ DRIVE_APP_NAME }."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilordnet gruppe ${ contactGroupName }"
@@ -5911,6 +5897,9 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posthotell er kun tilgjengelig for domener du allerede eier. Domeneregistrering er for øyeblikket ikke tilgjengelig gjennom ${ BRAND_NAME }. Du kan verte e-post for domener registrert på alle domeneregistratorer."
       ],
+      "Email you once import is finished": [
+        "Sender deg en e-post når importen er fullført."
+      ],
       "Emails are automatically signed": [
         "E-post signeres automatisk"
       ],
@@ -6019,6 +6008,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "For kun ${ bundlePlanPriceInline }"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "For at importen skal fungere, må du velge alle forespurte elementer som vist i GIF-en ovenfor."
       ],
       "Forgot password?": [
         "Glemt passord?"
@@ -6160,7 +6152,7 @@
         "Indekserer elementer ${ esProgress } av ${ totalProgressToShow }"
       ],
       "Indexing search results…": [
-        "Indekserer søkeresultater..."
+        "Indekserer søketreff..."
       ],
       "Inherited from parent folder": [
         "Arvet fra overordnet mappe"
@@ -6214,10 +6206,10 @@
         "JCB-logo"
       ],
       "Jul": [
-        "jul."
+        "juli"
       ],
       "Jun": [
-        "jun."
+        "juni"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bare bekreft valget ditt og vi vil gjøre resten."
@@ -6295,7 +6287,7 @@
         "Skadelig programvare oppdaget"
       ],
       "Mar": [
-        "mar."
+        "mars"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -6352,6 +6344,9 @@
       "New": [
         "Ny"
       ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Deretter må du logge på Google-kontoen din og gi ${ BRAND_NAME } tilgang til dataene."
+      ],
       "No": [
         "Nei"
       ],
@@ -6374,7 +6369,7 @@
         "Ingen betaling kreves på dette tidspunktet."
       ],
       "No populator states found.": [
-        "Fant ingen status for indekseringsprosesser"
+        "Fant ingen tilstander for indekseringsprosesser"
       ],
       "No results found": [
         "Ingen resultater funnet"
@@ -6492,7 +6487,7 @@
         "Bilder lagret på din Drive"
       ],
       "Photo was copied to stream and marked favorite there.": [
-        "Bildet er kopiert til nyhetsstrømmen og merket som favoritt."
+        "Bildet er kopiert til Bilder og markert som favoritt der."
       ],
       "Photos have been successfully recovered.": [
         "Bildene er gjenopprettet."
@@ -6542,6 +6537,9 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Prøv igjen ved å bruke en annen betalingsmåte eller kontakt banken din."
+      ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Oppgrader for å sikre at importen fullføres uten problemer."
       ],
       "Please use another browser or download the file.": [
         "Bruk en annen nettleser eller last ned filen."
@@ -6607,7 +6605,10 @@
         "Gjenindeksering pågår"
       ],
       "Read folder context": [
-        "Lest mappekontekst"
+        "Lese mappekontekst"
+      ],
+      "Read once and encrypted on arrival": [
+        "Leses én gang og krypteres ved mottak"
       ],
       "Read this file": [
         "Les denne filen"
@@ -6773,6 +6774,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
+      ],
+      "Sit back and we will let you know.": [
+        "Len deg tilbake, så gir vi deg beskjed."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Noen myndigheter blokkerer eller begrenser tilgangen til visse nettsteder. Et VPN hjelper til med å omgå sensur samtidig som aktiviteten og identiteten din holdes privat."
@@ -7107,6 +7111,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Bruk dette skjemaet til å varsle oss om upassende, ulovlige,\neller på annen måte ondsinnede delte filer. Du er i ferd med å rapportere:"
       ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Brukes kun til å kopiere dem inn i ${ DRIVE_APP_NAME }"
+      ],
       "username": [
         "brukernavn"
       ],
@@ -7156,11 +7163,17 @@
       "We couldn’t process your payment.": [
         "Vi kunne ikke behandle betalingen din."
       ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "Vi støtter ikke import av bilder, Google Docs, Sheets og Slides. Sørg for at Google Drive-kontoen din ikke er tom."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Vi trenger å autentisere betalingsmåten med banken din."
       ],
       "We need to authenticate your payment with your bank.": [
         "Vi trenger å autentisere betalingen med banken din."
+      ],
+      "We support most files": [
+        "Vi støtter de fleste filtyper"
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi bruker 3-D Secure for å beskytte dine betalinger"
@@ -7168,6 +7181,9 @@
       "We were not able to add this photo to your album": [
         "Vi kunne ikke legge til dette bildet i albumet ditt",
         "Vi kunne ikke legge til enkelte bilder i albumet ditt"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Vi sender deg en e-post når importen er fullført. Når den er ferdig, finner du importen i en mappe."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vi vil sende deg til ${ IDEAL_WERO_BRAND_NAME } i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
@@ -7216,6 +7232,9 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "vil bli gjenopprettet til versjonen fra ${ formattedRevisionDate }. Alle andre versjoner lagres fortsatt."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "Importerer ikke bilder, Google Docs og Sheets"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ønsker du å motta en ny verifiseringskode eller å bruke en alternativ verifiseringsmetode?"
@@ -7389,7 +7408,7 @@
         "E-posten din vil kun bli brukt til denne engangsbekreftelsen."
       ],
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
-        "Filene dine blir indeksert på nytt. Du kan fortsette å søke – resultatene kan være ufullstendige før det er ferdig. Vi gir deg beskjed når det er ferdig."
+        "Filene dine blir indeksert på nytt. Du kan fortsette å søke – treffene kan være ufullstendige før det er ferdig. Vi gir deg beskjed når det er ferdig."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Filene dine er ikke lenger tilgjengelige på grunn av en tilbakestilling av passord. Last opp den gamle krypteringsnøkkelen på nytt for å få tilgang igjen. ${ KeyReactivationButton }"
@@ -10101,7 +10120,7 @@
         "Tilgang oppdatert"
       ],
       "Album renamed successfully": [
-        "Albumet er omdøpt"
+        "Albumnavn er endret"
       ],
       "All items deleted permanently from trash": [
         "Alle elementer slettet permanent fra papirkurven"
@@ -10229,7 +10248,7 @@
         "Din ${ BRAND_NAME }-adresse er klar til bruk"
       ],
       "Your old files will be deleted in 72 hours": [
-        "Dine gamle filer blir slettet om 72 timer"
+        "Dine gamle filer slettes om 72 timer"
       ],
       "Your settings have been changed successfully": [
         "Innstillingene dine ble endret"
@@ -10242,7 +10261,7 @@
     },
     "Notitication": {
       "Album renamed successfully": [
-        "Albumet er omdøpt"
+        "Albumnavn er endret"
       ]
     },
     "Oauth instructions": {
@@ -10396,7 +10415,7 @@
         "Opprett et dokument"
       ],
       "Get started": [
-        "Kom igang"
+        "Kom i gang"
       ],
       "Install and continue": [
         "Installer og fortsett"
@@ -10449,7 +10468,7 @@
         "Sikkerhetskopier fotoene og minnene dine"
       ],
       "Choose your favorite theme": [
-        "Velg ditt favoritttema"
+        "Velg favoritttema"
       ],
       "Collaborate on documents": [
         "Samarbeid på dokumenter"
@@ -12662,13 +12681,16 @@
     },
     "Subtitle": {
       "Albums shared with you will appear here": [
-        "Album som er delt med deg, vises her"
+        "Album som er delt med deg vises her"
       ],
       "Albums you've shared will appear here": [
-        "Albumene du har delt, vises her"
+        "Albumene du har delt vises her"
       ],
       "Shared by ${ sharedBy }": [
         "Delt av ${ sharedBy }"
+      ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Vi leser filene dine én gang for å kopiere dem, og krypterer deretter hver enkelt med dine ${ BRAND_NAME }-nøkler."
       ],
       "Your favorited photos will appear here": [
         "Favorittbildene vil vises her"
@@ -12680,7 +12702,7 @@
         "Panoramabildene dine vises her"
       ],
       "Your photo bursts will appear here": [
-        "Fotoseriene dine vises her"
+        "Serieopptak vises her"
       ],
       "Your portraits photos will appear here": [
         "Portrettbildene dine vises her"
@@ -12913,7 +12935,7 @@
     },
     "Tag": {
       "Bursts": [
-        "Serier"
+        "Serieopptak"
       ],
       "Favorites": [
         "Favoritter"
@@ -13127,6 +13149,9 @@
       "Connect your custom domain": [
         "Koble til ditt egendefinerte domene"
       ],
+      "Connect your Google account": [
+        "Koble til Google-kontoen din"
+      ],
       "Contact Details": [
         "KontaktInformasjon"
       ],
@@ -13289,6 +13314,9 @@
       "Drop to upload": [
         "Slipp for å laste opp"
       ],
+      "Easy switch": [
+        "Easy switch"
+      ],
       "Edit billing address": [
         "Rediger faktureringsadresse"
       ],
@@ -13426,6 +13454,9 @@
       "Import groups": [
         "Importer grupper"
       ],
+      "Import started, but your storage won't be enough for this import": [
+        "Importen er startet, men lagringsplassen vil ikke være tilstrekkelig for denne importen."
+      ],
       "Import your data to ${ BRAND_NAME }": [
         "Importer dine data til ${ BRAND_NAME }"
       ],
@@ -13520,7 +13551,7 @@
         "Ingen brudd oppdaget"
       ],
       "No bursts": [
-        "Ingen fotoserier"
+        "Ingen serieopptak"
       ],
       "No favorites": [
         "Ingen favoritter"
@@ -13727,6 +13758,9 @@
       "Set up your organization": [
         "Konfigurer organisasjonen din"
       ],
+      "Setting up your import": [
+        "Konfigurerer importen"
+      ],
       "Settings": [
         "Innstillinger"
       ],
@@ -13757,6 +13791,9 @@
       "Sign in and grant access": [
         "Logg på og gi tilgang"
       ],
+      "Sign in to Google": [
+        "Logg på Google"
+      ],
       "Sign out": [
         "Logg av"
       ],
@@ -13771,6 +13808,9 @@
       ],
       "Size in bytes": [
         "Størrelse i byte"
+      ],
+      "Something went wrong": [
+        "Noe gikk galt"
       ],
       "Sort files/folders": [
         "Sorter filer/mapper"
@@ -13901,6 +13941,9 @@
       "Warning: suspected fake website": [
         "Advarsel: mistenkt falskt nettsted"
       ],
+      "We could not find anything to import": [
+        "Vi fant ingenting å importere."
+      ],
       "We couldn’t verify that ${ author } created this file.": [
         "Vi kunne ikke bekrefte at ${ author } opprettet denne filen."
       ],
@@ -13984,6 +14027,9 @@
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"
+      ],
+      "Your import is starting": [
+        "Importen starter"
       ],
       "Your plan": [
         "Din plan"
