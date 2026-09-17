@@ -4,10 +4,11 @@
 export default {
     '(*.ts|*.tsx|*.js)': ['eslint --fix --max-warnings=0 --no-warn-ignored', 'prettier --write'],
     '(*.scss|.css)': ['prettier --write', 'stylelint --fix'],
-    '(*.json|*.md|*.mdx|*.html|*.mjs|*.yml|*.svg)': 'prettier --write',
+    '(!(package).json|*.md|*.mdx|*.html|*.mjs|*.yml|*.svg)': 'prettier --write',
     'package.json': [
         'eslint --config packages/eslint-config-proton/package-json.js --max-warnings=0 --no-warn-ignored',
         'sort-package-json',
+        'prettier --write',
     ],
     'yarn.lock': 'yarn dedupe --strategy=highest',
     'ci/bin/drive-release/drive-release': 'ci/bin/drive-release/check-binary-platform.sh',
