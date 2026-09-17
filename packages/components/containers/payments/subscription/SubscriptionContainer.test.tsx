@@ -1,5 +1,6 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
+import { buildUser } from '@proton/account/testing/buildUser';
 import { withPaymentContext } from '@proton/payments-ui/testing/with-payment-context';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
@@ -15,12 +16,7 @@ import { getLongTestPlans } from '@proton/payments/testing/data-plans';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
-import { buildUser } from '@proton/testing/builders/user';
-import { addApiMock, apiMock } from '@proton/testing/lib/api';
-import { applyHOCs } from '@proton/testing/lib/context/hocs/helpers';
-import { withDeprecatedModals } from '@proton/testing/lib/context/hocs/with-deprecated-modals';
-import { withReduxStore } from '@proton/testing/lib/context/hocs/with-redux-store';
-import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
+import { addApiMock, apiMock } from '@proton/test-api/api';
 import type { FeatureFlag } from '@proton/unleash/Flags';
 
 import {
@@ -28,6 +24,10 @@ import {
     organizationDefaultResponse,
     plansDefaultResponse,
 } from '../../../hooks/helpers/tests/index';
+import { applyHOCs } from '../../../testing/hocs/helpers';
+import { renderWithProviders } from '../../../testing/renderWithProviders';
+import { withDeprecatedModals } from '../../../testing/with-deprecated-modals';
+import { withReduxStore } from '../../../testing/with-redux-store';
 import type { SubscriptionContainerProps } from './SubscriptionContainer';
 import SubscriptionContainer from './SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from './constants';

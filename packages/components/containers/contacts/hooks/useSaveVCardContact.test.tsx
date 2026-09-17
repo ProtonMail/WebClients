@@ -3,7 +3,7 @@ import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { ContactMetadata } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
-import { addApiMock } from '@proton/testing/lib/api';
+import { addApiMock } from '@proton/test-api/api';
 
 import { clearAll, componentsHookRenderer, notificationManager } from '../tests/render';
 import { SaveVCardContactError, useSaveVCardContact } from './useSaveVCardContact';

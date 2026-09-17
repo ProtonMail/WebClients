@@ -7,13 +7,13 @@ import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
 import type { ViewPaymentMethod } from '@proton/payments-ui/client-extensions/useMethods';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { SavedPaymentMethod } from '@proton/payments/core/interface';
-import { applyHOCs } from '@proton/testing/lib/context/hocs/helpers';
-import { withApi } from '@proton/testing/lib/context/hocs/with-api';
-import { withCache } from '@proton/testing/lib/context/hocs/with-cache';
-import { withConfig } from '@proton/testing/lib/context/hocs/with-config';
-import { withNotifications } from '@proton/testing/lib/context/hocs/with-notifications';
-import { withReduxStore } from '@proton/testing/lib/context/hocs/with-redux-store';
 
+import { applyHOCs } from '../../testing/hocs/helpers';
+import { withApi } from '../../testing/hocs/with-api';
+import { withCache } from '../../testing/with-cache';
+import { withConfig } from '../../testing/with-config';
+import { withNotifications } from '../../testing/with-notifications';
+import { withReduxStore } from '../../testing/with-redux-store';
 import { PaymentsNoApi } from './Payment';
 
 const apiMock = jest.fn();

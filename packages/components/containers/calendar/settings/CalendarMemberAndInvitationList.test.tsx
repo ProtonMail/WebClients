@@ -4,8 +4,8 @@ import { mocked } from 'jest-mock';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import type { CalendarMember, CalendarMemberInvitation } from '@proton/shared/lib/interfaces/calendar';
 import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar';
-import { mockNotifications } from '@proton/testing/lib/mockNotifications';
 
+import { mockNotifications } from '../../../testing/mockNotifications';
 import CalendarMemberAndInvitationList from './CalendarMemberAndInvitationList';
 
 jest.mock('../../../hooks/useGetEncryptionPreferences');

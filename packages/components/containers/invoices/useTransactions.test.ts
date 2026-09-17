@@ -2,10 +2,10 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { queryTransactions } from '@proton/payments/core/api/api';
 import { InvoiceOwner, TransactionState, TransactionType } from '@proton/payments/core/constants';
-import { addApiMock } from '@proton/testing/lib/api';
-import { hookWrapper } from '@proton/testing/lib/context/hocs/helpers';
-import { withApi } from '@proton/testing/lib/context/hocs/with-api';
+import { addApiMock } from '@proton/test-api/api';
 
+import { hookWrapper } from '../../testing/hocs/helpers';
+import { withApi } from '../../testing/hocs/with-api';
 import useTransactions from './useTransactions';
 
 const wrapper = hookWrapper(withApi());

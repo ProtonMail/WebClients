@@ -6,7 +6,7 @@ import { API_CODES, API_KEY_SOURCE, CONTACT_CARD_TYPE, KEY_FLAG } from '@proton/
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import type { RequireSome, UserSettings } from '@proton/shared/lib/interfaces';
 import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
-import { addApiMock } from '@proton/testing/lib/api';
+import { addApiMock } from '@proton/test-api/api';
 
 import { clearAll, mockedCryptoApi, notificationManager, renderWithProviders } from '../tests/render';
 import type { ContactEmailSettingsProps } from './ContactEmailSettingsModal';

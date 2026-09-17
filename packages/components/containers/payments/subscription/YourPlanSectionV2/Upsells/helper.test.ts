@@ -6,11 +6,11 @@ import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getTestPlans } from '@proton/payments/testing/data-plans';
 import { APPS } from '@proton/shared/lib/constants';
-import { hookWrapper } from '@proton/testing/lib/context/hocs/helpers';
-import { withApi } from '@proton/testing/lib/context/hocs/with-api';
-import { withConfig } from '@proton/testing/lib/context/hocs/with-config';
-import { withReduxStore } from '@proton/testing/lib/context/hocs/with-redux-store';
 
+import { hookWrapper } from '../../../../../testing/hocs/helpers';
+import { withApi } from '../../../../../testing/hocs/with-api';
+import { withConfig } from '../../../../../testing/with-config';
+import { withReduxStore } from '../../../../../testing/with-redux-store';
 import { useSubscriptionPriceComparison } from './helper';
 
 const getWrapper = (plans?: Plan[]) =>

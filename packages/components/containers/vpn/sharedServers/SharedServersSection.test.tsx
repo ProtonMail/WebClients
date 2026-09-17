@@ -1,11 +1,12 @@
 import { act, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { getOrganizationState } from '@proton/account/testing/redux-state';
 import { getModelState } from '@proton/account/tests';
 import { getOrgPermissions } from '@proton/account/userPermissions';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
 import { renderWithProviders } from '../../contacts/tests/render';
 import { organization } from '../../payments/subscription/__mocks__/data';

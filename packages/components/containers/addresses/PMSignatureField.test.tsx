@@ -1,14 +1,14 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
+import { mockUseOrganization } from '@proton/account/testing/mockUseOrganization';
+import { mockUseUser } from '@proton/account/testing/mockUseUser';
+import { mockUseUserSettings } from '@proton/account/testing/mockUseUserSettings';
+import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
 import { PLANS } from '@proton/payments/core/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import { mockNotifications } from '@proton/testing/lib/mockNotifications';
 import { mockUseApi } from '@proton/testing/lib/mockUseApi';
-import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
-import { mockUseOrganization } from '@proton/testing/lib/mockUseOrganization';
-import { mockUseUser } from '@proton/testing/lib/mockUseUser';
-import { mockUseUserSettings } from '@proton/testing/lib/mockUseUserSettings';
 
+import { mockNotifications } from '../../testing/mockNotifications';
 import PMSignatureField from './PMSignatureField';
 
 jest.mock('@proton/app-context/useNotifications', () => ({
