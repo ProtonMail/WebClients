@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import isTruthy from '@proton/utils/isTruthy';
 
+import { LUMO_SHORT_APP_NAME } from '../constants';
 import { altKey, isSafari as checkIsSafari, metaKey, shiftKey } from '../helpers/browser';
 import type { KeyboardKeyType } from '../interfaces';
 
@@ -19,7 +20,7 @@ export const editorShortcuts: Record<string, KeyboardKeyType[]> = {
     emojiPicker: ['Meta', 'E'] as KeyboardKeyType[],
 };
 
-export const getShortcuts = (categoriesShortcuts: any[]) => {
+export const getShortcuts = (categoriesShortcuts: any[], { lumoEnabled = false } = {}) => {
     const isSafari = checkIsSafari();
 
     const inboxShortCut = categoriesShortcuts.length
@@ -282,5 +283,18 @@ export const getShortcuts = (categoriesShortcuts: any[]) => {
                 },
             ],
         },
-    ];
+        lumoEnabled && {
+            name: c('Keyboard shortcut section name').t`${LUMO_SHORT_APP_NAME} shortcuts`,
+            shortcuts: [
+                {
+                    name: c('Keyboard shortcut name').t`Open ${LUMO_SHORT_APP_NAME} / focus input`,
+                    keys: `${shiftKey} + L`,
+                },
+                {
+                    name: c('Keyboard shortcut name').t`Close ${LUMO_SHORT_APP_NAME}`,
+                    keys: 'Escape',
+                },
+            ],
+        },
+    ].filter(isTruthy);
 };
