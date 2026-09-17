@@ -86,7 +86,7 @@ export const DriveImportProcessModal = () => {
     } else if (driveError?.code === IMPORT_ERROR.NOT_EXISTS) {
         return <DriveImportEmptyStep />;
     } else if (driveError) {
-        return <DriveImportGenericErrorStep message={driveError.message} />;
+        return <DriveImportGenericErrorStep message={driveError.message} onClose={handleClose} />;
     }
 
     const isDone = step === 'success';
