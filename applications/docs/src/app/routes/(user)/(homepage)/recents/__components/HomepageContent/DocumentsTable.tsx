@@ -1,14 +1,15 @@
+import { useAddresses } from '@proton/account/addresses/hooks'
+import { useNotifications } from '@proton/app-context/useNotifications'
+import { Avatar } from '@proton/atoms/Avatar/Avatar'
+import { Button } from '@proton/atoms/Button/Button'
+import { Input } from '@proton/atoms/Input/Input'
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor'
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
 import Dropdown from '@proton/components/components/dropdown/Dropdown'
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu'
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
 import Icon from '@proton/components/components/icon/Icon'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
-import { useNotifications } from '@proton/app-context/useNotifications'
-import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor'
-import { Avatar } from '@proton/atoms/Avatar/Avatar'
-import { Button } from '@proton/atoms/Button/Button'
-import { Input } from '@proton/atoms/Input/Input'
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
 import { DateFormatter, type RecentDocumentsItem } from '@proton/docs-core'
 import { IcArrowDown } from '@proton/icons/icons/IcArrowDown'
 import { IcArrowDownArrowUp } from '@proton/icons/icons/IcArrowDownArrowUp'
@@ -21,26 +22,25 @@ import { useContactEmails } from '@proton/mail/store/contactEmails/hooks'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
+import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
+import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
 import { getInitials } from '@proton/shared/lib/helpers/string'
+import type { Address } from '@proton/shared/lib/interfaces'
 import clsx from '@proton/utils/clsx'
 import type { ComponentPropsWithoutRef, ReactNode } from 'react'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
+import { useRenameWithSDK } from '~/utils/flags'
 import { useDocumentActions } from '../../__utils/document-actions'
 import { getOwnerName } from '../../__utils/get-owner-name'
 import type { RecentsSort } from '../../__utils/homepage-view'
 import { useHomepageView, type ItemsSection, type ItemsSectionId } from '../../__utils/homepage-view'
+import { isMyDocument } from '../../__utils/is-my-document'
 import { DocContextMenu } from './DocContextMenu/DocContextMenu'
 import { useContextMenu } from './DocContextMenu/context'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
 import * as Table from './table'
-import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
-import { traceError, SentryRealtimeInitiatives } from '@proton/shared/lib/helpers/sentry'
-import { useRenameWithSDK } from '~/utils/flags'
-import { useAddresses } from '@proton/account/addresses/hooks'
-import type { Address } from '@proton/shared/lib/interfaces'
-import { isMyDocument } from '../../__utils/is-my-document'
 
 // table
 // -----
@@ -464,7 +464,7 @@ function Row({ document, variant, addresses }: RowProps) {
 // utils
 // -----
 
-export function useNameAndAvatar(document: RecentDocumentsItem, addresses: Address[] | undefined) {
+function useNameAndAvatar(document: RecentDocumentsItem, addresses: Address[] | undefined) {
   const [contactEmails] = useContactEmails()
 
   const isMine = isMyDocument(document, addresses)

@@ -1,17 +1,17 @@
+import { useUser } from '@proton/account/user/hooks'
+import { Button } from '@proton/atoms/Button/Button'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
+import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
+import { getAppHref } from '@proton/shared/lib/apps/helper'
+import { getParsedPathWithoutLocalIDBasename } from '@proton/shared/lib/authentication/pathnameHelper'
+import { APPS, DRIVE_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants'
+import { replaceUrl } from '@proton/shared/lib/helpers/browser'
+import { getInitials } from '@proton/shared/lib/helpers/string'
+import { getPathFromLocation, getUrlWithReturnUrl } from '@proton/shared/lib/helpers/url'
 import type { ReactNode } from 'react'
 import { useEffect, useMemo } from 'react'
-import { Button } from '@proton/atoms/Button/Button'
-import { useApplication } from '~/utils/application-context'
 import { c } from 'ttag'
-import { APPS, DRIVE_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants'
-import { getAppHref } from '@proton/shared/lib/apps/helper'
-import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
-import { useUser } from '@proton/account/user/hooks'
-import { getInitials } from '@proton/shared/lib/helpers/string'
-import { getParsedPathWithoutLocalIDBasename } from '@proton/shared/lib/authentication/pathnameHelper'
-import { replaceUrl } from '@proton/shared/lib/helpers/browser'
-import { getPathFromLocation, getUrlWithReturnUrl } from '@proton/shared/lib/helpers/url'
+import { useApplication } from '~/utils/application-context'
 
 function redirectToAccountSwitcherFromUserApp() {
   const accountSwitchUrl = new URL(getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT))
@@ -103,7 +103,7 @@ export function DocumentErrorFallback({ error }: DocumentErrorFallbackProps) {
   )
 }
 
-export function DocumentErrorSignedInAs() {
+function DocumentErrorSignedInAs() {
   const [user] = useUser()
   const initials = getInitials(user.Name || user.Email || '')
 

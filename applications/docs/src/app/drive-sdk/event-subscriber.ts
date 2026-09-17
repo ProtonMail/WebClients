@@ -10,7 +10,7 @@ export type SDKEventListener = (event: DriveEvent) => Promise<void>
  * Additionaly we listen to events for files shared with the user (listed when you call "initialize").
  * There is only one EventSubscriber instance per app. Each re-initialization requies a reset first.
  */
-export class EventSubscriber {
+class EventSubscriber {
   private drive: ProtonDriveClient
   // Construct one scheduler with one callback to avoid race conditions
   private eventScheduler: EventScheduler | undefined
