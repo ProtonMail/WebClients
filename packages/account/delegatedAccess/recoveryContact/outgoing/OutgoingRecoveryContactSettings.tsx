@@ -199,6 +199,13 @@ export const OutgoingRecoveryContactSettings = ({
 
     return (
         <>
+            {canAddRecoveryContact &&
+                userHasNoAccountRecoveryMethodSet &&
+                !isSentinelUser &&
+                controller.outgoingDelegatedAccess.recoveryContacts.items.length === 0 && (
+                    <DashboardCard>{passwordResetOptionRequiredWarning}</DashboardCard>
+                )}
+
             {canAddRecoveryContact && (
                 <div>
                     <Button
