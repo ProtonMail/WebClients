@@ -396,7 +396,7 @@
         "Ayırtılmış adresi kullanıma al"
       ],
       "Activate this address": [
-        "Bu adresi etkinleştir"
+        "Bu adresi kullanıma al"
       ],
       "Add": [
         "Ekle"
@@ -517,9 +517,6 @@
       ],
       "Approve": [
         "Onayla"
-      ],
-      "Assign manager(s)": [
-        "Yönetici(ler) ata"
       ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
@@ -2499,7 +2496,7 @@
     },
     "Address status": {
       "Active": [
-        "Etkin"
+        "Kullanıma alınmış"
       ],
       "Allow unsigned mail": [
         "İmzasız e-posta kullan"
@@ -4264,32 +4261,6 @@
       ],
       "URL": [
         "İnternet adresi"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Faks"
-      ],
-      "Main": [
-        "Ana"
-      ],
-      "Mobile": [
-        "Cep telefonu"
-      ],
-      "Other": [
-        "Diğer"
-      ],
-      "Pager": [
-        "Çağrı cihazı"
-      ],
-      "Personal": [
-        "Kişisel"
-      ],
-      "Work": [
-        "İş"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "CountriesStep:Info": {
@@ -6153,7 +6124,7 @@
         "${ BRAND_NAME }, asla beklenmedik bir şekilde, bir kare kod ile oturum açmanızı istemez."
       ],
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
-        "**Nasıl çalışır:** Oturum açmak istediğiniz aygıtta görüntülenen kodu bu aygıta yazın. **${ email }** olarak oturumunuz açılır. Her iki aygıt da etkin kalır."
+        "**Nasıl çalışır:** Oturum açmak istediğiniz aygıtta görüntülenen kodu bu aygıta yazın. **${ email }** olarak oturumunuz açılır. Her iki aygıt da kullanıma alınmış olarak kalır."
       ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Kare kod içeren iletilere karşı dikkatli olun. Bir kodu yalnızca kaynağına güvenirseniz tarayın."
@@ -6527,7 +6498,7 @@
         "İletinin alıcısı davet edildi. Daveti kabul ya da red etmesi ya da güncellemesi gerekiyor"
       ],
       "Forwarding is active": [
-        "İletici etkin"
+        "İletici kullanıma alınmış"
       ],
       "Forwarding to ${ boldForwardeeEmail } will become active once the recipient accepts the request.": [
         "Alıcı isteği kabul ettiğinde, ${ boldForwardeeEmail } adresine iletici açılır."
@@ -7164,7 +7135,7 @@
         "Hesap bulunamadı"
       ],
       "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
-        "Etkinleştirilemedi. Bilgiler yanlış olabilir ya da e-posta adresi zaten etkinleştirilmiş olabilir. Lütfen bilgilerinizi denetleyin ya da oturum açın."
+        "Kullanıma alınamadı. Bilgiler yanlış olabilir ya da e-posta adresi zaten kullanıma alınmış olabilir. Lütfen bilgilerinizi denetleyin ya da oturum açın."
       ],
       "Add at least one action": [
         "En az bir işlem ekleyin"
@@ -7379,7 +7350,7 @@
         "Grup üyeleri yüklenemedi"
       ],
       "Failed to activate your address. Please try again.": [
-        "Adresiniz etkinleştirilemedi. Lütfen yeniden deneyin."
+        "Adresiniz kullanıma alınamadı. Lütfen yeniden deneyin."
       ],
       "Failed to add group member": [
         "Grup üyesi eklenemedi"
@@ -7488,9 +7459,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "İkinci parola yanlış. Lütfen yeniden deneyin."
-      ],
-      "Incorrect username": [
-        "Kullanıcı adı yanlış"
       ],
       "Intended recipient does not support calendar sharing": [
         "İstenilen alıcı takvim paylaşımını desteklemiyor"
@@ -7666,7 +7634,7 @@
         "Kuruluş anahtarının şifresi çözülmedi"
       ],
       "Organization key must be activated to create invited users": [
-        "Davet edilen kullanıcılar oluşturmak için kuruluş anahtarı etkinleştirilmelidir"
+        "Davet edilen kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
       ],
       "Organization key must be activated to create non-private users": [
         "Korunmayan kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
@@ -7705,7 +7673,7 @@
         "Fotoğraf bulunamadı"
       ],
       "Please add a payment method before reactivating your subscription": [
-        "Aboneliğinizi yeniden etkinleştirmeden önce bir ödeme yöntemi ekleyin"
+        "Aboneliğinizi yeniden kullanıma almadan önce bir ödeme yöntemi ekleyin"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Lütfen ABN numaranızın sınır ötesi KDV için kayıtlı olup olmadığını denetleyin"
@@ -7914,7 +7882,7 @@
         "Sekme kapatıldı"
       ],
       "The address is already activated": [
-        "Adres zaten etkinleştirilmiş"
+        "Adres zaten kullanıma alınmış"
       ],
       "The address might be misspelled": [
         "Adres yanlış yazılmış olabilir"
@@ -8136,7 +8104,7 @@
         "Bir ad belirtmelisiniz"
       ],
       "You need to have an active custom domain address in order to generate an SMTP submission token.": [
-        "SMTP gönderim kodu oluşturmak için etkin bir özel etki alanı adresiniz olmalıdır."
+        "SMTP gönderim kodu oluşturmak için kullanıma alınmış bir özel etki alanı adresiniz olmalıdır."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Yazılabilecek en fazla karakter sayısına ulaştınız. Lütfen iletinizi kısaltın."
@@ -9130,7 +9098,7 @@
     },
     "Filter": {
       "Activated": [
-        "Etkinleştirildi"
+        "Kullanıma alındı"
       ],
       "All": [
         "Tümü"
@@ -9145,7 +9113,7 @@
         "Aktarıldı"
       ],
       "Not activated": [
-        "Etkinleştirilmemiş"
+        "Kullanıma alınmamış"
       ],
       "Pending": [
         "Bekliyor"
@@ -9457,7 +9425,7 @@
     },
     "Group state": {
       "Active": [
-        "Etkin"
+        "Kullanıma alınmış"
       ],
       "Unanswered": [
         "Yanıtlanmamış"
@@ -9697,7 +9665,7 @@
         "Yarın çocuğunuzun dijital güvenliğini sağlamak için bugün basit bir adım atabilirsiniz"
       ],
       "Activate your reserved email address": [
-        "Ayırttığınız e-posta adresini etkinleştirin"
+        "Ayırttığınız e-posta adresini kullanıma alın"
       ],
       "Address reservation voucher": [
         "Adres ayırtma kuponu"
@@ -9949,10 +9917,10 @@
         "Kısa sürede çok fazla istek yapıldı. Lütfen birkaç dakika sonra yeniden deneyin."
       ],
       "Two-factor authentication is enabled in your external account.": [
-        "Dış hesabınızda iki adımlı doğrulama kullanıma alınmış."
+        "Dış hesabınızda iki adımlı doğrulama açık."
       ],
       "Two-factor authentication is enabled in your external email account.": [
-        "Dış e-posta hesabınızda iki adımlı doğrulama kullanıma alınmış."
+        "Dış e-posta hesabınızda iki adımlı doğrulama açık."
       ],
       "Use your app password if:": [
         "Aşağıdaki durumlarda uygulama parolanızı kullanın:"
@@ -10179,7 +10147,7 @@
     },
     "Inactive key function info": {
       "If reactivated, the key will be used for decryption": [
-        "Yeniden etkinleştirilirse, anahtar şifre çözme için kullanılır"
+        "Yeniden kullanıma alınırsa, anahtar şifre çözme için kullanılır"
       ],
       "If reactivated, the key will be used for decryption and verification": [
         "Yeniden kullanıma alınırsa, anahtar şifre çözme ve doğrulama için kullanılır"
@@ -10613,7 +10581,7 @@
         "Etkin"
       ],
       "active": [
-        "etkin"
+        "kullanıma alınmış"
       ],
       "Activity Monitor": [
         "Etkinlik izleyici"
@@ -10717,6 +10685,9 @@
         "Tümü (${ totalFoldersCount } etiket)",
         "Tümü (${ totalFoldersCount } etiket)"
       ],
+      "All admins": [
+        "Tüm yöneticiler"
+      ],
       "All data and settings are preserved": [
         "Tüm veriler ve ayarlar korunacak"
       ],
@@ -10724,7 +10695,7 @@
         "Bu aygıt profilindeki tüm aygıtlara dağıtıldı"
       ],
       "All inactive members deleted": [
-        "Etkin olmayan tüm üyeler silindi"
+        "Kullanıma alınmamış tüm üyeler silindi"
       ],
       "All internet traffic is always encrypted and secure": [
         "Tüm internet trafiği her zaman şifrelenir ve güvenlidir"
@@ -10903,7 +10874,7 @@
         "En az ${ BETTER_PASSWORD_LENGTH } karakter"
       ],
       "At least one application must be active": [
-        "En az bir uygulama etkin olmalıdır"
+        "En az bir uygulama kullanıma alınmış olmalıdır"
       ],
       "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
         "Deneme sürenizin sonunda ${ boldCancelDate }, tarifeniz ${ boldProtonFree } düzeyine düşürülecek. Kuruluşunuzdaki tüm kullanıcı hesapları kaldırılacak."
@@ -10978,7 +10949,7 @@
         "Parolanızı kopyaladığınızdan ve güvenli bir yerde sakladığınızdan emin olun."
       ],
       "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
-        "Kullanıcıyı etkinleştirmeden önce bir parola belirtmeli ve adresler için şifreleme anahtarları oluşturmalısınız."
+        "Kullanıcıyı kullanıma almadan önce bir parola belirtmeli ve adresler için şifreleme anahtarları oluşturmalısınız."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Bu adresi oluşturmadan önce bir parola belirtmeli ve adresin şifreleme anahtarlarını üretmelisiniz."
@@ -11737,7 +11708,7 @@
         "İçe aktarma işleminin tamamlanması için yukarıdaki GIF görselinde belirtilen tüm ögeleri seçmelisiniz."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Başka bir e-posta hizmetinden ${ MAIL_APP_NAME } uygulamasına geçiş yapan kullanıcılar için, sorunsuz bir geçiş sağlamak üzere MX kaydını değiştirmeden önce ${ boldAddresses } sekmesini seçin ve tüm etkin e-posta adreslerini ekleyin."
+        "Başka bir e-posta hizmetinden ${ MAIL_APP_NAME } uygulamasına geçiş yapan kullanıcılar için, sorunsuz bir geçiş sağlamak üzere MX kaydını değiştirmeden önce ${ boldAddresses } sekmesini seçin ve tüm kullanıma alınmış e-posta adreslerini ekleyin."
       ],
       "Forgot password?": [
         "Parolamı unuttum"
@@ -11809,7 +11780,7 @@
         "${ providerName } verilerinizi içe aktarmak için ${ BRAND_NAME } izinlerini verin."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
-        "Kod için, kullanmayı düşündüğünüz hizmet gibi açıklayıcı bir ad yazın ve etkin özel etki alanı adreslerinizden birini seçin. Bu kod ile yalnızca bu adres e-posta gönderebilir."
+        "Kod için, kullanmayı düşündüğünüz hizmet gibi açıklayıcı bir ad yazın ve kullanıma alınmış özel etki alanı adreslerinizden birini seçin. Bu kod ile yalnızca bu adres e-posta gönderebilir."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Herkese açık anahtarınızı arkadaşlarınıza verin ya da çevrim içi olarak yayınlayın. Böylece isteyen herkes size uçtan uca şifrelenmiş e-posta gönderebilir!"
@@ -11887,10 +11858,10 @@
         "Bu seçenek kapalıysa, kuruluş üyeleri kasaları veya ögeleri yalnızca kuruluş içinde paylaşabilir."
       ],
       "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
-        "Kapatıldığında, kuruluş üyeleri yeni takma adlar oluşturamaz. Var olan takma adlar etkin olmayı sürdürür."
+        "Kapatıldığında, kuruluş üyeleri yeni takma adlar oluşturamaz. Var olan takma adlar kullanımda kalır."
       ],
       "If disabled, organization members won't be able to create secure links. Previously active secure links remain valid until their expiration.": [
-        "Kapatıldığında, kuruluş üyeleri güvenli bağlantılar oluşturamaz. Daha önce etkin olan güvenli bağlantılar, geçerlilik süresi dolana kadar geçerli kalır."
+        "Kapatıldığında, kuruluş üyeleri güvenli bağlantılar oluşturamaz. Daha önce kullanılan güvenli bağlantılar, geçerlilik süresi dolana kadar geçerli kalır."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Bu seçenek açıksa, kuruluş üyeleri kasalara ek olarak tekil ögeleri de paylaşabilir."
@@ -12012,7 +11983,7 @@
         "Bir sonraki adımda, bir Bitcoin adresi kullanarak ön ödemenizi yapabilirsiniz."
       ],
       "inactive": [
-        "etkin değil"
+        "kullanımdan kaldırılmış"
       ],
       "Include device, location, and IP details": [
         "Aygıt, konum ve IP adresi ayrıntıları katılsın"
@@ -12773,7 +12744,7 @@
         "${ categoryLabel } bildirimlerini al"
       ],
       "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
-        "Ayırtma kuponunu e-posta ile alın. Siz veya çocuğunuz bu kupon ile adresi 15 yıl içinde etkinleştirebilirsiniz. ${ learnMoreLink }"
+        "Ayırtma kuponunu e-posta ile alın. Siz veya çocuğunuz bu kupon ile adresi 15 yıl içinde kullanıma alabilirsiniz. ${ learnMoreLink }"
       ],
       "Recently used servers:": [
         "Son kullanılan sunucular:"
@@ -12881,7 +12852,7 @@
         "SCIM bütünleştirmesi kullanılmıyor"
       ],
       "SCIM token active": [
-        "SCIM kodu etkin"
+        "SCIM kodu kullanıma alınmış"
       ],
       "Secure and end-to-end encrypted": [
         "Güvenli ve uçtan uca şifrelenmiş"
@@ -13121,7 +13092,7 @@
         "Abonelik her ay otomatik olarak yenilenir."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
-        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yeniden etkinleştirin. ${ reactivateLink }"
+        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yeniden kullanıma alın. ${ reactivateLink }"
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
         "Abonelik sona eriyor: ${ planName } avantajlarınızı korumak için, aboneliğinizi Apple App Store üzerinden ${ byDate } tarihine kadar yeniden başlatın. ${ reactivateLink }"
@@ -13431,7 +13402,7 @@
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        "Bu seçenek, tüm etkin oturumlarınızdan çıkılmasını ve iki adımlı kimlik doğrulamasının kapatılmasını sağlar."
+        "Bu seçenek, tüm etkin oturumlarınızın kapatılarak iki adımlı kimlik doğrulamasının kapatılmasını sağlar."
       ],
       "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
         "Bu işlem, **${ name } (${ date } tarihinde oluşturuldu)** aygıtını ${ BRAND_NAME } hesabınızdan ayıracak."
@@ -13512,13 +13483,13 @@
         "Bu kullanıcıyı aktarabilmek için ${ domainNamesLink } altındaki e-posta etki alanını ekleyin ve doğrulayın."
       ],
       "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Bu kullanıcıyı aktarabilmek için ${ provider.adminConsoleName } üzerinden hesabını etkinleştirin."
+        "Bu kullanıcıyı aktarabilmek için ${ provider.adminConsoleName } üzerinden hesabını kullanıma alın."
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından hesabını etkinleştirin."
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından hesabını kullanıma alın."
       ],
       "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından adresini etkinleştirin."
+        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından adresini kullanıma alın."
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "Bu kullanıcıyı aktarmak için kullanıcının ${ BRAND_NAME } üzerine katılma davetini kabul etmesi gerekir."
@@ -13635,7 +13606,7 @@
         "Ekibinizin hesap güvenliğini izlemek için tarifenizi yükseltin."
       ],
       "Upgrade now to view ${ PASS_APP_NAME } activity across your organization.": [
-        "Kuruluşunuzdaki ${ PASS_APP_NAME } etkinliğini görüntülemek için şimdi yükseltin."
+        "Kuruluşunuzdaki ${ PASS_APP_NAME } etkinliğini görüntülemek için tarifenizi yükseltin."
       ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Geri kalanları aktarmak için istediğiniz zaman tarifenizi yükseltin ya da yer açın"
@@ -13959,7 +13930,7 @@
         "Bir sunucuyu bir ağ geçidinden kaldırdığınızda, 10 günlük bir kullanımdan kaldırma süreci başlar. Bu sunucu yeni bir ağ geçidine eklenebilir, ancak ülkesi değiştirilemez."
       ],
       "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
-        "Adresi etkinleştirmeye hazır olduğunuzda kare kodu tarayın ya da kupondaki bağlantıyı kullanın."
+        "Adresi kullanıma almaya hazır olduğunuzda kare kodu tarayın ya da kupondaki bağlantıyı kullanın."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Aboneliğiniz yenilendiğinde, ödeme için yukarıdaki yönteme başvurmadan önce var olan tüm krediyi kullanacağız."
@@ -14694,7 +14665,7 @@
         "İletme"
       ],
       "Inactive": [
-        "Etkin değil"
+        "Kullanımdan kaldırılmış"
       ],
       "Invalid": [
         "Geçersiz"
@@ -16593,7 +16564,7 @@
         "İpuçları ve öngörüler"
       ],
       "To activate, scan the QR-code or go to:": [
-        "Etkinleştirmek için kare kodu tarayın ya da şuraya gidin:"
+        "Kullanıma almak için kare kodu tarayın ya da şuraya gidin:"
       ],
       "To help us improve, please explain why you are leaving.": [
         "Gelişmemize yardımcı olmak için, lütfen neden ayrıldığınızı açıklayın."
@@ -16689,7 +16660,7 @@
         "Kullanıcılar"
       ],
       "Users activated": [
-        "Kullanıcılar etkinleştirildi"
+        "Kullanıcılar kullanıma alındı"
       ],
       "Users migrated": [
         "Kullanıcılar aktarıldı"
@@ -17169,10 +17140,10 @@
         "gizlilik ilkesi"
       ],
       "Reactivate now": [
-        "Yeniden etkinleştir"
+        "Yeniden kullanıma al"
       ],
       "Reactivate subscription": [
-        "Aboneliği yeniden etkinleştir"
+        "Aboneliği yeniden kullanıma al"
       ],
       "Request an invite": [
         "Davet iste"
@@ -17684,7 +17655,7 @@
     },
     "Member action": {
       "Activate user": [
-        "Kullanıcıyı etkinleştir"
+        "Kullanıcıyı kullanıma al"
       ],
       "Add address": [
         "Adres ekle"
@@ -17821,10 +17792,10 @@
         "Çocuğunuzun dijital güvenliğini yarın sağlamak için bugün atılacak basit bir adım. Çocuğunuz için gizli bir ${ BRAND_NAME } e-posta adresi ayırtın."
       ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
-        "Çocuğunuz için ayırtılmış gizliliği koruyan ${ BRAND_NAME } e-posta adresini etkinleştirin ve hesabını kurun."
+        "Çocuğunuz için ayırtılmış gizliliği koruyan ${ BRAND_NAME } e-posta adresini kullanıma alın ve hesabını kurun."
       ],
       "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
-        "Çocuğunuzun ${ BRAND_NAME } hesabını etkinleştirin | ${ BRAND_NAME }"
+        "Çocuğunuzun ${ BRAND_NAME } hesabını kullanıma alın | ${ BRAND_NAME }"
       ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "${ BRAND_NAME } hesabı açarak, tek hesap ile ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi şifrelenmiş tüm ${ BRAND_NAME } hizmetlerini kullanın. Ücretsiz bir ${ BRAND_NAME } hesabı açın."
@@ -20847,10 +20818,10 @@
         "${ IDEAL_WERO_BRAND_NAME } ile öde"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
-        "Deneme süresi sona erdikten sonra aboneliğin etkinleştirilmesi için bir ödeme yöntemi gereklidir."
+        "Deneme süresi sona erdikten sonra aboneliğin kullanıma alınması için bir ödeme yöntemi gereklidir."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
+        "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden kullanıma alın."
       ],
       "Processing payment": [
         "Ödeme işleniyor"
@@ -21420,12 +21391,12 @@
     },
     "PQC account key generation": {
       "Couldn’t generate keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
-        "Anahtarlar oluşturulamadı. Kuantum sonrası korumayı etkinleştirmek için yeni kuantum sonrası şifreleme anahtarlarını oluşturulmanız gerekiyor.\n\n${ goToSettingsLink } kısmına gidin ve 'Eksik anahtarları oluştur' seçeneğini seçin."
+        "Anahtarlar oluşturulamadı. Kuantum sonrası korumayı açmak için yeni kuantum sonrası şifreleme anahtarlarını oluşturulmanız gerekiyor.\n\n${ goToSettingsLink } kısmına gidin ve 'Eksik anahtarları oluştur' seçeneğini seçin."
       ]
     },
     "PQC adress key generation": {
       "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys for each address.\n\n${ goToSettingsLink } and select 'Generate missing keys'.": [
-        "Adres anahtarları oluşturulamadı. Kuantum sonrası korumayı etkinleştirmek için her bir adrese özel yeni kuantum sonrası şifreleme anahtarlarınızı oluşturmanız gerekecek.\n\n${ goToSettingsLink } bağlantısından ve 'Eksik anahtarları oluştur' seçeneğini kullanın."
+        "Adres anahtarları oluşturulamadı. Kuantum sonrası korumayı açmak için her bir adrese özel yeni kuantum sonrası şifreleme anahtarlarınızı oluşturmanız gerekecek.\n\n${ goToSettingsLink } bağlantısından ve 'Eksik anahtarları oluştur' seçeneğini kullanın."
       ]
     },
     "PQC compatibility warning": {
@@ -21549,26 +21520,6 @@
       ],
       "Work": [
         "İş"
-      ]
-    },
-    "Protection type": {
-      "Blocked": [
-        "Engellenmiş"
-      ],
-      "CAPTCHA": [
-        "Güvenlik kodu"
-      ],
-      "Device verification": [
-        "Aygıt doğrulama"
-      ],
-      "Ok": [
-        "Tamam"
-      ],
-      "Ownership verification": [
-        "Sahiplik doğrulaması"
-      ],
-      "Unknown": [
-        "Bilinmiyor"
       ]
     },
     "Provider option": {
@@ -21831,7 +21782,7 @@
         "Hesap korumanızı nasıl artırdınız"
       ],
       "Inactive recovery options": [
-        "Etkin olmayan kurtarma seçenekleri"
+        "Kullanımdan kaldırılmış kurtarma seçenekleri"
       ],
       "Maximum": [
         "En fazla"
@@ -22030,7 +21981,7 @@
         "**Bu tarihten önce abone olursanız,** **${ referrerRewardAmount }** kredi kazanırsınız."
       ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
-        "Bu tarihten sonra, hesabınız **${ BRAND_NAME } Free** tarifesine düşürülecek. Fikrinizi değiştirirseniz, ücretli özelliklere erişmeyi sürdürmek için **aboneliğinizi yeniden etkinleştirebilirsiniz**."
+        "Bu tarihten sonra, hesabınız **${ BRAND_NAME } Free** tarifesine düşürülecek. Fikrinizi değiştirirseniz, ücretli özelliklere erişmeyi sürdürmek için **aboneliğinizi yeniden kullanıma alabilirsiniz**."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "**${ planTitle }** tarifesini **${ textDate }** tarihine kadar ücretsiz kullanın."
@@ -22943,10 +22894,10 @@
     },
     "Server-Info": {
       "active": [
-        "etkin"
+        "kullanıma alınmış"
       ],
       "inactive": [
-        "etkin değil"
+        "kullanımdan kaldırılmış"
       ],
       "pending": [
         "bekliyor"
@@ -24201,8 +24152,8 @@
         "${ n } kullanıcı kimlik hizmeti sağlayıcınız üzerinden kuruluşunuza katıldı"
       ],
       "${ n } user is inactive.": [
-        "${ n } kullanıcı etkisizleştirilmiş.",
-        "${ n } kullanıcı etkisizleştirilmiş."
+        "${ n } kullanıcı kullanımdan kaldırılmış.",
+        "${ n } kullanıcı kullanımdan kaldırılmış."
       ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } kullanıcı, ${ BRAND_NAME } hesabında tek oturum açma kullanmak için yardımınızı istiyor.",
@@ -24269,8 +24220,8 @@
         "Bu aygıt"
       ],
       "Delete ${ n } inactive user?": [
-        "${ n } etkin olmayan kullanıcı silinsin mi?",
-        "${ n } etkin olmayan kullanıcı silinsin mi?"
+        "${ n } kullanımdan kaldırılmış kullanıcı silinsin mi?",
+        "${ n } kullanımdan kaldırılmış kullanıcı silinsin mi?"
       ],
       "Delete ${ n } user": [
         "${ n } kullanıcıyı sil",
@@ -24307,7 +24258,7 @@
         "Güvenliğiniz için diğer tüm aygıtlarınızdaki etkin oturumlarınız kapatıldı."
       ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
-        "Güvenliğiniz için, diğer tüm etkin aygıtlarınızdaki oturumlar kapatıldı. Hesabınıza erişmeden önce, yeni bir yedek parola yazmanız gerekecek."
+        "Güvenliğiniz için, kullanıma alınmış diğer tüm aygıtlarınızdaki oturumlar kapatıldı. Hesabınıza erişmeden önce, yeni bir yedek parola yazmanız gerekecek."
       ],
       "Grant": [
         "İzin ver"
@@ -24456,16 +24407,16 @@
     },
     "sso: auth device state": {
       "Active": [
-        "Etkin"
+        "Kullanıma alınmış"
       ],
       "Inactive": [
-        "Etkin değil"
+        "Kullanımdan kaldırılmış"
       ],
       "Pending activation": [
-        "Etkinleştirilmesi bekleniyor"
+        "Kullanıma alınması bekleniyor"
       ],
       "Pending admin activation": [
-        "Yönetici tarafından etkinleştirilmesi gerekiyor"
+        "Yönetici tarafından kullanıma alınması gerekiyor"
       ],
       "Rejected": [
         "İzin verilmedi"
@@ -24500,10 +24451,10 @@
         "... bekliyor"
       ],
       "Activated": [
-        "Etkinleştirildi"
+        "Kullanıma alındı"
       ],
       "Active": [
-        "Etkin"
+        "Kullanıma alınmış"
       ],
       "Add a phone number": [
         "Bir telefon numarası ekle"
@@ -24536,7 +24487,7 @@
         "Son değiştirilme ${ formattedDate }"
       ],
       "Not activated": [
-        "Etkinleştirilmemiş"
+        "Kullanıma alınmamış"
       ],
       "Not saved": [
         "Kaydedilmedi"
@@ -25117,10 +25068,10 @@
         "Üretkenlik özellikleri"
       ],
       "Reactivate": [
-        "Yeniden etkinleştir"
+        "Yeniden kullanıma al"
       ],
       "Reactivate to restore access to ${ planName } features.": [
-        "${ planName } özelliklerine erişebilmek için yeniden etkinleştirin."
+        "${ planName } özelliklerine erişebilmek için yeniden kullanıma alın."
       ],
       "Read the story": [
         "Öykümüzü okuyun"
@@ -25282,7 +25233,7 @@
     },
     "Subscription status": {
       "Active": [
-        "Etkin"
+        "Kullanıma alınmış"
       ],
       "Expiring": [
         "Sona eriyor"
@@ -25614,7 +25565,7 @@
         "Geçerli bir kurtarma telefon numarası yazdıysanız, bir dakika içinde kullanıcı adınızın bulunduğu bir SMS alacaksınız."
       ],
       "Your address has been activated": [
-        "Adresiniz etkinleştirildi"
+        "Adresiniz kullanıma alındı"
       ]
     },
     "Success message": {
@@ -25758,7 +25709,7 @@
     },
     "Table header": {
       "Activated": [
-        "Etkinleştirildi"
+        "Kullanıma alındı"
       ],
       "Estimated size": [
         "Öngörülen boyut"
@@ -26050,16 +26001,16 @@
         "İşlemler"
       ],
       "Activate multi-user support": [
-        "Çok kullanıcı desteğini etkinleştir"
+        "Çok kullanıcı desteğini aç"
       ],
       "Activate organization key": [
         "Kuruluş anahtarını kullanıma al"
       ],
       "Activate user": [
-        "Kullanıcıyı etkinleştir"
+        "Kullanıcıyı kullanıma al"
       ],
       "Activate your email": [
-        "E-postanızı etkinleştirin"
+        "E-postanızı kullanıma alın"
       ],
       "Activity monitor": [
         "Etkinlik izleyici"
@@ -26538,7 +26489,7 @@
         "Gündüz teması"
       ],
       "Deactivate current phrase?": [
-        "Geçerli ifade etkisizleştirilsin mi?"
+        "Geçerli ifade kullanımdan kaldırılsın mı?"
       ],
       "Decrypt key": [
         "Anahtarın şifresini çöz"
@@ -27057,7 +27008,7 @@
         "İçe aktarmalar"
       ],
       "Inactive 2FA": [
-        "İki adımlı doğrulama etkin olmayan"
+        "İki adımlı doğrulama kapalı olan"
       ],
       "Information exposed in breach": [
         "Veri sızıntısında açığa çıkan bilgiler"
@@ -28012,10 +27963,10 @@
         "${ planTitle } aboneliğiniz başladı"
       ],
       "Your admin at ${ orgName } is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
-        "${ orgName } kuruluşundaki yöneticiniz sizi yeni ve güvenli ${ BRAND_NAME } hesabınızı etkinleştirmeye ve parolanızı güncellemeye davet ediyor."
+        "${ orgName } kuruluşundaki yöneticiniz sizi yeni ve güvenli ${ BRAND_NAME } hesabınızı kullanıma almaya ve parolanızı güncellemeye davet ediyor."
       ],
       "Your admin is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
-        "Yöneticiniz sizi yeni ve güvenli ${ BRAND_NAME } hesabınızı etkinleştirmeye ve parolanızı güncellemeye davet ediyor."
+        "Yöneticiniz sizi yeni ve güvenli ${ BRAND_NAME } hesabınızı kullanıma almaya ve parolanızı güncellemeye davet ediyor."
       ],
       "Your calendar link": [
         "Takvim bağlantınız"
@@ -28187,6 +28138,9 @@
       ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "Tarifenize eklendi: ${ mergedAddonTitles }"
+      ],
+      "Admins can manage user accounts and give admin privileges to other users.": [
+        "Yöneticiler kullanıcı hesaplarını yönetebilir ve diğer kullanıcılara yönetici yetkileri verebilir."
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Yöneticiler kullanıcı hesaplarını yönetebilir ve diğer kullanıcılara yönetici yetkisi verebilir. Yalnızca birincil yönetici kuruluşun tarifesini değiştirebilir."
@@ -28524,7 +28478,7 @@
         "Grup üyeliği duraklatılmış"
       ],
       "Pending user activation": [
-        "Bekleyen kullanıcı etkinleştirmesi"
+        "Kullanıcının kullanıma alınması bekleniyor"
       ],
       "Resuming role assignment": [
         "Rol ataması sürdürülüyor"
@@ -28738,13 +28692,13 @@
         "İsteği iptal etme"
       ],
       "Member activation incomplete": [
-        "Üye etkinleştirilmemiş"
+        "Üye kullanıma alınmamış"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Kullanıcı onay verdiğinde kullanıcının hesabına yeniden erişebilecek ya da verilerini yönetebileceksiniz."
       ],
       "Organization key must be activated to request data access": [
-        "Verilere erişme isteğinde bulunmak için kuruluş anahtarı etkinleştirilmelidir"
+        "Verilere erişme isteğinde bulunmak için kuruluş anahtarı kullanıma alınmalıdır"
       ],
       "Private user": [
         "Gizli kullanıcı"
@@ -28997,7 +28951,7 @@
         "Yöneticiler korunan kullanıcıların verilerine erişemez"
       ],
       "Inactive": [
-        "Etkin değil"
+        "Kullanımdan kaldırılmış"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Davet gönderildi. Davet edilen üyenin yanıt vermesi bekleniyor"
@@ -29361,7 +29315,7 @@
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
       ],
       "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
-        "Bu ağ geçidindeki sunucular 10 günlük bir etkisizleştirme sürecine girecek. Bu sunucular yeni bir ağ geçidine eklenebilir ancak ülkeleri değiştirilemez."
+        "Bu ağ geçidindeki sunucular 10 günlük bir kullanımdan kaldırma sürecine girecek. Bu sunucular yeni bir ağ geçidine eklenebilir ancak ülkeleri değiştirilemez."
       ],
       "Skip verification?": [
         "Doğrulama atlansın mı?"
