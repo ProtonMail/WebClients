@@ -1,6 +1,7 @@
 import { createContext, useContext } from 'react';
 
 import type { ToolName as ServerToolName } from '@proton/lumo-api-client';
+import type { WelcomeSuggestionCard } from '@proton/lumo-ui/WelcomeSuggestions';
 
 import type { CardRenderers, LumoAgentItem, ServerToolMeta, ToolLimit } from './types';
 
@@ -25,6 +26,7 @@ export interface LumoAgentDrawerValue {
     getDebugTranscript: () => string;
     cardRenderers?: CardRenderers;
     serverToolMeta?: Partial<Record<ServerToolName, ServerToolMeta>>;
+    suggestions?: WelcomeSuggestionCard[];
 }
 
 const LumoAgentDrawerContext = createContext<LumoAgentDrawerValue | null>(null);

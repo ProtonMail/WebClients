@@ -38,6 +38,7 @@ import { changeSettingsModule, readSettingsModule } from './skills/settings/cosm
 import { changeSignatureModule, readSignatureModule, removeSignatureModule } from './skills/settings/signature';
 import { openSupportTicketModule } from './skills/support/openSupportTicket';
 import type { MailToolDeps, MailToolModule } from './toolModule';
+import { WELCOME_SUGGESTIONS } from './welcomeSuggestions';
 
 /**
  * The Mail tool pack. Each entry is a self-contained module (definition + handler factory + optional
@@ -120,6 +121,7 @@ export const buildLumoMailConfig = (deps: MailToolDeps): LumoAgentConfig => {
         handlers,
         cardRenderers,
         productRules: () => MAIL_RULES,
+        suggestions: WELCOME_SUGGESTIONS,
         // Run backend-side, so unlike MODULES they contribute no handler and no card — opt-in plus wording.
         serverTools: ['web_search', 'proton_info'],
         serverToolMeta: {
