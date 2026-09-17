@@ -9,11 +9,11 @@ import { getStorageKey } from '../storage-key/instance';
 const BACKUP_PWD_KEY = 'backup_pw';
 const ENCRYPTION_TAG = utf8StringToUint8Array(AuthenticatorEncryptionTag.BackupPassword);
 
-export const setBackupPassword = (encryptedPassword: string) => localStorage.setItem(BACKUP_PWD_KEY, encryptedPassword);
+const setBackupPassword = (encryptedPassword: string) => localStorage.setItem(BACKUP_PWD_KEY, encryptedPassword);
 export const getBackupPassword = () => localStorage.getItem(BACKUP_PWD_KEY);
 export const clearBackupPassword = () => localStorage.removeItem(BACKUP_PWD_KEY);
 
-export const encryptBackupPassword = async (password: string): Promise<string> => {
+const encryptBackupPassword = async (password: string): Promise<string> => {
     const key = getStorageKey().read();
     const bytes = utf8StringToUint8Array(password);
     const encrypted = await encryptData(key, bytes, ENCRYPTION_TAG);
@@ -21,7 +21,7 @@ export const encryptBackupPassword = async (password: string): Promise<string> =
     return encrypted.toBase64();
 };
 
-export const decryptBackupPassword = async (encryptedPassword: string): Promise<string> => {
+const decryptBackupPassword = async (encryptedPassword: string): Promise<string> => {
     const key = getStorageKey().read();
     const bytes = Uint8Array.fromBase64(encryptedPassword);
     const decrypted = await decryptData(key, bytes, ENCRYPTION_TAG);

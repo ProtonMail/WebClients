@@ -1,7 +1,6 @@
 import type { WasmLocalEntryState } from '@protontech/authenticator-rust-core/worker';
 
 import { AuthenticatorEncryptionTag } from '../../crypto';
-import type { DeriveEncryptedEntity } from './encryption';
 import { defineEncryptedEntity } from './encryption';
 
 export type ItemSyncMetadata = {
@@ -30,5 +29,3 @@ export const ItemEntity = defineEncryptedEntity<Item>()({
     safeProps: ['id', 'issuer', 'name', 'order'] as const,
     tag: AuthenticatorEncryptionTag.Item,
 });
-
-export type EncryptedItem = DeriveEncryptedEntity<typeof ItemEntity>;

@@ -12,7 +12,7 @@ import { createAppAsyncThunk } from './utils';
 
 type Theme = 'auto' | 'dark' | 'light';
 
-export type Settings = {
+type Settings = {
     animateCodes: boolean;
     hideCodes: boolean;
     appLock: AppLock;
@@ -22,7 +22,7 @@ export type Settings = {
     lastBackupEpoch?: number;
 };
 
-export const INITIAL_SETTINGS: Settings = {
+const INITIAL_SETTINGS: Settings = {
     animateCodes: false,
     hideCodes: false,
     appLock: 'none',
@@ -32,7 +32,7 @@ export const INITIAL_SETTINGS: Settings = {
 
 const PERISTENCE_KEY = 'settings';
 
-export const getPersistedSettings = (): Partial<Settings> => {
+const getPersistedSettings = (): Partial<Settings> => {
     try {
         return JSON.parse(localStorage.getItem(PERISTENCE_KEY) ?? '{}');
     } catch {
@@ -41,7 +41,7 @@ export const getPersistedSettings = (): Partial<Settings> => {
     }
 };
 
-export const persistSettings = (settings: Settings) => {
+const persistSettings = (settings: Settings) => {
     try {
         const value = JSON.stringify(settings);
         localStorage.setItem(PERISTENCE_KEY, value);
@@ -75,7 +75,7 @@ export const updateLock = createAppAsyncThunk(
     }
 );
 
-export const settingsSlice = createSlice({
+const settingsSlice = createSlice({
     name: 'settings',
     initialState: () => {
         const persistedValues = getPersistedSettings();

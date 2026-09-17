@@ -20,7 +20,7 @@ const calculateUpdateDistribution = () => Math.random();
 const metadataUrl = (platform: 'windows' | 'linux') =>
     `https://proton.me/download/authenticator/${platform}/version.json`;
 
-export const getLocalUpdateDistribution = () => {
+const getLocalUpdateDistribution = () => {
     const STORAGE_KEY = 'updateDistribution';
     const stored = parseFloat(localStorage.getItem(STORAGE_KEY) ?? '');
 
