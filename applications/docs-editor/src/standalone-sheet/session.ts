@@ -1,10 +1,9 @@
 import { DocState } from '@proton/docs-shared/lib/Doc/DocState'
-import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { Array as YArray, Doc, Map as YMap, encodeStateAsUpdate } from 'yjs'
 
-export const standaloneLogger: LoggerInterface = {
-  debug: () => {},
-  info: () => {},
+const docStateLogger = {
+  debug: console.debug.bind(console),
+  info: console.info.bind(console),
   warn: console.warn.bind(console),
   error: console.error.bind(console),
   getLogs: () => '',
@@ -64,12 +63,12 @@ export function createStandaloneSession(onReady: () => void, onError: (error: un
   const docState = new DocState(
     {
       docStateRequestsPropagationOfUpdate: (message) =>
-        standaloneLogger.debug('Standalone update', message.type.wrapper),
-      handleAwarenessStateUpdate: (states) => standaloneLogger.debug('Standalone awareness', states.length),
+        docStateLogger.debug('Standalone update', message.type.wrapper),
+      handleAwarenessStateUpdate: (states) => docStateLogger.debug('Standalone awareness', states.length),
       handleErrorWhenReceivingDocumentUpdate: onError,
       handleReceivedEverythingFromRTS: onReady,
     },
-    standaloneLogger,
+    docStateLogger,
   )
   docState.receiveMessage({ type: { wrapper: 'du' }, content: createFixtureUpdate() })
   return {

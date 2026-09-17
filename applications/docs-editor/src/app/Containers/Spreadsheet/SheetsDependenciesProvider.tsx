@@ -2,11 +2,9 @@ import type { SheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBS
 import type { AppPlatform, FileMenuAction, SheetImportData, SheetsUserState } from '@proton/docs-shared'
 import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
 import type { FeatureFlag } from '@proton/unleash/Flags'
-import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { PropsWithChildren } from 'react'
 import { createContext, useContext } from 'react'
-
-type SheetsLogger = Pick<LoggerInterface, 'info' | 'warn' | 'error'>
+import type { SheetsLogger } from './contract/SheetsLogger'
 
 /** Shell→editor: the shell pushes work or events into the editor. */
 export type SheetsShellToEditorActions = {
