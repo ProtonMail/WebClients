@@ -1347,6 +1347,12 @@
       ],
       "Preview logs": [
         "Visualização prévia de registros"
+      ],
+      "Connect": [
+        "Conectar"
+      ],
+      "Ignore": [
+        "Ignorar"
       ]
     },
     "Action: Docs": {
@@ -4411,6 +4417,9 @@
       ],
       "Signature verification failed: ${ errorMessage }": [
         "Falha na assinatura do remetente: ${ errorMessage }"
+      ],
+      "Organization does not have enough seats available": [
+        "A organização não tem licenças suficientes disponíveis"
       ]
     },
     "error": {
@@ -4838,6 +4847,9 @@
       ],
       "Touch your security key.": [
         "Toque na sua chave de segurança."
+      ],
+      "Still waiting?": [
+        "Ainda esperando?"
       ]
     },
     "fido2: Label": {
@@ -9970,6 +9982,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } com final ${ Last4 }"
       ]
     },
     "new_plans: Subtext": {
@@ -14489,6 +14504,15 @@
       ],
       "September Sale": [
         "Oferta de setembro"
+      ],
+      "Sign in to Google": [
+        "Iniciar sessão no Google"
+      ],
+      "Something went wrong": [
+        "Algo deu errado"
+      ],
+      "Your import is starting": [
+        "Sua importação está começando"
       ]
     },
     "Today icon tooltip in mini calendar": {
