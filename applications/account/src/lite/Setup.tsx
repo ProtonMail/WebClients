@@ -15,6 +15,7 @@ import NotificationsChildren from '@proton/components/containers/notifications/C
 import useThemeQueryParameter from '@proton/components/containers/themes/useThemeQueryParameter';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import metrics from '@proton/metrics';
+import { eventLoopTimingTracker } from '@proton/metrics/eventLoopMetrics';
 import { authJwt, pullForkSession, setCookies, setRefreshCookies } from '@proton/shared/lib/api/auth';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
@@ -151,6 +152,8 @@ const Setup = ({ api, onLogin, UID, children, loader, action }: Props) => {
                 getEvents: ({ eventID, ...rest }) => {
                     return api<EventLoop>({ ...getEvents(eventID), ...rest });
                 },
+                onProcessingStart: () => eventLoopTimingTracker.startV5Processing(),
+                onProcessingEnd: (hasMore) => eventLoopTimingTracker.endV5Processing(hasMore),
             });
 
             const setupModels = async () => {
