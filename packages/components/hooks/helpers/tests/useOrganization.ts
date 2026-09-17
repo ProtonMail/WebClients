@@ -1,5 +1,5 @@
 import { getOrganization } from '@proton/shared/lib/api/organization';
-import { addApiMock } from '@proton/testing/lib/api';
+import { addApiMock } from '@proton/test-api/api';
 
 export const organizationDefaultResponse = {
     Code: 1000,
