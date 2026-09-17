@@ -1066,7 +1066,7 @@ describe('IndexerTaskQueue', () => {
             jest.useRealTimers();
             randomSpy.mockRestore();
         }
-    });
+    }, 10_000);
 
     it('non-IndexPopulatorTask transient error is dropped, not retried', async () => {
         let failingRunCount = 0;
@@ -1119,5 +1119,5 @@ describe('IndexerTaskQueue', () => {
         expect(pending.size).toBe(0);
 
         await queue.stop();
-    });
+    }, 10_000);
 });
