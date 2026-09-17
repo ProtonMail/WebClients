@@ -3,6 +3,7 @@ import { type ReactNode, useEffect } from 'react';
 import { render, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
+import { getStoreWrapper } from '@proton/components/testing/renderWithProviders';
 import {
     PaymentsContextOptimisticProvider,
     usePaymentOptimistic,
@@ -13,8 +14,7 @@ import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { getLongTestPlans } from '@proton/payments/testing/data-plans';
 import { telemetry } from '@proton/shared/lib/telemetry';
-import { addApiMock, clearApiMocks } from '@proton/testing/lib/api';
-import { getStoreWrapper } from '@proton/testing/lib/context/renderWithProviders';
+import { addApiMock, clearApiMocks } from '@proton/test-api/api';
 
 import { SignupType } from '../../signup/interfaces';
 import { SignupContextProvider } from './SignupContext';

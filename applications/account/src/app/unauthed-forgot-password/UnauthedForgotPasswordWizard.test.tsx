@@ -1,7 +1,7 @@
 import { screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 
 import { ResetPasswordPage } from './ResetPasswordPage';
 import { handleRequestRecoveryMethods } from './actions';

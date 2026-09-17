@@ -1,8 +1,8 @@
 import { act, screen, waitFor } from '@testing-library/react';
 
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { MemberRole, NodeType } from '@proton/drive';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
-import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 
 import { useContextMenuStore } from '../../../modules/contextMenu';
 import { useSelectionStore } from '../../../modules/selection';
