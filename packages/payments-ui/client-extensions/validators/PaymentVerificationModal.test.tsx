@@ -1,8 +1,8 @@
 import { render, screen, waitFor } from '@testing-library/react';
 
+import { applyHOCs } from '@proton/components/testing/hocs/helpers';
+import { withNotifications } from '@proton/components/testing/with-notifications';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { applyHOCs } from '@proton/testing/lib/context/hocs/helpers';
-import { withNotifications } from '@proton/testing/lib/context/hocs/with-notifications';
 
 import type { PromiseWithController, Props } from './PaymentVerificationModal';
 import PaymentVerificationModal from './PaymentVerificationModal';

@@ -2,6 +2,7 @@ import React from 'react';
 
 import { screen, waitFor } from '@testing-library/react';
 
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import type { Coupon } from '@proton/payments/core/subscription/interface';
@@ -10,7 +11,6 @@ import {
     createMockSignupConfiguration,
     createMockSignupParameters,
 } from '@proton/payments/testing/signup';
-import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 
 import Step1 from './Step1';
 import { SignupMode, UpsellTypes } from './interface';

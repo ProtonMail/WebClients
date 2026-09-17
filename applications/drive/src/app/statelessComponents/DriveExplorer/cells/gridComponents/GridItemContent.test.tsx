@@ -2,8 +2,8 @@ import React from 'react';
 
 import { screen } from '@testing-library/react';
 
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { NodeType } from '@proton/drive';
-import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 
 import { GridItemContent } from './GridItemContent';
 
