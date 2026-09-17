@@ -20,6 +20,16 @@ const pendingConfirm: LumoAgentItem = {
     status: ConfirmStatus.PENDING,
 };
 
+const suggestions = [
+    {
+        id: 'organise',
+        icon: IcPencil,
+        getTitle: () => 'Tidy up my inbox',
+        getDescription: () => "I'll suggest folders and filters. Nothing moves until you agree.",
+        getPrompt: () => 'Suggest how to organise my inbox',
+    },
+];
+
 const baseProps: ComponentProps<typeof LumoAgentPanel> = {
     items: [],
     isBusy: false,
@@ -33,8 +43,11 @@ const baseProps: ComponentProps<typeof LumoAgentPanel> = {
     onDismissToolLimit: jest.fn(),
 };
 
-const renderPanel = (props: Partial<ComponentProps<typeof LumoAgentPanel>>) =>
-    render(<LumoAgentPanel {...baseProps} {...props} />);
+const panelWith = (props: Partial<ComponentProps<typeof LumoAgentPanel>>) => (
+    <LumoAgentPanel {...baseProps} {...props} />
+);
+
+const renderPanel = (props: Partial<ComponentProps<typeof LumoAgentPanel>>) => render(panelWith(props));
 
 const thinkingIndicator = () => screen.queryByText('Thinking about this');
 const idleMark = (container: HTMLElement) => container.querySelector('.lumo-agent-avatar');
@@ -120,6 +133,23 @@ describe('LumoAgentPanel', () => {
         expect(screen.getByText(/10 steps/)).toBeInTheDocument();
         expect(screen.getByText('Found 12 emails')).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Keep going' })).toBeInTheDocument();
+    });
+
+    // The empty state is the whole feature: cards teach a first-time user, and must be gone the moment
+    // there is a conversation to read instead.
+    it('offers the suggestion cards only while the transcript is empty', () => {
+        const { rerender } = renderPanel({ items: [], suggestions });
+        expect(screen.getByRole('button', { name: /Tidy up my inbox/ })).toBeInTheDocument();
+
+        rerender(panelWith({ items: [userTurn], suggestions }));
+        expect(screen.queryByRole('button', { name: /Tidy up my inbox/ })).toBeNull();
+    });
+
+    // Protects the Drive/file-preview consumer, which passes no suggestions and must get a bare panel.
+    it('renders no empty state for a product that supplies no suggestions', () => {
+        const { container } = renderPanel({ items: [] });
+
+        expect(container.querySelector('.lumo-welcome')).toBeNull();
     });
 
     it('closes off Confirm while the card body has nothing to apply', () => {
