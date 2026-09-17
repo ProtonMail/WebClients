@@ -1353,6 +1353,15 @@
       ],
       "Add a payment method": [
         "Προσθέστε μία μέθοδο πληρωμής"
+      ],
+      "Connect": [
+        "Σύνδεση"
+      ],
+      "Ignore": [
+        "Αγνόηση"
+      ],
+      "Sign in with Google": [
+        "Σύνδεση μέσω Google"
       ]
     },
     "Action: Docs": {
@@ -7949,6 +7958,45 @@
       "${ steps } step": [
         "${ steps } βήμα",
         "${ steps } βήματα"
+      ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Προέκυψε ένα απρόσμενο σφάλμα κατά την εισαγωγή των δεδομένων σας. Παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "Σύνδεση στο Google Drive για τη ρύθμιση της ασφαλούς εισαγωγής στο ${ DRIVE_APP_NAME }."
+      ],
+      "Email you once import is finished": [
+        "Θα σας στείλουμε ηλεκτρονικό μήνυμα μόλις ολοκληρωθεί η εισαγωγή."
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "Για να λειτουργήσει η εισαγωγή, πρέπει να επιλέξετε όλα τα ζητούμενα στοιχεία, όπως φαίνεται στο παραπάνω GIF."
+      ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Στη συνέχεια, θα πρέπει να συνδεθείτε στον λογαριασμό σας Google και να παραχωρήσετε στο ${ BRAND_NAME } πρόσβαση στα δεδομένα σας."
+      ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Παρακαλούμε κάντε αναβάθμιση για να διασφαλίσετε ότι η εισαγωγή θα ολοκληρωθεί με επιτυχία."
+      ],
+      "Read once and encrypted on arrival": [
+        "Ανάγνωση μίας φοράς και κρυπτογράφηση κατά την άφιξη"
+      ],
+      "Sit back and we will let you know.": [
+        "Καθίστε αναπαυτικά και θα σας ενημερώσουμε."
+      ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Χρησιμοποιείται μόνο για την αντιγραφή τους στο ${ DRIVE_APP_NAME }."
+      ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "Δεν υποστηρίζουμε την εισαγωγή φωτογραφιών, καθώς και αρχείων Google Docs, Sheets και Slides. Βεβαιωθείτε ότι το Google Drive σας δεν είναι άδειο."
+      ],
+      "We support most files": [
+        "Υποστηρίζουμε τα περισσότερα αρχεία."
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Θα σας στείλουμε ηλεκτρονικό μήνυμα όταν ολοκληρωθεί η εισαγωγή. Μόλις ολοκληρωθεί, θα βρείτε τα δεδομένα της εισαγωγής σε έναν φάκελο."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "Δεν γίνεται εισαγωγή φωτογραφιών, Google Docs και Sheets"
       ]
     },
     "info": {
@@ -13100,6 +13148,9 @@
       ],
       "Your videos will appear here": [
         "Τα βίντεό σας θα εμφανιστούν εδώ"
+      ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Διαβάζουμε τα αρχεία σας μία φορά για να τα αντιγράψουμε και, στη συνέχεια, κρυπτογραφούμε το καθένα με τα κλειδιά σας για το ${ BRAND_NAME }."
       ]
     },
     "Success": {
@@ -14526,6 +14577,30 @@
       ],
       "September Sale": [
         "Εκπτώσεις Σεπτεμβρίου"
+      ],
+      "Connect your Google account": [
+        "Συνδέστε τον Google λογαριασμό σας"
+      ],
+      "Easy switch": [
+        "Easy switch"
+      ],
+      "Import started, but your storage won't be enough for this import": [
+        "Η εισαγωγή ξεκίνησε, αλλά ο αποθηκευτικός σας χώρος δεν θα επαρκεί για αυτή την εισαγωγή."
+      ],
+      "Setting up your import": [
+        "Ρύθμιση της εισαγωγής σας"
+      ],
+      "Sign in to Google": [
+        "Σύνδεση στο Google"
+      ],
+      "Something went wrong": [
+        "Κάτι πήγε στραβά"
+      ],
+      "We could not find anything to import": [
+        "Δεν μπορέσαμε να βρούμε τίποτα για εισαγωγή."
+      ],
+      "Your import is starting": [
+        "Η εισαγωγή σας εκκινεί"
       ]
     },
     "Today icon tooltip in mini calendar": {

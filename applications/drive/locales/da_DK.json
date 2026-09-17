@@ -1353,6 +1353,15 @@
       ],
       "Add a payment method": [
         "Tilføj en betalingsmetode"
+      ],
+      "Connect": [
+        "Forbind"
+      ],
+      "Ignore": [
+        "Ignorer"
+      ],
+      "Sign in with Google": [
+        "Log ind med Google"
       ]
     },
     "Action: Docs": {
@@ -7927,6 +7936,45 @@
       "${ steps } step": [
         "${ steps } trin",
         "${ steps } trin"
+      ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Der opstod en uventet fejl med at importere din data. Prøv igen senere."
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "Tilslutter til Google Drive for at konfigurere din sikre import til ${ DRIVE_APP_NAME }."
+      ],
+      "Email you once import is finished": [
+        "Sender dig en e-mail når importen er færdig"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "For at importen kan fungere, skal du vælge alle de ønskede elementer som vist i GIF-illustrationen ovenfor."
+      ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Derefter skal du logge ind på din Google-konto og give ${ BRAND_NAME } adgang til dine data."
+      ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Opgrader for at sikre at importen lykkedes."
+      ],
+      "Read once and encrypted on arrival": [
+        "Læst én gang og krypteret så snart den modtages"
+      ],
+      "Sit back and we will let you know.": [
+        "Læn dig tilbage – vi giver dig besked."
+      ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Kun brugt til at kopiere dem til ${ DRIVE_APP_NAME }."
+      ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "Vi understøtter ikke importer af billeder, Google Docs, Sheets og Slides. Sørg for at din Google Drive ikke er tom."
+      ],
+      "We support most files": [
+        "Vi understøtter de fleste filer"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Vi sender dig en e-mail når importen er færdig. Du kan finde din import i en mappe når den er færdig."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "Importerer ikke fotos, Google Docs og Sheets"
       ]
     },
     "info": {
@@ -13174,6 +13222,9 @@
       ],
       "Your videos will appear here": [
         "Dine videoer vises her"
+      ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Vi læser dine filer én gang for at kopiere dem, og krypterer dem derefter med dine ${ BRAND_NAME }-nøgler."
       ]
     },
     "Success": {
@@ -14600,6 +14651,30 @@
       ],
       "September Sale": [
         "Septemberudsalg"
+      ],
+      "Connect your Google account": [
+        "Forbind din Google-konto"
+      ],
+      "Easy switch": [
+        "Easy switch"
+      ],
+      "Import started, but your storage won't be enough for this import": [
+        "Importen er startet, men du har ikke nok lagerplads til hele importen"
+      ],
+      "Setting up your import": [
+        "Konfigurerer din import"
+      ],
+      "Sign in to Google": [
+        "Log in på Google"
+      ],
+      "Something went wrong": [
+        "Et eller andet gik galt"
+      ],
+      "We could not find anything to import": [
+        "Vi kunne ikke finde noget at importere."
+      ],
+      "Your import is starting": [
+        "Din import startes"
       ]
     },
     "Today icon tooltip in mini calendar": {

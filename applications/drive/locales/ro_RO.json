@@ -1360,6 +1360,15 @@
       ],
       "Add a payment method": [
         "Adăugați o metodă de plată"
+      ],
+      "Connect": [
+        "Conectare"
+      ],
+      "Ignore": [
+        "Ignorare"
+      ],
+      "Sign in with Google": [
+        "Conectare cu Google"
       ]
     },
     "Action: Docs": {
@@ -8073,6 +8082,45 @@
         "${ steps } pas",
         "${ steps } pași",
         "${ steps } de pași"
+      ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "A apărut o eroare neașteptată în timpul importării datelor. Reîncercați mai târziu."
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "Se conectează la Google Drive pentru configurarea importării securizate în ${ DRIVE_APP_NAME }."
+      ],
+      "Email you once import is finished": [
+        "Veți primi un mesaj la finalizarea importării."
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "Pentru ca importarea să funcționeze, trebuie să selectați toate articolele solicitate așa cum e arătat în imaginea GIF de deasupra."
+      ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "În continuare, va trebui să vă conectați la contul Google și să permiteți ca ${ BRAND_NAME } să vă acceseze datele."
+      ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Modificați tipul planului pentru a vă asigura ca importarea se poate finaliza."
+      ],
+      "Read once and encrypted on arrival": [
+        "Citire o singură dată și criptare la sosire"
+      ],
+      "Sit back and we will let you know.": [
+        "Așteptați până vă vom anunța."
+      ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Folosit doar pentru a le copia în ${ DRIVE_APP_NAME }."
+      ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "Nu este suportată importarea fotografiilor, documentelor,și foilor de calcul și prezentărilor Google. Asigurați-vă că Google Drive nu este gol."
+      ],
+      "We support most files": [
+        "Sunt suportate majoritatea fișierelor"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Veți primi un mesaj pe e-mail la finalizarea importării. După finalizare, veți găsi datele importate într-un folder."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "Nu se importă fotografii, documente și foi de calcul Google"
       ]
     },
     "info": {
@@ -13442,6 +13490,9 @@
       ],
       "Your videos will appear here": [
         "Videoclipurile vor apărea aici"
+      ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Fișierele sunt citite o singură dată pentru a le copia, apoi sunt criptate fiecare în parte folosind cheile ${ BRAND_NAME } pe care le dețineți."
       ]
     },
     "Success": {
@@ -14888,6 +14939,30 @@
       ],
       "September Sale": [
         "Reduceri de septembrie"
+      ],
+      "Connect your Google account": [
+        "Conectați-vă contul Google"
+      ],
+      "Easy switch": [
+        "Easy switch"
+      ],
+      "Import started, but your storage won't be enough for this import": [
+        "Importarea a început, dar spațiul de stocare nu va fi suficient"
+      ],
+      "Setting up your import": [
+        "Vi se setează importarea"
+      ],
+      "Sign in to Google": [
+        "Conectare în Google"
+      ],
+      "Something went wrong": [
+        "Ceva nu a mers bine."
+      ],
+      "We could not find anything to import": [
+        "Nu s-au găsit date de importat"
+      ],
+      "Your import is starting": [
+        "Începe importarea"
       ]
     },
     "Today icon tooltip in mini calendar": {
