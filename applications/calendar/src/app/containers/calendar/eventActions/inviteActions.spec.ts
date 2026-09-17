@@ -1,3 +1,4 @@
+import { generateTestAddress } from '@proton/calendar/testing/builders';
 import type { SendIcsParams } from '@proton/components/hooks/useSendIcs';
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { buildMailTo } from '@proton/shared/lib/helpers/email';
@@ -9,7 +10,6 @@ import type { GetVTimezonesMap } from '@proton/shared/lib/interfaces/hooks/GetVT
 import type { RelocalizeText } from '@proton/shared/lib/interfaces/hooks/RelocalizeText';
 import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
-import { generateTestAddress } from '@proton/testing/lib/builders';
 
 import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
 import {
