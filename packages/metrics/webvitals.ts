@@ -16,8 +16,9 @@ import {
     onLCP as onLCPWithAttribution,
 } from 'web-vitals/attribution';
 
-import { captureMessage } from '../helpers/sentry';
-import { getSharedMetricsClient } from './sharedMetricsClient';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+
+import metrics from './index';
 
 const SAMPLING_PERCENT = 5;
 
@@ -68,7 +69,7 @@ export const reportWebVitals = (
     }
 
     const reportMetric = (metric: CLSMetric | INPMetric | LCPMetric) => {
-        getSharedMetricsClient().core_webvitals_total.increment({
+        metrics.core_webvitals_total.increment({
             type: metric.name,
             rating: metric.rating,
             context,
@@ -78,7 +79,7 @@ export const reportWebVitals = (
     const reportMetricWithAttribution = (
         metric: CLSMetricWithAttribution | INPMetricWithAttribution | LCPMetricWithAttribution
     ) => {
-        getSharedMetricsClient().core_webvitals_total.increment({
+        metrics.core_webvitals_total.increment({
             type: metric.name,
             rating: metric.rating,
             context,
