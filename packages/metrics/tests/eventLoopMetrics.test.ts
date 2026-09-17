@@ -1,20 +1,15 @@
-import type { Mock } from 'vitest';
-
-import { eventLoopTimingTracker } from '../../lib/metrics/eventLoopMetrics';
-import { resetSharedMetricsClient, setSharedMetricsClient } from '../../lib/metrics/sharedMetricsClient';
+import { eventLoopTimingTracker } from '../eventLoopMetrics';
+import metrics from '../index';
 
 describe('EventLoopTimingTracker', () => {
-    let mockHistogramObserve: Mock;
+    let mockHistogramObserve: jest.Mock;
     let mockTime = 0;
 
     beforeEach(() => {
-        mockHistogramObserve = vi.fn();
-        setSharedMetricsClient({
-            core_event_loop_five_processing_time_histogram: { observe: mockHistogramObserve },
-            core_event_loop_six_processing_time_histogram: { observe: mockHistogramObserve },
-            core_webvitals_total: { increment: vi.fn() },
-            docs_public_sharing_custom_password_success_rate_total: { increment: vi.fn() },
-        });
+        // Mock the histogram observe method
+        mockHistogramObserve = jest.fn();
+        metrics.core_event_loop_five_processing_time_histogram.observe = mockHistogramObserve as any;
+        metrics.core_event_loop_six_processing_time_histogram.observe = mockHistogramObserve as any;
 
         eventLoopTimingTracker.reset();
         mockTime = 0;
@@ -25,7 +20,6 @@ describe('EventLoopTimingTracker', () => {
     });
 
     afterEach(() => {
-        resetSharedMetricsClient();
         // Reset time provider to default
         (eventLoopTimingTracker as any).setTimeProvider(() => Date.now());
     });
@@ -199,6 +193,82 @@ describe('EventLoopTimingTracker', () => {
                     interval_since_last_ms: '<1000',
                 },
             });
+        });
+    });
+
+    describe('bucketing', () => {
+        it.each([
+            [500, '<1000'],
+            [1000, '1000-5000'],
+            [5000, '5000-10000'],
+            [10000, '10000-30000'],
+            [30001, '30000+'],
+        ])('should bucket an interval of %ims as %s', (intervalMs, bucket) => {
+            eventLoopTimingTracker.startV5Processing();
+            eventLoopTimingTracker.endV5Processing(false);
+            mockHistogramObserve.mockClear();
+
+            tickTime(intervalMs);
+            eventLoopTimingTracker.startV5Processing();
+            eventLoopTimingTracker.endV5Processing(false);
+
+            expect(mockHistogramObserve).toHaveBeenCalledWith({
+                Value: 0,
+                Labels: {
+                    has_more: 'false',
+                    interval_since_last_ms: bucket,
+                },
+            });
+        });
+
+        it.each([
+            [0, '0'],
+            [9, '9'],
+            [10, '10+'],
+            [42, '10+'],
+        ])('should bucket %i api calls as %s', (apiCallsCount, bucket) => {
+            eventLoopTimingTracker.startV6Processing('core');
+            eventLoopTimingTracker.endV6Processing(false, apiCallsCount, 'core', 0);
+
+            expect(mockHistogramObserve).toHaveBeenCalledWith(
+                expect.objectContaining({ Labels: expect.objectContaining({ api_calls_count: bucket }) })
+            );
+        });
+
+        it.each([
+            [0, '0'],
+            [4, '4'],
+            [5, '5+'],
+            [12, '5+'],
+        ])('should bucket %i api failures as %s', (apiFailuresCount, bucket) => {
+            eventLoopTimingTracker.startV6Processing('core');
+            eventLoopTimingTracker.endV6Processing(false, 0, 'core', apiFailuresCount);
+
+            expect(mockHistogramObserve).toHaveBeenCalledWith(
+                expect.objectContaining({ Labels: expect.objectContaining({ api_failures_count: bucket }) })
+            );
+        });
+    });
+
+    describe('sampling', () => {
+        beforeEach(() => {
+            (eventLoopTimingTracker as any).setSamplingPercent(0);
+        });
+
+        it('should not observe v5 metrics when the sample is dropped', () => {
+            eventLoopTimingTracker.startV5Processing();
+            tickTime(100);
+            eventLoopTimingTracker.endV5Processing(false);
+
+            expect(mockHistogramObserve).not.toHaveBeenCalled();
+        });
+
+        it('should not observe v6 metrics when the sample is dropped', () => {
+            eventLoopTimingTracker.startV6Processing('core');
+            tickTime(100);
+            eventLoopTimingTracker.endV6Processing(false, 0, 'core', 0);
+
+            expect(mockHistogramObserve).not.toHaveBeenCalled();
         });
     });
 

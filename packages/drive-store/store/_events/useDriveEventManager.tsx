@@ -3,6 +3,7 @@ import { createContext, useContext, useMemo, useRef } from 'react';
 import { useApi } from '@proton/app-context/useApi';
 import { useEventManager } from '@proton/components';
 import metrics from '@proton/metrics';
+import { eventLoopTimingTracker } from '@proton/metrics/eventLoopMetrics';
 import { queryLatestVolumeEvent, queryVolumeEvents } from '@proton/shared/lib/api/drive/volume';
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
@@ -95,6 +96,8 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
                 getEvents: ({ eventID, ...rest }) => {
                     return api<DriveEventsResult>({ ...queryVolumeEvents(volumeId, eventID), ...rest });
                 },
+                onProcessingStart: () => eventLoopTimingTracker.startV5Processing(),
+                onProcessingEnd: (hasMore) => eventLoopTimingTracker.endV5Processing(hasMore),
             });
 
             eventManagers.current.set(volumeId, eventManager);

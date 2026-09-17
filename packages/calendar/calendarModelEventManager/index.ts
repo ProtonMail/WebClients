@@ -1,3 +1,4 @@
+import { eventLoopTimingTracker } from '@proton/metrics/eventLoopMetrics';
 import { queryLatestModelEventID, queryModelEvents } from '@proton/shared/lib/api/calendars';
 import createEventManager, { type EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import type { Api, SimpleMap } from '@proton/shared/lib/interfaces';
@@ -28,6 +29,8 @@ const createCalendarEventManagerById = (api: Api, calendarID: string) => {
             return api<CalendarEventLoop>({ ...queryModelEvents(calendarID, eventID), ...rest });
         },
         parseResults: (result) => ({ nextEventID: result.CalendarModelEventID, more: result.More }),
+        onProcessingStart: () => eventLoopTimingTracker.startV5Processing(),
+        onProcessingEnd: (hasMore) => eventLoopTimingTracker.endV5Processing(hasMore),
     });
     eventManager.start();
     return eventManager;
