@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { screen } from '@testing-library/react';
 
+import { buildUser } from '@proton/account/testing/buildUser';
 import { useTaxCountry } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
@@ -10,9 +11,8 @@ import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getTestPlansMap } from '@proton/payments/testing/data-plans';
-import { buildUser } from '@proton/testing/builders/user';
-import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 
+import { renderWithProviders } from '../../../../testing/renderWithProviders';
 import SubscriptionCheckout, { type SubscriptionCheckoutProps } from './SubscriptionCheckout';
 
 jest.mock('@proton/app-context/useConfig', () => ({

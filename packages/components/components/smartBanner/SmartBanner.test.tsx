@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react';
 
+import { mockUseUser } from '@proton/account/testing/mockUseUser';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { isAndroid, isIos } from '@proton/shared/lib/helpers/browser';
 import { isCalendarMobileAppUser, isMailMobileAppUser } from '@proton/shared/lib/helpers/usedClientsFlags';
-import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
 import SmartBanner from './SmartBanner';
 

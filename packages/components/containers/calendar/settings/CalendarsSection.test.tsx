@@ -3,10 +3,10 @@ import { Router } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
+import { generateSimpleCalendar } from '@proton/calendar/testing/builders';
 import createCache from '@proton/shared/lib/helpers/cache';
-import { generateSimpleCalendar } from '@proton/testing/lib/builders';
-import { mockUseAuthentication } from '@proton/testing/lib/mockUseAuthentication';
 
+import { mockUseAuthentication } from '../../../testing/mockUseAuthentication';
 import { CacheProvider } from '../../cache/Provider';
 import ModalsProvider from '../../modals/Provider';
 import type { CalendarsSectionProps } from './CalendarsSection';

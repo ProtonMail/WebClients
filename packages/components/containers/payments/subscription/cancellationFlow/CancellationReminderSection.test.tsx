@@ -4,9 +4,9 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { PLANS, PLAN_NAMES, PLAN_TYPES } from '@proton/payments/core/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { renderWithProviders } from '../../../../testing/renderWithProviders';
 import { CancellationReminderSection } from './CancellationReminderSection';
 import useCancellationFlow from './useCancellationFlow';
 

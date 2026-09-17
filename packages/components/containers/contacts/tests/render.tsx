@@ -7,10 +7,12 @@ import type { RenderOptions } from '@testing-library/react';
 import { render as originalRender, renderHook } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
+import { getOrganizationState } from '@proton/account/testing/redux-state';
 import { getModelState } from '@proton/account/tests';
 import { ApiContext } from '@proton/app-context/apiContext';
 import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import { getPaymentStatusState, getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { APPS, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/encrypt';
@@ -24,14 +26,9 @@ import type {
     UserModel,
     UserSettings,
 } from '@proton/shared/lib/interfaces';
-import { apiMock } from '@proton/testing/lib/api';
-import { mockCache } from '@proton/testing/lib/cache';
-import {
-    getOrganizationState,
-    getPaymentStatusState,
-    getSubscriptionState,
-} from '@proton/testing/lib/initialReduxState';
+import { apiMock } from '@proton/test-api/api';
 
+import { mockCache } from '../../../testing/cache';
 import AuthenticationProvider from '../../authentication/Provider';
 import { CacheProvider } from '../../cache/Provider';
 import ConfigProvider from '../../config/Provider';

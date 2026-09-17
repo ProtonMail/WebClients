@@ -10,7 +10,7 @@ import { API_CODES, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import type { MailSettings, UserModel } from '@proton/shared/lib/interfaces';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
-import { addApiMock } from '@proton/testing/lib/api';
+import { addApiMock } from '@proton/test-api/api';
 
 import { clearAll, minimalCache, mockedCryptoApi, notificationManager, renderWithProviders } from '../tests/render';
 import type { ContactEditModalProps, ContactEditProps } from './ContactEditModal';
