@@ -35,6 +35,7 @@
         "./holidaysDirectory": "./holidaysDirectory/index.ts",
         "./holidaysDirectory/hooks": "./holidaysDirectory/hooks.ts",
         "./holidaysDirectory/listener": "./holidaysDirectory/listener.ts",
+        "./testing/builders": "./testing/builders.ts",
         "./utils": "./utils.ts"
     },
     "scripts": {
@@ -59,6 +60,7 @@
         "react": "^18.3.1"
     },
     "devDependencies": {
+        "@jackfranklin/test-data-bot": "^2.1.0",
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-env": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
