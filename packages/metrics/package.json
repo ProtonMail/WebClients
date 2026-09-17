@@ -6,7 +6,8 @@
         ".": "./index.ts",
         "./eventLoopMetrics": "./eventLoopMetrics.ts",
         "./observeApiError": "./lib/observeApiError.ts",
-        "./types/*": "./types/*.d.ts"
+        "./types/*": "./types/*.d.ts",
+        "./webvitals": "./webvitals.ts"
     },
     "scripts": {
         "check-types": "tsc",
@@ -21,7 +22,8 @@
     "dependencies": {
         "@proton/shared": "workspace:^",
         "prettier": "^3.9.6",
-        "typescript": "^6.0.3"
+        "typescript": "^6.0.3",
+        "web-vitals": "^4.2.4"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
