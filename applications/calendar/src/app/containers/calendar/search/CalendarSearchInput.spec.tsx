@@ -4,7 +4,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import SpotlightProvider from '@proton/components/components/spotlight/Provider';
-import { mockUseSpotlightOnFeature } from '@proton/testing/lib/mockUseSpotlightOnFeature';
+import { mockUseSpotlightOnFeature } from '@proton/components/testing/mockUseSpotlightOnFeature';
 
 import CalendarSearchInput from './CalendarSearchInput';
 
