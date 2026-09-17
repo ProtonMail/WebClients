@@ -5,8 +5,8 @@ import createCache from '@proton/shared/lib/helpers/cache';
 import type { Address, Key } from '@proton/shared/lib/interfaces';
 
 /**
- * Export for backward compatibility in the tests. It can be gradually migrated to use @proton/testing package directly
- * in the tests.
+ * Export for backward compatibility in the tests. It can be gradually migrated to use
+ * @proton/components/testing/cache directly in the tests.
  */
 export { clearCache, mockCache };
 
