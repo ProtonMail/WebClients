@@ -1,17 +1,31 @@
-import { BrowserWindow, Event, Rectangle, WebContents, WebContentsView, app, nativeTheme } from "electron";
+import { APPS, APPS_CONFIGURATION, CALENDAR_APP_NAME, MAIL_APP_NAME } from "@proton/shared/lib/constants";
+import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
+import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
+import { ThemeTypes } from "@proton/shared/lib/themes/constants";
+import { PROTON_THEMES_MAP } from "@proton/shared/lib/themes/themes";
+import { app, BrowserWindow, Event, nativeTheme, Rectangle, WebContents, WebContentsView } from "electron";
 import { debounce } from "lodash";
+import { c } from "ttag";
+import { getFileResourcePath } from "../../constants/resources";
+import { DEFAULT_ZOOM_FACTOR, ZOOM_FACTOR_LIST, ZoomFactor } from "../../constants/zoom";
 import { getWindowBounds, saveWindowBounds } from "../../store/boundsStore";
 import { getSettings, updateSettings } from "../../store/settingsStore";
+import { getAppURL, URLConfig } from "../../store/urlStore";
 import { updateDownloaded } from "../../update/update";
-import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
+import { authStatusPoller } from "../auth/authPoller";
 import { isLinux, isMac, isWindows } from "../helpers";
-import { urlHasMailto, readAndClearMailtoArgs } from "../protocol/mailto";
-import { urlHasOpenMailParams, readAndClearOpenMailArgs, readAndClearOpenCalendarArgs } from "../protocol/deep_links";
 import { checkKeys } from "../keyPinning";
 import { mainLogger, viewLogger } from "../log";
 import { registerWindowEventLog } from "../log/appEventLog";
 import { setApplicationMenu } from "../menus/menuApplication";
 import { createContextMenu } from "../menus/menuContext";
+import metrics from "../metrics";
+import { isUserNetworkErrorCode, NET_ERROR_CODE } from "../netErrors";
+import { profiler } from "../profiler/profiler";
+import { readAndClearOpenCalendarArgs, readAndClearOpenMailArgs, urlHasOpenMailParams } from "../protocol/deep_links";
+import { readAndClearMailtoArgs, urlHasMailto } from "../protocol/mailto";
+import { sentryReport } from "../sentryReport";
+import { addHashToCurrentURL } from "../urls/urlHelpers";
 import {
     getLocalID,
     isAccountLogin,
@@ -22,26 +36,12 @@ import {
     trimLocalID,
 } from "../urls/urlTests";
 import { getWindowConfig, getWindowPlaywrightConfig } from "../view/windowHelpers";
+import telemetryService from "./../telemetry";
 import { handleBeforeHandle } from "./dialogs";
+import { MenuBarMonitor } from "./MenuBarMonitor";
 import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
 import { handleBeforeInput } from "./windowShortcuts";
-import { getAppURL, URLConfig } from "../../store/urlStore";
-import metrics from "../metrics";
-import { c } from "ttag";
-import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
-import { APPS, APPS_CONFIGURATION, CALENDAR_APP_NAME, MAIL_APP_NAME } from "@proton/shared/lib/constants";
-import { MenuBarMonitor } from "./MenuBarMonitor";
-import telemetryService from "./../telemetry";
-import { PROTON_THEMES_MAP } from "@proton/shared/lib/themes/themes";
-import { ThemeTypes } from "@proton/shared/lib/themes/constants";
-import { DEFAULT_ZOOM_FACTOR, ZOOM_FACTOR_LIST, ZoomFactor } from "../../constants/zoom";
-import { addHashToCurrentURL } from "../urls/urlHelpers";
 import { isWindowValid } from "./windowUtils";
-import { profiler } from "../profiler/profiler";
-import { sentryReport } from "../sentryReport";
-import { isUserNetworkErrorCode, NET_ERROR_CODE } from "../netErrors";
-import { getFileResourcePath } from "../../constants/resources";
-import { authStatusPoller } from "../auth/authPoller";
 
 type ViewID = keyof URLConfig;
 
@@ -485,7 +485,7 @@ export const openCalendarWithoutReload = () => {
     return openViewWithoutReload("calendar");
 };
 
-export async function loadURL(viewID: ViewID, url: string, { force } = { force: false }) {
+async function loadURL(viewID: ViewID, url: string, { force } = { force: false }) {
     if (!url) {
         viewLogger(viewID).warn("trying to load empty URL, skipping");
         return;
@@ -784,7 +784,7 @@ export function getZoom() {
     return DEFAULT_ZOOM_FACTOR;
 }
 
-export function setZoom(zoomFactor: ZoomFactor) {
+function setZoom(zoomFactor: ZoomFactor) {
     mainLogger.info("set zoom factor to", zoomFactor);
 
     for (const view of Object.values(viewMap)) {
