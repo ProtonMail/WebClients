@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { updateAddressThunk } from '@proton/account/addresses/updateAddress';
 import { useUser } from '@proton/account/user/hooks';
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
@@ -14,6 +15,7 @@ import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { defaultESStatus } from '@proton/encrypted-search/constants';
 import type { ESStatusBooleans } from '@proton/encrypted-search/models';
+import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import LumoAgentDrawerContext from '@proton/llm/lib/lumoAgent/ui/lumoAgentDrawerContext';
 import useLumoAgent from '@proton/llm/lib/lumoAgent/ui/useLumoAgent';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
@@ -24,10 +26,14 @@ import { createLabel as createLabelAction, updateLabel as updateLabelAction } fr
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { getContact } from '@proton/shared/lib/api/contacts';
 import { checkSieveFilter } from '@proton/shared/lib/api/filters';
 import { updateAutoresponder, updateViewLayout, updateViewMode } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';
+import { prepareVCardContact } from '@proton/shared/lib/contacts/decrypt';
 import type { MailSettings, Recipient, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Contact } from '@proton/shared/lib/interfaces/contacts/Contact';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
 
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { useDraftBodyWriters } from '../../containers/DraftBodyWriterProvider';
@@ -82,6 +88,7 @@ const LumoMailProvider = ({ children }: Props) => {
     const { snooze } = useSnooze();
     const initializeMessage = useInitializeMessage();
     const saveVCardContact = useSaveVCardContact();
+    const getUserKeys = useGetUserKeys();
     const { call: refreshEvents } = useEventManager();
     const { information: themeInformation, setTheme } = useTheme();
     const [folders = []] = useFolders();
@@ -112,6 +119,7 @@ const LumoMailProvider = ({ children }: Props) => {
         snooze,
         initializeMessage,
         saveVCardContact,
+        getUserKeys,
         refreshEvents,
         themeInformation,
         setTheme,
@@ -151,6 +159,17 @@ const LumoMailProvider = ({ children }: Props) => {
             getActiveCategoryTabs: () => latest.current.activeCategoriesTabs,
             getMailSettings: () => latest.current.mailSettings,
             getContactEmails: () => latest.current.contactEmails,
+            getFullContact: async (contactID) => {
+                const { Contact: contact } = await latest.current.api<{ Contact: Contact }>(getContact(contactID));
+                const userKeysList = await latest.current.getUserKeys();
+                const { vCardContact, errors } = await prepareVCardContact(contact, splitKeys(userKeysList));
+                if (errors.length > 0) {
+                    throw new ToolInputError(
+                        'This contact could not be fully decrypted, so it cannot be safely updated. Tell the user the contact has encrypted fields that failed to decrypt.'
+                    );
+                }
+                return vCardContact;
+            },
             // The save writes straight to the API, so the store only reflects it after an event refresh.
             saveVCardContact: async (contactID, vCardContact) => {
                 const contact = await latest.current.saveVCardContact(contactID, vCardContact);

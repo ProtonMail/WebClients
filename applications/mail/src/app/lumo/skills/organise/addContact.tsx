@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import { SaveVCardContactError } from '@proton/components/containers/contacts/hooks/useSaveVCardContact';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ActionRequest, ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
@@ -11,11 +10,11 @@ import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
 import { prepareForSaving } from '@proton/shared/lib/contacts/surgery';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
+import { saveWithDuplicateGuard, trimmed } from './contactHelpers';
 
 export interface AddContactParams {
     name: string | null;
@@ -44,8 +43,6 @@ export interface AddedContactResult {
 }
 
 const FREE_TEXT_PARAMS = ['name', 'first_name', 'last_name', 'email'] as const;
-
-const trimmed = (value: string | null): string => value?.trim() ?? '';
 
 /** The display name the contact list shows, which vCard requires — the editor computes it the same way. */
 const displayName = ({ name, first_name, last_name, email }: AddContactParams): string =>
@@ -111,23 +108,11 @@ const toVCardContact = ({ name, firstName, lastName, email }: ContactInput): VCa
         ...(email ? { email: [{ field: 'email', value: email, uid: createContactPropertyUid() }] } : {}),
     });
 
-/**
- * The address book rejects an address it already holds, and that conflict is the one failure the model can
- * act on — every other one reaches it as a generic failure it must not retry. `add_contact` cannot resolve
- * it either way: editing the existing contact is not this tool's job.
- */
-const saveNewContact = async (mail: MailToolDeps, input: ContactInput) => {
-    try {
-        return await mail.saveVCardContact(undefined, toVCardContact(input));
-    } catch (error) {
-        if (error instanceof SaveVCardContactError && error.code === API_CUSTOM_ERROR_CODES.ALREADY_EXISTS) {
-            throw new ToolInputError(
-                `${input.email} is already saved on another contact, so nothing was created. add_contact only creates new contacts — it cannot edit or merge one. Tell the user the contact already exists; do not retry.`
-            );
-        }
-        throw error;
-    }
-};
+const saveNewContact = (mail: MailToolDeps, input: ContactInput) =>
+    saveWithDuplicateGuard(
+        () => mail.saveVCardContact(undefined, toVCardContact(input)),
+        `${input.email} is already saved on another contact, so nothing was created. add_contact only creates new contacts — it cannot edit or merge one. Tell the user the contact already exists; do not retry.`
+    );
 
 /** Reads back the contact the SERVER saved, so the reference and the name it carries exist as stated. */
 export const createAddContactHandler =
