@@ -35,7 +35,7 @@ export const AlbumsInvitations = () => {
                             <span key={`span-${invitation.uid}`} className="text-break">
                                 {invitation.addedByEmail.ok
                                     ? invitation.addedByEmail.value
-                                    : invitation.addedByEmail.error.claimedAuthor}
+                                    : c('Info').t`${invitation.addedByEmail.error.claimedAuthor} (unverified sender)`}
                             </span>
                         );
                         const name = invitation.node.name.ok
