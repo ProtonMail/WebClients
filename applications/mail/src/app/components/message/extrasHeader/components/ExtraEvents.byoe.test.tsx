@@ -10,7 +10,7 @@ import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { ADDRESS_FLAGS, ADDRESS_STATUS, ADDRESS_TYPE, APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
-import { type ApiMockHandler, addApiMock } from '@proton/testing/lib/api';
+import { type ApiMockHandler, addApiMock } from '@proton/test-api/api';
 
 import { getCompleteAddress, minimalCache } from '../../../../helpers/tests/cache';
 import {

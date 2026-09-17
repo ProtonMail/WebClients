@@ -1,9 +1,9 @@
 import { IcEnvelopes } from '@proton/icons/icons/IcEnvelopes';
 import { IcTrashClock } from '@proton/icons/icons/IcTrashClock';
+import { mockUseFolders } from '@proton/mail/testing/mockUseFolders';
+import { mockUseLabels } from '@proton/mail/testing/mockUseLabels';
+import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
 import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
-import { mockUseFolders } from '@proton/testing/lib/mockUseFolders';
-import { mockUseLabels } from '@proton/testing/lib/mockUseLabels';
-import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 
 import { mockUseScheduleSendFeature } from '../../../../helpers/tests/mockUseScheduleSendFeature';
 import { isCustomFolder, isDefaultFolder, isLabel } from './advancesSearchFieldHelpers';

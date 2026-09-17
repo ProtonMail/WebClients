@@ -1,4 +1,4 @@
-import { addApiMock, addApiResolver, apiMock, clearApiMocks } from '@proton/testing/lib/api';
+import { addApiMock, addApiResolver, apiMock, clearApiMocks } from '@proton/test-api/api';
 
 /**
  * Export for backward compatibility in the tests. It can be gradually migrated to use @proton/testing package directly

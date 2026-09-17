@@ -2,13 +2,13 @@ import type { ReactNode } from 'react';
 
 import { renderHook } from '@testing-library/react';
 
+import { mockUseCategoriesData } from '@proton/mail/testing/mockUseCategoriesData';
+import { mockUseFolders } from '@proton/mail/testing/mockUseFolders';
+import { mockUseLabels } from '@proton/mail/testing/mockUseLabels';
+import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
-import { mockUseCategoriesData } from '@proton/testing/lib/mockUseCategoriesData';
-import { mockUseFolders } from '@proton/testing/lib/mockUseFolders';
-import { mockUseLabels } from '@proton/testing/lib/mockUseLabels';
-import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../../constants';
 import { GlobalModalContext } from '../../../containers/globalModals/globalModalContext';
