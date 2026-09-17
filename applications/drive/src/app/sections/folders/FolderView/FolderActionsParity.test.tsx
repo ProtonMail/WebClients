@@ -1,7 +1,7 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { MemberRole, NodeType } from '@proton/drive';
-import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 
 import { ActionsDropdown } from '../buttons/ActionsDropdown';
 import { FolderItemContextMenu } from '../menus/FolderItemContextMenu';

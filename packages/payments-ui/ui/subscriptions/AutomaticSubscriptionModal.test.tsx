@@ -1,6 +1,7 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/tests';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import {
     ADDON_GENERIC_NAMES,
     ADDON_PREFIXES,
@@ -20,8 +21,7 @@ import type { Subscription } from '@proton/payments/core/subscription/interface'
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans } from '@proton/payments/testing/data-plans';
 import { getUserMock } from '@proton/payments/testing/data-user';
-import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
-import { getPaymentStatusState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
+import { getPaymentStatusState, getSubscriptionState } from '@proton/payments/testing/redux-state';
 
 import type { useCurrencies } from '../hooks/useCurrencies';
 import { AutomaticSubscriptionModal, getParameters } from './AutomaticSubscriptionModal';
