@@ -48,7 +48,13 @@ const mockUseTryDuo2026Discount = useTryDuo2026Discount as jest.Mock;
 jest.mock('./useUnlimitedToDuoDiscountedTelemetry', () => ({
     __esModule: true,
     useUnlimitedToDuoDiscountedTelemetry: () => {
-        return { sendUnlimitedToDuoDiscountedReport: jest.fn() };
+        return {
+            sendReportClickTopNavbar: jest.fn(),
+            sendReportClickUpsellButton: jest.fn(),
+            sendReportCloseOffer: jest.fn(),
+            sendReportClickHideOffer: jest.fn(),
+            sendReportUserSubscribed: jest.fn(),
+        };
     },
 }));
 

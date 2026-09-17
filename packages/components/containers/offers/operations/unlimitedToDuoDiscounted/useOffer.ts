@@ -5,7 +5,6 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
-import { TelemetryUnlimitedToDuoDiscountedOffer } from '@proton/shared/lib/api/telemetry';
 import { CommonFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -29,7 +28,13 @@ export const useOffer = (): Operation => {
     const [preferredCurrency, loadingCurrency] = useAutomaticCurrency();
     const { isHidden, loading: flagsLoading } = useOfferFlags(configuration);
     const enabled = useFlag(CommonFeatureFlag.UnlimitedToDuoDiscountedOffer);
-    const { sendUnlimitedToDuoDiscountedReport } = useUnlimitedToDuoDiscountedTelemetry();
+    const {
+        sendReportClickTopNavbar,
+        sendReportClickUpsellButton,
+        sendReportCloseOffer,
+        sendReportClickHideOffer,
+        sendReportUserSubscribed,
+    } = useUnlimitedToDuoDiscountedTelemetry();
 
     const isEligible = getIsEligible({
         user,
@@ -55,33 +60,25 @@ export const useOffer = (): Operation => {
             topButtonDiscount: discount,
             tracking: {
                 onTopNavbarClick: () => {
-                    sendUnlimitedToDuoDiscountedReport({
-                        event: TelemetryUnlimitedToDuoDiscountedOffer.clickTopNavbar,
-                    });
+                    sendReportClickTopNavbar();
                 },
                 onCloseModal: () => {
-                    sendUnlimitedToDuoDiscountedReport({
-                        event: TelemetryUnlimitedToDuoDiscountedOffer.closeOffer,
-                    });
+                    sendReportCloseOffer();
                 },
                 onSelectDeal: () => {
-                    sendUnlimitedToDuoDiscountedReport({
-                        event: TelemetryUnlimitedToDuoDiscountedOffer.clickUpsellButton,
-                    });
+                    sendReportClickUpsellButton();
                 },
                 onHideOffer: () => {
-                    sendUnlimitedToDuoDiscountedReport({
-                        event: TelemetryUnlimitedToDuoDiscountedOffer.clickHideOffer,
-                    });
+                    sendReportClickHideOffer();
                 },
                 onSubscribed: () => {
-                    sendUnlimitedToDuoDiscountedReport({
-                        event: TelemetryUnlimitedToDuoDiscountedOffer.userSubscribed,
-                    });
+                    sendReportUserSubscribed();
                 },
             },
         };
-    }, [discount, sendUnlimitedToDuoDiscountedReport, APP_NAME, pathname, paidSubscription]);
+        // The telemetry senders are recreated every render, so they are intentionally left out of
+        // the dependencies to keep the config stable.
+    }, [discount, APP_NAME, pathname, paidSubscription]);
 
     return {
         isValid,
