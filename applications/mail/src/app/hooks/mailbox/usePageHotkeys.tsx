@@ -1,9 +1,13 @@
 import { useRef } from 'react';
 
+import useLumoInMail from '@proton/components/components/drawer/views/lumoAgent/useLumoInMail';
+import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
 import { useHotkeys } from '@proton/components/hooks/useHotkeys';
+import { focusLumoPrompt } from '@proton/llm/lib/lumoAgent/ui/focusLumoPrompt';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
 
@@ -17,6 +21,8 @@ export interface PageHotkeysHandlers {
 export const usePageHotkeys = ({ onOpenShortcutsModal }: PageHotkeysHandlers) => {
     const [mailSettings] = useMailSettings();
     const onCompose = useOnCompose();
+    const isLumoInMail = useLumoInMail();
+    const { appInView, toggleDrawerApp } = useDrawer();
 
     const documentRef = useRef(window.document);
 
@@ -67,6 +73,20 @@ export const usePageHotkeys = ({ onOpenShortcutsModal }: PageHotkeysHandlers) =>
                     e.preventDefault();
                     void onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW });
                 }
+            },
+        ],
+        [
+            ['Shift', 'L'],
+            (e) => {
+                if (!isLumoInMail || !mailSettings.Shortcuts || isBusy(e)) {
+                    return;
+                }
+                e.preventDefault();
+                if (appInView !== DRAWER_NATIVE_APPS.LUMO) {
+                    toggleDrawerApp({ app: DRAWER_NATIVE_APPS.LUMO })();
+                    return;
+                }
+                focusLumoPrompt();
             },
         ],
     ];

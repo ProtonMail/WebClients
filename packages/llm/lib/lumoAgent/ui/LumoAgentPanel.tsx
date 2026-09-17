@@ -34,6 +34,7 @@ interface Props {
     placeholder?: string;
     onSend: (text: string) => void;
     onStop: () => void;
+    onClose?: () => void;
     onConfirm: (params: Record<string, any>) => void;
     onCancel: () => void;
     onResume: () => void;
@@ -62,6 +63,7 @@ const LumoAgentPanel = ({
     placeholder,
     onSend,
     onStop,
+    onClose,
     onConfirm,
     onCancel,
     onResume,
@@ -179,6 +181,7 @@ const LumoAgentPanel = ({
                     onChange={setDraft}
                     onSubmit={submit}
                     onStop={onStop}
+                    onClose={onClose}
                     isGenerating={isGenerating}
                     placeholder={placeholder}
                 />

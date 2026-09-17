@@ -15,6 +15,8 @@ interface Props {
     onSubmit: () => void;
     /** Called by the stop button while generating; when omitted no stop button is shown. */
     onStop?: () => void;
+    /** Called on Escape — the host decides what closing means (e.g. hide the drawer). */
+    onClose?: () => void;
     /** Actively working: shows stop in place of send, blocks Enter. Awaiting a user decision does not count. */
     isGenerating?: boolean;
     disabled?: boolean;
@@ -30,7 +32,17 @@ interface Props {
  * a native textarea so the design library stays below `@proton/components` (no dependency on its form
  * controls).
  */
-const PromptInput = ({ value, onChange, onSubmit, onStop, isGenerating, disabled, placeholder, className }: Props) => {
+const PromptInput = ({
+    value,
+    onChange,
+    onSubmit,
+    onStop,
+    onClose,
+    isGenerating,
+    disabled,
+    placeholder,
+    className,
+}: Props) => {
     const textareaRef = useRef<HTMLTextAreaElement>(null);
 
     // Auto-grow: reset to a single row, then expand to fit the content up to the CSS max-height.
@@ -50,6 +62,11 @@ const PromptInput = ({ value, onChange, onSubmit, onStop, isGenerating, disabled
     };
 
     const handleKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
+        if (event.key === 'Escape' && onClose) {
+            event.preventDefault();
+            onClose();
+            return;
+        }
         if (event.key === 'Enter' && !event.shiftKey) {
             event.preventDefault();
             submit();
@@ -61,6 +78,7 @@ const PromptInput = ({ value, onChange, onSubmit, onStop, isGenerating, disabled
             <textarea
                 ref={textareaRef}
                 className="lumo-prompt-input__field resize-none"
+                data-lumo-prompt
                 rows={1}
                 value={value}
                 disabled={disabled}
