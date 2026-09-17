@@ -1,10 +1,4 @@
 export interface SharedMetricsClient {
-    core_event_loop_five_processing_time_histogram: {
-        observe: (args: { Value: number; Labels: Record<string, string> }) => void;
-    };
-    core_event_loop_six_processing_time_histogram: {
-        observe: (args: { Value: number; Labels: Record<string, string> }) => void;
-    };
     core_webvitals_total: {
         increment: (labels: {
             type: 'CLS' | 'LCP' | 'INP';
@@ -17,12 +11,9 @@ export interface SharedMetricsClient {
     };
 }
 
-const noopHistogram = { observe: () => {} };
 const noopCounter = { increment: () => {} };
 
 const noopClient: SharedMetricsClient = {
-    core_event_loop_five_processing_time_histogram: noopHistogram,
-    core_event_loop_six_processing_time_histogram: noopHistogram,
     core_webvitals_total: noopCounter,
     docs_public_sharing_custom_password_success_rate_total: noopCounter,
 };
@@ -31,10 +22,6 @@ let sharedMetricsClient: SharedMetricsClient = noopClient;
 
 export const setSharedMetricsClient = (client: SharedMetricsClient) => {
     sharedMetricsClient = client;
-};
-
-export const resetSharedMetricsClient = () => {
-    sharedMetricsClient = noopClient;
 };
 
 export const getSharedMetricsClient = () => sharedMetricsClient;

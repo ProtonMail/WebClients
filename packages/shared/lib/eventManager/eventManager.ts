@@ -5,7 +5,6 @@ import { FIBONACCI_LIST } from '../constants';
 import type { Listener } from '../helpers/listeners';
 import createListeners from '../helpers/listeners';
 import { onceWithQueue } from '../helpers/onceWithQueue';
-import { eventLoopTimingTracker } from '../metrics/eventLoopMetrics';
 import { type TimeoutIntervalsState, getTimeoutIntervalsStateSingleton } from './TimeoutIntervalsState';
 import { type VisibilityState, getVisibilityStateSingleton } from './VisibilityState';
 import { type EventLoopParams, getEventLoopParams } from './eventLoopParams';
@@ -35,6 +34,10 @@ type EventManagerConfigBase<EventResult> = {
     visibilityState?: VisibilityState;
     parseResults?: (value: EventResult) => { nextEventID: string; more: 0 | 1 };
     getEvents: GetEvents<EventResult>;
+    /** Called once a batch of events has been received, before the listeners are notified. */
+    onProcessingStart?: () => void;
+    /** Called once the listeners have been notified and the next event ID has been set. */
+    onProcessingEnd?: (hasMore: boolean) => void;
 };
 
 type EventManagerConfig<EventResult> = EventManagerConfigBase<EventResult> &
@@ -120,6 +123,8 @@ const createEventManager = <EventResult = DefaultEventResult>({
     visibilityState = getVisibilityStateSingleton(),
     parseResults = defaultParseResults,
     getEvents,
+    onProcessingStart,
+    onProcessingEnd,
 }: EventManagerConfig<EventResult>): EventManager<EventResult> => {
     const listeners = createListeners<[EventResult]>();
 
@@ -305,7 +310,7 @@ const createEventManager = <EventResult = DefaultEventResult>({
                 }
 
                 // Start timing for v5 event processing (data received, starting processing)
-                eventLoopTimingTracker.startV5Processing();
+                onProcessingStart?.();
 
                 await Promise.all(listeners.notify(result)).catch(noop);
 
@@ -314,7 +319,7 @@ const createEventManager = <EventResult = DefaultEventResult>({
                 setRetryIndex(0);
 
                 // End timing for v5 event processing (new EventID is set)
-                eventLoopTimingTracker.endV5Processing(more === 1);
+                onProcessingEnd?.(more === 1);
 
                 if (!more) {
                     break;

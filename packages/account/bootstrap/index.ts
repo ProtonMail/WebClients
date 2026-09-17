@@ -5,6 +5,7 @@ import { handleEarlyAccessDesynchronization } from '@proton/components/helpers/e
 import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/helpers/versionCookie';
 import type { Feature } from '@proton/features';
 import metrics from '@proton/metrics';
+import { eventLoopTimingTracker } from '@proton/metrics/eventLoopMetrics';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import {
     type CalendarEventV6Response,
@@ -401,6 +402,8 @@ export const eventManager = ({
             // Merge query parameters and generic event manager parameters
             return api<EventLoop>({ ...queryResult, params: { ...queryParams, ...eventLoopParams }, ...rest });
         },
+        onProcessingStart: () => eventLoopTimingTracker.startV5Processing(),
+        onProcessingEnd: (hasMore) => eventLoopTimingTracker.endV5Processing(hasMore),
     });
 };
 
