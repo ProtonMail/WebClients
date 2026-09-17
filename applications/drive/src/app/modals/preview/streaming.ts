@@ -4,7 +4,7 @@ import type { ProtonDriveClient, SeekableReadableStream } from '@proton/drive';
 import { EnrichedError, errorToString, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { logging } from '@proton/drive/modules/logging';
 import { canHtmlVideoPlay } from '@proton/drive/modules/thumbnails';
-import metrics from '@proton/metrics/index';
+import metrics from '@proton/metrics';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
