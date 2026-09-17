@@ -19,9 +19,9 @@ describe('elementsReducers - retry', () => {
         const error = new Error('Test error');
 
         // 3 consecutive failures for the exact same query (e.g. repeatedly failing while offline)
-        retry(state, { type: 'elements/retry', payload: { queryParameters: undefined, error } });
-        retry(state, { type: 'elements/retry', payload: { queryParameters: undefined, error } });
-        retry(state, { type: 'elements/retry', payload: { queryParameters: undefined, error } });
+        retry(state, { type: 'elements/retry', payload: { error } });
+        retry(state, { type: 'elements/retry', payload: { error } });
+        retry(state, { type: 'elements/retry', payload: { error } });
 
         expect(state.retry.count).toBe(3);
         expect(shouldLoadElements(toMailState(), { page: 0 })).toBe(false);
@@ -32,14 +32,14 @@ describe('elementsReducers - retry', () => {
     it('lets the mailbox load again once connectivity is restored, resetting the exhausted retry count', () => {
         const error = new Error('Test error');
 
-        retry(state, { type: 'elements/retry', payload: { queryParameters: undefined, error } });
-        retry(state, { type: 'elements/retry', payload: { queryParameters: undefined, error } });
-        retry(state, { type: 'elements/retry', payload: { queryParameters: undefined, error } });
+        retry(state, { type: 'elements/retry', payload: { error } });
+        retry(state, { type: 'elements/retry', payload: { error } });
+        retry(state, { type: 'elements/retry', payload: { error } });
 
         expect(shouldLoadElements(toMailState(), { page: 0 })).toBe(false);
 
         // Coming back online dispatches `retry` with no error, clearing the exhausted count.
-        retry(state, { type: 'elements/retry', payload: { queryParameters: undefined, error: undefined } });
+        retry(state, { type: 'elements/retry', payload: { error: undefined } });
 
         expect(state.retry.count).toBeLessThan(3);
         expect(shouldLoadElements(toMailState(), { page: 0 })).toBe(true);
