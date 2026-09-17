@@ -1,9 +1,9 @@
 /** The three catalogue reads share one shape, so they share one harness. */
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
+import { buildFolder } from '@proton/mail/testing/buildFolder';
+import { buildLabel } from '@proton/mail/testing/buildLabel';
 import { FILTER_STATUS } from '@proton/shared/lib/constants';
 import { buildFilter } from '@proton/testing/builders/filter';
-import { buildFolder } from '@proton/testing/builders/folder';
-import { buildLabel } from '@proton/testing/builders/label';
 
 import type { MailToolDeps } from '../../toolModule';
 import { createListFiltersHandler, listFiltersDefinition } from './listFilters';

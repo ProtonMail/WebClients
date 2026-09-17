@@ -1,7 +1,7 @@
+import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { ALMOST_ALL_MAIL, SHORTCUTS, SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import { mockUseHistory } from '@proton/testing/lib/mockUseHistory';
-import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 
 import { useFolderNavigationHotkeys } from './useFolderNavigationHotkeys';
 

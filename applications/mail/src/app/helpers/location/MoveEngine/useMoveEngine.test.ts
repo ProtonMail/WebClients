@@ -1,17 +1,16 @@
 import { renderHook } from '@testing-library/react';
 
+import { mockUseFolders } from '@proton/mail/testing/mockUseFolders';
+import { mockUseLabels } from '@proton/mail/testing/mockUseLabels';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
-import { mockUseFolders } from '@proton/testing/lib/mockUseFolders';
-import { mockUseLabels } from '@proton/testing/lib/mockUseLabels';
 
-import { useMoveEngine } from './useMoveEngine';
 import type { Conversation } from '../../../models/conversation';
 import type { Element } from '../../../models/element';
 import type { ESMessage } from '../../../models/encryptedSearch';
-
 import { MoveEngineRuleResult } from './moveEngineInterface';
+import { useMoveEngine } from './useMoveEngine';
 
 const element = {
     ID: '1',

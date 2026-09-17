@@ -1,8 +1,8 @@
+import { buildUser } from '@proton/account/testing/buildUser';
 import { getModelState } from '@proton/account/tests';
 import { SessionAccessTypeFlag } from '@proton/shared/lib/authentication/sessionAccessType';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { RetentionRule } from '@proton/shared/lib/interfaces/RetentionRule';
-import { buildUser } from '@proton/testing/builders/user';
 
 import { mailTestRender } from '../helpers/tests/render';
 import { newElementsState } from '../store/elements/elementsSlice';
