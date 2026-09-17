@@ -1,10 +1,10 @@
 import { act, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { MemberRole, NodeType } from '@proton/drive';
 import { featureFlagStore } from '@proton/drive/modules/flags';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
-import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 
 import { useContextMenuStore } from '../../../modules/contextMenu';
 import { useSelectionStore } from '../../../modules/selection';

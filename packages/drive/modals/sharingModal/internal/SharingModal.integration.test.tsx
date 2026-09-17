@@ -5,9 +5,9 @@ import type { ShareResult } from '@protontech/drive-sdk/dist/interface/sharing';
 import { screen, waitFor, within } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
+import { buildAddress } from '@proton/account/testing/buildAddress';
 import { getModelState } from '@proton/account/tests';
-import { buildAddress } from '@proton/testing/builders/address';
-import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 
 import { useSharingModal } from './SharingModal';
 import type { SharingModalInnerProps } from './useSharingModalState';
