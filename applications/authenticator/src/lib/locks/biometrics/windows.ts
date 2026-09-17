@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 // https://learn.microsoft.com/en-us/uwp/api/windows.security.credentials.ui.userconsentverificationresult?view=winrt-26100
-export const VERIFICATION_RESULTS = {
+const VERIFICATION_RESULTS = {
     // The user was verified.
     Verified: 0,
 

@@ -27,9 +27,9 @@ import { commands } from '../lib/tauri/commands';
 import { createAutomaticBackup } from './backup';
 import { createAppAsyncThunk } from './utils';
 
-export type SyncState = 'off' | 'loading' | 'on' | 'error';
+type SyncState = 'off' | 'loading' | 'on' | 'error';
 
-export type AuthState = {
+type AuthState = {
     syncState: SyncState;
     user?: User;
     session?: PersistedSession;

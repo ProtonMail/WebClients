@@ -47,8 +47,7 @@
         },
         "applications/authenticator": {
             "entry": ["src/app/main.tsx"],
-            "project": ["src/**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["src/**/*.{ts,tsx}"]
         },
         "applications/calendar": {
             "entry": ["src/app/index.{ts,tsx}", "src/app/bookings.tsx", "webpack.config.{js,ts}"],
