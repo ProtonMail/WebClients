@@ -4,6 +4,7 @@
     "sideEffects": false,
     "exports": {
         ".": "./index.ts",
+        "./eventLoopMetrics": "./eventLoopMetrics.ts",
         "./observeApiError": "./lib/observeApiError.ts",
         "./types/*": "./types/*.d.ts"
     },

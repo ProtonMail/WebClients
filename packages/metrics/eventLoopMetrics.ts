@@ -1,4 +1,4 @@
-import { getSharedMetricsClient } from './sharedMetricsClient';
+import metrics from './index';
 
 type EventLoopType = 'core' | 'mail' | 'calendar' | 'contact';
 
@@ -182,7 +182,7 @@ class EventLoopTimingTracker {
             interval_since_last_ms: getIntervalBucket(data.intervalSinceLastMs),
         };
 
-        getSharedMetricsClient().core_event_loop_six_processing_time_histogram.observe({
+        metrics.core_event_loop_six_processing_time_histogram.observe({
             Value: processingTimeSeconds,
             Labels: labels,
         });
@@ -200,7 +200,7 @@ class EventLoopTimingTracker {
             interval_since_last_ms: getIntervalBucket(data.intervalSinceLastMs),
         };
 
-        getSharedMetricsClient().core_event_loop_five_processing_time_histogram.observe({
+        metrics.core_event_loop_five_processing_time_histogram.observe({
             Value: processingTimeSeconds,
             Labels: labels,
         });
