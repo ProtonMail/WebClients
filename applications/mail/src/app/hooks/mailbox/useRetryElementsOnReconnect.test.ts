@@ -75,7 +75,7 @@ describe('useRetryElementsOnReconnect', () => {
         goOfflineThenOnline(rerender);
 
         expect(dispatch).toHaveBeenCalledTimes(1);
-        expect(dispatch).toHaveBeenCalledWith(retry({ queryParameters: undefined, error: undefined }));
+        expect(dispatch).toHaveBeenCalledWith(retry({ error: undefined }));
     });
 
     it('does not dispatch a duplicate on a StrictMode-style re-invocation of the same transition', () => {
