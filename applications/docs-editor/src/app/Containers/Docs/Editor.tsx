@@ -332,7 +332,7 @@ export function Editor({
         />
         {showTreeView && <TreeViewPlugin />}
         <MarkNodesProvider>
-          {systemMode !== EditorSystemMode.Revision && (
+          {systemMode !== EditorSystemMode.Revision && userMode !== EditorUserMode.Preview && (
             <CommentPlugin
               key={userMode} // force rerender of comments when user mode changes
               controller={clientInvoker}

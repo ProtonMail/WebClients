@@ -98,7 +98,6 @@ export function PreviewModeEditor({
             ErrorBoundary={LexicalErrorBoundary}
           />
         </DocsLayout.CenterPanel>
-        <DocsLayout.RightPanel />
       </DocsLayout.Grid>
 
       <PreviewStateSyncPlugin clonedEditorState={clonedEditorState} />
