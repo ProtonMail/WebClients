@@ -6,9 +6,9 @@ import type { MockedFunction } from 'vitest';
 
 import type { WasmAccountSyncer } from '@proton/andromeda';
 import { WasmAccount, WasmWallet } from '@proton/andromeda';
+import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { MINUTE } from '@proton/shared/lib/constants';
-import { mockUseNotifications } from '@proton/testing/lib/vitest/mockUseNotifications';
 import { setupStore } from '@proton/wallet/store/store';
 import { apiWalletsData } from '@proton/wallet/tests/fixtures';
 import { mockUseFlag, mockUseGetBitcoinNetwork, mockUseWalletApiClients } from '@proton/wallet/tests/mocks';
