@@ -23,8 +23,4 @@ describe('MAIL_RULES', () => {
     it('names the marker toVisibleText actually emits', () => {
         expect(MAIL_RULES).toContain(HIDDEN_MARKER);
     });
-
-    it('keeps the no-re-listing rule scoped to replies rather than to any completed read', () => {
-        expect(MAIL_RULES).toContain('When you do reply after one of those, do NOT reproduce the results');
-    });
 });

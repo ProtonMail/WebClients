@@ -23,6 +23,7 @@ const DrawerLumoView = () => {
         toolLimit,
         cardRenderers,
         serverToolMeta,
+        suggestions,
         hasConversation,
         send,
         stop,
@@ -63,6 +64,7 @@ const DrawerLumoView = () => {
                 toolLimit={toolLimit}
                 cardRenderers={cardRenderers}
                 serverToolMeta={serverToolMeta}
+                suggestions={suggestions}
                 onSend={send}
                 onStop={stop}
                 onClose={closeDrawer}
