@@ -84,7 +84,7 @@ export const MailPostSignup099 = () => {
     const [spotlightState, setSpotlightState] = useState(openSpotlight);
     const show = useSpotlightShow(spotlightState, 3 * SECOND);
 
-    const { pricingTitle } = useZeroNinetyNinePromotionPrice({});
+    const { pricingTitle, planName, hasPrice } = useZeroNinetyNinePromotionPrice({});
 
     useEffect(() => {
         if (openSpotlight && offerState) {
@@ -144,6 +144,10 @@ export const MailPostSignup099 = () => {
         }
     };
 
+    if (!hasPrice) {
+        return null;
+    }
+
     return (
         <SpotlightWithPromo
             promoOnClick={() => {
@@ -171,6 +175,7 @@ export const MailPostSignup099 = () => {
                     onUpsellClick={handleUpsellClick}
                     onNeverShow={handleNeverShow}
                     daysSinceOffer={daysSinceOffer}
+                    planName={planName}
                 />
             }
         />
