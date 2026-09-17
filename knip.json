@@ -47,7 +47,8 @@
         },
         "applications/authenticator": {
             "entry": ["src/app/main.tsx"],
-            "project": ["src/**/*.{ts,tsx}"]
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignoreDependencies": ["@proton/styles", "@iarna/toml", "tsx"]
         },
         "applications/calendar": {
             "entry": ["src/app/index.{ts,tsx}", "src/app/bookings.tsx", "webpack.config.{js,ts}"],
