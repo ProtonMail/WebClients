@@ -2,18 +2,18 @@ import { mergeRegister } from '@lexical/utils'
 import { type Binding, createUndoManager } from '@lexical/yjs'
 import type { LexicalCommand, LexicalEditor } from 'lexical'
 import {
-  UNDO_COMMAND,
-  COMMAND_PRIORITY_EDITOR,
-  REDO_COMMAND,
-  CAN_UNDO_COMMAND,
   CAN_REDO_COMMAND,
+  CAN_UNDO_COMMAND,
+  COMMAND_PRIORITY_EDITOR,
   createCommand,
+  REDO_COMMAND,
+  UNDO_COMMAND,
 } from 'lexical'
-import { useMemo, useCallback, useEffect } from 'react'
+import { useCallback, useEffect, useMemo } from 'react'
 import type { UndoManager } from 'yjs'
 
-export const POP_UNDO_STACK_COMMAND: LexicalCommand<void> = createCommand('POP_UNDO_STACK')
-export const POP_REDO_STACK_COMMAND: LexicalCommand<void> = createCommand('POP_REDO_STACK')
+const POP_UNDO_STACK_COMMAND: LexicalCommand<void> = createCommand('POP_UNDO_STACK')
+const POP_REDO_STACK_COMMAND: LexicalCommand<void> = createCommand('POP_REDO_STACK')
 export const CLEAR_HISTORY_COMMAND: LexicalCommand<void> = createCommand('CLEAR_HISTORY')
 
 export function useYjsHistory(editor: LexicalEditor, binding: Binding): UndoManager {

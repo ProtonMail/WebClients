@@ -1,6 +1,6 @@
-import { LevelFormat, type ILevelsOptions, AlignmentType, convertInchesToTwip } from 'docx'
+import { AlignmentType, convertInchesToTwip, LevelFormat, type ILevelsOptions } from 'docx'
 
-export const NumberingFormat: Record<number, (typeof LevelFormat)[keyof typeof LevelFormat]> = {
+const NumberingFormat: Record<number, (typeof LevelFormat)[keyof typeof LevelFormat]> = {
   0: LevelFormat.DECIMAL,
   1: LevelFormat.UPPER_LETTER,
   2: LevelFormat.LOWER_LETTER,
