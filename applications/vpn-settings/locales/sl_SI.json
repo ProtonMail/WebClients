@@ -2323,32 +2323,6 @@
         "URL"
       ]
     },
-    "Contact type label": {
-      "Fax": [
-        "Faks"
-      ],
-      "Main": [
-        "Glavno"
-      ],
-      "Mobile": [
-        "Mobilno"
-      ],
-      "Other": [
-        "Ostalo"
-      ],
-      "Pager": [
-        "Pozivnik"
-      ],
-      "Personal": [
-        "Osebno"
-      ],
-      "Work": [
-        "Službeno"
-      ],
-      "Yomi": [
-        "Yomi"
-      ]
-    },
     "CountriesStep:Info": {
       "${ selectedCitiesCount } cities selected": [
         "${ selectedCitiesCount } izbrano mesto",
@@ -4344,9 +4318,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Nepravilno drugo geslo. Poskusite znova."
-      ],
-      "Incorrect username": [
-        "Nepravilno uporabniško ime"
       ],
       "Invalid code": [
         "Neveljavna koda"
@@ -12214,20 +12185,6 @@
         "Službeni"
       ]
     },
-    "Protection type": {
-      "Blocked": [
-        "Blokirano"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Ok": [
-        "V redu"
-      ],
-      "Unknown": [
-        "Neznan"
-      ]
-    },
     "Provider option": {
       "Gmail": [
         "Gmail"
@@ -15666,6 +15623,9 @@
       ]
     },
     "Tooltip": {
+      "Admins can manage user accounts and give admin privileges to other users.": [
+        "Skrbniki lahko upravljajo uporabniške račune in dodeljujejo skrbniške pravice drugim uporabnikom"
+      ],
       "Any protection applied to suspicious activity": [
         "Katera koli zaščita, ki je uporabljena za sumljive aktivnosti"
       ],

@@ -210,6 +210,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "リンク ${ linkToShow } を確認"
       ],
+      "Connect": [
+        "接続"
+      ],
       "Connect apps and devices": [
         "アプリとデバイスを接続"
       ],
@@ -482,6 +485,9 @@
       ],
       "Hide more benefits": [
         "その他のメリットを隠す"
+      ],
+      "Ignore": [
+        "無視"
       ],
       "Image could not be loaded with tracker protection.": [
         "トラッカー保護機能により画像を読み込めません。"
@@ -1825,32 +1831,6 @@
     "Contact image": {
       "Contact image": [
         "連絡先の画像"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "メイン"
-      ],
-      "Mobile": [
-        "携帯電話"
-      ],
-      "Other": [
-        "その他"
-      ],
-      "Pager": [
-        "ポケベル"
-      ],
-      "Personal": [
-        "個人"
-      ],
-      "Work": [
-        "勤務先"
-      ],
-      "Yomi": [
-        "ふりがな"
       ]
     },
     "Country name": {
@@ -3346,9 +3326,6 @@
       ],
       "Incorrect password. Please try again.": [
         "パスワードが正しくありません。もう一度お試しください。"
-      ],
-      "Incorrect username": [
-        "ユーザー名に間違いがあります。"
       ],
       "Invalid code": [
         "無効なコードです"
@@ -11467,6 +11444,9 @@
       ],
       "Size in bytes": [
         "バイト単位のサイズ"
+      ],
+      "Something went wrong": [
+        "何か問題が発生しました"
       ],
       "Sort files/folders": [
         "ファイル・フォルダーの並べ替え"

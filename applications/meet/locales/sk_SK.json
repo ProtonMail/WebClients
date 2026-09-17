@@ -34,6 +34,9 @@
       "${ name } lowered their hand": [
         "${ name } zložil/a ruku"
       ],
+      "${ name } mentioned you: ${ message }": [
+        "${ name } vás spomenul: ${ message }"
+      ],
       "${ name } raised their hand": [
         "${ name } sa prihlásil/a"
       ],
@@ -45,6 +48,12 @@
       ],
       "${ name }: ${ message }": [
         "${ name }: ${ message }"
+      ],
+      "${ suggestionCount } mention suggestion available": [
+        "K dispozícii je ${ suggestionCount } návrh zmienky",
+        "K dispozícii sú ${ suggestionCount } návrhy zmienky",
+        "K dispozícii je ${ suggestionCount } návrhov zmienky",
+        "K dispozícii je ${ suggestionCount } návrhov zmienky"
       ],
       "A participant joined the meeting": [
         "Účastník sa pripojil k schôdzi"
@@ -157,6 +166,9 @@
       "You have been muted by the host": [
         "Organizátor vás stíšil"
       ],
+      "You were mentioned: ${ message }": [
+        "Spomenuli vás: ${ message }"
+      ],
       "Your camera has been turned off by the host": [
         "Hostiteľ vypol vašu kameru"
       ],
@@ -167,6 +179,12 @@
     "Action": {
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
+      ],
+      "${ newMentionCount } new mention": [
+        "${ newMentionCount } nová zmienka",
+        "${ newMentionCount } nové zmienky",
+        "${ newMentionCount } nových zmienok",
+        "${ newMentionCount } nových zmienok"
       ],
       "${ newMessageCount } new": [
         "${ newMessageCount } nová",
@@ -314,6 +332,9 @@
       ],
       "Dismiss": [
         "Odmietnuť"
+      ],
+      "Dismiss new mentions": [
+        "Zatvoriť nové zmienky"
       ],
       "Dismiss new messages": [
         "Zavrieť nové správy"
@@ -473,6 +494,9 @@
       ],
       "Open link": [
         "Otvoriť odkaz"
+      ],
+      "Open mention from ${ senderName } in chat": [
+        "Otvoriť zmienku od ${ senderName } v chate"
       ],
       "Participants join after you approve them": [
         "Účastníci sa pripoja až po tom, čo ich schválite"
@@ -2151,9 +2175,6 @@
       "Image preview not found": [
         "Náhľad obrázka nebol nájdený"
       ],
-      "Incorrect username": [
-        "Nesprávne používateľské meno"
-      ],
       "Invalid meeting link": [
         "Neplatný odkaz na schôdzu"
       ],
@@ -2180,6 +2201,9 @@
       ],
       "Live captions have stopped.": [
         "Živé titulky boli zastavené"
+      ],
+      "Message is too long to send": [
+        "Správa je príliš dlhá na odoslanie"
       ],
       "Microphone access is blocked. Allow it in your browser settings.": [
         "Prístup k mikrofónu je blokovaný. Povoľte ho v nastaveniach prehliadača."
@@ -2303,6 +2327,12 @@
       ],
       "The meeting password is invalid": [
         "Heslo k schôdzke je neplatné"
+      ],
+      "The mention could not be added because the message is at its character limit": [
+        "Túto zmienku nebolo možné pridať, pretože správa dosiahla maximálny počet znakov."
+      ],
+      "The message field is unavailable. Please reload the page.": [
+        "Pole pre správu nie je k dispozícii. Obnovte stránku, prosím."
       ],
       "The selected microphone is no longer available.": [
         "Vybraný mikrofón už nie je k dispozícii."
@@ -2649,6 +2679,9 @@
         "${ replyCount } odpovedí",
         "${ replyCount } odpovedí"
       ],
+      "${ senderNameNode } mentioned you": [
+        "${ senderNameNode } vás spomenul"
+      ],
       "${ spotlightParticipantName } is the active speaker": [
         "${ spotlightParticipantName } je aktívnym rečníkom"
       ],
@@ -2844,6 +2877,9 @@
       "End-to-end encryption is active for this chat.": [
         "End-to-end šifrovanie je pre tento čet aktívne."
       ],
+      "enter": [
+        "zadať"
+      ],
       "Enter code": [
         "Zadajte kód"
       ],
@@ -3018,6 +3054,9 @@
       "Member": [
         "Člen"
       ],
+      "Mention from ${ senderName }": [
+        "Zmienka od ${ senderName }"
+      ],
       "Message actions": [
         "Akcie správy"
       ],
@@ -3086,6 +3125,9 @@
       ],
       "Not sent, check your connection.": [
         "Neodoslané, skontrolujte pripojenie."
+      ],
+      "notify everyone here": [
+        "informovať všetkých prítomných"
       ],
       "Only meetings you created appear here": [
         "Tu sa zobrazia len vami vytvorené schôdzky"
@@ -3602,6 +3644,9 @@
       "Every year": [
         "Každý %d rok"
       ],
+      "everyone": [
+        "všetci"
+      ],
       "Google Calendar": [
         "Google kalendár"
       ],
@@ -3643,6 +3688,9 @@
       ],
       "Meeting link": [
         "Odkaz na schôdzku"
+      ],
+      "Mention a participant": [
+        "Spomenúť účastníka"
       ],
       "Message": [
         "Správa"
@@ -3730,6 +3778,9 @@
       ],
       "Track SID": [
         "Sledovať SID"
+      ],
+      "unknown": [
+        "neznámy"
       ],
       "Uploaded image": [
         "Nahratý obrázok"

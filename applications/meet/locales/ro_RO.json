@@ -492,6 +492,9 @@
       "Open link": [
         "Deschidere legătură web"
       ],
+      "Open mention from ${ senderName } in chat": [
+        "Deschidere mențiune de la ${ senderName } în conversație"
+      ],
       "Participants join after you approve them": [
         "Participanții se alătură după ce-i aprobați"
       ],
@@ -2167,9 +2170,6 @@
       "Image preview not found": [
         "Previzualizarea imaginii nu a fost găsită."
       ],
-      "Incorrect username": [
-        "Nume de utilizator incorect."
-      ],
       "Invalid meeting link": [
         "Legătură web nevalidă pentru conferință."
       ],
@@ -2939,6 +2939,9 @@
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Dacă utilizați Firefox, asigurați-vă că PeerConnection este activat."
+      ],
+      "Incoming video off": [
+        "Intrare video dezactivată"
       ],
       "Internet connection lost": [
         "Conexiunea la internet s-a întrerupt"

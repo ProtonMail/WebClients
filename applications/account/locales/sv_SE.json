@@ -2689,6 +2689,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "Active until ${ formattedPeriodEndDate }": [
+        "Aktiv till ${ formattedPeriodEndDate }"
+      ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "Efter provperioden slutar den ${ formattedDate1 } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate2 }."
       ],
@@ -4194,32 +4197,6 @@
       ],
       "URL": [
         "URL"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "Huvud"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Other": [
-        "Annat"
-      ],
-      "Pager": [
-        "Personsökare"
-      ],
-      "Personal": [
-        "Privat"
-      ],
-      "Work": [
-        "Arbete"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "CountriesStep:Info": {
@@ -7376,9 +7353,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Felaktigt andra lösenord. Försök igen."
-      ],
-      "Incorrect username": [
-        "Felaktigt användarnamn"
       ],
       "Intended recipient does not support calendar sharing": [
         "Avsedd mottagare stöder inte kalenderdelning"
@@ -10554,6 +10528,9 @@
         "Alla (${ totalFoldersCount } etikett)",
         "Alla (${ totalFoldersCount } etiketter)"
       ],
+      "All admins": [
+        "Alla administratörer"
+      ],
       "All data and settings are preserved": [
         "All data och alla inställningar är bevarad"
       ],
@@ -13547,6 +13524,9 @@
       ],
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Vi rekommenderar starkt att alla aktiverar återställning med återställningsfras."
+      ],
+      "We support most files": [
+        "Vi stöder de flesta filerna"
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi använder 3-D Secure för att skydda dina betalningar"
@@ -21093,26 +21073,6 @@
       ],
       "Work": [
         "Arbete"
-      ]
-    },
-    "Protection type": {
-      "Blocked": [
-        "Blockerad"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Device verification": [
-        "Enhetsverifiering"
-      ],
-      "Ok": [
-        "Ok"
-      ],
-      "Ownership verification": [
-        "Ägarskapsverifiering"
-      ],
-      "Unknown": [
-        "Okänd"
       ]
     },
     "Provider option": {

@@ -2140,32 +2140,6 @@
         "Imagem do contato"
       ]
     },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "Principal"
-      ],
-      "Mobile": [
-        "Celular"
-      ],
-      "Other": [
-        "Outro"
-      ],
-      "Pager": [
-        "Pager"
-      ],
-      "Personal": [
-        "Pessoal"
-      ],
-      "Work": [
-        "Trabalho"
-      ],
-      "Yomi": [
-        "Yomi"
-      ]
-    },
     "Country name": {
       "Abkhazia": [
         "Abecásia"
@@ -3867,9 +3841,6 @@
       "IMAP server is required": [
         "O servidor IMAP é obrigatório"
       ],
-      "Incorrect username": [
-        "Nome de usuário incorreto"
-      ],
       "Intended recipient does not support calendar sharing": [
         "O destinatário pretendido não oferece suporte ao compartilhamento de calendário"
       ],
@@ -4026,6 +3997,9 @@
       ],
       "Operation failed, try again later": [
         "Erro na operação, tente novamente mais tarde"
+      ],
+      "Organization does not have enough seats available": [
+        "A organização não tem licenças suficientes disponíveis"
       ],
       "Organization does not have enough storage available": [
         "A organização não tem armazenamento suficientes disponíveis"
@@ -4859,6 +4833,9 @@
       ],
       "Security key": [
         "Chave de segurança"
+      ],
+      "Still waiting?": [
+        "Ainda esperando?"
       ]
     },
     "fido2: Label": {
@@ -8974,6 +8951,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } com final ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB de armazenamento em nuvem que permite armazenar, sincronizar e compartilhar arquivos com facilidade. Protegido por criptografia de ponta a ponta."
       ],
