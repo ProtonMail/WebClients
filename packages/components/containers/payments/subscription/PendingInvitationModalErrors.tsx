@@ -83,7 +83,7 @@ const PendingInvitationModalErrors = ({ errors, invite, onClose }: Props) => {
         // translator: full sentence is: You can only accept 3 invitations in a 6-month period. Please contact <customer support> if you require an exception.
         errorDescription = c('familyOffer_2023:Family plan')
             .jt`You can only accept 3 invitations in a 6-month period. Please contact ${supportLink} if you require an exception.`;
-    } else if (errors.IsOnForbiddenPlan) {
+    } else if (errors.HasSubscription) {
         errorDescription = c('familyOffer_2023:Family plan')
             .t`You cannot accept this invitation with your current plan.`;
     } else if (errors.IsExternalUser) {

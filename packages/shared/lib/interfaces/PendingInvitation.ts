@@ -9,7 +9,7 @@ export interface PendingInvitation {
 export interface AcceptInvitationValidation {
     Valid: boolean;
     IsLifetimeAccount: boolean;
-    IsOnForbiddenPlan: boolean;
+    HasSubscription: boolean;
     HasOrgWithMembers: boolean;
     HasCustomDomains: boolean;
     ExceedsMaxSpace: boolean;
