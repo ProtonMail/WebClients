@@ -3207,32 +3207,6 @@
         "URL"
       ]
     },
-    "Contact type label": {
-      "Fax": [
-        "Faks"
-      ],
-      "Main": [
-        "Glavno"
-      ],
-      "Mobile": [
-        "Mobilno"
-      ],
-      "Other": [
-        "Ostalo"
-      ],
-      "Pager": [
-        "Pozivnik"
-      ],
-      "Personal": [
-        "Osebno"
-      ],
-      "Work": [
-        "Službeno"
-      ],
-      "Yomi": [
-        "Yomi"
-      ]
-    },
     "CountriesStep:Info": {
       "${ selectedCitiesCount } cities selected": [
         "${ selectedCitiesCount } izbrano mesto",
@@ -5649,9 +5623,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Nepravilno drugo geslo. Poskusite znova."
-      ],
-      "Incorrect username": [
-        "Nepravilno uporabniško ime"
       ],
       "Intended recipient does not support calendar sharing": [
         "Predvideni prejemnik ne podpira skupne rabe koledarja"
@@ -8459,7 +8430,7 @@
         "Spremenite vaše geslo"
       ],
       "Changes to your default language and time are reflected on the web. To change the default for mobile apps, go to the settings on your device.": [
-        "Spremembe nastavitve vašega privzetega jezika in časa veljajo v spletni obliki storitev. Spremembe privzetih nastavitev v mobilnih aplikacijah uredite v nastavitve na vaši napravi."
+        "Spremembe nastavitve vašega privzetega jezika in časa veljajo v spletni obliki storitev. Spremembe privzetih nastavitev v mobilnih aplikacijah uredite v nastavitvah na vaši napravi."
       ],
       "Check if your recovery phrase can be used to fully recover your account.": [
         "Preverite, ali je mogoče z vašo obnovitveno frazo v celoti obnoviti vaš račun."
@@ -11885,7 +11856,7 @@
         "Bližnjica na tipkovnici: ${ shortcut }"
       ],
       "Keyboard shortcuts": [
-        "Bližnjice s tipkovnico"
+        "Bližnjice na tipkovnici"
       ],
       "Label as": [
         "Označi kot"
@@ -16262,20 +16233,6 @@
       ],
       "Work": [
         "Službeni"
-      ]
-    },
-    "Protection type": {
-      "Blocked": [
-        "Blokirano"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Ok": [
-        "V redu"
-      ],
-      "Unknown": [
-        "Neznan"
       ]
     },
     "Provider option": {
@@ -20706,6 +20663,9 @@
     "Tooltip": {
       "Account is disconnected": [
         "Povezava z računom je prekinjena"
+      ],
+      "Admins can manage user accounts and give admin privileges to other users.": [
+        "Skrbniki lahko upravljajo uporabniške račune in dodeljujejo skrbniške pravice drugim uporabnikom"
       ],
       "Any protection applied to suspicious activity": [
         "Katera koli zaščita, ki je uporabljena za sumljive aktivnosti"

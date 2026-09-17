@@ -88,6 +88,9 @@
       "Automatic renewal": [
         "Аўтаматычнае падаўжэнне"
       ],
+      "Back up emails": [
+        "Рэзервовае капіяванне электроннай пошты"
+      ],
       "Block sender": [
         "Заблакіраваць адпраўніка"
       ],
@@ -156,6 +159,9 @@
       ],
       "Encryption backup in this browser": [
         "Зашыфраваная рэзервовая копія ў гэтым браўзеры"
+      ],
+      "Export messages": [
+        "Экспартаваць паведамленні"
       ],
       "External mailbox": [
         "Знешняя паштовая скрыня"
@@ -490,9 +496,6 @@
       ],
       "Approve": [
         "Ухваліць"
-      ],
-      "Assign manager(s)": [
-        "Прызначыць менеджара(ў)"
       ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
@@ -1340,6 +1343,9 @@
       "Invite user": [
         "Запрасіць карыстальніка"
       ],
+      "Invoice options": [
+        "Параметры рахунку"
+      ],
       "Italic": [
         "Курсіў"
       ],
@@ -1645,6 +1651,9 @@
       ],
       "Remove gift code": [
         "Выдаліць падарункавы код"
+      ],
+      "Remove manager": [
+        "Выдаліць менеджара"
       ],
       "Remove this label": [
         "Выдаліць гэту метку"
@@ -4262,32 +4271,6 @@
       ],
       "URL": [
         "URL-адрас"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Факс"
-      ],
-      "Main": [
-        "Галоўны"
-      ],
-      "Mobile": [
-        "Мабільны"
-      ],
-      "Other": [
-        "Іншы"
-      ],
-      "Pager": [
-        "Пэйджар"
-      ],
-      "Personal": [
-        "Асабісты"
-      ],
-      "Work": [
-        "Працоўны"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "CountriesStep:Info": {
@@ -7508,9 +7491,6 @@
       "Incorrect second password. Please try again.": [
         "Няправільны другі пароль. Паўтарыце спробу."
       ],
-      "Incorrect username": [
-        "Няправільнае імя карыстальніка"
-      ],
       "Intended recipient does not support calendar sharing": [
         "У прызначанага атрымальніка функцыя абагульвання календара не падтрымліваецца"
       ],
@@ -9081,6 +9061,9 @@
       "Security key updated": [
         "Ключ бяспекі абноўлены"
       ],
+      "Still waiting?": [
+        "Усё яшчэ чакаеце?"
+      ],
       "This will delete all security keys linked to your account.": [
         "Гэта выдаліць усе ключы, якія звязаны з вашым уліковым запісам."
       ],
@@ -9769,6 +9752,9 @@
       ],
       "Enjoying ${ planName }?": [
         "Падабаецца ${ planName }?"
+      ],
+      "Invited friends": [
+        "Запрошаныя сябры"
       ],
       "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
         "Разблакіруйце 4 прэміяльныя сэрвісы прыватнасці ўсяго за **${ priceString }** дадатковай платы ў месяц"
@@ -10825,6 +10811,9 @@
         "Усе (${ totalFoldersCount } меткі)",
         "Усе (${ totalFoldersCount } метак)",
         "Усе (${ totalFoldersCount } метак)"
+      ],
+      "All admins": [
+        "Усе адміністратары"
       ],
       "All data and settings are preserved": [
         "Усе даныя і налады будуць захаваны."
@@ -16142,6 +16131,9 @@
       "Monthly": [
         "Штомесяц"
       ],
+      "Monthly average": [
+        "Сярэднемесячны паказчык"
+      ],
       "More payment methods": [
         "Іншыя спосабы аплаты"
       ],
@@ -20227,6 +20219,9 @@
       "Because your organization key has changed, you lost some of your admin rights: You can no longer create non-private users and access their accounts.": [
         "Вы згубілі некаторыя правы адміністратара, бо ключ вашай арганізацыі быў зменены: у вас больш няма магчымасці ствараць непрыватных карыстальнікаў і атрымліваць доступ да іх уліковых запісаў."
       ],
+      "Copy email list": [
+        "Капіяваць спіс рассылкі"
+      ],
       "Could not send the unprivatization request to ${ n } user. It will be retried automatically.": [
         "Немагчыма адправіць неправатызаваны запыт ${ n } карыстальніку. Паўторная спроба будзе зроблена аўтаматычна.",
         "Немагчыма адправіць неправатызаваны запыт ${ n } карыстальнікам. Паўторная спроба будзе зроблена аўтаматычна.",
@@ -21690,26 +21685,6 @@
       ],
       "Work": [
         "Працоўны"
-      ]
-    },
-    "Protection type": {
-      "Blocked": [
-        "Заблакіраваныя"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Device verification": [
-        "Праверка прылады"
-      ],
-      "Ok": [
-        "OK"
-      ],
-      "Ownership verification": [
-        "Спраўджанне ўладальніка"
-      ],
-      "Unknown": [
-        "Невядома"
       ]
     },
     "Provider option": {
@@ -27441,6 +27416,9 @@
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Кіраванне файламі на ўсіх прыладах: Windows, Mac, Android і iOS."
       ],
+      "Manage managers": [
+        "Кіраванне менеджарамі"
+      ],
       "Messages": [
         "Паведамленні"
       ],
@@ -27933,6 +27911,9 @@
       "Sign in on TV?": [
         "Увайсці на тэлевізары?"
       ],
+      "Sign in to Google": [
+        "Увайсці ў Google"
+      ],
       "Sign in to join the Beta program": [
         "Увайдзіце, каб далучыцца да бэта-праграмы"
       ],
@@ -28423,6 +28404,9 @@
       ],
       "Last app activity": [
         "Апошняя актыўнасць праграмы"
+      ],
+      "Last connection": [
+        "Апошняе падключэнне"
       ],
       "Name": [
         "Імя"
