@@ -518,9 +518,6 @@
       "Approve": [
         "Έγκριση"
       ],
-      "Assign manager(s)": [
-        "Ανάθεση διαχειριστή/ων"
-      ],
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
       ],
@@ -4266,32 +4263,6 @@
         "Διεύθυνση URL"
       ]
     },
-    "Contact type label": {
-      "Fax": [
-        "Φαξ"
-      ],
-      "Main": [
-        "Κύριο"
-      ],
-      "Mobile": [
-        "Κινητό"
-      ],
-      "Other": [
-        "Άλλο"
-      ],
-      "Pager": [
-        "Βομβητής"
-      ],
-      "Personal": [
-        "Προσωπικό"
-      ],
-      "Work": [
-        "Εργασία"
-      ],
-      "Yomi": [
-        "Yomi"
-      ]
-    },
     "CountriesStep:Info": {
       "${ selectedCitiesCount } cities selected": [
         "${ selectedCitiesCount } πόλεις επιλέχθηκαν",
@@ -7488,9 +7459,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Λανθασμένος δεύτερος κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
-      ],
-      "Incorrect username": [
-        "Εσφαλμένο όνομα χρήστη"
       ],
       "Intended recipient does not support calendar sharing": [
         "Ο προβλεπόμενος παραλήπτης δεν υποστηρίζει την κοινή χρήση ημερολογίου"
@@ -10716,6 +10684,9 @@
       "All (${ totalFoldersCount } label)": [
         "Όλες (${ totalFoldersCount } ετικέτα)",
         "Όλες (${ totalFoldersCount } ετικέτες)"
+      ],
+      "All admins": [
+        "Όλοι οι διαχειριστές"
       ],
       "All data and settings are preserved": [
         "Όλα τα δεδομένα και οι ρυθμίσεις διατηρούνται"
@@ -21551,26 +21522,6 @@
         "Εργασία"
       ]
     },
-    "Protection type": {
-      "Blocked": [
-        "Αποκλεισμένο"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Device verification": [
-        "Επαλήθευση συσκευών"
-      ],
-      "Ok": [
-        "Ok"
-      ],
-      "Ownership verification": [
-        "Επαλήθευση ιδιοκτησίας"
-      ],
-      "Unknown": [
-        "Άγνωστο"
-      ]
-    },
     "Provider option": {
       "Gmail": [
         "Gmail"
@@ -28187,6 +28138,9 @@
       ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "Προστέθηκε στο πλάνο σας: ${ mergedAddonTitles }"
+      ],
+      "Admins can manage user accounts and give admin privileges to other users.": [
+        "Οι διαχειριστές μπορούν να διαχειρίζονται λογαριασμούς χρηστών και να παραχωρούν δικαιώματα διαχειριστή σε άλλους χρήστες."
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Οι διαχειριστές μπορούν να διαχειρίζονται λογαριασμούς χρηστών και να εκχωρούν δικαιώματα διαχειριστή σε άλλους χρήστες. Μόνο ο κύριος διαχειριστής μπορεί να επεξεργαστεί το πλάνο του οργανισμού."
