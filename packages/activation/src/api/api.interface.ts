@@ -297,6 +297,16 @@ export interface ApiImporterOrganizationUser {
     Eligibility: ApiImporterOrganizationUserEligibility;
 }
 
+export interface ApiImporterOrganizationUsers {
+    Users: ApiImporterOrganizationUser[];
+    /**
+     * Temporary failsafe: true when the organization has more users than we
+     * can currently import.
+     * TODO: remove once the org-size import limit is lifted.
+     */
+    TooManyUsers?: boolean;
+}
+
 export type ApiImporterProduct = 'Mail' | 'Contacts' | 'Calendar';
 
 export enum ApiImporterOrganizationState {

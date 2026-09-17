@@ -42,6 +42,10 @@ const getAllowedUsersMessage = (maxMembers: number) =>
         maxMembers
     );
 
+const getTooManyUsersMessage = () =>
+    c('Warning')
+        .t`This organization has more users than we can currently migrate. Please contact customer support for assistance.`;
+
 const getMigrationStartedText = (n: number) =>
     c('Success').ngettext(msgid`Migration started for ${n} user`, `Migration started for ${n} users`, n);
 
@@ -51,7 +55,7 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
     const [organization] = useOrganization();
     const [members] = useMembers();
     const { value: memberAddressesMap } = useMemberAddresses({ members, partial: true });
-    const [providerUsers, , refreshProviderUsers] = useProviderUsers(model.domainName);
+    const [providerUsers, , refreshProviderUsers, tooManyUsers] = useProviderUsers(model.domainName);
     const dispatch = useDispatch();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const [reportUser, setReportUser] = useState<UserWithExtendedErrors>();
@@ -182,6 +186,21 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
     })();
 
     const banners = [
+        tooManyUsers && (
+            <Banner
+                key="too-many-users"
+                className="p-2 rounded-xl"
+                variant="warning"
+                icon={<IcExclamationCircleFilled />}
+                opaqueVariant
+                borderless
+                contentWrapperClassName="flex w-full"
+            >
+                <span className="flex items-start w-full gap-4">
+                    <span className="flex-1 text-left">{getTooManyUsersMessage()}</span>
+                </span>
+            </Banner>
+        ),
         showBannerSeatsWarning && notEnoughSeats && (
             <Banner
                 key="add-users"
