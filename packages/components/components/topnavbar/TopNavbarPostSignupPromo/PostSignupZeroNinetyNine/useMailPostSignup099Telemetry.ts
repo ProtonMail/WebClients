@@ -2,12 +2,14 @@ import { useUserSettings } from '@proton/account';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
     type TelemetryEvents,
     TelemetryMailPostSignupZeroNinetyNineEvents,
     TelemetryMeasurementGroups,
+    sendTelemetryData,
 } from '@proton/shared/lib/api/telemetry';
-import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
+import { getBaseTelemetryDimensions } from '@proton/shared/lib/helpers/metrics';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 
 import { getZeroNinetyNineOfferAgeCategory } from './zeroNinetyNineOfferState';
@@ -19,16 +21,22 @@ export const useMailPostSignup099Telemetry = () => {
     const [userSettings] = useUserSettings();
 
     const sendReport = (event: TelemetryEvents, dimensions?: SimpleMap<string>) => {
-        void sendTelemetryReportWithBaseDimensions({
-            api,
-            user,
-            subscription,
-            userSettings,
-            measurementGroup: TelemetryMeasurementGroups.mailPostSignupZeroNinetyNine,
-            event,
-            dimensions,
-            delay: false,
-        });
+        if (!userSettings?.Telemetry) {
+            return;
+        }
+
+        const silentApi = getSilentApi(api);
+
+        void silentApi(
+            sendTelemetryData({
+                MeasurementGroup: TelemetryMeasurementGroups.mailPostSignupZeroNinetyNine,
+                Event: event,
+                Dimensions: {
+                    ...dimensions,
+                    ...getBaseTelemetryDimensions({ user, subscription, userSettings }),
+                },
+            })
+        );
     };
 
     const sendReportWithOfferAge = (event: TelemetryEvents, daysSinceOffer: number) => {
