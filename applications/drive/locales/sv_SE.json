@@ -1350,6 +1350,15 @@
       ],
       "Add a payment method": [
         "Lägg till en betalningsmetod"
+      ],
+      "Connect": [
+        "Anslut"
+      ],
+      "Ignore": [
+        "Ignorera"
+      ],
+      "Sign in with Google": [
+        "Logga in med Google"
       ]
     },
     "Action: Docs": {
@@ -7828,6 +7837,9 @@
       "${ steps } step": [
         "${ steps } steg",
         "${ steps } steg"
+      ],
+      "We support most files": [
+        "Vi stöder de flesta filerna"
       ]
     },
     "info": {
@@ -14552,6 +14564,21 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ node.activeRevision.contentAuthor.error.error }": [
         "Vi kunde inte bekräfta att filinnehållet laddades upp av ${ claimedContentAuthor }. Orsaken är: ${ node.activeRevision.contentAuthor.error.error }"
+      ],
+      "Connect your Google account": [
+        "Anslut ditt Google-konto"
+      ],
+      "Setting up your import": [
+        "Ställer in din import"
+      ],
+      "Sign in to Google": [
+        "Logga in till Google"
+      ],
+      "Something went wrong": [
+        "Något gick fel"
+      ],
+      "Your import is starting": [
+        "Din import startar"
       ]
     },
     "Today icon tooltip in mini calendar": {
