@@ -1,6 +1,6 @@
+import { addressBuilder } from '@proton/calendar/testing/builders';
 import { MAX_ATTENDEES } from '@proton/shared/lib/calendar/constants';
 import { ADDRESS_SEND } from '@proton/shared/lib/constants';
-import { addressBuilder } from '@proton/testing/lib/builders';
 
 import {
     getCanChangeCalendarOfEvent,
