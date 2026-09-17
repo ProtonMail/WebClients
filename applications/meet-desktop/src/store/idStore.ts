@@ -1,5 +1,5 @@
-import { createHash, randomUUID } from "node:crypto";
 import Store from "electron-store";
+import { createHash, randomUUID } from "node:crypto";
 import { z } from "zod";
 
 const store = new Store<{ appID: AppID }>();
@@ -20,7 +20,7 @@ export const saveAppID = async () => {
     }
 };
 
-export const generateAppID = async () => {
+const generateAppID = async () => {
     const id = randomUUID();
     const hash = createHash("sha256").update(id).digest("hex");
     const distribution = parseInt(hash, 16) / Math.pow(2, 256);
