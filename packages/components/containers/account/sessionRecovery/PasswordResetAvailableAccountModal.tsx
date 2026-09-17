@@ -12,7 +12,8 @@ import {
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import metrics, { observeApiError } from '@proton/metrics';
+import metrics from '@proton/metrics';
+import observeApiError from '@proton/metrics/observeApiError';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';

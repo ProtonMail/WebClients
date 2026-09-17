@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 
-import metrics, { observeApiError } from '@proton/metrics/index';
+import metrics from '@proton/metrics';
+import observeApiError from '@proton/metrics/observeApiError';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';

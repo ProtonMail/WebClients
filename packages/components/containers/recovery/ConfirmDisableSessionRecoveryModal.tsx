@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { toggleSignedInReset } from '@proton/account/recovery/userSettingsActions';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
-import metrics, { observeApiError } from '@proton/metrics';
+import metrics from '@proton/metrics';
+import observeApiError from '@proton/metrics/observeApiError';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
 

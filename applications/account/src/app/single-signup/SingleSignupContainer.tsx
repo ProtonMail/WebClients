@@ -11,7 +11,8 @@ import UnAuthenticated from '@proton/components/containers/authentication/UnAuth
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import metrics, { observeApiError } from '@proton/metrics';
+import metrics from '@proton/metrics';
+import observeApiError from '@proton/metrics/observeApiError';
 import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrencies';
 import { usePaymentsTelemetry } from '@proton/payments-ui/client-extensions/usePaymentsTelemetry';
 import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
