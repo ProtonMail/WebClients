@@ -1,9 +1,9 @@
 import '@testing-library/jest-dom';
 
-import '@proton/testing/lib/mockFlagSvg';
-import '@proton/testing/lib/mockMatchMedia';
+import '@proton/components/testing/mockFlagSvg';
+import '@proton/components/testing/mockMatchMedia';
 import '@proton/testing/lib/mockTelemetry';
-import '@proton/testing/lib/mockUnleash';
+import '@proton/unleash/testing/mockUnleash';
 
 // Silence warnings on expect to throw https://github.com/testing-library/react-testing-library/issues/157
 // console.error = () => {};

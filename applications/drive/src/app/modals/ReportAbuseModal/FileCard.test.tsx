@@ -2,9 +2,9 @@ import React from 'react';
 
 import { screen } from '@testing-library/react';
 
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { NodeType } from '@proton/drive';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 
 import { FileCard } from './FileCard';
 
