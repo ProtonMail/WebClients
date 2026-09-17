@@ -357,6 +357,11 @@ enum MeetFeatureFlag {
     MeetUseCachedServerTime = 'MeetUseCachedServerTime',
     MeetBackgroundEffectsOnMobileBrowsers = 'MeetBackgroundEffectsOnMobileBrowsers',
     MeetParticipantsLayouts = 'MeetParticipantsLayouts',
+    MeetCpuOptimizations = 'MeetCpuOptimizations',
+    MeetScreenShareAudioSupportedElectronVersion = 'MeetScreenShareAudioSupportedElectronVersion',
+    MeetChatMentions = 'MeetChatMentions',
+    MeetOpenMessageFromPreview = 'MeetOpenMessageFromPreview',
+    MeetForceDisableNoiseCancellationOnEdge = 'MeetForceDisableNoiseCancellationOnEdge',
 }
 
 enum LumoFeatureFlag {
