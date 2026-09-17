@@ -23,8 +23,6 @@ import { createPromise, wait } from '../helpers/promise';
 import { setUID } from '../helpers/sentry';
 import { getItem, removeItem, setItem } from '../helpers/sessionStorage';
 import type { Api } from '../interfaces';
-import { getSharedMetricsClient } from '../metrics/sharedMetricsClient';
-import { telemetry } from '../telemetry';
 
 const setupComplete = Symbol('setup complete');
 
@@ -43,7 +41,11 @@ interface Context {
     challenge: ReturnType<typeof createPromise<ChallengePayload | undefined>>;
 }
 
-export const createUnauthenticatedApi = (api: Api) => {
+export interface UnauthenticatedApiOptions {
+    onUID?: (UID: string) => void;
+}
+
+export const createUnauthenticatedApi = (api: Api, { onUID }: UnauthenticatedApiOptions = {}) => {
     const unAuthStorageKey = 'ua_uid';
 
     const context: Context = {
@@ -60,8 +62,7 @@ export const createUnauthenticatedApi = (api: Api) => {
         setItem(unAuthStorageKey, UID);
 
         setUID(UID);
-        getSharedMetricsClient().setAuthHeaders(UID);
-        telemetry.setAuthHeaders(UID || '');
+        onUID?.(UID);
 
         context.UID = UID;
         context.auth.set = false;
