@@ -1,14 +1,14 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { mockUseSubscription } from '@proton/account/testing/mockUseSubscription';
+import { mockUseUser } from '@proton/account/testing/mockUseUser';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/payments/core/api/api';
 import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { SavedPaymentMethod } from '@proton/payments/core/interface';
 import { APPS } from '@proton/shared/lib/constants';
-import { mockUseSubscription } from '@proton/testing/lib/mockUseSubscription';
-import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
 import useEventManager from '../../../hooks/useEventManager';
 import useModals from '../../../hooks/useModals';

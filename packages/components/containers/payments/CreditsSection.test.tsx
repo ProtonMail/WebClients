@@ -2,14 +2,14 @@ import { getModelState } from '@proton/account/tests';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { APPS } from '@proton/shared/lib/constants';
-import { applyHOCs } from '@proton/testing/lib/context/hocs/helpers';
-import { withApi } from '@proton/testing/lib/context/hocs/with-api';
-import { withCache } from '@proton/testing/lib/context/hocs/with-cache';
-import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
-import { getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
 import { userDefault } from '../../hooks/helpers/tests/index';
+import { applyHOCs } from '../../testing/hocs/helpers';
+import { withApi } from '../../testing/hocs/with-api';
+import { renderWithProviders } from '../../testing/renderWithProviders';
+import { withCache } from '../../testing/with-cache';
 import CreditsSection from './CreditsSection';
 
 let subscription: Subscription;

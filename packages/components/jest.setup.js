@@ -1,15 +1,17 @@
 import '@testing-library/jest-dom';
 import fetch from 'cross-fetch';
 
-import '@proton/testing/lib/mockFlagSvg';
-import '@proton/testing/lib/mockMatchMedia';
-import '@proton/testing/lib/mockUnleash';
+import '@proton/unleash/testing/mockUnleash';
 
 import './jest.mock';
+import './testing/mockFlagSvg';
+import './testing/mockMatchMedia';
 
 // Silence warnings on expect to throw https://github.com/testing-library/react-testing-library/issues/157
+/* eslint-disable no-console -- test setup silences React/testing-library noise */
 console.error = () => {};
 console.warn = () => {};
+/* eslint-enable no-console */
 
 window.ResizeObserver = jest.fn().mockImplementation(() => ({
     observe: jest.fn(),

@@ -7,7 +7,7 @@ import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { MAX_RECIPIENTS } from '@proton/shared/lib/mail/mailSettings';
-import { addApiMock } from '@proton/testing/lib/api';
+import { addApiMock } from '@proton/test-api/api';
 
 import { clearAll, getCard, minimalCache, mockedCryptoApi, renderWithProviders } from '../tests/render';
 import type { ContactGroupEditProps } from './ContactGroupEditModal';

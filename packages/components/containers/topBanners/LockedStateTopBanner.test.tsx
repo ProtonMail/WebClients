@@ -1,15 +1,15 @@
 import { screen } from '@testing-library/react';
 
 import { useGetPreviousSubscription } from '@proton/account/previousSubscription/hooks';
+import { buildUser } from '@proton/account/testing/buildUser';
 import { getModelState } from '@proton/account/tests';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { PreviousSubscription } from '@proton/payments/core/interface';
 import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { UserLockedFlags } from '@proton/shared/lib/interfaces';
-import { buildUser } from '@proton/testing/builders/user';
-import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 
+import { renderWithProviders } from '../../testing/renderWithProviders';
 import { LockedStateTopBanner } from './LockedStateTopBanner';
 
 jest.mock('@proton/account/previousSubscription/hooks', () => ({

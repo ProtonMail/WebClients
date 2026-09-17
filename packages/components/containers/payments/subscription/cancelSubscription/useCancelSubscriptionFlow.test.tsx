@@ -1,6 +1,7 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { getOrganizationState } from '@proton/account/testing/redux-state';
 import { getModelState } from '@proton/account/tests';
 import { changeRenewState, deleteSubscription } from '@proton/payments/core/api/api';
 import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
@@ -9,13 +10,13 @@ import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { PLANS_MAP } from '@proton/payments/testing/data-plans';
+import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import { apiMock } from '@proton/testing/lib/api';
-import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
-import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
+import { apiMock } from '@proton/test-api/api';
 
+import { renderWithProviders } from '../../../../testing/renderWithProviders';
 import { organization } from '../__mocks__/data';
 import { useCancelSubscriptionFlow } from './useCancelSubscriptionFlow';
 
