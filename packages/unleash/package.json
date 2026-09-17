@@ -17,7 +17,9 @@
         "./UnleashFeatureFlagsVariants": "./UnleashFeatureFlagsVariants.ts",
         "./Flags": "./UnleashFeatureFlags.ts",
         "./proxy": "./proxy.ts",
-        "./UnleashCookiesProvider": "./storage/UnleashCookiesProvider.ts"
+        "./UnleashCookiesProvider": "./storage/UnleashCookiesProvider.ts",
+        "./testing/mockUnleash": "./testing/mockUnleash.ts",
+        "./testing/vitest/mockUnleash": "./testing/vitest/mockUnleash.ts"
     },
     "scripts": {
         "check-types": "tsc",
