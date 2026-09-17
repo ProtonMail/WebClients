@@ -21,6 +21,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { useStableCallback } from '../../../hooks/useStableCallback';
 import type { AudioTrackProcessor } from '../../../processors/noise-cancellation/types';
+import { useIsNoiseCancellationDisabledByDefault } from '../../../processors/noise-cancellation/useIsNoiseCancellationDisabledByDefault';
 import { useNoiseCancellationModel } from '../../../processors/noise-cancellation/useNoiseCancellationModel';
 import { audioQuality } from '../../../qualityConstants';
 import type { AudioToggleParams, SwitchActiveDevice, ToggleAudioType } from '../../../types';
@@ -67,6 +68,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
     const { reportMeetError: reportError } = useMeetErrorReporting();
 
     const noiseCancellationModel = useNoiseCancellationModel();
+    const isNoiseCancellationDisabledByDefault = useIsNoiseCancellationDisabledByDefault();
 
     const activeMicrophoneDeviceId = useMeetSelector(selectActiveMicrophoneId);
     const initialAudioState = useMeetSelector(selectInitialAudioState);
@@ -76,7 +78,8 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
 
     const [noiseFilter, setNoiseFilter] = useState(() => {
         const persisted = getPersistedNoiseFilter();
-        return persisted ?? true;
+        // Edge's default power saving mode causes issues with the noise filter, making sure noise cancellation is disabled by default.
+        return isNoiseCancellationDisabledByDefault ? false : (persisted ?? true);
     });
     const { isMicrophoneEnabled, localParticipant } = useLocalParticipant();
 
