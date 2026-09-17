@@ -106,7 +106,12 @@ export function initializeUpdateChecks() {
 
     updateSession().setCertificateVerifyProc(verifyDownloadCertificate);
 
-    checkForValidUpdates();
+    if (process.env.SKIP_INITIAL_UPDATE_CHECK === "true") {
+        updateLogger.info("SKIPPING INITIAL UPDATE CHECK");
+    } else {
+        updateLogger.info("CHECKING UPDATES AT LAUNCH");
+        checkForValidUpdates();
+    }
     scheduleNextCheck();
 }
 
@@ -233,6 +238,7 @@ function getNewUpdate(
 
 function scheduleNextCheck() {
     const delay = pkg.config.updateInterval + updateUtils.getVersionManifestFetchJitterMs();
+    updateLogger.info(`SCHEDULING NEXT CHECK IN: ${delay / 1000 / 60} minutes`);
     setTimeout(async () => {
         try {
             await checkForValidUpdates();
