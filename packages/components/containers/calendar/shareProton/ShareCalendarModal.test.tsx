@@ -8,11 +8,11 @@ import { setupServer } from 'msw/node';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { addressBuilder, calendarBuilder } from '@proton/calendar/testing/builders';
+import { getHandlers } from '@proton/calendar/testing/handlers';
 import { MIME_TYPES, PGP_SCHEMES } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
 import type { EncryptionPreferences } from '@proton/shared/lib/mail/encryptionPreferences';
 import { mockApiWithServer } from '@proton/test-api/mockApiWithServer';
-import { getHandlers } from '@proton/testing/lib/handlers';
 
 import useGetEncryptionPreferences from '../../../hooks/useGetEncryptionPreferences';
 import { mockNotifications } from '../../../testing/mockNotifications';

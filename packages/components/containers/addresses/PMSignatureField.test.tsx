@@ -3,10 +3,10 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { mockUseOrganization } from '@proton/account/testing/mockUseOrganization';
 import { mockUseUser } from '@proton/account/testing/mockUseUser';
 import { mockUseUserSettings } from '@proton/account/testing/mockUseUserSettings';
+import { mockUseApi } from '@proton/app-context/testing/mockUseApi';
 import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
 import { PLANS } from '@proton/payments/core/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import { mockUseApi } from '@proton/testing/lib/mockUseApi';
 
 import { mockNotifications } from '../../testing/mockNotifications';
 import PMSignatureField from './PMSignatureField';

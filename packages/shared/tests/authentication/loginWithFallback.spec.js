@@ -1,4 +1,4 @@
-import { disableRandomMock, initRandomMock } from '@proton/testing/lib/mockRandomValues';
+import { disableRandomMock, initRandomMock } from '@proton/test-api/mockRandomValues';
 
 import loginWithFallback from '../../lib/authentication/loginWithFallback';
 import { Modulus, Salt, ServerEphemeral, ServerProof } from './login.data';

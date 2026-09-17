@@ -16,7 +16,11 @@
         "./useCache": "./useCache.ts",
         "./useConfig": "./useConfig.ts",
         "./useNotifications": "./useNotifications.ts",
+        "./testing/mockTelemetry": "./testing/mockTelemetry.ts",
+        "./testing/mockUseApi": "./testing/mockUseApi.ts",
+        "./testing/mockUseConfig": "./testing/mockUseConfig.ts",
         "./testing/mockUseNotifications": "./testing/mockUseNotifications.ts",
+        "./testing/vitest/mockUseConfig": "./testing/vitest/mockUseConfig.ts",
         "./testing/vitest/mockUseNotifications": "./testing/vitest/mockUseNotifications.ts"
     },
     "scripts": {

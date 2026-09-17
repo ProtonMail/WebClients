@@ -19,6 +19,7 @@
         "./proxy": "./proxy.ts",
         "./UnleashCookiesProvider": "./storage/UnleashCookiesProvider.ts",
         "./testing/mockUnleash": "./testing/mockUnleash.ts",
+        "./testing/mockUseFlag": "./testing/mockUseFlag.ts",
         "./testing/vitest/mockUnleash": "./testing/vitest/mockUnleash.ts"
     },
     "scripts": {

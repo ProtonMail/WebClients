@@ -21,6 +21,7 @@ import CalendarModelEventManagerProvider from '@proton/components/containers/eve
 import ModalsChildren from '@proton/components/containers/modals/Children';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
+import { registerFeatureFlagsApiMock } from '@proton/features/testing/features';
 import type { MessagesState } from '@proton/mail/store/messages/messagesTypes';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
@@ -36,7 +37,6 @@ import type {
 } from '@proton/shared/lib/interfaces';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 import { DEFAULT_MAIL_SETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
-import { registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
 
 import { ComposerAssistantProvider } from '../../components/assistant/provider/ComposerAssistantProvider';
 import { LabelActionsContextProvider } from '../../components/sidebar/EditLabelContext';

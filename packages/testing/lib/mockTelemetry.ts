@@ -1,11 +1,2 @@
-jest.mock(
-    '@protontech/telemetry',
-    () => ({
-        __esModule: true,
-        ProtonTelemetry: jest.fn(() => ({
-            sendCustomEvent: jest.fn(),
-            sendPageView: jest.fn(),
-        })),
-    }),
-    { virtual: true }
-);
+/** @deprecated Import from '@proton/app-context/testing/mockTelemetry' */
+import '@proton/app-context/testing/mockTelemetry';

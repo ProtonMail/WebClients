@@ -33,7 +33,6 @@
         "./lib/initialReduxState": "./lib/initialReduxState.ts",
         "./lib/mockApiWithServer": "./lib/mockApiWithServer.ts",
         "./lib/mockMatchMedia": "./lib/mockMatchMedia.ts",
-        "./lib/mockModals": "./lib/mockModals.ts",
         "./lib/mockNotifications": "./lib/mockNotifications.ts",
         "./lib/mockRandomValues": "./lib/mockRandomValues.ts",
         "./lib/mockSpotlight": "./lib/mockSpotlight.tsx",
@@ -81,12 +80,10 @@
         "pretty": "prettier --write $(find . -path ./node_modules -prune -o -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')"
     },
     "dependencies": {
-        "@proton/sieve": "workspace:^",
         "@proton/test-api": "workspace:^"
     },
     "devDependencies": {
         "eslint": "^10.10.0",
-        "msw": "2.12.14",
         "typescript": "^6.0.3",
         "vitest": "^4.1.11"
     }

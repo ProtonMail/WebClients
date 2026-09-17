@@ -3,11 +3,11 @@ import { sub } from 'date-fns';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { mockUseConfig } from '@proton/app-context/testing/mockUseConfig';
 import { useApi } from '@proton/app-context/useApi';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import { mockUseConfig } from '@proton/testing/lib/mockUseConfig';
 
 import EditEmailSubscription from './EditEmailSubscription';
 

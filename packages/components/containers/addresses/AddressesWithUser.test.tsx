@@ -8,10 +8,10 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { mockUseFeatureBarrel } from '@proton/features/testing/mockUseFeatureBarrel';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { ADDRESS_FLAGS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
-import { mockUseFeatureBarrel } from '@proton/testing/lib/mockUseFeatureBarrel';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { SortableList } from '../../components/dnd/SortableList';
