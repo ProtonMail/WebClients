@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react';
 
+import { usePlans } from '@proton/account/plans/hooks';
+import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
-import { isMainCurrency } from '@proton/payments/core/currencies';
 import type { Currency } from '@proton/payments/core/interface';
+import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import clsx from '@proton/utils/clsx';
 
 import { getNormalizedPlanTitleToPlus } from '../../../../containers/payments/subscription/plusToPlusHelper';
-import { useRegionalPricing } from '../../../../hooks/useRegionalPricing';
 import { useAutomaticCurrency } from '../../../../payments/client-extensions/index';
+import { usePaymentsApi } from '../../../../payments/react-extensions/usePaymentsApi';
 import Price from '../../../price/Price';
 import SkeletonLoader from '../../../skeletonLoader/SkeletonLoader';
-import { ZERO_NINETY_NINE_AMOUNT } from './interface';
 
 import './components/ZeroNinetyNineOffer.scss';
 
@@ -19,37 +20,38 @@ interface Props {
 }
 
 export const useZeroNinetyNinePromotionPrice = ({ priceWithGradient = false }: Props) => {
-    const { fetchPrice } = useRegionalPricing();
+    const [plans] = usePlans();
+    const { paymentsApi } = usePaymentsApi();
     const [currency, loadingCurrency] = useAutomaticCurrency();
 
     const [amount, setAmount] = useState<number>();
 
     useEffect(() => {
-        const fetchRegionalPrice = async (curr: Currency) => {
-            if (isMainCurrency(curr)) {
-                setAmount(ZERO_NINETY_NINE_AMOUNT);
-                return;
-            }
+        const fetchPromotionPrice = async (curr: Currency) => {
+            const planIDs = { [PLANS.MAIL]: 1 };
 
-            const result = await fetchPrice({
-                data: {
-                    Plans: { [PLANS.MAIL]: 1 },
-                    Currency: curr,
-                    Cycle: CYCLE.MONTHLY,
-                    CouponCode: COUPON_CODES.TRYMAILPLUS0926,
-                },
-                currency: curr,
+            const checkResult = await paymentsApi.checkSubscription({
+                Plans: planIDs,
+                Currency: curr,
+                Cycle: CYCLE.MONTHLY,
+                CouponCode: COUPON_CODES.TRYMAILPLUS0926,
             });
 
-            setAmount(result);
+            const checkout = getCheckoutUi({
+                planIDs,
+                plansMap: getPlansMap(plans?.plans ?? [], curr, false),
+                checkResult,
+            });
+
+            setAmount(checkout.withDiscountPerCycle);
         };
 
-        if (!currency) {
+        if (!currency || !plans) {
             return;
         }
 
-        void fetchRegionalPrice(currency);
-    }, [currency, loadingCurrency]);
+        void fetchPromotionPrice(currency);
+    }, [currency, loadingCurrency, plans]);
 
     const pricingTitle = amount ? (
         <Price
@@ -66,6 +68,7 @@ export const useZeroNinetyNinePromotionPrice = ({ priceWithGradient = false }: P
     return {
         planName: getNormalizedPlanTitleToPlus(PLANS.MAIL),
         amountDue: amount,
+        hasPrice: Boolean(amount),
         pricingTitle,
     };
 };

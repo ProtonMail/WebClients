@@ -1,12 +1,15 @@
-import { c } from 'ttag';
+import type { ReactNode } from 'react';
 
-import { useZeroNinetyNinePromotionPrice } from '../useZeroNinetyNinePromotionPrice';
+import { c } from 'ttag';
 
 import './ZeroNinetyNineOffer.scss';
 
-export const ZeroNinetyNineTitle = () => {
-    const { pricingTitle, planName } = useZeroNinetyNinePromotionPrice({ priceWithGradient: true });
+interface ZeroNinetyNineTitleProps {
+    pricingTitle: ReactNode;
+    planName: string;
+}
 
+export const ZeroNinetyNineTitle = ({ pricingTitle, planName }: ZeroNinetyNineTitleProps) => {
     const title = c('Offer').jt`Upgrade your productivity for just ${pricingTitle} with ${planName}`;
     const subtitle = c('Offer').t`Limited-time offer, valid for your first month`;
 

@@ -16,12 +16,19 @@ interface Props {
     onUpsellClick: () => void;
     onNeverShow: () => void;
     daysSinceOffer: number;
+    planName: string;
 }
 
 const MB = 1024 * 1024;
 const FREE_CHECKLIST_SPACE_MB = 500;
 
-export const MailPostSignup099Content = ({ daysSinceOffer, pricingTitle, onUpsellClick, onNeverShow }: Props) => {
+export const MailPostSignup099Content = ({
+    daysSinceOffer,
+    pricingTitle,
+    onUpsellClick,
+    onNeverShow,
+    planName,
+}: Props) => {
     const [user] = useUser();
     const hasFinishedChecklist = user.MaxSpace / MB > FREE_CHECKLIST_SPACE_MB;
 
@@ -53,7 +60,7 @@ export const MailPostSignup099Content = ({ daysSinceOffer, pricingTitle, onUpsel
 
     return (
         <section className="p-6 pt-12">
-            <ZeroNinetyNineTitle />
+            <ZeroNinetyNineTitle planName={planName} pricingTitle={pricingTitle} />
             <ZeroNinetyNineTable features={features} />
             <ZeroNinetyNineFooter onUpsellClick={onUpsellClick} onNeverShow={onNeverShow} />
         </section>

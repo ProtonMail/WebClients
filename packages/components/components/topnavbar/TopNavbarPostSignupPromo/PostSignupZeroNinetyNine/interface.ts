@@ -13,9 +13,6 @@ export const ZERO_NINETY_NINE_EXTENDED_REMINDER_DAY = 25;
 export const ZERO_NINETY_NINE_DURATION = 30;
 export const ZERO_NINETY_NINE_ACCOUNT_AGE_HOURS = 5;
 
-/** Price in minor units for the main currencies (USD/EUR/CHF), where the coupon price is fixed. */
-export const ZERO_NINETY_NINE_AMOUNT = 99;
-
 export enum ZERO_NINETY_NINE_OFFER_STATE {
     notStarted = 0,
     firstSpotlight = 1,
