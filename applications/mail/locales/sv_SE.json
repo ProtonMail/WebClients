@@ -1547,8 +1547,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -3185,32 +3184,6 @@
     "Contact image": {
       "Contact image": [
         "Kontaktbild"
-      ]
-    },
-    "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
-      "Main": [
-        "Huvud"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Other": [
-        "Annat"
-      ],
-      "Pager": [
-        "Personsökare"
-      ],
-      "Personal": [
-        "Privat"
-      ],
-      "Work": [
-        "Arbete"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -5035,9 +5008,6 @@
       ],
       "IMAP server is required": [
         "IMAP-server är obligatoriskt"
-      ],
-      "Incorrect username": [
-        "Felaktigt användarnamn"
       ],
       "Invalid code": [
         "Ogiltig kod"
@@ -7563,8 +7533,14 @@
       "Center": [
         "Centrera"
       ],
+      "Change a display setting": [
+        "Ändra en visningsinställning"
+      ],
       "Change display setting": [
         "Ändra visningsinställning"
+      ],
+      "Change how your mail is grouped": [
+        "Ändra hur din e-post är grupperad"
       ],
       "Change your password": [
         "Ändra ditt lösenord"
@@ -8132,7 +8108,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8178,6 +8155,9 @@
       ],
       "Label ${ emails }": [
         "Etikett ${ emails }"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "Märk ${ emails } som ${ names }"
       ],
       "Label all imported messages as": [
         "Märk alla importerade meddelanden som"
@@ -8326,6 +8306,9 @@
       "Move ${ emails }": [
         "Flytta ${ emails }"
       ],
+      "Move ${ emails } to ${ destination }": [
+        "Flytta ${ emails } till ${ destination }"
+      ],
       "Move emails": [
         "Flytta e-post"
       ],
@@ -8358,6 +8341,9 @@
       ],
       "No conversation to read": [
         "Ingen konversation att läsa"
+      ],
+      "No draft open": [
+        "Inget utkast öppet"
       ],
       "No email address": [
         "Ingen e-postadress"
@@ -8448,6 +8434,9 @@
       ],
       "Opened ${ location }": [
         "Öppnade ${ location }"
+      ],
+      "Opened a draft": [
+        "Öppnade ett utkast"
       ],
       "Opened a problem report": [
         "Öppnade en problemrapport"
@@ -8633,6 +8622,9 @@
         "Läs ${ count } meddelande i denna tråd",
         "Läs ${ count } meddelanden i denna tråd"
       ],
+      "Read the open draft": [
+        "Läs det öppnade utkastet"
+      ],
       "Read your ${ count } filter": [
         "Läs ditt ${ count } filter",
         "Läs ditt ${ count } filter"
@@ -8689,6 +8681,9 @@
       ],
       "Restore": [
         "Återställ"
+      ],
+      "Rewrote the draft": [
+        "Skrev om utkastet"
       ],
       "Right to Left": [
         "Höger till vänster"
