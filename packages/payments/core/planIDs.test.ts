@@ -1,7 +1,7 @@
-import { buildSubscription } from '@proton/payments/testing/buildSubscription';
-import { PLANS_MAP, getLongTestPlans } from '@proton/payments/testing/data-plans';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
+import { buildSubscription } from '../testing/buildSubscription';
+import { PLANS_MAP, getLongTestPlans } from '../testing/data-plans';
 import { ADDON_NAMES, ADDON_PREFIXES, PLANS } from './constants';
 import type { PlanIDs } from './interface';
 import { getPlanNameFromIDs } from './plan/helpers';

@@ -1,6 +1,6 @@
-import { getTestPlans } from '@proton/payments/testing/data-plans';
 import type { User, UserModel } from '@proton/shared/lib/interfaces';
 
+import { getTestPlans } from '../testing/data-plans';
 import { DEFAULT_PAYMENT_VENDOR_STATES, FREE_SUBSCRIPTION, PLANS } from './constants';
 import {
     getAvailableCurrencies,
