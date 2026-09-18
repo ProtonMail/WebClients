@@ -121,7 +121,7 @@ export const MediaManagementProvider = ({
             let selectedDeviceId = deviceId;
             const targetDeviceId = deviceType === 'audiooutput' && isSystemDefaultDevice ? '' : deviceId;
 
-            const activeDeviceIdByType: Record<'audioinput' | 'audiooutput' | 'videoinput', string> = {
+            const activeDeviceIdByType: Record<'audioinput' | 'audiooutput' | 'videoinput', string | null> = {
                 audioinput: activeMicrophoneDeviceId,
                 audiooutput: activeAudioOutputDeviceId,
                 videoinput: activeCameraDeviceId,

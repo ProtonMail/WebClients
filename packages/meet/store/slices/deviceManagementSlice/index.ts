@@ -24,7 +24,7 @@ const deviceManagementInitialState: DeviceManagementState = {
     preferredSpeakerId: null,
     activeCameraId: '',
     activeMicrophoneId: '',
-    activeAudioOutputId: '',
+    activeAudioOutputId: null,
     initialCameraState: false,
     initialAudioState: false,
     userCameraIntent: null,
