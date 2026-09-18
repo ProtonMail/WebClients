@@ -36,7 +36,7 @@ export type EncryptedEntityTable<
 export const validateEncryptedValue = <T = any>(value: unknown): value is DeriveEncryptedEntity<T> =>
     Boolean(value && isObject(value) && `__encryptedData` in value);
 
-export const validateEncryptableValue = <T = any>(value: unknown): value is T =>
+const validateEncryptableValue = <T = any>(value: unknown): value is T =>
     Boolean(value && isObject(value) && !(`__encryptedData` in value));
 
 export const createEncryptionMiddleware = (config: EncryptionMiddlewareConfig): Middleware<DBCore>['create'] => {
