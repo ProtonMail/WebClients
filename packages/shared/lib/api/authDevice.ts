@@ -5,7 +5,11 @@ export enum AuthDeviceErrorCodes {
     AUTH_DEVICE_REJECTED = 10_303,
 }
 
-export const addAuthDeviceConfig = (data: { Name: string; ActivationToken?: string }) => ({
+export const addAuthDeviceConfig = (data: {
+    Name: string;
+    ActivationToken?: string;
+    ConfirmationCodeVersion: number;
+}) => ({
     method: 'post',
     url: 'auth/v4/devices',
     data,
