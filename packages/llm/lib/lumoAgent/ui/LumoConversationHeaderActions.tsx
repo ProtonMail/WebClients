@@ -1,41 +1,35 @@
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcBroom } from '@proton/icons/icons/IcBroom';
 import { IcBug } from '@proton/icons/icons/IcBug';
-import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 interface Props {
     hasConversation: boolean;
     clear: () => void;
-    getDebugTranscript: () => string;
+    /** Drafts a report carrying the debug transcript. Absent in a host with no composer to open. */
+    openDebugReport?: () => void;
 }
 
-/** Shared so every host's header uses the same debug-transcript and clear actions. */
-export const LumoConversationHeaderActions = ({ hasConversation, clear, getDebugTranscript }: Props) => {
-    const { createNotification } = useNotifications();
-
+/** Shared so every host's header uses the same report and clear actions. */
+export const LumoConversationHeaderActions = ({ hasConversation, clear, openDebugReport }: Props) => {
     if (!hasConversation) {
         return null;
     }
 
-    const copyTranscript = () => {
-        textToClipboard(getDebugTranscript());
-        createNotification({ text: c('Info').t`Debug transcript copied` });
-    };
-
-    const copyLabel = c('Action').t`Copy debug transcript`;
+    const reportLabel = c('Action').t`Report a problem`;
     const clearLabel = c('Action').t`Clear conversation`;
 
     return (
         <>
-            <Tooltip title={copyLabel}>
-                <Button icon color="weak" shape="ghost" onClick={copyTranscript}>
-                    <IcBug alt={copyLabel} />
-                </Button>
-            </Tooltip>
+            {openDebugReport && (
+                <Tooltip title={reportLabel}>
+                    <Button icon color="weak" shape="ghost" onClick={openDebugReport}>
+                        <IcBug alt={reportLabel} />
+                    </Button>
+                </Tooltip>
+            )}
             <Tooltip title={clearLabel}>
                 <Button icon color="weak" shape="ghost" onClick={clear}>
                     <IcBroom alt={clearLabel} />

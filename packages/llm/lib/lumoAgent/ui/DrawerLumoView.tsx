@@ -32,7 +32,7 @@ const DrawerLumoView = () => {
         confirm,
         cancel,
         clear,
-        getDebugTranscript,
+        openDebugReport,
     } = useLumoAgentDrawer();
     const theme = useTheme();
     const { toggleDrawerApp } = useDrawer();
@@ -53,7 +53,7 @@ const DrawerLumoView = () => {
                 <LumoConversationHeaderActions
                     hasConversation={hasConversation}
                     clear={clear}
-                    getDebugTranscript={getDebugTranscript}
+                    openDebugReport={openDebugReport}
                 />
             }
             contentClassName="drawer-lumo flex flex-column flex-nowrap"
