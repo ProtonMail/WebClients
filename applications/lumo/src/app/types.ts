@@ -1158,11 +1158,18 @@ export type MasterKeysBundle = {
     masterKeys: MasterKeysById;
 };
 
+export type MasterKeyFailureReason = 'undecryptable_envelopes' | 'no_primary_envelope' | 'unknown';
+
+export type MasterKeyFailure = {
+    message: string;
+    reason: MasterKeyFailureReason;
+};
+
 export type MasterKeyState =
     | { status: 'loading' }
     | { status: 'ready'; primaryMasterKeyId: string; primaryMasterKey: Base64; masterKeys: MasterKeysById }
     | { status: 'ineligible' }
-    | { status: 'failed'; message: string };
+    | { status: 'failed'; message: string; reason: MasterKeyFailureReason };
 
 export type Credentials = {
     masterKeyState: MasterKeyState;

@@ -95,18 +95,18 @@ export function startLumoUserSettingsListeners(startListening: AppStartListening
 
             try {
                 // First try to load from remote API (this should take precedence)
-                let remoteLoadSuccess = false;
+                let loadedFromRemote = false;
                 try {
                     console.log('LumoUserSettingsListener: Attempting to load from remote API');
                     const result = await listenerApi.dispatch(loadLumoUserSettingsFromRemote()).unwrap();
                     console.log('LumoUserSettingsListener: Remote API load result:', result);
-                    remoteLoadSuccess = true;
+                    loadedFromRemote = result !== null;
                 } catch (error) {
                     safeLogger.warn('Failed to load Lumo user settings from remote API:', error);
                 }
 
-                // If remote API failed, fallback to localStorage
-                if (!remoteLoadSuccess) {
+                // If remote API failed or returned undecryptable data, fallback to localStorage
+                if (!loadedFromRemote) {
                     const { userSettings: storedUserSettings, needsMasterKeyMigration } =
                         await loadUserSettingsFromStorage(masterKeysBundle);
                     console.log('LumoUserSettingsListener: Loaded from localStorage:', storedUserSettings);
