@@ -1,15 +1,12 @@
-export const CHALLENGE_PATHNAME = '/challenge/v5/html';
-
 export interface ChallengeSrcOptions {
     type: number;
     name: string;
-    /** Kept for parity with v4. The frame renders nothing, but the API logs it. */
     lang?: string;
     dir?: 'ltr' | 'rtl';
     retry?: number;
 }
 
-/** Caller resolves the API URL; this adds the challenge parameters. */
+/** Caller resolves the API URL, including the version's pathname; this adds the challenge parameters. */
 export const getChallengeSrc = (url: string | URL, { type, name, lang, dir, retry }: ChallengeSrcOptions) => {
     const result = new URL(url.toString());
     result.searchParams.set('Type', `${type}`);

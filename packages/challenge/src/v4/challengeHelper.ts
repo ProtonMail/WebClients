@@ -1,17 +1,3 @@
-// Select option is broken on react. Correct the HTML here.
-export const normalizeSelectOptions = (el: HTMLElement) => {
-    el.querySelectorAll('select').forEach((selectEl) => {
-        for (let i = 0; i < selectEl.children.length; ++i) {
-            const liEl = selectEl.children[i];
-            if (i === selectEl.selectedIndex) {
-                liEl.setAttribute('selected', 'true');
-            } else {
-                liEl.removeAttribute('selected');
-            }
-        }
-    });
-};
-
 // To trigger the `onChange` handler and bypass the dedupe functionality which doesn't trigger it in react.
 // Taken from https://github.com/facebook/react/issues/10135#issuecomment-314441175
 const setNativeValue = (element: HTMLInputElement, value: string) => {

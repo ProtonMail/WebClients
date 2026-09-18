@@ -1,12 +1,6 @@
-export type ChallengeLogType = 'message' | 'error' | 'step';
+import type { ChallengeResult } from '../shared/interface';
 
-export interface ChallengeLog {
-    type: ChallengeLogType;
-    text: string;
-    data?: unknown;
-}
-
-export type ChallengeResult = { [key: string]: string } | undefined;
+export type { ChallengeLog, ChallengeLogType, ChallengeResult } from '../shared/interface';
 
 export interface ChallengeRef {
     getChallenge: () => Promise<ChallengeResult>;
