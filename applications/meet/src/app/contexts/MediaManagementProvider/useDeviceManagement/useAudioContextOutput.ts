@@ -35,7 +35,9 @@ export const useAudioContextOutput = ({
     const isRecoveringRef = useRef(false);
 
     useEffect(() => {
-        if (activeAudioOutputDeviceId) {
+        // '' is the system default, which still has to be pinned: leaving the sink untouched keeps
+        // whatever device the context resolved at construction, before the room had an output.
+        if (activeAudioOutputDeviceId !== null) {
             meetAudioContext.setSinkId(activeAudioOutputDeviceId);
         }
     }, [activeAudioOutputDeviceId, meetAudioContext]);
