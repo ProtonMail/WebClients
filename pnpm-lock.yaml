@@ -2382,10 +2382,10 @@ importers:
         version: link:../../packages/utils
       '@protontech/crypto':
         specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.13.6)(typescript@6.0.3)
+        version: 2.1.3(@types/node@24.13.6)(@typescript/typescript6@6.0.2)
       '@protontech/drive-sdk':
         specifier: ^0.20.1
-        version: 0.20.1(@protontech/crypto@2.1.3(@types/node@24.13.6)(typescript@6.0.3))
+        version: 0.20.1(@protontech/crypto@2.1.3(@types/node@24.13.6)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: ^2.12.0
         version: 2.12.0(react-redux@9.3.0(react@18.3.1))(react@18.3.1)
@@ -2421,7 +2421,7 @@ importers:
         version: 1.4.1
       jest:
         specifier: ^30.5.2
-        version: 30.5.2(@types/node@24.13.6)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@24.13.6)(typescript@6.0.3))
+        version: 30.5.2(@types/node@24.13.6)(supports-color@11.0.0)(ts-node@10.9.2(@types/node@24.13.6)(@typescript/typescript6@6.0.2))
       json-stable-stringify:
         specifier: ^1.3.0
         version: 1.3.0
@@ -2442,7 +2442,7 @@ importers:
         version: 1.47.0(react@18.3.1)
       msw:
         specifier: 2.12.14
-        version: 2.12.14(@types/node@24.13.6)(typescript@6.0.3)
+        version: 2.12.14(@types/node@24.13.6)(@typescript/typescript6@6.0.2)
       pdfjs-dist:
         specifier: 5.4.530
         version: 5.4.530
@@ -2574,8 +2574,8 @@ importers:
         specifier: ^1.80.3
         version: 1.97.1
       typescript:
-        specifier: ^6.0.3
-        version: 6.0.3
+        specifier: npm:@typescript/typescript6@^6.0.2
+        version: '@typescript/typescript6@6.0.2'
       webpack:
         specifier: ^5.111.1
         version: 5.111.1(@swc/core@1.16.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.4(@types/node@24.13.6))(svgo@4.1.0)(webpack-cli@7.2.3)
@@ -30693,42 +30693,6 @@ snapshots:
       jest-util: 30.5.1
       slash: 3.0.0
 
-  '@jest/core@30.5.2(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@24.13.6)(typescript@6.0.3))':
-    dependencies:
-      '@jest/console': 30.5.2
-      '@jest/pattern': 30.5.0
-      '@jest/reporters': 30.5.2(supports-color@11.0.0)
-      '@jest/test-result': 30.5.2
-      '@jest/transform': 30.5.2(supports-color@11.0.0)
-      '@jest/types': 30.5.1
-      '@types/node': 24.13.6
-      ansi-escapes: 4.3.2
-      chalk: 4.1.2
-      ci-info: 4.4.0
-      exit-x: 0.2.2
-      fast-json-stable-stringify: 2.1.0
-      graceful-fs: 4.2.11
-      jest-changed-files: 30.5.1
-      jest-config: 30.5.2(@types/node@24.13.6)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@24.13.6)(typescript@6.0.3))
-      jest-haste-map: 30.5.1
-      jest-message-util: 30.5.1
-      jest-regex-util: 30.5.0
-      jest-resolve: 30.5.1
-      jest-resolve-dependencies: 30.5.2(supports-color@11.0.0)
-      jest-runner: 30.5.2(supports-color@11.0.0)
-      jest-runtime: 30.5.2(supports-color@11.0.0)
-      jest-snapshot: 30.5.2(supports-color@11.0.0)
-      jest-util: 30.5.1
-      jest-validate: 30.5.1
-      jest-watcher: 30.5.2
-      pretty-format: 30.5.1
-      slash: 3.0.0
-    transitivePeerDependencies:
-      - babel-plugin-macros
-      - esbuild-register
-      - supports-color
-      - ts-node
-
   '@jest/core@30.5.2(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2)(@types/node@26.0.0)(typescript@6.0.3))':
     dependencies:
       '@jest/console': 30.5.2
@@ -32518,11 +32482,6 @@ snapshots:
       '@types/node': 24.13.6
       typescript: '@typescript/typescript6@6.0.2'
 
-  '@openpgp/web-stream-tools@0.3.1(@types/node@24.13.6)(typescript@6.0.3)':
-    optionalDependencies:
-      '@types/node': 24.13.6
-      typescript: 6.0.3
-
   '@openpgp/web-stream-tools@0.3.1(@types/node@26.0.0)(@typescript/typescript6@6.0.2)':
     optionalDependencies:
       '@types/node': 26.0.0
@@ -33262,18 +33221,6 @@ snapshots:
       - '@types/node'
       - typescript
 
-  '@protontech/crypto@2.1.3(@types/node@24.13.6)(typescript@6.0.3)':
-    dependencies:
-      '@noble/hashes': 2.4.0
-      '@openpgp/web-stream-tools': 0.3.1(@types/node@24.13.6)(typescript@6.0.3)
-      bcryptjs: 3.0.3
-      comlink: 4.4.2
-      core-js: 3.50.0
-      openpgp: '@protontech/openpgp@6.3.1(@openpgp/web-stream-tools@0.3.1(@types/node@24.13.6)(typescript@6.0.3))'
-    transitivePeerDependencies:
-      - '@types/node'
-      - typescript
-
   '@protontech/crypto@2.1.3(@types/node@26.0.0)(@typescript/typescript6@6.0.2)':
     dependencies:
       '@noble/hashes': 2.4.0
@@ -33290,17 +33237,6 @@ snapshots:
     dependencies:
       '@noble/hashes': 1.8.0
       '@protontech/crypto': 2.1.3(@types/node@24.13.6)(@typescript/typescript6@6.0.2)
-      ttag: 1.8.12
-    optionalDependencies:
-      '@xmldom/xmldom': 0.9.12
-      exifreader: 4.45.1
-    transitivePeerDependencies:
-      - babel-plugin-macros
-
-  '@protontech/drive-sdk@0.20.1(@protontech/crypto@2.1.3(@types/node@24.13.6)(typescript@6.0.3))':
-    dependencies:
-      '@noble/hashes': 1.8.0
-      '@protontech/crypto': 2.1.3(@types/node@24.13.6)(typescript@6.0.3)
       ttag: 1.8.12
     optionalDependencies:
       '@xmldom/xmldom': 0.9.12
@@ -33353,10 +33289,6 @@ snapshots:
   '@protontech/openpgp@6.3.1(@openpgp/web-stream-tools@0.3.1(@types/node@24.13.6)(@typescript/typescript6@6.0.2))':
     optionalDependencies:
       '@openpgp/web-stream-tools': 0.3.1(@types/node@24.13.6)(@typescript/typescript6@6.0.2)
-
-  '@protontech/openpgp@6.3.1(@openpgp/web-stream-tools@0.3.1(@types/node@24.13.6)(typescript@6.0.3))':
-    optionalDependencies:
-      '@openpgp/web-stream-tools': 0.3.1(@types/node@24.13.6)(typescript@6.0.3)
 
   '@protontech/openpgp@6.3.1(@openpgp/web-stream-tools@0.3.1(@types/node@26.0.0)(@typescript/typescript6@6.0.2))':
     optionalDependencies:
@@ -42351,25 +42283,6 @@ snapshots:
       - babel-plugin-macros
       - supports-color
 
-  jest-cli@30.5.2(@types/node@24.13.6)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@24.13.6)(typescript@6.0.3)):
-    dependencies:
-      '@jest/core': 30.5.2(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@24.13.6)(typescript@6.0.3))
-      '@jest/test-result': 30.5.2
-      '@jest/types': 30.5.1
-      chalk: 4.1.2
-      exit-x: 0.2.2
-      import-local: 3.2.0
-      jest-config: 30.5.2(@types/node@24.13.6)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@24.13.6)(typescript@6.0.3))
-      jest-util: 30.5.1
-      jest-validate: 30.5.1
-      yargs: 17.7.3
-    transitivePeerDependencies:
-      - '@types/node'
-      - babel-plugin-macros
-      - esbuild-register
-      - supports-color
-      - ts-node
-
   jest-cli@30.5.2(@types/node@24.13.6)(supports-color@11.0.0)(ts-node@10.9.2(@types/node@24.13.6)(@typescript/typescript6@6.0.2)):
     dependencies:
       '@jest/core': 30.5.2(supports-color@11.0.0)(ts-node@10.9.2(@types/node@24.13.6)(@typescript/typescript6@6.0.2))
@@ -42445,38 +42358,6 @@ snapshots:
       - esbuild-register
       - supports-color
       - ts-node
-
-  jest-config@30.5.2(@types/node@24.13.6)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@24.13.6)(typescript@6.0.3)):
-    dependencies:
-      '@babel/core': 7.29.7(supports-color@11.0.0)
-      '@jest/get-type': 30.5.0
-      '@jest/pattern': 30.5.0
-      '@jest/test-sequencer': 30.5.2
-      '@jest/types': 30.5.1
-      babel-jest: 30.5.2(@babel/core@7.29.7(supports-color@11.0.0))(supports-color@11.0.0)
-      chalk: 4.1.2
-      ci-info: 4.4.0
-      deepmerge: 4.3.1
-      glob: 13.0.6
-      graceful-fs: 4.2.11
-      jest-circus: 30.5.2(supports-color@11.0.0)
-      jest-docblock: 30.5.0
-      jest-environment-node: 30.5.2
-      jest-regex-util: 30.5.0
-      jest-resolve: 30.5.1
-      jest-runner: 30.5.2(supports-color@11.0.0)
-      jest-util: 30.5.1
-      jest-validate: 30.5.1
-      parse-json: 5.2.0
-      pretty-format: 30.5.1
-      slash: 3.0.0
-      strip-json-comments: 3.1.1
-    optionalDependencies:
-      '@types/node': 24.13.6
-      ts-node: 10.9.2(@swc/core@1.16.2)(@types/node@24.13.6)(typescript@6.0.3)
-    transitivePeerDependencies:
-      - babel-plugin-macros
-      - supports-color
 
   jest-config@30.5.2(@types/node@24.13.6)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2)(@types/node@26.0.0)(typescript@6.0.3)):
     dependencies:
@@ -42955,19 +42836,6 @@ snapshots:
       jest-util: 30.5.1
       merge-stream: 2.0.0
       supports-color: 8.1.1
-
-  jest@30.5.2(@types/node@24.13.6)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@24.13.6)(typescript@6.0.3)):
-    dependencies:
-      '@jest/core': 30.5.2(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@24.13.6)(typescript@6.0.3))
-      '@jest/types': 30.5.1
-      import-local: 3.2.0
-      jest-cli: 30.5.2(@types/node@24.13.6)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@24.13.6)(typescript@6.0.3))
-    transitivePeerDependencies:
-      - '@types/node'
-      - babel-plugin-macros
-      - esbuild-register
-      - supports-color
-      - ts-node
 
   jest@30.5.2(@types/node@24.13.6)(supports-color@11.0.0)(ts-node@10.9.2(@types/node@24.13.6)(@typescript/typescript6@6.0.2)):
     dependencies:
@@ -44643,7 +44511,7 @@ snapshots:
 
   ms@2.1.3: {}
 
-  msw@2.12.14(@types/node@24.13.6)(typescript@6.0.3):
+  msw@2.12.14(@types/node@24.13.6)(@typescript/typescript6@6.0.2):
     dependencies:
       '@inquirer/confirm': 5.1.19(@types/node@24.13.6)
       '@mswjs/interceptors': 0.41.3
@@ -44664,7 +44532,7 @@ snapshots:
       until-async: 3.0.2
       yargs: 17.7.3
     optionalDependencies:
-      typescript: 6.0.3
+      typescript: '@typescript/typescript6@6.0.2'
     transitivePeerDependencies:
       - '@types/node'
 
@@ -48618,6 +48486,26 @@ snapshots:
     dependencies:
       '@ts-morph/common': 0.27.0
       code-block-writer: 13.0.3
+
+  ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@24.13.6)(@typescript/typescript6@6.0.2):
+    dependencies:
+      '@cspotcode/source-map-support': 0.8.1
+      '@tsconfig/node10': 1.0.11
+      '@tsconfig/node12': 1.0.11
+      '@tsconfig/node14': 1.0.3
+      '@tsconfig/node16': 1.0.4
+      '@types/node': 24.13.6
+      acorn: 8.18.0
+      acorn-walk: 8.3.5
+      arg: 4.1.3
+      create-require: 1.1.1
+      diff: 4.0.2
+      make-error: 1.3.6
+      typescript: '@typescript/typescript6@6.0.2'
+      v8-compile-cache-lib: 3.0.1
+      yn: 3.1.1
+    optionalDependencies:
+      '@swc/core': 1.16.2(@swc/helpers@0.5.17)
 
   ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@26.0.0)(@typescript/typescript6@6.0.2):
     dependencies:

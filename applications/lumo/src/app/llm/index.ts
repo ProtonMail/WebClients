@@ -67,8 +67,6 @@ const EMPTY_ASSISTANT_TURN: Turn = {
     content: '',
 };
 
-export const ENABLE_U2L_ENCRYPTION = false;
-
 export const MEMORIES_MARKER = '[Memories:';
 export const PERSONALIZATION_MARKER = '[Personal context:';
 export const PROJECT_INSTRUCTIONS_MARKER = '[Project instructions:';
