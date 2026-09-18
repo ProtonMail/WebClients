@@ -29,7 +29,9 @@ export interface DeviceManagementState {
     // Active devices
     activeCameraId: string;
     activeMicrophoneId: string;
-    activeAudioOutputId: string;
+    // null until an output has been applied. '' is a real value here, it means the system default,
+    // so it cannot double as "nothing applied yet" without making the first apply look redundant.
+    activeAudioOutputId: string | null;
 
     // Initial states
     initialCameraState: boolean;
