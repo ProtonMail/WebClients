@@ -18,10 +18,6 @@ export function setModels(models: LumoApiModel[]): void {
     publish();
 }
 
-export function getModelById(modelId: string): LumoApiModel | undefined {
-    return modelsById[modelId];
-}
-
 export function getMaxContextLengthForModelId(modelId: string): number | undefined {
     return modelsById[modelId]?.max_context_length;
 }
@@ -29,18 +25,6 @@ export function getMaxContextLengthForModelId(modelId: string): number | undefin
 function subscribe(listener: Listener): () => void {
     listeners.add(listener);
     return () => listeners.delete(listener);
-}
-
-function getSnapshot(): Record<string, LumoApiModel> {
-    return modelsById;
-}
-
-function getServerSnapshot(): Record<string, LumoApiModel> {
-    return modelsById;
-}
-
-export function useModelsById(): Record<string, LumoApiModel> {
-    return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 }
 
 export function useModelsRevision(): number {

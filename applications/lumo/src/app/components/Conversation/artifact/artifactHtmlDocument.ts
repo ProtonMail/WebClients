@@ -87,7 +87,7 @@ const PRESENTATION_EXPORT_STYLES = `
 }
 `;
 
-export const PDF_EXPORTABLE_ARTIFACT_TYPES = ['document', 'presentation'] as const;
+const PDF_EXPORTABLE_ARTIFACT_TYPES = ['document', 'presentation'] as const;
 
 export type PdfExportableArtifactType = (typeof PDF_EXPORTABLE_ARTIFACT_TYPES)[number];
 
@@ -125,7 +125,7 @@ export function artifactSupportsPptxExport(type: ArtifactType): type is 'present
     return type === 'presentation';
 }
 
-export function buildArtifactFileStem(title: string): string {
+function buildArtifactFileStem(title: string): string {
     return title
         .trim()
         .toLowerCase()

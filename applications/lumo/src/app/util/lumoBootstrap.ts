@@ -367,11 +367,7 @@ function masterKeyResolutionFailure(
     };
 }
 
-const initializeLumoCritical = (
-    userKeys: UserKeysOnly,
-    uid: string,
-    envelopePromise?: Promise<MasterKeyEnvelope>
-) => {
+const initializeLumoCritical = (userKeys: UserKeysOnly, uid: string, envelopePromise?: Promise<MasterKeyEnvelope>) => {
     return async (dispatch: LumoDispatch) => {
         try {
             const lumoApi = new LumoApi(uid);
@@ -427,7 +423,7 @@ const loadUserKeys = (userKeysPromise?: Promise<DecryptedKey<PrivateKeyReference
 };
 
 /** Loaded lazily — only when user keys alone cannot decrypt a master key envelope. */
-export const loadAddressKeys = () => {
+const loadAddressKeys = () => {
     return async (dispatch: LumoDispatch): Promise<DecryptedAddressKey<PrivateKeyReference>[]> => {
         const allAddresses = await dispatch(addressesThunk());
         if (!allAddresses[0]) {
