@@ -170,6 +170,28 @@ describe('createDiscountItem', () => {
         expect(discount.discountPercent).toBe(0);
     });
 
+    it('should hide discount for trial when optimistic discountPercent is 0 even if the backend returns a discount', () => {
+        const plansMap: PlansMap = { [PLANS.MAIL]: mailPlan };
+        const checkResult = makeCheckResult({
+            Amount: 499,
+            AmountDue: 499,
+            Cycle: CYCLE.MONTHLY,
+            CouponDiscount: -100,
+            SubscriptionMode: SubscriptionMode.Trial,
+        });
+
+        const result = getHeadlessCheckout({
+            planIDs: { [PLANS.MAIL]: 1 },
+            plansMap,
+            checkResult,
+            app,
+        });
+
+        const discount = result.getItem('discount');
+        expect(discount.visible).toBe(false);
+        expect(discount.discountPercent).toBe(0);
+    });
+
     it('should hide not discount % when couponConfig.hidden is true', () => {
         const plansMap: PlansMap = { [PLANS.MAIL]: mailPlan };
         const checkResult = makeCheckResult({ Amount: 4788, AmountDue: 4588, Cycle: CYCLE.YEARLY });
