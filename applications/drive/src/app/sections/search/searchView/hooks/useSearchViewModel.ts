@@ -129,5 +129,6 @@ export const useSearchViewModel = (): SearchViewModelAdapter => {
         indexingProgress: searchModule.isAvailable
             ? searchModule.indexingProgress
             : { files: 0, folders: 0, albums: 0, photos: 0 },
+        isIndexPartial: searchModule.isAvailable ? searchModule.isIndexPartial : false,
     };
 };

@@ -13,11 +13,19 @@ global.BroadcastChannel = FakeBroadcastChannel as unknown as typeof BroadcastCha
 const mockWorkerStart = jest.fn();
 
 const mockQueryIndexerState = jest.fn().mockResolvedValue({});
+const mockIsPartialIndexNoticeDismissed = jest.fn().mockResolvedValue(false);
+const mockDismissPartialIndexNotice = jest.fn().mockResolvedValue(undefined);
+const mockReset = jest.fn().mockResolvedValue(undefined);
+const mockRebuild = jest.fn().mockResolvedValue(undefined);
 
 jest.mock('../mainThread/WorkerClient', () => ({
     WorkerClient: jest.fn().mockImplementation(() => ({
         start: mockWorkerStart,
         queryIndexerState: mockQueryIndexerState,
+        isPartialIndexNoticeDismissed: mockIsPartialIndexNoticeDismissed,
+        dismissPartialIndexNotice: mockDismissPartialIndexNotice,
+        reset: mockReset,
+        rebuild: mockRebuild,
         search: jest.fn(),
         dispose: jest.fn(),
     })),
@@ -153,6 +161,45 @@ describe('useSearchModule', () => {
             await act(() => Promise.resolve());
 
             expect(result.current.isAvailable).toBe(false);
+        });
+    });
+
+    describe('partial-index notice dismissal survives reset()/rebuild()', () => {
+        // reset()/rebuild() clear the persisted dismissal (SearchDB.clear()/clearIndex()) because
+        // a fresh index may or may not end up capped again. The cached flag on SearchModule (and
+        // this hook's local state) must follow, in the same render pass - not just after a reload.
+        it('re-flips isPartialIndexNoticeDismissed to false after reset(), without remounting', async () => {
+            const { result, waitForNextUpdate } = renderHook(() => useSearchModule());
+            await waitForNextUpdate();
+
+            await act(async () => {
+                await expectAvailable(result).dismissPartialIndexNotice();
+            });
+            expect(expectAvailable(result).isPartialIndexNoticeDismissed).toBe(true);
+
+            await act(async () => {
+                await expectAvailable(result).reset();
+            });
+
+            expect(mockReset).toHaveBeenCalledTimes(1);
+            expect(expectAvailable(result).isPartialIndexNoticeDismissed).toBe(false);
+        });
+
+        it('re-flips isPartialIndexNoticeDismissed to false after rebuild(), without remounting', async () => {
+            const { result, waitForNextUpdate } = renderHook(() => useSearchModule());
+            await waitForNextUpdate();
+
+            await act(async () => {
+                await expectAvailable(result).dismissPartialIndexNotice();
+            });
+            expect(expectAvailable(result).isPartialIndexNoticeDismissed).toBe(true);
+
+            await act(async () => {
+                await expectAvailable(result).rebuild();
+            });
+
+            expect(mockRebuild).toHaveBeenCalledTimes(1);
+            expect(expectAvailable(result).isPartialIndexNoticeDismissed).toBe(false);
         });
     });
 });

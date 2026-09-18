@@ -20,7 +20,7 @@ export class WriteSession {
         writer: Write,
         private readonly blobStore: IndexBlobStore,
         private readonly release: () => void,
-        private readonly onStats: (documentCount: number) => Promise<void>,
+        private readonly onStats: (indexEntryCount: number) => Promise<void>,
         private readonly onCommitComplete: (durationMs: number) => void
     ) {
         this.writer = writer;
@@ -116,13 +116,13 @@ export class WriteSession {
                             await this.blobStore.saveEvent(event);
                             break;
                         case WriteEventKind.Stats: {
-                            const documentCount = engineCall('commit: read stats', () => {
+                            const indexEntryCount = engineCall('commit: read stats', () => {
                                 const stats = event.stats();
                                 const count = stats.documents;
                                 stats.free();
                                 return count;
                             });
-                            await this.onStats(documentCount);
+                            await this.onStats(indexEntryCount);
                             break;
                         }
                         default:
@@ -170,7 +170,7 @@ export class IndexWriter {
     constructor(
         private readonly searchFoundationEngine: Engine,
         private readonly blobStore: IndexBlobStore,
-        private readonly onDocumentCountUpdate: (documentCount: number) => Promise<void>
+        private readonly onIndexEntryCountUpdate: (indexEntryCount: number) => Promise<void>
     ) {}
 
     startWriteSession(): WriteSession {
@@ -191,11 +191,11 @@ export class IndexWriter {
             () => {
                 this.active = false;
             },
-            async (documentCount) => {
+            async (indexEntryCount) => {
                 try {
-                    await this.onDocumentCountUpdate(documentCount);
+                    await this.onIndexEntryCountUpdate(indexEntryCount);
                 } catch (error) {
-                    Logger.warn(`IndexWriter: failed to persist document count: ${String(error)}`);
+                    Logger.warn(`IndexWriter: failed to persist index entry count: ${String(error)}`);
                 }
             },
             (durationMs) => {

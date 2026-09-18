@@ -57,13 +57,31 @@ describe('gatherSearchDiagnostics', () => {
             quarantinedNodeCount: 1,
             storageUsageMb: 10,
             storageQuotaMb: 100,
-            documentCount: 5,
+            indexEntryCount: 5,
             blobCacheEntryCount: undefined,
             blobCachePendingFreeCount: undefined,
             blobCacheSizesMb: undefined,
             wasmMemoryMb: undefined,
             lastCommitDurationMs: undefined,
+            isCapped: false,
         });
+    });
+
+    it('reports isCapped true when any populator has been capped', async () => {
+        await db.putPopulatorState({
+            uid: 'pop-1',
+            indexKind: IndexKind.MAIN,
+            indexPopulatorKind: 'pop-1',
+            treeEventScopeId: 'scope-1' as TreeEventScopeId,
+            done: true,
+            generation: 1,
+            version: 1,
+            progress: { files: 0, folders: 0, albums: 0, photos: 0 },
+            capped: true,
+        });
+
+        const diagnostics = await gatherSearchDiagnostics(db, null);
+        expect(diagnostics?.isCapped).toBe(true);
     });
 
     it('returns undefined, without throwing, when a lookup fails', async () => {
