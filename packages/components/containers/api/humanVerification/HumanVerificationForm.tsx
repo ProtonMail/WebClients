@@ -2,13 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useApi } from '@proton/app-context/useApi';
 import { Href } from '@proton/atoms/Href/Href';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
-import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+import type { Api, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
 import Alert from '../../../components/alert/Alert';
-import Tabs from '../../../components/tabs/Tabs';
+import { Tabs } from '../../../components/tabs/Tabs';
 import Captcha from './Captcha';
 import CodeMethod from './CodeMethod';
 import OwnershipMethod from './OwnershipMethod';
@@ -20,6 +19,8 @@ import { HumanVerificationSteps } from './interface';
 import './HumanVerificationModal.scss';
 
 export interface HumanVerificationFormProps {
+    // The api of the session that got challenged, which is not necessarily the one the app provides
+    api: Api;
     onSubmit: (token: string, tokenType: HumanVerificationMethodType, verificationModel?: VerificationModel) => void;
     onClose: () => void;
     onLoaded?: (data: OwnershipCache) => void;
@@ -39,6 +40,7 @@ export interface HumanVerificationFormProps {
 type SupportedHumanVerificationMethodType = keyof ReturnType<typeof getAvailableMethods>;
 
 const HumanVerificationForm = ({
+    api,
     defaultCountry,
     defaultEmail,
     defaultPhone,
@@ -54,8 +56,6 @@ const HumanVerificationForm = ({
     onChangeStep,
     verifyApp,
 }: HumanVerificationFormProps) => {
-    const api = useApi();
-
     const availableMethods = getAvailableMethods(methods);
     const [selectedMethod, setSelectedMethod] = useState<SupportedHumanVerificationMethodType>(() => {
         const firstAvailableMethod = Object.entries(availableMethods).find(([, available]) => available)?.[0] as

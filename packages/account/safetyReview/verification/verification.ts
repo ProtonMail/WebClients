@@ -3,6 +3,7 @@ import type {
     VerificationTokenResult,
 } from '@proton/components/containers/api/humanVerification/interface';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getHumanVerificationData } from '@proton/shared/lib/api/helpers/humanVerification';
 import {
     getVerificationDataRoute,
     sendVerificationCode,
@@ -56,21 +57,17 @@ export const initiateVerification = async ({
         // If it succeeds without that, something is wrong.
         throw new Error('Expected HV challenge');
     } catch (error) {
-        const { code, details } = getApiError(error);
+        const { code } = getApiError(error);
 
         if (code !== API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED) {
             throw error;
         }
 
-        if (
-            !Array.isArray(details.HumanVerificationMethods) ||
-            !details.HumanVerificationMethods.includes(hvMethod) ||
-            !details.HumanVerificationToken
-        ) {
-            throw new Error();
-        }
+        const { token } = getHumanVerificationData(error);
 
-        const token = details.HumanVerificationToken as string;
+        if (!token) {
+            throw error;
+        }
 
         const [verificationDataResult] = await Promise.all([
             api<VerificationDataResult>({ ...getVerificationDataRoute(token, hvMethod), silence: true }),

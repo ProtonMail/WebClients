@@ -1,12 +1,13 @@
 import { OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY, RETRY_ATTEMPTS_MAX, RETRY_DELAY_MAX } from '../../constants';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../../errors';
 import type { ApiError } from '../../fetch/ApiError';
-import { getUIDHeaderValue, getVerificationHeaders, withUIDHeaders } from '../../fetch/headers';
+import { getUIDHeaderValue, withUIDHeaders } from '../../fetch/headers';
 import { wait } from '../../helpers/promise';
 import type { HumanVerificationMethodType } from '../../interfaces';
 import { setRefreshCookies } from '../auth';
 import { getApiError, getApiErrorMessage } from './apiErrorHelper';
 import { AppVersionBadError, InactiveSessionError } from './errors';
+import { getHumanVerificationData, withVerification } from './humanVerification';
 import { createRefreshHandlers, getIsRefreshFailure, refresh } from './refreshHandlers';
 import { retryHandler } from './retryHandler';
 
@@ -55,7 +56,6 @@ export function withApiHandlers({
 
                 const {
                     ignoreHandler,
-                    silence = [],
                     headers,
                     retriesOnOffline = OFFLINE_RETRY_ATTEMPTS_MAX,
                     retriesOnTimeout = OFFLINE_RETRY_ATTEMPTS_MAX,
@@ -135,32 +135,13 @@ export function withApiHandlers({
                     Array.isArray(ignoreHandler) &&
                     ignoreHandler.includes(API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED);
                 if (code === API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED && !ignoreHumanVerification) {
-                    const {
-                        Details: {
-                            HumanVerificationToken: captchaToken,
-                            HumanVerificationMethods: methods = [],
-                            Title: title,
-                        } = {},
-                    } = e.data || {};
+                    const { token, methods, title } = getHumanVerificationData(e);
 
-                    const onVerify = (token: string, tokenType: HumanVerificationMethodType) => {
-                        return call({
-                            ...options,
-                            silence:
-                                silence === true
-                                    ? true
-                                    : [
-                                          ...(Array.isArray(silence) ? silence : []),
-                                          API_CUSTOM_ERROR_CODES.TOKEN_INVALID,
-                                      ],
-                            headers: {
-                                ...options.headers,
-                                ...getVerificationHeaders(token, tokenType),
-                            },
-                        });
+                    const onVerify = (verificationToken: string, tokenType: HumanVerificationMethodType) => {
+                        return call(withVerification(options, verificationToken, tokenType));
                     };
 
-                    return onVerification({ token: captchaToken, methods, onVerify, title, error: e });
+                    return onVerification({ token, methods, onVerify, title, error: e });
                 }
 
                 const ignoreUserRestrictedState =
