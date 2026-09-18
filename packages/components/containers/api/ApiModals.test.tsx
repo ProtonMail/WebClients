@@ -39,6 +39,15 @@ jest.mock('./humanVerification/HumanVerificationModal', () => {
                 <MockedModal {...props}>
                     <h1>{props.token}</h1>
                     <button
+                        type="button"
+                        onClick={() => {
+                            void props.api({ url: 'send-code' });
+                        }}
+                    >
+                        send-code
+                    </button>
+                    <button
+                        type="button"
                         onClick={() => {
                             props.onSuccess?.('hv-success');
                             props.onClose?.();
@@ -47,6 +56,7 @@ jest.mock('./humanVerification/HumanVerificationModal', () => {
                         verify
                     </button>
                     <button
+                        type="button"
                         onClick={() => {
                             props.onClose?.();
                         }}
@@ -66,14 +76,16 @@ jest.mock('../password/AuthModal', () => {
             return (
                 <MockedModal {...props}>
                     <button
+                        type="button"
                         onClick={() => {
-                            props.onSuccess?.({ response: 'success-test-result' } as any);
+                            void props.onSuccess?.({ response: 'success-test-result' } as any);
                             props.onClose?.();
                         }}
                     >
                         reauth
                     </button>
                     <button
+                        type="button"
                         onClick={() => {
                             props.onCancel?.();
                             props.onClose?.();
