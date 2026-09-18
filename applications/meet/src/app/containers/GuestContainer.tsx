@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { Router } from 'react-router-dom';
 
-import { ApiContext } from '@proton/app-context/apiContext';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { NotificationsChildren } from '@proton/components';
+import UnauthenticatedApiProvider from '@proton/components/containers/api/UnauthenticatedApiProvider';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import LoaderPage from '@proton/components/containers/app/LoaderPage';
 import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
@@ -95,14 +95,14 @@ export const GuestContainer = ({ children }: GuestContainerProps) => {
             <AuthenticationProvider store={authentication}>
                 <Router history={history}>
                     <FlagProvider unleashClient={unleashClient} startClient={false}>
-                        <ApiContext.Provider value={unauthenticatedApi.apiCallback}>
+                        <UnauthenticatedApiProvider unauthenticatedApi={unauthenticatedApi}>
                             <MeetCoreClientContext.Provider value={meetCoreClientRef.current}>
                                 <ErrorBoundary big component={<StandardErrorPage big />}>
                                     <NotificationsChildren />
                                     {children}
                                 </ErrorBoundary>
                             </MeetCoreClientContext.Provider>
-                        </ApiContext.Provider>
+                        </UnauthenticatedApiProvider>
                     </FlagProvider>
                 </Router>
             </AuthenticationProvider>
