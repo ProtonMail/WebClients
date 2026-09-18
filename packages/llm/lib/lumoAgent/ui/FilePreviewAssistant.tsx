@@ -33,20 +33,8 @@ interface Props {
  * {@link DrawerLumoView}, plus a close button of its own (DrawerView's closes the app-wide drawer).
  */
 export const FilePreviewAssistant = ({ config, onClose }: Props) => {
-    const {
-        items,
-        isBusy,
-        toolLimit,
-        hasConversation,
-        send,
-        stop,
-        resume,
-        dismissToolLimit,
-        confirm,
-        cancel,
-        clear,
-        getDebugTranscript,
-    } = useLumoAgent(config);
+    const { items, isBusy, toolLimit, hasConversation, send, stop, resume, dismissToolLimit, confirm, cancel, clear } =
+        useLumoAgent(config);
     const theme = useTheme();
 
     const closeLabel = c('Action').t`Close`;
@@ -56,11 +44,7 @@ export const FilePreviewAssistant = ({ config, onClose }: Props) => {
             <div className="flex flex-nowrap items-center justify-space-between gap-2 p-2 border-bottom border-weak">
                 <LumoWordmark dark={theme.information.dark} alt={LUMO_SHORT_APP_NAME} />
                 <div className="flex flex-nowrap items-center">
-                    <LumoConversationHeaderActions
-                        hasConversation={hasConversation}
-                        clear={clear}
-                        getDebugTranscript={getDebugTranscript}
-                    />
+                    <LumoConversationHeaderActions hasConversation={hasConversation} clear={clear} />
                     <Tooltip title={closeLabel}>
                         <Button icon color="weak" shape="ghost" onClick={onClose}>
                             <IcCross alt={closeLabel} />
