@@ -1,6 +1,8 @@
 import type {
     ItemRevision,
+    MaybeNull,
     PublicLinkCreateRequest,
+    PublicLinkGetResponse,
     SecureLink,
     SecureLinkItem,
     SecureLinkOptions,
@@ -16,10 +18,10 @@ import { obfuscateItem } from '../items/item.obfuscation';
 import { buildSecureLink } from './secure-links.utils';
 
 export const createSecureLink = async (
-    { shareId, itemId, revision }: ItemRevision,
+    { shareId, itemId, revision, folderId }: ItemRevision,
     options: SecureLinkOptions
 ): Promise<SecureLink> => {
-    const itemKey = await resolveItemKey(shareId, itemId);
+    const itemKey = await resolveItemKey(shareId, itemId, folderId);
     const linkData = await PassCrypto.createSecureLink({ itemKey });
     const { encryptedItemKey, encryptedLinkKey, secureLinkKey, keyRotation, linkKeyEncryptedWithItemKey } = linkData;
 
@@ -72,18 +74,25 @@ export const openSecureLink = async ({ token, linkKey }: SecureLinkQuery): Promi
     }
 };
 
-export const getSecureLinks = async (): Promise<SecureLink[]> => {
+export const getSecureLinksApi = async (): Promise<PublicLinkGetResponse[]> => {
     const { PublicLinks } = await api({ url: 'pass/v1/public_link', method: 'get' });
+    return PublicLinks ?? [];
+};
 
-    if (!PublicLinks) return [];
-
-    return Promise.all(
-        PublicLinks.map(async (secureLink) => {
+/** The API doesn't return the item's `FolderID`, so a `resolveFolderId` lookup
+ * must be used to decrypt the link key of items inside a folder. */
+export const parseSecureLinks = async (
+    publicLinks: PublicLinkGetResponse[],
+    resolveFolderId: (shareId: string, itemId: string) => MaybeNull<string>
+): Promise<SecureLink[]> =>
+    Promise.all(
+        publicLinks.map(async (secureLink) => {
             const linkKey = await PassCrypto.openLinkKey({
                 encryptedLinkKey: secureLink.EncryptedLinkKey!,
                 linkKeyShareKeyRotation: secureLink.LinkKeyShareKeyRotation!,
                 shareId: secureLink.ShareID!,
                 itemId: secureLink.ItemID,
+                folderId: resolveFolderId(secureLink.ShareID!, secureLink.ItemID),
                 linkKeyEncryptedWithItemKey: Boolean(secureLink.LinkKeyEncryptedWithItemKey),
             });
 
@@ -99,7 +108,6 @@ export const getSecureLinks = async (): Promise<SecureLink[]> => {
             };
         })
     );
-};
 
 export const removeSecureLink = async (linkId: string): Promise<string> => {
     await api({ url: `pass/v1/public_link/${linkId}`, method: 'delete' });

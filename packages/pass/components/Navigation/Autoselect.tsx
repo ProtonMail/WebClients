@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import { isShareVisible } from '../../lib/shares/share.predicates';
-import { selectShare } from '../../store/selectors';
+import { selectFolder, selectShare } from '../../store/selectors';
 import { useItems } from '../Item/Context/ItemsProvider';
 import { useNavigationActions } from './NavigationActions';
 import { useNavigationFilters } from './NavigationFilters';
@@ -16,14 +16,23 @@ export const Autoselect: FC = () => {
     const { preserveSearch } = useNavigationActions();
     const { filtered } = useItems();
     const autoselect = filtered[0];
+    const { selectedShareId, selectedFolderId } = filters;
 
     /** Check if we should preserve the current filters (selected vault exists)  */
-    const selectedVault = useSelector(selectShare(filters.selectedShareId));
+    const selectedVault = useSelector(selectShare(selectedShareId));
+    const selectedFolder = useSelector(selectFolder(selectedShareId, selectedFolderId));
     const shareHidden = selectedVault !== undefined && !isShareVisible(selectedVault);
-    const clearFilters = filters.selectedShareId !== null && selectedVault === undefined;
+    const clearFilters = selectedShareId !== null && selectedVault === undefined;
 
     const to = (() => {
         if (shareHidden) return getLocalPath();
+
+        /** The selected folder was deleted, either locally or through a remote
+         * user event. Navigate back to its vault instead. */
+        if (selectedVault && selectedFolderId && selectedFolder === undefined) {
+            return preserveSearch(getLocalPath(`share/${selectedVault.shareId}`), { selectedFolderId: null });
+        }
+
         if (autoselect) return preserveSearch(getItemRoute(autoselect.shareId, autoselect.itemId, { scope }));
         if (clearFilters) return getLocalPath();
         return null;

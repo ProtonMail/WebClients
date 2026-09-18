@@ -68,11 +68,11 @@ function* itemEditWorker(options: RootSagaOptions, { payload: editIntent, meta }
 
     try {
         /** assert item exists */
-        yield select(selectItemOrThrow(shareId, itemId));
+        const currentItem: ItemRevision = yield select(selectItemOrThrow(shareId, itemId));
 
         if (editIntent.type === 'alias' && editIntent.extraData?.aliasOwner) yield call(aliasEditWorker, editIntent);
 
-        let item: ItemRevision = yield editItem(editIntent, lastRevision);
+        let item: ItemRevision = yield editItem(editIntent, lastRevision, currentItem.folderId);
         const shouldLink = files.toAdd.length || files.toRemove.length || files.toRestore?.length;
         if (shouldLink) item = yield itemLinkPendingFiles(item, files, options);
 

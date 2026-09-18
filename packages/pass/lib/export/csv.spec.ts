@@ -32,6 +32,7 @@ const mockStateWith = (autofillUrls: { url: string; mode: AutofillMode }[]): Sta
                         modifyTime: 1700000001,
                         pinned: false,
                         shareCount: 0,
+                        folderId: null,
                         data: itemBuilder('login')
                             .set('content', (content) => content.set('autofillUrls', autofillUrls))
                             .set('metadata', (metadata) => metadata.set('name', 'Bank login')).data,
@@ -48,6 +49,7 @@ const mockStateWith = (autofillUrls: { url: string; mode: AutofillMode }[]): Sta
                 content: { name: 'My Vault', description: '', display: {} },
             },
         },
+        folders: {},
     }) as unknown as State;
 
 const exportRow = async (state: State): Promise<ExportCSVItem> => {

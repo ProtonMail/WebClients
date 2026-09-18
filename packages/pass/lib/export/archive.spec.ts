@@ -23,6 +23,7 @@ const getMockExport = (): ExportData => ({
                 {
                     itemId: uniqueId(),
                     shareId: uniqueId(),
+                    folderId: null,
                     state: ItemState.Active,
                     data: {
                         type: 'note',

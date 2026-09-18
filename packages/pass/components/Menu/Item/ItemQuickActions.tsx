@@ -9,6 +9,7 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import Icon from '@proton/components/components/icon/Icon';
+import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcPassLock } from '@proton/icons/icons/IcPassLock';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
@@ -23,10 +24,13 @@ import { OrganizationAliasCreateMode } from '../../../types';
 import { PassFeature } from '../../../types/api/features';
 import { UserPassPlan } from '../../../types/api/plan';
 import { pipe } from '../../../utils/fp/pipe';
+import { useFolderCreate } from '../../Folders/useFolderCreate';
+import { useFolderCreateTarget } from '../../Folders/useFolderCreateTarget';
 import { PillBadge } from '../../Layout/Badge/PillBadge';
 import { DropdownMenuButtonLabel } from '../../Layout/Dropdown/DropdownMenuButton';
 import { itemTypeToIconName } from '../../Layout/Icon/ItemIcon';
 import { SubTheme, itemTypeToSubThemeClassName } from '../../Layout/Theme/types';
+import { MaybeTooltip } from '../../Layout/Tooltip/MaybeTooltip';
 import { useNavigate } from '../../Navigation/NavigationActions';
 import { useItemScope } from '../../Navigation/NavigationMatches';
 import { getNewItemRoute } from '../../Navigation/routing';
@@ -56,6 +60,8 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
     const generatePassword = usePasswordGeneratorAction();
     const copyToClipboard = useCopyToClipboard();
     const showCustomItem = useFeatureFlag(PassFeature.PassCustomTypeV1);
+    const folderTarget = useFolderCreateTarget();
+    const folderCreate = useFolderCreate(folderTarget?.shareId ?? null, folderTarget?.parentFolderId ?? null);
 
     const onCreate = useCallback((type: ItemType) => navigate(getNewItemRoute(type, scope)), [scope]);
 
@@ -193,6 +199,35 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
                             }
                         />
                     </DropdownMenuButton>
+
+                    {folderCreate.canShow && folderTarget && (
+                        <MaybeTooltip active={folderCreate.limitReached} title={folderCreate.limitReason}>
+                            <DropdownMenuButton
+                                disabled={folderCreate.limitReached || !folderCreate.canUseFolders}
+                                onClick={withClose(folderCreate.onCreate)}
+                            >
+                                <DropdownMenuButtonLabel
+                                    label={c('Label').t`Folder`}
+                                    extra={
+                                        !folderCreate.canUseFolders ? (
+                                            <IcPassLock size={3.5} className="mr-1.5" />
+                                        ) : undefined
+                                    }
+                                    icon={
+                                        <span
+                                            className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon shrink-0"
+                                            style={{ '--w-custom': `2em`, '--h-custom': `2em` }}
+                                        >
+                                            <IcFolderPlus
+                                                className="absolute inset-center"
+                                                color="var(--interaction-norm)"
+                                            />
+                                        </span>
+                                    }
+                                />
+                            </DropdownMenuButton>
+                        </MaybeTooltip>
+                    )}
                 </DropdownMenu>
             </Dropdown>
         </>

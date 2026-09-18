@@ -12,14 +12,19 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { UpsellRef } from '../../constants';
+import { fromFolderKey, getFolderKey } from '../../lib/items/item.utils';
 import type { VaultShareItem, WithItemCount } from '../../store/reducers';
 import {
+    selectFolders,
     selectVaultLimits,
     selectWritableSharedVaultsWithCount,
     selectWritableVaultsWithCount,
 } from '../../store/selectors';
 import { NOOP_LIST_SELECTOR } from '../../store/selectors/utils';
 import type { MaybeNull } from '../../types';
+import { PassExpandButton } from '../Folders/PassExpandButton';
+import { PassFolderIcon } from '../Folders/PassFolderIcon';
+import { useFoldersAccess } from '../Folders/useFoldersAccess';
 import { RadioButtonGroup, RadioLabelledButton } from '../Form/Field/RadioButtonGroupField';
 import { Card } from '../Layout/Card/Card';
 import { SidebarModal } from '../Layout/Modal/SidebarModal';
@@ -27,6 +32,9 @@ import { Panel } from '../Layout/Panel/Panel';
 import { PanelHeader } from '../Layout/Panel/PanelHeader';
 import { UpgradeButton } from '../Upsell/UpgradeButton';
 import { VaultIcon } from './VaultIcon';
+import type { VaultFolderRow } from './folderView.utils';
+import { buildVaultFolderRows } from './folderView.utils';
+import { useFolderTreeExpand } from './useFolderTreeExpand';
 
 export enum VaultSelectMode {
     Writable = 1,
@@ -37,8 +45,10 @@ export type VaultSelectProps = Omit<ModalProps, 'onSubmit'> & {
     downgradeMessage?: string;
     mode: MaybeNull<VaultSelectMode>;
     shareId?: string;
+    folderId?: MaybeNull<string>;
+    showFolders?: boolean;
     title?: string;
-    onSubmit: (shareId: string) => void;
+    onSubmit: (shareId: string, folderId: MaybeNull<string>) => void;
 };
 
 const vaultSelector = {
@@ -49,9 +59,21 @@ const vaultSelector = {
 /* if the user has downgraded : only allow him to select
  * his writable vaults as target. This rule applies when moving
  * an item to a vault or when selecting an item's vault */
-export const VaultSelect: FC<VaultSelectProps> = ({ downgradeMessage, mode, shareId, title, onSubmit, ...props }) => {
+export const VaultSelect: FC<VaultSelectProps> = ({
+    downgradeMessage,
+    mode,
+    shareId,
+    folderId,
+    showFolders,
+    title,
+    onSubmit,
+    ...props
+}) => {
     const vaults = useSelector(mode ? vaultSelector[mode] : NOOP_LIST_SELECTOR<WithItemCount<VaultShareItem>>);
     const { didDowngrade } = useSelector(selectVaultLimits);
+    const folders = useSelector(selectFolders);
+    const { canUseFolders } = useFoldersAccess();
+    const withFolders = canUseFolders && Boolean(showFolders);
 
     const sortedVaults = useMemo(
         () =>
@@ -63,6 +85,15 @@ export const VaultSelect: FC<VaultSelectProps> = ({ downgradeMessage, mode, shar
             }),
         [vaults]
     );
+
+    const { expandedKeys, toggle } = useFolderTreeExpand(folders, shareId ?? null, folderId ?? null);
+
+    const rows = useMemo<VaultFolderRow<WithItemCount<VaultShareItem>>[]>(
+        () => buildVaultFolderRows(sortedVaults, folders, withFolders, expandedKeys),
+        [sortedVaults, folders, withFolders, expandedKeys]
+    );
+
+    const currentKey = getFolderKey(shareId ?? '', folderId ?? null);
 
     return (
         <SidebarModal {...props}>
@@ -94,34 +125,65 @@ export const VaultSelect: FC<VaultSelectProps> = ({ downgradeMessage, mode, shar
                     </Card>
                 )}
 
-                <RadioButtonGroup name="vault-select" className="flex-column" value={shareId} onChange={onSubmit}>
-                    {sortedVaults.map((vault) => (
-                        <RadioLabelledButton
-                            value={vault.shareId}
-                            key={vault.shareId}
-                            disabled={vault.shareId === shareId}
-                        >
-                            <VaultIcon
-                                size={5}
-                                background
-                                color={vault.content.display.color}
-                                icon={vault.content.display.icon}
+                <RadioButtonGroup
+                    name="vault-select"
+                    className="flex-column"
+                    value={currentKey}
+                    onChange={(key: string) => {
+                        const { shareId: nextShareId, folderId: nextFolderId } = fromFolderKey(key);
+                        onSubmit(nextShareId, nextFolderId);
+                    }}
+                >
+                    {rows.map((row) => {
+                        const canExpand = row.type === 'vault' ? row.hasFolders : row.hasChildren;
+
+                        const expandButton = withFolders && (
+                            <PassExpandButton
+                                expanded={row.expanded}
+                                onClick={() => toggle(row.key)}
+                                hidden={!canExpand}
+                                /** `relative` puts the button above the label's expand-click-area
+                                 * overlay, which would otherwise swallow the click */
+                                className="relative"
                             />
-                            <div className="flex flex-1 flex-column">
-                                <span className="text-ellipsis inline-block max-w-full color-norm">
-                                    {vault.content.name}
-                                </span>
-                                <span className="block color-weak">{vault.count} items</span>
-                            </div>
-                        </RadioLabelledButton>
-                    ))}
+                        );
+
+                        return row.type === 'vault' ? (
+                            <RadioLabelledButton value={row.key} key={row.key} disabled={row.key === currentKey}>
+                                {expandButton}
+                                <VaultIcon
+                                    size={5}
+                                    background
+                                    color={row.vault.content.display.color}
+                                    icon={row.vault.content.display.icon}
+                                />
+                                <div className="flex flex-1 min-w-0 flex-column">
+                                    <span className="text-ellipsis inline-block max-w-full color-norm">
+                                        {row.vault.content.name}
+                                    </span>
+                                    <span className="block color-weak">{row.vault.count} items</span>
+                                </div>
+                            </RadioLabelledButton>
+                        ) : (
+                            <RadioLabelledButton value={row.key} key={row.key} disabled={row.key === currentKey}>
+                                <div
+                                    className="flex flex-1 min-w-0 flex-nowrap items-center gap-x-3 ml-custom"
+                                    style={{ '--ml-custom': `${row.depth * 0.75}rem` }}
+                                >
+                                    {expandButton}
+                                    <PassFolderIcon hasChildren={row.hasChildren} size={5} />
+                                    <span className="flex-1 min-w-0 text-ellipsis color-norm">{row.folder.name}</span>
+                                </div>
+                            </RadioLabelledButton>
+                        );
+                    })}
                 </RadioButtonGroup>
             </Panel>
         </SidebarModal>
     );
 };
 
-type VaultSelectState = Pick<VaultSelectProps, 'shareId' | 'open' | 'mode' | 'onSubmit' | 'title'>;
+type VaultSelectState = Pick<VaultSelectProps, 'shareId' | 'folderId' | 'open' | 'mode' | 'onSubmit' | 'title'>;
 
 export const useVaultSelectModalHandles = () => {
     const [modalState, setModalState] = useState<VaultSelectState>({

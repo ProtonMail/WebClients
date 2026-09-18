@@ -122,6 +122,7 @@ export type ItemTypeFilter = '*' | Exclude<ItemType, 'sshKey' | 'wifi'>;
 export type ItemFilters = {
     search: string;
     selectedShareId: MaybeNull<string>;
+    selectedFolderId: MaybeNull<string>;
     sort: ItemSortFilter;
     type: ItemTypeFilter;
 };

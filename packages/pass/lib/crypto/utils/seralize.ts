@@ -1,4 +1,4 @@
-import type { ShareId, ShareManager } from '../../../types';
+import type { FolderId, FolderKey, FolderKeysByShareId, ShareId, ShareManager } from '../../../types';
 import {
     type OpenedShare,
     type Rotation,
@@ -56,3 +56,36 @@ export const serializeShareManagers = (
     managers: Map<ShareId, ShareManager>
 ): SerializedCryptoContext<Map<ShareId, ShareManager>> =>
     [...managers.entries()].map(([shareId, manager]) => [shareId, manager.serialize()]);
+
+export const serializeFolderKeys = (folderKeys: FolderKeysByShareId): SerializedCryptoContext<FolderKeysByShareId> =>
+    [...folderKeys.entries()].map(([shareId, shareFolderKeys]) => [
+        shareId,
+        [...shareFolderKeys.entries()].map(([folderId, folderKey]) => [
+            folderId,
+            {
+                rotation: folderKey.rotation,
+                raw: folderKey.raw.toBase64(),
+                parentFolderId: folderKey.parentFolderId,
+            },
+        ]),
+    ]);
+
+export const hydrateFolderKeys = async (
+    serializedKeys: SerializedCryptoContext<FolderKeysByShareId>
+): Promise<FolderKeysByShareId> => {
+    const entries: [ShareId, Map<FolderId, FolderKey>][] = await Promise.all(
+        serializedKeys.map(async ([shareId, shareFolderKeys]) => {
+            const keys: [FolderId, FolderKey][] = await Promise.all(
+                shareFolderKeys.map(async ([folderId, { raw, rotation, parentFolderId }]) => {
+                    const rawKey = Uint8Array.fromBase64(raw);
+                    const key = await importSymmetricKey(rawKey);
+                    return [folderId, { rotation, raw: rawKey, key, parentFolderId }];
+                })
+            );
+
+            return [shareId, new Map(keys)];
+        })
+    );
+
+    return new Map(entries);
+};

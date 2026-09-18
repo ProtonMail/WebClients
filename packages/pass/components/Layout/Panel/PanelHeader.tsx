@@ -20,7 +20,7 @@ export const PanelHeader: FC<Props> = ({ className, actions, ...props }) => {
             className={clsx('pass-panel-header flex flex-nowrap justify-space-between items-center gap-4', className)}
         >
             {title !== undefined && (
-                <div>
+                <div className="min-w-0">
                     {title}
                     {subtitle}
                 </div>

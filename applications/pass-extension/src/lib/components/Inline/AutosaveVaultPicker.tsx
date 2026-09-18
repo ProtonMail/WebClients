@@ -2,9 +2,9 @@ import type { FC, ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
 import type { SelectFieldProps } from '@proton/pass/components/Form/Field/SelectField';
-import { VaultPicker } from '@proton/pass/components/Form/Field/VaultPickerField';
-import type { ShareItem } from '@proton/pass/store/reducers';
-import type { ShareType } from '@proton/pass/types/data/shares';
+import { VaultFolderPickerFieldCore } from '@proton/pass/components/Form/Field/VaultFolderPickerFieldCore';
+import type { FoldersByShareId, ShareItem } from '@proton/pass/store/reducers';
+import type { ShareType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 import { WorkerMessageType } from '../../../types/messages';
@@ -14,12 +14,16 @@ type Props = Omit<SelectFieldProps, 'children'> & { fallback: ReactNode; attempt
 
 export const AutosaveVaultPicker: FC<Props> = ({ fallback, attempt, ...props }) => {
     const [vaults, setVaults] = useState<ShareItem<ShareType.Vault>[]>([]);
+    const [folders, setFolders] = useState<FoldersByShareId>({});
+    const [canUseFolders, setCanUseFolders] = useState(false);
 
     useEffect(
         () => {
             sendMessage
                 .onSuccess(contentScriptMessage({ type: WorkerMessageType.VAULTS_QUERY }), (res) => {
                     setVaults(res.vaults);
+                    setFolders(res.folders);
+                    setCanUseFolders(res.canUseFolders);
                     void props.form.setFieldValue('shareId', res.defaultShareId);
                 })
                 .catch(noop);
@@ -30,10 +34,21 @@ export const AutosaveVaultPicker: FC<Props> = ({ fallback, attempt, ...props }) 
         [attempt]
     );
 
-    /** Only render the Vault picker in case there are 2 or more vaults
-     * to select. Otherwise, render the required fallback node. */
-    return vaults?.length > 1 ? (
-        <VaultPicker vaults={vaults} availablePlacements={['bottom-start']} {...props} />
+    const hasFolders = vaults.some((vault) => Object.keys(folders[vault.shareId] ?? {}).length > 0);
+
+    /** Only render the picker when there are multiple vaults or 1 vault with folder(s) */
+    return vaults.length > 1 || (hasFolders && canUseFolders) ? (
+        <VaultFolderPickerFieldCore
+            vaults={vaults}
+            folders={folders}
+            showFolders={canUseFolders}
+            shareId={props.form.values.shareId}
+            folderId={props.form.values.folderId ?? null}
+            onChange={(shareId, folderId) => {
+                void props.form.setFieldValue('shareId', shareId);
+                void props.form.setFieldValue('folderId', folderId);
+            }}
+        />
     ) : (
         fallback
     );

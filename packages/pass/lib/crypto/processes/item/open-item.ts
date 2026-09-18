@@ -35,5 +35,6 @@ export const openItem = async ({ encryptedItem, itemKey }: OpenItemKeyProcessPar
         revisionTime: encryptedItem.RevisionTime,
         state: encryptedItem.State,
         shareCount: encryptedItem.ShareCount,
+        folderId: encryptedItem.FolderID ?? null,
     };
 };

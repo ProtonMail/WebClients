@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from 'react';
+import React, { memo, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
@@ -12,18 +12,24 @@ import noop from '@proton/utils/noop';
 
 import { UpsellRef } from '../../../constants';
 import { useItemDrop } from '../../../hooks/useItemDrag';
+import { useMemoSelector } from '../../../hooks/useMemoSelector';
 import { isMemberLimitReached } from '../../../lib/access/access.predicates';
 import { intoBulkSelection } from '../../../lib/items/item.utils';
 import { isWritableVault } from '../../../lib/vaults/vault.predicates';
 import type { VaultShareItem } from '../../../store/reducers';
-import { selectAccess, selectPassPlan } from '../../../store/selectors';
+import { selectAccess, selectFolder, selectPassPlan, selectTopLevelFolders } from '../../../store/selectors';
 import type { UniqueItem } from '../../../types';
 import { UserPassPlan } from '../../../types/api/plan';
 import { pipe } from '../../../utils/fp/pipe';
 import { truthy } from '../../../utils/fp/predicates';
+import { PassExpandButton } from '../../Folders/PassExpandButton';
+import { PassSidebarFolder } from '../../Folders/PassSidebarFolder';
+import { useFolderCreate } from '../../Folders/useFolderCreate';
 import { useInviteActions } from '../../Invite/InviteProvider';
 import { useItemsActions } from '../../Item/ItemActionsProvider';
 import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
+import { MaybeTooltip } from '../../Layout/Tooltip/MaybeTooltip';
+import { useNavigationFilters } from '../../Navigation/NavigationFilters';
 import { useUpselling } from '../../Upsell/UpsellingProvider';
 import { useVaultActions } from '../../Vault/VaultActionsProvider';
 import { VaultIcon } from '../../Vault/VaultIcon';
@@ -56,13 +62,21 @@ const handleClickEvent = (handler?: () => void) => (evt: React.MouseEvent) => {
 
 export const VaultMenuItem = memo(
     ({ canDelete, canInvite, canLeave, canManage, canMove, count, label, selected, vault, onAction = noop }: Props) => {
+        const [isExpanded, setIsExpanded] = useState(false);
+
         const vaultActions = useVaultActions();
+        const folderCreate = useFolderCreate(vault.shareId, null);
         const inviteActions = useInviteActions();
         const { moveMany } = useItemsActions();
 
         const upsell = useUpselling();
         const plan = useSelector(selectPassPlan);
         const access = useSelector(selectAccess(vault.shareId));
+        const topLevelFolders = useMemoSelector(selectTopLevelFolders, [vault.shareId]);
+        const showFolders = topLevelFolders.length > 0;
+
+        const { filters } = useNavigationFilters();
+        const hasSelectedFolder = Boolean(useSelector(selectFolder(vault.shareId, filters.selectedFolderId)));
 
         const withActions = canDelete || canInvite || canManage || canLeave || canMove;
 
@@ -72,6 +86,7 @@ export const VaultMenuItem = memo(
         const onLeave = pipe(() => vaultActions.leave(vault), onAction);
         const onMove = pipe(() => vaultActions.moveItems(vault), onAction);
         const onDelete = pipe(() => vaultActions.delete(vault), onAction);
+        const onCreateFolder = pipe(folderCreate.onCreate, onAction);
 
         const shareId = vault?.shareId;
         const notification = (vault?.newUserInvitesReady ?? 0) > 0;
@@ -83,6 +98,11 @@ export const VaultMenuItem = memo(
         }, [vault]);
 
         const { dragOver, dragProps } = useItemDrop(...dropParams);
+
+        /** Automatically expand this vault so the selected folder inside is visible */
+        useEffect(() => {
+            if (hasSelectedFolder) setIsExpanded(true);
+        }, [hasSelectedFolder]);
 
         const onInviteClick =
             plan === UserPassPlan.FREE && isMemberLimitReached(vault, access)
@@ -108,127 +128,190 @@ export const VaultMenuItem = memo(
         })();
 
         return (
-            <DropdownMenuButton
-                onClick={pipe(() => !selected && vaultActions.select(vault.shareId), onAction)}
-                label={
-                    <div>
-                        <div className="text-ellipsis">{label}</div>
-                        <div className="color-weak">
-                            {c('Label').ngettext(msgid`${count} item`, `${count} items`, count)}
+            <>
+                <DropdownMenuButton
+                    onClick={pipe(() => !selected && vaultActions.select(vault.shareId), onAction)}
+                    label={
+                        <div>
+                            <div className="text-ellipsis">{label}</div>
+                            <div className="color-weak">
+                                {c('Label').ngettext(msgid`${count} item`, `${count} items`, count)}
+                            </div>
                         </div>
-                    </div>
-                }
-                parentClassName={clsx(
-                    'pass-vault-submenu-vault-item w-full',
-                    !withActions && 'pass-vault-submenu-vault-item--no-actions'
-                )}
-                className={clsx((selected || dragOver) && 'is-selected', 'pl-2 pr-2', 'group-hover-opacity-container')}
-                extra={
-                    <ButtonLike
-                        as="div"
-                        pill
-                        icon={vault.targetMembers <= 1}
-                        size="small"
-                        color="weak"
-                        onClick={shareButton.action}
-                        shape="solid"
-                        title={shareButton.label}
-                        className={clsx(!(selected || vault.shared) && 'group-hover:opacity-100', 'relative mr-3')}
-                        style={{ color: 'var(--text-weak)' }}
-                    >
-                        {notification && (
-                            <IcExclamationCircleFilled
-                                size={4}
-                                className="absolute top-custom right-custom"
-                                style={{
-                                    '--top-custom': '-1px',
-                                    '--right-custom': '-1px',
-                                    color: 'var(--signal-danger)',
-                                }}
+                    }
+                    parentClassName={clsx(
+                        'pass-vault-submenu-vault-item w-full',
+                        !withActions && 'pass-vault-submenu-vault-item--no-actions'
+                    )}
+                    className={clsx((selected || dragOver) && 'is-selected', 'pl-2 pr-2 group-hover-opacity-container')}
+                    extra={
+                        <>
+                            {folderCreate.canShow && isWritableVault(vault) && (
+                                <MaybeTooltip active={folderCreate.limitReached} title={folderCreate.limitReason}>
+                                    <ButtonLike
+                                        as="div"
+                                        pill
+                                        icon
+                                        size="small"
+                                        color="weak"
+                                        disabled={folderCreate.limitReached}
+                                        onClick={
+                                            folderCreate.limitReached ? undefined : handleClickEvent(onCreateFolder)
+                                        }
+                                        shape="solid"
+                                        title={folderCreate.limitReached ? undefined : c('Action').t`Create folder`}
+                                        className={clsx(
+                                            !selected && 'group-hover:opacity-100 group-hover:opacity-100-no-width',
+                                            'relative mr-1'
+                                        )}
+                                        style={{ color: 'var(--text-weak)' }}
+                                    >
+                                        <Icon name="folder-plus" />
+                                    </ButtonLike>
+                                </MaybeTooltip>
+                            )}
+                            <ButtonLike
+                                as="div"
+                                pill
+                                icon={vault.targetMembers <= 1}
+                                size="small"
+                                color="weak"
+                                onClick={shareButton.action}
+                                shape="solid"
+                                title={shareButton.label}
+                                className={clsx(
+                                    !(selected || vault.shared) &&
+                                        'group-hover:opacity-100 group-hover:opacity-100-no-width',
+                                    'relative mr-3'
+                                )}
+                                style={{ color: 'var(--text-weak)' }}
+                            >
+                                {notification && (
+                                    <IcExclamationCircleFilled
+                                        size={4}
+                                        className="absolute top-custom right-custom"
+                                        style={{
+                                            '--top-custom': '-1px',
+                                            '--right-custom': '-1px',
+                                            color: 'var(--signal-danger)',
+                                        }}
+                                    />
+                                )}
+                                <Icon name={shareButton.icon} />
+                                {vault.targetMembers > 1 && <span className="text-sm ml-1">{vault.targetMembers}</span>}
+                            </ButtonLike>
+                        </>
+                    }
+                    extraClassname="pr-4"
+                    icon={
+                        <>
+                            <PassExpandButton
+                                expanded={isExpanded}
+                                onClick={() => setIsExpanded(!isExpanded)}
+                                hidden={!showFolders}
                             />
-                        )}
-                        <Icon name={shareButton.icon} />
-                        {vault.targetMembers > 1 && <span className="text-sm ml-1">{vault.targetMembers}</span>}
-                    </ButtonLike>
-                }
-                extraClassname="pr-4"
-                icon={
-                    <VaultIcon
-                        background
-                        className="shrink-0 mr-1"
-                        size={4}
-                        color={vault?.content.display.color}
-                        icon={vault?.content.display.icon}
-                    />
-                }
-                quickActions={
-                    withActions
-                        ? [
-                              canManage && (
-                                  <DropdownMenuButton
-                                      key="vault-edit"
-                                      label={c('Action').t`Edit vault`}
-                                      icon="pen"
-                                      onClick={handleClickEvent(onEdit)}
-                                  />
-                              ),
+                            <VaultIcon
+                                background
+                                className="shrink-0 mr-1"
+                                size={4}
+                                color={vault?.content.display.color}
+                                icon={vault?.content.display.icon}
+                            />
+                        </>
+                    }
+                    quickActions={
+                        withActions
+                            ? [
+                                  canManage && (
+                                      <DropdownMenuButton
+                                          key="vault-edit"
+                                          label={c('Action').t`Edit vault`}
+                                          icon="pen"
+                                          onClick={handleClickEvent(onEdit)}
+                                      />
+                                  ),
 
-                              vault.shared && (
-                                  <DropdownMenuButton
-                                      key="vault-manage"
-                                      className="flex items-center py-2 px-4"
-                                      icon="users"
-                                      label={canManage ? c('Action').t`Manage access` : c('Action').t`See members`}
-                                      onClick={handleClickEvent(onManage)}
-                                  />
-                              ),
+                                  folderCreate.canShow && (
+                                      <DropdownMenuButton
+                                          key="folder-create"
+                                          disabled={!isWritableVault(vault) || folderCreate.limitReached}
+                                          title={folderCreate.limitReason ?? undefined}
+                                          label={c('Action').t`Create folder`}
+                                          icon="folder-plus"
+                                          onClick={handleClickEvent(onCreateFolder)}
+                                      />
+                                  ),
 
-                              canInvite && (
-                                  <DropdownMenuButton
-                                      key="vault-share"
-                                      className="flex items-center py-2 px-4"
-                                      disabled={!isWritableVault(vault)}
-                                      icon="user-plus"
-                                      label={c('Action').t`Share`}
-                                      onClick={onInviteClick}
-                                  />
-                              ),
+                                  vault.shared && (
+                                      <DropdownMenuButton
+                                          key="vault-manage"
+                                          className="flex items-center py-2 px-4"
+                                          icon="users"
+                                          label={canManage ? c('Action').t`Manage access` : c('Action').t`See members`}
+                                          onClick={handleClickEvent(onManage)}
+                                      />
+                                  ),
 
-                              canMove && (
-                                  <DropdownMenuButton
-                                      key="vault-move"
-                                      onClick={handleClickEvent(onMove)}
-                                      label={c('Action').t`Move all items`}
-                                      icon="folder-arrow-in"
-                                  />
-                              ),
+                                  canInvite && (
+                                      <DropdownMenuButton
+                                          key="vault-share"
+                                          className="flex items-center py-2 px-4"
+                                          disabled={!isWritableVault(vault)}
+                                          icon="user-plus"
+                                          label={c('Action').t`Share`}
+                                          onClick={onInviteClick}
+                                      />
+                                  ),
 
-                              canLeave && (
-                                  <DropdownMenuButton
-                                      key="vault-leave"
-                                      className="flex items-center py-2 px-4"
-                                      onClick={handleClickEvent(onLeave)}
-                                      icon="cross-circle"
-                                      label={c('Action').t`Leave vault`}
-                                      danger
-                                  />
-                              ),
+                                  canMove && (
+                                      <DropdownMenuButton
+                                          key="vault-move"
+                                          onClick={handleClickEvent(onMove)}
+                                          label={c('Action').t`Move all items`}
+                                          icon="folder-arrow-in"
+                                      />
+                                  ),
 
-                              canDelete && (
-                                  <DropdownMenuButton
-                                      key="vault-delete"
-                                      disabled={!onDelete}
-                                      onClick={handleClickEvent(onDelete)}
-                                      label={c('Action').t`Delete vault`}
-                                      icon="trash"
-                                      danger
-                                  />
-                              ),
-                          ].filter(truthy)
-                        : undefined
-                }
-                {...dragProps}
-            />
+                                  canLeave && (
+                                      <DropdownMenuButton
+                                          key="vault-leave"
+                                          className="flex items-center py-2 px-4"
+                                          onClick={handleClickEvent(onLeave)}
+                                          icon="cross-circle"
+                                          label={c('Action').t`Leave vault`}
+                                          danger
+                                      />
+                                  ),
+
+                                  canDelete && (
+                                      <DropdownMenuButton
+                                          key="vault-delete"
+                                          disabled={!onDelete}
+                                          onClick={handleClickEvent(onDelete)}
+                                          label={c('Action').t`Delete vault`}
+                                          icon="trash"
+                                          danger
+                                      />
+                                  ),
+                              ].filter(truthy)
+                            : undefined
+                    }
+                    {...dragProps}
+                />
+                {isExpanded && showFolders && (
+                    <ul className="unstyled my-1 w-full">
+                        {topLevelFolders.map((folder) => (
+                            <PassSidebarFolder
+                                key={folder.folderId}
+                                folderId={folder.folderId}
+                                shareId={folder.shareId}
+                                name={folder.name}
+                                onAction={onAction}
+                            />
+                        ))}
+                    </ul>
+                )}
+            </>
         );
     }
 );

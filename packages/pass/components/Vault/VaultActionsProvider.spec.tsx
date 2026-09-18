@@ -42,6 +42,6 @@ describe('VaultActionsProvider', () => {
 
         handleSelect(navigate, 'trash');
 
-        expect(navigate.mock.lastCall[1].filters).toEqual({ selectedShareId: null });
+        expect(navigate.mock.lastCall[1].filters).toEqual({ selectedShareId: null, selectedFolderId: null });
     });
 });

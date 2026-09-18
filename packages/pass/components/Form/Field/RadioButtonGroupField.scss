@@ -32,20 +32,10 @@
 
 .pass-radio-group--labelled-button {
 	input[type='radio'] {
-		+ div {
-			border-block-end: 1px solid var(--border-weak);
-		}
-
 		&:focus-visible {
 			+ div {
 				outline: 2px solid var(--focus-ring);
 			}
-		}
-	}
-
-	&:last-of-type {
-		input[type='radio'] + div {
-			border-block-end: none;
 		}
 	}
 }

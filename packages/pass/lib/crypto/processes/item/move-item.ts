@@ -2,7 +2,8 @@ import type {
     EncodedItemKeyRotation,
     ItemKey,
     ItemMoveIndividualToShareRequest,
-    VaultShareKey,
+    MaybeNull,
+    RotationKey,
 } from '../../../../types';
 import { PassEncryptionTag } from '../../../../types';
 import { encryptData } from '../../utils/crypto-helpers';
@@ -10,19 +11,19 @@ import { encryptData } from '../../utils/crypto-helpers';
 type MoveItemProcessParams = {
     itemId: string;
     itemKeys: ItemKey[];
-    targetVaultKey: VaultShareKey;
+    targetKey: RotationKey;
+    targetFolderId?: MaybeNull<string>;
 };
 
 export const moveItem = async ({
     itemId,
     itemKeys,
-    targetVaultKey,
+    targetKey,
+    targetFolderId,
 }: MoveItemProcessParams): Promise<ItemMoveIndividualToShareRequest> => {
-    const vaultKey = targetVaultKey.key;
-
     const encryptedItemKeys = await Promise.all(
         itemKeys.map<Promise<EncodedItemKeyRotation>>(async ({ raw, rotation }) => {
-            const encryptedKey = await encryptData(vaultKey, raw, PassEncryptionTag.ItemKey);
+            const encryptedKey = await encryptData(targetKey.key, raw, PassEncryptionTag.ItemKey);
 
             return {
                 Key: encryptedKey.toBase64(),
@@ -31,5 +32,5 @@ export const moveItem = async ({
         })
     );
 
-    return { ItemKeys: encryptedItemKeys, ItemID: itemId };
+    return { ItemKeys: encryptedItemKeys, ItemID: itemId, DestinationFolderID: targetFolderId ?? null };
 };

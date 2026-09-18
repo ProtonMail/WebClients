@@ -51,6 +51,7 @@ export const selectUserStorageUsed = ({ user }: State) => user.plan?.StorageUsed
 export const selectUserStorageQuota = ({ user }: State) => user.plan?.StorageQuota ?? 0;
 export const selectUserStorageMaxFileSize = ({ user }: State) => user.plan?.StorageMaxFileSize ?? 0;
 export const selectUserStorageAllowed = ({ user }: State) => user.plan?.StorageAllowed;
+export const selectUserFolderAllowed = ({ user }: State) => user.plan?.FolderAllowed;
 
 /* Specification for pass specific plans in `/user/access` response :
  * `business` -> Plan: Business | Trial: null | Limits: none

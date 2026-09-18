@@ -5,6 +5,9 @@ import type { DecryptedActionPayload } from '../../lib/crypto/processes/access-t
 import type { Group, GroupWithPublicKeys } from '../../lib/groups/groups.types';
 import type {
     EncodedItemKeyRotation,
+    FolderCreateInputDto,
+    FolderDataResponse,
+    FolderUpdateContentInputDto,
     InviteAcceptRequest,
     InviteCreateRequest,
     ItemCreateRequest,
@@ -26,6 +29,9 @@ import type { ShareRole, ShareType } from '../data/shares';
 import type { NativeMessageData } from '../desktop';
 import type { MaybeNull } from '../utils';
 import type {
+    FolderId,
+    FolderKey,
+    FolderKeysByShareId,
     InviteTargetKey,
     ItemId,
     ItemKey,
@@ -46,9 +52,10 @@ export type PassCryptoManagerContext = {
     shareManagers: Map<ShareId, ShareManager>;
     fileKeys: Map<string, Uint8Array<ArrayBuffer>>;
     groups: Map<string, GroupWithPublicKeys>;
+    folderKeys: FolderKeysByShareId;
 };
 
-export type PassCryptoSnapshot = Pick<PassCryptoManagerContext, 'shareManagers'>;
+export type PassCryptoSnapshot = Pick<PassCryptoManagerContext, 'shareManagers' | 'folderKeys'>;
 
 export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSnapshot> {
     ready: boolean;
@@ -83,17 +90,35 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
     updateShareKeys: (data: { shareId: ShareId; encryptedShareKeys: ShareKeyResponse[] }) => Promise<void>;
     removeShare: (shareId: ShareId) => void;
     openItem: (data: { shareId: ShareId; encryptedItem: ItemRevisionContentsResponse }) => Promise<OpenedItem>;
-    createItem: (data: { shareId: ShareId; content: Uint8Array<ArrayBuffer> }) => Promise<ItemCreateRequest>;
+    createItem: (data: {
+        shareId: ShareId;
+        content: Uint8Array<ArrayBuffer>;
+        folderId?: MaybeNull<string>;
+    }) => Promise<ItemCreateRequest>;
     updateItem: (data: {
         content: Uint8Array<ArrayBuffer>;
         lastRevision: number;
         itemKey: ItemKey;
     }) => Promise<ItemUpdateRequest>;
+    createFolder: (data: {
+        shareId: ShareId;
+        content: Uint8Array<ArrayBuffer>;
+        parentFolderId: MaybeNull<string>;
+    }) => Promise<FolderCreateInputDto>;
+    openFolder: (data: { shareId: string; encryptedFolder: FolderDataResponse }) => Promise<Uint8Array<ArrayBuffer>>;
+    updateFolder: (data: {
+        shareId: ShareId;
+        folderId: string;
+        content: Uint8Array<ArrayBuffer>;
+    }) => Promise<FolderUpdateContentInputDto>;
     moveItem: (data: {
         encryptedItemKeys: EncodedItemKeyRotation[];
         itemId: ItemId;
         shareId: ShareId;
         targetShareId: string;
+        folderId?: MaybeNull<string>;
+        /** Destination folder in the target share, null/undefined if move to the share root */
+        targetFolderId?: MaybeNull<string>;
     }) => Promise<ItemMoveIndividualToShareRequest>;
     createInvite: (data: {
         email: string;
@@ -161,6 +186,10 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
     registerFileKey: (data: FileIdentifier & { fileKey: Uint8Array<ArrayBuffer> }) => void;
     unregisterFileKey: (data: FileIdentifier) => void;
     getFileKey: (data: FileIdentifier) => Uint8Array<ArrayBuffer>;
+    registerFolderKey: (data: { shareId: ShareId; folderId: string; folderKey: FolderKey }) => void;
+    getFolderKey: (data: { shareId: ShareId; folderId: string }) => FolderKey;
+    /** Drops the given folder keys, or every key of the share when `folderIds` is omitted */
+    removeFolderKeys: (shareId: ShareId, folderIds?: FolderId[]) => void;
     encryptFileKey: (data: FileIdentifier & { itemKey: ItemKey }) => Promise<Uint8Array<ArrayBuffer>>;
     createSecureLink: (data: { itemKey: ItemKey }) => Promise<CreateSecureLinkData>;
     openSecureLink: (data: {
@@ -172,9 +201,14 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         linkKeyShareKeyRotation: number;
         shareId: ShareId;
         itemId: ItemId;
+        folderId: MaybeNull<string>;
         linkKeyEncryptedWithItemKey: boolean;
     }) => Promise<Uint8Array<ArrayBuffer>>;
-    openItemKey: (data: { encryptedItemKey: EncodedItemKeyRotation; shareId: ShareId }) => Promise<ItemKey>;
+    openItemKey: (data: {
+        encryptedItemKey: EncodedItemKeyRotation;
+        shareId: ShareId;
+        folderId: MaybeNull<string>;
+    }) => Promise<ItemKey>;
     openSecureLinkFileDescriptor: (data: {
         encryptedFileKey: string;
         encryptedItemKey: string;

@@ -22,6 +22,7 @@ function* loadHistoryWorker({ payload, meta: { request } }: ReturnType<typeof it
                     filesResolve.intent({
                         shareId: item.shareId,
                         itemId: item.itemId,
+                        folderId: item.folderId,
                         history: true,
                     })
                 )

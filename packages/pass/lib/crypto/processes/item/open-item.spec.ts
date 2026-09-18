@@ -21,7 +21,7 @@ describe('openItem crypto process', () => {
             userKeyId: TEST_USER_KEY_ID,
         };
 
-        const createItemRequest = await createItem({ content, vaultKey });
+        const createItemRequest = await createItem({ content, encryptionKey: vaultKey });
 
         const encryptedItem: ItemRevisionContentsResponse = {
             AliasOwner: false,
@@ -63,7 +63,7 @@ describe('openItem crypto process', () => {
             userKeyId: TEST_USER_KEY_ID,
         };
 
-        const createItemRequest = await createItem({ content, vaultKey });
+        const createItemRequest = await createItem({ content, encryptionKey: vaultKey });
 
         const itemKey = await openItemKey({
             encryptedItemKey: { Key: createItemRequest.ItemKey!, KeyRotation: 1 },

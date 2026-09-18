@@ -26,6 +26,7 @@ const mockState = {
                     modifyTime: 1700000001,
                     pinned: false,
                     shareCount: 0,
+                    folderId: null,
                     data: itemBuilder('login').set('content', (content) =>
                         content.set('autofillUrls', [
                             { url: 'https://example.com', mode: AutofillMode.Default },
@@ -46,6 +47,7 @@ const mockState = {
             content: { name: 'My Vault', description: '', display: {} },
         },
     },
+    folders: {},
 } as unknown as State;
 
 const mockConfig = { APP_VERSION: '1.20.0' } as PassConfig;

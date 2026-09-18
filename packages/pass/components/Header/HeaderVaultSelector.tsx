@@ -12,6 +12,7 @@ import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 
 import { useVaultCreationPolicy } from '../../hooks/organization/useVaultCreationPolicy';
+import { selectFolder } from '../../store/selectors/folders';
 import { selectShare } from '../../store/selectors/shares';
 import type { ShareType } from '../../types/data/shares';
 import { VaultColor } from '../../types/protobuf/vault-v1.static';
@@ -36,9 +37,10 @@ const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
 export const HeaderVaultSelector = memo(() => {
     const scope = useItemScope();
     const { filters } = useNavigationFilters();
-    const { selectedShareId } = filters;
+    const { selectedShareId, selectedFolderId } = filters;
 
     const vault = useSelector(selectShare<ShareType.Vault>(selectedShareId));
+    const folder = useSelector(selectFolder(selectedShareId, selectedFolderId));
     const vaultActions = useVaultActions();
     const { vaultCreationDisabled } = useVaultCreationPolicy();
 
@@ -72,6 +74,7 @@ export const HeaderVaultSelector = memo(() => {
     if (sidebarVisible) {
         return null;
     }
+    const label = scope === 'share' && folder ? `${vaultOption.label} > ${folder.name}` : vaultOption.label;
 
     return (
         <>
@@ -92,7 +95,7 @@ export const HeaderVaultSelector = memo(() => {
                     color={iconColor}
                     icon={vaultOption.icon}
                 />
-                <span className="text-ellipsis">{vaultOption.label}</span>
+                <span className="text-ellipsis">{label}</span>
             </Button>
 
             <Dropdown

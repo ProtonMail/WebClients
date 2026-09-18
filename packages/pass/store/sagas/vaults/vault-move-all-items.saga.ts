@@ -9,7 +9,7 @@ import {
     vaultMoveAllItemsProgress,
     vaultMoveAllItemsSuccess,
 } from '../../actions';
-import { isShareLocked, selectItemsByShareId } from '../../selectors';
+import { isShareLocked, selectItemsInFolder } from '../../selectors';
 import { type BulkMoveItemsChannel, bulkMoveChannel } from '../items/item-bulk-move.saga';
 
 function* moveAllItemsWorker({ payload, meta }: ReturnType<typeof vaultMoveAllItemsIntent>) {
@@ -23,8 +23,8 @@ function* moveAllItemsWorker({ payload, meta }: ReturnType<typeof vaultMoveAllIt
         yield put(lockShare(shareId));
         yield put(lockShare(targetShareId));
 
-        const itemsToMove: ItemRevision[] = yield select(selectItemsByShareId(shareId));
-        const channel = bulkMoveChannel(itemsToMove, targetShareId);
+        const itemsToMove: ItemRevision[] = yield select(selectItemsInFolder(shareId, null));
+        const channel = bulkMoveChannel(itemsToMove, { targetShareId });
 
         while (true) {
             const action: BulkMoveItemsChannel = yield take(channel);

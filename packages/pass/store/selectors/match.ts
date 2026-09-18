@@ -1,12 +1,17 @@
 import { createSelector } from '@reduxjs/toolkit';
 
+import identity from '@proton/utils/identity';
+
+import { getFolderScope } from '../../lib/folders/folder.utils';
 import { isActive, isTrashed } from '../../lib/items/item.predicates';
-import { filterItemsByShareId, filterItemsByType, sortItems } from '../../lib/items/item.utils';
+import { filterItemsByFolderIds, filterItemsByShareId, filterItemsByType, sortItems } from '../../lib/items/item.utils';
 import { searchItems } from '../../lib/search/match-items';
 import type { SelectItemsOptions } from '../../lib/search/types';
 import type { ItemRevision } from '../../types';
 import { pipe } from '../../utils/fp/pipe';
+import { isEmptyString } from '../../utils/string/is-empty-string';
 import type { State } from '../types';
+import { selectFolders } from './folders';
 import { itemsFromSelection, selectAllItems, selectItems, selectVisibleItems } from './items';
 import { selectVisibleSecureLinkedItems, selectVisibleSecureLinksCount } from './secure-links';
 import { selectSharedByMe, selectSharedWithMe } from './shared';
@@ -20,8 +25,10 @@ export type ItemsSearchResults = {
 
 const selectTrashedFilter = (_: State, { trashed }: SelectItemsOptions) => trashed;
 const selectShareIdFilter = (_: State, { shareId }: SelectItemsOptions) => shareId;
+const selectFolderIdFilter = (_: State, { folderId }: SelectItemsOptions) => folderId;
 const selectSortFilter = (_: State, { sort }: SelectItemsOptions) => sort;
 const selectSearchFilter = (_: State, { search }: SelectItemsOptions) => search;
+const selectSearchActiveFilter = (_: State, { search }: SelectItemsOptions) => !isEmptyString(search);
 const selectTypeFilter = (_: State, { type }: SelectItemsOptions) => type;
 const selectVisibleFilter = (_: State, { visible }: SelectItemsOptions) => visible;
 
@@ -33,14 +40,27 @@ export const createMatchItemsSelector = () => {
         (visible ? selectVisibleItems : selectAllItems)(state)
     );
 
-    const selectSortedItemsByShareId = createSelector(
-        [selectItemsByVisibility, selectTrashedFilter, selectShareIdFilter, selectSortFilter],
-        (items, trashed, shareId, sort) =>
-            pipe(filterItemsByShareId(shareId), sortItems(sort))(items.filter(trashed ? isTrashed : isActive))
+    const selectFolderScope = createSelector(
+        [selectFolders, selectShareIdFilter, selectFolderIdFilter, selectSearchActiveFilter],
+        (folders, shareId, folderId, search) => (shareId ? getFolderScope(folders[shareId], folderId ?? null, search) : undefined)
+    );
+
+    const selectSortedItemsByShareIdAndFolderId = createSelector(
+        [selectItemsByVisibility, selectTrashedFilter, selectShareIdFilter, selectFolderScope, selectSortFilter],
+        (items, trashed, shareId, folderScope, sort) =>
+            pipe(
+                filterItemsByShareId(shareId),
+                /** A vault selection only displays its direct root items, a folder selection
+                 * only displays its direct items not subfolder items. However an active search
+                 * recursively displays subfolder items */
+                folderScope ? filterItemsByFolderIds(folderScope) : identity,
+                sortItems(sort)
+            )(items.filter(trashed ? isTrashed : isActive))
     );
 
     return createSelector(
-        [selectSortedItemsByShareId, selectSearchFilter, selectTypeFilter, selectSortFilter],
+        [selectSortedItemsByShareIdAndFolderId, selectSearchFilter, selectTypeFilter, selectSortFilter],
+
         (items, search, type, sort): ItemsSearchResults => {
             /* Relevance ranking only applies to the `relevant` sort; every other
              * sort filters in-place, preserving its order (mobile parity) */

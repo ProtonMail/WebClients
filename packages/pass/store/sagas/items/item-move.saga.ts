@@ -9,11 +9,11 @@ import { selectItem } from '../../selectors';
 
 export default createRequestSaga({
     actions: itemMove,
-    call: function* ({ itemId, shareId, targetShareId }) {
+    call: function* ({ itemId, shareId, targetShareId, targetFolderId }) {
         const before: Maybe<ItemRevision> = yield select(selectItem(shareId, itemId));
         if (!before) throw new Error('Invalid move action');
 
-        const moved: ItemRevision[] = yield call(moveItems, [before], targetShareId);
+        const moved: ItemRevision[] = yield call(moveItems, [before], { targetShareId, targetFolderId });
         const after = first(moved);
         if (!after) throw new Error('Moving item failed');
 
