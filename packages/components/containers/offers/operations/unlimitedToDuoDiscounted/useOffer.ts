@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import { useLocation } from 'react-router';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -51,35 +50,31 @@ export const useOffer = (): Operation => {
 
     const isValid = isCandidate && !!discount;
 
-    const config = useMemo(() => {
-        const offerSubscription = paidSubscription ? new OfferSubscription(paidSubscription) : undefined;
+    const offerSubscription = paidSubscription ? new OfferSubscription(paidSubscription) : undefined;
 
-        return {
-            // Fills in the app the user is actually in, so the tracking ref distinguishes Mail from
-            // Calendar and Drive.
-            ...withResolvedRefs(configuration, APP_NAME, pathname, offerSubscription),
-            topButtonDiscount: discount,
-            tracking: {
-                onTopNavbarClick: () => {
-                    sendReportClickTopNavbar();
-                },
-                onCloseModal: () => {
-                    sendReportCloseOffer();
-                },
-                onSelectDeal: () => {
-                    sendReportClickUpsellButton();
-                },
-                onHideOffer: () => {
-                    sendReportClickHideOffer();
-                },
-                onSubscribed: () => {
-                    sendReportUserSubscribed();
-                },
+    const config = {
+        // Fills in the app the user is actually in, so the tracking ref distinguishes Mail from
+        // Calendar and Drive.
+        ...withResolvedRefs(configuration, APP_NAME, pathname, offerSubscription),
+        topButtonDiscount: discount,
+        tracking: {
+            onTopNavbarClick: () => {
+                sendReportClickTopNavbar();
             },
-        };
-        // The telemetry senders are recreated every render, so they are intentionally left out of
-        // the dependencies to keep the config stable.
-    }, [discount, APP_NAME, pathname, paidSubscription]);
+            onCloseModal: () => {
+                sendReportCloseOffer();
+            },
+            onSelectDeal: () => {
+                sendReportClickUpsellButton();
+            },
+            onHideOffer: () => {
+                sendReportClickHideOffer();
+            },
+            onSubscribed: () => {
+                sendReportUserSubscribed();
+            },
+        },
+    };
 
     return {
         isValid,
