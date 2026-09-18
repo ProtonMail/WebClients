@@ -15676,30 +15676,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tauri-apps/plugin-store@npm:~2.4.4":
-  version: 2.4.4
-  resolution: "@tauri-apps/plugin-store@npm:2.4.4"
-  dependencies:
-    "@tauri-apps/api": "npm:^2.11.0"
-  checksum: 10/30dcc1103a741a8efbfdcd93dc6ca166f52728cee2cae3708926183141eacc9ca9d5a5c68e2dabe14ed0ee490f9cca09cd221c9d13ed6f23c13fba4c259b1e27
-  languageName: node
-  linkType: hard
-
 "@tauri-apps/plugin-updater@npm:~2.11.0":
   version: 2.11.0
   resolution: "@tauri-apps/plugin-updater@npm:2.11.0"
   dependencies:
     "@tauri-apps/api": "npm:^2.11.0"
   checksum: 10/8496a0672c537c20b2b2f5d0e86836cb89a33df1b250e861a90bc2e1baacbf5b733bed04f51e66c275392fa586abf7994e9825004a678715a9ddee81bb07dcdb
-  languageName: node
-  linkType: hard
-
-"@tauri-apps/plugin-window-state@npm:~2.4.1":
-  version: 2.4.1
-  resolution: "@tauri-apps/plugin-window-state@npm:2.4.1"
-  dependencies:
-    "@tauri-apps/api": "npm:^2.8.0"
-  checksum: 10/57b0b35e98f601af8707194804f0e398586b06c49d73850d63af6befdbd1821d9168ce4d9d1b5e29358613210f1d407ae6ed3f802eab6988a5d6fa99d21d6ac4
   languageName: node
   linkType: hard
 
@@ -39679,16 +39661,13 @@ __metadata:
     "@tauri-apps/plugin-log": "npm:~2.9.1"
     "@tauri-apps/plugin-opener": "npm:^2.5.5"
     "@tauri-apps/plugin-process": "npm:~2.3.1"
-    "@tauri-apps/plugin-store": "npm:~2.4.4"
     "@tauri-apps/plugin-updater": "npm:~2.11.0"
-    "@tauri-apps/plugin-window-state": "npm:~2.4.1"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@types/react": "npm:^18.3.31"
     "@types/react-dom": "npm:^18.3.7"
     "@zxing/browser": "npm:0.2.1"
     "@zxing/library": "npm:0.23.0"
     browserslist: "npm:^4.28.9"
-    core-js: "npm:^3.50.0"
     cross-env: "npm:^10.1.0"
     dexie: "npm:^4.4.6"
     dexie-react-hooks: "npm:^1.1.7"

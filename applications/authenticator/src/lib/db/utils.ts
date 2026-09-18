@@ -11,9 +11,9 @@ const AuthenticatorDBErrorFactory = (name: string) =>
         }
     };
 
-export const AuthenticatorDBClosedError = AuthenticatorDBErrorFactory('AuthenticatorDBClosedError');
+const AuthenticatorDBClosedError = AuthenticatorDBErrorFactory('AuthenticatorDBClosedError');
 export const AuthenticatorDBMigrationError = AuthenticatorDBErrorFactory('AuthenticatorDBMigrationError');
-export const AuthenticatorDBTimeoutError = AuthenticatorDBErrorFactory('AuthenticatorDBTimeoutError');
+const AuthenticatorDBTimeoutError = AuthenticatorDBErrorFactory('AuthenticatorDBTimeoutError');
 
 /** Opens a Dexie database and waits for it to be ready.
  * Uses the 'ready' event to ensure the database is fully initialized

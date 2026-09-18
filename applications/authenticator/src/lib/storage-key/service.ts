@@ -11,7 +11,7 @@ import { formatGenerateError, formatReadError, formatResetKeyWarning, formatUnsa
 
 if (module.hot) module.hot.decline();
 
-export type WithOnRetry<T> = T & {
+type WithOnRetry<T> = T & {
     confirm: (options: {
         message: string;
         cancelable: boolean;
@@ -20,8 +20,8 @@ export type WithOnRetry<T> = T & {
     }) => Promise<boolean>;
 };
 
-export type StorageKeyEvents = { type: 'storage_key'; source?: StorageKeySource };
-export type StorageKeySaveRefOptions = { rotated: boolean; onSaved: () => void };
+type StorageKeyEvents = { type: 'storage_key'; source?: StorageKeySource };
+type StorageKeySaveRefOptions = { rotated: boolean; onSaved: () => void };
 
 export type StorageKeyConfig = {
     onStorageKey: (ref: StorageKeyRef, options: StorageKeySaveRefOptions) => Promise<void>;
@@ -33,14 +33,11 @@ export type StorageKeyState = { storageKey?: CryptoKey; source?: StorageKeySourc
 export type StorageKeyInitOptions = WithOnRetry<{ keyRef?: StorageKeyRef; default?: StorageKeySource }>;
 export type StorageKeyGenerateOptions = WithOnRetry<{ source?: StorageKeySource }>;
 
-export const generateStorageKeySalt = () => crypto.getRandomValues(new Uint8Array(STORAGE_KEY_SALT_LENGTH));
-export const validateStorageKeySalt = (salt: Uint8Array<ArrayBuffer>) =>
-    salt && salt.length === STORAGE_KEY_SALT_LENGTH;
+const generateStorageKeySalt = () => crypto.getRandomValues(new Uint8Array(STORAGE_KEY_SALT_LENGTH));
+const validateStorageKeySalt = (salt: Uint8Array<ArrayBuffer>) => salt && salt.length === STORAGE_KEY_SALT_LENGTH;
 
-export const deriveStorageKey = async (
-    raw: Uint8Array<ArrayBuffer>,
-    salt: Uint8Array<ArrayBuffer>
-): Promise<CryptoKey> => deriveKey(raw, salt, STORAGE_KEY_HKDF_INFO, { extractable: false });
+const deriveStorageKey = async (raw: Uint8Array<ArrayBuffer>, salt: Uint8Array<ArrayBuffer>): Promise<CryptoKey> =>
+    deriveKey(raw, salt, STORAGE_KEY_HKDF_INFO, { extractable: false });
 
 if (process.env.QA_BUILD) {
     const self = window as any;

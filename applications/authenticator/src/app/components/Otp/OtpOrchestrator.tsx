@@ -21,7 +21,7 @@ interface IOtpOrchestrator {
 
 const REFRESH_RATE = 1_000 / 24;
 
-export type OtpEvent = { period: number; remaining: number };
+type OtpEvent = { period: number; remaining: number };
 
 type OtpOrchestratorRef = {
     /** OTP renderers indexed by period */
@@ -34,7 +34,7 @@ type OtpOrchestratorRef = {
     pubsub: PubSub<OtpEvent>;
 };
 
-export const OTPOrchestratorContext = createContext<MaybeNull<IOtpOrchestrator>>(null);
+const OTPOrchestratorContext = createContext<MaybeNull<IOtpOrchestrator>>(null);
 export const useOTPOrchestrator = createUseContext(OTPOrchestratorContext);
 
 export const OTPOrchestrator: FC<{ children: ReactNode }> = ({ children }) => {

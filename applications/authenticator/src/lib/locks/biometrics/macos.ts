@@ -7,7 +7,7 @@ import type { Maybe } from '@proton/pass/types';
 //
 // For values, objc2-local-authentication is likely more helpful
 // https://docs.rs/objc2-local-authentication/latest/src/objc2_local_authentication/generated/LAError.rs.html
-export const LA_ERRORS = {
+const LA_ERRORS = {
     /// Authentication was not successful because user failed to provide valid credentials.
     AuthenticationFailed: -1,
 
