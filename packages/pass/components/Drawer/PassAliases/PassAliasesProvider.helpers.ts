@@ -1,6 +1,5 @@
-import type { PassBridge, PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
-import { isTrashed } from '@proton/pass/lib/items/item.predicates';
-
+import type { PassBridge, PassBridgeAliasItem } from '../../../lib/bridge/types';
+import { isTrashed } from '../../../lib/items/item.predicates';
 import type { PassAliasesVault } from './interface';
 
 export const filterPassAliases = (aliases: PassBridgeAliasItem[]) => {

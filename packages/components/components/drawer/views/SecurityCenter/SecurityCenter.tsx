@@ -1,18 +1,24 @@
+import type { ReactNode } from 'react';
+
+import { selectCanDisplayAccountSecuritySection } from '@proton/account';
 import { baseUseSelector } from '@proton/react-redux-store';
 
 import DrawerAppScrollContainer from '../shared/DrawerAppScrollContainer';
 import AccountSecurity from './AccountSecurity/AccountSecurity';
-import { selectCanDisplayAccountSecuritySection } from '@proton/account';
 import BreachAlertsSecurityCenter from './BreachAlerts/BreachAlertsSecurityCenter';
-import PassAliasesContainer from './PassAliases/PassAliasesContainer';
 import ProtonSentinel from './ProtonSentinel/ProtonSentinel';
 
-const SecurityCenter = () => {
+interface Props {
+    /** Pass aliases section; supplied by the product so components stays free of @proton/pass. */
+    passAliasesView?: ReactNode;
+}
+
+const SecurityCenter = ({ passAliasesView }: Props) => {
     const canDisplayAccountSecurity = baseUseSelector(selectCanDisplayAccountSecuritySection);
 
     return (
         <DrawerAppScrollContainer>
-            <PassAliasesContainer />
+            {passAliasesView}
             <ProtonSentinel />
             <BreachAlertsSecurityCenter />
             {canDisplayAccountSecurity && <AccountSecurity />}

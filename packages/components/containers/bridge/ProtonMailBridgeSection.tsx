@@ -9,7 +9,6 @@ import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
 import { IcBrandLinux } from '@proton/icons/icons/IcBrandLinux';
 import { IcBrandWindows } from '@proton/icons/icons/IcBrandWindows';
 import metrics from '@proton/metrics';
-import { semver } from '@proton/pass/utils/string/semver';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { VersionLoadError } from '@proton/shared/lib/apps/desktopVersions';
 import {
@@ -21,6 +20,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getBridgeURL, getStaticURL } from '@proton/shared/lib/helpers/url';
+import { semver } from '@proton/utils/semver';
 
 import Select from '../../components/select/Select';
 import SettingsParagraph from '../account/SettingsParagraph';

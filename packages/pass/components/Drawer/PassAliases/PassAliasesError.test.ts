@@ -1,6 +1,6 @@
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 
-import PassAliasesError, { PASS_ALIASES_ERROR_STEP } from './PassAliasesError';
+import { PASS_ALIASES_ERROR_STEP, PassAliasesError } from './PassAliasesError';
 
 describe('PassAliasesError', () => {
     it('should create an instance of PassAliasesError', () => {
