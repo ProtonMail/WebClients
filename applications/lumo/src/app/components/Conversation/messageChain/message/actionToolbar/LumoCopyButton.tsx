@@ -8,6 +8,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { copyDomToClipboard } from '@proton/shared/lib/helpers/browser';
 
 import { LumoIcon } from '../../../../LumoIcon/LumoIcon.tsx';
+import { prepareElementForCopy } from '../../clipboard';
 
 interface Props extends Omit<ButtonProps, 'value'> {
     /** Plain-text clipboard payload (e.g. markdown source). Used alone or with containerRef. */
@@ -71,35 +72,6 @@ const copyPlainText = async (text: string): Promise<boolean> => {
 const LumoCopyButton = ({ children, onSuccess, containerRef, textToCopy, ...rest }: Props) => {
     const [isCopying, setIsCopying] = useState(false);
 
-    const prepareElementForCopy = useCallback((element: HTMLDivElement): HTMLDivElement => {
-        const clonedElement = element.cloneNode(true) as HTMLDivElement;
-
-        // Remove elements that shouldn't be copied
-        clonedElement.querySelectorAll('.lumo-no-copy').forEach((btn) => btn.remove());
-
-        // Apply light theme styles for copying to other editors while preserving syntax highlighting
-        clonedElement.style.backgroundColor = 'white';
-        clonedElement.style.color = 'black';
-
-        const applyLightTheme = (element: HTMLElement) => {
-            if (element.tagName === 'CODE' || element.tagName === 'PRE') {
-                return;
-            }
-
-            element.style.backgroundColor = 'white';
-            element.style.color = 'black';
-
-            Array.from(element.children).forEach((child) => {
-                if (child instanceof HTMLElement) {
-                    applyLightTheme(child);
-                }
-            });
-        };
-
-        applyLightTheme(clonedElement);
-        return clonedElement;
-    }, []);
-
     const handleClick = useCallback(
         async (e: React.MouseEvent<HTMLButtonElement>) => {
             e.stopPropagation();
@@ -127,7 +99,7 @@ const LumoCopyButton = ({ children, onSuccess, containerRef, textToCopy, ...rest
                 setIsCopying(false);
             }
         },
-        [containerRef, onSuccess, prepareElementForCopy, textToCopy]
+        [containerRef, onSuccess, textToCopy]
     );
 
     const copyLabel = c('Label').t`Copy`;
