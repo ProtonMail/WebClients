@@ -175,8 +175,8 @@ const quotedMessage = async (
     const referenceMessage = await answeredMessage(mail, id);
     if (!referenceMessage) {
         throw new ToolInputError(
-            `Email ${answers} could not be read, so there was nothing to quote in the ${kind}. ` +
-                'read_email opens and decrypts it.'
+            `That email could not be read, so there was nothing to quote in the ${kind}. ` +
+                'Opening and reading the email is what decrypts it.'
         );
     }
 

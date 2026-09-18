@@ -50,13 +50,11 @@ export const createRenameLabelHandler =
         const id = resolveTypedId(label, ['label'], references);
         const existing = mail.getLabels().find((candidate) => candidate.ID === id);
         if (!existing) {
-            throw new ToolInputError(`Label ${label} no longer exists. Call list_labels again for the labels that do.`);
+            throw new ToolInputError('That label no longer exists. Re-read the label list for the ones that do.');
         }
 
         if (existing.Name.trim() === name.trim()) {
-            throw new ToolInputError(
-                `Label ${label} is already called "${existing.Name}". There is nothing to rename.`
-            );
+            throw new ToolInputError(`That label is already called "${existing.Name}". There is nothing to rename.`);
         }
 
         await mail.updateLabel({ labelID: existing.ID, label: { ...existing, Name: name.trim() } });
