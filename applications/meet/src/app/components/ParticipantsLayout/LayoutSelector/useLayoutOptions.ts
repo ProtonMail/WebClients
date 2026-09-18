@@ -12,6 +12,7 @@ import {
     setParticipantsLayout,
     setSpotlightSource,
 } from '@proton/meet/store/slices/layoutSlice';
+import { selectTotalParticipantCount } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 
 export const useLayoutOptions = () => {
@@ -20,6 +21,9 @@ export const useLayoutOptions = () => {
     const participantsLayout = useMeetSelector(selectParticipantsLayout);
     const spotlightSource = useMeetSelector(selectSpotlightSource);
     const isScreenShare = useMeetSelector(selectIsScreenShare);
+    const totalParticipantCount = useMeetSelector(selectTotalParticipantCount);
+
+    const hasOtherParticipants = totalParticipantCount > 1;
 
     const isShowingScreenShare =
         participantsLayout === ParticipantsLayouts.Speaker &&
@@ -34,13 +38,17 @@ export const useLayoutOptions = () => {
             isSelected: participantsLayout === ParticipantsLayouts.Gallery,
             onSelect: () => dispatch(setParticipantsLayout(ParticipantsLayouts.Gallery)),
         },
-        {
-            key: 'speaker',
-            label: c('Action').t`Speaker`,
-            Icon: IcMeetLayoutSpeaker,
-            isSelected: participantsLayout === ParticipantsLayouts.Speaker && !isShowingScreenShare,
-            onSelect: () => dispatch(setSpotlightSource(SpotlightSources.ActiveSpeaker)),
-        },
+        ...(hasOtherParticipants
+            ? [
+                  {
+                      key: 'speaker',
+                      label: c('Action').t`Speaker`,
+                      Icon: IcMeetLayoutSpeaker,
+                      isSelected: participantsLayout === ParticipantsLayouts.Speaker && !isShowingScreenShare,
+                      onSelect: () => dispatch(setSpotlightSource(SpotlightSources.ActiveSpeaker)),
+                  },
+              ]
+            : []),
         ...(isScreenShare
             ? [
                   {
