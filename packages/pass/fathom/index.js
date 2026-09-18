@@ -910,7 +910,7 @@ const addFieldOverride = (el) => OVERRIDE_FIELDS.add(el);
 
 const clearOverrides = () => {
     OVERRIDE_FORMS.clear();
-    OVERRIDE_FORMS.clear();
+    OVERRIDE_FIELDS.clear();
 };
 
 const getOverridableForms = () => Array.from(OVERRIDE_FORMS);
