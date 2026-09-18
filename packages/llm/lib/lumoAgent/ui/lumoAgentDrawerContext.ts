@@ -23,7 +23,8 @@ export interface LumoAgentDrawerValue {
     cancel: () => void;
     stop: () => void;
     clear: () => void;
-    getDebugTranscript: () => string;
+    /** Supplied only by a host that can open a composer, and the report button appears only with it. */
+    openDebugReport?: () => void;
     cardRenderers?: CardRenderers;
     serverToolMeta?: Partial<Record<ServerToolName, ServerToolMeta>>;
     suggestions?: WelcomeSuggestionCard[];
