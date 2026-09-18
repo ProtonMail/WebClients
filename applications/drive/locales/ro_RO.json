@@ -1369,6 +1369,9 @@
       ],
       "Sign in with Google": [
         "Conectare cu Google"
+      ],
+      "Importing from Google": [
+        "Se importă din Google"
       ]
     },
     "Action: Docs": {
@@ -8121,6 +8124,15 @@
       ],
       "Won’t import photos, Google Docs and Sheets": [
         "Nu se importă fotografii, documente și foi de calcul Google"
+      ],
+      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
+        "${ invitation.addedByEmail.error.claimedAuthor } (expeditor neverificat)"
+      ],
+      "We're importing your files from Google Drive. We'll let you know once it's done.": [
+        "Vi se importă fișierele din Google Drive. Vă vom anunța când procesul va fi finalizat."
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Fișierele v-au fost importate și criptate cu succes din Google Drive în ${ DRIVE_APP_NAME }."
       ]
     },
     "info": {
@@ -11415,6 +11427,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Veți putea utiliza ${ planTitle } gratuit până la sfârșitul perioadei de evaluare."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Adăugați o metodă de plată** pentru a continua să utilizați toate funcțiile după expirarea perioadei de probare."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Puteți anula oricând înainte de acel moment.** Veți putea utiliza ${ planTitle } gratuit până la expirarea perioadei de probare."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Dacă alegeți să continuați după perioada de probare,** puteți anula în termen de 30 de zile și puteți primi o rambursare proporțională."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**După ce începe abonamentul complet,** încă puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
+      ],
+      "Add a payment method": [
+        "Adăugați o metodă de plată"
+      ],
+      "If you continue after your trial,": [
+        "Dacă mai continuați după perioada de probare,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "pentru a continua să utilizații toate funcțiile după expirarea perioadei de probare."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
       ]
     },
     "Option": {
@@ -14963,6 +14999,12 @@
       ],
       "Your import is starting": [
         "Începe importarea"
+      ],
+      "Your import is finished!": [
+        "Importarea s-a finalizat!"
+      ],
+      "Your import is in progress": [
+        "Importarea este în desfășurare"
       ]
     },
     "Today icon tooltip in mini calendar": {
