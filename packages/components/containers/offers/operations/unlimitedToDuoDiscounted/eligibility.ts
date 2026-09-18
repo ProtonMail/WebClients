@@ -40,12 +40,14 @@ export function getIsEligible({
     protonConfig,
     offerConfig,
     preferredCurrency,
+    pathname,
 }: {
     user: UserModel;
     subscription?: Subscription;
     protonConfig: ProtonConfig;
     offerConfig: OfferConfig;
     preferredCurrency: Currency;
+    pathname: string;
 }) {
     if (user.isDelinquent || !user.canPay || !subscription || hasPassLifetime(user)) {
         return false;
@@ -81,5 +83,5 @@ export function getIsEligible({
         return false;
     }
 
-    return user.isPaid && offerSubscription.hasBundle() && isEligibleApp(protonConfig, window.location.pathname);
+    return user.isPaid && offerSubscription.hasBundle() && isEligibleApp(protonConfig, pathname);
 }

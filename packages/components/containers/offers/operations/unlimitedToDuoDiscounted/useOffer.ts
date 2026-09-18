@@ -42,6 +42,7 @@ export const useOffer = (): Operation => {
         protonConfig,
         offerConfig: configuration,
         preferredCurrency,
+        pathname,
     });
 
     const isCandidate = enabled && !isHidden && isEligible;
