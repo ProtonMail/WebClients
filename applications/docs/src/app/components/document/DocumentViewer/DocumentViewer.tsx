@@ -1,90 +1,90 @@
-import useAuthentication from '@proton/components/hooks/useAuthentication'
+import { mergeRegister } from '@lexical/utils'
+import { useGetUserSettings } from '@proton/account/userSettings/hooks'
 import { useConfig } from '@proton/app-context/useConfig'
+import { Button } from '@proton/atoms/Button/Button'
 import MimeIcon from '@proton/components/components/icon/MimeIcon'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider'
+import useAuthentication from '@proton/components/hooks/useAuthentication'
 import type {
   AuthenticatedDocControllerInterface,
   DocsClientSquashVerificationObjectionMadePayload,
   DocumentState,
+  EditorControllerInterface,
   EditorOrchestratorInterface,
   GeneralUserDisplayableErrorOccurredPayload,
+  GenericInfoEventPayload,
   PublicDocumentState,
   WebsocketConnectionEventPayloads,
-  EditorControllerInterface,
-  GenericInfoEventPayload,
 } from '@proton/docs-core'
 import {
+  ApplicationEvent,
   ClientToEditorBridge,
   DocControllerEvent,
-  ApplicationEvent,
   SquashVerificationObjectionDecision,
   WebsocketConnectionEvent,
   isDocumentState,
 } from '@proton/docs-core'
-import { DebugMenu } from './DebugMenu'
+import { getNodeName } from '@proton/docs-core/lib/DriveSDK/getNodeName'
+import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
 import type {
   CommentMarkNodeChangeData,
+  DocumentAction,
+  DocumentType,
   EditorInitializationConfig,
   LiveCommentsTypeStatusChangeData,
-  DocumentType,
   NodeMeta,
   PublicNodeMeta,
-  DocumentAction,
 } from '@proton/docs-shared'
 import { CommentsEvent, EditorEvent, EditorSystemMode, LiveCommentsEvent } from '@proton/docs-shared'
-import { EditorFrame } from '../EditorFrame'
-import { mergeRegister } from '@lexical/utils'
-import { useSignatureCheckFailedModal } from './SignatureCheckFailedModal'
-import { isPrivateNodeMeta, isPublicNodeMeta } from '@proton/drive-store'
-import { c } from 'ttag'
 import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAlert'
-import { Availability, AvailabilityTypes } from '@proton/utils/availability'
-import { useGetUserSettings } from '@proton/account/userSettings/hooks'
-import { WordCountOverlay } from '../WordCount'
-import { useWelcomeSplashModal } from '../public/WelcomeSplashModal'
+import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
+import { generateNodeUid, getDrive, type DriveEvent, type NodeEntity } from '@proton/drive'
+import { isPrivateNodeMeta, isPublicNodeMeta } from '@proton/drive-store'
+import { UserSettingsProvider } from '@proton/drive-store/store'
+import { tmpConvertNewDocTypeToOld } from '@proton/drive-store/store/_documents'
+import { IcLockFilled } from '@proton/icons/icons/IcLockFilled'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
+import { getAppHref } from '@proton/shared/lib/apps/helper'
+import { APPS, SHEETS_APP_NAME } from '@proton/shared/lib/constants'
+import { isLocalEnvironment } from '@proton/shared/lib/env'
+import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
+import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
+import { useFlagsStatus } from '@proton/unleash/proxy'
+import { useFlag } from '@proton/unleash/useFlag'
+import { Availability, AvailabilityTypes } from '@proton/utils/availability'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { c } from 'ttag'
+import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
+import { useApplication } from '~/utils/application-context'
+import { useDebugMode } from '~/utils/debug-mode-context'
+import { useDocsUrlBar } from '~/utils/docs-url-bar'
+import { getLogsAsJSON } from '~/utils/downloadLogs'
+import {
+  useDocsDocumentViewerEventsSDK,
+  useIsDarkThemeEnabled,
+  useIsGatePrivateInviteAccessEnabled,
+  useIsOpenTracerEnabled,
+  useIsSheetsEditorEnabled,
+  useSharingModalDriveSdkEnabled,
+} from '~/utils/flags'
+import type { ProviderType } from '../../../provider-type'
+import TracerAlert from '../../../tracer/TracerAlert'
+import { EditorFrame } from '../EditorFrame'
+import { WordCountOverlay } from '../WordCount'
+import { useDocsContext } from '../context'
+import { useWelcomeSplashModal } from '../public/WelcomeSplashModal'
+import { useChangeAddressWhenPubliclyShared } from '../useChangeAddressWhenPubliclyShared'
+import { DebugMenu } from './DebugMenu'
+import { DocumentErrorFallback, type DocumentError } from './DocumentErrorFallback'
+import { useDriftDetectionErrorModal } from './DriftDetectionErrorModal'
 import type { InviteAutoAcceptResult } from './InviteAutoAccepter'
 import { InviteAutoAccepter } from './InviteAutoAccepter'
 import { PrivateDocumentInviteGate } from './PrivateDocumentInviteGate'
-import { type DocumentError, DocumentErrorFallback } from './DocumentErrorFallback'
-import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
-import { IcLockFilled } from '@proton/icons/icons/IcLockFilled'
-import { useApplication } from '~/utils/application-context'
+import { useSignatureCheckFailedModal } from './SignatureCheckFailedModal'
 import { AppendPublicShareKeyMaterialToTitle } from './append-public-share-key-material-to-title'
-import { useFlag } from '@proton/unleash/useFlag'
-import type { ProviderType } from '../../../provider-type'
-import { tmpConvertNewDocTypeToOld } from '@proton/drive-store/store/_documents'
-import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
-import { UserSettingsProvider } from '@proton/drive-store/store'
-import { useDocsContext } from '../context'
-import { useDebugMode } from '~/utils/debug-mode-context'
-import {
-  useDocsDocumentViewerEventsSDK,
-  useIsGatePrivateInviteAccessEnabled,
-  useIsSheetsEditorEnabled,
-  useSharingModalDriveSdkEnabled,
-  useIsOpenTracerEnabled,
-  useIsDarkThemeEnabled,
-} from '~/utils/flags'
-import { useFlagsStatus } from '@proton/unleash/proxy'
-import { APPS, SHEETS_APP_NAME } from '@proton/shared/lib/constants'
-import { Button } from '@proton/atoms/Button/Button'
-import { getAppHref } from '@proton/shared/lib/apps/helper'
-import { isLocalEnvironment } from '@proton/shared/lib/env'
-import { useChangeAddressWhenPubliclyShared } from '../useChangeAddressWhenPubliclyShared'
-import { generateNodeUid, getDrive, type DriveEvent, type NodeEntity } from '@proton/drive'
-import { getNodeName } from '@proton/docs-core/lib/DriveSDK/getNodeName'
-import { useDriftDetectionErrorModal } from './DriftDetectionErrorModal'
-import { traceError, SentryRealtimeInitiatives } from '@proton/shared/lib/helpers/sentry'
-import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
-import TracerAlert from '../../../tracer/TracerAlert'
-import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
-import { getLogsAsJSON } from '~/utils/downloadLogs'
 import { useSheetsDebugArtifacts } from './useSheetsDebugArtifacts'
-import { useDocsUrlBar } from '~/utils/docs-url-bar'
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider'
 
-export function useSuggestionsFeatureFlag() {
+function useSuggestionsFeatureFlag() {
   const isDisabled = useFlag('DocsSuggestionsDisabled')
   return { isSuggestionsEnabled: !isDisabled }
 }

@@ -1,15 +1,15 @@
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState'
+import { Button } from '@proton/atoms/Button/Button'
 import ModalTwo from '@proton/components/components/modalTwo/Modal'
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent'
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter'
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState'
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo'
-import { Button } from '@proton/atoms/Button/Button'
 import { c } from 'ttag'
 
 import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser'
 import { useState } from 'react'
 
-export function ExportToPDFModal({ onClose, open, ...modalProps }: ModalStateProps) {
+function ExportToPDFModal({ onClose, open, ...modalProps }: ModalStateProps) {
   const [isOpen, setIsOpen] = useState(open)
 
   const close = () => {

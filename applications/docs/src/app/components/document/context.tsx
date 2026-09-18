@@ -1,9 +1,9 @@
+import type { DocumentAction } from '@proton/docs-shared'
+import type { PublicDriveCompat } from '@proton/drive-store/lib'
+import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
+import type { UserModel } from '@proton/shared/lib/interfaces'
 import type { ReactNode } from 'react'
 import { createContext, useContext } from 'react'
-import type { UserModel } from '@proton/shared/lib/interfaces'
-import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
-import type { PublicDriveCompat } from '@proton/drive-store/lib'
-import type { DocumentAction } from '@proton/docs-shared'
 
 export type PublicContextValue = {
   user: UserModel | undefined
@@ -12,12 +12,12 @@ export type PublicContextValue = {
   openParams: DocumentAction
 }
 
-export type PrivateContextValue = {
+type PrivateContextValue = {
   user: UserModel
   compat: DriveCompat
 }
 
-export type DocsContextValue = {
+type DocsContextValue = {
   privateContext: PrivateContextValue | undefined
   publicContext: PublicContextValue | undefined
   surePrivateContext: PrivateContextValue

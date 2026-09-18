@@ -1,28 +1,28 @@
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState'
-import BasicModal from '@proton/components/components/modalTwo/BasicModal'
-import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo'
 import { useApi } from '@proton/app-context/useApi'
 import { useConfig } from '@proton/app-context/useConfig'
-import TextAreaTwo from '@proton/components/components/v2/input/TextArea'
-import InputFieldTwo from '@proton/components/components/v2/field/InputField'
-import Checkbox from '@proton/components/components/input/Checkbox'
-import Progress from '@proton/components/components/progress/Progress'
 import { Button } from '@proton/atoms/Button/Button'
+import Checkbox from '@proton/components/components/input/Checkbox'
+import BasicModal from '@proton/components/components/modalTwo/BasicModal'
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState'
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo'
+import Progress from '@proton/components/components/progress/Progress'
+import InputFieldTwo from '@proton/components/components/v2/field/InputField'
+import TextAreaTwo from '@proton/components/components/v2/input/TextArea'
+import type { DocumentType } from '@proton/docs-shared'
 import { useEffect, useState } from 'react'
 import { c } from 'ttag'
-import type { DocumentType } from '@proton/docs-shared'
 
-import { getDrive, MemberRole } from '@proton/drive'
-import { reportBug } from '@proton/shared/lib/api/reports'
-import { getReportInfo, getClientName } from '@proton/components/helpers/report'
+import { useAddresses } from '@proton/account/addresses/hooks'
 import { useUser } from '@proton/account/user/hooks'
 import { useUserSettings } from '@proton/account/userSettings/hooks'
-import { useAddresses } from '@proton/account/addresses/hooks'
+import { getClientName, getReportInfo } from '@proton/components/helpers/report'
+import { getDrive, MemberRole } from '@proton/drive'
 import useLoading from '@proton/hooks/useLoading'
-import { getDocsReportContextLines } from '~/utils/report-context'
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine'
-import downloadFile from '@proton/shared/lib/helpers/downloadFile'
+import { reportBug } from '@proton/shared/lib/api/reports'
 import { BRAND_NAME } from '@proton/shared/lib/constants'
+import downloadFile from '@proton/shared/lib/helpers/downloadFile'
+import { getDocsReportContextLines } from '~/utils/report-context'
 
 const DriveEmail = 'drive@proton.me'
 
@@ -34,7 +34,7 @@ interface QuickReportModalProps extends ModalStateProps {
   errorTitle: string
 }
 
-export function QuickReportModal({
+function QuickReportModal({
   open,
   onClose,
   documentType,
