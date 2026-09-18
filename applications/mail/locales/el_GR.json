@@ -1553,7 +1553,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -8206,8 +8207,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -9965,6 +9965,87 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "Μια σύντομη επισκόπηση του τι μπορώ να κάνω για τα μηνύματά σας, από την εύρεση παλιών μηνυμάτων έως τη σύνταξη απαντήσεων, καθώς και του τι δεν μπορώ να κάνω."
+      ],
+      "Draft a ${ kind }": [
+        "Συντάξτε ένα ${ kind }"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "Συντάξτε ένα ${ kind } προς τον ${ recipient }"
+      ],
+      "Draft an ${ kind }": [
+        "Συντάξτε ένα ${ kind }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "Συντάξτε ένα ${ kind } προς τον ${ recipient }"
+      ],
+      "Drafted a ${ kind }": [
+        "Συντάχθηκε ένα ${ kind }"
+      ],
+      "Drafted an ${ kind }": [
+        "Συντάχθηκε ένα ${ kind }"
+      ],
+      "Edit ${ contact }": [
+        "Επεξεργασία ${ contact }"
+      ],
+      "Edit a contact": [
+        "Επεξεργασία μιας επαφής"
+      ],
+      "Edit contact": [
+        "Επεξεργασία επαφής"
+      ],
+      "forward": [
+        "προώθηση"
+      ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Γεια σου Lumo, ρίξε μια ματιά στα μηνύματα που λαμβάνω συχνότερα στα εισερχόμενά μου, καθώς και στους φακέλους και τα φίλτρα που έχω ήδη. Στη συνέχεια, πρότεινέ μου πώς να τα οργανώσω καλύτερα: τι να αλλάξω στα υπάρχοντα και τι καινούργιο αξίζει να προσθέσω. Πρώτα εξήγησέ μου το σχέδιο και μην μετακινήσεις τίποτα μέχρι να δώσω τη συγκατάθεσή μου."
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Γεια σου Lumo, θα λείπω και θέλω να ρυθμίσεις μια αυτόματη απάντηση για την απουσία μου. Ρώτησέ με για τις ημερομηνίες και το περιεχόμενο του μηνύματος, και στη συνέχεια δείξε μου το μήνυμα πριν το ενεργοποιήσεις."
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Γεια σου Lumo, ψάξε στα ηλεκτρονικά μηνύματά μου των τελευταίων 7 ημερών και πες μου ποια απαιτούν όντως απάντηση από εμένα. Γράψε μου με λίγα λόγια τι ζητάει το καθένα και παράλειψε όσα μπορώ να αγνοήσω."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Γεια σου Lumo, εξήγησέ μου πώς μπορείς να με βοηθήσεις με το γραμματοκιβώτιό μου. Τι είδους εργασίες μπορώ να σου ζητήσω να κάνεις και σε τι δεν μπορείς να βοηθήσεις;"
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "Θα ελέγξω την αλληλογραφία της περασμένης εβδομάδας και θα ξεχωρίσω ό,τι όντως απαιτεί απάντηση, ώστε να μπορέσετε να το διεκπεραιώσετε με τη μία."
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "Θα εξετάσω τι λαμβάνετε συχνότερα, καθώς και τους φακέλους και τα φίλτρα που ήδη διαθέτετε, και στη συνέχεια θα σας προτείνω τι μπορεί να βελτιωθεί και τι λείπει. Δε θα αλλάξει τίποτα αν δε δώσετε εσείς τη σχετική έγκριση."
+      ],
+      "open draft": [
+        "άνοιγμα προσχέδιου"
+      ],
+      "Readdressed": [
+        "Ανακατεύθυνση"
+      ],
+      "reply": [
+        "απάντηση"
+      ],
+      "reply all": [
+        "απάντηση σε όλους"
+      ],
+      "Revise the ${ draft }": [
+        "Αναθεωρήστε το ${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "Ξαναγράφτηκε και απευθύνθηκε εκ νέου"
+      ],
+      "Set my out of office": [
+        "Ρύθμιση κατάστασης εκτός γραφείου"
+      ],
+      "Tidy up my inbox": [
+        "Τακτοποίηση των εισερχομένων μου"
+      ],
+      "What can you do?": [
+        "Τι μπορείτε να κάνετε;"
+      ],
+      "What needs handling?": [
+        "Τι χρειάζεται διευθέτηση;"
       ]
     },
     "info": {
@@ -10219,6 +10300,12 @@
       ],
       "Star": [
         "Αστέρι"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Κλείσιμο ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Άνοιγμα ${ LUMO_SHORT_APP_NAME } / εστίαση εισαγωγής"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -10255,6 +10342,9 @@
       ],
       "Message shortcuts": [
         "Συντομεύσεις μηνυμάτων"
+      ],
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "${ LUMO_SHORT_APP_NAME } συντομεύσεις"
       ]
     },
     "Label": {
@@ -11289,6 +11379,12 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Cc": [
+        "Κοιν."
+      ],
+      "To": [
+        "Προς"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13459,6 +13555,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Θα μπορείτε να χρησιμοποιήσετε ${ planTitle } δωρεάν μέχρι το τέλος της δοκιμαστικής περιόδου."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Προσθέστε έναν τρόπο πληρωμής** για να συνεχίσετε να χρησιμοποιείτε όλες τις λειτουργίες μετά τη λήξη της δοκιμαστικής περιόδου."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή πριν από τότε.** Θα μπορείτε να χρησιμοποιείτε το ${ planTitle } δωρεάν μέχρι τη λήξη της δοκιμαστικής περιόδου."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Αν συνεχίσετε μετά τη δοκιμαστική περίοδο,** μπορείτε να ακυρώσετε εντός 30 ημερών και να λάβετε επιστροφή χρημάτων κατ' αναλογία."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Μόλις ξεκινήσει η πλήρης συνδρομή σας...** Μπορείτε ακόμα να την ακυρώσετε εντός 30 ημερών και να λάβετε επιστροφή χρημάτων κατ' αναλογία."
+      ],
+      "Add a payment method": [
+        "Προσθέστε μία μέθοδο πληρωμής"
+      ],
+      "If you continue after your trial,": [
+        "Αν συνεχίσετε μετά τη δοκιμή σας,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "για να συνεχίσετε να χρησιμοποιείτε όλες τις λειτουργίες μετά τη λήξη της δοκιμαστικής περιόδου."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "μπορείτε να ακυρώσετε εντός 30 ημερών και να λάβετε αναλογική επιστροφή χρημάτων."
       ]
     },
     "Option": {

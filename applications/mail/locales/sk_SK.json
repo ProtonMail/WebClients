@@ -1561,7 +1561,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -8480,10 +8483,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -10302,6 +10302,48 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "Draft an ${ kind }": [
+        "Navrhni ${ kind }"
+      ],
+      "Drafted an ${ kind }": [
+        "Navrhol ${ kind }"
+      ],
+      "Edit ${ contact }": [
+        "Upraviť ${ contact }"
+      ],
+      "Edit a contact": [
+        "Upraviť kontakt"
+      ],
+      "Edit contact": [
+        "Upraviť kontakt"
+      ],
+      "forward": [
+        "preposlanie"
+      ],
+      "open draft": [
+        "otvoriť návrh"
+      ],
+      "Remove signature": [
+        "Odstrániť podpis"
+      ],
+      "Rename label": [
+        "Premenovať štítok"
+      ],
+      "Rename this label": [
+        "Premenovať tento štítok"
+      ],
+      "reply": [
+        "odpovedať"
+      ],
+      "reply all": [
+        "odpovedať všetkým"
+      ],
+      "What can you do?": [
+        "Čo môžete urobiť?"
+      ],
+      "What needs handling?": [
+        "Čo je potrebné vybaviť?"
       ]
     },
     "info": {
@@ -10566,6 +10608,9 @@
       ],
       "Star": [
         "S hviezdičkou"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Zavrieť ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -10602,6 +10647,9 @@
       ],
       "Message shortcuts": [
         "Skratky správ"
+      ],
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "Skratky ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Label": {
@@ -11642,6 +11690,12 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Cc": [
+        "Kópia (Cc)"
+      ],
+      "To": [
+        "Pre"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13902,6 +13956,9 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Budete môcť používať ${ planTitle } až do konca skúšobného obdobia, bez poplatku."
+      ],
+      "Add a payment method": [
+        "Pridať spôsob platby"
       ]
     },
     "Option": {
@@ -18983,6 +19040,16 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "Premenovať ${ folder } na…"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "Premenovať ${ label } na…"
       ]
     }
   }
