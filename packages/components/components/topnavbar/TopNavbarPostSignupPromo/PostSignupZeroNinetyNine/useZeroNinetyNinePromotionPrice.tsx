@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import { usePlans } from '@proton/account/plans/hooks';
+import { useAutomaticCurrency } from '@proton/payments-ui/client-extensions/useAutomaticCurrency';
+import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
@@ -8,8 +10,6 @@ import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrappe
 import clsx from '@proton/utils/clsx';
 
 import { getNormalizedPlanTitleToPlus } from '../../../../containers/payments/subscription/plusToPlusHelper';
-import { useAutomaticCurrency } from '../../../../payments/client-extensions/index';
-import { usePaymentsApi } from '../../../../payments/react-extensions/usePaymentsApi';
 import Price from '../../../price/Price';
 import SkeletonLoader from '../../../skeletonLoader/SkeletonLoader';
 
