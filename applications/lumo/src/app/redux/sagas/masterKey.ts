@@ -5,7 +5,7 @@ import type { MasterKeyContext } from '../../serialization';
 import type { Base64, MasterKeyState, MasterKeysBundle } from '../../types';
 import { buildMasterKeyContext } from '../../util/masterKeys';
 import { selectMasterKeyState, selectMasterKeysBundle } from '../selectors';
-import { addMasterKey, masterKeyFailed } from '../slices/core/credentials';
+import { addMasterKey, masterKeyFailed, normalizeMasterKeyFailure } from '../slices/core/credentials';
 
 /**
  * Only reached if the master key load neither succeeds nor fails — a hung request, or a boot that
@@ -62,7 +62,8 @@ export function* waitForMasterKeysBundle(context: string): SagaIterator<MasterKe
     });
 
     if (failed) {
-        throw new Error(`${context}: master key failed to load: ${failed.payload}`);
+        const { message } = normalizeMasterKeyFailure(failed.payload);
+        throw new Error(`${context}: master key failed to load: ${message}`);
     }
     if (!ready) {
         throw new Error(`${context}: timed out after ${MASTER_KEY_WAIT_TIMEOUT_MS}ms waiting for the master key`);

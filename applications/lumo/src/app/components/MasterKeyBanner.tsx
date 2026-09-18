@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
 import { selectMasterKeyState } from '../redux/selectors';
@@ -39,6 +40,13 @@ export const MasterKeyBanner = () => {
         }
     };
 
+    const message =
+        masterKeyState.reason === 'undecryptable_envelopes'
+            ? c('collider_2025: Error')
+                  .t`Your existing ${LUMO_SHORT_APP_NAME} data could not be decrypted with your available account keys. Recover your account keys, then retry.`
+            : c('collider_2025: Error')
+                  .t`Your chats can't be saved right now. Anything you write will be lost if you reload the page.`;
+
     return (
         <Banner
             variant={BannerVariants.DANGER}
@@ -49,8 +57,7 @@ export const MasterKeyBanner = () => {
                 </Button>
             }
         >
-            {c('collider_2025: Error')
-                .t`Your chats can't be saved right now. Anything you write will be lost if you reload the page.`}
+            {message}
         </Banner>
     );
 };
