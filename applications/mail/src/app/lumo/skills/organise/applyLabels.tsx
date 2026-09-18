@@ -37,7 +37,7 @@ export interface ApplyLabelsParams {
 export const resolveLabelChanges = (labelReferences: string[], references: ReferenceRegistry): Record<string, true> => {
     if (!labelReferences.length) {
         throw new ToolInputError(
-            'apply_labels needs at least one label-… reference in `labels`. Use one returned by list_labels, or create the label first with create_label.'
+            '`labels` was empty: pass at least one label-… reference. Re-read the label list for valid ones, or create the label first.'
         );
     }
     return Object.fromEntries(

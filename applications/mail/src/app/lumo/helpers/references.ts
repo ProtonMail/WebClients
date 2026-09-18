@@ -3,7 +3,6 @@ import type { ReferenceKind, ReferenceRegistry } from '@proton/llm/lib/lumoAgent
 
 import type { Element } from '../../models/element';
 import { taskRunning } from '../../store/elements/elementsSelectors';
-
 import type { ToolStore } from '../toolModule';
 
 /** Resolve a reference to its real backend id, or reject it as a hallucination the model must recover from. */
@@ -23,9 +22,9 @@ export const resolveId = (reference: string, references: ReferenceRegistry): str
 export const resolveTypedId = (reference: string, kinds: ReferenceKind[], references: ReferenceRegistry): string => {
     if (!kinds.some((kind) => reference.startsWith(`${kind}-`))) {
         throw new ToolInputError(
-            `"${reference}" is not a ${kinds.join(' or ')} reference. Use one returned by ${kinds
-                .map((kind) => `list_${kind}s`)
-                .join(' / ')}.`
+            `"${reference}" is not a ${kinds.join(' or ')} reference. Re-read the ${kinds.join(
+                ' or '
+            )} list for valid ones.`
         );
     }
     return resolveId(reference, references);
@@ -58,7 +57,7 @@ export const resolveElements = (
 ): Element[] => {
     if (!emailReferences.length) {
         throw new ToolInputError(
-            '`ids` was empty: pass at least one email-… reference returned by view_emails or search.'
+            '`ids` was empty: pass at least one email-… reference from a mailbox read or a search.'
         );
     }
     const state = store.getState();
