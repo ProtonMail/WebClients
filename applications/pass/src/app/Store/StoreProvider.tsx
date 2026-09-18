@@ -35,6 +35,7 @@ import { clientReady } from '@proton/pass/lib/client';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { createMonitorReport } from '@proton/pass/lib/monitor/monitor.report';
 import { setVersionTag } from '@proton/pass/lib/settings/beta';
+import { createForceSyncStore, getForceSyncStorageKey } from '@proton/pass/lib/sync/force-sync';
 import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
 import { sagaEvents } from '@proton/pass/store/events';
 import { cacheGuard } from '@proton/pass/store/migrate';
@@ -51,8 +52,8 @@ import {
 import { SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { semver } from '@proton/utils/semver';
 import noop from '@proton/utils/noop';
+import { semver } from '@proton/utils/semver';
 
 import { resolveBroadcast } from './broadcast';
 import { sagaMiddleware, store } from './store';
@@ -88,6 +89,11 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 getCache: async () => cacheGuard(await getDBCache(authStore.getUserID()), config.APP_VERSION),
                 getPollingInterval: () => ACTIVE_POLLING_TIMEOUT,
                 getSettings: () => settings.resolve(authStore.getLocalID()),
+                getForceSyncStore: () =>
+                    createForceSyncStore({
+                        storage: localStorage,
+                        getStorageKey: () => getForceSyncStorageKey(authStore.getLocalID()),
+                    }),
                 getTelemetry: () => telemetry,
                 getDesktopBridge: DESKTOP_BUILD ? () => window.ctxBridge! : undefined,
 

@@ -20,6 +20,14 @@ export const getAllFoldersApi = async (shareId: string): Promise<FolderDataRespo
         },
     })();
 
+export const hasFoldersApi = async (shareId: ShareId): Promise<boolean> => {
+    const {
+        Folders: { Folders },
+    } = await api({ url: `pass/v1/share/${shareId}/folder`, method: 'get' });
+
+    return (Folders ?? []).length > 0;
+};
+
 export const fetchFolder = async (shareId: ShareId, folderId: FolderId): Promise<FolderDataResponse> => {
     const { Folder } = await api({ url: `pass/v1/share/${shareId}/folder/${folderId}`, method: 'get' });
     return Folder;

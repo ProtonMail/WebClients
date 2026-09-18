@@ -6,6 +6,7 @@ import type { AuthService } from '../lib/auth/service';
 import type { AuthStore } from '../lib/auth/store';
 import type { PassCoreProxy } from '../lib/core/core.types';
 import type { FilePortWriter } from '../lib/file-storage/types';
+import type { ForceSyncStore } from '../lib/sync/force-sync';
 import type {
     AnyStorage,
     AppState,
@@ -69,6 +70,9 @@ export interface RootSagaOptions {
 
     /** Retrieves storage for the given client */
     getStorage?: () => AnyStorage<LocalStoreData>;
+
+    /** Per-account folders rollout force-sync state */
+    getForceSyncStore?: () => ForceSyncStore;
 
     /** Retrieves the IPC bridge when running in Electron */
     getDesktopBridge?: () => ContextBridgeApi;
