@@ -40,7 +40,6 @@ import type {
     MspDailyUsage,
 } from '@proton/shared/lib/interfaces/Msp';
 import emptyRecordsImg from '@proton/styles/assets/img/illustrations/empty-records.svg';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -70,7 +69,6 @@ const MspMonthlyCostsSection = () => {
     const mspId = organization?.ID;
     const [subscription] = useSubscription();
     const currency = subscription?.Currency;
-    const isMspCostsTableEnabled = useFlag('MspCostsTableEnabled');
 
     const [billingSummary, setBillingSummary] = useState<MspBillingSummary>();
     const [billingSummaryLoading, setBillingSummaryLoading] = useState(true);
@@ -92,10 +90,6 @@ const MspMonthlyCostsSection = () => {
     }, [mspId]);
 
     useEffect(() => {
-        if (!isMspCostsTableEnabled) {
-            setDailyUsageLoading(false);
-            return;
-        }
         if (!mspId) {
             return;
         }
@@ -103,13 +97,9 @@ const MspMonthlyCostsSection = () => {
             .then(setDailyUsage)
             .catch(noop)
             .finally(() => setDailyUsageLoading(false));
-    }, [mspId, isMspCostsTableEnabled]);
+    }, [mspId]);
 
     useEffect(() => {
-        if (!isMspCostsTableEnabled) {
-            setBillingPeriodsLoading(false);
-            return;
-        }
         if (!mspId) {
             return;
         }
@@ -117,7 +107,7 @@ const MspMonthlyCostsSection = () => {
             .then(setBillingPeriods)
             .catch(noop)
             .finally(() => setBillingPeriodsLoading(false));
-    }, [mspId, isMspCostsTableEnabled, page]);
+    }, [mspId, page]);
 
     if (!currency || billingSummaryLoading || dailyUsageLoading || billingPeriodsLoading || !billingSummary) {
         return null;
@@ -202,125 +192,120 @@ const MspMonthlyCostsSection = () => {
             </div>
 
             {/* ── Licenses usage chart ── */}
-            {isMspCostsTableEnabled && <LicensesUsageChart data={seatsHistory} />}
+            <LicensesUsageChart data={seatsHistory} />
 
             {/* ── Previous billing periods ── */}
-            {isMspCostsTableEnabled && (
-                <div className="flex flex-column gap-6">
-                    <div className="flex flex-column gap-2">
-                        <h2 className="m-0 text-bold text-5xl">{c('Title').t`Previous billing periods`}</h2>
-                        <p className="m-0 color-weak">
-                            {c('Info').t`Review past periods and export the data for reporting or client invoicing.`}
-                        </p>
-                    </div>
-
-                    {billingPeriodRows.length === 0 ? (
-                        <div className="flex items-center justify-center py-12">
-                            <IllustrationPlaceholder url={emptyRecordsImg}>
-                                <p className="m-0 text-sm color-hint text-center">
-                                    {c('Info')
-                                        .t`No billing breakdowns yet. Your breakdowns by billing period will appear here. Once available, you can download them as a CSV.`}
-                                </p>
-                            </IllustrationPlaceholder>
-                        </div>
-                    ) : (
-                        <div className="flex flex-column gap-4">
-                            <Table hasActions borderWeak responsive="cards" className="msp-billing-table">
-                                <TableHeader className="msp-table-header">
-                                    <TableRow>
-                                        <TableHeaderCell>{c('Column header').t`Billing period`}</TableHeaderCell>
-                                        <TableHeaderCell className="text-right">{c('Column header')
-                                            .t`Managed companies`}</TableHeaderCell>
-                                        <TableHeaderCell className="text-right">{c('Column header')
-                                            .t`Billable licenses`}</TableHeaderCell>
-                                        <TableHeaderCell className="text-right">
-                                            <span className="flex items-center justify-end gap-2">
-                                                {c('Column header').t`Total cost`}
-                                                <Info url={getKnowledgeBaseUrl('/pass-billing-invoicing-msps')} />
-                                            </span>
-                                        </TableHeaderCell>
-                                        <TableHeaderCell className="w-1/10" />
-                                    </TableRow>
-                                </TableHeader>
-                                <TableBody>
-                                    {billingPeriodRows.map((row) => {
-                                        const rowActions = [
-                                            {
-                                                key: 'export-overview-as-csv',
-                                                text: c('Action').t`Download monthly summary (CSV)`,
-                                                className: 'text-left text-nowrap',
-                                                onClick: () => handleDownloadCsv(row, 'billing-summary'),
-                                            },
-                                            {
-                                                key: 'export-daily-breakdown-as-csv',
-                                                text: c('Action').t`Download daily breakdown (CSV)`,
-                                                className: 'text-left text-nowrap',
-                                                onClick: () => handleDownloadCsv(row, 'daily-usage'),
-                                            },
-                                        ];
-
-                                        return (
-                                            <TableRow key={row.Period}>
-                                                <TableCell label={c('Column header').t`Billing period`}>
-                                                    <span className="flex items-center gap-2">
-                                                        <span className="text-nowrap">
-                                                            {formatApiBillingPeriod(row.Period)}
-                                                        </span>
-                                                        {row === currentPeriodRow && (
-                                                            <span className="msp-status-pill msp-status-pill--info inline-flex items-center justify-center rounded-sm text-uppercase text-normal color-weak">
-                                                                <span>{c('Label').t`In progress`}</span>
-                                                            </span>
-                                                        )}
-                                                    </span>
-                                                </TableCell>
-                                                <TableCell
-                                                    className="text-right"
-                                                    label={c('Column header').t`Managed companies`}
-                                                >
-                                                    {row.ManagedCompanies}
-                                                </TableCell>
-                                                <TableCell
-                                                    className="text-right"
-                                                    label={c('Column header').t`Billable licenses`}
-                                                >
-                                                    {row.BillableLicenses}
-                                                </TableCell>
-                                                <TableCell
-                                                    className="text-right"
-                                                    label={c('Column header').t`Total cost`}
-                                                >
-                                                    {getSimplePriceString(row.Currency, row.TotalCost)}
-                                                </TableCell>
-                                                <TableCell className="text-right action-cell">
-                                                    <DropdownActions
-                                                        size="small"
-                                                        shape="ghost"
-                                                        iconElement={<IcThreeDotsVertical />}
-                                                        list={rowActions}
-                                                    />
-                                                </TableCell>
-                                            </TableRow>
-                                        );
-                                    })}
-                                </TableBody>
-                            </Table>
-
-                            {billingPeriodsTotal > PAGE_SIZE && (
-                                <div className="flex justify-center">
-                                    <Pagination
-                                        total={billingPeriodsTotal}
-                                        limit={PAGE_SIZE}
-                                        page={page}
-                                        onNext={onNext}
-                                        onPrevious={onPrevious}
-                                        onSelect={onSelect}
-                                    />
-                                </div>
-                            )}
-                        </div>
-                    )}
+            <div className="flex flex-column gap-6">
+                <div className="flex flex-column gap-2">
+                    <h2 className="m-0 text-bold text-5xl">{c('Title').t`Previous billing periods`}</h2>
+                    <p className="m-0 color-weak">
+                        {c('Info').t`Review past periods and export the data for reporting or client invoicing.`}
+                    </p>
                 </div>
-            )}
+
+                {billingPeriodRows.length === 0 ? (
+                    <div className="flex items-center justify-center py-12">
+                        <IllustrationPlaceholder url={emptyRecordsImg}>
+                            <p className="m-0 text-sm color-hint text-center">
+                                {c('Info')
+                                    .t`No billing breakdowns yet. Your breakdowns by billing period will appear here. Once available, you can download them as a CSV.`}
+                            </p>
+                        </IllustrationPlaceholder>
+                    </div>
+                ) : (
+                    <div className="flex flex-column gap-4">
+                        <Table hasActions borderWeak responsive="cards" className="msp-billing-table">
+                            <TableHeader className="msp-table-header">
+                                <TableRow>
+                                    <TableHeaderCell>{c('Column header').t`Billing period`}</TableHeaderCell>
+                                    <TableHeaderCell className="text-right">{c('Column header')
+                                        .t`Managed companies`}</TableHeaderCell>
+                                    <TableHeaderCell className="text-right">{c('Column header')
+                                        .t`Billable licenses`}</TableHeaderCell>
+                                    <TableHeaderCell className="text-right">
+                                        <span className="flex items-center justify-end gap-2">
+                                            {c('Column header').t`Total cost`}
+                                            <Info url={getKnowledgeBaseUrl('/pass-billing-invoicing-msps')} />
+                                        </span>
+                                    </TableHeaderCell>
+                                    <TableHeaderCell className="w-1/10" />
+                                </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                                {billingPeriodRows.map((row) => {
+                                    const rowActions = [
+                                        {
+                                            key: 'export-overview-as-csv',
+                                            text: c('Action').t`Download monthly summary (CSV)`,
+                                            className: 'text-left text-nowrap',
+                                            onClick: () => handleDownloadCsv(row, 'billing-summary'),
+                                        },
+                                        {
+                                            key: 'export-daily-breakdown-as-csv',
+                                            text: c('Action').t`Download daily breakdown (CSV)`,
+                                            className: 'text-left text-nowrap',
+                                            onClick: () => handleDownloadCsv(row, 'daily-usage'),
+                                        },
+                                    ];
+
+                                    return (
+                                        <TableRow key={row.Period}>
+                                            <TableCell label={c('Column header').t`Billing period`}>
+                                                <span className="flex items-center gap-2">
+                                                    <span className="text-nowrap">
+                                                        {formatApiBillingPeriod(row.Period)}
+                                                    </span>
+                                                    {row === currentPeriodRow && (
+                                                        <span className="msp-status-pill msp-status-pill--info inline-flex items-center justify-center rounded-sm text-uppercase text-normal color-weak">
+                                                            <span>{c('Label').t`In progress`}</span>
+                                                        </span>
+                                                    )}
+                                                </span>
+                                            </TableCell>
+                                            <TableCell
+                                                className="text-right"
+                                                label={c('Column header').t`Managed companies`}
+                                            >
+                                                {row.ManagedCompanies}
+                                            </TableCell>
+                                            <TableCell
+                                                className="text-right"
+                                                label={c('Column header').t`Billable licenses`}
+                                            >
+                                                {row.BillableLicenses}
+                                            </TableCell>
+                                            <TableCell className="text-right" label={c('Column header').t`Total cost`}>
+                                                {getSimplePriceString(row.Currency, row.TotalCost)}
+                                            </TableCell>
+                                            <TableCell className="text-right action-cell">
+                                                <DropdownActions
+                                                    size="small"
+                                                    shape="ghost"
+                                                    iconElement={<IcThreeDotsVertical />}
+                                                    list={rowActions}
+                                                />
+                                            </TableCell>
+                                        </TableRow>
+                                    );
+                                })}
+                            </TableBody>
+                        </Table>
+
+                        {billingPeriodsTotal > PAGE_SIZE && (
+                            <div className="flex justify-center">
+                                <Pagination
+                                    total={billingPeriodsTotal}
+                                    limit={PAGE_SIZE}
+                                    page={page}
+                                    onNext={onNext}
+                                    onPrevious={onPrevious}
+                                    onSelect={onSelect}
+                                />
+                            </div>
+                        )}
+                    </div>
+                )}
+            </div>
         </SettingsSectionExtraWide>
     );
 };
