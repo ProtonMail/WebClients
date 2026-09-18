@@ -37,7 +37,7 @@ const setup = ({
     initialState = 'suspended' as FakeState,
     startAudio = vi.fn().mockResolvedValue(undefined),
     roomState = ConnectionState.Connected,
-    activeAudioOutputId = '',
+    activeAudioOutputId = null as string | null,
     isPlaybackContext = true,
 } = {}) => {
     const audioContext = createFakeAudioContext(initialState);
@@ -83,10 +83,18 @@ describe('useAudioContextOutput', () => {
         expect(setSinkId).toHaveBeenCalledWith('jabra');
     });
 
-    it('leaves the sink alone while no device is active yet', () => {
-        const { setSinkId } = setup({ activeAudioOutputId: '' });
+    it('leaves the sink alone while no output has been applied yet', () => {
+        const { setSinkId } = setup({ activeAudioOutputId: null });
 
         expect(setSinkId).not.toHaveBeenCalled();
+    });
+
+    // Without this the context keeps the device it resolved at construction, and the system default
+    // is the one output the user never switches away from, so nothing else would ever re-route it
+    it('pins the context at the system default', () => {
+        const { setSinkId } = setup({ activeAudioOutputId: '' });
+
+        expect(setSinkId).toHaveBeenCalledWith('');
     });
 
     // Pinning a sink on an idle context hands Chrome a silent echo cancellation reference
