@@ -50,7 +50,7 @@ interface ItemActionsContextType {
     deleteMany: (items: BulkSelectionDTO) => void;
     leave: (item: ItemRevision) => void;
     move: (item: ItemRevision, mode: VaultSelectMode) => void;
-    moveMany: (items: BulkSelectionDTO, shareId?: string) => void;
+    moveMany: (items: BulkSelectionDTO, shareId?: string, folderId?: MaybeNull<string>) => void;
     restore: (item: ItemRevision) => void;
     restoreMany: (items: BulkSelectionDTO) => void;
     trash: (item: ItemRevision) => void;
@@ -74,10 +74,13 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
     const moveItem = useConfirm(useCallback((dto: ItemMoveIntent) => dispatch(itemMove.intent(dto)), []));
 
     const moveManyItems = useConfirm(
-        useCallback((options: { selected: BulkSelectionDTO; shareId: string }) => {
-            dispatch(itemBulkMoveIntent(options));
-            bulk.disable();
-        }, [])
+        useCallback(
+            (options: { selected: BulkSelectionDTO; targetShareId: string; targetFolderId?: MaybeNull<string> }) => {
+                dispatch(itemBulkMoveIntent(options));
+                bulk.disable();
+            },
+            []
+        )
     );
 
     const trashItem = useConfirm(
@@ -140,21 +143,22 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                 openVaultSelect({
                     mode,
                     shareId: item.shareId,
-                    onSubmit: (targetShareId) => {
-                        moveItem.prompt({ itemId: item.itemId, shareId: item.shareId, targetShareId });
+                    folderId: item.folderId,
+                    onSubmit: (targetShareId, targetFolderId) => {
+                        moveItem.prompt({ itemId: item.itemId, shareId: item.shareId, targetShareId, targetFolderId });
                         closeVaultSelect();
                     },
                     title: moveTitle(1),
                 }),
 
-            moveMany: (selected, shareId) =>
+            moveMany: (selected, shareId, folderId) =>
                 shareId
-                    ? moveManyItems.prompt({ selected, shareId })
+                    ? moveManyItems.prompt({ selected, targetShareId: shareId, targetFolderId: folderId })
                     : openVaultSelect({
                           mode: VaultSelectMode.Writable,
                           shareId: '' /* allow all vaults */,
-                          onSubmit: (shareId) => {
-                              moveManyItems.prompt({ selected, shareId });
+                          onSubmit: (targetShareId, targetFolderId) => {
+                              moveManyItems.prompt({ selected, targetShareId, targetFolderId });
                               closeVaultSelect();
                           },
                           title: moveTitle(getBulkSelectionCount(selected)),
@@ -201,6 +205,9 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                     state: {
                         clone: partialMerge(item, {
                             shareId,
+                            /** A folder key belongs to a single share: drop it when
+                             * the clone lands in a different share than the source */
+                            folderId: shareId === item.shareId ? item.folderId : null,
                             data: {
                                 metadata: {
                                     name: cloneItemName(item.data.metadata.name),
@@ -221,6 +228,7 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
         <ItemActionsContext.Provider value={context}>
             {children}
             <VaultSelect
+                showFolders
                 downgradeMessage={c('Info')
                     .t`You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.`}
                 onClose={closeVaultSelect}

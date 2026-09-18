@@ -561,7 +561,7 @@ describe('PassCrypto', () => {
 
             /* create item */
             const itemContent = randomContents();
-            const item = await processes.createItem({ content: itemContent, vaultKey });
+            const item = await processes.createItem({ content: itemContent, encryptionKey: vaultKey });
             const encryptedItem: ItemRevisionContentsResponse = {
                 AliasOwner: false,
                 Content: item.Content,
@@ -586,6 +586,60 @@ describe('PassCrypto', () => {
             expect(openedItem.content).toEqual(itemContent);
             expect(openedItem.revision).toEqual(encryptedItem.Revision);
             expect(openedItem.state).toEqual(encryptedItem.State);
+        });
+
+        test('should encrypt & decrypt an item created inside a folder with the folder key', async () => {
+            await setupHydratedPassCrypto();
+
+            const [encryptedShare, shareKey] = await createRandomShareResponses(userKey, userKey, address.ID);
+            await PassCrypto.openShare({ encryptedShare, encryptedShareKeys: [shareKey] });
+            const shareId = encryptedShare.ShareID;
+
+            /* register a folder key for this share */
+            const rawFolderKey = generateKey();
+            const folderKey = {
+                key: await importSymmetricKey(rawFolderKey),
+                raw: rawFolderKey,
+                rotation: 1,
+                parentFolderId: null,
+            };
+            const folderId = 'folder-1';
+            PassCrypto.registerFolderKey({ shareId, folderId, folderKey });
+
+            const itemContent = randomContents();
+            const item = await PassCrypto.createItem({ shareId, content: itemContent, folderId });
+
+            const encryptedItem: ItemRevisionContentsResponse = {
+                Content: item.Content,
+                ContentFormatVersion: ContentFormatVersion.Item,
+                CreateTime: 0,
+                Flags: 0,
+                FolderID: item.FolderID,
+                ItemID: `itemId-${crypto.randomUUID()}`,
+                ItemKey: item.ItemKey,
+                KeyRotation: item.KeyRotation,
+                LastUseTime: 0,
+                ModifyTime: 0,
+                Pinned: false,
+                Revision: 1,
+                RevisionTime: 0,
+                ShareCount: 0,
+                State: ItemState.Active,
+            };
+
+            const openedItem = await PassCrypto.openItem({ shareId, encryptedItem });
+            expect(openedItem.content).toEqual(itemContent);
+            expect(openedItem.folderId).toEqual(folderId);
+
+            const encryptedItemKey = { Key: item.ItemKey, KeyRotation: item.KeyRotation };
+            const itemKey = await PassCrypto.openItemKey({ encryptedItemKey, shareId, folderId });
+            const decryptedContent = await decryptData(
+                itemKey.key,
+                Uint8Array.fromBase64(item.Content),
+                PassEncryptionTag.ItemContent
+            );
+            expect(decryptedContent).toEqual(itemContent);
+            await expect(PassCrypto.openItemKey({ encryptedItemKey, shareId, folderId: null })).rejects.toThrow();
         });
     });
 
@@ -644,6 +698,122 @@ describe('PassCrypto', () => {
                 const decrypted = await decryptData(patKey, b64Key, PassEncryptionTag.ShareKey);
                 expect(decrypted).toStrictEqual(vaultKeys[i].raw);
             }
+        });
+    });
+
+    describe('PassCrypto::serialize and hydrate folders', () => {
+        afterEach(() => PassCrypto.clear());
+
+        test('should serialize and restore folder keys from snapshot', async () => {
+            await setupHydratedPassCrypto();
+
+            const [encryptedShare, shareKey] = await createRandomShareResponses(userKey, userKey, address.ID);
+            await PassCrypto.openShare({ encryptedShare, encryptedShareKeys: [shareKey] });
+
+            const raw1 = generateKey();
+            const raw2 = generateKey();
+
+            const folderKey1 = {
+                key: await importSymmetricKey(raw1),
+                raw: raw1,
+                rotation: 1,
+                parentFolderId: null,
+            };
+
+            const folderKey2 = {
+                key: await importSymmetricKey(raw2),
+                raw: raw2,
+                rotation: 1,
+                parentFolderId: 'folder1',
+            };
+
+            PassCrypto.registerFolderKey({
+                shareId: encryptedShare.ShareID,
+                folderId: 'folder1',
+                folderKey: folderKey1,
+            });
+
+            PassCrypto.registerFolderKey({
+                shareId: encryptedShare.ShareID,
+                folderId: 'folder2',
+                folderKey: folderKey2,
+            });
+
+            const snapshot = PassCrypto.serialize();
+            expect(snapshot.folderKeys.length).toBe(1);
+            expect(snapshot.folderKeys[0][0]).toBe(encryptedShare.ShareID);
+            expect(snapshot.folderKeys[0][1].length).toBe(2);
+
+            PassCrypto.clear();
+            await PassCrypto.hydrate({ user, addresses: [address], keyPassword: TEST_KEY_PASSWORD, snapshot });
+
+            const restoredKey1 = PassCrypto.getFolderKey({
+                shareId: encryptedShare.ShareID,
+                folderId: 'folder1',
+            });
+
+            const restoredKey2 = PassCrypto.getFolderKey({
+                shareId: encryptedShare.ShareID,
+                folderId: 'folder2',
+            });
+
+            expect(restoredKey1.rotation).toBe(folderKey1.rotation);
+            expect(restoredKey1.parentFolderId).toBe(folderKey1.parentFolderId);
+            expect(restoredKey1.raw).toEqual(folderKey1.raw);
+
+            expect(restoredKey2.rotation).toBe(folderKey2.rotation);
+            expect(restoredKey2.parentFolderId).toBe(folderKey2.parentFolderId);
+            expect(restoredKey2.raw).toEqual(folderKey2.raw);
+        });
+    });
+
+    describe('PassCrypto::removeFolderKeys', () => {
+        afterEach(() => PassCrypto.clear());
+
+        const registerFolders = async (folderIds: string[]) => {
+            const [encryptedShare, shareKey] = await createRandomShareResponses(userKey, userKey, address.ID);
+            await PassCrypto.openShare({ encryptedShare, encryptedShareKeys: [shareKey] });
+
+            for (const folderId of folderIds) {
+                const raw = generateKey();
+                PassCrypto.registerFolderKey({
+                    shareId: encryptedShare.ShareID,
+                    folderId,
+                    folderKey: { key: await importSymmetricKey(raw), raw, rotation: 1, parentFolderId: null },
+                });
+            }
+
+            return encryptedShare.ShareID;
+        };
+
+        test('should remove only the requested folder keys', async () => {
+            await setupHydratedPassCrypto();
+            const shareId = await registerFolders(['folder1', 'folder2']);
+
+            PassCrypto.removeFolderKeys(shareId, ['folder1']);
+
+            expect(() => PassCrypto.getFolderKey({ shareId, folderId: 'folder1' })).toThrow();
+            expect(PassCrypto.getFolderKey({ shareId, folderId: 'folder2' })).toBeDefined();
+        });
+
+        test('should remove every folder key of the share when no folderIds are given', async () => {
+            await setupHydratedPassCrypto();
+            const shareId = await registerFolders(['folder1', 'folder2']);
+
+            PassCrypto.removeFolderKeys(shareId);
+
+            expect(PassCrypto.serialize().folderKeys.length).toBe(0);
+            expect(() => PassCrypto.getFolderKey({ shareId, folderId: 'folder1' })).toThrow();
+            expect(() => PassCrypto.getFolderKey({ shareId, folderId: 'folder2' })).toThrow();
+        });
+
+        test('should drop the share folder keys when the share is removed', async () => {
+            await setupHydratedPassCrypto();
+            const shareId = await registerFolders(['folder1']);
+
+            PassCrypto.removeShare(shareId);
+
+            expect(() => PassCrypto.getFolderKey({ shareId, folderId: 'folder1' })).toThrow();
         });
     });
 });

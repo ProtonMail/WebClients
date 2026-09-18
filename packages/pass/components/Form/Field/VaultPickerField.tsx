@@ -22,7 +22,7 @@ type VaultPickerSelection = { title: string; icon?: VaultIconName; color?: Vault
 type VaultPickerFieldProps = Omit<SelectFieldProps, 'children'> & { legacy?: boolean };
 type VaultPickerProps = VaultPickerFieldProps & { vaults: ShareItem<ShareType.Vault>[] };
 
-export const VaultPicker: FC<VaultPickerProps> = ({ legacy, vaults, ...props }) => {
+const VaultPicker: FC<VaultPickerProps> = ({ legacy, vaults, ...props }) => {
     const selectedId = props.field.value;
 
     const selectedVault = useMemo<Maybe<VaultPickerSelection>>(() => {
@@ -86,6 +86,8 @@ export const VaultPicker: FC<VaultPickerProps> = ({ legacy, vaults, ...props }) 
     );
 };
 
+/** This component is superseded by VaultFolderPickerField.tsx
+ * and is currently only used for the alias sync vault */
 export const VaultPickerField: FC<VaultPickerFieldProps> = (props) => {
     const vaults = useSelector(selectWritableVaults);
     return <VaultPicker vaults={vaults} {...props} />;

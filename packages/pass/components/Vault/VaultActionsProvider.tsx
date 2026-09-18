@@ -46,18 +46,21 @@ export const handleSelect = (navigate: ReturnType<typeof useNavigate>, selected:
             return navigate(getLocalPath(), {
                 filters: {
                     selectedShareId: null,
+                    selectedFolderId: null,
                 },
             });
         case 'trash':
             return navigate(getTrashRoute(), {
                 filters: {
                     selectedShareId: null,
+                    selectedFolderId: null,
                 },
             });
         default: {
             return navigate(getLocalPath(`share/${selected}`), {
                 filters: {
                     selectedShareId: selected,
+                    selectedFolderId: null,
                 },
             });
         }
@@ -75,7 +78,7 @@ export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
     const onTrashEmpty = useCallback(() => dispatch(emptyTrashIntent()), []);
 
     const onVaultDisabled = (shareId: string) => {
-        if (filters.selectedShareId === shareId) setFilters({ selectedShareId: null });
+        if (filters.selectedShareId === shareId) setFilters({ selectedShareId: null, selectedFolderId: null });
         reset();
     };
 

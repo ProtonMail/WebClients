@@ -1,11 +1,14 @@
-import type { DeobfuscatedItemRevision, FileForDownload, ItemType, VaultShareContent } from '../../types';
+import type { DeobfuscatedItemRevision, FileForDownload, ItemType, MaybeNull, VaultShareContent } from '../../types';
 
 export type ExportedItem<T extends ItemType = ItemType> = Omit<
     DeobfuscatedItemRevision<T>,
     'revision' | 'revisionTime' | 'lastUseTime' | 'flags'
 > & { files?: string[] };
 
-export type ExportedVault = VaultShareContent & { items: ExportedItem[] };
+export type ExportedFolder = { folderId: string; parentFolderId: MaybeNull<string>; name: string };
+
+/** `folders` is optional as Pass older versions export won't have this property */
+export type ExportedVault = VaultShareContent & { folders?: ExportedFolder[]; items: ExportedItem[] };
 
 export type ExportData = {
     userId?: string;

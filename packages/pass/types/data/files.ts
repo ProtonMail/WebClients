@@ -58,8 +58,10 @@ export type FileDownloadChunk = FileDownloadChunkBase & SelectedItem;
 export type FileDownloadPublicDTO = FileDownloadDTOBase & { filesToken: string };
 export type FileDownloadPublicChunk = FileDownloadChunkBase & { filesToken: string };
 
-export type FileResolveDTO = ({ history: true } & SelectedItem) | (SelectedRevision & { history?: false });
-export type FileRestoreDTO = { fileId: FileID } & SelectedItem;
+export type FileResolveDTO = (({ history: true } & SelectedItem) | (SelectedRevision & { history?: false })) & {
+    folderId: MaybeNull<string>;
+};
+export type FileRestoreDTO = { fileId: FileID; folderId: MaybeNull<string> } & SelectedItem;
 export type FileAttachmentValues = { files: FileAttachmentsDTO };
 export type FilesRequestSuccess = { files: FileDescriptor[]; history?: boolean } & SelectedItem;
 export type FilesMetadataEditSuccess = BaseFileDescriptor & Partial<SelectedItem>;

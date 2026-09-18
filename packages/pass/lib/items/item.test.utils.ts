@@ -19,5 +19,6 @@ export const createTestItem = <T extends ItemType>(type: T, init: Partial<ItemRe
     data: itemBuilder(type).data,
     shareId: uniqueId(),
     shareCount: 0,
+    folderId: null,
     ...init,
 });

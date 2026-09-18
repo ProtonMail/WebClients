@@ -67,6 +67,7 @@ export const createAliasService = () => {
                 type: 'alias',
                 optimisticId,
                 shareId,
+                folderId: null,
                 metadata: {
                     name: url,
                     note: obfuscate(c('Placeholder').t`Used on ${url}`),

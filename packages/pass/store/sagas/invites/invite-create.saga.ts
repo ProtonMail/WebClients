@@ -49,7 +49,10 @@ function* createInviteWorker(
             (dto): dto is InviteUserDTO => 'publicKey' in dto && dto.publicKey !== undefined
         );
 
-        const failedUsers: InviteBatchResult[] = yield createUserInvites(shareId, itemId, users, b2b);
+        const item: Maybe<ItemRevision> = itemId ? yield select(selectItem(shareId, itemId)) : undefined;
+        const folderId = item?.folderId ?? null;
+
+        const failedUsers: InviteBatchResult[] = yield createUserInvites(shareId, itemId, users, b2b, folderId);
         const failedNewUsers: InviteBatchResult[] = yield createNewUserInvites(shareId, itemId, newUsers, b2b);
         const results = concatInviteResults(failedUsers.concat(failedNewUsers));
 
@@ -74,7 +77,6 @@ function* createInviteWorker(
         yield put(syncAccess(payload));
 
         const telemetry = getTelemetry();
-        const item: Maybe<ItemRevision> = itemId ? yield select(selectItem(shareId, itemId)) : undefined;
         const dimensions = item
             ? { type: TelemetryTargetType.item as const, itemType: TelemetryItemType[item.data.type], extensionBrowser: BUILD_TARGET }
             : { type: TelemetryTargetType.vault as const, extensionBrowser: BUILD_TARGET };

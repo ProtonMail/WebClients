@@ -143,6 +143,7 @@ export const createAutoSaveService = () => {
                         extraData: { withAlias: false },
                         optimisticId: payload.optimisticId,
                         shareId: payload.shareId,
+                        folderId: payload.folderId,
                         files: filesFormInitializer(),
                     })
                     .then((res) => res.type === 'success');

@@ -6,9 +6,8 @@ import type { Location } from 'history';
 
 import { createUseContext } from '../../hooks/useContextFactory';
 import type { ItemFilters, MaybeNull } from '../../types';
-import { objectFilter } from '../../utils/object/filter';
 import type { ItemScope } from './routing';
-import { decodeFilters, encodeFilters, getItemRoute } from './routing';
+import { getItemRoute, getLocalPath, setSearchFilters } from './routing';
 
 export type NavigateOptions<LocationState = any> = {
     filters?: Partial<ItemFilters>;
@@ -31,8 +30,11 @@ export type NavigationActionsContextValue = {
     /** Navigates to an item view. By default it will go to the `view` screen,
      * but this can be customized via options. */
     selectItem: <S>(shareId: string, itemId: string, options?: ItemSelectOptions<S>) => void;
-    /** Joins the current location search parameters to the provided path */
-    preserveSearch: (path: string) => string;
+    /** Navigates to a folder view. */
+    selectFolder: <S>(shareId: string, folderId: string, options?: NavigateOptions<S>) => void;
+    /** Joins the current location search parameters to the provided path,
+     * optionally merging `filters` into them. */
+    preserveSearch: (path: string, filters?: Partial<ItemFilters>) => string;
     /** Resolves the current location */
     getCurrentLocation: () => Location;
 };
@@ -56,13 +58,8 @@ export const NavigationActionsProvider: FC<PropsWithChildren> = ({ children }) =
                     Object.entries(options.searchParams).forEach(([key, value]) => search.set(key, value));
                 }
 
-                if (options.filters) {
-                    /* Merge the incoming filters with the current ones */
-                    const currFilters = decodeFilters(search.get('filters'));
-                    const newFilters = objectFilter(options.filters, (_, value) => value !== undefined);
-                    const nextFilters = { ...currFilters, ...newFilters };
-                    search.set('filters', encodeFilters(nextFilters));
-                }
+                /* Merge the incoming filters with the current ones */
+                if (options.filters) setSearchFilters(search, options.filters);
 
                 /** safe-guard against pushing to the same path */
                 const method = options.mode ?? (history.location.pathname === pathname ? 'replace' : 'push');
@@ -81,7 +78,20 @@ export const NavigationActionsProvider: FC<PropsWithChildren> = ({ children }) =
                 ctx.navigate(base + view, options);
             },
 
-            preserveSearch: (path) => path + history.location.search,
+            selectFolder: (shareId, folderId, options) => {
+                ctx.navigate(getLocalPath(`share/${shareId}`), {
+                    mode: 'push',
+                    ...options,
+                    filters: { selectedShareId: shareId, selectedFolderId: folderId, ...options?.filters },
+                });
+            },
+
+            preserveSearch: (path, filters) => {
+                if (!filters) return path + history.location.search;
+                const search = new URLSearchParams(history.location.search);
+                setSearchFilters(search, filters);
+                return `${path}?${search.toString()}`;
+            },
 
             getCurrentLocation: () => ({ ...history.location }),
         };
@@ -94,4 +104,5 @@ export const NavigationActionsProvider: FC<PropsWithChildren> = ({ children }) =
 
 export const useNavigationActions = createUseContext(NavigationActionsContext);
 export const useSelectItem = () => useNavigationActions().selectItem;
+export const useSelectFolder = () => useNavigationActions().selectFolder;
 export const useNavigate = () => useNavigationActions().navigate;

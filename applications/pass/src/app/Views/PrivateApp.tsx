@@ -11,6 +11,7 @@ import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useAppConnectivityBar } from '@proton/pass/components/Core/ConnectivityProvider';
 import { LockProbeProvider } from '@proton/pass/components/Core/LockProbeProvider';
+import { FolderActionsProvider } from '@proton/pass/components/Folders/FolderActionsProvider';
 import { Header } from '@proton/pass/components/Header/Header';
 import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
 import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsProvider';
@@ -120,23 +121,25 @@ export const PrivateApp: FC = () => {
                         <BulkSelectProvider>
                             <ItemActionsProvider>
                                 <VaultActionsProvider>
-                                    <InviteProvider>
-                                        <PasswordProvider>
-                                            <UpsellingProvider>
-                                                <SpotlightProvider>
-                                                    <InAppNotificationProvider>
-                                                        <OnboardingProvider>
-                                                            {lockSetup ? (
-                                                                <LockOnboarding onCancel={logout} />
-                                                            ) : (
-                                                                <Main />
-                                                            )}
-                                                        </OnboardingProvider>
-                                                    </InAppNotificationProvider>
-                                                </SpotlightProvider>
-                                            </UpsellingProvider>
-                                        </PasswordProvider>
-                                    </InviteProvider>
+                                    <FolderActionsProvider>
+                                        <InviteProvider>
+                                            <PasswordProvider>
+                                                <UpsellingProvider>
+                                                    <SpotlightProvider>
+                                                        <InAppNotificationProvider>
+                                                            <OnboardingProvider>
+                                                                {lockSetup ? (
+                                                                    <LockOnboarding onCancel={logout} />
+                                                                ) : (
+                                                                    <Main />
+                                                                )}
+                                                            </OnboardingProvider>
+                                                        </InAppNotificationProvider>
+                                                    </SpotlightProvider>
+                                                </UpsellingProvider>
+                                            </PasswordProvider>
+                                        </InviteProvider>
+                                    </FolderActionsProvider>
                                 </VaultActionsProvider>
                             </ItemActionsProvider>
                         </BulkSelectProvider>

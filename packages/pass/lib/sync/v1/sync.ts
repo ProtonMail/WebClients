@@ -4,7 +4,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { asIfNotOptimistic } from '../../../store/optimistic/selectors/select-is-optimistic';
 import type { VaultShareItem } from '../../../store/reducers';
-import { type ItemsByShareId, type SharesState, reducerMap } from '../../../store/reducers';
+import { type FoldersByShareId, type ItemsByShareId, type SharesState, reducerMap } from '../../../store/reducers';
 import type { ShareDedupeState } from '../../../store/reducers/shares-dedupe';
 import { selectAllShares } from '../../../store/selectors';
 import type { RootSagaOptions, State } from '../../../store/types';
@@ -14,11 +14,9 @@ import { prop } from '../../../utils/fp/lens';
 import { pipe } from '../../../utils/fp/pipe';
 import { not, notIn } from '../../../utils/fp/predicates';
 import { sortOn } from '../../../utils/fp/sort';
-import { diadic } from '../../../utils/fp/variadics';
 import { logger } from '../../../utils/logger';
-import { partialMerge } from '../../../utils/object/merge';
 import { PassCrypto } from '../../crypto';
-import { requestItemsForShareId } from '../../items/item.requests';
+import { type SharesData, requestSharesData } from '../../shares/share.data';
 import { dedupeShares } from '../../shares/share.dedupe';
 import { parseShareResponse } from '../../shares/share.parser';
 import { requestShares } from '../../shares/share.requests';
@@ -29,6 +27,7 @@ import { SyncStrategy } from '../types';
 export type SyncResultV1 = {
     shares: SharesState;
     items: ItemsByShareId;
+    folders: FoldersByShareId;
     dedupe: ShareDedupeState;
     v: 1;
 };
@@ -88,23 +87,19 @@ export function* syncV1({ getCore }: RootSagaOptions): Generator<any, SyncResult
     logger.info(`[Sync] ${inactiveRemoteShares.length} inactive remote share(s)`);
     logger.info(`[Sync] ${incomingShares.length} new share(s) to sync`);
 
-    const itemShareIds = remoteShareIds.filter(notIn(disabledShareIds));
-
-    const syncedItems = (yield Promise.all(
-        itemShareIds.map(async (shareId): Promise<ItemsByShareId> => ({
-            [shareId]: toMap(await requestItemsForShareId(shareId), 'itemId'),
-        }))
-    )) as ItemsByShareId[];
-
     /* Exclude the deleted shares from the cached shares
      * and merge with the new shares */
     const shares = cachedShares.filter(({ shareId }) => !disabledShareIds.includes(shareId)).concat(incomingShares);
+
+    const syncShares = shares.filter(({ shareId }) => remoteShareIds.includes(shareId));
+    const { folders, items }: SharesData = yield requestSharesData(syncShares);
 
     const result: SyncResultV1 = {
         v: 1,
         shares: toMap(shares, 'shareId'),
         dedupe: yield dedupeShares(shares, getCore()),
-        items: syncedItems.reduce<ItemsByShareId>(diadic(partialMerge), {}),
+        items,
+        folders,
     };
 
     return result;

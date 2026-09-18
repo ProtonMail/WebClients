@@ -39,7 +39,7 @@ const FORM_ID = 'edit-alias';
 
 export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onCancel, onSubmit }) => {
     const { shareId } = share;
-    const { data: item, itemId, revision: lastRevision } = revision;
+    const { data: item, itemId, revision: lastRevision, folderId } = revision;
     const { metadata, ...uneditable } = item;
     const aliasEmail = revision.aliasEmail!;
 
@@ -69,6 +69,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
             mailboxes: [],
             extraFields: deobfuscateExtraFields(item.extraFields),
             shareId,
+            folderId,
             displayName: aliasDetails?.name ?? '',
             slNote: aliasDetails?.slNote ?? '',
         },

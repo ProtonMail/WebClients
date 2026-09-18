@@ -1,6 +1,7 @@
 import type { ShareId } from '../crypto';
 import type { VaultColor, VaultIcon } from '../protobuf/vault-v1.static';
 import type { Maybe, MaybeNull } from '../utils';
+import type { FolderData } from './folders';
 import type { ItemRevision } from './items';
 
 export enum ShareType {
@@ -58,6 +59,6 @@ export type WithEventId<T> = T & {
 };
 
 export type Share<T extends ShareType = ShareType> = WithEventId<ShareBase<T>>;
-export type ShareCreatedDTO = { share: Share; items: ItemRevision[] };
+export type ShareCreatedDTO = { share: Share; items: ItemRevision[]; folders: FolderData[] };
 
 export type ShareVisibilityMap = Record<ShareId, boolean>;

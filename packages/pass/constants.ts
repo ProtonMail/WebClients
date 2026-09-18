@@ -19,6 +19,11 @@ export const MAX_PASSWORD_HISTORY_RETENTION_WEEKS = 2;
 export const MAX_VAULT_MEMBERS = 10;
 export const MAX_CUSTOM_ADDRESSES = 10;
 
+/* Folder limits fallback if we could not retrieve the info from BE */
+export const FOLDER_MAX_COUNT = 100;
+export const FOLDER_MAX_CHILDREN = 10;
+export const FOLDER_MAX_DEPTH = 5;
+
 /** Matches 80% of the `SETTINGS_MAX_CONCURRENT_STREAMS=25`
  * production API configuration */
 export const API_CONCURRENCY_TRESHOLD = 20;
@@ -77,6 +82,7 @@ export enum UpsellRef {
     IDENTITY_CUSTOM_FIELDS = 'identity_custom_fields',
     ITEM_SHARING = 'item_sharing',
     FILE_ATTACHMENTS = 'file_attachments',
+    FOLDERS = 'folders',
     LIMIT_2FA = '2fa_limit',
     LIMIT_ALIAS = 'alias_limit',
     LIMIT_AUTOFILL = 'autofill_limit',

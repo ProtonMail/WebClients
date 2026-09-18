@@ -12,6 +12,7 @@ import { itemBuilder } from './item.builder';
 import { createTestItem } from './item.test.utils';
 import {
     cloneItemName,
+    filterItemsByFolderIds,
     filterItemsByShareId,
     filterItemsByType,
     filterItemsByUserIdentifier,
@@ -199,6 +200,26 @@ describe('Item utils', () => {
             ];
 
             expect(filterItemsByShareId('share1')(items)).toEqual([items[0]]);
+        });
+    });
+
+    describe('filterItemsByFolderIds', () => {
+        const items = [
+            createTestItem('login', { itemId: 'item1', folderId: 'folder1' }),
+            createTestItem('login', { itemId: 'item2', folderId: 'subfolder1' }),
+            createTestItem('login', { itemId: 'item3', folderId: null }),
+        ];
+
+        test('should only display items directly in the selected folder and not subfolders', () => {
+            expect(filterItemsByFolderIds(new Set(['folder1']))(items)).toEqual([items[0]]);
+        });
+
+        test('should display the items of every folder in the set', () => {
+            expect(filterItemsByFolderIds(new Set(['folder1', 'subfolder1']))(items)).toEqual([items[0], items[1]]);
+        });
+
+        test('should only display items at the vault root when `folderId` is `null`', () => {
+            expect(filterItemsByFolderIds(new Set([null]))(items)).toEqual([items[2]]);
         });
     });
 

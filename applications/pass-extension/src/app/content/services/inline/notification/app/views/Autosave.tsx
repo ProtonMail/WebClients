@@ -36,7 +36,17 @@ const getInitialValues = (
 ): AutosaveFormValues =>
     type === AutosaveMode.UPDATE
         ? { itemId: '', name: domain, password, shareId: '', step: 'select', type, userIdentifier, iframeUrl }
-        : { name: domain, optimisticId, password, shareId: '', step: 'edit', type, userIdentifier, iframeUrl };
+        : {
+              name: domain,
+              optimisticId,
+              password,
+              shareId: '',
+              folderId: null,
+              step: 'edit',
+              type,
+              userIdentifier,
+              iframeUrl,
+          };
 
 export const Autosave: FC<Props> = ({ data }) => {
     const { visible, domain } = useIFrameAppState();

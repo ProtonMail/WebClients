@@ -13,6 +13,7 @@ import {
 } from '../../../store/selectors';
 import type { ItemCreateIntent, ItemType } from '../../../types';
 import { usePassCore } from '../../Core/PassCoreProvider';
+import { useFoldersAccess } from '../../Folders/useFoldersAccess';
 import { useNavigationActions } from '../../Navigation/NavigationActions';
 import { useNavigationFilters } from '../../Navigation/NavigationFilters';
 import { useItemScope } from '../../Navigation/NavigationMatches';
@@ -48,19 +49,29 @@ export const ItemNew: FC = () => {
 
     const { type } = useParams<ItemNewRouteParams>();
     const { didDowngrade } = useSelector(selectVaultLimits);
+    const { canUseFolders } = useFoldersAccess();
 
     const defaultVault = useSelector(selectDefaultVault);
     const mostRecentVaultShareID = useSelector(selectMostRecentVaultShareID);
     const selectedVault = useMemoSelector(selectShare, [selectedShareId]);
 
+    const hasSelectedWritableVault = selectedVault && isWritableVault(selectedVault);
+
     const shareId = (() => {
         /** If user downgraded : always auto-select the default vault id */
         if (didDowngrade) return defaultVault?.shareId;
         /** If we have a selected share : ensure it is writable */
-        if (selectedShareId && selectedVault && isWritableVault(selectedVault)) return selectedShareId;
+        if (hasSelectedWritableVault) return selectedShareId;
         /** Else select the most recently used writable/own vault */
         return mostRecentVaultShareID;
     })();
+
+    /** Only keep the selected folder if we are creating in the selected vault.
+     * If we fell back to another vault (read-only selection or downgrade), the
+     * selected folder does not belong to it and should be omitted.
+     * Future TODO: when folder sharing is released, we should look if
+     * folder is writable rather than vault being writable. */
+    const folderId = canUseFolders && shareId === selectedShareId ? filters.selectedFolderId : null;
 
     /** If a user's first route is an item creation route
      * (draft recovery), there won't be any history to go back
@@ -75,10 +86,13 @@ export const ItemNew: FC = () => {
     const handleSubmit = (createIntent: ItemCreateIntent) => {
         dispatch(itemCreate.intent(createIntent));
 
-        /* if the user put the item in a vault which is currently not selected,
-         *  autoselect it so the following call to `selectItem` passes */
-        if (selectedShareId && selectedShareId !== createIntent.shareId) {
-            setFilters({ selectedShareId: createIntent.shareId });
+        /* if the user put the item in a vault or folder which is currently not
+         * selected, autoselect it so the following call to `selectItem` passes */
+        if (
+            selectedShareId &&
+            (selectedShareId !== createIntent.shareId || filters.selectedFolderId !== createIntent.folderId)
+        ) {
+            setFilters({ selectedShareId: createIntent.shareId, selectedFolderId: createIntent.folderId });
         }
 
         selectItem(createIntent.shareId, createIntent.optimisticId, { mode: 'replace' });
@@ -93,6 +107,7 @@ export const ItemNew: FC = () => {
                 onCancel={handleCancel}
                 onSubmit={handleSubmit}
                 shareId={shareId}
+                folderId={folderId}
                 url={getExtensionClientState?.()?.url ?? null}
             />
         )

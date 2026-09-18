@@ -4,14 +4,12 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 
-import { useCanDragItems } from '../../hooks/useItemDrag';
 import { useBulkActions } from './BulkSelectionActions';
 import { useBulkSelection } from './BulkSelectionState';
 
 export const BulkView: FC = () => {
     const { count } = useBulkSelection();
     const { clear } = useBulkActions();
-    const draggable = useCanDragItems();
 
     const semiboldText = (
         <span className="text-semibold" key="bulk-count">
@@ -39,15 +37,13 @@ export const BulkView: FC = () => {
                                     c('Message').jt`You selected ${semiboldText} in this vault.`
                                 }
                             </div>
-                            {draggable && (
-                                <div className="color-weak">
-                                    {c('Message').ngettext(
-                                        msgid`You can drag and drop the selected item to another vault`,
-                                        `You can drag and drop the selected items to another vault`,
-                                        count
-                                    )}
-                                </div>
-                            )}
+                            <div className="color-weak">
+                                {c('Message').ngettext(
+                                    msgid`You can drag and drop the selected item to another vault`,
+                                    `You can drag and drop the selected items to another vault`,
+                                    count
+                                )}
+                            </div>
                         </div>
                         <Button shape="solid" size="small" color="weak" onClick={clear}>{
                             // Translator: this is button action for deselecting all of the items in bulk select action
