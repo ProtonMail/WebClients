@@ -7,6 +7,7 @@ import { RoomEvent } from 'livekit-client';
 
 import { PAGE_SIZE, SMALL_SCREEN_PAGE_SIZE } from '@proton/meet/constants';
 import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectActiveSpeakerSpotlightIdentity } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { selectMeetSettings, selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
@@ -33,28 +34,35 @@ export const CameraTrackSubscriptionManagerProvider = ({ children }: { children:
     const participantsWithDisabledVideos = useMeetSelector(selectParticipantsWithDisabledVideos);
     const participantQuality = useParticipantQuality();
 
+    const spotlightParticipantIdentity = useMeetSelector(selectActiveSpeakerSpotlightIdentity);
+
     const [manager, setManager] = useState(() => new CameraTrackSubscriptionManager(DEFAULT_CAPACITY, room));
 
     useEffect(() => {
         manager.setPolicy({ disableVideos, participantsWithDisabledVideos, participantQuality });
-    }, [disableVideos, participantsWithDisabledVideos, participantQuality]);
+    }, [manager, disableVideos, participantsWithDisabledVideos, participantQuality]);
+
+    useEffect(() => {
+        manager.setSpotlightParticipantIdentity(spotlightParticipantIdentity);
+    }, [manager, spotlightParticipantIdentity]);
 
     // Handle room disconnection - destroy cache and create a new one
+    const handleDisconnected = useStableCallback(() => {
+        manager.destroy();
+
+        const newManager = new CameraTrackSubscriptionManager(DEFAULT_CAPACITY, room);
+        newManager.setPolicy({ disableVideos, participantsWithDisabledVideos, participantQuality });
+        newManager.setSpotlightParticipantIdentity(spotlightParticipantIdentity);
+        newManager.setupReconcileLoop();
+        setManager(newManager);
+    });
+
     useEffect(() => {
-        const handleDisconnected = () => {
-            manager.destroy();
-
-            const newManager = new CameraTrackSubscriptionManager(DEFAULT_CAPACITY, room);
-            newManager.setPolicy({ disableVideos, participantsWithDisabledVideos, participantQuality });
-            newManager.setupReconcileLoop();
-            setManager(newManager);
-        };
-
         room.on(RoomEvent.Disconnected, handleDisconnected);
         return () => {
             room.off(RoomEvent.Disconnected, handleDisconnected);
         };
-    }, [room, disableVideos, participantsWithDisabledVideos, participantQuality]);
+    }, [room, handleDisconnected]);
 
     const cleanupManager = useStableCallback(() => {
         manager.destroy();
@@ -67,6 +75,7 @@ export const CameraTrackSubscriptionManagerProvider = ({ children }: { children:
         return () => {
             cleanupManager();
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
@@ -78,7 +87,7 @@ export const CameraTrackSubscriptionManagerProvider = ({ children }: { children:
         return () => {
             room.off(RoomEvent.TrackUnpublished, handleTrackUnpublished);
         };
-    }, [room]);
+    }, [manager, room]);
 
     const register = useCallback<RegisterCameraTrackFn>(
         (publication, participantIdentity, forcePin) => {
