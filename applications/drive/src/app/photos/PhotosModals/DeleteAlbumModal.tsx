@@ -21,12 +21,7 @@ export type DeleteAlbumModalProps = {
     onDeleted?: () => void;
 };
 
-export const DeleteAlbumModal = ({
-    deleteAlbum,
-    name,
-    onDeleted,
-    ...modalProps
-}: DeleteAlbumModalProps & ModalStateProps) => {
+const DeleteAlbumModal = ({ deleteAlbum, name, onDeleted, ...modalProps }: DeleteAlbumModalProps & ModalStateProps) => {
     const [isDeleteWithSaveLoading, withDeleteWithSaveLoading] = useLoading(false);
     const [isDeleteLoading, withDeleteLoading] = useLoading(false);
     const [saveToTimeline, setSaveToTimeline] = useState(false);

@@ -1,27 +1,8 @@
 import type { ReactNode } from 'react';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import {
-    isIgnoredError,
-    isIgnoredErrorForReporting,
-    isValidationError,
-    sendErrorReport,
-} from '@proton/drive/legacy/errorHandling';
+import { isIgnoredError, isValidationError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import type { ValidationError } from '@proton/drive/legacy/errorHandling';
-
-/**
- * generateErrorHandler generates error handler calling callback if the error
- * is not ignored error.
- */
-export function generateErrorHandler(callback: (error: any) => void) {
-    return (error: any) => {
-        if (isIgnoredErrorForReporting(error)) {
-            return;
-        }
-
-        callback(error);
-    };
-}
 
 export function useErrorHandler() {
     const { createNotification } = useNotifications();

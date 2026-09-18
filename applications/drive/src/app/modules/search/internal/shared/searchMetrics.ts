@@ -9,7 +9,6 @@ import {
     type PermanentErrorKind,
     SENTRY_REPORT_BURST_MAX_ATTEMPTS,
     SENTRY_REPORT_BURST_WINDOW_MS,
-    type TransientErrorKind,
     sendErrorReportForSearch,
 } from './errors';
 import type { IndexerTaskKind } from './types';
@@ -26,8 +25,6 @@ import type { IndexerTaskKind } from './types';
 
 const SEARCH_VERSION_V1 = 'v1';
 const SEARCH_VERSION_LEGACY = 'legacy';
-
-export type SearchPermanentErrorKind = PermanentErrorKind;
 
 /** Storage/index snapshot attached to an error report for debugging context. */
 export type SearchDiagnostics = {
@@ -62,8 +59,6 @@ const PERMANENT_ERROR_METRIC_KIND: Record<
     // TODO: Consider adding a crypto enum value in grafana.
     search_crypto_error: 'unknown',
 };
-
-export type SearchTransientErrorKind = TransientErrorKind;
 
 export type SearchEnvironmentIncompatibilityReason =
     | 'safari_too_old'
@@ -455,5 +450,3 @@ export const legacySearchMetrics = {
         });
     },
 };
-
-export type LegacySearchMetrics = typeof legacySearchMetrics;

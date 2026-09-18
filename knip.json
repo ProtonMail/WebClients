@@ -69,9 +69,8 @@
             "ignore": ["**"]
         },
         "applications/drive": {
-            "entry": ["src/app/index.{ts,tsx}", "src/app/urls.tsx"],
-            "project": ["src/**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "entry": ["src/app/index.{ts,tsx}", "src/app/urls.tsx", "webpack.config.{js,ts}"],
+            "project": ["src/**/*.{ts,tsx}"]
         },
         "applications/inbox-desktop": {
             "entry": [

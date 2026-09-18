@@ -10,7 +10,7 @@ type Props = {
     onSubmit?: () => void;
 };
 
-export default function DownloadContainsDocumentsModal({
+function DownloadContainsDocumentsModal({
     onSubmit,
     onCancel,
     onClose,

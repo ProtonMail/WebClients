@@ -4,15 +4,15 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import clsx from '@proton/utils/clsx';
 
-import type { CellDefinition, ContextMenuControls, SelectionMethods } from '../types';
+import type { ContextMenuControls, SelectionMethods } from '../types';
 
-export interface ContextMenuCellProps {
+interface ContextMenuCellProps {
     isActive?: boolean;
     onClick?: (event: React.MouseEvent) => void;
     className?: string;
 }
 
-export const ContextMenuCell = ({ isActive = false, onClick, className }: ContextMenuCellProps) => {
+const ContextMenuCell = ({ isActive = false, onClick, className }: ContextMenuCellProps) => {
     return (
         <Button
             shape="ghost"
@@ -28,11 +28,6 @@ export const ContextMenuCell = ({ isActive = false, onClick, className }: Contex
             <IcThreeDotsVertical alt={c('Action').t`More options`} />
         </Button>
     );
-};
-
-export const ContextMenuCellConfig: Omit<CellDefinition, 'render'> = {
-    id: 'contextMenuButton',
-    width: '3rem',
 };
 
 interface ContextMenuCellWithControlsProps {

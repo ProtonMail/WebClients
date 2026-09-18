@@ -4,7 +4,7 @@ import { withHoc } from '../modalUtils/withHoc';
 import { UploadConflictModalView, type UploadConflictModalViewProps } from './UploadConflictModalView';
 import { type UseUploadConflictModalProps, useUploadConflictModalState } from './useUploadConflictModalState';
 
-export const UploadConflictModal = withHoc<UseUploadConflictModalProps, UploadConflictModalViewProps>(
+const UploadConflictModal = withHoc<UseUploadConflictModalProps, UploadConflictModalViewProps>(
     useUploadConflictModalState,
     UploadConflictModalView
 );

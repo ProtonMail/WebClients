@@ -54,7 +54,7 @@ export type SearchViewStore = {
     markStoreAsDirty: (dirty: boolean) => void;
 };
 
-export const getKeyUid = (item: SearchResultItemUI) => item.nodeUid;
+const getKeyUid = (item: SearchResultItemUI) => item.nodeUid;
 
 // A store for the whole search result view.
 export const useSearchViewStore = create<SearchViewStore>()((set, get) => ({

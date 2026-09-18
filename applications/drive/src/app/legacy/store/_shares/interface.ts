@@ -1,9 +1,8 @@
-import type { PublicKeyReference, SessionKey } from '@protontech/crypto';
+import type { SessionKey } from '@protontech/crypto';
 
 import type { SHARE_EXTERNAL_INVITATION_STATE, SHARE_MEMBER_STATE } from '@proton/shared/lib/drive/constants';
-import type { SHARE_MEMBER_PERMISSIONS, SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import type { LinkType } from '@proton/shared/lib/interfaces/drive/link';
-import type { ThumbnailURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 import type { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 
 type WithSRPPayload<T extends any> = T & {
@@ -25,11 +24,11 @@ export enum ShareType {
 
 export enum ShareState {
     active = 1,
-    deleted = 2,
+    // deleted = 2,
     restored = 3,
-    migrating = 4,
-    migrated = 5,
-    locked = 6,
+    // migrating = 4,
+    // migrated = 5,
+    // locked = 6,
 }
 
 export interface Share {
@@ -55,24 +54,6 @@ export interface ShareWithKey extends Share {
     rootLinkRecoveryPassphrase?: string;
     memberships: ShareMembership[];
 }
-
-export type ShareURLLEGACY = WithSRPPayload<{
-    shareId: string;
-    shareUrlId: string;
-    expirationTime: number | null;
-    creatorEmail: string;
-    password: string;
-    flags: number;
-    token: string;
-    publicUrl: string;
-    sharePassphraseKeyPacket: string;
-    sharePasswordSalt: string;
-    hasCustomPassword: boolean;
-    hasGeneratedPasswordIncluded: boolean;
-    numAccesses: number;
-    maxAccesses: number;
-    permissions: number;
-}>;
 
 export type ShareURL = WithSRPPayload<{
     shareId: string;
@@ -121,17 +102,6 @@ export interface LockedDeviceForRestore extends LockedShareForRestore {
 export interface LockedPhotosForRestore extends LockedShareForRestore {
     shareDecryptedPassphrase: string;
     shareSessionKey: SessionKey;
-}
-export interface ShareMember {
-    memberId: string;
-    email: string;
-    inviterEmail: string;
-    addressId: string;
-    createTime: number;
-    modifyTime: number;
-    permissions: SHARE_MEMBER_PERMISSIONS;
-    keyPacketSignature: string;
-    sessionKeySignature: string;
 }
 
 export interface ShareMembership {
@@ -197,35 +167,4 @@ export interface ShareExternalInvitation {
     permissions: SHARE_MEMBER_PERMISSIONS;
     state: SHARE_EXTERNAL_INVITATION_STATE;
     externalInvitationSignature: string;
-}
-
-export interface ShareInvitee {
-    name: string;
-    email: string;
-    contactId?: string;
-    error?: Error;
-    group?: string;
-    isExternal?: boolean;
-    isLoading?: boolean;
-    publicKey?: PublicKeyReference;
-}
-
-export interface SharedUrlInfo {
-    contentKeyPacket: string;
-    linkId: string;
-    linkType: LinkType;
-    mimeType: string;
-    name: string;
-    nodeKey: string;
-    nodeHashKey: string | null;
-    nodePassphrase: string;
-    nodePassphraseSignature: string;
-    permissions: SHARE_URL_PERMISSIONS;
-    shareKey: string;
-    sharePassphrase: string;
-    sharePasswordSalt: string;
-    size: number;
-    signatureEmail?: string;
-    thumbnailUrlInfo: ThumbnailURLInfo;
-    token: string;
 }

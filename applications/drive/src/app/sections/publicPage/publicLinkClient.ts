@@ -19,7 +19,3 @@ export const getPublicLinkClient = (): ProtonDrivePublicLinkClient => {
     }
     return currentPublicLinkClient;
 };
-
-export const clearPublicLinkClient = () => {
-    currentPublicLinkClient = undefined;
-};

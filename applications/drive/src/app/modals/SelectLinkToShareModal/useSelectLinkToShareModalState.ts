@@ -7,7 +7,7 @@ import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import type { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { directoryTreeFactory, getNodeUidFromTreeItemId } from '@proton/drive/modules/directoryTree';
 
-export type SelectLinkToShareModalInnerProps = {
+type SelectLinkToShareModalInnerProps = {
     showSharingModal: ReturnType<typeof useSharingModal>['showSharingModal'];
 };
 
