@@ -1362,6 +1362,9 @@
       ],
       "Sign in with Google": [
         "Iniciar sessió amb Google"
+      ],
+      "Importing from Google": [
+        "S'està important des de Google"
       ]
     },
     "Action: Docs": {
@@ -7997,6 +8000,15 @@
       ],
       "Won’t import photos, Google Docs and Sheets": [
         "No s'importaran fotos, ni Google Docs i Sheets"
+      ],
+      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
+        "${ invitation.addedByEmail.error.claimedAuthor } (remitent no verificat)"
+      ],
+      "We're importing your files from Google Drive. We'll let you know once it's done.": [
+        "S'estan important els vostres fitxers des de Google Drive. Us ho farem saber quan hagi acabat."
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Els vostres fitxers s'han importat i xifrat correctament des de Google Drive a ${ DRIVE_APP_NAME }."
       ]
     },
     "info": {
@@ -11273,6 +11285,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Podreu utilitzar ${ planTitle } de manera gratuïta fins que finalitzi el període de prova."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Afegiu un mètode de pagament** per continuar utilitzant totes les funcions quan acabi el període de prova."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Cancel·leu-ho en qualsevol moment. ** Podreu utilitzar ${ planTitle } fins que acabi el període de prova, de franc."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Si continueu després del període de prova,** podreu cancel·lar-ho en un termini de 30 dies i rebre un reemborsament prorratejat."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Un cop comenci la vostra subscripció completa...** Encara podreu cancel·lar-la en un termini de 30 dies i rebre un reemborsament prorratejat."
+      ],
+      "Add a payment method": [
+        "Afegir un mètode de pagament"
+      ],
+      "If you continue after your trial,": [
+        "Si continueu després del període de prova,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "per continuar utilitzant totes les funcions quan acabi el vostre període de prova."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "podreu cancel·lar-ho en un termini de 30 dies i rebre un reemborsament prorratejat"
       ]
     },
     "Option": {
@@ -14661,6 +14697,12 @@
       ],
       "Your import is starting": [
         "La importació s'està iniciant"
+      ],
+      "Your import is finished!": [
+        "Ha finalitzat la vostra importació!"
+      ],
+      "Your import is in progress": [
+        "La vostra importació està en curs"
       ]
     },
     "Today icon tooltip in mini calendar": {
