@@ -1,3 +1,5 @@
+// Barrel import so jest.spyOn matches modules resolved through @proton/account in consumers.
+// eslint-disable-next-line custom-rules/no-package-self-import, import/no-extraneous-dependencies -- jest module identity
 import * as useUserSettingsModule from '@proton/account';
 import {
     FIDO2_CREDENTIALS_PIN_VALUE,

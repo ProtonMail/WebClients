@@ -1,5 +1,7 @@
 import { vi } from 'vitest';
 
+// Package import so vi.spyOn matches modules resolved through @proton/app-context in consumers.
+// eslint-disable-next-line custom-rules/no-package-self-import, import/no-extraneous-dependencies -- vitest module identity
 import * as useNotificationsModule from '@proton/app-context/useNotifications';
 
 export const mockUseNotifications = (value?: Partial<ReturnType<typeof useNotificationsModule.useNotifications>>) => {

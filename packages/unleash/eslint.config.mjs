@@ -1,6 +1,7 @@
 import { defineConfig } from 'eslint/config';
 
 import config from '@proton/eslint-config-proton/all';
+import { extraneousDependenciesDevDependencies } from '@proton/eslint-config-proton/extraneousDependencies';
 
 export default defineConfig([
     config,
@@ -10,9 +11,14 @@ export default defineConfig([
     {
         files: ['testing/**'],
         rules: {
-            'custom-rules/no-package-self-import': 'off',
+            'import/no-extraneous-dependencies': [
+                'error',
+                {
+                    devDependencies: [...extraneousDependenciesDevDependencies, '**/testing/**'],
+                    optionalDependencies: false,
+                },
+            ],
             'import/no-internal-modules': 'off',
-            'import/no-extraneous-dependencies': 'off',
         },
     },
 ]);

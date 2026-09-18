@@ -1,5 +1,4 @@
-import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
-
+import { makeEntitlements } from '../../testing/makeEntitlements';
 import { EntitlementName } from './entitlement-names';
 import { EntitlementScope, EntitlementType } from './interface';
 import { createEntitlementResolver } from './resolver';
