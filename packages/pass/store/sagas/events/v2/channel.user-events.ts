@@ -2,6 +2,7 @@ import { call, cancelled, delay, put, race, select, take } from 'redux-saga/effe
 
 import { processUserEvents } from '../../../../lib/sync/v2/user-events.processor';
 import { getUserEventsSince } from '../../../../lib/sync/v2/user-events.requests';
+import { processFullRefresh } from '../../../../lib/sync/v2/user-events.sync';
 import type { Api, Id, MaybeNull, SyncEventListOutput } from '../../../../types';
 import { logId, logger } from '../../../../utils/logger';
 import { setUserEventID } from '../../../actions';
@@ -15,28 +16,28 @@ export function* userEventsChannel(_: Api, options: RootSagaOptions): Generator 
     try {
         while (true) {
             try {
-                /** 1. Ensure valid `userEventID` */
+                /** 1. Ensure valid `userEventID`. If null, full sync to get a new one. */
                 const lastUserEventID: MaybeNull<Id> = yield select(selectLatestUserEventId);
 
                 if (!lastUserEventID) {
-                    logger.warn(`[${CHANNEL_ID}] No userEventID, skipping poll`);
-                    yield delay(options.getPollingInterval());
-                    continue;
+                    logger.warn(`[${CHANNEL_ID}] No userEventID, refreshing`);
+                    const refreshed: boolean = yield call(processFullRefresh, options);
+                    if (!refreshed) logger.warn(`[${CHANNEL_ID}] Full refresh failed, retrying next poll`);
+                } else {
+                    /** 2. Fetch events since `userEventID` */
+                    logger.debug(`[${CHANNEL_ID}] Polling events since ${logId(lastUserEventID)}`);
+                    const events: SyncEventListOutput = yield call(getUserEventsSince, lastUserEventID);
+
+                    /** 3. Process user events */
+                    logger.debug(`[${CHANNEL_ID}] Processing events up to ${logId(events.LastEventID)} `);
+                    const processed: boolean = yield call(processUserEvents, events, options);
+
+                    /** 4. Update state with new eventID only if all events were processed */
+                    if (processed && !events.FullRefresh) yield put(setUserEventID(events.LastEventID));
+
+                    /** 5. If more events pending -> poll immediately */
+                    if (processed && events.EventsPending) continue;
                 }
-
-                /** 2. Fetch events since `userEventID` */
-                logger.debug(`[${CHANNEL_ID}] Polling events since ${logId(lastUserEventID)}`);
-                const events: SyncEventListOutput = yield call(getUserEventsSince, lastUserEventID);
-
-                /** 3. Process user events */
-                logger.debug(`[${CHANNEL_ID}] Processing events up to ${logId(events.LastEventID)} `);
-                const processed: boolean = yield call(processUserEvents, events, options);
-
-                /** 4. Update state with new eventID only if all events were processed */
-                if (processed && !events.FullRefresh) yield put(setUserEventID(events.LastEventID));
-
-                /** 5. If more events pending -> poll immediately */
-                if (processed && events.EventsPending) continue;
             } catch (err) {
                 logger.warn(`[${CHANNEL_ID}] Channel error`, err);
             }
