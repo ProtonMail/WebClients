@@ -1,13 +1,9 @@
-import { create as createMutex } from '@protontech/mutex-browser';
-
-import noop from '@proton/utils/noop';
-import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
-
 import { createOnceHandler } from '../../apiHandlers';
 import { HTTP_STATUS_CODE, OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY, RETRY_ATTEMPTS_MAX } from '../../constants';
 import { HTTP_ERROR_CODES } from '../../errors';
 import type { ApiError } from '../../fetch/ApiError';
 import { wait } from '../../helpers/promise';
+import { createCrossTabMutex } from './mutex';
 import { retryHandler } from './retryHandler';
 
 export const createRefreshHandlers = (refresh: (UID: string) => Promise<Response>) => {
@@ -15,22 +11,7 @@ export const createRefreshHandlers = (refresh: (UID: string) => Promise<Response
 
     const refreshHandler = (UID: string) => {
         if (!refreshHandlers[UID]) {
-            const mutex = createMutex({ expiry: 15000 });
-
-            const getMutexLock = async (UID: string) => {
-                try {
-                    await mutex.lock(UID);
-                    return () => {
-                        return mutex.unlock(UID).catch(noop);
-                    };
-                } catch (e) {
-                    // If getting the mutex fails, fall back to a random wait
-                    await wait(randomIntFromInterval(100, 2000));
-                    return () => {
-                        return Promise.resolve();
-                    };
-                }
-            };
+            const getMutexLock = createCrossTabMutex({ expiry: 15000 });
 
             /**
              * Refreshing the session needs to handle multiple race conditions.
