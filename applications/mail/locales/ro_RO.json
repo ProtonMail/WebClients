@@ -1557,7 +1557,9 @@
         "Aprobare"
       ],
       "Trust key": [
-        "Aprobare cheie"
+        "Aprobare cheie",
+        "Aprobare chei",
+        "Aprobare chei"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -8348,9 +8350,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -10143,6 +10143,90 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate."
+      ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "O scurtă trecere în revistă a modului în care te pot ajuta cu contul de e-mail – de la găsirea mesajelor vechi până la redactarea răspunsurilor – și a lucrurilor pe care nu le pot face."
+      ],
+      "Draft a ${ kind }": [
+        "Schițează un ${ kind }"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "Schițează un ${ kind } către ${ recipient }"
+      ],
+      "Draft an ${ kind }": [
+        "Schițează un ${ kind }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "Schițează un ${ kind } către ${ recipient }"
+      ],
+      "Drafted a ${ kind }": [
+        "Am schițat un ${ kind }"
+      ],
+      "Drafted an ${ kind }": [
+        "Am schițat un ${ kind }"
+      ],
+      "Edit ${ contact }": [
+        "Editează ${ contact }"
+      ],
+      "Edit a contact": [
+        "Editează un contact"
+      ],
+      "Edit contact": [
+        "Editare contact"
+      ],
+      "forward": [
+        "transferă"
+      ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Hei, Lumo, aruncă o privire peste mesajele pe care le primesc cel mai des în cont, precum și peste folderele și filtrele pe care le am deja, apoi propune-mi o modalitate de a le organiza: ce ar trebui schimbat la cele existente și ce elemente noi ar merita adăugate. Explică-mi mai întâi planul și nu muta nimic până nu îmi dau acordul."
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Hei, Lumo, plec și vreau să setez un răspuns automat de tip „nu sunt disponibil”. Întreabă-mă care sunt datele calendaristice și ce ar trebui să conțină, apoi arată-mi mesajul înainte de a-l activa."
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Hei Lumo, caută mesajele din ultimele 7 zile și spune-mi care dintre ele necesită într-adevăr un răspuns din partea mea. Spune-mi pe scurt ce se cere în fiecare dintre ele și exclude tot ce pot ignora."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Hei, Lumo! Explică-mi cum mă poți ajuta cu contul de e-mail. Ce fel de lucruri îți pot cere să faci și cu ce nu mă poți ajuta?"
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "Voi trece prin corespondența de săptămâna trecută și voi selecta ceea ce necesită într-adevăr un răspuns, ca să te poți ocupa de tot deodată."
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "Voi analiza ce primești cel mai des, precum și folderele și filtrele pe care le ai deja, apoi îți voi sugera ce poate fi îmbunătățit și ce lipsește. Nu se schimbă nimic fără acordul tău."
+      ],
+      "open draft": [
+        "deschidere ciornă"
+      ],
+      "Readdressed": [
+        "Revizuit"
+      ],
+      "reply": [
+        "răspunde"
+      ],
+      "reply all": [
+        "răspuns tuturor"
+      ],
+      "Revise the ${ draft }": [
+        "Revizuiește ${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "Rescris și revizuit"
+      ],
+      "Set my out of office": [
+        "Setează-mi mesajul „nu sunt la birou”"
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "Spune-mi când vei pleca și ce ai vrea să scrie, iar eu îți voi arăta totul înainte de a se salva."
+      ],
+      "Tidy up my inbox": [
+        "Organizează-mi mesajele"
+      ],
+      "What can you do?": [
+        "Ce poți să faci?"
+      ],
+      "What needs handling?": [
+        "Ce trebuie rezolvat?"
       ]
     },
     "info": {
@@ -10402,6 +10486,12 @@
       ],
       "Star": [
         "Marcare cu stea"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Închidere ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Deschidere ${ LUMO_SHORT_APP_NAME } / focalizare pe câmpul de introducere"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -10438,6 +10528,9 @@
       ],
       "Message shortcuts": [
         "Combinații de taste mesaje"
+      ],
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "Scurtături ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Label": {
@@ -11475,6 +11568,12 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Cc": [
+        "C"
+      ],
+      "To": [
+        "Către"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13690,6 +13789,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Veți putea utiliza ${ planTitle } gratuit până la sfârșitul perioadei de evaluare."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Adăugați o metodă de plată** pentru a continua să utilizați toate funcțiile după expirarea perioadei de probare."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Puteți anula oricând înainte de acel moment.** Veți putea utiliza ${ planTitle } gratuit până la expirarea perioadei de probare."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Dacă alegeți să continuați după perioada de probare,** puteți anula în termen de 30 de zile și puteți primi o rambursare proporțională."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**După ce începe abonamentul complet,** încă puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
+      ],
+      "Add a payment method": [
+        "Adăugați o metodă de plată"
+      ],
+      "If you continue after your trial,": [
+        "Dacă mai continuați după perioada de probare,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "pentru a continua să utilizații toate funcțiile după expirarea perioadei de probare."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
       ]
     },
     "Option": {

@@ -9756,6 +9756,63 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "몇 번의 클릭만으로 정리된 받은 편지함을 만들어 보세요"
+      ],
+      "Draft a ${ kind }": [
+        "${ kind } 초안 작성하기"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "${ recipient }님에 대한 ${ kind } 초안 작성하기"
+      ],
+      "Draft an ${ kind }": [
+        "${ kind } 초안 작성하기"
+      ],
+      "Edit ${ contact }": [
+        "${ contact } 편집"
+      ],
+      "Edit a contact": [
+        "연락처 편집"
+      ],
+      "Edit contact": [
+        "연락처 편집"
+      ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Lumo야! 내 메일함에 가장 많이 들어오는 메일과 지금 있는 폴더, 필터를 살펴보고 어떻게 정리하면 좋을지 제안해 줘. 기존에 있는 것 중 뭘 바꿔야 하고, 새로 추가하면 좋은 것도 알려줘. 계획을 먼저 말해 주고, 내가 승인하기 전에는 아무것도 이동하지 마!"
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Lumo야! 나중에 자리를 비우게 될 것 같아서 자리 비움 자동 응답을 설정하고 싶어. 기간이 언제부터 언제까지인지, 뭐라고 보낼지 물어봐 줄래? 그리고 기능을 켜기 전에 메시지 내용부터 보여줘."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Lumo야! 메일함 관리에서 내가 어떻게 도와줄 수 있는지 알려줘. 어떤 일을 요청할 수 있고, 어떤 것은 도와줄 수 없어?"
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "지난 주 메일을 검토하여 실제로 답변이 필요한 것을 찾아드릴게요. 그러면 한 번에 처리하실 수 있습니다."
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "받은 메일함의 분포, 기존 폴더와 필터를 살펴본 후 개선할 점과 빠진 부분을 제안해 드릴게요. 질문자님이 승인하기 전에는 어떤 것도 이동되지 않아요."
+      ],
+      "Remove signature": [
+        "서명 삭제"
+      ],
+      "Rename label": [
+        "라벨 이름 변경"
+      ],
+      "Rename this label": [
+        "이 라벨 이름 변경"
+      ],
+      "reply": [
+        "회신"
+      ],
+      "reply all": [
+        "전체 회신"
+      ],
+      "Revise the ${ draft }": [
+        "${ draft } 수정하기"
+      ],
+      "What can you do?": [
+        "무엇을 도와줄 수 있어?"
+      ],
+      "What needs handling?": [
+        "처리해야 할 항목"
       ]
     },
     "info": {
@@ -10005,6 +10062,9 @@
       ],
       "Star": [
         "별표"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } 닫기"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -10041,6 +10101,9 @@
       ],
       "Message shortcuts": [
         "단축키 메시지"
+      ],
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "${ LUMO_SHORT_APP_NAME } 단축어"
       ]
     },
     "Label": {
@@ -11069,6 +11132,9 @@
       ],
       "ZIP code": [
         "우편번호"
+      ],
+      "Cc": [
+        "참조"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13194,6 +13260,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "무료 체험 기간 종료 전까지 ${ planTitle }을(를) 무료로 계속 사용 가능합니다."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "무료 체험 종료 후에도 모든 기능을 계속 사용하려면 **결제 방법을 추가하세요**."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**해당 날짜 전에 언제든지 취소하세요.** 무료 체험 종료일 전까지 별도 청구 없이 ${ planTitle }을(를) 계속 사용할 수 있습니다."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**무료 체험 이후에도 플랜을 유지하는 경우** 30일 이내에 취소시 사용량에 비례하여 환불받으실 수 있습니다."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**정식 구독이 시작된 후에도...** 30일 내에 구독 취소 시 사용량에 비례하여 환불 받을 수 있습니다."
+      ],
+      "Add a payment method": [
+        "결제 방법 추가하기"
+      ],
+      "If you continue after your trial,": [
+        "무료 체험 이후에도 유지한다면,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "- 모든 기능을 계속 사용하려면 결제 방법을 추가하세요."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "30일 내에 구독 취소시 사용량이 비례하여 환불을 받으실 수 있습니다."
       ]
     },
     "Option": {
@@ -17834,6 +17924,16 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "${ folder }을(를) 다음으로 이름 변경하기..."
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "${ label }을(를) 다음으로 이름 변경하기..."
       ]
     }
   }

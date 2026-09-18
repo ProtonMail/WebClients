@@ -1547,7 +1547,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -8108,8 +8109,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9767,6 +9767,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "Edit ${ contact }": [
+        "Redigera ${ contact }"
+      ],
+      "Edit a contact": [
+        "Redigera en kontakt"
+      ],
+      "Edit contact": [
+        "Redigera kontakt"
+      ],
+      "Remove signature": [
+        "Ta bort signatur"
+      ],
+      "reply": [
+        "svara"
+      ],
+      "reply all": [
+        "svara alla"
       ]
     },
     "info": {
@@ -11061,6 +11079,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "To": [
+        "Till"
       ]
     },
     "Label (begin date/advanced search)": {
