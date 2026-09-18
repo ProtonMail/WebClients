@@ -106,7 +106,8 @@ export const selectSelectedMicrophoneId = createSelector(
 
 export const selectSelectedAudioOutputId = createSelector(
     [selectSpeakers, selectPreferredSpeakerId, selectActiveAudioOutputId],
-    resolveSelectedDeviceId
+    // Nothing applied yet resolves the same way as the system default: fall back to the preference
+    (speakers, preferredId, activeId) => resolveSelectedDeviceId(speakers, preferredId, activeId ?? '')
 );
 
 const getDefaultLabel = (systemDefault: SerializableDeviceInfo | null) =>
