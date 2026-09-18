@@ -1,6 +1,6 @@
 import { CryptoProxy, type PrivateKeyReference } from '@protontech/crypto';
 import { decryptData, encryptData, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
-import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
+import { binaryStringToUint8Array, uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 import { base32crockford } from '@scure/base';
 import { c } from 'ttag';
 
@@ -19,7 +19,6 @@ import { getUser } from '../api/user';
 import { API_CODES } from '../constants';
 import { HTTP_ERROR_CODES } from '../errors';
 import { getBrowser, getOs } from '../helpers/browser';
-import { getSHA256String } from '../helpers/crypto';
 import { getItem, removeItem, setItem } from '../helpers/storage';
 import type { Address, AddressKey, Api, User, User as tsUser } from '../interfaces';
 import { getIsGlobalSSOAccount } from './setupAddress';
@@ -41,7 +40,7 @@ export interface DeviceSecretData {
     data: Uint8Array<ArrayBuffer>;
     serializedData: string;
     key: CryptoKey;
-    confirmationCode: string;
+    confirmationCodes: Record<ConfirmationCodeVersion, string>;
 }
 
 export interface DeviceDataSerialized {
@@ -84,7 +83,7 @@ export class AuthDeviceInvalidError extends Error {
     }
 }
 
-export class AuthDeviceNonExistingError extends Error { }
+export class AuthDeviceNonExistingError extends Error {}
 
 type DevicePlatform = 'Web' | 'Windows' | 'macOS' | 'Linux' | 'Android' | 'AndroidTV' | 'iOS' | 'AppleTV';
 
@@ -101,6 +100,7 @@ export interface AuthDeviceOutput {
     ActivationToken?: string;
     ActivationAddressID?: string;
     DeviceToken: string;
+    ConfirmationCodeVersion?: ConfirmationCodeVersion;
 }
 
 export interface MemberAuthDeviceOutput extends AuthDeviceOutput {
@@ -124,12 +124,83 @@ const serializeAuthDeviceSecret = (value: Uint8Array<ArrayBuffer>) => {
     return value.toBase64();
 };
 
-const getAuthDeviceSecretConfirmationCode = async (data: string) => {
-    const sha256DeviceSecret = await getSHA256String(data);
-    return base32crockford.encode(utf8StringToUint8Array(sha256DeviceSecret)).slice(0, 4);
+export enum ConfirmationCodeVersion {
+    /** The hex-encoded digest is passed to base32. */
+    V1 = 1,
+    /** The digest bytes are passed to base32. */
+    V2 = 2,
+}
+
+// Move to V2 once every client that verifies a device reads `ConfirmationCodeVersion` back off the API.
+export const producedConfirmationCodeVersion = ConfirmationCodeVersion.V1;
+
+export const getAuthDeviceSecretConfirmationCode = async (
+    deviceSecretBase64: string,
+    version: ConfirmationCodeVersion
+) => {
+    const digest = await CryptoProxy.computeHash({
+        algorithm: 'SHA256',
+        data: binaryStringToUint8Array(deviceSecretBase64),
+    });
+    const bytes = version === ConfirmationCodeVersion.V1 ? utf8StringToUint8Array(digest.toHex()) : digest;
+    return base32crockford.encode(bytes).slice(0, 4);
 };
 
-const deserializeAuthDeviceSecretData = async (deviceID: string, serializedData: string): Promise<DeviceSecretData> => {
+const getAuthDeviceSecretConfirmationCodes = async (
+    deviceSecretBase64: string
+): Promise<Record<ConfirmationCodeVersion, string>> => {
+    const [v1, v2] = await Promise.all([
+        getAuthDeviceSecretConfirmationCode(deviceSecretBase64, ConfirmationCodeVersion.V1),
+        getAuthDeviceSecretConfirmationCode(deviceSecretBase64, ConfirmationCodeVersion.V2),
+    ]);
+    return {
+        [ConfirmationCodeVersion.V1]: v1,
+        [ConfirmationCodeVersion.V2]: v2,
+    };
+};
+
+export const getAuthDeviceConfirmationCodeVersion = (
+    authDevice: Pick<AuthDeviceOutput, 'ConfirmationCodeVersion'>
+): ConfirmationCodeVersion => {
+    const version = authDevice.ConfirmationCodeVersion;
+    if (version === undefined) {
+        // Devices enrolled before versioning existed
+        return ConfirmationCodeVersion.V1;
+    }
+    if (version !== ConfirmationCodeVersion.V1 && version !== ConfirmationCodeVersion.V2) {
+        // Fail loudly instead of silently deriving a code this device will never accept
+        throw new Error(`Unsupported confirmation code version: ${version}`);
+    }
+    return version;
+};
+
+export const getDisplayedAuthDeviceConfirmationCode = ({
+    deviceOutput,
+    deviceSecretData,
+}: {
+    deviceOutput: Pick<AuthDeviceOutput, 'ConfirmationCodeVersion'>;
+    deviceSecretData: DeviceSecretData;
+}) => {
+    return deviceSecretData.confirmationCodes[getAuthDeviceConfirmationCodeVersion(deviceOutput)];
+};
+
+export const isValidAuthDeviceConfirmationCode = ({
+    authDevice,
+    deviceSecretData,
+    confirmationCode,
+}: {
+    authDevice: Pick<AuthDeviceOutput, 'ConfirmationCodeVersion'>;
+    deviceSecretData: DeviceSecretData;
+    confirmationCode: string;
+}) => {
+    const version = getAuthDeviceConfirmationCodeVersion(authDevice);
+    return deviceSecretData.confirmationCodes[version] === confirmationCode;
+};
+
+export const deserializeAuthDeviceSecretData = async (
+    deviceID: string,
+    serializedData: string
+): Promise<DeviceSecretData> => {
     try {
         const data = deserializeAuthDeviceSecret(serializedData);
         const key = await importKey(data);
@@ -137,14 +208,14 @@ const deserializeAuthDeviceSecretData = async (deviceID: string, serializedData:
             data,
             key,
             serializedData,
-            confirmationCode: await getAuthDeviceSecretConfirmationCode(serializedData),
+            confirmationCodes: await getAuthDeviceSecretConfirmationCodes(serializedData),
         };
     } catch {
         throw new AuthDeviceInvalidError(deviceID, 'Unable to deserialize');
     }
 };
 
-const generateAuthDeviceSecretData = async (): Promise<DeviceSecretData> => {
+export const generateAuthDeviceSecretData = async (): Promise<DeviceSecretData> => {
     const data = crypto.getRandomValues(new Uint8Array(32));
     const serializedData = serializeAuthDeviceSecret(data);
     const key = await importKey(data);
@@ -153,7 +224,7 @@ const generateAuthDeviceSecretData = async (): Promise<DeviceSecretData> => {
         data,
         serializedData,
         key,
-        confirmationCode: await getAuthDeviceSecretConfirmationCode(serializedData),
+        confirmationCodes: await getAuthDeviceSecretConfirmationCodes(serializedData),
     };
 };
 
@@ -172,7 +243,9 @@ export const createAuthDevice = async ({ api }: { api: Api }): Promise<DeviceDat
     const name = getDeviceName();
     const deviceOutput = await api<{
         AuthDevice: AuthDeviceOutput;
-    }>(addAuthDeviceConfig({ Name: name })).then(({ AuthDevice }) => AuthDevice);
+    }>(addAuthDeviceConfig({ Name: name, ConfirmationCodeVersion: producedConfirmationCodeVersion })).then(
+        ({ AuthDevice }) => AuthDevice
+    );
     return {
         deviceSecretData,
         deviceOutput,
@@ -226,6 +299,7 @@ export const createAuthDeviceToActivate = async ({
         addAuthDeviceConfig({
             Name: name,
             ActivationToken: activationToken,
+            ConfirmationCodeVersion: producedConfirmationCodeVersion,
         })
     ).then(({ AuthDevice }) => AuthDevice);
 
@@ -304,7 +378,7 @@ const deserializeAuthDeviceData = (data: string | null | undefined): SerializedA
                 persistedAt: Number(parsedJson.persistedAt),
             };
         }
-    } catch { }
+    } catch {}
 };
 
 const getEncryptedAuthDeviceSecret = async ({
@@ -346,7 +420,7 @@ const getEncryptedAuthDeviceSecret = async ({
 export const getPersistedAuthDeviceDataByUser = ({ user }: { user: User }) => {
     try {
         return deserializeAuthDeviceData(getItem(getStorageKey(user.ID)));
-    } catch { }
+    } catch {}
 };
 
 export const setPersistedAuthDeviceDataByUser = async ({

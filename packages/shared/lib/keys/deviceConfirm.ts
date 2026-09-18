@@ -9,6 +9,7 @@ import {
     decryptAuthDeviceActivationToken,
     encryptAuthDeviceSecret,
     getValidActivation,
+    isValidAuthDeviceConfirmationCode,
 } from './device';
 
 export class ConfirmAuthDeviceError extends Error {}
@@ -49,13 +50,15 @@ export const decryptAuthDeviceActivation = async ({
 };
 
 export const validateAuthDevice = ({
+    pendingAuthDevice,
     deviceSecretData,
     confirmationCode,
 }: {
+    pendingAuthDevice: Pick<AuthDeviceOutput, 'ConfirmationCodeVersion'>;
     deviceSecretData: DeviceSecretData;
     confirmationCode: string;
 }) => {
-    if (deviceSecretData.confirmationCode !== confirmationCode) {
+    if (!isValidAuthDeviceConfirmationCode({ authDevice: pendingAuthDevice, deviceSecretData, confirmationCode })) {
         throw new ConfirmAuthDeviceError(c('sso').t`Invalid confirmation code`);
     }
 };

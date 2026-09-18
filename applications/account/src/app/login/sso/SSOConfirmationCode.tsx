@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import type { AuthCacheResult } from '@proton/components/containers/login/interface';
+import { getDisplayedAuthDeviceConfirmationCode } from '@proton/shared/lib/keys/device';
 
 interface Props {
     ssoData: AuthCacheResult['data']['ssoData'];
@@ -9,7 +10,7 @@ interface Props {
 const SSOConfirmationCode = ({ ssoData }: Props) => {
     const code = (() => {
         if (ssoData && ssoData.type && ssoData.type !== 'set-password') {
-            return ssoData.deviceData.deviceSecretData.confirmationCode.split('');
+            return getDisplayedAuthDeviceConfirmationCode(ssoData.deviceData).split('');
         }
         return [];
     })();
