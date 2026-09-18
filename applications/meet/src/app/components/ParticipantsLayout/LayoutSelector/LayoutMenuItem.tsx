@@ -12,10 +12,14 @@ import { useLayoutOptions } from './useLayoutOptions';
 export const LayoutMenuItem = ({ onLayoutSelected }: { onLayoutSelected: () => void }) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
-    const { selectedOption } = useLayoutOptions();
+    const { options, selectedOption } = useLayoutOptions();
 
     const SelectedIcon = selectedOption.Icon;
     const selectedLabel = selectedOption.label;
+
+    if (options.length <= 1) {
+        return null;
+    }
 
     return (
         <>
