@@ -24,7 +24,7 @@ const mockUseUser = useUser as jest.Mock;
 jest.mock('@proton/account/subscription/hooks');
 const mockUseSubscription = useSubscription as jest.Mock;
 
-jest.mock('../../../../payments/client-extensions/index', () => ({
+jest.mock('@proton/payments-ui/client-extensions/useAutomaticCurrency', () => ({
     __esModule: true,
     useAutomaticCurrency: jest.fn(),
 }));
