@@ -11,4 +11,10 @@ export default defineConfig([
             'compat/compat': 'off',
         },
     },
+    {
+        files: ['testing/setup/**'],
+        rules: {
+            'import/no-extraneous-dependencies': ['error', { devDependencies: ['**/testing/**'] }],
+        },
+    },
 ]);
