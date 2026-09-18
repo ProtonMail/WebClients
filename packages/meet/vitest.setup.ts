@@ -2,11 +2,10 @@ import '@testing-library/jest-dom';
 import { vi } from 'vitest';
 
 import '@proton/polyfill';
-// @proton/components depends on @proton/meet, so these stay on the @proton/testing
-// shims until that cycle is resolved. See INWEB-1236 Phase 7.
-import '@proton/testing/lib/vitest/mockFlagSvg';
-import '@proton/testing/lib/vitest/mockMatchMedia';
 import '@proton/unleash/testing/vitest/mockUnleash';
+
+import './testing/setup/mockFlagSvg';
+import './testing/setup/mockMatchMedia';
 
 // @ts-ignore
 global.IS_REACT_ACT_ENVIRONMENT = true;

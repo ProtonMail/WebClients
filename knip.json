@@ -473,10 +473,6 @@
             "entry": [],
             "project": ["**/*.{ts,tsx}"]
         },
-        "packages/testing": {
-            "entry": [],
-            "project": ["**/*.{ts,tsx}"]
-        },
         "packages/types": {
             "entry": ["eslint.config.{js,mjs,ts}"],
             "project": ["**/*.{ts,tsx}"]
