@@ -1,7 +1,7 @@
 import type { FeatureCode } from '@proton/features';
 import { addApiMock } from '@proton/test-api/api';
 
-export const defaultFeatureFlagValue = {
+const defaultFeatureFlagValue = {
     Code: '',
     Type: 'boolean',
     Global: false,
@@ -11,7 +11,7 @@ export const defaultFeatureFlagValue = {
     Writable: true,
 };
 
-export const featureFlags: { [code: string]: any } = {};
+const featureFlags: { [code: string]: any } = {};
 
 export const getFeatureFlagsState = (features: [FeatureCode, boolean | object][], fetchedAt = Date.now()) => {
     return Object.fromEntries(
@@ -28,21 +28,6 @@ export const getFeatureFlagsState = (features: [FeatureCode, boolean | object][]
                         fetchedAt,
                         fetchedEphemeral: true,
                     },
-                },
-            ];
-        })
-    );
-};
-
-export const getFeatureFlags = (features: [FeatureCode, boolean | object][]) => {
-    return Object.fromEntries(
-        features.map(([featureCode, value]) => {
-            return [
-                featureCode,
-                {
-                    ...defaultFeatureFlagValue,
-                    Code: featureCode,
-                    Value: value,
                 },
             ];
         })
