@@ -1,9 +1,8 @@
-import type { Config } from 'jest';
+import type { Config } from 'jest'
 
 const jestConfig: Config = {
   setupFilesAfterEnv: ['./jest.setup.js'],
   moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
-  collectCoverage: true,
   collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/app/locales.ts'],
   testEnvironment: '@proton/jest-env',
   resolver: './jest.resolver.js',
@@ -25,6 +24,6 @@ const jestConfig: Config = {
   },
   coverageReporters: ['text-summary', 'json'],
   reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
-};
+}
 
-export default jestConfig;
+export default jestConfig
