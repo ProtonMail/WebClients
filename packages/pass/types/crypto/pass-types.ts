@@ -16,6 +16,8 @@ export enum PassEncryptionTag {
     FileMetadataV2 = 'v2;filemetadata.item.pass.proton',
     ReauthPayload = 'reauthpayload',
     ActionPayload = 'proton.pass.payload',
+    FolderKey = 'key.folder.pass.proton',
+    FolderContent = 'content.folder.pass.proton',
 }
 
 export enum PassSignatureContext {
@@ -28,12 +30,14 @@ export enum PassSignatureContext {
 export enum ContentFormatVersion {
     Share = 1,
     Item = 8,
+    Folder = 1,
 }
 
 /* type aliases */
 export type Rotation = number;
 export type ShareId = string;
 export type ItemId = string;
+export type FolderId = string;
 
 export type RotationKey = {
     key: CryptoKey;
@@ -44,6 +48,7 @@ export type RotationKey = {
 export type ShareKey = RotationKey & { userKeyId: Maybe<string> };
 
 export type ItemKey = RotationKey;
+export type FolderKey = RotationKey & { parentFolderId: MaybeNull<string> };
 export type VaultShareKey = ShareKey;
 export type ItemShareKey = ShareKey;
 export type InviteTargetKey = ItemKey | VaultShareKey;
@@ -98,7 +103,17 @@ export type OpenedItem = {
     revision: number;
     revisionTime: number;
     state: ItemState;
+    /* Parent folder ID, `null` when the item lives at the vault root */
+    folderId: MaybeNull<string>;
     /* New property on the item - keeping it as an optional
      * to avoid undefined behaviour when booting from cache */
     shareCount: Maybe<number>;
 };
+
+export type OpenedFolder = {
+    content: Uint8Array<ArrayBuffer>;
+    contentFormatVersion: number;
+    folderKey: FolderKey;
+};
+
+export type FolderKeysByShareId = Map<ShareId, Map<FolderId, FolderKey>>;

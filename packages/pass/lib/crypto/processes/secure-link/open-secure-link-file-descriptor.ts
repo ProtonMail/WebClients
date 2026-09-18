@@ -22,7 +22,7 @@ export const openSecureLinkFileDescriptor = async ({
     const itemKey = (
         await openItemKey({
             encryptedItemKey: { Key: encryptedItemKey, KeyRotation: 0 },
-            shareKey: { key: await importSymmetricKey(raw), raw, rotation: 0, userKeyId: undefined },
+            shareKey: { key: await importSymmetricKey(raw), raw, rotation: 0 },
         })
     ).key;
 

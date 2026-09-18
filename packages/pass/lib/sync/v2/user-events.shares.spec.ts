@@ -6,6 +6,7 @@ import { shareCreated, shareDeleted, shareUpdated } from '../../../store/actions
 import { sagaSetup } from '../../../store/sagas/testing';
 import type { PassCryptoWorker, ShareGetResponse, ShareId, SyncEventShareOutput } from '../../../types';
 import { exposePassCrypto } from '../../crypto';
+import * as folderRequests from '../../folders/folders.requests';
 import * as itemRequests from '../../items/item.requests';
 import { createTestItem } from '../../items/item.test.utils';
 import * as shareParser from '../../shares/share.parser';
@@ -13,6 +14,11 @@ import * as shareRequests from '../../shares/share.requests';
 import { createShareRemovedError, createTestShare } from '../../shares/share.test.utils';
 import type { EventProcessor } from '../types';
 import { processSharesCreated, processSharesDeleted, processSharesUpdated } from './user-events.shares';
+
+jest.mock('@proton/pass/lib/folders/folders.requests', () => ({
+    ...jest.requireActual('@proton/pass/lib/folders/folders.requests'),
+    requestFoldersForShareId: jest.fn(),
+}));
 
 jest.mock('@proton/pass/lib/items/item.requests', () => ({
     ...jest.requireActual('@proton/pass/lib/items/item.requests'),
@@ -32,12 +38,14 @@ jest.mock('@proton/pass/lib/shares/share.requests', () => ({
 const requestShare = jest.mocked(shareRequests.requestShare);
 const parseShareResponse = jest.mocked(shareParser.parseShareResponse);
 const requestItemsForShareId = jest.mocked(itemRequests.requestItemsForShareId);
+const requestFoldersForShareId = jest.mocked(folderRequests.requestFoldersForShareId);
 
 const createEvent = (ShareID: ShareId) => ({ ShareID }) as SyncEventShareOutput;
 const removeShare = jest.fn();
 const canOpenShare = jest.fn(() => true);
 const share = createTestShare({ shareId: 's1' });
 const items = [createTestItem('login', { itemId: 'i1', shareId: 's1' })];
+const folders = [{ folderId: 'f1', shareId: 's1', vaultId: 'v1', parentFolderId: null, name: 'Work', keyRotation: 1 }];
 
 const run = async (
     saga: (events: SyncEventShareOutput[]) => EventProcessor,
@@ -53,6 +61,7 @@ beforeEach(() => {
     requestShare.mockResolvedValue({} as ShareGetResponse);
     parseShareResponse.mockResolvedValue(share);
     requestItemsForShareId.mockResolvedValue(items);
+    requestFoldersForShareId.mockResolvedValue(folders);
     exposePassCrypto({ removeShare, canOpenShare } as unknown as PassCryptoWorker);
     removeShare.mockClear();
     canOpenShare.mockClear();
@@ -63,18 +72,29 @@ afterEach(() => {
 });
 
 describe('processSharesCreated', () => {
-    test('fetches the share with its items and dispatches `shareCreated`', async () => {
+    test('fetches the share with its folders and items and dispatches `shareCreated`', async () => {
         const { result, dispatched } = await run(processSharesCreated, [createEvent('s1')]);
-        expect(requestItemsForShareId).toHaveBeenCalledWith('s1');
+        expect(requestFoldersForShareId).toHaveBeenCalledWith('s1');
+        expect(requestItemsForShareId).toHaveBeenCalledWith('s1', undefined);
         expect(result).toBe(true);
-        expect(dispatched).toContainEqual(shareCreated({ share, items }));
+        expect(dispatched).toContainEqual(shareCreated({ share, items, folders }));
+    });
+
+    test('resolves folders before items so items inside folders can be decrypted', async () => {
+        const order: string[] = [];
+        requestFoldersForShareId.mockImplementation(async () => (order.push('folders'), folders));
+        requestItemsForShareId.mockImplementation(async () => (order.push('items'), items));
+
+        await run(processSharesCreated, [createEvent('s1')]);
+
+        expect(order).toEqual(['folders', 'items']);
     });
 
     test('tolerates share-removed errors: returns `true` and skips dispatch', async () => {
         requestItemsForShareId.mockRejectedValueOnce(createShareRemovedError());
         const { result, dispatched } = await run(processSharesCreated, [createEvent('s1')]);
         expect(result).toBe(true);
-        expect(dispatched).not.toContainEqual(shareCreated({ share, items }));
+        expect(dispatched).not.toContainEqual(shareCreated({ share, items, folders }));
     });
 });
 

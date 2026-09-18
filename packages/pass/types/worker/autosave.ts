@@ -14,7 +14,7 @@ type AutosaveCreate<DTO = {}> = { type: AutosaveMode.NEW } & DTO;
 type AutosaveUpdate<DTO = {}> = { type: AutosaveMode.UPDATE } & DTO;
 type AutosaveCandidates = { candidates: LoginItemPreview[] };
 
-type AutosaveCreateDTO = AutosaveCreate<SelectedShare & { optimisticId: string }>;
+type AutosaveCreateDTO = AutosaveCreate<SelectedShare & { optimisticId: string; folderId: MaybeNull<string> }>;
 type AutosaveUpdateDTO = AutosaveUpdate<SelectedItem>;
 type AutosaveRequestData = FormCredentials & {
     name: string;

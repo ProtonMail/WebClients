@@ -13,7 +13,7 @@ import { uniqueId } from '../../../utils/string/unique-id';
 import type { ItemNewViewProps } from '../../Views/types';
 import { IdentityForm } from './Identity.form';
 
-export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmit, onCancel }) => {
+export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, folderId, onSubmit, onCancel }) => {
     const initialValues = useInitialValues<IdentityItemFormValues>((options) => {
         const clone = options?.clone.type === 'identity' ? options.clone : null;
 
@@ -23,6 +23,7 @@ export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmi
             name: clone?.metadata.name ?? '',
             note: clone?.metadata.note ?? '',
             shareId: options?.shareId ?? shareId,
+            folderId: options ? options.folderId : folderId,
             ...(clone?.content ?? itemBuilder('identity').data.content),
         };
     });
@@ -30,12 +31,13 @@ export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmi
     const form = useFormik<IdentityItemFormValues>({
         initialValues,
         initialErrors: validateIdentityForm(initialValues),
-        onSubmit: ({ shareId, name, note, files, ...content }) => {
+        onSubmit: ({ shareId, folderId, name, note, files, ...content }) => {
             const id = uniqueId();
             onSubmit({
                 type: 'identity',
                 optimisticId: id,
                 shareId,
+                folderId,
                 metadata: { name, note: obfuscate(note), itemUuid: id },
                 files,
                 content,

@@ -5,6 +5,7 @@ import { createMemoryHistory } from 'history';
 
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
 
+import { FolderActionsProvider } from '../../components/Folders/FolderActionsProvider';
 import { InviteProvider } from '../../components/Invite/InviteProvider';
 import { NavigationProvider } from '../../components/Navigation/NavigationProvider';
 import { ClipboardProvider } from '../../components/Settings/Clipboard/ClipboardProvider';
@@ -29,11 +30,13 @@ export const TestContext: FC<PropsWithChildren> = ({ children }) => {
                     <NavigationProvider>
                         <TestStoreProvider>
                             <VaultActionsProvider>
-                                <InviteProvider>
-                                    <UpsellingProvider>
-                                        <ClipboardProvider>{children}</ClipboardProvider>
-                                    </UpsellingProvider>
-                                </InviteProvider>
+                                <FolderActionsProvider>
+                                    <InviteProvider>
+                                        <UpsellingProvider>
+                                            <ClipboardProvider>{children}</ClipboardProvider>
+                                        </UpsellingProvider>
+                                    </InviteProvider>
+                                </FolderActionsProvider>
                             </VaultActionsProvider>
                         </TestStoreProvider>
                     </NavigationProvider>

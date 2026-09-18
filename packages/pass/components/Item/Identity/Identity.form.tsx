@@ -1,5 +1,4 @@
 import { type FC, useMemo } from 'react';
-import { useSelector } from 'react-redux';
 
 import { Form, type FormikContextType, FormikProvider } from 'formik';
 import { c } from 'ttag';
@@ -7,14 +6,13 @@ import { c } from 'ttag';
 import { MAX_ITEM_NAME_LENGTH } from '../../../constants';
 import { useIdentityForm } from '../../../hooks/identity/useIdentityForm';
 import { usePortal } from '../../../hooks/usePortal';
-import { selectVaultLimits } from '../../../store/selectors';
 import type { IdentityItemFormValues, ItemRevision } from '../../../types';
 import { FileAttachmentsField } from '../../FileAttachments/FileAttachmentsField';
 import { FileAttachmentsFieldEdit } from '../../FileAttachments/FileAttachmentsFieldEdit';
 import { Field } from '../../Form/Field/Field';
 import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
 import { TitleField } from '../../Form/Field/TitleField';
-import { VaultPickerField } from '../../Form/Field/VaultPickerField';
+import { VaultFolderPickerField } from '../../Form/Field/VaultFolderPickerField';
 import { ItemCreatePanel } from '../../Layout/Panel/ItemCreatePanel';
 import { ItemEditPanel } from '../../Layout/Panel/ItemEditPanel';
 import { IdentitySection } from './Identity.section';
@@ -27,7 +25,6 @@ type IdentityFormType = {
 };
 
 export const IdentityForm: FC<IdentityFormType> = ({ form, revision, onCancel }) => {
-    const { vaultTotalCount } = useSelector(selectVaultLimits);
     const { sections, addOptionalField } = useIdentityForm(form.values, !!revision);
     const { ParentPortal, openPortal } = usePortal();
     const [ItemPanel, formId] = useMemo(
@@ -48,9 +45,7 @@ export const IdentityForm: FC<IdentityFormType> = ({ form, revision, onCancel })
                 <FormikProvider value={form}>
                     <Form id={formId}>
                         <FieldsetCluster>
-                            {!revision &&
-                                vaultTotalCount > 1 &&
-                                openPortal(<Field component={VaultPickerField} name="shareId" dense />)}
+                            {!revision && openPortal(<VaultFolderPickerField />)}
                             <Field
                                 lengthLimiters
                                 name="name"

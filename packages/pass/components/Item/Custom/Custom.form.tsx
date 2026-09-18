@@ -1,11 +1,9 @@
 import type { ReactNode, ReactPortal } from 'react';
-import { useSelector } from 'react-redux';
 
 import { Form, type FormikContextType, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../constants';
-import { selectVaultLimits } from '../../../store/selectors/limits';
 import type { CustomItemFormValues, ItemRevision, ItemType, MaybeNull } from '../../../types';
 import { FileAttachmentsField } from '../../FileAttachments/FileAttachmentsField';
 import { FileAttachmentsFieldEdit } from '../../FileAttachments/FileAttachmentsFieldEdit';
@@ -14,7 +12,7 @@ import { Field } from '../../Form/Field/Field';
 import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
 import { TextAreaField } from '../../Form/Field/TextareaField';
 import { TitleField } from '../../Form/Field/TitleField';
-import { VaultPickerField } from '../../Form/Field/VaultPickerField';
+import { VaultFolderPickerField } from '../../Form/Field/VaultFolderPickerField';
 import { CustomTypeFields } from './Custom.fields';
 import { CustomFormSections } from './Custom.sections';
 
@@ -33,15 +31,11 @@ export const CustomForm = <T extends ItemType>({
     formId,
     panelPortal,
 }: CustomFormProps<T>) => {
-    const { vaultTotalCount } = useSelector(selectVaultLimits);
-
     return (
         <FormikProvider value={form}>
             <Form id={formId} className="ui-violet">
                 <FieldsetCluster>
-                    {!revision &&
-                        vaultTotalCount > 1 &&
-                        panelPortal?.(<Field component={VaultPickerField} name="shareId" dense />)}
+                    {!revision && panelPortal?.(<VaultFolderPickerField />)}
 
                     <Field
                         lengthLimiters

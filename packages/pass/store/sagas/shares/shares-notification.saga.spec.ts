@@ -55,17 +55,17 @@ describe('notif-shares saga', () => {
 
     describe('new shares', () => {
         it('should not show notification when no new shares', () => {
-            dispatch(sharesEventNew({ shares: {}, items: {}, v: 1 }));
+            dispatch(sharesEventNew({ shares: {}, items: {}, folders: {}, v: 1 }));
             expect(onNotification).not.toHaveBeenCalled();
         });
 
         it('should not show notification for non group shares', () => {
-            dispatch(sharesEventNew({ shares: { [vault.shareId]: { ...vault, groupId: null } }, items: {}, v: 1 }));
+            dispatch(sharesEventNew({ shares: { [vault.shareId]: { ...vault, groupId: null } }, items: {}, folders: {}, v: 1 }));
             expect(onNotification).not.toHaveBeenCalled();
         });
 
         it('should show notification for a single group vault sharing', () => {
-            dispatch(sharesEventNew({ shares: { [vault.shareId]: vault }, items: {}, v: 1 }));
+            dispatch(sharesEventNew({ shares: { [vault.shareId]: vault }, items: {}, folders: {}, v: 1 }));
             expect(onNotification).toHaveBeenCalled();
             expect(onNotification.mock.lastCall[0].text).toBe(
                 `You now have access to "Vault ${vault.content.name}" because your group ${group.name} has been granted access.`
@@ -73,7 +73,7 @@ describe('notif-shares saga', () => {
         });
 
         it('should show notification for a single group item sharing', () => {
-            dispatch(sharesEventNew({ shares: { [item.shareId]: item }, items: {}, v: 1 }));
+            dispatch(sharesEventNew({ shares: { [item.shareId]: item }, items: {}, folders: {}, v: 1 }));
             expect(onNotification).toHaveBeenCalled();
             expect(onNotification.mock.lastCall[0].text).toBe(
                 `You now have access to "Item ${itemRevision.data.metadata.name}" because your group ${group.name} has been granted access.`
@@ -81,7 +81,7 @@ describe('notif-shares saga', () => {
         });
 
         it('should show multiple notifications for a multiple sharings', () => {
-            dispatch(sharesEventNew({ shares: { [vault.shareId]: vault, [item.shareId]: item }, items: {}, v: 1 }));
+            dispatch(sharesEventNew({ shares: { [vault.shareId]: vault, [item.shareId]: item }, items: {}, folders: {}, v: 1 }));
             expect(onNotification).toHaveBeenCalledTimes(2);
             expect(onNotification.mock.calls[0][0].text).toBe(
                 `You now have access to "Vault ${vault.content.name}" because your group ${group.name} has been granted access.`

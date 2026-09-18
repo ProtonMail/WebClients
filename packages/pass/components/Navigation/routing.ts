@@ -7,6 +7,7 @@ import { getAppUrlFromApiUrl } from '@proton/shared/lib/helpers/url';
 
 import { authStore } from '../../lib/auth/store';
 import type { ItemFilters, ItemType, MaybeNull, Unpack } from '../../types';
+import { objectFilter } from '../../utils/object/filter';
 import { partialMerge } from '../../utils/object/merge';
 
 export type ItemNewRouteParams = { type: ItemType };
@@ -90,6 +91,7 @@ export const getInitialFilters = (): ItemFilters => ({
     sort: 'recent',
     type: '*',
     selectedShareId: null,
+    selectedFolderId: null,
 });
 
 export const decodeFilters = (encodedFilters: MaybeNull<string>): ItemFilters =>
@@ -112,6 +114,13 @@ export const decodeFiltersFromSearch = (search: string) => {
 
 export const encodeFilters = (filters: ItemFilters): string =>
     utf8StringToUint8Array(JSON.stringify(filters)).toBase64();
+
+/** Merges `update` into the `filters` search parameter in-place,
+ * leaving every other search parameter untouched. */
+export const setSearchFilters = (search: URLSearchParams, update: Partial<ItemFilters>): void => {
+    const filters = objectFilter(update, (_, value) => value !== undefined);
+    search.set('filters', encodeFilters({ ...decodeFilters(search.get('filters')), ...filters }));
+};
 
 export const getPassWebUrl = (apiUrl: string, subPath: string = '') => {
     const appUrl = getAppUrlFromApiUrl(apiUrl, APPS.PROTONPASS);

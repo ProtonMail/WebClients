@@ -13,12 +13,16 @@ import clsx from '@proton/utils/clsx';
 import { useFeatureFlag } from '../../../../hooks/useFeatureFlag';
 import { isWritableVault } from '../../../../lib/vaults/vault.predicates';
 import { selectAllVaults, selectCanCreateItems, selectShare } from '../../../../store/selectors';
-import type { ItemType } from '../../../../types';
+import type { ItemType, MaybeNull } from '../../../../types';
 import { OrganizationAliasCreateMode } from '../../../../types';
 import { PassFeature } from '../../../../types/api/features';
 import { usePassCore } from '../../../Core/PassCoreProvider';
+import { useFolderCreate } from '../../../Folders/useFolderCreate';
+import { useFolderCreateTarget } from '../../../Folders/useFolderCreateTarget';
+import { useFoldersAccess } from '../../../Folders/useFoldersAccess';
 import { itemTypeToIconName } from '../../../Layout/Icon/ItemIcon';
 import { SubTheme } from '../../../Layout/Theme/types';
+import { MaybeTooltip } from '../../../Layout/Tooltip/MaybeTooltip';
 import { useNavigate } from '../../../Navigation/NavigationActions';
 import { useNavigationFilters } from '../../../Navigation/NavigationFilters';
 import { useItemScope } from '../../../Navigation/NavigationMatches';
@@ -26,12 +30,14 @@ import { getNewItemRoute } from '../../../Navigation/routing';
 import { useOrganization } from '../../../Organization/OrganizationProvider';
 
 type ItemQuickAction = {
+    disabled?: boolean;
+    disabledReason?: MaybeNull<string>;
     hidden?: boolean;
     icon: IconName;
     label: string;
     shape?: ButtonLikeShape;
     subTheme?: SubTheme;
-    type: ItemType | 'import';
+    type: ItemType | 'import' | 'folder';
     onClick: (event: MouseEvent<HTMLElement>) => void;
 };
 
@@ -41,13 +47,20 @@ export const QuickActionsPlaceholder: FC = () => {
     const scope = useItemScope();
 
     const navigate = useNavigate();
+    const folderTarget = useFolderCreateTarget();
+    const folderCreate = useFolderCreate(folderTarget?.shareId ?? null, folderTarget?.parentFolderId ?? null);
+    const { canShow: folderCanShow, limitReached: folderLimitReached, limitReason: folderLimitReason } = folderCreate;
     const hasMultipleVaults = useSelector(selectAllVaults).length > 1;
-    const { selectedShareId } = filters;
+    const { selectedShareId, selectedFolderId } = filters;
+    const isFolderSelected = selectedFolderId !== null;
 
     const selectedShare = useSelector(selectShare(selectedShareId));
     const onCreate = useCallback((type: ItemType) => navigate(getNewItemRoute(type, scope)), [scope]);
 
     const canCreate = useSelector(selectCanCreateItems);
+    const { canUseFolders } = useFoldersAccess();
+    /** Plans without folder access cannot create items inside a folder */
+    const folderLocked = isFolderSelected && !canUseFolders;
     const showCustomItem = useFeatureFlag(PassFeature.PassCustomTypeV1);
     const org = useOrganization();
     const orgAliasCreationDisabled = org?.settings.AliasCreateMode === OrganizationAliasCreateMode.NOBODY;
@@ -98,6 +111,16 @@ export const QuickActionsPlaceholder: FC = () => {
                 onClick: () => onCreate('custom'),
             },
             {
+                hidden: !folderTarget || !folderCanShow,
+                disabled: folderLimitReached,
+                disabledReason: folderLimitReason,
+                icon: 'folder',
+                shape: 'outline',
+                label: c('Label').t`Create a folder`,
+                type: 'folder',
+                onClick: () => folderCreate.onCreate(),
+            },
+            {
                 type: 'import',
                 icon: 'arrow-up-line',
                 shape: 'outline',
@@ -107,38 +130,57 @@ export const QuickActionsPlaceholder: FC = () => {
         ];
 
         return actions.filter(({ hidden }) => !hidden);
-    }, [onCreate, showCustomItem, orgAliasCreationDisabled]);
+    }, [
+        onCreate,
+        folderTarget,
+        folderCanShow,
+        folderLimitReached,
+        folderLimitReason,
+        showCustomItem,
+        orgAliasCreationDisabled,
+    ]);
+
+    const title = isFolderSelected ? c('Title').t`Your folder is empty` : c('Title').t`Your vault is empty`;
+    const message = (() => {
+        if (isFolderSelected) return c('Info').t`Switch to another folder or create an item in this folder`;
+        if (hasMultipleVaults) return c('Info').t`Switch to another vault or create an item in this vault`;
+        return c('Info').t`Let's get you started by creating your first item`;
+    })();
 
     return (
         <div className="flex flex-column gap-3 text-center">
             <div className="flex flex-column gap-1">
-                <strong className="inline-block">{c('Title').t`Your vault is empty`}</strong>
-                <span className="color-weak inline-block mb-2">
-                    {hasMultipleVaults
-                        ? c('Info').t`Switch to another vault or create an item in this vault`
-                        : c('Info').t`Let's get you started by creating your first item`}
-                </span>
+                <strong className="inline-block">{title}</strong>
+                <span className="color-weak inline-block mb-2">{message}</span>
             </div>
 
-            {quickActions.map(({ type, icon, label, shape, subTheme, onClick }) => (
-                <Button
-                    pill
-                    shape={shape ?? 'solid'}
-                    color="weak"
+            {quickActions.map(({ type, icon, label, shape, subTheme, onClick, disabled, disabledReason }) => (
+                <MaybeTooltip
                     key={`quick-action-${type}`}
-                    className={clsx('pass-sub-sidebar--hidable w-full relative', subTheme)}
-                    onClick={onClick}
-                    disabled={(selectedShare && !isWritableVault(selectedShare)) || !canCreate}
-                    size={EXTENSION_BUILD ? 'small' : 'medium'}
+                    active={Boolean(disabledReason)}
+                    title={disabledReason}
+                    placement="bottom"
                 >
-                    <Icon
-                        name={icon}
-                        color="var(--interaction-norm)"
-                        className="absolute left-custom top-0 bottom-0 my-auto"
-                        style={{ '--left-custom': '1rem' }}
-                    />
-                    <span className="max-w-full px-8 text-ellipsis">{label}</span>
-                </Button>
+                    <Button
+                        pill
+                        shape={shape ?? 'solid'}
+                        color="weak"
+                        className={clsx('pass-sub-sidebar--hidable w-full relative', subTheme)}
+                        onClick={onClick}
+                        disabled={
+                            disabled || (selectedShare && !isWritableVault(selectedShare)) || !canCreate || folderLocked
+                        }
+                        size={EXTENSION_BUILD ? 'small' : 'medium'}
+                    >
+                        <Icon
+                            name={icon}
+                            color="var(--interaction-norm)"
+                            className="absolute left-custom top-0 bottom-0 my-auto"
+                            style={{ '--left-custom': '1rem' }}
+                        />
+                        <span className="max-w-full px-8 text-ellipsis">{label}</span>
+                    </Button>
+                </MaybeTooltip>
             ))}
         </div>
     );

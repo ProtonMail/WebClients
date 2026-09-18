@@ -38,6 +38,7 @@ export const getMockItemRevision = (revision: Partial<ItemRevision> = {}): ItemR
     partialMerge<ItemRevision>(
         {
             aliasEmail: null,
+            folderId: null,
             contentFormatVersion: ContentFormatVersion.Item,
             createTime: 0,
             data: itemBuilder('login').data,

@@ -106,6 +106,7 @@ export const createPassBridge = (api: Api): PassBridge => {
                             metadata: { itemUuid, name, note: obfuscate(note ?? '') },
                             optimisticId: itemUuid,
                             shareId,
+                            folderId: null,
                             type: 'alias',
                             files: { toAdd: [], toRemove: [] },
                         });

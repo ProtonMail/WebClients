@@ -54,6 +54,7 @@ const PassAliases = () => {
                 type: 'alias',
                 sort: 'recent',
                 selectedShareId: null,
+                selectedFolderId: null,
                 search: '',
             })
         );

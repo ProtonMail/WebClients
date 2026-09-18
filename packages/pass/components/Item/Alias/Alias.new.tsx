@@ -17,7 +17,7 @@ import { obfuscateExtraFields } from '../../../lib/items/item.obfuscation';
 import { bindOTPSanitizer, sanitizeExtraField } from '../../../lib/items/item.utils';
 import { resolveSubdomain } from '../../../lib/urls/utils/utils';
 import { reconciliateAliasFromDraft, validateNewAliasForm } from '../../../lib/validation/alias';
-import { selectAliasLimits, selectVaultLimits } from '../../../store/selectors';
+import { selectAliasLimits } from '../../../store/selectors';
 import { type MaybeNull, type NewAliasFormValues, SpotlightMessage } from '../../../types';
 import { PassFeature } from '../../../types/api/features';
 import { awaiter } from '../../../utils/fp/promises';
@@ -32,7 +32,7 @@ import { Field } from '../../Form/Field/Field';
 import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
 import { TextAreaField } from '../../Form/Field/TextareaField';
 import { TitleField } from '../../Form/Field/TitleField';
-import { VaultPickerField } from '../../Form/Field/VaultPickerField';
+import { VaultFolderPickerField } from '../../Form/Field/VaultFolderPickerField';
 import { Card } from '../../Layout/Card/Card';
 import { ItemCreatePanel } from '../../Layout/Panel/ItemCreatePanel';
 import { SpotlightGradient } from '../../Spotlight/SpotlightGradient';
@@ -47,7 +47,7 @@ const FORM_ID = 'new-alias';
  * see `proton-pass-extension/src/app/worker/services/alias.ts` */
 const getPlaceholderNote = (url: string) => c('Placeholder').t`Used on ${url}`;
 
-export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit, onCancel }) => {
+export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, folderId, url, onSubmit, onCancel }) => {
     const { ParentPortal, openPortal } = usePortal();
     const { current: draftHydrated } = useRef(awaiter<MaybeNull<NewAliasFormValues>>());
 
@@ -61,7 +61,6 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
     };
 
     const { needsUpgrade } = useSelector(selectAliasLimits);
-    const { vaultTotalCount } = useSelector(selectVaultLimits);
 
     const { aliasPrefix: defaultAliasPrefix, ...defaults } = useMemo(() => {
         const domain = url ? resolveSubdomain(url) : null;
@@ -76,6 +75,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
     const initialValues = useMemo<NewAliasFormValues>(
         () => ({
             shareId,
+            folderId,
             aliasPrefix: '',
             aliasSuffix: undefined,
             files: filesFormInitializer(),
@@ -88,7 +88,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
 
     const form = useFormik<NewAliasFormValues>({
         initialValues,
-        onSubmit: ({ name, note, shareId, aliasPrefix, aliasSuffix, mailboxes, files, extraFields }) => {
+        onSubmit: ({ name, note, shareId, folderId, aliasPrefix, aliasSuffix, mailboxes, files, extraFields }) => {
             if (needsUpgrade) return;
 
             if (aliasPrefix !== undefined && aliasSuffix !== undefined) {
@@ -100,6 +100,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                     type: 'alias',
                     optimisticId,
                     shareId,
+                    folderId,
                     metadata: {
                         name,
                         note: obfuscate(note),
@@ -204,10 +205,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                     <FormikProvider value={form}>
                         <Form id={FORM_ID}>
                             <FieldsetCluster>
-                                {vaultTotalCount > 1 &&
-                                    openPortal(
-                                        <Field component={VaultPickerField} name="shareId" className="h-full" dense />
-                                    )}
+                                {openPortal(<VaultFolderPickerField />)}
                                 <Field
                                     lengthLimiters
                                     name="name"

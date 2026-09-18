@@ -1,13 +1,14 @@
 import type { SanitizedPasskey } from '../../lib/passkeys/types';
 import type { AliasMailbox, DeobfuscatedItemExtraField, FileAttachmentValues, ItemContent } from '../data';
 import type { ItemCustomType, WifiSecurity } from '../protobuf';
-import type { ExtractKeysOfType } from '../utils';
+import type { ExtractKeysOfType, MaybeNull } from '../utils';
 import type { CustomSectionGroupValues, ExtraFieldGroupValues, UrlGroupValues } from './fields';
 
 export type BaseItemValues = {
     name: string;
     note: string;
     shareId: string;
+    folderId: MaybeNull<string>;
 } & FileAttachmentValues &
     ExtraFieldGroupValues;
 

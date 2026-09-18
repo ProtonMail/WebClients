@@ -19,7 +19,7 @@ export type Id = string;
 export type BinaryString = string;
 export type ItemKeyPairDto = {
     /* Rotation value for this key */
-    KeyRotation: 1;
+    KeyRotation: number;
     /* Encrypted item key encoded in base64 */
     Key: BinaryString;
 };
@@ -79,7 +79,7 @@ export type ItemMoveMultipleToShareRequest = {
 export type NewUserInviteCreateRequest = {
     /* Email of the target user */
     Email: string;
-    /* Invite target type. 1 = Vault, 2 = Item */
+    /* Invite target type. 1 = Vault, 2 = Item, 3 = Folder */
     TargetType: number;
     /* Base64 signature of "inviteemail|base64(vaultKey)" signed with the manager's address key */
     Signature: string;
@@ -89,6 +89,8 @@ export type NewUserInviteCreateRequest = {
     Data?: string | null;
     /* Invite encrypted item ID (only in case the invite is of type Item) */
     ItemID?: string | null;
+    /* Invite encrypted folder ID (only in case the invite is of type Folder) */
+    FolderID?: string | null;
     /* Expiration time for the share */
     ExpirationTime?: number | null;
 };
@@ -227,11 +229,11 @@ export type FolderCreateInputDto = {
     /* FolderID of the parent folder for this new folder. Use null for top folder. */
     ParentFolderID?: Id | null;
     /* Content format version for folder contents */
-    ContentFormatVersion: 1;
+    ContentFormatVersion: number;
     /* Content encrypted with the folder key */
     Content: BinaryString;
     /* Rotation value for this key */
-    KeyRotation: 1;
+    KeyRotation: number;
     /* Encrypted folder key encoded in base64 */
     FolderKey: BinaryString;
 };
@@ -280,7 +282,7 @@ export type FolderListResponse = {
 };
 export type FolderKeyPairDto = {
     /* Rotation value for this key */
-    KeyRotation: 1;
+    KeyRotation: number;
     /* Encrypted folder key encoded in base64 */
     FolderKey: BinaryString;
 };
@@ -292,11 +294,11 @@ export type FolderMoveInputDto = {
 };
 export type FolderUpdateContentInputDto = {
     /* Content format version for folder contents */
-    ContentFormatVersion: 1;
+    ContentFormatVersion: number;
     /* Content encrypted with the folder key */
     Content: BinaryString;
     /* Key rotation used to encrypt the content */
-    KeyRotation: 1;
+    KeyRotation: number;
 };
 export type FolderUpdateInputDto = {
     /* If the content has to be updated this should contain the new content. Otherwise, null */
@@ -542,6 +544,11 @@ export type UserMonitorReportInput = {
     /* Number of weak passwords */
     WeakPasswords: number;
 };
+export type OrganizationUserUsageReportResponse = {
+    /* Report on share usage for batch of users */
+    Report: FolderDataResponse;
+    Code: 1000;
+};
 export type OrganizationUrlPauseEntryValues = {
     /* Whether Autofill is enabled or not */
     AutofillEnabled: boolean;
@@ -749,7 +756,7 @@ export type InviteCreateRequest = {
     Keys: KeyRotationKeyPair[];
     /* Email of the target user */
     Email: string;
-    /* Invite target type. 1 = Vault, 2 = Item */
+    /* Invite target type. 1 = Vault, 2 = Item, 3 = Folder */
     TargetType: number;
     /* ShareRoleID for this invite. The values are in the top level Pass docs. */
     ShareRoleID: string;
@@ -757,6 +764,8 @@ export type InviteCreateRequest = {
     SourceNewUserInviteID?: string | null;
     /* Invite encrypted item ID (only in case the invite is of type Item) */
     ItemID?: string | null;
+    /* Invite encrypted folder ID (only in case the invite is of type Folder) */
+    FolderID?: string | null;
     /* Base64 encrypted invite message encrypted with the object key */
     Data?: string | null;
     /* Expiration time for the share */
@@ -1174,6 +1183,8 @@ export type BreachCustomEmailGetResponse = {
     BreachCounter: number;
     /* Flags for this custom email:<br/><ul><li>1 << 0 (1): Monitoring disabled</li></ul> */
     Flags: number;
+    /* When was the last time we checked this email */
+    LastCheckTime: number;
     /* Last breach time if any */
     LastBreachTime?: number | null;
 };
@@ -1358,7 +1369,7 @@ export type ShareGetResponse = {
     Primary: boolean;
     /* Whether the user is owner of this vault */
     Owner: boolean;
-    /* Type of share. 1 for vault, 2 for item */
+    /* Type of share. 1 for vault, 2 for item, 3 for folder */
     TargetType: number;
     /* TargetID for this share */
     TargetID: string;
@@ -1611,7 +1622,7 @@ export type OrgMemberVaultItemReport = {
     AccessibleVaultCount?: number;
 };
 export type UserMonitorReport = {
-    UserID: string;
+    UserID: number;
     OrganizationID: number;
     ReusedPasswords: number;
     Inactive2FA: number;
@@ -1988,6 +1999,12 @@ export type PassPlanResponse = {
     CliAllowed: boolean;
     /* Whether this account can use folders */
     FolderAllowed: boolean;
+    /* If folders are supported, what is the maximum number of folders */
+    FolderMaxCount?: number | null;
+    /* If folders are supported, what is the maximum number of children a single folder can have */
+    FolderMaxChildren?: number | null;
+    /* If folders are supported, what is the maximum depth a folder can be at. First parentless folder in a vault has depth 1. */
+    FolderMaxDepth?: number | null;
 };
 export type UserMonitorStatusResponse = {
     /* If the monitor for proton address leaks is enabled */
@@ -2438,6 +2455,10 @@ export type ApiResponse<Path extends string, Method extends string> =
     : Path extends `pass/v1/organization/report/client_data` ?
         Method extends `post` ?
             { Code: ResponseCodeSuccess }
+        :   never
+    : Path extends `pass/v1/organization/report/user_shares` ?
+        Method extends `get` ?
+            OrganizationUserUsageReportResponse
         :   never
     : Path extends `pass/v1/organization/settings/password_policy` ?
         Method extends `put` ?
