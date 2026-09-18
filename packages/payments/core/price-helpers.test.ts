@@ -1,5 +1,4 @@
-import { PLANS_MAP } from '@proton/payments/testing/data-plans';
-
+import { PLANS_MAP } from '../testing/data-plans';
 import { ADDON_NAMES, CYCLE, PLANS } from './constants';
 import type { Plan } from './plan/interface';
 import { getPriceStartsFrom } from './price-helpers';

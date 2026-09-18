@@ -1,6 +1,5 @@
-import { buildSubscription } from '@proton/payments/testing/buildSubscription';
-import { PLANS_MAP } from '@proton/payments/testing/data-plans';
-
+import { buildSubscription } from '../../testing/buildSubscription';
+import { PLANS_MAP } from '../../testing/data-plans';
 import { ADDON_NAMES, PLANS } from '../constants';
 import type { PlanIDs } from '../interface';
 import { SubscriptionPlatform } from './constants';

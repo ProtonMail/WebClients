@@ -1,5 +1,7 @@
 import { vi } from 'vitest';
 
+// Package import so vi.spyOn matches modules resolved through @proton/app-context in consumers.
+// eslint-disable-next-line custom-rules/no-package-self-import, import/no-extraneous-dependencies -- vitest module identity
 import * as useConfigModule from '@proton/app-context/useConfig';
 import { APPS, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';

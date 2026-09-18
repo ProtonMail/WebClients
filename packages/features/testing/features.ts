@@ -1,5 +1,6 @@
-import type { FeatureCode } from '@proton/features';
 import { addApiMock } from '@proton/test-api/api';
+
+import type { FeatureCode } from '../interface';
 
 const defaultFeatureFlagValue = {
     Code: '',
