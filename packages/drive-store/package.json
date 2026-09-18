@@ -7,7 +7,7 @@
         "lint": "eslint --quiet",
         "prettier": "prettier",
         "test": "jest",
-        "test:ci": "jest --coverage --runInBand --ci --logHeapUsage",
+        "test:ci": "jest --runInBand --ci --logHeapUsage",
         "test:watch": "jest --watch"
     },
     "resolutions": {
