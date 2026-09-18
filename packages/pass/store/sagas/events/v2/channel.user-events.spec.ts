@@ -2,6 +2,7 @@ import { runSaga } from 'redux-saga';
 
 import * as processor from '../../../../lib/sync/v2/user-events.processor';
 import * as requests from '../../../../lib/sync/v2/user-events.requests';
+import * as sync from '../../../../lib/sync/v2/user-events.sync';
 import type { Api, MaybeNull, SyncEventListOutput } from '../../../../types';
 import { setUserEventID } from '../../../actions';
 import { forcePollV2 } from '../../../actions/creators/polling';
@@ -17,9 +18,14 @@ jest.mock('@proton/pass/lib/sync/v2/user-events.processor', () => ({
     ...jest.requireActual('@proton/pass/lib/sync/v2/user-events.processor'),
     processUserEvents: jest.fn(),
 }));
+jest.mock('@proton/pass/lib/sync/v2/user-events.sync', () => ({
+    ...jest.requireActual('@proton/pass/lib/sync/v2/user-events.sync'),
+    processFullRefresh: jest.fn(),
+}));
 
 const getUserEventsSince = jest.mocked(requests.getUserEventsSince);
 const processUserEvents = jest.mocked(processor.processUserEvents);
+const processFullRefresh = jest.mocked(sync.processFullRefresh);
 
 const createEvents = (data: Partial<SyncEventListOutput> = {}) =>
     ({
@@ -42,6 +48,7 @@ beforeEach(() => {
     jest.clearAllMocks();
     getUserEventsSince.mockResolvedValue(createEvents());
     processUserEvents.mockImplementation(sagaReturn(true));
+    processFullRefresh.mockImplementation(sagaReturn(true));
 });
 
 describe('`userEventsChannel`', () => {
@@ -66,9 +73,10 @@ describe('`userEventsChannel`', () => {
         task.cancel();
     });
 
-    test('skips polling without a `userEventID`', async () => {
+    test('runs a full sync to get a new `userEventID` if missing', async () => {
         const { task } = await run(null);
         expect(getUserEventsSince).not.toHaveBeenCalled();
+        expect(processFullRefresh).toHaveBeenCalled();
         task.cancel();
     });
 
