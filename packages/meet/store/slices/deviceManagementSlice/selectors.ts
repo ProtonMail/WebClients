@@ -112,7 +112,8 @@ export const selectSelectedAudioOutputId = createSelector(
         if (preferredId && isDeviceAvailable(speakers, preferredId)) {
             return preferredId;
         }
-        return activeId;
+        // Nothing applied yet resolves the same way as the system default
+        return activeId ?? '';
     }
 );
 
