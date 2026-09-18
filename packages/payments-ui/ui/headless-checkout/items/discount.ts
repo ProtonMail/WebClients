@@ -28,7 +28,7 @@ function formatDiscount(ctx: HeadlessCheckoutContextInner) {
         withDiscountPerMonth,
         currency,
         couponDiscount,
-        visible: checkoutUi.discountPercent !== 0 && !modifiers.isCustomBilling,
+        visible: viewDiscountPercent !== 0 && !modifiers.isCustomBilling,
     };
 }
 
