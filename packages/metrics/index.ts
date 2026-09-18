@@ -1,6 +1,4 @@
 import { SECOND } from '@proton/shared/lib/constants';
-import type { SharedMetricsClient } from '@proton/shared/lib/metrics/sharedMetricsClient';
-import { setSharedMetricsClient } from '@proton/shared/lib/metrics/sharedMetricsClient';
 
 import Metrics from './Metrics';
 import { METRICS_BATCH_SIZE, METRICS_REQUEST_FREQUENCY_SECONDS } from './constants';
@@ -16,7 +14,5 @@ const metricsRequestService = new MetricsRequestService(metricsApi, {
     },
 });
 const metrics = new Metrics(metricsRequestService);
-
-setSharedMetricsClient(metrics as unknown as SharedMetricsClient);
 
 export default metrics;

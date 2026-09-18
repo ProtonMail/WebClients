@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import { receiveCustomPasswordFromDriveWindow } from '@proton/drive/modules/publicDocsSharing';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { receiveCustomPasswordFromDriveWindow } from '@proton/shared/lib/drive/sharing/publicDocsSharing';
 import { getAuthHeaders } from '@proton/shared/lib/fetch/headers';
 
 import usePublicAuth from '../../store/_api/usePublicAuth';
