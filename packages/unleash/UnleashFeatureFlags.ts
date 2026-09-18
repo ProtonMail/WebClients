@@ -111,7 +111,6 @@ enum AccountFlag {
     AdminRolesWithMSP = 'AdminRolesWithMSP',
     SyncOwnerRoleClient = 'SyncOwnerRoleClient',
     VpnB2bUserActivity = 'VpnB2bUserActivity',
-    MspCostsTableEnabled = 'MspCostsTableEnabled',
     MSPStorageOptionEnabled = 'MSPStorageOptionEnabled',
     PurchaseAttributionSurveyEnabled = 'PurchaseAttributionSurveyEnabled',
     CancellationFlowFeedbackFirst = 'CancellationFlowFeedbackFirst',
