@@ -2,8 +2,8 @@ import { useLayoutEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { useMeetErrorReporting } from '@proton/meet';
-import { useMeetDispatch } from '@proton/meet/store/hooks';
-import { setCurrentMeeting, setNavigationSeed } from '@proton/meet/store/slices/currentMeeting';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectIsMeetingLoading, setCurrentMeeting, setNavigationSeed } from '@proton/meet/store/slices/currentMeeting';
 import { meetingInfoThunk } from '@proton/meet/store/slices/meetingInfoModel';
 import { hydrateMeetingPolicies, setWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -18,6 +18,9 @@ import { useInvalidMeetingLink } from './useInvalidMeetingLink';
  *
  * The request is normally already in flight from the bootstrap preload, so dispatching the thunk here
  * hits the cache instead of firing a second one.
+ *
+ * Runs whenever the loading flag is on, not only on mount: leaving a meeting tears down the meeting
+ * state while we stay on the same route, which turns the flag back on and has to be hydrated again.
  */
 export const useMeetingInfoHydration = ({
     meetingLinkName,
@@ -30,6 +33,8 @@ export const useMeetingInfoHydration = ({
 }) => {
     const dispatch = useMeetDispatch();
 
+    const isMeetingLoading = useMeetSelector(selectIsMeetingLoading);
+
     const { reportMeetError } = useMeetErrorReporting();
 
     const [isReadyToDecrypt, setIsReadyToDecrypt] = useState(false);
@@ -41,6 +46,10 @@ export const useMeetingInfoHydration = ({
     const navigationDetails = joinState?.meetingDetails;
 
     useLayoutEffect(() => {
+        if (!isMeetingLoading) {
+            return;
+        }
+
         if (instantMeeting) {
             dispatch(setCurrentMeeting({ isMeetingLoading: false }));
             setIsReadyToDecrypt(true);
@@ -98,6 +107,7 @@ export const useMeetingInfoHydration = ({
         void resolveMeetingInfo();
     }, [
         dispatch,
+        isMeetingLoading,
         instantMeeting,
         navigationDetails,
         meetingPassword,

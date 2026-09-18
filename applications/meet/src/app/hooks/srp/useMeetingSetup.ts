@@ -3,8 +3,12 @@ import { useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useMeetDispatch } from '@proton/meet/store/hooks';
-import { setCurrentMeeting } from '@proton/meet/store/slices/currentMeeting';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    selectMeetingLinkName,
+    selectMeetingPassword,
+    setCurrentMeeting,
+} from '@proton/meet/store/slices/currentMeeting';
 
 import { getPublicToken, getUrlPassword } from './usePublicToken';
 
@@ -28,9 +32,15 @@ export const useMeetingSetup = () => {
         }
     }
 
+    const storedMeetingLinkName = useMeetSelector(selectMeetingLinkName);
+    const storedMeetingPassword = useMeetSelector(selectMeetingPassword);
+
     useEffect(() => {
+        if (!token || (storedMeetingLinkName === token && storedMeetingPassword === urlPassword)) {
+            return;
+        }
         dispatch(setCurrentMeeting({ meetingLinkName: token, meetingPassword: urlPassword }));
-    }, [dispatch, token, urlPassword]);
+    }, [dispatch, token, urlPassword, storedMeetingLinkName, storedMeetingPassword]);
 
     return {
         token,
