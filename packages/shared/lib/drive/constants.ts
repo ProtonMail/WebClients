@@ -246,23 +246,6 @@ export enum DRIVE_SIGNATURE_CONTEXT {
 
 export const SHARE_INVITE_MESSAGE_MAX_LENGTH = 500;
 
-/**
- * Used in the context of Drive / Docs public sharing.
- */
-export enum DriveDocsPublicShareMessageType {
-    CUSTOM_PASSWORD = 'CUSTOM_PASSWORD',
-    READY_TO_RECEIVE_CUSTOM_PASSWORD = 'READY_TO_RECEIVE_CUSTOM_PASSWORD',
-}
-
-export type DriveDocsPublicShareMessage =
-    | {
-          type: DriveDocsPublicShareMessageType.CUSTOM_PASSWORD;
-          customPassword: string;
-      }
-    | {
-          type: DriveDocsPublicShareMessageType.READY_TO_RECEIVE_CUSTOM_PASSWORD;
-      };
-
 export const DRIVE_IOS_URL = 'https://apps.apple.com/us/app/proton-drive-cloud-storage/id1509667851';
 export const DRIVE_ANDROID_URL = 'https://play.google.com/store/apps/details?id=me.proton.android.drive';
 export const DRIVE_DOWNLOAD_URL = 'https://proton.me/drive/download';

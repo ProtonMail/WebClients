@@ -1,8 +1,8 @@
 import { splitNodeUid } from '@proton/drive';
 import { featureFlagStore } from '@proton/drive/modules/flags';
+import { handleDocsCustomPassword } from '@proton/drive/modules/publicDocsSharing';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import { handleDocsCustomPassword } from '@proton/shared/lib/drive/sharing/publicDocsSharing';
 import { isDevOrBlack } from '@proton/shared/lib/env';
 import type { OpenInDocsType, ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype';
 import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
