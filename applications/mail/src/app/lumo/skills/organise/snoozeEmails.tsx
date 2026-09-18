@@ -53,7 +53,7 @@ export const resolveWakeAt = (wakeAt: string, nowMs: number = Date.now()): Date 
 export const assertSnoozeAvailable = (labelID: string, conversationMode: boolean): void => {
     if (labelID !== MAILBOX_LABEL_IDS.INBOX) {
         throw new ToolInputError(
-            'Snooze only works on mail in the Inbox. Open the Inbox with open_folder, then snooze the emails from there.'
+            'Snooze only works on mail in the Inbox. Open the Inbox first, then snooze the emails from there.'
         );
     }
     if (!conversationMode) {

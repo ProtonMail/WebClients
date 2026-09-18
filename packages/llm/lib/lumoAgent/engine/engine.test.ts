@@ -289,8 +289,10 @@ describe('createClientToolExecutor', () => {
             expect(result.content).toContain('Unknown tool');
         });
 
-        it('feeds a handler failure back as a recoverable error result', async () => {
+        it('feeds a handler failure back as a recoverable error, keeping the call name and cause out of it', async () => {
+            const onTrace = jest.fn();
             const { executor } = setup({
+                onTrace,
                 handlers: {
                     view_items: async () => {
                         throw new Error('boom');
@@ -298,8 +300,13 @@ describe('createClientToolExecutor', () => {
                 },
             });
             const [result] = await executor.execute([call('view_items')]);
+
             expect(result.is_error).toBe(true);
-            expect(result.content).toContain('view_items');
+            // Both would be quoted at the user: the model narrates a failure it was handed the words for.
+            expect(result.content).not.toContain('view_items');
+            expect(result.content).not.toContain('boom');
+            // The detail is not lost, it moves to the trace, which is where a diagnosis needs it.
+            expect(onTrace).toHaveBeenCalledWith(expect.objectContaining({ message: 'boom' }));
         });
     });
 
