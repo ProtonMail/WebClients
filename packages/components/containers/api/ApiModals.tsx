@@ -4,7 +4,6 @@ import type {
     ApiListenerCallback,
     ApiMissingScopeEvent,
     ApiUserRestrictedEvent,
-    ApiVerificationEvent,
     ApiWithListener,
 } from '@proton/shared/lib/api/createApi';
 import { queryUnlock } from '@proton/shared/lib/api/user';
@@ -12,15 +11,8 @@ import remove from '@proton/utils/remove';
 import replace from '@proton/utils/replace';
 
 import type { ApiModalPayload } from './ApiModals.interface';
+import ApiModalsHV from './ApiModalsHV';
 import DelinquentModal from './DelinquentModal';
-
-const HumanVerificationModal = lazy(
-    () =>
-        import(
-            /* webpackChunkName: "human-verification-modal" */
-            './humanVerification/HumanVerificationModal'
-        )
-);
 
 const AuthModal = lazy(
     () =>
@@ -42,9 +34,6 @@ const ApiProvider = ({ api }: { api: ApiWithListener }) => {
     const [unlockModals, setUnlockModals] = useState<ApiModalPayload<ApiMissingScopeEvent['payload']>[]>([]);
     const [reauthModals, setReauthModals] = useState<ApiModalPayload<ApiMissingScopeEvent['payload']>[]>([]);
     const [delinquentModals, setDelinquentModals] = useState<ApiModalPayload<ApiMissingScopeEvent['payload']>[]>([]);
-    const [verificationModals, setVerificationModals] = useState<ApiModalPayload<ApiVerificationEvent['payload']>[]>(
-        []
-    );
     const [userRestrictedModals, setUserRestrictedModals] = useState<
         ApiModalPayload<ApiUserRestrictedEvent['payload']>[]
     >([]);
@@ -67,15 +56,6 @@ const ApiProvider = ({ api }: { api: ApiWithListener }) => {
                 return false;
             }
 
-            if (event.type === 'handle-verification' && event.payload.methods.includes('payment')) {
-                return false;
-            }
-
-            if (event.type === 'handle-verification') {
-                setVerificationModals((prev) => [...prev, { open: true, payload: event.payload }]);
-                return true;
-            }
-
             if (event.type === 'user-restricted') {
                 setUserRestrictedModals((prev) => [...prev, { open: true, payload: event.payload }]);
                 return true;
@@ -92,11 +72,11 @@ const ApiProvider = ({ api }: { api: ApiWithListener }) => {
     const delinquent = delinquentModals[0];
     const reauth = reauthModals[0];
     const unlock = unlockModals[0];
-    const verification = verificationModals[0];
     const userRestricted = userRestrictedModals[0];
 
     return (
         <>
+            <ApiModalsHV api={api} events={api} />
             {delinquent && (
                 <Suspense fallback={null}>
                     <DelinquentModal
@@ -139,33 +119,6 @@ const ApiProvider = ({ api }: { api: ApiWithListener }) => {
                         }}
                         onExit={() => {
                             setUnlockModals((arr) => remove(arr, unlock));
-                        }}
-                    />
-                </Suspense>
-            )}
-            {verification && (
-                <Suspense fallback={null}>
-                    <HumanVerificationModal
-                        api={api}
-                        open={verification.open}
-                        title={verification.payload.title}
-                        token={verification.payload.token}
-                        methods={verification.payload.methods}
-                        onVerify={verification.payload.onVerify}
-                        onSuccess={verification.payload.resolve}
-                        onError={verification.payload.reject}
-                        onClose={() => {
-                            verification.payload.error.cancel = true;
-                            verification.payload.reject(verification.payload.error);
-                            setVerificationModals((arr) =>
-                                replace(arr, verification, {
-                                    ...verification,
-                                    open: false,
-                                })
-                            );
-                        }}
-                        onExit={() => {
-                            setVerificationModals((arr) => remove(arr, verification));
                         }}
                     />
                 </Suspense>

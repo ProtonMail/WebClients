@@ -11,6 +11,7 @@ import type { ModalOwnProps } from '../..';
 import { ConfigProvider, NotificationsProvider } from '../..';
 import type { AuthModalProps } from '../password/AuthModal';
 import ApiModals from './ApiModals';
+import ApiModalsHV from './ApiModalsHV';
 import type { HumanVerificationModalProps } from './humanVerification/HumanVerificationModal';
 
 const Wrap = ({ children }: { children: ReactNode }) => {
@@ -112,7 +113,7 @@ const createApi = () => {
     }) as any as ApiWithListener;
 
     const notify = (event: ApiEvent) => {
-        listeners.forEach((listener) => listener(event));
+        return listeners.map((listener) => listener(event)).some((value) => value === true);
     };
 
     return {
@@ -277,5 +278,95 @@ describe('ApiModals', () => {
             userEvent.click(await screen.findByText('cancel')),
             expect(promise2).rejects.toThrow(error2),
         ]);
+    });
+});
+
+describe('ApiModalsHV', () => {
+    test('should answer a challenge on the session that emitted it', async () => {
+        const { api, notify } = createApi();
+        const sessionApi = jest.fn();
+
+        render(
+            <Wrap>
+                <ApiModalsHV api={sessionApi} events={api} />
+            </Wrap>
+        );
+
+        const handled = notify({
+            type: 'handle-verification',
+            payload: {
+                token: 'token-1',
+                methods: ['1'],
+                onVerify: async () => true,
+                title: '',
+                error: new Error('test'),
+                resolve: () => {},
+                reject: () => {},
+            },
+        });
+
+        expect(handled).toBe(true);
+        expect(await screen.findByText('token-1'));
+        await userEvent.click(await screen.findByText('send-code'));
+        expect(sessionApi).toHaveBeenCalledWith({ url: 'send-code' });
+        expect(api).not.toHaveBeenCalled();
+    });
+
+    test('should reject an open challenge when unmounted', async () => {
+        const { api, notify } = createApi();
+        const error: any = new Error('test');
+        const reject = jest.fn();
+
+        const { unmount } = render(
+            <Wrap>
+                <ApiModalsHV api={jest.fn()} events={api} />
+            </Wrap>
+        );
+
+        notify({
+            type: 'handle-verification',
+            payload: {
+                token: 'token-1',
+                methods: ['1'],
+                onVerify: async () => true,
+                title: '',
+                error,
+                resolve: () => {},
+                reject,
+            },
+        });
+
+        expect(await screen.findByText('token-1'));
+
+        unmount();
+
+        expect(reject).toHaveBeenCalledWith(error);
+        expect(error.cancel).toBe(true);
+    });
+
+    test('should decline payment challenges', () => {
+        const { api, notify } = createApi();
+
+        render(
+            <Wrap>
+                <ApiModalsHV api={jest.fn()} events={api} />
+            </Wrap>
+        );
+
+        const handled = notify({
+            type: 'handle-verification',
+            payload: {
+                token: 'token-1',
+                methods: ['payment'],
+                onVerify: async () => true,
+                title: '',
+                error: new Error('test'),
+                resolve: () => {},
+                reject: () => {},
+            },
+        });
+
+        expect(handled).toBe(false);
+        expect(screen.queryByText('token-1')).not.toBeInTheDocument();
     });
 });
