@@ -374,7 +374,6 @@ export enum SentryMailInitiatives {
     MOVE_ACTIONS = 'move-actions',
     REMOVE_EMAIL_TRACKERS = 'remove-email-trackers',
     UPSELL_MODALS = 'upsell-modals',
-    MAILBOX_REDIRECT = 'mailbox-redirect',
     CATEGORIES_VIEW = 'categories-view',
     LOGGER = 'mail-logger',
 }
