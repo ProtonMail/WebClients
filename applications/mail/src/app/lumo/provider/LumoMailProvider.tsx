@@ -9,15 +9,18 @@ import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
+import { useConfig } from '@proton/app-context/useConfig';
 import { useSaveVCardContact } from '@proton/components/containers/contacts/hooks/useSaveVCardContact';
 import { FILTER_VERSION } from '@proton/components/containers/filters/constants';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import { getReportInfo } from '@proton/components/helpers/report';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { defaultESStatus } from '@proton/encrypted-search/constants';
 import type { ESStatusBooleans } from '@proton/encrypted-search/models';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import LumoAgentDrawerContext from '@proton/llm/lib/lumoAgent/ui/lumoAgentDrawerContext';
 import useLumoAgent from '@proton/llm/lib/lumoAgent/ui/useLumoAgent';
+import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { addFilter as addFilterAction, updateFilter as updateFilterAction } from '@proton/mail/store/filters/actions';
@@ -48,6 +51,7 @@ import { composerActions } from '../../store/composers/composersSlice';
 import { load as loadConversationAction } from '../../store/conversations/conversationsActions';
 import { backendActionStarted, markAll as markAllAction } from '../../store/elements/elementsActions';
 import { useMailDispatch, useMailStore } from '../../store/hooks';
+import { buildDebugReportDraft } from '../helpers/debugReport';
 import type { SieveIssue } from '../helpers/sieve';
 import { assertSieveValid } from '../helpers/sieve';
 import { buildLumoMailConfig } from '../registry';
@@ -103,6 +107,7 @@ const LumoMailProvider = ({ children }: Props) => {
     const [user] = useUser();
     const [addresses = []] = useAddresses();
     const esStatus = useRef<ESStatusBooleans>(defaultESStatus);
+    const { APP_VERSION } = useConfig();
     const onCompose = useOnCompose();
     const draftBodyWriters = useDraftBodyWriters();
 
@@ -245,10 +250,26 @@ const LumoMailProvider = ({ children }: Props) => {
 
     const conversation = useLumoAgent(config);
 
+    const openDebugReport = () => {
+        const { referenceMessage, bodyBeforeQuote } = buildDebugReportDraft({
+            transcript: conversation.getDebugTranscript(),
+            reportInfo: getReportInfo(),
+            appVersion: APP_VERSION,
+        });
+
+        void onCompose({
+            type: ComposeTypes.newMessage,
+            action: MESSAGE_ACTIONS.NEW,
+            referenceMessage,
+            bodyBeforeQuote,
+        });
+    };
+
     return (
         <LumoAgentDrawerContext.Provider
             value={{
                 ...conversation,
+                openDebugReport,
                 cardRenderers: config.cardRenderers,
                 serverToolMeta: config.serverToolMeta,
                 suggestions: config.suggestions,
