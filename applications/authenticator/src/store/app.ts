@@ -17,7 +17,7 @@ import { updateSettings } from './settings';
 import { checkForUpdates } from './update';
 import { createAppAsyncThunk } from './utils';
 
-export type AppStatus = 'launch' | 'locked' | 'ready' | 'booting' | 'error';
+type AppStatus = 'launch' | 'locked' | 'ready' | 'booting' | 'error';
 export type AppState = { status: AppStatus; error?: SerializedError };
 
 const initialState: AppState = { status: 'launch' };
@@ -141,5 +141,4 @@ const appStateSlice = createSlice({
     },
 });
 
-export const setAppStatus = appStateSlice.actions.setStatus;
 export default appStateSlice.reducer;

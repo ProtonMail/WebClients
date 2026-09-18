@@ -9,7 +9,7 @@ import { ImportModal } from '../components/Settings/Import/ImportModal';
 type ItemActionsContextValue = { import: (provider: ImportProvider) => void };
 type ItemActionState = { view: 'import'; provider: ImportProvider };
 
-export const ItemActionsContext = createContext<MaybeNull<ItemActionsContextValue>>(null);
+const ItemActionsContext = createContext<MaybeNull<ItemActionsContextValue>>(null);
 export const useItemsActions = (): ItemActionsContextValue => useContext(ItemActionsContext)!;
 
 export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {

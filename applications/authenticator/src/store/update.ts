@@ -6,7 +6,7 @@ import noop from '@proton/utils/noop';
 import app from '../lib/app';
 import { createAppAsyncThunk } from './utils';
 
-export type UpdateState = {
+type UpdateState = {
     updatePackage?: Update;
 };
 
@@ -14,7 +14,7 @@ const initialState: UpdateState = {};
 
 export const checkForUpdates = createAppAsyncThunk('update/checkForUpdates', () => app.checkForUpdates().catch(noop));
 
-export const updateSlice = createSlice({
+const updateSlice = createSlice({
     name: 'update',
     initialState,
     reducers: {},

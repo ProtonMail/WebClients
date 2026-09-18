@@ -1,5 +1,4 @@
 import { AuthenticatorEncryptionTag } from '../../crypto';
-import type { DeriveEncryptedEntity } from './encryption';
 import { defineEncryptedEntity } from './encryption';
 
 /**
@@ -23,5 +22,3 @@ export const RemoteKeyEntity = defineEncryptedEntity<RemoteKey>()({
     safeProps: ['id', 'userKeyId'] as const,
     tag: AuthenticatorEncryptionTag.RemoteKey,
 });
-
-export type EncryptedItem = DeriveEncryptedEntity<typeof RemoteKeyEntity>;

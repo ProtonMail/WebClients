@@ -9,7 +9,7 @@ import logger from '../../logger';
 type Argon2Params = (typeof ARGON2_PARAMS)[keyof typeof ARGON2_PARAMS];
 type Argon2Options = Parameters<typeof CryptoProxy.computeArgon2>[0];
 
-export type OfflineConfig = {
+type OfflineConfig = {
     salt: string;
     params: Argon2Params;
     /** version=1|undefined : legacy `offlineVerifier`
