@@ -31,9 +31,9 @@ import useLocalState from '../../hooks/useLocalState';
 import AuthSecurityKeyContent from '../account/fido/AuthSecurityKeyContent';
 import { TotpInputField, TotpRecoveryCodeInputField } from '../account/totp/TotpInputs';
 import type { OnLoginCallback } from '../app/interface';
-import Challenge from '../challenge/Challenge';
 import ChallengeError from '../challenge/ChallengeError';
-import type { ChallengeRef, ChallengeResult } from '../challenge/interface';
+import ChallengeV4 from '../challenge/ChallengeV4';
+import type { ChallengeResult, ChallengeV4Ref } from '../challenge/interface';
 import AbuseModal from './AbuseModal';
 import type { AuthActionResponse, AuthCacheResult, AuthTypes } from './interface';
 import { AuthStep, AuthType } from './interface';
@@ -283,7 +283,7 @@ const LoginForm = ({
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [persistent, setPersistent] = useLocalState(true, 'default-persistent');
-    const challengeRefLogin = useRef<ChallengeRef>();
+    const challengeRefLogin = useRef<ChallengeV4Ref>();
     const usernameRef = useRef<HTMLInputElement>(null);
     const [challengeLoading, setChallengeLoading] = useState(hasChallenge);
     const [challengeError, setChallengeError] = useState(false);
@@ -326,7 +326,7 @@ const LoginForm = ({
                 method="post"
             >
                 {hasChallenge && (
-                    <Challenge
+                    <ChallengeV4
                         empty
                         tabIndex={-1}
                         challengeRef={challengeRefLogin}

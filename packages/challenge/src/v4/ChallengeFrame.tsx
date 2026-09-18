@@ -3,12 +3,12 @@ import { useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
+import { createChallengeLogger } from '../shared/createChallengeLogger';
 import { getStyleSrcUrls, getStyleSrcsData, handleEvent } from './challengeHelper';
-import type { ChallengeLog, ChallengeLogType, ChallengeRef, ChallengeResult } from './interface';
+import type { ChallengeLog, ChallengeRef, ChallengeResult } from './interface';
 
-export const ERROR_TIMEOUT_MS = 15000;
-export const CHALLENGE_TIMEOUT_MS = ERROR_TIMEOUT_MS + 9000;
+const ERROR_TIMEOUT_MS = 15000;
+const CHALLENGE_TIMEOUT_MS = ERROR_TIMEOUT_MS + 9000;
 
 type Stage = 'initialize' | 'initialized' | 'load' | 'loaded' | 'error';
 
@@ -24,6 +24,8 @@ export interface Props extends Omit<
     className?: string;
     empty?: boolean;
     bodyClassName?: string;
+    /** Wraps the forwarded html to match the parent's viewport. Read once, on mount. */
+    breakpointClassName?: string;
     hasSizeObserver?: boolean;
     title?: string;
     onError?: (logs: ChallengeLog[]) => void;
@@ -32,6 +34,12 @@ export interface Props extends Omit<
     challengeTimeout?: number;
 }
 
+/**
+ * Renders `children` into the sandboxed frame, mirroring the parent's styles, and reports the
+ * interactions the frame observes back to the rendered copy.
+ *
+ * Not exported from the package: use `Challenge` so `src` stays fixed for the frame's lifetime.
+ */
 const ChallengeFrame = ({
     onSuccess,
     onError,
@@ -40,6 +48,7 @@ const ChallengeFrame = ({
     className,
     empty,
     bodyClassName = '',
+    breakpointClassName = '',
     challengeRef,
     src,
     getIconsData,
@@ -52,7 +61,6 @@ const ChallengeFrame = ({
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const [isRendered, setIsRendered] = useState(false);
     const renderDivRef = useRef<HTMLDivElement>(null);
-    const breakpoints = useActiveBreakpoint();
     const [iframeHeight, setIframeHeight] = useState(0);
 
     const targetOrigin = useMemo(() => {
@@ -69,23 +77,7 @@ const ChallengeFrame = ({
             stage = newStage;
         };
 
-        const logs: ChallengeLog[] = [];
-        const tmpUrl = new URL(src);
-        const addLog = (text: string, data: unknown, type: ChallengeLogType) => {
-            // To keep it somewhat limited
-            if (logs.length > 20) {
-                return;
-            }
-            const log: ChallengeLog = {
-                type,
-                text: `${new Date().toISOString()} ${text} ${tmpUrl.searchParams.toString()}`,
-            };
-            // The sentry serializer doesn't like undefined values
-            if (data) {
-                log.data = data;
-            }
-            logs.push(log);
-        };
+        const { logs, addLog } = createChallengeLogger(src);
 
         let error = false;
         const handleError = () => {
@@ -122,7 +114,7 @@ const ChallengeFrame = ({
                 contentWindow.postMessage(
                     {
                         type: 'html',
-                        payload: `<div class='${breakpoints.activeBreakpoint}'>${renderDivEl.innerHTML}</div>`,
+                        payload: `<div class='${breakpointClassName}'>${renderDivEl.innerHTML}</div>`,
                     },
                     targetOrigin
                 );
