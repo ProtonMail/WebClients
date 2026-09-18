@@ -2,20 +2,34 @@ import { select } from 'redux-saga/effects';
 
 import {
     createSecureLink,
-    getSecureLinks,
+    getSecureLinksApi,
     openSecureLink,
+    parseSecureLinks,
     removeInactiveSecureLinks,
     removeSecureLink,
 } from '../../../lib/secure-links/secure-links.requests';
 import { createTelemetryEvent } from '../../../lib/telemetry/utils';
-import type { ItemRevision, Maybe, SecureLink } from '../../../types';
+import type { ItemRevision, Maybe, PublicLinkGetResponse, SecureLink } from '../../../types';
 import { TelemetryEventName, TelemetryItemType, TelemetryTargetType } from '../../../types/data/telemetry';
 import { secureLinkCreate, secureLinkOpen, secureLinkRemove, secureLinksGet, secureLinksRemoveInactive } from '../../actions';
 import { createRequestSaga } from '../../request/sagas';
 import { selectItem } from '../../selectors';
-import type { RootSagaOptions } from '../../types';
+import type { RootSagaOptions, State } from '../../types';
 
 const open = createRequestSaga({ actions: secureLinkOpen, call: openSecureLink });
+
+/** A link key is encrypted with the item key, which for items inside a folder
+ * is itself encrypted with the folder key. The secure link API response doesn't have
+ * the item's `folderId`, so resolve it from the store to open those item keys. */
+function* getSecureLinks() {
+    const links: PublicLinkGetResponse[] = yield getSecureLinksApi();
+    const state: State = yield select();
+    const parsedLinks: SecureLink[] = yield parseSecureLinks(
+        links,
+        (shareId, itemId) => selectItem(shareId, itemId)(state)?.folderId ?? null
+    );
+    return parsedLinks;
+}
 
 const get = createRequestSaga({ actions: secureLinksGet, call: getSecureLinks });
 
@@ -61,9 +75,9 @@ const remove = createRequestSaga({
 
 const removeInactive = createRequestSaga({
     actions: secureLinksRemoveInactive,
-    call: async () => {
-        await removeInactiveSecureLinks();
-        return getSecureLinks();
+    call: function* () {
+        yield removeInactiveSecureLinks();
+        return yield* getSecureLinks();
     },
 });
 

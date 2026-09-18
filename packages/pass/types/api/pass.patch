@@ -108,3 +108,39 @@ export type ItemRevisionContentsResponse = {
     /* Creation time of this revision */
     RevisionTime: number;
 };
+
+export type ItemKeyPairDto = {
+    /* Rotation value for this key */
+    KeyRotation: number;
+    /* Encrypted item key encoded in base64 */
+    Key: BinaryString;
+};
+
+export type FolderUpdateContentInputDto = {
+    /* Content format version for folder contents */
+    ContentFormatVersion: number;
+    /* Content encrypted with the folder key */
+    Content: BinaryString;
+    /* Key rotation used to encrypt the content */
+    KeyRotation: number;
+};
+
+export type FolderCreateInputDto = {
+    /* FolderID of the parent folder for this new folder. Use null for top folder. */
+    ParentFolderID?: Id | null;
+    /* Content format version for folder contents */
+    ContentFormatVersion: number;
+    /* Content encrypted with the folder key */
+    Content: BinaryString;
+    /* Rotation value for this key */
+    KeyRotation: number;
+    /* Encrypted folder key encoded in base64 */
+    FolderKey: BinaryString;
+};
+
+export type FolderKeyPairDto = {
+    /* Rotation value for this key */
+    KeyRotation: number;
+    /* Encrypted folder key encoded in base64 */
+    FolderKey: BinaryString;
+};

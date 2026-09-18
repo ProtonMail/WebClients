@@ -21,8 +21,8 @@ export const useFileResolver = () => {
         const { optimistic } = selectOptimisticItemState(shareId, itemId)(state);
 
         if (item && hasAttachments(item) && !optimistic) {
-            const { revision } = item;
-            return dispatch(filesResolve, { shareId, itemId, revision });
+            const { revision, folderId } = item;
+            return dispatch(filesResolve, { shareId, itemId, revision, folderId });
         }
     }, []);
 };

@@ -14,7 +14,8 @@ import type { UpsellType } from './UpsellingModal';
 type Props = { upsellType: UpsellType };
 type UpsellFeature = { key: UpsellFeatureName; className: string; icon: IconName; label: string | string[] };
 
-export type UpsellFeatureName = 'aliases' | '2FA' | 'logins' | 'sentinel' | 'secure-links' | 'file-attachments';
+export type UpsellFeatureName =
+    'aliases' | '2FA' | 'logins' | 'sentinel' | 'secure-links' | 'file-attachments' | 'folders';
 
 const PROTON_SENTINEL_LINK = (
     <a href={PASS_SENTINEL_LINK} target="_blank" key="sentinel-link">
@@ -57,9 +58,15 @@ const getFeatures = (): UpsellFeature[] => [
     },
     {
         key: 'file-attachments',
-        className: 'ui-orange',
+        className: 'ui-gray',
         icon: 'file',
         label: c('Pass_file_attachments').t`File attachments`,
+    },
+    {
+        key: 'folders',
+        className: 'ui-orange',
+        icon: 'folder',
+        label: c('Label').t`Folders`,
     },
 ];
 

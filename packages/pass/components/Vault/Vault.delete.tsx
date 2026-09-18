@@ -24,11 +24,11 @@ const initialValues: ConfirmDeleteValues = { name: '' };
 
 export const VaultDelete: FC<Props> = ({ vault, onClose, onSubmit }) => {
     const dispatch = useDispatch();
-    const vaultName = (vault?.content?.name ?? '').trim();
+    const name = (vault?.content?.name ?? '').trim();
 
-    const validateVaultDelete = ({ name }: ConfirmDeleteValues) => {
+    const validateVaultDelete = ({ name: value }: ConfirmDeleteValues) => {
         const errors: FormikErrors<ConfirmDeleteValues> = {};
-        if (!name || name !== vaultName) errors.name = c('Error').t`Vault name does not match`;
+        if (!value || value !== name) errors.name = c('Error').t`Vault name does not match`;
         return errors;
     };
 
@@ -51,11 +51,11 @@ export const VaultDelete: FC<Props> = ({ vault, onClose, onSubmit }) => {
             size="medium"
             onClose={onClose}
             onSubmit={form.submitForm}
-            title={c('Title').t`Delete vault "${vaultName}"?`}
+            title={c('Title').t`Delete vault "${name}"?`}
             disabled={!form.isValid}
             submitText={c('Action').t`Delete`}
             alertText={c('Warning')
-                .t`Vault "${vaultName}" and all its items will be permanently deleted. You cannot undo this action.`}
+                .t`Vault "${name}" and all its items will be permanently deleted. You cannot undo this action.`}
         >
             <FormikProvider value={form}>
                 <Form id={FORM_ID}>
@@ -64,7 +64,7 @@ export const VaultDelete: FC<Props> = ({ vault, onClose, onSubmit }) => {
                             name="name"
                             label={c('Label').t`Confirm vault name`}
                             component={TextField}
-                            placeholder={c('Placeholder').t`Retype "${vaultName}" to confirm deletion`}
+                            placeholder={c('Placeholder').t`Retype "${name}" to confirm deletion`}
                             autoFocus
                         />
                     </FieldsetCluster>

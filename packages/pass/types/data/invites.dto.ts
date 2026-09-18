@@ -1,6 +1,7 @@
 import type { AccessDTO, AccessKeys } from '../../lib/access/types';
 import type { InviteData } from '../../lib/invites/invite.requests';
 import type { MaybeNull } from '../utils';
+import type { FolderData } from './folders';
 import type { ItemRevision } from './items';
 import type { Share, ShareRole } from './shares';
 
@@ -17,7 +18,7 @@ export type InviteRemoveIntent = AccessDTO & { inviteId: string };
 
 export type InviteRejectIntent = { inviteToken: string };
 export type InviteAcceptIntent = { invitedAddressId: string; inviterEmail: string; inviteToken: string };
-export type InviteAcceptSuccess = { inviteToken: string; share: Share; items: ItemRevision[] };
+export type InviteAcceptSuccess = { inviteToken: string; share: Share; items: ItemRevision[]; folders: FolderData[] };
 export type GroupInviteAcceptIntent = { inviterEmail: string; inviteToken: string };
 export type GroupInviteAcceptSuccess = { inviteToken: string };
 

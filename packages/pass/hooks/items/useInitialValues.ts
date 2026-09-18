@@ -6,7 +6,7 @@ import type { DeobfuscatedItem, ItemRevision, MaybeNull } from '../../types';
 import type { BaseItemValues } from '../../types/forms';
 
 export type ItemCloneLocationState = { clone: ItemRevision };
-export type ItemInitialValuesOptions = { clone: DeobfuscatedItem; shareId: string };
+export type ItemInitialValuesOptions = { clone: DeobfuscatedItem; shareId: string; folderId: MaybeNull<string> };
 
 export const useInitialValues = <T extends BaseItemValues>(hydrate: (options?: ItemInitialValuesOptions) => T) => {
     const history = useHistory<MaybeNull<ItemCloneLocationState>>();
@@ -22,6 +22,7 @@ export const useInitialValues = <T extends BaseItemValues>(hydrate: (options?: I
         return hydrate({
             clone: deobfuscateItem(state.clone.data),
             shareId: state.clone.shareId,
+            folderId: state.clone.folderId,
         });
     }, []);
 };

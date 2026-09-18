@@ -47,7 +47,7 @@ import {
     isPassCryptoError,
 } from './utils/errors';
 import { resolveItemKey } from './utils/helpers';
-import { serializeShareManagers } from './utils/seralize';
+import { hydrateFolderKeys, serializeFolderKeys, serializeShareManagers } from './utils/seralize';
 
 function assertHydrated(ctx: PassCryptoManagerContext): asserts ctx is Required<PassCryptoManagerContext> {
     if (
@@ -81,6 +81,7 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
         shareManagers: new Map(),
         fileKeys: new Map(),
         groups: new Map(),
+        folderKeys: new Map(),
     };
 
     const hasShareManager = (shareId: string): boolean => context.shareManagers.has(shareId);
@@ -229,6 +230,11 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
                     const entries = snapshot.shareManagers as [string, SerializedCryptoContext<ShareContext>][];
                     const shareManagers = await unwrap(entriesMap(entries)(createShareManager.fromSnapshot));
                     context.shareManagers = new Map(shareManagers);
+
+                    if (snapshot.folderKeys) {
+                        context.folderKeys = await hydrateFolderKeys(snapshot.folderKeys);
+                    }
+
                     logger.info('[PassCrypto] Hydrated from local snapshot');
                 }
 
@@ -252,6 +258,7 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
             context.shareManagers = new Map();
             context.fileKeys = new Map();
             context.groups = new Map();
+            context.folderKeys = new Map();
         },
 
         setGroup,
@@ -403,18 +410,22 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
             }
         },
 
-        removeShare: (shareId) => context.shareManagers.delete(shareId),
+        removeShare: (shareId) => {
+            context.shareManagers.delete(shareId);
+            worker.removeFolderKeys(shareId);
+        },
 
-        /* Resolve the latest rotation for this share
-         * and use the vault key for that rotation */
-        async createItem({ shareId, content }) {
+        /* Encrypt the ItemKey with the parent FolderKey if the item is created
+         * inside a folder, else with the vault key for the latest rotation */
+        async createItem({ shareId, content, folderId }) {
             assertHydrated(context);
 
             const manager = getShareManager(shareId);
-            const latestRotation = manager.getLatestRotation();
-            const vaultKey = manager.getVaultShareKey(latestRotation);
+            const encryptionKey = folderId
+                ? worker.getFolderKey({ shareId, folderId })
+                : manager.getVaultShareKey(manager.getLatestRotation());
 
-            return processes.createItem({ content, vaultKey });
+            return processes.createItem({ content, encryptionKey, folderId });
         },
 
         async openItem({ shareId, encryptedItem }) {
@@ -426,7 +437,10 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
             const itemKey = await (async () => {
                 switch (share.targetType) {
                     case ShareType.Vault: {
-                        const shareKey = manager.getVaultShareKey(encryptedItem.KeyRotation!);
+                        const shareKey = encryptedItem.FolderID
+                            ? worker.getFolderKey({ shareId, folderId: encryptedItem.FolderID })
+                            : manager.getVaultShareKey(encryptedItem.KeyRotation!);
+
                         return processes.openItemKey({
                             shareKey,
                             encryptedItemKey: {
@@ -453,27 +467,66 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
             return processes.updateItem({ itemKey, content, lastRevision });
         },
 
-        async moveItem({ targetShareId, itemId, shareId, encryptedItemKeys }) {
+        async createFolder({ shareId, content, parentFolderId }) {
+            assertHydrated(context);
+
+            const parentKey = parentFolderId
+                ? worker.getFolderKey({ shareId, folderId: parentFolderId })
+                : (() => {
+                      const manager = getShareManager(shareId);
+                      return manager.getVaultShareKey(manager.getLatestRotation());
+                  })();
+
+            return processes.createFolder({ content, parentKey });
+        },
+
+        async openFolder({ shareId, encryptedFolder }) {
+            assertHydrated(context);
+            const folderId = encryptedFolder.FolderID;
+            const parentFolderId = encryptedFolder.ParentFolderID ?? null;
+
+            const parentKey = parentFolderId
+                ? worker.getFolderKey({ shareId, folderId: parentFolderId })
+                : getShareManager(shareId).getVaultShareKey(encryptedFolder.KeyRotation);
+
+            const result = await processes.openFolder({
+                encryptedFolder,
+                parentKey,
+            });
+
+            worker.registerFolderKey({
+                shareId,
+                folderId,
+                folderKey: result.folderKey,
+            });
+
+            return result.content;
+        },
+
+        async updateFolder({ shareId, folderId, content }) {
+            assertHydrated(context);
+            const folderKey = worker.getFolderKey({ shareId, folderId });
+            return processes.updateFolder({ content, folderKey });
+        },
+
+        async moveItem({ targetShareId, itemId, shareId, encryptedItemKeys, folderId, targetFolderId }) {
             assertHydrated(context);
 
             const manager = getShareManager(shareId);
-            const rotation = manager.getLatestRotation();
-            const shareKey = manager.getVaultShareKey(rotation);
+            const shareKey = folderId
+                ? worker.getFolderKey({ shareId, folderId })
+                : manager.getVaultShareKey(manager.getLatestRotation());
 
             const itemKeys = await Promise.all(
-                encryptedItemKeys.map((key) =>
-                    processes.openItemKey({
-                        encryptedItemKey: key,
-                        shareKey,
-                    })
-                )
+                encryptedItemKeys.map((key) => processes.openItemKey({ encryptedItemKey: key, shareKey }))
             );
 
             const targetManager = getShareManager(targetShareId);
-            const targetRotation = targetManager.getLatestRotation();
-            const targetVaultKey = targetManager.getVaultShareKey(targetRotation);
+            const targetKey = targetFolderId
+                ? worker.getFolderKey({ shareId: targetShareId, folderId: targetFolderId })
+                : targetManager.getVaultShareKey(targetManager.getLatestRotation());
 
-            return processes.moveItem({ itemId, itemKeys, targetVaultKey });
+            return processes.moveItem({ itemId, itemKeys, targetKey, targetFolderId });
         },
 
         async createInvite({ shareId, itemId, invitedPublicKey, email, role, targetKeys }) {
@@ -618,6 +671,33 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
             return fileKey;
         },
 
+        registerFolderKey: ({ shareId, folderId, folderKey }) => {
+            logger.debug(`[PassCrypto] Registering folder key ${logId(folderId)} in share ${logId(shareId)}`);
+            const shareFolderKeys = context.folderKeys.get(shareId) ?? new Map();
+            shareFolderKeys.set(folderId, folderKey);
+            context.folderKeys.set(shareId, shareFolderKeys);
+        },
+
+        getFolderKey: ({ shareId, folderId }) => {
+            const folderKey = context.folderKeys.get(shareId)?.get(folderId);
+            if (!folderKey) throw new PassCryptoError(`Could not resolve folder key for ${logId(folderId)}`);
+            return folderKey;
+        },
+
+        removeFolderKeys: (shareId, folderIds) => {
+            /** If no folderIds, the share itself is deleted so remove all its folder keys */
+            if (!folderIds) {
+                context.folderKeys.delete(shareId);
+                return;
+            }
+
+            const shareFolderKeys = context.folderKeys.get(shareId);
+            if (!shareFolderKeys) return;
+
+            folderIds.forEach((folderId) => shareFolderKeys.delete(folderId));
+            if (shareFolderKeys.size === 0) context.folderKeys.delete(shareId);
+        },
+
         async encryptFileKey({ itemKey, ...fileIdentifier }) {
             const fileKey = worker.getFileKey(fileIdentifier);
             return encryptData(itemKey.key, fileKey, PassEncryptionTag.FileKey);
@@ -720,7 +800,14 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
             return metadata;
         },
 
-        async openLinkKey({ encryptedLinkKey, linkKeyShareKeyRotation, shareId, itemId, linkKeyEncryptedWithItemKey }) {
+        async openLinkKey({
+            encryptedLinkKey,
+            linkKeyShareKeyRotation,
+            shareId,
+            itemId,
+            folderId,
+            linkKeyEncryptedWithItemKey,
+        }) {
             assertHydrated(context);
 
             const key: CryptoKey = await (async () => {
@@ -729,14 +816,14 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
                     return vaultKey.key;
                 }
 
-                const itemKey = await resolveItemKey(shareId, itemId);
+                const itemKey = await resolveItemKey(shareId, itemId, folderId);
                 return itemKey.key;
             })();
 
             return processes.openLinkKey({ encryptedLinkKey, key });
         },
 
-        async openItemKey({ encryptedItemKey, shareId }) {
+        async openItemKey({ encryptedItemKey, shareId, folderId }) {
             assertHydrated(context);
 
             const manager = getShareManager(shareId);
@@ -745,7 +832,9 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
             const shareKey = (() => {
                 switch (manager.getType()) {
                     case ShareType.Vault:
-                        return manager.getVaultShareKey(rotation);
+                        return folderId
+                            ? worker.getFolderKey({ shareId, folderId })
+                            : manager.getVaultShareKey(rotation);
                     case ShareType.Item:
                         return manager.getItemShareKey(rotation);
                 }
@@ -754,7 +843,10 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
             return processes.openItemKey({ encryptedItemKey, shareKey });
         },
 
-        serialize: () => ({ shareManagers: serializeShareManagers(context.shareManagers) }),
+        serialize: () => ({
+            shareManagers: serializeShareManagers(context.shareManagers),
+            folderKeys: serializeFolderKeys(context.folderKeys),
+        }),
     };
 
     return worker;

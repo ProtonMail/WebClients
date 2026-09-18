@@ -8,10 +8,8 @@ describe('moveItem crypto process', () => {
     const shareKeyBuffer = generateKey();
     const itemKeyBuffer = generateKey();
 
-    test('should re-encrypt item content with destination vault key', async () => {
-        const itemId = `itemId-${Math.random()}`;
-
-        const targetVaultKey: VaultShareKey = {
+    const getKeys = async () => {
+        const targetKey: VaultShareKey = {
             key: await importSymmetricKey(shareKeyBuffer),
             raw: shareKeyBuffer,
             rotation: 42,
@@ -24,16 +22,24 @@ describe('moveItem crypto process', () => {
             rotation: 1,
         };
 
-        const movedItem = await moveItem({ targetVaultKey, itemKeys: [itemKey], itemId });
+        return { targetKey, itemKey };
+    };
+
+    test('should re-encrypt the item key with the destination key', async () => {
+        const itemId = `itemId-${crypto.randomUUID()}`;
+        const targetFolderId = `folderId-${crypto.randomUUID()}`;
+        const { targetKey, itemKey } = await getKeys();
+
+        const movedItem = await moveItem({ targetKey, itemKeys: [itemKey], itemId, targetFolderId });
         const decryptedItemKey = await decryptData(
-            targetVaultKey.key,
+            targetKey.key,
             Uint8Array.fromBase64(movedItem.ItemKeys[0].Key),
             PassEncryptionTag.ItemKey
         );
 
-        /** Check that we can recover the initial item
-         * key from the initial vault key */
+        /** Check that we can recover the initial item key from the destination key */
         expect(movedItem.ItemID).toEqual(itemId);
+        expect(movedItem.DestinationFolderID).toEqual(targetFolderId);
         expect(movedItem.ItemKeys[0].KeyRotation).toEqual(1);
         expect(decryptedItemKey).toStrictEqual(itemKey.raw);
     });

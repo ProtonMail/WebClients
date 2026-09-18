@@ -19,7 +19,7 @@ import { sanitizeURL } from '../../../lib/urls/utils/sanitize';
 import { intoDomainWithPort, resolveSubdomain } from '../../../lib/urls/utils/utils';
 import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '../../../lib/validation/alias';
 import { validateLoginForm } from '../../../lib/validation/login';
-import { selectShowUsernameField, selectTOTPLimits, selectVaultLimits } from '../../../store/selectors';
+import { selectShowUsernameField, selectTOTPLimits } from '../../../store/selectors';
 import type { LoginItemFormValues, LoginWithAliasCreationDTO } from '../../../types';
 import { AutofillMode } from '../../../types/protobuf';
 import { pipe } from '../../../utils/fp/pipe';
@@ -35,7 +35,7 @@ import { TextField } from '../../Form/Field/TextField';
 import { TextAreaField } from '../../Form/Field/TextareaField';
 import { TitleField } from '../../Form/Field/TitleField';
 import { UrlGroupField } from '../../Form/Field/UrlGroup/UrlGroupField';
-import { VaultPickerField } from '../../Form/Field/VaultPickerField';
+import { VaultFolderPickerField } from '../../Form/Field/VaultFolderPickerField';
 import { ItemCreatePanel } from '../../Layout/Panel/ItemCreatePanel';
 import { UpgradeButton } from '../../Upsell/UpgradeButton';
 import type { ItemNewViewProps } from '../../Views/types';
@@ -43,8 +43,7 @@ import { LoginEditCredentials } from './Login.edit.credentials';
 
 const FORM_ID = 'new-login';
 
-export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentUrl, onCancel, onSubmit }) => {
-    const { vaultTotalCount } = useSelector(selectVaultLimits);
+export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, folderId, url: currentUrl, onCancel, onSubmit }) => {
     const { needsUpgrade } = useSelector(selectTOTPLimits);
 
     const history = useHistory();
@@ -73,6 +72,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
             passkeys: [],
             password: clone?.content.password ?? '',
             shareId: options?.shareId ?? shareId,
+            folderId: options ? options.folderId : folderId,
             totpUri: clone?.content.totpUri ? getSecretOrUri(clone.content.totpUri) : '',
             url: '',
             urls: clone?.content.autofillUrls.map(createNewUrlItem) ?? currentUrlItem,
@@ -91,6 +91,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
             itemUsername,
             password,
             shareId,
+            folderId,
             totpUri,
             url,
             urls,
@@ -113,6 +114,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
                           type: 'alias',
                           optimisticId: `${optimisticId}-alias`,
                           shareId,
+                          folderId,
                           metadata: {
                               name: `Alias for ${name}`,
                               note: obfuscate(''),
@@ -137,6 +139,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
                 type: 'login',
                 optimisticId,
                 shareId,
+                folderId,
                 files,
                 metadata: {
                     name,
@@ -195,8 +198,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
                     <FormikProvider value={form}>
                         <Form id={FORM_ID}>
                             <FieldsetCluster>
-                                {vaultTotalCount > 1 &&
-                                    openPortal(<Field component={VaultPickerField} name="shareId" dense />)}
+                                {openPortal(<VaultFolderPickerField />)}
 
                                 <Field
                                     name="name"

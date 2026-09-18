@@ -56,7 +56,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
 
     const domain = url ? resolveSubdomain(url) : null;
     const { shareId } = share;
-    const { data: item, itemId, revision: lastRevision } = revision;
+    const { data: item, itemId, revision: lastRevision, folderId } = revision;
     const { metadata, content, extraFields, ...uneditable } = useDeobfuscatedItem(item);
 
     /** On initial mount: expand username field by default IIF:
@@ -76,6 +76,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
             passkeys: content.passkeys ?? [],
             password: content.password,
             shareId,
+            folderId,
             totpUri: getSecretOrUri(content.totpUri),
             url: '',
             urls: content.autofillUrls.map(createNewUrlItem),
@@ -130,6 +131,9 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                         metadata: { name: `Alias for ${name}`, note: obfuscate(''), itemUuid: aliasOptimisticId },
                         optimisticId: aliasOptimisticId,
                         shareId: aliasShareID,
+                        /** A folder key belongs to a single share: only keep the
+                         * login's folder when the alias lands in that same share */
+                        folderId: aliasShareID === shareId ? folderId : null,
                         type: 'alias',
                         optimisticTime: getEpoch() - 1 /* alias will be created before login in saga */,
                     })

@@ -32,7 +32,13 @@ const StartFromScratch: FC<{ onClick: () => void }> = ({ onClick }) => (
     </Button>
 );
 
-export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, onCancel }: ItemNewViewProps<T>) => {
+export const CustomNew = <T extends ItemCustomType>({
+    type,
+    shareId,
+    folderId,
+    onSubmit,
+    onCancel,
+}: ItemNewViewProps<T>) => {
     const { ParentPortal, openPortal } = usePortal();
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
 
@@ -42,7 +48,12 @@ export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, o
         const clone = options?.clone.type === type ? options.clone : null;
         if (clone) fromClone.current = true;
 
-        return getNewCustomInitialValues({ type, shareId: options?.shareId ?? shareId, clone });
+        return getNewCustomInitialValues({
+            type,
+            shareId: options?.shareId ?? shareId,
+            folderId: options ? options.folderId : folderId,
+            clone,
+        });
     });
 
     const initialErrors = useMemo(() => validateCustomItemForm(initialValues), []);
@@ -68,7 +79,7 @@ export const CustomNew = <T extends ItemCustomType>({ type, shareId, onSubmit, o
     });
 
     const onSelectTemplate = async (template: CustomTemplate) => {
-        const values = getNewCustomInitialValues({ type: template.type, template, shareId });
+        const values = getNewCustomInitialValues({ type: template.type, template, shareId, folderId });
         await form.setValues(values);
         form.resetForm({ values });
         setShowForm(true);

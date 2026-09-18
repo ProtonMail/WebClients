@@ -7,7 +7,7 @@ import noop from '@proton/utils/noop';
 
 import { useMemoSelector } from '../../../hooks/useMemoSelector';
 import { isAliasItem } from '../../../lib/items/item.predicates';
-import { selectItemSecureLinks, selectItemShared } from '../../../store/selectors';
+import { selectFolder, selectItemSecureLinks, selectItemShared } from '../../../store/selectors';
 import type { ItemMoveIntent, ItemRevision } from '../../../types';
 import { ConfirmationPrompt, type ConfirmationPromptHandles } from '../../Confirmation/ConfirmationPrompt';
 import { WithVault } from '../../Vault/WithVault';
@@ -43,40 +43,51 @@ export const ConfirmMoveItem: FC<ConfirmationPromptHandles & ItemMoveIntent> = (
     itemId,
     shareId,
     targetShareId,
+    targetFolderId,
     onCancel,
     onConfirm,
 }) => {
     const secureLinks = useMemoSelector(selectItemSecureLinks, [shareId, itemId]);
     const hasLinks = Boolean(secureLinks.length);
     const shared = useMemoSelector(selectItemShared, [shareId, itemId]);
+    const folder = useMemoSelector(selectFolder, [targetShareId, targetFolderId ?? '']);
+
+    /** Don't show warning if moving to a different folder in the same vault (sharing unaffected).
+     * Future TODO: change this when folder sharing is implemented */
+    const crossVault = shareId !== targetShareId;
 
     /** Auto-confirm on mount if no warnings should
      * be shown in the confirmation prompt */
-    const autoConfirm = !(hasLinks || shared);
+    const autoConfirm = !crossVault || !(hasLinks || shared);
     useEffect(autoConfirm ? onConfirm : noop, []);
 
     return (
         !autoConfirm && (
             <WithVault shareId={targetShareId} onFallback={onCancel}>
-                {({ content: { name: vaultName } }) => (
-                    <ConfirmationPrompt
-                        onConfirm={onConfirm}
-                        onCancel={onCancel}
-                        title={c('Title').t`Move item to "${vaultName}"`}
-                        message={
-                            <div className="flex gap-y-4">
-                                {shared && (
-                                    <Alert type="error">
-                                        {c('Warning')
-                                            .t`This item is currently shared. Moving it to another vault will remove access for all other users.`}
-                                    </Alert>
-                                )}
+                {({ content: { name: vaultName } }) => {
+                    const target = folder ? `${vaultName} > ${folder.name}` : vaultName;
 
-                                {hasLinks && c('Info').t`Moving an item to another vault will erase its secure links.`}
-                            </div>
-                        }
-                    />
-                )}
+                    return (
+                        <ConfirmationPrompt
+                            onConfirm={onConfirm}
+                            onCancel={onCancel}
+                            title={c('Title').t`Move item to "${target}"`}
+                            message={
+                                <div className="flex gap-y-4">
+                                    {shared && (
+                                        <Alert type="error">
+                                            {c('Warning')
+                                                .t`This item is currently shared. Moving it to another vault will remove access for all other users.`}
+                                        </Alert>
+                                    )}
+
+                                    {hasLinks &&
+                                        c('Info').t`Moving an item to another vault will erase its secure links.`}
+                                </div>
+                            }
+                        />
+                    );
+                }}
             </WithVault>
         )
     );

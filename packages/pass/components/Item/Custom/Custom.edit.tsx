@@ -15,10 +15,10 @@ const FORM_ID = 'edit-custom';
 
 export const CustomEdit = <T extends ItemCustomType>({ revision, share, onSubmit, onCancel }: ItemEditViewProps<T>) => {
     const { shareId } = share;
-    const { data, itemId, revision: lastRevision } = revision as ItemRevision<ItemCustomType>;
+    const { data, itemId, revision: lastRevision, folderId } = revision as ItemRevision<ItemCustomType>;
     const item = useDeobfuscatedItem(data);
 
-    const initialValues = useMemo(() => getEditCustomInitialValues(item, shareId), []);
+    const initialValues = useMemo(() => getEditCustomInitialValues(item, shareId, folderId), []);
     const initialErrors = useMemo(() => validateCustomItemForm(initialValues), []);
 
     const form = useFormik<CustomItemFormValues>({

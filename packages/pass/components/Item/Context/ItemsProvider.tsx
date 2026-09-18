@@ -59,6 +59,7 @@ export const ItemsProvider: FC<PropsWithChildren> = ({ children }) => {
             type: filters.type === '*' ? null : filters.type,
             search: filters.search,
             shareId: trash ? null : filters.selectedShareId,
+            folderId: trash ? null : filters.selectedFolderId,
             sort: filters.sort,
             trashed: trash,
             visible: true,

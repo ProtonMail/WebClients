@@ -196,7 +196,7 @@ const getItemActionButtons = (itemState: ItemState, itemActions: ItemActions): C
               ...withItemCondition(!itemState.isReadOnly, {
                   type: 'button',
                   icon: <IcFolderArrowIn />,
-                  name: c('Action').t`Move to another vault`,
+                  name: c('Action').t`Move to`,
                   action: itemActions.onMove,
               }),
               {

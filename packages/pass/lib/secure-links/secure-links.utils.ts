@@ -26,5 +26,6 @@ export const intoSecureLinkItemRevision = ({ item }: SecureLinkItem): ItemRevisi
         shareId: '',
         state: ItemState.Active,
         shareCount: 0,
+        folderId: null,
     };
 };

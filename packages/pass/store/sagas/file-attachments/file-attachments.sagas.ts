@@ -193,7 +193,7 @@ const linkPending = createRequestSaga({
         const item: Maybe<ItemRevision> = yield select(selectItem(dto.shareId, dto.itemId));
         if (!item) throw new Error('Link failure: unknown item');
 
-        const revisionDTO = { ...dto, revision: item.revision };
+        const revisionDTO = { ...dto, revision: item.revision, folderId: item.folderId };
         const linked: ItemRevision = yield linkPendingFiles(revisionDTO);
 
         return { item: linked };
@@ -203,8 +203,8 @@ const linkPending = createRequestSaga({
 const resolveFiles = createRequestSaga({
     actions: filesResolve,
     call: async (item) => {
-        const { shareId, itemId } = item;
-        const itemKey = await resolveItemKey(shareId, itemId);
+        const { shareId, itemId, folderId } = item;
+        const itemKey = await resolveItemKey(shareId, itemId, folderId);
         const result = item.history ? await resolveItemFilesRevision(item) : await resolveItemFiles(item);
         const files = await intoFileDescriptors(shareId, result, itemKey);
 
@@ -216,7 +216,7 @@ const restore = createRequestSaga({
     actions: fileRestore,
     call: function* (dto) {
         const { shareId } = dto;
-        const itemKey: ItemKey = yield resolveItemKey(dto.shareId, dto.itemId);
+        const itemKey: ItemKey = yield resolveItemKey(dto.shareId, dto.itemId, dto.folderId);
         const result: ItemFileOutput = yield restoreSingleFile(dto, itemKey);
         const files: FileDescriptor[] = yield intoFileDescriptors(shareId, [result], itemKey);
         return { ...dto, files };
