@@ -55,7 +55,7 @@ export const extendStore = (newThunkArguments: Partial<DriveThunkArguments>) => 
 };
 
 export type DriveStore = ReturnType<typeof setupStore>;
-export type DriveDispatch = DriveStore['dispatch'];
+type DriveDispatch = DriveStore['dispatch'];
 type ExtraArgument = typeof extraThunkArguments;
 
 export type AppStartListening = TypedStartListening<DriveState, DriveDispatch, ExtraArgument>;

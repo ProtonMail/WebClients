@@ -11,7 +11,7 @@ import {
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 
-export const RemoveAlbumPhotosModal = ({
+const RemoveAlbumPhotosModal = ({
     selectedPhotosCount,
     removeAlbumPhotos,
     ...modalProps

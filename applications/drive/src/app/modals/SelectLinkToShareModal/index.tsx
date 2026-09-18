@@ -2,7 +2,6 @@ import { useModalTwoStatic } from '@proton/components';
 
 import { withHoc } from '../modalUtils/withHoc';
 import { SelectLinkToShareModalView, type SelectLinkToShareModalViewProps } from './SelectLinkToShareModalView';
-import type { SelectLinkToShareModalInnerProps } from './useSelectLinkToShareModalState';
 import {
     type UseSelectLinkToShareModalStateProps,
     useSelectLinkToShareModalState,
@@ -17,5 +16,3 @@ export const useFileSharingModal = () => {
     const [fileSharingModal, showFileSharingModal] = useModalTwoStatic(SelectLinkToShareModal);
     return [fileSharingModal, showFileSharingModal] as const;
 };
-
-export type { SelectLinkToShareModalInnerProps };

@@ -11,7 +11,7 @@ import {
 import { nodeTypeComparator } from '../../modules/sorting/comparators';
 import type { FolderViewItem } from './useFolder.store';
 
-export function getFolderSortValue(item: FolderViewItem, field: SortField) {
+function getFolderSortValue(item: FolderViewItem, field: SortField) {
     switch (field) {
         case SortField.name:
             return item.name;

@@ -12,32 +12,25 @@ import type {
 } from '@proton/shared/lib/interfaces/drive/invitation';
 import type { LinkMeta, LinkSharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
-import type { ShareMemberPayload, ShareMembershipPayload } from '@proton/shared/lib/interfaces/drive/member';
-import type { PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
+import type { ShareMembershipPayload } from '@proton/shared/lib/interfaces/drive/member';
 import type { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
-import type { ShareURL as ShareURLPayload, SharedURLInfoPayload } from '@proton/shared/lib/interfaces/drive/sharing';
-import type { DriveVolume as DriveVolumePayload } from '@proton/shared/lib/interfaces/drive/volume';
+import type { ShareURL as ShareURLPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import type { Device } from '../_devices';
 import type { DriveEvents } from '../_events';
-import type { DecryptedLink, EncryptedLink } from '../_links/interface';
-import type { LegacyPhoto } from '../_photos';
+import type { EncryptedLink } from '../_links/interface';
 import type { DriveFileRevision } from '../_revisions';
-import { ShareType } from '../_shares/interface';
 import type {
     Share,
     ShareExternalInvitation,
     ShareInvitation,
     ShareInvitationDetails,
-    ShareMember,
     ShareMembership,
     ShareURL,
-    ShareURLLEGACY,
     ShareWithKey,
-    SharedUrlInfo,
 } from '../_shares/interface';
-import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares/shareUrl';
-import type { DriveVolume } from '../_volumes';
+import { ShareType } from '../_shares/interface';
+import { hasGeneratedPasswordIncluded } from '../_shares/shareUrl';
 
 enum ThumbnailType {
     PREVIEW = 1,
@@ -177,21 +170,7 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
     };
 }
 
-export const shareMemberPayloadToShareMember = (shareMember: ShareMemberPayload): ShareMember => {
-    return {
-        memberId: shareMember.MemberID,
-        email: shareMember.Email,
-        inviterEmail: shareMember.InviterEmail,
-        addressId: shareMember.AddressID,
-        createTime: shareMember.CreateTime,
-        modifyTime: shareMember.ModifyTime,
-        permissions: shareMember.Permissions,
-        keyPacketSignature: shareMember.KeyPacketSignature,
-        sessionKeySignature: shareMember.SessionKeySignature,
-    };
-};
-
-export const shareMembershipPayloadToShareMembership = (shareMembership: ShareMembershipPayload): ShareMembership => {
+const shareMembershipPayloadToShareMembership = (shareMembership: ShareMembershipPayload): ShareMembership => {
     return {
         memberId: shareMembership.MemberID,
         shareId: shareMembership.ShareID,
@@ -298,61 +277,6 @@ export const shareUrlPayloadToShareUrl = (shareUrl: ShareURLPayload): ShareURL =
     };
 };
 
-export const shareUrlPayloadToShareUrlLEGACY = (shareUrl: ShareURLPayload): ShareURLLEGACY => {
-    return {
-        shareId: shareUrl.ShareID,
-        shareUrlId: shareUrl.ShareURLID,
-        expirationTime: shareUrl.ExpirationTime,
-        creatorEmail: shareUrl.CreatorEmail,
-        password: shareUrl.Password,
-        flags: shareUrl.Flags,
-        token: shareUrl.Token,
-        publicUrl: shareUrl.PublicUrl,
-        sharePassphraseKeyPacket: shareUrl.SharePassphraseKeyPacket,
-        sharePasswordSalt: shareUrl.SharePasswordSalt,
-        hasCustomPassword: hasCustomPassword({ flags: shareUrl.Flags }),
-        hasGeneratedPasswordIncluded: hasGeneratedPasswordIncluded({ flags: shareUrl.Flags }),
-        numAccesses: shareUrl.NumAccesses,
-        urlPasswordSalt: shareUrl.UrlPasswordSalt,
-        srpVerifier: shareUrl.SRPVerifier,
-        srpModulusID: shareUrl.SRPModulusID,
-        maxAccesses: shareUrl.MaxAccesses,
-        permissions: shareUrl.Permissions,
-    };
-};
-
-export const photoPayloadToPhotos = (photo: PhotoPayload): LegacyPhoto => {
-    return {
-        linkId: photo.LinkID,
-        captureTime: photo.CaptureTime,
-        hash: photo.Hash ?? undefined,
-        contentHash: photo.ContentHash ?? undefined,
-        tags: photo.Tags,
-        relatedPhotos: photo.RelatedPhotos?.map((relatedPhoto) => ({
-            linkId: relatedPhoto.LinkID,
-            captureTime: relatedPhoto.CaptureTime,
-            hash: relatedPhoto.Hash ?? undefined,
-            contentHash: relatedPhoto.ContentHash ?? undefined,
-        })),
-    };
-};
-
-export const decryptedLinkToPhotos = (link: DecryptedLink, relatedPhotoLinks: DecryptedLink[]): LegacyPhoto => {
-    return {
-        linkId: link.linkId,
-        captureTime: link?.activeRevision?.photo?.captureTime ?? link.createTime,
-        hash: link?.activeRevision?.photo?.hash ?? undefined,
-        contentHash: link?.activeRevision?.photo?.contentHash,
-        tags: link.photoProperties?.tags ?? [],
-        relatedPhotos: relatedPhotoLinks.map((relatedPhotoLink) => ({
-            linkId: relatedPhotoLink.linkId,
-            captureTime: relatedPhotoLink?.activeRevision?.photo?.captureTime ?? relatedPhotoLink.createTime,
-            hash: relatedPhotoLink?.activeRevision?.photo?.hash ?? undefined,
-            contentHash: relatedPhotoLink?.activeRevision?.photo?.contentHash,
-        })),
-    };
-};
-
 export const revisionPayloadToRevision = (revision: DriveFileRevisionPayload): DriveFileRevision => {
     return {
         id: revision.ID,
@@ -422,45 +346,3 @@ export const shareInvitationDetailsPayloadToShareInvitationDetails = (
         },
     };
 };
-
-export const sharedUrlInfoPayloadToSharedUrlInfo = (sharedUrlInfoPayload: SharedURLInfoPayload): SharedUrlInfo => {
-    return {
-        contentKeyPacket: sharedUrlInfoPayload.ContentKeyPacket,
-        linkId: sharedUrlInfoPayload.LinkID,
-        linkType: sharedUrlInfoPayload.LinkType,
-        mimeType: sharedUrlInfoPayload.MIMEType,
-        name: sharedUrlInfoPayload.Name,
-        nodeKey: sharedUrlInfoPayload.NodeKey,
-        nodeHashKey: sharedUrlInfoPayload.NodeHashKey,
-        nodePassphrase: sharedUrlInfoPayload.NodePassphrase,
-        nodePassphraseSignature: sharedUrlInfoPayload.NodePassphraseSignature,
-        permissions: sharedUrlInfoPayload.Permissions,
-        shareKey: sharedUrlInfoPayload.ShareKey,
-        sharePassphrase: sharedUrlInfoPayload.SharePassphrase,
-        sharePasswordSalt: sharedUrlInfoPayload.SharePasswordSalt,
-        size: sharedUrlInfoPayload.Size,
-        signatureEmail: sharedUrlInfoPayload.SignatureEmail,
-        thumbnailUrlInfo: sharedUrlInfoPayload.ThumbnailURLInfo,
-        token: sharedUrlInfoPayload.Token,
-    };
-};
-
-export function volumePayloadToVolume(volume: DriveVolumePayload): DriveVolume {
-    return {
-        id: volume.ID,
-        volumeId: volume.VolumeID,
-        createTime: volume.CreateTime || undefined,
-        modifyTime: volume.ModifyTime || undefined,
-        usedSpace: volume.UsedSpace,
-        downloadedBytes: volume.DownloadedBytes,
-        uploadedBytes: volume.UploadedBytes,
-        state: volume.State,
-        share: {
-            shareId: volume.Share.ShareID,
-            id: volume.Share.ID,
-            linkId: volume.Share.LinkID,
-        },
-        type: volume.Type,
-        restoreStatus: volume.RestoreStatus || undefined,
-    };
-}

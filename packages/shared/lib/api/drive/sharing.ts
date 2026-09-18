@@ -1,5 +1,3 @@
-import { SORT_DIRECTION } from '../../constants';
-import { DEFAULT_SORT_FIELD, DEFAULT_SORT_ORDER, FOLDER_PAGE_SIZE } from '../../drive/constants';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../../errors';
 import type { AbuseReportPayload, CreateSharedURL, UpdateSharedURL } from '../../interfaces/drive/sharing';
 
@@ -77,24 +75,6 @@ export const querySharedURLFileRevision = (
         };
     }
     return query;
-};
-
-export const querySharedURLChildren = (
-    token: string,
-    linkId: string,
-    {
-        Page,
-        PageSize = FOLDER_PAGE_SIZE,
-        Sort = DEFAULT_SORT_FIELD,
-        Desc = DEFAULT_SORT_ORDER === SORT_DIRECTION.ASC ? 0 : 1,
-    }: { Page: number; PageSize?: number; FoldersOnly?: number; Sort?: string; Desc?: 0 | 1 }
-) => {
-    return {
-        method: 'get',
-        url: `drive/urls/${token}/folders/${linkId}/children`,
-        params: { Page, PageSize, Sort, Desc, Thumbnails: 1 },
-        silence: [HTTP_ERROR_CODES.UNAUTHORIZED],
-    };
 };
 
 export const queryCreateSharedLink = (shareId: string, data: CreateSharedURL) => {

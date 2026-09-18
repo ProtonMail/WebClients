@@ -24,7 +24,7 @@ export type SharedByMeItem = {
  * Those modules take a getter for it instead of importing `useSharedByMe.store`, which
  * would close a dependency cycle back through the store.
  */
-export type SharedByMeStoreState = {
+type SharedByMeStoreState = {
     getSharedByMeItem: (uid: string) => SharedByMeItem | undefined;
     setSharedByMeItem: (item: SharedByMeItem) => void;
     removeSharedByMeItem: (uid: string) => void;

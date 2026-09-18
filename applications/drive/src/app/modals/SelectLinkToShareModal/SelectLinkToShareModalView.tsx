@@ -11,10 +11,9 @@ import ModalContentLoader from '@proton/drive/modals/modalUtils/ModalContentLoad
 import { useLoading } from '@proton/hooks';
 
 export type SelectLinkToShareModalViewProps =
-    | ({ loaded: true } & LoadedSelectLinkToShareModalViewProps)
-    | { loaded: false };
+    ({ loaded: true } & LoadedSelectLinkToShareModalViewProps) | { loaded: false };
 
-export type LoadedSelectLinkToShareModalViewProps = {
+type LoadedSelectLinkToShareModalViewProps = {
     open: boolean;
     onExit: () => void;
     treeRoots: React.ComponentProps<typeof DirectoryTreeRoot>['roots'];

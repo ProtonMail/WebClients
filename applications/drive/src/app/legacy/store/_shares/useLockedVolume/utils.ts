@@ -35,7 +35,7 @@ export const getPossibleAddressPrivateKeys = (addressesKeys: AddressesKeysResult
         .map((decryptedKey) => decryptedKey.privateKey);
 };
 
-export async function decryptLockedSharePassphrase(
+async function decryptLockedSharePassphrase(
     oldPrivateKey: PrivateKeyReference,
     lockedShare: ShareWithKey
 ): Promise<

@@ -104,14 +104,7 @@ export type SignatureIssues = {
 };
 
 export type SignatureIssueLocation =
-    | 'passphrase'
-    | 'hash'
-    | 'name'
-    | 'xattrs'
-    | 'contentKeyPacket'
-    | 'blocks'
-    | 'thumbnail'
-    | 'manifest';
+    'passphrase' | 'hash' | 'name' | 'xattrs' | 'contentKeyPacket' | 'blocks' | 'thumbnail' | 'manifest';
 
 export interface EncryptedLink extends Link {
     nodeKey: string;
@@ -179,9 +172,4 @@ export interface LinkDownload {
     isAnonymous?: boolean;
     parentLinkId?: string;
     volumeId: string;
-}
-
-export enum TransferSignatureIssueStrategy {
-    Abort = 'abort',
-    Continue = 'continue',
 }

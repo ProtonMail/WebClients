@@ -33,7 +33,7 @@ import { usePublicAuthStore } from './usePublicAuth.store';
 import { getPublicTokenAndPassword } from './utils/getPublicTokenAndPassword';
 import { shouldRedirectToPrivateApp } from './utils/shouldRedirectToPrivateApp';
 
-export const getErrorMetricTypeForSdkError = (error: unknown) => {
+const getErrorMetricTypeForSdkError = (error: unknown) => {
     if (error instanceof ValidationError && error.code === API_CUSTOM_ERROR_CODES.NOT_FOUND) {
         return 'does_not_exist_or_expired';
     }
@@ -59,7 +59,7 @@ interface UsePublicLinkResult {
     loadPublicLink: (newCustomPassword?: string) => Promise<void>;
 }
 
-export const loadRootNode = async (url: string, password: string | undefined, isAnonymous: boolean) => {
+const loadRootNode = async (url: string, password: string | undefined, isAnonymous: boolean) => {
     const drive = getDrive();
     const publicLinkClient = await drive.experimental.authURLAccess(url, password, isAnonymous);
     const { accessToken, uid } = publicLinkClient.experimental.getSessionInfo();

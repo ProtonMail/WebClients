@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom-v5-compat';
 
 import clsx from '@proton/utils/clsx';
 
-export interface Props extends Omit<NavLinkProps, 'className'> {
+interface Props extends Omit<NavLinkProps, 'className'> {
     children: ReactNode;
     itemClassName?: string;
     className?: string;
@@ -31,14 +31,6 @@ const SidebarListItemLink = forwardRef<HTMLAnchorElement, Props>(
         );
     }
 );
-
-export const SubSidebarListItemLink = ({ children, ...rest }: Props) => {
-    return (
-        <SidebarListItemLink itemClassName="navigation-sublink" {...rest}>
-            {children}
-        </SidebarListItemLink>
-    );
-};
 
 SidebarListItemLink.displayName = 'SidebarListItemLink';
 

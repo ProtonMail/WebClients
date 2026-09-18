@@ -5,7 +5,7 @@ export interface ContextMenuPosition {
     left: number;
 }
 
-export type ContextMenuType = 'view' | 'item';
+type ContextMenuType = 'view' | 'item';
 
 export interface ContextMenuStore {
     isOpen: boolean;
