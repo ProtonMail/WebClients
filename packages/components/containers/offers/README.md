@@ -2,6 +2,8 @@
 
 Offers are time-based promotions that run throughout the year. The offer system allows developers to create offers that are available on one or several products. The system is built around a set of files and configuration that will be presented in this document.
 
+> **This system is client-configured and permanently coexists** with the independent, backend-driven `@proton/offers-delivery` package. One-sentence boundary: this system decides **what plan/price to sell** (client-decided, configured here); `@proton/offers-delivery` decides **what message to surface** (backend-decided, via `inapp/evaluate`). See that package's [README](../../../offers-delivery/README.md) for the other side of the boundary.
+
 > Some offers are always available for users. For example, the "monthly subscription nudge" is offered to all users subscribed to a monthly plan and offers them the opportunity to upgrade to a yearly plan. Those are "permanent offers"; they are handled in the `TopNavbarPostSignupPromo` folder.
 
 ## File structure of the offer management

@@ -85,6 +85,7 @@ import { NavigationProvider, useB2BAdminNavigation } from '@proton/vpn/contexts/
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
 import MspSettingsRouter from '../containers/msp/MspSettingsRouter';
 import OrganizationSettingsRouter from '../containers/organization/OrganizationSettingsRouter';
+import AccountOfferTopBanner from '../offers/AccountOfferTopBanner';
 import Layout from '../public/Layout';
 import Main from '../public/Main';
 import AccountSidebar from './AccountSidebar';
@@ -202,6 +203,7 @@ const MainContainer = () => {
     const [entitlements] = useEntitlementChecks();
     const [{ permissions }] = useUserPermissions();
     const location = useLocation();
+
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { viewportWidth } = useActiveBreakpoint();
 
@@ -388,6 +390,7 @@ const MainContainer = () => {
             <SSODomainUnverifiedBanner app={app} />
             <AuthDevicesTopBanner />
             <MembersAuthDevicesTopBanner />
+            <AccountOfferTopBanner />
         </TopBanners>
     );
 

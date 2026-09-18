@@ -1,6 +1,7 @@
 import { startHostAccountSessionsListener } from '@proton/account/accountSessions/hostListener';
 import { startAccountSessionsListener } from '@proton/account/accountSessions/listener';
 import { authenticationListener } from '@proton/account/authenticationService/authenticationListener';
+import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { groupOwnerInvitesListener } from '@proton/account/groupOwnerInvites/groupOwnerInvitesListener';
 import { groupKeysListener } from '@proton/account/groups/groupKeysListener';
 import { membersListener } from '@proton/account/members/membersListener';
@@ -14,6 +15,7 @@ import { safetyReviewTelemetryListener } from '@proton/account/safetyReview/tele
 import { startListeningToPlanNameChange } from '@proton/account/subscription/startListeningToPlanNameChange';
 import { startCalendarEventListener } from '@proton/calendar/calendars/listener';
 import { startHolidaysDirectoryListener } from '@proton/calendar/holidaysDirectory/listener';
+import { startOffersDeliveryListener } from '@proton/offers-delivery/store/listener';
 import { startCalendarEventLoopV6Listening } from '@proton/redux-shared-store/eventLoop/calendarEventLoopV6';
 import { startContactEventLoopV6Listening } from '@proton/redux-shared-store/eventLoop/contactEventLoopV6';
 import { startCoreEventLoopV6Listening } from '@proton/redux-shared-store/eventLoop/coreEventLoopV6';
@@ -51,6 +53,7 @@ export const start = ({
         groupOwnerInvitesListener(startListening);
         groupKeysListener(startListening);
         safetyReviewTelemetryListener(startListening);
+        startOffersDeliveryListener(startListening, { appReady: bootstrapEvent });
     }
 
     if (mode === 'lite') {
