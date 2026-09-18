@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { RoomAudioRenderer } from '@livekit/components-react';
 import { ConnectionState } from 'livekit-client';
 import { c } from 'ttag';
 
@@ -22,7 +21,6 @@ import { useMediaManagementContext } from '../../contexts/MediaManagementProvide
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
 import { useMeetingInitialisation } from '../../hooks/useMeetingInitialisation';
-import { SpatialAudioRoomAudioRenderer } from '../../utils/spatialAudio/SpatialAudioRoomAudioRenderer';
 import { AssignHostSidebar } from '../AssignHostSidebar/AssignHostSidebar';
 import { Backgrounds } from '../Backgrounds/Backgrounds';
 import { Captions } from '../Captions/Captions';
@@ -40,6 +38,7 @@ import { ParticipantsLayout } from '../ParticipantsLayout/ParticipantsLayout';
 import { PermissionRequest } from '../PermissionRequest/PermissionRequest';
 import { RecordingInProgressModal } from '../RecordingInProgressModal/RecordingInProgressModal';
 import { Settings } from '../Settings/Settings';
+import { AudioRenderer } from './AudioRenderer';
 
 import './MeetingBody.scss';
 
@@ -204,7 +203,7 @@ export const MeetingBody = ({
                 </div>
                 <Captions />
                 <ParticipantControls />
-                {isSpatialAudioEnabled ? <SpatialAudioRoomAudioRenderer /> : <RoomAudioRenderer />}
+                <AudioRenderer isSpatialAudioEnabled={isSpatialAudioEnabled} />
                 <NoDeviceDetectedInfo />
                 <NoDeviceDetectedModal />
                 <NoPermissionInfo />
