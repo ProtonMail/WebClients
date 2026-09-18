@@ -53,6 +53,12 @@ export type UseSearchModuleReturn =
           indexingProgress: IndexingProgress;
           // If non-null, a permanent error has stopped the processor.
           permanentError: PermanentErrorKind | null;
+          // True once any populator's index has been capped. Drives the "Search recent items" UI.
+          isIndexPartial: boolean;
+          // Whether the user has already dismissed the one-time partial-index notice.
+          isPartialIndexNoticeDismissed: boolean;
+          // Permanently dismiss the one-time partial-index notice.
+          dismissPartialIndexNotice: () => Promise<void>;
 
           // Whether the user has opted in to the search experience.
           isUserOptIn: boolean;
@@ -187,6 +193,11 @@ export const useSearchModule = (): UseSearchModuleReturn => {
             isRunningOutdatedVersion: searchModuleState.isRunningOutdatedVersion,
             indexingProgress: aggregateIndexingProgress(searchModuleState.indexPopulatorStatuses),
             permanentError: searchModuleState.permanentError,
+            isIndexPartial: searchModuleState.isIndexPartial,
+            isPartialIndexNoticeDismissed: searchModuleState.isPartialIndexNoticeDismissed,
+            dismissPartialIndexNotice: async () => {
+                await searchModule.dismissPartialIndexNotice();
+            },
 
             isUserOptIn: searchModuleState.isUserOptIn,
             optIn: async () => {

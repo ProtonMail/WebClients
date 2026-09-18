@@ -6,6 +6,7 @@ import { Expression, Func, TermValue } from '@proton/proton-foundation-search';
 
 import { Logger } from '../../../shared/Logger';
 import type { RepairNodeEntry, RepairOperation, SearchDB } from '../../../shared/SearchDB';
+import { SEARCH_MAX_INDEXED_DOCUMENTS } from '../../../shared/config';
 import { isRepairableError, maybeWrapAsRepairableNodeError } from '../../../shared/errors';
 import type { TreeEventScopeId } from '../../../shared/types';
 import type { IndexReader } from '../../index/IndexReader';
@@ -37,6 +38,9 @@ const SUBTREE_VISITOR_TYPE = 'subtree-reindex';
  */
 export abstract class NodeTreeIndexPopulator extends IndexPopulator {
     protected abstract getRootNodeUid(ctx: TaskContext): Promise<string>;
+
+    // Overridable by tests to inject a small cap without walking a large fake tree.
+    protected maxIndexedDocuments = SEARCH_MAX_INDEXED_DOCUMENTS;
 
     // Stable id for this populator's initial full-tree walk visitor/marker.
     static initialVisitorId(populatorUid: string): string {
@@ -73,6 +77,15 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
             startFolder: { folderUid: await this.getRootNodeUid(ctx), parentPath: '' },
             epoch: 0,
             finalize: () => this.markAsDone(ctx.db),
+            // Hard-stop the initial walk at the document cap: a partial index from an arbitrary
+            // (BFS-order) cut is accepted, since walking the rest just to decide what to keep would
+            // cost exactly what the cap exists to avoid. Not passed to reindexSubtree — see its call
+            // site for why a subtree re-walk must never be capped.
+            onCapReached: async (indexEntryCount) => {
+                Logger.info(`${this.getUid()}: capped at ${indexEntryCount} documents`);
+                await this.markAsCapped(ctx.db);
+                ctx.searchMetrics.markIndexCapped({ indexEntryCount });
+            },
         });
     }
 
@@ -110,6 +123,8 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
             startFolder: { folderUid: string; parentPath: string };
             epoch: number;
             finalize: () => Promise<void>;
+            // Absent means no cap is enforced for this walk (see reindexSubtree's call site).
+            onCapReached?: (indexEntryCount: number) => Promise<void>;
         }
     ): Promise<void> {
         const generation = await this.getGeneration(ctx.db);
@@ -118,22 +133,29 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
             driveSdk: ctx.bridge.driveSdk,
             signal: ctx.signal,
         });
-        await drainResumableTreeVisitorEvents(events, this.indexKind, ctx, {
-            toEntry: (node, parentPath, entryGeneration) =>
-                this.createEntryForNode(node, parentPath, entryGeneration, options.epoch),
-            persistCheckpoint: async (checkpoint) => {
-                await options.visitor.saveCheckpoint(ctx.db, checkpoint);
-                await this.saveProgress(ctx.db);
+        await drainResumableTreeVisitorEvents(
+            events,
+            this.indexKind,
+            ctx,
+            {
+                toEntry: (node, parentPath, entryGeneration) =>
+                    this.createEntryForNode(node, parentPath, entryGeneration, options.epoch),
+                persistCheckpoint: async (checkpoint) => {
+                    await options.visitor.saveCheckpoint(ctx.db, checkpoint);
+                    await this.saveProgress(ctx.db);
+                },
+                // A node-scoped failure (e.g. entry mapping) is quarantined and skipped so the walk
+                // continues; it will be reprocessed by RepairFailedNodesTask.
+                onNodeError: (node, error) =>
+                    this.recordRepairEntry(
+                        { nodeUid: node.uid, parentNodeUid: node.parentUid, operation: 'index' },
+                        error,
+                        ctx
+                    ),
+                onCapReached: options.onCapReached,
             },
-            // A node-scoped failure (e.g. entry mapping) is quarantined and skipped so the walk
-            // continues; it will be reprocessed by RepairFailedNodesTask.
-            onNodeError: (node, error) =>
-                this.recordRepairEntry(
-                    { nodeUid: node.uid, parentNodeUid: node.parentUid, operation: 'index' },
-                    error,
-                    ctx
-                ),
-        });
+            this.maxIndexedDocuments
+        );
         await options.finalize();
     }
 

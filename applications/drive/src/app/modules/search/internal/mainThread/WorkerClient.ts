@@ -156,6 +156,14 @@ export class WorkerClient {
         return this.api.queryIndexerState();
     }
 
+    async isPartialIndexNoticeDismissed(): Promise<boolean> {
+        return this.api.isPartialIndexNoticeDismissed();
+    }
+
+    async dismissPartialIndexNotice(): Promise<void> {
+        await this.api.dismissPartialIndexNotice();
+    }
+
     /** Clear all search data and restart indexing from scratch. */
     async reset(): Promise<void> {
         await this.api.reset();

@@ -10,6 +10,7 @@ import {
     SENTRY_REPORT_BURST_MAX_ATTEMPTS,
     SENTRY_REPORT_BURST_WINDOW_MS,
     sendErrorReportForSearch,
+    sendMessageReportForSearch,
 } from './errors';
 import type { IndexerTaskKind } from './types';
 
@@ -33,7 +34,7 @@ export type SearchDiagnostics = {
     quarantinedNodeCount: number;
     storageUsageMb: number;
     storageQuotaMb: number;
-    documentCount: number | undefined;
+    indexEntryCount: number | undefined;
     // In-memory IndexBlobStore number of blobs in cache.
     blobCacheEntryCount: number | undefined;
     // "/"-joined MB size per cached blob, ordered from highest priority (evicted last) to lowest
@@ -46,6 +47,8 @@ export type SearchDiagnostics = {
     wasmMemoryMb: number | undefined;
     // How long the last successful index commit took, in ms, undefined if none yet.
     lastCommitDurationMs: number | undefined;
+    // Whether any populator's index has been capped (initial-walk hard-stop or eviction sweep).
+    isCapped: boolean | undefined;
 };
 
 const PERMANENT_ERROR_METRIC_KIND: Record<
@@ -133,13 +136,14 @@ function reportSearchDiagnosticsBreadcrumb(
     }
     Logger.debug(
         `Search diagnostics: blobs=${diagnostics.blobCount} (${diagnostics.blobsTotalSizeMb.toFixed(1)}MB), ` +
-            `documents=${diagnostics.documentCount ?? 'unknown'}, quarantined=${diagnostics.quarantinedNodeCount}, ` +
+            `documents=${diagnostics.indexEntryCount ?? 'unknown'}, quarantined=${diagnostics.quarantinedNodeCount}, ` +
             `storage=${diagnostics.storageUsageMb.toFixed(1)}/${diagnostics.storageQuotaMb.toFixed(1)}MB, ` +
             `blobCache=${diagnostics.blobCacheEntryCount ?? 'unknown'}` +
             (diagnostics.blobCachePendingFreeCount ? ` (+${diagnostics.blobCachePendingFreeCount} pending free)` : '') +
             (diagnostics.blobCacheSizesMb ? `, blobSizesMb=${diagnostics.blobCacheSizesMb}` : '') +
             `, wasmMemory=${diagnostics.wasmMemoryMb !== undefined ? `${diagnostics.wasmMemoryMb.toFixed(1)}MB` : 'unknown'}` +
             `, lastCommit=${diagnostics.lastCommitDurationMs !== undefined ? `${diagnostics.lastCommitDurationMs}ms` : 'never'}` +
+            `, isCapped=${diagnostics.isCapped ?? 'unknown'}` +
             (taskAttemptCount !== undefined ? `, attempt=${taskAttemptCount}` : '')
     );
     return taskAttemptCount !== undefined ? { ...diagnostics, taskAttemptCount } : { ...diagnostics };
@@ -353,6 +357,30 @@ export const searchMetrics = {
         metrics.drive_search_index_size_histogram.observe({
             Labels: { searchVersion: SEARCH_VERSION_V1 },
             Value: sizeMb,
+        });
+    },
+
+    /**
+     * The initial walk hard-stopped at SEARCH_MAX_INDEXED_DOCUMENTS, leaving the index partial.
+     *
+     * TODO: Maybe add a Grafana counter (e.g. drive_search_index_capped_total).
+     */
+    markIndexCapped({ indexEntryCount }: { indexEntryCount: number }): void {
+        sendMessageReportForSearch('Search index capped (initial)', {
+            tags: { label: 'search-index-capped' },
+            extra: { indexEntryCount },
+        });
+    },
+
+    /**
+     * An eviction sweep removed entries to bring an over-cap index back down.
+     *
+     * TODO: Maybe add a Grafana counter (e.g. drive_search_index_evicted_total).
+     */
+    markIndexEvicted({ indexEntryCount, removedCount }: { indexEntryCount: number; removedCount: number }): void {
+        sendMessageReportForSearch('Search index evicted', {
+            tags: { label: 'search-index-evicted' },
+            extra: { indexEntryCount, removedCount },
         });
     },
 

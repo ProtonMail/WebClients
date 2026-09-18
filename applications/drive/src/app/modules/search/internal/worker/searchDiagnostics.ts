@@ -18,13 +18,15 @@ export async function gatherSearchDiagnostics(
     try {
         // We have only one index for now (IndexKind.MAIN) and will most likely never add another
         // one for this implementation.
-        const [blobCount, blobSizeBytes, documentCount, quarantinedNodeCount, { usage, quota }] = await Promise.all([
-            db.countIndexBlobs(IndexKind.MAIN),
-            db.getIndexBlobsByteSize(IndexKind.MAIN),
-            db.getDocumentCount(IndexKind.MAIN),
-            db.countRepairEntries(),
-            navigator.storage.estimate(),
-        ]);
+        const [blobCount, blobSizeBytes, indexEntryCount, quarantinedNodeCount, { usage, quota }, populatorStates] =
+            await Promise.all([
+                db.countIndexBlobs(IndexKind.MAIN),
+                db.getIndexBlobsByteSize(IndexKind.MAIN),
+                db.getIndexEntryCount(IndexKind.MAIN),
+                db.countRepairEntries(),
+                navigator.storage.estimate(),
+                db.getAllPopulatorStates(),
+            ]);
 
         // peek(), not get(): a diagnostics read must never build an engine that doesn't exist yet.
         // Undefined here just means no in-memory cache state to report, e.g. when the failure
@@ -39,12 +41,13 @@ export async function gatherSearchDiagnostics(
             quarantinedNodeCount,
             storageUsageMb: roundMb((usage ?? 0) / 1024 / 1024),
             storageQuotaMb: roundMb((quota ?? 0) / 1024 / 1024),
-            documentCount,
+            indexEntryCount,
             blobCacheEntryCount: cacheStats?.blobsCount,
             blobCachePendingFreeCount: cacheStats?.pendingFreeBlobsCount,
             blobCacheSizesMb: cacheStats?.blobSizesInMb.map((mb) => mb.toFixed(3)).join('/'),
             wasmMemoryMb: wasmMemoryBytes !== undefined ? roundMb(wasmMemoryBytes / 1024 / 1024) : undefined,
             lastCommitDurationMs: indexInstance?.indexWriter.getLastCommitDurationMs(),
+            isCapped: populatorStates.some((state) => state.capped === true),
         };
     } catch (error) {
         Logger.warn(`gatherSearchDiagnostics: failed to gather search diagnostics: ${String(error)}`);

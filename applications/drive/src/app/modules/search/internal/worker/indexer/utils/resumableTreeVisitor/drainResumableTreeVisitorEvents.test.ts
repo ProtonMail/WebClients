@@ -5,6 +5,7 @@ import 'fake-indexeddb/auto';
 
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
+import type { IndexPopulatorState } from '../../../../shared/SearchDB';
 import { SearchDB } from '../../../../shared/SearchDB';
 import { RepairableNodeError, SearchLibraryError } from '../../../../shared/errors';
 import type { TreeEventScopeId } from '../../../../shared/types';
@@ -199,5 +200,110 @@ describe('drainResumableTreeVisitorEvents', () => {
     it('exposes the tuning constants', () => {
         expect(COMMIT_EVERY_N_ENTRIES).toBeGreaterThan(0);
         expect(CHECKPOINT_EVERY_N_FOLDERS).toBeGreaterThan(0);
+    });
+
+    describe('index entry count budget (onCapReached)', () => {
+        // getIndexEntryCount reads documentCount off a populator state row, which the real
+        // IndexWriter commit path (wired in IndexRegistry) writes to — a row must exist first.
+        const populatorState: IndexPopulatorState = {
+            uid: `test-pop:${SCOPE_ID}`,
+            indexKind: IndexKind.MAIN,
+            indexPopulatorKind: 'test-pop',
+            treeEventScopeId: SCOPE_ID,
+            done: false,
+            generation: 1,
+            version: 1,
+            progress: { files: 0, folders: 0, albums: 0, photos: 0 },
+        };
+
+        it('stops after the commit that crosses the cap and calls onCapReached exactly once', async () => {
+            const ctx = buildCtx();
+            await db.putPopulatorState(populatorState);
+            const onCapReached = jest.fn(async (_count: number) => {});
+            const persistCheckpoint = jest.fn(async () => {});
+
+            // Fewer nodes than COMMIT_EVERY_N_ENTRIES, so this exercises the trailing commit at
+            // the end of the event stream, not the mid-stream commit-every-N-entries path.
+            const events = [nodeEvent('a'), nodeEvent('b'), nodeEvent('c')];
+
+            await drainResumableTreeVisitorEvents(
+                fromArray(events),
+                IndexKind.MAIN,
+                ctx,
+                { toEntry, persistCheckpoint, onCapReached },
+                2
+            );
+
+            expect(onCapReached).toHaveBeenCalledTimes(1);
+            // 3, not the cap of 2: the reported count is the real post-commit count observed by
+            // the budget check, so a commit chunk that overshoots the cap is visible rather than
+            // being reported as a tidy "exactly at the cap".
+            expect(onCapReached).toHaveBeenCalledWith(3);
+            expect(persistCheckpoint).not.toHaveBeenCalled();
+
+            // All three nodes were inserted in the single commit that then crossed the cap.
+            const instance = await indexRegistry.get(IndexKind.MAIN, db);
+            for (const uid of ['a', 'b', 'c']) {
+                expect(await findDocumentsByTag(instance.indexReader, 'nodeUid', uid)).toHaveLength(1);
+            }
+        });
+
+        it('does not enforce a cap when onCapReached is absent', async () => {
+            const ctx = buildCtx();
+            await db.putPopulatorState(populatorState);
+
+            await drainResumableTreeVisitorEvents(
+                fromArray([nodeEvent('a'), nodeEvent('b'), nodeEvent('c')]),
+                IndexKind.MAIN,
+                ctx,
+                { toEntry, persistCheckpoint: jest.fn(async () => {}) },
+                2
+            );
+
+            const instance = await indexRegistry.get(IndexKind.MAIN, db);
+            for (const uid of ['a', 'b', 'c']) {
+                expect(await findDocumentsByTag(instance.indexReader, 'nodeUid', uid)).toHaveLength(1);
+            }
+        });
+
+        it('disposes the write session cleanly after capping (a later write session can start)', async () => {
+            const ctx = buildCtx();
+            await db.putPopulatorState(populatorState);
+            const onCapReached = jest.fn(async (_count: number) => {});
+
+            await drainResumableTreeVisitorEvents(
+                fromArray([nodeEvent('a')]),
+                IndexKind.MAIN,
+                ctx,
+                { toEntry, persistCheckpoint: jest.fn(async () => {}), onCapReached },
+                1
+            );
+
+            expect(onCapReached).toHaveBeenCalledTimes(1);
+
+            const { indexWriter } = await indexRegistry.get(IndexKind.MAIN, db);
+            const session = indexWriter.startWriteSession();
+            session.dispose();
+        });
+
+        it('skips the checkpoint at a folder boundary once the cap is reached', async () => {
+            const ctx = buildCtx();
+            await db.putPopulatorState(populatorState);
+            const onCapReached = jest.fn(async (_count: number) => {});
+            const persistCheckpoint = jest.fn(async () => {});
+
+            const events: BFSNodeEvent[] = [nodeEvent('a'), { type: 'mid-folder-boundary', checkpoint }];
+
+            await drainResumableTreeVisitorEvents(
+                fromArray(events),
+                IndexKind.MAIN,
+                ctx,
+                { toEntry, persistCheckpoint, onCapReached },
+                1
+            );
+
+            expect(onCapReached).toHaveBeenCalledTimes(1);
+            expect(persistCheckpoint).not.toHaveBeenCalled();
+        });
     });
 });

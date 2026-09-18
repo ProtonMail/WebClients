@@ -5,6 +5,7 @@ import {
     SENTRY_REPORT_BURST_WINDOW_MS,
     SearchLibraryError,
     sendErrorReportForSearch,
+    sendMessageReportForSearch,
 } from './errors';
 import type { SearchDiagnostics } from './searchMetrics';
 import { resetTransientReportBurstsForTests, searchMetrics } from './searchMetrics';
@@ -29,9 +30,11 @@ jest.mock('@proton/metrics', () => ({
 jest.mock('./errors', () => ({
     ...jest.requireActual('./errors'),
     sendErrorReportForSearch: jest.fn(),
+    sendMessageReportForSearch: jest.fn(),
 }));
 
 const sendErrorReportMock = sendErrorReportForSearch as jest.MockedFunction<typeof sendErrorReportForSearch>;
+const sendMessageReportMock = sendMessageReportForSearch as jest.MockedFunction<typeof sendMessageReportForSearch>;
 const transientCounter = metrics.drive_search_transient_errors_total.increment as jest.Mock;
 const permanentCounter = metrics.drive_search_permanent_errors_total.increment as jest.Mock;
 const workerHealthCounter = metrics.drive_search_worker_health_total.increment as jest.Mock;
@@ -44,12 +47,13 @@ const FAKE_DIAGNOSTICS: SearchDiagnostics = {
     quarantinedNodeCount: 0,
     storageUsageMb: 0,
     storageQuotaMb: 0,
-    documentCount: undefined,
+    indexEntryCount: undefined,
     blobCacheEntryCount: undefined,
     blobCachePendingFreeCount: undefined,
     blobCacheSizesMb: undefined,
     wasmMemoryMb: undefined,
     lastCommitDurationMs: undefined,
+    isCapped: undefined,
 };
 
 const triggerTransient = (taskUid: string) =>
@@ -384,6 +388,42 @@ describe('searchMetrics.markSearchQueryFailed', () => {
             'Search query failed',
             expect.any(Error),
             expect.objectContaining({ extra: undefined })
+        );
+    });
+});
+
+describe('searchMetrics.markIndexCapped', () => {
+    beforeEach(() => {
+        sendMessageReportMock.mockClear();
+    });
+
+    it('reports the initial-walk cap with indexEntryCount, as a message report (not an error)', () => {
+        searchMetrics.markIndexCapped({ indexEntryCount: 50_000 });
+
+        expect(sendMessageReportMock).toHaveBeenCalledWith(
+            'Search index capped (initial)',
+            expect.objectContaining({
+                tags: expect.objectContaining({ label: 'search-index-capped' }),
+                extra: { indexEntryCount: 50_000 },
+            })
+        );
+    });
+});
+
+describe('searchMetrics.markIndexEvicted', () => {
+    beforeEach(() => {
+        sendMessageReportMock.mockClear();
+    });
+
+    it('reports an eviction sweep with indexEntryCount and removedCount, as a message report (not an error)', () => {
+        searchMetrics.markIndexEvicted({ indexEntryCount: 50_000, removedCount: 7_500 });
+
+        expect(sendMessageReportMock).toHaveBeenCalledWith(
+            'Search index evicted',
+            expect.objectContaining({
+                tags: expect.objectContaining({ label: 'search-index-evicted' }),
+                extra: { indexEntryCount: 50_000, removedCount: 7_500 },
+            })
         );
     });
 });

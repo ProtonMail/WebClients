@@ -174,6 +174,7 @@ describe('IndexPopulatorTask', () => {
             version: 2,
             progress: { files: 2, folders: 0, albums: 0, photos: 0 },
             documentCount: 2,
+            capped: false,
         });
     });
 
