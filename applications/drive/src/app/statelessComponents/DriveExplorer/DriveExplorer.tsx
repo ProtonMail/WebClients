@@ -247,6 +247,12 @@ interface DriveExplorerProps {
      * such as a layout (list/grid) toggle.
      */
     headerActions?: ReactNode;
+
+    /**
+     * Optional content rendered after the last item, inside the scrollable
+     * container. Useful for list-level notices (e.g. "results may be incomplete").
+     */
+    footer?: ReactNode;
 }
 
 /**
@@ -299,6 +305,7 @@ const DriveExplorer = ({
     contextMenuControls,
     a11y = defaultA11y,
     headerActions,
+    footer,
 }: DriveExplorerProps) => {
     const resolvedConditions: DriveExplorerConditions = {
         isDraggable: () => true,
@@ -390,6 +397,7 @@ const DriveExplorer = ({
                     hideSelectionHighlight={hideSelectionHighlight}
                     contextMenuControls={contextMenuControls}
                     a11y={a11y}
+                    footer={footer}
                 />
             ) : (
                 <DriveExplorerBody
@@ -407,6 +415,7 @@ const DriveExplorer = ({
                     hideSelectionHighlight={hideSelectionHighlight}
                     contextMenuControls={contextMenuControls}
                     a11y={a11y}
+                    footer={footer}
                 />
             )}
         </div>

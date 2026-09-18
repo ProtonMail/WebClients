@@ -11,7 +11,7 @@ import { RepairableNodeError, SearchLibraryError, classifyError } from '../../..
 import type { TreeEventScopeId } from '../../../shared/types';
 import { FakeMainThreadBridge } from '../../../testing/FakeMainThreadBridge';
 import { findDocumentsByTag } from '../../../testing/indexHelpers';
-import { makeTaskContext } from '../../../testing/makeTaskContext';
+import { makeSearchMetricsSpies, makeTaskContext } from '../../../testing/makeTaskContext';
 import { setupRealSearchLibraryWasm } from '../../../testing/setupRealSearchLibraryWasm';
 import { IndexKind, IndexRegistry } from '../../index/IndexRegistry';
 import type { IndexEntry } from '../indexEntry';
@@ -30,8 +30,14 @@ const makeMaybeNode = (overrides: Omit<Partial<NodeEntity>, 'name'> & { name?: s
 };
 
 class TestNodeTreePopulator extends NodeTreeIndexPopulator {
-    constructor(private readonly rootUid: string) {
+    constructor(
+        private readonly rootUid: string,
+        maxIndexedDocuments?: number
+    ) {
         super(SCOPE_ID, IndexKind.MAIN, 'test-populator', 1);
+        if (maxIndexedDocuments !== undefined) {
+            this.maxIndexedDocuments = maxIndexedDocuments;
+        }
     }
 
     protected async getRootNodeUid(): Promise<string> {
@@ -600,5 +606,191 @@ describe('NodeTreeIndexPopulator incremental blob cleanup', () => {
         // steady-state regardless of how many events were processed.
         const blobCount = await db.countIndexBlobs(IndexKind.MAIN);
         expect(blobCount).toBeLessThan(20);
+    });
+});
+
+describe('NodeTreeIndexPopulator document cap', () => {
+    let db: SearchDB;
+    let bridge: FakeMainThreadBridge;
+    let indexRegistry: IndexRegistry;
+
+    beforeEach(async () => {
+        indexedDB = new IDBFactory();
+        db = await SearchDB.open('test-user');
+        bridge = new FakeMainThreadBridge();
+        indexRegistry = new IndexRegistry(await generateAndImportKey());
+    });
+
+    it('stops the initial walk once the cap is reached, marks done and capped, and leaves no visitor state', async () => {
+        // More files than COMMIT_EVERY_N_ENTRIES, so the walk commits (and cap-checks) at least
+        // once before reaching the end of the flat folder - otherwise everything lands in a single
+        // trailing commit and the cap only bites after indexing everyone.
+        const fileUids = Array.from({ length: 40 }, (_, i) => `vol1~file${i}`);
+        bridge.setChildren(
+            'root',
+            fileUids.map((uid, i) => makeMaybeNode({ uid, name: `file-${i}.txt`, type: 'file' as any }))
+        );
+
+        const populator = new TestNodeTreePopulator('root', 10);
+        const ctx = makeTaskContext({ bridge: bridge.asBridge(), db, indexRegistry });
+
+        await populator.populate(ctx);
+
+        expect(await populator.isDone(db)).toBe(true);
+        expect(await populator.isCapped(db)).toBe(true);
+        expect(await populator.hasInitialIndexingFailed(db)).toBe(false);
+
+        // No leftover visitor checkpoint: markAsDone runs on the capped path exactly as on a normal
+        // completion, and deletes it.
+        const visitorId = NodeTreeIndexPopulator.initialVisitorId(populator.getUid());
+        expect(await db.getBFSVisitorState(visitorId)).toBeUndefined();
+
+        // Only the entries committed before the cap was reached are indexed - the walk was
+        // genuinely cut short, not merely flagged after indexing everything.
+        const { indexReader } = await indexRegistry.get(IndexKind.MAIN, db);
+        const indexed = await findDocumentsByTag(indexReader, 'indexPopulatorKind', 'test-populator');
+        expect(indexed.length).toBeLessThan(fileUids.length);
+    });
+
+    it('does not cap a populator that finishes under the limit', async () => {
+        bridge.setChildren('root', [makeMaybeNode({ uid: 'vol1~file0', name: 'file-0.txt', type: 'file' as any })]);
+
+        const populator = new TestNodeTreePopulator('root', 1_000);
+        const ctx = makeTaskContext({ bridge: bridge.asBridge(), db, indexRegistry });
+
+        await populator.populate(ctx);
+
+        expect(await populator.isDone(db)).toBe(true);
+        expect(await populator.isCapped(db)).toBe(false);
+    });
+
+    it('reports markIndexCapped when the walk hits the cap', async () => {
+        const fileUids = Array.from({ length: 40 }, (_, i) => `vol1~file${i}`);
+        bridge.setChildren(
+            'root',
+            fileUids.map((uid, i) => makeMaybeNode({ uid, name: `file-${i}.txt`, type: 'file' as any }))
+        );
+
+        const markIndexCapped = jest.fn();
+        const populator = new TestNodeTreePopulator('root', 10);
+        const ctx = makeTaskContext({
+            bridge: bridge.asBridge(),
+            db,
+            indexRegistry,
+            searchMetrics: makeSearchMetricsSpies({ markIndexCapped }),
+        });
+
+        await populator.populate(ctx);
+
+        expect(markIndexCapped).toHaveBeenCalledTimes(1);
+        // The real post-commit document count, which is at least the cap but may overshoot it by
+        // up to one commit chunk - not the cap constant echoed back.
+        const [[reported]] = markIndexCapped.mock.calls;
+        expect(reported.indexEntryCount).toBeGreaterThanOrEqual(10);
+        expect(reported.indexEntryCount).toBe(await db.getIndexEntryCount(IndexKind.MAIN));
+    });
+
+    it('does not report markIndexCapped when the populator finishes under the limit', async () => {
+        bridge.setChildren('root', [makeMaybeNode({ uid: 'vol1~file0', name: 'file-0.txt', type: 'file' as any })]);
+
+        const markIndexCapped = jest.fn();
+        const populator = new TestNodeTreePopulator('root', 1_000);
+        const ctx = makeTaskContext({
+            bridge: bridge.asBridge(),
+            db,
+            indexRegistry,
+            searchMetrics: makeSearchMetricsSpies({ markIndexCapped }),
+        });
+
+        await populator.populate(ctx);
+
+        expect(markIndexCapped).not.toHaveBeenCalled();
+    });
+
+    it('a capped index stays done and capped across a restart, without re-walking', async () => {
+        // The failure this guards against: a capped index that does not persist as "done" would
+        // re-walk (and re-cap) the whole tree on every single worker start, turning a one-off
+        // truncated bootstrap into permanent indexing churn for the largest users.
+        const fileUids = Array.from({ length: 40 }, (_, i) => `vol1~file${i}`);
+        bridge.setChildren(
+            'root',
+            fileUids.map((uid, i) => makeMaybeNode({ uid, name: `file-${i}.txt`, type: 'file' as any }))
+        );
+
+        const ctx = makeTaskContext({ bridge: bridge.asBridge(), db, indexRegistry });
+        await new TestNodeTreePopulator('root', 10 /* maxIndexedDocuments */).populate(ctx);
+
+        // A fresh populator instance over the same DB is what the next worker start looks like.
+        const afterRestart = new TestNodeTreePopulator('root', 10);
+        expect(await afterRestart.isDone(db)).toBe(true);
+        expect(await afterRestart.isCapped(db)).toBe(true);
+        // IndexPopulatorTask skips populate() entirely for a done populator, so nothing re-walks.
+        expect(
+            await db.getBFSVisitorState(NodeTreeIndexPopulator.initialVisitorId(afterRestart.getUid()))
+        ).toBeUndefined();
+    });
+
+    it('clears capped when a fresh indexing campaign starts, so a re-index is not born partial', async () => {
+        // capped is sticky against document count dropping, but a genuine re-index (tree_refresh or
+        // a manual rebuild, both via markAsNotDone) must start with a clean verdict - otherwise the
+        // "Search recent items" labelling would outlive the condition that caused it.
+        const fileUids = Array.from({ length: 40 }, (_, i) => `vol1~file${i}`);
+        bridge.setChildren(
+            'root',
+            fileUids.map((uid, i) => makeMaybeNode({ uid, name: `file-${i}.txt`, type: 'file' as any }))
+        );
+
+        const populator = new TestNodeTreePopulator('root', 10 /* maxIndexedDocuments */);
+        const ctx = makeTaskContext({ bridge: bridge.asBridge(), db, indexRegistry });
+        await populator.populate(ctx);
+        expect(await populator.isCapped(db)).toBe(true);
+
+        await populator.markAsNotDone(db);
+
+        expect(await populator.isCapped(db)).toBe(false);
+        expect(await populator.isDone(db)).toBe(false);
+    });
+
+    it('never caps a subtree re-index, even with a cap far below the subtree size', async () => {
+        // The correctness constraint this plan rests on: reindexSubtree is followed by
+        // sweepObsoleteDescendants, which deletes every descendant the walk didn't re-stamp this
+        // epoch. If the walk stopped early at the cap, the sweep would treat every unreached
+        // descendant as obsolete and delete it - real data loss, not an accepted partial index.
+        const folderUid = 'vol1~FolderCap1';
+        const childUids = Array.from({ length: 40 }, (_, i) => `vol1~capchild${i}`);
+
+        // reconcileNode resolves the updated node's parent path via the root node itself, so root
+        // needs a registered entity (not just a children list) for the incremental path below.
+        bridge.setNode('root', makeMaybeNode({ uid: 'root', name: 'root', type: NodeType.Folder }));
+
+        // The initial walk sees only the empty folder - its 40 children are added afterward, so
+        // this run genuinely finishes under the cap rather than being capped by the same walk that
+        // will later be asserted uncapped.
+        bridge.setChildren('root', [makeMaybeNode({ uid: folderUid, name: 'FolderCap', type: NodeType.Folder })]);
+        bridge.setChildren(folderUid, []);
+
+        const populator = new TestNodeTreePopulator('root', 10);
+        const ctx = makeTaskContext({ bridge: bridge.asBridge(), db, indexRegistry });
+        await populator.populate(ctx);
+        expect(await populator.isCapped(db)).toBe(false);
+
+        // Now give the folder 40 children and trigger a subtree re-walk via a non-trashed folder
+        // update (no per-child events sent) - this is what must NOT be capped, even though it walks
+        // well past the 10-document cap that correctly bounded the initial walk above.
+        bridge.setChildren(
+            folderUid,
+            childUids.map((uid, i) => makeMaybeNode({ uid, name: `child-${i}.txt`, type: NodeType.File }))
+        );
+        bridge.setNode(folderUid, makeMaybeNode({ uid: folderUid, name: 'FolderCap', type: NodeType.Folder }));
+        await populator.processIncrementalUpdates([nodeUpdated(folderUid, 'e1')], ctx);
+
+        const { indexReader } = await indexRegistry.get(IndexKind.MAIN, db);
+        const indexed = await findDocumentsByTag(indexReader, 'indexPopulatorKind', 'test-populator');
+        for (const uid of childUids) {
+            expect(indexed.map((r) => r.identifier)).toContain(uid);
+        }
+        // The subtree re-walk itself must not have flipped capped, even though it walked well past
+        // the (initial-walk-only) cap.
+        expect(await populator.isCapped(db)).toBe(false);
     });
 });

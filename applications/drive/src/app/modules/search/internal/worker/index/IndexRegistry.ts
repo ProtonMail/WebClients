@@ -132,8 +132,8 @@ export class IndexRegistry {
             );
         });
         const blobStore = new IndexBlobStore(kind, db, this.cryptoKey);
-        const indexWriter = new IndexWriter(engine, blobStore, (documentCount) =>
-            db.setDocumentCount(kind, documentCount)
+        const indexWriter = new IndexWriter(engine, blobStore, (indexEntryCount) =>
+            db.setIndexEntryCount(kind, indexEntryCount)
         );
         const indexReader = new IndexReader(engine, blobStore);
         const instance: IndexInstance = { indexKind: kind, engine, blobStore, indexWriter, indexReader };

@@ -16,6 +16,7 @@ import {
     useSearchModule,
     useUrlSearchParams,
 } from '../../../modules/search';
+import { sendErrorReportForSearch } from '../../../modules/search/internal/shared/errors';
 import { SearchDropdown } from './SearchDropdown';
 
 type SearchFieldInnerProps = {
@@ -50,6 +51,11 @@ const SearchFieldInner = ({ searchModule }: SearchFieldInnerProps) => {
         }
     }, [isReindexing]);
 
+    // Disclose the partial-index notice once per session, in addition to the persisted dismissal
+    // (isPartialIndexNoticeDismissed) that guards across sessions. Unlike reindexShownRef this does not
+    // reset when isIndexPartial goes false, since `capped` is sticky and never does either.
+    const partialShownRef = useRef(false);
+
     const handleSearch = useCallback((keyword = '') => {
         const encodedKeyword = encodeURIComponent(keyword);
         if (keyword.length !== 0) {
@@ -65,6 +71,16 @@ const SearchFieldInner = ({ searchModule }: SearchFieldInnerProps) => {
         if (isReindexing) {
             if (!reindexShownRef.current) {
                 reindexShownRef.current = true;
+                indexingDropdownControl.open();
+            }
+            return;
+        }
+
+        // Index is capped: results are permanently partial. Disclose once, then never again -
+        // the dismissal is persisted in IndexedDB, so this does not reappear on a new session.
+        if (searchModule.isIndexPartial && !searchModule.isPartialIndexNoticeDismissed) {
+            if (!partialShownRef.current) {
+                partialShownRef.current = true;
                 indexingDropdownControl.open();
             }
             return;
@@ -96,7 +112,16 @@ const SearchFieldInner = ({ searchModule }: SearchFieldInnerProps) => {
         setIsErrorDismissed(true);
     };
 
-    const placeholderText = hasPermanentError ? c('Action').t`Search is unavailable` : c('Action').t`Search drive`;
+    const getPlaceholderText = () => {
+        if (hasPermanentError) {
+            return c('Action').t`Search is unavailable`;
+        }
+        if (searchModule.isIndexPartial) {
+            return c('Action').t`Search recent items`;
+        }
+        return c('Action').t`Search drive`;
+    };
+    const placeholderText = getPlaceholderText();
     const isReadonly = !(searchModule.isSearchable && !searchModule.isRunningOutdatedVersion);
 
     const clearButton = searchParams ? (
@@ -187,6 +212,13 @@ const SearchFieldInner = ({ searchModule }: SearchFieldInnerProps) => {
                     indexingProgress={searchModule.indexingProgress}
                     permanentError={searchModule.permanentError}
                     rebuild={searchModule.rebuild}
+                    isIndexPartial={searchModule.isIndexPartial}
+                    isPartialIndexNoticeDismissed={searchModule.isPartialIndexNoticeDismissed}
+                    onDismissPartialIndexNotice={() => {
+                        searchModule.dismissPartialIndexNotice().catch((error) => {
+                            sendErrorReportForSearch('Failed to dismiss partial index notice', error);
+                        });
+                    }}
                 />
             </>
         </div>
