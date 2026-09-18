@@ -7,7 +7,7 @@ import { protonFetch } from '../fetch/fetch';
 import { withLocaleHeaders } from '../fetch/headers';
 import { getDateHeader, getStandardAndCustomDateHeader } from '../fetch/helpers';
 import { localeCode } from '../i18n';
-import type { Api } from '../interfaces';
+import type { Api, HumanVerificationMethodType } from '../interfaces';
 import type { ApiRateLimiter } from './apiRateLimiter';
 import { getApiError, getApiErrorMessage, getIsOfflineError, getIsUnreachableError } from './helpers/apiErrorHelper';
 import { withApiHandlers } from './helpers/withApiHandlers';
@@ -75,7 +75,7 @@ export type ApiVerificationEvent = {
     payload: {
         token: string;
         methods: any[];
-        onVerify: (token: string, tokenType: string) => Promise<any>;
+        onVerify: (token: string, tokenType: HumanVerificationMethodType) => Promise<any>;
         title: any;
         error: any;
         resolve: (value: any) => void;
@@ -390,7 +390,10 @@ const createApi = ({
                 listeners.push(cb);
             },
             removeEventListener: (cb: ApiListenerCallback) => {
-                listeners.splice(listeners.indexOf(cb), 1);
+                const index = listeners.indexOf(cb);
+                if (index !== -1) {
+                    listeners.splice(index, 1);
+                }
             },
         });
     };

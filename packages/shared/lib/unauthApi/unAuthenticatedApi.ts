@@ -13,16 +13,18 @@ import {
     setLocalKey,
     setRefreshCookies,
 } from '../api/auth';
+import type { ApiEvent, ApiListenerCallback } from '../api/createApi';
 import { getApiError, getIs401Error } from '../api/helpers/apiErrorHelper';
+import { getHumanVerificationData, withVerification } from '../api/helpers/humanVerification';
 import { createRefreshHandlers, getIsRefreshFailure, refresh } from '../api/helpers/refreshHandlers';
 import { createOnceHandler } from '../apiHandlers';
 import type { ChallengePayload } from '../authentication/interface';
-import { HTTP_ERROR_CODES } from '../errors';
+import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../errors';
 import { getUIDHeaderValue, withAuthHeaders, withUIDHeaders } from '../fetch/headers';
 import { createPromise, wait } from '../helpers/promise';
 import { setUID } from '../helpers/sentry';
 import { getItem, removeItem, setItem } from '../helpers/sessionStorage';
-import type { Api } from '../interfaces';
+import type { Api, HumanVerificationMethodType } from '../interfaces';
 
 const setupComplete = Symbol('setup complete');
 
@@ -56,6 +58,11 @@ export const createUnauthenticatedApi = (api: Api, { onUID }: UnauthenticatedApi
         auth: { set: false, id: {}, finalised: false },
         setup: null,
         refresh: () => {},
+    };
+
+    const listeners: ApiListenerCallback[] = [];
+    const notify = (event: ApiEvent) => {
+        return listeners.map((listener) => listener(event)).some((value) => value === true);
     };
 
     const updateUID = (UID: string) => {
@@ -166,8 +173,33 @@ export const createUnauthenticatedApi = (api: Api, { onUID }: UnauthenticatedApi
         return context.setup;
     };
 
+    // This session handles its own human verification, the same way it handles its own 401s. The app level
+    // handler never sees the challenge, so it can't answer it on another session.
+    const handleVerification = (error: any, config: any, retry: Api) => {
+        const { token, methods, title } = getHumanVerificationData(error);
+
+        return new Promise((resolve, reject) => {
+            const onVerify = (verificationToken: string, tokenType: HumanVerificationMethodType) => {
+                return retry(withVerification(config, verificationToken, tokenType));
+            };
+
+            const handled = notify({
+                type: 'handle-verification',
+                payload: { token, methods, onVerify, title, error, resolve, reject },
+            });
+            if (handled) {
+                return;
+            }
+            return reject(error);
+        });
+    };
+
     const apiCallback: Api = async (config: any) => {
         await initSetup();
+        // Only opt out of the app level handler when this session can show the challenge itself, so that
+        // a caller using this api without a host mounted for it keeps the app level modal
+        const handlesVerification = listeners.length > 0;
+        const verificationOptOut = handlesVerification ? [API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED] : [];
         const UID = context.UID;
         if (!UID) {
             return context.api(config);
@@ -220,12 +252,17 @@ export const createUnauthenticatedApi = (api: Api, { onUID }: UnauthenticatedApi
                     signal: requestAbortController.signal,
                     ignoreHandler: [
                         HTTP_ERROR_CODES.UNAUTHORIZED,
+                        ...verificationOptOut,
                         ...(Array.isArray(config.ignoreHandler) ? config.ignoreHandler : []),
                     ],
                     silence:
                         config.silence === true
                             ? true
-                            : [HTTP_ERROR_CODES.UNAUTHORIZED, ...(Array.isArray(config.silence) ? config.silence : [])],
+                            : [
+                                  HTTP_ERROR_CODES.UNAUTHORIZED,
+                                  ...verificationOptOut,
+                                  ...(Array.isArray(config.silence) ? config.silence : []),
+                              ],
                 })
             );
 
@@ -236,6 +273,17 @@ export const createUnauthenticatedApi = (api: Api, { onUID }: UnauthenticatedApi
             }
             if (config.url === localKeyConfig.url && context.auth.id === id) {
                 context.auth.finalised = false;
+            }
+            const { code: errorCode } = getApiError(e);
+            const ignoreHumanVerification =
+                Array.isArray(config.ignoreHandler) &&
+                config.ignoreHandler.includes(API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED);
+            if (
+                handlesVerification &&
+                errorCode === API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED &&
+                !ignoreHumanVerification
+            ) {
+                return await handleVerification(e, config, apiCallback);
             }
             if (getIs401Error(e)) {
                 const { code } = getApiError(e);
@@ -289,6 +337,15 @@ export const createUnauthenticatedApi = (api: Api, { onUID }: UnauthenticatedApi
 
     return {
         apiCallback,
+        addEventListener: (cb: ApiListenerCallback) => {
+            listeners.push(cb);
+        },
+        removeEventListener: (cb: ApiListenerCallback) => {
+            const index = listeners.indexOf(cb);
+            if (index !== -1) {
+                listeners.splice(index, 1);
+            }
+        },
         setChallenge,
         startUnAuthFlow,
         setup: initSetup,
