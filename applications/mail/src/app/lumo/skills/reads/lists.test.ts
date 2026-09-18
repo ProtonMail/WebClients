@@ -43,8 +43,25 @@ describe('list_folders', () => {
 
         const serialized = listFoldersDefinition.serializeForLumo(result, emptyReferences);
         expect(serialized).toContain('top-level');
-        expect(serialized).toContain(`parent: ${result.folders[0].reference}`);
         expect(serialized).not.toContain('FOLDER_1');
+    });
+
+    // The parent's name lives on the parent's own row, so without this the only way to say where a
+    // folder sits is to quote the reference at the user.
+    it('names the parent folder beside its reference, so nesting needs no join across rows', async () => {
+        const { result } = await run(createListFoldersHandler(deps({ getFolders: () => folders })));
+
+        const serialized = listFoldersDefinition.serializeForLumo(result, emptyReferences);
+        expect(serialized).toContain(`parent: "Travel" ${result.folders[0].reference}`);
+    });
+
+    it('falls back to the bare parent reference when that parent is not in the list', async () => {
+        const orphan = [buildFolder({ ID: 'FOLDER_2', Name: 'Hotels', Path: 'Hotels', ParentID: 'MISSING' })];
+        const { result } = await run(createListFoldersHandler(deps({ getFolders: () => orphan })));
+
+        const serialized = listFoldersDefinition.serializeForLumo(result, emptyReferences);
+        expect(serialized).toContain(`parent: ${result.folders[0].parent}`);
+        expect(serialized).not.toContain('parent: ""');
     });
 
     it('says so plainly when there are no custom folders', async () => {

@@ -54,7 +54,7 @@ const createUpdateFilterHandler =
         const id = resolveTypedId(filter, ['filter'], references);
         const stored = mail.getFilters().find((candidate) => candidate.ID === id);
         if (!stored) {
-            throw new ToolInputError(`Filter ${filter} no longer exists. Call list_filters for the current ones.`);
+            throw new ToolInputError('That filter no longer exists. Re-read the filter list for the current ones.');
         }
         await mail.validateSieve(sieve);
         // The write replaces the whole filter, so `Status` comes from what is stored — taking it from the
