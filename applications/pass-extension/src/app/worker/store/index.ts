@@ -4,8 +4,11 @@ import createSagaMiddleware from 'redux-saga';
 
 import { authStore } from '@proton/pass/lib/auth/store';
 import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
+import { getExtensionLocalStorage } from '@proton/pass/lib/extension/storage';
 import browser from '@proton/pass/lib/globals/browser';
 import { createMonitorReport } from '@proton/pass/lib/monitor/monitor.report';
+import type { ForceSyncStorageKey } from '@proton/pass/lib/sync/force-sync';
+import { createForceSyncStore, getForceSyncStorageKey } from '@proton/pass/lib/sync/force-sync';
 import { settingsEditIntent } from '@proton/pass/store/actions/creators/settings';
 import { isActionWithSender } from '@proton/pass/store/actions/enhancers/endpoint';
 import { sagaEvents } from '@proton/pass/store/events';
@@ -105,6 +108,12 @@ export const options: RootSagaOptions = {
 
     getSettings: withContext((ctx) => ctx.service.settings.resolve()),
     getStorage: withContext((ctx) => ctx.service.storage.local),
+    getForceSyncStore: withContext((ctx) =>
+        createForceSyncStore({
+            storage: getExtensionLocalStorage<Record<ForceSyncStorageKey, string>>(),
+            getStorageKey: () => getForceSyncStorageKey(ctx.authStore.getLocalID()),
+        })
+    ),
     getTelemetry: withContext((ctx) => ctx.service.telemetry),
     getCore: withContext((ctx) => ctx.service.core),
     getConfig: () => config,
