@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Router } from 'react-router-dom';
 
-import { ApiContext } from '@proton/app-context/apiContext';
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
+import UnauthenticatedApiProvider from '@proton/components/containers/api/UnauthenticatedApiProvider';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import LoaderPage from '@proton/components/containers/app/LoaderPage';
 import ProtonApp from '@proton/components/containers/app/ProtonApp';
@@ -72,7 +72,7 @@ export const BookingGuestApp = () => {
                 <AuthenticationProvider store={extraThunkArguments.authentication}>
                     <FlagProvider unleashClient={extraThunkArguments.unleashClient}>
                         <ApiProvider api={extraThunkArguments.api}>
-                            <ApiContext.Provider value={unauthenticatedApi.apiCallback}>
+                            <UnauthenticatedApiProvider unauthenticatedApi={unauthenticatedApi}>
                                 <ErrorBoundary big component={<StandardErrorPage big />}>
                                     <NotificationsChildren />
                                     <ModalsChildren />
@@ -80,7 +80,7 @@ export const BookingGuestApp = () => {
                                         <BookingsRouter isGuest />
                                     </Router>
                                 </ErrorBoundary>
-                            </ApiContext.Provider>
+                            </UnauthenticatedApiProvider>
                         </ApiProvider>
                     </FlagProvider>
                 </AuthenticationProvider>
