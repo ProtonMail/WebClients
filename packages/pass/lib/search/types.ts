@@ -13,6 +13,7 @@ export type ItemMatchMap = { [T in ItemType]: ItemMatch<T> };
 export type SelectItemsOptions = {
     search?: string;
     shareId?: MaybeNull<string>;
+    folderId?: MaybeNull<string>;
     sort?: MaybeNull<ItemSortFilter>;
     trashed?: boolean;
     type?: MaybeNull<ItemType>;

@@ -13,7 +13,7 @@ import { filesFormInitializer } from '../../../lib/file-attachments/helpers';
 import { obfuscateExtraFields } from '../../../lib/items/item.obfuscation';
 import { bindOTPSanitizer, sanitizeExtraField } from '../../../lib/items/item.utils';
 import { validateCreditCardForm } from '../../../lib/validation/credit-card';
-import { selectPassPlan, selectVaultLimits } from '../../../store/selectors';
+import { selectPassPlan } from '../../../store/selectors';
 import type { CreditCardItemFormValues } from '../../../types';
 import { PassFeature } from '../../../types/api/features';
 import { UserPassPlan } from '../../../types/api/plan';
@@ -29,7 +29,7 @@ import { MaskedTextField } from '../../Form/Field/MaskedTextField';
 import { TextField } from '../../Form/Field/TextField';
 import { TextAreaField } from '../../Form/Field/TextareaField';
 import { TitleField } from '../../Form/Field/TitleField';
-import { VaultPickerField } from '../../Form/Field/VaultPickerField';
+import { VaultFolderPickerField } from '../../Form/Field/VaultFolderPickerField';
 import { cardNumberHiddenValue, cardNumberMask, expDateMask } from '../../Form/Field/masks/credit-card';
 import { Card } from '../../Layout/Card/Card';
 import { ItemCreatePanel } from '../../Layout/Panel/ItemCreatePanel';
@@ -39,8 +39,7 @@ import { getCreditCardType } from './CreditCard.utils';
 
 const FORM_ID = 'new-creditCard';
 
-export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onSubmit, onCancel }) => {
-    const { vaultTotalCount } = useSelector(selectVaultLimits);
+export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, folderId, onSubmit, onCancel }) => {
     const { ParentPortal, openPortal } = usePortal();
 
     const initialValues = useInitialValues<CreditCardItemFormValues>((options) => {
@@ -56,6 +55,7 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
             number: clone?.content.number ?? '',
             pin: clone?.content.pin ?? '',
             shareId: options?.shareId ?? shareId,
+            folderId: options ? options.folderId : folderId,
             verificationNumber: clone?.content.verificationNumber ?? '',
         };
     });
@@ -63,7 +63,7 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
     const form = useFormik<CreditCardItemFormValues>({
         initialValues,
         initialErrors: validateCreditCardForm(initialValues),
-        onSubmit: async ({ shareId, name, note, files, extraFields, ...creditCardValues }) => {
+        onSubmit: async ({ shareId, folderId, name, note, files, extraFields, ...creditCardValues }) => {
             const id = uniqueId();
             const sanitizeOTP = bindOTPSanitizer(name);
 
@@ -71,6 +71,7 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
                 type: 'creditCard',
                 optimisticId: id,
                 shareId,
+                folderId,
                 metadata: { name, note: obfuscate(note), itemUuid: id },
                 files,
                 content: {
@@ -113,8 +114,7 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
                         )}
 
                         <FieldsetCluster>
-                            {vaultTotalCount > 1 &&
-                                openPortal(<Field component={VaultPickerField} name="shareId" dense />)}
+                            {openPortal(<VaultFolderPickerField />)}
                             <Field
                                 lengthLimiters
                                 name="name"

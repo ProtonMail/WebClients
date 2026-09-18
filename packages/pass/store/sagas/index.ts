@@ -30,6 +30,7 @@ import sync from './client/sync.saga';
 import events from './events/events.saga';
 import { exportUserData } from './export/export.saga';
 import fileAttachmentsSagas from './file-attachments/file-attachments.sagas';
+import foldersSagas from './folders/folders.saga';
 import groupsGetAll from './groups/groups.get-all.saga';
 import groupsGet from './groups/groups.get.saga';
 import groupsMembers from './groups/groups.members.saga';
@@ -102,6 +103,7 @@ const COMMON_SAGAS = [
     ...aliasSyncSagas,
     ...customDomainsSagas,
     ...fileAttachmentsSagas,
+    ...foldersSagas,
     ...itemDelete,
     ...notificationSagas,
     ...secureLinkSagas,

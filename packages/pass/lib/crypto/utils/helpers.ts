@@ -1,18 +1,22 @@
 import { PassCrypto } from '..';
-import type { ItemKey } from '../../../types';
+import type { ItemKey, MaybeNull } from '../../../types';
 import { ShareType } from '../../../types';
 import { getLatestItemKey } from '../../items/item.keys';
 
 /** Since we do not currently cache the item keys on the PassCrypto context
  * for items belonging to vault shares : resolve the latest key back-end side.
  * For item shares, resolve from the cached item share key*/
-export const resolveItemKey = async (shareId: string, itemId: string): Promise<ItemKey> => {
+export const resolveItemKey = async (
+    shareId: string,
+    itemId: string,
+    folderId: MaybeNull<string>
+): Promise<ItemKey> => {
     const manager = PassCrypto.getShareManager(shareId);
 
     switch (manager.getType()) {
         case ShareType.Vault:
             const encryptedItemKey = await getLatestItemKey({ shareId, itemId });
-            return PassCrypto.openItemKey({ encryptedItemKey, shareId });
+            return PassCrypto.openItemKey({ encryptedItemKey, shareId, folderId });
         case ShareType.Item:
             const rotation = manager.getLatestRotation();
             return manager.getItemShareKey(rotation);

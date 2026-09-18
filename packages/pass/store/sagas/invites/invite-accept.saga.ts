@@ -5,10 +5,10 @@ import { c } from 'ttag';
 import noop from '@proton/utils/noop';
 
 import { acceptInvite } from '../../../lib/invites/invite.requests';
-import { requestItemsForShareId } from '../../../lib/items/item.requests';
+import { type ShareData, requestShareData } from '../../../lib/shares/share.data';
 import { parseShareResponse } from '../../../lib/shares/share.parser';
 import { createTelemetryEvent } from '../../../lib/telemetry/utils';
-import { type Invite, type ItemRevision, type Maybe, type Share, type ShareGetResponse, ShareType } from '../../../types';
+import { type Invite, type Maybe, type Share, type ShareGetResponse, ShareType } from '../../../types';
 import { TelemetryEventName, TelemetryItemType, TelemetryTargetType } from '../../../types/data/telemetry';
 import { inviteAccept, startEventPolling, stopEventPolling } from '../../actions';
 import { requestProgress } from '../../request/actions';
@@ -16,7 +16,7 @@ import type { RequestProgress } from '../../request/types';
 import { selectInviteByToken } from '../../selectors/invites';
 import type { RootSagaOptions } from '../../types';
 
-type AcceptInviteChannel = RequestProgress<ItemRevision[], null>;
+type AcceptInviteChannel = RequestProgress<ShareData, null>;
 
 function* acceptInviteWorker(options: RootSagaOptions, action: ReturnType<typeof inviteAccept.intent>) {
     const telemetry = options.getTelemetry();
@@ -38,7 +38,9 @@ function* acceptInviteWorker(options: RootSagaOptions, action: ReturnType<typeof
         if (!share) throw new Error(c('Error').t`Could not open invited vault`);
 
         const progressChannel = eventChannel<AcceptInviteChannel>((emitter) => {
-            requestItemsForShareId(share.shareId, (progress) => emitter({ type: 'progress', progress, data: null }))
+            requestShareData(share, {
+                onItemProgress: (progress) => emitter({ type: 'progress', progress, data: null }),
+            })
                 .then((result) => emitter({ type: 'done', result }))
                 .catch((error) => emitter({ type: 'error', error }))
                 .finally(() => emitter(END));
@@ -51,8 +53,8 @@ function* acceptInviteWorker(options: RootSagaOptions, action: ReturnType<typeof
             if (action.type === 'progress') yield put(requestProgress(requestId, action.progress));
             if (action.type === 'error') throw action.error;
             if (action.type === 'done') {
-                const items = action.result;
-                yield put(inviteAccept.success(requestId, { inviteToken, share, items }));
+                const { items, folders } = action.result;
+                yield put(inviteAccept.success(requestId, { inviteToken, share, items, folders }));
 
                 const dimensions =
                     invite.targetType === ShareType.Item && items[0]

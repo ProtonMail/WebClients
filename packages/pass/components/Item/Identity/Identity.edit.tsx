@@ -13,7 +13,7 @@ import { IdentityForm } from './Identity.form';
 
 export const IdentityEdit: FC<ItemEditViewProps<'identity'>> = ({ share, revision, onSubmit, onCancel }) => {
     const { shareId } = share;
-    const { data: item, itemId, revision: lastRevision } = revision;
+    const { data: item, itemId, revision: lastRevision, folderId } = revision;
     const { metadata, content } = useDeobfuscatedItem(item);
 
     const form = useFormik<IdentityItemFormValues>({
@@ -24,8 +24,9 @@ export const IdentityEdit: FC<ItemEditViewProps<'identity'>> = ({ share, revisio
             name: metadata.name,
             note: metadata.note,
             shareId,
+            folderId,
         },
-        onSubmit: ({ shareId, name, note, files, ...content }) => {
+        onSubmit: ({ shareId, folderId, name, note, files, ...content }) => {
             onSubmit({
                 type: 'identity',
                 shareId,

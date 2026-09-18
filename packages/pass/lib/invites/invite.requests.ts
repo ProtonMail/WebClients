@@ -20,7 +20,7 @@ import type {
     NewUserInvitePromoteIntent,
     NewUserInviteRemoveIntent,
 } from '../../types/data/invites.dto';
-import type { Maybe } from '../../types/utils';
+import type { Maybe, MaybeNull } from '../../types/utils';
 import { getErrorMessage } from '../../utils/errors/get-error-message';
 import { prop } from '../../utils/fp/lens';
 import { truthy } from '../../utils/fp/predicates';
@@ -106,7 +106,8 @@ export const createUserInvites = async (
     shareId: string,
     itemId: Maybe<string>,
     users: InviteUserDTO[],
-    b2b: boolean
+    b2b: boolean,
+    folderId: MaybeNull<string> = null
 ): Promise<InviteBatchResult[]> => {
     const manager = PassCrypto.getShareManager(shareId);
 
@@ -126,6 +127,7 @@ export const createUserInvites = async (
                         PassCrypto.openItemKey({
                             encryptedItemKey: key,
                             shareId,
+                            folderId,
                         })
                     )
                 );

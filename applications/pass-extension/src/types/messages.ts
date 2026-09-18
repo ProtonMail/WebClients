@@ -17,7 +17,7 @@ import type {
 import type { PasswordAutosuggestOptions } from '@proton/pass/lib/password/types';
 import type { PauseListEntry } from '@proton/pass/lib/settings/pause-list';
 import type { Notification } from '@proton/pass/store/actions/enhancers/notification';
-import type { FeatureFlagState, VaultShareItem } from '@proton/pass/store/reducers';
+import type { FeatureFlagState, FoldersByShareId, VaultShareItem } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { ShareId } from '@proton/pass/types/crypto/pass-types';
 import type { AliasOptionsResult } from '@proton/pass/types/data/alias';
@@ -444,7 +444,12 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.RESOLVE_USER]: { user: MaybeNull<User> };
     [WorkerMessageType.SPOTLIGHT_CHECK]: { enabled: boolean };
     [WorkerMessageType.SPOTLIGHT_REQUEST]: { message: MaybeNull<SpotlightMessage> };
-    [WorkerMessageType.VAULTS_QUERY]: { vaults: VaultShareItem[]; defaultShareId: ShareId };
+    [WorkerMessageType.VAULTS_QUERY]: {
+        vaults: VaultShareItem[];
+        defaultShareId: ShareId;
+        folders: FoldersByShareId;
+        canUseFolders: boolean;
+    };
     [WorkerMessageType.WEBSITE_RULES_REQUEST]: { rules: MaybeNull<DetectionRulesMatch> };
 };
 

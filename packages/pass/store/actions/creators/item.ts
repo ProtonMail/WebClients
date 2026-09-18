@@ -6,6 +6,7 @@ import type {
     BatchItemRevisionIDs,
     BatchItemRevisions,
     BulkSelectionDTO,
+    FolderId,
     ItemCreateIntent,
     ItemCreateSuccess,
     ItemEditIntent,
@@ -14,6 +15,7 @@ import type {
     ItemRevision,
     ItemRevisionsIntent,
     ItemRevisionsSuccess,
+    MaybeNull,
     OptimisticItem,
     SecureLink,
     SecureLinkCreationDTO,
@@ -145,16 +147,18 @@ export const itemMove = requestActionsFactory<ItemMoveIntent, ItemMoveDTO>('item
     },
 });
 
-export const itemBulkMoveIntent = createAction('item::bulk::move::intent', (payload: { selected: BulkSelectionDTO; shareId: string }) =>
-    pipe(
-        withRequest({ status: 'start', id: itemsBulkMoveRequest(), data: payload.selected }),
-        withNotification({
-            expiration: -1,
-            type: 'info',
-            loading: true,
-            text: c('Info').t`Moving items`,
-        })
-    )({ payload })
+export const itemBulkMoveIntent = createAction(
+    'item::bulk::move::intent',
+    (payload: { selected: BulkSelectionDTO; targetShareId: string; targetFolderId?: MaybeNull<FolderId> }) =>
+        pipe(
+            withRequest({ status: 'start', id: itemsBulkMoveRequest(), data: payload.selected }),
+            withNotification({
+                expiration: -1,
+                type: 'info',
+                loading: true,
+                text: c('Info').t`Moving items`,
+            })
+        )({ payload })
 );
 
 export const itemBulkMoveFailure = createAction(

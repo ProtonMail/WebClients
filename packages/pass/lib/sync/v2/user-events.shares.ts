@@ -12,7 +12,7 @@ import type { Maybe, MaybeNull, Share, ShareCreatedDTO, ShareId, SyncEventShareO
 import { prop } from '../../../utils/fp/lens';
 import { isShareRemovedError } from '../../api/errors';
 import { PassCrypto } from '../../crypto';
-import { requestItemsForShareId } from '../../items/item.requests';
+import { requestShareData } from '../../shares/share.data';
 import { parseShareResponse } from '../../shares/share.parser';
 import { requestShare } from '../../shares/share.requests';
 import { discardDrafts } from '../common/drafts';
@@ -26,14 +26,15 @@ export async function shareFetcher(shareId: ShareId): Promise<MaybeNull<Share>> 
     return share ?? null;
 }
 
-/** Fetches a share along with all its items. Returns `null` if the
+/** Fetches a share along with all its folders and items. Returns `null` if the
  * share itself cannot be resolved (decryption failure or not found). */
 async function shareWithItemsFetcher(shareId: ShareId): Promise<MaybeNull<ShareCreatedDTO>> {
     const share = await shareFetcher(shareId);
     if (!share) return null;
 
-    const items = await requestItemsForShareId(shareId);
-    return { share, items };
+    const { folders, items } = await requestShareData(share);
+
+    return { share, items, folders };
 }
 
 /** Unconditionally cleans up crypto state and drafts for a share.

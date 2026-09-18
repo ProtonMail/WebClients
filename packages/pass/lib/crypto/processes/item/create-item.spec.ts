@@ -17,7 +17,7 @@ describe('createItem crypto process', () => {
             userKeyId: TEST_USER_KEY_ID,
         };
 
-        const item = await createItem({ content, vaultKey });
+        const item = await createItem({ content, encryptionKey: vaultKey });
         const decryptedItemKey = await decryptData(
             vaultKey.key,
             Uint8Array.fromBase64(item.ItemKey),
@@ -44,7 +44,9 @@ describe('createItem crypto process', () => {
             userKeyId: TEST_USER_KEY_ID,
         };
 
-        await expect(createItem({ content: new Uint8Array(0), vaultKey })).rejects.toThrow(PassCryptoItemError);
+        await expect(createItem({ content: new Uint8Array(0), encryptionKey: vaultKey })).rejects.toThrow(
+            PassCryptoItemError
+        );
     });
 
     test('should throw if base64 content is over MAX_ITEM_CONTENT_B64_LENGTH', async () => {
@@ -55,6 +57,8 @@ describe('createItem crypto process', () => {
             userKeyId: TEST_USER_KEY_ID,
         };
 
-        await expect(createItem({ content: new Uint8Array(40000), vaultKey })).rejects.toThrow(PassCryptoItemError);
+        await expect(createItem({ content: new Uint8Array(40000), encryptionKey: vaultKey })).rejects.toThrow(
+            PassCryptoItemError
+        );
     });
 });

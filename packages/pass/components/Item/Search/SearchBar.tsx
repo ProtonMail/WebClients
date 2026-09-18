@@ -11,7 +11,7 @@ import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { useItemFilters } from '../../../hooks/items/useItemFilters';
 import { useDebouncedValue } from '../../../hooks/useDebouncedValue';
 import { useSearchShortcut } from '../../../hooks/useSearchShortcut';
-import { selectShare } from '../../../store/selectors';
+import { selectFolder, selectShare } from '../../../store/selectors';
 import type { MaybeNull, ShareType } from '../../../types';
 import { TelemetryEventName } from '../../../types/data/telemetry';
 import { isEmptyString } from '../../../utils/string/is-empty-string';
@@ -41,9 +41,10 @@ export const SearchBar = memo(({ disabled, trash }: Props) => {
     const debouncedSearch = useDebouncedValue(search, SEARCH_DEBOUNCE_TIME);
 
     const inputRef = useRef<HTMLInputElement>(null);
-    const { selectedShareId, type = '*' } = filters;
+    const { selectedShareId, selectedFolderId, type = '*' } = filters;
 
     const vault = useSelector(selectShare<ShareType.Vault>(selectedShareId));
+    const folder = useSelector(selectFolder(selectedShareId, selectedFolderId));
 
     const placeholder = useMemo(() => {
         if (trash) return c('Placeholder').t`Search in Trash`;
@@ -60,8 +61,10 @@ export const SearchBar = memo(({ disabled, trash }: Props) => {
                     return c('Label').t`Shared by me`;
                 case 'shared-with-me':
                     return c('Label').t`Shared with me`;
-                default:
-                    return vault?.content.name.trim();
+                default: {
+                    const vaultName = vault?.content.name.trim();
+                    return vaultName && folder ? `${vaultName} > ${folder.name}` : vaultName;
+                }
             }
         })();
 
@@ -75,7 +78,7 @@ export const SearchBar = memo(({ disabled, trash }: Props) => {
                     : c('Placeholder').t`Search ${pluralItemType} in all items`;
             }
         }
-    }, [vault, type, scope, trash]);
+    }, [vault, folder, type, scope, trash]);
 
     const handleClear = () => {
         setSearch('');

@@ -13,18 +13,17 @@ import {
     sharesEventNew,
     sharesEventSync,
 } from '../../../store/actions';
-import type { ItemsByShareId, ShareItem, SharesState } from '../../../store/reducers';
+import type { ShareItem, SharesState } from '../../../store/reducers';
 import { refreshUserData } from '../../../store/sagas/events/core/channel.core';
 import { selectShare } from '../../../store/selectors';
 import type { RootSagaOptions } from '../../../store/types';
 import type { ItemRevision, Maybe, PassEventListResponse, Share, ShareGetResponse, ShareId } from '../../../types';
 import { truthy } from '../../../utils/fp/predicates';
-import { diadic } from '../../../utils/fp/variadics';
 import { logId, logger } from '../../../utils/logger';
-import { merge } from '../../../utils/object/merge';
 import { PassCrypto } from '../../crypto';
 import { parseItemRevision } from '../../items/item.parser';
 import { requestItemsForShareId } from '../../items/item.requests';
+import { type SharesData, requestSharesData } from '../../shares/share.data';
 import { parseShareResponse } from '../../shares/share.parser';
 import { hasShareChanged } from '../../shares/share.predicates';
 import { requestShare } from '../../shares/share.requests';
@@ -154,20 +153,9 @@ export function* processSharesIncomingEvent(
 
     if (shares.length === 0) return [];
 
-    const items: ItemsByShareId[] = yield Promise.all(
-        shares.map(async ({ shareId }): Promise<ItemsByShareId> => {
-            const items = await requestItemsForShareId(shareId);
-            return { [shareId]: toMap(items, 'itemId') };
-        })
-    );
+    const { folders, items }: SharesData = yield requestSharesData(shares);
 
-    yield put(
-        sharesEventNew({
-            shares: toMap(shares, 'shareId'),
-            items: items.reduce(diadic(merge)),
-            v: 1,
-        })
-    );
+    yield put(sharesEventNew({ shares: toMap(shares, 'shareId'), items, folders, v: 1 }));
 
     return shares;
 }

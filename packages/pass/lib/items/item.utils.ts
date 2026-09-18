@@ -26,6 +26,7 @@ import { deobfuscate, deobfuscateCCField } from '../../utils/obfuscate/xor';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '../../utils/time/constants';
 import { getEpoch } from '../../utils/time/epoch';
 import PassUI from '../core/ui.proxy';
+import type { FolderScope } from '../folders/folder.utils';
 import { parseOTPValue } from '../otp/otp';
 import { getFirstUrl } from '../urls/utils/autofill';
 import { hasUserIdentifier, isEditItemDraft, isExtraOTPField } from './item.predicates';
@@ -34,8 +35,8 @@ export const compoundItemFilters: Partial<Record<ItemType, ItemType[]>> = {
     custom: ['custom', 'sshKey', 'wifi'],
 };
 
-const SEPERATOR = '::';
-const toKey = (...args: (string | number)[]) => args.join(SEPERATOR);
+const SEPARATOR = '::';
+const toKey = (...args: (string | number)[]) => args.join(SEPARATOR);
 
 export const getItemRevisionKey = <T extends SelectedRevision>({ shareId, itemId, revision }: T) =>
     toKey(shareId, itemId, revision);
@@ -43,8 +44,15 @@ export const getItemRevisionKey = <T extends SelectedRevision>({ shareId, itemId
 export const getItemKey = <T extends UniqueItem>({ shareId, itemId }: T) => toKey(shareId, itemId);
 
 export const fromItemKey = (key: string): UniqueItem => {
-    const [shareId, itemId] = key.split(SEPERATOR);
+    const [shareId, itemId] = key.split(SEPARATOR);
     return { itemId, shareId };
+};
+
+export const getFolderKey = (shareId: string, folderId: MaybeNull<string>) => `${shareId}${SEPARATOR}${folderId ?? ''}`;
+
+export const fromFolderKey = (key: string): { shareId: string; folderId: MaybeNull<string> } => {
+    const [shareId, folderId] = key.split(SEPARATOR);
+    return { shareId, folderId: folderId || null };
 };
 
 export const intoSelectedItem = ({ shareId, itemId }: ItemRevision): SelectedItem => ({ shareId, itemId });
@@ -106,6 +114,13 @@ export const filterItemsByShareId =
         if (!shareId) return items;
         return items.filter((item) => shareId === item.shareId);
     };
+
+/** Keeps only the items belonging to one of the scope's folder ids,
+ * `null` matching the items that are in no folder, ie. the vault root. */
+export const filterItemsByFolderIds =
+    (folderIds: FolderScope) =>
+    <T extends ItemRevision>(items: T[]) =>
+        items.filter((item) => folderIds.has(item.folderId));
 
 export const filterItemsByType =
     (itemType?: MaybeNull<ItemType>) =>

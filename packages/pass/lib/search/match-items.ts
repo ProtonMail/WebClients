@@ -10,6 +10,7 @@ import type {
 } from '../../types';
 import { dynMemo } from '../../utils/fp/memo';
 import { deobfuscate } from '../../utils/obfuscate/xor';
+import { isEmptyString } from '../../utils/string/is-empty-string';
 import type { FieldMatch, ItemMatch, ItemMatchMap } from './types';
 
 /** We used to match on hidden fields but switched over to only text types */
@@ -297,7 +298,7 @@ const itemMatchers: ItemMatchMap = {
 const matchItem: ItemMatch = <T extends ItemType>(item: ItemRevision<T>) => itemMatchers[item.data.type](item);
 
 export const searchItems = <T extends ItemRevision>(items: T[], search?: string, rankByRelevance = false) => {
-    if (!search || search.trim() === '') return items;
+    if (isEmptyString(search)) return items;
 
     /** split the search term into multiple normalized needles, dropping empties
      * so internal whitespace (e.g. "proton  mail") doesn't yield a `''` needle

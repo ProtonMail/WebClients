@@ -6,7 +6,7 @@ import { cacheGuard, migrate } from './migrate';
 import { INITIAL_HIGHSECURITY_SETTINGS, rootReducer } from './reducers';
 import { INITIAL_ORGANIZATION_SETTINGS } from './reducers/organization';
 
-const snapshot = { shareManagers: [] };
+const snapshot = { shareManagers: [], folderKeys: [] };
 
 describe('`migrate`', () => {
     test('should sanitize invalid items', () => {

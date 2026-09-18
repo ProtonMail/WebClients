@@ -1,4 +1,4 @@
-import { type FC, useEffect } from 'react';
+import { type FC, useEffect, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -7,8 +7,8 @@ import noop from '@proton/utils/noop';
 
 import { useMemoSelector } from '../../../hooks/useMemoSelector';
 import { getBulkSelectionCount } from '../../../lib/items/item.utils';
-import { selectBulkHasSecureLinks, selectBulkHasSharedItems } from '../../../store/selectors';
-import type { BulkSelectionDTO } from '../../../types';
+import { selectBulkHasSecureLinks, selectBulkHasSharedItems, selectFolder } from '../../../store/selectors';
+import type { BulkSelectionDTO, MaybeNull } from '../../../types';
 import { useBulkSelectionAliasCount } from '../../Bulk/BulkSelectionState';
 import { ConfirmationPrompt, type ConfirmationPromptHandles } from '../../Confirmation/ConfirmationPrompt';
 import { WithVault } from '../../Vault/WithVault';
@@ -53,11 +53,20 @@ export const ConfirmTrashManyItems: FC<ConfirmationPromptHandles & { selected: B
 export const ConfirmMoveManyItems: FC<
     ConfirmationPromptHandles & {
         selected: BulkSelectionDTO;
-        shareId: string;
+        targetShareId: string;
+        targetFolderId?: MaybeNull<string>;
     }
-> = ({ selected, shareId, onCancel, onConfirm }) => {
-    const hasSecureLinks = useMemoSelector(selectBulkHasSecureLinks, [selected]);
-    const hasSharedItems = useMemoSelector(selectBulkHasSharedItems, [selected]);
+> = ({ selected, targetShareId, targetFolderId, onCancel, onConfirm }) => {
+    /** Don't show warning if moving to a different folder in the same vault (sharing unaffected).
+     * Future TODO: change this when folder sharing is implemented */
+    const crossVault = useMemo(
+        () => Object.fromEntries(Object.entries(selected).filter(([shareId]) => shareId !== targetShareId)),
+        [selected, targetShareId]
+    );
+
+    const hasSecureLinks = useMemoSelector(selectBulkHasSecureLinks, [crossVault]);
+    const hasSharedItems = useMemoSelector(selectBulkHasSharedItems, [crossVault]);
+    const folder = useMemoSelector(selectFolder, [targetShareId, targetFolderId ?? '']);
     const count = getBulkSelectionCount(selected);
 
     /** Auto-confirm on mount if no warnings should
@@ -67,35 +76,39 @@ export const ConfirmMoveManyItems: FC<
 
     return (
         !autoConfirm && (
-            <WithVault shareId={shareId} onFallback={onCancel}>
-                {({ content: { name: vaultName } }) => (
-                    <ConfirmationPrompt
-                        onConfirm={onConfirm}
-                        onCancel={onCancel}
-                        title={c('Title').ngettext(
-                            msgid`Move ${count} item to ${vaultName}`,
-                            `Move ${count} items to ${vaultName}`,
-                            count
-                        )}
-                        message={
-                            <div className="flex gap-y-4">
-                                {hasSharedItems && (
-                                    <Alert type="error">
-                                        {c('Warning')
-                                            .t`Some items are currently shared. Moving them to another vault will remove access for all other users.`}
-                                    </Alert>
-                                )}
+            <WithVault shareId={targetShareId} onFallback={onCancel}>
+                {({ content: { name: vaultName } }) => {
+                    const target = folder ? `${vaultName} > ${folder.name}` : vaultName;
 
-                                {hasSecureLinks &&
-                                    c('Info').ngettext(
-                                        msgid`Moving an item to another vault will erase its secure links.`,
-                                        `Moving items to another vault will erase their secure links.`,
-                                        count
+                    return (
+                        <ConfirmationPrompt
+                            onConfirm={onConfirm}
+                            onCancel={onCancel}
+                            title={c('Title').ngettext(
+                                msgid`Move ${count} item to ${target}`,
+                                `Move ${count} items to ${target}`,
+                                count
+                            )}
+                            message={
+                                <div className="flex gap-y-4">
+                                    {hasSharedItems && (
+                                        <Alert type="error">
+                                            {c('Warning')
+                                                .t`Some items are currently shared. Moving them to another vault will remove access for all other users.`}
+                                        </Alert>
                                     )}
-                            </div>
-                        }
-                    />
-                )}
+
+                                    {hasSecureLinks &&
+                                        c('Info').ngettext(
+                                            msgid`Moving an item to another vault will erase its secure links.`,
+                                            `Moving items to another vault will erase their secure links.`,
+                                            count
+                                        )}
+                                </div>
+                            }
+                        />
+                    );
+                }}
             </WithVault>
         )
     );

@@ -41,7 +41,7 @@ const removeRevisions = createRequestSaga({
     call: function* (dto) {
         const { shareId, itemId } = dto;
         const item: ItemRevision = yield deleteItemRevisions(dto);
-        yield put(withRevalidate(filesResolve.intent({ ...dto, revision: item.revision })));
+        yield put(withRevalidate(filesResolve.intent({ ...dto, revision: item.revision, folderId: item.folderId })));
 
         return { shareId, itemId, item };
     },

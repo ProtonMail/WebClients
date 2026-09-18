@@ -18,7 +18,7 @@ export const useSaveTabState = () => {
     const dispatch = useDispatch();
 
     const { itemId, shareId } = selectedItem ?? {};
-    const { search, sort, type, selectedShareId } = filters;
+    const { search, sort, type, selectedShareId, selectedFolderId } = filters;
 
     const savePopupState = useRef(false);
 
@@ -26,12 +26,12 @@ export const useSaveTabState = () => {
         const url = getExtensionClientState?.()?.url;
         return {
             domain: url ? intoDomainWithPort({ ...url, as: 'host' }) : null,
-            filters: { search, sort, type, selectedShareId },
+            filters: { search, sort, type, selectedShareId, selectedFolderId },
             search,
             selectedItem: selectedItem ? { shareId: selectedItem.shareId, itemId: selectedItem.itemId } : null,
             tabId,
         };
-    }, [itemId, shareId, search, sort, type, selectedShareId]);
+    }, [itemId, shareId, search, sort, type, selectedShareId, selectedFolderId]);
 
     useEffect(() => {
         if (!savePopupState.current) savePopupState.current = true;

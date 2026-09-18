@@ -3,7 +3,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { hasEmail, isActive, isItemType, isPinned, isTrashed } from '../../lib/items/item.predicates';
-import { filterItemsByUserIdentifier, flattenItemsByShareId, sortItems } from '../../lib/items/item.utils';
+import { filterItemsByFolderIds, filterItemsByUserIdentifier, flattenItemsByShareId, sortItems } from '../../lib/items/item.utils';
 import type { ItemRevision, ItemRevisionWithOptimistic, ItemSortFilter, ItemType, Maybe, MaybeNull, SelectedItem } from '../../types';
 import { first } from '../../utils/array/first';
 import { and, not } from '../../utils/fp/predicates';
@@ -108,6 +108,9 @@ export const selectItemsByShareId = (shareId?: string) =>
     createSelector(selectItems, (items): ItemRevision[] =>
         flattenItemsByShareId(shareId && items[shareId] ? { [shareId]: items[shareId] } : items).filter(isActive)
     );
+
+export const selectItemsInFolder = (shareId: string, folderId: MaybeNull<string>) =>
+    createSelector(selectItemsByShareId(shareId), filterItemsByFolderIds(new Set([folderId])));
 
 export const selectItemsByUserIdentifier = (userIdentifier: string) =>
     createSelector(selectVisibleLoginItems, filterItemsByUserIdentifier(userIdentifier));

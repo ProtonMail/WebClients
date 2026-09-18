@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
@@ -12,7 +11,6 @@ import { filesFormInitializer } from '../../../lib/file-attachments/helpers';
 import { obfuscateExtraFields } from '../../../lib/items/item.obfuscation';
 import { bindOTPSanitizer, sanitizeExtraField } from '../../../lib/items/item.utils';
 import { validateNoteForm } from '../../../lib/validation/note';
-import { selectVaultLimits } from '../../../store/selectors';
 import type { NoteFormValues } from '../../../types';
 import { PassFeature } from '../../../types/api/features';
 import { obfuscate } from '../../../utils/obfuscate/xor';
@@ -24,31 +22,31 @@ import { Field } from '../../Form/Field/Field';
 import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
 import { TextAreaField } from '../../Form/Field/TextareaField';
 import { BaseTitleField } from '../../Form/Field/TitleField';
-import { VaultPickerField } from '../../Form/Field/VaultPickerField';
+import { VaultFolderPickerField } from '../../Form/Field/VaultFolderPickerField';
 import { ItemCreatePanel } from '../../Layout/Panel/ItemCreatePanel';
 import type { ItemNewViewProps } from '../../Views/types';
 
 const FORM_ID = 'new-note';
 
-export const NoteNew: FC<ItemNewViewProps<'note'>> = ({ shareId, onSubmit, onCancel }) => {
+export const NoteNew: FC<ItemNewViewProps<'note'>> = ({ shareId, folderId, onSubmit, onCancel }) => {
     const initialValues = useInitialValues<NoteFormValues>((options) => {
         const clone = options?.clone.type === 'note' ? options.clone : null;
         return {
             name: clone?.metadata.name ?? '',
             note: clone?.metadata.note ?? '',
             shareId: options?.shareId ?? shareId,
+            folderId: options ? options.folderId : folderId,
             extraFields: clone?.extraFields ?? [],
             files: filesFormInitializer(),
         };
     });
 
-    const { vaultTotalCount } = useSelector(selectVaultLimits);
     const { ParentPortal, openPortal } = usePortal();
 
     const form = useFormik<NoteFormValues>({
         initialValues,
         initialErrors: validateNoteForm(initialValues),
-        onSubmit: ({ shareId, name, note, files, extraFields }) => {
+        onSubmit: ({ shareId, folderId, name, note, files, extraFields }) => {
             const optimisticId = uniqueId();
             const sanitizeOTP = bindOTPSanitizer(name);
 
@@ -56,6 +54,7 @@ export const NoteNew: FC<ItemNewViewProps<'note'>> = ({ shareId, onSubmit, onCan
                 type: 'note',
                 optimisticId,
                 shareId: shareId,
+                folderId,
                 metadata: { name, note: obfuscate(note), itemUuid: optimisticId },
                 files,
                 content: {},
@@ -80,7 +79,7 @@ export const NoteNew: FC<ItemNewViewProps<'note'>> = ({ shareId, onSubmit, onCan
             {({ didEnter }) => (
                 <FormikProvider value={form}>
                     <Form id={FORM_ID}>
-                        {vaultTotalCount > 1 && openPortal(<Field component={VaultPickerField} name="shareId" dense />)}
+                        {openPortal(<VaultFolderPickerField />)}
 
                         <Field
                             dense

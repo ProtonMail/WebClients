@@ -13,6 +13,7 @@ import assignedModelId from './assigned-model-id';
 import compromisedPasswords from './compromised-passwords';
 import files from './files';
 import filters from './filters';
+import folders from './folders';
 import groups from './groups';
 import importReducer from './import';
 import invites from './invites';
@@ -33,6 +34,7 @@ export * from './alias';
 export * from './compromised-passwords';
 export * from './files';
 export * from './filters';
+export * from './folders';
 export * from './import';
 export * from './invites';
 export * from './items';
@@ -51,6 +53,7 @@ export const reducerMap = {
     files,
     filters,
     groups,
+    folders,
     import: importReducer,
     invites,
     items,

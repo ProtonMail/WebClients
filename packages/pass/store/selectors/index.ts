@@ -9,6 +9,7 @@ export * from './autosave';
 export * from './bulk';
 export * from './export';
 export * from './filters';
+export * from './folders';
 export * from './import';
 export * from './items';
 export * from './limits';

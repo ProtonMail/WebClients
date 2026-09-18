@@ -32,7 +32,7 @@ const FORM_ID = 'edit-creditCard';
 
 export const CreditCardEdit: FC<ItemEditViewProps<'creditCard'>> = ({ share, revision, onSubmit, onCancel }) => {
     const { shareId } = share;
-    const { data: item, itemId, revision: lastRevision } = revision;
+    const { data: item, itemId, revision: lastRevision, folderId } = revision;
 
     const { metadata, content, extraFields, ...uneditable } = useDeobfuscatedItem(item);
 
@@ -44,6 +44,7 @@ export const CreditCardEdit: FC<ItemEditViewProps<'creditCard'>> = ({ share, rev
             note: metadata.note,
             files: filesFormInitializer(),
             shareId,
+            folderId,
             extraFields,
         },
         onSubmit: async ({ name, note, files, extraFields, ...creditCardValues }) => {

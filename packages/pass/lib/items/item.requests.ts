@@ -9,9 +9,11 @@ import type {
     BatchItemRevisions,
     CustomAliasCreateRequest,
     EncodedItemKeyRotation,
+    FolderItemsMoveInputDto,
     ImportItemBatchRequest,
     ImportItemRequest,
     ItemCreateIntent,
+    ItemDestination,
     ItemEditIntent,
     ItemId,
     ItemImportIntent,
@@ -24,6 +26,7 @@ import type {
     ItemType,
     ItemUpdateFlagsRequest,
     Maybe,
+    MaybeNull,
     SelectedItem,
     SelectedRevision,
     ShareId,
@@ -71,10 +74,10 @@ export const batchByShareId = <T extends UniqueItem, R>(
 /* Item creation API request for all items
  * except for alias items */
 export const createItem = async (createIntent: ItemCreateIntent<Exclude<ItemType, 'alias'>>): Promise<ItemRevision> => {
-    const { shareId, files, ...item } = createIntent;
+    const { shareId, files, folderId, ...item } = createIntent;
 
     const content = serializeItemContent(item);
-    const data = await PassCrypto.createItem({ shareId, content });
+    const data = await PassCrypto.createItem({ shareId, content, folderId });
 
     const { Item } = await api({
         url: `pass/v1/share/${shareId}/item`,
@@ -87,10 +90,10 @@ export const createItem = async (createIntent: ItemCreateIntent<Exclude<ItemType
 
 /* Specific alias item API request */
 export const createAlias = async (createIntent: ItemCreateIntent<'alias'>): Promise<ItemRevision<'alias'>> => {
-    const { shareId, files, ...create } = createIntent;
+    const { shareId, files, folderId, ...create } = createIntent;
 
     const content = serializeItemContent(create);
-    const encryptedItem = await PassCrypto.createItem({ shareId, content });
+    const encryptedItem = await PassCrypto.createItem({ shareId, content, folderId });
 
     const data: CustomAliasCreateRequest = {
         Item: encryptedItem,
@@ -115,13 +118,13 @@ export type ItemRevisionWithAlias = [ItemRevision<'login'>, ItemRevision<'alias'
 export const createItemWithAlias = async (
     createIntent: ItemCreateIntent<'login'> & { extraData: { withAlias: true } }
 ): Promise<ItemRevisionWithAlias> => {
-    const { shareId, files, ...item } = createIntent;
+    const { shareId, files, folderId, ...item } = createIntent;
 
     const loginItemContent = serializeItemContent(item);
     const aliasItemContent = serializeItemContent(item.extraData.alias);
 
-    const encryptedLoginItem = await PassCrypto.createItem({ shareId, content: loginItemContent });
-    const encryptedAliasItem = await PassCrypto.createItem({ shareId, content: aliasItemContent });
+    const encryptedLoginItem = await PassCrypto.createItem({ shareId, content: loginItemContent, folderId });
+    const encryptedAliasItem = await PassCrypto.createItem({ shareId, content: aliasItemContent, folderId });
 
     const data: AliasAndItemCreateRequest = {
         Item: encryptedLoginItem,
@@ -145,54 +148,115 @@ export const createItemWithAlias = async (
     return [login, alias];
 };
 
-export const editItem = async (editIntent: ItemEditIntent, lastRevision: number): Promise<ItemRevision> => {
+export const editItem = async (
+    editIntent: ItemEditIntent,
+    lastRevision: number,
+    folderId: MaybeNull<string> = null
+): Promise<ItemRevision> => {
     const { shareId, itemId, files, ...edit } = editIntent;
     const content = serializeItemContent(edit);
-    const itemKey = await resolveItemKey(shareId, itemId);
+    const itemKey = await resolveItemKey(shareId, itemId, folderId);
     const data = await PassCrypto.updateItem({ content, lastRevision, itemKey });
 
     const { Item } = await api({ url: `pass/v1/share/${shareId}/item/${itemId}`, method: 'put', data });
     return parseItemRevision(shareId, Item);
 };
 
+const moveItemsToDifferentShare = async (
+    shareId: string,
+    items: ItemRevision[],
+    { targetShareId, targetFolderId }: ItemDestination
+): Promise<ItemRevision[]> => {
+    const data: ItemMoveMultipleToShareRequest = {
+        ShareID: targetShareId,
+        Items: await Promise.all(
+            items.map<Promise<ItemMoveIndividualToShareRequest>>(async (item) => {
+                const encryptedItemKeys = await getItemKeys(shareId, item.itemId);
+
+                return PassCrypto.moveItem({
+                    encryptedItemKeys,
+                    itemId: item.itemId,
+                    shareId,
+                    targetShareId,
+                    folderId: item.folderId,
+                    targetFolderId,
+                });
+            })
+        ),
+    };
+
+    const { Items = [] } = await api({ url: `pass/v1/share/${shareId}/item/share`, method: 'put', data });
+    return Promise.all(Items.map(parseItemRevision.bind(null, targetShareId)));
+};
+
+const moveItemsToSameShareDifferentFolder = async (
+    shareId: string,
+    items: ItemRevision[],
+    targetFolderId?: MaybeNull<string>
+): Promise<ItemRevision[]> => {
+    const data: FolderItemsMoveInputDto = {
+        FolderID: targetFolderId ?? null,
+        Items: await Promise.all(
+            items.map(async (item) => {
+                const encryptedItemKeys = await getItemKeys(shareId, item.itemId);
+
+                const { ItemKeys } = await PassCrypto.moveItem({
+                    encryptedItemKeys,
+                    itemId: item.itemId,
+                    shareId,
+                    targetShareId: shareId,
+                    folderId: item.folderId,
+                    targetFolderId,
+                });
+
+                return { ItemID: item.itemId, ItemKeys };
+            })
+        ),
+    };
+
+    const { Items } = await api({ url: `pass/v1/share/${shareId}/item/folder`, method: 'put', data });
+
+    return items.map((item) => {
+        const updated = Items.find(({ ItemID }) => ItemID === item.itemId);
+        return updated
+            ? {
+                  ...item,
+                  flags: updated.Flags,
+                  folderId: updated.FolderID ?? null,
+                  itemId: updated.ItemID,
+                  modifyTime: updated.ModifyTime,
+                  revision: updated.Revision,
+                  revisionTime: updated.RevisionTime,
+                  state: updated.State,
+              }
+            : item;
+    });
+};
+
 /** Limit batch size to `MIN_MAX_BATCH_PER_REQUEST` to reduce and
  * use `seq` to limit concurrent requests. Each batch requires re-
- * fetching item keys during bulk move operations. */
+ * fetching item keys during bulk move operations.
+ * Items are routed per source share: those already in the destination share
+ * are moved between its folders via the dedicated folder endpoint,
+ * while items coming from another share go through the different share move. */
 export const moveItems = async (
     items: ItemRevision[],
-    targetShareId: string,
+    destination: ItemDestination,
     onBatch?: (
         data: BatchItemRevisions & { movedItems: ItemRevision[]; targetShareId: string },
         progress: number
     ) => void,
     progress: number = 0
 ): Promise<ItemRevision[]> => {
+    const { targetShareId, targetFolderId } = destination;
     const batches = batchByShareId(items, identity, MIN_MAX_BATCH_PER_REQUEST);
 
     const results = await seq(batches, async ({ shareId, items }) => {
-        const data: ItemMoveMultipleToShareRequest = {
-            ShareID: targetShareId,
-            Items: await Promise.all(
-                items.map<Promise<ItemMoveIndividualToShareRequest>>(async (item) => {
-                    const encryptedItemKeys = await getItemKeys(shareId, item.itemId);
+        const movedItems =
+            shareId === targetShareId
+                ? await moveItemsToSameShareDifferentFolder(shareId, items, targetFolderId)
+                : await moveItemsToDifferentShare(shareId, items, destination);
 
-                    return PassCrypto.moveItem({
-                        encryptedItemKeys,
-                        itemId: item.itemId,
-                        shareId,
-                        targetShareId,
-                    });
-                })
-            ),
-        };
-
-        const { Items = [] } = await api({
-            url: `pass/v1/share/${shareId}/item/share`,
-            method: 'put',
-            data,
-        });
-
-        const movedItems = await Promise.all(Items.map(parseItemRevision.bind(null, targetShareId)));
         onBatch?.({ batch: items, movedItems, shareId, targetShareId }, (progress += movedItems.length));
         return movedItems;
     });

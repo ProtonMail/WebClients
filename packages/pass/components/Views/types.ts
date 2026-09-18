@@ -34,6 +34,7 @@ export type ItemEditViewProps<T extends ItemType = ItemType> = {
 export type ItemNewViewProps<T extends ItemType = ItemType> = {
     type: T;
     shareId: string;
+    folderId: MaybeNull<string>;
     url: MaybeNull<ParsedUrl>;
     onCancel: () => void;
     onSubmit: (item: ItemCreateIntent<T>) => void;

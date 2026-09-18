@@ -19,6 +19,7 @@ import { type CustomTemplate, customTemplateToFormFields } from './Custom.templa
 type GetNewCustomItemValuesOptions = {
     clone?: MaybeNull<DeobfuscatedItem<ItemCustomType>>;
     shareId: ShareId;
+    folderId: MaybeNull<string>;
     template?: CustomTemplate;
     type: ItemCustomType;
 };
@@ -26,6 +27,7 @@ type GetNewCustomItemValuesOptions = {
 export const getNewCustomInitialValues = <T extends ItemCustomType>({
     clone,
     shareId,
+    folderId = null,
     template,
     type,
 }: GetNewCustomItemValuesOptions): CustomItemFormValues<T> => {
@@ -33,6 +35,7 @@ export const getNewCustomInitialValues = <T extends ItemCustomType>({
         name: clone?.metadata.name ?? '',
         note: clone?.metadata.note ?? '',
         shareId,
+        folderId,
         sections: clone?.content.sections || [],
         extraFields: template ? customTemplateToFormFields(template) : (clone?.extraFields ?? []),
         files: filesFormInitializer(),
@@ -67,7 +70,8 @@ export const getNewCustomInitialValues = <T extends ItemCustomType>({
 
 export const getEditCustomInitialValues = <T extends ItemCustomType>(
     item: DeobfuscatedItem<ItemCustomType>,
-    shareId: ShareId
+    shareId: ShareId,
+    folderId: MaybeNull<string>
 ): CustomItemFormValues<T> => {
     const { metadata, content, extraFields } = item;
 
@@ -75,6 +79,7 @@ export const getEditCustomInitialValues = <T extends ItemCustomType>(
         name: metadata.name,
         note: metadata.note,
         shareId,
+        folderId,
         sections: content.sections,
         extraFields,
         files: filesFormInitializer(),
@@ -135,11 +140,12 @@ export const getEditIntent = <T extends ItemCustomType>(
 
 export const getCreateIntent = <T extends ItemCustomType>(values: CustomItemFormValues): ItemCreateIntent<T> => {
     const optimisticId = uniqueId();
-    const { shareId, name, note, sections, extraFields, files } = values;
+    const { shareId, folderId, name, note, sections, extraFields, files } = values;
 
     const base = {
         optimisticId,
         shareId,
+        folderId,
         metadata: { name, note: obfuscate(note), itemUuid: optimisticId },
         extraFields: obfuscateExtraFields(extraFields),
         extraData: [],

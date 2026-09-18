@@ -6,6 +6,7 @@ export * from './creators/auth';
 export * from './creators/client';
 export * from './creators/export';
 export * from './creators/files';
+export * from './creators/folders';
 export * from './creators/import';
 export * from './creators/invite';
 export * from './creators/item';

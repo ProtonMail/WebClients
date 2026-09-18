@@ -1,15 +1,16 @@
 import type { PassConfig } from '../../hooks/usePassConfig';
-import type { ExportData, ExportedVault } from '../../lib/export/types';
+import type { ExportData, ExportedFolder, ExportedVault } from '../../lib/export/types';
 import { getExportFileName } from '../../lib/file-attachments/helpers';
 import { deobfuscateItem } from '../../lib/items/item.obfuscation';
 import { isB2BAdmin } from '../../lib/organization/helpers';
 import { isVaultShare } from '../../lib/shares/share.predicates';
 import { getDefaultModeUrls } from '../../lib/urls/utils/autofill';
-import type { DeobfuscatedItem, FileDescriptor, IndexedByShareIdAndItemId } from '../../types';
+import type { DeobfuscatedItem, FileDescriptor, FolderData, IndexedByShareIdAndItemId } from '../../types';
 import { OrganizationExportMode } from '../../types';
 import { unwrapOptimisticState } from '../optimistic/utils/transformers';
 import type { State } from '../types';
 import { SelectorError } from './errors';
+import { selectFolders } from './folders';
 import { selectOrganizationSettings } from './organization';
 import { selectShare } from './shares';
 import { selectPassPlan, selectUser } from './user';
@@ -32,6 +33,12 @@ const toExportItem = (data: DeobfuscatedItem): DeobfuscatedItem => {
     } as unknown as DeobfuscatedItem;
 };
 
+const toExportFolder = ({ folderId, parentFolderId, name }: FolderData): ExportedFolder => ({
+    folderId,
+    parentFolderId,
+    name,
+});
+
 export const selectExportData =
     (config: PassConfig) =>
     (state: State): ExportThunk => {
@@ -46,6 +53,7 @@ export const selectExportData =
         if (exportDisabled) throw new SelectorError('Export disabled for org members');
 
         const itemsByShareId = unwrapOptimisticState(state.items.byShareId);
+        const foldersByShareId = selectFolders(state);
 
         return (files) => {
             const vaults = Object.fromEntries(
@@ -57,9 +65,11 @@ export const selectExportData =
                             shareId,
                             {
                                 ...share.content,
+                                folders: Object.values(foldersByShareId[shareId] ?? {}).map(toExportFolder),
                                 items: Object.values(itemsById).map((item) => ({
                                     itemId: item.itemId,
                                     shareId: item.shareId,
+                                    folderId: item.folderId,
                                     data: toExportItem(deobfuscateItem(item.data)),
                                     state: item.state,
                                     aliasEmail: item.aliasEmail,

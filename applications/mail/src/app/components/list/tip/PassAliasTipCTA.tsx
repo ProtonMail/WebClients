@@ -32,6 +32,7 @@ const PassAliasTipCTA = ({ ctaText }: Props) => {
                 type: 'alias',
                 sort: 'recent',
                 selectedShareId: null,
+                selectedFolderId: null,
                 search: '',
             })
         );
