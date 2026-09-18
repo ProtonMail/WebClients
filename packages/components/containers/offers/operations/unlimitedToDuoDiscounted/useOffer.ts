@@ -4,11 +4,11 @@ import { useLocation } from 'react-router';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
+import { useAutomaticCurrency } from '@proton/payments-ui/client-extensions/useAutomaticCurrency';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { CommonFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useAutomaticCurrency } from '../../../../payments/client-extensions/index';
 import OfferSubscription from '../../helpers/offerSubscription';
 import { withResolvedRefs } from '../../helpers/withResolvedRefs';
 import useOfferFlags from '../../hooks/useOfferFlags';
