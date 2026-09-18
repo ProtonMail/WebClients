@@ -7,6 +7,8 @@ import type { DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/inter
 import { decryptMasterKeyEnvelope } from './lumoBootstrap';
 
 describe('decryptMasterKeyEnvelope', () => {
+    afterEach(() => jest.restoreAllMocks());
+
     it('accepts a legacy envelope encrypted and signed with an address key', async () => {
         const userKey = {
             privateKey: { id: 'user-private' },
