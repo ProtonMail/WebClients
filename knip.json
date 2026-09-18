@@ -46,9 +46,10 @@
             "project": ["src/**/*.{ts,tsx,js,jsx}"]
         },
         "applications/authenticator": {
-            "entry": ["src/app/main.tsx"],
+            "entry": ["src/app/main.tsx", "webpack.config.{js,ts}", "webpack.options.{js,ts}"],
             "project": ["src/**/*.{ts,tsx}"],
-            "ignoreDependencies": ["@proton/styles", "@iarna/toml", "tsx"]
+            "ignore": ["src/lib/api/types.ts"],
+            "ignoreDependencies": ["@proton/styles", "tsx"]
         },
         "applications/calendar": {
             "entry": ["src/app/index.{ts,tsx}", "src/app/bookings.tsx", "webpack.config.{js,ts}"],
