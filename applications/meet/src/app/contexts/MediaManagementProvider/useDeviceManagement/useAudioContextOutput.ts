@@ -42,7 +42,9 @@ export const useAudioContextOutput = ({
         typeof webAudioMix === 'object' && webAudioMix.audioContext === meetAudioContext.audioContext;
 
     useEffect(() => {
-        if (isPlaybackContext && activeAudioOutputDeviceId) {
+        // '' is the system default, which still has to be pinned: leaving the sink untouched keeps
+        // whatever device the context resolved at construction, before the room had an output.
+        if (isPlaybackContext && activeAudioOutputDeviceId !== null) {
             meetAudioContext.setSinkId(activeAudioOutputDeviceId);
         }
     }, [activeAudioOutputDeviceId, isPlaybackContext, meetAudioContext]);
