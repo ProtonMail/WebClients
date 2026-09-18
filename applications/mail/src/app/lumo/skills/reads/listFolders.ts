@@ -22,16 +22,24 @@ export const listFoldersDefinition: ToolDefinition<Record<string, never>, ListFo
     toolDescription:
         "List the user's custom folders — each with its folder-… reference, name, and parent folder reference (or top-level). Use to resolve a folder the user names into a folder-… reference before moving mail or nesting a new folder, or to check whether a folder already exists (a filter can only file into a folder that already exists). Read-only.",
     paramsSchema: { type: 'object', additionalProperties: false, required: [], properties: {} },
-    serializeForLumo: (result) =>
-        serializeCatalogue(
+    serializeForLumo: (result) => {
+        // The parent's name is only on the parent's OWN row, so describing where a folder sits used to
+        // need a join across rows. Inlining it keeps the reply's wording off that lookup.
+        const nameByReference = new Map(result.folders.map((folder) => [folder.reference, folder.name]));
+        const nesting = ({ parent }: FolderSummary): string => {
+            if (!parent) {
+                return 'top-level';
+            }
+            const name = nameByReference.get(parent);
+            return name ? `parent: "${name}" ${parent}` : `parent: ${parent}`;
+        };
+
+        return serializeCatalogue(
             `${result.folders.length} folders:`,
-            result.folders.map((folder) =>
-                folder.parent
-                    ? `${folder.reference} | "${folder.name}" | parent: ${folder.parent}`
-                    : `${folder.reference} | "${folder.name}" | top-level`
-            ),
+            result.folders.map((folder) => `${folder.reference} | "${folder.name}" | ${nesting(folder)}`),
             'The user has no custom folders.'
-        ),
+        );
+    },
     summarizeChip: (_params, result) => {
         const count = result.folders.length;
         return { label: c('Info').ngettext(msgid`Read your ${count} folder`, `Read your ${count} folders`, count) };
