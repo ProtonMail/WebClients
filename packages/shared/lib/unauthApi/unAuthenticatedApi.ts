@@ -15,11 +15,12 @@ import {
 } from '../api/auth';
 import type { ApiEvent, ApiListenerCallback } from '../api/createApi';
 import { getApiError, getIs401Error } from '../api/helpers/apiErrorHelper';
+import { getHumanVerificationData, withVerification } from '../api/helpers/humanVerification';
 import { createRefreshHandlers, getIsRefreshFailure, refresh } from '../api/helpers/refreshHandlers';
 import { createOnceHandler } from '../apiHandlers';
 import type { ChallengePayload } from '../authentication/interface';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../errors';
-import { getUIDHeaderValue, getVerificationHeaders, withAuthHeaders, withUIDHeaders } from '../fetch/headers';
+import { getUIDHeaderValue, withAuthHeaders, withUIDHeaders } from '../fetch/headers';
 import { createPromise, wait } from '../helpers/promise';
 import { setUID } from '../helpers/sentry';
 import { getItem, removeItem, setItem } from '../helpers/sessionStorage';
@@ -175,26 +176,11 @@ export const createUnauthenticatedApi = (api: Api, { onUID }: UnauthenticatedApi
     // This session handles its own human verification, the same way it handles its own 401s. The app level
     // handler never sees the challenge, so it can't answer it on another session.
     const handleVerification = (error: any, config: any, retry: Api) => {
-        const {
-            Details: { HumanVerificationToken: token, HumanVerificationMethods: methods = [], Title: title } = {},
-        } = error.data || {};
+        const { token, methods, title } = getHumanVerificationData(error);
 
         return new Promise((resolve, reject) => {
             const onVerify = (verificationToken: string, tokenType: HumanVerificationMethodType) => {
-                return retry({
-                    ...config,
-                    silence:
-                        config.silence === true
-                            ? true
-                            : [
-                                  ...(Array.isArray(config.silence) ? config.silence : []),
-                                  API_CUSTOM_ERROR_CODES.TOKEN_INVALID,
-                              ],
-                    headers: {
-                        ...config.headers,
-                        ...getVerificationHeaders(verificationToken, tokenType),
-                    },
-                });
+                return retry(withVerification(config, verificationToken, tokenType));
             };
 
             const handled = notify({
