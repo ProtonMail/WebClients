@@ -57,7 +57,7 @@ function useContextMenuControls() {
 
 type Controls = ReturnType<typeof useContextMenuControls>
 
-export type ContextMenuContextValue = Controls & {
+type ContextMenuContextValue = Controls & {
   currentDocument: RecentDocumentsItem | undefined
   setCurrentDocument: (value: RecentDocumentsItem) => void
 }

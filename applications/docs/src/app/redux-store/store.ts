@@ -55,7 +55,7 @@ export function extendStore(newThunkArguments: Partial<DocsThunkArguments>) {
 }
 
 export type DocsStore = ReturnType<typeof setupStore>
-export type DocsDispatch = DocsStore['dispatch']
+type DocsDispatch = DocsStore['dispatch']
 type ExtraArgument = typeof extraThunkArguments
 
 export type AppStartListening = TypedStartListening<DocsState, DocsDispatch, ExtraArgument>
