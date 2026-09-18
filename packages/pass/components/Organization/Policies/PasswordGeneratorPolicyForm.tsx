@@ -5,8 +5,8 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { Maybe, MaybeNull, OrganizationUpdatePasswordPolicyInput } from '@proton/pass/types';
 
+import type { Maybe, MaybeNull, OrganizationUpdatePasswordPolicyInput } from '../../../types';
 import { PasswordGeneratorPolicyOption } from './PasswordGeneratorOption';
 
 export type PasswordGeneratorOptionValue = Maybe<boolean | number | null>;

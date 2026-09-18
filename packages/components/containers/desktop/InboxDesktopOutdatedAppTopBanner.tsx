@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { semver } from '@proton/pass/utils/string/semver';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
@@ -16,6 +15,7 @@ import {
 } from '@proton/shared/lib/helpers/desktop';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
+import { semver } from '@proton/utils/semver';
 
 import TopBanner from '../topBanners/TopBanner';
 import { openLinkInBrowser } from './openExternalLink';
@@ -92,7 +92,7 @@ const DisplayTopBanner = ({
         return null;
     }
 
-    const downloadUpdate = <DownloadButton link={link} key="eslint-autofix-7A3D3F" />;
+    const downloadUpdate = <DownloadButton link={link} key="download-update" />;
     return (
         <TopBanner className={clsx('bg-info', className)}>{c('Action')
             .jt`Important update available. To continue to use the app, please update to the latest version. ${downloadUpdate}`}</TopBanner>
