@@ -1,0 +1,42 @@
+{
+    "name": "@proton/offers-delivery",
+    "description": "Server-driven in-app offer/notification delivery, consumable across Proton web applications",
+    "license": "GPL-3.0",
+    "sideEffects": false,
+    "scripts": {
+        "check-types": "tsc",
+        "i18n:validate": "proton-i18n validate lint-functions",
+        "lint": "eslint --quiet",
+        "test": "jest",
+        "test:ci": "jest --runInBand",
+        "test:watch": "jest --watch"
+    },
+    "dependencies": {
+        "@proton/atoms": "workspace:^",
+        "@proton/components": "workspace:^",
+        "@proton/react-redux-store": "workspace:^",
+        "@proton/redux-shared-store-types": "workspace:^",
+        "@proton/redux-utilities": "workspace:^",
+        "@proton/shared": "workspace:^",
+        "@proton/unleash": "workspace:^",
+        "@proton/utils": "workspace:^",
+        "@reduxjs/toolkit": "^2.12.0",
+        "react-redux": "^9.3.0",
+        "ttag": "^1.8.12"
+    },
+    "devDependencies": {
+        "@proton/eslint-config-proton": "workspace:^",
+        "@proton/i18n": "workspace:^",
+        "@proton/jest-swc-preset": "workspace:^",
+        "@testing-library/jest-dom": "^6.9.1",
+        "@testing-library/react": "^15.0.7",
+        "eslint": "^10.10.0",
+        "jest": "^30.5.1",
+        "jest-environment-jsdom": "^30.5.1",
+        "typescript": "^6.0.3"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+    }
+}

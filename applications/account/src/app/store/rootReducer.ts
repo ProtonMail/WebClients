@@ -19,10 +19,12 @@ import { holidaysDirectoryReducer } from '@proton/calendar/holidaysDirectory';
 import { filtersReducer } from '@proton/mail/store/filters';
 import { incomingAddressForwardingsReducer } from '@proton/mail/store/forwarding/incoming';
 import { outgoingAddressForwardingsReducer } from '@proton/mail/store/forwarding/outgoing';
+import { offersDeliveryReducer } from '@proton/offers-delivery/store/slice';
 import { sharedReducers } from '@proton/redux-shared-store/sharedReducers';
 
 export const rootReducer = combineReducers({
     ...sharedReducers,
+    ...offersDeliveryReducer,
     ...passwordPoliciesReducer,
     ...filtersReducer,
     ...incomingAddressForwardingsReducer,
