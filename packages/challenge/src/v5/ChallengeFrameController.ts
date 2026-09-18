@@ -1,10 +1,10 @@
+import { createChallengeLogger } from '../shared/createChallengeLogger';
 import { observeEvents } from './events';
-import type { ChallengeEvent, ChallengeLog, ChallengeLogType, ChallengeRef, ChallengeResult } from './interface';
+import type { ChallengeEvent, ChallengeLog, ChallengeRef, ChallengeResult } from './interface';
 
 const ERROR_TIMEOUT_MS = 15000;
 const CHALLENGE_TIMEOUT_MS = ERROR_TIMEOUT_MS + 9000;
 const MAX_QUEUED_EVENTS = 500;
-const MAX_LOGS = 20;
 
 type Stage = 'initialize' | 'initialized' | 'loaded' | 'error' | 'destroyed';
 
@@ -23,11 +23,9 @@ class ChallengeFrameController implements ChallengeRef {
 
     private readonly targetOrigin: string;
 
-    private readonly searchParams: string;
+    private readonly logger: ReturnType<typeof createChallengeLogger>;
 
     private stage: Stage = 'initialize';
-
-    private logs: ChallengeLog[] = [];
 
     private errored = false;
 
@@ -50,13 +48,13 @@ class ChallengeFrameController implements ChallengeRef {
     constructor(options: ChallengeFrameControllerOptions) {
         this.options = options;
         this.targetOrigin = new URL(options.src).origin;
-        this.searchParams = new URL(options.src).searchParams.toString();
+        this.logger = createChallengeLogger(options.src);
 
         window.addEventListener('message', this.handleMessage);
-        this.addLog('Added listener', undefined, 'step');
+        this.logger.addLog('Added listener', undefined, 'step');
 
         this.errorTimeoutHandle = window.setTimeout(() => {
-            this.addLog('Initial iframe timeout', undefined, 'error');
+            this.logger.addLog('Initial iframe timeout', undefined, 'error');
             this.handleError();
         }, options.errorTimeout ?? ERROR_TIMEOUT_MS);
     }
@@ -124,20 +122,6 @@ class ChallengeFrameController implements ChallengeRef {
         return this.options.iframe.contentWindow;
     }
 
-    private addLog(text: string, data: unknown, type: ChallengeLogType) {
-        if (this.logs.length >= MAX_LOGS) {
-            return;
-        }
-        const log: ChallengeLog = {
-            type,
-            text: `${new Date().toISOString()} ${text} ${this.searchParams}`,
-        };
-        if (data) {
-            log.data = data;
-        }
-        this.logs.push(log);
-    }
-
     private handleError() {
         if (this.errored || this.stage === 'destroyed') {
             return;
@@ -146,7 +130,7 @@ class ChallengeFrameController implements ChallengeRef {
         this.stage = 'error';
         this.discardQueue();
         this.settleChallengeRequest(new Error('Challenge failed'));
-        this.options.onError?.(this.logs);
+        this.options.onError?.(this.logger.logs);
     }
 
     private clearChallengeRequest() {
@@ -219,14 +203,14 @@ class ChallengeFrameController implements ChallengeRef {
 
         if (eventDataType === 'init' && this.stage === 'initialize') {
             this.stage = 'initialized';
-            this.addLog('Initialized', undefined, 'step');
+            this.logger.addLog('Initialized', undefined, 'step');
             this.post({ type: 'load' });
         }
 
         if (eventDataType === 'onload' && this.stage === 'initialized') {
             clearTimeout(this.errorTimeoutHandle);
             this.stage = 'loaded';
-            this.addLog('Fully loaded', undefined, 'step');
+            this.logger.addLog('Fully loaded', undefined, 'step');
             this.flush();
             this.options.onSuccess?.();
             if (this.challengeResolve) {
@@ -235,7 +219,7 @@ class ChallengeFrameController implements ChallengeRef {
         }
 
         if (eventDataType === 'onerror') {
-            this.addLog('Script error', { error: eventDataPayload }, 'message');
+            this.logger.addLog('Script error', { error: eventDataPayload }, 'message');
         }
 
         if (eventDataType === 'child.message.data' && this.stage === 'loaded') {
