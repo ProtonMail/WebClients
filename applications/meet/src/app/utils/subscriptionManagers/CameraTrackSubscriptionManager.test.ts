@@ -22,6 +22,18 @@ const mockRoom = {
     state: ConnectionState.Connected,
 } as Room;
 
+const lowQualityPolicy = {
+    disableVideos: false,
+    participantsWithDisabledVideos: [],
+    participantQuality: VideoQuality.LOW,
+};
+
+const flushPendingWork = async () => {
+    for (let i = 0; i < 5; i++) {
+        await new Promise((resolve) => setTimeout(resolve, 0));
+    }
+};
+
 const createCameraPublication = (trackSid: string, overrides: Partial<Record<string, any>> = {}) => {
     const pub = Object.create(RemoteTrackPublication.prototype) as any;
 
@@ -114,6 +126,167 @@ describe('CameraTrackSubscriptionCache', () => {
             expect(pub.isEnabled).toBe(true);
             expect(setVideoQualitySpy).toHaveBeenCalledWith(VideoQuality.MEDIUM);
             expect(pub.videoQuality).toBe(VideoQuality.MEDIUM);
+        });
+    });
+
+    it('setSpotlightParticipantIdentity() should upgrade the spotlight participant and restore the baseline when it changes', async () => {
+        const manager = new CameraTrackSubscriptionManager(10, mockRoom);
+        manager.setPolicy(lowQualityPolicy);
+
+        const firstPub = createCameraPublication('track-1');
+        const secondPub = createCameraPublication('track-2');
+
+        manager.register(firstPub, 'p1');
+        manager.register(secondPub, 'p2');
+
+        await waitFor(() => {
+            expect(firstPub.videoQuality).toBe(VideoQuality.LOW);
+            expect(secondPub.videoQuality).toBe(VideoQuality.LOW);
+        });
+
+        manager.setSpotlightParticipantIdentity('p1');
+
+        await waitFor(() => {
+            expect(firstPub.videoQuality).toBe(VideoQuality.HIGH);
+            expect(secondPub.videoQuality).toBe(VideoQuality.LOW);
+        });
+
+        manager.setSpotlightParticipantIdentity('p2');
+
+        await waitFor(() => {
+            expect(firstPub.videoQuality).toBe(VideoQuality.LOW);
+            expect(secondPub.videoQuality).toBe(VideoQuality.HIGH);
+        });
+    });
+
+    it('setSpotlightParticipantIdentity() should leave tracks outside the swap untouched', async () => {
+        const manager = new CameraTrackSubscriptionManager(10, mockRoom);
+        manager.setPolicy(lowQualityPolicy);
+
+        const firstPub = createCameraPublication('track-1');
+        const secondPub = createCameraPublication('track-2');
+        const bystanderPub = createCameraPublication('track-3');
+
+        manager.register(firstPub, 'p1');
+        manager.register(secondPub, 'p2');
+        manager.register(bystanderPub, 'p3');
+
+        manager.setSpotlightParticipantIdentity('p1');
+
+        await waitFor(() => {
+            expect(firstPub.videoQuality).toBe(VideoQuality.HIGH);
+        });
+
+        // Diverges from the policy without going through the manager, so a full reconcile would fix it up
+        defineWritable(bystanderPub, 'isEnabled', false);
+
+        const bystanderSetEnabledSpy = vi.spyOn(bystanderPub, 'setEnabled');
+
+        manager.setSpotlightParticipantIdentity('p2');
+
+        await waitFor(() => {
+            expect(secondPub.videoQuality).toBe(VideoQuality.HIGH);
+            expect(firstPub.videoQuality).toBe(VideoQuality.LOW);
+        });
+
+        expect(bystanderSetEnabledSpy).not.toHaveBeenCalled();
+    });
+
+    it('unregister() should keep the spotlight participant subscribed and release it once the spotlight moves', async () => {
+        const manager = new CameraTrackSubscriptionManager(10, mockRoom);
+        manager.setPolicy(lowQualityPolicy);
+        manager.setSpotlightParticipantIdentity('p1');
+
+        const pub = createCameraPublication('track-1');
+        manager.register(pub, 'p1');
+
+        await waitFor(() => {
+            expect(pub.isSubscribed).toBe(true);
+            expect(pub.videoQuality).toBe(VideoQuality.HIGH);
+        });
+
+        manager.unregister(pub);
+
+        await flushPendingWork();
+        expect(pub.isSubscribed).toBe(true);
+        expect(pub.isEnabled).toBe(true);
+
+        manager.setSpotlightParticipantIdentity('p2');
+
+        await waitFor(() => {
+            expect(pub.isEnabled).toBe(false);
+        });
+    });
+
+    it('maybeEvict() should not evict the spotlight participant when over capacity', async () => {
+        const manager = new CameraTrackSubscriptionManager(1, mockRoom);
+        manager.setPolicy(lowQualityPolicy);
+        manager.setSpotlightParticipantIdentity('p1');
+
+        const spotlightPub = createCameraPublication('track-1');
+        const otherPub = createCameraPublication('track-2');
+
+        manager.register(spotlightPub, 'p1');
+        manager.register(otherPub, 'p2');
+
+        await waitFor(() => {
+            expect(spotlightPub.isSubscribed).toBe(true);
+            expect(otherPub.isSubscribed).toBe(true);
+        });
+
+        manager.unregister(spotlightPub);
+        manager.unregister(otherPub);
+
+        await waitFor(() => {
+            expect(otherPub.isSubscribed).toBe(false);
+        });
+
+        expect(spotlightPub.isSubscribed).toBe(true);
+    });
+
+    it('setSpotlightParticipantIdentity() should not resume paused videos', async () => {
+        const manager = new CameraTrackSubscriptionManager(10, mockRoom);
+        manager.setPolicy(lowQualityPolicy);
+
+        const pub = createCameraPublication('track-1');
+        manager.register(pub, 'p1');
+
+        await waitFor(() => {
+            expect(pub.isEnabled).toBe(true);
+        });
+
+        await manager.unsubscribeAllVideos();
+        expect(pub.isEnabled).toBe(false);
+
+        manager.setSpotlightParticipantIdentity('p1');
+
+        await flushPendingWork();
+        expect(pub.isEnabled).toBe(false);
+    });
+
+    it('resubscribeAllVideos() should restore the spotlight quality skipped while paused', async () => {
+        const manager = new CameraTrackSubscriptionManager(10, mockRoom);
+        manager.setPolicy(lowQualityPolicy);
+
+        const pub = createCameraPublication('track-1');
+        manager.register(pub, 'p1');
+
+        await waitFor(() => {
+            expect(pub.videoQuality).toBe(VideoQuality.LOW);
+        });
+
+        await manager.unsubscribeAllVideos();
+
+        manager.setSpotlightParticipantIdentity('p1');
+
+        await flushPendingWork();
+        expect(pub.videoQuality).toBe(VideoQuality.LOW);
+
+        await manager.resubscribeAllVideos();
+
+        await waitFor(() => {
+            expect(pub.isEnabled).toBe(true);
+            expect(pub.videoQuality).toBe(VideoQuality.HIGH);
         });
     });
 

@@ -11,7 +11,11 @@ import { useLayoutOptions } from './useLayoutOptions';
 export const LayoutSelector = () => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
-    const { selectedOption } = useLayoutOptions();
+    const { options, selectedOption } = useLayoutOptions();
+
+    if (options.length <= 1) {
+        return null;
+    }
 
     return (
         <>
