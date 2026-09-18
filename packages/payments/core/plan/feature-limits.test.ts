@@ -1,5 +1,4 @@
-import { getLongTestPlans } from '@proton/payments/testing/data-plans';
-
+import { getLongTestPlans } from '../../testing/data-plans';
 import { ADDON_NAMES, PLANS, PLAN_TYPES } from '../constants';
 import type { FeatureLimitKey } from '../interface';
 import { getPlanFeatureLimit } from './feature-limits';

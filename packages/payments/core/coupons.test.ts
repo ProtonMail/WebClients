@@ -1,5 +1,4 @@
-import { buildSubscription } from '@proton/payments/testing/buildSubscription';
-
+import { buildSubscription } from '../testing/buildSubscription';
 import { COUPON_CODES } from './constants';
 import { hasLifetimeCoupon } from './coupons';
 
