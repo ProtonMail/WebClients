@@ -1,11 +1,61 @@
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
-import { isSafari } from '@proton/shared/lib/helpers/browser';
+import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
+
+import { outputlessAudioContextOptions } from './browser';
 
 export interface MeetAudioContext {
     audioContext: AudioContext;
     setSinkId: (deviceId: string) => void;
     cleanup: () => void;
 }
+
+/**
+ * Checks whether a context at `sampleRate` accepts a MediaStream at the device rate, the way
+ * LiveKit connects an incoming remote track. Firefox throws instead.
+ * See https://bugzilla.mozilla.org/show_bug.cgi?id=1674892
+ */
+const canMixDeviceRateStream = (
+    deviceRateContext: AudioContext,
+    sampleRate: number,
+    reportMeetError: ReportMeetError
+) => {
+    const destination = deviceRateContext.createMediaStreamDestination();
+    let probeContext: AudioContext | undefined;
+
+    try {
+        probeContext = new AudioContext(outputlessAudioContextOptions({ latencyHint: 'interactive', sampleRate }));
+        probeContext.createMediaStreamSource(destination.stream).disconnect();
+        return true;
+    } catch (error) {
+        if (!isFirefox()) {
+            reportMeetError('Audio context cannot mix a device rate stream', {
+                context: { error, sampleRate, deviceSampleRate: deviceRateContext.sampleRate },
+            });
+        }
+        return false;
+    } finally {
+        destination.stream.getTracks().forEach((track) => track.stop());
+        destination.disconnect();
+        void probeContext?.close().catch(() => {});
+    }
+};
+
+/** Honours `sampleRate`, falling back to the output device rate where a stream cannot be mixed. */
+const createPlaybackContext = (sampleRate: number | undefined, reportMeetError: ReportMeetError) => {
+    const deviceRateContext = new AudioContext({ latencyHint: 'interactive' });
+
+    if (!sampleRate || deviceRateContext.sampleRate === sampleRate) {
+        return deviceRateContext;
+    }
+
+    if (!canMixDeviceRateStream(deviceRateContext, sampleRate, reportMeetError)) {
+        return deviceRateContext;
+    }
+
+    // Closed first, so only one context ever holds an output device
+    void deviceRateContext.close().catch(() => {});
+    return new AudioContext({ latencyHint: 'interactive', sampleRate });
+};
 
 /**
  * Creates an AudioContext for use with LiveKit's webAudioMix option.
@@ -21,7 +71,7 @@ export interface MeetAudioContext {
  * which would otherwise cause gradual audio loss after several minutes.
  */
 export const createMeetAudioContext = ({
-    sampleRate = 48000,
+    sampleRate,
     reportMeetError,
 }: {
     /**
@@ -31,7 +81,7 @@ export const createMeetAudioContext = ({
     sampleRate?: number;
     reportMeetError: ReportMeetError;
 }): MeetAudioContext => {
-    const audioContext = new AudioContext({ latencyHint: 'interactive', sampleRate });
+    const audioContext = createPlaybackContext(sampleRate, reportMeetError);
 
     // setSinkId is supported in Chrome 110+ but not yet in the TypeScript lib types.
     const ctx = audioContext as AudioContext & { setSinkId?: (sinkId: string) => Promise<void> };
