@@ -7,18 +7,12 @@ import { messageCountsThunk } from '@proton/mail/store/counts/messageCountsSlice
 import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { SentryMailInitiatives, captureInitiativeMessage } from '@proton/shared/lib/helpers/sentry';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
-import {
-    categoryIDFromUrl,
-    removeCategoryFromCurrentUrl,
-    setCategoryInCurrentUrl,
-} from '../../helpers/mailboxUrl';
+import { categoryIDFromUrl, removeCategoryFromCurrentUrl, setCategoryInCurrentUrl } from '../../helpers/mailboxUrl';
 import { getParametersFromPath } from '../../hooks/mailbox/useElements';
 import { reset } from '../../store/elements/elementsActions';
 import { useMailDispatch, useMailSelector } from '../../store/hooks';
-
 import { useCategoriesView } from './useCategoriesView';
 
 /**
@@ -73,21 +67,6 @@ export const useCategoryFlagWatcher = () => {
             history.replace(setCategoryInCurrentUrl(location, MAILBOX_LABEL_IDS.CATEGORY_DEFAULT));
 
             logger.info('Redirected to default category: category view access enabled but no category in URL');
-
-            // Temporary tracking
-            captureInitiativeMessage(
-                SentryMailInitiatives.MAILBOX_REDIRECT,
-                'Redirecting to default category: category view access enabled but no category in URL',
-                {
-                    extra: {
-                        currentUrl: window.location.href,
-                        categoryViewAccess: isCategoryViewEnabled,
-                        categoryID,
-                        disabledCategories: disabledCategories,
-                    },
-                }
-            );
-
             return;
         }
 
@@ -96,20 +75,6 @@ export const useCategoryFlagWatcher = () => {
             history.replace(removeCategoryFromCurrentUrl(location));
 
             logger.info('Redirected to inbox: category view access disabled but category present in URL');
-
-            // Temporary tracking
-            captureInitiativeMessage(
-                SentryMailInitiatives.MAILBOX_REDIRECT,
-                'Redirecting to inbox: category view access disabled but category present in URL',
-                {
-                    extra: {
-                        currentUrl: window.location.href,
-                        categoryViewAccess: isCategoryViewEnabled,
-                        categoryID,
-                    },
-                }
-            );
-
             return;
         }
     }, [isCategoryViewEnabled, isCategoryViewEnabledSettled, history, dispatch, location, disabledCategories]);
