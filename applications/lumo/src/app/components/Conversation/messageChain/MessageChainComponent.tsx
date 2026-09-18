@@ -4,6 +4,7 @@ import type { HandleEditMessage, HandleRegenerateMessage } from '../../../hooks/
 import type { SiblingInfo } from '../../../hooks/usePreferredSiblings';
 import type { Attachment, ConversationId, Message } from '../../../types';
 import { ScrollToBottomButton } from './ScrollToBottomButton/ScrollToBottomButton';
+import { prepareSelectedContentForCopy } from './clipboard';
 import { MessageComponent } from './message/MessageComponent';
 
 export type MessageChainComponentProps = {
@@ -369,6 +370,33 @@ export const MessageChainComponent = ({
     afterMessages,
 }: MessageChainComponentProps) => {
     const newMessageRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        const container = messageChainRef.current;
+        if (!container) {
+            return;
+        }
+
+        const handleCopy = (event: ClipboardEvent) => {
+            if (!event.clipboardData) {
+                return;
+            }
+
+            const selection = container.ownerDocument.getSelection();
+            const clipboardContent = selection && prepareSelectedContentForCopy(selection, container);
+            if (!clipboardContent) {
+                return;
+            }
+
+            event.preventDefault();
+            event.clipboardData.setData('text/plain', clipboardContent.plainText);
+            event.clipboardData.setData('text/html', clipboardContent.html);
+        };
+
+        const ownerDocument = container.ownerDocument;
+        ownerDocument.addEventListener('copy', handleCopy);
+        return () => ownerDocument.removeEventListener('copy', handleCopy);
+    }, [messageChainRef]);
 
     const { userHasScrolledUp, resumeAutoScroll } = useAutoScroll(
         messageChainRef,
