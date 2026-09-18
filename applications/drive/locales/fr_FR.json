@@ -1359,6 +1359,9 @@
       ],
       "Sign in with Google": [
         "Se connecter avec Google"
+      ],
+      "Importing from Google": [
+        "Importer depuis Google"
       ]
     },
     "Action: Docs": {
@@ -7847,6 +7850,15 @@
       ],
       "Won’t import photos, Google Docs and Sheets": [
         "Impossible d’importer des photos, des documents Google Docs et des feuilles de calcul Google Sheets"
+      ],
+      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
+        "${ invitation.addedByEmail.error.claimedAuthor } (expéditeur inconnu)"
+      ],
+      "We're importing your files from Google Drive. We'll let you know once it's done.": [
+        "Nous importons actuellement vos fichiers depuis Google Drive. Nous vous préviendrons dès que l'opération sera terminée."
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Vos fichiers ont été importés et chiffrés avec succès depuis Google Drive vers ${ DRIVE_APP_NAME }."
       ]
     },
     "info": {
@@ -11123,6 +11135,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Vous pourrez utiliser ${ planTitle } jusqu'à la fin de la version d'essai, et ce, gratuitement."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Ajoutez un moyen de paiement** pour continuer à utiliser toutes les fonctionnalités après votre période d'essai."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Résiliez à tout moment avant l'échéance.** Vous pourrez utiliser ${ planTitle } jusqu'à la fin de la période d'essai, gratuitement."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Si vous continuez après votre période d'essai, ** vous pouvez annuler dans les 30 jours et recevoir un remboursement au prorata."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Une fois que votre abonnement complet débuté... ** Vous pouvez toujours annuler dans les 30 jours et recevoir un remboursement au prorata."
+      ],
+      "Add a payment method": [
+        "Ajouter un moyen de paiement"
+      ],
+      "If you continue after your trial,": [
+        "Si vous poursuivez après votre période d'essai,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "Pour continuer d'utiliser toutes les fonctionnalités après la fin de votre période d'essai."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "vous pouvez annuler dans les 30 jours et recevoir un remboursement au prorata."
       ]
     },
     "Option": {
@@ -14592,6 +14628,12 @@
       ],
       "Your import is starting": [
         "Votre importation commence."
+      ],
+      "Your import is finished!": [
+        "L'importation est terminée !"
+      ],
+      "Your import is in progress": [
+        "Votre import est en cours."
       ]
     },
     "Today icon tooltip in mini calendar": {

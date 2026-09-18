@@ -1362,6 +1362,9 @@
       ],
       "Sign in with Google": [
         "Log ind med Google"
+      ],
+      "Importing from Google": [
+        "Importerer fra Google"
       ]
     },
     "Action: Docs": {
@@ -7975,6 +7978,15 @@
       ],
       "Won’t import photos, Google Docs and Sheets": [
         "Importerer ikke fotos, Google Docs og Sheets"
+      ],
+      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
+        "${ invitation.addedByEmail.error.claimedAuthor } (ubekræftet afsender)"
+      ],
+      "We're importing your files from Google Drive. We'll let you know once it's done.": [
+        "Vi importerer dine filer fra Google Drive. Vi giver dig besked når det er afsluttet."
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Dine filer blev importeret og krypteret fra Google Drive til ${ DRIVE_APP_NAME }."
       ]
     },
     "info": {
@@ -11191,6 +11203,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Du vil kunne bruge ${ planTitle } indtil prøveversionen udløber, uden beregning."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Tilføj en betalingsmetode** for at fortsætte med at bruge alle funktioner efter din prøveperiode slutter."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Annuller når som helst før da**. Du vil kunne bruge ${ planTitle } indtil prøveperioden slutter, uden beregning."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Hvis du forsætter efter din prøveperiode,** så kan du stadig annullere inden for 30 dage og få en forholdsmæssig refusion."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Så snart dit abonnement starter...** kan du stadig annullere indenfor 30 dage og få en forholdsmæssig refusion."
+      ],
+      "Add a payment method": [
+        "Tilføj en betalingsmetode"
+      ],
+      "If you continue after your trial,": [
+        "Hvis du forsætter efter din prøveperiode,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "for at fortsætte med at bruge alle funktioner efter din prøveperiode slutter."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "så kan du stadig annullere inden for 30 dage og få en forholdsmæssig refusion."
       ]
     },
     "Option": {
@@ -14675,6 +14711,12 @@
       ],
       "Your import is starting": [
         "Din import startes"
+      ],
+      "Your import is finished!": [
+        "Din import er afsluttet."
+      ],
+      "Your import is in progress": [
+        "Din import er i gang"
       ]
     },
     "Today icon tooltip in mini calendar": {

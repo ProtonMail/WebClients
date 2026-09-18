@@ -1376,6 +1376,9 @@
       ],
       "Sign in with Google": [
         "Zaregistrovať sa cez Google"
+      ],
+      "Importing from Google": [
+        "Import z Google"
       ]
     },
     "Action: Docs": {
@@ -8227,6 +8230,12 @@
       ],
       "Won’t import photos, Google Docs and Sheets": [
         "Neimportujú sa fotografie, dokumenty z Google Docs a Sheets"
+      ],
+      "We're importing your files from Google Drive. We'll let you know once it's done.": [
+        "Importujeme vaše súbory z Google Drive. Akonáhle bude import dokončený, dáme vám vedieť."
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Vaše súbory boli úspešne importované z Google Drive a zašifrované v ${ DRIVE_APP_NAME }."
       ]
     },
     "info": {
@@ -15115,6 +15124,12 @@
       ],
       "Your import is starting": [
         "Váš import sa začal"
+      ],
+      "Your import is finished!": [
+        "Váš import bol dokončený!"
+      ],
+      "Your import is in progress": [
+        "Váš import práve prebieha"
       ]
     },
     "Today icon tooltip in mini calendar": {
