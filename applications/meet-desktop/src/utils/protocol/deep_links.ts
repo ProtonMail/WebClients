@@ -1,10 +1,10 @@
 import { Event, app } from "electron";
 import { isMac } from "../helpers";
 import { protocolLogger } from "../log";
-import { showView, bringWindowToFront, getMainWindow } from "../view/viewManagement";
 import { isMeet, isNavigationAllowed } from "../urls/urlTests";
+import { bringWindowToFront, getMainWindow, showView } from "../view/viewManagement";
 
-export const DEEPLINK_PROTOCOL = "proton-meet";
+const DEEPLINK_PROTOCOL = "proton-meet";
 
 export const checkDeepLinks = () => {
     app.setAsDefaultProtocolClient(DEEPLINK_PROTOCOL);

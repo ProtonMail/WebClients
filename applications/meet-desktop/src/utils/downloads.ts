@@ -18,8 +18,6 @@ export const trackDownloads = () => {
     });
 };
 
-export const hasActiveDownloads = () => activeDownloads.size > 0;
-
 export const confirmQuitWithActiveDownloads = (): boolean => {
     if (activeDownloads.size === 0) {
         return true;

@@ -17148,7 +17148,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/minimist@npm:^1.2.2, @types/minimist@npm:^1.2.5":
+"@types/minimist@npm:^1.2.2":
   version: 1.2.5
   resolution: "@types/minimist@npm:1.2.5"
   checksum: 10/477047b606005058ab0263c4f58097136268007f320003c348794f74adedc3166ffc47c80ec3e94687787f2ab7f4e72c468223946e79892cf0fd9e25e9970a90
@@ -25365,15 +25365,6 @@ __metadata:
     lazy-val: "npm:^1.0.5"
     mime: "npm:^2.5.2"
   checksum: 10/785bf60cdf5ec94b7bf7887be61b78b7186a8a24256c7a4f2bf4c020dfeb2bced3471ca8d32c61b6954ad0b09f7585a8b896690f65a71bc06ec050577038ed62
-  languageName: node
-  linkType: hard
-
-"electron-squirrel-startup@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "electron-squirrel-startup@npm:1.0.1"
-  dependencies:
-    debug: "npm:^2.2.0"
-  checksum: 10/ef393c8174d9429400548676d2b6ae0c099b87c62af64723c13971de4777ee18ba05cb28128cbc4bb092f2c518d3e08c6ec4fd17f09b32d25ddc80f825ab8400
   languageName: node
   linkType: hard
 
@@ -40444,7 +40435,6 @@ __metadata:
     "@sentry/electron": "npm:^7.18.0"
     "@types/jest": "npm:^30.0.0"
     "@types/lodash": "npm:^4.17.25"
-    "@types/minimist": "npm:^1.2.5"
     "@types/node": "npm:^24.13.4"
     "@vercel/webpack-asset-relocator-loader": "npm:1.7.3"
     cross-env: "npm:^10.1.0"
@@ -40452,7 +40442,6 @@ __metadata:
     dotenv: "npm:^17.4.2"
     electron: "npm:43.6.0"
     electron-log: "npm:^5.4.4"
-    electron-squirrel-startup: "npm:^1.0.1"
     electron-store: "npm:^8.2.0"
     eslint: "npm:^10.10.0"
     eslint-plugin-import: "npm:^2.32.0"
@@ -40460,7 +40449,6 @@ __metadata:
     fork-ts-checker-webpack-plugin: "npm:^9.1.0"
     jest: "npm:^30.5.1"
     lodash: "npm:^4.18.1"
-    minimist: "npm:^1.2.8"
     node-loader: "npm:^2.1.0"
     prettier: "npm:3.9.6"
     style-loader: "npm:^4.0.0"

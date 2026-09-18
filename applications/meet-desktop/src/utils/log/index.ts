@@ -1,8 +1,8 @@
 import { app, WebContents } from "electron";
 import Logger, { Hook, LogMessage, Transport } from "electron-log";
-import { appSession } from "../session";
-import { isAbsolute } from "node:path";
 import { createHash } from "node:crypto";
+import { isAbsolute } from "node:path";
+import { appSession } from "../session";
 
 if (process.env.NODE_ENV === "test") {
     Logger.transports.console.level = "error";
@@ -15,15 +15,13 @@ type ViewID = "meet" | "account";
 
 export const mainLogger = Logger.scope("main");
 export const ipcLogger = Logger.scope("ipc");
-export const netLogger = (viewID: ViewID | null) =>
+const netLogger = (viewID: ViewID | null) =>
     viewID ? Logger.scope(`${NET_LOGGER_VIEW_PREFIX}${viewID}`) : Logger.scope("net");
 export const settingsLogger = Logger.scope("settings");
 export const updateLogger = Logger.scope("update");
 export const protocolLogger = Logger.scope("protocol");
-export const utilsLogger = Logger.scope("utils");
 export const viewLogger = (viewID: ViewID | null) => (viewID ? Logger.scope(viewID) : Logger.scope("view"));
 export const sentryLogger = Logger.scope("sentry");
-export const notificationLogger = Logger.scope("notification");
 
 export function sanitizeUrlForLogging(urlString: string): string {
     try {
