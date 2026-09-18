@@ -16,6 +16,7 @@ import {
 import type { ApiEvent, ApiListenerCallback } from '../api/createApi';
 import { getApiError, getIs401Error } from '../api/helpers/apiErrorHelper';
 import { getHumanVerificationData, withVerification } from '../api/helpers/humanVerification';
+import { createCrossTabMutex } from '../api/helpers/mutex';
 import { createRefreshHandlers, getIsRefreshFailure, refresh } from '../api/helpers/refreshHandlers';
 import { createOnceHandler } from '../apiHandlers';
 import type { ChallengePayload } from '../authentication/interface';
@@ -49,6 +50,7 @@ export interface UnauthenticatedApiOptions {
 
 export const createUnauthenticatedApi = (api: Api, { onUID }: UnauthenticatedApiOptions = {}) => {
     const unAuthStorageKey = 'ua_uid';
+    const unAuthMutexKey = 'ua_session';
 
     const context: Context = {
         UID: undefined,
@@ -78,22 +80,59 @@ export const createUnauthenticatedApi = (api: Api, { onUID }: UnauthenticatedApi
         context.abortController = new AbortController();
     };
 
+    // Kept short on purpose: a contending context spins until the lock is released or expires, and
+    // session setup gates every unauth request, so the expiry is the worst case boot delay for the
+    // other contexts. If it does expire mid-flight we just degrade to the unsynchronized behavior.
+    // It only has to cover a single request, so it doesn't need the refresh handler's headroom.
+    const getSessionMutexLock = createCrossTabMutex({ expiry: 5000 });
+
+    /**
+     * The local id is assigned by this request, per device, and the device is identified by the
+     * Session-Id cookie that's already sent along with it. Two contexts (tabs) of the same device
+     * creating a session concurrently can therefore both be handed the same local id, and
+     * whichever of them signs in last overwrites the other one's persisted session. See
+     * assertUniqueLocalID.
+     *
+     * Serializing the request between contexts is enough to avoid that, since the session then
+     * exists for the device before the next context asks for one. Note that no cookie of ours
+     * changes in between, so unlike in the refresh handler there's nothing to let settle here.
+     */
+    const createUnauthSession = async (challengePayload: ChallengePayload | undefined) => {
+        const unlockMutex = await getSessionMutexLock(unAuthMutexKey);
+
+        try {
+            const response = await context.api<Response>({
+                ...createSession(challengePayload ? { Payload: challengePayload } : undefined),
+                silence: true,
+                headers: {
+                    // This is here because it's required for clients that aren't in the min version
+                    // And we won't put e.g. the standalone login for apps there
+                    'x-enforce-unauthsession': true,
+                },
+                output: 'raw',
+            });
+
+            return response;
+        } finally {
+            await unlockMutex();
+        }
+    };
+
+    /**
+     * Creating an unauthenticated session needs to handle multiple race conditions.
+     * 1) Race conditions within the context (tab). Solved by the once handler.
+     * 2) Race conditions within multiple contexts (tabs). Solved by the shared mutex.
+     *
+     * Note: the mutex name differs from the one the refresh handler uses, so the refresh handler
+     * falling back to `init` on a refresh failure can't dead-lock on it.
+     */
     const init = createOnceHandler(async () => {
         context.abortController.abort();
 
         const challengePromise = context.challenge.promise.catch(noop);
-        const challengePayload = await Promise.race([challengePromise, wait(300)]);
+        const challengePayload = (await Promise.race([challengePromise, wait(300)])) || undefined;
 
-        const response = await context.api<Response>({
-            ...createSession(challengePayload ? { Payload: challengePayload } : undefined),
-            silence: true,
-            headers: {
-                // This is here because it's required for clients that aren't in the min version
-                // And we won't put e.g. the standalone login for apps there
-                'x-enforce-unauthsession': true,
-            },
-            output: 'raw',
-        });
+        const response = await createUnauthSession(challengePayload);
 
         const { UID, AccessToken, RefreshToken } = await response.json();
         await context.api({
